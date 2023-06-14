@@ -1,5 +1,5 @@
-import {IdbLocalStorage} from "../../Web/IdbLocalStorage"
-import {UIEventSource} from "../../UIEventSource"
+import { IdbLocalStorage } from "../../Web/IdbLocalStorage"
+import { UIEventSource } from "../../UIEventSource"
 
 /**
  * A class which allows to read/write a tile to local storage.
@@ -14,14 +14,18 @@ export default class TileLocalStorage<T> {
     private readonly _layername: string
     private readonly inUse = new UIEventSource(false)
     private readonly cachedSources: Record<number, UIEventSource<T> & { flush: () => void }> = {}
-    private readonly _maxAgeSeconds: number;
+    private readonly _maxAgeSeconds: number
 
     private constructor(layername: string, maxAgeSeconds: number) {
         this._layername = layername
-        this._maxAgeSeconds = maxAgeSeconds;
+        this._maxAgeSeconds = maxAgeSeconds
     }
 
-    public static construct<T>(backend: string, layername: string, maxAgeS: number): TileLocalStorage<T> {
+    public static construct<T>(
+        backend: string,
+        layername: string,
+        maxAgeS: number
+    ): TileLocalStorage<T> {
         const key = backend + "_" + layername
         const cached = TileLocalStorage.perLayer[key]
         if (cached) {
@@ -59,7 +63,10 @@ export default class TileLocalStorage<T> {
             await this.inUse.AsPromise((inUse) => !inUse)
             this.inUse.setData(true)
             await IdbLocalStorage.SetDirectly(this._layername + "_" + tileIndex, data)
-            await IdbLocalStorage.SetDirectly(this._layername + "_" + tileIndex + "_date", Date.now())
+            await IdbLocalStorage.SetDirectly(
+                this._layername + "_" + tileIndex + "_date",
+                Date.now()
+            )
 
             this.inUse.setData(false)
         } catch (e) {
@@ -80,7 +87,9 @@ export default class TileLocalStorage<T> {
         if (!TileLocalStorage.useIndexedDb) {
             return undefined
         }
-        const date = <any>await IdbLocalStorage.GetDirectly(this._layername + "_" + tileIndex + "_date")
+        const date = <any>(
+            await IdbLocalStorage.GetDirectly(this._layername + "_" + tileIndex + "_date")
+        )
         const maxAge = this._maxAgeSeconds
         const timeDiff = Date.now() - date
         if (timeDiff >= maxAge) {

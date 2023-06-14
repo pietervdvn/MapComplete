@@ -69,7 +69,7 @@ export default class LayerState {
             new Tag("level", "" + level),
             new RegexTag("level", new RegExp("(.*;)?" + level + "(;.*)?")),
         ]
-        if(level === "0") {
+        if (level === "0") {
             conditionsOrred.push(new Tag("level", "")) // No level tag is the same as level '0'
         }
         console.log("Setting levels filter to", conditionsOrred)

@@ -47,14 +47,14 @@ export class Tag extends TagsFilter {
             // and it shouldn't be found!
             return true
         }
-        if(typeof foundValue !== "string"){
-            if(foundValue === true && (this.value === "true" || this.value === "yes" )){
+        if (typeof foundValue !== "string") {
+            if (foundValue === true && (this.value === "true" || this.value === "yes")) {
                 return true
             }
-            if(foundValue === false && (this.value === "false" || this.value === "no" )){
+            if (foundValue === false && (this.value === "false" || this.value === "no")) {
                 return true
             }
-            foundValue = ""+foundValue
+            foundValue = "" + foundValue
         }
         return foundValue === this.value
     }

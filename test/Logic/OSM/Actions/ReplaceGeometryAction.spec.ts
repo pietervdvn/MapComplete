@@ -6,7 +6,7 @@ import { describe, expect, it } from "vitest"
 import { OsmConnection } from "../../../../Logic/Osm/OsmConnection"
 import { ImmutableStore } from "../../../../Logic/UIEventSource"
 import { Changes } from "../../../../Logic/Osm/Changes"
-import FullNodeDatabaseSource from "../../../../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource";
+import FullNodeDatabaseSource from "../../../../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
 
 describe("ReplaceGeometryAction", () => {
     const grbStripped = {
@@ -886,7 +886,7 @@ describe("ReplaceGeometryAction", () => {
         fullNodeDatabase.handleOsmJson(data, 0, 0, 0)
         const changes = new Changes({
             dryRun: new ImmutableStore(true),
-            osmConnection: new OsmConnection()
+            osmConnection: new OsmConnection(),
         })
         const osmConnection = new OsmConnection({
             dryRun: new ImmutableStore(true),

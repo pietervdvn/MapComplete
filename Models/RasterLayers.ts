@@ -1,10 +1,10 @@
-import {Feature, Polygon} from "geojson"
+import { Feature, Polygon } from "geojson"
 import * as editorlayerindex from "../assets/editor-layer-index.json"
 import * as globallayers from "../assets/global-raster-layers.json"
-import {BBox} from "../Logic/BBox"
-import {Store, Stores} from "../Logic/UIEventSource"
-import {GeoOperations} from "../Logic/GeoOperations"
-import {RasterLayerProperties} from "./RasterLayerProperties"
+import { BBox } from "../Logic/BBox"
+import { Store, Stores } from "../Logic/UIEventSource"
+import { GeoOperations } from "../Logic/GeoOperations"
+import { RasterLayerProperties } from "./RasterLayerProperties"
 
 export class AvailableRasterLayers {
     public static EditorLayerIndex: (Feature<Polygon, EditorLayerIndexProperties> &
@@ -47,8 +47,8 @@ export class AvailableRasterLayers {
             type: "vector",
             attribution: {
                 text: "Maptiler",
-                url: "https://www.maptiler.com/copyright/"
-            }
+                url: "https://www.maptiler.com/copyright/",
+            },
         },
         geometry: BBox.global.asGeometry(),
     }
@@ -63,8 +63,8 @@ export class AvailableRasterLayers {
             type: "vector",
             attribution: {
                 text: "Americana",
-                url: "https://github.com/ZeLonewolf/openstreetmap-americana/"
-            }
+                url: "https://github.com/ZeLonewolf/openstreetmap-americana/",
+            },
         },
         geometry: BBox.global.asGeometry(),
     }
@@ -151,7 +151,14 @@ export interface EditorLayerIndexProperties extends RasterLayerProperties {
      * Whether the imagery name should be translated
      */
     readonly i18n?: boolean
-    readonly type: "tms" | "wms" | "bing" | "scanex" | "wms_endpoint" | "wmts" | "vector" /* Vector is not actually part of the ELI-spec, we add it for vector layers */
+    readonly type:
+        | "tms"
+        | "wms"
+        | "bing"
+        | "scanex"
+        | "wms_endpoint"
+        | "wmts"
+        | "vector" /* Vector is not actually part of the ELI-spec, we add it for vector layers */
     /**
      * A rough categorisation of different types of layers. See https://github.com/osmlab/editor-layer-index/blob/gh-pages/CONTRIBUTING.md#categories for a description of the individual categories.
      */

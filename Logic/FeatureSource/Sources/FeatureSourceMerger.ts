@@ -30,7 +30,7 @@ export default class FeatureSourceMerger implements IndexedFeatureSource {
     }
 
     public addSource(source: FeatureSource) {
-        if(!source){
+        if (!source) {
             return
         }
         this._sources.push(source)

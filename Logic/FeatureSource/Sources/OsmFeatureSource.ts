@@ -7,7 +7,7 @@ import { TagsFilter } from "../../Tags/TagsFilter"
 import { Feature } from "geojson"
 import FeatureSourceMerger from "../Sources/FeatureSourceMerger"
 import OsmObjectDownloader from "../../Osm/OsmObjectDownloader"
-import FullNodeDatabaseSource from "../TiledFeatureSource/FullNodeDatabaseSource";
+import FullNodeDatabaseSource from "../TiledFeatureSource/FullNodeDatabaseSource"
 
 /**
  * If a tile is needed (requested via the UIEventSource in the constructor), will download the appropriate tile and pass it via 'handleTile'
@@ -24,16 +24,16 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
         /**
          * If given: this featureSwitch will not update if the store contains 'false'
          */
-        isActive?: Store<boolean>,
-        patchRelations?: true | boolean,
+        isActive?: Store<boolean>
+        patchRelations?: true | boolean
         fullNodeDatabase?: FullNodeDatabaseSource
-    };
+    }
 
     public readonly isRunning: UIEventSource<boolean> = new UIEventSource<boolean>(false)
 
     private readonly _downloadedTiles: Set<number> = new Set<number>()
     private readonly _downloadedData: Feature[][] = []
-    private readonly _patchRelations: boolean;
+    private readonly _patchRelations: boolean
     /**
      * Downloads data directly from the OSM-api within the given bounds.
      * All features which match the TagsFilter 'allowedFeatures' are kept and converted into geojson
@@ -45,12 +45,12 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
         /**
          * If given: this featureSwitch will not update if the store contains 'false'
          */
-        isActive?: Store<boolean>,
-        patchRelations?: true | boolean,
+        isActive?: Store<boolean>
+        patchRelations?: true | boolean
         fullNodeDatabase?: FullNodeDatabaseSource
     }) {
         super()
-        this.options = options;
+        this.options = options
         this._bounds = options.bounds
         this.allowedTags = options.allowedFeatures
         this.isActive = options.isActive ?? new ImmutableStore(true)

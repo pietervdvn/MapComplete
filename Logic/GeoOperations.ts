@@ -408,7 +408,10 @@ export class GeoOperations {
     /**
      * Calculates line intersection between two features.
      */
-    public static LineIntersections(feature: Feature<LineString | MultiLineString | Polygon | MultiPolygon>, otherFeature: Feature<LineString | MultiLineString | Polygon | MultiPolygon>): [number, number][] {
+    public static LineIntersections(
+        feature: Feature<LineString | MultiLineString | Polygon | MultiPolygon>,
+        otherFeature: Feature<LineString | MultiLineString | Polygon | MultiPolygon>
+    ): [number, number][] {
         return turf
             .lineIntersect(feature, otherFeature)
             .features.map((p) => <[number, number]>p.geometry.coordinates)
@@ -420,8 +423,7 @@ export class GeoOperations {
      * @param features
      * @param zoomlevel
      */
-    public static spreadIntoBboxes(features: Feature[], zoomlevel: number) : Map<number, Feature[]> {
-
+    public static spreadIntoBboxes(features: Feature[], zoomlevel: number): Map<number, Feature[]> {
         const perBbox = new Map<number, Feature[]>()
 
         for (const feature of features) {
@@ -430,7 +432,7 @@ export class GeoOperations {
             Tiles.MapRange(tilerange, (x, y) => {
                 const tileNumber = Tiles.tile_index(zoomlevel, x, y)
                 let newFeatureList = perBbox.get(tileNumber)
-                if(newFeatureList === undefined){
+                if (newFeatureList === undefined) {
                     newFeatureList = []
                     perBbox.set(tileNumber, newFeatureList)
                 }
@@ -703,17 +705,17 @@ export class GeoOperations {
 
     public static along(a: Coord, b: Coord, distanceMeter: number): Coord {
         return turf.along(
-            <any> {
-                type:"Feature",
-                geometry:{
-                    type:"LineString",
-                    coordinates: [a, b]
-                }
-            }, distanceMeter, {units: "meters"}
-
+            <any>{
+                type: "Feature",
+                geometry: {
+                    type: "LineString",
+                    coordinates: [a, b],
+                },
+            },
+            distanceMeter,
+            { units: "meters" }
         ).geometry.coordinates
     }
-
 
     /**
      * Returns 'true' if one feature contains the other feature

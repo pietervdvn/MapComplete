@@ -1,6 +1,6 @@
-import {Store, UIEventSource} from "../UIEventSource"
-import {Utils} from "../../Utils"
-import {RasterLayerPolygon, RasterLayerUtils,} from "../../Models/RasterLayers"
+import { Store, UIEventSource } from "../UIEventSource"
+import { Utils } from "../../Utils"
+import { RasterLayerPolygon, RasterLayerUtils } from "../../Models/RasterLayers"
 
 /**
  * When a user pans around on the map, they might pan out of the range of the current background raster layer.
@@ -35,7 +35,7 @@ export default class BackgroundLayerResetter {
                 availableLayers,
                 currentBgPolygon?.properties?.category
             )
-            if(!availableInSameCat){
+            if (!availableInSameCat) {
                 return
             }
             console.log("Selecting a different layer:", availableInSameCat.properties.id)

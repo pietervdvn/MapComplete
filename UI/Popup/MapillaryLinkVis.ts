@@ -1,10 +1,10 @@
-import {GeoOperations} from "../../Logic/GeoOperations"
-import {ImmutableStore, UIEventSource} from "../../Logic/UIEventSource"
-import {SpecialVisualization, SpecialVisualizationState} from "../SpecialVisualization"
-import {Feature} from "geojson"
+import { GeoOperations } from "../../Logic/GeoOperations"
+import { ImmutableStore, UIEventSource } from "../../Logic/UIEventSource"
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
+import { Feature } from "geojson"
 import BaseUIElement from "../BaseUIElement"
-import SvelteUIElement from "../Base/SvelteUIElement";
-import MapillaryLink from "../BigComponents/MapillaryLink.svelte";
+import SvelteUIElement from "../Base/SvelteUIElement"
+import MapillaryLink from "../BigComponents/MapillaryLink.svelte"
 
 export class MapillaryLinkVis implements SpecialVisualization {
     funcName = "mapillary_link"
@@ -31,9 +31,9 @@ export class MapillaryLinkVis implements SpecialVisualization {
         return new SvelteUIElement(MapillaryLink, {
             mapProperties: {
                 lat,
-                lon
+                lon,
             },
-            zoom: new ImmutableStore(zoom)
+            zoom: new ImmutableStore(zoom),
         })
     }
 }

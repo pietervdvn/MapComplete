@@ -3,11 +3,11 @@
    * Given an HTML string, properly shows this
    */
 
-  export let src: string;
-  let htmlElem: HTMLElement;
+  export let src: string
+  let htmlElem: HTMLElement
   $: {
     if (htmlElem) {
-      htmlElem.innerHTML = src;
+      htmlElem.innerHTML = src
     }
   }
 
@@ -15,6 +15,5 @@
 </script>
 
 {#if src !== undefined}
-  <span bind:this={htmlElem} class={clss}></span>
+  <span bind:this={htmlElem} class={clss} />
 {/if}
-

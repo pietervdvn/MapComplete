@@ -1,11 +1,11 @@
-import {GeoOperations} from "./GeoOperations"
+import { GeoOperations } from "./GeoOperations"
 import Combine from "../UI/Base/Combine"
 import BaseUIElement from "../UI/BaseUIElement"
 import List from "../UI/Base/List"
 import Title from "../UI/Base/Title"
-import {BBox} from "./BBox"
-import {Feature, Geometry, MultiPolygon, Polygon} from "geojson"
-import {GeoJSONFeature} from "maplibre-gl";
+import { BBox } from "./BBox"
+import { Feature, Geometry, MultiPolygon, Polygon } from "geojson"
+import { GeoJSONFeature } from "maplibre-gl"
 
 export interface ExtraFuncParams {
     /**
@@ -13,7 +13,10 @@ export interface ExtraFuncParams {
      * Note that more features then requested can be given back.
      * Format: [ [ geojson, geojson, geojson, ... ], [geojson, ...], ...]
      */
-    getFeaturesWithin: (layerId: string, bbox: BBox) => Feature<Geometry, Record<string, string>>[][]
+    getFeaturesWithin: (
+        layerId: string,
+        bbox: BBox
+    ) => Feature<Geometry, Record<string, string>>[][]
     getFeatureById: (id: string) => Feature<Geometry, Record<string, string>>
 }
 
@@ -55,7 +58,6 @@ class EnclosingFunc implements ExtraFunction {
                 }
                 for (const otherFeatures of otherFeaturess) {
                     for (const otherFeature of otherFeatures) {
-
                         if (seenIds.has(otherFeature.properties.id)) {
                             continue
                         }
@@ -72,7 +74,7 @@ class EnclosingFunc implements ExtraFunction {
                                 <Feature<Polygon | MultiPolygon, any>>otherFeature
                             )
                         ) {
-                            result.push({feat: otherFeature})
+                            result.push({ feat: otherFeature })
                         }
                     }
                 }
@@ -158,11 +160,14 @@ class IntersectionFunc implements ExtraFunction {
                 }
                 for (const otherFeatures of otherLayers) {
                     for (const otherFeature of otherFeatures) {
-                        const intersections = GeoOperations.LineIntersections(feat, <Feature<any, Record<string, string>>>otherFeature)
+                        const intersections = GeoOperations.LineIntersections(
+                            feat,
+                            <Feature<any, Record<string, string>>>otherFeature
+                        )
                         if (intersections.length === 0) {
                             continue
                         }
-                        result.push({feat: otherFeature, intersections})
+                        result.push({ feat: otherFeature, intersections })
                     }
                 }
             }
@@ -254,7 +259,14 @@ class ClosestNObjectFunc implements ExtraFunction {
         const maxDistance = options?.maxDistance ?? 500
         const uniqueTag: string | undefined = options?.uniqueTag
         let allFeatures: Feature[][]
-        console.log("Calculating closest", options?.maxFeatures, "features around", feature, "in layer", features)
+        console.log(
+            "Calculating closest",
+            options?.maxFeatures,
+            "features around",
+            feature,
+            "in layer",
+            features
+        )
         if (typeof features === "string") {
             const name = features
             const bbox = GeoOperations.bbox(
@@ -272,7 +284,6 @@ class ClosestNObjectFunc implements ExtraFunction {
         let closestFeatures: { feat: any; distance: number }[] = []
 
         for (const feats of allFeatures) {
-
             for (const otherFeature of feats) {
                 if (
                     otherFeature === feature ||
@@ -333,7 +344,7 @@ class ClosestNObjectFunc implements ExtraFunction {
                         const uniqueTagsMatch =
                             otherFeature.properties[uniqueTag] !== undefined &&
                             closestFeature.feat.properties[uniqueTag] ===
-                            otherFeature.properties[uniqueTag]
+                                otherFeature.properties[uniqueTag]
                         if (uniqueTagsMatch) {
                             targetIndex = -1
                             if (closestFeature.distance > distance) {
@@ -341,7 +352,7 @@ class ClosestNObjectFunc implements ExtraFunction {
                                 // We want to see the tag `uniquetag=some_value` only once in the entire list (e.g. to prevent road segements of identical names to fill up the list of 'names of nearby roads')
                                 // AT this point, we have found a closer segment with the same, identical tag
                                 // so we replace directly
-                                closestFeatures[i] = {feat: otherFeature, distance: distance}
+                                closestFeatures[i] = { feat: otherFeature, distance: distance }
                             }
                             break
                         }
@@ -468,7 +479,15 @@ export class ExtraFunctions {
         .SetClass("flex-col")
         .AsMarkdown()
 
-    static readonly types = ["distanceTo", "overlapWith", "enclosingFeatures", "intersectionsWith", "closest", "closestn", "get"] as const
+    static readonly types = [
+        "distanceTo",
+        "overlapWith",
+        "enclosingFeatures",
+        "intersectionsWith",
+        "closest",
+        "closestn",
+        "get",
+    ] as const
     private static readonly allFuncs = [
         new DistanceToFunc(),
         new OverlapFunc(),
@@ -479,8 +498,9 @@ export class ExtraFunctions {
         new GetParsed(),
     ]
 
-
-    public static constructHelpers(params: ExtraFuncParams): Record<ExtraFuncType, (feature: Feature) => Function> {
+    public static constructHelpers(
+        params: ExtraFuncParams
+    ): Record<ExtraFuncType, (feature: Feature) => Function> {
         const record: Record<string, (feature: GeoJSONFeature) => Function> = {}
         for (const f of ExtraFunctions.allFuncs) {
             if (this.types.indexOf(<any>f._name) < 0) {

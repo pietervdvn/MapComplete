@@ -2,38 +2,26 @@
  * The part of the global state which initializes the feature switches, based on default values and on the layoutToUse
  */
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import {UIEventSource} from "../UIEventSource"
-import {QueryParameters} from "../Web/QueryParameters"
+import { UIEventSource } from "../UIEventSource"
+import { QueryParameters } from "../Web/QueryParameters"
 import Constants from "../../Models/Constants"
-import {Utils} from "../../Utils"
+import { Utils } from "../../Utils"
 
 class FeatureSwitchUtils {
-     static initSwitch(
-         key: string,
-         deflt:boolean,
-         documentation: string
-     ): UIEventSource<boolean> {
-         const defaultValue = deflt
-         const queryParam = QueryParameters.GetQueryParameter(
-             key,
-             "" + defaultValue,
-             documentation
-         )
+    static initSwitch(key: string, deflt: boolean, documentation: string): UIEventSource<boolean> {
+        const defaultValue = deflt
+        const queryParam = QueryParameters.GetQueryParameter(key, "" + defaultValue, documentation)
 
-         // It takes the current layout, extracts the default value for this query parameter. A query parameter event source is then retrieved and flattened
-         return queryParam.sync(
-             (str) => (str === undefined ? defaultValue : str !== "false"),
-             [],
-             (b) => (b == defaultValue ? undefined : "" + b)
-         )
-
-
-     }
-
+        // It takes the current layout, extracts the default value for this query parameter. A query parameter event source is then retrieved and flattened
+        return queryParam.sync(
+            (str) => (str === undefined ? defaultValue : str !== "false"),
+            [],
+            (b) => (b == defaultValue ? undefined : "" + b)
+        )
+    }
 }
 
 export class OsmConnectionFeatureSwitches {
-
     public readonly featureSwitchFakeUser: UIEventSource<boolean>
     public readonly featureSwitchApiURL: UIEventSource<string>
 
@@ -52,8 +40,7 @@ export class OsmConnectionFeatureSwitches {
     }
 }
 
-
-export default class FeatureSwitchState extends OsmConnectionFeatureSwitches{
+export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
     /**
      * The layout that is being used in this run
      */
@@ -153,7 +140,6 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches{
             layoutToUse?.enableExportButton ?? true,
             "Enable the export as GeoJSON and CSV button"
         )
-
 
         let testingDefaultValue = false
         if (

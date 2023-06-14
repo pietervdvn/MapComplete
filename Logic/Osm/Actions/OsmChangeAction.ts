@@ -4,7 +4,7 @@
  */
 import { Changes } from "../Changes"
 import { ChangeDescription } from "./ChangeDescription"
-import {FeatureSource} from "../../FeatureSource/FeatureSource";
+import { FeatureSource } from "../../FeatureSource/FeatureSource"
 
 export default abstract class OsmChangeAction {
     public readonly trackStatistics: boolean

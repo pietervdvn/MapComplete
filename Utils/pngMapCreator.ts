@@ -1,9 +1,9 @@
 import ThemeViewState from "../Models/ThemeViewState"
-import {Utils} from "../Utils"
-import {UIEventSource} from "../Logic/UIEventSource"
-import {Map as MlMap} from "maplibre-gl"
-import {MapLibreAdaptor} from "../UI/Map/MapLibreAdaptor";
-import {AvailableRasterLayers} from "../Models/RasterLayers";
+import { Utils } from "../Utils"
+import { UIEventSource } from "../Logic/UIEventSource"
+import { Map as MlMap } from "maplibre-gl"
+import { MapLibreAdaptor } from "../UI/Map/MapLibreAdaptor"
+import { AvailableRasterLayers } from "../Models/RasterLayers"
 
 export interface PngMapCreatorOptions {
     readonly width: number
@@ -49,8 +49,8 @@ export class PngMapCreator {
                 style: AvailableRasterLayers.maplibre.properties.url,
                 center: [l.lon, l.lat],
                 zoom: settings.zoom.data,
-                pixelRatio
-            });
+                pixelRatio,
+            })
 
             const map = new UIEventSource<MlMap>(mapElem)
             const mla = new MapLibreAdaptor(map)
@@ -59,7 +59,6 @@ export class PngMapCreator {
             mla.rasterLayer.setData(settings.rasterLayer.data)
             mla.allowZooming.setData(false)
             mla.allowMoving.setData(false)
-
 
             this._state?.showNormalDataOn(map)
             console.log("Creating a map with size", this._options.width, this._options.height)
@@ -74,7 +73,15 @@ export class PngMapCreator {
             // Some extra buffer...
             setState("One second pause to make sure all images are loaded...")
             await Utils.waitFor(1000)
-            setState("Exporting png (" + this._options.width + "mm * " + this._options.height + "mm , maplibre-canvas-pixelratio: " + pixelRatio + ")")
+            setState(
+                "Exporting png (" +
+                    this._options.width +
+                    "mm * " +
+                    this._options.height +
+                    "mm , maplibre-canvas-pixelratio: " +
+                    pixelRatio +
+                    ")"
+            )
             return await mla.exportAsPng(pixelRatio)
         } finally {
             div.parentElement.removeChild(div)

@@ -7,7 +7,7 @@ import { Translation } from "./i18n/Translation"
 import Lazy from "./Base/Lazy"
 import Toggle from "./Input/Toggle"
 import LanguageUtils from "../Utils/LanguageUtils"
-import {UIEventSource} from "../Logic/UIEventSource";
+import { UIEventSource } from "../Logic/UIEventSource"
 
 export default class LanguagePicker extends Toggle {
     constructor(languages: string[], assignTo: UIEventSource<string>) {
@@ -16,13 +16,18 @@ export default class LanguagePicker extends Toggle {
             super(undefined, undefined, undefined)
         } else {
             const normalPicker = LanguagePicker.dropdownFor(languages, assignTo ?? Locale.language)
-            const fullPicker = new Lazy(() => LanguagePicker.dropdownFor(allLanguages, assignTo ?? Locale.language))
+            const fullPicker = new Lazy(() =>
+                LanguagePicker.dropdownFor(allLanguages, assignTo ?? Locale.language)
+            )
             super(fullPicker, normalPicker, Locale.showLinkToWeblate)
             const allLanguages: string[] = LanguageUtils.usedLanguagesSorted
         }
     }
 
-    private static dropdownFor(languages: string[], assignTo: UIEventSource<string>): BaseUIElement {
+    private static dropdownFor(
+        languages: string[],
+        assignTo: UIEventSource<string>
+    ): BaseUIElement {
         return new DropDown(
             undefined,
             languages
@@ -30,7 +35,7 @@ export default class LanguagePicker extends Toggle {
                 .map((lang) => {
                     return { value: lang, shown: LanguagePicker.hybrid(lang) }
                 }),
-           assignTo
+            assignTo
         )
     }
 

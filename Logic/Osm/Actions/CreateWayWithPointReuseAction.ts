@@ -1,17 +1,17 @@
-import {OsmCreateAction, PreviewableAction} from "./OsmChangeAction"
-import {Tag} from "../../Tags/Tag"
-import {Changes} from "../Changes"
-import {ChangeDescription} from "./ChangeDescription"
-import {BBox} from "../../BBox"
-import {TagsFilter} from "../../Tags/TagsFilter"
-import {GeoOperations} from "../../GeoOperations"
-import {FeatureSource, IndexedFeatureSource} from "../../FeatureSource/FeatureSource"
+import { OsmCreateAction, PreviewableAction } from "./OsmChangeAction"
+import { Tag } from "../../Tags/Tag"
+import { Changes } from "../Changes"
+import { ChangeDescription } from "./ChangeDescription"
+import { BBox } from "../../BBox"
+import { TagsFilter } from "../../Tags/TagsFilter"
+import { GeoOperations } from "../../GeoOperations"
+import { FeatureSource, IndexedFeatureSource } from "../../FeatureSource/FeatureSource"
 import StaticFeatureSource from "../../FeatureSource/Sources/StaticFeatureSource"
 import CreateNewNodeAction from "./CreateNewNodeAction"
 import CreateNewWayAction from "./CreateNewWayAction"
-import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig";
-import FullNodeDatabaseSource from "../../FeatureSource/TiledFeatureSource/FullNodeDatabaseSource";
-import {Position} from "geojson";
+import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
+import FullNodeDatabaseSource from "../../FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
+import { Position } from "geojson"
 
 export interface MergePointConfig {
     withinRangeOfM: number
@@ -56,7 +56,10 @@ interface CoordinateInfo {
 /**
  * More or less the same as 'CreateNewWay', except that it'll try to reuse already existing points
  */
-export default class CreateWayWithPointReuseAction extends OsmCreateAction implements PreviewableAction {
+export default class CreateWayWithPointReuseAction
+    extends OsmCreateAction
+    implements PreviewableAction
+{
     public newElementId: string = undefined
     public newElementIdNumber: number = undefined
     private readonly _tags: Tag[]
@@ -66,9 +69,9 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction imple
      */
     private readonly _coordinateInfo: CoordinateInfo[]
     private readonly _state: {
-        layout: LayoutConfig;
-        changes: Changes;
-        indexedFeatures: IndexedFeatureSource,
+        layout: LayoutConfig
+        changes: Changes
+        indexedFeatures: IndexedFeatureSource
         fullNodeDatabase?: FullNodeDatabaseSource
     }
     private readonly _config: MergePointConfig[]
@@ -77,9 +80,9 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction imple
         tags: Tag[],
         coordinates: Position[],
         state: {
-            layout: LayoutConfig;
-            changes: Changes;
-            indexedFeatures: IndexedFeatureSource,
+            layout: LayoutConfig
+            changes: Changes
+            indexedFeatures: IndexedFeatureSource
             fullNodeDatabase?: FullNodeDatabaseSource
         },
         config: MergePointConfig[]
@@ -90,7 +93,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction imple
         this._config = config
 
         // The main logic of this class: the coordinateInfo contains all the changes
-        this._coordinateInfo = this.CalculateClosebyNodes(<[number,number][]> coordinates)
+        this._coordinateInfo = this.CalculateClosebyNodes(<[number, number][]>coordinates)
     }
 
     public async getPreview(): Promise<FeatureSource> {
@@ -245,7 +248,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction imple
                     },
                 })
             }
-            nodeIdsToUse.push({lat, lon, nodeId: id})
+            nodeIdsToUse.push({ lat, lon, nodeId: id })
         }
 
         const newWay = new CreateNewWayAction(this._tags, nodeIdsToUse, {
@@ -321,7 +324,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction imple
                     if (!config.ifMatches.matchesProperties(node.properties)) {
                         continue
                     }
-                    closebyNodes.push({node, d, config})
+                    closebyNodes.push({ node, d, config })
                 }
             }
 

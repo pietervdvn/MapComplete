@@ -132,7 +132,7 @@ class CountryTagger extends SimpleMetaTagger {
         CountryTagger.coder
             .GetCountryCodeAsync(lon, lat)
             .then((countries) => {
-                if(!countries){
+                if (!countries) {
                     console.warn("Country coder returned ", countries)
                     return
                 }
@@ -315,8 +315,7 @@ export default class SimpleMetaTaggers {
         },
         (feature) => {
             Utils.AddLazyProperty(feature.properties, "_surface", () => {
-               return "" + GeoOperations.surfaceAreaInSqMeters(feature)
-
+                return "" + GeoOperations.surfaceAreaInSqMeters(feature)
             })
 
             return true

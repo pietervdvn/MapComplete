@@ -1,9 +1,9 @@
-import {Conversion} from "./Conversion"
+import { Conversion } from "./Conversion"
 import LayerConfig from "../LayerConfig"
-import {LayerConfigJson} from "../Json/LayerConfigJson"
+import { LayerConfigJson } from "../Json/LayerConfigJson"
 import Translations from "../../../UI/i18n/Translations"
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
-import {Translation, TypedTranslation} from "../../../UI/i18n/Translation"
+import { Translation, TypedTranslation } from "../../../UI/i18n/Translation"
 
 export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, LayerConfigJson> {
     /**
@@ -101,7 +101,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                 geoJsonZoomLevel: 10,
                 maxCacheAge: 0,
             },
-             /* We need to set 'pass_all_features'
+            /* We need to set 'pass_all_features'
              There are probably many note_import-layers, and we don't want the first one to gobble up all notes and then discard them...
              */
             passAllFeatures: true,
@@ -175,7 +175,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                     render: tr(t.nearbyImagesIntro),
                 },
                 {
-                    id:"all_tags",
+                    id: "all_tags",
                     render: "{all_tags()}",
                     metacondition: {
                         or: [
@@ -184,7 +184,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                             "mapcomplete-show_debug=yes",
                         ],
                     },
-                }
+                },
             ],
             mapRendering: [
                 {

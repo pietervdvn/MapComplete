@@ -1,28 +1,28 @@
-import {SubtleButton} from "../Base/SubtleButton"
+import { SubtleButton } from "../Base/SubtleButton"
 import Combine from "../Base/Combine"
 import Svg from "../../Svg"
 import Toggle from "../Input/Toggle"
-import {UIEventSource} from "../../Logic/UIEventSource"
+import { UIEventSource } from "../../Logic/UIEventSource"
 import Translations from "../i18n/Translations"
-import {VariableUiElement} from "../Base/VariableUIElement"
-import {Translation} from "../i18n/Translation"
+import { VariableUiElement } from "../Base/VariableUIElement"
+import { Translation } from "../i18n/Translation"
 import BaseUIElement from "../BaseUIElement"
-import {GeoOperations} from "../../Logic/GeoOperations"
+import { GeoOperations } from "../../Logic/GeoOperations"
 import ChangeLocationAction from "../../Logic/Osm/Actions/ChangeLocationAction"
 import MoveConfig from "../../Models/ThemeConfig/MoveConfig"
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
-import {And} from "../../Logic/Tags/And"
-import {Tag} from "../../Logic/Tags/Tag"
-import {LoginToggle} from "./LoginButton"
-import {SpecialVisualizationState} from "../SpecialVisualization"
-import {Feature, Point} from "geojson"
-import {OsmTags} from "../../Models/OsmFeature"
+import { And } from "../../Logic/Tags/And"
+import { Tag } from "../../Logic/Tags/Tag"
+import { LoginToggle } from "./LoginButton"
+import { SpecialVisualizationState } from "../SpecialVisualization"
+import { Feature, Point } from "geojson"
+import { OsmTags } from "../../Models/OsmFeature"
 import SvelteUIElement from "../Base/SvelteUIElement"
-import {MapProperties} from "../../Models/MapProperties"
+import { MapProperties } from "../../Models/MapProperties"
 import LocationInput from "../InputElement/Helpers/LocationInput.svelte"
 import Geosearch from "../BigComponents/Geosearch.svelte"
 import Constants from "../../Models/Constants"
-import OpenBackgroundSelectorButton from "../BigComponents/OpenBackgroundSelectorButton.svelte";
+import OpenBackgroundSelectorButton from "../BigComponents/OpenBackgroundSelectorButton.svelte"
 
 interface MoveReason {
     text: Translation | string
@@ -102,9 +102,11 @@ export default class MoveWizard extends Toggle {
             })
         }
 
-        const moveAgainButton = new SubtleButton(Svg.move_svg(), t.inviteToMoveAgain).onClick(() => {
-            currentStep.setData("reason")
-        })
+        const moveAgainButton = new SubtleButton(Svg.move_svg(), t.inviteToMoveAgain).onClick(
+            () => {
+                currentStep.setData("reason")
+            }
+        )
 
         const selectReason = new Combine(
             reasons.map((r) =>
@@ -128,26 +130,27 @@ export default class MoveWizard extends Toggle {
             const mapProperties: Partial<MapProperties> = {
                 minzoom: new UIEventSource(reason.minZoom),
                 zoom: new UIEventSource(reason?.startZoom ?? 16),
-                location: new UIEventSource({lon, lat}),
+                location: new UIEventSource({ lon, lat }),
                 bounds: new UIEventSource(undefined),
-                rasterLayer: state.mapProperties.rasterLayer
+                rasterLayer: state.mapProperties.rasterLayer,
             }
             const value = new UIEventSource<{ lon: number; lat: number }>(undefined)
-            const locationInput =
-                new Combine([
-
-                    new SvelteUIElement(LocationInput, {
-                        mapProperties,
-                        value,
-                    }).SetClass("w-full h-full"),
-                    new SvelteUIElement(OpenBackgroundSelectorButton, {state}).SetClass("absolute bottom-0 left-0")
-
-                ]).SetClass("relative w-full h-full")
-
+            const locationInput = new Combine([
+                new SvelteUIElement(LocationInput, {
+                    mapProperties,
+                    value,
+                }).SetClass("w-full h-full"),
+                new SvelteUIElement(OpenBackgroundSelectorButton, { state }).SetClass(
+                    "absolute bottom-0 left-0"
+                ),
+            ]).SetClass("relative w-full h-full")
 
             let searchPanel: BaseUIElement = undefined
             if (reason.includeSearch) {
-                searchPanel = new SvelteUIElement(Geosearch, {bounds: mapProperties.bounds, clearAfterView: false})
+                searchPanel = new SvelteUIElement(Geosearch, {
+                    bounds: mapProperties.bounds,
+                    clearAfterView: false,
+                })
             }
 
             locationInput.SetStyle("height: 17.5rem")

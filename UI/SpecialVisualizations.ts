@@ -1,52 +1,56 @@
 import Combine from "./Base/Combine"
-import {FixedUiElement} from "./Base/FixedUiElement"
+import { FixedUiElement } from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import Table from "./Base/Table"
-import {RenderingSpecification, SpecialVisualization, SpecialVisualizationState,} from "./SpecialVisualization"
-import {HistogramViz} from "./Popup/HistogramViz"
-import {MinimapViz} from "./Popup/MinimapViz"
-import {ShareLinkViz} from "./Popup/ShareLinkViz"
-import {UploadToOsmViz} from "./Popup/UploadToOsmViz"
-import {MultiApplyViz} from "./Popup/MultiApplyViz"
-import {AddNoteCommentViz} from "./Popup/AddNoteCommentViz"
-import {PlantNetDetectionViz} from "./Popup/PlantNetDetectionViz"
+import {
+    RenderingSpecification,
+    SpecialVisualization,
+    SpecialVisualizationState,
+} from "./SpecialVisualization"
+import { HistogramViz } from "./Popup/HistogramViz"
+import { MinimapViz } from "./Popup/MinimapViz"
+import { ShareLinkViz } from "./Popup/ShareLinkViz"
+import { UploadToOsmViz } from "./Popup/UploadToOsmViz"
+import { MultiApplyViz } from "./Popup/MultiApplyViz"
+import { AddNoteCommentViz } from "./Popup/AddNoteCommentViz"
+import { PlantNetDetectionViz } from "./Popup/PlantNetDetectionViz"
 import TagApplyButton from "./Popup/TagApplyButton"
-import {CloseNoteButton} from "./Popup/CloseNoteButton"
-import {MapillaryLinkVis} from "./Popup/MapillaryLinkVis"
-import {Store, Stores, UIEventSource} from "../Logic/UIEventSource"
+import { CloseNoteButton } from "./Popup/CloseNoteButton"
+import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis"
+import { Store, Stores, UIEventSource } from "../Logic/UIEventSource"
 import AllTagsPanel from "./Popup/AllTagsPanel.svelte"
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders"
-import {ImageCarousel} from "./Image/ImageCarousel"
-import {ImageUploadFlow} from "./Image/ImageUploadFlow"
-import {VariableUiElement} from "./Base/VariableUIElement"
-import {Utils} from "../Utils"
-import Wikidata, {WikidataResponse} from "../Logic/Web/Wikidata"
-import {Translation} from "./i18n/Translation"
+import { ImageCarousel } from "./Image/ImageCarousel"
+import { ImageUploadFlow } from "./Image/ImageUploadFlow"
+import { VariableUiElement } from "./Base/VariableUIElement"
+import { Utils } from "../Utils"
+import Wikidata, { WikidataResponse } from "../Logic/Web/Wikidata"
+import { Translation } from "./i18n/Translation"
 import Translations from "./i18n/Translations"
 import ReviewForm from "./Reviews/ReviewForm"
 import ReviewElement from "./Reviews/ReviewElement"
 import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
 import LiveQueryHandler from "../Logic/Web/LiveQueryHandler"
-import {SubtleButton} from "./Base/SubtleButton"
+import { SubtleButton } from "./Base/SubtleButton"
 import Svg from "../Svg"
 import NoteCommentElement from "./Popup/NoteCommentElement"
 import ImgurUploader from "../Logic/ImageProviders/ImgurUploader"
 import FileSelectorButton from "./Input/FileSelectorButton"
-import {LoginToggle} from "./Popup/LoginButton"
+import { LoginToggle } from "./Popup/LoginButton"
 import Toggle from "./Input/Toggle"
-import {SubstitutedTranslation} from "./SubstitutedTranslation"
+import { SubstitutedTranslation } from "./SubstitutedTranslation"
 import List from "./Base/List"
 import StatisticsPanel from "./BigComponents/StatisticsPanel"
 import AutoApplyButton from "./Popup/AutoApplyButton"
-import {LanguageElement} from "./Popup/LanguageElement"
+import { LanguageElement } from "./Popup/LanguageElement"
 import FeatureReviews from "../Logic/Web/MangroveReviews"
 import Maproulette from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
-import {BBoxFeatureSourceForLayer} from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
+import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import QuestionViz from "./Popup/QuestionViz"
-import {Feature, Point} from "geojson"
-import {GeoOperations} from "../Logic/GeoOperations"
+import { Feature, Point } from "geojson"
+import { GeoOperations } from "../Logic/GeoOperations"
 import CreateNewNote from "./Popup/CreateNewNote.svelte"
 import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
 import UserProfile from "./BigComponents/UserProfile.svelte"
@@ -54,26 +58,30 @@ import LanguagePicker from "./LanguagePicker"
 import Link from "./Base/Link"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
-import NearbyImages, {NearbyImageOptions, P4CPicture, SelectOneNearbyImage,} from "./Popup/NearbyImages"
-import {Tag} from "../Logic/Tags/Tag"
+import NearbyImages, {
+    NearbyImageOptions,
+    P4CPicture,
+    SelectOneNearbyImage,
+} from "./Popup/NearbyImages"
+import { Tag } from "../Logic/Tags/Tag"
 import ChangeTagAction from "../Logic/Osm/Actions/ChangeTagAction"
-import {And} from "../Logic/Tags/And"
-import {SaveButton} from "./Popup/SaveButton"
+import { And } from "../Logic/Tags/And"
+import { SaveButton } from "./Popup/SaveButton"
 import Lazy from "./Base/Lazy"
-import {CheckBox} from "./Input/Checkboxes"
+import { CheckBox } from "./Input/Checkboxes"
 import Slider from "./Input/Slider"
-import {OsmTags, WayId} from "../Models/OsmFeature"
+import { OsmTags, WayId } from "../Models/OsmFeature"
 import MoveWizard from "./Popup/MoveWizard"
 import SplitRoadWizard from "./Popup/SplitRoadWizard"
-import {ExportAsGpxViz} from "./Popup/ExportAsGpxViz"
+import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz"
 import WikipediaPanel from "./Wikipedia/WikipediaPanel.svelte"
-import TagRenderingEditable from "./Popup/TagRendering/TagRenderingEditable.svelte";
-import {PointImportButtonViz} from "./Popup/ImportButtons/PointImportButtonViz";
-import WayImportButtonViz from "./Popup/ImportButtons/WayImportButtonViz";
-import ConflateImportButtonViz from "./Popup/ImportButtons/ConflateImportButtonViz";
-import DeleteWizard from "./Popup/DeleteFlow/DeleteWizard.svelte";
-import {OpenJosm} from "./BigComponents/OpenJosm";
-import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte";
+import TagRenderingEditable from "./Popup/TagRendering/TagRenderingEditable.svelte"
+import { PointImportButtonViz } from "./Popup/ImportButtons/PointImportButtonViz"
+import WayImportButtonViz from "./Popup/ImportButtons/WayImportButtonViz"
+import ConflateImportButtonViz from "./Popup/ImportButtons/ConflateImportButtonViz"
+import DeleteWizard from "./Popup/DeleteFlow/DeleteWizard.svelte"
+import { OpenJosm } from "./BigComponents/OpenJosm"
+import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -129,12 +137,7 @@ class NearbyImageVis implements SpecialVisualization {
                     })
                 )
             }
-            saveButton = new SaveButton(
-                selectedImage,
-                state,
-                confirmText,
-                t.noImageSelected
-            )
+            saveButton = new SaveButton(selectedImage, state, confirmText, t.noImageSelected)
                 .onClick(onSave)
                 .SetClass("flex justify-end")
         }
@@ -177,7 +180,7 @@ class NearbyImageVis implements SpecialVisualization {
                 towardsCenter,
                 new Combine([
                     new VariableUiElement(
-                        radius.GetValue().map((radius) => t.withinRadius.Subs({radius}))
+                        radius.GetValue().map((radius) => t.withinRadius.Subs({ radius }))
                     ),
                     radius,
                 ]).SetClass("flex justify-between"),
@@ -238,28 +241,33 @@ class StealViz implements SpecialVisualization {
             throw "Could not create stolen tagrenddering: tagRenderings not found"
         }
         return new VariableUiElement(
-            featureTags.map((tags) => {
-                const featureId = tags[featureIdKey]
-                if (featureId === undefined) {
-                    return undefined
-                }
-                const otherTags = state.featureProperties.getStore(featureId)
-                const otherFeature = state.indexedFeatures.featuresById.data.get(featureId);
-                const elements: BaseUIElement[] = []
-                for (const [layer, tagRendering] of tagRenderings) {
-                    elements.push(new SvelteUIElement(TagRenderingEditable, {
-                        config: tagRendering,
-                        tags: otherTags,
-                        selectedElement: otherFeature,
-                        state,
-                        layer
-                    }))
-                }
-                if (elements.length === 1) {
-                    return elements[0]
-                }
-                return new Combine(elements).SetClass("flex flex-col")
-            }, [state.indexedFeatures.featuresById])
+            featureTags.map(
+                (tags) => {
+                    const featureId = tags[featureIdKey]
+                    if (featureId === undefined) {
+                        return undefined
+                    }
+                    const otherTags = state.featureProperties.getStore(featureId)
+                    const otherFeature = state.indexedFeatures.featuresById.data.get(featureId)
+                    const elements: BaseUIElement[] = []
+                    for (const [layer, tagRendering] of tagRenderings) {
+                        elements.push(
+                            new SvelteUIElement(TagRenderingEditable, {
+                                config: tagRendering,
+                                tags: otherTags,
+                                selectedElement: otherFeature,
+                                state,
+                                layer,
+                            })
+                        )
+                    }
+                    if (elements.length === 1) {
+                        return elements[0]
+                    }
+                    return new Combine(elements).SetClass("flex flex-col")
+                },
+                [state.indexedFeatures.featuresById]
+            )
         )
     }
 
@@ -327,7 +335,8 @@ export default class SpecialVisualizations {
                     matched[1],
                     extraMappings
                 )
-                const argument = matched[2] /* .trim()  // We don't trim, as spaces might be relevant, e.g. "what is ... of {title()}"*/
+                const argument =
+                    matched[2] /* .trim()  // We don't trim, as spaces might be relevant, e.g. "what is ... of {title()}"*/
                 const style = matched[3]?.substring(1) ?? ""
                 const partAfter = SpecialVisualizations.constructSpecification(
                     matched[4],
@@ -367,10 +376,7 @@ export default class SpecialVisualizations {
                         .join(", ")
             }
 
-            console.warn(
-                "Found a suspicious special rendering value in: ",
-                template, suggestion
-            )
+            console.warn("Found a suspicious special rendering value in: ", template, suggestion)
         }
 
         // IF we end up here, no changes have to be made - except to remove any resting {}
@@ -389,24 +395,24 @@ export default class SpecialVisualizations {
             viz.docs,
             viz.args.length > 0
                 ? new Table(
-                    ["name", "default", "description"],
-                    viz.args.map((arg) => {
-                        let defaultArg = arg.defaultValue ?? "_undefined_"
-                        if (defaultArg == "") {
-                            defaultArg = "_empty string_"
-                        }
-                        return [arg.name, defaultArg, arg.doc]
-                    })
-                )
+                      ["name", "default", "description"],
+                      viz.args.map((arg) => {
+                          let defaultArg = arg.defaultValue ?? "_undefined_"
+                          if (defaultArg == "") {
+                              defaultArg = "_empty string_"
+                          }
+                          return [arg.name, defaultArg, arg.doc]
+                      })
+                  )
                 : undefined,
             new Title("Example usage of " + viz.funcName, 4),
             new FixedUiElement(
                 viz.example ??
-                "`{" +
-                viz.funcName +
-                "(" +
-                viz.args.map((arg) => arg.defaultValue).join(",") +
-                ")}`"
+                    "`{" +
+                        viz.funcName +
+                        "(" +
+                        viz.args.map((arg) => arg.defaultValue).join(",") +
+                        ")}`"
             ).SetClass("literal-code"),
         ])
     }
@@ -465,14 +471,14 @@ export default class SpecialVisualizations {
             s.structuredExamples === undefined
                 ? []
                 : s.structuredExamples().map((e) => {
-                    return s.constr(
-                        state,
-                        new UIEventSource<Record<string, string>>(e.feature.properties),
-                        e.args,
-                        e.feature,
-                        undefined
-                    )
-                })
+                      return s.constr(
+                          state,
+                          new UIEventSource<Record<string, string>>(e.feature.properties),
+                          e.args,
+                          e.feature,
+                          undefined
+                      )
+                  })
         return new Combine([new Title(s.funcName), s.docs, ...examples])
     }
 
@@ -487,7 +493,7 @@ export default class SpecialVisualizations {
                     let [lon, lat] = GeoOperations.centerpointCoordinates(feature)
                     return new SvelteUIElement(AddNewPoint, {
                         state,
-                        coordinate: {lon, lat},
+                        coordinate: { lon, lat },
                     })
                 },
             },
@@ -586,7 +592,7 @@ export default class SpecialVisualizations {
                         deleteConfig: layer.deletion,
                         state,
                         feature,
-                        layer
+                        layer,
                     })
                 },
             },
@@ -606,7 +612,7 @@ export default class SpecialVisualizations {
                     feature: Feature
                 ): BaseUIElement {
                     const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
-                    return new SvelteUIElement(CreateNewNote, {state, coordinate: {lon, lat}})
+                    return new SvelteUIElement(CreateNewNote, { state, coordinate: { lon, lat } })
                 },
             },
             new CloseNoteButton(),
@@ -683,7 +689,7 @@ export default class SpecialVisualizations {
                 docs: "Prints all key-value pairs of the object - used for debugging",
                 args: [],
                 constr: (state, tags: UIEventSource<any>) =>
-                    new SvelteUIElement(AllTagsPanel, {tags, state}),
+                    new SvelteUIElement(AllTagsPanel, { tags, state }),
             },
             {
                 funcName: "image_carousel",
@@ -890,8 +896,10 @@ export default class SpecialVisualizations {
                 docs: "Opens the current view in the iD-editor",
                 args: [],
                 constr: (state, feature) => {
-                    return new SvelteUIElement(OpenIdEditor,
-                        { mapProperties: state.mapProperties, objectId: feature.data.id})
+                    return new SvelteUIElement(OpenIdEditor, {
+                        mapProperties: state.mapProperties,
+                        objectId: feature.data.id,
+                    })
                 },
             },
             {
@@ -1012,7 +1020,9 @@ export default class SpecialVisualizations {
                             if (title === undefined) {
                                 return undefined
                             }
-                            return new SubstitutedTranslation(title, tagsSource, state).SetClass("px-1")
+                            return new SubstitutedTranslation(title, tagsSource, state).SetClass(
+                                "px-1"
+                            )
                         })
                     ),
             },
@@ -1110,7 +1120,7 @@ export default class SpecialVisualizations {
                     if (image === "") {
                         image = "confirm"
                     }
-                    if(maproulette_id_key === "" || maproulette_id_key === undefined){
+                    if (maproulette_id_key === "" || maproulette_id_key === undefined) {
                         maproulette_id_key = "mr_taskId"
                     }
                     if (Svg.All[image] !== undefined || Svg.All[image + ".svg"] !== undefined) {
@@ -1125,7 +1135,9 @@ export default class SpecialVisualizations {
                         Translations.t.general.loading,
                         async () => {
                             const maproulette_id =
-                                tagsSource.data[maproulette_id_key] ?? tagsSource.data.mr_taskId ?? tagsSource.data.id
+                                tagsSource.data[maproulette_id_key] ??
+                                tagsSource.data.mr_taskId ??
+                                tagsSource.data.id
                             try {
                                 await Maproulette.singleton.closeTask(
                                     Number(maproulette_id),
@@ -1152,16 +1164,14 @@ export default class SpecialVisualizations {
 
                     return new VariableUiElement(
                         tagsSource
-                            .map(
-                                (tgs) => {
-                                    if(tgs["status"]){
-                                        return tgs["status"]
-                                    }
-                                    const code = tgs["mr_taskStatus"]
-                                    console.log("Code is", code, Maproulette.codeToIndex(code))
-                                    return Maproulette.codeToIndex(code)
+                            .map((tgs) => {
+                                if (tgs["status"]) {
+                                    return tgs["status"]
                                 }
-                            )
+                                const code = tgs["mr_taskStatus"]
+                                console.log("Code is", code, Maproulette.codeToIndex(code))
+                                return Maproulette.codeToIndex(code)
+                            })
                             .map(Number)
                             .map(
                                 (status) => {
@@ -1318,7 +1328,7 @@ export default class SpecialVisualizations {
                 ],
                 constr(state, featureTags, args) {
                     const [key, tr] = args
-                    const translation = new Translation({"*": tr})
+                    const translation = new Translation({ "*": tr })
                     return new VariableUiElement(
                         featureTags.map((tags) => {
                             const properties: object[] = JSON.parse(tags[key])
@@ -1341,7 +1351,7 @@ export default class SpecialVisualizations {
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
 
         const invalid = specialVisualizations
-            .map((sp, i) => ({sp, i}))
+            .map((sp, i) => ({ sp, i }))
             .filter((sp) => sp.sp.funcName === undefined)
         if (invalid.length > 0) {
             throw (

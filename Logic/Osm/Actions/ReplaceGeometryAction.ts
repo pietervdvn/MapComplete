@@ -1,21 +1,21 @@
-import OsmChangeAction, {PreviewableAction} from "./OsmChangeAction"
-import {Changes} from "../Changes"
-import {ChangeDescription} from "./ChangeDescription"
-import {Tag} from "../../Tags/Tag"
-import {FeatureSource} from "../../FeatureSource/FeatureSource"
-import {OsmNode, OsmObject, OsmWay} from "../OsmObject"
-import {GeoOperations} from "../../GeoOperations"
+import OsmChangeAction, { PreviewableAction } from "./OsmChangeAction"
+import { Changes } from "../Changes"
+import { ChangeDescription } from "./ChangeDescription"
+import { Tag } from "../../Tags/Tag"
+import { FeatureSource } from "../../FeatureSource/FeatureSource"
+import { OsmNode, OsmObject, OsmWay } from "../OsmObject"
+import { GeoOperations } from "../../GeoOperations"
 import StaticFeatureSource from "../../FeatureSource/Sources/StaticFeatureSource"
 import CreateNewNodeAction from "./CreateNewNodeAction"
 import ChangeTagAction from "./ChangeTagAction"
-import {And} from "../../Tags/And"
-import {Utils} from "../../../Utils"
-import {OsmConnection} from "../OsmConnection"
-import {Feature} from "@turf/turf"
-import {Geometry, LineString, Point} from "geojson"
+import { And } from "../../Tags/And"
+import { Utils } from "../../../Utils"
+import { OsmConnection } from "../OsmConnection"
+import { Feature } from "@turf/turf"
+import { Geometry, LineString, Point } from "geojson"
 import FullNodeDatabaseSource from "../../FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
 
-export default class ReplaceGeometryAction extends OsmChangeAction implements PreviewableAction{
+export default class ReplaceGeometryAction extends OsmChangeAction implements PreviewableAction {
     /**
      * The target feature - mostly used for the metadata
      */
@@ -45,7 +45,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction implements Pr
     public readonly newElementId: string
     constructor(
         state: {
-            osmConnection: OsmConnection,
+            osmConnection: OsmConnection
             fullNodeDatabase?: FullNodeDatabaseSource
         },
         feature: any,
@@ -460,7 +460,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction implements Pr
             }
         }
 
-            console.log("Adding tags", this.newTags,"to conflated way nr", this.wayToReplaceId)
+        console.log("Adding tags", this.newTags, "to conflated way nr", this.wayToReplaceId)
         if (this.newTags !== undefined && this.newTags.length > 0) {
             const addExtraTags = new ChangeTagAction(
                 this.wayToReplaceId,

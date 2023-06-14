@@ -1,8 +1,8 @@
-import {SpecialVisualizationState} from "../SpecialVisualization";
-import {Feature, FeatureCollection} from "geojson";
-import {BBox} from "../../Logic/BBox";
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-import {Utils} from "../../Utils";
+import { SpecialVisualizationState } from "../SpecialVisualization"
+import { Feature, FeatureCollection } from "geojson"
+import { BBox } from "../../Logic/BBox"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import { Utils } from "../../Utils"
 import SimpleMetaTagger from "../../Logic/SimpleMetaTagger"
 import geojson2svg from "geojson2svg"
 
@@ -10,11 +10,10 @@ import geojson2svg from "geojson2svg"
  * Exposes the download-functionality
  */
 export default class DownloadHelper {
-    private readonly _state: SpecialVisualizationState;
+    private readonly _state: SpecialVisualizationState
 
     constructor(state: SpecialVisualizationState) {
-        this._state = state;
-
+        this._state = state
     }
 
     /**
@@ -23,8 +22,8 @@ export default class DownloadHelper {
     private static cleanFeature(f: Feature): Feature {
         f = {
             type: f.type,
-            geometry: {...f.geometry},
-            properties: {...f.properties},
+            geometry: { ...f.geometry },
+            properties: { ...f.properties },
         }
 
         for (const key in f.properties) {
@@ -46,9 +45,7 @@ export default class DownloadHelper {
         return f
     }
 
-    public getCleanGeoJson(
-        includeMetaData: boolean
-    ): FeatureCollection {
+    public getCleanGeoJson(includeMetaData: boolean): FeatureCollection {
         const featuresPerLayer = this.getCleanGeoJsonPerLayer(includeMetaData)
         const features = [].concat(...Array.from(featuresPerLayer.values()))
         return {
@@ -79,15 +76,13 @@ export default class DownloadHelper {
      * perLayer.set("testlayer", features)
      * new DownloadHelper(<any> {perLayer}).asSvg().replace(/\n/g, "") // => `<svg width="1000px" height="1000px" viewBox="0 0 1000 1000">    <g id="testlayer" inkscape:groupmode="layer" inkscape:label="testlayer">        <path d="M0,27.77777777777778 1000,472.22222222222223" style="fill:none;stroke-width:1" stroke="#ff0000"/>    </g></svg>`
      */
-    public asSvg(
-        options?: {
-            layers?: LayerConfig[]
-            width?: 1000 | number
-            height?: 1000 | number
-            mapExtent?: BBox
-            unit?: "px" | "mm" | string
-        }
-    ) {
+    public asSvg(options?: {
+        layers?: LayerConfig[]
+        width?: 1000 | number
+        height?: 1000 | number
+        mapExtent?: BBox
+        unit?: "px" | "mm" | string
+    }) {
         const perLayer = this._state.perLayer
         options = options ?? {}
         const width = options.width ?? 1000
@@ -96,7 +91,7 @@ export default class DownloadHelper {
             throw "Invalid width of height, they should be > 0"
         }
         const unit = options.unit ?? "px"
-        const mapExtent = {left: -180, bottom: -90, right: 180, top: 90}
+        const mapExtent = { left: -180, bottom: -90, right: 180, top: 90 }
         if (options.mapExtent !== undefined) {
             const bbox = options.mapExtent
             mapExtent.left = bbox.minLon
@@ -104,7 +99,7 @@ export default class DownloadHelper {
             mapExtent.bottom = bbox.minLat
             mapExtent.top = bbox.maxLat
         }
-        console.log("Generateing svg, extent:", {mapExtent, width, height})
+        console.log("Generateing svg, extent:", { mapExtent, width, height })
         const elements: string[] = []
 
         for (const layer of Array.from(perLayer.keys())) {
@@ -117,7 +112,7 @@ export default class DownloadHelper {
             const rendering = layerDef?.lineRendering[0]
 
             const converter = geojson2svg({
-                viewportSize: {width, height},
+                viewportSize: { width, height },
                 mapExtent,
                 output: "svg",
                 attributes: [
@@ -140,7 +135,7 @@ export default class DownloadHelper {
                 feature.properties.stroke = Utils.colorAsHex(Utils.color(stroke))
             }
 
-            const groupPaths: string[] = converter.convert({type: "FeatureCollection", features})
+            const groupPaths: string[] = converter.convert({ type: "FeatureCollection", features })
             const group =
                 `    <g id="${layer}" inkscape:groupmode="layer" inkscape:label="${layer}">\n` +
                 groupPaths.map((p) => "        " + p).join("\n") +
@@ -154,9 +149,7 @@ export default class DownloadHelper {
         return header + "\n" + elements.join("\n") + "\n</svg>"
     }
 
-    public getCleanGeoJsonPerLayer(
-        includeMetaData: boolean
-    ): Map<string, Feature[]> {
+    public getCleanGeoJsonPerLayer(includeMetaData: boolean): Map<string, Feature[]> {
         const state = this._state
         const featuresPerLayer = new Map<string, any[]>()
         const neededLayers = state.layout.layers.filter((l) => l.source !== null).map((l) => l.id)
@@ -188,15 +181,20 @@ export default class DownloadHelper {
     createImage(key: string, width: string, height: string): HTMLImageElement {
         const img = document.createElement("img")
         const sources = {
-            "layouticon":this._state.layout.icon
+            layouticon: this._state.layout.icon,
         }
         img.src = sources[key]
-        if(!img.src){
-            throw "Invalid key for 'createImage': "+key+"; try one of: "+Object.keys(sources).join(", ")
+        if (!img.src) {
+            throw (
+                "Invalid key for 'createImage': " +
+                key +
+                "; try one of: " +
+                Object.keys(sources).join(", ")
+            )
         }
         img.style.width = width
         img.style.height = height
         console.log("Fetching an image with src", img.src)
-        return img;
+        return img
     }
 }

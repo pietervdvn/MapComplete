@@ -1,8 +1,8 @@
-import {Utils} from "../../Utils"
+import { Utils } from "../../Utils"
 import polygon_features from "../../assets/polygon-features.json"
 import OsmToGeoJson from "osmtogeojson"
-import {OsmFeature, OsmId, OsmTags, WayId} from "../../Models/OsmFeature"
-import {Feature, LineString, Polygon} from "geojson"
+import { OsmFeature, OsmId, OsmTags, WayId } from "../../Models/OsmFeature"
+import { Feature, LineString, Polygon } from "geojson"
 
 export abstract class OsmObject {
     private static defaultBackend = "https://www.openstreetmap.org/"
@@ -198,7 +198,6 @@ export class OsmNode extends OsmObject {
         this.LoadData(extraData)
     }
 
-
     /**
      *
      * const obj = new OsmNode(1234)
@@ -213,11 +212,11 @@ export class OsmNode extends OsmObject {
      */
     ChangesetXML(changesetId: string, header?: string): string {
         let tags = this.TagsXML()
-        return (
-            `    <node id="${this.id}" ${header ?? ""} ${changesetId ? (' changeset="' + changesetId+ '" ') : ""}${this.VersionXML()} lat="${this.lat}" lon="${this.lon}">
+        return `    <node id="${this.id}" ${header ?? ""} ${
+            changesetId ? ' changeset="' + changesetId + '" ' : ""
+        }${this.VersionXML()} lat="${this.lat}" lon="${this.lon}">
 ${tags}    </node>
 `
-        )
     }
 
     SaveExtraData(element) {
@@ -269,11 +268,11 @@ export class OsmWay extends OsmObject {
             nds += '      <nd ref="' + this.nodes[node] + '"/>\n'
         }
 
-        return (
-            `    <way id="${this.id}" ${header ?? ""} ${changesetId ? ('changeset="' + changesetId + '" ') : ""} ${this.VersionXML()}>
+        return `    <way id="${this.id}" ${header ?? ""} ${
+            changesetId ? 'changeset="' + changesetId + '" ' : ""
+        } ${this.VersionXML()}>
 ${nds}${tags}    </way>
 `
-        )
     }
 
     SaveExtraData(element, allNodes: OsmNode[]) {

@@ -1,25 +1,25 @@
 import Combine from "../Base/Combine"
 import Translations from "../i18n/Translations"
-import {Store} from "../../Logic/UIEventSource"
-import {FixedUiElement} from "../Base/FixedUiElement"
+import { Store } from "../../Logic/UIEventSource"
+import { FixedUiElement } from "../Base/FixedUiElement"
 import licenses from "../../assets/generated/license_info.json"
 import SmallLicense from "../../Models/smallLicense"
-import {Utils} from "../../Utils"
+import { Utils } from "../../Utils"
 import Link from "../Base/Link"
-import {VariableUiElement} from "../Base/VariableUIElement"
+import { VariableUiElement } from "../Base/VariableUIElement"
 import contributors from "../../assets/contributors.json"
 import translators from "../../assets/translators.json"
 import BaseUIElement from "../BaseUIElement"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import Title from "../Base/Title"
-import {BBox} from "../../Logic/BBox"
-import {OsmConnection} from "../../Logic/Osm/OsmConnection"
+import { BBox } from "../../Logic/BBox"
+import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import Constants from "../../Models/Constants"
 import ContributorCount from "../../Logic/ContributorCount"
 import Img from "../Base/Img"
-import {TypedTranslation} from "../i18n/Translation"
+import { TypedTranslation } from "../i18n/Translation"
 import GeoIndexedStore from "../../Logic/FeatureSource/Actors/GeoIndexedStore"
-import {RasterLayerPolygon} from "../../Models/RasterLayers";
+import { RasterLayerPolygon } from "../../Models/RasterLayers"
 
 /**
  * The attribution panel in the theme menu.
@@ -29,7 +29,10 @@ export default class CopyrightPanel extends Combine {
 
     constructor(state: {
         layout: LayoutConfig
-        mapProperties: { readonly bounds: Store<BBox>, readonly rasterLayer: Store<RasterLayerPolygon> }
+        mapProperties: {
+            readonly bounds: Store<BBox>
+            readonly rasterLayer: Store<RasterLayerPolygon>
+        }
         osmConnection: OsmConnection
         dataIsLoading: Store<boolean>
         perLayer: ReadonlyMap<string, GeoIndexedStore>
@@ -90,27 +93,34 @@ export default class CopyrightPanel extends Combine {
                 new Title(t.attributionTitle),
                 t.attributionContent,
 
-                new VariableUiElement(state.mapProperties.rasterLayer.mapD(layer => {
-                    const props = layer.properties
-                    const attrUrl = props.attribution?.url
-                    const attrText = props.attribution?.text
+                new VariableUiElement(
+                    state.mapProperties.rasterLayer.mapD((layer) => {
+                        const props = layer.properties
+                        const attrUrl = props.attribution?.url
+                        const attrText = props.attribution?.text
 
-                    let bgAttr: BaseUIElement | string = undefined
-                    if(attrText && attrUrl){
-                        bgAttr = "<a href='"+attrUrl+"' target='_blank'>"+attrText+"</a>"
-                    }else if(attrUrl){
-                        bgAttr = attrUrl
-                    }else{
-                        bgAttr = attrText
-                    }
-                    if(bgAttr){
-                        return Translations.t.general.attribution.attributionBackgroundLayerWithCopyright.Subs({
-                            name: props.name,
-                            copyright: bgAttr
-                        })
-                    }
-                    return Translations.t.general.attribution.attributionBackgroundLayer.Subs(props)
-                })),
+                        let bgAttr: BaseUIElement | string = undefined
+                        if (attrText && attrUrl) {
+                            bgAttr =
+                                "<a href='" + attrUrl + "' target='_blank'>" + attrText + "</a>"
+                        } else if (attrUrl) {
+                            bgAttr = attrUrl
+                        } else {
+                            bgAttr = attrText
+                        }
+                        if (bgAttr) {
+                            return Translations.t.general.attribution.attributionBackgroundLayerWithCopyright.Subs(
+                                {
+                                    name: props.name,
+                                    copyright: bgAttr,
+                                }
+                            )
+                        }
+                        return Translations.t.general.attribution.attributionBackgroundLayer.Subs(
+                            props
+                        )
+                    })
+                ),
 
                 maintainer,
                 dataContributors,

@@ -13,7 +13,7 @@ export default class SingleReview extends Combine {
         const reviewAuthor =
             review.metadata.nickname ??
             (review.metadata.given_name ?? "") + (review.metadata.family_name ?? "")
-        const authorElement =   new FixedUiElement(reviewAuthor).SetClass("font-bold")
+        const authorElement = new FixedUiElement(reviewAuthor).SetClass("font-bold")
 
         super([
             new Combine([SingleReview.GenStars(review.rating)]),
@@ -21,7 +21,7 @@ export default class SingleReview extends Combine {
             new Combine([
                 new Combine([
                     authorElement,
-                     review.metadata.is_affiliated
+                    review.metadata.is_affiliated
                         ? Translations.t.reviews.affiliated_reviewer_warning
                         : "",
                 ]).SetStyle("margin-right: 0.5em"),

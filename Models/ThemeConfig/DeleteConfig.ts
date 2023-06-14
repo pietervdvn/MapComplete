@@ -3,9 +3,9 @@ import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 import { DeleteConfigJson } from "./Json/DeleteConfigJson"
 import Translations from "../../UI/i18n/Translations"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
-import TagRenderingConfig from "./TagRenderingConfig";
-import {QuestionableTagRenderingConfigJson} from "./Json/QuestionableTagRenderingConfigJson";
-import {TagConfigJson} from "./Json/TagConfigJson";
+import TagRenderingConfig from "./TagRenderingConfig"
+import { QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRenderingConfigJson"
+import { TagConfigJson } from "./Json/TagConfigJson"
 
 export default class DeleteConfig {
     public static readonly deleteReasonKey = "_delete_reason"
@@ -97,24 +97,24 @@ export default class DeleteConfig {
     public constructTagRendering(): TagRenderingConfig {
         const t = Translations.t.delete
 
-        const mappings: {if: TagConfigJson, then: Record<string, string>} []= []
+        const mappings: { if: TagConfigJson; then: Record<string, string> }[] = []
         for (const nonDeleteMapping of this.nonDeleteMappings) {
             mappings.push({
                 if: nonDeleteMapping.if,
-                then: nonDeleteMapping.then.translations
+                then: nonDeleteMapping.then.translations,
             })
         }
 
         for (const deleteReason of this.deleteReasons) {
             mappings.push({
-                if: DeleteConfig.deleteReasonKey+ "="+ deleteReason.changesetMessage,
-                then: deleteReason.explanation.translations
+                if: DeleteConfig.deleteReasonKey + "=" + deleteReason.changesetMessage,
+                then: deleteReason.explanation.translations,
             })
         }
 
         const config: QuestionableTagRenderingConfigJson = {
             question: t.whyDelete.translations,
-            mappings
+            mappings,
         }
         return new TagRenderingConfig(config)
     }

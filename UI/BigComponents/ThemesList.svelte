@@ -1,10 +1,10 @@
 <script lang="ts">
   import NoThemeResultButton from "./NoThemeResultButton.svelte"
 
-  import {OsmConnection} from "../../Logic/Osm/OsmConnection"
-  import {UIEventSource} from "../../Logic/UIEventSource"
+  import { OsmConnection } from "../../Logic/Osm/OsmConnection"
+  import { UIEventSource } from "../../Logic/UIEventSource"
   import ThemeButton from "./ThemeButton.svelte"
-  import {LayoutInformation} from "../../Models/ThemeConfig/LayoutConfig"
+  import { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
   import MoreScreen from "./MoreScreen"
 
   export let search: UIEventSource<string>
@@ -30,7 +30,6 @@
     </div>
   {:else}
     <div>
-
       {#each filteredThemes as theme (theme.id)}
         {#if theme !== undefined && !(hideThemes && theme?.hideFromOverview)}
           <ThemeButton {theme} {isCustom} userDetails={state.osmConnection.userDetails} {state} />

@@ -1,16 +1,16 @@
 import GeoJsonSource from "./GeoJsonSource"
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
-import {FeatureSource} from "../FeatureSource"
-import {Or} from "../../Tags/Or"
+import { FeatureSource } from "../FeatureSource"
+import { Or } from "../../Tags/Or"
 import FeatureSwitchState from "../../State/FeatureSwitchState"
 import OverpassFeatureSource from "./OverpassFeatureSource"
-import {Store, UIEventSource} from "../../UIEventSource"
+import { Store, UIEventSource } from "../../UIEventSource"
 import OsmFeatureSource from "./OsmFeatureSource"
 import FeatureSourceMerger from "./FeatureSourceMerger"
 import DynamicGeoJsonTileSource from "../TiledFeatureSource/DynamicGeoJsonTileSource"
-import {BBox} from "../../BBox"
+import { BBox } from "../../BBox"
 import LocalStorageFeatureSource from "../TiledFeatureSource/LocalStorageFeatureSource"
-import FullNodeDatabaseSource from "../TiledFeatureSource/FullNodeDatabaseSource";
+import FullNodeDatabaseSource from "../TiledFeatureSource/FullNodeDatabaseSource"
 
 /**
  * This source will fetch the needed data from various sources for the given layout.
@@ -41,7 +41,7 @@ export default class LayoutSource extends FeatureSourceMerger {
             (l) =>
                 new LocalStorageFeatureSource(backend, l.id, 15, mapProperties, {
                     isActive: isDisplayed(l.id),
-                    maxAge: l.maxAgeOfCache
+                    maxAge: l.maxAgeOfCache,
                 })
         )
 
@@ -127,7 +127,7 @@ export default class LayoutSource extends FeatureSourceMerger {
             backend,
             isActive,
             patchRelations: true,
-            fullNodeDatabase
+            fullNodeDatabase,
         })
     }
 

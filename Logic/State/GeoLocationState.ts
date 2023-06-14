@@ -21,7 +21,9 @@ export class GeoLocationState {
      * 'granted' means that it is granted
      * 'denied' means that we don't have access
      */
-    public readonly permission: UIEventSource<GeolocationPermissionState> = new UIEventSource("prompt")
+    public readonly permission: UIEventSource<GeolocationPermissionState> = new UIEventSource(
+        "prompt"
+    )
 
     /**
      * Important to determine e.g. if we move automatically on fix or not

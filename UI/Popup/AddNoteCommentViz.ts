@@ -69,7 +69,7 @@ export class AddNoteCommentViz implements SpecialVisualization {
             )
         ).onClick(async () => {
             const id = tags.data[args[1] ?? "id"]
-           await  state.osmConnection.closeNote(id, txt.data)
+            await state.osmConnection.closeNote(id, txt.data)
             tags.data["closed_at"] = new Date().toISOString()
             tags.ping()
         })

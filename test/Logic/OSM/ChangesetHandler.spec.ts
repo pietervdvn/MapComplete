@@ -1,6 +1,6 @@
 import { Utils } from "../../../Utils"
 import { ChangesetHandler, ChangesetTag } from "../../../Logic/Osm/ChangesetHandler"
-import {ImmutableStore, UIEventSource} from "../../../Logic/UIEventSource"
+import { ImmutableStore, UIEventSource } from "../../../Logic/UIEventSource"
 import { OsmConnection } from "../../../Logic/Osm/OsmConnection"
 import { Changes } from "../../../Logic/Osm/Changes"
 import { describe, expect, it } from "vitest"
@@ -18,7 +18,7 @@ describe("ChangesetHanlder", () => {
                 elstorage(),
                 new Changes({
                     dryRun: new ImmutableStore(true),
-                    osmConnection: new OsmConnection()
+                    osmConnection: new OsmConnection(),
                 })
             )
 
@@ -80,7 +80,7 @@ describe("ChangesetHanlder", () => {
                 elstorage(),
                 new Changes({
                     dryRun: new ImmutableStore(true),
-                    osmConnection: new OsmConnection()
+                    osmConnection: new OsmConnection(),
                 })
             )
             const oldChangesetMeta = {
@@ -141,7 +141,7 @@ describe("ChangesetHanlder", () => {
                 elstorage(),
                 new Changes({
                     dryRun: new ImmutableStore(true),
-                    osmConnection: new OsmConnection()
+                    osmConnection: new OsmConnection(),
                 })
             )
             const oldChangesetMeta = {

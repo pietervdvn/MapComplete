@@ -1,31 +1,31 @@
 import BaseUIElement from "../BaseUIElement"
-import {Stores, UIEventSource} from "../../Logic/UIEventSource"
-import {SubtleButton} from "../Base/SubtleButton"
+import { Stores, UIEventSource } from "../../Logic/UIEventSource"
+import { SubtleButton } from "../Base/SubtleButton"
 import Img from "../Base/Img"
-import {FixedUiElement} from "../Base/FixedUiElement"
+import { FixedUiElement } from "../Base/FixedUiElement"
 import Combine from "../Base/Combine"
 import Link from "../Base/Link"
-import {Utils} from "../../Utils"
+import { Utils } from "../../Utils"
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
-import {VariableUiElement} from "../Base/VariableUIElement"
+import { VariableUiElement } from "../Base/VariableUIElement"
 import Loading from "../Base/Loading"
-import {OsmConnection} from "../../Logic/Osm/OsmConnection"
+import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import Translations from "../i18n/Translations"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import {Changes} from "../../Logic/Osm/Changes"
-import {UIElement} from "../UIElement"
+import { Changes } from "../../Logic/Osm/Changes"
+import { UIElement } from "../UIElement"
 import FilteredLayer from "../../Models/FilteredLayer"
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 import Lazy from "../Base/Lazy"
 import List from "../Base/List"
-import {SpecialVisualization, SpecialVisualizationState} from "../SpecialVisualization"
-import {IndexedFeatureSource} from "../../Logic/FeatureSource/FeatureSource"
-import {MapLibreAdaptor} from "../Map/MapLibreAdaptor"
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
+import { IndexedFeatureSource } from "../../Logic/FeatureSource/FeatureSource"
+import { MapLibreAdaptor } from "../Map/MapLibreAdaptor"
 import ShowDataLayer from "../Map/ShowDataLayer"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "../Map/MaplibreMap.svelte"
 import SpecialVisualizations from "../SpecialVisualizations"
-import {Feature} from "geojson";
+import { Feature } from "geojson"
 
 export interface AutoAction extends SpecialVisualization {
     supportsAutoAction: boolean
@@ -111,7 +111,7 @@ class ApplyButton extends UIElement {
         mla.allowZooming.setData(false)
         mla.allowMoving.setData(false)
 
-        const previewMap = new SvelteUIElement(MaplibreMap, {map: mlmap}).SetClass("h-48")
+        const previewMap = new SvelteUIElement(MaplibreMap, { map: mlmap }).SetClass("h-48")
 
         const features = this.target_feature_ids.map((id) =>
             this.state.indexedFeatures.featuresById.data.get(id)
@@ -132,9 +132,18 @@ class ApplyButton extends UIElement {
                     return new FixedUiElement("All done!").SetClass("thanks")
                 }
                 if (st === "running") {
-                    return new Loading(new VariableUiElement(this.appliedNumberOfFeatures.map(appliedTo => {
-                        return "Applying changes, currently at " + appliedTo + "/" + this.target_feature_ids.length
-                    })))
+                    return new Loading(
+                        new VariableUiElement(
+                            this.appliedNumberOfFeatures.map((appliedTo) => {
+                                return (
+                                    "Applying changes, currently at " +
+                                    appliedTo +
+                                    "/" +
+                                    this.target_feature_ids.length
+                                )
+                            })
+                        )
+                    )
                 }
                 const error = st.error
                 return new Combine([
@@ -153,7 +162,7 @@ class ApplyButton extends UIElement {
             console.log("Applying auto-action on " + this.target_feature_ids.length + " features")
 
             for (let i = 0; i < this.target_feature_ids.length; i++) {
-                const targetFeatureId = this.target_feature_ids[i];
+                const targetFeatureId = this.target_feature_ids[i]
                 const feature = this.state.indexedFeatures.featuresById.data.get(targetFeatureId)
                 const featureTags = this.state.featureProperties.getStore(targetFeatureId)
                 const rendering = this.tagRenderingConfig.GetRenderValue(featureTags.data).txt
@@ -164,8 +173,8 @@ class ApplyButton extends UIElement {
                 if (specialRenderings.length == 0) {
                     console.warn(
                         "AutoApply: feature " +
-                        targetFeatureId +
-                        " got a rendering without supported auto actions:",
+                            targetFeatureId +
+                            " got a rendering without supported auto actions:",
                         rendering
                     )
                 }
@@ -175,9 +184,14 @@ class ApplyButton extends UIElement {
                         continue
                     }
                     const action = <AutoAction>specialRendering.func
-                    await action.applyActionOn(feature, this.state, featureTags, specialRendering.args)
+                    await action.applyActionOn(
+                        feature,
+                        this.state,
+                        featureTags,
+                        specialRendering.args
+                    )
                 }
-                if( i % 50 === 0){
+                if (i % 50 === 0) {
                     await this.state.changes.flushChanges("Auto button: intermediate save")
                 }
                 this.appliedNumberOfFeatures.setData(i + 1)
@@ -187,7 +201,7 @@ class ApplyButton extends UIElement {
             this.buttonState.setData("done")
         } catch (e) {
             console.error("Error while running autoApply: ", e)
-            this.buttonState.setData({error: e})
+            this.buttonState.setData({ error: e })
         }
     }
 }
@@ -242,7 +256,7 @@ export default class AutoApplyButton implements SpecialVisualization {
             "To effectively use this button, you'll need some ingredients:",
             new List([
                 "A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: " +
-                supportedActions.join(", "),
+                    supportedActions.join(", "),
                 "A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the layer ",
                 new Link("current_view", "./BuiltinLayers.md#current_view"),
                 "Then, use a calculated tag on the host feature to determine the overlapping object ids",
@@ -262,7 +276,7 @@ export default class AutoApplyButton implements SpecialVisualization {
                 !(
                     state.featureSwitchIsTesting.data ||
                     state.osmConnection._oauth_config.url ===
-                    OsmConnection.oauth_configs["osm-test"].url
+                        OsmConnection.oauth_configs["osm-test"].url
                 )
             ) {
                 const t = Translations.t.general.add.import
@@ -289,11 +303,11 @@ export default class AutoApplyButton implements SpecialVisualization {
                 const to_parse = new UIEventSource<string[]>(undefined)
                 // Very ugly hack: read the value every 500ms
                 Stores.Chronic(500, () => to_parse.data === undefined).addCallback(() => {
-                    let applicable = <string | string[]> tagSource.data[argument[1]]
-                    if(typeof applicable === "string"){
+                    let applicable = <string | string[]>tagSource.data[argument[1]]
+                    if (typeof applicable === "string") {
                         applicable = JSON.parse(applicable)
                     }
-                    to_parse.setData(<string[]> applicable)
+                    to_parse.setData(<string[]>applicable)
                 })
 
                 const loading = new Loading("Gathering which elements support auto-apply... ")

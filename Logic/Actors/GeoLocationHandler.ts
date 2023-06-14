@@ -1,15 +1,15 @@
-import {QueryParameters} from "../Web/QueryParameters"
-import {BBox} from "../BBox"
+import { QueryParameters } from "../Web/QueryParameters"
+import { BBox } from "../BBox"
 import Constants from "../../Models/Constants"
-import {GeoLocationState} from "../State/GeoLocationState"
-import {UIEventSource} from "../UIEventSource"
-import {Feature, LineString, Point} from "geojson"
-import {FeatureSource, WritableFeatureSource} from "../FeatureSource/FeatureSource"
-import {LocalStorageSource} from "../Web/LocalStorageSource"
-import {GeoOperations} from "../GeoOperations"
-import {OsmTags} from "../../Models/OsmFeature"
+import { GeoLocationState } from "../State/GeoLocationState"
+import { UIEventSource } from "../UIEventSource"
+import { Feature, LineString, Point } from "geojson"
+import { FeatureSource, WritableFeatureSource } from "../FeatureSource/FeatureSource"
+import { LocalStorageSource } from "../Web/LocalStorageSource"
+import { GeoOperations } from "../GeoOperations"
+import { OsmTags } from "../../Models/OsmFeature"
 import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource"
-import {MapProperties} from "../../Models/MapProperties"
+import { MapProperties } from "../../Models/MapProperties"
 
 /**
  * The geolocation-handler takes a map-location and a geolocation state.
@@ -39,7 +39,9 @@ export default class GeoLocationHandler {
     /**
      * The last moment that the map has moved
      */
-    public readonly mapHasMoved: UIEventSource<Date | undefined> = new UIEventSource<Date | undefined>(undefined)
+    public readonly mapHasMoved: UIEventSource<Date | undefined> = new UIEventSource<
+        Date | undefined
+    >(undefined)
     private readonly selectedElement: UIEventSource<any>
     private readonly mapProperties?: MapProperties
     private readonly gpsLocationHistoryRetentionTime?: UIEventSource<number>
@@ -80,8 +82,11 @@ export default class GeoLocationHandler {
                 // The map hasn't moved yet; we received our first coordinates, so let's move there!
                 self.MoveMapToCurrentLocation()
             }
-            if (timeSinceLastRequest < Constants.zoomToLocationTimeout &&
-                (this.mapHasMoved.data === undefined || this.mapHasMoved.data.getTime() < geolocationState.requestMoment.data?.getTime() )
+            if (
+                timeSinceLastRequest < Constants.zoomToLocationTimeout &&
+                (this.mapHasMoved.data === undefined ||
+                    this.mapHasMoved.data.getTime() <
+                        geolocationState.requestMoment.data?.getTime())
             ) {
                 // still within request time and the map hasn't moved since requesting to jump to the current location
                 self.MoveMapToCurrentLocation()
@@ -154,8 +159,8 @@ export default class GeoLocationHandler {
                 return
             }
 
-            const properties =  {
-                id: "gps-"+i,
+            const properties = {
+                id: "gps-" + i,
                 "user:location": "yes",
                 date: new Date().toISOString(),
             }
@@ -164,7 +169,7 @@ export default class GeoLocationHandler {
             for (const k in keysToCopy) {
                 // For some weird reason, the 'Object.keys' method doesn't work for the 'location: GeolocationCoordinates'-object and will thus not copy all the properties when using {...location}
                 // As such, they are copied here
-                if(location[k]){
+                if (location[k]) {
                     properties[k] = location[k]
                 }
             }

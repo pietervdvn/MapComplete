@@ -31,7 +31,6 @@ export default interface LineRenderingConfigJson {
      */
     lineCap?: "round" | "square" | "butt" | string | TagRenderingConfigJson
 
-
     /**
      * The color to fill a polygon with.
      * If undefined, this will be slightly more opaque version of the stroke line.

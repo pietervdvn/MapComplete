@@ -417,7 +417,6 @@ export default class LayerConfig extends WithContextLoader {
             )
         }
         this.popupInFloatover = json.popupInFloatover ?? false
-
     }
 
     public defaultIcon(): BaseUIElement | undefined {

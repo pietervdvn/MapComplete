@@ -80,12 +80,12 @@ export default class Maproulette {
      * Maproulette.codeToIndex("qdsf") // => undefined
      *
      */
-    public static codeToIndex(code: string) : number | undefined{
-        if(code === "Created"){
+    public static codeToIndex(code: string): number | undefined {
+        if (code === "Created") {
             return Maproulette.STATUS_OPEN
         }
         for (let i = 0; i < 9; i++) {
-            if(Maproulette.STATUS_MEANING[""+i] === code){
+            if (Maproulette.STATUS_MEANING["" + i] === code) {
                 return i
             }
         }

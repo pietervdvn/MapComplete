@@ -1,12 +1,12 @@
 import Translations from "../i18n/Translations"
-import {SubtleButton} from "../Base/SubtleButton"
+import { SubtleButton } from "../Base/SubtleButton"
 import Svg from "../../Svg"
 import Combine from "../Base/Combine"
-import {GeoOperations} from "../../Logic/GeoOperations"
-import {Utils} from "../../Utils"
-import {SpecialVisualization, SpecialVisualizationState} from "../SpecialVisualization"
-import {UIEventSource} from "../../Logic/UIEventSource"
-import {Feature, LineString} from "geojson"
+import { GeoOperations } from "../../Logic/GeoOperations"
+import { Utils } from "../../Utils"
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
+import { UIEventSource } from "../../Logic/UIEventSource"
+import { Feature, LineString } from "geojson"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 
 export class ExportAsGpxViz implements SpecialVisualization {

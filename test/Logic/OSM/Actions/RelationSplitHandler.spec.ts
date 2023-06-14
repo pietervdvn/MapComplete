@@ -652,10 +652,12 @@ describe("RelationSplitHandler", () => {
             "no-theme",
             downloader
         )
-        const changeDescription = await splitter.CreateChangeDescriptions(new Changes({
-            dryRun: new ImmutableStore(false),
-            osmConnection: new OsmConnection()
-        }))
+        const changeDescription = await splitter.CreateChangeDescriptions(
+            new Changes({
+                dryRun: new ImmutableStore(false),
+                osmConnection: new OsmConnection(),
+            })
+        )
         const allIds = changeDescription[0].changes["members"].map((m) => m.ref).join(",")
         const expected = "687866206,295132739,-1,690497698"
         // "didn't find the expected order of ids in the relation to test"
@@ -707,10 +709,12 @@ describe("RelationSplitHandler", () => {
             "no-theme",
             downloader
         )
-        const changeDescription = await splitter.CreateChangeDescriptions(new Changes({
-            dryRun: new ImmutableStore(false),
-            osmConnection: new OsmConnection()
-        }))
+        const changeDescription = await splitter.CreateChangeDescriptions(
+            new Changes({
+                dryRun: new ImmutableStore(false),
+                osmConnection: new OsmConnection(),
+            })
+        )
         const allIds = changeDescription[0].changes["members"]
             .map((m) => m.type + "/" + m.ref + "-->" + m.role)
             .join(",")

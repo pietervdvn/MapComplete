@@ -76,7 +76,8 @@ export default class FeatureReviews {
     ) {
         const centerLonLat = GeoOperations.centerpointCoordinates(feature)
         ;[this._lon, this._lat] = centerLonLat
-        this._identity = mangroveIdentity ?? new MangroveIdentity(new UIEventSource<string>(undefined))
+        this._identity =
+            mangroveIdentity ?? new MangroveIdentity(new UIEventSource<string>(undefined))
         const nameKey = options?.nameKey ?? "name"
 
         if (feature.geometry.type === "Point") {
@@ -103,7 +104,7 @@ export default class FeatureReviews {
 
             this._uncertainty = options?.uncertaintyRadius ?? maxDistance
         }
-        this._name = tagsSource            .map((tags) => tags[nameKey] ?? options?.fallbackName)
+        this._name = tagsSource.map((tags) => tags[nameKey] ?? options?.fallbackName)
 
         this.subjectUri = this.ConstructSubjectUri()
 

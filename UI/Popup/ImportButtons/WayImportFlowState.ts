@@ -1,48 +1,60 @@
-import ImportFlow, {ImportFlowArguments} from "./ImportFlow";
-import {SpecialVisualizationState} from "../../SpecialVisualization";
-import {Feature, LineString, Polygon} from "geojson";
-import {Store, UIEventSource} from "../../../Logic/UIEventSource";
-import {Tag} from "../../../Logic/Tags/Tag";
-import {And} from "../../../Logic/Tags/And";
+import ImportFlow, { ImportFlowArguments } from "./ImportFlow"
+import { SpecialVisualizationState } from "../../SpecialVisualization"
+import { Feature, LineString, Polygon } from "geojson"
+import { Store, UIEventSource } from "../../../Logic/UIEventSource"
+import { Tag } from "../../../Logic/Tags/Tag"
+import { And } from "../../../Logic/Tags/And"
 import CreateWayWithPointReuseAction, {
-    MergePointConfig
-} from "../../../Logic/Osm/Actions/CreateWayWithPointReuseAction";
-import {TagUtils} from "../../../Logic/Tags/TagUtils";
-import {OsmCreateAction, PreviewableAction} from "../../../Logic/Osm/Actions/OsmChangeAction";
-import {FeatureSource, IndexedFeatureSource} from "../../../Logic/FeatureSource/FeatureSource";
-import CreateMultiPolygonWithPointReuseAction from "../../../Logic/Osm/Actions/CreateMultiPolygonWithPointReuseAction";
-import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig";
-import {Changes} from "../../../Logic/Osm/Changes";
-import FullNodeDatabaseSource from "../../../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource";
+    MergePointConfig,
+} from "../../../Logic/Osm/Actions/CreateWayWithPointReuseAction"
+import { TagUtils } from "../../../Logic/Tags/TagUtils"
+import { OsmCreateAction, PreviewableAction } from "../../../Logic/Osm/Actions/OsmChangeAction"
+import { FeatureSource, IndexedFeatureSource } from "../../../Logic/FeatureSource/FeatureSource"
+import CreateMultiPolygonWithPointReuseAction from "../../../Logic/Osm/Actions/CreateMultiPolygonWithPointReuseAction"
+import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
+import { Changes } from "../../../Logic/Osm/Changes"
+import FullNodeDatabaseSource from "../../../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
 
-export interface WayImportFlowArguments extends ImportFlowArguments  {
+export interface WayImportFlowArguments extends ImportFlowArguments {
     max_snap_distance: string
-    snap_onto_layers: string,
-    snap_to_layer_max_distance: string,
-    max_move_distance: string,
-    move_osm_point_if,
+    snap_onto_layers: string
+    snap_to_layer_max_distance: string
+    max_move_distance: string
+    move_osm_point_if
     snap_to_point_if
 }
 
 export default class WayImportFlowState extends ImportFlow<WayImportFlowArguments> {
-    public readonly originalFeature: Feature<LineString | Polygon>;
+    public readonly originalFeature: Feature<LineString | Polygon>
 
-    private readonly action: OsmCreateAction & { getPreview?(): Promise<FeatureSource>; }
+    private readonly action: OsmCreateAction & { getPreview?(): Promise<FeatureSource> }
 
-    constructor(state: SpecialVisualizationState, originalFeature: Feature<LineString | Polygon>, args: WayImportFlowArguments, tagsToApply: Store<Tag[]>, originalFeatureTags: UIEventSource<Record<string, string>>) {
-        super(state, args, tagsToApply, originalFeatureTags);
-        this.originalFeature = originalFeature;
+    constructor(
+        state: SpecialVisualizationState,
+        originalFeature: Feature<LineString | Polygon>,
+        args: WayImportFlowArguments,
+        tagsToApply: Store<Tag[]>,
+        originalFeatureTags: UIEventSource<Record<string, string>>
+    ) {
+        super(state, args, tagsToApply, originalFeatureTags)
+        this.originalFeature = originalFeature
         const mergeConfigs = WayImportFlowState.GetMergeConfig(args)
-        this.action = WayImportFlowState.CreateAction(originalFeature, args, state, tagsToApply, mergeConfigs)
+        this.action = WayImportFlowState.CreateAction(
+            originalFeature,
+            args,
+            state,
+            tagsToApply,
+            mergeConfigs
+        )
     }
 
     public static CreateAction(
         feature: Feature<LineString | Polygon>,
         args: WayImportFlowArguments,
         state: {
-            layout: LayoutConfig;
-            changes: Changes;
-            indexedFeatures: IndexedFeatureSource,
+            layout: LayoutConfig
+            changes: Changes
+            indexedFeatures: IndexedFeatureSource
             fullNodeDatabase?: FullNodeDatabaseSource
         },
         tagsToApply: Store<Tag[]>,
@@ -124,5 +136,4 @@ export default class WayImportFlowState extends ImportFlow<WayImportFlowArgument
         }
         return this.action.getPreview()
     }
-
 }

@@ -1,12 +1,14 @@
-import {LayerConfigJson} from "../../../../Models/ThemeConfig/Json/LayerConfigJson"
-import {TagRenderingConfigJson} from "../../../../Models/ThemeConfig/Json/TagRenderingConfigJson"
+import { LayerConfigJson } from "../../../../Models/ThemeConfig/Json/LayerConfigJson"
+import { TagRenderingConfigJson } from "../../../../Models/ThemeConfig/Json/TagRenderingConfigJson"
 import LineRenderingConfigJson from "../../../../Models/ThemeConfig/Json/LineRenderingConfigJson"
-import {ExpandRewrite, PrepareLayer, RewriteSpecial,} from "../../../../Models/ThemeConfig/Conversion/PrepareLayer"
 import {
-    QuestionableTagRenderingConfigJson
-} from "../../../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+    ExpandRewrite,
+    PrepareLayer,
+    RewriteSpecial,
+} from "../../../../Models/ThemeConfig/Conversion/PrepareLayer"
+import { QuestionableTagRenderingConfigJson } from "../../../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import RewritableConfigJson from "../../../../Models/ThemeConfig/Json/RewritableConfigJson"
-import {describe, expect, it} from "vitest"
+import { describe, expect, it } from "vitest"
 
 describe("ExpandRewrite", () => {
     it("should not allow overlapping keys", () => {
@@ -65,7 +67,7 @@ describe("PrepareLayer", () => {
 
         const expected = {
             id: "testlayer",
-            source: {osmTags: "key=value"},
+            source: { osmTags: "key=value" },
             mapRendering: [
                 {
                     color: {
@@ -100,7 +102,7 @@ describe("PrepareLayer", () => {
                     offset: 6,
                 },
             ],
-            titleIcons: [{render: "icons.defaults", id: "iconsdefaults"}],
+            titleIcons: [{ render: "icons.defaults", id: "iconsdefaults" }],
         }
 
         expect(result).toEqual(expected)

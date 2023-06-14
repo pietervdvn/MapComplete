@@ -1,7 +1,7 @@
-import {ExtraFuncParams, ExtraFunctions} from "../../Logic/ExtraFunctions"
-import {OsmFeature} from "../../Models/OsmFeature"
-import {describe, expect, it} from "vitest"
-import {Feature} from "geojson";
+import { ExtraFuncParams, ExtraFunctions } from "../../Logic/ExtraFunctions"
+import { OsmFeature } from "../../Models/OsmFeature"
+import { describe, expect, it } from "vitest"
+import { Feature } from "geojson"
 
 describe("OverlapFunc", () => {
     it("should give doors on the edge", () => {

@@ -103,7 +103,11 @@ export default class DependencyCalculator {
                 currentLine = i // Leak the state...
                 currentKey = key
                 try {
-                    const func = new Function("feat", "{"+ExtraFunctions.types.join(",")+"}", "return " + code + ";")
+                    const func = new Function(
+                        "feat",
+                        "{" + ExtraFunctions.types.join(",") + "}",
+                        "return " + code + ";"
+                    )
                     const result = func(obj, helpers)
                     obj.properties[key] = JSON.stringify(result)
                 } catch (e) {}

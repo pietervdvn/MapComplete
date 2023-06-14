@@ -416,7 +416,7 @@ class MappedStore<TIn, T> extends Store<T> {
         this._upstreamPingCount = upstreamListenerHandler?.pingCount
         this._extraStores = extraStores
         this.registerCallbacksToUpstream()
-        if(onDestroy !== undefined){
+        if (onDestroy !== undefined) {
             onDestroy(() => this.unregisterFromUpstream())
         }
     }
@@ -698,7 +698,11 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
      * srcSeen // => 21
      * lastSeen // => 42
      */
-    public map<J>(f: (t: T) => J, extraSources: Store<any>[] = [], onDestroy?: (f : () => void ) => void): Store<J> {
+    public map<J>(
+        f: (t: T) => J,
+        extraSources: Store<any>[] = [],
+        onDestroy?: (f: () => void) => void
+    ): Store<J> {
         return new MappedStore(this, f, extraSources, this._callbacks, f(this.data), onDestroy)
     }
     /**

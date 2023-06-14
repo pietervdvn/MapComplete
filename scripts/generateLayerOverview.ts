@@ -356,12 +356,16 @@ class LayerOverviewUtils extends Script {
             const context = "While building builtin layer " + sharedLayerPath
             const fixed = prepLayer.convertStrict(parsed, context)
 
-            if(!fixed.source){
-                console.error(sharedLayerPath,"has no source configured:",fixed)
-                throw sharedLayerPath+" layer has no source configured"
+            if (!fixed.source) {
+                console.error(sharedLayerPath, "has no source configured:", fixed)
+                throw sharedLayerPath + " layer has no source configured"
             }
 
-            if (typeof fixed.source !== "string" && fixed.source["osmTags"] && fixed.source["osmTags"]["and"] === undefined) {
+            if (
+                typeof fixed.source !== "string" &&
+                fixed.source["osmTags"] &&
+                fixed.source["osmTags"]["and"] === undefined
+            ) {
                 fixed.source["osmTags"] = { and: [fixed.source["osmTags"]] }
             }
 
@@ -426,8 +430,8 @@ class LayerOverviewUtils extends Script {
         })
 
         const skippedThemes: string[] = []
-        for (let i = 0; i < themeFiles.length; i++){
-            const themeInfo = themeFiles[i];
+        for (let i = 0; i < themeFiles.length; i++) {
+            const themeInfo = themeFiles[i]
             const themePath = themeInfo.path
             let themeFile = themeInfo.parsed
             console.log(`Validating ${i}/${themeFiles.length} '${themeInfo.parsed.id}'`)

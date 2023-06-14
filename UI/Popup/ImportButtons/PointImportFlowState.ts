@@ -1,12 +1,12 @@
-import ImportFlow, {ImportFlowArguments} from "./ImportFlow";
-import {SpecialVisualizationState} from "../../SpecialVisualization";
-import {Store, UIEventSource} from "../../../Logic/UIEventSource";
-import {OsmObject, OsmWay} from "../../../Logic/Osm/OsmObject";
-import CreateNewNodeAction from "../../../Logic/Osm/Actions/CreateNewNodeAction";
-import {Feature, Point} from "geojson";
-import Maproulette from "../../../Logic/Maproulette";
-import {GeoOperations} from "../../../Logic/GeoOperations";
-import {Tag} from "../../../Logic/Tags/Tag";
+import ImportFlow, { ImportFlowArguments } from "./ImportFlow"
+import { SpecialVisualizationState } from "../../SpecialVisualization"
+import { Store, UIEventSource } from "../../../Logic/UIEventSource"
+import { OsmObject, OsmWay } from "../../../Logic/Osm/OsmObject"
+import CreateNewNodeAction from "../../../Logic/Osm/Actions/CreateNewNodeAction"
+import { Feature, Point } from "geojson"
+import Maproulette from "../../../Logic/Maproulette"
+import { GeoOperations } from "../../../Logic/GeoOperations"
+import { Tag } from "../../../Logic/Tags/Tag"
 
 export interface PointImportFlowArguments extends ImportFlowArguments {
     max_snap_distance?: string
@@ -19,11 +19,17 @@ export interface PointImportFlowArguments extends ImportFlowArguments {
 
 export class PointImportFlowState extends ImportFlow<PointImportFlowArguments> {
     public readonly startCoordinate: [number, number]
-    private readonly _originalFeature: Feature<Point>;
+    private readonly _originalFeature: Feature<Point>
 
-    constructor(state: SpecialVisualizationState, originalFeature: Feature<Point>, args: PointImportFlowArguments, tagsToApply: Store<Tag[]>, originalFeatureTags: UIEventSource<Record<string, string>>) {
-        super(state, args, tagsToApply, originalFeatureTags);
-        this._originalFeature = originalFeature;
+    constructor(
+        state: SpecialVisualizationState,
+        originalFeature: Feature<Point>,
+        args: PointImportFlowArguments,
+        tagsToApply: Store<Tag[]>,
+        originalFeatureTags: UIEventSource<Record<string, string>>
+    ) {
+        super(state, args, tagsToApply, originalFeatureTags)
+        this._originalFeature = originalFeature
         this.startCoordinate = GeoOperations.centerpointCoordinates(originalFeature)
     }
 
@@ -79,8 +85,8 @@ export class PointImportFlowState extends ImportFlow<PointImportFlowArguments> {
             if (this.state.featureSwitchIsTesting.data) {
                 console.log(
                     "Not marking maproulette task " +
-                    maproulette_id +
-                    " as fixed, because we are in testing mode"
+                        maproulette_id +
+                        " as fixed, because we are in testing mode"
                 )
             } else {
                 console.log("Marking maproulette task as fixed")
@@ -92,5 +98,4 @@ export class PointImportFlowState extends ImportFlow<PointImportFlowArguments> {
         this.state.mapProperties.location.setData(location)
         return newElementAction.newElementId
     }
-
 }

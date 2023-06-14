@@ -1,17 +1,20 @@
 <script lang="ts">
-    /**
-     * Wrapper around 'subtleButton' with an arrow pointing to the right
-     * See also: NextButton
-     */
-    import SubtleButton from "./SubtleButton.svelte";
-    import {ChevronLeftIcon} from "@rgossiaux/svelte-heroicons/solid";
-    import {createEventDispatcher} from "svelte";
+  /**
+   * Wrapper around 'subtleButton' with an arrow pointing to the right
+   * See also: NextButton
+   */
+  import SubtleButton from "./SubtleButton.svelte"
+  import { ChevronLeftIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { createEventDispatcher } from "svelte"
 
-    const dispatch = createEventDispatcher<{ click }>()
-    export let clss = ""
+  const dispatch = createEventDispatcher<{ click }>()
+  export let clss = ""
 </script>
 
-<SubtleButton on:click={() => dispatch("click")} options={{extraClasses:clss+ " flex items-center"}}>
-    <ChevronLeftIcon class="w-12 h-12" slot="image"/>
-    <slot slot="message"/>
+<SubtleButton
+  on:click={() => dispatch("click")}
+  options={{ extraClasses: clss + " flex items-center" }}
+>
+  <ChevronLeftIcon class="w-12 h-12" slot="image" />
+  <slot slot="message" />
 </SubtleButton>

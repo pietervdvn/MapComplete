@@ -1,6 +1,6 @@
-import {TagUtils} from "../../../Logic/Tags/TagUtils"
-import {equal} from "assert"
-import {describe, expect, it} from "vitest"
+import { TagUtils } from "../../../Logic/Tags/TagUtils"
+import { equal } from "assert"
+import { describe, expect, it } from "vitest"
 
 describe("TagUtils", () => {
     describe("ParseTag", () => {
@@ -47,9 +47,9 @@ describe("TagUtils", () => {
     })
     describe("regextag", () => {
         it("should match tags", () => {
-            const t = TagUtils.Tag(   "_tags~(^|.*;)leisure=picnic_table($|;.*)")
+            const t = TagUtils.Tag("_tags~(^|.*;)leisure=picnic_table($|;.*)")
             const properties = {
-                _tags: 'leisure=picnic_table'
+                _tags: "leisure=picnic_table",
             }
             expect(t.matchesProperties(properties)).toBe(true)
         })

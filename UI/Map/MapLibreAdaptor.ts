@@ -1,14 +1,14 @@
-import {Store, UIEventSource} from "../../Logic/UIEventSource"
-import type {Map as MLMap} from "maplibre-gl"
-import {Map as MlMap, SourceSpecification} from "maplibre-gl"
-import {RasterLayerPolygon} from "../../Models/RasterLayers"
-import {Utils} from "../../Utils"
-import {BBox} from "../../Logic/BBox"
-import {ExportableMap, MapProperties} from "../../Models/MapProperties"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import type { Map as MLMap } from "maplibre-gl"
+import { Map as MlMap, SourceSpecification } from "maplibre-gl"
+import { RasterLayerPolygon } from "../../Models/RasterLayers"
+import { Utils } from "../../Utils"
+import { BBox } from "../../Logic/BBox"
+import { ExportableMap, MapProperties } from "../../Models/MapProperties"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "./MaplibreMap.svelte"
-import {RasterLayerProperties} from "../../Models/RasterLayerProperties"
-import * as htmltoimage from 'html-to-image';
+import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
+import * as htmltoimage from "html-to-image"
 
 /**
  * The 'MapLibreAdaptor' bridges 'MapLibre' with the various properties of the `MapProperties`
@@ -53,7 +53,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (this.location.data) {
             // The MapLibre adaptor updates the element in the location and then pings them
             // Often, code setting this up doesn't expect the object they pass in to be changed, so we create a copy
-            this.location.setData({...this.location.data})
+            this.location.setData({ ...this.location.data })
         }
         this.zoom = state?.zoom ?? new UIEventSource(1)
         this.minzoom = state?.minzoom ?? new UIEventSource(0)
@@ -86,7 +86,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             console.log(e)
             const lon = e.lngLat.lng
             const lat = e.lngLat.lat
-            lastClickLocation.setData({lon, lat})
+            lastClickLocation.setData({ lon, lat })
         }
 
         maplibreMap.addCallbackAndRunD((map) => {
@@ -170,16 +170,25 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
     }
 
-    public static setDpi(drawOn: HTMLCanvasElement, ctx: CanvasRenderingContext2D, dpiFactor: number) {
+    public static setDpi(
+        drawOn: HTMLCanvasElement,
+        ctx: CanvasRenderingContext2D,
+        dpiFactor: number
+    ) {
         drawOn.style.width = drawOn.style.width || drawOn.width + "px"
         drawOn.style.height = drawOn.style.height || drawOn.height + "px"
-
 
         // Resize canvas and scale future draws.
         drawOn.width = Math.ceil(drawOn.width * dpiFactor)
         drawOn.height = Math.ceil(drawOn.height * dpiFactor)
         ctx.scale(dpiFactor, dpiFactor)
-        console.log("Resizing canvas with setDPI:", drawOn.width, drawOn.height, drawOn.style.width, drawOn.style.height)
+        console.log(
+            "Resizing canvas with setDPI:",
+            drawOn.width,
+            drawOn.height,
+            drawOn.style.width,
+            drawOn.style.height
+        )
     }
 
     /**
@@ -230,11 +239,21 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         console.log("Getting markers")
         // MapLibreAdaptor.setDpi(drawOn, ctx, 1)
         const markers = await this.drawMarkers(dpiFactor)
-        console.log("Drawing markers (" + markers.width + "*" + markers.height + ") onto drawOn (" + drawOn.width + "*" + drawOn.height + ")")
+        console.log(
+            "Drawing markers (" +
+                markers.width +
+                "*" +
+                markers.height +
+                ") onto drawOn (" +
+                drawOn.width +
+                "*" +
+                drawOn.height +
+                ")"
+        )
         ctx.drawImage(markers, 0, 0, drawOn.width, drawOn.height)
         ctx.scale(dpiFactor, dpiFactor)
         this._maplibreMap.data?.resize()
-        return await new Promise<Blob>(resolve => drawOn.toBlob(blob => resolve(blob)))
+        return await new Promise<Blob>((resolve) => drawOn.toBlob((blob) => resolve(blob)))
     }
 
     /**
@@ -270,7 +289,14 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
         const width = map.getCanvas().clientWidth
         const height = map.getCanvas().clientHeight
-        console.log("Canvas size markers:", map.getCanvas().width, map.getCanvas().height, "canvasClientRect:", width, height)
+        console.log(
+            "Canvas size markers:",
+            map.getCanvas().width,
+            map.getCanvas().height,
+            "canvasClientRect:",
+            width,
+            height
+        )
         map.getCanvas().style.display = "none"
         const img = await htmltoimage.toCanvas(map.getCanvasContainer(), {
             pixelRatio: dpiFactor,
@@ -288,12 +314,12 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (!map) {
             return
         }
-        const {lng, lat} = map.getCenter()
+        const { lng, lat } = map.getCenter()
         if (lng === 0 && lat === 0) {
             return
         }
         if (this.location.data === undefined) {
-            this.location.setData({lon: lng, lat})
+            this.location.setData({ lon: lng, lat })
         } else if (!isSetup) {
             const dt = this.location.data
             dt.lon = map.getCenter().lng
@@ -329,7 +355,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
         const center = map.getCenter()
         if (center.lng !== loc.lon || center.lat !== loc.lat) {
-            map.setCenter({lng: loc.lon, lat: loc.lat})
+            map.setCenter({ lng: loc.lon, lat: loc.lat })
         }
     }
 
@@ -379,7 +405,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             return
         }
 
-        if(background.type === "vector"){
+        if (background.type === "vector") {
             console.log("Background layer is vector")
             map.setStyle(background.url)
             return
@@ -389,12 +415,12 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
         map.resize()
 
-        let addLayerBeforeId = "aeroway_fill"// this is the first non-landuse item in the stylesheet, we add the raster layer before the roads but above the landuse
+        let addLayerBeforeId = "aeroway_fill" // this is the first non-landuse item in the stylesheet, we add the raster layer before the roads but above the landuse
         if (background.category === "osmbasedmap" || background.category === "map") {
             // The background layer is already an OSM-based map or another map, so we don't want anything from the baselayer
             let layers = map.getStyle().layers
             // THe last index of the maptiler layers
-            let lastIndex = layers.findIndex(layer => layer.id === "housenumber")
+            let lastIndex = layers.findIndex((layer) => layer.id === "housenumber")
             addLayerBeforeId = layers[lastIndex + 1]?.id ?? "housenumber"
         }
 
@@ -404,7 +430,8 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 type: "raster",
                 source: background.id,
                 paint: {},
-            }, addLayerBeforeId
+            },
+            addLayerBeforeId
         )
         await this.awaitStyleIsLoaded()
         this.removeCurrentLayer(map)

@@ -1,14 +1,14 @@
-import SimpleMetaTaggers, {MetataggingState, SimpleMetaTagger} from "./SimpleMetaTagger"
-import {ExtraFuncParams, ExtraFunctions, ExtraFuncType} from "./ExtraFunctions"
+import SimpleMetaTaggers, { MetataggingState, SimpleMetaTagger } from "./SimpleMetaTagger"
+import { ExtraFuncParams, ExtraFunctions, ExtraFuncType } from "./ExtraFunctions"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
-import {Feature} from "geojson"
+import { Feature } from "geojson"
 import FeaturePropertiesStore from "./FeatureSource/Actors/FeaturePropertiesStore"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
-import {GeoIndexedStoreForLayer} from "./FeatureSource/Actors/GeoIndexedStore"
-import {IndexedFeatureSource} from "./FeatureSource/FeatureSource"
+import { GeoIndexedStoreForLayer } from "./FeatureSource/Actors/GeoIndexedStore"
+import { IndexedFeatureSource } from "./FeatureSource/FeatureSource"
 import OsmObjectDownloader from "./Osm/OsmObjectDownloader"
-import {Utils} from "../Utils";
-import {UIEventSource} from "./UIEventSource";
+import { Utils } from "../Utils"
+import { UIEventSource } from "./UIEventSource"
 
 /**
  * Metatagging adds various tags to the elements, e.g. lat, lon, surface area, ...
@@ -18,7 +18,10 @@ import {UIEventSource} from "./UIEventSource";
 export default class MetaTagging {
     private static errorPrintCount = 0
     private static readonly stopErrorOutputAt = 10
-    private static retaggingFuncCache = new Map<string, ((feature: Feature, propertiesStore: UIEventSource<any>) => void)[]>()
+    private static retaggingFuncCache = new Map<
+        string,
+        ((feature: Feature, propertiesStore: UIEventSource<any>) => void)[]
+    >()
 
     constructor(state: {
         layout: LayoutConfig
@@ -96,7 +99,7 @@ export default class MetaTagging {
         // The calculated functions - per layer - which add the new keys
         // Calculated functions are defined by the layer
         const layerFuncs = this.createRetaggingFunc(layer, ExtraFunctions.constructHelpers(params))
-        const state: MetataggingState = {layout, osmObjectDownloader}
+        const state: MetataggingState = { layout, osmObjectDownloader }
 
         let atLeastOneFeatureChanged = false
         let strictlyEvaluated = 0
@@ -177,20 +180,20 @@ export default class MetaTagging {
     }
 
     public static createExtraFuncParams(state: {
-        indexedFeatures: IndexedFeatureSource,
+        indexedFeatures: IndexedFeatureSource
         perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
     }) {
         return {
             getFeatureById: (id) => state.indexedFeatures.featuresById.data.get(id),
             getFeaturesWithin: (layerId, bbox) => {
-                if (layerId === '*' || layerId === null || layerId === undefined) {
+                if (layerId === "*" || layerId === null || layerId === undefined) {
                     const feats: Feature[][] = []
                     state.perLayer.forEach((layer) => {
                         feats.push(layer.GetFeaturesWithin(bbox))
                     })
                     return feats
                 }
-                return [state.perLayer.get(layerId).GetFeaturesWithin(bbox)];
+                return [state.perLayer.get(layerId).GetFeaturesWithin(bbox)]
             },
         }
     }
@@ -202,23 +205,30 @@ export default class MetaTagging {
      * @param layerId
      * @private
      */
-    private static createFunctionForFeature([key, code, isStrict]: [string, string, boolean],
-                                            helperFunctions: Record<ExtraFuncType, (feature: Feature) => Function>,
-                                            layerId: string = "unkown layer"
+    private static createFunctionForFeature(
+        [key, code, isStrict]: [string, string, boolean],
+        helperFunctions: Record<ExtraFuncType, (feature: Feature) => Function>,
+        layerId: string = "unkown layer"
     ): ((feature: Feature, propertiesStore?: UIEventSource<any>) => void) | undefined {
         if (code === undefined) {
             return undefined
         }
 
-
-        const calculateAndAssign: ((feat: Feature, store?: UIEventSource<any>) => string | any) = (feat, store) => {
+        const calculateAndAssign: (feat: Feature, store?: UIEventSource<any>) => string | any = (
+            feat,
+            store
+        ) => {
             try {
-                let result = new Function("feat", "{" + ExtraFunctions.types.join(", ") + "}", "return " + code + ";")(feat, helperFunctions)
+                let result = new Function(
+                    "feat",
+                    "{" + ExtraFunctions.types.join(", ") + "}",
+                    "return " + code + ";"
+                )(feat, helperFunctions)
                 if (result === "") {
                     result = undefined
                 }
-                const oldValue= feat.properties[key]
-                if(oldValue == result){
+                const oldValue = feat.properties[key]
+                if (oldValue == result) {
                     return oldValue
                 }
                 delete feat.properties[key]
@@ -229,16 +239,16 @@ export default class MetaTagging {
                 if (MetaTagging.errorPrintCount < MetaTagging.stopErrorOutputAt) {
                     console.warn(
                         "Could not calculate a " +
-                        (isStrict ? "strict " : "") +
-                        " calculated tag for key " +
-                        key +
-                        " defined by " +
-                        code +
-                        " (in layer" +
-                        layerId +
-                        ") due to \n" +
-                        e +
-                        "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features",
+                            (isStrict ? "strict " : "") +
+                            " calculated tag for key " +
+                            key +
+                            " defined by " +
+                            code +
+                            " (in layer" +
+                            layerId +
+                            ") due to \n" +
+                            e +
+                            "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features",
                         e,
                         e.stack
                     )
@@ -276,9 +286,12 @@ export default class MetaTagging {
             return undefined
         }
 
-        let functions: ((feature: Feature, propertiesStore?: UIEventSource<any>) => void)[] = MetaTagging.retaggingFuncCache.get(layer.id)
+        let functions: ((feature: Feature, propertiesStore?: UIEventSource<any>) => void)[] =
+            MetaTagging.retaggingFuncCache.get(layer.id)
         if (functions === undefined) {
-            functions = calculatedTags.map(spec => this.createFunctionForFeature(spec, helpers, layer.id))
+            functions = calculatedTags.map((spec) =>
+                this.createFunctionForFeature(spec, helpers, layer.id)
+            )
             MetaTagging.retaggingFuncCache.set(layer.id, functions)
         }
 

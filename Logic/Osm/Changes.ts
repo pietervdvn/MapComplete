@@ -1,16 +1,16 @@
-import {OsmNode, OsmObject, OsmRelation, OsmWay} from "./OsmObject"
-import {Store, UIEventSource} from "../UIEventSource"
+import { OsmNode, OsmObject, OsmRelation, OsmWay } from "./OsmObject"
+import { Store, UIEventSource } from "../UIEventSource"
 import Constants from "../../Models/Constants"
 import OsmChangeAction from "./Actions/OsmChangeAction"
-import {ChangeDescription, ChangeDescriptionTools} from "./Actions/ChangeDescription"
-import {Utils} from "../../Utils"
-import {LocalStorageSource} from "../Web/LocalStorageSource"
+import { ChangeDescription, ChangeDescriptionTools } from "./Actions/ChangeDescription"
+import { Utils } from "../../Utils"
+import { LocalStorageSource } from "../Web/LocalStorageSource"
 import SimpleMetaTagger from "../SimpleMetaTagger"
-import {FeatureSource, IndexedFeatureSource} from "../FeatureSource/FeatureSource"
-import {GeoLocationPointProperties} from "../State/GeoLocationState"
-import {GeoOperations} from "../GeoOperations"
-import {ChangesetHandler, ChangesetTag} from "./ChangesetHandler"
-import {OsmConnection} from "./OsmConnection"
+import { FeatureSource, IndexedFeatureSource } from "../FeatureSource/FeatureSource"
+import { GeoLocationPointProperties } from "../State/GeoLocationState"
+import { GeoOperations } from "../GeoOperations"
+import { ChangesetHandler, ChangesetTag } from "./ChangesetHandler"
+import { OsmConnection } from "./OsmConnection"
 import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
 import OsmObjectDownloader from "./OsmObjectDownloader"
 
@@ -408,7 +408,7 @@ export class Changes {
             neededIds.map(async (id) => {
                 try {
                     const osmObj = await downloader.DownloadObjectAsync(id)
-                    return {id, osmObj}
+                    return { id, osmObj }
                 } catch (e) {
                     console.error(
                         "Could not download OSM-object",
@@ -422,7 +422,7 @@ export class Changes {
 
         osmObjects = Utils.NoNull(osmObjects)
 
-        for (const {osmObj, id} of osmObjects) {
+        for (const { osmObj, id } of osmObjects) {
             if (osmObj === "deleted") {
                 pending = pending.filter((ch) => ch.type + "/" + ch.id !== id)
             }
@@ -573,9 +573,9 @@ export class Changes {
                             )
                         console.log(
                             "Using current-open-changeset-" +
-                            theme +
-                            " from the preferences, got " +
-                            openChangeset.data
+                                theme +
+                                " from the preferences, got " +
+                                openChangeset.data
                         )
 
                         return await self.flushSelectChanges(pendingChanges, openChangeset)

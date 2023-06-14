@@ -1,9 +1,9 @@
-import {FixedUiElement} from "../Base/FixedUiElement"
-import {Translation, TypedTranslation} from "./Translation"
+import { FixedUiElement } from "../Base/FixedUiElement"
+import { Translation, TypedTranslation } from "./Translation"
 import BaseUIElement from "../BaseUIElement"
 import CompiledTranslations from "../../assets/generated/CompiledTranslations"
 import LanguageUtils from "../../Utils/LanguageUtils"
-import {ClickableToggle} from "../Input/Toggle";
+import { ClickableToggle } from "../Input/Toggle"
 
 export default class Translations {
     static readonly t: Readonly<typeof CompiledTranslations.t> = CompiledTranslations.t
@@ -30,7 +30,9 @@ export default class Translations {
             const v = JSON.stringify(s)
             if (v.length > 100) {
                 const shortened = v.substring(0, 100) + "..."
-                return new ClickableToggle(v, shortened).ToggleOnClick().SetClass("literal-code button")
+                return new ClickableToggle(v, shortened)
+                    .ToggleOnClick()
+                    .SetClass("literal-code button")
             }
             return new FixedUiElement(v).SetClass("literal-code")
         }
@@ -73,7 +75,7 @@ export default class Translations {
             t = "" + t
         }
         if (typeof t === "string") {
-            return new TypedTranslation<object>({"*": t}, context)
+            return new TypedTranslation<object>({ "*": t }, context)
         }
         if (t["render"] !== undefined) {
             const msg =

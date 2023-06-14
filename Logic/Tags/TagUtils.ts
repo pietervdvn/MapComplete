@@ -22,7 +22,7 @@ export class TagUtils {
     ]
 
     static KVtoProperties(tags: Tag[]): Record<string, string> {
-        const properties : Record<string, string> = {}
+        const properties: Record<string, string> = {}
         for (const tag of tags) {
             properties[tag.key] = tag.value
         }

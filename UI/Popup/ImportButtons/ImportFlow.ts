@@ -1,20 +1,20 @@
-import {SpecialVisualizationState} from "../../SpecialVisualization";
-import {Utils} from "../../../Utils";
-import {ImmutableStore, Store, UIEventSource} from "../../../Logic/UIEventSource";
-import {Tag} from "../../../Logic/Tags/Tag";
-import TagApplyButton from "../TagApplyButton";
-import {PointImportFlowArguments} from "./PointImportFlowState";
-import {Translation} from "../../i18n/Translation";
-import Translations from "../../i18n/Translations";
-import {OsmConnection} from "../../../Logic/Osm/OsmConnection";
-import FilteredLayer from "../../../Models/FilteredLayer";
-import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
-import {LayerConfigJson} from "../../../Models/ThemeConfig/Json/LayerConfigJson";
-import conflation_json from "../../../assets/layers/conflation/conflation.json";
-import {And} from "../../../Logic/Tags/And";
+import { SpecialVisualizationState } from "../../SpecialVisualization"
+import { Utils } from "../../../Utils"
+import { ImmutableStore, Store, UIEventSource } from "../../../Logic/UIEventSource"
+import { Tag } from "../../../Logic/Tags/Tag"
+import TagApplyButton from "../TagApplyButton"
+import { PointImportFlowArguments } from "./PointImportFlowState"
+import { Translation } from "../../i18n/Translation"
+import Translations from "../../i18n/Translations"
+import { OsmConnection } from "../../../Logic/Osm/OsmConnection"
+import FilteredLayer from "../../../Models/FilteredLayer"
+import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
+import { LayerConfigJson } from "../../../Models/ThemeConfig/Json/LayerConfigJson"
+import conflation_json from "../../../assets/layers/conflation/conflation.json"
+import { And } from "../../../Logic/Tags/And"
 
 export interface ImportFlowArguments {
-    readonly  text: string
+    readonly text: string
     readonly tags: string
     readonly targetLayer: string
     readonly icon?: string
@@ -40,11 +40,12 @@ ${Utils.Special_visualizations_tagsToApplyHelpText}
 ${Utils.special_visualizations_importRequirementDocs}
 `
 
-    public static generalArguments = [{
-        name: "targetLayer",
-        doc: "The id of the layer where this point should end up. This is not very strict, it will simply result in checking that this layer is shown preventing possible duplicate elements",
-        required: true,
-    },
+    public static generalArguments = [
+        {
+            name: "targetLayer",
+            doc: "The id of the layer where this point should end up. This is not very strict, it will simply result in checking that this layer is shown preventing possible duplicate elements",
+            required: true,
+        },
         {
             name: "tags",
             doc: "The tags to add onto the new object - see specification above. If this is a key (a single word occuring in the properties of the object), the corresponding value is taken and expanded instead",
@@ -59,7 +60,8 @@ ${Utils.special_visualizations_importRequirementDocs}
             name: "icon",
             doc: "A nice icon to show in the button",
             defaultValue: "./assets/svg/addSmall.svg",
-        },]
+        },
+    ]
 
     /**
      * Given the tagsstore of the point which represents the challenge, creates a new store with tags that should be applied onto the newly created point,
@@ -82,17 +84,17 @@ ${Utils.special_visualizations_importRequirementDocs}
             const items: string = originalFeatureTags.data[tags]
             console.debug(
                 "The import button is using tags from properties[" +
-                tags +
-                "] of this object, namely ",
+                    tags +
+                    "] of this object, namely ",
                 items
             )
 
-            if(items.startsWith("{")){
+            if (items.startsWith("{")) {
                 // This is probably a JSON
                 const properties: Record<string, string> = JSON.parse(items)
                 const keys = Object.keys(properties)
-                const tags = keys.map(k => new Tag(k, properties[k]))
-                return new ImmutableStore((tags))
+                const tags = keys.map((k) => new Tag(k, properties[k]))
+                return new ImmutableStore(tags)
             }
 
             newTags = TagApplyButton.generateTagsToApply(items, originalFeatureTags)
@@ -110,24 +112,32 @@ ${Utils.special_visualizations_importRequirementDocs}
      * @param argsRaw
      */
     public static getLayerDependencies(argsRaw: string[], argSpec?) {
-        const args: ImportFlowArguments = <any>Utils.ParseVisArgs(argSpec ?? ImportFlowUtils.generalArguments, argsRaw)
+        const args: ImportFlowArguments = <any>(
+            Utils.ParseVisArgs(argSpec ?? ImportFlowUtils.generalArguments, argsRaw)
+        )
         return [args.targetLayer]
     }
 
-    public static getLayerDependenciesWithSnapOnto(argSpec: {
-        name: string,
-        defaultValue?: string
-    }[], argsRaw: string[]): string[] {
+    public static getLayerDependenciesWithSnapOnto(
+        argSpec: {
+            name: string
+            defaultValue?: string
+        }[],
+        argsRaw: string[]
+    ): string[] {
         const deps = ImportFlowUtils.getLayerDependencies(argsRaw, argSpec)
         const argsParsed: PointImportFlowArguments = <any>Utils.ParseVisArgs(argSpec, argsRaw)
-        const snapOntoLayers = argsParsed.snap_onto_layers?.split(";")?.map(l => l.trim()) ?? []
+        const snapOntoLayers = argsParsed.snap_onto_layers?.split(";")?.map((l) => l.trim()) ?? []
         deps.push(...snapOntoLayers)
         return deps
     }
 
-    public static buildTagSpec(args: ImportFlowArguments, tagSource: Store<Record<string, string>>): Store<string> {
+    public static buildTagSpec(
+        args: ImportFlowArguments,
+        tagSource: Store<Record<string, string>>
+    ): Store<string> {
         let tagSpec = args.tags
-        return tagSource.mapD(tags => {
+        return tagSource.mapD((tags) => {
             if (
                 tagSpec.indexOf(" ") < 0 &&
                 tagSpec.indexOf(";") < 0 &&
@@ -137,8 +147,8 @@ ${Utils.special_visualizations_importRequirementDocs}
                 tagSpec = tags[args.tags]
                 console.debug(
                     "The import button is using tags from properties[" +
-                    args.tags +
-                    "] of this object, namely ",
+                        args.tags +
+                        "] of this object, namely ",
                     tagSpec
                 )
             }
@@ -147,70 +157,72 @@ ${Utils.special_visualizations_importRequirementDocs}
     }
 }
 
-
 /**
  * The ImportFlow dictates some aspects of the import flow, e.g. what type of map should be shown and, in the case of a preview map, what layers that should be added.
  *
  * This class works together closely with ImportFlow.svelte
  */
 export default abstract class ImportFlow<ArgT extends ImportFlowArguments> {
-
-    public readonly state: SpecialVisualizationState;
-    public readonly args: ArgT;
-    public readonly targetLayer: FilteredLayer;
+    public readonly state: SpecialVisualizationState
+    public readonly args: ArgT
+    public readonly targetLayer: FilteredLayer
     public readonly tagsToApply: Store<Tag[]>
-    protected readonly _originalFeatureTags: UIEventSource<Record<string, string>>;
+    protected readonly _originalFeatureTags: UIEventSource<Record<string, string>>
 
-    constructor(state: SpecialVisualizationState, args: ArgT, tagsToApply: Store<Tag[]>, originalTags: UIEventSource<Record<string, string>>) {
-        this.state = state;
-        this.args = args;
-        this.tagsToApply = tagsToApply;
-        this._originalFeatureTags = originalTags;
+    constructor(
+        state: SpecialVisualizationState,
+        args: ArgT,
+        tagsToApply: Store<Tag[]>,
+        originalTags: UIEventSource<Record<string, string>>
+    ) {
+        this.state = state
+        this.args = args
+        this.tagsToApply = tagsToApply
+        this._originalFeatureTags = originalTags
         this.targetLayer = state.layerState.filteredLayers.get(args.targetLayer)
-
-
     }
 
     /**
      * Constructs a store that contains either 'true' or gives a translation with the reason why it cannot be imported
      */
-    public canBeImported(): Store<true | { error: Translation, extraHelp?: Translation }> {
+    public canBeImported(): Store<true | { error: Translation; extraHelp?: Translation }> {
         const state = this.state
-        return state.featureSwitchIsTesting.map(isTesting => {
-            const t = Translations.t.general.add.import
+        return state.featureSwitchIsTesting.map(
+            (isTesting) => {
+                const t = Translations.t.general.add.import
 
-            if(this._originalFeatureTags.data["_imported"] === "yes"){
-                return {error: t.hasBeenImported}
-            }
-
-            const usesTestUrl = this.state.osmConnection._oauth_config.url === OsmConnection.oauth_configs["osm-test"].url
-            if (!state.layout.official && !(isTesting || usesTestUrl)) {
-                // Unofficial theme - imports not allowed
-                return {
-                    error: t.officialThemesOnly,
-                    extraHelp: t.howToTest
+                if (this._originalFeatureTags.data["_imported"] === "yes") {
+                    return { error: t.hasBeenImported }
                 }
-            }
 
-            if (this.targetLayer === undefined) {
-                const e = `Target layer not defined: error in import button for theme: ${this.state.layout.id}: layer ${this.args.targetLayer} not found`
-                console.error(e)
-                return {error: new Translation({"*": e})}
-            }
+                const usesTestUrl =
+                    this.state.osmConnection._oauth_config.url ===
+                    OsmConnection.oauth_configs["osm-test"].url
+                if (!state.layout.official && !(isTesting || usesTestUrl)) {
+                    // Unofficial theme - imports not allowed
+                    return {
+                        error: t.officialThemesOnly,
+                        extraHelp: t.howToTest,
+                    }
+                }
 
-            if (state.mapProperties.zoom.data < 18) {
-                return {error: t.zoomInMore}
-            }
+                if (this.targetLayer === undefined) {
+                    const e = `Target layer not defined: error in import button for theme: ${this.state.layout.id}: layer ${this.args.targetLayer} not found`
+                    console.error(e)
+                    return { error: new Translation({ "*": e }) }
+                }
 
+                if (state.mapProperties.zoom.data < 18) {
+                    return { error: t.zoomInMore }
+                }
 
-            if(state.dataIsLoading.data){
-                return {error: Translations.t.general.add.stillLoading}
-            }
+                if (state.dataIsLoading.data) {
+                    return { error: Translations.t.general.add.stillLoading }
+                }
 
-            return undefined
-        }, [state.mapProperties.zoom, state.dataIsLoading, this._originalFeatureTags])
-
-
+                return undefined
+            },
+            [state.mapProperties.zoom, state.dataIsLoading, this._originalFeatureTags]
+        )
     }
-
 }

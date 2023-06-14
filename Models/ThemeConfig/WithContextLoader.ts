@@ -21,7 +21,10 @@ export default class WithContextLoader {
             if (deflt === undefined) {
                 return undefined
             }
-            return new TagRenderingConfig(deflt, `${translationContext ?? this._context}.${key}.default value`)
+            return new TagRenderingConfig(
+                deflt,
+                `${translationContext ?? this._context}.${key}.default value`
+            )
         }
         if (typeof v === "string") {
             const shared = SharedTagRenderings.SharedTagRendering.get(v)

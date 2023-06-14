@@ -1,12 +1,12 @@
 import Svg from "../../Svg"
 import Combine from "../Base/Combine"
 import Translations from "../i18n/Translations"
-import LayoutConfig, {LayoutInformation} from "../../Models/ThemeConfig/LayoutConfig"
-import {ImmutableStore, Store} from "../../Logic/UIEventSource"
+import LayoutConfig, { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
+import { ImmutableStore, Store } from "../../Logic/UIEventSource"
 import UserRelatedState from "../../Logic/State/UserRelatedState"
-import {Utils} from "../../Utils"
+import { Utils } from "../../Utils"
 import themeOverview from "../../assets/generated/theme_overview.json"
-import {TextField} from "../Input/TextField"
+import { TextField } from "../Input/TextField"
 import Locale from "../i18n/Locale"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import ThemesList from "./ThemesList.svelte"
@@ -29,7 +29,7 @@ export default class MoreScreen extends Combine {
         })
         search.enterPressed.addCallbackD((searchTerm) => {
             searchTerm = searchTerm.toLowerCase()
-            if(!searchTerm){
+            if (!searchTerm) {
                 return
             }
             if (searchTerm === "personal") {

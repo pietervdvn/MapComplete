@@ -10,7 +10,7 @@ import { VariableUiElement } from "../Base/VariableUIElement"
 import Table from "../Base/Table"
 import { Translation } from "../i18n/Translation"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
-import Loading from "../Base/Loading";
+import Loading from "../Base/Loading"
 
 export default class OpeningHoursVisualization extends Toggle {
     private static readonly weekdays: Translation[] = [
@@ -30,7 +30,7 @@ export default class OpeningHoursVisualization extends Toggle {
         prefix = "",
         postfix = ""
     ) {
-        const country = tags.map(tags => tags._country)
+        const country = tags.map((tags) => tags._country)
         const ohTable = new VariableUiElement(
             tags
                 .map((tags) => {
@@ -43,32 +43,35 @@ export default class OpeningHoursVisualization extends Toggle {
                     }
                     return value
                 }) // This mapping will absorb all other changes to tags in order to prevent regeneration
-                .map((ohtext) => {
-                    if (ohtext === undefined) {
-                        return new FixedUiElement(
-                            "No opening hours defined with key " + key
-                        ).SetClass("alert")
-                    }
-                    try {
-                        return OpeningHoursVisualization.CreateFullVisualisation(
-                            OH.CreateOhObject(<any>tags.data, ohtext)
-                        )
-                    } catch (e) {
-                        console.warn(e, e.stack)
-                        return new Combine([
-                            Translations.t.general.opening_hours.error_loading,
-                            new Toggle(
-                                new FixedUiElement(e).SetClass("subtle"),
-                                undefined,
-                                state?.osmConnection?.userDetails.map(
-                                    (userdetails) =>
-                                        userdetails.csCount >=
-                                        Constants.userJourney.tagsVisibleAndWikiLinked
-                                )
-                            ),
-                        ])
-                    }
-                }, [country])
+                .map(
+                    (ohtext) => {
+                        if (ohtext === undefined) {
+                            return new FixedUiElement(
+                                "No opening hours defined with key " + key
+                            ).SetClass("alert")
+                        }
+                        try {
+                            return OpeningHoursVisualization.CreateFullVisualisation(
+                                OH.CreateOhObject(<any>tags.data, ohtext)
+                            )
+                        } catch (e) {
+                            console.warn(e, e.stack)
+                            return new Combine([
+                                Translations.t.general.opening_hours.error_loading,
+                                new Toggle(
+                                    new FixedUiElement(e).SetClass("subtle"),
+                                    undefined,
+                                    state?.osmConnection?.userDetails.map(
+                                        (userdetails) =>
+                                            userdetails.csCount >=
+                                            Constants.userJourney.tagsVisibleAndWikiLinked
+                                    )
+                                ),
+                            ])
+                        }
+                    },
+                    [country]
+                )
         )
 
         super(

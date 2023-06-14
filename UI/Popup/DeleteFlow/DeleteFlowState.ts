@@ -1,16 +1,18 @@
-import {Translation} from "../../i18n/Translation";
-import OsmObjectDownloader from "../../../Logic/Osm/OsmObjectDownloader";
-import {UIEventSource} from "../../../Logic/UIEventSource";
-import {OsmId} from "../../../Models/OsmFeature";
-import {OsmConnection} from "../../../Logic/Osm/OsmConnection";
-import {SpecialVisualizationState} from "../../SpecialVisualization";
-import Translations from "../../i18n/Translations";
-import Constants from "../../../Models/Constants";
-
+import { Translation } from "../../i18n/Translation"
+import OsmObjectDownloader from "../../../Logic/Osm/OsmObjectDownloader"
+import { UIEventSource } from "../../../Logic/UIEventSource"
+import { OsmId } from "../../../Models/OsmFeature"
+import { OsmConnection } from "../../../Logic/Osm/OsmConnection"
+import { SpecialVisualizationState } from "../../SpecialVisualization"
+import Translations from "../../i18n/Translations"
+import Constants from "../../../Models/Constants"
 
 export class DeleteFlowState {
-    public readonly canBeDeleted: UIEventSource<boolean | undefined> = new UIEventSource<boolean | undefined>(undefined)
-    public readonly canBeDeletedReason: UIEventSource<Translation | undefined> = new UIEventSource<Translation>(undefined)
+    public readonly canBeDeleted: UIEventSource<boolean | undefined> = new UIEventSource<
+        boolean | undefined
+    >(undefined)
+    public readonly canBeDeletedReason: UIEventSource<Translation | undefined> =
+        new UIEventSource<Translation>(undefined)
     private readonly objectDownloader: OsmObjectDownloader
     private readonly _id: OsmId
     private readonly _allowDeletionAtChangesetCount: number
@@ -176,9 +178,10 @@ export class DeleteFlowState {
             } else {
                 // alright, this point can be safely deleted!
                 this.canBeDeleted.setData(true)
-                this.canBeDeletedReason.setData(allByMyself.data ? t.onlyEditedByLoggedInUser : t.safeDelete)
+                this.canBeDeletedReason.setData(
+                    allByMyself.data ? t.onlyEditedByLoggedInUser : t.safeDelete
+                )
             }
         })
     }
-
 }

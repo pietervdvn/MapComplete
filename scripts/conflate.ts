@@ -1,14 +1,14 @@
 import Script from "./Script"
 import fs from "fs"
-import {Feature} from "geojson"
-import {GeoOperations} from "../Logic/GeoOperations"
-import {Utils} from "../Utils"
-import {OsmObject} from "../Logic/Osm/OsmObject"
-import {OsmId} from "../Models/OsmFeature"
+import { Feature } from "geojson"
+import { GeoOperations } from "../Logic/GeoOperations"
+import { Utils } from "../Utils"
+import { OsmObject } from "../Logic/Osm/OsmObject"
+import { OsmId } from "../Models/OsmFeature"
 import ScriptUtils from "./ScriptUtils"
-import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader";
-import PhoneValidator from "../UI/InputElement/Validators/PhoneValidator";
-import UrlValidator from "../UI/InputElement/Validators/UrlValidator";
+import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader"
+import PhoneValidator from "../UI/InputElement/Validators/PhoneValidator"
+import UrlValidator from "../UI/InputElement/Validators/UrlValidator"
 
 interface PossibleMatch {
     /**
@@ -48,15 +48,12 @@ export class Conflate extends Script {
     }
 
     private static toXml(changedObjects: OsmObject[]): string {
-
         return [
             "<?xml version='1.0' encoding='UTF-8'?>",
             "<osm version=\"0.6\" generator='mapcomplete-conflate-script'>",
-            ...changedObjects.map(obj =>
-                obj.ChangesetXML(undefined, ' action="modify" ')
-            ),
-            "</osm>"
-        ].join("\n");
+            ...changedObjects.map((obj) => obj.ChangesetXML(undefined, ' action="modify" ')),
+            "</osm>",
+        ].join("\n")
     }
 
     async main(args: string[]): Promise<void> {
@@ -84,10 +81,10 @@ export class Conflate extends Script {
         }
 
         const external_features: Feature[] = JSON.parse(
-            fs.readFileSync(external_file_path, {encoding: "utf-8"})
+            fs.readFileSync(external_file_path, { encoding: "utf-8" })
         ).features
         const osm_features: Feature[] = JSON.parse(
-            fs.readFileSync(osm_file_path, {encoding: "utf-8"})
+            fs.readFileSync(osm_file_path, { encoding: "utf-8" })
         ).features
 
         const bestMatches = await this.calculateMatches(external_features, osm_features, max_range)
@@ -106,9 +103,9 @@ export class Conflate extends Script {
         ]
 
         const changedObjects: OsmObject[] = []
-        for (const {match, replayed} of bestMatches) {
-            const {external_feature, d, osm_feature} = match
-            const {possibly_imported, certainly_imported, resting_properties} = replayed
+        for (const { match, replayed } of bestMatches) {
+            const { external_feature, d, osm_feature } = match
+            const { possibly_imported, certainly_imported, resting_properties } = replayed
             const status = resting_properties["status"]
             delete resting_properties["status"]
             if (Object.keys(resting_properties).length === 0) {
@@ -125,7 +122,7 @@ export class Conflate extends Script {
             ])
 
             const osmObj = await new OsmObjectDownloader().DownloadObjectAsync(id)
-            if(osmObj === "deleted"){
+            if (osmObj === "deleted") {
                 return
             }
             for (const key in resting_properties) {
@@ -142,13 +139,10 @@ export class Conflate extends Script {
             match_lengths.map((l) => l.join("\t")).join("\n")
         )
 
-        fs.writeFileSync(targetDir + "/changeset.xml",
-            Conflate.toXml(changedObjects)
-        )
+        fs.writeFileSync(targetDir + "/changeset.xml", Conflate.toXml(changedObjects))
 
-
-        fs.writeFileSync(targetDir +
-            "/unmatched.geojson",
+        fs.writeFileSync(
+            targetDir + "/unmatched.geojson",
             JSON.stringify(
                 {
                     type: "FeatureCollection",
@@ -166,7 +160,9 @@ export class Conflate extends Script {
         osmName: string,
         osmId: OsmId
     ): Promise<{ earliestDateOfImport; latestDateOfImport }> {
-        const history = await new OsmObjectDownloader().DownloadHistory(osmId).AsPromise((h) => h.length > 0)
+        const history = await new OsmObjectDownloader()
+            .DownloadHistory(osmId)
+            .AsPromise((h) => h.length > 0)
         let earliest: Date = undefined
         let latest: Date = undefined
         for (const historyElement of history) {
@@ -196,7 +192,7 @@ export class Conflate extends Script {
             this.latestDate = latest
         }
 
-        return {earliestDateOfImport: earliest, latestDateOfImport: latest}
+        return { earliestDateOfImport: earliest, latestDateOfImport: latest }
     }
 
     private findPossibleMatchesFor(
@@ -232,7 +228,7 @@ export class Conflate extends Script {
         }
         const cachePath = this.historyCacheDir + "/urls/    " + url.replace(/[/\\:]/g, "_")
         if (fs.existsSync(cachePath)) {
-            return JSON.parse(fs.readFileSync(cachePath, {encoding: "utf-8"}))
+            return JSON.parse(fs.readFileSync(cachePath, { encoding: "utf-8" }))
         }
         let online: boolean | string = false
         try {
@@ -244,7 +240,7 @@ export class Conflate extends Script {
                 console.log("Maybe trying the homepage will help?")
             }
         }
-        fs.writeFileSync(cachePath, JSON.stringify(online, null, "  "), {encoding: "utf-8"})
+        fs.writeFileSync(cachePath, JSON.stringify(online, null, "  "), { encoding: "utf-8" })
         return online
     }
 
@@ -255,7 +251,8 @@ export class Conflate extends Script {
         url = url.replace("http://", "https://")
         try {
             const result = await ScriptUtils.Download(url, {
-                "User-agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/114.0"
+                "User-agent":
+                    "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/114.0",
             })
             if (result["redirect"]) {
                 if (result["redirect"].startsWith("/")) {
@@ -280,10 +277,12 @@ export class Conflate extends Script {
             fs.mkdirSync(this.historyCacheDir)
         }
         if (fs.existsSync(cachePath)) {
-            return JSON.parse(fs.readFileSync(cachePath, {encoding: "utf-8"}))
+            return JSON.parse(fs.readFileSync(cachePath, { encoding: "utf-8" }))
         }
-        const history = await new OsmObjectDownloader().DownloadHistory(id).AsPromise((l) => l.length > 0)
-        fs.writeFileSync(cachePath, JSON.stringify(history, null, "  "), {encoding: "utf-8"})
+        const history = await new OsmObjectDownloader()
+            .DownloadHistory(id)
+            .AsPromise((l) => l.length > 0)
+        fs.writeFileSync(cachePath, JSON.stringify(history, null, "  "), { encoding: "utf-8" })
         return history
     }
 
@@ -328,7 +327,7 @@ export class Conflate extends Script {
         let certainly_imported = match.d < 0.0001
         let possibly_imported = false
 
-        const resting_properties = {...match.external_feature.properties}
+        const resting_properties = { ...match.external_feature.properties }
         await this.normalize(resting_properties)
 
         for (const historyElement of history) {

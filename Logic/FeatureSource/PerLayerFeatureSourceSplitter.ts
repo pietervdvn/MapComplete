@@ -1,8 +1,8 @@
-import {FeatureSource} from "./FeatureSource"
+import { FeatureSource } from "./FeatureSource"
 import FilteredLayer from "../../Models/FilteredLayer"
 import SimpleFeatureSource from "./Sources/SimpleFeatureSource"
-import {Feature} from "geojson"
-import {UIEventSource} from "../UIEventSource"
+import { Feature } from "geojson"
+import { UIEventSource } from "../UIEventSource"
 
 /**
  * In some rare cases, some elements are shown on multiple layers (when 'passthrough' is enabled)
@@ -59,8 +59,11 @@ export default class PerLayerFeatureSourceSplitter<T extends FeatureSource = Fea
                 let foundALayer = false
                 for (let i = 0; i < layers.length; i++) {
                     const layer = layers[i]
-                    if(!layer.layerDef?.source){
-                        console.error("PerLayerFeatureSourceSplitter got a layer without a source:", layer.layerDef.id)
+                    if (!layer.layerDef?.source) {
+                        console.error(
+                            "PerLayerFeatureSourceSplitter got a layer without a source:",
+                            layer.layerDef.id
+                        )
                         continue
                     }
                     if (layer.layerDef.source.osmTags.matchesProperties(f.properties)) {

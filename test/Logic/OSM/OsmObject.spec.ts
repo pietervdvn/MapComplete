@@ -92,7 +92,9 @@ describe("OsmObject", () => {
                 "https://www.openstreetmap.org/api/0.6/relation/5759328/full",
                 JSON.parse(readFileSync("./test/data/relation_5759328.json", { encoding: "utf-8" }))
             )
-            const r = await new OsmObjectDownloader().DownloadObjectAsync("relation/5759328").then((x) => x)
+            const r = await new OsmObjectDownloader()
+                .DownloadObjectAsync("relation/5759328")
+                .then((x) => x)
             const geojson = r.asGeoJson()
             expect(geojson.geometry.type).toBe("MultiPolygon")
         })

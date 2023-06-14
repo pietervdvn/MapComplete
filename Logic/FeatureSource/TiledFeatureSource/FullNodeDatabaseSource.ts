@@ -1,11 +1,10 @@
-import {OsmNode, OsmObject, OsmWay} from "../../Osm/OsmObject"
-import {UIEventSource} from "../../UIEventSource"
-import {BBox} from "../../BBox";
-import StaticFeatureSource from "../Sources/StaticFeatureSource";
-import {Tiles} from "../../../Models/TileRange";
+import { OsmNode, OsmObject, OsmWay } from "../../Osm/OsmObject"
+import { UIEventSource } from "../../UIEventSource"
+import { BBox } from "../../BBox"
+import StaticFeatureSource from "../Sources/StaticFeatureSource"
+import { Tiles } from "../../../Models/TileRange"
 
 export default class FullNodeDatabaseSource {
-
     private readonly loadedTiles = new Map<number, Map<number, OsmNode>>()
     private readonly nodeByIds = new Map<number, OsmNode>()
     private readonly parentWays = new Map<number, UIEventSource<OsmWay[]>>()
@@ -13,7 +12,7 @@ export default class FullNodeDatabaseSource {
     private smallestZoom = 99
     private largestZoom = 0
 
-    public handleOsmJson(osmJson: any, z: number, x: number, y: number) : void {
+    public handleOsmJson(osmJson: any, z: number, x: number, y: number): void {
         const allObjects = OsmObject.ParseObjects(osmJson.elements)
         const nodesById = new Map<number, OsmNode>()
 
@@ -81,14 +80,14 @@ export default class FullNodeDatabaseSource {
      * Gets (at least) all nodes which are part of this BBOX; might also return some nodes that fall outside of the bbox but are closeby
      * @param bbox
      */
-    getNodesWithin(bbox: BBox) : Map<number, OsmNode>{
+    getNodesWithin(bbox: BBox): Map<number, OsmNode> {
         const allById = new Map<number, OsmNode>()
         for (let z = this.smallestZoom; z < this.largestZoom; z++) {
             const range = Tiles.tileRangeFrom(bbox, z)
-            Tiles.MapRange(range, (x, y ) => {
+            Tiles.MapRange(range, (x, y) => {
                 const tileId = Tiles.tile_index(z, x, y)
                 const nodesById = this.loadedTiles.get(tileId)
-                nodesById?.forEach((v,k) => allById.set(k,v))
+                nodesById?.forEach((v, k) => allById.set(k, v))
             })
         }
         return allById

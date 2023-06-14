@@ -9,8 +9,8 @@ import IndexText from "./BigComponents/IndexText"
 import { LoginToggle } from "./Popup/LoginButton"
 import { ImmutableStore } from "../Logic/UIEventSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
-import {QueryParameters} from "../Logic/Web/QueryParameters";
-import {OsmConnectionFeatureSwitches} from "../Logic/State/FeatureSwitchState";
+import { QueryParameters } from "../Logic/Web/QueryParameters"
+import { OsmConnectionFeatureSwitches } from "../Logic/State/FeatureSwitchState"
 
 export default class AllThemesGui {
     setup() {
@@ -27,9 +27,10 @@ export default class AllThemesGui {
             })
             const state = new UserRelatedState(osmConnection)
             const intro = new Combine([
-                new LanguagePicker(Translations.t.index.title.SupportedLanguages(), state.language).SetClass(
-                    "flex absolute top-2 right-3"
-                ),
+                new LanguagePicker(
+                    Translations.t.index.title.SupportedLanguages(),
+                    state.language
+                ).SetClass("flex absolute top-2 right-3"),
                 new IndexText(),
             ])
             new Combine([

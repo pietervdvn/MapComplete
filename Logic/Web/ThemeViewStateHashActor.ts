@@ -1,8 +1,8 @@
-import ThemeViewState from "../../Models/ThemeViewState";
-import Hash from "./Hash";
+import ThemeViewState from "../../Models/ThemeViewState"
+import Hash from "./Hash"
 
 export default class ThemeViewStateHashActor {
-    private readonly _state: ThemeViewState;
+    private readonly _state: ThemeViewState
 
     /**
      * Converts the hash to the appropriate themeview state and, vice versa, sets the hash.
@@ -15,27 +15,27 @@ export default class ThemeViewStateHashActor {
      * @param state
      */
     constructor(state: ThemeViewState) {
-        this._state = state;
+        this._state = state
 
         // First of all, try to recover the selected element
         if (Hash.hash.data) {
             const hash = Hash.hash.data
             this.loadStateFromHash(hash)
             Hash.hash.setData(hash) // reapply the previous hash
-            state.indexedFeatures.featuresById.addCallbackAndRunD(_ => {
-                let unregister = this.loadSelectedElementFromHash(hash);
+            state.indexedFeatures.featuresById.addCallbackAndRunD((_) => {
+                let unregister = this.loadSelectedElementFromHash(hash)
                 // once that we have found a matching element, we can be sure the indexedFeaturesource was popuplated and that the job is done
                 return unregister
             })
         }
 
         // Register a hash change listener to correctly handle the back button
-        Hash.hash.addCallback(hash => {
+        Hash.hash.addCallback((hash) => {
             if (!!hash) {
                 // There is still a hash
                 // We _only_ have to (at most) close the overlays in this case
                 const parts = hash.split(";")
-                if(parts.indexOf("background") < 0){
+                if (parts.indexOf("background") < 0) {
                     state.guistate.backgroundLayerSelectionIsOpened.setData(false)
                 }
                 this.loadSelectedElementFromHash(hash)
@@ -46,16 +46,14 @@ export default class ThemeViewStateHashActor {
 
         // At last, register callbacks on the state to update the hash when they change.
         // Note: these should use 'addCallback', not 'addCallbackAndRun'
-        state.selectedElement.addCallback(_ => this.setHash())
-        state.guistate.allToggles.forEach(({toggle, submenu}) => {
-            submenu?.addCallback(_ => this.setHash())
-            toggle.addCallback(_ => this.setHash());
+        state.selectedElement.addCallback((_) => this.setHash())
+        state.guistate.allToggles.forEach(({ toggle, submenu }) => {
+            submenu?.addCallback((_) => this.setHash())
+            toggle.addCallback((_) => this.setHash())
         })
 
         // When all is done, set the hash. This must happen last to give the code above correct info
         this.setHash()
-
-
     }
 
     /**
@@ -103,8 +101,7 @@ export default class ThemeViewStateHashActor {
     private loadStateFromHash(hash: string) {
         const state = this._state
         const parts = hash.split(";")
-        outer: for (const {toggle, name, showOverOthers, submenu} of state.guistate.allToggles) {
-
+        outer: for (const { toggle, name, showOverOthers, submenu } of state.guistate.allToggles) {
             for (const part of parts) {
                 if (part === name) {
                     toggle.setData(true)
@@ -125,17 +122,15 @@ export default class ThemeViewStateHashActor {
             // If we arrive here, the loop above has not found any match
             toggle.setData(false)
         }
-
-
     }
 
     private setHash() {
         const s = this._state
         let h = ""
 
-        for (const {toggle, showOverOthers, name, submenu} of s.guistate.allToggles) {
+        for (const { toggle, showOverOthers, name, submenu } of s.guistate.allToggles) {
             if (showOverOthers || !toggle.data) {
-                continue;
+                continue
             }
             h = name
             if (submenu?.data) {
@@ -147,9 +142,9 @@ export default class ThemeViewStateHashActor {
             h = s.selectedElement.data.properties.id
         }
 
-        for (const {toggle, showOverOthers, name, submenu} of s.guistate.allToggles) {
+        for (const { toggle, showOverOthers, name, submenu } of s.guistate.allToggles) {
             if (!showOverOthers || !toggle.data) {
-                continue;
+                continue
             }
             if (h) {
                 h += ";" + name
@@ -161,7 +156,6 @@ export default class ThemeViewStateHashActor {
             }
         }
         Hash.hash.setData(h)
-
     }
 
     private back() {
@@ -176,5 +170,4 @@ export default class ThemeViewStateHashActor {
             return
         }
     }
-
 }

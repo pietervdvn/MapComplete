@@ -1,7 +1,7 @@
-import {UIEventSource} from "../../Logic/UIEventSource"
-import {LocalStorageSource} from "../../Logic/Web/LocalStorageSource"
-import {Utils} from "../../Utils"
-import {QueryParameters} from "../../Logic/Web/QueryParameters"
+import { UIEventSource } from "../../Logic/UIEventSource"
+import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource"
+import { Utils } from "../../Utils"
+import { QueryParameters } from "../../Logic/Web/QueryParameters"
 
 export default class Locale {
     public static showLinkToWeblate: UIEventSource<boolean> = new UIEventSource<boolean>(false)

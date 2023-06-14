@@ -1,5 +1,5 @@
-import {Tag} from "./Tag"
-import {TagsFilter} from "./TagsFilter"
+import { Tag } from "./Tag"
+import { TagsFilter } from "./TagsFilter"
 
 export class RegexTag extends TagsFilter {
     public readonly key: RegExp | string
@@ -39,7 +39,6 @@ export class RegexTag extends TagsFilter {
             return fromTag === possibleRegex
         }
         return possibleRegex.test(fromTag)
-
     }
 
     private static source(r: string | RegExp) {
@@ -155,7 +154,7 @@ export class RegexTag extends TagsFilter {
     matchesProperties(tags: Record<string, string | number | boolean>): boolean {
         if (typeof this.key === "string") {
             let value = tags[this.key]
-            if(!value || value === ""){
+            if (!value || value === "") {
                 // No tag is known, so we assume the empty string
                 // If this regexTag matches the empty string, we return true, otherwise false
                 // (Note: if inverted, we must reverse this)
@@ -176,7 +175,7 @@ export class RegexTag extends TagsFilter {
                     return !this.invert
                 }
             }
-            if(typeof value !== "string"){
+            if (typeof value !== "string") {
                 value = JSON.stringify(value)
             }
             return RegexTag.doesMatch(value, this.value) != this.invert
@@ -188,7 +187,7 @@ export class RegexTag extends TagsFilter {
             }
             if (RegexTag.doesMatch(key, this.key)) {
                 let value = tags[key] ?? ""
-                if(typeof value !== "string"){
+                if (typeof value !== "string") {
                     value = JSON.stringify(value)
                 }
                 return RegexTag.doesMatch(value, this.value) != this.invert

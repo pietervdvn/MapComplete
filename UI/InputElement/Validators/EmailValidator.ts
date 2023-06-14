@@ -1,7 +1,7 @@
-import {Translation} from "../../i18n/Translation.js"
+import { Translation } from "../../i18n/Translation.js"
 import Translations from "../../i18n/Translations.js"
 import * as emailValidatorLibrary from "email-validator"
-import {Validator} from "../Validator"
+import { Validator } from "../Validator"
 
 export default class EmailValidator extends Validator {
     constructor() {

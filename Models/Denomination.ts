@@ -51,7 +51,6 @@ export class Denomination {
         return (this._humanSingular ?? this._human).Clone()
     }
 
-
     /**
      * Create a representation of the given value
      * @param value: the value from OSM

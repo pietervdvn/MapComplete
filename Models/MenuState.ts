@@ -1,8 +1,8 @@
 import LayerConfig from "./ThemeConfig/LayerConfig"
-import {UIEventSource} from "../Logic/UIEventSource"
+import { UIEventSource } from "../Logic/UIEventSource"
 import UserRelatedState from "../Logic/State/UserRelatedState"
-import {Utils} from "../Utils"
-import {LocalStorageSource} from "../Logic/Web/LocalStorageSource"
+import { Utils } from "../Utils"
+import { LocalStorageSource } from "../Logic/Web/LocalStorageSource"
 
 export type ThemeViewTabStates = typeof MenuState._themeviewTabs[number]
 export type MenuViewTabStates = typeof MenuState._menuviewTabs[number]
@@ -14,8 +14,20 @@ export type MenuViewTabStates = typeof MenuState._menuviewTabs[number]
  * Some convenience methods are provided for this as well
  */
 export class MenuState {
-    public static readonly _themeviewTabs = ["intro", "filters", "download", "copyright","share"] as const
-    public static readonly _menuviewTabs = ["about", "settings", "community", "privacy","advanced"] as const
+    public static readonly _themeviewTabs = [
+        "intro",
+        "filters",
+        "download",
+        "copyright",
+        "share",
+    ] as const
+    public static readonly _menuviewTabs = [
+        "about",
+        "settings",
+        "community",
+        "privacy",
+        "advanced",
+    ] as const
     public readonly themeIsOpened: UIEventSource<boolean>
     public readonly themeViewTabIndex: UIEventSource<number>
     public readonly themeViewTab: UIEventSource<ThemeViewTabStates>
@@ -23,11 +35,13 @@ export class MenuState {
     public readonly menuViewTabIndex: UIEventSource<number>
     public readonly menuViewTab: UIEventSource<MenuViewTabStates>
 
-    public readonly backgroundLayerSelectionIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+    public readonly backgroundLayerSelectionIsOpened: UIEventSource<boolean> =
+        new UIEventSource<boolean>(false)
 
     public readonly allToggles: {
-        toggle: UIEventSource<boolean>, name: string,
-        submenu?: UIEventSource<string>,
+        toggle: UIEventSource<boolean>
+        name: string
+        submenu?: UIEventSource<string>
         showOverOthers?: boolean
     }[]
 
@@ -81,16 +95,19 @@ export class MenuState {
             {
                 toggle: this.menuIsOpened,
                 name: "menu",
-                submenu: this.menuViewTab
-            }, {
+                submenu: this.menuViewTab,
+            },
+            {
                 toggle: this.themeIsOpened,
                 name: "theme-menu",
-                submenu: this.themeViewTab
-            }, {
+                submenu: this.themeViewTab,
+            },
+            {
                 toggle: this.backgroundLayerSelectionIsOpened,
                 name: "background",
-                showOverOthers: true
-            }]
+                showOverOthers: true,
+            },
+        ]
     }
 
     public openFilterView(highlightLayer?: LayerConfig | string) {
@@ -128,10 +145,13 @@ export class MenuState {
      * Returns 'true' if at least one menu was opened
      */
     public closeAll(): boolean {
-        const toggles = [this.menuIsOpened, this.themeIsOpened, this.backgroundLayerSelectionIsOpened]
-        const somethingIsOpen = toggles.some(t => t.data)
-        toggles.forEach(t => t.setData(false))
+        const toggles = [
+            this.menuIsOpened,
+            this.themeIsOpened,
+            this.backgroundLayerSelectionIsOpened,
+        ]
+        const somethingIsOpen = toggles.some((t) => t.data)
+        toggles.forEach((t) => t.setData(false))
         return somethingIsOpen
     }
-
 }

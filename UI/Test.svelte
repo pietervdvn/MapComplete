@@ -1,11 +1,10 @@
 <script lang="ts">
   // Testing grounds
-  import { UIEventSource } from "../Logic/UIEventSource";
-  import TabbedGroup from "./Base/TabbedGroup.svelte";
+  import { UIEventSource } from "../Logic/UIEventSource"
+  import TabbedGroup from "./Base/TabbedGroup.svelte"
 
   let tab = new UIEventSource(1)
   console.log("Tab control", tab)
-
 </script>
 
 <TabbedGroup {tab}>
@@ -14,5 +13,4 @@
 
   <div slot="title1">Title 1</div>
   <div slot="content1">Content 1</div>
-
 </TabbedGroup>

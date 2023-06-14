@@ -20,14 +20,15 @@ import { FixImages } from "../Models/ThemeConfig/Conversion/FixImages"
 import Svg from "../Svg"
 import {
     DoesImageExist,
-    PrevalidateTheme, ValidateTagRenderings,
+    PrevalidateTheme,
+    ValidateTagRenderings,
     ValidateThemeAndLayers,
 } from "../Models/ThemeConfig/Conversion/Validation"
-import {DesugaringContext, Each, On} from "../Models/ThemeConfig/Conversion/Conversion";
-import {PrepareLayer, RewriteSpecial} from "../Models/ThemeConfig/Conversion/PrepareLayer";
-import {AllSharedLayers} from "../Customizations/AllSharedLayers";
-import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
-import questions from "../assets/tagRenderings/questions.json";
+import { DesugaringContext, Each, On } from "../Models/ThemeConfig/Conversion/Conversion"
+import { PrepareLayer, RewriteSpecial } from "../Models/ThemeConfig/Conversion/PrepareLayer"
+import { AllSharedLayers } from "../Customizations/AllSharedLayers"
+import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
+import questions from "../assets/tagRenderings/questions.json"
 
 export default class DetermineLayout {
     private static readonly _knownImages = new Set(Array.from(licenses).map((l) => l.path))

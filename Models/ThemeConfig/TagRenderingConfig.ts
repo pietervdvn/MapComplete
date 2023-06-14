@@ -1,20 +1,23 @@
-import {Translation, TypedTranslation} from "../../UI/i18n/Translation"
-import {TagsFilter} from "../../Logic/Tags/TagsFilter"
+import { Translation, TypedTranslation } from "../../UI/i18n/Translation"
+import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 import Translations from "../../UI/i18n/Translations"
-import {TagUtils, UploadableTag} from "../../Logic/Tags/TagUtils"
-import {And} from "../../Logic/Tags/And"
-import {Utils} from "../../Utils"
-import {Tag} from "../../Logic/Tags/Tag"
+import { TagUtils, UploadableTag } from "../../Logic/Tags/TagUtils"
+import { And } from "../../Logic/Tags/And"
+import { Utils } from "../../Utils"
+import { Tag } from "../../Logic/Tags/Tag"
 import BaseUIElement from "../../UI/BaseUIElement"
 import Combine from "../../UI/Base/Combine"
 import Title from "../../UI/Base/Title"
 import Link from "../../UI/Base/Link"
 import List from "../../UI/Base/List"
-import {MappingConfigJson, QuestionableTagRenderingConfigJson,} from "./Json/QuestionableTagRenderingConfigJson"
-import {FixedUiElement} from "../../UI/Base/FixedUiElement"
-import {Paragraph} from "../../UI/Base/Paragraph"
+import {
+    MappingConfigJson,
+    QuestionableTagRenderingConfigJson,
+} from "./Json/QuestionableTagRenderingConfigJson"
+import { FixedUiElement } from "../../UI/Base/FixedUiElement"
+import { Paragraph } from "../../UI/Base/Paragraph"
 import Svg from "../../Svg"
-import Validators, {ValidatorType} from "../../UI/InputElement/Validators";
+import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
 
 export interface Mapping {
     readonly if: UploadableTag
@@ -118,9 +121,9 @@ export default class TagRenderingConfig {
         this.question = Translations.T(json.question, translationKey + ".question")
         this.questionhint = Translations.T(json.questionHint, translationKey + ".questionHint")
         this.description = Translations.T(json.description, translationKey + ".description")
-        this.condition = TagUtils.Tag(json.condition ?? {and: []}, `${context}.condition`)
+        this.condition = TagUtils.Tag(json.condition ?? { and: [] }, `${context}.condition`)
         this.metacondition = TagUtils.Tag(
-            json.metacondition ?? {and: []},
+            json.metacondition ?? { and: [] },
             `${context}.metacondition`
         )
         if (json.freeform) {
@@ -537,11 +540,8 @@ export default class TagRenderingConfig {
             }
         }
 
-        if (
-            this.freeform?.key === undefined ||
-            tags[this.freeform.key] !== undefined
-        ) {
-            return {then: this.render}
+        if (this.freeform?.key === undefined || tags[this.freeform.key] !== undefined) {
+            return { then: this.render }
         }
 
         return undefined
@@ -681,13 +681,13 @@ export default class TagRenderingConfig {
                 )
             }
             const and = TagUtils.FlattenMultiAnswer([...selectedMappings, ...unselectedMappings])
-            if(and.and.length === 0){
+            if (and.and.length === 0) {
                 return undefined
             }
             return and
         } else {
             // Is at least one mapping shown in the answer?
-            const someMappingIsShown = this.mappings.some(m => {
+            const someMappingIsShown = this.mappings.some((m) => {
                 if (typeof m.hideInAnswer === "boolean") {
                     return !m.hideInAnswer
                 }
@@ -695,7 +695,9 @@ export default class TagRenderingConfig {
                 return !isHidden
             })
             // If all mappings are hidden for the current tags, we can safely assume that we should use the freeform key
-            const useFreeform = freeformValue !== undefined && (singleSelectedMapping === this.mappings.length || !someMappingIsShown)
+            const useFreeform =
+                freeformValue !== undefined &&
+                (singleSelectedMapping === this.mappings.length || !someMappingIsShown)
             if (useFreeform) {
                 return new And([
                     new Tag(this.freeform.key, freeformValue),
@@ -711,7 +713,7 @@ export default class TagRenderingConfig {
                     freeformValue,
                     singleSelectedMapping,
                     multiSelectedMapping,
-                    currentProperties
+                    currentProperties,
                 })
                 return undefined
             }
@@ -757,7 +759,7 @@ export default class TagRenderingConfig {
                         if (m.ifnot !== undefined) {
                             msgs.push(
                                 "Unselecting this answer will add " +
-                                m.ifnot.asHumanString(true, false, {})
+                                    m.ifnot.asHumanString(true, false, {})
                             )
                         }
                         return msgs
@@ -787,12 +789,12 @@ export default class TagRenderingConfig {
             this.description,
             this.question !== undefined
                 ? new Combine([
-                    "The question is ",
-                    new FixedUiElement(this.question.txt).SetClass("font-bold bold"),
-                ])
+                      "The question is ",
+                      new FixedUiElement(this.question.txt).SetClass("font-bold bold"),
+                  ])
                 : new FixedUiElement(
-                    "This tagrendering has no question and is thus read-only"
-                ).SetClass("italic"),
+                      "This tagrendering has no question and is thus read-only"
+                  ).SetClass("italic"),
             new Combine(withRender),
             mappings,
             condition,

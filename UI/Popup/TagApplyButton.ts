@@ -1,23 +1,23 @@
-import {AutoAction} from "./AutoApplyButton"
+import { AutoAction } from "./AutoApplyButton"
 import Translations from "../i18n/Translations"
-import {VariableUiElement} from "../Base/VariableUIElement"
+import { VariableUiElement } from "../Base/VariableUIElement"
 import BaseUIElement from "../BaseUIElement"
-import {FixedUiElement} from "../Base/FixedUiElement"
-import {Store, UIEventSource} from "../../Logic/UIEventSource"
-import {SubtleButton} from "../Base/SubtleButton"
+import { FixedUiElement } from "../Base/FixedUiElement"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import { SubtleButton } from "../Base/SubtleButton"
 import Combine from "../Base/Combine"
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
-import {And} from "../../Logic/Tags/And"
+import { And } from "../../Logic/Tags/And"
 import Toggle from "../Input/Toggle"
-import {Utils} from "../../Utils"
-import {Tag} from "../../Logic/Tags/Tag"
+import { Utils } from "../../Utils"
+import { Tag } from "../../Logic/Tags/Tag"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import {Changes} from "../../Logic/Osm/Changes"
-import {SpecialVisualization, SpecialVisualizationState} from "../SpecialVisualization"
-import {IndexedFeatureSource} from "../../Logic/FeatureSource/FeatureSource";
-import {Feature} from "geojson";
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-import Maproulette from "../../Logic/Maproulette";
+import { Changes } from "../../Logic/Osm/Changes"
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
+import { IndexedFeatureSource } from "../../Logic/FeatureSource/FeatureSource"
+import { Feature } from "geojson"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import Maproulette from "../../Logic/Maproulette"
 
 export default class TagApplyButton implements AutoAction, SpecialVisualization {
     public readonly funcName = "tag_apply"
@@ -44,10 +44,10 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
             doc: "If specified, applies the the tags onto _another_ object. The id will be read from properties[id_of_object_to_apply_this_one] of the selected object. The tags are still calculated based on the tags of the _selected_ element",
         },
         {
-            name:"maproulette_task_id",
+            name: "maproulette_task_id",
             defaultValue: undefined,
-            doc: "If specified, this maproulette-challenge will be closed when the tags are applied"
-        }
+            doc: "If specified, this maproulette-challenge will be closed when the tags are applied",
+        },
     ]
     public readonly example =
         "`{tag_apply(survey_date=$_now:date, Surveyed today!)}`, `{tag_apply(addr:street=$addr:street, Apply the address, apply_icon.svg, _closest_osm_id)"
@@ -58,11 +58,9 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
     ): Store<Tag[]> {
         // Check whether we need to look up a single value
 
-
         if (!spec.includes(";") && !spec.includes("=") && spec.startsWith("$")) {
             // We seem to be dealing with a single value, fetch it
             spec = tagSource.data[spec.replace("$", "")]
-
         }
 
         let tgsSpec: [string, string][]
@@ -140,7 +138,7 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
             indexedFeatures: IndexedFeatureSource
         },
         tags: UIEventSource<any>,
-        args: string[],
+        args: string[]
     ): Promise<void> {
         const tagsToApply = TagApplyButton.generateTagsToApply(args[0], tags)
         const targetIdKey = args[3]
@@ -157,10 +155,10 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
         )
         await state.changes.applyAction(changeAction)
         const maproulette_id_key = args[4]
-        if(maproulette_id_key){
+        if (maproulette_id_key) {
             const maproulette_id = Number(tags.data[maproulette_id_key])
-            await Maproulette.singleton.closeTask(maproulette_id, Maproulette.STATUS_FIXED,   {
-                comment: "Tags are copied onto "+targetId+" with MapComplete"
+            await Maproulette.singleton.closeTask(maproulette_id, Maproulette.STATUS_FIXED, {
+                comment: "Tags are copied onto " + targetId + " with MapComplete",
             })
             tags.data["mr_taskStatus"] = "Fixed"
             tags.ping()
@@ -189,7 +187,7 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
                 let el: BaseUIElement = new FixedUiElement(tagsStr)
                 if (targetIdKey !== undefined) {
                     const targetId = tags.data[targetIdKey] ?? tags.data.id
-                    el = t.appliedOnAnotherObject.Subs({tags: tagsStr, id: targetId})
+                    el = t.appliedOnAnotherObject.Subs({ tags: tagsStr, id: targetId })
                 }
                 return el
             })

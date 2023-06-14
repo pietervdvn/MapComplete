@@ -1,6 +1,6 @@
-import {FeatureSource} from "../FeatureSource"
-import {ImmutableStore, Store} from "../../UIEventSource"
-import {Feature} from "geojson"
+import { FeatureSource } from "../FeatureSource"
+import { ImmutableStore, Store } from "../../UIEventSource"
+import { Feature } from "geojson"
 
 /**
  * A simple, read only feature store.
@@ -8,13 +8,7 @@ import {Feature} from "geojson"
 export default class StaticFeatureSource<T extends Feature = Feature> implements FeatureSource<T> {
     public readonly features: Store<T[]>
 
-    constructor(
-        features:
-            | Store<T[]>
-            | T[]
-            | { features: T[] }
-            | { features: Store<T[]> }
-    ) {
+    constructor(features: Store<T[]> | T[] | { features: T[] } | { features: Store<T[]> }) {
         if (features === undefined) {
             throw "Static feature source received undefined as source"
         }

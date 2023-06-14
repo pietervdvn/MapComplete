@@ -3,7 +3,7 @@ import DetermineLayout from "./Logic/DetermineLayout"
 import ThemeViewState from "./Models/ThemeViewState"
 import SvelteUIElement from "./UI/Base/SvelteUIElement"
 import ThemeViewGUI from "./UI/ThemeViewGUI.svelte"
-import {FixedUiElement} from "./UI/Base/FixedUiElement";
+import { FixedUiElement } from "./UI/Base/FixedUiElement"
 
 // @ts-ignore
 DetermineLayout.GetLayout()

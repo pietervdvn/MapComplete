@@ -1,16 +1,16 @@
 import PointRenderingConfigJson from "./Json/PointRenderingConfigJson"
 import TagRenderingConfig from "./TagRenderingConfig"
-import {TagsFilter} from "../../Logic/Tags/TagsFilter"
-import {TagUtils} from "../../Logic/Tags/TagUtils"
-import {Utils} from "../../Utils"
+import { TagsFilter } from "../../Logic/Tags/TagsFilter"
+import { TagUtils } from "../../Logic/Tags/TagUtils"
+import { Utils } from "../../Utils"
 import Svg from "../../Svg"
 import WithContextLoader from "./WithContextLoader"
-import {Store} from "../../Logic/UIEventSource"
+import { Store } from "../../Logic/UIEventSource"
 import BaseUIElement from "../../UI/BaseUIElement"
-import {FixedUiElement} from "../../UI/Base/FixedUiElement"
+import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import Img from "../../UI/Base/Img"
 import Combine from "../../UI/Base/Combine"
-import {VariableUiElement} from "../../UI/Base/VariableUIElement"
+import { VariableUiElement } from "../../UI/Base/VariableUIElement"
 
 export default class PointRenderingConfig extends WithContextLoader {
     static readonly allowed_location_codes: ReadonlySet<string> = new Set<string>([
@@ -83,7 +83,7 @@ export default class PointRenderingConfig extends WithContextLoader {
             }
         })
 
-        const iconPath = this.icon?.GetRenderValue({id: "node/-1"})?.txt
+        const iconPath = this.icon?.GetRenderValue({ id: "node/-1" })?.txt
         if (iconPath !== undefined && iconPath.startsWith(Utils.assets_path)) {
             const iconKey = iconPath.substr(Utils.assets_path.length)
             if (Svg.All[iconKey] === undefined) {
@@ -168,7 +168,7 @@ export default class PointRenderingConfig extends WithContextLoader {
             noFullWidth?: boolean
         }
     ): BaseUIElement {
-        tags = tags ?? {id: "node/-1"}
+        tags = tags ?? { id: "node/-1" }
         let defaultPin: BaseUIElement = undefined
         if (this.label === undefined) {
             defaultPin = Svg.teardrop_with_hole_green_svg()

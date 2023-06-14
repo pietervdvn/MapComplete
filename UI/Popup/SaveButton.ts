@@ -1,11 +1,11 @@
-import {Store} from "../../Logic/UIEventSource"
+import { Store } from "../../Logic/UIEventSource"
 import Translations from "../i18n/Translations"
-import {OsmConnection} from "../../Logic/Osm/OsmConnection"
+import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import Toggle from "../Input/Toggle"
 import BaseUIElement from "../BaseUIElement"
 import Combine from "../Base/Combine"
 import Svg from "../../Svg"
-import {LoginToggle} from "./LoginButton";
+import { LoginToggle } from "./LoginButton"
 
 export class EditButton extends Toggle {
     constructor(osmConnection: OsmConnection, onClick: () => void) {
