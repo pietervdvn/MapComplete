@@ -670,6 +670,10 @@ video {
   position: fixed;
 }
 
+.\!fixed {
+  position: fixed !important;
+}
+
 .absolute {
   position: absolute;
 }
@@ -793,10 +797,6 @@ video {
 
 .m-px {
   margin: 1px;
-}
-
-.m-12 {
-  margin: 3rem;
 }
 
 .mx-1 {
@@ -1240,6 +1240,27 @@ video {
 .animate-pulse {
   -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
           animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@-webkit-keyframes ping {
+  75%, 100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes ping {
+  75%, 100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-ping {
+  -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+          animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 .cursor-pointer {
@@ -1728,11 +1749,6 @@ video {
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
-.text-green-600 {
-  --tw-text-opacity: 1;
-  color: rgb(22 163 74 / var(--tw-text-opacity));
 }
 
 .underline {

@@ -83,7 +83,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 // Workaround, 'ShowPointLayer' sets this flag
                 return
             }
-            console.log(e)
             const lon = e.lngLat.lng
             const lat = e.lngLat.lat
             lastClickLocation.setData({ lon, lat })
@@ -321,10 +320,9 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (this.location.data === undefined) {
             this.location.setData({ lon: lng, lat })
         } else if (!isSetup) {
-            const dt = this.location.data
-            dt.lon = map.getCenter().lng
-            dt.lat = map.getCenter().lat
-            this.location.ping()
+            const lon = map.getCenter().lng
+            const lat = map.getCenter().lat
+            this.location.setData({ lon, lat })
         }
         this.zoom.setData(Math.round(map.getZoom() * 10) / 10)
         const bounds = map.getBounds()

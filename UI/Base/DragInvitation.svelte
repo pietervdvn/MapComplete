@@ -11,9 +11,14 @@
   function hide() {
     mainElem.style.visibility = "hidden"
   }
+  let initTime = Date.now()
   if (hideSignal) {
     onDestroy(
       hideSignal.addCallbackD(() => {
+        if(initTime + 1000 > Date.now()){
+          console.log("Ignoring hide signal")
+          return
+        }
         console.log("Received hide signal")
         hide()
         return true
@@ -27,8 +32,8 @@
   }
 </script>
 
-<div bind:this={mainElem} class="absolute bottom-0 right-0 h-full w-full">
-  <div id="hand-container" class="pointer-events-none">
+<div bind:this={mainElem} class="absolute bottom-0 right-0 h-full w-full pointer-events-none">
+  <div id="hand-container">
     <img src="./assets/svg/hand.svg" />
   </div>
 </div>
