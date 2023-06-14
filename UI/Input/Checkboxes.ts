@@ -66,7 +66,7 @@ export default class CheckBoxes extends InputElement<number[]> {
             label.htmlFor = input.id
             label.appendChild(input)
             label.appendChild(inputI.ConstructElement())
-            label.classList.add("block", "w-full", "p-2", "cursor-pointer", "bg-red")
+            label.classList.add("block", "w-full", "p-2", "cursor-pointer")
 
             formTag.appendChild(label)
 
