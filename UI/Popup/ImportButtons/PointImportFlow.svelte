@@ -1,11 +1,10 @@
 <script lang="ts">
   import ImportFlow from "./ImportFlow.svelte"
-  import { PointImportFlowState } from "./PointImportFlowState"
+  import {PointImportFlowState} from "./PointImportFlowState"
   import NewPointLocationInput from "../../BigComponents/NewPointLocationInput.svelte"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
-  import { UIEventSource } from "../../../Logic/UIEventSource"
-  import MapControlButton from "../../Base/MapControlButton.svelte"
-  import { Square3Stack3dIcon } from "@babeard/svelte-heroicons/solid"
+  import {UIEventSource} from "../../../Logic/UIEventSource"
+  import OpenBackgroundSelectorButton from "../../BigComponents/OpenBackgroundSelectorButton.svelte";
 
   export let importFlow: PointImportFlowState
 
@@ -52,11 +51,8 @@
         {value}
       />
     </div>
-    <MapControlButton
-      on:click={() => state.guistate.backgroundLayerSelectionIsOpened.setData(true)}
-      cls="absolute bottom-0"
-    >
-      <Square3Stack3dIcon class="h-6 w-6" />
-    </MapControlButton>
+    <div class="absolute bottom-0">
+      <OpenBackgroundSelectorButton {state}/>
+    </div>
   </div>
 </ImportFlow>

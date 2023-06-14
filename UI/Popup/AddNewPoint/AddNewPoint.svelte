@@ -31,8 +31,7 @@
     import BackButton from "../../Base/BackButton.svelte"
     import ToSvelte from "../../Base/ToSvelte.svelte"
     import Svg from "../../../Svg"
-    import MapControlButton from "../../Base/MapControlButton.svelte"
-    import {Square3Stack3dIcon} from "@babeard/svelte-heroicons/solid"
+    import OpenBackgroundSelectorButton from "../../BigComponents/OpenBackgroundSelectorButton.svelte";
 
     export let coordinate: { lon: number; lat: number }
     export let state: SpecialVisualizationState
@@ -329,11 +328,7 @@
             </div>
 
             <div class="absolute bottom-0 left-0 p-4">
-                <MapControlButton
-                        on:click={() => state.guistate.backgroundLayerSelectionIsOpened.setData(true)}
-                >
-                    <Square3Stack3dIcon class="h-6 w-6"/>
-                </MapControlButton>
+                <OpenBackgroundSelectorButton {state}/>
             </div>
         </div>
         <div class="flex flex-wrap-reverse md:flex-nowrap">

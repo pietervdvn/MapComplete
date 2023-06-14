@@ -4,17 +4,17 @@
    */
   import WayImportFlowState from "./WayImportFlowState"
   import ImportFlow from "./ImportFlow.svelte"
-  import MapControlButton from "../../Base/MapControlButton.svelte"
-  import { Square3Stack3dIcon } from "@babeard/svelte-heroicons/solid"
-  import { UIEventSource } from "../../../Logic/UIEventSource"
-  import { Map as MlMap } from "maplibre-gl"
-  import { MapLibreAdaptor } from "../../Map/MapLibreAdaptor"
+  import {UIEventSource} from "../../../Logic/UIEventSource"
+  import {Map as MlMap} from "maplibre-gl"
+  import {MapLibreAdaptor} from "../../Map/MapLibreAdaptor"
   import MaplibreMap from "../../Map/MaplibreMap.svelte"
   import ShowDataLayer from "../../Map/ShowDataLayer"
   import StaticFeatureSource from "../../../Logic/FeatureSource/Sources/StaticFeatureSource"
-  import { ImportFlowUtils } from "./ImportFlow"
-  import { GeoOperations } from "../../../Logic/GeoOperations"
+  import {ImportFlowUtils} from "./ImportFlow"
+  import {GeoOperations} from "../../../Logic/GeoOperations"
   import ConflateImportFlowState from "./ConflateImportFlowState"
+  import OpenBackgroundSelectorButton from "../../BigComponents/OpenBackgroundSelectorButton.svelte";
+
   export let importFlow: WayImportFlowState | ConflateImportFlowState
 
   const state = importFlow.state
@@ -50,11 +50,8 @@
     <div class="h-32">
       <MaplibreMap {map} />
     </div>
-    <MapControlButton
-      on:click={() => state.guistate.backgroundLayerSelectionIsOpened.setData(true)}
-      cls="absolute bottom-0"
-    >
-      <Square3Stack3dIcon class="h-6 w-6" />
-    </MapControlButton>
+    <div class="absolute bottom-0">
+      <OpenBackgroundSelectorButton/>
+    </div>
   </div>
 </ImportFlow>
