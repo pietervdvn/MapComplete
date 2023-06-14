@@ -175,7 +175,8 @@
         {
           "if": "access=permissive",
           "then": {
-            "en": "This charging station is accessible to the public during certain hours or conditions. Restrictions might apply, but general use is allowed."
+            "en": "This charging station is accessible to the public during certain hours or conditions. Restrictions might apply, but general use is allowed.",
+            "nl": "Dit oplaadstation is publiek toegankelijk onder voorwaarden (bv. enkel tijdens bepaalde uren). "
           }
         }
       ]
