@@ -144,12 +144,7 @@
           }
         },
         {
-          "if": {
-            "or": [
-              "access=permissive",
-              "access=public"
-            ]
-          },
+          "if":   "access=public",
           "then": {
             "en": "Anyone can use this charging station (payment might be needed)",
             "nl": "Toegankelijk voor iedereen (mogelijks met aanmelden en/of te betalen)"
@@ -175,6 +170,12 @@
           "then": {
             "en": "Not accessible to the general public (e.g. only accessible to the owners, employees, ...)",
             "nl": "Niet toegankelijk voor het publiek <br/><span class='subtle'>Bv. enkel toegankelijk voor de eigenaar, medewerkers ,...</span> "
+          }
+        },
+        {
+          "if": "access=permissive",
+          "then": {
+            "en": "This charging station is accessible to the public during certain hours or conditions. Restrictions might apply, but general use is allowed."
           }
         }
       ]
