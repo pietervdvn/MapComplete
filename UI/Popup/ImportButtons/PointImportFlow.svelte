@@ -1,10 +1,10 @@
 <script lang="ts">
   import ImportFlow from "./ImportFlow.svelte"
-  import {PointImportFlowState} from "./PointImportFlowState"
+  import { PointImportFlowState } from "./PointImportFlowState"
   import NewPointLocationInput from "../../BigComponents/NewPointLocationInput.svelte"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
-  import {UIEventSource} from "../../../Logic/UIEventSource"
-  import OpenBackgroundSelectorButton from "../../BigComponents/OpenBackgroundSelectorButton.svelte";
+  import { UIEventSource } from "../../../Logic/UIEventSource"
+  import OpenBackgroundSelectorButton from "../../BigComponents/OpenBackgroundSelectorButton.svelte"
 
   export let importFlow: PointImportFlowState
 
@@ -52,7 +52,7 @@
       />
     </div>
     <div class="absolute bottom-0">
-      <OpenBackgroundSelectorButton {state}/>
+      <OpenBackgroundSelectorButton {state} />
     </div>
   </div>
 </ImportFlow>

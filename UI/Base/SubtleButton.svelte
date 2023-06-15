@@ -17,7 +17,8 @@
 
 <button
   class={twMerge(options.extraClasses, "secondary no-image-background")}
-  on:click={(e) => dispatch("click", e)}>
+  on:click={(e) => dispatch("click", e)}
+>
   <slot name="image">
     {#if imageUrl !== undefined}
       {#if typeof imageUrl === "string"}

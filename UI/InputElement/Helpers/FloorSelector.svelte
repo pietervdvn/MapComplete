@@ -127,7 +127,8 @@
       draggable="false"
       on:mousedown={click}
       src="./assets/svg/elevator.svg"
-      style={`top: ${top}px;`} />
+      style={`top: ${top}px;`}
+    />
   </div>
 </div>
 

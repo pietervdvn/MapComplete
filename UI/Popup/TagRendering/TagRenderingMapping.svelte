@@ -32,7 +32,8 @@
       class={twJoin(`mapping-icon-${mapping.iconClass}`, "mr-1")}
       src={mapping.icon}
       aria-hidden="true"
-      alt="" />
+      alt=""
+    />
     <SpecialTranslation t={mapping.then} {tags} {state} {layer} feature={selectedElement} />
   </div>
 {:else if mapping.then !== undefined}

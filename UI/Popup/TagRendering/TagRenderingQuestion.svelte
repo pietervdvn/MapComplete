@@ -277,7 +277,8 @@
         <slot name="save-button" {selectedTags}>
           <button
             on:click={onSave}
-            class={twJoin(selectedTags === undefined ? "disabled" : "button-shadow", "primary")}>
+            class={twJoin(selectedTags === undefined ? "disabled" : "button-shadow", "primary")}
+          >
             <Tr t={Translations.t.general.save} />
           </button>
         </slot>

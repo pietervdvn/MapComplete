@@ -14,7 +14,8 @@
 
 <SubtleButton
   on:click={() => dispatch("click")}
-  options={{ extraClasses: twMerge("flex items-center", clss) }}>
+  options={{ extraClasses: twMerge("flex items-center", clss) }}
+>
   <ChevronLeftIcon class="h-12 w-12" slot="image" />
   <slot slot="message" />
 </SubtleButton>

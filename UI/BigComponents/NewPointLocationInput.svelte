@@ -15,7 +15,7 @@
   import FeatureSourceMerger from "../../Logic/FeatureSource/Sources/FeatureSourceMerger"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import { Utils } from "../../Utils"
-  import {createEventDispatcher} from "svelte";
+  import { createEventDispatcher } from "svelte"
 
   /**
    * An advanced location input, which has support to:
@@ -44,8 +44,8 @@
     lon: number
     lat: number
   }>(undefined)
-  
-  const dispatch = createEventDispatcher<{click: {lon: number, lat: number}}>()
+
+  const dispatch = createEventDispatcher<{ click: { lon: number; lat: number } }>()
 
   const xyz = Tiles.embedded_tile(coordinate.lat, coordinate.lon, 16)
   const map: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined)
@@ -109,7 +109,7 @@
 
 <LocationInput
   {map}
-  on:click={data => dispatch("click", data)}
+  on:click={(data) => dispatch("click", data)}
   mapProperties={initialMapProperties}
   value={preciseLocation}
   initialCoordinate={coordinate}

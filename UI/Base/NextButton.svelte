@@ -15,7 +15,8 @@
 
 <SubtleButton
   on:click={() => dispatch("click")}
-  options={{ extraClasses: twMerge("flex items-center", clss) }}>
+  options={{ extraClasses: twMerge("flex items-center", clss) }}
+>
   <slot name="image" slot="image" />
   <div class="flex w-full items-center justify-between" slot="message">
     <slot />

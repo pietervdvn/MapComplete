@@ -18,7 +18,7 @@
   import ChangeTagAction from "../../../Logic/Osm/Actions/ChangeTagAction"
   import Loading from "../../Base/Loading.svelte"
   import { DeleteFlowState } from "./DeleteFlowState"
-    import { twJoin } from "tailwind-merge"
+  import { twJoin } from "tailwind-merge"
 
   export let state: SpecialVisualizationState
   export let deleteConfig: DeleteConfig
@@ -112,10 +112,13 @@
         <button
           slot="save-button"
           on:click={onDelete}
-          class={twJoin((selectedTags === undefined && "disabled"), "primary flex bg-red-600")}
+          class={twJoin(selectedTags === undefined && "disabled", "primary flex bg-red-600")}
         >
           <TrashIcon
-            class={twJoin("ml-1 mr-2 h-6 w-6 rounded-full p-1", selectedTags !== undefined && "bg-red-600")}
+            class={twJoin(
+              "ml-1 mr-2 h-6 w-6 rounded-full p-1",
+              selectedTags !== undefined && "bg-red-600"
+            )}
           />
           <Tr t={t.delete} />
         </button>

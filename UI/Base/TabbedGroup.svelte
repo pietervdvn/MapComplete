@@ -17,7 +17,7 @@
   }
 </script>
 
-<div class="tabbedgroup h-full flex w-full">
+<div class="tabbedgroup flex h-full w-full">
   <TabGroup
     class="flex h-full w-full flex-col"
     defaultIndex={1}
@@ -67,7 +67,7 @@
       </TabList>
       <slot name="post-tablist" />
     </div>
-    <div class="normal-background overflow-y-auto h-full">
+    <div class="normal-background h-full overflow-y-auto">
       <TabPanels class="tabpanels" defaultIndex={$tab}>
         <TabPanel class="tabpanel">
           <slot name="content0">
@@ -96,15 +96,14 @@
     max-height: 100vh;
     height: 100%;
   }
-  
+
   :global(.tabpanel) {
-    height:100%;
+    height: 100%;
   }
 
   :global(.tabpanels) {
-    height: calc( 100% - 2rem );
+    height: calc(100% - 2rem);
   }
-
 
   :global(.tab) {
     margin: 0.25rem;
