@@ -69,7 +69,7 @@ export default class LayoutSource extends FeatureSourceMerger {
 
         const self = this
         function setIsLoading() {
-            const loading = overpassSource?.runningQuery?.data && osmApiSource?.isRunning?.data
+            const loading = overpassSource?.runningQuery?.data || osmApiSource?.isRunning?.data
             self._isLoading.setData(loading)
         }
 

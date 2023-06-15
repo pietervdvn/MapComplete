@@ -3,7 +3,9 @@
         "title": "Advanced features"
     },
     "centerMessage": {
+        "allFilteredAway": "No feature in view meets all filters",
         "loadingData": "Loading data…",
+        "noData": "There are no relevant features in the current view",
         "ready": "Done!",
         "retrying": "Loading data failed. Trying again in {count} seconds…",
         "zoomIn": "Zoom in to view or edit the data"
@@ -400,7 +402,7 @@
         "geolocate": "Pan the map to the current location or zoom the map to the current location. Requests geopermission",
         "intro": "MapComplete supports the following keys:",
         "key": "Key combination",
-        "openLayersPanel": "Opens the Background, layers and filters panel",
+        "openLayersPanel": "Opens the layers and filters panel",
         "selectAerial": "Set the background to aerial or satellite imagery. Toggles between the two best, available layers",
         "selectMap": "Set the background to a map from external sources. Toggles between the two best, available layers",
         "selectMapnik": "Set the background layer to OpenStreetMap-carto",

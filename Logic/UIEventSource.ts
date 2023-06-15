@@ -384,7 +384,6 @@ class ListenerTracker<T> {
 
 /**
  * The mapped store is a helper type which does the mapping of a function.
- * It'll fuse
  */
 class MappedStore<TIn, T> extends Store<T> {
     private readonly _upstream: Store<TIn>

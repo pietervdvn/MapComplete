@@ -70,6 +70,8 @@ export default class LayoutConfig implements LayoutInformation {
     public readonly definedAtUrl?: string
     public readonly definitionRaw?: string
 
+    private readonly layersDict: Map<string, LayerConfig>
+
     constructor(
         json: LayoutConfigJson,
         official = true,
@@ -209,6 +211,11 @@ export default class LayoutConfig implements LayoutInformation {
         this.overpassTimeout = json.overpassTimeout ?? 30
         this.overpassMaxZoom = json.overpassMaxZoom ?? 16
         this.osmApiTileSize = json.osmApiTileSize ?? this.overpassMaxZoom + 1
+
+        this.layersDict = new Map<string, LayerConfig>()
+        for (const layer of this.layers) {
+            this.layersDict.set(layer.id, layer)
+        }
     }
 
     public CustomCodeSnippets(): string[] {
@@ -226,6 +233,10 @@ export default class LayoutConfig implements LayoutInformation {
         }
         custom.splice(0, 0, msg)
         return custom
+    }
+
+    public getLayer(id: string) {
+        return this.layersDict.get(id)
     }
 
     public isLeftRightSensitive() {

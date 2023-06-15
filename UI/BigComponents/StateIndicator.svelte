@@ -1,0 +1,40 @@
+<script lang="ts">
+    import ThemeViewState from "../../Models/ThemeViewState";
+    import Translations from "../i18n/Translations";
+    import Tr from "../Base/Tr.svelte";
+    import Loading from "../Base/Loading.svelte";
+
+    export let state: ThemeViewState
+    /**
+     * Gives the contributor some feedback based on the current state:
+     * - is data loading?
+     * - Is all data hidden due to filters?
+     * - Is no data in view?
+     */
+
+    let dataIsLoading = state.dataIsLoading
+    let currentState = state.hasDataInView
+    currentState.data === ""
+    const t = Translations.t.centerMessage
+</script>
+{#if $currentState === "has-visible-features"}
+    <!-- don't show anything -->
+{:else if $currentState === "zoom-to-low"}
+    <div class="w-fit p-4 alert">
+        <Tr t={t.zoomIn}/>
+    </div>
+{:else if $currentState === "all-filtered-away"}
+    <div class="w-fit p-4 alert">
+        <Tr t={t.allFilteredAway}/>
+    </div>
+{:else if $dataIsLoading}
+    <div class="w-fit p-4 alert">
+        <Loading>
+            <Tr t={Translations.t.centerMessage.loadingData}/>
+        </Loading>
+    </div>
+{:else if $currentState === "no-data"}
+    <div class="w-fit p-4 alert">
+        <Tr t={t.noData}/>
+    </div>
+{/if}

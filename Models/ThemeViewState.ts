@@ -50,6 +50,9 @@ import BackgroundLayerResetter from "../Logic/Actors/BackgroundLayerResetter"
 import SaveFeatureSourceToLocalStorage from "../Logic/FeatureSource/Actors/SaveFeatureSourceToLocalStorage"
 import BBoxFeatureSource from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import ThemeViewStateHashActor from "../Logic/Web/ThemeViewStateHashActor"
+import NoElementsInViewDetector, {
+    FeatureViewState,
+} from "../Logic/Actors/NoElementsInViewDetector"
 
 /**
  *
@@ -75,8 +78,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly osmObjectDownloader: OsmObjectDownloader
 
     readonly dataIsLoading: Store<boolean>
+    /**
+     * Indicates if there is _some_ data in view, even if it is not shown due to the filters
+     */
+    readonly hasDataInView: Store<FeatureViewState>
+
     readonly guistate: MenuState
-    readonly fullNodeDatabase?: FullNodeDatabaseSource // TODO
+    readonly fullNodeDatabase?: FullNodeDatabaseSource
 
     readonly historicalUserLocations: WritableFeatureSource<Feature<Point>>
     readonly indexedFeatures: IndexedFeatureSource & LayoutSource
@@ -85,6 +93,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly newFeatures: WritableFeatureSource
     readonly layerState: LayerState
     readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
+    readonly perLayerFiltered: ReadonlyMap<string, FilteringFeatureSource>
+
     readonly availableLayers: Store<RasterLayerPolygon[]>
     readonly selectedLayer: UIEventSource<LayerConfig>
     readonly userRelatedState: UserRelatedState
@@ -175,6 +185,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.fullNodeDatabase
             )
             this.indexedFeatures = layoutSource
+
             const empty = []
             let currentViewIndex = 0
             this.currentView = new StaticFeatureSource(
@@ -194,6 +205,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
             )
             this.featuresInView = new BBoxFeatureSource(layoutSource, this.mapProperties.bounds)
             this.dataIsLoading = layoutSource.isLoading
+            this.dataIsLoading.addCallbackAndRunD((loading) =>
+                console.log("Data is loading?", loading)
+            )
 
             const indexedElements = this.indexedFeatures
             this.featureProperties = new FeaturePropertiesStore(indexedElements)
@@ -288,7 +302,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.changes
         )
 
-        this.showNormalDataOn(this.map)
+        this.perLayerFiltered = this.showNormalDataOn(this.map)
+
+        this.hasDataInView = new NoElementsInViewDetector(this).hasFeatureInView
+
         this.initActors()
         this.addLastClick(lastClick)
         this.drawSpecialLayers()
@@ -299,8 +316,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
         }
     }
 
-    public showNormalDataOn(map: Store<MlMap>) {
-        this.perLayer.forEach((fs) => {
+    public showNormalDataOn(map: Store<MlMap>): ReadonlyMap<string, FilteringFeatureSource> {
+        const filteringFeatureSource = new Map<string, FilteringFeatureSource>()
+        this.perLayer.forEach((fs, layerName) => {
             const doShowLayer = this.mapProperties.zoom.map(
                 (z) =>
                     (fs.layer.isDisplayed?.data ?? true) && z >= (fs.layer.layerDef?.minzoom ?? 0),
@@ -323,6 +341,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 (id) => this.featureProperties.getStore(id),
                 this.layerState.globalFilters
             )
+            filteringFeatureSource.set(layerName, filtered)
 
             new ShowDataLayer(map, {
                 layer: fs.layer.layerDef,
@@ -333,6 +352,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 fetchStore: (id) => this.featureProperties.getStore(id),
             })
         })
+        return filteringFeatureSource
     }
 
     /**
@@ -533,28 +553,25 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * Setup various services for which no reference are needed
      */
     private initActors() {
-        {
-            // Unselect the selected element if it is panned out of view
-            this.mapProperties.bounds.stabilized(250).addCallbackD((bounds) => {
-                const selected = this.selectedElement.data
-                if (selected === undefined) {
-                    return
-                }
-                const bbox = BBox.get(selected)
-                if (!bbox.overlapsWith(bounds)) {
-                    this.selectedElement.setData(undefined)
-                }
-            })
-        }
-        {
-            this.selectedElement.addCallback((selected) => {
-                if (selected === undefined) {
-                    // We did _unselect_ an item - we always remove the lastclick-object
-                    this.lastClickObject.features.setData([])
-                    this.selectedLayer.setData(undefined)
-                }
-            })
-        }
+        // Unselect the selected element if it is panned out of view
+        this.mapProperties.bounds.stabilized(250).addCallbackD((bounds) => {
+            const selected = this.selectedElement.data
+            if (selected === undefined) {
+                return
+            }
+            const bbox = BBox.get(selected)
+            if (!bbox.overlapsWith(bounds)) {
+                this.selectedElement.setData(undefined)
+            }
+        })
+
+        this.selectedElement.addCallback((selected) => {
+            if (selected === undefined) {
+                // We did _unselect_ an item - we always remove the lastclick-object
+                this.lastClickObject.features.setData([])
+                this.selectedLayer.setData(undefined)
+            }
+        })
         new ThemeViewStateHashActor(this)
         new MetaTagging(this)
         new TitleHandler(this.selectedElement, this.selectedLayer, this.featureProperties, this)
