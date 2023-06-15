@@ -8,6 +8,7 @@
   import { UIEventSource } from "../../../Logic/UIEventSource"
   import { onDestroy } from "svelte"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
+  import { twMerge } from "tailwind-merge"
 
   export let tags: UIEventSource<Record<string, string> | undefined>
   let _tags: Record<string, string>
@@ -17,7 +18,7 @@
   export let selectedElement: Feature
   export let layer: LayerConfig
   export let config: TagRenderingConfig
-  export let extraClasses: string = ""
+  export let extraClasses: string | undefined = undefined
 
   if (config === undefined) {
     throw "Config is undefined in tagRenderingAnswer"
@@ -28,12 +29,10 @@
       trs = Utils.NoNull(config?.GetRenderValues(_tags))
     })
   )
-  let classes = ""
-  $: classes = config?.classes?.join(" ") ?? ""
 </script>
 
 {#if config !== undefined && (config?.condition === undefined || config.condition.matchesProperties(_tags))}
-  <div class={"link-underline inline-block w-full " + classes + " " + extraClasses}>
+  <div class={twMerge("link-underline inline-block w-full", config?.classes, extraClasses)}>
     {#if trs.length === 1}
       <TagRenderingMapping mapping={trs[0]} {tags} {state} {selectedElement} {layer} />
     {/if}

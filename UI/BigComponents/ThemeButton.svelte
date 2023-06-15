@@ -11,7 +11,7 @@
   export let theme: LayoutInformation
   export let isCustom: boolean = false
   export let userDetails: UIEventSource<UserDetails>
-  export let state: { layoutToUse: { id: string }; osmConnection: OsmConnection }
+  export let state: { layoutToUse?: { id: string }; osmConnection: OsmConnection }
 
   $: title = new Translation(
     theme.title,
