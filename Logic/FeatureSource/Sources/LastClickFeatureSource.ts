@@ -13,11 +13,6 @@ import { Utils } from "../../../Utils"
 export class LastClickFeatureSource implements WritableFeatureSource {
     public readonly features: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([])
 
-    /**
-     * Must be public: passed as tags into the selected view
-     */
-    public properties: Record<string, string>
-
     constructor(location: Store<{ lon: number; lat: number }>, layout: LayoutConfig) {
         const allPresets: BaseUIElement[] = []
         for (const layer of layout.layers)
@@ -37,17 +32,20 @@ export class LastClickFeatureSource implements WritableFeatureSource {
             )
         )
 
-        const properties = {
-            lastclick: "yes",
-            id: "last_click",
-            has_note_layer: layout.layers.some((l) => l.id === "note") ? "yes" : "no",
-            has_presets: layout.layers.some((l) => l.presets?.length > 0) ? "yes" : "no",
-            renderings: renderings.join(""),
-            number_of_presets: "" + renderings.length,
-            first_preset: renderings[0],
-        }
-        this.properties = properties
+        let i = 0
+
         location.addCallbackAndRunD(({ lon, lat }) => {
+            const properties = {
+                lastclick: "yes",
+                id: "last_click_" + i,
+                has_note_layer: layout.layers.some((l) => l.id === "note") ? "yes" : "no",
+                has_presets: layout.layers.some((l) => l.presets?.length > 0) ? "yes" : "no",
+                renderings: renderings.join(""),
+                number_of_presets: "" + renderings.length,
+                first_preset: renderings[0],
+            }
+            i++
+
             const point = <Feature<Point>>{
                 type: "Feature",
                 properties,
