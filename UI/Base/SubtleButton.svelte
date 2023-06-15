@@ -5,7 +5,7 @@
   import { twJoin, twMerge } from "tailwind-merge"
 
   export let imageUrl: string | BaseUIElement = undefined
-  export let message: string | BaseUIElement = undefined
+  export const message: string | BaseUIElement = undefined
   export let options: {
     imgSize?: string
     extraClasses?: string
