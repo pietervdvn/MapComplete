@@ -320,7 +320,7 @@
                 />
             </div>
 
-            <div class={twJoin(!preciseInputIsTapped && "hidden", "absolute top-4 flex justify-center w-full")}>
+            <div class={twJoin(!preciseInputIsTapped && "hidden", "absolute top-0 p-12 flex justify-center w-full")}>
                 <NextButton on:click={confirm} clss="primary w-fit">
                     <div class="flex w-full justify-end gap-x-2">
                         <Tr t={Translations.t.general.add.confirmLocation}/>
