@@ -16,7 +16,6 @@
 </script>
 
 <button
-  target={options?.newTab ? "_blank" : ""}
   class={twMerge(options.extraClasses, "secondary no-image-background")}
   on:click={(e) => dispatch("click", e)}>
   <slot name="image">
