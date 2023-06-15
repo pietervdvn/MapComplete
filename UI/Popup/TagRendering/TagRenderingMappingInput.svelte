@@ -14,6 +14,7 @@
   import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
   import { onDestroy } from "svelte"
   import TagRenderingMapping from "./TagRenderingMapping.svelte"
+  import { twJoin } from "tailwind-merge"
 
   export let selectedElement: Feature
   export let tags: UIEventSource<Record<string, string>>
@@ -82,7 +83,7 @@
 </script>
 
 {#if $matchesTerm && !$mappingIsHidden}
-  <label class={"flex " + (mappingIsSelected ? "checked" : "")}>
+  <label class={twJoin("flex", mappingIsSelected && "checked")}>
     <slot />
     <TagRenderingMapping {mapping} {tags} {state} {selectedElement} {layer} />
   </label>

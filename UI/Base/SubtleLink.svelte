@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte"
+  import { twJoin, twMerge } from "tailwind-merge"
   import BaseUIElement from "../BaseUIElement"
   import Img from "./Img"
 
@@ -8,11 +9,11 @@
   export let newTab = false
   export let options: {
     imgSize?: string
-    // extraClasses?: string
+    extraClasses?: string
   } = {}
 
   let imgElem: HTMLElement
-  let imgClasses = "block justify-center shrink-0 mr-4 " + (options?.imgSize ?? "h-11 w-11")
+  let imgClasses = twJoin("block justify-center shrink-0 mr-4", options?.imgSize ?? "h-11 w-11")
 
   onMount(() => {
     // Image
@@ -30,7 +31,7 @@
 </script>
 
 <a
-  class={(options.extraClasses ?? "") + " button text-ellipsis"}
+  class={twMerge(options.extraClasses, "button text-ellipsis")}
   {href}
   target={newTab ? "_blank" : undefined}
 >

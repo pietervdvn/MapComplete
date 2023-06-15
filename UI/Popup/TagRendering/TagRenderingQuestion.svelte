@@ -21,6 +21,7 @@
   import Constants from "../../../Models/Constants"
   import { Unit } from "../../../Models/Unit"
   import UserRelatedState from "../../../Logic/State/UserRelatedState"
+  import { twJoin } from "tailwind-merge"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -276,8 +277,7 @@
         <slot name="save-button" {selectedTags}>
           <button
             on:click={onSave}
-            class={(selectedTags === undefined ? "disabled" : "button-shadow") + " primary"}
-          >
+            class={twJoin(selectedTags === undefined ? "disabled" : "button-shadow", "primary")}>
             <Tr t={Translations.t.general.save} />
           </button>
         </slot>

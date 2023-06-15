@@ -6,7 +6,7 @@
   import Svg from "../../Svg"
 
   export let osmConnection: OsmConnection
-  export let clss = ""
+  export let clss: string | undefined = undefined
 </script>
 
 <button class={clss} on:click={() => osmConnection.AttemptLogin()}>

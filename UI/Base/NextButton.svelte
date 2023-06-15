@@ -6,16 +6,16 @@
   import SubtleButton from "./SubtleButton.svelte"
   import { ChevronRightIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { createEventDispatcher } from "svelte"
+  import { twMerge } from "tailwind-merge"
 
   const dispatch = createEventDispatcher<{ click }>()
 
-  export let clss: string = ""
+  export let clss: string | undefined = undefined
 </script>
 
 <SubtleButton
   on:click={() => dispatch("click")}
-  options={{ extraClasses: clss + " flex items-center" }}
->
+  options={{ extraClasses: twMerge("flex items-center", clss) }}>
   <slot name="image" slot="image" />
   <div class="flex w-full items-center justify-between" slot="message">
     <slot />

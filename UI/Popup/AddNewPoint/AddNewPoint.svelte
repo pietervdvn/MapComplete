@@ -32,6 +32,7 @@
     import ToSvelte from "../../Base/ToSvelte.svelte"
     import Svg from "../../../Svg"
     import OpenBackgroundSelectorButton from "../../BigComponents/OpenBackgroundSelectorButton.svelte";
+    import { twJoin } from "tailwind-merge"
 
     export let coordinate: { lon: number; lat: number }
     export let state: SpecialVisualizationState
@@ -319,8 +320,8 @@
                 />
             </div>
 
-            <div class={(preciseInputIsTapped ? "" : "hidden") + " absolute top-4 flex justify-center w-full"}>
-                <NextButton on:click={confirm} clss="primary w-fit ">
+            <div class={twJoin(!preciseInputIsTapped && "hidden", "absolute top-4 flex justify-center w-full")}>
+                <NextButton on:click={confirm} clss="primary w-fit">
                     <div class="flex w-full justify-end gap-x-2">
                         <Tr t={Translations.t.general.add.confirmLocation}/>
                     </div>

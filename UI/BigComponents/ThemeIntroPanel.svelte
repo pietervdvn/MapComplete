@@ -10,6 +10,7 @@
   import If from "../Base/If.svelte"
   import { UIEventSource } from "../../Logic/UIEventSource"
   import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { twJoin } from "tailwind-merge"
 
   /**
    * The theme introduction panel
@@ -78,9 +79,8 @@ loginStatus.SetClass("block mt-6 pt-2 md:border-t-2 border-dotted border-gray-40
       />
     </div>
     <button
-      class={"flex items-center justify-between gap-x-2 " + (searchEnabled ? "" : "disabled")}
-      on:click={() => triggerSearch.ping()}
-    >
+      class={twJoin("flex items-center justify-between gap-x-2", !searchEnabled && "disabled")}
+      on:click={() => triggerSearch.ping()}>
       <Tr t={Translations.t.general.search.searchShort} />
       <SearchIcon class="h-6 w-6" />
     </button>

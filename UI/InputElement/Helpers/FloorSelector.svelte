@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twJoin } from "tailwind-merge"
   import { Store, Stores, UIEventSource } from "../../../Logic/UIEventSource"
 
   /**
@@ -106,8 +107,10 @@
     {#each $floors as floor, i}
       <button
         style={`height: ${HEIGHT}px; width: ${HEIGHT}px`}
-        class={"content-box m-0 flex items-center justify-center border-2 border-gray-300 " +
-          (i === (forceIndex ?? $index) ? "selected" : "")}
+        class={twJoin(
+          "content-box m-0 flex items-center justify-center border-2 border-gray-300",
+          i === (forceIndex ?? $index) && "selected"
+        )}
         on:click={() => {
           forceIndex = i
         }}
@@ -124,8 +127,7 @@
       draggable="false"
       on:mousedown={click}
       src="./assets/svg/elevator.svg"
-      style={" top: " + top + "px;"}
-    />
+      style={`top: ${top}px;`} />
   </div>
 </div>
 

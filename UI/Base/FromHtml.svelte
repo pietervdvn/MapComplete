@@ -11,7 +11,7 @@
     }
   }
 
-  export let clss = ""
+  export let clss: string | undefined = undefined
 </script>
 
 {#if src !== undefined}
