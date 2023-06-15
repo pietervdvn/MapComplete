@@ -17,7 +17,7 @@ import SvelteUIElement from "./Base/SvelteUIElement"
 import Filterview from "./BigComponents/Filterview.svelte"
 import FilteredLayer from "../Models/FilteredLayer"
 
-class StatisticsForOverviewFile extends Combine {
+class StatsticsForOverviewFile extends Combine {
     constructor(homeUrl: string, paths: string[]) {
         paths = paths.filter((p) => !p.endsWith("file-overview.json"))
         const layer = new LayoutConfig(<any>mcChanges, true).layers[0]
@@ -177,7 +177,7 @@ class StatisticsForOverviewFile extends Combine {
     }
 }
 
-export default class StatisticsGUI extends VariableUiElement {
+class StatisticsGUI extends VariableUiElement {
     private static readonly homeUrl =
         "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/changeset-metadata/"
     private static readonly stats_files = "file-overview.json"
@@ -192,7 +192,7 @@ export default class StatisticsGUI extends VariableUiElement {
                     return new Loading("Loading overview...")
                 }
 
-                return new StatisticsForOverviewFile(StatisticsGUI.homeUrl, paths)
+                return new StatsticsForOverviewFile(StatisticsGUI.homeUrl, paths)
             })
         )
         this.SetClass("block w-full h-full")
