@@ -269,7 +269,7 @@
                 <Tr t={layout.title}/>
             </div>
 
-            <div class="m-4" slot="content0">
+            <div class="m-4 h-full" slot="content0">
                 <ThemeIntroPanel {state}/>
             </div>
 
