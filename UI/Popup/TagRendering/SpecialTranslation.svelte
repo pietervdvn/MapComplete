@@ -23,7 +23,7 @@
   export let state: SpecialVisualizationState
   export let tags: UIEventSource<Record<string, string>>
   export let feature: Feature
-  export let layer: LayerConfig
+  export let layer: LayerConfig | undefined
 
   let txt: string
   $: onDestroy(

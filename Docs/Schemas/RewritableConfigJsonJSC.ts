@@ -188,7 +188,7 @@ export default {
           ]
         },
         "description": {
-          "description": "A human-readable text explaining what this tagRendering does",
+          "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -345,7 +345,15 @@ export default {
           "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
         },
         "then": {
-          "description": "Shown if the 'if is fulfilled\nType: rendered"
+          "description": "Shown if the 'if is fulfilled\nType: rendered",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "icon": {
           "description": "An extra icon supporting the choice\nType: icon",

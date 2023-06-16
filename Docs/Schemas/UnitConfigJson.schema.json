@@ -3,7 +3,7 @@
   "type": "object",
   "properties": {
     "appliesToKey": {
-      "description": "Every key from this list will be normalized.\n\nTo render a united value properly, use",
+      "description": "Every key from this list will be normalized.\n\nTo render the value properly (with a human readable denomination), use `{canonical(<key>)}`",
       "type": "array",
       "items": {
         "type": "string"

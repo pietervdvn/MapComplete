@@ -13,15 +13,17 @@ export class ExtractImages extends Conversion<
     private _isOfficial: boolean
     private _sharedTagRenderings: Set<string>
 
-    private static readonly layoutMetaPaths = metapaths.filter(
-        (mp) =>
+    private static readonly layoutMetaPaths = metapaths.filter((mp) => {
+        const typeHint = mp.hints.typehint
+        return (
             ExtractImages.mightBeTagRendering(<any>mp) ||
-            (mp.typeHint !== undefined &&
-                (mp.typeHint === "image" ||
-                    mp.typeHint === "icon" ||
-                    mp.typeHint === "image[]" ||
-                    mp.typeHint === "icon[]"))
-    )
+            (typeHint !== undefined &&
+                (typeHint === "image" ||
+                    typeHint === "icon" ||
+                    typeHint === "image[]" ||
+                    typeHint === "icon[]"))
+        )
+    })
     private static readonly tagRenderingMetaPaths = tagrenderingmetapaths
 
     constructor(isOfficial: boolean, sharedTagRenderings: Set<string>) {
@@ -94,7 +96,7 @@ export class ExtractImages extends Conversion<
         for (const metapath of ExtractImages.layoutMetaPaths) {
             const mightBeTr = ExtractImages.mightBeTagRendering(<any>metapath)
             const allRenderedValuesAreImages =
-                metapath.typeHint === "icon" || metapath.typeHint === "image"
+                metapath.hints.typehint === "icon" || metapath.hints.typehint === "image"
             const found = Utils.CollectPath(metapath.path, json)
             if (mightBeTr) {
                 // We might have tagRenderingConfigs containing icons here
@@ -124,9 +126,10 @@ export class ExtractImages extends Conversion<
                         for (const trpath of ExtractImages.tagRenderingMetaPaths) {
                             // Inspect all the rendered values
                             const fromPath = Utils.CollectPath(trpath.path, foundImage)
-                            const isRendered = trpath.typeHint === "rendered"
+                            const isRendered = trpath.hints.typehint === "rendered"
                             const isImage =
-                                trpath.typeHint === "icon" || trpath.typeHint === "image"
+                                trpath.hints.typehint === "icon" ||
+                                trpath.hints.typehint === "image"
                             for (const img of fromPath) {
                                 if (allRenderedValuesAreImages && isRendered) {
                                     // What we found is an image
@@ -310,7 +313,7 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
         json = Utils.Clone(json)
 
         for (const metapath of metapaths) {
-            if (metapath.typeHint !== "image" && metapath.typeHint !== "icon") {
+            if (metapath.hints.typehint !== "image" && metapath.hints.typehint !== "icon") {
                 continue
             }
             const mightBeTr = ExtractImages.mightBeTagRendering(<any>metapath)
@@ -323,7 +326,7 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
                     // We might have reached a tagRenderingConfig containing icons
                     // lets walk every rendered value and fix the images in there
                     for (const trpath of tagrenderingmetapaths) {
-                        if (trpath.typeHint !== "rendered") {
+                        if (trpath.hints.typehint !== "rendered") {
                             continue
                         }
                         Utils.WalkPath(trpath.path, leaf, (rendered) => {

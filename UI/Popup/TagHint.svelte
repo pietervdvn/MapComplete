@@ -17,12 +17,12 @@
    * If given, this function will be called to embed the given tags hint into this translation
    */
   export let embedIn: ((string: string) => Translation) | undefined = undefined
-  const userDetails = state.osmConnection.userDetails
+  const userDetails = state?.osmConnection?.userDetails
   let tagsExplanation = ""
   $: tagsExplanation = tags?.asHumanString(true, false, currentProperties)
 </script>
 
-{#if $userDetails.loggedIn}
+{#if !userDetails || $userDetails.loggedIn}
   <div>
     {#if tags === undefined}
       <slot name="no-tags">No tags</slot>

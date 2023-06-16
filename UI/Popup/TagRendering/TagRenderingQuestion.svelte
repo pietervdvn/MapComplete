@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Store, UIEventSource } from "../../../Logic/UIEventSource"
+  import {ImmutableStore, Store, UIEventSource} from "../../../Logic/UIEventSource"
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
   import Tr from "../../Base/Tr.svelte"
   import type { Feature } from "geojson"
@@ -27,11 +27,11 @@
   export let tags: UIEventSource<Record<string, string>>
   export let selectedElement: Feature
   export let state: SpecialVisualizationState
-  export let layer: LayerConfig
+  export let layer: LayerConfig | undefined
 
   let feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined)
 
-  let unit: Unit = layer.units?.find((unit) => unit.appliesToKeys.has(config.freeform?.key))
+  let unit: Unit = layer?.units?.find((unit) => unit.appliesToKeys.has(config.freeform?.key))
 
   // Will be bound if a freeform is available
   let freeformInput = new UIEventSource<string>(tags?.[config.freeform?.key])
@@ -45,7 +45,7 @@
       return m.hideInAnswer.matchesProperties(tags.data)
     })
     // We received a new config -> reinit
-    unit = layer.units.find((unit) => unit.appliesToKeys.has(config.freeform?.key))
+    unit = layer?.units?.find((unit) => unit.appliesToKeys.has(config.freeform?.key))
 
     if (
       config.mappings?.length > 0 &&
@@ -96,7 +96,7 @@
     if (selectedTags === undefined) {
       return
     }
-    if (layer.source === null) {
+    if (layer === undefined || layer?.source === null) {
       /**
        * This is a special, priviliged layer.
        * We simply apply the tags onto the records
@@ -128,12 +128,12 @@
       .catch(console.error)
   }
 
-  let featureSwitchIsTesting = state.featureSwitchIsTesting
-  let featureSwitchIsDebugging = state.featureSwitches.featureSwitchIsDebugging
-  let showTags = state.userRelatedState.showTags
+  let featureSwitchIsTesting = state.featureSwitchIsTesting ?? new ImmutableStore(false)
+  let featureSwitchIsDebugging = state.featureSwitches?.featureSwitchIsDebugging ?? new ImmutableStore(false)
+  let showTags = state.userRelatedState?.showTags ?? new ImmutableStore(undefined)
   let numberOfCs = state.osmConnection.userDetails.data.csCount
   onDestroy(
-    state.osmConnection.userDetails.addCallbackAndRun((ud) => {
+    state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
       numberOfCs = ud.csCount
     })
   )
@@ -176,6 +176,7 @@
         {unit}
         feature={selectedElement}
         value={freeformInput}
+        on:submit={onSave}
       />
     {:else if mappings !== undefined && !config.multiAnswer}
       <!-- Simple radiobuttons as mapping -->
@@ -215,6 +216,7 @@
               feature={selectedElement}
               value={freeformInput}
               on:selected={() => (selectedMapping = config.mappings?.length)}
+              on:submit={onSave}
             />
           </label>
         {/if}
@@ -254,6 +256,7 @@
               feature={selectedElement}
               value={freeformInput}
               on:selected={() => (checkedMappings[config.mappings.length] = true)}
+              on:submit={onSave}
             />
           </label>
         {/if}

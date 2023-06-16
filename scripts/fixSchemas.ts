@@ -1,26 +1,6 @@
 import ScriptUtils from "./ScriptUtils"
 import { readFileSync, writeFileSync } from "fs"
-
-/**
- * Extracts the data from the scheme file and writes them in a flatter structure
- */
-
-export type JsonSchemaType =
-    | string
-    | { $ref: string; description: string }
-    | { type: string }
-    | JsonSchemaType[]
-
-export interface JsonSchema {
-    description?: string
-    type?: JsonSchemaType
-    properties?: any
-    items?: JsonSchema
-    allOf?: JsonSchema[]
-    anyOf: JsonSchema[]
-    enum: JsonSchema[]
-    $ref: string
-}
+import { JsonSchema } from "../UI/Studio/jsonSchema"
 
 function WalkScheme<T>(
     onEach: (schemePart: JsonSchema) => T,
@@ -52,7 +32,7 @@ function WalkScheme<T>(
     }
 
     fullScheme = fullScheme ?? scheme
-    var t = onEach(scheme)
+    let t = onEach(scheme)
     if (t !== undefined) {
         results.push({
             path,
@@ -97,24 +77,51 @@ function WalkScheme<T>(
     return results
 }
 
-function extractMeta(typename: string, path: string) {
-    const themeSchema = JSON.parse(
-        readFileSync("./Docs/Schemas/" + typename + ".schema.json", { encoding: "utf8" })
-    )
-    const withTypes = WalkScheme((schemePart) => {
+function addMetafields(fieldnames: string[], fullSchema: JsonSchema) {
+    return WalkScheme((schemePart) => {
         if (schemePart.description === undefined) {
             return
         }
-        const typeHint = schemePart.description
-            .split("\n")
-            .find((line) => line.trim().toLocaleLowerCase().startsWith("type:"))
-            ?.substr("type:".length)
-            ?.trim()
         const type = schemePart.items?.anyOf ?? schemePart.type ?? schemePart.anyOf
-        return { typeHint, type, description: schemePart.description }
-    }, themeSchema)
+        const hints = {}
+        let description = schemePart.description.split("\n")
+        for (const fieldname of fieldnames) {
+            const hintIndex = description.findIndex((line) =>
+                line
+                    .trim()
+                    .toLocaleLowerCase()
+                    .startsWith(fieldname + ":")
+            )
+            if (hintIndex < 0) {
+                continue
+            }
+            const hintLine = description[hintIndex].substring((fieldname + ":").length).trim()
+            description.splice(hintIndex, 1)
+            if (fieldname === "type") {
+                hints["typehint"] = hintLine
+            } else {
+                hints[fieldname] = hintLine
+            }
+        }
 
-    const paths = withTypes.map(({ path, t }) => ({ path, ...t }))
+        return { hints, type, description: description.join("\n") }
+    }, fullSchema)
+}
+
+function extractMeta(typename: string, path: string) {
+    let themeSchema: JsonSchema = JSON.parse(
+        readFileSync("./Docs/Schemas/" + typename + ".schema.json", { encoding: "utf8" })
+    )
+
+    const metakeys = ["type", "group", "question", "ifunset"]
+
+    const hints = addMetafields(metakeys, themeSchema)
+    const paths = hints.map(({ path, t }) => ({ path, ...t }))
+
+    themeSchema.required?.forEach((req) => {
+        paths.filter((p) => p.path.at(-1) === req).forEach((meta) => (meta["required"] = true))
+    })
+
     writeFileSync("./assets/" + path + ".json", JSON.stringify(paths, null, "  "))
     console.log("Written meta to ./assets/" + path)
 }
@@ -141,7 +148,7 @@ function main() {
             encoding: "utf8",
         })
     }
-
+    extractMeta("LayerConfigJson", "layerconfigmeta")
     extractMeta("LayoutConfigJson", "layoutconfigmeta")
     extractMeta("TagRenderingConfigJson", "tagrenderingconfigmeta")
     extractMeta("QuestionableTagRenderingConfigJson", "questionabletagrenderingconfigmeta")

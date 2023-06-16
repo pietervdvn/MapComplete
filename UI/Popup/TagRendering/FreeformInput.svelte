@@ -26,7 +26,7 @@
 
   export let feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined)
 
-  let dispatch = createEventDispatcher<{ selected }>()
+  let dispatch = createEventDispatcher<{ selected, submit }>()
   onDestroy(
     value.addCallbackD(() => {
       dispatch("selected")
@@ -46,6 +46,8 @@
         {getCountry}
         {unit}
         on:selected={() => dispatch("selected")}
+        on:submit={() => dispatch("submit")}
+        
         type={config.freeform.type}
         {placeholder}
         {value}
@@ -57,6 +59,7 @@
       {getCountry}
       {unit}
       on:selected={() => dispatch("selected")}
+      on:submit={() => dispatch("submit")}
       type={config.freeform.type}
       {placeholder}
       {value}

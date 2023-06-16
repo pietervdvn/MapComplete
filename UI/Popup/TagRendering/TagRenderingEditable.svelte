@@ -1,6 +1,6 @@
 <script lang="ts">
   import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig"
-  import { UIEventSource } from "../../../Logic/UIEventSource"
+  import {Store, UIEventSource} from "../../../Logic/UIEventSource"
   import type { Feature } from "geojson"
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
   import TagRenderingAnswer from "./TagRenderingAnswer.svelte"
@@ -18,7 +18,7 @@
   export let state: SpecialVisualizationState
   export let layer: LayerConfig
 
-  export let editingEnabled = state.featureSwitchUserbadge
+  export let editingEnabled : Store<boolean> | undefined = state?.featureSwitchUserbadge
 
   export let highlightedRendering: UIEventSource<string> = undefined
   export let showQuestionIfUnknown: boolean = false
@@ -67,7 +67,7 @@
 </script>
 
 <div bind:this={htmlElem} class="">
-  {#if config.question && $editingEnabled}
+  {#if config.question && (!editingEnabled || $editingEnabled)}
     {#if editMode}
       <TagRenderingQuestion {config} {tags} {selectedElement} {state} {layer}>
         <button

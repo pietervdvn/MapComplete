@@ -49,23 +49,8 @@ export default {
         }
       ]
     },
-    "fill": {
-      "description": "Whether or not to fill polygons",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/TagRenderingConfigJson"
-        },
-        {
-          "enum": [
-            "no",
-            "yes"
-          ],
-          "type": "string"
-        }
-      ]
-    },
     "fillColor": {
-      "description": "The color to fill a polygon with.\nIf undefined, this will be slightly more opaque version of the stroke line",
+      "description": "The color to fill a polygon with.\nIf undefined, this will be slightly more opaque version of the stroke line.\nUse '#00000000' to make the fill invisible",
       "anyOf": [
         {
           "$ref": "#/definitions/TagRenderingConfigJson"
@@ -243,7 +228,7 @@ export default {
           ]
         },
         "description": {
-          "description": "A human-readable text explaining what this tagRendering does",
+          "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"

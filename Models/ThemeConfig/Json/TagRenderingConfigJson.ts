@@ -25,7 +25,8 @@ export interface TagRenderingConfigJson {
     classes?: string | string[]
 
     /**
-     * A human-readable text explaining what this tagRendering does
+     * A human-readable text explaining what this tagRendering does.
+     * Mostly used for the shared tagrenderings
      */
     description?: string | Record<string, string>
 

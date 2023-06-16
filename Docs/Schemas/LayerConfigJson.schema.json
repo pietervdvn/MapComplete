@@ -3,11 +3,11 @@
   "type": "object",
   "properties": {
     "id": {
-      "description": "The id of this layer.\nThis should be a simple, lowercase, human readable string that is used to identify the layer.",
+      "description": "The id of this layer.\nThis should be a simple, lowercase, human readable string that is used to identify the layer.\n\ngroup: basic\nquestion: What is the identifier of this layer?",
       "type": "string"
     },
     "name": {
-      "description": "The name of this layer\nUsed in the layer control panel and the 'Personal theme'.\n\nIf not given, will be hidden (and thus not toggable) in the layer control",
+      "description": "Used in the layer control panel to toggle a layer on and of.\n\nifunset: This will hide the layer in the layer control, making it not filterable and not toggleable\n\ngroup: basic\nquestion: What is the name of this layer?",
       "anyOf": [
         {
           "$ref": "#/definitions/Record<string,string>"
@@ -18,7 +18,7 @@
       ]
     },
     "description": {
-      "description": "A description for this layer.\nShown in the layer selections and in the personel theme",
+      "description": "A description for the features shown in this layer.\nThis often resembles the introduction of the wiki.osm.org-page for this feature.\n\ngroup: basic\nquestion: How would you describe the features that are shown on this layer?",
       "anyOf": [
         {
           "$ref": "#/definitions/Record<string,string>"
@@ -85,18 +85,18 @@
       ]
     },
     "calculatedTags": {
-      "description": "A list of extra tags to calculate, specified as \"keyToAssignTo=javascript-expression\".\nThere are a few extra functions available. Refer to <a>Docs/CalculatedTags.md</a> for more information\nThe functions will be run in order, e.g.\n[\n \"_max_overlap_m2=Math.max(...feat.overlapsWith(\"someOtherLayer\").map(o => o.overlap))\n \"_max_overlap_ratio=Number(feat._max_overlap_m2)/feat.area\n]\n\nThe specified tags are evaluated lazily. E.g. if a calculated tag is only used in the popup (e.g. the number of nearby features),\nthe expensive calculation will only be performed then for that feature. This avoids clogging up the contributors PC when all features are loaded.\n\nIf a tag has to be evaluated strictly, use ':=' instead:\n\n[\n\"_some_key:=some_javascript_expression\"\n]",
+      "description": "A list of extra tags to calculate, specified as \"keyToAssignTo=javascript-expression\".\nThere are a few extra functions available. Refer to <a>Docs/CalculatedTags.md</a> for more information\nThe functions will be run in order, e.g.\n[\n \"_max_overlap_m2=Math.max(...feat.overlapsWith(\"someOtherLayer\").map(o => o.overlap))\n \"_max_overlap_ratio=Number(feat._max_overlap_m2)/feat.area\n]\n\nThe specified tags are evaluated lazily. E.g. if a calculated tag is only used in the popup (e.g. the number of nearby features),\nthe expensive calculation will only be performed then for that feature. This avoids clogging up the contributors PC when all features are loaded.\n\nIf a tag has to be evaluated strictly, use ':=' instead:\n\n[\n\"_some_key:=some_javascript_expression\"\n]\n\ngroup: advanced",
       "type": "array",
       "items": {
         "type": "string"
       }
     },
     "doNotDownload": {
-      "description": "If set, this layer will not query overpass; but it'll still match the tags above which are by chance returned by other layers.\nWorks well together with 'passAllFeatures', to add decoration",
+      "description": "If set, this layer will not query overpass; but it'll still match the tags above which are by chance returned by other layers.\nWorks well together with 'passAllFeatures', to add decoration\n\ngroup: advanced",
       "type": "boolean"
     },
     "isShown": {
-      "description": "If set, only features matching this extra tag will be shown.\nThis is useful to hide certain features from view.\n\nImportant: hiding features does not work dynamically, but is only calculated when the data is first renders.\nThis implies that it is not possible to hide a feature after a tagging change\n\nThe default value is 'yes'",
+      "description": "If set, only features matching this extra tag will be shown.\nThis is useful to hide certain features from view.\n\nThe default value is 'yes'\n\ngroup: advanced",
       "anyOf": [
         {
           "$ref": "#/definitions/AndTagConfigJson",
@@ -112,23 +112,23 @@
       ]
     },
     "forceLoad": {
-      "description": "Advanced option - might be set by the theme compiler\n\nIf true, this data will _always_ be loaded, even if the theme is disabled",
+      "description": "Advanced option - might be set by the theme compiler\n\nIf true, this data will _always_ be loaded, even if the theme is disabled\n\ngroup: advanced",
       "type": "boolean"
     },
     "minzoom": {
-      "description": "The minimum needed zoomlevel required before loading of the data start\nDefault: 0",
+      "description": "The minimum needed zoomlevel required to start loading and displaying the data.\nThis can be used to only show common features (e.g. a bicycle parking) only when the map is zoomed in very much (17).\nThis prevents cluttering the map with thousands of parkings if one is looking to an entire city.\n\nDefault: 0\n\ngroup: basic\nquestion: At what zoom level should features of the layer be shown?\nifunset: Always load this layer, even if the entire world is in view.",
       "type": "number"
     },
     "shownByDefault": {
-      "description": "Indicates if this layer is shown by default;\ncan be used to hide a layer from start, or to load the layer but only to show it where appropriate (e.g. for snapping to it)",
+      "description": "Indicates if this layer is shown by default;\ncan be used to hide a layer from start, or to load the layer but only to show it where appropriate (e.g. for snapping to it)\n\ngroup: advanced",
       "type": "boolean"
     },
     "minzoomVisible": {
-      "description": "The zoom level at which point the data is hidden again\nDefault: 100 (thus: always visible",
+      "description": "The zoom level at which point the data is hidden again\nDefault: 100 (thus: always visible\n\ngroup: advanced",
       "type": "number"
     },
     "title": {
-      "description": "The title shown in a popup for elements of this layer.",
+      "description": "The title shown in a popup for elements of this layer.\n\ngroup: infobox",
       "anyOf": [
         {
           "$ref": "#/definitions/TagRenderingConfigJson"
@@ -139,7 +139,7 @@
       ]
     },
     "titleIcons": {
-      "description": "Small icons shown next to the title.\nIf not specified, the OsmLink and wikipedia links will be used by default.\nUse an empty array to hide them.\nNote that \"defaults\" will insert all the default titleIcons (which are added automatically)\n\nType: icon[]",
+      "description": "Small icons shown next to the title.\nIf not specified, the OsmLink and wikipedia links will be used by default.\nUse an empty array to hide them.\nNote that \"defaults\" will insert all the default titleIcons (which are added automatically)\n\nType: icon[]\ngroup: infobox",
       "anyOf": [
         {
           "type": "array",
@@ -170,7 +170,7 @@
       ]
     },
     "mapRendering": {
-      "description": "Visualisation of the items on the map",
+      "description": "Visualisation of the items on the map\n\ngroup: maprendering",
       "anyOf": [
         {
           "type": "array",
@@ -194,11 +194,11 @@
       ]
     },
     "passAllFeatures": {
-      "description": "If set, this layer will pass all the features it receives onto the next layer.\nThis is ideal for decoration, e.g. directionss on cameras",
+      "description": "If set, this layer will pass all the features it receives onto the next layer.\nThis is ideal for decoration, e.g. directions on cameras\n\ngroup: advanced",
       "type": "boolean"
     },
     "presets": {
-      "description": "Presets for this layer.\nA preset shows up when clicking the map on a without data (or when right-clicking/long-pressing);\nit will prompt the user to add a new point.\n\nThe most important aspect are the tags, which define which tags the new point will have;\nThe title is shown in the dialog, along with the first sentence of the description.\n\nUpon confirmation, the full description is shown beneath the buttons - perfect to add pictures and examples.\n\nNote: the icon of the preset is determined automatically based on the tags and the icon above. Don't worry about that!\nNB: if no presets are defined, the popup to add new points doesn't show up at all",
+      "description": "Presets for this layer.\nA preset shows up when clicking the map on a without data (or when right-clicking/long-pressing);\nit will prompt the user to add a new point.\n\nThe most important aspect are the tags, which define which tags the new point will have;\nThe title is shown in the dialog, along with the first sentence of the description.\n\nUpon confirmation, the full description is shown beneath the buttons - perfect to add pictures and examples.\n\nNote: the icon of the preset is determined automatically based on the tags and the icon above. Don't worry about that!\nNB: if no presets are defined, the popup to add new points doesn't show up at all\n\ngroup: basic",
       "type": "array",
       "items": {
         "type": "object",
@@ -295,7 +295,7 @@
       }
     },
     "tagRenderings": {
-      "description": "All the tag renderings.\nA tag rendering is a block that either shows the known value or asks a question.\n\nRefer to the class `TagRenderingConfigJson` to see the possibilities.\n\nNote that we can also use a string here - where the string refers to a tag rendering defined in `assets/questions/questions.json`,\nwhere a few very general questions are defined e.g. website, phone number, ...\nFurthermore, _all_ the questions of another layer can be reused with `otherlayer.*`\nIf you need only a single of the tagRenderings, use `otherlayer.tagrenderingId`\nIf one or more questions have a 'group' or 'label' set, select all the entries with the corresponding group or label with `otherlayer.*group`\nRemark: if a tagRendering is 'lent' from another layer, the 'source'-tags are copied and added as condition.\nIf they are not wanted, remove them with an override\n\nA special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.\n\nAt last, one can define a group of renderings where parts of all strings will be replaced by multiple other strings.\nThis is mainly create questions for a 'left' and a 'right' side of the road.\nThese will be grouped and questions will be asked together",
+      "description": "All the tag renderings.\nA tag rendering is a block that either shows the known value or asks a question.\n\nRefer to the class `TagRenderingConfigJson` to see the possibilities.\n\nNote that we can also use a string here - where the string refers to a tag rendering defined in `assets/questions/questions.json`,\nwhere a few very general questions are defined e.g. website, phone number, ...\nFurthermore, _all_ the questions of another layer can be reused with `otherlayer.*`\nIf you need only a single of the tagRenderings, use `otherlayer.tagrenderingId`\nIf one or more questions have a 'group' or 'label' set, select all the entries with the corresponding group or label with `otherlayer.*group`\nRemark: if a tagRendering is 'lent' from another layer, the 'source'-tags are copied and added as condition.\nIf they are not wanted, remove them with an override\n\nA special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.\n\nAt last, one can define a group of renderings where parts of all strings will be replaced by multiple other strings.\nThis is mainly create questions for a 'left' and a 'right' side of the road.\nThese will be grouped and questions will be asked together\n\ngroup: tagrenderings",
       "type": "array",
       "items": {
         "anyOf": [
@@ -355,7 +355,7 @@
       }
     },
     "filter": {
-      "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in 'filters.json' for the appropriate filter or will try to parse it as `layername.filterid` and us that one",
+      "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in 'filters.json' for the appropriate filter or will try to parse it as `layername.filterid` and us that one\n\ngroup: filters",
       "anyOf": [
         {
           "type": "array",
@@ -384,7 +384,7 @@
       ]
     },
     "deletion": {
-      "description": "This block defines under what circumstances the delete dialog is shown for objects of this layer.\nIf set, a dialog is shown to the user to (soft) delete the point.\nThe dialog is built to be user friendly and to prevent mistakes.\nIf deletion is not possible, the dialog will hide itself and show the reason of non-deletability instead.\n\nTo configure, the following values are possible:\n\n- false: never ever show the delete button\n- true: show the default delete button\n- undefined: use the mapcomplete default to show deletion or not. Currently, this is the same as 'false' but this will change in the future\n- or: a hash with options (see below)\n\n The delete dialog\n =================\n\n\n\n#### Hard deletion if enough experience\n\nA feature can only be deleted from OpenStreetMap by mapcomplete if:\n\n- It is a node\n- No ways or relations use the node\n- The logged-in user has enough experience OR the user is the only one to have edited the point previously\n- The logged-in user has no unread messages (or has a ton of experience)\n- The user did not select one of the 'non-delete-options' (see below)\n\nIn all other cases, a 'soft deletion' is used.\n\n#### Soft deletion\n\nA 'soft deletion' is when the point isn't deleted from OSM but retagged so that it'll won't how up in the mapcomplete theme anymore.\nThis makes it look like it was deleted, without doing damage. A fixme will be added to the point.\n\nNote that a soft deletion is _only_ possible if these tags are provided by the theme creator, as they'll be different for every theme\n\n#### No-delete options\n\nIn some cases, the contributor might want to delete something for the wrong reason (e.g. someone who wants to have a path removed \"because the path is on their private property\").\nHowever, the path exists in reality and should thus be on OSM - otherwise the next contributor will pass by and notice \"hey, there is a path missing here! Let me redraw it in OSM!)\n\nThe correct approach is to retag the feature in such a way that it is semantically correct *and* that it doesn't show up on the theme anymore.\nA no-delete option is offered as 'reason to delete it', but secretly retags.",
+      "description": "This block defines under what circumstances the delete dialog is shown for objects of this layer.\nIf set, a dialog is shown to the user to (soft) delete the point.\nThe dialog is built to be user friendly and to prevent mistakes.\nIf deletion is not possible, the dialog will hide itself and show the reason of non-deletability instead.\n\nTo configure, the following values are possible:\n\n- false: never ever show the delete button\n- true: show the default delete button\n- undefined: use the mapcomplete default to show deletion or not. Currently, this is the same as 'false' but this will change in the future\n- or: a hash with options (see below)\n\n The delete dialog\n =================\n\n\n\n#### Hard deletion if enough experience\n\nA feature can only be deleted from OpenStreetMap by mapcomplete if:\n\n- It is a node\n- No ways or relations use the node\n- The logged-in user has enough experience OR the user is the only one to have edited the point previously\n- The logged-in user has no unread messages (or has a ton of experience)\n- The user did not select one of the 'non-delete-options' (see below)\n\nIn all other cases, a 'soft deletion' is used.\n\n#### Soft deletion\n\nA 'soft deletion' is when the point isn't deleted from OSM but retagged so that it'll won't how up in the mapcomplete theme anymore.\nThis makes it look like it was deleted, without doing damage. A fixme will be added to the point.\n\nNote that a soft deletion is _only_ possible if these tags are provided by the theme creator, as they'll be different for every theme\n\n#### No-delete options\n\nIn some cases, the contributor might want to delete something for the wrong reason (e.g. someone who wants to have a path removed \"because the path is on their private property\").\nHowever, the path exists in reality and should thus be on OSM - otherwise the next contributor will pass by and notice \"hey, there is a path missing here! Let me redraw it in OSM!)\n\nThe correct approach is to retag the feature in such a way that it is semantically correct *and* that it doesn't show up on the theme anymore.\nA no-delete option is offered as 'reason to delete it', but secretly retags.\n\ngroup: editing",
       "anyOf": [
         {
           "$ref": "#/definitions/DeleteConfigJson"
@@ -395,7 +395,7 @@
       ]
     },
     "allowMove": {
-      "description": "Indicates if a point can be moved and configures the modalities.\n\nA feature can be moved by MapComplete if:\n\n- It is a point\n- The point is _not_ part of a way or a a relation.\n\nOff by default. Can be enabled by setting this flag or by configuring.",
+      "description": "Indicates if a point can be moved and configures the modalities.\n\nA feature can be moved by MapComplete if:\n\n- It is a point\n- The point is _not_ part of a way or a a relation.\n\nOff by default. Can be enabled by setting this flag or by configuring.\n\ngroup: editing",
       "anyOf": [
         {
           "$ref": "#/definitions/default_3"
@@ -406,7 +406,7 @@
       ]
     },
     "allowSplit": {
-      "description": "If set, a 'split this way' button is shown on objects rendered as LineStrings, e.g. highways.\n\nIf the way is part of a relation, MapComplete will attempt to update this relation as well",
+      "description": "If set, a 'split this way' button is shown on objects rendered as LineStrings, e.g. highways.\n\nIf the way is part of a relation, MapComplete will attempt to update this relation as well\n\ngroup: editing",
       "type": "boolean"
     },
     "units": {
@@ -416,7 +416,7 @@
       }
     },
     "syncSelection": {
-      "description": "If set, synchronizes whether or not this layer is enabled.\n\nno: Do not sync at all, always revert to default\nlocal: keep selection on local storage\ntheme-only: sync via OSM, but this layer will only be toggled in this theme\nglobal: all layers with this ID will be synced accross all themes",
+      "description": "If set, synchronizes whether or not this layer is enabled.\n\nno: Do not sync at all, always revert to default\nlocal: keep selection on local storage\ntheme-only: sync via OSM, but this layer will only be toggled in this theme\nglobal: all layers with this ID will be synced accross all themes\n\ngroup: advanced",
       "enum": [
         "global",
         "local",
@@ -426,8 +426,16 @@
       "type": "string"
     },
     "#": {
-      "description": "Used for comments and/or to disable some checks\n\nno-question-hint-check: disables a check in MiscTagRenderingChecks which complains about 'div', 'span' or 'class=subtle'-HTML elements in the tagRendering",
+      "description": "Used for comments and/or to disable some checks\n\nno-question-hint-check: disables a check in MiscTagRenderingChecks which complains about 'div', 'span' or 'class=subtle'-HTML elements in the tagRendering\n\ngroup: special",
       "type": "string"
+    },
+    "popupInFloatover": {
+      "description": "If set, open the selectedElementView in a floatOver instead of on the right\n\ngroup: advanced",
+      "type": "boolean"
+    },
+    "fullNodeDatabase": {
+      "description": "_Set automatically by MapComplete, please ignore_\n\ngroup: hidden",
+      "type": "boolean"
     }
   },
   "required": [
@@ -596,7 +604,7 @@
           ]
         },
         "description": {
-          "description": "A human-readable text explaining what this tagRendering does",
+          "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -755,7 +763,15 @@
           "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
         },
         "then": {
-          "description": "Shown if the 'if is fulfilled\nType: rendered"
+          "description": "Shown if the 'if is fulfilled\nType: rendered",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "icon": {
           "description": "An extra icon supporting the choice\nType: icon",
@@ -1072,23 +1088,8 @@
             }
           ]
         },
-        "fill": {
-          "description": "Whether or not to fill polygons",
-          "anyOf": [
-            {
-              "$ref": "#/definitions/TagRenderingConfigJson"
-            },
-            {
-              "enum": [
-                "no",
-                "yes"
-              ],
-              "type": "string"
-            }
-          ]
-        },
         "fillColor": {
-          "description": "The color to fill a polygon with.\nIf undefined, this will be slightly more opaque version of the stroke line",
+          "description": "The color to fill a polygon with.\nIf undefined, this will be slightly more opaque version of the stroke line.\nUse '#00000000' to make the fill invisible",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -1269,7 +1270,7 @@
           ]
         },
         "description": {
-          "description": "A human-readable text explaining what this tagRendering does",
+          "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -1452,7 +1453,7 @@
           ]
         },
         "description": {
-          "description": "A human-readable text explaining what this tagRendering does",
+          "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -1752,7 +1753,7 @@
       "type": "object",
       "properties": {
         "appliesToKey": {
-          "description": "Every key from this list will be normalized.\n\nTo render a united value properly, use",
+          "description": "Every key from this list will be normalized.\n\nTo render the value properly (with a human readable denomination), use `{canonical(<key>)}`",
           "type": "array",
           "items": {
             "type": "string"

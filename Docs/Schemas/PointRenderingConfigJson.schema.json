@@ -320,7 +320,7 @@
           ]
         },
         "description": {
-          "description": "A human-readable text explaining what this tagRendering does",
+          "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"

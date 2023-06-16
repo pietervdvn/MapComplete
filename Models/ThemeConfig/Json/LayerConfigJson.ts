@@ -16,20 +16,28 @@ export interface LayerConfigJson {
     /**
      * The id of this layer.
      * This should be a simple, lowercase, human readable string that is used to identify the layer.
+     *
+     * group: basic
+     * question: What is the identifier of this layer?
      */
     id: string
 
     /**
-     * The name of this layer
-     * Used in the layer control panel and the 'Personal theme'.
+     * Used in the layer control panel to toggle a layer on and of.
      *
-     * If not given, will be hidden (and thus not toggable) in the layer control
+     * ifunset: This will hide the layer in the layer control, making it not filterable and not toggleable
+     *
+     * group: basic
+     * question: What is the name of this layer?
      */
     name?: string | Record<string, string>
 
     /**
-     * A description for this layer.
-     * Shown in the layer selections and in the personel theme
+     * A description for the features shown in this layer.
+     * This often resembles the introduction of the wiki.osm.org-page for this feature.
+     *
+     * group: basic
+     * question: How would you describe the features that are shown on this layer?
      */
     description?: string | Record<string, string>
 
@@ -41,6 +49,7 @@ export interface LayerConfigJson {
      * Every source _must_ define which tags _must_ be present in order to be picked up.
      *
      * Note: a source must always be defined. 'special' is only allowed if this is a builtin-layer
+     *
      */
     source:
         | "special"
@@ -111,12 +120,16 @@ export interface LayerConfigJson {
      * "_some_key:=some_javascript_expression"
      * ]
      *
+     * group: advanced
+     *
      */
     calculatedTags?: string[]
 
     /**
      * If set, this layer will not query overpass; but it'll still match the tags above which are by chance returned by other layers.
      * Works well together with 'passAllFeatures', to add decoration
+     *
+     * group: advanced
      */
     doNotDownload?: boolean
 
@@ -125,6 +138,8 @@ export interface LayerConfigJson {
      * This is useful to hide certain features from view.
      *
      * The default value is 'yes'
+     *
+     * group: advanced
      */
     isShown?: TagConfigJson
 
@@ -132,29 +147,44 @@ export interface LayerConfigJson {
      * Advanced option - might be set by the theme compiler
      *
      * If true, this data will _always_ be loaded, even if the theme is disabled
+     *
+     * group: advanced
      */
     forceLoad?: false | boolean
 
     /**
-     * The minimum needed zoomlevel required before loading the data
+     * The minimum needed zoomlevel required to start loading and displaying the data.
+     * This can be used to only show common features (e.g. a bicycle parking) only when the map is zoomed in very much (17).
+     * This prevents cluttering the map with thousands of parkings if one is looking to an entire city.
+     *
      * Default: 0
+     *
+     * group: basic
+     * question: At what zoom level should features of the layer be shown?
+     * ifunset: Always load this layer, even if the entire world is in view.
      */
     minzoom?: number
 
     /**
      * Indicates if this layer is shown by default;
      * can be used to hide a layer from start, or to load the layer but only to show it where appropriate (e.g. for snapping to it)
+     *
+     * group: advanced
      */
     shownByDefault?: true | boolean
 
     /**
      * The zoom level at which point the data is hidden again
      * Default: 100 (thus: always visible
+     *
+     * group: advanced
      */
     minzoomVisible?: number
 
     /**
      * The title shown in a popup for elements of this layer.
+     *
+     * group: infobox
      */
     title?: string | TagRenderingConfigJson
 
@@ -165,11 +195,14 @@ export interface LayerConfigJson {
      * Note that "defaults" will insert all the default titleIcons (which are added automatically)
      *
      * Type: icon[]
+     * group: infobox
      */
     titleIcons?: (string | TagRenderingConfigJson)[] | ["defaults"]
 
     /**
      * Visualisation of the items on the map
+     *
+     * group: maprendering
      */
     mapRendering:
         | null
@@ -186,7 +219,9 @@ export interface LayerConfigJson {
 
     /**
      * If set, this layer will pass all the features it receives onto the next layer.
-     * This is ideal for decoration, e.g. directionss on cameras
+     * This is ideal for decoration, e.g. directions on cameras
+     *
+     * group: advanced
      */
     passAllFeatures?: boolean
 
@@ -202,6 +237,8 @@ export interface LayerConfigJson {
      *
      * Note: the icon of the preset is determined automatically based on the tags and the icon above. Don't worry about that!
      * NB: if no presets are defined, the popup to add new points doesn't show up at all
+     *
+     * group: basic
      */
     presets?: {
         /**
@@ -284,6 +321,8 @@ export interface LayerConfigJson {
      * At last, one can define a group of renderings where parts of all strings will be replaced by multiple other strings.
      * This is mainly create questions for a 'left' and a 'right' side of the road.
      * These will be grouped and questions will be asked together
+     *
+     * group: tagrenderings
      */
     tagRenderings?: (
         | string
@@ -305,6 +344,8 @@ export interface LayerConfigJson {
     /**
      * All the extra questions for filtering.
      * If a string is given, mapComplete will search in 'filters.json' for the appropriate filter or will try to parse it as `layername.filterid` and us that one
+     *
+     * group: filters
      */
     filter?: (FilterConfigJson | string)[] | { sameAs: string }
 
@@ -353,6 +394,8 @@ export interface LayerConfigJson {
      The correct approach is to retag the feature in such a way that it is semantically correct *and* that it doesn't show up on the theme anymore.
      A no-delete option is offered as 'reason to delete it', but secretly retags.
 
+     group: editing
+
      */
     deletion?: boolean | DeleteConfigJson
 
@@ -365,6 +408,8 @@ export interface LayerConfigJson {
      * - The point is _not_ part of a way or a a relation.
      *
      * Off by default. Can be enabled by setting this flag or by configuring.
+     *
+     * group: editing
      */
     allowMove?: boolean | MoveConfigJson
 
@@ -372,11 +417,15 @@ export interface LayerConfigJson {
      * If set, a 'split this way' button is shown on objects rendered as LineStrings, e.g. highways.
      *
      * If the way is part of a relation, MapComplete will attempt to update this relation as well
+     *
+     * group: editing
      */
     allowSplit?: boolean
 
     /**
      * @see UnitConfigJson
+     *
+     * group: editing
      */
     units?: UnitConfigJson[]
 
@@ -387,6 +436,8 @@ export interface LayerConfigJson {
      * local: keep selection on local storage
      * theme-only: sync via OSM, but this layer will only be toggled in this theme
      * global: all layers with this ID will be synced accross all themes
+     *
+     * group: advanced
      */
     syncSelection?: "no" | "local" | "theme-only" | "global"
 
@@ -394,16 +445,22 @@ export interface LayerConfigJson {
      * Used for comments and/or to disable some checks
      *
      * no-question-hint-check: disables a check in MiscTagRenderingChecks which complains about 'div', 'span' or 'class=subtle'-HTML elements in the tagRendering
+     *
+     * group: special
      */
     "#"?: string | "no-question-hint-check"
 
     /**
      * If set, open the selectedElementView in a floatOver instead of on the right
+     *
+     * group: advanced
      */
     popupInFloatover?: boolean
 
     /**
      * _Set automatically by MapComplete, please ignore_
+     *
+     * group: hidden
      */
     fullNodeDatabase?: boolean
 }
