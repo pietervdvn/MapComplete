@@ -204,7 +204,7 @@ export default {
         "type": "object",
         "properties": {
           "title": {
-            "description": "The title - shown on the 'add-new'-button.\n\nThis should include the article of the noun, e.g. 'a hydrant', 'a bicycle pump'.\nThis text will be inserted into `Add {category} here`, becoming `Add a hydrant here`.\n\nDo _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!",
+            "description": "The title - shown on the 'add-new'-button.\n\nThis should include the article of the noun, e.g. 'a hydrant', 'a bicycle pump'.\nThis text will be inserted into `Add {category} here`, becoming `Add a hydrant here`.\n\nDo _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!\n\nquestion: What is the word to describe this object?\ninline: Add {value} here",
             "anyOf": [
               {
                 "$ref": "#/definitions/Record<string,string>"
@@ -215,7 +215,7 @@ export default {
             ]
           },
           "tags": {
-            "description": "The tags to add. It determines the icon too",
+            "description": "The tags to add. It determines the icon too.\nUse <code>key=value</code>\n\nquestion: What tag should be added to the new object?\ntype: simpletag",
             "type": "array",
             "items": {
               "type": "string"

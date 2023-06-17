@@ -12,20 +12,20 @@
 
 
     export let state: EditLayerState
+    export let path: (string | number)[] = []
     export let schema: ConfigMeta
-    export let title: string | undefined
-
     let value = new UIEventSource<string>(undefined)
     let feedback = new UIEventSource<Translation>(undefined)
 
     const configJson: QuestionableTagRenderingConfigJson = {
-        id: schema.path.join("."),
-        render: schema.path.at(-1) + ": <b>{value}</b>",
+        id: schema.path.join("_"),
+        render: schema.hints.inline ?? schema.path.at(-1) + ": <b>{value}</b>",
         question: schema.hints.question,
         questionHint: schema.description,
         freeform: {
             key: "value",
-            type: schema.hints.typehint ?? "string"
+            type: schema.hints.typehint ?? "string",
+            inline: schema.hints.inline !== undefined
         }
     }
 

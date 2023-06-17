@@ -9,12 +9,11 @@
     import {Utils} from "../../Utils";
 
 
-    let state = new EditLayerState()
-    let layer = state.layer
 
     const layerSchema: ConfigMeta[] = layerSchemaRaw
+    let state = new EditLayerState(layerSchema)
     const regions = Utils.Dedup(layerSchema.map(meta => meta.hints.group))
-        .filter(region => region !== undefined)
+        .filter(region => region === "basic")
 
     const perRegion: Record<string, ConfigMeta[]> = {}
     for (const region of regions) {
@@ -23,7 +22,7 @@
     console.log({perRegion})
 </script>
 
-<h3>Edit layer {$layer?.id}</h3>
+<h3>Edit layer</h3>
 
 <TabbedGroup tab={new UIEventSource(0)}>
     <div slot="title0">General properties</div>

@@ -8,6 +8,7 @@ export interface ConfigMeta {
         typehint?: string
         question?: string
         ifunset?: string
+        inline?: string
     }
     required: boolean
     description: string

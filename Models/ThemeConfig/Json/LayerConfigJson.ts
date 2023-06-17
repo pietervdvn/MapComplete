@@ -248,10 +248,17 @@ export interface LayerConfigJson {
          * This text will be inserted into `Add {category} here`, becoming `Add a hydrant here`.
          *
          * Do _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!
+         *
+         * question: What is the word to describe this object?
+         * inline: Add {value} here
          */
         title: string | Record<string, string>
         /**
-         * The tags to add. It determines the icon too
+         * The tags to add. It determines the icon too.
+         * Use <code>key=value</code>
+         *
+         * question: What tag should be added to the new object?
+         * type: simpletag
          */
         tags: string[]
         /**

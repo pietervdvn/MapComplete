@@ -1,6 +1,7 @@
 [
   {
     "path": [],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one"
@@ -9,6 +10,7 @@
     "path": [
       "id"
     ],
+    "required": false,
     "hints": {},
     "type": "string",
     "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nUse 'questions' to trigger the question box of this group (if a group is defined)"
@@ -17,6 +19,7 @@
     "path": [
       "labels"
     ],
+    "required": false,
     "hints": {},
     "type": "array",
     "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away"
@@ -25,6 +28,7 @@
     "path": [
       "classes"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -43,6 +47,7 @@
     "path": [
       "description"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -58,6 +63,7 @@
     "path": [
       "render"
     ],
+    "required": false,
     "hints": {
       "typehint": "rendered"
     },
@@ -101,6 +107,7 @@
     "path": [
       "condition"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -121,6 +128,7 @@
     "path": [
       "condition"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -130,6 +138,7 @@
       "condition",
       "and"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -161,6 +170,7 @@
       "condition",
       "and"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -169,6 +179,7 @@
     "path": [
       "condition"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -178,6 +189,7 @@
       "condition",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -209,6 +221,7 @@
       "condition",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -218,6 +231,7 @@
       "condition",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -226,6 +240,7 @@
     "path": [
       "metacondition"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -246,6 +261,7 @@
     "path": [
       "metacondition"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -255,6 +271,7 @@
       "metacondition",
       "and"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -286,6 +303,7 @@
       "metacondition",
       "and"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -294,6 +312,7 @@
     "path": [
       "metacondition"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -303,6 +322,7 @@
       "metacondition",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -334,6 +354,7 @@
       "metacondition",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -343,6 +364,7 @@
       "metacondition",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -351,6 +373,7 @@
     "path": [
       "freeform"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Allow freeform text input from the user"
@@ -360,6 +383,7 @@
       "freeform",
       "key"
     ],
+    "required": true,
     "hints": {},
     "type": "string",
     "description": "If this key is present, then 'render' is used to display the value.\nIf this is undefined, the rendering is _always_ shown"
@@ -368,6 +392,7 @@
     "path": [
       "mappings"
     ],
+    "required": false,
     "hints": {},
     "type": "array",
     "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes"
@@ -377,6 +402,7 @@
       "mappings",
       "if"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -408,6 +434,7 @@
       "mappings",
       "if"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -417,6 +444,7 @@
       "mappings",
       "if"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -426,6 +454,7 @@
       "mappings",
       "then"
     ],
+    "required": true,
     "hints": {
       "typehint": "rendered"
     },
@@ -444,6 +473,7 @@
       "mappings",
       "icon"
     ],
+    "required": false,
     "hints": {
       "typehint": "icon"
     },
@@ -476,6 +506,7 @@
       "icon",
       "path"
     ],
+    "required": true,
     "hints": {
       "typehint": "icon"
     },
@@ -488,6 +519,7 @@
       "icon",
       "class"
     ],
+    "required": false,
     "hints": {},
     "type": "string",
     "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)"

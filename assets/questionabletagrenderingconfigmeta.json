@@ -1,6 +1,7 @@
 [
   {
     "path": [],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "A QuestionableTagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nIf the desired tags are missing and a question is defined, a question will be shown instead."
@@ -9,6 +10,7 @@
     "path": [
       "question"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -24,6 +26,7 @@
     "path": [
       "questionHint"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -39,6 +42,7 @@
     "path": [
       "freeform"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Allow freeform text input from the user"
@@ -48,6 +52,7 @@
       "freeform",
       "type"
     ],
+    "required": false,
     "hints": {},
     "type": "string",
     "description": "The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values"
@@ -57,6 +62,7 @@
       "freeform",
       "placeholder"
     ],
+    "required": false,
     "hints": {},
     "description": "A (translated) text that is shown (as gray text) within the textfield"
   },
@@ -65,6 +71,7 @@
       "freeform",
       "helperArgs"
     ],
+    "required": false,
     "hints": {},
     "type": "array",
     "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
@@ -74,6 +81,7 @@
       "freeform",
       "addExtraTags"
     ],
+    "required": false,
     "hints": {},
     "type": "array",
     "description": "If a value is added with the textfield, these extra tag is addded.\nUseful to add a 'fixme=freeform textfield used - to be checked'"
@@ -83,6 +91,7 @@
       "freeform",
       "inline"
     ],
+    "required": false,
     "hints": {},
     "type": "boolean",
     "description": "When set, influences the way a question is asked.\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nNote that this will be set automatically if no special elements are present."
@@ -92,6 +101,7 @@
       "freeform",
       "default"
     ],
+    "required": false,
     "hints": {},
     "type": "string",
     "description": "default value to enter if no previous tagging is present.\nNormally undefined (aka do not enter anything)"
@@ -100,6 +110,7 @@
     "path": [
       "multiAnswer"
     ],
+    "required": false,
     "hints": {},
     "type": "boolean",
     "description": "If true, use checkboxes instead of radio buttons when asking the question"
@@ -108,6 +119,7 @@
     "path": [
       "mappings"
     ],
+    "required": false,
     "hints": {},
     "type": "array",
     "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes"
@@ -117,6 +129,7 @@
       "mappings",
       "if"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -148,6 +161,7 @@
       "mappings",
       "if"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -157,6 +171,7 @@
       "mappings",
       "if"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -166,6 +181,7 @@
       "mappings",
       "then"
     ],
+    "required": true,
     "hints": {
       "typehint": "rendered"
     },
@@ -184,6 +200,7 @@
       "mappings",
       "icon"
     ],
+    "required": false,
     "hints": {
       "typehint": "icon"
     },
@@ -216,6 +233,7 @@
       "icon",
       "path"
     ],
+    "required": true,
     "hints": {
       "typehint": "icon"
     },
@@ -228,6 +246,7 @@
       "icon",
       "class"
     ],
+    "required": false,
     "hints": {},
     "type": "string",
     "description": "Size of the image"
@@ -237,6 +256,7 @@
       "mappings",
       "hideInAnswer"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -261,6 +281,7 @@
       "mappings",
       "hideInAnswer"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -271,6 +292,7 @@
       "hideInAnswer",
       "and"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -303,6 +325,7 @@
       "hideInAnswer",
       "and"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -312,6 +335,7 @@
       "mappings",
       "hideInAnswer"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -322,6 +346,7 @@
       "hideInAnswer",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -354,6 +379,7 @@
       "hideInAnswer",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -364,6 +390,7 @@
       "hideInAnswer",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -373,6 +400,7 @@
       "mappings",
       "ifnot"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -394,6 +422,7 @@
       "mappings",
       "ifnot"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -404,6 +433,7 @@
       "ifnot",
       "and"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -436,6 +466,7 @@
       "ifnot",
       "and"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -445,6 +476,7 @@
       "mappings",
       "ifnot"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -455,6 +487,7 @@
       "ifnot",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -487,6 +520,7 @@
       "ifnot",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -497,6 +531,7 @@
       "ifnot",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -506,6 +541,7 @@
       "mappings",
       "addExtraTags"
     ],
+    "required": false,
     "hints": {},
     "type": "array",
     "description": "If chosen as answer, these tags will be applied as well onto the object.\nNot compatible with multiAnswer.\n\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": \"not:crossing:marking=\"\n}\n```"
@@ -515,6 +551,7 @@
       "mappings",
       "priorityIf"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -536,6 +573,7 @@
       "mappings",
       "priorityIf"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -546,6 +584,7 @@
       "priorityIf",
       "and"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -578,6 +617,7 @@
       "priorityIf",
       "and"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -587,6 +627,7 @@
       "mappings",
       "priorityIf"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -597,6 +638,7 @@
       "priorityIf",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -629,6 +671,7 @@
       "priorityIf",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -639,6 +682,7 @@
       "priorityIf",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -648,6 +692,7 @@
       "mappings",
       "#"
     ],
+    "required": false,
     "hints": {},
     "type": "string",
     "description": "Used for comments or to disable a validation\n\nignore-image-in-then: normally, a `then`-clause is not allowed to have an `img`-html-element as icons are preferred. In some cases (most notably title-icons), this is allowed"
@@ -656,6 +701,7 @@
     "path": [
       "id"
     ],
+    "required": false,
     "hints": {},
     "type": "string",
     "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nUse 'questions' to trigger the question box of this group (if a group is defined)"
@@ -664,6 +710,7 @@
     "path": [
       "labels"
     ],
+    "required": false,
     "hints": {},
     "type": "array",
     "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away"
@@ -672,6 +719,7 @@
     "path": [
       "classes"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -690,6 +738,7 @@
     "path": [
       "description"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -705,6 +754,7 @@
     "path": [
       "render"
     ],
+    "required": false,
     "hints": {
       "typehint": "rendered"
     },
@@ -748,6 +798,7 @@
     "path": [
       "condition"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -768,6 +819,7 @@
     "path": [
       "condition"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -777,6 +829,7 @@
       "condition",
       "and"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -808,6 +861,7 @@
       "condition",
       "and"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -816,6 +870,7 @@
     "path": [
       "condition"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -825,6 +880,7 @@
       "condition",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -856,6 +912,7 @@
       "condition",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -865,6 +922,7 @@
       "condition",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -873,6 +931,7 @@
     "path": [
       "metacondition"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -893,6 +952,7 @@
     "path": [
       "metacondition"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -902,6 +962,7 @@
       "metacondition",
       "and"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -933,6 +994,7 @@
       "metacondition",
       "and"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -941,6 +1003,7 @@
     "path": [
       "metacondition"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -950,6 +1013,7 @@
       "metacondition",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": [
       {
@@ -981,6 +1045,7 @@
       "metacondition",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
@@ -990,6 +1055,7 @@
       "metacondition",
       "or"
     ],
+    "required": false,
     "hints": {},
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"

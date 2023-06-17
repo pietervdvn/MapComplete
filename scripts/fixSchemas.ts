@@ -7,9 +7,10 @@ function WalkScheme<T>(
     scheme: JsonSchema,
     fullScheme: JsonSchema & { definitions?: any } = undefined,
     path: string[] = [],
-    isHandlingReference = []
-): { path: string[]; t: T }[] {
-    const results: { path: string[]; t: T }[] = []
+    isHandlingReference = [],
+    required?: string[]
+): { path: string[]; required: boolean; t: T }[] {
+    const results: { path: string[]; required: boolean; t: T }[] = []
     if (scheme === undefined) {
         return []
     }
@@ -36,6 +37,7 @@ function WalkScheme<T>(
     if (t !== undefined) {
         results.push({
             path,
+            required: required?.indexOf(path.at(-1)) >= 0,
             t,
         })
     }
@@ -69,7 +71,14 @@ function WalkScheme<T>(
         for (const key in scheme.properties) {
             const prop = scheme.properties[key]
             results.push(
-                ...WalkScheme(onEach, prop, fullScheme, [...path, key], isHandlingReference)
+                ...WalkScheme(
+                    onEach,
+                    prop,
+                    fullScheme,
+                    [...path, key],
+                    isHandlingReference,
+                    scheme.required
+                )
             )
         }
     }
@@ -113,14 +122,18 @@ function extractMeta(typename: string, path: string) {
         readFileSync("./Docs/Schemas/" + typename + ".schema.json", { encoding: "utf8" })
     )
 
-    const metakeys = ["type", "group", "question", "ifunset"]
+    const metainfo = {
+        type: "One of the inputValidator types",
+        group: "A kind of label. Items with the same group name will be placed in the same region",
+        question: "The question to ask in the tagRenderingConfig",
+        ifunset:
+            "Only applicable if _not_ a required item. This will appear in the 'not set'-option as extra description",
+        inline: "A text, containing `{value}`. This will be used as freeform rendering and will be included into the rendering",
+    }
+    const metakeys = Array.from(Object.keys(metainfo))
 
     const hints = addMetafields(metakeys, themeSchema)
-    const paths = hints.map(({ path, t }) => ({ path, ...t }))
-
-    themeSchema.required?.forEach((req) => {
-        paths.filter((p) => p.path.at(-1) === req).forEach((meta) => (meta["required"] = true))
-    })
+    const paths = hints.map(({ path, required, t }) => ({ path, required, ...t }))
 
     writeFileSync("./assets/" + path + ".json", JSON.stringify(paths, null, "  "))
     console.log("Written meta to ./assets/" + path)
