@@ -50,12 +50,13 @@
   on:mousemove={(e) => {
     if (isDown) {
       onPosChange(e.clientX, e.clientY)
+      e.preventDefault()
     }
   }}
   on:mouseup={() => {
     isDown = false
   }}
-  on:touchmove={(e) => onPosChange(e.touches[0].clientX, e.touches[0].clientY)}
+  on:touchmove={(e) =>{ onPosChange(e.touches[0].clientX, e.touches[0].clientY); e.preventDefault() }}
   on:touchstart={(e) => onPosChange(e.touches[0].clientX, e.touches[0].clientY)}
 >
   <div class="absolute top-0 left-0 h-full w-full cursor-pointer">
