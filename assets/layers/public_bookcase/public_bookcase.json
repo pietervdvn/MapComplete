@@ -65,10 +65,7 @@
       },
       "tags": [
         "amenity=public_bookcase"
-      ],
-      "preciseInput": {
-        "preferredBackground": "photo"
-      }
+      ]
     }
   ],
   "tagRenderings": [

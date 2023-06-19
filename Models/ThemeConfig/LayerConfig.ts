@@ -234,37 +234,27 @@ export default class LayerConfig extends WithContextLoader {
                 snapToLayers: undefined,
                 maxSnapDistance: undefined,
             }
-            if (pr.preciseInput !== undefined) {
-                if (pr.preciseInput === true) {
-                    pr.preciseInput = {
-                        preferredBackground: undefined,
-                    }
-                }
-
+            if (pr["preciseInput"] !== undefined) {
+                throw "Layer " + this.id + " still uses the old 'preciseInput'-field"
+            }
+            if (pr.snapToLayer !== undefined) {
                 let snapToLayers: string[]
-                if (typeof pr.preciseInput.snapToLayer === "string") {
-                    snapToLayers = [pr.preciseInput.snapToLayer]
+                if (typeof pr.snapToLayer === "string") {
+                    snapToLayers = [pr.snapToLayer]
                 } else {
-                    snapToLayers = pr.preciseInput.snapToLayer
+                    snapToLayers = pr.snapToLayer
                 }
 
-                let preferredBackground: (
-                    | "map"
-                    | "photo"
-                    | "osmbasedmap"
-                    | "historicphoto"
-                    | string
-                )[]
-                if (typeof pr.preciseInput.preferredBackground === "string") {
-                    preferredBackground = [pr.preciseInput.preferredBackground]
-                } else {
-                    preferredBackground = pr.preciseInput.preferredBackground
-                }
                 preciseInput = {
-                    preferredBackground,
                     snapToLayers,
-                    maxSnapDistance: pr.preciseInput.maxSnapDistance ?? 10,
+                    maxSnapDistance: pr.maxSnapDistance ?? 10,
                 }
+            } else if (pr.maxSnapDistance !== undefined) {
+                throw (
+                    "Layer " +
+                    this.id +
+                    " defines a maxSnapDistance, but does not include a `snapToLayer`"
+                )
             }
 
             const config: PresetConfig = {

@@ -46,9 +46,6 @@
         "da": "En pub, mest et sted at drikke øl i et varme, afslappede omgivelser",
         "fr": "Un pub, principalement pour boire un verre dans une atmosphère chaleureuse et décontractée",
         "ca": "Un bar, principalment per a beure cerveses en un interior càlid i relaxat"
-      },
-      "preciseInput": {
-        "preferredBackground": "map"
       }
     },
     {
@@ -74,9 +71,6 @@
         "es": "Un <b>bar de copas</b> más moderno y comercial, posiblemente con una instalación de música y luz",
         "fr": "Un <b>bar</b> plus moderne et commercial, avec éventuellement musique et jeux de lumière",
         "ca": "Un <b>bar de copes</b> més modern i comercial, possiblement amb equipació de música i llums"
-      },
-      "preciseInput": {
-        "preferredBackground": "map"
       }
     },
     {
@@ -102,9 +96,6 @@
         "es": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo",
         "fr": "Un <b>café</b> pour prendre un thé, un café ou une boisson alcoolisée dans un environnement calme",
         "ca": "Una <b>cafeteria</b> per a a beure té, café o una beguda alcohólica en un ambient tranquil"
-      },
-      "preciseInput": {
-        "preferredBackground": "map"
       }
     },
     {
@@ -128,9 +119,6 @@
         "fr": "Une <b>boîte de nuit</b> ou discothèque pour danser sur de la musique de DJ accompagnée de jeux de lumière et un bar pour prendre une boisson (alcoolisée)",
         "da": "En <b>natklub</b> eller diskotek med fokus på dans, musik af en DJ med tilhørende lysshow og en bar for at få (alkoholiske) drinks",
         "ca": "Un <b>club nocturn</b> o discoteca centrat en ballar, música d'un DJ acompanyat d'un espectacle de llums i una barra on obtindre begudes (alcohòliques)"
-      },
-      "preciseInput": {
-        "preferredBackground": "map"
       }
     }
   ],

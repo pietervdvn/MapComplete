@@ -53,7 +53,7 @@ The Graphical User Interface is composed of various UI-elements. For every UI-el
 
 There are some basic elements, such as:
 
-- `FixedUIElement` which shows a fixed, unchangeble element
+- `FixedUIElement` which shows a fixed, unchangeable element
 - `Img` to show an image
 - `Combine` which wraps everything given (strings and other elements) in a div
 - `List`

@@ -22,7 +22,7 @@
     "cs": "Lavičky",
     "pa_PK": "بینچ"
   },
-  "minzoom": 17,
+  "minzoom": 14,
   "source": {
     "osmTags": "amenity=bench"
   },

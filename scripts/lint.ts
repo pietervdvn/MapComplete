@@ -33,7 +33,7 @@ const articles = {
 function addArticleToPresets(layerConfig: { presets?: { title: any }[] }) {
     /*
     if(layerConfig.presets === undefined){
-        return 
+        return
     }
     for (const preset of layerConfig.presets) {
         preset.title = new Translation(preset.title, "autofix")
@@ -72,7 +72,7 @@ for (const layerFile of layerFiles) {
             )
         )
         addArticleToPresets(fixed)
-        writeFileSync(layerFile.path, JSON.stringify(fixed, null, "  "))
+        writeFileSync(layerFile.path, JSON.stringify(fixed, null, "  ") + "\n")
     } catch (e) {
         console.error("COULD NOT LINT LAYER" + layerFile.path + ":\n\t" + e)
     }

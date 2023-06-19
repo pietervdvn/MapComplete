@@ -453,15 +453,12 @@
         "de": "einen Eingang",
         "nl": "een toegang"
       },
-      "preciseInput": {
-        "preferredBackground": "photo",
-        "snapToLayer": [
-          "walls_and_buildings",
-          "pedestrian_path"
-        ]
-      },
       "tags": [
         "entrance=yes"
+      ],
+      "snapToLayer": [
+        "walls_and_buildings",
+        "pedestrian_path"
       ]
     },
     {
@@ -470,14 +467,11 @@
         "de": "eine Innentür",
         "nl": "een binnendeur"
       },
-      "preciseInput": {
-        "preferredBackground": "map",
-        "snapToLayer": [
-          "indoors"
-        ]
-      },
       "tags": [
         "indoor=door"
+      ],
+      "snapToLayer": [
+        "indoors"
       ]
     }
   ],

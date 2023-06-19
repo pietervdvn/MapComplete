@@ -67,7 +67,7 @@
         "calculatedTags": [
           "_closest_osm_poi=closest(feat)('atm')?.properties?.id",
           "_closest_osm_poi_distance=Math.round(distanceTo(feat)(feat.properties._closest_osm_poi))",
-          "_has_closeby_feature=Number(feat.properties._closest_osm_poi_distance) < 50 ? 'yes' : 'no'"
+          "_has_closeby_feature=Number(feat.properties._closest_osm_poi_distance) < 150 ? 'yes' : 'no'"
         ],
         "=tagRenderings": [
           {

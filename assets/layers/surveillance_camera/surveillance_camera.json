@@ -592,14 +592,7 @@
         "de": "eine an einer Wand montierte Überwachungskamera",
         "es": "una cámara de vigilancia montada en una pared"
       },
-      "preciseInput": {
-        "snapToLayer": "walls_and_buildings",
-        "preferredBackground": [
-          "photo",
-          "osmbasedmap",
-          "map"
-        ]
-      }
+      "snapToLayer": "walls_and_buildings"
     }
   ],
   "mapRendering": [

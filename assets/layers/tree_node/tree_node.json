@@ -757,9 +757,6 @@
         "de": "Ein Baum mit Blättern, z. B. Eiche oder Buche.",
         "es": "Un árbol de hojas como el Roble o el Álamo.",
         "pt": "Uma árvore de uma espécie com folhas, como carvalho ou populus."
-      },
-      "preciseInput": {
-        "preferredBackground": "photo"
       }
     },
     {
@@ -787,9 +784,6 @@
         "de": "Ein Baum mit Nadeln, z. B. Kiefer oder Fichte.",
         "es": "Un árbol de hojas agujas, como el Pino o el Abeto.",
         "da": "Et træ af en art med nåle, såsom fyr eller gran."
-      },
-      "preciseInput": {
-        "preferredBackground": "photo"
       }
     },
     {
@@ -819,9 +813,6 @@
         "de": "Wenn Sie nicht sicher sind, ob es sich um einen Laubbaum oder einen Nadelbaum handelt.",
         "es": "Si no estás seguro de si es un árbol de hoja ancha o de hoja de aguja.",
         "da": "Hvis du ikke er sikker på, om det er et løv- eller nåletræ."
-      },
-      "preciseInput": {
-        "preferredBackground": "photo"
       }
     }
   ],

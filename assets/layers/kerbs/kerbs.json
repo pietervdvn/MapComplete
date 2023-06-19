@@ -254,14 +254,11 @@
         "de": "Bordstein in einem Fußweg",
         "fr": "Bordure dans un trottoir"
       },
-      "preciseInput": {
-        "maxSnapDistance": 10,
-        "preferredBackground": "photo",
-        "snapToLayer": [
-          "cycleways_and_roads",
-          "kerbs"
-        ]
-      }
+      "snapToLayer": [
+        "cycleways_and_roads",
+        "kerbs"
+      ],
+      "maxSnapDistance": 10
     }
   ],
   "filter": [
