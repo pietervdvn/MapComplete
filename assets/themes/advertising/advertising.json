@@ -31,7 +31,6 @@
   },
   "maintainer": "Offsel",
   "icon": "./assets/themes/advertising/icon.svg",
-  "version": "2023_01_29",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,

@@ -1059,9 +1059,7 @@
         "cs": "plakátovací skříň připevněná na stěnu",
         "pt": "uma caixa de pôster montada em uma parede"
       },
-      "preciseInput": {
-        "snapToLayer": "walls_and_buildings"
-      }
+      "snapToLayer": "walls_and_buildings"
     },
     {
       "tags": [
@@ -1175,16 +1173,13 @@
         "fr": "un écran fixé au mur",
         "pt": "uma tela montada em uma parede"
       },
-      "preciseInput": {
-        "preferredBackground": "map",
-        "snapToLayer": "walls_and_buildings",
-        "maxSnapDistance": 5
-      },
       "exampleImages": [
         "./assets/themes/advertising/Subway_screen.jpg",
         "./assets/themes/advertising/TV_media.jpg",
         "./assets/themes/advertising/Times square.jpg"
-      ]
+      ],
+      "snapToLayer": "walls_and_buildings",
+      "maxSnapDistance": 5
     },
     {
       "tags": [
@@ -1209,15 +1204,12 @@
         "nl": "Een stuk groot, weerbestendig textiel met opgedrukte reclameboodschap die permanent aan de muur hangt",
         "pt": "Uma peça de tecido impermeável com uma mensagem impressa, permanentemente ancorada na parede"
       },
-      "preciseInput": {
-        "preferredBackground": "map",
-        "snapToLayer": "walls_and_buildings",
-        "maxSnapDistance": 5
-      },
       "exampleImages": [
         "./assets/themes/advertising/tarp_feder.jpg",
         "./assets/themes/advertising/tarp_madrid.jpg"
-      ]
+      ],
+      "snapToLayer": "walls_and_buildings",
+      "maxSnapDistance": 5
     },
     {
       "tags": [
@@ -1252,11 +1244,6 @@
         "pt": "um sinal",
         "pt_BR": "uma placa"
       },
-      "preciseInput": {
-        "preferredBackground": "map",
-        "snapToLayer": "walls_and_buildings",
-        "maxSnapDistance": 5
-      },
       "description": {
         "en": "Used for advertising signs, neon signs, logos & institutional entrance signs",
         "es": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y carteles en entradas institucionales",
@@ -1270,7 +1257,9 @@
         "./assets/themes/advertising/Waitrose_sign.jpg",
         "./assets/themes/advertising/sign_EOI.jpg",
         "./assets/themes/advertising/farma_sign.jpg"
-      ]
+      ],
+      "snapToLayer": "walls_and_buildings",
+      "maxSnapDistance": 5
     },
     {
       "tags": [
@@ -1304,15 +1293,12 @@
         "fr": "une peinture murale",
         "pt": "uma pintura de parede"
       },
-      "preciseInput": {
-        "preferredBackground": "map",
-        "snapToLayer": "walls_and_buildings",
-        "maxSnapDistance": 5
-      },
       "exampleImages": [
         "./assets/themes/advertising/Capitol_wall.jpg",
         "./assets/themes/advertising/clarke_wall.jpg"
-      ]
+      ],
+      "snapToLayer": "walls_and_buildings",
+      "maxSnapDistance": 5
     }
   ]
 }

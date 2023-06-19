@@ -72,11 +72,8 @@
       "tags": [
         "emergency=defibrillator"
       ],
-      "preciseInput": {
-        "preferredBackground": "map",
-        "snapToLayer": "walls_and_buildings",
-        "maxSnapDistance": 5
-      }
+      "snapToLayer": "walls_and_buildings",
+      "maxSnapDistance": 5
     }
   ],
   "tagRenderings": [

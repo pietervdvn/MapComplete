@@ -78,10 +78,7 @@
       },
       "tags": [
         "highway=speed_display"
-      ],
-      "preciseInput": {
-        "preferredBackground": "photo"
-      }
+      ]
     }
   ],
   "mapRendering": [

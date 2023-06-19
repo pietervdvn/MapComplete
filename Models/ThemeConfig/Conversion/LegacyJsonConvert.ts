@@ -34,6 +34,25 @@ export class UpdateLegacyLayer extends DesugaringStep<
             delete config["overpassTags"]
         }
 
+        for (const preset of config.presets ?? []) {
+            const preciseInput = preset["preciseInput"]
+            if (typeof preciseInput === "boolean") {
+                delete preset["preciseInput"]
+            } else if (preciseInput !== undefined) {
+                delete preciseInput["preferredBackground"]
+                console.log("Precise input:", preciseInput)
+                preset.snapToLayer = preciseInput.snapToLayer
+                delete preciseInput.snapToLayer
+                if (preciseInput.maxSnapDistance) {
+                    preset.maxSnapDistance = preciseInput.maxSnapDistance
+                    delete preciseInput.maxSnapDistance
+                }
+                if (Object.keys(preciseInput).length == 0) {
+                    delete preset["preciseInput"]
+                }
+            }
+        }
+
         if (config.tagRenderings !== undefined) {
             let i = 0
             for (const tagRendering of config.tagRenderings) {

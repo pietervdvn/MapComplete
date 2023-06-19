@@ -38,9 +38,6 @@
         "de": "Ein klassisches Speiselokal mit Sitzgelegenheiten, in dem vollständige Mahlzeiten von Kellnern serviert werden",
         "es": "Un lugar de comidas formal, con mesas y sillas y que vende comidas completas servidas por camareros",
         "fr": "Un lieu de restauration formel avec des installations pour s'asseoir vendant des repas complets servis par des serveurs"
-      },
-      "preciseInput": {
-        "preferredBackground": "map"
       }
     },
     {
@@ -61,9 +58,6 @@
         "de": "Ein Lebensmittelunternehmen, das sich auf schnellen Thekendienst und Essen zum Mitnehmen konzentriert",
         "es": "Un negocio de comida centrado en servicio rápido solo en mostrador y comida para llevar",
         "fr": "Une entreprise alimentaire se concentrant sur le service rapide au comptoir et les plats à emporter"
-      },
-      "preciseInput": {
-        "preferredBackground": "map"
       }
     },
     {
@@ -84,9 +78,6 @@
         "de": "Eine Pommesbude",
         "fr": "Une restauration rapide centré sur la vente de frites",
         "ca": "Un local de menjar ràpid centrat en les patates fregides"
-      },
-      "preciseInput": {
-        "preferredBackground": "map"
       }
     }
   ],

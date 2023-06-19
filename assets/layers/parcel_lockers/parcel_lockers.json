@@ -34,9 +34,6 @@
         "de": "ein Paketschließfach",
         "ca": "una bústia intel·ligent"
       },
-      "preciseInput": {
-        "preferredBackground": "photo"
-      },
       "tags": [
         "amenity=parcel_locker"
       ]

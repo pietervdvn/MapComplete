@@ -139,9 +139,7 @@
         "cs": "umělecké dílo na zdi",
         "es": "Una obra de arte en la pared"
       },
-      "preciseInput": {
-        "snapToLayer": "walls_and_buildings"
-      }
+      "snapToLayer": "walls_and_buildings"
     }
   ],
   "calculatedTags": [

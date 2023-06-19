@@ -72,13 +72,10 @@
         "nl": "een flitspaal",
         "es": "una cámara de velocidad"
       },
-      "preciseInput": {
-        "preferredBackground": "photo",
-        "maxSnapDistance": 10,
-        "snapToLayer": [
-          "maxspeed"
-        ]
-      }
+      "snapToLayer": [
+        "maxspeed"
+      ],
+      "maxSnapDistance": 10
     }
   ],
   "mapRendering": [
