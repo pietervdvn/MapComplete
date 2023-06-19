@@ -35,6 +35,16 @@
             "1": {
                 "title": "volně stojící plakátovací skříň"
             },
+            "10": {
+                "description": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
+                "title": "cedule"
+            },
+            "11": {
+                "title": "socha"
+            },
+            "12": {
+                "title": "nástěnná malba"
+            },
             "2": {
                 "title": "plakátovací skříň připevněná na stěnu"
             },
@@ -61,16 +71,6 @@
             },
             "9": {
                 "title": "totem"
-            },
-            "10": {
-                "description": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
-                "title": "cedule"
-            },
-            "11": {
-                "title": "socha"
-            },
-            "12": {
-                "title": "nástěnná malba"
             }
         },
         "tagRenderings": {
@@ -165,6 +165,9 @@
                     "1": {
                         "then": "Toto je deska"
                     },
+                    "10": {
+                        "then": "Toto je nástěnná malba"
+                    },
                     "2": {
                         "then": "Toto je sloup"
                     },
@@ -188,9 +191,6 @@
                     },
                     "9": {
                         "then": "Toto je totem"
-                    },
-                    "10": {
-                        "then": "Toto je nástěnná malba"
                     }
                 },
                 "question": "O jaký typ reklamního prvku se jedná?",
@@ -204,6 +204,9 @@
                 },
                 "1": {
                     "then": "Deska"
+                },
+                "10": {
+                    "then": "Nástěnná malba"
                 },
                 "2": {
                     "then": "Skříň na plakáty"
@@ -228,9 +231,6 @@
                 },
                 "9": {
                     "then": "Totem"
-                },
-                "10": {
-                    "then": "Nástěnná malba"
                 }
             }
         }
@@ -312,6 +312,15 @@
                     "1": {
                         "then": "Nástěnná malba"
                     },
+                    "10": {
+                        "then": "Azulejo (španělské dekorativní dlaždice)"
+                    },
+                    "11": {
+                        "then": "Obklady a dlažba"
+                    },
+                    "12": {
+                        "then": "Dřevořezba"
+                    },
                     "2": {
                         "then": "Malba"
                     },
@@ -335,15 +344,6 @@
                     },
                     "9": {
                         "then": "Reliéf"
-                    },
-                    "10": {
-                        "then": "Azulejo (španělské dekorativní dlaždice)"
-                    },
-                    "11": {
-                        "then": "Obklady a dlažba"
-                    },
-                    "12": {
-                        "then": "Dřevořezba"
                     }
                 },
                 "question": "Jaký je typ tohoto uměleckého díla?",
@@ -433,6 +433,32 @@
                     }
                 },
                 "question": "Lze z tohoto bankomatu vybírat hotovost?"
+            },
+            "cash_out-denominations-notes": {
+                "mappings": {
+                    "0": {
+                        "then": "Bankovky v hodnotě 5 eur lze vybírat"
+                    },
+                    "1": {
+                        "then": "Bankovky v hodnotě 10 eur lze vybírat"
+                    },
+                    "2": {
+                        "then": "Bankovky v hodnotě 20 eur lze vybírat"
+                    },
+                    "3": {
+                        "then": "50 eurové bankovky lze vybírat"
+                    },
+                    "4": {
+                        "then": "100 eurové bankovky lze vybírat"
+                    },
+                    "5": {
+                        "then": "200 eurové bankovky lze vybírat"
+                    },
+                    "6": {
+                        "then": "Bankovky v hodnotě 500 eur lze vybírat"
+                    }
+                },
+                "question": "Jaké bankovky zde můžete vybírat?"
             },
             "name": {
                 "render": "Název tohoto bankomatu je {name}"
@@ -1052,6 +1078,11 @@
                     }
                 },
                 "question": "Je nabízeno nářadí k opravě vlastního kola?"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Kdy byla tato cyklistická kavárna otevřena?"
+                }
             }
         },
         "title": {
@@ -1489,12 +1520,19 @@
                     "1": {
                         "then": "Tento obchod neprodává jízdní kola"
                     }
-                }
+                },
+                "question": "Prodává tento obchod jízdní kola?"
             },
             "bike_repair_tools-service": {
                 "mappings": {
                     "0": {
                         "then": "Tento obchod nabízí nářadí pro kutilské opravy"
+                    },
+                    "1": {
+                        "then": "Tento obchod nenabízí nářadí pro kutilské opravy"
+                    },
+                    "2": {
+                        "then": "Nářadí pro opravy svépomocí je k dispozici pouze v případě, že jste si kolo koupili/pronajali v prodejně"
                     }
                 },
                 "question": "Jsou zde nástroje na opravu vlastního kola?"
@@ -1507,6 +1545,27 @@
                     "0": {
                         "then": "Tato firma se zaměřuje na pronájem"
                     }
+                },
+                "render": "Tento obchod se specializuje na prodej {shop} a provádí činnosti související s jízdními koly"
+            },
+            "bike_shop-name": {
+                "question": "Jak se jmenuje tento obchod s jízdními koly?",
+                "render": "Tento obchod s jízdními koly se jmenuje {name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Obchod se sportovním vybavením <i>{name}</i>"
+                },
+                "1": {
+                    "then": "Winkel"
+                },
+                "2": {
+                    "then": "Půjčovna kol <i>{name}</i>"
+                },
+                "3": {
+                    "then": "Opravy kol <i>{name}</i>"
                 }
             }
         }
