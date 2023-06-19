@@ -61,7 +61,7 @@ export abstract class Validator {
         return Translations.t.validation[this.name].description
     }
 
-    public isValid(_: string, __?: () => string): boolean {
+    public isValid(key: string, getCountry?: () => string): boolean {
         return true
     }
 

@@ -16,9 +16,9 @@
     export let schema: ConfigMeta
     let value = new UIEventSource<string>(undefined)
     let feedback = new UIEventSource<Translation>(undefined)
-
+    
     const configJson: QuestionableTagRenderingConfigJson = {
-        id: schema.path.join("_"),
+        id: path.join("_"),
         render: schema.hints.inline ?? schema.path.at(-1) + ": <b>{value}</b>",
         question: schema.hints.question,
         questionHint: schema.description,
@@ -44,6 +44,7 @@
         err = e
     }
     let tags = new UIEventSource<Record<string, string>>({})
+    state.register(path, tags.map(tgs => tgs["value"]))
 </script>
 
 {#if err !== undefined}

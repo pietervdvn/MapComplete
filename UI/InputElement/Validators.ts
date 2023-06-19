@@ -18,6 +18,8 @@ import ColorValidator from "./Validators/ColorValidator"
 import BaseUIElement from "../BaseUIElement"
 import Combine from "../Base/Combine"
 import Title from "../Base/Title"
+import SimpleTagValidator from "./Validators/SimpleTagValidator"
+import ImageUrlValidator from "./Validators/ImageUrlValidator"
 
 export type ValidatorType = (typeof Validators.availableTypes)[number]
 
@@ -58,6 +60,8 @@ export default class Validators {
         new PhoneValidator(),
         new OpeningHoursValidator(),
         new ColorValidator(),
+        new SimpleTagValidator(),
+        new ImageUrlValidator(),
     ]
 
     private static _byType = Validators._byTypeConstructor()

@@ -254,25 +254,30 @@ export interface LayerConfigJson {
          */
         title: string | Record<string, string>
         /**
-         * The tags to add. It determines the icon too.
-         * Use <code>key=value</code>
+         * A single tag (encoded as <code>key=value</code>) out of all the tags to add onto the newly created point.
+         * Note that the icon in the UI will be chosen automatically based on the tags provided here.
          *
          * question: What tag should be added to the new object?
-         * type: simpletag
+         * type: simple_tag
          */
         tags: string[]
         /**
+         * An extra explanation of what the feature is, if it is not immediately clear from the title alone.
+         *
          * The _first sentence_ of the description is shown on the button of the `add` menu.
          * The full description is shown in the confirmation dialog.
          *
          * (The first sentence is until the first '.'-character in the description)
+         *
+         * question: How would you describe this feature?
          */
         description?: string | Record<string, string>
 
         /**
-         * Example images, which show real-life pictures of what such a feature might look like
+         * The URL of an example image which shows a real-life example of what such a feature might look like.
          *
          * Type: image
+         * question: What is the URL of an image showing such a feature?
          */
         exampleImages?: string[]
 

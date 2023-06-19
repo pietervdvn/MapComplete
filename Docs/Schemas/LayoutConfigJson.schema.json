@@ -1926,14 +1926,14 @@
                 ]
               },
               "tags": {
-                "description": "The tags to add. It determines the icon too.\nUse <code>key=value</code>\n\nquestion: What tag should be added to the new object?\ntype: simpletag",
+                "description": "A single tag (encoded as <code>key=value</code>) out of all the tags to add onto the newly created point.\nNote that the icon in the UI will be chosen automatically based on the tags provided here.\n\nquestion: What tag should be added to the new object?\ntype: simple_tag",
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               },
               "description": {
-                "description": "The _first sentence_ of the description is shown on the button of the `add` menu.\nThe full description is shown in the confirmation dialog.\n\n(The first sentence is until the first '.'-character in the description)",
+                "description": "An extra explanation of what the feature is, if it is not immediately clear from the title alone.\n\nThe _first sentence_ of the description is shown on the button of the `add` menu.\nThe full description is shown in the confirmation dialog.\n\n(The first sentence is until the first '.'-character in the description)\n\nquestion: How would you describe this feature?",
                 "anyOf": [
                   {
                     "$ref": "#/definitions/Record<string,string>"
@@ -1944,7 +1944,7 @@
                 ]
               },
               "exampleImages": {
-                "description": "Example images, which show real-life pictures of what such a feature might look like\n\nType: image",
+                "description": "The URL of an example image which shows a real-life example of what such a feature might look like.\n\nType: image\nquestion: What is the URL of an image showing such a feature?",
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -2372,14 +2372,14 @@
                 ]
               },
               "tags": {
-                "description": "The tags to add. It determines the icon too.\nUse <code>key=value</code>\n\nquestion: What tag should be added to the new object?\ntype: simpletag",
+                "description": "A single tag (encoded as <code>key=value</code>) out of all the tags to add onto the newly created point.\nNote that the icon in the UI will be chosen automatically based on the tags provided here.\n\nquestion: What tag should be added to the new object?\ntype: simple_tag",
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               },
               "description": {
-                "description": "The _first sentence_ of the description is shown on the button of the `add` menu.\nThe full description is shown in the confirmation dialog.\n\n(The first sentence is until the first '.'-character in the description)",
+                "description": "An extra explanation of what the feature is, if it is not immediately clear from the title alone.\n\nThe _first sentence_ of the description is shown on the button of the `add` menu.\nThe full description is shown in the confirmation dialog.\n\n(The first sentence is until the first '.'-character in the description)\n\nquestion: How would you describe this feature?",
                 "anyOf": [
                   {
                     "$ref": "#/definitions/Record<string,string>"
@@ -2390,7 +2390,7 @@
                 ]
               },
               "exampleImages": {
-                "description": "Example images, which show real-life pictures of what such a feature might look like\n\nType: image",
+                "description": "The URL of an example image which shows a real-life example of what such a feature might look like.\n\nType: image\nquestion: What is the URL of an image showing such a feature?",
                 "type": "array",
                 "items": {
                   "type": "string"

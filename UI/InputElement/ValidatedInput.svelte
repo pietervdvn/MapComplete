@@ -8,6 +8,7 @@
     import {Validator} from "./Validator"
     import {Unit} from "../../Models/Unit"
     import UnitInput from "../Popup/UnitInput.svelte"
+    import {Utils} from "../../Utils";
 
     export let type: ValidatorType
     export let feedback: UIEventSource<Translation> | undefined = undefined
@@ -25,6 +26,9 @@
     let _value = new UIEventSource(value.data ?? "")
 
     let validator: Validator = Validators.get(type ?? "string")
+    if(validator === undefined){
+        console.warn("Didn't find a validator for type", type)
+    }
     let selectedUnit: UIEventSource<string> = new UIEventSource<string>(undefined)
     let _placeholder = placeholder ?? validator?.getPlaceholder() ?? type
 
@@ -47,6 +51,7 @@
     $: {
         // The type changed -> reset some values
         validator = Validators.get(type ?? "string")
+        
         _placeholder = placeholder ?? validator?.getPlaceholder() ?? type
         feedback = feedback?.setData(validator?.getFeedback(_value.data, getCountry))
 
@@ -56,9 +61,9 @@
     function setValues() {
         // Update the value stores
         const v = _value.data
-        if (!validator.isValid(v, getCountry) || v === "") {
+        if (!validator?.isValid(v, getCountry) || v === "") {
             value.setData(undefined)
-            feedback?.setData(validator.getFeedback(v, getCountry))
+            feedback?.setData(validator?.getFeedback(v, getCountry))
             return
         }
 
@@ -74,10 +79,10 @@
     onDestroy(_value.addCallbackAndRun((_) => setValues()))
     onDestroy(selectedUnit.addCallback((_) => setValues()))
     if (validator === undefined) {
-        throw "Not a valid type for a validator:" + type
+        throw "Not a valid type (no validator found) for type '" + type+"'; did you perhaps mean one of: "+Utils.sortedByLevenshteinDistance(type, Validators.AllValidators.map(v => v.name), v => v).slice(0, 5).join(", ")
     }
 
-    const isValid = _value.map((v) => validator.isValid(v, getCountry))
+    const isValid = _value.map((v) => validator?.isValid(v, getCountry) ?? true)
 
     let htmlElem: HTMLInputElement
 
@@ -89,13 +94,13 @@
     }
 </script>
 
-{#if validator.textArea}
+{#if validator?.textArea}
     <form on:submit|preventDefault={() => dispatch("submit")}>
     
   <textarea
           class="w-full"
           bind:value={$_value}
-          inputmode={validator.inputmode ?? "text"}
+          inputmode={validator?.inputmode ?? "text"}
           placeholder={_placeholder}></textarea>
     </form>
 {:else}
@@ -104,7 +109,7 @@
                 bind:this={htmlElem}
                 bind:value={$_value}
                 class="w-full"
-                inputmode={validator.inputmode ?? "text"}
+                inputmode={validator?.inputmode ?? "text"}
                 placeholder={_placeholder}
         />
         {#if !$isValid}

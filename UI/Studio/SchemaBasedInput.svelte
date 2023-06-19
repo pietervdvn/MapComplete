@@ -10,7 +10,6 @@
 
 </script>
 
-<span class="subtle">{path.join(".")}</span>
 {#if schema.type === "array"}
     <SchemaBasedArray {path} {state} {schema}/>
 {:else}
