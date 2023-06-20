@@ -103,6 +103,18 @@
               "hideInAnswer": true
             }
           ]
+        },
+        {
+          "id": "version",
+          "question": {
+            "en": "What version of MapComplete was used to make this change?"
+          },
+          "render": {
+            "en": "Made with {editor}"
+          },
+          "freeform": {
+            "key": "editor"
+          }
         }
       ],
       "mapRendering": [
