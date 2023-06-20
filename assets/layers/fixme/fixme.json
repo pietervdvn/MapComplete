@@ -4,12 +4,11 @@
     "en": "OSM objects with FIXME tags",
     "de": "OSM-Objekte mit FIXME-Tags"
   },
-  "minzoom": 12,
+  "minzoom": 16,
   "description": {
     "en": "OSM objects that likely need to be fixed, based on a FIXME tag.",
     "de": "OSM-Objekte, die wahrscheinlich korrigiert werden müssen, basierend auf einem FIXME-Tag."
   },
-  "shownByDefault": false,
   "syncSelection": "theme-only",
   "source": {
     "osmTags": {
@@ -28,6 +27,21 @@
   "tagRenderings": [
     {
       "id": "fixme",
+      "freeform": {
+        "key": "fixme",
+        "type": "text"
+      },
+      "question": {
+        "en": "What is wrong with this feature?"
+      },
+      "mappings": [
+        {
+          "if": "fixme=",
+          "then": {
+            "en": "This issue has been resolved"
+          }
+        }
+      ],
       "render": {
         "en": "Fixme Text: {fixme}",
         "de": "Fixme Text: {fixme}"
@@ -49,7 +63,8 @@
         "centroid",
         "point"
       ],
-      "icon": "./assets/svg/bug.svg"
+      "icon": "./assets/svg/bug.svg",
+      "label": "<div class='bg-white rounded p-2'>{fixme}</div>"
     },
     {
       "color": "#ff0000",
