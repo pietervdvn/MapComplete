@@ -40,9 +40,7 @@
         "point",
         "centroid"
       ],
-      "rotation": {
-        "render": "{_direction:numerical}deg"
-      },
+      "rotation": "{_direction:numerical}deg",
       "anchor": "center"
     },
     {

@@ -316,12 +316,8 @@
   },
   "mapRendering": [
     {
-      "icon": {
-        "render": "circle:white;./assets/layers/observation_tower/Tower_observation.svg"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
+      "icon": "circle:white;./assets/layers/observation_tower/Tower_observation.svg",
+      "iconSize": "40,40,center",
       "location": [
         "point",
         "centroid"

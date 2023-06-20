@@ -246,9 +246,7 @@
         },
         {
           "#": "left",
-          "color": {
-            "render": "#888"
-          },
+          "color": "#888",
           "dashArray": {
             "render": "",
             "mappings": [

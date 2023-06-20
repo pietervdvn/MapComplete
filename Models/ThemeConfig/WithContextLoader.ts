@@ -32,6 +32,12 @@ export default class WithContextLoader {
                 return shared
             }
         }
+        if (Object.keys(v).length === 1 && typeof v["render"] === "string") {
+            throw `At ${
+                translationContext ?? "<unknown>"
+            }: use the content directly instead of {${key}: ${JSON.stringify(v)}}`
+        }
+
         return new TagRenderingConfig(v, `${translationContext ?? this._context}.${key}`)
     }
 

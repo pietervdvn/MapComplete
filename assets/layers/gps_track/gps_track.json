@@ -4,7 +4,9 @@
   "minzoom": 0,
   "source": "special",
   "title": {
-    "render": "Your travelled path"
+    "render": {
+      "en": "Your travelled path"
+    }
   },
   "shownByDefault": false,
   "tagRenderings": [

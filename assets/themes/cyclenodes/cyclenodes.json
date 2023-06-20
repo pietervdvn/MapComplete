@@ -79,12 +79,8 @@
       },
       "mapRendering": [
         {
-          "width": {
-            "render": "4"
-          },
-          "color": {
-            "render": "#00a703"
-          }
+          "width": "4",
+          "color": "#00a703"
         }
       ],
       "tagRenderings": [

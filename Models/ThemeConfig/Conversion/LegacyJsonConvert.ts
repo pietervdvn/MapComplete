@@ -147,11 +147,23 @@ export class UpdateLegacyLayer extends DesugaringStep<
             const pr = <PointRenderingConfigJson>rendering
             const iconSize = pr.iconSize
             if (typeof iconSize === "string")
-                if (["bottom", "center", "top"].some((a) => (<string>iconSize).endsWith("," + a))) {
+                if (["bottom", "center", "top"].some((a) => (<string>iconSize).endsWith(a))) {
                     const parts = iconSize.split(",").map((parts) => parts.toLowerCase().trim())
                     pr.anchor = parts.pop()
                     pr.iconSize = parts.join(",")
                 }
+        }
+
+        for (const rendering of config.mapRendering) {
+            for (const key in rendering) {
+                if (
+                    typeof rendering[key]["render"] === "string" &&
+                    Object.keys(rendering[key]).length === 1
+                ) {
+                    console.log("Rewrite: ", rendering[key])
+                    rendering[key] = rendering[key]["render"]
+                }
+            }
         }
 
         return {

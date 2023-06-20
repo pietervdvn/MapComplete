@@ -290,9 +290,7 @@
   },
   "mapRendering": [
     {
-      "icon": {
-        "render": "pin:#ffffff;./assets/layers/bicycle_tube_vending_machine/pinIcon.svg"
-      },
+      "icon": "pin:#ffffff;./assets/layers/bicycle_tube_vending_machine/pinIcon.svg",
       "iconBadges": [
         {
           "if": {

@@ -996,12 +996,8 @@
   },
   "mapRendering": [
     {
-      "icon": {
-        "render": "./assets/layers/bench/bench.svg"
-      },
-      "iconSize": {
-        "render": "35,35,center"
-      },
+      "icon": "./assets/layers/bench/bench.svg",
+      "iconSize": "35,35,center",
       "iconBadges": [
         {
           "if": "tourism=artwork",

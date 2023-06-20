@@ -297,24 +297,16 @@
   ],
   "mapRendering": [
     {
-      "icon": {
-        "render": "./assets/themes/hailhydrant/Twemoji12_1f692.svg"
-      },
-      "iconSize": {
-        "render": "35,35,center"
-      },
+      "icon": "./assets/themes/hailhydrant/Twemoji12_1f692.svg",
+      "iconSize": "35,35,center",
       "location": [
         "point",
         "centroid"
       ]
     },
     {
-      "color": {
-        "render": "#c22"
-      },
-      "width": {
-        "render": "1"
-      }
+      "color": "#c22",
+      "width": "1"
     }
   ]
 }

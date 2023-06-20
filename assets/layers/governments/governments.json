@@ -64,9 +64,7 @@
   ],
   "mapRendering": [
     {
-      "icon": {
-        "render": "circle:white;./assets/layers/governments/government.svg"
-      },
+      "icon": "circle:white;./assets/layers/governments/government.svg",
       "iconSize": "40,40",
       "location": [
         "point",

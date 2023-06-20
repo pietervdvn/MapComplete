@@ -5,12 +5,8 @@
   "source": "special",
   "mapRendering": [
     {
-      "icon": {
-        "render": "circle:white;./assets/svg/home.svg"
-      },
-      "iconSize": {
-        "render": "20,20,center"
-      },
+      "icon": "circle:white;./assets/svg/home.svg",
+      "iconSize": "20,20",
       "location": [
         "point",
         "centroid"

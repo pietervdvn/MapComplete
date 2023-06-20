@@ -360,21 +360,15 @@
           }
         ]
       },
-      "iconSize": {
-        "render": "40,40,center"
-      },
+      "iconSize": "40,40,center",
       "location": [
         "point",
         "centroid"
       ]
     },
     {
-      "color": {
-        "render": "#00f"
-      },
-      "width": {
-        "render": "8"
-      }
+      "color": "#00f",
+      "width": "8"
     }
   ],
   "filter": [

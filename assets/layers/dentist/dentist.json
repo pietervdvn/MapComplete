@@ -67,9 +67,7 @@
   ],
   "mapRendering": [
     {
-      "icon": {
-        "render": "circle:white;./assets/layers/dentist/dentist.svg"
-      },
+      "icon": "circle:white;./assets/layers/dentist/dentist.svg",
       "iconSize": "40,40",
       "location": [
         "point",

@@ -579,12 +579,8 @@
       },
       "mapRendering": [
         {
-          "color": {
-            "render": "#ccc"
-          },
-          "width": {
-            "render": "1"
-          },
+          "color": "#ccc",
+          "width": "1",
           "fill": "no"
         }
       ],

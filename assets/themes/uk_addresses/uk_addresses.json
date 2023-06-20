@@ -182,9 +182,7 @@
               }
             ]
           },
-          "iconSize": {
-            "render": "40,40,center"
-          },
+          "iconSize": "40,40,center",
           "location": [
             "point",
             "centroid"
@@ -684,9 +682,7 @@
               }
             ]
           },
-          "width": {
-            "render": "3"
-          }
+          "width": "3"
         }
       ]
     },

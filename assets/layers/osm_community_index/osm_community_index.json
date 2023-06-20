@@ -37,9 +37,7 @@
   ],
   "mapRendering": [
     {
-      "icon": {
-        "render": "pin:#6BC4F7;./assets/layers/osm_community_index/osm.svg"
-      },
+      "icon": "pin:#6BC4F7;./assets/layers/osm_community_index/osm.svg",
       "iconSize": "40,40",
       "location": [
         "point"
@@ -48,9 +46,7 @@
     },
     {
       "color": "#444444",
-      "width": {
-        "render": "1"
-      }
+      "width": "1"
     }
   ],
   "filter": [

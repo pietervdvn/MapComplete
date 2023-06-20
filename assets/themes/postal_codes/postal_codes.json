@@ -124,12 +124,8 @@
           ]
         },
         {
-          "color": {
-            "render": "#00f"
-          },
-          "width": {
-            "render": "4"
-          },
+          "color": "#00f",
+          "width": "4",
           "fill": "no",
           "dashArray": "8 8"
         }
@@ -204,9 +200,7 @@
       "mapRendering": [
         {
           "icon": "./assets/themes/postal_codes/townhall.svg",
-          "iconSize": {
-            "render": "40,40,center"
-          },
+          "iconSize": "40,40,center",
           "location": [
             "point",
             "centroid"

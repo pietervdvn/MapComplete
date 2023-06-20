@@ -130,9 +130,7 @@
           }
         ]
       },
-      "iconSize": {
-        "render": "32,32,center"
-      },
+      "iconSize": "32,32,center",
       "location": [
         "point",
         "projected_centerpoint"
@@ -148,9 +146,7 @@
           }
         ]
       },
-      "width": {
-        "render": "3"
-      }
+      "width": "3"
     }
   ],
   "units": [

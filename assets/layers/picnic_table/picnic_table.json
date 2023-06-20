@@ -131,12 +131,8 @@
   },
   "mapRendering": [
     {
-      "icon": {
-        "render": "circle:#e6cf39;./assets/layers/picnic_table/picnic_table.svg"
-      },
-      "iconSize": {
-        "render": "35,35,center"
-      },
+      "icon": "circle:#e6cf39;./assets/layers/picnic_table/picnic_table.svg",
+      "iconSize": "35,35,center",
       "location": [
         "point",
         "centroid"

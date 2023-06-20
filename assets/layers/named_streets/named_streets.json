@@ -12,12 +12,8 @@
   },
   "mapRendering": [
     {
-      "color": {
-        "render": "#ccc"
-      },
-      "width": {
-        "render": "3"
-      }
+      "color": "#ccc",
+      "width": "3"
     }
   ],
   "shownByDefault": false

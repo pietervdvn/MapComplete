@@ -4016,9 +4016,7 @@
           "then": "circle:#fff;./assets/themes/charging_stations/car.svg"
         }
       ],
-      "iconSize": {
-        "render": "50,50,bottom"
-      }
+      "iconSize": "50,50,bottom"
     }
   ],
   "presets": [

@@ -846,9 +846,7 @@
           }
         ]
       },
-      "iconSize": {
-        "render": "40,40,bottom"
-      },
+      "iconSize": "40,40,bottom",
       "location": [
         "point",
         "centroid"

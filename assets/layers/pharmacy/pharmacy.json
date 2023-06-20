@@ -113,9 +113,7 @@
   ],
   "mapRendering": [
     {
-      "icon": {
-        "render": "./assets/layers/pharmacy/pharmacy.svg"
-      },
+      "icon": "./assets/layers/pharmacy/pharmacy.svg",
       "iconSize": "40,40",
       "location": [
         "point",

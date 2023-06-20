@@ -243,9 +243,7 @@
               }
             ]
           },
-          "width": {
-            "render": "4"
-          },
+          "width": "4",
           "dashArray": {
             "render": "",
             "mappings": [

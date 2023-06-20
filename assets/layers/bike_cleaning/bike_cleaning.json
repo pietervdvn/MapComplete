@@ -239,9 +239,7 @@
   },
   "mapRendering": [
     {
-      "icon": {
-        "render": "./assets/layers/bike_cleaning/bike_cleaning.svg"
-      },
+      "icon": "./assets/layers/bike_cleaning/bike_cleaning.svg",
       "iconBadges": [
         {
           "if": {

@@ -34,7 +34,9 @@ export class Translation extends BaseUIElement {
                 console.error(
                     "Non-string object at",
                     context,
-                    "in translation: ",
+                    `for language`,
+                    translationsKey,
+                    `in translation: `,
                     translations[translationsKey],
                     "\n    current translations are: ",
                     translations

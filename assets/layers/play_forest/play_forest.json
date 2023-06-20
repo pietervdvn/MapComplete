@@ -109,9 +109,7 @@
   "mapRendering": [
     {
       "icon": "./assets/layers/play_forest/icon.svg",
-      "iconSize": {
-        "render": "40,40,center"
-      },
+      "iconSize": "40,40,center",
       "location": [
         "point",
         "centroid"

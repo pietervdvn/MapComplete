@@ -1040,9 +1040,7 @@
           "then": "invalid"
         }
       ],
-      "iconSize": {
-        "render": "50,50,bottom"
-      },
+      "iconSize": "50,50,bottom",
       "location": [
         "point",
         "centroid"

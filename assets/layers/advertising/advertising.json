@@ -971,30 +971,31 @@
         ]
       },
       "iconSize": {
-        "render": "40,40,bottom",
+        "render": "40,40",
         "mappings": [
           {
-            "if": "_referencing_ways~*",
-            "then": "40,40,center"
-          },
-          {
             "if": "advertising=flag",
-            "then": "60,60,bottom"
+            "then": "60,60"
           },
           {
             "if": "advertising=sculpture",
-            "then": "50,50,bottom"
+            "then": "50,50"
+          }
+        ]
+      },
+      "anchor": {
+        "render": "bottom",
+        "mappings": [
+          {
+            "if": "_referencing_ways~*",
+            "then": "center"
           }
         ]
       }
     },
     {
-      "width": {
-        "render": "8"
-      },
-      "color": {
-        "render": "#00f"
-      }
+      "width": "8",
+      "color": "#00f"
     }
   ],
   "allowMove": {

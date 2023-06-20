@@ -76,12 +76,8 @@
   "presets": [],
   "mapRendering": [
     {
-      "icon": {
-        "render": "./assets/layers/visitor_information_centre/information.svg"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
+      "icon": "./assets/layers/visitor_information_centre/information.svg",
+      "iconSize": "40,40,center",
       "location": [
         "point",
         "centroid"

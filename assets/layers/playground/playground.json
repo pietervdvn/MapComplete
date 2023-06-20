@@ -596,9 +596,7 @@
   },
   "mapRendering": [
     {
-      "icon": {
-        "render": "./assets/themes/playgrounds/playground.svg"
-      },
+      "icon": "./assets/themes/playgrounds/playground.svg",
       "iconBadges": [
         {
           "if": {
@@ -637,12 +635,8 @@
       ]
     },
     {
-      "color": {
-        "render": "#5dbaa9"
-      },
-      "width": {
-        "render": "1"
-      }
+      "color": "#5dbaa9",
+      "width": "1"
     }
   ]
 }

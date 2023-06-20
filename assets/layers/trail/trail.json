@@ -222,9 +222,7 @@
           }
         ]
       },
-      "iconSize": {
-        "render": "35,35,center"
-      },
+      "iconSize": "35,35,center",
       "location": [
         "point"
       ]
@@ -239,12 +237,8 @@
           }
         ]
       },
-      "width": {
-        "render": "3"
-      },
-      "dashArray": {
-        "render": "5 5"
-      }
+      "width": "3",
+      "dashArray": "5 5"
     }
   ]
 }

@@ -728,21 +728,15 @@
   },
   "mapRendering": [
     {
-      "icon": {
-        "render": "./assets/themes/artwork/artwork.svg"
-      },
+      "icon": "./assets/themes/artwork/artwork.svg",
       "location": [
         "point",
         "centroid"
       ]
     },
     {
-      "color": {
-        "render": "#0000ff"
-      },
-      "width": {
-        "render": "10"
-      }
+      "color": "#0000ff",
+      "width": "10"
     }
   ],
   "filter": [

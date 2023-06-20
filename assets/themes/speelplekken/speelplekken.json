@@ -40,9 +40,7 @@
       "mapRendering": [
         {
           "color": "#444444",
-          "width": {
-            "render": "1"
-          }
+          "width": "1"
         }
       ]
     },
@@ -238,9 +236,7 @@
               }
             ]
           },
-          "width": {
-            "render": "9"
-          }
+          "width": "9"
         }
       ]
     }

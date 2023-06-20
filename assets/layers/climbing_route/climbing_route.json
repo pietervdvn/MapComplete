@@ -218,12 +218,8 @@
   ],
   "mapRendering": [
     {
-      "icon": {
-        "render": "circle:white;./assets/themes/climbing/climbing_route.svg"
-      },
-      "iconSize": {
-        "render": "28,28,center"
-      },
+      "icon": "circle:white;./assets/themes/climbing/climbing_route.svg",
+      "iconSize": "28,28,center",
       "location": [
         "point",
         "centroid"
@@ -247,12 +243,8 @@
       }
     },
     {
-      "color": {
-        "render": "#0f0"
-      },
-      "width": {
-        "render": "4"
-      }
+      "color": "#0f0",
+      "width": "4"
     }
   ]
 }

@@ -112,9 +112,7 @@
   ],
   "mapRendering": [
     {
-      "icon": {
-        "render": "circle:white;./assets/layers/hospital/hospital.svg"
-      },
+      "icon": "circle:white;./assets/layers/hospital/hospital.svg",
       "iconSize": "40,40",
       "location": [
         "point",
