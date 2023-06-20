@@ -542,9 +542,7 @@
           "color": "#888888"
         }
       ],
-      "title": {
-        "render": "Service road"
-      },
+      "title":  "Service road",
       "tagRenderings": []
     },
     {
@@ -759,9 +757,7 @@
             "location": [
               "point"
             ],
-            "icon": {
-              "render": "./assets/svg/robot.svg"
-            },
+            "icon":"./assets/svg/robot.svg",
             "iconSize": "15,15"
           }
         ]

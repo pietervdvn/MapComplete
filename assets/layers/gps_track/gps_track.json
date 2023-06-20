@@ -5,7 +5,8 @@
   "source": "special",
   "title": {
     "render": {
-      "en": "Your travelled path"
+      "en": "Your travelled path",
+      "nl": "Jouw traject"
     }
   },
   "shownByDefault": false,

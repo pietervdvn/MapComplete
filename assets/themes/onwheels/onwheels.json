@@ -207,7 +207,7 @@
           {
             "icon": "./assets/themes/onwheels/parking.svg",
             "anchor": "bottom",
-            "iconSize": {
+            "=iconSize": {
               "render": "20,20",
               "mappings": [
                 {

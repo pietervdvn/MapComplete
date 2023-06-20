@@ -586,6 +586,7 @@ class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson>
 }
 
 export class PrepareTheme extends Fuse<LayoutConfigJson> {
+    private state: DesugaringContext
     constructor(
         state: DesugaringContext,
         options?: {
@@ -612,6 +613,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
             new AddDependencyLayersToTheme(state),
             new AddImportLayers()
         )
+        this.state = state
     }
 
     convert(
@@ -619,6 +621,10 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
         context: string
     ): { result: LayoutConfigJson; errors: string[]; warnings: string[]; information: string[] } {
         const result = super.convert(json, context)
+        if (this.state.publicLayers.size === 0) {
+            // THis is a bootstrapping run, no need to already set this flag
+            return result
+        }
 
         const needsNodeDatabase = result.result.layers?.some((l: LayerConfigJson) =>
             l.tagRenderings?.some((tr: TagRenderingConfigJson) =>

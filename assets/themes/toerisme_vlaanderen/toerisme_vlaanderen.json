@@ -109,9 +109,7 @@
         "minzoom": 14,
         "mapRendering": [
           {
-            "icon": {
-              "render": "./assets/themes/toerisme_vlaanderen/bench.svg"
-            }
+            "icon": "./assets/themes/toerisme_vlaanderen/bench.svg"
           }
         ]
       }
@@ -122,9 +120,7 @@
         "minzoom": 14,
         "mapRendering": [
           {
-            "icon": {
-              "render": "./assets/themes/toerisme_vlaanderen/picnic_table.svg"
-            }
+            "icon": "./assets/themes/toerisme_vlaanderen/picnic_table.svg"
           }
         ]
       }
@@ -135,9 +131,7 @@
         "minzoom": 14,
         "mapRendering": [
           {
-            "icon": {
-              "render": "./assets/themes/toerisme_vlaanderen/observation_tower.svg"
-            }
+            "icon": "./assets/themes/toerisme_vlaanderen/observation_tower.svg"
           }
         ]
       }
@@ -232,9 +226,7 @@
         "minzoom": 14,
         "mapRendering": [
           {
-            "icon": {
-              "render": "./assets/themes/toerisme_vlaanderen/playground.svg"
-            }
+            "icon": "./assets/themes/toerisme_vlaanderen/playground.svg"
           }
         ]
       },
