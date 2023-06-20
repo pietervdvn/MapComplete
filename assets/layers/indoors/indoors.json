@@ -245,7 +245,8 @@
           }
         ]
       },
-      "iconSize": "15,15, bottom"
+      "iconSize": "15,15",
+      "anchor": "bottom"
     }
   ]
 }

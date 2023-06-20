@@ -61,7 +61,8 @@
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/cafe.svg",
-            "iconSize": "40,40,bottom",
+            "iconSize": "40,40",
+            "anchor": "bottom",
             "label": null
           }
         ]
@@ -73,8 +74,7 @@
         "minzoom": 19,
         "mapRendering": [
           {
-            "icon": "circle:white;./assets/themes/onwheels/entrance.svg",
-            "iconSize": "40,40,center"
+            "icon": "circle:white;./assets/themes/onwheels/entrance.svg"
           }
         ],
         "syncSelection": "theme-only",
@@ -120,7 +120,8 @@
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/restaurant.svg",
-            "iconSize": "40,40,bottom",
+            "iconSize": "40,40",
+            "anchor": "bottom",
             "label": null
           }
         ]
@@ -205,8 +206,9 @@
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/parking.svg",
+            "anchor": "bottom",
             "iconSize": {
-              "render": "20,20,bottom",
+              "render": "20,20",
               "mappings": [
                 {
                   "if": {
@@ -215,7 +217,7 @@
                       "capacity:disabled=yes"
                     ]
                   },
-                  "then": "40,40,bottom"
+                  "then": "40,40"
                 }
               ]
             }
@@ -237,7 +239,8 @@
             "icon": {
               "mappings": null
             },
-            "iconSize": "30,30,center",
+            "iconSize": "40,40",
+            "anchor": "center",
             "iconBadges": [
               {
                 "if": "parking_space=disabled",
@@ -268,7 +271,8 @@
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/shop.svg",
-            "iconSize": "40,40,bottom",
+            "iconSize": "40,40",
+            "anchor": "bottom",
             "label": null
           },
           {
@@ -285,7 +289,8 @@
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/toilet.svg",
-            "iconSize": "40,40,bottom"
+            "iconSize": "40,40",
+            "anchor": "bottom"
           }
         ]
       }
@@ -298,7 +303,8 @@
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/pharmacy.svg",
-            "iconSize": "40,40,bottom",
+            "iconSize": "40,40",
+            "anchor": "bottom",
             "label": null
           }
         ]
@@ -312,7 +318,8 @@
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/doctor.svg",
-            "iconSize": "40,40,bottom"
+            "iconSize": "40,40",
+            "anchor": "bottom"
           }
         ]
       }
@@ -325,7 +332,8 @@
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/hospital.svg",
-            "iconSize": "40,40,bottom"
+            "iconSize": "40,40",
+            "anchor": "bottom"
           },
           {
             "color": "#dd463b"
@@ -349,7 +357,8 @@
         "mapRendering": [
           {
             "icon": "circle:white;./assets/themes/onwheels/elevator.svg",
-            "iconSize": "40,40,bottom"
+            "iconSize": "40,40",
+            "anchor": "bottom"
           }
         ]
       }
@@ -362,7 +371,8 @@
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/hotel.svg",
-            "iconSize": "40,40,bottom"
+            "iconSize": "40,40",
+            "anchor": "bottom"
           }
         ]
       }
@@ -374,7 +384,8 @@
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/government.svg",
-            "iconSize": "40,40,bottom"
+            "iconSize": "40,40",
+            "anchor": "bottom"
           }
         ]
       }

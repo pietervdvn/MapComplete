@@ -114,7 +114,8 @@
           "icon": {
             "render": "teardrop:#00cc00"
           },
-          "iconSize": "30,30,center"
+          "iconSize": "30,30",
+          "anchor": "center"
         }
       ],
       "filter": [
@@ -276,7 +277,8 @@
               "point"
             ],
             "icon": "statistics:black",
-            "iconSize": "30,30,center"
+            "iconSize": "30,30",
+            "anchor": "center"
           }
         ]
       }

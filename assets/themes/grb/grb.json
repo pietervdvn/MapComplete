@@ -766,7 +766,7 @@
             "icon": {
               "render": "./assets/svg/robot.svg"
             },
-            "iconSize": "15,15,center"
+            "iconSize": "15,15"
           }
         ]
       }

@@ -579,7 +579,8 @@
               "point"
             ],
             "icon": "statistics:black",
-            "iconSize": "30,30,center"
+            "iconSize": "30,30",
+            "anchor": "center"
           }
         ]
       }

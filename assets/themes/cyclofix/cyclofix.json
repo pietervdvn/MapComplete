@@ -54,7 +54,8 @@
         "=mapRendering": [
           {
             "icon": "pin:#ba2792;./assets/themes/cyclofix/key.svg",
-            "iconSize": "40,40,bottom",
+            "iconSize": "40,40",
+            "anchor": "bottom",
             "location": [
               "point",
               "centroid"
@@ -82,7 +83,8 @@
         "=mapRendering": [
           {
             "icon": "pin:#ba2792;./assets/themes/cyclofix/key.svg",
-            "iconSize": "40,40,bottom",
+            "iconSize": "40,40",
+            "anchor": "bottom",
             "location": [
               "point",
               "centroid"
