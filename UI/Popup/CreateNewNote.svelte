@@ -108,7 +108,7 @@
             </div>
           </LoginToggle>
 
-          {#if $comment.length >= 3}
+          {#if $comment?.length >= 3}
             <SubtleButton on:click={uploadNote}>
               <img slot="image" src="./assets/svg/addSmall.svg" class="mr-4 h-8 w-8" />
               <Tr slot="message" t={Translations.t.notes.createNote} />
