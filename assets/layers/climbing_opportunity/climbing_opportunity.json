@@ -128,12 +128,8 @@
       ]
     },
     {
-      "color": {
-        "render": "#ddff55AA"
-      },
-      "width": {
-        "render": "2"
-      }
+      "color": "#ddff55AA",
+      "width": "2"
     }
   ]
 }

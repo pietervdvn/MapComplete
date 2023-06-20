@@ -340,24 +340,17 @@
   ],
   "mapRendering": [
     {
-      "icon": {
-        "render": "pin:#684c2b;./assets/layers/bike_cafe/bike_cafe.svg"
-      },
-      "iconSize": {
-        "render": "50,50,bottom"
-      },
+      "icon": "pin:#684c2b;./assets/layers/bike_cafe/bike_cafe.svg",
+      "iconSize": "50,50",
+      "anchor": "bottom",
       "location": [
         "point",
         "centroid"
       ]
     },
     {
-      "color": {
-        "render": "#694E2D"
-      },
-      "width": {
-        "render": "2"
-      }
+      "color": "#694E2D",
+      "width": "2"
     }
   ],
   "description": {

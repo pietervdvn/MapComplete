@@ -155,16 +155,13 @@
   ],
   "mapRendering": [
     {
-      "icon": {
-        "render": "./assets/themes/hailhydrant/Twemoji12_1f9ef.svg"
-      },
-      "iconSize": {
-        "render": "20,20,center"
-      },
+      "icon": "./assets/themes/hailhydrant/Twemoji12_1f9ef.svg",
+      "iconSize": "20,20",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     }
   ]
 }

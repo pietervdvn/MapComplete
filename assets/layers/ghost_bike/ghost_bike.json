@@ -232,11 +232,12 @@
   "mapRendering": [
     {
       "icon": "./assets/layers/ghost_bike/ghost_bike.svg",
-      "iconSize": "40,40,bottom",
+      "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "bottom"
     }
   ],
   "description": {

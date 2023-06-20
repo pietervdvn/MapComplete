@@ -827,31 +827,20 @@
           "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg"
         },
         {
-          "if": {
-            "and": [
-              "service:bicycle:cleaning~*"
-            ]
-          },
-          "then": {
-            "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg"
-          }
+          "if": "service:bicycle:cleaning~*",
+          "then": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg"
         }
       ],
-      "iconSize": {
-        "render": "50,50,bottom"
-      },
+      "iconSize": "50,50",
+      "anchor": "bottom",
       "location": [
         "point",
         "centroid"
       ]
     },
     {
-      "color": {
-        "render": "#c00"
-      },
-      "width": {
-        "render": "1"
-      }
+      "color": "#c00",
+      "width": "1"
     }
   ],
   "filter": [

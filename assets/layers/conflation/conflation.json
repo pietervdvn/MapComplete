@@ -17,7 +17,8 @@
           }
         ]
       },
-      "iconSize": "10,10,center"
+      "iconSize": "10,10",
+      "anchor": "center"
     },
     {
       "location": "end",
@@ -34,7 +35,8 @@
           }
         ]
       },
-      "iconSize": "10,10,center"
+      "iconSize": "10,10",
+      "anchor": "center"
     },
     {
       "location": "start",

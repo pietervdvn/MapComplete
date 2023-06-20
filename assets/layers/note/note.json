@@ -105,15 +105,15 @@
         "centroid"
       ],
       "icon": {
-        "render": "./assets/svg/note.svg",
+        "render": "note",
         "mappings": [
           {
             "if": "closed_at~*",
-            "then": "./assets/svg/resolved.svg"
+            "then": "resolved"
           }
         ]
       },
-      "iconSize": "40,40,bottom",
+      "iconSize": "40,40",
       "iconBadges": [
         {
           "if": "_total_comments>1",
@@ -123,7 +123,8 @@
           "if": "_is_import_note~*",
           "then": "addSmall"
         }
-      ]
+      ],
+      "anchor": "bottom"
     }
   ],
   "filter": [

@@ -130,13 +130,12 @@
           }
         ]
       },
-      "iconSize": {
-        "render": "32,32,center"
-      },
+      "iconSize": "32,32",
       "location": [
         "point",
         "projected_centerpoint"
-      ]
+      ],
+      "anchor": "center"
     },
     {
       "color": {
@@ -148,9 +147,7 @@
           }
         ]
       },
-      "width": {
-        "render": "3"
-      }
+      "width": "3"
     }
   ],
   "units": [

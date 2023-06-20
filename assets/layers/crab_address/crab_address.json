@@ -15,11 +15,10 @@
         "point",
         "centroid"
       ],
-      "iconSize": "50,50,center",
+      "iconSize": "50,50",
       "icon": "./assets/layers/crab_address/housenumber_blank.svg",
-      "label": {
-        "render": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{_HNRLABEL}</div>"
-      }
+      "label": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{_HNRLABEL}</div>",
+      "anchor": "center"
     }
   ],
   "calculatedTags": [

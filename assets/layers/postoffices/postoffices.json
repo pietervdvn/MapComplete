@@ -433,9 +433,7 @@
   ],
   "mapRendering": [
     {
-      "icon": {
-        "render": "square:white;./assets/layers/postoffices/post_office.svg"
-      },
+      "icon": "square:white;./assets/layers/postoffices/post_office.svg",
       "iconBadges": [
         {
           "if": "opening_hours~*",
@@ -446,11 +444,12 @@
           "then": "./assets/themes/shops/shop.svg"
         }
       ],
-      "iconSize": "40,40,center",
+      "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     },
     {
       "color": "#DADADA",

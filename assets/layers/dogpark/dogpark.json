@@ -68,7 +68,7 @@
         "centroid"
       ],
       "icon": "./assets/layers/dogpark/dog-park.svg",
-      "iconSize": "40,40,center",
+      "iconSize": "40,40",
       "label": {
         "mappings": [
           {
@@ -76,7 +76,8 @@
             "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
           }
         ]
-      }
+      },
+      "anchor": "center"
     },
     {
       "color": "#ff0",

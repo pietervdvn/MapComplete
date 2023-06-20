@@ -43,7 +43,8 @@
           "then": "circle:{light:colour}"
         }
       ],
-      "iconSize": "40,40,bottom"
+      "iconSize": "40,40",
+      "anchor": "bottom"
     }
   ],
   "presets": [

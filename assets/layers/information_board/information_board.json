@@ -68,20 +68,15 @@
   },
   "mapRendering": [
     {
-      "icon": {
-        "render": "./assets/layers/information_board/board.svg"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
+      "icon": "./assets/layers/information_board/board.svg",
+      "iconSize": "40,40",
       "location": [
         "point"
-      ]
+      ],
+      "anchor": "center"
     },
     {
-      "color": {
-        "render": "#00f"
-      }
+      "color": "#00f"
     }
   ],
   "description": {

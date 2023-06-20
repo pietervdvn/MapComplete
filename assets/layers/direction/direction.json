@@ -35,14 +35,13 @@
   "mapRendering": [
     {
       "icon": "direction_gradient:var(--catch-detail-color)",
-      "iconSize": "200,200,center",
+      "iconSize": "200,200",
       "location": [
         "point",
         "centroid"
       ],
-      "rotation": {
-        "render": "{_direction:numerical}deg"
-      }
+      "rotation": "{_direction:numerical}deg",
+      "anchor": "center"
     },
     {
       "color": "--catch-detail-color"

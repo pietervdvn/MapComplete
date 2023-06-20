@@ -522,9 +522,7 @@
   ],
   "mapRendering": [
     {
-      "icon": {
-        "render": "circle:#ffffff;./assets/themes/bookcases/bookcase.svg"
-      },
+      "icon": "circle:#ffffff;./assets/themes/bookcases/bookcase.svg",
       "label": {
         "mappings": [
           {
@@ -539,12 +537,8 @@
       ]
     },
     {
-      "color": {
-        "render": "#0000ff"
-      },
-      "width": {
-        "render": "8"
-      }
+      "color": "#0000ff",
+      "width": "8"
     }
   ]
 }

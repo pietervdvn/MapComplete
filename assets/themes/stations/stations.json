@@ -39,7 +39,7 @@
               "render": null,
               "mappings": null
             },
-            "iconSize": "0,0,bottom"
+            "iconSize": "0,0"
           }
         ]
       }
@@ -191,12 +191,8 @@
         "minzoom": 19,
         "mapRendering+": [
           {
-            "color": {
-              "render": "#00f"
-            },
-            "width": {
-              "render": "8"
-            }
+            "color": "#00f",
+            "width": "8"
           }
         ]
       }
@@ -214,12 +210,8 @@
         "minzoom": 19,
         "mapRendering+": [
           {
-            "color": {
-              "render": "yellow"
-            },
-            "width": {
-              "render": "8"
-            }
+            "color":  "yellow",
+            "width": "8"
           }
         ]
       }

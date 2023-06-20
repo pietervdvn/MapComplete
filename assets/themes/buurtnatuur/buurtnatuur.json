@@ -91,15 +91,12 @@
       ],
       "mapRendering": [
         {
-          "icon": {
-            "render": "circle:#ffffff;./assets/themes/buurtnatuur/nature_reserve.svg"
-          },
-          "iconSize": {
-            "render": "50,50,center"
-          },
+          "icon": "circle:#ffffff;./assets/themes/buurtnatuur/nature_reserve.svg",
+          "iconSize": "50,50",
           "location": [
             "point"
-          ]
+          ],
+          "anchor": "center"
         },
         {
           "color": {
@@ -129,9 +126,7 @@
               }
             ]
           },
-          "width": {
-            "render": "5"
-          }
+          "width": "5"
         }
       ]
     },
@@ -203,15 +198,12 @@
       ],
       "mapRendering": [
         {
-          "icon": {
-            "render": "circle:#ffffff;./assets/themes/buurtnatuur/park.svg"
-          },
-          "iconSize": {
-            "render": "40,40,center"
-          },
+          "icon": "circle:#ffffff;./assets/themes/buurtnatuur/park.svg",
+          "iconSize": "40,40",
           "location": [
             "point"
-          ]
+          ],
+          "anchor": "center"
         },
         {
           "color": {
@@ -228,9 +220,7 @@
               }
             ]
           },
-          "width": {
-            "render": "5"
-          }
+          "width": "5"
         }
       ]
     },
@@ -303,15 +293,12 @@
       ],
       "mapRendering": [
         {
-          "icon": {
-            "render": "circle:#ffffff;./assets/themes/buurtnatuur/forest.svg"
-          },
-          "iconSize": {
-            "render": "40,40,center"
-          },
+          "icon": "circle:#ffffff;./assets/themes/buurtnatuur/forest.svg",
+          "iconSize": "40,40",
           "location": [
             "point"
-          ]
+          ],
+          "anchor": "center"
         },
         {
           "color": {
@@ -346,9 +333,7 @@
               }
             ]
           },
-          "width": {
-            "render": "5"
-          }
+          "width": "5"
         }
       ]
     },

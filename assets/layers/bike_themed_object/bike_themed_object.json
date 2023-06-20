@@ -69,24 +69,17 @@
   "presets": [],
   "mapRendering": [
     {
-      "icon": {
-        "render": "./assets/layers/bike_themed_object/other_services.svg"
-      },
-      "iconSize": {
-        "render": "50,50,bottom"
-      },
+      "icon": "./assets/layers/bike_themed_object/other_services.svg",
+      "iconSize": "50,50",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "bottom"
     },
     {
-      "color": {
-        "render": "#AB76D5"
-      },
-      "width": {
-        "render": "2"
-      }
+      "color": "#AB76D5",
+      "width": "2"
     }
   ],
   "description": {

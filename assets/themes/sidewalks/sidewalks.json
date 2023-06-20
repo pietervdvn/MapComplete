@@ -235,7 +235,8 @@
             "end"
           ],
           "icon": "circle:#ccc",
-          "iconSize": "3,3,center"
+          "iconSize": "3,3",
+          "anchor": "center"
         },
         {
           "#": "The center line",
@@ -245,9 +246,7 @@
         },
         {
           "#": "left",
-          "color": {
-            "render": "#888"
-          },
+          "color": "#888",
           "dashArray": {
             "render": "",
             "mappings": [

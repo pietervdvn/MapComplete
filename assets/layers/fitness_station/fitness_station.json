@@ -393,7 +393,7 @@
         "centroid"
       ],
       "icon": "circle:white;./assets/layers/fitness_station/fitness.svg",
-      "iconSize": "40,40,center",
+      "iconSize": "40,40",
       "iconBadges": [
         {
           "if": {
@@ -404,7 +404,8 @@
           },
           "then": "icons.isOpen"
         }
-      ]
+      ],
+      "anchor": "center"
     }
   ],
   "filter": [

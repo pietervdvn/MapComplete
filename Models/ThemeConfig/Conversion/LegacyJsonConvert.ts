@@ -3,6 +3,7 @@ import { Utils } from "../../../Utils"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import { DesugaringStep, Each, Fuse, On } from "./Conversion"
+import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
 
 export class UpdateLegacyLayer extends DesugaringStep<
     LayerConfigJson | string | { builtin; override }
@@ -136,6 +137,35 @@ export class UpdateLegacyLayer extends DesugaringStep<
                     warnings.push("Warning: non-overlay element for ", config.id)
                 }
                 delete overlay["badge"]
+            }
+        }
+
+        for (const rendering of config.mapRendering ?? []) {
+            if (!rendering["iconSize"]) {
+                continue
+            }
+            const pr = <PointRenderingConfigJson>rendering
+            const iconSize = pr.iconSize
+            if (typeof iconSize === "string")
+                if (["bottom", "center", "top"].some((a) => (<string>iconSize).endsWith(a))) {
+                    const parts = iconSize.split(",").map((parts) => parts.toLowerCase().trim())
+                    pr.anchor = parts.pop()
+                    pr.iconSize = parts.join(",")
+                }
+        }
+
+        for (const rendering of config.mapRendering) {
+            for (const key in rendering) {
+                if (!rendering[key]) {
+                    continue
+                }
+                if (
+                    typeof rendering[key]["render"] === "string" &&
+                    Object.keys(rendering[key]).length === 1
+                ) {
+                    console.log("Rewrite: ", rendering[key])
+                    rendering[key] = rendering[key]["render"]
+                }
             }
         }
 

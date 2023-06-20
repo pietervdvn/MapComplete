@@ -30,7 +30,8 @@
         "centroid"
       ],
       "icon": "circle:white;./assets/layers/reception_desk/reception_desk.svg",
-      "iconSize": "40,40,center"
+      "iconSize": "40,40",
+      "anchor": "center"
     }
   ],
   "tagRenderings": [

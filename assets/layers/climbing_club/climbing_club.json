@@ -161,18 +161,14 @@
   ],
   "mapRendering": [
     {
-      "icon": {
-        "render": "./assets/themes/climbing/club.svg"
-      },
+      "icon": "./assets/themes/climbing/club.svg",
       "iconBadges": [
         {
           "if": "opening_hours~*",
           "then": "icons.isOpen"
         }
       ],
-      "iconSize": {
-        "render": "40,40,center"
-      },
+      "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
@@ -184,7 +180,8 @@
             "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
           }
         ]
-      }
+      },
+      "anchor": "center"
     }
   ]
 }

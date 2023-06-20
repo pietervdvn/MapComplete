@@ -65,7 +65,7 @@
     "en": "A charging station",
     "nl": "Oplaadpunten"
   },
-  "#":"no-question-hint-check",
+  "#": "no-question-hint-check",
   "tagRenderings": [
     "images",
     {
@@ -144,7 +144,7 @@
           }
         },
         {
-          "if":   "access=public",
+          "if": "access=public",
           "then": {
             "en": "Anyone can use this charging station (payment might be needed)",
             "nl": "Toegankelijk voor iedereen (mogelijks met aanmelden en/of te betalen)"
@@ -788,9 +788,8 @@
           "then": "circle:#fff;./assets/themes/charging_stations/car.svg"
         }
       ],
-      "iconSize": {
-        "render": "50,50,bottom"
-      }
+      "anchor": "bottom",
+      "iconSize": "50,50"
     }
   ],
   "presets": [
@@ -804,9 +803,6 @@
       "title": {
         "en": "charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/TypeE.svg' class='w-4 h-4 mx-1 bg-white rounded-full'/>",
         "nl": "oplaadpunt voor elektrische fietsen met een gewone, europese stekker <img src='./assets/layers/charging_station/TypeE.svg' class='w-4 h-4 mx-1 bg-white rounded-full'/>"
-      },
-      "preciseInput": {
-        "preferredBackground": "map"
       }
     },
     {
@@ -818,9 +814,6 @@
       "title": {
         "en": "charging station for cars",
         "nl": "oplaadstation voor elektrische auto's"
-      },
-      "preciseInput": {
-        "preferredBackground": "map"
       }
     }
   ],

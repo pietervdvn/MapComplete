@@ -236,18 +236,14 @@
   ],
   "mapRendering": [
     {
-      "icon": {
-        "render": "./assets/themes/climbing/climbing_gym.svg"
-      },
+      "icon": "./assets/themes/climbing/climbing_gym.svg",
       "iconBadges": [
         {
           "if": "opening_hours~*",
           "then": "icons.isOpen"
         }
       ],
-      "iconSize": {
-        "render": "40,40,center"
-      },
+      "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
@@ -259,7 +255,8 @@
             "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
           }
         ]
-      }
+      },
+      "anchor": "center"
     }
   ],
   "presets": [

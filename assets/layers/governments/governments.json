@@ -64,14 +64,13 @@
   ],
   "mapRendering": [
     {
-      "icon": {
-        "render": "circle:white;./assets/layers/governments/government.svg"
-      },
-      "iconSize": "40,40,center",
+      "icon": "circle:white;./assets/layers/governments/government.svg",
+      "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     }
   ]
 }

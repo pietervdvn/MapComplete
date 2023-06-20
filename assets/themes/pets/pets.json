@@ -48,7 +48,7 @@
               "centroid"
             ],
             "icon": "./assets/themes/pets/dog-food.svg",
-            "iconSize": "30,30,center"
+            "iconSize": "30,30"
           }
         ],
         "=presets": [],
@@ -131,7 +131,7 @@
                 }
               ]
             },
-            "iconSize": "30,30,center"
+            "iconSize": "30,30"
           },
           {
             "#": "Rendering of a line",

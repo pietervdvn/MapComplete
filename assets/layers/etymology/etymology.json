@@ -273,12 +273,11 @@
           }
         ]
       },
-      "iconSize": {
-        "render": "40,40,center"
-      },
+      "iconSize": "40,40",
       "location": [
         "point"
-      ]
+      ],
+      "anchor": "center"
     },
     {
       "color": {

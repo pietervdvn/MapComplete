@@ -527,24 +527,17 @@
   ],
   "mapRendering": [
     {
-      "icon": {
-        "render": "./assets/layers/nature_reserve/nature_reserve.svg"
-      },
-      "iconSize": {
-        "render": "50,50,center"
-      },
+      "icon": "./assets/layers/nature_reserve/nature_reserve.svg",
+      "iconSize": "50,50",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     },
     {
-      "color": {
-        "render": "#3c3"
-      },
-      "width": {
-        "render": "1"
-      }
+      "color": "#3c3",
+      "width": "1"
     }
   ]
 }

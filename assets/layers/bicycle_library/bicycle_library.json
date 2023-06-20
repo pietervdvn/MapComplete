@@ -327,9 +327,7 @@
   ],
   "mapRendering": [
     {
-      "icon": {
-        "render": "pin:#22ff55;./assets/layers/bicycle_library/bicycle_library.svg"
-      },
+      "icon": "pin:#22ff55;./assets/layers/bicycle_library/bicycle_library.svg",
       "iconBadges": [
         {
           "if": "opening_hours~*",
@@ -340,21 +338,16 @@
           "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg"
         }
       ],
-      "iconSize": {
-        "render": "50,50,bottom"
-      },
+      "iconSize": "50,50",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "bottom"
     },
     {
-      "color": {
-        "render": "#c00"
-      },
-      "width": {
-        "render": "1"
-      }
+      "color": "#c00",
+      "width": "1"
     }
   ],
   "deletion": true

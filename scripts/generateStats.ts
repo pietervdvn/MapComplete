@@ -21,7 +21,7 @@ async function main(includeTags = true) {
             continue
         }
 
-        const sources = TagUtils.Tag(layer.source.osmTags)
+        const sources = TagUtils.Tag(layer.source["osmTags"])
         const allKeys = sources.usedKeys()
         for (const key of allKeys) {
             if (!keysAndTags.has(key)) {

@@ -290,9 +290,7 @@
   },
   "mapRendering": [
     {
-      "icon": {
-        "render": "pin:#ffffff;./assets/layers/bicycle_tube_vending_machine/pinIcon.svg"
-      },
+      "icon": "pin:#ffffff;./assets/layers/bicycle_tube_vending_machine/pinIcon.svg",
       "iconBadges": [
         {
           "if": {
@@ -304,11 +302,12 @@
           "then": "close:#c33"
         }
       ],
-      "iconSize": "50,50,bottom",
+      "iconSize": "50,50",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "bottom"
     },
     {
       "color": "#6bc4f7"

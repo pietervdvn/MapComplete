@@ -872,21 +872,16 @@
               }
             ]
           },
-          "iconSize": {
-            "render": "40,40,center"
-          },
+          "iconSize": "40,40",
           "location": [
             "point",
             "centroid"
-          ]
+          ],
+          "anchor": "center"
         },
         {
-          "color": {
-            "render": "#00f"
-          },
-          "width": {
-            "render": "8"
-          }
+          "color": "#00f",
+          "width": "8"
         }
       ]
     },
@@ -1453,23 +1448,16 @@
       ],
       "mapRendering": [
         {
-          "icon": {
-            "render": "circle:white;./assets/themes/campersite/sanitary_dump_station.svg"
-          },
-          "iconSize": {
-            "render": "32,32,center"
-          },
+          "icon": "circle:white;./assets/themes/campersite/sanitary_dump_station.svg",
+          "iconSize": "32,32",
           "location": [
             "point"
-          ]
+          ],
+          "anchor": "center"
         },
         {
-          "color": {
-            "render": "#00f"
-          },
-          "width": {
-            "render": "8"
-          }
+          "color": "#00f",
+          "width": "8"
         }
       ]
     }

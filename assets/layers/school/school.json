@@ -388,13 +388,12 @@
           }
         ]
       },
-      "iconSize": {
-        "render": "40,40,center"
-      },
+      "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     },
     {
       "color": "#fcd862",

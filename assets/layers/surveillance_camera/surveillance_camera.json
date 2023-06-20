@@ -647,12 +647,8 @@
       }
     },
     {
-      "color": {
-        "render": "#f00"
-      },
-      "width": {
-        "render": "8"
-      }
+      "color": "#f00",
+      "width": "8"
     }
   ],
   "deletion": true,

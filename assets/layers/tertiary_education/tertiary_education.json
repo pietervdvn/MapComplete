@@ -169,9 +169,7 @@
         "point",
         "centroid"
       ],
-      "iconSize": {
-        "render": "40,40,center"
-      },
+      "iconSize": "40,40",
       "label": {
         "mappings": [
           {
@@ -180,7 +178,8 @@
           }
         ]
       },
-      "icon": "circle:white;./assets/layers/school/college.svg"
+      "icon": "circle:white;./assets/layers/school/college.svg",
+      "anchor": "center"
     },
     {
       "color": "#22f1f4",

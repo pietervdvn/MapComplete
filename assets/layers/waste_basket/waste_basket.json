@@ -376,9 +376,7 @@
   },
   "mapRendering": [
     {
-      "icon": {
-        "render": "./assets/themes/waste_basket/waste_basket.svg"
-      },
+      "icon": "./assets/themes/waste_basket/waste_basket.svg",
       "iconSize": {
         "render": "40,40,center",
         "mappings": [
@@ -408,12 +406,8 @@
       ]
     },
     {
-      "color": {
-        "render": "#00f"
-      },
-      "width": {
-        "render": "8"
-      }
+      "color": "#00f",
+      "width": "8"
     }
   ]
 }

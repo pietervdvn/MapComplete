@@ -88,7 +88,8 @@
         "centroid"
       ],
       "icon": "square:white;./assets/layers/parking_ticket_machine/parking_tickets.svg",
-      "iconSize": "20,20,center"
+      "iconSize": "20,20",
+      "anchor": "center"
     }
   ]
 }

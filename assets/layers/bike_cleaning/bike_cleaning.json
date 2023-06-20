@@ -239,9 +239,7 @@
   },
   "mapRendering": [
     {
-      "icon": {
-        "render": "./assets/layers/bike_cleaning/bike_cleaning.svg"
-      },
+      "icon": "./assets/layers/bike_cleaning/bike_cleaning.svg",
       "iconBadges": [
         {
           "if": {
@@ -257,11 +255,12 @@
           }
         }
       ],
-      "iconSize": "50,50,bottom",
+      "iconSize": "50,50",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "bottom"
     }
   ],
   "description": {

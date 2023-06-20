@@ -12,7 +12,8 @@
         "centroid"
       ],
       "icon": "square:red",
-      "iconSize": "5,5,center"
+      "iconSize": "5,5",
+      "anchor": "center"
     }
   ]
 }

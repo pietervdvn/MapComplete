@@ -77,8 +77,8 @@
             "en": "What locale (language) was this change made in?"
           },
           "render": {
-          "en": "User locale is {locale}"
-        }
+            "en": "User locale is {locale}"
+          }
         },
         {
           "id": "host",
@@ -103,6 +103,18 @@
               "hideInAnswer": true
             }
           ]
+        },
+        {
+          "id": "version",
+          "question": {
+            "en": "What version of MapComplete was used to make this change?"
+          },
+          "render": {
+            "en": "Made with {editor}"
+          },
+          "freeform": {
+            "key": "editor"
+          }
         }
       ],
       "mapRendering": [
@@ -114,7 +126,8 @@
           "icon": {
             "render": "teardrop:#00cc00"
           },
-          "iconSize": "30,30,center"
+          "iconSize": "30,30",
+          "anchor": "center"
         }
       ],
       "filter": [
@@ -237,7 +250,7 @@
           "options": [
             {
               "osmTags": "add-image>0",
-              "question":{
+              "question": {
                 "en": "Changeset added at least one image"
               }
             }
@@ -276,7 +289,8 @@
               "point"
             ],
             "icon": "statistics:black",
-            "iconSize": "30,30,center"
+            "iconSize": "30,30",
+            "anchor": "center"
           }
         ]
       }

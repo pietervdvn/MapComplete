@@ -251,7 +251,7 @@
         "render": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
         "condition": "addr:housenumber~*"
       },
-      "iconSize": "50,50,center",
+      "iconSize": "50,50",
       "icon": {
         "render": "./assets/layers/address/housenumber_blank.svg",
         "mappings": [
@@ -274,7 +274,8 @@
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     },
     {
       "color": {
@@ -296,9 +297,7 @@
           }
         ]
       },
-      "width": {
-        "render": "8"
-      }
+      "width": "8"
     }
   ]
 }

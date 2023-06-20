@@ -34,11 +34,12 @@
   "mapRendering": [
     {
       "icon": "./assets/themes/playgrounds/playground.svg",
-      "iconSize": "40,40,center",
+      "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     },
     {
       "color": "#937f20",

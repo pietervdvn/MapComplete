@@ -53,23 +53,16 @@
       ],
       "mapRendering": [
         {
-          "icon": {
-            "render": "./assets/themes/buurtnatuur/forest.svg"
-          },
-          "iconSize": {
-            "render": "40,40,center"
-          },
+          "icon": "./assets/themes/buurtnatuur/forest.svg",
+          "iconSize": "40,40",
           "location": [
             "point"
-          ]
+          ],
+          "anchor": "center"
         },
         {
-          "color": {
-            "render": "#00f"
-          },
-          "width": {
-            "render": "8"
-          }
+          "color": "#00f",
+          "width": "8"
         }
       ]
     },
@@ -164,23 +157,16 @@
       ],
       "mapRendering": [
         {
-          "icon": {
-            "render": "./assets/themes/fruit_trees/fruit_tree.svg"
-          },
-          "iconSize": {
-            "render": "40,40,center"
-          },
+          "icon": "./assets/themes/fruit_trees/fruit_tree.svg",
+          "iconSize": "40,40",
           "location": [
             "point"
-          ]
+          ],
+          "anchor": "center"
         },
         {
-          "color": {
-            "render": "#00f"
-          },
-          "width": {
-            "render": "8"
-          }
+          "color": "#00f",
+          "width": "8"
         }
       ]
     }

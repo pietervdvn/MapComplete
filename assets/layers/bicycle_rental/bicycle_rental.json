@@ -528,21 +528,16 @@
   "mapRendering": [
     {
       "icon": "./assets/themes/bicycle_rental/logo.svg",
-      "iconSize": {
-        "render": "40,40,center"
-      },
+      "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     },
     {
-      "color": {
-        "render": "#3333aa88"
-      },
-      "width": {
-        "render": "2"
-      }
+      "color": "#3333aa88",
+      "width": "2"
     }
   ],
   "allowMove": {

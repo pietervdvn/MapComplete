@@ -257,12 +257,8 @@
   },
   "mapRendering": [
     {
-      "icon": {
-        "render": "./assets/layers/parking/parking.svg"
-      },
-      "iconSize": {
-        "render": "36,36,center"
-      },
+      "icon": "./assets/layers/parking/parking.svg",
+      "iconSize": "36,36",
       "location": [
         "point",
         "centroid"
@@ -277,7 +273,8 @@
           },
           "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
         }
-      ]
+      ],
+      "anchor": "center"
     },
     {
       "width": 2,

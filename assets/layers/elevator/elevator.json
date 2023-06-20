@@ -191,10 +191,8 @@
   ],
   "mapRendering": [
     {
-      "icon": {
-        "render": "circle:white;./assets/layers/elevator/elevator_wheelchair.svg"
-      },
-      "iconSize": "40,40,center",
+      "icon": "circle:white;./assets/layers/elevator/elevator_wheelchair.svg",
+      "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
@@ -209,7 +207,8 @@
           },
           "then": "close:#c33"
         }
-      ]
+      ],
+      "anchor": "center"
     }
   ],
   "presets": [

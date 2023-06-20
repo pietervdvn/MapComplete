@@ -600,13 +600,12 @@
               "then": "circle:white;./assets/themes/facadegardens/bloei.svg"
             }
           ],
-          "iconSize": {
-            "render": "50,50,center"
-          },
+          "iconSize": "50,50",
           "location": [
             "point",
             "centroid"
-          ]
+          ],
+          "anchor": "center"
         }
       ],
       "deletion": true,

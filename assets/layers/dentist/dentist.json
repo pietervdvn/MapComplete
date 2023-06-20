@@ -67,14 +67,13 @@
   ],
   "mapRendering": [
     {
-      "icon": {
-        "render": "circle:white;./assets/layers/dentist/dentist.svg"
-      },
-      "iconSize": "40,40,center",
+      "icon": "circle:white;./assets/layers/dentist/dentist.svg",
+      "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     }
   ],
   "deletion": true,

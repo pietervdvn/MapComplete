@@ -198,7 +198,8 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                             },
                         ],
                     },
-                    iconSize: "40,40,center",
+                    iconSize: "40,40",
+                    anchor: "center",
                 },
             ],
         }

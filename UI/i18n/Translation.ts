@@ -26,15 +26,22 @@ export class Translation extends BaseUIElement {
             if (!translations.hasOwnProperty(translationsKey)) {
                 continue
             }
-            if (translationsKey === "_context" || translationsKey === "_meta") {
+            if (
+                translationsKey === "_context" ||
+                translationsKey === "_meta" ||
+                translationsKey === "special"
+            ) {
                 continue
             }
+
             count++
             if (typeof translations[translationsKey] != "string") {
                 console.error(
                     "Non-string object at",
                     context,
-                    "in translation: ",
+                    `for language`,
+                    translationsKey,
+                    `in translation: `,
                     translations[translationsKey],
                     "\n    current translations are: ",
                     translations

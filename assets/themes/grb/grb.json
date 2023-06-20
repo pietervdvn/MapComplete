@@ -479,7 +479,7 @@
             "render": "<div style='margin-top: -42px; color: black' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
             "condition": "addr:housenumber~*"
           },
-          "iconSize": "50,50,center",
+          "iconSize": "50,50",
           "icon": {
             "mappings": [
               {
@@ -495,7 +495,8 @@
           "location": [
             "point",
             "centroid"
-          ]
+          ],
+          "anchor": "center"
         },
         {
           "width": {
@@ -541,9 +542,7 @@
           "color": "#888888"
         }
       ],
-      "title": {
-        "render": "Service road"
-      },
+      "title":  "Service road",
       "tagRenderings": []
     },
     {
@@ -578,12 +577,8 @@
       },
       "mapRendering": [
         {
-          "color": {
-            "render": "#ccc"
-          },
-          "width": {
-            "render": "1"
-          },
+          "color": "#ccc",
+          "width": "1",
           "fill": "no"
         }
       ],
@@ -762,10 +757,8 @@
             "location": [
               "point"
             ],
-            "icon": {
-              "render": "./assets/svg/robot.svg"
-            },
-            "iconSize": "15,15,center"
+            "icon":"./assets/svg/robot.svg",
+            "iconSize": "15,15"
           }
         ]
       }

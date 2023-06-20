@@ -334,21 +334,16 @@
           }
         ]
       },
-      "iconSize": {
-        "render": "40,40,center"
-      },
+      "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     },
     {
-      "color": {
-        "render": "#00f"
-      },
-      "width": {
-        "render": "8"
-      }
+      "color": "#00f",
+      "width": "8"
     }
   ],
   "allowMove": true,

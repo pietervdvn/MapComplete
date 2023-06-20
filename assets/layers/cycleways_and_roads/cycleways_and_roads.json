@@ -1610,12 +1610,8 @@
   "allowSplit": true,
   "mapRendering": [
     {
-      "icon": {
-        "render": "./assets/themes/cycle_infra/bicycleway.svg"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
+      "icon": "./assets/themes/cycle_infra/bicycleway.svg",
+      "iconSize": "40,40",
       "location": [
         "point"
       ]
@@ -1654,9 +1650,7 @@
           }
         ]
       },
-      "width": {
-        "render": "8"
-      },
+      "width": "8",
       "dashArray": {
         "render": "",
         "mappings": [

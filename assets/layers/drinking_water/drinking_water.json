@@ -244,9 +244,7 @@
   },
   "mapRendering": [
     {
-      "icon": {
-        "render": "pin:#6BC4F7;./assets/layers/drinking_water/drips.svg"
-      },
+      "icon": "pin:#6BC4F7;./assets/layers/drinking_water/drips.svg",
       "iconBadges": [
         {
           "if": {
@@ -258,11 +256,12 @@
           "then": "close:#c33"
         }
       ],
-      "iconSize": "40,40,bottom",
+      "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "bottom"
     }
   ],
   "description": {

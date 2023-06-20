@@ -54,6 +54,16 @@ export default interface PointRenderingConfigJson {
      * Default is '40,40,center'
      */
     iconSize?: string | TagRenderingConfigJson
+
+    /**
+     * question: What is the anchorpoint of the icon?
+     *
+     * This matches the geographical point with a location on the icon.
+     * For example, a feature attached to the ground can use 'bottom' as zooming in will give the appearance of being anchored to a fixed location.
+     *
+     */
+    anchor?: "center" | "top" | "bottom" | "left" | "right" | string | TagRenderingConfigJson
+
     /**
      * The rotation of an icon, useful for e.g. directions.
      * Usage: as if it were a css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``

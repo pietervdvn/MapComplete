@@ -253,12 +253,8 @@
       ]
     },
     {
-      "color": {
-        "render": "#eaba2a"
-      },
-      "width": {
-        "render": "7"
-      },
+      "color": "#eaba2a",
+      "width": "7",
       "dashArray": {
         "render": "",
         "mappings": [

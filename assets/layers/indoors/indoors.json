@@ -151,15 +151,9 @@
   ],
   "mapRendering": [
     {
-      "color": {
-        "render": "#d3d7d588"
-      },
-      "width": {
-        "render": "8"
-      },
-      "offset": {
-        "render": "-4"
-      },
+      "color": "#d3d7d588",
+      "width": "8",
+      "offset": "-4",
       "fill": "no"
     },
     {
@@ -245,7 +239,8 @@
           }
         ]
       },
-      "iconSize": "15,15, bottom"
+      "iconSize": "15,15",
+      "anchor": "bottom"
     }
   ]
 }
