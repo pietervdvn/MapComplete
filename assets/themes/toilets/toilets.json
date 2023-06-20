@@ -41,6 +41,7 @@
   "icon": "./assets/themes/toilets/toilets.svg",
   "layers": [
     "toilet",
-    "toilet_at_amenity"
+    "toilet_at_amenity",
+    "shower"
   ]
 }
