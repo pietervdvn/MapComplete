@@ -126,6 +126,7 @@
       "location": [
         "point"
       ],
+      "anchor": "bottom",
       "iconSize": {
         "mappings": [
           {
@@ -135,10 +136,10 @@
                 "has_presets=no"
               ]
             },
-            "then": "40,40,bottom"
+            "then": "40,40"
           }
         ],
-        "render": "40,50,bottom"
+        "render": "40,50"
       }
     }
   ],
