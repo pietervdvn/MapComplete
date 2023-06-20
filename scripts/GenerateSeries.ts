@@ -2,10 +2,9 @@ import { existsSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from
 import ScriptUtils from "./ScriptUtils"
 import { Utils } from "../Utils"
 import Script from "./Script"
-import TiledFeatureSource from "../Logic/FeatureSource/TiledFeatureSource/TiledFeatureSource"
-import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource"
 import { GeoOperations } from "../Logic/GeoOperations"
 import { Feature, Polygon } from "geojson"
+import { Tiles } from "../Models/TileRange"
 
 class StatsDownloader {
     private readonly urlTemplate =
@@ -275,47 +274,29 @@ class GenerateSeries extends Script {
         const centerpoints = allFeatures.map((f) => GeoOperations.centerpoint(f))
         console.log("Found", centerpoints.length, " changesets in total")
         const path = `${targetDir}/all_centerpoints.geojson`
-        /*fs.writeFileSync(
-            path,
-            JSON.stringify(
-                {
-                    type: "FeatureCollection",
-                    features: centerpoints,
-                },
-                null,
-                "  "
+
+        const perBbox = GeoOperations.spreadIntoBboxes(centerpoints, options.zoomlevel)
+
+        for (const [tileNumber, features] of perBbox) {
+            const [z, x, y] = Tiles.tile_from_index(tileNumber)
+            const path = `${targetDir}/tile_${z}_${x}_${y}.geojson`
+            features.forEach((f) => {
+                delete f.bbox
+            })
+            writeFileSync(
+                path,
+                JSON.stringify(
+                    {
+                        type: "FeatureCollection",
+                        features: features,
+                    },
+                    null,
+                    "  "
+                )
             )
-        )//*/
-        TiledFeatureSource.createHierarchy(StaticFeatureSource.fromGeojson(centerpoints), {
-            minZoomLevel: options.zoomlevel,
-            maxZoomLevel: options.zoomlevel,
-            maxFeatureCount: Number.MAX_VALUE,
-            registerTile: (tile) => {
-                const path = `${targetDir}/tile_${tile.z}_${tile.x}_${tile.y}.geojson`
-                const features = tile.features.data.map((ff) => ff.feature)
-                features.forEach((f) => {
-                    delete f.bbox
-                })
-                writeFileSync(
-                    path,
-                    JSON.stringify(
-                        {
-                            type: "FeatureCollection",
-                            features: features,
-                        },
-                        null,
-                        "  "
-                    )
-                )
-                ScriptUtils.erasableLog(
-                    "Written ",
-                    path,
-                    "which has ",
-                    tile.features.data.length,
-                    "features"
-                )
-            },
-        })
+
+            ScriptUtils.erasableLog("Written ", path, "which has ", features.length, "features")
+        }
     }
 }
 
