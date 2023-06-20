@@ -62,7 +62,7 @@ export default interface PointRenderingConfigJson {
      * For example, a feature attached to the ground can use 'bottom' as zooming in will give the appearance of being anchored to a fixed location.
      *
      */
-    anchor?: "center" | "top" | "bottom" | "left" | "right" | string
+    anchor?: "center" | "top" | "bottom" | "left" | "right" | string | TagRenderingConfigJson
 
     /**
      * The rotation of an icon, useful for e.g. directions.

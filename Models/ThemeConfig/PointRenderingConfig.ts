@@ -92,6 +92,16 @@ export default class PointRenderingConfig extends WithContextLoader {
                 throw context + ": builtin SVG asset not found: " + iconPath
             }
         }
+        if (typeof json.iconSize === "string") {
+            const s = json.iconSize
+            if (["bottom", "top", "center"].some((e) => s.endsWith(e))) {
+                throw (
+                    "At " +
+                    context +
+                    " in : iconSize uses legacy ,bottom, center or top postfix. Use the field `anchor` instead."
+                )
+            }
+        }
         this.iconSize = this.tr("iconSize", "40,40")
         this.anchor = this.tr("anchor", "center")
         this.label = this.tr("label", undefined)
@@ -239,7 +249,6 @@ export default class PointRenderingConfig extends WithContextLoader {
 
         const anchor = render(this.anchor, "center")
         const mode = anchor?.trim()?.toLowerCase() ?? "center"
-
         // in MapLibre, the offset is relative to the _center_ of the object, with left = [-x, 0] and up = [0,-y]
         let anchorW = 0
         let anchorH = 0
