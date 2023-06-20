@@ -235,7 +235,8 @@
             "end"
           ],
           "icon": "circle:#ccc",
-          "iconSize": "3,3,center"
+          "iconSize": "3,3",
+          "anchor": "center"
         },
         {
           "#": "The center line",

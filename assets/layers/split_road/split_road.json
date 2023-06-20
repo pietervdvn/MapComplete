@@ -11,7 +11,8 @@
         "point"
       ],
       "icon": "bug",
-      "iconSize": "30,30,center"
+      "iconSize": "30,30",
+      "anchor": "center"
     },
     {
       "width": "8",

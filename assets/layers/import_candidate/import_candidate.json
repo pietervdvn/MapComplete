@@ -9,7 +9,8 @@
         "centroid"
       ],
       "icon": "square:red;",
-      "iconSize": "15,15,center"
+      "iconSize": "15,15",
+      "anchor": "center"
     }
   ],
   "title": "Import candidate",

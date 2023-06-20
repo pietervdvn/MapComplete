@@ -304,11 +304,12 @@
           "then": "close:#c33"
         }
       ],
-      "iconSize": "50,50,bottom",
+      "iconSize": "50,50",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "bottom"
     },
     {
       "color": "#6bc4f7"

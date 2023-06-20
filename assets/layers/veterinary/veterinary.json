@@ -67,7 +67,7 @@
         "centroid"
       ],
       "icon": "./assets/layers/veterinary/vet.svg",
-      "iconSize": "30,40,center",
+      "iconSize": "30,40",
       "label": {
         "mappings": [
           {
@@ -81,7 +81,8 @@
           "if": "opening_hours~*",
           "then": "icons.isOpen"
         }
-      ]
+      ],
+      "anchor": "center"
     },
     {
       "color": "#ff0",

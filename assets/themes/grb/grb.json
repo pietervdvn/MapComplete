@@ -479,7 +479,7 @@
             "render": "<div style='margin-top: -42px; color: black' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
             "condition": "addr:housenumber~*"
           },
-          "iconSize": "50,50,center",
+          "iconSize": "50,50",
           "icon": {
             "mappings": [
               {
@@ -495,7 +495,8 @@
           "location": [
             "point",
             "centroid"
-          ]
+          ],
+          "anchor": "center"
         },
         {
           "width": {

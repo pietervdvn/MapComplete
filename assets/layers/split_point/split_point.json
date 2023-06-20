@@ -12,7 +12,8 @@
         "centroid"
       ],
       "icon": "circle:white;./assets/svg/scissors.svg",
-      "iconSize": "30,30,center"
+      "iconSize": "30,30",
+      "anchor": "center"
     }
   ]
 }

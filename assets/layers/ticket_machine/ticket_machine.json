@@ -86,11 +86,12 @@
   "mapRendering": [
     {
       "icon": "square:lightblue;./assets/themes/stations/public_transport_tickets.svg",
-      "iconSize": "20,20,center",
+      "iconSize": "20,20",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     }
   ],
   "allowMove": true,

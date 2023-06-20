@@ -55,7 +55,8 @@
         "centroid"
       ],
       "icon": "circle:white;./assets/layers/hotel/hotel.svg",
-      "iconSize": "40,40,center"
+      "iconSize": "40,40",
+      "anchor": "center"
     }
   ],
   "tagRenderings": [

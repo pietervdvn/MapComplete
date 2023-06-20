@@ -258,11 +258,12 @@
           "then": "close:#c33"
         }
       ],
-      "iconSize": "40,40,bottom",
+      "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "bottom"
     }
   ],
   "description": {

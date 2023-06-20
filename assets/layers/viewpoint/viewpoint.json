@@ -81,10 +81,11 @@
   "mapRendering": [
     {
       "icon": "./assets/layers/viewpoint/viewpoint.svg",
-      "iconSize": "20,20,center",
+      "iconSize": "20,20",
       "location": [
         "point"
-      ]
+      ],
+      "anchor": "center"
     },
     {
       "color": "#ffffff",

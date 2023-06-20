@@ -210,7 +210,8 @@
             "point"
           ],
           "icon": "./assets/themes/width/icon.svg",
-          "iconSize": "40,40,center"
+          "iconSize": "40,40",
+          "anchor": "center"
         },
         {
           "width": "4",

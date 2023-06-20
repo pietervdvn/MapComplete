@@ -40,10 +40,11 @@
       "icon": {
         "render": "pin:#6BC4F7;./assets/layers/osm_community_index/osm.svg"
       },
-      "iconSize": "40,40,bottom",
+      "iconSize": "40,40",
       "location": [
         "point"
-      ]
+      ],
+      "anchor": "bottom"
     },
     {
       "color": "#444444",

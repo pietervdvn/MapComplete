@@ -14,7 +14,7 @@
           }
         ]
       },
-      "iconSize": "40,40,center",
+      "iconSize": "40,40",
       "pitchAlignment": "map",
       "rotation": {
         "render": "0deg",
@@ -33,7 +33,8 @@
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     }
   ]
 }

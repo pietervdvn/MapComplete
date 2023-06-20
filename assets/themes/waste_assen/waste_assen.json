@@ -47,7 +47,8 @@
               }
             ]
           },
-          "iconSize": "20,20,center"
+          "iconSize": "20,20",
+          "anchor": "center"
         }
       ],
       "tagRenderings": [
@@ -92,7 +93,8 @@
               }
             ]
           },
-          "iconSize": "20,20,center"
+          "iconSize": "20,20",
+          "anchor": "center"
         }
       ],
       "tagRenderings": [

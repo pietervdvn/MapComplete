@@ -27,6 +27,8 @@ export default class PointRenderingConfig extends WithContextLoader {
     public readonly icon?: TagRenderingConfig
     public readonly iconBadges: { if: TagsFilter; then: TagRenderingConfig }[]
     public readonly iconSize: TagRenderingConfig
+    public readonly anchor: TagRenderingConfig
+
     public readonly label: TagRenderingConfig
     public readonly labelCss: TagRenderingConfig
     public readonly labelCssClasses: TagRenderingConfig
@@ -90,7 +92,8 @@ export default class PointRenderingConfig extends WithContextLoader {
                 throw context + ": builtin SVG asset not found: " + iconPath
             }
         }
-        this.iconSize = this.tr("iconSize", "40,40,center")
+        this.iconSize = this.tr("iconSize", "40,40")
+        this.anchor = this.tr("anchor", "center")
         this.label = this.tr("label", undefined)
         this.rotation = this.tr("rotation", "0")
         this.pitchAlignment = this.tr("pitchAlignment", "canvas")
@@ -229,11 +232,13 @@ export default class PointRenderingConfig extends WithContextLoader {
             return Utils.SubstituteKeys(str, tags.data).replace(/{.*}/g, "")
         }
 
-        const iconSize = render(this.iconSize, "40,40,center").split(",")
+        const iconSize = render(this.iconSize, "40,40").split(",")
 
         const iconW = num(iconSize[0])
         let iconH = num(iconSize[1])
-        const mode = iconSize[2]?.trim()?.toLowerCase() ?? "center"
+
+        const anchor = render(this.anchor, "center")
+        const mode = anchor?.trim()?.toLowerCase() ?? "center"
 
         // in MapLibre, the offset is relative to the _center_ of the object, with left = [-x, 0] and up = [0,-y]
         let anchorW = 0

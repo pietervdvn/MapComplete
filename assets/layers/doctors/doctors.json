@@ -129,11 +129,12 @@
       "icon": {
         "render": "circle:white;./assets/layers/doctors/doctors.svg"
       },
-      "iconSize": "40,40,center",
+      "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     }
   ],
   "deletion": true,

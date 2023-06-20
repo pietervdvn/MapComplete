@@ -257,11 +257,12 @@
           }
         }
       ],
-      "iconSize": "50,50,bottom",
+      "iconSize": "50,50",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "bottom"
     }
   ],
   "description": {
