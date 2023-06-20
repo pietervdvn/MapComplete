@@ -997,7 +997,7 @@
   "mapRendering": [
     {
       "icon": "./assets/layers/bench/bench.svg",
-      "iconSize": "35,35,center",
+      "iconSize": "35,35",
       "iconBadges": [
         {
           "if": "tourism=artwork",
@@ -1007,7 +1007,8 @@
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     }
   ],
   "filter": [

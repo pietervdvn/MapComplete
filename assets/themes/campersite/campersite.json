@@ -872,11 +872,12 @@
               }
             ]
           },
-          "iconSize": "40,40,center",
+          "iconSize": "40,40",
           "location": [
             "point",
             "centroid"
-          ]
+          ],
+          "anchor": "center"
         },
         {
           "color": "#00f",
@@ -1448,10 +1449,11 @@
       "mapRendering": [
         {
           "icon": "circle:white;./assets/themes/campersite/sanitary_dump_station.svg",
-          "iconSize": "32,32,center",
+          "iconSize": "32,32",
           "location": [
             "point"
-          ]
+          ],
+          "anchor": "center"
         },
         {
           "color": "#00f",

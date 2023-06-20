@@ -132,11 +132,12 @@
   "mapRendering": [
     {
       "icon": "circle:#e6cf39;./assets/layers/picnic_table/picnic_table.svg",
-      "iconSize": "35,35,center",
+      "iconSize": "35,35",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     }
   ]
 }

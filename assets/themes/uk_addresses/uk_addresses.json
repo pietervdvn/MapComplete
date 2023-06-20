@@ -182,11 +182,12 @@
               }
             ]
           },
-          "iconSize": "40,40,center",
+          "iconSize": "40,40",
           "location": [
             "point",
             "centroid"
-          ]
+          ],
+          "anchor": "center"
         }
       ],
       "description": "Alamat"

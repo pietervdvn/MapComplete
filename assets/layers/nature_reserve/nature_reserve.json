@@ -528,11 +528,12 @@
   "mapRendering": [
     {
       "icon": "./assets/layers/nature_reserve/nature_reserve.svg",
-      "iconSize": "50,50,center",
+      "iconSize": "50,50",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     },
     {
       "color": "#3c3",

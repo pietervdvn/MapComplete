@@ -362,11 +362,12 @@
   "mapRendering": [
     {
       "icon": "./assets/themes/hailhydrant/Twemoji_1f691.svg",
-      "iconSize": "35,35,center",
+      "iconSize": "35,35",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     },
     {
       "color": "#00f",

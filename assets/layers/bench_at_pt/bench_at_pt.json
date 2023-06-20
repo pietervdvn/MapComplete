@@ -204,10 +204,11 @@
   "mapRendering": [
     {
       "icon": "./assets/themes/benches/bench_public_transport.svg",
-      "iconSize": "35,35,center",
+      "iconSize": "35,35",
       "location": [
         "point"
-      ]
+      ],
+      "anchor": "center"
     },
     {
       "color": "#00f",

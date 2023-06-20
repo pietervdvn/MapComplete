@@ -298,11 +298,12 @@
   "mapRendering": [
     {
       "icon": "./assets/themes/hailhydrant/Twemoji12_1f692.svg",
-      "iconSize": "35,35,center",
+      "iconSize": "35,35",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     },
     {
       "color": "#c22",

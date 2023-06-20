@@ -317,11 +317,12 @@
   "mapRendering": [
     {
       "icon": "circle:white;./assets/layers/observation_tower/Tower_observation.svg",
-      "iconSize": "40,40,center",
+      "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     }
   ]
 }

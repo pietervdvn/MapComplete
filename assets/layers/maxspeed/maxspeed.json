@@ -130,11 +130,12 @@
           }
         ]
       },
-      "iconSize": "32,32,center",
+      "iconSize": "32,32",
       "location": [
         "point",
         "projected_centerpoint"
-      ]
+      ],
+      "anchor": "center"
     },
     {
       "color": {

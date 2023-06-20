@@ -54,10 +54,11 @@
       "mapRendering": [
         {
           "icon": "./assets/themes/buurtnatuur/forest.svg",
-          "iconSize": "40,40,center",
+          "iconSize": "40,40",
           "location": [
             "point"
-          ]
+          ],
+          "anchor": "center"
         },
         {
           "color": "#00f",
@@ -157,10 +158,11 @@
       "mapRendering": [
         {
           "icon": "./assets/themes/fruit_trees/fruit_tree.svg",
-          "iconSize": "40,40,center",
+          "iconSize": "40,40",
           "location": [
             "point"
-          ]
+          ],
+          "anchor": "center"
         },
         {
           "color": "#00f",

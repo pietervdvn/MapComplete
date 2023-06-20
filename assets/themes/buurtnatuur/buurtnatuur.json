@@ -92,10 +92,11 @@
       "mapRendering": [
         {
           "icon": "circle:#ffffff;./assets/themes/buurtnatuur/nature_reserve.svg",
-          "iconSize": "50,50,center",
+          "iconSize": "50,50",
           "location": [
             "point"
-          ]
+          ],
+          "anchor": "center"
         },
         {
           "color": {
@@ -198,10 +199,11 @@
       "mapRendering": [
         {
           "icon": "circle:#ffffff;./assets/themes/buurtnatuur/park.svg",
-          "iconSize": "40,40,center",
+          "iconSize": "40,40",
           "location": [
             "point"
-          ]
+          ],
+          "anchor": "center"
         },
         {
           "color": {
@@ -292,10 +294,11 @@
       "mapRendering": [
         {
           "icon": "circle:#ffffff;./assets/themes/buurtnatuur/forest.svg",
-          "iconSize": "40,40,center",
+          "iconSize": "40,40",
           "location": [
             "point"
-          ]
+          ],
+          "anchor": "center"
         },
         {
           "color": {

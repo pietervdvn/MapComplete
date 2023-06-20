@@ -219,7 +219,7 @@
   "mapRendering": [
     {
       "icon": "circle:white;./assets/themes/climbing/climbing_route.svg",
-      "iconSize": "28,28,center",
+      "iconSize": "28,28",
       "location": [
         "point",
         "centroid"
@@ -240,7 +240,8 @@
             "then": "<div  class='w-max p-1 rounded-xl' style='background: white;'>{name}</div>"
           }
         ]
-      }
+      },
+      "anchor": "center"
     },
     {
       "color": "#0f0",

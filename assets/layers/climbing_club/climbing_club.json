@@ -168,7 +168,7 @@
           "then": "icons.isOpen"
         }
       ],
-      "iconSize": "40,40,center",
+      "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
@@ -180,7 +180,8 @@
             "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
           }
         ]
-      }
+      },
+      "anchor": "center"
     }
   ]
 }

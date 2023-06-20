@@ -493,11 +493,12 @@
   "mapRendering": [
     {
       "icon": "./assets/themes/hailhydrant/hydrant.svg",
-      "iconSize": "20,20,center",
+      "iconSize": "20,20",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     },
     {
       "color": "#00f",

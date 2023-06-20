@@ -93,7 +93,8 @@
               }
             ]
           },
-          "iconSize": "40,40,center"
+          "iconSize": "40,40",
+          "anchor": "center"
         }
       ],
       "title": "OSM-gebouw",

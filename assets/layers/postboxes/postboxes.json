@@ -80,11 +80,12 @@
   "mapRendering": [
     {
       "icon": "./assets/layers/postboxes/postbox.svg",
-      "iconSize": "40,40,bottom",
+      "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "bottom"
     },
     {
       "color": "#DADADA",

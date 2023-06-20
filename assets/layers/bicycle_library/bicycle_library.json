@@ -338,11 +338,12 @@
           "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg"
         }
       ],
-      "iconSize": "50,50,bottom",
+      "iconSize": "50,50",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "bottom"
     },
     {
       "color": "#c00",

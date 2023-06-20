@@ -200,11 +200,12 @@
       "mapRendering": [
         {
           "icon": "./assets/themes/postal_codes/townhall.svg",
-          "iconSize": "40,40,center",
+          "iconSize": "40,40",
           "location": [
             "point",
             "centroid"
-          ]
+          ],
+          "anchor": "center"
         }
       ],
       "isShown": "_country=be"

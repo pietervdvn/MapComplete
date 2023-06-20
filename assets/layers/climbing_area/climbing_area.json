@@ -299,11 +299,12 @@
   "mapRendering": [
     {
       "icon": "./assets/themes/climbing/climbing_no_rope.svg",
-      "iconSize": "40,40,center",
+      "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "center"
     },
     {
       "dashArray": "8 16",

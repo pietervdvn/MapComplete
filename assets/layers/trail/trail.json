@@ -222,10 +222,11 @@
           }
         ]
       },
-      "iconSize": "35,35,center",
+      "iconSize": "35,35",
       "location": [
         "point"
-      ]
+      ],
+      "anchor": "center"
     },
     {
       "color": {
