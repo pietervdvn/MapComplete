@@ -156,6 +156,9 @@ export class UpdateLegacyLayer extends DesugaringStep<
 
         for (const rendering of config.mapRendering) {
             for (const key in rendering) {
+                if (!rendering[key]) {
+                    continue
+                }
                 if (
                     typeof rendering[key]["render"] === "string" &&
                     Object.keys(rendering[key]).length === 1

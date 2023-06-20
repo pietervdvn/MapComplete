@@ -42,6 +42,7 @@ describe("PrepareTheme", () => {
         const prepareStep = new PrepareTheme({
             tagRenderings: new Map<string, TagRenderingConfigJson>(),
             sharedLayers: sharedLayers,
+            publicLayers: new Set<string>(),
         })
         let themeConfigJsonPrepared = prepareStep.convert(theme, "test").result
         const themeConfig = new LayoutConfig(themeConfigJsonPrepared)
@@ -59,6 +60,7 @@ describe("PrepareTheme", () => {
         let themeConfigJsonPrepared = new PrepareTheme({
             tagRenderings: new Map<string, TagRenderingConfigJson>(),
             sharedLayers: sharedLayers,
+            publicLayers: new Set<string>(),
         }).convert(themeConfigJson, "test").result
         const themeConfig = new LayoutConfig(themeConfigJsonPrepared)
         const layerUnderTest = <LayerConfig>(
@@ -73,6 +75,7 @@ describe("PrepareTheme", () => {
         let themeConfigJsonPrepared = new PrepareTheme({
             tagRenderings: new Map<string, TagRenderingConfigJson>(),
             sharedLayers: sharedLayers,
+            publicLayers: new Set<string>(),
         }).convert(
             {
                 ...themeConfigJson,
@@ -102,6 +105,7 @@ describe("PrepareTheme", () => {
         const ctx: DesugaringContext = {
             sharedLayers: new Map<string, LayerConfigJson>([["layer-example", testLayer]]),
             tagRenderings: new Map<string, TagRenderingConfigJson>(),
+            publicLayers: new Set<string>(),
         }
         const layout: LayoutConfigJson = {
             description: "A testing theme",

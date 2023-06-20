@@ -44,7 +44,7 @@ describe("ReplaceGeometryAction", () => {
                     mapRendering: [
                         {
                             icon: "square:#cc0",
-                            iconSize: "5,5,center",
+                            iconSize: "5,5",
                             location: ["point"],
                         },
                     ],
@@ -292,7 +292,7 @@ describe("ReplaceGeometryAction", () => {
                 tagRenderings: [],
                 mapRendering: [
                     {
-                        iconSize: "50,50,center",
+                        iconSize: "50,50",
                         icon: "./assets/themes/grb/housenumber_blank.svg",
                         location: ["point", "centroid"],
                     },
