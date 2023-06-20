@@ -13,29 +13,9 @@
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
      id="defs11" />
-  <sodipodi:namedview
-     id="namedview9"
-     pagecolor="#505050"
-     bordercolor="#eeeeee"
-     borderopacity="1"
-     inkscape:pageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="0"
-     showgrid="false"
-     showguides="true"
-     inkscape:guide-bbox="true"
-     inkscape:snap-global="false"
-     inkscape:zoom="18.72612"
-     inkscape:cx="130.03227"
-     inkscape:cy="365.95941"
-     inkscape:current-layer="svg7">
-    <sodipodi:guide
-       position="137.32093,125.42369"
-       orientation="1,0"
-       id="guide2177" />
-  </sodipodi:namedview>
   <path
      id="path2"
+     class="selectable"
      style="fill:#00c82e;fill-opacity:1;fill-rule:nonzero;stroke:#40ff00;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      d="M 135.55664,1.9765625 C 74.593645,2.1922681 20.084472,43.910648 7.2773438,104.37109 4.936895,115.41704 4.1435422,126.42334 4.7265625,137.18555 2.5821353,205.89923 56.815085,269.30423 107.08203,335.96094 c 12.32031,15.26562 30.35156,34.07422 30.35156,34.07422 l 27.64453,-32.61328 C 227.98632,255.40992 319.84389,135.74148 238.04492,49.080078 219.42005,26.853995 193.07863,10.556457 161.97656,4.4921875 153.10693,2.7626953 144.26564,1.9457474 135.55664,1.9765625 Z"
      sodipodi:nodetypes="scccccccs" />
