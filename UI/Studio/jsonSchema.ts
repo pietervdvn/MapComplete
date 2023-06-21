@@ -4,7 +4,7 @@
 
 export type JsonSchemaType =
     | string
-    | { $ref: string; description: string }
+    | { $ref: string; description?: string }
     | { type: string }
     | JsonSchemaType[]
 export interface JsonSchema {

@@ -26,6 +26,7 @@ import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
 import ValidationUtils from "./ValidationUtils"
 import { RenderingSpecification } from "../../../UI/SpecialVisualization"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
+import { ConfigMeta } from "../../../UI/Studio/configMeta"
 
 class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     private static readonly predefinedFilters = ExpandFilter.load_filters()
@@ -1069,9 +1070,9 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
     } {
         const errors = []
         json = Utils.Clone(json)
-        const paths: { path: string[]; type?: any; typeHint?: string }[] = tagrenderingconfigmeta
+        const paths: ConfigMeta[] = tagrenderingconfigmeta
         for (const path of paths) {
-            if (path.typeHint !== "rendered") {
+            if (path.hints.typehint !== "rendered") {
                 continue
             }
             Utils.WalkPath(path.path, json, (leaf, travelled) =>
