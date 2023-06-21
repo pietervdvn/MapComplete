@@ -105,6 +105,17 @@
           }
         }
       ]
+    },
+    {
+      "builtin": "payment-options-split",
+      "override": {
+        "condition": {
+          "or": [
+            "fee=yes",
+            "hot_water=fee"
+          ]
+        }
+      }
     }
   ],
   "filter": [],

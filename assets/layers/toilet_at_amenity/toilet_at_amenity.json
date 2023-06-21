@@ -344,7 +344,7 @@
   "mapRendering": [
     {
       "icon": {
-        "render": "./assets/layers/toilet/toilets.svg",
+        "render": "circle:white;./assets/layers/toilet/toilets.svg",
         "mappings": [
           {
             "if": {
