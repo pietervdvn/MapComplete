@@ -3,12 +3,12 @@ import { readFileSync, writeFileSync } from "fs"
 import { JsonSchema } from "../UI/Studio/jsonSchema"
 
 function WalkScheme<T>(
-    onEach: (schemePart: JsonSchema) => T,
+    onEach: (schemePart: JsonSchema, path: string[]) => T,
     scheme: JsonSchema,
     fullScheme: JsonSchema & { definitions?: any } = undefined,
     path: string[] = [],
     isHandlingReference = [],
-    required?: string[]
+    required: string[]
 ): { path: string[]; required: boolean; t: T }[] {
     const results: { path: string[]; required: boolean; t: T }[] = []
     if (scheme === undefined) {
@@ -26,18 +26,23 @@ function WalkScheme<T>(
             return []
         }
         const loadedScheme = fullScheme.definitions[definitionName]
-        return WalkScheme(onEach, loadedScheme, fullScheme, path, [
-            ...isHandlingReference,
-            definitionName,
-        ])
+        return WalkScheme(
+            onEach,
+            loadedScheme,
+            fullScheme,
+            path,
+            [...isHandlingReference, definitionName],
+            required
+        )
     }
 
     fullScheme = fullScheme ?? scheme
-    let t = onEach(scheme)
+    let t = onEach(scheme, path)
     if (t !== undefined) {
+        const isRequired = required?.indexOf(path.at(-1)) >= 0
         results.push({
             path,
-            required: required?.indexOf(path.at(-1)) >= 0,
+            required: isRequired,
             t,
         })
     }
@@ -46,7 +51,7 @@ function WalkScheme<T>(
         if (v === undefined) {
             return
         }
-        results.push(...WalkScheme(onEach, v, fullScheme, path, isHandlingReference))
+        results.push(...WalkScheme(onEach, v, fullScheme, path, isHandlingReference, v.required))
     }
 
     function walkEach(scheme: JsonSchema[]) {
@@ -87,7 +92,7 @@ function WalkScheme<T>(
 }
 
 function addMetafields(fieldnames: string[], fullSchema: JsonSchema) {
-    return WalkScheme((schemePart) => {
+    const onEach = (schemePart, path) => {
         if (schemePart.description === undefined) {
             return
         }
@@ -113,8 +118,31 @@ function addMetafields(fieldnames: string[], fullSchema: JsonSchema) {
             }
         }
 
+        if (hints["types"]) {
+            const numberOfExpectedSubtypes = hints["types"].split(";").length
+            if (!Array.isArray(type)) {
+                throw (
+                    "At " +
+                    path.join(".") +
+                    "Invalid hint in the documentation: `types` indicates that there are " +
+                    numberOfExpectedSubtypes +
+                    " subtypes, but object does not support subtypes. Did you mean `type` instead?\n\tTypes are: " +
+                    hints["types"]
+                )
+            }
+            const numberOfActualTypes = type.length
+            if (numberOfActualTypes !== numberOfExpectedSubtypes) {
+                throw `At ${path.join(
+                    "."
+                )}\nInvalid hint in the documentation: \`types\` indicates that there are ${numberOfExpectedSubtypes} subtypes, but there are ${numberOfActualTypes} subtypes
+\tTypes are: ${hints["types"]}`
+            }
+        }
+
         return { hints, type, description: description.join("\n") }
-    }, fullSchema)
+    }
+
+    return WalkScheme(onEach, fullSchema, fullSchema, [], [], fullSchema.required)
 }
 
 function extractMeta(typename: string, path: string) {
@@ -124,7 +152,9 @@ function extractMeta(typename: string, path: string) {
 
     const metainfo = {
         type: "One of the inputValidator types",
+        types: "Is multiple types are allowed for this field, then first show a mapping to pick the appropriate subtype. `Types` should be `;`-separated and contain precisely the same amount of subtypes",
         group: "A kind of label. Items with the same group name will be placed in the same region",
+        default: "The default value which is used if no value is specified",
         question: "The question to ask in the tagRenderingConfig",
         ifunset:
             "Only applicable if _not_ a required item. This will appear in the 'not set'-option as extra description",

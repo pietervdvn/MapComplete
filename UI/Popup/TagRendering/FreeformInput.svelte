@@ -24,8 +24,7 @@
     inline = config.freeform?.inline
   }
 
-  export let feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined)
-
+  export let feedback: UIEventSource<Translation> 
   let dispatch = createEventDispatcher<{ selected, submit }>()
   onDestroy(
     value.addCallbackD(() => {

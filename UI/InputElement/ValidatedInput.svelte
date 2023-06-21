@@ -11,7 +11,7 @@
     import {Utils} from "../../Utils";
 
     export let type: ValidatorType
-    export let feedback: UIEventSource<Translation> | undefined = undefined
+    export let feedback: UIEventSource<Translation> | undefined
     export let getCountry: () => string | undefined
     export let placeholder: string | Translation | undefined
     export let unit: Unit = undefined
@@ -53,7 +53,7 @@
         validator = Validators.get(type ?? "string")
         
         _placeholder = placeholder ?? validator?.getPlaceholder() ?? type
-        feedback = feedback?.setData(validator?.getFeedback(_value.data, getCountry))
+        feedback?.setData(validator?.getFeedback(_value.data, getCountry))
 
         initValueAndDenom()
     }
@@ -62,8 +62,8 @@
         // Update the value stores
         const v = _value.data
         if (!validator?.isValid(v, getCountry) || v === "") {
-            value.setData(undefined)
             feedback?.setData(validator?.getFeedback(v, getCountry))
+            value.setData("")
             return
         }
 

@@ -47,4 +47,11 @@ export default class EditLayerState {
                 !path.some((part, i) => !(sch.path.length > path.length && sch.path[i] === part))
         )
     }
+
+    public getSchema(path: string[]) {
+        return this.schema.filter(
+            (sch) =>
+                !path.some((part, i) => !(sch.path.length == path.length && sch.path[i] === part))
+        )
+    }
 }

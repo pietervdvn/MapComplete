@@ -1,7 +1,6 @@
 <script lang="ts">
 
     import {UIEventSource} from "../../Logic/UIEventSource";
-    import {Translation} from "../i18n/Translation";
     import type {ConfigMeta} from "./configMeta";
     import TagRenderingEditable from "../Popup/TagRendering/TagRenderingEditable.svelte";
     import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
@@ -15,8 +14,8 @@
     export let path: (string | number)[] = []
     export let schema: ConfigMeta
     let value = new UIEventSource<string>(undefined)
-    let feedback = new UIEventSource<Translation>(undefined)
-    
+
+
     const configJson: QuestionableTagRenderingConfigJson = {
         id: path.join("_"),
         render: schema.hints.inline ?? schema.path.at(-1) + ": <b>{value}</b>",
@@ -29,7 +28,12 @@
         }
     }
 
-    if (!schema.required) {
+    if (schema.hints.default) {
+        configJson.mappings = [{
+            if: "value=", // +schema.hints.default,
+            then: schema.path.at(-1) + " is not set. The default value <b>" + schema.hints.default + "</b> will be used. " + (schema.hints.ifunset ?? ""),
+        }]
+    } else if (!schema.required) {
         configJson.mappings = [{
             if: "value=",
             then: schema.path.at(-1) + " is not set. " + (schema.hints.ifunset ?? ""),

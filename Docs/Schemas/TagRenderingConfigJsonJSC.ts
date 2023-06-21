@@ -79,12 +79,10 @@ export default {
       "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
       "anyOf": [
         {
-          "$ref": "#/definitions/AndTagConfigJson",
-          "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+          "$ref": "#/definitions/{and:TagConfigJson[];}"
         },
         {
-          "$ref": "#/definitions/OrTagConfigJson",
-          "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+          "$ref": "#/definitions/{or:TagConfigJson[];}"
         },
         {
           "type": "string"
@@ -95,12 +93,10 @@ export default {
       "description": "If set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
       "anyOf": [
         {
-          "$ref": "#/definitions/AndTagConfigJson",
-          "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+          "$ref": "#/definitions/{and:TagConfigJson[];}"
         },
         {
-          "$ref": "#/definitions/OrTagConfigJson",
-          "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+          "$ref": "#/definitions/{or:TagConfigJson[];}"
         },
         {
           "type": "string"
@@ -175,13 +171,12 @@ export default {
   },
   "definitions": {
     "TagConfigJson": {
-      "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation",
+      "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag",
       "anyOf": [
         {
-          "$ref": "#/definitions/AndTagConfigJson"
+          "$ref": "#/definitions/{and:TagConfigJson[];}"
         },
         {
-          "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
           "type": "object",
           "properties": {
             "or": {
@@ -200,8 +195,7 @@ export default {
         }
       ]
     },
-    "AndTagConfigJson": {
-      "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
+    "{and:TagConfigJson[];}": {
       "type": "object",
       "properties": {
         "and": {
@@ -215,8 +209,7 @@ export default {
         "and"
       ]
     },
-    "OrTagConfigJson": {
-      "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
+    "{or:TagConfigJson[];}": {
       "type": "object",
       "properties": {
         "or": {

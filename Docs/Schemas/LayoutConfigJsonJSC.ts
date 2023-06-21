@@ -306,13 +306,12 @@ export default {
   ],
   "definitions": {
     "TagConfigJson": {
-      "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation",
+      "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag",
       "anyOf": [
         {
-          "$ref": "#/definitions/AndTagConfigJson"
+          "$ref": "#/definitions/{and:TagConfigJson[];}"
         },
         {
-          "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
           "type": "object",
           "properties": {
             "or": {
@@ -331,8 +330,7 @@ export default {
         }
       ]
     },
-    "AndTagConfigJson": {
-      "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
+    "{and:TagConfigJson[];}": {
       "type": "object",
       "properties": {
         "and": {
@@ -346,8 +344,7 @@ export default {
         "and"
       ]
     },
-    "OrTagConfigJson": {
-      "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
+    "{or:TagConfigJson[];}": {
       "type": "object",
       "properties": {
         "or": {
@@ -511,12 +508,10 @@ export default {
           "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
           "anyOf": [
             {
-              "$ref": "#/definitions/AndTagConfigJson",
-              "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{and:TagConfigJson[];}"
             },
             {
-              "$ref": "#/definitions/OrTagConfigJson",
-              "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{or:TagConfigJson[];}"
             },
             {
               "type": "string"
@@ -527,12 +522,10 @@ export default {
           "description": "If set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
           "anyOf": [
             {
-              "$ref": "#/definitions/AndTagConfigJson",
-              "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{and:TagConfigJson[];}"
             },
             {
-              "$ref": "#/definitions/OrTagConfigJson",
-              "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{or:TagConfigJson[];}"
             },
             {
               "type": "string"
@@ -614,7 +607,7 @@ export default {
       "properties": {
         "if": {
           "$ref": "#/definitions/TagConfigJson",
-          "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+          "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag"
         },
         "then": {
           "description": "Shown if the 'if is fulfilled\nType: rendered",
@@ -655,12 +648,10 @@ export default {
           "description": "In some cases, multiple taggings exist (e.g. a default assumption, or a commonly mapped abbreviation and a fully written variation).\n\nIn the latter case, a correct text should be shown, but only a single, canonical tagging should be selectable by the user.\nIn this case, one of the mappings can be hiden by setting this flag.\n\nTo demonstrate an example making a default assumption:\n\nmappings: [\n {\n     if: \"access=\", -- no access tag present, we assume accessible\n     then: \"Accessible to the general public\",\n     hideInAnswer: true\n },\n {\n     if: \"access=yes\",\n     then: \"Accessible to the general public\", -- the user selected this, we add that to OSM\n },\n {\n     if: \"access=no\",\n     then: \"Not accessible to the public\"\n }\n]\n\n\nFor example, for an operator, we have `operator=Agentschap Natuur en Bos`, which is often abbreviated to `operator=ANB`.\nThen, we would add two mappings:\n{\n    if: \"operator=Agentschap Natuur en Bos\" -- the non-abbreviated version which should be uploaded\n    then: \"Maintained by Agentschap Natuur en Bos\"\n},\n{\n    if: \"operator=ANB\", -- we don't want to upload abbreviations\n    then: \"Maintained by Agentschap Natuur en Bos\"\n    hideInAnswer: true\n}\n\nHide in answer can also be a tagsfilter, e.g. to make sure an option is only shown when appropriate.\nKeep in mind that this is reverse logic: it will be hidden in the answer if the condition is true, it will thus only show in the case of a mismatch\n\ne.g., for toilets: if \"wheelchair=no\", we know there is no wheelchair dedicated room.\nFor the location of the changing table, the option \"in the wheelchair accessible toilet is weird\", so we write:\n\n{\n    \"question\": \"Where is the changing table located?\"\n    \"mappings\": [\n        {\"if\":\"changing_table:location=female\",\"then\":\"In the female restroom\"},\n       {\"if\":\"changing_table:location=male\",\"then\":\"In the male restroom\"},\n       {\"if\":\"changing_table:location=wheelchair\",\"then\":\"In the wheelchair accessible restroom\", \"hideInAnswer\": \"wheelchair=no\"},\n\n    ]\n}\n\nAlso have a look for the meta-tags\n{\n    if: \"operator=Agentschap Natuur en Bos\",\n    then: \"Maintained by Agentschap Natuur en Bos\",\n    hideInAnswer: \"_country!=be\"\n}",
           "anyOf": [
             {
-              "$ref": "#/definitions/AndTagConfigJson",
-              "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{and:TagConfigJson[];}"
             },
             {
-              "$ref": "#/definitions/OrTagConfigJson",
-              "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{or:TagConfigJson[];}"
             },
             {
               "type": [
@@ -674,12 +665,10 @@ export default {
           "description": "Only applicable if 'multiAnswer' is set.\nThis is for situations such as:\n`accepts:coins=no` where one can select all the possible payment methods. However, we want to make explicit that some options _were not_ selected.\nThis can be done with `ifnot`\nNote that we can not explicitly render this negative case to the user, we cannot show `does _not_ accept coins`.\nIf this is important to your usecase, consider using multiple radiobutton-fields without `multiAnswer`",
           "anyOf": [
             {
-              "$ref": "#/definitions/AndTagConfigJson",
-              "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{and:TagConfigJson[];}"
             },
             {
-              "$ref": "#/definitions/OrTagConfigJson",
-              "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{or:TagConfigJson[];}"
             },
             {
               "type": "string"
@@ -701,12 +690,10 @@ export default {
           "description": "If the searchable selector is picked, mappings with this item will have priority and show up even if the others are hidden\nUse this sparingly",
           "anyOf": [
             {
-              "$ref": "#/definitions/AndTagConfigJson",
-              "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{and:TagConfigJson[];}"
             },
             {
-              "$ref": "#/definitions/OrTagConfigJson",
-              "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{or:TagConfigJson[];}"
             },
             {
               "type": "string"
@@ -756,7 +743,7 @@ export default {
             "properties": {
               "if": {
                 "$ref": "#/definitions/TagConfigJson",
-                "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+                "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag"
               },
               "then": {
                 "description": "Badge to show\nType: icon",
@@ -778,6 +765,17 @@ export default {
         },
         "iconSize": {
           "description": "A string containing \"width,height\" or \"width,height,anchorpoint\" where anchorpoint is any of 'center', 'top', 'bottom', 'left', 'right', 'bottomleft','topright', ...\nDefault is '40,40,center'",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/TagRenderingConfigJson"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "anchor": {
+          "description": "question: What is the anchorpoint of the icon?\n\nThis matches the geographical point with a location on the icon.\nFor example, a feature attached to the ground can use 'bottom' as zooming in will give the appearance of being anchored to a fixed location.",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -1170,12 +1168,10 @@ export default {
           "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
           "anyOf": [
             {
-              "$ref": "#/definitions/AndTagConfigJson",
-              "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{and:TagConfigJson[];}"
             },
             {
-              "$ref": "#/definitions/OrTagConfigJson",
-              "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{or:TagConfigJson[];}"
             },
             {
               "type": "string"
@@ -1186,12 +1182,10 @@ export default {
           "description": "If set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
           "anyOf": [
             {
-              "$ref": "#/definitions/AndTagConfigJson",
-              "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{and:TagConfigJson[];}"
             },
             {
-              "$ref": "#/definitions/OrTagConfigJson",
-              "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{or:TagConfigJson[];}"
             },
             {
               "type": "string"
@@ -1352,12 +1346,10 @@ export default {
           "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
           "anyOf": [
             {
-              "$ref": "#/definitions/AndTagConfigJson",
-              "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{and:TagConfigJson[];}"
             },
             {
-              "$ref": "#/definitions/OrTagConfigJson",
-              "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{or:TagConfigJson[];}"
             },
             {
               "type": "string"
@@ -1368,12 +1360,10 @@ export default {
           "description": "If set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
           "anyOf": [
             {
-              "$ref": "#/definitions/AndTagConfigJson",
-              "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{and:TagConfigJson[];}"
             },
             {
-              "$ref": "#/definitions/OrTagConfigJson",
-              "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{or:TagConfigJson[];}"
             },
             {
               "type": "string"
@@ -1457,15 +1447,13 @@ export default {
             "properties": {
               "question": {},
               "osmTags": {
-                "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation",
+                "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag",
                 "anyOf": [
                   {
-                    "$ref": "#/definitions/AndTagConfigJson",
-                    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+                    "$ref": "#/definitions/{and:TagConfigJson[];}"
                   },
                   {
-                    "$ref": "#/definitions/OrTagConfigJson",
-                    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+                    "$ref": "#/definitions/{or:TagConfigJson[];}"
                   },
                   {
                     "type": "string"
@@ -1556,12 +1544,10 @@ export default {
           "description": "In some cases, the contributor is not allowed to delete the current feature (e.g. because it isn't a point, the point is referenced by a relation or the user isn't experienced enough).\nTo still offer the user a 'delete'-option, the feature is retagged with these tags. This is a soft deletion, as the point isn't actually removed from OSM but rather marked as 'disused'\nIt is important that the feature will be retagged in such a way that it won't be picked up by the layer anymore!\n\nExample (note that \"amenity=\" erases the 'amenity'-key alltogether):\n```\n{\n    \"and\": [\"disussed:amenity=public_bookcase\", \"amenity=\"]\n}\n```\n\nor (notice the use of the ':='-tag to copy the old value of 'shop=*' into 'disused:shop='):\n```\n{\n    \"and\": [\"disused:shop:={shop}\", \"shop=\"]\n}\n```",
           "anyOf": [
             {
-              "$ref": "#/definitions/AndTagConfigJson",
-              "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{and:TagConfigJson[];}"
             },
             {
-              "$ref": "#/definitions/OrTagConfigJson",
-              "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{or:TagConfigJson[];}"
             },
             {
               "type": "string"
@@ -1719,17 +1705,17 @@ export default {
           ]
         },
         "source": {
-          "description": "This determines where the data for the layer is fetched: from OSM or from an external geojson dataset.\n\nIf no 'geojson' is defined, data will be fetched from overpass and the OSM-API.\n\nEvery source _must_ define which tags _must_ be present in order to be picked up.\n\nNote: a source must always be defined. 'special' is only allowed if this is a builtin-layer",
+          "description": "Question: Where should the data be fetched from?\n\nThis determines where the data for the layer is fetched: from OSM or from an external geojson dataset.\n\nIf no 'geojson' is defined, data will be fetched from overpass and the OSM-API.\n\nEvery source _must_ define which tags _must_ be present in order to be picked up.\n\nNote: a source must always be defined. 'special' is only allowed if this is a builtin-layer\n\ntypes: Load data with specific tags from OpenStreetMap ; Load data from an external geojson source ;\ngroup: basic",
           "anyOf": [
             {
               "type": "object",
               "properties": {
                 "osmTags": {
                   "$ref": "#/definitions/TagConfigJson",
-                  "description": "Every source must set which tags have to be present in order to load the given layer."
+                  "description": "question: Which tags must be present on the feature to show it in this layer?\nEvery source must set which tags have to be present in order to load the given layer."
                 },
                 "maxCacheAge": {
-                  "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
+                  "description": "question: How long (in seconds) is the data allowed to remain cached until it must be refreshed?\nThe maximum amount of seconds that a tile is allowed to linger in the cache\n\ntype: nat",
                   "type": "number"
                 }
               },
@@ -1789,12 +1775,10 @@ export default {
           "description": "If set, only features matching this extra tag will be shown.\nThis is useful to hide certain features from view.\n\nThe default value is 'yes'\n\ngroup: advanced",
           "anyOf": [
             {
-              "$ref": "#/definitions/AndTagConfigJson",
-              "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{and:TagConfigJson[];}"
             },
             {
-              "$ref": "#/definitions/OrTagConfigJson",
-              "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{or:TagConfigJson[];}"
             },
             {
               "type": "string"
@@ -1806,7 +1790,7 @@ export default {
           "type": "boolean"
         },
         "minzoom": {
-          "description": "The minimum needed zoomlevel required to start loading and displaying the data.\nThis can be used to only show common features (e.g. a bicycle parking) only when the map is zoomed in very much (17).\nThis prevents cluttering the map with thousands of parkings if one is looking to an entire city.\n\nDefault: 0\n\ngroup: basic\nquestion: At what zoom level should features of the layer be shown?\nifunset: Always load this layer, even if the entire world is in view.",
+          "description": "The minimum needed zoomlevel required to start loading and displaying the data.\nThis can be used to only show common features (e.g. a bicycle parking) only when the map is zoomed in very much (17).\nThis prevents cluttering the map with thousands of parkings if one is looking to an entire city.\n\nDefault: 0\ngroup: basic\ntype: nat\nquestion: At what zoom level should features of the layer be shown?\nifunset: Always load this layer, even if the entire world is in view.",
           "type": "number"
         },
         "shownByDefault": {
@@ -1929,53 +1913,23 @@ export default {
                   "type": "string"
                 }
               },
-              "preciseInput": {
-                "description": "If set, the user will prompted to confirm the location before actually adding the data.\nThis will be with a 'drag crosshair'-method.\n\nIf 'preferredBackgroundCategory' is set, the element will attempt to pick a background layer of that category.",
+              "snapToLayer": {
+                "description": "If specified, these layers will be shown to and the new point will be snapped towards it",
                 "anyOf": [
                   {
-                    "type": "object",
-                    "properties": {
-                      "preferredBackground": {
-                        "description": "The type of background picture",
-                        "anyOf": [
-                          {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "snapToLayer": {
-                        "description": "If specified, these layers will be shown to and the new point will be snapped towards it",
-                        "anyOf": [
-                          {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "maxSnapDistance": {
-                        "description": "If specified, a new point will only be snapped if it is within this range.\nDistance in meter\n\nDefault: 10",
-                        "type": "number"
-                      }
+                    "type": "array",
+                    "items": {
+                      "type": "string"
                     }
                   },
                   {
-                    "enum": [
-                      true
-                    ],
-                    "type": "boolean"
+                    "type": "string"
                   }
                 ]
+              },
+              "maxSnapDistance": {
+                "description": "If specified, a new point will only be snapped if it is within this range.\nDistance in meter\n\nDefault: 10",
+                "type": "number"
               }
             },
             "required": [
@@ -2164,17 +2118,17 @@ export default {
           ]
         },
         "source": {
-          "description": "This determines where the data for the layer is fetched: from OSM or from an external geojson dataset.\n\nIf no 'geojson' is defined, data will be fetched from overpass and the OSM-API.\n\nEvery source _must_ define which tags _must_ be present in order to be picked up.\n\nNote: a source must always be defined. 'special' is only allowed if this is a builtin-layer",
+          "description": "Question: Where should the data be fetched from?\n\nThis determines where the data for the layer is fetched: from OSM or from an external geojson dataset.\n\nIf no 'geojson' is defined, data will be fetched from overpass and the OSM-API.\n\nEvery source _must_ define which tags _must_ be present in order to be picked up.\n\nNote: a source must always be defined. 'special' is only allowed if this is a builtin-layer\n\ntypes: Load data with specific tags from OpenStreetMap ; Load data from an external geojson source ;\ngroup: basic",
           "anyOf": [
             {
               "type": "object",
               "properties": {
                 "osmTags": {
                   "$ref": "#/definitions/TagConfigJson",
-                  "description": "Every source must set which tags have to be present in order to load the given layer."
+                  "description": "question: Which tags must be present on the feature to show it in this layer?\nEvery source must set which tags have to be present in order to load the given layer."
                 },
                 "maxCacheAge": {
-                  "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
+                  "description": "question: How long (in seconds) is the data allowed to remain cached until it must be refreshed?\nThe maximum amount of seconds that a tile is allowed to linger in the cache\n\ntype: nat",
                   "type": "number"
                 }
               },
@@ -2234,12 +2188,10 @@ export default {
           "description": "If set, only features matching this extra tag will be shown.\nThis is useful to hide certain features from view.\n\nThe default value is 'yes'\n\ngroup: advanced",
           "anyOf": [
             {
-              "$ref": "#/definitions/AndTagConfigJson",
-              "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{and:TagConfigJson[];}"
             },
             {
-              "$ref": "#/definitions/OrTagConfigJson",
-              "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+              "$ref": "#/definitions/{or:TagConfigJson[];}"
             },
             {
               "type": "string"
@@ -2251,7 +2203,7 @@ export default {
           "type": "boolean"
         },
         "minzoom": {
-          "description": "The minimum needed zoomlevel required to start loading and displaying the data.\nThis can be used to only show common features (e.g. a bicycle parking) only when the map is zoomed in very much (17).\nThis prevents cluttering the map with thousands of parkings if one is looking to an entire city.\n\nDefault: 0\n\ngroup: basic\nquestion: At what zoom level should features of the layer be shown?\nifunset: Always load this layer, even if the entire world is in view.",
+          "description": "The minimum needed zoomlevel required to start loading and displaying the data.\nThis can be used to only show common features (e.g. a bicycle parking) only when the map is zoomed in very much (17).\nThis prevents cluttering the map with thousands of parkings if one is looking to an entire city.\n\nDefault: 0\ngroup: basic\ntype: nat\nquestion: At what zoom level should features of the layer be shown?\nifunset: Always load this layer, even if the entire world is in view.",
           "type": "number"
         },
         "shownByDefault": {
@@ -2374,53 +2326,23 @@ export default {
                   "type": "string"
                 }
               },
-              "preciseInput": {
-                "description": "If set, the user will prompted to confirm the location before actually adding the data.\nThis will be with a 'drag crosshair'-method.\n\nIf 'preferredBackgroundCategory' is set, the element will attempt to pick a background layer of that category.",
+              "snapToLayer": {
+                "description": "If specified, these layers will be shown to and the new point will be snapped towards it",
                 "anyOf": [
                   {
-                    "type": "object",
-                    "properties": {
-                      "preferredBackground": {
-                        "description": "The type of background picture",
-                        "anyOf": [
-                          {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "snapToLayer": {
-                        "description": "If specified, these layers will be shown to and the new point will be snapped towards it",
-                        "anyOf": [
-                          {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "maxSnapDistance": {
-                        "description": "If specified, a new point will only be snapped if it is within this range.\nDistance in meter\n\nDefault: 10",
-                        "type": "number"
-                      }
+                    "type": "array",
+                    "items": {
+                      "type": "string"
                     }
                   },
                   {
-                    "enum": [
-                      true
-                    ],
-                    "type": "boolean"
+                    "type": "string"
                   }
                 ]
+              },
+              "maxSnapDistance": {
+                "description": "If specified, a new point will only be snapped if it is within this range.\nDistance in meter\n\nDefault: 10",
+                "type": "number"
               }
             },
             "required": [

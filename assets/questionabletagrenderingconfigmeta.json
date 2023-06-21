@@ -129,14 +129,15 @@
       "mappings",
       "if"
     ],
-    "required": false,
-    "hints": {},
+    "required": true,
+    "hints": {
+      "typehint": "tag"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
         "type": "object",
         "properties": {
           "or": {
@@ -154,27 +155,7 @@
         "type": "string"
       }
     ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "if"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "if"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n"
   },
   {
     "path": [
@@ -260,12 +241,10 @@
     "hints": {},
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson",
-        "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "$ref": "#/definitions/OrTagConfigJson",
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
       },
       {
         "type": [
@@ -279,27 +258,18 @@
   {
     "path": [
       "mappings",
-      "hideInAnswer"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
       "hideInAnswer",
       "and"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "typehint": "tag"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
         "type": "object",
         "properties": {
           "or": {
@@ -317,28 +287,7 @@
         "type": "string"
       }
     ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "hideInAnswer",
-      "and"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "hideInAnswer"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n"
   },
   {
     "path": [
@@ -347,13 +296,14 @@
       "or"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "typehint": "tag"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
         "type": "object",
         "properties": {
           "or": {
@@ -371,29 +321,7 @@
         "type": "string"
       }
     ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "hideInAnswer",
-      "or"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "hideInAnswer",
-      "or"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n"
   },
   {
     "path": [
@@ -404,12 +332,10 @@
     "hints": {},
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson",
-        "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "$ref": "#/definitions/OrTagConfigJson",
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
       },
       {
         "type": "string"
@@ -420,27 +346,18 @@
   {
     "path": [
       "mappings",
-      "ifnot"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
       "ifnot",
       "and"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "typehint": "tag"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
         "type": "object",
         "properties": {
           "or": {
@@ -458,28 +375,7 @@
         "type": "string"
       }
     ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "ifnot",
-      "and"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "ifnot"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n"
   },
   {
     "path": [
@@ -488,13 +384,14 @@
       "or"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "typehint": "tag"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
         "type": "object",
         "properties": {
           "or": {
@@ -512,29 +409,7 @@
         "type": "string"
       }
     ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "ifnot",
-      "or"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "ifnot",
-      "or"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n"
   },
   {
     "path": [
@@ -555,12 +430,10 @@
     "hints": {},
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson",
-        "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "$ref": "#/definitions/OrTagConfigJson",
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
       },
       {
         "type": "string"
@@ -571,27 +444,18 @@
   {
     "path": [
       "mappings",
-      "priorityIf"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
       "priorityIf",
       "and"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "typehint": "tag"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
         "type": "object",
         "properties": {
           "or": {
@@ -609,28 +473,7 @@
         "type": "string"
       }
     ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "priorityIf",
-      "and"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "priorityIf"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n"
   },
   {
     "path": [
@@ -639,13 +482,14 @@
       "or"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "typehint": "tag"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
         "type": "object",
         "properties": {
           "or": {
@@ -663,29 +507,7 @@
         "type": "string"
       }
     ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "priorityIf",
-      "or"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "priorityIf",
-      "or"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n"
   },
   {
     "path": [
@@ -802,12 +624,10 @@
     "hints": {},
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson",
-        "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "$ref": "#/definitions/OrTagConfigJson",
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
       },
       {
         "type": "string"
@@ -817,26 +637,18 @@
   },
   {
     "path": [
-      "condition"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
       "condition",
       "and"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "typehint": "tag"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
         "type": "object",
         "properties": {
           "or": {
@@ -854,26 +666,7 @@
         "type": "string"
       }
     ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "condition",
-      "and"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "condition"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n"
   },
   {
     "path": [
@@ -881,13 +674,14 @@
       "or"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "typehint": "tag"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
         "type": "object",
         "properties": {
           "or": {
@@ -905,27 +699,7 @@
         "type": "string"
       }
     ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "condition",
-      "or"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "condition",
-      "or"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n"
   },
   {
     "path": [
@@ -935,12 +709,10 @@
     "hints": {},
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson",
-        "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "$ref": "#/definitions/OrTagConfigJson",
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
       },
       {
         "type": "string"
@@ -950,26 +722,18 @@
   },
   {
     "path": [
-      "metacondition"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
       "metacondition",
       "and"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "typehint": "tag"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
         "type": "object",
         "properties": {
           "or": {
@@ -987,26 +751,7 @@
         "type": "string"
       }
     ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "metacondition",
-      "and"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "metacondition"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n"
   },
   {
     "path": [
@@ -1014,13 +759,14 @@
       "or"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "typehint": "tag"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
         "type": "object",
         "properties": {
           "or": {
@@ -1038,26 +784,6 @@
         "type": "string"
       }
     ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "metacondition",
-      "or"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "metacondition",
-      "or"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n"
   }
 ]

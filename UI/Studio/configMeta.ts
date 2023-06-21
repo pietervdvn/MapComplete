@@ -6,9 +6,14 @@ export interface ConfigMeta {
     hints: {
         group?: string
         typehint?: string
+        /**
+         * If multiple subcategories can be chosen
+         */
+        types?: string
         question?: string
         ifunset?: string
         inline?: string
+        default?: string
     }
     required: boolean
     description: string
