@@ -1712,7 +1712,7 @@ export default {
               "properties": {
                 "osmTags": {
                   "$ref": "#/definitions/TagConfigJson",
-                  "description": "question: Which tags must be present on the feature to show it in this layer?\nEvery source must set which tags have to be present in order to load the given layer."
+                  "description": "question: Which tags must be present on the feature to show it in this layer?\n\n    Every source must set which tags have to be present in order to load the given layer."
                 },
                 "maxCacheAge": {
                   "description": "question: How long (in seconds) is the data allowed to remain cached until it must be refreshed?\nThe maximum amount of seconds that a tile is allowed to linger in the cache\n\ntype: nat",
@@ -2125,7 +2125,7 @@ export default {
               "properties": {
                 "osmTags": {
                   "$ref": "#/definitions/TagConfigJson",
-                  "description": "question: Which tags must be present on the feature to show it in this layer?\nEvery source must set which tags have to be present in order to load the given layer."
+                  "description": "question: Which tags must be present on the feature to show it in this layer?\n\n    Every source must set which tags have to be present in order to load the given layer."
                 },
                 "maxCacheAge": {
                   "description": "question: How long (in seconds) is the data allowed to remain cached until it must be refreshed?\nThe maximum amount of seconds that a tile is allowed to linger in the cache\n\ntype: nat",

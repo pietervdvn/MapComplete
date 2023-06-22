@@ -61,9 +61,6 @@
     + [just_created](#just_created)
     + [leftover-questions](#leftover-questions)
     + [all-tags](#all-tags)
-1. [matchpoint](#matchpoint)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
 1. [import_candidate](#import_candidate)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
@@ -863,47 +860,6 @@ This tagrendering has no question and is thus read-only
 
 
 
- matchpoint 
-============
-
-
-
-<img src='https://mapcomplete.osm.be/./assets/svg/crosshair-empty.svg' height="100px"> 
-
-The default rendering for a locationInput which snaps onto another object
-
-
-
-
-
-
-  - This layer is shown at zoomlevel **0** and higher
-  - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
-
-
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-
-
-
-
-
- Supported attributes 
-----------------------
-
-
-
-
-
  import_candidate 
 ==================
 
@@ -1438,7 +1394,6 @@ The following layers are included in MapComplete:
   - [map](./Layers/map.md)
   - [maproulette](./Layers/maproulette.md)
   - [maproulette_challenge](./Layers/maproulette_challenge.md)
-  - [matchpoint](./Layers/matchpoint.md)
   - [maxspeed](./Layers/maxspeed.md)
   - [named_streets](./Layers/named_streets.md)
   - [nature_reserve](./Layers/nature_reserve.md)
