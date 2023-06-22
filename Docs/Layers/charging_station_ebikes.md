@@ -46,7 +46,7 @@ this quick overview is incomplete
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [key](https://wiki.openstreetmap.org/wiki/Tag:access%3Dkey) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [key](https://wiki.openstreetmap.org/wiki/Tag:access%3Dkey) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate) [permissive](https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermissive)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity#values) [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [pnat](../SpecialInputElements.md#pnat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:schuko#values) [socket:schuko](https://wiki.openstreetmap.org/wiki/Key:socket:schuko) | [pnat](../SpecialInputElements.md#pnat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:typee#values) [socket:typee](https://wiki.openstreetmap.org/wiki/Key:socket:typee) | [pnat](../SpecialInputElements.md#pnat) | 
@@ -200,11 +200,12 @@ This is rendered with  `Access is {access}`
 
 
   - *Anyone can use this charging station (payment might be needed)*  corresponds with  `access=yes`
-  - *Anyone can use this charging station (payment might be needed)*  corresponds with  `access=permissive|access=public`
+  - *Anyone can use this charging station (payment might be needed)*  corresponds with  `access=public`
   - This option cannot be chosen as answer
   - *Only customers of the place this station belongs to can use this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests</span>*  corresponds with  `access=customers`
   - *A <b>key</b> must be requested to access this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests, which receive a key from the reception to unlock the charging station</span>*  corresponds with  `access=key`
-  - *Not accessible to the general public (e.g. only accessible to the owners, employees, …)*  corresponds with  `access=private`
+  - *Not accessible to the general public (e.g. only accessible to the owners, employees, ...)*  corresponds with  `access=private`
+  - *This charging station is accessible to the public during certain hours or conditions. Restrictions might apply, but general use is allowed.*  corresponds with  `access=permissive`
 
 
 
@@ -617,7 +618,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Schuko wall plu
 
 
 
-  - *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 3.6 kw A*  corresponds with  `socket:schuko:output=3.6 kW`
+  - *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 3.6 kW A*  corresponds with  `socket:schuko:output=3.6 kW`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:schuko~.+&socket:schuko!=0`
@@ -686,8 +687,8 @@ This is rendered with  `<div style='display: inline-block'><b><b>European wall p
 
 
 
-  - *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 3 kw A*  corresponds with  `socket:typee:output=3 kW`
-  - *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 22 kw A*  corresponds with  `socket:typee:output=22 kW`
+  - *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 3 kW A*  corresponds with  `socket:typee:output=3 kW`
+  - *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 22 kW A*  corresponds with  `socket:typee:output=22 kW`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:typee~.+&socket:typee!=0`
@@ -756,7 +757,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Chademo</b></b>
 
 
 
-  - *<b>Chademo</b> outputs at most 50 kw A*  corresponds with  `socket:chademo:output=50 kW`
+  - *<b>Chademo</b> outputs at most 50 kW A*  corresponds with  `socket:chademo:output=50 kW`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:chademo~.+&socket:chademo!=0`
@@ -826,8 +827,8 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 with cab
 
 
 
-  - *<b>Type 1 with cable</b> (J1772) outputs at most 3.7 kw A*  corresponds with  `socket:type1_cable:output=3.7 kW`
-  - *<b>Type 1 with cable</b> (J1772) outputs at most 7 kw A*  corresponds with  `socket:type1_cable:output=7 kW`
+  - *<b>Type 1 with cable</b> (J1772) outputs at most 3.7 kW A*  corresponds with  `socket:type1_cable:output=3.7 kW`
+  - *<b>Type 1 with cable</b> (J1772) outputs at most 7 kW A*  corresponds with  `socket:type1_cable:output=7 kW`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type1_cable~.+&socket:type1_cable!=0`
@@ -897,10 +898,10 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 <i>witho
 
 
 
-  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 3.7 kw A*  corresponds with  `socket:type1:output=3.7 kW`
-  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 6.6 kw A*  corresponds with  `socket:type1:output=6.6 kW`
-  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7 kw A*  corresponds with  `socket:type1:output=7 kW`
-  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7.2 kw A*  corresponds with  `socket:type1:output=7.2 kW`
+  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 3.7 kW A*  corresponds with  `socket:type1:output=3.7 kW`
+  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 6.6 kW A*  corresponds with  `socket:type1:output=6.6 kW`
+  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7 kW A*  corresponds with  `socket:type1:output=7 kW`
+  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7.2 kW A*  corresponds with  `socket:type1:output=7.2 kW`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type1~.+&socket:type1!=0`
@@ -971,10 +972,10 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 CCS</b> 
 
 
 
-  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 kw A*  corresponds with  `socket:type1_combo:output=50 kW`
-  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 62.5 kw A*  corresponds with  `socket:type1_combo:output=62.5 kW`
-  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 150 kw A*  corresponds with  `socket:type1_combo:output=150 kW`
-  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 350 kw A*  corresponds with  `socket:type1_combo:output=350 kW`
+  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 kW A*  corresponds with  `socket:type1_combo:output=50 kW`
+  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 62.5 kW A*  corresponds with  `socket:type1_combo:output=62.5 kW`
+  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 150 kW A*  corresponds with  `socket:type1_combo:output=150 kW`
+  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 350 kW A*  corresponds with  `socket:type1_combo:output=350 kW`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type1_combo~.+&socket:type1_combo!=0`
@@ -1044,9 +1045,9 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 
 
-  - *<b>Tesla Supercharger</b> outputs at most 120 kw A*  corresponds with  `socket:tesla_supercharger:output=120 kW`
-  - *<b>Tesla Supercharger</b> outputs at most 150 kw A*  corresponds with  `socket:tesla_supercharger:output=150 kW`
-  - *<b>Tesla Supercharger</b> outputs at most 250 kw A*  corresponds with  `socket:tesla_supercharger:output=250 kW`
+  - *<b>Tesla Supercharger</b> outputs at most 120 kW A*  corresponds with  `socket:tesla_supercharger:output=120 kW`
+  - *<b>Tesla Supercharger</b> outputs at most 150 kW A*  corresponds with  `socket:tesla_supercharger:output=150 kW`
+  - *<b>Tesla Supercharger</b> outputs at most 250 kW A*  corresponds with  `socket:tesla_supercharger:output=250 kW`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger~.+&socket:tesla_supercharger!=0`
@@ -1117,8 +1118,8 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2</b> (men
 
 
 
-  - *<b>Type 2</b> (mennekes) outputs at most 11 kw A*  corresponds with  `socket:type2:output=11 kW`
-  - *<b>Type 2</b> (mennekes) outputs at most 22 kw A*  corresponds with  `socket:type2:output=22 kW`
+  - *<b>Type 2</b> (mennekes) outputs at most 11 kW A*  corresponds with  `socket:type2:output=11 kW`
+  - *<b>Type 2</b> (mennekes) outputs at most 22 kW A*  corresponds with  `socket:type2:output=22 kW`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type2~.+&socket:type2!=0`
@@ -1189,7 +1190,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2 CCS</b> 
 
 
 
-  - *<b>Type 2 CCS</b> (mennekes) outputs at most 50 kw A*  corresponds with  `socket:type2_combo:output=50 kW`
+  - *<b>Type 2 CCS</b> (mennekes) outputs at most 50 kW A*  corresponds with  `socket:type2_combo:output=50 kW`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type2_combo~.+&socket:type2_combo!=0`
@@ -1260,8 +1261,8 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2 with cab
 
 
 
-  - *<b>Type 2 with cable</b> (mennekes) outputs at most 11 kw A*  corresponds with  `socket:type2_cable:output=11 kW`
-  - *<b>Type 2 with cable</b> (mennekes) outputs at most 22 kw A*  corresponds with  `socket:type2_cable:output=22 kW`
+  - *<b>Type 2 with cable</b> (mennekes) outputs at most 11 kW A*  corresponds with  `socket:type2_cable:output=11 kW`
+  - *<b>Type 2 with cable</b> (mennekes) outputs at most 22 kW A*  corresponds with  `socket:type2_cable:output=22 kW`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type2_cable~.+&socket:type2_cable!=0`
@@ -1274,18 +1275,18 @@ This tagrendering has labels  `technical`
 
 
 
-The question is  *What voltage do the plugs with <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded Type 2 CSS)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> offer?*
+The question is  *What voltage do the plugs with <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> offer?*
 
 This rendering asks information about the property  [socket:tesla_supercharger_ccs:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:voltage) 
 
-This is rendered with  `<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded Type 2 CSS)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs {socket:tesla_supercharger_ccs:voltage} volt`
+This is rendered with  `<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs {socket:tesla_supercharger_ccs:voltage} volt`
 
 
 
 
 
-  - *<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs 500 volt*  corresponds with  `socket:tesla_supercharger_ccs:voltage=500 V`
-  - *<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs 920 volt*  corresponds with  `socket:tesla_supercharger_ccs:voltage=920 V`
+  - *<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 500 volt*  corresponds with  `socket:tesla_supercharger_ccs:voltage=500 V`
+  - *<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 920 volt*  corresponds with  `socket:tesla_supercharger_ccs:voltage=920 V`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0`
@@ -1322,17 +1323,17 @@ This tagrendering has labels  `technical`
 
 
 
-The question is  *What power output does a single plug of type <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded Type 2 CSS)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> offer?*
+The question is  *What power output does a single plug of type <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> offer?*
 
 This rendering asks information about the property  [socket:tesla_supercharger_ccs:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:output) 
 
-This is rendered with  `<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded Type 2 CSS)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs at most {socket:tesla_supercharger_ccs:output}`
+This is rendered with  `<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs at most {socket:tesla_supercharger_ccs:output}`
 
 
 
 
 
-  - *<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs at most 50 kw A*  corresponds with  `socket:tesla_supercharger_ccs:output=50 kW`
+  - *<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 50 kW A*  corresponds with  `socket:tesla_supercharger_ccs:output=50 kW`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0`
@@ -1345,17 +1346,17 @@ This tagrendering has labels  `technical`
 
 
 
-The question is  *What voltage do the plugs with <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> offer?*
+The question is  *What voltage do the plugs with <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> offer?*
 
 This rendering asks information about the property  [socket:tesla_destination:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage) 
 
-This is rendered with  `<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs {socket:tesla_destination:voltage} volt`
+This is rendered with  `<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs {socket:tesla_destination:voltage} volt`
 
 
 
 
 
-  - *<b>Tesla Supercharger (Destination)</b> outputs 480 volt*  corresponds with  `socket:tesla_destination:voltage=480 V`
+  - *<b>Tesla Supercharger (destination)</b> outputs 480 volt*  corresponds with  `socket:tesla_destination:voltage=480 V`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+&socket:tesla_destination!=0`
@@ -1368,18 +1369,18 @@ This tagrendering has labels  `technical`
 
 
 
-The question is  *What current do the plugs with <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> offer?*
+The question is  *What current do the plugs with <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> offer?*
 
 This rendering asks information about the property  [socket:tesla_destination:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current) 
 
-This is rendered with  `<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most {socket:tesla_destination:current}A`
+This is rendered with  `<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most {socket:tesla_destination:current}A`
 
 
 
 
 
-  - *<b>Tesla Supercharger (Destination)</b> outputs at most 125 A*  corresponds with  `socket:tesla_destination:current=125 A`
-  - *<b>Tesla Supercharger (Destination)</b> outputs at most 350 A*  corresponds with  `socket:tesla_destination:current=350 A`
+  - *<b>Tesla Supercharger (destination)</b> outputs at most 125 A*  corresponds with  `socket:tesla_destination:current=125 A`
+  - *<b>Tesla Supercharger (destination)</b> outputs at most 350 A*  corresponds with  `socket:tesla_destination:current=350 A`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+&socket:tesla_destination!=0`
@@ -1392,19 +1393,19 @@ This tagrendering has labels  `technical`
 
 
 
-The question is  *What power output does a single plug of type <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> offer?*
+The question is  *What power output does a single plug of type <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> offer?*
 
 This rendering asks information about the property  [socket:tesla_destination:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output) 
 
-This is rendered with  `<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most {socket:tesla_destination:output}`
+This is rendered with  `<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most {socket:tesla_destination:output}`
 
 
 
 
 
-  - *<b>Tesla Supercharger (Destination)</b> outputs at most 120 kw A*  corresponds with  `socket:tesla_destination:output=120 kW`
-  - *<b>Tesla Supercharger (Destination)</b> outputs at most 150 kw A*  corresponds with  `socket:tesla_destination:output=150 kW`
-  - *<b>Tesla Supercharger (Destination)</b> outputs at most 250 kw A*  corresponds with  `socket:tesla_destination:output=250 kW`
+  - *<b>Tesla Supercharger (destination)</b> outputs at most 120 kW A*  corresponds with  `socket:tesla_destination:output=120 kW`
+  - *<b>Tesla Supercharger (destination)</b> outputs at most 150 kW A*  corresponds with  `socket:tesla_destination:output=150 kW`
+  - *<b>Tesla Supercharger (destination)</b> outputs at most 250 kW A*  corresponds with  `socket:tesla_destination:output=250 kW`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+&socket:tesla_destination!=0`
@@ -1417,7 +1418,7 @@ This tagrendering has labels  `technical`
 
 
 
-The question is  *What voltage do the plugs with <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?*
+The question is  *What voltage do the plugs with <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?*
 
 This rendering asks information about the property  [socket:tesla_destination:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage) 
 
@@ -1427,8 +1428,8 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla superchar
 
 
 
-  - *<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs 230 volt*  corresponds with  `socket:tesla_destination:voltage=230 V`
-  - *<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs 400 volt*  corresponds with  `socket:tesla_destination:voltage=400 V`
+  - *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 230 volt*  corresponds with  `socket:tesla_destination:voltage=230 V`
+  - *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 400 volt*  corresponds with  `socket:tesla_destination:voltage=400 V`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+&socket:tesla_destination!=0`
@@ -1441,18 +1442,18 @@ This tagrendering has labels  `technical`
 
 
 
-The question is  *What current do the plugs with <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?*
+The question is  *What current do the plugs with <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?*
 
 This rendering asks information about the property  [socket:tesla_destination:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current) 
 
-This is rendered with  `<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most {socket:tesla_destination:current}A`
+This is rendered with  `<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most {socket:tesla_destination:current}A`
 
 
 
 
 
-  - *<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as tesla) outputs at most 16 A*  corresponds with  `socket:tesla_destination:current=16 A`
-  - *<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 32 A*  corresponds with  `socket:tesla_destination:current=32 A`
+  - *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 16 A*  corresponds with  `socket:tesla_destination:current=16 A`
+  - *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 32 A*  corresponds with  `socket:tesla_destination:current=32 A`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+&socket:tesla_destination!=0`
@@ -1465,18 +1466,18 @@ This tagrendering has labels  `technical`
 
 
 
-The question is  *What power output does a single plug of type <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?*
+The question is  *What power output does a single plug of type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?*
 
 This rendering asks information about the property  [socket:tesla_destination:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output) 
 
-This is rendered with  `<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most {socket:tesla_destination:output}`
+This is rendered with  `<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most {socket:tesla_destination:output}`
 
 
 
 
 
-  - *<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 11 kw A*  corresponds with  `socket:tesla_destination:output=11 kW`
-  - *<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 22 kw A*  corresponds with  `socket:tesla_destination:output=22 kW`
+  - *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 11 kW A*  corresponds with  `socket:tesla_destination:output=11 kW`
+  - *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 22 kW A*  corresponds with  `socket:tesla_destination:output=22 kW`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+&socket:tesla_destination!=0`
@@ -1546,8 +1547,8 @@ This is rendered with  `<div style='display: inline-block'><b><b>USB</b> to char
 
 
 
-  - *<b>USB</b> to charge phones and small electronics outputs at most 5w A*  corresponds with  `socket:USB-A:output=5W`
-  - *<b>USB</b> to charge phones and small electronics outputs at most 10w A*  corresponds with  `socket:USB-A:output=10W`
+  - *<b>USB</b> to charge phones and small electronics outputs at most 5W A*  corresponds with  `socket:USB-A:output=5W`
+  - *<b>USB</b> to charge phones and small electronics outputs at most 10W A*  corresponds with  `socket:USB-A:output=10W`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:USB-A~.+&socket:USB-A!=0`
@@ -1727,7 +1728,7 @@ The question is  *Does one have to pay to use this charging station?*
   - *Free to use, but one has to authenticate*  corresponds with  `fee=no&authentication:none=no`
   - *Free to use*  corresponds with  `fee=no`
   - This option cannot be chosen as answer
-  - *Paid use, but free for customers of the hotel/pub/hospital/… who operates the charging station*  corresponds with  `fee=yes&fee:conditional=no @ customers`
+  - *Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station*  corresponds with  `fee=yes&fee:conditional=no @ customers`
   - *Paid use*  corresponds with  `fee=yes`
 
 

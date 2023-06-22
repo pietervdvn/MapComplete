@@ -14,8 +14,7 @@ OSM objects that likely need to be fixed, based on a FIXME tag.
 
 
 
-  - This layer is shown at zoomlevel **12** and higher
-  - This layer is not visible by default and must be enabled in the filter by the user. 
+  - This layer is shown at zoomlevel **16** and higher
 
 
 
@@ -48,6 +47,7 @@ this quick overview is incomplete
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/fixme#values) [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) | [text](../SpecialInputElements.md#text) | [](https://wiki.openstreetmap.org/wiki/Tag:fixme%3D)
 
 
 
@@ -75,8 +75,17 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-This tagrendering has no question and is thus read-only
+The question is  *What is wrong with this feature?*
 
+This rendering asks information about the property  [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) 
+
+This is rendered with  `Fixme Text: {fixme}`
+
+
+
+
+
+  - *This issue has been resolved*  corresponds with  ``
 
 
 
