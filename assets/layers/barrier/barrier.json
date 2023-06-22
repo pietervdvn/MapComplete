@@ -108,7 +108,9 @@
         "nb_NO": "En pullert i veien",
         "ca": "Un bol·lard a la carretera"
       },
-      "snapToLayer": "cycleways_and_roads",
+      "snapToLayer": [
+        "cycleways_and_roads"
+      ],
       "maxSnapDistance": 25
     },
     {
@@ -139,7 +141,9 @@
         "nb_NO": "Sykkelbarrièrer, for å dempe farten",
         "ca": "Una barrera ciclista que relanteix als ciclistes"
       },
-      "snapToLayer": "cycleways_and_roads",
+      "snapToLayer": [
+        "cycleways_and_roads"
+      ],
       "maxSnapDistance": 25
     }
   ],

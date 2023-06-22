@@ -429,7 +429,9 @@
         "ca": "Un rellotge visible públicament muntat en una paret",
         "fr": "Une horloge publique fixée sur un mur"
       },
-      "snapToLayer": "walls_and_buildings"
+      "snapToLayer": [
+        "walls_and_buildings"
+      ]
     }
   ],
   "allowMove": true,

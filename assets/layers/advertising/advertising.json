@@ -1060,7 +1060,9 @@
         "cs": "plakátovací skříň připevněná na stěnu",
         "pt": "uma caixa de pôster montada em uma parede"
       },
-      "snapToLayer": "walls_and_buildings"
+      "snapToLayer": [
+        "walls_and_buildings"
+      ]
     },
     {
       "tags": [
@@ -1179,7 +1181,9 @@
         "./assets/themes/advertising/TV_media.jpg",
         "./assets/themes/advertising/Times square.jpg"
       ],
-      "snapToLayer": "walls_and_buildings",
+      "snapToLayer": [
+        "walls_and_buildings"
+      ],
       "maxSnapDistance": 5
     },
     {
@@ -1209,7 +1213,9 @@
         "./assets/themes/advertising/tarp_feder.jpg",
         "./assets/themes/advertising/tarp_madrid.jpg"
       ],
-      "snapToLayer": "walls_and_buildings",
+      "snapToLayer": [
+        "walls_and_buildings"
+      ],
       "maxSnapDistance": 5
     },
     {
@@ -1259,7 +1265,9 @@
         "./assets/themes/advertising/sign_EOI.jpg",
         "./assets/themes/advertising/farma_sign.jpg"
       ],
-      "snapToLayer": "walls_and_buildings",
+      "snapToLayer": [
+        "walls_and_buildings"
+      ],
       "maxSnapDistance": 5
     },
     {
@@ -1298,7 +1306,9 @@
         "./assets/themes/advertising/Capitol_wall.jpg",
         "./assets/themes/advertising/clarke_wall.jpg"
       ],
-      "snapToLayer": "walls_and_buildings",
+      "snapToLayer": [
+        "walls_and_buildings"
+      ],
       "maxSnapDistance": 5
     }
   ]

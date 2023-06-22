@@ -72,7 +72,9 @@
       "tags": [
         "emergency=defibrillator"
       ],
-      "snapToLayer": "walls_and_buildings",
+      "snapToLayer": [
+        "walls_and_buildings"
+      ],
       "maxSnapDistance": 5
     }
   ],

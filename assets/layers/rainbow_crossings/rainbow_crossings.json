@@ -55,7 +55,9 @@
         "fr": "Passage piéton",
         "ca": "Pas de vianants"
       },
-      "snapToLayer": "cycleways_and_roads",
+      "snapToLayer": [
+        "cycleways_and_roads"
+      ],
       "maxSnapDistance": 25
     }
   ],
