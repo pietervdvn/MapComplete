@@ -22,7 +22,7 @@ export default class EditLayerState {
         this.configuration.addCallback((config) => console.log("Current config is", config))
     }
 
-    public register(path: ReadonlyArray<string | number>, value: Store<string>) {
+    public register(path: ReadonlyArray<string | number>, value: Store<any>) {
         value.addCallbackAndRun((v) => {
             let entry = this.configuration.data
             for (let i = 0; i < path.length - 1; i++) {

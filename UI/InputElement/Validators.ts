@@ -20,6 +20,7 @@ import Combine from "../Base/Combine"
 import Title from "../Base/Title"
 import SimpleTagValidator from "./Validators/SimpleTagValidator"
 import ImageUrlValidator from "./Validators/ImageUrlValidator"
+import TagKeyValidator from "./Validators/TagKeyValidator";
 
 export type ValidatorType = (typeof Validators.availableTypes)[number]
 
@@ -60,8 +61,9 @@ export default class Validators {
         new PhoneValidator(),
         new OpeningHoursValidator(),
         new ColorValidator(),
-        new SimpleTagValidator(),
         new ImageUrlValidator(),
+        new SimpleTagValidator(),
+        new TagKeyValidator()
     ]
 
     private static _byType = Validators._byTypeConstructor()

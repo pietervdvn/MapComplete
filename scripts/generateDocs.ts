@@ -25,10 +25,12 @@ import DependencyCalculator from "../Models/ThemeConfig/DependencyCalculator"
 import { AllSharedLayers } from "../Customizations/AllSharedLayers"
 import ThemeViewState from "../Models/ThemeViewState"
 import Validators from "../UI/InputElement/Validators"
+import { TagUtils } from "../Logic/Tags/TagUtils"
+import { Utils } from "../Utils"
 
 function WriteFile(
     filename,
-    html: BaseUIElement,
+    html: string | BaseUIElement,
     autogenSource: string[],
     options?: {
         noTableOfContents: boolean
@@ -106,7 +108,7 @@ function GenerateDocumentationForTheme(theme: LayoutConfig): BaseUIElement {
 function GenLayerOverviewText(): BaseUIElement {
     for (const id of Constants.priviliged_layers) {
         if (!AllSharedLayers.sharedLayers.has(id)) {
-            throw "Priviliged layer definition not found: " + id
+            console.error("Priviliged layer definition not found: " + id)
         }
     }
 
@@ -149,17 +151,17 @@ function GenLayerOverviewText(): BaseUIElement {
         "MapComplete has a few data layers available in the theme which have special properties through builtin-hooks. Furthermore, there are some normal layers (which are built from normal Theme-config files) but are so general that they get a mention here.",
         new Title("Priviliged layers", 1),
         new List(Constants.priviliged_layers.map((id) => "[" + id + "](#" + id + ")")),
-        ...Constants.priviliged_layers
-            .map((id) => AllSharedLayers.sharedLayers.get(id))
-            .map((l) =>
-                l.GenerateDocumentation(
-                    themesPerLayer.get(l.id),
-                    layerIsNeededBy,
-                    DependencyCalculator.getLayerDependencies(l),
-                    Constants.added_by_default.indexOf(<any>l.id) >= 0,
-                    Constants.no_include.indexOf(<any>l.id) < 0
-                )
-            ),
+        ...Utils.NoNull(
+            Constants.priviliged_layers.map((id) => AllSharedLayers.sharedLayers.get(id))
+        ).map((l) =>
+            l.GenerateDocumentation(
+                themesPerLayer.get(l.id),
+                layerIsNeededBy,
+                DependencyCalculator.getLayerDependencies(l),
+                Constants.added_by_default.indexOf(<any>l.id) >= 0,
+                Constants.no_include.indexOf(<any>l.id) < 0
+            )
+        ),
         new Title("Normal layers", 1),
         "The following layers are included in MapComplete:",
         new List(
@@ -350,6 +352,7 @@ WriteFile("./Docs/BuiltinQuestions.md", SharedTagRenderings.HelpText(), [
     "Customizations/SharedTagRenderings.ts",
     "assets/tagRenderings/questions.json",
 ])
+WriteFile("./Docs/Tags_format.md", TagUtils.generateDocs(), ["Logic/Tags/TagUtils.ts"])
 
 {
     // Generate the builtinIndex which shows interlayer dependencies
