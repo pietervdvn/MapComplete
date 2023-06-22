@@ -210,7 +210,7 @@
         "minzoom": 19,
         "mapRendering+": [
           {
-            "color":  "yellow",
+            "color": "yellow",
             "width": "8"
           }
         ]
