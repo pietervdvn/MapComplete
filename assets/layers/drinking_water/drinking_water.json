@@ -63,6 +63,9 @@
         "hu": "ivóvíz",
         "ca": "una font d'aigua potable"
       },
+      "description": {
+        "en": "Typically a drinking fountain, water tap, water well or natural spring"
+      },
       "tags": [
         "amenity=drinking_water"
       ]
