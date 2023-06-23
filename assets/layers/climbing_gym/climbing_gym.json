@@ -90,22 +90,67 @@
       },
       "mappings": [
         {
-          "if": "service:rental:climbing_shoes=yes",
+          "if": {
+            "and": [
+              "service:climbing_shoes:rental=yes",
+              "service:climbing_shoes:rental:fee=no"
+            ]
+          },
+          "then": {
+            "en": "Climbing shoes can be borrowed for free here",
+            "nl": "Klimschoenen kunnen hier gratis geleend worden",
+            "fr": "Les chaussures d'escalade peuvent être empruntées gratuitement ici",
+            "de": "Kletterschuhe können hier kostenlos ausgeliehen werden"
+          },
+          "addExtraTags": [
+            "service:climbing_shoes:rental:charge="
+          ]
+        },
+        {
+          "if": {
+            "and": [
+              "service:climbing_shoes:rental=yes",
+              "service:climbing_shoes:rental:charge~*"
+            ]
+          },
+          "then": {
+            "en": "Climbing shoes can be rented here for {service:climbing_shoes:rental:charge}",
+            "nl": "Klimschoenen kunnen hier gehuurd worden aan {service:climbing_shoes:rental:charge}",
+            "fr": "Les chaussures d'escalade peuvent être louées ici pour {service:climbing_shoes:rental:charge}",
+            "de": "Kletterschuhe können hier ausgeliehen werden für {service:climbing_shoes:rental:charge}"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": {
+            "and": [
+              "service:climbing_shoes:rental=yes",
+              "service:climbing_shoes:rental:fee=yes"
+            ]
+          },
           "then": {
             "en": "Climbing shoes can be rented here",
             "nl": "Klimschoenen kunnen hier gehuurd worden",
             "fr": "Les chaussures d'escalade peuvent être louées ici",
             "de": "Kletterschuhe können hier ausgeliehen werden"
-          }
+          },
+          "addExtraTags": [
+            "service:climbing_shoes:rental:fee=",
+            "service:climbing_shoes:rental:charge="
+          ]
         },
         {
-          "if": "service:rental:climbing_shoes=no",
+          "if": "service:climbing_shoes:rental=no",
           "then": {
             "en": "Climbing shoes can <b>not</b> be rented here",
             "nl": "Hier kunnen <b>geen</b> klimschoenen gehuurd worden",
             "fr": "Les chaussures d'escalade ne peuvent <b>pas</b> être louées ici",
             "de": "Kletterschuhe können hier <b>nicht</b> ausgeliehen werden"
-          }
+          },
+          "addExtraTags": [
+            "service:climbing_shoes:rental:fee=",
+            "service:climbing_shoes:rental:charge="
+          ]
         }
       ]
     },
@@ -117,24 +162,162 @@
         "fr": "Peut-on louer un baudrier d'escalade ici ?",
         "de": "Kann man hier einen Klettergurt ausleihen?"
       },
+      "condition": {
+        "or": [
+          "climbing:sport!=no",
+          "climbing:toprope!=no"
+        ]
+      },
       "mappings": [
         {
-          "if": "service:rental:climbing_harness=yes",
+          "if": {
+            "and": [
+              "service:climbing_harness:rental=yes",
+              "service:climbing_harness:rental:fee=no"
+            ]
+          },
+          "then": {
+            "en": "A climbing harness can be borrowed for free here",
+            "nl": "Een klimgordel kan hier gratis geleend worden",
+            "fr": "Un baudrier d'escalade peut être emprunté gratuitement ici",
+            "de": "Ein Klettergurt kann hier kostenlos ausgeliehen werden"
+          },
+          "addExtraTags": [
+            "service:climbing_harness:rental:charge="
+          ]
+        },
+        {
+          "if": {
+            "and": [
+              "service:climbing_harness:rental=yes",
+              "service:climbing_harness:rental:charge~*"
+            ]
+          },
+          "then": {
+            "en": "A climbing harness can be rented here for {service:climbing_harness:rental:charge}",
+            "nl": "Een klimgordel kan hier gehuurd worden aan {service:climbing_harness:rental:charge}",
+            "fr": "Un baudrier d'escalade peut être loué ici pour {service:climbing_harness:rental:charge}",
+            "de": "Ein Klettergurt kann hier ausgeliehen werden für {service:climbing_harness:rental:charge}"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "service:climbing_harness:rental=yes",
           "then": {
             "en": "A climbing harness can be rented here",
             "nl": "Een klimgordel kan hier gehuurd worden",
             "fr": "Un baudrier d'escalade peut être loué ici",
             "de": "Ein Klettergurt kann hier ausgeliehen werden"
-          }
+          },
+          "addExtraTags": [
+            "service:climbing_harness:rental:fee=",
+            "service:climbing_harness:rental:charge="
+          ]
         },
         {
-          "if": "service:rental:climbing_harness=no",
+          "if": "service:climbing_harness:rental=no",
           "then": {
             "en": "A climbing harness can <b>not</b> be rented here",
             "nl": "Hier kunnen <b>geen</b> klimgordels gehuurd worden",
             "fr": "Un baudrier d'escalade ne peut <b>pas</b> être loué ici",
             "de": "Ein Klettergurt kann hier <b>nicht</b> ausgeliehen werden"
-          }
+          },
+          "addExtraTags": [
+            "service:climbing_harness:rental:fee=",
+            "service:climbing_harness:rental:charge="
+          ]
+        }
+      ]
+    },
+    {
+      "id": "belay_device_rental",
+      "question": {
+        "en": "Can one rent a belay device here?",
+        "nl": "Kan een zekeringsapparaat hier gehuurd worden?",
+        "fr": "Peut-on louer un dispositif d'assurage ici ?",
+        "de": "Kann man hier ein Sicherungsgerät ausleihen?"
+      },
+      "condition": {
+        "or": [
+          "climbing:sport!=no",
+          "climbing:toprope!=no"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "service:climbing_belay_device:provided_at_each_rope=yes",
+          "then": {
+            "en": "Belay devices are provided at each rope",
+            "nl": "Een zekeringsapparaat is voorzien aan elk touw",
+            "fr": "Un dispositif d'assurage est prévu à chaque corde",
+            "de": "Jeder Seil hat ein Sicherungsgerät"
+          },
+          "addExtraTags": [
+            "service:climbing_belay_device:rental=",
+            "service:climbing_belay_device:rental:fee=",
+            "service:climbing_belay_device:rental:charge="
+          ]
+        },
+        {
+          "if": {
+            "and": [
+              "service:climbing_belay_device:rental=yes",
+              "service:climbing_belay_device:rental:fee=no"
+            ]
+          },
+          "then": {
+            "en": "A belay device can be borrowed for free here",
+            "nl": "Een zekeringsapparaat kan hier gratis geleend worden",
+            "fr": "Un dispositif d'assurage peut être emprunté gratuitement ici",
+            "de": "Ein Sicherungsgerät kann hier kostenlos ausgeliehen werden"
+          },
+          "addExtraTags": [
+            "service:climbing_belay_device:provided_at_each_rope=",
+            "service:climbing_belay_device:rental:charge="
+          ]
+        },
+        {
+          "if": {
+            "and": [
+              "service:climbing_belay_device:rental=yes",
+              "service:climbing_belay_device:rental:charge~*"
+            ]
+          },
+          "then": {
+            "en": "A belay device can be rented here for {service:climbing_belay_device:rental:charge}",
+            "nl": "Een zekeringsapparaat kan hier gehuurd worden aan {service:climbing_belay_device:rental:charge}",
+            "fr": "Un dispositif d'assurage peut être loué ici pour {service:climbing_belay_device:rental:charge}",
+            "de": "Ein Sicherungsgerät kann hier ausgeliehen werden für {service:climbing_belay_device:rental:charge}"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "service:climbing_belay_device:rental=yes",
+          "then": {
+            "en": "A belay device can be rented here",
+            "nl": "Een zekeringsapparaat kan hier gehuurd worden",
+            "fr": "Un dispositif d'assurage peut être loué ici",
+            "de": "Ein Sicherungsgerät kann hier ausgeliehen werden"
+          },
+          "addExtraTags": [
+            "service:climbing_belay_device:provided_at_each_rope=",
+            "service:climbing_belay_device:rental:fee=",
+            "service:climbing_belay_device:rental:charge="
+          ]
+        },
+        {
+          "if": "service:climbing_belay_device:rental=no",
+          "then": {
+            "en": "A belay device can <b>not</b> be rented here",
+            "nl": "Hier kan <b>geen</b> zekeringsapparaat gehuurd worden",
+            "fr": "Un dispositif d'assurage ne peut <b>pas</b> être loué ici",
+            "de": "Ein Sicherungsgerät kann hier <b>nicht</b> ausgeliehen werden"
+          },
+          "addExtraTags": [
+            "service:climbing_belay_device:provided_at_each_rope=",
+            "service:climbing_belay_device:rental:fee=",
+            "service:climbing_belay_device:rental:charge="
+          ]
         }
       ]
     },
@@ -142,45 +325,92 @@
       "id": "rope_rental",
       "question": {
         "en": "Can one rent a climbing rope here?",
-        "nl": "Kan een klimtouw hier gehuurd worden?"
+        "nl": "Kan een klimtouw hier gehuurd worden?",
+        "fr": "Peut-on louer une corde d'escalade ici ?",
+        "de": "Kann man hier ein Kletterseil ausleihen?"
       },
+      "condition": "climbing:sport!=no",
       "mappings": [
         {
-          "if": "service:rental:climbing_rope=yes",
+          "if": {
+            "and": [
+              "service:climbing_rope:rental=yes",
+              "service:climbing_rope:rental:fee=no"
+            ]
+          },
           "then": {
-            "en": "A climbing rope can be rented here",
-            "nl": "Een klimtouw kan hier gehuurd worden"
-          }
+            "en": "A climbing rope can be borrowed for free here",
+            "nl": "Een klimtouw kan hier gratis geleend worden",
+            "fr": "Une corde d'escalade peut être empruntée gratuitement ici",
+            "de": "Ein Kletterseil kann hier kostenlos ausgeliehen werden"
+          },
+          "addExtraTags": [
+            "service:climbing_rope:rental:charge="
+          ]
         },
         {
-          "if": "service:rental:climbing_rope=no",
+          "if": {
+            "and": [
+              "service:climbing_rope:rental=yes",
+              "service:climbing_rope:rental:charge~*"
+            ]
+          },
+          "then": {
+            "en": "A climbing rope can be rented here for {service:climbing_rope:rental:charge}",
+            "nl": "Een klimtouw kan hier gehuurd worden aan {service:climbing_rope:rental:charge}",
+            "fr": "Une corde d'escalade peut être louée ici pour {service:climbing_rope:rental:charge}",
+            "de": "Ein Kletterseil kann hier ausgeliehen werden für {service:climbing_rope:rental:charge}"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "service:climbing_rope:rental=yes",
+          "then": {
+            "en": "A climbing rope can be rented here",
+            "nl": "Een klimtouw kan hier gehuurd worden",
+            "fr": "Une corde d'escalade peut être louée ici",
+            "de": "Ein Kletterseil kann hier ausgeliehen werden"
+          },
+          "addExtraTags": [
+            "service:climbing_rope:rental:fee=",
+            "service:climbing_rope:rental:charge="
+          ]
+        },
+        {
+          "if": "service:climbing_rope:rental=no",
           "then": {
             "en": "A climbing rope can <b>not</b> be rented here",
-            "nl": "Hier kunnen <b>geen</b> klimtouwen gehuurd worden"
-          }
+            "nl": "Hier kan <b>geen</b> klimtouw gehuurd worden",
+            "fr": "Une corde d'escalade ne peut <b>pas</b> être louée ici",
+            "de": "Ein Kletterseil kann hier <b>nicht</b> ausgeliehen werden"
+          },
+          "addExtraTags": [
+            "service:climbing_rope:rental:fee=",
+            "service:climbing_rope:rental:charge="
+          ]
         }
       ]
     },
+    "climbing.bouldering",
+    "climbing.sportclimbing",
     "climbing.toprope",
     {
       "builtin": "climbing.average_length",
       "override": {
-        "condition": "climbing:toprope!=no"
+        "condition": {
+          "or": [
+            "climbing:sport!=no",
+            "climbing:toprope!=no"
+          ]
+        }
       }
     },
-    {
-      "id": "climbing_gym_questions",
-      "builtin": [
-        "climbing.min_difficulty",
-        "climbing.max_difficulty",
-        "climbing.bouldering",
-        "climbing.sportclimbing"
-      ]
-    },
+    "climbing.min_difficulty",
+    "climbing.max_difficulty",
     {
       "builtin": "climbing.max_bolts",
       "override": {
-        "condition": "climbing:sport=yes"
+        "condition": "climbing:sport!=no"
       }
     },
     {

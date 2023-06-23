@@ -165,10 +165,10 @@
           "if": "climbing:boulder=limited",
           "then": {
             "de": "Bouldern ist hier nur an wenigen Routen möglich",
-            "en": "Bouldering is possible, allthough there are only a few routes",
-            "nl": "Bolderen kan hier, maar er zijn niet zoveel routes",
+            "en": "Bouldering is possible, although there are only a few problems",
+            "nl": "Bolderen kan hier, maar er zijn niet zoveel problemen",
             "ja": "ボルダリングは可能ですが、少しのルートしかありません",
-            "fr": "L’escalade de bloc est possible sur des voies précises",
+            "fr": "L’escalade de bloc est possible, mais il n’y a que quelques problèmes",
             "it": "L’arrampicata su massi è possibile anche se su poche vie",
             "ca": "L'escalada en bloc és possible, tot i que només hi ha unes poques rutes"
           }
@@ -177,10 +177,10 @@
           "if": "climbing:boulder~*",
           "then": {
             "de": "Hier gibt es {climbing:boulder} Boulder-Routen",
-            "en": "There are {climbing:boulder} boulder routes",
-            "nl": "Er zijn hier {climbing:boulder} bolderroutes",
+            "en": "There are {climbing:boulder} boulder problems",
+            "nl": "Er zijn hier {climbing:boulder} bolderproblemen",
             "ja": "{climbing:boulder} ボルダールートがある",
-            "fr": "Il y a {climbing:boulder} voies d’escalade de bloc",
+            "fr": "Il y a {climbing:boulder} problèmes de bloc",
             "it": "Sono presenti {climbing:boulder} vie di arrampicata su massi",
             "ca": "Hi han {climbing:boulder} rutes d'escalada en bloc"
           },
