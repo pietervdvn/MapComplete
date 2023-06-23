@@ -1,17 +1,19 @@
 <script lang="ts">
 
     import EditLayerState from "./EditLayerState";
-    import type {ConfigMeta} from "./configMeta";
-    import {UIEventSource} from "../../Logic/UIEventSource";
+    import type { ConfigMeta } from "./configMeta";
+    import { UIEventSource } from "../../Logic/UIEventSource";
     import type {
         QuestionableTagRenderingConfigJson
     } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
     import TagRenderingEditable from "../Popup/TagRendering/TagRenderingEditable.svelte";
     import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
-    import {onDestroy} from "svelte";
+    import { onDestroy } from "svelte";
     import SchemaBasedInput from "./SchemaBasedInput.svelte";
-    import type {JsonSchemaType} from "./jsonSchema";
-    import nmd from "nano-markdown"
+    import type { JsonSchemaType } from "./jsonSchema";
+    // @ts-ignore
+    import nmd from "nano-markdown";
+
     /**
      * If 'types' is defined: allow the user to pick one of the types to input.
      */
@@ -102,7 +104,13 @@
     let chosenOption: number = defaultOption
     let subSchemas: ConfigMeta[] = []
     onDestroy(tags.addCallbackAndRun(tags => {
+        const oldOption = chosenOption
         chosenOption = tags["value"] ? Number(tags["value"]) : defaultOption
+        if(chosenOption !== oldOption){
+            // Reset the values beneath
+            subSchemas = []
+            state.setValueAt(path, undefined)
+        }
         const type = schema.type[chosenOption]
         if (!type) {
             return

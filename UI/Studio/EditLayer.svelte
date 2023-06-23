@@ -16,7 +16,7 @@
     /**
      * Blacklist for the general area tab
      */
-    const regionBlacklist = ["hidden",undefined,"infobox", "tagrenderings","maprendering"]
+    const regionBlacklist = ["hidden",undefined,"infobox", "tagrenderings","maprendering", "editing"]
     const allNames =  Utils.Dedup(layerSchema.map(meta => meta.hints.group))
 
     const perRegion: Record<string, ConfigMeta[]> = {}
@@ -24,26 +24,27 @@
         perRegion[region] = layerSchema.filter(meta => meta.hints.group === region)
     }
     
-    const baselayerRegions: string[] = ["Basic", "presets", "editing","filters","advanced","expert"]
+    const baselayerRegions: string[] = ["Basic", "presets","filters","advanced","expert"]
     for (const baselayerRegion of baselayerRegions) {
         if(perRegion[baselayerRegion] === undefined){
             console.error("BaseLayerRegions in editLayer: no items have group '"+baselayerRegion+'"')
         }
     }
-    const generalTabRegions : string[] = allNames.filter(r => regionBlacklist.indexOf(r) <0)
+    const leftoverRegions : string[] = allNames.filter(r => regionBlacklist.indexOf(r) <0 && baselayerRegions.indexOf(r) <0 )
 </script>
 
 <h3>Edit layer</h3>
 
 <div class="m4">
     {allNames}
-<TabbedGroup tab={new UIEventSource(0)}>
+<TabbedGroup tab={new UIEventSource(1)}>
     <div slot="title0">General properties</div>
     <div class="flex flex-col" slot="content0">
         {#each baselayerRegions as region}
             <Region {state} configs={perRegion[region]} title={region}/>
         {/each}
-        {#each generalTabRegions as region}
+        
+        {#each leftoverRegions as region}
             <Region {state} configs={perRegion[region]} title={region}/>
         {/each}
     </div>
@@ -52,6 +53,7 @@
     <div slot="content1">
         <Region {state} configs={perRegion["infobox"]} title="Infobox"/>
         <Region {state} configs={perRegion["tagrenderings"]} title="Infobox"/>
+        <Region {state} configs={perRegion["editing"]} title="Other editing elements"/>
     </div>
 
     <div slot="title2">Rendering on the map</div>

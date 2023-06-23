@@ -51,9 +51,9 @@ export default class EditLayerState {
         value: Store<any>,
         noInitialSync: boolean = false
     ): () => void {
-        const unsync = value.addCallback((v) => this.update(path, v))
+        const unsync = value.addCallback((v) => this.setValueAt(path, v))
         if (!noInitialSync) {
-            this.update(path, value.data)
+            this.setValueAt(path, value.data)
         }
         return unsync
     }
@@ -73,7 +73,7 @@ export default class EditLayerState {
         )
     }
 
-    private update(path: ReadonlyArray<string | number>, v: any) {
+    public setValueAt(path: ReadonlyArray<string | number>, v: any) {
         {
             let entry = this.configuration.data
             for (let i = 0; i < path.length - 1; i++) {

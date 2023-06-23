@@ -89,23 +89,23 @@
         "type": "object",
         "properties": {
           "geoJson": {
-            "description": "The actual source of the data to load, if loaded via geojson.\n\n# A single geojson-file\nsource: {geoJson: \"https://my.source.net/some-geo-data.geojson\"}\n fetches a geojson from a third party source\n\n# A tiled geojson source\nsource: {geoJson: \"https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson\", geoJsonZoomLevel: 14}\n to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer\n\nSome API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}",
+            "description": "The actual source of the data to load, if loaded via geojson.\n\n# A single geojson-file\nsource: {geoJson: \"https://my.source.net/some-geo-data.geojson\"}\n fetches a geojson from a third party source\n\n# A tiled geojson source\nsource: {geoJson: \"https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson\", geoJsonZoomLevel: 14}\n to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer\n\nSome API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}\n\nquestion: What is the URL of the geojson?\ntype: url",
             "type": "string"
           },
           "geoJsonZoomLevel": {
-            "description": "To load a tiled geojson layer, set the zoomlevel of the tiles",
+            "description": "To load a tiled geojson layer, set the zoomlevel of the tiles\n\nquestion: If using a tiled geojson, what is the zoomlevel of the tiles?\nifunset: This is not a tiled geojson",
             "type": "number"
           },
           "isOsmCache": {
-            "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache",
+            "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache.\nThis also indicates that making changes on this data is possible\n\nquestion: Is this geojson a cache of OpenStreetMap data?\nifunset: This is not an OpenStreetMap cache\niftrue: this is based on OpenStreetMap and can thus be edited",
             "type": "boolean"
           },
           "mercatorCrs": {
-            "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this",
+            "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this\n\nquestion: Does this geojson use  EPSG:900913 instead of WGS84 as projection?\niftrue: This geojson uses EPSG:900913 instead of WGS84\nifunset: This geojson uses WGS84 just like most geojson (default)",
             "type": "boolean"
           },
           "idKey": {
-            "description": "Some API's have an id-field, but give it a different name.\nSetting this key will rename this field into 'id'",
+            "description": "Some API's have an id-field, but give it a different name.\nSetting this key will rename this field into 'id'\n\nifunset: An id with key `id` will be assigned automatically if no attribute `id` is set\ninline: This geojson uses <b>{value}</b> as attribute to set the id\nquestion: What is the name of the attribute containing the ID of the object?",
             "type": "string"
           }
         },
@@ -176,9 +176,12 @@
       "geoJson"
     ],
     "required": true,
-    "hints": {},
+    "hints": {
+      "typehint": "url",
+      "question": "What is the URL of the geojson?"
+    },
     "type": "string",
-    "description": "The actual source of the data to load, if loaded via geojson.\n\n# A single geojson-file\nsource: {geoJson: \"https://my.source.net/some-geo-data.geojson\"}\n fetches a geojson from a third party source\n\n# A tiled geojson source\nsource: {geoJson: \"https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson\", geoJsonZoomLevel: 14}\n to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer\n\nSome API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}"
+    "description": "The actual source of the data to load, if loaded via geojson.\n\n# A single geojson-file\nsource: {geoJson: \"https://my.source.net/some-geo-data.geojson\"}\n fetches a geojson from a third party source\n\n# A tiled geojson source\nsource: {geoJson: \"https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson\", geoJsonZoomLevel: 14}\n to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer\n\nSome API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}\n"
   },
   {
     "path": [
@@ -186,9 +189,12 @@
       "geoJsonZoomLevel"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "If using a tiled geojson, what is the zoomlevel of the tiles?",
+      "ifunset": "This is not a tiled geojson"
+    },
     "type": "number",
-    "description": "To load a tiled geojson layer, set the zoomlevel of the tiles"
+    "description": "To load a tiled geojson layer, set the zoomlevel of the tiles\n"
   },
   {
     "path": [
@@ -196,9 +202,13 @@
       "isOsmCache"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "Is this geojson a cache of OpenStreetMap data?",
+      "iftrue": "this is based on OpenStreetMap and can thus be edited",
+      "ifunset": "This is not an OpenStreetMap cache"
+    },
     "type": "boolean",
-    "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache"
+    "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache.\nThis also indicates that making changes on this data is possible\n"
   },
   {
     "path": [
@@ -206,9 +216,13 @@
       "mercatorCrs"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "Does this geojson use  EPSG:900913 instead of WGS84 as projection?",
+      "iftrue": "This geojson uses EPSG:900913 instead of WGS84",
+      "ifunset": "This geojson uses WGS84 just like most geojson (default)"
+    },
     "type": "boolean",
-    "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this"
+    "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this\n"
   },
   {
     "path": [
@@ -216,9 +230,13 @@
       "idKey"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What is the name of the attribute containing the ID of the object?",
+      "ifunset": "An id with key `id` will be assigned automatically if no attribute `id` is set",
+      "inline": "This geojson uses <b>{value}</b> as attribute to set the id"
+    },
     "type": "string",
-    "description": "Some API's have an id-field, but give it a different name.\nSetting this key will rename this field into 'id'"
+    "description": "Some API's have an id-field, but give it a different name.\nSetting this key will rename this field into 'id'\n"
   },
   {
     "path": [
@@ -27767,7 +27785,7 @@
     "required": true,
     "hints": {
       "question": "What is the word to describe this object?",
-      "inline": "Add {value} here"
+      "inline": "Add <b>{value}</b> here"
     },
     "type": [
       {
@@ -32540,11 +32558,11 @@
         "type": "object",
         "properties": {
           "enableImproveAccuracy": {
-            "description": "One default reason to move a point is to improve accuracy.\nSet to false to disable this reason",
+            "description": "question: Should moving this type of point to improve the accuracy be allowed?\niftrue: This point can be moved to improve the accuracy\nifunset: (default) This point can be moved to improve the accuracy\niffalse: This point cannot be moved to improve the accuracy",
             "type": "boolean"
           },
           "enableRelocation": {
-            "description": "One default reason to move a point is because it has relocated\nSet to false to disable this reason",
+            "description": "question: Should moving this type of point due to a relocation be allowed?\n\nThis will erase the attributes `addr:street`, `addr:housenumber`, `addr:city` and `addr:postcode`\n\niftrue: This type of point can be moved due to a relocation (and will remove address information when this is done)\nifunset: (default) This type of point can be moved due to a relocation (and will remove address information when this is done)\niffalse: This type of point cannot be moved due to a relocation",
             "type": "boolean"
           }
         },
@@ -32562,9 +32580,14 @@
       "enableImproveAccuracy"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "Should moving this type of point to improve the accuracy be allowed?",
+      "iftrue": "This point can be moved to improve the accuracy",
+      "iffalse": "This point cannot be moved to improve the accuracy",
+      "ifunset": "(default) This point can be moved to improve the accuracy"
+    },
     "type": "boolean",
-    "description": "One default reason to move a point is to improve accuracy.\nSet to false to disable this reason"
+    "description": ""
   },
   {
     "path": [
@@ -32572,9 +32595,14 @@
       "enableRelocation"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "Should moving this type of point due to a relocation be allowed?",
+      "iftrue": "This type of point can be moved due to a relocation (and will remove address information when this is done)",
+      "iffalse": "This type of point cannot be moved due to a relocation",
+      "ifunset": "(default) This type of point can be moved due to a relocation (and will remove address information when this is done)"
+    },
     "type": "boolean",
-    "description": "One default reason to move a point is because it has relocated\nSet to false to disable this reason"
+    "description": "\nThis will erase the attributes `addr:street`, `addr:housenumber`, `addr:city` and `addr:postcode`\n"
   },
   {
     "path": [

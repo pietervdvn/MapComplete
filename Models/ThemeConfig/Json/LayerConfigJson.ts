@@ -89,24 +89,43 @@ export interface LayerConfigJson {
                *  to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer
                *
                * Some API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}
+               *
+               * question: What is the URL of the geojson?
+               * type: url
                */
               geoJson: string
               /**
                * To load a tiled geojson layer, set the zoomlevel of the tiles
+               *
+               * question: If using a tiled geojson, what is the zoomlevel of the tiles?
+               * ifunset: This is not a tiled geojson
                */
               geoJsonZoomLevel?: number
               /**
                * Indicates that the upstream geojson data is OSM-derived.
-               * Useful for e.g. merging or for scripts generating this cache
+               * Useful for e.g. merging or for scripts generating this cache.
+               * This also indicates that making changes on this data is possible
+               *
+               * question: Is this geojson a cache of OpenStreetMap data?
+               * ifunset: This is not an OpenStreetMap cache
+               * iftrue: this is based on OpenStreetMap and can thus be edited
                */
               isOsmCache?: boolean
               /**
                * Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this
+               *
+               * question: Does this geojson use  EPSG:900913 instead of WGS84 as projection?
+               * iftrue: This geojson uses EPSG:900913 instead of WGS84
+               * ifunset: This geojson uses WGS84 just like most geojson (default)
                */
               mercatorCrs?: boolean
               /**
                * Some API's have an id-field, but give it a different name.
                * Setting this key will rename this field into 'id'
+               *
+               * ifunset: An id with key `id` will be assigned automatically if no attribute `id` is set
+               * inline: This geojson uses <b>{value}</b> as attribute to set the id
+               * question: What is the name of the attribute containing the ID of the object?
                */
               idKey?: string
           }
@@ -292,7 +311,7 @@ export interface LayerConfigJson {
          * Do _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!
          *
          * question: What is the word to describe this object?
-         * inline: Add {value} here
+         * inline: Add <b>{value}</b> here
          */
         title: string | Record<string, string>
         /**
@@ -335,7 +354,12 @@ export interface LayerConfigJson {
         snapToLayer?: string[]
 
         /**
+         * question: What is the maximum distance in the location-input that a point can be moved to be snapped to a way?
+         *
+         * inline: a point is snapped if the location input is at most <b>{value}m</b> away from an object
+         *
          * If specified, a new point will only be snapped if it is within this range.
+         * If further away, it'll be placed in the center of the location input
          * Distance in meter
          *
          * Default: 10

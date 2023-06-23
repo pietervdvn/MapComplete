@@ -4,7 +4,7 @@ import { JsonSchema } from "../UI/Studio/jsonSchema"
 import { AllSharedLayers } from "../Customizations/AllSharedLayers"
 import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
 import { ConfigMeta } from "../UI/Studio/configMeta"
-import { Or } from "../Logic/Tags/Or"
+import { Utils } from "../Utils"
 
 const metainfo = {
     type: "One of the inputValidator types",
@@ -20,6 +20,7 @@ const metainfo = {
     inline: "A text, containing `{value}`. This will be used as freeform rendering and will be included into the rendering",
     suggestions: "a javascript expression generating mappings",
 }
+
 function WalkScheme<T>(
     onEach: (schemePart: JsonSchema, path: string[]) => T,
     scheme: JsonSchema,
@@ -217,7 +218,41 @@ function substituteReferences(
     }
 }
 
-function extractMeta(typename: string, path: string, allDefinitions: Record<string, JsonSchema>) {
+function validateMeta(path: ConfigMeta): string | undefined {
+    if (path.path.length == 0) {
+        return
+    }
+    const ctx = "Definition for field in " + path.path.join(".")
+    if (path.hints.group === undefined && path.path.length == 1) {
+        return (
+            ctx +
+            " does not have a group set (but it is a top-level element which should have a group) "
+        )
+    }
+    if (path.hints.group === "hidden") {
+        return undefined
+    }
+    if (path.hints.typehint === "tag") {
+        return undefined
+    }
+    if (path.path[0] == "mapRendering" || path.path[0] == "tagRenderings") {
+        return undefined
+    }
+    if (path.hints.question === undefined && !Array.isArray(path.type)) {
+        return (
+            ctx +
+            " does not have a question set. As such, MapComplete-studio users will not be able to set this property"
+        )
+    }
+
+    return undefined
+}
+
+function extractMeta(
+    typename: string,
+    path: string,
+    allDefinitions: Record<string, JsonSchema>
+): string[] {
     let themeSchema: JsonSchema = JSON.parse(
         readFileSync("./Docs/Schemas/" + typename + ".schema.json", { encoding: "utf8" })
     )
@@ -230,6 +265,7 @@ function extractMeta(typename: string, path: string, allDefinitions: Record<stri
 
     writeFileSync("./assets/" + path + ".json", JSON.stringify(paths, null, "  "))
     console.log("Written meta to ./assets/" + path)
+    return Utils.NoNull(paths.map((p) => validateMeta(p)))
 }
 
 function main() {
@@ -257,7 +293,7 @@ function main() {
             encoding: "utf8",
         })
     }
-    extractMeta("LayerConfigJson", "layerconfigmeta", allDefinitions)
+    const errs = extractMeta("LayerConfigJson", "layerconfigmeta", allDefinitions)
     extractMeta("LayoutConfigJson", "layoutconfigmeta", allDefinitions)
     extractMeta("TagRenderingConfigJson", "tagrenderingconfigmeta", allDefinitions)
     extractMeta(
@@ -265,6 +301,13 @@ function main() {
         "questionabletagrenderingconfigmeta",
         allDefinitions
     )
+
+    if (errs.length > 0) {
+        for (const err of errs) {
+            console.error(err)
+        }
+        console.log((errs.length < 25 ? "Only " : "") + errs.length + " errors to solve")
+    }
 }
 
 main()

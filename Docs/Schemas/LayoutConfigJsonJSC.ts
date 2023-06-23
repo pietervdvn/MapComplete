@@ -1568,11 +1568,11 @@ export default {
       "type": "object",
       "properties": {
         "enableImproveAccuracy": {
-          "description": "One default reason to move a point is to improve accuracy.\nSet to false to disable this reason",
+          "description": "question: Should moving this type of point to improve the accuracy be allowed?\niftrue: This point can be moved to improve the accuracy\nifunset: (default) This point can be moved to improve the accuracy\niffalse: This point cannot be moved to improve the accuracy",
           "type": "boolean"
         },
         "enableRelocation": {
-          "description": "One default reason to move a point is because it has relocated\nSet to false to disable this reason",
+          "description": "question: Should moving this type of point due to a relocation be allowed?\n\nThis will erase the attributes `addr:street`, `addr:housenumber`, `addr:city` and `addr:postcode`\n\niftrue: This type of point can be moved due to a relocation (and will remove address information when this is done)\nifunset: (default) This type of point can be moved due to a relocation (and will remove address information when this is done)\niffalse: This type of point cannot be moved due to a relocation",
           "type": "boolean"
         }
       }
@@ -1727,23 +1727,23 @@ export default {
               "type": "object",
               "properties": {
                 "geoJson": {
-                  "description": "The actual source of the data to load, if loaded via geojson.\n\n# A single geojson-file\nsource: {geoJson: \"https://my.source.net/some-geo-data.geojson\"}\n fetches a geojson from a third party source\n\n# A tiled geojson source\nsource: {geoJson: \"https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson\", geoJsonZoomLevel: 14}\n to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer\n\nSome API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}",
+                  "description": "The actual source of the data to load, if loaded via geojson.\n\n# A single geojson-file\nsource: {geoJson: \"https://my.source.net/some-geo-data.geojson\"}\n fetches a geojson from a third party source\n\n# A tiled geojson source\nsource: {geoJson: \"https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson\", geoJsonZoomLevel: 14}\n to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer\n\nSome API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}\n\nquestion: What is the URL of the geojson?\ntype: url",
                   "type": "string"
                 },
                 "geoJsonZoomLevel": {
-                  "description": "To load a tiled geojson layer, set the zoomlevel of the tiles",
+                  "description": "To load a tiled geojson layer, set the zoomlevel of the tiles\n\nquestion: If using a tiled geojson, what is the zoomlevel of the tiles?\nifunset: This is not a tiled geojson",
                   "type": "number"
                 },
                 "isOsmCache": {
-                  "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache",
+                  "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache.\nThis also indicates that making changes on this data is possible\n\nquestion: Is this geojson a cache of OpenStreetMap data?\nifunset: This is not an OpenStreetMap cache\niftrue: this is based on OpenStreetMap and can thus be edited",
                   "type": "boolean"
                 },
                 "mercatorCrs": {
-                  "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this",
+                  "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this\n\nquestion: Does this geojson use  EPSG:900913 instead of WGS84 as projection?\niftrue: This geojson uses EPSG:900913 instead of WGS84\nifunset: This geojson uses WGS84 just like most geojson (default)",
                   "type": "boolean"
                 },
                 "idKey": {
-                  "description": "Some API's have an id-field, but give it a different name.\nSetting this key will rename this field into 'id'",
+                  "description": "Some API's have an id-field, but give it a different name.\nSetting this key will rename this field into 'id'\n\nifunset: An id with key `id` will be assigned automatically if no attribute `id` is set\ninline: This geojson uses <b>{value}</b> as attribute to set the id\nquestion: What is the name of the attribute containing the ID of the object?",
                   "type": "string"
                 }
               },
@@ -1882,7 +1882,7 @@ export default {
             "type": "object",
             "properties": {
               "title": {
-                "description": "The title - shown on the 'add-new'-button.\n\nThis should include the article of the noun, e.g. 'a hydrant', 'a bicycle pump'.\nThis text will be inserted into `Add {category} here`, becoming `Add a hydrant here`.\n\nDo _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!\n\nquestion: What is the word to describe this object?\ninline: Add {value} here",
+                "description": "The title - shown on the 'add-new'-button.\n\nThis should include the article of the noun, e.g. 'a hydrant', 'a bicycle pump'.\nThis text will be inserted into `Add {category} here`, becoming `Add a hydrant here`.\n\nDo _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!\n\nquestion: What is the word to describe this object?\ninline: Add <b>{value}</b> here",
                 "anyOf": [
                   {
                     "$ref": "#/definitions/Record<string,string>"
@@ -2133,23 +2133,23 @@ export default {
               "type": "object",
               "properties": {
                 "geoJson": {
-                  "description": "The actual source of the data to load, if loaded via geojson.\n\n# A single geojson-file\nsource: {geoJson: \"https://my.source.net/some-geo-data.geojson\"}\n fetches a geojson from a third party source\n\n# A tiled geojson source\nsource: {geoJson: \"https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson\", geoJsonZoomLevel: 14}\n to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer\n\nSome API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}",
+                  "description": "The actual source of the data to load, if loaded via geojson.\n\n# A single geojson-file\nsource: {geoJson: \"https://my.source.net/some-geo-data.geojson\"}\n fetches a geojson from a third party source\n\n# A tiled geojson source\nsource: {geoJson: \"https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson\", geoJsonZoomLevel: 14}\n to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer\n\nSome API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}\n\nquestion: What is the URL of the geojson?\ntype: url",
                   "type": "string"
                 },
                 "geoJsonZoomLevel": {
-                  "description": "To load a tiled geojson layer, set the zoomlevel of the tiles",
+                  "description": "To load a tiled geojson layer, set the zoomlevel of the tiles\n\nquestion: If using a tiled geojson, what is the zoomlevel of the tiles?\nifunset: This is not a tiled geojson",
                   "type": "number"
                 },
                 "isOsmCache": {
-                  "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache",
+                  "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache.\nThis also indicates that making changes on this data is possible\n\nquestion: Is this geojson a cache of OpenStreetMap data?\nifunset: This is not an OpenStreetMap cache\niftrue: this is based on OpenStreetMap and can thus be edited",
                   "type": "boolean"
                 },
                 "mercatorCrs": {
-                  "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this",
+                  "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this\n\nquestion: Does this geojson use  EPSG:900913 instead of WGS84 as projection?\niftrue: This geojson uses EPSG:900913 instead of WGS84\nifunset: This geojson uses WGS84 just like most geojson (default)",
                   "type": "boolean"
                 },
                 "idKey": {
-                  "description": "Some API's have an id-field, but give it a different name.\nSetting this key will rename this field into 'id'",
+                  "description": "Some API's have an id-field, but give it a different name.\nSetting this key will rename this field into 'id'\n\nifunset: An id with key `id` will be assigned automatically if no attribute `id` is set\ninline: This geojson uses <b>{value}</b> as attribute to set the id\nquestion: What is the name of the attribute containing the ID of the object?",
                   "type": "string"
                 }
               },
@@ -2288,7 +2288,7 @@ export default {
             "type": "object",
             "properties": {
               "title": {
-                "description": "The title - shown on the 'add-new'-button.\n\nThis should include the article of the noun, e.g. 'a hydrant', 'a bicycle pump'.\nThis text will be inserted into `Add {category} here`, becoming `Add a hydrant here`.\n\nDo _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!\n\nquestion: What is the word to describe this object?\ninline: Add {value} here",
+                "description": "The title - shown on the 'add-new'-button.\n\nThis should include the article of the noun, e.g. 'a hydrant', 'a bicycle pump'.\nThis text will be inserted into `Add {category} here`, becoming `Add a hydrant here`.\n\nDo _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!\n\nquestion: What is the word to describe this object?\ninline: Add <b>{value}</b> here",
                 "anyOf": [
                   {
                     "$ref": "#/definitions/Record<string,string>"
