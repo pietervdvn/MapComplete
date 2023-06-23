@@ -36,11 +36,11 @@
     + [climbing.website](#climbingwebsite)
     + [climbing.fee](#climbingfee)
     + [climbing.bouldering](#climbingbouldering)
+    + [climbing.sportclimbing](#climbingsportclimbing)
     + [climbing.toprope](#climbingtoprope)
     + [climbing.average_length](#climbingaverage_length)
     + [climbing.min_difficulty](#climbingmin_difficulty)
     + [climbing.max_difficulty](#climbingmax_difficulty)
-    + [climbing.sportclimbing](#climbingsportclimbing)
     + [climbing.max_bolts](#climbingmax_bolts)
     + [opening_hours_by_appointment](#opening_hours_by_appointment)
     + [multilevels](#multilevels)
@@ -613,6 +613,17 @@
 
 
 
+### climbing.sportclimbing 
+
+
+
+
+
+  - climbing_gym
+
+
+
+
 ### climbing.toprope 
 
 
@@ -647,17 +658,6 @@
 
 
 ### climbing.max_difficulty 
-
-
-
-
-
-  - climbing_gym
-
-
-
-
-### climbing.sportclimbing 
 
 
 

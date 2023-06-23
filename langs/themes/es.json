@@ -2,15 +2,15 @@
     "advertising": {
         "description": "¿Alguna vez te has preguntado cuanta publicidad hay en nuestras calles y carreteras? Con este mapa podrás encontrar y añadir información de todos los elementos publicitarios que te encuentres por la calle",
         "shortDescription": "Dónde puedo encontrar elementos publicitarios?",
-        "title": "Mapa abierto de publicidad"
+        "title": "Publicidad"
     },
     "aed": {
         "description": "En este mapa , cualquiera puede encontrar y marcar los desfibriladores externos automáticos más cercanos",
-        "title": "Mapa Abierto de Desfibriladores (DEA)"
+        "title": "Desfibriladores"
     },
     "artwork": {
         "description": "Un mapa abierto de Estatuas, bustos, Graffitis y otras Obras de Arte en todo el mundo",
-        "title": "Mapa Abierto de Obras de Arte"
+        "title": "Obras de arte"
     },
     "atm": {
         "description": "Este mapa muestra los cajeros automáticos para retirar o ingresar dinero",

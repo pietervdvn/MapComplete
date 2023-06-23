@@ -99,8 +99,6 @@ The question is  *Does this crossing has rainbow paintings?*
   - This option cannot be chosen as answer
 
 
-This tagrendering is only visible in the popup if the following condition is met: `footway=crossing`
-
 
 
 ### leftover-questions 

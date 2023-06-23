@@ -86,12 +86,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Charging stations' shows access=permissive|access=public with a fixed text, namely 'Anyone can use this charging station (payment might be needed)' (in the MapComplete.osm.be theme 'Charging stations')",
-      "value": "permissive"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Charging stations' shows access=permissive|access=public with a fixed text, namely 'Anyone can use this charging station (payment might be needed)' (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows access=public with a fixed text, namely 'Anyone can use this charging station (payment might be needed)' (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "public"
     },
     {
@@ -108,6 +103,11 @@
       "key": "access",
       "description": "Layer 'Charging stations' shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accessible to the owners, employees, …)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "private"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Charging stations' shows access=permissive with a fixed text, namely 'This charging station is accessible to the public during certain hours or conditions. Restrictions might apply, but general use is allowed.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "permissive"
     },
     {
       "key": "capacity",

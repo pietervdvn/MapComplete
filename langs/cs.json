@@ -417,20 +417,59 @@
     },
     "move": {
         "cancel": "Zrušit přesun",
+        "cannotBeMoved": "Tuto funkci nelze přesunout.",
+        "confirmMove": "Přesunout sem",
         "inviteToMove": {
             "generic": "Přesunout tento bod",
-            "reasonInaccurate": "Zlepšit přesnost tohoto bodu"
+            "reasonInaccurate": "Zlepšit přesnost tohoto bodu",
+            "reasonRelocation": "Přesuňte tento objekt na jiné místo, protože se přemístil"
         },
         "inviteToMoveAgain": "Znovu přesunout tento bod",
+        "isRelation": "Tato funkce je vztah a nelze ji přesunout",
+        "isWay": "Tato funkce je cesta. K přesunutí použijte jiný editor OpenStreetMap.",
+        "loginToMove": "Pro přesun bodu musíte být přihlášeni",
         "moveTitle": "Přesunout tento bod",
+        "partOfAWay": "Tato funkce je součástí jiné cesty. K přesunutí použijte jiný editor.",
+        "partOfRelation": "Tato funkce je součástí vztahu. K přesunutí použijte jiný editor.",
+        "pointIsMoved": "Bod byl přesunut",
         "reasons": {
             "reasonInaccurate": "Umístění tohoto objektu je nepřesné a mělo by být posunuto o několik metrů",
             "reasonRelocation": "Objekt byl přemístěn na úplně jiné místo"
         },
-        "whyMove": "Proč chcete přesunout tento bod?"
+        "selectReason": "Proč přesouváte tento objekt?",
+        "whyMove": "Proč chcete přesunout tento bod?",
+        "zoomInFurther": "Chcete-li tento přesun potvrdit, více přibližte mapu"
+    },
+    "multi_apply": {
+        "autoApply": "Při změně atributů {attr_names} se tyto atributy automaticky změní také u {count} dalších objektů"
     },
     "notes": {
-        "isClosed": "Tato poznámka je vyřešena"
+        "addAComment": "Přidat komentář",
+        "addComment": "Přidejte komentář",
+        "addCommentAndClose": "Přidejte komentář a zavřete",
+        "addCommentPlaceholder": "Přidat komentář…",
+        "anonymous": "Anonymní uživatel",
+        "closeNote": "Závěrečná poznámka",
+        "createNote": "Vytvořte novou poznámku",
+        "createNoteIntro": "Je na mapě něco špatně nebo chybí? Zde vytvořte poznámku. Ty budou kontrolovat dobrovolníci.",
+        "createNoteTitle": "Zde vytvořte novou poznámku",
+        "creating": "Vytváření poznámky...",
+        "disableAllNoteFilters": "Vypnout všechny filtry",
+        "isClosed": "Tato poznámka je vyřešena",
+        "isCreated": "Vaše poznámka byla vytvořena!",
+        "loginToAddComment": "Chcete-li přidat komentář, přihlaste se",
+        "loginToAddPicture": "Chcete-li přidat obrázek, přihlaste se",
+        "loginToClose": "Pro uzavření této poznámky se přihlaste",
+        "noteIsPublic": "Toto bude viditelné všem",
+        "noteLayerDoEnable": "Povolit vrstvu zobrazující poznámky",
+        "noteLayerHasFilters": "Některé poznámky mohou být skryty filtrem",
+        "noteLayerNotEnabled": "Vrstva zobrazující poznámky není zapnuta. Chcete-li přidat novou poznámku, musí být tato vrstva povolena"
+    },
+    "privacy": {
+        "title": "Zásady ochrany osobních údajů",
+        "tracking": "Abychom získali přehled o tom, kdo navštěvuje naše webové stránky, shromažďujeme některé technické informace. To zahrnuje zemi, ze které jste webovou stránku navštívili, která webová stránka vás odkázala na MapComplete, typ vašeho zařízení a velikost obrazovky. Do vašeho zařízení je umístěn soubor cookie, který označuje, že jste dnes navštívili MapComplete. Tyto údaje nejsou dostatečně podrobné, aby vás osobně identifikovaly. Tyto statistiky jsou dostupné komukoli pouze souhrnně a jsou <a href='https://pietervdvn.goatcounter.com' target='_blank'>veřejně dostupné komukoli</a>",
+        "trackingTitle": "Statistické údaje",
+        "whileYoureHere": "Záleží vám na soukromí?"
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Recenze od zaměstnance)",

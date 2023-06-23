@@ -3581,6 +3581,12 @@
                 "question": "Quelle est la couleur de la borne ?",
                 "render": "La borne est {colour}"
             },
+            "hydrant-diameter": {
+                "question": "Quel est le diamètre du tuyau de cette bouche d'incendie ?"
+            },
+            "hydrant-number-of-couplings": {
+                "question": "Combien de raccords a cette bouche d'incendie ?"
+            },
             "hydrant-state": {
                 "mappings": {
                     "0": {

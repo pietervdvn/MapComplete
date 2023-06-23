@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "project": {
-    "name": "MapComplete Open Bookcase Map",
+    "name": "MapComplete Public bookcases",
     "description": "A public bookcase is a small streetside cabinet, box, old phone booth or some other objects where books are stored",
     "project_url": "https://mapcomplete.osm.be/bookcases",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
@@ -12,12 +12,12 @@
   "tags": [
     {
       "key": "amenity",
-      "description": "The MapComplete theme Open Bookcase Map has a layer Bookcases showing features with this tag",
+      "description": "The MapComplete theme Public bookcases has a layer Bookcases showing features with this tag",
       "value": "public_bookcase"
     },
     {
       "key": "id",
-      "description": "Layer 'Bookcases' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Open Bookcase Map') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Bookcases' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Public bookcases') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -37,115 +37,115 @@
     },
     {
       "key": "name",
-      "description": "Layer 'Bookcases' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Open Bookcase Map')"
+      "description": "Layer 'Bookcases' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Public bookcases')"
     },
     {
       "key": "noname",
-      "description": "Layer 'Bookcases' shows noname=yes with a fixed text, namely 'This bookcase doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map')",
+      "description": "Layer 'Bookcases' shows noname=yes with a fixed text, namely 'This bookcase doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Public bookcases')",
       "value": "yes"
     },
     {
       "key": "name",
-      "description": "Layer 'Bookcases' shows noname=yes with a fixed text, namely 'This bookcase doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map') Picking this answer will delete the key name.",
+      "description": "Layer 'Bookcases' shows noname=yes with a fixed text, namely 'This bookcase doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Public bookcases') Picking this answer will delete the key name.",
       "value": ""
     },
     {
       "key": "capacity",
-      "description": "Layer 'Bookcases' shows and asks freeform values for key 'capacity' (in the MapComplete.osm.be theme 'Open Bookcase Map')"
+      "description": "Layer 'Bookcases' shows and asks freeform values for key 'capacity' (in the MapComplete.osm.be theme 'Public bookcases')"
     },
     {
       "key": "books",
-      "description": "Layer 'Bookcases' shows and asks freeform values for key 'books' (in the MapComplete.osm.be theme 'Open Bookcase Map')"
+      "description": "Layer 'Bookcases' shows and asks freeform values for key 'books' (in the MapComplete.osm.be theme 'Public bookcases')"
     },
     {
       "key": "books",
-      "description": "Layer 'Bookcases' shows books=children with a fixed text, namely 'Mostly children books' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map')",
+      "description": "Layer 'Bookcases' shows books=children with a fixed text, namely 'Mostly children books' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Public bookcases')",
       "value": "children"
     },
     {
       "key": "books",
-      "description": "Layer 'Bookcases' shows books=adults with a fixed text, namely 'Mostly books for adults' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map')",
+      "description": "Layer 'Bookcases' shows books=adults with a fixed text, namely 'Mostly books for adults' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Public bookcases')",
       "value": "adults"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Bookcases' shows indoor=yes with a fixed text, namely 'This bookcase is located indoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map')",
+      "description": "Layer 'Bookcases' shows indoor=yes with a fixed text, namely 'This bookcase is located indoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Public bookcases')",
       "value": "yes"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Bookcases' shows indoor=no with a fixed text, namely 'This bookcase is located outdoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map')",
+      "description": "Layer 'Bookcases' shows indoor=no with a fixed text, namely 'This bookcase is located outdoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Public bookcases')",
       "value": "no"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Bookcases' shows  with a fixed text, namely 'This bookcase is located outdoors' (in the MapComplete.osm.be theme 'Open Bookcase Map') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Bookcases' shows  with a fixed text, namely 'This bookcase is located outdoors' (in the MapComplete.osm.be theme 'Public bookcases') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
       "key": "access",
-      "description": "Layer 'Bookcases' shows access=yes with a fixed text, namely 'Publicly accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map') (This is only shown if indoor=yes)",
+      "description": "Layer 'Bookcases' shows access=yes with a fixed text, namely 'Publicly accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Public bookcases') (This is only shown if indoor=yes)",
       "value": "yes"
     },
     {
       "key": "access",
-      "description": "Layer 'Bookcases' shows access=customers with a fixed text, namely 'Only accessible to customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map') (This is only shown if indoor=yes)",
+      "description": "Layer 'Bookcases' shows access=customers with a fixed text, namely 'Only accessible to customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Public bookcases') (This is only shown if indoor=yes)",
       "value": "customers"
     },
     {
       "key": "operator",
-      "description": "Layer 'Bookcases' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Open Bookcase Map')"
+      "description": "Layer 'Bookcases' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Public bookcases')"
     },
     {
       "key": "brand",
-      "description": "Layer 'Bookcases' shows and asks freeform values for key 'brand' (in the MapComplete.osm.be theme 'Open Bookcase Map')"
+      "description": "Layer 'Bookcases' shows and asks freeform values for key 'brand' (in the MapComplete.osm.be theme 'Public bookcases')"
     },
     {
       "key": "brand",
-      "description": "Layer 'Bookcases' shows brand=Little Free Library with a fixed text, namely 'Part of the network 'Little Free Library'' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map')",
+      "description": "Layer 'Bookcases' shows brand=Little Free Library with a fixed text, namely 'Part of the network 'Little Free Library'' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Public bookcases')",
       "value": "Little Free Library"
     },
     {
       "key": "nobrand",
-      "description": "Layer 'Bookcases' shows brand=Little Free Library with a fixed text, namely 'Part of the network 'Little Free Library'' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map') Picking this answer will delete the key nobrand.",
+      "description": "Layer 'Bookcases' shows brand=Little Free Library with a fixed text, namely 'Part of the network 'Little Free Library'' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Public bookcases') Picking this answer will delete the key nobrand.",
       "value": ""
     },
     {
       "key": "nobrand",
-      "description": "Layer 'Bookcases' shows nobrand=yes with a fixed text, namely 'This public bookcase is not part of a bigger network' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map')",
+      "description": "Layer 'Bookcases' shows nobrand=yes with a fixed text, namely 'This public bookcase is not part of a bigger network' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Public bookcases')",
       "value": "yes"
     },
     {
       "key": "brand",
-      "description": "Layer 'Bookcases' shows nobrand=yes with a fixed text, namely 'This public bookcase is not part of a bigger network' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map') Picking this answer will delete the key brand.",
+      "description": "Layer 'Bookcases' shows nobrand=yes with a fixed text, namely 'This public bookcase is not part of a bigger network' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Public bookcases') Picking this answer will delete the key brand.",
       "value": ""
     },
     {
       "key": "ref",
-      "description": "Layer 'Bookcases' shows and asks freeform values for key 'ref' (in the MapComplete.osm.be theme 'Open Bookcase Map') (This is only shown if brand~.+)"
+      "description": "Layer 'Bookcases' shows and asks freeform values for key 'ref' (in the MapComplete.osm.be theme 'Public bookcases') (This is only shown if brand~.+)"
     },
     {
       "key": "nobrand",
-      "description": "Layer 'Bookcases' shows nobrand=yes with a fixed text, namely 'This bookcase is not part of a bigger network' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map') (This is only shown if brand~.+)",
+      "description": "Layer 'Bookcases' shows nobrand=yes with a fixed text, namely 'This bookcase is not part of a bigger network' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Public bookcases') (This is only shown if brand~.+)",
       "value": "yes"
     },
     {
       "key": "brand",
-      "description": "Layer 'Bookcases' shows nobrand=yes with a fixed text, namely 'This bookcase is not part of a bigger network' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map') Picking this answer will delete the key brand. (This is only shown if brand~.+)",
+      "description": "Layer 'Bookcases' shows nobrand=yes with a fixed text, namely 'This bookcase is not part of a bigger network' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Public bookcases') Picking this answer will delete the key brand. (This is only shown if brand~.+)",
       "value": ""
     },
     {
       "key": "ref",
-      "description": "Layer 'Bookcases' shows nobrand=yes with a fixed text, namely 'This bookcase is not part of a bigger network' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map') Picking this answer will delete the key ref. (This is only shown if brand~.+)",
+      "description": "Layer 'Bookcases' shows nobrand=yes with a fixed text, namely 'This bookcase is not part of a bigger network' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Public bookcases') Picking this answer will delete the key ref. (This is only shown if brand~.+)",
       "value": ""
     },
     {
       "key": "start_date",
-      "description": "Layer 'Bookcases' shows and asks freeform values for key 'start_date' (in the MapComplete.osm.be theme 'Open Bookcase Map')"
+      "description": "Layer 'Bookcases' shows and asks freeform values for key 'start_date' (in the MapComplete.osm.be theme 'Public bookcases')"
     },
     {
       "key": "website",
-      "description": "Layer 'Bookcases' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Open Bookcase Map')"
+      "description": "Layer 'Bookcases' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Public bookcases')"
     }
   ]
 }

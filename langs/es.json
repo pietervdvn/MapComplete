@@ -7,14 +7,15 @@
     },
     "communityIndex": {
         "available": "Esta comunidad habla {native}",
-        "intro": "Ponte en contacto con otras personas para conocerlas, aprender de ellas, ..."
+        "intro": "Ponte en contacto con otras personas para conocerlas, aprender de ellas, ...",
+        "notAvailable": "Esta comunidad no habla {native}"
     },
     "delete": {
         "cancel": "Cancelar",
         "cannotBeDeleted": "Esta función no puede ser eliminada",
         "delete": "Eliminar",
         "explanations": {
-            "hardDelete": "Este punto será eliminado en OpenStreetMap. Puede ser recuperado por un colaborador experimentado",
+            "hardDelete": "Este elemento será eliminado en OpenStreetMap. Puede ser recuperado por un colaborador experimentado",
             "retagNoOtherThemes": "Esta característica será reclasificada y ocultada en esta aplicación",
             "retagOtherThemes": "Esta característica será reetiquetada y visible en {otherThemes}",
             "selectReason": "Por favor, seleccione el motivo por el que esta característica debe ser eliminada",
@@ -23,20 +24,20 @@
         "isDeleted": "Esta función se ha eliminado",
         "isntAPoint": "Solo los nodos pueden ser eliminados, esta característica es una vía, área o relación.",
         "loading": "Inspeccionando las propiedades para comprobar si esta característica puede ser eliminada.",
-        "loginToDelete": "Debes de haber iniciado sesión para eliminar un punto",
-        "notEnoughExperience": "Este punto fue hecho por otra persona.",
-        "onlyEditedByLoggedInUser": "Este punto solo ha sido editado por ti, puedes eliminarlo de manera segura.",
-        "partOfOthers": "Este punto forma parte de alguna vía o relación y no puede ser eliminada de manera directa.",
-        "readMessages": "Tienes mensajes sin leer. Léelos antes de eliminar un punto - alguien puede tener algún comentario",
+        "loginToDelete": "Debes de haber iniciado sesión para eliminar un elemento",
+        "notEnoughExperience": "Este elemento fue hecho por otra persona.",
+        "onlyEditedByLoggedInUser": "Este elemento solo ha sido editado por ti, puedes eliminarlo de manera segura.",
+        "partOfOthers": "Este elemento forma parte de alguna vía o relación y no se puede eliminar de manera directa.",
+        "readMessages": "Tienes mensajes sin leer. Léelos antes de eliminar un elemento - alguien puede tener algún comentario",
         "reasons": {
             "disused": "Esta característica está fuera de uso o eliminada",
-            "duplicate": "Este punto es un duplicado de otra característica",
+            "duplicate": "Este elemento es un duplicado de otra característica",
             "notFound": "Esta característica no se puedo encontrar",
-            "test": "Esto era un punto de pruebas - la característica en realidad nunca estuvo ahí"
+            "test": "Esto era un elemento de pruebas - el elemento en realidad nunca estuvo ahí"
         },
-        "safeDelete": "Este punto puede ser eliminado con seguridad.",
+        "safeDelete": "Este elemento puede ser eliminado con seguridad.",
         "useSomethingElse": "Utilice otro editor de OpenStreetMap para eliminarlo",
-        "whyDelete": "¿Por qué debería eliminarse este punto?"
+        "whyDelete": "¿Por qué debería eliminarse este elemento?"
     },
     "favourite": {
         "loginNeeded": "<h3>Entrar</h3>El diseño personalizado sólo está disponible para los usuarios de OpenStreetMap",

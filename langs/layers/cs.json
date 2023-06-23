@@ -434,6 +434,32 @@
                 },
                 "question": "Lze z tohoto bankomatu vybírat hotovost?"
             },
+            "cash_out-denominations-notes": {
+                "mappings": {
+                    "0": {
+                        "then": "Bankovky v hodnotě 5 eur lze vybírat"
+                    },
+                    "1": {
+                        "then": "Bankovky v hodnotě 10 eur lze vybírat"
+                    },
+                    "2": {
+                        "then": "Bankovky v hodnotě 20 eur lze vybírat"
+                    },
+                    "3": {
+                        "then": "50 eurové bankovky lze vybírat"
+                    },
+                    "4": {
+                        "then": "100 eurové bankovky lze vybírat"
+                    },
+                    "5": {
+                        "then": "200 eurové bankovky lze vybírat"
+                    },
+                    "6": {
+                        "then": "Bankovky v hodnotě 500 eur lze vybírat"
+                    }
+                },
+                "question": "Jaké bankovky zde můžete vybírat?"
+            },
             "name": {
                 "render": "Název tohoto bankomatu je {name}"
             },
@@ -1489,12 +1515,19 @@
                     "1": {
                         "then": "Tento obchod neprodává jízdní kola"
                     }
-                }
+                },
+                "question": "Prodává tento obchod jízdní kola?"
             },
             "bike_repair_tools-service": {
                 "mappings": {
                     "0": {
                         "then": "Tento obchod nabízí nářadí pro kutilské opravy"
+                    },
+                    "1": {
+                        "then": "Tento obchod nenabízí nářadí pro kutilské opravy"
+                    },
+                    "2": {
+                        "then": "Nářadí pro opravy svépomocí je k dispozici pouze v případě, že jste si kolo koupili/pronajali v prodejně"
                     }
                 },
                 "question": "Jsou zde nástroje na opravu vlastního kola?"
@@ -1507,6 +1540,27 @@
                     "0": {
                         "then": "Tato firma se zaměřuje na pronájem"
                     }
+                },
+                "render": "Tento obchod se specializuje na prodej {shop} a provádí činnosti související s jízdními koly"
+            },
+            "bike_shop-name": {
+                "question": "Jak se jmenuje tento obchod s jízdními koly?",
+                "render": "Tento obchod s jízdními koly se jmenuje {name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Obchod se sportovním vybavením <i>{name}</i>"
+                },
+                "1": {
+                    "then": "Winkel"
+                },
+                "2": {
+                    "then": "Půjčovna kol <i>{name}</i>"
+                },
+                "3": {
+                    "then": "Opravy kol <i>{name}</i>"
                 }
             }
         }

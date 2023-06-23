@@ -18,18 +18,6 @@ This layer visualizes directions
   - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
 
 
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [personal](https://mapcomplete.osm.be/personal)
-  - [surveillance](https://mapcomplete.osm.be/surveillance)
-
-
 This is a special layer - data is not sourced from OpenStreetMap
 
 

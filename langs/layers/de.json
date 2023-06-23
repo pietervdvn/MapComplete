@@ -7706,6 +7706,9 @@
                     },
                     "5": {
                         "then": "Hier wird Basketball gespielt"
+                    },
+                    "6": {
+                        "then": "Dies ist ein Skatepark"
                     }
                 },
                 "question": "Welche Sportarten können hier gespielt werden?",

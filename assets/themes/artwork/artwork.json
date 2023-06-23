@@ -1,10 +1,10 @@
 {
   "id": "artwork",
   "title": {
-    "en": "Open Artwork Map",
-    "nl": "Open kunstwerken-kaart",
+    "en": "Artwork",
+    "nl": "Kunstwerken",
     "fr": "Carte ouverte des œuvres d'art",
-    "de": "Freie Kunstkarte",
+    "de": "Kunstwerk",
     "hu": "Műalkotástérkép",
     "id": "Buka Peta Karya Seni",
     "it": "Mappa libera delle opere d'arte",
@@ -21,7 +21,7 @@
     "cs": "Otevřená mapa uměleckých děl",
     "pa_PK": "آزاد کلاکاری نقشہ",
     "zgh": "ⵕⵥⵎ ⵜⴰⴽⴰⵕⴹⴰ ⵏ ⵜⵡⵓⵔⵉ ⵜⴰⵏⴰⵥⵓⵕⵜ",
-    "es": "Mapa Abierto de Obras de Arte"
+    "es": "Obras de arte"
   },
   "description": {
     "en": "An open map of statues, busts, graffitis and other artwork all over the world",

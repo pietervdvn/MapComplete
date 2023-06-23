@@ -52,7 +52,8 @@
               "de": "ein Sanitätshaus",
               "es": "una tienda de suministros médicos",
               "cs": "obchod se zdravotnickými potřebami",
-              "ca": "una botiga de subministraments mèdics"
+              "ca": "una botiga de subministraments mèdics",
+              "nl": "een winkel voor medische hulpmiddelen"
             },
             "tags": [
               "shop=medical_supply"
@@ -64,7 +65,8 @@
               "de": "ein Hörgerätegeschäft",
               "es": "una tienda de audífonos",
               "cs": "obchod se sluchadly",
-              "ca": "una botiga d'audiòfons"
+              "ca": "una botiga d'audiòfons",
+              "nl": "een hoorapparatenwinkel"
             },
             "tags": [
               "shop=hearing_aids"
@@ -77,7 +79,8 @@
               "es": "una óptica",
               "cs": "optik",
               "ca": "una òptica",
-              "fr": "un opticien"
+              "fr": "un opticien",
+              "nl": "een optieker"
             },
             "tags": [
               "shop=optician"
