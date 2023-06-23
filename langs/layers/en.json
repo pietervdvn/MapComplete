@@ -2815,10 +2815,10 @@
                         "then": "Bouldering is not possible here"
                     },
                     "2": {
-                        "then": "Bouldering is possible, allthough there are only a few routes"
+                        "then": "Bouldering is possible, although there are only a few problems"
                     },
                     "3": {
-                        "then": "There are {climbing:boulder} boulder routes"
+                        "then": "There are {climbing:boulder} boulder problems"
                     }
                 },
                 "question": "Is bouldering possible here?"
@@ -3012,12 +3012,38 @@
                 },
                 "question": "Is there a speed climbing wall?"
             },
+            "belay_device_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Belay devices are provided at each rope"
+                    },
+                    "1": {
+                        "then": "A belay device can be borrowed for free here"
+                    },
+                    "2": {
+                        "then": "A belay device can be rented here for {service:climbing_belay_device:rental:charge}"
+                    },
+                    "3": {
+                        "then": "A belay device can be rented here"
+                    },
+                    "4": {
+                        "then": "A belay device can <b>not</b> be rented here"
+                    }
+                },
+                "question": "Can one rent a belay device here?"
+            },
             "harness_rental": {
                 "mappings": {
                     "0": {
-                        "then": "A climbing harness can be rented here"
+                        "then": "A climbing harness can be borrowed for free here"
                     },
                     "1": {
+                        "then": "A climbing harness can be rented here for {service:climbing_harness:rental:charge}"
+                    },
+                    "2": {
+                        "then": "A climbing harness can be rented here"
+                    },
+                    "3": {
                         "then": "A climbing harness can <b>not</b> be rented here"
                     }
                 },
@@ -3029,9 +3055,15 @@
             "rope_rental": {
                 "mappings": {
                     "0": {
-                        "then": "A climbing rope can be rented here"
+                        "then": "A climbing rope can be borrowed for free here"
                     },
                     "1": {
+                        "then": "A climbing rope can be rented here for {service:climbing_rope:rental:charge}"
+                    },
+                    "2": {
+                        "then": "A climbing rope can be rented here"
+                    },
+                    "3": {
                         "then": "A climbing rope can <b>not</b> be rented here"
                     }
                 },
@@ -3040,9 +3072,15 @@
             "shoe_rental": {
                 "mappings": {
                     "0": {
-                        "then": "Climbing shoes can be rented here"
+                        "then": "Climbing shoes can be borrowed for free here"
                     },
                     "1": {
+                        "then": "Climbing shoes can be rented here for {service:climbing_shoes:rental:charge}"
+                    },
+                    "2": {
+                        "then": "Climbing shoes can be rented here"
+                    },
+                    "3": {
                         "then": "Climbing shoes can <b>not</b> be rented here"
                     }
                 },

@@ -3006,12 +3006,38 @@
                 },
                 "question": "Gibt es hier eine Speedkletter-Wand?"
             },
+            "belay_device_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Jeder Seil hat ein Sicherungsgerät"
+                    },
+                    "1": {
+                        "then": "Ein Sicherungsgerät kann hier kostenlos ausgeliehen werden"
+                    },
+                    "2": {
+                        "then": "Ein Sicherungsgerät kann hier ausgeliehen werden für {service:climbing_belay_device:rental:charge}"
+                    },
+                    "3": {
+                        "then": "Ein Sicherungsgerät kann hier ausgeliehen werden"
+                    },
+                    "4": {
+                        "then": "Ein Sicherungsgerät kann hier <b>nicht</b> ausgeliehen werden"
+                    }
+                },
+                "question": "Kann man hier ein Sicherungsgerät ausleihen?"
+            },
             "harness_rental": {
                 "mappings": {
                     "0": {
-                        "then": "Ein Klettergurt kann hier ausgeliehen werden"
+                        "then": "Ein Klettergurt kann hier kostenlos ausgeliehen werden"
                     },
                     "1": {
+                        "then": "Ein Klettergurt kann hier ausgeliehen werden für {service:climbing_harness:rental:charge}"
+                    },
+                    "2": {
+                        "then": "Ein Klettergurt kann hier ausgeliehen werden"
+                    },
+                    "3": {
                         "then": "Ein Klettergurt kann hier <b>nicht</b> ausgeliehen werden"
                     }
                 },
@@ -3020,12 +3046,35 @@
             "name": {
                 "question": "Wie heißt diese Kletterhalle?"
             },
+            "rope_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Ein Kletterseil kann hier kostenlos ausgeliehen werden"
+                    },
+                    "1": {
+                        "then": "Ein Kletterseil kann hier ausgeliehen werden für {service:climbing_rope:rental:charge}"
+                    },
+                    "2": {
+                        "then": "Ein Kletterseil kann hier ausgeliehen werden"
+                    },
+                    "3": {
+                        "then": "Ein Kletterseil kann hier <b>nicht</b> ausgeliehen werden"
+                    }
+                },
+                "question": "Kann man hier ein Kletterseil ausleihen?"
+            },
             "shoe_rental": {
                 "mappings": {
                     "0": {
-                        "then": "Kletterschuhe können hier ausgeliehen werden"
+                        "then": "Kletterschuhe können hier kostenlos ausgeliehen werden"
                     },
                     "1": {
+                        "then": "Kletterschuhe können hier ausgeliehen werden für {service:climbing_shoes:rental:charge}"
+                    },
+                    "2": {
+                        "then": "Kletterschuhe können hier ausgeliehen werden"
+                    },
+                    "3": {
                         "then": "Kletterschuhe können hier <b>nicht</b> ausgeliehen werden"
                     }
                 },
