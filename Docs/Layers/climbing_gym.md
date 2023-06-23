@@ -69,6 +69,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:rental:climbing_shoes#values) [service:rental:climbing_shoes](https://wiki.openstreetmap.org/wiki/Key:service:rental:climbing_shoes) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:rental:climbing_shoes%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:rental:climbing_shoes%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:rental:climbing_harness#values) [service:rental:climbing_harness](https://wiki.openstreetmap.org/wiki/Key:service:rental:climbing_harness) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:rental:climbing_harness%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:rental:climbing_harness%3Dno)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:rental:climbing_rope#values) [service:rental:climbing_rope](https://wiki.openstreetmap.org/wiki/Key:service:rental:climbing_rope) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:rental:climbing_rope%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:rental:climbing_rope%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:toprope#values) [climbing:toprope](https://wiki.openstreetmap.org/wiki/Key:climbing:toprope) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:length#values) [climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length) | [pfloat](../SpecialInputElements.md#pfloat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:grade:french:min#values) [climbing:grade:french:min](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:min) | [string](../SpecialInputElements.md#string) | 
@@ -77,6 +78,9 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:sport#values) [climbing:sport](https://wiki.openstreetmap.org/wiki/Key:climbing:sport) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:bolts:max#values) [climbing:bolts:max](https://wiki.openstreetmap.org/wiki/Key:climbing:bolts:max) | [pnat](../SpecialInputElements.md#pnat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:speed#values) [climbing:speed](https://wiki.openstreetmap.org/wiki/Key:climbing:speed) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dno)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access#values) [internet_access](https://wiki.openstreetmap.org/wiki/Key:internet_access) | Multiple choice | [wlan](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno) [terminal](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal) [wired](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access:fee#values) [internet_access:fee](https://wiki.openstreetmap.org/wiki/Key:internet_access:fee) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno) [customers](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access:ssid#values) [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) | [string](../SpecialInputElements.md#string) | [Telekom](https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom)
 
 
 
@@ -193,6 +197,26 @@ This is rendered with  `A fee of {charge} should be paid for climbing here`
 
 
 
+### payment-options 
+
+
+
+The question is  *Which methods of payment are accepted here?*
+
+
+
+
+
+  - *Cash is accepted here*  corresponds with  `payment:cash=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
+  - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
+  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
+
+
+
+
 ### opening_hours 
 
 
@@ -235,6 +259,22 @@ The question is  *Can one rent a climbing harness here?*
 
   - *A climbing harness can be rented here*  corresponds with  `service:rental:climbing_harness=yes`
   - *A climbing harness can <b>not</b> be rented here*  corresponds with  `service:rental:climbing_harness=no`
+
+
+
+
+### rope_rental 
+
+
+
+The question is  *Can one rent a climbing rope here?*
+
+
+
+
+
+  - *A climbing rope can be rented here*  corresponds with  `service:rental:climbing_rope=yes`
+  - *A climbing rope can <b>not</b> be rented here*  corresponds with  `service:rental:climbing_rope=no`
 
 
 
@@ -368,6 +408,66 @@ The question is  *Is there a speed climbing wall?*
   - *There is no speed climbing wall*  corresponds with  `climbing:speed=no`
   - *There are {climbing:speed} speed climbing walls*  corresponds with  `climbing:speed~.+`
   - This option cannot be chosen as answer
- 
+
+
+
+
+### internet 
+
+
+
+The question is  *Does this place offer internet access?*
+
+
+
+
+
+  - *This place offers wireless internet access*  corresponds with  `internet_access=wlan`
+  - *This place <b>does not</b> offer internet access*  corresponds with  `internet_access=no`
+  - *This place offers internet access*  corresponds with  `internet_access=yes`
+  - This option cannot be chosen as answer
+  - *This place offers internet access via a terminal or computer*  corresponds with  `internet_access=terminal`
+  - *This place offers wired internet access*  corresponds with  `internet_access=wired`
+
+
+
+
+### internet-fee 
+
+
+
+The question is  *Is there a fee for internet access?*
+
+
+
+
+
+  - *There is a fee for the internet access at this place*  corresponds with  `internet_access:fee=yes`
+  - *Internet access is free at this place*  corresponds with  `internet_access:fee=no`
+  - *Internet access is free at this place, for customers only*  corresponds with  `internet_access:fee=customers`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no&internet_access~.+`
+
+
+
+### internet-ssid 
+
+
+
+The question is  *What is the network name for the wireless internet access?*
+
+This rendering asks information about the property  [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) 
+
+This is rendered with  `The network name is <b>{internet_access:ssid}</b>`
+
+
+
+
+
+  - *Telekom*  corresponds with  `internet_access:ssid=Telekom`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `internet_access=wlan` 
 
 This document is autogenerated from [assets/layers/climbing_gym/climbing_gym.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/climbing_gym/climbing_gym.json)

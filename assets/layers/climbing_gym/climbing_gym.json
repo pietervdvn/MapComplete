@@ -142,21 +142,24 @@
       "id": "rope_rental",
       "question": {
         "en": "Can one rent a climbing rope here?",
-        "nl": "Kan een klimtouw hier gehuurd worden?"
+        "nl": "Kan een klimtouw hier gehuurd worden?",
+        "de": "Kann man hier ein Kletterseil ausleihen?"
       },
       "mappings": [
         {
           "if": "service:rental:climbing_rope=yes",
           "then": {
             "en": "A climbing rope can be rented here",
-            "nl": "Een klimtouw kan hier gehuurd worden"
+            "nl": "Een klimtouw kan hier gehuurd worden",
+            "de": "Ein Kletterseil kann hier ausgeliehen werden"
           }
         },
         {
           "if": "service:rental:climbing_rope=no",
           "then": {
             "en": "A climbing rope can <b>not</b> be rented here",
-            "nl": "Hier kunnen <b>geen</b> klimtouwen gehuurd worden"
+            "nl": "Hier kunnen <b>geen</b> klimtouwen gehuurd worden",
+            "de": "Ein Kletterseil kann hier <b>nicht</b> ausgeliehen werden"
           }
         }
       ]

@@ -171,7 +171,8 @@
           "if": "sport=skateboard",
           "then": {
             "en": "This is a skatepark",
-            "nl": "Dit is een skatepark"
+            "nl": "Dit is een skatepark",
+            "de": "Dies ist ein Skatepark"
           }
         }
       ],

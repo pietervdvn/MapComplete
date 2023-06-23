@@ -1,12 +1,12 @@
 {
   "id": "aed",
   "title": {
-    "en": "Open AED Map",
+    "en": "Defibrillators",
     "ca": "Mapa obert de desfibril·ladors (DEA)",
-    "es": "Mapa Abierto de Desfibriladores (DEA)",
+    "es": "Desfibriladores",
     "fr": "Carte des défibrillateurs (DAE)",
-    "nl": "Open AED-kaart",
-    "de": "AED-Karte",
+    "nl": "Defibrillatoren en AED",
+    "de": "Defibrillatoren",
     "hu": "Defibrillátor-térkép",
     "id": "Buka Peta AED",
     "it": "Mappa dei defibrillatori (DAE)",

@@ -66,6 +66,11 @@
       "value": "basket"
     },
     {
+      "key": "sport",
+      "description": "Layer 'Sport pitches' shows sport=skateboard with a fixed text, namely 'This is a skatepark' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sports')",
+      "value": "skateboard"
+    },
+    {
       "key": "surface",
       "description": "Layer 'Sport pitches' shows and asks freeform values for key 'surface' (in the MapComplete.osm.be theme 'Sports')"
     },

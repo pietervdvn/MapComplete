@@ -11,6 +11,21 @@
   },
   "tags": [
     {
+      "key": "surface:colour",
+      "description": "The MapComplete theme Rainbow pedestrian crossings has a layer Crossings with rainbow paintings showing features with this tag",
+      "value": "rainbow"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Rainbow pedestrian crossings has a layer Crossings with rainbow paintings showing features with this tag",
+      "value": "crossing"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Rainbow pedestrian crossings has a layer Crossings with rainbow paintings showing features with this tag",
+      "value": "footway"
+    },
+    {
       "key": "footway",
       "description": "The MapComplete theme Rainbow pedestrian crossings has a layer Crossings with rainbow paintings showing features with this tag",
       "value": "crossing"
@@ -33,12 +48,12 @@
     },
     {
       "key": "surface:colour",
-      "description": "Layer 'Crossings with rainbow paintings' shows surface:colour=rainbow with a fixed text, namely 'This crossing has rainbow paintings' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Rainbow pedestrian crossings') (This is only shown if footway=crossing)",
+      "description": "Layer 'Crossings with rainbow paintings' shows surface:colour=rainbow with a fixed text, namely 'This crossing has rainbow paintings' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Rainbow pedestrian crossings')",
       "value": "rainbow"
     },
     {
       "key": "not:surface:colour",
-      "description": "Layer 'Crossings with rainbow paintings' shows not:surface:colour=rainbow with a fixed text, namely 'No rainbow paintings here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Rainbow pedestrian crossings') (This is only shown if footway=crossing)",
+      "description": "Layer 'Crossings with rainbow paintings' shows not:surface:colour=rainbow with a fixed text, namely 'No rainbow paintings here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Rainbow pedestrian crossings')",
       "value": "rainbow"
     }
   ]

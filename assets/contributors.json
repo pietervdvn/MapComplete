@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 5352,
+      "commits": 5390,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -9,7 +9,7 @@
       "contributor": "Robin van der Linde"
     },
     {
-      "commits": 43,
+      "commits": 44,
       "contributor": "Tobias"
     },
     {
@@ -62,6 +62,10 @@
     },
     {
       "commits": 19,
+      "contributor": "dependabot[bot]"
+    },
+    {
+      "commits": 19,
       "contributor": "Niels Elgaard Larsen"
     },
     {
@@ -71,10 +75,6 @@
     {
       "commits": 19,
       "contributor": "Sebastian Kürten"
-    },
-    {
-      "commits": 18,
-      "contributor": "dependabot[bot]"
     },
     {
       "commits": 18,
@@ -113,20 +113,20 @@
       "contributor": "LiamSimons"
     },
     {
+      "commits": 9,
+      "contributor": "Midgard"
+    },
+    {
+      "commits": 8,
+      "contributor": "Codain"
+    },
+    {
       "commits": 8,
       "contributor": "Mateusz Konieczny"
     },
     {
       "commits": 8,
       "contributor": "Thibault Molleman"
-    },
-    {
-      "commits": 8,
-      "contributor": "Midgard"
-    },
-    {
-      "commits": 7,
-      "contributor": "Codain"
     },
     {
       "commits": 7,
@@ -171,6 +171,10 @@
     {
       "commits": 3,
       "contributor": "Léo Villeveygoux"
+    },
+    {
+      "commits": 2,
+      "contributor": "bxl-forever"
     },
     {
       "commits": 2,
@@ -283,10 +287,6 @@
     {
       "commits": 1,
       "contributor": "kaipankrath"
-    },
-    {
-      "commits": 1,
-      "contributor": "bxl-forever"
     },
     {
       "commits": 1,

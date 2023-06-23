@@ -316,7 +316,8 @@
         "de": "Was ist der Rohrdurchmesser dieses Hydranten?",
         "nl": "Wat is de pijpdiameter van deze hydrant?",
         "ca": "Quin és el diàmetre d'aquest hidrant?",
-        "ru": "Какой диаметр трубы у этого гидранта?"
+        "ru": "Какой диаметр трубы у этого гидранта?",
+        "fr": "Quel est le diamètre du tuyau de cette bouche d'incendie ?"
       },
       "freeform": {
         "key": "fire_hydrant:diameter",
@@ -343,7 +344,8 @@
         "en": "How many couplings does this fire hydrant have?",
         "de": "Wie viele Kupplungen hat dieser Hydrant?",
         "nl": "Hoe veel koppelingen bezit deze brandkraan?",
-        "ca": "Quants acoblaments té aquest hidrant?"
+        "ca": "Quants acoblaments té aquest hidrant?",
+        "fr": "Combien de raccords a cette bouche d'incendie ?"
       },
       "freeform": {
         "key": "couplings",

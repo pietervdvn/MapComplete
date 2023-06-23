@@ -375,6 +375,7 @@
 
   - bicycle_rental
   - cafe_pub
+  - climbing_gym
   - food
   - observation_tower
   - shops
@@ -522,6 +523,7 @@
 
 
   - cafe_pub
+  - climbing_gym
   - food
   - hotel
   - shops
@@ -536,6 +538,7 @@
 
 
   - cafe_pub
+  - climbing_gym
   - food
   - hotel
   - shops
@@ -550,6 +553,7 @@
 
 
   - cafe_pub
+  - climbing_gym
   - food
   - hotel
   - shops

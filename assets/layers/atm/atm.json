@@ -284,7 +284,8 @@
         "en": "What notes can you withdraw here?",
         "nl": "Welke bankbiljetten kan je hier afhalen?",
         "fr": "Quels billets pouvez-vous retirer ici ?",
-        "de": "Welche Geldscheine können Sie hier abheben?"
+        "de": "Welche Geldscheine können Sie hier abheben?",
+        "cs": "Jaké bankovky zde můžete vybírat?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -294,7 +295,8 @@
           "then": {
             "en": "5 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 5 euro afhalen",
-            "de": "5-Euro-Scheine können abgehoben werden"
+            "de": "5-Euro-Scheine können abgehoben werden",
+            "cs": "Bankovky v hodnotě 5 eur lze vybírat"
           }
         },
         {
@@ -303,7 +305,8 @@
           "then": {
             "en": "10 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 10 euro afhalen",
-            "de": "10-Euro-Scheine können abgehoben werden"
+            "de": "10-Euro-Scheine können abgehoben werden",
+            "cs": "Bankovky v hodnotě 10 eur lze vybírat"
           }
         },
         {
@@ -312,7 +315,8 @@
           "then": {
             "en": "20 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 20 euro afhalen",
-            "de": "20-Euro-Scheine können abgehoben werden"
+            "de": "20-Euro-Scheine können abgehoben werden",
+            "cs": "Bankovky v hodnotě 20 eur lze vybírat"
           }
         },
         {
@@ -321,7 +325,8 @@
           "then": {
             "en": "50 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 50 euro afhalen",
-            "de": "Es können 50-Euro-Scheine abgehoben werden"
+            "de": "Es können 50-Euro-Scheine abgehoben werden",
+            "cs": "50 eurové bankovky lze vybírat"
           }
         },
         {
@@ -330,7 +335,8 @@
           "then": {
             "en": "100 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 100 euro afhalen",
-            "de": "100-Euro-Scheine können abgehoben werden"
+            "de": "100-Euro-Scheine können abgehoben werden",
+            "cs": "100 eurové bankovky lze vybírat"
           }
         },
         {
@@ -339,7 +345,8 @@
           "then": {
             "en": "200 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 200 euro afhalen",
-            "de": "200-Euro-Scheine können abgehoben werden"
+            "de": "200-Euro-Scheine können abgehoben werden",
+            "cs": "200 eurové bankovky lze vybírat"
           }
         },
         {
@@ -348,7 +355,8 @@
           "then": {
             "en": "500 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 500 euro afhalen",
-            "de": "500-Euro-Scheine können abgehoben werden"
+            "de": "500-Euro-Scheine können abgehoben werden",
+            "cs": "Bankovky v hodnotě 500 eur lze vybírat"
           }
         }
       ]

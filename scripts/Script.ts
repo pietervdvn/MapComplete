@@ -16,7 +16,7 @@ export default abstract class Script {
         this.main(args).then((_) => console.log("All done"))
     }
 
-    public printHelp(){
+    public printHelp() {
         console.log(this._docs)
     }
 }

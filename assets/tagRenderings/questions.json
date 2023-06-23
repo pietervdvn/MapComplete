@@ -898,7 +898,8 @@
           "en": "Payment by QR-code is possible here",
           "nl": "Betalen via een QR-code is hier mogelijk",
           "de": "Die Bezahlung per QR-Code ist hier möglich",
-          "es": "Aquí se puede pagar con código QR"
+          "es": "Aquí se puede pagar con código QR",
+          "ca": "Aquí es pot pagar amb codi QR"
         }
       }
     ]
