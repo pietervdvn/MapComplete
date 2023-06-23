@@ -179,6 +179,39 @@
       "id": "sport_pitch-sport"
     },
     {
+      "id": "basketball-hoops",
+      "question": {
+        "en": "How much basketball hoops does this pitch have?"
+      },
+      "mappings": [
+        {
+          "if": "hoops=1",
+          "then": {
+            "en": "This basketball pitch has a single hoop"
+          }
+        },
+        {
+          "if": "hoops=2",
+          "then": {
+            "en": "This basketball pitch has two hoops"
+          }
+        },
+        {
+          "if": "hoops=4",
+          "then": {
+            "en": "This basketball pitch has four hoops"
+          }
+        },
+        {
+          "if": "hoops~*",
+          "then": {
+            "en": "This basketball pitch has {hoops} hoops"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
       "question": {
         "nl": "Wat is de ondergrond van dit sportveld?",
         "fr": "De quelle surface est fait ce terrain de sport ?",
