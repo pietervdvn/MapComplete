@@ -52,6 +52,10 @@ export class UpdateLegacyLayer extends DesugaringStep<
                     delete preset["preciseInput"]
                 }
             }
+
+            if (typeof preset.snapToLayer === "string") {
+                preset.snapToLayer = [preset.snapToLayer]
+            }
         }
 
         if (config.tagRenderings !== undefined) {

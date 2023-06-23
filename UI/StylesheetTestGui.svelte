@@ -120,6 +120,10 @@
         JavaScript
       </label>
     </div>
+    
+    <div class="border-interactive">
+      Area with extreme high interactivity due to `border-interactive`
+    </div>
 
     <select>
       <option value="A">A</option>

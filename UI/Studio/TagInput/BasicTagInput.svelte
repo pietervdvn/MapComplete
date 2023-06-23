@@ -10,10 +10,6 @@
     export let tag: UIEventSource<string> = new UIEventSource<string>(undefined)
     export let uploadableOnly: boolean
     export let overpassSupportNeeded: boolean
-    tag.addCallback(tag => console.log("Current tag is", tag))
-
-    console.log({uploadableOnly, overpassSupportNeeded})
-
 
     let feedbackGlobal = tag.map(tag => {
         if (!tag) {
@@ -56,6 +52,24 @@
         modes.push(...TagUtils.comparators.map(c => c[0]))
     }
 
+
+    if (tag.data) {
+        const sortedModes = [...modes]
+        sortedModes.sort((a, b) => b.length - a.length)
+        const t = tag.data
+        console.log(t)
+        for (const m of sortedModes) {
+            if (t.indexOf(m) >= 0) {
+                const [k, v] = t.split(m)
+                keyValue.setData(k)
+                valueValue.setData(v)
+                mode = m
+                break
+            }
+        }
+    }
+
+
     onDestroy(valueValue.addCallbackAndRun(setTag))
     onDestroy(keyValue.addCallbackAndRun(setTag))
 
@@ -66,25 +80,34 @@
     function setTag(_) {
         const k = keyValue.data
         const v = valueValue.data
-        tag.setData(k + mode + v)
+        const t = k + mode + v
+        try {
+            TagUtils.Tag(t)
+            tag.setData(t)
+        } catch (e) {
+            tag.setData(undefined)
+        }
     }
 
 </script>
 
 
-<div>
+<div class="flex items-center">
 
-    <ValidatedInput feedback={feedbackKey} placeholder="The key of the tag" type="key"
-                    value={keyValue}></ValidatedInput>
-    <select bind:value={mode}>
-        {#each modes as option}
-            <option value={option}>
-                {option}
-            </option>
-        {/each}
-    </select>
-    <ValidatedInput feedback={feedbackValue} placeholder="The value of the tag" type="string"
-                    value={valueValue}></ValidatedInput>
+    <div class="flex h-fit ">
+
+        <ValidatedInput feedback={feedbackKey} placeholder="The key of the tag" type="key"
+                        value={keyValue}></ValidatedInput>
+        <select bind:value={mode}>
+            {#each modes as option}
+                <option value={option}>
+                    {option}
+                </option>
+            {/each}
+        </select>
+        <ValidatedInput feedback={feedbackValue} placeholder="The value of the tag" type="string"
+                        value={valueValue}></ValidatedInput>
+    </div>
 
     {#if $feedbackKey}
         <Tr cls="alert" t={$feedbackKey}/>
@@ -93,6 +116,5 @@
     {:else if $feedbackGlobal}
         <Tr cls="alert" t={$feedbackGlobal}/>
     {/if}
-
     <TagInfoStats {tag}/>
 </div>

@@ -109,7 +109,7 @@ export interface MappingConfigJson {
      * {
      *     "if": "crossing:marking=rainbow",
      *     "then": "This is a rainbow crossing",
-     *     "addExtraTags": "not:crossing:marking="
+     *     "addExtraTags": ["not:crossing:marking="]
      * }
      * ```
      *

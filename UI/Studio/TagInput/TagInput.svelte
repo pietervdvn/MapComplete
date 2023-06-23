@@ -12,5 +12,7 @@ export let overpassSupportNeeded: boolean
 </script>
 
 <div class="m-4">
-    <TagExpression {overpassSupportNeeded} {tag} {uploadableOnly}/>
+    <TagExpression {overpassSupportNeeded} {tag} {uploadableOnly}>
+        <slot name="delete" slot="delete"/>
+    </TagExpression>
 </div>

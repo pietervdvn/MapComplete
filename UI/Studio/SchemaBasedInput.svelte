@@ -16,7 +16,7 @@
 {#if schema.type === "array"}
     <SchemaBasedArray {path} {state} {schema}/>
 {:else if schema.hints.typehint === "tag"}
-    <RegisteredTagInput {state} {path}/>
+    <RegisteredTagInput {state} {path} {schema}/>
 {:else if schema.hints.types}
     <SchemaBaseMultiType {path} {state} {schema}/>
 {:else}

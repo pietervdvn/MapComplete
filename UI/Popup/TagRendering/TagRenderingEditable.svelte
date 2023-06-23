@@ -14,7 +14,7 @@
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
-  export let selectedElement: Feature
+  export let selectedElement: Feature | undefined
   export let state: SpecialVisualizationState
   export let layer: LayerConfig
 

@@ -20,7 +20,7 @@ import Combine from "../Base/Combine"
 import Title from "../Base/Title"
 import SimpleTagValidator from "./Validators/SimpleTagValidator"
 import ImageUrlValidator from "./Validators/ImageUrlValidator"
-import TagKeyValidator from "./Validators/TagKeyValidator";
+import TagKeyValidator from "./Validators/TagKeyValidator"
 
 export type ValidatorType = (typeof Validators.availableTypes)[number]
 
@@ -42,6 +42,9 @@ export default class Validators {
         "phone",
         "opening_hours",
         "color",
+        "image",
+        "simple_tag",
+        "key",
     ] as const
 
     public static readonly AllValidators: ReadonlyArray<Validator> = [
@@ -63,7 +66,7 @@ export default class Validators {
         new ColorValidator(),
         new ImageUrlValidator(),
         new SimpleTagValidator(),
-        new TagKeyValidator()
+        new TagKeyValidator(),
     ]
 
     private static _byType = Validators._byTypeConstructor()

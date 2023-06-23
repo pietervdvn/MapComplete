@@ -1,6 +1,10 @@
 export default {
   "type": "object",
   "properties": {
+    "neededChangesets": {
+      "description": "*\nBy default, the contributor needs 20 previous changesets to delete points edited by others.\nFor some small features (e.g. bicycle racks) this is too much and this requirement can be lowered or dropped, which can be done here.\n\ntype: nat\nquestion: How many changesets must a contributor have before being allowed to delete a point?",
+      "type": "number"
+    },
     "extraDeleteReasons": {
       "description": "*\nBy default, three reasons to delete a point are shown:\n\n- The point does not exist anymore\n- The point was a testing point\n- THe point could not be found\n\nHowever, for some layers, there might be different or more specific reasons for deletion which can be user friendly to set, e.g.:\n\n- the shop has closed\n- the climbing route has been closed of for nature conservation reasons\n- ...\n\nThese reasons can be stated here and will be shown in the list of options the user can choose from",
       "type": "array",
@@ -8,10 +12,10 @@ export default {
         "type": "object",
         "properties": {
           "explanation": {
-            "description": "The text that will be shown to the user - translatable"
+            "description": "The text that will be shown to the user as option for why this point does not exist anymore.\nNote that the most common reasons (test point, does not exist anymore, cannot be found) are already offered by default\n\nquestion: For what extra reason might this feature be removed in real-life?"
           },
           "changesetMessage": {
-            "description": "The text that will be uploaded into the changeset or will be used in the fixme in case of a soft deletion\nShould be a few words, in english",
+            "description": "The text that will be uploaded into the changeset or will be used in the fixme in case of a soft deletion\nShould be a few words, in english\n\nquestion: What should be added to the changeset as delete reason?",
             "type": "string"
           }
         },
@@ -29,10 +33,10 @@ export default {
         "properties": {
           "if": {
             "$ref": "#/definitions/TagConfigJson",
-            "description": "The tags that will be given to the object.\nThis must remove tags so that the 'source/osmTags' won't match anymore"
+            "description": "The tags that will be given to the object.\nThis must remove tags so that the 'source/osmTags' won't match anymore\n\nquestion: What tags should be applied to the object?"
           },
           "then": {
-            "description": "The human explanation for the options"
+            "description": "The human explanation for the options\n\nquestion: What text should be shown to the contributor for this reason?"
           }
         },
         "required": [
@@ -42,7 +46,7 @@ export default {
       }
     },
     "softDeletionTags": {
-      "description": "In some cases, the contributor is not allowed to delete the current feature (e.g. because it isn't a point, the point is referenced by a relation or the user isn't experienced enough).\nTo still offer the user a 'delete'-option, the feature is retagged with these tags. This is a soft deletion, as the point isn't actually removed from OSM but rather marked as 'disused'\nIt is important that the feature will be retagged in such a way that it won't be picked up by the layer anymore!\n\nExample (note that \"amenity=\" erases the 'amenity'-key alltogether):\n```\n{\n    \"and\": [\"disussed:amenity=public_bookcase\", \"amenity=\"]\n}\n```\n\nor (notice the use of the ':='-tag to copy the old value of 'shop=*' into 'disused:shop='):\n```\n{\n    \"and\": [\"disused:shop:={shop}\", \"shop=\"]\n}\n```",
+      "description": "In some cases, the contributor is not allowed to delete the current feature (e.g. because it isn't a point, the point is referenced by a relation or the user isn't experienced enough).\nTo still offer the user a 'delete'-option, the feature is retagged with these tags. This is a soft deletion, as the point isn't actually removed from OSM but rather marked as 'disused'\nIt is important that the feature will be retagged in such a way that it won't be picked up by the layer anymore!\n\nExample (note that \"amenity=\" erases the 'amenity'-key alltogether):\n\n```\n{\n    \"and\": [\"disussed:amenity=public_bookcase\", \"amenity=\"]\n}\n```\n\nor (notice the use of the ':='-tag to copy the old value of 'shop=*' into 'disused:shop='):\n\n```\n{\n    \"and\": [\"disused:shop:={shop}\", \"shop=\"]\n}\n```\n\nquestion: If a hard delete is not possible, what tags should be applied to mark this feature as deleted?\ntype: tag",
       "anyOf": [
         {
           "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -55,12 +59,8 @@ export default {
         }
       ]
     },
-    "neededChangesets": {
-      "description": "*\nBy default, the contributor needs 20 previous changesets to delete points edited by others.\nFor some small features (e.g. bicycle racks) this is too much and this requirement can be lowered or dropped, which can be done here.",
-      "type": "number"
-    },
     "omitDefaultDeleteReasons": {
-      "description": "Set this flag if the default delete reasons should be omitted from the dialog.\nThis requires at least one extraDeleteReason or nonDeleteMapping",
+      "description": "Set this flag if the default delete reasons should be omitted from the dialog.\nThis requires at least one extraDeleteReason or nonDeleteMapping\n\nquestion: Should the default delete reasons be hidden?\niftrue: Hide the default delete reasons\niffalse: Show the default delete reasons\nifunset: Show the default delete reasons (default behaviour)",
       "type": "boolean"
     }
   },

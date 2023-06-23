@@ -11,9 +11,13 @@ export interface ConfigMeta {
          */
         types?: string
         question?: string
+        iftrue?: string
+        iffalse?: string
         ifunset?: string
         inline?: string
         default?: string
+        typesdefault?: string
+        suggestions?: []
     }
     required: boolean
     description: string

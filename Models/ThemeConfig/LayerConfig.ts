@@ -238,13 +238,7 @@ export default class LayerConfig extends WithContextLoader {
                 throw "Layer " + this.id + " still uses the old 'preciseInput'-field"
             }
             if (pr.snapToLayer !== undefined) {
-                let snapToLayers: string[]
-                if (typeof pr.snapToLayer === "string") {
-                    snapToLayers = [pr.snapToLayer]
-                } else {
-                    snapToLayers = pr.snapToLayer
-                }
-
+                let snapToLayers = pr.snapToLayer
                 preciseInput = {
                     snapToLayers,
                     maxSnapDistance: pr.maxSnapDistance ?? 10,

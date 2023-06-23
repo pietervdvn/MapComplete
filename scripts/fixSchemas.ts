@@ -1,7 +1,25 @@
 import ScriptUtils from "./ScriptUtils"
 import { readFileSync, writeFileSync } from "fs"
 import { JsonSchema } from "../UI/Studio/jsonSchema"
+import { AllSharedLayers } from "../Customizations/AllSharedLayers"
+import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
+import { ConfigMeta } from "../UI/Studio/configMeta"
+import { Or } from "../Logic/Tags/Or"
 
+const metainfo = {
+    type: "One of the inputValidator types",
+    types: "Is multiple types are allowed for this field, then first show a mapping to pick the appropriate subtype. `Types` should be `;`-separated and contain precisely the same amount of subtypes",
+    typesdefault: "Works in conjuction with `types`: this type will be selected by default",
+    group: "A kind of label. Items with the same group name will be placed in the same region",
+    default: "The default value which is used if no value is specified",
+    question: "The question to ask in the tagRenderingConfig",
+    iftrue: "For booleans only - text to show with 'yes'",
+    iffalse: "For booleans only - text to show with 'no'",
+    ifunset:
+        "Only applicable if _not_ a required item. This will appear in the 'not set'-option as extra description",
+    inline: "A text, containing `{value}`. This will be used as freeform rendering and will be included into the rendering",
+    suggestions: "a javascript expression generating mappings",
+}
 function WalkScheme<T>(
     onEach: (schemePart: JsonSchema, path: string[]) => T,
     scheme: JsonSchema,
@@ -23,6 +41,7 @@ function WalkScheme<T>(
         }
         const definitionName = ref.substr(prefix.length)
         if (isHandlingReference.indexOf(definitionName) >= 0) {
+            // We abort here to avoid infinite recursion
             return []
         }
         const loadedScheme = fullScheme.definitions[definitionName]
@@ -91,7 +110,7 @@ function WalkScheme<T>(
     return results
 }
 
-function addMetafields(fieldnames: string[], fullSchema: JsonSchema) {
+function addMetafields(fieldnames: string[], fullSchema: JsonSchema): ConfigMeta[] {
     const onEach = (schemePart, path) => {
         if (schemePart.description === undefined) {
             return
@@ -139,31 +158,75 @@ function addMetafields(fieldnames: string[], fullSchema: JsonSchema) {
             }
         }
 
+        if (hints["suggestions"]) {
+            const suggestions = hints["suggestions"]
+            console.log("Creating suggestions for expression", suggestions)
+            const f = new Function("{ layers, themes  }", suggestions)
+            hints["suggestions"] = f({
+                layers: AllSharedLayers.sharedLayers,
+                themes: AllKnownLayouts.allKnownLayouts,
+            })
+        }
+
         return { hints, type, description: description.join("\n") }
     }
 
-    return WalkScheme(onEach, fullSchema, fullSchema, [], [], fullSchema.required)
+    return WalkScheme(onEach, fullSchema, fullSchema, [], [], fullSchema.required).map(
+        ({ path, required, t }) => ({ path, required, ...t })
+    )
 }
 
-function extractMeta(typename: string, path: string) {
+function substituteReferences(
+    paths: ConfigMeta[],
+    origSchema: JsonSchema,
+    allDefinitions: Record<string, JsonSchema>
+) {
+    for (const path of paths) {
+        if (!Array.isArray(path.type)) {
+            continue
+        }
+        for (let i = 0; i < path.type.length; i++) {
+            const typeElement = path.type[i]
+            const ref = typeElement["$ref"]
+            if (!ref) {
+                continue
+            }
+            const name = ref.substring("#/definitions/".length)
+            if (name === "TagRenderingConfigJson") {
+                continue
+            }
+            if (name.startsWith("{") || name.startsWith("Record<")) {
+                continue
+            }
+            if (origSchema["definitions"]?.[name]) {
+                path.type[i] = origSchema["definitions"]?.[name]
+                continue
+            }
+
+            if (name === "DeleteConfigJson") {
+                const target = allDefinitions[name]
+                if (!target) {
+                    throw "Cannot expand reference for type " + name + "; it does not exist "
+                }
+                path.type[i] = target
+                continue
+            }
+
+            console.log("Expanding " + name)
+        }
+    }
+}
+
+function extractMeta(typename: string, path: string, allDefinitions: Record<string, JsonSchema>) {
     let themeSchema: JsonSchema = JSON.parse(
         readFileSync("./Docs/Schemas/" + typename + ".schema.json", { encoding: "utf8" })
     )
 
-    const metainfo = {
-        type: "One of the inputValidator types",
-        types: "Is multiple types are allowed for this field, then first show a mapping to pick the appropriate subtype. `Types` should be `;`-separated and contain precisely the same amount of subtypes",
-        group: "A kind of label. Items with the same group name will be placed in the same region",
-        default: "The default value which is used if no value is specified",
-        question: "The question to ask in the tagRenderingConfig",
-        ifunset:
-            "Only applicable if _not_ a required item. This will appear in the 'not set'-option as extra description",
-        inline: "A text, containing `{value}`. This will be used as freeform rendering and will be included into the rendering",
-    }
     const metakeys = Array.from(Object.keys(metainfo))
 
-    const hints = addMetafields(metakeys, themeSchema)
-    const paths = hints.map(({ path, required, t }) => ({ path, required, ...t }))
+    const paths = addMetafields(metakeys, themeSchema)
+
+    substituteReferences(paths, themeSchema, allDefinitions)
 
     writeFileSync("./assets/" + path + ".json", JSON.stringify(paths, null, "  "))
     console.log("Written meta to ./assets/" + path)
@@ -173,6 +236,7 @@ function main() {
     const allSchemas = ScriptUtils.readDirRecSync("./Docs/Schemas").filter((pth) =>
         pth.endsWith("JSC.ts")
     )
+    const allDefinitions: Record<string, JsonSchema> = {}
     for (const path of allSchemas) {
         const dir = path.substring(0, path.lastIndexOf("/"))
         const name = path.substring(path.lastIndexOf("/"), path.length - "JSC.ts".length)
@@ -187,14 +251,20 @@ function main() {
                 def["additionalProperties"] = false
             }
         }
+
+        allDefinitions[name.substring(1)] = parsed
         writeFileSync(dir + "/" + name + ".schema.json", JSON.stringify(parsed, null, "  "), {
             encoding: "utf8",
         })
     }
-    extractMeta("LayerConfigJson", "layerconfigmeta")
-    extractMeta("LayoutConfigJson", "layoutconfigmeta")
-    extractMeta("TagRenderingConfigJson", "tagrenderingconfigmeta")
-    extractMeta("QuestionableTagRenderingConfigJson", "questionabletagrenderingconfigmeta")
+    extractMeta("LayerConfigJson", "layerconfigmeta", allDefinitions)
+    extractMeta("LayoutConfigJson", "layoutconfigmeta", allDefinitions)
+    extractMeta("TagRenderingConfigJson", "tagrenderingconfigmeta", allDefinitions)
+    extractMeta(
+        "QuestionableTagRenderingConfigJson",
+        "questionabletagrenderingconfigmeta",
+        allDefinitions
+    )
 }
 
 main()

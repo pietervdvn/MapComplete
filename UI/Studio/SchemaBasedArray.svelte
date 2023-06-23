@@ -4,6 +4,7 @@
     import {UIEventSource} from "../../Logic/UIEventSource";
     import SchemaBasedInput from "./SchemaBasedInput.svelte";
     import SchemaBasedField from "./SchemaBasedField.svelte";
+    import {TrashIcon} from "@babeard/svelte-heroicons/mini";
 
     export let state: EditLayerState
     export let schema: ConfigMeta
@@ -21,14 +22,21 @@
 
     const subparts = state.getSchemaStartingWith(schema.path)
 
-    console.log("Subparts for", schema.path, " are", subparts)
-
     let createdItems = 0
     /**
      * Keeps track of the items.
-     * We keep a single string (stringified 'createdItems') to make sure the order is corrects
+     * We keep a single string (stringified 'createdItems') to make sure the order is correct
      */
     export let values: UIEventSource<number[]> = new UIEventSource<number[]>([])
+
+    const currentValue = <[]>state.getCurrentValueFor(path)
+    if (currentValue) {
+        if (!Array.isArray(currentValue)) {
+            console.error("SchemaBaseArray for path", path, "expected an array as initial value, but got a", typeof currentValue, currentValue)
+        } else {
+            values.setData(currentValue.map((_, i) => i))
+        }
+    }
 
     function createItem() {
         values.data.push(createdItems)
@@ -69,7 +77,12 @@
         {/each}
     {:else}
         {#each $values as value (value)}
-            <h3>{singular} {value}</h3>
+            <div class="flex justify-between items-center">
+                <h3 class="m-0">{singular} {value}</h3>
+                <button class="border-black border rounded-full p-1 w-fit h-fit" on:click={() => {values.data.splice(values.data.indexOf(value)); values.ping()}}>
+                    <TrashIcon class="w-4 h-4"/>
+                </button>
+            </div>
             <div class="border border-black">
                 {#each subparts as subpart}
                     <SchemaBasedInput {state} path={fusePath(value, subpart.path)} schema={subpart}/>

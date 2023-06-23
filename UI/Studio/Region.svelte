@@ -11,11 +11,19 @@ export let configs: ConfigMeta[]
 export let title: string
 
 </script>
+{#if title}
+    <h3>{title}</h3>
+    <div class="pl-2 border border-black flex flex-col gap-y-1">
 
-<h3>{title}</h3>
-<div class="pl-2 border border-black flex flex-col gap-y-1">
+        {#each configs as config}
+            <SchemaBasedInput {state} path={config.path} schema={config}/>
+        {/each}
+    </div>
+{:else}
+    <div class="pl-2 flex flex-col gap-y-1">
+        {#each configs as config}
+            <SchemaBasedInput {state} path={config.path} schema={config}/>
+        {/each}
+    </div>
+{/if}
 
-    {#each configs as config}
-        <SchemaBasedInput {state} path={config.path} schema={config}/>
-    {/each}
-</div>

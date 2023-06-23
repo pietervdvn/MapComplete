@@ -39,8 +39,9 @@ export class ExtractImages extends Conversion<
         return (
             metapath.type?.some(
                 (t) =>
-                    t["$ref"] == "#/definitions/TagRenderingConfigJson" ||
-                    t["$ref"] == "#/definitions/QuestionableTagRenderingConfigJson"
+                    t !== null &&
+                    (t["$ref"] == "#/definitions/TagRenderingConfigJson" ||
+                        t["$ref"] == "#/definitions/QuestionableTagRenderingConfigJson")
             ) ?? false
         )
     }

@@ -8,33 +8,50 @@
     import type {ConfigMeta} from "./configMeta";
     import {Utils} from "../../Utils";
 
-
+    import drinking_water from "../../assets/layers/drinking_water/drinking_water.json"
 
     const layerSchema: ConfigMeta[] = layerSchemaRaw
     let state = new EditLayerState(layerSchema)
-    const regions = Utils.Dedup(layerSchema.map(meta => meta.hints.group))
-        .filter(region => region === "basic")
+    state.configuration.setData(drinking_water)
+    /**
+     * Blacklist for the general area tab
+     */
+    const regionBlacklist = ["hidden",undefined,"infobox", "tagrenderings","maprendering"]
+    const allNames =  Utils.Dedup(layerSchema.map(meta => meta.hints.group))
 
     const perRegion: Record<string, ConfigMeta[]> = {}
-    for (const region of regions) {
+    for (const region of allNames) {
         perRegion[region] = layerSchema.filter(meta => meta.hints.group === region)
     }
-    console.log({perRegion})
+    
+    const baselayerRegions: string[] = ["Basic", "presets", "editing","filters","advanced","expert"]
+    for (const baselayerRegion of baselayerRegions) {
+        if(perRegion[baselayerRegion] === undefined){
+            console.error("BaseLayerRegions in editLayer: no items have group '"+baselayerRegion+'"')
+        }
+    }
+    const generalTabRegions : string[] = allNames.filter(r => regionBlacklist.indexOf(r) <0)
 </script>
 
 <h3>Edit layer</h3>
 
+<div class="m4">
+    {allNames}
 <TabbedGroup tab={new UIEventSource(0)}>
     <div slot="title0">General properties</div>
     <div class="flex flex-col" slot="content0">
-        {#each regions as region}
+        {#each baselayerRegions as region}
+            <Region {state} configs={perRegion[region]} title={region}/>
+        {/each}
+        {#each generalTabRegions as region}
             <Region {state} configs={perRegion[region]} title={region}/>
         {/each}
     </div>
 
     <div slot="title1">Information panel (questions and answers)</div>
     <div slot="content1">
-        Information panel (todo)
+        <Region {state} configs={perRegion["infobox"]} title="Infobox"/>
+        <Region {state} configs={perRegion["tagrenderings"]} title="Infobox"/>
     </div>
 
     <div slot="title2">Rendering on the map</div>
@@ -42,3 +59,5 @@
         TODO: rendering on the map
     </div>
 </TabbedGroup>
+
+</div>
