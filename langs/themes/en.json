@@ -882,6 +882,10 @@
                     "theme-id": {
                         "question": "What theme was used to make this change?",
                         "render": "Change with theme <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    },
+                    "version": {
+                        "question": "What version of MapComplete was used to make this change?",
+                        "render": "Made with {editor}"
                     }
                 },
                 "title": {

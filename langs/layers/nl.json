@@ -2005,6 +2005,9 @@
                     },
                     "4": {
                         "then": "Niet toegankelijk voor het publiek <br/><span class='subtle'>Bv. enkel toegankelijk voor de eigenaar, medewerkers, ...</span>"
+                    },
+                    "5": {
+                        "then": "Dit oplaadstation is publiek toegankelijk onder voorwaarden (bv. enkel tijdens bepaalde uren). "
                     }
                 },
                 "question": "Wie mag er dit oplaadpunt gebruiken?",
@@ -4824,6 +4827,9 @@
             "Privacy notice": {
                 "render": "Dit is waar je was sinds je deze website hebt geopend. Dit is enkel zichtbaar voor jou en niemand anders. Je locatie wordt niet verstuurd buiten je apparaat."
             }
+        },
+        "title": {
+            "render": "Jouw traject"
         }
     },
     "hackerspace": {

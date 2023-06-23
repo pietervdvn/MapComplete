@@ -2115,6 +2115,9 @@
                     },
                     "4": {
                         "then": "Not accessible to the general public (e.g. only accessible to the owners, employees, …)"
+                    },
+                    "5": {
+                        "then": "This charging station is accessible to the public during certain hours or conditions. Restrictions might apply, but general use is allowed."
                     }
                 },
                 "question": "Who is allowed to use this charging station?",
@@ -4645,6 +4648,12 @@
         "name": "OSM objects with FIXME tags",
         "tagRenderings": {
             "fixme": {
+                "mappings": {
+                    "0": {
+                        "then": "This issue has been resolved"
+                    }
+                },
+                "question": "What is wrong with this feature?",
                 "render": "Fixme Text: {fixme}"
             },
             "note": {
@@ -5042,6 +5051,9 @@
             "Privacy notice": {
                 "render": "This is the path you've travelled since this website is opened. Don't worry - this is only visible to you and no one else. Your location data is never sent off-device."
             }
+        },
+        "title": {
+            "render": "Your travelled path"
         }
     },
     "hackerspace": {
