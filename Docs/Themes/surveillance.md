@@ -12,7 +12,6 @@ This theme contains the following layers:
 
 
   - [walls_and_buildings](../Layers/walls_and_buildings.md)
-  - [direction](../Layers/direction.md)
   - [surveillance_camera](../Layers/surveillance_camera.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)

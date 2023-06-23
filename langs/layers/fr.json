@@ -1753,10 +1753,10 @@
                         "then": "L’escalade de bloc n’est pas possible"
                     },
                     "2": {
-                        "then": "L’escalade de bloc est possible sur des voies précises"
+                        "then": "L’escalade de bloc est possible, mais il n’y a que quelques problèmes"
                     },
                     "3": {
-                        "then": "Il y a {climbing:boulder} voies d’escalade de bloc"
+                        "then": "Il y a {climbing:boulder} problèmes de bloc"
                     }
                 },
                 "question": "L’escalade de bloc est-elle possible ici ?"
@@ -1921,12 +1921,38 @@
                 },
                 "question": "Y a-t-il un mur d'escalade de vitesse ?"
             },
+            "belay_device_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Un dispositif d'assurage est prévu à chaque corde"
+                    },
+                    "1": {
+                        "then": "Un dispositif d'assurage peut être emprunté gratuitement ici"
+                    },
+                    "2": {
+                        "then": "Un dispositif d'assurage peut être loué ici pour {service:climbing_belay_device:rental:charge}"
+                    },
+                    "3": {
+                        "then": "Un dispositif d'assurage peut être loué ici"
+                    },
+                    "4": {
+                        "then": "Un dispositif d'assurage ne peut <b>pas</b> être loué ici"
+                    }
+                },
+                "question": "Peut-on louer un dispositif d'assurage ici ?"
+            },
             "harness_rental": {
                 "mappings": {
                     "0": {
-                        "then": "Un baudrier d'escalade peut être loué ici"
+                        "then": "Un baudrier d'escalade peut être emprunté gratuitement ici"
                     },
                     "1": {
+                        "then": "Un baudrier d'escalade peut être loué ici pour {service:climbing_harness:rental:charge}"
+                    },
+                    "2": {
+                        "then": "Un baudrier d'escalade peut être loué ici"
+                    },
+                    "3": {
                         "then": "Un baudrier d'escalade ne peut <b>pas</b> être loué ici"
                     }
                 },
@@ -1935,12 +1961,35 @@
             "name": {
                 "question": "Quel est le nom de la salle d’escalade ?"
             },
+            "rope_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Une corde d'escalade peut être empruntée gratuitement ici"
+                    },
+                    "1": {
+                        "then": "Une corde d'escalade peut être louée ici pour {service:climbing_rope:rental:charge}"
+                    },
+                    "2": {
+                        "then": "Une corde d'escalade peut être louée ici"
+                    },
+                    "3": {
+                        "then": "Une corde d'escalade ne peut <b>pas</b> être louée ici"
+                    }
+                },
+                "question": "Peut-on louer une corde d'escalade ici ?"
+            },
             "shoe_rental": {
                 "mappings": {
                     "0": {
-                        "then": "Les chaussures d'escalade peuvent être louées ici"
+                        "then": "Les chaussures d'escalade peuvent être empruntées gratuitement ici"
                     },
                     "1": {
+                        "then": "Les chaussures d'escalade peuvent être louées ici pour {service:climbing_shoes:rental:charge}"
+                    },
+                    "2": {
+                        "then": "Les chaussures d'escalade peuvent être louées ici"
+                    },
+                    "3": {
                         "then": "Les chaussures d'escalade ne peuvent <b>pas</b> être louées ici"
                     }
                 },
@@ -3531,6 +3580,12 @@
                 },
                 "question": "Quelle est la couleur de la borne ?",
                 "render": "La borne est {colour}"
+            },
+            "hydrant-diameter": {
+                "question": "Quel est le diamètre du tuyau de cette bouche d'incendie ?"
+            },
+            "hydrant-number-of-couplings": {
+                "question": "Combien de raccords a cette bouche d'incendie ?"
             },
             "hydrant-state": {
                 "mappings": {

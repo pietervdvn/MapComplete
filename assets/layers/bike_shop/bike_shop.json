@@ -74,7 +74,8 @@
           "pt": "Loja de equipamentos desportivos <i>{name}</i>",
           "es": "Tienda de artículos deportivos <i>{name}</i>",
           "da": "Butik med sportsudstyr <i>{name}</i>",
-          "ca": "Botiga d'equipament esportiu <i>{name}</i>"
+          "ca": "Botiga d'equipament esportiu <i>{name}</i>",
+          "cs": "Obchod se sportovním vybavením <i>{name}</i>"
         }
       },
       {
@@ -91,7 +92,8 @@
           "es": "Winkel",
           "fr": "Magasin",
           "da": "Winkel",
-          "ca": "Winkel"
+          "ca": "Winkel",
+          "cs": "Winkel"
         }
       },
       {
@@ -118,7 +120,8 @@
           "pt": "Aluguel de bicicletas <i>{name}</i>",
           "es": "Alquiler de bicicletas <i>{name}</i>",
           "da": "Cykeludlejning <i>{name}</i>",
-          "ca": "Botiga de lloguer de bicicletes <i>{name}</i>"
+          "ca": "Botiga de lloguer de bicicletes <i>{name}</i>",
+          "cs": "Půjčovna kol <i>{name}</i>"
         }
       },
       {
@@ -140,7 +143,8 @@
           "pt": "Reparo de bicicletas <i>{name}</i>",
           "es": "Reparación de bicis <i>{name}</i>",
           "da": "Cykelreparation <i>{name}</i>",
-          "ca": "Reparació de bicis <i>{name}</i>"
+          "ca": "Reparació de bicis <i>{name}</i>",
+          "cs": "Opravy kol <i>{name}</i>"
         }
       },
       {
@@ -241,7 +245,8 @@
         "pt": "Esta loja é especializada em vender {shop} e faz atividades relacionadas à bicicletas",
         "es": "Esta tienda está especializada en vender {shop} y hace actividades relacionadas con bicicletas",
         "da": "Denne butik er specialiseret i at sælge {shop} og udfører aktiviteter i forbindelse med cykler",
-        "ca": "Aquesta botiga està especialitzada en vendre {shop} i fa activitats relacionades amb la bicicleta"
+        "ca": "Aquesta botiga està especialitzada en vendre {shop} i fa activitats relacionades amb la bicicleta",
+        "cs": "Tento obchod se specializuje na prodej {shop} a provádí činnosti související s jízdními koly"
       },
       "mappings": [
         {
@@ -272,7 +277,8 @@
         "pt": "Qual o nome desta loja de bicicletas?",
         "es": "¿Cual es el nombre de esta tienda de bicicletas?",
         "da": "Hvad hedder denne cykelbutik?",
-        "ca": "Quin és el nom d'aquesta botiga de bicicletes?"
+        "ca": "Quin és el nom d'aquesta botiga de bicicletes?",
+        "cs": "Jak se jmenuje tento obchod s jízdními koly?"
       },
       "render": {
         "en": "This bicycle shop is called {name}",
@@ -286,7 +292,8 @@
         "pt": "Esta loja de bicicletas se chama {name}",
         "es": "Esta tienda de bicicletas se llama {name}",
         "da": "Denne cykelbutik hedder {name}",
-        "ca": "Aquesta botiga de bicicletes s'anomena {name}"
+        "ca": "Aquesta botiga de bicicletes s'anomena {name}",
+        "cs": "Tento obchod s jízdními koly se jmenuje {name}"
       },
       "freeform": {
         "key": "name"
@@ -327,7 +334,8 @@
         "pt": "Esta loja vende bicicletas?",
         "es": "¿Vende bicis esta tienda?",
         "da": "Sælger denne butik cykler?",
-        "ca": "Aquesta botiga ven bicicletes?"
+        "ca": "Aquesta botiga ven bicicletes?",
+        "cs": "Prodává tento obchod jízdní kola?"
       },
       "mappings": [
         {
@@ -699,7 +707,8 @@
             "it": "Questo negozio non offre degli attrezzi per la riparazione fai da te",
             "da": "Denne butik tilbyder ikke værktøj til gør-det-selv reparation",
             "es": "Esta tienda no ofrece herramientas para la reparación DIY",
-            "ca": "Aquesta botiga no ofereix ferramentes per a la reparació DIY"
+            "ca": "Aquesta botiga no ofereix ferramentes per a la reparació DIY",
+            "cs": "Tento obchod nenabízí nářadí pro kutilské opravy"
           }
         },
         {
@@ -713,7 +722,8 @@
             "ru": "Инструменты для починки доступны только при покупке/аренде велосипеда в магазине",
             "es": "Las herramientas para reparaciones DIT solo están disponibles si compraste/alquilaste la bicicleta en la tienda",
             "da": "Værktøj til gør-det-selv-reparation er kun tilgængeligt, hvis du har købt/lejet cyklen i butikken",
-            "ca": "Les ferramentes per a reparacions DIY sols estan disponibles si vas comprar/llogar la bici a la botiga"
+            "ca": "Les ferramentes per a reparacions DIY sols estan disponibles si vas comprar/llogar la bici a la botiga",
+            "cs": "Nářadí pro opravy svépomocí je k dispozici pouze v případě, že jste si kolo koupili/pronajali v prodejně"
           }
         }
       ]

@@ -55,7 +55,6 @@
   "widenFactor": 2,
   "defaultBackgroundId": "osm",
   "layers": [
-    "direction",
     "surveillance_camera"
   ]
 }

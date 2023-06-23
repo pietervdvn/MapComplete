@@ -2,15 +2,15 @@
     "advertising": {
         "description": "Haben Sie sich schon einmal gefragt, wie viele Werbeanlagen es in unseren Straßen und Wegen gibt? Hier können Sie Informationen über alle Werbeeinrichtungen finden und hinzufügen, die Sie auf der Straße begegnen",
         "shortDescription": "Wo finde ich Werbeträger?",
-        "title": "Offene Werbekarte"
+        "title": "Werbung"
     },
     "aed": {
         "description": "Auf dieser Karte kann man nahe gelegene Defibrillatoren finden und markieren",
-        "title": "AED-Karte"
+        "title": "Defibrillatoren"
     },
     "artwork": {
         "description": "Eine freie Karte mit Statuen, Büsten, Graffitis und anderen Kunstwerken auf der ganzen Welt",
-        "title": "Freie Kunstkarte"
+        "title": "Kunstwerk"
     },
     "atm": {
         "description": "Diese Karte zeigt Geldautomaten zum Abheben oder Einzahlen von Geld",
@@ -91,7 +91,7 @@
     },
     "bookcases": {
         "description": "Bücherschränke sind alte Schaltschränke, Telefonzellen oder andere Einrichtungen zur Aufbewahrung von Büchern. Jeder kann Bücher abgeben oder mitnehmen. Die Karte soll helfen, alle Orte mit Bücherschränken zu sammeln.",
-        "title": "Karte öffentlicher Bücherschränke"
+        "title": "Öffentliche Bücherschränke"
     },
     "cafes_and_pubs": {
         "description": "Cafés, Kneipen und Bars",
@@ -385,7 +385,7 @@
                 }
             }
         },
-        "title": "Offene Kletterkarte"
+        "title": "Kletterhallen, Vereine und Kletterstellen"
     },
     "clock": {
         "description": "Karte mit allen öffentlichen Uhren",
@@ -533,7 +533,7 @@
     },
     "cyclofix": {
         "description": "Mit dieser Karte wird Radfahrern eine einfache Lösung bereitgestellt, um die passende Fahrradinfrastruktur zu finden.<br><br>Weitere Informationen über Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-        "title": "Cyclofix - die freie Karte für Radler"
+        "title": "Cyclofix - eine Karte für Radfahrer"
     },
     "drinking_water": {
         "description": "Eine Karte zum Anzeigen und Bearbeiten öffentlicher Trinkwasserstellen",
@@ -583,7 +583,7 @@
             }
         },
         "shortDescription": "Woher stammt der Name einer Straße oder eines Ortes?",
-        "title": "Karte zur Herkunft der Namen"
+        "title": "Etymologie - Wonach ist eine Straße benannt?"
     },
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fassadengärten</a>, grüne Fassaden und Bäume in der Stadt bringen nicht nur Ruhe und Frieden, sondern auch eine schönere Stadt, eine größere Artenvielfalt, einen Kühleffekt und eine bessere Luftqualität. <br/> Klimaan VZW und Mechelen Klimaatneutraal wollen bestehende und neue Fassadengärten als Beispiel für Menschen, die ihren eigenen Garten anlegen wollen, oder für naturverbundene Stadtspaziergänger kartieren.<br/>Mehr Informationen über das Projekt unter <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -877,7 +877,7 @@
     },
     "openwindpowermap": {
         "description": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen.",
-        "title": "Freie Windenergie-Karte"
+        "title": "Windkraftanlagen"
     },
     "osm_community_index": {
         "description": "Eine Liste von Ressourcen für Nutzer von OpenStreetMap. 'Ressourcen' können Links zu Foren, Treffen, Slack-Gruppen, IRC-Kanälen, Mailinglisten und so weiter sein. Alles, was Mapper, insbesondere Anfänger, interessant oder hilfreich finden könnten.",
@@ -963,7 +963,7 @@
     "shops": {
         "description": "Auf dieser Karte kann man grundlegende Informationen über Geschäfte markieren, Öffnungszeiten und Telefonnummern hinzufügen",
         "shortDescription": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen",
-        "title": "Freie Geschäftskarte"
+        "title": "Geschäfte"
     },
     "sidewalks": {
         "description": "Experimentelles Thema",
@@ -1133,7 +1133,7 @@
     },
     "toilets": {
         "description": "Eine Karte mit öffentlich zugänglichen Toiletten",
-        "title": "Freie Toilettenkarte"
+        "title": "Öffentliche Toiletten"
     },
     "transit": {
         "description": "Planen Sie Ihre Reise mit Hilfe von öffentlichen Verkehrsmitteln.",

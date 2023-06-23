@@ -53,15 +53,15 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/charge#values) [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:charge%3D)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:rental:climbing_shoes#values) [service:rental:climbing_shoes](https://wiki.openstreetmap.org/wiki/Key:service:rental:climbing_shoes) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:rental:climbing_shoes%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:rental:climbing_shoes%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:rental:climbing_harness#values) [service:rental:climbing_harness](https://wiki.openstreetmap.org/wiki/Key:service:rental:climbing_harness) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:rental:climbing_harness%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:rental:climbing_harness%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:rental:climbing_rope#values) [service:rental:climbing_rope](https://wiki.openstreetmap.org/wiki/Key:service:rental:climbing_rope) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:rental:climbing_rope%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:rental:climbing_rope%3Dno)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:climbing_shoes:rental#values) [service:climbing_shoes:rental](https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dno)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:climbing_harness:rental#values) [service:climbing_harness:rental](https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dno)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:climbing_rope:rental#values) [service:climbing_rope:rental](https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dno)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:boulder#values) [climbing:boulder](https://wiki.openstreetmap.org/wiki/Key:climbing:boulder) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:sport#values) [climbing:sport](https://wiki.openstreetmap.org/wiki/Key:climbing:sport) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:toprope#values) [climbing:toprope](https://wiki.openstreetmap.org/wiki/Key:climbing:toprope) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:length#values) [climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length) | [pfloat](../SpecialInputElements.md#pfloat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:grade:french:min#values) [climbing:grade:french:min](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:min) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:grade:french:max#values) [climbing:grade:french:max](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:max) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:boulder#values) [climbing:boulder](https://wiki.openstreetmap.org/wiki/Key:climbing:boulder) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:sport#values) [climbing:sport](https://wiki.openstreetmap.org/wiki/Key:climbing:sport) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:bolts:max#values) [climbing:bolts:max](https://wiki.openstreetmap.org/wiki/Key:climbing:bolts:max) | [pnat](../SpecialInputElements.md#pnat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:speed#values) [climbing:speed](https://wiki.openstreetmap.org/wiki/Key:climbing:speed) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access#values) [internet_access](https://wiki.openstreetmap.org/wiki/Key:internet_access) | Multiple choice | [wlan](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno) [terminal](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal) [wired](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired)
@@ -246,8 +246,11 @@ The question is  *Can one rent climbing shoes here?*
 
 
 
-  - *Climbing shoes can be rented here*  corresponds with  `service:rental:climbing_shoes=yes`
-  - *Climbing shoes can <b>not</b> be rented here*  corresponds with  `service:rental:climbing_shoes=no`
+  - *Climbing shoes can be borrowed for free here*  corresponds with  `service:climbing_shoes:rental=yes&service:climbing_shoes:rental:fee=no`
+  - *Climbing shoes can be rented here for {service:climbing_shoes:rental:charge}*  corresponds with  `service:climbing_shoes:rental=yes&service:climbing_shoes:rental:charge~.+`
+  - This option cannot be chosen as answer
+  - *Climbing shoes can be rented here*  corresponds with  `service:climbing_shoes:rental=yes&service:climbing_shoes:rental:fee=yes`
+  - *Climbing shoes can <b>not</b> be rented here*  corresponds with  `service:climbing_shoes:rental=no`
 
 
 
@@ -262,8 +265,31 @@ The question is  *Can one rent a climbing harness here?*
 
 
 
-  - *A climbing harness can be rented here*  corresponds with  `service:rental:climbing_harness=yes`
-  - *A climbing harness can <b>not</b> be rented here*  corresponds with  `service:rental:climbing_harness=no`
+  - *A climbing harness can be borrowed for free here*  corresponds with  `service:climbing_harness:rental=yes&service:climbing_harness:rental:fee=no`
+  - *A climbing harness can be rented here for {service:climbing_harness:rental:charge}*  corresponds with  `service:climbing_harness:rental=yes&service:climbing_harness:rental:charge~.+`
+  - This option cannot be chosen as answer
+  - *A climbing harness can be rented here*  corresponds with  `service:climbing_harness:rental=yes`
+  - *A climbing harness can <b>not</b> be rented here*  corresponds with  `service:climbing_harness:rental=no`
+
+
+
+
+### belay_device_rental 
+
+
+
+The question is  *Can one rent a belay device here?*
+
+
+
+
+
+  - *Belay devices are provided at each rope*  corresponds with  `service:climbing_belay_device:provided_at_each_rope=yes`
+  - *A belay device can be borrowed for free here*  corresponds with  `service:climbing_belay_device:rental=yes&service:climbing_belay_device:rental:fee=no`
+  - *A belay device can be rented here for {service:climbing_belay_device:rental:charge}*  corresponds with  `service:climbing_belay_device:rental=yes&service:climbing_belay_device:rental:charge~.+`
+  - This option cannot be chosen as answer
+  - *A belay device can be rented here*  corresponds with  `service:climbing_belay_device:rental=yes`
+  - *A belay device can <b>not</b> be rented here*  corresponds with  `service:climbing_belay_device:rental=no`
 
 
 
@@ -278,8 +304,48 @@ The question is  *Can one rent a climbing rope here?*
 
 
 
-  - *A climbing rope can be rented here*  corresponds with  `service:rental:climbing_rope=yes`
-  - *A climbing rope can <b>not</b> be rented here*  corresponds with  `service:rental:climbing_rope=no`
+  - *A climbing rope can be borrowed for free here*  corresponds with  `service:climbing_rope:rental=yes&service:climbing_rope:rental:fee=no`
+  - *A climbing rope can be rented here for {service:climbing_rope:rental:charge}*  corresponds with  `service:climbing_rope:rental=yes&service:climbing_rope:rental:charge~.+`
+  - This option cannot be chosen as answer
+  - *A climbing rope can be rented here*  corresponds with  `service:climbing_rope:rental=yes`
+  - *A climbing rope can <b>not</b> be rented here*  corresponds with  `service:climbing_rope:rental=no`
+
+
+
+
+### bouldering 
+
+
+
+The question is  *Is bouldering possible here?*
+
+
+
+
+
+  - *Bouldering is possible here*  corresponds with  `climbing:boulder=yes`
+  - *Bouldering is not possible here*  corresponds with  `climbing:boulder=no`
+  - *Bouldering is possible, although there are only a few problems*  corresponds with  `climbing:boulder=limited`
+  - *There are {climbing:boulder} boulder problems*  corresponds with  `climbing:boulder~.+`
+  - This option cannot be chosen as answer
+
+
+
+
+### sportclimbing 
+
+
+
+The question is  *Is sport climbing possible here on fixed anchors?*
+
+
+
+
+
+  - *Sport climbing is possible here*  corresponds with  `climbing:sport=yes`
+  - *Sport climbing is not possible here*  corresponds with  `climbing:sport=no`
+  - *There are {climbing:sport} sport climbing routes*  corresponds with  `climbing:sport~.+`
+  - This option cannot be chosen as answer
 
 
 
@@ -346,43 +412,6 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-### bouldering 
-
-
-
-The question is  *Is bouldering possible here?*
-
-
-
-
-
-  - *Bouldering is possible here*  corresponds with  `climbing:boulder=yes`
-  - *Bouldering is not possible here*  corresponds with  `climbing:boulder=no`
-  - *Bouldering is possible, allthough there are only a few routes*  corresponds with  `climbing:boulder=limited`
-  - *There are {climbing:boulder} boulder routes*  corresponds with  `climbing:boulder~.+`
-  - This option cannot be chosen as answer
-
-
-
-
-### sportclimbing 
-
-
-
-The question is  *Is sport climbing possible here on fixed anchors?*
-
-
-
-
-
-  - *Sport climbing is possible here*  corresponds with  `climbing:sport=yes`
-  - *Sport climbing is not possible here*  corresponds with  `climbing:sport=no`
-  - *There are {climbing:sport} sport climbing routes*  corresponds with  `climbing:sport~.+`
-  - This option cannot be chosen as answer
-
-
-
-
 ### max_bolts 
 
 
@@ -394,8 +423,6 @@ This rendering asks information about the property  [climbing:bolts:max](https:/
 This is rendered with  `The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>`
 
 
-
-This tagrendering is only visible in the popup if the following condition is met: `climbing:sport=yes`
 
 
 
