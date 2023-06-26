@@ -41,7 +41,7 @@
         }]
     }
 
-    if (schema.type === "boolean" || (Array.isArray(schema.type) && schema.type.some(t => t["type"] === "boolean") >= 0)) {
+    if (schema.type === "boolean" || (Array.isArray(schema.type) && schema.type.some(t => t["type"] === "boolean"))) {
         configJson.mappings = configJson.mappings ?? []
         configJson.mappings.push(
             {

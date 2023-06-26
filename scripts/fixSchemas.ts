@@ -139,7 +139,7 @@ function addMetafields(fieldnames: string[], fullSchema: JsonSchema): ConfigMeta
         }
 
         if (hints["types"]) {
-            const numberOfExpectedSubtypes = hints["types"].split(";").length
+            const numberOfExpectedSubtypes = hints["types"].replaceAll("|", ";").split(";").length
             if (!Array.isArray(type)) {
                 throw (
                     "At " +
@@ -193,9 +193,6 @@ function substituteReferences(
                 continue
             }
             const name = ref.substring("#/definitions/".length)
-            if (name === "TagRenderingConfigJson") {
-                continue
-            }
             if (name.startsWith("{") || name.startsWith("Record<")) {
                 continue
             }
@@ -204,7 +201,7 @@ function substituteReferences(
                 continue
             }
 
-            if (name === "DeleteConfigJson") {
+            if (name === "DeleteConfigJson" || name === "TagRenderingConfigJson") {
                 const target = allDefinitions[name]
                 if (!target) {
                     throw "Cannot expand reference for type " + name + "; it does not exist "

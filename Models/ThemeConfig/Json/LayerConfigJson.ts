@@ -8,6 +8,7 @@ import PointRenderingConfigJson from "./PointRenderingConfigJson"
 import LineRenderingConfigJson from "./LineRenderingConfigJson"
 import { QuestionableTagRenderingConfigJson } from "./QuestionableTagRenderingConfigJson"
 import RewritableConfigJson from "./RewritableConfigJson"
+import { Translatable } from "./Translatable"
 
 /**
  * Configuration for a single layer
@@ -30,7 +31,7 @@ export interface LayerConfigJson {
      * group: Basic
      * question: What is the name of this layer?
      */
-    name?: string | Record<string, string>
+    name?: Translatable
 
     /**
      * A description for the features shown in this layer.
@@ -39,7 +40,7 @@ export interface LayerConfigJson {
      * group: Basic
      * question: How would you describe the features that are shown on this layer?
      */
-    description?: string | Record<string, string>
+    description?: Translatable
 
     /**
      *
@@ -203,9 +204,13 @@ export interface LayerConfigJson {
     /**
      * The title shown in a popup for elements of this layer.
      *
-     * group: infobox
+     * group: title
+     * question: What title should be shown on the infobox?
+     * types: Use a dynamic tagRendering ; use a fixed value
+     * typesdefault: 0
+     *
      */
-    title?: string | TagRenderingConfigJson
+    title?: TagRenderingConfigJson | string
 
     /**
      *
@@ -313,7 +318,7 @@ export interface LayerConfigJson {
          * question: What is the word to describe this object?
          * inline: Add <b>{value}</b> here
          */
-        title: string | Record<string, string>
+        title: Translatable
         /**
          * A single tag (encoded as <code>key=value</code>) out of all the tags to add onto the newly created point.
          * Note that the icon in the UI will be chosen automatically based on the tags provided here.
@@ -332,7 +337,7 @@ export interface LayerConfigJson {
          *
          * question: How would you describe this feature?
          */
-        description?: string | Record<string, string>
+        description?: Translatable
 
         /**
          * The URL of an example image which shows a real-life example of what such a feature might look like.
@@ -368,7 +373,8 @@ export interface LayerConfigJson {
     }[]
 
     /**
-     * All the tag renderings.
+     * question: Which tagRenderings should be shown in the infobox?
+     *
      * A tag rendering is a block that either shows the known value or asks a question.
      *
      * Refer to the class `TagRenderingConfigJson` to see the possibilities.
@@ -388,6 +394,7 @@ export interface LayerConfigJson {
      * These will be grouped and questions will be asked together
      *
      * group: tagrenderings
+     *
      */
     tagRenderings?: (
         | string

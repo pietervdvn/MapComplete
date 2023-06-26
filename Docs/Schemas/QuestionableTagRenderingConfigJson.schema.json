@@ -2,27 +2,20 @@
   "description": "A QuestionableTagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nIf the desired tags are missing and a question is defined, a question will be shown instead.",
   "type": "object",
   "properties": {
-    "question": {
-      "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/Record<string,string>"
-        },
-        {
-          "type": "string"
-        }
-      ]
+    "id": {
+      "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nquestion: What is the id of this tagRendering?",
+      "type": "string"
     },
-    "questionHint": {
-      "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/Record<string,string>"
-        },
-        {
-          "type": "string"
-        }
-      ]
+    "mappings": {
+      "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes\n\nquestion: What are common options?",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/MappingConfigJson"
+      }
+    },
+    "multiAnswer": {
+      "description": "If true, use checkboxes instead of radio buttons when asking the question\n\nquestion: Should a contributor be allowed to select multiple mappings?\n\niftrue: allow to select multiple mappigns\niffalse: only allow to select a single mapping\nifunset: only allow to select a single mapping",
+      "type": "boolean"
     },
     "freeform": {
       "description": "Allow freeform text input from the user",
@@ -63,20 +56,27 @@
         "key"
       ]
     },
-    "multiAnswer": {
-      "description": "If true, use checkboxes instead of radio buttons when asking the question",
-      "type": "boolean"
+    "question": {
+      "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Record<string,string>"
+        },
+        {
+          "type": "string"
+        }
+      ]
     },
-    "mappings": {
-      "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/MappingConfigJson"
-      }
-    },
-    "id": {
-      "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nUse 'questions' to trigger the question box of this group (if a group is defined)",
-      "type": "string"
+    "questionHint": {
+      "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Record<string,string>"
+        },
+        {
+          "type": "string"
+        }
+      ]
     },
     "labels": {
       "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away",
@@ -176,6 +176,9 @@
       ]
     }
   },
+  "required": [
+    "id"
+  ],
   "definitions": {
     "TagConfigJson": {
       "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag",
@@ -308,17 +311,6 @@
       "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one",
       "type": "object",
       "properties": {
-        "id": {
-          "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nUse 'questions' to trigger the question box of this group (if a group is defined)",
-          "type": "string"
-        },
-        "labels": {
-          "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "classes": {
           "description": "A list of css-classes to apply to the entire tagRendering if the answer is known (not applied on the question).\nThis is only for advanced users",
           "anyOf": [
@@ -486,7 +478,7 @@
       "properties": {
         "if": {
           "$ref": "#/definitions/TagConfigJson",
-          "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag"
+          "description": "quesiton: What tags should be matched to show this option?\n\nIf in 'question'-mode and the contributor selects this option, these tags will be applied to the object"
         },
         "then": {
           "description": "Shown if the 'if is fulfilled\nType: rendered",

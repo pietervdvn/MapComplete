@@ -3,9 +3,12 @@ import { TagRenderingConfigJson } from "./TagRenderingConfigJson"
 
 export interface MappingConfigJson {
     /**
-     * @inheritDoc
+     * quesiton: What tags should be matched to show this option?
+     *
+     * If in 'question'-mode and the contributor selects this option, these tags will be applied to the object
      */
     if: TagConfigJson
+
     /**
      * Shown if the 'if is fulfilled
      * Type: rendered
@@ -143,16 +146,30 @@ export interface MappingConfigJson {
  */
 export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJson {
     /**
-     * If it turns out that this tagRendering doesn't match _any_ value, then we show this question.
-     * If undefined, the question is never asked and this tagrendering is read-only
+     * The id of the tagrendering, should be an unique string.
+     * Used to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.
+     *
+     * question: What is the id of this tagRendering?
      */
-    question?: string | Record<string, string>
+    id: string
 
     /**
-     * A hint which is shown in subtle text under the question.
-     * This can give some extra information on what the answer should ook like
+     * Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes
+     *
+     * question: What are common options?
      */
-    questionHint?: string | Record<string, string>
+    mappings?: MappingConfigJson[]
+
+    /**
+     * If true, use checkboxes instead of radio buttons when asking the question
+     *
+     * question: Should a contributor be allowed to select multiple mappings?
+     *
+     * iftrue: allow to select multiple mappigns
+     * iffalse: only allow to select a single mapping
+     * ifunset: only allow to select a single mapping
+     */
+    multiAnswer?: boolean
 
     /**
      * Allow freeform text input from the user
@@ -201,12 +218,19 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
     }
 
     /**
-     * If true, use checkboxes instead of radio buttons when asking the question
+     * If it turns out that this tagRendering doesn't match _any_ value, then we show this question.
+     * If undefined, the question is never asked and this tagrendering is read-only
      */
-    multiAnswer?: boolean
+    question?: string | Record<string, string>
 
     /**
-     * Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes
+     * A hint which is shown in subtle text under the question.
+     * This can give some extra information on what the answer should ook like
      */
-    mappings?: MappingConfigJson[]
+    questionHint?: string | Record<string, string>
+
+    /**
+     * A list of labels. These are strings that are used for various purposes, e.g. to filter them away
+     */
+    labels?: string[]
 }

@@ -51,7 +51,7 @@
 
     <div slot="title1">Information panel (questions and answers)</div>
     <div slot="content1">
-        <Region {state} configs={perRegion["infobox"]} title="Infobox"/>
+        <Region {state} configs={perRegion["title"]} title="Title"/>
         <Region {state} configs={perRegion["tagrenderings"]} title="Infobox"/>
         <Region {state} configs={perRegion["editing"]} title="Other editing elements"/>
     </div>

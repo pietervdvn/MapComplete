@@ -164,17 +164,6 @@
       "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one",
       "type": "object",
       "properties": {
-        "id": {
-          "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nUse 'questions' to trigger the question box of this group (if a group is defined)",
-          "type": "string"
-        },
-        "labels": {
-          "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "classes": {
           "description": "A list of css-classes to apply to the entire tagRendering if the answer is known (not applied on the question).\nThis is only for advanced users",
           "anyOf": [
@@ -342,7 +331,7 @@
       "properties": {
         "if": {
           "$ref": "#/definitions/TagConfigJson",
-          "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag"
+          "description": "quesiton: What tags should be matched to show this option?\n\nIf in 'question'-mode and the contributor selects this option, these tags will be applied to the object"
         },
         "then": {
           "description": "Shown if the 'if is fulfilled\nType: rendered",

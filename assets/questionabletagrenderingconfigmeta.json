@@ -8,121 +8,25 @@
   },
   {
     "path": [
-      "question"
+      "id"
     ],
-    "required": false,
-    "hints": {},
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only"
-  },
-  {
-    "path": [
-      "questionHint"
-    ],
-    "required": false,
-    "hints": {},
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like"
-  },
-  {
-    "path": [
-      "freeform"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "Allow freeform text input from the user"
-  },
-  {
-    "path": [
-      "freeform",
-      "type"
-    ],
-    "required": false,
-    "hints": {},
+    "required": true,
+    "hints": {
+      "question": "What is the id of this tagRendering?"
+    },
     "type": "string",
-    "description": "The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values"
-  },
-  {
-    "path": [
-      "freeform",
-      "placeholder"
-    ],
-    "required": false,
-    "hints": {},
-    "description": "A (translated) text that is shown (as gray text) within the textfield"
-  },
-  {
-    "path": [
-      "freeform",
-      "helperArgs"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "array",
-    "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
-  },
-  {
-    "path": [
-      "freeform",
-      "addExtraTags"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "array",
-    "description": "If a value is added with the textfield, these extra tag is addded.\nUseful to add a 'fixme=freeform textfield used - to be checked'"
-  },
-  {
-    "path": [
-      "freeform",
-      "inline"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "boolean",
-    "description": "When set, influences the way a question is asked.\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nNote that this will be set automatically if no special elements are present."
-  },
-  {
-    "path": [
-      "freeform",
-      "default"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "string",
-    "description": "default value to enter if no previous tagging is present.\nNormally undefined (aka do not enter anything)"
-  },
-  {
-    "path": [
-      "multiAnswer"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "boolean",
-    "description": "If true, use checkboxes instead of radio buttons when asking the question"
+    "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n"
   },
   {
     "path": [
       "mappings"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What are common options?"
+    },
     "type": "array",
-    "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes"
+    "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes\n"
   },
   {
     "path": [
@@ -521,12 +425,117 @@
   },
   {
     "path": [
-      "id"
+      "multiAnswer"
+    ],
+    "required": false,
+    "hints": {
+      "question": "Should a contributor be allowed to select multiple mappings?",
+      "iftrue": "allow to select multiple mappigns",
+      "iffalse": "only allow to select a single mapping",
+      "ifunset": "only allow to select a single mapping"
+    },
+    "type": "boolean",
+    "description": "If true, use checkboxes instead of radio buttons when asking the question\n\n"
+  },
+  {
+    "path": [
+      "freeform"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "object",
+    "description": "Allow freeform text input from the user"
+  },
+  {
+    "path": [
+      "freeform",
+      "type"
     ],
     "required": false,
     "hints": {},
     "type": "string",
-    "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nUse 'questions' to trigger the question box of this group (if a group is defined)"
+    "description": "The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values"
+  },
+  {
+    "path": [
+      "freeform",
+      "placeholder"
+    ],
+    "required": false,
+    "hints": {},
+    "description": "A (translated) text that is shown (as gray text) within the textfield"
+  },
+  {
+    "path": [
+      "freeform",
+      "helperArgs"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
+  },
+  {
+    "path": [
+      "freeform",
+      "addExtraTags"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "If a value is added with the textfield, these extra tag is addded.\nUseful to add a 'fixme=freeform textfield used - to be checked'"
+  },
+  {
+    "path": [
+      "freeform",
+      "inline"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "boolean",
+    "description": "When set, influences the way a question is asked.\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nNote that this will be set automatically if no special elements are present."
+  },
+  {
+    "path": [
+      "freeform",
+      "default"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "string",
+    "description": "default value to enter if no previous tagging is present.\nNormally undefined (aka do not enter anything)"
+  },
+  {
+    "path": [
+      "question"
+    ],
+    "required": false,
+    "hints": {},
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only"
+  },
+  {
+    "path": [
+      "questionHint"
+    ],
+    "required": false,
+    "hints": {},
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like"
   },
   {
     "path": [

@@ -1,23 +1,11 @@
 import { TagConfigJson } from "./TagConfigJson"
+import { Translatable } from "./Translatable"
 
 /**
  * A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.
  * For an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one
  */
 export interface TagRenderingConfigJson {
-    /**
-     * The id of the tagrendering, should be an unique string.
-     * Used to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.
-     *
-     * Use 'questions' to trigger the question box of this group (if a group is defined)
-     */
-    id?: string
-
-    /**
-     * A list of labels. These are strings that are used for various purposes, e.g. to filter them away
-     */
-    labels?: string[]
-
     /**
      * A list of css-classes to apply to the entire tagRendering if the answer is known (not applied on the question).
      * This is only for advanced users
@@ -38,8 +26,7 @@ export interface TagRenderingConfigJson {
      * type: rendered
      */
     render?:
-        | string
-        | Record<string, string>
+        | Translatable
         | { special: Record<string, string | Record<string, string>> & { type: string } }
 
     /**

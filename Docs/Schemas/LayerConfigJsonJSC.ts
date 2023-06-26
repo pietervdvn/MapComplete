@@ -118,7 +118,7 @@ export default {
       "type": "number"
     },
     "title": {
-      "description": "The title shown in a popup for elements of this layer.\n\ngroup: infobox",
+      "description": "The title shown in a popup for elements of this layer.\n\ngroup: title\nquestion: What title should be shown on the infobox?\ntypes: Use a dynamic tagRendering ; use a fixed value\ntypesdefault: 0",
       "anyOf": [
         {
           "$ref": "#/definitions/TagRenderingConfigJson"
@@ -249,7 +249,7 @@ export default {
             }
           },
           "maxSnapDistance": {
-            "description": "If specified, a new point will only be snapped if it is within this range.\nDistance in meter\n\nDefault: 10",
+            "description": "question: What is the maximum distance in the location-input that a point can be moved to be snapped to a way?\n\ninline: a point is snapped if the location input is at most <b>{value}m</b> away from an object\n\nIf specified, a new point will only be snapped if it is within this range.\nIf further away, it'll be placed in the center of the location input\nDistance in meter\n\nDefault: 10",
             "type": "number"
           }
         },
@@ -260,7 +260,7 @@ export default {
       }
     },
     "tagRenderings": {
-      "description": "All the tag renderings.\nA tag rendering is a block that either shows the known value or asks a question.\n\nRefer to the class `TagRenderingConfigJson` to see the possibilities.\n\nNote that we can also use a string here - where the string refers to a tag rendering defined in `assets/questions/questions.json`,\nwhere a few very general questions are defined e.g. website, phone number, ...\nFurthermore, _all_ the questions of another layer can be reused with `otherlayer.*`\nIf you need only a single of the tagRenderings, use `otherlayer.tagrenderingId`\nIf one or more questions have a 'group' or 'label' set, select all the entries with the corresponding group or label with `otherlayer.*group`\nRemark: if a tagRendering is 'lent' from another layer, the 'source'-tags are copied and added as condition.\nIf they are not wanted, remove them with an override\n\nA special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.\n\nAt last, one can define a group of renderings where parts of all strings will be replaced by multiple other strings.\nThis is mainly create questions for a 'left' and a 'right' side of the road.\nThese will be grouped and questions will be asked together\n\ngroup: tagrenderings",
+      "description": "question: Which tagRenderings should be shown in the infobox?\n\nA tag rendering is a block that either shows the known value or asks a question.\n\nRefer to the class `TagRenderingConfigJson` to see the possibilities.\n\nNote that we can also use a string here - where the string refers to a tag rendering defined in `assets/questions/questions.json`,\nwhere a few very general questions are defined e.g. website, phone number, ...\nFurthermore, _all_ the questions of another layer can be reused with `otherlayer.*`\nIf you need only a single of the tagRenderings, use `otherlayer.tagrenderingId`\nIf one or more questions have a 'group' or 'label' set, select all the entries with the corresponding group or label with `otherlayer.*group`\nRemark: if a tagRendering is 'lent' from another layer, the 'source'-tags are copied and added as condition.\nIf they are not wanted, remove them with an override\n\nA special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.\n\nAt last, one can define a group of renderings where parts of all strings will be replaced by multiple other strings.\nThis is mainly create questions for a 'left' and a 'right' side of the road.\nThese will be grouped and questions will be asked together\n\ngroup: tagrenderings",
       "type": "array",
       "items": {
         "anyOf": [
@@ -531,17 +531,6 @@ export default {
       "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one",
       "type": "object",
       "properties": {
-        "id": {
-          "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nUse 'questions' to trigger the question box of this group (if a group is defined)",
-          "type": "string"
-        },
-        "labels": {
-          "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "classes": {
           "description": "A list of css-classes to apply to the entire tagRendering if the answer is known (not applied on the question).\nThis is only for advanced users",
           "anyOf": [
@@ -707,7 +696,7 @@ export default {
       "properties": {
         "if": {
           "$ref": "#/definitions/TagConfigJson",
-          "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag"
+          "description": "quesiton: What tags should be matched to show this option?\n\nIf in 'question'-mode and the contributor selects this option, these tags will be applied to the object"
         },
         "then": {
           "description": "Shown if the 'if is fulfilled\nType: rendered",
@@ -1119,27 +1108,20 @@ export default {
       "description": "A QuestionableTagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nIf the desired tags are missing and a question is defined, a question will be shown instead.",
       "type": "object",
       "properties": {
-        "question": {
-          "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only",
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Record<string,string>"
-            },
-            {
-              "type": "string"
-            }
-          ]
+        "id": {
+          "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nquestion: What is the id of this tagRendering?",
+          "type": "string"
         },
-        "questionHint": {
-          "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like",
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Record<string,string>"
-            },
-            {
-              "type": "string"
-            }
-          ]
+        "mappings": {
+          "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes\n\nquestion: What are common options?",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MappingConfigJson"
+          }
+        },
+        "multiAnswer": {
+          "description": "If true, use checkboxes instead of radio buttons when asking the question\n\nquestion: Should a contributor be allowed to select multiple mappings?\n\niftrue: allow to select multiple mappigns\niffalse: only allow to select a single mapping\nifunset: only allow to select a single mapping",
+          "type": "boolean"
         },
         "freeform": {
           "description": "Allow freeform text input from the user",
@@ -1180,20 +1162,27 @@ export default {
             "key"
           ]
         },
-        "multiAnswer": {
-          "description": "If true, use checkboxes instead of radio buttons when asking the question",
-          "type": "boolean"
+        "question": {
+          "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
-        "mappings": {
-          "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MappingConfigJson"
-          }
-        },
-        "id": {
-          "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nUse 'questions' to trigger the question box of this group (if a group is defined)",
-          "type": "string"
+        "questionHint": {
+          "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "labels": {
           "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away",
@@ -1292,32 +1281,28 @@ export default {
             }
           ]
         }
-      }
+      },
+      "required": [
+        "id"
+      ]
     },
     "Partial<QuestionableTagRenderingConfigJson>": {
       "type": "object",
       "properties": {
-        "question": {
-          "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only",
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Record<string,string>"
-            },
-            {
-              "type": "string"
-            }
-          ]
+        "id": {
+          "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nquestion: What is the id of this tagRendering?",
+          "type": "string"
         },
-        "questionHint": {
-          "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like",
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Record<string,string>"
-            },
-            {
-              "type": "string"
-            }
-          ]
+        "mappings": {
+          "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes\n\nquestion: What are common options?",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MappingConfigJson"
+          }
+        },
+        "multiAnswer": {
+          "description": "If true, use checkboxes instead of radio buttons when asking the question\n\nquestion: Should a contributor be allowed to select multiple mappings?\n\niftrue: allow to select multiple mappigns\niffalse: only allow to select a single mapping\nifunset: only allow to select a single mapping",
+          "type": "boolean"
         },
         "freeform": {
           "description": "Allow freeform text input from the user",
@@ -1358,20 +1343,27 @@ export default {
             "key"
           ]
         },
-        "multiAnswer": {
-          "description": "If true, use checkboxes instead of radio buttons when asking the question",
-          "type": "boolean"
+        "question": {
+          "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
-        "mappings": {
-          "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MappingConfigJson"
-          }
-        },
-        "id": {
-          "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nUse 'questions' to trigger the question box of this group (if a group is defined)",
-          "type": "string"
+        "questionHint": {
+          "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "labels": {
           "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away",
