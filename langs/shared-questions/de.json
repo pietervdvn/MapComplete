@@ -138,6 +138,13 @@
                 }
             }
         },
+        "last_edit": {
+            "render": {
+                "special": {
+                    "text": "Zuletzt bearbeitet am {_last_edit:timestamp}  vom {_last_edit:contributor}"
+                }
+            }
+        },
         "level": {
             "mappings": {
                 "0": {

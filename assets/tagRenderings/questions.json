@@ -1412,7 +1412,8 @@
         "href": "{_backend}/changeset/{_last_edit:changeset}",
         "text": {
           "en": "Last edited on {_last_edit:timestamp} by {_last_edit:contributor}",
-          "nl": "Laatst gewijzigd op {_last_edit:timestamp} door {_last_edit:contributor} "
+          "nl": "Laatst gewijzigd op {_last_edit:timestamp} door {_last_edit:contributor} ",
+          "de": "Zuletzt bearbeitet am {_last_edit:timestamp}  vom {_last_edit:contributor}"
         },
         "class": "subtle font-small"
       }
