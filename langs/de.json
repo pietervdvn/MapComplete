@@ -1,4 +1,7 @@
 {
+    "advanced": {
+        "title": "Erweiterte Funktionen"
+    },
     "centerMessage": {
         "loadingData": "Daten werden geladen…",
         "ready": "Erledigt!",
