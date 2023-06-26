@@ -1,9 +1,20 @@
 {
+    "advanced": {
+        "title": "進階功能"
+    },
     "centerMessage": {
+        "allFilteredAway": "檢視畫面當中沒有滿足過瀘條件的圖徵",
         "loadingData": "正在讀取資料…",
+        "noData": "目前檢視畫面沒有相關的圖徵",
         "ready": "完成！",
         "retrying": "無法讀取資料，請在 {count} 秒後再試一次…",
         "zoomIn": "放大來檢視或編輯資料"
+    },
+    "communityIndex": {
+        "available": "這個社群說 {native}",
+        "intro": "與其他人接洽並且與他們熟悉，從他們的經驗學習，...",
+        "notAvailable": "這個社群不說 {native}",
+        "title": "社群索引"
     },
     "delete": {
         "cancel": "取消",
