@@ -57,7 +57,7 @@
         },
         "description": {
             "question": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.",
-            "questionHint": "Bitte keine bereits erhobenen Informationen."
+            "questionHint": "Bitte keine bereits erhobenen Informationen wiederholen"
         },
         "dog-access": {
             "mappings": {
@@ -141,7 +141,7 @@
         "last_edit": {
             "render": {
                 "special": {
-                    "text": "Zuletzt bearbeitet am {_last_edit:timestamp}  vom {_last_edit:contributor}"
+                    "text": "Zuletzt bearbeitet am {_last_edit:timestamp} von {_last_edit:contributor}"
                 }
             }
         },
