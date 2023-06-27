@@ -173,6 +173,27 @@
           }
         }
       ]
+    },
+    {
+      "id": "free",
+      "options": [
+        {
+          "question": {
+            "en": "Free to use",
+            "nl": "Gratis toegankelijk",
+            "de": "Nutzung kostenlos",
+            "fr": "Utilisation gratuite",
+            "da": "Gratis at bruge"
+          },
+          "osmTags": {
+            "or": [
+              "fee=no",
+              "fee=0",
+              "charge=0"
+            ]
+          }
+        }
+      ]
     }
   ]
 }

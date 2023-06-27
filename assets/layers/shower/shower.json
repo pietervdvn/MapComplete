@@ -12,7 +12,19 @@
       "en": "Shower"
     }
   },
-  "presets": [],
+  "presets": [
+    {
+      "title": {
+        "en": "a shower"
+      },
+      "description": {
+        "en": "A (public) shower"
+      },
+      "tags": [
+        "amenity=shower"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     "level",
@@ -118,7 +130,25 @@
       }
     }
   ],
-  "filter": [],
+  "filter": [
+    "free",
+    {
+      "id": "hot-water",
+      "options": [
+        {
+          "question": {
+            "en": "Hot water available"
+          },
+          "osmTags": {
+            "or": [
+              "hot_water=yes",
+              "hot_water=fee"
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "deletion": {
     "softDeletionTags": {
       "and": [
