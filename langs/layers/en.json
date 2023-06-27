@@ -7554,7 +7554,7 @@
             },
             "charge": {
                 "freeform": {
-                    "placeholder": "e.g. 1 EUR"
+                    "placeholder": "e.g. 1.50 EUR"
                 },
                 "question": "How much does it cost to use this shower?",
                 "render": "It costs {charge} to use this shower"

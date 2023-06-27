@@ -84,7 +84,7 @@
         "key": "charge",
         "type": "string",
         "placeholder": {
-          "en": "e.g. 1 EUR"
+          "en": "e.g. 1.50 EUR"
         }
       },
       "render": {

@@ -7961,7 +7961,7 @@
             },
             "toilet-charge": {
                 "freeform": {
-                    "placeholder": "bijv. 0,50 EUR"
+                    "placeholder": "bijv. 0.50 EUR"
                 },
                 "question": "Hoeveel moet men betalen om deze toiletten te gebruiken?",
                 "render": "De toiletten gebruiken kost {charge}"
