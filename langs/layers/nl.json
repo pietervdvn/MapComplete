@@ -2005,6 +2005,9 @@
                     },
                     "4": {
                         "then": "Niet toegankelijk voor het publiek <br/><span class='subtle'>Bv. enkel toegankelijk voor de eigenaar, medewerkers, ...</span>"
+                    },
+                    "5": {
+                        "then": "Dit oplaadstation is publiek toegankelijk onder voorwaarden (bv. enkel tijdens bepaalde uren). "
                     }
                 },
                 "question": "Wie mag er dit oplaadpunt gebruiken?",
@@ -2702,10 +2705,10 @@
                         "then": "Bolderen kan hier niet"
                     },
                     "2": {
-                        "then": "Bolderen kan hier, maar er zijn niet zoveel routes"
+                        "then": "Bolderen kan hier, maar er zijn niet zoveel problemen"
                     },
                     "3": {
-                        "then": "Er zijn hier {climbing:boulder} bolderroutes"
+                        "then": "Er zijn hier {climbing:boulder} bolderproblemen"
                     }
                 },
                 "question": "Is het mogelijk om hier te bolderen?"
@@ -2899,12 +2902,38 @@
                 },
                 "question": "Is er een snelklimmuur (speed climbing)?"
             },
+            "belay_device_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Een zekeringsapparaat is voorzien aan elk touw"
+                    },
+                    "1": {
+                        "then": "Een zekeringsapparaat kan hier gratis geleend worden"
+                    },
+                    "2": {
+                        "then": "Een zekeringsapparaat kan hier gehuurd worden aan {service:climbing_belay_device:rental:charge}"
+                    },
+                    "3": {
+                        "then": "Een zekeringsapparaat kan hier gehuurd worden"
+                    },
+                    "4": {
+                        "then": "Hier kan <b>geen</b> zekeringsapparaat gehuurd worden"
+                    }
+                },
+                "question": "Kan een zekeringsapparaat hier gehuurd worden?"
+            },
             "harness_rental": {
                 "mappings": {
                     "0": {
-                        "then": "Een klimgordel kan hier gehuurd worden"
+                        "then": "Een klimgordel kan hier gratis geleend worden"
                     },
                     "1": {
+                        "then": "Een klimgordel kan hier gehuurd worden aan {service:climbing_harness:rental:charge}"
+                    },
+                    "2": {
+                        "then": "Een klimgordel kan hier gehuurd worden"
+                    },
+                    "3": {
                         "then": "Hier kunnen <b>geen</b> klimgordels gehuurd worden"
                     }
                 },
@@ -2916,10 +2945,16 @@
             "rope_rental": {
                 "mappings": {
                     "0": {
-                        "then": "Een klimtouw kan hier gehuurd worden"
+                        "then": "Een klimtouw kan hier gratis geleend worden"
                     },
                     "1": {
-                        "then": "Hier kunnen <b>geen</b> klimtouwen gehuurd worden"
+                        "then": "Een klimtouw kan hier gehuurd worden aan {service:climbing_rope:rental:charge}"
+                    },
+                    "2": {
+                        "then": "Een klimtouw kan hier gehuurd worden"
+                    },
+                    "3": {
+                        "then": "Hier kan <b>geen</b> klimtouw gehuurd worden"
                     }
                 },
                 "question": "Kan een klimtouw hier gehuurd worden?"
@@ -2927,9 +2962,15 @@
             "shoe_rental": {
                 "mappings": {
                     "0": {
-                        "then": "Klimschoenen kunnen hier gehuurd worden"
+                        "then": "Klimschoenen kunnen hier gratis geleend worden"
                     },
                     "1": {
+                        "then": "Klimschoenen kunnen hier gehuurd worden aan {service:climbing_shoes:rental:charge}"
+                    },
+                    "2": {
+                        "then": "Klimschoenen kunnen hier gehuurd worden"
+                    },
+                    "3": {
                         "then": "Hier kunnen <b>geen</b> klimschoenen gehuurd worden"
                     }
                 },
@@ -4824,6 +4865,9 @@
             "Privacy notice": {
                 "render": "Dit is waar je was sinds je deze website hebt geopend. Dit is enkel zichtbaar voor jou en niemand anders. Je locatie wordt niet verstuurd buiten je apparaat."
             }
+        },
+        "title": {
+            "render": "Jouw traject"
         }
     },
     "hackerspace": {

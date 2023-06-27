@@ -1,8 +1,8 @@
-import { Utils } from "../../Utils"
-import polygon_features from "../../assets/polygon-features.json"
-import OsmToGeoJson from "osmtogeojson"
-import { OsmFeature, OsmId, OsmTags, WayId } from "../../Models/OsmFeature"
-import { Feature, LineString, Polygon } from "geojson"
+import { Utils } from "../../Utils";
+import polygon_features from "../../assets/polygon-features.json";
+import { OsmFeature, OsmId, OsmTags, WayId } from "../../Models/OsmFeature";
+import OsmToGeoJson from "osmtogeojson";
+import { Feature, LineString, Polygon } from "geojson";
 
 export abstract class OsmObject {
     private static defaultBackend = "https://www.openstreetmap.org/"

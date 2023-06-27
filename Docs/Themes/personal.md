@@ -43,7 +43,6 @@ This theme contains the following layers:
   - [cycleways_and_roads](../Layers/cycleways_and_roads.md)
   - [defibrillator](../Layers/defibrillator.md)
   - [dentist](../Layers/dentist.md)
-  - [direction](../Layers/direction.md)
   - [doctors](../Layers/doctors.md)
   - [dogpark](../Layers/dogpark.md)
   - [drinking_water](../Layers/drinking_water.md)

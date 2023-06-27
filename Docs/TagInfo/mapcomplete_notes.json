@@ -21,6 +21,15 @@
     {
       "key": "id",
       "description": "Layer 'OSM objects with FIXME tags' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Notes on OpenStreetMap') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "fixme",
+      "description": "Layer 'OSM objects with FIXME tags' shows and asks freeform values for key 'fixme' (in the MapComplete.osm.be theme 'Notes on OpenStreetMap')"
+    },
+    {
+      "key": "fixme",
+      "description": "Layer 'OSM objects with FIXME tags' shows  with a fixed text, namely 'This issue has been resolved' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Notes on OpenStreetMap') Picking this answer will delete the key fixme.",
+      "value": ""
     }
   ]
 }

@@ -143,8 +143,8 @@ The question is  *Is bouldering possible here?*
 
   - *Bouldering is possible here*  corresponds with  `climbing:boulder=yes`
   - *Bouldering is not possible here*  corresponds with  `climbing:boulder=no`
-  - *Bouldering is possible, allthough there are only a few routes*  corresponds with  `climbing:boulder=limited`
-  - *There are {climbing:boulder} boulder routes*  corresponds with  `climbing:boulder~.+`
+  - *Bouldering is possible, although there are only a few problems*  corresponds with  `climbing:boulder=limited`
+  - *There are {climbing:boulder} boulder problems*  corresponds with  `climbing:boulder~.+`
   - This option cannot be chosen as answer
 
 

@@ -1660,7 +1660,7 @@
                         "then": "Una <b>cafeteria</b> per a a beure té, café o una beguda alcohólica en un ambient tranquil"
                     },
                     "3": {
-                        "then": "Un <b>restaurant</b> on pots menjar un menjar de veritat"
+                        "then": "Un <b>restaurant</b> on es pot menjar bé"
                     },
                     "4": {
                         "then": "Un espai obert on se serveix cervesa, típicament d'Alemanya"
@@ -2009,6 +2009,25 @@
                 "question": "Quina corrent ofereixen els connectors amb <div style='display: inline-block'><b><b>USB</b>per a carrega telèfons i dispositius electrònics petits</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
                 "render": "<div style='display: inline-block'><b><b>USB</b>per a carregar telèfons i petits dispositius electrònics</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> com a màxim a {socket:USB-A:current}A"
             },
+            "current-2": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Chademo</b> surt com a màxim a 120 A"
+                    }
+                },
+                "question": "Quin corrent ofereixen els endolls amb <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?"
+            },
+            "current-8": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Tipus 2 CCS</b> (mennekes) surt com a màxim a 125 A"
+                    },
+                    "1": {
+                        "then": "<b>Tipus 2 CCS</b> (mennekes) surt com a màxim a 350 A"
+                    }
+                },
+                "question": "Quin corrent ofereixen els endolls amb <div style='display: inline-block'><b><b>Tipus 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?"
+            },
             "email": {
                 "question": "Quin és el correu electrònic de l'operadora?"
             },
@@ -2039,11 +2058,35 @@
                 "render": "Un pot quedar-se com a màxim <b>{canonical(maxstay)}</b>"
             },
             "phone": {
-                "question": "A quin número es pot cridar si hi ha algun problema amb aquest punt de càrrega?"
+                "question": "A quin número es pot cridar si hi ha algun problema amb aquest punt de càrrega?",
+                "render": "En cas de problemes, truqueu a <a href='tel:{phone}'>{phone}</a>"
+            },
+            "plugs-2": {
+                "render": "Aquí hi ha <b class='text-xl'>{socket:chademo}</b> endolls del tipus <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> disponibles"
             },
             "plugs-7": {
                 "question": "Quants endolls del tipus <div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> hi ha disponibles aquí?",
                 "render": "Hi ha <b class='text-xl'>{socket:type2}</b> endolls del tipus <div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> disponibles aquí"
+            },
+            "plugs-8": {
+                "render": "Aquí hi ha <b class='text-xl'>{socket:type2_combo}</b> endolls del tipus <div style='display: inline-block'><b><b>Tipus 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> disponibles"
+            },
+            "power-output-2": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Chademo</b> surt com a màxim a 50 kw A"
+                    }
+                }
+            },
+            "power-output-8": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Tipus 2 CCS</b> (mennekes) surt com a màxim 50 kw A"
+                    }
+                }
+            },
+            "ref": {
+                "question": "Quin és el número de referència d'aquest punt de càrrega?"
             },
             "voltage-2": {
                 "mappings": {
@@ -2052,6 +2095,17 @@
                     }
                 },
                 "question": "Quin voltatge ofereixen els endolls amb <div style='display: inline-block'><b><b>CHAdeMO</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?"
+            },
+            "voltage-8": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Tipus 2 CCS</b> (mennekes) surt a 500 volts"
+                    },
+                    "1": {
+                        "then": "<b>Tipus 2 CCS</b> (mennekes) surt a 920 volts"
+                    }
+                },
+                "question": "Quin voltatge ofereixen els endolls amb <div style='display: inline-block'><b><b>Tipus 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?"
             },
             "website": {
                 "question": "Quina és la pàgina web on es pot trobar més informació sobre aquest punt de recàrrega?"

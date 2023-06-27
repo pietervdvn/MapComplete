@@ -30,4 +30,4 @@ Open up the homepage.
 2. Can the participant export the data in view for analysis?
 3. Can the participant create a PDF-map for print?
 4. Can they change the license of their picture? Can they explain what the CC0 and their chosen licenses imply?
-5. Can they find the chatroom?
+5. Can they find the chatroom of the local community?

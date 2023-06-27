@@ -46,7 +46,7 @@ this quick overview is incomplete
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [key](https://wiki.openstreetmap.org/wiki/Tag:access%3Dkey) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [key](https://wiki.openstreetmap.org/wiki/Tag:access%3Dkey) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate) [permissive](https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermissive)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity#values) [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [pnat](../SpecialInputElements.md#pnat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:schuko#values) [socket:schuko](https://wiki.openstreetmap.org/wiki/Key:socket:schuko) | [pnat](../SpecialInputElements.md#pnat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:typee#values) [socket:typee](https://wiki.openstreetmap.org/wiki/Key:socket:typee) | [pnat](../SpecialInputElements.md#pnat) | 
@@ -200,11 +200,12 @@ This is rendered with  `Access is {access}`
 
 
   - *Anyone can use this charging station (payment might be needed)*  corresponds with  `access=yes`
-  - *Anyone can use this charging station (payment might be needed)*  corresponds with  `access=permissive|access=public`
+  - *Anyone can use this charging station (payment might be needed)*  corresponds with  `access=public`
   - This option cannot be chosen as answer
   - *Only customers of the place this station belongs to can use this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests</span>*  corresponds with  `access=customers`
   - *A <b>key</b> must be requested to access this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests, which receive a key from the reception to unlock the charging station</span>*  corresponds with  `access=key`
   - *Not accessible to the general public (e.g. only accessible to the owners, employees, …)*  corresponds with  `access=private`
+  - *This charging station is accessible to the public during certain hours or conditions. Restrictions might apply, but general use is allowed.*  corresponds with  `access=permissive`
 
 
 

@@ -2,15 +2,15 @@
     "advertising": {
         "description": "Heb je je ooit afgevraagd hoeveel reclameborden er zijn in onze straten? Met deze kaart kan je deze vinden en informatie toevoegen",
         "shortDescription": "Waar zijn er reclameborden?",
-        "title": "Reclamekaart"
+        "title": "Reclame"
     },
     "aed": {
         "description": "Op deze kaart kan je informatie over AEDs vinden en verbeteren",
-        "title": "Open AED-kaart"
+        "title": "Defibrillatoren en AED"
     },
     "artwork": {
         "description": "Een vrije kaart met standbeelden, bustes, graffiti en andere kunstwerken van over de hele wereld",
-        "title": "Open kunstwerken-kaart"
+        "title": "Kunstwerken"
     },
     "atm": {
         "description": "Deze kaart toont geldautomaten waar je geld kunt afhalen of geld op de bank kan zetten",
@@ -67,7 +67,7 @@
         "title": "BAG import helper"
     },
     "benches": {
-        "description": "Deze kaart toont alle zitbanken die zijn opgenomen in OpenStreetMap: individuele banken en banken bij bushaltes. Met een OpenStreetMap-account kan je informatie verbeteren en nieuwe zitbanken toevoegen.",
+        "description": "Deze kaart toont alle zitbanken die zijn opgenomen in OpenStreetMap: individuele banken en banken bij bushaltes.",
         "shortDescription": "Een kaart van zitbanken",
         "title": "Zitbanken"
     },
@@ -90,8 +90,8 @@
         "title": "OSM voor blinden"
     },
     "bookcases": {
-        "description": "Een boekenruilkast is een kastje waar iedereen een boek kan nemen of achterlaten. Op deze kaart kan je deze boekenruilkasten terugvinden en met een gratis OpenStreetMap-account, ook boekenruilkasten toevoegen of informatie verbeteren",
-        "title": "Open boekenruilkasten-kaart"
+        "description": "Een boekenruilkast is een kastje waar iedereen een boek kan nemen of achterlaten.",
+        "title": "Boekenruilkasten"
     },
     "cafes_and_pubs": {
         "description": "Cafés, kroegen en drinkgelegenheden",
@@ -385,7 +385,7 @@
                 }
             }
         },
-        "title": "Open klimkaart"
+        "title": "Klimzalen, klimclubs en klimgelegenheden"
     },
     "clock": {
         "description": "Kaart met alle openbare klokken",
@@ -533,7 +533,7 @@
     },
     "cyclofix": {
         "description": "Het doel van deze kaart is om fietsers een gebruiksvriendelijke oplossing te bieden voor het vinden van de juiste infrastructuur voor hun behoeften.<br><br>U kunt uw exacte locatie volgen (enkel mobiel) en in de linkerbenedenhoek categorieën selecteren die voor u relevant zijn. U kunt deze tool ook gebruiken om 'spelden' aan de kaart toe te voegen of te bewerken en meer gegevens te verstrekken door de vragen te beantwoorden.<br><br>Alle wijzigingen die u maakt worden automatisch opgeslagen in de wereldwijde database van OpenStreetMap en kunnen  door anderen vrij worden hergebruikt.<br><br>Bekijk voor meer info over cyclofix ook <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-        "title": "Cyclofix - een open kaart voor fietsers"
+        "title": "Cyclofix - een kaart voor fietsers"
     },
     "drinking_water": {
         "description": "Op deze kaart staan publiek toegankelijke drinkwaterpunten en kan je makkelijk een nieuw drinkwaterpunt toevoegen",
@@ -583,7 +583,7 @@
             }
         },
         "shortDescription": "Wat is de oorsprong van een plaatsnaam?",
-        "title": "Open Etymology-kaart"
+        "title": "Etymologie - waarnaar is een straat vernoemd?"
     },
     "facadegardens": {
         "description": "Ontharde voortuintjes, groene gevels en bomen ín de stad brengen naast rust ook een mooiere stad, een grotere biodiversiteit, een verkoelend effect en een betere luchtkwaliteit. <br/> Klimaan VZW en 'Mechelen Klimaatneutraal' willen met het project Klim(t)aan je Gevel bestaande en nieuwe geveltuintjes in kaart brengen als voorbeeld voor mensen zelf een tuintje willen aanleggen of voor stadwandelaars die houden van de natuur. <br/>Meer info over het project op <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -872,12 +872,29 @@
         "title": "Hackerspaces"
     },
     "hailhydrant": {
-        "description": "Op deze kaart kan je hydranten, brandblussers, brandweerkazernes en stalplaatsen voor ambulances vinden en updaten.\n\nJe kan je exacte locatie bepalen (enkel via GSM) en relevante lagen selecteren in de linkeronderhoek. Je kan deze applicatie ook gebruiken om pins (points of interest) op de kaart te zetten en om extra details toe te voegen door vragen te beantwoorden.\n\nAlle wijzigingen die je maakt zullen automatisch worden opgeslagen in de globale database van OpenStreetMap en kunnen vrij door anderen gebruikt worden.",
+        "description": "Op deze kaart kan je hydranten, brandblussers, brandweerkazernes en stalplaatsen voor ambulances vinden en updaten.",
         "shortDescription": "Kaart om hydranten, brandblussers, brandweerkazernes en ambulanceposten weer te geven.",
         "title": "Brandkranen, brandblussers, brandweerposten en ambulanceposten"
     },
     "healthcare": {
         "description": "Op deze kaart vind je dokters, apothekers, kinesisten, ziekenhuizen en andere gezondheidsgerelateerde diensten",
+        "layers": {
+            "5": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "een winkel voor medische hulpmiddelen"
+                        },
+                        "1": {
+                            "title": "een hoorapparatenwinkel"
+                        },
+                        "2": {
+                            "title": "een optieker"
+                        }
+                    }
+                }
+            }
+        },
         "title": "Gezondheidszorg"
     },
     "hotels": {
@@ -891,6 +908,89 @@
     "kerbs_and_crossings": {
         "description": "Een kaart met stoepranden en oversteekplaatsen.",
         "title": "Stoepranden en oversteekplaatsen"
+    },
+    "mapcomplete-changes": {
+        "description": "Deze kaart toont alle wijzigingen die met MapComplete gemaakt werden",
+        "layers": {
+            "0": {
+                "description": "Toon alle MapComplete wijzigingen",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Themenaam bevat {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Gemaakt door bijdrager {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Niet</b> gemaakt door bijdrager {search}"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "Gemaakt voor {search}"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "Gemaakt na {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "De taal van de bijdrager is {search}"
+                            }
+                        }
+                    },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Gemaakt met host {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Changeset bevat minstens één afbeelding"
+                            }
+                        }
+                    }
+                },
+                "name": "Centerpunt van changeset",
+                "tagRenderings": {
+                    "contributor": {
+                        "question": "Welke bijdrager maakte deze wijziging?",
+                        "render": "Wijziging gemaakt door  <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "host": {
+                        "question": "Met welke host (website) werd deze wijziging gemaakt?",
+                        "render": "Wijziging gemaakt met <a href='{host}'>{host}</a>"
+                    },
+                    "locale": {
+                        "question": "In welke locale (taal) werd deze wijziging gemaakt?",
+                        "render": "De gebruikerstaal is {locale}"
+                    }
+                }
+            }
+        },
+        "shortDescription": "Toon wijzigingen gemaakt met MapComplete",
+        "title": "Wijzigingen gemaakt met MapComplete"
     },
     "maproulette": {
         "description": "Thema met MapRoulette taken, waar je ze kunt zoeken, filteren en ze oplossen.",
@@ -1304,7 +1404,7 @@
     },
     "toilets": {
         "description": "Een kaart met openbare toiletten",
-        "title": "Open Toilettenkaart"
+        "title": "Publieke Toiletten"
     },
     "transit": {
         "description": "Plan je trip met behulp van het openbaar vervoer.",

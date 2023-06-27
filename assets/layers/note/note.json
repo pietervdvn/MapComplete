@@ -105,11 +105,11 @@
         "centroid"
       ],
       "icon": {
-        "render": "./assets/svg/note.svg",
+        "render": "note",
         "mappings": [
           {
             "if": "closed_at~*",
-            "then": "./assets/svg/resolved.svg"
+            "then": "resolved"
           }
         ]
       },

@@ -17,7 +17,7 @@ MapComplete supports the following keys:
 
 Key combination | Action
 ----------------- | --------
-B | Opens the Background, layers and filters panel
+B | Opens the layers and filters panel
 Escape | Close the sidebar
 M | Set the background to a map from external sources. Toggles between the two best, available layers
 O | Set the background layer to on OpenStreetMap-based map (or disable the background raster layer)
