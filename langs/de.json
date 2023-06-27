@@ -490,7 +490,7 @@
     },
     "notes": {
         "addAComment": "Einen Kommentar hinzufügen",
-        "addComment": "Einen Kommentar hinzufügen",
+        "addComment": "Kommentar hinzufügen",
         "addCommentAndClose": "Einen Kommentar hinzufügen und schließen",
         "addCommentPlaceholder": "Einen Kommentar hinzufügen…",
         "anonymous": "Anonymer Benutzer",
@@ -585,7 +585,7 @@
     },
     "userinfo": {
         "editDescription": "Eigene Profilbeschreibung bearbeiten",
-        "gotoInbox": "Posteingang öffnen",
+        "gotoInbox": "Deinen Posteingang öffnen",
         "gotoSettings": "Einstellungen auf OpenStreetMap.org öffnen",
         "noDescription": "Sie haben noch keine Profilbeschreibung",
         "noDescriptionCallToAction": "Profilbeschreibung hinzufügen",
