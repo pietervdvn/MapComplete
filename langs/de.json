@@ -12,7 +12,7 @@
     },
     "communityIndex": {
         "available": "Diese Gemeinschaft spricht {native}",
-        "intro": "Treten Sie mit anderen Menschen in Kontakt, um sie kennen zu lernen, von ihnen zu lernen, ...",
+        "intro": "Treten Sie mit anderen Menschen in Kontakt, um sie kennen zu lernen, von ihnen zu lernen, …",
         "notAvailable": "Diese Gemeinschaft spricht nicht {native}",
         "title": "Index der Community"
     },
@@ -66,7 +66,7 @@
             "attributes": "Zeigt Attribute in einer freundlichen Art und Weise",
             "edit": "Falsche oder überholte Informationen? Die Schaltfläche \"Bearbeiten\" ist direkt zugänglich.",
             "question": "Ist ein Attribut noch nicht bekannt, zeigt MapComplete eine Frage an",
-            "see_images": "Zeigt Bilder von früheren Mitwirkenden, Wikipedia, Mapillary, ... ",
+            "see_images": "Zeigt Bilder von früheren Mitwirkenden, Wikipedia, Mapillary, …",
             "wikipedia": "Verlinkte Wikipedia-Artikel werden angezeigt"
         },
         "frontParagraph": "MapComplete ist eine einfach zu bedienende Webanwendung zur Erfassung von Geodaten in OpenStreetMap, die das Sammeln und Verwalten relevanter Daten in einer offenen, crowdsourced und wiederverwendbaren Weise ermöglicht.\n\nNeue Kategorien und Attribute können auf Anfrage hinzugefügt werden.",
@@ -498,7 +498,7 @@
         "createNote": "Eine neue Notiz erstellen",
         "createNoteIntro": "Ist etwas falsch oder fehlt etwas auf der Karte? Erstellen Sie hier eine Notiz. Diese werden von Freiwilligen überprüft.",
         "createNoteTitle": "Hier eine neue Notiz erstellen",
-        "creating": "Notiz wird erstellt...",
+        "creating": "Notiz wird erstellt…",
         "disableAllNoteFilters": "Alle Filter ausschalten",
         "isClosed": "Diese Notiz wurde erledigt",
         "isCreated": "Die Notiz wurde erstellt!",
