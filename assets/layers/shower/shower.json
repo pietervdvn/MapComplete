@@ -147,7 +147,8 @@
           }
         }
       ]
-    }
+    },
+    "open_now"
   ],
   "deletion": {
     "softDeletionTags": {
@@ -168,6 +169,12 @@
       "location": [
         "point",
         "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        }
       ]
     }
   ],
