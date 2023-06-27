@@ -60,7 +60,7 @@
             "intro": "The user is greeted by a map with features. Upon selecting one, the information about that feature is shown.",
             "title": "What does the interface look like?"
         },
-        "examples": "There are many thematic maps available of which a few are printed here.\n\nThere are many more thematic maps online: about healthcare, indoor navigation, wheelchair accessibility, waste facilities, public bookcases, pedestrian crossings with a rainbow-painting,... Discover them all on mapcomplete.osm.be",
+        "examples": "There are many thematic maps available of which a few are shown here.\n\nThere are many more thematic maps online: about healthcare, indoor navigation, wheelchair accessibility, waste facilities, public bookcases, pedestrian crossings with a rainbow-painting,... Discover them all on mapcomplete.osm.be",
         "fakeui": {
             "add_images": "Add images with a few clicks",
             "attributes": "Shows attributes in a friendly way",
@@ -278,7 +278,7 @@
             "answeredOneSkippedMultiple": "You answered one question and skipped {skipped} questions",
             "answeredOneSkippedOne": "You answered one and skipped one question",
             "done": "No more questions! Thank you!",
-            "reactivate": "Reactive skipped questions",
+            "reactivate": "Reactivate skipped questions",
             "skippedMultiple": "You skipped {skipped} questions",
             "skippedOne": "You skipped one question"
         },

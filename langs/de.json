@@ -3,7 +3,9 @@
         "title": "Erweiterte Funktionen"
     },
     "centerMessage": {
+        "allFilteredAway": "Kein Objekt im Kartenausschnitt erfüllt alle Filterkriterien",
         "loadingData": "Daten werden geladen…",
+        "noData": "Es gibt keine relevanten Objekte im aktuellen Kartenausschnitt",
         "ready": "Erledigt!",
         "retrying": "Laden von Daten fehlgeschlagen. Erneuter Versuch in {count} Sekunden…",
         "zoomIn": "Ausschnitt vergrößern, um Daten anzuzeigen oder zu bearbeiten"
@@ -12,7 +14,7 @@
         "available": "Diese Gemeinschaft spricht {native}",
         "intro": "Treten Sie mit anderen Menschen in Kontakt, um sie kennen zu lernen, von ihnen zu lernen, ...",
         "notAvailable": "Diese Gemeinschaft spricht nicht {native}",
-        "title": "Community index"
+        "title": "Index der Community"
     },
     "delete": {
         "cancel": "Abbrechen",
@@ -58,7 +60,7 @@
             "intro": "Der Benutzer wird von einer Karte mit Objekten begrüßt. Wenn er eines auswählt, werden Informationen über das Objekt angezeigt.",
             "title": "Wie sieht die Benutzeroberfläche aus?"
         },
-        "examples": "Es gibt viele thematische Karten, von denen hier einige abgedruckt sind.\n\nEs gibt noch viele weitere thematische Karten online: über das Gesundheitswesen, Indoor-Navigation, Zugänglichkeit für Rollstuhlfahrer, Abfallentsorgungsanlagen, öffentliche Bücherschränke, Fußgängerüberwege mit Regenbogenmalerei,... Entdecken Sie sie alle auf mapcomplete.osm.be",
+        "examples": "Es gibt viele thematische Karten, von denen hier einige dargestellt sind.\n\nEs gibt noch viele weitere thematische Karten online: über das Gesundheitswesen, Indoor-Navigation, Zugänglichkeit für Rollstuhlfahrer, Abfallentsorgungsanlagen, öffentliche Bücherschränke, Fußgängerüberwege mit Regenbogenmalerei,... Entdecken Sie sie alle auf mapcomplete.osm.be",
         "fakeui": {
             "add_images": "Bilder mit ein paar Klicks hinzufügen",
             "attributes": "Zeigt Attribute in einer freundlichen Art und Weise",
@@ -91,12 +93,19 @@
     },
     "general": {
         "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
+        "aboutMapComplete": {
+            "intro": "Nutze MapComplete, um Daten zu <b>einem bestimmten Thema</b> auf OpenStreetMap einzutragen. Beantworte Frage, und in wenigen Minuten sind die Beiträge überall verfügbar. In den meisten Themen kannst Du Bilder hinzufügen oder sogar eine Bewertung hinterlassen. Die <b>Themen-Ersteller*innen</b> definieren Objekte, Fragen und Begriffe für das jeweilige Thema."
+        },
         "add": {
             "addNew": "{category} hinzufügen",
             "backToSelect": "Wählen Sie eine andere Kategorie",
-            "confirmButton": "Eine {category} hinzufügen.<br><div class=\"alert\">Ihre Ergänzung ist für alle sichtbar</div>",
+            "confirmButton": "Eine {category} <br/><div class='alert'>hinzufügen. Ihre Ergänzung ist für alle sichtbar</div>",
+            "confirmLocation": "Diesen Standort bestätigen",
+            "confirmTitle": "{title} hinzufügen?",
+            "confirmWarning": "Das von Dir eingetragene Objekt wird <b>für alle sichtbar sein</b>. Bitte füge nur Objekte hinzu, die wirklich existieren. Viele Anwendungen nutzen diese Daten.",
             "disableFilters": "Alle Filter deaktivieren",
             "disableFiltersExplanation": "Einige Elemente können durch einen Filter ausgeblendet sein",
+            "enableLayer": "Ebene {name} einblenden",
             "hasBeenImported": "Dieses Objekt wurde bereits importiert",
             "import": {
                 "hasBeenImported": "Das Objekt wurde importiert",
@@ -108,7 +117,7 @@
                 "zoomInMore": "Ansicht vergrößern, um das Objekt zu importieren"
             },
             "importTags": "Das Element erhält {tags}",
-            "intro": "An dieser Stelle sind noch keine Daten vorhanden.<br>",
+            "intro": "An dieser Stelle sind noch keine Daten vorhanden.<br/>",
             "layerNotEnabled": "Die Ebene {layer} ist nicht eingeschaltet. Schalten Sie die Ebene ein, um ein Objekt hinzuzufügen",
             "openLayerControl": "Das Ebenen-Fenster öffnen",
             "pleaseLogin": "Bitte anmelden, um ein neues Objekt hinzuzufügen",
@@ -125,6 +134,8 @@
             "isApplied": "Änderungen werden übernommen"
         },
         "attribution": {
+            "attributionBackgroundLayer": "Die aktuelle Hintergrundebene ist {name}",
+            "attributionBackgroundLayerWithCopyright": "Die aktuelle Hintergrundebene ist {name}: {copyright}",
             "attributionContent": "<p>Alle Daten werden bereitgestellt von <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, frei verwendbar unter der <a href='https://osm.org/copyright' target='_blank'>Open Database License</a>.</p>",
             "attributionTitle": "Danke",
             "codeContributionsBy": "MapComplete wurde erstellt von {contributors} und <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} weiteren Personen</a>",
@@ -140,25 +151,29 @@
             "mapContributionsBy": "Die angezeigten Daten wurden bearbeitet durch {contributors}",
             "mapContributionsByAndHidden": "Die angezeigten Daten wurden bearbeitet von {contributors} und {hiddenCount} weiteren Beitragenden",
             "mapDataByOsm": "Kartendaten: OpenStreetMap",
-            "mapillaryHelp": "Mapillary ist ein Online-Dienst, der Straßenbilder sammelt und sie unter einer freien Lizenz anbietet. Mitwirkende dürfen diese Bilder verwenden, um OpenStreetMap zu verbessern",
+            "mapillaryHelp": "<b>Mapillary</b> ist ein Online-Dienst, der Straßenbilder sammelt und sie unter einer freien Lizenz anbietet. Mitwirkende dürfen diese Bilder verwenden, um OpenStreetMap zu verbessern",
             "openIssueTracker": "Fehler melden",
             "openMapillary": "Mapillary öffnen",
             "openOsmcha": "Letzte Bearbeitungen zum Thema {theme} ansehen",
             "themeBy": "Dieses Thema wurde erstellt von {author}",
+            "title": "Copyright und Urheberrechtsangabe",
             "translatedBy": "MapComplete wurde übersetzt von {contributors} und <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} weiteren Personen</a>"
         },
         "back": "Zurück",
         "backToIndex": "Zurück zur Übersicht aller thematischen Karten",
         "backToMapcomplete": "Zurück zur Themenübersicht",
-        "backgroundMap": "Hintergrundkarte",
+        "backgroundMap": "Hintergrundkarte auswählen",
+        "backgroundSwitch": "Hintergrund wechseln",
         "cancel": "Abbrechen",
         "confirm": "Bestätigen",
         "customThemeIntro": "<h3>Benutzerdefinierte Themen</h3>Dies sind zuvor angesehene nutzergenerierte Themen.",
         "download": {
             "downloadAsPdf": "Aktuelle Karte als PDF herunterladen",
             "downloadAsPdfHelper": "Ideal zum Drucken der aktuellen Karte",
+            "downloadAsPng": "Als Bild herunterladen",
+            "downloadAsPngHelper": "Am besten geeignet, um in Berichten zu verwenden",
             "downloadAsSvg": "Aktuelle Karte als SVG herunterladen",
-            "downloadAsSvgHelper": "Kompatibel mit Inkscape oder Adobe Illustrator; Weiterbearbeitung erforderlich  ",
+            "downloadAsSvgHelper": "Kompatibel mit Inkscape oder Adobe Illustrator; Weiterbearbeitung erforderlich",
             "downloadCSV": "Sichtbare Daten als CSV herunterladen",
             "downloadCSVHelper": "Kompatibel mit LibreOffice Calc, Excel, …",
             "downloadFeatureAsGeojson": "GeoJSON Datei herunterladen",
@@ -171,7 +186,11 @@
             "includeMetaData": "Metadaten übernehmen (letzter Bearbeiter, berechnete Werte, ...)",
             "licenseInfo": "<h3>Copyright-Hinweis</h3>Die bereitgestellten Daten sind unter ODbL verfügbar. Die Wiederverwendung ist für jeden Zweck frei, aber <ul><li>die Namensnennung <b>© OpenStreetMap contributors</b> ist darzustellen</li><li>Jede Änderung muss unter der gleichen Lizenz veröffentlicht werden</li></ul> Bitte lesen Sie den vollständigen <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">Copyright-Hinweis</a> für weitere Details.",
             "noDataLoaded": "Noch keine Daten geladen. Download in Kürze verfügbar",
-            "title": "Sichtbare Daten herunterladen",
+            "pdf": {
+                "current_view_a3": "PDF (A3, Hochformat) der aktuellen Ansicht exportieren",
+                "current_view_a4": "PDF (A4, Querformat) der aktuellen Ansicht exportieren"
+            },
+            "title": "Download",
             "uploadGpx": "Einen Track auf OpenStreetMap hochladen"
         },
         "error": "Etwas ist schief gelaufen",
@@ -202,10 +221,14 @@
         "loginToStart": "Anmelden, um diese Frage zu beantworten",
         "loginWithOpenStreetMap": "Bei OpenStreetMap anmelden",
         "logout": "Abmelden",
+        "menu": {
+            "aboutMapComplete": "Über MapComplete",
+            "filter": "Daten filtern"
+        },
         "morescreen": {
             "createYourOwnTheme": "Ein eigenes MapComplete-Thema von Grund auf neu erstellen",
             "hiddenExplanation": "Diese Themen sind nur für Personen zugänglich, die einen Link erhalten haben. Sie haben {hidden_discovered} von {total_hidden} versteckten Themen entdeckt.",
-            "intro": "<h3>Mehr thematische Karten?</h3>Sammeln Sie gerne Geodaten? <br>Es sind weitere Themen verfügbar.",
+            "intro": "<h3>Mehr thematische Karten?</h3>Sammeln Sie gerne Geodaten? <br/>Es sind weitere Themen verfügbar.",
             "noMatchingThemes": "Keine Themen, die Ihren Suchkriterien entsprechen",
             "noSearch": "Alle Themen anzeigen",
             "previouslyHiddenTitle": "Zuvor besuchte versteckte Themen",
@@ -222,6 +245,7 @@
         "number": "Zahl",
         "openStreetMapIntro": "<h3>Eine offene Karte</h3><p>Eine Karte, die jeder frei nutzen und bearbeiten kann. Ein einziger Ort, um alle Geoinformationen zu speichern. Unterschiedliche, kleine, inkompatible und veraltete Karten werden nirgendwo gebraucht.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> ist nicht die feindliche Karte. Die Kartendaten können frei verwendet werden (mit <a href='https://osm.org/copyright' target='_blank'>Benennung und Veröffentlichung von Änderungen an diesen Daten</a>). Jeder kann neue Daten hinzufügen und Fehler korrigieren. Diese Webseite nutzt OpenStreetMap. Alle Daten stammen von dort, und Ihre Antworten und Korrekturen werden überall verwendet.</p><p>Viele Menschen und Anwendungen nutzen bereits OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>; auch die Kartendaten von Facebook, Instagram, Apple-maps und Bing-maps stammen (teilweise) von OpenStreetMap.</p>",
         "openTheMap": "Karte öffnen",
+        "openTheMapAtGeolocation": "Zum eigenen Standort zoomen",
         "opening_hours": {
             "closed_permanently": "Geschlossen auf unbestimmte Zeit",
             "closed_until": "Geschlossen bis {date}",
@@ -246,10 +270,22 @@
         },
         "pickLanguage": "Sprache auswählen: ",
         "poweredByOsm": "Unterstützt von OpenStreetMap",
+        "questionBox": {
+            "answeredMultiple": "Du hast {answered} Fragen beantwortet",
+            "answeredMultipleSkippedMultiple": "Du hast {answered} Fragen beantwortet und {skipped} Fragen übersprungen",
+            "answeredMultipleSkippedOne": "Du hast {answered} Fragen beantwortet und eine Frage übersprungen",
+            "answeredOne": "Du hast eine Frage beantwortet",
+            "answeredOneSkippedMultiple": "Du hast eine Frage beantwortet und {skipped} Fragen übersprungen",
+            "answeredOneSkippedOne": "Du hast eine Frage beantwortet und eine Frage übersprungen",
+            "done": "Keine weiteren Fragen! Danke Dir!",
+            "reactivate": "Übersprungene Fragen reaktivieren",
+            "skippedMultiple": "Du hast {skipped} Fragen übersprungen",
+            "skippedOne": "Du hast eine Frage übersprungen"
+        },
         "questions": {
             "emailIs": "Die E-Mail-Adresse dieser {category} lautet <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "Wie lautet die E-Mail-Adresse der {category}?",
-            "phoneNumberIs": "Die Telefonnummer der {category} lautet <a target=\"_blank\">{phone}</a>",
+            "phoneNumberIs": "Die Telefonnummer dieser {category} lautet <a href='tel:{phone}' target='_blank'>{phone}</a>",
             "phoneNumberOf": "Wie lautet die Telefonnummer der {category}?",
             "websiteIs": "Webseite: <a href=\"{website}\" target=\"_blank\">{website}</a>",
             "websiteOf": "Wie lautet die Webseite der {category}?"
@@ -263,6 +299,7 @@
             "error": "Etwas ist schief gelaufen…",
             "nothing": "Nichts gefunden…",
             "search": "Ortssuche",
+            "searchShort": "Suche…",
             "searching": "Suchen …"
         },
         "sharescreen": {
@@ -272,7 +309,7 @@
             "downloadCustomThemeHelp": "Ein erfahrener Mitwirkender kann diese Datei verwenden, um Ihr Thema zu verbessern",
             "editThemeDescription": "Fragen zu diesem Thema hinzufügen oder ändern",
             "editThisTheme": "Dieses Thema bearbeiten",
-            "embedIntro": "<h3>Karte in Webseiten einbetten</h3>Betten Sie diese Karte in Ihre Webseite ein. Die Karte ist kostenlos und wird es immer sein. Je mehr Leute sie benutzen, desto wertvoller wird sie.",
+            "embedIntro": "<h3>Karte in Webseiten einbetten</h3>Betten Sie diese Karte in Ihre Webseite ein. <br/>Wir ermutigen Sie gern dazu - Sie müssen nicht mal um Erlaubnis fragen.<br/> Die Karte ist kostenlos und wird es immer sein. Je mehr Leute die Karte benutzen, desto wertvoller wird sie.",
             "fsAddNew": "Schaltfläche 'neuen POI hinzufügen' aktivieren",
             "fsGeolocation": "Schaltfläche 'Mich geolokalisieren' aktivieren (nur mobil)",
             "fsIncludeCurrentBackgroundMap": "Aktuellen Hintergrund übernehmen <b>({name})</b>",
@@ -284,7 +321,8 @@
             "fsUserbadge": "Anmeldefeld aktivieren",
             "fsWelcomeMessage": "Begrüßung und Registerkarten anzeigen",
             "intro": "<h3>Karte teilen</h3> Mit dem folgenden Link können Sie diese Karte mit Freunden und Familie teilen:",
-            "thanksForSharing": "Danke für das Teilen!"
+            "thanksForSharing": "Danke für das Teilen!",
+            "title": "Diese Karte teilen"
         },
         "skip": "Frage überspringen",
         "testing": "Testen - Änderungen werden nicht gespeichert",
@@ -341,6 +379,7 @@
             "general": "Auf dieser Karte können Sie <i>themenspezifische Kartenobjekte</i> ansehen, bearbeiten und hinzufügen. Verschieben Sie den Kartenausschnitt, um Objekte zu entdecken, tippen Sie auf eines, um weitere Informationen zu sehen oder zu bearbeiten. Alle Daten stammen von OpenStreetMap und dürfen frei verwendet werden."
         },
         "wikipedia": {
+            "addEntry": "Eine weitere Wikipedia-Seite hinzufügen",
             "createNewWikidata": "Einen neues Wikidata Element erstellen",
             "doSearch": "Suche oben, um Ergebnisse zu sehen",
             "failed": "Laden des Wikipedia-Eintrags fehlgeschlagen",
@@ -363,8 +402,11 @@
         "geolocate": "Verschieben Sie die Karte auf den aktuellen Standort oder zoomen Sie die Karte auf den aktuellen Standort. Beantragt Standortberechtigung",
         "intro": "MapComplete unterstützt folgende Tastaturbefehle:",
         "key": "Tastenkombination",
-        "openLayersPanel": "Öffnet das Bedienfeld Hintergrund, Ebenen und Filter",
-        "selectMapnik": "Setzt die Hintergrundebene auf OpenStreetMap-carto",
+        "openLayersPanel": "Öffnet das Menü für Ebenen und Filter",
+        "selectAerial": "Hintergrund als Luftbild oder Satellitenbild einstellen. Wechselt zwischen den zwei besten verfügbaren Ebenen",
+        "selectMap": "Karte aus externer Quelle als Hintergrund wählen. Wechselt zwischen den zwei besten verfügbaren Ebenen",
+        "selectMapnik": "OpenStreetMap-carto als Hintergrundebene wählen",
+        "selectOsmbasedmap": "OpenStreetMap-basierte Karte als Hintergrund auswählen (oder Hintergrundebene deaktivieren)",
         "selectSearch": "Suchleiste auswählen, um nach Orten zu suchen",
         "title": "Tastaturbefehle"
     },
@@ -512,7 +554,7 @@
     "reviews": {
         "affiliated_reviewer_warning": "(Partner-Rezension)",
         "attribution": "Rezensionen werden bereitgestellt von <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> und sind unter <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a> verfügbar.",
-        "i_am_affiliated": "<span>Ich bin mit diem Objekt vertraut</span><br><span class=\"subtle\">Auswählen, wenn Sie Eigentümer, Ersteller, Angestellter … sind</span>",
+        "i_am_affiliated": "<span>Ich bin an diesem Objekt beteiligt</span><br/><span class='subtle'>Auswählen, wenn Sie Eigentümer, Ersteller, Angestellter … sind</span>",
         "name_required": "Der Name des Objekts ist erforderlich, um Bewertungen zu erstellen und anzuzeigen",
         "no_rating": "Vor dem Absenden eine Bewertung abgeben…",
         "no_reviews_yet": "Es gibt noch keine Bewertungen. Hilf mit der ersten Bewertung dem Geschäft und der Open Data Bewegung!",
@@ -542,10 +584,12 @@
         "notImmediate": "Die Übersetzung wird nicht direkt aktualisiert. Dies dauert in der Regel ein paar Tage"
     },
     "userinfo": {
+        "editDescription": "Eigene Profilbeschreibung bearbeiten",
         "gotoInbox": "Posteingang öffnen",
         "gotoSettings": "Einstellungen auf OpenStreetMap.org öffnen",
         "noDescription": "Sie haben noch keine Profilbeschreibung",
-        "noDescriptionCallToAction": "Profilbeschreibung hinzufügen"
+        "noDescriptionCallToAction": "Profilbeschreibung hinzufügen",
+        "notLoggedIn": "Du hast Dich abgemeldet"
     },
     "validation": {
         "color": {
@@ -586,7 +630,8 @@
         },
         "phone": {
             "description": "eine Telefonnummer",
-            "feedback": "Dies ist keine gültige Telefonnummer"
+            "feedback": "Dies ist keine gültige Telefonnummer",
+            "feedbackCountry": "Dies ist keine gültige Telefonnummer (in {country})"
         },
         "pnat": {
             "description": "eine positive, ganze Zahl",
