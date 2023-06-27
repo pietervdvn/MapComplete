@@ -4480,6 +4480,13 @@
                         "question": "Has organic options"
                     }
                 }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": "Free to use"
+                    }
+                }
             }
         }
     },
@@ -7512,6 +7519,76 @@
             "render": "Shop"
         }
     },
+    "shower": {
+        "description": "A layer showing (public) showers",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Hot water available"
+                    }
+                }
+            }
+        },
+        "name": "Shower",
+        "presets": {
+            "0": {
+                "description": "A (public) shower",
+                "title": "a shower"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Anyone can use this shower"
+                    },
+                    "1": {
+                        "then": "Only customers can use this shower"
+                    },
+                    "2": {
+                        "then": "Accesible, but one has to ask for a key"
+                    }
+                },
+                "question": "Who can use this shower?"
+            },
+            "charge": {
+                "freeform": {
+                    "placeholder": "e.g. 1 EUR"
+                },
+                "question": "How much does it cost to use this shower?",
+                "render": "It costs {charge} to use this shower"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "There is a fee for using this shower"
+                    },
+                    "1": {
+                        "then": "This shower is free to use"
+                    }
+                },
+                "question": "Is there a fee for using this shower?"
+            },
+            "hot_water": {
+                "mappings": {
+                    "0": {
+                        "then": "Hot water is available here"
+                    },
+                    "1": {
+                        "then": "Hot water is available here, but there is a fee"
+                    },
+                    "2": {
+                        "then": "There is no hot water available here"
+                    }
+                },
+                "question": "Does this shower have hot water available?"
+            }
+        },
+        "title": {
+            "render": "Shower"
+        }
+    },
     "slow_roads": {
         "description": "All carfree roads",
         "tagRenderings": {
@@ -7666,6 +7743,23 @@
             }
         },
         "tagRenderings": {
+            "basketball-hoops": {
+                "mappings": {
+                    "0": {
+                        "then": "This basketball pitch has a single hoop"
+                    },
+                    "1": {
+                        "then": "This basketball pitch has two hoops"
+                    },
+                    "2": {
+                        "then": "This basketball pitch has four hoops"
+                    },
+                    "3": {
+                        "then": "This basketball pitch has {hoops} hoops"
+                    }
+                },
+                "question": "How much basketball hoops does this pitch have?"
+            },
             "sport-pitch-access": {
                 "mappings": {
                     "0": {
@@ -8277,13 +8371,6 @@
                         "question": "Has a changing table"
                     }
                 }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Free to use"
-                    }
-                }
             }
         },
         "name": "Toilets",
@@ -8342,6 +8429,9 @@
                 "render": "The changing table is located at {changing_table:location}"
             },
             "toilet-charge": {
+                "freeform": {
+                    "placeholder": "e.g. 0.50 EUR"
+                },
                 "question": "How much does one have to pay for these toilets?",
                 "render": "The fee is {charge}"
             },

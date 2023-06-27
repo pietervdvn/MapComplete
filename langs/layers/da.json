@@ -2047,6 +2047,13 @@
                         "question": "Åbent nu"
                     }
                 }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": "Gratis at bruge"
+                    }
+                }
             }
         }
     },
@@ -2230,13 +2237,6 @@
                 "options": {
                     "0": {
                         "question": "Har et puslebord"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Gratis at bruge"
                     }
                 }
             }

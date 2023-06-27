@@ -4474,6 +4474,13 @@
                         "question": "Bio-Produkte im Angebot"
                     }
                 }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": "Nutzung kostenlos"
+                    }
+                }
             }
         }
     },
@@ -8224,13 +8231,6 @@
                 "options": {
                     "0": {
                         "question": "Mit Wickeltisch"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Nutzung kostenlos"
                     }
                 }
             }
