@@ -56,8 +56,8 @@
             "question": "what notes can you use to pay here?"
         },
         "description": {
-            "question": "Is there still something relevant you couldn't give in the previous questions? Add it here.",
-            "questionHint": "Don't repeat already stated facts"
+            "question": "Is there still some relevant info that the previous questions did not cover? Feel free to add it here.",
+            "questionHint": "Please don't repeat already stated facts"
         },
         "dog-access": {
             "mappings": {
