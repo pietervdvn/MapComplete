@@ -70,7 +70,10 @@
           "if": "fee=no",
           "then": {
             "en": "This shower is free to use"
-          }
+          },
+          "addExtraTags": [
+            "charge="
+          ]
         }
       ]
     },
