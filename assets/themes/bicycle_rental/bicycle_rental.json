@@ -11,7 +11,8 @@
     "nb_NO": "Sykkelutleie",
     "da": "Cykeludlejning",
     "pa_PK": "سائیکل کرایا",
-    "cs": "Půjčovna kol"
+    "cs": "Půjčovna kol",
+    "zh_Hant": "單車租借站"
   },
   "shortDescription": {
     "en": "A map with bicycle rental stations and bicycle rental shops",

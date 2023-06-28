@@ -12,7 +12,8 @@
     "fr": "Codes postaux",
     "da": "Postnumre",
     "pa_PK": "ڈاک کوڈ",
-    "cs": "Poštovní směrovací čísla"
+    "cs": "Poštovní směrovací čísla",
+    "zh_Hant": "郵遞區號"
   },
   "shortDescription": {
     "en": "Postal codes",
@@ -26,7 +27,8 @@
     "fr": "Codes postaux",
     "da": "Postnumre",
     "pa_PK": "ڈاک کوڈ",
-    "cs": "Poštovní směrovací čísla"
+    "cs": "Poštovní směrovací čísla",
+    "zh_Hant": "郵遞區號"
   },
   "description": {
     "en": "Postal codes",
@@ -40,7 +42,8 @@
     "da": "Postnumre",
     "nb_NO": "Postnummer",
     "pa_PK": "ڈاک کوڈ",
-    "cs": "Poštovní směrovací čísla"
+    "cs": "Poštovní směrovací čísla",
+    "zh_Hant": "郵遞區號"
   },
   "icon": "./assets/themes/postal_codes/townhall.svg",
   "startLat": 0,
@@ -65,7 +68,8 @@
         "fr": "codes postaux",
         "da": "postnumre",
         "pa_PK": "ڈاک کوڈ",
-        "cs": "poštovní směrovací čísla"
+        "cs": "poštovní směrovací čísla",
+        "zh_Hant": "郵遞區號"
       },
       "minzoom": 8,
       "title": {
@@ -80,7 +84,8 @@
           "fr": "Code postal {postal_code}",
           "da": "Postnummer {postal_code}",
           "ca": "Codi postal {postal_code}",
-          "cs": "Poštovní směrovací číslo {postal_code}"
+          "cs": "Poštovní směrovací číslo {postal_code}",
+          "zh_Hant": "郵遞區號 {postal_code}"
         }
       },
       "description": {},
@@ -98,7 +103,8 @@
             "nb_NO": "Postnummeret er {postal_code}",
             "da": "Postnummeret er {postal_code}",
             "ca": "El codi postal és {postal_code}",
-            "cs": "Poštovní směrovací číslo je {postal_code}"
+            "cs": "Poštovní směrovací číslo je {postal_code}",
+            "zh_Hant": "郵遞區號是 {postal_code}"
           }
         }
       ],
@@ -163,7 +169,8 @@
         "nb_NO": "rådhus",
         "da": "rådhuse",
         "es": "Municipios",
-        "cs": "radnice"
+        "cs": "radnice",
+        "zh_Hant": "城鎮"
       },
       "minzoom": 12,
       "title": {
@@ -178,7 +185,8 @@
           "nb_NO": "{name}-rådhuset",
           "ca": "Ajuntament de {name}",
           "es": "Municipio {name}",
-          "cs": "Radnice {name}"
+          "cs": "Radnice {name}",
+          "zh_Hant": "城鎮 {name}"
         }
       },
       "calculatedTags": [

@@ -32,13 +32,15 @@
         "type": "text"
       },
       "question": {
-        "en": "What is wrong with this feature?"
+        "en": "What is wrong with this feature?",
+        "de": "Was stimmt mit diesem Objekt nicht?"
       },
       "mappings": [
         {
           "if": "fixme=",
           "then": {
-            "en": "This issue has been resolved"
+            "en": "This issue has been resolved",
+            "de": "Dieses Problem wurde behoben"
           }
         }
       ],

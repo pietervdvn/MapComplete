@@ -179,7 +179,7 @@
     },
     {
       "key": "message",
-      "description": "Layer 'Advertise' shows message=showbiz with a fixed text, namely 'Inormation related to theatre, concerts, ...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Advertise' shows message=showbiz with a fixed text, namely 'Information related to theatre, concerts, …' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "showbiz"
     },
     {
@@ -1768,7 +1768,7 @@
     },
     {
       "key": "fee",
-      "description": "Layer 'Bike cleaning service' shows fee=yes with a fixed text, namely 'This cleaning service is paid' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if amenity=bike_wash|amenity=bicycle_wash)",
+      "description": "Layer 'Bike cleaning service' shows fee=yes with a fixed text, namely 'There is a fee to use this cleaning service' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if amenity=bike_wash|amenity=bicycle_wash)",
       "value": "yes"
     },
     {

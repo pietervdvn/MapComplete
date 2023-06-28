@@ -12,7 +12,7 @@
     },
     "communityIndex": {
         "available": "This community speaks {native}",
-        "intro": "Get in touch with other people to get to know them, learn from them, ...",
+        "intro": "Get in touch with other people to get to know them, learn from them, …",
         "notAvailable": "This community does not speak {native}",
         "title": "Community index"
     },
@@ -60,13 +60,13 @@
             "intro": "The user is greeted by a map with features. Upon selecting one, the information about that feature is shown.",
             "title": "What does the interface look like?"
         },
-        "examples": "There are many thematic maps available of which a few are printed here.\n\nThere are many more thematic maps online: about healthcare, indoor navigation, wheelchair accessibility, waste facilities, public bookcases, pedestrian crossings with a rainbow-painting,... Discover them all on mapcomplete.osm.be",
+        "examples": "There are many thematic maps available of which a few are shown here.\n\nThere are many more thematic maps online: about healthcare, indoor navigation, wheelchair accessibility, waste facilities, public bookcases, pedestrian crossings with a rainbow-painting,… Discover them all on mapcomplete.osm.be",
         "fakeui": {
             "add_images": "Add images with a few clicks",
             "attributes": "Shows attributes in a friendly way",
             "edit": "Wrong or outdated info? The edit button is right there.",
             "question": "If an attribute is not yet known, MapComplete shows a question",
-            "see_images": "Shows images from previous contributors, Wikipedia, Mapillary, ... ",
+            "see_images": "Shows images from previous contributors, Wikipedia, Mapillary, …",
             "wikipedia": "Linked Wikipedia articles are shown"
         },
         "frontParagraph": "MapComplete is an easy to use web application to collect geodata in OpenStreetMap, enabling collecting and managing relevant data in an open, crowdsourced and reusable way.\n\nNew categories and attributes can be added upon request.",
@@ -278,7 +278,7 @@
             "answeredOneSkippedMultiple": "You answered one question and skipped {skipped} questions",
             "answeredOneSkippedOne": "You answered one and skipped one question",
             "done": "No more questions! Thank you!",
-            "reactivate": "Reactive skipped questions",
+            "reactivate": "Reactivate skipped questions",
             "skippedMultiple": "You skipped {skipped} questions",
             "skippedOne": "You skipped one question"
         },
@@ -498,7 +498,7 @@
         "createNote": "Create a new note",
         "createNoteIntro": "Is something wrong or missing on the map? Create a note here. These will be checked by volunteers.",
         "createNoteTitle": "Create a new note here",
-        "creating": "Creating note...",
+        "creating": "Creating note…",
         "disableAllNoteFilters": "Disable all filters",
         "isClosed": "This note is resolved",
         "isCreated": "Your note has been created!",

@@ -12,7 +12,8 @@
     "it": "Marciapiede",
     "da": "Fortove",
     "pa_PK": "فُٹ‌پاتھ",
-    "cs": "Chodníky"
+    "cs": "Chodníky",
+    "zh_Hant": "人行道"
   },
   "shortDescription": {
     "en": "Sidewalk mapping",
@@ -37,7 +38,8 @@
     "nb_NO": "Eksperimentelt tema",
     "da": "Eksperimentelt tema",
     "pa_PK": "آزمائش تھیم",
-    "cs": "Experimentální téma"
+    "cs": "Experimentální téma",
+    "zh_Hant": "實驗性的主題"
   },
   "icon": "./assets/svg/bug.svg",
   "startLat": 0,
@@ -60,7 +62,8 @@
         "it": "Marciapiedi",
         "da": "Fortove",
         "pa_PK": "فُٹ‌پاتھ",
-        "cs": "Chodníky"
+        "cs": "Chodníky",
+        "zh_Hant": "人行道"
       },
       "minzoom": 12,
       "source": {
@@ -101,7 +104,8 @@
         "fr": "Calque montrant les trottoirs",
         "da": "Lag, der viser fortove på motorveje",
         "ca": "Una capa que mostra les voreres de les vies",
-        "cs": "Vrstva zobrazující chodníky silnic"
+        "cs": "Vrstva zobrazující chodníky silnic",
+        "zh_Hant": "顯示道路的人行穿越道的圖層"
       },
       "tagRenderings": [
         {

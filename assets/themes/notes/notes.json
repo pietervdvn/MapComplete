@@ -13,7 +13,8 @@
     "nb_NO": "Notater på OpenStreetMap",
     "fr": "Notes sur OpenStreetMap",
     "da": "Noter på OpenStreetMap",
-    "cs": "Poznámky k OpenStreetMap"
+    "cs": "Poznámky k OpenStreetMap",
+    "zh_Hant": "開放街圖上的註解"
   },
   "description": {
     "en": "A note is a pin on the map with some text to indicate something wrong.<br/><br/>Make sure to checkout the <a href='#filters'>filter view</a> to search for users and text.",
@@ -24,7 +25,8 @@
     "fr": "Une note est une épingle sur la carte avec du text pour indiquer une erreur.<br/><br/>Assurez-vous d’utiliser le <a href='#filters'>filtre</a> pour chercher des utilisateurs and du texte.",
     "da": "En note er en nål på kortet med noget tekst, der indikerer, at noget er forkert.<br/><br/>Sørg for at tjekke <a href='#filters'>filtervisningen</a> for at søge efter brugere og tekst .",
     "cs": "Poznámka je špendlík na mapě s textem, jež označuje, že něco není v pořádku.<br/><br/>Nezapomeňte si prohlédnout zobrazení filtru <a href='#filters'></a> pro vyhledávání uživatelů a textu.",
-    "ca": "Una nota és un marcador al mapa amb un text per indicar alguna cosa incorrecta.<br/><br/>Assegureu-vos de revisar la <a href='#filters'>visualització de filtres</a> per cercar usuaris i text."
+    "ca": "Una nota és un marcador al mapa amb un text per indicar alguna cosa incorrecta.<br/><br/>Assegureu-vos de revisar la <a href='#filters'>visualització de filtres</a> per cercar usuaris i text.",
+    "zh_Hant": "註解會散佈在地圖上並且有一些文字說明，來顯示那邊有錯誤。<br/><br/>請確認用<a href='#filter'>過濾檢視</a>來搜尋使用者或是文字。"
   },
   "icon": "./assets/themes/notes/logo.svg",
   "clustering": false,

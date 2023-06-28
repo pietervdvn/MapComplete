@@ -558,7 +558,7 @@
     "question": {
       "nl": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.",
       "fr": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.",
-      "en": "Is there still something relevant you couldn't give in the previous questions? Add it here.",
+      "en": "Is there still some relevant info that the previous questions did not cover? Feel free to add it here.",
       "nb_NO": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.",
       "ru": "Есть ли ещё что-то важное, о чём вы не смогли рассказать в предыдущих вопросах? Добавьте это здесь.",
       "zh_Hant": "有什麼相關的資訊你無法在先前的問題回應的嗎？請加在這邊吧。",
@@ -587,12 +587,12 @@
     "questionHint": {
       "nl": "Herhaal geen antwoorden die je reeds gaf",
       "fr": "Ne répétez pas des réponses déjà données",
-      "en": "Don't repeat already stated facts",
+      "en": "Please don't repeat already stated facts",
       "nb_NO": "Ikke gjenta fakta som allerede er nevnt",
       "ru": "Не повторяйте уже изложенные факты",
       "zh_Hant": "不要重覆答覆已經知道的事情",
       "it": "Non ripetere informazioni già fornite",
-      "de": "Bitte keine bereits erhobenen Informationen.",
+      "de": "Bitte keine bereits erhobenen Informationen wiederholen",
       "pl": "Nie powtarzaj już podanych faktów",
       "pt_BR": " Não repita fatos já declarados",
       "pt": "Não repita factos já declarados",
@@ -1412,7 +1412,8 @@
         "href": "{_backend}/changeset/{_last_edit:changeset}",
         "text": {
           "en": "Last edited on {_last_edit:timestamp} by {_last_edit:contributor}",
-          "nl": "Laatst gewijzigd op {_last_edit:timestamp} door {_last_edit:contributor} "
+          "nl": "Laatst gewijzigd op {_last_edit:timestamp} door {_last_edit:contributor} ",
+          "de": "Zuletzt bearbeitet am {_last_edit:timestamp} von {_last_edit:contributor}"
         },
         "class": "subtle font-small"
       }
