@@ -434,30 +434,27 @@ class LayerOverviewUtils extends Script {
             const themeInfo = themeFiles[i]
             const themePath = themeInfo.path
             let themeFile = themeInfo.parsed
-            console.log(`Validating ${i}/${themeFiles.length} '${themeInfo.parsed.id}'`)
-            {
-                const targetPath =
-                    LayerOverviewUtils.themePath +
-                    "/" +
-                    themePath.substring(themePath.lastIndexOf("/"))
-                const usedLayers = Array.from(
-                    LayerOverviewUtils.extractLayerIdsFrom(themeFile, false)
-                ).map((id) => LayerOverviewUtils.layerPath + id + ".json")
-                if (!forceReload && !this.shouldBeUpdated([themePath, ...usedLayers], targetPath)) {
-                    fixed.set(
-                        themeFile.id,
-                        JSON.parse(
-                            readFileSync(
-                                LayerOverviewUtils.themePath + themeFile.id + ".json",
-                                "utf8"
-                            )
-                        )
+
+            const targetPath =
+                LayerOverviewUtils.themePath + "/" + themePath.substring(themePath.lastIndexOf("/"))
+            const usedLayers = Array.from(
+                LayerOverviewUtils.extractLayerIdsFrom(themeFile, false)
+            ).map((id) => LayerOverviewUtils.layerPath + id + ".json")
+
+            if (!forceReload && !this.shouldBeUpdated([themePath, ...usedLayers], targetPath)) {
+                fixed.set(
+                    themeFile.id,
+                    JSON.parse(
+                        readFileSync(LayerOverviewUtils.themePath + themeFile.id + ".json", "utf8")
                     )
-                    skippedThemes.push(themeFile.id)
-                    continue
-                }
-                recompiledThemes.push(themeFile.id)
+                )
+                console.log("Skipping", themeFile.id)
+                skippedThemes.push(themeFile.id)
+                continue
             }
+            console.log(`Validating ${i}/${themeFiles.length} '${themeInfo.parsed.id}'`)
+
+            recompiledThemes.push(themeFile.id)
 
             new PrevalidateTheme().convertStrict(themeFile, themePath)
             try {
