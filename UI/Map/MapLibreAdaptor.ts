@@ -1,7 +1,7 @@
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import type { Map as MLMap } from "maplibre-gl"
 import { Map as MlMap, SourceSpecification } from "maplibre-gl"
-import { RasterLayerPolygon } from "../../Models/RasterLayers"
+import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers"
 import { Utils } from "../../Utils"
 import { BBox } from "../../Logic/BBox"
 import { ExportableMap, MapProperties } from "../../Models/MapProperties"
@@ -370,8 +370,17 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     private removeCurrentLayer(map: MLMap): void {
         if (this._currentRasterLayer) {
             // hide the previous layer
-            map.removeLayer(this._currentRasterLayer)
-            map.removeSource(this._currentRasterLayer)
+            try {
+                if (map.getLayer(this._currentRasterLayer)) {
+                    map.removeLayer(this._currentRasterLayer)
+                }
+                if (map.getSource(this._currentRasterLayer)) {
+                    map.removeSource(this._currentRasterLayer)
+                }
+                this._currentRasterLayer = undefined
+            } catch (e) {
+                console.warn("Could not remove the previous layer")
+            }
         }
     }
 
@@ -381,56 +390,68 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             return
         }
         const background: RasterLayerProperties = this.rasterLayer?.data?.properties
-        if (background !== undefined && this._currentRasterLayer === background.id) {
+        console.log("Setting background to", background)
+        if (!background) {
+            console.error(
+                "Attempting to 'setBackground', but the background is",
+                background,
+                "for",
+                map.getCanvas()
+            )
+            return
+        }
+        if (this._currentRasterLayer === background.id) {
             // already the correct background layer, nothing to do
             return
         }
-        // await this.awaitStyleIsLoaded()
 
-        if (background !== this.rasterLayer?.data?.properties) {
-            // User selected another background in the meantime... abort
-            return
-        }
-
-        if (background !== undefined && this._currentRasterLayer === background.id) {
-            // already the correct background layer, nothing to do
-            return
-        }
         if (!background?.url) {
             // no background to set
             this.removeCurrentLayer(map)
-            this._currentRasterLayer = undefined
             return
         }
 
         if (background.type === "vector") {
-            console.log("Background layer is vector")
+            console.log("Background layer is vector", background.id)
+            this.removeCurrentLayer(map)
             map.setStyle(background.url)
             return
         }
 
-        map.addSource(background.id, MapLibreAdaptor.prepareWmsSource(background))
-
-        map.resize()
-
         let addLayerBeforeId = "aeroway_fill" // this is the first non-landuse item in the stylesheet, we add the raster layer before the roads but above the landuse
         if (background.category === "osmbasedmap" || background.category === "map") {
             // The background layer is already an OSM-based map or another map, so we don't want anything from the baselayer
-            let layers = map.getStyle().layers
-            // THe last index of the maptiler layers
-            let lastIndex = layers.findIndex((layer) => layer.id === "housenumber")
-            addLayerBeforeId = layers[lastIndex + 1]?.id ?? "housenumber"
+            addLayerBeforeId = undefined
+            this.removeCurrentLayer(map)
+        } else {
+            // Make sure that the default maptiler style is loaded as it gives an overlay with roads
+            const maptiler = AvailableRasterLayers.maplibre.properties
+            if (!map.getSource(maptiler.id)) {
+                this.removeCurrentLayer(map)
+                map.addSource(maptiler.id, MapLibreAdaptor.prepareWmsSource(maptiler))
+                map.setStyle(maptiler.url)
+                await this.awaitStyleIsLoaded()
+            }
         }
 
-        map.addLayer(
-            {
-                id: background.id,
-                type: "raster",
-                source: background.id,
-                paint: {},
-            },
-            addLayerBeforeId
-        )
+        if (!map.getLayer(addLayerBeforeId)) {
+            addLayerBeforeId = undefined
+        }
+        if (!map.getSource(background.id)) {
+            map.addSource(background.id, MapLibreAdaptor.prepareWmsSource(background))
+        }
+        map.resize()
+        if (!map.getLayer(background.id)) {
+            map.addLayer(
+                {
+                    id: background.id,
+                    type: "raster",
+                    source: background.id,
+                    paint: {},
+                },
+                addLayerBeforeId
+            )
+        }
         await this.awaitStyleIsLoaded()
         this.removeCurrentLayer(map)
         this._currentRasterLayer = background?.id
