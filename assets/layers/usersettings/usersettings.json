@@ -9,7 +9,8 @@
   "title": {
     "render": {
       "en": "Settings",
-      "nl": "Instellingen"
+      "nl": "Instellingen",
+      "de": "Einstellungen"
     }
   },
   "source": "special",
@@ -44,7 +45,8 @@
               "href": "{_backend}/messages/inbox",
               "text": {
                 "en": "Open your inbox",
-                "nl": "Ga naar je inbox"
+                "nl": "Ga naar je inbox",
+                "de": "Deinen Posteingang öffnen"
               }
             }
           }
@@ -55,7 +57,8 @@
             "special": {
               "type": "link",
               "text": {
-                "en": "<b class='alert'>You have {_unreadMessages}</b><br/>Open your inbox"
+                "en": "<b class='alert'>You have {_unreadMessages}</b><br/>Open your inbox",
+                "de": "<b class='alert'>Du hast {_unreadMessages}</b><br/>Öffne Deinen Posteingang"
               },
               "href": "{_backend}/messages/inbox"
             }
@@ -69,7 +72,8 @@
         "special": {
           "type": "link",
           "text": {
-            "en": "Open your settings on OpenStreetMap.org"
+            "en": "Open your settings on OpenStreetMap.org",
+            "de": "Öffne Deine Einstellungen auf OpenStreetMap.org"
           },
           "href": "{_backend}/account/edit"
         }
@@ -145,34 +149,40 @@
     {
       "id": "show_tags",
       "question": {
-        "en": "Show the raw OpenStreetMap-tags?"
+        "en": "Show the raw OpenStreetMap-tags?",
+        "de": "Rohe OpenStreetMap-Tags anzeigen?"
       },
       "questionHint": {
-        "en": "<b>Tags</b> are attributes that every element has. This is the technical data that is stored in the database. You don't need this information to edit with MapComplete, but advanced users might want to use this as reference."
+        "en": "<b>Tags</b> are attributes that every element has. This is the technical data that is stored in the database. You don't need this information to edit with MapComplete, but advanced users might want to use this as reference.",
+        "de": "<b>Tags</b> sind die Eigenschaften, die jedes Objekt hat. Das sind die technischen Daten, die in der Datenbank gespeichert werden. Du brauchst diese Informationen nicht, um mit MapComplete Änderungen zu machen, aber fortgeschrittenen Nutzer*innen kann es als Referenz dienen."
       },
       "mappings": [
         {
           "if": "mapcomplete-show_tags=no",
           "then": {
-            "en": "Never show the tags."
+            "en": "Never show the tags.",
+            "de": "Tags nie anzeigen."
           }
         },
         {
           "if": "mapcomplete-show_tags=",
           "then": {
-            "en": "Show the tags that will be applied once I have made {__userjourney_tagsVisibleAt} changesets"
+            "en": "Show the tags that will be applied once I have made {__userjourney_tagsVisibleAt} changesets",
+            "de": "Tags anzeigen sobald ich {__userjourney_tagsVisibleAt} Changesets erstellt habe"
           }
         },
         {
           "if": "mapcomplete-show_tags=yes",
           "then": {
-            "en": "Show the tags that will be applied when making a change"
+            "en": "Show the tags that will be applied when making a change",
+            "de": "Tags anzeigen, die bei der Änderung hinzugefügt werden"
           }
         },
         {
           "if": "mapcomplete-show_tags=full",
           "then": {
-            "en": "Show the tags that will be applied when making a change and show the tags table on every feature"
+            "en": "Show the tags that will be applied when making a change and show the tags table on every feature",
+            "de": "Tags anzeigen, die bei der Änderung hinzugefügt werden, und Tag-Tabelle bei jedem Objekt anzeigen"
           }
         }
       ]

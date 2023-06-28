@@ -9,7 +9,8 @@
     "pa_PK": "میپ‌رولیٹ دے کم",
     "nl": "MapRoulette taken",
     "es": "Tareas de MapRoulette",
-    "cs": "Úkoly MapRoulette"
+    "cs": "Úkoly MapRoulette",
+    "zh_Hant": "MapRoulette 任務"
   },
   "description": {
     "en": "Theme showing MapRoulette tasks, allowing you to search, filter and fix them.",

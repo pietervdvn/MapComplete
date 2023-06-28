@@ -8,7 +8,8 @@
     "fr": "Vétérinaires, parcs à chiens et autres endroits pour chiens",
     "ca": "Veterinaris, parcs canins i altres instal·lacions per a mascotes",
     "es": "Veterinarios, parques para perros y otros servicios para mascotas",
-    "cs": "Veterináři, psí parky a další služby pro domácí zvířata"
+    "cs": "Veterináři, psí parky a další služby pro domácí zvířata",
+    "zh_Hant": "獸醫院、寵物公園以及其他寵物設施"
   },
   "description": {
     "en": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ...",
@@ -39,7 +40,8 @@
           "fr": "Restaurants acceptant les chiens",
           "ca": "Restaurants que accepten gossos",
           "es": "Restaurantes que admiten perros",
-          "cs": "Restaurace vhodné pro vstup se psy"
+          "cs": "Restaurace vhodné pro vstup se psy",
+          "zh_Hant": "寵物友善餐廳"
         },
         "mapRendering": [
           {
@@ -88,7 +90,8 @@
           "ca": "Botigues amigues dels gossos",
           "pa_PK": "کُتیاں دی اِجازت دیاں دکاناں",
           "es": "Tiendas aptas para perros",
-          "cs": "Obchody vhodné pro vstup se psy"
+          "cs": "Obchody vhodné pro vstup se psy",
+          "zh_Hant": "寵物友善商家"
         },
         "title": {
           "render": {
@@ -101,7 +104,8 @@
             "ca": "Botigues amigues dels gossos",
             "pa_PK": "کُتیاں دی اِجازت دیاں دکاناں",
             "es": "Tiendas aptas para perros",
-            "cs": "Obchody vhodné pro vstup se psy"
+            "cs": "Obchody vhodné pro vstup se psy",
+            "zh_Hant": "寵物友善商家"
           },
           "mappings": [
             {
@@ -197,7 +201,8 @@
               "ca": "botiga amiga dels gossos",
               "pa_PK": "کُتیاں دی اِجازت دی دکان",
               "es": "Tienda adaptada para perros",
-              "cs": "obchod vhodný pro vstup se psem"
+              "cs": "obchod vhodný pro vstup se psem",
+              "zh_Hant": "寵物友善商家"
             },
             "tags": [
               "dog=yes",
@@ -211,7 +216,8 @@
               "fr": "Un magasin où vous pouvez amener votre chien presque partout",
               "ca": "Una botiga on pots dur al gos gairebé a tot arreu",
               "es": "Una tienda a la que se puede llevar un perro a casi todas partes",
-              "cs": "Obchod, ve kterém si můžete vzít psa téměř kamkoli"
+              "cs": "Obchod, ve kterém si můžete vzít psa téměř kamkoli",
+              "zh_Hant": "你幾乎可以攜帶寵物到處去的商店"
             }
           }
         ],

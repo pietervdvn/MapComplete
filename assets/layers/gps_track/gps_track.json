@@ -6,7 +6,8 @@
   "title": {
     "render": {
       "en": "Your travelled path",
-      "nl": "Jouw traject"
+      "nl": "Jouw traject",
+      "de": "Deine zurückgelegte Strecke"
     }
   },
   "shownByDefault": false,
