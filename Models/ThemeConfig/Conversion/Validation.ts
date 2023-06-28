@@ -29,7 +29,10 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
         this._languages = languages ?? ["en"]
     }
 
-    convert(obj: any, context: string): { result: LayerConfig; errors: string[] } {
+    convert(
+        obj: any,
+        context: string
+    ): { result: LayerConfig; errors: string[]; warnings: string[] } {
         const errors = []
         const warnings: string[] = []
         const translations = Translation.ExtractAllTranslationsFrom(obj)
@@ -41,7 +44,7 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
                         t.tr.translations["*"] === undefined
                 )
                 .forEach((missing) => {
-                    warnings.push(
+                    errors.push(
                         context +
                             "A theme should be translation-complete for " +
                             neededLanguage +
