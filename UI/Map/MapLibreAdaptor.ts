@@ -411,8 +411,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
         map.addSource(background.id, MapLibreAdaptor.prepareWmsSource(background))
 
-        map.resize()
-
         let addLayerBeforeId = "aeroway_fill" // this is the first non-landuse item in the stylesheet, we add the raster layer before the roads but above the landuse
         if (background.category === "osmbasedmap" || background.category === "map") {
             // The background layer is already an OSM-based map or another map, so we don't want anything from the baselayer
