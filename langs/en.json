@@ -92,6 +92,7 @@
         "whatIsOsm": "What is OpenStreetMap?"
     },
     "general": {
+        "404": "This page does not exist",
         "about": "Easily edit and add OpenStreetMap for a certain theme",
         "aboutMapComplete": {
             "intro": "Use MapComplete to add OpenStreetMap info on a <b>single theme.</b> Answer questions, and within minutes your contributions are available everywhere. In most themes you can add pictures or even leave a review. The <b>theme maintainer</b> defines elements, questions and languages for it."
@@ -161,7 +162,6 @@
         },
         "back": "Back",
         "backToIndex": "Go back to the overview with all thematic maps",
-        "backToMapcomplete": "Back to the theme overview",
         "backgroundMap": "Select a background layer",
         "backgroundSwitch": "Switch background",
         "cancel": "Cancel",

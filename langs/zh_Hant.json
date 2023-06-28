@@ -118,7 +118,6 @@
             "translatedBy": "MapComplete 由 {contributors} 翻譯，而且還有 <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} 更多貢獻者</a>"
         },
         "back": "回去",
-        "backToMapcomplete": "回到主題總覽",
         "backgroundMap": "背景地圖",
         "cancel": "取消",
         "confirm": "確認",

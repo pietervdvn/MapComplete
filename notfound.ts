@@ -1,5 +1,4 @@
-import { FixedUiElement } from "./UI/Base/FixedUiElement"
-import Combine from "./UI/Base/Combine"
-import BackToIndex from "./UI/BigComponents/BackToIndex"
+import SvelteUIElement from "./UI/Base/SvelteUIElement"
+import NotFound from "./UI/NotFound.svelte"
 
-new Combine([new FixedUiElement("This page is not found"), new BackToIndex()]).AttachTo("maindiv")
+new SvelteUIElement(NotFound, {}).AttachTo("maindiv")
