@@ -191,7 +191,7 @@ The question is  *What kind of message is shown?*
   - Unselecting this answer will add 
   - *Electoral advertising*  corresponds with  `message=political`
   - Unselecting this answer will add 
-  - *Inormation related to theatre, concerts, ...*  corresponds with  `message=showbiz`
+  - *Information related to theatre, concerts, …*  corresponds with  `message=showbiz`
   - Unselecting this answer will add 
   - *Message from non-profit organizations*  corresponds with  `message=non_profit`
   - Unselecting this answer will add 

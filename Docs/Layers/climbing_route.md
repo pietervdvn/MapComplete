@@ -159,7 +159,7 @@ This is rendered with  `This route has {climbing:bolts} bolts <div class='subtle
 
 
 
-The question is  *Is there still something relevant you couldn't give in the previous questions? Add it here.*
+The question is  *Is there still some relevant info that the previous questions did not cover? Feel free to add it here.*
 
 This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) 
 

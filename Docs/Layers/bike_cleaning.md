@@ -120,7 +120,7 @@ This is rendered with  `Using the cleaning service costs {charge}`
 
 
   - *This cleaning service is free to use*  corresponds with  `fee=no`
-  - *This cleaning service is paid*  corresponds with  `fee=yes`
+  - *There is a fee to use this cleaning service*  corresponds with  `fee=yes`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `amenity=bike_wash|amenity=bicycle_wash`
