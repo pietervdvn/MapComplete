@@ -4365,6 +4365,13 @@
                         "question": "Heeft biologische opties"
                     }
                 }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": "Gratis toegankelijk"
+                    }
+                }
             }
         }
     },
@@ -7895,13 +7902,6 @@
                         "question": "Heeft een luiertafel"
                     }
                 }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Gratis toegankelijk"
-                    }
-                }
             }
         },
         "name": "Toiletten",
@@ -7960,6 +7960,9 @@
                 "render": "De luiertafel bevindt zich in {changing_table:location}"
             },
             "toilet-charge": {
+                "freeform": {
+                    "placeholder": "bijv. 0.50 EUR"
+                },
                 "question": "Hoeveel moet men betalen om deze toiletten te gebruiken?",
                 "render": "De toiletten gebruiken kost {charge}"
             },

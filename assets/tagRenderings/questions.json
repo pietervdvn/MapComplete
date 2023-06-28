@@ -978,7 +978,7 @@
         },
         {
           "if": "payment:debit_cards=yes",
-          "ifnot": "payment_debit_cards=no",
+          "ifnot": "payment:debit_cards=no",
           "icon": "./assets/tagRenderings/payment_card.svg",
           "then": {
             "en": "Debit cards are accepted here",

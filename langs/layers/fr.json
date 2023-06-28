@@ -3153,6 +3153,13 @@
                         "question": "Sans information sur le revêtement podotactile"
                     }
                 }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": "Utilisation gratuite"
+                    }
+                }
             }
         }
     },
@@ -5062,13 +5069,6 @@
                 "options": {
                     "0": {
                         "question": "A une table à langer"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Utilisation gratuite"
                     }
                 }
             }

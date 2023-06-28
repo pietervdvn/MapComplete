@@ -1,0 +1,187 @@
+{
+  "id": "shower",
+  "name": {
+    "en": "Shower"
+  },
+  "minzoom": 12,
+  "source": {
+    "osmTags": "amenity=shower"
+  },
+  "title": {
+    "render": {
+      "en": "Shower"
+    }
+  },
+  "presets": [
+    {
+      "title": {
+        "en": "a shower"
+      },
+      "description": {
+        "en": "A (public) shower"
+      },
+      "tags": [
+        "amenity=shower"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    "level",
+    {
+      "id": "access",
+      "question": {
+        "en": "Who can use this shower?"
+      },
+      "mappings": [
+        {
+          "if": "access=yes",
+          "then": {
+            "en": "Anyone can use this shower"
+          }
+        },
+        {
+          "if": "access=customers",
+          "then": {
+            "en": "Only customers can use this shower"
+          }
+        },
+        {
+          "if": "access=key",
+          "then": {
+            "en": "Accesible, but one has to ask for a key"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fee",
+      "question": {
+        "en": "Is there a fee for using this shower?"
+      },
+      "mappings": [
+        {
+          "if": "fee=yes",
+          "then": {
+            "en": "There is a fee for using this shower"
+          }
+        },
+        {
+          "if": "fee=no",
+          "then": {
+            "en": "This shower is free to use"
+          },
+          "addExtraTags": [
+            "charge="
+          ]
+        }
+      ]
+    },
+    {
+      "id": "charge",
+      "condition": "fee=yes",
+      "question": {
+        "en": "How much does it cost to use this shower?"
+      },
+      "freeform": {
+        "key": "charge",
+        "type": "string",
+        "placeholder": {
+          "en": "e.g. 1.50 EUR"
+        }
+      },
+      "render": {
+        "en": "It costs {charge} to use this shower"
+      }
+    },
+    "opening_hours",
+    {
+      "id": "hot_water",
+      "question": {
+        "en": "Does this shower have hot water available?"
+      },
+      "mappings": [
+        {
+          "if": "hot_water=yes",
+          "then": {
+            "en": "Hot water is available here"
+          }
+        },
+        {
+          "if": "hot_water=fee",
+          "then": {
+            "en": "Hot water is available here, but there is a fee"
+          }
+        },
+        {
+          "if": "hot_water=no",
+          "then": {
+            "en": "There is no hot water available here"
+          }
+        }
+      ]
+    },
+    {
+      "builtin": "payment-options-split",
+      "override": {
+        "condition": {
+          "or": [
+            "fee=yes",
+            "hot_water=fee"
+          ]
+        }
+      }
+    }
+  ],
+  "filter": [
+    "free",
+    {
+      "id": "hot-water",
+      "options": [
+        {
+          "question": {
+            "en": "Hot water available"
+          },
+          "osmTags": {
+            "or": [
+              "hot_water=yes",
+              "hot_water=fee"
+            ]
+          }
+        }
+      ]
+    },
+    "open_now"
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:amenity={amenity}",
+        "amenity="
+      ]
+    },
+    "neededChangesets": 1
+  },
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
+  "mapRendering": [
+    {
+      "icon": "circle:white;./assets/layers/shower/shower.svg",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        }
+      ]
+    }
+  ],
+  "description": {
+    "en": "A layer showing (public) showers"
+  }
+}

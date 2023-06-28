@@ -1,0 +1,12 @@
+[
+  {
+    "path": "shower.svg",
+    "license": "CC0",
+    "authors": [
+      "James"
+    ],
+    "sources": [
+      "https://github.com/gravitystorm/openstreetmap-carto/blob/master/symbols/amenity/shower.svg"
+    ]
+  }
+]
