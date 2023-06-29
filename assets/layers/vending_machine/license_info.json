@@ -1,0 +1,62 @@
+[
+  {
+    "path": "cow.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font Awesome"
+    ],
+    "sources": [
+      "https://fontawesome.com/icons/cow?f=classic&s=solid"
+    ]
+  },
+  {
+    "path": "egg.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font Awesome"
+    ],
+    "sources": [
+      "https://fontawesome.com/icons/egg?f=classic&s=solid"
+    ]
+  },
+  {
+    "path": "mug-saucer.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font Awesome"
+    ],
+    "sources": [
+      "https://fontawesome.com/icons/mug-saucer?f=regular&s=solid"
+    ]
+  },
+  {
+    "path": "smoking.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font Awesome"
+    ],
+    "sources": [
+      "https://fontawesome.com/icons/smoking?f=classic&s=solid"
+    ]
+  },
+  {
+    "path": "utensils.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font Awesome"
+    ],
+    "sources": [
+      "https://fontawesome.com/icons/utensils?f=classic&s=solid"
+    ]
+  },
+  {
+    "path": "vending_machine.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Vectorportal.com"
+    ],
+    "sources": [
+      "https://vectorportal.com/vector/vending-machine/35308"
+    ]
+  }
+]
