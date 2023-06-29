@@ -129,7 +129,7 @@
                         "then": "Electoral advertising"
                     },
                     "4": {
-                        "then": "Inormation related to theatre, concerts, ..."
+                        "then": "Information related to theatre, concerts, …"
                     },
                     "5": {
                         "then": "Message from non-profit organizations"
@@ -731,7 +731,7 @@
                     }
                 },
                 "question": "Does this bench have an inscription?",
-                "questionHint": "E.g. on a mounted plaque, in the backrest, ...",
+                "questionHint": "E.g. on a mounted plaque, in the backrest, …",
                 "render": "This bench does have the following inscription:<br/><p><i>{inscription}</i></p>"
             },
             "bench-material": {
@@ -1109,7 +1109,7 @@
                         "then": "This cleaning service is free to use"
                     },
                     "1": {
-                        "then": "This cleaning service is paid"
+                        "then": "There is a fee to use this cleaning service"
                     }
                 },
                 "question": "How much does it cost to use the cleaning service?",

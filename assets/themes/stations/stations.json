@@ -8,7 +8,8 @@
     "fr": "Gares ferroviaires",
     "ca": "Estacions de tren",
     "es": "Estaciones de tren",
-    "cs": "Vlaková nádraží"
+    "cs": "Vlaková nádraží",
+    "zh_Hant": "火車站"
   },
   "description": {
     "en": "View, edit and add details to a train station",
@@ -88,7 +89,8 @@
         "fr": "Couche montrant les gares",
         "ca": "Capa que mostra les estacions de tren",
         "es": "Capa que muestra las estaciones de tren",
-        "cs": "Vrstva zobrazující vlaková nádraží"
+        "cs": "Vrstva zobrazující vlaková nádraží",
+        "zh_Hant": "顯示火車站的圖層"
       },
       "mapRendering": [
         {
@@ -281,7 +283,8 @@
           "fr": "Tableau des départs",
           "ca": "Tauler de sortides",
           "es": "Tablero de salidas",
-          "cs": "Odjezdová tabule"
+          "cs": "Odjezdová tabule",
+          "zh_Hant": "時刻表"
         }
       },
       "minzoom": 19,
@@ -305,7 +308,8 @@
             "fr": "De quel type de panneau de départs s'agit-il ?",
             "ca": "Quin tipus de tauler de sortides és aquest?",
             "es": "¿Qué tipo de tablero de salidas es éste?",
-            "cs": "Co je to za odjezdovou tabuli?"
+            "cs": "Co je to za odjezdovou tabuli?",
+            "zh_Hant": "這是那種類型的時刻表？"
           },
           "mappings": [
             {
@@ -342,7 +346,8 @@
                 "fr": "Tableau des départs papier",
                 "ca": "Aquest és un horari en paper",
                 "es": "Este es un horario en papel",
-                "cs": "Jedná se o papírový rozvrh"
+                "cs": "Jedná se o papírový rozvrh",
+                "zh_Hant": "這份是紙本時刻表"
               }
             },
             {
@@ -372,7 +377,8 @@
             "fr": "un panneaux des départs",
             "ca": "un tauler de sortides",
             "es": "un tablero de salidas",
-            "cs": "odjezdová tabule"
+            "cs": "odjezdová tabule",
+            "zh_Hant": "時刻表"
           },
           "description": {
             "en": "Add a board showing departures, either electronic or paper",

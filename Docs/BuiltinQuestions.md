@@ -233,7 +233,7 @@ Are dogs allowed in this business?
 
 {description}
 
-Is there still something relevant you couldn't give in the previous questions? Add it here.
+Is there still some relevant info that the previous questions did not cover? Feel free to add it here.
 
 
 

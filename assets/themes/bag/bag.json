@@ -8,7 +8,8 @@
     "nb_NO": "BAG-importhjelper",
     "ca": "Assistent d'importació del BAG",
     "es": "Ayudante de importación BAG",
-    "cs": "Pomocník pro import BAG"
+    "cs": "Pomocník pro import BAG",
+    "zh_Hant": "BAG 匯入助手"
   },
   "shortDescription": {
     "nl": "BAG import helper tool",

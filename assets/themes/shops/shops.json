@@ -4,7 +4,7 @@
     "en": "Shops",
     "fr": "Carte des magasins",
     "ja": "オープン ショップ マップ",
-    "zh_Hant": "開放商店地圖",
+    "zh_Hant": "商店",
     "ru": "Открытая карта магазинов",
     "de": "Geschäfte",
     "it": "Mappa dei negozi",
@@ -27,7 +27,8 @@
     "nl": "Een bewerkbare kaart met simpele informatie over winkels",
     "da": "Et redigerbart kort med grundlæggende butiksoplysninger",
     "ca": "Un mapa editable amb informació bàsica sobre botigues",
-    "cs": "Upravitelná mapa se základními informacemi o obchodech"
+    "cs": "Upravitelná mapa se základními informacemi o obchodech",
+    "zh_Hant": "有基本商家資訊的可編輯性的地圖"
   },
   "description": {
     "en": "On this map, one can mark basic information about shops, add opening hours and phone numbers",

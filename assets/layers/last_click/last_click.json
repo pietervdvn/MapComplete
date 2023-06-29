@@ -22,21 +22,24 @@
         },
         "then": {
           "en": "Add a new point or add a note",
-          "nl": "Voeg een nieuw punt of een nieuwe kaartnota toe"
+          "nl": "Voeg een nieuw punt of een nieuwe kaartnota toe",
+          "de": "Objekt oder Hinweis auf der Karte hinzufügen"
         }
       },
       {
         "if": "has_note_layer=yes",
         "then": {
           "en": "Add a new note",
-          "nl": "Voeg een nieuwe kaartnota toe"
+          "nl": "Voeg een nieuwe kaartnota toe",
+          "de": "Hinweis hinzufügen"
         }
       },
       {
         "if": "has_presets=yes",
         "then": {
           "en": "Add a new point",
-          "nl": "Voeg een nieuw punt toe"
+          "nl": "Voeg een nieuw punt toe",
+          "de": "Objekt hinzufügen"
         }
       }
     ]
@@ -107,7 +110,8 @@
             },
             "then": {
               "en": "Create a new map note",
-              "nl": "Maak een nieuwe kaartnotitie"
+              "nl": "Maak een nieuwe kaartnotitie",
+              "de": "Hinweis auf der Karte hinzufügen"
             }
           }
         ]

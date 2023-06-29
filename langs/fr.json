@@ -63,6 +63,7 @@
             "addNew": "Ajouter {category}",
             "backToSelect": "Sélectionner une catégorie différente",
             "confirmButton": "Ajouter un/une {category} ici.<br><div class=\"alert\">Votre ajout sera visible par tout le monde</div>",
+            "confirmLocation": "Confirmer cet emplacement",
             "disableFilters": "Désactiver tous les filtres",
             "disableFiltersExplanation": "Certains élément peuvent être filtrés",
             "hasBeenImported": "Cet élément a déjà été importé",
@@ -117,7 +118,6 @@
         },
         "back": "Retour",
         "backToIndex": "Revenir vers l'aperçu de toutes les cartes thématiques",
-        "backToMapcomplete": "Retour à l'aperçu du thème",
         "backgroundMap": "Fond de plan",
         "cancel": "Annuler",
         "confirm": "Confirmer",
@@ -207,6 +207,9 @@
         },
         "pickLanguage": "Choisir la langue : ",
         "poweredByOsm": "Propulsé par OpenStreetMap",
+        "questionBox": {
+            "reactivate": "Réactiver les questions passées"
+        },
         "questions": {
             "emailIs": "L'adresse électronique de {category} est <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "Quelle est l'adresse électronique de {category} ?",

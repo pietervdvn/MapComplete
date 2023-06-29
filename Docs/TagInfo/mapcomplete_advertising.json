@@ -179,7 +179,7 @@
     },
     {
       "key": "message",
-      "description": "Layer 'Advertise' shows message=showbiz with a fixed text, namely 'Inormation related to theatre, concerts, ...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Advertising')",
+      "description": "Layer 'Advertise' shows message=showbiz with a fixed text, namely 'Information related to theatre, concerts, …' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Advertising')",
       "value": "showbiz"
     },
     {

@@ -18,7 +18,7 @@
   "title": {
     "render": {
       "en": "Dentist Office {name}",
-      "de": "Arztpraxis {name}",
+      "de": "Zahnarztpraxis {name}",
       "nl": "Tandartspraktijk {name}",
       "fr": "Cabinet medical {name}"
     }

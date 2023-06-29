@@ -10,7 +10,8 @@
     "cs": "Bankomaty",
     "nb_NO": "Minibanker",
     "zgh": "ⴰⵍⵍⴰⵍⵏ ⵏ ⵓⵙⴽⵙⵍ ⴰⵡⵓⵔⵎⴰⵏ",
-    "id": "Mesin ATM"
+    "id": "Mesin ATM",
+    "zh_Hant": "自動櫃員機"
   },
   "description": {
     "en": "This map shows ATMs to withdraw or deposit money",
@@ -21,7 +22,8 @@
     "cs": "Tato mapa zobrazuje bankomaty pro výběr nebo vklad peněz",
     "nb_NO": "Viser minibanker for å ta ut eller sette inn penger",
     "es": "Este mapa muestra los cajeros automáticos para retirar o ingresar dinero",
-    "id": "Peta ini menunjukkan ATM untuk menarik atau menyetorkan uang"
+    "id": "Peta ini menunjukkan ATM untuk menarik atau menyetorkan uang",
+    "zh_Hant": "這份地圖顯示領錢與存錢的 ATM"
   },
   "icon": "./assets/themes/atm/logo.svg",
   "startLat": 0,
@@ -80,7 +82,9 @@
                 "tags": "tags",
                 "maproulette_id": "mr_taskId",
                 "text": {
-                  "en": "Import this ATM"
+                  "en": "Import this ATM",
+                  "de": "Diesen Geldautomaten importieren",
+                  "zh_Hant": "匯入這座 ATM"
                 },
                 "icon": "./assets/svg/addSmall.svg"
               }
@@ -90,7 +94,8 @@
             "id": "closeness-indicator",
             "condition": "_has_closeby_feature=yes",
             "render": {
-              "en": "OpenStreetMap knows about <a href='#{_closest_osm_poi}'>an ATM which is {_closest_osm_poi_distance} meter away.</a> "
+              "en": "OpenStreetMap knows about <a href='#{_closest_osm_poi}'>an ATM which is {_closest_osm_poi_distance} meter away.</a> ",
+              "de": "OpenStreetMap kennt <a href='#{_closest_osm_poi}'>einen Geldautomaten, der {_closest_osm_poi_distance} Meter entfernt ist.</a> "
             }
           },
           {
@@ -102,7 +107,8 @@
                 "tags_to_apply": "$tags",
                 "id_of_object_to_apply_this_one": "_closest_osm_poi",
                 "message": {
-                  "en": "Add all the suggested tags to the closest ATM"
+                  "en": "Add all the suggested tags to the closest ATM",
+                  "de": "Füge alle vorgeschlagenen Tags zum nächstgelegenen Geldautomaten hinzu"
                 },
                 "image": "./assets/svg/addSmall.svg",
                 "maproulette_task_id": "mr_taskId"

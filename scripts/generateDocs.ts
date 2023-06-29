@@ -34,6 +34,9 @@ function WriteFile(
         noTableOfContents: boolean
     }
 ): void {
+    if (!html) {
+        return
+    }
     for (const source of autogenSource) {
         if (source.indexOf("*") > 0) {
             continue
@@ -106,7 +109,8 @@ function GenerateDocumentationForTheme(theme: LayoutConfig): BaseUIElement {
 function GenLayerOverviewText(): BaseUIElement {
     for (const id of Constants.priviliged_layers) {
         if (!AllSharedLayers.sharedLayers.has(id)) {
-            throw "Priviliged layer definition not found: " + id
+            console.error("Priviliged layer definition not found: " + id)
+            return undefined
         }
     }
 

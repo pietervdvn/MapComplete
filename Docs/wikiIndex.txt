@@ -22,7 +22,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/waste waste]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:es|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:zh_Hant|en}}
 |descr= A MapComplete theme: Map showing waste baskets and recycling facilities
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -49,7 +49,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/cafes_and_pubs cafes_and_pubs]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nb_NO|en}}, {{#language:pa_PK|en}}, {{#language:cs|en}}, {{#language:it|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nb_NO|en}}, {{#language:pa_PK|en}}, {{#language:cs|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}
 |descr= A MapComplete theme: Coffeehouses, pubs and bars
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -103,7 +103,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/advertising advertising]
 |region= Worldwide
-|lang= {{#language:ca|en}}, {{#language:es|en}}, {{#language:en|en}}, {{#language:de|en}}, {{#language:cs|en}}, {{#language:fr|en}}, {{#language:nl|en}}
+|lang= {{#language:ca|en}}, {{#language:es|en}}, {{#language:en|en}}, {{#language:de|en}}, {{#language:cs|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:zh_Hant|en}}
 |descr= A MapComplete theme: Where I can find advertising features?
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -121,7 +121,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/atm atm]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}, {{#language:es|en}}, {{#language:id|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}, {{#language:es|en}}, {{#language:id|en}}, {{#language:zh_Hant|en}}
 |descr= A MapComplete theme: This map shows ATMs to withdraw or deposit money
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -328,7 +328,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/maxspeed maxspeed]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}, {{#language:ca|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:zh_Hant|en}}
 |descr= A MapComplete theme: This map shows the legally allowed maximum speed on every road.
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -337,7 +337,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/nature nature]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:zh_Hant|en}}
 |descr= A MapComplete theme: A map for nature lovers, with interesting POI's
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -346,7 +346,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/notes notes]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:hu|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}
+|lang= {{#language:en|en}}, {{#language:hu|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:zh_Hant|en}}
 |descr= A MapComplete theme: A note is a pin on the map with some text to indicate something wrong
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -427,7 +427,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/shops shops]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:zh_Hant|en}}
 |descr= A MapComplete theme: An editable map with basic shop information
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -445,7 +445,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/sports sports]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:zh_Hant|en}}
 |descr= A MapComplete theme: Map showing sport facilities.
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -472,7 +472,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/transit transit]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:zh_Hant|en}}
 |descr= A MapComplete theme: Plan your trip with the help of the public transport system
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
