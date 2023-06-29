@@ -91,6 +91,14 @@ export class Conflate extends Script {
         const unmatched = external_features.filter(
             (f) => !bestMatches.some((matched) => matched.match.external_feature === f)
         )
+        const weirdMatch = external_features.filter((f) =>
+            bestMatches.some(
+                (matched) =>
+                    matched.match.external_feature === f &&
+                    !matched.replayed.certainly_imported &&
+                    !matched.replayed.possibly_imported
+            )
+        )
         const match_lengths: (string | number)[][] = [
             [
                 "osm_id",
@@ -109,6 +117,9 @@ export class Conflate extends Script {
             const status = resting_properties["status"]
             delete resting_properties["status"]
             if (Object.keys(resting_properties).length === 0) {
+                continue
+            }
+            if (!certainly_imported && !possibly_imported) {
                 continue
             }
             const id = osm_feature.properties["@id"]
@@ -147,6 +158,19 @@ export class Conflate extends Script {
                 {
                     type: "FeatureCollection",
                     features: unmatched,
+                },
+
+                null,
+                "  "
+            )
+        )
+
+        fs.writeFileSync(
+            targetDir + "/unmatched_but_has_close_feature.geojson",
+            JSON.stringify(
+                {
+                    type: "FeatureCollection",
+                    features: weirdMatch,
                 },
 
                 null,
@@ -292,12 +316,12 @@ export class Conflate extends Script {
         }
         if (properties["website"]) {
             let website = properties.website.toLowerCase()
-            website
+            website = website
                 .replace("http://http://", "http://")
                 .replace("https://https://", "https://")
                 .replace("https//", "https://")
                 .replace("http://", "https://")
-            if (website.startsWith("https://")) {
+            if (!website.startsWith("https://")) {
                 website = "https://" + website
             }
             const validator = new UrlValidator()

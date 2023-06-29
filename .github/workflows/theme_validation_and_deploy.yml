@@ -52,18 +52,15 @@ jobs:
           echo "Cloning destination repo"
           git config --global user.email "pietervdvn@posteo.net"
           git config --global user.name "pietervdvn"
-          git clone --depth 1 --single-branch --branch master "https://x-access-token:$DEPLOY_KEY_PIETERVDVN@github.com/pietervdvn/pietervdvn.github.io.git"
+          git clone --depth 1 --single-branch --branch main "https://x-access-token:$DEPLOY_KEY_PIETERVDVN@github.com/MapComplete/mapcomplete.github.io.git"
           echo "Destination repo is cloned"
 
       - name: Sync repo
         env:
           DEPLOY_KEY_PIETERVDVN: ${{ secrets.DEPLOY_KEY_PIETERVDVN }}
         run: |
-          cd pietervdvn.github.io
+          cd mapcomplete.github.io
           git pull
-
-      - name: get branch name
-        run: echo TARGET_BRANCH=${GITHUB_REF:11} >> $GITHUB_ENV
 
       - name: "Copying files"
         run: |
@@ -80,5 +77,3 @@ jobs:
           else
             echo "No changes to commit"
           fi
-        env:
-          TARGET_BRANCH: ${{ env.TARGET_BRANCH }}

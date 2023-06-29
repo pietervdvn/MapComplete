@@ -29,8 +29,12 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
         this._languages = languages ?? ["en"]
     }
 
-    convert(obj: any, context: string): { result: LayerConfig; errors: string[] } {
+    convert(
+        obj: any,
+        context: string
+    ): { result: LayerConfig; errors: string[]; warnings: string[] } {
         const errors = []
+        const warnings: string[] = []
         const translations = Translation.ExtractAllTranslationsFrom(obj)
         for (const neededLanguage of this._languages) {
             translations
@@ -55,6 +59,7 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
         return {
             result: obj,
             errors,
+            warnings,
         }
     }
 }
@@ -248,6 +253,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 const checked = new ValidateLanguageCompleteness(
                     ...json["mustHaveLanguage"]
                 ).convert(theme, theme.id)
+
                 errors.push(...checked.errors)
             }
             if (!json.hideFromOverview && theme.id !== "personal" && this._isBuiltin) {

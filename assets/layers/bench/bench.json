@@ -789,7 +789,7 @@
       "question": {
         "en": "Does this bench have an inscription?",
         "nl": "Heeft deze bank een inscriptie?",
-        "de": "Hat diese Bank eine Inschrift? ",
+        "de": "Hat diese Bank eine Inschrift?",
         "fr": "Est-ce que ce banc possède une inscription ?",
         "ca": "Aquest banc té una inscripció?",
         "cs": "Má tato lavička nápis?",
@@ -833,9 +833,9 @@
         }
       ],
       "questionHint": {
-        "en": "E.g. on a mounted plaque, in the backrest, ...",
+        "en": "E.g. on a mounted plaque, in the backrest, …",
         "nl": "Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, ...",
-        "de": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ... ",
+        "de": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ...",
         "fr": "Par exemple, sur une plaque accrochée, sur le dossier, ...",
         "ca": "P. ex. en una placa, al respatller, ...",
         "cs": "Např. na připevněné desce, v opěradle, ...",
@@ -847,7 +847,7 @@
       "question": {
         "en": "Does this bench have an artistic element?",
         "nl": "Heeft deze bank een geïntegreerd kunstwerk?",
-        "de": "Hat diese Bank ein künstlerisches Element? ",
+        "de": "Hat diese Bank ein künstlerisches Element?",
         "ca": "Aquest banc té algun element artístic?",
         "cs": "Má tato lavička umělecké prvky?"
       },

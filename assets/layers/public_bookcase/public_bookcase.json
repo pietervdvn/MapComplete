@@ -22,7 +22,7 @@
   "source": {
     "osmTags": "amenity=public_bookcase"
   },
-  "minzoom": 10,
+  "minzoom": 7,
   "title": {
     "render": {
       "en": "Bookcase",
@@ -478,7 +478,10 @@
       "id": "kid-books",
       "options": [
         {
-          "question": "Kinderboeken aanwezig?",
+          "question": {
+            "en": "Has children books",
+            "nl": "Kinderboeken aanwezig"
+          },
           "osmTags": "books~i~.*children.*"
         }
       ]
@@ -487,7 +490,10 @@
       "id": "adult-books",
       "options": [
         {
-          "question": "Boeken voor volwassenen aanwezig?",
+          "question": {
+            "en": "Has books for adults",
+            "nl": "Boeken voor volwassenen aanwezig"
+          },
           "osmTags": "books~i~.*adults.*"
         }
       ]
@@ -505,11 +511,17 @@
           }
         },
         {
-          "question": "Binnen?",
+          "question": {
+            "en": "Located indoors",
+            "nl": "Bevindt zich binnen"
+          },
           "osmTags": "indoor=yes"
         },
         {
-          "question": "Buiten?",
+          "question": {
+            "nl": "Bevindt zich buiten",
+            "en": "Located outdoors"
+          },
           "osmTags": {
             "or": [
               "indoor=no",
@@ -518,7 +530,8 @@
           }
         }
       ]
-    }
+    },
+    "has_image"
   ],
   "mapRendering": [
     {

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="25"
+   height="25"
+   viewBox="0 0 25 25"
+   version="1.1"
+   id="svg92"
+   sodipodi:docname="shower.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs96" />
+  <sodipodi:namedview
+     id="namedview94"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="16.857143"
+     inkscape:cx="7.029661"
+     inkscape:cy="7"
+     inkscape:window-width="2256"
+     inkscape:window-height="1435"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg92" />
+  <g
+     id="g389"
+     transform="translate(5.5,5.4999998)">
+    <path
+       d="M 6.8417969,0 C 6.5080632,0.00895547 6.214521,0.24656385 6.1503906,0.58789062 L 5.8476562,2.1933594 C 4.6012255,2.2351741 3.5074523,3.1334887 3.2675781,4.4101562 L 8.6171875,5.4160156 C 8.8407092,4.2264228 8.2526189,3.0728712 7.2441406,2.5234375 L 7.4375,1.5 H 14 V 0 Z"
+       id="path72" />
+    <circle
+       cx="5.3477998"
+       cy="7.8193002"
+       r="0.85500002"
+       id="circle74" />
+    <circle
+       cx="4.8835001"
+       cy="10.4283"
+       r="0.85500002"
+       id="circle76" />
+    <circle
+       cx="4.3322001"
+       cy="13.0403"
+       r="0.85500002"
+       id="circle78" />
+    <circle
+       cx="7.9656"
+       cy="7.7733998"
+       r="0.85500002"
+       id="circle80" />
+    <circle
+       cx="7.9252"
+       cy="10.4407"
+       r="0.85500002"
+       id="circle82" />
+    <circle
+       cx="7.9875002"
+       cy="13.145"
+       r="0.85500002"
+       id="circle84" />
+    <circle
+       cx="2.9883001"
+       cy="6.8755999"
+       r="0.85500002"
+       id="circle86" />
+    <circle
+       cx="1.9097"
+       cy="9.3199997"
+       r="0.85500002"
+       id="circle88" />
+    <circle
+       cx="0.85500002"
+       cy="11.7795"
+       r="0.85500002"
+       id="circle90" />
+  </g>
+</svg>

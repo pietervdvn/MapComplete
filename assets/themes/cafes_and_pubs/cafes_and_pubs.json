@@ -28,7 +28,8 @@
     "nb_NO": "Kneiper og barer",
     "pa_PK": "پب (بار)",
     "cs": "Kavárny, hospody a bary",
-    "it": "Pub e bar"
+    "it": "Pub e bar",
+    "zh_Hant": "咖啡廳、俱樂部與酒吧"
   },
   "icon": "./assets/layers/cafe_pub/pub.svg",
   "startLat": 0,

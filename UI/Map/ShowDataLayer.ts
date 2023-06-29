@@ -380,6 +380,9 @@ class LineRenderingLayer {
             if (this._listenerInstalledOn.has(id)) {
                 continue
             }
+            if (!map.getSource(this._layername)) {
+                continue
+            }
             if (this._fetchStore === undefined) {
                 map.setFeatureState(
                     { source: this._layername, id },

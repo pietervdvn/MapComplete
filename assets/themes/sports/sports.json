@@ -8,7 +8,8 @@
     "fr": "Sports",
     "ca": "Esports",
     "es": "Deportes",
-    "cs": "Sport"
+    "cs": "Sport",
+    "zh_Hant": "運動"
   },
   "shortDescription": {
     "en": "Map showing sport facilities.",
@@ -17,7 +18,8 @@
     "fr": "Carte des équipements sportifs.",
     "ca": "Mapa amb instal·lacions esportives.",
     "es": "Mapa con instalaciones deportivas.",
-    "cs": "Mapa se sportovními zařízeními."
+    "cs": "Mapa se sportovními zařízeními.",
+    "zh_Hant": "顯示運動設施的地圖。"
   },
   "description": {
     "en": "All about sports, find sport pitches, fitness centres and more.",
@@ -58,7 +60,8 @@
               "de": "ein Sportgeschäft",
               "ca": "una tenda d'esports",
               "es": "una tienda de deportes",
-              "cs": "sportovní obchod"
+              "cs": "sportovní obchod",
+              "zh_Hant": "運動用品店"
             },
             "description": {
               "en": "Add a new shop selling sports goods.",

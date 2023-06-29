@@ -670,7 +670,7 @@
                         "then": "Diese Bank hat kein integriertes Kunstwerk"
                     }
                 },
-                "question": "Hat diese Bank ein künstlerisches Element? ",
+                "question": "Hat diese Bank ein künstlerisches Element?",
                 "questionHint": "Z.B. hat es ein integriertes Gemälde, eine Statue oder eine andere nicht triviale, kreative Arbeit"
             },
             "bench-backrest": {
@@ -730,8 +730,8 @@
                         "then": "Diese Bank hat <span class='subtle'>(wahrscheinlich)</span> keine Inschrift"
                     }
                 },
-                "question": "Hat diese Bank eine Inschrift? ",
-                "questionHint": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ... ",
+                "question": "Hat diese Bank eine Inschrift?",
+                "questionHint": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ...",
                 "render": "Diese Bank hat folgende Inschrift:<br/><p><i>{inscription}</i></p>"
             },
             "bench-material": {
@@ -2115,6 +2115,9 @@
                     },
                     "4": {
                         "then": "Die Station ist nicht für die Allgemeinheit zugänglich (z. B. nur für die Eigentümer, Mitarbeiter, …)"
+                    },
+                    "5": {
+                        "then": "Diese Ladestation ist zu gewissen Öffnungszeiten oder Bedingungen öffentlich zugänglich. Einschränkungen sind möglich, aber generelle Nutzung ist erlaubt."
                     }
                 },
                 "question": "Wer darf diese Ladestation benutzen?",
@@ -2571,6 +2574,9 @@
                 },
                 "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
                 "render": "<div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> liefert maximal {socket:type2_cable:output}"
+            },
+            "questions-technical": {
+                "render": "<h3>Technische Frage</h3>Die nächsten Fragen sind sehr technisch. Du kannst diese auch überspringen.<br/>{questions(technical)}"
             },
             "ref": {
                 "question": "Welche Kennnummer hat die Ladestation?",
@@ -4006,7 +4012,7 @@
             }
         },
         "title": {
-            "render": "Arztpraxis {name}"
+            "render": "Zahnarztpraxis {name}"
         }
     },
     "direction": {
@@ -4474,6 +4480,13 @@
                         "question": "Bio-Produkte im Angebot"
                     }
                 }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": "Nutzung kostenlos"
+                    }
+                }
             }
         }
     },
@@ -4680,6 +4693,12 @@
         "name": "OSM-Objekte mit FIXME-Tags",
         "tagRenderings": {
             "fixme": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Problem wurde behoben"
+                    }
+                },
+                "question": "Was stimmt mit diesem Objekt nicht?",
                 "render": "Fixme Text: {fixme}"
             },
             "note": {
@@ -5077,6 +5096,9 @@
             "Privacy notice": {
                 "render": "Dies ist der Weg, den Sie seit dem Besuch dieser Webseite zurückgelegt haben. Keine Sorge - diese Daten sind nur für Sie sichtbar und für niemanden sonst. Ihre Standortdaten werden niemals an ein anderes Gerät gesendet."
             }
+        },
+        "title": {
+            "render": "Deine zurückgelegte Strecke"
         }
     },
     "hackerspace": {
@@ -5541,7 +5563,25 @@
         "mapRendering": {
             "0": {
                 "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "Hinweis auf der Karte hinzufügen"
+                        }
+                    },
                     "render": "Hier klicken, um ein neues Element hinzuzufügen"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Objekt oder Hinweis auf der Karte hinzufügen"
+                },
+                "1": {
+                    "then": "Hinweis hinzufügen"
+                },
+                "2": {
+                    "then": "Objekt hinzufügen"
                 }
             }
         }
@@ -8226,13 +8266,6 @@
                         "question": "Mit Wickeltisch"
                     }
                 }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Nutzung kostenlos"
-                    }
-                }
             }
         },
         "name": "Toiletten",
@@ -8853,6 +8886,24 @@
                     }
                 }
             },
+            "inbox": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Deinen Posteingang öffnen"
+                            }
+                        }
+                    },
+                    "1": {
+                        "then": {
+                            "special": {
+                                "text": "<b class='alert'>Du hast {_unreadMessages}</b><br/>Öffne Deinen Posteingang"
+                            }
+                        }
+                    }
+                }
+            },
             "picture-license": {
                 "mappings": {
                     "0": {
@@ -8870,6 +8921,13 @@
                 },
                 "question": "Unter welcher Lizenz möchten Sie Ihre Bilder veröffentlichen?"
             },
+            "settings-link": {
+                "render": {
+                    "special": {
+                        "text": "Öffne Deine Einstellungen auf OpenStreetMap.org"
+                    }
+                }
+            },
             "show_debug": {
                 "mappings": {
                     "0": {
@@ -8883,6 +8941,24 @@
                     }
                 },
                 "question": "Debug-Informationen zu den Benutzereinstellungen anzeigen?"
+            },
+            "show_tags": {
+                "mappings": {
+                    "0": {
+                        "then": "Tags nie anzeigen."
+                    },
+                    "1": {
+                        "then": "Tags anzeigen sobald ich {__userjourney_tagsVisibleAt} Changesets erstellt habe"
+                    },
+                    "2": {
+                        "then": "Tags anzeigen, die bei der Änderung hinzugefügt werden"
+                    },
+                    "3": {
+                        "then": "Tags anzeigen, die bei der Änderung hinzugefügt werden, und Tag-Tabelle bei jedem Objekt anzeigen"
+                    }
+                },
+                "question": "Rohe OpenStreetMap-Tags anzeigen?",
+                "questionHint": "<b>Tags</b> sind die Eigenschaften, die jedes Objekt hat. Das sind die technischen Daten, die in der Datenbank gespeichert werden. Du brauchst diese Informationen nicht, um mit MapComplete Änderungen zu machen, aber fortgeschrittenen Nutzer*innen kann es als Referenz dienen."
             },
             "translation-completeness": {
                 "mappings": {
@@ -8930,6 +9006,9 @@
                     }
                 }
             }
+        },
+        "title": {
+            "render": "Einstellungen"
         }
     },
     "veterinary": {

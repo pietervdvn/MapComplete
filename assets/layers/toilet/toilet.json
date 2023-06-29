@@ -241,7 +241,11 @@
       "condition": "fee=yes",
       "freeform": {
         "key": "charge",
-        "type": "string"
+        "type": "string",
+        "placeholder": {
+          "en": "e.g. 0.50 EUR",
+          "nl": "bijv. 0.50 EUR"
+        }
       },
       "id": "toilet-charge"
     },
@@ -642,27 +646,7 @@
         }
       ]
     },
-    {
-      "id": "free",
-      "options": [
-        {
-          "question": {
-            "en": "Free to use",
-            "nl": "Gratis toegankelijk",
-            "de": "Nutzung kostenlos",
-            "fr": "Utilisation gratuite",
-            "da": "Gratis at bruge"
-          },
-          "osmTags": {
-            "or": [
-              "fee=no",
-              "fee=0",
-              "charge=0"
-            ]
-          }
-        }
-      ]
-    },
+    "free",
     "open_now"
   ],
   "deletion": {

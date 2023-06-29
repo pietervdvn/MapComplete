@@ -212,7 +212,7 @@
         {
           "if": "fee=yes",
           "then": {
-            "en": "This cleaning service is paid",
+            "en": "There is a fee to use this cleaning service",
             "nl": "Dit fietsschoonmaakpunt is betalend",
             "es": "Este servicio de limpieza es de pago",
             "ca": "Aquest servei de neteja és de pagament",

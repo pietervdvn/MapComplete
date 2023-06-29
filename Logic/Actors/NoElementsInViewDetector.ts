@@ -16,6 +16,7 @@ export default class NoElementsInViewDetector {
         const minZoom = Math.min(
             ...themeViewState.layout.layers
                 .filter((l) => Constants.priviliged_layers.indexOf(<any>l.id) < 0)
+                .filter((l) => !l.id.startsWith("note_import"))
                 .map((l) => l.minzoom)
         )
         const mapProperties = themeViewState.mapProperties
@@ -24,26 +25,31 @@ export default class NoElementsInViewDetector {
 
         this.hasFeatureInView = state.mapProperties.bounds.stabilized(100).map(
             (bbox) => {
+                if (!bbox) {
+                    return undefined
+                }
                 if (mapProperties.zoom.data < minZoom) {
                     // Not a single layer will display anything as the zoom is to low
                     return "zoom-to-low"
                 }
 
+                let minzoomWithData = 9999
+
                 for (const [layerName, source] of themeViewState.perLayerFiltered) {
                     if (priviliged.has(layerName)) {
-                        continue
-                    }
-                    if (
-                        mapProperties.zoom.data < themeViewState.layout.getLayer(layerName).minzoom
-                    ) {
-                        continue
-                    }
-                    if (!state.layerState.filteredLayers.get(layerName).isDisplayed.data) {
                         continue
                     }
                     const feats = source.features.data
                     if (!(feats?.length > 0)) {
                         // Nope, no data loaded
+                        continue
+                    }
+                    const layer = themeViewState.layout.getLayer(layerName)
+                    if (mapProperties.zoom.data < layer.minzoom) {
+                        minzoomWithData = Math.min(layer.minzoom)
+                        continue
+                    }
+                    if (!state.layerState.filteredLayers.get(layerName).isDisplayed.data) {
                         continue
                     }
 
@@ -56,13 +62,14 @@ export default class NoElementsInViewDetector {
                 }
 
                 // If we arrive here, data might have been filtered away
-                for (const [layerName, source] of themeViewState.perLayer) {
+
+                for (const [layerName, source] of themeViewState.perLayerFiltered) {
                     if (priviliged.has(layerName)) {
                         continue
                     }
-                    if (
-                        mapProperties.zoom.data < themeViewState.layout.getLayer(layerName).minzoom
-                    ) {
+
+                    const layer = themeViewState.layout.getLayer(layerName)
+                    if (mapProperties.zoom.data < layer.minzoom) {
                         continue
                     }
                     const feats = source.features.data

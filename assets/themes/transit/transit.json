@@ -10,7 +10,8 @@
     "pa_PK": "بس روٹ",
     "nl": "Busroutes",
     "es": "Rutas de autobús",
-    "cs": "Autobusové linky"
+    "cs": "Autobusové linky",
+    "zh_Hant": "公車路線"
   },
   "description": {
     "en": "Plan your trip with the help of the public transport system.",
@@ -21,7 +22,8 @@
     "nb_NO": "Planlegg turen din med offentlig transport",
     "ca": "Planifica el teu viatge amb l'ajuda del sistema públic de transport.",
     "es": "Planifique su viaje con ayuda del sistema de transporte público.",
-    "cs": "Naplánujte si cestu pomocí systému veřejné dopravy."
+    "cs": "Naplánujte si cestu pomocí systému veřejné dopravy.",
+    "zh_Hant": "藉由大眾運輸系統來計畫你的旅程。"
   },
   "icon": "./assets/layers/transit_stops/bus_stop.svg",
   "startZoom": 20,

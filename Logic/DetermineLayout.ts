@@ -11,7 +11,6 @@ import { LocalStorageSource } from "./Web/LocalStorageSource"
 import LZString from "lz-string"
 import { FixLegacyTheme } from "../Models/ThemeConfig/Conversion/LegacyJsonConvert"
 import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
-import SharedTagRenderings from "../Customizations/SharedTagRenderings"
 import known_layers from "../assets/generated/known_layers.json"
 import { PrepareTheme } from "../Models/ThemeConfig/Conversion/PrepareTheme"
 import licenses from "../assets/generated/license_info.json"
@@ -24,9 +23,8 @@ import {
     ValidateTagRenderings,
     ValidateThemeAndLayers,
 } from "../Models/ThemeConfig/Conversion/Validation"
-import { DesugaringContext, Each, On } from "../Models/ThemeConfig/Conversion/Conversion"
-import { PrepareLayer, RewriteSpecial } from "../Models/ThemeConfig/Conversion/PrepareLayer"
-import { AllSharedLayers } from "../Customizations/AllSharedLayers"
+import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
+import { RewriteSpecial } from "../Models/ThemeConfig/Conversion/PrepareLayer"
 import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
 import questions from "../assets/tagRenderings/questions.json"
 
@@ -79,55 +77,33 @@ export default class DetermineLayout {
         let hash = location.hash.substr(1)
         let json: any
 
-        try {
-            // layoutFromBase64 contains the name of the theme. This is partly to do tracking with goat counter
-            const dedicatedHashFromLocalStorage = LocalStorageSource.Get(
-                "user-layout-" + userLayoutParam.data?.replace(" ", "_")
-            )
-            if (dedicatedHashFromLocalStorage.data?.length < 10) {
-                dedicatedHashFromLocalStorage.setData(undefined)
-            }
-
-            const hashFromLocalStorage = LocalStorageSource.Get("last-loaded-user-layout")
-            if (hash.length < 10) {
-                hash = dedicatedHashFromLocalStorage.data ?? hashFromLocalStorage.data
-            } else {
-                console.log("Saving hash to local storage")
-                hashFromLocalStorage.setData(hash)
-                dedicatedHashFromLocalStorage.setData(hash)
-            }
-
-            try {
-                json = JSON.parse(atob(hash))
-            } catch (e) {
-                // We try to decode with lz-string
-                try {
-                    json = JSON.parse(Utils.UnMinify(LZString.decompressFromBase64(hash)))
-                } catch (e) {
-                    console.error(e)
-                    DetermineLayout.ShowErrorOnCustomTheme(
-                        "Could not decode the hash",
-                        new FixedUiElement("Not a valid (LZ-compressed) JSON")
-                    )
-                    return null
-                }
-            }
-
-            const layoutToUse = DetermineLayout.prepCustomTheme(json)
-            userLayoutParam.setData(layoutToUse.id)
-            return layoutToUse
-        } catch (e) {
-            console.error(e)
-            if (hash === undefined || hash.length < 10) {
-                DetermineLayout.ShowErrorOnCustomTheme(
-                    "Could not load a theme from the hash",
-                    new FixedUiElement("Hash does not contain data"),
-                    json
-                )
-            }
-            this.ShowErrorOnCustomTheme("Could not parse the hash", new FixedUiElement(e), json)
-            return null
+        // layoutFromBase64 contains the name of the theme. This is partly to do tracking with goat counter
+        const dedicatedHashFromLocalStorage = LocalStorageSource.Get(
+            "user-layout-" + userLayoutParam.data?.replace(" ", "_")
+        )
+        if (dedicatedHashFromLocalStorage.data?.length < 10) {
+            dedicatedHashFromLocalStorage.setData(undefined)
         }
+
+        const hashFromLocalStorage = LocalStorageSource.Get("last-loaded-user-layout")
+        if (hash.length < 10) {
+            hash = dedicatedHashFromLocalStorage.data ?? hashFromLocalStorage.data
+        } else {
+            console.log("Saving hash to local storage")
+            hashFromLocalStorage.setData(hash)
+            dedicatedHashFromLocalStorage.setData(hash)
+        }
+
+        try {
+            json = JSON.parse(atob(hash))
+        } catch (e) {
+            // We try to decode with lz-string
+            json = JSON.parse(Utils.UnMinify(LZString.decompressFromBase64(hash)))
+        }
+
+        const layoutToUse = DetermineLayout.prepCustomTheme(json)
+        userLayoutParam.setData(layoutToUse.id)
+        return layoutToUse
     }
 
     public static ShowErrorOnCustomTheme(
@@ -187,6 +163,7 @@ export default class DetermineLayout {
 
         return dict
     }
+
     private static prepCustomTheme(json: any, sourceUrl?: string, forceId?: string): LayoutConfig {
         if (json.layers === undefined && json.tagRenderings !== undefined) {
             const iconTr = json.mapRendering.map((mr) => mr.icon).find((icon) => icon !== undefined)
@@ -255,32 +232,13 @@ export default class DetermineLayout {
             "maindiv"
         )
 
-        try {
-            let parsed = await Utils.downloadJson(link)
-            try {
-                let forcedId = parsed.id
-                const url = new URL(link)
-                if (!(url.hostname === "localhost" || url.hostname === "127.0.0.1")) {
-                    forcedId = link
-                }
-                console.log("Loaded remote link:", link)
-                return DetermineLayout.prepCustomTheme(parsed, link, forcedId)
-            } catch (e) {
-                console.error(e)
-                DetermineLayout.ShowErrorOnCustomTheme(
-                    `<a href="${link}">${link}</a> is invalid:`,
-                    new FixedUiElement(e),
-                    parsed
-                )
-                return null
-            }
-        } catch (e) {
-            console.error(e)
-            DetermineLayout.ShowErrorOnCustomTheme(
-                `<a href="${link}">${link}</a> is invalid - probably not found or invalid JSON:`,
-                new FixedUiElement(e)
-            )
-            return null
+        let parsed = await Utils.downloadJson(link)
+        let forcedId = parsed.id
+        const url = new URL(link)
+        if (!(url.hostname === "localhost" || url.hostname === "127.0.0.1")) {
+            forcedId = link
         }
+        console.log("Loaded remote link:", link)
+        return DetermineLayout.prepCustomTheme(parsed, link, forcedId)
     }
 }

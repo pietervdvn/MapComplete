@@ -73,7 +73,7 @@ export default class MoveWizard extends Toggle {
                 lockBounds: true,
                 includeSearch: false,
                 background: "photo",
-                startZoom: 17,
+                startZoom: 18,
                 minZoom: 16,
                 eraseAddressFields: false,
             })
@@ -139,6 +139,7 @@ export default class MoveWizard extends Toggle {
                 new SvelteUIElement(LocationInput, {
                     mapProperties,
                     value,
+                    initialCoordinate: { lon, lat },
                 }).SetClass("w-full h-full"),
                 new SvelteUIElement(OpenBackgroundSelectorButton, { state }).SetClass(
                     "absolute bottom-0 left-0"
