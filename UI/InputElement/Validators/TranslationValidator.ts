@@ -1,0 +1,16 @@
+import { Validator } from "../Validator"
+
+export default class TranslationValidator extends Validator {
+    constructor() {
+        super("translation", "Makes sure the the string is of format `Record<string, string>` ")
+    }
+
+    isValid(value: string, getCountry?: () => string): boolean {
+        try {
+            JSON.parse(value)
+            return true
+        } catch (e) {
+            return false
+        }
+    }
+}

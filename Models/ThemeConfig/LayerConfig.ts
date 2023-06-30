@@ -31,6 +31,7 @@ import Svg from "../../Svg"
 import { ImmutableStore } from "../../Logic/UIEventSource"
 import { OsmTags } from "../OsmFeature"
 import Constants from "../Constants"
+import { QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRenderingConfigJson"
 
 export default class LayerConfig extends WithContextLoader {
     public static readonly syncSelectionAllowed = ["no", "local", "theme-only", "global"] as const
@@ -340,7 +341,7 @@ export default class LayerConfig extends WithContextLoader {
         this.tagRenderings = (Utils.NoNull(json.tagRenderings) ?? []).map(
             (tr, i) =>
                 new TagRenderingConfig(
-                    <TagRenderingConfigJson>tr,
+                    <QuestionableTagRenderingConfigJson>tr,
                     this.id + ".tagRenderings[" + i + "]"
                 )
         )

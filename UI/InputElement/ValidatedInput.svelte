@@ -77,6 +77,11 @@
     }
 
     onDestroy(_value.addCallbackAndRun((_) => setValues()))
+    onDestroy(value.addCallbackAndRunD(fromUpstream => {
+        if(_value.data !== fromUpstream){
+            _value.setData(fromUpstream)
+        }
+    }))
     onDestroy(selectedUnit.addCallback((_) => setValues()))
     if (validator === undefined) {
         throw "Not a valid type (no validator found) for type '" + type+"'; did you perhaps mean one of: "+Utils.sortedByLevenshteinDistance(type, Validators.AllValidators.map(v => v.name), v => v).slice(0, 5).join(", ")

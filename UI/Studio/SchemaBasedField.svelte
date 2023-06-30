@@ -16,15 +16,21 @@
     export let path: (string | number)[] = []
     export let schema: ConfigMeta
     let value = new UIEventSource<string>(undefined)
+    
+    let type = schema.hints.typehint ?? "string"
+    if(type === "rendered"){
+        type = "translation"
+    }
+    const isTranslation =schema.hints.typehint === "translation" || schema.hints.typehint === "rendered"
 
     const configJson: QuestionableTagRenderingConfigJson = {
         id: path.join("_"),
-        render: schema.type === "boolean" ? undefined : schema.hints.inline ?? schema.path.at(-1) + ": <b>{value}</b>",
+        render: schema.type === "boolean" ? undefined : ((schema.hints.inline ?? schema.path.at(-1) )+ ": <b>{value}</b>"),
         question: schema.hints.question,
         questionHint: nmd(schema.description),
         freeform: schema.type === "boolean" ? undefined : {
             key: "value",
-            type: schema.hints.typehint ?? "string",
+            type,
             inline: schema.hints.inline !== undefined
         },
     }
@@ -70,11 +76,12 @@
         err = path.join(".") + " " + e
     }
     let startValue = state.getCurrentValueFor(path)
-    if (startValue?.["en"]) {
-        startValue = startValue["en"]
+    console.log("StartValue for", path.join("."), " is", startValue)
+    if (typeof startValue !== "string") {
+        startValue = JSON.stringify(startValue)
     }
-    console.log("Startvalue for", path.join("."), "is", startValue)
-    let tags = new UIEventSource<Record<string, string>>({value: startValue ?? ""})
+    const tags = new UIEventSource<Record<string, string>>({value: startValue ?? ""})
+    tags.addCallbackAndRunD(tgs => console.log(">>> tgs for",path.join("."),"are",tgs ))
     onDestroy(state.register(path, tags.map(tgs => {
         const v = tgs["value"];
         if (schema.type === "boolan") {
@@ -83,13 +90,19 @@
         if (schema.type === "number") {
             return Number(v)
         }
+        console.log(schema, v)
+        if(isTranslation) {
+            if(v === ""){
+                return {}
+            }
+            return JSON.parse(v)
+        }
         return v
-    })))
+    }),  isTranslation))
 </script>
 
 {#if err !== undefined}
     <span class="alert">{err}</span>
-    {JSON.stringify(schema)}
 {:else}
     <div>
         <TagRenderingEditable {config} selectedElement={undefined} showQuestionIfUnknown={true} {state} {tags}/>

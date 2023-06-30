@@ -206,11 +206,11 @@ export interface LayerConfigJson {
      *
      * group: title
      * question: What title should be shown on the infobox?
-     * types: Use a dynamic tagRendering ; use a fixed value
-     * typesdefault: 0
+     * types: use a fixed translation ; Use a dynamic tagRendering ; use a fixed string for all languages
+     * typesdefault: 1
      *
      */
-    title?: TagRenderingConfigJson | string
+    title?: TagRenderingConfigJson | Translatable
 
     /**
      *

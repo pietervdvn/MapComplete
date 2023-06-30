@@ -548,46 +548,12 @@
   },
   {
     "path": [
-      "classes"
-    ],
-    "required": false,
-    "hints": {},
-    "type": [
-      {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "A list of css-classes to apply to the entire tagRendering if the answer is known (not applied on the question).\nThis is only for advanced users"
-  },
-  {
-    "path": [
-      "description"
-    ],
-    "required": false,
-    "hints": {},
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings"
-  },
-  {
-    "path": [
       "render"
     ],
     "required": false,
     "hints": {
-      "typehint": "rendered"
+      "typehint": "rendered",
+      "question": "What text should be rendered?"
     },
     "type": [
       {
@@ -623,14 +589,16 @@
         "type": "string"
       }
     ],
-    "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`"
+    "description": "\nThis piece of text will be shown in the infobox.\nNote that \"{key}\"-parts are substituted by the corresponding values of the element.\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`"
   },
   {
     "path": [
       "condition"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "When should this item be shown?"
+    },
     "type": [
       {
         "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -642,7 +610,7 @@
         "type": "string"
       }
     ],
-    "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```"
+    "description": "\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```"
   },
   {
     "path": [
@@ -715,7 +683,9 @@
       "metacondition"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "When should this item be shown (including special conditions)?"
+    },
     "type": [
       {
         "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -727,7 +697,7 @@
         "type": "string"
       }
     ],
-    "description": "If set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_"
+    "description": "\nIf set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_"
   },
   {
     "path": [
@@ -794,5 +764,32 @@
       }
     ],
     "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n"
+  },
+  {
+    "path": [
+      "description"
+    ],
+    "required": false,
+    "hints": {},
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings"
+  },
+  {
+    "path": [
+      "classes"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What css-classes should be applied to showing this attribute?"
+    },
+    "type": "string",
+    "description": "\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)"
   }
 ]

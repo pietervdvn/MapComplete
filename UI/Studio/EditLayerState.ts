@@ -22,12 +22,6 @@ export default class EditLayerState {
             featureSwitchIsDebugging: new UIEventSource<boolean>(true),
         }
         this.configuration.addCallback((config) => {
-            if (
-                config?.deletion !== undefined &&
-                (<DeleteConfigJson>config?.deletion)?.neededChangesets === undefined
-            ) {
-                console.trace("Needed changesets is undefined")
-            }
             console.log("Current config is", Utils.Clone(config))
         })
     }
@@ -65,7 +59,19 @@ export default class EditLayerState {
         )
     }
 
-    public getSchema(path: string[]) {
+    public getTranslationAt(path: string[]): ConfigMeta {
+        const origConfig = this.getSchema(path)[0]
+        return {
+            path,
+            type: "translation",
+            hints: {
+                typehint: "translation",
+            },
+            required: origConfig.required ?? false,
+            description: origConfig.description ?? "A translatable object",
+        }
+    }
+    public getSchema(path: string[]): ConfigMeta[] {
         return this.schema.filter(
             (sch) =>
                 sch !== undefined &&

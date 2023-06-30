@@ -7,22 +7,16 @@ import { Translatable } from "./Translatable"
  */
 export interface TagRenderingConfigJson {
     /**
-     * A list of css-classes to apply to the entire tagRendering if the answer is known (not applied on the question).
-     * This is only for advanced users
-     */
-    classes?: string | string[]
-
-    /**
-     * A human-readable text explaining what this tagRendering does.
-     * Mostly used for the shared tagrenderings
-     */
-    description?: string | Record<string, string>
-
-    /**
-     * Renders this value. Note that "{key}"-parts are substituted by the corresponding values of the element.
-     * If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.
+     * question: What text should be rendered?
      *
-     * Note that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`
+     * This piece of text will be shown in the infobox.
+     * Note that "{key}"-parts are substituted by the corresponding values of the element.
+     *
+     * This text will be shown if:
+     * - there is no mapping which matches (or there are no matches)
+     * - no question, no mappings and no 'freeform' is set
+     *
+     * Note that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`
      * type: rendered
      */
     render?:
@@ -30,6 +24,9 @@ export interface TagRenderingConfigJson {
         | { special: Record<string, string | Record<string, string>> & { type: string } }
 
     /**
+     *
+     * question: When should this item be shown?
+     *
      * Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.
      *
      * This is useful to ask a follow-up question.
@@ -71,6 +68,9 @@ export interface TagRenderingConfigJson {
     condition?: TagConfigJson
 
     /**
+     *
+     * question: When should this item be shown (including special conditions)?
+     *
      * If set, this tag will be evaluated agains the _usersettings/application state_ table.
      * Enable 'show debug info' in user settings to see available options.
      * Note that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_
@@ -93,6 +93,8 @@ export interface TagRenderingConfigJson {
      */
     mappings?: {
         /**
+         * question: When should this single mapping match?
+         *
          * If this condition is met, then the text under `then` will be shown.
          * If no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.
          *
@@ -102,12 +104,15 @@ export interface TagRenderingConfigJson {
          */
         if: TagConfigJson
         /**
+         * question: What text should be shown?
+         *
          * If the condition `if` is met, the text `then` will be rendered.
          * If not known yet, the user will be presented with `then` as an option
          * Type: rendered
          */
-        then: string | Record<string, string>
+        then: Translatable
         /**
+         * question: What icon should be added to this mapping?
          * An icon supporting this mapping; typically shown pretty small
          * Type: icon
          */
@@ -126,4 +131,21 @@ export interface TagRenderingConfigJson {
                   class?: "small" | "medium" | "large" | string
               }
     }[]
+
+    /**
+     * A human-readable text explaining what this tagRendering does.
+     * Mostly used for the shared tagrenderings
+     */
+    description?: Translatable
+
+    /**
+     * question: What css-classes should be applied to showing this attribute?
+     *
+     * A list of css-classes to apply to the entire tagRendering.
+     * These classes are applied in 'answer'-mode, not in question mode
+     * This is only for advanced users.
+     *
+     * Values are split on ` `  (space)
+     */
+    classes?: string
 }

@@ -14,6 +14,7 @@ import Locale from "../i18n/Locale"
 import { Feature } from "geojson"
 import { GeoOperations } from "../../Logic/GeoOperations"
 import ImageHelper from "./Helpers/ImageHelper.svelte"
+import TranslationInput from "./Helpers/TranslationInput.svelte"
 
 export interface InputHelperProperties {
     /**
@@ -57,6 +58,7 @@ export default class InputHelpers {
         opening_hours: (value) => new OpeningHoursInput(value),
         wikidata: InputHelpers.constructWikidataHelper,
         image: (value) => new SvelteUIElement(ImageHelper, { value }),
+        translation: (value) => new SvelteUIElement(TranslationInput, { value }),
     } as const
 
     /**

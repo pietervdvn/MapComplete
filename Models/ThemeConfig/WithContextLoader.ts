@@ -1,6 +1,8 @@
 import TagRenderingConfig from "./TagRenderingConfig"
 import SharedTagRenderings from "../../Customizations/SharedTagRenderings"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
+import { Translatable } from "./Json/Translatable"
+import { QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRenderingConfigJson"
 
 export default class WithContextLoader {
     protected readonly _context: string
@@ -16,7 +18,7 @@ export default class WithContextLoader {
      * The found value is interpreted as a tagrendering and fetched/parsed
      * */
     public tr(key: string, deflt?: string, translationContext?: string) {
-        const v = this._json[key]
+        let v: Translatable | TagRenderingConfigJson = this._json[key]
         if (v === undefined || v === null) {
             if (deflt === undefined) {
                 return undefined
@@ -31,6 +33,11 @@ export default class WithContextLoader {
             if (shared) {
                 return shared
             }
+            v = <TagRenderingConfigJson>{ render: { "*": v } }
+        }
+        if (v["en"] || v["*"]) {
+            // This is probably a translation
+            v = <TagRenderingConfigJson>{ render: v }
         }
         if (Object.keys(v).length === 1 && typeof v["render"] === "string") {
             throw `At ${
@@ -38,7 +45,10 @@ export default class WithContextLoader {
             }: use the content directly instead of {${key}: ${JSON.stringify(v)}}`
         }
 
-        return new TagRenderingConfig(v, `${translationContext ?? this._context}.${key}`)
+        return new TagRenderingConfig(
+            <QuestionableTagRenderingConfigJson>v,
+            `${translationContext ?? this._context}.${key}`
+        )
     }
 
     /**
@@ -68,7 +78,10 @@ export default class WithContextLoader {
         const renderings: TagRenderingConfig[] = []
         for (let i = 0; i < tagRenderings.length; i++) {
             const preparedConfig = tagRenderings[i]
-            const tr = new TagRenderingConfig(preparedConfig, `${context}.tagrendering[${i}]`)
+            const tr = new TagRenderingConfig(
+                <QuestionableTagRenderingConfigJson>preparedConfig,
+                `${context}.tagrendering[${i}]`
+            )
             if (options.readOnlyMode && tr.question !== undefined) {
                 throw (
                     "A question is defined for " +

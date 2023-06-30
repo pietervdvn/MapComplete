@@ -113,10 +113,12 @@ export default class TagRenderingConfig {
 
         this.labels = json.labels ?? []
         if (typeof json.classes === "string") {
-            this.classes = json.classes.split(" ")
+            this.classes = (<string>json.classes).split(" ")
         } else {
             this.classes = json.classes ?? []
         }
+        this.classes = [].concat(...this.classes.map((cl) => cl.split(" ")))
+
         this.render = Translations.T(<any>json.render, translationKey + ".render")
         this.question = Translations.T(json.question, translationKey + ".question")
         this.questionhint = Translations.T(json.questionHint, translationKey + ".questionHint")
