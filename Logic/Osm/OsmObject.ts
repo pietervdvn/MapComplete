@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 import { Utils } from "../../Utils";
 import polygon_features from "../../assets/polygon-features.json";
 import { OsmFeature, OsmId, OsmTags, WayId } from "../../Models/OsmFeature";

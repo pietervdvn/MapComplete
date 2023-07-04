@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 import { Utils } from "../../Utils"
 import { OsmNode, OsmObject, OsmRelation, OsmWay } from "./OsmObject"
 import { NodeId, OsmId, RelationId, WayId } from "../../Models/OsmFeature"

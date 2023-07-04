@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 /// Given a feature source, calculates a list of OSM-contributors who mapped the latest versions
 import { Store, UIEventSource } from "./UIEventSource"
 import { BBox } from "./BBox"

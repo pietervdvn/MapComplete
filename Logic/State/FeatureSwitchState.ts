@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 /**
  * The part of the global state which initializes the feature switches, based on default values and on the layoutToUse
  */

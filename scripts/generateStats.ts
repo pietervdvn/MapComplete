@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 import known_layers from "../assets/generated/known_layers.json"
 import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
 import { TagUtils } from "../Logic/Tags/TagUtils"

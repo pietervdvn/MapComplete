@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 import { OsmNode, OsmObject, OsmRelation, OsmWay } from "./OsmObject"
 import { Store, UIEventSource } from "../UIEventSource"
 import Constants from "../../Models/Constants"

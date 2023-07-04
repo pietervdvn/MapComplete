@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2023 MapComplete <https://mapcomplete.osm.be/>
+#
+# SPDX-License-Identifier: CC0-1.0
+
 dist/*
 node_modules
 .cache/*

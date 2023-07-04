@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 import { Tag } from "../../Tags/Tag"
 import { OsmCreateAction } from "./OsmChangeAction"
 import { Changes } from "../Changes"

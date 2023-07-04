@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 import { Feature } from "geojson"
 import { FeatureSource } from "../FeatureSource"
 import { ImmutableStore, Store, UIEventSource } from "../../UIEventSource"

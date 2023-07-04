@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { OsmConnection } from "../Osm/OsmConnection"
 import { MangroveIdentity } from "../Web/MangroveReviews"

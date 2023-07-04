@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 import DynamicTileSource from "./DynamicTileSource"
 import { Store } from "../../UIEventSource"
 import { BBox } from "../../BBox"

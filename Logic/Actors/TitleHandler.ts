@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 import { Store, UIEventSource } from "../UIEventSource"
 import Locale from "../../UI/i18n/Locale"
 import Combine from "../../UI/Base/Combine"

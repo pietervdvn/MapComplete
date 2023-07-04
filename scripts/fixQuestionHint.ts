@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 import * as fs from "fs"
 import { DesugaringStep } from "../Models/ThemeConfig/Conversion/Conversion"
 import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"

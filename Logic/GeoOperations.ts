@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 import { BBox } from "./BBox"
 import * as turf from "@turf/turf"
 import { AllGeoJSON, booleanWithin, Coord } from "@turf/turf"

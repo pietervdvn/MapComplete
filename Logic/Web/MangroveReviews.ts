@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 import { ImmutableStore, Store, UIEventSource } from "../UIEventSource"
 import { MangroveReviews, Review } from "mangrove-reviews-typescript"
 import { Utils } from "../../Utils"

@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 import ScriptUtils from "./ScriptUtils"
 import { appendFileSync, readFileSync, writeFileSync } from "fs"
 import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader"

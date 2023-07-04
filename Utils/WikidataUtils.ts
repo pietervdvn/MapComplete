@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 export default class WikidataUtils {
     /**
      * Mapping from wikidata-codes to weblate-codes. The wikidata-code is the key, mapcomplete/weblate is the value

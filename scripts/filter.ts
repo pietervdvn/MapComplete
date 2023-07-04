@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 import * as fs from "fs"
 import { TagUtils } from "../Logic/Tags/TagUtils"
 import { writeFileSync } from "fs"

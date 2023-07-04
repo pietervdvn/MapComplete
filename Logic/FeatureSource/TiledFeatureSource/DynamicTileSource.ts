@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 import { Store, Stores } from "../../UIEventSource"
 import { Tiles } from "../../../Models/TileRange"
 import { BBox } from "../../BBox"

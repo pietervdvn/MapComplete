@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 /**
  * An action is a change to the OSM-database
  * It will generate some new/modified/deleted objects, which are all bundled by the 'changes'-object

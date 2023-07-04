@@ -1,5 +1,9 @@
 #! /bin/bash
 
+# SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+#
+# SPDX-License-Identifier: GPL-3.0-ONLY
+
 # Generates data for the wallonia address dataset: convex hulls for postal code outlines, tiled address files for import
 
 wget https://opendata.bosa.be/download/best/openaddress-bewal.zip

@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 import { existsSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "fs"
 import ScriptUtils from "./ScriptUtils"
 import { Utils } from "../Utils"

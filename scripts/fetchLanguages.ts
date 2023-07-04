@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 MapComplete  <https://mapcomplete.osm.be/>
+//
+// SPDX-License-Identifier: GPL-3.0-ONLY
+
 /**
  * Fetches all 'modern languages' from wikidata, then exports their names in every language.
  * Some meta-info (e.g. RTL) is exported too
