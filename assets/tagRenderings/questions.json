@@ -1,5 +1,5 @@
 {
-  "id": "shared_questions",
+  "id": "questions",
   "questions": {
     "description": "Show the images block at this location",
     "render": {
