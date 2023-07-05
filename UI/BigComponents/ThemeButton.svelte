@@ -12,6 +12,7 @@
   export let isCustom: boolean = false
   export let userDetails: UIEventSource<UserDetails>
   export let state: { layoutToUse?: { id: string }; osmConnection: OsmConnection }
+  export let selected: boolean = false
 
   $: title = new Translation(
     theme.title,
@@ -78,6 +79,11 @@
       <span class="subtle max-h-12 truncate text-ellipsis">
         <Tr t={description} />
       </span>
+      {#if selected}
+        <span class="alert">
+          Press enter to open theme
+        </span>
+      {/if}
     </span>
   </SubtleLink>
 {/if}
