@@ -7,6 +7,7 @@
   import type { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
   import Tr from "../Base/Tr.svelte"
   import SubtleLink from "../Base/SubtleLink.svelte"
+    import Translations from "../i18n/Translations"
 
   export let theme: LayoutInformation
   export let isCustom: boolean = false
@@ -81,7 +82,7 @@
       </span>
       {#if selected}
         <span class="alert">
-          Press enter to open theme
+          <Tr t={Translations.t.general.morescreen.enterToOpen} />
         </span>
       {/if}
     </span>
