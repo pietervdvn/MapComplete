@@ -78,11 +78,15 @@ export interface TagRenderingConfigJson {
     metacondition?: TagConfigJson
 
     /**
+     * question: Should a freeform text field be shown?
      * Allow freeform text input from the user
+     * ifunset: Do not add a freeform text field
+     * types: Use a freeform value
      */
     freeform?: {
         /**
-         * If this key is present, then 'render' is used to display the value.
+         * What attribute should be filled out
+         * If this key is present in the feature, then 'render' is used to display the value.
          * If this is undefined, the rendering is _always_ shown
          */
         key: string

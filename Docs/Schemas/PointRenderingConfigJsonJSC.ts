@@ -363,11 +363,11 @@ export default {
           ]
         },
         "freeform": {
-          "description": "Allow freeform text input from the user",
+          "description": "question: Should a freeform text field be shown?\nAllow freeform text input from the user\nifunset: Do not add a freeform text field\ntypes: Use a freeform value",
           "type": "object",
           "properties": {
             "key": {
-              "description": "If this key is present, then 'render' is used to display the value.\nIf this is undefined, the rendering is _always_ shown",
+              "description": "What attribute should be filled out\nIf this key is present in the feature, then 'render' is used to display the value.\nIf this is undefined, the rendering is _always_ shown",
               "type": "string"
             }
           },

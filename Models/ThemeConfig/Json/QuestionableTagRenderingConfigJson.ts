@@ -181,6 +181,7 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
         key: string
 
         /**
+         * question: What is the input type?
          * The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...
          * See Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values
          */
