@@ -145,7 +145,13 @@ export class UpdateLegacyLayer extends DesugaringStep<
                 continue
             }
             const pr = <PointRenderingConfigJson>rendering
-            const iconSize = pr.iconSize
+            let iconSize = pr.iconSize
+            console.log("Iconsize is", iconSize)
+
+            if (Object.keys(pr.iconSize).length === 1 && pr.iconSize["render"] !== undefined) {
+                iconSize = pr.iconSize["render"]
+            }
+
             if (typeof iconSize === "string")
                 if (["bottom", "center", "top"].some((a) => (<string>iconSize).endsWith(a))) {
                     const parts = iconSize.split(",").map((parts) => parts.toLowerCase().trim())
