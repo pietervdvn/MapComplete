@@ -1,0 +1,41 @@
+{
+  "id": "memorial",
+  "description": "Layer showing memorial plaques, based upon a unofficial theme. Can be expanded to have multiple types of memorials later on",
+  "source": {
+    "osmTags": "memorial=plaque"
+  },
+  "title": {
+    "render": {
+      "en": "Memorial plaque"
+    }
+  },
+  "tagRenderings": [
+    {
+      "id": "inscription",
+      "question": {
+        "en": "What is the inscription of this plaque?"
+      },
+      "render": {
+        "en": "The inscription on this plaque reads: <p><i>{inscription}<i></p>"
+      },
+      "freeform": {
+        "key": "inscription",
+        "type": "text"
+      }
+    }
+  ],
+  "mapRendering": [
+    {
+      "location": [
+        "centroid",
+        "point"
+      ],
+      "icon": "circle:white;./assets/layers/memorial/plaque.svg"
+    }
+  ],
+  "deletion": true,
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
+}
