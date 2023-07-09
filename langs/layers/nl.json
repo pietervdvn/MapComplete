@@ -4823,12 +4823,15 @@
             "ghost_bike-name": {
                 "mappings": {
                     "0": {
+                        "then": "Ter nagedachtenis van {name}"
+                    },
+                    "1": {
                         "then": "De naam is niet aangeduid op de fiets"
                     }
                 },
                 "question": "Aan wie is deze witte fiets een eerbetoon?",
                 "questionHint": "Respecteer privacy - voeg enkel een naam toe indien die op de fiets staat of gepubliceerd is. Eventueel voeg je enkel de voornaam toe.",
-                "render": "Ter nagedachtenis van {name}"
+                "render": "Ter nagedachtenis van {subject}"
             },
             "ghost_bike-source": {
                 "question": "Op welke website kan men meer informatie vinden over de Witte fiets of over het ongeval?",
@@ -4842,6 +4845,9 @@
         "title": {
             "mappings": {
                 "0": {
+                    "then": "Witte fiets ter nagedachtenis van {subject}"
+                },
+                "1": {
                     "then": "Witte fiets ter nagedachtenis van {name}"
                 }
             },
@@ -6518,10 +6524,30 @@
     "public_bookcase": {
         "description": "Een straatkastje met boeken voor iedereen",
         "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Kinderboeken aanwezig"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Boeken voor volwassenen aanwezig"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
                         "question": "Binnen of buiten"
+                    },
+                    "1": {
+                        "question": "Bevindt zich binnen"
+                    },
+                    "2": {
+                        "question": "Bevindt zich buiten"
                     }
                 }
             }

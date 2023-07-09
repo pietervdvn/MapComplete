@@ -1,5 +1,5 @@
 {
-    "shared_questions": {
+    "questions": {
         "description": {
             "question": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.",
             "questionHint": " Não repita fatos já declarados"

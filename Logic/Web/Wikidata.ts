@@ -179,7 +179,7 @@ export default class Wikidata {
             SERVICE wikibase:mwapi {
                 bd:serviceParam wikibase:api "EntitySearch" .
                 bd:serviceParam wikibase:endpoint "www.wikidata.org" .
-                bd:serviceParam mwapi:search "${text}" .
+                bd:serviceParam mwapi:search "${text.replace(/\\/g, "\\\\").replace(/"/g, '\\"')}" .
                 bd:serviceParam mwapi:language "${options.lang}" .
                 ?item wikibase:apiOutputItem mwapi:item .
                 ?num wikibase:apiOrdinal true .

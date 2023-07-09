@@ -5047,12 +5047,15 @@
             "ghost_bike-name": {
                 "mappings": {
                     "0": {
+                        "then": "In remembrance of {name}"
+                    },
+                    "1": {
                         "then": "No name is marked on the bike"
                     }
                 },
                 "question": "Whom is remembered by this ghost bike?",
                 "questionHint": "Please respect privacy - only fill out the name if it is widely published or marked on the cycle. Opt to leave out the family name.",
-                "render": "In remembrance of {name}"
+                "render": "In remembrance of {subject}"
             },
             "ghost_bike-source": {
                 "question": "On what webpage can one find more info about the ghost bike or the accident?",
@@ -5066,6 +5069,9 @@
         "title": {
             "mappings": {
                 "0": {
+                    "then": "Ghost bike in the remembrance of {subject}"
+                },
+                "1": {
                     "then": "Ghost bike in the remembrance of {name}"
                 }
             },
@@ -5624,6 +5630,43 @@
                 },
                 "question": "On which data is this map based?",
                 "render": "This map is based on {map_source}"
+            },
+            "map_size": {
+                "mappings": {
+                    "0": {
+                        "then": "A map of the romms within a building"
+                    },
+                    "1": {
+                        "then": "A map of special site, like of a historical castle, a park, a campus, a forest, ...."
+                    },
+                    "2": {
+                        "then": "A map showing the village or town"
+                    },
+                    "3": {
+                        "then": " A map of a city."
+                    },
+                    "4": {
+                        "then": "The map of an entire region, showing multiple cities and villages"
+                    }
+                },
+                "question": "What is the size of the shown area on the map?"
+            },
+            "map_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Topographical map <p class='subtle'>The map contains contour lines. </p>"
+                    },
+                    "1": {
+                        "then": "A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>"
+                    },
+                    "2": {
+                        "then": "This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> "
+                    },
+                    "3": {
+                        "then": "This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>"
+                    }
+                },
+                "question": "What type of map is shown?"
             }
         },
         "title": {
@@ -5841,6 +5884,17 @@
                     }
                 }
             }
+        }
+    },
+    "memorial": {
+        "tagRenderings": {
+            "inscription": {
+                "question": "What is the inscription of this plaque?",
+                "render": "The inscription on this plaque reads: <p><i>{inscription}<i></p>"
+            }
+        },
+        "title": {
+            "render": "Memorial plaque"
         }
     },
     "nature_reserve": {
@@ -6842,10 +6896,30 @@
     "public_bookcase": {
         "description": "A streetside cabinet with books, accessible to anyone",
         "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Has children books"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Has books for adults"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
                         "question": "Indoor or outdoor"
+                    },
+                    "1": {
+                        "question": "Located indoors"
+                    },
+                    "2": {
+                        "question": "Located outdoors"
                     }
                 }
             }

@@ -335,6 +335,97 @@
           "reviews"
         ]
       }
+    },
+    {
+      "builtin": [
+        "shops"
+      ],
+      "override": {
+        "id": "shops_with_climbing_shoe_repair",
+        "source": {
+          "=osmTags": {
+            "and": [
+              "service:repair:climbing_shoes=yes",
+              {
+                "or": [
+                  "shop=shoe_repair",
+                  "craft=shoemaker"
+                ]
+              }
+            ]
+          }
+        },
+        "=presets": [],
+        "minzoom": 8,
+        "+tagRenderings": [
+          {
+            "id": "repairs_climbing_shoes",
+            "question": {
+              "en": "Does this shoe repair shop repair climbing shoes?"
+            },
+            "mappings": [
+              {
+                "if": "service:repair:climbing_shoes=yes",
+                "then": {
+                  "en": "This shop repairs climbing shoes"
+                }
+              },
+              {
+                "if": "service:repair:climbing_shoes=no",
+                "then": {
+                  "en": "This shop does not repair climbing shoes"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "builtin": [
+        "shops"
+      ],
+      "override": {
+        "=osmTags": {
+          "or": [
+            "shop=shoe_repair",
+            "craft=shoemaker"
+          ]
+        },
+        "minzoom": 16,
+        "+tagRenderings": [
+          {
+            "id": "repairs_climbing_shoes",
+            "question": {
+              "en": "Does this shoe repair shop also repair clibming shoes?"
+            },
+            "mappings": [
+              {
+                "if": "service:repair:climbing_shoes=yes",
+                "then": {
+                  "en": "This shop repairs climbing shoes"
+                }
+              },
+              {
+                "if": "service:repair:climbing_shoes=no",
+                "then": {
+                  "en": "This shop does not repair climbing shoes"
+                }
+              }
+            ]
+          }
+        ],
+        "=presets": [
+          {
+            "tags": [
+              "shop=shoe_repair"
+            ],
+            "title": {
+              "en": "a shoe repair shop"
+            }
+          }
+        ]
+      }
     }
   ],
   "credits": "Christian Neumann <christian@utopicode.de>"

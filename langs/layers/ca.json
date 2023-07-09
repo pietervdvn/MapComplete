@@ -3152,7 +3152,7 @@
             },
             "ghost_bike-name": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "No hi ha cap nom marcat a la bicicleta"
                     }
                 },

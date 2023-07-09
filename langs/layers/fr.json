@@ -3533,12 +3533,15 @@
             "ghost_bike-name": {
                 "mappings": {
                     "0": {
+                        "then": "En souvenir de {name}"
+                    },
+                    "1": {
                         "then": "Aucun nom n'est marqué sur le vélo"
                     }
                 },
                 "question": "À qui est dédié ce vélo fantôme ?",
                 "questionHint": "Veuillez respecter la vie privée – ajoutez le nom seulement s'il est largement publié ou marqué sur le vélo. Choisissez de ne pas indiquer le nom de famille ",
-                "render": "En souvenir de {name}"
+                "render": "En souvenir de {subject}"
             },
             "ghost_bike-source": {
                 "question": "Sur quelle page web peut-on trouver plus d'informations sur le Vélo fantôme ou l'accident ?",
@@ -3552,6 +3555,9 @@
         "title": {
             "mappings": {
                 "0": {
+                    "then": "Vélo fantôme en souvenir de {subject}"
+                },
+                "1": {
                     "then": "Vélo fantôme en souvenir de {name}"
                 }
             },
