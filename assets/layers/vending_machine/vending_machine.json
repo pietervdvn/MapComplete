@@ -158,6 +158,30 @@
             "nl": "Kaas wordt verkocht"
           },
           "icon": "./assets/layers/id_presets/fas-cheese.svg"
+        },
+        {
+          "if": "vending=honey",
+          "then": {
+            "en": "Honey is sold",
+            "nl": "Honing wordt verkocht"
+          },
+          "icon": "./assets/layers/vending_machine/honey.svg"
+        },
+        {
+          "if": "vending=potatoes",
+          "then": {
+            "en": "Potatoes are sold",
+            "nl": "Aardappelen worden verkocht"
+          },
+          "icon": "./assets/layers/vending_machine/potato.svg"
+        },
+        {
+          "if": "vending=flowers",
+          "then": {
+            "en": "Flowers are sold",
+            "nl": "Bloemen worden verkocht"
+          },
+          "icon": "./assets/layers/id_presets/maki-florist.svg"
         }
       ],
       "multiAnswer": true
@@ -279,6 +303,18 @@
           {
             "if": "vending=cheese",
             "then": "circle:white;./assets/layers/id_presets/fas-cheese.svg"
+          },
+          {
+            "if": "vending=honey",
+            "then": "circle:white;./assets/layers/vending_machine/honey.svg"
+          },
+          {
+            "if": "vending=potatoes",
+            "then": "circle:white;./assets/layers/vending_machine/potato.svg"
+          },
+          {
+            "if": "vending=flowers",
+            "then": "circle:white;./assets/layers/id_presets/maki-florist.svg"
           }
         ]
       },
@@ -389,6 +425,33 @@
             ]
           },
           "then": "circle:white;./assets/layers/id_presets/fas-cheese.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*honey.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/vending_machine/honey.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*potatoes.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/vending_machine/potato.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*flowers.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/id_presets/maki-florist.svg"
         }
       ]
     }
@@ -494,8 +557,34 @@
             "nl": "Verkoop van kaas"
           },
           "osmTags": "vending~i~.*cheese.*"
+        },
+        {
+          "question": {
+            "en": "Sale of honey",
+            "nl": "Verkoop van honing"
+          },
+          "osmTags": "vending~i~.*honey.*"
+        },
+        {
+          "question": {
+            "en": "Sale of potatoes",
+            "nl": "Verkoop van aardappelen"
+          },
+          "osmTags": "vending~i~.*potatoes.*"
+        },
+        {
+          "question": {
+            "en": "Sale of flowers",
+            "nl": "Verkoop van bloemen"
+          },
+          "osmTags": "vending~i~.*flowers.*"
         }
       ]
     }
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": true
+  },
+  "deletion": true
 }
