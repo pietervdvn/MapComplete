@@ -12,7 +12,7 @@
     "osmTags": {
       "and": [
         "amenity=vending_machine",
-        "vending!~(parking_tickets|public_transport_tickets|bottle_return|excrement_bags)"
+        "vending!~(parking_tickets|public_transport_tickets|bottle_return|excrement_bags|elongated_coin)"
       ]
     }
   },
