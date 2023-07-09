@@ -1,0 +1,13 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: MapComplete
+Upstream-Contact: Pieter Vander Vennet <pietervdvn@posteo.net>
+Source: https://github.com/pietervdvn/MapComplete
+
+Files: scripts/* UI/* Utils/* Customizations/* *.html Docs/* assets/*/*/*.json langs/* test/* Models/* Logic/*
+Copyright: MapComplete contributors
+License: GPL-3.0-or-later
+
+Files: *.config.* .vscode/* .tool-versions .prettierrc.json .prettierignore .nvmrc .gitpod .gitignore .github/* .editorconfig .git-blame-ignore-revse
+Copyright: MapComplete contributors
+Comment: Miscellaneous config files, no real 'creative work' but still a pain to get right
+License: CC0-1.0
