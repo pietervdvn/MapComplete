@@ -996,7 +996,7 @@
   },
   "mapRendering": [
     {
-      "icon": "./assets/layers/bench/bench.svg",
+      "icon": "circle:white;./assets/layers/bench/bench.svg",
       "iconSize": "35,35",
       "iconBadges": [
         {

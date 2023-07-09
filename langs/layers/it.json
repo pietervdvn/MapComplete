@@ -1332,12 +1332,15 @@
             "ghost_bike-name": {
                 "mappings": {
                     "0": {
+                        "then": "In ricordo di {name}"
+                    },
+                    "1": {
                         "then": "Nessun nome scritto sulla bici"
                     }
                 },
                 "question": "A chi è dedicata questa bici fantasma?",
                 "questionHint": "Rispetta la privacy (compila solo il nome se questo è stato ampiamente pubblicato o se è scritto sulla bici). Decidi se è il caso di non inserire il cognome.",
-                "render": "In ricordo di {name}"
+                "render": "In ricordo di {subject}"
             },
             "ghost_bike-source": {
                 "question": "In quale pagina web si possono trovare informazioni sulla bici fantasma o l’incidente?",
@@ -1351,6 +1354,9 @@
         "title": {
             "mappings": {
                 "0": {
+                    "then": "Bici fantasma in ricordo di {subject}"
+                },
+                "1": {
                     "then": "Bici fantasma in ricordo di {name}"
                 }
             },

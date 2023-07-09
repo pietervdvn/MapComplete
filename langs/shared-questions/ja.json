@@ -1,5 +1,5 @@
 {
-    "shared_questions": {
+    "questions": {
         "description": {
             "question": "前の質問で伝えきれなかった関連事項がまだありますか？ここに追加してください。",
             "questionHint": "今後表示しない"

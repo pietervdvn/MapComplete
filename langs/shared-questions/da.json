@@ -1,5 +1,5 @@
 {
-    "shared_questions": {
+    "questions": {
         "description": {
             "question": "Er der stadig noget relevant, du ikke kunne give i de foregående spørgsmål? Tilføj det her.",
             "questionHint": "Gentag ikke allerede nævnte fakta"

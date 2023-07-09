@@ -408,6 +408,45 @@
                         }
                     }
                 }
+            },
+            "1": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "This shop repairs climbing shoes"
+                                },
+                                "1": {
+                                    "then": "This shop does not repair climbing shoes"
+                                }
+                            },
+                            "question": "Does this shoe repair shop repair climbing shoes?"
+                        }
+                    }
+                }
+            },
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "This shop repairs climbing shoes"
+                                },
+                                "1": {
+                                    "then": "This shop does not repair climbing shoes"
+                                }
+                            },
+                            "question": "Does this shoe repair shop also repair clibming shoes?"
+                        }
+                    },
+                    "=presets": {
+                        "0": {
+                            "title": "a shoe repair shop"
+                        }
+                    }
+                }
             }
         },
         "title": "Climbing gyms, clubs and spots"

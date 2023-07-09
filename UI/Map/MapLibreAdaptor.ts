@@ -353,7 +353,11 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
         const center = map.getCenter()
         if (center.lng !== loc.lon || center.lat !== loc.lat) {
-            map.setCenter({ lng: loc.lon, lat: loc.lat })
+            if (isNaN(loc.lon) || isNaN(loc.lat)) {
+                console.error("Got invalid lat or lon, not setting")
+            } else {
+                map.setCenter({ lng: loc.lon, lat: loc.lat })
+            }
         }
     }
 
