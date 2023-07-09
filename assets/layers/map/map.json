@@ -86,7 +86,7 @@
         {
           "if": "map_size=building",
           "then": {
-            "en": "A map of the romms within a building"
+            "en": "A map of the rooms within a building"
           }
         },
         {

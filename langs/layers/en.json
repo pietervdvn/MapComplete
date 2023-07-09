@@ -5634,7 +5634,7 @@
             "map_size": {
                 "mappings": {
                     "0": {
-                        "then": "A map of the romms within a building"
+                        "then": "A map of the rooms within a building"
                     },
                     "1": {
                         "then": "A map of special site, like of a historical castle, a park, a campus, a forest, ...."
@@ -5643,7 +5643,7 @@
                         "then": "A map showing the village or town"
                     },
                     "3": {
-                        "then": " A map of a city."
+                        "then": " A map of a city"
                     },
                     "4": {
                         "then": "The map of an entire region, showing multiple cities and villages"
