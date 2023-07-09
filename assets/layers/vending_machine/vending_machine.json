@@ -1,0 +1,590 @@
+{
+  "id": "vending_machine",
+  "name": {
+    "en": "Vending Machines",
+    "nl": "Verkoopautomaten"
+  },
+  "description": {
+    "en": "Layer showing vending machines",
+    "nl": "Laag met verkoopautomaten"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=vending_machine",
+        "vending!~(parking_tickets|public_transport_tickets|bottle_return|excrement_bags|elongated_coin)"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Vending machine",
+      "nl": "Verkoopautomaat"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "Vending machine {name}",
+          "nl": "Verkoopautomaat {name}"
+        }
+      },
+      {
+        "if": "brand~*",
+        "then": {
+          "en": "Vending machine {brand}",
+          "nl": "Verkoopautomaat {brand}"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "id": "vending",
+      "question": {
+        "en": "What does this vending machine sell?",
+        "nl": "Wat verkoopt deze verkoopautomaat?"
+      },
+      "freeform": {
+        "key": "vending",
+        "addExtraTags": [
+          "fixme=Freeform input used, value may need to be checked"
+        ]
+      },
+      "render": {
+        "en": "This vending machine sells {vending}",
+        "nl": "Deze verkoopautomaat verkoopt {vending}"
+      },
+      "mappings": [
+        {
+          "if": "vending=drinks",
+          "then": {
+            "en": "Drinks are sold",
+            "nl": "Dranken worden verkocht"
+          },
+          "icon": "./assets/layers/id_presets/temaki-bottles.svg"
+        },
+        {
+          "if": "vending=sweets",
+          "then": {
+            "en": "Sweets are sold",
+            "nl": "Snoep wordt verkocht"
+          },
+          "icon": "./assets/layers/id_presets/maki-confectionery.svg"
+        },
+        {
+          "if": "vending=food",
+          "then": {
+            "en": "Food is sold",
+            "nl": "Eten wordt verkocht"
+          },
+          "icon": "./assets/layers/vending_machine/utensils.svg"
+        },
+        {
+          "if": "vending=cigarettes",
+          "then": {
+            "en": "Cigarettes are sold",
+            "nl": "Sigaretten worden verkocht"
+          },
+          "icon": "./assets/layers/vending_machine/smoking.svg"
+        },
+        {
+          "if": "vending=condoms",
+          "then": {
+            "en": "Condoms are sold",
+            "nl": "Condooms worden verkocht"
+          }
+        },
+        {
+          "if": "vending=coffee",
+          "then": {
+            "en": "Coffee is sold",
+            "nl": "Koffie wordt verkocht"
+          },
+          "icon": "./assets/layers/vending_machine/mug-saucer.svg"
+        },
+        {
+          "if": "vending=water",
+          "then": {
+            "en": "Drinking water is sold",
+            "nl": "Drinkwater wordt verkocht"
+          },
+          "icon": "./assets/layers/id_presets/temaki-water_bottle.svg"
+        },
+        {
+          "if": "vending=newspapers",
+          "then": {
+            "en": "Newspapers are sold",
+            "nl": "Kranten worden verkocht"
+          },
+          "icon": "./assets/layers/id_presets/fas-newspaper.svg"
+        },
+        {
+          "if": "vending=bicycle_tube",
+          "then": {
+            "en": "Bicycle inner tubes are sold",
+            "nl": "Binnenbanden voor fietsen worden verkocht"
+          }
+        },
+        {
+          "if": "vending=milk",
+          "then": {
+            "en": "Milk is sold",
+            "nl": "Melk wordt verkocht"
+          },
+          "icon": "./assets/layers/vending_machine/cow.svg"
+        },
+        {
+          "if": "vending=bread",
+          "then": {
+            "en": "Bread is sold",
+            "nl": "Brood wordt verkocht"
+          },
+          "icon": "./assets/layers/id_presets/maki-bakery.svg"
+        },
+        {
+          "if": "vending=eggs",
+          "then": {
+            "en": "Eggs are sold",
+            "nl": "Eieren worden verkocht"
+          },
+          "icon": "./assets/layers/vending_machine/egg.svg"
+        },
+        {
+          "if": "vending=cheese",
+          "then": {
+            "en": "Cheese is sold",
+            "nl": "Kaas wordt verkocht"
+          },
+          "icon": "./assets/layers/id_presets/fas-cheese.svg"
+        },
+        {
+          "if": "vending=honey",
+          "then": {
+            "en": "Honey is sold",
+            "nl": "Honing wordt verkocht"
+          },
+          "icon": "./assets/layers/vending_machine/honey.svg"
+        },
+        {
+          "if": "vending=potatoes",
+          "then": {
+            "en": "Potatoes are sold",
+            "nl": "Aardappelen worden verkocht"
+          },
+          "icon": "./assets/layers/vending_machine/potato.svg"
+        },
+        {
+          "if": "vending=flowers",
+          "then": {
+            "en": "Flowers are sold",
+            "nl": "Bloemen worden verkocht"
+          },
+          "icon": "./assets/layers/id_presets/maki-florist.svg"
+        }
+      ],
+      "multiAnswer": true
+    },
+    "opening_hours_24_7",
+    "payment-options-split",
+    "denominations-coins",
+    "denominations-notes",
+    {
+      "id": "operator",
+      "question": {
+        "en": "Who operates this vending machine?",
+        "nl": "Wie beheert deze verkoopautomaat?"
+      },
+      "freeform": {
+        "key": "operator",
+        "placeholder": {
+          "en": "Name of operator",
+          "nl": "Naam van beheerder"
+        }
+      },
+      "render": {
+        "en": "This vending machine is operated by {operator}",
+        "nl": "Deze verkoopautomaat wordt beheerd door {operator}"
+      }
+    },
+    {
+      "id": "indoor",
+      "question": {
+        "en": "Is this vending machine indoors?",
+        "nl": "Is deze verkoopautomaat binnen?"
+      },
+      "mappings": [
+        {
+          "if": "indoor=",
+          "then": {
+            "en": "This vending machine is outdoors",
+            "nl": "Deze verkoopautomaat is buiten"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "indoor=yes",
+          "then": {
+            "en": "This vending machine is indoors",
+            "nl": "Deze verkoopautomaat is binnen"
+          }
+        },
+        {
+          "if": "indoor=no",
+          "then": {
+            "en": "This vending machine is outdoors",
+            "nl": "Deze verkoopautomaat is buiten"
+          }
+        }
+      ]
+    },
+    "level"
+  ],
+  "calculatedTags": [
+    "_vending_count=feat.properties.vending.split(';').length"
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a vending machine",
+        "nl": "een verkoopautomaat"
+      },
+      "tags": [
+        "amenity=vending_machine"
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "./assets/layers/vending_machine/vending_machine.svg",
+        "mappings": [
+          {
+            "if": "vending=drinks",
+            "then": "circle:white;./assets/layers/id_presets/temaki-bottles.svg"
+          },
+          {
+            "if": "vending=sweets",
+            "then": "circle:white;./assets/layers/id_presets/maki-confectionery.svg"
+          },
+          {
+            "if": "vending=food",
+            "then": "circle:white;./assets/layers/vending_machine/utensils.svg"
+          },
+          {
+            "if": "vending=cigarettes",
+            "then": "circle:white;./assets/layers/vending_machine/smoking.svg"
+          },
+          {
+            "if": "vending=coffee",
+            "then": "circle:white;./assets/layers/vending_machine/mug-saucer.svg"
+          },
+          {
+            "if": "vending=water",
+            "then": "circle:white;./assets/layers/id_presets/temaki-water_bottle.svg"
+          },
+          {
+            "if": "vending=newspapers",
+            "then": "circle:white;./assets/layers/id_presets/fas-newspaper.svg"
+          },
+          {
+            "if": "vending=milk",
+            "then": "circle:white;./assets/layers/vending_machine/cow.svg"
+          },
+          {
+            "if": "vending=bread",
+            "then": "circle:white;./assets/layers/id_presets/maki-bakery.svg"
+          },
+          {
+            "if": "vending=eggs",
+            "then": "circle:white;./assets/layers/vending_machine/egg.svg"
+          },
+          {
+            "if": "vending=cheese",
+            "then": "circle:white;./assets/layers/id_presets/fas-cheese.svg"
+          },
+          {
+            "if": "vending=honey",
+            "then": "circle:white;./assets/layers/vending_machine/honey.svg"
+          },
+          {
+            "if": "vending=potatoes",
+            "then": "circle:white;./assets/layers/vending_machine/potato.svg"
+          },
+          {
+            "if": "vending=flowers",
+            "then": "circle:white;./assets/layers/id_presets/maki-florist.svg"
+          }
+        ]
+      },
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*drinks.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/id_presets/temaki-bottles.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*sweets.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/id_presets/maki-confectionery.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*food.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/vending_machine/utensils.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*cigarettes.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/vending_machine/smoking.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*coffee.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/vending_machine/mug-saucer.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*water.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/id_presets/temaki-water_bottle.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*newspapers.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/id_presets/fas-newspaper.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*milk.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/vending_machine/cow.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*bread.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/id_presets/maki-bakery.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*eggs.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/vending_machine/egg.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*cheese.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/id_presets/fas-cheese.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*honey.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/vending_machine/honey.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*potatoes.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/vending_machine/potato.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*flowers.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/id_presets/maki-florist.svg"
+        }
+      ]
+    }
+  ],
+  "filter": [
+    "open_now",
+    {
+      "id": "vending",
+      "options": [
+        {
+          "question": {
+            "en": "All vending machines",
+            "nl": "Alle verkoopautomaten"
+          }
+        },
+        {
+          "question": {
+            "en": "Sale of drinks",
+            "nl": "Verkoop van dranken"
+          },
+          "osmTags": "vending~i~.*drinks.*"
+        },
+        {
+          "question": {
+            "en": "Sale of sweets",
+            "nl": "Verkoop van snoep"
+          },
+          "osmTags": "vending~i~.*sweets.*"
+        },
+        {
+          "question": {
+            "en": "Sale of food",
+            "nl": "Verkoop van eten"
+          },
+          "osmTags": "vending~i~.*food.*"
+        },
+        {
+          "question": {
+            "en": "Sale of cigarettes",
+            "nl": "Verkoop van sigaretten"
+          },
+          "osmTags": "vending~i~.*cigarettes.*"
+        },
+        {
+          "question": {
+            "en": "Sale of condoms",
+            "nl": "Verkoop van condooms"
+          },
+          "osmTags": "vending~i~.*condoms.*"
+        },
+        {
+          "question": {
+            "en": "Sale of coffee",
+            "nl": "Verkoop van koffie"
+          },
+          "osmTags": "vending~i~.*coffee.*"
+        },
+        {
+          "question": {
+            "en": "Sale of water",
+            "nl": "Verkoop van water"
+          },
+          "osmTags": "vending~i~.*water.*"
+        },
+        {
+          "question": {
+            "en": "Sale of newspapers",
+            "nl": "Verkoop van kranten"
+          },
+          "osmTags": "vending~i~.*newspapers.*"
+        },
+        {
+          "question": {
+            "en": "Sale of bicycle inner tubes",
+            "nl": "Verkoop van fietsbinnenbanden"
+          },
+          "osmTags": "vending~i~.*bicycle_tube.*"
+        },
+        {
+          "question": {
+            "en": "Sale of milk",
+            "nl": "Verkoop van melk"
+          },
+          "osmTags": "vending~i~.*milk.*"
+        },
+        {
+          "question": {
+            "en": "Sale of bread",
+            "nl": "Verkoop van brood"
+          },
+          "osmTags": "vending~i~.*bread.*"
+        },
+        {
+          "question": {
+            "en": "Sale of eggs",
+            "nl": "Verkoop van eieren"
+          },
+          "osmTags": "vending~i~.*eggs.*"
+        },
+        {
+          "question": {
+            "en": "Sale of cheese",
+            "nl": "Verkoop van kaas"
+          },
+          "osmTags": "vending~i~.*cheese.*"
+        },
+        {
+          "question": {
+            "en": "Sale of honey",
+            "nl": "Verkoop van honing"
+          },
+          "osmTags": "vending~i~.*honey.*"
+        },
+        {
+          "question": {
+            "en": "Sale of potatoes",
+            "nl": "Verkoop van aardappelen"
+          },
+          "osmTags": "vending~i~.*potatoes.*"
+        },
+        {
+          "question": {
+            "en": "Sale of flowers",
+            "nl": "Verkoop van bloemen"
+          },
+          "osmTags": "vending~i~.*flowers.*"
+        }
+      ]
+    }
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": true
+  },
+  "deletion": true
+}
