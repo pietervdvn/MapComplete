@@ -130,7 +130,10 @@
       },
       "freeform": {
         "key": "subject",
-        "addExtraTags": ["noname=","name="]
+        "addExtraTags": [
+          "noname=",
+          "name="
+        ]
       },
       "mappings": [
         {
@@ -155,7 +158,10 @@
             "fr": "Aucun nom n'est marqué sur le vélo",
             "ca": "No hi ha cap nom marcat a la bicicleta"
           },
-          "addExtraTags": ["name=","subject="]
+          "addExtraTags": [
+            "name=",
+            "subject="
+          ]
         }
       ],
       "id": "ghost_bike-name",

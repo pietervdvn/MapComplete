@@ -1,5 +1,5 @@
 {
-    "shared_questions": {
+    "questions": {
         "description": {
             "question": "Van-e még valami lényeges, amit nem tudott megadni az előző kérdésekben? Itt megteheti.",
             "questionHint": "Ne ismételjen meg már megadott tényeket"

@@ -5047,12 +5047,15 @@
             "ghost_bike-name": {
                 "mappings": {
                     "0": {
+                        "then": "Im Gedenken an {name}"
+                    },
+                    "1": {
                         "then": "Am Fahrrad ist kein Name angegeben"
                     }
                 },
                 "question": "An wen erinnert dieses Geisterrad?",
                 "questionHint": "Bitte respektieren Sie die Privatsphäre - geben Sie den Namen nur an, wenn er weit verbreitet oder auf dem Fahrrad markiert ist. Den Familiennamen können Sie weglassen.",
-                "render": "Im Gedenken an {name}"
+                "render": "Im Gedenken an {subject}"
             },
             "ghost_bike-source": {
                 "question": "Auf welcher Webseite kann man mehr Informationen über das Geisterrad oder den Unfall finden?",
@@ -5066,6 +5069,9 @@
         "title": {
             "mappings": {
                 "0": {
+                    "then": "Geisterrad im Gedenken an {subject}"
+                },
+                "1": {
                     "then": "Geisterrad im Gedenken an {name}"
                 }
             },
@@ -5624,6 +5630,23 @@
                 },
                 "question": "Auf welchen Daten basiert diese Karte?",
                 "render": "Diese Karte basiert auf {map_source}"
+            },
+            "map_size": {
+                "mappings": {
+                    "1": {
+                        "then": "Örtlichkeit (z.B. Burg)"
+                    },
+                    "3": {
+                        "then": "Stadt"
+                    },
+                    "4": {
+                        "then": "Region"
+                    }
+                },
+                "question": "Was wird von der Fläche abgedeckt?"
+            },
+            "map_type": {
+                "question": "Was für eine Karte ist das?"
             }
         },
         "title": {

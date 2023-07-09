@@ -988,7 +988,12 @@
                 "render": "<i>{inscription}</i>"
             },
             "ghost_bike-name": {
-                "render": "В знак памяти о {name}"
+                "mappings": {
+                    "0": {
+                        "then": "В знак памяти о {name}"
+                    }
+                },
+                "render": "В знак памяти о {subject}"
             },
             "ghost_bike-source": {
                 "render": "<a href='{source}' target='_blank'>Доступна более подробная информация</a>"
