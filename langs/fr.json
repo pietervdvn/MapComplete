@@ -1,4 +1,7 @@
 {
+    "advanced": {
+        "title": "Fonctionnalités avancées"
+    },
     "centerMessage": {
         "loadingData": "Chargement des données…",
         "ready": "Fini !",
@@ -208,6 +211,7 @@
         "pickLanguage": "Choisir la langue : ",
         "poweredByOsm": "Propulsé par OpenStreetMap",
         "questionBox": {
+            "answeredMultipleSkippedMultiple": "Vous avez répondu à {answered} questions et passé {skipped} questions",
             "done": "Pas d'autre question ! Merci !",
             "reactivate": "Réactiver les questions passées"
         },
