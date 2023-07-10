@@ -208,6 +208,7 @@
         "pickLanguage": "Choisir la langue : ",
         "poweredByOsm": "Propulsé par OpenStreetMap",
         "questionBox": {
+            "done": "Pas d'autre question ! Merci !",
             "reactivate": "Réactiver les questions passées"
         },
         "questions": {
