@@ -456,6 +456,7 @@
         "missing": "{count} segments non traduits"
     },
     "userinfo": {
+        "editDescription": "Modifier ton profil",
         "gotoInbox": "Ouvrir sa boite de réception",
         "gotoSettings": "Paramètres sur OpenStreetMap.org"
     },
