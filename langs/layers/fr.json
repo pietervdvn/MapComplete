@@ -1293,6 +1293,22 @@
     },
     "bike_shop": {
         "description": "Un magasin vendant spécifiquement des vélos ou des objets en lien",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Vend des vélos usagés"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Offre des services DIY"
+                    }
+                }
+            }
+        },
         "name": "Magasin ou réparateur de vélo",
         "presets": {
             "0": {
@@ -1414,13 +1430,13 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Magasin de sport <i>{name}</i>"
+                    "then": "Magasin d'équipements de sport <i>{name}</i>"
                 },
                 "1": {
                     "then": "Magasin"
                 },
                 "2": {
-                    "then": "Location de vélo <i>{name}</i>"
+                    "then": "Magasin de location de vélo <i>{name}</i>"
                 },
                 "3": {
                     "then": "Réparateur de vélo <i>{name}</i>"
