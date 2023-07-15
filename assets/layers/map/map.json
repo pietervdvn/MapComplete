@@ -105,7 +105,7 @@
         {
           "if": "map_size=city",
           "then": {
-            "en": " A map of a city.",
+            "en": " A map of a city",
             "de": "Stadt"
           }
         },

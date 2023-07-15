@@ -16,10 +16,10 @@ import RewritableConfigJson from "../Json/RewritableConfigJson"
 import SpecialVisualizations from "../../../UI/SpecialVisualizations"
 import Translations from "../../../UI/i18n/Translations"
 import { Translation } from "../../../UI/i18n/Translation"
-import tagrenderingconfigmeta from "../../../assets/tagrenderingconfigmeta.json"
+import tagrenderingconfigmeta from "../../../../src/assets/schemas/tagrenderingconfigmeta.json"
 import { AddContextToTranslations } from "./AddContextToTranslations"
 import FilterConfigJson from "../Json/FilterConfigJson"
-import predifined_filters from "../../../assets/layers/filters/filters.json"
+import predifined_filters from "../../../../assets/layers/filters/filters.json"
 import { TagConfigJson } from "../Json/TagConfigJson"
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
@@ -147,7 +147,7 @@ class ExpandTagRendering extends Conversion<
         this._self = self
         this._options = options
         this._tagRenderingsByLabel = new Map<string, TagRenderingConfigJson[]>()
-        for (const trconfig of state.tagRenderings.values()) {
+        for (const trconfig of state.tagRenderings?.values() ?? []) {
             for (const label of trconfig.labels ?? []) {
                 let withLabel = this._tagRenderingsByLabel.get(label)
                 if (withLabel === undefined) {
@@ -219,12 +219,12 @@ class ExpandTagRendering extends Conversion<
         }
 
         const spl = name.split(".")
-        let layer = state.sharedLayers.get(spl[0])
+        let layer = state.sharedLayers?.get(spl[0])
         if (spl[0] === this._self.id) {
             layer = this._self
         }
 
-        if (spl.length !== 2 || layer === undefined) {
+        if (spl.length !== 2 || !layer) {
             return undefined
         }
 
@@ -276,10 +276,13 @@ class ExpandTagRendering extends Conversion<
         const state = this._state
 
         if (typeof tr === "string") {
-            const lookup = this.lookup(tr)
+            let lookup
+            if (this._state.tagRenderings !== null) {
+                lookup = this.lookup(tr)
+            }
             if (lookup === undefined) {
                 const isTagRendering = ctx.indexOf("On(mapRendering") < 0
-                if (isTagRendering && this._state.sharedLayers.size > 0) {
+                if (isTagRendering && this._state.sharedLayers?.size > 0) {
                     warnings.push(
                         `${ctx}: A literal rendering was detected: ${tr}
     Did you perhaps forgot to add a layer name as 'layername.${tr}'? ` +
@@ -287,7 +290,7 @@ class ExpandTagRendering extends Conversion<
                     )
                 }
 
-                if (this._options?.noHardcodedStrings && this._state.sharedLayers.size > 0) {
+                if (this._options?.noHardcodedStrings && this._state?.sharedLayers?.size > 0) {
                     errors.push(
                         ctx +
                             "Detected an invocation to a builtin tagRendering, but this tagrendering was not found: " +
@@ -312,6 +315,10 @@ class ExpandTagRendering extends Conversion<
             let names: string | string[] = tr["builtin"]
             if (typeof names === "string") {
                 names = [names]
+            }
+
+            if (this._state.tagRenderings === null) {
+                return []
             }
 
             for (const key of Object.keys(tr)) {
@@ -391,6 +398,9 @@ class ExpandTagRendering extends Conversion<
                 for (let foundTr of lookup) {
                     foundTr = Utils.Clone<any>(foundTr)
                     Utils.Merge(tr["override"] ?? {}, foundTr)
+                    if (names.length == 1) {
+                        foundTr["id"] = tr["id"] ?? foundTr["id"]
+                    }
                     trs.push(foundTr)
                 }
             }
@@ -606,6 +616,9 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
         json: LayerConfigJson,
         context: string
     ): { result: LayerConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
+        if (this._desugaring.tagRenderings === null) {
+            return { result: json }
+        }
         json = JSON.parse(JSON.stringify(json))
 
         if (

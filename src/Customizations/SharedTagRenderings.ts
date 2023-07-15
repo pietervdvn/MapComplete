@@ -1,4 +1,3 @@
-import questions from "../assets/tagRenderings/questions.json"
 import { Utils } from "../Utils"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
 import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
@@ -40,39 +39,7 @@ export default class SharedTagRenderings {
     private static generatedSharedFieldsJsons(): Map<string, TagRenderingConfigJson> {
         const dict = new Map<string, TagRenderingConfigJson>()
 
-        for (const key in questions) {
-            if (key === "id") {
-                continue
-            }
-            dict.set(key, <TagRenderingConfigJson>questions[key])
-        }
-
-        dict.forEach((value, key) => {
-            if (key === "id") {
-                return
-            }
-            value.id = value.id ?? key
-            if (value["builtin"] !== undefined) {
-                if (value["override"] == undefined) {
-                    throw (
-                        "HUH? Why whould you want to reuse a builtin if one doesn't override? In questions.json/" +
-                        key
-                    )
-                }
-                if (typeof value["builtin"] !== "string") {
-                    return
-                }
-                // This is a really funny situation: we extend another tagRendering!
-                const parent = Utils.Clone(dict.get(value["builtin"]))
-                delete parent.id
-                Utils.Merge(value["override"], parent)
-                delete value["builtin"]
-                delete value["override"]
-                for (const pkey in parent) {
-                    value[pkey] = parent[pkey]
-                }
-            }
-        })
+        // TODO FIXME
 
         return dict
     }

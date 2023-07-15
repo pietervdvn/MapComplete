@@ -1,17 +1,17 @@
 import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFile, writeFileSync } from "fs"
-import Locale from "../UI/i18n/Locale"
-import Translations from "../UI/i18n/Translations"
-import { Translation } from "../UI/i18n/Translation"
-import all_known_layouts from "../assets/generated/known_themes.json"
-import { LayoutConfigJson } from "../Models/ThemeConfig/Json/LayoutConfigJson"
-import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import Locale from "../src/UI/i18n/Locale"
+import Translations from "../src/UI/i18n/Translations"
+import { Translation } from "../src/UI/i18n/Translation"
+import all_known_layouts from "../src/assets/generated/known_themes.json"
+import { LayoutConfigJson } from "../src/Models/ThemeConfig/Json/LayoutConfigJson"
+import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
 import xml2js from "xml2js"
 import ScriptUtils from "./ScriptUtils"
-import { Utils } from "../Utils"
+import { Utils } from "../src/Utils"
 
 const sharp = require("sharp")
 const template = readFileSync("theme.html", "utf8")
-const codeTemplate = readFileSync("index_theme.ts.template", "utf8")
+const codeTemplate = readFileSync("src/index_theme.ts.template", "utf8")
 
 function enc(str: string): string {
     return encodeURIComponent(str.toLowerCase())

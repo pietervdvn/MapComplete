@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Translation } from "../i18n/Translation"
-  import * as personal from "../../assets/themes/personal/personal.json"
+  import * as personal from "../../../assets/themes/personal/personal.json"
   import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
   import UserDetails, { OsmConnection } from "../../Logic/Osm/OsmConnection"
   import Constants from "../../Models/Constants"

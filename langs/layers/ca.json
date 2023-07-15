@@ -4191,6 +4191,326 @@
             "render": "Bústia per llibres"
         }
     },
+    "questions": {
+        "tagRenderings": {
+            "denominations-coins": {
+                "mappings": {
+                    "0": {
+                        "then": "S'accepten monedes de 1 cèntim"
+                    },
+                    "1": {
+                        "then": "S'accepten monedes de 2 cèntims"
+                    },
+                    "2": {
+                        "then": "S'accepten monedes de 5 cèntims"
+                    },
+                    "3": {
+                        "then": "S'accepten monedes de 10 cèntims"
+                    },
+                    "4": {
+                        "then": "S'accepten monedes de 20 cèntims"
+                    },
+                    "5": {
+                        "then": "S'accepten monedes de 50 cèntims"
+                    },
+                    "6": {
+                        "then": "S'accepten monedes de 1 euro"
+                    },
+                    "7": {
+                        "then": "S'accepten monedes de 2 euros"
+                    }
+                },
+                "question": "Quines monedes es poden utilitzar per a pagar aquí?"
+            },
+            "denominations-notes": {
+                "mappings": {
+                    "0": {
+                        "then": "S'accepten billets de 5 euros"
+                    },
+                    "1": {
+                        "then": "S'accepten bitllets de 10 euros"
+                    },
+                    "2": {
+                        "then": "S'accepten bitllets de 20 euros"
+                    },
+                    "3": {
+                        "then": "S'accepten bitllets de 50 euros"
+                    },
+                    "4": {
+                        "then": "S'accepten bitllets de 100 euros"
+                    },
+                    "5": {
+                        "then": "S'accepten bitllets de 200 euros"
+                    },
+                    "6": {
+                        "then": "S'accepten bitllets de 500 euros"
+                    }
+                },
+                "question": "Amb quins bitllets pot pagar aquí?"
+            },
+            "description": {
+                "question": "Hi ha quelcom rellevant que no t'hem preguntat? Afegeix-ho aquí.",
+                "questionHint": "No repeteixis informació que ja hi és"
+            },
+            "dog-access": {
+                "mappings": {
+                    "0": {
+                        "then": "S'accepten gossos"
+                    },
+                    "1": {
+                        "then": "<b>No</b> s'accepten gossos"
+                    },
+                    "2": {
+                        "then": "S'accepten gossos però lligats"
+                    },
+                    "3": {
+                        "then": "S'accepten gossos lliures"
+                    }
+                },
+                "question": "S'accepten gossos en aquest negoci?"
+            },
+            "email": {
+                "question": "Quina és l'adreça de correu electrònic de {title()}?"
+            },
+            "induction-loop": {
+                "mappings": {
+                    "0": {
+                        "then": "El lloc té un bucle magnètic"
+                    },
+                    "1": {
+                        "then": "El lloc <b>no</b> té un bucle magnètic"
+                    }
+                },
+                "question": "Aquest lloc té un bucle magnètic per a la gent amb dificultats auditives?"
+            },
+            "internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest lloc ofereix accés a internet inalàmbric"
+                    },
+                    "1": {
+                        "then": "Aquest lloc <b>no</b> ofereix accés a internet"
+                    },
+                    "2": {
+                        "then": "Aquest lloc ofereix accés a internet"
+                    },
+                    "3": {
+                        "then": "Aquest lloc ofereix accés a internet a través d'una terminal o ordinador"
+                    },
+                    "4": {
+                        "then": "Aquest lloc ofereix accés a internet per cable"
+                    }
+                },
+                "question": "Aquest lloc ofereix accés a internet?"
+            },
+            "internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquí hi ha que pagar per a accedir a internet"
+                    },
+                    "1": {
+                        "then": "Aquí l'accés a internet és gratuït"
+                    },
+                    "2": {
+                        "then": "Aquí l'accés a internet és gratuït sols per als clients"
+                    }
+                },
+                "question": "Hi ha que pagar per a accedir a internet?"
+            },
+            "internet-ssid": {
+                "freeform": {
+                    "placeholder": "Intruduixca el nom de la xarxa"
+                },
+                "question": "Quin és el nom de la xarxa per a l'accés inalàmbric a internet?",
+                "render": "El nom de la xarxa és <b>{internet_access:ssid}</b>"
+            },
+            "just_created": {
+                "mappings": {
+                    "0": {
+                        "then": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món."
+                    }
+                }
+            },
+            "level": {
+                "mappings": {
+                    "0": {
+                        "then": "Situat a planta subterrani"
+                    },
+                    "1": {
+                        "then": "Situat a planta zero"
+                    },
+                    "2": {
+                        "then": "Situat a la planta zero"
+                    },
+                    "3": {
+                        "then": "Situat a primera planta"
+                    },
+                    "4": {
+                        "then": "Localitzat a la planta base"
+                    }
+                },
+                "question": "A quina planta està situat aquest element?",
+                "render": "Situat a la planta {level}"
+            },
+            "luminous_or_lit": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest objecte emet llum i també està il·luminat externament"
+                    },
+                    "1": {
+                        "then": "Aquest objecte emet llum"
+                    },
+                    "2": {
+                        "then": "Aquest objecte està il·luminat externament, p.e. amb un focus o altres llums"
+                    },
+                    "3": {
+                        "then": "Aquest objecte no emet llum i no està il·luminat externament"
+                    }
+                },
+                "question": "Aquest objecte està il·luminat o emet llum?"
+            },
+            "multilevels": {
+                "override": {
+                    "question": "A quins pisos va aquest ascensor?",
+                    "render": "Aquest ascensor va als pisos {level}"
+                }
+            },
+            "opening_hours": {
+                "question": "Quin és l'horari d'obertura de {title()}?",
+                "render": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "Obert 24/7 (incloent-hi festius)"
+                        }
+                    }
+                }
+            },
+            "opening_hours_by_appointment": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "Sols amb cita prèvia"
+                        },
+                        "1": {
+                            "then": "Sols amb cita prèvia"
+                        }
+                    }
+                }
+            },
+            "payment-options": {
+                "mappings": {
+                    "0": {
+                        "then": "S'accepten diners"
+                    },
+                    "1": {
+                        "then": "S'accepten targetes de crèdit"
+                    },
+                    "2": {
+                        "then": "Aquí es pot pagar amb codi QR"
+                    }
+                },
+                "question": "Quins mètodes de pagament s'accepten aquí?"
+            },
+            "payment-options-advanced": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "El pagament es fa amb una app dedicada"
+                        },
+                        "1": {
+                            "then": "El pagament es fa amb una targeta de membre"
+                        }
+                    }
+                }
+            },
+            "payment-options-split": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Aquí s'accepten monedes"
+                        },
+                        "1": {
+                            "then": "Aquí s'accepten bitllets"
+                        },
+                        "2": {
+                            "then": "Aquí s'accepten targetes de dèbit"
+                        },
+                        "3": {
+                            "then": "Aquí s'accepten targetes de crèdit"
+                        }
+                    }
+                }
+            },
+            "phone": {
+                "question": "Quin és el telèfon de {title()}?"
+            },
+            "service:electricity": {
+                "mappings": {
+                    "0": {
+                        "then": "Està ple d'endolls pels clients de dins, on es poden carregar els aparells electrònics"
+                    },
+                    "1": {
+                        "then": "Hi ha alguns endolls disponibles per als clients de dins, on es poden carregar els aparells electrònics"
+                    },
+                    "2": {
+                        "then": "No hi ha endolls disponibles per als clients però es pot carregar si es demana als responsables"
+                    },
+                    "3": {
+                        "then": "No hi ha endolls disponibles per als clients"
+                    }
+                },
+                "question": "Aquest servei té endolls elèctrics, disponibles pels clients quan hi són dins?"
+            },
+            "smoking": {
+                "mappings": {
+                    "0": {
+                        "then": "Està <b>permès</b> fumar"
+                    },
+                    "1": {
+                        "then": "<b>No</b> està permés fumar"
+                    },
+                    "2": {
+                        "then": "Està permés fumar <b>a l'exterior</b>."
+                    }
+                },
+                "question": "Està permés fumar a {title()}?"
+            },
+            "website": {
+                "question": "Quina és la web de {title()}?"
+            },
+            "wheelchair-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest lloc està especialment adaptat per a les cadires de rodes"
+                    },
+                    "1": {
+                        "then": "És facilment arribable amb cadira de rodes"
+                    },
+                    "2": {
+                        "then": "És possible fer servir cadira de rodes a aquest lloc però no és fàcil"
+                    },
+                    "3": {
+                        "then": "Aquest lloc no és accessible amb cadira de rodes"
+                    }
+                },
+                "question": "Aquest lloc és accessible amb cadira de rodes?"
+            },
+            "wikipedia": {
+                "mappings": {
+                    "0": {
+                        "then": "No hi ha cap enllaça a Viquipèdia encara"
+                    },
+                    "1": {
+                        "then": "No hi ha cap enllaça a Viquipèdia encara"
+                    }
+                },
+                "question": "Quina és la correspondent entitat a Wikidata?"
+            }
+        }
+    },
     "railway_platforms": {
         "description": "Trobeu totes les andanes de l'estació i les rutes de tren que les fan servir.",
         "name": "Andanes ferroviàries",

@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
     <link href="./css/mobile.css" rel="stylesheet"/>
+    <link href="./css/openinghourstable.css" rel="stylesheet"/>
     <link href="./css/tagrendering.css" rel="stylesheet"/>
+    <link href="css/ReviewElement.css" rel="stylesheet"/>
     <link href="./css/index-tailwind-output.css" rel="stylesheet"/>
+    <link href="./css/wikipedia.css" rel="stylesheet"/>
     <meta content="website" property="og:type">
 
-    <title>MapComplete - page not found</title>
-    <link href="./index.manifest" rel="manifest">
+    <!-- THEME-SPECIFIC -->
+    <!-- Every theme gets their own html page, this is created by a script; this part will be removed except for the index -->
+    <title>MapComplete</title>
+    <link href="./index.webmanifest" rel="manifest">
+    
+    <!-- Mastodon link verification: https://docs.joinmastodon.org/user/profile/#Link%20verification -->
+    <a rel="me" href="https://en.osm.town/@MapComplete" style="display: none">Mastodon</a>
     <link href="./assets/svg/add.svg" rel="icon" sizes="any" type="image/svg+xml">
-    <meta content="MapComplete - Page not found" property="og:title">
+    <meta content="./assets/SocialImage.png" property="og:image">
+    <meta content="MapComplete - editable, thematic maps with OpenStreetMap" property="og:title">
     <meta content="MapComplete is a platform to visualize OpenStreetMap on a specific topic and to easily contribute data back to it."
           property="og:description">
 
@@ -27,6 +36,8 @@
     <link href="./assets/generated/images/assets_svg_mapcomplete_logo72.png" rel="apple-touch-icon" sizes="72x72">
 
 
+    <!-- THEME-SPECIFIC-END-->
+
     <style>
         #decoration-desktop img {
             width: 100%;
@@ -37,20 +48,26 @@
 </head>
 <body>
 
-<div id="decoration-desktop" style="position: fixed; left: 1em; bottom: 1em; width:35vh; height:35vh;">
-    <!-- A nice decoration while loading or on errors -->
-    <!-- DECORATION 0 START -->
-    <img src="./assets/svg/add.svg"/>
-    <!-- DECORATION 0 END -->
-</div>
 
-<div class="clutter absolute h-24 left-24 right-24 top-56 text-xl text-center"
-     id="maindiv" style="z-index: 4000">
-    Not found...
-</div>
-
-<script type="module" src="./notfound.ts"></script>
+<div id="main"></div>
+<script type="module" src="./src/all_themes_index.ts"></script>
 <script async data-goatcounter="https://pietervdvn.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
+
+<script>
+    window.addEventListener('load', () => {
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').then(
+                () => {
+                    console.log('Service worker registration successful');
+                },
+                err => {
+                    console.error('Service worker registration failed', err)
+                });
+        } else {
+            console.log("Service workers are not supported")
+        }
+    });
+</script>
 
 </body>
 </html>

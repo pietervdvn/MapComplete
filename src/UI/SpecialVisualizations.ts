@@ -375,8 +375,6 @@ export default class SpecialVisualizations {
                         .map((sp) => sp.funcName + "()")
                         .join(", ")
             }
-
-            console.warn("Found a suspicious special rendering value in: ", template, suggestion)
         }
 
         // IF we end up here, no changes have to be made - except to remove any resting {}

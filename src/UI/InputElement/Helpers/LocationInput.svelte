@@ -7,7 +7,7 @@
   import DragInvitation from "../../Base/DragInvitation.svelte"
   import { GeoOperations } from "../../../Logic/GeoOperations"
   import ShowDataLayer from "../../Map/ShowDataLayer"
-  import * as boundsdisplay from "../../../assets/layers/range/range.json"
+  import * as boundsdisplay from "../../../../assets/layers/range/range.json"
   import StaticFeatureSource from "../../../Logic/FeatureSource/Sources/StaticFeatureSource"
   import * as turf from "@turf/turf"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"

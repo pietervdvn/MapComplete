@@ -1,5 +1,5 @@
 import { Utils } from "../Utils"
-import * as meta from "../package.json"
+import * as meta from "../../package.json"
 
 export type PriviligedLayerType = (typeof Constants.priviliged_layers)[number]
 

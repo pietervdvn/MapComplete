@@ -1,6 +1,6 @@
 import * as fs from "fs"
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs"
-import { Utils } from "../Utils"
+import { Utils } from "../src/Utils"
 import ScriptUtils from "./ScriptUtils"
 
 const knownLanguages = ["en", "nl", "de", "fr", "es", "gl", "ca"]
@@ -460,8 +460,11 @@ function formatFile(path) {
  * Generates the big compiledTranslations file
  */
 function genTranslations() {
+    if (!fs.existsSync("./src/assets/generated/")) {
+        fs.mkdirSync("./src/assets/generated/")
+    }
     const translations = JSON.parse(
-        fs.readFileSync("./assets/generated/translations.json", "utf-8")
+        fs.readFileSync("./src/assets/generated/translations.json", "utf-8")
     )
     const transformed = transformTranslation(translations)
 
@@ -469,7 +472,7 @@ function genTranslations() {
     module += " public static t = " + transformed
     module += "\n    }"
 
-    fs.writeFileSync("./assets/generated/CompiledTranslations.ts", module)
+    fs.writeFileSync("./src/assets/generated/CompiledTranslations.ts", module)
 }
 
 /**
@@ -497,7 +500,7 @@ function compileTranslationsFromWeblate() {
     }
 
     writeFileSync(
-        "./assets/generated/translations.json",
+        "./src/assets/generated/translations.json",
         JSON.stringify(JSON.parse(allTranslations.toJson()), null, "    ")
     )
 }
@@ -692,22 +695,9 @@ if (!existsSync("./langs/themes")) {
     mkdirSync("./langs/themes")
 }
 const themeOverwritesWeblate = process.argv[2] === "--ignore-weblate"
-const questionsPath = "assets/tagRenderings/questions.json"
-const questionsParsed = JSON.parse(readFileSync(questionsPath, "utf8"))
 if (!themeOverwritesWeblate) {
     mergeLayerTranslations()
     mergeThemeTranslations()
-
-    mergeLayerTranslation(
-        questionsParsed,
-        questionsPath,
-        loadTranslationFilesFrom("shared-questions")
-    )
-    const endsWithNewline = readFileSync(questionsPath, { encoding: "utf8" }).endsWith("\n")
-    writeFileSync(
-        questionsPath,
-        JSON.stringify(questionsParsed, null, "  ") + (endsWithNewline ? "\n" : "")
-    )
 } else {
     console.log("Ignore weblate")
 }
@@ -717,14 +707,10 @@ const l2 = generateTranslationsObjectFrom(
     ScriptUtils.getThemeFiles().filter((th) => th.parsed.mustHaveLanguage === undefined),
     "themes"
 )
-const l3 = generateTranslationsObjectFrom(
-    [{ path: questionsPath, parsed: questionsParsed }],
-    "shared-questions"
-)
 
-const usedLanguages: string[] = Utils.Dedup(l1.concat(l2).concat(l3)).filter((v) => v !== "*")
+const usedLanguages: string[] = Utils.Dedup(l1.concat(l2)).filter((v) => v !== "*")
 usedLanguages.sort()
-fs.writeFileSync("./assets/used_languages.json", JSON.stringify({ languages: usedLanguages }))
+fs.writeFileSync("./src/assets/used_languages.json", JSON.stringify({ languages: usedLanguages }))
 
 if (!themeOverwritesWeblate) {
     // Generates the core translations
@@ -742,5 +728,4 @@ for (const path of allTranslationFiles) {
 TranslationPart.fromDirectory("./langs").validateStrict("./langs")
 TranslationPart.fromDirectory("./langs/layers").validateStrict("layers")
 TranslationPart.fromDirectory("./langs/themes").validateStrict("themes")
-TranslationPart.fromDirectory("./langs/shared-questions").validateStrict("shared-questions")
 console.log("All done!")

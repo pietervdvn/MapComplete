@@ -17,6 +17,7 @@ import licenses from "../assets/generated/license_info.json"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
 import { FixImages } from "../Models/ThemeConfig/Conversion/FixImages"
 import Svg from "../Svg"
+import questions from "../assets/generated/layers/questions.json"
 import {
     DoesImageExist,
     PrevalidateTheme,
@@ -26,7 +27,6 @@ import {
 import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
 import { RewriteSpecial } from "../Models/ThemeConfig/Conversion/PrepareLayer"
 import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
-import questions from "../assets/tagRenderings/questions.json"
 import Hash from "./Web/Hash"
 
 export default class DetermineLayout {
@@ -156,32 +156,9 @@ export default class DetermineLayout {
     private static getSharedTagRenderings(): Map<string, TagRenderingConfigJson> {
         const dict = new Map<string, TagRenderingConfigJson>()
 
-        const prep = new RewriteSpecial()
-        const validator = new ValidateTagRenderings()
-        for (const key in questions) {
-            if (key === "id") {
-                continue
-            }
-            questions[key].id = key
-            questions[key]["source"] = "shared-questions"
-            const config = prep.convertStrict(
-                <TagRenderingConfigJson>questions[key],
-                "questions.json:" + key
-            )
-            delete config["#"]
-            validator.convertStrict(
-                config,
-                "generate-layer-overview:tagRenderings/questions.json:" + key
-            )
-            dict.set(key, config)
+        for (const tagRendering of questions.tagRenderings) {
+            dict.set(tagRendering.id, tagRendering)
         }
-
-        dict.forEach((value, key) => {
-            if (key === "id") {
-                return
-            }
-            value.id = value.id ?? key
-        })
 
         return dict
     }

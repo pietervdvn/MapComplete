@@ -10,8 +10,7 @@ import { OsmConnection } from "../../../Logic/Osm/OsmConnection"
 import FilteredLayer from "../../../Models/FilteredLayer"
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
 import { LayerConfigJson } from "../../../Models/ThemeConfig/Json/LayerConfigJson"
-import conflation_json from "../../../assets/layers/conflation/conflation.json"
-import { And } from "../../../Logic/Tags/And"
+import conflation_json from "../../../../assets/layers/conflation/conflation.json"
 
 export interface ImportFlowArguments {
     readonly text: string

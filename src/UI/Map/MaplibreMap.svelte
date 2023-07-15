@@ -5,7 +5,7 @@
    * As it replaces the old 'MinimapObj' onto MapLibre and the existing codebase, this is sometimes a bit awkward
    */
   import { onMount } from "svelte"
-  import { Map } from "@onsvisual/svelte-maps"
+  import { Map as OnVisMap } from "@onsvisual/svelte-maps"
   import type { Map as MaplibreMap } from "maplibre-gl"
   import type {Readable, Writable} from "svelte/store"
   import { AvailableRasterLayers } from "../../Models/RasterLayers"
@@ -29,7 +29,7 @@
 </script>
 
 <main>
-  <Map
+  <OnVisMap
     bind:center
     bind:map={$map}
     {attribution}

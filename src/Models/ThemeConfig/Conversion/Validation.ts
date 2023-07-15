@@ -719,7 +719,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
         }
 
         if (json.tagRenderings !== undefined && json.tagRenderings.length > 0) {
-            if (json.title === undefined) {
+            if (json.title === undefined && json.source !== "special:library") {
                 errors.push(
                     context +
                         ": this layer does not have a title defined but it does have tagRenderings. Not having a title will disable the popups, resulting in an unclickable element. Please add a title. If not having a popup is intended and the tagrenderings need to be kept (e.g. in a library layer), set `title: null` to disable this error."
@@ -750,8 +750,9 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             // duplicate ids in tagrenderings check
             const duplicates = Utils.Dedup(
                 Utils.Dupiclates(Utils.NoNull((json.tagRenderings ?? []).map((tr) => tr["id"])))
-            ).filter((dupl) => dupl !== "questions")
+            )
             if (duplicates.length > 0) {
+                console.log(json.tagRenderings)
                 errors.push(
                     "At " +
                         context +

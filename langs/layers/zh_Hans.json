@@ -252,5 +252,73 @@
             },
             "render": "自行车咖啡"
         }
+    },
+    "questions": {
+        "tagRenderings": {
+            "dog-access": {
+                "mappings": {
+                    "0": {
+                        "then": "允许犬只"
+                    },
+                    "1": {
+                        "then": "<b>不</b>允许犬只"
+                    },
+                    "2": {
+                        "then": "允许犬只，但必须拴绳"
+                    },
+                    "3": {
+                        "then": "允许犬只，且可自由放养"
+                    }
+                },
+                "question": "犬只是否在这个商业体中允许？"
+            },
+            "email": {
+                "question": "{title()} 的电子邮箱地址为何？"
+            },
+            "opening_hours": {
+                "question": "{title()} 的开放时间为何？",
+                "render": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}"
+            },
+            "payment-options": {
+                "mappings": {
+                    "0": {
+                        "then": "可用现金"
+                    },
+                    "1": {
+                        "then": "可用信用卡"
+                    }
+                },
+                "question": "这里支持哪些支付方式？"
+            },
+            "payment-options-advanced": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "使用专用APP支付"
+                        },
+                        "1": {
+                            "then": "使用会员卡支付"
+                        }
+                    }
+                }
+            },
+            "phone": {
+                "question": "{title()} 的电话号码为何？"
+            },
+            "website": {
+                "question": "{title()} 的网站为何？"
+            },
+            "wikipedia": {
+                "mappings": {
+                    "0": {
+                        "then": "尚未有连接到的维基百科页面"
+                    },
+                    "1": {
+                        "then": "尚未有连接到的维基百科页面"
+                    }
+                },
+                "question": "在Wikidata上对应的实体是什么？"
+            }
+        }
     }
 }

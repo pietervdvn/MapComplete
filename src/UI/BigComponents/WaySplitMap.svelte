@@ -10,8 +10,8 @@
    */
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import type { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
-  import split_point from "../../assets/layers/split_point/split_point.json"
-  import split_road from "../../assets/layers/split_road/split_road.json"
+  import split_point from "../../../assets/layers/split_point/split_point.json"
+  import split_road from "../../../assets/layers/split_road/split_road.json"
   import { UIEventSource } from "../../Logic/UIEventSource"
   import { Map as MlMap } from "maplibre-gl"
   import type { MapProperties } from "../../Models/MapProperties"
