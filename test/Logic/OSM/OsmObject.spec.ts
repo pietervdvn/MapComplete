@@ -1,9 +1,9 @@
-import { OsmObject } from "../../../Logic/Osm/OsmObject"
-import { Utils } from "../../../Utils"
+import { OsmObject } from "../../../src/Logic/Osm/OsmObject"
+import { Utils } from "../../../src/Utils"
 import ScriptUtils from "../../../scripts/ScriptUtils"
 import { readFileSync } from "fs"
 import { describe, expect, it } from "vitest"
-import OsmObjectDownloader from "../../../Logic/Osm/OsmObjectDownloader"
+import OsmObjectDownloader from "../../../src/Logic/Osm/OsmObjectDownloader"
 
 describe("OsmObject", () => {
     describe("download referencing ways", () => {

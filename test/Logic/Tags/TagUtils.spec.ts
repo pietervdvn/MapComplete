@@ -1,4 +1,4 @@
-import { TagUtils } from "../../../Logic/Tags/TagUtils"
+import { TagUtils } from "../../../src/Logic/Tags/TagUtils"
 import { equal } from "assert"
 import { describe, expect, it } from "vitest"
 

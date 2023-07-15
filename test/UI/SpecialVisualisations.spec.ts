@@ -1,4 +1,4 @@
-import SpecialVisualizations from "../../UI/SpecialVisualizations"
+import SpecialVisualizations from "../../src/UI/SpecialVisualizations"
 import { describe, expect, it } from "vitest"
 
 describe("SpecialVisualisations", () => {

@@ -1,9 +1,9 @@
-import { Utils } from "../../../../Utils"
-import SplitAction from "../../../../Logic/Osm/Actions/SplitAction"
-import { Changes } from "../../../../Logic/Osm/Changes"
+import { Utils } from "../../../../src/Utils"
+import SplitAction from "../../../../src/Logic/Osm/Actions/SplitAction"
+import { Changes } from "../../../../src/Logic/Osm/Changes"
 import { describe, expect, it } from "vitest"
-import { OsmConnection } from "../../../../Logic/Osm/OsmConnection"
-import { ImmutableStore } from "../../../../Logic/UIEventSource"
+import { OsmConnection } from "../../../../src/Logic/Osm/OsmConnection"
+import { ImmutableStore } from "../../../../src/Logic/UIEventSource"
 
 describe("SplitAction", () => {
     {

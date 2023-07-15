@@ -1,7 +1,9 @@
-import CreateMultiPolygonWithPointReuseAction from "../../../Logic/Osm/Actions/CreateMultiPolygonWithPointReuseAction"
-import { Tag } from "../../../Logic/Tags/Tag"
-import { Changes } from "../../../Logic/Osm/Changes"
+import CreateMultiPolygonWithPointReuseAction from "../../../src/Logic/Osm/Actions/CreateMultiPolygonWithPointReuseAction"
+import { Tag } from "../../../src/Logic/Tags/Tag"
+import { Changes } from "../../../src/Logic/Osm/Changes"
 import { describe, expect, it } from "vitest"
+import { OsmConnection } from "../../../src/Logic/Osm/OsmConnection"
+import { ImmutableStore } from "../../../src/Logic/UIEventSource"
 
 describe("CreateMultiPolygonWithPointReuseAction", () => {
     it("should produce a correct changeset", () => {
@@ -102,7 +104,12 @@ describe("CreateMultiPolygonWithPointReuseAction", () => {
                 [],
                 "import"
             )
-            const descriptions = await action.Perform(new Changes())
+            const descriptions = await action.Perform(
+                new Changes({
+                    dryRun: new ImmutableStore(true),
+                    osmConnection: new OsmConnection(),
+                })
+            )
 
             const ways = descriptions.filter((d) => d.type === "way")
             // "unexpected id"
