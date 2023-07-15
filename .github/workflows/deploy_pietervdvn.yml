@@ -5,6 +5,7 @@ on:
       - develop
       - feature/*
       - theme/*
+      - refactoring/*
 jobs:
   build:
     runs-on: ubuntu-latest
