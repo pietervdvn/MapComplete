@@ -1,21 +1,21 @@
 <script lang="ts">
-  import { Store, UIEventSource } from "../Logic/UIEventSource"
-  import { Map as MlMap } from "maplibre-gl"
+  import {Store, UIEventSource} from "../Logic/UIEventSource"
+  import {Map as MlMap} from "maplibre-gl"
   import MaplibreMap from "./Map/MaplibreMap.svelte"
   import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
   import MapControlButton from "./Base/MapControlButton.svelte"
   import ToSvelte from "./Base/ToSvelte.svelte"
   import If from "./Base/If.svelte"
-  import { GeolocationControl } from "./BigComponents/GeolocationControl"
-  import type { Feature } from "geojson"
+  import {GeolocationControl} from "./BigComponents/GeolocationControl"
+  import type {Feature} from "geojson"
   import SelectedElementView from "./BigComponents/SelectedElementView.svelte"
   import LayerConfig from "../Models/ThemeConfig/LayerConfig"
   import Filterview from "./BigComponents/Filterview.svelte"
   import ThemeViewState from "../Models/ThemeViewState"
-  import type { MapProperties } from "../Models/MapProperties"
+  import type {MapProperties} from "../Models/MapProperties"
   import Geosearch from "./BigComponents/Geosearch.svelte"
   import Translations from "./i18n/Translations"
-  import { CogIcon, EyeIcon, MenuIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import {CogIcon, EyeIcon, MenuIcon, XCircleIcon} from "@rgossiaux/svelte-heroicons/solid"
 
   import Tr from "./Base/Tr.svelte"
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
@@ -29,28 +29,29 @@
   import CopyrightPanel from "./BigComponents/CopyrightPanel"
   import DownloadPanel from "./DownloadFlow/DownloadPanel.svelte"
   import ModalRight from "./Base/ModalRight.svelte"
-  import { Utils } from "../Utils"
+  import {Utils} from "../Utils"
   import Hotkeys from "./Base/Hotkeys"
-  import { VariableUiElement } from "./Base/VariableUIElement"
+  import {VariableUiElement} from "./Base/VariableUIElement"
   import SvelteUIElement from "./Base/SvelteUIElement"
   import OverlayToggle from "./BigComponents/OverlayToggle.svelte"
   import LevelSelector from "./BigComponents/LevelSelector.svelte"
   import ExtraLinkButton from "./BigComponents/ExtraLinkButton"
   import SelectedElementTitle from "./BigComponents/SelectedElementTitle.svelte"
   import Svg from "../Svg"
-  import { ShareScreen } from "./BigComponents/ShareScreen"
+  import {ShareScreen} from "./BigComponents/ShareScreen"
   import ThemeIntroPanel from "./BigComponents/ThemeIntroPanel.svelte"
-  import type { RasterLayerPolygon } from "../Models/RasterLayers"
-  import { AvailableRasterLayers } from "../Models/RasterLayers"
+  import type {RasterLayerPolygon} from "../Models/RasterLayers"
+  import {AvailableRasterLayers} from "../Models/RasterLayers"
   import RasterLayerOverview from "./Map/RasterLayerOverview.svelte"
   import IfHidden from "./Base/IfHidden.svelte"
-  import { onDestroy } from "svelte"
-  import { OpenJosm } from "./BigComponents/OpenJosm"
+  import {onDestroy} from "svelte"
+  import {OpenJosm} from "./BigComponents/OpenJosm"
   import MapillaryLink from "./BigComponents/MapillaryLink.svelte"
   import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte"
   import OpenBackgroundSelectorButton from "./BigComponents/OpenBackgroundSelectorButton.svelte"
-  import Loading from "./Base/Loading.svelte"
   import StateIndicator from "./BigComponents/StateIndicator.svelte"
+  import LanguagePicker from "./LanguagePicker";
+  import Locale from "./i18n/Locale";
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -392,7 +393,8 @@
         <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
         <LoginToggle {state}>
           <div class="flex flex-col" slot="not-logged-in">
-            <Tr class="alert" t={Translations.t.userinfo.notLoggedIn} />
+            <ToSvelte construct={() => new LanguagePicker(layout.language, Locale.language)}/>
+            <Tr cls="alert" t={Translations.t.userinfo.notLoggedIn} />
             <LoginButton clss="primary" osmConnection={state.osmConnection} />
           </div>
           <SelectedElementView
