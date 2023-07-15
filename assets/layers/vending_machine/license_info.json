@@ -1,0 +1,83 @@
+[
+  {
+    "path": "cow.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font Awesome"
+    ],
+    "sources": [
+      "https://fontawesome.com/icons/cow?f=classic&s=solid"
+    ]
+  },
+  {
+    "path": "egg.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font Awesome"
+    ],
+    "sources": [
+      "https://fontawesome.com/icons/egg?f=classic&s=solid"
+    ]
+  },
+  {
+    "path": "honey.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Mushki Brichta"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Honey_icon_black_01.svg"
+    ]
+  },
+  {
+    "path": "mug-saucer.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font Awesome"
+    ],
+    "sources": [
+      "https://fontawesome.com/icons/mug-saucer?f=regular&s=solid"
+    ]
+  },
+  {
+    "path": "potato.svg",
+    "license": "CC-BY 3.0",
+    "authors": [
+      "Pavel Melnikov",
+      "The Noun Project"
+    ],
+    "sources": [
+      "https://thenounproject.com/icon/potatoes-663495/"
+    ]
+  },
+  {
+    "path": "smoking.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font Awesome"
+    ],
+    "sources": [
+      "https://fontawesome.com/icons/smoking?f=classic&s=solid"
+    ]
+  },
+  {
+    "path": "utensils.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font Awesome"
+    ],
+    "sources": [
+      "https://fontawesome.com/icons/utensils?f=classic&s=solid"
+    ]
+  },
+  {
+    "path": "vending_machine.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Vectorportal.com"
+    ],
+    "sources": [
+      "https://vectorportal.com/vector/vending-machine/35308"
+    ]
+  }
+]

@@ -996,12 +996,12 @@
   },
   "mapRendering": [
     {
-      "icon": "circle:white;./assets/layers/bench/bench.svg",
+      "icon": "circle:99bd54;./assets/layers/bench/bench.svg",
       "iconSize": "35,35",
       "iconBadges": [
         {
           "if": "tourism=artwork",
-          "then": "./assets/themes/artwork/artwork.svg"
+          "then": "circle:white;./assets/layers/artwork/artwork.svg"
         }
       ],
       "location": [

@@ -1,0 +1,192 @@
+{
+  "id": "elongated_coin",
+  "title": {
+    "en": "Penny Presses"
+  },
+  "description": {
+    "en": "Find penny presses to create your own elongated coins."
+  },
+  "hideFromOverview": true,
+  "icon": "./assets/themes/elongated_coin/penny.svg",
+  "layers": [
+    {
+      "id": "elongated_coin",
+      "name": {
+        "en": "Penny Presses"
+      },
+      "description": {
+        "en": "Layer showing penny presses."
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "amenity=vending_machine",
+            "vending=elongated_coin"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "en": "Penny Press"
+        }
+      },
+      "tagRenderings": [
+        "images",
+        "opening_hours_24_7",
+        {
+          "id": "designs",
+          "question": {
+            "en": "How many designs are available?"
+          },
+          "freeform": {
+            "key": "coin:design_count",
+            "type": "pnat",
+            "placeholder": {
+              "en": "Number of designs (e.g. 5)"
+            }
+          },
+          "render": {
+            "en": "This penny press has {coin:design_count} designs available."
+          },
+          "mappings": [
+            {
+              "if": "coin:design_count=1",
+              "then": {
+                "en": "This penny press has one design available."
+              }
+            },
+            {
+              "if": "coin:design_count=2",
+              "then": {
+                "en": "This penny press has two designs available."
+              }
+            },
+            {
+              "if": "coin:design_count=3",
+              "then": {
+                "en": "This penny press has three designs available."
+              }
+            },
+            {
+              "if": "coin:design_count=4",
+              "then": {
+                "en": "This penny press has four designs available."
+              }
+            }
+          ]
+        },
+        {
+          "id": "coin",
+          "question": {
+            "en": "What coin is used for pressing?"
+          },
+          "mappings": [
+            {
+              "if": "coin:type=2cent",
+              "then": {
+                "en": "This penny press uses a 2 cent coin for pressing."
+              }
+            },
+            {
+              "if": "coin:type=5cent",
+              "then": {
+                "en": "This penny press uses a 5 cent coin for pressing."
+              }
+            },
+            {
+              "if": "coin:type=10cent",
+              "then": {
+                "en": "This penny press uses a 10 cent coin for pressing."
+              }
+            }
+          ]
+        },
+        "website",
+        {
+          "id": "charge",
+          "question": {
+            "en": "How much does it cost to press a penny?"
+          },
+          "freeform": {
+            "key": "charge",
+            "placeholder": {
+              "en": "Cost (e.g. 0.50 EUR)"
+            }
+          },
+          "mappings": [
+            {
+              "if": "charge=1 EUR",
+              "then": {
+                "en": "It costs 1 euro to press a penny."
+              }
+            },
+            {
+              "if": "charge=2 EUR",
+              "then": {
+                "en": "It costs 2 euros to press a penny."
+              }
+            }
+          ],
+          "render": {
+            "en": "It costs {charge} to press a penny."
+          }
+        },
+        "denominations-coins",
+        {
+          "id": "indoor",
+          "question": {
+            "en": "Is the penny press indoors?"
+          },
+          "mappings": [
+            {
+              "if": "indoor=yes",
+              "then": {
+                "en": "This penny press is located indoors."
+              }
+            },
+            {
+              "if": "indoor=no",
+              "then": {
+                "en": "This penny press is located outdoors."
+              }
+            }
+          ]
+        },
+        "level"
+      ],
+      "mapRendering": [
+        {
+          "icon": "circle:#FFFFFF00;./assets/themes/elongated_coin/penny.svg",
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "iconBadges": [
+            {
+              "if": "opening_hours~*",
+              "then": "icons.isOpen"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "title": {
+            "en": "a penny press"
+          },
+          "tags": [
+            "amenity=vending_machine",
+            "vending=elongated_coin",
+            "payment:coins=yes"
+          ]
+        }
+      ],
+      "filter": [
+        "open_now"
+      ]
+    }
+  ],
+  "startLat": 53.0565,
+  "startLon": 8.7492,
+  "startZoom": 11
+}

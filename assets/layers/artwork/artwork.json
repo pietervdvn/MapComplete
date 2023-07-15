@@ -728,7 +728,7 @@
   },
   "mapRendering": [
     {
-      "icon": "./assets/themes/artwork/artwork.svg",
+      "icon": "circle:white;./assets/themes/artwork/artwork.svg",
       "location": [
         "point",
         "centroid"

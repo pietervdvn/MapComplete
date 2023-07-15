@@ -223,6 +223,10 @@
                 "then": "./assets/layers/school/college.svg"
               },
               {
+                "if": "theme=elongated_coin",
+                "then": "./assets/themes/elongated_coin/penny.svg"
+              },
+              {
                 "if": "theme=etymology",
                 "then": "./assets/layers/etymology/logo.svg"
               },
@@ -405,6 +409,10 @@
               {
                 "if": "theme=uk_addresses",
                 "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+              },
+              {
+                "if": "theme=vending_machine",
+                "then": "./assets/layers/vending_machine/vending_machine.svg"
               },
               {
                 "if": "theme=walls_and_buildings",
