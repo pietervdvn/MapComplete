@@ -6842,10 +6842,30 @@
     "public_bookcase": {
         "description": "A streetside cabinet with books, accessible to anyone",
         "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Has children books"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Has books for adults"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
                         "question": "Indoor or outdoor"
+                    },
+                    "1": {
+                        "question": "Located indoors"
+                    },
+                    "2": {
+                        "question": "Located outdoors"
                     }
                 }
             }

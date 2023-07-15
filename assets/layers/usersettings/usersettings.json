@@ -10,7 +10,8 @@
     "render": {
       "en": "Settings",
       "nl": "Instellingen",
-      "de": "Einstellungen"
+      "de": "Einstellungen",
+      "fr": "Paramètres"
     }
   },
   "source": "special",
@@ -150,7 +151,8 @@
       "id": "show_tags",
       "question": {
         "en": "Show the raw OpenStreetMap-tags?",
-        "de": "Rohe OpenStreetMap-Tags anzeigen?"
+        "de": "Rohe OpenStreetMap-Tags anzeigen?",
+        "fr": "Afficher les attributs OpenStreetMap bruts ?"
       },
       "questionHint": {
         "en": "<b>Tags</b> are attributes that every element has. This is the technical data that is stored in the database. You don't need this information to edit with MapComplete, but advanced users might want to use this as reference.",

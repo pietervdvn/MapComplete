@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 279,
+      "commits": 283,
       "contributor": "kjon"
     },
     {
-      "commits": 274,
+      "commits": 275,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -37,6 +37,10 @@
       "contributor": "Babos Gábor"
     },
     {
+      "commits": 31,
+      "contributor": "Supaplex"
+    },
+    {
       "commits": 30,
       "contributor": "Jiří Podhorecký"
     },
@@ -45,12 +49,12 @@
       "contributor": "Artem"
     },
     {
-      "commits": 28,
-      "contributor": "Supaplex"
-    },
-    {
       "commits": 25,
       "contributor": "Reza Almanda"
+    },
+    {
+      "commits": 23,
+      "contributor": "Lucas"
     },
     {
       "commits": 22,
@@ -61,20 +65,16 @@
       "contributor": "SC"
     },
     {
-      "commits": 19,
-      "contributor": "Lucas"
-    },
-    {
       "commits": 18,
       "contributor": "el_libre como el chaval"
     },
     {
-      "commits": 15,
-      "contributor": "WaldiS"
+      "commits": 16,
+      "contributor": "mcliquid"
     },
     {
-      "commits": 14,
-      "contributor": "mcliquid"
+      "commits": 15,
+      "contributor": "WaldiS"
     },
     {
       "commits": 14,
@@ -99,6 +99,10 @@
     {
       "commits": 11,
       "contributor": "Túllio Franca"
+    },
+    {
+      "commits": 10,
+      "contributor": "brunnerpaul"
     },
     {
       "commits": 10,
@@ -323,6 +327,10 @@
     {
       "commits": 3,
       "contributor": "SiegbjornSitumeang"
+    },
+    {
+      "commits": 2,
+      "contributor": "Emory Shaw"
     },
     {
       "commits": 2,

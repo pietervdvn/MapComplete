@@ -49,6 +49,7 @@ attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/sport#values) [sport](https://wiki.openstreetmap.org/wiki/Key:sport) | [string](../SpecialInputElements.md#string) | [basketball](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasketball) [soccer](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dsoccer) [table_tennis](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtable_tennis) [tennis](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtennis) [korfball](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dkorfball) [skateboard](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dskateboard)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/hoops#values) [hoops](https://wiki.openstreetmap.org/wiki/Key:hoops) | Multiple choice | [1](https://wiki.openstreetmap.org/wiki/Tag:hoops%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:hoops%3D2) [4](https://wiki.openstreetmap.org/wiki/Tag:hoops%3D4)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/surface#values) [surface](https://wiki.openstreetmap.org/wiki/Key:surface) | [string](../SpecialInputElements.md#string) | [grass](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass) [sand](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsand) [paving_stones](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones) [asphalt](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) [concrete](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:access%3Dlimited) [members](https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/reservation#values) [reservation](https://wiki.openstreetmap.org/wiki/Key:reservation) | Multiple choice | [required](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drequired) [recommended](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drecommended) [yes](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dno)
@@ -112,6 +113,25 @@ This is rendered with  `{sport} is played here`
   - *Basketball is played here*  corresponds with  `sport=basket`
   - This option cannot be chosen as answer
   - *This is a skatepark*  corresponds with  `sport=skateboard`
+
+
+
+
+### basketball-hoops 
+
+
+
+The question is  *How much basketball hoops does this pitch have?*
+
+
+
+
+
+  - *This basketball pitch has a single hoop*  corresponds with  `hoops=1`
+  - *This basketball pitch has two hoops*  corresponds with  `hoops=2`
+  - *This basketball pitch has four hoops*  corresponds with  `hoops=4`
+  - *This basketball pitch has {hoops} hoops*  corresponds with  `hoops~.+`
+  - This option cannot be chosen as answer
 
 
 

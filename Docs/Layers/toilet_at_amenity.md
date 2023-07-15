@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/toilet/toilets.svg' height="100px"> 
+<img src='https://mapcomplete.osm.be/circle:white;./assets/layers/toilet/toilets.svg' height="100px"> 
 
 A layer showing (public) toilets located at different places.
 
