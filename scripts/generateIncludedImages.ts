@@ -5,7 +5,7 @@ function genImages(dryrun = false) {
     const dir = fs.readdirSync("./assets/svg")
 
     let module =
-        'import Img from "./src/UI/Base/Img";\nimport {FixedUiElement} from "./src/UI/Base/FixedUiElement";\n\nexport default class Svg {\n\n\n'
+        'import Img from "./UI/Base/Img";\nimport {FixedUiElement} from "./UI/Base/FixedUiElement";\n\nexport default class Svg {\n\n\n'
     const allNames: string[] = []
     for (const path of dir) {
         if (path.endsWith("license_info.json")) {
@@ -45,7 +45,7 @@ function genImages(dryrun = false) {
     }
     module += `public static All = {${allNames.join(",")}};`
     module += "}\n"
-    fs.writeFileSync("Svg.ts", module)
+    fs.writeFileSync("src/Svg.ts", module)
     console.log("Done")
 }
 
