@@ -49,8 +49,9 @@
   import MapillaryLink from "./BigComponents/MapillaryLink.svelte"
   import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte"
   import OpenBackgroundSelectorButton from "./BigComponents/OpenBackgroundSelectorButton.svelte"
-  import Loading from "./Base/Loading.svelte"
   import StateIndicator from "./BigComponents/StateIndicator.svelte"
+  import LanguagePicker from "./LanguagePicker"
+  import Locale from "./i18n/Locale"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -392,7 +393,8 @@
         <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
         <LoginToggle {state}>
           <div class="flex flex-col" slot="not-logged-in">
-            <Tr class="alert" t={Translations.t.userinfo.notLoggedIn} />
+            <ToSvelte construct={() => new LanguagePicker(layout.language, Locale.language)} />
+            <Tr cls="alert" t={Translations.t.userinfo.notLoggedIn} />
             <LoginButton clss="primary" osmConnection={state.osmConnection} />
           </div>
           <SelectedElementView

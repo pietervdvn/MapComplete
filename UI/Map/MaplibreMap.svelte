@@ -7,9 +7,9 @@
   import { onMount } from "svelte"
   import { Map } from "@onsvisual/svelte-maps"
   import type { Map as MaplibreMap } from "maplibre-gl"
-  import type {Readable, Writable} from "svelte/store"
+  import type { Readable, Writable } from "svelte/store"
   import { AvailableRasterLayers } from "../../Models/RasterLayers"
-  import {writable} from "svelte/store";
+  import { writable } from "svelte/store"
 
   /**
    * Beware: this map will _only_ be set by this component
@@ -18,7 +18,7 @@
   export let map: Writable<MaplibreMap>
 
   export let attribution = false
-  export let center: Readable<{ lng: number ,lat : number }> = writable({lng: 0, lat: 0})
+  export let center: Readable<{ lng: number; lat: number }> = writable({ lng: 0, lat: 0 })
 
   onMount(() => {
     $map.on("load", function () {

@@ -75,6 +75,25 @@
       "value": "skateboard"
     },
     {
+      "key": "hoops",
+      "description": "Layer 'Sport pitches' shows hoops=1 with a fixed text, namely 'This basketball pitch has a single hoop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
+      "value": "1"
+    },
+    {
+      "key": "hoops",
+      "description": "Layer 'Sport pitches' shows hoops=2 with a fixed text, namely 'This basketball pitch has two hoops' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
+      "value": "2"
+    },
+    {
+      "key": "hoops",
+      "description": "Layer 'Sport pitches' shows hoops=4 with a fixed text, namely 'This basketball pitch has four hoops' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
+      "value": "4"
+    },
+    {
+      "key": "hoops",
+      "description": "Layer 'Sport pitches' shows hoops~.+ with a fixed text, namely 'This basketball pitch has {hoops} hoops' (in the MapComplete.osm.be theme 'Sport pitches')"
+    },
+    {
       "key": "surface",
       "description": "Layer 'Sport pitches' shows and asks freeform values for key 'surface' (in the MapComplete.osm.be theme 'Sport pitches')"
     },

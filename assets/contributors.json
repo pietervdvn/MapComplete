@@ -1,15 +1,15 @@
 {
   "contributors": [
     {
-      "commits": 5390,
+      "commits": 5753,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 361,
+      "commits": 371,
       "contributor": "Robin van der Linde"
     },
     {
-      "commits": 44,
+      "commits": 55,
       "contributor": "Tobias"
     },
     {
@@ -114,6 +114,10 @@
     },
     {
       "commits": 9,
+      "contributor": "Thibault Molleman"
+    },
+    {
+      "commits": 9,
       "contributor": "Midgard"
     },
     {
@@ -123,10 +127,6 @@
     {
       "commits": 8,
       "contributor": "Mateusz Konieczny"
-    },
-    {
-      "commits": 8,
-      "contributor": "Thibault Molleman"
     },
     {
       "commits": 7,
@@ -231,6 +231,10 @@
     {
       "commits": 2,
       "contributor": "Stanislas Gueniffey"
+    },
+    {
+      "commits": 1,
+      "contributor": "Daniel McDonald"
     },
     {
       "commits": 1,

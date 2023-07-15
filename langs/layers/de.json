@@ -129,7 +129,7 @@
                         "then": "Wahlwerbung"
                     },
                     "4": {
-                        "then": "Informationen über Theater, Konzerte, ..."
+                        "then": "Informationen über Theater, Konzerte, …"
                     },
                     "5": {
                         "then": "Nachricht von gemeinnützigen Organisationen"
@@ -731,7 +731,7 @@
                     }
                 },
                 "question": "Hat diese Bank eine Inschrift?",
-                "questionHint": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ...",
+                "questionHint": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, …",
                 "render": "Diese Bank hat folgende Inschrift:<br/><p><i>{inscription}</i></p>"
             },
             "bench-material": {
@@ -7542,6 +7542,76 @@
             "render": "Geschäft"
         }
     },
+    "shower": {
+        "description": "Eine Ebene mit (öffentlichen) Duschen",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Warmwasser verfügbar"
+                    }
+                }
+            }
+        },
+        "name": "Dusche",
+        "presets": {
+            "0": {
+                "description": "Eine (öffentliche) Dusche",
+                "title": "eine Dusche"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Jeder darf diese Dusche nutzen"
+                    },
+                    "1": {
+                        "then": "Nur Kunden dürfen diese Dusche nutzen"
+                    },
+                    "2": {
+                        "then": "Zugänglich, aber man muss nach einem Schlüssel fragen"
+                    }
+                },
+                "question": "Wer darf diese Dusche nutzen?"
+            },
+            "charge": {
+                "freeform": {
+                    "placeholder": "z.B. 1,50 EUR"
+                },
+                "question": "Wie viel kostet es, diese Dusche zu nutzen?",
+                "render": "Es kostet {charge} um diese Dusche zu nutzen"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Nutzung der Dusche ist kostenpflichtig"
+                    },
+                    "1": {
+                        "then": "Die Nutzung der Dusche ist kostenlos"
+                    }
+                },
+                "question": "Ist die Nutzung der Dusche kostenpflichtig?"
+            },
+            "hot_water": {
+                "mappings": {
+                    "0": {
+                        "then": "Warmwasser ist hier verfügbar"
+                    },
+                    "1": {
+                        "then": "Warmes Wasser ist hier verfügbar, aber kostenpflichtig"
+                    },
+                    "2": {
+                        "then": "Hier gibt es kein warmes Wasser"
+                    }
+                },
+                "question": "Verfügt diese Dusche über Warmwasser?"
+            }
+        },
+        "title": {
+            "render": "Dusche"
+        }
+    },
     "slow_roads": {
         "description": "Alle autofreien Straßen",
         "tagRenderings": {
@@ -7696,6 +7766,23 @@
             }
         },
         "tagRenderings": {
+            "basketball-hoops": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Basketballfeld hat einen einzigen Korb"
+                    },
+                    "1": {
+                        "then": "Dieses Basketballfeld hat zwei Körbe"
+                    },
+                    "2": {
+                        "then": "Dieses Basketballfeld hat vier Körbe"
+                    },
+                    "3": {
+                        "then": "Dieses Basketballfeld hat {hoops} Körbe"
+                    }
+                },
+                "question": "Wie viele Basketballkörbe hat das Spielfeld?"
+            },
             "sport-pitch-access": {
                 "mappings": {
                     "0": {
@@ -8347,6 +8434,9 @@
                 "render": "Die Wickeltabelle befindet sich in {changing_table:location}"
             },
             "toilet-charge": {
+                "freeform": {
+                    "placeholder": "z.B. 0.50 EUR"
+                },
                 "question": "Wie viel muss man für die Nutzung bezahlen?",
                 "render": "Die Gebühr beträgt {charge}"
             },

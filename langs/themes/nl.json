@@ -14,6 +14,21 @@
     },
     "atm": {
         "description": "Deze kaart toont geldautomaten waar je geld kunt afhalen of geld op de bank kan zetten",
+        "layers": {
+            "3": {
+                "override": {
+                    "=tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Voeg deze ATM toe"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "title": "Geldautomaten"
     },
     "bag": {

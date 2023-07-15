@@ -90,6 +90,7 @@ This theme contains the following layers:
   - [school](../Layers/school.md)
   - [shelter](../Layers/shelter.md)
   - [shops](../Layers/shops.md)
+  - [shower](../Layers/shower.md)
   - [speed_camera](../Layers/speed_camera.md)
   - [speed_display](../Layers/speed_display.md)
   - [sport_pitch](../Layers/sport_pitch.md)

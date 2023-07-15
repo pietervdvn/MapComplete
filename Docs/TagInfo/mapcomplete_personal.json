@@ -11449,6 +11449,143 @@
       "value": "no"
     },
     {
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer Shower showing features with this tag",
+      "value": "shower"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Shower' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Shower allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Shower allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Shower allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Shower allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Shower' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Shower' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Shower' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Shower' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Shower' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Shower' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "-1"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Shower' shows access=yes with a fixed text, namely 'Anyone can use this shower' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Shower' shows access=customers with a fixed text, namely 'Only customers can use this shower' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Shower' shows access=key with a fixed text, namely 'Accesible, but one has to ask for a key' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "key"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Shower' shows fee=yes with a fixed text, namely 'There is a fee for using this shower' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Shower' shows fee=no with a fixed text, namely 'This shower is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Shower' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if fee=yes)"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Shower' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "hot_water",
+      "description": "Layer 'Shower' shows hot_water=yes with a fixed text, namely 'Hot water is available here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "hot_water",
+      "description": "Layer 'Shower' shows hot_water=fee with a fixed text, namely 'Hot water is available here, but there is a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "fee"
+    },
+    {
+      "key": "hot_water",
+      "description": "Layer 'Shower' shows hot_water=no with a fixed text, namely 'There is no hot water available here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Shower' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if fee=yes|hot_water=fee)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Shower' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if fee=yes|hot_water=fee)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Shower' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if fee=yes|hot_water=fee)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Shower' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if fee=yes|hot_water=fee)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Shower' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if fee=yes|hot_water=fee)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:debit_cards",
+      "description": "Layer 'Shower' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if fee=yes|hot_water=fee)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:credit_cards",
+      "description": "Layer 'Shower' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if fee=yes|hot_water=fee)",
+      "value": "yes"
+    },
+    {
       "key": "highway",
       "description": "The MapComplete theme Personal theme has a layer Speed Camera showing features with this tag",
       "value": "speed_camera"
@@ -11541,6 +11678,25 @@
       "key": "sport",
       "description": "Layer 'Sport pitches' shows sport=skateboard with a fixed text, namely 'This is a skatepark' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "skateboard"
+    },
+    {
+      "key": "hoops",
+      "description": "Layer 'Sport pitches' shows hoops=1 with a fixed text, namely 'This basketball pitch has a single hoop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "1"
+    },
+    {
+      "key": "hoops",
+      "description": "Layer 'Sport pitches' shows hoops=2 with a fixed text, namely 'This basketball pitch has two hoops' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "2"
+    },
+    {
+      "key": "hoops",
+      "description": "Layer 'Sport pitches' shows hoops=4 with a fixed text, namely 'This basketball pitch has four hoops' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "4"
+    },
+    {
+      "key": "hoops",
+      "description": "Layer 'Sport pitches' shows hoops~.+ with a fixed text, namely 'This basketball pitch has {hoops} hoops' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "surface",

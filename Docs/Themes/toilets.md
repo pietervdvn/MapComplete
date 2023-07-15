@@ -13,6 +13,7 @@ This theme contains the following layers:
 
   - [toilet](../Layers/toilet.md)
   - [toilet_at_amenity](../Layers/toilet_at_amenity.md)
+  - [shower](../Layers/shower.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
