@@ -1,5 +1,5 @@
 import * as turf from "@turf/turf"
-import { GeoOperations } from "../../Logic/GeoOperations"
+import { GeoOperations } from "../../src/Logic/GeoOperations"
 import { Feature, LineString, Polygon } from "geojson"
 import { describe, expect, it } from "vitest"
 

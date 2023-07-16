@@ -1,4 +1,4 @@
-import { Utils } from "../../Utils"
+import { Utils } from "../../src/Utils"
 import { existsSync, mkdirSync, readFileSync, unlinkSync } from "fs"
 import ScriptUtils from "../../scripts/ScriptUtils"
 import { main } from "../../scripts/generateCache"

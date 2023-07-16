@@ -1,9 +1,9 @@
-import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
-import { And } from "../../../Logic/Tags/And"
-import { Tag } from "../../../Logic/Tags/Tag"
-import { TagUtils } from "../../../Logic/Tags/TagUtils"
-import { Or } from "../../../Logic/Tags/Or"
-import { RegexTag } from "../../../Logic/Tags/RegexTag"
+import { TagsFilter } from "../../../src/Logic/Tags/TagsFilter"
+import { And } from "../../../src/Logic/Tags/And"
+import { Tag } from "../../../src/Logic/Tags/Tag"
+import { TagUtils } from "../../../src/Logic/Tags/TagUtils"
+import { Or } from "../../../src/Logic/Tags/Or"
+import { RegexTag } from "../../../src/Logic/Tags/RegexTag"
 import { describe, expect, it } from "vitest"
 
 describe("Tag optimalization", () => {

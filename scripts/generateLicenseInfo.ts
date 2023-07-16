@@ -1,5 +1,5 @@
 import { existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from "fs"
-import SmallLicense from "../Models/smallLicense"
+import SmallLicense from "../src/Models/smallLicense"
 import ScriptUtils from "./ScriptUtils"
 import Script from "./Script"
 
@@ -280,7 +280,7 @@ export class GenerateLicenseInfo extends Script {
         }
 
         writeFileSync(
-            "./assets/generated/license_info.json",
+            "./src/assets/generated/license_info.json",
             JSON.stringify(allLicenses, null, "  ")
         )
     }
@@ -288,13 +288,13 @@ export class GenerateLicenseInfo extends Script {
     async main(args: string[]) {
         console.log("Checking and compiling license info")
 
-        if (!existsSync("./assets/generated")) {
-            mkdirSync("./assets/generated")
+        if (!existsSync("./src/assets/generated")) {
+            mkdirSync("./src/assets/generated")
         }
 
-        let contents = ScriptUtils.readDirRecSync("./assets")
-            .filter((p) => !p.startsWith("./assets/templates/"))
-            .filter((entry) => entry.indexOf("./assets/generated") != 0)
+        let contents = ScriptUtils.readDirRecSync("./assets").filter(
+            (entry) => entry.indexOf("./assets/generated") != 0
+        )
         let licensePaths = contents.filter((entry) => entry.indexOf("license_info.json") >= 0)
         let licenseInfos = this.generateLicenseInfos(licensePaths)
 

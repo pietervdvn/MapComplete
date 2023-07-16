@@ -1,8 +1,8 @@
-import { ChangeDescription } from "../../../Logic/Osm/Actions/ChangeDescription"
-import { Changes } from "../../../Logic/Osm/Changes"
+import { ChangeDescription } from "../../../src/Logic/Osm/Actions/ChangeDescription"
+import { Changes } from "../../../src/Logic/Osm/Changes"
 import { expect, it } from "vitest"
-import { ImmutableStore } from "../../../Logic/UIEventSource"
-import { OsmConnection } from "../../../Logic/Osm/OsmConnection"
+import { ImmutableStore } from "../../../src/Logic/UIEventSource"
+import { OsmConnection } from "../../../src/Logic/Osm/OsmConnection"
 
 it("Generate preXML from changeDescriptions", () => {
     const changeDescrs: ChangeDescription[] = [

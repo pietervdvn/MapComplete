@@ -1,5 +1,5 @@
 import Script from "./Script"
-import { Utils } from "../Utils"
+import { Utils } from "../src/Utils"
 import { FeatureCollection } from "geojson"
 import fs from "fs"
 
@@ -10,7 +10,7 @@ class DownloadEli extends Script {
     async main(args: string[]): Promise<void> {
         const url = "https://osmlab.github.io/editor-layer-index/imagery.geojson"
         // Target should use '.json' instead of '.geojson', as the latter cannot be imported by the build systems
-        const target = args[0] ?? "assets/editor-layer-index.json"
+        const target = args[0] ?? "src/assets/editor-layer-index.json"
 
         const eli = <FeatureCollection>await Utils.downloadJson(url)
         const keptLayers = []

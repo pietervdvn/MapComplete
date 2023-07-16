@@ -1,5 +1,5 @@
-import { ExtraFuncParams, ExtraFunctions } from "../../Logic/ExtraFunctions"
-import { OsmFeature } from "../../Models/OsmFeature"
+import { ExtraFuncParams, ExtraFunctions } from "../../src/Logic/ExtraFunctions"
+import { OsmFeature } from "../../src/Models/OsmFeature"
 import { describe, expect, it } from "vitest"
 import { Feature } from "geojson"
 

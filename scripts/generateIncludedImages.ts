@@ -45,7 +45,7 @@ function genImages(dryrun = false) {
     }
     module += `public static All = {${allNames.join(",")}};`
     module += "}\n"
-    fs.writeFileSync("Svg.ts", module)
+    fs.writeFileSync("src/Svg.ts", module)
     console.log("Done")
 }
 

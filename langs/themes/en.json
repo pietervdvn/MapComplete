@@ -607,6 +607,87 @@
         "description": "On this map, you'll find information about all types of schools and education and can easily add more information",
         "title": "Education"
     },
+    "elongated_coin": {
+        "description": "Find penny presses to create your own elongated coins.",
+        "layers": {
+            "0": {
+                "description": "Layer showing penny presses.",
+                "name": "Penny Presses",
+                "presets": {
+                    "0": {
+                        "title": "a penny press"
+                    }
+                },
+                "tagRenderings": {
+                    "charge": {
+                        "freeform": {
+                            "placeholder": "Cost (e.g. 0.50 EUR)"
+                        },
+                        "mappings": {
+                            "0": {
+                                "then": "It costs 1 euro to press a penny."
+                            },
+                            "1": {
+                                "then": "It costs 2 euros to press a penny."
+                            }
+                        },
+                        "question": "How much does it cost to press a penny?",
+                        "render": "It costs {charge} to press a penny."
+                    },
+                    "coin": {
+                        "mappings": {
+                            "0": {
+                                "then": "This penny press uses a 2 cent coin for pressing."
+                            },
+                            "1": {
+                                "then": "This penny press uses a 5 cent coin for pressing."
+                            },
+                            "2": {
+                                "then": "This penny press uses a 10 cent coin for pressing."
+                            }
+                        },
+                        "question": "What coin is used for pressing?"
+                    },
+                    "designs": {
+                        "freeform": {
+                            "placeholder": "Number of designs (e.g. 5)"
+                        },
+                        "mappings": {
+                            "0": {
+                                "then": "This penny press has one design available."
+                            },
+                            "1": {
+                                "then": "This penny press has two designs available."
+                            },
+                            "2": {
+                                "then": "This penny press has three designs available."
+                            },
+                            "3": {
+                                "then": "This penny press has four designs available."
+                            }
+                        },
+                        "question": "How many designs are available?",
+                        "render": "This penny press has {coin:design_count} designs available."
+                    },
+                    "indoor": {
+                        "mappings": {
+                            "0": {
+                                "then": "This penny press is located indoors."
+                            },
+                            "1": {
+                                "then": "This penny press is located outdoors."
+                            }
+                        },
+                        "question": "Is the penny press indoors?"
+                    }
+                },
+                "title": {
+                    "render": "Penny Press"
+                }
+            }
+        },
+        "title": "Penny Presses"
+    },
     "etymology": {
         "description": "On this map, you can see what an object is named after. The streets, buildings, ... come from OpenStreetMap which got linked with Wikidata. In the popup, you'll see the Wikipedia article (if it exists) or a wikidata box of what the object is named after. If the object itself has a wikipedia page, that'll be shown too.<br/><br/><b>You can help contribute too!</b>Zoom in enough and <i>all</i> streets will show up. You can click one and a Wikidata-search box will popup. With a few clicks, you can add an etymology link. Note that you need a free OpenStreetMap account to do this.",
         "layers": {
@@ -1316,6 +1397,10 @@
         "description": "Map all the trees!",
         "shortDescription": "Map all the trees",
         "title": "Trees"
+    },
+    "vending_machine": {
+        "description": "Find vending machines for everything",
+        "title": "Vending Machines"
     },
     "walls_and_buildings": {
         "description": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user.",
