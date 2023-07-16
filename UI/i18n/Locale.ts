@@ -38,6 +38,8 @@ export default class Locale {
                     "- Use the navigator-language (if available)",
                     "- Use English",
                     "",
+                    "Note that this URL-parameter is not added to the URL-bar by default.",
+                    "",
                     "Translations are never complete. If a translation in a certain language is missing, English is used as fallback."].join("\n"),
             )
         } else {

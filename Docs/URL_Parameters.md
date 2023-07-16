@@ -68,9 +68,11 @@ Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
  The language to display MapComplete in.
 The user display language is determined in the following order:
 - If the user did log in and did set their language before with MapComplete, use this language
-- If the user visited MapComplete before and did change their language, use this language (saved in localStorage)
+- If the user visited MapComplete before and did change their language, use the language as set by this URL-parameter. This will _disable_ saving the language to localStorage in case a non-logged-in user changes their language
 - Use the navigator-language (if available)
 - Use English
+
+Note that this URL-parameter is not added to the URL-bar by default.
 
 Translations are never complete. If a translation in a certain language is missing, English is used as fallback. No default value set
 
