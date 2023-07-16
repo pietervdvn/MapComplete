@@ -1,12 +1,12 @@
 import BaseUIElement from "../BaseUIElement"
-import { InputElement } from "./InputElement"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import {InputElement} from "./InputElement"
+import {UIEventSource} from "../../Logic/UIEventSource"
 
 /**
  * @deprecated
  */
 export default class FileSelectorButton extends InputElement<FileList> {
-    private static _nextid
+    private static _nextid = 0
     private readonly _value = new UIEventSource<FileList>(undefined)
     private readonly _label: BaseUIElement
     private readonly _acceptType: string
@@ -67,21 +67,45 @@ export default class FileSelectorButton extends InputElement<FileList> {
             if (actualInputElement.files !== null) {
                 self._value.setData(actualInputElement.files)
             }
+            actualInputElement.classList.remove("glowing-shadow");
+
             e.preventDefault()
         })
 
         el.appendChild(actualInputElement)
 
+        function setDrawAttention(isOn: boolean){
+            if(isOn){
+                label.classList.add("glowing-shadow")
+
+            }else{
+                label.classList.remove("glowing-shadow")
+
+            }
+        }
+
         el.addEventListener("dragover", (event) => {
             event.stopPropagation()
             event.preventDefault()
+            setDrawAttention(true)
             // Style the drag-and-drop as a "copy file" operation.
             event.dataTransfer.dropEffect = "copy"
+
         })
+
+        window.document.addEventListener("dragenter", () =>{
+            setDrawAttention(true)
+        })
+
+        window.document.addEventListener("dragend", () => {
+            setDrawAttention(false)
+        })
+
 
         el.addEventListener("drop", (event) => {
             event.stopPropagation()
             event.preventDefault()
+            label.classList.remove("glowing-shadow")
             const fileList = event.dataTransfer.files
             this._value.setData(fileList)
         })
