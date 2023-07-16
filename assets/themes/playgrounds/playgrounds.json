@@ -57,7 +57,14 @@
   "widenFactor": 5,
   "layers": [
     "playground",
-    "bench",
-    "picnic_table"
+    {
+      "builtin": [
+        "bench",
+        "picnic_table"
+      ],
+      "override": {
+        "minzoom": 16
+      }
+    }
   ]
 }
