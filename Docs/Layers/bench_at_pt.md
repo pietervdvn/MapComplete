@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/themes/benches/bench_public_transport.svg' height="100px"> 
+<img src='https://mapcomplete.osm.be/circle:white;./assets/themes/benches/bench_public_transport.svg' height="100px"> 
 
 A layer showing all public-transport-stops which do have a bench
 

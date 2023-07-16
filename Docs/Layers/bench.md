@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/bench/bench.svg' height="100px"> 
+<img src='https://mapcomplete.osm.be/circle:99bd54;./assets/layers/bench/bench.svg' height="100px"> 
 
 A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them.
 
@@ -28,6 +28,7 @@ A bench is a wooden, metal, stone, … surface where a human can sit. This layer
   - [benches](https://mapcomplete.osm.be/benches)
   - [nature](https://mapcomplete.osm.be/nature)
   - [personal](https://mapcomplete.osm.be/personal)
+  - [playgrounds](https://mapcomplete.osm.be/playgrounds)
 
 
 This is a special layer - data is not sourced from OpenStreetMap

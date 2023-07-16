@@ -356,6 +356,16 @@
       "description": "The MapComplete theme Healthcare has a layer Shop showing features with this tag"
     },
     {
+      "key": "craft",
+      "description": "The MapComplete theme Healthcare has a layer Shop showing features with this tag",
+      "value": "shoe_repair"
+    },
+    {
+      "key": "craft",
+      "description": "The MapComplete theme Healthcare has a layer Shop showing features with this tag",
+      "value": "key_cutter"
+    },
+    {
       "key": "shop",
       "description": "The MapComplete theme Healthcare has a layer Shop showing features with this tag",
       "value": "medical_supply"
@@ -1362,6 +1372,16 @@
     {
       "key": "shop",
       "description": "The MapComplete theme Healthcare has a layer Shop showing features with this tag"
+    },
+    {
+      "key": "craft",
+      "description": "The MapComplete theme Healthcare has a layer Shop showing features with this tag",
+      "value": "shoe_repair"
+    },
+    {
+      "key": "craft",
+      "description": "The MapComplete theme Healthcare has a layer Shop showing features with this tag",
+      "value": "key_cutter"
     },
     {
       "key": "id",

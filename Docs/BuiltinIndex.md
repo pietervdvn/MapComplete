@@ -159,6 +159,7 @@
   - trail
   - transit_stops
   - tree_node
+  - vending_machine
   - viewpoint
   - village_green
   - waste_basket
@@ -411,6 +412,7 @@
   - parcel_lockers
   - recycling
   - toilet
+  - vending_machine
 
 
 
@@ -438,6 +440,7 @@
   - ticket_validator
   - toilet
   - toilet_at_amenity
+  - vending_machine
 
 
 
@@ -800,6 +803,7 @@
   - shower
   - ticket_machine
   - toilet
+  - vending_machine
 
 
 
@@ -812,6 +816,7 @@
 
   - parking_ticket_machine
   - ticket_machine
+  - vending_machine
 
 
 
@@ -824,6 +829,7 @@
 
   - parking_ticket_machine
   - ticket_machine
+  - vending_machine
 
 
 

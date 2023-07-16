@@ -28,6 +28,7 @@ The layer showing picnic tables
   - [benches](https://mapcomplete.osm.be/benches)
   - [nature](https://mapcomplete.osm.be/nature)
   - [personal](https://mapcomplete.osm.be/personal)
+  - [playgrounds](https://mapcomplete.osm.be/playgrounds)
 
 
 This is a special layer - data is not sourced from OpenStreetMap

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/themes/artwork/artwork.svg' height="100px"> 
+<img src='https://mapcomplete.osm.be/circle:white;./assets/themes/artwork/artwork.svg' height="100px"> 
 
 An open map of statues, busts, graffitis and other artwork all over the world
 

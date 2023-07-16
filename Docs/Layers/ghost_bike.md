@@ -47,7 +47,7 @@ this quick overview is incomplete
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/subject#values) [subject](https://wiki.openstreetmap.org/wiki/Key:subject) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/source#values) [source](https://wiki.openstreetmap.org/wiki/Key:source) | [url](../SpecialInputElements.md#url) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/inscription#values) [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/start_date#values) [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) | [date](../SpecialInputElements.md#date) | 
@@ -102,14 +102,16 @@ This tagrendering has no question and is thus read-only
 
 The question is  *Whom is remembered by this ghost bike?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
+This rendering asks information about the property  [subject](https://wiki.openstreetmap.org/wiki/Key:subject) 
 
-This is rendered with  `In remembrance of {name}`
-
-
+This is rendered with  `In remembrance of {subject}`
 
 
 
+
+
+  - *In remembrance of {name}*  corresponds with  `name~.+`
+  - This option cannot be chosen as answer
   - *No name is marked on the bike*  corresponds with  `noname=yes`
 
 

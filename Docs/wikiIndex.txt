@@ -488,6 +488,15 @@
 |genre= POI, editor, trees
 }}
 {{service_item
+|name= [https://mapcomplete.osm.be/vending_machine vending_machine]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:nl|en}}
+|descr= A MapComplete theme: Find vending machines for everything
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, vending_machine
+}}
+{{service_item
 |name= [https://mapcomplete.osm.be/waste_basket waste_basket]
 |region= Worldwide
 |lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:fr|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}

@@ -15,6 +15,16 @@
       "description": "The MapComplete theme Shops has a layer Shop showing features with this tag"
     },
     {
+      "key": "craft",
+      "description": "The MapComplete theme Shops has a layer Shop showing features with this tag",
+      "value": "shoe_repair"
+    },
+    {
+      "key": "craft",
+      "description": "The MapComplete theme Shops has a layer Shop showing features with this tag",
+      "value": "key_cutter"
+    },
+    {
       "key": "id",
       "description": "Layer 'Shop' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Shops') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },

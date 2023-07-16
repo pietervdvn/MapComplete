@@ -396,6 +396,51 @@
       "description": "The layer 'Maps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
+      "key": "map_type",
+      "description": "Layer 'Maps' shows map_type=topo with a fixed text, namely 'Topographical map <p class='subtle'>The map contains contour lines. </p>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "topo"
+    },
+    {
+      "key": "map_type",
+      "description": "Layer 'Maps' shows map_type=street with a fixed text, namely 'A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "street"
+    },
+    {
+      "key": "map_type",
+      "description": "Layer 'Maps' shows map_type=scheme with a fixed text, namely 'This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "scheme"
+    },
+    {
+      "key": "map_type",
+      "description": "Layer 'Maps' shows map_type=toposcope with a fixed text, namely 'This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "toposcope"
+    },
+    {
+      "key": "map_size",
+      "description": "Layer 'Maps' shows map_size=building with a fixed text, namely 'A map of the rooms within a building' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "building"
+    },
+    {
+      "key": "map_size",
+      "description": "Layer 'Maps' shows map_size=site with a fixed text, namely 'A map of special site, like of a historical castle, a park, a campus, a forest, ....' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "site"
+    },
+    {
+      "key": "map_size",
+      "description": "Layer 'Maps' shows map_size=village with a fixed text, namely 'A map showing the village or town' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "village"
+    },
+    {
+      "key": "map_size",
+      "description": "Layer 'Maps' shows map_size=city with a fixed text, namely ' A map of a city.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "city"
+    },
+    {
+      "key": "map_size",
+      "description": "Layer 'Maps' shows map_size=region with a fixed text, namely 'The map of an entire region, showing multiple cities and villages' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "region"
+    },
+    {
       "key": "map_source",
       "description": "Layer 'Maps' shows and asks freeform values for key 'map_source' (in the MapComplete.osm.be theme 'Into nature')"
     },
