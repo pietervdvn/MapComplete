@@ -22,7 +22,8 @@
 
 
     export let attribution = false
-    export let center: Readable<{ lng: number; lat: number }> = writable({lng: 0, lat: 0})
+    export let center: {lng: number, lat: number} | Readable<{ lng: number; lat: number }> = writable({lng: 0, lat: 0})
+    console.trace("Center is", center)
     export let zoom: Readable<number> = writable(1)
 
     const styleUrl = AvailableRasterLayers.maplibre.properties.url
@@ -30,12 +31,19 @@
     let _map: Map
     onMount(() => {
 
+        let _center: {lng: number, lat: number}
+        if(typeof center["lng"] === "number" && typeof center["lat"] === "number"){
+            _center = <any> center
+        }else{
+            _center = get(<any> center)
+        }
+        
 
         _map = new maplibre.Map({
             container,
             style: styleUrl,
             zoom: get(zoom),
-            center: get(center),
+            center: _center,
             maxZoom: 24,
             interactive: true,
             attributionControl: false,
@@ -63,16 +71,10 @@
     />
 </svelte:head>
 
-<main>
-    <div bind:this={container} class="map" id="map" style="      position: relative;
+<div bind:this={container} class="map" id="map" style="      position: relative;
         top: 0;
         bottom: 0;
         width: 100%;
         height: 100%;"></div>
 
-</main>
 
-<style>
-
-    
-</style>
