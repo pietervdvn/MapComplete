@@ -27,7 +27,9 @@ export default class Locale {
         let source: UIEventSource<string>
 
         if (QueryParameters.wasInitialized("language") || Utils.runningFromConsole) {
-            console.log("Language was initialized via URL-parameter - using the URL parameter as store instead of local storage", QueryParameters.wasInitialized("language"))
+            if(!Utils.runningFromConsole){
+                console.debug("Language was initialized via URL-parameter - using the URL parameter as store instead of local storage", QueryParameters.wasInitialized("language"))
+            }
             source = QueryParameters.GetQueryParameter(
                 "language",
                 undefined,

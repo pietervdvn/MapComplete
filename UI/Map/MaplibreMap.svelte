@@ -64,7 +64,7 @@
 </svelte:head>
 
 <main>
-    <div bind:this={container} class="map" id="map" style="      position: absolute;
+    <div bind:this={container} class="map" id="map" style="      position: relative;
         top: 0;
         bottom: 0;
         width: 100%;
