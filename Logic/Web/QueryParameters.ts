@@ -54,6 +54,7 @@ export class QueryParameters {
     }
 
     public static wasInitialized(key: string): boolean {
+        this.init()
         return QueryParameters._wasInitialized.has(key)
     }
 
@@ -76,11 +77,10 @@ export class QueryParameters {
         if (window?.location?.search) {
             const params = window.location.search.substr(1).split("&")
             for (const param of params) {
-                const kv = param.split("=")
-                const key = decodeURIComponent(kv[0])
+                const [key, value] = param.split("=")
                 QueryParameters.addOrder(key)
                 QueryParameters._wasInitialized.add(key)
-                const v = decodeURIComponent(kv[1])
+                const v = decodeURIComponent(value)
                 const source = new UIEventSource<string>(v)
                 source.addCallback(() => QueryParameters.Serialize())
                 QueryParameters.knownSources[key] = source
@@ -131,4 +131,5 @@ export class QueryParameters {
         QueryParameters._wasInitialized.clear()
         QueryParameters.order = []
     }
+
 }

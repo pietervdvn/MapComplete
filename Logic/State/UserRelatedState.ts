@@ -1,15 +1,15 @@
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import { OsmConnection } from "../Osm/OsmConnection"
-import { MangroveIdentity } from "../Web/MangroveReviews"
-import { Store, Stores, UIEventSource } from "../UIEventSource"
+import {OsmConnection} from "../Osm/OsmConnection"
+import {MangroveIdentity} from "../Web/MangroveReviews"
+import {Store, Stores, UIEventSource} from "../UIEventSource"
 import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource"
-import { FeatureSource } from "../FeatureSource/FeatureSource"
-import { Feature } from "geojson"
-import { Utils } from "../../Utils"
+import {FeatureSource} from "../FeatureSource/FeatureSource"
+import {Feature} from "geojson"
+import {Utils} from "../../Utils"
 import translators from "../../assets/translators.json"
 import codeContributors from "../../assets/contributors.json"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
+import {LayerConfigJson} from "../../Models/ThemeConfig/Json/LayerConfigJson"
 import usersettings from "../../assets/generated/layers/usersettings.json"
 import Locale from "../../UI/i18n/Locale"
 import LinkToWeblate from "../../UI/Base/LinkToWeblate"
@@ -92,7 +92,7 @@ export default class UserRelatedState {
             this.osmConnection.GetLongPreference("identity", "mangrove")
         )
 
-        this.InitializeLanguage(availableLanguages)
+        this.language.addCallbackAndRunD((language) => Locale.language.setData(language))
 
         this.installedUserThemes = this.InitInstalledUserThemes()
 
@@ -178,28 +178,6 @@ export default class UserRelatedState {
             )
         }
     }
-
-    private InitializeLanguage(availableLanguages?: string[]) {
-        this.language.addCallbackAndRunD((language) => Locale.language.setData(language))
-        Locale.language.addCallback((currentLanguage) => {
-            if (Locale.showLinkToWeblate.data) {
-                return true // Disable auto switching as we are in translators mode
-            }
-            if (availableLanguages?.indexOf(currentLanguage) < 0) {
-                console.log(
-                    "Resetting language to",
-                    availableLanguages[0],
-                    "as",
-                    currentLanguage,
-                    " is unsupported"
-                )
-                // The current language is not supported -> switch to a supported one
-                Locale.language.setData(availableLanguages[0])
-            }
-        })
-        Locale.language.ping()
-    }
-
     private InitInstalledUserThemes(): Store<string[]> {
         const prefix = "mapcomplete-unofficial-theme-"
         const postfix = "-combined-length"
