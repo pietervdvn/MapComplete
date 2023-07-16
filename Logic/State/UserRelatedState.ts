@@ -24,6 +24,7 @@ export default class UserRelatedState {
     public static readonly usersettingsConfig = UserRelatedState.initUserRelatedState()
     public static readonly availableUserSettingsIds: string[] =
         UserRelatedState.usersettingsConfig?.tagRenderings?.map((tr) => tr.id) ?? []
+    public static readonly SHOW_TAGS_VALUES = ["always", "yes", "full"] as const
     /**
      The user credentials
      */
@@ -34,7 +35,6 @@ export default class UserRelatedState {
     public readonly mangroveIdentity: MangroveIdentity
     public readonly installedUserThemes: Store<string[]>
     public readonly showAllQuestionsAtOnce: UIEventSource<boolean>
-    public static readonly SHOW_TAGS_VALUES = ["always", "yes", "full"] as const
     public readonly showTags: UIEventSource<"no" | undefined | "always" | "yes" | "full">
     public readonly homeLocation: FeatureSource
     public readonly language: UIEventSource<string>
@@ -111,13 +111,13 @@ export default class UserRelatedState {
 
     public GetUnofficialTheme(id: string):
         | {
-              id: string
-              icon: string
-              title: any
-              shortDescription: any
-              definition?: any
-              isOfficial: boolean
-          }
+        id: string
+        icon: string
+        title: any
+        shortDescription: any
+        definition?: any
+        isOfficial: boolean
+    }
         | undefined {
         console.log("GETTING UNOFFICIAL THEME")
         const pref = this.osmConnection.GetLongPreference("unofficial-theme-" + id)
@@ -142,8 +142,8 @@ export default class UserRelatedState {
         } catch (e) {
             console.warn(
                 "Removing theme " +
-                    id +
-                    " as it could not be parsed from the preferences; the content is:",
+                id +
+                " as it could not be parsed from the preferences; the content is:",
                 str
             )
             pref.setData(null)
@@ -178,6 +178,7 @@ export default class UserRelatedState {
             )
         }
     }
+
     private InitInstalledUserThemes(): Store<string[]> {
         const prefix = "mapcomplete-unofficial-theme-"
         const postfix = "-combined-length"
@@ -247,9 +248,23 @@ export default class UserRelatedState {
         const osmConnection = this.osmConnection
         osmConnection.preferencesHandler.preferences.addCallback((newPrefs) => {
             for (const k in newPrefs) {
-                amendedPrefs.data[k] = newPrefs[k]
+                const v = newPrefs[k]
+                if (k.endsWith("-combined-length")) {
+                    const l = Number(v)
+                    const key = k.substring(0, k.length - "length".length)
+                    let combined = ""
+                    for (let i = 0; i < l; i++) {
+                        combined += newPrefs[key + i]
+                    }
+                    amendedPrefs.data[key.substring(0, key.length - "-combined-".length)] = combined
+
+                } else {
+                    amendedPrefs.data[k] = newPrefs[k]
+                }
             }
+
             amendedPrefs.ping()
+            console.log("Amended prefs are:", amendedPrefs.data)
         })
         const usersettingsConfig = UserRelatedState.usersettingsConfig
         const translationMode = osmConnection.GetPreference("translation-mode")
@@ -272,13 +287,13 @@ export default class UserRelatedState {
                     const zenLinks: { link: string; id: string }[] = Utils.NoNull([
                         hasMissingTheme
                             ? {
-                                  id: "theme:" + layout.id,
-                                  link: LinkToWeblate.hrefToWeblateZen(
-                                      language,
-                                      "themes",
-                                      layout.id
-                                  ),
-                              }
+                                id: "theme:" + layout.id,
+                                link: LinkToWeblate.hrefToWeblateZen(
+                                    language,
+                                    "themes",
+                                    layout.id
+                                ),
+                            }
                             : undefined,
                         ...missingLayers.map((id) => ({
                             id: "layer:" + id,
@@ -350,7 +365,7 @@ export default class UserRelatedState {
                     // Language is managed seperately
                     continue
                 }
-                this.osmConnection.GetPreference(key, undefined, { prefix: "" }).setData(tags[key])
+                this.osmConnection.GetPreference(key, undefined, {prefix: ""}).setData(tags[key])
             }
         })
 
