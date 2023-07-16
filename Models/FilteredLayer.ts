@@ -1,14 +1,14 @@
-import { Store, UIEventSource } from "../Logic/UIEventSource"
+import {Store, UIEventSource} from "../Logic/UIEventSource"
 import LayerConfig from "./ThemeConfig/LayerConfig"
-import { OsmConnection } from "../Logic/Osm/OsmConnection"
-import { LocalStorageSource } from "../Logic/Web/LocalStorageSource"
-import { QueryParameters } from "../Logic/Web/QueryParameters"
-import { FilterConfigOption } from "./ThemeConfig/FilterConfig"
-import { TagsFilter } from "../Logic/Tags/TagsFilter"
-import { Utils } from "../Utils"
-import { TagUtils } from "../Logic/Tags/TagUtils"
-import { And } from "../Logic/Tags/And"
-import { GlobalFilter } from "./GlobalFilter"
+import {OsmConnection} from "../Logic/Osm/OsmConnection"
+import {LocalStorageSource} from "../Logic/Web/LocalStorageSource"
+import {QueryParameters} from "../Logic/Web/QueryParameters"
+import {FilterConfigOption} from "./ThemeConfig/FilterConfig"
+import {TagsFilter} from "../Logic/Tags/TagsFilter"
+import {Utils} from "../Utils"
+import {TagUtils} from "../Logic/Tags/TagUtils"
+import {And} from "../Logic/Tags/And"
+import {GlobalFilter} from "./GlobalFilter"
 
 export default class FilteredLayer {
     /**
@@ -72,6 +72,10 @@ export default class FilteredLayer {
         return JSON.stringify(values)
     }
 
+    public static queryParameterKey(layer: LayerConfig) {
+        return "layer-" + layer.id
+    }
+
     /**
      * Creates a FilteredLayer which is tied into the QueryParameters and/or user preferences
      */
@@ -100,7 +104,7 @@ export default class FilteredLayer {
             )
         } else {
             isDisplayed = QueryParameters.GetBooleanQueryParameter(
-                "layer-" + layer.id,
+                FilteredLayer.queryParameterKey(layer),
                 layer.shownByDefault,
                 "Whether or not layer " + layer.id + " is shown"
             )

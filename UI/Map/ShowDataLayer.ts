@@ -458,6 +458,7 @@ export default class ShowDataLayer {
         features: FeatureSource,
         doShowLayer?: Store<boolean>
     ): ShowDataLayer {
+
         return new ShowDataLayer(map, {
             layer: ShowDataLayer.rangeLayer,
             features,
