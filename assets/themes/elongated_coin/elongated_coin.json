@@ -128,7 +128,7 @@
         {
           "id": "charge",
           "question": {
-            "en": "How much does it cost to press a coin?"
+            "en": "How much does it cost to press a penny?"
           },
           "freeform": {
             "key": "charge",
@@ -140,20 +140,20 @@
             {
               "if": "charge=1 EUR",
               "then": {
-                "en": "It costs 1 euro to press a coin."
+                "en": "It costs 1 euro to press a penny."
               },
               "hideInAnswer": "_currency!~.*EUR.*"
             },
             {
               "if": "charge=2 EUR",
               "then": {
-                "en": "It costs 2 euros to press a coin."
+                "en": "It costs 2 euros to press a penny."
               },
               "hideInAnswer": "_currency!~.*EUR.*"
             }
           ],
           "render": {
-            "en": "It costs {charge} to press a coin."
+            "en": "It costs {charge} to press a penny."
           }
         },
         "denominations-coins",

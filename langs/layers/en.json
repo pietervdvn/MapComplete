@@ -9400,6 +9400,17 @@
                     }
                 }
             },
+            "fixate-north": {
+                "mappings": {
+                    "0": {
+                        "then": "Allow to rotate the map"
+                    },
+                    "1": {
+                        "then": "Always keep north pointing up"
+                    }
+                },
+                "question": "Should north always be up?"
+            },
             "inbox": {
                 "mappings": {
                     "0": {

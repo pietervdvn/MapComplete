@@ -635,6 +635,9 @@
                         "render": "It costs {charge} to press a penny."
                     },
                     "coin": {
+                        "freeform": {
+                            "placeholder": "Coin type (e.g. 10cent)"
+                        },
                         "mappings": {
                             "0": {
                                 "then": "This penny press uses a 2 cent coin for pressing."
@@ -644,9 +647,16 @@
                             },
                             "2": {
                                 "then": "This penny press uses a 10 cent coin for pressing."
+                            },
+                            "3": {
+                                "then": "This penny press uses a 25 cent coin for pressing."
+                            },
+                            "4": {
+                                "then": "This penny press uses a 50 cent coin for pressing."
                             }
                         },
-                        "question": "What coin is used for pressing?"
+                        "question": "What coin is used for pressing?",
+                        "render": "This penny press uses a {coin:type} coin for pressing."
                     },
                     "designs": {
                         "freeform": {

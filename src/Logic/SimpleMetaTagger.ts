@@ -590,11 +590,13 @@ export default class SimpleMetaTaggers {
             doc: "Adds the currency valid for the object, based on country or explicit tagging. Can be a single currency or a semicolon-separated list of currencies. Empty if no currency is found.",
             isLazy: true,
         },
-        (feature) => {
-            Utils.AddLazyProperty(feature.properties, "_currency", () => {
+        (feature: Feature, layer: LayerConfig, tagsStore: UIEventSource<OsmTags>) => {
+            Utils.AddLazyPropertyAsync(feature.properties, "_currency", async () => {
+                // Wait until _country is actually set
+                await tagsStore.AsPromise((tags) => !!tags._country)
+
                 // Initialize a list of currencies
                 const currencies = {}
-
                 // Check if there are any currency:XXX tags, add them to the map
                 for (const key in feature.properties) {
                     if (key.startsWith("currency:")) {

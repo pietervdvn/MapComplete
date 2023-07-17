@@ -46,7 +46,6 @@
   "startLon": 0,
   "startZoom": 1,
   "widenFactor": 2,
-  
   "clustering": {
     "maxZoom": 14,
     "minNeededElements": 250
