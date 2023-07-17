@@ -7,11 +7,13 @@
   import type { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
   import Tr from "../Base/Tr.svelte"
   import SubtleLink from "../Base/SubtleLink.svelte"
+    import Translations from "../i18n/Translations"
 
   export let theme: LayoutInformation
   export let isCustom: boolean = false
   export let userDetails: UIEventSource<UserDetails>
   export let state: { layoutToUse?: { id: string }; osmConnection: OsmConnection }
+  export let selected: boolean = false
 
   $: title = new Translation(
     theme.title,
@@ -78,6 +80,11 @@
       <span class="subtle max-h-12 truncate text-ellipsis">
         <Tr t={description} />
       </span>
+      {#if selected}
+        <span class="alert">
+          <Tr t={Translations.t.general.morescreen.enterToOpen} />
+        </span>
+      {/if}
     </span>
   </SubtleLink>
 {/if}
