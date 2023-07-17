@@ -1,30 +1,30 @@
-import Combine from "../UI/Base/Combine"
-import BaseUIElement from "../UI/BaseUIElement"
+import Combine from "../src/UI/Base/Combine"
+import BaseUIElement from "../src/UI/BaseUIElement"
 import { existsSync, mkdirSync, writeFile, writeFileSync } from "fs"
-import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
-import TableOfContents from "../UI/Base/TableOfContents"
-import SimpleMetaTaggers from "../Logic/SimpleMetaTagger"
-import SpecialVisualizations from "../UI/SpecialVisualizations"
-import { ExtraFunctions } from "../Logic/ExtraFunctions"
-import Title from "../UI/Base/Title"
-import QueryParameterDocumentation from "../UI/QueryParameterDocumentation"
+import { AllKnownLayouts } from "../src/Customizations/AllKnownLayouts"
+import TableOfContents from "../src/UI/Base/TableOfContents"
+import SimpleMetaTaggers from "../src/Logic/SimpleMetaTagger"
+import SpecialVisualizations from "../src/UI/SpecialVisualizations"
+import { ExtraFunctions } from "../src/Logic/ExtraFunctions"
+import Title from "../src/UI/Base/Title"
+import QueryParameterDocumentation from "../src/UI/QueryParameterDocumentation"
 import ScriptUtils from "./ScriptUtils"
-import List from "../UI/Base/List"
-import SharedTagRenderings from "../Customizations/SharedTagRenderings"
-import Translations from "../UI/i18n/Translations"
+import List from "../src/UI/Base/List"
+import SharedTagRenderings from "../src/Customizations/SharedTagRenderings"
+import Translations from "../src/UI/i18n/Translations"
 import themeOverview from "../assets/generated/theme_overview.json"
-import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
 import bookcases from "../assets/generated/themes/bookcases.json"
 import fakedom from "fake-dom"
-import Hotkeys from "../UI/Base/Hotkeys"
-import { QueryParameters } from "../Logic/Web/QueryParameters"
-import Link from "../UI/Base/Link"
-import Constants from "../Models/Constants"
-import LayerConfig from "../Models/ThemeConfig/LayerConfig"
-import DependencyCalculator from "../Models/ThemeConfig/DependencyCalculator"
-import { AllSharedLayers } from "../Customizations/AllSharedLayers"
-import ThemeViewState from "../Models/ThemeViewState"
-import Validators from "../UI/InputElement/Validators"
+import Hotkeys from "../src/UI/Base/Hotkeys"
+import { QueryParameters } from "../src/Logic/Web/QueryParameters"
+import Link from "../src/UI/Base/Link"
+import Constants from "../src/Models/Constants"
+import LayerConfig from "../src/Models/ThemeConfig/LayerConfig"
+import DependencyCalculator from "../src/Models/ThemeConfig/DependencyCalculator"
+import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
+import ThemeViewState from "../src/Models/ThemeViewState"
+import Validators from "../src/UI/InputElement/Validators"
 
 function WriteFile(
     filename,
@@ -335,7 +335,7 @@ Array.from(AllKnownLayouts.allKnownLayouts.values()).map((theme) => {
     )
 })
 WriteFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage(), [
-    "UI/SpecialVisualizations.ts",
+    "src/UI/SpecialVisualizations.ts",
 ])
 WriteFile(
     "./Docs/CalculatedTags.md",
@@ -344,15 +344,17 @@ WriteFile(
         SimpleMetaTaggers.HelpText(),
         ExtraFunctions.HelpText(),
     ]).SetClass("flex-col"),
-    ["Logic/SimpleMetaTagger.ts", "Logic/ExtraFunctions.ts"]
+    ["src/Logic/SimpleMetaTagger.ts", "src/Logic/ExtraFunctions.ts"]
 )
 WriteFile("./Docs/SpecialInputElements.md", Validators.HelpText(), [
-    "UI/InputElement/Validators.ts",
+    "src/UI/InputElement/Validators.ts",
 ])
-WriteFile("./Docs/BuiltinLayers.md", GenLayerOverviewText(), ["Customizations/AllKnownLayouts.ts"])
+WriteFile("./Docs/BuiltinLayers.md", GenLayerOverviewText(), [
+    "src/Customizations/AllKnownLayouts.ts",
+])
 WriteFile("./Docs/BuiltinQuestions.md", SharedTagRenderings.HelpText(), [
-    "Customizations/SharedTagRenderings.ts",
-    "assets/tagRenderings/questions.json",
+    "src/Customizations/SharedTagRenderings.ts",
+    "assets/layers/questions/questions.json",
 ])
 
 {
@@ -402,8 +404,8 @@ WriteFile("./Docs/BuiltinQuestions.md", SharedTagRenderings.HelpText(), [
 }
 
 WriteFile("./Docs/URL_Parameters.md", QueryParameterDocumentation.GenerateQueryParameterDocs(), [
-    "Logic/Web/QueryParameters.ts",
-    "UI/QueryParameterDocumentation.ts",
+    "src/Logic/Web/QueryParameters.ts",
+    "src/UI/QueryParameterDocumentation.ts",
 ])
 if (fakedom === undefined || window === undefined) {
     throw "FakeDom not initialized"
