@@ -1285,9 +1285,9 @@
       "render": {
         "en": "There are <b class='text-xl'>{socket:chademo}</b> plugs of type <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> available here",
         "nl": "Hier zijn <b class='text-xl'>{socket:chademo}</b> stekkers van het type <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>",
+        "ca": "Aquí hi ha <b class='text-xl'>{socket:chademo}</b> endolls del tipus <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> disponibles",
         "da": "Der er <b class='text-xl'>{socket:chademo}</b> stik af typen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> tilgængelig her",
-        "de": "Hier sind <b class='text-xl'>{socket:chademo}</b> Stecker des Typs <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> vorhanden",
-        "ca": "Aquí hi ha <b class='text-xl'>{socket:chademo}</b> endolls del tipus <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> disponibles"
+        "de": "Hier sind <b class='text-xl'>{socket:chademo}</b> Stecker des Typs <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> vorhanden"
       },
       "freeform": {
         "key": "socket:chademo",
@@ -1431,8 +1431,8 @@
       "render": {
         "en": "There are <b class='text-xl'>{socket:type2_combo}</b> plugs of type <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> available here",
         "nl": "Hier zijn <b class='text-xl'>{socket:type2_combo}</b> stekkers van het type <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>",
-        "de": "Hier sind <b class='text-xl'>{socket:type2_combo}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> vorhanden",
-        "ca": "Aquí hi ha <b class='text-xl'>{socket:type2_combo}</b> endolls del tipus <div style='display: inline-block'><b><b>Tipus 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> disponibles"
+        "ca": "Aquí hi ha <b class='text-xl'>{socket:type2_combo}</b> endolls del tipus <div style='display: inline-block'><b><b>Tipus 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> disponibles",
+        "de": "Hier sind <b class='text-xl'>{socket:type2_combo}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> vorhanden"
       },
       "freeform": {
         "key": "socket:type2_combo",
@@ -1927,9 +1927,9 @@
       "question": {
         "en": "What current do the plugs with <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> offer?",
         "nl": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?",
+        "ca": "Quin corrent ofereixen els endolls amb <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?",
         "da": "Hvilken strømstyrke har stikkene med <div style='display: inline-block'><b><b> Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> ?",
-        "de": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?",
-        "ca": "Quin corrent ofereixen els endolls amb <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?"
+        "de": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?"
       },
       "render": {
         "en": "<div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> outputs at most {socket:chademo:current}A",
@@ -1946,9 +1946,9 @@
           "then": {
             "en": "<b>Chademo</b> outputs at most 120 A",
             "nl": "<b>Chademo</b> levert een stroom van maximaal 120 A",
+            "ca": "<b>Chademo</b> surt com a màxim a 120 A",
             "da": "<b>Chademo</b> yder højst 120 A",
-            "de": "<b>Chademo</b> liefert maximal 120 A",
-            "ca": "<b>Chademo</b> surt com a màxim a 120 A"
+            "de": "<b>Chademo</b> liefert maximal 120 A"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Chademo_type4.svg",
@@ -1988,8 +1988,8 @@
           "then": {
             "en": "<b>Chademo</b> outputs at most 50 kw A",
             "nl": "<b>Chademo</b> levert een vermogen van maximaal 50 kw A",
-            "de": "<b>Chademo</b> liefert maximal 50 kw A",
-            "ca": "<b>Chademo</b> surt com a màxim a 50 kw A"
+            "ca": "<b>Chademo</b> surt com a màxim a 50 kw A",
+            "de": "<b>Chademo</b> liefert maximal 50 kw A"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Chademo_type4.svg",
@@ -2834,8 +2834,8 @@
       "question": {
         "en": "What voltage do the plugs with <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> offer?",
         "nl": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>",
-        "de": "Welche Spannung liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
-        "ca": "Quin voltatge ofereixen els endolls amb <div style='display: inline-block'><b><b>Tipus 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?"
+        "ca": "Quin voltatge ofereixen els endolls amb <div style='display: inline-block'><b><b>Tipus 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
+        "de": "Welche Spannung liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?"
       },
       "render": {
         "en": "<div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs {socket:type2_combo:voltage} volt",
@@ -2852,8 +2852,8 @@
           "then": {
             "en": "<b>Type 2 CCS</b> (mennekes) outputs 500 volt",
             "nl": "<b>Type 2 CCS</b> (mennekes) heeft een spanning van 500 volt",
-            "de": "<b>Typ 2 CCS</b> (Mennekes) liefert 500 Volt",
-            "ca": "<b>Tipus 2 CCS</b> (mennekes) surt a 500 volts"
+            "ca": "<b>Tipus 2 CCS</b> (mennekes) surt a 500 volts",
+            "de": "<b>Typ 2 CCS</b> (Mennekes) liefert 500 Volt"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_CCS.svg",
@@ -2865,8 +2865,8 @@
           "then": {
             "en": "<b>Type 2 CCS</b> (mennekes) outputs 920 volt",
             "nl": "<b>Type 2 CCS</b> (mennekes) heeft een spanning van 920 volt",
-            "de": "<b>Typ 2 CCS</b> (Mennekes) liefert 920 Volt",
-            "ca": "<b>Tipus 2 CCS</b> (mennekes) surt a 920 volts"
+            "ca": "<b>Tipus 2 CCS</b> (mennekes) surt a 920 volts",
+            "de": "<b>Typ 2 CCS</b> (Mennekes) liefert 920 Volt"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_CCS.svg",
@@ -2889,9 +2889,9 @@
       "question": {
         "en": "What current do the plugs with <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> offer?",
         "nl": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
+        "ca": "Quin corrent ofereixen els endolls amb <div style='display: inline-block'><b><b>Tipus 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
         "da": "Hvilken strømstyrke giver stikkene med <div style='display: inline-block'><b><b> Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> ?",
-        "de": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
-        "ca": "Quin corrent ofereixen els endolls amb <div style='display: inline-block'><b><b>Tipus 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?"
+        "de": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?"
       },
       "render": {
         "en": "<div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs at most {socket:type2_combo:current}A",
@@ -2909,9 +2909,9 @@
           "then": {
             "en": "<b>Type 2 CCS</b> (mennekes) outputs at most 125 A",
             "nl": "<b>Type 2 CCS</b> (mennekes) levert een stroom van maximaal 125 A",
+            "ca": "<b>Tipus 2 CCS</b> (mennekes) surt com a màxim a 125 A",
             "da": "<b>Type 2 CCS</b> (mennekes) udgange på højst 125 A",
-            "de": "<b>Typ 2 CCS</b> (Mennekes) liefert maximal 125 A",
-            "ca": "<b>Tipus 2 CCS</b> (mennekes) surt com a màxim a 125 A"
+            "de": "<b>Typ 2 CCS</b> (Mennekes) liefert maximal 125 A"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_CCS.svg",
@@ -2923,9 +2923,9 @@
           "then": {
             "en": "<b>Type 2 CCS</b> (mennekes) outputs at most 350 A",
             "nl": "<b>Type 2 CCS</b> (mennekes) levert een stroom van maximaal 350 A",
+            "ca": "<b>Tipus 2 CCS</b> (mennekes) surt com a màxim a 350 A",
             "da": "<b>Type 2 CCS</b> (mennekes) udgange højst 350 A",
-            "de": "<b>Typ 2 CCS</b> (Mennekes) liefert maximal 350 A",
-            "ca": "<b>Tipus 2 CCS</b> (mennekes) surt com a màxim a 350 A"
+            "de": "<b>Typ 2 CCS</b> (Mennekes) liefert maximal 350 A"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_CCS.svg",
@@ -2965,8 +2965,8 @@
           "then": {
             "en": "<b>Type 2 CCS</b> (mennekes) outputs at most 50 kw A",
             "nl": "<b>Type 2 CCS</b> (mennekes) levert een vermogen van maximaal 50 kw A",
-            "de": "<b>Typ 2 CCS</b> (Mennekes) liefert maximal 50 kw A",
-            "ca": "<b>Tipus 2 CCS</b> (mennekes) surt com a màxim 50 kw A"
+            "ca": "<b>Tipus 2 CCS</b> (mennekes) surt com a màxim 50 kw A",
+            "de": "<b>Typ 2 CCS</b> (Mennekes) liefert maximal 50 kw A"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_CCS.svg",
@@ -4405,11 +4405,11 @@
       "render": {
         "en": "In case of problems, call <a href='tel:{phone}'>{phone}</a>",
         "nl": "Bij problemen, bel naar <a href='tel:{phone}'>{phone}</a>",
+        "ca": "En cas de problemes, truqueu a <a href='tel:{phone}'>{phone}</a>",
         "da": "I tilfælde af problemer, ring til <a href='tel:{phone}'>{phone}</a>",
         "de": "Bei Problemen, anrufen unter <a href='tel:{phone}'>{phone}</a>",
         "es": "En caso de problemas, llama a <a href='tel:{phone}'>{phone}</a>",
-        "fr": "En cas de problèmes, appelez le <a href='tel:{phone}'>{phone}</a>",
-        "ca": "En cas de problemes, truqueu a <a href='tel:{phone}'>{phone}</a>"
+        "fr": "En cas de problèmes, appelez le <a href='tel:{phone}'>{phone}</a>"
       },
       "freeform": {
         "key": "phone",
@@ -4462,9 +4462,9 @@
       "question": {
         "en": "What is the reference number of this charging station?",
         "nl": "Wat is het referentienummer van dit oplaadstation?",
+        "ca": "Quin és el número de referència d'aquest punt de càrrega?",
         "de": "Welche Kennnummer hat die Ladestation?",
-        "es": "¿Cual es el número de referencia de esta estación de carga?",
-        "ca": "Quin és el número de referència d'aquest punt de càrrega?"
+        "es": "¿Cual es el número de referencia de esta estación de carga?"
       },
       "render": {
         "en": "Reference number is <b>{ref}</b>",
@@ -4633,9 +4633,7 @@
         ]
       }
     },
-    {
-      "id": "questions"
-    },
+    "questions",
     {
       "id": "questions-technical",
       "render": {

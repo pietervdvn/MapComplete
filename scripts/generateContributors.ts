@@ -49,9 +49,9 @@ function main() {
             hist.set(author, 1 + (hist.get(author) ?? 0))
         }
 
-        const codeContributorsTarget = "assets/contributors.json"
+        const codeContributorsTarget = "src/assets/contributors.json"
         writeFileSync(codeContributorsTarget, JSON.stringify(asList(codeContributors), null, "  "))
-        const translatorsTarget = "assets/translators.json"
+        const translatorsTarget = "src/assets/translators.json"
         writeFileSync(
             translatorsTarget,
             JSON.stringify(asList(translationContributors), null, "  ")

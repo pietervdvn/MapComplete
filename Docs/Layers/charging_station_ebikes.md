@@ -2011,6 +2011,8 @@ The question is  *Does one have to pay a parking fee while charging?*
 
 
 
+Show the images block at this location
+
 This tagrendering has no question and is thus read-only
 
 
@@ -2018,16 +2020,6 @@ This tagrendering has no question and is thus read-only
 
 
 ### questions-technical 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### leftover-questions 
 
 
 

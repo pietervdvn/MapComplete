@@ -1,6 +1,6 @@
-import AllImageProviders from "../../../Logic/ImageProviders/AllImageProviders"
-import { UIEventSource } from "../../../Logic/UIEventSource"
-import { Utils } from "../../../Utils"
+import AllImageProviders from "../../../src/Logic/ImageProviders/AllImageProviders"
+import { UIEventSource } from "../../../src/Logic/UIEventSource"
+import { Utils } from "../../../src/Utils"
 import { describe, expect, it } from "vitest"
 
 describe("ImageProviders", () => {

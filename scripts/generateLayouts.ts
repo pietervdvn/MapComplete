@@ -1,17 +1,17 @@
 import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFile, writeFileSync } from "fs"
-import Locale from "../UI/i18n/Locale"
-import Translations from "../UI/i18n/Translations"
-import { Translation } from "../UI/i18n/Translation"
-import all_known_layouts from "../assets/generated/known_themes.json"
-import { LayoutConfigJson } from "../Models/ThemeConfig/Json/LayoutConfigJson"
-import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import Locale from "../src/UI/i18n/Locale"
+import Translations from "../src/UI/i18n/Translations"
+import { Translation } from "../src/UI/i18n/Translation"
+import all_known_layouts from "../src/assets/generated/known_themes.json"
+import { LayoutConfigJson } from "../src/Models/ThemeConfig/Json/LayoutConfigJson"
+import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
 import xml2js from "xml2js"
 import ScriptUtils from "./ScriptUtils"
-import { Utils } from "../Utils"
+import { Utils } from "../src/Utils"
 
 const sharp = require("sharp")
 const template = readFileSync("theme.html", "utf8")
-const codeTemplate = readFileSync("index_theme.ts.template", "utf8")
+const codeTemplate = readFileSync("src/index_theme.ts.template", "utf8")
 
 function enc(str: string): string {
     return encodeURIComponent(str.toLowerCase())
@@ -77,7 +77,9 @@ async function createSocialImage(layout: LayoutConfig, template: "" | "Wide"): P
     }
     delete svg["defs"]
     delete svg["$"]
-    let templateSvg = await ScriptUtils.ReadSvg("./assets/SocialImageTemplate" + template + ".svg")
+    let templateSvg = await ScriptUtils.ReadSvg(
+        "./public/assets/SocialImageTemplate" + template + ".svg"
+    )
     templateSvg = Utils.WalkJson(
         templateSvg,
         (leaf) => {
@@ -287,8 +289,8 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
         )
 
         .replace(
-            '<script type="module" src="./index.ts"></script>',
-            `<script type="module"  src='./index_${layout.id}.ts'></script>`
+            '<script src="./src/index.ts" type="module"></script>',
+            `<script type="module" src='./index_${layout.id}.ts'></script>`
         )
 
     return output
@@ -296,7 +298,8 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
 
 async function createIndexFor(theme: LayoutConfig) {
     const filename = "index_" + theme.id + ".ts"
-    writeFileSync(filename, `import layout from "./assets/generated/themes/${theme.id}.json"\n`)
+    writeFileSync(filename, `import layout from "./src/assets/generated/themes/${theme.id}.json"\n`)
+
     appendFileSync(filename, codeTemplate)
 }
 
@@ -308,9 +311,6 @@ function createDir(path) {
 
 async function main(): Promise<void> {
     const alreadyWritten = []
-    createDir("./assets/generated")
-    createDir("./assets/generated/layers")
-    createDir("./assets/generated/themes")
     createDir("./public/assets/")
     createDir("./public/assets/generated")
     createDir("./public/assets/generated/images")
@@ -359,6 +359,7 @@ async function main(): Promise<void> {
 
         // Create a landing page for the given theme
         const landing = await createLandingPage(layout, manifest, whiteIcons, alreadyWritten)
+
         writeFile(enc(layout.id) + ".html", landing, err)
         await createIndexFor(layout)
     }

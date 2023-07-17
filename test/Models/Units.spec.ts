@@ -1,5 +1,5 @@
-import { Unit } from "../../Models/Unit"
-import { Denomination } from "../../Models/Denomination"
+import { Unit } from "../../src/Models/Unit"
+import { Denomination } from "../../src/Models/Denomination"
 import { describe, expect, it } from "vitest"
 
 describe("Unit", () => {

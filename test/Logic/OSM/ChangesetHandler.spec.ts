@@ -1,8 +1,8 @@
-import { Utils } from "../../../Utils"
-import { ChangesetHandler, ChangesetTag } from "../../../Logic/Osm/ChangesetHandler"
-import { ImmutableStore, UIEventSource } from "../../../Logic/UIEventSource"
-import { OsmConnection } from "../../../Logic/Osm/OsmConnection"
-import { Changes } from "../../../Logic/Osm/Changes"
+import { Utils } from "../../../src/Utils"
+import { ChangesetHandler, ChangesetTag } from "../../../src/Logic/Osm/ChangesetHandler"
+import { ImmutableStore, UIEventSource } from "../../../src/Logic/UIEventSource"
+import { OsmConnection } from "../../../src/Logic/Osm/OsmConnection"
+import { Changes } from "../../../src/Logic/Osm/Changes"
 import { describe, expect, it } from "vitest"
 
 function elstorage() {

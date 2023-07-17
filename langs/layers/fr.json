@@ -1293,6 +1293,22 @@
     },
     "bike_shop": {
         "description": "Un magasin vendant spécifiquement des vélos ou des objets en lien",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Vend des vélos usagés"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Offre des services DIY"
+                    }
+                }
+            }
+        },
         "name": "Magasin ou réparateur de vélo",
         "presets": {
             "0": {
@@ -1414,13 +1430,13 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Magasin de sport <i>{name}</i>"
+                    "then": "Magasin d'équipements de sport <i>{name}</i>"
                 },
                 "1": {
                     "then": "Magasin"
                 },
                 "2": {
-                    "then": "Location de vélo <i>{name}</i>"
+                    "then": "Magasin de location de vélo <i>{name}</i>"
                 },
                 "3": {
                     "then": "Réparateur de vélo <i>{name}</i>"
@@ -3533,12 +3549,15 @@
             "ghost_bike-name": {
                 "mappings": {
                     "0": {
+                        "then": "En souvenir de {name}"
+                    },
+                    "1": {
                         "then": "Aucun nom n'est marqué sur le vélo"
                     }
                 },
                 "question": "À qui est dédié ce vélo fantôme ?",
                 "questionHint": "Veuillez respecter la vie privée – ajoutez le nom seulement s'il est largement publié ou marqué sur le vélo. Choisissez de ne pas indiquer le nom de famille ",
-                "render": "En souvenir de {name}"
+                "render": "En souvenir de {subject}"
             },
             "ghost_bike-source": {
                 "question": "Sur quelle page web peut-on trouver plus d'informations sur le Vélo fantôme ou l'accident ?",
@@ -3552,6 +3571,9 @@
         "title": {
             "mappings": {
                 "0": {
+                    "then": "Vélo fantôme en souvenir de {subject}"
+                },
+                "1": {
                     "then": "Vélo fantôme en souvenir de {name}"
                 }
             },
@@ -4230,6 +4252,323 @@
                 }
             },
             "render": "Microbibliothèque"
+        }
+    },
+    "questions": {
+        "tagRenderings": {
+            "denominations-coins": {
+                "mappings": {
+                    "0": {
+                        "then": "Les pièces d'1 cent sont acceptées"
+                    },
+                    "1": {
+                        "then": "Les pièces de 2 cents sont acceptées"
+                    },
+                    "2": {
+                        "then": "Les pièces de 5 cents sont acceptées"
+                    },
+                    "3": {
+                        "then": "Les pièces de 10 cents sont acceptées"
+                    },
+                    "4": {
+                        "then": "Les pièces de 20 cents sont acceptées"
+                    },
+                    "5": {
+                        "then": "Les pièces de 50 cents sont acceptées"
+                    },
+                    "6": {
+                        "then": "Les pièces de 1 euro sont acceptées"
+                    },
+                    "7": {
+                        "then": "Les pièces de 2 euros sont acceptées"
+                    }
+                },
+                "question": "Quelles pièces peut-on utiliser pour payer ici ?"
+            },
+            "denominations-notes": {
+                "mappings": {
+                    "0": {
+                        "then": "Les billets de 5 euros ne sont pas acceptés"
+                    },
+                    "1": {
+                        "then": "Les billets de 10 euros sont acceptés"
+                    },
+                    "2": {
+                        "then": "Les billets de 20 euros sont acceptés"
+                    },
+                    "3": {
+                        "then": "Les billets de 50 euros sont acceptés"
+                    },
+                    "4": {
+                        "then": "Les billets de 100 euros sont acceptés"
+                    },
+                    "5": {
+                        "then": "Les billets de 200 euros sont acceptés"
+                    },
+                    "6": {
+                        "then": "Les billets de 500 euros sont acceptés"
+                    }
+                },
+                "question": "quels billets pouvez vous utiliser pour payer ici ?"
+            },
+            "description": {
+                "question": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.",
+                "questionHint": "Ne répétez pas des réponses déjà données"
+            },
+            "dog-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Chiens admis"
+                    },
+                    "1": {
+                        "then": "Chiens <b>non</b> admis"
+                    },
+                    "2": {
+                        "then": "Les chiens sont admis, mais ils doivent être tenus en laisse"
+                    },
+                    "3": {
+                        "then": "Les chiens sont admis et peuvent circuler librement"
+                    }
+                },
+                "question": "Est-ce que les chiens sont admis ici ?"
+            },
+            "email": {
+                "question": "Quelle est l'adresse courriel de {title()} ?"
+            },
+            "induction-loop": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce lieu dispose d’une boucle auditive"
+                    },
+                    "1": {
+                        "then": "Ce lieu <b>ne dispose pas</b> de boucle auditive"
+                    }
+                },
+                "question": "Ce lieu dispose-t’il d’une boucle auditive pour les personnes malentendantes ?"
+            },
+            "internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce lieu propose un accès internet sans fil"
+                    },
+                    "1": {
+                        "then": "Ce lieu <b>ne propose pas</b> d'accès internet"
+                    },
+                    "2": {
+                        "then": "Ce lieu propose un accès internet"
+                    },
+                    "3": {
+                        "then": "Cet endroit offre un accès à Internet via un terminal ou un ordinateur"
+                    },
+                    "4": {
+                        "then": "Cet endroit offre un accès Internet filaire"
+                    }
+                },
+                "question": "Cet endroit offre-t-il un accès à Internet ?"
+            },
+            "internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "L'accès à l'internet est payant à cet endroit"
+                    },
+                    "1": {
+                        "then": "L'accès à Internet est gratuit dans cet endroit"
+                    },
+                    "2": {
+                        "then": "L'accès à l'internet dans cet endroit est gratuit pour les clients uniquement"
+                    }
+                },
+                "question": "L'accès à l'internet est-il payant ?"
+            },
+            "internet-ssid": {
+                "freeform": {
+                    "placeholder": "Entrez le nom du réseau"
+                },
+                "question": "Quel est le nom du réseau pour l'accès Internet sans fil ?",
+                "render": "Le nom du réseau est <b>{internet_access:ssid}</b>"
+            },
+            "just_created": {
+                "mappings": {
+                    "0": {
+                        "then": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes."
+                    }
+                }
+            },
+            "level": {
+                "mappings": {
+                    "0": {
+                        "then": "En sous-sol"
+                    },
+                    "1": {
+                        "then": "Rez-de-chaussée"
+                    },
+                    "2": {
+                        "then": "Rez-de-chaussée"
+                    },
+                    "3": {
+                        "then": "Premier étage"
+                    },
+                    "4": {
+                        "then": "Sous-sol"
+                    }
+                },
+                "question": "À quel étage se situe l’élément ?",
+                "render": "Étage {level}"
+            },
+            "luminous_or_lit": {
+                "mappings": {
+                    "0": {
+                        "then": "Cet objet émet de la lumière et est éclairé par l'extérieur"
+                    },
+                    "1": {
+                        "then": "Cet objet émet de la lumière"
+                    },
+                    "2": {
+                        "then": "Cet objet est éclairé par l'extérieur, par ex. par un projecteur ou d'autres lumières"
+                    },
+                    "3": {
+                        "then": "Cet objet n'émet pas de lumière et n'est pas éclairé par l'extérieur"
+                    }
+                },
+                "question": "Cet objet est-il éclairé ou émet-il de la lumière ?"
+            },
+            "multilevels": {
+                "override": {
+                    "question": "Quels étages sont desservis par cet ascenceur ?",
+                    "render": "Cet ascenceur permet d’accéder aux étages {level}"
+                }
+            },
+            "opening_hours": {
+                "question": "Quelles sont les horaires d'ouverture de {title()} ?",
+                "render": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "Ouvert 24h/24 (jours fériés compris)"
+                        }
+                    }
+                }
+            },
+            "opening_hours_by_appointment": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "Uniquement sur rendez-vous"
+                        },
+                        "1": {
+                            "then": "Uniquement sur rendez-vous"
+                        }
+                    }
+                }
+            },
+            "payment-options": {
+                "mappings": {
+                    "0": {
+                        "then": "Paiement en liquide accepté"
+                    },
+                    "1": {
+                        "then": "Paiement par carte accepté"
+                    }
+                },
+                "question": "Quelles sont les méthodes de paiement acceptées ici ?"
+            },
+            "payment-options-advanced": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Paiement via une application"
+                        },
+                        "1": {
+                            "then": "Paiement via une carte de membre"
+                        }
+                    }
+                }
+            },
+            "payment-options-split": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Les pièces sont acceptées ici"
+                        },
+                        "1": {
+                            "then": "Les billets de banque sont acceptés ici"
+                        },
+                        "2": {
+                            "then": "Les cartes de débit sont acceptées ici"
+                        },
+                        "3": {
+                            "then": "Les cartes de crédit sont acceptées ici"
+                        }
+                    }
+                }
+            },
+            "phone": {
+                "question": "Quel est le numéro de téléphone de {title()} ?"
+            },
+            "service:electricity": {
+                "mappings": {
+                    "0": {
+                        "then": "Il y a suffisamment de prises disponibles pour les client·e·s en intérieur souhaitant recharger leurs appareils"
+                    },
+                    "1": {
+                        "then": "Il y a peu de prises disponibles pour les client·e·s en intérieur souhaitant recharger leurs appareils"
+                    },
+                    "2": {
+                        "then": "Il n'y a pas de prises disponibles à l'intérieur pour les clients, mais la recharge est peut-être possible sur demande auprès des employés"
+                    },
+                    "3": {
+                        "then": "Il n'y a pas de prises secteur disponibles pour les clients assis à l'intérieur"
+                    }
+                },
+                "question": "Des prises sont elles à disposition des client·e·s en intérieur ?"
+            },
+            "smoking": {
+                "mappings": {
+                    "0": {
+                        "then": "Il est <b>autorisé</b> de fumer"
+                    },
+                    "1": {
+                        "then": "Il est <b>interdit</b> de fumer"
+                    },
+                    "2": {
+                        "then": "Il est autorisé de fumer <b>à l'extérieur</b>."
+                    }
+                },
+                "question": "Est-ce autorisé de fumer à {title()} ?"
+            },
+            "website": {
+                "question": "Quel est le site web de {title()} ?"
+            },
+            "wheelchair-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Cet endroit est spécialement adapté pour les usagers de fauteuils roulants"
+                    },
+                    "1": {
+                        "then": "Cet endroit est facilement accessible avec un fauteuil roulant"
+                    },
+                    "2": {
+                        "then": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile"
+                    },
+                    "3": {
+                        "then": "Cet endroit n'est pas accessible en chaise roulante"
+                    }
+                },
+                "question": "Est-ce que cet endroit est accessible en chaise roulante ?"
+            },
+            "wikipedia": {
+                "mappings": {
+                    "0": {
+                        "then": "Pas encore de lien vers une page Wikipedia"
+                    },
+                    "1": {
+                        "then": "Pas encore de lien vers une page Wikipedia"
+                    }
+                },
+                "question": "Quelle est l'entité Wikidata correspondante ?"
+            }
         }
     },
     "railway_platforms": {
@@ -5598,6 +5937,9 @@
                     }
                 }
             },
+            "show_tags": {
+                "question": "Afficher les attributs OpenStreetMap bruts ?"
+            },
             "translation-completeness": {
                 "render": "Les traductions pour {_theme} en {_language} sont à {_translation_percentage} % : {_translation_translated_count} chaînes traduites sur {_translation_total}"
             },
@@ -5629,6 +5971,9 @@
                     }
                 }
             }
+        },
+        "title": {
+            "render": "Paramètres"
         }
     },
     "veterinary": {

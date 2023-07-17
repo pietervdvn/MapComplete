@@ -49,6 +49,16 @@
     },
     "mappings": [
       {
+        "if": "subject~*",
+        "then": {
+          "en": "Ghost bike in the remembrance of {subject}",
+          "nl": "Witte fiets ter nagedachtenis van {subject}",
+          "de": "Geisterrad im Gedenken an {subject}",
+          "it": "Bici fantasma in ricordo di {subject}",
+          "fr": "Vélo fantôme en souvenir de {subject}"
+        }
+      },
+      {
         "if": "name~*",
         "then": {
           "en": "Ghost bike in the remembrance of {name}",
@@ -111,17 +121,33 @@
         "fr": "À qui est dédié ce vélo fantôme ?"
       },
       "render": {
-        "en": "In remembrance of {name}",
-        "nl": "Ter nagedachtenis van {name}",
-        "de": "Im Gedenken an {name}",
-        "it": "In ricordo di {name}",
-        "fr": "En souvenir de {name}",
-        "ru": "В знак памяти о {name}"
+        "en": "In remembrance of {subject}",
+        "nl": "Ter nagedachtenis van {subject}",
+        "de": "Im Gedenken an {subject}",
+        "it": "In ricordo di {subject}",
+        "fr": "En souvenir de {subject}",
+        "ru": "В знак памяти о {subject}"
       },
       "freeform": {
-        "key": "name"
+        "key": "subject",
+        "addExtraTags": [
+          "noname=",
+          "name="
+        ]
       },
       "mappings": [
+        {
+          "if": "name~*",
+          "then": {
+            "en": "In remembrance of {name}",
+            "nl": "Ter nagedachtenis van {name}",
+            "de": "Im Gedenken an {name}",
+            "it": "In ricordo di {name}",
+            "fr": "En souvenir de {name}",
+            "ru": "В знак памяти о {name}"
+          },
+          "hideInAnswer": true
+        },
         {
           "if": "noname=yes",
           "then": {
@@ -131,7 +157,11 @@
             "it": "Nessun nome scritto sulla bici",
             "fr": "Aucun nom n'est marqué sur le vélo",
             "ca": "No hi ha cap nom marcat a la bicicleta"
-          }
+          },
+          "addExtraTags": [
+            "name=",
+            "subject="
+          ]
         }
       ],
       "id": "ghost_bike-name",

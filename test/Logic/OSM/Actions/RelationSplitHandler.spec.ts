@@ -1,14 +1,14 @@
-import { Utils } from "../../../../Utils"
-import { OsmRelation } from "../../../../Logic/Osm/OsmObject"
+import { Utils } from "../../../../src/Utils"
+import { OsmRelation } from "../../../../src/Logic/Osm/OsmObject"
 import {
     InPlaceReplacedmentRTSH,
     TurnRestrictionRSH,
-} from "../../../../Logic/Osm/Actions/RelationSplitHandler"
-import { Changes } from "../../../../Logic/Osm/Changes"
+} from "../../../../src/Logic/Osm/Actions/RelationSplitHandler"
+import { Changes } from "../../../../src/Logic/Osm/Changes"
 import { describe, expect, it } from "vitest"
-import OsmObjectDownloader from "../../../../Logic/Osm/OsmObjectDownloader"
-import { ImmutableStore } from "../../../../Logic/UIEventSource"
-import { OsmConnection } from "../../../../Logic/Osm/OsmConnection"
+import OsmObjectDownloader from "../../../../src/Logic/Osm/OsmObjectDownloader"
+import { ImmutableStore } from "../../../../src/Logic/UIEventSource"
+import { OsmConnection } from "../../../../src/Logic/Osm/OsmConnection"
 
 describe("RelationSplitHandler", () => {
     Utils.injectJsonDownloadForTests("https://www.openstreetmap.org/api/0.6/node/1124134958/ways", {

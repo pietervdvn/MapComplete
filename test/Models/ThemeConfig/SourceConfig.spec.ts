@@ -1,5 +1,5 @@
-import SourceConfig from "../../../Models/ThemeConfig/SourceConfig"
-import { TagUtils } from "../../../Logic/Tags/TagUtils"
+import SourceConfig from "../../../src/Models/ThemeConfig/SourceConfig"
+import { TagUtils } from "../../../src/Logic/Tags/TagUtils"
 import { describe, expect, it } from "vitest"
 
 describe("SourceConfig", () => {

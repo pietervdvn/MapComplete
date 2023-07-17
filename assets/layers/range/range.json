@@ -4,6 +4,7 @@
   "title": null,
   "source": "special",
   "name": null,
+  "shownByDefault": false,
   "mapRendering": [
     {
       "width": 3,

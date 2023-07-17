@@ -1,5 +1,5 @@
-import { TagUtils } from "../../../Logic/Tags/TagUtils"
-import { Tag } from "../../../Logic/Tags/Tag"
+import { TagUtils } from "../../../src/Logic/Tags/TagUtils"
+import { Tag } from "../../../src/Logic/Tags/Tag"
 import { describe, expect, it } from "vitest"
 
 describe("Lazy object properties", () => {

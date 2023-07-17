@@ -1,38 +1,37 @@
 import ScriptUtils from "./ScriptUtils"
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "fs"
-import licenses from "../assets/generated/license_info.json"
-import { LayoutConfigJson } from "../Models/ThemeConfig/Json/LayoutConfigJson"
-import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
-import Constants from "../Models/Constants"
+import licenses from "../src/assets/generated/license_info.json"
+import { LayoutConfigJson } from "../src/Models/ThemeConfig/Json/LayoutConfigJson"
+import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
+import Constants from "../src/Models/Constants"
 import {
     DetectDuplicateFilters,
     DoesImageExist,
     PrevalidateTheme,
     ValidateLayer,
-    ValidateTagRenderings,
     ValidateThemeAndLayers,
-} from "../Models/ThemeConfig/Conversion/Validation"
-import { Translation } from "../UI/i18n/Translation"
-import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
-import questions from "../assets/tagRenderings/questions.json"
-import PointRenderingConfigJson from "../Models/ThemeConfig/Json/PointRenderingConfigJson"
-import { PrepareLayer, RewriteSpecial } from "../Models/ThemeConfig/Conversion/PrepareLayer"
-import { PrepareTheme } from "../Models/ThemeConfig/Conversion/PrepareTheme"
-import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
-import { Utils } from "../Utils"
+} from "../src/Models/ThemeConfig/Conversion/Validation"
+import { Translation } from "../src/UI/i18n/Translation"
+import { TagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
+import PointRenderingConfigJson from "../src/Models/ThemeConfig/Json/PointRenderingConfigJson"
+import { PrepareLayer } from "../src/Models/ThemeConfig/Conversion/PrepareLayer"
+import { PrepareTheme } from "../src/Models/ThemeConfig/Conversion/PrepareTheme"
+import { DesugaringContext } from "../src/Models/ThemeConfig/Conversion/Conversion"
+import { Utils } from "../src/Utils"
 import Script from "./Script"
-import { AllSharedLayers } from "../Customizations/AllSharedLayers"
+import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
 
-// This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
+// This scripts scans 'src/assets/layers/*.json' for layer definition files and 'src/assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
 
 class LayerOverviewUtils extends Script {
-    public static readonly layerPath = "./assets/generated/layers/"
-    public static readonly themePath = "./assets/generated/themes/"
+    public static readonly layerPath = "./src/assets/generated/layers/"
+    public static readonly themePath = "./src/assets/generated/themes/"
 
     constructor() {
         super("Reviews and generates the compiled themes")
     }
+
     private static publicLayerIdsFrom(themefiles: LayoutConfigJson[]): Set<string> {
         const publicThemes = [].concat(...themefiles.filter((th) => !th.hideFromOverview))
 
@@ -125,7 +124,7 @@ class LayerOverviewUtils extends Script {
         })
 
         writeFileSync(
-            "./assets/generated/theme_overview.json",
+            "./src/assets/generated/theme_overview.json",
             JSON.stringify(sorted, null, "  "),
             { encoding: "utf8" }
         )
@@ -153,51 +152,45 @@ class LayerOverviewUtils extends Script {
         )
     }
 
-    getSharedTagRenderings(doesImageExist: DoesImageExist): Map<string, TagRenderingConfigJson> {
-        const dict = new Map<string, TagRenderingConfigJson>()
-
-        const prep = new RewriteSpecial()
-        const validator = new ValidateTagRenderings(undefined, doesImageExist)
-        for (const key in questions) {
-            if (key === "id") {
-                continue
-            }
-            questions[key].id = key
-            questions[key]["source"] = "shared-questions"
-            const config = prep.convertStrict(
-                <TagRenderingConfigJson>questions[key],
-                "questions.json:" + key
-            )
-            delete config["#"]
-            validator.convertStrict(
-                config,
-                "generate-layer-overview:tagRenderings/questions.json:" + key
-            )
-            dict.set(key, config)
-        }
-
-        dict.forEach((value, key) => {
-            if (key === "id") {
-                return
-            }
-            value.id = value.id ?? key
+    getSharedTagRenderings(
+        doesImageExist: DoesImageExist,
+        bootstrapTagRenderings: Map<string, TagRenderingConfigJson> = null
+    ): Map<string, TagRenderingConfigJson> {
+        const prepareLayer = new PrepareLayer({
+            tagRenderings: bootstrapTagRenderings,
+            sharedLayers: null,
+            publicLayers: null,
         })
 
-        return dict
+        let path = "assets/layers/questions/questions.json"
+        const sharedQuestions = this.parseLayer(doesImageExist, prepareLayer, path)
+
+        const dict = new Map<string, TagRenderingConfigJson>()
+
+        for (const tr of sharedQuestions.tagRenderings) {
+            const tagRendering = <TagRenderingConfigJson>tr
+            dict.set(tagRendering.id, tagRendering)
+        }
+
+        if (dict.size === bootstrapTagRenderings?.size) {
+            return dict
+        }
+
+        return this.getSharedTagRenderings(doesImageExist, dict)
     }
 
     checkAllSvgs() {
-        const allSvgs = ScriptUtils.readDirRecSync("./assets")
+        const allSvgs = ScriptUtils.readDirRecSync("./src/assets")
             .filter((path) => path.endsWith(".svg"))
-            .filter((path) => !path.startsWith("./assets/generated"))
+            .filter((path) => !path.startsWith("./src/assets/generated"))
         let errCount = 0
         const exempt = [
-            "assets/SocialImageTemplate.svg",
-            "assets/SocialImageTemplateWide.svg",
-            "assets/SocialImageBanner.svg",
-            "assets/SocialImageRepo.svg",
-            "assets/svg/osm-logo.svg",
-            "assets/templates/*",
+            "src/assets/SocialImageTemplate.svg",
+            "src/assets/SocialImageTemplateWide.svg",
+            "src/assets/SocialImageBanner.svg",
+            "src/assets/SocialImageRepo.svg",
+            "src/assets/svg/osm-logo.svg",
+            "src/assets/templates/*",
         ]
         for (const path of allSvgs) {
             if (
@@ -215,7 +208,7 @@ class LayerOverviewUtils extends Script {
             if (contents.indexOf("data:image/png;") >= 0) {
                 console.warn("The SVG at " + path + " is a fake SVG: it contains PNG data!")
                 errCount++
-                if (path.startsWith("./assets/svg")) {
+                if (path.startsWith("./src/assets/svg")) {
                     throw "A core SVG is actually a PNG. Don't do this!"
                 }
             }
@@ -251,7 +244,7 @@ class LayerOverviewUtils extends Script {
             throw (
                 "Priviliged layer " +
                 Array.from(priviliged).join(", ") +
-                " has no definition file, create it at `assets/layers/<layername>/<layername.json>"
+                " has no definition file, create it at `src/assets/layers/<layername>/<layername.json>"
             )
         }
         const recompiledThemes: string[] = []
@@ -263,14 +256,14 @@ class LayerOverviewUtils extends Script {
         )
 
         writeFileSync(
-            "./assets/generated/known_themes.json",
+            "./src/assets/generated/known_themes.json",
             JSON.stringify({
                 themes: Array.from(sharedThemes.values()),
             })
         )
 
         writeFileSync(
-            "./assets/generated/known_layers.json",
+            "./src/assets/generated/known_layers.json",
             JSON.stringify({ layers: Array.from(sharedLayers.values()) })
         )
 
@@ -317,15 +310,49 @@ class LayerOverviewUtils extends Script {
         }
     }
 
+    private parseLayer(
+        doesImageExist: DoesImageExist,
+        prepLayer: PrepareLayer,
+        sharedLayerPath: string
+    ): LayerConfigJson {
+        let parsed
+        try {
+            parsed = JSON.parse(readFileSync(sharedLayerPath, "utf8"))
+        } catch (e) {
+            throw "Could not parse or read file " + sharedLayerPath
+        }
+        const context = "While building builtin layer " + sharedLayerPath
+        const fixed = prepLayer.convertStrict(parsed, context)
+
+        if (!fixed.source) {
+            console.error(sharedLayerPath, "has no source configured:", fixed)
+            throw sharedLayerPath + " layer has no source configured"
+        }
+
+        if (
+            typeof fixed.source !== "string" &&
+            fixed.source["osmTags"] &&
+            fixed.source["osmTags"]["and"] === undefined
+        ) {
+            fixed.source["osmTags"] = { and: [fixed.source["osmTags"]] }
+        }
+
+        const validator = new ValidateLayer(sharedLayerPath, true, doesImageExist)
+        validator.convertStrict(fixed, context)
+
+        return fixed
+    }
+
     private buildLayerIndex(
         doesImageExist: DoesImageExist,
         forceReload: boolean
     ): Map<string, LayerConfigJson> {
-        // First, we expand and validate all builtin layers. These are written to assets/generated/layers
+        // First, we expand and validate all builtin layers. These are written to src/assets/generated/layers
         // At the same time, an index of available layers is built.
-        console.log("   ---------- VALIDATING BUILTIN LAYERS ---------")
-
+        console.log("------------- VALIDATING THE BUILTIN QUESTIONS ---------------")
         const sharedTagRenderings = this.getSharedTagRenderings(doesImageExist)
+        console.log("Shared questions are:", Array.from(sharedTagRenderings.keys()).join(", "))
+        console.log("   ---------- VALIDATING BUILTIN LAYERS ---------")
         const state: DesugaringContext = {
             tagRenderings: sharedTagRenderings,
             sharedLayers: AllSharedLayers.getSharedLayersConfigs(),
@@ -347,30 +374,8 @@ class LayerOverviewUtils extends Script {
                     continue
                 }
             }
-            let parsed
-            try {
-                parsed = JSON.parse(readFileSync(sharedLayerPath, "utf8"))
-            } catch (e) {
-                throw "Could not parse or read file " + sharedLayerPath
-            }
-            const context = "While building builtin layer " + sharedLayerPath
-            const fixed = prepLayer.convertStrict(parsed, context)
 
-            if (!fixed.source) {
-                console.error(sharedLayerPath, "has no source configured:", fixed)
-                throw sharedLayerPath + " layer has no source configured"
-            }
-
-            if (
-                typeof fixed.source !== "string" &&
-                fixed.source["osmTags"] &&
-                fixed.source["osmTags"]["and"] === undefined
-            ) {
-                fixed.source["osmTags"] = { and: [fixed.source["osmTags"]] }
-            }
-
-            const validator = new ValidateLayer(sharedLayerPath, true, doesImageExist)
-            validator.convertStrict(fixed, context)
+            const fixed = this.parseLayer(doesImageExist, prepLayer, sharedLayerPath)
 
             if (sharedLayers.has(fixed.id)) {
                 throw "There are multiple layers with the id " + fixed.id

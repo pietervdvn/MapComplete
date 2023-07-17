@@ -1,12 +1,12 @@
-import { Utils } from "../../../../Utils"
-import LayoutConfig from "../../../../Models/ThemeConfig/LayoutConfig"
-import { BBox } from "../../../../Logic/BBox"
-import ReplaceGeometryAction from "../../../../Logic/Osm/Actions/ReplaceGeometryAction"
+import { Utils } from "../../../../src/Utils"
+import LayoutConfig from "../../../../src/Models/ThemeConfig/LayoutConfig"
+import { BBox } from "../../../../src/Logic/BBox"
+import ReplaceGeometryAction from "../../../../src/Logic/Osm/Actions/ReplaceGeometryAction"
 import { describe, expect, it } from "vitest"
-import { OsmConnection } from "../../../../Logic/Osm/OsmConnection"
-import { ImmutableStore } from "../../../../Logic/UIEventSource"
-import { Changes } from "../../../../Logic/Osm/Changes"
-import FullNodeDatabaseSource from "../../../../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
+import { OsmConnection } from "../../../../src/Logic/Osm/OsmConnection"
+import { ImmutableStore } from "../../../../src/Logic/UIEventSource"
+import { Changes } from "../../../../src/Logic/Osm/Changes"
+import FullNodeDatabaseSource from "../../../../src/Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
 
 describe("ReplaceGeometryAction", () => {
     const grbStripped = {

@@ -5047,12 +5047,15 @@
             "ghost_bike-name": {
                 "mappings": {
                     "0": {
+                        "then": "In remembrance of {name}"
+                    },
+                    "1": {
                         "then": "No name is marked on the bike"
                     }
                 },
                 "question": "Whom is remembered by this ghost bike?",
                 "questionHint": "Please respect privacy - only fill out the name if it is widely published or marked on the cycle. Opt to leave out the family name.",
-                "render": "In remembrance of {name}"
+                "render": "In remembrance of {subject}"
             },
             "ghost_bike-source": {
                 "question": "On what webpage can one find more info about the ghost bike or the accident?",
@@ -5066,6 +5069,9 @@
         "title": {
             "mappings": {
                 "0": {
+                    "then": "Ghost bike in the remembrance of {subject}"
+                },
+                "1": {
                     "then": "Ghost bike in the remembrance of {name}"
                 }
             },
@@ -5624,6 +5630,43 @@
                 },
                 "question": "On which data is this map based?",
                 "render": "This map is based on {map_source}"
+            },
+            "map_size": {
+                "mappings": {
+                    "0": {
+                        "then": "A map of the rooms within a building"
+                    },
+                    "1": {
+                        "then": "A map of special site, like of a historical castle, a park, a campus, a forest, ...."
+                    },
+                    "2": {
+                        "then": "A map showing the village or town"
+                    },
+                    "3": {
+                        "then": " A map of a city"
+                    },
+                    "4": {
+                        "then": "The map of an entire region, showing multiple cities and villages"
+                    }
+                },
+                "question": "What is the size of the shown area on the map?"
+            },
+            "map_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Topographical map <p class='subtle'>The map contains contour lines. </p>"
+                    },
+                    "1": {
+                        "then": "A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>"
+                    },
+                    "2": {
+                        "then": "This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> "
+                    },
+                    "3": {
+                        "then": "This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>"
+                    }
+                },
+                "question": "What type of map is shown?"
             }
         },
         "title": {
@@ -5841,6 +5884,17 @@
                     }
                 }
             }
+        }
+    },
+    "memorial": {
+        "tagRenderings": {
+            "inscription": {
+                "question": "What is the inscription of this plaque?",
+                "render": "The inscription on this plaque reads: <p><i>{inscription}<i></p>"
+            }
+        },
+        "title": {
+            "render": "Memorial plaque"
         }
     },
     "nature_reserve": {
@@ -6842,10 +6896,30 @@
     "public_bookcase": {
         "description": "A streetside cabinet with books, accessible to anyone",
         "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Has children books"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Has books for adults"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
                         "question": "Indoor or outdoor"
+                    },
+                    "1": {
+                        "question": "Located indoors"
+                    },
+                    "2": {
+                        "question": "Located outdoors"
                     }
                 }
             }
@@ -6948,6 +7022,333 @@
                 }
             },
             "render": "Bookcase"
+        }
+    },
+    "questions": {
+        "tagRenderings": {
+            "denominations-coins": {
+                "mappings": {
+                    "0": {
+                        "then": "1 cent coins are accepted"
+                    },
+                    "1": {
+                        "then": "2 cent coins are accepted"
+                    },
+                    "2": {
+                        "then": "5 cent coins are accepted"
+                    },
+                    "3": {
+                        "then": "10 cent coins are accepted"
+                    },
+                    "4": {
+                        "then": "20 cent coins are accepted"
+                    },
+                    "5": {
+                        "then": "50 cent coins are accepted"
+                    },
+                    "6": {
+                        "then": "1 euro coins are accepted"
+                    },
+                    "7": {
+                        "then": "2 euro coins are accepted"
+                    }
+                },
+                "question": "What coins can you use to pay here?"
+            },
+            "denominations-notes": {
+                "mappings": {
+                    "0": {
+                        "then": "5 euro notes are accepted"
+                    },
+                    "1": {
+                        "then": "10 euro notes are accepted"
+                    },
+                    "2": {
+                        "then": "20 euro notes are accepted"
+                    },
+                    "3": {
+                        "then": "50 euro notes are accepted"
+                    },
+                    "4": {
+                        "then": "100 euro notes are accepted"
+                    },
+                    "5": {
+                        "then": "200 euro notes are accepted"
+                    },
+                    "6": {
+                        "then": "500 euro notes are accepted"
+                    }
+                },
+                "question": "what notes can you use to pay here?"
+            },
+            "description": {
+                "question": "Is there still some relevant info that the previous questions did not cover? Feel free to add it here.",
+                "questionHint": "Please don't repeat already stated facts"
+            },
+            "dog-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Dogs are allowed"
+                    },
+                    "1": {
+                        "then": "Dogs are <b>not</b> allowed"
+                    },
+                    "2": {
+                        "then": "Dogs are allowed, but they have to be leashed"
+                    },
+                    "3": {
+                        "then": "Dogs are allowed and can run around freely"
+                    }
+                },
+                "question": "Are dogs allowed in this business?"
+            },
+            "email": {
+                "question": "What is the email address of {title()}?"
+            },
+            "induction-loop": {
+                "mappings": {
+                    "0": {
+                        "then": "This place has an audio induction loop"
+                    },
+                    "1": {
+                        "then": "This place <b>does not</b> have an audio induction loop"
+                    }
+                },
+                "question": "Does this place have an audio induction loop for people with reduced hearing?"
+            },
+            "internet": {
+                "mappings": {
+                    "0": {
+                        "then": "This place offers wireless internet access"
+                    },
+                    "1": {
+                        "then": "This place <b>does not</b> offer internet access"
+                    },
+                    "2": {
+                        "then": "This place offers internet access"
+                    },
+                    "3": {
+                        "then": "This place offers internet access via a terminal or computer"
+                    },
+                    "4": {
+                        "then": "This place offers wired internet access"
+                    }
+                },
+                "question": "Does this place offer internet access?"
+            },
+            "internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "There is a fee for the internet access at this place"
+                    },
+                    "1": {
+                        "then": "Internet access is free at this place"
+                    },
+                    "2": {
+                        "then": "Internet access is free at this place, for customers only"
+                    }
+                },
+                "question": "Is there a fee for internet access?"
+            },
+            "internet-ssid": {
+                "freeform": {
+                    "placeholder": "Enter the network name"
+                },
+                "question": "What is the network name for the wireless internet access?",
+                "render": "The network name is <b>{internet_access:ssid}</b>"
+            },
+            "just_created": {
+                "mappings": {
+                    "0": {
+                        "then": "You just created this element! Thanks for sharing this info with the world and helping people worldwide."
+                    }
+                }
+            },
+            "last_edit": {
+                "render": {
+                    "special": {
+                        "text": "Last edited on {_last_edit:timestamp} by {_last_edit:contributor}"
+                    }
+                }
+            },
+            "level": {
+                "mappings": {
+                    "0": {
+                        "then": "Located underground"
+                    },
+                    "1": {
+                        "then": "Located on the ground floor"
+                    },
+                    "2": {
+                        "then": "Located on the ground floor"
+                    },
+                    "3": {
+                        "then": "Located on the first floor"
+                    },
+                    "4": {
+                        "then": "Located on the first basement level"
+                    }
+                },
+                "question": "On what level is this feature located?",
+                "render": "Located on the {level}th floor"
+            },
+            "luminous_or_lit": {
+                "mappings": {
+                    "0": {
+                        "then": "This object both emits light and is lighted by an external light source"
+                    },
+                    "1": {
+                        "then": "This object emits light"
+                    },
+                    "2": {
+                        "then": "This object is lit externally, e.g. by a spotlight or other lights"
+                    },
+                    "3": {
+                        "then": "This object does not emit light and is not lighted by externally"
+                    }
+                },
+                "question": "Is this object lit or does it emit light?"
+            },
+            "multilevels": {
+                "override": {
+                    "question": "What levels does this elevator go to?",
+                    "render": "This elevator goes to floors {level}"
+                }
+            },
+            "opening_hours": {
+                "question": "What are the opening hours of {title()}?",
+                "render": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "24/7 opened (including holidays)"
+                        }
+                    }
+                }
+            },
+            "opening_hours_by_appointment": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "Only by appointment"
+                        },
+                        "1": {
+                            "then": "Only by appointment"
+                        }
+                    }
+                }
+            },
+            "payment-options": {
+                "mappings": {
+                    "0": {
+                        "then": "Cash is accepted here"
+                    },
+                    "1": {
+                        "then": "Payment cards are accepted here"
+                    },
+                    "2": {
+                        "then": "Payment by QR-code is possible here"
+                    }
+                },
+                "question": "Which methods of payment are accepted here?"
+            },
+            "payment-options-advanced": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Payment is done using a dedicated app"
+                        },
+                        "1": {
+                            "then": "Payment is done using a membership card"
+                        }
+                    }
+                }
+            },
+            "payment-options-split": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Coins are accepted here"
+                        },
+                        "1": {
+                            "then": "Bank notes are accepted here"
+                        },
+                        "2": {
+                            "then": "Debit cards are accepted here"
+                        },
+                        "3": {
+                            "then": "Credit cards are accepted here"
+                        }
+                    }
+                }
+            },
+            "phone": {
+                "question": "What is the phone number of {title()}?"
+            },
+            "service:electricity": {
+                "mappings": {
+                    "0": {
+                        "then": "There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics"
+                    },
+                    "1": {
+                        "then": "There are a few domestic sockets available to customers seated indoors, where they can charge their electronics"
+                    },
+                    "2": {
+                        "then": "There are no sockets available indoors to customers, but charging might be possible if the staff is asked"
+                    },
+                    "3": {
+                        "then": "There are a no domestic sockets available to customers seated indoors"
+                    }
+                },
+                "question": "Does this amenity have electrical outlets, available to customers when they are inside?"
+            },
+            "smoking": {
+                "mappings": {
+                    "0": {
+                        "then": "Smoking is <b>allowed</b>"
+                    },
+                    "1": {
+                        "then": "Smoking is <b>not allowed</b>"
+                    },
+                    "2": {
+                        "then": "Smoking is <b>allowed outside</b>."
+                    }
+                },
+                "question": "Is smoking allowed at {title()}?"
+            },
+            "website": {
+                "question": "What is the website of {title()}?"
+            },
+            "wheelchair-access": {
+                "mappings": {
+                    "0": {
+                        "then": "This place is specially adapted for wheelchair users"
+                    },
+                    "1": {
+                        "then": "This place is easily reachable with a wheelchair"
+                    },
+                    "2": {
+                        "then": "It is possible to reach this place in a wheelchair, but it is not easy"
+                    },
+                    "3": {
+                        "then": "This place is not reachable with a wheelchair"
+                    }
+                },
+                "question": "Is this place accessible with a wheelchair?"
+            },
+            "wikipedia": {
+                "mappings": {
+                    "0": {
+                        "then": "No Wikipedia page has been linked yet"
+                    },
+                    "1": {
+                        "then": "No Wikipedia page has been linked yet"
+                    }
+                },
+                "question": "What is the corresponding Wikidata entity?"
+            }
         }
     },
     "railway_platforms": {
@@ -9017,6 +9418,9 @@
                     }
                 }
             },
+            "mangrove-keys": {
+                "render": "<a href='data:application/json,{mangroveidentity}' download='mangrove_private_key_{_name}'>Download the private key for your Mangrove Account</a> <p>Anyone possessing this file can make reviews with your identity</p>"
+            },
             "picture-license": {
                 "mappings": {
                     "0": {
@@ -9122,6 +9526,160 @@
         },
         "title": {
             "render": "Settings"
+        }
+    },
+    "vending_machine": {
+        "description": "Layer showing vending machines",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "All vending machines"
+                    },
+                    "1": {
+                        "question": "Sale of drinks"
+                    },
+                    "2": {
+                        "question": "Sale of sweets"
+                    },
+                    "3": {
+                        "question": "Sale of food"
+                    },
+                    "4": {
+                        "question": "Sale of cigarettes"
+                    },
+                    "5": {
+                        "question": "Sale of condoms"
+                    },
+                    "6": {
+                        "question": "Sale of coffee"
+                    },
+                    "7": {
+                        "question": "Sale of water"
+                    },
+                    "8": {
+                        "question": "Sale of newspapers"
+                    },
+                    "9": {
+                        "question": "Sale of bicycle inner tubes"
+                    },
+                    "10": {
+                        "question": "Sale of milk"
+                    },
+                    "11": {
+                        "question": "Sale of bread"
+                    },
+                    "12": {
+                        "question": "Sale of eggs"
+                    },
+                    "13": {
+                        "question": "Sale of cheese"
+                    },
+                    "14": {
+                        "question": "Sale of honey"
+                    },
+                    "15": {
+                        "question": "Sale of potatoes"
+                    },
+                    "16": {
+                        "question": "Sale of flowers"
+                    }
+                }
+            }
+        },
+        "name": "Vending Machines",
+        "presets": {
+            "0": {
+                "title": "a vending machine"
+            }
+        },
+        "tagRenderings": {
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "This vending machine is outdoors"
+                    },
+                    "1": {
+                        "then": "This vending machine is indoors"
+                    },
+                    "2": {
+                        "then": "This vending machine is outdoors"
+                    }
+                },
+                "question": "Is this vending machine indoors?"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Name of operator"
+                },
+                "question": "Who operates this vending machine?",
+                "render": "This vending machine is operated by {operator}"
+            },
+            "vending": {
+                "mappings": {
+                    "0": {
+                        "then": "Drinks are sold"
+                    },
+                    "1": {
+                        "then": "Sweets are sold"
+                    },
+                    "2": {
+                        "then": "Food is sold"
+                    },
+                    "3": {
+                        "then": "Cigarettes are sold"
+                    },
+                    "4": {
+                        "then": "Condoms are sold"
+                    },
+                    "5": {
+                        "then": "Coffee is sold"
+                    },
+                    "6": {
+                        "then": "Drinking water is sold"
+                    },
+                    "7": {
+                        "then": "Newspapers are sold"
+                    },
+                    "8": {
+                        "then": "Bicycle inner tubes are sold"
+                    },
+                    "9": {
+                        "then": "Milk is sold"
+                    },
+                    "10": {
+                        "then": "Bread is sold"
+                    },
+                    "11": {
+                        "then": "Eggs are sold"
+                    },
+                    "12": {
+                        "then": "Cheese is sold"
+                    },
+                    "13": {
+                        "then": "Honey is sold"
+                    },
+                    "14": {
+                        "then": "Potatoes are sold"
+                    },
+                    "15": {
+                        "then": "Flowers are sold"
+                    }
+                },
+                "question": "What does this vending machine sell?",
+                "render": "This vending machine sells {vending}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Vending machine {name}"
+                },
+                "1": {
+                    "then": "Vending machine {brand}"
+                }
+            },
+            "render": "Vending machine"
         }
     },
     "veterinary": {

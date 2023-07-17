@@ -1,5 +1,5 @@
-import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig"
-import Locale from "../../../UI/i18n/Locale"
+import TagRenderingConfig from "../../../src/Models/ThemeConfig/TagRenderingConfig"
+import Locale from "../../../src/UI/i18n/Locale"
 import { describe, expect, it } from "vitest"
 
 describe("TagRenderingConfig", () => {

@@ -203,7 +203,7 @@
   ],
   "mapRendering": [
     {
-      "icon": "./assets/themes/benches/bench_public_transport.svg",
+      "icon": "circle:white;./assets/themes/benches/bench_public_transport.svg",
       "iconSize": "35,35",
       "location": [
         "point"

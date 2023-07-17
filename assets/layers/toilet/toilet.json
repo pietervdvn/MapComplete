@@ -244,7 +244,8 @@
         "type": "string",
         "placeholder": {
           "en": "e.g. 0.50 EUR",
-          "nl": "bijv. 0.50 EUR"
+          "nl": "bijv. 0.50 EUR",
+          "de": "z.B. 0.50 EUR"
         }
       },
       "id": "toilet-charge"

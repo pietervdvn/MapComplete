@@ -2,7 +2,7 @@
   "data_format": 1,
   "project": {
     "name": "MapComplete Ghost bikes",
-    "description": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location",
+    "description": "A ",
     "project_url": "https://mapcomplete.osm.be/ghostbikes",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/themes/ghostbikes/logo.svg",
@@ -36,8 +36,12 @@
       "description": "The layer 'Ghost bikes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
+      "key": "subject",
+      "description": "Layer 'Ghost bikes' shows and asks freeform values for key 'subject' (in the MapComplete.osm.be theme 'Ghost bikes')"
+    },
+    {
       "key": "name",
-      "description": "Layer 'Ghost bikes' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Ghost bikes')"
+      "description": "Layer 'Ghost bikes' shows name~.+ with a fixed text, namely 'In remembrance of {name}' (in the MapComplete.osm.be theme 'Ghost bikes')"
     },
     {
       "key": "noname",

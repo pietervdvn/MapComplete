@@ -44,6 +44,81 @@
   "tagRenderings": [
     "images",
     {
+      "id": "map_type",
+      "question": {
+        "en": "What type of map is shown?",
+        "de": "Was für eine Karte ist das?"
+      },
+      "mappings": [
+        {
+          "if": "map_type=topo",
+          "then": {
+            "en": "Topographical map <p class='subtle'>The map contains contour lines. </p>"
+          }
+        },
+        {
+          "if": "map_type=street",
+          "then": {
+            "en": "A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>"
+          }
+        },
+        {
+          "if": "map_type=scheme",
+          "then": {
+            "en": "This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> "
+          }
+        },
+        {
+          "if": "map_type=toposcope",
+          "then": {
+            "en": "This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "map_size",
+      "question": {
+        "en": "What is the size of the shown area on the map?",
+        "de": "Was wird von der Fläche abgedeckt?"
+      },
+      "mappings": [
+        {
+          "if": "map_size=building",
+          "then": {
+            "en": "A map of the rooms within a building"
+          }
+        },
+        {
+          "if": "map_size=site",
+          "then": {
+            "en": "A map of special site, like of a historical castle, a park, a campus, a forest, ....",
+            "de": "Örtlichkeit (z.B. Burg)"
+          }
+        },
+        {
+          "if": "map_size=village",
+          "then": {
+            "en": "A map showing the village or town"
+          }
+        },
+        {
+          "if": "map_size=city",
+          "then": {
+            "en": " A map of a city",
+            "de": "Stadt"
+          }
+        },
+        {
+          "if": "map_size=region",
+          "then": {
+            "en": "The map of an entire region, showing multiple cities and villages",
+            "de": "Region"
+          }
+        }
+      ]
+    },
+    {
       "labels": [
         "map"
       ],

@@ -141,7 +141,7 @@ The question is  *Which methods of payment are accepted here?*
   - *Bank notes are accepted here*  corresponds with  `payment:notes=yes`
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dno' target='_blank'>no</a>
   - *Debit cards are accepted here*  corresponds with  `payment:debit_cards=yes`
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment_debit_cards' target='_blank'>payment_debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment_debit_cards%3Dno' target='_blank'>no</a>
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dno' target='_blank'>no</a>
   - *Credit cards are accepted here*  corresponds with  `payment:credit_cards=yes`
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dno' target='_blank'>no</a>
 

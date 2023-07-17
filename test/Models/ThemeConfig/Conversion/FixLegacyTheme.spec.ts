@@ -1,5 +1,5 @@
-import LayoutConfig from "../../../../Models/ThemeConfig/LayoutConfig"
-import { FixLegacyTheme } from "../../../../Models/ThemeConfig/Conversion/LegacyJsonConvert"
+import LayoutConfig from "../../../../src/Models/ThemeConfig/LayoutConfig"
+import { FixLegacyTheme } from "../../../../src/Models/ThemeConfig/Conversion/LegacyJsonConvert"
 import { describe, expect, it } from "vitest"
 
 describe("FixLegacyTheme", () => {
