@@ -35,6 +35,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     readonly rasterLayer: UIEventSource<RasterLayerPolygon | undefined>
     readonly maxbounds: UIEventSource<BBox | undefined>
     readonly allowMoving: UIEventSource<true | boolean | undefined>
+    readonly allowRotating: UIEventSource<true | boolean | undefined>
     readonly allowZooming: UIEventSource<true | boolean | undefined>
     readonly lastClickLocation: Store<undefined | { lon: number; lat: number }>
     readonly minzoom: UIEventSource<number>
@@ -69,6 +70,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         })
         this.maxbounds = state?.maxbounds ?? new UIEventSource(undefined)
         this.allowMoving = state?.allowMoving ?? new UIEventSource(true)
+        this.allowRotating = state?.allowRotating ?? new UIEventSource<boolean>(true)
         this.allowZooming = state?.allowZooming ?? new UIEventSource(true)
         this.bounds = state?.bounds ?? new UIEventSource(undefined)
         this.rasterLayer =
@@ -95,6 +97,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 self.SetZoom(self.zoom.data)
                 self.setMaxBounds(self.maxbounds.data)
                 self.setAllowMoving(self.allowMoving.data)
+                self.setAllowRotating(self.allowRotating.data)
                 self.setAllowZooming(self.allowZooming.data)
                 self.setMinzoom(self.minzoom.data)
                 self.setMaxzoom(self.maxzoom.data)
@@ -105,6 +108,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             self.SetZoom(self.zoom.data)
             self.setMaxBounds(self.maxbounds.data)
             self.setAllowMoving(self.allowMoving.data)
+            self.setAllowRotating(self.allowRotating.data)
             self.setAllowZooming(self.allowZooming.data)
             self.setMinzoom(self.minzoom.data)
             self.setMaxzoom(self.maxzoom.data)
@@ -134,6 +138,9 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         this.zoom.addCallbackAndRunD((z) => self.SetZoom(z))
         this.maxbounds.addCallbackAndRun((bbox) => self.setMaxBounds(bbox))
         this.allowMoving.addCallbackAndRun((allowMoving) => self.setAllowMoving(allowMoving))
+        this.allowRotating.addCallbackAndRunD((allowRotating) =>
+            self.setAllowRotating(allowRotating)
+        )
         this.allowZooming.addCallbackAndRun((allowZooming) => self.setAllowZooming(allowZooming))
         this.bounds.addCallbackAndRunD((bounds) => self.setBounds(bounds))
     }
@@ -181,13 +188,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         drawOn.width = Math.ceil(drawOn.width * dpiFactor)
         drawOn.height = Math.ceil(drawOn.height * dpiFactor)
         ctx.scale(dpiFactor, dpiFactor)
-        console.log(
-            "Resizing canvas with setDPI:",
-            drawOn.width,
-            drawOn.height,
-            drawOn.style.width,
-            drawOn.style.height
-        )
     }
 
     /**
@@ -228,27 +228,14 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         drawOn.width = map.getCanvas().width
         drawOn.height = map.getCanvas().height
 
-        console.log("Canvas size:", drawOn.width, drawOn.height)
         const ctx = drawOn.getContext("2d")
         // Set up CSS size.
         MapLibreAdaptor.setDpi(drawOn, ctx, dpiFactor / map.getPixelRatio())
 
         await this.exportBackgroundOnCanvas(ctx)
 
-        console.log("Getting markers")
         // MapLibreAdaptor.setDpi(drawOn, ctx, 1)
         const markers = await this.drawMarkers(dpiFactor)
-        console.log(
-            "Drawing markers (" +
-                markers.width +
-                "*" +
-                markers.height +
-                ") onto drawOn (" +
-                drawOn.width +
-                "*" +
-                drawOn.height +
-                ")"
-        )
         ctx.drawImage(markers, 0, 0, drawOn.width, drawOn.height)
         ctx.scale(dpiFactor, dpiFactor)
         this._maplibreMap.data?.resize()
@@ -288,14 +275,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
         const width = map.getCanvas().clientWidth
         const height = map.getCanvas().clientHeight
-        console.log(
-            "Canvas size markers:",
-            map.getCanvas().width,
-            map.getCanvas().height,
-            "canvasClientRect:",
-            width,
-            height
-        )
         map.getCanvas().style.display = "none"
         const img = await htmltoimage.toCanvas(map.getCanvasContainer(), {
             pixelRatio: dpiFactor,
@@ -394,7 +373,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             return
         }
         const background: RasterLayerProperties = this.rasterLayer?.data?.properties
-        console.log("Setting background to", background)
         if (!background) {
             console.error(
                 "Attempting to 'setBackground', but the background is",
@@ -416,7 +394,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
 
         if (background.type === "vector") {
-            console.log("Background layer is vector", background.id)
             this.removeCurrentLayer(map)
             map.setStyle(background.url)
             return
@@ -473,6 +450,21 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
     }
 
+    private setAllowRotating(allow: true | boolean | undefined) {
+        const map = this._maplibreMap.data
+        if (!map) {
+            return
+        }
+        console.log("Rotation allowed:", allow)
+        if (allow === false) {
+            map.rotateTo(0, { duration: 0 })
+            map.setPitch(0)
+            map.dragRotate.disable()
+        } else {
+            map.dragRotate.enable()
+        }
+    }
+
     private setAllowMoving(allow: true | boolean | undefined) {
         const map = this._maplibreMap.data
         if (!map) {
@@ -487,6 +479,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 map[id].enable()
             }
         }
+        this.setAllowRotating(this.allowRotating.data)
     }
 
     private setMinzoom(minzoom: number) {
