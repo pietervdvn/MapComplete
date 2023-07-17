@@ -6,7 +6,6 @@
   "description": {
     "en": "Find penny presses to create your own elongated coins."
   },
-  "hideFromOverview": true,
   "icon": "./assets/themes/elongated_coin/penny.svg",
   "layers": [
     {
@@ -80,6 +79,13 @@
           "question": {
             "en": "What coin is used for pressing?"
           },
+          "freeform": {
+            "key": "coin:type",
+            "type": "string",
+            "placeholder": {
+              "en": "Coin type (e.g. 10cent)"
+            }
+          },
           "mappings": [
             {
               "if": "coin:type=2cent",
@@ -98,14 +104,31 @@
               "then": {
                 "en": "This penny press uses a 10 cent coin for pressing."
               }
+            },
+            {
+              "if": "coin:type=25cent",
+              "then": {
+                "en": "This penny press uses a 25 cent coin for pressing."
+              },
+              "hideInAnswer": "_currency!~.*USD.*"
+            },
+            {
+              "if": "coin:type=50cent",
+              "then": {
+                "en": "This penny press uses a 50 cent coin for pressing."
+              },
+              "hideInAnswer": "_currency!~.*USD.*"
             }
-          ]
+          ],
+          "render": {
+            "en": "This penny press uses a {coin:type} coin for pressing."
+          }
         },
         "website",
         {
           "id": "charge",
           "question": {
-            "en": "How much does it cost to press a penny?"
+            "en": "How much does it cost to press a coin?"
           },
           "freeform": {
             "key": "charge",
@@ -117,18 +140,20 @@
             {
               "if": "charge=1 EUR",
               "then": {
-                "en": "It costs 1 euro to press a penny."
-              }
+                "en": "It costs 1 euro to press a coin."
+              },
+              "hideInAnswer": "_currency!~.*EUR.*"
             },
             {
               "if": "charge=2 EUR",
               "then": {
-                "en": "It costs 2 euros to press a penny."
-              }
+                "en": "It costs 2 euros to press a coin."
+              },
+              "hideInAnswer": "_currency!~.*EUR.*"
             }
           ],
           "render": {
-            "en": "It costs {charge} to press a penny."
+            "en": "It costs {charge} to press a coin."
           }
         },
         "denominations-coins",
