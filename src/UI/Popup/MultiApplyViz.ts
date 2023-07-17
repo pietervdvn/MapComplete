@@ -47,7 +47,10 @@ export class MultiApplyViz implements SpecialVisualization {
                 if (ids === undefined) {
                     return []
                 }
-                return JSON.parse(ids)
+                if (typeof ids === "string" && ids.startsWith("[")) {
+                    return JSON.parse(ids)
+                }
+                return ids
             } catch (e) {
                 console.warn(
                     "Could not parse ",

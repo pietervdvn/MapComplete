@@ -53,7 +53,13 @@ export class MinimapViz implements SpecialVisualization {
                     }
 
                     let idList = [value]
-                    if (key !== "id" && value.startsWith("[")) {
+                    if (Array.isArray(value)) {
+                        idList = value
+                    } else if (
+                        key !== "id" &&
+                        typeof value === "string" &&
+                        value?.startsWith("[")
+                    ) {
                         // This is a list of values
                         idList = JSON.parse(value)
                     }

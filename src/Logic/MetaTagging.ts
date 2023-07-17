@@ -8,7 +8,8 @@ import { GeoIndexedStoreForLayer } from "./FeatureSource/Actors/GeoIndexedStore"
 import { IndexedFeatureSource } from "./FeatureSource/FeatureSource"
 import OsmObjectDownloader from "./Osm/OsmObjectDownloader"
 import { Utils } from "../Utils"
-import { UIEventSource } from "./UIEventSource"
+import { Store, UIEventSource } from "./UIEventSource"
+import { SpecialVisualizationState } from "../UI/SpecialVisualization"
 
 /**
  * Metatagging adds various tags to the elements, e.g. lat, lon, surface area, ...
@@ -24,11 +25,12 @@ export default class MetaTagging {
     >()
 
     constructor(state: {
-        layout: LayoutConfig
-        osmObjectDownloader: OsmObjectDownloader
-        perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
-        indexedFeatures: IndexedFeatureSource
-        featureProperties: FeaturePropertiesStore
+        readonly selectedElementAndLayer: Store<{ feature: Feature; layer: LayerConfig }>
+        readonly layout: LayoutConfig
+        readonly osmObjectDownloader: OsmObjectDownloader
+        readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
+        readonly indexedFeatures: IndexedFeatureSource
+        readonly featureProperties: FeaturePropertiesStore
     }) {
         const params = MetaTagging.createExtraFuncParams(state)
         for (const layer of state.layout.layers) {
@@ -58,6 +60,21 @@ export default class MetaTagging {
                 )
             })
         }
+
+        state.selectedElementAndLayer.addCallbackAndRunD(({ feature, layer }) => {
+            // Force update the tags of the currently selected element
+            MetaTagging.addMetatags(
+                [feature],
+                params,
+                layer,
+                state.layout,
+                state.osmObjectDownloader,
+                state.featureProperties,
+                {
+                    evaluateStrict: true,
+                }
+            )
+        })
     }
 
     /**
