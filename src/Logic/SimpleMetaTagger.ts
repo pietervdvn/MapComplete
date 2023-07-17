@@ -614,8 +614,6 @@ export default class SimpleMetaTaggers {
                     currencies[defaultCurrency] = true
                 }
 
-                console.log("currencyTags", currencies, defaultCurrency)
-
                 if (currencies) {
                     return Object.keys(currencies)
                         .filter((key) => currencies[key])
