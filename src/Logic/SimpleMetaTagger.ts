@@ -593,8 +593,9 @@ export default class SimpleMetaTaggers {
         (feature: Feature, layer: LayerConfig, tagsStore: UIEventSource<OsmTags>) => {
             Utils.AddLazyPropertyAsync(feature.properties, "_currency", async () => {
                 // Wait until _country is actually set
-                await tagsStore.AsPromise((tags) => !!tags._country)
+                const tags = await tagsStore.AsPromise((tags) => !!tags._country)
 
+                const country = tags._country
                 // Initialize a list of currencies
                 const currencies = {}
                 // Check if there are any currency:XXX tags, add them to the map
@@ -609,7 +610,7 @@ export default class SimpleMetaTaggers {
                 }
 
                 // Determine the default currency for the country
-                const defaultCurrency = countryToCurrency[feature.properties._country.toUpperCase()]
+                const defaultCurrency = countryToCurrency[country.toUpperCase()]
 
                 // If the default currency is not in the list, add it
                 if (defaultCurrency && !currencies[defaultCurrency]) {

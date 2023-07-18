@@ -255,8 +255,12 @@ export abstract class Store<T> implements Readable<T> {
                 resolve(data)
             } else {
                 self.addCallbackD((data) => {
-                    resolve(data)
-                    return true // return true to unregister as we only need to be called once
+                    if (condition(data)) {
+                        resolve(data)
+                        return true // return true to unregister as we only need to be called once
+                    } else {
+                        return false // We didn't resolve yet, wait for the next ping
+                    }
                 })
             }
         })
@@ -279,12 +283,12 @@ export abstract class Store<T> implements Readable<T> {
 export class ImmutableStore<T> extends Store<T> {
     public readonly data: T
 
-    private static readonly pass: () => void = () => {}
-
     constructor(data: T) {
         super()
         this.data = data
     }
+
+    private static readonly pass: () => void = () => {}
 
     addCallback(_: (data: T) => void): () => void {
         // pass: data will never change
@@ -322,9 +326,9 @@ export class ImmutableStore<T> extends Store<T> {
  * Keeps track of the callback functions
  */
 class ListenerTracker<T> {
+    public pingCount = 0
     private readonly _callbacks: ((t: T) => boolean | void | any)[] = []
 
-    public pingCount = 0
     /**
      * Adds a callback which can be called; a function to unregister is returned
      */
@@ -386,18 +390,16 @@ class ListenerTracker<T> {
  * The mapped store is a helper type which does the mapping of a function.
  */
 class MappedStore<TIn, T> extends Store<T> {
+    private static readonly pass: () => {}
     private readonly _upstream: Store<TIn>
     private readonly _upstreamCallbackHandler: ListenerTracker<TIn> | undefined
     private _upstreamPingCount: number = -1
     private _unregisterFromUpstream: () => void
-
     private readonly _f: (t: TIn) => T
     private readonly _extraStores: Store<any>[] | undefined
     private _unregisterFromExtraStores: (() => void)[] | undefined
-
     private _callbacks: ListenerTracker<T> = new ListenerTracker<T>()
-
-    private static readonly pass: () => {}
+    private _callbacksAreRegistered = false
 
     constructor(
         upstream: Store<TIn>,
@@ -421,7 +423,6 @@ class MappedStore<TIn, T> extends Store<T> {
     }
 
     private _data: T
-    private _callbacksAreRegistered = false
 
     /**
      * Gets the current data from the store
@@ -468,33 +469,6 @@ class MappedStore<TIn, T> extends Store<T> {
         )
     }
 
-    private unregisterFromUpstream() {
-        console.log("Unregistering callbacks for", this.tag)
-        this._callbacksAreRegistered = false
-        this._unregisterFromUpstream()
-        this._unregisterFromExtraStores?.forEach((unr) => unr())
-    }
-
-    private registerCallbacksToUpstream() {
-        const self = this
-
-        this._unregisterFromUpstream = this._upstream.addCallback((_) => self.update())
-        this._unregisterFromExtraStores = this._extraStores?.map((store) =>
-            store?.addCallback((_) => self.update())
-        )
-        this._callbacksAreRegistered = true
-    }
-
-    private update(): void {
-        const newData = this._f(this._upstream.data)
-        this._upstreamPingCount = this._upstreamCallbackHandler?.pingCount
-        if (this._data == newData) {
-            return
-        }
-        this._data = newData
-        this._callbacks.ping(this._data)
-    }
-
     addCallback(callback: (data: T) => any | boolean | void): () => void {
         if (!this._callbacksAreRegistered) {
             // This is the first callback that is added
@@ -535,13 +509,39 @@ class MappedStore<TIn, T> extends Store<T> {
             }
         })
     }
+
+    private unregisterFromUpstream() {
+        console.log("Unregistering callbacks for", this.tag)
+        this._callbacksAreRegistered = false
+        this._unregisterFromUpstream()
+        this._unregisterFromExtraStores?.forEach((unr) => unr())
+    }
+
+    private registerCallbacksToUpstream() {
+        const self = this
+
+        this._unregisterFromUpstream = this._upstream.addCallback((_) => self.update())
+        this._unregisterFromExtraStores = this._extraStores?.map((store) =>
+            store?.addCallback((_) => self.update())
+        )
+        this._callbacksAreRegistered = true
+    }
+
+    private update(): void {
+        const newData = this._f(this._upstream.data)
+        this._upstreamPingCount = this._upstreamCallbackHandler?.pingCount
+        if (this._data == newData) {
+            return
+        }
+        this._data = newData
+        this._callbacks.ping(this._data)
+    }
 }
 
 export class UIEventSource<T> extends Store<T> implements Writable<T> {
+    private static readonly pass: () => {}
     public data: T
     _callbacks: ListenerTracker<T> = new ListenerTracker<T>()
-
-    private static readonly pass: () => {}
 
     constructor(data: T, tag: string = "") {
         super(tag)
@@ -624,6 +624,24 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         )
     }
 
+    static asBoolean(stringUIEventSource: UIEventSource<string>) {
+        return stringUIEventSource.sync(
+            (str) => str === "true",
+            [],
+            (b) => "" + b
+        )
+    }
+
+    /**
+     * Create a new UIEVentSource. Whenever 'source' changes, the returned UIEventSource will get this value as well.
+     * However, this value can be overriden without affecting source
+     */
+    static feedFrom<T>(store: Store<T>): UIEventSource<T> {
+        const src = new UIEventSource(store.data)
+        store.addCallback((t) => src.setData(t))
+        return src
+    }
+
     /**
      * Adds a callback
      *
@@ -704,6 +722,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
     ): Store<J> {
         return new MappedStore(this, f, extraSources, this._callbacks, f(this.data), onDestroy)
     }
+
     /**
      * Monoidal map which results in a read-only store. 'undefined' is passed 'as is'
      * Given a function 'f', will construct a new UIEventSource where the contents will always be "f(this.data)'
@@ -779,29 +798,11 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         return this
     }
 
-    static asBoolean(stringUIEventSource: UIEventSource<string>) {
-        return stringUIEventSource.sync(
-            (str) => str === "true",
-            [],
-            (b) => "" + b
-        )
-    }
-
     set(value: T): void {
         this.setData(value)
     }
 
     update(f: Updater<T> & ((value: T) => T)): void {
         this.setData(f(this.data))
-    }
-
-    /**
-     * Create a new UIEVentSource. Whenever 'source' changes, the returned UIEventSource will get this value as well.
-     * However, this value can be overriden without affecting source
-     */
-    static feedFrom<T>(store: Store<T>): UIEventSource<T> {
-        const src = new UIEventSource(store.data)
-        store.addCallback((t) => src.setData(t))
-        return src
     }
 }
