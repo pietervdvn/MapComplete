@@ -38,7 +38,7 @@
   }
 </script>
 
-<div class="inline-flex flex-col">
+<div class="inline-flex flex-col w-full">
   {#if inline}
     <Inline key={config.freeform.key} {tags} template={config.render}>
       <ValidatedInput

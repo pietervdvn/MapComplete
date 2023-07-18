@@ -34,7 +34,7 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
     constructor(source?: UIEventSource<OpeningHour[]>) {
         super()
         this.source = source ?? new UIEventSource<OpeningHour[]>([])
-        this.SetStyle("width:100%;height:100%;display:block;")
+        this.SetClass("w-full block")
     }
 
     IsValid(t: OpeningHour[]): boolean {
