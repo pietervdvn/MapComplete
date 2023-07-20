@@ -152,6 +152,25 @@
       "description": "Layer 'Climbing gyms' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')"
     },
     {
+      "key": "charge",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Climbing gyms' shows fee=no with a fixed text, namely 'Climbing here is free of charge' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')",
+      "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Climbing gyms' shows fee=yes with a fixed text, namely 'Paying a fee is required to climb here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Climbing gyms' shows fee=yes with a fixed text, namely 'Paying a fee is required to climb here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots') Picking this answer will delete the key charge.",
+      "value": ""
+    },
+    {
       "key": "payment:cash",
       "description": "Layer 'Climbing gyms' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')",
       "value": "yes"
@@ -295,6 +314,69 @@
       "key": "service:climbing_rope:rental",
       "description": "Layer 'Climbing gyms' shows service:climbing_rope:rental=no with a fixed text, namely 'A climbing rope can <b>not</b> be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport!=no)",
       "value": "no"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing gyms' shows climbing:boulder=yes with a fixed text, namely 'Bouldering is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing gyms' shows climbing:boulder=no with a fixed text, namely 'Bouldering is not possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')",
+      "value": "no"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing gyms' shows climbing:boulder=limited with a fixed text, namely 'Bouldering is possible, although there are only a few problems' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')",
+      "value": "limited"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing gyms' shows climbing:boulder~.+ with a fixed text, namely 'There are {climbing:boulder} boulder problems' (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')"
+    },
+    {
+      "key": "climbing:sport",
+      "description": "Layer 'Climbing gyms' shows climbing:sport=yes with a fixed text, namely 'Sport climbing is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "climbing:sport",
+      "description": "Layer 'Climbing gyms' shows climbing:sport=no with a fixed text, namely 'Sport climbing is not possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')",
+      "value": "no"
+    },
+    {
+      "key": "climbing:sport",
+      "description": "Layer 'Climbing gyms' shows climbing:sport~.+ with a fixed text, namely 'There are {climbing:sport} sport climbing routes' (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')"
+    },
+    {
+      "key": "climbing:toprope",
+      "description": "Layer 'Climbing gyms' shows climbing:toprope=yes with a fixed text, namely 'Toprope climbing is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "climbing:toprope",
+      "description": "Layer 'Climbing gyms' shows climbing:toprope=no with a fixed text, namely 'Toprope climbing is not possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')",
+      "value": "no"
+    },
+    {
+      "key": "climbing:toprope",
+      "description": "Layer 'Climbing gyms' shows climbing:toprope~.+ with a fixed text, namely 'There are {climbing:toprope} toprope routes' (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')"
+    },
+    {
+      "key": "climbing:length",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:length' (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport!=no|climbing:toprope!=no)"
+    },
+    {
+      "key": "climbing:grade:french:min",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:grade:french:min' (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')"
+    },
+    {
+      "key": "climbing:grade:french:max",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:grade:french:max' (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots') (This is only shown if climbing!~^(route)$&climbing:sport=yes|sport=climbing)"
+    },
+    {
+      "key": "climbing:bolts:max",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:bolts:max' (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport!=no)"
     },
     {
       "key": "climbing:speed",
@@ -539,6 +621,48 @@
       "key": "rock",
       "description": "Layer 'Climbing opportunities' shows rock=limestone with a fixed text, namely 'Limestone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots') (This is only shown if climbing=crag|natural=cliff|natural=bare_rock)",
       "value": "limestone"
+    },
+    {
+      "key": "url",
+      "description": "Layer 'Climbing opportunities' shows and asks freeform values for key 'url' (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots') (This is only shown if leisure!~^(sports_centre)$&sport=climbing)"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Climbing opportunities' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Climbing opportunities' shows fee=no with a fixed text, namely 'Climbing here is free of charge' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')",
+      "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Climbing opportunities' shows fee=yes with a fixed text, namely 'Paying a fee is required to climb here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Climbing opportunities' shows fee=yes with a fixed text, namely 'Paying a fee is required to climb here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots') Picking this answer will delete the key charge.",
+      "value": ""
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing opportunities' shows climbing:boulder=yes with a fixed text, namely 'Bouldering is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing opportunities' shows climbing:boulder=no with a fixed text, namely 'Bouldering is not possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')",
+      "value": "no"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing opportunities' shows climbing:boulder=limited with a fixed text, namely 'Bouldering is possible, although there are only a few problems' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')",
+      "value": "limited"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing opportunities' shows climbing:boulder~.+ with a fixed text, namely 'There are {climbing:boulder} boulder problems' (in the MapComplete.osm.be theme 'Climbing gyms, clubs and spots')"
     },
     {
       "key": "access",

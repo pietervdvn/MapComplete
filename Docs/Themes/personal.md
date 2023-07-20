@@ -104,6 +104,7 @@ This theme contains the following layers:
   - [transit_routes](../Layers/transit_routes.md)
   - [transit_stops](../Layers/transit_stops.md)
   - [tree_node](../Layers/tree_node.md)
+  - [vending_machine](../Layers/vending_machine.md)
   - [veterinary](../Layers/veterinary.md)
   - [walls_and_buildings](../Layers/walls_and_buildings.md)
   - [waste_basket](../Layers/waste_basket.md)
