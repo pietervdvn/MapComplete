@@ -77,7 +77,7 @@
     },
     {
       "key": "map_size",
-      "description": "Layer 'Maps' shows map_size=city with a fixed text, namely ' A map of a city.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'A map of maps')",
+      "description": "Layer 'Maps' shows map_size=city with a fixed text, namely ' A map of a city' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'A map of maps')",
       "value": "city"
     },
     {

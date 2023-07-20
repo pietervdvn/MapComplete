@@ -25,6 +25,7 @@ Layer showing vending machines
 
 
 
+  - [personal](https://mapcomplete.osm.be/personal)
   - [vending_machine](https://mapcomplete.osm.be/vending_machine)
 
 
@@ -80,7 +81,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 
 This tagrendering has no question and is thus read-only
 
@@ -191,7 +192,7 @@ The question is  *What coins can you use to pay here?*
   - *2 euro coins are accepted*  corresponds with  `payment:coins:denominations=2 EUR`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `payment:coins=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk`
+This tagrendering is only visible in the popup if the following condition is met: `payment:coins=yes|payment:cash=yes&_currency=EUR`
 
 
 
@@ -214,7 +215,7 @@ The question is  *what notes can you use to pay here?*
   - *500 euro notes are accepted*  corresponds with  `payment:notes:denominations=500 EUR`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `payment:notes=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk`
+This tagrendering is only visible in the popup if the following condition is met: `payment:notes=yes|payment:cash=yes&_currency=EUR`
 
 
 

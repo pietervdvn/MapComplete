@@ -12,9 +12,9 @@ import ScriptUtils from "./ScriptUtils"
 import List from "../src/UI/Base/List"
 import SharedTagRenderings from "../src/Customizations/SharedTagRenderings"
 import Translations from "../src/UI/i18n/Translations"
-import themeOverview from "../assets/generated/theme_overview.json"
+import themeOverview from "../src/assets/generated/theme_overview.json"
 import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
-import bookcases from "../assets/generated/themes/bookcases.json"
+import bookcases from "../src/assets/generated/themes/bookcases.json"
 import fakedom from "fake-dom"
 import Hotkeys from "../src/UI/Base/Hotkeys"
 import { QueryParameters } from "../src/Logic/Web/QueryParameters"
@@ -25,7 +25,8 @@ import DependencyCalculator from "../src/Models/ThemeConfig/DependencyCalculator
 import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
 import ThemeViewState from "../src/Models/ThemeViewState"
 import Validators from "../src/UI/InputElement/Validators"
-
+import questions from "../src/assets/generated/layers/questions.json"
+import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 function WriteFile(
     filename,
     html: BaseUIElement,
@@ -352,8 +353,9 @@ WriteFile("./Docs/SpecialInputElements.md", Validators.HelpText(), [
 WriteFile("./Docs/BuiltinLayers.md", GenLayerOverviewText(), [
     "src/Customizations/AllKnownLayouts.ts",
 ])
-WriteFile("./Docs/BuiltinQuestions.md", SharedTagRenderings.HelpText(), [
-    "src/Customizations/SharedTagRenderings.ts",
+
+const qLayer = new LayerConfig(<LayerConfigJson>questions, "questions.json", true)
+WriteFile("./Docs/BuiltinQuestions.md", qLayer.GenerateDocumentation([], new Map(), []), [
     "assets/layers/questions/questions.json",
 ])
 

@@ -1,7 +1,7 @@
-import {UIEventSource} from "../../Logic/UIEventSource"
-import {LocalStorageSource} from "../../Logic/Web/LocalStorageSource"
-import {Utils} from "../../Utils"
-import {QueryParameters} from "../../Logic/Web/QueryParameters"
+import { UIEventSource } from "../../Logic/UIEventSource"
+import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource"
+import { Utils } from "../../Utils"
+import { QueryParameters } from "../../Logic/Web/QueryParameters"
 
 export default class Locale {
     public static showLinkToWeblate: UIEventSource<boolean> = new UIEventSource<boolean>(false)
@@ -23,26 +23,33 @@ export default class Locale {
      * @private
      */
     private static setup() {
-
         let source: UIEventSource<string>
 
         if (QueryParameters.wasInitialized("language") || Utils.runningFromConsole) {
-            if(!Utils.runningFromConsole){
-                console.debug("Language was initialized via URL-parameter - using the URL parameter as store instead of local storage", QueryParameters.wasInitialized("language"))
+            if (!Utils.runningFromConsole) {
+                console.debug(
+                    "Language was initialized via URL-parameter - using the URL parameter as store instead of local storage",
+                    QueryParameters.wasInitialized("language")
+                )
             }
             source = QueryParameters.GetQueryParameter(
                 "language",
                 undefined,
-                ["The language to display MapComplete in.",
+                [
+                    "The language to display MapComplete in.",
                     "The user display language is determined in the following order:",
-                    "- If the user did log in and did set their language before with MapComplete, use this language",
-                    "- If the user visited MapComplete before and did change their language, use the language as set by this URL-parameter. This will _disable_ saving the language to localStorage in case a non-logged-in user changes their language",
-                    "- Use the navigator-language (if available)",
-                    "- Use English",
+                    "",
+                    "1. If the user did log in and did set their language before with MapComplete, use this language. This language selection is synchronized accross devices using the openstreetmap.org user preferences.",
+                    "2. Use the language as set by the URL-parameter `language`. This will _disable_ saving the language to localStorage in case a non-logged-in user changes their language",
+                    "3. If the user visited MapComplete before and did change their language manually, this changed language will be saved in local storage. Use the language from local storage",
+                    "4. Use the navigator-language (if available)",
+                    "5. Use English",
                     "",
                     "Note that this URL-parameter is not added to the URL-bar by default.",
+                    "Note that the _loading_ screen will always use the navigator language.",
                     "",
-                    "Translations are never complete. If a translation in a certain language is missing, English is used as fallback."].join("\n"),
+                    "Translations are never complete. If a translation in a certain language is missing, English is used as fallback.",
+                ].join("\n")
             )
         } else {
             let browserLanguage = "en"

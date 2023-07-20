@@ -1,5 +1,4 @@
 import TagRenderingConfig from "./TagRenderingConfig"
-import SharedTagRenderings from "../../Customizations/SharedTagRenderings"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 
 export default class WithContextLoader {
@@ -25,12 +24,6 @@ export default class WithContextLoader {
                 deflt,
                 `${translationContext ?? this._context}.${key}.default value`
             )
-        }
-        if (typeof v === "string") {
-            const shared = SharedTagRenderings.SharedTagRendering.get(v)
-            if (shared) {
-                return shared
-            }
         }
         if (Object.keys(v).length === 1 && typeof v["render"] === "string") {
             throw `At ${
