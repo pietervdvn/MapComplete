@@ -1066,6 +1066,33 @@
     "onwheels": {
         "description": "On this map, publicly weelchair accessible places are shown and can be easily added",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistics"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Add all the suggested tags"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -1107,33 +1134,6 @@
             "8": {
                 "override": {
                     "name": "Disabled parking spaces"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistics"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Import"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Add all the suggested tags"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1216,7 +1216,7 @@
         "title": "Postal codes"
     },
     "postboxes": {
-        "description": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account. ",
+        "description": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account.",
         "shortDescription": "A map showing postboxes and post offices",
         "title": "Postbox and Post Office Map"
     },
@@ -1295,10 +1295,6 @@
     "stations": {
         "description": "View, edit and add details to a train station",
         "layers": {
-            "3": {
-                "description": "Layer showing train stations",
-                "name": "Train Stations"
-            },
             "16": {
                 "description": "Displays showing the trains that will leave from this station",
                 "name": "Departures boards",
@@ -1330,6 +1326,10 @@
                 "title": {
                     "render": "Departures board"
                 }
+            },
+            "3": {
+                "description": "Layer showing train stations",
+                "name": "Train Stations"
             }
         },
         "title": "Train Stations"
