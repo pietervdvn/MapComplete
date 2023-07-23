@@ -5660,7 +5660,10 @@
                         "then": "Eine Karte mit allen Straßen und Wegen eines Gebietes. <p class='subtle'>Die Straßen sind meist benannt; die Winkel, die Entfernungen, etc. stimmen</p>"
                     },
                     "2": {
-                        "then": "This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> "
+                        "then": "Dies ist eine schematische Karte. <p class='subtle'>Eine skizzierte Karte mit nur wichtigen Wegen und POIs. Die Winkel, Entfernungen usw. sind lediglich illustrativ, nicht genau.</p> "
+                    },
+                    "3": {
+                        "then": "Dies ist ein Toposkop. <p class='subtle'>Eine Markierung, die an hohen Stellen angebracht ist und die Richtung zu wichtigen Landschaftsobjekten anzeigt, die von diesem Punkt aus gesehen werden können<p>"
                     }
                 },
                 "question": "Was für eine Karte ist das?"
@@ -5881,6 +5884,17 @@
                     }
                 }
             }
+        }
+    },
+    "memorial": {
+        "tagRenderings": {
+            "inscription": {
+                "question": "Wie lautet die Inschrift auf dieser Gedenktafel?",
+                "render": "Die Inschrift auf dieser Gedenktafel lautet: <p><i>{inscription}<i></p>"
+            }
+        },
+        "title": {
+            "render": "Gedenktafel"
         }
     },
     "nature_reserve": {
@@ -6882,10 +6896,30 @@
     "public_bookcase": {
         "description": "Ein Bücherschrank am Straßenrand mit Büchern, für jedermann zugänglich",
         "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Hat Kinderbücher"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Hat Bücher für Erwachsene"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
                         "question": "Innen oder Außen"
+                    },
+                    "1": {
+                        "question": "Befindet sich im Innenbereich"
+                    },
+                    "2": {
+                        "question": "Befindet sich im Freien"
                     }
                 }
             }
@@ -8274,6 +8308,12 @@
                 },
                 "question": "Hat die Treppe einen Handlauf?"
             },
+            "multilevels": {
+                "override": {
+                    "question": "Zwischen welchen Stockwerken befindet sich diese Treppe?",
+                    "render": "Diese Treppe ist zwischen den Stockwerken {level}"
+                }
+            },
             "ramp": {
                 "mappings": {
                     "0": {
@@ -8687,6 +8727,18 @@
                 },
                 "render": "Dieser Fahrkartenentwerter ist Teil einer Zugangsbarriere vom Typ {barrier}"
             },
+            "payment-options": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Dieser Fahrkartenentwerter akzeptiert die OV-Chipkaart"
+                        },
+                        "1": {
+                            "then": "Dieser Ticketentwerter akzeptiert die OV-Chipkaart"
+                        }
+                    }
+                }
+            },
             "validator-operator": {
                 "freeform": {
                     "placeholder": "Name des Betreibers"
@@ -8900,6 +8952,11 @@
         },
         "name": "Toiletten in anderen Einrichtungen",
         "tagRenderings": {
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist der Ort, an dem sich diese Toiletten befinden, geöffnet?"
+                }
+            },
             "toilet-access": {
                 "mappings": {
                     "0": {
@@ -9343,6 +9400,17 @@
                     }
                 }
             },
+            "fixate-north": {
+                "mappings": {
+                    "0": {
+                        "then": "Drehen der Karte zulassen"
+                    },
+                    "1": {
+                        "then": "Norden immer nach oben zeigen lassen"
+                    }
+                },
+                "question": "Soll Norden immer oben sein?"
+            },
             "inbox": {
                 "mappings": {
                     "0": {
@@ -9360,6 +9428,9 @@
                         }
                     }
                 }
+            },
+            "mangrove-keys": {
+                "render": "<a href='data:application/json,{mangroveidentity}' download='mangrove_private_key_{_name}'>Laden Sie den privaten Schlüssel für Ihr Mangrove-Konto herunter</a> <p>Jeder, der diese Datei besitzt, kann mit Ihrer Identität Rezensionen vornehmen</p>"
             },
             "picture-license": {
                 "mappings": {
@@ -9466,6 +9537,160 @@
         },
         "title": {
             "render": "Einstellungen"
+        }
+    },
+    "vending_machine": {
+        "description": "Ebene mit Verkaufsautomaten",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Alle Verkaufsautomaten"
+                    },
+                    "1": {
+                        "question": "Verkauf von Getränken"
+                    },
+                    "10": {
+                        "question": "Verkauf von Milch"
+                    },
+                    "11": {
+                        "question": "Verkauf von Brot"
+                    },
+                    "12": {
+                        "question": "Verkauf von Eiern"
+                    },
+                    "13": {
+                        "question": "Verkauf von Käse"
+                    },
+                    "14": {
+                        "question": "Verkauf von Honig"
+                    },
+                    "15": {
+                        "question": "Verkauf von Kartoffeln"
+                    },
+                    "16": {
+                        "question": "Verkauf von Blumen"
+                    },
+                    "2": {
+                        "question": "Verkauf von Süßigkeiten"
+                    },
+                    "3": {
+                        "question": "Verkauf von Lebensmitteln"
+                    },
+                    "4": {
+                        "question": "Verkauf von Zigaretten"
+                    },
+                    "5": {
+                        "question": "Verkauf von Kondomen"
+                    },
+                    "6": {
+                        "question": "Verkauf von Kaffee"
+                    },
+                    "7": {
+                        "question": "Verkauf von Trinkwasser"
+                    },
+                    "8": {
+                        "question": "Verkauf von Zeitungen"
+                    },
+                    "9": {
+                        "question": "Verkauf von Fahrradschläuchen"
+                    }
+                }
+            }
+        },
+        "name": "Verkaufsautomaten",
+        "presets": {
+            "0": {
+                "title": "ein Verkaufsautomat"
+            }
+        },
+        "tagRenderings": {
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Automat befindet sich im Freien"
+                    },
+                    "1": {
+                        "then": "Dieser Verkaufsautomat befindet sich im Innenbereich"
+                    },
+                    "2": {
+                        "then": "Dieser Automat befindet sich im Freien"
+                    }
+                },
+                "question": "Ist dieser Automat in einem Gebäude untergebracht?"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Name des Betreibers"
+                },
+                "question": "Wer betreibt diesen Verkaufsautomaten?",
+                "render": "Dieser Verkaufsautomat wird betrieben von {operator}"
+            },
+            "vending": {
+                "mappings": {
+                    "0": {
+                        "then": "Getränke werden verkauft"
+                    },
+                    "1": {
+                        "then": "Süßigkeiten werden verkauft"
+                    },
+                    "10": {
+                        "then": "Brot wird verkauft"
+                    },
+                    "11": {
+                        "then": "Eier werden verkauft"
+                    },
+                    "12": {
+                        "then": "Käse wird verkauft"
+                    },
+                    "13": {
+                        "then": "Honig wird verkauft"
+                    },
+                    "14": {
+                        "then": "Kartoffeln werden verkauft"
+                    },
+                    "15": {
+                        "then": "Blumen werden verkauft"
+                    },
+                    "2": {
+                        "then": "Lebensmittel werden verkauft"
+                    },
+                    "3": {
+                        "then": "Zigaretten werden verkauft"
+                    },
+                    "4": {
+                        "then": "Kondome werden verkauft"
+                    },
+                    "5": {
+                        "then": "Kaffee wird verkauft"
+                    },
+                    "6": {
+                        "then": "Trinkwasser wird verkauft"
+                    },
+                    "7": {
+                        "then": "Zeitungen werden verkauft"
+                    },
+                    "8": {
+                        "then": "Fahrradschläuche werden verkauft"
+                    },
+                    "9": {
+                        "then": "Milch wird verkauft"
+                    }
+                },
+                "question": "Was wird in diesem Automaten verkauft?",
+                "render": "Dieser Automat verkauft {vending}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Verkaufsautomat {name}"
+                },
+                "1": {
+                    "then": "Verkaufsautomat {brand}"
+                }
+            },
+            "render": "Verkaufsautomat"
         }
     },
     "veterinary": {
