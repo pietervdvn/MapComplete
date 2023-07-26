@@ -8,11 +8,16 @@ import Lazy from "./Base/Lazy"
 import Toggle from "./Input/Toggle"
 import LanguageUtils from "../Utils/LanguageUtils"
 import { UIEventSource } from "../Logic/UIEventSource"
+import { QueryParameters } from "../Logic/Web/QueryParameters"
 
 export default class LanguagePicker extends Toggle {
     constructor(languages: string[], assignTo: UIEventSource<string>) {
         console.log("Constructing a language pîcker for languages", languages)
-        if (languages === undefined || languages.length <= 1) {
+        if (
+            languages === undefined ||
+            languages.length <= 1 ||
+            QueryParameters.wasInitialized("language")
+        ) {
             super(undefined, undefined, undefined)
         } else {
             const normalPicker = LanguagePicker.dropdownFor(languages, assignTo ?? Locale.language)

@@ -57,6 +57,9 @@ export class QueryParameters {
         this.init()
         return QueryParameters._wasInitialized.has(key)
     }
+    public static initializedParameters(): ReadonlyArray<string> {
+        return Array.from(QueryParameters._wasInitialized.keys())
+    }
 
     private static addOrder(key) {
         if (this.order.indexOf(key) < 0) {
@@ -131,5 +134,4 @@ export class QueryParameters {
         QueryParameters._wasInitialized.clear()
         QueryParameters.order = []
     }
-
 }
