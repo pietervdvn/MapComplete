@@ -14,7 +14,7 @@
         "available": "This community speaks {native}",
         "intro": "Get in touch with other people to get to know them, learn from them, …",
         "notAvailable": "This community does not speak {native}",
-        "title": "Community index"
+        "title": "Get in touch with others",
     },
     "delete": {
         "cancel": "Cancel",
