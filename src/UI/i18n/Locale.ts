@@ -40,7 +40,7 @@ export default class Locale {
                     "The user display language is determined in the following order:",
                     "",
                     "1. Use the language as set by the URL-parameter `language`. This will _disable_ setting the language by the user",
-                    "1. If the user did log in and did set their language before with MapComplete, use this language. This language selection is synchronized accross devices using the openstreetmap.org user preferences.",
+                    "2. If the user did log in and did set their language before with MapComplete, use this language. This language selection is synchronized accross devices using the openstreetmap.org user preferences.",
                     "3. If the user visited MapComplete before and did change their language manually, this changed language will be saved in local storage. Use the language from local storage",
                     "4. Use the navigator-language (if available)",
                     "5. Use English",
