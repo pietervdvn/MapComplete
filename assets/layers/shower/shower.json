@@ -1,7 +1,8 @@
 {
   "id": "shower",
   "name": {
-    "en": "Shower"
+    "en": "Shower",
+    "de": "Dusche"
   },
   "minzoom": 12,
   "source": {
@@ -9,16 +10,19 @@
   },
   "title": {
     "render": {
-      "en": "Shower"
+      "en": "Shower",
+      "de": "Dusche"
     }
   },
   "presets": [
     {
       "title": {
-        "en": "a shower"
+        "en": "a shower",
+        "de": "eine Dusche"
       },
       "description": {
-        "en": "A (public) shower"
+        "en": "A (public) shower",
+        "de": "Eine (öffentliche) Dusche"
       },
       "tags": [
         "amenity=shower"
@@ -31,25 +35,29 @@
     {
       "id": "access",
       "question": {
-        "en": "Who can use this shower?"
+        "en": "Who can use this shower?",
+        "de": "Wer darf diese Dusche nutzen?"
       },
       "mappings": [
         {
           "if": "access=yes",
           "then": {
-            "en": "Anyone can use this shower"
+            "en": "Anyone can use this shower",
+            "de": "Jeder darf diese Dusche nutzen"
           }
         },
         {
           "if": "access=customers",
           "then": {
-            "en": "Only customers can use this shower"
+            "en": "Only customers can use this shower",
+            "de": "Nur Kunden dürfen diese Dusche nutzen"
           }
         },
         {
           "if": "access=key",
           "then": {
-            "en": "Accesible, but one has to ask for a key"
+            "en": "Accesible, but one has to ask for a key",
+            "de": "Zugänglich, aber man muss nach einem Schlüssel fragen"
           }
         }
       ]
@@ -57,19 +65,22 @@
     {
       "id": "fee",
       "question": {
-        "en": "Is there a fee for using this shower?"
+        "en": "Is there a fee for using this shower?",
+        "de": "Ist die Nutzung der Dusche kostenpflichtig?"
       },
       "mappings": [
         {
           "if": "fee=yes",
           "then": {
-            "en": "There is a fee for using this shower"
+            "en": "There is a fee for using this shower",
+            "de": "Die Nutzung der Dusche ist kostenpflichtig"
           }
         },
         {
           "if": "fee=no",
           "then": {
-            "en": "This shower is free to use"
+            "en": "This shower is free to use",
+            "de": "Die Nutzung der Dusche ist kostenlos"
           },
           "addExtraTags": [
             "charge="
@@ -81,42 +92,49 @@
       "id": "charge",
       "condition": "fee=yes",
       "question": {
-        "en": "How much does it cost to use this shower?"
+        "en": "How much does it cost to use this shower?",
+        "de": "Wie viel kostet es, diese Dusche zu nutzen?"
       },
       "freeform": {
         "key": "charge",
         "type": "string",
         "placeholder": {
-          "en": "e.g. 1.50 EUR"
+          "en": "e.g. 1.50 EUR",
+          "de": "z.B. 1,50 EUR"
         }
       },
       "render": {
-        "en": "It costs {charge} to use this shower"
+        "en": "It costs {charge} to use this shower",
+        "de": "Es kostet {charge} um diese Dusche zu nutzen"
       }
     },
     "opening_hours",
     {
       "id": "hot_water",
       "question": {
-        "en": "Does this shower have hot water available?"
+        "en": "Does this shower have hot water available?",
+        "de": "Verfügt diese Dusche über Warmwasser?"
       },
       "mappings": [
         {
           "if": "hot_water=yes",
           "then": {
-            "en": "Hot water is available here"
+            "en": "Hot water is available here",
+            "de": "Warmwasser ist hier verfügbar"
           }
         },
         {
           "if": "hot_water=fee",
           "then": {
-            "en": "Hot water is available here, but there is a fee"
+            "en": "Hot water is available here, but there is a fee",
+            "de": "Warmes Wasser ist hier verfügbar, aber kostenpflichtig"
           }
         },
         {
           "if": "hot_water=no",
           "then": {
-            "en": "There is no hot water available here"
+            "en": "There is no hot water available here",
+            "de": "Hier gibt es kein warmes Wasser"
           }
         }
       ]
@@ -140,7 +158,8 @@
       "options": [
         {
           "question": {
-            "en": "Hot water available"
+            "en": "Hot water available",
+            "de": "Warmwasser verfügbar"
           },
           "osmTags": {
             "or": [
@@ -182,6 +201,7 @@
     }
   ],
   "description": {
-    "en": "A layer showing (public) showers"
+    "en": "A layer showing (public) showers",
+    "de": "Eine Ebene mit (öffentlichen) Duschen"
   }
 }

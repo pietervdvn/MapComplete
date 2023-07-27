@@ -386,5 +386,12 @@
         "title": {
             "render": "Bicicleta pantasma"
         }
+    },
+    "questions": {
+        "tagRenderings": {
+            "website": {
+                "question": "Cal é a páxina web de {title()}?"
+            }
+        }
     }
 }

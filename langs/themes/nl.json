@@ -14,6 +14,21 @@
     },
     "atm": {
         "description": "Deze kaart toont geldautomaten waar je geld kunt afhalen of geld op de bank kan zetten",
+        "layers": {
+            "3": {
+                "override": {
+                    "=tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Voeg deze ATM toe"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "title": "Geldautomaten"
     },
     "bag": {
@@ -1414,6 +1429,10 @@
         "description": "Breng bomen in kaart!",
         "shortDescription": "Breng bomen in kaart",
         "title": "Bomen"
+    },
+    "vending_machine": {
+        "description": "Vind verkoopautomaten voor alles",
+        "title": "Verkoopautomaten"
     },
     "walls_and_buildings": {
         "description": "Speciale ingebouwde laag voor alle muren en gebouwen. Deze laag is nuttig in voorkeuzen voor objecten die tegen muren geplaatst kunnen worden (bv. AEDs, brievenbussen, ingangen, adressen, beveiligingscamera's,…). Deze laag is standaard onzichtbaar en niet in te schakelen door de gebruiker.",

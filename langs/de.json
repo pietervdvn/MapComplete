@@ -60,7 +60,7 @@
             "intro": "Der Benutzer wird von einer Karte mit Objekten begrüßt. Wenn er eines auswählt, werden Informationen über das Objekt angezeigt.",
             "title": "Wie sieht die Benutzeroberfläche aus?"
         },
-        "examples": "Es gibt viele thematische Karten, von denen hier einige dargestellt sind.\n\nEs gibt noch viele weitere thematische Karten online: über das Gesundheitswesen, Indoor-Navigation, Zugänglichkeit für Rollstuhlfahrer, Abfallentsorgungsanlagen, öffentliche Bücherschränke, Fußgängerüberwege mit Regenbogenmalerei,... Entdecken Sie sie alle auf mapcomplete.osm.be",
+        "examples": "Es gibt viele thematische Karten, von denen hier einige dargestellt sind.\n\nEs gibt noch viele weitere thematische Karten online: über das Gesundheitswesen, Indoor-Navigation, Zugänglichkeit für Rollstuhlfahrer, Abfallentsorgungsanlagen, öffentliche Bücherschränke, Fußgängerüberwege mit Regenbogenmalerei,… Entdecken Sie sie alle auf mapcomplete.osm.be",
         "fakeui": {
             "add_images": "Bilder mit ein paar Klicks hinzufügen",
             "attributes": "Zeigt Attribute in einer freundlichen Art und Weise",
@@ -92,6 +92,7 @@
         "whatIsOsm": "Was ist OpenStreetMap?"
     },
     "general": {
+        "404": "Diese Seite existiert nicht",
         "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
         "aboutMapComplete": {
             "intro": "Nutze MapComplete, um Daten zu <b>einem bestimmten Thema</b> auf OpenStreetMap einzutragen. Beantworte Frage, und in wenigen Minuten sind die Beiträge überall verfügbar. In den meisten Themen kannst Du Bilder hinzufügen oder sogar eine Bewertung hinterlassen. Die <b>Themen-Ersteller*innen</b> definieren Objekte, Fragen und Begriffe für das jeweilige Thema."
@@ -226,6 +227,7 @@
         },
         "morescreen": {
             "createYourOwnTheme": "Ein eigenes MapComplete-Thema von Grund auf neu erstellen",
+            "enterToOpen": "Drücke Enter um Theme zu öffnen",
             "hiddenExplanation": "Diese Themen sind nur für Personen zugänglich, die einen Link erhalten haben. Sie haben {hidden_discovered} von {total_hidden} versteckten Themen entdeckt.",
             "intro": "<h3>Mehr thematische Karten?</h3>Sammeln Sie gerne Geodaten? <br/>Es sind weitere Themen verfügbar.",
             "noMatchingThemes": "Keine Themen, die Ihren Suchkriterien entsprechen",

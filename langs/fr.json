@@ -1,4 +1,7 @@
 {
+    "advanced": {
+        "title": "Fonctionnalités avancées"
+    },
     "centerMessage": {
         "loadingData": "Chargement des données…",
         "ready": "Fini !",
@@ -94,6 +97,7 @@
             "isApplied": "Les changements sont appliqués"
         },
         "attribution": {
+            "attributionBackgroundLayerWithCopyright": "Le fond de carte actuel est {name}: {copyright}",
             "attributionContent": "<p>Toutes les données sont fournies par <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, librement réutilisables sous <a href='https://osm.org/copyright' target='_blank'>Open DataBase License</a>.</p>",
             "attributionTitle": "Crédits",
             "codeContributionsBy": "MapComplete a été construit par {contributors} et <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} autres contributeurs</a>",
@@ -114,6 +118,7 @@
             "openMapillary": "Ouvrez Mapillary ici",
             "openOsmcha": "Voir les dernières modifications faites avec {theme}",
             "themeBy": "Thème maintenu par {author}",
+            "title": "Droits d'auteur et attribution",
             "translatedBy": "MapComplete est traduite par {contributors} et <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} autres personnes</a>"
         },
         "back": "Retour",
@@ -163,6 +168,10 @@
         "loginToStart": "Connectez-vous pour répondre à cette question",
         "loginWithOpenStreetMap": "Se connecter avec OpenStreetMap",
         "logout": "Déconnexion",
+        "menu": {
+            "aboutMapComplete": "À propos de MapComplete",
+            "filter": "Filtrer les données"
+        },
         "morescreen": {
             "createYourOwnTheme": "Créez votre propre thème MapComplete à partir de zéro",
             "hiddenExplanation": "Ces thèmes sont seulement accessibles par lien. Vous avez découvert {hidden_discovered} des {total_hidden} thèmes cachés.",
@@ -208,6 +217,8 @@
         "pickLanguage": "Choisir la langue : ",
         "poweredByOsm": "Propulsé par OpenStreetMap",
         "questionBox": {
+            "answeredMultipleSkippedMultiple": "Vous avez répondu à {answered} questions et passé {skipped} questions",
+            "done": "Pas d'autre question ! Merci !",
             "reactivate": "Réactiver les questions passées"
         },
         "questions": {
@@ -227,6 +238,7 @@
             "error": "Quelque chose n'a pas marché…",
             "nothing": "Rien n'a été trouvé…",
             "search": "Chercher un lieu",
+            "searchShort": "Rechercher…",
             "searching": "Chargement…"
         },
         "sharescreen": {
@@ -248,7 +260,8 @@
             "fsUserbadge": "Activer le bouton de connexion",
             "fsWelcomeMessage": "Afficher le message de bienvenue et les onglets associés",
             "intro": "<h3>Partager cette carte</h3> Partagez cette carte en copiant le lien suivant et envoyez-le à vos amis :",
-            "thanksForSharing": "Merci d'avoir partagé !"
+            "thanksForSharing": "Merci d'avoir partagé !",
+            "title": "Partager cette carte"
         },
         "skip": "Passer la question",
         "testing": "Test - les changements ne seront pas sauvegardés",
@@ -451,8 +464,10 @@
         "missing": "{count} segments non traduits"
     },
     "userinfo": {
+        "editDescription": "Modifier ton profil",
         "gotoInbox": "Ouvrir sa boite de réception",
-        "gotoSettings": "Paramètres sur OpenStreetMap.org"
+        "gotoSettings": "Paramètres sur OpenStreetMap.org",
+        "notLoggedIn": "Déconnecté"
     },
     "validation": {
         "email": {

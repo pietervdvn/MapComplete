@@ -181,31 +181,36 @@
     {
       "id": "basketball-hoops",
       "question": {
-        "en": "How much basketball hoops does this pitch have?"
+        "en": "How much basketball hoops does this pitch have?",
+        "de": "Wie viele Basketballkörbe hat das Spielfeld?"
       },
       "mappings": [
         {
           "if": "hoops=1",
           "then": {
-            "en": "This basketball pitch has a single hoop"
+            "en": "This basketball pitch has a single hoop",
+            "de": "Dieses Basketballfeld hat einen einzigen Korb"
           }
         },
         {
           "if": "hoops=2",
           "then": {
-            "en": "This basketball pitch has two hoops"
+            "en": "This basketball pitch has two hoops",
+            "de": "Dieses Basketballfeld hat zwei Körbe"
           }
         },
         {
           "if": "hoops=4",
           "then": {
-            "en": "This basketball pitch has four hoops"
+            "en": "This basketball pitch has four hoops",
+            "de": "Dieses Basketballfeld hat vier Körbe"
           }
         },
         {
           "if": "hoops~*",
           "then": {
-            "en": "This basketball pitch has {hoops} hoops"
+            "en": "This basketball pitch has {hoops} hoops",
+            "de": "Dieses Basketballfeld hat {hoops} Körbe"
           },
           "hideInAnswer": true
         }

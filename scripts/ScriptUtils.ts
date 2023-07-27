@@ -1,9 +1,9 @@
 import * as fs from "fs"
 import { existsSync, lstatSync, readdirSync, readFileSync } from "fs"
-import { Utils } from "../Utils"
+import { Utils } from "../src/Utils"
 import * as https from "https"
-import { LayoutConfigJson } from "../Models/ThemeConfig/Json/LayoutConfigJson"
-import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
+import { LayoutConfigJson } from "../src/Models/ThemeConfig/Json/LayoutConfigJson"
+import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 import xml2js from "xml2js"
 
 export default class ScriptUtils {

@@ -129,7 +129,7 @@
                         "then": "Wahlwerbung"
                     },
                     "4": {
-                        "then": "Informationen über Theater, Konzerte, ..."
+                        "then": "Informationen über Theater, Konzerte, …"
                     },
                     "5": {
                         "then": "Nachricht von gemeinnützigen Organisationen"
@@ -731,7 +731,7 @@
                     }
                 },
                 "question": "Hat diese Bank eine Inschrift?",
-                "questionHint": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ...",
+                "questionHint": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, …",
                 "render": "Diese Bank hat folgende Inschrift:<br/><p><i>{inscription}</i></p>"
             },
             "bench-material": {
@@ -5047,12 +5047,15 @@
             "ghost_bike-name": {
                 "mappings": {
                     "0": {
+                        "then": "Im Gedenken an {name}"
+                    },
+                    "1": {
                         "then": "Am Fahrrad ist kein Name angegeben"
                     }
                 },
                 "question": "An wen erinnert dieses Geisterrad?",
                 "questionHint": "Bitte respektieren Sie die Privatsphäre - geben Sie den Namen nur an, wenn er weit verbreitet oder auf dem Fahrrad markiert ist. Den Familiennamen können Sie weglassen.",
-                "render": "Im Gedenken an {name}"
+                "render": "Im Gedenken an {subject}"
             },
             "ghost_bike-source": {
                 "question": "Auf welcher Webseite kann man mehr Informationen über das Geisterrad oder den Unfall finden?",
@@ -5066,6 +5069,9 @@
         "title": {
             "mappings": {
                 "0": {
+                    "then": "Geisterrad im Gedenken an {subject}"
+                },
+                "1": {
                     "then": "Geisterrad im Gedenken an {name}"
                 }
             },
@@ -5624,6 +5630,43 @@
                 },
                 "question": "Auf welchen Daten basiert diese Karte?",
                 "render": "Diese Karte basiert auf {map_source}"
+            },
+            "map_size": {
+                "mappings": {
+                    "0": {
+                        "then": "Eine Karte der Räume innerhalb eines Gebäudes"
+                    },
+                    "1": {
+                        "then": "Örtlichkeit (z.B. Burg)"
+                    },
+                    "2": {
+                        "then": "Eine Karte, die das Dorf oder die Stadt anzeigt"
+                    },
+                    "3": {
+                        "then": "Stadt"
+                    },
+                    "4": {
+                        "then": "Region"
+                    }
+                },
+                "question": "Was wird von der Fläche abgedeckt?"
+            },
+            "map_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Topographische Katte <p class='subtle'> Die Karte enthält Höhenlinien. </p>"
+                    },
+                    "1": {
+                        "then": "Eine Karte mit allen Straßen und Wegen eines Gebietes. <p class='subtle'>Die Straßen sind meist benannt; die Winkel, die Entfernungen, etc. stimmen</p>"
+                    },
+                    "2": {
+                        "then": "Dies ist eine schematische Karte. <p class='subtle'>Eine skizzierte Karte mit nur wichtigen Wegen und POIs. Die Winkel, Entfernungen usw. sind lediglich illustrativ, nicht genau.</p> "
+                    },
+                    "3": {
+                        "then": "Dies ist ein Toposkop. <p class='subtle'>Eine Markierung, die an hohen Stellen angebracht ist und die Richtung zu wichtigen Landschaftsobjekten anzeigt, die von diesem Punkt aus gesehen werden können<p>"
+                    }
+                },
+                "question": "Was für eine Karte ist das?"
             }
         },
         "title": {
@@ -5841,6 +5884,17 @@
                     }
                 }
             }
+        }
+    },
+    "memorial": {
+        "tagRenderings": {
+            "inscription": {
+                "question": "Wie lautet die Inschrift auf dieser Gedenktafel?",
+                "render": "Die Inschrift auf dieser Gedenktafel lautet: <p><i>{inscription}<i></p>"
+            }
+        },
+        "title": {
+            "render": "Gedenktafel"
         }
     },
     "nature_reserve": {
@@ -6842,10 +6896,30 @@
     "public_bookcase": {
         "description": "Ein Bücherschrank am Straßenrand mit Büchern, für jedermann zugänglich",
         "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Hat Kinderbücher"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Hat Bücher für Erwachsene"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
                         "question": "Innen oder Außen"
+                    },
+                    "1": {
+                        "question": "Befindet sich im Innenbereich"
+                    },
+                    "2": {
+                        "question": "Befindet sich im Freien"
                     }
                 }
             }
@@ -6948,6 +7022,333 @@
                 }
             },
             "render": "Bücherschrank"
+        }
+    },
+    "questions": {
+        "tagRenderings": {
+            "denominations-coins": {
+                "mappings": {
+                    "0": {
+                        "then": "1-Cent-Münzen werden akzeptiert"
+                    },
+                    "1": {
+                        "then": "2-Cent-Münzen werden akzeptiert"
+                    },
+                    "2": {
+                        "then": "5-Cent-Münzen werden akzeptiert"
+                    },
+                    "3": {
+                        "then": "10-Cent-Münzen werden akzeptiert"
+                    },
+                    "4": {
+                        "then": "20-Cent-Münzen werden akzeptiert"
+                    },
+                    "5": {
+                        "then": "50-Cent-Münzen werden akzeptiert"
+                    },
+                    "6": {
+                        "then": "1-Euro-Münzen werden akzeptiert"
+                    },
+                    "7": {
+                        "then": "2-Euro-Münzen werden akzeptiert"
+                    }
+                },
+                "question": "Mit welchen Münzen kann man hier bezahlen?"
+            },
+            "denominations-notes": {
+                "mappings": {
+                    "0": {
+                        "then": "5-Euro-Scheine werden angenommen"
+                    },
+                    "1": {
+                        "then": "10-Euro-Scheine werden angenommen"
+                    },
+                    "2": {
+                        "then": "20-Euro-Scheine werden angenommen"
+                    },
+                    "3": {
+                        "then": "50-Euro-Scheine werden angenommen"
+                    },
+                    "4": {
+                        "then": "100-Euro-Scheine werden angenommen"
+                    },
+                    "5": {
+                        "then": "200-Euro-Scheine werden angenommen"
+                    },
+                    "6": {
+                        "then": "500-Euro-Scheine werden angenommen"
+                    }
+                },
+                "question": "Mit welchen Banknoten kann man hier bezahlen?"
+            },
+            "description": {
+                "question": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.",
+                "questionHint": "Bitte keine bereits erhobenen Informationen wiederholen"
+            },
+            "dog-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Hunde sind hier erlaubt"
+                    },
+                    "1": {
+                        "then": "Hunde sind hier <b>nicht</b> erlaubt"
+                    },
+                    "2": {
+                        "then": "Hunde sind hier erlaubt, müssen aber angeleint sein"
+                    },
+                    "3": {
+                        "then": "Hunde sind hier erlaubt und können frei herumlaufen"
+                    }
+                },
+                "question": "Sind Hunde hier erlaubt?"
+            },
+            "email": {
+                "question": "Wie lautet die Mail-Adresse von {title()}?"
+            },
+            "induction-loop": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Ort hat eine induktive Höranlage"
+                    },
+                    "1": {
+                        "then": "Dieser Ort hat <b>keine</b> induktive Höranlage"
+                    }
+                },
+                "question": "Hat dieser Ort eine induktive Höranlage für Hörgeschädigte?"
+            },
+            "internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Ort bietet drahtlosen Internetzugang"
+                    },
+                    "1": {
+                        "then": "Dieser Ort bietet <b>keinen</b> Internetzugang"
+                    },
+                    "2": {
+                        "then": "Dieser Ort bietet Internetzugang"
+                    },
+                    "3": {
+                        "then": "Dieser Ort bietet Internetzugang über ein Terminal oder einen Computer"
+                    },
+                    "4": {
+                        "then": "Dieser Ort bietet kabelgebundenen Internetzugang"
+                    }
+                },
+                "question": "Bietet dieser Ort Internetzugang?"
+            },
+            "internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Internetzugang ist an diesem Ort gebührenpflichtig"
+                    },
+                    "1": {
+                        "then": "Der Internetzugang ist an diesem Ort kostenlos"
+                    },
+                    "2": {
+                        "then": "Der Internetzugang ist an diesem Ort kostenlos, aber nur für Kunden"
+                    }
+                },
+                "question": "Wird für den Internetzugang eine Gebühr erhoben?"
+            },
+            "internet-ssid": {
+                "freeform": {
+                    "placeholder": "Geben Sie den Netzwerknamen ein"
+                },
+                "question": "Wie lautet der Netzwerkname für den drahtlosen Internetzugang?",
+                "render": "Der Netzwerkname lautet <b>{internet_access:ssid}</b>"
+            },
+            "just_created": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen."
+                    }
+                }
+            },
+            "last_edit": {
+                "render": {
+                    "special": {
+                        "text": "Zuletzt bearbeitet am {_last_edit:timestamp} von {_last_edit:contributor}"
+                    }
+                }
+            },
+            "level": {
+                "mappings": {
+                    "0": {
+                        "then": "Das Objekt befindet sich unter der Erde"
+                    },
+                    "1": {
+                        "then": "Das Objekt befindet sich im Erdgeschoss"
+                    },
+                    "2": {
+                        "then": "Das Objekt befindet sich im Erdgeschoss"
+                    },
+                    "3": {
+                        "then": "Das Objekt befindet sich im 1. Obergeschoss"
+                    },
+                    "4": {
+                        "then": "Das Objekt befindet sich im 1. Untergeschoss"
+                    }
+                },
+                "question": "Auf welcher Ebene befindet sich das Objekt?",
+                "render": "Das Objekt befindet sich im {level}. Geschoss"
+            },
+            "luminous_or_lit": {
+                "mappings": {
+                    "0": {
+                        "then": "Das Objekt leuchtet selbst und wird von außen beleuchtet"
+                    },
+                    "1": {
+                        "then": "Das Objekt leuchtet selbst"
+                    },
+                    "2": {
+                        "then": "Das Objekt wird von außen beleuchtet, z. B. durch Scheinwerfer oder andere Lichter"
+                    },
+                    "3": {
+                        "then": "Das Objekt wird weder von außen beleuchtet, noch leuchtet es selbst"
+                    }
+                },
+                "question": "Wird das Objekt beleuchtet oder leuchtet es selbst?"
+            },
+            "multilevels": {
+                "override": {
+                    "question": "Auf welchen Geschossen hält dieser Aufzug?",
+                    "render": "Der Aufzug hält auf den Geschossen {level}"
+                }
+            },
+            "opening_hours": {
+                "question": "Wie lauten die Öffnungszeiten von {title()}?",
+                "render": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "durchgehend geöffnet (auch an Feiertagen)"
+                        }
+                    }
+                }
+            },
+            "opening_hours_by_appointment": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "Nur nach Vereinbarung"
+                        },
+                        "1": {
+                            "then": "Nur nach Vereinbarung"
+                        }
+                    }
+                }
+            },
+            "payment-options": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier wird Bargeld akzeptiert"
+                    },
+                    "1": {
+                        "then": "Hier wird Kartenzahlung akzeptiert"
+                    },
+                    "2": {
+                        "then": "Die Bezahlung per QR-Code ist hier möglich"
+                    }
+                },
+                "question": "Welche Zahlungsmethoden werden hier akzeptiert?"
+            },
+            "payment-options-advanced": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Die Bezahlung erfolgt über eine spezielle App"
+                        },
+                        "1": {
+                            "then": "Die Bezahlung erfolgt mit einer Mitgliedskarte"
+                        }
+                    }
+                }
+            },
+            "payment-options-split": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Münzen werden hier akzeptiert"
+                        },
+                        "1": {
+                            "then": "Geldscheine werden hier akzeptiert"
+                        },
+                        "2": {
+                            "then": "Debitkarten werden hier akzeptiert"
+                        },
+                        "3": {
+                            "then": "Kreditkarten werden hier akzeptiert"
+                        }
+                    }
+                }
+            },
+            "phone": {
+                "question": "Wie lautet die Telefonnummer von {title()}?"
+            },
+            "service:electricity": {
+                "mappings": {
+                    "0": {
+                        "then": "Im Innenraum stehen viele Steckdosen zur Verfügung, an denen Kunden ihre Geräte laden können"
+                    },
+                    "1": {
+                        "then": "Im Innenraum stehen nur wenige Steckdosen zur Verfügung, an denen Kunden ihre Geräte laden können"
+                    },
+                    "2": {
+                        "then": "Im Innenraum stehen keine Steckdosen zur Verfügung, aber Laden von Geräte könnte möglich sein, wenn das Personal gefragt wird"
+                    },
+                    "3": {
+                        "then": "Im Innenraum stehen keine Steckdosen für Kunden zur Verfügung"
+                    }
+                },
+                "question": "Gibt es hier Steckdosen, an denen Kunden ihre Geräte laden können?"
+            },
+            "smoking": {
+                "mappings": {
+                    "0": {
+                        "then": "Rauchen ist <b>erlaubt</b>"
+                    },
+                    "1": {
+                        "then": "Rauchen ist <b>nicht erlaubt</b>"
+                    },
+                    "2": {
+                        "then": "Rauchen ist <b> draußen erlaubt</b>."
+                    }
+                },
+                "question": "Ist das Rauchen in {title()} erlaubt?"
+            },
+            "website": {
+                "question": "Wie lautet die Webseite von {title()}?"
+            },
+            "wheelchair-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Ort ist speziell für Rollstuhlfahrer gestaltet"
+                    },
+                    "1": {
+                        "then": "Der Ort ist rollstuhlzugänglich gestaltet"
+                    },
+                    "2": {
+                        "then": "Der Ort ist nur eingeschränkt rollstuhlzugänglich"
+                    },
+                    "3": {
+                        "then": "Der Ort ist nicht rollstuhlzugänglich"
+                    }
+                },
+                "question": "Ist der Ort rollstuhlzugänglich?"
+            },
+            "wikipedia": {
+                "mappings": {
+                    "0": {
+                        "then": "Es wurde noch keine Wikipedia-Seite verlinkt"
+                    },
+                    "1": {
+                        "then": "Es wurde noch keine Wikipedia-Seite verlinkt"
+                    }
+                },
+                "question": "Wie lautet das zugehörige Wikidata Element?"
+            }
         }
     },
     "railway_platforms": {
@@ -7519,6 +7920,76 @@
             "render": "Geschäft"
         }
     },
+    "shower": {
+        "description": "Eine Ebene mit (öffentlichen) Duschen",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Warmwasser verfügbar"
+                    }
+                }
+            }
+        },
+        "name": "Dusche",
+        "presets": {
+            "0": {
+                "description": "Eine (öffentliche) Dusche",
+                "title": "eine Dusche"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Jeder darf diese Dusche nutzen"
+                    },
+                    "1": {
+                        "then": "Nur Kunden dürfen diese Dusche nutzen"
+                    },
+                    "2": {
+                        "then": "Zugänglich, aber man muss nach einem Schlüssel fragen"
+                    }
+                },
+                "question": "Wer darf diese Dusche nutzen?"
+            },
+            "charge": {
+                "freeform": {
+                    "placeholder": "z.B. 1,50 EUR"
+                },
+                "question": "Wie viel kostet es, diese Dusche zu nutzen?",
+                "render": "Es kostet {charge} um diese Dusche zu nutzen"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Nutzung der Dusche ist kostenpflichtig"
+                    },
+                    "1": {
+                        "then": "Die Nutzung der Dusche ist kostenlos"
+                    }
+                },
+                "question": "Ist die Nutzung der Dusche kostenpflichtig?"
+            },
+            "hot_water": {
+                "mappings": {
+                    "0": {
+                        "then": "Warmwasser ist hier verfügbar"
+                    },
+                    "1": {
+                        "then": "Warmes Wasser ist hier verfügbar, aber kostenpflichtig"
+                    },
+                    "2": {
+                        "then": "Hier gibt es kein warmes Wasser"
+                    }
+                },
+                "question": "Verfügt diese Dusche über Warmwasser?"
+            }
+        },
+        "title": {
+            "render": "Dusche"
+        }
+    },
     "slow_roads": {
         "description": "Alle autofreien Straßen",
         "tagRenderings": {
@@ -7673,6 +8144,23 @@
             }
         },
         "tagRenderings": {
+            "basketball-hoops": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Basketballfeld hat einen einzigen Korb"
+                    },
+                    "1": {
+                        "then": "Dieses Basketballfeld hat zwei Körbe"
+                    },
+                    "2": {
+                        "then": "Dieses Basketballfeld hat vier Körbe"
+                    },
+                    "3": {
+                        "then": "Dieses Basketballfeld hat {hoops} Körbe"
+                    }
+                },
+                "question": "Wie viele Basketballkörbe hat das Spielfeld?"
+            },
             "sport-pitch-access": {
                 "mappings": {
                     "0": {
@@ -8324,6 +8812,9 @@
                 "render": "Die Wickeltabelle befindet sich in {changing_table:location}"
             },
             "toilet-charge": {
+                "freeform": {
+                    "placeholder": "z.B. 0.50 EUR"
+                },
                 "question": "Wie viel muss man für die Nutzung bezahlen?",
                 "render": "Die Gebühr beträgt {charge}"
             },
@@ -8886,6 +9377,17 @@
                     }
                 }
             },
+            "fixate-north": {
+                "mappings": {
+                    "0": {
+                        "then": "Drehen der Karte zulassen"
+                    },
+                    "1": {
+                        "then": "Norden immer nach oben zeigen lassen"
+                    }
+                },
+                "question": "Soll Norden immer oben sein?"
+            },
             "inbox": {
                 "mappings": {
                     "0": {
@@ -8903,6 +9405,9 @@
                         }
                     }
                 }
+            },
+            "mangrove-keys": {
+                "render": "<a href='data:application/json,{mangroveidentity}' download='mangrove_private_key_{_name}'>Laden Sie den privaten Schlüssel für Ihr Mangrove-Konto herunter</a> <p>Jeder, der diese Datei besitzt, kann mit Ihrer Identität Rezensionen vornehmen</p>"
             },
             "picture-license": {
                 "mappings": {
@@ -9009,6 +9514,160 @@
         },
         "title": {
             "render": "Einstellungen"
+        }
+    },
+    "vending_machine": {
+        "description": "Ebene mit Verkaufsautomaten",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Alle Verkaufsautomaten"
+                    },
+                    "1": {
+                        "question": "Verkauf von Getränken"
+                    },
+                    "2": {
+                        "question": "Verkauf von Süßigkeiten"
+                    },
+                    "3": {
+                        "question": "Verkauf von Lebensmitteln"
+                    },
+                    "4": {
+                        "question": "Verkauf von Zigaretten"
+                    },
+                    "5": {
+                        "question": "Verkauf von Kondomen"
+                    },
+                    "6": {
+                        "question": "Verkauf von Kaffee"
+                    },
+                    "7": {
+                        "question": "Verkauf von Trinkwasser"
+                    },
+                    "8": {
+                        "question": "Verkauf von Zeitungen"
+                    },
+                    "9": {
+                        "question": "Verkauf von Fahrradschläuchen"
+                    },
+                    "10": {
+                        "question": "Verkauf von Milch"
+                    },
+                    "11": {
+                        "question": "Verkauf von Brot"
+                    },
+                    "12": {
+                        "question": "Verkauf von Eiern"
+                    },
+                    "13": {
+                        "question": "Verkauf von Käse"
+                    },
+                    "14": {
+                        "question": "Verkauf von Honig"
+                    },
+                    "15": {
+                        "question": "Verkauf von Kartoffeln"
+                    },
+                    "16": {
+                        "question": "Verkauf von Blumen"
+                    }
+                }
+            }
+        },
+        "name": "Verkaufsautomaten",
+        "presets": {
+            "0": {
+                "title": "ein Verkaufsautomat"
+            }
+        },
+        "tagRenderings": {
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Automat befindet sich im Freien"
+                    },
+                    "1": {
+                        "then": "Dieser Verkaufsautomat befindet sich im Innenbereich"
+                    },
+                    "2": {
+                        "then": "Dieser Automat befindet sich im Freien"
+                    }
+                },
+                "question": "Ist dieser Automat in einem Gebäude untergebracht?"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Name des Betreibers"
+                },
+                "question": "Wer betreibt diesen Verkaufsautomaten?",
+                "render": "Dieser Verkaufsautomat wird betrieben von {operator}"
+            },
+            "vending": {
+                "mappings": {
+                    "0": {
+                        "then": "Getränke werden verkauft"
+                    },
+                    "1": {
+                        "then": "Süßigkeiten werden verkauft"
+                    },
+                    "2": {
+                        "then": "Lebensmittel werden verkauft"
+                    },
+                    "3": {
+                        "then": "Zigaretten werden verkauft"
+                    },
+                    "4": {
+                        "then": "Kondome werden verkauft"
+                    },
+                    "5": {
+                        "then": "Kaffee wird verkauft"
+                    },
+                    "6": {
+                        "then": "Trinkwasser wird verkauft"
+                    },
+                    "7": {
+                        "then": "Zeitungen werden verkauft"
+                    },
+                    "8": {
+                        "then": "Fahrradschläuche werden verkauft"
+                    },
+                    "9": {
+                        "then": "Milch wird verkauft"
+                    },
+                    "10": {
+                        "then": "Brot wird verkauft"
+                    },
+                    "11": {
+                        "then": "Eier werden verkauft"
+                    },
+                    "12": {
+                        "then": "Käse wird verkauft"
+                    },
+                    "13": {
+                        "then": "Honig wird verkauft"
+                    },
+                    "14": {
+                        "then": "Kartoffeln werden verkauft"
+                    },
+                    "15": {
+                        "then": "Blumen werden verkauft"
+                    }
+                },
+                "question": "Was wird in diesem Automaten verkauft?",
+                "render": "Dieser Automat verkauft {vending}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Verkaufsautomat {name}"
+                },
+                "1": {
+                    "then": "Verkaufsautomat {brand}"
+                }
+            },
+            "render": "Verkaufsautomat"
         }
     },
     "veterinary": {

@@ -1,10 +1,10 @@
-import { Utils } from "../../../../Utils"
-import { DesugaringContext } from "../../../../Models/ThemeConfig/Conversion/Conversion"
-import { LayerConfigJson } from "../../../../Models/ThemeConfig/Json/LayerConfigJson"
-import { TagRenderingConfigJson } from "../../../../Models/ThemeConfig/Json/TagRenderingConfigJson"
-import { PrepareLayer } from "../../../../Models/ThemeConfig/Conversion/PrepareLayer"
+import { Utils } from "../../../../src/Utils"
+import { DesugaringContext } from "../../../../src/Models/ThemeConfig/Conversion/Conversion"
+import { LayerConfigJson } from "../../../../src/Models/ThemeConfig/Json/LayerConfigJson"
+import { TagRenderingConfigJson } from "../../../../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
+import { PrepareLayer } from "../../../../src/Models/ThemeConfig/Conversion/PrepareLayer"
 import * as bookcases from "../../../../assets/layers/public_bookcase/public_bookcase.json"
-import CreateNoteImportLayer from "../../../../Models/ThemeConfig/Conversion/CreateNoteImportLayer"
+import CreateNoteImportLayer from "../../../../src/Models/ThemeConfig/Conversion/CreateNoteImportLayer"
 import { describe, expect, it } from "vitest"
 
 describe("CreateNoteImportLayer", () => {

@@ -1332,12 +1332,15 @@
             "ghost_bike-name": {
                 "mappings": {
                     "0": {
+                        "then": "In ricordo di {name}"
+                    },
+                    "1": {
                         "then": "Nessun nome scritto sulla bici"
                     }
                 },
                 "question": "A chi è dedicata questa bici fantasma?",
                 "questionHint": "Rispetta la privacy (compila solo il nome se questo è stato ampiamente pubblicato o se è scritto sulla bici). Decidi se è il caso di non inserire il cognome.",
-                "render": "In ricordo di {name}"
+                "render": "In ricordo di {subject}"
             },
             "ghost_bike-source": {
                 "question": "In quale pagina web si possono trovare informazioni sulla bici fantasma o l’incidente?",
@@ -1351,6 +1354,9 @@
         "title": {
             "mappings": {
                 "0": {
+                    "then": "Bici fantasma in ricordo di {subject}"
+                },
+                "1": {
                     "then": "Bici fantasma in ricordo di {name}"
                 }
             },
@@ -1763,6 +1769,110 @@
                 }
             },
             "render": "Microbiblioteca"
+        }
+    },
+    "questions": {
+        "tagRenderings": {
+            "description": {
+                "question": "C'è ancora qualche informazione importante che non è stato possibile fornire nelle domande precedenti? Aggiungila qui.",
+                "questionHint": "Non ripetere informazioni già fornite"
+            },
+            "dog-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Cani ammessi"
+                    },
+                    "1": {
+                        "then": "I cani <b>non</b> sono ammessi"
+                    },
+                    "2": {
+                        "then": "Cani ammessi ma solo se tenuti al guinzaglio"
+                    },
+                    "3": {
+                        "then": "I cani sono ammessi e possono andare in giro liberamente"
+                    }
+                },
+                "question": "I cani sono ammessi in quest’attività?"
+            },
+            "email": {
+                "question": "Qual è l'indirizzo email di {title()}?"
+            },
+            "level": {
+                "mappings": {
+                    "0": {
+                        "then": "Si trova sotto il livello stradale"
+                    },
+                    "1": {
+                        "then": "Si trova al pianoterra"
+                    },
+                    "2": {
+                        "then": "Si trova al pianoterra"
+                    },
+                    "3": {
+                        "then": "Si trova al primo piano"
+                    }
+                },
+                "question": "A quale piano si trova questo elemento?",
+                "render": "Si trova al piano numero {level}"
+            },
+            "opening_hours": {
+                "question": "Quali sono gli orari di apertura di {title()}?",
+                "render": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}"
+            },
+            "payment-options": {
+                "mappings": {
+                    "0": {
+                        "then": "I contanti sono accettati"
+                    },
+                    "1": {
+                        "then": "I pagamenti con la carta sono accettati"
+                    }
+                },
+                "question": "Quali metodi di pagamento sono accettati qui?"
+            },
+            "payment-options-advanced": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Pagamento effettuato utilizzando un'app dedicata"
+                        }
+                    }
+                }
+            },
+            "phone": {
+                "question": "Qual è il numero di telefono di {title()}?"
+            },
+            "website": {
+                "question": "Qual è il sito web di {title()}?"
+            },
+            "wheelchair-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo luogo è stato adattato per favorire le persone in sedia a rotelle"
+                    },
+                    "1": {
+                        "then": "Questo luogo è facilmente raggiungibile con una sedia a rotelle"
+                    },
+                    "2": {
+                        "then": "È possibile raggiungere questo luogo con una sedia a rotella ma non è semplice"
+                    },
+                    "3": {
+                        "then": "Questo luogo non è accessibile con una sedia a rotelle"
+                    }
+                },
+                "question": "Questo luogo è accessibile con una sedia a rotelle?"
+            },
+            "wikipedia": {
+                "mappings": {
+                    "0": {
+                        "then": "Nessuna pagina Wikipedia è ancora stata collegata"
+                    },
+                    "1": {
+                        "then": "Nessuna pagina Wikipedia è ancora stata collegata"
+                    }
+                },
+                "question": "Qual è l’elemento Wikidata corrispondente?"
+            }
         }
     },
     "recycling": {

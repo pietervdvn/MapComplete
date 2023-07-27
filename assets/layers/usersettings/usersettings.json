@@ -10,7 +10,8 @@
     "render": {
       "en": "Settings",
       "nl": "Instellingen",
-      "de": "Einstellungen"
+      "de": "Einstellungen",
+      "fr": "Paramètres"
     }
   },
   "source": "special",
@@ -32,7 +33,16 @@
       "id": "language_picker",
       "render": {
         "*": "{language_picker()}"
-      }
+      },
+      "mappings": [
+        {
+          "if": "__url_parameter_initialized:language=yes",
+          "icon": "./assets/layers/usersettings/translate_disabled.svg",
+          "then": {
+            "en": "The language was set via an URL-parameter and cannot be set by the user.²"
+          }
+        }
+      ]
     },
     {
       "id": "inbox",
@@ -150,7 +160,8 @@
       "id": "show_tags",
       "question": {
         "en": "Show the raw OpenStreetMap-tags?",
-        "de": "Rohe OpenStreetMap-Tags anzeigen?"
+        "de": "Rohe OpenStreetMap-Tags anzeigen?",
+        "fr": "Afficher les attributs OpenStreetMap bruts ?"
       },
       "questionHint": {
         "en": "<b>Tags</b> are attributes that every element has. This is the technical data that is stored in the database. You don't need this information to edit with MapComplete, but advanced users might want to use this as reference.",
@@ -218,6 +229,36 @@
           }
         }
       ]
+    },
+    {
+      "id": "fixate-north",
+      "question": {
+        "en": "Should north always be up?",
+        "de": "Soll Norden immer oben sein?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-fixate-north=",
+          "then": {
+            "en": "Allow to rotate the map",
+            "de": "Drehen der Karte zulassen"
+          }
+        },
+        {
+          "if": "mapcomplete-fixate-north=yes",
+          "then": {
+            "en": "Always keep north pointing up",
+            "de": "Norden immer nach oben zeigen lassen"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mangrove-keys",
+      "render": {
+        "en": "<a href='data:application/json,{mangroveidentity}' download='mangrove_private_key_{_name}'>Download the private key for your Mangrove Account</a> <p>Anyone possessing this file can make reviews with your identity</p>",
+        "de": "<a href='data:application/json,{mangroveidentity}' download='mangrove_private_key_{_name}'>Laden Sie den privaten Schlüssel für Ihr Mangrove-Konto herunter</a> <p>Jeder, der diese Datei besitzt, kann mit Ihrer Identität Rezensionen vornehmen</p>"
+      }
     },
     {
       "id": "translations-title",

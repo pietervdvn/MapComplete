@@ -1,11 +1,11 @@
-import { Utils } from "../../../Utils"
-import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
+import { Utils } from "../../../src/Utils"
+import LayoutConfig from "../../../src/Models/ThemeConfig/LayoutConfig"
 
-import * as bookcaseJson from "../../../assets/generated/themes/bookcases.json"
-import { OsmTags } from "../../../Models/OsmFeature"
+import * as bookcaseJson from "../../../src/assets/generated/themes/bookcases.json"
+import { OsmTags } from "../../../src/Models/OsmFeature"
 import { Feature, Geometry } from "geojson"
 import { expect, it } from "vitest"
-import ThemeViewState from "../../../Models/ThemeViewState"
+import ThemeViewState from "../../../src/Models/ThemeViewState"
 import ScriptUtils from "../../../scripts/ScriptUtils"
 
 const latestTags = {

@@ -70,7 +70,7 @@
           "nb_NO": "Gater uten etymologi-info",
           "cs": "Ulice bez etymologických informací"
         },
-        "minzoom": 18,
+        "minzoom": 15,
         "source": {
           "=osmTags": {
             "and": [

@@ -1,8 +1,8 @@
 import ScriptUtils from "../scripts/ScriptUtils"
-import { Utils } from "../Utils"
-import Locale from "../UI/i18n/Locale"
+import { Utils } from "../src/Utils"
+import Locale from "../src/UI/i18n/Locale"
 import { beforeEach } from "vitest"
-import { ReferencingWaysMetaTagger } from "../Logic/SimpleMetaTagger"
+import { ReferencingWaysMetaTagger } from "../src/Logic/SimpleMetaTagger"
 
 beforeEach(async () => {
     ScriptUtils.fixUtils()

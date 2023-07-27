@@ -835,7 +835,7 @@
       "questionHint": {
         "en": "E.g. on a mounted plaque, in the backrest, …",
         "nl": "Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, ...",
-        "de": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ...",
+        "de": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, …",
         "fr": "Par exemple, sur une plaque accrochée, sur le dossier, ...",
         "ca": "P. ex. en una placa, al respatller, ...",
         "cs": "Např. na připevněné desce, v opěradle, ...",
@@ -996,12 +996,12 @@
   },
   "mapRendering": [
     {
-      "icon": "./assets/layers/bench/bench.svg",
+      "icon": "circle:#99bd54;./assets/layers/bench/bench.svg",
       "iconSize": "35,35",
       "iconBadges": [
         {
           "if": "tourism=artwork",
-          "then": "./assets/themes/artwork/artwork.svg"
+          "then": "circle:white;./assets/layers/artwork/artwork.svg"
         }
       ],
       "location": [

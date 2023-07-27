@@ -66,7 +66,7 @@
       "labels": [
         "defaults"
       ],
-      "render": "<a href='tel:{phone}'><img textmode='📞' alt='phone' src='./assets/tagRenderings/phone.svg'/></a>",
+      "render": "<a href='tel:{phone}'><img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/></a>",
       "condition": "phone~*"
     },
     {
@@ -74,7 +74,7 @@
       "labels": [
         "defaults"
       ],
-      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/tagRenderings/send_email.svg'/></a>",
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
       "condition": "email~*"
     },
     {
@@ -94,12 +94,12 @@
         {
           "#": "ignore-image-in-then",
           "if": "smoking=no",
-          "then": "<img textmode='🚭️' alt='no-smoking' src='./assets/tagRenderings/no_smoking.svg'/>"
+          "then": "<img textmode='🚭️' alt='no-smoking' src='./assets/layers/questions/no_smoking.svg'/>"
         },
         {
           "#": "ignore-image-in-then",
           "if": "smoking=yes",
-          "then": "<img textmode='🚬️' alt='smoking-allowed' src='./assets/tagRenderings/smoking.svg'/>"
+          "then": "<img textmode='🚬️' alt='smoking-allowed' src='./assets/layers/questions/smoking.svg'/>"
         }
       ]
     },

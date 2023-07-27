@@ -56,6 +56,15 @@
   "startZoom": 13,
   "widenFactor": 5,
   "layers": [
-    "playground"
+    "playground",
+    {
+      "builtin": [
+        "bench",
+        "picnic_table"
+      ],
+      "override": {
+        "minzoom": 16
+      }
+    }
   ]
 }

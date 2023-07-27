@@ -33,6 +33,7 @@
     + [internet-fee](#internet-fee)
     + [internet-ssid](#internet-ssid)
     + [reviews](#reviews)
+    + [questions](#questions)
     + [climbing.website](#climbingwebsite)
     + [climbing.fee](#climbingfee)
     + [climbing.bouldering](#climbingbouldering)
@@ -45,7 +46,6 @@
     + [opening_hours_by_appointment](#opening_hours_by_appointment)
     + [multilevels](#multilevels)
     + [induction-loop](#induction-loop)
-    + [questions](#questions)
     + [all_tags](#all_tags)
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
@@ -145,6 +145,7 @@
   - reception_desk
   - recycling
   - shops
+  - shower
   - slow_roads
   - sport_pitch
   - sports_centre
@@ -158,6 +159,7 @@
   - trail
   - transit_stops
   - tree_node
+  - vending_machine
   - viewpoint
   - village_green
   - waste_basket
@@ -224,7 +226,10 @@
   - kindergarten_childcare
   - pharmacy
   - postoffices
+  - questions
+  - questions
   - shops
+  - shower
   - sports_centre
   - toilet_at_amenity
   - veterinary
@@ -377,6 +382,8 @@
   - climbing_gym
   - food
   - observation_tower
+  - questions
+  - questions
   - shops
   - ticket_validator
 
@@ -409,6 +416,7 @@
   - parcel_lockers
   - recycling
   - toilet
+  - vending_machine
 
 
 
@@ -428,13 +436,16 @@
   - hackerspace
   - parking
   - picnic_table
+  - questions
   - railway_platforms
   - reception_desk
   - shops
+  - shower
   - ticket_machine
   - ticket_validator
   - toilet
   - toilet_at_amenity
+  - vending_machine
 
 
 
@@ -578,6 +589,23 @@
 
 
 
+### questions 
+
+
+
+
+
+  - charging_station
+  - etymology
+  - hackerspace
+  - play_forest
+  - playground
+  - shops
+  - sport_pitch
+
+
+
+
 ### climbing.website 
 
 
@@ -715,22 +743,6 @@
 
 
 
-### questions 
-
-
-
-
-
-  - etymology
-  - hackerspace
-  - play_forest
-  - playground
-  - shops
-  - sport_pitch
-
-
-
-
 ### all_tags 
 
 
@@ -793,8 +805,10 @@
 
 
   - parking_ticket_machine
+  - shower
   - ticket_machine
   - toilet
+  - vending_machine
 
 
 
@@ -807,6 +821,7 @@
 
   - parking_ticket_machine
   - ticket_machine
+  - vending_machine
 
 
 
@@ -819,6 +834,7 @@
 
   - parking_ticket_machine
   - ticket_machine
+  - vending_machine
 
 
 

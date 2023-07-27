@@ -16,7 +16,13 @@
   "source": {
     "osmTags": {
       "and": [
-        "shop~*",
+        {
+          "or": [
+            "shop~*",
+            "craft=shoe_repair",
+            "craft=key_cutter"
+          ]
+        },
         "shop!=mall"
       ]
     }
@@ -128,7 +134,8 @@
           "addExtraTags": [
             "fixme=freeform shop key used, to be reviewed"
           ]
-        }
+        },
+        "condition": "craft="
       }
     },
     "opening_hours",
@@ -333,6 +340,14 @@
                 ]
               },
               "then": "circle:white;./assets/layers/shops/shop-disused.svg"
+            },
+            {
+              "if": "craft=shoemaker",
+              "then": "circle:white;./assets/layers/id_presets/temaki-hammer_shoe.svg"
+            },
+            {
+              "if": "craft=key_cutter",
+              "then": "circle:white;./assets/layers/id_presets/fas-key.svg"
             }
           ]
         }

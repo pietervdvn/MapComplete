@@ -84,7 +84,8 @@
                 "text": {
                   "en": "Import this ATM",
                   "de": "Diesen Geldautomaten importieren",
-                  "zh_Hant": "匯入這座 ATM"
+                  "zh_Hant": "匯入這座 ATM",
+                  "nl": "Voeg deze ATM toe"
                 },
                 "icon": "./assets/svg/addSmall.svg"
               }

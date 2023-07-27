@@ -1,0 +1,20 @@
+{
+  "id": "vending_machine",
+  "title": {
+    "en": "Vending Machines",
+    "nl": "Verkoopautomaten",
+    "de": "Verkaufsautomaten"
+  },
+  "description": {
+    "en": "Find vending machines for everything",
+    "nl": "Vind verkoopautomaten voor alles",
+    "de": "Finde Verkaufautomaten für Alles"
+  },
+  "icon": "./assets/layers/vending_machine/vending_machine.svg",
+  "startLat": 53.21102,
+  "startLon": 6.56511,
+  "startZoom": 19,
+  "layers": [
+    "vending_machine"
+  ]
+}

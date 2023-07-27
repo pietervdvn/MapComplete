@@ -1,0 +1,2610 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Cyclofix - a map for cyclists",
+    "description": "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs",
+    "project_url": "https://mapcomplete.osm.be/cyclofix",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.osm.be/assets/themes/cyclofix/logo.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike cafe showing features with this tag",
+      "value": "pub"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike cafe showing features with this tag",
+      "value": "bar"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike cafe showing features with this tag",
+      "value": "cafe"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike cafe showing features with this tag",
+      "value": "restaurant"
+    },
+    {
+      "key": "pub",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike cafe showing features with this tag",
+      "value": "cycling"
+    },
+    {
+      "key": "pub",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike cafe showing features with this tag",
+      "value": "bicycle"
+    },
+    {
+      "key": "theme",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike cafe showing features with this tag",
+      "value": "cycling"
+    },
+    {
+      "key": "theme",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike cafe showing features with this tag",
+      "value": "bicycle"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bike cafe' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bike cafe allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bike cafe allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bike cafe allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bike cafe allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Bike cafe' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Bike cafe' shows service:bicycle:pump=yes with a fixed text, namely 'This bike cafe offers a bike pump for anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Bike cafe' shows service:bicycle:pump=no with a fixed text, namely 'This bike cafe doesn't offer a bike pump for anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:diy",
+      "description": "Layer 'Bike cafe' shows service:bicycle:diy=yes with a fixed text, namely 'This bike cafe offers tools for DIY repair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:diy",
+      "description": "Layer 'Bike cafe' shows service:bicycle:diy=no with a fixed text, namely 'This bike cafe doesn't offer tools for DIY repair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "Layer 'Bike cafe' shows service:bicycle:repair=yes with a fixed text, namely 'This bike cafe repairs bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "Layer 'Bike cafe' shows service:bicycle:repair=no with a fixed text, namely 'This bike cafe doesn't repair bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Bike cafe' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Bike cafe' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Bike cafe' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Bike cafe' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Bike cafe' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Bike cafe' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bike cafe' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "shop",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike repair/shop showing features with this tag",
+      "value": "bicycle"
+    },
+    {
+      "key": "shop",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike repair/shop showing features with this tag",
+      "value": "sports"
+    },
+    {
+      "key": "sport",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike repair/shop showing features with this tag",
+      "value": "bicycle"
+    },
+    {
+      "key": "sport",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike repair/shop showing features with this tag",
+      "value": "cycling"
+    },
+    {
+      "key": "sport",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike repair/shop showing features with this tag",
+      "value": ""
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bike repair/shop' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Bike repair/shop' shows shop=rental with a fixed text, namely 'This business focuses on rental' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if shop~.+&shop!~^(bicycle)$&shop!~^(sports)$)",
+      "value": "rental"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Bike repair/shop' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Bike repair/shop' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Bike repair/shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bike repair/shop' shows values with key 'access' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:retail",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:retail=yes with a fixed text, namely 'This shop sells bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:retail",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:retail=no with a fixed text, namely 'This shop doesn't sell bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=yes with a fixed text, namely 'This shop repairs bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=no with a fixed text, namely 'This shop doesn't repair bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=only_sold with a fixed text, namely 'This shop only repairs bikes bought here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "only_sold"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=brand with a fixed text, namely 'This shop only repairs bikes of a certain brand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "brand"
+    },
+    {
+      "key": "service:bicycle:rental",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:rental=yes with a fixed text, namely 'This shop rents out bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:rental",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:rental=no with a fixed text, namely 'This shop doesn't rent out bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:second_hand",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:second_hand=yes with a fixed text, namely 'This shop sells second-hand bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:second_hand",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:second_hand=no with a fixed text, namely 'This shop doesn't sell second-hand bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:second_hand",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:second_hand=only with a fixed text, namely 'This shop only sells second-hand bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "only"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:pump=yes with a fixed text, namely 'This shop offers a bike pump for anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:pump=no with a fixed text, namely 'This shop doesn't offer a bike pump for anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:pump=separate with a fixed text, namely 'There is bicycle pump, it is shown as a separate point' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "separate"
+    },
+    {
+      "key": "service:bicycle:diy",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:diy=yes with a fixed text, namely 'This shop offers tools for DIY repair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:diy",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:diy=no with a fixed text, namely 'This shop doesn't offer tools for DIY repair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:diy",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:diy=only_sold with a fixed text, namely 'Tools for DIY repair are only available if you bought/hire the bike in the shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "only_sold"
+    },
+    {
+      "key": "service:bicycle:cleaning",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning=yes with a fixed text, namely 'This shop cleans bicycles' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:cleaning",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning=diy with a fixed text, namely 'This shop has an installation where one can clean bicycles themselves' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "diy"
+    },
+    {
+      "key": "service:bicycle:cleaning",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning=no with a fixed text, namely 'This shop doesn't offer bicycle cleaning' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "description",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle rental showing features with this tag",
+      "value": "bicycle_rental"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle rental showing features with this tag"
+    },
+    {
+      "key": "service:bicycle:rental",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle rental showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "rental",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle rental showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bicycle rental' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Bicycle rental' shows shop=rental&bicycle_rental=shop with a fixed text, namely 'This is a shop whose main focus is bicycle rental' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
+      "value": "rental"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "Layer 'Bicycle rental' shows shop=rental&bicycle_rental=shop with a fixed text, namely 'This is a shop whose main focus is bicycle rental' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
+      "value": "shop"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Bicycle rental' shows shop=rental with a fixed text, namely 'This is a rental business which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
+      "value": "rental"
+    },
+    {
+      "key": "service:bicycle:rental",
+      "description": "Layer 'Bicycle rental' shows service:bicycle:rental=yes&shop=bicycle with a fixed text, namely 'This is a shop which sells or repairs bicycles, but also rents out bicycles' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
+      "value": "yes"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Bicycle rental' shows service:bicycle:rental=yes&shop=bicycle with a fixed text, namely 'This is a shop which sells or repairs bicycles, but also rents out bicycles' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
+      "value": "bicycle"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "Layer 'Bicycle rental' shows bicycle_rental=docking_station with a fixed text, namely 'This is an automated docking station, where a bicycle is mechanically locked to a structure' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
+      "value": "docking_station"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "Layer 'Bicycle rental' shows bicycle_rental=key_dispensing_machine with a fixed text, namely 'A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
+      "value": "key_dispensing_machine"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "Layer 'Bicycle rental' shows bicycle_rental=dropoff_point with a fixed text, namely 'This is a dropoff point, e.g. a reserved parking to place the bicycles clearly marked as being for the rental service only' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
+      "value": "dropoff_point"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Bicycle rental' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Bicycle rental' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Bicycle rental' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if shop~.+|opening_hours~.+)"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Bicycle rental' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if shop~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Bicycle rental' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if shop~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Bicycle rental' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if shop~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Bicycle rental' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Bicycle rental' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Bicycle rental' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:app",
+      "description": "Layer 'Bicycle rental' shows payment:app=yes with a fixed text, namely 'Payment is done using a dedicated app' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:membership_card",
+      "description": "Layer 'Bicycle rental' shows payment:membership_card=yes with a fixed text, namely 'Payment is done using a membership card' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'rental' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=city_bike with a fixed text, namely 'Normal city bikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "city_bike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=ebike with a fixed text, namely 'Electrical bikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "ebike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=bmx with a fixed text, namely 'BMX bikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "bmx"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=mtb with a fixed text, namely 'Mountainbikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "mtb"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=kid_bike with a fixed text, namely 'Bikes for children can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "kid_bike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=tandem with a fixed text, namely 'Tandem bicycles can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "tandem"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=racebike with a fixed text, namely 'Race bicycles can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "racebike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=bike_helmet with a fixed text, namely 'Bike helmets can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "bike_helmet"
+    },
+    {
+      "key": "capacity:city_bike",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:city_bike' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*city_bike.*)$)"
+    },
+    {
+      "key": "capacity:ebike",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:ebike' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*ebike.*)$)"
+    },
+    {
+      "key": "capacity:kid_bike",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:kid_bike' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*kid_bike.*)$)"
+    },
+    {
+      "key": "capacity:bmx",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:bmx' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*bmx.*)$)"
+    },
+    {
+      "key": "capacity:mtb",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:mtb' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*mtb.*)$)"
+    },
+    {
+      "key": "capacity:bicycle_pannier",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:bicycle_pannier' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*bicycle_pannier.*)$)"
+    },
+    {
+      "key": "capacity:tandem_bicycle",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:tandem_bicycle' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*tandem_bicycle.*)$)"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle library showing features with this tag",
+      "value": "bicycle_library"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bicycle library' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Bicycle library' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Bicycle library' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Bicycle library' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Bicycle library' shows fee=no with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Bicycle library' shows fee=no with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key charge.",
+      "value": ""
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Bicycle library' shows fee=yes&charge=€20warranty + €20/year with a fixed text, namely 'Lending a bicycle costs €20/year and €20 warranty' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Bicycle library' shows fee=yes&charge=€20warranty + €20/year with a fixed text, namely 'Lending a bicycle costs €20/year and €20 warranty' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "€20warranty + €20/year"
+    },
+    {
+      "key": "bicycle_library:for",
+      "description": "Layer 'Bicycle library' shows bicycle_library:for=child with a fixed text, namely 'Bikes for children available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "child"
+    },
+    {
+      "key": "bicycle_library:for",
+      "description": "Layer 'Bicycle library' shows bicycle_library:for=adult with a fixed text, namely 'Bikes for adult available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "adult"
+    },
+    {
+      "key": "bicycle_library:for",
+      "description": "Layer 'Bicycle library' shows bicycle_library:for=disabled with a fixed text, namely 'Bikes for disabled persons available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "disabled"
+    },
+    {
+      "key": "description",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle pump and repair showing features with this tag",
+      "value": "bicycle_repair_station"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bicycle pump and repair' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "service:bicycle:tools",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=no&service:bicycle:pump=yes with a fixed text, namely 'There is only a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=no&service:bicycle:pump=yes with a fixed text, namely 'There is only a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:tools",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers, …) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers, …) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:tools",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=yes with a fixed text, namely 'There are both tools and a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=yes with a fixed text, namely 'There are both tools and a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:pump:operational_status",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:pump:operational_status=broken with a fixed text, namely 'The bike pump is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:pump=yes)",
+      "value": "broken"
+    },
+    {
+      "key": "service:bicycle:pump:operational_status",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:pump:operational_status=operational with a fixed text, namely 'The bike pump is operational' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:pump=yes)",
+      "value": "operational"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bicycle pump and repair' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bicycle pump and repair' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "24/7"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bicycle pump and repair' shows access=yes with a fixed text, namely 'Publicly accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bicycle pump and repair' shows access=public with a fixed text, namely 'Publicly accessible' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "public"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bicycle pump and repair' shows access=customers with a fixed text, namely 'Only for customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bicycle pump and repair' shows access=private with a fixed text, namely 'Not accessible to the general public' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "private"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bicycle pump and repair' shows access=no with a fixed text, namely 'Not accessible to the general public' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Bicycle pump and repair' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Bicycle pump and repair' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Bicycle pump and repair' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:chain_tool",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:chain_tool=yes with a fixed text, namely 'There is a chain tool' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:tools=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:chain_tool",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:chain_tool=no with a fixed text, namely 'There is no chain tool' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:tools=yes)",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:stand",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:stand=yes with a fixed text, namely 'There is a hook or stand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:tools=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:stand",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:stand=no with a fixed text, namely 'There is no hook or stand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:tools=yes)",
+      "value": "no"
+    },
+    {
+      "key": "valves",
+      "description": "Layer 'Bicycle pump and repair' shows and asks freeform values for key 'valves' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "valves",
+      "description": "Layer 'Bicycle pump and repair' shows valves=sclaverand with a fixed text, namely 'Sclaverand/Presta (narrow-width bike tires)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "sclaverand"
+    },
+    {
+      "key": "valves",
+      "description": "Layer 'Bicycle pump and repair' shows valves=dunlop with a fixed text, namely 'Dunlop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "dunlop"
+    },
+    {
+      "key": "valves",
+      "description": "Layer 'Bicycle pump and repair' shows valves=schrader with a fixed text, namely 'Schrader (cars and mountainbikes)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "schrader"
+    },
+    {
+      "key": "manual",
+      "description": "Layer 'Bicycle pump and repair' shows manual=yes with a fixed text, namely 'Manual pump' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:pump=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "manual",
+      "description": "Layer 'Bicycle pump and repair' shows manual=no with a fixed text, namely 'Electrical pump' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:pump=yes)",
+      "value": "no"
+    },
+    {
+      "key": "manometer",
+      "description": "Layer 'Bicycle pump and repair' shows manometer=yes with a fixed text, namely 'There is a manometer' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:pump=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "manometer",
+      "description": "Layer 'Bicycle pump and repair' shows manometer=no with a fixed text, namely 'There is no manometer' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:pump=yes)",
+      "value": "no"
+    },
+    {
+      "key": "manometer",
+      "description": "Layer 'Bicycle pump and repair' shows manometer=broken with a fixed text, namely 'There is manometer but it is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:pump=yes)",
+      "value": "broken"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Bicycle pump and repair' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Bicycle pump and repair' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Bicycle pump and repair' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Bicycle pump and repair' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Bicycle pump and repair' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Bicycle pump and repair' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "-1"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle tube vending machine showing features with this tag",
+      "value": "vending_machine"
+    },
+    {
+      "key": "vending",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle tube vending machine showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bicycle tube vending machine' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bicycle tube vending machine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bicycle tube vending machine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bicycle tube vending machine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bicycle tube vending machine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'operational_status' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Bicycle tube vending machine' shows  with a fixed text, namely 'This vending machine works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Bicycle tube vending machine' shows operational_status=broken with a fixed text, namely 'This vending machine is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "broken"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Bicycle tube vending machine' shows operational_status=closed with a fixed text, namely 'This vending machine is closed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "closed"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:coins=yes with a fixed text, namely 'Payment with coins is possible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:notes=yes with a fixed text, namely 'Payment with notes is possible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:cards=yes with a fixed text, namely 'Payment with cards is possible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "brand",
+      "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'brand' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "brand",
+      "description": "Layer 'Bicycle tube vending machine' shows brand=Continental with a fixed text, namely 'Continental tubes are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "Continental"
+    },
+    {
+      "key": "brand",
+      "description": "Layer 'Bicycle tube vending machine' shows brand=Schwalbe with a fixed text, namely 'Schwalbe tubes are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "Schwalbe"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Bicycle tube vending machine' shows operator=Schwalbe with a fixed text, namely 'Maintained by Schwalbe' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "Schwalbe"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Bicycle tube vending machine' shows operator=Continental with a fixed text, namely 'Maintained by Continental' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "Continental"
+    },
+    {
+      "key": "vending:bicycle_light",
+      "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_light=yes with a fixed text, namely 'Bicycle lights are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "vending:gloves",
+      "description": "Layer 'Bicycle tube vending machine' shows vending:gloves=yes with a fixed text, namely 'Gloves are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "vending:bicycle_repair_kit",
+      "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_repair_kit=yes with a fixed text, namely 'Bicycle repair kits are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "vending:bicycle_pump",
+      "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_pump=yes with a fixed text, namely 'Bicycle pumps are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "vending:bicycle_lock",
+      "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_lock=yes with a fixed text, namely 'Bicycle locks are sold here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Drinking water showing features with this tag",
+      "value": "drinking_water"
+    },
+    {
+      "key": "drinking_water",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Drinking water showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Drinking water' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'operational_status' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows  with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows operational_status=broken with a fixed text, namely 'This drinking water is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "broken"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows operational_status=closed with a fixed text, namely 'This drinking water is closed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "closed"
+    },
+    {
+      "key": "bottle",
+      "description": "Layer 'Drinking water' shows bottle=yes with a fixed text, namely 'It is easy to refill water bottles' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "bottle",
+      "description": "Layer 'Drinking water' shows bottle=no with a fixed text, namely 'Water bottles may not fit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "theme",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike-related object showing features with this tag",
+      "value": "bicycle"
+    },
+    {
+      "key": "theme",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike-related object showing features with this tag",
+      "value": "cycling"
+    },
+    {
+      "key": "sport",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike-related object showing features with this tag",
+      "value": "cycling"
+    },
+    {
+      "key": "association",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike-related object showing features with this tag",
+      "value": "cycling"
+    },
+    {
+      "key": "association",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike-related object showing features with this tag",
+      "value": "bicycle"
+    },
+    {
+      "key": "ngo",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike-related object showing features with this tag",
+      "value": "cycling"
+    },
+    {
+      "key": "ngo",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike-related object showing features with this tag",
+      "value": "bicycle"
+    },
+    {
+      "key": "club",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike-related object showing features with this tag",
+      "value": "bicycle"
+    },
+    {
+      "key": "club",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike-related object showing features with this tag",
+      "value": "cycling"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bike-related object' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bike-related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bike-related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bike-related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bike-related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "description",
+      "description": "Layer 'Bike-related object' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Bike-related object' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Bike-related object' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Bike-related object' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Bike-related object' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Bike-related object' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Bike-related object' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bike-related object' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "service:bicycle:cleaning",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike cleaning service showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:cleaning",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike cleaning service showing features with this tag",
+      "value": "diy"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike cleaning service showing features with this tag",
+      "value": "bicycle_wash"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike cleaning service showing features with this tag",
+      "value": "bike_wash"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bike cleaning service' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Bike cleaning service' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bike_wash&amenity!=bicycle_wash)"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=no with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bike_wash&amenity!=bicycle_wash)",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bike_wash&amenity!=bicycle_wash)",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key service:bicycle:cleaning:charge. (This is only shown if amenity!=bike_wash&amenity!=bicycle_wash)",
+      "value": ""
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Bike cleaning service' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bike_wash|amenity=bicycle_wash)"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Bike cleaning service' shows fee=no with a fixed text, namely 'This cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bike_wash|amenity=bicycle_wash)",
+      "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Bike cleaning service' shows fee=yes with a fixed text, namely 'There is a fee to use this cleaning service' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bike_wash|amenity=bicycle_wash)",
+      "value": "yes"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike parking showing features with this tag",
+      "value": "bicycle_parking"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bike parking' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'bicycle_parking' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=stands with a fixed text, namely 'Staple racks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "stands"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=wall_loops with a fixed text, namely 'Wheel rack/loops' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "wall_loops"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=handlebar_holder with a fixed text, namely 'Handlebar holder' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "handlebar_holder"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=rack with a fixed text, namely 'Rack' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "rack"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=two_tier with a fixed text, namely 'Two-tiered' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "two_tier"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=shed with a fixed text, namely 'Shed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "shed"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=bollard with a fixed text, namely 'Bollard' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "bollard"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=floor with a fixed text, namely 'An area on the floor which is marked for bicycle parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "floor"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Bike parking' shows location=underground with a fixed text, namely 'Underground parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "underground"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Bike parking' shows location=surface with a fixed text, namely 'Surface level parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "surface"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Bike parking' shows location=rooftop with a fixed text, namely 'Rooftop parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "rooftop"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Bike parking' shows  with a fixed text, namely 'Surface level parking' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key location.",
+      "value": ""
+    },
+    {
+      "key": "covered",
+      "description": "Layer 'Bike parking' shows covered=yes with a fixed text, namely 'This parking is covered (it has a roof)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if bicycle_parking!=shed&location!=underground)",
+      "value": "yes"
+    },
+    {
+      "key": "covered",
+      "description": "Layer 'Bike parking' shows covered=no with a fixed text, namely 'This parking is not covered' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if bicycle_parking!=shed&location!=underground)",
+      "value": "no"
+    },
+    {
+      "key": "capacity",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'capacity' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'access' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bike parking' shows access=yes with a fixed text, namely 'Publicly accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bike parking' shows access=customers with a fixed text, namely 'Access is primarily for visitors to a business' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bike parking' shows access=private with a fixed text, namely 'Access is limited to members of a school, company or organisation' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "private"
+    },
+    {
+      "key": "cargo_bike",
+      "description": "Layer 'Bike parking' shows cargo_bike=yes with a fixed text, namely 'This parking has room for cargo bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "cargo_bike",
+      "description": "Layer 'Bike parking' shows cargo_bike=designated with a fixed text, namely 'This parking has designated (official) spots for cargo bikes.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "designated"
+    },
+    {
+      "key": "cargo_bike",
+      "description": "Layer 'Bike parking' shows cargo_bike=no with a fixed text, namely 'You're not allowed to park cargo bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "capacity:cargo_bike",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'capacity:cargo_bike' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if cargo_bike~^(designated|yes)$)"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Charging stations showing features with this tag",
+      "value": "charging_station"
+    },
+    {
+      "key": "disused:amenity",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Charging stations showing features with this tag",
+      "value": "charging_station"
+    },
+    {
+      "key": "planned:amenity",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Charging stations showing features with this tag",
+      "value": "charging_station"
+    },
+    {
+      "key": "construction:amenity",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Charging stations showing features with this tag",
+      "value": "charging_station"
+    },
+    {
+      "key": "bicycle",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Charging stations showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Charging stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Charging stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Charging stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Charging stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Charging stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "bicycle",
+      "description": "Layer 'Charging stations' shows bicycle=yes with a fixed text, namely '<b>Bicycles</b> can be charged here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "motorcar",
+      "description": "Layer 'Charging stations' shows motorcar=yes with a fixed text, namely '<b>Cars</b> can be charged here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "scooter",
+      "description": "Layer 'Charging stations' shows scooter=yes with a fixed text, namely '<b>Scooters</b> can be charged here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "hgv",
+      "description": "Layer 'Charging stations' shows hgv=yes with a fixed text, namely '<b>Heavy good vehicles</b> (such as trucks) can be charged here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "bus",
+      "description": "Layer 'Charging stations' shows bus=yes with a fixed text, namely '<b>Buses</b> can be charged here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'access' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Charging stations' shows access=yes with a fixed text, namely 'Anyone can use this charging station (payment might be needed)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Charging stations' shows access=public with a fixed text, namely 'Anyone can use this charging station (payment might be needed)' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "public"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Charging stations' shows access=customers with a fixed text, namely 'Only customers of the place this station belongs to can use this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests</span>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Charging stations' shows access=key with a fixed text, namely 'A <b>key</b> must be requested to access this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests, which receive a key from the reception to unlock the charging station</span>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "key"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Charging stations' shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accessible to the owners, employees, ...)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "private"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Charging stations' shows access=permissive with a fixed text, namely 'This charging station is accessible to the public during certain hours or conditions. Restrictions might apply, but general use is allowed.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "permissive"
+    },
+    {
+      "key": "capacity",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'capacity' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "socket:schuko",
+      "description": "Layer 'Charging stations' shows socket:schuko=1 with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "socket:schuko",
+      "description": "Layer 'Charging stations' shows socket:schuko~.+&socket:schuko!=1 with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "socket:typee",
+      "description": "Layer 'Charging stations' shows socket:typee=1 with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "socket:typee",
+      "description": "Layer 'Charging stations' shows socket:typee~.+&socket:typee!=1 with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E)' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "socket:chademo",
+      "description": "Layer 'Charging stations' shows socket:chademo=1 with a fixed text, namely '<b>Chademo</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "socket:chademo",
+      "description": "Layer 'Charging stations' shows socket:chademo~.+&socket:chademo!=1 with a fixed text, namely '<b>Chademo</b>' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "socket:type1_cable",
+      "description": "Layer 'Charging stations' shows socket:type1_cable=1 with a fixed text, namely '<b>Type 1 with cable</b> (J1772)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "socket:type1_cable",
+      "description": "Layer 'Charging stations' shows socket:type1_cable~.+&socket:type1_cable!=1 with a fixed text, namely '<b>Type 1 with cable</b> (J1772)' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "socket:type1",
+      "description": "Layer 'Charging stations' shows socket:type1=1 with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "socket:type1",
+      "description": "Layer 'Charging stations' shows socket:type1~.+&socket:type1!=1 with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772)' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "socket:type1_combo",
+      "description": "Layer 'Charging stations' shows socket:type1_combo=1 with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "socket:type1_combo",
+      "description": "Layer 'Charging stations' shows socket:type1_combo~.+&socket:type1_combo!=1 with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo)' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "socket:tesla_supercharger",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger=1 with a fixed text, namely '<b>Tesla Supercharger</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "socket:tesla_supercharger",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger~.+&socket:tesla_supercharger!=1 with a fixed text, namely '<b>Tesla Supercharger</b>' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "socket:type2",
+      "description": "Layer 'Charging stations' shows socket:type2=1 with a fixed text, namely '<b>Type 2</b> (mennekes)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "socket:type2",
+      "description": "Layer 'Charging stations' shows socket:type2~.+&socket:type2!=1 with a fixed text, namely '<b>Type 2</b> (mennekes)' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "socket:type2_combo",
+      "description": "Layer 'Charging stations' shows socket:type2_combo=1 with a fixed text, namely '<b>Type 2 CCS</b> (mennekes)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "socket:type2_combo",
+      "description": "Layer 'Charging stations' shows socket:type2_combo~.+&socket:type2_combo!=1 with a fixed text, namely '<b>Type 2 CCS</b> (mennekes)' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "socket:type2_cable",
+      "description": "Layer 'Charging stations' shows socket:type2_cable=1 with a fixed text, namely '<b>Type 2 with cable</b> (mennekes)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "socket:type2_cable",
+      "description": "Layer 'Charging stations' shows socket:type2_cable~.+&socket:type2_cable!=1 with a fixed text, namely '<b>Type 2 with cable</b> (mennekes)' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs=1 with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=1 with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css)' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "socket:tesla_destination",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination=1 with a fixed text, namely '<b>Tesla Supercharger (destination)</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "socket:tesla_destination",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination~.+&socket:tesla_destination!=1&_country=us with a fixed text, namely '<b>Tesla Supercharger (destination)</b>' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "socket:tesla_destination",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination=1 with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "socket:tesla_destination",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination~.+&socket:tesla_destination!=1&_country!=us with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "socket:USB-A",
+      "description": "Layer 'Charging stations' shows socket:USB-A=1 with a fixed text, namely '<b>USB</b> to charge phones and small electronics' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "socket:USB-A",
+      "description": "Layer 'Charging stations' shows socket:USB-A~.+&socket:USB-A!=1 with a fixed text, namely '<b>USB</b> to charge phones and small electronics' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "socket:bosch_3pin",
+      "description": "Layer 'Charging stations' shows socket:bosch_3pin=1 with a fixed text, namely '<b>Bosch Active Connect with 3 pins</b> and cable' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "socket:bosch_3pin",
+      "description": "Layer 'Charging stations' shows socket:bosch_3pin~.+&socket:bosch_3pin!=1 with a fixed text, namely '<b>Bosch Active Connect with 3 pins</b> and cable' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "socket:bosch_5pin",
+      "description": "Layer 'Charging stations' shows socket:bosch_5pin=1 with a fixed text, namely '<b>Bosch Active Connect with 5 pins</b> and cable' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "socket:bosch_5pin",
+      "description": "Layer 'Charging stations' shows socket:bosch_5pin~.+&socket:bosch_5pin!=1 with a fixed text, namely '<b>Bosch Active Connect with 5 pins</b> and cable' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "socket:schuko",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:schuko' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:schuko~.+&socket:schuko!=0)"
+    },
+    {
+      "key": "socket:typee",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:typee' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:typee~.+&socket:typee!=0)"
+    },
+    {
+      "key": "socket:chademo",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:chademo' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:chademo~.+&socket:chademo!=0)"
+    },
+    {
+      "key": "socket:type1_cable",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_cable' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_cable~.+&socket:type1_cable!=0)"
+    },
+    {
+      "key": "socket:type1",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1~.+&socket:type1!=0)"
+    },
+    {
+      "key": "socket:type1_combo",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_combo' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)"
+    },
+    {
+      "key": "socket:tesla_supercharger",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger~.+&socket:tesla_supercharger!=0)"
+    },
+    {
+      "key": "socket:type2",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2~.+&socket:type2!=0)"
+    },
+    {
+      "key": "socket:type2_combo",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_combo' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_combo~.+&socket:type2_combo!=0)"
+    },
+    {
+      "key": "socket:type2_cable",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_cable' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_cable~.+&socket:type2_cable!=0)"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger_ccs' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0)"
+    },
+    {
+      "key": "socket:tesla_destination",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)"
+    },
+    {
+      "key": "socket:tesla_destination",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)"
+    },
+    {
+      "key": "socket:USB-A",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:USB-A' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:USB-A~.+&socket:USB-A!=0)"
+    },
+    {
+      "key": "socket:bosch_3pin",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_3pin' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:bosch_3pin~.+&socket:bosch_3pin!=0)"
+    },
+    {
+      "key": "socket:bosch_5pin",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_5pin' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:bosch_5pin~.+&socket:bosch_5pin!=0)"
+    },
+    {
+      "key": "socket:schuko:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:schuko:voltage' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:schuko~.+&socket:schuko!=0)"
+    },
+    {
+      "key": "socket:schuko:voltage",
+      "description": "Layer 'Charging stations' shows socket:schuko:voltage=230 V with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs 230 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:schuko~.+&socket:schuko!=0)",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:schuko:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:schuko:current' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:schuko~.+&socket:schuko!=0)"
+    },
+    {
+      "key": "socket:schuko:current",
+      "description": "Layer 'Charging stations' shows socket:schuko:current=16 A with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 16 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:schuko~.+&socket:schuko!=0)",
+      "value": "16 A"
+    },
+    {
+      "key": "socket:schuko:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:schuko:output' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:schuko~.+&socket:schuko!=0)"
+    },
+    {
+      "key": "socket:schuko:output",
+      "description": "Layer 'Charging stations' shows socket:schuko:output=3.6 kW with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 3.6 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:schuko~.+&socket:schuko!=0)",
+      "value": "3.6 kW"
+    },
+    {
+      "key": "socket:typee:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:typee:voltage' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:typee~.+&socket:typee!=0)"
+    },
+    {
+      "key": "socket:typee:voltage",
+      "description": "Layer 'Charging stations' shows socket:typee:voltage=230 V with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs 230 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:typee~.+&socket:typee!=0)",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:typee:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:typee:current' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:typee~.+&socket:typee!=0)"
+    },
+    {
+      "key": "socket:typee:current",
+      "description": "Layer 'Charging stations' shows socket:typee:current=16 A with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 16 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:typee~.+&socket:typee!=0)",
+      "value": "16 A"
+    },
+    {
+      "key": "socket:typee:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:typee:output' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:typee~.+&socket:typee!=0)"
+    },
+    {
+      "key": "socket:typee:output",
+      "description": "Layer 'Charging stations' shows socket:typee:output=3 kW with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 3 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:typee~.+&socket:typee!=0)",
+      "value": "3 kW"
+    },
+    {
+      "key": "socket:typee:output",
+      "description": "Layer 'Charging stations' shows socket:typee:output=22 kW with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 22 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:typee~.+&socket:typee!=0)",
+      "value": "22 kW"
+    },
+    {
+      "key": "socket:chademo:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:chademo:voltage' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:chademo~.+&socket:chademo!=0)"
+    },
+    {
+      "key": "socket:chademo:voltage",
+      "description": "Layer 'Charging stations' shows socket:chademo:voltage=500 V with a fixed text, namely '<b>Chademo</b> outputs 500 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:chademo~.+&socket:chademo!=0)",
+      "value": "500 V"
+    },
+    {
+      "key": "socket:chademo:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:chademo:current' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:chademo~.+&socket:chademo!=0)"
+    },
+    {
+      "key": "socket:chademo:current",
+      "description": "Layer 'Charging stations' shows socket:chademo:current=120 A with a fixed text, namely '<b>Chademo</b> outputs at most 120 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:chademo~.+&socket:chademo!=0)",
+      "value": "120 A"
+    },
+    {
+      "key": "socket:chademo:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:chademo:output' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:chademo~.+&socket:chademo!=0)"
+    },
+    {
+      "key": "socket:chademo:output",
+      "description": "Layer 'Charging stations' shows socket:chademo:output=50 kW with a fixed text, namely '<b>Chademo</b> outputs at most 50 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:chademo~.+&socket:chademo!=0)",
+      "value": "50 kW"
+    },
+    {
+      "key": "socket:type1_cable:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_cable:voltage' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_cable~.+&socket:type1_cable!=0)"
+    },
+    {
+      "key": "socket:type1_cable:voltage",
+      "description": "Layer 'Charging stations' shows socket:type1_cable:voltage=200 V with a fixed text, namely '<b>Type 1 with cable</b> (J1772) outputs 200 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_cable~.+&socket:type1_cable!=0)",
+      "value": "200 V"
+    },
+    {
+      "key": "socket:type1_cable:voltage",
+      "description": "Layer 'Charging stations' shows socket:type1_cable:voltage=240 V with a fixed text, namely '<b>Type 1 with cable</b> (J1772) outputs 240 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_cable~.+&socket:type1_cable!=0)",
+      "value": "240 V"
+    },
+    {
+      "key": "socket:type1_cable:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_cable:current' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_cable~.+&socket:type1_cable!=0)"
+    },
+    {
+      "key": "socket:type1_cable:current",
+      "description": "Layer 'Charging stations' shows socket:type1_cable:current=32 A with a fixed text, namely '<b>Type 1 with cable</b> (J1772) outputs at most 32 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_cable~.+&socket:type1_cable!=0)",
+      "value": "32 A"
+    },
+    {
+      "key": "socket:type1_cable:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_cable:output' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_cable~.+&socket:type1_cable!=0)"
+    },
+    {
+      "key": "socket:type1_cable:output",
+      "description": "Layer 'Charging stations' shows socket:type1_cable:output=3.7 kW with a fixed text, namely '<b>Type 1 with cable</b> (J1772) outputs at most 3.7 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_cable~.+&socket:type1_cable!=0)",
+      "value": "3.7 kW"
+    },
+    {
+      "key": "socket:type1_cable:output",
+      "description": "Layer 'Charging stations' shows socket:type1_cable:output=7 kW with a fixed text, namely '<b>Type 1 with cable</b> (J1772) outputs at most 7 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_cable~.+&socket:type1_cable!=0)",
+      "value": "7 kW"
+    },
+    {
+      "key": "socket:type1:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1:voltage' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1~.+&socket:type1!=0)"
+    },
+    {
+      "key": "socket:type1:voltage",
+      "description": "Layer 'Charging stations' shows socket:type1:voltage=200 V with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs 200 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1~.+&socket:type1!=0)",
+      "value": "200 V"
+    },
+    {
+      "key": "socket:type1:voltage",
+      "description": "Layer 'Charging stations' shows socket:type1:voltage=240 V with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs 240 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1~.+&socket:type1!=0)",
+      "value": "240 V"
+    },
+    {
+      "key": "socket:type1:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1:current' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1~.+&socket:type1!=0)"
+    },
+    {
+      "key": "socket:type1:current",
+      "description": "Layer 'Charging stations' shows socket:type1:current=32 A with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 32 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1~.+&socket:type1!=0)",
+      "value": "32 A"
+    },
+    {
+      "key": "socket:type1:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1:output' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1~.+&socket:type1!=0)"
+    },
+    {
+      "key": "socket:type1:output",
+      "description": "Layer 'Charging stations' shows socket:type1:output=3.7 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 3.7 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1~.+&socket:type1!=0)",
+      "value": "3.7 kW"
+    },
+    {
+      "key": "socket:type1:output",
+      "description": "Layer 'Charging stations' shows socket:type1:output=6.6 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 6.6 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1~.+&socket:type1!=0)",
+      "value": "6.6 kW"
+    },
+    {
+      "key": "socket:type1:output",
+      "description": "Layer 'Charging stations' shows socket:type1:output=7 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1~.+&socket:type1!=0)",
+      "value": "7 kW"
+    },
+    {
+      "key": "socket:type1:output",
+      "description": "Layer 'Charging stations' shows socket:type1:output=7.2 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7.2 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1~.+&socket:type1!=0)",
+      "value": "7.2 kW"
+    },
+    {
+      "key": "socket:type1_combo:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_combo:voltage' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)"
+    },
+    {
+      "key": "socket:type1_combo:voltage",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:voltage=400 V with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs 400 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)",
+      "value": "400 V"
+    },
+    {
+      "key": "socket:type1_combo:voltage",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:voltage=1000 V with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs 1000 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)",
+      "value": "1000 V"
+    },
+    {
+      "key": "socket:type1_combo:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_combo:current' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)"
+    },
+    {
+      "key": "socket:type1_combo:current",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:current=50 A with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)",
+      "value": "50 A"
+    },
+    {
+      "key": "socket:type1_combo:current",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:current=125 A with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 125 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)",
+      "value": "125 A"
+    },
+    {
+      "key": "socket:type1_combo:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_combo:output' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)"
+    },
+    {
+      "key": "socket:type1_combo:output",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:output=50 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)",
+      "value": "50 kW"
+    },
+    {
+      "key": "socket:type1_combo:output",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:output=62.5 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 62.5 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)",
+      "value": "62.5 kW"
+    },
+    {
+      "key": "socket:type1_combo:output",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:output=150 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 150 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)",
+      "value": "150 kW"
+    },
+    {
+      "key": "socket:type1_combo:output",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:output=350 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 350 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)",
+      "value": "350 kW"
+    },
+    {
+      "key": "socket:tesla_supercharger:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger:voltage' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger~.+&socket:tesla_supercharger!=0)"
+    },
+    {
+      "key": "socket:tesla_supercharger:voltage",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:voltage=480 V with a fixed text, namely '<b>Tesla Supercharger</b> outputs 480 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger~.+&socket:tesla_supercharger!=0)",
+      "value": "480 V"
+    },
+    {
+      "key": "socket:tesla_supercharger:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger:current' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger~.+&socket:tesla_supercharger!=0)"
+    },
+    {
+      "key": "socket:tesla_supercharger:current",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:current=125 A with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 125 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger~.+&socket:tesla_supercharger!=0)",
+      "value": "125 A"
+    },
+    {
+      "key": "socket:tesla_supercharger:current",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:current=350 A with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 350 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger~.+&socket:tesla_supercharger!=0)",
+      "value": "350 A"
+    },
+    {
+      "key": "socket:tesla_supercharger:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger:output' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger~.+&socket:tesla_supercharger!=0)"
+    },
+    {
+      "key": "socket:tesla_supercharger:output",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:output=120 kW with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 120 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger~.+&socket:tesla_supercharger!=0)",
+      "value": "120 kW"
+    },
+    {
+      "key": "socket:tesla_supercharger:output",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:output=150 kW with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 150 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger~.+&socket:tesla_supercharger!=0)",
+      "value": "150 kW"
+    },
+    {
+      "key": "socket:tesla_supercharger:output",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:output=250 kW with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 250 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger~.+&socket:tesla_supercharger!=0)",
+      "value": "250 kW"
+    },
+    {
+      "key": "socket:type2:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2:voltage' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2~.+&socket:type2!=0)"
+    },
+    {
+      "key": "socket:type2:voltage",
+      "description": "Layer 'Charging stations' shows socket:type2:voltage=230 V with a fixed text, namely '<b>Type 2</b> (mennekes) outputs 230 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2~.+&socket:type2!=0)",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:type2:voltage",
+      "description": "Layer 'Charging stations' shows socket:type2:voltage=400 V with a fixed text, namely '<b>Type 2</b> (mennekes) outputs 400 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2~.+&socket:type2!=0)",
+      "value": "400 V"
+    },
+    {
+      "key": "socket:type2:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2:current' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2~.+&socket:type2!=0)"
+    },
+    {
+      "key": "socket:type2:current",
+      "description": "Layer 'Charging stations' shows socket:type2:current=16 A with a fixed text, namely '<b>Type 2</b> (mennekes) outputs at most 16 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2~.+&socket:type2!=0)",
+      "value": "16 A"
+    },
+    {
+      "key": "socket:type2:current",
+      "description": "Layer 'Charging stations' shows socket:type2:current=32 A with a fixed text, namely '<b>Type 2</b> (mennekes) outputs at most 32 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2~.+&socket:type2!=0)",
+      "value": "32 A"
+    },
+    {
+      "key": "socket:type2:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2:output' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2~.+&socket:type2!=0)"
+    },
+    {
+      "key": "socket:type2:output",
+      "description": "Layer 'Charging stations' shows socket:type2:output=11 kW with a fixed text, namely '<b>Type 2</b> (mennekes) outputs at most 11 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2~.+&socket:type2!=0)",
+      "value": "11 kW"
+    },
+    {
+      "key": "socket:type2:output",
+      "description": "Layer 'Charging stations' shows socket:type2:output=22 kW with a fixed text, namely '<b>Type 2</b> (mennekes) outputs at most 22 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2~.+&socket:type2!=0)",
+      "value": "22 kW"
+    },
+    {
+      "key": "socket:type2_combo:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_combo:voltage' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_combo~.+&socket:type2_combo!=0)"
+    },
+    {
+      "key": "socket:type2_combo:voltage",
+      "description": "Layer 'Charging stations' shows socket:type2_combo:voltage=500 V with a fixed text, namely '<b>Type 2 CCS</b> (mennekes) outputs 500 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_combo~.+&socket:type2_combo!=0)",
+      "value": "500 V"
+    },
+    {
+      "key": "socket:type2_combo:voltage",
+      "description": "Layer 'Charging stations' shows socket:type2_combo:voltage=920 V with a fixed text, namely '<b>Type 2 CCS</b> (mennekes) outputs 920 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_combo~.+&socket:type2_combo!=0)",
+      "value": "920 V"
+    },
+    {
+      "key": "socket:type2_combo:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_combo:current' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_combo~.+&socket:type2_combo!=0)"
+    },
+    {
+      "key": "socket:type2_combo:current",
+      "description": "Layer 'Charging stations' shows socket:type2_combo:current=125 A with a fixed text, namely '<b>Type 2 CCS</b> (mennekes) outputs at most 125 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_combo~.+&socket:type2_combo!=0)",
+      "value": "125 A"
+    },
+    {
+      "key": "socket:type2_combo:current",
+      "description": "Layer 'Charging stations' shows socket:type2_combo:current=350 A with a fixed text, namely '<b>Type 2 CCS</b> (mennekes) outputs at most 350 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_combo~.+&socket:type2_combo!=0)",
+      "value": "350 A"
+    },
+    {
+      "key": "socket:type2_combo:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_combo:output' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_combo~.+&socket:type2_combo!=0)"
+    },
+    {
+      "key": "socket:type2_combo:output",
+      "description": "Layer 'Charging stations' shows socket:type2_combo:output=50 kW with a fixed text, namely '<b>Type 2 CCS</b> (mennekes) outputs at most 50 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_combo~.+&socket:type2_combo!=0)",
+      "value": "50 kW"
+    },
+    {
+      "key": "socket:type2_cable:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_cable:voltage' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_cable~.+&socket:type2_cable!=0)"
+    },
+    {
+      "key": "socket:type2_cable:voltage",
+      "description": "Layer 'Charging stations' shows socket:type2_cable:voltage=230 V with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs 230 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_cable~.+&socket:type2_cable!=0)",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:type2_cable:voltage",
+      "description": "Layer 'Charging stations' shows socket:type2_cable:voltage=400 V with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs 400 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_cable~.+&socket:type2_cable!=0)",
+      "value": "400 V"
+    },
+    {
+      "key": "socket:type2_cable:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_cable:current' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_cable~.+&socket:type2_cable!=0)"
+    },
+    {
+      "key": "socket:type2_cable:current",
+      "description": "Layer 'Charging stations' shows socket:type2_cable:current=16 A with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs at most 16 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_cable~.+&socket:type2_cable!=0)",
+      "value": "16 A"
+    },
+    {
+      "key": "socket:type2_cable:current",
+      "description": "Layer 'Charging stations' shows socket:type2_cable:current=32 A with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs at most 32 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_cable~.+&socket:type2_cable!=0)",
+      "value": "32 A"
+    },
+    {
+      "key": "socket:type2_cable:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_cable:output' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_cable~.+&socket:type2_cable!=0)"
+    },
+    {
+      "key": "socket:type2_cable:output",
+      "description": "Layer 'Charging stations' shows socket:type2_cable:output=11 kW with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs at most 11 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_cable~.+&socket:type2_cable!=0)",
+      "value": "11 kW"
+    },
+    {
+      "key": "socket:type2_cable:output",
+      "description": "Layer 'Charging stations' shows socket:type2_cable:output=22 kW with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs at most 22 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:type2_cable~.+&socket:type2_cable!=0)",
+      "value": "22 kW"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger_ccs:voltage' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0)"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:voltage",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:voltage=500 V with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 500 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0)",
+      "value": "500 V"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:voltage",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:voltage=920 V with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 920 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0)",
+      "value": "920 V"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger_ccs:current' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0)"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:current",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:current=125 A with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 125 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0)",
+      "value": "125 A"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:current",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:current=350 A with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 350 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0)",
+      "value": "350 A"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger_ccs:output' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0)"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:output",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:output=50 kW with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 50 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0)",
+      "value": "50 kW"
+    },
+    {
+      "key": "socket:tesla_destination:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination:voltage' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)"
+    },
+    {
+      "key": "socket:tesla_destination:voltage",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=480 V with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs 480 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "value": "480 V"
+    },
+    {
+      "key": "socket:tesla_destination:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination:current' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)"
+    },
+    {
+      "key": "socket:tesla_destination:current",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=125 A with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 125 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "value": "125 A"
+    },
+    {
+      "key": "socket:tesla_destination:current",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=350 A with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 350 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "value": "350 A"
+    },
+    {
+      "key": "socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination:output' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)"
+    },
+    {
+      "key": "socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=120 kW with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 120 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "value": "120 kW"
+    },
+    {
+      "key": "socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=150 kW with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 150 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "value": "150 kW"
+    },
+    {
+      "key": "socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=250 kW with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 250 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "value": "250 kW"
+    },
+    {
+      "key": "socket:tesla_destination:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination:voltage' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)"
+    },
+    {
+      "key": "socket:tesla_destination:voltage",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=230 V with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 230 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:tesla_destination:voltage",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=400 V with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 400 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "value": "400 V"
+    },
+    {
+      "key": "socket:tesla_destination:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination:current' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)"
+    },
+    {
+      "key": "socket:tesla_destination:current",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=16 A with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 16 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "value": "16 A"
+    },
+    {
+      "key": "socket:tesla_destination:current",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=32 A with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 32 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "value": "32 A"
+    },
+    {
+      "key": "socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination:output' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)"
+    },
+    {
+      "key": "socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=11 kW with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 11 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "value": "11 kW"
+    },
+    {
+      "key": "socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=22 kW with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 22 kW A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "value": "22 kW"
+    },
+    {
+      "key": "socket:USB-A:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:USB-A:voltage' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:USB-A~.+&socket:USB-A!=0)"
+    },
+    {
+      "key": "socket:USB-A:voltage",
+      "description": "Layer 'Charging stations' shows socket:USB-A:voltage=5 V with a fixed text, namely '<b>USB</b> to charge phones and small electronics outputs 5 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:USB-A~.+&socket:USB-A!=0)",
+      "value": "5 V"
+    },
+    {
+      "key": "socket:USB-A:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:USB-A:current' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:USB-A~.+&socket:USB-A!=0)"
+    },
+    {
+      "key": "socket:USB-A:current",
+      "description": "Layer 'Charging stations' shows socket:USB-A:current=1 A with a fixed text, namely '<b>USB</b> to charge phones and small electronics outputs at most 1 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:USB-A~.+&socket:USB-A!=0)",
+      "value": "1 A"
+    },
+    {
+      "key": "socket:USB-A:current",
+      "description": "Layer 'Charging stations' shows socket:USB-A:current=2 A with a fixed text, namely '<b>USB</b> to charge phones and small electronics outputs at most 2 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:USB-A~.+&socket:USB-A!=0)",
+      "value": "2 A"
+    },
+    {
+      "key": "socket:USB-A:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:USB-A:output' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:USB-A~.+&socket:USB-A!=0)"
+    },
+    {
+      "key": "socket:USB-A:output",
+      "description": "Layer 'Charging stations' shows socket:USB-A:output=5W with a fixed text, namely '<b>USB</b> to charge phones and small electronics outputs at most 5W A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:USB-A~.+&socket:USB-A!=0)",
+      "value": "5W"
+    },
+    {
+      "key": "socket:USB-A:output",
+      "description": "Layer 'Charging stations' shows socket:USB-A:output=10W with a fixed text, namely '<b>USB</b> to charge phones and small electronics outputs at most 10W A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:USB-A~.+&socket:USB-A!=0)",
+      "value": "10W"
+    },
+    {
+      "key": "socket:bosch_3pin:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_3pin:voltage' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:bosch_3pin~.+&socket:bosch_3pin!=0)"
+    },
+    {
+      "key": "socket:bosch_3pin:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_3pin:current' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:bosch_3pin~.+&socket:bosch_3pin!=0)"
+    },
+    {
+      "key": "socket:bosch_3pin:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_3pin:output' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:bosch_3pin~.+&socket:bosch_3pin!=0)"
+    },
+    {
+      "key": "socket:bosch_5pin:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_5pin:voltage' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:bosch_5pin~.+&socket:bosch_5pin!=0)"
+    },
+    {
+      "key": "socket:bosch_5pin:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_5pin:current' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:bosch_5pin~.+&socket:bosch_5pin!=0)"
+    },
+    {
+      "key": "socket:bosch_5pin:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_5pin:output' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if socket:bosch_5pin~.+&socket:bosch_5pin!=0)"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Charging stations' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "24/7"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Charging stations' shows fee=no&authentication:none=yes with a fixed text, namely 'Free to use (without authenticating)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "fee:conditional",
+      "description": "Layer 'Charging stations' shows fee=no&authentication:none=yes with a fixed text, namely 'Free to use (without authenticating)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key fee:conditional.",
+      "value": ""
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Charging stations' shows fee=no&authentication:none=yes with a fixed text, namely 'Free to use (without authenticating)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key charge.",
+      "value": ""
+    },
+    {
+      "key": "authentication:none",
+      "description": "Layer 'Charging stations' shows fee=no&authentication:none=yes with a fixed text, namely 'Free to use (without authenticating)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Charging stations' shows fee=no&authentication:none=no with a fixed text, namely 'Free to use, but one has to authenticate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "fee:conditional",
+      "description": "Layer 'Charging stations' shows fee=no&authentication:none=no with a fixed text, namely 'Free to use, but one has to authenticate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key fee:conditional.",
+      "value": ""
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Charging stations' shows fee=no&authentication:none=no with a fixed text, namely 'Free to use, but one has to authenticate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key charge.",
+      "value": ""
+    },
+    {
+      "key": "authentication:none",
+      "description": "Layer 'Charging stations' shows fee=no&authentication:none=no with a fixed text, namely 'Free to use, but one has to authenticate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Charging stations' shows fee=no with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Charging stations' shows fee=yes&fee:conditional=no @ customers with a fixed text, namely 'Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "fee:conditional",
+      "description": "Layer 'Charging stations' shows fee=yes&fee:conditional=no @ customers with a fixed text, namely 'Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "no @ customers"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Charging stations' shows fee=yes with a fixed text, namely 'Paid use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "fee:conditional",
+      "description": "Layer 'Charging stations' shows fee=yes with a fixed text, namely 'Paid use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key fee:conditional.",
+      "value": ""
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if fee=yes)"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Charging stations' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if fee=yes|charge~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Charging stations' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if fee=yes|charge~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Charging stations' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if fee=yes|charge~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:app",
+      "description": "Layer 'Charging stations' shows payment:app=yes with a fixed text, namely 'Payment is done using a dedicated app' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if fee=yes|charge~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:membership_card",
+      "description": "Layer 'Charging stations' shows payment:membership_card=yes with a fixed text, namely 'Payment is done using a membership card' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if fee=yes|charge~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "authentication:membership_card",
+      "description": "Layer 'Charging stations' shows authentication:membership_card=yes with a fixed text, namely 'Authentication by a membership card' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if fee=no|)",
+      "value": "yes"
+    },
+    {
+      "key": "authentication:app",
+      "description": "Layer 'Charging stations' shows authentication:app=yes with a fixed text, namely 'Authentication by an app' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if fee=no|)",
+      "value": "yes"
+    },
+    {
+      "key": "authentication:phone_call",
+      "description": "Layer 'Charging stations' shows authentication:phone_call=yes with a fixed text, namely 'Authentication via phone call is available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if fee=no|)",
+      "value": "yes"
+    },
+    {
+      "key": "authentication:short_message",
+      "description": "Layer 'Charging stations' shows authentication:short_message=yes with a fixed text, namely 'Authentication via SMS is available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if fee=no|)",
+      "value": "yes"
+    },
+    {
+      "key": "authentication:nfc",
+      "description": "Layer 'Charging stations' shows authentication:nfc=yes with a fixed text, namely 'Authentication via NFC is available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if fee=no|)",
+      "value": "yes"
+    },
+    {
+      "key": "authentication:money_card",
+      "description": "Layer 'Charging stations' shows authentication:money_card=yes with a fixed text, namely 'Authentication via Money Card is available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if fee=no|)",
+      "value": "yes"
+    },
+    {
+      "key": "authentication:debit_card",
+      "description": "Layer 'Charging stations' shows authentication:debit_card=yes with a fixed text, namely 'Authentication via debit card is available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if fee=no|)",
+      "value": "yes"
+    },
+    {
+      "key": "authentication:none",
+      "description": "Layer 'Charging stations' shows authentication:none=yes with a fixed text, namely 'Charging here is (also) possible without authentication' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if fee=no|)",
+      "value": "yes"
+    },
+    {
+      "key": "authentication:phone_call:number",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'authentication:phone_call:number' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if authentication:phone_call=yes|authentication:short_message=yes)"
+    },
+    {
+      "key": "maxstay",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'maxstay' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if maxstay~.+|motorcar=yes|hgv=yes|bus=yes)"
+    },
+    {
+      "key": "maxstay",
+      "description": "Layer 'Charging stations' shows maxstay=unlimited with a fixed text, namely 'No timelimit on leaving your vehicle here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if maxstay~.+|motorcar=yes|hgv=yes|bus=yes)",
+      "value": "unlimited"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'network' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "no:network",
+      "description": "Layer 'Charging stations' shows no:network=yes with a fixed text, namely 'Not part of a bigger network, e.g. because the charging station is maintained by a local business' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network=none with a fixed text, namely 'Not part of a bigger network' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "none"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network=AeroVironment with a fixed text, namely 'AeroVironment' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "AeroVironment"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network=Blink with a fixed text, namely 'Blink' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "Blink"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network=EVgo with a fixed text, namely 'EVgo' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "EVgo"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network=Allego with a fixed text, namely 'Allego' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "Allego"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network=Blue Corner with a fixed text, namely 'Blue Corner' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "Blue Corner"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network=Tesla with a fixed text, namely 'Tesla' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "Tesla"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network= with a fixed text, namely 'Actually, {operator} is the network' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key network.",
+      "value": ""
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Charging stations' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Charging stations' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Charging stations' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Charging stations' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Charging stations' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "-1"
+    },
+    {
+      "key": "ref",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'ref' (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if network~.+)"
+    },
+    {
+      "key": "planned:amenity",
+      "description": "Layer 'Charging stations' shows amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key planned:amenity.",
+      "value": ""
+    },
+    {
+      "key": "construction:amenity",
+      "description": "Layer 'Charging stations' shows amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key construction:amenity.",
+      "value": ""
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Charging stations' shows amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key disused:amenity.",
+      "value": ""
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Charging stations' shows amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Charging stations' shows amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "charging_station"
+    },
+    {
+      "key": "planned:amenity",
+      "description": "Layer 'Charging stations' shows operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key planned:amenity.",
+      "value": ""
+    },
+    {
+      "key": "construction:amenity",
+      "description": "Layer 'Charging stations' shows operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key construction:amenity.",
+      "value": ""
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Charging stations' shows operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key disused:amenity.",
+      "value": ""
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Charging stations' shows operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "broken"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Charging stations' shows operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "charging_station"
+    },
+    {
+      "key": "planned:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "charging_station"
+    },
+    {
+      "key": "construction:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key construction:amenity.",
+      "value": ""
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key disused:amenity.",
+      "value": ""
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key amenity.",
+      "value": ""
+    },
+    {
+      "key": "planned:amenity",
+      "description": "Layer 'Charging stations' shows construction:amenity=charging_station with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key planned:amenity.",
+      "value": ""
+    },
+    {
+      "key": "construction:amenity",
+      "description": "Layer 'Charging stations' shows construction:amenity=charging_station with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "charging_station"
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Charging stations' shows construction:amenity=charging_station with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key disused:amenity.",
+      "value": ""
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Charging stations' shows construction:amenity=charging_station with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Charging stations' shows construction:amenity=charging_station with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key amenity.",
+      "value": ""
+    },
+    {
+      "key": "planned:amenity",
+      "description": "Layer 'Charging stations' shows disused:amenity=charging_station with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key planned:amenity.",
+      "value": ""
+    },
+    {
+      "key": "construction:amenity",
+      "description": "Layer 'Charging stations' shows disused:amenity=charging_station with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key construction:amenity.",
+      "value": ""
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Charging stations' shows disused:amenity=charging_station with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists')",
+      "value": "charging_station"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Charging stations' shows disused:amenity=charging_station with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Charging stations' shows disused:amenity=charging_station with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key amenity.",
+      "value": ""
+    },
+    {
+      "key": "parking:fee",
+      "description": "Layer 'Charging stations' shows parking:fee=no with a fixed text, namely 'No additional parking cost while charging' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if motor_vehicle=yes|hgv=yes|bus=yes|bicycle=no|)",
+      "value": "no"
+    },
+    {
+      "key": "parking:fee",
+      "description": "Layer 'Charging stations' shows parking:fee=yes with a fixed text, namely 'An additional parking fee should be paid while charging' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - a map for cyclists') (This is only shown if motor_vehicle=yes|hgv=yes|bus=yes|bicycle=no|)",
+      "value": "yes"
+    }
+  ]
+}

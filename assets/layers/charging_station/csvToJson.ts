@@ -1,9 +1,9 @@
 import {readFileSync, writeFileSync} from "fs";
-import {Utils} from "../../../Utils";
+import {Utils} from "../../../src/Utils";
 import ScriptUtils from "../../../scripts/ScriptUtils";
-import {LayerConfigJson} from "../../../Models/ThemeConfig/Json/LayerConfigJson";
-import FilterConfigJson from "../../../Models/ThemeConfig/Json/FilterConfigJson";
-import {QuestionableTagRenderingConfigJson} from "../../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
+import {LayerConfigJson} from "../../../src/Models/ThemeConfig/Json/LayerConfigJson";
+import FilterConfigJson from "../../../src/Models/ThemeConfig/Json/FilterConfigJson";
+import {QuestionableTagRenderingConfigJson} from "../../../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
 
 
 function colonSplit(value: string): string[] {

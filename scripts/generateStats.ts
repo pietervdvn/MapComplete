@@ -1,7 +1,7 @@
-import known_layers from "../assets/generated/known_layers.json"
-import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
-import { TagUtils } from "../Logic/Tags/TagUtils"
-import { Utils } from "../Utils"
+import known_layers from "../src/assets/generated/known_layers.json"
+import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
+import { TagUtils } from "../src/Logic/Tags/TagUtils"
+import { Utils } from "../src/Utils"
 import { writeFileSync } from "fs"
 import ScriptUtils from "./ScriptUtils"
 
@@ -65,7 +65,7 @@ async function main(includeTags = true) {
         })
     )
     writeFileSync(
-        "./assets/key_totals.json",
+        "./src/assets/key_totals.json",
         JSON.stringify(
             {
                 keys: Utils.MapToObj(keyTotal, (t) => t),

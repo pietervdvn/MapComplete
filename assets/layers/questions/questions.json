@@ -1,0 +1,2155 @@
+{
+  "id": "questions",
+  "description": "Special library layer which does not need a '.questions'-prefix before being imported",
+  "source": "special:library",
+  "mapRendering": null,
+  "tagRenderings": [
+    {
+      "id": "questions",
+      "description": "Show the questions block at this location",
+      "render": {
+        "*": "{questions()}"
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}"
+      }
+    },
+    {
+      "id": "mapillary",
+      "description": "Shows a button to open Mapillary on this location",
+      "render": {
+        "*": "{mapillary()}"
+      }
+    },
+    {
+      "id": "export_as_gpx",
+      "description": "Shows a button to export this feature as GPX. Especially useful for route relations",
+      "render": {
+        "*": "{export_as_gpx()}"
+      }
+    },
+    {
+      "id": "export_as_geojson",
+      "description": "Shows a button to export this feature as geojson. Especially useful for debugging or using this in other programs",
+      "render": {
+        "*": "{export_as_geojson()}"
+      }
+    },
+    {
+      "id": "wikipedia",
+      "description": "Shows a wikipedia box with the corresponding wikipedia article; the wikidata-item link can be changed by a contributor",
+      "render": {
+        "*": "{wikipedia():max-height:25rem}"
+      },
+      "question": {
+        "en": "What is the corresponding Wikidata entity?",
+        "nl": "Welk Wikidata-item komt overeen met dit object?",
+        "de": "Wie lautet das zugehörige Wikidata Element?",
+        "pt": "Qual é a entidade Wikidata correspondente?",
+        "hu": "Mi a megfelelő Wikidata-elem?",
+        "it": "Qual è l’elemento Wikidata corrispondente?",
+        "nb_NO": "Hva er respektivt Wikipedia-element?",
+        "fr": "Quelle est l'entité Wikidata correspondante ?",
+        "ca": "Quina és la correspondent entitat a Wikidata?",
+        "sv": "Vad är den motsvarande Wikidata-enheten?",
+        "zh_Hant": "對應的維基資料項目是？",
+        "pl": "Jaki jest powiązany obiekt Wikidata?",
+        "ja": "対応するウィキデータのエンティティは何ですか？",
+        "fil": "Ano ang nau-ukol na entidad sa Wikidata?",
+        "es": "¿Cual es la entidad de Wikidata que se corresponde?",
+        "zh_Hans": "在Wikidata上对应的实体是什么？",
+        "da": "Hvad er den tilsvarende Wikidata-enhed?",
+        "id": "Apa entitas Wikidata yang sesuai?",
+        "cs": "Jaká je odpovídající entita Wikidata?"
+      },
+      "mappings": [
+        {
+          "if": "wikipedia~*",
+          "then": {
+            "*": "{wikipedia():max-height:25rem}",
+            "ca": "No hi ha cap enllaça a Viquipèdia encara",
+            "da": "Der er endnu ikke linket til nogen Wikipedia-side",
+            "de": "Es wurde noch keine Wikipedia-Seite verlinkt",
+            "en": "No Wikipedia page has been linked yet",
+            "es": "Todavía no se ha enlazado una página de wikipedia",
+            "fil": "Wala pang kawing ng Wikipedia page",
+            "fr": "Pas encore de lien vers une page Wikipedia",
+            "hu": "Még nincs Wikipédia-oldal belinkelve",
+            "it": "Nessuna pagina Wikipedia è ancora stata collegata",
+            "ja": "ウィキペディアのページはまだリンクされていません",
+            "nb_NO": "Ingen Wikipedia-side lenket enda",
+            "nl": "Er werd nog geen Wikipedia-pagina gekoppeld",
+            "pl": "Link do strony Wikipedii nie został jeszcze określony",
+            "pt": "Ainda não foi vinculada nenhuma página da Wikipédia",
+            "ru": "Никакой страницы на Википедии не было прикреплено",
+            "sv": "Ingen Wikipedia-sida har länkats än",
+            "zh_Hans": "尚未有连接到的维基百科页面",
+            "zh_Hant": "還沒有連結到維基百科頁面",
+            "id": "Belum ada halaman Wikipedia yang ditautkan",
+            "cs": "Žádná stránka na Wikipedii zatím nebyla propojena"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "wikidata=",
+          "then": {
+            "en": "No Wikipedia page has been linked yet",
+            "nl": "Er werd nog geen Wikipedia-pagina gekoppeld",
+            "de": "Es wurde noch keine Wikipedia-Seite verlinkt",
+            "pt": "Ainda não foi vinculada nenhuma página da Wikipédia",
+            "hu": "Még nincs Wikipédia-oldal belinkelve",
+            "it": "Nessuna pagina Wikipedia è ancora stata collegata",
+            "nb_NO": "Ingen Wikipedia-side lenket enda",
+            "fr": "Pas encore de lien vers une page Wikipedia",
+            "ca": "No hi ha cap enllaça a Viquipèdia encara",
+            "sv": "Ingen Wikipedia-sida har länkats än",
+            "zh_Hant": "還沒有連結到維基百科頁面",
+            "ru": "Никакой страницы на Википедии не было прикреплено",
+            "pl": "Link do strony Wikipedii nie został jeszcze określony",
+            "ja": "ウィキペディアのページはまだリンクされていません",
+            "fil": "Wala pang kawing ng Wikipedia page",
+            "es": "Todavía no se ha enlazado una página de wikipedia",
+            "zh_Hans": "尚未有连接到的维基百科页面",
+            "da": "Der er endnu ikke linket til nogen Wikipedia-side",
+            "id": "Belum ada halaman Wikipedia yang ditautkan",
+            "cs": "Žádná stránka na Wikipedii zatím nebyla propojena"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "freeform": {
+        "key": "wikidata",
+        "type": "wikidata"
+      }
+    },
+    {
+      "id": "reviews",
+      "description": "Shows the reviews module (including the possibility to leave a review)",
+      "render": {
+        "*": "{reviews()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "phone",
+      "labels": [
+        "contact"
+      ],
+      "question": {
+        "en": "What is the phone number of {title()}?",
+        "nl": "Wat is het telefoonnummer van {title()}?",
+        "fr": "Quel est le numéro de téléphone de {title()} ?",
+        "de": "Wie lautet die Telefonnummer von {title()}?",
+        "nb_NO": "Hva er telefonnummeret til {title()}?",
+        "ru": "Какой номер телефона у {title()}?",
+        "sv": "Vad är telefonnumret till {title()}?",
+        "zh_Hant": "{title()} 的電話號碼是什麼？",
+        "it": "Qual è il numero di telefono di {title()}?",
+        "pt_BR": "Qual o número de telefone de {title()}?",
+        "id": "Berapa nomor telepon dari {title()}?",
+        "pl": "Jaki jest numer telefonu do {title()}?",
+        "pt": "Qual é o número de telefone de {title()}?",
+        "eo": "Kio estas la telefonnumero de {title()}?",
+        "hu": "Mi a telefonszáma ennek: {title()}?",
+        "ca": "Quin és el telèfon de {title()}?",
+        "ja": "{title()}の電話番号は？",
+        "sl": "Kakšno telefonsko številko ima {title()}?",
+        "fil": "Ano ang telepono ng {title()}?",
+        "es": "¿Cuál es el número de teléfono de {title()}?",
+        "zh_Hans": "{title()} 的电话号码为何？",
+        "da": "Hvad er telefonnummeret til {title()}?",
+        "cs": "Jaké je telefonní číslo {title()}?"
+      },
+      "render": {
+        "*": "<a href='tel:{phone}'>{phone}</a>"
+      },
+      "mappings": [
+        {
+          "if": "contact:phone~*",
+          "then": "<a href='tel:{contact:phone}'>{contact:phone}</a>",
+          "hideInAnswer": true
+        }
+      ],
+      "freeform": {
+        "key": "phone",
+        "type": "phone",
+        "addExtraTags": [
+          "contact:phone="
+        ]
+      }
+    },
+    {
+      "id": "osmlink",
+      "render": {
+        "*": "<a href='https://openstreetmap.org/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>"
+      },
+      "mappings": [
+        {
+          "if": "id~=-",
+          "then": "<span class='alert'>Uploading...</alert>"
+        }
+      ]
+    },
+    {
+      "id": "email",
+      "render": {
+        "*": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+      },
+      "labels": [
+        "contact"
+      ],
+      "question": {
+        "nl": "Wat is het e-mailadres van {title()}?",
+        "fr": "Quelle est l'adresse courriel de {title()} ?",
+        "en": "What is the email address of {title()}?",
+        "nb_NO": "Hva er e-postadressen til {title()}?",
+        "ru": "Какой адрес электронной почты у {title()}?",
+        "id": "Apa alamat surel dari {title()}?",
+        "zh_Hant": "{title()} 的電子郵件地址是什麼？",
+        "it": "Qual è l'indirizzo email di {title()}?",
+        "de": "Wie lautet die Mail-Adresse von {title()}?",
+        "pt_BR": "Qual o endereço de e-mail de {title()}?",
+        "pl": "Jaki jest adres e-mail do {title()}?",
+        "sv": "Vad är e-postadressen till {title()}?",
+        "pt": "Qual é o endereço de e-mail de {title()}?",
+        "eo": "Kio estas la retpoŝta adreso de {title()}?",
+        "hu": "Mi a(z) {title()} e-mail címe?",
+        "ca": "Quina és l'adreça de correu electrònic de {title()}?",
+        "ja": "{title()}のEメールアドレスは何ですか？",
+        "sl": "Kakšen naslov elektronske pošte ima {title()}?",
+        "fil": "Ano ang email address ng {title()}?",
+        "es": "¿Cual es la direccióm de correo electrónico de {title()}?",
+        "zh_Hans": "{title()} 的电子邮箱地址为何？",
+        "da": "Hvad er mailadressen på {title()}?",
+        "cs": "Jaká je e-mailová adresa {title()}?"
+      },
+      "mappings": [
+        {
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>",
+          "hideInAnswer": true
+        }
+      ],
+      "freeform": {
+        "key": "email",
+        "type": "email",
+        "addExtraTags": [
+          "contact:email="
+        ]
+      }
+    },
+    {
+      "id": "website",
+      "labels": [
+        "contact"
+      ],
+      "question": {
+        "en": "What is the website of {title()}?",
+        "nl": "Wat is de website van {title()}?",
+        "fr": "Quel est le site web de {title()} ?",
+        "gl": "Cal é a páxina web de {title()}?",
+        "nb_NO": "Hva er nettsiden til {title()}?",
+        "ru": "Какой сайт у {title()}?",
+        "id": "Apa situs web dari {title()}?",
+        "zh_Hant": "{title()} 網址是什麼？",
+        "it": "Qual è il sito web di {title()}?",
+        "de": "Wie lautet die Webseite von {title()}?",
+        "pt_BR": "Qual o site de {title()}?",
+        "pl": "Jaka jest strona internetowa {title()}?",
+        "sv": "Vad är webbplatsen för {title()}?",
+        "pt": "Qual é o sítio web de {title()}?",
+        "eo": "Kie estas la retejo de {title()}?",
+        "hu": "Mi a weboldala ennek: {title()}?",
+        "ca": "Quina és la web de {title()}?",
+        "ja": "{title()}のウェブサイトは？",
+        "fil": "Ano ang website ng {title()}?",
+        "es": "¿Cual es el sitio web de {title()}?",
+        "zh_Hans": "{title()} 的网站为何？",
+        "da": "Hvad er webstedet for {title()}?",
+        "cs": "Jaká je webová stránka {title()}?"
+      },
+      "render": {
+        "*": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>"
+      },
+      "freeform": {
+        "key": "website",
+        "type": "url",
+        "addExtraTags": [
+          "contact:website="
+        ]
+      },
+      "mappings": [
+        {
+          "if": "contact:website~*",
+          "then": "<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>",
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "wheelchair-access",
+      "question": {
+        "nl": "Is deze plaats rolstoeltoegankelijk?",
+        "en": "Is this place accessible with a wheelchair?",
+        "pt": "Este lugar é acessível a utilizadores de cadeiras de rodas?",
+        "pt_BR": "Este lugar é acessível com uma cadeira de rodas?",
+        "de": "Ist der Ort rollstuhlzugänglich?",
+        "fr": "Est-ce que cet endroit est accessible en chaise roulante ?",
+        "hu": "Akadálymentes-e ez a hely?",
+        "it": "Questo luogo è accessibile con una sedia a rotelle?",
+        "nb_NO": "Er dette stedet tilgjengelig for rullestoler?",
+        "ca": "Aquest lloc és accessible amb cadira de rodes?",
+        "sv": "Är det här stället tillgängligt med en rullstol?",
+        "zh_Hant": "這個地方可以坐輪椅到達嗎？",
+        "pl": "Czy to miejsce jest dostępne dla osób na wózkach inwalidzkich?",
+        "ja": "車いすでのアクセスは可能ですか？",
+        "fil": "Kaya bang abutin ang lugar na ito ng naka-wheelchair?",
+        "es": "¿Este lugar es accesible con una silla de ruedas?",
+        "da": "Er stedet tilgængeligt med en kørestol?",
+        "id": "Apakah tempat ini dapat diakses dengan kursi roda?",
+        "cs": "Je toto místo přístupné pro vozíčkáře?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "wheelchair=designated"
+            ]
+          },
+          "then": {
+            "nl": "Deze plaats is speciaal aangepast voor gebruikers van een rolstoel",
+            "en": "This place is specially adapted for wheelchair users",
+            "pt": "Este lugar está especialmente adaptado para utilizadores de cadeira de rodas",
+            "pt_BR": "Este lugar é especialmente adaptado para usuários de cadeira de rodas",
+            "de": "Der Ort ist speziell für Rollstuhlfahrer gestaltet",
+            "hu": "Ez a hely kifejezetten kerekesszékeseknek lett kialakítva",
+            "it": "Questo luogo è stato adattato per favorire le persone in sedia a rotelle",
+            "nb_NO": "Dette stedet er spesielt tilpasset rullestolsbrukere",
+            "fr": "Cet endroit est spécialement adapté pour les usagers de fauteuils roulants",
+            "ca": "Aquest lloc està especialment adaptat per a les cadires de rodes",
+            "sv": "Det här stället är speciellt anpassat för rullstolsburna användare",
+            "zh_Hant": "這個地方有特別設計給輪椅使用者",
+            "ru": "Это место подходит для людей на инвалидной коляске",
+            "pl": "W tym miejscu zainstalowane zostały udogodnienia dla osób na wózkach inwalidzkich",
+            "ja": "この場所は、車椅子の方のための特別仕様になっています",
+            "fil": "Ang lugar na ito ay angkop sa mga gumagamit ng wheelchair",
+            "es": "Este lugar está especialmente adaptado para usuarios en sillas de ruedas",
+            "da": "Dette sted er specielt indrettet til kørestolsbrugere",
+            "id": "Tempat ini dirancang khusus untuk pengguna kursi roda",
+            "cs": "Toto místo je speciálně upraveno pro vozíčkáře"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "wheelchair=yes"
+            ]
+          },
+          "then": {
+            "nl": "Deze plaats is vlot bereikbaar met een rolstoel",
+            "en": "This place is easily reachable with a wheelchair",
+            "pt": "Este lugar é de fácil acesso com uma cadeira de rodas",
+            "pt_BR": "Este lugar é facilmente acessível com uma cadeira de rodas",
+            "de": "Der Ort ist rollstuhlzugänglich gestaltet",
+            "hu": "Ez a hely könnyedén elérhető kerekesszékkel",
+            "it": "Questo luogo è facilmente raggiungibile con una sedia a rotelle",
+            "nb_NO": "Dette stedet kan enkelt besøkes med rullestol",
+            "fr": "Cet endroit est facilement accessible avec un fauteuil roulant",
+            "ca": "És facilment arribable amb cadira de rodes",
+            "sv": "Denna plats är lätt att nå med rullstol",
+            "zh_Hant": "這個地方坐輪椅很容易到達",
+            "ru": "До этого места легко добраться на инвалидной коляске",
+            "pl": "To miejsce jest łatwo dostępne dla osób na wózkach inwalidzkich",
+            "ja": "この場所は、車いすで簡単に行くことができます",
+            "fil": "Ang lugar na ito ay kayang abutin ng mga naka-wheelchair",
+            "es": "Este lugar es fácilmente accesible con una silla de ruedas",
+            "da": "Dette sted er let tilgængeligt med en kørestol",
+            "id": "Tempat ini mudah dijangkau dengan kursi roda",
+            "cs": "Toto místo je snadno dosažitelné s invalidním vozíkem"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "wheelchair=limited"
+            ]
+          },
+          "then": {
+            "nl": "Deze plaats is bereikbaar met een rolstoel, maar het is niet makkelijk",
+            "en": "It is possible to reach this place in a wheelchair, but it is not easy",
+            "pt": "É possível chegar a este local em cadeira de rodas, mas não é fácil",
+            "pt_BR": "É possível chegar a esse local em uma cadeira de rodas, mas não é fácil",
+            "de": "Der Ort ist nur eingeschränkt rollstuhlzugänglich",
+            "fr": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile",
+            "hu": "Ez a hely ugyan elérhető kerekesszékkel, de nehezen",
+            "it": "È possibile raggiungere questo luogo con una sedia a rotella ma non è semplice",
+            "nb_NO": "Det er mulig å besøke dette stedet i rullestol, men det er ikke lett",
+            "ca": "És possible fer servir cadira de rodes a aquest lloc però no és fàcil",
+            "sv": "Det är möjligt att nå den här platsen i en rullstol, men det är inte lätt",
+            "zh_Hant": "這個地方可以坐輪椅到達，但並不容易",
+            "ru": "До этого места можно добраться, но не просто",
+            "pl": "To miejsce jest dostępne dla osób na wózkach inwalidzkich, ale z pewnymi trudnościami",
+            "ja": "車いすでこの場所まで行くことは可能ですが、簡単ではありません",
+            "fil": "Kayang abutin ang lugar na ito ng mga naka-wheelchair, pero hindi madali",
+            "es": "Es posible llegar a este lugar con una silla de ruedas, pero no es fácil",
+            "da": "Det er muligt at komme til dette sted med en kørestol, men det er ikke let",
+            "id": "Dimungkinkan untuk mencapai tempat ini dengan kursi roda, tetapi tidak mudah",
+            "cs": "Na toto místo je možné se dostat na invalidním vozíku, ale není to snadné"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "wheelchair=no"
+            ]
+          },
+          "then": {
+            "nl": "Niet rolstoeltoegankelijk",
+            "en": "This place is not reachable with a wheelchair",
+            "pt": "Este lugar não é acessível com uma cadeira de rodas",
+            "pt_BR": "Este lugar não é alcançável com uma cadeira de rodas",
+            "de": "Der Ort ist nicht rollstuhlzugänglich",
+            "fr": "Cet endroit n'est pas accessible en chaise roulante",
+            "hu": "Ez a hely kerekesszékkel elérhetetlen",
+            "it": "Questo luogo non è accessibile con una sedia a rotelle",
+            "nb_NO": "Dette stedet er ikke tilgjengelig for besøk med rullestol",
+            "ca": "Aquest lloc no és accessible amb cadira de rodes",
+            "sv": "Den här platsen kan inte nås med en rullstol",
+            "zh_Hant": "輪椅無法到達這個地方",
+            "pl": "To miejsce jest niedostępne dla osób na wózkach inwalidzkich",
+            "ja": "この場所は車いすでは行けません",
+            "fil": "Ang lugar na ito ay hindi kayang abutin ng naka-wheelchair",
+            "es": "No es posible llegar a este lugar con una silla de ruedas",
+            "da": "Dette sted er ikke tilgængeligt med kørestol",
+            "id": "Tempat ini tidak bisa dijangkau dengan kursi roda",
+            "cs": "Na toto místo se nelze dostat s invalidním vozíkem"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dog-access",
+      "question": {
+        "en": "Are dogs allowed in this business?",
+        "nl": "Zijn honden toegelaten in deze zaak?",
+        "pt": "Os cães são permitidos neste estabelecimento?",
+        "de": "Sind Hunde hier erlaubt?",
+        "fr": "Est-ce que les chiens sont admis ici ?",
+        "hu": "Be lehet-e vinni kutyát ebbe az üzletbe?",
+        "it": "I cani sono ammessi in quest’attività?",
+        "nb_NO": "Tillates hunder i denne forretningen?",
+        "ca": "S'accepten gossos en aquest negoci?",
+        "sv": "Tillåts hundar i den här affären?",
+        "zh_Hant": "這間商業空間是否允許犬隻？",
+        "ru": "Впускают ли собак в это здание?",
+        "pl": "Czy w tej firmie psy są dozwolone?",
+        "ja": "犬を飼うことができますか？",
+        "id": "Apakah anjing diperbolehkan dalam bisnis ini?",
+        "sl": "Ali so v tem podjetju dovoljeni psi?",
+        "fil": "Pinapayagan ba ang mga aso sa establisyementong ito?",
+        "es": "¿Están permitidos los perros en este negocio?",
+        "zh_Hans": "犬只是否在这个商业体中允许？",
+        "da": "Er hunde tilladt i denne virksomhed?",
+        "cs": "Jsou v tomto podniku povoleni psi?"
+      },
+      "mappings": [
+        {
+          "if": "dog=yes",
+          "then": {
+            "en": "Dogs are allowed",
+            "nl": "honden zijn toegelaten",
+            "pt": "Os cães são permitidos",
+            "de": "Hunde sind hier erlaubt",
+            "fr": "Chiens admis",
+            "eo": "Hundoj estas permesataj",
+            "hu": "Kutya bevihető",
+            "it": "Cani ammessi",
+            "nb_NO": "Hunder tillates",
+            "ca": "S'accepten gossos",
+            "ru": "Собаки разрешены",
+            "sv": "Hundar tillåts",
+            "zh_Hant": "允許犬隻",
+            "id": "Anjing diperbolehkan",
+            "pl": "Psy dozwolone",
+            "ja": "ペット同伴可能",
+            "es": "Se permiten perros",
+            "sl": "Psi so dovoljeni",
+            "fil": "Pinapayagan ang mga aso",
+            "zh_Hans": "允许犬只",
+            "da": "Hunde er tilladt",
+            "cs": "Psi jsou povoleni",
+            "pa_PK": "کُتیاں دی اِجازت اے"
+          }
+        },
+        {
+          "if": "dog=no",
+          "then": {
+            "en": "Dogs are <b>not</b> allowed",
+            "nl": "honden zijn <b>niet</b> toegelaten",
+            "pt": "Os cães <b>não</b> são permitidos",
+            "de": "Hunde sind hier <b>nicht</b> erlaubt",
+            "fr": "Chiens <b>non</b> admis",
+            "eo": "Hundoj estas <b>malpermesataj</b>",
+            "hu": "Kutya <b>nem</b> vihető be",
+            "it": "I cani <b>non</b> sono ammessi",
+            "nb_NO": "Hunder tillates <b>ikke</b>",
+            "ca": "<b>No</b> s'accepten gossos",
+            "sv": "Hundar tillåts <b>inte</b>",
+            "zh_Hant": "<b>不</b>允許犬隻",
+            "pl": "Psy <b>nie</b> dozwolone",
+            "ru": "С собаками <b>не</b> впускают",
+            "id": "Anjing <b>tidak</b> diperbolehkan",
+            "ja": "ペット同伴<b>不可</b>",
+            "es": "<b>No</b> se permiten perros",
+            "sl": "Psi <b>niso</b> dovoljeni",
+            "fil": "<b>Hindi</b> pinapayagan ang mga aso",
+            "zh_Hans": "<b>不</b>允许犬只",
+            "da": "Hunde er <b>ikke </b> tilladt",
+            "cs": "Psi <b>nejsou</b> povoleni"
+          }
+        },
+        {
+          "if": "dog=leashed",
+          "then": {
+            "en": "Dogs are allowed, but they have to be leashed",
+            "nl": "honden zijn <b>enkel aan de leiband</b> welkom",
+            "pt": "Os cães são permitidos, mas têm de ser presos pela trela",
+            "de": "Hunde sind hier erlaubt, müssen aber angeleint sein",
+            "fr": "Les chiens sont admis, mais ils doivent être tenus en laisse",
+            "hu": "Kutya bevihető, de csak pórázon",
+            "it": "Cani ammessi ma solo se tenuti al guinzaglio",
+            "nb_NO": "Hunder tillates, men de må være i bånd",
+            "ca": "S'accepten gossos però lligats",
+            "sv": "Hundar tillåts, men de måste vara kopplade",
+            "zh_Hant": "允許犬隻，但需要掛牽繩",
+            "ru": "Собак впускают, но на поводке",
+            "id": "Anjing diperbolehkan, tetapi mereka harus diikat",
+            "pl": "Psy dozwolone, ale muszą być na smyczy",
+            "ja": "ペット同伴可能。ただしリード着用",
+            "sl": "Psi so dovoljeni, vendar morajo biti na povodcu",
+            "fil": "Pinapayagan ang mga aso kung may tali",
+            "es": "Los perros están permitidos, pero tienen que llevar correa",
+            "zh_Hans": "允许犬只，但必须拴绳",
+            "da": "Hunde er tilladt, men de skal være i snor",
+            "cs": "Psi jsou povoleni, ale musí být na vodítku"
+          }
+        },
+        {
+          "if": "dog=unleashed",
+          "then": {
+            "en": "Dogs are allowed and can run around freely",
+            "nl": "honden zijn welkom en mogen vrij rondlopen",
+            "pt": "Os cães são permitidos e podem correr livremente",
+            "de": "Hunde sind hier erlaubt und können frei herumlaufen",
+            "fr": "Les chiens sont admis et peuvent circuler librement",
+            "hu": "Kutya bevihető és szabadon szaladgálhat",
+            "it": "I cani sono ammessi e possono andare in giro liberamente",
+            "nb_NO": "Hunder tillates og kan gå fritt",
+            "ca": "S'accepten gossos lliures",
+            "sv": "Hundar tillåts och får springa fritt omkring",
+            "zh_Hant": "允許犬隻而且可以自由跑動",
+            "ru": "Собак свободно впускают",
+            "pl": "Psy dozwolone i mogą biegać bez ograniczeń",
+            "ja": "犬同伴可能、自由に走り回れる",
+            "id": "Anjing diperbolehkan dan dapat berkeliaran dengan bebas",
+            "sl": "Psi so dovoljeni in lahko prosto tekajo naokoli",
+            "fil": "Pinapayayagan ang mga aso, at malayang makatatakbo",
+            "es": "Los perros están permitidos y pueden estar sueltos",
+            "zh_Hans": "允许犬只，且可自由放养",
+            "da": "Hunde er tilladt og kan løbe frit rundt",
+            "cs": "Psi mají vstup povolen a mohou volně pobíhat"
+          }
+        }
+      ]
+    },
+    {
+      "id": "description",
+      "question": {
+        "nl": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.",
+        "fr": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.",
+        "en": "Is there still some relevant info that the previous questions did not cover? Feel free to add it here.",
+        "nb_NO": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.",
+        "ru": "Есть ли ещё что-то важное, о чём вы не смогли рассказать в предыдущих вопросах? Добавьте это здесь.",
+        "zh_Hant": "有什麼相關的資訊你無法在先前的問題回應的嗎？請加在這邊吧。",
+        "it": "C'è ancora qualche informazione importante che non è stato possibile fornire nelle domande precedenti? Aggiungila qui.",
+        "de": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.",
+        "pl": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.",
+        "pt_BR": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.",
+        "pt": "Ainda há algo de relevante que não tenha podido dar nas perguntas anteriores? Adicione-o aqui.",
+        "hu": "Van-e még valami lényeges, amit nem tudott megadni az előző kérdésekben? Itt megteheti.",
+        "ca": "Hi ha quelcom rellevant que no t'hem preguntat? Afegeix-ho aquí.",
+        "sv": "Finns det fortfarande någonting relevant som du inte kunde ge i de föregående frågorna? Lägg till det här.",
+        "id": "Apakah masih ada sesuatu yang relevan yang tidak dapat Anda berikan dalam pertanyaan sebelumnya? Tambahkan di sini. ",
+        "ja": "前の質問で伝えきれなかった関連事項がまだありますか？ここに追加してください。",
+        "es": "¿Aún hay algo relevante que no ha encajado en las preguntas anteriores? Compártalo aquí.",
+        "sl": "Ali je še kaj pomembnega, česar niste mogli povedati v prejšnjih vprašanjih? Dopišite tukaj.",
+        "fil": "Mayroon pa bang mga bagay na nau-ugnay at hindi mo maibigay sa mga nakaraang tanong? Idagdag dito.",
+        "da": "Er der stadig noget relevant, du ikke kunne give i de foregående spørgsmål? Tilføj det her.",
+        "cs": "Je ještě něco relevantního, co jste nemohli uvést v předchozích otázkách? Přidejte to sem."
+      },
+      "render": {
+        "*": "{description}"
+      },
+      "freeform": {
+        "key": "description"
+      },
+      "questionHint": {
+        "nl": "Herhaal geen antwoorden die je reeds gaf",
+        "fr": "Ne répétez pas des réponses déjà données",
+        "en": "Please don't repeat already stated facts",
+        "nb_NO": "Ikke gjenta fakta som allerede er nevnt",
+        "ru": "Не повторяйте уже изложенные факты",
+        "zh_Hant": "不要重覆答覆已經知道的事情",
+        "it": "Non ripetere informazioni già fornite",
+        "de": "Bitte keine bereits erhobenen Informationen wiederholen",
+        "pl": "Nie powtarzaj już podanych faktów",
+        "pt_BR": " Não repita fatos já declarados",
+        "pt": "Não repita factos já declarados",
+        "hu": "Ne ismételjen meg már megadott tényeket",
+        "ca": "No repeteixis informació que ja hi és",
+        "sv": "Repetera inte redan angivna fakta",
+        "id": "  Jangan ulangi fakta yang sudah dinyatakan ",
+        "ja": "今後表示しない",
+        "es": "No repita datos ya expresados",
+        "sl": "Ne ponavljajte že navedenih dejstev",
+        "fil": "Huwag ulitin ang mga nai-saad na",
+        "da": "Gentag ikke allerede nævnte fakta",
+        "cs": "Neopakujte již uvedená fakta"
+      }
+    },
+    {
+      "id": "opening_hours",
+      "question": {
+        "en": "What are the opening hours of {title()}?",
+        "fr": "Quelles sont les horaires d'ouverture de {title()} ?",
+        "de": "Wie lauten die Öffnungszeiten von {title()}?",
+        "nl": "Wat zijn de openingstijden van {title()}?",
+        "nb_NO": "Hva er åpningstidene for {title()})",
+        "ru": "Какое время работы у {title()}?",
+        "zh_Hant": "{title()} 的開放時間是什麼？",
+        "it": "Quali sono gli orari di apertura di {title()}?",
+        "pt_BR": "Qual o horário de funcionamento de {title()}?",
+        "pl": "Jakie są godziny otwarcia {title()}?",
+        "sv": "Vilka är öppettiderna för {title()}?",
+        "pt": "Qual é o horário de funcionamento de {title()}?",
+        "hu": "Mikor van nyitva ez: {title()}?",
+        "ca": "Quin és l'horari d'obertura de {title()}?",
+        "ja": "{title()}の営業時間は？",
+        "sl": "Kakšen odpiralni čas ima {title()}?",
+        "fil": "Anong oras nagbubukas ang {title()}?",
+        "es": "¿Cuales son las horas de apertura de {title()}?",
+        "zh_Hans": "{title()} 的开放时间为何？",
+        "da": "Hvad er åbningstiderne for {title()}?",
+        "id": "Kapan jam buka {title()}?",
+        "cs": "Jaká je otevírací doba {title()}?"
+      },
+      "render": {
+        "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
+        "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
+        "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
+        "nl": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}",
+        "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
+        "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
+        "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}",
+        "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
+        "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
+        "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
+        "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}",
+        "ca": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
+        "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}",
+        "sl": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}",
+        "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
+        "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
+        "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
+        "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
+        "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}",
+        "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
+      },
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours"
+      }
+    },
+    {
+      "id": "opening_hours_24_7",
+      "builtin": "opening_hours",
+      "override": {
+        "mappings": [
+          {
+            "if": "opening_hours=24/7",
+            "then": {
+              "en": "24/7 opened (including holidays)",
+              "de": "durchgehend geöffnet (auch an Feiertagen)",
+              "zh_Hant": "24/7 開放 (包括假日)",
+              "id": "Buka 24 jam (termasuk hari libur)",
+              "hu": "Éjjel-nappal nyitva (munkaszüneti napokon is)",
+              "es": "Abierta 24/7 (incluyendo festivos)",
+              "nl": "24/7 open (ook tijdens feestdagen)",
+              "fr": "Ouvert 24h/24 (jours fériés compris)",
+              "nb_NO": "Døgnåpent (inkludert helligdager)",
+              "cs": "Otevřeno 24/7 (včetně svátků)",
+              "ca": "Obert 24/7 (incloent-hi festius)",
+              "pl": "Otwarte 24/7 (również w święta)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "opening_hours_by_appointment",
+      "builtin": "opening_hours",
+      "override": {
+        "mappings": [
+          {
+            "if": "opening_hours=\"by appointment\"",
+            "then": {
+              "en": "Only by appointment",
+              "de": "Nur nach Vereinbarung",
+              "nl": "Alleen op afspraak",
+              "fr": "Uniquement sur rendez-vous",
+              "ca": "Sols amb cita prèvia",
+              "es": "Sólo con cita previa",
+              "nb_NO": "Kun ved avtale",
+              "pl": "Tylko po wcześniejszym umówieniu się",
+              "cs": "Pouze po domluvě"
+            }
+          },
+          {
+            "if": "opening_hours~i~\"by appointment\"|by appointment",
+            "then": {
+              "en": "Only by appointment",
+              "de": "Nur nach Vereinbarung",
+              "nl": "Alleen op afspraak",
+              "fr": "Uniquement sur rendez-vous",
+              "ca": "Sols amb cita prèvia",
+              "es": "Sólo con cita previa",
+              "nb_NO": "Kun ved avtale",
+              "pl": "Tylko po wcześniejszym umówieniu się",
+              "cs": "Pouze po domluvě"
+            },
+            "hideInAnswer": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "service:electricity",
+      "#": "service:socket describes if a pub, restaurant or café offers electricity to their customers.",
+      "question": {
+        "en": "Does this amenity have electrical outlets, available to customers when they are inside?",
+        "nl": "Zijn er stekkers beschikbaar voor klanten die binnen zitten?",
+        "pt": "Esta infraestrutura tem tomadas elétricas, disponíveis para os clientes quando estão no interior?",
+        "ca": "Aquest servei té endolls elèctrics, disponibles pels clients quan hi són dins?",
+        "de": "Gibt es hier Steckdosen, an denen Kunden ihre Geräte laden können?",
+        "sv": "Har den här bekvämligheten eluttag tillgängliga för kunder när de är inne?",
+        "zh_Hant": "這個便利設施有電器設備，能給客戶使用嗎？",
+        "hu": "Van-e ebben a létesítményben olyan konnektor, amely a bent tartózkodó ügyfelek rendelkezésére áll?",
+        "fr": "Des prises sont elles à disposition des client·e·s en intérieur ?",
+        "pl": "Czy w tym przybytku znajdują się gniazdka elektryczne, gdzie klienci mogą naładować swoje urządzenia?",
+        "ja": "このアメニティにはコンセントがあり、お客様が店内にいるときにも利用できますか？",
+        "fil": "Merong bang mga intsupe (outlet) sa loob, para sa mga suki?",
+        "es": "¿Esta facilidad tiene enchufes eléctricos, disponibles para los clientes cuando están dentro?",
+        "nb_NO": "Har denne fasiliteten stikkontakter, tilgjengelig for kunder innendørs?",
+        "da": "Har denne faciliteter stikkontakter tilgængelige for kunder, når de er inde?",
+        "cs": "Má toto zařízení elektrické zásuvky, které jsou zákazníkům k dispozici, když jsou uvnitř?"
+      },
+      "mappings": [
+        {
+          "then": {
+            "en": "There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics",
+            "nl": "Er zijn binnen veel stekkers beschikbaar voor klanten die electronica wensen op te laden",
+            "pt": "Há muitas tomadas elétricas disponíveis para clientes sentados no interior, onde estes podem carregar os seus dispositivos eletrónicos",
+            "ca": "Està ple d'endolls pels clients de dins, on es poden carregar els aparells electrònics",
+            "de": "Im Innenraum stehen viele Steckdosen zur Verfügung, an denen Kunden ihre Geräte laden können",
+            "sv": "Det finns gott om hushållsuttag tillgängliga för kunder som sitter inomhus, där de kan ladda sin elektronik",
+            "zh_Hant": "這邊的客戶座位有不少個室內插座，而且可以為電器充電",
+            "hu": "Számos konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik",
+            "fr": "Il y a suffisamment de prises disponibles pour les client·e·s en intérieur souhaitant recharger leurs appareils",
+            "pl": "W budynku znajduje się wiele gniazdek elektrycznych, gdzie klienci mogą naładować swoje urządzenia",
+            "ja": "屋内の席に座っているお客様には、家庭用コンセントがたくさん用意されており、そこで電子機器を充電することができます",
+            "fil": "Maraming mga intsupe (sockets) na maaring gamitin ng mga suki na nakaupo sa loob, pang-karga ng kanilang mga elektroniks",
+            "es": "Hay numerosos enchufes domésticos disponibles para los clientes sentados en el interior, donde pueden cargar sus dispositivos electrónicos",
+            "da": "Der er masser af stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr",
+            "nb_NO": "Det er massevis av stikkontakter tilgjengelig for kunder som sitter innendørs, der de kan lade elektronikken sin",
+            "cs": "V interiéru je k dispozici dostatek domácích zásuvek, kde si zákazníci mohou nabíjet elektroniku"
+          },
+          "if": "service:electricity=yes"
+        },
+        {
+          "then": {
+            "en": "There are a few domestic sockets available to customers seated indoors, where they can charge their electronics",
+            "nl": "Er zijn binnen enkele stekkers beschikbaar voor klanten die electronica wensen op te laden",
+            "pt": "Há algumas tomadas elétricas disponíveis para clientes sentados no interior, onde estes podem carregar os seus dispositivos eletrónicos",
+            "ca": "Hi ha alguns endolls disponibles per als clients de dins, on es poden carregar els aparells electrònics",
+            "de": "Im Innenraum stehen nur wenige Steckdosen zur Verfügung, an denen Kunden ihre Geräte laden können",
+            "sv": "Det finns ett fåtal hushållsuttag tillgängliga för kunder som sitter inomhus, där de kan ladda sin elektronik",
+            "zh_Hant": "這邊客戶座位有一些室內插座，可以為電器充電",
+            "hu": "Csupán néhány konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik",
+            "fr": "Il y a peu de prises disponibles pour les client·e·s en intérieur souhaitant recharger leurs appareils",
+            "pl": "W budynku znajduje się kilka gniazdek elektrycznych, gdzie klienci mogą naładować swoje urządzenia",
+            "ja": "屋内の席に座ったお客様が充電できるよう、コンセントがいくつか用意されています",
+            "fil": "May iilang mga intsupe (sockets) na maaring gamitin ng mga suki na nakaupo sa loob, pang-karga ng kanilang mga elektroniks",
+            "es": "Hay algunos enchufes domésticos disponibles para los clientes sentados en el interior, donde pueden cargar sus dispositivos electrónicos",
+            "da": "Der er nogle få stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr",
+            "nb_NO": "Det er noen stikkontakter tilgjengelig for kunder som sitter innendørs, der de kan lagre elektronikken sin",
+            "cs": "V interiéru je zákazníkům k dispozici několik domácích zásuvek, kde si mohou nabít elektroniku"
+          },
+          "if": "service:electricity=limited"
+        },
+        {
+          "then": {
+            "en": "There are no sockets available indoors to customers, but charging might be possible if the staff is asked",
+            "nl": "Er zijn binnen geen stekkers beschikbaar, maar electronica opladen kan indien men dit aan het personeel vraagt",
+            "fr": "Il n'y a pas de prises disponibles à l'intérieur pour les clients, mais la recharge est peut-être possible sur demande auprès des employés",
+            "pt": "Não há tomadas elétricas disponíveis para clientes sentados no interior, mas pode-se pedir aos funcionários para carregar dispositivos eletrónicos",
+            "ca": "No hi ha endolls disponibles per als clients però es pot carregar si es demana als responsables",
+            "de": "Im Innenraum stehen keine Steckdosen zur Verfügung, aber Laden von Geräte könnte möglich sein, wenn das Personal gefragt wird",
+            "sv": "Det finns inga uttag tillgängliga inomhus för kunder, men att ladda kan vara möjligt om personalen tillfrågas",
+            "zh_Hant": "這邊沒有給客戶用的插座，因此可能需要詢問員工是否能充電",
+            "hu": "A belső térben nincs konnektor az ügyfeleknek, de lehetséges, hogy a személyzet segítségével lehet elektromos eszközt tölteni",
+            "pl": "W budynku nie ma gniazdek elektrycznych dostępnych dla klientów, ale mogą zostać one udostępnione po spytaniu obsługi",
+            "ja": "屋内にはコンセントがありませんが、スタッフに声をかければ充電できるかもしれません",
+            "fil": "Walang mga intsupe (socket) para sa mga suki, pero maaring tanungin ang kawani kung magpapa-karga",
+            "es": "No hay enchufes disponibles en el interior para los clientes, pero cargar puede ser posible si se pregunta al personal",
+            "da": "Der er ingen stikkontakter til rådighed indendørs for kunderne, men opladning kan være mulig, hvis man beder personalet om det",
+            "nb_NO": "Det er ingen tilgjengelige stikkontakter for kunder som sitter innendørs, men lading kan være mulig hvis man spør betjeningen",
+            "cs": "V interiéru nejsou zákazníkům k dispozici žádné zásuvky, ale na požádání personálu je možné je nabíjet"
+          },
+          "if": "service:electricity=ask"
+        },
+        {
+          "then": {
+            "en": "There are a no domestic sockets available to customers seated indoors",
+            "nl": "Er zijn binnen geen stekkers beschikbaar",
+            "fr": "Il n'y a pas de prises secteur disponibles pour les clients assis à l'intérieur",
+            "pt": "Não há tomadas elétricas disponíveis para clientes sentados no interior",
+            "ca": "No hi ha endolls disponibles per als clients",
+            "de": "Im Innenraum stehen keine Steckdosen für Kunden zur Verfügung",
+            "sv": "Det finns inga hushållsuttag tillgängliga för kunder som sitter inomhus",
+            "zh_Hant": "這裡客戶座位沒有室內插座",
+            "hu": "A belső térben ülő ügyfeleknek nem áll rendelkezésére konnektor",
+            "pl": "W budynku nie ma gniazdek elektrycznych dostępnych dla klientów",
+            "ja": "屋内の席には、家庭用コンセントはありません",
+            "fil": "Walang mga intsupe (socket) para sa mga suking nakaubo sa loob",
+            "es": "No hay enchufes domésticos disponibles para los clientes sentados en el interior",
+            "da": "Der er ingen stikkontakter til rådighed for kunder, der sidder indendørs",
+            "nb_NO": "Det er ingen stikkontakter tilgjengelig for kunder som sitter innendørs",
+            "cs": "Zákazníci v interiéru nemají k dispozici žádné domácí zásuvky"
+          },
+          "if": "service:electricity=no"
+        }
+      ]
+    },
+    {
+      "id": "payment-options",
+      "question": {
+        "en": "Which methods of payment are accepted here?",
+        "nl": "Welke betaalmiddelen worden hier geaccepteerd?",
+        "pt": "Que métodos de pagamento são aceites aqui?",
+        "pt_BR": "Quais métodos de pagamento são aceitos aqui?",
+        "id": "Metode pembayaran manakah yang di terima disini?",
+        "de": "Welche Zahlungsmethoden werden hier akzeptiert?",
+        "fr": "Quelles sont les méthodes de paiement acceptées ici ?",
+        "hu": "Milyen fizetési módokat fogadnak el itt?",
+        "it": "Quali metodi di pagamento sono accettati qui?",
+        "nb_NO": "Hvilke betalingsmetoder godtas her?",
+        "ca": "Quins mètodes de pagament s'accepten aquí?",
+        "sv": "Vilka betalningsmetoder accepteras här?",
+        "zh_Hant": "這邊接受那種付款方式？",
+        "pl": "Jakie metody płatności są tutaj dostępne?",
+        "ru": "Какие способы оплаты здесь принимают?",
+        "ja": "どのような支払い方法が可能ですか？",
+        "sl": "Kateri načini plačila so možni tu?",
+        "fil": "Anong mga paraang pambayad ang tinatanggap dito?",
+        "es": "¿Qué métodos de pago se aceptan aquí?",
+        "zh_Hans": "这里支持哪些支付方式？",
+        "da": "Hvilke betalingsmetoder accepteres her?",
+        "cs": "Jaké platební metody jsou zde přijímány?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "payment:cash=yes",
+          "ifnot": "payment:cash=no",
+          "icon": "./assets/layers/questions/cash.svg",
+          "then": {
+            "en": "Cash is accepted here",
+            "nl": "Cash geld wordt hier aanvaard",
+            "pt": "Aceitam pagamento com dinheiro aqui",
+            "pt_BR": "Dinheiro é aceito aqui",
+            "id": "Pembayaran tunai diterima di sini",
+            "de": "Hier wird Bargeld akzeptiert",
+            "fr": "Paiement en liquide accepté",
+            "hu": "Itt készpénzzel is lehet fizetni",
+            "it": "I contanti sono accettati",
+            "nb_NO": "Kontanter godtas her",
+            "ca": "S'accepten diners",
+            "sv": "Pengar accepteras här",
+            "zh_Hant": "這邊接受現金",
+            "pl": "Płatność gotówkowa jest tutaj dostępna",
+            "ru": "Здесь принимают наличными",
+            "ja": "現金利用可能",
+            "sl": "Tu sprejemajo gotovino",
+            "fil": "Tinatanggap ang salapi rito",
+            "es": "Aquí se acepta el pago en efectivo",
+            "zh_Hans": "可用现金",
+            "da": "Her modtages kontanter",
+            "cs": "Přijímá se zde hotovost"
+          }
+        },
+        {
+          "if": "payment:cards=yes",
+          "ifnot": "payment:cards=no",
+          "icon": "./assets/layers/questions/payment_card.svg",
+          "then": {
+            "en": "Payment cards are accepted here",
+            "nl": "Betalen met bankkaarten kan hier",
+            "pt": "Aceitam pagamento com cartões bancários aqui",
+            "pt_BR": "Cartões de pagamento são aceitos aqui",
+            "id": "Kartu pembayaran diterima di sini",
+            "de": "Hier wird Kartenzahlung akzeptiert",
+            "fr": "Paiement par carte accepté",
+            "hu": "Itt fizetőkártyákkal is lehet fizetni",
+            "it": "I pagamenti con la carta sono accettati",
+            "nb_NO": "Betalingskort godtas her",
+            "ca": "S'accepten targetes de crèdit",
+            "sv": "Betalningskort accepteras här",
+            "zh_Hant": "這邊接受現金卡",
+            "pl": "Płatność kartą jest tutaj dostępna",
+            "ru": "Здесь принимают банковские карты",
+            "ja": "お支払いはこちらで承ります",
+            "sl": "Tukaj sprejemajo plačilne kartice",
+            "fil": "Tinatanggap ang mga tarhetang pambayad dito",
+            "es": "Aquí se acepta el pago por tarjeta",
+            "zh_Hans": "可用信用卡",
+            "da": "Betalingskort accepteres her",
+            "cs": "Jsou zde přijímány platební karty"
+          }
+        },
+        {
+          "if": "payment:qr_code=yes",
+          "ifnot": "payment:qr_code=no",
+          "icon": "./assets/layers/questions/qrcode.svg",
+          "then": {
+            "en": "Payment by QR-code is possible here",
+            "nl": "Betalen via een QR-code is hier mogelijk",
+            "de": "Die Bezahlung per QR-Code ist hier möglich",
+            "es": "Aquí se puede pagar con código QR",
+            "ca": "Aquí es pot pagar amb codi QR"
+          }
+        }
+      ]
+    },
+    {
+      "id": "payment-options-split",
+      "builtin": "payment-options",
+      "override": {
+        "mappings": [
+          {
+            "hideInAnswer": true,
+            "ifnot": "payment:cash="
+          },
+          {
+            "hideInAnswer": true,
+            "ifnot": "payment:cards="
+          }
+        ],
+        "mappings+": [
+          {
+            "if": "payment:coins=yes",
+            "ifnot": "payment:coins=no",
+            "icon": "./assets/layers/questions/coins.svg",
+            "then": {
+              "en": "Coins are accepted here",
+              "nl": "Muntgeld wordt hier aanvaard",
+              "de": "Münzen werden hier akzeptiert",
+              "fr": "Les pièces sont acceptées ici",
+              "ca": "Aquí s'accepten monedes",
+              "es": "Aquí se aceptan monedas",
+              "nb_NO": "Mynter aksepteres her",
+              "pl": "Monety są tutaj akceptowane",
+              "cs": "Jsou zde přijímány mince"
+            }
+          },
+          {
+            "if": "payment:notes=yes",
+            "ifnot": "payment:notes=no",
+            "icon": "./assets/layers/questions/notes.svg",
+            "then": {
+              "en": "Bank notes are accepted here",
+              "nl": "Bankbiljetten worden hier aanvaard",
+              "de": "Geldscheine werden hier akzeptiert",
+              "fr": "Les billets de banque sont acceptés ici",
+              "ca": "Aquí s'accepten bitllets",
+              "es": "Aquí se aceptan billetes",
+              "nb_NO": "Sedler aksepteres her",
+              "pl": "Banknoty są tutaj akceptowane",
+              "cs": "Jsou zde přijímány bankovky"
+            }
+          },
+          {
+            "if": "payment:debit_cards=yes",
+            "ifnot": "payment:debit_cards=no",
+            "icon": "./assets/layers/questions/payment_card.svg",
+            "then": {
+              "en": "Debit cards are accepted here",
+              "nl": "Betalen met debetkaarten kan hier",
+              "de": "Debitkarten werden hier akzeptiert",
+              "fr": "Les cartes de débit sont acceptées ici",
+              "ca": "Aquí s'accepten targetes de dèbit",
+              "es": "Aquí se aceptan tarjetas de débito",
+              "nb_NO": "Debetkort aksepteres her",
+              "pl": "Akceptowane są tutaj karty debetowe",
+              "cs": "Jsou zde přijímány debetní karty"
+            }
+          },
+          {
+            "if": "payment:credit_cards=yes",
+            "ifnot": "payment:credit_cards=no",
+            "icon": "./assets/layers/questions/payment_card.svg",
+            "then": {
+              "en": "Credit cards are accepted here",
+              "nl": "Betalen met creditkaarten kan hier",
+              "de": "Kreditkarten werden hier akzeptiert",
+              "fr": "Les cartes de crédit sont acceptées ici",
+              "ca": "Aquí s'accepten targetes de crèdit",
+              "es": "Aquí se aceptan tarjetas de crédito",
+              "nb_NO": "Kredittkort aksepteres her",
+              "pl": "Akceptowane są tutaj karty kredytowe",
+              "cs": "Jsou zde přijímány kreditní karty"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "payment-options-advanced",
+      "builtin": "payment-options",
+      "override": {
+        "mappings+": [
+          {
+            "if": "payment:app=yes",
+            "ifnot": "payment:app=no",
+            "icon": "./assets/layers/questions/smartphone.svg",
+            "then": {
+              "en": "Payment is done using a dedicated app",
+              "nl": "Betalen via een app van het netwerk",
+              "hu": "Fizetés erre a célra szolgáló alkalmazással",
+              "zh_Hant": "使用專用應用程式付款",
+              "de": "Die Bezahlung erfolgt über eine spezielle App",
+              "fr": "Paiement via une application",
+              "sl": "Plačilo se opravi z namensko aplikacijo",
+              "ca": "El pagament es fa amb una app dedicada",
+              "fil": "Binabayaran gamit ang sariling app",
+              "es": "El pago se realiza con una aplicación dedicada",
+              "zh_Hans": "使用专用APP支付",
+              "da": "Betaling sker ved hjælp af en dedikeret app",
+              "nb_NO": "Betaling utføres med et eget program",
+              "pt": "O pagamento é feito utilizando uma aplicação dedicada",
+              "it": "Pagamento effettuato utilizzando un'app dedicata",
+              "id": "Pembayaran dilakukan dengan aplikasi khusus",
+              "cs": "Platba se provádí pomocí speciální aplikace",
+              "pl": "Płatność odbywa się za pomocą dedykowanej aplikacji"
+            }
+          },
+          {
+            "if": "payment:membership_card=yes",
+            "ifnot": "payment:membership_card=no",
+            "icon": "./assets/layers/questions/nfc_card.svg",
+            "then": {
+              "en": "Payment is done using a membership card",
+              "nl": "Betalen via een lidkaart van het netwerk",
+              "hu": "Fizetési tagsági kártyával",
+              "zh_Hant": "使用會員卡付款",
+              "de": "Die Bezahlung erfolgt mit einer Mitgliedskarte",
+              "fr": "Paiement via une carte de membre",
+              "sl": "Plačilo se izvede s člansko izkaznico",
+              "ca": "El pagament es fa amb una targeta de membre",
+              "fil": "Binabayaran gamit ang membership card",
+              "es": "El pago se realiza con una tarjeta de membresía",
+              "nb_NO": "Betaling utføres med et medlemskort",
+              "zh_Hans": "使用会员卡支付",
+              "da": "Betaling sker med medlemskort",
+              "pt": "O pagamento é feito usando um cartão de membro",
+              "id": "Pembayaran dilakukan dengan kartu anggota",
+              "cs": "Platba se provádí pomocí členské karty",
+              "pl": "Płatność odbywa się za pomocą karty członkowskiej"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "denominations-coins",
+      "condition": {
+        "and": [
+          {
+            "or": [
+              "payment:coins=yes",
+              "payment:cash=yes"
+            ]
+          },
+          {
+            "or": [
+              "_currency=EUR"
+            ]
+          }
+        ]
+      },
+      "question": {
+        "en": "What coins can you use to pay here?",
+        "de": "Mit welchen Münzen kann man hier bezahlen?",
+        "nl": "Met welke munten kan je hier betalen?",
+        "fr": "Quelles pièces peut-on utiliser pour payer ici ?",
+        "pl": "Jakimi monetami można tutaj zapłacić?",
+        "ca": "Quines monedes es poden utilitzar per a pagar aquí?",
+        "es": "¿Qué monedas se pueden usar aquí para pagar?",
+        "nb_NO": "Hvilke mynter kan brukes til betaling her?",
+        "cs": "Jakými mincemi zde lze platit?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "payment:coins:denominations=0.01 EUR",
+          "icon": "./assets/layers/questions/1cent.svg",
+          "then": {
+            "en": "1 cent coins are accepted",
+            "de": "1-Cent-Münzen werden akzeptiert",
+            "nl": "Munten van 1 cent worden geaccepteerd",
+            "nb_NO": "1-cent mynter aksepteres",
+            "fr": "Les pièces d'1 cent sont acceptées",
+            "pl": "Akceptowane są monety 1 centowe",
+            "ca": "S'accepten monedes de 1 cèntim",
+            "es": "Se aceptan monedas de 1 céntimo",
+            "cs": "Jsou přijímány mince v hodnotě 1 centu",
+            "id": "1 koin sen diterima"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:coins:denominations=0.02 EUR",
+          "icon": "./assets/layers/questions/2cent.svg",
+          "then": {
+            "en": "2 cent coins are accepted",
+            "de": "2-Cent-Münzen werden akzeptiert",
+            "nl": "Munten van 2 cent worden geaccepteerd",
+            "nb_NO": "2-cent mynter aksepteres",
+            "fr": "Les pièces de 2 cents sont acceptées",
+            "pl": "Akceptowane są monety 2 centowe",
+            "ca": "S'accepten monedes de 2 cèntims",
+            "es": "Se aceptan monedas de 2 céntimos",
+            "cs": "Jsou přijímány mince v hodnotě 2 centů",
+            "id": "Koin 2 sen diterima"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:coins:denominations=0.05 EUR",
+          "icon": "./assets/layers/questions/5cent.svg",
+          "then": {
+            "en": "5 cent coins are accepted",
+            "de": "5-Cent-Münzen werden akzeptiert",
+            "nl": "Munten van 5 cent worden geaccepteerd",
+            "nb_NO": "5-cent mynter aksepteres",
+            "fr": "Les pièces de 5 cents sont acceptées",
+            "pl": "Akceptowane są monety 5 centowe",
+            "ca": "S'accepten monedes de 5 cèntims",
+            "es": "Se aceptan monedas de 5 céntimos",
+            "cs": "Jsou přijímány mince v hodnotě 5 centů",
+            "id": "Koin 5 sen diterima"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:coins:denominations=0.10 EUR",
+          "icon": "./assets/layers/questions/10cent.svg",
+          "then": {
+            "en": "10 cent coins are accepted",
+            "de": "10-Cent-Münzen werden akzeptiert",
+            "nl": "Munten van 10 cent worden geaccepteerd",
+            "nb_NO": "10-cent mynter aksepteres",
+            "fr": "Les pièces de 10 cents sont acceptées",
+            "pl": "Akceptowane są monety 10-centowe",
+            "ca": "S'accepten monedes de 10 cèntims",
+            "es": "Se aceptan monedas de 10 céntimos",
+            "cs": "Jsou přijímány mince v hodnotě 10 centů",
+            "id": "Koin 10 sen diterima"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:coins:denominations=0.20 EUR",
+          "icon": "./assets/layers/questions/20cent.svg",
+          "then": {
+            "en": "20 cent coins are accepted",
+            "de": "20-Cent-Münzen werden akzeptiert",
+            "nl": "Munten van 20 cent worden geaccepteerd",
+            "nb_NO": "20-cent mynter aksepteres",
+            "fr": "Les pièces de 20 cents sont acceptées",
+            "pl": "Akceptowane są monety 20-centowe",
+            "ca": "S'accepten monedes de 20 cèntims",
+            "es": "Se aceptan monedas de 20 céntimos",
+            "cs": "Jsou přijímány mince v hodnotě 20 centů",
+            "id": "Koin 20 sen diterima"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:coins:denominations=0.50 EUR",
+          "icon": "./assets/layers/questions/50cent.svg",
+          "then": {
+            "en": "50 cent coins are accepted",
+            "de": "50-Cent-Münzen werden akzeptiert",
+            "nl": "Munten van 50 cent worden geaccepteerd",
+            "nb_NO": "50-cent mynter aksepteres",
+            "fr": "Les pièces de 50 cents sont acceptées",
+            "pl": "Akceptowane są monety 50-centowe",
+            "ca": "S'accepten monedes de 50 cèntims",
+            "es": "Se aceptan monedas de 50 céntimos",
+            "cs": "Jsou přijímány mince v hodnotě 50 centů",
+            "id": "Koin 50 sen diterima"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:coins:denominations=1 EUR",
+          "icon": "./assets/layers/questions/1euro.svg",
+          "then": {
+            "en": "1 euro coins are accepted",
+            "de": "1-Euro-Münzen werden akzeptiert",
+            "nl": "Munten van 1 euro worden geaccepteerd",
+            "nb_NO": "1-euro mynter aksepteres",
+            "fr": "Les pièces de 1 euro sont acceptées",
+            "pl": "Akceptowane są monety 1 euro",
+            "ca": "S'accepten monedes de 1 euro",
+            "es": "Se aceptan monedas de 1 euro",
+            "cs": "Jsou přijímány mince v hodnotě 1 eura"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:coins:denominations=2 EUR",
+          "icon": "./assets/layers/questions/2euro.svg",
+          "then": {
+            "en": "2 euro coins are accepted",
+            "de": "2-Euro-Münzen werden akzeptiert",
+            "nl": "Munten van 2 euro worden geaccepteerd",
+            "nb_NO": "2-euro mynter aksepteres",
+            "fr": "Les pièces de 2 euros sont acceptées",
+            "pl": "Akceptowane są monety 2 euro",
+            "ca": "S'accepten monedes de 2 euros",
+            "es": "Se aceptan monedas de 2 euros",
+            "cs": "Jsou přijímány mince v hodnotě 2 euro"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        }
+      ]
+    },
+    {
+      "id": "denominations-notes",
+      "condition": {
+        "and": [
+          {
+            "or": [
+              "payment:notes=yes",
+              "payment:cash=yes"
+            ]
+          },
+          {
+            "or": [
+              "_currency=EUR"
+            ]
+          }
+        ]
+      },
+      "question": {
+        "en": "what notes can you use to pay here?",
+        "nl": "Met welke bankbiljetten kan je hier betalen?",
+        "de": "Mit welchen Banknoten kann man hier bezahlen?",
+        "es": "¿con qué billetes se puede pagar aquí?",
+        "pl": "Jakimi banknotami można tu zapłacić?",
+        "cs": "Jakými bankovkami zde lze platit?",
+        "ca": "Amb quins bitllets pot pagar aquí?",
+        "fr": "quels billets pouvez vous utiliser pour payer ici ?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "payment:notes:denominations=5 EUR",
+          "icon": "./assets/layers/questions/5euro.svg",
+          "then": {
+            "en": "5 euro notes are accepted",
+            "nl": "Biljetten van 5 euro worden geaccepteerd",
+            "de": "5-Euro-Scheine werden angenommen",
+            "es": "Se aceptan billetes de 5 euros",
+            "pl": "Banknoty 5 euro są akceptowane",
+            "cs": "Jsou přijímány bankovky v hodnotě 5 euro",
+            "ca": "S'accepten billets de 5 euros",
+            "fr": "Les billets de 5 euros ne sont pas acceptés"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:notes:denominations=10 EUR",
+          "icon": "./assets/layers/questions/10euro.svg",
+          "then": {
+            "en": "10 euro notes are accepted",
+            "nl": "Biljetten van 10 euro worden geaccepteerd",
+            "de": "10-Euro-Scheine werden angenommen",
+            "es": "Se aceptan billetes de 10 euros",
+            "pl": "Banknoty 10 euro są akceptowane",
+            "cs": "Jsou přijímány bankovky v hodnotě 10 euro",
+            "ca": "S'accepten bitllets de 10 euros",
+            "fr": "Les billets de 10 euros sont acceptés"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:notes:denominations=20 EUR",
+          "icon": "./assets/layers/questions/20euro.svg",
+          "then": {
+            "en": "20 euro notes are accepted",
+            "nl": "Biljetten van 20 euro worden geaccepteerd",
+            "de": "20-Euro-Scheine werden angenommen",
+            "es": "Se aceptan billetes de 20 euros",
+            "pl": "Banknoty 20 euro są akceptowane",
+            "cs": "Jsou přijímány bankovky v hodnotě 20 euro",
+            "ca": "S'accepten bitllets de 20 euros",
+            "fr": "Les billets de 20 euros sont acceptés"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:notes:denominations=50 EUR",
+          "icon": "./assets/layers/questions/50euro.svg",
+          "then": {
+            "en": "50 euro notes are accepted",
+            "nl": "Biljetten van 50 euro worden geaccepteerd",
+            "de": "50-Euro-Scheine werden angenommen",
+            "es": "Se aceptan billetes de 50 euros",
+            "pl": "Banknoty 50 euro są akceptowane",
+            "cs": "Jsou přijímány bankovky v hodnotě 50 euro",
+            "ca": "S'accepten bitllets de 50 euros",
+            "fr": "Les billets de 50 euros sont acceptés"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:notes:denominations=100 EUR",
+          "icon": "./assets/layers/questions/100euro.svg",
+          "then": {
+            "en": "100 euro notes are accepted",
+            "nl": "Biljetten van 100 euro worden geaccepteerd",
+            "de": "100-Euro-Scheine werden angenommen",
+            "es": "Se aceptan billetes de 100 euros",
+            "pl": "Banknoty 100 euro są akceptowane",
+            "cs": "Jsou přijímány bankovky v hodnotě 100 euro",
+            "ca": "S'accepten bitllets de 100 euros",
+            "fr": "Les billets de 100 euros sont acceptés"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:notes:denominations=200 EUR",
+          "icon": "./assets/layers/questions/200euro.svg",
+          "then": {
+            "en": "200 euro notes are accepted",
+            "nl": "Biljetten van 200 euro worden geaccepteerd",
+            "de": "200-Euro-Scheine werden angenommen",
+            "es": "Se aceptan billetes de 200 euros",
+            "pl": "Banknoty 200 euro są akceptowane",
+            "cs": "Jsou přijímány bankovky v hodnotě 200 euro",
+            "ca": "S'accepten bitllets de 200 euros",
+            "fr": "Les billets de 200 euros sont acceptés"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:notes:denominations=500 EUR",
+          "icon": "./assets/layers/questions/500euro.svg",
+          "then": {
+            "en": "500 euro notes are accepted",
+            "nl": "Biljetten van 500 euro worden geaccepteerd",
+            "de": "500-Euro-Scheine werden angenommen",
+            "es": "Se aceptan billetes de 500 euros",
+            "pl": "Banknoty 500 euro są akceptowane",
+            "cs": "Jsou přijímány bankovky v hodnotě 500 euro",
+            "ca": "S'accepten bitllets de 500 euros",
+            "fr": "Les billets de 500 euros sont acceptés"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        }
+      ]
+    },
+    {
+      "id": "last_edit",
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "special": {
+          "type": "link",
+          "href": "{_backend}/changeset/{_last_edit:changeset}",
+          "text": {
+            "en": "Last edited on {_last_edit:timestamp} by {_last_edit:contributor}",
+            "nl": "Laatst gewijzigd op {_last_edit:timestamp} door {_last_edit:contributor} ",
+            "de": "Zuletzt bearbeitet am {_last_edit:timestamp} von {_last_edit:contributor}"
+          },
+          "class": "subtle font-small"
+        }
+      }
+    },
+    {
+      "id": "all_tags",
+      "description": "Shows a table with all the tags of the feature",
+      "render": {
+        "*": "{all_tags()}"
+      }
+    },
+    {
+      "id": "just_created",
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "multilevels",
+      "builtin": "level",
+      "override": {
+        "question": {
+          "en": "What levels does this elevator go to?",
+          "de": "Auf welchen Geschossen hält dieser Aufzug?",
+          "fr": "Quels étages sont desservis par cet ascenceur ?",
+          "pt": "Para que pisos vai este elevador?",
+          "da": "Hvilke niveauer går denne elevator til?",
+          "id": "Pada lantai berapa saja lift ini berjalan?",
+          "cs": "Do jakých podlaží tento výtah jezdí?",
+          "nb_NO": "Hvilke etasjer går heisen til?",
+          "nl": "Naar welke verdiepingen gaat deze lift?",
+          "es": "¿A qué pisos va este ascensor?",
+          "ca": "A quins pisos va aquest ascensor?",
+          "pl": "Na jakie poziomy jedzie ta winda?"
+        },
+        "render": {
+          "en": "This elevator goes to floors {level}",
+          "de": "Der Aufzug hält auf den Geschossen {level}",
+          "fr": "Cet ascenceur permet d’accéder aux étages {level}",
+          "pt": "Este elevador vai para os pisos {level}",
+          "da": "Denne elevator går til etager {level}",
+          "id": "Lift ini berjalan ke lantai {level}",
+          "cs": "Tento výtah jede do {level} patra",
+          "nb_NO": "Heisen går til etasje {level}",
+          "nl": "Deze lift gaat naar de verdiepingen {level}",
+          "es": "Este ascensor va a los pisos {level}",
+          "ca": "Aquest ascensor va als pisos {level}",
+          "pl": "Ta winda jedzie na piętra {level}"
+        },
+        "freeform": {
+          "key": "level",
+          "type": "string"
+        },
+        "multiAnswer": true
+      }
+    },
+    {
+      "id": "level",
+      "question": {
+        "nl": "Op welke verdieping bevindt dit punt zich?",
+        "en": "On what level is this feature located?",
+        "de": "Auf welcher Ebene befindet sich das Objekt?",
+        "zh_Hant": "此圖徽位於哪個樓層／層級？",
+        "fr": "À quel étage se situe l’élément ?",
+        "pl": "Na jakim poziomie znajduje się ta funkcja?",
+        "pt_BR": "Em que nível esse recurso está localizado?",
+        "ru": "На каком этаже находится этот объект?",
+        "pt": "Em que nível se encontra este elemento?",
+        "id": "Pada tingkat apa fitur ini diletakkan?",
+        "hu": "Melyik szinten található ez a létesítmény?",
+        "it": "A quale piano si trova questo elemento?",
+        "ca": "A quina planta està situat aquest element?",
+        "sv": "På vilken nivå finns den här funktionen?",
+        "ja": "この機能は何階にあるのでしょうか？",
+        "fil": "Anong palapag matatagpuan ang tampók?",
+        "es": "¿En qué nivel se encuentra esta característica?",
+        "nb_NO": "Hvilken etasje befinner funksjonen seg i?",
+        "da": "På hvilket niveau er denne funktion placeret?",
+        "cs": "V jaké úrovni se tento prvek nachází?"
+      },
+      "render": {
+        "en": "Located on the {level}th floor",
+        "nl": "Bevindt zich op de {level}de verdieping",
+        "de": "Das Objekt befindet sich im {level}. Geschoss",
+        "pt_BR": "Localizado no {level}o andar",
+        "ru": "Расположено на {level}ом этаже",
+        "zh_Hant": "位於 {level} 樓",
+        "fr": "Étage {level}",
+        "pl": "Znajduje się na {level} piętrze",
+        "sv": "Ligger på {level}:e våningen",
+        "pt": "Está no {level}º andar",
+        "eo": "En la {level}a etaĝo",
+        "hu": "A(z) {level}. emeleten",
+        "it": "Si trova al piano numero {level}",
+        "ca": "Situat a la planta {level}",
+        "ja": "{level}階にあります",
+        "sl": "Nahaja se v {level}. nadstropju",
+        "fil": "Natagpuan sa ika-{level} na palapag",
+        "es": "Localizada en la {level}° planta",
+        "da": "Beliggende på {level}. etage",
+        "nb_NO": "Ligger i {level} etasje",
+        "id": "Terletak di lantai {level}",
+        "cs": "Nachází se v {level}. patře"
+      },
+      "freeform": {
+        "key": "level",
+        "type": "float"
+      },
+      "mappings": [
+        {
+          "if": "location=underground",
+          "then": {
+            "en": "Located underground",
+            "nl": "Bevindt zich ondergronds",
+            "pt_BR": "Localizado no subsolo",
+            "ru": "Расположено под землей",
+            "zh_Hant": "位於地下",
+            "fr": "En sous-sol",
+            "pl": "Znajduje się pod ziemią",
+            "sv": "Ligger under jorden",
+            "pt": "Está no subsolo",
+            "de": "Das Objekt befindet sich unter der Erde",
+            "hu": "A föld alatt",
+            "it": "Si trova sotto il livello stradale",
+            "nb_NO": "Under bakken",
+            "ca": "Situat a planta subterrani",
+            "ja": "地下にあります",
+            "id": "Terletak di bawah tanah",
+            "sl": "Nahaja se pod zemljo",
+            "fil": "Nasa ilalim ng lupa",
+            "es": "Localizado bajo tierra",
+            "da": "Placeret under jorden",
+            "cs": "Nachází se v podzemí"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "level=0",
+          "then": {
+            "en": "Located on the ground floor",
+            "nl": "Bevindt zich op de begane grond",
+            "de": "Das Objekt befindet sich im Erdgeschoss",
+            "pt_BR": "Localizado no térreo",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 1 樓",
+            "fr": "Rez-de-chaussée",
+            "pl": "Znajduje się na parterze",
+            "sv": "Ligger på bottenvåningen",
+            "pt": "Está ao nível do rés-do-chão",
+            "eo": "En la teretaĝo",
+            "hu": "A földszinten",
+            "it": "Si trova al pianoterra",
+            "nb_NO": "På gateplan",
+            "ca": "Situat a planta zero",
+            "ja": "1階にあります",
+            "id": "Terletak di lantai dasar",
+            "sl": "Nahaja se v pritličju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la planta baja",
+            "da": "Beliggende i stueetagen",
+            "cs": "Nachází se v přízemí"
+          }
+        },
+        {
+          "if": "level=",
+          "hideInAnswer": true,
+          "then": {
+            "en": "Located on the ground floor",
+            "nl": "Bevindt zich gelijkvloers",
+            "de": "Das Objekt befindet sich im Erdgeschoss",
+            "pt_BR": "Localizado no térreo",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 1 樓",
+            "fr": "Rez-de-chaussée",
+            "pl": "Znajduje się na parterze",
+            "sv": "Ligger på bottenvåningen",
+            "pt": "Está ao nível do rés-do-chão",
+            "eo": "En la teretaĝo",
+            "hu": "A földszinten",
+            "it": "Si trova al pianoterra",
+            "nb_NO": "På gateplan",
+            "ca": "Situat a la planta zero",
+            "ja": "1階にあります",
+            "id": "Terletak di lantai dasar",
+            "sl": "Nahaja se v pritličju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la planta baja",
+            "da": "Beliggende i stueetagen",
+            "cs": "Nachází se v přízemí"
+          }
+        },
+        {
+          "if": "level=1",
+          "then": {
+            "en": "Located on the first floor",
+            "nl": "Bevindt zich op de eerste verdieping",
+            "de": "Das Objekt befindet sich im 1. Obergeschoss",
+            "pt_BR": "Localizado no primeiro andar",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 2 樓",
+            "fr": "Premier étage",
+            "pl": "Znajduje się na pierwszym piętrze",
+            "sv": "Ligger på första våningen",
+            "pt": "Está no primeiro andar",
+            "id": "Berlokasi di lantai pertama",
+            "eo": "En la unua etaĝo",
+            "hu": "Az első emeleten",
+            "it": "Si trova al primo piano",
+            "nb_NO": "I andre etasje",
+            "ca": "Situat a primera planta",
+            "ja": "1階にあります",
+            "sl": "Nahaja se v prvem nadstropju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la primera planta",
+            "da": "Beliggende på første sal",
+            "cs": "Nachází se v prvním patře"
+          }
+        },
+        {
+          "if": "level=-1",
+          "then": {
+            "en": "Located on the first basement level",
+            "nl": "Bevindt zich in de eerste kelderverdieping",
+            "zh_Hant": "位於地下一樓",
+            "de": "Das Objekt befindet sich im 1. Untergeschoss",
+            "hu": "Az első alagsori szinten",
+            "id": "Terletak di lantai basement pertama",
+            "fr": "Sous-sol",
+            "sl": "Nahaja se v prvi kletni etaži",
+            "ca": "Localitzat a la planta base",
+            "fil": "Nasa silong",
+            "es": "Localizada en el primer sótano",
+            "nb_NO": "Er å finne på første kjellernivå",
+            "pt": "Localizado no primeiro nível da cave",
+            "da": "Beliggende på første kælderetage",
+            "cs": "Nachází se v prvním suterénu",
+            "pl": "Położone na pierwszym poziomie piwnicy"
+          }
+        }
+      ]
+    },
+    {
+      "id": "smoking",
+      "question": {
+        "en": "Is smoking allowed at {title()}?",
+        "de": "Ist das Rauchen in {title()} erlaubt?",
+        "es": "¿Está permitido fumar en {title()}?",
+        "fr": "Est-ce autorisé de fumer à {title()} ?",
+        "pt": "É permitido fumar em {title()}?",
+        "nb_NO": "Tillates røyking på {title()}?",
+        "da": "Er det tilladt at ryge på {title()}?",
+        "id": "Apa diizinkan untuk merokok di {title()}?",
+        "nl": "Is roken toegestaan bij {title()}?",
+        "cs": "Je na {title()} povoleno kouřit?",
+        "ca": "Està permés fumar a {title()}?",
+        "pl": "Czy w {title()} wolno palić?"
+      },
+      "#condition": "Based on https://en.wikipedia.org/wiki/List_of_smoking_bans",
+      "condition": "_country!~al|be",
+      "mappings": [
+        {
+          "if": "smoking=yes",
+          "icon": {
+            "path": "./assets/layers/questions/smoking.svg",
+            "size": "small"
+          },
+          "then": {
+            "en": "Smoking is <b>allowed</b>",
+            "de": "Rauchen ist <b>erlaubt</b>",
+            "es": "Está <b>permitido</b> fumar",
+            "fr": "Il est <b>autorisé</b> de fumer",
+            "pt": "<b>É permitido</b> fumar",
+            "nb_NO": "Røyking er <b>tillatt</b>",
+            "da": "Rygning er <b>tilladt</b>",
+            "id": "Merokok <b>diizinkan</b>",
+            "nl": "Roken is <b>toegestaan</b>",
+            "cs": "Kouření je <b>povoleno</b>",
+            "pa_PK": "سِگرٹ پیݨ دی ‫<b>‬؜اِجازت‬‫</b>‬ ؜اے",
+            "ca": "Està <b>permès</b> fumar",
+            "pl": "Palenie jest <b>dozwolone</b>"
+          }
+        },
+        {
+          "if": "smoking=no",
+          "icon": {
+            "path": "./assets/layers/questions/no_smoking.svg",
+            "size": "small"
+          },
+          "then": {
+            "en": "Smoking is <b>not allowed</b>",
+            "de": "Rauchen ist <b>nicht erlaubt</b>",
+            "es": "<b>No</b> está permitido fumar",
+            "fr": "Il est <b>interdit</b> de fumer",
+            "pt": "<b>Não é permitido</b> fumar",
+            "nb_NO": "Røyking <b>forbudt</b>",
+            "da": "Rygning er <b>ikke tilladt</b>",
+            "id": "Merokok <b>dilarang</b>",
+            "nl": "Roken is <b>niet toegestaan</b>",
+            "cs": "Kouření <b>není povoleno</b>",
+            "ca": "<b>No</b> està permés fumar",
+            "pl": "Palenie jest <b>zakazane</b>"
+          }
+        },
+        {
+          "if": "smoking=outside",
+          "then": {
+            "en": "Smoking is <b>allowed outside</b>.",
+            "de": "Rauchen ist <b> draußen erlaubt</b>.",
+            "es": "Está permitido fumar <b>en el exterior</b>.",
+            "fr": "Il est autorisé de fumer <b>à l'extérieur</b>.",
+            "pt": "É permitido fumar <b>no exterior</b>.",
+            "nb_NO": "Røyking <b>tillates på utsiden</b>.",
+            "da": "Rygning er <b>tilladt udenfor</b>.",
+            "id": "Merokok <b>diizinkan di luar ruangan</b>.",
+            "nl": "Roken is <b>buiten toegestaan</b>.",
+            "cs": "Kouření je <b>povoleno venku</b>.",
+            "ca": "Està permés fumar <b>a l'exterior</b>.",
+            "pl": "Palenie jest <b>dozwolone na zewnątrz</b>."
+          }
+        }
+      ]
+    },
+    {
+      "id": "induction-loop",
+      "description": "An accessibility feature: induction loops are for hard-hearing persons which have an FM-receiver.",
+      "question": {
+        "en": "Does this place have an audio induction loop for people with reduced hearing?",
+        "de": "Hat dieser Ort eine induktive Höranlage für Hörgeschädigte?",
+        "fr": "Ce lieu dispose-t’il d’une boucle auditive pour les personnes malentendantes ?",
+        "da": "Har dette sted en lydinduktionssløjfe til personer med nedsat hørelse?",
+        "cs": "Má toto místo zvukovou indukční smyčku pro osoby se sluchovým postižením?",
+        "nb_NO": "Har stedet en teleslynge for folk med redusert hørsel?",
+        "nl": "Heeft deze plaats een ringleiding voor slechthorenden?",
+        "ca": "Aquest lloc té un bucle magnètic per a la gent amb dificultats auditives?",
+        "es": "¿Este lugar tiene un bucle auditivo para personas con discapacidad auditiva?",
+        "pl": "Czy to miejsce ma pętlę indukcyjną dźwięku dla osób niedosłyszących?"
+      },
+      "mappings": [
+        {
+          "if": "hearing_loop=yes",
+          "then": {
+            "en": "This place has an audio induction loop",
+            "de": "Dieser Ort hat eine induktive Höranlage",
+            "fr": "Ce lieu dispose d’une boucle auditive",
+            "da": "Dette sted har en lydinduktionssløjfe",
+            "cs": "Toto místo má zvukovou indukční smyčku",
+            "nb_NO": "Dette stedet har en teleslynge",
+            "nl": "Deze plaats heeft een ringleiding",
+            "pl": "To miejsce ma pętlę indukcyjną audio",
+            "ca": "El lloc té un bucle magnètic",
+            "es": "Este lugar tiene un bucle auditivo"
+          },
+          "icon": {
+            "path": "./assets/layers/questions/audio_induction_loop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "hearing_loop=no",
+          "then": {
+            "en": "This place <b>does not</b> have an audio induction loop",
+            "de": "Dieser Ort hat <b>keine</b> induktive Höranlage",
+            "fr": "Ce lieu <b>ne dispose pas</b> de boucle auditive",
+            "da": "Dette sted <b>har ikke</b> en lydinduktionssløjfe",
+            "cs": "Toto místo <b>nemá indukční zvukovou smyčku</b>",
+            "nb_NO": "Dette stedet <b>har ikke</b> en teleslynge",
+            "nl": "Deze plaats heeft <b>geen</b> ringleiding",
+            "ca": "El lloc <b>no</b> té un bucle magnètic",
+            "es": "Este lugar <b>no</b> tiene bucle auditivo",
+            "pl": "To miejsce <b>nie ma</b> pętli indukcyjnej dźwięku"
+          },
+          "icon": {
+            "path": "./assets/layers/questions/audio_induction_loop_missing.svg",
+            "class": "medium"
+          }
+        }
+      ]
+    },
+    {
+      "id": "internet",
+      "question": {
+        "en": "Does this place offer internet access?",
+        "nl": "Biedt deze plaats internettoegang aan?",
+        "de": "Bietet dieser Ort Internetzugang?",
+        "pt": "Este lugar tem acesso à Internet?",
+        "da": "Tilbyder dette sted internetadgang?",
+        "id": "Apa tempat ini menyediakan jaringan internet?",
+        "cs": "Nabízí toto místo připojení k internetu?",
+        "nb_NO": "Tilbyr dette stedet tilgang til Internett?",
+        "es": "¿Ofrece este lugar acceso a internet?",
+        "fr": "Cet endroit offre-t-il un accès à Internet ?",
+        "ca": "Aquest lloc ofereix accés a internet?",
+        "pl": "Czy to miejsce oferuje dostęp do Internetu?"
+      },
+      "mappings": [
+        {
+          "if": "internet_access=wlan",
+          "then": {
+            "en": "This place offers wireless internet access",
+            "nl": "Deze plaats biedt draadloze internettoegang aan",
+            "de": "Dieser Ort bietet drahtlosen Internetzugang",
+            "fr": "Ce lieu propose un accès internet sans fil",
+            "pt": "Este lugar tem acesso à Internet sem fios",
+            "da": "Dette sted tilbyder trådløs internetadgang",
+            "id": "Tempat ini menyediakan jaringan internet nirkabel",
+            "cs": "Toto místo nabízí bezdrátové připojení k internetu",
+            "nb_NO": "Dette stedet tilbyr trådløs tilgang til Internett",
+            "es": "Este lugar ofrece acceso a internet inalámbrico",
+            "ca": "Aquest lloc ofereix accés a internet inalàmbric",
+            "pl": "To miejsce oferuje bezprzewodowy dostęp do Internetu"
+          }
+        },
+        {
+          "if": "internet_access=no",
+          "then": {
+            "en": "This place <b>does not</b> offer internet access",
+            "nl": "Deze plaats biedt <b>geen</b> internettoegang aan",
+            "de": "Dieser Ort bietet <b>keinen</b> Internetzugang",
+            "fr": "Ce lieu <b>ne propose pas</b> d'accès internet",
+            "pt": "Este lugar <b>não</b> tem acesso à Internet",
+            "da": "Dette sted <b>tilbyder ikke</b> internetadgang",
+            "id": "Tempat ini <b>tidak</b> menyediakan jaringan internet",
+            "cs": "Toto místo <b>neposkytuje</b> připojení k internetu",
+            "nb_NO": "Dette stedet tilbyr <b>ikke</b> tilgang til Internett",
+            "es": "Este lugar <b>no</b> ofrece acceso a internet",
+            "ca": "Aquest lloc <b>no</b> ofereix accés a internet",
+            "pl": "To miejsce <b>nie</b> oferuje dostępu do Internetu"
+          }
+        },
+        {
+          "if": "internet_access=yes",
+          "then": {
+            "en": "This place offers internet access",
+            "nl": "Deze plaats biedt internettoegang aan",
+            "de": "Dieser Ort bietet Internetzugang",
+            "fr": "Ce lieu propose un accès internet",
+            "pt": "Este lugar tem acesso à Internet",
+            "da": "Dette sted tilbyder internetadgang",
+            "id": "Tempat ini menyediakan jaringan internet",
+            "cs": "Toto místo nabízí přístup k internetu",
+            "nb_NO": "Dette stedet tilbyr tilgang til Internett",
+            "es": "Este lugar ofrece acceso a internet",
+            "ca": "Aquest lloc ofereix accés a internet",
+            "pl": "To miejsce oferuje dostęp do Internetu"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "internet_access=terminal",
+          "then": {
+            "en": "This place offers internet access via a terminal or computer",
+            "nl": "Deze plaats biedt internettoegang via een terminal of computer aan",
+            "de": "Dieser Ort bietet Internetzugang über ein Terminal oder einen Computer",
+            "pt": "Este lugar tem acesso à Internet através de um terminal ou computador",
+            "da": "Dette sted tilbyder internetadgang via en terminal eller computer",
+            "id": "Tempat ini menyediakan jaringan internet melalui terminal atau komputer",
+            "cs": "Toto místo nabízí přístup k internetu prostřednictvím terminálu nebo počítače",
+            "nb_NO": "Dette stedet tilbyr tilgang til Internett via en terminal eller datamaskin",
+            "es": "Este lugar ofrece acceso a internet a través de una terminal o un ordenador",
+            "fr": "Cet endroit offre un accès à Internet via un terminal ou un ordinateur",
+            "ca": "Aquest lloc ofereix accés a internet a través d'una terminal o ordinador",
+            "pl": "To miejsce oferuje dostęp do Internetu za pośrednictwem terminala lub komputera"
+          }
+        },
+        {
+          "if": "internet_access=wired",
+          "then": {
+            "en": "This place offers wired internet access",
+            "nl": "Deze plaats biedt bedrade internettoegang aan",
+            "de": "Dieser Ort bietet kabelgebundenen Internetzugang",
+            "pt": "Este lugar tem acesso à Internet com fios/por cabo",
+            "da": "Dette sted tilbyder internetadgang via kabel",
+            "id": "Tempat ini menyediakan jaringan internet kabel",
+            "cs": "Toto místo nabízí kabelové připojení k internetu",
+            "nb_NO": "Dette stedet tilbyr trådbunden tilgang til Internett",
+            "es": "Este lugar ofrece acceso a internet por cable",
+            "fr": "Cet endroit offre un accès Internet filaire",
+            "ca": "Aquest lloc ofereix accés a internet per cable",
+            "pl": "To miejsce oferuje przewodowy dostęp do Internetu"
+          }
+        }
+      ]
+    },
+    {
+      "id": "internet-fee",
+      "condition": {
+        "and": [
+          "internet_access!=no",
+          "internet_access!="
+        ]
+      },
+      "question": {
+        "en": "Is there a fee for internet access?",
+        "nl": "Zijn er kosten voor internettoegang?",
+        "de": "Wird für den Internetzugang eine Gebühr erhoben?",
+        "pt": "Tem de se pagar para utilizar o acesso à Internet?",
+        "da": "Er der et gebyr for internetadgang?",
+        "cs": "Je přístup na internet zpoplatněn?",
+        "id": "Apakah ada biaya untuk akses internet?",
+        "nb_NO": "Er det et gebyr for bruk av Internett?",
+        "fr": "L'accès à l'internet est-il payant ?",
+        "ca": "Hi ha que pagar per a accedir a internet?",
+        "es": "¿Hay que pagar para acceder a internet?",
+        "pl": "Czy dostęp do Internetu jest płatny?"
+      },
+      "mappings": [
+        {
+          "if": "internet_access:fee=yes",
+          "then": {
+            "en": "There is a fee for the internet access at this place",
+            "nl": "Er zijn kosten voor internettoegang op deze plaats",
+            "de": "Der Internetzugang ist an diesem Ort gebührenpflichtig",
+            "pt": "Tem de se pagar para utilizar o acesso à Internet neste local",
+            "da": "Der er et gebyr for internetadgang på dette sted",
+            "cs": "Přístup na internet je zde zpoplatněn",
+            "id": "Ada biaya untuk akses internet di tempat ini",
+            "nb_NO": "Det er et gebyr for tilgang til Internett på dette stedet",
+            "fr": "L'accès à l'internet est payant à cet endroit",
+            "ca": "Aquí hi ha que pagar per a accedir a internet",
+            "es": "Hay que pagar para acceder a internet en este lugar",
+            "pl": "W tym miejscu dostęp do Internetu jest płatny"
+          }
+        },
+        {
+          "if": "internet_access:fee=no",
+          "then": {
+            "en": "Internet access is free at this place",
+            "nl": "Internettoegang is gratis op deze plaats",
+            "de": "Der Internetzugang ist an diesem Ort kostenlos",
+            "pt": "O acesso à Internet é gratuito neste local",
+            "da": "Internetadgang er gratis på dette sted",
+            "id": "Jaringan internet tersedia gratis di tempat ini",
+            "cs": "Přístup k internetu je zde zdarma",
+            "nb_NO": "Tilgang til Internett er gratis på dette stedet",
+            "es": "El acceso a internet es gratuito en este lugar",
+            "fr": "L'accès à Internet est gratuit dans cet endroit",
+            "ca": "Aquí l'accés a internet és gratuït",
+            "pl": "Dostęp do Internetu jest w tym miejscu bezpłatny"
+          }
+        },
+        {
+          "if": "internet_access:fee=customers",
+          "then": {
+            "en": "Internet access is free at this place, for customers only",
+            "nl": "Internettoegang is gratis op deze plaats, alleen voor klanten",
+            "de": "Der Internetzugang ist an diesem Ort kostenlos, aber nur für Kunden",
+            "pt": "O acesso à Internet é gratuito neste local, apenas para clientes",
+            "da": "Internetadgang er gratis på dette sted, kun for kunder",
+            "id": "Jaringan internet tersedia gratis di tempat ini, hanya untuk pelanggan",
+            "cs": "Přístup k internetu je na tomto místě zdarma, pouze pro zákazníky",
+            "nb_NO": "Tilgang til Internett på dette stedet er gratis, men kun for kunder",
+            "es": "El acceso a internet es gratis en este lugar, solamente para clientes",
+            "fr": "L'accès à l'internet dans cet endroit est gratuit pour les clients uniquement",
+            "ca": "Aquí l'accés a internet és gratuït sols per als clients",
+            "pl": "Dostęp do Internetu jest w tym miejscu bezpłatny, tylko dla klientów"
+          }
+        }
+      ]
+    },
+    {
+      "id": "internet-ssid",
+      "condition": "internet_access=wlan",
+      "question": {
+        "en": "What is the network name for the wireless internet access?",
+        "nl": "Wat is de netwerknaam voor de draadloze internettoegang?",
+        "de": "Wie lautet der Netzwerkname für den drahtlosen Internetzugang?",
+        "pt": "Qual é o nome da rede para o acesso sem fios à Internet?",
+        "da": "Hvad er netværksnavnet for den trådløse internetadgang?",
+        "id": "Apa nama jaringan internet nirkabelnya?",
+        "cs": "Jaký je název sítě pro bezdrátový přístup k internetu?",
+        "nb_NO": "Hva er nettverksnavnet for det trådløse nettverket?",
+        "es": "¿Cuál es el nombre de red para el acceso inalámbrico a internet?",
+        "fr": "Quel est le nom du réseau pour l'accès Internet sans fil ?",
+        "ca": "Quin és el nom de la xarxa per a l'accés inalàmbric a internet?",
+        "pl": "Jaka jest nazwa sieci dla bezprzewodowego dostępu do Internetu?"
+      },
+      "freeform": {
+        "key": "internet_access:ssid",
+        "type": "string",
+        "placeholder": {
+          "en": "Enter the network name",
+          "nl": "Voer de netwerknaam in",
+          "de": "Geben Sie den Netzwerknamen ein",
+          "pt": "Introduza o nome da rede",
+          "da": "Indtast netværksnavnet",
+          "id": "Masukkan nama jaringan",
+          "cs": "Zadejte název sítě",
+          "nb_NO": "Skriv inn nettverksnavnet",
+          "pa_PK": "نیٹورک دا ناں پایو",
+          "es": "Introduzca el nombre de red",
+          "fr": "Entrez le nom du réseau",
+          "ca": "Intruduixca el nom de la xarxa",
+          "pl": "Wprowadź nazwę sieci"
+        }
+      },
+      "mappings": [
+        {
+          "if": "internet_access:ssid=Telekom",
+          "then": "Telekom",
+          "hideInAnswer": "_country!=de"
+        }
+      ],
+      "render": {
+        "en": "The network name is <b>{internet_access:ssid}</b>",
+        "nl": "De netwerknaam is <b>{internet_access:ssid}</b>",
+        "de": "Der Netzwerkname lautet <b>{internet_access:ssid}</b>",
+        "pt": "O nome da rede é <b>{internet_access:ssid}</b>",
+        "da": "Netværksnavnet er <b>{internet_access:ssid}</b>",
+        "id": "Nama jaringan ini adalah <b>{internet_access:ssid}</b>",
+        "cs": "Název sítě je <b>{internet_access:ssid}</b>",
+        "nb_NO": "Nettverksnavnet er <b>{internet_access:ssid}</b>",
+        "es": "El nombre de red es <b>{internet_access:ssid}</b>",
+        "fr": "Le nom du réseau est <b>{internet_access:ssid}</b>",
+        "ca": "El nom de la xarxa és <b>{internet_access:ssid}</b>",
+        "pl": "Nazwa sieci to <b>{internet_access:ssid}</b>"
+      }
+    },
+    {
+      "id": "luminous_or_lit",
+      "question": {
+        "en": "Is this object lit or does it emit light?",
+        "ca": "Aquest objecte està il·luminat o emet llum?",
+        "cs": "Je tento objekt osvětlený nebo vyzařuje světlo?",
+        "de": "Wird das Objekt beleuchtet oder leuchtet es selbst?",
+        "es": "¿Está este objeto iluminado o emite luz?",
+        "fr": "Cet objet est-il éclairé ou émet-il de la lumière ?",
+        "pl": "Czy ten obiekt jest oświetlony lub emituje światło?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "lit=yes",
+              "luminous=yes"
+            ]
+          },
+          "then": {
+            "en": "This object both emits light and is lighted by an external light source",
+            "ca": "Aquest objecte emet llum i també està il·luminat externament",
+            "cs": "Tento objekt vyzařuje světlo a je osvětlen vnějším zdrojem světla",
+            "de": "Das Objekt leuchtet selbst und wird von außen beleuchtet",
+            "es": "Este objeto emite luz y es también iluminado por una fuente de luz externa",
+            "fr": "Cet objet émet de la lumière et est éclairé par l'extérieur",
+            "pl": "Ten obiekt zarówno emituje światło, jak i jest oświetlany przez zewnętrzne źródło światła"
+          }
+        },
+        {
+          "if": "luminous=yes",
+          "then": {
+            "en": "This object emits light",
+            "ca": "Aquest objecte emet llum",
+            "cs": "Tento objekt vyzařuje světlo",
+            "de": "Das Objekt leuchtet selbst",
+            "es": "Este objeto emite luz",
+            "fr": "Cet objet émet de la lumière",
+            "pl": "Ten obiekt emituje światło"
+          },
+          "addExtraTags": [
+            "lit=no"
+          ]
+        },
+        {
+          "if": "lit=yes",
+          "then": {
+            "en": "This object is lit externally, e.g. by a spotlight or other lights",
+            "ca": "Aquest objecte està il·luminat externament, p.e. amb un focus o altres llums",
+            "cs": "Tento objekt je osvětlen zvenčí, např. pomocí reflektoru nebo jiných světel",
+            "de": "Das Objekt wird von außen beleuchtet, z. B. durch Scheinwerfer oder andere Lichter",
+            "es": "Este objeto recibe iluminación, por ejemplo por un foco u otras luces",
+            "fr": "Cet objet est éclairé par l'extérieur, par ex. par un projecteur ou d'autres lumières",
+            "pl": "Ten obiekt jest oświetlony zewnętrznie, np. przez reflektor lub inne światła"
+          },
+          "addExtraTags": [
+            "luminous=no"
+          ]
+        },
+        {
+          "if": {
+            "and": [
+              "lit=no",
+              "luminous=no"
+            ]
+          },
+          "then": {
+            "en": "This object does not emit light and is not lighted by externally",
+            "ca": "Aquest objecte no emet llum i no està il·luminat externament",
+            "cs": "Tento objekt nevyzařuje světlo a není osvětlen zvenčí",
+            "de": "Das Objekt wird weder von außen beleuchtet, noch leuchtet es selbst",
+            "es": "Este objeto ni emite luz ni es iluminado",
+            "fr": "Cet objet n'émet pas de lumière et n'est pas éclairé par l'extérieur",
+            "pl": "Obiekt ten nie emituje światła i nie jest oświetlany z zewnątrz"
+          }
+        }
+      ]
+    }
+  ]
+}

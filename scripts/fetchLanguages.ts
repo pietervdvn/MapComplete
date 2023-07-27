@@ -4,12 +4,12 @@
  */
 
 import * as wds from "wikidata-sdk"
-import { Utils } from "../Utils"
+import { Utils } from "../src/Utils"
 import ScriptUtils from "./ScriptUtils"
 import { existsSync, readFileSync, writeFileSync } from "fs"
-import WikidataUtils from "../Utils/WikidataUtils"
-import LanguageUtils from "../Utils/LanguageUtils"
-import Wikidata from "../Logic/Web/Wikidata"
+import WikidataUtils from "../src/Utils/WikidataUtils"
+import LanguageUtils from "../src/Utils/LanguageUtils"
+import Wikidata from "../src/Logic/Web/Wikidata"
 
 interface value<T> {
     value: T
@@ -150,8 +150,8 @@ async function getOfficialLanguagesPerCountryCached(
     wipeCache: boolean
 ): Promise<Record<string /*Country code*/, string[] /*Language codes*/>> {
     let officialLanguages: Record<string, string[]>
-    const officialLanguagesPath = "./assets/language_in_country.json"
-    if (existsSync("./assets/languages_in_country.json") && !wipeCache) {
+    const officialLanguagesPath = "./src/assets/language_in_country.json"
+    if (existsSync("./src/assets/languages_in_country.json") && !wipeCache) {
         officialLanguages = JSON.parse(readFileSync(officialLanguagesPath, "utf8"))
     } else {
         officialLanguages = Utils.MapToObj(await getOfficialLanguagesPerCountry(), (t) => t)
@@ -161,7 +161,7 @@ async function getOfficialLanguagesPerCountryCached(
 }
 
 async function main(wipeCache = false) {
-    const cacheFile = "./assets/generated/languages-wd.json"
+    const cacheFile = "./src/assets/generated/languages-wd.json"
     if (wipeCache || !existsSync(cacheFile)) {
         console.log("Refreshing cache")
         await fetch(cacheFile)
@@ -172,7 +172,7 @@ async function main(wipeCache = false) {
     const data = JSON.parse(readFileSync(cacheFile, { encoding: "utf8" }))
     const perId = WikidataUtils.extractLanguageData(data, WikidataUtils.languageRemapping)
     const nativeList = getNativeList(perId)
-    writeFileSync("./assets/language_native.json", JSON.stringify(nativeList, null, "  "))
+    writeFileSync("./src/assets/language_native.json", JSON.stringify(nativeList, null, "  "))
     const languagesPerCountry = Utils.TransposeMap(
         await getOfficialLanguagesPerCountryCached(wipeCache)
     )
@@ -195,7 +195,10 @@ async function main(wipeCache = false) {
         return translatedForId
     })
 
-    writeFileSync("./assets/language_translations.json", JSON.stringify(translations, null, "  "))
+    writeFileSync(
+        "./src/assets/language_translations.json",
+        JSON.stringify(translations, null, "  ")
+    )
 }
 
 const forceRefresh = process.argv[2] === "--force-refresh"

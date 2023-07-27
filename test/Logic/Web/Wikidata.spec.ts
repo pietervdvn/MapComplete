@@ -1,5 +1,5 @@
-import { Utils } from "../../../Utils"
-import Wikidata from "../../../Logic/Web/Wikidata"
+import { Utils } from "../../../src/Utils"
+import Wikidata from "../../../src/Logic/Web/Wikidata"
 import { describe, expect, it } from "vitest"
 
 const Q140 = {

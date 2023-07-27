@@ -1,13 +1,13 @@
-import { LayerConfigJson } from "../../../../Models/ThemeConfig/Json/LayerConfigJson"
-import { TagRenderingConfigJson } from "../../../../Models/ThemeConfig/Json/TagRenderingConfigJson"
-import LineRenderingConfigJson from "../../../../Models/ThemeConfig/Json/LineRenderingConfigJson"
+import { LayerConfigJson } from "../../../../src/Models/ThemeConfig/Json/LayerConfigJson"
+import { TagRenderingConfigJson } from "../../../../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
+import LineRenderingConfigJson from "../../../../src/Models/ThemeConfig/Json/LineRenderingConfigJson"
 import {
     ExpandRewrite,
     PrepareLayer,
     RewriteSpecial,
-} from "../../../../Models/ThemeConfig/Conversion/PrepareLayer"
-import { QuestionableTagRenderingConfigJson } from "../../../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
-import RewritableConfigJson from "../../../../Models/ThemeConfig/Json/RewritableConfigJson"
+} from "../../../../src/Models/ThemeConfig/Conversion/PrepareLayer"
+import { QuestionableTagRenderingConfigJson } from "../../../../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+import RewritableConfigJson from "../../../../src/Models/ThemeConfig/Json/RewritableConfigJson"
 import { describe, expect, it } from "vitest"
 
 describe("ExpandRewrite", () => {

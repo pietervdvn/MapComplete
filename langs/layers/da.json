@@ -2081,6 +2081,205 @@
             }
         }
     },
+    "questions": {
+        "tagRenderings": {
+            "description": {
+                "question": "Er der stadig noget relevant, du ikke kunne give i de foregående spørgsmål? Tilføj det her.",
+                "questionHint": "Gentag ikke allerede nævnte fakta"
+            },
+            "dog-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Hunde er tilladt"
+                    },
+                    "1": {
+                        "then": "Hunde er <b>ikke </b> tilladt"
+                    },
+                    "2": {
+                        "then": "Hunde er tilladt, men de skal være i snor"
+                    },
+                    "3": {
+                        "then": "Hunde er tilladt og kan løbe frit rundt"
+                    }
+                },
+                "question": "Er hunde tilladt i denne virksomhed?"
+            },
+            "email": {
+                "question": "Hvad er mailadressen på {title()}?"
+            },
+            "induction-loop": {
+                "mappings": {
+                    "0": {
+                        "then": "Dette sted har en lydinduktionssløjfe"
+                    },
+                    "1": {
+                        "then": "Dette sted <b>har ikke</b> en lydinduktionssløjfe"
+                    }
+                },
+                "question": "Har dette sted en lydinduktionssløjfe til personer med nedsat hørelse?"
+            },
+            "internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Dette sted tilbyder trådløs internetadgang"
+                    },
+                    "1": {
+                        "then": "Dette sted <b>tilbyder ikke</b> internetadgang"
+                    },
+                    "2": {
+                        "then": "Dette sted tilbyder internetadgang"
+                    },
+                    "3": {
+                        "then": "Dette sted tilbyder internetadgang via en terminal eller computer"
+                    },
+                    "4": {
+                        "then": "Dette sted tilbyder internetadgang via kabel"
+                    }
+                },
+                "question": "Tilbyder dette sted internetadgang?"
+            },
+            "internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Der er et gebyr for internetadgang på dette sted"
+                    },
+                    "1": {
+                        "then": "Internetadgang er gratis på dette sted"
+                    },
+                    "2": {
+                        "then": "Internetadgang er gratis på dette sted, kun for kunder"
+                    }
+                },
+                "question": "Er der et gebyr for internetadgang?"
+            },
+            "internet-ssid": {
+                "freeform": {
+                    "placeholder": "Indtast netværksnavnet"
+                },
+                "question": "Hvad er netværksnavnet for den trådløse internetadgang?",
+                "render": "Netværksnavnet er <b>{internet_access:ssid}</b>"
+            },
+            "level": {
+                "mappings": {
+                    "0": {
+                        "then": "Placeret under jorden"
+                    },
+                    "1": {
+                        "then": "Beliggende i stueetagen"
+                    },
+                    "2": {
+                        "then": "Beliggende i stueetagen"
+                    },
+                    "3": {
+                        "then": "Beliggende på første sal"
+                    },
+                    "4": {
+                        "then": "Beliggende på første kælderetage"
+                    }
+                },
+                "question": "På hvilket niveau er denne funktion placeret?",
+                "render": "Beliggende på {level}. etage"
+            },
+            "multilevels": {
+                "override": {
+                    "question": "Hvilke niveauer går denne elevator til?",
+                    "render": "Denne elevator går til etager {level}"
+                }
+            },
+            "opening_hours": {
+                "question": "Hvad er åbningstiderne for {title()}?",
+                "render": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}"
+            },
+            "payment-options": {
+                "mappings": {
+                    "0": {
+                        "then": "Her modtages kontanter"
+                    },
+                    "1": {
+                        "then": "Betalingskort accepteres her"
+                    }
+                },
+                "question": "Hvilke betalingsmetoder accepteres her?"
+            },
+            "payment-options-advanced": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Betaling sker ved hjælp af en dedikeret app"
+                        },
+                        "1": {
+                            "then": "Betaling sker med medlemskort"
+                        }
+                    }
+                }
+            },
+            "phone": {
+                "question": "Hvad er telefonnummeret til {title()}?"
+            },
+            "service:electricity": {
+                "mappings": {
+                    "0": {
+                        "then": "Der er masser af stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr"
+                    },
+                    "1": {
+                        "then": "Der er nogle få stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr"
+                    },
+                    "2": {
+                        "then": "Der er ingen stikkontakter til rådighed indendørs for kunderne, men opladning kan være mulig, hvis man beder personalet om det"
+                    },
+                    "3": {
+                        "then": "Der er ingen stikkontakter til rådighed for kunder, der sidder indendørs"
+                    }
+                },
+                "question": "Har denne faciliteter stikkontakter tilgængelige for kunder, når de er inde?"
+            },
+            "smoking": {
+                "mappings": {
+                    "0": {
+                        "then": "Rygning er <b>tilladt</b>"
+                    },
+                    "1": {
+                        "then": "Rygning er <b>ikke tilladt</b>"
+                    },
+                    "2": {
+                        "then": "Rygning er <b>tilladt udenfor</b>."
+                    }
+                },
+                "question": "Er det tilladt at ryge på {title()}?"
+            },
+            "website": {
+                "question": "Hvad er webstedet for {title()}?"
+            },
+            "wheelchair-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Dette sted er specielt indrettet til kørestolsbrugere"
+                    },
+                    "1": {
+                        "then": "Dette sted er let tilgængeligt med en kørestol"
+                    },
+                    "2": {
+                        "then": "Det er muligt at komme til dette sted med en kørestol, men det er ikke let"
+                    },
+                    "3": {
+                        "then": "Dette sted er ikke tilgængeligt med kørestol"
+                    }
+                },
+                "question": "Er stedet tilgængeligt med en kørestol?"
+            },
+            "wikipedia": {
+                "mappings": {
+                    "0": {
+                        "then": "Der er endnu ikke linket til nogen Wikipedia-side"
+                    },
+                    "1": {
+                        "then": "Der er endnu ikke linket til nogen Wikipedia-side"
+                    }
+                },
+                "question": "Hvad er den tilsvarende Wikidata-enhed?"
+            }
+        }
+    },
     "recycling": {
         "filter": {
             "2": {
