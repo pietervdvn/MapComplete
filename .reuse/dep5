@@ -30,7 +30,7 @@ License: GPL-3.0-or-later
 Files: public/assets/templates/*.js public/assets/fonts/*.js
 Copyright: MapComplete contributors
 Comment: fonts for exports
-License: UBUNTU-FONT-LICENSE
+License: LicenseRef-UBUNTU-FONT-LICENSE
 
 
 Files: public/assets/*.svg public/assets/*.png public/apple_touch_icon.png

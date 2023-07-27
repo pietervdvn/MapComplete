@@ -4,9 +4,15 @@ import ScriptUtils from "./ScriptUtils"
 import Script from "./Script"
 import { Utils } from "../src/Utils"
 
-const prompt = require("prompt-sync")()
-
 export class GenerateLicenseInfo extends Script {
+    private static readonly needsLicenseRef = new Set(
+        ScriptUtils.readDirRecSync("./LICENSES")
+            .map((p) => p.substring(p.lastIndexOf("/") + 1))
+            .filter((p) => p.startsWith("LicenseRef-"))
+            .map((p) => p.substring("LicenseRef-".length))
+            .map((p) => p.substring(0, p.lastIndexOf(".")))
+    )
+
     constructor() {
         super("Validates the licenses and compiles them into one single asset file")
     }
@@ -193,11 +199,6 @@ export class GenerateLicenseInfo extends Script {
      */
     toSPDXCompliantLicense(licenseId: string): string {
         licenseId = licenseId.trim()
-        licenseId = licenseId.replaceAll("-AND-", " AND ")
-
-        if (!(licenseId.endsWith("-only") || licenseId.endsWith("-or-later"))) {
-            licenseId = licenseId.toUpperCase()
-        }
         // https://spdx.org/licenses/
         const mappings: Record<string, string> = {
             "CC-0": "CC0-1.0",
@@ -362,11 +363,10 @@ export class GenerateLicenseInfo extends Script {
 
         let invalid = 0
         for (const licenseInfo of licenseInfos) {
-            const isTrivial =
-                licenseInfo.license
-                    .split(";")
-                    .map((l) => l.trim().toLowerCase())
-                    .indexOf("trivial") >= 0
+            const isTrivial = licenseInfo.license
+                .split(";")
+                .map((l) => l.trim().toLowerCase())
+                .some((s) => s.endsWith("trivial"))
             if (licenseInfo.sources.length + licenseInfo.authors.length == 0 && !isTrivial) {
                 invalid++
                 invalidLicenses.push(
@@ -393,7 +393,11 @@ export class GenerateLicenseInfo extends Script {
 
             const spdxContent = [
                 "SPDX-FileCopyrightText: " + licenseInfo.authors.join("; "),
-                "SPDX-License-Identifier: " + licenseInfo.license,
+                "SPDX-License-Identifier: " +
+                    licenseInfo.license
+                        .split(" AND ")
+                        .map((s) => this.addLicenseRef(s))
+                        .join(" AND "),
             ]
             writeFileSync(spdxPath, spdxContent.join("\n"))
         }
@@ -409,6 +413,19 @@ export class GenerateLicenseInfo extends Script {
 
         this.cleanLicenseInfo(licensePaths, licenseInfos)
         this.createFullLicenseOverview(licensePaths)
+    }
+
+    /**
+     * Some licenses need "LicenseRef-" to be added to make reuse lint work
+     * @param s
+     * @private
+     */
+    private addLicenseRef(s: string): string {
+        if (GenerateLicenseInfo.needsLicenseRef.has(s)) {
+            console.log("Mapping ", s, Array.from(GenerateLicenseInfo.needsLicenseRef))
+            return "LicenseRef-" + s
+        }
+        return s
     }
 }
 
