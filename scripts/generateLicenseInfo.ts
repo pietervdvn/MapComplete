@@ -208,19 +208,17 @@ export class GenerateLicenseInfo extends Script {
             "CREATIVE-COMMONS-4.0-BY-NC": "CC-BY-NC-4.0",
             "CC-BY-SA-3.0-UNPORTED": "CC-BY-SA-3.0",
             "ISC-LICENSE": "ISC",
+            "LOGO-BY-THE-GOVERNMENT": "LOGO",
+            PD: "PUBLIC-DOMAIN",
             /*  ALL-RIGHTS-RESERVED:
             PD:
                 PUBLIC-DOMAIN:
-        GNU:
-            GPL:
-                ISC-LICENSE:
-        LOGO-BY-THE-GOVERNMENT:
-        LOGO:
         TRIVIAL: //*/
         }
 
         return mappings[licenseId] ?? licenseId
     }
+
     cleanLicenseInfo(allPaths: string[], allLicenseInfos: SmallLicense[]) {
         // Read the license info file from the generated assets, creates a compiled license info in every directory
         // Note: this removes all the old license infos
@@ -245,9 +243,13 @@ export class GenerateLicenseInfo extends Script {
                 sources: license.sources,
             }
 
-            cloned.license = Utils.Dedup(
+            const licenses = Utils.Dedup(
                 cloned.license.split(";").map((l) => this.toSPDXCompliantLicense(l))
-            ).join("; ")
+            )
+            if (licenses.length > 1 && licenses.indexOf("TRIVIAL") > 0) {
+                //  licenses.splice(licenses.indexOf("TRIVIAL"), 1)
+            }
+            cloned.license = licenses.join("; ")
 
             perDirectory.get(dir).push(cloned)
         }
