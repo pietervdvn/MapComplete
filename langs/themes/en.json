@@ -927,6 +927,18 @@
     },
     "kerbs_and_crossings": {
         "description": "A map showing kerbs and crossings.",
+        "layers": {
+            "1": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "description": "Crossing for pedestrians and/or cyclists",
+                            "title": "a crossing"
+                        }
+                    }
+                }
+            }
+        },
         "title": "Kerbs and crossings"
     },
     "mapcomplete-changes": {

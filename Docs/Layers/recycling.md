@@ -14,7 +14,7 @@ A layer with recycling containers and centres
 
 
 
-  - This layer is shown at zoomlevel **11** and higher
+  - This layer is shown at zoomlevel **10** and higher
 
 
 
@@ -55,6 +55,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [residents](https://wiki.openstreetmap.org/wiki/Tag:access%3Dresidents) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/survey:date#values) [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:survey:date%3D)
 
 
 
@@ -337,6 +338,25 @@ This is rendered with  `This recycling facility can be used by {access}`
   - *Everyone can use this recycling facility*  corresponds with  `access=yes`
   - *Only residents can use this recycling facility*  corresponds with  `access=residents`
   - *This recycling facility is only for private use*  corresponds with  `access=private`
+
+
+
+
+### survey_date 
+
+
+
+The question is  *When was this object last surveyed?*
+
+This rendering asks information about the property  [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) 
+
+This is rendered with  `This object was last surveyed on <b>{survey:date}</b>`
+
+
+
+
+
+  - *This object was last surveyed today*  corresponds with  `survey:date=`
 
 
 

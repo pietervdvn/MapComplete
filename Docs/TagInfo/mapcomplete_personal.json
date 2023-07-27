@@ -10312,6 +10312,15 @@
       "value": "private"
     },
     {
+      "key": "survey:date",
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'survey:date' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "survey:date",
+      "description": "Layer 'Recycling' shows survey:date= with a fixed text, namely 'This object was last surveyed today' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key survey:date.",
+      "value": ""
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Primary and secondary schools showing features with this tag",
       "value": "school"

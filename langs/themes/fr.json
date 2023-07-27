@@ -763,6 +763,18 @@
     },
     "kerbs_and_crossings": {
         "description": "Une carte affichant les ressauts et traversées.",
+        "layers": {
+            "1": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "description": "Traversée pour piétons et/ou cyclistes",
+                            "title": "une traversée"
+                        }
+                    }
+                }
+            }
+        },
         "title": "Ressauts et traversées"
     },
     "maproulette": {

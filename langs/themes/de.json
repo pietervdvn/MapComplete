@@ -927,6 +927,18 @@
     },
     "kerbs_and_crossings": {
         "description": "Eine Karte mit Bordsteinen und Überwegen.",
+        "layers": {
+            "1": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "description": "Kreuzung für Fußgänger und/oder Radfahrer",
+                            "title": "eine Kreuzung"
+                        }
+                    }
+                }
+            }
+        },
         "title": "Bordsteine und Überwege"
     },
     "mapcomplete-changes": {

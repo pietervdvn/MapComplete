@@ -769,6 +769,17 @@
     },
     "kerbs_and_crossings": {
         "description": "Un mapa amb voreres i encreuaments.",
+        "layers": {
+            "1": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "un pas de vianants"
+                        }
+                    }
+                }
+            }
+        },
         "title": "Vorals i encreuaments"
     },
     "maproulette": {

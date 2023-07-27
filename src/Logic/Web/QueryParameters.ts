@@ -66,7 +66,7 @@ export class QueryParameters {
         documentation?: string
     ): UIEventSource<boolean> {
         return UIEventSource.asBoolean(
-            QueryParameters.GetQueryParameter(key, "" + deflt, documentation, {stackOffset: -1})
+            QueryParameters.GetQueryParameter(key, "" + deflt, documentation, { stackOffset: -1 })
         )
     }
 
