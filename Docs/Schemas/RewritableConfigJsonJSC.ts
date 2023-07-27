@@ -225,7 +225,7 @@ export default {
           ]
         },
         "freeform": {
-          "description": "question: Should a freeform text field be shown?\nAllow freeform text input from the user\nifunset: Do not add a freeform text field\ntypes: Use a freeform value",
+          "description": "question: Should a freeform text field be shown?\nAllow freeform text input from the user\nifunset: Do not add a freeform text field",
           "type": "object",
           "properties": {
             "key": {
