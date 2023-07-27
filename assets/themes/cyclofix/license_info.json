@@ -1,7 +1,7 @@
 [
   {
     "path": "fietsambassade_gent_logo.svg",
-    "license": "Logo; All rights reserved",
+    "license": "LOGO; ALL-RIGHTS-RESERVED",
     "authors": [
       "De Fietsambassade"
     ],
@@ -11,7 +11,7 @@
   },
   {
     "path": "fietsambassade_gent_logo_small.svg",
-    "license": "Logo; All rights reserved",
+    "license": "LOGO; ALL-RIGHTS-RESERVED",
     "authors": [
       "De Fietsambassade"
     ],
@@ -21,7 +21,7 @@
   },
   {
     "path": "key.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Stijn Wens"
     ],
@@ -31,7 +31,7 @@
   },
   {
     "path": "logo.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Pieter Fiers",
       "Thibault Declercq",
