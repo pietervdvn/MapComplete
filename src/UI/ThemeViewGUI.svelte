@@ -413,7 +413,7 @@
 
       <div class="flex" slot="title2">
         <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
-        <Tr t={Translations.t.communityIndex.title}/>
+        <Tr t={Translations.t.communityIndex.title} />
       </div>
       <div class="m-2" slot="content2">
         <CommunityIndexView location={state.mapProperties.location} />

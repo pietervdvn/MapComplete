@@ -247,7 +247,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/elongated_coin elongated_coin]
 |region= Worldwide
-|lang= {{#language:en|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}
 |descr= A MapComplete theme: Find penny presses to create your own elongated coins
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -499,7 +499,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/vending_machine vending_machine]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}
 |descr= A MapComplete theme: Find vending machines for everything
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
