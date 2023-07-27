@@ -161,13 +161,16 @@ class PointRenderingLayer {
             })
         }
 
-        const marker = new Marker({ element: el}).setLngLat(loc).setOffset(iconAnchor).addTo(this._map)
+        const marker = new Marker({ element: el })
+            .setLngLat(loc)
+            .setOffset(iconAnchor)
+            .addTo(this._map)
         store
             .map((tags) => this._config.pitchAlignment.GetRenderValue(tags).Subs(tags).txt)
-            .addCallbackAndRun((pitchAligment) => marker.setPitchAlignment(<any> pitchAligment))
+            .addCallbackAndRun((pitchAligment) => marker.setPitchAlignment(<any>pitchAligment))
         store
             .map((tags) => this._config.rotationAlignment.GetRenderValue(tags).Subs(tags).txt)
-            .addCallbackAndRun((pitchAligment) => marker.setRotationAlignment(<any> pitchAligment))
+            .addCallbackAndRun((pitchAligment) => marker.setRotationAlignment(<any>pitchAligment))
         if (feature.geometry.type === "Point") {
             // When the tags get 'pinged', check that the location didn't change
             store.addCallbackAndRunD(() => {
@@ -458,7 +461,6 @@ export default class ShowDataLayer {
         features: FeatureSource,
         doShowLayer?: Store<boolean>
     ): ShowDataLayer {
-
         return new ShowDataLayer(map, {
             layer: ShowDataLayer.rangeLayer,
             features,

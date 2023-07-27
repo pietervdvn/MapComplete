@@ -15,6 +15,7 @@ Fallback layer with items on which climbing _might_ be possible. It is loaded wh
 
 
   - This layer is shown at zoomlevel **19** and higher
+  - This layer is needed as dependency for layer [climbing_route](#climbing_route)
 
 
 
