@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 import { VariableUiElement } from "../Base/VariableUIElement"
 import { Translation } from "../i18n/Translation"
 import Svg from "../../Svg"

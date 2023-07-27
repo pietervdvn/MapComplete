@@ -20,4 +20,8 @@ module.exports = {
   ],
   plugins: ["@typescript-eslint"],
   root: true,
+  env: {
+    browser: true,
+    node: true,
+  },
 }
