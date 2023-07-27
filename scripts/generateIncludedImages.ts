@@ -11,6 +11,9 @@ function genImages(dryrun = false) {
         if (path.endsWith("license_info.json")) {
             continue
         }
+        if (path.endsWith(".license")) {
+            continue
+        }
 
         if (!path.endsWith(".svg")) {
             throw "Non-svg file detected in the svg files: " + path
