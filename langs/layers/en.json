@@ -9400,6 +9400,17 @@
                     }
                 }
             },
+            "fixate-north": {
+                "mappings": {
+                    "0": {
+                        "then": "Allow to rotate the map"
+                    },
+                    "1": {
+                        "then": "Always keep north pointing up"
+                    }
+                },
+                "question": "Should north always be up?"
+            },
             "inbox": {
                 "mappings": {
                     "0": {
@@ -9415,6 +9426,13 @@
                                 "text": "<b class='alert'>You have {_unreadMessages}</b><br/>Open your inbox"
                             }
                         }
+                    }
+                }
+            },
+            "language_picker": {
+                "mappings": {
+                    "0": {
+                        "then": "The language was set via an URL-parameter and cannot be set by the user.²"
                     }
                 }
             },

@@ -245,6 +245,15 @@
 |genre= POI, editor, education
 }}
 {{service_item
+|name= [https://mapcomplete.osm.be/elongated_coin elongated_coin]
+|region= Worldwide
+|lang= {{#language:en|en}}
+|descr= A MapComplete theme: Find penny presses to create your own elongated coins
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, elongated_coin
+}}
+{{service_item
 |name= [https://mapcomplete.osm.be/facadegardens facadegardens]
 |region= Worldwide
 |lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:it|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}

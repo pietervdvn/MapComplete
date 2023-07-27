@@ -52,6 +52,7 @@ export interface SpecialVisualizationState {
      * Works together with 'selectedElement' to indicate what properties should be displayed
      */
     readonly selectedLayer: UIEventSource<LayerConfig>
+    readonly selectedElementAndLayer: Store<{ feature: Feature; layer: LayerConfig }>
 
     /**
      * If data is currently being fetched from external sources

@@ -65,7 +65,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 
 This tagrendering has no question and is thus read-only
 

@@ -27,7 +27,14 @@
     "advertising": {
         "presets": {
             "0": {
-                "description": "Un grand équipement extérieur, principalement disposé dans les zones à fort trafic comme une route"
+                "description": "Un grand équipement extérieur, principalement disposé dans les zones à fort trafic comme une route",
+                "title": "un grand panneau"
+            },
+            "1": {
+                "title": "un panneau à affiches scellé au sol"
+            },
+            "2": {
+                "title": "un panneau à affiches monté sur un mur"
             },
             "3": {
                 "description": "Petit panneau pour l’affichage de proximité, généralement à destination des piétons",

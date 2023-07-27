@@ -1105,26 +1105,7 @@
           },
           {
             "or": [
-              "_country=at",
-              "_country=be",
-              "_country=cy",
-              "_country=de",
-              "_country=ee",
-              "_country=es",
-              "_country=fi",
-              "_country=fr",
-              "_country=gr",
-              "_country=hr",
-              "_country=ie",
-              "_country=it",
-              "_country=lt",
-              "_country=lu",
-              "_country=lv",
-              "_country=mt",
-              "_country=nl",
-              "_country=pt",
-              "_country=si",
-              "_country=sk"
+              "_currency=EUR"
             ]
           }
         ]
@@ -1156,7 +1137,8 @@
             "es": "Se aceptan monedas de 1 céntimo",
             "cs": "Jsou přijímány mince v hodnotě 1 centu",
             "id": "1 koin sen diterima"
-          }
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
         },
         {
           "if": "payment:coins:denominations=0.02 EUR",
@@ -1172,7 +1154,8 @@
             "es": "Se aceptan monedas de 2 céntimos",
             "cs": "Jsou přijímány mince v hodnotě 2 centů",
             "id": "Koin 2 sen diterima"
-          }
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
         },
         {
           "if": "payment:coins:denominations=0.05 EUR",
@@ -1188,7 +1171,8 @@
             "es": "Se aceptan monedas de 5 céntimos",
             "cs": "Jsou přijímány mince v hodnotě 5 centů",
             "id": "Koin 5 sen diterima"
-          }
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
         },
         {
           "if": "payment:coins:denominations=0.10 EUR",
@@ -1204,7 +1188,8 @@
             "es": "Se aceptan monedas de 10 céntimos",
             "cs": "Jsou přijímány mince v hodnotě 10 centů",
             "id": "Koin 10 sen diterima"
-          }
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
         },
         {
           "if": "payment:coins:denominations=0.20 EUR",
@@ -1220,7 +1205,8 @@
             "es": "Se aceptan monedas de 20 céntimos",
             "cs": "Jsou přijímány mince v hodnotě 20 centů",
             "id": "Koin 20 sen diterima"
-          }
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
         },
         {
           "if": "payment:coins:denominations=0.50 EUR",
@@ -1236,7 +1222,8 @@
             "es": "Se aceptan monedas de 50 céntimos",
             "cs": "Jsou přijímány mince v hodnotě 50 centů",
             "id": "Koin 50 sen diterima"
-          }
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
         },
         {
           "if": "payment:coins:denominations=1 EUR",
@@ -1251,7 +1238,8 @@
             "ca": "S'accepten monedes de 1 euro",
             "es": "Se aceptan monedas de 1 euro",
             "cs": "Jsou přijímány mince v hodnotě 1 eura"
-          }
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
         },
         {
           "if": "payment:coins:denominations=2 EUR",
@@ -1266,7 +1254,8 @@
             "ca": "S'accepten monedes de 2 euros",
             "es": "Se aceptan monedas de 2 euros",
             "cs": "Jsou přijímány mince v hodnotě 2 euro"
-          }
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
         }
       ]
     },
@@ -1282,26 +1271,7 @@
           },
           {
             "or": [
-              "_country=at",
-              "_country=be",
-              "_country=cy",
-              "_country=de",
-              "_country=ee",
-              "_country=es",
-              "_country=fi",
-              "_country=fr",
-              "_country=gr",
-              "_country=hr",
-              "_country=ie",
-              "_country=it",
-              "_country=lt",
-              "_country=lu",
-              "_country=lv",
-              "_country=mt",
-              "_country=nl",
-              "_country=pt",
-              "_country=si",
-              "_country=sk"
+              "_currency=EUR"
             ]
           }
         ]
@@ -1330,7 +1300,8 @@
             "cs": "Jsou přijímány bankovky v hodnotě 5 euro",
             "ca": "S'accepten billets de 5 euros",
             "fr": "Les billets de 5 euros ne sont pas acceptés"
-          }
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
         },
         {
           "if": "payment:notes:denominations=10 EUR",
@@ -1344,7 +1315,8 @@
             "cs": "Jsou přijímány bankovky v hodnotě 10 euro",
             "ca": "S'accepten bitllets de 10 euros",
             "fr": "Les billets de 10 euros sont acceptés"
-          }
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
         },
         {
           "if": "payment:notes:denominations=20 EUR",
@@ -1358,7 +1330,8 @@
             "cs": "Jsou přijímány bankovky v hodnotě 20 euro",
             "ca": "S'accepten bitllets de 20 euros",
             "fr": "Les billets de 20 euros sont acceptés"
-          }
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
         },
         {
           "if": "payment:notes:denominations=50 EUR",
@@ -1372,7 +1345,8 @@
             "cs": "Jsou přijímány bankovky v hodnotě 50 euro",
             "ca": "S'accepten bitllets de 50 euros",
             "fr": "Les billets de 50 euros sont acceptés"
-          }
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
         },
         {
           "if": "payment:notes:denominations=100 EUR",
@@ -1386,7 +1360,8 @@
             "cs": "Jsou přijímány bankovky v hodnotě 100 euro",
             "ca": "S'accepten bitllets de 100 euros",
             "fr": "Les billets de 100 euros sont acceptés"
-          }
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
         },
         {
           "if": "payment:notes:denominations=200 EUR",
@@ -1400,7 +1375,8 @@
             "cs": "Jsou přijímány bankovky v hodnotě 200 euro",
             "ca": "S'accepten bitllets de 200 euros",
             "fr": "Les billets de 200 euros sont acceptés"
-          }
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
         },
         {
           "if": "payment:notes:denominations=500 EUR",
@@ -1414,7 +1390,8 @@
             "cs": "Jsou přijímány bankovky v hodnotě 500 euro",
             "ca": "S'accepten bitllets de 500 euros",
             "fr": "Les billets de 500 euros sont acceptés"
-          }
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
         }
       ]
     },

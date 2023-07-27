@@ -2,10 +2,8 @@ import { UIEventSource } from "../../Logic/UIEventSource"
 import OpeningHoursPickerTable from "./OpeningHoursPickerTable"
 import { OH, OpeningHour } from "./OpeningHours"
 import { InputElement } from "../Input/InputElement"
-import BaseUIElement from "../BaseUIElement"
 
 export default class OpeningHoursPicker extends InputElement<OpeningHour[]> {
-    public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     private readonly _ohs: UIEventSource<OpeningHour[]>
     private readonly _backgroundTable: OpeningHoursPickerTable
 
@@ -19,10 +17,6 @@ export default class OpeningHoursPicker extends InputElement<OpeningHour[]> {
 
         this._backgroundTable = new OpeningHoursPickerTable(this._ohs)
         this._backgroundTable.ConstructElement()
-    }
-
-    InnerRender(): BaseUIElement {
-        return this._backgroundTable
     }
 
     GetValue(): UIEventSource<OpeningHour[]> {

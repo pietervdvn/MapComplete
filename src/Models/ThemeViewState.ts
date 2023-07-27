@@ -1,23 +1,27 @@
 import LayoutConfig from "./ThemeConfig/LayoutConfig"
-import {SpecialVisualizationState} from "../UI/SpecialVisualization"
-import {Changes} from "../Logic/Osm/Changes"
-import {ImmutableStore, Store, UIEventSource} from "../Logic/UIEventSource"
-import {FeatureSource, IndexedFeatureSource, WritableFeatureSource,} from "../Logic/FeatureSource/FeatureSource"
-import {OsmConnection} from "../Logic/Osm/OsmConnection"
-import {ExportableMap, MapProperties} from "./MapProperties"
+import { SpecialVisualizationState } from "../UI/SpecialVisualization"
+import { Changes } from "../Logic/Osm/Changes"
+import { ImmutableStore, Store, UIEventSource } from "../Logic/UIEventSource"
+import {
+    FeatureSource,
+    IndexedFeatureSource,
+    WritableFeatureSource,
+} from "../Logic/FeatureSource/FeatureSource"
+import { OsmConnection } from "../Logic/Osm/OsmConnection"
+import { ExportableMap, MapProperties } from "./MapProperties"
 import LayerState from "../Logic/State/LayerState"
-import {Feature, Point, Polygon} from "geojson"
+import { Feature, Point, Polygon } from "geojson"
 import FullNodeDatabaseSource from "../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
-import {Map as MlMap} from "maplibre-gl"
+import { Map as MlMap } from "maplibre-gl"
 import InitialMapPositioning from "../Logic/Actors/InitialMapPositioning"
-import {MapLibreAdaptor} from "../UI/Map/MapLibreAdaptor"
-import {GeoLocationState} from "../Logic/State/GeoLocationState"
+import { MapLibreAdaptor } from "../UI/Map/MapLibreAdaptor"
+import { GeoLocationState } from "../Logic/State/GeoLocationState"
 import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
-import {QueryParameters} from "../Logic/Web/QueryParameters"
+import { QueryParameters } from "../Logic/Web/QueryParameters"
 import UserRelatedState from "../Logic/State/UserRelatedState"
 import LayerConfig from "./ThemeConfig/LayerConfig"
 import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
-import {AvailableRasterLayers, RasterLayerPolygon, RasterLayerUtils} from "./RasterLayers"
+import { AvailableRasterLayers, RasterLayerPolygon, RasterLayerUtils } from "./RasterLayers"
 import LayoutSource from "../Logic/FeatureSource/Sources/LayoutSource"
 import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource"
 import FeaturePropertiesStore from "../Logic/FeatureSource/Actors/FeaturePropertiesStore"
@@ -28,26 +32,28 @@ import TitleHandler from "../Logic/Actors/TitleHandler"
 import ChangeToElementsActor from "../Logic/Actors/ChangeToElementsActor"
 import PendingChangesUploader from "../Logic/Actors/PendingChangesUploader"
 import SelectedElementTagsUpdater from "../Logic/Actors/SelectedElementTagsUpdater"
-import {BBox} from "../Logic/BBox"
+import { BBox } from "../Logic/BBox"
 import Constants from "./Constants"
 import Hotkeys from "../UI/Base/Hotkeys"
 import Translations from "../UI/i18n/Translations"
-import {GeoIndexedStoreForLayer} from "../Logic/FeatureSource/Actors/GeoIndexedStore"
-import {LastClickFeatureSource} from "../Logic/FeatureSource/Sources/LastClickFeatureSource"
-import {MenuState} from "./MenuState"
+import { GeoIndexedStoreForLayer } from "../Logic/FeatureSource/Actors/GeoIndexedStore"
+import { LastClickFeatureSource } from "../Logic/FeatureSource/Sources/LastClickFeatureSource"
+import { MenuState } from "./MenuState"
 import MetaTagging from "../Logic/MetaTagging"
 import ChangeGeometryApplicator from "../Logic/FeatureSource/Sources/ChangeGeometryApplicator"
-import {NewGeometryFromChangesFeatureSource} from "../Logic/FeatureSource/Sources/NewGeometryFromChangesFeatureSource"
+import { NewGeometryFromChangesFeatureSource } from "../Logic/FeatureSource/Sources/NewGeometryFromChangesFeatureSource"
 import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader"
 import ShowOverlayRasterLayer from "../UI/Map/ShowOverlayRasterLayer"
-import {Utils} from "../Utils"
-import {EliCategory} from "./RasterLayerProperties"
+import { Utils } from "../Utils"
+import { EliCategory } from "./RasterLayerProperties"
 import BackgroundLayerResetter from "../Logic/Actors/BackgroundLayerResetter"
 import SaveFeatureSourceToLocalStorage from "../Logic/FeatureSource/Actors/SaveFeatureSourceToLocalStorage"
 import BBoxFeatureSource from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import ThemeViewStateHashActor from "../Logic/Web/ThemeViewStateHashActor"
-import NoElementsInViewDetector, {FeatureViewState,} from "../Logic/Actors/NoElementsInViewDetector"
-import FilteredLayer from "./FilteredLayer";
+import NoElementsInViewDetector, {
+    FeatureViewState,
+} from "../Logic/Actors/NoElementsInViewDetector"
+import FilteredLayer from "./FilteredLayer"
 
 /**
  *
@@ -69,6 +75,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
     readonly osmConnection: OsmConnection
     readonly selectedElement: UIEventSource<Feature>
+    readonly selectedElementAndLayer: Store<{ feature: Feature; layer: LayerConfig }>
     readonly mapProperties: MapProperties & ExportableMap
     readonly osmObjectDownloader: OsmObjectDownloader
 
@@ -133,8 +140,23 @@ export default class ThemeViewState implements SpecialVisualizationState {
             layout,
             this.featureSwitches
         )
+        this.userRelatedState.fixateNorth.addCallbackAndRunD((fixated) => {
+            this.mapProperties.allowRotating.setData(fixated !== "yes")
+        })
         this.selectedElement = new UIEventSource<Feature | undefined>(undefined, "Selected element")
         this.selectedLayer = new UIEventSource<LayerConfig>(undefined, "Selected layer")
+
+        this.selectedElementAndLayer = this.selectedElement.mapD(
+            (feature) => {
+                const layer = this.selectedLayer.data
+                if (!layer) {
+                    return undefined
+                }
+                return { layer, feature }
+            },
+            [this.selectedLayer]
+        )
+
         this.geolocation = new GeoLocationHandler(
             geolocationState,
             this.selectedElement,
@@ -155,7 +177,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     rasterInfo.defaultState ?? true,
                     "Wether or not overlayer layer " + rasterInfo.id + " is shown"
                 )
-                const state = {isDisplayed}
+                const state = { isDisplayed }
                 overlayLayerStates.set(rasterInfo.id, state)
                 new ShowOverlayRasterLayer(rasterInfo, this.map, this.mapProperties, state)
             }
@@ -373,7 +395,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
     private initHotkeys() {
         Hotkeys.RegisterHotkey(
-            {nomod: "Escape", onUp: true},
+            { nomod: "Escape", onUp: true },
             Translations.t.hotkeyDocumentation.closeSidebar,
             () => {
                 this.selectedElement.setData(undefined)
@@ -394,7 +416,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
 
         Hotkeys.RegisterHotkey(
-            {shift: "O"},
+            { shift: "O" },
             Translations.t.hotkeyDocumentation.selectMapnik,
             () => {
                 this.mapProperties.rasterLayer.setData(AvailableRasterLayers.osmCarto)
@@ -413,17 +435,17 @@ export default class ThemeViewState implements SpecialVisualizationState {
         }
 
         Hotkeys.RegisterHotkey(
-            {nomod: "O"},
+            { nomod: "O" },
             Translations.t.hotkeyDocumentation.selectOsmbasedmap,
             () => setLayerCategory("osmbasedmap")
         )
 
-        Hotkeys.RegisterHotkey({nomod: "M"}, Translations.t.hotkeyDocumentation.selectMap, () =>
+        Hotkeys.RegisterHotkey({ nomod: "M" }, Translations.t.hotkeyDocumentation.selectMap, () =>
             setLayerCategory("map")
         )
 
         Hotkeys.RegisterHotkey(
-            {nomod: "P"},
+            { nomod: "P" },
             Translations.t.hotkeyDocumentation.selectAerial,
             () => setLayerCategory("photo")
         )
@@ -491,7 +513,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             ),
             range: new StaticFeatureSource(
                 this.mapProperties.maxbounds.map((bbox) =>
-                    bbox === undefined ? empty : <Feature[]>[bbox.asGeoJson({id: "range"})]
+                    bbox === undefined ? empty : <Feature[]>[bbox.asGeoJson({ id: "range" })]
                 )
             ),
             current_view: this.currentView,
@@ -521,12 +543,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
             })
         }
 
-        const rangeFLayer: FilteredLayer = this.layerState.filteredLayers
-            .get("range")
+        const rangeFLayer: FilteredLayer = this.layerState.filteredLayers.get("range")
 
         const rangeIsDisplayed = rangeFLayer?.isDisplayed
 
-        if (!QueryParameters.wasInitialized(FilteredLayer.queryParameterKey(rangeFLayer.layerDef))) {
+        if (
+            !QueryParameters.wasInitialized(FilteredLayer.queryParameterKey(rangeFLayer.layerDef))
+        ) {
             rangeIsDisplayed?.syncWith(this.featureSwitches.featureSwitchIsTesting, true)
         }
 

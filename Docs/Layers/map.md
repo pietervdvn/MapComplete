@@ -79,7 +79,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 
 This tagrendering has no question and is thus read-only
 
@@ -118,7 +118,7 @@ The question is  *What is the size of the shown area on the map?*
   - *A map of the rooms within a building*  corresponds with  `map_size=building`
   - *A map of special site, like of a historical castle, a park, a campus, a forest, ....*  corresponds with  `map_size=site`
   - *A map showing the village or town*  corresponds with  `map_size=village`
-  - * A map of a city.*  corresponds with  `map_size=city`
+  - * A map of a city*  corresponds with  `map_size=city`
   - *The map of an entire region, showing multiple cities and villages*  corresponds with  `map_size=region`
 
 

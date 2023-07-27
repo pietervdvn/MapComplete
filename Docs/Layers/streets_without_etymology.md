@@ -14,7 +14,7 @@ All objects which have an etymology known
 
 
 
-  - This layer is shown at zoomlevel **18** and higher
+  - This layer is shown at zoomlevel **15** and higher
 
 
 
@@ -130,7 +130,7 @@ This is rendered with  `Named after {name:etymology}`
 
 
 
-Show the images block at this location
+Show the questions block at this location
 
 This tagrendering has no question and is thus read-only
 

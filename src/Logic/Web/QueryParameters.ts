@@ -4,6 +4,7 @@
 import { UIEventSource } from "../UIEventSource"
 import Hash from "./Hash"
 import { Utils } from "../../Utils"
+import doc = Mocha.reporters.doc
 
 export class QueryParameters {
     static defaults: Record<string, string> = {}
@@ -21,6 +22,19 @@ export class QueryParameters {
         if (!this.initialized) {
             this.init()
         }
+
+        if (Utils.runningFromConsole) {
+            const location = Utils.getLocationInCode(-1)
+
+            documentation +=
+                "\n\nThis documentation is defined in the source code at [" +
+                location.filename +
+                "](" +
+                location.markdownLocation +
+                ")" +
+                "\n\n"
+        }
+
         QueryParameters.documentation.set(key, documentation)
         if (deflt !== undefined) {
             QueryParameters.defaults[key] = deflt
@@ -56,6 +70,9 @@ export class QueryParameters {
     public static wasInitialized(key: string): boolean {
         this.init()
         return QueryParameters._wasInitialized.has(key)
+    }
+    public static initializedParameters(): ReadonlyArray<string> {
+        return Array.from(QueryParameters._wasInitialized.keys())
     }
 
     private static addOrder(key) {
@@ -131,5 +148,4 @@ export class QueryParameters {
         QueryParameters._wasInitialized.clear()
         QueryParameters.order = []
     }
-
 }

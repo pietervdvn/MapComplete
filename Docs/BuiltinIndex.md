@@ -226,6 +226,8 @@
   - kindergarten_childcare
   - pharmacy
   - postoffices
+  - questions
+  - questions
   - shops
   - shower
   - sports_centre
@@ -380,6 +382,8 @@
   - climbing_gym
   - food
   - observation_tower
+  - questions
+  - questions
   - shops
   - ticket_validator
 
@@ -432,6 +436,7 @@
   - hackerspace
   - parking
   - picnic_table
+  - questions
   - railway_platforms
   - reception_desk
   - shops

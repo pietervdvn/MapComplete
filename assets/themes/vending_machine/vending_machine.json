@@ -2,11 +2,13 @@
   "id": "vending_machine",
   "title": {
     "en": "Vending Machines",
-    "nl": "Verkoopautomaten"
+    "nl": "Verkoopautomaten",
+    "de": "Verkaufsautomaten"
   },
   "description": {
     "en": "Find vending machines for everything",
-    "nl": "Vind verkoopautomaten voor alles"
+    "nl": "Vind verkoopautomaten voor alles",
+    "de": "Finde Verkaufautomaten für Alles"
   },
   "icon": "./assets/layers/vending_machine/vending_machine.svg",
   "startLat": 53.21102,

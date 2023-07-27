@@ -480,7 +480,8 @@
         {
           "question": {
             "en": "Has children books",
-            "nl": "Kinderboeken aanwezig"
+            "nl": "Kinderboeken aanwezig",
+            "de": "Hat Kinderbücher"
           },
           "osmTags": "books~i~.*children.*"
         }
@@ -492,7 +493,8 @@
         {
           "question": {
             "en": "Has books for adults",
-            "nl": "Boeken voor volwassenen aanwezig"
+            "nl": "Boeken voor volwassenen aanwezig",
+            "de": "Hat Bücher für Erwachsene"
           },
           "osmTags": "books~i~.*adults.*"
         }
@@ -513,14 +515,16 @@
         {
           "question": {
             "en": "Located indoors",
-            "nl": "Bevindt zich binnen"
+            "nl": "Bevindt zich binnen",
+            "de": "Befindet sich im Innenbereich"
           },
           "osmTags": "indoor=yes"
         },
         {
           "question": {
             "nl": "Bevindt zich buiten",
-            "en": "Located outdoors"
+            "en": "Located outdoors",
+            "de": "Befindet sich im Freien"
           },
           "osmTags": {
             "or": [

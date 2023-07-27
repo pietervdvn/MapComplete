@@ -15,6 +15,7 @@ import Locale from "../../UI/i18n/Locale"
 import LinkToWeblate from "../../UI/Base/LinkToWeblate"
 import FeatureSwitchState from "./FeatureSwitchState"
 import Constants from "../../Models/Constants"
+import { QueryParameters } from "../Web/QueryParameters"
 
 /**
  * The part of the state which keeps track of user-related stuff, e.g. the OSM-connection,
@@ -36,6 +37,7 @@ export default class UserRelatedState {
     public readonly installedUserThemes: Store<string[]>
     public readonly showAllQuestionsAtOnce: UIEventSource<boolean>
     public readonly showTags: UIEventSource<"no" | undefined | "always" | "yes" | "full">
+    public readonly fixateNorth: UIEventSource<undefined | "yes">
     public readonly homeLocation: FeatureSource
     public readonly language: UIEventSource<string>
     /**
@@ -87,18 +89,26 @@ export default class UserRelatedState {
         )
         this.language = this.osmConnection.GetPreference("language")
         this.showTags = <UIEventSource<any>>this.osmConnection.GetPreference("show_tags")
-
+        this.fixateNorth = <any>this.osmConnection.GetPreference("fixate-north")
         this.mangroveIdentity = new MangroveIdentity(
             this.osmConnection.GetLongPreference("identity", "mangrove")
         )
-
-        this.language.addCallbackAndRunD((language) => Locale.language.setData(language))
 
         this.installedUserThemes = this.InitInstalledUserThemes()
 
         this.homeLocation = this.initHomeLocation()
 
         this.preferencesAsTags = this.initAmendedPrefs(layout, featureSwitches)
+
+        this.syncLanguage()
+    }
+
+    private syncLanguage() {
+        if (QueryParameters.wasInitialized("language")) {
+            return
+        }
+
+        this.language.addCallbackAndRunD((language) => Locale.language.setData(language))
     }
 
     private static initUserRelatedState(): LayerConfig {
@@ -245,6 +255,10 @@ export default class UserRelatedState {
             amendedPrefs.data["__userjourney_" + key] = Constants.userJourney[key]
         }
 
+        for (const key of QueryParameters.initializedParameters()) {
+            amendedPrefs.data["__url_parameter_initialized:" + key] = "yes"
+        }
+
         const osmConnection = this.osmConnection
         osmConnection.preferencesHandler.preferences.addCallback((newPrefs) => {
             for (const k in newPrefs) {
@@ -267,6 +281,7 @@ export default class UserRelatedState {
         })
         const usersettingsConfig = UserRelatedState.usersettingsConfig
         const translationMode = osmConnection.GetPreference("translation-mode")
+
         Locale.language.mapD(
             (language) => {
                 amendedPrefs.data["_language"] = language
@@ -364,7 +379,14 @@ export default class UserRelatedState {
                     // Language is managed seperately
                     continue
                 }
-                this.osmConnection.GetPreference(key, undefined, { prefix: "" }).setData(tags[key])
+                if (tags[key + "-combined-0"]) {
+                    // A combined value exists
+                    this.osmConnection.GetLongPreference(key, "").setData(tags[key])
+                } else {
+                    this.osmConnection
+                        .GetPreference(key, undefined, { prefix: "" })
+                        .setData(tags[key])
+                }
             }
         })
 

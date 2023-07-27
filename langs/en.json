@@ -14,7 +14,7 @@
         "available": "This community speaks {native}",
         "intro": "Get in touch with other people to get to know them, learn from them, …",
         "notAvailable": "This community does not speak {native}",
-        "title": "Community index"
+        "title": "Get in touch with others"
     },
     "delete": {
         "cancel": "Cancel",
@@ -227,6 +227,7 @@
         },
         "morescreen": {
             "createYourOwnTheme": "Create your own MapComplete theme from scratch",
+            "enterToOpen": "Press enter to open theme",
             "hiddenExplanation": "These themes are only accessible to those with the link. You have discovered {hidden_discovered} of {total_hidden} hidden themes.",
             "intro": "<h3>More thematic maps?</h3>Do you enjoy collecting geodata? <br/>There are more themes available.",
             "noMatchingThemes": "No themes matched your search criteria",

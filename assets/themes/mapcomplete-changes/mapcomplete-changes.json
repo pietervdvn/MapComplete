@@ -76,7 +76,7 @@
           "id": "theme-id",
           "question": {
             "en": "What theme was used to make this change?",
-            "de": "Welches Thema wurde für diese Änderung verwendet?\""
+            "de": "Welches Thema wurde für diese Änderung verwendet?"
           },
           "freeform": {
             "key": "theme"

@@ -14,6 +14,7 @@ import { OsmTags } from "../Models/OsmFeature"
 import { UIEventSource } from "./UIEventSource"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
 import OsmObjectDownloader from "./Osm/OsmObjectDownloader"
+import countryToCurrency from "country-to-currency"
 
 /**
  * All elements that are needed to perform metatagging
@@ -583,6 +584,50 @@ export default class SimpleMetaTaggers {
         }
     )
 
+    private static currency = new InlineMetaTagger(
+        {
+            keys: ["_currency"],
+            doc: "Adds the currency valid for the object, based on country or explicit tagging. Can be a single currency or a semicolon-separated list of currencies. Empty if no currency is found.",
+            isLazy: true,
+        },
+        (feature: Feature, layer: LayerConfig, tagsStore: UIEventSource<OsmTags>) => {
+            Utils.AddLazyPropertyAsync(feature.properties, "_currency", async () => {
+                // Wait until _country is actually set
+                const tags = await tagsStore.AsPromise((tags) => !!tags._country)
+
+                const country = tags._country
+                // Initialize a list of currencies
+                const currencies = {}
+                // Check if there are any currency:XXX tags, add them to the map
+                for (const key in feature.properties) {
+                    if (key.startsWith("currency:")) {
+                        if (feature.properties[key] === "yes") {
+                            currencies[key.slice(9)] = true
+                        } else {
+                            currencies[key.slice(9)] = false
+                        }
+                    }
+                }
+
+                // Determine the default currency for the country
+                const defaultCurrency = countryToCurrency[country.toUpperCase()]
+
+                // If the default currency is not in the list, add it
+                if (defaultCurrency && !currencies[defaultCurrency]) {
+                    currencies[defaultCurrency] = true
+                }
+
+                if (currencies) {
+                    return Object.keys(currencies)
+                        .filter((key) => currencies[key])
+                        .join(";")
+                }
+                return ""
+            })
+            return true
+        }
+    )
+
     public static metatags: SimpleMetaTagger[] = [
         SimpleMetaTaggers.latlon,
         SimpleMetaTaggers.layerInfo,
@@ -601,6 +646,7 @@ export default class SimpleMetaTaggers {
         SimpleMetaTaggers.levels,
         SimpleMetaTaggers.referencingWays,
         SimpleMetaTaggers.timeSinceLastEdit,
+        SimpleMetaTaggers.currency,
     ]
 
     /**

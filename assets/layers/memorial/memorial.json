@@ -6,17 +6,20 @@
   },
   "title": {
     "render": {
-      "en": "Memorial plaque"
+      "en": "Memorial plaque",
+      "de": "Gedenktafel"
     }
   },
   "tagRenderings": [
     {
       "id": "inscription",
       "question": {
-        "en": "What is the inscription of this plaque?"
+        "en": "What is the inscription of this plaque?",
+        "de": "Wie lautet die Inschrift auf dieser Gedenktafel?"
       },
       "render": {
-        "en": "The inscription on this plaque reads: <p><i>{inscription}<i></p>"
+        "en": "The inscription on this plaque reads: <p><i>{inscription}<i></p>",
+        "de": "Die Inschrift auf dieser Gedenktafel lautet: <p><i>{inscription}<i></p>"
       },
       "freeform": {
         "key": "inscription",

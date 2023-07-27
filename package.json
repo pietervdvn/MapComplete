@@ -1,6 +1,6 @@
 {
   "name": "mapcomplete",
-  "version": "0.31.0",
+  "version": "0.31.1",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
@@ -76,6 +76,7 @@
     "@types/showdown": "^2.0.0",
     "chart.js": "^3.8.0",
     "country-language": "^0.1.7",
+    "country-to-currency": "^1.0.10",
     "csv-parse": "^5.1.0",
     "doctest-ts-improved": "^0.8.8",
     "email-validator": "^2.0.4",

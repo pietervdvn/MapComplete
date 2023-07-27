@@ -210,6 +210,9 @@
         "de": "eine Kletterroute",
         "it": "una via di arrampicata"
       },
+      "snapToLayer": [
+        "climbing_opportunity"
+      ],
       "tags": [
         "sport=climbing",
         "climbing=route"

@@ -23,7 +23,6 @@
 
     export let attribution = false
     export let center: {lng: number, lat: number} | Readable<{ lng: number; lat: number }> = writable({lng: 0, lat: 0})
-    console.trace("Center is", center)
     export let zoom: Readable<number> = writable(1)
 
     const styleUrl = AvailableRasterLayers.maplibre.properties.url
