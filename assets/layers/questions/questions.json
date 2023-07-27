@@ -2150,6 +2150,27 @@
           }
         }
       ]
+    },
+    {
+      "id": "survey_date",
+      "question": {
+        "en": "When was this object last surveyed?"
+      },
+      "freeform": {
+        "key": "survey:date",
+        "type": "date"
+      },
+      "render": {
+        "en": "This object was last surveyed on <b>{survey:date}</b>"
+      },
+      "mappings": [
+        {
+          "if": "survey:date:={_now:date}",
+          "then": {
+            "en": "This object was last surveyed today"
+          }
+        }
+      ]
     }
   ]
 }
