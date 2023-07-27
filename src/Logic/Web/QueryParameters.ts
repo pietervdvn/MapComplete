@@ -17,14 +17,17 @@ export class QueryParameters {
     public static GetQueryParameter(
         key: string,
         deflt: string,
-        documentation?: string
+        documentation?: string,
+        options?: {
+            stackOffset?: number
+        }
     ): UIEventSource<string> {
         if (!this.initialized) {
             this.init()
         }
 
         if (Utils.runningFromConsole) {
-            const location = Utils.getLocationInCode(-1)
+            const location = Utils.getLocationInCode(-1 + (options?.stackOffset ?? 0))
 
             documentation +=
                 "\n\nThis documentation is defined in the source code at [" +
@@ -63,7 +66,7 @@ export class QueryParameters {
         documentation?: string
     ): UIEventSource<boolean> {
         return UIEventSource.asBoolean(
-            QueryParameters.GetQueryParameter(key, "" + deflt, documentation)
+            QueryParameters.GetQueryParameter(key, "" + deflt, documentation, {stackOffset: -1})
         )
     }
 
