@@ -1,4 +1,7 @@
 {
+    "advanced": {
+        "title": "Avanserte funksjoner"
+    },
     "centerMessage": {
         "loadingData": "Laster inn data …",
         "ready": "Ferdig",
