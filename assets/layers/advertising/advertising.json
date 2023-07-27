@@ -1014,7 +1014,8 @@
         "es": "una valla publicitària",
         "de": "eine Werbetafel",
         "cs": "billboard",
-        "pt": "um outdoor"
+        "pt": "um outdoor",
+        "fr": "un grand panneau"
       },
       "description": {
         "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads",
@@ -1041,7 +1042,8 @@
         "es": "un mupi",
         "de": "eine freistehende Posterbox",
         "cs": "volně stojící plakátovací skříň",
-        "pt": "uma caixa de pôster independente"
+        "pt": "uma caixa de pôster independente",
+        "fr": "un panneau à affiches scellé au sol"
       },
       "exampleImages": [
         "./assets/themes/advertising/Mupi_spain.jpg",
@@ -1058,7 +1060,8 @@
         "es": "un mupi sobre la pared",
         "de": "eine wandmontierte Posterbox",
         "cs": "plakátovací skříň připevněná na stěnu",
-        "pt": "uma caixa de pôster montada em uma parede"
+        "pt": "uma caixa de pôster montada em uma parede",
+        "fr": "un panneau à affiches monté sur un mur"
       },
       "snapToLayer": "walls_and_buildings"
     },

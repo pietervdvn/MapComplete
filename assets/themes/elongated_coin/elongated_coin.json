@@ -1,20 +1,24 @@
 {
   "id": "elongated_coin",
   "title": {
-    "en": "Penny Presses"
+    "en": "Penny Presses",
+    "de": "Münzpressen"
   },
   "description": {
-    "en": "Find penny presses to create your own elongated coins."
+    "en": "Find penny presses to create your own elongated coins.",
+    "de": "Finde Münzpresse um deine eigenen Prägemünzen zu Pressen."
   },
   "icon": "./assets/themes/elongated_coin/penny.svg",
   "layers": [
     {
       "id": "elongated_coin",
       "name": {
-        "en": "Penny Presses"
+        "en": "Penny Presses",
+        "de": "Münzpressen"
       },
       "description": {
-        "en": "Layer showing penny presses."
+        "en": "Layer showing penny presses.",
+        "de": "Ebene mit Münzpressen."
       },
       "source": {
         "osmTags": {
@@ -26,7 +30,8 @@
       },
       "title": {
         "render": {
-          "en": "Penny Press"
+          "en": "Penny Press",
+          "de": "Münzpresse"
         }
       },
       "tagRenderings": [
@@ -35,41 +40,48 @@
         {
           "id": "designs",
           "question": {
-            "en": "How many designs are available?"
+            "en": "How many designs are available?",
+            "de": "Wieviele Motive sind verfügbar?"
           },
           "freeform": {
             "key": "coin:design_count",
             "type": "pnat",
             "placeholder": {
-              "en": "Number of designs (e.g. 5)"
+              "en": "Number of designs (e.g. 5)",
+              "de": "Motivanzahl (z.B. 5)"
             }
           },
           "render": {
-            "en": "This penny press has {coin:design_count} designs available."
+            "en": "This penny press has {coin:design_count} designs available.",
+            "de": "Die Münzpresse hat {coin:design_count} Motive zur Auswahl."
           },
           "mappings": [
             {
               "if": "coin:design_count=1",
               "then": {
-                "en": "This penny press has one design available."
+                "en": "This penny press has one design available.",
+                "de": "Die Münzpresse hat ein Motiv zur Auswahl."
               }
             },
             {
               "if": "coin:design_count=2",
               "then": {
-                "en": "This penny press has two designs available."
+                "en": "This penny press has two designs available.",
+                "de": "Die Münzpresse hat zwei Motive zur Auswahl."
               }
             },
             {
               "if": "coin:design_count=3",
               "then": {
-                "en": "This penny press has three designs available."
+                "en": "This penny press has three designs available.",
+                "de": "Die Münzpresse hat drei Motive zur Auswahl."
               }
             },
             {
               "if": "coin:design_count=4",
               "then": {
-                "en": "This penny press has four designs available."
+                "en": "This penny press has four designs available.",
+                "de": "Die Münzpresse hat vier Motive zur Auswahl."
               }
             }
           ]
@@ -77,102 +89,118 @@
         {
           "id": "coin",
           "question": {
-            "en": "What coin is used for pressing?"
+            "en": "What coin is used for pressing?",
+            "de": "Welche Münze wird zum Pressen verwendet?"
           },
           "freeform": {
             "key": "coin:type",
             "type": "string",
             "placeholder": {
-              "en": "Coin type (e.g. 10cent)"
+              "en": "Coin type (e.g. 10cent)",
+              "de": "Münzenart (z.B. 10 Cent)"
             }
           },
           "mappings": [
             {
               "if": "coin:type=2cent",
               "then": {
-                "en": "This penny press uses a 2 cent coin for pressing."
+                "en": "This penny press uses a 2 cent coin for pressing.",
+                "de": "Die Münzpresse benötigt eine 2 Cent Münze um zu Pressen."
               }
             },
             {
               "if": "coin:type=5cent",
               "then": {
-                "en": "This penny press uses a 5 cent coin for pressing."
+                "en": "This penny press uses a 5 cent coin for pressing.",
+                "de": "Die Münzpresse benötigt eine 5 Cent Münze um zu Pressen."
               }
             },
             {
               "if": "coin:type=10cent",
               "then": {
-                "en": "This penny press uses a 10 cent coin for pressing."
+                "en": "This penny press uses a 10 cent coin for pressing.",
+                "de": "Die Münzpresse benötigt eine 10 Cent Münze um zu Pressen."
               }
             },
             {
               "if": "coin:type=25cent",
               "then": {
-                "en": "This penny press uses a 25 cent coin for pressing."
+                "en": "This penny press uses a 25 cent coin for pressing.",
+                "de": "Die Münzpresse benötigt eine 25 Cent Münze um zu Pressen."
               },
               "hideInAnswer": "_currency!~.*USD.*"
             },
             {
               "if": "coin:type=50cent",
               "then": {
-                "en": "This penny press uses a 50 cent coin for pressing."
+                "en": "This penny press uses a 50 cent coin for pressing.",
+                "de": "Die Münzpresse benötigt eine 50 Cent Münze um zu Pressen."
               },
               "hideInAnswer": "_currency!~.*USD.*"
             }
           ],
           "render": {
-            "en": "This penny press uses a {coin:type} coin for pressing."
+            "en": "This penny press uses a {coin:type} coin for pressing.",
+            "de": "Die Münzpresse benötigt eine {coin:type} Münze um zu Pressen."
           }
         },
         "website",
         {
           "id": "charge",
           "question": {
-            "en": "How much does it cost to press a penny?"
+            "en": "How much does it cost to press a penny?",
+            "de": "Wieviel kostet es eine Münze zu Pressen?"
           },
           "freeform": {
             "key": "charge",
             "placeholder": {
-              "en": "Cost (e.g. 0.50 EUR)"
+              "en": "Cost (e.g. 0.50 EUR)",
+              "de": "Einwurf (z.B. 0,5€)"
             }
           },
           "mappings": [
             {
               "if": "charge=1 EUR",
               "then": {
-                "en": "It costs 1 euro to press a penny."
+                "en": "It costs 1 euro to press a penny.",
+                "de": "Eine Münze zu Pressen kostet 1 Euro."
               },
               "hideInAnswer": "_currency!~.*EUR.*"
             },
             {
               "if": "charge=2 EUR",
               "then": {
-                "en": "It costs 2 euros to press a penny."
+                "en": "It costs 2 euros to press a penny.",
+                "de": "Eine Münze zu Pressen kostet 2€."
               },
               "hideInAnswer": "_currency!~.*EUR.*"
             }
           ],
           "render": {
-            "en": "It costs {charge} to press a penny."
+            "en": "It costs {charge} to press a penny.",
+            "de": "Es kostet {charge}€ um eine Münze zu Pressen."
           }
         },
         "denominations-coins",
         {
           "id": "indoor",
           "question": {
-            "en": "Is the penny press indoors?"
+            "en": "Is the penny press indoors?",
+            "de": "Befindet sich die Münzpresse im Inneren?"
           },
           "mappings": [
             {
               "if": "indoor=yes",
               "then": {
-                "en": "This penny press is located indoors."
+                "en": "This penny press is located indoors.",
+                "de": "Die Münzpresse befindet sich im Inneren."
               }
             },
             {
               "if": "indoor=no",
               "then": {
-                "en": "This penny press is located outdoors."
+                "en": "This penny press is located outdoors.",
+                "de": "Die Münzpresse befindet sich Draußen."
               }
             }
           ]
@@ -197,7 +225,8 @@
       "presets": [
         {
           "title": {
-            "en": "a penny press"
+            "en": "a penny press",
+            "de": "Eine Münzpresse"
           },
           "tags": [
             "amenity=vending_machine",

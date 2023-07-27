@@ -53,25 +53,29 @@
         {
           "if": "map_type=topo",
           "then": {
-            "en": "Topographical map <p class='subtle'>The map contains contour lines. </p>"
+            "en": "Topographical map <p class='subtle'>The map contains contour lines. </p>",
+            "de": "Topographische Katte <p class='subtle'> Die Karte enthält Höhenlinien. </p>"
           }
         },
         {
           "if": "map_type=street",
           "then": {
-            "en": "A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>"
+            "en": "A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>",
+            "de": "Eine Karte mit allen Straßen und Wegen eines Gebietes. <p class='subtle'>Die Straßen sind meist benannt; die Winkel, die Entfernungen, etc. stimmen</p>"
           }
         },
         {
           "if": "map_type=scheme",
           "then": {
-            "en": "This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> "
+            "en": "This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> ",
+            "de": "Dies ist eine schematische Karte. <p class='subtle'>Eine skizzierte Karte mit nur wichtigen Wegen und POIs. Die Winkel, Entfernungen usw. sind lediglich illustrativ, nicht genau.</p> "
           }
         },
         {
           "if": "map_type=toposcope",
           "then": {
-            "en": "This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>"
+            "en": "This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>",
+            "de": "Dies ist ein Toposkop. <p class='subtle'>Eine Markierung, die an hohen Stellen angebracht ist und die Richtung zu wichtigen Landschaftsobjekten anzeigt, die von diesem Punkt aus gesehen werden können<p>"
           }
         }
       ]
@@ -86,7 +90,8 @@
         {
           "if": "map_size=building",
           "then": {
-            "en": "A map of the rooms within a building"
+            "en": "A map of the rooms within a building",
+            "de": "Eine Karte der Räume innerhalb eines Gebäudes"
           }
         },
         {
@@ -99,7 +104,8 @@
         {
           "if": "map_size=village",
           "then": {
-            "en": "A map showing the village or town"
+            "en": "A map showing the village or town",
+            "de": "Eine Karte, die das Dorf oder die Stadt anzeigt"
           }
         },
         {

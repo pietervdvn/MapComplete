@@ -276,7 +276,7 @@
             "answeredMultipleSkippedMultiple": "Je beantwoorde {answered} vragen en sloeg {skipped} vragen over",
             "answeredMultipleSkippedOne": "Je beantwoorde {answered} vragen en sloeg er één over",
             "answeredOne": "Je beantwoordde één vraag",
-            "answeredOneSkippedMultiple": "Je beantwoordde één vraag en sloeg er één over",
+            "answeredOneSkippedMultiple": "Je beantwoordde één vraag en sloeg er {skipped} over",
             "answeredOneSkippedOne": "Je beantwoorde één vraag en sloeg een andere vraag over",
             "done": "Geen verdere vragen! Bedankt!",
             "reactivate": "Heractiveer vragen die je oversloeg",
