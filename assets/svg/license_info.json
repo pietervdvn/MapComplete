@@ -395,7 +395,7 @@
   },
   {
     "path": "eye.svg",
-    "license": "CC-BY-SA-3.0-UNPORTED",
+    "license": "CC-BY-SA-3.0",
     "authors": [
       "Dave Gandy"
     ],
@@ -817,7 +817,7 @@
   },
   {
     "path": "move.svg",
-    "license": "CC-BY-SA-3.0-UNPORTED",
+    "license": "CC-BY-SA-3.0",
     "authors": [
       "MGalloway (WMF)"
     ],
@@ -1233,7 +1233,7 @@
   },
   {
     "path": "teardrop_with_hole_green.svg",
-    "license": "CREATIVE-COMMONS-4.0-BY-NC",
+    "license": "CC-BY-NC-4.0",
     "authors": [],
     "sources": [
       "https://pngimg.com/image/46283"

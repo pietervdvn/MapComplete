@@ -3,7 +3,7 @@ Upstream-Name: MapComplete
 Upstream-Contact: Pieter Vander Vennet <pietervdvn@posteo.net>
 Source: https://github.com/pietervdvn/MapComplete
 
-Files: scripts/* UI/* Utils/* Customizations/* *.html Docs/* assets/*/*/*.json langs/* test/* Models/* Logic/*
+Files: scripts/* src/* *.html Docs/* assets/*/*/*.json langs/* test/* assets/*/*/*.json public/assets/*/*/*.json public/css/*
 Copyright: MapComplete contributors
 License: GPL-3.0-or-later
 

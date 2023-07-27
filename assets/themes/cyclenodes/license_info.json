@@ -1,7 +1,7 @@
 [
   {
     "path": "logo.svg",
-    "license": "GPL",
+    "license": "GPL-3.0-only",
     "authors": [
       "sebkur"
     ],

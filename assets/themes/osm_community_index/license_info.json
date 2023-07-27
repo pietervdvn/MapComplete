@@ -1,7 +1,7 @@
 [
   {
     "path": "osm.svg",
-    "license": "ISC-LICENSE",
+    "license": "ISC",
     "authors": [
       "osmlab"
     ],

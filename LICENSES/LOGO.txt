@@ -1,0 +1,9 @@
+LOGO
+
+The attached file is the logo of an company, organization or brand.
+This logo is used under a FAIR-USE doctrine, e.g. 
+
+- in the context of a map feature, to indicate that this feature is operated by this organization or that this feature is branded similarly in the same way. Keep in mind that the data might be wrong and that no relationship between the author of the software and this organization might exist
+- in the context of a thematic map, to indicate that this map has been developed for this organisation or with funds of this organization.
+
+The inclusion of this logo does by no means give others the right to reuse or modify this logo.

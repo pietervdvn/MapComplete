@@ -11,7 +11,7 @@
   },
   {
     "path": "telescope.svg",
-    "license": "GPL",
+    "license": "GPL-2.0-or-later",
     "authors": [
       "Kenny Sing/Elegant Themes"
     ],
