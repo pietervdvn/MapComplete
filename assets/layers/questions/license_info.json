@@ -1,7 +1,7 @@
 [
   {
     "path": "100euro.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OpenClipart",
       "frankes"
@@ -12,7 +12,7 @@
   },
   {
     "path": "10cent.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OpenClipart",
       "frankes"
@@ -23,7 +23,7 @@
   },
   {
     "path": "10euro.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OpenClipart",
       "frankes"
@@ -34,7 +34,7 @@
   },
   {
     "path": "1cent.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OpenClipart",
       "frankes"
@@ -45,7 +45,7 @@
   },
   {
     "path": "1euro.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OpenClipart",
       "frankes"
@@ -56,7 +56,7 @@
   },
   {
     "path": "200euro.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OpenClipart",
       "frankes"
@@ -67,7 +67,7 @@
   },
   {
     "path": "20cent.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OpenClipart",
       "frankes"
@@ -78,7 +78,7 @@
   },
   {
     "path": "20euro.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OpenClipart",
       "frankes"
@@ -89,7 +89,7 @@
   },
   {
     "path": "2cent.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OpenClipart",
       "frankes"
@@ -100,7 +100,7 @@
   },
   {
     "path": "2euro.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OpenClipart",
       "frankes"
@@ -111,7 +111,7 @@
   },
   {
     "path": "500euro.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OpenClipart",
       "frankes"
@@ -122,7 +122,7 @@
   },
   {
     "path": "50cent.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OpenClipart",
       "frankes"
@@ -133,7 +133,7 @@
   },
   {
     "path": "50euro.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OpenClipart",
       "frankes"
@@ -144,7 +144,7 @@
   },
   {
     "path": "5cent.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OpenClipart",
       "frankes"
@@ -155,7 +155,7 @@
   },
   {
     "path": "5euro.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OpenClipart",
       "frankes"
@@ -166,7 +166,7 @@
   },
   {
     "path": "audio_induction_loop.svg",
-    "license": "CC-BY 4.0",
+    "license": "CC-BY-4.0",
     "authors": [
       "Carl Holderness"
     ],
@@ -176,7 +176,7 @@
   },
   {
     "path": "audio_induction_loop_missing.svg",
-    "license": "CC-BY 4.0",
+    "license": "CC-BY-4.0",
     "authors": [
       "Carl Holderness"
     ],
@@ -186,7 +186,7 @@
   },
   {
     "path": "cash.svg",
-    "license": "CC-BY 3.0",
+    "license": "CC-BY-3.0",
     "authors": [
       "Online Web Fonts"
     ],
@@ -196,7 +196,7 @@
   },
   {
     "path": "coins.svg",
-    "license": "CC-BY 3.0",
+    "license": "CC-BY-3.0",
     "authors": [
       "Online Web Fonts"
     ],
@@ -206,7 +206,7 @@
   },
   {
     "path": "nfc_card.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Stijn Wens"
     ],
@@ -216,7 +216,7 @@
   },
   {
     "path": "no_smoking.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "AIGA"
     ],
@@ -227,7 +227,7 @@
   },
   {
     "path": "notes.svg",
-    "license": "CC-BY 3.0",
+    "license": "CC-BY-3.0",
     "authors": [
       "Online Web Fonts"
     ],
@@ -237,7 +237,7 @@
   },
   {
     "path": "payment_card.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       " \tMaxi Koichi (maxixam)"
     ],
@@ -247,7 +247,7 @@
   },
   {
     "path": "phone.svg",
-    "license": "CC-BY 3.0",
+    "license": "CC-BY-3.0",
     "authors": [
       "@ tyskrat"
     ],
@@ -257,7 +257,7 @@
   },
   {
     "path": "phone.svg",
-    "license": "CC-BY 3.0",
+    "license": "CC-BY-3.0",
     "authors": [
       "@ tyskrat"
     ],
@@ -277,19 +277,19 @@
   },
   {
     "path": "send_email.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "send_email.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "smartphone.svg",
-    "license": "CC-BY 3.0",
+    "license": "CC-BY-3.0",
     "authors": [
       "To Uyen"
     ],
@@ -299,7 +299,7 @@
   },
   {
     "path": "smoking.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Wiki-User03",
       "ZooFari"

@@ -1,7 +1,7 @@
 [
   {
     "path": "FlandersArtSans-Light.woff",
-    "license": "All rights reserved",
+    "license": "ALL-RIGHTS-RESERVED",
     "authors": [
       "Jo De Baerdemaeker "
     ],
@@ -11,7 +11,7 @@
   },
   {
     "path": "FlandersArtSerif-Medium.woff",
-    "license": "All rights reserved",
+    "license": "ALL-RIGHTS-RESERVED",
     "authors": [
       "Jo De Baerdemaeker "
     ],
@@ -21,7 +21,7 @@
   },
   {
     "path": "avatar.png",
-    "license": "Logo",
+    "license": "LOGO",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -31,7 +31,7 @@
   },
   {
     "path": "bench.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -42,7 +42,7 @@
   },
   {
     "path": "bicycle_rental.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -53,7 +53,7 @@
   },
   {
     "path": "charging_station_ebike.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -64,7 +64,7 @@
   },
   {
     "path": "cycle_pump.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -75,7 +75,7 @@
   },
   {
     "path": "cycle_repair.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -86,7 +86,7 @@
   },
   {
     "path": "cycle_repair_and_pump.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -97,7 +97,7 @@
   },
   {
     "path": "logo.png",
-    "license": "Logo (all rights reserved)",
+    "license": "LOGO",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -107,7 +107,7 @@
   },
   {
     "path": "logo.svg",
-    "license": "Creative Commons 4.0 BY-NC",
+    "license": "CC-BY-NC-4.0",
     "authors": [],
     "sources": [
       "https://pngimg.com/image/46283"
@@ -115,7 +115,7 @@
   },
   {
     "path": "observation_platform.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -126,7 +126,7 @@
   },
   {
     "path": "observation_tower.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -137,7 +137,7 @@
   },
   {
     "path": "picnic_table.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -148,7 +148,7 @@
   },
   {
     "path": "pin je punt1.jpg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -159,7 +159,7 @@
   },
   {
     "path": "pin je punt2.jpg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -170,7 +170,7 @@
   },
   {
     "path": "pin je punt3.jpg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -181,7 +181,7 @@
   },
   {
     "path": "pin je punt4.jpg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -192,7 +192,7 @@
   },
   {
     "path": "pin je punt5.jpg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -203,7 +203,7 @@
   },
   {
     "path": "pin je punt6.jpg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -214,7 +214,7 @@
   },
   {
     "path": "playground.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -225,7 +225,7 @@
   },
   {
     "path": "toilets.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -236,7 +236,7 @@
   },
   {
     "path": "toilets_wheelchair.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],
@@ -247,7 +247,7 @@
   },
   {
     "path": "toilets_wheelchair.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Toerisme Vlaanderen"
     ],

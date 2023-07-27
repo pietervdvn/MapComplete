@@ -1,7 +1,7 @@
 [
   {
     "path": "caravan.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OsmAnd"
     ],
@@ -12,7 +12,7 @@
   },
   {
     "path": "caravan_green.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OsmAnd"
     ],
@@ -23,7 +23,7 @@
   },
   {
     "path": "sanitary_dump_station.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OsmAnd"
     ],
@@ -34,7 +34,7 @@
   },
   {
     "path": "social_image.jpg",
-    "license": "CC-BY-SA 3.0",
+    "license": "CC-BY-SA-3.0",
     "authors": [
       "ES01"
     ],

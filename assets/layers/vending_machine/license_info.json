@@ -1,7 +1,7 @@
 [
   {
     "path": "cow.svg",
-    "license": "CC-BY 4.0",
+    "license": "CC-BY-4.0",
     "authors": [
       "Font Awesome"
     ],
@@ -11,7 +11,7 @@
   },
   {
     "path": "egg.svg",
-    "license": "CC-BY 4.0",
+    "license": "CC-BY-4.0",
     "authors": [
       "Font Awesome"
     ],
@@ -21,7 +21,7 @@
   },
   {
     "path": "honey.svg",
-    "license": "CC-BY 4.0",
+    "license": "CC-BY-4.0",
     "authors": [
       "Mushki Brichta"
     ],
@@ -31,7 +31,7 @@
   },
   {
     "path": "mug-saucer.svg",
-    "license": "CC-BY 4.0",
+    "license": "CC-BY-4.0",
     "authors": [
       "Font Awesome"
     ],
@@ -41,7 +41,7 @@
   },
   {
     "path": "potato.svg",
-    "license": "CC-BY 3.0",
+    "license": "CC-BY-3.0",
     "authors": [
       "Pavel Melnikov",
       "The Noun Project"
@@ -52,7 +52,7 @@
   },
   {
     "path": "smoking.svg",
-    "license": "CC-BY 4.0",
+    "license": "CC-BY-4.0",
     "authors": [
       "Font Awesome"
     ],
@@ -62,7 +62,7 @@
   },
   {
     "path": "utensils.svg",
-    "license": "CC-BY 4.0",
+    "license": "CC-BY-4.0",
     "authors": [
       "Font Awesome"
     ],
@@ -72,7 +72,7 @@
   },
   {
     "path": "vending_machine.svg",
-    "license": "CC-BY 4.0",
+    "license": "CC-BY-4.0",
     "authors": [
       "Vectorportal.com"
     ],

@@ -1,7 +1,7 @@
 [
   {
     "path": "pushchair.svg",
-    "license": "CC-BY",
+    "license": "CC-BY-4.0",
     "authors": [
       "Freepik"
     ],
@@ -11,7 +11,7 @@
   },
   {
     "path": "trail.svg",
-    "license": "CC-BY",
+    "license": "CC-BY-4.0",
     "authors": [
       "Freepik"
     ],
@@ -21,7 +21,7 @@
   },
   {
     "path": "wheelchair.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [],
     "sources": [
       "https://wiki.openstreetmap.org/wiki/File:Wheelchair_symbol.svg"

@@ -1,7 +1,7 @@
 [
   {
     "path": "batteries.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick"
     ],
@@ -11,7 +11,7 @@
   },
   {
     "path": "beverage_cartons.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick"
     ],
@@ -21,7 +21,7 @@
   },
   {
     "path": "bicycles.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Antwerpenize Bike Font"
     ],
@@ -29,7 +29,7 @@
   },
   {
     "path": "cans.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick"
     ],
@@ -39,7 +39,7 @@
   },
   {
     "path": "clothes.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Adrien Pavie",
       "modified from EmojiOne 2: U+1F456, U+1F45"
@@ -50,7 +50,7 @@
   },
   {
     "path": "cooking_oil.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick"
     ],
@@ -60,7 +60,7 @@
   },
   {
     "path": "engine_oil.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick"
     ],
@@ -70,7 +70,7 @@
   },
   {
     "path": "fluorescent_tubes.svg",
-    "license": "CC-BY",
+    "license": "CC-BY-4.0",
     "authors": [
       "Noun Project",
       "shashank singh"
@@ -81,7 +81,7 @@
   },
   {
     "path": "garden_waste.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick",
       "modified from Twemoji: U+1F33F"
@@ -92,7 +92,7 @@
   },
   {
     "path": "glass.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick"
     ],
@@ -102,7 +102,7 @@
   },
   {
     "path": "glass_bottles.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick"
     ],
@@ -112,7 +112,7 @@
   },
   {
     "path": "light_bulbs.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OpenClipArt",
       "fabiovaleggia"
@@ -123,7 +123,7 @@
   },
   {
     "path": "needles.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [],
     "sources": [
       "https://svgsilh.com/image/1294131.html"
@@ -131,7 +131,7 @@
   },
   {
     "path": "newspaper.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick",
       "modified from EmojiOne 2: U+1F4F0"
@@ -142,7 +142,7 @@
   },
   {
     "path": "paper.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick"
     ],
@@ -152,7 +152,7 @@
   },
   {
     "path": "plastic.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick"
     ],
@@ -162,7 +162,7 @@
   },
   {
     "path": "plastic_bottles.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick"
     ],
@@ -172,7 +172,7 @@
   },
   {
     "path": "plastic_packaging.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick"
     ],
@@ -182,7 +182,7 @@
   },
   {
     "path": "printer_cartridges.svg",
-    "license": "CC-BY",
+    "license": "CC-BY-4.0",
     "authors": [
       "Noun Project",
       "Zach Bogart"
@@ -193,7 +193,7 @@
   },
   {
     "path": "recycling-14.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Michael Glanznig"
     ],
@@ -203,7 +203,7 @@
   },
   {
     "path": "scrap_metal.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick"
     ],
@@ -213,7 +213,7 @@
   },
   {
     "path": "shoes.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick",
       "modified from EmojiOne 2: U+1F45F"
@@ -224,7 +224,7 @@
   },
   {
     "path": "small_electrical_appliances.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "EmojiOne 2: U+1F50C"
     ],

@@ -1,7 +1,7 @@
 [
   {
     "path": "bench_poi.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick"
     ],
@@ -12,7 +12,7 @@
   },
   {
     "path": "bench_public_transport.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick"
     ],

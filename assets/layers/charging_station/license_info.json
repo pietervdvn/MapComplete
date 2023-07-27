@@ -12,7 +12,7 @@
   },
   {
     "path": "Chademo_type4.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "GreatDrok"
     ],
@@ -22,7 +22,7 @@
   },
   {
     "path": "Tesla-hpwc-model-s.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "GreatDrok"
     ],
@@ -32,7 +32,7 @@
   },
   {
     "path": "Type1-ccs.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "GreatDrok"
     ],
@@ -42,7 +42,7 @@
   },
   {
     "path": "Type1_J1772.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "GreatDrok"
     ],
@@ -52,7 +52,7 @@
   },
   {
     "path": "Type2_CCS.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "GreatDrok"
     ],
@@ -62,7 +62,7 @@
   },
   {
     "path": "Type2_socket.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "GreatDrok"
     ],
@@ -72,7 +72,7 @@
   },
   {
     "path": "Type2_tethered.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "GreatDrok",
       "Open Charge Map"
@@ -83,7 +83,7 @@
   },
   {
     "path": "Type3c.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Pyrog"
     ],
@@ -101,7 +101,7 @@
   },
   {
     "path": "bosch-3pin.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -109,7 +109,7 @@
   },
   {
     "path": "bosch-5pin.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -117,7 +117,7 @@
   },
   {
     "path": "under_construction.svg",
-    "license": "Public domain",
+    "license": "CC0-1.0",
     "authors": [
       "Sarang"
     ],
@@ -127,7 +127,7 @@
   },
   {
     "path": "usb_port.svg",
-    "license": "CC-BY",
+    "license": "CC-BY-4.0",
     "authors": [
       "Ryan Dardis"
     ],

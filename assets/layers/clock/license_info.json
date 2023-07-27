@@ -1,7 +1,7 @@
 [
   {
     "path": "clock.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "SJJB Management"
     ],
@@ -11,7 +11,7 @@
   },
   {
     "path": "clock_digital.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Robin van der Linde"
     ],

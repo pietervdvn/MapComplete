@@ -1,7 +1,7 @@
 [
   {
     "path": "bike_pump.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Pieter Fiers",
       "Thibault Declercq",
@@ -15,7 +15,7 @@
   },
   {
     "path": "broken_pump.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Pieter Fiers",
       "Thibault Declercq",
@@ -29,7 +29,7 @@
   },
   {
     "path": "pump.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Pieter Fiers",
       "Thibault Declercq",
@@ -43,7 +43,7 @@
   },
   {
     "path": "pump_example.png",
-    "license": "Used with permission; all rights reserved",
+    "license": "ALL-RIGHTS-RESERVED",
     "authors": [
       "Turvec Solutions"
     ],
@@ -53,7 +53,7 @@
   },
   {
     "path": "pump_example_manual.jpg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -61,7 +61,7 @@
   },
   {
     "path": "pump_example_round.jpg",
-    "license": "Used with permission; all rights reserved",
+    "license": "ALL-RIGHTS-RESERVED",
     "authors": [
       "©Altinnova"
     ],
@@ -72,7 +72,7 @@
   },
   {
     "path": "repair_station.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Pieter Fiers",
       "Thibault Declercq",
@@ -86,7 +86,7 @@
   },
   {
     "path": "repair_station_broken_pump.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Pieter Fiers",
       "Thibault Declercq",
@@ -100,7 +100,7 @@
   },
   {
     "path": "repair_station_example.jpg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Polarbear24"
     ],
@@ -110,7 +110,7 @@
   },
   {
     "path": "repair_station_example_2.jpg",
-    "license": "CC-BY-SA 4.0 International",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "MOs810"
     ],
@@ -120,7 +120,7 @@
   },
   {
     "path": "repair_station_example_3.jpg",
-    "license": "CC-BY-SA 3.0 Unported",
+    "license": "CC-BY-SA-3.0",
     "authors": [
       "Thelmadatter"
     ],
@@ -130,7 +130,7 @@
   },
   {
     "path": "repair_station_pump.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Pieter Fiers",
       "Thibault Declercq",

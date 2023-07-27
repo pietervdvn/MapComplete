@@ -1,7 +1,7 @@
 [
   {
     "path": "bicycle.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Stijn Wens"
     ],
@@ -12,7 +12,7 @@
   },
   {
     "path": "car.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Simon Child",
       "The Noun Project"
@@ -23,13 +23,13 @@
   },
   {
     "path": "logo.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "plug.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   }

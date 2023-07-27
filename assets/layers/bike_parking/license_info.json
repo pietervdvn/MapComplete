@@ -1,7 +1,7 @@
 [
   {
     "path": "bollard.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Gitte Vande Graveele"
     ],
@@ -11,7 +11,7 @@
   },
   {
     "path": "handlebar_holder.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Gitte Vande Graveele"
     ],
@@ -21,7 +21,7 @@
   },
   {
     "path": "parking.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Pieter Fiers",
       "Thibault Declercq",
@@ -35,7 +35,7 @@
   },
   {
     "path": "rack.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Gitte Vande Graveele"
     ],
@@ -45,7 +45,7 @@
   },
   {
     "path": "shed.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Gitte Vande Graveele"
     ],
@@ -55,7 +55,7 @@
   },
   {
     "path": "staple.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Gitte Vande Graveele"
     ],
@@ -65,7 +65,7 @@
   },
   {
     "path": "two_tier.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Gitte Vande Graveele"
     ],
@@ -75,7 +75,7 @@
   },
   {
     "path": "wall_loops.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Gitte Vande Graveele"
     ],
