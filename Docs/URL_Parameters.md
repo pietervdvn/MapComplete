@@ -69,7 +69,7 @@ Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
 The user display language is determined in the following order:
 
 1. If the user did log in and did set their language before with MapComplete, use this language. This language selection is synchronized accross devices using the openstreetmap.org user preferences.
-2. Use the language as set by the URL-parameter `language`. This will _disable_ saving the language to localStorage in case a non-logged-in user changes their language
+2. Use the language as set by the URL-parameter `language` (following ISO 639-1 | ex. `language=nl`). This will _disable_ saving the language to localStorage in case a non-logged-in user changes their language
 3. If the user visited MapComplete before and did change their language manually, this changed language will be saved in local storage. Use the language from local storage
 4. Use the navigator-language (if available)
 5. Use English
