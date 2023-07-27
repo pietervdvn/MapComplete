@@ -1,7 +1,7 @@
 [
   {
     "path": "Departement_Omgeving_Vlaanderen.png",
-    "license": "LOGO; ALL-RIGHTS-RESERVED",
+    "license": "LOGO",
     "authors": [
       "Departement Omgeving, Vlaamse Overheid"
     ],
@@ -22,7 +22,7 @@
   },
   {
     "path": "provincie_antwerpen.jpg",
-    "license": "LOGO; ALL-RIGHTS-RESERVED",
+    "license": "LOGO",
     "authors": [
       "Provincie Antwerpen"
     ],
@@ -32,7 +32,7 @@
   },
   {
     "path": "social_image.jpg",
-    "license": "LOGO-(ALL-RIGHTS-RESERVED)",
+    "license": "LOGO",
     "authors": [
       "Createlli"
     ],
@@ -75,7 +75,7 @@
   },
   {
     "path": "youtube.svg",
-    "license": "LOGO-(ALL-RIGHTS-RESERVED)",
+    "license": "LOGO",
     "authors": [
       "Youtube"
     ],

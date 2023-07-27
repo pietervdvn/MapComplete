@@ -3,11 +3,47 @@ Upstream-Name: MapComplete
 Upstream-Contact: Pieter Vander Vennet <pietervdvn@posteo.net>
 Source: https://github.com/pietervdvn/MapComplete
 
-Files: scripts/* src/* *.html Docs/* assets/*/*/*.json langs/* test/* assets/*/*/*.json public/assets/*/*/*.json public/css/*
+Files: scripts/* src/* *.html Docs/* langs/* test/* ublic/css/* CODE_OF_CONDUCT.md CONTRIBUTING.md README.md package.json
 Copyright: MapComplete contributors
 License: GPL-3.0-or-later
 
-Files: *.config.* .vscode/* .tool-versions .prettierrc.json .prettierignore .nvmrc .gitpod .gitignore .github/* .editorconfig .git-blame-ignore-revse
+Files: assets/*/*/*.json assets/*/*/*.css assets/*/*/*.csv assets/*/*/*.protojson assets/*/*/*.md assets/*/*/*.ts assets/*/*/*.txt public/css/*
+Copyright: MapComplete contributors
+Comment: various assets, mostly layers and themes
+License: GPL-3.0-or-later
+
+Files: assets/**/license_info.json public/*/license_info.json
+Copyright: MapComplete contributors
+Comment: Various files detailing the license info of a file
+License: GPL-3.0-or-later
+
+Files: *.config.* .vscode/* .tool-versions .prettierrc.json .prettierignore .nvmrc .gitpod .gitignore .github/* .editorconfig .git-blame-ignore-revs tsconfig.json tslint.json package-lock.json
 Copyright: MapComplete contributors
 Comment: Miscellaneous config files, no real 'creative work' but still a pain to get right
+License: CC0-1.0
+
+Files: public/assets/templates/*.svg
+Copyright: MapComplete contributors
+Comment: export templates
+License: GPL-3.0-or-later
+
+Files: public/assets/templates/*.js public/assets/fonts/*.js
+Copyright: MapComplete contributors
+Comment: fonts for exports
+License: UBUNTU-FONT-LICENSE
+
+
+Files: public/assets/*.svg public/assets/*.png public/apple_touch_icon.png
+Copyright: MapComplete contributors
+Comment: various MapComplete logos
+License: GPL-3.0-or-later
+
+Files: public/maplibre-gl.css
+Copyright: MapLibre-gl
+Comment: https://www.npmjs.com/package/maplibre-gl
+License: BSD-3-Clause
+
+Files: LICENSES/*.txt
+Copyright: License author
+Comment: under what license falls a license text?
 License: CC0-1.0

@@ -1,7 +1,7 @@
 [
   {
     "path": "ANB.jpg",
-    "license": "LOGO; ALL-RIGHTS-RESERVED",
+    "license": "LOGO",
     "authors": [
       "Agentschap Natuur en Bos"
     ],
@@ -11,7 +11,7 @@
   },
   {
     "path": "Natuurpunt.jpg",
-    "license": "LOGO; ALL-RIGHTS-RESERVED",
+    "license": "LOGO",
     "authors": [
       "Natuurpunt"
     ],
@@ -31,7 +31,7 @@
   },
   {
     "path": "groen_logo.svg",
-    "license": "LOGO; ALL-RIGHTS-RESERVED",
+    "license": "LOGO",
     "authors": [
       "Groen"
     ],
@@ -41,7 +41,7 @@
   },
   {
     "path": "logo.svg",
-    "license": "LOGO; ALL-RIGHTS-RESERVED",
+    "license": "LOGO",
     "authors": [
       "Groen"
     ],

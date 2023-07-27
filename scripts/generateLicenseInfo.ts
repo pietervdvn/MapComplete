@@ -192,7 +192,9 @@ export class GenerateLicenseInfo extends Script {
      * @param licenseId
      */
     toSPDXCompliantLicense(licenseId: string): string {
-        licenseId = licenseId.trim().replaceAll(" ", "-")
+        licenseId = licenseId.trim()
+        licenseId = licenseId.replaceAll("-AND-", " AND ")
+
         if (!(licenseId.endsWith("-only") || licenseId.endsWith("-or-later"))) {
             licenseId = licenseId.toUpperCase()
         }
@@ -210,6 +212,7 @@ export class GenerateLicenseInfo extends Script {
             "ISC-LICENSE": "ISC",
             "LOGO-BY-THE-GOVERNMENT": "LOGO",
             PD: "PUBLIC-DOMAIN",
+            "LOGO-(ALL-RIGHTS-RESERVED)": "LOGO",
             /*  ALL-RIGHTS-RESERVED:
             PD:
                 PUBLIC-DOMAIN:
@@ -243,13 +246,16 @@ export class GenerateLicenseInfo extends Script {
                 sources: license.sources,
             }
 
-            const licenses = Utils.Dedup(
+            cloned.license = Utils.Dedup(
                 cloned.license.split(";").map((l) => this.toSPDXCompliantLicense(l))
-            )
-            if (licenses.length > 1 && licenses.indexOf("TRIVIAL") > 0) {
-                //  licenses.splice(licenses.indexOf("TRIVIAL"), 1)
+            ).join("; ")
+            if (cloned.license === "CC0-1.0; TRIVIAL") {
+                cloned.license = "TRIVIAL"
             }
-            cloned.license = licenses.join("; ")
+            if (cloned.license === "LOGO; ALL-RIGHTS-RESERVED") {
+                cloned.license = "LOGO"
+            }
+            cloned.license = cloned.license.split("; ").join(" AND ")
 
             perDirectory.get(dir).push(cloned)
         }
@@ -342,7 +348,7 @@ export class GenerateLicenseInfo extends Script {
         let licenseInfos = this.generateLicenseInfos(licensePaths)
 
         const artwork = contents.filter(
-            (pth) => pth.match(/(.svg|.png|.jpg|.ttf|.otf|.woff)$/i) != null
+            (pth) => pth.match(/(.svg|.png|.jpg|.ttf|.otf|.woff|.jpeg)$/i) != null
         )
         const missingLicenses = this.missingLicenseInfos(licenseInfos, artwork)
         if (args.indexOf("--prompt") >= 0 || args.indexOf("--query") >= 0) {

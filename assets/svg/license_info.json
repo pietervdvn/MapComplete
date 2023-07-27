@@ -203,13 +203,13 @@
   },
   {
     "path": "close.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "close.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
@@ -223,13 +223,13 @@
   },
   {
     "path": "compass.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "compass.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
@@ -251,31 +251,31 @@
   },
   {
     "path": "cross_bottom_right.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "cross_bottom_right.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "crosshair-locked.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "crosshair.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "crosshair.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
@@ -309,13 +309,13 @@
   },
   {
     "path": "direction_gradient.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "direction_gradient.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
@@ -383,13 +383,13 @@
   },
   {
     "path": "envelope.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "envelope.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
@@ -453,13 +453,13 @@
   },
   {
     "path": "gear.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "gear.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
@@ -553,13 +553,13 @@
   },
   {
     "path": "help.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "help.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
@@ -617,13 +617,13 @@
   },
   {
     "path": "layers.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "layers.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
@@ -637,7 +637,7 @@
   },
   {
     "path": "liberapay.svg",
-    "license": "LOGO-(ALL-RIGHTS-RESERVED)",
+    "license": "LOGO",
     "authors": [
       "LiberaPay"
     ],
@@ -647,7 +647,7 @@
   },
   {
     "path": "loading.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
@@ -701,31 +701,31 @@
   },
   {
     "path": "logo.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "logo.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "logout.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "logout.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "mapcomplete_logo.svg",
-    "license": "LOGO; CC-BY-SA-4.0",
+    "license": "LOGO AND CC-BY-SA-4.0",
     "authors": [
       "Pieter Vander Vennet",
       " OSM"
@@ -736,7 +736,7 @@
   },
   {
     "path": "mapcomplete_logo.svg",
-    "license": "LOGO; CC-BY-SA-4.0",
+    "license": "LOGO AND CC-BY-SA-4.0",
     "authors": [
       "Pieter Vander Vennet",
       " OSM"
@@ -747,7 +747,7 @@
   },
   {
     "path": "mapillary.svg",
-    "license": "LOGO; ALL-RIGHTS-RESERVED",
+    "license": "LOGO",
     "authors": [
       "Mapillary"
     ],
@@ -757,7 +757,7 @@
   },
   {
     "path": "mapillary.svg",
-    "license": "LOGO; ALL-RIGHTS-RESERVED",
+    "license": "LOGO",
     "authors": [
       "Mapillary"
     ],
@@ -767,7 +767,7 @@
   },
   {
     "path": "mapillary_black.svg",
-    "license": "LOGO; ALL-RIGHTS-RESERVED",
+    "license": "LOGO",
     "authors": [
       "Mapillary"
     ],
@@ -777,7 +777,7 @@
   },
   {
     "path": "mapillary_black.svg",
-    "license": "LOGO; ALL-RIGHTS-RESERVED",
+    "license": "LOGO",
     "authors": [
       "Mapillary"
     ],
@@ -787,7 +787,7 @@
   },
   {
     "path": "mastodon.svg",
-    "license": "LOGO; GNU-AFFERO-GENERAL-PUBLIC-LICENSE",
+    "license": "LOGO AND AGPL-3.0-or-later",
     "authors": [
       "Mastodon"
     ],
@@ -797,13 +797,13 @@
   },
   {
     "path": "min.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "min.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
@@ -843,13 +843,13 @@
   },
   {
     "path": "no_checkmark.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "no_checkmark.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
@@ -899,7 +899,7 @@
   },
   {
     "path": "osm-logo.svg",
-    "license": "LOGO; ALL-RIGHTS-RESERVED",
+    "license": "LOGO",
     "authors": [],
     "sources": [
       "https://www.OpenStreetMap.org"
@@ -907,7 +907,7 @@
   },
   {
     "path": "osm-logo.svg",
-    "license": "LOGO; ALL-RIGHTS-RESERVED",
+    "license": "LOGO",
     "authors": [],
     "sources": [
       "https://www.OpenStreetMap.org"
@@ -955,19 +955,19 @@
   },
   {
     "path": "pin.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "pin.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "plantnet_logo.svg",
-    "license": "LOGO-(FAIR-USAGE)",
+    "license": "LOGO",
     "authors": [
       "https://plantnet.org"
     ],
@@ -977,13 +977,13 @@
   },
   {
     "path": "plus.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "plus.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
@@ -1009,13 +1009,13 @@
   },
   {
     "path": "reload.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "reload.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
@@ -1037,13 +1037,13 @@
   },
   {
     "path": "ring.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "ring.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
@@ -1113,13 +1113,13 @@
   },
   {
     "path": "share.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "share.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
@@ -1145,61 +1145,61 @@
   },
   {
     "path": "square.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "square.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "star.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "star.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "star_half.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "star_half.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "star_outline.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "star_outline.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "star_outline_half.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "star_outline_half.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
@@ -1269,13 +1269,13 @@
   },
   {
     "path": "up.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "up.svg",
-    "license": "CC0-1.0; TRIVIAL",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
@@ -1289,7 +1289,7 @@
   },
   {
     "path": "wikidata.svg",
-    "license": "LOGO; ALL-RIGHTS-RESERVED",
+    "license": "LOGO",
     "authors": [
       "Wikidata"
     ],
@@ -1299,7 +1299,7 @@
   },
   {
     "path": "wikidata.svg",
-    "license": "LOGO; ALL-RIGHTS-RESERVED",
+    "license": "LOGO",
     "authors": [
       "Wikidata"
     ],
@@ -1309,7 +1309,7 @@
   },
   {
     "path": "wikimedia-commons-white.svg",
-    "license": "LOGO; ALL-RIGHTS-RESERVED",
+    "license": "LOGO",
     "authors": [
       "Wikimedia"
     ],
@@ -1319,7 +1319,7 @@
   },
   {
     "path": "wikimedia-commons-white.svg",
-    "license": "LOGO; ALL-RIGHTS-RESERVED",
+    "license": "LOGO",
     "authors": [
       "Wikimedia"
     ],
@@ -1329,7 +1329,7 @@
   },
   {
     "path": "wikipedia.svg",
-    "license": "LOGO; ALL-RIGHTS-RESERVED",
+    "license": "LOGO",
     "authors": [
       "Wikipedia"
     ],
@@ -1339,7 +1339,7 @@
   },
   {
     "path": "wikipedia.svg",
-    "license": "LOGO; ALL-RIGHTS-RESERVED",
+    "license": "LOGO",
     "authors": [
       "Wikipedia"
     ],
