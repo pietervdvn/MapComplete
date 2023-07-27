@@ -77,174 +77,274 @@ The user display language is determined in the following order:
 Note that this URL-parameter is not added to the URL-bar by default.
 Note that the _loading_ screen will always use the navigator language.
 
-Translations are never complete. If a translation in a certain language is missing, English is used as fallback. No default value set
+Translations are never complete. If a translation in a certain language is missing, English is used as fallback.
+
+This documentation is defined in the source code at [Locale.ts](/UI/i18n/Locale.ts#L35)
+
+ No default value set
 
 
 
  fs-translation-mode 
 ---------------------
 
- If set, will show a translation button next to every string. The default value is _false_
+ If set, will show a translation button next to every string.
+
+This documentation is defined in the source code at [QueryParameters.ts](/Logic/Web/QueryParameters.ts#L66)
+
+ The default value is _false_
 
 
 
  backend 
 ---------
 
- The OSM backend to use - can be used to redirect mapcomplete to the testing backend when using 'osm-test' The default value is _osm_
+ The OSM backend to use - can be used to redirect mapcomplete to the testing backend when using 'osm-test'
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L29)
+
+ The default value is _osm_
 
 
 
  fake-user 
 -----------
 
- If true, 'dryrun' mode is activated and a fake user account is loaded The default value is _false_
+ If true, 'dryrun' mode is activated and a fake user account is loaded
+
+This documentation is defined in the source code at [QueryParameters.ts](/Logic/Web/QueryParameters.ts#L66)
+
+ The default value is _false_
 
 
 
  fs-userbadge 
 --------------
 
- Disables/Enables the user information pill (userbadge) at the top left. Disabling this disables logging in and thus disables editing all together, effectively putting MapComplete into read-only mode. The default value is _true_
+ Disables/Enables the user information pill (userbadge) at the top left. Disabling this disables logging in and thus disables editing all together, effectively putting MapComplete into read-only mode.
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L13)
+
+ The default value is _true_
 
 
 
  fs-search 
 -----------
 
- Disables/Enables the search bar The default value is _true_
+ Disables/Enables the search bar
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L13)
+
+ The default value is _true_
 
 
 
  fs-background 
 ---------------
 
- Disables/Enables the background layer control The default value is _true_
+ Disables/Enables the background layer control
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L13)
+
+ The default value is _true_
 
 
 
  fs-filter 
 -----------
 
- Disables/Enables the filter view The default value is _true_
+ Disables/Enables the filter view
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L13)
+
+ The default value is _true_
 
 
 
  fs-add-new 
 ------------
 
- Disables/Enables the 'add new feature'-popup. (A theme without presets might not have it in the first place) The default value is _true_
+ Disables/Enables the 'add new feature'-popup. (A theme without presets might not have it in the first place)
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L13)
+
+ The default value is _true_
 
 
 
  fs-welcome-message 
 --------------------
 
- Disables/enables the help menu or welcome message The default value is _true_
+ Disables/enables the help menu or welcome message
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L13)
+
+ The default value is _true_
 
 
 
  fs-community-index 
 --------------------
 
- Disables/enables the button to get in touch with the community The default value is _true_
+ Disables/enables the button to get in touch with the community
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L13)
+
+ The default value is _true_
 
 
 
  fs-iframe-popout 
 ------------------
 
- Disables/Enables the extraLink button. By default, if in iframe mode and the welcome message is hidden, a popout button to the full mapcomplete instance is shown instead (unless disabled with this switch or another extraLink button is enabled) The default value is _true_
+ Disables/Enables the extraLink button. By default, if in iframe mode and the welcome message is hidden, a popout button to the full mapcomplete instance is shown instead (unless disabled with this switch or another extraLink button is enabled)
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L13)
+
+ The default value is _true_
 
 
 
  fs-more-quests 
 ----------------
 
- Disables/Enables the 'More Quests'-tab in the welcome message The default value is _true_
+ Disables/Enables the 'More Quests'-tab in the welcome message
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L13)
+
+ The default value is _true_
 
 
 
  fs-share-screen 
 -----------------
 
- Disables/Enables the 'Share-screen'-tab in the welcome message The default value is _true_
+ Disables/Enables the 'Share-screen'-tab in the welcome message
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L13)
+
+ The default value is _true_
 
 
 
  fs-geolocation 
 ----------------
 
- Disables/Enables the geolocation button The default value is _true_
+ Disables/Enables the geolocation button
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L13)
+
+ The default value is _true_
 
 
 
  fs-all-questions 
 ------------------
 
- Always show all questions The default value is _false_
+ Always show all questions
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L13)
+
+ The default value is _false_
 
 
 
  fs-export 
 -----------
 
- Enable the export as GeoJSON and CSV button The default value is _true_
+ Enable the export as GeoJSON and CSV button
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L13)
+
+ The default value is _true_
 
 
 
  test 
 ------
 
- If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org The default value is _false_
+ If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org
+
+This documentation is defined in the source code at [QueryParameters.ts](/Logic/Web/QueryParameters.ts#L66)
+
+ The default value is _false_
 
 
 
  debug 
 -------
 
- If true, shows some extra debugging help such as all the available tags on every object The default value is _false_
+ If true, shows some extra debugging help such as all the available tags on every object
+
+This documentation is defined in the source code at [QueryParameters.ts](/Logic/Web/QueryParameters.ts#L66)
+
+ The default value is _false_
 
 
 
  overpassUrl 
 -------------
 
- Point mapcomplete to a different overpass-instance. Example: https://overpass-api.de/api/interpreter The default value is _https://overpass-api.de/api/interpreter,https://overpass.kumi.systems/api/interpreter,https://overpass.openstreetmap.ru/cgi/interpreter_
+ Point mapcomplete to a different overpass-instance. Example: https://overpass-api.de/api/interpreter
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L165)
+
+ The default value is _https://overpass-api.de/api/interpreter,https://overpass.kumi.systems/api/interpreter,https://overpass.openstreetmap.ru/cgi/interpreter_
 
 
 
  overpassTimeout 
 -----------------
 
- Set a different timeout (in seconds) for queries in overpass The default value is _30_
+ Set a different timeout (in seconds) for queries in overpass
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L176)
+
+ The default value is _30_
 
 
 
  overpassMaxZoom 
 -----------------
 
-  point to switch between OSM-api and overpass The default value is _16_
+  point to switch between OSM-api and overpass
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L184)
+
+ The default value is _16_
 
 
 
  osmApiTileSize 
 ----------------
 
- Tilesize when the OSM-API is used to fetch data within a BBOX The default value is _17_
+ Tilesize when the OSM-API is used to fetch data within a BBOX
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L192)
+
+ The default value is _17_
 
 
 
  background 
 ------------
 
- The id of the background layer to start with The default value is _osm_
+ The id of the background layer to start with
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/Logic/State/FeatureSwitchState.ts#L205)
+
+ The default value is _osm_
 
 
 
  layer-&lt;layer-id&gt; 
 ------------------------
 
- Wether or not the layer with id <layer-id> is shown The default value is _true_ 
+ Wether or not the layer with id <layer-id> is shown
+
+This documentation is defined in the source code at [QueryParameterDocumentation.ts](/UI/QueryParameterDocumentation.ts#L52)
+
+ The default value is _true_ 
 
 This document is autogenerated from [src/Logic/Web/QueryParameters.ts](https://github.com/pietervdvn/MapComplete/blob/develop/src/Logic/Web/QueryParameters.ts), [src/UI/QueryParameterDocumentation.ts](https://github.com/pietervdvn/MapComplete/blob/develop/src/UI/QueryParameterDocumentation.ts)

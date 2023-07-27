@@ -1,5 +1,5 @@
 import colors from "./assets/colors.json"
-import {HTMLElement} from "node-html-parser"
+import { HTMLElement } from "node-html-parser"
 
 export class Utils {
     /**
@@ -459,7 +459,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
         let match = txt.match(regex)
 
-        if(!match){
+        if (!match) {
             return txt
         }
         let result = ""
@@ -502,7 +502,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
             result += normal + v
             match = leftover.match(regex)
-            if(!match){
+            if (!match) {
                 result += leftover
             }
         }
@@ -699,10 +699,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             if (Array.isArray(leaf)) {
                 for (let i = 0; i < (<any[]>leaf).length; i++) {
                     const l = (<any[]>leaf)[i]
-                    collectedList.push({leaf: l, path: [...travelledPath, "" + i]})
+                    collectedList.push({ leaf: l, path: [...travelledPath, "" + i] })
                 }
             } else {
-                collectedList.push({leaf, path: travelledPath})
+                collectedList.push({ leaf, path: travelledPath })
             }
             return collectedList
         }
@@ -780,7 +780,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             })
         }
 
-        const cp = {...json}
+        const cp = { ...json }
         for (const key in json) {
             cp[key] = Utils.WalkJson(json[key], f, isLeaf, [...path, key])
         }
@@ -910,11 +910,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             const xhr = new XMLHttpRequest()
             xhr.onload = () => {
                 if (xhr.status == 200) {
-                    resolve({content: xhr.response})
+                    resolve({ content: xhr.response })
                 } else if (xhr.status === 302) {
-                    resolve({redirect: xhr.getResponseHeader("location")})
+                    resolve({ redirect: xhr.getResponseHeader("location") })
                 } else if (xhr.status === 509 || xhr.status === 429) {
-                    resolve({error: "rate limited", url, statuscode: xhr.status})
+                    resolve({ error: "rate limited", url, statuscode: xhr.status })
                 } else {
                     resolve({
                         error: "other error: " + xhr.statusText,
@@ -984,10 +984,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         const promise =
             /*NO AWAIT as we work with the promise directly */ Utils.downloadJsonAdvanced(
-            url,
-            headers
-        )
-        Utils._download_cache.set(url, {promise, timestamp: new Date().getTime()})
+                url,
+                headers
+            )
+        Utils._download_cache.set(url, { promise, timestamp: new Date().getTime() })
         return await promise
     }
 
@@ -1006,11 +1006,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         const injected = Utils.injectedDownloads[url]
         if (injected !== undefined) {
             console.log("Using injected resource for test for URL", url)
-            return new Promise((resolve, _) => resolve({content: injected}))
+            return new Promise((resolve, _) => resolve({ content: injected }))
         }
         const result = await Utils.downloadAdvanced(
             url,
-            Utils.Merge({accept: "application/json"}, headers ?? {})
+            Utils.Merge({ accept: "application/json" }, headers ?? {})
         )
         if (result["error"] !== undefined) {
             return <{ error: string; url: string; statuscode?: number }>result
@@ -1018,12 +1018,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         const data = result["content"]
         try {
             if (typeof data === "string") {
-                return {content: JSON.parse(data)}
+                return { content: JSON.parse(data) }
             }
-            return {content: data}
+            return { content: data }
         } catch (e) {
             console.error("Could not parse ", data, "due to", e, "\n", e.stack)
-            return {error: "malformed", url}
+            return { error: "malformed", url }
         }
     }
 
@@ -1047,7 +1047,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         const element = document.createElement("a")
         let file
         if (typeof contents === "string") {
-            file = new Blob([contents], {type: options?.mimetype ?? "text/plain"})
+            file = new Blob([contents], { type: options?.mimetype ?? "text/plain" })
         } else {
             file = contents
         }
@@ -1318,7 +1318,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             if (match == undefined) {
                 return undefined
             }
-            return {r: Number(match[1]), g: Number(match[2]), b: Number(match[3])}
+            return { r: Number(match[1]), g: Number(match[2]), b: Number(match[3]) }
         }
 
         if (!hex.startsWith("#")) {
@@ -1378,7 +1378,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         if (inView) {
             return
         }
-        element.scrollIntoView({behavior: "smooth", block: "nearest"})
+        element.scrollIntoView({ behavior: "smooth", block: "nearest" })
     }
 
     public static findParentWithScrolling(element: HTMLBaseElement): HTMLBaseElement {
@@ -1470,16 +1470,58 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             const postParts = prepart.split("}")
             if (postParts.length === 1) {
                 // This was a normal part
-                spec.push({message: postParts[0]})
+                spec.push({ message: postParts[0] })
             } else {
                 const [subs, message] = postParts
-                spec.push({subs})
+                spec.push({ subs })
                 if (message !== "") {
-                    spec.push({message})
+                    spec.push({ message })
                 }
             }
         }
         return spec
+    }
+
+    /**
+     * Returns the file and line number of the code calling this
+     */
+    public static getLocationInCode(offset: number = 0): {
+        path: string
+        line: number
+        column: number
+        markdownLocation: string
+        filename: string
+        functionName: string
+    } {
+        const error = new Error("No error")
+        const stack = error.stack.split("\n")
+        stack.shift() // Remove "Error: No error"
+        const regex = /at (.*) \(([a-zA-Z0-9/.]+):([0-9]+):([0-9]+)\)/
+        const stackItem = stack[Math.abs(offset) + 1]
+        console.log("Matching", stackItem, "with", regex, "gave", stackItem.match(regex))
+
+        let functionName: string
+        let path: string
+        let line: string
+        let column: string
+        let _: string
+        const matchWithFuncName = stackItem.match(regex)
+        if (matchWithFuncName) {
+            ;[_, functionName, path, line, column] = matchWithFuncName
+        } else {
+            let regexNoFuncName: RegExp = new RegExp("at ([a-zA-Z0-9/.]+):([0-9]+):([0-9]+)")
+            ;[_, path, line, column] = stackItem.match(regexNoFuncName)
+        }
+
+        const markdownLocation = path.substring(path.indexOf("MapComplete/src") + 15) + "#L" + line
+        return {
+            path,
+            functionName,
+            line: Number(line),
+            column: Number(column),
+            markdownLocation,
+            filename: path.substring(path.lastIndexOf("/") + 1),
+        }
     }
 
     private static colorDiff(
