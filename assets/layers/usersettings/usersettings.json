@@ -233,19 +233,22 @@
     {
       "id": "fixate-north",
       "question": {
-        "en": "Should north always be up?"
+        "en": "Should north always be up?",
+        "de": "Soll Norden immer oben sein?"
       },
       "mappings": [
         {
           "if": "mapcomplete-fixate-north=",
           "then": {
-            "en": "Allow to rotate the map"
+            "en": "Allow to rotate the map",
+            "de": "Drehen der Karte zulassen"
           }
         },
         {
           "if": "mapcomplete-fixate-north=yes",
           "then": {
-            "en": "Always keep north pointing up"
+            "en": "Always keep north pointing up",
+            "de": "Norden immer nach oben zeigen lassen"
           }
         }
       ]
@@ -253,7 +256,8 @@
     {
       "id": "mangrove-keys",
       "render": {
-        "en": "<a href='data:application/json,{mangroveidentity}' download='mangrove_private_key_{_name}'>Download the private key for your Mangrove Account</a> <p>Anyone possessing this file can make reviews with your identity</p>"
+        "en": "<a href='data:application/json,{mangroveidentity}' download='mangrove_private_key_{_name}'>Download the private key for your Mangrove Account</a> <p>Anyone possessing this file can make reviews with your identity</p>",
+        "de": "<a href='data:application/json,{mangroveidentity}' download='mangrove_private_key_{_name}'>Laden Sie den privaten Schlüssel für Ihr Mangrove-Konto herunter</a> <p>Jeder, der diese Datei besitzt, kann mit Ihrer Identität Rezensionen vornehmen</p>"
       }
     },
     {
