@@ -5163,13 +5163,13 @@
             "hs-club-mate": {
                 "mappings": {
                     "0": {
-                        "then": "In diesem Hackerspace gibt es Club Mate"
+                        "then": "In diesem Hackerspace gibt es Club-Mate"
                     },
                     "1": {
-                        "then": "In diesem Hackerspace gibt es kein Club Mate"
+                        "then": "In diesem Hackerspace gibt es kein Club-Mate"
                     }
                 },
-                "question": "Gibt es in diesem Hackerspace Club Mate?"
+                "question": "Gibt es in diesem Hackerspace Club-Mate?"
             },
             "is_makerspace": {
                 "mappings": {
