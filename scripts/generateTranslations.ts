@@ -557,7 +557,7 @@ function MergeTranslation(source: any, target: any, language: string, context: s
     if (context.endsWith(".tagRenderings")) {
         keyRemapping = new Map<string, string>()
         for (const key in target) {
-            keyRemapping.set(target[key].id, key)
+            keyRemapping.set(target[key].id ?? target[key].builtin, key)
         }
     }
 
