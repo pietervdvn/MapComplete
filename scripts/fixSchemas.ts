@@ -1,10 +1,10 @@
 import ScriptUtils from "./ScriptUtils"
 import { readFileSync, writeFileSync } from "fs"
-import { JsonSchema } from "../UI/Studio/jsonSchema"
-import { AllSharedLayers } from "../Customizations/AllSharedLayers"
-import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
-import { ConfigMeta } from "../UI/Studio/configMeta"
-import { Utils } from "../Utils"
+import { JsonSchema } from "../src/UI/Studio/jsonSchema"
+import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
+import { AllKnownLayouts } from "../src/Customizations/AllKnownLayouts"
+import { ConfigMeta } from "../src/UI/Studio/configMeta"
+import { Utils } from "../src/Utils"
 
 const metainfo = {
     type: "One of the inputValidator types",
@@ -260,7 +260,7 @@ function extractMeta(
 
     substituteReferences(paths, themeSchema, allDefinitions)
 
-    writeFileSync("./assets/" + path + ".json", JSON.stringify(paths, null, "  "))
+    writeFileSync("./src/assets/" + path + ".json", JSON.stringify(paths, null, "  "))
     console.log("Written meta to ./assets/" + path)
     return Utils.NoNull(paths.map((p) => validateMeta(p)))
 }

@@ -1,14 +1,14 @@
 <script lang="ts">
 
     import EditLayerState from "./EditLayerState";
-    import layerSchemaRaw from "../../assets/layerconfigmeta.json"
+    import layerSchemaRaw from "../../../assets/layerconfigmeta.json"
     import Region from "./Region.svelte";
     import TabbedGroup from "../Base/TabbedGroup.svelte";
     import {UIEventSource} from "../../Logic/UIEventSource";
     import type {ConfigMeta} from "./configMeta";
     import {Utils} from "../../Utils";
 
-    import drinking_water from "../../assets/layers/drinking_water/drinking_water.json"
+    import drinking_water from "../../../assets/layers/drinking_water/drinking_water.json"
 
     const layerSchema: ConfigMeta[] = layerSchemaRaw
     let state = new EditLayerState(layerSchema)

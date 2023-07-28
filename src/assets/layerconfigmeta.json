@@ -35151,6 +35151,10 @@
           "then": "maxspeed - Shows the allowed speed for every road"
         },
         {
+          "if": "value=memorial",
+          "then": "memorial - Layer showing memorial plaques, based upon a unofficial theme. Can be expanded to have multiple types of memorials later on"
+        },
+        {
           "if": "value=named_streets",
           "then": "named_streets - Hidden layer with all streets which have a name. Useful to detect addresses"
         },
@@ -35221,6 +35225,10 @@
         {
           "if": "value=public_bookcase",
           "then": "public_bookcase - A streetside cabinet with books, accessible to anyone"
+        },
+        {
+          "if": "value=questions",
+          "then": "questions - Special library layer which does not need a '.questions'-prefix before being imported"
         },
         {
           "if": "value=railway_platforms",
@@ -35343,6 +35351,10 @@
           "then": "usersettings - A special layer which is not meant to be shown on a map, but which is used to set user settings"
         },
         {
+          "if": "value=vending_machine",
+          "then": "vending_machine - Layer showing vending machines"
+        },
+        {
           "if": "value=veterinary",
           "then": "veterinary - A layer showing veterinarians"
         },
@@ -35430,7 +35442,7 @@
                 "type": "string"
               },
               "type": {
-                "description": "The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values",
+                "description": "question: What is the input type?\nThe type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values",
                 "type": "string"
               },
               "placeholder": {
@@ -36104,7 +36116,9 @@
       "type"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What is the input type?"
+    },
     "type": "string",
     "description": "The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values"
   },
@@ -36949,7 +36963,9 @@
       "type"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What is the input type?"
+    },
     "type": "string",
     "description": "The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values"
   },
@@ -37830,7 +37846,9 @@
       "type"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What is the input type?"
+    },
     "type": "string",
     "description": "The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values"
   },
@@ -38713,7 +38731,9 @@
       "type"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What is the input type?"
+    },
     "type": "string",
     "description": "The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values"
   },

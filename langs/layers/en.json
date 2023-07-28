@@ -4113,6 +4113,7 @@
         "name": "Drinking water",
         "presets": {
             "0": {
+                "description": "Typically a drinking fountain, water tap, water well or natural spring",
                 "title": "a drinking water"
             }
         },

@@ -81,7 +81,6 @@ export interface TagRenderingConfigJson {
      * question: Should a freeform text field be shown?
      * Allow freeform text input from the user
      * ifunset: Do not add a freeform text field
-     * types: Use a freeform value
      */
     freeform?: {
         /**
