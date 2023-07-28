@@ -14,7 +14,7 @@ Waste Disposal Bin, medium to large bin for disposal of (household) waste
 
 
 
-  - This layer is shown at zoomlevel **18** and higher
+  - This layer is shown at zoomlevel **12** and higher
 
 
 

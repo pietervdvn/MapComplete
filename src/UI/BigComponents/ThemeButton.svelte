@@ -7,7 +7,7 @@
   import type { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
   import Tr from "../Base/Tr.svelte"
   import SubtleLink from "../Base/SubtleLink.svelte"
-    import Translations from "../i18n/Translations"
+  import Translations from "../i18n/Translations"
 
   export let theme: LayoutInformation
   export let isCustom: boolean = false

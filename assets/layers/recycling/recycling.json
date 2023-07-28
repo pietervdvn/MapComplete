@@ -25,7 +25,7 @@
   "calculatedTags": [
     "_waste_amount=Object.values(Object.keys(feat.properties).filter((key) => key.startsWith('recycling:')).reduce((cur, key) => { return Object.assign(cur, { [key]: feat.properties[key] })}, {})).reduce((n, x) => n + (x == \"yes\"), 0);"
   ],
-  "minzoom": 11,
+  "minzoom": 10,
   "title": {
     "render": {
       "en": "Recycling facility",
@@ -1262,7 +1262,8 @@
         "ca": "Aquesta instal·lació de reciclatge la pot utilitzar {access}",
         "fr": "Ce point de recyclage peut être utilisé par {access}"
       }
-    }
+    },
+    "survey_date"
   ],
   "filter": [
     "open_now",

@@ -29,9 +29,44 @@
   "startLon": 6.53812,
   "layers": [
     {
+      "builtin": "cycleways_and_roads",
+      "override": {
+        "title": null,
+        "forceLoad": true,
+        "minzoom": 18,
+        "passAllFeatures": true,
+        "shownByDefault": false
+      }
+    },
+    {
       "builtin": "crossings",
       "override": {
-        "=presets": [],
+        "=presets": [
+          {
+            "title": {
+              "en": "a crossing",
+              "nl": "een oversteekplaats",
+              "de": "eine Kreuzung",
+              "fr": "une traversée",
+              "ca": "un pas de vianants",
+              "da": "en overgang",
+              "es": "un cruce"
+            },
+            "tags": [
+              "highway=crossing"
+            ],
+            "description": {
+              "en": "Crossing for pedestrians and/or cyclists",
+              "nl": "Oversteekplaats voor voetgangers en/of fietsers",
+              "de": "Kreuzung für Fußgänger und/oder Radfahrer",
+              "fr": "Traversée pour piétons et/ou cyclistes",
+              "da": "Overgang for fodgængere og/eller cyklister",
+              "es": "Cruce para peatones y/o ciclistas"
+            },
+            "snapToLayer": "cycleways_and_roads",
+            "maxSnapDistance": 25
+          }
+        ],
         "source": {
           "osmTags": "highway=crossing"
         }

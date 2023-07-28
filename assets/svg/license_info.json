@@ -1,7 +1,7 @@
 [
   {
     "path": "SocialImageForeground.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -11,7 +11,7 @@
   },
   {
     "path": "SocialImageForeground.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -21,7 +21,7 @@
   },
   {
     "path": "add.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -29,7 +29,7 @@
   },
   {
     "path": "add.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -37,7 +37,7 @@
   },
   {
     "path": "addSmall.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -45,7 +45,7 @@
   },
   {
     "path": "addSmall.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -53,7 +53,7 @@
   },
   {
     "path": "add_pin.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -61,7 +61,7 @@
   },
   {
     "path": "back.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -69,7 +69,7 @@
   },
   {
     "path": "back.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -77,7 +77,7 @@
   },
   {
     "path": "blocked.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -85,7 +85,7 @@
   },
   {
     "path": "brick_wall_raw.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -93,7 +93,7 @@
   },
   {
     "path": "brick_wall_round.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -101,7 +101,7 @@
   },
   {
     "path": "brick_wall_square.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -131,7 +131,7 @@
   },
   {
     "path": "camera-plus.svg",
-    "license": "CC-BY-SA 3.0",
+    "license": "CC-BY-SA-3.0",
     "authors": [
       "Dave Gandy",
       "Pieter Vander Vennet"
@@ -143,7 +143,7 @@
   },
   {
     "path": "camera-plus.svg",
-    "license": "CC-BY-SA 3.0",
+    "license": "CC-BY-SA-3.0",
     "authors": [
       "Dave Gandy",
       "Pieter Vander Vennet"
@@ -155,7 +155,7 @@
   },
   {
     "path": "checkmark.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -163,7 +163,7 @@
   },
   {
     "path": "checkmark.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -171,7 +171,7 @@
   },
   {
     "path": "circle.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -179,7 +179,7 @@
   },
   {
     "path": "circle.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -187,7 +187,7 @@
   },
   {
     "path": "clock.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -195,7 +195,7 @@
   },
   {
     "path": "clock.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -203,19 +203,19 @@
   },
   {
     "path": "close.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "close.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "community.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -223,19 +223,19 @@
   },
   {
     "path": "compass.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "compass.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "confirm.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -243,7 +243,7 @@
   },
   {
     "path": "copyright.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Hannah Declerck"
     ],
@@ -251,37 +251,37 @@
   },
   {
     "path": "cross_bottom_right.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "cross_bottom_right.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "crosshair-locked.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "crosshair.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "crosshair.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "delete_icon.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Dave Gandy"
     ],
@@ -291,7 +291,7 @@
   },
   {
     "path": "delete_icon.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Dave Gandy"
     ],
@@ -301,7 +301,7 @@
   },
   {
     "path": "delete_not_allowed.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -309,19 +309,19 @@
   },
   {
     "path": "direction_gradient.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "direction_gradient.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "direction_stroke.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -329,7 +329,7 @@
   },
   {
     "path": "direction_stroke.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -337,7 +337,7 @@
   },
   {
     "path": "download.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Hannah Declerck"
     ],
@@ -345,7 +345,7 @@
   },
   {
     "path": "download.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Engr.eponce"
     ],
@@ -355,7 +355,7 @@
   },
   {
     "path": "duplicate.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -363,7 +363,7 @@
   },
   {
     "path": "elevator.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Yveltal"
     ],
@@ -373,7 +373,7 @@
   },
   {
     "path": "elevator_wheelchair.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Robin Julien"
     ],
@@ -383,19 +383,19 @@
   },
   {
     "path": "envelope.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "envelope.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "eye.svg",
-    "license": "CC-BY-SA 3.0 Unported",
+    "license": "CC-BY-SA-3.0",
     "authors": [
       "Dave Gandy"
     ],
@@ -405,7 +405,7 @@
   },
   {
     "path": "filter.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Hannah Declerck"
     ],
@@ -413,7 +413,7 @@
   },
   {
     "path": "filter_disable.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Hannah Declerck"
     ],
@@ -421,7 +421,7 @@
   },
   {
     "path": "floppy.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "The Tango Desktop Project"
     ],
@@ -432,7 +432,7 @@
   },
   {
     "path": "floppy.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "The Tango Desktop Project"
     ],
@@ -443,7 +443,7 @@
   },
   {
     "path": "floppy.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "The Tango! Desktop Project"
     ],
@@ -453,19 +453,19 @@
   },
   {
     "path": "gear.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "gear.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "gender_bi.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Gender Icon Pack"
     ],
@@ -475,7 +475,7 @@
   },
   {
     "path": "gender_female.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Gender Icon Pack"
     ],
@@ -485,7 +485,7 @@
   },
   {
     "path": "gender_inter.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Gender Icon Pack"
     ],
@@ -495,7 +495,7 @@
   },
   {
     "path": "gender_male.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Gender Icon Pack"
     ],
@@ -505,7 +505,7 @@
   },
   {
     "path": "gender_queer.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Gender Icon Pack"
     ],
@@ -515,7 +515,7 @@
   },
   {
     "path": "gender_trans.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Gender Icon Pack"
     ],
@@ -525,7 +525,7 @@
   },
   {
     "path": "generic_map.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Svg Repo"
     ],
@@ -535,7 +535,7 @@
   },
   {
     "path": "gps_arrow.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -543,7 +543,7 @@
   },
   {
     "path": "hand.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Anomie"
     ],
@@ -553,19 +553,19 @@
   },
   {
     "path": "help.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "help.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "home.svg",
-    "license": "CC-BY-SA 3.0",
+    "license": "CC-BY-SA-3.0",
     "authors": [
       "Timothy Miller"
     ],
@@ -575,7 +575,7 @@
   },
   {
     "path": "home.svg",
-    "license": "CC-BY-SA 3.0",
+    "license": "CC-BY-SA-3.0",
     "authors": [
       "Timothy Miller"
     ],
@@ -585,7 +585,7 @@
   },
   {
     "path": "invalid.svg",
-    "license": "CC-BY 4.0",
+    "license": "CC-BY-4.0",
     "authors": [
       "Twemoji"
     ],
@@ -595,7 +595,7 @@
   },
   {
     "path": "josm_logo.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "JOSM Team"
     ],
@@ -606,7 +606,7 @@
   },
   {
     "path": "josm_logo.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "JOSM Team"
     ],
@@ -617,19 +617,19 @@
   },
   {
     "path": "layers.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "layers.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "length-crosshair.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -637,7 +637,7 @@
   },
   {
     "path": "liberapay.svg",
-    "license": "Logo (all rights reserved)",
+    "license": "LOGO",
     "authors": [
       "LiberaPay"
     ],
@@ -647,13 +647,13 @@
   },
   {
     "path": "loading.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "location-empty.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pol Labaut"
     ],
@@ -661,7 +661,7 @@
   },
   {
     "path": "location-refused.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -669,7 +669,7 @@
   },
   {
     "path": "location.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Hannah Declerck"
     ],
@@ -677,7 +677,7 @@
   },
   {
     "path": "location_locked.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -685,7 +685,7 @@
   },
   {
     "path": "location_unlocked.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -693,7 +693,7 @@
   },
   {
     "path": "login.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -701,31 +701,31 @@
   },
   {
     "path": "logo.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "logo.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "logout.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "logout.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "mapcomplete_logo.svg",
-    "license": "Logo; CC-BY-SA",
+    "license": "LOGO AND CC-BY-SA-4.0",
     "authors": [
       "Pieter Vander Vennet",
       " OSM"
@@ -736,7 +736,7 @@
   },
   {
     "path": "mapcomplete_logo.svg",
-    "license": "Logo; CC-BY-SA",
+    "license": "LOGO AND CC-BY-SA-4.0",
     "authors": [
       "Pieter Vander Vennet",
       " OSM"
@@ -747,7 +747,7 @@
   },
   {
     "path": "mapillary.svg",
-    "license": "Logo; All rights reserved",
+    "license": "LOGO",
     "authors": [
       "Mapillary"
     ],
@@ -757,7 +757,7 @@
   },
   {
     "path": "mapillary.svg",
-    "license": "Logo; All rights reserved",
+    "license": "LOGO",
     "authors": [
       "Mapillary"
     ],
@@ -767,7 +767,7 @@
   },
   {
     "path": "mapillary_black.svg",
-    "license": "Logo; All rights reserved",
+    "license": "LOGO",
     "authors": [
       "Mapillary"
     ],
@@ -777,7 +777,7 @@
   },
   {
     "path": "mapillary_black.svg",
-    "license": "Logo; All rights reserved",
+    "license": "LOGO",
     "authors": [
       "Mapillary"
     ],
@@ -787,7 +787,7 @@
   },
   {
     "path": "mastodon.svg",
-    "license": "Logo; GNU Affero General Public License",
+    "license": "LOGO AND AGPL-3.0-or-later",
     "authors": [
       "Mastodon"
     ],
@@ -797,19 +797,19 @@
   },
   {
     "path": "min.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "min.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "move-arrows.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -817,7 +817,7 @@
   },
   {
     "path": "move.svg",
-    "license": "CC-BY-SA 3.0 Unported",
+    "license": "CC-BY-SA-3.0",
     "authors": [
       "MGalloway (WMF)"
     ],
@@ -827,7 +827,7 @@
   },
   {
     "path": "move_confirm.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -835,7 +835,7 @@
   },
   {
     "path": "move_not_allowed.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -843,25 +843,25 @@
   },
   {
     "path": "no_checkmark.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "no_checkmark.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "none.svg",
-    "license": "trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "not_found.svg",
-    "license": "CC-BY 4.0",
+    "license": "CC-BY-4.0",
     "authors": [
       "Twemoji"
     ],
@@ -871,7 +871,7 @@
   },
   {
     "path": "note.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -879,7 +879,7 @@
   },
   {
     "path": "osm-logo-us.svg",
-    "license": "Logo",
+    "license": "LOGO",
     "authors": [
       "OpenStreetMap U.S. Chapter"
     ],
@@ -889,7 +889,7 @@
   },
   {
     "path": "osm-logo-us.svg",
-    "license": "Logo",
+    "license": "LOGO",
     "authors": [
       "OpenStreetMap U.S. Chapter"
     ],
@@ -899,7 +899,7 @@
   },
   {
     "path": "osm-logo.svg",
-    "license": "logo; all rights reserved",
+    "license": "LOGO",
     "authors": [],
     "sources": [
       "https://www.OpenStreetMap.org"
@@ -907,7 +907,7 @@
   },
   {
     "path": "osm-logo.svg",
-    "license": "logo; all rights reserved",
+    "license": "LOGO",
     "authors": [],
     "sources": [
       "https://www.OpenStreetMap.org"
@@ -915,7 +915,7 @@
   },
   {
     "path": "party.svg",
-    "license": "CC-BY 4.0",
+    "license": "CC-BY-4.0",
     "authors": [
       "Twemoji"
     ],
@@ -947,7 +947,7 @@
   },
   {
     "path": "person.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -955,19 +955,19 @@
   },
   {
     "path": "pin.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "pin.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "plantnet_logo.svg",
-    "license": "Logo (fair usage)",
+    "license": "LOGO",
     "authors": [
       "https://plantnet.org"
     ],
@@ -977,19 +977,19 @@
   },
   {
     "path": "plus.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "plus.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "pop-out.svg",
-    "license": "CC-BY 3.0",
+    "license": "CC-BY-3.0",
     "authors": [
       "@fatih"
     ],
@@ -999,7 +999,7 @@
   },
   {
     "path": "pop-out.svg",
-    "license": "CC-BY 3.0",
+    "license": "CC-BY-3.0",
     "authors": [
       "@fatih"
     ],
@@ -1009,19 +1009,19 @@
   },
   {
     "path": "reload.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "reload.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "relocation.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -1029,7 +1029,7 @@
   },
   {
     "path": "resolved.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -1037,19 +1037,19 @@
   },
   {
     "path": "ring.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "ring.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "robot.svg",
-    "license": "CC-BY 4.0 International",
+    "license": "CC-BY-4.0",
     "authors": [
       "Font Awesome"
     ],
@@ -1059,7 +1059,7 @@
   },
   {
     "path": "satellite.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "SVG Repo"
     ],
@@ -1069,7 +1069,7 @@
   },
   {
     "path": "scissors.svg",
-    "license": "CC-BY 3.0",
+    "license": "CC-BY-3.0",
     "authors": [
       "The noun project - Icons8"
     ],
@@ -1113,19 +1113,19 @@
   },
   {
     "path": "share.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "share.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "speech_bubble.svg",
-    "license": "CC-BY 4.0",
+    "license": "CC-BY-4.0",
     "authors": [
       "Twemoji"
     ],
@@ -1135,7 +1135,7 @@
   },
   {
     "path": "speech_bubble_black_outline.svg",
-    "license": "CC-BY 4.0",
+    "license": "CC-BY-4.0",
     "authors": [
       "Twemoji"
     ],
@@ -1145,67 +1145,67 @@
   },
   {
     "path": "square.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "square.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "star.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "star.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "star_half.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "star_half.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "star_outline.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "star_outline.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "star_outline_half.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "star_outline_half.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "statistics.svg",
-    "license": "CC-BY 3.0",
+    "license": "CC-BY-3.0",
     "authors": [
       "@felpgrc"
     ],
@@ -1215,7 +1215,7 @@
   },
   {
     "path": "statistics.svg",
-    "license": "CC-BY 3.0",
+    "license": "CC-BY-3.0",
     "authors": [
       "@felpgrc"
     ],
@@ -1225,7 +1225,7 @@
   },
   {
     "path": "teardrop.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -1233,7 +1233,7 @@
   },
   {
     "path": "teardrop_with_hole_green.svg",
-    "license": "Creative Commons 4.0 BY-NC",
+    "license": "CC-BY-NC-4.0",
     "authors": [],
     "sources": [
       "https://pngimg.com/image/46283"
@@ -1241,7 +1241,7 @@
   },
   {
     "path": "translate.svg",
-    "license": "CC-BY-SA 3.0",
+    "license": "CC-BY-SA-3.0",
     "authors": [
       "MGalloway (WMF)"
     ],
@@ -1251,7 +1251,7 @@
   },
   {
     "path": "translate.svg",
-    "license": "CC-BY-SA 3.0",
+    "license": "CC-BY-SA-3.0",
     "authors": [
       "MGalloway (WMF)"
     ],
@@ -1261,7 +1261,7 @@
   },
   {
     "path": "triangle.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Robin van der Linde"
     ],
@@ -1269,19 +1269,19 @@
   },
   {
     "path": "up.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "up.svg",
-    "license": "CC0; trivial",
+    "license": "TRIVIAL",
     "authors": [],
     "sources": []
   },
   {
     "path": "upload.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -1289,7 +1289,7 @@
   },
   {
     "path": "wikidata.svg",
-    "license": "Logo; All rights reserved",
+    "license": "LOGO",
     "authors": [
       "Wikidata"
     ],
@@ -1299,7 +1299,7 @@
   },
   {
     "path": "wikidata.svg",
-    "license": "Logo; All rights reserved",
+    "license": "LOGO",
     "authors": [
       "Wikidata"
     ],
@@ -1309,7 +1309,7 @@
   },
   {
     "path": "wikimedia-commons-white.svg",
-    "license": "Logo; All rights reserved",
+    "license": "LOGO",
     "authors": [
       "Wikimedia"
     ],
@@ -1319,7 +1319,7 @@
   },
   {
     "path": "wikimedia-commons-white.svg",
-    "license": "Logo; All rights reserved",
+    "license": "LOGO",
     "authors": [
       "Wikimedia"
     ],
@@ -1329,7 +1329,7 @@
   },
   {
     "path": "wikipedia.svg",
-    "license": "Logo; All rights reserved",
+    "license": "LOGO",
     "authors": [
       "Wikipedia"
     ],
@@ -1339,7 +1339,7 @@
   },
   {
     "path": "wikipedia.svg",
-    "license": "Logo; All rights reserved",
+    "license": "LOGO",
     "authors": [
       "Wikipedia"
     ],

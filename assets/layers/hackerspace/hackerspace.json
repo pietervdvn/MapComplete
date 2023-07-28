@@ -207,10 +207,10 @@
     {
       "id": "hs-club-mate",
       "question": {
-        "en": "Does this hackerspace serve Club Mate?",
-        "de": "Gibt es in diesem Hackerspace Club Mate?",
+        "en": "Does this hackerspace serve Club-Mate?",
+        "de": "Gibt es in diesem Hackerspace Club-Mate?",
         "zh_Hant": "這個駭客空間是否服務俱樂部伙伴？",
-        "nl": "Biedt deze hackerspace club-mate aan?"
+        "nl": "Biedt deze hackerspace Club-Mate aan?"
       },
       "mappings": [
         {
@@ -220,10 +220,10 @@
             ]
           },
           "then": {
-            "en": "This hackerspace serves club mate",
-            "de": "In diesem Hackerspace gibt es Club Mate",
+            "en": "This hackerspace serves Club-Mate",
+            "de": "In diesem Hackerspace gibt es Club-Mate",
             "zh_Hant": "這個駭客空間服務俱樂部伙伴",
-            "nl": "Deze hackerspace biedt clube-mate aan"
+            "nl": "Deze hackerspace biedt Club-Mate aan"
           }
         },
         {
@@ -233,10 +233,10 @@
             ]
           },
           "then": {
-            "en": "This hackerspace does not serve club mate",
-            "de": "In diesem Hackerspace gibt es kein Club Mate",
+            "en": "This hackerspace does not serve Club-Mate",
+            "de": "In diesem Hackerspace gibt es kein Club-Mate",
             "zh_Hant": "這個駭客空間沒有服務俱樂部伙伴",
-            "nl": "Deze hackerspace biedt geen club-mate aan"
+            "nl": "Deze hackerspace biedt geen Club-Mate aan"
           }
         }
       ]

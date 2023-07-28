@@ -1,7 +1,7 @@
 [
   {
     "path": "room_administration.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -11,7 +11,7 @@
   },
   {
     "path": "room_auditorium.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -21,7 +21,7 @@
   },
   {
     "path": "room_bedroom.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -31,7 +31,7 @@
   },
   {
     "path": "room_chapel.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -41,7 +41,7 @@
   },
   {
     "path": "room_class.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -51,7 +51,7 @@
   },
   {
     "path": "room_computer.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -61,7 +61,7 @@
   },
   {
     "path": "room_conference.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -71,7 +71,7 @@
   },
   {
     "path": "room_crypt.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -81,7 +81,7 @@
   },
   {
     "path": "room_kitchen.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -91,7 +91,7 @@
   },
   {
     "path": "room_laboratory.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -101,7 +101,7 @@
   },
   {
     "path": "room_library.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -111,7 +111,7 @@
   },
   {
     "path": "room_locker.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -121,7 +121,7 @@
   },
   {
     "path": "room_nursery.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -131,7 +131,7 @@
   },
   {
     "path": "room_office.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -141,7 +141,7 @@
   },
   {
     "path": "room_prison_cell.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -151,7 +151,7 @@
   },
   {
     "path": "room_restaurant.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -161,7 +161,7 @@
   },
   {
     "path": "room_security_check.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -171,7 +171,7 @@
   },
   {
     "path": "room_sport.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -181,7 +181,7 @@
   },
   {
     "path": "room_storage.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -191,7 +191,7 @@
   },
   {
     "path": "room_technical.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -201,7 +201,7 @@
   },
   {
     "path": "room_toilets.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],
@@ -211,7 +211,7 @@
   },
   {
     "path": "room_waiting.svg",
-    "license": "GNU",
+    "license": "AGPL-3.0-only",
     "authors": [
       "Adrien Pavie"
     ],

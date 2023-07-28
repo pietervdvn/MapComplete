@@ -2,10 +2,17 @@ import { existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from "
 import SmallLicense from "../src/Models/smallLicense"
 import ScriptUtils from "./ScriptUtils"
 import Script from "./Script"
-
-const prompt = require("prompt-sync")()
+import { Utils } from "../src/Utils"
 
 export class GenerateLicenseInfo extends Script {
+    private static readonly needsLicenseRef = new Set(
+        ScriptUtils.readDirRecSync("./LICENSES")
+            .map((p) => p.substring(p.lastIndexOf("/") + 1))
+            .filter((p) => p.startsWith("LicenseRef-"))
+            .map((p) => p.substring("LicenseRef-".length))
+            .map((p) => p.substring(0, p.lastIndexOf(".")))
+    )
+
     constructor() {
         super("Validates the licenses and compiles them into one single asset file")
     }
@@ -185,6 +192,37 @@ export class GenerateLicenseInfo extends Script {
         writeFileSync(path + ".license_info.json", JSON.stringify(li, null, "  "))
     }
 
+    /**
+     * Rewrites a license into a SPDX-valid-ID.
+     * Might involve some guesswork (e.g. 'CC-BY-SA' --> 'CC-BY-SA 4.0"
+     * @param licenseId
+     */
+    toSPDXCompliantLicense(licenseId: string): string {
+        licenseId = licenseId.trim()
+        // https://spdx.org/licenses/
+        const mappings: Record<string, string> = {
+            "CC-0": "CC0-1.0",
+            CC0: "CC0-1.0",
+            "CC-BY-4.0-INTERNATIONAL": "CC-BY-4.0",
+            "CC-4.0": "CC-BY-4.0",
+            "CC-BY": "CC-BY-4.0",
+            "CC-BY-SA-4.0-INTERNATIONAL": "CC-BY-SA-4.0",
+            "CC-BY-SA": "CC-BY-SA-4.0",
+            "CREATIVE-COMMONS-4.0-BY-NC": "CC-BY-NC-4.0",
+            "CC-BY-SA-3.0-UNPORTED": "CC-BY-SA-3.0",
+            "ISC-LICENSE": "ISC",
+            "LOGO-BY-THE-GOVERNMENT": "LOGO",
+            PD: "PUBLIC-DOMAIN",
+            "LOGO-(ALL-RIGHTS-RESERVED)": "LOGO",
+            /*  ALL-RIGHTS-RESERVED:
+            PD:
+                PUBLIC-DOMAIN:
+        TRIVIAL: //*/
+        }
+
+        return mappings[licenseId] ?? licenseId
+    }
+
     cleanLicenseInfo(allPaths: string[], allLicenseInfos: SmallLicense[]) {
         // Read the license info file from the generated assets, creates a compiled license info in every directory
         // Note: this removes all the old license infos
@@ -208,6 +246,18 @@ export class GenerateLicenseInfo extends Script {
                 authors: license.authors,
                 sources: license.sources,
             }
+
+            cloned.license = Utils.Dedup(
+                cloned.license.split(";").map((l) => this.toSPDXCompliantLicense(l))
+            ).join("; ")
+            if (cloned.license === "CC0-1.0; TRIVIAL") {
+                cloned.license = "TRIVIAL"
+            }
+            if (cloned.license === "LOGO; ALL-RIGHTS-RESERVED") {
+                cloned.license = "LOGO"
+            }
+            cloned.license = cloned.license.split("; ").join(" AND ")
+
             perDirectory.get(dir).push(cloned)
         }
 
@@ -299,7 +349,7 @@ export class GenerateLicenseInfo extends Script {
         let licenseInfos = this.generateLicenseInfos(licensePaths)
 
         const artwork = contents.filter(
-            (pth) => pth.match(/(.svg|.png|.jpg|.ttf|.otf|.woff)$/i) != null
+            (pth) => pth.match(/(.svg|.png|.jpg|.ttf|.otf|.woff|.jpeg)$/i) != null
         )
         const missingLicenses = this.missingLicenseInfos(licenseInfos, artwork)
         if (args.indexOf("--prompt") >= 0 || args.indexOf("--query") >= 0) {
@@ -313,11 +363,10 @@ export class GenerateLicenseInfo extends Script {
 
         let invalid = 0
         for (const licenseInfo of licenseInfos) {
-            const isTrivial =
-                licenseInfo.license
-                    .split(";")
-                    .map((l) => l.trim().toLowerCase())
-                    .indexOf("trivial") >= 0
+            const isTrivial = licenseInfo.license
+                .split(";")
+                .map((l) => l.trim().toLowerCase())
+                .some((s) => s.endsWith("trivial"))
             if (licenseInfo.sources.length + licenseInfo.authors.length == 0 && !isTrivial) {
                 invalid++
                 invalidLicenses.push(
@@ -339,6 +388,18 @@ export class GenerateLicenseInfo extends Script {
                     invalidLicenses.push("Not a valid URL: " + source)
                 }
             }
+
+            const spdxPath = licenseInfo.path + ".license"
+
+            const spdxContent = [
+                "SPDX-FileCopyrightText: " + licenseInfo.authors.join("; "),
+                "SPDX-License-Identifier: " +
+                    licenseInfo.license
+                        .split(" AND ")
+                        .map((s) => this.addLicenseRef(s))
+                        .join(" AND "),
+            ]
+            writeFileSync(spdxPath, spdxContent.join("\n"))
         }
 
         if (missingLicenses.length > 0 || invalidLicenses.length) {
@@ -352,6 +413,19 @@ export class GenerateLicenseInfo extends Script {
 
         this.cleanLicenseInfo(licensePaths, licenseInfos)
         this.createFullLicenseOverview(licensePaths)
+    }
+
+    /**
+     * Some licenses need "LicenseRef-" to be added to make reuse lint work
+     * @param s
+     * @private
+     */
+    private addLicenseRef(s: string): string {
+        if (GenerateLicenseInfo.needsLicenseRef.has(s)) {
+            console.log("Mapping ", s, Array.from(GenerateLicenseInfo.needsLicenseRef))
+            return "LicenseRef-" + s
+        }
+        return s
     }
 }
 

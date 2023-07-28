@@ -1,7 +1,7 @@
 [
   {
     "path": "housenumber_add.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -9,7 +9,7 @@
   },
   {
     "path": "housenumber_ok.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Tobias Zwick (westnordost)"
     ],
@@ -20,7 +20,7 @@
   },
   {
     "path": "housenumber_text.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Tobias Zwick (westnordost)"
     ],
@@ -31,7 +31,7 @@
   },
   {
     "path": "housenumber_unknown.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Tobias Zwick (westnordost)"
     ],
@@ -42,7 +42,7 @@
   },
   {
     "path": "housenumber_unknown_small.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -50,7 +50,7 @@
   },
   {
     "path": "stamp-outline.png",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Rob Nickerson"
     ],

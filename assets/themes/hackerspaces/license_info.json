@@ -1,7 +1,7 @@
 [
   {
     "path": "glider.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Bryan.burgers"
     ],
@@ -11,7 +11,7 @@
   },
   {
     "path": "led.png",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Tommaso.sansone91"
     ],

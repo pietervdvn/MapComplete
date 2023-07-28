@@ -4,6 +4,7 @@
 import { UIEventSource } from "../UIEventSource"
 import Hash from "./Hash"
 import { Utils } from "../../Utils"
+import doc = Mocha.reporters.doc
 
 export class QueryParameters {
     static defaults: Record<string, string> = {}
@@ -16,11 +17,27 @@ export class QueryParameters {
     public static GetQueryParameter(
         key: string,
         deflt: string,
-        documentation?: string
+        documentation?: string,
+        options?: {
+            stackOffset?: number
+        }
     ): UIEventSource<string> {
         if (!this.initialized) {
             this.init()
         }
+
+        if (Utils.runningFromConsole) {
+            const location = Utils.getLocationInCode(-1 + (options?.stackOffset ?? 0))
+
+            documentation +=
+                "\n\nThis documentation is defined in the source code at [" +
+                location.filename +
+                "](" +
+                location.markdownLocation +
+                ")" +
+                "\n\n"
+        }
+
         QueryParameters.documentation.set(key, documentation)
         if (deflt !== undefined) {
             QueryParameters.defaults[key] = deflt
@@ -49,7 +66,7 @@ export class QueryParameters {
         documentation?: string
     ): UIEventSource<boolean> {
         return UIEventSource.asBoolean(
-            QueryParameters.GetQueryParameter(key, "" + deflt, documentation)
+            QueryParameters.GetQueryParameter(key, "" + deflt, documentation, { stackOffset: -1 })
         )
     }
 

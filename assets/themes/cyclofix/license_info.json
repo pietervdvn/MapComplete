@@ -1,7 +1,21 @@
 [
   {
+    "path": "SocialImage.jpeg",
+    "license": "CC-BY-SA-4.0",
+    "authors": [
+      "Pieter Fiers",
+      "Thibault Declercq",
+      "Pierre Barban",
+      "Joost Schouppe",
+      "Pieter Vander Vennet"
+    ],
+    "sources": [
+      "https://osoc.be/editions/2020/cyclofix"
+    ]
+  },
+  {
     "path": "fietsambassade_gent_logo.svg",
-    "license": "Logo; All rights reserved",
+    "license": "LOGO",
     "authors": [
       "De Fietsambassade"
     ],
@@ -11,7 +25,7 @@
   },
   {
     "path": "fietsambassade_gent_logo_small.svg",
-    "license": "Logo; All rights reserved",
+    "license": "LOGO",
     "authors": [
       "De Fietsambassade"
     ],
@@ -21,7 +35,7 @@
   },
   {
     "path": "key.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Stijn Wens"
     ],
@@ -31,7 +45,7 @@
   },
   {
     "path": "logo.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Pieter Fiers",
       "Thibault Declercq",

@@ -5163,13 +5163,13 @@
             "hs-club-mate": {
                 "mappings": {
                     "0": {
-                        "then": "In diesem Hackerspace gibt es Club Mate"
+                        "then": "In diesem Hackerspace gibt es Club-Mate"
                     },
                     "1": {
-                        "then": "In diesem Hackerspace gibt es kein Club Mate"
+                        "then": "In diesem Hackerspace gibt es kein Club-Mate"
                     }
                 },
-                "question": "Gibt es in diesem Hackerspace Club Mate?"
+                "question": "Gibt es in diesem Hackerspace Club-Mate?"
             },
             "is_makerspace": {
                 "mappings": {
@@ -7318,6 +7318,15 @@
                 },
                 "question": "Ist das Rauchen in {title()} erlaubt?"
             },
+            "survey_date": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Objekt wurde heute zuletzt geprüft"
+                    }
+                },
+                "question": "Wann wurde dieses Objekt zuletzt geprüft?",
+                "render": "Dieses Objekt wurde zuletzt geprüft am <b>{survey:date}</b>"
+            },
             "website": {
                 "question": "Wie lautet die Webseite von {title()}?"
             },
@@ -9403,6 +9412,13 @@
                                 "text": "<b class='alert'>Du hast {_unreadMessages}</b><br/>Öffne Deinen Posteingang"
                             }
                         }
+                    }
+                }
+            },
+            "language_picker": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Sprache wurde über einen URL-Parameter gesetzt und kann nicht vom Benutzer eingestellt werden.²"
                     }
                 }
             },

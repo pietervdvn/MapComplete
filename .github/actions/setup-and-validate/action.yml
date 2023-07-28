@@ -10,6 +10,10 @@ runs:
         cache: "npm"
         cache-dependency-path: package-lock.json
 
+    - name: print actor
+      shell: bash
+      run: echo ${{ github.actor }}
+
     - name: install deps
       run: npm ci
       shell: bash

@@ -135,7 +135,6 @@
             "de": "Kletterschuhe können hier ausgeliehen werden"
           },
           "addExtraTags": [
-            "service:climbing_shoes:rental:fee=",
             "service:climbing_shoes:rental:charge="
           ]
         },

@@ -39,7 +39,8 @@
           "if": "__url_parameter_initialized:language=yes",
           "icon": "./assets/layers/usersettings/translate_disabled.svg",
           "then": {
-            "en": "The language was set via an URL-parameter and cannot be set by the user.²"
+            "en": "The language was set via an URL-parameter and cannot be set by the user.²",
+            "de": "Die Sprache wurde über einen URL-Parameter gesetzt und kann nicht vom Benutzer eingestellt werden.²"
           }
         }
       ]

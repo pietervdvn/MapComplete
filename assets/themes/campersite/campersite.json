@@ -231,12 +231,7 @@
               }
             },
             {
-              "if": {
-                "and": [
-                  "fee=no",
-                  "charge="
-                ]
-              },
+              "if": "fee=no",
               "then": {
                 "en": "Can be used for free",
                 "id": "Boleh digunakan tanpa bayaran",

@@ -769,6 +769,18 @@
     },
     "kerbs_and_crossings": {
         "description": "Un mapa que muestra bordillos y cruces.",
+        "layers": {
+            "1": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "description": "Cruce para peatones y/o ciclistas",
+                            "title": "un cruce"
+                        }
+                    }
+                }
+            }
+        },
         "title": "Bordillos y cruces"
     },
     "maproulette": {

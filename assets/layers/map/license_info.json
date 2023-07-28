@@ -1,7 +1,7 @@
 [
   {
     "path": "map-stickered.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "OpenStreetMap",
       " Pieter Vander Vennet",
@@ -14,7 +14,7 @@
   },
   {
     "path": "map.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [],
     "sources": [
       "https://www.OpenStreetMap.org"
@@ -22,7 +22,7 @@
   },
   {
     "path": "osm-logo-buggy-attr.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [],
     "sources": [
       "https://www.OpenStreetMap.org"
@@ -30,7 +30,7 @@
   },
   {
     "path": "osm-logo-white-bg.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [],
     "sources": [
       "https://www.OpenStreetMap.org"

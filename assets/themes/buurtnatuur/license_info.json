@@ -1,7 +1,7 @@
 [
   {
     "path": "ANB.jpg",
-    "license": "Logo; All rights reserved",
+    "license": "LOGO",
     "authors": [
       "Agentschap Natuur en Bos"
     ],
@@ -11,7 +11,7 @@
   },
   {
     "path": "Natuurpunt.jpg",
-    "license": "Logo; All rights reserved",
+    "license": "LOGO",
     "authors": [
       "Natuurpunt"
     ],
@@ -21,7 +21,7 @@
   },
   {
     "path": "forest.svg",
-    "license": "CC-BY 3.0",
+    "license": "CC-BY-3.0",
     "authors": [
       "@ Federico Sibella"
     ],
@@ -31,7 +31,7 @@
   },
   {
     "path": "groen_logo.svg",
-    "license": "Logo; All rights reserved",
+    "license": "LOGO",
     "authors": [
       "Groen"
     ],
@@ -41,7 +41,7 @@
   },
   {
     "path": "logo.svg",
-    "license": "Logo; All rights reserved",
+    "license": "LOGO",
     "authors": [
       "Groen"
     ],
@@ -51,7 +51,7 @@
   },
   {
     "path": "nature_reserve.svg",
-    "license": "CC-BY 3.0",
+    "license": "CC-BY-3.0",
     "authors": [
       "@ Эдуард Черных"
     ],
@@ -61,7 +61,7 @@
   },
   {
     "path": "park.svg",
-    "license": "CC-BY 3.0",
+    "license": "CC-BY-3.0",
     "authors": [
       "@sterankofrank"
     ],
@@ -71,7 +71,7 @@
   },
   {
     "path": "social_image.jpg",
-    "license": "All rights reserved",
+    "license": "ALL-RIGHTS-RESERVED",
     "authors": [
       "Groen"
     ],

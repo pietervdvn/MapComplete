@@ -54,6 +54,7 @@
     + [payment-options-split](#payment-options-split)
     + [denominations-coins](#denominations-coins)
     + [denominations-notes](#denominations-notes)
+    + [survey_date](#survey_date)
     + [id_presets.shop_types](#id_presetsshop_types)
     + [school.capacity](#schoolcapacity)
     + [school.gender](#schoolgender)
@@ -835,6 +836,17 @@
   - parking_ticket_machine
   - ticket_machine
   - vending_machine
+
+
+
+
+### survey_date 
+
+
+
+
+
+  - recycling
 
 
 

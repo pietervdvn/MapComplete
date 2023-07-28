@@ -15,6 +15,7 @@ A single climbing route and its properties. Some properties are derived from the
 
 
   - This layer is shown at zoomlevel **18** and higher
+  - This layer will automatically load  [climbing_opportunity](./climbing_opportunity.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
   - This layer is needed as dependency for layer [climbing_area](#climbing_area)
 
 

@@ -29,7 +29,7 @@
     <div class="gap-4 md:grid md:grid-flow-row md:grid-cols-2 lg:grid-cols-3">
       {#each filteredThemes as theme (theme.id)}
         {#if theme !== undefined && !(hideThemes && theme?.hideFromOverview)}
-        <!-- TODO: doesn't work if first theme is hidden -->
+          <!-- TODO: doesn't work if first theme is hidden -->
           {#if theme === firstTheme && !isCustom && $search !== "" && $search !== undefined}
             <ThemeButton
               {theme}

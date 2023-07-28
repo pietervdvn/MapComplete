@@ -610,6 +610,18 @@
     },
     "kerbs_and_crossings": {
         "description": "Et kort, der viser kantsten og overgange.",
+        "layers": {
+            "1": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "description": "Overgang for fodgængere og/eller cyklister",
+                            "title": "en overgang"
+                        }
+                    }
+                }
+            }
+        },
         "title": "Kantsten og overgange"
     },
     "maproulette": {

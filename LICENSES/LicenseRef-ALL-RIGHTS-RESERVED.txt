@@ -1,0 +1,10 @@
+ALL RIGHTS RESERVED
+
+This file is used within the software project because permission was granted to this software project, either implicit or explicit.
+However, there is no other specific license for this file, thus making it unsuited for reuse.
+
+For example:
+
+- permission was asked and obtained to use it, but without granting an open license
+- artwork was designed for a commissioned part of the software, but this artwork was not released under a specific license
+- a font or icon is used to use the correct style of the organisation ordering a part of the software. This does not give third-parties the right to reuse those fonts

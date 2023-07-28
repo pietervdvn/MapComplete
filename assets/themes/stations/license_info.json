@@ -1,7 +1,7 @@
 [
   {
     "path": "bench.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Matthijs Melissen"
     ],
@@ -11,7 +11,7 @@
   },
   {
     "path": "bicycle_parking.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Matthijs Melissen"
     ],
@@ -21,7 +21,7 @@
   },
   {
     "path": "departures_board.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Robin van der Linde"
     ],
@@ -29,7 +29,7 @@
   },
   {
     "path": "drinking_water.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Andy Allan",
       "Michael Glanznig"
@@ -40,7 +40,7 @@
   },
   {
     "path": "public_transport_tickets.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Jérémy Ragusa"
     ],
@@ -50,7 +50,7 @@
   },
   {
     "path": "rail-light.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Maki"
     ],
@@ -60,7 +60,7 @@
   },
   {
     "path": "rental_bicycle.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Michael Glanznig",
       "Andy Allan"

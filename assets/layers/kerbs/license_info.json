@@ -1,7 +1,7 @@
 [
   {
     "path": "KerbIcon.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Treeem"
     ],
@@ -11,7 +11,7 @@
   },
   {
     "path": "flush.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Jeroen Hoek"
     ],
@@ -21,7 +21,7 @@
   },
   {
     "path": "lowered.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Jeroen Hoek"
     ],
@@ -31,7 +31,7 @@
   },
   {
     "path": "no.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Jeroen Hoek"
     ],
@@ -41,7 +41,7 @@
   },
   {
     "path": "raised.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Jeroen Hoek"
     ],

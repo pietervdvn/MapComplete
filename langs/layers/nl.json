@@ -4939,13 +4939,13 @@
             "hs-club-mate": {
                 "mappings": {
                     "0": {
-                        "then": "Deze hackerspace biedt clube-mate aan"
+                        "then": "Deze hackerspace biedt Club-Mate aan"
                     },
                     "1": {
-                        "then": "Deze hackerspace biedt geen club-mate aan"
+                        "then": "Deze hackerspace biedt geen Club-Mate aan"
                     }
                 },
-                "question": "Biedt deze hackerspace club-mate aan?"
+                "question": "Biedt deze hackerspace Club-Mate aan?"
             },
             "is_makerspace": {
                 "mappings": {

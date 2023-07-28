@@ -5164,13 +5164,13 @@
             "hs-club-mate": {
                 "mappings": {
                     "0": {
-                        "then": "This hackerspace serves club mate"
+                        "then": "This hackerspace serves Club-Mate"
                     },
                     "1": {
-                        "then": "This hackerspace does not serve club mate"
+                        "then": "This hackerspace does not serve Club-Mate"
                     }
                 },
-                "question": "Does this hackerspace serve Club Mate?"
+                "question": "Does this hackerspace serve Club-Mate?"
             },
             "is_makerspace": {
                 "mappings": {
@@ -7318,6 +7318,15 @@
                     }
                 },
                 "question": "Is smoking allowed at {title()}?"
+            },
+            "survey_date": {
+                "mappings": {
+                    "0": {
+                        "then": "This object was last surveyed today"
+                    }
+                },
+                "question": "When was this object last surveyed?",
+                "render": "This object was last surveyed on <b>{survey:date}</b>"
             },
             "website": {
                 "question": "What is the website of {title()}?"

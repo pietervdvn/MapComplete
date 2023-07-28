@@ -10,7 +10,12 @@ import { Utils } from "../../Utils"
 class FeatureSwitchUtils {
     static initSwitch(key: string, deflt: boolean, documentation: string): UIEventSource<boolean> {
         const defaultValue = deflt
-        const queryParam = QueryParameters.GetQueryParameter(key, "" + defaultValue, documentation)
+        const queryParam = QueryParameters.GetQueryParameter(
+            key,
+            "" + defaultValue,
+            documentation,
+            { stackOffset: -1 }
+        )
 
         // It takes the current layout, extracts the default value for this query parameter. A query parameter event source is then retrieved and flattened
         return queryParam.sync(
