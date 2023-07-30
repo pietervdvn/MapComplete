@@ -961,33 +961,28 @@
         }
       ]
     },
-
     {
       "id": "food-category",
       "options": [
         {
           "question": {
             "en": "All categories"
-      }},
-
-            
-      
+          }
+        },
         {
           "question": {
-            "en"; "Only fastfood buisinesses"
-         },
-          "osmTags": "amenity=fast_food"  }
-      
-{
+            "en": "Only fastfood buisinesses"
+          },
+          "osmTags": "amenity=fast_food"
+        },
+        {
           "question": {
             "en": "Only restaurants"
-         },
-          "osmTags": "amenity=restaurant"  }
-      
-        
+          },
+          "osmTags": "amenity=restaurant"
+        }
       ]
     },
-    
     {
       "id": "vegetarian",
       "options": [
