@@ -1344,6 +1344,36 @@ export default class SpecialVisualizations {
                     )
                 },
             },
+            {
+                funcName: "translated",
+                docs: "If the given key can be interpreted as a JSON, only show the key containing the current language (or 'en'). This specialRendering is meant to be used by MapComplete studio and is not useful in map themes",
+                args: [
+                    {
+                        name: "key",
+                        doc: "The attribute to interpret as json",
+                        defaultValue: "value",
+                    },
+                ],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new VariableUiElement(
+                        tagSource.map((tags) => {
+                            const v = tags[argument[0] ?? "value"]
+                            try {
+                                const tr = JSON.parse(v)
+                                return new Translation(tr).SetClass("font-bold")
+                            } catch (e) {
+                                return v
+                            }
+                        })
+                    )
+                },
+            },
         ]
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))

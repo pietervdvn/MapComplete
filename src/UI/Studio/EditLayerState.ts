@@ -22,7 +22,7 @@ export default class EditLayerState {
             featureSwitchIsDebugging: new UIEventSource<boolean>(true),
         }
         this.configuration.addCallback((config) => {
-            console.log("Current config is", Utils.Clone(config))
+            // console.log("Current config is", Utils.Clone(config))
         })
     }
 

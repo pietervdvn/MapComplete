@@ -14,7 +14,7 @@ export let title: string
 {#if title}
     <h3>{title}</h3>
     <div class="pl-2 border border-black flex flex-col gap-y-1">
-
+        <slot name="description"/>
         {#each configs as config}
             <SchemaBasedInput {state} path={config.path} schema={config}/>
         {/each}

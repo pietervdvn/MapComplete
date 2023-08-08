@@ -10,7 +10,7 @@ export interface TagRenderingConfigJson {
      * question: What text should be rendered?
      *
      * This piece of text will be shown in the infobox.
-     * Note that "{key}"-parts are substituted by the corresponding values of the element.
+     * Note that "&LBRACEkey&RBRACE"-parts are substituted by the corresponding values of the element.
      *
      * This text will be shown if:
      * - there is no mapping which matches (or there are no matches)

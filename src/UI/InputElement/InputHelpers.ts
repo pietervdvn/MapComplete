@@ -61,6 +61,8 @@ export default class InputHelpers {
         translation: (value) => new SvelteUIElement(TranslationInput, { value }),
     } as const
 
+    public static hideInputField : string[] = ["translation"]
+
     /**
      * Constructs a mapProperties-object for the given properties.
      * Assumes that the first helper-args contains the desired zoom-level

@@ -8,6 +8,7 @@
   import InputHelper from "../../InputElement/InputHelper.svelte"
   import type { Feature } from "geojson"
   import { Unit } from "../../../Models/Unit"
+  import InputHelpers from "../../InputElement/InputHelpers";
 
   export let value: UIEventSource<string>
   export let config: TagRenderingConfig
@@ -52,7 +53,7 @@
         {value}
       />
     </Inline>
-  {:else}
+  {:else if InputHelpers.hideInputField.indexOf(config.freeform.type) < 0}
     <ValidatedInput
       {feedback}
       {getCountry}

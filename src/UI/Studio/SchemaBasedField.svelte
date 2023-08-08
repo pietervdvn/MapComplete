@@ -25,7 +25,7 @@
 
     const configJson: QuestionableTagRenderingConfigJson = {
         id: path.join("_"),
-        render: schema.type === "boolean" ? undefined : ((schema.hints.inline ?? schema.path.at(-1) )+ ": <b>{value}</b>"),
+        render: schema.type === "boolean" ? undefined : ((schema.hints.inline ?? schema.path.at(-1) )+ ": <b>{translated(value)}</b>"),
         question: schema.hints.question,
         questionHint: nmd(schema.description),
         freeform: schema.type === "boolean" ? undefined : {
@@ -76,12 +76,10 @@
         err = path.join(".") + " " + e
     }
     let startValue = state.getCurrentValueFor(path)
-    console.log("StartValue for", path.join("."), " is", startValue)
     if (typeof startValue !== "string") {
         startValue = JSON.stringify(startValue)
     }
     const tags = new UIEventSource<Record<string, string>>({value: startValue ?? ""})
-    tags.addCallbackAndRunD(tgs => console.log(">>> tgs for",path.join("."),"are",tgs ))
     onDestroy(state.register(path, tags.map(tgs => {
         const v = tgs["value"];
         if (schema.type === "boolan") {
@@ -90,7 +88,6 @@
         if (schema.type === "number") {
             return Number(v)
         }
-        console.log(schema, v)
         if(isTranslation) {
             if(v === ""){
                 return {}
@@ -104,7 +101,7 @@
 {#if err !== undefined}
     <span class="alert">{err}</span>
 {:else}
-    <div>
+    <div class="w-full">
         <TagRenderingEditable {config} selectedElement={undefined} showQuestionIfUnknown={true} {state} {tags}/>
     </div>
 {/if}

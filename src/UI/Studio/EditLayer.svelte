@@ -1,7 +1,7 @@
 <script lang="ts">
 
     import EditLayerState from "./EditLayerState";
-    import layerSchemaRaw from "../../../assets/layerconfigmeta.json"
+    import layerSchemaRaw from "../../assets/layerconfigmeta.json"
     import Region from "./Region.svelte";
     import TabbedGroup from "../Base/TabbedGroup.svelte";
     import {UIEventSource} from "../../Logic/UIEventSource";
@@ -16,7 +16,7 @@
     /**
      * Blacklist for the general area tab
      */
-    const regionBlacklist = ["hidden",undefined,"infobox", "tagrenderings","maprendering", "editing"]
+    const regionBlacklist = ["hidden",undefined,"infobox", "tagrenderings","maprendering", "editing", "title"]
     const allNames =  Utils.Dedup(layerSchema.map(meta => meta.hints.group))
 
     const perRegion: Record<string, ConfigMeta[]> = {}
@@ -40,20 +40,26 @@
 <TabbedGroup tab={new UIEventSource(1)}>
     <div slot="title0">General properties</div>
     <div class="flex flex-col" slot="content0">
+        <!--
         {#each baselayerRegions as region}
             <Region {state} configs={perRegion[region]} title={region}/>
         {/each}
         
         {#each leftoverRegions as region}
             <Region {state} configs={perRegion[region]} title={region}/>
-        {/each}
+        {/each}-->
     </div>
 
     <div slot="title1">Information panel (questions and answers)</div>
     <div slot="content1">
-        <Region {state} configs={perRegion["title"]} title="Title"/>
-        <Region {state} configs={perRegion["tagrenderings"]} title="Infobox"/>
-        <Region {state} configs={perRegion["editing"]} title="Other editing elements"/>
+        <Region {state} configs={perRegion["tagrenderings"]} title="Popup contents">
+            <div slot="description">
+                The bulk of the popup content
+            </div>
+        </Region>
+        <!--
+        <Region {state} configs={perRegion["title"]} title="Popup title"/>
+        <Region {state} configs={perRegion["editing"]} title="Other editing elements"/>-->
     </div>
 
     <div slot="title2">Rendering on the map</div>

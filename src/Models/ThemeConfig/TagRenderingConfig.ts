@@ -233,6 +233,10 @@ export default class TagRenderingConfig {
                 if (txt.indexOf("{canonical(" + this.freeform.key + ")") >= 0) {
                     continue
                 }
+
+                if (txt.indexOf("{translated(" + this.freeform.key + ")") >= 0) {
+                    continue
+                }
                 if (
                     this.freeform.type === "opening_hours" &&
                     txt.indexOf("{opening_hours_table(") >= 0

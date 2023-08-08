@@ -393,6 +393,7 @@ export interface LayerConfigJson {
      * This is mainly create questions for a 'left' and a 'right' side of the road.
      * These will be grouped and questions will be asked together
      *
+     * type: tagrendering[]
      * group: tagrenderings
      *
      */
