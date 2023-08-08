@@ -9,7 +9,7 @@
   import { Unit } from "../../Models/Unit"
   import UnitInput from "../Popup/UnitInput.svelte"
 
-  export let type: ValidatorType
+  export let type: ValidatorType 
   export let feedback: UIEventSource<Translation> | undefined = undefined
   export let getCountry: () => string | undefined
   export let placeholder: string | Translation | undefined
@@ -63,6 +63,7 @@
     }
 
     if (unit && isNaN(Number(v))) {
+      console.debug("Not a number, but a unit is required")
       value.setData(undefined)
       return
     }

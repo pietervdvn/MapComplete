@@ -69,7 +69,7 @@
   export let selectedTags: TagsFilter = undefined
 
   let mappings: Mapping[] = config?.mappings
-  let searchTerm: Store<string> = new UIEventSource("")
+  let searchTerm: UIEventSource<string> = new UIEventSource("")
 
   $: {
     try {

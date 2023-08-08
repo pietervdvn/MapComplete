@@ -1,11 +1,12 @@
 import { Translation } from "../../i18n/Translation"
 import Translations from "../../i18n/Translations"
 import { Validator } from "../Validator"
+import { ValidatorType } from "../Validators";
 
 export default class FloatValidator extends Validator {
-    inputmode = "decimal"
+    inputmode: "decimal" = "decimal"
 
-    constructor(name?: string, explanation?: string) {
+    constructor(name?: ValidatorType, explanation?: string) {
         super(name ?? "float", explanation ?? "A decimal number", "decimal")
     }
 
