@@ -86,6 +86,7 @@
             }
           ]
         },
+        "payment-options-split",
         {
           "id": "coin",
           "question": {
@@ -205,7 +206,8 @@
             }
           ]
         },
-        "level"
+        "level",
+        "check_date"
       ],
       "mapRendering": [
         {
@@ -235,8 +237,15 @@
           ]
         }
       ],
+      "allowMove": {
+        "enableImproveAccuracy": true,
+        "enableRelocation": true
+      },
+      "deletion": true,
       "filter": [
-        "open_now"
+        "open_now",
+        "accepts_debit_cards",
+        "accepts_credit_cards"
       ]
     }
   ],
