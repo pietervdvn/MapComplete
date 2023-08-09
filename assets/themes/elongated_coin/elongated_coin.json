@@ -87,6 +87,21 @@
           ]
         },
         {
+          "id": "payment",
+          "builtin": "payment-options-split",
+          "override": {
+            "mappings": [
+              {},
+              {},
+              {},
+              {},
+              {
+                "hideInAnswer": true
+              }
+            ]
+          }
+        },
+        {
           "id": "coin",
           "question": {
             "en": "What coin is used for pressing?",
@@ -205,7 +220,8 @@
             }
           ]
         },
-        "level"
+        "level",
+        "check_date"
       ],
       "mapRendering": [
         {
@@ -235,6 +251,11 @@
           ]
         }
       ],
+      "allowMove": {
+        "enableImproveAccuracy": true,
+        "enableRelocation": true
+      },
+      "deletion": true,
       "filter": [
         "open_now"
       ]
