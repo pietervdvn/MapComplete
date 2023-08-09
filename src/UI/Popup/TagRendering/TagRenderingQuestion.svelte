@@ -38,11 +38,12 @@
   let selectedMapping: number = undefined
   let checkedMappings: boolean[]
   $: {
+    let tgs = $tags
     mappings = config.mappings?.filter((m) => {
       if (typeof m.hideInAnswer === "boolean") {
         return !m.hideInAnswer
       }
-      return m.hideInAnswer.matchesProperties(tags.data)
+      return !m.hideInAnswer.matchesProperties(tgs)
     })
     // We received a new config -> reinit
     unit = layer.units.find((unit) => unit.appliesToKeys.has(config.freeform?.key))
@@ -59,7 +60,7 @@
     if (config.freeform?.key) {
       if (!config.multiAnswer) {
         // Somehow, setting multianswer freeform values is broken if this is not set
-        freeformInput.setData(tags.data[config.freeform.key])
+        freeformInput.setData(tgs[config.freeform.key])
       }
     } else {
       freeformInput.setData(undefined)
