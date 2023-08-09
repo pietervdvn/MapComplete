@@ -2154,20 +2154,23 @@
     {
       "id": "survey_date",
       "question": {
-        "en": "When was this object last surveyed?"
+        "en": "When was this object last surveyed?",
+        "de": "Wann wurde dieses Objekt zuletzt geprüft?"
       },
       "freeform": {
         "key": "survey:date",
         "type": "date"
       },
       "render": {
-        "en": "This object was last surveyed on <b>{survey:date}</b>"
+        "en": "This object was last surveyed on <b>{survey:date}</b>",
+        "de": "Dieses Objekt wurde zuletzt geprüft am <b>{survey:date}</b>"
       },
       "mappings": [
         {
           "if": "survey:date:={_now:date}",
           "then": {
-            "en": "This object was last surveyed today"
+            "en": "This object was last surveyed today",
+            "de": "Dieses Objekt wurde heute zuletzt geprüft"
           }
         }
       ]
