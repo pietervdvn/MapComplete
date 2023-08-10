@@ -4754,6 +4754,13 @@
                         "question": "Halal Gerichte im Angebot"
                     }
                 }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Halal Gerichte im Angebot"
+                    }
+                }
             }
         },
         "name": "Restaurants und Imbisse",
@@ -5854,9 +5861,6 @@
             "maxspeed-maxspeed": {
                 "mappings": {
                     "0": {
-                        "then": "Dies ist eine Wohnstraße, auf der eine Höchstgeschwindigkeit von 20 km/h gilt"
-                    },
-                    "1": {
                         "then": "Dies ist eine Wohnstraße, auf der eine Höchstgeschwindigkeit von 20 km/h gilt"
                     }
                 },

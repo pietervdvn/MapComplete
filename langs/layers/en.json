@@ -4738,6 +4738,12 @@
                 "options": {
                     "0": {
                         "question": "Has a vegetarian menu"
+                    },
+                    "1": {
+                        "question": "Only fastfood buisinesses"
+                    },
+                    "2": {
+                        "question": "Only restaurants"
                     }
                 }
             },
@@ -4749,6 +4755,13 @@
                 }
             },
             "4": {
+                "options": {
+                    "0": {
+                        "question": "Has a halal menu"
+                    }
+                }
+            },
+            "5": {
                 "options": {
                     "0": {
                         "question": "Has a halal menu"
@@ -5854,9 +5867,6 @@
             "maxspeed-maxspeed": {
                 "mappings": {
                     "0": {
-                        "then": "This is a living street, which has a maxspeed of 20km/h"
-                    },
-                    "1": {
                         "then": "This is a living street, which has a maxspeed of 20km/h"
                     }
                 },

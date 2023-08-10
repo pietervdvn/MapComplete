@@ -2610,6 +2610,13 @@
                         "question": "Tiene menú halah"
                     }
                 }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Tiene menú halah"
+                    }
+                }
             }
         },
         "name": "Restaurantes y comida rápida",
