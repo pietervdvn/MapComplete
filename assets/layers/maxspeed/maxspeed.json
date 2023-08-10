@@ -90,7 +90,9 @@
             "path": "./assets/layers/maxspeed/living_street_be.svg",
             "class": "large"
           },
-          "addExtraTags": ["maxspeed=20"],
+          "addExtraTags": [
+            "maxspeed=20"
+          ],
           "hideInAnswer": "_country!=be"
         }
       ],
