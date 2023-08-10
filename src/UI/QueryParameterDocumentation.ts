@@ -6,6 +6,7 @@ import Translations from "./i18n/Translations"
 import { QueryParameters } from "../Logic/Web/QueryParameters"
 import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import ThemeViewStateHashActor from "../Logic/Web/ThemeViewStateHashActor"
 
 export default class QueryParameterDocumentation {
     private static QueryParamDocsIntro = [
@@ -60,6 +61,7 @@ export default class QueryParameterDocumentation {
     public static GenerateQueryParameterDocs(): BaseUIElement {
         const docs: (string | BaseUIElement)[] = [
             ...QueryParameterDocumentation.QueryParamDocsIntro,
+            ...ThemeViewStateHashActor.documentation,
         ]
         this.UrlParamDocs().forEach((value, key) => {
             const c = new Combine([

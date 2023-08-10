@@ -39,7 +39,8 @@
         "point",
         "centroid"
       ],
-      "icon": "circle:white;./assets/layers/waste_disposal/waste_disposal.svg"
+      "icon": "circle:white;./assets/layers/waste_disposal/waste_disposal.svg",
+      "iconSize": "20,20"
     }
   ],
   "presets": [

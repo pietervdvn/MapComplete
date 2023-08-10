@@ -4,14 +4,13 @@
 import { UIEventSource } from "../UIEventSource"
 import Hash from "./Hash"
 import { Utils } from "../../Utils"
-import doc = Mocha.reporters.doc
 
 export class QueryParameters {
     static defaults: Record<string, string> = {}
     static documentation: Map<string, string> = new Map<string, string>()
-    private static order: string[] = ["layout", "test", "z", "lat", "lon"]
     protected static readonly _wasInitialized: Set<string> = new Set()
     protected static readonly knownSources: Record<string, UIEventSource<string>> = {}
+    private static order: string[] = ["layout", "test", "z", "lat", "lon"]
     private static initialized = false
 
     public static GetQueryParameter(
@@ -74,6 +73,7 @@ export class QueryParameters {
         this.init()
         return QueryParameters._wasInitialized.has(key)
     }
+
     public static initializedParameters(): ReadonlyArray<string> {
         return Array.from(QueryParameters._wasInitialized.keys())
     }
@@ -108,14 +108,12 @@ export class QueryParameters {
         }
     }
 
-    /**
-     * Set the query parameters of the page location
-     * @constructor
-     * @private
-     */
-    private static Serialize() {
-        const parts = []
+    public static GetParts(exclude?: Set<string>) {
+        const parts: string[] = []
         for (const key of QueryParameters.order) {
+            if (exclude?.has(key)) {
+                continue
+            }
             if (QueryParameters.knownSources[key]?.data === undefined) {
                 continue
             }
@@ -134,6 +132,16 @@ export class QueryParameters {
                     encodeURIComponent(QueryParameters.knownSources[key].data)
             )
         }
+        return parts
+    }
+
+    /**
+     * Set the query parameters of the page location
+     * @constructor
+     * @private
+     */
+    private static Serialize() {
+        const parts = QueryParameters.GetParts()
         if (!Utils.runningFromConsole) {
             // Don't pollute the history every time a parameter changes
             try {
@@ -150,5 +158,9 @@ export class QueryParameters {
         }
         QueryParameters._wasInitialized.clear()
         QueryParameters.order = []
+    }
+
+    static GetDefaultFor(key: string): string {
+        return QueryParameters.defaults[key]
     }
 }

@@ -67,7 +67,7 @@
             return
         }
 
-        if (unit && isNaN(Number(v))) {
+        if (unit !== undefined && isNaN(Number(v))) {
             value.setData(undefined)
             return
         }
@@ -75,6 +75,7 @@
         feedback?.setData(undefined)
         value.setData(v + (selectedUnit.data ?? ""))
     }
+        
 
     onDestroy(_value.addCallbackAndRun((_) => setValues()))
     onDestroy(value.addCallbackAndRunD(fromUpstream => {

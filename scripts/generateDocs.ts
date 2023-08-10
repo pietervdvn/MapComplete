@@ -388,11 +388,11 @@ WriteFile("./Docs/Tags_format.md", TagUtils.generateDocs(), ["src/Logic/Tags/Tag
             }
         }
         for (const usedBuiltin of usedBuiltins) {
-            var using = layersUsingBuiltin.get(usedBuiltin)
-            if (using === undefined) {
+            const usingLayers = layersUsingBuiltin.get(usedBuiltin)
+            if (usingLayers === undefined) {
                 layersUsingBuiltin.set(usedBuiltin, [layer.id])
             } else {
-                using.push(layer.id)
+                usingLayers.push(layer.id)
             }
         }
 
@@ -413,7 +413,7 @@ WriteFile("./Docs/URL_Parameters.md", QueryParameterDocumentation.GenerateQueryP
     "src/Logic/Web/QueryParameters.ts",
     "src/UI/QueryParameterDocumentation.ts",
 ])
-if (fakedom === undefined || window === undefined) {
+if (fakedom === undefined) {
     throw "FakeDom not initialized"
 }
 QueryParameters.GetQueryParameter(

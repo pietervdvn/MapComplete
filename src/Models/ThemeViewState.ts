@@ -110,15 +110,18 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
     constructor(layout: LayoutConfig) {
         this.layout = layout
-        this.guistate = new MenuState(layout.id)
+        this.featureSwitches = new FeatureSwitchState(layout)
+        this.guistate = new MenuState(
+            this.featureSwitches.featureSwitchWelcomeMessage.data,
+            layout.id
+        )
         this.map = new UIEventSource<MlMap>(undefined)
         const initial = new InitialMapPositioning(layout)
         this.mapProperties = new MapLibreAdaptor(this.map, initial)
         const geolocationState = new GeoLocationState()
 
-        this.featureSwitches = new FeatureSwitchState(layout)
         this.featureSwitchIsTesting = this.featureSwitches.featureSwitchIsTesting
-        this.featureSwitchUserbadge = this.featureSwitches.featureSwitchUserbadge
+        this.featureSwitchUserbadge = this.featureSwitches.featureSwitchEnableLogin
 
         this.osmConnection = new OsmConnection({
             dryRun: this.featureSwitches.featureSwitchIsTesting,
@@ -465,7 +468,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
         new ShowDataLayer(this.map, {
             features: new FilteringFeatureSource(last_click_layer, last_click),
-            doShowLayer: new ImmutableStore(true),
+            doShowLayer: this.featureSwitches.featureSwitchEnableLogin,
             layer: last_click_layer.layerDef,
             selectedElement: this.selectedElement,
             selectedLayer: this.selectedLayer,

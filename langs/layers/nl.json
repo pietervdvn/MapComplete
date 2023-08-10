@@ -4530,6 +4530,13 @@
                         "question": "Heeft een halal menu"
                     }
                 }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Heeft een halal menu"
+                    }
+                }
             }
         },
         "name": "Eetgelegenheden",
@@ -5552,9 +5559,6 @@
             "maxspeed-maxspeed": {
                 "mappings": {
                     "0": {
-                        "then": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h"
-                    },
-                    "1": {
                         "then": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h"
                     }
                 },

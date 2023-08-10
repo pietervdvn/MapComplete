@@ -962,15 +962,41 @@
       ]
     },
     {
-      "id": "vegetarian",
+      "id": "food-category",
       "options": [
         {
           "question": {
             "en": "Has a vegetarian menu",
-            "nl": "Heeft een vegetarisch menu",
             "de": "Vegetarische Gerichte im Angebot",
             "es": "Tiene menú vegetariano",
-            "fr": "A un menu végétarien"
+            "fr": "A un menu végétarien",
+            "nl": "Heeft een vegetarisch menu"
+          }
+        },
+        {
+          "question": {
+            "en": "Only fastfood buisinesses"
+          },
+          "osmTags": "amenity=fast_food"
+        },
+        {
+          "question": {
+            "en": "Only restaurants"
+          },
+          "osmTags": "amenity=restaurant"
+        }
+      ]
+    },
+    {
+      "id": "vegetarian",
+      "options": [
+        {
+          "question": {
+            "en": "Has a vegan menu",
+            "nl": "Heeft een veganistisch menu",
+            "de": "Vegane Gerichte im Angebot",
+            "es": "Tiene menú vegano",
+            "fr": "A un menu végétalien"
           },
           "osmTags": {
             "or": [
@@ -988,11 +1014,12 @@
       "options": [
         {
           "question": {
-            "en": "Has a vegan menu",
-            "nl": "Heeft een veganistisch menu",
-            "de": "Vegane Gerichte im Angebot",
-            "es": "Tiene menú vegano",
-            "fr": "A un menu végétalien"
+            "en": "Has a halal menu",
+            "nl": "Heeft een halal menu",
+            "de": "Halal Gerichte im Angebot",
+            "es": "Tiene menú halah",
+            "fr": "A un menu halal",
+            "da": "Har en halalmenu"
           },
           "osmTags": {
             "or": [

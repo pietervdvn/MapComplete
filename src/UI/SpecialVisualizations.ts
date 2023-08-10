@@ -82,6 +82,7 @@ import ConflateImportButtonViz from "./Popup/ImportButtons/ConflateImportButtonV
 import DeleteWizard from "./Popup/DeleteFlow/DeleteWizard.svelte"
 import { OpenJosm } from "./BigComponents/OpenJosm"
 import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte"
+import FediverseValidator from "./InputElement/Validators/FediverseValidator"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -1371,6 +1372,43 @@ export default class SpecialVisualizations {
                                 return v
                             }
                         })
+                    )
+                },
+            },
+            {
+                funcName: "fediverse_link",
+                docs: "Converts a fediverse username or link into a clickable link",
+                args: [
+                    {
+                        name: "key",
+                        doc: "The attribute-name containing the link",
+                        required: true,
+                    },
+                ],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    const key = argument[0]
+                    const validator = new FediverseValidator()
+                    return new VariableUiElement(
+                        tagSource
+                            .map((tags) => tags[key])
+                            .map((fediAccount) => {
+                                fediAccount = validator.reformat(fediAccount)
+                                const [_, username, host] = fediAccount.match(
+                                    FediverseValidator.usernameAtServer
+                                )
+
+                                return new Link(
+                                    fediAccount,
+                                    "https://" + host + "/@" + username,
+                                    true
+                                )
+                            })
                     )
                 },
             },

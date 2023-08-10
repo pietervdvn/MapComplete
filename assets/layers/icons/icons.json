@@ -67,7 +67,19 @@
         "defaults"
       ],
       "render": "<a href='tel:{phone}'><img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/></a>",
-      "condition": "phone~*"
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": "<a href='tel:{contact:phone}'><img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
     },
     {
       "id": "emaillink",
@@ -75,7 +87,19 @@
         "defaults"
       ],
       "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
-      "condition": "email~*"
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*"
+        ]
+      }
     },
     {
       "id": "websitelink",

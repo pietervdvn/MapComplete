@@ -19,6 +19,8 @@ import { Paragraph } from "../../UI/Base/Paragraph"
 import Svg from "../../Svg"
 import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
 
+export interface Icon {}
+
 export interface Mapping {
     readonly if: UploadableTag
     readonly ifnot?: UploadableTag
@@ -45,6 +47,8 @@ export interface Mapping {
 export default class TagRenderingConfig {
     public readonly id: string
     public readonly render?: TypedTranslation<object>
+    public readonly renderIcon?: string
+    public readonly renderIconClass?: string
     public readonly question?: TypedTranslation<object>
     public readonly questionhint?: TypedTranslation<object>
     public readonly condition?: TagsFilter
@@ -58,7 +62,7 @@ export default class TagRenderingConfig {
 
     public readonly freeform?: {
         readonly key: string
-        readonly type: string
+        readonly type: ValidatorType
         readonly placeholder: Translation
         readonly addExtraTags: UploadableTag[]
         readonly inline: boolean
@@ -124,6 +128,13 @@ export default class TagRenderingConfig {
         this.questionhint = Translations.T(json.questionHint, translationKey + ".questionHint")
         this.description = Translations.T(json.description, translationKey + ".description")
         this.condition = TagUtils.Tag(json.condition ?? { and: [] }, `${context}.condition`)
+        if (typeof json.icon === "string") {
+            this.renderIcon = json.icon
+            this.renderIconClass = "small"
+        } else if (typeof json.icon === "object") {
+            this.renderIcon = json.icon.path
+            this.renderIconClass = json.icon.class
+        }
         this.metacondition = TagUtils.Tag(
             json.metacondition ?? { and: [] },
             `${context}.metacondition`
@@ -135,7 +146,17 @@ export default class TagRenderingConfig {
             ) {
                 throw `Freeform.addExtraTags should be a list of strings - not a single string (at ${context})`
             }
-            const type = json.freeform.type ?? "string"
+            if (
+                json.freeform.type &&
+                Validators.availableTypes.indexOf(<any>json.freeform.type) < 0
+            ) {
+                throw `At ${context}: invalid type, perhaps you meant ${Utils.sortedByLevenshteinDistance(
+                    json.freeform.key,
+                    <any>Validators.availableTypes,
+                    (s) => <any>s
+                )}`
+            }
+            const type: ValidatorType = <any>json.freeform.type ?? "string"
 
             let placeholder: Translation = Translations.T(json.freeform.placeholder)
             if (placeholder === undefined) {
@@ -230,16 +251,18 @@ export default class TagRenderingConfig {
                 if (txt.indexOf("{" + this.freeform.key + ":") >= 0) {
                     continue
                 }
-                if (txt.indexOf("{canonical(" + this.freeform.key + ")") >= 0) {
-                    continue
-                }
 
-                if (txt.indexOf("{translated(" + this.freeform.key + ")") >= 0) {
-                    continue
-                }
                 if (
                     this.freeform.type === "opening_hours" &&
                     txt.indexOf("{opening_hours_table(") >= 0
+                ) {
+                    continue
+                }
+                const keyFirstArg = ["canonical", "fediverse_link", "translated"]
+                if (
+                    keyFirstArg.some(
+                        (funcName) => txt.indexOf(`{${funcName}(${this.freeform.key}`) >= 0
+                    )
                 ) {
                     continue
                 }
@@ -528,7 +551,7 @@ export default class TagRenderingConfig {
      */
     public GetRenderValueWithImage(
         tags: Record<string, string>
-    ): { then: TypedTranslation<any>; icon?: string } | undefined {
+    ): { then: TypedTranslation<any>; icon?: string; iconClass?: string } | undefined {
         if (this.condition !== undefined) {
             if (!this.condition.matchesProperties(tags)) {
                 return undefined
@@ -547,7 +570,7 @@ export default class TagRenderingConfig {
         }
 
         if (this.freeform?.key === undefined || tags[this.freeform.key] !== undefined) {
-            return { then: this.render }
+            return { then: this.render, icon: this.renderIcon, iconClass: this.renderIconClass }
         }
 
         return undefined
@@ -628,7 +651,7 @@ export default class TagRenderingConfig {
      *
      * @param singleSelectedMapping (Only used if multiAnswer == false): the single mapping to apply. Use (mappings.length) for the freeform
      * @param multiSelectedMapping (Only used if multiAnswer == true): all the mappings that must be applied. Set multiSelectedMapping[mappings.length] to use the freeform as well
-     * @param currentProperties: The current properties of the object for which the question should be answered
+     * @param currentProperties The current properties of the object for which the question should be answered
      */
     public constructChangeSpecification(
         freeformValue: string | undefined,
@@ -691,38 +714,42 @@ export default class TagRenderingConfig {
                 return undefined
             }
             return and
-        } else {
-            // Is at least one mapping shown in the answer?
-            const someMappingIsShown = this.mappings.some((m) => {
-                if (typeof m.hideInAnswer === "boolean") {
-                    return !m.hideInAnswer
-                }
-                const isHidden = m.hideInAnswer.matchesProperties(currentProperties)
-                return !isHidden
-            })
-            // If all mappings are hidden for the current tags, we can safely assume that we should use the freeform key
-            const useFreeform =
-                freeformValue !== undefined &&
-                (singleSelectedMapping === this.mappings.length || !someMappingIsShown)
-            if (useFreeform) {
-                return new And([
-                    new Tag(this.freeform.key, freeformValue),
-                    ...(this.freeform.addExtraTags ?? []),
-                ])
-            } else if (singleSelectedMapping !== undefined) {
-                return new And([
-                    this.mappings[singleSelectedMapping].if,
-                    ...(this.mappings[singleSelectedMapping].addExtraTags ?? []),
-                ])
-            } else {
-                console.warn("TagRenderingConfig.ConstructSpecification has a weird fallback for", {
-                    freeformValue,
-                    singleSelectedMapping,
-                    multiSelectedMapping,
-                    currentProperties,
-                })
-                return undefined
+        }
+
+        // Is at least one mapping shown in the answer?
+        const someMappingIsShown = this.mappings.some((m) => {
+            if (typeof m.hideInAnswer === "boolean") {
+                return !m.hideInAnswer
             }
+            const isHidden = m.hideInAnswer.matchesProperties(currentProperties)
+            return !isHidden
+        })
+        // If all mappings are hidden for the current tags, we can safely assume that we should use the freeform key
+        const useFreeform =
+            freeformValue !== undefined &&
+            (singleSelectedMapping === this.mappings.length ||
+                !someMappingIsShown ||
+                singleSelectedMapping === undefined)
+        if (useFreeform) {
+            return new And([
+                new Tag(this.freeform.key, freeformValue),
+                ...(this.freeform.addExtraTags ?? []),
+            ])
+        } else if (singleSelectedMapping !== undefined) {
+            return new And([
+                this.mappings[singleSelectedMapping].if,
+                ...(this.mappings[singleSelectedMapping].addExtraTags ?? []),
+            ])
+        } else {
+            console.error("TagRenderingConfig.ConstructSpecification has a weird fallback for", {
+                freeformValue,
+                singleSelectedMapping,
+                multiSelectedMapping,
+                currentProperties,
+                useFreeform,
+            })
+
+            return undefined
         }
     }
 

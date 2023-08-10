@@ -2065,6 +2065,13 @@
                         "question": "Har en halalmenu"
                     }
                 }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Har en halalmenu"
+                    }
+                }
             }
         },
         "name": "Restauranter og fastfood"

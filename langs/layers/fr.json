@@ -3278,6 +3278,13 @@
                         "question": "A un menu halal"
                     }
                 }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "A un menu halal"
+                    }
+                }
             }
         },
         "name": "Restaurants et nourriture rapide",
