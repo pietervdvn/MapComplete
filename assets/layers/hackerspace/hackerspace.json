@@ -112,6 +112,7 @@
     "website",
     "email",
     "phone",
+    "mastodon",
     {
       "builtin": "opening_hours_24_7",
       "override": {

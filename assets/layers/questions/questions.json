@@ -173,11 +173,13 @@
       "render": {
         "*": "<a href='tel:{phone}'>{phone}</a>"
       },
+      "icon": "./assets/layers/questions/phone.svg",
       "mappings": [
         {
           "if": "contact:phone~*",
           "then": "<a href='tel:{contact:phone}'>{contact:phone}</a>",
-          "hideInAnswer": true
+          "hideInAnswer": true,
+          "icon": "./assets/layers/questions/phone.svg"
         }
       ],
       "freeform": {
@@ -187,6 +189,21 @@
           "contact:phone="
         ]
       }
+    },
+    {
+      "id": "mastodon",
+      "description": "Shows and asks for the mastodon handle",
+      "question": {
+        "en": "What is the Mastodon-handle of {title()}?"
+      },
+      "freeform": {
+        "key": "contact:mastodon",
+        "type": "fediverse"
+      },
+      "render": {
+        "*": "{fediverse_link(contact:mastodon)}"
+      },
+      "icon": "./assets/svg/mastodon.svg"
     },
     {
       "id": "osmlink",
@@ -205,6 +222,7 @@
       "render": {
         "*": "<a href='mailto:{email}' target='_blank'>{email}</a>"
       },
+      "icon": "./assets/svg/envelope.svg",
       "labels": [
         "contact"
       ],
@@ -236,6 +254,7 @@
       "mappings": [
         {
           "if": "contact:email~*",
+          "icon": "./assets/svg/envelope.svg",
           "then": "<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>",
           "hideInAnswer": true
         }
@@ -253,6 +272,7 @@
       "labels": [
         "contact"
       ],
+      "icon": "./assets/layers/icons/website.svg",
       "question": {
         "en": "What is the website of {title()}?",
         "nl": "Wat is de website van {title()}?",
@@ -292,7 +312,8 @@
         {
           "if": "contact:website~*",
           "then": "<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>",
-          "hideInAnswer": true
+          "hideInAnswer": true,
+          "icon": "./assets/layers/icons/website.svg"
         }
       ]
     },

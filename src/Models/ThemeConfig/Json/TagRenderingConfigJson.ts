@@ -42,6 +42,26 @@ export interface TagRenderingConfigJson {
         | { special: Record<string, string | Record<string, string>> & { type: string } }
 
     /**
+     * An icon shown next to the rendering; typically shown pretty small
+     * This is only shown next to the "render" value
+     * Type: icon
+     */
+    icon?:
+        | string
+        | {
+        /**
+         * The path to the icon
+         * Type: icon
+         */
+        path: string
+        /**
+         * A hint to mapcomplete on how to render this icon within the mapping.
+         * This is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)
+         */
+        class?: "small" | "medium" | "large" | string
+    }
+
+    /**
      * Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.
      *
      * This is useful to ask a follow-up question.
