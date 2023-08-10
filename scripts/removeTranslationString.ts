@@ -1,5 +1,5 @@
 import ScriptUtils from "./ScriptUtils"
-import { Utils } from "../Utils"
+import { Utils } from "../src/Utils"
 import * as fs from "fs"
 
 async function main(args: string[]) {
