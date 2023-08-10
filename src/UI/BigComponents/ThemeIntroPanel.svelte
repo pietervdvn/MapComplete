@@ -45,9 +45,7 @@
     <Tr t={layout.description} />
     <Tr t={Translations.t.general.welcomeExplanation.general} />
     {#if layout.layers.some((l) => l.presets?.length > 0)}
-      <If condition={state.featureSwitches.featureSwitchAddNew}>
         <Tr t={Translations.t.general.welcomeExplanation.addNew} />
-      </If>
     {/if}
 
     <Tr t={layout.descriptionTail} />

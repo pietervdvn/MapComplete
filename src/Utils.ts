@@ -221,6 +221,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * Utils.Round7(12.123456789) // => 12.1234568
      */
     public static Round7(i: number): number {
+        if (i == undefined) {
+            return undefined
+        }
         return Math.round(i * 10000000) / 10000000
     }
 
@@ -1209,6 +1212,22 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             str = str.replace(" UTC", "+00")
         }
         return new Date(str)
+    }
+
+    public static selectTextIn(node) {
+        if (document.body["createTextRange"]) {
+            const range = document.body["createTextRange"]()
+            range.moveToElementText(node)
+            range.select()
+        } else if (window.getSelection) {
+            const selection = window.getSelection()
+            const range = document.createRange()
+            range.selectNodeContents(node)
+            selection.removeAllRanges()
+            selection.addRange(range)
+        } else {
+            console.warn("Could not select text in node: Unsupported browser.")
+        }
     }
 
     public static sortedByLevenshteinDistance<T>(
