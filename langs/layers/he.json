@@ -29,9 +29,6 @@
             "0": {
                 "description": "מבנה פרסום חוצות גדול, שנמצא בדרך כלל באזורים עתירי תנועה כמו לצד כבישים סואנים",
                 "title": "שלט חוצות"
-            },
-            "3": {
-                "title": ""
             }
         },
         "tagRenderings": {
@@ -96,8 +93,7 @@
         "name": "מפת תחנות אמבולנסים",
         "presets": {
             "0": {
-                "description": "הוספת תחנת אמבולנס למפה",
-                "title": ""
+                "description": "הוספת תחנת אמבולנס למפה"
             }
         },
         "tagRenderings": {
@@ -354,11 +350,6 @@
             }
         },
         "name": "ספסלים",
-        "presets": {
-            "0": {
-                "title": ""
-            }
-        },
         "tagRenderings": {
             "bench-artwork": {
                 "mappings": {
