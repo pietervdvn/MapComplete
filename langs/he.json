@@ -1,0 +1,28 @@
+{
+    "centerMessage": {
+        "loadingData": "טוען נתונים…"
+    },
+    "delete": {
+        "cancel": "ביטול",
+        "cannotBeDeleted": "התכונה הזאת לא ניתנת למחיקה",
+        "delete": "מחיקה"
+    },
+    "flyer": {
+        "mapcomplete": {
+            "title": "מה זה מאפ קומפלט?"
+        },
+        "onwheels": "מפות פנימיות עבור משתמשים בכיסא גלגלים זמינות גם כן.",
+        "whatIsOsm": "מה זה אופן סטריט מאפ?"
+    },
+    "general": {
+        "404": "הדף הזה לא קיים",
+        "add": {
+            "backToSelect": "בחר קטגוריה אחרת",
+            "confirmLocation": "אשר את המיקום הזה",
+            "disableFilters": "השבת את כל המסננים",
+            "disableFiltersExplanation": "תכונות מסוימות עשויות להיות מוסתרות על ידי המסנן",
+            "enableLayer": "הפעל שכבה {name}",
+            "hasBeenImported": "תכונה זו כבר יובאה"
+        }
+    }
+}
