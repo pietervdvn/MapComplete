@@ -21,7 +21,7 @@ export class Geocoding {
         const b = bbox ?? BBox.global
         const url =
             Geocoding.host +
-            "format=json&limit=1&viewbox=" +
+            "format=json&limit=5&viewbox=" +
             `${b.getEast()},${b.getNorth()},${b.getWest()},${b.getSouth()}` +
             "&accept-language=nl&q=" +
             query

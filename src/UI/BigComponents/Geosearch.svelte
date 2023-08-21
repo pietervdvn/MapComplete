@@ -8,6 +8,7 @@
   import Loading from "../Base/Loading.svelte"
   import Hotkeys from "../Base/Hotkeys"
   import { Geocoding } from "../../Logic/Osm/Geocoding"
+  import type { GeoCodeResult } from "../../Logic/Osm/Geocoding"
   import { BBox } from "../../Logic/BBox"
   import { GeoIndexedStoreForLayer } from "../../Logic/FeatureSource/Actors/GeoIndexedStore"
   import { createEventDispatcher, onDestroy } from "svelte"
@@ -18,6 +19,7 @@
   export let selectedLayer: UIEventSource<LayerConfig> | undefined = undefined
 
   export let clearAfterView: boolean = true
+  export let showPopup: boolean = false
 
   let searchContents: string = ""
   export let triggerSearch: UIEventSource<any> = new UIEventSource<any>(undefined)
@@ -31,7 +33,11 @@
 
   let inputElement: HTMLInputElement
 
+  let resultsElement: HTMLDivElement
+
   let feedback: string = undefined
+
+  let results: GeoCodeResult[] = []
 
   Hotkeys.RegisterHotkey({ ctrl: "F" }, Translations.t.hotkeyDocumentation.selectSearch, () => {
     inputElement?.focus()
@@ -60,14 +66,30 @@
         feedback = Translations.t.general.search.nothing.txt
         return
       }
+
+      if (showPopup) {
+        results = result
+        // Attach a click handler if we actually opened a popup
+        if (results.length > 1) {
+          const listener = document.addEventListener(
+            "click",
+            (e) => {
+              // Check if the user clicked on a different element
+              // @ts-ignore
+              if (!resultsElement.contains(e.target)) {
+                results = []
+              }
+            },
+            {
+              once: true,
+            }
+          )
+        }
+      }
+
       const poi = result[0]
-      const [lat0, lat1, lon0, lon1] = poi.boundingbox
-      bounds.set(
-        new BBox([
-          [lon0, lat0],
-          [lon1, lat1],
-        ]).pad(0.01)
-      )
+      goToLocation(poi)
+
       if (perLayer !== undefined) {
         const id = poi.osm_type + "/" + poi.osm_id
         const layers = Array.from(perLayer?.values() ?? [])
@@ -77,6 +99,7 @@
           selectedLayer?.setData(layer.layer.layerDef)
         }
       }
+
       if (clearAfterView) {
         searchContents = ""
       }
@@ -88,6 +111,16 @@
     } finally {
       isRunning = false
     }
+  }
+
+  function goToLocation(poi: GeoCodeResult) {
+    const [lat0, lat1, lon0, lon1] = poi.boundingbox
+    bounds.set(
+      new BBox([
+        [lon0, lat0],
+        [lon1, lat1],
+      ]).pad(0.01)
+    )
   }
 </script>
 
@@ -102,11 +135,11 @@
     {:else}
       <input
         type="search"
-        class="w-full"
+        class="w-full border-none outline-none"
         bind:this={inputElement}
         on:keypress={(keypr) => (keypr.key === "Enter" ? performSearch() : undefined)}
         bind:value={searchContents}
-        placeholder={Translations.t.general.search.search}
+        placeholder={Translations.t.general.search.search.toString()}
       />
     {/if}
   </form>
@@ -114,3 +147,24 @@
     <ToSvelte construct={Svg.search_svg} />
   </div>
 </div>
+
+{#if results.length > 1}
+  <div class="normal-background row- flex flex-col rounded-xl" bind:this={resultsElement}>
+    {#each results as result}
+      <button
+        on:click={() => {
+          results = []
+          goToLocation(result)
+        }}
+        on:keypress={(e) => {
+          if (e.key == "Enter") {
+            results = []
+            goToLocation(result)
+          }
+        }}
+      >
+        {result.display_name}
+      </button>
+    {/each}
+  </div>
+{/if}
