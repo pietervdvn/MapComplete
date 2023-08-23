@@ -39,11 +39,13 @@
       "override": {
         "question": {
           "en": "Between which levels are these stairs?",
-          "nl": "Tussen welke verdiepingen loopt deze trap?"
+          "nl": "Tussen welke verdiepingen loopt deze trap?",
+          "de": "Zwischen welchen Stockwerken befindet sich diese Treppe?"
         },
         "render": {
           "en": "These stairs are between the levels {level}",
-          "nl": "Deze trap loopt tussen de verdiepingen {level}"
+          "nl": "Deze trap loopt tussen de verdiepingen {level}",
+          "de": "Diese Treppe ist zwischen den Stockwerken {level}"
         }
       }
     },

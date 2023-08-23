@@ -188,7 +188,8 @@
       "override": {
         "condition": "toilets:access!=no",
         "question": {
-          "en": "When is the amenity where these toilets are located open?"
+          "en": "When is the amenity where these toilets are located open?",
+          "de": "Wann ist der Ort, an dem sich diese Toiletten befinden, geöffnet?"
         }
       }
     },
