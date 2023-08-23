@@ -205,7 +205,7 @@ Helpful for FMC as well
 ## MapRoulette integration
 
 Documentation written out
-Example of usage in a theme: https://mapcomplete.osm.be/onwheels?z=12&lat=51.06262&lon=3.724021&language=nl#
+Example of usage in a theme: https://mapcomplete.org/onwheels?z=12&lat=51.06262&lon=3.724021&language=nl#
 Buttons to close/mark too hard/... have appeared on develop: https://pietervdvn.github.io/mc/develop/maproulette?z=15&lat=51.21127&lon=3.219745&language=nl#59417173
 
 ## Svelte

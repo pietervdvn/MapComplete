@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/circle:white;./assets/themes/facadegardens/geveltuin.svg' height="100px"> 
+<img src='https://mapcomplete.org/circle:white;./assets/themes/facadegardens/geveltuin.svg' height="100px"> 
 
 Facade gardens
 
@@ -25,7 +25,7 @@ Facade gardens
 
 
 
-  - [facadegardens](https://mapcomplete.osm.be/facadegardens)
+  - [facadegardens](https://mapcomplete.org/facadegardens)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -45,14 +45,14 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/direction#values) [direction](https://wiki.openstreetmap.org/wiki/Key:direction) | [direction](../SpecialInputElements.md#direction) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/direct_sunlight#values) [direct_sunlight](https://wiki.openstreetmap.org/wiki/Key:direct_sunlight) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dyes) [partial](https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dpartial) [no](https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/rain_barrel#values) [rain_barrel](https://wiki.openstreetmap.org/wiki/Key:rain_barrel) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/start_date#values) [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) | [text](../SpecialInputElements.md#text) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/edible#values) [edible](https://wiki.openstreetmap.org/wiki/Key:edible) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:edible%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:edible%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/plant#values) [plant](https://wiki.openstreetmap.org/wiki/Key:plant) | Multiple choice | [vine](https://wiki.openstreetmap.org/wiki/Tag:plant%3Dvine) [flower](https://wiki.openstreetmap.org/wiki/Tag:plant%3Dflower) [shrub](https://wiki.openstreetmap.org/wiki/Tag:plant%3Dshrub) [groundcover](https://wiki.openstreetmap.org/wiki/Tag:plant%3Dgroundcover)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/description#values) [description](https://wiki.openstreetmap.org/wiki/Key:description) | [text](../SpecialInputElements.md#text) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/direction#values) [direction](https://wiki.openstreetmap.org/wiki/Key:direction) | [direction](../SpecialInputElements.md#direction) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/direct_sunlight#values) [direct_sunlight](https://wiki.openstreetmap.org/wiki/Key:direct_sunlight) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dyes) [partial](https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dpartial) [no](https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/rain_barrel#values) [rain_barrel](https://wiki.openstreetmap.org/wiki/Key:rain_barrel) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/start_date#values) [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) | [text](../SpecialInputElements.md#text) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/edible#values) [edible](https://wiki.openstreetmap.org/wiki/Key:edible) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:edible%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:edible%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/plant#values) [plant](https://wiki.openstreetmap.org/wiki/Key:plant) | Multiple choice | [vine](https://wiki.openstreetmap.org/wiki/Tag:plant%3Dvine) [flower](https://wiki.openstreetmap.org/wiki/Tag:plant%3Dflower) [shrub](https://wiki.openstreetmap.org/wiki/Tag:plant%3Dshrub) [groundcover](https://wiki.openstreetmap.org/wiki/Tag:plant%3Dgroundcover)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/description#values) [description](https://wiki.openstreetmap.org/wiki/Key:description) | [text](../SpecialInputElements.md#text) | 
 
 
 

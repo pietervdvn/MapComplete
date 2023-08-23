@@ -44,14 +44,14 @@
         "reload": "Recarregar dados"
     },
     "flyer": {
-        "callToAction": "Teste em mapcomplete.osm.be",
+        "callToAction": "Teste em mapcomplete.org",
         "cyclofix": "Bombas de bicicleta, estações de reparação, água potável e lojas de bicicletas estão na CycloFix",
         "editing": {
             "ex": "Um exemplo simplificado de como isso se parece para uma reserva natural é mostrado abaixo.",
             "intro": "O usuário é recebido por um mapa com características. Ao selecionar um, as informações sobre esse recurso são mostradas.",
             "title": "Como é a interface?"
         },
-        "examples": "Existem muitos mapas temáticos disponíveis, alguns deles impressos aqui.\n\nExistem muitos outros mapas temáticos online: sobre cuidados de saúde, navegação interior, acessibilidade para cadeiras de rodas, instalações de resíduos, estantes públicas, passagens para peões com uma pintura de arco-íris,... Descubra todos eles em mapcomplete.osm.be",
+        "examples": "Existem muitos mapas temáticos disponíveis, alguns deles impressos aqui.\n\nExistem muitos outros mapas temáticos online: sobre cuidados de saúde, navegação interior, acessibilidade para cadeiras de rodas, instalações de resíduos, estantes públicas, passagens para peões com uma pintura de arco-íris,... Descubra todos eles em mapcomplete.org",
         "fakeui": {
             "add_images": "Adicione imagens com alguns cliques",
             "attributes": "Mostra atributos de forma amigável",
@@ -217,7 +217,7 @@
         "pdf": {
             "attr": "Dados do mapa © colaboradores do OpenStreetMap, reutilizáveis sob a licença ODbL",
             "attrBackground": "Camada de fundo: {background}",
-            "generatedWith": "Gerado com o MapComplete.osm.be/{layoutid}",
+            "generatedWith": "Gerado com o mapcomplete.org/{layoutid}",
             "versionInfo": "v {version} - gerado em {date}"
         },
         "pickLanguage": "Escolha um idioma: ",

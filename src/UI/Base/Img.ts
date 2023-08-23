@@ -46,7 +46,7 @@ export default class Img extends BaseUIElement {
         }
         let src = this._src
         if (this._src.startsWith("./")) {
-            src = "https://mapcomplete.osm.be/" + src
+            src = "https://mapcomplete.org/" + src
         }
         return "![](" + src + ")"
     }

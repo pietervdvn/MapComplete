@@ -132,7 +132,7 @@ function addMaprouletteTags(properties: GeoJsonProperties, item: any): GeoJsonPr
   If it doesn't match any other OSM item, you can create a new one.
   Here is a list of tags that can be added:
   ${properties["tags"].split(";").join("\n")}
-  You can also easily import this item using MapComplete: https://mapcomplete.osm.be/onwheels.html#${
+  You can also easily import this item using MapComplete: https://mapcomplete.org/onwheels.html#${
       properties["id"]
   }`
     return properties

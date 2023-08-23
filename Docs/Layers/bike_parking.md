@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/pin:#5473de;./assets/layers/bike_parking/parking.svg' height="100px"> 
+<img src='https://mapcomplete.org/pin:#5473de;./assets/layers/bike_parking/parking.svg' height="100px"> 
 
 A layer showing where you can park your bike
 
@@ -25,9 +25,9 @@ A layer showing where you can park your bike
 
 
 
-  - [cyclofix](https://mapcomplete.osm.be/cyclofix)
-  - [personal](https://mapcomplete.osm.be/personal)
-  - [transit](https://mapcomplete.osm.be/transit)
+  - [cyclofix](https://mapcomplete.org/cyclofix)
+  - [personal](https://mapcomplete.org/personal)
+  - [transit](https://mapcomplete.org/transit)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -47,14 +47,14 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/bicycle_parking#values) [bicycle_parking](https://wiki.openstreetmap.org/wiki/Key:bicycle_parking) | [string](../SpecialInputElements.md#string) | [stands](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dstands) [wall_loops](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dwall_loops) [handlebar_holder](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dhandlebar_holder) [rack](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Drack) [two_tier](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dtwo_tier) [shed](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dshed) [bollard](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dbollard) [floor](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dfloor)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/location#values) [location](https://wiki.openstreetmap.org/wiki/Key:location) | Multiple choice | [underground](https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground) [surface](https://wiki.openstreetmap.org/wiki/Tag:location%3Dsurface) [rooftop](https://wiki.openstreetmap.org/wiki/Tag:location%3Drooftop)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/covered#values) [covered](https://wiki.openstreetmap.org/wiki/Key:covered) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:covered%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:covered%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity#values) [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [nat](../SpecialInputElements.md#nat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cargo_bike#values) [cargo_bike](https://wiki.openstreetmap.org/wiki/Key:cargo_bike) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dyes) [designated](https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Ddesignated) [no](https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:cargo_bike#values) [capacity:cargo_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:cargo_bike) | [nat](../SpecialInputElements.md#nat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/bicycle_parking#values) [bicycle_parking](https://wiki.openstreetmap.org/wiki/Key:bicycle_parking) | [string](../SpecialInputElements.md#string) | [stands](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dstands) [wall_loops](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dwall_loops) [handlebar_holder](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dhandlebar_holder) [rack](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Drack) [two_tier](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dtwo_tier) [shed](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dshed) [bollard](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dbollard) [floor](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dfloor)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/location#values) [location](https://wiki.openstreetmap.org/wiki/Key:location) | Multiple choice | [underground](https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground) [surface](https://wiki.openstreetmap.org/wiki/Tag:location%3Dsurface) [rooftop](https://wiki.openstreetmap.org/wiki/Tag:location%3Drooftop)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/covered#values) [covered](https://wiki.openstreetmap.org/wiki/Key:covered) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:covered%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:covered%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity#values) [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [nat](../SpecialInputElements.md#nat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cargo_bike#values) [cargo_bike](https://wiki.openstreetmap.org/wiki/Key:cargo_bike) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dyes) [designated](https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Ddesignated) [no](https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:cargo_bike#values) [capacity:cargo_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:cargo_bike) | [nat](../SpecialInputElements.md#nat) | 
 
 
 

@@ -3,9 +3,9 @@
   "project": {
     "name": "MapComplete Surveillance under Surveillance",
     "description": "Surveillance cameras and other means of surveillance",
-    "project_url": "https://mapcomplete.osm.be/surveillance",
+    "project_url": "https://mapcomplete.org/surveillance",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-    "icon_url": "https://mapcomplete.osm.be/assets/themes/surveillance/logo.svg",
+    "icon_url": "https://mapcomplete.org/assets/themes/surveillance/logo.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
@@ -32,7 +32,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Surveillance camera's' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Surveillance under Surveillance') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Surveillance camera's' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -52,131 +52,131 @@
     },
     {
       "key": "camera:type",
-      "description": "Layer 'Surveillance camera's' shows camera:type=fixed with a fixed text, namely 'A fixed (non-moving) camera' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows camera:type=fixed with a fixed text, namely 'A fixed (non-moving) camera' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
       "value": "fixed"
     },
     {
       "key": "camera:type",
-      "description": "Layer 'Surveillance camera's' shows camera:type=dome with a fixed text, namely 'A dome camera (which can turn)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows camera:type=dome with a fixed text, namely 'A dome camera (which can turn)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
       "value": "dome"
     },
     {
       "key": "camera:type",
-      "description": "Layer 'Surveillance camera's' shows camera:type=panning with a fixed text, namely 'A panning camera' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows camera:type=panning with a fixed text, namely 'A panning camera' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
       "value": "panning"
     },
     {
       "key": "camera:direction",
-      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'camera:direction' (in the MapComplete.osm.be theme 'Surveillance under Surveillance') (This is only shown if camera:direction~.+|direction~.+|camera:type!=dome|camera:type=dome&camera:mount=wall)"
+      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'camera:direction' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if camera:direction~.+|direction~.+|camera:type!=dome|camera:type=dome&camera:mount=wall)"
     },
     {
       "key": "camera:direction",
-      "description": "Layer 'Surveillance camera's' shows direction~.+ with a fixed text, namely 'Films to a compass heading of {direction}' (in the MapComplete.osm.be theme 'Surveillance under Surveillance') Picking this answer will delete the key camera:direction. (This is only shown if camera:direction~.+|direction~.+|camera:type!=dome|camera:type=dome&camera:mount=wall)",
+      "description": "Layer 'Surveillance camera's' shows direction~.+ with a fixed text, namely 'Films to a compass heading of {direction}' (in the mapcomplete.org theme 'Surveillance under Surveillance') Picking this answer will delete the key camera:direction. (This is only shown if camera:direction~.+|direction~.+|camera:type!=dome|camera:type=dome&camera:mount=wall)",
       "value": ""
     },
     {
       "key": "direction",
-      "description": "Layer 'Surveillance camera's' shows direction~.+ with a fixed text, namely 'Films to a compass heading of {direction}' (in the MapComplete.osm.be theme 'Surveillance under Surveillance') (This is only shown if camera:direction~.+|direction~.+|camera:type!=dome|camera:type=dome&camera:mount=wall)"
+      "description": "Layer 'Surveillance camera's' shows direction~.+ with a fixed text, namely 'Films to a compass heading of {direction}' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if camera:direction~.+|direction~.+|camera:type!=dome|camera:type=dome&camera:mount=wall)"
     },
     {
       "key": "operator",
-      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Surveillance under Surveillance')"
+      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'operator' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
     },
     {
       "key": "surveillance",
-      "description": "Layer 'Surveillance camera's' shows surveillance=public with a fixed text, namely 'A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel, …' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows surveillance=public with a fixed text, namely 'A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel, …' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
       "value": "public"
     },
     {
       "key": "surveillance",
-      "description": "Layer 'Surveillance camera's' shows surveillance=outdoor with a fixed text, namely 'An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, …)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows surveillance=outdoor with a fixed text, namely 'An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, …)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
       "value": "outdoor"
     },
     {
       "key": "surveillance",
-      "description": "Layer 'Surveillance camera's' shows surveillance=indoor with a fixed text, namely 'A private indoor area is surveilled, e.g. a shop, a private underground parking, …' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows surveillance=indoor with a fixed text, namely 'A private indoor area is surveilled, e.g. a shop, a private underground parking, …' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
       "value": "indoor"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Surveillance camera's' shows indoor=yes with a fixed text, namely 'This camera is located indoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance') (This is only shown if surveillance:type=public)",
+      "description": "Layer 'Surveillance camera's' shows indoor=yes with a fixed text, namely 'This camera is located indoors' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if surveillance:type=public)",
       "value": "yes"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Surveillance camera's' shows indoor=no with a fixed text, namely 'This camera is located outdoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance') (This is only shown if surveillance:type=public)",
+      "description": "Layer 'Surveillance camera's' shows indoor=no with a fixed text, namely 'This camera is located outdoors' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if surveillance:type=public)",
       "value": "no"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Surveillance camera's' shows  with a fixed text, namely 'This camera is probably located outdoors' (in the MapComplete.osm.be theme 'Surveillance under Surveillance') Picking this answer will delete the key indoor. (This is only shown if surveillance:type=public)",
+      "description": "Layer 'Surveillance camera's' shows  with a fixed text, namely 'This camera is probably located outdoors' (in the mapcomplete.org theme 'Surveillance under Surveillance') Picking this answer will delete the key indoor. (This is only shown if surveillance:type=public)",
       "value": ""
     },
     {
       "key": "level",
-      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Surveillance under Surveillance') (This is only shown if indoor=yes|surveillance:type=ye)"
+      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if indoor=yes|surveillance:type=ye)"
     },
     {
       "key": "surveillance:zone",
-      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'surveillance:zone' (in the MapComplete.osm.be theme 'Surveillance under Surveillance')"
+      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'surveillance:zone' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
     },
     {
       "key": "surveillance:zone",
-      "description": "Layer 'Surveillance camera's' shows surveillance:zone=parking with a fixed text, namely 'Surveills a parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows surveillance:zone=parking with a fixed text, namely 'Surveills a parking' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
       "value": "parking"
     },
     {
       "key": "surveillance:zone",
-      "description": "Layer 'Surveillance camera's' shows surveillance:zone=traffic with a fixed text, namely 'Surveills the traffic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows surveillance:zone=traffic with a fixed text, namely 'Surveills the traffic' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
       "value": "traffic"
     },
     {
       "key": "surveillance:zone",
-      "description": "Layer 'Surveillance camera's' shows surveillance:zone=entrance with a fixed text, namely 'Surveills an entrance' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows surveillance:zone=entrance with a fixed text, namely 'Surveills an entrance' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
       "value": "entrance"
     },
     {
       "key": "surveillance:zone",
-      "description": "Layer 'Surveillance camera's' shows surveillance:zone=corridor with a fixed text, namely 'Surveills a corridor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows surveillance:zone=corridor with a fixed text, namely 'Surveills a corridor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
       "value": "corridor"
     },
     {
       "key": "surveillance:zone",
-      "description": "Layer 'Surveillance camera's' shows surveillance:zone=public_transport_platform with a fixed text, namely 'Surveills a public tranport platform' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows surveillance:zone=public_transport_platform with a fixed text, namely 'Surveills a public tranport platform' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
       "value": "public_transport_platform"
     },
     {
       "key": "surveillance:zone",
-      "description": "Layer 'Surveillance camera's' shows surveillance:zone=shop with a fixed text, namely 'Surveills a shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows surveillance:zone=shop with a fixed text, namely 'Surveills a shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
       "value": "shop"
     },
     {
       "key": "camera:mount",
-      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'camera:mount' (in the MapComplete.osm.be theme 'Surveillance under Surveillance')"
+      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'camera:mount' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
     },
     {
       "key": "camera:mount",
-      "description": "Layer 'Surveillance camera's' shows camera:mount=wall with a fixed text, namely 'This camera is placed against a wall' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows camera:mount=wall with a fixed text, namely 'This camera is placed against a wall' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
       "value": "wall"
     },
     {
       "key": "camera:mount",
-      "description": "Layer 'Surveillance camera's' shows camera:mount=pole with a fixed text, namely 'This camera is placed on a pole' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows camera:mount=pole with a fixed text, namely 'This camera is placed on a pole' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
       "value": "pole"
     },
     {
       "key": "camera:mount",
-      "description": "Layer 'Surveillance camera's' shows camera:mount=ceiling with a fixed text, namely 'This camera is placed on the ceiling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows camera:mount=ceiling with a fixed text, namely 'This camera is placed on the ceiling' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
       "value": "ceiling"
     },
     {
       "key": "camera:mount",
-      "description": "Layer 'Surveillance camera's' shows camera:mount=street_lamp with a fixed text, namely 'This camera is placed on a street light' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows camera:mount=street_lamp with a fixed text, namely 'This camera is placed on a street light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
       "value": "street_lamp"
     },
     {
       "key": "camera:mount",
-      "description": "Layer 'Surveillance camera's' shows camera:mount=tree with a fixed text, namely 'This camera is placed on a tree' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows camera:mount=tree with a fixed text, namely 'This camera is placed on a tree' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
       "value": "tree"
     }
   ]

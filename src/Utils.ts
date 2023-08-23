@@ -1165,7 +1165,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
     public static HomepageLink(): string {
         if (typeof window === "undefined") {
-            return "https://mapcomplete.osm.be"
+            return "https://mapcomplete.org"
         }
         const path = (
             window.location.protocol +

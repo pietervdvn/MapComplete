@@ -2,9 +2,9 @@
   "#1": "This JSON file is a small template to get you started developing a theme",
   "#2": "All lines starting with '#' are comments and can be removed in the theme if you don't need the explanation anymore",
   "#3": "Make sure to join our chat channel at https://app.element.io/#/room/#MapComplete:matrix.org for questions, sharing your theme, ...",
-  "#4": "To actually load your theme: on linux: run a local webserver (e.g. `webfsd`) and go to https://mapcomplete.osm.be/theme?userlayout=http://127.0.0.1:8080/path-to-your-theme.json",
+  "#4": "To actually load your theme: on linux: run a local webserver (e.g. `webfsd`) and go to https://mapcomplete.org/theme?userlayout=http://127.0.0.1:8080/path-to-your-theme.json",
   "#5": "If you don't know how to run a webserver: go to https://www.base64encode.org/ , copy paste this entire document in the 'encode' field and encode it;",
-  "#6": "Then, go to https://mapcomplete.osm.be/theme?userlayout=true#your-base64-encoded-file",
+  "#6": "Then, go to https://mapcomplete.org/theme?userlayout=true#your-base64-encoded-file",
   "id": "template",
   "credits": "Write your name here (or remove everything)",
   "title": {

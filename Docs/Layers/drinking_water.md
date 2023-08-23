@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/pin:#6BC4F7;./assets/layers/drinking_water/drips.svg' height="100px"> 
+<img src='https://mapcomplete.org/pin:#6BC4F7;./assets/layers/drinking_water/drips.svg' height="100px"> 
 
 A layer showing drinking water fountains
 
@@ -27,10 +27,10 @@ A layer showing drinking water fountains
 
 
 
-  - [cyclofix](https://mapcomplete.osm.be/cyclofix)
-  - [drinking_water](https://mapcomplete.osm.be/drinking_water)
-  - [nature](https://mapcomplete.osm.be/nature)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [cyclofix](https://mapcomplete.org/cyclofix)
+  - [drinking_water](https://mapcomplete.org/drinking_water)
+  - [nature](https://mapcomplete.org/nature)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -50,9 +50,9 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operational_status#values) [operational_status](https://wiki.openstreetmap.org/wiki/Key:operational_status) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3D) [broken](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken) [closed](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/bottle#values) [bottle](https://wiki.openstreetmap.org/wiki/Key:bottle) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operational_status#values) [operational_status](https://wiki.openstreetmap.org/wiki/Key:operational_status) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3D) [broken](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken) [closed](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/bottle#values) [bottle](https://wiki.openstreetmap.org/wiki/Key:bottle) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dno)
 
 
 

@@ -3,9 +3,9 @@
   "project": {
     "name": "MapComplete Playgrounds",
     "description": "A map with playgrounds",
-    "project_url": "https://mapcomplete.osm.be/playgrounds",
+    "project_url": "https://mapcomplete.org/playgrounds",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-    "icon_url": "https://mapcomplete.osm.be/assets/themes/playgrounds/playground.svg",
+    "icon_url": "https://mapcomplete.org/assets/themes/playgrounds/playground.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
@@ -17,7 +17,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Playgrounds' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Playgrounds' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -37,143 +37,143 @@
     },
     {
       "key": "surface",
-      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'surface' (in the MapComplete.osm.be theme 'Playgrounds')"
+      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'surface' (in the mapcomplete.org theme 'Playgrounds')"
     },
     {
       "key": "surface",
-      "description": "Layer 'Playgrounds' shows surface=grass with a fixed text, namely 'The surface is <b>grass</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows surface=grass with a fixed text, namely 'The surface is <b>grass</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "grass"
     },
     {
       "key": "surface",
-      "description": "Layer 'Playgrounds' shows surface=sand with a fixed text, namely 'The surface is <b>sand</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows surface=sand with a fixed text, namely 'The surface is <b>sand</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "sand"
     },
     {
       "key": "surface",
-      "description": "Layer 'Playgrounds' shows surface=woodchips with a fixed text, namely 'The surface consist of <b>woodchips</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows surface=woodchips with a fixed text, namely 'The surface consist of <b>woodchips</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "woodchips"
     },
     {
       "key": "surface",
-      "description": "Layer 'Playgrounds' shows surface=paving_stones with a fixed text, namely 'The surface is <b>paving stones</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows surface=paving_stones with a fixed text, namely 'The surface is <b>paving stones</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "paving_stones"
     },
     {
       "key": "surface",
-      "description": "Layer 'Playgrounds' shows surface=asphalt with a fixed text, namely 'The surface is <b>asphalt</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows surface=asphalt with a fixed text, namely 'The surface is <b>asphalt</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "asphalt"
     },
     {
       "key": "surface",
-      "description": "Layer 'Playgrounds' shows surface=concrete with a fixed text, namely 'The surface is <b>concrete</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows surface=concrete with a fixed text, namely 'The surface is <b>concrete</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "concrete"
     },
     {
       "key": "surface",
-      "description": "Layer 'Playgrounds' shows surface=unpaved with a fixed text, namely 'The surface is <b>unpaved</b>' (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows surface=unpaved with a fixed text, namely 'The surface is <b>unpaved</b>' (in the mapcomplete.org theme 'Playgrounds')",
       "value": "unpaved"
     },
     {
       "key": "surface",
-      "description": "Layer 'Playgrounds' shows surface=paved with a fixed text, namely 'The surface is <b>paved</b>' (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows surface=paved with a fixed text, namely 'The surface is <b>paved</b>' (in the mapcomplete.org theme 'Playgrounds')",
       "value": "paved"
     },
     {
       "key": "lit",
-      "description": "Layer 'Playgrounds' shows lit=yes with a fixed text, namely 'This playground is lit at night' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows lit=yes with a fixed text, namely 'This playground is lit at night' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "yes"
     },
     {
       "key": "lit",
-      "description": "Layer 'Playgrounds' shows lit=no with a fixed text, namely 'This playground is not lit at night' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows lit=no with a fixed text, namely 'This playground is not lit at night' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "no"
     },
     {
       "key": "min_age",
-      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'min_age' (in the MapComplete.osm.be theme 'Playgrounds')"
+      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'min_age' (in the mapcomplete.org theme 'Playgrounds')"
     },
     {
       "key": "max_age",
-      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'max_age' (in the MapComplete.osm.be theme 'Playgrounds')"
+      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'max_age' (in the mapcomplete.org theme 'Playgrounds')"
     },
     {
       "key": "operator",
-      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Playgrounds')"
+      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'operator' (in the mapcomplete.org theme 'Playgrounds')"
     },
     {
       "key": "access",
-      "description": "Layer 'Playgrounds' shows access=yes with a fixed text, namely 'Accessible to the general public' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows access=yes with a fixed text, namely 'Accessible to the general public' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "yes"
     },
     {
       "key": "fee",
-      "description": "Layer 'Playgrounds' shows fee=yes with a fixed text, namely 'This is a <b>paid</b> playground' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows fee=yes with a fixed text, namely 'This is a <b>paid</b> playground' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "yes"
     },
     {
       "key": "access",
-      "description": "Layer 'Playgrounds' shows access=customers with a fixed text, namely 'Only accessible for clients of the operating business' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows access=customers with a fixed text, namely 'Only accessible for clients of the operating business' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "customers"
     },
     {
       "key": "access",
-      "description": "Layer 'Playgrounds' shows access=students with a fixed text, namely 'Only accessible to students of the school' (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows access=students with a fixed text, namely 'Only accessible to students of the school' (in the mapcomplete.org theme 'Playgrounds')",
       "value": "students"
     },
     {
       "key": "access",
-      "description": "Layer 'Playgrounds' shows access=private with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows access=private with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "private"
     },
     {
       "key": "leisure",
-      "description": "Layer 'Playgrounds' shows leisure=schoolyard with a fixed text, namely 'This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows leisure=schoolyard with a fixed text, namely 'This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "schoolyard"
     },
     {
       "key": "website",
-      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Playgrounds')"
+      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Playgrounds')"
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Playgrounds' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Playgrounds')"
+      "description": "Layer 'Playgrounds' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Playgrounds')"
     },
     {
       "key": "email",
-      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Playgrounds')"
+      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Playgrounds')"
     },
     {
       "key": "phone",
-      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Playgrounds')"
+      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Playgrounds')"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Playgrounds' shows wheelchair=yes with a fixed text, namely 'Completely accessible for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows wheelchair=yes with a fixed text, namely 'Completely accessible for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "yes"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Playgrounds' shows wheelchair=limited with a fixed text, namely 'Limited accessibility for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows wheelchair=limited with a fixed text, namely 'Limited accessibility for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "limited"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Playgrounds' shows wheelchair=no with a fixed text, namely 'Not accessible for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows wheelchair=no with a fixed text, namely 'Not accessible for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "no"
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Playgrounds')"
+      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Playgrounds')"
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Playgrounds' shows opening_hours=sunrise-sunset with a fixed text, namely 'Accessible from sunrise till sunset' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows opening_hours=sunrise-sunset with a fixed text, namely 'Accessible from sunrise till sunset' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "sunrise-sunset"
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Playgrounds' shows opening_hours=24/7 with a fixed text, namely 'Always accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows opening_hours=24/7 with a fixed text, namely 'Always accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "24/7"
     },
     {
@@ -183,7 +183,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Benches' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Benches' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -203,247 +203,247 @@
     },
     {
       "key": "backrest",
-      "description": "Layer 'Benches' shows backrest=yes&two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows backrest=yes&two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "yes"
     },
     {
       "key": "two_sided",
-      "description": "Layer 'Benches' shows backrest=yes&two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows backrest=yes&two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "yes"
     },
     {
       "key": "backrest",
-      "description": "Layer 'Benches' shows backrest=yes with a fixed text, namely 'Does have a backrest' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows backrest=yes with a fixed text, namely 'Does have a backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "yes"
     },
     {
       "key": "backrest",
-      "description": "Layer 'Benches' shows backrest=no with a fixed text, namely 'Does <b>not</b> have a backrest' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows backrest=no with a fixed text, namely 'Does <b>not</b> have a backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "no"
     },
     {
       "key": "seats",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'seats' (in the MapComplete.osm.be theme 'Playgrounds')"
+      "description": "Layer 'Benches' shows and asks freeform values for key 'seats' (in the mapcomplete.org theme 'Playgrounds')"
     },
     {
       "key": "seats:separated",
-      "description": "Layer 'Benches' shows seats:separated=no with a fixed text, namely 'This bench does not have separated seats' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows seats:separated=no with a fixed text, namely 'This bench does not have separated seats' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "no"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'material' (in the MapComplete.osm.be theme 'Playgrounds')"
+      "description": "Layer 'Benches' shows and asks freeform values for key 'material' (in the mapcomplete.org theme 'Playgrounds')"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=wood with a fixed text, namely 'The seating is made from wood' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows material=wood with a fixed text, namely 'The seating is made from wood' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "wood"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=metal with a fixed text, namely 'The seating is made from metal' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows material=metal with a fixed text, namely 'The seating is made from metal' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "metal"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=stone with a fixed text, namely 'The seating is made from stone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows material=stone with a fixed text, namely 'The seating is made from stone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "stone"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=concrete with a fixed text, namely 'The seating is made from concrete' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows material=concrete with a fixed text, namely 'The seating is made from concrete' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "concrete"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=plastic with a fixed text, namely 'The seating is made from plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows material=plastic with a fixed text, namely 'The seating is made from plastic' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "plastic"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=steel with a fixed text, namely 'The seating is made from steel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows material=steel with a fixed text, namely 'The seating is made from steel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "steel"
     },
     {
       "key": "direction",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'direction' (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if two_sided!=yes)"
+      "description": "Layer 'Benches' shows and asks freeform values for key 'direction' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if two_sided!=yes)"
     },
     {
       "key": "colour",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'colour' (in the MapComplete.osm.be theme 'Playgrounds')"
+      "description": "Layer 'Benches' shows and asks freeform values for key 'colour' (in the mapcomplete.org theme 'Playgrounds')"
     },
     {
       "key": "colour",
-      "description": "Layer 'Benches' shows colour=brown with a fixed text, namely 'Colour: brown' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows colour=brown with a fixed text, namely 'Colour: brown' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "brown"
     },
     {
       "key": "colour",
-      "description": "Layer 'Benches' shows colour=green with a fixed text, namely 'Colour: green' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows colour=green with a fixed text, namely 'Colour: green' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "green"
     },
     {
       "key": "colour",
-      "description": "Layer 'Benches' shows colour=gray with a fixed text, namely 'Colour: gray' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows colour=gray with a fixed text, namely 'Colour: gray' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "gray"
     },
     {
       "key": "colour",
-      "description": "Layer 'Benches' shows colour=white with a fixed text, namely 'Colour: white' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows colour=white with a fixed text, namely 'Colour: white' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "white"
     },
     {
       "key": "colour",
-      "description": "Layer 'Benches' shows colour=red with a fixed text, namely 'Colour: red' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows colour=red with a fixed text, namely 'Colour: red' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "red"
     },
     {
       "key": "colour",
-      "description": "Layer 'Benches' shows colour=black with a fixed text, namely 'Colour: black' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows colour=black with a fixed text, namely 'Colour: black' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "black"
     },
     {
       "key": "colour",
-      "description": "Layer 'Benches' shows colour=blue with a fixed text, namely 'Colour: blue' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows colour=blue with a fixed text, namely 'Colour: blue' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "blue"
     },
     {
       "key": "colour",
-      "description": "Layer 'Benches' shows colour=yellow with a fixed text, namely 'Colour: yellow' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows colour=yellow with a fixed text, namely 'Colour: yellow' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "yellow"
     },
     {
       "key": "survey:date",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'survey:date' (in the MapComplete.osm.be theme 'Playgrounds')"
+      "description": "Layer 'Benches' shows and asks freeform values for key 'survey:date' (in the mapcomplete.org theme 'Playgrounds')"
     },
     {
       "key": "survey:date",
-      "description": "Layer 'Benches' shows survey:date= with a fixed text, namely 'Surveyed today!' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds') Picking this answer will delete the key survey:date.",
+      "description": "Layer 'Benches' shows survey:date= with a fixed text, namely 'Surveyed today!' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') Picking this answer will delete the key survey:date.",
       "value": ""
     },
     {
       "key": "inscription",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'inscription' (in the MapComplete.osm.be theme 'Playgrounds')"
+      "description": "Layer 'Benches' shows and asks freeform values for key 'inscription' (in the mapcomplete.org theme 'Playgrounds')"
     },
     {
       "key": "not:inscription",
-      "description": "Layer 'Benches' shows not:inscription=yes with a fixed text, namely 'This bench does not have an inscription' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows not:inscription=yes with a fixed text, namely 'This bench does not have an inscription' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "yes"
     },
     {
       "key": "inscription",
-      "description": "Layer 'Benches' shows  with a fixed text, namely 'This bench does <span class='subtle'>(probably)</span> not have an inscription' (in the MapComplete.osm.be theme 'Playgrounds') Picking this answer will delete the key inscription.",
+      "description": "Layer 'Benches' shows  with a fixed text, namely 'This bench does <span class='subtle'>(probably)</span> not have an inscription' (in the mapcomplete.org theme 'Playgrounds') Picking this answer will delete the key inscription.",
       "value": ""
     },
     {
       "key": "tourism",
-      "description": "Layer 'Benches' shows tourism=artwork with a fixed text, namely 'This bench has an integrated artwork' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows tourism=artwork with a fixed text, namely 'This bench has an integrated artwork' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "artwork"
     },
     {
       "key": "tourism",
-      "description": "Layer 'Benches' shows  with a fixed text, namely 'This bench does not have an integrated artwork' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds') Picking this answer will delete the key tourism.",
+      "description": "Layer 'Benches' shows  with a fixed text, namely 'This bench does not have an integrated artwork' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') Picking this answer will delete the key tourism.",
       "value": ""
     },
     {
       "key": "historic",
-      "description": "Layer 'Benches' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if historic=memorial|inscription~.+|memorial=bench|tourism=artwork)",
+      "description": "Layer 'Benches' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if historic=memorial|inscription~.+|memorial=bench|tourism=artwork)",
       "value": "memorial"
     },
     {
       "key": "historic",
-      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds') Picking this answer will delete the key historic. (This is only shown if historic=memorial|inscription~.+|memorial=bench|tourism=artwork)",
+      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') Picking this answer will delete the key historic. (This is only shown if historic=memorial|inscription~.+|memorial=bench|tourism=artwork)",
       "value": ""
     },
     {
       "key": "not:historic",
-      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if historic=memorial|inscription~.+|memorial=bench|tourism=artwork)",
+      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if historic=memorial|inscription~.+|memorial=bench|tourism=artwork)",
       "value": "memorial"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'artwork_type' (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if tourism=artwork)"
+      "description": "Layer 'Benches' shows and asks freeform values for key 'artwork_type' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=architecture with a fixed text, namely 'Architecture' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if tourism=artwork)",
+      "description": "Layer 'Benches' shows artwork_type=architecture with a fixed text, namely 'Architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
       "value": "architecture"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=mural with a fixed text, namely 'Mural' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if tourism=artwork)",
+      "description": "Layer 'Benches' shows artwork_type=mural with a fixed text, namely 'Mural' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
       "value": "mural"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=painting with a fixed text, namely 'Painting' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if tourism=artwork)",
+      "description": "Layer 'Benches' shows artwork_type=painting with a fixed text, namely 'Painting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
       "value": "painting"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=sculpture with a fixed text, namely 'Sculpture' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if tourism=artwork)",
+      "description": "Layer 'Benches' shows artwork_type=sculpture with a fixed text, namely 'Sculpture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
       "value": "sculpture"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=statue with a fixed text, namely 'Statue' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if tourism=artwork)",
+      "description": "Layer 'Benches' shows artwork_type=statue with a fixed text, namely 'Statue' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
       "value": "statue"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=bust with a fixed text, namely 'Bust' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if tourism=artwork)",
+      "description": "Layer 'Benches' shows artwork_type=bust with a fixed text, namely 'Bust' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
       "value": "bust"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=stone with a fixed text, namely 'Stone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if tourism=artwork)",
+      "description": "Layer 'Benches' shows artwork_type=stone with a fixed text, namely 'Stone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
       "value": "stone"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=installation with a fixed text, namely 'Installation' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if tourism=artwork)",
+      "description": "Layer 'Benches' shows artwork_type=installation with a fixed text, namely 'Installation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
       "value": "installation"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=graffiti with a fixed text, namely 'Graffiti' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if tourism=artwork)",
+      "description": "Layer 'Benches' shows artwork_type=graffiti with a fixed text, namely 'Graffiti' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
       "value": "graffiti"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=relief with a fixed text, namely 'Relief' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if tourism=artwork)",
+      "description": "Layer 'Benches' shows artwork_type=relief with a fixed text, namely 'Relief' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
       "value": "relief"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=azulejo with a fixed text, namely 'Azulejo (Spanish decorative tilework)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if tourism=artwork)",
+      "description": "Layer 'Benches' shows artwork_type=azulejo with a fixed text, namely 'Azulejo (Spanish decorative tilework)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
       "value": "azulejo"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=tilework with a fixed text, namely 'Tilework' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if tourism=artwork)",
+      "description": "Layer 'Benches' shows artwork_type=tilework with a fixed text, namely 'Tilework' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
       "value": "tilework"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=woodcarving with a fixed text, namely 'Woodcarving' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if tourism=artwork)",
+      "description": "Layer 'Benches' shows artwork_type=woodcarving with a fixed text, namely 'Woodcarving' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
       "value": "woodcarving"
     },
     {
       "key": "artist:wikidata",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'artist:wikidata' (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if tourism=artwork)"
+      "description": "Layer 'Benches' shows and asks freeform values for key 'artist:wikidata' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)"
     },
     {
       "key": "artist_name",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'artist_name' (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if tourism=artwork)"
+      "description": "Layer 'Benches' shows and asks freeform values for key 'artist_name' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)"
     },
     {
       "key": "website",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if tourism=artwork)"
+      "description": "Layer 'Benches' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)"
     },
     {
       "key": "subject:wikidata",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'subject:wikidata' (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if tourism=artwork)"
+      "description": "Layer 'Benches' shows and asks freeform values for key 'subject:wikidata' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)"
     },
     {
       "key": "leisure",
@@ -452,7 +452,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Picnic tables' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Playgrounds') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Picnic tables' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -472,50 +472,50 @@
     },
     {
       "key": "level",
-      "description": "Layer 'Picnic tables' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Playgrounds')"
+      "description": "Layer 'Picnic tables' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Playgrounds')"
     },
     {
       "key": "location",
-      "description": "Layer 'Picnic tables' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Picnic tables' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Playgrounds')",
       "value": "underground"
     },
     {
       "key": "level",
-      "description": "Layer 'Picnic tables' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Picnic tables' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "0"
     },
     {
       "key": "level",
-      "description": "Layer 'Picnic tables' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Playgrounds') Picking this answer will delete the key level.",
+      "description": "Layer 'Picnic tables' shows  with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Playgrounds') Picking this answer will delete the key level.",
       "value": ""
     },
     {
       "key": "level",
-      "description": "Layer 'Picnic tables' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Picnic tables' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "1"
     },
     {
       "key": "level",
-      "description": "Layer 'Picnic tables' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Picnic tables' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "-1"
     },
     {
       "key": "material",
-      "description": "Layer 'Picnic tables' shows and asks freeform values for key 'material' (in the MapComplete.osm.be theme 'Playgrounds')"
+      "description": "Layer 'Picnic tables' shows and asks freeform values for key 'material' (in the mapcomplete.org theme 'Playgrounds')"
     },
     {
       "key": "material",
-      "description": "Layer 'Picnic tables' shows material=wood with a fixed text, namely 'This is a wooden picnic table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Picnic tables' shows material=wood with a fixed text, namely 'This is a wooden picnic table' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "wood"
     },
     {
       "key": "material",
-      "description": "Layer 'Picnic tables' shows material=concrete with a fixed text, namely 'This is a concrete picnic table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Picnic tables' shows material=concrete with a fixed text, namely 'This is a concrete picnic table' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "concrete"
     },
     {
       "key": "material",
-      "description": "Layer 'Picnic tables' shows material=plastic with a fixed text, namely 'This picnic table is made from (recycled) plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Picnic tables' shows material=plastic with a fixed text, namely 'This picnic table is made from (recycled) plastic' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "plastic"
     }
   ]

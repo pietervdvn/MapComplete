@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/themes/rainbow_crossings/crossing.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/themes/rainbow_crossings/crossing.svg' height="100px"> 
 
 A layer showing pedestrian crossings with rainbow paintings
 
@@ -26,7 +26,7 @@ A layer showing pedestrian crossings with rainbow paintings
 
 
 
-  - [rainbow_crossings](https://mapcomplete.osm.be/rainbow_crossings)
+  - [rainbow_crossings](https://mapcomplete.org/rainbow_crossings)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,7 +46,7 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 
 
 

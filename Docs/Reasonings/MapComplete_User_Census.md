@@ -61,13 +61,13 @@ This question is intentionally open-ended, as people will normally state what _t
 
 56 people gave insight in their favourite maps, yielding a total of 86 mentions of specific map themes or groups of themes.
 
-The theme with the most mentions -namely **9**- was the [**etymology**](https://mapcomplete.osm.be/etymolgoy) theme. This is not a big surprise, as there has been a tremendous amount of changes made with Open Etymology-map. Some people mention curiosity for their local environment, others are interested in the link between OpenStreetMap and Wikipedia. It should be noted that nearly everyone who mentioned etymology indicates that they have hundreds of edits.
+The theme with the most mentions -namely **9**- was the [**etymology**](https://mapcomplete.org/etymolgoy) theme. This is not a big surprise, as there has been a tremendous amount of changes made with Open Etymology-map. Some people mention curiosity for their local environment, others are interested in the link between OpenStreetMap and Wikipedia. It should be noted that nearly everyone who mentioned etymology indicates that they have hundreds of edits.
 
-The second place goes to the [**waste**](https://mapcomplete.osm.be/waste) theme with **8** mentions. I have to be honest, this came as a total surprise to me! At first sight, it is a bit of a boring topic - especially when contrasted with something like etymology. Yet, everyone needs to get rid of some waste every now and then. By the way, this theme was created by [@Rlin](https://en.osm.town/@rlin) and I have to admit that this is one of the most polished themes on MapComplete, using a lot of the available functionality. Thank you!
+The second place goes to the [**waste**](https://mapcomplete.org/waste) theme with **8** mentions. I have to be honest, this came as a total surprise to me! At first sight, it is a bit of a boring topic - especially when contrasted with something like etymology. Yet, everyone needs to get rid of some waste every now and then. By the way, this theme was created by [@Rlin](https://en.osm.town/@rlin) and I have to admit that this is one of the most polished themes on MapComplete, using a lot of the available functionality. Thank you!
 
-The third places goes to all **cycling-related** themes (**7** mentions of 'cycling'). [Cyclofix](https://mapcomplete.osm.be/cyclofix) had another **5** mentions, resulting in **12 total** mentions. This was no surprise either, as cyclofix has been historic driver of many changes made with MapComplete. It is one of the [oldest maps on MapComplete](https://en.osm.town/@pietervdvn/109297539270300156), yet it is still popular and is embedded on a few websites.
+The third places goes to all **cycling-related** themes (**7** mentions of 'cycling'). [Cyclofix](https://mapcomplete.org/cyclofix) had another **5** mentions, resulting in **12 total** mentions. This was no surprise either, as cyclofix has been historic driver of many changes made with MapComplete. It is one of the [oldest maps on MapComplete](https://en.osm.town/@pietervdvn/109297539270300156), yet it is still popular and is embedded on a few websites.
 
-The third place goes to [**benches**](https://mapcomplete.osm.be/benches) with **7** mentions - another very down-to-earth topic but with lots of value and lots of unmapped features.
+The third place goes to [**benches**](https://mapcomplete.org/benches) with **7** mentions - another very down-to-earth topic but with lots of value and lots of unmapped features.
 
 Out of the other answers, it is clear that there are various reasons to use MapComplete:
 
@@ -80,35 +80,35 @@ A full table of total mentions can be found below
 
 Map | Total |
 |----|------|
-[etymology](https://mapcomplete.osm.be/etymology) |	9
-[waste](https://mapcomplete.osm.be/waste) |	8
+[etymology](https://mapcomplete.org/etymology) |	9
+[waste](https://mapcomplete.org/waste) |	8
 Anything cycling-related |	7
-[benches](https://mapcomplete.osm.be/benches) |	7
-[cyclofix](https://mapcomplete.osm.be/cyclofix) |	5
-[wheelchair](https://mapcomplete.osm.be/on_wheels) and [blind_osm](https://mapcomplete.osm.be/blind_osm) |	5
-[charging_stations](https://mapcomplete.osm.be/charging_stations) |	4
-[aed](https://mapcomplete.osm.be/aed) |	3
-[trees](https://mapcomplete.osm.be/trees) |	3
-[hydrants](https://mapcomplete.osm.be/hydrants) |	3
-[drinking_water](https://mapcomplete.osm.be/drinking_water) |	3
-[artwork](https://mapcomplete.osm.be/artwork) |	3
-[notes](https://mapcomplete.osm.be/notes) |	2
-[shops](https://mapcomplete.osm.be/shops) |	2
-[restaurants](https://mapcomplete.osm.be/restaurants) |	2
-[healthcare](https://mapcomplete.osm.be/healthcare) |	2
-[bookcases](https://mapcomplete.osm.be/bookcases) |	2
-[toilets](https://mapcomplete.osm.be/toilets) |	2
-[ghost_bike](https://mapcomplete.osm.be/ghost_bike) |	2
-[street_lamps](https://mapcomplete.osm.be/street_lamps) |	2
-[personal](https://mapcomplete.osm.be/personal) |	1
-[pubs](https://mapcomplete.osm.be/cafes_and_pubs) |	1
-[nature](https://mapcomplete.osm.be/nature) |	1
-[Fritures](https://mapcomplete.osm.be/Fritures) |	1
-[climbing](https://mapcomplete.osm.be/climbing) |	1
-[pinjepunt](https://mapcomplete.osm.be/toerisme_vlaanderen) |	1
-[speed](https://mapcomplete.osm.be/speed_limits) | 	1
-[surveillance](https://mapcomplete.osm.be/surveillance) |	1
-[pets](https://mapcomplete.osm.be/pets) |	1
+[benches](https://mapcomplete.org/benches) |	7
+[cyclofix](https://mapcomplete.org/cyclofix) |	5
+[wheelchair](https://mapcomplete.org/on_wheels) and [blind_osm](https://mapcomplete.org/blind_osm) |	5
+[charging_stations](https://mapcomplete.org/charging_stations) |	4
+[aed](https://mapcomplete.org/aed) |	3
+[trees](https://mapcomplete.org/trees) |	3
+[hydrants](https://mapcomplete.org/hydrants) |	3
+[drinking_water](https://mapcomplete.org/drinking_water) |	3
+[artwork](https://mapcomplete.org/artwork) |	3
+[notes](https://mapcomplete.org/notes) |	2
+[shops](https://mapcomplete.org/shops) |	2
+[restaurants](https://mapcomplete.org/restaurants) |	2
+[healthcare](https://mapcomplete.org/healthcare) |	2
+[bookcases](https://mapcomplete.org/bookcases) |	2
+[toilets](https://mapcomplete.org/toilets) |	2
+[ghost_bike](https://mapcomplete.org/ghost_bike) |	2
+[street_lamps](https://mapcomplete.org/street_lamps) |	2
+[personal](https://mapcomplete.org/personal) |	1
+[pubs](https://mapcomplete.org/cafes_and_pubs) |	1
+[nature](https://mapcomplete.org/nature) |	1
+[Fritures](https://mapcomplete.org/Fritures) |	1
+[climbing](https://mapcomplete.org/climbing) |	1
+[pinjepunt](https://mapcomplete.org/toerisme_vlaanderen) |	1
+[speed](https://mapcomplete.org/speed_limits) | 	1
+[surveillance](https://mapcomplete.org/surveillance) |	1
+[pets](https://mapcomplete.org/pets) |	1
 
 
 ## What do people still want?

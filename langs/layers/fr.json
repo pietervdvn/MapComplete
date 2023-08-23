@@ -1270,7 +1270,7 @@
             "send_email_about_broken_pump": {
                 "render": {
                     "special": {
-                        "body": "Bonjour,\n\nCe mail pour vous informer que la pompe à vélo située à https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} est cassée.\n\nBien à vous.",
+                        "body": "Bonjour,\n\nCe mail pour vous informer que la pompe à vélo située à https://mapcomplete.org/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} est cassée.\n\nBien à vous.",
                         "button_text": "Signaler cette pompe à vélo cassée",
                         "subject": "Pompe à vélo cassée"
                     }
@@ -5941,6 +5941,16 @@
                 "mappings": {
                     "0": {
                         "then": "Vous avez fait {_csCount} modifications ! C'est génial !"
+                    }
+                }
+            },
+            "fixate-north": {
+                "mappings": {
+                    "0": {
+                        "then": "Autoriser la rotation de la carte"
+                    },
+                    "1": {
+                        "then": "Toujours garder le nord en haut"
                     }
                 }
             },

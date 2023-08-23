@@ -48,7 +48,7 @@ This document gives an overview of which URL-parameters can be used to influence
 
 "URL-parameters are extra parts of the URL used to set the state.
 
-For example, if the url is `https://mapcomplete.osm.be/cyclofix?lat=51.0&lon=4.3&z=5&test=true#node/1234`, the URL-parameters are stated in the part between the `?` and the `#`. There are multiple, all separated by `&`, namely: 
+For example, if the url is `https://mapcomplete.org/cyclofix?lat=51.0&lon=4.3&z=5&test=true#node/1234`, the URL-parameters are stated in the part between the `?` and the `#`. There are multiple, all separated by `&`, namely: 
 
 
 
@@ -101,7 +101,7 @@ This documentation is defined in the source code at [Locale.ts](/src/UI/i18n/Loc
 
  The OSM backend to use - can be used to redirect mapcomplete to the testing backend when using 'osm-test'
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L29)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L34)
 
  The default value is _osm_
 
@@ -112,7 +112,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  If true, 'dryrun' mode is activated and a fake user account is loaded
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L35)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L40)
 
  The default value is _false_
 
@@ -123,7 +123,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  Disables/Enables the user information pill (userbadge) at the top left. Disabling this disables logging in and thus disables editing all together, effectively putting MapComplete into read-only mode.
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L76)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L81)
 
  The default value is _true_
 
@@ -134,7 +134,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  Disables/Enables the search bar
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L81)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L86)
 
  The default value is _true_
 
@@ -145,7 +145,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  Disables/Enables the background layer control
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L86)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L91)
 
  The default value is _true_
 
@@ -156,7 +156,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  Disables/Enables the filter view
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L92)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L97)
 
  The default value is _true_
 
@@ -167,7 +167,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  Disables/Enables the 'add new feature'-popup. (A theme without presets might not have it in the first place)
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L97)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L102)
 
  The default value is _true_
 
@@ -178,7 +178,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  Disables/enables the help menu or welcome message
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L102)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L107)
 
  The default value is _true_
 
@@ -189,7 +189,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  Disables/enables the button to get in touch with the community
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L107)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L112)
 
  The default value is _true_
 
@@ -200,7 +200,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  Disables/Enables the extraLink button. By default, if in iframe mode and the welcome message is hidden, a popout button to the full mapcomplete instance is shown instead (unless disabled with this switch or another extraLink button is enabled)
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L112)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L117)
 
  The default value is _true_
 
@@ -211,7 +211,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  Disables/Enables the 'More Quests'-tab in the welcome message
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L117)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L122)
 
  The default value is _true_
 
@@ -222,7 +222,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  Disables/Enables the 'Share-screen'-tab in the welcome message
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L122)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L127)
 
  The default value is _true_
 
@@ -233,7 +233,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  Disables/Enables the geolocation button
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L127)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L132)
 
  The default value is _true_
 
@@ -244,7 +244,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  Always show all questions
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L132)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L137)
 
  The default value is _false_
 
@@ -255,7 +255,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  Enable the export as GeoJSON and CSV button
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L138)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L143)
 
  The default value is _true_
 
@@ -266,7 +266,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L153)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L158)
 
  The default value is _false_
 
@@ -277,7 +277,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  If true, shows some extra debugging help such as all the available tags on every object
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L159)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L164)
 
  The default value is _false_
 
@@ -288,7 +288,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  Point mapcomplete to a different overpass-instance. Example: https://overpass-api.de/api/interpreter
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L165)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L170)
 
  The default value is _https://overpass-api.de/api/interpreter,https://overpass.kumi.systems/api/interpreter,https://overpass.openstreetmap.ru/cgi/interpreter_
 
@@ -299,7 +299,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  Set a different timeout (in seconds) for queries in overpass
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L176)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L181)
 
  The default value is _30_
 
@@ -310,7 +310,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
   point to switch between OSM-api and overpass
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L184)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L189)
 
  The default value is _16_
 
@@ -321,7 +321,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  Tilesize when the OSM-API is used to fetch data within a BBOX
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L192)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L197)
 
  The default value is _17_
 
@@ -332,7 +332,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  The id of the background layer to start with
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L205)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L210)
 
  The default value is _osm_
 

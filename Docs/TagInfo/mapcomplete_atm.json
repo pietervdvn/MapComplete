@@ -3,9 +3,9 @@
   "project": {
     "name": "MapComplete ATM Machines",
     "description": "This map shows ATMs to withdraw or deposit money",
-    "project_url": "https://mapcomplete.osm.be/atm",
+    "project_url": "https://mapcomplete.org/atm",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-    "icon_url": "https://mapcomplete.osm.be/assets/themes/atm/logo.svg",
+    "icon_url": "https://mapcomplete.org/assets/themes/atm/logo.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
@@ -17,7 +17,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'ATMs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'ATM Machines') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'ATMs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'ATM Machines') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -37,89 +37,89 @@
     },
     {
       "key": "brand",
-      "description": "Layer 'ATMs' shows and asks freeform values for key 'brand' (in the MapComplete.osm.be theme 'ATM Machines')"
+      "description": "Layer 'ATMs' shows and asks freeform values for key 'brand' (in the mapcomplete.org theme 'ATM Machines')"
     },
     {
       "key": "operator",
-      "description": "Layer 'ATMs' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'ATM Machines') (This is only shown if amenity!=bank)"
+      "description": "Layer 'ATMs' shows and asks freeform values for key 'operator' (in the mapcomplete.org theme 'ATM Machines') (This is only shown if amenity!=bank)"
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'ATMs' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'ATM Machines')"
+      "description": "Layer 'ATMs' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'ATM Machines')"
     },
     {
       "key": "cash_out",
-      "description": "Layer 'ATMs' shows  with a fixed text, namely 'You can withdraw cash from this ATM' (in the MapComplete.osm.be theme 'ATM Machines') Picking this answer will delete the key cash_out.",
+      "description": "Layer 'ATMs' shows  with a fixed text, namely 'You can withdraw cash from this ATM' (in the mapcomplete.org theme 'ATM Machines') Picking this answer will delete the key cash_out.",
       "value": ""
     },
     {
       "key": "cash_out",
-      "description": "Layer 'ATMs' shows cash_out=yes with a fixed text, namely 'You can withdraw cash from this ATM' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines')",
+      "description": "Layer 'ATMs' shows cash_out=yes with a fixed text, namely 'You can withdraw cash from this ATM' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines')",
       "value": "yes"
     },
     {
       "key": "cash_out",
-      "description": "Layer 'ATMs' shows cash_out=no with a fixed text, namely 'You cannot withdraw cash from this ATM' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines')",
+      "description": "Layer 'ATMs' shows cash_out=no with a fixed text, namely 'You cannot withdraw cash from this ATM' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines')",
       "value": "no"
     },
     {
       "key": "cash_in",
-      "description": "Layer 'ATMs' shows  with a fixed text, namely 'You probably cannot deposit cash into this ATM' (in the MapComplete.osm.be theme 'ATM Machines') Picking this answer will delete the key cash_in.",
+      "description": "Layer 'ATMs' shows  with a fixed text, namely 'You probably cannot deposit cash into this ATM' (in the mapcomplete.org theme 'ATM Machines') Picking this answer will delete the key cash_in.",
       "value": ""
     },
     {
       "key": "cash_in",
-      "description": "Layer 'ATMs' shows cash_in=yes with a fixed text, namely 'You can deposit cash into this ATM' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines')",
+      "description": "Layer 'ATMs' shows cash_in=yes with a fixed text, namely 'You can deposit cash into this ATM' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines')",
       "value": "yes"
     },
     {
       "key": "cash_in",
-      "description": "Layer 'ATMs' shows cash_in=no with a fixed text, namely 'You cannot deposit cash into this ATM' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines')",
+      "description": "Layer 'ATMs' shows cash_in=no with a fixed text, namely 'You cannot deposit cash into this ATM' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines')",
       "value": "no"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=5 EUR with a fixed text, namely '5 euro notes can be withdrawn' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=5 EUR with a fixed text, namely '5 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
       "value": "5 EUR"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=10 EUR with a fixed text, namely '10 euro notes can be withdrawn' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=10 EUR with a fixed text, namely '10 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
       "value": "10 EUR"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=20 EUR with a fixed text, namely '20 euro notes can be withdrawn' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=20 EUR with a fixed text, namely '20 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
       "value": "20 EUR"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=50 EUR with a fixed text, namely '50 euro notes can be withdrawn' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=50 EUR with a fixed text, namely '50 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
       "value": "50 EUR"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=100 EUR with a fixed text, namely '100 euro notes can be withdrawn' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=100 EUR with a fixed text, namely '100 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
       "value": "100 EUR"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=200 EUR with a fixed text, namely '200 euro notes can be withdrawn' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=200 EUR with a fixed text, namely '200 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
       "value": "200 EUR"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=500 EUR with a fixed text, namely '500 euro notes can be withdrawn' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=500 EUR with a fixed text, namely '500 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
       "value": "500 EUR"
     },
     {
       "key": "speech_output",
-      "description": "Layer 'ATMs' shows speech_output=yes with a fixed text, namely 'This ATM has speech output, usually available through a headphone jack' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines')",
+      "description": "Layer 'ATMs' shows speech_output=yes with a fixed text, namely 'This ATM has speech output, usually available through a headphone jack' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines')",
       "value": "yes"
     },
     {
       "key": "speech_output",
-      "description": "Layer 'ATMs' shows speech_output=no with a fixed text, namely 'This ATM does not have speech output' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines')",
+      "description": "Layer 'ATMs' shows speech_output=no with a fixed text, namely 'This ATM does not have speech output' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines')",
       "value": "no"
     },
     {
@@ -129,21 +129,21 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Banks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'ATM Machines') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Banks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'ATM Machines') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "atm",
-      "description": "Layer 'Banks' shows atm=yes with a fixed text, namely 'This bank has an ATM' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines')",
+      "description": "Layer 'Banks' shows atm=yes with a fixed text, namely 'This bank has an ATM' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines')",
       "value": "yes"
     },
     {
       "key": "atm",
-      "description": "Layer 'Banks' shows atm=no with a fixed text, namely 'This bank does <b>not</b> have an ATM' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines')",
+      "description": "Layer 'Banks' shows atm=no with a fixed text, namely 'This bank does <b>not</b> have an ATM' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines')",
       "value": "no"
     },
     {
       "key": "atm",
-      "description": "Layer 'Banks' shows atm=separate with a fixed text, namely 'This bank does have an ATM, but it is mapped as a different icon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines')",
+      "description": "Layer 'Banks' shows atm=separate with a fixed text, namely 'This bank does have an ATM, but it is mapped as a different icon' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines')",
       "value": "separate"
     }
   ]

@@ -3,6 +3,7 @@
         "title": "Fonctionnalités avancées"
     },
     "centerMessage": {
+        "allFilteredAway": "Aucun objet dans la vue actuelle ne répond aux filtres",
         "loadingData": "Chargement des données…",
         "ready": "Fini !",
         "retrying": "Le chargement a échoué. Nouvel essai dans {count} secondes…",
@@ -11,6 +12,7 @@
     "communityIndex": {
         "available": "Cette communauté parle {native}",
         "intro": "Prenez contact avec d'autres personnes pour les connaître, apprendre d'elles, …",
+        "notAvailable": "Cette communauté ne parle pas {native}",
         "title": "Index communautaire"
     },
     "delete": {
@@ -48,25 +50,33 @@
         "reload": "Recharger les données"
     },
     "flyer": {
+        "cyclofix": "Les pompes à vélo, les stations de réparation, les points d'eau potable et les vélocistes sont sur CycloFix",
         "description": "Un flyer format A4 paysage pour promouvoir MapComplete",
         "editing": {
             "intro": "L'utilisateur est accueilli par une carte avec des objets. Lorsqu'il en sélectionne un, les informations relatives à cet objet s'affichent."
         },
         "fakeui": {
+            "add_images": "Ajoutez des images en quelques clics",
             "edit": "Une info fausse ou pas à jour ? Le bouton de modification est juste ici"
         },
         "mapcomplete": {
-            "li2": "Ajouter facilement des informations de contact et des heures d'ouverture"
+            "intro": "MapComplete est un site qui a {mapCount} carte intéractives. Chaque carte permet d'ajouter et mettre à jour des informations. IL y a de nombreuses fonctionnalités :",
+            "li1": "Ajouter de nouveaux points et mettre à jour les infos de ceux existant",
+            "li2": "Ajouter facilement des informations de contact et des heures d'ouverture",
+            "title": "Qu'est-ce que MapComplete ?"
         },
-        "title": "MapComplete.osm.be"
+        "title": "mapcomplete.org",
+        "whatIsOsm": "Qu'est-ce qu'OpenStreetMap ?"
     },
     "general": {
+        "404": "Cette page n'existe pas",
         "about": "Éditer facilement et ajouter OpenStreetMap pour un certain thème",
         "add": {
             "addNew": "Ajouter {category}",
             "backToSelect": "Sélectionner une catégorie différente",
             "confirmButton": "Ajouter un/une {category} ici.<br><div class=\"alert\">Votre ajout sera visible par tout le monde</div>",
             "confirmLocation": "Confirmer cet emplacement",
+            "confirmTitle": "Ajouter un {title} ?",
             "disableFilters": "Désactiver tous les filtres",
             "disableFiltersExplanation": "Certains élément peuvent être filtrés",
             "hasBeenImported": "Cet élément a déjà été importé",
@@ -211,7 +221,7 @@
         "pdf": {
             "attr": "Données par © les contributeurs &amp; contributrices OpenStreetMap sous licence libre ODbL",
             "attrBackground": "Couche d’arrière plan : {background}",
-            "generatedWith": "Généré à l’aide de MapComplete.osm.be/{layoutid}",
+            "generatedWith": "Généré à l’aide de mapcomplete.org/{layoutid}",
             "versionInfo": "v{version} - générée le {date}"
         },
         "pickLanguage": "Choisir la langue : ",

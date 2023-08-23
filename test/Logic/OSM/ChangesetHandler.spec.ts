@@ -40,7 +40,7 @@ describe("ChangesetHanlder", () => {
                     answer: "5",
                     comment: "Adding data with #MapComplete for theme #toerisme_vlaanderen",
                     created_by: "MapComplete 0.16.6",
-                    host: "https://mapcomplete.osm.be/toerisme_vlaanderen.html",
+                    host: "https://mapcomplete.org/toerisme_vlaanderen.html",
                     imagery: "osm",
                     locale: "nl",
                     source: "survey",
@@ -66,7 +66,7 @@ describe("ChangesetHanlder", () => {
                 "Adding data with #MapComplete for theme #toerisme_vlaanderen"
             )
             expect(d.get("created_by")).toEqual("MapComplete 0.16.6")
-            expect(d.get("host")).toEqual("https://mapcomplete.osm.be/toerisme_vlaanderen.html")
+            expect(d.get("host")).toEqual("https://mapcomplete.org/toerisme_vlaanderen.html")
             expect(d.get("imagery")).toEqual("osm")
             expect(d.get("source")).toEqual("survey")
             expect(d.get("source:node/-1")).toEqual("note/1234")
@@ -101,7 +101,7 @@ describe("ChangesetHanlder", () => {
                     answer: "5",
                     comment: "Adding data with #MapComplete for theme #toerisme_vlaanderen",
                     created_by: "MapComplete 0.16.6",
-                    host: "https://mapcomplete.osm.be/toerisme_vlaanderen.html",
+                    host: "https://mapcomplete.org/toerisme_vlaanderen.html",
                     imagery: "osm",
                     locale: "nl",
                     source: "survey",
@@ -128,7 +128,7 @@ describe("ChangesetHanlder", () => {
                 "Adding data with #MapComplete for theme #toerisme_vlaanderen"
             )
             expect(d.get("created_by")).toEqual("MapComplete 0.16.6")
-            expect(d.get("host")).toEqual("https://mapcomplete.osm.be/toerisme_vlaanderen.html")
+            expect(d.get("host")).toEqual("https://mapcomplete.org/toerisme_vlaanderen.html")
             expect(d.get("imagery")).toEqual("osm")
             expect(d.get("source")).toEqual("survey")
             expect(d.get("source:node/-1")).toEqual("note/1234")
@@ -162,7 +162,7 @@ describe("ChangesetHanlder", () => {
                     answer: "5",
                     comment: "Adding data with #MapComplete for theme #toerisme_vlaanderen",
                     created_by: "MapComplete 0.16.6",
-                    host: "https://mapcomplete.osm.be/toerisme_vlaanderen.html",
+                    host: "https://mapcomplete.org/toerisme_vlaanderen.html",
                     imagery: "osm",
                     locale: "nl",
                     source: "survey",
@@ -183,7 +183,7 @@ describe("ChangesetHanlder", () => {
                 "Adding data with #MapComplete for theme #toerisme_vlaanderen"
             )
             expect(d.get("created_by")).toEqual("MapComplete 0.16.6")
-            expect(d.get("host")).toEqual("https://mapcomplete.osm.be/toerisme_vlaanderen.html")
+            expect(d.get("host")).toEqual("https://mapcomplete.org/toerisme_vlaanderen.html")
             expect(d.get("imagery")).toEqual("osm")
             expect(d.get("source")).toEqual("survey")
             expect(d.get("source:node/42")).toEqual("note/1234")

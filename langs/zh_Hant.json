@@ -52,7 +52,7 @@
     },
     "flyer": {
         "aerial": "這份地圖使用不同的背景，是 Agentschap Informatie Vlaanderen 釋出的空照圖",
-        "callToAction": "在 mapcomplete.osm.be 測試",
+        "callToAction": "在 mapcomplete.org 測試",
         "cyclofix": "單車設施修正主題地圖上的單車甬筒、修理站、飲水機與單車店",
         "description": "宣傳 MapComplete 的 A4 大小傳單",
         "editing": {
@@ -201,7 +201,7 @@
         "pdf": {
             "attr": "地圖資料 @ 開放街圖貢獻者，採用 ODbL 授權可再利用",
             "attrBackground": "背景圖層：{background}",
-            "generatedWith": "用 MapComplete.osm.be/{layoutid} 產生的",
+            "generatedWith": "用 mapcomplete.org/{layoutid} 產生的",
             "versionInfo": "v{version} - {date} 產生的"
         },
         "pickLanguage": "選擇語言： ",
@@ -386,7 +386,7 @@
         "intro": "隱私相當重要 - 對個人與對社會都是。MapComplete 試著盡可能尊重你的隱私 - 所以不會需要惱人的 cookie。然而我們仍然告知，在那些情境下，以及做出的選擇與取捨下，有那些資訊會被收集與分享。",
         "miscCookies": "MapComplete 整合多項服務，特別是載入圖徵的圖片。圖片是放在多個第三方服務供應商，也許會有他們自己的 cookies。",
         "miscCookiesTitle": "其他 cookies",
-        "surveillance": "你會閱讀隱私政策，你大概相當在意隱私 - 所以我們也是！我們甚至製作 <a href='https://mapcomplete.osm.be/surveillance'> 主題地圖顯示監視器。</a>如果在意就繪製這些圖徵吧！",
+        "surveillance": "你會閱讀隱私政策，你大概相當在意隱私 - 所以我們也是！我們甚至製作 <a href='https://mapcomplete.org/surveillance'> 主題地圖顯示監視器。</a>如果在意就繪製這些圖徵吧！",
         "title": "隱私政策",
         "tracking": "要瞭解造訪我們網站的洞察，需要收集一些技術資訊。這包括你從那個國家造訪的，你從那個網站連線過來，你採用的裝置與螢幕大小。當你今日稍早造訪 MapComplete 時，我們會在你的裝置內放置 cookies。這些資料並沒有詳盡到能識別出你來，這些統計資料只會統整後，然後<a href='https://pietervdvn.goatcounter.com' target='_blank'>公開給所有人</a>",
         "trackingTitle": "統計資料",

@@ -18,7 +18,7 @@ MapComplete uploads images to `imgur.com` and then links to this image using `im
 Some metadata (most notably the author and chosen license) is added as 'description' to the image on Imgur.
 If multiple images are added, then keys `image:0`, `image:1`, `image:2`... is used.
 
-At last, themes can also add images under a specific key. For now, only the [etymology-map](https://mapcomplete.osm.be/etymology) does this with `image:streetsign`.
+At last, themes can also add images under a specific key. For now, only the [etymology-map](https://mapcomplete.org/etymology) does this with `image:streetsign`.
 
 Overpass was used to download all features with a tag matching one of the described keys and matching an imgur-url.
 

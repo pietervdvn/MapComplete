@@ -36,7 +36,7 @@ export default class GenerateReviewsAnalysis extends Script {
                             client.searchParams.get("layout") ??
                             client.searchParams.get("userlayout")
                     }
-                    theme = "https://mapcomplete.osm.be/" + theme
+                    theme = "https://mapcomplete.org/" + theme
                     themeHist[theme] = (themeHist[theme] ?? 0) + 1
 
                     const language = client.searchParams.get("language")
