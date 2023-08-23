@@ -7,7 +7,8 @@
     "de": "Werbeeinrichtungen",
     "cs": "Reklama",
     "nl": "Reclame",
-    "pt": "Anunciar"
+    "pt": "Anunciar",
+    "he": "פרסומת"
   },
   "minzoom": 15,
   "source": {
@@ -29,7 +30,8 @@
           "es": "Valla publicitaria",
           "en": "Billboard",
           "de": "Werbetafel",
-          "cs": "Billboard"
+          "cs": "Billboard",
+          "he": "שלט חוצות"
         }
       },
       {
@@ -209,7 +211,8 @@
         "en": "This is a {advertising}",
         "de": "Das ist ein/e {advertising}",
         "cs": "Toto je {advertising}",
-        "nl": "Dit is een {advertising}"
+        "nl": "Dit is een {advertising}",
+        "he": "זהו {advertising}"
       },
       "question": {
         "ca": "Quin tipus d'element publicitari és aquest?",
@@ -236,7 +239,8 @@
             "de": "Dies ist eine Werbetafel",
             "cs": "Toto je billboard",
             "fr": "C'est un grand panneau",
-            "pt": "Isso é um outdoor"
+            "pt": "Isso é um outdoor",
+            "he": "זה שלט חוצות"
           },
           "icon": {
             "path": "./assets/themes/advertising/billboard.svg",
@@ -298,7 +302,8 @@
             "cs": "Toto je vlajka",
             "fr": "C'est un drapeau",
             "nl": "Dit is een vlag",
-            "pt_BR": "Isto é uma bandeira"
+            "pt_BR": "Isto é uma bandeira",
+            "he": "זה דגל"
           },
           "icon": {
             "path": "./assets/themes/advertising/flag.svg",
@@ -568,7 +573,8 @@
               "cs": "Jedná se o neonové světlo",
               "nl": "Dit is een neonlamp",
               "pt": "Esta é uma luz de tubo de néon",
-              "fr": "C'est une lampe à tube néon"
+              "fr": "C'est une lampe à tube néon",
+              "he": "זהו תאורת ניאון"
             },
             "hideInAnswer": "advertising!=sign"
           }
@@ -592,7 +598,8 @@
         "fr": "Exploité par {operator}",
         "nl": "Uitgebaat door {operator}",
         "pt": "Operado por {operator}",
-        "pt_BR": "Operado por {operator}"
+        "pt_BR": "Operado por {operator}",
+        "he": "מופעל על ידי {operator}"
       },
       "question": {
         "ca": "Qui opera aquest element?",
@@ -602,7 +609,8 @@
         "cs": "Kdo tento objekt provozuje?",
         "fr": "Qui exploite ce dispositif ?",
         "nl": "Wie baat dit object uit?",
-        "pt": "Quem opera esse elemento?"
+        "pt": "Quem opera esse elemento?",
+        "he": "מי מפעיל את התכונה הזו?"
       },
       "freeform": {
         "addExtraTags": [],
@@ -619,7 +627,8 @@
         "cs": "Jaký typ zprávy je zobrazen?",
         "nl": "Wat voor boodschap wordt hier getoond?",
         "fr": "Quel est le type de message affiché ?",
-        "pt": "Que tipo de mensagem é mostrada?"
+        "pt": "Que tipo de mensagem é mostrada?",
+        "he": "איזה סוג הודעה מוצגת?"
       },
       "mappings": [
         {
@@ -633,7 +642,8 @@
             "cs": "Komerční sdělení",
             "fr": "Message commercial",
             "pt": "Mensagem comercial",
-            "pt_BR": "Mensagem comercial"
+            "pt_BR": "Mensagem comercial",
+            "he": "מסר מסחרי"
           }
         },
         {
@@ -646,7 +656,8 @@
             "de": "Lokale Informationen",
             "cs": "Místní informace",
             "fr": "Informations locales",
-            "pt": "Informação local"
+            "pt": "Informação local",
+            "he": "מידע מקומי"
           }
         },
         {
@@ -659,7 +670,8 @@
             "de": "Sicherheitsinformationen",
             "cs": "Bezpečnostní informace",
             "fr": "Information de sécurité",
-            "pt": "Informação segura"
+            "pt": "Informação segura",
+            "he": "מידע אבטחה"
           },
           "hideInAnswer": {
             "and": [
@@ -677,7 +689,8 @@
             "de": "Wahlwerbung",
             "cs": "Volební reklama",
             "fr": "Propagande électorale",
-            "pt": "Propaganda eleitoral"
+            "pt": "Propaganda eleitoral",
+            "he": "פרסום בחירות"
           }
         },
         {
@@ -691,7 +704,8 @@
             "cs": "Informace týkající se divadla, koncertů, ...",
             "fr": "Informations liées au théâtre, à des concerts, …",
             "nl": "Informatie over cultuurevenementen zoals theaters, optredens, …",
-            "pt": "Informações relacionadas com teatro, concertos, ..."
+            "pt": "Informações relacionadas com teatro, concertos, ...",
+            "he": "מידע הקשור לתיאטרון, קונצרטים,…"
           },
           "hideInAnswer": {
             "and": [
@@ -744,7 +758,8 @@
             "fr": "Message religieux",
             "nl": "Religieuze boodschap",
             "pt": "Mensagem religiosa",
-            "pt_BR": "Mensagem religiosa"
+            "pt_BR": "Mensagem religiosa",
+            "he": "מסר דתי"
           }
         },
         {
@@ -1015,7 +1030,8 @@
         "de": "eine Werbetafel",
         "cs": "billboard",
         "pt": "um outdoor",
-        "fr": "un grand panneau"
+        "fr": "un grand panneau",
+        "he": "שלט חוצות"
       },
       "description": {
         "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads",
@@ -1024,7 +1040,8 @@
         "de": "Eine große Außenwerbung, die typischerweise in stark befahrenen Gebieten, z. B. entlang stark befahrener Straßen, zu finden ist",
         "cs": "Velká venkovní reklamní konstrukce, která se obvykle nachází na místech s velkým provozem, například podél frekventovaných silnic",
         "fr": "Un grand équipement extérieur, principalement disposé dans les zones à fort trafic comme une route",
-        "pt": "Uma grande estrutura de publicidade ao ar livre, normalmente encontrada em áreas de alto tráfego, como ao longo de estradas movimentadas"
+        "pt": "Uma grande estrutura de publicidade ao ar livre, normalmente encontrada em áreas de alto tráfego, como ao longo de estradas movimentadas",
+        "he": "מבנה פרסום חוצות גדול, שנמצא בדרך כלל באזורים עתירי תנועה כמו לצד כבישים סואנים"
       },
       "exampleImages": [
         "./assets/themes/advertising/KFC_Billboard.jpg",

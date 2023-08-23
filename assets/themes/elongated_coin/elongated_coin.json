@@ -155,7 +155,8 @@
             "key": "charge",
             "placeholder": {
               "en": "Cost (e.g. 0.50 EUR)",
-              "de": "Einwurf (z.B. 0,5€)"
+              "de": "Einwurf (z.B. 0,5€)",
+              "fr": "Coût (par ex. 0.50 EUR)"
             }
           },
           "mappings": [

@@ -5,7 +5,8 @@
     "de": "Ein Finanzinstitut, um Geld einzuzahlen",
     "nl": "Een financiële instelling waar je geld kunt",
     "ca": "Una institució financera per a dipositar diners",
-    "cs": "Finanční instituce pro ukládání peněz"
+    "cs": "Finanční instituce pro ukládání peněz",
+    "he": "מוסד פיננסי להפקדת כסף"
   },
   "name": {
     "en": "Banks",
@@ -13,7 +14,8 @@
     "ca": "Bancs",
     "nb_NO": "Banker",
     "nl": "Banken",
-    "cs": "Banky"
+    "cs": "Banky",
+    "he": "בנקים"
   },
   "title": {
     "render": "Bank",
@@ -45,7 +47,8 @@
         "nb_NO": "Har denne banken en minibank?",
         "nl": "Heeft deze bank een bankautomaat?",
         "ca": "Aquest banc té un caixer automàtic?",
-        "cs": "Má tato banka bankomat?"
+        "cs": "Má tato banka bankomat?",
+        "he": "האם לבנק הזה יש כספומט?"
       },
       "mappings": [
         {
@@ -56,7 +59,8 @@
             "nb_NO": "Denne banken har en minibank",
             "nl": "Deze bank heeft een bankautomaat",
             "ca": "Aquest banc té un caixer automàtic",
-            "cs": "Tato banka má bankomat"
+            "cs": "Tato banka má bankomat",
+            "he": "לבנק הזה יש כספומט"
           }
         },
         {
@@ -95,7 +99,8 @@
             "nb_NO": "Med en minibank",
             "nl": "Met een bankautomaat",
             "ca": "Amb un caixer automàtic",
-            "cs": "S bankomatem"
+            "cs": "S bankomatem",
+            "he": "עם כספומט"
           },
           "osmTags": "atm=yes"
         }

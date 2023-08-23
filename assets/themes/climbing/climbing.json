@@ -9,7 +9,7 @@
     "zh_Hant": "開放攀爬地圖",
     "nb_NO": "Åpent klatrekart",
     "it": "Mappa aperta per le arrampicate",
-    "fr": "Open Climbing Map",
+    "fr": "Escalade : gymnases, clubs et spots",
     "hu": "Mászótérkép",
     "ca": "Mapa obert d'escalada",
     "da": "Åbn klatrekort",
@@ -362,21 +362,24 @@
             "id": "repairs_climbing_shoes",
             "question": {
               "en": "Does this shoe repair shop repair climbing shoes?",
-              "de": "Repariert das Schuhgeschäft Kletterschuhe?"
+              "de": "Repariert das Schuhgeschäft Kletterschuhe?",
+              "fr": "Est-ce que cette cordonnerie répare les chaussons d'escalade ?"
             },
             "mappings": [
               {
                 "if": "service:repair:climbing_shoes=yes",
                 "then": {
                   "en": "This shop repairs climbing shoes",
-                  "de": "Dieser Laden repariert Kletterschuhe"
+                  "de": "Dieser Laden repariert Kletterschuhe",
+                  "fr": "Ce commerce répare les chaussures d'escalade"
                 }
               },
               {
                 "if": "service:repair:climbing_shoes=no",
                 "then": {
                   "en": "This shop does not repair climbing shoes",
-                  "de": "Dieser Shop repariert keine Kletterschuhe"
+                  "de": "Dieser Shop repariert keine Kletterschuhe",
+                  "fr": "Ce commerce ne répare pas les chaussures d'escalade"
                 }
               }
             ]
@@ -401,21 +404,24 @@
             "id": "repairs_climbing_shoes",
             "question": {
               "en": "Does this shoe repair shop also repair clibming shoes?",
-              "de": "Repariert dieses Schuhgeschäft auch Kletterschuhe?"
+              "de": "Repariert dieses Schuhgeschäft auch Kletterschuhe?",
+              "fr": "Est-ce que cette cordonnerie répare les chaussons d'escalade ?"
             },
             "mappings": [
               {
                 "if": "service:repair:climbing_shoes=yes",
                 "then": {
                   "en": "This shop repairs climbing shoes",
-                  "de": "Dieses Geschäft repariert Kletterschuhe"
+                  "de": "Dieses Geschäft repariert Kletterschuhe",
+                  "fr": "Ce commerce répare les chaussons d'escalade"
                 }
               },
               {
                 "if": "service:repair:climbing_shoes=no",
                 "then": {
                   "en": "This shop does not repair climbing shoes",
-                  "de": "Dieses Geschäft repariert keine Kletterschuhe"
+                  "de": "Dieses Geschäft repariert keine Kletterschuhe",
+                  "fr": "Ce commerce ne répare pas les chaussons d'escalade"
                 }
               }
             ]
@@ -428,7 +434,8 @@
             ],
             "title": {
               "en": "a shoe repair shop",
-              "de": "Ein Schuhmacher"
+              "de": "Ein Schuhmacher",
+              "fr": "une cordonnerie"
             }
           }
         ]

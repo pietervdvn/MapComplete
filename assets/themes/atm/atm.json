@@ -85,7 +85,8 @@
                   "en": "Import this ATM",
                   "de": "Diesen Geldautomaten importieren",
                   "zh_Hant": "匯入這座 ATM",
-                  "nl": "Voeg deze ATM toe"
+                  "nl": "Voeg deze ATM toe",
+                  "fr": "Importer ce distributeur de billets"
                 },
                 "icon": "./assets/svg/addSmall.svg"
               }
@@ -109,7 +110,8 @@
                 "id_of_object_to_apply_this_one": "_closest_osm_poi",
                 "message": {
                   "en": "Add all the suggested tags to the closest ATM",
-                  "de": "Füge alle vorgeschlagenen Tags zum nächstgelegenen Geldautomaten hinzu"
+                  "de": "Füge alle vorgeschlagenen Tags zum nächstgelegenen Geldautomaten hinzu",
+                  "fr": "Ajouter tous les attributs suggérés au distributeur de billets le plus proche"
                 },
                 "image": "./assets/svg/addSmall.svg",
                 "maproulette_task_id": "mr_taskId"

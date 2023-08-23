@@ -358,7 +358,8 @@
                 "nl": "Er is een bord met de tijden tussen treinen",
                 "ca": "Hi ha un cartell que mostra la freqüència dels trens",
                 "es": "Hay un cartel que muestra la frecuencia de los trenes",
-                "cs": "Nachází se zde cedule zobrazující frekvenci odjezdů vlaků"
+                "cs": "Nachází se zde cedule zobrazující frekvenci odjezdů vlaků",
+                "fr": "Il y a un panneau indiquant la fréquence des trains"
               }
             }
           ]

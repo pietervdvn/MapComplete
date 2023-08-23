@@ -54,7 +54,8 @@
       "ca": "Banc",
       "da": "Bænk",
       "cs": "Lavička",
-      "pa_PK": "بینچ"
+      "pa_PK": "بینچ",
+      "he": "ספסל"
     },
     "mappings": [
       {
@@ -81,7 +82,8 @@
           "es": "Banco en una parada de transporte público",
           "da": "Bænk ved offentlig stoppested",
           "cs": "Lavička na zastávce veřejné dopravy",
-          "ca": "Banc en una parada de transport públic"
+          "ca": "Banc en una parada de transport públic",
+          "he": "ספסל בתחנת תחבורה ציבורית"
         }
       },
       {
@@ -105,7 +107,8 @@
           "es": "Banco en marquesina",
           "da": "Bænk i læskur",
           "cs": "Lavička v přístřešku",
-          "ca": "Banc en marquesina"
+          "ca": "Banc en marquesina",
+          "he": "ספסל בסככה"
         }
       }
     ]
