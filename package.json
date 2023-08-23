@@ -4,7 +4,7 @@
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
-  "homepage": "https://mapcomplete.osm.be",
+  "homepage": "https://mapcomplete.org",
   "main": "index.ts",
   "type": "module",
   "scripts": {

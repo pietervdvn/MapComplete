@@ -37,7 +37,7 @@ The MapComplete Editor:
 
 - Deploying
   + copy paste into a base64-decoder
-  + Go to "mapcomplete.osm.be/index?userlayout=true#<paste your encoded file here>"
+  + Go to "mapcomplete.org/index?userlayout=true#<paste your encoded file here>"
   + Oh Noes! An error msg!
 
 - sharing

@@ -65,7 +65,7 @@
             "li2": "Ajouter facilement des informations de contact et des heures d'ouverture",
             "title": "Qu'est-ce que MapComplete ?"
         },
-        "title": "MapComplete.osm.be",
+        "title": "mapcomplete.org",
         "whatIsOsm": "Qu'est-ce qu'OpenStreetMap ?"
     },
     "general": {
@@ -221,7 +221,7 @@
         "pdf": {
             "attr": "Données par © les contributeurs &amp; contributrices OpenStreetMap sous licence libre ODbL",
             "attrBackground": "Couche d’arrière plan : {background}",
-            "generatedWith": "Généré à l’aide de MapComplete.osm.be/{layoutid}",
+            "generatedWith": "Généré à l’aide de mapcomplete.org/{layoutid}",
             "versionInfo": "v{version} - générée le {date}"
         },
         "pickLanguage": "Choisir la langue : ",

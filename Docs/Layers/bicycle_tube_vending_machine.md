@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/pin:#ffffff;./assets/layers/bicycle_tube_vending_machine/pinIcon.svg' height="100px"> 
+<img src='https://mapcomplete.org/pin:#ffffff;./assets/layers/bicycle_tube_vending_machine/pinIcon.svg' height="100px"> 
 
 A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, …)
 
@@ -25,8 +25,8 @@ A layer showing vending machines for bicycle tubes (either purpose-built bicycle
 
 
 
-  - [cyclofix](https://mapcomplete.osm.be/cyclofix)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [cyclofix](https://mapcomplete.org/cyclofix)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,11 +46,11 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operational_status#values) [operational_status](https://wiki.openstreetmap.org/wiki/Key:operational_status) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3D) [broken](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken) [closed](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/charge#values) [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/brand#values) [brand](https://wiki.openstreetmap.org/wiki/Key:brand) | [string](../SpecialInputElements.md#string) | [Continental](https://wiki.openstreetmap.org/wiki/Tag:brand%3DContinental) [Schwalbe](https://wiki.openstreetmap.org/wiki/Tag:brand%3DSchwalbe)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | [Schwalbe](https://wiki.openstreetmap.org/wiki/Tag:operator%3DSchwalbe) [Continental](https://wiki.openstreetmap.org/wiki/Tag:operator%3DContinental)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operational_status#values) [operational_status](https://wiki.openstreetmap.org/wiki/Key:operational_status) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3D) [broken](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken) [closed](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/charge#values) [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/brand#values) [brand](https://wiki.openstreetmap.org/wiki/Key:brand) | [string](../SpecialInputElements.md#string) | [Continental](https://wiki.openstreetmap.org/wiki/Tag:brand%3DContinental) [Schwalbe](https://wiki.openstreetmap.org/wiki/Tag:brand%3DSchwalbe)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | [Schwalbe](https://wiki.openstreetmap.org/wiki/Tag:operator%3DSchwalbe) [Continental](https://wiki.openstreetmap.org/wiki/Tag:operator%3DContinental)
 
 
 

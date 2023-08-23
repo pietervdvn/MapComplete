@@ -30,7 +30,7 @@ Don't worry about bugs
 ----------------------
 
 As a non-admin contributor, you can _not_ make changes to the `master` nor to the `develop` branch. This is because, as
-soon as master is changed, this is built and deployed on `mapcomplete.osm.be`, which a lot of people use. An error there
+soon as master is changed, this is built and deployed on `mapcomplete.org`, which a lot of people use. An error there
 will cause a lot of grieve.
 
 A push on `develop` is automatically deployed to [pietervdvn.github.io/mc/develop] which is used by quite some

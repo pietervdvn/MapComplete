@@ -1023,7 +1023,7 @@
                     },
                     "theme-id": {
                         "question": "Welches Thema wurde für diese Änderung verwendet?",
-                        "render": "Geändert mit Thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                        "render": "Geändert mit Thema <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
                     },
                     "version": {
                         "question": "Mit welcher Version von MapComplete wurde diese Änderung gemacht?",

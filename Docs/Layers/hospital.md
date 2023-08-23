@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/circle:white;./assets/layers/hospital/hospital.svg' height="100px"> 
+<img src='https://mapcomplete.org/circle:white;./assets/layers/hospital/hospital.svg' height="100px"> 
 
 A layer showing hospital grounds
 
@@ -25,9 +25,9 @@ A layer showing hospital grounds
 
 
 
-  - [healthcare](https://mapcomplete.osm.be/healthcare)
-  - [onwheels](https://mapcomplete.osm.be/onwheels)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [healthcare](https://mapcomplete.org/healthcare)
+  - [onwheels](https://mapcomplete.org/onwheels)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -47,13 +47,13 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/amenity#values) [amenity](https://wiki.openstreetmap.org/wiki/Key:amenity) | Multiple choice | [clinic](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dclinic) [hospital](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dhospital)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours:visitors#values) [opening_hours:visitors](https://wiki.openstreetmap.org/wiki/Key:opening_hours:visitors) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/amenity#values) [amenity](https://wiki.openstreetmap.org/wiki/Key:amenity) | Multiple choice | [clinic](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dclinic) [hospital](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dhospital)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours:visitors#values) [opening_hours:visitors](https://wiki.openstreetmap.org/wiki/Key:opening_hours:visitors) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
 
 
 

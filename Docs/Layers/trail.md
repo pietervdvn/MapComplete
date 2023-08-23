@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/trail/trail.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/layers/trail/trail.svg' height="100px"> 
 
 Aangeduide wandeltochten
 
@@ -34,12 +34,12 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | [Natuurpunt](https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/colour#values) [colour](https://wiki.openstreetmap.org/wiki/Key:colour) | [color](../SpecialInputElements.md#color) | [blue](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblue) [red](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred) [green](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgreen) [yellow](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wheelchair#values) [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/pushchair#values) [pushchair](https://wiki.openstreetmap.org/wiki/Key:pushchair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | [Natuurpunt](https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/colour#values) [colour](https://wiki.openstreetmap.org/wiki/Key:colour) | [color](../SpecialInputElements.md#color) | [blue](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblue) [red](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred) [green](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgreen) [yellow](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wheelchair#values) [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/pushchair#values) [pushchair](https://wiki.openstreetmap.org/wiki/Key:pushchair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dno)
 
 
 

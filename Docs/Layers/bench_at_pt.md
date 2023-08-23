@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/circle:white;./assets/themes/benches/bench_public_transport.svg' height="100px"> 
+<img src='https://mapcomplete.org/circle:white;./assets/themes/benches/bench_public_transport.svg' height="100px"> 
 
 A layer showing all public-transport-stops which do have a bench
 
@@ -25,8 +25,8 @@ A layer showing all public-transport-stops which do have a bench
 
 
 
-  - [benches](https://mapcomplete.osm.be/benches)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [benches](https://mapcomplete.org/benches)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,9 +46,9 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/bench#values) [bench](https://wiki.openstreetmap.org/wiki/Key:bench) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:bench%3Dyes) [stand_up_bench](https://wiki.openstreetmap.org/wiki/Tag:bench%3Dstand_up_bench) [no](https://wiki.openstreetmap.org/wiki/Tag:bench%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/bench#values) [bench](https://wiki.openstreetmap.org/wiki/Key:bench) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:bench%3Dyes) [stand_up_bench](https://wiki.openstreetmap.org/wiki/Tag:bench%3Dstand_up_bench) [no](https://wiki.openstreetmap.org/wiki/Tag:bench%3Dno)
 
 
 

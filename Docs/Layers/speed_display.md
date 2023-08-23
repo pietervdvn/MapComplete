@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/speed_display/speed_display.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/layers/speed_display/speed_display.svg' height="100px"> 
 
 Layer showing speed displays that alert drivers of their speed.
 
@@ -25,8 +25,8 @@ Layer showing speed displays that alert drivers of their speed.
 
 
 
-  - [maxspeed](https://mapcomplete.osm.be/maxspeed)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [maxspeed](https://mapcomplete.org/maxspeed)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,9 +46,9 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/maxspeed#values) [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/inscription#values) [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/maxspeed#values) [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/inscription#values) [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [string](../SpecialInputElements.md#string) | 
 
 
 

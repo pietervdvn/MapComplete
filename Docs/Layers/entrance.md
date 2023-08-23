@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/circle:white;./assets/layers/entrance/entrance.svg' height="100px"> 
+<img src='https://mapcomplete.org/circle:white;./assets/layers/entrance/entrance.svg' height="100px"> 
 
 A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, …)
 
@@ -29,9 +29,9 @@ A layer showing entrances and offering capabilities to survey some advanced data
 
 
 
-  - [indoors](https://mapcomplete.osm.be/indoors)
-  - [onwheels](https://mapcomplete.osm.be/onwheels)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [indoors](https://mapcomplete.org/indoors)
+  - [onwheels](https://mapcomplete.org/onwheels)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -51,13 +51,13 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/entrance#values) [entrance](https://wiki.openstreetmap.org/wiki/Key:entrance) | Multiple choice | [](https://wiki.openstreetmap.org/wiki/Tag:entrance%3D) [main](https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dmain) [secondary](https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dsecondary) [service](https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dservice) [exit](https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dexit) [entrance](https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dentrance) [emergency](https://wiki.openstreetmap.org/wiki/Tag:entrance%3Demergency) [home](https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dhome)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/door#values) [door](https://wiki.openstreetmap.org/wiki/Key:door) | Multiple choice | [hinged](https://wiki.openstreetmap.org/wiki/Tag:door%3Dhinged) [revolving](https://wiki.openstreetmap.org/wiki/Tag:door%3Drevolving) [sliding](https://wiki.openstreetmap.org/wiki/Tag:door%3Dsliding) [overhead](https://wiki.openstreetmap.org/wiki/Tag:door%3Doverhead) [no](https://wiki.openstreetmap.org/wiki/Tag:door%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/automatic_door#values) [automatic_door](https://wiki.openstreetmap.org/wiki/Key:automatic_door) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dno) [motion](https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dmotion) [floor](https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dfloor) [button](https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dbutton) [slowdown_button](https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dslowdown_button) [continuous](https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dcontinuous) [serviced_on_button_press](https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dserviced_on_button_press) [serviced_on_request](https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dserviced_on_request)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/width#values) [width](https://wiki.openstreetmap.org/wiki/Key:width) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/kerb:height#values) [kerb:height](https://wiki.openstreetmap.org/wiki/Key:kerb:height) | [pnat](../SpecialInputElements.md#pnat) | [0](https://wiki.openstreetmap.org/wiki/Tag:kerb:height%3D0)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/entrance#values) [entrance](https://wiki.openstreetmap.org/wiki/Key:entrance) | Multiple choice | [](https://wiki.openstreetmap.org/wiki/Tag:entrance%3D) [main](https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dmain) [secondary](https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dsecondary) [service](https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dservice) [exit](https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dexit) [entrance](https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dentrance) [emergency](https://wiki.openstreetmap.org/wiki/Tag:entrance%3Demergency) [home](https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dhome)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/door#values) [door](https://wiki.openstreetmap.org/wiki/Key:door) | Multiple choice | [hinged](https://wiki.openstreetmap.org/wiki/Tag:door%3Dhinged) [revolving](https://wiki.openstreetmap.org/wiki/Tag:door%3Drevolving) [sliding](https://wiki.openstreetmap.org/wiki/Tag:door%3Dsliding) [overhead](https://wiki.openstreetmap.org/wiki/Tag:door%3Doverhead) [no](https://wiki.openstreetmap.org/wiki/Tag:door%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/automatic_door#values) [automatic_door](https://wiki.openstreetmap.org/wiki/Key:automatic_door) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dno) [motion](https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dmotion) [floor](https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dfloor) [button](https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dbutton) [slowdown_button](https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dslowdown_button) [continuous](https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dcontinuous) [serviced_on_button_press](https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dserviced_on_button_press) [serviced_on_request](https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dserviced_on_request)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/width#values) [width](https://wiki.openstreetmap.org/wiki/Key:width) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/kerb:height#values) [kerb:height](https://wiki.openstreetmap.org/wiki/Key:kerb:height) | [pnat](../SpecialInputElements.md#pnat) | [0](https://wiki.openstreetmap.org/wiki/Tag:kerb:height%3D0)
 
 
 

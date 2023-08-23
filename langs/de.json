@@ -52,7 +52,7 @@
     },
     "flyer": {
         "aerial": "Diese Karte verwendet einen anderen Hintergrund, nämlich Luftaufnahmen der Agentschap Informatie Vlaanderen",
-        "callToAction": "Testen Sie es auf mapcomplete.osm.be",
+        "callToAction": "Testen Sie es auf mapcomplete.org",
         "cyclofix": "Fahrradpumpen, Reparaturstationen, Trinkwasserstellen und Fahrradgeschäfte sind auf CycloFix",
         "description": "Ein Flyer im A4-Querformat zur Werbung von MapComplete",
         "editing": {
@@ -60,7 +60,7 @@
             "intro": "Der Benutzer wird von einer Karte mit Objekten begrüßt. Wenn er eines auswählt, werden Informationen über das Objekt angezeigt.",
             "title": "Wie sieht die Benutzeroberfläche aus?"
         },
-        "examples": "Es gibt viele thematische Karten, von denen hier einige dargestellt sind.\n\nEs gibt noch viele weitere thematische Karten online: über das Gesundheitswesen, Indoor-Navigation, Zugänglichkeit für Rollstuhlfahrer, Abfallentsorgungsanlagen, öffentliche Bücherschränke, Fußgängerüberwege mit Regenbogenmalerei,… Entdecken Sie sie alle auf mapcomplete.osm.be",
+        "examples": "Es gibt viele thematische Karten, von denen hier einige dargestellt sind.\n\nEs gibt noch viele weitere thematische Karten online: über das Gesundheitswesen, Indoor-Navigation, Zugänglichkeit für Rollstuhlfahrer, Abfallentsorgungsanlagen, öffentliche Bücherschränke, Fußgängerüberwege mit Regenbogenmalerei,… Entdecken Sie sie alle auf mapcomplete.org",
         "fakeui": {
             "add_images": "Bilder mit ein paar Klicks hinzufügen",
             "attributes": "Zeigt Attribute in einer freundlichen Art und Weise",
@@ -87,7 +87,7 @@
         "onwheels": "Indoor-Karten für Rollstuhlfahrer sind ebenfalls erhältlich.",
         "osm": "OpenStreetMap ist eine Online-Karte, die von jedermann für jeden Zweck bearbeitet und weiterverwendet werden kann, solange die Daten offengelegt werden und die Namensnennung erfolgt.\n\nEs ist die größte Geodatenbank der Welt und wird von Tausenden von Anwendungen und Websites weiterverwendet.",
         "tagline": "Erfassen Sie Geodaten mit OpenStreetMap",
-        "title": "MapComplete.osm.be",
+        "title": "mapcomplete.org",
         "toerisme_vlaanderen": "Für ein gemeinsames Projekt mit Visit Flanders wurde 'Pin your point' geschaffen. Über 160 Mitwirkende fügten einige tausend Bänke und Picknicktische hinzu und entdeckten 100 Ladestationen für Fahrräder.",
         "whatIsOsm": "Was ist OpenStreetMap?"
     },
@@ -266,7 +266,7 @@
         "pdf": {
             "attr": "Kartendaten © OpenStreetMap Contributors, wiederverwendbar unter ODbL",
             "attrBackground": "Hintergrund: {background}",
-            "generatedWith": "Erstellt mit MapComplete.osm.be/{layoutid}",
+            "generatedWith": "Erstellt mit mapcomplete.org/{layoutid}",
             "versionInfo": "v{version} - erstellt am {date}"
         },
         "pickLanguage": "Sprache auswählen: ",
@@ -546,7 +546,7 @@
         "intro": "Privatsphäre ist wichtig - sowohl für den Einzelnen als auch für die Gesellschaft. MapComplete versucht, Ihre Privatsphäre so weit wie möglich zu respektieren - bis zu dem Punkt, an dem kein lästiger Cookie-Banner mehr nötig ist. Dennoch möchten wir Sie darüber informieren, welche Informationen gesammelt und weitergegeben werden, unter welchen Umständen und warum diese Kompromisse gemacht werden.",
         "miscCookies": "MapComplete integriert weitere Dienste, insbesondere um Bilder von Objekten zu laden. Diese Bilder werden auf Servern von Drittanbietern gehostet, die möglicherweise eigene Cookies setzen.",
         "miscCookiesTitle": "Andere Cookies",
-        "surveillance": "Da Sie die Datenschutzbestimmungen lesen, ist Ihnen der Datenschutz wahrscheinlich wichtig - uns auch! Wir haben sogar <a href=\"https://mapcomplete.osm.be/surveillance\">ein Thema erstellt, das Überwachungskameras zeigt.</a> Zögern Sie nicht, sie alle zu mappen!",
+        "surveillance": "Da Sie die Datenschutzbestimmungen lesen, ist Ihnen der Datenschutz wahrscheinlich wichtig - uns auch! Wir haben sogar <a href=\"https://mapcomplete.org/surveillance\">ein Thema erstellt, das Überwachungskameras zeigt.</a> Zögern Sie nicht, sie alle zu mappen!",
         "title": "Datenschutzbestimmungen",
         "tracking": "Um zu erfahren, wer unsere Webseite besucht, werden technische Informationen gesammelt. Dazu gehören das Land, aus dem Sie die Webseite besucht haben, die Webseite, die Sie auf MapComplete verwiesen hat, der Typ Ihres Geräts und die Bildschirmgröße. Ein Cookie wird auf Ihrem Gerät gespeichert, um anzuzeigen, dass Sie MapComplete heute bereits besucht haben. Diese Daten sind nicht detailliert genug, um Sie persönlich zu identifizieren. Diese Statistiken sind nur in aggregierter Form <a href=\"https://pietervdvn.goatcounter.com\" target=\"_blank\">öffentlich zugänglich</a>",
         "trackingTitle": "Statistische Daten",

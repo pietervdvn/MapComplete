@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/information_board/board.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/layers/information_board/board.svg' height="100px"> 
 
 A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, …)
 
@@ -25,8 +25,8 @@ A layer showing touristical, road side information boards (e.g. giving informati
 
 
 
-  - [nature](https://mapcomplete.osm.be/nature)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [nature](https://mapcomplete.org/nature)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,7 +46,7 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 
 
 

@@ -1090,7 +1090,7 @@
             "send_email_about_broken_pump": {
                 "render": {
                     "special": {
-                        "body": "Hola,\n\nCon este correo, me gustaría informar de que esta bomba para bicicletas situada en https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} está rota.\n\nUn saludo",
+                        "body": "Hola,\n\nCon este correo, me gustaría informar de que esta bomba para bicicletas situada en https://mapcomplete.org/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} está rota.\n\nUn saludo",
                         "button_text": "Reportar esta bomba para bicicletas como rota",
                         "subject": "Bomba para bicicletas rota"
                     }

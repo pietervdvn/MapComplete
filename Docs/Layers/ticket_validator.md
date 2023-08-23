@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/square:green;./assets/themes/stations/public_transport_tickets.svg' height="100px"> 
+<img src='https://mapcomplete.org/square:green;./assets/themes/stations/public_transport_tickets.svg' height="100px"> 
 
 Find ticket validators to validate public transport tickets
 
@@ -34,10 +34,10 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/barrier#values) [barrier](https://wiki.openstreetmap.org/wiki/Key:barrier) | Multiple choice | [gate](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dgate)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | [Nederlandse Spoorwegen](https://wiki.openstreetmap.org/wiki/Tag:operator%3DNederlandse Spoorwegen)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/barrier#values) [barrier](https://wiki.openstreetmap.org/wiki/Key:barrier) | Multiple choice | [gate](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dgate)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | [Nederlandse Spoorwegen](https://wiki.openstreetmap.org/wiki/Tag:operator%3DNederlandse Spoorwegen)
 
 
 

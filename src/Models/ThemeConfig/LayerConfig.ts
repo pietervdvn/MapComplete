@@ -496,7 +496,7 @@ export default class LayerConfig extends WithContextLoader {
                 new Title("Themes using this layer", 4),
                 new List(
                     (usedInThemes ?? []).map(
-                        (id) => new Link(id, "https://mapcomplete.osm.be/" + id)
+                        (id) => new Link(id, "https://mapcomplete.org/" + id)
                     )
                 ),
             ]
@@ -542,7 +542,7 @@ export default class LayerConfig extends WithContextLoader {
                         new Combine([
                             new Link(
                                 Utils.runningFromConsole
-                                    ? "<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>"
+                                    ? "<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>"
                                     : Svg.statistics_svg().SetClass("w-4 h-4 mr-2"),
                                 "https://taginfo.openstreetmap.org/keys/" + values.key + "#values",
                                 true
@@ -579,7 +579,7 @@ export default class LayerConfig extends WithContextLoader {
             // This is for the documentation in a markdown-file, so we have to use raw HTML
             if (icon !== undefined) {
                 iconImg = new FixedUiElement(
-                    `<img src='https://mapcomplete.osm.be/${icon}' height="100px"> `
+                    `<img src='https://mapcomplete.org/${icon}' height="100px"> `
                 )
             }
         } else {

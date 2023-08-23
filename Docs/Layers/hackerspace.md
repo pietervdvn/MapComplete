@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/themes/hackerspaces/glider.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/themes/hackerspaces/glider.svg' height="100px"> 
 
 Hackerspace
 
@@ -25,8 +25,8 @@ Hackerspace
 
 
 
-  - [hackerspaces](https://mapcomplete.osm.be/hackerspaces)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [hackerspaces](https://mapcomplete.org/hackerspaces)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,20 +46,20 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/hackerspace#values) [hackerspace](https://wiki.openstreetmap.org/wiki/Key:hackerspace) | Multiple choice | [makerspace](https://wiki.openstreetmap.org/wiki/Tag:hackerspace%3Dmakerspace) [](https://wiki.openstreetmap.org/wiki/Tag:hackerspace%3D)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:3dprinter#values) [service:3dprinter](https://wiki.openstreetmap.org/wiki/Key:service:3dprinter) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:lasercutter#values) [service:lasercutter](https://wiki.openstreetmap.org/wiki/Key:service:lasercutter) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:cnc_drilling_machine#values) [service:cnc_drilling_machine](https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wheelchair#values) [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [designated](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated) [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/drink:club-mate#values) [drink:club-mate](https://wiki.openstreetmap.org/wiki/Key:drink:club-mate) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:drink:club-mate%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:drink:club-mate%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/start_date#values) [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) | [date](../SpecialInputElements.md#date) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/hackerspace#values) [hackerspace](https://wiki.openstreetmap.org/wiki/Key:hackerspace) | Multiple choice | [makerspace](https://wiki.openstreetmap.org/wiki/Tag:hackerspace%3Dmakerspace) [](https://wiki.openstreetmap.org/wiki/Tag:hackerspace%3D)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:3dprinter#values) [service:3dprinter](https://wiki.openstreetmap.org/wiki/Key:service:3dprinter) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:lasercutter#values) [service:lasercutter](https://wiki.openstreetmap.org/wiki/Key:service:lasercutter) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:cnc_drilling_machine#values) [service:cnc_drilling_machine](https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wheelchair#values) [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [designated](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated) [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/drink:club-mate#values) [drink:club-mate](https://wiki.openstreetmap.org/wiki/Key:drink:club-mate) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:drink:club-mate%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:drink:club-mate%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/start_date#values) [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) | [date](../SpecialInputElements.md#date) | 
 
 
 
@@ -305,14 +305,14 @@ The question is  *Is this place accessible with a wheelchair?*
 
 
 
-The question is  *Does this hackerspace serve Club Mate?*
+The question is  *Does this hackerspace serve Club-Mate?*
 
 
 
 
 
-  - *This hackerspace serves club mate*  corresponds with  `drink:club-mate=yes`
-  - *This hackerspace does not serve club mate*  corresponds with  `drink:club-mate=no`
+  - *This hackerspace serves Club-Mate*  corresponds with  `drink:club-mate=yes`
+  - *This hackerspace does not serve Club-Mate*  corresponds with  `drink:club-mate=no`
 
 
 

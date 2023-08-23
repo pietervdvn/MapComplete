@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/postboxes/postbox.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/layers/postboxes/postbox.svg' height="100px"> 
 
 The layer showing postboxes.
 
@@ -25,8 +25,8 @@ The layer showing postboxes.
 
 
 
-  - [personal](https://mapcomplete.osm.be/personal)
-  - [postboxes](https://mapcomplete.osm.be/postboxes)
+  - [personal](https://mapcomplete.org/personal)
+  - [postboxes](https://mapcomplete.org/postboxes)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,7 +46,7 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 
 
 

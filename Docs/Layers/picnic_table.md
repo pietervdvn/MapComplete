@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/circle:#e6cf39;./assets/layers/picnic_table/picnic_table.svg' height="100px"> 
+<img src='https://mapcomplete.org/circle:#e6cf39;./assets/layers/picnic_table/picnic_table.svg' height="100px"> 
 
 The layer showing picnic tables
 
@@ -25,10 +25,10 @@ The layer showing picnic tables
 
 
 
-  - [benches](https://mapcomplete.osm.be/benches)
-  - [nature](https://mapcomplete.osm.be/nature)
-  - [personal](https://mapcomplete.osm.be/personal)
-  - [playgrounds](https://mapcomplete.osm.be/playgrounds)
+  - [benches](https://mapcomplete.org/benches)
+  - [nature](https://mapcomplete.org/nature)
+  - [personal](https://mapcomplete.org/personal)
+  - [playgrounds](https://mapcomplete.org/playgrounds)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -48,9 +48,9 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/material#values) [material](https://wiki.openstreetmap.org/wiki/Key:material) | [string](../SpecialInputElements.md#string) | [wood](https://wiki.openstreetmap.org/wiki/Tag:material%3Dwood) [concrete](https://wiki.openstreetmap.org/wiki/Tag:material%3Dconcrete) [plastic](https://wiki.openstreetmap.org/wiki/Tag:material%3Dplastic)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/material#values) [material](https://wiki.openstreetmap.org/wiki/Key:material) | [string](../SpecialInputElements.md#string) | [wood](https://wiki.openstreetmap.org/wiki/Tag:material%3Dwood) [concrete](https://wiki.openstreetmap.org/wiki/Tag:material%3Dconcrete) [plastic](https://wiki.openstreetmap.org/wiki/Tag:material%3Dplastic)
 
 
 

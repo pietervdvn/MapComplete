@@ -3,9 +3,9 @@
   "project": {
     "name": "MapComplete Rainbow pedestrian crossings",
     "description": "On this map, rainbow-painted pedestrian crossings are shown and can be easily added",
-    "project_url": "https://mapcomplete.osm.be/rainbow_crossings",
+    "project_url": "https://mapcomplete.org/rainbow_crossings",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-    "icon_url": "https://mapcomplete.osm.be/assets/themes/rainbow_crossings/logo.svg",
+    "icon_url": "https://mapcomplete.org/assets/themes/rainbow_crossings/logo.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
@@ -32,7 +32,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Crossings with rainbow paintings' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Rainbow pedestrian crossings') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Crossings with rainbow paintings' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Rainbow pedestrian crossings') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -52,12 +52,12 @@
     },
     {
       "key": "surface:colour",
-      "description": "Layer 'Crossings with rainbow paintings' shows surface:colour=rainbow with a fixed text, namely 'This crossing has rainbow paintings' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Rainbow pedestrian crossings')",
+      "description": "Layer 'Crossings with rainbow paintings' shows surface:colour=rainbow with a fixed text, namely 'This crossing has rainbow paintings' and allows to pick this as a default answer (in the mapcomplete.org theme 'Rainbow pedestrian crossings')",
       "value": "rainbow"
     },
     {
       "key": "not:surface:colour",
-      "description": "Layer 'Crossings with rainbow paintings' shows not:surface:colour=rainbow with a fixed text, namely 'No rainbow paintings here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Rainbow pedestrian crossings')",
+      "description": "Layer 'Crossings with rainbow paintings' shows not:surface:colour=rainbow with a fixed text, namely 'No rainbow paintings here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Rainbow pedestrian crossings')",
       "value": "rainbow"
     }
   ]

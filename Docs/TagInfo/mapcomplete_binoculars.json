@@ -3,9 +3,9 @@
   "project": {
     "name": "MapComplete Binoculars",
     "description": "A map with fixed binoculars",
-    "project_url": "https://mapcomplete.osm.be/binoculars",
+    "project_url": "https://mapcomplete.org/binoculars",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-    "icon_url": "https://mapcomplete.osm.be/assets/layers/binocular/telescope.svg",
+    "icon_url": "https://mapcomplete.org/assets/layers/binocular/telescope.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
@@ -17,7 +17,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Binoculars' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Binoculars') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Binoculars' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Binoculars') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -37,21 +37,21 @@
     },
     {
       "key": "charge",
-      "description": "Layer 'Binoculars' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Binoculars')"
+      "description": "Layer 'Binoculars' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Binoculars')"
     },
     {
       "key": "fee",
-      "description": "Layer 'Binoculars' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Binoculars')",
+      "description": "Layer 'Binoculars' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Binoculars')",
       "value": "no"
     },
     {
       "key": "charge",
-      "description": "Layer 'Binoculars' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Binoculars') Picking this answer will delete the key charge.",
+      "description": "Layer 'Binoculars' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Binoculars') Picking this answer will delete the key charge.",
       "value": ""
     },
     {
       "key": "direction",
-      "description": "Layer 'Binoculars' shows and asks freeform values for key 'direction' (in the MapComplete.osm.be theme 'Binoculars')"
+      "description": "Layer 'Binoculars' shows and asks freeform values for key 'direction' (in the mapcomplete.org theme 'Binoculars')"
     }
   ]
 }

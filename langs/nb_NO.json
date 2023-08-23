@@ -43,7 +43,7 @@
     },
     "flyer": {
         "aerial": "Dette kartet bruker en annen bakgrunn, altså luftfoto av Agentschap Informatie Vlaanderen",
-        "callToAction": "Test på mapcomplete.osm.be",
+        "callToAction": "Test på mapcomplete.org",
         "cyclofix": "Sykkelpumper, reperasjonsstasjoner, drikkevann og sykkelbutikker finner du på cyclofix.",
         "description": "Et liggende A4-informasjonsblad som promoterer MapComplete",
         "editing": {
@@ -69,7 +69,7 @@
         },
         "onwheels": "Innendørskart for rullestolsbrukere er også tilgjengelig.",
         "tagline": "Samle inn geodata med OpenStreetMap",
-        "title": "MapComplete.osm.be",
+        "title": "mapcomplete.org",
         "whatIsOsm": "Hva er OpenStreetMap?"
     },
     "general": {
@@ -208,7 +208,7 @@
         "pdf": {
             "attr": "Kartdata © OpenStreetMap-bidragsytere, gjenbrukbart med ODbL-lisens",
             "attrBackground": "Bakgrunnslag: {background}",
-            "generatedWith": "Generert av MapComplete.osm.be/{layoutid}",
+            "generatedWith": "Generert av mapcomplete.org/{layoutid}",
             "versionInfo": "v{version}. Generert {date}"
         },
         "pickLanguage": "Velg språk: ",

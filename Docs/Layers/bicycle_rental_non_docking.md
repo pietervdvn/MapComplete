@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/pin:#ba2792;./assets/themes/cyclofix/key.svg' height="100px"> 
+<img src='https://mapcomplete.org/pin:#ba2792;./assets/themes/cyclofix/key.svg' height="100px"> 
 
 Bicycle rental stations
 
@@ -25,7 +25,7 @@ Bicycle rental stations
 
 
 
-  - [cyclofix](https://mapcomplete.osm.be/cyclofix)
+  - [cyclofix](https://mapcomplete.org/cyclofix)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -45,19 +45,19 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/rental#values) [rental](https://wiki.openstreetmap.org/wiki/Key:rental) | [string](../SpecialInputElements.md#string) | [city_bike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcity_bike) [ebike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Debike) [bmx](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbmx) [mtb](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dmtb) [kid_bike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dkid_bike) [tandem](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dtandem) [racebike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dracebike) [bike_helmet](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbike_helmet)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:city_bike#values) [capacity:city_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:city_bike) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:ebike#values) [capacity:ebike](https://wiki.openstreetmap.org/wiki/Key:capacity:ebike) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:kid_bike#values) [capacity:kid_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:kid_bike) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:bmx#values) [capacity:bmx](https://wiki.openstreetmap.org/wiki/Key:capacity:bmx) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:mtb#values) [capacity:mtb](https://wiki.openstreetmap.org/wiki/Key:capacity:mtb) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:bicycle_pannier#values) [capacity:bicycle_pannier](https://wiki.openstreetmap.org/wiki/Key:capacity:bicycle_pannier) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:tandem_bicycle#values) [capacity:tandem_bicycle](https://wiki.openstreetmap.org/wiki/Key:capacity:tandem_bicycle) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/rental#values) [rental](https://wiki.openstreetmap.org/wiki/Key:rental) | [string](../SpecialInputElements.md#string) | [city_bike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcity_bike) [ebike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Debike) [bmx](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbmx) [mtb](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dmtb) [kid_bike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dkid_bike) [tandem](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dtandem) [racebike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dracebike) [bike_helmet](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbike_helmet)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:city_bike#values) [capacity:city_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:city_bike) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:ebike#values) [capacity:ebike](https://wiki.openstreetmap.org/wiki/Key:capacity:ebike) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:kid_bike#values) [capacity:kid_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:kid_bike) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:bmx#values) [capacity:bmx](https://wiki.openstreetmap.org/wiki/Key:capacity:bmx) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:mtb#values) [capacity:mtb](https://wiki.openstreetmap.org/wiki/Key:capacity:mtb) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:bicycle_pannier#values) [capacity:bicycle_pannier](https://wiki.openstreetmap.org/wiki/Key:capacity:bicycle_pannier) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:tandem_bicycle#values) [capacity:tandem_bicycle](https://wiki.openstreetmap.org/wiki/Key:capacity:tandem_bicycle) | [pnat](../SpecialInputElements.md#pnat) | 
 
 
 

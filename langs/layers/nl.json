@@ -1276,7 +1276,7 @@
             "send_email_about_broken_pump": {
                 "render": {
                     "special": {
-                        "body": "Geachte\n\nGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id}.\n\nMet vriendelijke groeten.",
+                        "body": "Geachte\n\nGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.org/cyclofix?lat={_lat}&lon={_lon}&z=18#{id}.\n\nMet vriendelijke groeten.",
                         "button_text": "Rapporteer deze fietspomp als kapot",
                         "subject": "Kapotte fietspomp"
                     }

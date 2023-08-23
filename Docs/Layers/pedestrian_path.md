@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/svg/bug.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/svg/bug.svg' height="100px"> 
 
 Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer
 
@@ -27,9 +27,9 @@ Pedestrian footpaths, especially used for indoor navigation and snapping entranc
 
 
 
-  - [indoors](https://mapcomplete.osm.be/indoors)
-  - [onwheels](https://mapcomplete.osm.be/onwheels)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [indoors](https://mapcomplete.org/indoors)
+  - [onwheels](https://mapcomplete.org/onwheels)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
