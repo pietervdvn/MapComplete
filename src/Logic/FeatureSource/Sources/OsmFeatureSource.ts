@@ -61,7 +61,6 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
 
     private async loadData(bbox: BBox) {
         if (this.isActive?.data === false) {
-            console.log("OsmFeatureSource: not triggering: inactive")
             return
         }
 
@@ -133,7 +132,6 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
     }
 
     private async LoadTile(z: number, x: number, y: number): Promise<void> {
-        console.log("OsmFeatureSource: loading ", z, x, y, "from", this._backend)
         if (z >= 22) {
             throw "This is an absurd high zoom level"
         }
