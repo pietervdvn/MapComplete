@@ -805,7 +805,7 @@
     "hackerspaces": {
         "description": "Retrouvez, renseignez ou modifiez des ateliers numériques ouverts",
         "shortDescription": "Une carte des ateliers numériques ouverts",
-        "title": "Ateliers numériques ouvertS"
+        "title": "Ateliers numériques ouverts"
     },
     "hailhydrant": {
         "description": "Sur cette carte on trouve et met à jour les bornes incendies, extincteurs, casernes de pompiers et ambulanciers dans son quartier.",
@@ -1099,7 +1099,7 @@
     "postboxes": {
         "description": "Trouvez et ajoutez des bureaux de poste et boîtes à lettres sur cette carte. Utilisez cette carte où vous pouvez envoyer vos cartes postales ! :)<br/>Vous avez trouvez une erreur ou une boîte à lettres est manquante ? Vous pouvez modifier cette carte avec un compte OpenStreetMap gratuit.",
         "shortDescription": "Une carte des bureaux de poste et des boîtes à lettres",
-        "title": "Carte des Bureaux de Poste et Boîtes à Lettres"
+        "title": "Carte des bureaux de poste et boîtes à lettres"
     },
     "rainbow_crossings": {
         "description": "Cette carte affiche et permet la modification des passages cloutés peints aux couleurs de l’arc-en-ciel",
@@ -1269,7 +1269,7 @@
                 }
             }
         },
-        "title": "Éclairage de Rue"
+        "title": "Éclairage de rue"
     },
     "surveillance": {
         "description": "Cette carte indique l’emplacement des caméras de surveillance.",
