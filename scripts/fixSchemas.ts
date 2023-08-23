@@ -5,6 +5,7 @@ import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
 import { AllKnownLayouts } from "../src/Customizations/AllKnownLayouts"
 import { ConfigMeta } from "../src/UI/Studio/configMeta"
 import { Utils } from "../src/Utils"
+import Validators from "../src/UI/InputElement/Validators"
 
 const metainfo = {
     type: "One of the inputValidator types",
@@ -21,6 +22,16 @@ const metainfo = {
     suggestions: "a javascript expression generating mappings",
 }
 
+/**
+ * Applies 'onEach' on every leaf of the JSONSchema
+ * @param onEach
+ * @param scheme
+ * @param fullScheme
+ * @param path
+ * @param isHandlingReference
+ * @param required
+ * @constructor
+ */
 function WalkScheme<T>(
     onEach: (schemePart: JsonSchema, path: string[]) => T,
     scheme: JsonSchema,
@@ -45,10 +56,15 @@ function WalkScheme<T>(
             // We abort here to avoid infinite recursion
             return []
         }
+        // The 'scheme' might contain some extra info, such as 'description'
+        // This effectively overwrites properties from the loaded scheme
         const loadedScheme = fullScheme.definitions[definitionName]
+        const syntheticScheme = { ...loadedScheme, ...scheme }
+        syntheticScheme["child-description"] = loadedScheme.description
+        delete syntheticScheme["$ref"]
         return WalkScheme(
             onEach,
-            loadedScheme,
+            syntheticScheme,
             fullScheme,
             path,
             [...isHandlingReference, definitionName],
@@ -111,65 +127,106 @@ function WalkScheme<T>(
     return results
 }
 
+function extractHintsFrom(
+    description: string,
+    fieldnames: string[],
+    path: (string | number)[],
+    type: any
+): Record<string, string> {
+    if (!description) {
+        return {}
+    }
+    const hints = {}
+    const lines = description.split("\n")
+    for (const fieldname of fieldnames) {
+        const hintIndex = lines.findIndex((line) =>
+            line
+                .trim()
+                .toLocaleLowerCase()
+                .startsWith(fieldname + ":")
+        )
+        if (hintIndex < 0) {
+            continue
+        }
+        const hintLine = lines[hintIndex].substring((fieldname + ":").length).trim()
+        if (fieldname === "type") {
+            hints["typehint"] = hintLine
+        } else {
+            hints[fieldname] = hintLine
+        }
+    }
+
+    if (hints["types"]) {
+        const numberOfExpectedSubtypes = hints["types"].replaceAll("|", ";").split(";").length
+        if (!Array.isArray(type)) {
+            throw (
+                "At " +
+                path.join(".") +
+                "Invalid hint in the documentation: `types` indicates that there are " +
+                numberOfExpectedSubtypes +
+                " subtypes, but object does not support subtypes. Did you mean `type` instead?\n\tTypes are: " +
+                hints["types"]
+            )
+        }
+        const numberOfActualTypes = type.length
+        if (numberOfActualTypes !== numberOfExpectedSubtypes) {
+            throw `At ${path.join(
+                "."
+            )}\nInvalid hint in the documentation: \`types\` indicates that there are ${numberOfExpectedSubtypes} subtypes, but there are ${numberOfActualTypes} subtypes
+\tTypes are: ${hints["types"]}`
+        }
+    }
+
+    if (hints["suggestions"]) {
+        const suggestions = hints["suggestions"]
+        const f = new Function("{ layers, themes, validators  }", suggestions)
+        hints["suggestions"] = f({
+            layers: AllSharedLayers.sharedLayers,
+            themes: AllKnownLayouts.allKnownLayouts,
+            validators: Validators,
+        })
+    }
+    return hints
+}
+
+/**
+ * Extracts the 'configMeta' from the given schema, based on attributes in the description
+ * @param fieldnames
+ * @param fullSchema
+ */
 function addMetafields(fieldnames: string[], fullSchema: JsonSchema): ConfigMeta[] {
+    const fieldNamesSet = new Set(fieldnames)
     const onEach = (schemePart, path) => {
         if (schemePart.description === undefined) {
             return
         }
+        if (path.length === 2 && path[0] === "mappings" && path[1] === "if") {
+            console.log("HI")
+        }
         const type = schemePart.items?.anyOf ?? schemePart.type ?? schemePart.anyOf
-        const hints = {}
-        let description = schemePart.description.split("\n")
-        for (const fieldname of fieldnames) {
-            const hintIndex = description.findIndex((line) =>
-                line
-                    .trim()
-                    .toLocaleLowerCase()
-                    .startsWith(fieldname + ":")
-            )
-            if (hintIndex < 0) {
+        let description = schemePart.description
+
+        let hints = extractHintsFrom(description, fieldnames, path, type)
+        const childDescription = schemePart["child-description"]
+        if (childDescription) {
+            const childHints = extractHintsFrom(childDescription, fieldnames, path, type)
+            hints = { ...childHints, ...hints }
+            description = description ?? childDescription
+        }
+
+        const cleanedDescription: string[] = []
+        for (const line of description.split("\n")) {
+            const keyword = line.split(":").at(0).trim().toLowerCase()
+            if (fieldNamesSet.has(keyword)) {
                 continue
             }
-            const hintLine = description[hintIndex].substring((fieldname + ":").length).trim()
-            description.splice(hintIndex, 1)
-            if (fieldname === "type") {
-                hints["typehint"] = hintLine
-            } else {
-                hints[fieldname] = hintLine
-            }
+            cleanedDescription.push(line)
         }
-
-        if (hints["types"]) {
-            const numberOfExpectedSubtypes = hints["types"].replaceAll("|", ";").split(";").length
-            if (!Array.isArray(type)) {
-                throw (
-                    "At " +
-                    path.join(".") +
-                    "Invalid hint in the documentation: `types` indicates that there are " +
-                    numberOfExpectedSubtypes +
-                    " subtypes, but object does not support subtypes. Did you mean `type` instead?\n\tTypes are: " +
-                    hints["types"]
-                )
-            }
-            const numberOfActualTypes = type.length
-            if (numberOfActualTypes !== numberOfExpectedSubtypes) {
-                throw `At ${path.join(
-                    "."
-                )}\nInvalid hint in the documentation: \`types\` indicates that there are ${numberOfExpectedSubtypes} subtypes, but there are ${numberOfActualTypes} subtypes
-\tTypes are: ${hints["types"]}`
-            }
+        return {
+            hints,
+            type,
+            description: cleanedDescription.join("\n"),
         }
-
-        if (hints["suggestions"]) {
-            const suggestions = hints["suggestions"]
-            console.log("Creating suggestions for expression", suggestions)
-            const f = new Function("{ layers, themes  }", suggestions)
-            hints["suggestions"] = f({
-                layers: AllSharedLayers.sharedLayers,
-                themes: AllKnownLayouts.allKnownLayouts,
-            })
-        }
-
-        return { hints, type, description: description.join("\n") }
     }
 
     return WalkScheme(onEach, fullSchema, fullSchema, [], [], fullSchema.required).map(
@@ -209,8 +266,6 @@ function substituteReferences(
                 path.type[i] = target
                 continue
             }
-
-            console.log("Expanding " + name)
         }
     }
 }
@@ -236,10 +291,10 @@ function validateMeta(path: ConfigMeta): string | undefined {
         return undefined
     }
     if (path.hints.question === undefined && !Array.isArray(path.type)) {
-        return (
+        /* return (
             ctx +
             " does not have a question set. As such, MapComplete-studio users will not be able to set this property"
-        )
+        )//*/
     }
 
     return undefined
@@ -250,18 +305,19 @@ function extractMeta(
     path: string,
     allDefinitions: Record<string, JsonSchema>
 ): string[] {
-    let themeSchema: JsonSchema = JSON.parse(
+    const schema: JsonSchema = JSON.parse(
         readFileSync("./Docs/Schemas/" + typename + ".schema.json", { encoding: "utf8" })
     )
 
-    const metakeys = Array.from(Object.keys(metainfo))
+    const metakeys = Array.from(Object.keys(metainfo)).map((s) => s.toLowerCase())
 
-    const paths = addMetafields(metakeys, themeSchema)
+    const paths = addMetafields(metakeys, schema)
 
-    substituteReferences(paths, themeSchema, allDefinitions)
+    substituteReferences(paths, schema, allDefinitions)
 
-    writeFileSync("./src/assets/" + path + ".json", JSON.stringify(paths, null, "  "))
-    console.log("Written meta to ./assets/" + path)
+    const fullPath = "./src/assets/schemas/" + path + ".json"
+    writeFileSync(fullPath, JSON.stringify(paths, null, "  "))
+    console.log("Written meta to " + fullPath)
     return Utils.NoNull(paths.map((p) => validateMeta(p)))
 }
 
@@ -290,15 +346,17 @@ function main() {
             encoding: "utf8",
         })
     }
-    const errs = extractMeta("LayerConfigJson", "layerconfigmeta", allDefinitions)
-    extractMeta("LayoutConfigJson", "layoutconfigmeta", allDefinitions)
-    extractMeta("TagRenderingConfigJson", "tagrenderingconfigmeta", allDefinitions)
-    extractMeta(
-        "QuestionableTagRenderingConfigJson",
-        "questionabletagrenderingconfigmeta",
-        allDefinitions
+    const errs: string[] = []
+    // errs = extractMeta("LayerConfigJson", "layerconfigmeta", allDefinitions)
+    //  errs.push(...extractMeta("LayoutConfigJson", "layoutconfigmeta", allDefinitions))
+    //   errs.push(...extractMeta("TagRenderingConfigJson", "tagrenderingconfigmeta", allDefinitions))
+    errs.push(
+        ...extractMeta(
+            "QuestionableTagRenderingConfigJson",
+            "questionabletagrenderingconfigmeta",
+            allDefinitions
+        )
     )
-
     if (errs.length > 0) {
         for (const err of errs) {
             console.error(err)

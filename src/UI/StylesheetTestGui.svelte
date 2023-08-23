@@ -38,6 +38,11 @@
         <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
         Main action (disabled)
       </button>
+      
+      <button class="small">
+        <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
+        Small button
+      </button>
     </div>
     <div class="flex">
       <button>
@@ -90,6 +95,10 @@
       <button class="primary disabled">
         <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
         Main action (disabled)
+      </button>
+      <button class="small">
+        <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
+        Small button
       </button>
     </div>
     <div class="flex">

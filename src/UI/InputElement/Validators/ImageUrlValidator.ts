@@ -3,6 +3,7 @@ import { Translation } from "../../i18n/Translation"
 
 export default class ImageUrlValidator extends UrlValidator {
     private static readonly allowedExtensions = ["jpg", "jpeg", "svg", "png"]
+    public readonly isMeta = true
 
     constructor() {
         super(

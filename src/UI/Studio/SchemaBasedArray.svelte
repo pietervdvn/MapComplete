@@ -10,16 +10,18 @@
   export let state: EditLayerState;
   export let schema: ConfigMeta;
 
+ 
   let title = schema.path.at(-1);
   let singular = title;
-  if (title.endsWith("s")) {
+  if (title?.endsWith("s")) {
     singular = title.slice(0, title.length - 1);
   }
   let article = "a";
-  if (singular.match(/^[aeoui]/)) {
+  if (singular?.match(/^[aeoui]/)) {
     article = "an";
   }
   export let path: (string | number)[] = [];
+  const isTagRenderingBlock = path.length === 1 && path[0] === "tagRenderings";
 
   const subparts = state.getSchemaStartingWith(schema.path);
 
@@ -39,8 +41,11 @@
   let createdItems = values.data.length;
 
 
-  function createItem() {
+  function createItem(valueToSet?: any) {
     values.data.push(createdItems);
+    if (valueToSet) {
+      state.setValueAt([...path, createdItems], valueToSet);
+    }
     createdItems++;
     values.ping();
   }
@@ -87,16 +92,24 @@
     {/each}
   {:else}
     {#each $values as value (value)}
-      <div class="flex justify-between items-center">
-        <h3 class="m-0">{singular} {value}</h3>
-        <button class="border-black border rounded-full p-1 w-fit h-fit"
-                on:click={() => {del(value)}}>
-          <TrashIcon class="w-4 h-4" />
-        </button>
-      </div>
+
+      {#if !isTagRenderingBlock}
+        <div class="flex justify-between items-center">
+          <h3 class="m-0">{singular} {value}</h3>
+          <button class="border-black border rounded-full p-1 w-fit h-fit"
+                  on:click={() => {del(value)}}>
+            <TrashIcon class="w-4 h-4" />
+          </button>
+        </div>
+      {/if}
       <div class="border border-black">
-        {#if path.length === 1 && path[0] === "tagRenderings"}
-          <TagRenderingInput path={path.concat(value)} {state} {schema}/>
+        {#if isTagRenderingBlock}
+          <TagRenderingInput path={path.concat(value)} {state} {schema} >
+            <button slot="upper-right" class="border-black border rounded-full p-1 w-fit h-fit"
+                    on:click={() => {del(value)}}>
+              <TrashIcon class="w-4 h-4" />
+            </button>
+          </TagRenderingInput>
         {:else}
           {#each subparts as subpart}
             <SchemaBasedInput {state} path={fusePath(value, subpart.path)} schema={subpart} />
@@ -105,5 +118,11 @@
       </div>
     {/each}
   {/if}
-  <button on:click={createItem}>Add {article} {singular}</button>
+  <div class="flex">
+    <button on:click={() => createItem()}>Add {article} {singular}</button>
+    {#if path.length === 1 && path[0] === "tagRenderings"}
+      <button on:click={() => {createItem();}}>Add a builtin tagRendering</button>
+    {/if}
+    <slot name="extra-button" />
+  </div>
 </div>

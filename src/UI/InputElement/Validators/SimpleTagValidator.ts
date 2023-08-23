@@ -8,6 +8,8 @@ import TagKeyValidator from "./TagKeyValidator"
  */
 export default class SimpleTagValidator extends Validator {
     private static readonly KeyValidator = new TagKeyValidator()
+
+    public readonly isMeta = true
     constructor() {
         super(
             "simple_tag",

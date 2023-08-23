@@ -10,6 +10,7 @@
     } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
     import EditLayerState from "./EditLayerState";
     import { onDestroy } from "svelte";
+    import type { JsonSchemaType } from "./jsonSchema";
 
 
     export let state: EditLayerState
@@ -20,6 +21,9 @@
     let type = schema.hints.typehint ?? "string"
     if(type === "rendered"){
         type = "translation"
+    }
+    if(type.endsWith("[]")){
+        type = type.substring(0, type.length - 2) 
     }
     const isTranslation =schema.hints.typehint === "translation" || schema.hints.typehint === "rendered"
 
@@ -47,7 +51,23 @@
         }]
     }
 
-    if (schema.type === "boolean" || (Array.isArray(schema.type) && schema.type.some(t => t["type"] === "boolean"))) {
+    function mightBeBoolean(type: undefined | JsonSchemaType): boolean {
+        if(type === undefined){
+            return false
+        }
+        if(type["type"]){
+            type = type["type"]
+        }
+        if(type === "boolean"){
+            return true
+        }
+        if(!Array.isArray(type)){
+            return false
+        }
+        
+        return type.some(t => mightBeBoolean(t) )
+    }
+    if (mightBeBoolean(schema.type)) {
         configJson.mappings = configJson.mappings ?? []
         configJson.mappings.push(
             {
@@ -101,7 +121,7 @@
 {#if err !== undefined}
     <span class="alert">{err}</span>
 {:else}
-    <div class="w-full">
+    <div class="w-full flex flex-col">
         <TagRenderingEditable {config} selectedElement={undefined} showQuestionIfUnknown={true} {state} {tags}/>
     </div>
 {/if}

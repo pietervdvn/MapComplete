@@ -473,6 +473,30 @@
             }
           ]
         },
+        "icon": {
+          "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon",
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "description": "The path to the icon\nType: icon",
+                  "type": "string"
+                },
+                "class": {
+                  "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
         "condition": {
           "description": "question: When should this item be shown?\n\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
           "anyOf": [
@@ -536,7 +560,7 @@
                 ]
               },
               "icon": {
-                "description": "question: What icon should be added to this mapping?\nAn icon supporting this mapping; typically shown pretty small\nType: icon",
+                "description": "question: What icon should be added to this mapping?\nAn icon supporting this mapping; typically shown pretty small\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                 "anyOf": [
                   {
                     "type": "object",
@@ -593,10 +617,10 @@
       "properties": {
         "if": {
           "$ref": "#/definitions/TagConfigJson",
-          "description": "quesiton: What tags should be matched to show this option?\n\nIf in 'question'-mode and the contributor selects this option, these tags will be applied to the object"
+          "description": "question: What tags should be matched to show this option?\n\nIf in 'question'-mode and the contributor selects this option, these tags will be applied to the object"
         },
         "then": {
-          "description": "Shown if the 'if is fulfilled\nType: rendered",
+          "description": "Question: What corresponding text should be shown?\nShown if the `if` is fulfilled\nType: rendered",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -607,7 +631,7 @@
           ]
         },
         "icon": {
-          "description": "An extra icon supporting the choice\nType: icon",
+          "description": "question: What icon should be shown next to this mapping?\n\nThis icon will only be shown if the value is known, it is not displayed in the options (but might be in the future)\n\nifunset: Show no icon\nType: icon",
           "anyOf": [
             {
               "type": "object",
@@ -631,7 +655,7 @@
           ]
         },
         "hideInAnswer": {
-          "description": "In some cases, multiple taggings exist (e.g. a default assumption, or a commonly mapped abbreviation and a fully written variation).\n\nIn the latter case, a correct text should be shown, but only a single, canonical tagging should be selectable by the user.\nIn this case, one of the mappings can be hiden by setting this flag.\n\nTo demonstrate an example making a default assumption:\n\nmappings: [\n {\n     if: \"access=\", -- no access tag present, we assume accessible\n     then: \"Accessible to the general public\",\n     hideInAnswer: true\n },\n {\n     if: \"access=yes\",\n     then: \"Accessible to the general public\", -- the user selected this, we add that to OSM\n },\n {\n     if: \"access=no\",\n     then: \"Not accessible to the public\"\n }\n]\n\n\nFor example, for an operator, we have `operator=Agentschap Natuur en Bos`, which is often abbreviated to `operator=ANB`.\nThen, we would add two mappings:\n{\n    if: \"operator=Agentschap Natuur en Bos\" -- the non-abbreviated version which should be uploaded\n    then: \"Maintained by Agentschap Natuur en Bos\"\n},\n{\n    if: \"operator=ANB\", -- we don't want to upload abbreviations\n    then: \"Maintained by Agentschap Natuur en Bos\"\n    hideInAnswer: true\n}\n\nHide in answer can also be a tagsfilter, e.g. to make sure an option is only shown when appropriate.\nKeep in mind that this is reverse logic: it will be hidden in the answer if the condition is true, it will thus only show in the case of a mismatch\n\ne.g., for toilets: if \"wheelchair=no\", we know there is no wheelchair dedicated room.\nFor the location of the changing table, the option \"in the wheelchair accessible toilet is weird\", so we write:\n\n{\n    \"question\": \"Where is the changing table located?\"\n    \"mappings\": [\n        {\"if\":\"changing_table:location=female\",\"then\":\"In the female restroom\"},\n       {\"if\":\"changing_table:location=male\",\"then\":\"In the male restroom\"},\n       {\"if\":\"changing_table:location=wheelchair\",\"then\":\"In the wheelchair accessible restroom\", \"hideInAnswer\": \"wheelchair=no\"},\n\n    ]\n}\n\nAlso have a look for the meta-tags\n{\n    if: \"operator=Agentschap Natuur en Bos\",\n    then: \"Maintained by Agentschap Natuur en Bos\",\n    hideInAnswer: \"_country!=be\"\n}",
+          "description": "question: Under what circumstances should this mapping be <b>hidden</b> from the possibilities a contributor can pick?\niftrue: Never show this mapping as option to pick\nifunset: Always show this mapping as option to pick\ntype: tag\n\nIn some cases, multiple taggings exist (e.g. a default assumption, or a commonly mapped abbreviation and a fully written variation).\n\nIn the latter case, a correct text should be shown, but only a single, canonical tagging should be selectable by the user.\nIn this case, one of the mappings can be hiden by setting this flag.\n\nTo demonstrate an example making a default assumption:\n\nmappings: [\n {\n     if: \"access=\", -- no access tag present, we assume accessible\n     then: \"Accessible to the general public\",\n     hideInAnswer: true\n },\n {\n     if: \"access=yes\",\n     then: \"Accessible to the general public\", -- the user selected this, we add that to OSM\n },\n {\n     if: \"access=no\",\n     then: \"Not accessible to the public\"\n }\n]\n\n\nFor example, for an operator, we have `operator=Agentschap Natuur en Bos`, which is often abbreviated to `operator=ANB`.\nThen, we would add two mappings:\n{\n    if: \"operator=Agentschap Natuur en Bos\" -- the non-abbreviated version which should be uploaded\n    then: \"Maintained by Agentschap Natuur en Bos\"\n},\n{\n    if: \"operator=ANB\", -- we don't want to upload abbreviations\n    then: \"Maintained by Agentschap Natuur en Bos\"\n    hideInAnswer: true\n}\n\nHide in answer can also be a tagsfilter, e.g. to make sure an option is only shown when appropriate.\nKeep in mind that this is reverse logic: it will be hidden in the answer if the condition is true, it will thus only show in the case of a mismatch\n\ne.g., for toilets: if \"wheelchair=no\", we know there is no wheelchair dedicated room.\nFor the location of the changing table, the option \"in the wheelchair accessible toilet is weird\", so we write:\n\n{\n    \"question\": \"Where is the changing table located?\"\n    \"mappings\": [\n        {\"if\":\"changing_table:location=female\",\"then\":\"In the female restroom\"},\n       {\"if\":\"changing_table:location=male\",\"then\":\"In the male restroom\"},\n       {\"if\":\"changing_table:location=wheelchair\",\"then\":\"In the wheelchair accessible restroom\", \"hideInAnswer\": \"wheelchair=no\"},\n\n    ]\n}\n\nAlso have a look for the meta-tags\n{\n    if: \"operator=Agentschap Natuur en Bos\",\n    then: \"Maintained by Agentschap Natuur en Bos\",\n    hideInAnswer: \"_country!=be\"\n}",
           "anyOf": [
             {
               "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -648,7 +672,7 @@
           ]
         },
         "ifnot": {
-          "description": "Only applicable if 'multiAnswer' is set.\nThis is for situations such as:\n`accepts:coins=no` where one can select all the possible payment methods. However, we want to make explicit that some options _were not_ selected.\nThis can be done with `ifnot`\nNote that we can not explicitly render this negative case to the user, we cannot show `does _not_ accept coins`.\nIf this is important to your usecase, consider using multiple radiobutton-fields without `multiAnswer`",
+          "description": "question: What tags should be applied if this mapping is _not_ chosen?\n\nOnly applicable if 'multiAnswer' is set.\nThis is for situations such as:\n`accepts:coins=no` where one can select all the possible payment methods. However, we want to make explicit that some options _were not_ selected.\nThis can be done with `ifnot`\nNote that we can not explicitly render this negative case to the user, we cannot show `does _not_ accept coins`.\nIf this is important to your usecase, consider using multiple radiobutton-fields without `multiAnswer`",
           "anyOf": [
             {
               "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -662,18 +686,18 @@
           ]
         },
         "addExtraTags": {
-          "description": "If chosen as answer, these tags will be applied as well onto the object.\nNot compatible with multiAnswer.\n\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```",
+          "description": "question: What extra tags should be added to the object if this object is chosen?\ntype: simple_tag[]\n\nIf chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\n\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```",
           "type": "array",
           "items": {
             "type": "string"
           }
         },
         "searchTerms": {
-          "description": "If there are many options, the mappings-radiobuttons will be replaced by an element with a searchfunction\n\nSearchterms (per language) allow to easily find an option if there are many options",
+          "description": "question: If there are many options, what search terms match too?\nIf there are many options, the mappings-radiobuttons will be replaced by an element with a searchfunction\n\nSearchterms (per language) allow to easily find an option if there are many options\ngroup: hidden",
           "$ref": "#/definitions/Record<string,string[]>"
         },
         "priorityIf": {
-          "description": "If the searchable selector is picked, mappings with this item will have priority and show up even if the others are hidden\nUse this sparingly",
+          "description": "If the searchable selector is picked, mappings with this item will have priority and show up even if the others are hidden\nUse this sparingly\ngroup: hidden",
           "anyOf": [
             {
               "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -687,7 +711,7 @@
           ]
         },
         "#": {
-          "description": "Used for comments or to disable a validation\n\nignore-image-in-then: normally, a `then`-clause is not allowed to have an `img`-html-element as icons are preferred. In some cases (most notably title-icons), this is allowed",
+          "description": "Used for comments or to disable a validation\n\ngroup: hidden\nignore-image-in-then: normally, a `then`-clause is not allowed to have an `img`-html-element as icons are preferred. In some cases (most notably title-icons), this is allowed",
           "type": "string"
         }
       },
@@ -1011,7 +1035,6 @@
       "type": "object",
       "properties": {
         "id": {
-          "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nquestion: What is the id of this tagRendering?",
           "type": "string"
         },
         "mappings": {
@@ -1030,10 +1053,11 @@
           "type": "object",
           "properties": {
             "key": {
+              "description": "question What is the name of the attribute that should be written to?\nifunset: do not offer a freeform textfield as answer option",
               "type": "string"
             },
             "type": {
-              "description": "question: What is the input type?\nThe type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values",
+              "description": "question: What is the input type?\nThe type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values\nsuggestions: return validators.AllValidators.filter(type => !type.isMeta).map((type) => ({if: \"value=\"+type.name, then: \"<b>\"+type.name+\"</b> \"+type.explanation.split(\"\\n\")[0]}))",
               "type": "string"
             },
             "placeholder": {
@@ -1052,7 +1076,7 @@
               }
             },
             "inline": {
-              "description": "When set, influences the way a question is asked.\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nNote that this will be set automatically if no special elements are present.",
+              "description": "question: Show the freeform as box within the question?\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nifunset: do not show the",
               "type": "boolean"
             },
             "default": {
@@ -1065,7 +1089,7 @@
           ]
         },
         "question": {
-          "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only",
+          "description": "question: What question should be shown to the contributor?\n\nA question is presented ot the user if no mapping matches and the 'freeform' key is not set as well.\n\nifunset: This tagrendering will be shown if it is known, but cannot be edited by the contributor, effectively resutling in a read-only rendering",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -1076,7 +1100,7 @@
           ]
         },
         "questionHint": {
-          "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like",
+          "description": "question: Should some extra information be shown to the contributor, alongside the question?\nThis hint is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like\nifunset: No extra hint is given",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -1123,6 +1147,30 @@
               },
               "required": [
                 "special"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "icon": {
+          "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon",
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "description": "The path to the icon\nType: icon",
+                  "type": "string"
+                },
+                "class": {
+                  "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path"
               ]
             },
             {
@@ -1183,7 +1231,6 @@
       "type": "object",
       "properties": {
         "id": {
-          "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nquestion: What is the id of this tagRendering?",
           "type": "string"
         },
         "mappings": {
@@ -1202,10 +1249,11 @@
           "type": "object",
           "properties": {
             "key": {
+              "description": "question What is the name of the attribute that should be written to?\nifunset: do not offer a freeform textfield as answer option",
               "type": "string"
             },
             "type": {
-              "description": "question: What is the input type?\nThe type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values",
+              "description": "question: What is the input type?\nThe type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values\nsuggestions: return validators.AllValidators.filter(type => !type.isMeta).map((type) => ({if: \"value=\"+type.name, then: \"<b>\"+type.name+\"</b> \"+type.explanation.split(\"\\n\")[0]}))",
               "type": "string"
             },
             "placeholder": {
@@ -1224,7 +1272,7 @@
               }
             },
             "inline": {
-              "description": "When set, influences the way a question is asked.\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nNote that this will be set automatically if no special elements are present.",
+              "description": "question: Show the freeform as box within the question?\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nifunset: do not show the",
               "type": "boolean"
             },
             "default": {
@@ -1237,7 +1285,7 @@
           ]
         },
         "question": {
-          "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only",
+          "description": "question: What question should be shown to the contributor?\n\nA question is presented ot the user if no mapping matches and the 'freeform' key is not set as well.\n\nifunset: This tagrendering will be shown if it is known, but cannot be edited by the contributor, effectively resutling in a read-only rendering",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -1248,7 +1296,7 @@
           ]
         },
         "questionHint": {
-          "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like",
+          "description": "question: Should some extra information be shown to the contributor, alongside the question?\nThis hint is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like\nifunset: No extra hint is given",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -1295,6 +1343,30 @@
               },
               "required": [
                 "special"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "icon": {
+          "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon",
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "description": "The path to the icon\nType: icon",
+                  "type": "string"
+                },
+                "class": {
+                  "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path"
               ]
             },
             {

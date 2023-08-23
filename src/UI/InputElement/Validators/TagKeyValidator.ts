@@ -3,6 +3,8 @@ import { Translation } from "../../i18n/Translation"
 import Translations from "../../i18n/Translations"
 
 export default class TagKeyValidator extends Validator {
+
+    public readonly isMeta = true
     constructor() {
         super("key", "Validates a key, mostly that no weird characters are used")
     }

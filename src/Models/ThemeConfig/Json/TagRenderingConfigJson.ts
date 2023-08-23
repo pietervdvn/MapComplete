@@ -138,6 +138,7 @@ export interface TagRenderingConfigJson {
         /**
          * question: What icon should be added to this mapping?
          * An icon supporting this mapping; typically shown pretty small
+         * inline: <img src='{icon}' class="w-8 h-8" /> {icon}
          * Type: icon
          */
         icon?:

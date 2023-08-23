@@ -57,7 +57,7 @@ export class Translation extends BaseUIElement {
         if (count === 0) {
             console.error(
                 "Constructing a translation, but the object containing translations is empty " +
-                    context
+                    (context ?? "No context given")
             )
             throw `Constructing a translation, but the object containing translations is empty (${context})`
         }

@@ -26,7 +26,6 @@
   const hasBooleanOption = (<JsonSchemaType[]>schema.type)?.findIndex(t => t["type"] === "boolean");
   const types = schema.hints.types.split(";");
   if (hasBooleanOption >= 0) {
-    console.log(path.join("."), ": types are", types, ", boolean index is", hasBooleanOption);
     types.splice(hasBooleanOption);
   }
 

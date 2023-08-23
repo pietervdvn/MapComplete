@@ -49,7 +49,61 @@
         "type": "string"
       }
     ],
-    "description": "\nThis piece of text will be shown in the infobox.\nNote that \"{key}\"-parts are substituted by the corresponding values of the element.\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`"
+    "description": "\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`"
+  },
+  {
+    "path": [
+      "icon"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "icon",
+      "question": "what icon should be shown next to the 'render' value?"
+    },
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "An icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value"
+  },
+  {
+    "path": [
+      "icon",
+      "path"
+    ],
+    "required": true,
+    "hints": {
+      "typehint": "icon"
+    },
+    "type": "string",
+    "description": "The path to the icon"
+  },
+  {
+    "path": [
+      "icon",
+      "class"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "string",
+    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)"
   },
   {
     "path": [
@@ -74,72 +128,6 @@
   },
   {
     "path": [
-      "condition",
-      "and"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n"
-  },
-  {
-    "path": [
-      "condition",
-      "or"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n"
-  },
-  {
-    "path": [
       "metacondition"
     ],
     "required": false,
@@ -158,72 +146,6 @@
       }
     ],
     "description": "\nIf set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_"
-  },
-  {
-    "path": [
-      "metacondition",
-      "and"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n"
-  },
-  {
-    "path": [
-      "metacondition",
-      "or"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n"
   },
   {
     "path": [
@@ -259,39 +181,6 @@
   {
     "path": [
       "mappings",
-      "if"
-    ],
-    "required": true,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n"
-  },
-  {
-    "path": [
-      "mappings",
       "then"
     ],
     "required": true,
@@ -317,7 +206,8 @@
     "required": false,
     "hints": {
       "typehint": "icon",
-      "question": "What icon should be added to this mapping?"
+      "question": "What icon should be added to this mapping?",
+      "inline": "<img src='{icon}' class=\"w-8 h-8\" /> {icon}"
     },
     "type": [
       {

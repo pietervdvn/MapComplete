@@ -6,11 +6,14 @@
     import Tr from "../../Base/Tr.svelte";
     import {TagUtils} from "../../../Logic/Tags/TagUtils";
     import TagInfoStats from "../TagInfoStats.svelte";
+    import { Translation } from "../../i18n/Translation";
 
     export let tag: UIEventSource<string> = new UIEventSource<string>(undefined)
     export let uploadableOnly: boolean
     export let overpassSupportNeeded: boolean
 
+    export let silent : boolean = false
+    
     let feedbackGlobal = tag.map(tag => {
         if (!tag) {
             return undefined
@@ -24,11 +27,11 @@
 
     })
 
-    let feedbackKey = new UIEventSource<string>(undefined)
+    let feedbackKey = new UIEventSource<Translation>(undefined)
     let keyValue = new UIEventSource<string>(undefined)
 
 
-    let feedbackValue = new UIEventSource<string>(undefined)
+    let feedbackValue = new UIEventSource<Translation>(undefined)
     /**
      * The value of the tag. The name is a bit confusing
      */
@@ -79,7 +82,11 @@
 
     function setTag(_) {
         const k = keyValue.data
-        const v = valueValue.data
+        const v = valueValue.data ?? ""
+        if(k === undefined || k === ""){
+            tag.setData(undefined)
+            return
+        }
         const t = k + mode + v
         try {
             TagUtils.Tag(t)
@@ -116,5 +123,5 @@
     {:else if $feedbackGlobal}
         <Tr cls="alert" t={$feedbackGlobal}/>
     {/if}
-    <TagInfoStats {tag}/>
+    <TagInfoStats  {silent} {tag}/>
 </div>

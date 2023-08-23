@@ -23,6 +23,8 @@ import ImageUrlValidator from "./Validators/ImageUrlValidator"
 import TagKeyValidator from "./Validators/TagKeyValidator"
 import TranslationValidator from "./Validators/TranslationValidator"
 import FediverseValidator from "./Validators/FediverseValidator"
+import IconValidator from "./Validators/IconValidator"
+import TagValidator from "./Validators/TagValidator"
 
 export type ValidatorType = (typeof Validators.availableTypes)[number]
 
@@ -48,7 +50,9 @@ export default class Validators {
         "simple_tag",
         "key",
         "translation",
+        "icon",
         "fediverse",
+        "tag",
     ] as const
 
     public static readonly AllValidators: ReadonlyArray<Validator> = [
@@ -70,20 +74,15 @@ export default class Validators {
         new ColorValidator(),
         new ImageUrlValidator(),
         new SimpleTagValidator(),
+        new TagValidator(),
         new TagKeyValidator(),
         new TranslationValidator(),
+        new IconValidator(),
         new FediverseValidator(),
     ]
 
     private static _byType = Validators._byTypeConstructor()
 
-    private static _byTypeConstructor(): Map<ValidatorType, Validator> {
-        const map = new Map<ValidatorType, Validator>()
-        for (const validator of Validators.AllValidators) {
-            map.set(<ValidatorType>validator.name, validator)
-        }
-        return map
-    }
     public static HelpText(): BaseUIElement {
         const explanations: BaseUIElement[] = Validators.AllValidators.map((type) =>
             new Combine([new Title(type.name, 3), type.explanation]).SetClass("flex flex-col")
@@ -93,6 +92,14 @@ export default class Validators {
             "The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them",
             ...explanations,
         ]).SetClass("flex flex-col")
+    }
+
+    private static _byTypeConstructor(): Map<ValidatorType, Validator> {
+        const map = new Map<ValidatorType, Validator>()
+        for (const validator of Validators.AllValidators) {
+            map.set(<ValidatorType>validator.name, validator)
+        }
+        return map
     }
 
     static get(type: ValidatorType): Validator {

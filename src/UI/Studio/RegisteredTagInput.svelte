@@ -2,7 +2,7 @@
     import EditLayerState from "./EditLayerState";
     import {UIEventSource} from "../../Logic/UIEventSource";
     import type {TagConfigJson} from "../../Models/ThemeConfig/Json/TagConfigJson";
-    import TagInput from "./TagInput/TagInput.svelte";
+    import FullTagInput from "./TagInput/FullTagInput.svelte";
     import type {ConfigMeta} from "./configMeta";
     import {PencilAltIcon} from "@rgossiaux/svelte-heroicons/solid";
     import { onDestroy } from "svelte";
@@ -40,13 +40,14 @@
     <div class="interactive border-interactive">
         <h3>{schema.hints.question ?? "What tags should be applied?"}</h3>
         {schema.description}
-        <TagInput {tag}/>
+        <FullTagInput {tag}/>
         <div class="flex justify-end">
 
             <button class="primary w-fit" on:click={() => {mode = "set"}}>
                 Save
             </button>
         </div>
+        <div class="subtle">RegisteredTagInput based on schema: {JSON.stringify(schema)}</div>
     </div>
 {:else}
     <div class="low-interaction flex justify-between">

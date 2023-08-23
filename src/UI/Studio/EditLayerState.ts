@@ -2,8 +2,6 @@ import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import { ConfigMeta } from "./configMeta"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
-import { DeleteConfigJson } from "../../Models/ThemeConfig/Json/DeleteConfigJson"
-import { Utils } from "../../Utils"
 
 export default class EditLayerState {
     public readonly osmConnection: OsmConnection
@@ -38,6 +36,15 @@ export default class EditLayerState {
             entry = entry[breadcrumb]
         }
         return entry
+    }
+
+    public getStoreFor(path: ReadonlyArray<string | number>): UIEventSource<any | undefined> {
+        const store = new UIEventSource<any>(this.getCurrentValueFor(path))
+        store.addCallback((v) => {
+            console.log("UPdating store", path, v)
+            this.setValueAt(path, v)
+        })
+        return store
     }
 
     public register(

@@ -15,6 +15,8 @@ import { Feature } from "geojson"
 import { GeoOperations } from "../../Logic/GeoOperations"
 import ImageHelper from "./Helpers/ImageHelper.svelte"
 import TranslationInput from "./Helpers/TranslationInput.svelte"
+import TagInput from "./Helpers/TagInput.svelte"
+import SimpleTagInput from "./Helpers/SimpleTagInput.svelte"
 
 export interface InputHelperProperties {
     /**
@@ -59,9 +61,11 @@ export default class InputHelpers {
         wikidata: InputHelpers.constructWikidataHelper,
         image: (value) => new SvelteUIElement(ImageHelper, { value }),
         translation: (value) => new SvelteUIElement(TranslationInput, { value }),
+        tag: (value) => new SvelteUIElement(TagInput, { value }),
+        simple_tag: (value) => new SvelteUIElement(SimpleTagInput, { value }),
     } as const
 
-    public static hideInputField : string[] = ["translation"]
+    public static hideInputField: string[] = ["translation", "simple_tag", "tag"]
 
     /**
      * Constructs a mapProperties-object for the given properties.

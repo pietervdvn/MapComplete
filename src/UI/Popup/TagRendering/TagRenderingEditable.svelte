@@ -29,7 +29,7 @@
     })
   )
 
-  let htmlElem: HTMLBaseElement
+  let htmlElem: HTMLDivElement
   $: {
     if (editMode && htmlElem !== undefined) {
       // EditMode switched to true, so the person wants to make a change
@@ -37,7 +37,7 @@
 
       // Some delay is applied to give Svelte the time to render the _question_
       window.setTimeout(() => {
-        Utils.scrollIntoView(htmlElem)
+        Utils.scrollIntoView(<any> htmlElem)
       }, 50)
     }
   }

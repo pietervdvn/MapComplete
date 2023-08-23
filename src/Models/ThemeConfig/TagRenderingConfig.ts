@@ -150,7 +150,9 @@ export default class TagRenderingConfig {
                 json.freeform.type &&
                 Validators.availableTypes.indexOf(<any>json.freeform.type) < 0
             ) {
-                throw `At ${context}: invalid type, perhaps you meant ${Utils.sortedByLevenshteinDistance(
+                throw `At ${context}: invalid type ${
+                    json.freeform.type
+                }, perhaps you meant ${Utils.sortedByLevenshteinDistance(
                     json.freeform.key,
                     <any>Validators.availableTypes,
                     (s) => <any>s

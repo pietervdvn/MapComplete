@@ -1,7 +1,7 @@
 <script lang="ts">
 
     import EditLayerState from "./EditLayerState";
-    import layerSchemaRaw from "../../assets/layerconfigmeta.json"
+    import layerSchemaRaw from "../../assets/schemas/layerconfigmeta.json"
     import Region from "./Region.svelte";
     import TabbedGroup from "../Base/TabbedGroup.svelte";
     import {UIEventSource} from "../../Logic/UIEventSource";
@@ -10,7 +10,7 @@
 
     import drinking_water from "../../../assets/layers/drinking_water/drinking_water.json"
 
-    const layerSchema: ConfigMeta[] = layerSchemaRaw
+    const layerSchema: ConfigMeta[] = <any> layerSchemaRaw
     let state = new EditLayerState(layerSchema)
     state.configuration.setData(drinking_water)
     /**
@@ -40,14 +40,13 @@
 <TabbedGroup tab={new UIEventSource(1)}>
     <div slot="title0">General properties</div>
     <div class="flex flex-col" slot="content0">
-        <!--
         {#each baselayerRegions as region}
             <Region {state} configs={perRegion[region]} title={region}/>
         {/each}
         
         {#each leftoverRegions as region}
             <Region {state} configs={perRegion[region]} title={region}/>
-        {/each}-->
+        {/each}
     </div>
 
     <div slot="title1">Information panel (questions and answers)</div>
@@ -57,9 +56,8 @@
                 The bulk of the popup content
             </div>
         </Region>
-        <!--
         <Region {state} configs={perRegion["title"]} title="Popup title"/>
-        <Region {state} configs={perRegion["editing"]} title="Other editing elements"/>-->
+        <Region {state} configs={perRegion["editing"]} title="Other editing elements"/>
     </div>
 
     <div slot="title2">Rendering on the map</div>
