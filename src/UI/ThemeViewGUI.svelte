@@ -53,62 +53,62 @@
   import Locale from "./i18n/Locale";
   import ShareScreen from "./BigComponents/ShareScreen.svelte";
 
-  export let state: ThemeViewState
-  let layout = state.layout
+  export let state: ThemeViewState;
+  let layout = state.layout;
 
-  let maplibremap: UIEventSource<MlMap> = state.map
-  let selectedElement: UIEventSource<Feature> = state.selectedElement
-  let selectedLayer: UIEventSource<LayerConfig> = state.selectedLayer
+  let maplibremap: UIEventSource<MlMap> = state.map;
+  let selectedElement: UIEventSource<Feature> = state.selectedElement;
+  let selectedLayer: UIEventSource<LayerConfig> = state.selectedLayer;
 
   const selectedElementView = selectedElement.map(
     (selectedElement) => {
       // Svelte doesn't properly reload some of the legacy UI-elements
       // As such, we _reconstruct_ the selectedElementView every time a new feature is selected
       // This is a bit wasteful, but until everything is a svelte-component, this should do the trick
-      const layer = selectedLayer.data
+      const layer = selectedLayer.data;
       if (selectedElement === undefined || layer === undefined) {
-        return undefined
+        return undefined;
       }
 
       if (!(layer.tagRenderings?.length > 0) || layer.title === undefined) {
-        return undefined
+        return undefined;
       }
 
-      const tags = state.featureProperties.getStore(selectedElement.properties.id)
-      return new SvelteUIElement(SelectedElementView, { state, layer, selectedElement, tags })
+      const tags = state.featureProperties.getStore(selectedElement.properties.id);
+      return new SvelteUIElement(SelectedElementView, { state, layer, selectedElement, tags });
     },
     [selectedLayer]
-  )
+  );
 
   const selectedElementTitle = selectedElement.map(
     (selectedElement) => {
       // Svelte doesn't properly reload some of the legacy UI-elements
       // As such, we _reconstruct_ the selectedElementView every time a new feature is selected
       // This is a bit wasteful, but until everything is a svelte-component, this should do the trick
-      const layer = selectedLayer.data
+      const layer = selectedLayer.data;
       if (selectedElement === undefined || layer === undefined) {
-        return undefined
+        return undefined;
       }
 
-      const tags = state.featureProperties.getStore(selectedElement.properties.id)
-      return new SvelteUIElement(SelectedElementTitle, { state, layer, selectedElement, tags })
+      const tags = state.featureProperties.getStore(selectedElement.properties.id);
+      return new SvelteUIElement(SelectedElementTitle, { state, layer, selectedElement, tags });
     },
     [selectedLayer]
-  )
+  );
 
-  let mapproperties: MapProperties = state.mapProperties
-  let featureSwitches: FeatureSwitchState = state.featureSwitches
-  let availableLayers = state.availableLayers
-  let userdetails = state.osmConnection.userDetails
-  let currentViewLayer = layout.layers.find((l) => l.id === "current_view")
-  let rasterLayer: Store<RasterLayerPolygon> = state.mapProperties.rasterLayer
+  let mapproperties: MapProperties = state.mapProperties;
+  let featureSwitches: FeatureSwitchState = state.featureSwitches;
+  let availableLayers = state.availableLayers;
+  let userdetails = state.osmConnection.userDetails;
+  let currentViewLayer = layout.layers.find((l) => l.id === "current_view");
+  let rasterLayer: Store<RasterLayerPolygon> = state.mapProperties.rasterLayer;
   let rasterLayerName =
-    rasterLayer.data?.properties?.name ?? AvailableRasterLayers.maplibre.properties.name
+    rasterLayer.data?.properties?.name ?? AvailableRasterLayers.maplibre.properties.name;
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
-      rasterLayerName = l.properties.name
+      rasterLayerName = l.properties.name;
     })
-  )
+  );
 </script>
 
 <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden">
@@ -170,16 +170,25 @@
   <div class="flex w-full items-end justify-between px-4">
     <div class="flex">
       <!-- bottom left elements -->
-      <OpenBackgroundSelectorButton hideTooltip={true} {state} />
-      <a
-        class="bg-black-transparent pointer-events-auto h-fit max-h-12 cursor-pointer self-end overflow-hidden rounded-2xl pl-1 pr-2 text-white opacity-50 hover:opacity-100"
-        on:click={() => {
+      <div class="flex flex-col">
+        <button class="primary pointer-events-auto" on:click={() => {
+          state.openNewItemDialog()
+        }}>Add a new point</button>
+
+        <div class="flex">
+
+          <OpenBackgroundSelectorButton hideTooltip={true} {state} />
+          <a
+            class="bg-black-transparent pointer-events-auto h-fit max-h-12 cursor-pointer self-end overflow-hidden rounded-2xl pl-1 pr-2 text-white opacity-50 hover:opacity-100"
+            on:click={() => {
           state.guistate.themeViewTab.setData("copyright")
           state.guistate.themeIsOpened.setData(true)
         }}
-      >
-        © OpenStreetMap, <span class="w-24">{rasterLayerName}</span>
-      </a>
+          >
+            © OpenStreetMap, <span class="w-24">{rasterLayerName}</span>
+          </a>
+        </div>
+      </div>
     </div>
 
     <div class="flex flex-col items-end">
@@ -314,12 +323,12 @@
 
       <ToSvelte construct={() => new CopyrightPanel(state)} slot="content3" />
 
-      <div slot="title4" class="flex">
+      <div class="flex" slot="title4">
         <ToSvelte construct={Svg.share_svg().SetClass("w-4 h-4")} />
         <Tr t={Translations.t.general.sharescreen.title} />
       </div>
       <div class="m-2" slot="content4">
-        <ShareScreen {state}/>
+        <ShareScreen {state} />
       </div>
     </TabbedGroup>
   </FloatOver>

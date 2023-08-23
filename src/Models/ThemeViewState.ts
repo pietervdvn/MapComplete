@@ -102,7 +102,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly userRelatedState: UserRelatedState
     readonly geolocation: GeoLocationHandler
 
-    readonly lastClickObject: WritableFeatureSource
+    readonly lastClickObject: WritableFeatureSource & LastClickFeatureSource
     readonly overlayLayerStates: ReadonlyMap<
         string,
         { readonly isDisplayed: UIEventSource<boolean> }
@@ -452,9 +452,16 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
     }
 
+    public openNewItemDialog() {
+        this.selectedElement.setData(undefined)
+        this.selectedLayer.setData(this.layerState.filteredLayers.get("last_click").layerDef)
+        const { lon, lat } = this.mapProperties.location.data
+        const feature = this.lastClickObject.createFeature(lon, lat)
+        this.selectedElement.setData(feature)
+    }
     private addLastClick(last_click: LastClickFeatureSource) {
         // The last_click gets a _very_ special treatment as it interacts with various parts
-
+        /*
         const last_click_layer = this.layerState.filteredLayers.get("last_click")
         this.featureProperties.trackFeatureSource(last_click)
         this.indexedFeatures.addSource(last_click)
@@ -489,7 +496,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.selectedElement.setData(feature)
                 this.selectedLayer.setData(last_click_layer.layerDef)
             },
-        })
+        }) //*/
     }
 
     /**
