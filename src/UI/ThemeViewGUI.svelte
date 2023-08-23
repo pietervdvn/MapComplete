@@ -171,9 +171,16 @@
     <div class="flex">
       <!-- bottom left elements -->
       <div class="flex flex-col">
-        <button class="primary pointer-events-auto" on:click={() => {
+        <If condition={state.mapProperties.zoom.map(z => z >= Constants.minZoomLevelToAddNewPoint)}>
+          <button class="primary pointer-events-auto" on:click={() => {
           state.openNewItemDialog()
-        }}>Add a new point</button>
+        }}>
+            Add a new point
+          </button>
+          <button class="primary disabled" slot="else">
+            Zoom in to add a new point
+          </button>
+        </If>
 
         <div class="flex">
 
