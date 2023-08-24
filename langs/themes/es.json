@@ -14,6 +14,31 @@
     },
     "atm": {
         "description": "Este mapa muestra los cajeros automáticos para retirar o ingresar dinero",
+        "layers": {
+            "3": {
+                "override": {
+                    "=tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importar este ATM"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": "OpenStreetMap sabe sobre <a href='#{_closest_osm_poi}'>un ATM que es {_más cercano_osm_poi_metro} de distancia.</a> "
+                        },
+                        "2": {
+                            "render": {
+                                "special": {
+                                    "message": "Añade todas las etiquetas sugieridas al ATM más cercano"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "title": "Cajeros automáticos"
     },
     "bag": {
@@ -689,7 +714,7 @@
     },
     "ghostbikes": {
         "description": "Una <b>bicicleta fantasma</b> es un monumento en memoria de un ciclista fallecido en un accidente de tráfico, en forma de una bicicleta blanca colocada permanentemente cerca del lugar del accidente.<br/><br/>En este mapa se pueden ver todas las bicicletas fantasma conocidas por OpenStreetMap. ¿Falta alguna bicicleta fantasma? Todo el mundo puede añadir o actualizar información aquí - sólo necesitas tener una cuenta (gratuita) de OpenStreetMap. <p>Existe una <a href='https://masto.bike/@ghostbikebot' target='_blank'>cuenta automatizada en Mastodon que publica un resumen mensual de las bicis fantasma de todo el mundo</a></p>",
-        "title": "Bicicleta blanca"
+        "title": "Bicicletas blanca"
     },
     "grb": {
         "description": "Este tema es un intento de automatizar la importación GRB.",
@@ -814,6 +839,33 @@
     "onwheels": {
         "description": "En este mapa se muestran los lugares accesibles al público en silla de ruedas, que pueden añadirse fácilmente",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Estadísticas"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importar"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Añadir todas las etiquetas sugeridas"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -855,33 +907,6 @@
             "8": {
                 "override": {
                     "name": "Plazas de aparcamiento para discapacitados"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Estadísticas"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importar"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Añadir todas las etiquetas sugeridas"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1043,10 +1068,6 @@
     "stations": {
         "description": "Ver, editar y añadir detalles a una estación de tren",
         "layers": {
-            "3": {
-                "description": "Capa que muestra las estaciones de tren",
-                "name": "Estación de Tren"
-            },
             "16": {
                 "description": "Pantallas que muestran los trenes que saldrán de esta estación",
                 "name": "Tableros de salidas",
@@ -1078,6 +1099,10 @@
                 "title": {
                     "render": "Tablero de salidas"
                 }
+            },
+            "3": {
+                "description": "Capa que muestra las estaciones de tren",
+                "name": "Estación de Tren"
             }
         },
         "title": "Estaciones de tren"
