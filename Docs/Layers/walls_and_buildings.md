@@ -36,14 +36,14 @@ Special builtin layer providing all walls and buildings. This layer is useful in
 
 
 
-  - [advertising](https://mapcomplete.osm.be/advertising)
-  - [aed](https://mapcomplete.osm.be/aed)
-  - [artwork](https://mapcomplete.osm.be/artwork)
-  - [clock](https://mapcomplete.osm.be/clock)
-  - [indoors](https://mapcomplete.osm.be/indoors)
-  - [onwheels](https://mapcomplete.osm.be/onwheels)
-  - [personal](https://mapcomplete.osm.be/personal)
-  - [surveillance](https://mapcomplete.osm.be/surveillance)
+  - [advertising](https://mapcomplete.org/advertising)
+  - [aed](https://mapcomplete.org/aed)
+  - [artwork](https://mapcomplete.org/artwork)
+  - [clock](https://mapcomplete.org/clock)
+  - [indoors](https://mapcomplete.org/indoors)
+  - [onwheels](https://mapcomplete.org/onwheels)
+  - [personal](https://mapcomplete.org/personal)
+  - [surveillance](https://mapcomplete.org/surveillance)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -63,7 +63,7 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 
 
 

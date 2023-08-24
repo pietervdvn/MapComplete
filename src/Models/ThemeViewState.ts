@@ -200,6 +200,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 (id) => self.layerState.filteredLayers.get(id).isDisplayed,
                 this.fullNodeDatabase
             )
+
             this.indexedFeatures = layoutSource
 
             const empty = []
@@ -221,9 +222,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
             )
             this.featuresInView = new BBoxFeatureSource(layoutSource, this.mapProperties.bounds)
             this.dataIsLoading = layoutSource.isLoading
-            this.dataIsLoading.addCallbackAndRunD((loading) =>
-                console.log("Data is loading?", loading)
-            )
 
             const indexedElements = this.indexedFeatures
             this.featureProperties = new FeaturePropertiesStore(indexedElements)
@@ -341,13 +339,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 [fs.layer.isDisplayed]
             )
 
-            if (
-                !doShowLayer.data &&
-                (this.featureSwitches.featureSwitchFilter.data === false || !fs.layer.layerDef.name)
-            ) {
+            if (!doShowLayer.data && this.featureSwitches.featureSwitchFilter.data === false) {
                 /* This layer is hidden and there is no way to enable it (filterview is disabled or this layer doesn't show up in the filter view as the name is not defined)
                  *
                  * This means that we don't have to filter it, nor do we have to display it
+                 *
+                 * Note: it is tempting to also permanently disable the layer if it is not visible _and_ the layer name is hidden.
+                 * However, this is _not_ correct: the layer might be hidden because zoom is not enough. Zooming in more _will_ reveal the layer!
                  * */
                 return
             }

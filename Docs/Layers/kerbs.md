@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/kerbs/KerbIcon.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/layers/kerbs/KerbIcon.svg' height="100px"> 
 
 A layer showing kerbs.
 
@@ -28,10 +28,10 @@ A layer showing kerbs.
 
 
 
-  - [blind_osm](https://mapcomplete.osm.be/blind_osm)
-  - [kerbs_and_crossings](https://mapcomplete.osm.be/kerbs_and_crossings)
-  - [onwheels](https://mapcomplete.osm.be/onwheels)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [blind_osm](https://mapcomplete.org/blind_osm)
+  - [kerbs_and_crossings](https://mapcomplete.org/kerbs_and_crossings)
+  - [onwheels](https://mapcomplete.org/onwheels)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -51,10 +51,10 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/kerb#values) [kerb](https://wiki.openstreetmap.org/wiki/Key:kerb) | Multiple choice | [raised](https://wiki.openstreetmap.org/wiki/Tag:kerb%3Draised) [lowered](https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dlowered) [flush](https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dflush)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/tactile_paving#values) [tactile_paving](https://wiki.openstreetmap.org/wiki/Key:tactile_paving) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/kerb:height#values) [kerb:height](https://wiki.openstreetmap.org/wiki/Key:kerb:height) | [pnat](../SpecialInputElements.md#pnat) | [0](https://wiki.openstreetmap.org/wiki/Tag:kerb:height%3D0)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/kerb#values) [kerb](https://wiki.openstreetmap.org/wiki/Key:kerb) | Multiple choice | [raised](https://wiki.openstreetmap.org/wiki/Tag:kerb%3Draised) [lowered](https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dlowered) [flush](https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dflush)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/tactile_paving#values) [tactile_paving](https://wiki.openstreetmap.org/wiki/Key:tactile_paving) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/kerb:height#values) [kerb:height](https://wiki.openstreetmap.org/wiki/Key:kerb:height) | [pnat](../SpecialInputElements.md#pnat) | [0](https://wiki.openstreetmap.org/wiki/Tag:kerb:height%3D0)
 
 
 
@@ -82,7 +82,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 
 This tagrendering has no question and is thus read-only
 

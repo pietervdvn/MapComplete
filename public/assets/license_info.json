@@ -6,7 +6,7 @@
       "Pietervdvn"
     ],
     "sources": [
-      "https://mapcomplete.osm.be/bookcases"
+      "https://mapcomplete.org/bookcases"
     ]
   },
   {
@@ -109,7 +109,7 @@
       " OpenStreetMap"
     ],
     "sources": [
-      "https://mapcomplete.osm.be",
+      "https://mapcomplete.org",
       " https://www.openstreetmap.org"
     ]
   },
@@ -121,7 +121,7 @@
       " OpenStreetMap"
     ],
     "sources": [
-      "https://mapcomplete.osm.be",
+      "https://mapcomplete.org",
       " https://www.openstreetmap.org"
     ]
   }

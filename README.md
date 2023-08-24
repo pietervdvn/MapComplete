@@ -59,19 +59,19 @@ We do however encourage you to try to create your own theme yourself - we'll gla
 
 ## Examples
 
-- [An overview of all official themes](https://mapcomplete.osm.be).
+- [An overview of all official themes](https://mapcomplete.org).
 - [Buurtnatuur.be](http://buurtnatuur.be), developed for the Belgian [Green party](https://www.groen.be/). They also
   funded the initial development!
-- [Cyclofix](https://mapcomplete.osm.be/cyclofix.html), further development
+- [Cyclofix](https://mapcomplete.org/cyclofix.html), further development
   on [Open Summer of Code](https://summerofcode.be/) funded
   by [Brussels Mobility](https://mobilite-mobiliteit.brussels/en). Landing page at https://cyclofix.osm.be/
-- [Bookcases](https://mapcomplete.osm.be/bookcases.html) cause I like to collect
+- [Bookcases](https://mapcomplete.org/bookcases.html) cause I like to collect
   them.
-- [Map of Maps](https://mapcomplete.osm.be/maps.html),
+- [Map of Maps](https://mapcomplete.org/maps.html),
   after a tweet
 - [A build of the develop branch can be found here](https://pietervdvn.github.io/mc/develop)
 
-There are plenty more. [Discover them in the app](https://mapcomplete.osm.be/index.html).
+There are plenty more. [Discover them in the app](https://mapcomplete.org/index.html).
 
 ### Statistics
 
@@ -104,7 +104,7 @@ A typical user journey would be:
     * In other words, sending a message to a misbehaving MapComplete user acts as having a **zero-day-block**. This is
       added deliberately to make sure new users _have_ to read feedback from the community.
 
-4. At 50 changesets, the [personal layout](https://mapcomplete.osm.be/personal.html) is advertised. The
+4. At 50 changesets, the [personal layout](https://mapcomplete.org/personal.html) is advertised. The
    personal theme is a theme where contributors can pick layers from all the official themes. Note that the personal
    theme is always available.
 

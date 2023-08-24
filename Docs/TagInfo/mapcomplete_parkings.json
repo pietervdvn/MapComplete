@@ -3,9 +3,9 @@
   "project": {
     "name": "MapComplete Parking",
     "description": "This map shows different parking spots",
-    "project_url": "https://mapcomplete.osm.be/parkings",
+    "project_url": "https://mapcomplete.org/parkings",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-    "icon_url": "https://mapcomplete.osm.be/assets/themes/parkings/parkings.svg",
+    "icon_url": "https://mapcomplete.org/assets/themes/parkings/parkings.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
@@ -17,7 +17,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Parking' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Parking') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Parking' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Parking') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -37,105 +37,105 @@
     },
     {
       "key": "level",
-      "description": "Layer 'Parking' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Parking')"
+      "description": "Layer 'Parking' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Parking')"
     },
     {
       "key": "location",
-      "description": "Layer 'Parking' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Parking')",
       "value": "underground"
     },
     {
       "key": "level",
-      "description": "Layer 'Parking' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "0"
     },
     {
       "key": "level",
-      "description": "Layer 'Parking' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Parking') Picking this answer will delete the key level.",
+      "description": "Layer 'Parking' shows  with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Parking') Picking this answer will delete the key level.",
       "value": ""
     },
     {
       "key": "level",
-      "description": "Layer 'Parking' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "1"
     },
     {
       "key": "level",
-      "description": "Layer 'Parking' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "-1"
     },
     {
       "key": "parking",
-      "description": "Layer 'Parking' shows parking=surface with a fixed text, namely 'This is a surface parking lot' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking' shows parking=surface with a fixed text, namely 'This is a surface parking lot' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "surface"
     },
     {
       "key": "parking",
-      "description": "Layer 'Parking' shows parking=street_side with a fixed text, namely 'This is a parking bay next to a street' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking' shows parking=street_side with a fixed text, namely 'This is a parking bay next to a street' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "street_side"
     },
     {
       "key": "parking",
-      "description": "Layer 'Parking' shows parking=underground with a fixed text, namely 'This is an underground parking garage' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking' shows parking=underground with a fixed text, namely 'This is an underground parking garage' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "underground"
     },
     {
       "key": "parking",
-      "description": "Layer 'Parking' shows parking=multi-storey with a fixed text, namely 'This is a multi-storey parking garage' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking' shows parking=multi-storey with a fixed text, namely 'This is a multi-storey parking garage' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "multi-storey"
     },
     {
       "key": "parking",
-      "description": "Layer 'Parking' shows parking=rooftop with a fixed text, namely 'This is a rooftop parking deck' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking' shows parking=rooftop with a fixed text, namely 'This is a rooftop parking deck' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "rooftop"
     },
     {
       "key": "parking",
-      "description": "Layer 'Parking' shows parking=lane with a fixed text, namely 'This is a lane for parking on the road' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking' shows parking=lane with a fixed text, namely 'This is a lane for parking on the road' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "lane"
     },
     {
       "key": "parking",
-      "description": "Layer 'Parking' shows parking=carports with a fixed text, namely 'This is parking covered by carports' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking' shows parking=carports with a fixed text, namely 'This is parking covered by carports' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "carports"
     },
     {
       "key": "parking",
-      "description": "Layer 'Parking' shows parking=garage_boxes with a fixed text, namely 'This a parking consisting of garage boxes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking' shows parking=garage_boxes with a fixed text, namely 'This a parking consisting of garage boxes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "garage_boxes"
     },
     {
       "key": "parking",
-      "description": "Layer 'Parking' shows parking=layby with a fixed text, namely 'This is a parking on a layby' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking' shows parking=layby with a fixed text, namely 'This is a parking on a layby' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "layby"
     },
     {
       "key": "parking",
-      "description": "Layer 'Parking' shows parking=sheds with a fixed text, namely 'This is a parking consisting of sheds' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking' shows parking=sheds with a fixed text, namely 'This is a parking consisting of sheds' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "sheds"
     },
     {
       "key": "capacity:disabled",
-      "description": "Layer 'Parking' shows and asks freeform values for key 'capacity:disabled' (in the MapComplete.osm.be theme 'Parking')"
+      "description": "Layer 'Parking' shows and asks freeform values for key 'capacity:disabled' (in the mapcomplete.org theme 'Parking')"
     },
     {
       "key": "capacity:disabled",
-      "description": "Layer 'Parking' shows capacity:disabled=yes with a fixed text, namely 'There are disabled parking spots, but it is not known how many' (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking' shows capacity:disabled=yes with a fixed text, namely 'There are disabled parking spots, but it is not known how many' (in the mapcomplete.org theme 'Parking')",
       "value": "yes"
     },
     {
       "key": "capacity:disabled",
-      "description": "Layer 'Parking' shows capacity:disabled=no with a fixed text, namely 'There are no disabled parking spots' (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking' shows capacity:disabled=no with a fixed text, namely 'There are no disabled parking spots' (in the mapcomplete.org theme 'Parking')",
       "value": "no"
     },
     {
       "key": "capacity:disabled",
-      "description": "Layer 'Parking' shows capacity:disabled=0 with a fixed text, namely 'There are no disabled parking spots' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking' shows capacity:disabled=0 with a fixed text, namely 'There are no disabled parking spots' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "0"
     },
     {
       "key": "capacity",
-      "description": "Layer 'Parking' shows and asks freeform values for key 'capacity' (in the MapComplete.osm.be theme 'Parking')"
+      "description": "Layer 'Parking' shows and asks freeform values for key 'capacity' (in the mapcomplete.org theme 'Parking')"
     },
     {
       "key": "amenity",
@@ -144,7 +144,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Parking Spaces' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Parking') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Parking Spaces' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Parking') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -164,82 +164,82 @@
     },
     {
       "key": "parking_space",
-      "description": "Layer 'Parking Spaces' shows  with a fixed text, namely 'This is a normal parking space.' (in the MapComplete.osm.be theme 'Parking') Picking this answer will delete the key parking_space.",
+      "description": "Layer 'Parking Spaces' shows  with a fixed text, namely 'This is a normal parking space.' (in the mapcomplete.org theme 'Parking') Picking this answer will delete the key parking_space.",
       "value": ""
     },
     {
       "key": "parking_space",
-      "description": "Layer 'Parking Spaces' shows parking_space=normal with a fixed text, namely 'This is a normal parking space.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Spaces' shows parking_space=normal with a fixed text, namely 'This is a normal parking space.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "normal"
     },
     {
       "key": "parking_space",
-      "description": "Layer 'Parking Spaces' shows parking_space=disabled with a fixed text, namely 'This is a disabled parking space.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Spaces' shows parking_space=disabled with a fixed text, namely 'This is a disabled parking space.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "disabled"
     },
     {
       "key": "parking_space",
-      "description": "Layer 'Parking Spaces' shows parking_space=private with a fixed text, namely 'This is a private parking space.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Spaces' shows parking_space=private with a fixed text, namely 'This is a private parking space.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "private"
     },
     {
       "key": "parking_space",
-      "description": "Layer 'Parking Spaces' shows parking_space=charging with a fixed text, namely 'This is parking space reserved for charging vehicles.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Spaces' shows parking_space=charging with a fixed text, namely 'This is parking space reserved for charging vehicles.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "charging"
     },
     {
       "key": "parking_space",
-      "description": "Layer 'Parking Spaces' shows parking_space=delivery with a fixed text, namely 'This is parking space reserved for deliveries.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Spaces' shows parking_space=delivery with a fixed text, namely 'This is parking space reserved for deliveries.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "delivery"
     },
     {
       "key": "parking_space",
-      "description": "Layer 'Parking Spaces' shows parking_space=hgv with a fixed text, namely 'This is parking space reserved for heavy goods vehicles.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Spaces' shows parking_space=hgv with a fixed text, namely 'This is parking space reserved for heavy goods vehicles.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "hgv"
     },
     {
       "key": "parking_space",
-      "description": "Layer 'Parking Spaces' shows parking_space=caravan with a fixed text, namely 'This is parking space reserved for caravans or RVs.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Spaces' shows parking_space=caravan with a fixed text, namely 'This is parking space reserved for caravans or RVs.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "caravan"
     },
     {
       "key": "parking_space",
-      "description": "Layer 'Parking Spaces' shows parking_space=bus with a fixed text, namely 'This is parking space reserved for buses.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Spaces' shows parking_space=bus with a fixed text, namely 'This is parking space reserved for buses.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "bus"
     },
     {
       "key": "parking_space",
-      "description": "Layer 'Parking Spaces' shows parking_space=motorcycle with a fixed text, namely 'This is parking space reserved for motorcycles.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Spaces' shows parking_space=motorcycle with a fixed text, namely 'This is parking space reserved for motorcycles.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "motorcycle"
     },
     {
       "key": "parking_space",
-      "description": "Layer 'Parking Spaces' shows parking_space=parent with a fixed text, namely 'This is a parking space reserved for parents with children.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Spaces' shows parking_space=parent with a fixed text, namely 'This is a parking space reserved for parents with children.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "parent"
     },
     {
       "key": "parking_space",
-      "description": "Layer 'Parking Spaces' shows parking_space=staff with a fixed text, namely 'This is a parking space reserved for staff.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Spaces' shows parking_space=staff with a fixed text, namely 'This is a parking space reserved for staff.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "staff"
     },
     {
       "key": "parking_space",
-      "description": "Layer 'Parking Spaces' shows parking_space=taxi with a fixed text, namely 'This is a parking space reserved for taxis.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Spaces' shows parking_space=taxi with a fixed text, namely 'This is a parking space reserved for taxis.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "taxi"
     },
     {
       "key": "parking_space",
-      "description": "Layer 'Parking Spaces' shows parking_space=trailer with a fixed text, namely 'This is a parking space reserved for vehicles towing a trailer.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Spaces' shows parking_space=trailer with a fixed text, namely 'This is a parking space reserved for vehicles towing a trailer.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "trailer"
     },
     {
       "key": "parking_space",
-      "description": "Layer 'Parking Spaces' shows parking_space=car_sharing with a fixed text, namely 'This is a parking space reserved for car sharing.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Spaces' shows parking_space=car_sharing with a fixed text, namely 'This is a parking space reserved for car sharing.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "car_sharing"
     },
     {
       "key": "capacity",
-      "description": "Layer 'Parking Spaces' shows capacity=1 with a fixed text, namely 'This parking space has 1 space.' (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Spaces' shows capacity=1 with a fixed text, namely 'This parking space has 1 space.' (in the mapcomplete.org theme 'Parking')",
       "value": "1"
     },
     {
@@ -254,7 +254,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Parking Ticket Machines' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Parking') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Parking Ticket Machines' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Parking') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -274,121 +274,121 @@
     },
     {
       "key": "payment:cash",
-      "description": "Layer 'Parking Ticket Machines' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Ticket Machines' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Parking')",
       "value": "yes"
     },
     {
       "key": "payment:cards",
-      "description": "Layer 'Parking Ticket Machines' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Ticket Machines' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Parking')",
       "value": "yes"
     },
     {
       "key": "payment:qr_code",
-      "description": "Layer 'Parking Ticket Machines' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Ticket Machines' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "yes"
     },
     {
       "key": "payment:coins",
-      "description": "Layer 'Parking Ticket Machines' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "yes"
     },
     {
       "key": "payment:notes",
-      "description": "Layer 'Parking Ticket Machines' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "yes"
     },
     {
       "key": "payment:debit_cards",
-      "description": "Layer 'Parking Ticket Machines' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Ticket Machines' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "yes"
     },
     {
       "key": "payment:credit_cards",
-      "description": "Layer 'Parking Ticket Machines' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Ticket Machines' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "yes"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.01 EUR with a fixed text, namely '1 cent coins are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') (This is only shown if payment:coins=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.01 EUR with a fixed text, namely '1 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
       "value": "0.01 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.02 EUR with a fixed text, namely '2 cent coins are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') (This is only shown if payment:coins=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.02 EUR with a fixed text, namely '2 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
       "value": "0.02 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.05 EUR with a fixed text, namely '5 cent coins are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') (This is only shown if payment:coins=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.05 EUR with a fixed text, namely '5 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
       "value": "0.05 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.10 EUR with a fixed text, namely '10 cent coins are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') (This is only shown if payment:coins=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.10 EUR with a fixed text, namely '10 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
       "value": "0.10 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.20 EUR with a fixed text, namely '20 cent coins are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') (This is only shown if payment:coins=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.20 EUR with a fixed text, namely '20 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
       "value": "0.20 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') (This is only shown if payment:coins=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
       "value": "0.50 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') (This is only shown if payment:coins=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
       "value": "1 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') (This is only shown if payment:coins=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
       "value": "2 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=5 EUR with a fixed text, namely '5 euro notes are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') (This is only shown if payment:notes=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=5 EUR with a fixed text, namely '5 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
       "value": "5 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=10 EUR with a fixed text, namely '10 euro notes are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') (This is only shown if payment:notes=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=10 EUR with a fixed text, namely '10 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
       "value": "10 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=20 EUR with a fixed text, namely '20 euro notes are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') (This is only shown if payment:notes=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=20 EUR with a fixed text, namely '20 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
       "value": "20 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=50 EUR with a fixed text, namely '50 euro notes are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') (This is only shown if payment:notes=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=50 EUR with a fixed text, namely '50 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
       "value": "50 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=100 EUR with a fixed text, namely '100 euro notes are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') (This is only shown if payment:notes=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=100 EUR with a fixed text, namely '100 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
       "value": "100 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=200 EUR with a fixed text, namely '200 euro notes are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') (This is only shown if payment:notes=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=200 EUR with a fixed text, namely '200 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
       "value": "200 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=500 EUR with a fixed text, namely '500 euro notes are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking') (This is only shown if payment:notes=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=500 EUR with a fixed text, namely '500 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
       "value": "500 EUR"
     },
     {
       "key": "ref",
-      "description": "Layer 'Parking Ticket Machines' shows and asks freeform values for key 'ref' (in the MapComplete.osm.be theme 'Parking')"
+      "description": "Layer 'Parking Ticket Machines' shows and asks freeform values for key 'ref' (in the mapcomplete.org theme 'Parking')"
     },
     {
       "key": "noref",
-      "description": "Layer 'Parking Ticket Machines' shows noref=yes with a fixed text, namely 'This parking ticket machine has no reference number' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "description": "Layer 'Parking Ticket Machines' shows noref=yes with a fixed text, namely 'This parking ticket machine has no reference number' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "yes"
     }
   ]

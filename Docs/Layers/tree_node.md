@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/circle:#ffffff;./assets/layers/tree_node/unknown.svg' height="100px"> 
+<img src='https://mapcomplete.org/circle:#ffffff;./assets/layers/tree_node/unknown.svg' height="100px"> 
 
 A layer showing trees
 
@@ -25,8 +25,8 @@ A layer showing trees
 
 
 
-  - [personal](https://mapcomplete.osm.be/personal)
-  - [trees](https://mapcomplete.osm.be/trees)
+  - [personal](https://mapcomplete.org/personal)
+  - [trees](https://mapcomplete.org/trees)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,17 +46,17 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/species:wikidata#values) [species:wikidata](https://wiki.openstreetmap.org/wiki/Key:species:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/circumference#values) [circumference](https://wiki.openstreetmap.org/wiki/Key:circumference) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/height#values) [height](https://wiki.openstreetmap.org/wiki/Key:height) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/denotation#values) [denotation](https://wiki.openstreetmap.org/wiki/Key:denotation) | Multiple choice | [landmark](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dlandmark) [natural_monument](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnatural_monument) [agricultural](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dagricultural) [park](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dpark) [garden](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dgarden) [avenue](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Davenue) [urban](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Durban) [none](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnone)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/leaf_type#values) [leaf_type](https://wiki.openstreetmap.org/wiki/Key:leaf_type) | Multiple choice | [broadleaved](https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dbroadleaved) [needleleaved](https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dneedleleaved)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/leaf_cycle#values) [leaf_cycle](https://wiki.openstreetmap.org/wiki/Key:leaf_cycle) | Multiple choice | [deciduous](https://wiki.openstreetmap.org/wiki/Tag:leaf_cycle%3Ddeciduous) [evergreen](https://wiki.openstreetmap.org/wiki/Tag:leaf_cycle%3Devergreen)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:name%3D)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/heritage#values) [heritage](https://wiki.openstreetmap.org/wiki/Key:heritage) | Multiple choice | [4](https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4) [4](https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4) [yes](https://wiki.openstreetmap.org/wiki/Tag:heritage%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:heritage%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/ref:OnroerendErfgoed#values) [ref:OnroerendErfgoed](https://wiki.openstreetmap.org/wiki/Key:ref:OnroerendErfgoed) | [nat](../SpecialInputElements.md#nat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wikidata#values) [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/species:wikidata#values) [species:wikidata](https://wiki.openstreetmap.org/wiki/Key:species:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/circumference#values) [circumference](https://wiki.openstreetmap.org/wiki/Key:circumference) | [pfloat](../SpecialInputElements.md#pfloat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/height#values) [height](https://wiki.openstreetmap.org/wiki/Key:height) | [pfloat](../SpecialInputElements.md#pfloat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/denotation#values) [denotation](https://wiki.openstreetmap.org/wiki/Key:denotation) | Multiple choice | [landmark](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dlandmark) [natural_monument](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnatural_monument) [agricultural](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dagricultural) [park](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dpark) [garden](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dgarden) [avenue](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Davenue) [urban](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Durban) [none](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnone)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/leaf_type#values) [leaf_type](https://wiki.openstreetmap.org/wiki/Key:leaf_type) | Multiple choice | [broadleaved](https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dbroadleaved) [needleleaved](https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dneedleleaved)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/leaf_cycle#values) [leaf_cycle](https://wiki.openstreetmap.org/wiki/Key:leaf_cycle) | Multiple choice | [deciduous](https://wiki.openstreetmap.org/wiki/Tag:leaf_cycle%3Ddeciduous) [evergreen](https://wiki.openstreetmap.org/wiki/Tag:leaf_cycle%3Devergreen)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:name%3D)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/heritage#values) [heritage](https://wiki.openstreetmap.org/wiki/Key:heritage) | Multiple choice | [4](https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4) [4](https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4) [yes](https://wiki.openstreetmap.org/wiki/Tag:heritage%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:heritage%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/ref:OnroerendErfgoed#values) [ref:OnroerendErfgoed](https://wiki.openstreetmap.org/wiki/Key:ref:OnroerendErfgoed) | [nat](../SpecialInputElements.md#nat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wikidata#values) [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) | 
 
 
 
@@ -84,7 +84,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 
 This tagrendering has no question and is thus read-only
 

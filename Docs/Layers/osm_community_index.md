@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/pin:#6BC4F7;./assets/layers/osm_community_index/osm.svg' height="100px"> 
+<img src='https://mapcomplete.org/pin:#6BC4F7;./assets/layers/osm_community_index/osm.svg' height="100px"> 
 
 A layer showing the OpenStreetMap Communities
 
@@ -26,8 +26,8 @@ A layer showing the OpenStreetMap Communities
 
 
 
-  - [osm_community_index](https://mapcomplete.osm.be/osm_community_index)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [osm_community_index](https://mapcomplete.org/osm_community_index)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -47,7 +47,7 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 
 
 

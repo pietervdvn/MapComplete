@@ -8,7 +8,7 @@ A perfect example of this is to setup such a challenge to e.g. import new points
 
 > [Important: always follow the import guidelines if you want to import data.](https://wiki.openstreetmap.org/wiki/Import/Guidelines)
 
-(Another approach to set up a guided import is to create a map note for every point with the [import helper](https://mapcomplete.osm.be/import_helper). This however litters the map notes and will upset mappers if used with to much points. However, this flow is easier to setup as no changes to theme files are needed, nor is a maproulette-account needed)
+(Another approach to set up a guided import is to create a map note for every point with the [import helper](https://mapcomplete.org/import_helper). This however litters the map notes and will upset mappers if used with to much points. However, this flow is easier to setup as no changes to theme files are needed, nor is a maproulette-account needed)
 
 ## Preparing the data
 
@@ -23,7 +23,7 @@ The API is shortly discussed here for future reference only.
 
 There is an API-endpoint at `https://maproulette.org/api/v2/tasks/box/{x_min}/{y_min}/{x_max}/{y_max}` which can be used
 to query _all_ tasks in a bbox and returns this as geojson. Hint:
-use [the maproulette theme in debug mode](https://mapcomplete.osm.be/maproulette?debug=true) to inspect all properties.
+use [the maproulette theme in debug mode](https://mapcomplete.org/maproulette?debug=true) to inspect all properties.
 
 To view the overview a single challenge, visit `https://maproulette.org/browse/challenges/<challenge-id>` with your
 browser.

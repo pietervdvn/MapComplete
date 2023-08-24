@@ -242,14 +242,17 @@
           "if": "mapcomplete-fixate-north=",
           "then": {
             "en": "Allow to rotate the map",
-            "de": "Drehen der Karte zulassen"
+            "de": "Drehen der Karte zulassen",
+            "ca": "Permet girar el mapa",
+            "fr": "Autoriser la rotation de la carte"
           }
         },
         {
           "if": "mapcomplete-fixate-north=yes",
           "then": {
             "en": "Always keep north pointing up",
-            "de": "Norden immer nach oben zeigen lassen"
+            "de": "Norden immer nach oben zeigen lassen",
+            "fr": "Toujours garder le nord en haut"
           }
         }
       ]

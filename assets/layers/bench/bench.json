@@ -20,7 +20,8 @@
     "ca": "Bancs",
     "da": "Bænke",
     "cs": "Lavičky",
-    "pa_PK": "بینچ"
+    "pa_PK": "بینچ",
+    "he": "ספסלים"
   },
   "minzoom": 14,
   "source": {
@@ -47,7 +48,8 @@
       "ca": "Banc",
       "da": "Bænk",
       "cs": "Lavička",
-      "pa_PK": "بینچ"
+      "pa_PK": "بینچ",
+      "he": "ספסל"
     }
   },
   "description": {
@@ -58,7 +60,8 @@
     "es": "Un banco es una superficie de madera, metal, piedra, ... donde un humano se puede sentar. Estas capas los visualizan y hacen algunas preguntas sobre ellos.",
     "da": "En bænk er en træ-, metal-, sten-, ... overflade, hvor et menneske kan sidde. Dette lag visualiserer dem og stiller et par spørgsmål om dem.",
     "cs": "Lavička je dřevěná, kovová, kamenná, ... plocha, na které může člověk sedět. Tato vrstva je vizualizuje a klade si o nich několik otázek.",
-    "ca": "Un banc és una superfície de madera, metall, pedra, … on un humà s’hi pot sentar. Aquesta capa els mostra i fa algunes preguntes sobre ells."
+    "ca": "Un banc és una superfície de madera, metall, pedra, … on un humà s’hi pot sentar. Aquesta capa els mostra i fa algunes preguntes sobre ells.",
+    "he": "ספסל הוא משטח עץ, מתכת, אבן, ... בו אדם יכול לשבת. השכבות הללו מדמות אותן ושואלות עליהן מספר שאלות."
   },
   "tagRenderings": [
     "images",
@@ -77,7 +80,8 @@
             "de": "Diese Bank ist zweiseitig und teilt sich die Rückenlehne",
             "ca": "Aquest banc té dues cares i comparteix el respatller",
             "cs": "Tato lavička je oboustranná a má společné opěradlo",
-            "es": "Este banco tiene dos caras y comparte el respaldo"
+            "es": "Este banco tiene dos caras y comparte el respaldo",
+            "he": "ספסל זה דו צדדי וחולק את משענת הגב"
           },
           "icon": {
             "path": "./assets/layers/bench/two_sided.svg",
@@ -105,7 +109,8 @@
             "pt": "Encosto: Sim",
             "ca": "Té espatller",
             "da": "Har et ryglæn",
-            "cs": "Má opěradlo"
+            "cs": "Má opěradlo",
+            "he": "יש משענת גב"
           },
           "addExtraTags": [
             "two_sided=no"
@@ -154,7 +159,8 @@
         "pt": "Este assento tem um escosto?",
         "da": "Har denne bænk et ryglæn?",
         "cs": "Má tato lavička opěradlo?",
-        "ca": "Aquest banc té respatller?"
+        "ca": "Aquest banc té respatller?",
+        "he": "האם לספסל הזה יש משענת?"
       },
       "id": "bench-backrest",
       "labels": [
@@ -180,7 +186,8 @@
         "ca": "{seats} seients",
         "da": "{seats} pladser",
         "cs": "{seats} míst k sezení",
-        "zh_Hans": "{seats}座"
+        "zh_Hans": "{seats}座",
+        "he": "{seats} מושבים"
       },
       "freeform": {
         "key": "seats",
@@ -203,7 +210,8 @@
         "pt": "Quantos lugares este banco tem?",
         "da": "Hvor mange pladser har denne bænk?",
         "cs": "Kolik má tato lavice míst k sezení?",
-        "ca": "Quants seients té aquest banc?"
+        "ca": "Quants seients té aquest banc?",
+        "he": "כמה מושבים יש לספסל הזה?"
       },
       "id": "bench-seats",
       "labels": [
@@ -245,7 +253,8 @@
         "eo": "Materialo: {material}",
         "ca": "Material: {material}",
         "da": "Materiale: {material}",
-        "cs": "Materiál: {material}"
+        "cs": "Materiál: {material}",
+        "he": "חומר: {material}"
       },
       "freeform": {
         "key": "material",
@@ -273,7 +282,8 @@
             "eo": "Materialo: ligna",
             "ca": "El seient està fet de fusta",
             "da": "Siddepladserne er lavet af træ",
-            "cs": "Sedací část je vyrobena ze dřeva"
+            "cs": "Sedací část je vyrobena ze dřeva",
+            "he": "מקום הישיבה עשוי מעץ"
           }
         },
         {
@@ -296,7 +306,8 @@
             "eo": "Materialo: metala",
             "ca": "El seient està fet de metall",
             "da": "Sædet er lavet af metal",
-            "cs": "Sedací část je vyrobena z kovu"
+            "cs": "Sedací část je vyrobena z kovu",
+            "he": "מקום הישיבה עשוי מתכת"
           }
         },
         {
@@ -320,7 +331,8 @@
             "eo": "Materialo: ŝtona",
             "ca": "El seient està fet de pedra",
             "da": "Siddepladserne er lavet af sten",
-            "cs": "Sedací část je vyrobena z kamene"
+            "cs": "Sedací část je vyrobena z kamene",
+            "he": "מקום הישיבה עשוי אבן"
           }
         },
         {
@@ -344,7 +356,8 @@
             "eo": "Materialo: betona",
             "ca": "El seient està fet de ciment",
             "da": "Siddepladserne er lavet af beton",
-            "cs": "Sedací část je vyrobena z betonu"
+            "cs": "Sedací část je vyrobena z betonu",
+            "he": "מקום הישיבה עשוי בטון"
           }
         },
         {
@@ -368,7 +381,8 @@
             "eo": "Materialo: plasta",
             "ca": "El seient està fet de plàstic",
             "da": "Sædet er lavet af plastik",
-            "cs": "Sedací část je vyrobena z plastu"
+            "cs": "Sedací část je vyrobena z plastu",
+            "he": "מקום הישיבה עשוי פלסטיק"
           }
         },
         {
@@ -392,7 +406,8 @@
             "eo": "Materialo: ŝtala",
             "ca": "El seient està fet d'acer",
             "da": "Siddepladserne er lavet af stål",
-            "cs": "Sedací část je vyrobena z oceli"
+            "cs": "Sedací část je vyrobena z oceli",
+            "he": "מקום הישיבה עשוי פלדה"
           }
         }
       ],
@@ -412,7 +427,8 @@
         "es": "¿De que está hecho el banco (asiento)?",
         "da": "Hvad er bænken (sædet) lavet af?",
         "cs": "Z čeho je vyrobena lavice (sedadlo)?",
-        "ca": "De què està fent el banc (seient)?"
+        "ca": "De què està fent el banc (seient)?",
+        "he": "ממה עשוי הספסל (המושב)?"
       },
       "id": "bench-material",
       "labels": [
@@ -491,7 +507,8 @@
         "es": "Color: {colour}",
         "ca": "Color: {colour}",
         "da": "Farve: {colour}",
-        "cs": "Barva: {colour}"
+        "cs": "Barva: {colour}",
+        "he": "צבע: {colour}"
       },
       "question": {
         "en": "Which colour does this bench have?",
@@ -509,7 +526,8 @@
         "es": "¿De qué color es este banco?",
         "da": "Hvilken farve har denne bænk?",
         "cs": "Jakou barvu má tato lavička?",
-        "ca": "De quin color és aquest banc?"
+        "ca": "De quin color és aquest banc?",
+        "he": "איזה צבע יש לספסל הזה?"
       },
       "freeform": {
         "key": "colour",
@@ -537,7 +555,8 @@
             "ca": "Color: marró",
             "es": "Color: marrón",
             "da": "Farve: brun",
-            "cs": "Barva: hnědá"
+            "cs": "Barva: hnědá",
+            "he": "צבע: חום"
           }
         },
         {
@@ -561,7 +580,8 @@
             "es": "Color: verde",
             "ca": "Color: verd",
             "da": "Farve: grøn",
-            "cs": "Barva: zelená"
+            "cs": "Barva: zelená",
+            "he": "צבע: ירוק"
           }
         },
         {
@@ -585,7 +605,8 @@
             "es": "Color: gris",
             "ca": "Color: gris",
             "da": "Farve: grå",
-            "cs": "Barva: šedá"
+            "cs": "Barva: šedá",
+            "he": "צבע: אפור"
           }
         },
         {
@@ -609,7 +630,8 @@
             "es": "Color: blanco",
             "ca": "Color: blanc",
             "da": "Farve: hvid",
-            "cs": "Barva: bílá"
+            "cs": "Barva: bílá",
+            "he": "צבע: לבן"
           }
         },
         {
@@ -633,7 +655,8 @@
             "es": "Color: rojo",
             "ca": "Color: vermell",
             "da": "Farve: rød",
-            "cs": "Barva: červená"
+            "cs": "Barva: červená",
+            "he": "צבע: אדום"
           }
         },
         {
@@ -657,7 +680,8 @@
             "es": "Color: negro",
             "ca": "Color: negre",
             "da": "Farve: sort",
-            "cs": "Barva: černá"
+            "cs": "Barva: černá",
+            "he": "צבע: שחור"
           }
         },
         {
@@ -681,7 +705,8 @@
             "es": "Color: azul",
             "ca": "Color: blau",
             "da": "Farve: blå",
-            "cs": "Barva: modrá"
+            "cs": "Barva: modrá",
+            "he": "צבע: כחול"
           }
         },
         {
@@ -705,7 +730,8 @@
             "es": "Color: amarillo",
             "ca": "Color: groc",
             "da": "Farve: gul",
-            "cs": "Barva: žlutá"
+            "cs": "Barva: žlutá",
+            "he": "צבע: צהוב"
           }
         }
       ],
@@ -730,7 +756,8 @@
         "es": "¿Cuándo fue la última vez que se inspeccionó este banco?",
         "da": "Hvornår blev denne bænk sidst kortlagt?",
         "cs": "Kdy byla tato lavička naposledy kontrolována?",
-        "ca": "Quan va ser l'últim cop que s'ha inspeccionat aquest banc?"
+        "ca": "Quan va ser l'últim cop que s'ha inspeccionat aquest banc?",
+        "he": "מתי הספסל הזה נבדק לאחרונה?"
       },
       "render": {
         "en": "This bench was last surveyed on {survey:date}",
@@ -747,7 +774,8 @@
         "es": "Este banco se inspeccionó por última vez el {survey:date}",
         "da": "Denne bænk blev sidst kortlagt den {survey:date}",
         "cs": "Tato lavička byla naposledy zkontrolována dne {survey:date}",
-        "ca": "Aquest banc s'ha inspeccionat per últim com el {survey:date}"
+        "ca": "Aquest banc s'ha inspeccionat per últim com el {survey:date}",
+        "he": "ספסל זה נבדק לאחרונה ב {survey:date}"
       },
       "freeform": {
         "key": "survey:date",
@@ -763,7 +791,8 @@
             "fr": "Vérifié sur le terrain aujourd'hui !",
             "ca": "Inspeccionat avui!",
             "cs": "Zjištěno dnes!",
-            "pt": "Pesquisado hoje!"
+            "pt": "Pesquisado hoje!",
+            "he": "נבדק היום!"
           }
         }
       ],
@@ -849,7 +878,8 @@
         "nl": "Heeft deze bank een geïntegreerd kunstwerk?",
         "de": "Hat diese Bank ein künstlerisches Element?",
         "ca": "Aquest banc té algun element artístic?",
-        "cs": "Má tato lavička umělecké prvky?"
+        "cs": "Má tato lavička umělecké prvky?",
+        "he": "האם לספסל הזה יש אלמנט אומנותי?"
       },
       "mappings": [
         {
@@ -860,7 +890,8 @@
             "de": "Diese Bank hat ein integriertes Kunstwerk",
             "fr": "Une oeuvre d'art est intégrée à ce banc",
             "ca": "Aquest banc té integrada una obra d'art",
-            "cs": "Tato lavička má integrované umělecké dílo"
+            "cs": "Tato lavička má integrované umělecké dílo",
+            "he": "לספסל זה יצירת אמנות משולבת"
           }
         },
         {
@@ -872,7 +903,8 @@
             "fr": "Ce banc n'a pas d'oeuvre d'art intégrée",
             "es": "Este banco no tiene una obra de arte integrada",
             "ca": "Aquest banc no té una obra d'art integrada",
-            "cs": "Tato lavička nemá integrované umělecké dílo"
+            "cs": "Tato lavička nemá integrované umělecké dílo",
+            "he": "לספסל זה אין יצירת אמנות משולבת"
           }
         }
       ],
@@ -1028,7 +1060,8 @@
             "de": "ist ein Denkmal",
             "fr": "est un mémorial",
             "ca": "és un memorial",
-            "cs": "je památník"
+            "cs": "je památník",
+            "he": "הוא אנדרטה"
           }
         }
       ]
@@ -1043,7 +1076,8 @@
             "de": "Mit und ohne Rückenlehne",
             "fr": "Avec et sans dossier",
             "ca": "Amb i sense respatller",
-            "cs": "S opěradlem a bez opěradla"
+            "cs": "S opěradlem a bez opěradla",
+            "he": "עם ובלי משענת גב"
           }
         },
         {
@@ -1054,7 +1088,8 @@
             "de": "Mit Rückenlehne",
             "fr": "A un dossier",
             "ca": "Té un respatller",
-            "cs": "Má opěradlo"
+            "cs": "Má opěradlo",
+            "he": "בעל משענת גב"
           }
         },
         {
@@ -1065,7 +1100,8 @@
             "de": "Ohne Rückenlehne",
             "fr": "N'a pas de dossier",
             "ca": "No té respatller",
-            "cs": "Nemá opěradlo"
+            "cs": "Nemá opěradlo",
+            "he": "אין משענת גב"
           }
         }
       ]

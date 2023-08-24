@@ -27,7 +27,8 @@
     "de": "Alles über Sport. Finden Sie Sportplätze, Fitnesscenter und vieles mehr.",
     "ca": "Tot sobre esports, troba camps d'esport, gimnasos i molt més.",
     "es": "Todo sobre deportes, encuentra campos de deporte, gimnasios y mucho más.",
-    "cs": "Vše o sportu, sportovní hřiště, fitness centra a další."
+    "cs": "Vše o sportu, sportovní hřiště, fitness centra a další.",
+    "fr": "Tout sur les sports, trouver les terrains de sport, les salles de sport et plus encore."
   },
   "icon": "./assets/themes/sports/sport.svg",
   "startLat": 0,
@@ -61,7 +62,8 @@
               "ca": "una tenda d'esports",
               "es": "una tienda de deportes",
               "cs": "sportovní obchod",
-              "zh_Hant": "運動用品店"
+              "zh_Hant": "運動用品店",
+              "fr": "une boutique de sport"
             },
             "description": {
               "en": "Add a new shop selling sports goods.",

@@ -12,7 +12,8 @@
     "da": "Barrierer",
     "cs": "Překážky",
     "pa_PK": "رُکاوٹاں",
-    "nb_NO": "Barrièrer"
+    "nb_NO": "Barrièrer",
+    "he": "מחסומים"
   },
   "description": {
     "en": "Obstacles while cycling, such as bollards and cycle barriers",
@@ -46,7 +47,8 @@
       "ca": "Barrera",
       "da": "Barriere",
       "cs": "Bariéra",
-      "pa_PK": "رُکاوٹ"
+      "pa_PK": "رُکاوٹ",
+      "he": "מחסום"
     },
     "mappings": [
       {

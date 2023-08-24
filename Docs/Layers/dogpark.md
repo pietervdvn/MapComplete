@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/dogpark/dog-park.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/layers/dogpark/dog-park.svg' height="100px"> 
 
 A layer showing dogparks, which are areas where dog are allowed to run without a leash
 
@@ -25,8 +25,8 @@ A layer showing dogparks, which are areas where dog are allowed to run without a
 
 
 
-  - [personal](https://mapcomplete.osm.be/personal)
-  - [pets](https://mapcomplete.osm.be/pets)
+  - [personal](https://mapcomplete.org/personal)
+  - [pets](https://mapcomplete.org/pets)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,10 +46,10 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/barrier#values) [barrier](https://wiki.openstreetmap.org/wiki/Key:barrier) | Multiple choice | [fence](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dfence) [no](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/small_dog#values) [small_dog](https://wiki.openstreetmap.org/wiki/Key:small_dog) | Multiple choice | [separate](https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dseparate) [shared](https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dshared)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/barrier#values) [barrier](https://wiki.openstreetmap.org/wiki/Key:barrier) | Multiple choice | [fence](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dfence) [no](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/small_dog#values) [small_dog](https://wiki.openstreetmap.org/wiki/Key:small_dog) | Multiple choice | [separate](https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dseparate) [shared](https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dshared)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
 
 
 
@@ -145,7 +145,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 
 This tagrendering has no question and is thus read-only
 

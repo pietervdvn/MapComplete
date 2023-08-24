@@ -80,7 +80,8 @@
             "if": "payment:OV-Chipkaart=yes",
             "ifnot": "payment:OV-Chipkaart=no",
             "then": {
-              "en": "This ticket validator accepts OV-Chipkaart"
+              "en": "This ticket validator accepts OV-Chipkaart",
+              "de": "Dieser Fahrkartenentwerter akzeptiert die OV-Chipkaart"
             },
             "hideInAnswer": true
           },
@@ -88,7 +89,8 @@
             "if": "payment:ov-chipkaart=yes",
             "ifnot": "payment:ov-chipkaart=no",
             "then": {
-              "en": "This ticket validator accepts OV-Chipkaart"
+              "en": "This ticket validator accepts OV-Chipkaart",
+              "de": "Dieser Ticketentwerter akzeptiert die OV-Chipkaart"
             },
             "hideInAnswer": "_country!=nl"
           }

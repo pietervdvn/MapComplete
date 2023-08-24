@@ -65,7 +65,7 @@
             "key": "theme"
           },
           "render": {
-            "en": "Change with theme <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+            "en": "Change with theme <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
           }
         },
         {
@@ -221,6 +221,10 @@
               {
                 "if": "theme=education",
                 "then": "./assets/layers/school/college.svg"
+              },
+              {
+                "if": "theme=elongated_coin",
+                "then": "./assets/themes/elongated_coin/penny.svg"
               },
               {
                 "if": "theme=etymology",
@@ -405,6 +409,10 @@
               {
                 "if": "theme=uk_addresses",
                 "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+              },
+              {
+                "if": "theme=vending_machine",
+                "then": "./assets/layers/vending_machine/vending_machine.svg"
               },
               {
                 "if": "theme=walls_and_buildings",

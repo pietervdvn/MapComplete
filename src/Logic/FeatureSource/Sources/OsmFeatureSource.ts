@@ -61,7 +61,6 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
 
     private async loadData(bbox: BBox) {
         if (this.isActive?.data === false) {
-            console.log("OsmFeatureSource: not triggering: inactive")
             return
         }
 

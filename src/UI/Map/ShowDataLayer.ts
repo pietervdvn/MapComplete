@@ -44,7 +44,6 @@ class PointRenderingLayer {
         this._onClick = onClick
         this._selectedElement = selectedElement
         const self = this
-
         features.features.addCallbackAndRunD((features) => self.updateFeatures(features))
         visibility?.addCallbackAndRunD((visible) => {
             if (visible === true && self._dirty) {
@@ -155,7 +154,6 @@ class PointRenderingLayer {
             el.addEventListener("click", function (ev) {
                 ev.preventDefault()
                 self._onClick(feature)
-                console.log("Got click:", feature)
                 // Workaround to signal the MapLibreAdaptor to ignore this click
                 ev["consumed"] = true
             })
@@ -333,7 +331,6 @@ class LineRenderingLayer {
             })
             if (this._onClick) {
                 map.on("click", polylayer, (e) => {
-                    console.log("Got polylayer click:", e)
                     // polygon-layer-listener
                     if (e.originalEvent["consumed"]) {
                         // This is a polygon beneath a marker, we can ignore it
@@ -351,7 +348,7 @@ class LineRenderingLayer {
                     map.setLayoutProperty(polylayer, "visibility", visible ? "visible" : "none")
                 } catch (e) {
                     console.warn(
-                        "Error while setting visiblity of layers ",
+                        "Error while setting visibility of layers ",
                         linelayer,
                         polylayer,
                         e

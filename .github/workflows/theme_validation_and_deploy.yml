@@ -65,10 +65,10 @@ jobs:
       - name: "Copying files"
         run: |
           echo "Deploying"
-          rm -rf pietervdvn.github.io/mc/${{ env.TARGET_BRANCH }}/*
-          mkdir -p pietervdvn.github.io/mc/${{ env.TARGET_BRANCH }}/
-          cp -r dist/* pietervdvn.github.io/mc/${{ env.TARGET_BRANCH }}/
-          cd pietervdvn.github.io/
+          rm -rf mapcomplete.github.io/*
+          cp -r dist/* mapcomplete.github.io/
+          cd mapcomplete.github.io/
+          echo "mapcomplete.org" > CNAME
           git add *
           if git status | grep -q "Changes to be committed"
           then

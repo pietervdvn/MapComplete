@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/parking/parking.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/layers/parking/parking.svg' height="100px"> 
 
 A layer showing car parkings
 
@@ -25,10 +25,10 @@ A layer showing car parkings
 
 
 
-  - [onwheels](https://mapcomplete.osm.be/onwheels)
-  - [parkings](https://mapcomplete.osm.be/parkings)
-  - [personal](https://mapcomplete.osm.be/personal)
-  - [transit](https://mapcomplete.osm.be/transit)
+  - [onwheels](https://mapcomplete.org/onwheels)
+  - [parkings](https://mapcomplete.org/parkings)
+  - [personal](https://mapcomplete.org/personal)
+  - [transit](https://mapcomplete.org/transit)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -48,11 +48,11 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/parking#values) [parking](https://wiki.openstreetmap.org/wiki/Key:parking) | Multiple choice | [surface](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsurface) [street_side](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dstreet_side) [underground](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dunderground) [multi-storey](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dmulti-storey) [rooftop](https://wiki.openstreetmap.org/wiki/Tag:parking%3Drooftop) [lane](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlane) [carports](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dcarports) [garage_boxes](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dgarage_boxes) [layby](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlayby) [sheds](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsheds)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:disabled#values) [capacity:disabled](https://wiki.openstreetmap.org/wiki/Key:capacity:disabled) | [pnat](../SpecialInputElements.md#pnat) | [0](https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3D0)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity#values) [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/parking#values) [parking](https://wiki.openstreetmap.org/wiki/Key:parking) | Multiple choice | [surface](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsurface) [street_side](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dstreet_side) [underground](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dunderground) [multi-storey](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dmulti-storey) [rooftop](https://wiki.openstreetmap.org/wiki/Tag:parking%3Drooftop) [lane](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlane) [carports](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dcarports) [garage_boxes](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dgarage_boxes) [layby](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlayby) [sheds](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsheds)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:disabled#values) [capacity:disabled](https://wiki.openstreetmap.org/wiki/Key:capacity:disabled) | [pnat](../SpecialInputElements.md#pnat) | [0](https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3D0)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity#values) [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [pnat](../SpecialInputElements.md#pnat) | 
 
 
 
@@ -80,7 +80,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 
 This tagrendering has no question and is thus read-only
 

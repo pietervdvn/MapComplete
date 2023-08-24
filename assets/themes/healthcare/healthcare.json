@@ -53,7 +53,8 @@
               "es": "una tienda de suministros médicos",
               "cs": "obchod se zdravotnickými potřebami",
               "ca": "una botiga de subministraments mèdics",
-              "nl": "een winkel voor medische hulpmiddelen"
+              "nl": "een winkel voor medische hulpmiddelen",
+              "fr": "un commerce d'équipements médicaux"
             },
             "tags": [
               "shop=medical_supply"
@@ -66,7 +67,8 @@
               "es": "una tienda de audífonos",
               "cs": "obchod se sluchadly",
               "ca": "una botiga d'audiòfons",
-              "nl": "een hoorapparatenwinkel"
+              "nl": "een hoorapparatenwinkel",
+              "fr": "un magasin d'appareils auditifs"
             },
             "tags": [
               "shop=hearing_aids"

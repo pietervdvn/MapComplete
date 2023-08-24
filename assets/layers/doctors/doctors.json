@@ -6,12 +6,14 @@
     "nl": "Dokters",
     "fr": "Médecins",
     "pa_PK": "ڈاکٹر",
-    "ca": "Metges"
+    "ca": "Metges",
+    "he": "רופאים"
   },
   "description": {
     "en": "This layer shows doctor offices",
     "de": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen",
-    "nl": "Deze laag toont dokterspraktijken"
+    "nl": "Deze laag toont dokterspraktijken",
+    "he": "שכבה זו מציגה מרפאות רופאים"
   },
   "source": {
     "osmTags": "amenity=doctors"
@@ -33,7 +35,8 @@
         "de": "Wie heißt diese Arztpraxis?",
         "nl": "Wat is de naam van deze dokterspraktijk?",
         "fr": "Comment s'appelle ce cabinet médical ?",
-        "ca": "Com es diu aquesta consulta mèdica?"
+        "ca": "Com es diu aquesta consulta mèdica?",
+        "he": "מה השם של מקום הרופאים הזה?"
       },
       "render": {
         "en": "This doctors place is called {name}",
@@ -56,7 +59,8 @@
         "en": "This doctor is specialized in {healthcare:speciality}",
         "de": "Dieser Arzt ist spezialisiert auf {healthcare:speciality}",
         "nl": "Deze dokter is gespecialiseerd in {healthcare:speciality}",
-        "fr": "Ce médecin est spécialisé dans {healthcare:speciality}"
+        "fr": "Ce médecin est spécialisé dans {healthcare:speciality}",
+        "he": "רופא זה מתמחה ב {healthcare:speciality}"
       },
       "question": {
         "en": "What is this doctor specialized in?",

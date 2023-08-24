@@ -70,7 +70,7 @@ export class GenerateLicenseInfo extends Script {
             license: "CC0",
             sources: [
                 "https://toerismevlaanderen.be/pinjepunt",
-                "https://mapcomplete.osm.be/toerisme_vlaanderenn",
+                "https://mapcomplete.org/toerisme_vlaanderenn",
             ],
         })
         knownLicenses.set("tvf", {

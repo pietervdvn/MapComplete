@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/map/map.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/layers/map/map.svg' height="100px"> 
 
 A map, meant for tourists which is permanently installed in the public space
 
@@ -25,9 +25,9 @@ A map, meant for tourists which is permanently installed in the public space
 
 
 
-  - [maps](https://mapcomplete.osm.be/maps)
-  - [nature](https://mapcomplete.osm.be/nature)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [maps](https://mapcomplete.org/maps)
+  - [nature](https://mapcomplete.org/nature)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -47,9 +47,11 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/map_source#values) [map_source](https://wiki.openstreetmap.org/wiki/Key:map_source) | [string](../SpecialInputElements.md#string) | [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:map_source%3DOpenStreetMap)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/map_source:attribution#values) [map_source:attribution](https://wiki.openstreetmap.org/wiki/Key:map_source:attribution) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dyes) [incomplete](https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dincomplete) [sticker](https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dsticker) [none](https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dnone)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/map_type#values) [map_type](https://wiki.openstreetmap.org/wiki/Key:map_type) | Multiple choice | [topo](https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dtopo) [street](https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dstreet) [scheme](https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dscheme) [toposcope](https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dtoposcope)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/map_size#values) [map_size](https://wiki.openstreetmap.org/wiki/Key:map_size) | Multiple choice | [building](https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dbuilding) [site](https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dsite) [village](https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dvillage) [city](https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dcity) [region](https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dregion)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/map_source#values) [map_source](https://wiki.openstreetmap.org/wiki/Key:map_source) | [string](../SpecialInputElements.md#string) | [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:map_source%3DOpenStreetMap)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/map_source:attribution#values) [map_source:attribution](https://wiki.openstreetmap.org/wiki/Key:map_source:attribution) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dyes) [incomplete](https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dincomplete) [sticker](https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dsticker) [none](https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dnone)
 
 
 
@@ -77,10 +79,47 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 
 This tagrendering has no question and is thus read-only
 
+
+
+
+
+### map_type 
+
+
+
+The question is  *What type of map is shown?*
+
+
+
+
+
+  - *Topographical map <p class='subtle'>The map contains contour lines. </p>*  corresponds with  `map_type=topo`
+  - *A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>*  corresponds with  `map_type=street`
+  - *This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> *  corresponds with  `map_type=scheme`
+  - *This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>*  corresponds with  `map_type=toposcope`
+
+
+
+
+### map_size 
+
+
+
+The question is  *What is the size of the shown area on the map?*
+
+
+
+
+
+  - *A map of the rooms within a building*  corresponds with  `map_size=building`
+  - *A map of special site, like of a historical castle, a park, a campus, a forest, ....*  corresponds with  `map_size=site`
+  - *A map showing the village or town*  corresponds with  `map_size=village`
+  - * A map of a city*  corresponds with  `map_size=city`
+  - *The map of an entire region, showing multiple cities and villages*  corresponds with  `map_size=region`
 
 
 

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/barrier/barrier.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/layers/barrier/barrier.svg' height="100px"> 
 
 Obstacles while cycling, such as bollards and cycle barriers
 
@@ -27,8 +27,8 @@ Obstacles while cycling, such as bollards and cycle barriers
 
 
 
-  - [cycle_infra](https://mapcomplete.osm.be/cycle_infra)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [cycle_infra](https://mapcomplete.org/cycle_infra)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -48,15 +48,15 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/bicycle#values) [bicycle](https://wiki.openstreetmap.org/wiki/Key:bicycle) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/barrier#values) [barrier](https://wiki.openstreetmap.org/wiki/Key:barrier) | Multiple choice | [bollard](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard) [cycle_barrier](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/bollard#values) [bollard](https://wiki.openstreetmap.org/wiki/Key:bollard) | Multiple choice | [removable](https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dremovable) [fixed](https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dfixed) [foldable](https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dfoldable) [flexible](https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dflexible) [rising](https://wiki.openstreetmap.org/wiki/Tag:bollard%3Drising)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cycle_barrier#values) [cycle_barrier](https://wiki.openstreetmap.org/wiki/Key:cycle_barrier) | Multiple choice | [single](https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsingle) [double](https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble) [triple](https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple) [squeeze](https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsqueeze)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/maxwidth:physical#values) [maxwidth:physical](https://wiki.openstreetmap.org/wiki/Key:maxwidth:physical) | [distance](../SpecialInputElements.md#distance) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/width:separation#values) [width:separation](https://wiki.openstreetmap.org/wiki/Key:width:separation) | [distance](../SpecialInputElements.md#distance) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/width:opening#values) [width:opening](https://wiki.openstreetmap.org/wiki/Key:width:opening) | [distance](../SpecialInputElements.md#distance) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/overlap#values) [overlap](https://wiki.openstreetmap.org/wiki/Key:overlap) | [distance](../SpecialInputElements.md#distance) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/bicycle#values) [bicycle](https://wiki.openstreetmap.org/wiki/Key:bicycle) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/barrier#values) [barrier](https://wiki.openstreetmap.org/wiki/Key:barrier) | Multiple choice | [bollard](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard) [cycle_barrier](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/bollard#values) [bollard](https://wiki.openstreetmap.org/wiki/Key:bollard) | Multiple choice | [removable](https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dremovable) [fixed](https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dfixed) [foldable](https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dfoldable) [flexible](https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dflexible) [rising](https://wiki.openstreetmap.org/wiki/Tag:bollard%3Drising)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cycle_barrier#values) [cycle_barrier](https://wiki.openstreetmap.org/wiki/Key:cycle_barrier) | Multiple choice | [single](https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsingle) [double](https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble) [triple](https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple) [squeeze](https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsqueeze)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/maxwidth:physical#values) [maxwidth:physical](https://wiki.openstreetmap.org/wiki/Key:maxwidth:physical) | [distance](../SpecialInputElements.md#distance) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/width:separation#values) [width:separation](https://wiki.openstreetmap.org/wiki/Key:width:separation) | [distance](../SpecialInputElements.md#distance) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/width:opening#values) [width:opening](https://wiki.openstreetmap.org/wiki/Key:width:opening) | [distance](../SpecialInputElements.md#distance) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/overlap#values) [overlap](https://wiki.openstreetmap.org/wiki/Key:overlap) | [distance](../SpecialInputElements.md#distance) | 
 
 
 
@@ -84,7 +84,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 
 This tagrendering has no question and is thus read-only
 

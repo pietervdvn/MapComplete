@@ -63,7 +63,7 @@
               "da": "Overgang for fodgængere og/eller cyklister",
               "es": "Cruce para peatones y/o ciclistas"
             },
-            "snapToLayer": "cycleways_and_roads",
+            "snapToLayer": ["cycleways_and_roads"],
             "maxSnapDistance": 25
           }
         ],

@@ -89,7 +89,7 @@ function GenerateDocumentationForTheme(theme: LayoutConfig): BaseUIElement {
             new Combine([
                 theme.title,
                 "(",
-                new Link(theme.id, "https://mapcomplete.osm.be/" + theme.id),
+                new Link(theme.id, "https://mapcomplete.org/" + theme.id),
                 ")",
             ]),
             2
@@ -276,14 +276,14 @@ function generateWikipage() {
         const languages = languagesInDescr.map((ln) => `{{#language:${ln}|en}}`).join(", ")
         let auth = "Yes"
         return `{{service_item
-|name= [https://mapcomplete.osm.be/${layout.id} ${layout.id}]
+|name= [https://mapcomplete.org/${layout.id} ${layout.id}]
 |region= Worldwide
 |lang= ${languages}
 |descr= A MapComplete theme: ${Translations.T(layout.shortDescription)
             .textFor("en")
             .replace("<a href='", "[[")
             .replace(/'>.*<\/a>/, "]]")}
-|material= {{yes|[https://mapcomplete.osm.be/ ${auth}]}}
+|material= {{yes|[https://mapcomplete.org/ ${auth}]}}
 |image= MapComplete_Screenshot.png
 |genre= POI, editor, ${layout.id}
 }}`

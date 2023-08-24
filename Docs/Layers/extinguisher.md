@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/themes/hailhydrant/Twemoji12_1f9ef.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/themes/hailhydrant/Twemoji12_1f9ef.svg' height="100px"> 
 
 Map layer to show fire extinguishers.
 
@@ -25,8 +25,8 @@ Map layer to show fire extinguishers.
 
 
 
-  - [hailhydrant](https://mapcomplete.osm.be/hailhydrant)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [hailhydrant](https://mapcomplete.org/hailhydrant)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,8 +46,8 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/location#values) [location](https://wiki.openstreetmap.org/wiki/Key:location) | [string](../SpecialInputElements.md#string) | [indoor](https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor) [outdoor](https://wiki.openstreetmap.org/wiki/Tag:location%3Doutdoor)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/location#values) [location](https://wiki.openstreetmap.org/wiki/Key:location) | [string](../SpecialInputElements.md#string) | [indoor](https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor) [outdoor](https://wiki.openstreetmap.org/wiki/Tag:location%3Doutdoor)
 
 
 
@@ -95,7 +95,7 @@ This is rendered with  `Location: {location}`
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 
 This tagrendering has no question and is thus read-only
 

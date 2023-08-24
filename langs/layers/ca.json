@@ -1353,7 +1353,7 @@
             "send_email_about_broken_pump": {
                 "render": {
                     "special": {
-                        "body": "Hola,\n\nAmb aquest correu electrònic, m'agradaria informar-vos que la bomba de bicicleta situada a https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} està trencada.\n\nSalutacions cordials",
+                        "body": "Hola,\n\nAmb aquest correu electrònic, m'agradaria informar-vos que la bomba de bicicleta situada a https://mapcomplete.org/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} està trencada.\n\nSalutacions cordials",
                         "button_text": "Informar aquesta bomba de bicicleta com a trencada",
                         "subject": "Bomba de bicicleta trencada"
                     }
@@ -5765,6 +5765,13 @@
                 "mappings": {
                     "0": {
                         "then": "Has fet {_csCount} en diferents ocasions! Això és sorprenent!"
+                    }
+                }
+            },
+            "fixate-north": {
+                "mappings": {
+                    "0": {
+                        "then": "Permet girar el mapa"
                     }
                 }
             },

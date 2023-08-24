@@ -50,6 +50,7 @@
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
     + [minimap](#minimap)
+    + [mastodon](#mastodon)
     + [contact](#contact)
     + [payment-options-split](#payment-options-split)
     + [denominations-coins](#denominations-coins)
@@ -784,6 +785,17 @@
 
 
   - gps_track
+
+
+
+
+### mastodon 
+
+
+
+
+
+  - hackerspace
 
 
 

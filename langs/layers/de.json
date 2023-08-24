@@ -1389,7 +1389,7 @@
             "send_email_about_broken_pump": {
                 "render": {
                     "special": {
-                        "body": "Hallo,\n\nMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} befindet, kaputt ist.\n\nMit freundlichen Grüßen",
+                        "body": "Hallo,\n\nMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.org/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} befindet, kaputt ist.\n\nMit freundlichen Grüßen",
                         "button_text": "Melde diese Fahrradpumpe als kaputt",
                         "subject": "Fahrradpumpe kaputt"
                     }
@@ -8321,6 +8321,12 @@
                 },
                 "question": "Hat die Treppe einen Handlauf?"
             },
+            "multilevels": {
+                "override": {
+                    "question": "Zwischen welchen Stockwerken befindet sich diese Treppe?",
+                    "render": "Diese Treppe ist zwischen den Stockwerken {level}"
+                }
+            },
             "ramp": {
                 "mappings": {
                     "0": {
@@ -8734,6 +8740,18 @@
                 },
                 "render": "Dieser Fahrkartenentwerter ist Teil einer Zugangsbarriere vom Typ {barrier}"
             },
+            "payment-options": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Dieser Fahrkartenentwerter akzeptiert die OV-Chipkaart"
+                        },
+                        "1": {
+                            "then": "Dieser Ticketentwerter akzeptiert die OV-Chipkaart"
+                        }
+                    }
+                }
+            },
             "validator-operator": {
                 "freeform": {
                     "placeholder": "Name des Betreibers"
@@ -8947,6 +8965,11 @@
         },
         "name": "Toiletten in anderen Einrichtungen",
         "tagRenderings": {
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist der Ort, an dem sich diese Toiletten befinden, geöffnet?"
+                }
+            },
             "toilet-access": {
                 "mappings": {
                     "0": {

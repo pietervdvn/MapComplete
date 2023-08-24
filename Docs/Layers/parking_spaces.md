@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/parking_spaces/parking_space.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/layers/parking_spaces/parking_space.svg' height="100px"> 
 
 Layer showing individual parking spaces.
 
@@ -25,9 +25,9 @@ Layer showing individual parking spaces.
 
 
 
-  - [onwheels](https://mapcomplete.osm.be/onwheels)
-  - [parkings](https://mapcomplete.osm.be/parkings)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [onwheels](https://mapcomplete.org/onwheels)
+  - [parkings](https://mapcomplete.org/parkings)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -47,9 +47,9 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/parking_space#values) [parking_space](https://wiki.openstreetmap.org/wiki/Key:parking_space) | Multiple choice | [normal](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dnormal) [disabled](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Ddisabled) [private](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dprivate) [charging](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dcharging) [delivery](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Ddelivery) [hgv](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dhgv) [caravan](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dcaravan) [bus](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dbus) [motorcycle](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dmotorcycle) [parent](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dparent) [staff](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dstaff) [taxi](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dtaxi) [trailer](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dtrailer) [car_sharing](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dcar_sharing)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity#values) [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | Multiple choice | [1](https://wiki.openstreetmap.org/wiki/Tag:capacity%3D1)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/parking_space#values) [parking_space](https://wiki.openstreetmap.org/wiki/Key:parking_space) | Multiple choice | [normal](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dnormal) [disabled](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Ddisabled) [private](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dprivate) [charging](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dcharging) [delivery](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Ddelivery) [hgv](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dhgv) [caravan](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dcaravan) [bus](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dbus) [motorcycle](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dmotorcycle) [parent](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dparent) [staff](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dstaff) [taxi](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dtaxi) [trailer](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dtrailer) [car_sharing](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dcar_sharing)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity#values) [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | Multiple choice | [1](https://wiki.openstreetmap.org/wiki/Tag:capacity%3D1)
 
 
 
@@ -77,7 +77,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 
 This tagrendering has no question and is thus read-only
 

@@ -83,7 +83,7 @@ To use the WSL in Visual Studio Code:
 Automatic deployment
 --------------------
 
-Currently, the master branch is automatically deployed to https://mapcomplete.osm.be/ by a GitHub action.
+Currently, the master branch is automatically deployed to https://mapcomplete.org/ by a GitHub action.
 
 Every branch is automatically built (upon push) to `https://pietervdvn.github.io/mc/<branchname>` by a GitHub action.
 

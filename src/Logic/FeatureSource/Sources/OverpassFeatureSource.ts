@@ -81,7 +81,6 @@ export default class OverpassFeatureSource implements FeatureSource {
      */
     private async updateAsyncIfNeeded(): Promise<void> {
         if (!this._isActive?.data) {
-            console.log("OverpassFeatureSource: not triggering as not active")
             return
         }
         if (this.runningQuery.data) {

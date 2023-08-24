@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/themes/waste_basket/waste_basket.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/themes/waste_basket/waste_basket.svg' height="100px"> 
 
 This is a public waste basket, thrash can, where you can throw away your thrash.
 
@@ -25,10 +25,10 @@ This is a public waste basket, thrash can, where you can throw away your thrash.
 
 
 
-  - [personal](https://mapcomplete.osm.be/personal)
-  - [pets](https://mapcomplete.osm.be/pets)
-  - [waste](https://mapcomplete.osm.be/waste)
-  - [waste_basket](https://mapcomplete.osm.be/waste_basket)
+  - [personal](https://mapcomplete.org/personal)
+  - [pets](https://mapcomplete.org/pets)
+  - [waste](https://mapcomplete.org/waste)
+  - [waste_basket](https://mapcomplete.org/waste_basket)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -48,9 +48,9 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/waste#values) [waste](https://wiki.openstreetmap.org/wiki/Key:waste) | Multiple choice | [trash](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dtrash) [dog_excrement](https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddog_excrement) [cigarettes](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dcigarettes) [drugs](https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddrugs) [sharps](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dsharps) [plastic](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dplastic)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/vending#values) [vending](https://wiki.openstreetmap.org/wiki/Key:vending) | Multiple choice | [dog_excrement_bag](https://wiki.openstreetmap.org/wiki/Tag:vending%3Ddog_excrement_bag) [](https://wiki.openstreetmap.org/wiki/Tag:vending%3D)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/waste#values) [waste](https://wiki.openstreetmap.org/wiki/Key:waste) | Multiple choice | [trash](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dtrash) [dog_excrement](https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddog_excrement) [cigarettes](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dcigarettes) [drugs](https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddrugs) [sharps](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dsharps) [plastic](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dplastic)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/vending#values) [vending](https://wiki.openstreetmap.org/wiki/Key:vending) | Multiple choice | [dog_excrement_bag](https://wiki.openstreetmap.org/wiki/Tag:vending%3Ddog_excrement_bag) [](https://wiki.openstreetmap.org/wiki/Tag:vending%3D)
 
 
 
@@ -78,7 +78,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 
 This tagrendering has no question and is thus read-only
 

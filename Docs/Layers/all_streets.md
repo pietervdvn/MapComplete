@@ -25,8 +25,8 @@ Layer to mark any street as cyclestreet
 
 
 
-  - [cyclestreets](https://mapcomplete.osm.be/cyclestreets)
-  - [street_lighting](https://mapcomplete.osm.be/street_lighting)
+  - [cyclestreets](https://mapcomplete.org/cyclestreets)
+  - [street_lighting](https://mapcomplete.org/street_lighting)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,9 +46,9 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/traffic_sign#values) [traffic_sign](https://wiki.openstreetmap.org/wiki/Key:traffic_sign) | Multiple choice | [DE:244.1,1020-30](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1020-30) [DE:244.1,1022-12,1024-10](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12,1024-10) [DE:244.1,1022-12](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12) [DE:244.1,1024-10](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1024-10) [DE:244.1](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cyclestreet:start_date#values) [cyclestreet:start_date](https://wiki.openstreetmap.org/wiki/Key:cyclestreet:start_date) | [date](../SpecialInputElements.md#date) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/traffic_sign#values) [traffic_sign](https://wiki.openstreetmap.org/wiki/Key:traffic_sign) | Multiple choice | [DE:244.1,1020-30](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1020-30) [DE:244.1,1022-12,1024-10](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12,1024-10) [DE:244.1,1022-12](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12) [DE:244.1,1024-10](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1024-10) [DE:244.1](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cyclestreet:start_date#values) [cyclestreet:start_date](https://wiki.openstreetmap.org/wiki/Key:cyclestreet:start_date) | [date](../SpecialInputElements.md#date) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 
 
 
@@ -135,7 +135,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 
 This tagrendering has no question and is thus read-only
 

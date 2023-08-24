@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/note' height="100px"> 
+<img src='https://mapcomplete.org/note' height="100px"> 
 
 This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)
 
@@ -26,8 +26,8 @@ This layer shows notes on OpenStreetMap. Having this layer in your theme will tr
 
 
 
-  - [notes](https://mapcomplete.osm.be/notes)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [notes](https://mapcomplete.org/notes)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -47,7 +47,7 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 
 
 

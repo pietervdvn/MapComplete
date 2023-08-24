@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/maproulette/logomark.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/layers/maproulette/logomark.svg' height="100px"> 
 
 Layer showing tasks of a single MapRoulette challenge. This layer is intended to be reused and extended in themes; refer to [the documentation](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md) on how to do this.
 
@@ -27,9 +27,9 @@ Layer showing tasks of a single MapRoulette challenge. This layer is intended to
 
 
 
-  - [atm](https://mapcomplete.osm.be/atm)
-  - [onwheels](https://mapcomplete.osm.be/onwheels)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [atm](https://mapcomplete.org/atm)
+  - [onwheels](https://mapcomplete.org/onwheels)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -49,8 +49,8 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mr_taskStatus#values) [mr_taskStatus](https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus) | Multiple choice | [Created](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated) [Fixed](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFixed) [False positive](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFalse positive) [Skipped](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DSkipped) [Deleted](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDeleted) [Already fixed](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DAlready fixed) [Too hard](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DToo hard) [Disabled](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDisabled)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mr_taskStatus#values) [mr_taskStatus](https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus) | Multiple choice | [Created](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated) [Fixed](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFixed) [False positive](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFalse positive) [Skipped](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DSkipped) [Deleted](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDeleted) [Already fixed](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DAlready fixed) [Too hard](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DToo hard) [Disabled](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDisabled)
 
 
 

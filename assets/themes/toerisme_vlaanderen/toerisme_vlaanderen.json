@@ -19,7 +19,7 @@
   },
   "extraLink": {
     "icon": "./assets/svg/pop-out.svg",
-    "href": "https://mapcomplete.osm.be/{theme}.html?lat={lat}&lon={lon}&z={zoom}&language={language}",
+    "href": "https://mapcomplete.org/{theme}.html?lat={lat}&lon={lon}&z={zoom}&language={language}",
     "newTab": true,
     "requirements": [
       "iframe"

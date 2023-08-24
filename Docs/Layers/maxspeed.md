@@ -26,8 +26,8 @@ Shows the allowed speed for every road
 
 
 
-  - [maxspeed](https://mapcomplete.osm.be/maxspeed)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [maxspeed](https://mapcomplete.org/maxspeed)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -47,8 +47,8 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/maxspeed#values) [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/maxspeed#values) [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) | [pnat](../SpecialInputElements.md#pnat) | 
 
 
 
@@ -86,8 +86,6 @@ This is rendered with  `The maximum allowed speed on this road is {canonical(max
 
 
 
-  - *This is a living street, which has a maxspeed of 20km/h*  corresponds with  `highway=living_street&_country!=be`
-  - This option cannot be chosen as answer
   - *This is a living street, which has a maxspeed of 20km/h*  corresponds with  `highway=living_street`
 
 
