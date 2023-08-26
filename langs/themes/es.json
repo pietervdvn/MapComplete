@@ -116,7 +116,7 @@
     },
     "bookcases": {
         "description": "Una librería pública es un pequeño armario en la calle, una caja, una vieja cabina telefónica o algún otro objeto donde se guardan libros. Todo el mundo puede colocar o coger un libro. Este mapa pretende recoger todas estas librerías.",
-        "title": "Mapa abierto de estanterías"
+        "title": "Estanterías publicas"
     },
     "cafes_and_pubs": {
         "description": "Cafés, pubs y bares",
@@ -408,9 +408,48 @@
                         }
                     }
                 }
+            },
+            "1": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Esta tienda repara zapatos de escalada"
+                                },
+                                "1": {
+                                    "then": "Esta tienda no repara zapatos de escalada"
+                                }
+                            },
+                            "question": "¿Esta tienda de reparación de zapatos repara zapatos de escalada?"
+                        }
+                    }
+                }
+            },
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Esta tienda repara zapatos de escalada"
+                                },
+                                "1": {
+                                    "then": "Esta tienda no repara zapatos de escalada"
+                                }
+                            },
+                            "question": "¿Esta tienda de reparación de zapatos también repara zapatos de escalada?"
+                        }
+                    },
+                    "=presets": {
+                        "0": {
+                            "title": "una tienda de reparación de zapatos"
+                        }
+                    }
+                }
             }
         },
-        "title": "Mapa Abierto de Escalada"
+        "title": "Gimnasios de escalada, clubes y lugares"
     },
     "clock": {
         "description": "Mapa con todos los relojes públicos",
@@ -558,7 +597,7 @@
     },
     "cyclofix": {
         "description": "El objetivo de este mapa es presentar a los ciclistas con una solución fácil de utilizar para encontrar la infraestructura apropiada para sus necesidades. <br><br>Puedes seguir tu localización precisa (móvil solo) y seleccionar las capas que son relevantes para ti en la esquina inferior izquierda. Tgambién puedes utilizar esta herramienta para editar o añadir pines (puntos de interés) al mapa y proveer más datos respondiendo a preguntas.<br><br>Todos los cambios que hagas se guardarán de manera automática en la base de datos global de OpenStreetMap y podrán ser utilizados libremente por otros. <br><br>Para más información sobre el proyecto cyclofix, ve a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-        "title": "Cyclofix - un mapa abierto para ciclistas"
+        "title": "Cyclofix - un mapa para ciclistas"
     },
     "drinking_water": {
         "description": "En este mapa, se muestran los puntos de agua potable accesibles públicamente y pueden añadirse fácilmente",
@@ -567,6 +606,97 @@
     "education": {
         "description": "En este mapa, encontrará información sobre todos los tipos de escuelas y centros de educación y puede añadir fácilmente más información",
         "title": "Educación"
+    },
+    "elongated_coin": {
+        "description": "Encuentra prensas de centavo para crear tus propias monedas alargadas.",
+        "layers": {
+            "0": {
+                "description": "Capa mostrando prensas de centavo.",
+                "name": "Prensas de centavo",
+                "presets": {
+                    "0": {
+                        "title": "una prensa de centavo"
+                    }
+                },
+                "tagRenderings": {
+                    "charge": {
+                        "freeform": {
+                            "placeholder": "Costo (por ejemplo, 0.50 euros)"
+                        },
+                        "mappings": {
+                            "0": {
+                                "then": "Cuesta 1 euro para presionar un centavo."
+                            },
+                            "1": {
+                                "then": "Cuesta 2 euros para presionar un centavo."
+                            }
+                        },
+                        "question": "¿Cuánto cuesta presionar un centavo?",
+                        "render": "Cuesta {charge} para presionar un centavo."
+                    },
+                    "coin": {
+                        "freeform": {
+                            "placeholder": "Tipo de moneda (por ejemplo, 10 centavos)"
+                        },
+                        "mappings": {
+                            "0": {
+                                "then": "Esta prensa de centavo utiliza una moneda de 2 centavos para presionar."
+                            },
+                            "1": {
+                                "then": "Esta prensa de centavo utiliza una moneda de 5 centavos para presionar."
+                            },
+                            "2": {
+                                "then": "Esta prensa de centavo utiliza una moneda de 10 centavos para presionar."
+                            },
+                            "3": {
+                                "then": "Esta prensa de centavo utiliza una moneda de 25 centavos para presionar."
+                            },
+                            "4": {
+                                "then": "Esta prensa de centavo utiliza una moneda de 50 centavos para presionar."
+                            }
+                        },
+                        "question": "Qué moneda se utiliza para presionar?",
+                        "render": "Esta prensa de centavo utiliza una moneda {coin:type} para presionar."
+                    },
+                    "designs": {
+                        "freeform": {
+                            "placeholder": "Número de diseños (por ejemplo, 5)"
+                        },
+                        "mappings": {
+                            "0": {
+                                "then": "Esta prensa tiene un diseño disponible."
+                            },
+                            "1": {
+                                "then": "Esta prensa tiene dos diseños disponibles."
+                            },
+                            "2": {
+                                "then": "Esta prensa tiene tres diseños disponibles."
+                            },
+                            "3": {
+                                "then": "Esta prensa tiene cuatro diseños disponibles."
+                            }
+                        },
+                        "question": "Cuántos diseños son disponibles?",
+                        "render": "Esta prensa tiene {coin:design_count} diseños disponibles."
+                    },
+                    "indoor": {
+                        "mappings": {
+                            "0": {
+                                "then": "Esta prensa está ubicada en interior."
+                            },
+                            "1": {
+                                "then": "Esta prensa está ubicada al aire libre."
+                            }
+                        },
+                        "question": "La prensa de centavo esta al interior?"
+                    }
+                },
+                "title": {
+                    "render": "Prensa de centavo"
+                }
+            }
+        },
+        "title": "Prensa de centavo"
     },
     "etymology": {
         "description": "En este mapa, puedes ver el nombre de un objeto. Las calles, edificios, ... provienen de OpenStreetMap que tienen enlace con Wikidata. En la ventana emergente, verás el artículo de Wikipedia (si existe) o un recuadro de wikidata del nombre del objeto. Si el objeto en sí tiene una página wikipedia, también se mostrará.<br/><br/><b>¡Puedes contribuir!</b> Acerca el zoom lo suficiente y aparecerán <i>todas</i> las calles. Puedes hacer clic en una y aparecerá un cuadro de búsqueda en Wikidata. Con unos pocos clics, puedes añadir un enlace etimológico. Ten en cuenta que para ello necesitas una cuenta gratuita de OpenStreetMap.",
@@ -608,7 +738,7 @@
             }
         },
         "shortDescription": "¿Cual es el origen de un topónimo?",
-        "title": "Mapa Abierto Etimológico"
+        "title": "Etimología - a qué se debe el nombre de una calle?"
     },
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Los jardines de fachada</a>, las fachadas verdes y los árboles en la ciudad no sólo aportan paz y tranquilidad, sino también una ciudad más bella, una mayor biodiversidad, un efecto refrescante y una mejor calidad del aire. <br/> Klimaan VZW y Mechelen Klimaatneutraal quieren trazar un mapa de los jardines de fachada existentes y nuevos como ejemplo para las personas que quieran construir su propio jardín o para los paseantes urbanos amantes de la naturaleza. <br/>Más información sobre el proyecto en <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -807,6 +937,28 @@
             }
         },
         "title": "Bordillos y cruces"
+    },
+    "mapcomplete-changes": {
+        "layers": {
+            "0": {
+                "filter": {
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>No</b> hecho por colaborador {search}"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "Hecho antes de {search}"
+                            }
+                        }
+                    }
+                }
+            }
+        }
     },
     "maproulette": {
         "description": "Tema que muestra las tareas de MapRoulette, permitiendo buscarlas, filtrarlas y arreglarlas.",
