@@ -122,6 +122,7 @@
             "isApplied": "S'aplicaran els canvis"
         },
         "attribution": {
+            "attributionBackgroundLayerWithCopyright": "La capa de fons actual és {name}: {copyright}",
             "attributionContent": "<p>Totes les dades provenen d'<a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, i es poden reutilitzar lliurement sota <a href=\"https://osm.org/copyright\" target=\"_blank\">la Llicència Oberta de Base de Dades (ODbL)</a>.</p>",
             "attributionTitle": "Avís d’atribució",
             "codeContributionsBy": "MapComplete ha estat fet per {contributors} i <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} més contribuïdors</a>",
