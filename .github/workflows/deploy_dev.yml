@@ -1,4 +1,4 @@
-name: Theme Validation and deployment
+name: Deploy on dev.mapcomplete.org
 on:
   push:
     branches:
