@@ -32,7 +32,7 @@ then
     echo "Source maps are enabled"
 fi
 
-if [ $BRANCH = "master" ]
+if [ $BRANCH = "master" ] || [ $BRANCH = "develop" ]
 then
     ASSET_URL="./"
     export ASSET_URL
