@@ -2943,6 +2943,15 @@
             }
         }
     },
+    "elongated_coin": {
+        "tagRenderings": {
+            "charge": {
+                "freeform": {
+                    "placeholder": "Coût (par ex. 0.50 EUR)"
+                }
+            }
+        }
+    },
     "entrance": {
         "description": "Une couche montrant les entrées et offrant des capacités pour étudier certaines données avancées qui sont importantes, par exemple. les utilisateurs de fauteuils roulants (mais aussi les utilisateurs de vélos, les personnes qui veulent faire des livraisons, …)",
         "name": "Entrée",
@@ -3154,14 +3163,14 @@
                     }
                 }
             },
-            "4": {
+            "6": {
                 "options": {
                     "0": {
                         "question": "Avec revêtement podotactile"
                     }
                 }
             },
-            "5": {
+            "7": {
                 "options": {
                     "0": {
                         "question": "Avec ou sans revêtement podotactile"
@@ -3177,7 +3186,7 @@
                     }
                 }
             },
-            "7": {
+            "9": {
                 "options": {
                     "0": {
                         "question": "Utilisation gratuite"
