@@ -43,7 +43,7 @@ else
   echo "$ASSET_URL"
 fi
 
-export NODE_OPTIONS=--max-old-space-size=6500
+export NODE_OPTIONS=--max-old-space-size=32768
 vite build $SRC_MAPS 
 
 
