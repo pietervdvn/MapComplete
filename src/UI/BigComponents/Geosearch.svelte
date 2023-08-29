@@ -75,8 +75,7 @@
             "click",
             (e) => {
               // Check if the user clicked on a different element
-              // @ts-ignore
-              if (!resultsElement.contains(e.target)) {
+              if (!resultsElement.contains(e.target as Node)) {
                 results = []
               }
             },
