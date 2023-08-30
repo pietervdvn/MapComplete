@@ -205,6 +205,29 @@
             "de": "Blumen werden verkauft"
           },
           "icon": "./assets/layers/id_presets/maki-florist.svg"
+        },
+        {
+          "if": "vending=parking_tickets",
+          "then": {
+            "en": "Parking tickets are sold",
+            "nl": "Parkeerkaarten worden verkocht"
+          },
+          "icon": "./assets/layers/parking_ticket_machine/parking_tickets.svg"
+        },
+        {
+          "if": "vending=elongated_coin",
+          "then": {
+            "en": "Pressed pennies are sold"
+          },
+          "icon": "./assets/themes/elongated_coin/penny.svg"
+        },
+        {
+          "if": "vending=public_transport_tickets",
+          "then": {
+            "en": "Public transport tickets are sold",
+            "nl": "Openbaar vervoerkaartjes worden verkocht"
+          },
+          "icon": "./assets/themes/stations/public_transport_tickets.svg"
         }
       ],
       "multiAnswer": true
@@ -483,6 +506,33 @@
             ]
           },
           "then": "circle:white;./assets/layers/id_presets/maki-florist.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*parking_tickets.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/parking_ticket_machine/parking_tickets.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*elongated_coin.*"
+            ]
+          },
+          "then": "circle:white;./assets/themes/elongated_coin/penny.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*public_transport_tickets.*"
+            ]
+          },
+          "then": "circle:white;./assets/themes/stations/public_transport_tickets.svg"
         }
       ]
     }
