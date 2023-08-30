@@ -32,7 +32,7 @@ then
     echo "Source maps are enabled"
 fi
 
-if [ $BRANCH = "master" ]
+if [ $BRANCH = "master" ] || [ $BRANCH = "develop" ]
 then
     ASSET_URL="./"
     export ASSET_URL
@@ -43,7 +43,7 @@ else
   echo "$ASSET_URL"
 fi
 
-export NODE_OPTIONS=--max-old-space-size=6500
+export NODE_OPTIONS=--max-old-space-size=32768
 vite build $SRC_MAPS 
 
 
