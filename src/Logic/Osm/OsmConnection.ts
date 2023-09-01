@@ -34,9 +34,16 @@ export type OsmServiceState = "online" | "readonly" | "offline" | "unknown" | "u
 
 export class OsmConnection {
     public static readonly oauth_configs: Record<string, AuthConfig> = {
-        osm: {
+        osm_pietervdvn: {
+            // This client_id is registered by "Pieter Vander Vennet" on OSM.org
             oauth_client_id: 'sa1ngLJBJ8McmzHElN8NYtIDm5TZTYEYhq3-0snO4Qc',
             oauth_secret: 'XU_cD5Mvw9VKk9T0t_gO8V7cbRC4Hmw2Tb4Rv0Zmz-U',
+            url: "https://www.openstreetmap.org",
+        },
+        osm: {
+            // This client-id is registered by "MapComplete" on osm.org
+            oauth_client_id: "K93H1d8ve7p-tVLE1ZwsQ4lAFLQk8INx5vfTLMu5DWk",
+            oauth_secret: "NBWGhWDrD3QDB35xtVuxv4aExnmIt4FA_WgeLtwxasg",
             url: "https://www.openstreetmap.org",
         },
         "osm-test": {
@@ -192,7 +199,7 @@ export class OsmConnection {
         const self = this
         console.log("Trying to log in...")
         this.updateAuthObject()
-        LocalStorageSource.Get("location_before_login").setData(window.location.href)
+        LocalStorageSource.Get("location_before_login").setData(Utils.runningFromConsole ? undefined : window.location.href)
         this.auth.xhr(
             {
                 method: "GET",
@@ -488,7 +495,7 @@ export class OsmConnection {
             client_id: this._oauth_config.oauth_client_id,
             url: this._oauth_config.url,
             scope: "read_prefs write_prefs write_api write_gpx write_notes",
-            redirect_uri: window.location.protocol + "//" + window.location.host + "/land.html",
+            redirect_uri: Utils.runningFromConsole ? "https://mapcomplete.org/land.html" :  window.location.protocol + "//" + window.location.host + "/land.html",
             singlepage: !standalone,
             auto: true,
         })
