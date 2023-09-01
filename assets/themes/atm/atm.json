@@ -54,7 +54,7 @@
       "override": {
         "minzoom": 18,
         "filter": {
-          "sameAs": "bank"
+          "sameAs": "bank_with_atm"
         }
       }
     },
@@ -125,6 +125,33 @@
           },
           "all_tags"
         ]
+      }
+    },
+    {
+      "builtin": "postoffices",
+      "override": {
+        "id": "post_offices_with_atm",
+        "minzoom": 14,
+        "=presets": [],
+        "source": {
+          "osmTags": {
+            "and+": [
+              "atm=yes"
+            ]
+          }
+        },
+        "filter": [
+          "open_now"
+        ]
+      }
+    },
+    {
+      "builtin": "postoffices",
+      "override": {
+        "minzoom": 18,
+        "filter": {
+          "sameAs": "post_offices_with_atm"
+        }
       }
     }
   ]
