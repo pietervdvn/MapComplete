@@ -1356,7 +1356,8 @@
           },
           {
             "or": [
-              "_currency~.*EUR.*"
+              "_currency~.*EUR.*",
+              "_currency~.*CHF.*"
             ]
           }
         ]
@@ -1477,6 +1478,60 @@
             "fr": "Les billets de 500 euros sont acceptés"
           },
           "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:notes:denominations=10 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/10chf.svg",
+          "then": {
+            "en": "10 francs notes are accepted",
+            "nl": "Biljetten van 10 frank worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:notes:denominations=20 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/20chf.svg",
+          "then": {
+            "en": "20 francs notes are accepted",
+            "nl": "Biljetten van 20 frank worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:notes:denominations=50 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/50chf.svg",
+          "then": {
+            "en": "50 francs notes are accepted",
+            "nl": "Biljetten van 50 frank worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:notes:denominations=100 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/100chf.svg",
+          "then": {
+            "en": "100 francs notes are accepted",
+            "nl": "Biljetten van 100 frank worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:notes:denominations=200 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/200chf.svg",
+          "then": {
+            "en": "200 francs notes are accepted",
+            "nl": "Biljetten van 200 frank worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:notes:denominations=1000 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/1000chf.svg",
+          "then": {
+            "en": "1000 francs notes are accepted",
+            "nl": "Biljetten van 1000 frank worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
         }
       ]
     },
