@@ -1,7 +1,9 @@
-import osmAuth from "osm-auth"
-import { Store, Stores, UIEventSource } from "../UIEventSource"
-import { OsmPreferences } from "./OsmPreferences"
-import { Utils } from "../../Utils"
+// @ts-ignore
+import {osmAuth} from "osm-auth"
+import {Store, Stores, UIEventSource} from "../UIEventSource"
+import {OsmPreferences} from "./OsmPreferences"
+import {Utils} from "../../Utils"
+import {LocalStorageSource} from "../Web/LocalStorageSource";
 
 export default class UserDetails {
     public loggedIn = false
@@ -22,22 +24,26 @@ export default class UserDetails {
     }
 }
 
+export interface AuthConfig {
+    oauth_client_id: string
+    oauth_secret: string
+    url: string
+}
+
 export type OsmServiceState = "online" | "readonly" | "offline" | "unknown" | "unreachable"
 
 export class OsmConnection {
-    public static readonly oauth_configs = {
+    public static readonly oauth_configs: Record<string, AuthConfig> = {
         osm: {
-            oauth_consumer_key: "hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem",
-            oauth_secret: "wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI",
+            oauth_client_id: 'sa1ngLJBJ8McmzHElN8NYtIDm5TZTYEYhq3-0snO4Qc',
+            oauth_secret: 'XU_cD5Mvw9VKk9T0t_gO8V7cbRC4Hmw2Tb4Rv0Zmz-U',
             url: "https://www.openstreetmap.org",
-            // OAUTH 1.0 application
-            // https://www.openstreetmap.org/user/Pieter%20Vander%20Vennet/oauth_clients/7404
         },
         "osm-test": {
-            oauth_consumer_key: "Zgr7EoKb93uwPv2EOFkIlf3n9NLwj5wbyfjZMhz2",
-            oauth_secret: "3am1i1sykHDMZ66SGq4wI2Z7cJMKgzneCHp3nctn",
-            url: "https://master.apis.dev.openstreetmap.org",
-        },
+            oauth_client_id: "HwUn6GPxGm1m9WwMarxTglhy6dBTM4YkaV1I9h6pDGU"
+             oauth_secret: "luFZtPJg7j96K6WM6RpcZ_3M-r6muuDq6fG1ygk0I_4",
+             url: "https://master.apis.dev.openstreetmap.org",
+         }
     }
     public auth
     public userDetails: UIEventSource<UserDetails>
@@ -53,11 +59,7 @@ export class OsmConnection {
         "not-attempted"
     )
     public preferencesHandler: OsmPreferences
-    public readonly _oauth_config: {
-        oauth_consumer_key: string
-        oauth_secret: string
-        url: string
-    }
+    public readonly _oauth_config: AuthConfig
     private readonly _dryRun: Store<boolean>
     private fakeUser: boolean
     private _onLoggedIn: ((userDetails: UserDetails) => void)[] = []
@@ -190,6 +192,7 @@ export class OsmConnection {
         const self = this
         console.log("Trying to log in...")
         this.updateAuthObject()
+        LocalStorageSource.Get("location_before_login").setData(window.location.href)
         this.auth.xhr(
             {
                 method: "GET",
@@ -202,13 +205,8 @@ export class OsmConnection {
                     if (err.status == 401) {
                         console.log("Clearing tokens...")
                         // Not authorized - our token probably got revoked
-                        // Reset all the tokens
-                        const tokens = [
-                            "https://www.openstreetmap.orgoauth_request_token_secret",
-                            "https://www.openstreetmap.orgoauth_token",
-                            "https://www.openstreetmap.orgoauth_token_secret",
-                        ]
-                        tokens.forEach((token) => localStorage.removeItem(token))
+                        self.auth.logout();
+                        self.LogOut()
                     }
                     return
                 }
@@ -252,7 +250,7 @@ export class OsmConnection {
                 if (homeEl !== undefined && homeEl[0] !== undefined) {
                     const lat = parseFloat(homeEl[0].getAttribute("lat"))
                     const lon = parseFloat(homeEl[0].getAttribute("lon"))
-                    data.home = { lat: lat, lon: lon }
+                    data.home = {lat: lat, lon: lon}
                 }
 
                 self.loadingStatus.setData("logged-in")
@@ -310,6 +308,7 @@ export class OsmConnection {
     ): Promise<any> {
         return await this.interact(path, "POST", header, content)
     }
+
     public async put(
         path: string,
         content?: string,
@@ -355,13 +354,13 @@ export class OsmConnection {
             console.warn("Dryrun enabled - not actually opening note with text ", text)
             return new Promise<{ id: number }>((ok) => {
                 window.setTimeout(
-                    () => ok({ id: Math.floor(Math.random() * 1000) }),
+                    () => ok({id: Math.floor(Math.random() * 1000)}),
                     Math.random() * 5000
                 )
             })
         }
         const auth = this.auth
-        const content = { lat, lon, text }
+        const content = {lat, lon, text}
         const response = await this.post("notes.json", JSON.stringify(content), {
             "Content-Type": "application/json",
         })
@@ -389,7 +388,7 @@ export class OsmConnection {
             console.warn("Dryrun enabled - not actually uploading GPX ", gpx)
             return new Promise<{ id: number }>((ok, error) => {
                 window.setTimeout(
-                    () => ok({ id: Math.floor(Math.random() * 1000) }),
+                    () => ok({id: Math.floor(Math.random() * 1000)}),
                     Math.random() * 5000
                 )
             })
@@ -430,7 +429,7 @@ export class OsmConnection {
         })
         const parsed = JSON.parse(response)
         console.log("Uploaded GPX track", parsed)
-        return { id: parsed }
+        return {id: parsed}
     }
 
     public addCommentToNote(id: number | string, text: string): Promise<void> {
@@ -486,13 +485,25 @@ export class OsmConnection {
         // Same for an iframe...
 
         this.auth = new osmAuth({
-            oauth_consumer_key: this._oauth_config.oauth_consumer_key,
-            oauth_secret: this._oauth_config.oauth_secret,
+            client_id: this._oauth_config.oauth_client_id,
             url: this._oauth_config.url,
-            landing: standalone ? undefined : window.location.href,
+            scope: "read_prefs write_prefs write_api write_gpx write_notes",
+            redirect_uri: window.location.protocol + "//" + window.location.host + "/land.html",
             singlepage: !standalone,
             auto: true,
         })
+    }
+
+    /**
+     * To be called by land.html
+     */
+    public finishLogin(callback: ((previousURL: string) => void)) {
+        this.auth.authenticate(function() {
+            // Fully authed at this point
+            console.log("Authentication successful!")
+            const previousLocation = LocalStorageSource.Get("location_before_login")
+            callback(previousLocation.data)
+        });
     }
 
     private CheckForMessagesContinuously() {
@@ -511,7 +522,7 @@ export class OsmConnection {
 
     private UpdateCapabilities(): void {
         const self = this
-        this.FetchCapabilities().then(({ api, gpx }) => {
+        this.FetchCapabilities().then(({api, gpx}) => {
             self.apiIsOnline.setData(api)
             self.gpxServiceIsOnline.setData(gpx)
         })
@@ -519,18 +530,18 @@ export class OsmConnection {
 
     private async FetchCapabilities(): Promise<{ api: OsmServiceState; gpx: OsmServiceState }> {
         if (Utils.runningFromConsole) {
-            return { api: "online", gpx: "online" }
+            return {api: "online", gpx: "online"}
         }
         const result = await Utils.downloadAdvanced(this.Backend() + "/api/0.6/capabilities")
         if (result["content"] === undefined) {
             console.log("Something went wrong:", result)
-            return { api: "unreachable", gpx: "unreachable" }
+            return {api: "unreachable", gpx: "unreachable"}
         }
         const xmlRaw = result["content"]
         const parsed = new DOMParser().parseFromString(xmlRaw, "text/xml")
         const statusEl = parsed.getElementsByTagName("status")[0]
         const api = <OsmServiceState>statusEl.getAttribute("api")
         const gpx = <OsmServiceState>statusEl.getAttribute("gpx")
-        return { api, gpx }
+        return {api, gpx}
     }
 }
