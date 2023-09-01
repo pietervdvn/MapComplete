@@ -6883,6 +6883,20 @@
             }
         },
         "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "This post office has an ATM"
+                    },
+                    "1": {
+                        "then": "This post office does <b>not</b> have an ATM"
+                    },
+                    "2": {
+                        "then": "This post office does have an ATM, but it is mapped as a different icon"
+                    }
+                },
+                "question": "Does this post office have an ATM?"
+            },
             "letter-from": {
                 "mappings": {
                     "0": {
@@ -9812,6 +9826,15 @@
                     },
                     "15": {
                         "then": "Flowers are sold"
+                    },
+                    "16": {
+                        "then": "Parking tickets are sold"
+                    },
+                    "17": {
+                        "then": "Pressed pennies are sold"
+                    },
+                    "18": {
+                        "then": "Public transport tickets are sold"
                     }
                 },
                 "question": "What does this vending machine sell?",

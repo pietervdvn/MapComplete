@@ -6461,6 +6461,20 @@
             }
         },
         "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit postkantoor heeft een bankautomaat"
+                    },
+                    "1": {
+                        "then": "Dit postkantoor heeft <b>geen</b> bankautomaaat"
+                    },
+                    "2": {
+                        "then": "Dit postkantoor heeft een bankautomaat, maar deze staat apart op de kaart aangeduid"
+                    }
+                },
+                "question": "Heeft dit postkantoor een bankautomaat?"
+            },
             "letter-from": {
                 "mappings": {
                     "0": {
@@ -9074,6 +9088,12 @@
                     },
                     "15": {
                         "then": "Bloemen worden verkocht"
+                    },
+                    "16": {
+                        "then": "Parkeerkaarten worden verkocht"
+                    },
+                    "18": {
+                        "then": "Openbaar vervoerkaartjes worden verkocht"
                     }
                 },
                 "question": "Wat verkoopt deze verkoopautomaat?",
