@@ -6,9 +6,8 @@ export type PriviligedLayerType = (typeof Constants.priviliged_layers)[number]
 export default class Constants {
     public static vNumber = meta.version
 
-    public static ImgurApiKey = "7070e7167f0a25a"
-    public static readonly mapillary_client_token_v4 =
-        "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
+    public static ImgurApiKey = meta.config.api_keys.imgur
+    public static readonly mapillary_client_token_v4 =meta.config.api_keys.mapillary_v4
 
     /**
      * API key for Maproulette
@@ -19,15 +18,7 @@ export default class Constants {
      */
     public static readonly MaprouletteApiKey = ""
 
-    public static defaultOverpassUrls = [
-        // The official instance, 10000 queries per day per project allowed
-        "https://overpass-api.de/api/interpreter",
-        // 'Fair usage'
-        "https://overpass.kumi.systems/api/interpreter",
-        // Offline: "https://overpass.nchc.org.tw/api/interpreter",
-        "https://overpass.openstreetmap.ru/cgi/interpreter",
-        // Doesn't support nwr: "https://overpass.openstreetmap.fr/api/interpreter"
-    ]
+    public static defaultOverpassUrls = meta.config.default_overpass_urls
 
     public static readonly added_by_default = [
         "selected_element",
@@ -100,6 +91,7 @@ export default class Constants {
         "etymology",
         "food",
         "cafes_and_pubs",
+        "shops",
         "playgrounds",
         "hailhydrant",
         "toilets",
@@ -113,9 +105,8 @@ export default class Constants {
      * In seconds
      */
     static zoomToLocationTimeout = 15
-    static countryCoderEndpoint: string =
-        "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country"
-    public static readonly OsmPreferenceKeyPicturesLicense = "pictures-license"
+    static countryCoderEndpoint: string = meta.config.country_coder_host
+
     /**
      * These are the values that are allowed to use as 'backdrop' icon for a map pin
      */

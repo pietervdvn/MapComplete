@@ -4,7 +4,7 @@ import {Store, Stores, UIEventSource} from "../UIEventSource"
 import {OsmPreferences} from "./OsmPreferences"
 import {Utils} from "../../Utils"
 import {LocalStorageSource} from "../Web/LocalStorageSource";
-
+import * as config from "../../../package.json"
 export default class UserDetails {
     public loggedIn = false
     public name = "Not logged in"
@@ -25,6 +25,7 @@ export default class UserDetails {
 }
 
 export interface AuthConfig {
+    "#"?: string // optional comment
     oauth_client_id: string
     oauth_secret: string
     url: string
@@ -33,25 +34,7 @@ export interface AuthConfig {
 export type OsmServiceState = "online" | "readonly" | "offline" | "unknown" | "unreachable"
 
 export class OsmConnection {
-    public static readonly oauth_configs: Record<string, AuthConfig> = {
-        osm_pietervdvn: {
-            // This client_id is registered by "Pieter Vander Vennet" on OSM.org
-            oauth_client_id: 'sa1ngLJBJ8McmzHElN8NYtIDm5TZTYEYhq3-0snO4Qc',
-            oauth_secret: 'XU_cD5Mvw9VKk9T0t_gO8V7cbRC4Hmw2Tb4Rv0Zmz-U',
-            url: "https://www.openstreetmap.org",
-        },
-        osm: {
-            // This client-id is registered by "MapComplete" on osm.org
-            oauth_client_id: "K93H1d8ve7p-tVLE1ZwsQ4lAFLQk8INx5vfTLMu5DWk",
-            oauth_secret: "NBWGhWDrD3QDB35xtVuxv4aExnmIt4FA_WgeLtwxasg",
-            url: "https://www.openstreetmap.org",
-        },
-        "osm-test": {
-            oauth_client_id: "HwUn6GPxGm1m9WwMarxTglhy6dBTM4YkaV1I9h6pDGU",
-             oauth_secret: "luFZtPJg7j96K6WM6RpcZ_3M-r6muuDq6fG1ygk0I_4",
-             url: "https://master.apis.dev.openstreetmap.org",
-         }
-    }
+    public static readonly oauth_configs: Record<string, AuthConfig>  = config.config.oauth_credentials
     public auth
     public userDetails: UIEventSource<UserDetails>
     public isLoggedIn: Store<boolean>
