@@ -40,7 +40,7 @@ export class OsmConnection {
             url: "https://www.openstreetmap.org",
         },
         "osm-test": {
-            oauth_client_id: "HwUn6GPxGm1m9WwMarxTglhy6dBTM4YkaV1I9h6pDGU"
+            oauth_client_id: "HwUn6GPxGm1m9WwMarxTglhy6dBTM4YkaV1I9h6pDGU",
              oauth_secret: "luFZtPJg7j96K6WM6RpcZ_3M-r6muuDq6fG1ygk0I_4",
              url: "https://master.apis.dev.openstreetmap.org",
          }
