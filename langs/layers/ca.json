@@ -3842,7 +3842,7 @@
                         "then": "Aquest espai d'aparcament té 1 plaça."
                     }
                 },
-                "render": "Aquests espais d'aparcament tenen {espais} places."
+                "render": "Aquests espais d'aparcament tenen {capacity} places."
             },
             "type": {
                 "mappings": {

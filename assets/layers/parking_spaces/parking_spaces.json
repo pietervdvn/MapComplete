@@ -154,7 +154,7 @@
         "en": "This parking spaces has {capacity} spaces.",
         "de": "Dieser Parkplatz hat {capacity} Stellplätze.",
         "nl": "Deze parkeerplek heeft {capacity} plaatsen.",
-        "ca": "Aquests espais d'aparcament tenen {espais} places."
+        "ca": "Aquests espais d'aparcament tenen {capacity} places."
       },
       "mappings": [
         {
