@@ -1,4 +1,4 @@
-name: Build and validate PR
+name: Build and validate PR (but don't deploy)
 on:
   pull_request:
 
@@ -38,53 +38,3 @@ jobs:
       - name: run tests
         run: npm run test
         shell: bash
-
-      - name: Prepare deploy
-        run: npm run prepare-deploy
-        shell: bash
-      - name: Clone deployment repo
-        env:
-          DEPLOY_KEY_PIETERVDVN: ${{ secrets.DEPLOY_KEY_PIETERVDVN }}
-        run: |
-          echo "Cloning destination repo"
-          git config --global user.email "pietervdvn@posteo.net"
-          git config --global user.name "pietervdvn"
-          git clone --depth 1 --single-branch --branch master "https://x-access-token:$DEPLOY_KEY_PIETERVDVN@github.com/pietervdvn/pietervdvn.github.io.git"
-          echo "Destination repo is cloned"
-
-      - name: Sync repo
-        env:
-          DEPLOY_KEY_PIETERVDVN: ${{ secrets.DEPLOY_KEY_PIETERVDVN }}
-        run: |
-          cd pietervdvn.github.io
-          git pull
-
-      - name: get branch name
-        run: echo TARGET_BRANCH=${GITHUB_REF:11} >> $GITHUB_ENV
-
-      - name: "Copying files"
-        run: |
-          echo "Deploying"
-          rm -rf pietervdvn.github.io/mc/${{ env.TARGET_BRANCH }}/*
-          mkdir -p pietervdvn.github.io/mc/${{ env.TARGET_BRANCH }}/
-          cp -r dist/* pietervdvn.github.io/mc/${{ env.TARGET_BRANCH }}/
-          cd pietervdvn.github.io/
-          git add *
-          if git status | grep -q "Changes to be committed"
-          then
-            git commit -am "Deploying a new version of mapcomplete"
-            git push
-          else
-            echo "No changes to commit"
-          fi
-        env:
-          TARGET_BRANCH: ${{ env.TARGET_BRANCH }}
-
-      - uses: mshick/add-pr-comment@v1
-        name: Comment the PR with the review URL
-        if: ${{ success() && github.ref != 'refs/heads/develop' && github.ref != 'refs/heads/master' }}
-        with:
-          message: |
-            [🚀 Preview Branch](https://pietervdvn.github.io/mc/${{ env.TARGET_BRANCH }})
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
- 
