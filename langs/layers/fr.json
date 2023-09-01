@@ -2943,6 +2943,15 @@
             }
         }
     },
+    "elongated_coin": {
+        "tagRenderings": {
+            "charge": {
+                "freeform": {
+                    "placeholder": "Coût (par ex. 0.50 EUR)"
+                }
+            }
+        }
+    },
     "entrance": {
         "description": "Une couche montrant les entrées et offrant des capacités pour étudier certaines données avancées qui sont importantes, par exemple. les utilisateurs de fauteuils roulants (mais aussi les utilisateurs de vélos, les personnes qui veulent faire des livraisons, …)",
         "name": "Entrée",

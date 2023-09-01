@@ -604,19 +604,6 @@
         "description": "Sur cette carte, vous trouverez des informations concernant tous les types d'écoles et d'enseignement. Vous pouvez facilement ajouter plus d'informations",
         "title": "Enseignement"
     },
-    "elongated_coin": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "charge": {
-                        "freeform": {
-                            "placeholder": "Coût (par ex. 0.50 EUR)"
-                        }
-                    }
-                }
-            }
-        }
-    },
     "etymology": {
         "description": "Retrouvez sur cette carte l’origine du nom d’un élément. Les rues, bâtiments, etc. proviennent d’OpenStreetMap et sont liés aux données venant de Wikidata. La fenêtre pop-up affiche l’article Wikipedia (s’il existe) ou l’infobox Wikidata de l’objet dont provient le nom. Si l’objet a sa propre page Wikipedia, elle sera aussi affichée.<br/><br/><b>Vous pouvez contribuer aussi ! </b>Zoomez suffisamment et <i>toutes</i> les rues seront affichées. Cliquez sur l'une d'elles et une boîte de recherche Wikidata apparaîtra. En quelques clics, vous pouvez ajouter un lien étymologique. Vous devez disposer d’un compte OpenStreetMap gratuit.",
         "layers": {
@@ -856,65 +843,6 @@
             }
         },
         "title": "Ressauts et traversées"
-    },
-    "mapcomplete-changes": {
-        "description": "Cette carte montre tous les changements faits avec MapComplete",
-        "layers": {
-            "0": {
-                "filter": {
-                    "5": {
-                        "options": {
-                            "0": {
-                                "question": "Langage utilisateur (code-ISO) {search}"
-                            }
-                        }
-                    },
-                    "7": {
-                        "options": {
-                            "0": {
-                                "question": "Le groupe de modifications a ajouté au moins une image"
-                            }
-                        }
-                    }
-                },
-                "tagRenderings": {
-                    "contributor": {
-                        "question": "Quel contributeur a fait cette modification ?",
-                        "render": "Modification faite par <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
-                    },
-                    "host": {
-                        "render": "Modification faite avec <a href='{host}'>{host}</a>"
-                    },
-                    "locale": {
-                        "question": "En quelle langue est-ce que ce changement a été fait ?"
-                    },
-                    "show_changeset_id": {
-                        "render": "Groupe de modifications <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
-                    },
-                    "theme-id": {
-                        "question": "Quel thème a été utilisé pour faire cette modification ?",
-                        "render": "Modifié avec le thème <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
-                    },
-                    "version": {
-                        "question": "Quelle version de MapComplete a été utilisée pour faire cette modification ?",
-                        "render": "Fait avec {editor}"
-                    }
-                },
-                "title": {
-                    "render": "Groupe de modifications pour {theme}"
-                }
-            },
-            "1": {
-                "override": {
-                    "tagRenderings+": {
-                        "0": {
-                            "render": "D'autres statistiques sont disponibles <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>ici</a>"
-                        }
-                    }
-                }
-            }
-        },
-        "title": "Changements faits avec MapComplete"
     },
     "maproulette": {
         "description": "Thème MapRoulette permettant d’afficher, rechercher, filtrer et résoudre les tâches.",

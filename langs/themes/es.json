@@ -609,93 +609,6 @@
     },
     "elongated_coin": {
         "description": "Encuentra prensas de centavo para crear tus propias monedas alargadas.",
-        "layers": {
-            "0": {
-                "description": "Capa mostrando prensas de centavo.",
-                "name": "Prensas de centavo",
-                "presets": {
-                    "0": {
-                        "title": "una prensa de centavo"
-                    }
-                },
-                "tagRenderings": {
-                    "charge": {
-                        "freeform": {
-                            "placeholder": "Costo (por ejemplo, 0.50 euros)"
-                        },
-                        "mappings": {
-                            "0": {
-                                "then": "Cuesta 1 euro para presionar un centavo."
-                            },
-                            "1": {
-                                "then": "Cuesta 2 euros para presionar un centavo."
-                            }
-                        },
-                        "question": "¿Cuánto cuesta presionar un centavo?",
-                        "render": "Cuesta {charge} para presionar un centavo."
-                    },
-                    "coin": {
-                        "freeform": {
-                            "placeholder": "Tipo de moneda (por ejemplo, 10 centavos)"
-                        },
-                        "mappings": {
-                            "0": {
-                                "then": "Esta prensa de centavo utiliza una moneda de 2 centavos para presionar."
-                            },
-                            "1": {
-                                "then": "Esta prensa de centavo utiliza una moneda de 5 centavos para presionar."
-                            },
-                            "2": {
-                                "then": "Esta prensa de centavo utiliza una moneda de 10 centavos para presionar."
-                            },
-                            "3": {
-                                "then": "Esta prensa de centavo utiliza una moneda de 25 centavos para presionar."
-                            },
-                            "4": {
-                                "then": "Esta prensa de centavo utiliza una moneda de 50 centavos para presionar."
-                            }
-                        },
-                        "question": "Qué moneda se utiliza para presionar?",
-                        "render": "Esta prensa de centavo utiliza una moneda {coin:type} para presionar."
-                    },
-                    "designs": {
-                        "freeform": {
-                            "placeholder": "Número de diseños (por ejemplo, 5)"
-                        },
-                        "mappings": {
-                            "0": {
-                                "then": "Esta prensa tiene un diseño disponible."
-                            },
-                            "1": {
-                                "then": "Esta prensa tiene dos diseños disponibles."
-                            },
-                            "2": {
-                                "then": "Esta prensa tiene tres diseños disponibles."
-                            },
-                            "3": {
-                                "then": "Esta prensa tiene cuatro diseños disponibles."
-                            }
-                        },
-                        "question": "Cuántos diseños son disponibles?",
-                        "render": "Esta prensa tiene {coin:design_count} diseños disponibles."
-                    },
-                    "indoor": {
-                        "mappings": {
-                            "0": {
-                                "then": "Esta prensa está ubicada en interior."
-                            },
-                            "1": {
-                                "then": "Esta prensa está ubicada al aire libre."
-                            }
-                        },
-                        "question": "La prensa de centavo esta al interior?"
-                    }
-                },
-                "title": {
-                    "render": "Prensa de centavo"
-                }
-            }
-        },
         "title": "Prensa de centavo"
     },
     "etymology": {
@@ -937,28 +850,6 @@
             }
         },
         "title": "Bordillos y cruces"
-    },
-    "mapcomplete-changes": {
-        "layers": {
-            "0": {
-                "filter": {
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "<b>No</b> hecho por colaborador {search}"
-                            }
-                        }
-                    },
-                    "3": {
-                        "options": {
-                            "0": {
-                                "question": "Hecho antes de {search}"
-                            }
-                        }
-                    }
-                }
-            }
-        }
     },
     "maproulette": {
         "description": "Tema que muestra las tareas de MapRoulette, permitiendo buscarlas, filtrarlas y arreglarlas.",
