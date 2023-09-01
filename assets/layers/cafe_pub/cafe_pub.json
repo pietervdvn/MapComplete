@@ -129,7 +129,7 @@
       "ca": "Bar",
       "de": "Kneipe",
       "da": "Pub",
-      "es": "Pub",
+      "es": "Bar",
       "fr": "Bar",
       "pa_PK": "پب"
     },
@@ -189,7 +189,7 @@
         "de": "Was ist das für ein Café?",
         "hu": "Milyen fajta kávézó ez?",
         "da": "Hvilken slags cafe er dette?",
-        "es": "Qué tipo de cafetería es esta",
+        "es": "Qué tipo de cafe es este?",
         "fr": "Quel genre de café est-ce ?",
         "ca": "Quin tipus de cafeteria és aquesta?"
       },

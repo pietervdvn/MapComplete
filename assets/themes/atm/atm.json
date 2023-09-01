@@ -86,7 +86,8 @@
                   "de": "Diesen Geldautomaten importieren",
                   "zh_Hant": "匯入這座 ATM",
                   "nl": "Voeg deze ATM toe",
-                  "fr": "Importer ce distributeur de billets"
+                  "fr": "Importer ce distributeur de billets",
+                  "es": "Importar este ATM"
                 },
                 "icon": "./assets/svg/addSmall.svg"
               }
@@ -97,7 +98,8 @@
             "condition": "_has_closeby_feature=yes",
             "render": {
               "en": "OpenStreetMap knows about <a href='#{_closest_osm_poi}'>an ATM which is {_closest_osm_poi_distance} meter away.</a> ",
-              "de": "OpenStreetMap kennt <a href='#{_closest_osm_poi}'>einen Geldautomaten, der {_closest_osm_poi_distance} Meter entfernt ist.</a> "
+              "de": "OpenStreetMap kennt <a href='#{_closest_osm_poi}'>einen Geldautomaten, der {_closest_osm_poi_distance} Meter entfernt ist.</a> ",
+              "es": "OpenStreetMap sabe sobre <a href='#{_closest_osm_poi}'>un ATM que es {_closest_osm_poi_distance} de distancia.</a> "
             }
           },
           {
@@ -111,7 +113,8 @@
                 "message": {
                   "en": "Add all the suggested tags to the closest ATM",
                   "de": "Füge alle vorgeschlagenen Tags zum nächstgelegenen Geldautomaten hinzu",
-                  "fr": "Ajouter tous les attributs suggérés au distributeur de billets le plus proche"
+                  "fr": "Ajouter tous les attributs suggérés au distributeur de billets le plus proche",
+                  "es": "Añade todas las etiquetas sugieridas al ATM más cercano"
                 },
                 "image": "./assets/svg/addSmall.svg",
                 "maproulette_task_id": "mr_taskId"

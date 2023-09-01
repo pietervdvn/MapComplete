@@ -698,7 +698,7 @@
           "ifnot": "message=",
           "then": {
             "ca": "Informació sobre teatres, concerts, ...",
-            "es": "Información sobre teatros, conciertos, ...",
+            "es": "Información sobre teatros, conciertos, …",
             "en": "Information related to theatre, concerts, …",
             "de": "Informationen über Theater, Konzerte, …",
             "cs": "Informace týkající se divadla, koncertů, ...",
@@ -786,7 +786,7 @@
           "then": {
             "en": "A map",
             "ca": "un mapa",
-            "es": "un mapa",
+            "es": "Un mapa",
             "de": "eine Karte",
             "cs": "Mapa",
             "fr": "Une carte",
