@@ -3836,6 +3836,14 @@
     },
     "parking_spaces": {
         "tagRenderings": {
+            "capacity": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest espai d'aparcament té 1 plaça."
+                    }
+                },
+                "render": "Aquests espais d'aparcament tenen {capacity} places."
+            },
             "type": {
                 "mappings": {
                     "0": {

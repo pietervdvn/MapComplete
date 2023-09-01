@@ -327,7 +327,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             enumerable: false,
             configurable: true,
             get: () => {
-                console.trace("Property", name, "got requested")
                 init().then((r) => {
                     delete object[name]
                     object[name] = r

@@ -9,7 +9,8 @@
     "da": "Kikkert",
     "es": "Prismáticos",
     "fr": "Jumelles",
-    "pa_PK": "بائینوکولر"
+    "pa_PK": "بائینوکولر",
+    "cs": "Dalekohledy"
   },
   "minzoom": 0,
   "title": {
@@ -34,7 +35,8 @@
     "da": "Kikkerter",
     "es": "Prismáticos",
     "fr": "Jumelles",
-    "pa_PK": "بائینوکولر"
+    "pa_PK": "بائینوکولر",
+    "cs": "Dalekohledy"
   },
   "tagRenderings": [
     "images",
@@ -54,7 +56,8 @@
             "da": "Gratis at bruge",
             "es": "De uso gratuito",
             "fr": "En libre service",
-            "ca": "Debades"
+            "ca": "Debades",
+            "cs": "Použití zdarma"
           }
         }
       ],
@@ -80,7 +83,8 @@
         "es": "¿Cuánto hay que pagar para utilizar estos prismáticos?",
         "da": "Hvor meget koster det at bruge denne kikkert?",
         "fr": "Combien l’utilisation des ces jumelles coûte-t-elle ?",
-        "ca": "Quant s'ha de pagar per utilitzar aquests prismàtics?"
+        "ca": "Quant s'ha de pagar per utilitzar aquests prismàtics?",
+        "cs": "Kolik se platí za používání těchto dalekohledů?"
       },
       "id": "binocular-charge"
     },
@@ -123,7 +127,8 @@
         "ca": "uns prismàtics",
         "da": "en kikkert",
         "es": "unos prismáticos",
-        "fr": "des jumelles"
+        "fr": "des jumelles",
+        "cs": "dalekohled"
       },
       "description": {
         "en": "A telescope or pair of binoculars mounted on a pole, available to the public to look around. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
@@ -132,7 +137,8 @@
         "fr": "Une longue-vue ou une paire de jumelles montée sur un poteau, disponible au public pour scruter les environs. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
         "da": "Et teleskop eller en kikkert monteret på en stang, som offentligheden kan se sig omkring med. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
         "es": "Un telescopio o unos prismáticos montados en un poste, disponible para que el público mire alrededor. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
-        "ca": "Un telescopi o un parell de prismàtics muntats en un pal, a disposició del públic per mirar al seu voltant. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />"
+        "ca": "Un telescopi o un parell de prismàtics muntats en un pal, a disposició del públic per mirar al seu voltant. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
+        "cs": "Jednooký teleskop nebo dalekohled umístěný na stožáru, který je k dispozici veřejnosti k prohlídce. <img src='./assets/layers/binoculars/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />"
       }
     }
   ],

@@ -47,6 +47,9 @@
             "8": {
                 "description": "Een stuk groot, weerbestendig textiel met opgedrukte reclameboodschap die permanent aan de muur hangt",
                 "title": "een spandoek"
+            },
+            "12": {
+                "title": "een muurschildering"
             }
         },
         "tagRenderings": {
@@ -61,6 +64,12 @@
             },
             "message_type": {
                 "mappings": {
+                    "0": {
+                        "then": "Commerciële boodschap"
+                    },
+                    "1": {
+                        "then": "Lokale informatie"
+                    },
                     "4": {
                         "then": "Informatie over cultuurevenementen zoals theaters, optredens, …"
                     },
@@ -4305,7 +4314,7 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Nu geopened"
+                        "question": "Nu open"
                     }
                 }
             },
