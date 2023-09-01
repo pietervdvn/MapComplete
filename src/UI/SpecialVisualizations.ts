@@ -1250,7 +1250,7 @@ export default class SpecialVisualizations {
             },
             {
                 funcName: "link",
-                docs: "Construct a link. By using the 'special' visualisation notation, translation should be easier",
+                docs: "Construct a link. By using the 'special' visualisation notation, translations should be easier",
                 args: [
                     {
                         name: "text",

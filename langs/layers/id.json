@@ -341,7 +341,11 @@
                 "render": "<i>{inscription}</i>"
             },
             "ghost_bike-source": {
-                "render": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>"
+                "render": {
+                    "special": {
+                        "text": "Informasi lanjut tersedia"
+                    }
+                }
             }
         }
     },

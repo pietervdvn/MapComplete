@@ -3160,7 +3160,11 @@
             },
             "ghost_bike-source": {
                 "question": "En quina pàgina web es pot trobar més informació sobre la bicicleta blanca o l'accident?",
-                "render": "<a href='{source}' target='_blank'>Més informació disponible</a>"
+                "render": {
+                    "special": {
+                        "text": "Més informació disponible"
+                    }
+                }
             }
         },
         "title": {

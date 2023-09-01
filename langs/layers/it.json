@@ -1344,7 +1344,11 @@
             },
             "ghost_bike-source": {
                 "question": "In quale pagina web si possono trovare informazioni sulla bici fantasma o l’incidente?",
-                "render": "<a href='{source}' target='_blank'>Sono disponibili ulteriori informazioni</a>"
+                "render": {
+                    "special": {
+                        "text": "Sono disponibili ulteriori informazioni"
+                    }
+                }
             },
             "ghost_bike-start_date": {
                 "question": "Quando è stata installata questa bici fantasma?",
@@ -1759,7 +1763,11 @@
             },
             "public_bookcase-website": {
                 "question": "C'è un sito web con maggiori informazioni su questa microbiblioteca?",
-                "render": "Maggiori informazioni sul <a href='{website}' target='_blank'>sito web</a>"
+                "render": {
+                    "special": {
+                        "text": "Maggiori informazioni sul sito web"
+                    }
+                }
             }
         },
         "title": {

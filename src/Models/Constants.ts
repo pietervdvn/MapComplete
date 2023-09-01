@@ -1,13 +1,16 @@
-import { Utils } from "../Utils"
 import * as meta from "../../package.json"
+import { Utils } from "../Utils"
 
 export type PriviligedLayerType = (typeof Constants.priviliged_layers)[number]
 
 export default class Constants {
+    static {
+        console.log("Meta (package:json)", meta)
+    }
     public static vNumber = meta.version
 
     public static ImgurApiKey = meta.config.api_keys.imgur
-    public static readonly mapillary_client_token_v4 =meta.config.api_keys.mapillary_v4
+    public static readonly mapillary_client_token_v4 = meta.config.api_keys.mapillary_v4
 
     /**
      * API key for Maproulette

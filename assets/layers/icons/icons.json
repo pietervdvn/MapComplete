@@ -12,7 +12,7 @@
       "labels": [
         "defaults"
       ],
-      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
       "condition": {
         "or": [
           "wikipedia~*",
@@ -23,7 +23,7 @@
         {
           "#": "ignore-image-in-then",
           "if": "wikipedia=",
-          "then": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'><img src='./assets/svg/wikidata.svg' alt='WD'/></a>"
+          "then": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='WD'/></a>"
         }
       ]
     },
@@ -106,7 +106,7 @@
       "labels": [
         "defaults"
       ],
-      "render": "<a href='{website}' target='_blank'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>",
+      "render": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>",
       "condition": "website~*"
     },
     {
@@ -140,7 +140,7 @@
       "labels": [
         "defaults"
       ],
-      "render": "<a href='https://openstreetmap.org/{id}' target='_blank'><img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/></a>",
+      "render": "<a href='https://openstreetmap.org/{id}' target='_blank' rel='noopener'><img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/></a>",
       "mappings": [
         {
           "if": "id~.*/-.*",
@@ -149,7 +149,7 @@
         {
           "#": "ignore-image-in-then",
           "if": "_backend~*",
-          "then": "<a href='{_backend}/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>"
+          "then": "<a href='{_backend}/{id}' target='_blank' rel='noopener'><img src='./assets/svg/osm-logo-us.svg'/></a>"
         }
       ],
       "condition": "id~(node|way|relation)/[0-9]*"

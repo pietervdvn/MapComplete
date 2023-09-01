@@ -5171,7 +5171,11 @@
             },
             "ghost_bike-source": {
                 "question": "On what webpage can one find more info about the ghost bike or the accident?",
-                "render": "<a href='{source}' target='_blank'>More info available</a>"
+                "render": {
+                    "special": {
+                        "text": "More info available"
+                    }
+                }
             },
             "ghost_bike-start_date": {
                 "question": "When was this Ghost bike installed?",
@@ -7135,7 +7139,11 @@
             },
             "public_bookcase-website": {
                 "question": "Is there a website with more information about this public bookcase?",
-                "render": "More info on <a href='{website}' target='_blank'>the website</a>"
+                "render": {
+                    "special": {
+                        "text": "More info on the website"
+                    }
+                }
             }
         },
         "title": {

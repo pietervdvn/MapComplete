@@ -4851,7 +4851,11 @@
             },
             "ghost_bike-source": {
                 "question": "Op welke website kan men meer informatie vinden over de Witte fiets of over het ongeval?",
-                "render": "<a href='{source}' target='_blank'>Meer informatie</a>"
+                "render": {
+                    "special": {
+                        "text": "Meer informatie"
+                    }
+                }
             },
             "ghost_bike-start_date": {
                 "question": "Wanneer werd deze witte fiets geplaatst?",
@@ -6667,7 +6671,11 @@
             },
             "public_bookcase-website": {
                 "question": "Is er een website over dit boekenruilkastje?",
-                "render": "Meer info op <a href='{website}' target='_blank'>de website</a>"
+                "render": {
+                    "special": {
+                        "text": "Meer info op de website"
+                    }
+                }
             }
         },
         "title": {
