@@ -54,7 +54,8 @@
       "pt": "Reparo/loja de bicicletas",
       "ca": "Botiga/reparació de bicicletes",
       "da": "Cykelværksted/butik",
-      "es": "Taller/tienda de bicis"
+      "es": "Taller/tienda de bicis",
+      "cs": "Oprava kol/obchod"
     },
     "mappings": [
       {
@@ -165,7 +166,8 @@
           "pt": "Loja de bicicletas <i>{name}</i>",
           "es": "Tienda de bicis <i>{name}</i>",
           "da": "Cykelforretning <i>{name}</i>",
-          "ca": "Botiga de bicis <i>{name}</i>"
+          "ca": "Botiga de bicis <i>{name}</i>",
+          "cs": "Prodejna kol <i>{name}</i>"
         }
       },
       {
@@ -181,7 +183,8 @@
           "pt": "Loja/reparo de bicicletas <i>{name}</i>",
           "da": "Cykelværksted<i>{name}</i>",
           "es": "Taller/tienda de bicis <i>{name}</i>",
-          "ca": "Taller/botiga de bicis <i>{name}</i>"
+          "ca": "Taller/botiga de bicis <i>{name}</i>",
+          "cs": "Oprava kol/obchod <i>{name}</i>"
         }
       }
     ]

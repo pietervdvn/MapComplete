@@ -643,7 +643,8 @@
             "fr": "Message commercial",
             "pt": "Mensagem comercial",
             "pt_BR": "Mensagem comercial",
-            "he": "מסר מסחרי"
+            "he": "מסר מסחרי",
+            "nl": "Commerciële boodschap"
           }
         },
         {
@@ -657,7 +658,8 @@
             "cs": "Místní informace",
             "fr": "Informations locales",
             "pt": "Informação local",
-            "he": "מידע מקומי"
+            "he": "מידע מקומי",
+            "nl": "Lokale informatie"
           }
         },
         {
@@ -701,7 +703,7 @@
             "es": "Información sobre teatros, conciertos, …",
             "en": "Information related to theatre, concerts, …",
             "de": "Informationen über Theater, Konzerte, …",
-            "cs": "Informace týkající se divadla, koncertů, ...",
+            "cs": "Informace týkající se divadla, koncertů, …",
             "fr": "Informations liées au théâtre, à des concerts, …",
             "nl": "Informatie over cultuurevenementen zoals theaters, optredens, …",
             "pt": "Informações relacionadas com teatro, concertos, ...",
@@ -1312,7 +1314,8 @@
         "de": "eine Wandmalerei",
         "cs": "nástěnná malba",
         "fr": "une peinture murale",
-        "pt": "uma pintura de parede"
+        "pt": "uma pintura de parede",
+        "nl": "een muurschildering"
       },
       "exampleImages": [
         "./assets/themes/advertising/Capitol_wall.jpg",

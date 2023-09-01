@@ -1,6 +1,6 @@
-import BaseUIElement from "../BaseUIElement";
-import { Translation } from "../i18n/Translation";
-import Translations from "../i18n/Translations";
+import BaseUIElement from "../BaseUIElement"
+import { Translation } from "../i18n/Translation"
+import Translations from "../i18n/Translations"
 
 /**
  * A 'TextFieldValidator' contains various methods to check and cleanup an entered value or to give feedback.
@@ -16,13 +16,21 @@ export abstract class Validator {
     /**
      * What HTML-inputmode to use
      */
-    public readonly inputmode?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search'
+    public readonly inputmode?:
+        | "none"
+        | "text"
+        | "tel"
+        | "url"
+        | "email"
+        | "numeric"
+        | "decimal"
+        | "search"
     public readonly textArea: boolean
 
     constructor(
         name: string,
         explanation: string | BaseUIElement,
-        inputmode?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search',
+        inputmode?: "none" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | "search",
         textArea?: false | boolean
     ) {
         this.name = name

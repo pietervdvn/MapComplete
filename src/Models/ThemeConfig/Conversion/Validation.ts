@@ -1,22 +1,22 @@
-import {DesugaringStep, Each, Fuse, On} from "./Conversion"
-import {LayerConfigJson} from "../Json/LayerConfigJson"
+import { DesugaringStep, Each, Fuse, On } from "./Conversion"
+import { LayerConfigJson } from "../Json/LayerConfigJson"
 import LayerConfig from "../LayerConfig"
-import {Utils} from "../../../Utils"
+import { Utils } from "../../../Utils"
 import Constants from "../../Constants"
-import {Translation} from "../../../UI/i18n/Translation"
-import {LayoutConfigJson} from "../Json/LayoutConfigJson"
+import { Translation } from "../../../UI/i18n/Translation"
+import { LayoutConfigJson } from "../Json/LayoutConfigJson"
 import LayoutConfig from "../LayoutConfig"
-import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson"
-import {TagUtils} from "../../../Logic/Tags/TagUtils"
-import {ExtractImages} from "./FixImages"
-import {And} from "../../../Logic/Tags/And"
+import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
+import { TagUtils } from "../../../Logic/Tags/TagUtils"
+import { ExtractImages } from "./FixImages"
+import { And } from "../../../Logic/Tags/And"
 import Translations from "../../../UI/i18n/Translations"
 import Svg from "../../../Svg"
 import FilterConfigJson from "../Json/FilterConfigJson"
 import DeleteConfig from "../DeleteConfig"
-import {QuestionableTagRenderingConfigJson} from "../Json/QuestionableTagRenderingConfigJson"
+import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 import Validators from "../../../UI/InputElement/Validators"
-import TagRenderingConfig from "../TagRenderingConfig";
+import TagRenderingConfig from "../TagRenderingConfig"
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
     private readonly _languages: string[]
@@ -47,12 +47,12 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
                 .forEach((missing) => {
                     errors.push(
                         context +
-                        "A theme should be translation-complete for " +
-                        neededLanguage +
-                        ", but it lacks a translation for " +
-                        missing.context +
-                        ".\n\tThe known translation is " +
-                        missing.tr.textFor("en")
+                            "A theme should be translation-complete for " +
+                            neededLanguage +
+                            ", but it lacks a translation for " +
+                            missing.context +
+                            ".\n\tThe known translation is " +
+                            missing.tr.textFor("en")
                     )
                 })
         }
@@ -86,7 +86,7 @@ export class DoesImageExist extends DesugaringStep<string> {
         context: string
     ): { result: string; errors?: string[]; warnings?: string[]; information?: string[] } {
         if (this._ignore?.has(image)) {
-            return {result: image}
+            return { result: image }
         }
 
         const errors = []
@@ -94,22 +94,22 @@ export class DoesImageExist extends DesugaringStep<string> {
         const information = []
         if (image.indexOf("{") >= 0) {
             information.push("Ignoring image with { in the path: " + image)
-            return {result: image}
+            return { result: image }
         }
 
         if (image === "assets/SocialImage.png") {
-            return {result: image}
+            return { result: image }
         }
         if (image.match(/[a-z]*/)) {
             if (Svg.All[image + ".svg"] !== undefined) {
                 // This is a builtin img, e.g. 'checkmark' or 'crosshair'
-                return {result: image}
+                return { result: image }
             }
         }
 
         if (image.startsWith("<") && image.endsWith(">")) {
             // This is probably HTML, you're on your own here
-            return {result: image}
+            return { result: image }
         }
 
         if (!this._knownImagePaths.has(image)) {
@@ -178,15 +178,15 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 if (json["units"] !== undefined) {
                     errors.push(
                         "The theme " +
-                        json.id +
-                        " has units defined - these should be defined on the layer instead. (Hint: use overrideAll: { '+units': ... }) "
+                            json.id +
+                            " has units defined - these should be defined on the layer instead. (Hint: use overrideAll: { '+units': ... }) "
                     )
                 }
                 if (json["roamingRenderings"] !== undefined) {
                     errors.push(
                         "Theme " +
-                        json.id +
-                        " contains an old 'roamingRenderings'. Use an 'overrideAll' instead"
+                            json.id +
+                            " contains an old 'roamingRenderings'. Use an 'overrideAll' instead"
                     )
                 }
             }
@@ -198,10 +198,10 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
             for (const remoteImage of remoteImages) {
                 errors.push(
                     "Found a remote image: " +
-                    remoteImage +
-                    " in theme " +
-                    json.id +
-                    ", please download it."
+                        remoteImage +
+                        " in theme " +
+                        json.id +
+                        ", please download it."
                 )
             }
             for (const image of images) {
@@ -228,12 +228,12 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 if (theme.id !== filename) {
                     errors.push(
                         "Theme ids should be the same as the name.json, but we got id: " +
-                        theme.id +
-                        " and filename " +
-                        filename +
-                        " (" +
-                        this._path +
-                        ")"
+                            theme.id +
+                            " and filename " +
+                            filename +
+                            " (" +
+                            this._path +
+                            ")"
                     )
                 }
                 this._validateImage.convertJoin(
@@ -313,7 +313,7 @@ class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
     ): { result: LayoutConfigJson; errors?: string[]; warnings?: string[] } {
         const overrideAll = json.overrideAll
         if (overrideAll === undefined) {
-            return {result: json}
+            return { result: json }
         }
 
         const errors = []
@@ -340,7 +340,7 @@ class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
             }
         }
 
-        return {result: json, errors}
+        return { result: json, errors }
     }
 }
 
@@ -386,48 +386,57 @@ export class PrevalidateTheme extends Fuse<LayoutConfigJson> {
 
 export class DetectConflictingAddExtraTags extends DesugaringStep<TagRenderingConfigJson> {
     constructor() {
-        super("The `if`-part in a mapping might set some keys. Those key are not allowed to be set in the `addExtraTags`, as this might result in conflicting values", [], "DetectConflictingAddExtraTags");
+        super(
+            "The `if`-part in a mapping might set some keys. Those key are not allowed to be set in the `addExtraTags`, as this might result in conflicting values",
+            [],
+            "DetectConflictingAddExtraTags"
+        )
     }
 
-    convert(json: TagRenderingConfigJson, context: string): {
-        result: TagRenderingConfigJson;
-        errors?: string[];
-        warnings?: string[];
+    convert(
+        json: TagRenderingConfigJson,
+        context: string
+    ): {
+        result: TagRenderingConfigJson
+        errors?: string[]
+        warnings?: string[]
         information?: string[]
     } {
-
         if (!(json.mappings?.length > 0)) {
-            return {result: json}
+            return { result: json }
         }
 
         const tagRendering = new TagRenderingConfig(json)
 
         const errors = []
         for (let i = 0; i < tagRendering.mappings.length; i++) {
-            const mapping = tagRendering.mappings[i];
+            const mapping = tagRendering.mappings[i]
             if (!mapping.addExtraTags) {
                 continue
             }
             const keysInMapping = new Set(mapping.if.usedKeys())
 
-            const keysInAddExtraTags = mapping.addExtraTags.map(t => t.key)
+            const keysInAddExtraTags = mapping.addExtraTags.map((t) => t.key)
 
-            const duplicateKeys = keysInAddExtraTags.filter(k => keysInMapping.has(k))
+            const duplicateKeys = keysInAddExtraTags.filter((k) => keysInMapping.has(k))
             if (duplicateKeys.length > 0) {
                 errors.push(
-                    "At " + context + ".mappings[" + i + "]: AddExtraTags overrides a key that is set in the `if`-clause of this mapping. Selecting this answer might thus first set one value (needed to match as answer) and then override it with a different value, resulting in an unsaveable question. The offending `addExtraTags` is " + duplicateKeys.join(", ")
+                    "At " +
+                        context +
+                        ".mappings[" +
+                        i +
+                        "]: AddExtraTags overrides a key that is set in the `if`-clause of this mapping. Selecting this answer might thus first set one value (needed to match as answer) and then override it with a different value, resulting in an unsaveable question. The offending `addExtraTags` is " +
+                        duplicateKeys.join(", ")
                 )
             }
         }
 
-
         return {
             result: json,
-            errors
-        };
+            errors,
+        }
     }
 }
-
 
 export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJson> {
     private readonly _calculatedTagNames: string[]
@@ -495,7 +504,7 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
         const errors = []
         const warnings = []
         if (json.mappings === undefined || json.mappings.length === 0) {
-            return {result: json}
+            return { result: json }
         }
         const defaultProperties = {}
         for (const calculatedTagName of this._calculatedTagNames) {
@@ -521,7 +530,7 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
             }
             const keyValues = parsedConditions[i].asChange(defaultProperties)
             const properties = {}
-            keyValues.forEach(({k, v}) => {
+            keyValues.forEach(({ k, v }) => {
                 properties[k] = v
             })
             for (let j = 0; j < i; j++) {
@@ -538,10 +547,10 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
                     // The current mapping is shadowed!
                     errors.push(`At ${context}: Mapping ${i} is shadowed by mapping ${j} and will thus never be shown:
     The mapping ${parsedConditions[i].asHumanString(
-                        false,
-                        false,
-                        {}
-                    )} is fully matched by a previous mapping (namely ${j}), which matches:
+        false,
+        false,
+        {}
+    )} is fully matched by a previous mapping (namely ${j}), which matches:
     ${parsedConditions[j].asHumanString(false, false, {})}.
 
     To fix this problem, you can try to:
@@ -610,7 +619,7 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
         const warnings: string[] = []
         const information: string[] = []
         if (json.mappings === undefined || json.mappings.length === 0) {
-            return {result: json}
+            return { result: json }
         }
         const ignoreToken = "ignore-image-in-then"
         for (let i = 0; i < json.mappings.length; i++) {
@@ -672,17 +681,17 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
         if (json["special"] !== undefined) {
             errors.push(
                 "At " +
-                context +
-                ': detected `special` on the top level. Did you mean `{"render":{ "special": ... }}`'
+                    context +
+                    ': detected `special` on the top level. Did you mean `{"render":{ "special": ... }}`'
             )
         }
         if (json["group"]) {
             errors.push(
                 "At " +
-                context +
-                ': groups are deprecated, use `"label": ["' +
-                json["group"] +
-                '"]` instead'
+                    context +
+                    ': groups are deprecated, use `"label": ["' +
+                    json["group"] +
+                    '"]` instead'
             )
         }
         const freeformType = json["freeform"]?.["type"]
@@ -758,9 +767,9 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             if (!Constants.priviliged_layers.find((x) => x == json.id)) {
                 errors.push(
                     context +
-                    ": layer " +
-                    json.id +
-                    " uses 'special' as source.osmTags. However, this layer is not a priviliged layer"
+                        ": layer " +
+                        json.id +
+                        " uses 'special' as source.osmTags. However, this layer is not a priviliged layer"
                 )
             }
         }
@@ -769,13 +778,13 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             if (json.title === undefined && json.source !== "special:library") {
                 errors.push(
                     context +
-                    ": this layer does not have a title defined but it does have tagRenderings. Not having a title will disable the popups, resulting in an unclickable element. Please add a title. If not having a popup is intended and the tagrenderings need to be kept (e.g. in a library layer), set `title: null` to disable this error."
+                        ": this layer does not have a title defined but it does have tagRenderings. Not having a title will disable the popups, resulting in an unclickable element. Please add a title. If not having a popup is intended and the tagrenderings need to be kept (e.g. in a library layer), set `title: null` to disable this error."
                 )
             }
             if (json.title === null) {
                 information.push(
                     context +
-                    ": title is `null`. This results in an element that cannot be clicked - even though tagRenderings is set."
+                        ": title is `null`. This results in an element that cannot be clicked - even though tagRenderings is set."
                 )
             }
         }
@@ -802,9 +811,9 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 console.log(json.tagRenderings)
                 errors.push(
                     "At " +
-                    context +
-                    ": some tagrenderings have a duplicate id: " +
-                    duplicates.join(", ")
+                        context +
+                        ": some tagrenderings have a duplicate id: " +
+                        duplicates.join(", ")
                 )
             }
         }
@@ -822,8 +831,8 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 if (json["overpassTags"] !== undefined) {
                     errors.push(
                         "Layer " +
-                        json.id +
-                        'still uses the old \'overpassTags\'-format. Please use "source": {"osmTags": <tags>}\' instead of "overpassTags": <tags> (note: this isn\'t your fault, the custom theme generator still spits out the old format)'
+                            json.id +
+                            'still uses the old \'overpassTags\'-format. Please use "source": {"osmTags": <tags>}\' instead of "overpassTags": <tags> (note: this isn\'t your fault, the custom theme generator still spits out the old format)'
                     )
                 }
                 const forbiddenTopLevel = [
@@ -841,18 +850,18 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                     if (json[forbiddenKey] !== undefined)
                         errors.push(
                             context +
-                            ": layer " +
-                            json.id +
-                            " still has a forbidden key " +
-                            forbiddenKey
+                                ": layer " +
+                                json.id +
+                                " still has a forbidden key " +
+                                forbiddenKey
                         )
                 }
                 if (json["hideUnderlayingFeaturesMinPercentage"] !== undefined) {
                     errors.push(
                         context +
-                        ": layer " +
-                        json.id +
-                        " contains an old 'hideUnderlayingFeaturesMinPercentage'"
+                            ": layer " +
+                            json.id +
+                            " contains an old 'hideUnderlayingFeaturesMinPercentage'"
                     )
                 }
 
@@ -869,9 +878,9 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 if (this._path != undefined && this._path.indexOf(expected) < 0) {
                     errors.push(
                         "Layer is in an incorrect place. The path is " +
-                        this._path +
-                        ", but expected " +
-                        expected
+                            this._path +
+                            ", but expected " +
+                            expected
                     )
                 }
             }
@@ -913,7 +922,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             }
 
             if (json.filter) {
-                const r = new On("filter", new Each( new ValidateFilter())).convert(json, context)
+                const r = new On("filter", new Each(new ValidateFilter())).convert(json, context)
                 warnings.push(...(r.warnings ?? []))
                 errors.push(...(r.errors ?? []))
                 information.push(...(r.information ?? []))
@@ -940,9 +949,9 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 if (hasCondition?.length > 0) {
                     errors.push(
                         "At " +
-                        context +
-                        ":\n    One or more icons in the mapRenderings have a condition set. Don't do this, as this will result in an invisible but clickable element. Use extra filters in the source instead. The offending mapRenderings are:\n" +
-                        JSON.stringify(hasCondition, null, "  ")
+                            context +
+                            ":\n    One or more icons in the mapRenderings have a condition set. Don't do this, as this will result in an invisible but clickable element. Use extra filters in the source instead. The offending mapRenderings are:\n" +
+                            JSON.stringify(hasCondition, null, "  ")
                     )
                 }
             }
@@ -957,7 +966,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                     const preset = json.presets[i]
                     const tags: { k: string; v: string }[] = new And(
                         preset.tags.map((t) => TagUtils.Tag(t))
-                    ).asChange({id: "node/-1"})
+                    ).asChange({ id: "node/-1" })
                     const properties = {}
                     for (const tag of tags) {
                         properties[tag.k] = tag.v
@@ -966,12 +975,12 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                     if (!doMatch) {
                         errors.push(
                             context +
-                            ".presets[" +
-                            i +
-                            "]: This preset does not match the required tags of this layer. This implies that a newly added point will not show up.\n    A newly created point will have properties: " +
-                            JSON.stringify(properties) +
-                            "\n    The required tags are: " +
-                            baseTags.asHumanString(false, false, {})
+                                ".presets[" +
+                                i +
+                                "]: This preset does not match the required tags of this layer. This implies that a newly added point will not show up.\n    A newly created point will have properties: " +
+                                JSON.stringify(properties) +
+                                "\n    The required tags are: " +
+                                baseTags.asHumanString(false, false, {})
                         )
                     }
                 }
@@ -1005,11 +1014,10 @@ export class ValidateFilter extends DesugaringStep<FilterConfigJson> {
     } {
         if (typeof filter === "string") {
             // Calling another filter, we skip
-            return {result: filter}
+            return { result: filter }
         }
         const errors = []
         for (const option of filter.options) {
-
             for (let i = 0; i < option.fields?.length ?? 0; i++) {
                 const field = option.fields[i]
                 const type = field.type ?? "string"
@@ -1021,7 +1029,7 @@ export class ValidateFilter extends DesugaringStep<FilterConfigJson> {
                 }
             }
         }
-        return {result: filter, errors}
+        return { result: filter, errors }
     }
 }
 
@@ -1050,7 +1058,7 @@ export class DetectDuplicateFilters extends DesugaringStep<{
         const warnings: string[] = []
         const information: string[] = []
 
-        const {layers, themes} = json
+        const { layers, themes } = json
         const perOsmTag = new Map<
             string,
             {
@@ -1086,7 +1094,7 @@ export class DetectDuplicateFilters extends DesugaringStep<{
                 return
             }
             let msg = "Possible duplicate filter: " + key
-            for (const {filter, layer, layout} of value) {
+            for (const { filter, layer, layout } of value) {
                 let id = ""
                 if (layout !== undefined) {
                     id = layout.id + ":"

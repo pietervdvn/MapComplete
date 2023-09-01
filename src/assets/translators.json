@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 289,
+      "commits": 294,
       "contributor": "kjon"
     },
     {
@@ -9,15 +9,15 @@
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 142,
+      "commits": 145,
       "contributor": "paunofu"
     },
     {
-      "commits": 94,
+      "commits": 95,
       "contributor": "Allan Nordhøy"
     },
     {
-      "commits": 69,
+      "commits": 70,
       "contributor": "Robin van der Linde"
     },
     {
@@ -38,19 +38,19 @@
     },
     {
       "commits": 31,
+      "contributor": "Jiří Podhorecký"
+    },
+    {
+      "commits": 31,
       "contributor": "Supaplex"
     },
     {
-      "commits": 30,
-      "contributor": "Jiří Podhorecký"
+      "commits": 29,
+      "contributor": "Lucas"
     },
     {
       "commits": 29,
       "contributor": "Artem"
-    },
-    {
-      "commits": 25,
-      "contributor": "Lucas"
     },
     {
       "commits": 25,
@@ -151,6 +151,10 @@
     {
       "commits": 8,
       "contributor": "Vinicius"
+    },
+    {
+      "commits": 7,
+      "contributor": "NetworkedPoncho"
     },
     {
       "commits": 7,
@@ -335,6 +339,10 @@
     {
       "commits": 3,
       "contributor": "SiegbjornSitumeang"
+    },
+    {
+      "commits": 2,
+      "contributor": "מוימוי טרייצקי"
     },
     {
       "commits": 2,

@@ -35,16 +35,6 @@
             "1": {
                 "title": "volně stojící plakátovací skříň"
             },
-            "10": {
-                "description": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
-                "title": "cedule"
-            },
-            "11": {
-                "title": "socha"
-            },
-            "12": {
-                "title": "nástěnná malba"
-            },
             "2": {
                 "title": "plakátovací skříň připevněná na stěnu"
             },
@@ -71,6 +61,16 @@
             },
             "9": {
                 "title": "totem"
+            },
+            "10": {
+                "description": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
+                "title": "cedule"
+            },
+            "11": {
+                "title": "socha"
+            },
+            "12": {
+                "title": "nástěnná malba"
             }
         },
         "tagRenderings": {
@@ -165,9 +165,6 @@
                     "1": {
                         "then": "Toto je deska"
                     },
-                    "10": {
-                        "then": "Toto je nástěnná malba"
-                    },
                     "2": {
                         "then": "Toto je sloup"
                     },
@@ -191,6 +188,9 @@
                     },
                     "9": {
                         "then": "Toto je totem"
+                    },
+                    "10": {
+                        "then": "Toto je nástěnná malba"
                     }
                 },
                 "question": "O jaký typ reklamního prvku se jedná?",
@@ -204,9 +204,6 @@
                 },
                 "1": {
                     "then": "Deska"
-                },
-                "10": {
-                    "then": "Nástěnná malba"
                 },
                 "2": {
                     "then": "Skříň na plakáty"
@@ -231,6 +228,9 @@
                 },
                 "9": {
                     "then": "Totem"
+                },
+                "10": {
+                    "then": "Nástěnná malba"
                 }
             }
         }
@@ -312,15 +312,6 @@
                     "1": {
                         "then": "Nástěnná malba"
                     },
-                    "10": {
-                        "then": "Azulejo (španělské dekorativní dlaždice)"
-                    },
-                    "11": {
-                        "then": "Obklady a dlažba"
-                    },
-                    "12": {
-                        "then": "Dřevořezba"
-                    },
                     "2": {
                         "then": "Malba"
                     },
@@ -344,6 +335,15 @@
                     },
                     "9": {
                         "then": "Reliéf"
+                    },
+                    "10": {
+                        "then": "Azulejo (španělské dekorativní dlaždice)"
+                    },
+                    "11": {
+                        "then": "Obklady a dlažba"
+                    },
+                    "12": {
+                        "then": "Dřevořezba"
                     }
                 },
                 "question": "Jaký je typ tohoto uměleckého díla?",

@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 5849,
+      "commits": 5877,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -49,7 +49,7 @@
       "contributor": "Ward"
     },
     {
-      "commits": 21,
+      "commits": 22,
       "contributor": "Hosted Weblate"
     },
     {
@@ -231,6 +231,14 @@
     {
       "commits": 2,
       "contributor": "Stanislas Gueniffey"
+    },
+    {
+      "commits": 1,
+      "contributor": "Ciprian"
+    },
+    {
+      "commits": 1,
+      "contributor": "redfast00"
     },
     {
       "commits": 1,
