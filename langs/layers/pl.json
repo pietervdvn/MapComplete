@@ -79,7 +79,11 @@
             },
             "artwork-website": {
                 "question": "Gdzie znajdę więcej informacji na temat tego dzieła sztuki?",
-                "render": "Więcej informacji na <a href='{website}' target='_blank'>tej stronie</a>"
+                "render": {
+                    "special": {
+                        "text": "Więcej informacji na tej stronie"
+                    }
+                }
             }
         },
         "title": {

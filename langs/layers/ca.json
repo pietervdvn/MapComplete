@@ -351,7 +351,11 @@
             },
             "artwork-website": {
                 "question": "Hi ha un lloc web amb més informació sobre aquesta obra d'art?",
-                "render": "Més informació a <a href='{website}' target='_blank'>aquesta pàgina web</a>"
+                "render": {
+                    "special": {
+                        "text": "Més informació a aquesta pàgina web"
+                    }
+                }
             },
             "artwork_subject": {
                 "question": "Què representa aquesta obra d'art?",
@@ -3580,8 +3584,7 @@
             },
             "Email": {
                 "question": "A quina adreça de correu electrònic es pot enviar amb preguntes i problemes amb aquest parc natural?",
-                "questionHint": "Respecteu la privadesa: només ompliu una adreça de correu electrònic personal si es publica àmpliament",
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+                "questionHint": "Respecteu la privadesa: només ompliu una adreça de correu electrònic personal si es publica àmpliament"
             },
             "Name tag": {
                 "render": "Aquesta àrea s'anomena {name}"
@@ -5854,7 +5857,7 @@
             "verified-mastodon": {
                 "mappings": {
                     "0": {
-                        "then": "S'ha trobat un enllaç al vostre perfil de Mastodon: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                        "then": "S'ha trobat un enllaç al vostre perfil de Mastodon: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
                     }
                 }
             }

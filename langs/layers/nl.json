@@ -247,7 +247,11 @@
             },
             "artwork-website": {
                 "question": "Is er een website met meer informatie over dit kunstwerk?",
-                "render": "Meer informatie op <a href='{website}' target='_blank'>deze website</a>"
+                "render": {
+                    "special": {
+                        "text": "Meer informatie op deze website"
+                    }
+                }
             },
             "artwork_subject": {
                 "question": "Wat beeldt dit kunstwerk af?",
@@ -5682,8 +5686,7 @@
             },
             "Email": {
                 "question": "Waar kan men naartoe emailen voor vragen en meldingen van dit natuurgebied?",
-                "questionHint": "Respecteer privacy - geef enkel persoonlijke emailadressen als deze elders zijn gepubliceerd",
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+                "questionHint": "Respecteer privacy - geef enkel persoonlijke emailadressen als deze elders zijn gepubliceerd"
             },
             "Name tag": {
                 "mappings": {
@@ -8948,10 +8951,10 @@
             "verified-mastodon": {
                 "mappings": {
                     "0": {
-                        "then": "Een link naar je Mastodon-profiel werd gevonden: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                        "then": "Een link naar je Mastodon-profiel werd gevonden: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
                     },
                     "1": {
-                        "then": "Je profielbeschrijving bevat een link die vermoedelijk naar je Mastodon gaat, maar deze link is niet verifieerdbaar voor Mastodon.<a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Pas je profielbeschrijving aan</a> en plaats er de volgende code: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+                        "then": "Je profielbeschrijving bevat een link die vermoedelijk naar je Mastodon gaat, maar deze link is niet verifieerdbaar voor Mastodon.<a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Pas je profielbeschrijving aan</a> en plaats er de volgende code: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
                     }
                 }
             }

@@ -351,7 +351,11 @@
             },
             "artwork-website": {
                 "question": "Is there a website with more information about this artwork?",
-                "render": "More information on <a href='{website}' target='_blank'>this website</a>"
+                "render": {
+                    "special": {
+                        "text": "More information on this website"
+                    }
+                }
             },
             "artwork_subject": {
                 "question": "What does this artwork depict?",
@@ -6091,8 +6095,7 @@
             },
             "Email": {
                 "question": "What email adress can one send to with questions and problems with this nature reserve?",
-                "questionHint": "Respect privacy - only fill out a personal email address if this is widely published",
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+                "questionHint": "Respect privacy - only fill out a personal email address if this is widely published"
             },
             "Name tag": {
                 "mappings": {
@@ -9686,10 +9689,10 @@
             "verified-mastodon": {
                 "mappings": {
                     "0": {
-                        "then": "A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                        "then": "A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
                     },
                     "1": {
-                        "then": "We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Edit your profile description</a> and place the following there: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+                        "then": "We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Edit your profile description</a> and place the following there: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
                     }
                 }
             }

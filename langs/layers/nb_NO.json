@@ -101,7 +101,11 @@
             },
             "artwork-website": {
                 "question": "Finnes det en nettside med mer info om dette kunstverket?",
-                "render": "Mer info er å finne på <a href='{website}' target='_blank'>denne nettsiden</a>"
+                "render": {
+                    "special": {
+                        "text": "Mer info er å finne på denne nettsiden"
+                    }
+                }
             },
             "artwork_subject": {
                 "render": "Dette kunstverket viser {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"

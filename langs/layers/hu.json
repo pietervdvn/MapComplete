@@ -130,7 +130,11 @@
             },
             "artwork-website": {
                 "question": "Van-e olyan honlap, amely további információkat tartalmaz erről a műalkotásról?",
-                "render": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>"
+                "render": {
+                    "special": {
+                        "text": "További információ ezen a weboldalon"
+                    }
+                }
             }
         },
         "title": {
