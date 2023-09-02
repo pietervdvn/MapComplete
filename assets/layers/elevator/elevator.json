@@ -140,10 +140,25 @@
       }
     },
     "induction-loop",
+
+   {"id": "tactile_writing_available",
+    "question": {"en": "Has this elevator tactile writing?"},
+  
+      "mappings":[
+        {"if":"tactile_writing:braille=yes",
+        "then": {"en": "This elevator has tactile writing in Braille"}
+        },
+            {"if":"tactile_writing:braille=no",
+        "then": {"en": "This elevator does not have tactile writing"}
+        }
+      ]
+    }
+    
     {
       "id": "tactile_writing_language",
+      "condition": "tactile_writing:braille=yes",
       "render": {
-        "special": {
+        "special": e{
           "type": "language_chooser",
           "key": "tactile_writing:braille",
           "question": {
@@ -164,8 +179,22 @@
         }
       }
     },
+    {"id": "speech_output_available",
+    "question": {"en": "Has this elevator speech output?"},
+      "questionHint": {"en": "E.g. it announces the current floor"},
+      "mappings":[
+        {"if":"speech_output=yes",
+        "then": {"en": "This elevator has speech output"}
+        },
+            {"if":"speech_output=no",
+        "then": {"en": "This elevator does not have speech output"}
+        }
+      ]
+    }
+    
     {
       "id": "speech_output",
+      "condition": "speech_output=yes",
       "render": {
         "special": {
           "type": "language_chooser",
@@ -202,7 +231,8 @@
           "if": {
             "or": [
               "operational_status=broken",
-              "operational_status=closed"
+              "operat
+              ional_status=closed"
             ]
           },
           "then": "close:#c33"
@@ -235,7 +265,8 @@
       "defaultInput": "cm",
       "applicableUnits": [
         {
-          "canonicalDenomination": "m",
+          "canonicalDenomination": "m"
+            ,
           "alternativeDenomination": [
             "meter"
           ],
