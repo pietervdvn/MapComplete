@@ -44,14 +44,14 @@
         "reload": "Recarregar dados"
     },
     "flyer": {
-        "callToAction": "Teste em mapcomplete.osm.be",
+        "callToAction": "Teste em mapcomplete.org",
         "cyclofix": "Bombas de bicicleta, estações de reparação, água potável e lojas de bicicletas estão na CycloFix",
         "editing": {
             "ex": "Um exemplo simplificado de como isso se parece para uma reserva natural é mostrado abaixo.",
             "intro": "O usuário é recebido por um mapa com características. Ao selecionar um, as informações sobre esse recurso são mostradas.",
             "title": "Como é a interface?"
         },
-        "examples": "Existem muitos mapas temáticos disponíveis, alguns deles impressos aqui.\n\nExistem muitos outros mapas temáticos online: sobre cuidados de saúde, navegação interior, acessibilidade para cadeiras de rodas, instalações de resíduos, estantes públicas, passagens para peões com uma pintura de arco-íris,... Descubra todos eles em mapcomplete.osm.be",
+        "examples": "Existem muitos mapas temáticos disponíveis, alguns deles impressos aqui.\n\nExistem muitos outros mapas temáticos online: sobre cuidados de saúde, navegação interior, acessibilidade para cadeiras de rodas, instalações de resíduos, estantes públicas, passagens para peões com uma pintura de arco-íris,... Descubra todos eles em mapcomplete.org",
         "fakeui": {
             "add_images": "Adicione imagens com alguns cliques",
             "attributes": "Mostra atributos de forma amigável",
@@ -217,7 +217,7 @@
         "pdf": {
             "attr": "Dados do mapa © colaboradores do OpenStreetMap, reutilizáveis sob a licença ODbL",
             "attrBackground": "Camada de fundo: {background}",
-            "generatedWith": "Gerado com o MapComplete.osm.be/{layoutid}",
+            "generatedWith": "Gerado com o mapcomplete.org/{layoutid}",
             "versionInfo": "v {version} - gerado em {date}"
         },
         "pickLanguage": "Escolha um idioma: ",
@@ -242,21 +242,8 @@
             "searching": "A procurar…"
         },
         "sharescreen": {
-            "addToHomeScreen": "<h3>Adicionar ao seu ecrã inicial</h3> Pode adicionar facilmente este site ao ecrã inicial do seu telemóvel. Para isso clique no botão 'Adicionar ao ecrã inicial' na barra de URL.",
             "copiedToClipboard": "Hiperligação copiada para a área de transferência",
-            "downloadCustomTheme": "Descarregar a configuração para este tema",
-            "downloadCustomThemeHelp": "Um colaborador experiente pode utilizar este ficheiro para melhorar o seu tema",
-            "editThemeDescription": "Adicionar ou alterar perguntas deste tema",
-            "editThisTheme": "Editar este tema",
             "embedIntro": "<h3>Incorporar no seu site</h3>Por favor, insira este mapa no seu site. <br>Encorajamos a fazê-lo - nem precisa de pedir permissão. <br> É grátis e sempre será. Quanto mais pessoas estiverem a usar isto, mais valioso se torna.",
-            "fsAddNew": "Ativar o botão 'adicionar novo POI'",
-            "fsGeolocation": "Ativar o botão 'localizar-me geograficamente' (apenas telemóvel)",
-            "fsIncludeCurrentBackgroundMap": "Incluir a escolha de fundo atual <b>{name}</b>",
-            "fsIncludeCurrentLayers": "Incluir as opções de camada atuais",
-            "fsIncludeCurrentLocation": "Incluir localização atual",
-            "fsLayerControlToggle": "Começar com o controlo de camadas expandido",
-            "fsLayers": "Ativar o controlo das camadas",
-            "fsSearch": "Ativar a barra de pesquisa",
             "fsUserbadge": "Ativar o botão de iniciar sessão",
             "fsWelcomeMessage": "Mostrar a janela com a mensagem de boas-vindas e separadores associados",
             "intro": "<h3>Partilhar este mapa</h3> Partilhe este mapa copiando a hiperligação abaixo e enviando-a a amigos e familiares:",

@@ -3668,7 +3668,7 @@
         "ca": "<div style='display: inline-block'><b><b>USB</b>per a carregar telèfons i petits dispositius electrònics</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> com a màxim a {socket:USB-A:current}A",
         "da": "<div style='display: inline-block'><b><b>USB</b> til opladning af telefoner og småt elektronikudstyr</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> udsender højst {socket:USB-A:current}A",
         "de": "<div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> liefert maximal {socket:USB-A:current} A",
-        "es": "<div style='display: inline-block'><b><b>USB</b> para carga teléfonos y dispositivos electrónicos pequeños</b> <img style='width:1rem; display: inline-block' src='./assets/layers/changing_station/usb_port.svg'></div> salida de hasta {socket:USB-A:current}A"
+        "es": "<div style='display: inline-block'><b><b>USB</b> para carga teléfonos y dispositivos electrónicos pequeños</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> salida de hasta {socket:USB-A:current}A"
       },
       "freeform": {
         "key": "socket:USB-A:current",
@@ -4431,7 +4431,7 @@
         "nl": "Bij problemen, email naar <a href='mailto:{email}'>{email}</a>",
         "da": "I tilfælde af problemer kan du sende en e-mail til <a href='mailto:{email}'>{email}</a>",
         "de": "Bei Problemen senden Sie bitte eine E-Mail an <a href='mailto:{email}'>{email}</a>",
-        "es": "En caso de problemas, envía un correo electrónico a <a href=\"mailto:{email}'>{email}</a>"
+        "es": "En caso de problemas, envía un correo electrónico a <a href='mailto:{email}'>{email}</a>"
       },
       "freeform": {
         "key": "email",

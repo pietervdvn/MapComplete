@@ -153,7 +153,8 @@
       "render": {
         "en": "This parking spaces has {capacity} spaces.",
         "de": "Dieser Parkplatz hat {capacity} Stellplätze.",
-        "nl": "Deze parkeerplek heeft {capacity} plaatsen."
+        "nl": "Deze parkeerplek heeft {capacity} plaatsen.",
+        "ca": "Aquests espais d'aparcament tenen {capacity} places."
       },
       "mappings": [
         {
@@ -161,7 +162,8 @@
           "then": {
             "en": "This parking space has 1 space.",
             "de": "Dieser Parkplatz hat 1 Stellplatz.",
-            "nl": "Deze parkeerplek heeft 1 plaats."
+            "nl": "Deze parkeerplek heeft 1 plaats.",
+            "ca": "Aquest espai d'aparcament té 1 plaça."
           }
         }
       ]

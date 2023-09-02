@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/maproulette/logomark.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/layers/maproulette/logomark.svg' height="100px"> 
 
 Layer showing all tasks in MapRoulette
 
@@ -35,8 +35,8 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/status#values) [status](https://wiki.openstreetmap.org/wiki/Key:status) | Multiple choice | [0](https://wiki.openstreetmap.org/wiki/Tag:status%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:status%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:status%3D2) [3](https://wiki.openstreetmap.org/wiki/Tag:status%3D3) [4](https://wiki.openstreetmap.org/wiki/Tag:status%3D4) [5](https://wiki.openstreetmap.org/wiki/Tag:status%3D5) [6](https://wiki.openstreetmap.org/wiki/Tag:status%3D6) [9](https://wiki.openstreetmap.org/wiki/Tag:status%3D9)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/status#values) [status](https://wiki.openstreetmap.org/wiki/Key:status) | Multiple choice | [0](https://wiki.openstreetmap.org/wiki/Tag:status%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:status%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:status%3D2) [3](https://wiki.openstreetmap.org/wiki/Tag:status%3D3) [4](https://wiki.openstreetmap.org/wiki/Tag:status%3D4) [5](https://wiki.openstreetmap.org/wiki/Tag:status%3D5) [6](https://wiki.openstreetmap.org/wiki/Tag:status%3D6) [9](https://wiki.openstreetmap.org/wiki/Tag:status%3D9)
 
 
 

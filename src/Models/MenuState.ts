@@ -50,11 +50,15 @@ export class MenuState {
     )
     public highlightedUserSetting: UIEventSource<string> = new UIEventSource<string>(undefined)
 
-    constructor(themeid: string = "") {
+    constructor(shouldOpenWelcomeMessage: boolean, themeid: string = "") {
+        // Note: this class is _not_ responsible to update the Hash, @see ThemeViewStateHashActor for this
         if (themeid) {
             themeid += "-"
         }
-        this.themeIsOpened = LocalStorageSource.GetParsed(themeid + "thememenuisopened", true)
+        this.themeIsOpened = LocalStorageSource.GetParsed(
+            themeid + "thememenuisopened",
+            shouldOpenWelcomeMessage
+        )
         this.themeViewTabIndex = LocalStorageSource.GetParsed(themeid + "themeviewtabindex", 0)
         this.themeViewTab = this.themeViewTabIndex.sync(
             (i) => MenuState._themeviewTabs[i],

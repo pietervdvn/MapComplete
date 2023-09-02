@@ -43,7 +43,7 @@
     "_first_user:=get(feat)('comments')[0].user",
     "_last_user:=(() => {const comms = get(feat)('comments'); return comms[comms.length - 1].user})()",
     "_first_user_id:=get(feat)('comments')[0].uid",
-    "_is_import_note:=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.osm.be/\\([a-zA-Z_-]+\\)\\(.html\\).*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()"
+    "_is_import_note:=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(osm.be|org\\)/\\([a-zA-Z_-]+\\)\\(.html\\).*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()"
   ],
   "titleIcons": [
     {

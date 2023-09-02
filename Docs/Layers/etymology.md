@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/pin:#05d7fcaa' height="100px"> 
+<img src='https://mapcomplete.org/pin:#05d7fcaa' height="100px"> 
 
 All objects which have an etymology known
 
@@ -25,8 +25,8 @@ All objects which have an etymology known
 
 
 
-  - [etymology](https://mapcomplete.osm.be/etymology)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [etymology](https://mapcomplete.org/etymology)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,9 +46,9 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name:etymology:wikidata#values) [name:etymology:wikidata](https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name:etymology#values) [name:etymology](https://wiki.openstreetmap.org/wiki/Key:name:etymology) | [string](../SpecialInputElements.md#string) | [unknown](https://wiki.openstreetmap.org/wiki/Tag:name:etymology%3Dunknown)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name:etymology:wikidata#values) [name:etymology:wikidata](https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name:etymology#values) [name:etymology](https://wiki.openstreetmap.org/wiki/Key:name:etymology) | [string](../SpecialInputElements.md#string) | [unknown](https://wiki.openstreetmap.org/wiki/Tag:name:etymology%3Dunknown)
 
 
 

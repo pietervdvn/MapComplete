@@ -1,7 +1,7 @@
 [
   {
     "path": "Cycle_barrier_double.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -9,7 +9,7 @@
   },
   {
     "path": "Cycle_barrier_double_length.png",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -17,7 +17,7 @@
   },
   {
     "path": "Cycle_barrier_double_length.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -25,7 +25,7 @@
   },
   {
     "path": "Cycle_barrier_double_overlap.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -33,7 +33,7 @@
   },
   {
     "path": "Cycle_barrier_double_template.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -41,7 +41,7 @@
   },
   {
     "path": "Cycle_barrier_double_width.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],
@@ -49,7 +49,7 @@
   },
   {
     "path": "Cycle_barrier_single.png",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Supaplex030"
     ],
@@ -59,7 +59,7 @@
   },
   {
     "path": "Cycle_barrier_squeeze.png",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Supaplex030"
     ],
@@ -69,7 +69,7 @@
   },
   {
     "path": "Cycle_barrier_triple.png",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Supaplex030"
     ],
@@ -79,7 +79,7 @@
   },
   {
     "path": "bicycleway.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick"
     ],
@@ -89,7 +89,7 @@
   },
   {
     "path": "cycle-infra.svg",
-    "license": "CC-BY",
+    "license": "CC-BY-4.0",
     "authors": [
       "Dávid Gladiš",
       "Hannah Declerck"
@@ -100,7 +100,7 @@
   },
   {
     "path": "street.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Tobias Zwick"
     ],

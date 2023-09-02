@@ -47,7 +47,7 @@
     },
     "flyer": {
         "aerial": "Tato mapa používá jiné pozadí, konkrétně letecké snímky od Agency Information Flanders",
-        "callToAction": "Vyzkoušet na mapcomplete.osm.be",
+        "callToAction": "Vyzkoušet na mapcomplete.org",
         "cyclofix": "Cyklistické pumpy, opravárenské stanice, prodejny pitné vody a cykloprodejny jsou na CycloFix",
         "description": "Leták formátu A4 na propagaci MapComplete",
         "editing": {
@@ -55,7 +55,7 @@
             "intro": "Uživatele přivítá mapa s prvky. Po výběru jednoho z nich se zobrazí informace o daném prvku.",
             "title": "Jak vypadá uživatelské rozhraní?"
         },
-        "examples": "K dispozici je mnoho tematických map, z nichž některé jsou zde otištěny.\n\nNa internetu je k dispozici mnoho dalších tematických map: o zdravotnictví, navigaci v interiéru, bezbariérovosti, odpadových zařízeních, veřejných knihovnách, přechodech pro chodce s duhovým nátěrem,... Objevte je všechny na mapcomplete.osm.be",
+        "examples": "K dispozici je mnoho tematických map, z nichž některé jsou zde otištěny.\n\nNa internetu je k dispozici mnoho dalších tematických map: o zdravotnictví, navigaci v interiéru, bezbariérovosti, odpadových zařízeních, veřejných knihovnách, přechodech pro chodce s duhovým nátěrem,... Objevte je všechny na mapcomplete.org",
         "fakeui": {
             "add_images": "Přidání obrázků několika kliknutími",
             "attributes": "Zobrazuje atributy přátelským způsobem",
@@ -82,7 +82,7 @@
         "onwheels": "K dispozici jsou také vnitřní mapy pro vozíčkáře.",
         "osm": "OpenStreetMap je online mapa, kterou může kdokoli upravovat a znovu používat k jakémukoli účelu, pokud uvede autora a data zůstanou otevřená.\n\nJedná se o největší geoprostorovou databázi na světě, kterou opakovaně využívají tisíce aplikací a webových stránek.",
         "tagline": "Shromažďování geodat pomocí OpenStreetMap",
-        "title": "MapComplete.osm.be",
+        "title": "mapcomplete.org",
         "toerisme_vlaanderen": "Pro společný projekt s Visit Flanders byl vytvořen projekt \"Pin your point\". Více než 160 přispěvatelů přidalo několik tisíc laviček a piknikových stolů a objevilo 100 nabíjecích stanic pro kola.",
         "whatIsOsm": "Co je OpenStreetMap?"
     },
@@ -237,7 +237,7 @@
         "pdf": {
             "attr": "Mapová data © OpenStreetMap Contributors, opakovaně použitelná pod ODbL",
             "attrBackground": "Vrstva pozadí: {background}",
-            "generatedWith": "Generováno pomocí MapComplete.osm.be/{layoutid}",
+            "generatedWith": "Generováno pomocí mapcomplete.org/{layoutid}",
             "versionInfo": "v{version} - vygenerováno {date}"
         },
         "pickLanguage": "Vyberte si jazyk: ",
@@ -262,21 +262,8 @@
             "searching": "Hledání…"
         },
         "sharescreen": {
-            "addToHomeScreen": "<h3>Přidejte stránku na domovskou obrazovku</h3>Tuto webovou stránku můžete snadno přidat na domovskou obrazovku vašeho smartphonu, aby působila nativně. Klikněte na tlačítko „Přidat na domovskou obrazovku“ na panelu s adresou URL.",
             "copiedToClipboard": "Odkaz zkopírovaný do schránky",
-            "downloadCustomTheme": "Stáhnout konfiguraci tohoto tématu",
-            "downloadCustomThemeHelp": "Zkušený přispěvatel může tento soubor použít k vylepšení vašeho tématu",
-            "editThemeDescription": "Přidejte nebo změňte otázky k tomuto tématu mapy",
-            "editThisTheme": "Upravit toto téma",
             "embedIntro": "<h3>Vložte mapu na své webové stránky</h3>Prosíme, vložte tuto mapu na své webové stránky. <br/>Doporučujeme vám to udělat - nemusíte ani žádat o povolení. <br/> Je a vždy to bude zdarma. Čím více lidí bude projekt používat, tím bude cennější.",
-            "fsAddNew": "Povolit tlačítko „přidat nový bod zájmu“",
-            "fsGeolocation": "Povolit tlačítko „geolokovat mě“ (pouze pro mobilní zařízení)",
-            "fsIncludeCurrentBackgroundMap": "Zahrnout aktuální volbu pozadí <b>{name}</b>",
-            "fsIncludeCurrentLayers": "Zahrnout aktuální volby vrstvy",
-            "fsIncludeCurrentLocation": "Zahrnout aktuální polohu",
-            "fsLayerControlToggle": "Začněte s rozšířeným ovládáním vrstvy",
-            "fsLayers": "Povolit ovládání vrstev",
-            "fsSearch": "Povolit vyhledávací pole",
             "fsUserbadge": "Povolit tlačítko přihlášení",
             "fsWelcomeMessage": "Zobrazit vyskakovací okno s uvítací zprávou a související karty",
             "intro": "<h3>Sdílejte tuto mapu</h3> Sdílejte tuto mapu zkopírováním níže uvedeného odkazu a jeho zasláním přátelům a rodině:",

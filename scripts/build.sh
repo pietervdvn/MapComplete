@@ -28,22 +28,22 @@ BRANCH=`git rev-parse --abbrev-ref HEAD`
 echo "The branch name is $BRANCH"
 if [ $BRANCH = "develop" ]
 then
-    SRC_MAPS="--sourcemap"
-    echo "Source maps are enabled"
+    # SRC_MAPS="--sourcemap"
+    echo "Source maps are NOT enabled as they consume to much RAM"
 fi
 
-if [ $BRANCH = "master" ]
+if [ $BRANCH = "master" ] || [ $BRANCH = "develop" ]
 then
     ASSET_URL="./"
     export ASSET_URL
     echo "$ASSET_URL"
 else
-  ASSET_URL="mc/$BRANCH"
+  ASSET_URL="$BRANCH"
   export ASSET_URL
   echo "$ASSET_URL"
 fi
 
-export NODE_OPTIONS=--max-old-space-size=6500
+export NODE_OPTIONS=--max-old-space-size=7000
 vite build $SRC_MAPS 
 
 

@@ -2,18 +2,40 @@
     "advertising": {
         "description": "Vous êtes-vous déjà demandé combien de publicité il y a dans nos rue ou sur nos routes ? Avec cette carte vous pouvez trouver et ajouter des informations sur tous les dispositifs publicitaires que vous pouvez trouver dans la rue",
         "shortDescription": "Où puis-je trouver des dispositifs publicitaires ?",
-        "title": "Open Advertising Map"
+        "title": "Publicité"
     },
     "aed": {
         "description": "Sur cette carte, vous pouvez trouver et améliorer les informations sur les défibrillateurs",
-        "title": "Carte des défibrillateurs (DAE)"
+        "title": "Défibrillateurs"
     },
     "artwork": {
         "description": "Une carte ouverte de statues, bustes, graffitis et autres œuvres d'art de par le monde",
-        "title": "Carte ouverte des œuvres d'art"
+        "title": "Œuvres d'art"
     },
     "atm": {
         "description": "Cette carte montre les DABs pour retirer ou déposer de l'argent",
+        "layers": {
+            "3": {
+                "override": {
+                    "=tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importer ce distributeur de billets"
+                                }
+                            }
+                        },
+                        "2": {
+                            "render": {
+                                "special": {
+                                    "message": "Ajouter tous les attributs suggérés au distributeur de billets le plus proche"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "title": "Distributeurs DAB"
     },
     "bag": {
@@ -67,7 +89,7 @@
         "title": "Facilitateur d'import BAG"
     },
     "benches": {
-        "description": "Cette carte affiche les bancs cartographiés dans OpenStreetMap, entre autres : bancs des transports en commun, bancs publics, etc. À l'aide de votre compte OpenStreetMap, vous pourrez ajouter de nouveaux bancs ou modifier les bancs existants.",
+        "description": "Cette carte affiche les bancs cartographiés dans OpenStreetMap, entre autres : bancs des transports en commun, bancs publics, etc.",
         "shortDescription": "Carte des bancs",
         "title": "Bancs"
     },
@@ -90,15 +112,15 @@
         "title": "OSM pour les malvoyants"
     },
     "bookcases": {
-        "description": "Une microbibliothèques, également appelée boite à livre, est un élément de mobilier urbain (étagère, armoire, etc) dans lequel sont stockés des livres et autres objets en accès libre. Découvrez les boites à livres prêt de chez vous, ou ajouter en une nouvelle à l'aide de votre compte OpenStreetMap.",
-        "title": "Carte des microbibliothèques"
+        "description": "Une microbibliothèque, également appelée boîte à livre, est un élément de mobilier urbain (étagère, armoire, etc.) dans lequel sont stockés des livres et autres objets en accès libre.",
+        "title": "Microbibliothèques"
     },
     "cafes_and_pubs": {
         "description": "Bars et pubs",
         "title": "Cafés et pubs"
     },
     "campersite": {
-        "description": "Ce site collecte les zones de camping officielles ainsi que les aires de vidange. Il est possible d’ajouter des détails à propos des services proposés ainsi que leurs coûts. Ajoutez vos images et avis. C’est un site et une application. Les données sont stockées sur OpenStreetMap, elles seront toujours gratuites et peuvent être réutilisées par n’importe quelle application.",
+        "description": "Ce site collecte les zones de camping officielles ainsi que les aires de vidange. Il est possible d’ajouter des détails à propos des services proposés ainsi que leurs coûts. Ajoutez vos images et avis.",
         "layers": {
             "0": {
                 "description": "campings",
@@ -383,9 +405,48 @@
                         }
                     }
                 }
+            },
+            "1": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Ce commerce répare les chaussures d'escalade"
+                                },
+                                "1": {
+                                    "then": "Ce commerce ne répare pas les chaussures d'escalade"
+                                }
+                            },
+                            "question": "Est-ce que cette cordonnerie répare les chaussons d'escalade ?"
+                        }
+                    }
+                }
+            },
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Ce commerce répare les chaussons d'escalade"
+                                },
+                                "1": {
+                                    "then": "Ce commerce ne répare pas les chaussons d'escalade"
+                                }
+                            },
+                            "question": "Est-ce que cette cordonnerie répare les chaussons d'escalade ?"
+                        }
+                    },
+                    "=presets": {
+                        "0": {
+                            "title": "une cordonnerie"
+                        }
+                    }
+                }
             }
         },
-        "title": "Open Climbing Map"
+        "title": "Escalade : gymnases, clubs et spots"
     },
     "clock": {
         "description": "Carte affichant toutes les horloges publiques",
@@ -533,7 +594,7 @@
     },
     "cyclofix": {
         "description": "Le but de cette carte est de présenter aux cyclistes une solution facile à utiliser pour trouver l'infrastructure appropriée à leurs besoins.<br><br>Vous pouvez suivre votre localisation précise (mobile uniquement) et sélectionner les couches qui vous concernent dans le coin inférieur gauche. Vous pouvez également utiliser cet outil pour ajouter ou modifier des épingles (points d'intérêt) sur la carte et fournir plus de données en répondant aux questions.<br><br>Toutes les modifications que vous apportez seront automatiquement enregistrées dans la base de données mondiale d'OpenStreetMap et peuvent être librement réutilisées par d'autres.<br><br>Pour plus d'informations sur le projet cyclofix, rendez-vous sur <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-        "title": "Cyclofix - Une carte ouverte pour les cyclistes"
+        "title": "Cyclofix - une carte pour les cyclistes"
     },
     "drinking_water": {
         "description": "Cette carte affiche les points d'accès public à de l'eau potable et permet d'en ajouter facilement",
@@ -583,7 +644,7 @@
             }
         },
         "shortDescription": "Quelle est l'origine de ce toponyme ?",
-        "title": "Open Etymology Map"
+        "title": "Étymologie - d'où les rues tirent leur nom ?"
     },
     "facadegardens": {
         "description": "Les <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>jardins muraux</a> en ville n’apportent pas seulement paix et tranquillité mais contribuent à embellir la ville, favoriser la biodiversité, régule la température et assainit l’air. <br/> Klimaan VZW et Mechelen Klimaatneutraal veulent cartographier les jardins muraux comme exemple pour les personnes souhaitant en construire ainsi que celles aimant la nature.<br/>Plus d’infos sur <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -731,10 +792,10 @@
     "hackerspaces": {
         "description": "Retrouvez, renseignez ou modifiez des ateliers numériques ouverts",
         "shortDescription": "Une carte des ateliers numériques ouverts",
-        "title": "Ateliers numériques ouvertS"
+        "title": "Ateliers numériques ouverts"
     },
     "hailhydrant": {
-        "description": "Sur cette carte on trouve et met à jour les bornes incendies, extincteurs, casernes de pompiers et ambulanciers dans son quartier.\n\nLes options en haut à gauche permettent de localiser sa position (sur téléphone) et de filtrer les éléments. Il est possible d’utiliser cet outil pour ajouter et éditer les points d’intérêt de la carte et d’y ajouter des détails en répondant aux questions.\n\nToutes les modifications sont automatiquement enregistrées dans la base de données OpenStreetMap et peuvent êtres librement réutilisées par d’autres.",
+        "description": "Sur cette carte on trouve et met à jour les bornes incendies, extincteurs, casernes de pompiers et ambulanciers dans son quartier.",
         "shortDescription": "Carte indiquant les bornes incendies, extincteurs, casernes de pompiers et ambulanciers.",
         "title": "Bornes incendies, extincteurs, casernes de pompiers et ambulanciers"
     },
@@ -744,6 +805,12 @@
             "5": {
                 "override": {
                     "=presets": {
+                        "0": {
+                            "title": "un commerce d'équipements médicaux"
+                        },
+                        "1": {
+                            "title": "un magasin d'appareils auditifs"
+                        },
                         "2": {
                             "title": "un opticien"
                         }
@@ -763,7 +830,78 @@
     },
     "kerbs_and_crossings": {
         "description": "Une carte affichant les ressauts et traversées.",
+        "layers": {
+            "1": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "description": "Traversée pour piétons et/ou cyclistes",
+                            "title": "une traversée"
+                        }
+                    }
+                }
+            }
+        },
         "title": "Ressauts et traversées"
+    },
+    "mapcomplete-changes": {
+        "description": "Cette carte montre tous les changements faits avec MapComplete",
+        "layers": {
+            "0": {
+                "filter": {
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Langage utilisateur (code-ISO) {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Le groupe de modifications a ajouté au moins une image"
+                            }
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "contributor": {
+                        "question": "Quel contributeur a fait cette modification ?",
+                        "render": "Modification faite par <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "host": {
+                        "render": "Modification faite avec <a href='{host}'>{host}</a>"
+                    },
+                    "locale": {
+                        "question": "En quelle langue est-ce que ce changement a été fait ?"
+                    },
+                    "show_changeset_id": {
+                        "render": "Groupe de modifications <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme-id": {
+                        "question": "Quel thème a été utilisé pour faire cette modification ?",
+                        "render": "Modifié avec le thème <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    },
+                    "version": {
+                        "question": "Quelle version de MapComplete a été utilisée pour faire cette modification ?",
+                        "render": "Fait avec {editor}"
+                    }
+                },
+                "title": {
+                    "render": "Groupe de modifications pour {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "render": "D'autres statistiques sont disponibles <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>ici</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Changements faits avec MapComplete"
     },
     "maproulette": {
         "description": "Thème MapRoulette permettant d’afficher, rechercher, filtrer et résoudre les tâches.",
@@ -780,7 +918,7 @@
         "title": "Vitesse maximale"
     },
     "nature": {
-        "description": "Retrouvez sur cette carte des informations pour les touristes et les amoureux de la nature, telles que ",
+        "description": "Retrouvez sur cette carte des informations pour les touristes et les amoureux de la nature.",
         "shortDescription": "Une carte pour les amoureux de la nature",
         "title": "Dans la nature"
     },
@@ -871,7 +1009,7 @@
     },
     "openwindpowermap": {
         "description": "Une carte indiquant les éoliennes et permettant leur édition.",
-        "title": "OpenWindPowerMap"
+        "title": "Générateurs d'énergie éolienne"
     },
     "osm_community_index": {
         "description": "Une liste de ressources pour les utilisateurs d'OpenStreetMap. Les \"ressources\" peuvent être des liens vers des forums, des rencontres, des groupes Slack, des canaux IRC, des listes de diffusion, etc. Tout ce que les cartographes, en particulier les débutants, peuvent trouver intéressant ou utile.",
@@ -946,9 +1084,9 @@
         "title": "Codes postaux"
     },
     "postboxes": {
-        "description": "Trouvez et ajoutez des bureaux de poste et boîtes à lettres sur cette carte. Utilisez cette carte où vous pouvez envoyer vos cartes postales ! :)<br/>Vous avez trouvez une erreur ou une boîte à lettres est manquante ? Vous pouvez modifier cette carte avec un compte OpenStreetMap gratuit. ",
+        "description": "Trouvez et ajoutez des bureaux de poste et boîtes à lettres sur cette carte. Utilisez cette carte où vous pouvez envoyer vos cartes postales ! :)<br/>Vous avez trouvez une erreur ou une boîte à lettres est manquante ? Vous pouvez modifier cette carte avec un compte OpenStreetMap gratuit.",
         "shortDescription": "Une carte des bureaux de poste et des boîtes à lettres",
-        "title": "Carte des Bureaux de Poste et Boîtes à Lettres"
+        "title": "Carte des bureaux de poste et boîtes à lettres"
     },
     "rainbow_crossings": {
         "description": "Cette carte affiche et permet la modification des passages cloutés peints aux couleurs de l’arc-en-ciel",
@@ -957,7 +1095,7 @@
     "shops": {
         "description": "Sur cette carte, vous pouvez ajouter des informations sur les magasins, leurs horaires d'ouverture et leurs numéros de téléphone",
         "shortDescription": "Carte modifiable affichant les informations de base des magasins",
-        "title": "Carte des magasins"
+        "title": "Commerces"
     },
     "sidewalks": {
         "description": "Thème expérimental",
@@ -1006,12 +1144,14 @@
         "title": "Terrains de sport"
     },
     "sports": {
+        "description": "Tout sur les sports, trouver les terrains de sport, les salles de sport et plus encore.",
         "layers": {
             "4": {
                 "override": {
                     "presets": {
                         "0": {
-                            "description": "Ajouter un nouveau commerce vendant des équipements sportifs."
+                            "description": "Ajouter un nouveau commerce vendant des équipements sportifs.",
+                            "title": "une boutique de sport"
                         }
                     }
                 }
@@ -1047,6 +1187,9 @@
                             },
                             "2": {
                                 "then": "Tableau des départs papier"
+                            },
+                            "3": {
+                                "then": "Il y a un panneau indiquant la fréquence des trains"
                             }
                         },
                         "question": "De quel type de panneau de départs s'agit-il ?"
@@ -1113,7 +1256,7 @@
                 }
             }
         },
-        "title": "Éclairage de Rue"
+        "title": "Éclairage de rue"
     },
     "surveillance": {
         "description": "Cette carte indique l’emplacement des caméras de surveillance.",
@@ -1122,7 +1265,7 @@
     },
     "toilets": {
         "description": "Carte affichant les WC et toilettes publiques",
-        "title": "Carte des WC et toilettes publiques"
+        "title": "Toilettes publiques"
     },
     "transit": {
         "description": "Planifier votre itinéraire avec le système de transports en commun.",
@@ -1132,6 +1275,10 @@
         "description": "Cartographions tous les arbres !",
         "shortDescription": "Cartographions tous les arbres",
         "title": "Arbres"
+    },
+    "vending_machine": {
+        "description": "Trouver tous les distributeurs",
+        "title": "Distributeurs"
     },
     "walls_and_buildings": {
         "description": "Couche intégrée spéciale fournissant tous les murs et bâtiments. Cette couche est utile dans les préréglages pour les objets qui peuvent être placés contre les murs (par exemple, les DEA, les boîtes aux lettres, les entrées, les adresses, les caméras de surveillance, …). Ce calque est invisible par défaut et non inchangeable par l'utilisateur.",

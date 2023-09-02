@@ -1,23 +1,23 @@
 {
   "contributors": [
     {
-      "commits": 283,
+      "commits": 294,
       "contributor": "kjon"
     },
     {
-      "commits": 275,
+      "commits": 277,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 142,
+      "commits": 145,
       "contributor": "paunofu"
     },
     {
-      "commits": 94,
+      "commits": 95,
       "contributor": "Allan Nordhøy"
     },
     {
-      "commits": 69,
+      "commits": 70,
       "contributor": "Robin van der Linde"
     },
     {
@@ -38,11 +38,15 @@
     },
     {
       "commits": 31,
+      "contributor": "Jiří Podhorecký"
+    },
+    {
+      "commits": 31,
       "contributor": "Supaplex"
     },
     {
-      "commits": 30,
-      "contributor": "Jiří Podhorecký"
+      "commits": 29,
+      "contributor": "Lucas"
     },
     {
       "commits": 29,
@@ -51,10 +55,6 @@
     {
       "commits": 25,
       "contributor": "Reza Almanda"
-    },
-    {
-      "commits": 23,
-      "contributor": "Lucas"
     },
     {
       "commits": 22,
@@ -126,6 +126,10 @@
     },
     {
       "commits": 9,
+      "contributor": "deep map"
+    },
+    {
+      "commits": 9,
       "contributor": "Jaime Marquínez Ferrándiz"
     },
     {
@@ -147,6 +151,10 @@
     {
       "commits": 8,
       "contributor": "Vinicius"
+    },
+    {
+      "commits": 7,
+      "contributor": "NetworkedPoncho"
     },
     {
       "commits": 7,
@@ -246,6 +254,10 @@
     },
     {
       "commits": 4,
+      "contributor": "Emory Shaw"
+    },
+    {
+      "commits": 4,
       "contributor": "André Marcelo Alvarenga"
     },
     {
@@ -330,7 +342,7 @@
     },
     {
       "commits": 2,
-      "contributor": "Emory Shaw"
+      "contributor": "מוימוי טרייצקי"
     },
     {
       "commits": 2,
@@ -439,10 +451,6 @@
     {
       "commits": 1,
       "contributor": "Stéphane De Greef"
-    },
-    {
-      "commits": 1,
-      "contributor": "deep map"
     },
     {
       "commits": 1,

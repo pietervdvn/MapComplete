@@ -1,7 +1,7 @@
 [
   {
     "path": "Vegetarian-mark.svg",
-    "license": "PD",
+    "license": "LOGO",
     "authors": [
       "European Vegetarian Union"
     ],
@@ -11,7 +11,7 @@
   },
   {
     "path": "fastfood.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OSM Carto"
     ],
@@ -21,7 +21,7 @@
   },
   {
     "path": "fries.svg",
-    "license": "CC-BY",
+    "license": "CC-BY-4.0",
     "authors": [
       "Freepik"
     ],
@@ -31,7 +31,7 @@
   },
   {
     "path": "organic.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "European Commission"
     ],
@@ -41,7 +41,7 @@
   },
   {
     "path": "restaurant.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "OSM Carto"
     ],

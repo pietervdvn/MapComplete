@@ -16,13 +16,21 @@ export abstract class Validator {
     /**
      * What HTML-inputmode to use
      */
-    public readonly inputmode?: string
+    public readonly inputmode?:
+        | "none"
+        | "text"
+        | "tel"
+        | "url"
+        | "email"
+        | "numeric"
+        | "decimal"
+        | "search"
     public readonly textArea: boolean
 
     constructor(
         name: string,
         explanation: string | BaseUIElement,
-        inputmode?: string,
+        inputmode?: "none" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | "search",
         textArea?: false | boolean
     ) {
         this.name = name

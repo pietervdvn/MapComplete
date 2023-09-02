@@ -1,12 +1,52 @@
 {
   "name": "mapcomplete",
-  "version": "0.31.1",
+  "version": "0.32.0",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
-  "homepage": "https://mapcomplete.osm.be",
+  "homepage": "https://mapcomplete.org",
   "main": "index.ts",
   "type": "module",
+  "config": {
+    "#": "Various endpoints that are instance-specific",
+    "#oauth_credentials:comment": [
+      "`oauth_credentials` are the OAuth-2 credentials for the production-OSM server and the test-server.",
+      "Are you deploying your own instance? Register your application too.",
+      "See https://wiki.openstreetmap.org/wiki/OAuth#Registering_your_application_as_OAuth_2.0_consumer for instructions",
+      "Use `https://<your domain name>/<path to mapcomplete>/land.html` as redirect URIs. You can add `http://127.0.0.1:1234/land.html` too for local development.",
+      "Alternatively, you can override the `osm` credentials using the environment variables `VITE_OSM_OAUTH_CLIENT_ID` and `VITE_OSM_OAUTH_SECRET`"
+    ],
+    "oauth_credentials": {
+      "osm_pietervdvn": {
+        "#": "This client_id is registered by 'Pieter Vander Vennet' on OSM.org",
+        "oauth_client_id": "sa1ngLJBJ8McmzHElN8NYtIDm5TZTYEYhq3-0snO4Qc",
+        "oauth_secret": "XU_cD5Mvw9VKk9T0t_gO8V7cbRC4Hmw2Tb4Rv0Zmz-U",
+        "url": "https://www.openstreetmap.org"
+      },
+      "osm": {
+        "#": "This client-id is registered by 'MapComplete' on osm.org",
+        "oauth_client_id": "K93H1d8ve7p-tVLE1ZwsQ4lAFLQk8INx5vfTLMu5DWk",
+        "oauth_secret": "NBWGhWDrD3QDB35xtVuxv4aExnmIt4FA_WgeLtwxasg",
+        "url": "https://www.openstreetmap.org"
+      },
+      "osm-test": {
+        "oauth_client_id": "HwUn6GPxGm1m9WwMarxTglhy6dBTM4YkaV1I9h6pDGU",
+        "oauth_secret": "luFZtPJg7j96K6WM6RpcZ_3M-r6muuDq6fG1ygk0I_4",
+        "url": "https://master.apis.dev.openstreetmap.org"
+      }
+    },
+    "api_keys": {
+      "#": "Various API-keys for various services. Feel free to reuse those in another MapComplete-hosted version",
+      "imgur": "7070e7167f0a25a",
+      "mapillary_v4": "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
+    },
+    "default_overpass_urls": [
+      "https://overpass-api.de/api/interpreter",
+      "https://overpass.kumi.systems/api/interpreter",
+      "https://overpass.openstreetmap.ru/cgi/interpreter"
+    ],
+    "country_coder_host": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country"
+  },
   "scripts": {
     "start": "npm run generate:layeroverview && npm run strt",
     "strt": "vite --host",
@@ -49,7 +89,8 @@
     "weblate-add-upstream": "git remote add weblate-github git@github.com:weblate/MapComplete.git && git remote add weblate-hosted-core https://hosted.weblate.org/git/mapcomplete/core/ && git remote add weblate-hosted-layers https://hosted.weblate.org/git/mapcomplete/layers/",
     "weblate-merge": "git remote update weblate-github; git merge weblate-github/weblate-mapcomplete-core weblate-github/weblate-mapcomplete-layers weblate-github/weblate-mapcomplete-layer-translations",
     "weblate-fix-heavy": "git fetch weblate-hosted-layers; git fetch weblate-hosted-core; git merge weblate-hosted-layers/master weblate-hosted-core/master ",
-    "housekeeping": "git pull && npx update-browserslist-db@latest && npm run weblate-fix-heavy && npm run generate && npm run generate:docs && npm run generate:contributor-list && vite-node scripts/fetchLanguages.ts && npm run format && git add assets/ langs/ Docs/ **/*.ts Docs/* && git commit -m 'chore: automated housekeeping...'"
+    "housekeeping": "git pull && npx update-browserslist-db@latest && npm run weblate-fix-heavy && npm run generate && npm run generate:docs && npm run generate:contributor-list && vite-node scripts/fetchLanguages.ts && npm run format && git add assets/ langs/ Docs/ **/*.ts Docs/* && git commit -m 'chore: automated housekeeping...'",
+    "reuse-compliance": "reuse lint"
   },
   "keywords": [
     "OpenStreetMap",
@@ -95,7 +136,7 @@
     "mangrove-reviews-typescript": "^1.1.0",
     "maplibre-gl": "^3.2.0",
     "opening_hours": "^3.6.0",
-    "osm-auth": "^1.0.2",
+    "osm-auth": "^2.2.0",
     "osmtogeojson": "^3.0.0-beta.5",
     "papaparse": "^5.3.1",
     "pic4carto": "^2.1.15",

@@ -1,7 +1,7 @@
 [
   {
     "path": "barcelona.jpg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "CLIGNER"
     ],
@@ -11,7 +11,7 @@
   },
   {
     "path": "storz.jpg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Karl Gruber"
     ],

@@ -1,7 +1,7 @@
 [
   {
     "path": "Onroerend_Erfgoed_logo_without_text.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "M!dgard"
     ],
@@ -11,7 +11,7 @@
   },
   {
     "path": "broadleaved.svg",
-    "license": "CC BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Midgard"
     ],
@@ -21,7 +21,7 @@
   },
   {
     "path": "leafless.svg",
-    "license": "CC BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Midgard"
     ],
@@ -31,7 +31,7 @@
   },
   {
     "path": "needleleaved.svg",
-    "license": "CC BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Midgard"
     ],
@@ -41,7 +41,7 @@
   },
   {
     "path": "unknown.svg",
-    "license": "CC BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Midgard"
     ],

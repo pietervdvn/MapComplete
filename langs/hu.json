@@ -172,7 +172,7 @@
         "pdf": {
             "attr": "Térképadatok: © OpenStreetMap-közreműködők; az ODbL licenc szerint újrafelhasználható",
             "attrBackground": "Háttérréteg: {background}",
-            "generatedWith": "Létrehozva a MapComplete.osm.be/{layoutid} segítségével",
+            "generatedWith": "Létrehozva a mapcomplete.org/{layoutid} segítségével",
             "versionInfo": "{version} verzió – létrehozva: {date}"
         },
         "pickLanguage": "Nyelv kiválasztása: ",
@@ -196,19 +196,8 @@
             "searching": "Keresés…"
         },
         "sharescreen": {
-            "addToHomeScreen": "<h3>Hozzáadás a kezdőképernyőhöz</h3> Könnyedén hozzáadhatod ezt a weboldalt az okostelefon kezdőképernyőjéhez a natív hangulat érdekében. Ehhez kattints az URL-sávban a „Hozzáadás a kezdőképernyőhöz” gombra.",
             "copiedToClipboard": "Link a vágólapra másolva",
-            "editThemeDescription": "Térképtémához tartozó kérdések hozzáadása vagy módosítása",
-            "editThisTheme": "Téma szerkesztése",
             "embedIntro": "<h3>Beágyazás egy weboldalon</h3>Kérjük, illeszd be ezt a térképet a weboldalba. <br>Biztatunk, tedd meg – még engedélyt sem kell kérned. <br> Ingyenes, és az is marad. Minél többen használják, annál értékesebbé válik. A pipákra kattintva módosíthatod a paramétereket:",
-            "fsAddNew": "„Új érdekes pont (POI) hozzáadása” gomb engedélyezése",
-            "fsGeolocation": "„Saját helyem megjelenítése” gomb engedélyezése (csak mobileszközön)",
-            "fsIncludeCurrentBackgroundMap": "Tartalmazza a jelenleg kiválasztott hátteret (<b>{name}</b>)",
-            "fsIncludeCurrentLayers": "Tartalmazza a jelenleg kiválasztott rétegeket",
-            "fsIncludeCurrentLocation": "Tartalmazza az aktuális helyet",
-            "fsLayerControlToggle": "Kezdés kibontott rétegvezérlővel",
-            "fsLayers": "Rétegvezérlő engedélyezése",
-            "fsSearch": "Keresősáv engedélyezése",
             "fsUserbadge": "Bejelentkezési gomb engedélyezése",
             "fsWelcomeMessage": "Felugró üdvözlő üzenet és kapcsolódó fülek megjelenítése",
             "intro": "<h3>Térkép megosztása</h3> Oszd meg ezt a térképet! Másold ki az alábbi linket, és küldd el a barátaidnak és a családodnak:",

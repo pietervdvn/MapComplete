@@ -52,7 +52,7 @@
     },
     "flyer": {
         "aerial": "這份地圖使用不同的背景，是 Agentschap Informatie Vlaanderen 釋出的空照圖",
-        "callToAction": "在 mapcomplete.osm.be 測試",
+        "callToAction": "在 mapcomplete.org 測試",
         "cyclofix": "單車設施修正主題地圖上的單車甬筒、修理站、飲水機與單車店",
         "description": "宣傳 MapComplete 的 A4 大小傳單",
         "editing": {
@@ -201,7 +201,7 @@
         "pdf": {
             "attr": "地圖資料 @ 開放街圖貢獻者，採用 ODbL 授權可再利用",
             "attrBackground": "背景圖層：{background}",
-            "generatedWith": "用 MapComplete.osm.be/{layoutid} 產生的",
+            "generatedWith": "用 mapcomplete.org/{layoutid} 產生的",
             "versionInfo": "v{version} - {date} 產生的"
         },
         "pickLanguage": "選擇語言： ",
@@ -226,21 +226,8 @@
             "searching": "搜尋中…"
         },
         "sharescreen": {
-            "addToHomeScreen": "<h3>新增到你主頁畫面</h3>你可以輕易將這網站加到你智慧型手機的主頁畫面，在網址列點選 '新增到主頁按鈕'來做這件事情。",
             "copiedToClipboard": "複製連結到簡貼簿",
-            "downloadCustomTheme": "下載這個主題的設定",
-            "downloadCustomThemeHelp": "有經驗的貢獻者能使用這個檔案來改善你的主題",
-            "editThemeDescription": "新增或改變這個地圖主題的問題",
-            "editThisTheme": "編輯這個主題",
             "embedIntro": "<h3>嵌入到你的網站</h3>請考慮將這份地圖嵌入您的網站。<br>地圖毋須額外授權，非常歡迎您多加利用。<br>一切都是免費的，而且之後也是免費的，越有更多人使用，則越顯得它的價值。",
-            "fsAddNew": "啟用'新增新的興趣點'按鈕",
-            "fsGeolocation": "啟用'地理定位自身'按鈕 (只有行動版本)",
-            "fsIncludeCurrentBackgroundMap": "包含目前背景選擇<b>{name}</b>",
-            "fsIncludeCurrentLayers": "包含目前選擇圖層",
-            "fsIncludeCurrentLocation": "包含目前位置",
-            "fsLayerControlToggle": "開始時擴展圖層控制",
-            "fsLayers": "啟用圖層控制",
-            "fsSearch": "啟用搜尋列",
             "fsUserbadge": "啟用登入按鈕",
             "fsWelcomeMessage": "顯示歡迎訊息以及相關頁籤",
             "intro": "<h3>分享這地圖</h3>複製下面的連結來向朋友與家人分享這份地圖：",
@@ -399,7 +386,7 @@
         "intro": "隱私相當重要 - 對個人與對社會都是。MapComplete 試著盡可能尊重你的隱私 - 所以不會需要惱人的 cookie。然而我們仍然告知，在那些情境下，以及做出的選擇與取捨下，有那些資訊會被收集與分享。",
         "miscCookies": "MapComplete 整合多項服務，特別是載入圖徵的圖片。圖片是放在多個第三方服務供應商，也許會有他們自己的 cookies。",
         "miscCookiesTitle": "其他 cookies",
-        "surveillance": "你會閱讀隱私政策，你大概相當在意隱私 - 所以我們也是！我們甚至製作 <a href='https://mapcomplete.osm.be/surveillance'> 主題地圖顯示監視器。</a>如果在意就繪製這些圖徵吧！",
+        "surveillance": "你會閱讀隱私政策，你大概相當在意隱私 - 所以我們也是！我們甚至製作 <a href='https://mapcomplete.org/surveillance'> 主題地圖顯示監視器。</a>如果在意就繪製這些圖徵吧！",
         "title": "隱私政策",
         "tracking": "要瞭解造訪我們網站的洞察，需要收集一些技術資訊。這包括你從那個國家造訪的，你從那個網站連線過來，你採用的裝置與螢幕大小。當你今日稍早造訪 MapComplete 時，我們會在你的裝置內放置 cookies。這些資料並沒有詳盡到能識別出你來，這些統計資料只會統整後，然後<a href='https://pietervdvn.goatcounter.com' target='_blank'>公開給所有人</a>",
         "trackingTitle": "統計資料",

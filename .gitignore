@@ -23,6 +23,7 @@ index_*.ts
 .~lock.*
 *.doctest.ts
 service-worker.js
+.env
 
 .vscode/*
 !.vscode/settings.json

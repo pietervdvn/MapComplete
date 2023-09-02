@@ -114,15 +114,18 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
     constructor(layout: LayoutConfig) {
         this.layout = layout
-        this.guistate = new MenuState(layout.id)
+        this.featureSwitches = new FeatureSwitchState(layout)
+        this.guistate = new MenuState(
+            this.featureSwitches.featureSwitchWelcomeMessage.data,
+            layout.id
+        )
         this.map = new UIEventSource<MlMap>(undefined)
         const initial = new InitialMapPositioning(layout)
         this.mapProperties = new MapLibreAdaptor(this.map, initial)
         const geolocationState = new GeoLocationState()
 
-        this.featureSwitches = new FeatureSwitchState(layout)
         this.featureSwitchIsTesting = this.featureSwitches.featureSwitchIsTesting
-        this.featureSwitchUserbadge = this.featureSwitches.featureSwitchUserbadge
+        this.featureSwitchUserbadge = this.featureSwitches.featureSwitchEnableLogin
 
         this.osmConnection = new OsmConnection({
             dryRun: this.featureSwitches.featureSwitchIsTesting,
@@ -201,6 +204,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 (id) => self.layerState.filteredLayers.get(id).isDisplayed,
                 this.fullNodeDatabase
             )
+
             this.indexedFeatures = layoutSource
 
             const empty = []
@@ -222,9 +226,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
             )
             this.featuresInView = new BBoxFeatureSource(layoutSource, this.mapProperties.bounds)
             this.dataIsLoading = layoutSource.isLoading
-            this.dataIsLoading.addCallbackAndRunD((loading) =>
-                console.log("Data is loading?", loading)
-            )
 
             const indexedElements = this.indexedFeatures
             this.featureProperties = new FeaturePropertiesStore(indexedElements)
@@ -342,13 +343,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 [fs.layer.isDisplayed]
             )
 
-            if (
-                !doShowLayer.data &&
-                (this.featureSwitches.featureSwitchFilter.data === false || !fs.layer.layerDef.name)
-            ) {
+            if (!doShowLayer.data && this.featureSwitches.featureSwitchFilter.data === false) {
                 /* This layer is hidden and there is no way to enable it (filterview is disabled or this layer doesn't show up in the filter view as the name is not defined)
                  *
                  * This means that we don't have to filter it, nor do we have to display it
+                 *
+                 * Note: it is tempting to also permanently disable the layer if it is not visible _and_ the layer name is hidden.
+                 * However, this is _not_ correct: the layer might be hidden because zoom is not enough. Zooming in more _will_ reveal the layer!
                  * */
                 return
             }
@@ -469,7 +470,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
         new ShowDataLayer(this.map, {
             features: new FilteringFeatureSource(last_click_layer, last_click),
-            doShowLayer: new ImmutableStore(true),
+            doShowLayer: this.featureSwitches.featureSwitchEnableLogin,
             layer: last_click_layer.layerDef,
             selectedElement: this.selectedElement,
             selectedLayer: this.selectedLayer,

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/shelter/shelter.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/layers/shelter/shelter.svg' height="100px"> 
 
 Layer showing shelter structures
 
@@ -25,8 +25,8 @@ Layer showing shelter structures
 
 
 
-  - [personal](https://mapcomplete.osm.be/personal)
-  - [transit](https://mapcomplete.osm.be/transit)
+  - [personal](https://mapcomplete.org/personal)
+  - [transit](https://mapcomplete.org/transit)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,8 +46,8 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/shelter_type#values) [shelter_type](https://wiki.openstreetmap.org/wiki/Key:shelter_type) | [string](../SpecialInputElements.md#string) | [public_transport](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dpublic_transport) [picnic_shelter](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dpicnic_shelter) [gazebo](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dgazebo) [weather_shelter](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dweather_shelter) [lean_to](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dlean_to) [pavilion](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dpavilion) [basic_hut](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dbasic_hut)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/shelter_type#values) [shelter_type](https://wiki.openstreetmap.org/wiki/Key:shelter_type) | [string](../SpecialInputElements.md#string) | [public_transport](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dpublic_transport) [picnic_shelter](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dpicnic_shelter) [gazebo](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dgazebo) [weather_shelter](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dweather_shelter) [lean_to](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dlean_to) [pavilion](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dpavilion) [basic_hut](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dbasic_hut)
 
 
 

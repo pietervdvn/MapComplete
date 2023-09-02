@@ -6,6 +6,7 @@ import Translations from "./i18n/Translations"
 import { QueryParameters } from "../Logic/Web/QueryParameters"
 import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import ThemeViewStateHashActor from "../Logic/Web/ThemeViewStateHashActor"
 
 export default class QueryParameterDocumentation {
     private static QueryParamDocsIntro = [
@@ -13,7 +14,7 @@ export default class QueryParameterDocumentation {
         "This document gives an overview of which URL-parameters can be used to influence MapComplete.",
         new Title("What is a URL parameter?", 2),
         '"URL-parameters are extra parts of the URL used to set the state.',
-        "For example, if the url is `https://mapcomplete.osm.be/cyclofix?lat=51.0&lon=4.3&z=5&test=true#node/1234`, " +
+        "For example, if the url is `https://mapcomplete.org/cyclofix?lat=51.0&lon=4.3&z=5&test=true#node/1234`, " +
             "the URL-parameters are stated in the part between the `?` and the `#`. There are multiple, all separated by `&`, namely: ",
         new List(
             [
@@ -60,6 +61,7 @@ export default class QueryParameterDocumentation {
     public static GenerateQueryParameterDocs(): BaseUIElement {
         const docs: (string | BaseUIElement)[] = [
             ...QueryParameterDocumentation.QueryParamDocsIntro,
+            ...ThemeViewStateHashActor.documentation,
         ]
         this.UrlParamDocs().forEach((value, key) => {
             const c = new Combine([

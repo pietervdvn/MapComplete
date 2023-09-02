@@ -106,15 +106,6 @@
         },
         "sharescreen": {
             "copiedToClipboard": "Tautan disalin ke papan klip",
-            "editThemeDescription": "Tambahkan atau ubah pertanyaan ke tema peta ini",
-            "editThisTheme": "Sunting tema ini",
-            "fsAddNew": "Aktifkan tombol 'tambah POI baru'",
-            "fsGeolocation": "Aktifkan tombol 'geolocate-me' (hanya seluler)",
-            "fsIncludeCurrentBackgroundMap": "Sertakan pilihan latar belakang saat ini <b>{name}</b>",
-            "fsIncludeCurrentLayers": "Sertakan pilihan lapisan saat ini",
-            "fsIncludeCurrentLocation": "Sertakan lokasi saat ini",
-            "fsLayers": "Aktifkan kontrol lapisan",
-            "fsSearch": "Aktifkan bilah pencarian",
             "fsUserbadge": "Aktifkan tombol masuk",
             "fsWelcomeMessage": "Tampilkan popup pesan selamat datang dan tab terkait",
             "thanksForSharing": "Terima kasih telah berbagi!"

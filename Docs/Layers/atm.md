@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/circle:white;./assets/layers/atm/atm.svg' height="100px"> 
+<img src='https://mapcomplete.org/circle:white;./assets/layers/atm/atm.svg' height="100px"> 
 
 ATMs to withdraw money
 
@@ -25,8 +25,8 @@ ATMs to withdraw money
 
 
 
-  - [atm](https://mapcomplete.osm.be/atm)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [atm](https://mapcomplete.org/atm)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,14 +46,14 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/brand#values) [brand](https://wiki.openstreetmap.org/wiki/Key:brand) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cash_out#values) [cash_out](https://wiki.openstreetmap.org/wiki/Key:cash_out) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:cash_out%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:cash_out%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cash_in#values) [cash_in](https://wiki.openstreetmap.org/wiki/Key:cash_in) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:cash_in%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:cash_in%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cash_out:notes:denominations#values) [cash_out:notes:denominations](https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations) | Multiple choice | [5 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D5 EUR) [10 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D10 EUR) [20 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D20 EUR) [50 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D50 EUR) [100 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D100 EUR) [200 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D200 EUR) [500 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D500 EUR)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/speech_output#values) [speech_output](https://wiki.openstreetmap.org/wiki/Key:speech_output) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/brand#values) [brand](https://wiki.openstreetmap.org/wiki/Key:brand) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cash_out#values) [cash_out](https://wiki.openstreetmap.org/wiki/Key:cash_out) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:cash_out%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:cash_out%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cash_in#values) [cash_in](https://wiki.openstreetmap.org/wiki/Key:cash_in) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:cash_in%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:cash_in%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cash_out:notes:denominations#values) [cash_out:notes:denominations](https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations) | Multiple choice | [5 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D5 EUR) [10 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D10 EUR) [20 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D20 EUR) [50 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D50 EUR) [100 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D100 EUR) [200 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D200 EUR) [500 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D500 EUR)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/speech_output#values) [speech_output](https://wiki.openstreetmap.org/wiki/Key:speech_output) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dno)
 
 
 

@@ -45,7 +45,7 @@
         "pdf": {
             "attr": "Mapaj datenoj © Kontribuintoj al OpenStreetMap, reuzeblaj laŭ ODbL",
             "attrBackground": "Fona tavolo: {background}",
-            "generatedWith": "Generita per MapComplete.osm.be/{layoutid}",
+            "generatedWith": "Generita per mapcomplete.org/{layoutid}",
             "versionInfo": "v{version} - generita je {date}"
         },
         "pickLanguage": "Elektu lingvon: ",
@@ -61,8 +61,6 @@
             "searching": "Serĉante…"
         },
         "sharescreen": {
-            "editThisTheme": "Modifi ĉi tiun etoson",
-            "fsSearch": "Ŝalti la serĉbreton",
             "fsUserbadge": "Ŝalti la salutbutonon"
         },
         "skip": "Preterpasi ĉi tiun demandon",

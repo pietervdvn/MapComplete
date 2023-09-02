@@ -1,7 +1,7 @@
 [
   {
     "path": "pump.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Pieter Fiers",
       "Thibault Declercq",
@@ -15,7 +15,7 @@
   },
   {
     "path": "repair_shop.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Pieter Fiers",
       "Thibault Declercq",
@@ -29,7 +29,7 @@
   },
   {
     "path": "shop.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Pieter Fiers",
       "Thibault Declercq",
@@ -43,7 +43,7 @@
   },
   {
     "path": "tools.svg",
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Pieter Fiers",
       "Thibault Declercq",

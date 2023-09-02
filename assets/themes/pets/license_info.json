@@ -1,7 +1,7 @@
 [
   {
     "path": "dog-food.svg",
-    "license": "PD",
+    "license": "CC0-1.0",
     "authors": [
       "Public Domain Symbols",
       "Jean Victor Balin ",
@@ -14,7 +14,7 @@
   },
   {
     "path": "dogshop.svg",
-    "license": "CC0 1.0",
+    "license": "CC0-1.0",
     "authors": [
       "Public Domain Symbols",
       "Niels Elgaard Larsen"
@@ -25,7 +25,7 @@
   },
   {
     "path": "petshop.svg",
-    "license": "CC0 1.0",
+    "license": "CC0-1.0",
     "authors": [
       "Niels Elgaard Larsen",
       "Public Domain Symbols"

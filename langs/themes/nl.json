@@ -922,6 +922,18 @@
     },
     "kerbs_and_crossings": {
         "description": "Een kaart met stoepranden en oversteekplaatsen.",
+        "layers": {
+            "1": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "description": "Oversteekplaats voor voetgangers en/of fietsers",
+                            "title": "een oversteekplaats"
+                        }
+                    }
+                }
+            }
+        },
         "title": "Stoepranden en oversteekplaatsen"
     },
     "mapcomplete-changes": {

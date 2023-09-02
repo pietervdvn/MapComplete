@@ -10,7 +10,12 @@ import { Utils } from "../../Utils"
 class FeatureSwitchUtils {
     static initSwitch(key: string, deflt: boolean, documentation: string): UIEventSource<boolean> {
         const defaultValue = deflt
-        const queryParam = QueryParameters.GetQueryParameter(key, "" + defaultValue, documentation)
+        const queryParam = QueryParameters.GetQueryParameter(
+            key,
+            "" + defaultValue,
+            documentation,
+            { stackOffset: -1 }
+        )
 
         // It takes the current layout, extracts the default value for this query parameter. A query parameter event source is then retrieved and flattened
         return queryParam.sync(
@@ -46,10 +51,9 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
      */
     public readonly layoutToUse: LayoutConfig
 
-    public readonly featureSwitchUserbadge: UIEventSource<boolean>
+    public readonly featureSwitchEnableLogin: UIEventSource<boolean>
     public readonly featureSwitchSearch: UIEventSource<boolean>
     public readonly featureSwitchBackgroundSelection: UIEventSource<boolean>
-    public readonly featureSwitchAddNew: UIEventSource<boolean>
     public readonly featureSwitchWelcomeMessage: UIEventSource<boolean>
     public readonly featureSwitchCommunityIndex: UIEventSource<boolean>
     public readonly featureSwitchExtraLinkEnabled: UIEventSource<boolean>
@@ -73,10 +77,10 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
 
         // Helper function to initialize feature switches
 
-        this.featureSwitchUserbadge = FeatureSwitchUtils.initSwitch(
-            "fs-userbadge",
+        this.featureSwitchEnableLogin = FeatureSwitchUtils.initSwitch(
+            "fs-enable-login",
             layoutToUse?.enableUserBadge ?? true,
-            "Disables/Enables the user information pill (userbadge) at the top left. Disabling this disables logging in and thus disables editing all together, effectively putting MapComplete into read-only mode."
+            "Disables/Enables logging in and thus disables editing all together. This effectively puts MapComplete into read-only mode."
         )
         this.featureSwitchSearch = FeatureSwitchUtils.initSwitch(
             "fs-search",
@@ -94,11 +98,7 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
             layoutToUse?.enableLayers ?? true,
             "Disables/Enables the filter view"
         )
-        this.featureSwitchAddNew = FeatureSwitchUtils.initSwitch(
-            "fs-add-new",
-            layoutToUse?.enableAddNewPoints ?? true,
-            "Disables/Enables the 'add new feature'-popup. (A theme without presets might not have it in the first place)"
-        )
+
         this.featureSwitchWelcomeMessage = FeatureSwitchUtils.initSwitch(
             "fs-welcome-message",
             true,
@@ -195,12 +195,6 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
                 "Tilesize when the OSM-API is used to fetch data within a BBOX"
             )
         )
-
-        this.featureSwitchUserbadge.addCallbackAndRun((userbadge) => {
-            if (!userbadge) {
-                this.featureSwitchAddNew.setData(false)
-            }
-        })
 
         this.backgroundLayerId = QueryParameters.GetQueryParameter(
             "background",

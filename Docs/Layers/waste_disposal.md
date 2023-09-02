@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/circle:white;./assets/layers/waste_disposal/waste_disposal.svg' height="100px"> 
+<img src='https://mapcomplete.org/circle:white;./assets/layers/waste_disposal/waste_disposal.svg' height="100px"> 
 
 Waste Disposal Bin, medium to large bin for disposal of (household) waste
 
@@ -14,7 +14,7 @@ Waste Disposal Bin, medium to large bin for disposal of (household) waste
 
 
 
-  - This layer is shown at zoomlevel **18** and higher
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -25,8 +25,8 @@ Waste Disposal Bin, medium to large bin for disposal of (household) waste
 
 
 
-  - [personal](https://mapcomplete.osm.be/personal)
-  - [waste](https://mapcomplete.osm.be/waste)
+  - [personal](https://mapcomplete.org/personal)
+  - [waste](https://mapcomplete.org/waste)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,10 +46,10 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/amenity#values) [amenity](https://wiki.openstreetmap.org/wiki/Key:amenity) | Multiple choice | [waste_disposal](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_disposal) [recycling](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drecycling)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:access%3Dno) [residents](https://wiki.openstreetmap.org/wiki/Tag:access%3Dresidents)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/location#values) [location](https://wiki.openstreetmap.org/wiki/Key:location) | Multiple choice | [underground](https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground) [indoor](https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor) [](https://wiki.openstreetmap.org/wiki/Tag:location%3D)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/amenity#values) [amenity](https://wiki.openstreetmap.org/wiki/Key:amenity) | Multiple choice | [waste_disposal](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_disposal) [recycling](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drecycling)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:access%3Dno) [residents](https://wiki.openstreetmap.org/wiki/Tag:access%3Dresidents)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/location#values) [location](https://wiki.openstreetmap.org/wiki/Key:location) | Multiple choice | [underground](https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground) [indoor](https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor) [](https://wiki.openstreetmap.org/wiki/Tag:location%3D)
 
 
 

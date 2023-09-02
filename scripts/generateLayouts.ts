@@ -239,7 +239,7 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
     <meta property="og:title" content="${ogTitle}">
     <meta property="og:description" content="${ogDescr}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@mapcomplete.osm.be">
+    <meta name="twitter:site" content="@mapcomplete.org">
     <meta name="twitter:creator" content="@pietervdvn">
     <meta name="twitter:title" content="${ogTitle}">
     <meta name="twitter:description" content="${ogDescr}">

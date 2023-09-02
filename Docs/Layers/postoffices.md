@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/square:white;./assets/layers/postoffices/post_office.svg' height="100px"> 
+<img src='https://mapcomplete.org/square:white;./assets/layers/postoffices/post_office.svg' height="100px"> 
 
 A layer showing post offices.
 
@@ -25,8 +25,8 @@ A layer showing post offices.
 
 
 
-  - [personal](https://mapcomplete.osm.be/personal)
-  - [postboxes](https://mapcomplete.osm.be/postboxes)
+  - [personal](https://mapcomplete.org/personal)
+  - [postboxes](https://mapcomplete.org/postboxes)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,15 +46,15 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office#values) [post_office](https://wiki.openstreetmap.org/wiki/Key:post_office) | Multiple choice | [post_partner](https://wiki.openstreetmap.org/wiki/Tag:post_office%3Dpost_partner) [](https://wiki.openstreetmap.org/wiki/Tag:post_office%3D)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:brand#values) [post_office:brand](https://wiki.openstreetmap.org/wiki/Key:post_office:brand) | [string](../SpecialInputElements.md#string) | [DHL](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDHL) [DPD](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDPD) [GLS](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DGLS) [UPS](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DUPS) [DHL Paketshop](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDHL Paketshop) [Hermes PaketShop](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DHermes PaketShop) [PostNL](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DPostNL) [bpost](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3Dbpost)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:letter_from#values) [post_office:letter_from](https://wiki.openstreetmap.org/wiki/Key:post_office:letter_from) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:letter_from%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:letter_from%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:parcel_from#values) [post_office:parcel_from](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_from) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_from%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_from%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:parcel_pickup#values) [post_office:parcel_pickup](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_pickup) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_pickup%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_pickup%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:parcel_to#values) [post_office:parcel_to](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_to) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_to%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_to%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:stamps#values) [post_office:stamps](https://wiki.openstreetmap.org/wiki/Key:post_office:stamps) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:stamps%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:stamps%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office#values) [post_office](https://wiki.openstreetmap.org/wiki/Key:post_office) | Multiple choice | [post_partner](https://wiki.openstreetmap.org/wiki/Tag:post_office%3Dpost_partner) [](https://wiki.openstreetmap.org/wiki/Tag:post_office%3D)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:brand#values) [post_office:brand](https://wiki.openstreetmap.org/wiki/Key:post_office:brand) | [string](../SpecialInputElements.md#string) | [DHL](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDHL) [DPD](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDPD) [GLS](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DGLS) [UPS](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DUPS) [DHL Paketshop](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDHL Paketshop) [Hermes PaketShop](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DHermes PaketShop) [PostNL](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DPostNL) [bpost](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3Dbpost)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:letter_from#values) [post_office:letter_from](https://wiki.openstreetmap.org/wiki/Key:post_office:letter_from) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:letter_from%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:letter_from%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:parcel_from#values) [post_office:parcel_from](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_from) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_from%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_from%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:parcel_pickup#values) [post_office:parcel_pickup](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_pickup) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_pickup%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_pickup%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:parcel_to#values) [post_office:parcel_to](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_to) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_to%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_to%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:stamps#values) [post_office:stamps](https://wiki.openstreetmap.org/wiki/Key:post_office:stamps) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:stamps%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:stamps%3Dno)
 
 
 

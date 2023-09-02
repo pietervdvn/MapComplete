@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/themes/advertising/sign.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/themes/advertising/sign.svg' height="100px"> 
 
 We will complete data from advertising features with reference, operator and lit
 
@@ -30,8 +30,8 @@ We will complete data from advertising features with reference, operator and lit
 
 
 
-  - [advertising](https://mapcomplete.osm.be/advertising)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [advertising](https://mapcomplete.org/advertising)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -51,12 +51,12 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/advertising#values) [advertising](https://wiki.openstreetmap.org/wiki/Key:advertising) | [string](../SpecialInputElements.md#string) | [billboard](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard) [board](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dboard) [column](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dcolumn) [flag](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dflag) [poster_box](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box) [screen](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen) [sculpture](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsculpture) [sign](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsign) [tarp](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtarp) [totem](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtotem) [wall_painting](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/animated#values) [animated](https://wiki.openstreetmap.org/wiki/Key:animated) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:animated%3Dno) [digital_display](https://wiki.openstreetmap.org/wiki/Tag:animated%3Ddigital_display) [trivision_blades](https://wiki.openstreetmap.org/wiki/Tag:animated%3Dtrivision_blades) [winding_posters](https://wiki.openstreetmap.org/wiki/Tag:animated%3Dwinding_posters) [revolving](https://wiki.openstreetmap.org/wiki/Tag:animated%3Drevolving)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/sides#values) [sides](https://wiki.openstreetmap.org/wiki/Key:sides) | Multiple choice | [1](https://wiki.openstreetmap.org/wiki/Tag:sides%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:sides%3D2)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/ref#values) [ref](https://wiki.openstreetmap.org/wiki/Key:ref) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/advertising#values) [advertising](https://wiki.openstreetmap.org/wiki/Key:advertising) | [string](../SpecialInputElements.md#string) | [billboard](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard) [board](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dboard) [column](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dcolumn) [flag](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dflag) [poster_box](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box) [screen](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen) [sculpture](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsculpture) [sign](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsign) [tarp](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtarp) [totem](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtotem) [wall_painting](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/animated#values) [animated](https://wiki.openstreetmap.org/wiki/Key:animated) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:animated%3Dno) [digital_display](https://wiki.openstreetmap.org/wiki/Tag:animated%3Ddigital_display) [trivision_blades](https://wiki.openstreetmap.org/wiki/Tag:animated%3Dtrivision_blades) [winding_posters](https://wiki.openstreetmap.org/wiki/Tag:animated%3Dwinding_posters) [revolving](https://wiki.openstreetmap.org/wiki/Tag:animated%3Drevolving)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/sides#values) [sides](https://wiki.openstreetmap.org/wiki/Key:sides) | Multiple choice | [1](https://wiki.openstreetmap.org/wiki/Tag:sides%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:sides%3D2)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/ref#values) [ref](https://wiki.openstreetmap.org/wiki/Key:ref) | [string](../SpecialInputElements.md#string) | 
 
 
 
@@ -195,7 +195,7 @@ The question is  *What kind of message is shown?*
   - Unselecting this answer will add 
   - *Message from non-profit organizations*  corresponds with  `message=non_profit`
   - Unselecting this answer will add 
-  - *To expres your opinion*  corresponds with  `message=opinion`
+  - *To express your opinion*  corresponds with  `message=opinion`
   - Unselecting this answer will add 
   - *Religious message*  corresponds with  `message=religion`
   - Unselecting this answer will add 

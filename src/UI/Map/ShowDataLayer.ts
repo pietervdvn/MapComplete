@@ -44,7 +44,6 @@ class PointRenderingLayer {
         this._onClick = onClick
         this._selectedElement = selectedElement
         const self = this
-
         features.features.addCallbackAndRunD((features) => self.updateFeatures(features))
         visibility?.addCallbackAndRunD((visible) => {
             if (visible === true && self._dirty) {
@@ -155,19 +154,21 @@ class PointRenderingLayer {
             el.addEventListener("click", function (ev) {
                 ev.preventDefault()
                 self._onClick(feature)
-                console.log("Got click:", feature)
                 // Workaround to signal the MapLibreAdaptor to ignore this click
                 ev["consumed"] = true
             })
         }
 
-        const marker = new Marker({ element: el}).setLngLat(loc).setOffset(iconAnchor).addTo(this._map)
+        const marker = new Marker({ element: el })
+            .setLngLat(loc)
+            .setOffset(iconAnchor)
+            .addTo(this._map)
         store
             .map((tags) => this._config.pitchAlignment.GetRenderValue(tags).Subs(tags).txt)
-            .addCallbackAndRun((pitchAligment) => marker.setPitchAlignment(<any> pitchAligment))
+            .addCallbackAndRun((pitchAligment) => marker.setPitchAlignment(<any>pitchAligment))
         store
             .map((tags) => this._config.rotationAlignment.GetRenderValue(tags).Subs(tags).txt)
-            .addCallbackAndRun((pitchAligment) => marker.setRotationAlignment(<any> pitchAligment))
+            .addCallbackAndRun((pitchAligment) => marker.setRotationAlignment(<any>pitchAligment))
         if (feature.geometry.type === "Point") {
             // When the tags get 'pinged', check that the location didn't change
             store.addCallbackAndRunD(() => {
@@ -330,7 +331,6 @@ class LineRenderingLayer {
             })
             if (this._onClick) {
                 map.on("click", polylayer, (e) => {
-                    console.log("Got polylayer click:", e)
                     // polygon-layer-listener
                     if (e.originalEvent["consumed"]) {
                         // This is a polygon beneath a marker, we can ignore it
@@ -348,7 +348,7 @@ class LineRenderingLayer {
                     map.setLayoutProperty(polylayer, "visibility", visible ? "visible" : "none")
                 } catch (e) {
                     console.warn(
-                        "Error while setting visiblity of layers ",
+                        "Error while setting visibility of layers ",
                         linelayer,
                         polylayer,
                         e
@@ -458,7 +458,6 @@ export default class ShowDataLayer {
         features: FeatureSource,
         doShowLayer?: Store<boolean>
     ): ShowDataLayer {
-
         return new ShowDataLayer(map, {
             layer: ShowDataLayer.rangeLayer,
             features,

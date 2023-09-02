@@ -129,7 +129,7 @@
                         "then": "Volební reklama"
                     },
                     "4": {
-                        "then": "Informace týkající se divadla, koncertů, ..."
+                        "then": "Informace týkající se divadla, koncertů, …"
                     },
                     "5": {
                         "then": "Zpráva od neziskových organizací"
@@ -351,7 +351,11 @@
             },
             "artwork-website": {
                 "question": "Existuje webová stránka s dalšími informacemi o tomto uměleckém díle?",
-                "render": "Více informací na <a href='{website}' target='_blank'>této webové stránce</a>"
+                "render": {
+                    "special": {
+                        "text": "Více informací na této webové stránce"
+                    }
+                }
             },
             "artwork_subject": {
                 "question": "Co zobrazuje toto umělecké dílo?",
@@ -731,7 +735,7 @@
                     }
                 },
                 "question": "Má tato lavička nápis?",
-                "questionHint": "Např. na připevněné desce, v opěradle, ...",
+                "questionHint": "Např. na připevněné desce, v opěradle, …",
                 "render": "Tato lavice má následující nápis:<br/><p><i>{inscription}</i></p>"
             },
             "bench-material": {
@@ -956,7 +960,7 @@
                         "then": "Přítomný je automat, který vydává a přijímá klíče, případně po ověření pravosti a/nebo zaplacení. Jízdní kola jsou zaparkována v blízkosti"
                     },
                     "5": {
-                        "then": "Jedná se o místo předání, např. vyhrazené parkoviště pro umístění jízdních kol, které je zřetelně označeno jako místo určené pouze pro půjčovnu"
+                        "then": "Jedná se o místo předání, např. vyhrazené parkoviště pro umístění jízdních kol, zřetelně označené jako místo určené pouze pro půjčovnu"
                     }
                 },
                 "question": "O jakou půjčovnu jízdních kol se jedná?"
@@ -1078,6 +1082,11 @@
                     }
                 },
                 "question": "Je nabízeno nářadí k opravě vlastního kola?"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Kdy byla tato cyklistická kavárna otevřena?"
+                }
             }
         },
         "title": {
@@ -1104,7 +1113,7 @@
                         "then": "Tato mycí služba je bezplatná"
                     },
                     "1": {
-                        "then": "Tato úklidová služba je placená"
+                        "then": "Využití úklidové služby je zpoplatněno"
                     }
                 },
                 "question": "Kolik stojí využívání služby mytí?",
@@ -1384,7 +1393,7 @@
             "send_email_about_broken_pump": {
                 "render": {
                     "special": {
-                        "body": "Dobrý den,\n\ntímto e-mailem bych Vás chtěl informovat, že vzduchový kompresor na kolo umístěný na adrese https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} je rozbitý.\n\n S pozdravem",
+                        "body": "Dobrý den,\n\ntímto e-mailem bych Vás chtěl informovat, že vzduchový kompresor na kolo umístěný na adrese https://mapcomplete.org/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} je rozbitý.\n\n S pozdravem",
                         "button_text": "Nahlásit tento vzduchový kompresor na kolo jako rozbitý",
                         "subject": "Rozbitý vzduchový kompresor"
                     }
@@ -1561,7 +1570,46 @@
                 },
                 "3": {
                     "then": "Opravy kol <i>{name}</i>"
+                },
+                "4": {
+                    "then": "Prodejna kol <i>{name}</i>"
+                },
+                "5": {
+                    "then": "Oprava kol/obchod <i>{name}</i>"
                 }
+            },
+            "render": "Oprava kol/obchod"
+        }
+    },
+    "bike_themed_object": {
+        "description": "Vrstva s objekty s tématikou jízdních kol, které však neodpovídají žádné jiné vrstvě",
+        "name": "Objekt související s jízdním kolem",
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Cyklostezka"
+                }
+            },
+            "render": "Objekt související s jízdním kolem"
+        }
+    },
+    "binocular": {
+        "description": "Dalekohledy",
+        "name": "Dalekohledy",
+        "presets": {
+            "0": {
+                "description": "Jednooký teleskop nebo dalekohled umístěný na stožáru, který je k dispozici veřejnosti k prohlídce. <img src='./assets/layers/binoculars/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
+                "title": "dalekohled"
+            }
+        },
+        "tagRenderings": {
+            "binocular-charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Použití zdarma"
+                    }
+                },
+                "question": "Kolik se platí za používání těchto dalekohledů?"
             }
         }
     },

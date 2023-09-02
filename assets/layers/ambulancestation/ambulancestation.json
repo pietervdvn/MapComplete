@@ -15,7 +15,8 @@
     "da": "Kort over ambulancestationer",
     "cs": "Mapa stanic rychlé záchranné služby",
     "ca": "Mapa d'estacions d'ambulàncies",
-    "nb_NO": "Kart over ambulansestasjoner"
+    "nb_NO": "Kart over ambulansestasjoner",
+    "he": "מפת תחנות אמבולנסים"
   },
   "minzoom": 12,
   "source": {
@@ -39,7 +40,8 @@
       "da": "Ambulancestation",
       "cs": "Stanice rychlé záchranné služby",
       "ca": "Estació d'Ambulàncies",
-      "nb_NO": "Ambulansestasjon"
+      "nb_NO": "Ambulansestasjon",
+      "he": "תחנת אמבולנס"
     }
   },
   "description": {
@@ -54,7 +56,8 @@
     "es": "Una estación de ambulancias es una zona para almacenar vehículos de ambulancia, equipamiento médico, equipos de protección personal y otros suministros médicos.",
     "da": "En ambulancestation er et område til opbevaring af ambulancekøretøjer, medicinsk udstyr, personlige værnemidler og andre medicinske forsyninger.",
     "cs": "Stanice záchranné služby je prostor pro umístění sanitních vozidel, zdravotnického vybavení, osobních ochranných prostředků a dalšího zdravotnického materiálu.",
-    "ca": "Una estició d'abulàncies és una àrea per a emmagatzemar ambulàncies, equipament mèdic, equips de protecció personal i altres subministraments mèdics."
+    "ca": "Una estició d'abulàncies és una àrea per a emmagatzemar ambulàncies, equipament mèdic, equips de protecció personal i altres subministraments mèdics.",
+    "he": "תחנת אמבולנס היא אזור לאחסון רכבי אמבולנס, ציוד רפואי, ציוד מגן אישי וציוד רפואי אחר."
   },
   "tagRenderings": [
     {
@@ -76,7 +79,8 @@
         "da": "Hvad hedder denne ambulancestation?",
         "cs": "Jak se jmenuje tato stanice záchranné služby?",
         "ca": "Quin és el nom d'aquesta estació d'ambulàncies?",
-        "zh_Hans": "这个救护车站叫什么名字？"
+        "zh_Hans": "这个救护车站叫什么名字？",
+        "he": "איך קוראים לתחנת האמבולנס הזו?"
       },
       "render": {
         "en": "This station is called {name}.",
@@ -92,7 +96,8 @@
         "da": "Denne station hedder {name}.",
         "cs": "Tato stanice se jmenuje {name}.",
         "ca": "Aquesta estació es diu {name}.",
-        "zh_Hans": "这个站点名为 {name}."
+        "zh_Hans": "这个站点名为 {name}.",
+        "he": "תחנה זו נקראת {name}."
       }
     },
     {
@@ -112,7 +117,8 @@
         "es": "¿Cual es el nombre de la calle en la que se encuentra la estación?",
         "da": "Hvad er vejnavnet, hvor stationen ligger?",
         "cs": "Jak se jmenuje ulice, kde se stanice nachází?",
-        "ca": "Quin és el nom del carrer on es troba l'estació?"
+        "ca": "Quin és el nom del carrer on es troba l'estació?",
+        "he": "מה שם הרחוב שבו נמצאת התחנה?"
       },
       "render": {
         "en": "This station is along a highway called {addr:street}.",
@@ -126,7 +132,8 @@
         "es": "Esta estación se encuentra al lado de una via llamada {addr:street}.",
         "da": "Denne station ligger langs en vej, der hedder {addr:street}.",
         "cs": "Tato stanice se nachází podél dálnice s názvem {addr:street}.",
-        "ca": "Aquesta estació es troba al costat d'una via anomenada {addr:street}."
+        "ca": "Aquesta estació es troba al costat d'una via anomenada {addr:street}.",
+        "he": "תחנה זו נמצאת לאורך כביש מהיר בשם {addr:street}."
       }
     },
     {
@@ -143,7 +150,8 @@
         "es": "¿Dónde se encuentra la estación? (ej. nombre del barrio, pueblo o ciudad)",
         "da": "Hvor ligger stationen? (f.eks. navn på kvarter, landsby eller by)",
         "cs": "Kde se stanice nachází? (např. název čtvrti, obce nebo města)",
-        "ca": "On es troba aquesta estació? (p.e. nom del barri, poble o ciutat)"
+        "ca": "On es troba aquesta estació? (p.e. nom del barri, poble o ciutat)",
+        "he": "היכן ממוקמת התחנה? (למשל שם השכונה, הכפר או העיירה)"
       },
       "freeform": {
         "key": "addr:place"
@@ -159,7 +167,8 @@
         "es": "Esta estación se encuentra en {addr:place}.",
         "da": "Denne station findes i {addr:place}.",
         "cs": "Tato stanice se nachází v rámci {addr:place}.",
-        "ca": "Aquesta estació es troba a {addr:place}."
+        "ca": "Aquesta estació es troba a {addr:place}.",
+        "he": "תחנה זו נמצאת בתוך {addr:place}."
       }
     },
     {
@@ -177,7 +186,8 @@
         "da": "Hvilket agentur driver denne station?",
         "cs": "Jaká organizace tuto stanici provozuje?",
         "ca": "Quina agència opera aquesta estació?",
-        "zh_Hans": "哪家机构运营这个站点？"
+        "zh_Hans": "哪家机构运营这个站点？",
+        "he": "איזו סוכנות מפעילה את התחנה הזו?"
       },
       "render": {
         "en": "This station is operated by {operator}.",
@@ -192,7 +202,8 @@
         "da": "Denne station drives af {operator}.",
         "cs": "Tuto stanici provozuje společnost {operator}.",
         "ca": "Aquesta estació l'opera {operator}.",
-        "zh_Hans": "这个站点由 {operator}运营"
+        "zh_Hans": "这个站点由 {operator}运营",
+        "he": "תחנה זו מופעלת על ידי {operator}."
       },
       "freeform": {
         "key": "operator"
@@ -212,7 +223,8 @@
         "es": "¿Como está clasificada la operadora de la estación?",
         "da": "Hvordan klassificeres stationsoperatøren?",
         "cs": "Jak je klasifikován provozovatel stanice?",
-        "ca": "Com es classifica l'operador de l'estació?"
+        "ca": "Com es classifica l'operador de l'estació?",
+        "he": "כיצד מסווג מפעיל התחנה?"
       },
       "render": {
         "en": "The operator is a(n) {operator:type} entity.",
@@ -250,7 +262,8 @@
             "da": "Stationen drives af staten.",
             "cs": "Provozovatelem stanice je vláda.",
             "ca": "El govern opera aquesta estació.",
-            "zh_Hans": "这个站点由政府运营。"
+            "zh_Hans": "这个站点由政府运营。",
+            "he": "התחנה מופעלת על ידי הממשלה."
           }
         },
         {
@@ -271,7 +284,8 @@
             "es": "La estación la opera una organización basada en la comunidad o informal.",
             "da": "Stationen drives af en samfundsbaseret eller uformel organisation.",
             "cs": "Provozovatelem stanice je komunitní nebo neformální organizace.",
-            "ca": "Aquesta estació l'opera una comunitat o organització informal."
+            "ca": "Aquesta estació l'opera una comunitat o organització informal.",
+            "he": "התחנה מופעלת על ידי ארגון קהילתי, או לא רשמי."
           }
         },
         {
@@ -291,7 +305,8 @@
             "es": "La estación la opera un grupo formal de voluntarios.",
             "da": "Stationen drives af en formel gruppe af frivillige.",
             "cs": "Stanice je provozována formální skupinou dobrovolníků.",
-            "ca": "Aquesta estació l'opera un grup formal de voluntaris."
+            "ca": "Aquesta estació l'opera un grup formal de voluntaris.",
+            "he": "התחנה מופעלת על ידי קבוצה רשמית של מתנדבים."
           }
         },
         {
@@ -311,7 +326,8 @@
             "es": "La estación se opera privadamente.",
             "da": "Stationen er privatdrevet.",
             "cs": "Stanice je provozována soukromým subjektem.",
-            "ca": "Aquesta estació l'opera una entitat privada."
+            "ca": "Aquesta estació l'opera una entitat privada.",
+            "he": "‍התחנה מופעלת באופן פרטי."
           }
         }
       ]
@@ -355,7 +371,8 @@
         "nb_NO": "Legg til en ambulansestasjon på kartet",
         "da": "Tilføj en ambulancestation til kortet",
         "cs": "Přidat na mapu stanici záchranné služby",
-        "ca": "Afegeix una estació d'ambulàncies al mapa"
+        "ca": "Afegeix una estació d'ambulàncies al mapa",
+        "he": "הוספת תחנת אמבולנס למפה"
       }
     }
   ],

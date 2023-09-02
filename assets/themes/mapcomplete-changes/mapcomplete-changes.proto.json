@@ -65,7 +65,7 @@
             "key": "theme"
           },
           "render": {
-            "en": "Change with theme <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+            "en": "Change with theme <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
           }
         },
         {

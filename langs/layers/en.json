@@ -135,7 +135,7 @@
                         "then": "Message from non-profit organizations"
                     },
                     "6": {
-                        "then": "To expres your opinion"
+                        "then": "To express your opinion"
                     },
                     "7": {
                         "then": "Religious message"
@@ -351,7 +351,11 @@
             },
             "artwork-website": {
                 "question": "Is there a website with more information about this artwork?",
-                "render": "More information on <a href='{website}' target='_blank'>this website</a>"
+                "render": {
+                    "special": {
+                        "text": "More information on this website"
+                    }
+                }
             },
             "artwork_subject": {
                 "question": "What does this artwork depict?",
@@ -1389,7 +1393,7 @@
             "send_email_about_broken_pump": {
                 "render": {
                     "special": {
-                        "body": "Hello,\n\nWith this email, I'd like to inform you that the bicycle pump located at https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} is broken.\n\n Kind regards",
+                        "body": "Hello,\n\nWith this email, I'd like to inform you that the bicycle pump located at https://mapcomplete.org/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} is broken.\n\n Kind regards",
                         "button_text": "Report this bicycle pump as broken",
                         "subject": "Broken bicycle pump"
                     }
@@ -4224,6 +4228,91 @@
             }
         }
     },
+    "elongated_coin": {
+        "description": "Layer showing penny presses.",
+        "name": "Penny Presses",
+        "presets": {
+            "0": {
+                "title": "a penny press"
+            }
+        },
+        "tagRenderings": {
+            "charge": {
+                "freeform": {
+                    "placeholder": "Cost (e.g. 0.50 EUR)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "It costs 1 euro to press a penny."
+                    },
+                    "1": {
+                        "then": "It costs 2 euros to press a penny."
+                    }
+                },
+                "question": "How much does it cost to press a penny?",
+                "render": "It costs {charge} to press a penny."
+            },
+            "coin": {
+                "freeform": {
+                    "placeholder": "Coin type (e.g. 10cent)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "This penny press uses a 2 cent coin for pressing."
+                    },
+                    "1": {
+                        "then": "This penny press uses a 5 cent coin for pressing."
+                    },
+                    "2": {
+                        "then": "This penny press uses a 10 cent coin for pressing."
+                    },
+                    "3": {
+                        "then": "This penny press uses a 25 cent coin for pressing."
+                    },
+                    "4": {
+                        "then": "This penny press uses a 50 cent coin for pressing."
+                    }
+                },
+                "question": "What coin is used for pressing?",
+                "render": "This penny press uses a {coin:type} coin for pressing."
+            },
+            "designs": {
+                "freeform": {
+                    "placeholder": "Number of designs (e.g. 5)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "This penny press has one design available."
+                    },
+                    "1": {
+                        "then": "This penny press has two designs available."
+                    },
+                    "2": {
+                        "then": "This penny press has three designs available."
+                    },
+                    "3": {
+                        "then": "This penny press has four designs available."
+                    }
+                },
+                "question": "How many designs are available?",
+                "render": "This penny press has {coin:design_count} designs available."
+            },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "This penny press is located indoors."
+                    },
+                    "1": {
+                        "then": "This penny press is located outdoors."
+                    }
+                },
+                "question": "Is the penny press indoors?"
+            }
+        },
+        "title": {
+            "render": "Penny Press"
+        }
+    },
     "entrance": {
         "description": "A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, …)",
         "name": "Entrance",
@@ -4441,6 +4530,20 @@
             "3": {
                 "options": {
                     "0": {
+                        "question": "Accepts debit cards"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Accepts credit cards"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
                         "question": "With and without images"
                     },
                     "1": {
@@ -4451,14 +4554,14 @@
                     }
                 }
             },
-            "4": {
+            "6": {
                 "options": {
                     "0": {
                         "question": "With tactile paving"
                     }
                 }
             },
-            "5": {
+            "7": {
                 "options": {
                     "0": {
                         "question": "With or without tactile paving"
@@ -4474,14 +4577,14 @@
                     }
                 }
             },
-            "6": {
+            "8": {
                 "options": {
                     "0": {
                         "question": "Has organic options"
                     }
                 }
             },
-            "7": {
+            "9": {
                 "options": {
                     "0": {
                         "question": "Free to use"
@@ -4738,6 +4841,12 @@
                 "options": {
                     "0": {
                         "question": "Has a vegetarian menu"
+                    },
+                    "1": {
+                        "question": "Only fastfood buisinesses"
+                    },
+                    "2": {
+                        "question": "Only restaurants"
                     }
                 }
             },
@@ -4749,6 +4858,13 @@
                 }
             },
             "4": {
+                "options": {
+                    "0": {
+                        "question": "Has a halal menu"
+                    }
+                }
+            },
+            "5": {
                 "options": {
                     "0": {
                         "question": "Has a halal menu"
@@ -5059,7 +5175,11 @@
             },
             "ghost_bike-source": {
                 "question": "On what webpage can one find more info about the ghost bike or the accident?",
-                "render": "<a href='{source}' target='_blank'>More info available</a>"
+                "render": {
+                    "special": {
+                        "text": "More info available"
+                    }
+                }
             },
             "ghost_bike-start_date": {
                 "question": "When was this Ghost bike installed?",
@@ -5163,13 +5283,13 @@
             "hs-club-mate": {
                 "mappings": {
                     "0": {
-                        "then": "This hackerspace serves club mate"
+                        "then": "This hackerspace serves Club-Mate"
                     },
                     "1": {
-                        "then": "This hackerspace does not serve club mate"
+                        "then": "This hackerspace does not serve Club-Mate"
                     }
                 },
-                "question": "Does this hackerspace serve Club Mate?"
+                "question": "Does this hackerspace serve Club-Mate?"
             },
             "is_makerspace": {
                 "mappings": {
@@ -5855,9 +5975,6 @@
                 "mappings": {
                     "0": {
                         "then": "This is a living street, which has a maxspeed of 20km/h"
-                    },
-                    "1": {
-                        "then": "This is a living street, which has a maxspeed of 20km/h"
                     }
                 },
                 "question": "What is the legal maximum speed one is allowed to drive on this road?",
@@ -5978,8 +6095,7 @@
             },
             "Email": {
                 "question": "What email adress can one send to with questions and problems with this nature reserve?",
-                "questionHint": "Respect privacy - only fill out a personal email address if this is widely published",
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+                "questionHint": "Respect privacy - only fill out a personal email address if this is widely published"
             },
             "Name tag": {
                 "mappings": {
@@ -6774,6 +6890,20 @@
             }
         },
         "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "This post office has an ATM"
+                    },
+                    "1": {
+                        "then": "This post office does <b>not</b> have an ATM"
+                    },
+                    "2": {
+                        "then": "This post office does have an ATM, but it is mapped as a different icon"
+                    }
+                },
+                "question": "Does this post office have an ATM?"
+            },
             "letter-from": {
                 "mappings": {
                     "0": {
@@ -7012,7 +7142,11 @@
             },
             "public_bookcase-website": {
                 "question": "Is there a website with more information about this public bookcase?",
-                "render": "More info on <a href='{website}' target='_blank'>the website</a>"
+                "render": {
+                    "special": {
+                        "text": "More info on the website"
+                    }
+                }
             }
         },
         "title": {
@@ -7026,6 +7160,15 @@
     },
     "questions": {
         "tagRenderings": {
+            "check_date": {
+                "mappings": {
+                    "0": {
+                        "then": "This object was last checked today"
+                    }
+                },
+                "question": "When was this object last checked?",
+                "render": "This object was last checked on <b>{check_date}</b>"
+            },
             "denominations-coins": {
                 "mappings": {
                     "0": {
@@ -7209,6 +7352,9 @@
                 },
                 "question": "Is this object lit or does it emit light?"
             },
+            "mastodon": {
+                "question": "What is the Mastodon-handle of {title()}?"
+            },
             "multilevels": {
                 "override": {
                     "question": "What levels does this elevator go to?",
@@ -7317,6 +7463,15 @@
                     }
                 },
                 "question": "Is smoking allowed at {title()}?"
+            },
+            "survey_date": {
+                "mappings": {
+                    "0": {
+                        "then": "This object was last surveyed today"
+                    }
+                },
+                "question": "When was this object last surveyed?",
+                "render": "This object was last surveyed on <b>{survey:date}</b>"
             },
             "website": {
                 "question": "What is the website of {title()}?"
@@ -9534,10 +9689,10 @@
             "verified-mastodon": {
                 "mappings": {
                     "0": {
-                        "then": "A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                        "then": "A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
                     },
                     "1": {
-                        "then": "We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Edit your profile description</a> and place the following there: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+                        "then": "We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Edit your profile description</a> and place the following there: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
                     }
                 }
             }
@@ -9682,6 +9837,15 @@
                     },
                     "15": {
                         "then": "Flowers are sold"
+                    },
+                    "16": {
+                        "then": "Parking tickets are sold"
+                    },
+                    "17": {
+                        "then": "Pressed pennies are sold"
+                    },
+                    "18": {
+                        "then": "Public transport tickets are sold"
                     }
                 },
                 "question": "What does this vending machine sell?",

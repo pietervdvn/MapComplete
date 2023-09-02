@@ -63,6 +63,7 @@
     }
 
     if (unit && isNaN(Number(v))) {
+      console.debug("Not a number, but a unit is required")
       value.setData(undefined)
       return
     }

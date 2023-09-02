@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/clock/clock.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/layers/clock/clock.svg' height="100px"> 
 
 Layer with public clocks
 
@@ -26,8 +26,8 @@ Layer with public clocks
 
 
 
-  - [clock](https://mapcomplete.osm.be/clock)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [clock](https://mapcomplete.org/clock)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -47,15 +47,15 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/support#values) [support](https://wiki.openstreetmap.org/wiki/Key:support) | Multiple choice | [pole](https://wiki.openstreetmap.org/wiki/Tag:support%3Dpole) [wall_mounted](https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall_mounted) [billboard](https://wiki.openstreetmap.org/wiki/Tag:support%3Dbillboard) [ground](https://wiki.openstreetmap.org/wiki/Tag:support%3Dground)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/display#values) [display](https://wiki.openstreetmap.org/wiki/Key:display) | Multiple choice | [analog](https://wiki.openstreetmap.org/wiki/Tag:display%3Danalog) [digital](https://wiki.openstreetmap.org/wiki/Tag:display%3Ddigital) [sundial](https://wiki.openstreetmap.org/wiki/Tag:display%3Dsundial) [unorthodox](https://wiki.openstreetmap.org/wiki/Tag:display%3Dunorthodox)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/visibility#values) [visibility](https://wiki.openstreetmap.org/wiki/Key:visibility) | Multiple choice | [house](https://wiki.openstreetmap.org/wiki/Tag:visibility%3Dhouse) [street](https://wiki.openstreetmap.org/wiki/Tag:visibility%3Dstreet) [area](https://wiki.openstreetmap.org/wiki/Tag:visibility%3Darea)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/date#values) [date](https://wiki.openstreetmap.org/wiki/Key:date) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:date%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:date%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/thermometer#values) [thermometer](https://wiki.openstreetmap.org/wiki/Key:thermometer) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:thermometer%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:thermometer%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/barometer#values) [barometer](https://wiki.openstreetmap.org/wiki/Key:barometer) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:barometer%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:barometer%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/hygrometer#values) [hygrometer](https://wiki.openstreetmap.org/wiki/Key:hygrometer) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:hygrometer%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:hygrometer%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/faces#values) [faces](https://wiki.openstreetmap.org/wiki/Key:faces) | [pnat](../SpecialInputElements.md#pnat) | [1](https://wiki.openstreetmap.org/wiki/Tag:faces%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:faces%3D2) [4](https://wiki.openstreetmap.org/wiki/Tag:faces%3D4)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/support#values) [support](https://wiki.openstreetmap.org/wiki/Key:support) | Multiple choice | [pole](https://wiki.openstreetmap.org/wiki/Tag:support%3Dpole) [wall_mounted](https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall_mounted) [billboard](https://wiki.openstreetmap.org/wiki/Tag:support%3Dbillboard) [ground](https://wiki.openstreetmap.org/wiki/Tag:support%3Dground)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/display#values) [display](https://wiki.openstreetmap.org/wiki/Key:display) | Multiple choice | [analog](https://wiki.openstreetmap.org/wiki/Tag:display%3Danalog) [digital](https://wiki.openstreetmap.org/wiki/Tag:display%3Ddigital) [sundial](https://wiki.openstreetmap.org/wiki/Tag:display%3Dsundial) [unorthodox](https://wiki.openstreetmap.org/wiki/Tag:display%3Dunorthodox)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/visibility#values) [visibility](https://wiki.openstreetmap.org/wiki/Key:visibility) | Multiple choice | [house](https://wiki.openstreetmap.org/wiki/Tag:visibility%3Dhouse) [street](https://wiki.openstreetmap.org/wiki/Tag:visibility%3Dstreet) [area](https://wiki.openstreetmap.org/wiki/Tag:visibility%3Darea)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/date#values) [date](https://wiki.openstreetmap.org/wiki/Key:date) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:date%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:date%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/thermometer#values) [thermometer](https://wiki.openstreetmap.org/wiki/Key:thermometer) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:thermometer%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:thermometer%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/barometer#values) [barometer](https://wiki.openstreetmap.org/wiki/Key:barometer) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:barometer%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:barometer%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/hygrometer#values) [hygrometer](https://wiki.openstreetmap.org/wiki/Key:hygrometer) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:hygrometer%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:hygrometer%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/faces#values) [faces](https://wiki.openstreetmap.org/wiki/Key:faces) | [pnat](../SpecialInputElements.md#pnat) | [1](https://wiki.openstreetmap.org/wiki/Tag:faces%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:faces%3D2) [4](https://wiki.openstreetmap.org/wiki/Tag:faces%3D4)
 
 
 

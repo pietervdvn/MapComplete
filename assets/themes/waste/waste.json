@@ -34,8 +34,8 @@
     {
       "builtin": "waste_basket",
       "override": {
-        "minzoom": 18,
-        "minzoomVisible": 18
+        "minzoom": 16,
+        "minzoomVisible": 16
       }
     },
     "recycling",

@@ -61,7 +61,6 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
 
     private async loadData(bbox: BBox) {
         if (this.isActive?.data === false) {
-            console.log("OsmFeatureSource: not triggering: inactive")
             return
         }
 
@@ -69,6 +68,11 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
         const neededTiles = Tiles.tileRangeFrom(bbox, z)
 
         if (neededTiles.total == 0) {
+            return
+        }
+
+        if (neededTiles.total > 100) {
+            console.error("Too much tiles to download!")
             return
         }
 
@@ -133,7 +137,6 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
     }
 
     private async LoadTile(z: number, x: number, y: number): Promise<void> {
-        console.log("OsmFeatureSource: loading ", z, x, y, "from", this._backend)
         if (z >= 22) {
             throw "This is an absurd high zoom level"
         }
@@ -145,6 +148,7 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
         if (this._downloadedTiles.has(index)) {
             return
         }
+        console.log("OsmFeatureSource: loading ", z, x, y, "from", this._backend)
         this._downloadedTiles.add(index)
 
         const bbox = BBox.fromTile(z, x, y)

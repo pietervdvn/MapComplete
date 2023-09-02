@@ -21,11 +21,9 @@ import questions from "../assets/generated/layers/questions.json"
 import {
     DoesImageExist,
     PrevalidateTheme,
-    ValidateTagRenderings,
     ValidateThemeAndLayers,
 } from "../Models/ThemeConfig/Conversion/Validation"
 import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
-import { RewriteSpecial } from "../Models/ThemeConfig/Conversion/PrepareLayer"
 import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
 import Hash from "./Web/Hash"
 

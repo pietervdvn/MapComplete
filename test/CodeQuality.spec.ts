@@ -1,6 +1,10 @@
 import { exec } from "child_process"
 import { describe, it } from "vitest"
 
+import { parse as parse_html } from "node-html-parser"
+import { readFileSync } from "fs"
+import ScriptUtils from "../scripts/ScriptUtils"
+
 /**
  *
  * @param forbidden: a GREP-regex. This means that '.' is a wildcard and should be escaped to match a literal dot
@@ -64,6 +68,32 @@ function itAsync(name: string, promise: Promise<void>) {
     it(name, wrap(promise))
 }
 
+function validateScriptIntegrityOf(path: string) {
+    const htmlContents = readFileSync(path, "utf8")
+    const doc = parse_html(htmlContents)
+    // @ts-ignore
+    const scripts = Array.from(doc.getElementsByTagName("script"))
+    for (const script of scripts) {
+        const src = script.getAttribute("src")
+        if (src === undefined) {
+            continue
+        }
+        if (src.startsWith("./")) {
+            // Local script - no check needed
+            continue
+        }
+        const integrity = script.getAttribute("integrity")
+        const ctx = "Script with source " + src + " in file " + path
+        if (integrity === undefined) {
+            throw new Error(ctx + " has no integrity value")
+        }
+        const crossorigin = script.getAttribute("crossorigin")
+        if (crossorigin !== "anonymous") {
+            throw new Error(ctx + " has crossorigin missing or not set to 'anonymous'")
+        }
+    }
+}
+
 describe("Code quality", () => {
     itAsync(
         "should not contain reverse",
@@ -85,17 +115,24 @@ describe("Code quality", () => {
             "innerText is not allowed as it is not testable with fakeDom. Use 'textContent' instead."
         )
     )
+
+    it("scripts with external sources should have an integrity hash", () => {
+        const htmlFiles = ScriptUtils.readDirRecSync(".", 1).filter((f) => f.endsWith(".html"))
+        for (const htmlFile of htmlFiles) {
+            validateScriptIntegrityOf(htmlFile)
+        }
+    })
     /*
-    itAsync(
-        "should not contain 'import * as name from \"xyz.json\"'",
-        detectInCode(
-            'import \\* as [a-zA-Z0-9_]\\+ from \\"[.-_/a-zA-Z0-9]\\+\\.json\\"',
-            "With vite, json files have a default export. Use import name from file.json instead"
-        )
-    )
+  itAsync(
+      "should not contain 'import * as name from \"xyz.json\"'",
+      detectInCode(
+          'import \\* as [a-zA-Z0-9_]\\+ from \\"[.-_/a-zA-Z0-9]\\+\\.json\\"',
+          "With vite, json files have a default export. Use import name from file.json instead"
+      )
+  )
 /*
-    itAsync(
-        "should not contain '[\"default\"]'",
-        detectInCode('\\[\\"default\\"\\]', "Possible leftover of faulty default import")
-    )*/
+  itAsync(
+      "should not contain '[\"default\"]'",
+      detectInCode('\\[\\"default\\"\\]', "Possible leftover of faulty default import")
+  )*/
 })

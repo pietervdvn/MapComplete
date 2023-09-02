@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/circle:white;./assets/layers/school/school.svg' height="100px"> 
+<img src='https://mapcomplete.org/circle:white;./assets/layers/school/school.svg' height="100px"> 
 
 Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles
 
@@ -25,8 +25,8 @@ Schools giving primary and secondary education and post-secondary, non-tertiary 
 
 
 
-  - [education](https://mapcomplete.osm.be/education)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [education](https://mapcomplete.org/education)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,15 +46,15 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity#values) [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/school#values) [school](https://wiki.openstreetmap.org/wiki/Key:school) | Multiple choice | [kindergarten](https://wiki.openstreetmap.org/wiki/Tag:school%3Dkindergarten) [primary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dprimary) [secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dsecondary) [lower_secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dlower_secondary) [middle_secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dmiddle_secondary) [upper_secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dupper_secondary) [post_secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dpost_secondary)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/school:gender#values) [school:gender](https://wiki.openstreetmap.org/wiki/Key:school:gender) | Multiple choice | [mixed](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmixed) [separated](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dseparated) [male](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmale) [female](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dfemale)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/school:for#values) [school:for](https://wiki.openstreetmap.org/wiki/Key:school:for) | [string](../SpecialInputElements.md#string) | [mainstream](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dmainstream) [adults](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dadults) [autism](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dautism) [learning_disabilities](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dlearning_disabilities) [blind](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dblind) [deaf](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Ddeaf) [disabilities](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Ddisabilities) [special_needs](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dspecial_needs)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity#values) [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/school#values) [school](https://wiki.openstreetmap.org/wiki/Key:school) | Multiple choice | [kindergarten](https://wiki.openstreetmap.org/wiki/Tag:school%3Dkindergarten) [primary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dprimary) [secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dsecondary) [lower_secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dlower_secondary) [middle_secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dmiddle_secondary) [upper_secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dupper_secondary) [post_secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dpost_secondary)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/school:gender#values) [school:gender](https://wiki.openstreetmap.org/wiki/Key:school:gender) | Multiple choice | [mixed](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmixed) [separated](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dseparated) [male](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmale) [female](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dfemale)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/school:for#values) [school:for](https://wiki.openstreetmap.org/wiki/Key:school:for) | [string](../SpecialInputElements.md#string) | [mainstream](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dmainstream) [adults](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dadults) [autism](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dautism) [learning_disabilities](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dlearning_disabilities) [blind](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dblind) [deaf](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Ddeaf) [disabilities](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Ddisabilities) [special_needs](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dspecial_needs)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
 
 
 

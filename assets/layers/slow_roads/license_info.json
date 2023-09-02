@@ -1,7 +1,7 @@
 [
   {
     "path": "slow_road.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Gitte Loos (Createlli) in opdracht van Provincie Antwerpen "
     ],
@@ -12,7 +12,7 @@
   },
   {
     "path": "woonerf.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Belgische Wetgever"
     ],

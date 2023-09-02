@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/themes/climbing/climbing_unknown.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/themes/climbing/climbing_unknown.svg' height="100px"> 
 
 Fallback layer with items on which climbing _might_ be possible. It is loaded when zoomed in a lot, to prevent duplicate items to be added
 
@@ -15,6 +15,7 @@ Fallback layer with items on which climbing _might_ be possible. It is loaded wh
 
 
   - This layer is shown at zoomlevel **19** and higher
+  - This layer is needed as dependency for layer [climbing_route](#climbing_route)
 
 
 
@@ -25,8 +26,8 @@ Fallback layer with items on which climbing _might_ be possible. It is loaded wh
 
 
 
-  - [climbing](https://mapcomplete.osm.be/climbing)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [climbing](https://mapcomplete.org/climbing)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,7 +47,7 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 
 
 

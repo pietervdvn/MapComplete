@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 5753,
+      "commits": 5877,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 371,
+      "commits": 388,
       "contributor": "Robin van der Linde"
     },
     {
@@ -49,7 +49,7 @@
       "contributor": "Ward"
     },
     {
-      "commits": 21,
+      "commits": 22,
       "contributor": "Hosted Weblate"
     },
     {
@@ -61,7 +61,7 @@
       "contributor": "AlexanderRebai"
     },
     {
-      "commits": 19,
+      "commits": 20,
       "contributor": "dependabot[bot]"
     },
     {
@@ -110,11 +110,11 @@
     },
     {
       "commits": 10,
-      "contributor": "LiamSimons"
+      "contributor": "Thibault Molleman"
     },
     {
-      "commits": 9,
-      "contributor": "Thibault Molleman"
+      "commits": 10,
+      "contributor": "LiamSimons"
     },
     {
       "commits": 9,
@@ -127,6 +127,10 @@
     {
       "commits": 8,
       "contributor": "Mateusz Konieczny"
+    },
+    {
+      "commits": 7,
+      "contributor": "pelderson"
     },
     {
       "commits": 7,
@@ -147,10 +151,6 @@
     {
       "commits": 6,
       "contributor": "danieldegroot2"
-    },
-    {
-      "commits": 6,
-      "contributor": "pelderson"
     },
     {
       "commits": 4,
@@ -231,6 +231,14 @@
     {
       "commits": 2,
       "contributor": "Stanislas Gueniffey"
+    },
+    {
+      "commits": 1,
+      "contributor": "Ciprian"
+    },
+    {
+      "commits": 1,
+      "contributor": "redfast00"
     },
     {
       "commits": 1,

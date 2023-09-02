@@ -351,7 +351,11 @@
             },
             "artwork-website": {
                 "question": "Hi ha un lloc web amb més informació sobre aquesta obra d'art?",
-                "render": "Més informació a <a href='{website}' target='_blank'>aquesta pàgina web</a>"
+                "render": {
+                    "special": {
+                        "text": "Més informació a aquesta pàgina web"
+                    }
+                }
             },
             "artwork_subject": {
                 "question": "Què representa aquesta obra d'art?",
@@ -1353,7 +1357,7 @@
             "send_email_about_broken_pump": {
                 "render": {
                     "special": {
-                        "body": "Hola,\n\nAmb aquest correu electrònic, m'agradaria informar-vos que la bomba de bicicleta situada a https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} està trencada.\n\nSalutacions cordials",
+                        "body": "Hola,\n\nAmb aquest correu electrònic, m'agradaria informar-vos que la bomba de bicicleta situada a https://mapcomplete.org/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} està trencada.\n\nSalutacions cordials",
                         "button_text": "Informar aquesta bomba de bicicleta com a trencada",
                         "subject": "Bomba de bicicleta trencada"
                     }
@@ -3160,7 +3164,11 @@
             },
             "ghost_bike-source": {
                 "question": "En quina pàgina web es pot trobar més informació sobre la bicicleta blanca o l'accident?",
-                "render": "<a href='{source}' target='_blank'>Més informació disponible</a>"
+                "render": {
+                    "special": {
+                        "text": "Més informació disponible"
+                    }
+                }
             }
         },
         "title": {
@@ -3576,8 +3584,7 @@
             },
             "Email": {
                 "question": "A quina adreça de correu electrònic es pot enviar amb preguntes i problemes amb aquest parc natural?",
-                "questionHint": "Respecteu la privadesa: només ompliu una adreça de correu electrònic personal si es publica àmpliament",
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+                "questionHint": "Respecteu la privadesa: només ompliu una adreça de correu electrònic personal si es publica àmpliament"
             },
             "Name tag": {
                 "render": "Aquesta àrea s'anomena {name}"
@@ -3836,6 +3843,14 @@
     },
     "parking_spaces": {
         "tagRenderings": {
+            "capacity": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest espai d'aparcament té 1 plaça."
+                    }
+                },
+                "render": "Aquests espais d'aparcament tenen {capacity} places."
+            },
             "type": {
                 "mappings": {
                     "0": {
@@ -5768,6 +5783,13 @@
                     }
                 }
             },
+            "fixate-north": {
+                "mappings": {
+                    "0": {
+                        "then": "Permet girar el mapa"
+                    }
+                }
+            },
             "picture-license": {
                 "mappings": {
                     "0": {
@@ -5835,7 +5857,7 @@
             "verified-mastodon": {
                 "mappings": {
                     "0": {
-                        "then": "S'ha trobat un enllaç al vostre perfil de Mastodon: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                        "then": "S'ha trobat un enllaç al vostre perfil de Mastodon: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
                     }
                 }
             }

@@ -1,7 +1,7 @@
 [
   {
     "path": "carabiner.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Matthew Dera"
     ],
@@ -11,7 +11,7 @@
   },
   {
     "path": "climbing_gym.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Polarbear w",
       "Christian Neumann"
@@ -24,7 +24,7 @@
   },
   {
     "path": "climbing_icon.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Polarbear w",
       "Christian Neumann"
@@ -37,7 +37,7 @@
   },
   {
     "path": "climbing_no_rope.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Polarbear w",
       "Christian Neumann"
@@ -50,7 +50,7 @@
   },
   {
     "path": "climbing_rope.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Polarbear w",
       "Christian Neumann"
@@ -63,7 +63,7 @@
   },
   {
     "path": "climbing_route.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Polarbear w",
       "Christian Neumann"
@@ -76,7 +76,7 @@
   },
   {
     "path": "climbing_unknown.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Polarbear w",
       "Christian Neumann"
@@ -89,7 +89,7 @@
   },
   {
     "path": "club.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Polarbear w",
       "Christian Neumann"
@@ -102,7 +102,7 @@
   },
   {
     "path": "height.svg",
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
       "Pieter Vander Vennet"
     ],

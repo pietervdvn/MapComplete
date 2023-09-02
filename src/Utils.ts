@@ -1,5 +1,4 @@
 import colors from "./assets/colors.json"
-import { HTMLElement } from "node-html-parser"
 
 export class Utils {
     /**
@@ -221,6 +220,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * Utils.Round7(12.123456789) // => 12.1234568
      */
     public static Round7(i: number): number {
+        if (i == undefined) {
+            return undefined
+        }
         return Math.round(i * 10000000) / 10000000
     }
 
@@ -324,7 +326,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             enumerable: false,
             configurable: true,
             get: () => {
-                console.trace("Property", name, "got requested")
                 init().then((r) => {
                     delete object[name]
                     object[name] = r
@@ -488,7 +489,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                         "\nThe value is",
                         v
                     )
-                    v = (<HTMLElement>v.InnerConstructElement())?.textContent
+                    v = v.InnerConstructElement()?.textContent
                 }
 
                 if (typeof v !== "string") {
@@ -1162,7 +1163,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
     public static HomepageLink(): string {
         if (typeof window === "undefined") {
-            return "https://mapcomplete.osm.be"
+            return "https://mapcomplete.org"
         }
         const path = (
             window.location.protocol +
@@ -1209,6 +1210,22 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             str = str.replace(" UTC", "+00")
         }
         return new Date(str)
+    }
+
+    public static selectTextIn(node) {
+        if (document.body["createTextRange"]) {
+            const range = document.body["createTextRange"]()
+            range.moveToElementText(node)
+            range.select()
+        } else if (window.getSelection) {
+            const selection = window.getSelection()
+            const range = document.createRange()
+            range.selectNodeContents(node)
+            selection.removeAllRanges()
+            selection.addRange(range)
+        } else {
+            console.warn("Could not select text in node: Unsupported browser.")
+        }
     }
 
     public static sortedByLevenshteinDistance<T>(

@@ -1,7 +1,7 @@
 [
   {
     "path": "Twemoji12_1f692.svg",
-    "license": "CC-BY 4.0",
+    "license": "CC-BY-4.0",
     "authors": [
       "Twemoji Project"
     ],
@@ -12,7 +12,7 @@
   },
   {
     "path": "Twemoji12_1f9ef.svg",
-    "license": "CC-BY 4.0",
+    "license": "CC-BY-4.0",
     "authors": [
       "Twemoji Project"
     ],
@@ -23,7 +23,7 @@
   },
   {
     "path": "Twemoji12_26d1.svg",
-    "license": "CC-BY 4.0",
+    "license": "CC-BY-4.0",
     "authors": [
       "Twemoji Project"
     ],
@@ -34,7 +34,7 @@
   },
   {
     "path": "Twemoji_1f691.svg",
-    "license": "CC-BY 4.0",
+    "license": "CC-BY-4.0",
     "authors": [
       "Twemoji Project"
     ],
@@ -45,7 +45,7 @@
   },
   {
     "path": "hydrant.svg",
-    "license": "GPL",
+    "license": "GPL-2.0-or-later",
     "authors": [
       "http://jaanos.deviantart.com/"
     ],
@@ -55,7 +55,7 @@
   },
   {
     "path": "hydrant.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "GOwin"
     ],
@@ -65,7 +65,7 @@
   },
   {
     "path": "hydrant_pillar.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "M!dgard"
     ],
@@ -76,7 +76,7 @@
   },
   {
     "path": "hydrant_underground.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "M!dgard"
     ],
@@ -87,7 +87,7 @@
   },
   {
     "path": "hydrant_unknown.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "M!dgard"
     ],
@@ -98,7 +98,7 @@
   },
   {
     "path": "logo.svg",
-    "license": "CC-BY-SA 4.0",
+    "license": "CC-BY-SA-4.0",
     "authors": [
       "Erwin Olario"
     ],

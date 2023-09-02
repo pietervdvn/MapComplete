@@ -1,8 +1,24 @@
 import ThemeViewState from "../../Models/ThemeViewState"
 import Hash from "./Hash"
+import { MenuState } from "../../Models/MenuState"
 
 export default class ThemeViewStateHashActor {
     private readonly _state: ThemeViewState
+
+    public static readonly documentation = [
+        "The URL-hash can contain multiple values:",
+        "",
+        "- The id of the currently selected object, e.g. `node/1234`",
+        "- The currently opened menu view",
+        "- The base64-encoded JSON-file specifying a custom theme (only when loading)",
+        "",
+        "### Possible hashes to open a menu",
+        "",
+        "The possible hashes are:",
+        "",
+        MenuState._menuviewTabs.map((tab) => "`menu:" + tab + "`").join(","),
+        MenuState._themeviewTabs.map((tab) => "`theme-menu:" + tab + "`").join(","),
+    ]
 
     /**
      * Converts the hash to the appropriate themeview state and, vice versa, sets the hash.
@@ -100,7 +116,7 @@ export default class ThemeViewStateHashActor {
 
     private loadStateFromHash(hash: string) {
         const state = this._state
-        const parts = hash.split(";")
+        const parts = hash.split(":")
         outer: for (const { toggle, name, showOverOthers, submenu } of state.guistate.allToggles) {
             for (const part of parts) {
                 if (part === name) {

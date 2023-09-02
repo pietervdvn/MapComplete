@@ -179,7 +179,7 @@
         "pdf": {
             "attr": "Dati della mappa © OpenStreetMap Contributors, riutilizzabile con licenza ODbL",
             "attrBackground": "Livello di sfondo: {background}",
-            "generatedWith": "Generato con MapComplete.osm.be/{layoutid}",
+            "generatedWith": "Generato con mapcomplete.org/{layoutid}",
             "versionInfo": "v{version} - generato il {date}"
         },
         "pickLanguage": "Scegli una lingua: ",
@@ -204,21 +204,8 @@
             "searching": "Ricerca…"
         },
         "sharescreen": {
-            "addToHomeScreen": "<h3>Aggiungi alla tua schermata Home</h3>Puoi aggiungere facilmente questo sito web alla schermata Home del tuo smartphone. Per farlo, clicca sul pulsante ‘Aggiungi a schermata Home’ nella barra degli indirizzi.",
             "copiedToClipboard": "Collegamento copiato negli appunti",
-            "downloadCustomTheme": "Scarica la configurazione di questo argomento",
-            "downloadCustomThemeHelp": "Una persona esperta può utilizzare questo file per migliorare il tuo argomento",
-            "editThemeDescription": "Aggiungi o modifica le domande a questo tema della mappa",
-            "editThisTheme": "Modifica questo tema",
             "embedIntro": "<h3>Incorpora nel tuo sito web</h3>Siamo lieti se vorrai includere questa cartina nel tuo sito web.<br>Ti incoraggiamo a farlo (non devi neanche chieder il permesso).<br>È gratuito e lo sarà per sempre. Più persone lo useranno e più valore acquisirà.",
-            "fsAddNew": "Abilita il pulsante ‘aggiungi nuovo PDI’",
-            "fsGeolocation": "Abilita il pusante ‘geo-localizzami’ (solo da mobile)",
-            "fsIncludeCurrentBackgroundMap": "Includi lo sfondo attualmente selezionato <b>{name}</b>",
-            "fsIncludeCurrentLayers": "Includi i livelli correntemente selezionati",
-            "fsIncludeCurrentLocation": "Includi la posizione attuale",
-            "fsLayerControlToggle": "Inizia con il pannello dei livelli aperto",
-            "fsLayers": "Abilita il controllo dei livelli",
-            "fsSearch": "Abilita la barra di ricerca",
             "fsUserbadge": "Abilita il pulsante di accesso",
             "fsWelcomeMessage": "Mostra il messaggio di benvenuto e le schede associate",
             "intro": "<h3>Condividi questa mappa</h3>Condividi questa mappa copiando il collegamento qua sotto e inviandolo ad amici o parenti:",

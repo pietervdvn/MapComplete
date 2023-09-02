@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/themes/climbing/climbing_no_rope.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/themes/climbing/climbing_no_rope.svg' height="100px"> 
 
 An area where climbing is possible, e.g. a crag, site, boulder, … Contains aggregation of routes
 
@@ -26,8 +26,8 @@ An area where climbing is possible, e.g. a crag, site, boulder, … Contains agg
 
 
 
-  - [climbing](https://mapcomplete.osm.be/climbing)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [climbing](https://mapcomplete.org/climbing)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -47,13 +47,13 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:name%3D)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing#values) [climbing](https://wiki.openstreetmap.org/wiki/Key:climbing) | Multiple choice | [boulder](https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dboulder) [crag](https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dcrag) [area](https://wiki.openstreetmap.org/wiki/Tag:climbing%3Darea)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/rock#values) [rock](https://wiki.openstreetmap.org/wiki/Key:rock) | [string](../SpecialInputElements.md#string) | [limestone](https://wiki.openstreetmap.org/wiki/Tag:rock%3Dlimestone)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/url#values) [url](https://wiki.openstreetmap.org/wiki/Key:url) | [url](../SpecialInputElements.md#url) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/charge#values) [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:charge%3D)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:boulder#values) [climbing:boulder](https://wiki.openstreetmap.org/wiki/Key:climbing:boulder) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:name%3D)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing#values) [climbing](https://wiki.openstreetmap.org/wiki/Key:climbing) | Multiple choice | [boulder](https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dboulder) [crag](https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dcrag) [area](https://wiki.openstreetmap.org/wiki/Tag:climbing%3Darea)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/rock#values) [rock](https://wiki.openstreetmap.org/wiki/Key:rock) | [string](../SpecialInputElements.md#string) | [limestone](https://wiki.openstreetmap.org/wiki/Tag:rock%3Dlimestone)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/url#values) [url](https://wiki.openstreetmap.org/wiki/Key:url) | [url](../SpecialInputElements.md#url) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/charge#values) [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:charge%3D)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:boulder#values) [climbing:boulder](https://wiki.openstreetmap.org/wiki/Key:climbing:boulder) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited)
 
 
 

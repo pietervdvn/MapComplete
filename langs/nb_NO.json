@@ -1,4 +1,7 @@
 {
+    "advanced": {
+        "title": "Avanserte funksjoner"
+    },
     "centerMessage": {
         "loadingData": "Laster inn data …",
         "ready": "Ferdig",
@@ -40,7 +43,7 @@
     },
     "flyer": {
         "aerial": "Dette kartet bruker en annen bakgrunn, altså luftfoto av Agentschap Informatie Vlaanderen",
-        "callToAction": "Test på mapcomplete.osm.be",
+        "callToAction": "Test på mapcomplete.org",
         "cyclofix": "Sykkelpumper, reperasjonsstasjoner, drikkevann og sykkelbutikker finner du på cyclofix.",
         "description": "Et liggende A4-informasjonsblad som promoterer MapComplete",
         "editing": {
@@ -66,7 +69,7 @@
         },
         "onwheels": "Innendørskart for rullestolsbrukere er også tilgjengelig.",
         "tagline": "Samle inn geodata med OpenStreetMap",
-        "title": "MapComplete.osm.be",
+        "title": "mapcomplete.org",
         "whatIsOsm": "Hva er OpenStreetMap?"
     },
     "general": {
@@ -205,7 +208,7 @@
         "pdf": {
             "attr": "Kartdata © OpenStreetMap-bidragsytere, gjenbrukbart med ODbL-lisens",
             "attrBackground": "Bakgrunnslag: {background}",
-            "generatedWith": "Generert av MapComplete.osm.be/{layoutid}",
+            "generatedWith": "Generert av mapcomplete.org/{layoutid}",
             "versionInfo": "v{version}. Generert {date}"
         },
         "pickLanguage": "Velg språk: ",
@@ -230,20 +233,8 @@
             "searching": "Søker …"
         },
         "sharescreen": {
-            "addToHomeScreen": "<h3>Legg til på hjemmeskjermen din</h3>Du kan enkelt legge til denne nettsiden på din smarttelefon-hjemmeskjerm for å få det hele integrert. Klikk på «Legg til på hjemmeskjerm»-knappen i nettadressefeltet for å gjøre dette.",
             "copiedToClipboard": "Lenke kopiert til utklippstavle",
-            "downloadCustomTheme": "Last ned oppsettet for dette temaet",
-            "downloadCustomThemeHelp": "En dreven bidragsyter kan bruke denne filen for å forbedre temaet ditt",
-            "editThemeDescription": "Legg til eller endre spørsmål for dette karttemaet",
-            "editThisTheme": "Rediger dette temaet",
             "embedIntro": "<h3>Bygg inn på nettsiden din</h3>Legg til dette kartet på nettsiden din. <br/>Du oppfordres til å gjøre dette, og trenger ikke å spørre om tillatelse. <br/> Det er fritt, og vil alltid være det. Desto flere som bruker dette, desto mer verdifullt blir det.",
-            "fsGeolocation": "Skru på «Geolokaliser meg»-knappen (kun for mobil)",
-            "fsIncludeCurrentBackgroundMap": "Inkluder nåværende bakgrunnsvalg <b>{name}</b>",
-            "fsIncludeCurrentLayers": "Inkluder nåværende lagvalg",
-            "fsIncludeCurrentLocation": "Inkluder nåværende posisjon",
-            "fsLayerControlToggle": "Start med lagkontrollen utvidet",
-            "fsLayers": "Skru på lagkontrollen",
-            "fsSearch": "Skru på søkefeltet",
             "fsUserbadge": "Skru på innloggingsknappen",
             "fsWelcomeMessage": "Vis velkomst-oppsprettsmeldinger og tilknyttede faner",
             "intro": "<h3>Del dette kartet</h3> Del dette kartet ved å kopiere lenken nedenfor og sende den til venner og familie:",

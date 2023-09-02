@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/themes/surveillance/logo.svg' height="100px"> 
+<img src='https://mapcomplete.org/./assets/themes/surveillance/logo.svg' height="100px"> 
 
 This layer shows surveillance cameras and allows a contributor to update information and add new cameras
 
@@ -26,8 +26,8 @@ This layer shows surveillance cameras and allows a contributor to update informa
 
 
 
-  - [personal](https://mapcomplete.osm.be/personal)
-  - [surveillance](https://mapcomplete.osm.be/surveillance)
+  - [personal](https://mapcomplete.org/personal)
+  - [surveillance](https://mapcomplete.org/surveillance)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -47,15 +47,15 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/camera:type#values) [camera:type](https://wiki.openstreetmap.org/wiki/Key:camera:type) | Multiple choice | [fixed](https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Dfixed) [dome](https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Ddome) [panning](https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Dpanning)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/camera:direction#values) [camera:direction](https://wiki.openstreetmap.org/wiki/Key:camera:direction) | [direction](../SpecialInputElements.md#direction) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/surveillance#values) [surveillance](https://wiki.openstreetmap.org/wiki/Key:surveillance) | Multiple choice | [public](https://wiki.openstreetmap.org/wiki/Tag:surveillance%3Dpublic) [outdoor](https://wiki.openstreetmap.org/wiki/Tag:surveillance%3Doutdoor) [indoor](https://wiki.openstreetmap.org/wiki/Tag:surveillance%3Dindoor)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/indoor#values) [indoor](https://wiki.openstreetmap.org/wiki/Key:indoor) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [nat](../SpecialInputElements.md#nat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/surveillance:zone#values) [surveillance:zone](https://wiki.openstreetmap.org/wiki/Key:surveillance:zone) | [string](../SpecialInputElements.md#string) | [parking](https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dparking) [traffic](https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dtraffic) [entrance](https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dentrance) [corridor](https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dcorridor) [public_transport_platform](https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dpublic_transport_platform) [shop](https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dshop)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/camera:mount#values) [camera:mount](https://wiki.openstreetmap.org/wiki/Key:camera:mount) | [string](../SpecialInputElements.md#string) | [wall](https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dwall) [pole](https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dpole) [ceiling](https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dceiling) [street_lamp](https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dstreet_lamp) [tree](https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dtree)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/camera:type#values) [camera:type](https://wiki.openstreetmap.org/wiki/Key:camera:type) | Multiple choice | [fixed](https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Dfixed) [dome](https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Ddome) [panning](https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Dpanning)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/camera:direction#values) [camera:direction](https://wiki.openstreetmap.org/wiki/Key:camera:direction) | [direction](../SpecialInputElements.md#direction) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/surveillance#values) [surveillance](https://wiki.openstreetmap.org/wiki/Key:surveillance) | Multiple choice | [public](https://wiki.openstreetmap.org/wiki/Tag:surveillance%3Dpublic) [outdoor](https://wiki.openstreetmap.org/wiki/Tag:surveillance%3Doutdoor) [indoor](https://wiki.openstreetmap.org/wiki/Tag:surveillance%3Dindoor)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/indoor#values) [indoor](https://wiki.openstreetmap.org/wiki/Key:indoor) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [nat](../SpecialInputElements.md#nat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/surveillance:zone#values) [surveillance:zone](https://wiki.openstreetmap.org/wiki/Key:surveillance:zone) | [string](../SpecialInputElements.md#string) | [parking](https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dparking) [traffic](https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dtraffic) [entrance](https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dentrance) [corridor](https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dcorridor) [public_transport_platform](https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dpublic_transport_platform) [shop](https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dshop)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/camera:mount#values) [camera:mount](https://wiki.openstreetmap.org/wiki/Key:camera:mount) | [string](../SpecialInputElements.md#string) | [wall](https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dwall) [pole](https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dpole) [ceiling](https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dceiling) [street_lamp](https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dstreet_lamp) [tree](https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dtree)
 
 
 

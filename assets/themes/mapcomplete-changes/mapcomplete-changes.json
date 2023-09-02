@@ -3,6 +3,7 @@
   "title": {
     "en": "Changes made with MapComplete",
     "de": "Mit MapComplete erstellte Änderungen",
+    "fr": "Changements faits avec MapComplete",
     "nl": "Wijzigingen gemaakt met MapComplete"
   },
   "shortDescription": {
@@ -13,6 +14,7 @@
   "description": {
     "en": "This maps shows all the changes made with MapComplete",
     "de": "Diese Karte zeigt alle mit MapComplete vorgenommenen Änderungen",
+    "fr": "Cette carte montre tous les changements faits avec MapComplete",
     "nl": "Deze kaart toont alle wijzigingen die met MapComplete gemaakt werden"
   },
   "icon": "./assets/svg/logo.svg",
@@ -40,7 +42,8 @@
       "title": {
         "render": {
           "en": "Changeset for {theme}",
-          "de": "Änderungssatz für {theme}"
+          "de": "Änderungssatz für {theme}",
+          "fr": "Groupe de modifications pour {theme}"
         }
       },
       "description": {
@@ -53,7 +56,8 @@
           "id": "show_changeset_id",
           "render": {
             "en": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
-            "de": "Änderungssatz <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+            "de": "Änderungssatz <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
+            "fr": "Groupe de modifications <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
           }
         },
         {
@@ -61,6 +65,7 @@
           "question": {
             "en": "Which contributor made this change?",
             "de": "Welcher Mitwirkende hat diese Änderung vorgenommen?",
+            "fr": "Quel contributeur a fait cette modification ?",
             "nl": "Welke bijdrager maakte deze wijziging?"
           },
           "freeform": {
@@ -69,6 +74,7 @@
           "render": {
             "en": "Change made by <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>",
             "de": "Änderung gemacht von <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>",
+            "fr": "Modification faite par <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>",
             "nl": "Wijziging gemaakt door  <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
           }
         },
@@ -76,14 +82,16 @@
           "id": "theme-id",
           "question": {
             "en": "What theme was used to make this change?",
-            "de": "Welches Thema wurde für diese Änderung verwendet?"
+            "de": "Welches Thema wurde für diese Änderung verwendet?",
+            "fr": "Quel thème a été utilisé pour faire cette modification ?"
           },
           "freeform": {
             "key": "theme"
           },
           "render": {
             "en": "Change with theme <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
-            "de": "Geändert mit Thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+            "de": "Geändert mit Thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
+            "fr": "Modifié avec le thème <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
           }
         },
         {
@@ -94,6 +102,7 @@
           "question": {
             "en": "What locale (language) was this change made in?",
             "de": "In welcher Sprache wurde diese Änderung vorgenommen?",
+            "fr": "En quelle langue est-ce que ce changement a été fait ?",
             "nl": "In welke locale (taal) werd deze wijziging gemaakt?"
           },
           "render": {
@@ -107,6 +116,7 @@
           "render": {
             "en": "Change made with <a href='{host}'>{host}</a>",
             "de": "Änderung vorgenommen mit <a href='{host}'>{host}</a>",
+            "fr": "Modification faite avec <a href='{host}'>{host}</a>",
             "nl": "Wijziging gemaakt met <a href='{host}'>{host}</a>"
           },
           "question": {
@@ -134,11 +144,13 @@
           "id": "version",
           "question": {
             "en": "What version of MapComplete was used to make this change?",
-            "de": "Mit welcher Version von MapComplete wurde diese Änderung gemacht?"
+            "de": "Mit welcher Version von MapComplete wurde diese Änderung gemacht?",
+            "fr": "Quelle version de MapComplete a été utilisée pour faire cette modification ?"
           },
           "render": {
             "en": "Made with {editor}",
-            "de": "Erstellt mit {editor}"
+            "de": "Erstellt mit {editor}",
+            "fr": "Fait avec {editor}"
           },
           "freeform": {
             "key": "editor"
@@ -574,6 +586,7 @@
               "question": {
                 "en": "User language (iso-code) {search}",
                 "de": "Benutzersprache (ISO-Code) {search}",
+                "fr": "Langage utilisateur (code-ISO) {search}",
                 "nl": "De taal van de bijdrager is {search}"
               }
             }
@@ -605,6 +618,7 @@
               "question": {
                 "en": "Changeset added at least one image",
                 "de": "Changeset fügte mindestens ein Bild hinzu",
+                "fr": "Le groupe de modifications a ajouté au moins une image",
                 "nl": "Changeset bevat minstens één afbeelding"
               }
             }
@@ -621,7 +635,8 @@
             "id": "link_to_more",
             "render": {
               "en": "More statistics can be found <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>",
-              "de": "Mehr Statistiken gibt es <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
+              "de": "Mehr Statistiken gibt es <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>",
+              "fr": "D'autres statistiques sont disponibles <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>ici</a>"
             }
           },
           {

@@ -18,7 +18,8 @@
     "ca": "Obres d'art",
     "da": "Kunstværker",
     "cs": "Umělecká díla",
-    "pa_PK": "کلاکاری"
+    "pa_PK": "کلاکاری",
+    "he": "יצירות אמנות"
   },
   "source": {
     "osmTags": "tourism=artwork"
@@ -46,7 +47,8 @@
       "ca": "Obra d'art",
       "da": "Kunstværk",
       "cs": "Umělecké dílo",
-      "pa_PK": "کلاکاری"
+      "pa_PK": "کلاکاری",
+      "he": "יצירת אומנות"
     },
     "mappings": [
       {
@@ -72,7 +74,8 @@
           "sv": "Konstverk <i>{name}</i>",
           "da": "Kunstværk <i>{name}</i>",
           "cs": "Umělecké dílo <i>{name}</i>",
-          "ca": "Obra d'art <i>{name}</i>"
+          "ca": "Obra d'art <i>{name}</i>",
+          "he": "יצירת אומנות <i>{name}</i>"
         }
       }
     ]
@@ -168,7 +171,8 @@
         "pl": "Jest to {artwork_type}",
         "da": "Dette er en {artwork_type}",
         "cs": "Toto je {artwork_type}",
-        "ca": "Aquesta és un {artwork_type}"
+        "ca": "Aquesta és un {artwork_type}",
+        "he": "זהו {artwork_type}"
       },
       "question": {
         "en": "What is the type of this artwork?",
@@ -187,7 +191,8 @@
         "pl": "Jakiego rodzaju jest to dzieło sztuki?",
         "da": "Hvilken slags kunstværk er det?",
         "cs": "Jaký je typ tohoto uměleckého díla?",
-        "ca": "Quin tipus d'obra és aquesta peça?"
+        "ca": "Quin tipus d'obra és aquesta peça?",
+        "he": "מהו סוג היצירה הזו?"
       },
       "freeform": {
         "key": "artwork_type",
@@ -216,7 +221,8 @@
             "ca": "Arquitectura",
             "da": "Arkitektur",
             "cs": "Architektura",
-            "pt_BR": "Arquitetura"
+            "pt_BR": "Arquitetura",
+            "he": "אדריכלות"
           }
         },
         {
@@ -240,7 +246,8 @@
             "da": "Vægmaleri",
             "cs": "Nástěnná malba",
             "pa_PK": "کندھ چتر",
-            "pt_BR": "Mural"
+            "pt_BR": "Mural",
+            "he": "ציור קיר"
           }
         },
         {
@@ -262,7 +269,8 @@
             "es": "Pintura",
             "ca": "Pintura",
             "da": "Maleri",
-            "cs": "Malba"
+            "cs": "Malba",
+            "he": "ציור"
           }
         },
         {
@@ -286,7 +294,8 @@
             "da": "Skulptur",
             "cs": "Plastika",
             "pa_PK": "مورتی",
-            "pt_BR": "Escultura"
+            "pt_BR": "Escultura",
+            "he": "פיסול"
           }
         },
         {
@@ -308,7 +317,8 @@
             "ca": "Estàtua",
             "da": "Statue",
             "cs": "Socha",
-            "pt_BR": "Estátua"
+            "pt_BR": "Estátua",
+            "he": "פסל"
           }
         },
         {
@@ -354,7 +364,8 @@
             "da": "Sten",
             "pa_PK": "پتھر",
             "cs": "Kámen",
-            "pt_BR": "Pedra"
+            "pt_BR": "Pedra",
+            "he": "אבן"
           }
         },
         {
@@ -464,7 +475,8 @@
             "ca": "Enrajolat",
             "es": "Cerámica",
             "da": "flisebeklædning",
-            "cs": "Obklady a dlažba"
+            "cs": "Obklady a dlažba",
+            "he": "יצירת פסיפס"
           }
         },
         {
@@ -478,7 +490,8 @@
             "fr": "Sculpture sur bois",
             "nb_NO": "Treskjæring",
             "ca": "Tallat a la fusta",
-            "es": "Tallado en madera"
+            "es": "Tallado en madera",
+            "he": "גילוף בעץ"
           }
         }
       ],
@@ -508,7 +521,8 @@
         "es": "¿Quién creó esta obra de arte?",
         "fr": "Qui a fait cette oeuvre d'art ?",
         "ca": "Qui va crear aquesta obra d'art?",
-        "nb_NO": "Hvem laget dette kunstverket?"
+        "nb_NO": "Hvem laget dette kunstverket?",
+        "he": "מי יצר את היצירה הזו?"
       },
       "freeform": {
         "key": "artist:wikidata",
@@ -542,7 +556,8 @@
         "da": "Hvilken kunstner har lavet dette?",
         "cs": "Který umělec to vytvořil?",
         "ca": "Quin artista va crear açò?",
-        "pt_BR": "Que artista criou isto?"
+        "pt_BR": "Que artista criou isto?",
+        "he": "איזה אמן יצר את זה?"
       },
       "render": {
         "en": "Created by {artist_name}",
@@ -561,7 +576,8 @@
         "es": "Creado por {artist_name}",
         "da": "Lavet af {artist_name}",
         "cs": "Vytvořil {artist_name}",
-        "ca": "Creat per {artist_name}"
+        "ca": "Creat per {artist_name}",
+        "he": "נוצר על ידי {artist_name}"
       },
       "freeform": {
         "key": "artist_name"
@@ -590,26 +606,34 @@
         "es": "¿Hay un sitio web con más información sobre esta obra de arte?",
         "da": "Er der et websted med mere information om dette kunstværk?",
         "cs": "Existuje webová stránka s dalšími informacemi o tomto uměleckém díle?",
-        "ca": "Hi ha un lloc web amb més informació sobre aquesta obra d'art?"
+        "ca": "Hi ha un lloc web amb més informació sobre aquesta obra d'art?",
+        "he": "האם יש אתר אינטרנט עם מידע נוסף על היצירה הזו?"
       },
       "render": {
-        "en": "More information on <a href='{website}' target='_blank'>this website</a>",
-        "nl": "Meer informatie op <a href='{website}' target='_blank'>deze website</a>",
-        "fr": "Plus d'info <a href='{website}' target='_blank'>sûr ce site web</a>",
-        "de": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>",
-        "id": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini",
-        "it": "Ulteriori informazioni su <a href='{website}' target='_blank'>questo sito web</a>",
-        "ru": "Больше информации на <a href='{website}' target='_blank'>этом сайте</a>",
-        "ja": "<a href='{website}' target='_blank'>Webサイト</a>に詳細情報がある",
-        "zh_Hant": "<a href='{website}' target='_blank'>這個網站</a>有更多資訊",
-        "nb_NO": "Mer info er å finne på <a href='{website}' target='_blank'>denne nettsiden</a>",
-        "pt": "Mais informações <a href='{website}' target='_blank'>neste site</a>",
-        "hu": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>",
-        "pl": "Więcej informacji na <a href='{website}' target='_blank'>tej stronie</a>",
-        "es": "Más información en <a href='{website}' target='_blank'>este sitio web</a>",
-        "da": "Yderligere oplysninger på <a href='{website}' target='_blank'> dette websted</a>",
-        "cs": "Více informací na <a href='{website}' target='_blank'>této webové stránce</a>",
-        "ca": "Més informació a <a href='{website}' target='_blank'>aquesta pàgina web</a>"
+        "special": {
+          "type": "link",
+          "href": "{website}",
+          "text": {
+            "en": "More information on this website",
+            "nl": "Meer informatie op deze website",
+            "fr": "Plus d'info sûr ce site web",
+            "de": "Weitere Informationen auf dieser Webseite",
+            "id": "Info lanjut tersedia di laman web ini",
+            "it": "Ulteriori informazioni su questo sito web",
+            "ru": "Больше информации на этом сайте",
+            "ja": "Webサイトに詳細情報がある",
+            "zh_Hant": "這個網站有更多資訊",
+            "nb_NO": "Mer info er å finne på denne nettsiden",
+            "pt": "Mais informações neste site",
+            "hu": "További információ ezen a weboldalon",
+            "pl": "Więcej informacji na tej stronie",
+            "es": "Más información en este sitio web",
+            "da": "Yderligere oplysninger på  dette websted",
+            "cs": "Více informací na této webové stránce",
+            "ca": "Més informació a aquesta pàgina web"
+          }
+        }
+       
       },
       "freeform": {
         "key": "website",
@@ -635,7 +659,8 @@
         "pt": "O que esta obra de arte representa?",
         "es": "¿Qué representa esta obra de arte?",
         "fr": "Que représente cette oeuvre d'art ?",
-        "ca": "Què representa aquesta obra d'art?"
+        "ca": "Què representa aquesta obra d'art?",
+        "he": "מה מתארת היצירה הזו?"
       },
       "freeform": {
         "key": "subject:wikidata",
@@ -665,7 +690,8 @@
         "nl": "Is dit kunstwerk ook een zitbank?",
         "nb_NO": "Tjener dette kunstverket funksjonen som benk?",
         "ca": "Aquesta obra d'art serveix com a un banc?",
-        "cs": "Slouží toto umělecké dílo jako lavička?"
+        "cs": "Slouží toto umělecké dílo jako lavička?",
+        "he": "האם היצירה הזו משמשת כספסל?"
       },
       "mappings": [
         {
@@ -676,7 +702,8 @@
             "fr": "Cette oeuvre d'art sert aussi de banc",
             "nl": "Dit kunstwerk doet ook dienst als zitbank",
             "ca": "Aquesta obra d'art també serveix com a banc",
-            "cs": "Toto umělecké dílo slouží také jako lavička"
+            "cs": "Toto umělecké dílo slouží také jako lavička",
+            "he": "יצירה זו משמשת גם כספסל"
           }
         },
         {
@@ -688,7 +715,8 @@
             "nl": "Dit kunstwerk doet geen dienst als zitbank",
             "nb_NO": "Dette kunstverket tjener ikke funksjonen som benk",
             "ca": "Aquesta obra d'art no serveix com a banc",
-            "cs": "Toto umělecké dílo neslouží jako lavička"
+            "cs": "Toto umělecké dílo neslouží jako lavička",
+            "he": "יצירה זו אינה משמשת כספסל"
           }
         },
         {
@@ -700,7 +728,8 @@
             "nl": "Dit kunstwerk doet geen dienst als zitbank",
             "nb_NO": "Dette kunstverket tjener ikke den hensikten å være en benk",
             "ca": "Aquesta obra d'art no serveix com a un banc",
-            "cs": "Toto umělecké dílo neslouží jako lavička"
+            "cs": "Toto umělecké dílo neslouží jako lavička",
+            "he": "יצירה זו אינה משמשת כספסל"
           },
           "hideInAnswer": true
         }

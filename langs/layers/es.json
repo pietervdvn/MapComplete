@@ -129,7 +129,7 @@
                         "then": "Publicidad electoral"
                     },
                     "4": {
-                        "then": "Información sobre teatros, conciertos, ..."
+                        "then": "Información sobre teatros, conciertos, …"
                     },
                     "5": {
                         "then": "Mensaje de organizaciones sin ánimo de lucro"
@@ -144,7 +144,7 @@
                         "then": "Cartel de financiación"
                     },
                     "9": {
-                        "then": "un mapa"
+                        "then": "Un mapa"
                     }
                 },
                 "question": "Que tipo de mensaje se muestra?"
@@ -351,7 +351,11 @@
             },
             "artwork-website": {
                 "question": "¿Hay un sitio web con más información sobre esta obra de arte?",
-                "render": "Más información en <a href='{website}' target='_blank'>este sitio web</a>"
+                "render": {
+                    "special": {
+                        "text": "Más información en este sitio web"
+                    }
+                }
             },
             "artwork_subject": {
                 "question": "¿Qué representa esta obra de arte?",
@@ -799,7 +803,7 @@
                     }
                 },
                 "question": "¿Todavía funciona esta máquina expendedora?",
-                "render": "El estado operacional es <i>{operational_status}</i></i>"
+                "render": "El estado operacional es <i>{operational_status}</i>"
             }
         }
     },
@@ -886,7 +890,7 @@
                         "then": "Bolardo"
                     },
                     "7": {
-                        "then": "Una área en el suelo que está marcada  para el aparcamiento de bicicletas"
+                        "then": "Una área en el suelo que está marcada para el aparcamiento de bicicletas"
                     }
                 },
                 "question": "¿Cual es el tipo de este aparcamiento de bicicletas?",
@@ -1090,7 +1094,7 @@
             "send_email_about_broken_pump": {
                 "render": {
                     "special": {
-                        "body": "Hola,\n\nCon este correo, me gustaría informar de que esta bomba para bicicletas situada en https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} está rota.\n\nUn saludo",
+                        "body": "Hola,\n\nCon este correo, me gustaría informar de que esta bomba para bicicletas situada en https://mapcomplete.org/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} está rota.\n\nUn saludo",
                         "button_text": "Reportar esta bomba para bicicletas como rota",
                         "subject": "Bomba para bicicletas rota"
                     }
@@ -1392,7 +1396,7 @@
                         "then": "Este es un <b>club nocturno</b> o discoteca centrado en bailar, música de un DJ con un espectáculo de luces que la acompaña y un bar donde conseguir bebidas (alcohólicas)"
                     }
                 },
-                "question": "Qué tipo de cafetería es esta"
+                "question": "Qué tipo de cafe es este?"
             },
             "Name": {
                 "question": "¿Cual es el nombre de este pub?",
@@ -1405,7 +1409,7 @@
                     "then": "<i>{name}</i>"
                 }
             },
-            "render": "Pub"
+            "render": "Bar"
         }
     },
     "charging_station": {
@@ -1735,11 +1739,11 @@
                     }
                 },
                 "question": "¿Qué corriente ofrecen los conectores con <div style='display:i nline-block'><b><b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños</b> <img style='width:1rem;display:inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>USB</b> para carga teléfonos y dispositivos electrónicos pequeños</b> <img style='width:1rem; display: inline-block' src='./assets/layers/changing_station/usb_port.svg'></div> salida de hasta {socket:USB-A:current}A"
+                "render": "<div style='display: inline-block'><b><b>USB</b> para carga teléfonos y dispositivos electrónicos pequeños</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> salida de hasta {socket:USB-A:current}A"
             },
             "email": {
                 "question": "¿Cual es la dirección de correo electrónico de esta operadora?",
-                "render": "En caso de problemas, envía un correo electrónico a <a href=\"mailto:{email}'>{email}</a>"
+                "render": "En caso de problemas, envía un correo electrónico a <a href='mailto:{email}'>{email}</a>"
             },
             "fee": {
                 "mappings": {
@@ -2401,6 +2405,91 @@
             "render": "Agua potable"
         }
     },
+    "elongated_coin": {
+        "description": "Capa mostrando prensas de centavo.",
+        "name": "Prensas de centavo",
+        "presets": {
+            "0": {
+                "title": "una prensa de centavo"
+            }
+        },
+        "tagRenderings": {
+            "charge": {
+                "freeform": {
+                    "placeholder": "Costo (por ejemplo, 0.50 euros)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Cuesta 1 euro para presionar un centavo."
+                    },
+                    "1": {
+                        "then": "Cuesta 2 euros para presionar un centavo."
+                    }
+                },
+                "question": "¿Cuánto cuesta presionar un centavo?",
+                "render": "Cuesta {charge} para presionar un centavo."
+            },
+            "coin": {
+                "freeform": {
+                    "placeholder": "Tipo de moneda (por ejemplo, 10 centavos)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Esta prensa de centavo utiliza una moneda de 2 centavos para presionar."
+                    },
+                    "1": {
+                        "then": "Esta prensa de centavo utiliza una moneda de 5 centavos para presionar."
+                    },
+                    "2": {
+                        "then": "Esta prensa de centavo utiliza una moneda de 10 centavos para presionar."
+                    },
+                    "3": {
+                        "then": "Esta prensa de centavo utiliza una moneda de 25 centavos para presionar."
+                    },
+                    "4": {
+                        "then": "Esta prensa de centavo utiliza una moneda de 50 centavos para presionar."
+                    }
+                },
+                "question": "Qué moneda se utiliza para presionar?",
+                "render": "Esta prensa de centavo utiliza una moneda {coin:type} para presionar."
+            },
+            "designs": {
+                "freeform": {
+                    "placeholder": "Número de diseños (por ejemplo, 5)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Esta prensa tiene un diseño disponible."
+                    },
+                    "1": {
+                        "then": "Esta prensa tiene dos diseños disponibles."
+                    },
+                    "2": {
+                        "then": "Esta prensa tiene tres diseños disponibles."
+                    },
+                    "3": {
+                        "then": "Esta prensa tiene cuatro diseños disponibles."
+                    }
+                },
+                "question": "Cuántos diseños son disponibles?",
+                "render": "Esta prensa tiene {coin:design_count} diseños disponibles."
+            },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta prensa está ubicada en interior."
+                    },
+                    "1": {
+                        "then": "Esta prensa está ubicada al aire libre."
+                    }
+                },
+                "question": "La prensa de centavo esta al interior?"
+            }
+        },
+        "title": {
+            "render": "Prensa de centavo"
+        }
+    },
     "entrance": {
         "description": "Una capa que muestra capas y ofrece la posibilidad de sondear algunos datos avanzados que son importantes para, por ejemplo, usuarios de sillas de ruedas (pero también incluye ciclistas, gente que quiere repartir, ...)",
         "name": "Entrada",
@@ -2588,7 +2677,7 @@
                 }
             }
         },
-        "description": "Una capa que muestra restaurantes y locales de comida rápida (con un renderizado especial para freidurías)",
+        "description": "Una capa mostrando restaurantes y locales de comida rápida (con un renderizado especial para friterías)",
         "filter": {
             "2": {
                 "options": {
@@ -2605,6 +2694,13 @@
                 }
             },
             "4": {
+                "options": {
+                    "0": {
+                        "question": "Tiene menú halah"
+                    }
+                }
+            },
+            "5": {
                 "options": {
                     "0": {
                         "question": "Tiene menú halah"
@@ -2769,7 +2865,7 @@
         }
     },
     "ghost_bike": {
-        "name": "Bicicleta blanca",
+        "name": "Bicicletas blanca",
         "presets": {
             "0": {
                 "title": "una bicicleta blanca"
@@ -2955,7 +3051,7 @@
         "name": "Velocidad",
         "tagRenderings": {
             "maxspeed-maxspeed": {
-                "question": "Qué velocidad tiene"
+                "question": "Qué es la velocidad máxima legal uno está permitido conducir en esta carretera?"
             }
         },
         "units": {
@@ -3346,7 +3442,7 @@
         }
     },
     "postboxes": {
-        "description": "La capa que muestra buzones de correo.",
+        "description": "La capa que mostrando buzones de correo.",
         "name": "Buzones de correo",
         "presets": {
             "0": {
@@ -4316,7 +4412,7 @@
             "Surveillance type: public, outdoor, indoor": {
                 "mappings": {
                     "0": {
-                        "then": "Es un área pública, como una calle, un puente, una plaza, un parque, una estación de tren, un corredor público o túnel, ..."
+                        "then": "Es un área pública, como una calle, un puente, una plaza, un parque, una estación de tren, un corredor público o túnel, …"
                     },
                     "1": {
                         "then": "Es un área exterior pero privada (ej: estacionamiento, gasolinera, patio, entrada, camino privado, ...)"

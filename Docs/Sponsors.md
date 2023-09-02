@@ -23,11 +23,11 @@ See https://osoc.be/editions/2022/removing-obstacles-with-open-data
 
 ### Antwerpse Zuidrand (2020 - 2021)
 
-Antwerpse Zuidrand commissioned a map with [playgrounds and hiking routes](https://mapcomplete.osm.be/speelplekken)
+Antwerpse Zuidrand commissioned a map with [playgrounds and hiking routes](https://mapcomplete.org/speelplekken)
 
 ### OSM UK (2021)
 
-OSM UK commissioned an [address importer](https://mapcomplete.osm.be/uk_addresses)
+OSM UK commissioned an [address importer](https://mapcomplete.org/uk_addresses)
 
 ### Toerisme Vlaanderen (2021 - 2022)
 

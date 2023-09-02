@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/pin:#f04c4c;./assets/layers/bike_shop/repair_shop.svg' height="100px"> 
+<img src='https://mapcomplete.org/pin:#f04c4c;./assets/layers/bike_shop/repair_shop.svg' height="100px"> 
 
 A shop specifically selling bicycles or related items
 
@@ -25,8 +25,8 @@ A shop specifically selling bicycles or related items
 
 
 
-  - [cyclofix](https://mapcomplete.osm.be/cyclofix)
-  - [personal](https://mapcomplete.osm.be/personal)
+  - [cyclofix](https://mapcomplete.org/cyclofix)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -46,31 +46,31 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/shop#values) [shop](https://wiki.openstreetmap.org/wiki/Key:shop) | Multiple choice | [rental](https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:retail#values) [service:bicycle:retail](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:repair#values) [service:bicycle:repair](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno) [only_sold](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Donly_sold) [brand](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dbrand)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:rental#values) [service:bicycle:rental](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/rental#values) [rental](https://wiki.openstreetmap.org/wiki/Key:rental) | [string](../SpecialInputElements.md#string) | [city_bike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcity_bike) [ebike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Debike) [bmx](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbmx) [mtb](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dmtb) [kid_bike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dkid_bike) [tandem](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dtandem) [racebike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dracebike) [bike_helmet](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbike_helmet)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:city_bike#values) [capacity:city_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:city_bike) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:ebike#values) [capacity:ebike](https://wiki.openstreetmap.org/wiki/Key:capacity:ebike) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:kid_bike#values) [capacity:kid_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:kid_bike) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:bmx#values) [capacity:bmx](https://wiki.openstreetmap.org/wiki/Key:capacity:bmx) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:mtb#values) [capacity:mtb](https://wiki.openstreetmap.org/wiki/Key:capacity:mtb) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:bicycle_pannier#values) [capacity:bicycle_pannier](https://wiki.openstreetmap.org/wiki/Key:capacity:bicycle_pannier) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:tandem_bicycle#values) [capacity:tandem_bicycle](https://wiki.openstreetmap.org/wiki/Key:capacity:tandem_bicycle) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:second_hand#values) [service:bicycle:second_hand](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dno) [only](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:pump#values) [service:bicycle:pump](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno) [separate](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dseparate)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:diy#values) [service:bicycle:diy](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno) [only_sold](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Donly_sold)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:cleaning#values) [service:bicycle:cleaning](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dyes) [diy](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Ddiy) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:cleaning:charge#values) [service:bicycle:cleaning:charge](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:charge) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/description#values) [description](https://wiki.openstreetmap.org/wiki/Key:description) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/shop#values) [shop](https://wiki.openstreetmap.org/wiki/Key:shop) | Multiple choice | [rental](https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:retail#values) [service:bicycle:retail](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:repair#values) [service:bicycle:repair](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno) [only_sold](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Donly_sold) [brand](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dbrand)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:rental#values) [service:bicycle:rental](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/rental#values) [rental](https://wiki.openstreetmap.org/wiki/Key:rental) | [string](../SpecialInputElements.md#string) | [city_bike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcity_bike) [ebike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Debike) [bmx](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbmx) [mtb](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dmtb) [kid_bike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dkid_bike) [tandem](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dtandem) [racebike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dracebike) [bike_helmet](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbike_helmet)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:city_bike#values) [capacity:city_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:city_bike) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:ebike#values) [capacity:ebike](https://wiki.openstreetmap.org/wiki/Key:capacity:ebike) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:kid_bike#values) [capacity:kid_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:kid_bike) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:bmx#values) [capacity:bmx](https://wiki.openstreetmap.org/wiki/Key:capacity:bmx) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:mtb#values) [capacity:mtb](https://wiki.openstreetmap.org/wiki/Key:capacity:mtb) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:bicycle_pannier#values) [capacity:bicycle_pannier](https://wiki.openstreetmap.org/wiki/Key:capacity:bicycle_pannier) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:tandem_bicycle#values) [capacity:tandem_bicycle](https://wiki.openstreetmap.org/wiki/Key:capacity:tandem_bicycle) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:second_hand#values) [service:bicycle:second_hand](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dno) [only](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:pump#values) [service:bicycle:pump](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno) [separate](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dseparate)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:diy#values) [service:bicycle:diy](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno) [only_sold](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Donly_sold)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:cleaning#values) [service:bicycle:cleaning](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dyes) [diy](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Ddiy) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:cleaning:charge#values) [service:bicycle:cleaning:charge](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:charge) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/description#values) [description](https://wiki.openstreetmap.org/wiki/Key:description) | [string](../SpecialInputElements.md#string) | 
 
 
 
@@ -563,6 +563,16 @@ This tagrendering has no question and is thus read-only
 
 
 ### move-button 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### delete-button 
 
 
 

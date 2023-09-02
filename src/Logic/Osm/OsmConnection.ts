@@ -1,8 +1,10 @@
-import osmAuth from "osm-auth"
+// @ts-ignore
+import { osmAuth } from "osm-auth"
 import { Store, Stores, UIEventSource } from "../UIEventSource"
 import { OsmPreferences } from "./OsmPreferences"
 import { Utils } from "../../Utils"
-
+import { LocalStorageSource } from "../Web/LocalStorageSource"
+import * as config from "../../../package.json"
 export default class UserDetails {
     public loggedIn = false
     public name = "Not logged in"
@@ -22,23 +24,18 @@ export default class UserDetails {
     }
 }
 
+export interface AuthConfig {
+    "#"?: string // optional comment
+    oauth_client_id: string
+    oauth_secret: string
+    url: string
+}
+
 export type OsmServiceState = "online" | "readonly" | "offline" | "unknown" | "unreachable"
 
 export class OsmConnection {
-    public static readonly oauth_configs = {
-        osm: {
-            oauth_consumer_key: "hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem",
-            oauth_secret: "wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI",
-            url: "https://www.openstreetmap.org",
-            // OAUTH 1.0 application
-            // https://www.openstreetmap.org/user/Pieter%20Vander%20Vennet/oauth_clients/7404
-        },
-        "osm-test": {
-            oauth_consumer_key: "Zgr7EoKb93uwPv2EOFkIlf3n9NLwj5wbyfjZMhz2",
-            oauth_secret: "3am1i1sykHDMZ66SGq4wI2Z7cJMKgzneCHp3nctn",
-            url: "https://master.apis.dev.openstreetmap.org",
-        },
-    }
+    public static readonly oauth_configs: Record<string, AuthConfig> =
+        config.config.oauth_credentials
     public auth
     public userDetails: UIEventSource<UserDetails>
     public isLoggedIn: Store<boolean>
@@ -53,11 +50,7 @@ export class OsmConnection {
         "not-attempted"
     )
     public preferencesHandler: OsmPreferences
-    public readonly _oauth_config: {
-        oauth_consumer_key: string
-        oauth_secret: string
-        url: string
-    }
+    public readonly _oauth_config: AuthConfig
     private readonly _dryRun: Store<boolean>
     private fakeUser: boolean
     private _onLoggedIn: ((userDetails: UserDetails) => void)[] = []
@@ -82,6 +75,19 @@ export class OsmConnection {
             OsmConnection.oauth_configs.osm
         console.debug("Using backend", this._oauth_config.url)
         this._iframeMode = Utils.runningFromConsole ? false : window !== window.top
+
+        // Check if there are settings available in environment variables, and if so, use those
+        if (
+            import.meta.env.VITE_OSM_OAUTH_CLIENT_ID !== undefined &&
+            import.meta.env.VITE_OSM_OAUTH_SECRET !== undefined
+        ) {
+            console.debug("Using environment variables for oauth config")
+            this._oauth_config = {
+                oauth_client_id: import.meta.env.VITE_OSM_OAUTH_CLIENT_ID,
+                oauth_secret: import.meta.env.VITE_OSM_OAUTH_SECRET,
+                url: "https://www.openstreetmap.org",
+            }
+        }
 
         this.userDetails = new UIEventSource<UserDetails>(
             new UserDetails(this._oauth_config.url),
@@ -190,6 +196,9 @@ export class OsmConnection {
         const self = this
         console.log("Trying to log in...")
         this.updateAuthObject()
+        LocalStorageSource.Get("location_before_login").setData(
+            Utils.runningFromConsole ? undefined : window.location.href
+        )
         this.auth.xhr(
             {
                 method: "GET",
@@ -202,13 +211,8 @@ export class OsmConnection {
                     if (err.status == 401) {
                         console.log("Clearing tokens...")
                         // Not authorized - our token probably got revoked
-                        // Reset all the tokens
-                        const tokens = [
-                            "https://www.openstreetmap.orgoauth_request_token_secret",
-                            "https://www.openstreetmap.orgoauth_token",
-                            "https://www.openstreetmap.orgoauth_token_secret",
-                        ]
-                        tokens.forEach((token) => localStorage.removeItem(token))
+                        self.auth.logout()
+                        self.LogOut()
                     }
                     return
                 }
@@ -310,6 +314,7 @@ export class OsmConnection {
     ): Promise<any> {
         return await this.interact(path, "POST", header, content)
     }
+
     public async put(
         path: string,
         content?: string,
@@ -486,12 +491,26 @@ export class OsmConnection {
         // Same for an iframe...
 
         this.auth = new osmAuth({
-            oauth_consumer_key: this._oauth_config.oauth_consumer_key,
-            oauth_secret: this._oauth_config.oauth_secret,
+            client_id: this._oauth_config.oauth_client_id,
             url: this._oauth_config.url,
-            landing: standalone ? undefined : window.location.href,
+            scope: "read_prefs write_prefs write_api write_gpx write_notes",
+            redirect_uri: Utils.runningFromConsole
+                ? "https://mapcomplete.org/land.html"
+                : window.location.protocol + "//" + window.location.host + "/land.html",
             singlepage: !standalone,
             auto: true,
+        })
+    }
+
+    /**
+     * To be called by land.html
+     */
+    public finishLogin(callback: (previousURL: string) => void) {
+        this.auth.authenticate(function () {
+            // Fully authed at this point
+            console.log("Authentication successful!")
+            const previousLocation = LocalStorageSource.Get("location_before_login")
+            callback(previousLocation.data)
         })
     }
 

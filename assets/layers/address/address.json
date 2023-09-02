@@ -53,7 +53,8 @@
       "cs": "Známá adresa",
       "ca": "Adreça coneguda",
       "pt": "Endereço conhecido",
-      "pt_BR": "Endereço conhecido"
+      "pt_BR": "Endereço conhecido",
+      "he": "כתובת ידועה"
     }
   },
   "description": {
@@ -76,7 +77,8 @@
     "cs": "Adresy",
     "pa_PK": "پتے",
     "zgh": "ⴰⵏⵙⵉⵡⵏ",
-    "pt_BR": "Endereços"
+    "pt_BR": "Endereços",
+    "he": "כתובות"
   },
   "tagRenderings": [
     {
@@ -97,7 +99,8 @@
         "pt": "O número da casa é <b>{addr:housenumber}</b>",
         "nb_NO": "Husnummeret er <b>{addr:housenumber}</b>",
         "ca": "El número de porta és <b>{addr:housenumber}</b>",
-        "pt_BR": "O número da casa é <b>{addr:housenumber}</b>"
+        "pt_BR": "O número da casa é <b>{addr:housenumber}</b>",
+        "he": "מספר הבית הוא <b>{addr:housenumber}</b>"
       },
       "question": {
         "en": "What is the number of this house?",
@@ -115,7 +118,8 @@
         "pt": "Qual é o número desta casa?",
         "nb_NO": "Hvilket husnummer har dette huset?",
         "ca": "Quin és el número d'aquesta casa?",
-        "pt_BR": "Qual é o número desta casa?"
+        "pt_BR": "Qual é o número desta casa?",
+        "he": "מה המספר של הבית הזה?"
       },
       "freeform": {
         "key": "addr:housenumber",
@@ -147,7 +151,8 @@
             "pt": "Este prédio não tem número",
             "nb_NO": "Denne bygningen har ikke noe husnummer",
             "ca": "Aquest edifici no té número",
-            "pt_BR": "Este prédio não tem número"
+            "pt_BR": "Este prédio não tem número",
+            "he": "למבנה זה אין מספר בית"
           }
         }
       ]
@@ -168,7 +173,8 @@
         "cs": "Tato adresa se nachází v ulici <b>{addr:street}</b>",
         "ca": "L'adreça està a aquest carrer <b>{addr:street}</b>",
         "pt": "Este endereço é na rua <b>{addr:street}</b>",
-        "pt_BR": "Este endereço fica na rua <b>{addr:street}</b>"
+        "pt_BR": "Este endereço fica na rua <b>{addr:street}</b>",
+        "he": "כתובת זו נמצאת ברחוב <b>{addr:street}</b>"
       },
       "question": {
         "en": "What street is this address located in?",
@@ -185,7 +191,8 @@
         "cs": "V jaké ulici se nachází tato adresa?",
         "ca": "A quin carrer es troba l'adreça?",
         "pt": "Em que rua fica esse endereço?",
-        "pt_BR": "Em que rua fica esse endereço?"
+        "pt_BR": "Em que rua fica esse endereço?",
+        "he": "באיזה רחוב נמצאת הכתובת הזו?"
       },
       "freeform": {
         "key": "addr:street"
@@ -232,7 +239,8 @@
         "pt": "O que deve ser corrigido aqui? Explique",
         "nb_NO": "Hva bør fikses her? Forklar.",
         "ca": "Què s’hauria de corregir aquí? Exposa-ho",
-        "pt_BR": "O que deve ser corrigido aqui? Explique"
+        "pt_BR": "O que deve ser corrigido aqui? Explique",
+        "he": "מה צריך לתקן כאן? אנא הסבר"
       },
       "freeform": {
         "key": "fixme"

@@ -52,7 +52,7 @@
     },
     "flyer": {
         "aerial": "Deze kaart gebruikt luchtfoto's van het Agentschap Informatie Vlaanderen als achtergrond.\nOok het GRB is beschikbaar als achtergrondlaag.",
-        "callToAction": "Probeer het uit op mapcomplete.osm.be",
+        "callToAction": "Probeer het uit op mapcomplete.org",
         "cyclofix": "Fietspompen, -winkels, -bandenautomaten en drinkwaterkraantjes vind je op Cyclofix",
         "description": "Een horizontale A4 flyer om MapComplete te promoten",
         "editing": {
@@ -60,7 +60,7 @@
             "intro": "De gebruiker krijgt eerst een kaart met interessepunten te zien. Klik je op een punt, dan wordt de interface met informatie over het interessepunt geopend.",
             "title": "Hoe ziet de interface eruit?"
         },
-        "examples": "Online zijn verschillende kaarten met diverse thema's beschikbaar, zoals gezondheidszorg, binnenruimtes, rolstoeltoegankelijkheid, afvalcontainers, boekenruilkasten, regenboog-zebrapaden,...\nEnkele zijn hier afgeprint.\n\nOntdek ze allemaal op mapcomplete.osm.be",
+        "examples": "Online zijn verschillende kaarten met diverse thema's beschikbaar, zoals gezondheidszorg, binnenruimtes, rolstoeltoegankelijkheid, afvalcontainers, boekenruilkasten, regenboog-zebrapaden,...\nEnkele zijn hier afgeprint.\n\nOntdek ze allemaal op mapcomplete.org",
         "fakeui": {
             "add_images": "Voeg foto's toe met een paar klikken",
             "attributes": "Attributen worden getoond op begrijpbare wijze",
@@ -87,7 +87,7 @@
         "onwheels": "Kaarten van binnenruimtes voor rolstoelgebruikers zijn ook beschikbaar",
         "osm": "OpenStreetMap is een online kaart die door iedereen aangepast en herbruikt mag worden mits bronvermelding en het openhouden van de data.\n\nHet is de grootste geodatabank ter wereld en wordt herbruikt door miljoenen websites en applicaties.",
         "tagline": "Geodata eenvoudig verzamelen met OpenStreetMap",
-        "title": "MapComplete.osm.be",
+        "title": "mapcomplete.org",
         "toerisme_vlaanderen": "In samenwerking met Toerisme Vlaanderen werd 'Pin Je Punt' gecreëerd. Op enkele maanden tijd werden hiermee duizenden zitbanken, picknicktafels en oplaadpunten voor elektrische fietsen toegevoegd aan de kaart door meer dan 160 personen.",
         "whatIsOsm": "Wat is OpenStreetMap?"
     },
@@ -266,7 +266,7 @@
         "pdf": {
             "attr": "Kaartgegevens © OpenStreetMap-bijdragers, herbruikbaar volgens ODbL",
             "attrBackground": "Achtergrondlaag: {background}",
-            "generatedWith": "Gemaakt met MapComplete.osm.be/{layoutid}",
+            "generatedWith": "Gemaakt met mapcomplete.org/{layoutid}",
             "versionInfo": "v{version} - gemaakt op {date}"
         },
         "pickLanguage": "Kies je taal: ",
@@ -304,21 +304,8 @@
             "searching": "Aan het zoeken…"
         },
         "sharescreen": {
-            "addToHomeScreen": "<h3>Voeg toe aan je thuisscherm</h3>Je kan eenvoudigweg deze website aan het thuisscherm van je smartphone toevoegen voor een \"native feel\"",
             "copiedToClipboard": "Link gekopieerd naar klembord",
-            "downloadCustomTheme": "Download de instellingen van dit thema",
-            "downloadCustomThemeHelp": "Een ervaren bijdrager kan op basis van dit bestand je thema verder verbeteren",
-            "editThemeDescription": "Pas vragen aan of voeg vragen toe aan dit kaartthema",
-            "editThisTheme": "Pas dit thema aan",
             "embedIntro": "<h3>Plaats dit op je website</h3>Voeg dit kaartje toe op je eigen website.<br/>We moedigen dit zelfs aan - je hoeft geen toestemming te vragen.<br/> Het is gratis en zal dat altijd blijven. Hoe meer het gebruikt wordt, hoe waardevoller",
-            "fsAddNew": "Activeer het toevoegen van nieuwe POI",
-            "fsGeolocation": "Toon het knopje voor geolocalisatie (enkel op mobiel)",
-            "fsIncludeCurrentBackgroundMap": "Gebruik de huidige achtergrond <b>{name}</b>",
-            "fsIncludeCurrentLayers": "Toon enkel de huidig getoonde lagen",
-            "fsIncludeCurrentLocation": "Start op de huidige locatie",
-            "fsLayerControlToggle": "Toon de laagbediening meteen volledig",
-            "fsLayers": "Toon de knop voor laagbediening",
-            "fsSearch": "Activeer de zoekbalk",
             "fsUserbadge": "Activeer de login-knop",
             "fsWelcomeMessage": "Toon het welkomstbericht en de bijhorende tabbladen",
             "intro": "<h3>Deel deze kaart</h3> Kopieer onderstaande link om deze kaart naar vrienden en familie door te sturen:",
@@ -546,7 +533,7 @@
         "intro": "We vinden privacy belangrijk, zowel for het individu als voor de samenleving. MapComplete probeert zo veel mogelijk te vermijden dat private gegevens worden verzameld. Daarom is er zelfs geen cookie banner nodig. Maar we geven graag informatie over welke data verzameld en gedeeld worden, onder welke omstandigheden, en waarom deze afwegingen gemaakt worden.",
         "miscCookies": "MapComplete integreert met verschillende andere services, in het bijzonder om afbeeldingen van kaart-objecten te tonen. Deze afbeeldingen zijn opgeslaan bij diverse websites, die elk cookies kunnen instellen.",
         "miscCookiesTitle": "Andere cookies",
-        "surveillance": "Gezien je de privacy-policy leest, vind je privacy waarschijnlijk belangrijk - wij ook! We hebben zelfs <a href=\"https://mapcomplete.osm.be/surveillance\">een kaart met bewakingcamera's</a> gemaakt. Voeg er zeker toe!",
+        "surveillance": "Gezien je de privacy-policy leest, vind je privacy waarschijnlijk belangrijk - wij ook! We hebben zelfs <a href=\"https://mapcomplete.org/surveillance\">een kaart met bewakingcamera's</a> gemaakt. Voeg er zeker toe!",
         "title": "Privacyverklaring",
         "tracking": "Om enig inzicht te krijgen in wie de site bezoekt, wordt er technische informatie verzameld. Dit omvat het land van waaruit je de site bezoekt, vanop welke website je doorklikte naar MapComplete, het type toestel en de schermgrootte. Een cookie wordt op he toestel geplaatst om mee te geven dat je de site eerder in de dag bezocht. De data is niet gedetailleerd genoeg om persoonlijke informatie te zijn. Er zijn enkel geaggregeerde statistieken mogelijk. Deze <a href=\"https://pietervdvn.goatcounter.com\" target=\"_blank\">kunnen door iedereen bekeken worden</a>.",
         "trackingTitle": "Statistische informatie",

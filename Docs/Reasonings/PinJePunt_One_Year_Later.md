@@ -1,6 +1,6 @@
 # 'Pin je Punt' - one year later
 
-About a year ago, we launched a mapping campaign at the request from [_Visit Flanders_ (Toerisme Vlaanderen)](https://toerismevlaanderen.be/pin-je-punt). This mapping campaign is focussed on some touristical POI, such as charging stations for ebikes, benches, picnic tables, public toilets and playgrounds. FOr this, a [custom mapcomplete theme was created](https://mapcomplete.osm.be/toerisme_vlaanderen). (For a full explanation, see the last paragraph)
+About a year ago, we launched a mapping campaign at the request from [_Visit Flanders_ (Toerisme Vlaanderen)](https://toerismevlaanderen.be/pin-je-punt). This mapping campaign is focussed on some touristical POI, such as charging stations for ebikes, benches, picnic tables, public toilets and playgrounds. FOr this, a [custom mapcomplete theme was created](https://mapcomplete.org/toerisme_vlaanderen). (For a full explanation, see the last paragraph)
 
 A part of the campaign involved a guided import. The agency had many datasets lying around (e.g. about benches or picnic tables) which they wanted to have imported in OSM. As doing a data import is hard and the data was sometimes outdated, we opted for a crowdsourced approach: for every possible feature, a map note was created containing a friendly explanation, information links, the tags to create and instructions to open MapComplete.
 When opened in mapcomplete, the user would be prompted to `import` the point or to mark it as `not found` or `duplicate`. All of these actions close the note with a small message on what the chosen action was.
@@ -84,7 +84,7 @@ We had a few negative reactions on creating this amount of notes. The arguments 
 - new people will not bother to create a new note if the map is already littered with open notes
 - it breaks my workflow, I want to see and handle new notes.
 
-For the second complaint, you can use [this mapcomplete theme which shows notes and allows to filter them or create a new note](https://mapcomplete.osm.be/notes.html#filters).
+For the second complaint, you can use [this mapcomplete theme which shows notes and allows to filter them or create a new note](https://mapcomplete.org/notes.html#filters).
 
 I don't agree with the first complaint as well, as the OpenStreetMap-website only shows a limited number of notes too. This can be easily seen by zooming out when the notes are open; you can see them disappear: https://imgur.com/a/PkwRe0h
 
@@ -144,7 +144,7 @@ Toerisme Vlaanderen would like to unify all these databases into
 OpenStreetMap, increase the data quality of the items already there and
 improve the surveying flow.
 
-This is where MapComplete comes in. *MapComplete* <mapcomplete.osm.be/>
+This is where MapComplete comes in. *MapComplete* <mapcomplete.org/>
 is a web-app where one can show information about POI, can answer
 questions about these POI and can add new points. Depending on the
 chosen map, some categories of POI are shown.

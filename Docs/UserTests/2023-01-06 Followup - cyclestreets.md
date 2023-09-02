@@ -44,7 +44,7 @@ should we first login or should we first visit the map?
 
 "Open de kaart" is also felt as being to vague, "raadpleeg de kaart" is mentioned to be a better alternative (3)
 
-She decides to try to login first. As the phone is still logged in on OpenStreetMap.org (but not on mapcomplete.osm.be), the "Authorize access to your accounts" is shown right away (in English instead of Dutch).
+She decides to try to login first. As the phone is still logged in on OpenStreetMap.org (but not on mapcomplete.org), the "Authorize access to your accounts" is shown right away (in English instead of Dutch).
 This proves to be scary and a big hurdle to take. The tester reads all the granted permissions and reluctantly presses "Grant access". (4)
 
 She gets back to the welcome screen, where she is a bit surprised to only see one button anymore: the "open the map" which she presses.

@@ -18,7 +18,8 @@
     "sl": "Sloj prikazuje defibrilatorje, ki jih je možno uporabiti v primeru sile. Sloj poleg javno dostopnih defibrilatorjev vsebuje tudi tiste, ki za dostop morda potrebujejo pomoč osebja",
     "de": "Eine Ebene mit Defibrillatoren, die in Notfällen eingesetzt werden können. Diese Ebene enthält öffentliche Defibrillatoren, aber auch Defibrillatoren, bei denen möglicherweise Personal benötigt wird, um das Gerät zu holen",
     "es": "Una capa que muestra desfibriladores que se pueden utilizar en caso de emergencia. Contiene desfibriladores públicos, pero también desfibriladores para los que se puede necesitar que el personal vaya a buscar el dispositivo",
-    "ca": "Una capa que mostra desfibril·ladors que es poden utilitzar en cas d'emergència. Conté desfibril·ladors públics, però també desfibril·ladors que poden necessitar de personal per agafar el dispositiu"
+    "ca": "Una capa que mostra desfibril·ladors que es poden utilitzar en cas d'emergència. Conté desfibril·ladors públics, però també desfibril·ladors que poden necessitar de personal per agafar el dispositiu",
+    "he": "שכבה המציגה דפיברילטורים שניתן להשתמש בהם במקרה חירום. זה מכיל דפיברילטורים ציבוריים, אך גם דפיברילטורים שעשויים להזדקק לצוות כדי להביא את המכשיר בפועל"
   },
   "source": {
     "osmTags": "emergency=defibrillator"

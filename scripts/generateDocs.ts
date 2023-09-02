@@ -10,7 +10,6 @@ import Title from "../src/UI/Base/Title"
 import QueryParameterDocumentation from "../src/UI/QueryParameterDocumentation"
 import ScriptUtils from "./ScriptUtils"
 import List from "../src/UI/Base/List"
-import SharedTagRenderings from "../src/Customizations/SharedTagRenderings"
 import Translations from "../src/UI/i18n/Translations"
 import themeOverview from "../src/assets/generated/theme_overview.json"
 import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
@@ -27,6 +26,7 @@ import ThemeViewState from "../src/Models/ThemeViewState"
 import Validators from "../src/UI/InputElement/Validators"
 import questions from "../src/assets/generated/layers/questions.json"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
+
 function WriteFile(
     filename,
     html: BaseUIElement,
@@ -86,7 +86,7 @@ function GenerateDocumentationForTheme(theme: LayoutConfig): BaseUIElement {
             new Combine([
                 theme.title,
                 "(",
-                new Link(theme.id, "https://mapcomplete.osm.be/" + theme.id),
+                new Link(theme.id, "https://mapcomplete.org/" + theme.id),
                 ")",
             ]),
             2
@@ -273,14 +273,14 @@ function generateWikipage() {
         const languages = languagesInDescr.map((ln) => `{{#language:${ln}|en}}`).join(", ")
         let auth = "Yes"
         return `{{service_item
-|name= [https://mapcomplete.osm.be/${layout.id} ${layout.id}]
+|name= [https://mapcomplete.org/${layout.id} ${layout.id}]
 |region= Worldwide
 |lang= ${languages}
 |descr= A MapComplete theme: ${Translations.T(layout.shortDescription)
             .textFor("en")
             .replace("<a href='", "[[")
             .replace(/'>.*<\/a>/, "]]")}
-|material= {{yes|[https://mapcomplete.osm.be/ ${auth}]}}
+|material= {{yes|[https://mapcomplete.org/ ${auth}]}}
 |image= MapComplete_Screenshot.png
 |genre= POI, editor, ${layout.id}
 }}`
@@ -384,11 +384,11 @@ WriteFile("./Docs/BuiltinQuestions.md", qLayer.GenerateDocumentation([], new Map
             }
         }
         for (const usedBuiltin of usedBuiltins) {
-            var using = layersUsingBuiltin.get(usedBuiltin)
-            if (using === undefined) {
+            const usingLayers = layersUsingBuiltin.get(usedBuiltin)
+            if (usingLayers === undefined) {
                 layersUsingBuiltin.set(usedBuiltin, [layer.id])
             } else {
-                using.push(layer.id)
+                usingLayers.push(layer.id)
             }
         }
 
@@ -409,7 +409,7 @@ WriteFile("./Docs/URL_Parameters.md", QueryParameterDocumentation.GenerateQueryP
     "src/Logic/Web/QueryParameters.ts",
     "src/UI/QueryParameterDocumentation.ts",
 ])
-if (fakedom === undefined || window === undefined) {
+if (fakedom === undefined) {
     throw "FakeDom not initialized"
 }
 QueryParameters.GetQueryParameter(

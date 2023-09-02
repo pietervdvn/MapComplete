@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/circle:white;./assets/layers/sport_pitch/sport_pitch.svg' height="100px"> 
+<img src='https://mapcomplete.org/circle:white;./assets/layers/sport_pitch/sport_pitch.svg' height="100px"> 
 
 A sport pitch
 
@@ -25,9 +25,9 @@ A sport pitch
 
 
 
-  - [personal](https://mapcomplete.osm.be/personal)
-  - [sport_pitches](https://mapcomplete.osm.be/sport_pitches)
-  - [sports](https://mapcomplete.osm.be/sports)
+  - [personal](https://mapcomplete.org/personal)
+  - [sport_pitches](https://mapcomplete.org/sport_pitches)
+  - [sports](https://mapcomplete.org/sports)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -47,15 +47,15 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/sport#values) [sport](https://wiki.openstreetmap.org/wiki/Key:sport) | [string](../SpecialInputElements.md#string) | [basketball](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasketball) [soccer](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dsoccer) [table_tennis](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtable_tennis) [tennis](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtennis) [korfball](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dkorfball) [skateboard](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dskateboard)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/hoops#values) [hoops](https://wiki.openstreetmap.org/wiki/Key:hoops) | Multiple choice | [1](https://wiki.openstreetmap.org/wiki/Tag:hoops%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:hoops%3D2) [4](https://wiki.openstreetmap.org/wiki/Tag:hoops%3D4)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/surface#values) [surface](https://wiki.openstreetmap.org/wiki/Key:surface) | [string](../SpecialInputElements.md#string) | [grass](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass) [sand](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsand) [paving_stones](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones) [asphalt](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) [concrete](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:access%3Dlimited) [members](https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/reservation#values) [reservation](https://wiki.openstreetmap.org/wiki/Key:reservation) | Multiple choice | [required](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drequired) [recommended](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drecommended) [yes](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/sport#values) [sport](https://wiki.openstreetmap.org/wiki/Key:sport) | [string](../SpecialInputElements.md#string) | [basketball](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasketball) [soccer](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dsoccer) [table_tennis](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtable_tennis) [tennis](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtennis) [korfball](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dkorfball) [skateboard](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dskateboard)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/hoops#values) [hoops](https://wiki.openstreetmap.org/wiki/Key:hoops) | Multiple choice | [1](https://wiki.openstreetmap.org/wiki/Tag:hoops%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:hoops%3D2) [4](https://wiki.openstreetmap.org/wiki/Tag:hoops%3D4)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/surface#values) [surface](https://wiki.openstreetmap.org/wiki/Key:surface) | [string](../SpecialInputElements.md#string) | [grass](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass) [sand](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsand) [paving_stones](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones) [asphalt](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) [concrete](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:access%3Dlimited) [members](https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/reservation#values) [reservation](https://wiki.openstreetmap.org/wiki/Key:reservation) | Multiple choice | [required](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drequired) [recommended](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drecommended) [yes](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
 
 
 

@@ -228,7 +228,7 @@ export interface LayoutConfigJson {
      *
      * Note that {lat},{lon},{zoom}, {language} and {theme} will be replaced
      *
-     * Default: {icon: "./assets/svg/pop-out.svg", href: 'https://mapcomplete.osm.be/{theme}.html?lat={lat}&lon={lon}&z={zoom}, requirements: ["iframe","no-welcome-message]},
+     * Default: {icon: "./assets/svg/pop-out.svg", href: 'https://mapcomplete.org/{theme}.html?lat={lat}&lon={lon}&z={zoom}, requirements: ["iframe","no-welcome-message]},
      *
      */
     extraLink?: ExtraLinkConfigJson

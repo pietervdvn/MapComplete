@@ -21,7 +21,7 @@ The full table is listed below.
 | Client website                         | Number of reviews |
 |----------------------------------------|-------------------|
 | https://mangrove.reviews               | 318               |
-| https://mapcomplete.osm.be             | 179               |
+| https://mapcomplete.org             | 179               |
 | https://toggenburg.swiss               | 35                |
 | https://thurgau-bodensee.ch            | 29                |
 | https://pietervdvn.github.io           | 13                |
@@ -50,19 +50,19 @@ the review-module is placed on top of the infobox for vets, whereas most other l
 
 | Theme                                                                                | Review count |
 |--------------------------------------------------------------------------------------|--------------|
-| https://mapcomplete.osm.be/pets (incl 14 reviews made under the previous name 'dog') | 35           |
-| https://mapcomplete.osm.be/toerisme_vlaanderen                                       | 29           |
-| https://mapcomplete.osm.be/shops                                                     | 28           |
-| https://mapcomplete.osm.be/food                                                      | 18           |
-| https://mapcomplete.osm.be/playgrounds                                               | 16           |
-| https://mapcomplete.osm.be/cafes_and_pubs                                            | 14           |
-| https://mapcomplete.osm.be/personal                                                  | 14           |
-| https://mapcomplete.osm.be/campersite                                                | 9            |
-| https://mapcomplete.osm.be/sport_pitches                                             | 9            |
-| https://mapcomplete.osm.be/fritures                                                  | 8            |
-| https://mapcomplete.osm.be/climbing                                                  | 7            |
-| https://mapcomplete.osm.be/onwheels                                                  | 3            |
-| https://mapcomplete.osm.be/hackerspaces                                              | 1            |
+| https://mapcomplete.org/pets (incl 14 reviews made under the previous name 'dog') | 35           |
+| https://mapcomplete.org/toerisme_vlaanderen                                       | 29           |
+| https://mapcomplete.org/shops                                                     | 28           |
+| https://mapcomplete.org/food                                                      | 18           |
+| https://mapcomplete.org/playgrounds                                               | 16           |
+| https://mapcomplete.org/cafes_and_pubs                                            | 14           |
+| https://mapcomplete.org/personal                                                  | 14           |
+| https://mapcomplete.org/campersite                                                | 9            |
+| https://mapcomplete.org/sport_pitches                                             | 9            |
+| https://mapcomplete.org/fritures                                                  | 8            |
+| https://mapcomplete.org/climbing                                                  | 7            |
+| https://mapcomplete.org/onwheels                                                  | 3            |
+| https://mapcomplete.org/hackerspaces                                              | 1            |
 | lgbtmap (theme on a fork)                                                            | 1            |
 
 ## Language
