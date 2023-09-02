@@ -158,7 +158,7 @@
       "id": "tactile_writing_language",
       "condition": "tactile_writing:braille=yes",
       "render": {
-        "special": e{
+        "special": {
           "type": "language_chooser",
           "key": "tactile_writing:braille",
           "question": {
