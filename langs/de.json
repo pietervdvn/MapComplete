@@ -305,6 +305,7 @@
         },
         "sharescreen": {
             "copiedToClipboard": "Verknüpfung in Zwischenablage kopiert",
+            "documentation": "Für weitere Informationen über verfügbare URL-Parameter, <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>siehe Dokumentation</a>",
             "embedIntro": "<h3>Karte in Webseiten einbetten</h3>Betten Sie diese Karte in Ihre Webseite ein. <br/>Wir ermutigen Sie gern dazu - Sie müssen nicht mal um Erlaubnis fragen.<br/> Die Karte ist kostenlos und wird es immer sein. Je mehr Leute die Karte benutzen, desto wertvoller wird sie.",
             "fsUserbadge": "Anmeldefeld aktivieren",
             "fsWelcomeMessage": "Begrüßung und Registerkarten anzeigen",
@@ -599,7 +600,8 @@
         },
         "fediverse": {
             "description": "Eine Fediverse Adresse, häufig @username@server.tld",
-            "feedback": "Eine Fediverse Adresse besteht aus @username@server.tld oder ist ein Direktlink zu einem Profil"
+            "feedback": "Eine Fediverse Adresse besteht aus @username@server.tld oder ist ein Direktlink zu einem Profil",
+            "invalidHost": "{host} ist kein gültiger hostname"
         },
         "float": {
             "description": "eine Zahl",
