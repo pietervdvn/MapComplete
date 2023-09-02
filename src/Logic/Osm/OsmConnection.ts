@@ -1,9 +1,9 @@
 // @ts-ignore
-import {osmAuth} from "osm-auth"
-import {Store, Stores, UIEventSource} from "../UIEventSource"
-import {OsmPreferences} from "./OsmPreferences"
-import {Utils} from "../../Utils"
-import {LocalStorageSource} from "../Web/LocalStorageSource";
+import { osmAuth } from "osm-auth"
+import { Store, Stores, UIEventSource } from "../UIEventSource"
+import { OsmPreferences } from "./OsmPreferences"
+import { Utils } from "../../Utils"
+import { LocalStorageSource } from "../Web/LocalStorageSource"
 import * as config from "../../../package.json"
 export default class UserDetails {
     public loggedIn = false
@@ -34,7 +34,8 @@ export interface AuthConfig {
 export type OsmServiceState = "online" | "readonly" | "offline" | "unknown" | "unreachable"
 
 export class OsmConnection {
-    public static readonly oauth_configs: Record<string, AuthConfig>  = config.config.oauth_credentials
+    public static readonly oauth_configs: Record<string, AuthConfig> =
+        config.config.oauth_credentials
     public auth
     public userDetails: UIEventSource<UserDetails>
     public isLoggedIn: Store<boolean>
@@ -74,6 +75,19 @@ export class OsmConnection {
             OsmConnection.oauth_configs.osm
         console.debug("Using backend", this._oauth_config.url)
         this._iframeMode = Utils.runningFromConsole ? false : window !== window.top
+
+        // Check if there are settings available in environment variables, and if so, use those
+        if (
+            import.meta.env.VITE_OSM_OAUTH_CLIENT_ID !== undefined &&
+            import.meta.env.VITE_OSM_OAUTH_SECRET !== undefined
+        ) {
+            console.debug("Using environment variables for oauth config")
+            this._oauth_config = {
+                oauth_client_id: import.meta.env.VITE_OSM_OAUTH_CLIENT_ID,
+                oauth_secret: import.meta.env.VITE_OSM_OAUTH_SECRET,
+                url: "https://www.openstreetmap.org",
+            }
+        }
 
         this.userDetails = new UIEventSource<UserDetails>(
             new UserDetails(this._oauth_config.url),
@@ -182,7 +196,9 @@ export class OsmConnection {
         const self = this
         console.log("Trying to log in...")
         this.updateAuthObject()
-        LocalStorageSource.Get("location_before_login").setData(Utils.runningFromConsole ? undefined : window.location.href)
+        LocalStorageSource.Get("location_before_login").setData(
+            Utils.runningFromConsole ? undefined : window.location.href
+        )
         this.auth.xhr(
             {
                 method: "GET",
@@ -195,7 +211,7 @@ export class OsmConnection {
                     if (err.status == 401) {
                         console.log("Clearing tokens...")
                         // Not authorized - our token probably got revoked
-                        self.auth.logout();
+                        self.auth.logout()
                         self.LogOut()
                     }
                     return
@@ -240,7 +256,7 @@ export class OsmConnection {
                 if (homeEl !== undefined && homeEl[0] !== undefined) {
                     const lat = parseFloat(homeEl[0].getAttribute("lat"))
                     const lon = parseFloat(homeEl[0].getAttribute("lon"))
-                    data.home = {lat: lat, lon: lon}
+                    data.home = { lat: lat, lon: lon }
                 }
 
                 self.loadingStatus.setData("logged-in")
@@ -344,13 +360,13 @@ export class OsmConnection {
             console.warn("Dryrun enabled - not actually opening note with text ", text)
             return new Promise<{ id: number }>((ok) => {
                 window.setTimeout(
-                    () => ok({id: Math.floor(Math.random() * 1000)}),
+                    () => ok({ id: Math.floor(Math.random() * 1000) }),
                     Math.random() * 5000
                 )
             })
         }
         const auth = this.auth
-        const content = {lat, lon, text}
+        const content = { lat, lon, text }
         const response = await this.post("notes.json", JSON.stringify(content), {
             "Content-Type": "application/json",
         })
@@ -378,7 +394,7 @@ export class OsmConnection {
             console.warn("Dryrun enabled - not actually uploading GPX ", gpx)
             return new Promise<{ id: number }>((ok, error) => {
                 window.setTimeout(
-                    () => ok({id: Math.floor(Math.random() * 1000)}),
+                    () => ok({ id: Math.floor(Math.random() * 1000) }),
                     Math.random() * 5000
                 )
             })
@@ -419,7 +435,7 @@ export class OsmConnection {
         })
         const parsed = JSON.parse(response)
         console.log("Uploaded GPX track", parsed)
-        return {id: parsed}
+        return { id: parsed }
     }
 
     public addCommentToNote(id: number | string, text: string): Promise<void> {
@@ -478,7 +494,9 @@ export class OsmConnection {
             client_id: this._oauth_config.oauth_client_id,
             url: this._oauth_config.url,
             scope: "read_prefs write_prefs write_api write_gpx write_notes",
-            redirect_uri: Utils.runningFromConsole ? "https://mapcomplete.org/land.html" :  window.location.protocol + "//" + window.location.host + "/land.html",
+            redirect_uri: Utils.runningFromConsole
+                ? "https://mapcomplete.org/land.html"
+                : window.location.protocol + "//" + window.location.host + "/land.html",
             singlepage: !standalone,
             auto: true,
         })
@@ -487,13 +505,13 @@ export class OsmConnection {
     /**
      * To be called by land.html
      */
-    public finishLogin(callback: ((previousURL: string) => void)) {
-        this.auth.authenticate(function() {
+    public finishLogin(callback: (previousURL: string) => void) {
+        this.auth.authenticate(function () {
             // Fully authed at this point
             console.log("Authentication successful!")
             const previousLocation = LocalStorageSource.Get("location_before_login")
             callback(previousLocation.data)
-        });
+        })
     }
 
     private CheckForMessagesContinuously() {
@@ -512,7 +530,7 @@ export class OsmConnection {
 
     private UpdateCapabilities(): void {
         const self = this
-        this.FetchCapabilities().then(({api, gpx}) => {
+        this.FetchCapabilities().then(({ api, gpx }) => {
             self.apiIsOnline.setData(api)
             self.gpxServiceIsOnline.setData(gpx)
         })
@@ -520,18 +538,18 @@ export class OsmConnection {
 
     private async FetchCapabilities(): Promise<{ api: OsmServiceState; gpx: OsmServiceState }> {
         if (Utils.runningFromConsole) {
-            return {api: "online", gpx: "online"}
+            return { api: "online", gpx: "online" }
         }
         const result = await Utils.downloadAdvanced(this.Backend() + "/api/0.6/capabilities")
         if (result["content"] === undefined) {
             console.log("Something went wrong:", result)
-            return {api: "unreachable", gpx: "unreachable"}
+            return { api: "unreachable", gpx: "unreachable" }
         }
         const xmlRaw = result["content"]
         const parsed = new DOMParser().parseFromString(xmlRaw, "text/xml")
         const statusEl = parsed.getElementsByTagName("status")[0]
         const api = <OsmServiceState>statusEl.getAttribute("api")
         const gpx = <OsmServiceState>statusEl.getAttribute("gpx")
-        return {api, gpx}
+        return { api, gpx }
     }
 }

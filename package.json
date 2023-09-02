@@ -13,7 +13,8 @@
       "`oauth_credentials` are the OAuth-2 credentials for the production-OSM server and the test-server.",
       "Are you deploying your own instance? Register your application too.",
       "See https://wiki.openstreetmap.org/wiki/OAuth#Registering_your_application_as_OAuth_2.0_consumer for instructions",
-      "Use `https://<your domain name>/<path to mapcomplete>/land.html` as redirect URIs. You can add `http://127.0.0.1:1234/land.html` too for local development."
+      "Use `https://<your domain name>/<path to mapcomplete>/land.html` as redirect URIs. You can add `http://127.0.0.1:1234/land.html` too for local development.",
+      "Alternatively, you can override the `osm` credentials using the environment variables `VITE_OSM_OAUTH_CLIENT_ID` and `VITE_OSM_OAUTH_SECRET`"
     ],
     "oauth_credentials": {
       "osm_pietervdvn": {
