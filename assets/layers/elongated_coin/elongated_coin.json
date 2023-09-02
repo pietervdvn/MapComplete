@@ -84,7 +84,50 @@
         }
       ]
     },
-    "payment-options-split",
+    {
+      "id": "fee",
+      "question": {
+        "en": "Does it cost money to press a penny?"
+      },
+      "mappings": [
+        {
+          "if": "fee=",
+          "then": {
+            "en": "It costs money to press a penny."
+          }
+        },
+        {
+          "if": "fee=yes",
+          "then": {
+            "en": "It costs money to press a penny."
+          }
+        },
+        {
+          "if": "fee=no",
+          "then": {
+            "en": "It is free to press a penny."
+          },
+          "addExtraTags": [
+            "payment:qr_code=",
+            "payment:coins=",
+            "payment:notes=",
+            "payment:debit_cards=",
+            "payment:credit_cards="
+          ]
+        }
+      ]
+    },
+    {
+      "builtin": "payment-options-split",
+      "override": {
+        "condition": {
+          "or": [
+            "fee=yes",
+            "fee="
+          ]
+        }
+      }
+    },
     {
       "id": "coin",
       "question": {
@@ -184,32 +227,6 @@
       }
     },
     "website",
-    {
-      "id": "fee",
-      "question": {
-        "en": "Does it cost money to press a penny?"
-      },
-      "mappings": [
-        {
-          "if": "fee=",
-          "then": {
-            "en": "It costs money to press a penny."
-          }
-        },
-        {
-          "if": "fee=yes",
-          "then": {
-            "en": "It costs money to press a penny."
-          }
-        },
-        {
-          "if": "fee=no",
-          "then": {
-            "en": "It is free to press a penny."
-          }
-        }
-      ]
-    },
     {
       "id": "charge",
       "condition": {
