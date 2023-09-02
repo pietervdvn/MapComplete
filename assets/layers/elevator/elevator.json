@@ -231,8 +231,7 @@
           "if": {
             "or": [
               "operational_status=broken",
-              "operat
-              ional_status=closed"
+              "operational_status=closed"
             ]
           },
           "then": "close:#c33"
