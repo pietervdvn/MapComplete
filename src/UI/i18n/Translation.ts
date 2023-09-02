@@ -233,6 +233,7 @@ export class Translation extends BaseUIElement {
      *
      * new Translation({"en": "This is a sentence. This is another sentence"}).FirstSentence().textFor("en") // "This is a sentence"
      * new Translation({"en": "This is a sentence <br/> This is another sentence"}).FirstSentence().textFor("en") // "This is a sentence"
+     * new Translation({"en": "This is a sentence <br> This is another sentence"}).FirstSentence().textFor("en") // "This is a sentence"
      * new Translation({"en": "This is a sentence with a <b>bold</b> word. This is another sentence"}).FirstSentence().textFor("en") // "This is a sentence with a <b>bold</b> word"
      * @constructor
      */
@@ -243,7 +244,7 @@ export class Translation extends BaseUIElement {
                 continue
             }
             let txt = this.translations[lng]
-            txt = txt.replace(/(\.|<br\/>).*/, "")
+            txt = txt.replace(/(\.|<br\/>|<br>).*/, "")
             txt = Utils.EllipsesAfter(txt, 255)
             tr[lng] = txt.trim()
         }

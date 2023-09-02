@@ -4,9 +4,6 @@ import { Utils } from "../Utils"
 export type PriviligedLayerType = (typeof Constants.priviliged_layers)[number]
 
 export default class Constants {
-    static {
-        console.log("Meta (package:json)", meta)
-    }
     public static vNumber = meta.version
 
     public static ImgurApiKey = meta.config.api_keys.imgur

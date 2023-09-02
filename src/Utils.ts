@@ -1,5 +1,4 @@
 import colors from "./assets/colors.json"
-import { HTMLElement } from "node-html-parser"
 
 export class Utils {
     /**
@@ -490,7 +489,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                         "\nThe value is",
                         v
                     )
-                    v = (<HTMLElement>v.InnerConstructElement())?.textContent
+                    v = v.InnerConstructElement()?.textContent
                 }
 
                 if (typeof v !== "string") {

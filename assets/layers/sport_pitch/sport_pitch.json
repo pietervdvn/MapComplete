@@ -491,7 +491,7 @@
         "key": "email",
         "type": "email"
       },
-      "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+      "render": "<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>",
       "id": "sport_pitch-email"
     },
     {

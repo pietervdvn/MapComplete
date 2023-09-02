@@ -208,7 +208,7 @@
     {
       "id": "osmlink",
       "render": {
-        "*": "<a href='https://openstreetmap.org/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>"
+        "*": "<a href='https://openstreetmap.org/{id}' target='_blank' rel='noopener'F><img src='./assets/svg/osm-logo-us.svg'/></a>"
       },
       "mappings": [
         {
@@ -220,7 +220,7 @@
     {
       "id": "email",
       "render": {
-        "*": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+        "*": "<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>"
       },
       "icon": "./assets/svg/envelope.svg",
       "labels": [
@@ -255,7 +255,7 @@
         {
           "if": "contact:email~*",
           "icon": "./assets/svg/envelope.svg",
-          "then": "<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>",
+          "then": "<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>",
           "hideInAnswer": true
         }
       ],
