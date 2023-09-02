@@ -172,7 +172,8 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             tileSize: layer["tile-size"] ?? 256,
             minzoom: layer["min_zoom"] ?? 1,
             maxzoom: layer["max_zoom"] ?? 25,
-            //  scheme: background["type"] === "tms" ? "tms" : "xyz",
+            // Bit of a hack, but seems to work
+            scheme: layer.url.includes("{-y}") ? "tms" : "xyz",
         }
     }
 
@@ -203,6 +204,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             "{width}": "" + size,
             "{height}": "" + size,
             "{zoom}": "{z}",
+            "{-y}": "{y}",
         }
 
         for (const key in toReplace) {
