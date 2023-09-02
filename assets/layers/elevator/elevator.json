@@ -152,7 +152,7 @@
         "then": {"en": "This elevator does not have tactile writing"}
         }
       ]
-    }
+    },
     
     {
       "id": "tactile_writing_language",
@@ -190,7 +190,7 @@
         "then": {"en": "This elevator does not have speech output"}
         }
       ]
-    }
+    },
     
     {
       "id": "speech_output",
