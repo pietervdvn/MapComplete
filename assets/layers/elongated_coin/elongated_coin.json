@@ -185,7 +185,39 @@
     },
     "website",
     {
+      "id": "fee",
+      "question": {
+        "en": "Does it cost money to press a penny?"
+      },
+      "mappings": [
+        {
+          "if": "fee=",
+          "then": {
+            "en": "It costs money to press a penny."
+          }
+        },
+        {
+          "if": "fee=yes",
+          "then": {
+            "en": "It costs money to press a penny."
+          }
+        },
+        {
+          "if": "fee=no",
+          "then": {
+            "en": "It is free to press a penny."
+          }
+        }
+      ]
+    },
+    {
       "id": "charge",
+      "condition": {
+        "or": [
+          "fee=yes",
+          "fee="
+        ]
+      },
       "question": {
         "en": "How much does it cost to press a penny?",
         "de": "Wieviel kostet es eine Münze zu Pressen?",
