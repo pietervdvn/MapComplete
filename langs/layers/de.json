@@ -7327,6 +7327,9 @@
                 },
                 "question": "Wird das Objekt beleuchtet oder leuchtet es selbst?"
             },
+            "mastodon": {
+                "question": "Wie lautet der Mastodon-Handle von {title()}?"
+            },
             "multilevels": {
                 "override": {
                     "question": "Auf welchen Geschossen hält dieser Aufzug?",
