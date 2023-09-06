@@ -1,1 +1,328 @@
-{}
+{
+    "advertising": {
+        "description": "Inoiz pentsatu duzu zenbat iragarki dauden gure kale eta errepideetan? Mapa honekin, kalean aurki ditzakezun publizitate-ezaugarri guztiei buruzko informazioa aurkitu eta erants dezakezu",
+        "shortDescription": "Non aurki ditzaket publizitate ezaugarriak?",
+        "title": "Publizitatea"
+    },
+    "aed": {
+        "description": "Mapa honetan, hurbileko desfibriladoreak aurkitu eta marka daitezke",
+        "title": "Desfibriladoreak"
+    },
+    "artwork": {
+        "description": "Estatuen, bustoen, graffitien eta mundu osoko beste artelan batzuen mapa irekia",
+        "title": "Artelanak"
+    },
+    "atm": {
+        "description": "Mapa honek dirua atera edo sartzeko kutxazain automatikoak erakusten ditu",
+        "layers": {
+            "3": {
+                "override": {
+                    "=tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Inportatu kutxazain automatiko hau"
+                                }
+                            }
+                        },
+                        "2": {
+                            "render": {
+                                "special": {
+                                    "message": "Gehitu iradokitako etiketa guztiak hurbilen dagoen kutxazainari"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Kutxazain automatikoa"
+    },
+    "bag": {
+        "shortDescription": "BAGak inportatzen laguntzeko tresna"
+    },
+    "benches": {
+        "description": "OpenStreetMap-en erregistratzen diren banku guztiak erakusten ditu mapa honek: garraio publikoko geralekuetako edo babeslekuetako banakako bankuak eta bankuak.",
+        "shortDescription": "Eserleku mapa bat",
+        "title": "Eserlekuak"
+    },
+    "bicycle_rental": {
+        "description": "Mapa honetan aurkituko dituzu bizikletak alokatzeko OpenStreetMap-ek ezagutzen dituen estazio ugari",
+        "shortDescription": "Bizikletak alokatzeko estazioen eta bizikletak alokatzeko denden mapa",
+        "title": "Bizikleta alokairua"
+    },
+    "bicyclelib": {
+        "description": "Bizikletak uzteko lekua da bizikleta-liburutegia, askotan urteko kuota txiki baten truke. Kasu aipagarri bat haurrentzako bizikleta-liburutegiak dira, egungo bizikleta gainditu dutenean bizikleta handiago baterako aldatzeko aukera ematen dietenak",
+        "title": "Bizikleta liburutegia"
+    },
+    "binoculars": {
+        "description": "Zutoin batean prismatiko finkoak dituen mapa. Leku turistikoetan, begiratokietan, dorre panoramikoen gainean edo, batzuetan, erreserba natural batean egoten da.",
+        "shortDescription": "Prismatiko finkoak dituen mapa",
+        "title": "Binokularrak"
+    },
+    "blind_osm": {
+        "description": "Itsuentzako elementu garrantzitsuak kartografiatzeko laguntza",
+        "title": "OSM itsuentzat"
+    },
+    "bookcases": {
+        "description": "Kale-liburutegi publiko bat kale-armairu txiki bat da, kaxa, telefono-kabina zaharra edo liburuak gordetzeko beste objektu batzuk. Guztiek jar edo har dezakete liburu bat. Koaderno horiek guztiak biltzea da mapa honen helburua.",
+        "title": "Apalategi publikoak"
+    },
+    "cafes_and_pubs": {
+        "description": "Kafetegiak, pubak eta tabernak",
+        "title": "Kafetegiak eta pubak"
+    },
+    "campersite": {
+        "description": "Karabanak gelditzeko leku ofizial guztiak eta ur gris eta beltzak botatzeko lekuak biltzen ditu. Emandako zerbitzuei eta kostuari buruzko xehetasunak gehitu ditzakezu. Erantsi argazkiak eta aipamenak.",
+        "layers": {
+            "0": {
+                "description": "Kanpatzeko tokiak",
+                "name": "Akanpatzeko tokiak",
+                "presets": {
+                    "0": {
+                        "description": "Kanpaleku ofizialeko beste leku bat gehitu du. Gaua zure karabanarekin igarotzeko lekuak dira. Benetako kanpin baten edo, besterik gabe, aparkaleku baten itxura izan dezakete. Baliteke ez egotea inola ere seinaleztatuta, baizik eta udal erabaki batean definitzea. Kanpinlarientzako aparkaleku arrunt bat ez da kanpin bat, gaua bertan pasatzea espero ez bada ere. ",
+                        "title": "Kanpin bat"
+                    }
+                },
+                "tagRenderings": {
+                    "caravansites-capacity": {
+                        "question": "Zenbat kanpinlari gera daitezke hemen? (jauzi egin leku edo ibilgailu kopuru nabaririk ez badago)",
+                        "render": "{capacity} kanpinlariek aldi berean erabil dezakete leku hau"
+                    },
+                    "caravansites-charge": {
+                        "question": "Zenbat kobratzen du leku honek?",
+                        "render": "Leku honek {charge} kobratzen du"
+                    },
+                    "caravansites-description": {
+                        "question": "Gustatuko litzaizuke toki honen deskribapen orokorra gehitzea? (Ez errepikatu aurretik eskatutako edo adierazitako informazioa. Mesedez, eutsi helburuari - berrikuspenetarako iritziak)"
+                    },
+                    "caravansites-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Erabiltzeko ordaindu behar duzu"
+                            }
+                        },
+                        "question": "Leku horrek kuota bat kobratzen du?"
+                    },
+                    "caravansites-internet": {
+                        "question": "Leku honek Interneterako sarbidea eskaintzen du?"
+                    },
+                    "caravansites-long-term": {
+                        "mappings": {
+                            "1": {
+                                "then": "Ez dago bezero iraunkorrik hemen"
+                            }
+                        }
+                    },
+                    "caravansites-toilets": {
+                        "mappings": {
+                            "1": {
+                                "then": "Toki honek ez dauka komunik"
+                            }
+                        }
+                    },
+                    "caravansites-website": {
+                        "question": "Toki honek webgunerik ba al du?"
+                    }
+                }
+            },
+            "1": {
+                "tagRenderings": {
+                    "dumpstations-access": {
+                        "mappings": {
+                            "2": {
+                                "then": "Edonork erabil dezake hondakindegi hau"
+                            },
+                            "3": {
+                                "then": "Edonork erabil dezake hondakindegi hau"
+                            }
+                        },
+                        "question": "Nork erabil dezake hondakindegia?"
+                    },
+                    "dumpstations-charge": {
+                        "question": "Zenbat kobratzen dute toki honetan?"
+                    },
+                    "dumpstations-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Erabiltzeko ordaindu behar duzu"
+                            }
+                        },
+                        "question": "Leku horrek tasa bat kobratzen du?"
+                    },
+                    "dumpstations-waterpoint": {
+                        "mappings": {
+                            "0": {
+                                "then": "Leku honek ur-hartune bat du"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "render": "Leku hau {operator}k operatzen du"
+                },
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "Leku honek hornidura elektrikoa du"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Kanpinak"
+    },
+    "charging_stations": {
+        "shortDescription": "Karga-estazioen munduko mapa"
+    },
+    "climbing": {
+        "layers": {
+            "0": {
+                "override": {
+                    "units+": {
+                        "0": {
+                            "applicableUnits": {
+                                "0": {
+                                    "human": " ·metro"
+                                },
+                                "1": {
+                                    "human": " ·hanka"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "clock": {
+        "title": "Erlojuak"
+    },
+    "cyclenodes": {
+        "layers": {
+            "1": {
+                "name": "nodoak"
+            }
+        }
+    },
+    "cyclestreets": {
+        "layers": {
+            "0": {
+                "name": "Bidegorriak"
+            },
+            "1": {
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name} laster bidegorri bihurtuko da"
+                        }
+                    }
+                }
+            },
+            "2": {
+                "title": {
+                    "render": "Kalea"
+                }
+            }
+        },
+        "title": "Bidegorriak"
+    },
+    "education": {
+        "title": "Hezkuntza"
+    },
+    "hackerspaces": {
+        "title": "Hackerspace"
+    },
+    "healthcare": {
+        "title": "Osasun laguntza"
+    },
+    "hotels": {
+        "title": "Hotelak"
+    },
+    "indoors": {
+        "title": "Barnealdean"
+    },
+    "kerbs_and_crossings": {
+        "layers": {
+            "1": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "bidegurutze bat"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "maxspeed": {
+        "title": "Abiadiura"
+    },
+    "onwheels": {
+        "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Estatistika"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Inportatu"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Gurpil gainean"
+    },
+    "parkings": {
+        "title": "Aparkalekua"
+    },
+    "playgrounds": {
+        "title": "Jolas parkeak"
+    },
+    "shops": {
+        "title": "Denda"
+    },
+    "sidewalks": {
+        "layers": {
+            "0": {
+                "name": "Espaloiak",
+                "title": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "title": "Espaloiak"
+    },
+    "sports": {
+        "title": "Kirolak"
+    },
+    "street_lighting": {
+        "layers": {
+            "2": {
+                "title": {
+                    "render": "Kalea"
+                }
+            }
+        }
+    },
+    "trees": {
+        "title": "Zuhaitzak"
+    },
+    "waste": {
+        "title": "Hondakinak eta birziklapena"
+    }
+}
