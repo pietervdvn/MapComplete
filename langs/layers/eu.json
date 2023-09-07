@@ -1,1 +1,332 @@
-{}
+{
+    "address": {
+        "description": "Helbideak",
+        "name": "OSMko helbide ezagunak",
+        "tagRenderings": {
+            "fixme": {
+                "question": "Zer konpondu behar da hemen? Azaldu mesedez"
+            },
+            "housenumber": {
+                "mappings": {
+                    "0": {
+                        "then": "Eraikin honek ez du etxe zenbakirik"
+                    }
+                },
+                "question": "Zein da etxe honen zenbakia?"
+            },
+            "street": {
+                "question": "Zein kaletan dago helbide hori?"
+            }
+        },
+        "title": {
+            "render": "Helbide ezaguna"
+        }
+    },
+    "advertising": {
+        "description": "Publizitate-ezaugarrien datuak osatuko ditugu erreferentziarekin, operadorearekin eta argiztatuarekin.",
+        "name": "Iragarri",
+        "presets": {
+            "0": {
+                "description": "Atari zabaleko publizitate-egitura handia, trafiko handiko eremuetan egon ohi dena, adibidez errepideen ondoan",
+                "title": "iragarki panela"
+            },
+            "10": {
+                "description": "Iragarki publizitarioetarako, neon-karteletarako, logotipoetarako eta erakundeen sarrera-seinaleetarako erabiltzen da",
+                "title": "letrero bat"
+            },
+            "11": {
+                "title": "eskultura bat"
+            },
+            "12": {
+                "title": "pareta margotu bat"
+            }
+        },
+        "tagRenderings": {
+            "Sides": {
+                "mappings": {
+                    "0": {
+                        "then": "Objektu honek iragarkiak ditu alde bakar batean"
+                    },
+                    "1": {
+                        "then": "Objektu honek iragarkiak ditu bi aldeetan"
+                    }
+                },
+                "question": "Zenbat aldetatik ikus dezakezu publizitatea?"
+            },
+            "message_type": {
+                "mappings": {
+                    "4": {
+                        "then": "Antzerkiari, kontzertuei eta abarri buruzko informazioa"
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "3": {
+                    "then": "Zutabea"
+                },
+                "4": {
+                    "then": "Ikurrina"
+                },
+                "5": {
+                    "then": "Pantaila"
+                },
+                "6": {
+                    "then": "Eskultura"
+                },
+                "7": {
+                    "then": "Kartela"
+                },
+                "8": {
+                    "then": "Olana"
+                },
+                "9": {
+                    "then": "Totem"
+                }
+            }
+        }
+    },
+    "artwork": {
+        "description": "Estatuen, bustoen, graffitien eta mundu osoko beste artelan batzuen mapa irekia",
+        "name": "Artelanak",
+        "tagRenderings": {
+            "artwork-artwork_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Arkitektura"
+                    },
+                    "1": {
+                        "then": "Murala"
+                    },
+                    "11": {
+                        "then": "Keramika"
+                    },
+                    "12": {
+                        "then": "Egur taila"
+                    },
+                    "2": {
+                        "then": "Margolana"
+                    },
+                    "3": {
+                        "then": "Eskultura"
+                    },
+                    "4": {
+                        "then": "Estatua"
+                    },
+                    "5": {
+                        "then": "Bustoa"
+                    },
+                    "6": {
+                        "then": "Harria"
+                    },
+                    "7": {
+                        "then": "Instalazioa"
+                    },
+                    "8": {
+                        "then": "Graffitia"
+                    },
+                    "9": {
+                        "then": "Erliebea"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Artelana"
+        }
+    },
+    "atm": {
+        "name": "kutxazainak",
+        "tagRenderings": {
+            "operator": {
+                "freeform": {
+                    "placeholder": "Operadorea"
+                }
+            }
+        },
+        "title": {
+            "render": "Kutxazaina"
+        }
+    },
+    "bank": {
+        "name": "Bankuak"
+    },
+    "barrier": {
+        "name": "Barrerak",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Bolardoa"
+                }
+            },
+            "render": "Barrera"
+        }
+    },
+    "bench": {
+        "name": "Bankuak",
+        "title": {
+            "render": "Bankua"
+        }
+    },
+    "bench_at_pt": {
+        "tagRenderings": {
+            "bench_at_pt-name": {
+                "render": "{name}"
+            }
+        },
+        "title": {
+            "render": "Banku"
+        }
+    },
+    "bicycle_rental": {
+        "tagRenderings": {
+            "rental_types": {
+                "rewrite": {
+                    "into": {
+                        "4": {
+                            "1": "mendiko bizikletak"
+                        },
+                        "6": {
+                            "1": "tandem"
+                        }
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            }
+        }
+    },
+    "bike_parking": {
+        "tagRenderings": {
+            "Access": {
+                "render": "{access}"
+            },
+            "Bicycle parking type": {
+                "mappings": {
+                    "3": {
+                        "then": "Rack-a"
+                    },
+                    "5": {
+                        "then": "Etxola"
+                    },
+                    "6": {
+                        "then": "Bolardo"
+                    }
+                }
+            }
+        }
+    },
+    "bike_repair_station": {
+        "tagRenderings": {
+            "bike_repair_station-valves": {
+                "mappings": {
+                    "1": {
+                        "then": "Dunlop"
+                    }
+                }
+            }
+        }
+    },
+    "bike_shop": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Winkela"
+                }
+            }
+        }
+    },
+    "binocular": {
+        "description": "Prismatikoak",
+        "name": "Prismatikoak",
+        "title": {
+            "render": "Prismatikoak"
+        }
+    },
+    "cafe_pub": {
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            },
+            "render": "Edaritegia"
+        }
+    },
+    "charging_station": {
+        "tagRenderings": {
+            "Available_charging_stations (generated)": {
+                "mappings": {
+                    "4": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    }
+                }
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " ·minutu",
+                        "humanSingular": " ·minutu"
+                    },
+                    "1": {
+                        "human": " ·ordu",
+                        "humanSingular": " ·ordu"
+                    },
+                    "2": {
+                        "human": " ·egun",
+                        "humanSingular": " ·egun"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Voltio"
+                    }
+                }
+            },
+            "2": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "A"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "kilovatio"
+                    },
+                    "1": {
+                        "human": "megawatt"
+                    }
+                }
+            }
+        }
+    },
+    "climbing_area": {
+        "tagRenderings": {
+            "Rock type (crag/rock/cliff only)": {
+                "mappings": {
+                    "0": {
+                        "then": "Kareharria"
+                    }
+                }
+            },
+            "name": {
+                "render": "<strong>{name}</strong>"
+            }
+        }
+    }
+}
