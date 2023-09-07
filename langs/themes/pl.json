@@ -1,17 +1,553 @@
 {
+    "advertising": {
+        "shortDescription": "Gdzie mogę znaleźć obiekty reklamowe?",
+        "title": "Reklamy"
+    },
     "aed": {
         "description": "Na tej mapie można znaleźć i oznaczyć defibrylatory w okolicy",
-        "title": "Otwórz mapę AED"
+        "title": "Defibrylatory"
     },
     "artwork": {
         "description": "Witaj w Open Artwork Map, mapie pomników, popierś, graffitti i innych dzieł sztuki z całego świata",
         "title": "Otwórz mapę dzieł sztuki"
     },
+    "atm": {
+        "description": "Ta mapa pokazuje bankomaty/wpłatomaty",
+        "layers": {
+            "3": {
+                "override": {
+                    "=tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importuj ten bankomat"
+                                }
+                            }
+                        },
+                        "2": {
+                            "render": {
+                                "special": {
+                                    "message": "Dodaj wszystkie sugerowane znaczniki do najbliższego bankomatu"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Bankomaty"
+    },
+    "benches": {
+        "shortDescription": "Mapa ławek",
+        "title": "Ławki"
+    },
     "bicyclelib": {
         "title": "Wypożyczalnie rowerów"
     },
+    "blind_osm": {
+        "description": "Pomóż umieszczać na mapie obiekty ważne dla niewidomych",
+        "title": "OSM dla niewidomych"
+    },
+    "cafes_and_pubs": {
+        "title": "Kawiarnie i puby"
+    },
+    "campersite": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "caravansites-description": {
+                        "render": "Więcej szczegółów o tym miejscu: {description}"
+                    },
+                    "caravansites-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Wymagana jest opłata, aby skorzystać"
+                            },
+                            "1": {
+                                "then": "Można skorzystać za darmo"
+                            }
+                        },
+                        "question": "Czy to miejsce pobiera opłatę?"
+                    },
+                    "caravansites-internet": {
+                        "mappings": {
+                            "0": {
+                                "then": "Jest dostęp do internetu"
+                            },
+                            "1": {
+                                "then": "Jest dostęp do internetu"
+                            },
+                            "2": {
+                                "then": "Nie ma dostępu do internetu"
+                            }
+                        },
+                        "question": "Czy to miejsce oferuje dostęp do internetu?"
+                    },
+                    "caravansites-internet-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Dostęp do internetu jest dodatkowo płatny"
+                            },
+                            "1": {
+                                "then": "Dostęp do internetu nie jest dodatkowo płatny"
+                            }
+                        },
+                        "question": "Czy trzeba płacić za dostęp do internetu?"
+                    },
+                    "caravansites-name": {
+                        "question": "Jak nazywa się to miejsce?",
+                        "render": "To miejsce nazywa się {name}"
+                    },
+                    "caravansites-toilets": {
+                        "mappings": {
+                            "0": {
+                                "then": "To miejsce ma toalety"
+                            },
+                            "1": {
+                                "then": "To miejsce nie ma toalet"
+                            }
+                        },
+                        "question": "Czy to miejsce ma toalety?"
+                    },
+                    "caravansites-website": {
+                        "question": "Czy to miejsce ma stronę internetową?",
+                        "render": "Official website: <a href='{website}'>{website}</a>"
+                    }
+                }
+            }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "To miejsce ma dostęp do prądu"
+                        },
+                        "1": {
+                            "then": "To miejsce nie ma dostępu do prądu"
+                        }
+                    },
+                    "question": "Czy to miejsce ma dostęp do prądu?"
+                }
+            }
+        }
+    },
+    "charging_stations": {
+        "title": "Stacje ładowania"
+    },
+    "climbing": {
+        "layers": {
+            "0": {
+                "override": {
+                    "tagRenderings+": {
+                        "1": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Publicznie dostępne dla każdego"
+                                },
+                                "2": {
+                                    "then": "Tylko klienci"
+                                },
+                                "3": {
+                                    "then": "Tylko członkowie klubu"
+                                }
+                            },
+                            "question": "Kto ma tutaj dostęp?"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "clock": {
+        "title": "Zegary"
+    },
+    "cycle_infra": {
+        "title": "Infrastruktura rowerowa"
+    },
+    "cyclestreets": {
+        "layers": {
+            "2": {
+                "name": "Wszystkie ulice",
+                "title": {
+                    "render": "Ulica"
+                }
+            }
+        },
+        "overrideAll": {
+            "+tagRenderings": {
+                "0": {
+                    "mappings": {
+                        "1": {
+                            "then": "To jest droga dla rowerów"
+                        }
+                    }
+                },
+                "1": {
+                    "mappings": {
+                        "3": {
+                            "then": "Samochody dozwolone"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "cyclofix": {
+        "title": "Cyclofix - mapa dla rowerzystów"
+    },
+    "drinking_water": {
+        "description": "Na tej mapie znajdują się dostępne publicznie źródła pitnej wody i mogą łatwo być dodane",
+        "title": "Woda pitna"
+    },
+    "education": {
+        "title": "Edukacja"
+    },
+    "etymology": {
+        "layers": {
+            "1": {
+                "override": {
+                    "=name": "Ulice bez informacji o etymologii"
+                }
+            },
+            "2": {
+                "override": {
+                    "=name": "Parki i lasy bez informacji o etymologii"
+                }
+            },
+            "3": {
+                "override": {
+                    "=name": "Instytucje edukacyjne bez informacji o etymologii"
+                }
+            },
+            "5": {
+                "override": {
+                    "=name": "Miejsca turystyczne bez informacji o etymologii"
+                }
+            }
+        },
+        "title": "Etymologia - od czego pochodzi nazwa ulicy?"
+    },
     "ghostbikes": {
         "title": "Duch roweru"
+    },
+    "grb": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "Jaki to rodzaj budynku?"
+                    }
+                }
+            }
+        }
+    },
+    "grb_fixme": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "Jaki to rodzaj budynku?"
+                    }
+                }
+            }
+        }
+    },
+    "healthcare": {
+        "layers": {
+            "5": {
+                "override": {
+                    "=presets": {
+                        "2": {
+                            "title": "optyk"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Służba zdrowia"
+    },
+    "hotels": {
+        "title": "Hotele"
+    },
+    "indoors": {
+        "title": "Wewnątrz"
+    },
+    "kerbs_and_crossings": {
+        "description": "Mapa pokazująca krawężniki i przejścia.",
+        "layers": {
+            "1": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "description": "Przejście dla pieszych i/lub przejazd dla rowerów"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Krawężniki i przejścia"
+    },
+    "mapcomplete-changes": {
+        "description": "Ta mapa pokazuje wszystkie zmiany wprowadzone za pomocą MapComplete",
+        "layers": {
+            "0": {
+                "description": "Pokazuje wszystkie zmiany MapComplete",
+                "filter": {
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "Stworzone przed {search}"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "Stworzone po {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Język użytkownika (kod iso) {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Zestaw zmian dodał co najmniej jedno zdjęcie"
+                            }
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "version": {
+                        "question": "Która wersja MapComplete została wykorzystana, aby zrobić tę zmianę?",
+                        "render": "Zrobione za pomocą {editor}"
+                    }
+                }
+            }
+        }
+    },
+    "maproulette": {
+        "title": "Zadania MapRoulette"
+    },
+    "maps": {
+        "title": "Mapa map"
+    },
+    "maxspeed": {
+        "title": "Prędkość maksymalna"
+    },
+    "notes": {
+        "title": "Notatki na OpenStreetMap"
+    },
+    "observation_towers": {
+        "description": "Publicznie dostępne wieże do podziwiania widoku",
+        "shortDescription": "Publicznie dostępne wieże do podziwiania widoku",
+        "title": "Wieże obserwacyjne"
+    },
+    "onwheels": {
+        "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statystyki"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Dodaj wszystkie sugerowane znaczniki"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "4": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "1": {
+                                    "question": "Bez informacji o szerokości"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "=filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Wszystkie rodzaje kraweżnika"
+                                },
+                                "1": {
+                                    "question": "Krawężnik podniesiony (>3 cm)"
+                                },
+                                "2": {
+                                    "question": "Krawężnik obniżony (~3 cm)"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "8": {
+                "override": {
+                    "name": "Miejsca parkingowe dla niepełnosprawnych"
+                }
+            }
+        }
+    },
+    "openwindpowermap": {
+        "description": "Mapa do pokazywania i edytowania turbin wiatrowych."
+    },
+    "parkings": {
+        "title": "Parking"
+    },
+    "playgrounds": {
+        "title": "Place zabaw"
+    },
+    "postal_codes": {
+        "description": "Kody pocztowe",
+        "layers": {
+            "0": {
+                "name": "kody pocztowe",
+                "tagRenderings": {
+                    "postal_code": {
+                        "render": "Kod pocztowy to {postal_code}"
+                    }
+                },
+                "title": {
+                    "render": "Kod pocztowy {postal_code}"
+                }
+            },
+            "2": {
+                "name": "ratusz",
+                "title": {
+                    "render": "Ratusz {name}"
+                }
+            }
+        },
+        "shortDescription": "Kody pocztowe",
+        "title": "Kody pocztowe"
+    },
+    "sidewalks": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "streetname": {
+                        "render": "Nazwa ulicy to {name}"
+                    }
+                },
+                "title": {
+                    "render": "{name}"
+                }
+            }
+        }
+    },
+    "sports": {
+        "title": "Sporty"
+    },
+    "stations": {
+        "description": "Przeglądaj, edytuj i dodawaj szczegóły do stacji kolejowej",
+        "layers": {
+            "16": {
+                "name": "Tablice odjazdów",
+                "presets": {
+                    "0": {
+                        "title": "tablica odjazdów"
+                    }
+                },
+                "tagRenderings": {
+                    "type": {
+                        "mappings": {
+                            "2": {
+                                "then": "To jest papierowy rozkład jazdy"
+                            },
+                            "3": {
+                                "then": "Jest tu znak informujący częstotliwość jazdy pociągów"
+                            }
+                        }
+                    }
+                }
+            },
+            "3": {
+                "name": "Stacje Kolejowe"
+            }
+        },
+        "title": "Stacje Kolejowe"
+    },
+    "street_lighting": {
+        "description": "Na tej mapie możesz znaleźć wszystko o oświetleniu ulicznym",
+        "layers": {
+            "1": {
+                "name": "Oświetlone ulice",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Ta ulica jest oświetlona"
+                            },
+                            "1": {
+                                "then": "Ta ulica nie jest oświetlona"
+                            },
+                            "2": {
+                                "then": "Ta ulica się oświetlona w nocy"
+                            },
+                            "3": {
+                                "then": "Ta ulica jest oświetlona 24/7"
+                            }
+                        },
+                        "question": "Czy ta ulica jest oświetlona?"
+                    }
+                }
+            },
+            "2": {
+                "name": "Wszystkie ulice",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Ta ulica jest oświetlona"
+                            },
+                            "1": {
+                                "then": "Ta ulica nie jest oświetlona"
+                            },
+                            "2": {
+                                "then": "Ta ulica jest oświetlona w nocy"
+                            },
+                            "3": {
+                                "then": "Ta ulica jest oświetlona 24/7"
+                            }
+                        },
+                        "question": "Czy ta ulica jest oświetlona?"
+                    }
+                },
+                "title": {
+                    "render": "Ulica"
+                }
+            }
+        },
+        "title": "Oświetlenie uliczne"
     },
     "surveillance": {
         "description": "Na tej otwartej mapie można znaleźć kamery monitoringu.",
@@ -21,8 +557,18 @@
         "description": "Mapa toalet publicznych",
         "title": "Mapa otwartych toalet"
     },
+    "transit": {
+        "title": "Trasy autobusowe"
+    },
     "trees": {
         "shortDescription": "Sporządzić mapę wszystkich drzew",
         "title": "Drzewa"
+    },
+    "walls_and_buildings": {
+        "title": "Ściany i budynki"
+    },
+    "waste_basket": {
+        "shortDescription": "Mapa koszy na śmieci",
+        "title": "Kosz na śmieci"
     }
 }
