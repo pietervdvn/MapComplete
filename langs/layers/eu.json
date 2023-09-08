@@ -12,10 +12,12 @@
                         "then": "Eraikin honek ez du etxe zenbakirik"
                     }
                 },
-                "question": "Zein da etxe honen zenbakia?"
+                "question": "Zein da etxe honen zenbakia?",
+                "render": "Etxearen zenbakia <b>{addr:housenumber}</b> da"
             },
             "street": {
-                "question": "Zein kaletan dago helbide hori?"
+                "question": "Zein kaletan dago helbide hori?",
+                "render": "Helbide hau <b>{addr:street}</b> kalean dago"
             }
         },
         "title": {
