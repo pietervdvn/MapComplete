@@ -4309,7 +4309,6 @@
     },
     "parking_ticket_machine": {
         "description": "Couche avec les distributeurs de tickets pour payer le parking.",
-        "name": "",
         "tagRenderings": {
             "ref": {
                 "freeform": {
