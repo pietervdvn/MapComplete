@@ -39,6 +39,7 @@
         "title": "Kutxazain automatikoa"
     },
     "bag": {
+        "description": "Gai honek BAGeko datuak inportatzen laguntzen du",
         "shortDescription": "BAGak inportatzen laguntzeko tresna"
     },
     "benches": {
