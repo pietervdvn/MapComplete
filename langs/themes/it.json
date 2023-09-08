@@ -7,10 +7,32 @@
         "description": "Benvenuto/a sulla mappa libera dell’arte, una mappa delle statue, i busti, i graffiti e le altre realizzazioni artistiche di tutto il mondo",
         "title": "Mappa libera delle opere d'arte"
     },
+    "atm": {
+        "description": "Questa mappa mostra gli sportelli bancomat per ritirare o depositare del denaro",
+        "layers": {
+            "3": {
+                "override": {
+                    "=tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importa questo sportello bancomat"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Sportelli bancomat"
+    },
     "benches": {
         "description": "Questa mappa mostra tutte le panchine che sono state aggiunte su OpenStreetMap: panchine individuali e quelle alle fermate del trasporto pubblico o nei ripari. Se disponi di un account OpenStreetMap puoi mappare delle nuove panchine o modificare i dettagli di quelle esistenti.",
         "shortDescription": "Una mappa delle panchine",
         "title": "Panchine"
+    },
+    "bicycle_rental": {
+        "description": "In questa mappa trovi i luoghi conosciuti da OpenStreetMap  dove puoi noleggiare delle biciclette"
     },
     "bicyclelib": {
         "description": "«Biciclette in prestito» è un luogo dove le biciclette possono essere prese in prestito, spesso in cambio di un piccolo contributo annuale. Un caso degno di nota è quello delle biciclette in prestito per bambini che permettono loro di cambiare le dimensioni della propria bici quando quella attuale diventa troppo piccola",
@@ -20,6 +42,10 @@
         "description": "Una cartina dei binocoli su un palo fissi in un luogo. Si trovano tipicamente nei luoghi turistici, nei belvedere, in cima a torri panoramiche oppure occasionalmente nelle riserve naturali.",
         "shortDescription": "Una cartina dei binocoli pubblici fissi",
         "title": "Binocoli"
+    },
+    "blind_osm": {
+        "description": "Aiuta a mappare le caratteristiche importanti per i non vedenti",
+        "title": "OSM per i non vedenti"
     },
     "bookcases": {
         "description": "Una libreria pubblica è una piccola cabina a lato della strada, un locale, una vecchia cabina telefonica o qualche altro luogo in cui sono tenuti libri. Chiunque può lasciare o prendere libri. Scopo della mappa è individuarle. Se scopri nuove librerie nelle vicinanze, puoi facilmente aggiungerle con un account OpenStreetMap.",
@@ -77,7 +103,7 @@
                                 "then": "Non c’è l’accesso a internet"
                             }
                         },
-                        "question": "Questo luogo ha l’accesso a internet?"
+                        "question": "Questo luogo fornisce l’accesso a internet?"
                     },
                     "caravansites-internet-fee": {
                         "mappings": {
@@ -549,8 +575,12 @@
         "shortDescription": "Una cartina dei parchi giochi",
         "title": "Parchi giochi"
     },
+    "postal_codes": {
+        "shortDescription": "Codici postali",
+        "title": "Codici postali"
+    },
     "postboxes": {
-        "description": "In questa cartina puoi veder e modificare gli uffici postali e le buche delle lettere. Puoi usare questa cartina per trovare dove imbucare la tua prossima cartolina! :)<br/>Hai trovato un errore o una buca delle lettere mancante? Puoi modificare questa cartina con un account gratuito su OpenStreetMap. ",
+        "description": "In questa cartina puoi veder e modificare gli uffici postali e le buche delle lettere. Puoi usare questa cartina per trovare dove imbucare la tua prossima cartolina! :)<br/>Hai trovato un errore o una buca delle lettere mancante? Puoi modificare questa cartina con un account gratuito su OpenStreetMap.",
         "shortDescription": "Una cartina che mostra le buche delle lettere e gli uffici postali",
         "title": "Buche delle lettere e uffici postali"
     },
@@ -564,6 +594,20 @@
             "0": {
                 "name": "Marciapiedi",
                 "tagRenderings": {
+                    "left-right-questions": {
+                        "renderings": {
+                            "1": {
+                                "mappings": {
+                                    "0": {
+                                        "then": "Sì, c'è un marciapiede su questo lato della strada"
+                                    },
+                                    "1": {
+                                        "then": "No, non c'è un marciapiede su cui camminare"
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "streetname": {
                         "render": "La strada si chiama {name}"
                     }
@@ -574,16 +618,78 @@
             }
         },
         "shortDescription": "Mappatura del marciapiede",
-        "title": "Marciapiede"
+        "title": "Marciapiedi"
     },
     "sport_pitches": {
-        "description": "Un campo sportivo è un'area dove vengono praticati sport",
+        "description": "Un campo sportivo è un'area dove vengono praticati degli sport",
         "shortDescription": "Una cartina che mostra i campi sportivi",
         "title": "Campi sportivi"
     },
+    "stations": {
+        "layers": {
+            "3": {
+                "name": "Stazioni ferroviarie"
+            }
+        }
+    },
+    "street_lighting": {
+        "layers": {
+            "1": {
+                "name": "Strade illuminate",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Questa strada è illuminata"
+                            },
+                            "1": {
+                                "then": "Questa strada non è illuminata"
+                            },
+                            "2": {
+                                "then": "Questa strada è illuminata di sera"
+                            },
+                            "3": {
+                                "then": "Questa strada è illuminata 24 ore al giorno"
+                            }
+                        },
+                        "question": "Questa strada è illuminata?"
+                    }
+                },
+                "title": {
+                    "render": "Strada illuminata"
+                }
+            },
+            "2": {
+                "name": "Tutte le strade",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Questa strada è illuminata"
+                            },
+                            "1": {
+                                "then": "Questa strada non è illuminata"
+                            },
+                            "2": {
+                                "then": "Questa strada è illuminata di sera"
+                            },
+                            "3": {
+                                "then": "Questa strada è illuminata 24 ore su 24"
+                            }
+                        },
+                        "question": "Questa strada è illuminata?"
+                    }
+                },
+                "title": {
+                    "render": "Strada"
+                }
+            }
+        },
+        "title": "Illuminazione stradale"
+    },
     "surveillance": {
-        "description": "In questa cartina puoi trovare le telecamera di sorveglianza.",
-        "shortDescription": "Telecamere di sorveglianza e altri mezzi di sorveglianza.",
+        "description": "In questa cartina puoi trovare le telecamere di sorveglianza.",
+        "shortDescription": "Telecamere di sorveglianza e altri mezzi di sorveglianza",
         "title": "Sorveglianza sotto controllo"
     },
     "toilets": {
