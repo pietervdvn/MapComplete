@@ -37,6 +37,28 @@
         },
         "title": "Bankomaty"
     },
+    "bag": {
+        "layers": {
+            "2": {
+                "description": "Budynki z rejestru BAG",
+                "tagRenderings": {
+                    "Build year": {
+                        "render": "Ten budynek zbudowano w <b>{_bag_obj:start_date}</b>"
+                    },
+                    "Building type": {
+                        "render": "Rodzaj budynku to <b>{_bag_obj:building}</b>"
+                    },
+                    "Import button": {
+                        "mappings": {
+                            "0": {
+                                "then": "Jeszcze nie obliczono poprawnych wartości. Odśwież tę stronę"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
     "benches": {
         "shortDescription": "Mapa ławek",
         "title": "Ławki"
@@ -112,6 +134,21 @@
                     "caravansites-website": {
                         "question": "Czy to miejsce ma stronę internetową?",
                         "render": "Official website: <a href='{website}'>{website}</a>"
+                    }
+                }
+            },
+            "1": {
+                "tagRenderings": {
+                    "dumpstations-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Trzeba zapłacić, aby użyć"
+                            },
+                            "1": {
+                                "then": "Może być użyte za darmo"
+                            }
+                        },
+                        "question": "Czy to miejsce pobiera opłatę?"
                     }
                 }
             }
@@ -228,6 +265,24 @@
         },
         "title": "Etymologia - od czego pochodzi nazwa ulicy?"
     },
+    "facadegardens": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "facadegardens-description": {
+                        "render": "Więcej szczegółów: {description}"
+                    },
+                    "facadegardens-sunshine": {
+                        "mappings": {
+                            "1": {
+                                "then": "Ogród jest częściowo w cieniu"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
     "ghostbikes": {
         "title": "Duch roweru"
     },
@@ -237,6 +292,17 @@
                 "tagRenderings": {
                     "building type": {
                         "question": "Jaki to rodzaj budynku?"
+                    }
+                }
+            },
+            "1": {
+                "tagRenderings": {
+                    "Import-button": {
+                        "mappings": {
+                            "0": {
+                                "then": "Jeszcze nie obliczono metaznaczników... Otwórz to okienko ponownie"
+                            }
+                        }
                     }
                 }
             }
@@ -423,7 +489,12 @@
     "parkings": {
         "title": "Parking"
     },
+    "pets": {
+        "title": "Kliniki weterynaryjne, parki dla psów i inne obiekty dla zwierząt"
+    },
     "playgrounds": {
+        "description": "Na tej mapie znajdziesz place zabaw, możesz też dodać o nich więcej informacji",
+        "shortDescription": "Mapa z placami zabaw",
         "title": "Place zabaw"
     },
     "postal_codes": {
@@ -450,10 +521,38 @@
         "shortDescription": "Kody pocztowe",
         "title": "Kody pocztowe"
     },
+    "shops": {
+        "title": "Sklepy"
+    },
     "sidewalks": {
+        "description": "Motyw eksperymentalny",
         "layers": {
             "0": {
+                "description": "Warstwa pokazująca chodniki przy drogach",
+                "name": "Chodniki",
                 "tagRenderings": {
+                    "left-right-questions": {
+                        "renderings": {
+                            "1": {
+                                "mappings": {
+                                    "0": {
+                                        "then": "Tak, jest chodnik z boku drogi"
+                                    },
+                                    "1": {
+                                        "then": "Nie, nie ma chodnika, którym można chodzić"
+                                    },
+                                    "2": {
+                                        "then": "Jest oddzielnie oznaczony chodnik"
+                                    }
+                                },
+                                "question": "Czy po tej stronie drogi jest chodnik?"
+                            },
+                            "2": {
+                                "question": "Jaka jest szerokość chodnika po tej stronie drogi?",
+                                "render": "Ten chodnik ma {sidewalk:left|right:width}m szerokości"
+                            }
+                        }
+                    },
                     "streetname": {
                         "render": "Nazwa ulicy to {name}"
                     }
@@ -462,9 +561,22 @@
                     "render": "{name}"
                 }
             }
-        }
+        },
+        "title": "Chodniki"
     },
     "sports": {
+        "layers": {
+            "4": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "sklep sportowy"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Mapa pokazująca obiekty sportowe.",
         "title": "Sporty"
     },
     "stations": {
@@ -491,6 +603,7 @@
                 }
             },
             "3": {
+                "description": "Warstwa pokazująca stacje kolejowe",
                 "name": "Stacje Kolejowe"
             }
         },
@@ -519,6 +632,9 @@
                         },
                         "question": "Czy ta ulica jest oświetlona?"
                     }
+                },
+                "title": {
+                    "render": "Ulica oświetlona"
                 }
             },
             "2": {
@@ -551,7 +667,8 @@
     },
     "surveillance": {
         "description": "Na tej otwartej mapie można znaleźć kamery monitoringu.",
-        "shortDescription": "Kamery monitorujące i inne środki nadzoru"
+        "shortDescription": "Kamery monitorujące i inne środki nadzoru",
+        "title": "Monitoring monitoringu"
     },
     "toilets": {
         "description": "Mapa toalet publicznych",
@@ -568,6 +685,7 @@
         "title": "Ściany i budynki"
     },
     "waste_basket": {
+        "description": "Na tej mapie znajdziesz kosze na śmieci w twojej okolicy. Jeśli brakuje kosza, możesz go dodać",
         "shortDescription": "Mapa koszy na śmieci",
         "title": "Kosz na śmieci"
     }
