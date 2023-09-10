@@ -59,7 +59,6 @@
             "confirmTitle": "Dodać {title}?",
             "disableFilters": "Wyłącz wszystkie filtry",
             "enableLayer": "Włącz warstwę {name}",
-            "hasBeenImported": "",
             "intro": "Kliknąłeś gdzieś, gdzie nie są jeszcze znane żadne dane.<br>",
             "layerNotEnabled": "Warstwa {layer} nie jest włączona. Włącz tę warstwę, aby dodać punkt",
             "openLayerControl": "Otwórz okno sterowania warstwą",
