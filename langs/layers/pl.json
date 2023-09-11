@@ -179,9 +179,6 @@
             }
         }
     },
-    "ambulancestation": {
-        "name": ""
-    },
     "artwork": {
         "name": "Dzieła sztuki",
         "presets": {
