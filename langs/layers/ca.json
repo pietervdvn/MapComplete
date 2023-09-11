@@ -3201,7 +3201,7 @@
             "ghost_bike-name": {
                 "mappings": {
                     "0": {
-                        "then": "En record de {nom}"
+                        "then": "En record de {name}"
                     },
                     "1": {
                         "then": "No hi ha cap nom marcat a la bicicleta"
@@ -5059,7 +5059,7 @@
     "shower": {
         "tagRenderings": {
             "charge": {
-                "render": "Costa {càrrec} utilitzar aquesta dutxa"
+                "render": "Costa {charge} utilitzar aquesta dutxa"
             },
             "fee": {
                 "mappings": {
