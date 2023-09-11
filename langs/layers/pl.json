@@ -1103,7 +1103,7 @@
             },
             "defibrillator-defibrillator:location:en": {
                 "question": "Proszę podaj opis gdzie znajduje się defibrylator (po angielsku)",
-                "render": "<i>Dodatkowe informacje o lokalizacji (po angielsku):</i><br/>{defibrillator:location}"
+                "render": "<i>Dodatkowe informacje o lokalizacji (po angielsku):</i><br/>{defibrillator:location:en}"
             },
             "defibrillator-defibrillator:location:fr": {
                 "question": "Proszę podaj opis gdzie znajduje się defibrylator (po francusku)",
@@ -2134,7 +2134,7 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Paczkomat {brank}"
+                    "then": "Paczkomat {brand}"
                 }
             },
             "render": "Paczkomat"
