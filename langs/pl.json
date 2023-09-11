@@ -29,11 +29,36 @@
         "panelIntro": "<h3>Twój osobisty motyw</h3>Aktywuj swoje ulubione warstwy spośród wszystkich oficjalnych motywów",
         "reload": "Odśwież dane"
     },
+    "flyer": {
+        "editing": {
+            "title": "Jak wygląda interfejs?"
+        },
+        "fakeui": {
+            "add_images": "Dodaj zdjęcia kilkoma kliknięciami",
+            "attributes": "Pokazuje właściwości w przyjazny sposób",
+            "edit": "Złe lub nieaktualne dane? Przycisk edycji jest właśnie tutaj.",
+            "wikipedia": "Pokazane są powiązane artykuły z Wikipedii"
+        },
+        "lines_too": "Linie i wielokąty też są pokazane. Właściwości i zdjęcia też mogą być dodawane i aktualizowane.",
+        "mapcomplete": {
+            "li2": "W prosty sposób dodaj informacje kontaktowe i godziny otwarcia",
+            "li3": "Może być umieszczone na innych stronach internetowych za pomocą iFrame",
+            "title": "Czym jest MapComplete?"
+        },
+        "title": "mapcomplete.org",
+        "whatIsOsm": "Czym jest OpenStreetMap?"
+    },
     "general": {
+        "404": "Ta strona nie istnieje",
         "about": "Łatwo edytuj i dodaj OpenStreetMap dla określonego motywu",
         "add": {
             "addNew": "Dodaj nową {category} tutaj",
+            "backToSelect": "Wybierz inną kategorię",
             "confirmButton": "Dodaj tutaj {category}.<br><div class=\"alert\">Twój dodatek jest widoczny dla wszystkich</div>",
+            "confirmLocation": "Potwierdź tę lokalizację",
+            "confirmTitle": "Dodać {title}?",
+            "disableFilters": "Wyłącz wszystkie filtry",
+            "enableLayer": "Włącz warstwę {name}",
             "intro": "Kliknąłeś gdzieś, gdzie nie są jeszcze znane żadne dane.<br>",
             "layerNotEnabled": "Warstwa {layer} nie jest włączona. Włącz tę warstwę, aby dodać punkt",
             "openLayerControl": "Otwórz okno sterowania warstwą",
@@ -42,9 +67,57 @@
             "title": "Czy dodać nowy punkt?",
             "zoomInFurther": "Powiększ jeszcze bardziej, aby dodać punkt."
         },
+        "attribution": {
+            "donate": "Wspieraj finansowo MapComplete",
+            "editId": "Otwórz edytor online OpenStreetMap w tej lokalizacji",
+            "editJosm": "Edytuj tutaj za pomocą JOSM",
+            "followOnMastodon": "Obserwuj MapComplete na Mastodonie",
+            "iconAttribution": {
+                "title": "Użyte ikony"
+            },
+            "josmNotOpened": "Nie udało się połączyć z JOSM. Upewnij się, że jest otwarty i włączona jest funkcja \"remote control\"",
+            "josmOpened": "JOSM jest otwarty",
+            "mapContributionsBy": "Pokazywane obecnie dane zawierają edycje {contributors}",
+            "mapDataByOsm": "Dane mapy: OpenStreetMap",
+            "openIssueTracker": "Zgłoś błąd",
+            "openMapillary": "Otwórz tutaj Mapillary",
+            "openOsmcha": "Zobacz ostatnie edycje zrobione przez {theme}",
+            "title": "Prawa autorskie i podanie źródła"
+        },
+        "back": "Cofnij",
+        "backToIndex": "Cofnij do przeglądu wszystkich map tematycznych",
         "backgroundMap": "Tło mapy",
+        "backgroundSwitch": "Zmień tło",
         "cancel": "Anuluj",
+        "confirm": "Potwierdź",
         "customThemeIntro": "<h3>Motywy własne</h3>Są to wcześniej odwiedzone motywy stworzone przez użytkowników.",
+        "download": {
+            "downloadAsPdf": "Pobierz PDF z obecną mapą",
+            "downloadAsPdfHelper": "Idealne do wydrukowania obecnej mapy",
+            "downloadAsPng": "Pobierz jako obraz",
+            "downloadAsPngHelper": "Idealne do zawarcia w raportach",
+            "downloadAsSvg": "Pobierz SVG obecnej mapy",
+            "downloadCSV": "Pobierz widoczne dane jako CSV",
+            "downloadCSVHelper": "Kompatybilne z LibreOffice Calc, Excel, …",
+            "downloadFeatureAsGeojson": "Pobierz jako plik GeoJSON",
+            "downloadFeatureAsGpx": "Pobierz jako plik GPX",
+            "downloadGeoJsonHelper": "Kompatybilne z QGIS, ArcGIS, ESRI, …",
+            "downloadGeojson": "Pobierz widoczne dane jako GeoJSON",
+            "downloadGpx": "Pobierz jako plik GPX",
+            "downloadGpxHelper": "Plik GPX może być użyty z większością urządzeń i aplikacji do nawigacji",
+            "exporting": "Eksportowanie…",
+            "includeMetaData": "Dołącz metadane (ostatni edytor, obliczone wartości, ...)",
+            "licenseInfo": "<h3>Informacja o prawach autorskich</h3>Podane dane są dostępne na licencji ODbL. Ponowne użycie jest darmowe, ale musi być <ul><li>podane źródło <b>© OpenStreetMap contributors</b> <li><li>Jakakolwiek zmiana musi być opublikowana na tej samej licencji.</li></ul> Proszę przeczytać pełną <a href='https://www.openstreetmap.org/copyright' target='_blank'>informację o prawach autorskich</a> dla szczegółów.",
+            "noDataLoaded": "Nie załadowano jeszcze żadnych danych. Pobranie będzie wkrótce dostępne",
+            "pdf": {
+                "current_view_a3": "Eksportuj PDF (A3, pionowy) obecnego widoku",
+                "current_view_a4": "Eksportuj PDF (A4, poziomy) obecnego widoku"
+            },
+            "title": "Pobierz"
+        },
+        "error": "Coś poszło nie tak",
+        "example": "Przykład",
+        "examples": "Przykłady",
         "fewChangesBefore": "Proszę odpowiedzieć na kilka pytań dotyczących istniejących punktów przed dodaniem nowego punktu.",
         "getStartedLogin": "Zaloguj się za pomocą OpenStreetMap, aby rozpocząć",
         "getStartedNewAccount": " lub <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">utwórz nowe konto</a>",
@@ -58,12 +131,30 @@
         },
         "loading": "Wczytywanie…",
         "loadingTheme": "Wczytywanie {theme}…",
+        "loginFailed": "Nie udało się zalogować do OpenStreetMap",
+        "loginFailedOfflineMode": "OpenStreetMap.org jest obecnie niedostępne ze względu na przerwę techniczną. Edytowanie będzie wkrótce możliwe",
+        "loginFailedReadonlyMode": "OpenStreetMap.org jest obecnie w trybie tylko do odczytu z powodu przerwy technicznej. Edytowanie będzie wkrótce możliwe",
+        "loginFailedUnreachableMode": "OpenStreetMap.org jest obecnie nieosiągalne. Czy jesteś połączony do internetu? Blokujesz zewnętrzne zapytania? Spróbuj ponownie później",
+        "loginOnlyNeededToEdit": "jeśli chcesz zrobić zmiany",
         "loginToStart": "Zaloguj się, aby odpowiedzieć na to pytanie",
         "loginWithOpenStreetMap": "Zaloguj z OpenStreetMap",
+        "logout": "Wyloguj się",
+        "menu": {
+            "aboutMapComplete": "O MapComplete",
+            "filter": "Filtruj dane"
+        },
+        "morescreen": {
+            "streetcomplete": "Inną, podobną aplikacją jest <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
+        },
         "nameInlineQuestion": "Nazwa tej {category} to $$$",
+        "next": "Dalej",
+        "noMatchingMapping": "Żadne rekordy nie odpowiadają twojemu wyszukiwaniu…",
         "noNameCategory": "{category} bez nazwy",
         "noTagsSelected": "Nie wybrano tagów",
+        "notValid": "Wybierz prawidłową wartość, aby kontynuować",
         "number": "numer",
+        "openTheMap": "Otwórz mapę",
+        "openTheMapAtGeolocation": "Przybliż do twojej lokalizacji",
         "opening_hours": {
             "closed_permanently": "Zamknięte na nieokreślony czas",
             "closed_until": "Zamknięte do {date}",
@@ -76,9 +167,15 @@
             "opensAt": "z",
             "ph_closed": "zamknięte",
             "ph_not_known": " ",
-            "ph_open": "otwarte"
+            "ph_open": "otwarte",
+            "ph_open_as_usual": "otwórz, jak zazwyczaj"
         },
         "osmLinkTooltip": "Zobacz ten obiekt na OpenStreetMap, aby uzyskać historię i więcej opcji edycji",
+        "pdf": {
+            "attr": "Dane mapy © współtwórcy OpenStreetMap, możliwy dalszy użytek zgodnie z ODbL",
+            "generatedWith": "Wygenerowane za pomocą mapcomplete.org/{layoutid}",
+            "versionInfo": "v{version} - wygenerowane {date}"
+        },
         "pickLanguage": "Wybierz język: ",
         "questions": {
             "emailIs": "Adres e-mail {category} to <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
@@ -95,6 +192,7 @@
             "error": "Coś poszło nie tak…",
             "nothing": "Nic nie znaleziono…",
             "search": "Wyszukaj lokalizację",
+            "searchShort": "Wyszukaj…",
             "searching": "Szukanie…"
         },
         "sharescreen": {
@@ -103,11 +201,27 @@
             "fsUserbadge": "Włącz przycisk logowania",
             "fsWelcomeMessage": "Pokaż wyskakujące okienko wiadomości powitalnej i powiązane zakładki",
             "intro": "<h3> Udostępnij tę mapę</h3> Udostępnij tę mapę, kopiując poniższy link i wysyłając ją do przyjaciół i rodziny:",
-            "thanksForSharing": "Dzięki za udostępnienie!"
+            "thanksForSharing": "Dzięki za udostępnienie!",
+            "title": "Udostępnij tę mapę"
         },
         "skip": "Pomiń to pytanie",
+        "testing": "Testowanie - zmiany nie będą zapisane",
         "uploadGpx": {
             "intro0": "Przesyłając swój ślad, OpenStreetMap.org zachowa pełną kopię śladu.",
+            "meta": {
+                "descriptionPlaceHolder": "Wprowadź opis twojego śladu",
+                "intro": "Dodaj nazwę swojej ścieżki:",
+                "title": "Nazwa i opis",
+                "titlePlaceholder": "Wprowadź nazwę swojej ścieżki"
+            },
+            "modes": {
+                "private": {
+                    "name": "Anonimowy"
+                },
+                "public": {
+                    "name": "Publiczne"
+                }
+            },
             "uploading": "Przesyłanie śladu…"
         },
         "weekdays": {
@@ -130,17 +244,36 @@
         },
         "welcomeBack": "Jesteś zalogowany, witaj z powrotem!",
         "wikipedia": {
+            "addEntry": "Dodaj kolejny artykuł Wikipedii",
+            "createNewWikidata": "Stwórz nowy obiekt Wikidanych",
             "failed": "Wczytywanie wpisu z Wikipedii nie powiodło się",
-            "loading": "Wczytywanie Wikipedii…"
+            "fromWikipedia": "Z Wikipedii, wolnej encyklopedii",
+            "loading": "Wczytywanie Wikipedii…",
+            "noResults": "Nic nie znaleziono dla <i>{search}</i>",
+            "noWikipediaPage": "Ten obiekt Wikidata nie ma obecnie odpowiadającego artykułu Wikipedii",
+            "previewbox": {
+                "born": "Urodzony: {value}"
+            },
+            "searchWikidata": "Wyszukaj na Wikidanych",
+            "wikipediaboxTitle": "Wikipedia"
         }
+    },
+    "hotkeyDocumentation": {
+        "closeSidebar": "Zamknij panel boczny",
+        "title": "Skróty klawiszowe"
     },
     "image": {
         "addPicture": "Dodaj zdjęcie",
+        "currentLicense": "Twoje zdjęcia zostaną opublikowane na licencji {license}",
         "doDelete": "Usuń ilustrację",
         "dontDelete": "Anuluj",
         "isDeleted": "Usunięte",
         "nearbyPictures": {
-            "loading": "Wczytywanie obrazów w pobliżu…"
+            "browseNearby": "Przeglądaj zdjęcia w pobliżu…",
+            "loadMore": "Załaduj więcej zdjęć",
+            "loading": "Wczytywanie obrazów w pobliżu…",
+            "nothingFound": "Nie znaleziono zdjęć w pobliżu…",
+            "removeFilters": "Kliknij tutaj, aby usunąć filtry"
         },
         "pleaseLogin": "Zaloguj się, by dodać zdjęcie",
         "respectPrivacy": "Nie fotografuj ludzi i tablic rejestracyjnych. Nie wysyłaj także treści z Google Maps, Google Streetview ani innych licencjonowanych źródeł.",
@@ -155,6 +288,51 @@
         "pickTheme": "Wybierz temat z dostępnych poniżej by zacząć.",
         "title": "Witaj w MapComplete"
     },
+    "move": {
+        "cancel": "Wycofaj ruch",
+        "cannotBeMoved": "Ten obiekt nie może zostać przesunięty.",
+        "confirmMove": "Przesuń tutaj",
+        "inviteToMove": {
+            "generic": "Przesuń ten punkt",
+            "reasonInaccurate": "Popraw dokładność tego punktu"
+        },
+        "moveTitle": "Przesuń ten punkt",
+        "zoomInFurther": "Przybliż bardziej, aby potwierdzić ten ruch"
+    },
+    "notes": {
+        "addAComment": "Dodaj komentarz",
+        "addComment": "Dodaj komentarz",
+        "addCommentAndClose": "Dodaj komentarz i zamknij",
+        "addCommentPlaceholder": "Dodaj komentarz…",
+        "anonymous": "Anonimowy użytkownik",
+        "closeNote": "Zamknij notatkę",
+        "createNote": "Stwórz nową notatkę",
+        "createNoteTitle": "Stwórz nową notatkę w tym miejscu",
+        "creating": "Tworzenie notatki…",
+        "disableAllNoteFilters": "Wyłącz wszystkie filtry",
+        "isCreated": "Twoja notatka została utworzona!",
+        "loginToAddComment": "Zaloguj się, aby dodać komentarz",
+        "loginToClose": "Zaloguj się, aby zamknąć tę notatkę",
+        "noteIsPublic": "To będzie widoczne dla każdego",
+        "noteLayerDoEnable": "Włącz warstwę pokazującą notatki",
+        "noteLayerHasFilters": "Niektóre notatki mogły zostać ukryte przez filtr",
+        "reopenNote": "Ponownie otwórz notatkę",
+        "reopenNoteAndComment": "Ponownie otwórz notatkę i skomentuj",
+        "typeText": "Wprowadź tekst, aby dodać komentarz"
+    },
+    "plantDetection": {
+        "howTo": {
+            "intro": "Dla optymalnych rezultatów,"
+        },
+        "loadingWikidata": "Ładowanie informacji o {species}…"
+    },
+    "privacy": {
+        "miscCookiesTitle": "Inne ciasteczka",
+        "surveillance": "Skoro czytasz politykę prywatności, to prawdopodobnie przejmujesz się prywatnością - my też! Zrobiliśmy nawet <a href='https://mapcomplete.org/surveillance'>mapę tematyczną pokazującą kamery monitoringu.</a> Czuj się wolny oznaczyć je wszystkie!",
+        "title": "Polityka prywatności",
+        "trackingTitle": "Dane statystyczne",
+        "whileYoureHere": "Czy zależy ci na prywatności?"
+    },
     "reviews": {
         "affiliated_reviewer_warning": "(Recenzja powiązana)",
         "attribution": "Recenzje są obsługiwane przez <a href=\"https://mangrove.reviews/\" target=\"_blank\">Recenzje Mangrove</a> i są dostępne na licencji <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
@@ -164,6 +342,7 @@
         "no_reviews_yet": "Nie ma jeszcze recenzji. Bądź pierwszym, który je napisze i pomóż otworzyć dane i biznes!",
         "plz_login": "Zaloguj się, aby zostawić opinię",
         "posting_as": "Publikowanie jako",
+        "save": "Zapisz",
         "saved": "<span class=\"thanks\">Opinia została zapisana. Dzięki za udostępnienie!</span>",
         "saving_review": "Zapisywanie…",
         "title": "{count} opinii",
@@ -183,9 +362,11 @@
     "translations": {
         "activateButton": "Pomóż przetłumaczyć MapComplete",
         "allMissing": "Brak tłumaczeń",
+        "missing": "{count} nieprzetłumaczonych łańcuchów znaków",
         "notImmediate": "Tłumaczenia nie są aktualizowane bezpośrednio. Zwykle trwa to kilka dni"
     },
     "userinfo": {
+        "editDescription": "Edytuj opis swojego profilu",
         "gotoInbox": "Otwórz swoją skrzynkę odbiorczą",
         "gotoSettings": "Przejdź do swoich ustawień na OpenStreetMap.org",
         "noDescription": "Nie masz jeszcze opisu w swoim profilu",
@@ -197,6 +378,47 @@
         },
         "date": {
             "description": "Data rozpoczynająca się od roku"
+        },
+        "email": {
+            "description": "adres e-mail",
+            "feedback": "To nie jest poprawny adres email",
+            "noAt": "Adres e-mail musi zawierać @"
+        },
+        "float": {
+            "description": "liczba",
+            "feedback": "To nie jest liczba"
+        },
+        "int": {
+            "description": "liczba całkowita"
+        },
+        "nat": {
+            "description": "dodatnia, całkowita lub zero",
+            "mustBePositive": "Ta liczba powinna być dodatnia",
+            "mustBeWhole": "Dopuszczalne są tylko liczby całkowite",
+            "notANumber": "Wprowadź liczbę"
+        },
+        "opening_hours": {
+            "description": "Godziny otwarcia"
+        },
+        "pfloat": {
+            "description": "liczba dodatnia"
+        },
+        "phone": {
+            "description": "numer telefonu",
+            "feedback": "To nie jest poprawny numer telefonu",
+            "feedbackCountry": "To nie jest poprawny numer telefonu (dla kraju {country})"
+        },
+        "pnat": {
+            "description": "liczba dodatnia, całkowita",
+            "noZero": "Zero nie jest dopuszczalne"
+        },
+        "tooLong": "Tekst jest za długi, dopuszczalne jest maksymalnie 255 znaków. Obecnie jest ich {count}.",
+        "url": {
+            "description": "link do strony internetowej",
+            "feedback": "To nie jest poprawny adres strony internetowej"
+        },
+        "wikidata": {
+            "description": "Identyfikator Wikidanych"
         }
     }
 }
