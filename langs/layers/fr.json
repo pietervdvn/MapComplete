@@ -33,6 +33,16 @@
             "1": {
                 "title": "un panneau à affiches scellé au sol"
             },
+            "10": {
+                "description": "Désigne une enseigne publicitaire, une enseigne néon, les logos ou des indications d'entrées",
+                "title": "une enseigne"
+            },
+            "11": {
+                "title": "une sculpture"
+            },
+            "12": {
+                "title": "une peinture murale"
+            },
             "2": {
                 "title": "un panneau à affiches monté sur un mur"
             },
@@ -54,20 +64,11 @@
                 "title": "un écran fixé au mur"
             },
             "8": {
+                "description": "Une pièce de textile imperméable avec un message imprimé, ancrée de façon permanente sur un mur.",
                 "title": "une bâche"
             },
             "9": {
                 "title": "un totem"
-            },
-            "10": {
-                "description": "Désigne une enseigne publicitaire, une enseigne néon, les logos ou des indications d'entrées",
-                "title": "une enseigne"
-            },
-            "11": {
-                "title": "une sculpture"
-            },
-            "12": {
-                "title": "une peinture murale"
             }
         },
         "tagRenderings": {
@@ -159,6 +160,9 @@
                     "1": {
                         "then": "C'est un petit panneau"
                     },
+                    "10": {
+                        "then": "C'est une peinture murale"
+                    },
                     "2": {
                         "then": "C'est une colonne"
                     },
@@ -182,9 +186,6 @@
                     },
                     "9": {
                         "then": "C'est un totem"
-                    },
-                    "10": {
-                        "then": "C'est une peinture murale"
                     }
                 },
                 "question": "De quel type de dispositif publicitaire s'agit-il ?"
@@ -194,6 +195,9 @@
             "mappings": {
                 "1": {
                     "then": "Petit panneau"
+                },
+                "10": {
+                    "then": "Peinture murale"
                 },
                 "3": {
                     "then": "Colonne"
@@ -215,9 +219,6 @@
                 },
                 "9": {
                     "then": "Totem"
-                },
-                "10": {
-                    "then": "Peinture murale"
                 }
             }
         }
@@ -277,6 +278,9 @@
         "presets": {
             "0": {
                 "title": "une œuvre d'art"
+            },
+            "1": {
+                "title": "une œuvre sur un mur"
             }
         },
         "tagRenderings": {
@@ -295,6 +299,15 @@
                     },
                     "1": {
                         "then": "Peinture murale"
+                    },
+                    "10": {
+                        "then": "Azulejo (faïence latine)"
+                    },
+                    "11": {
+                        "then": "Carrelage"
+                    },
+                    "12": {
+                        "then": "Sculpture sur bois"
                     },
                     "2": {
                         "then": "Peinture"
@@ -319,15 +332,6 @@
                     },
                     "9": {
                         "then": "Relief"
-                    },
-                    "10": {
-                        "then": "Azulejo (faïence latine)"
-                    },
-                    "11": {
-                        "then": "Carrelage"
-                    },
-                    "12": {
-                        "then": "Sculpture sur bois"
                     }
                 },
                 "question": "Quel est le type de cette œuvre d'art ?",
@@ -396,6 +400,29 @@
                 "question": "Pouvez-vous déposer de l'argent liquide dans ce DAB ?"
             },
             "cash_out-denominations-notes": {
+                "mappings": {
+                    "0": {
+                        "then": "On peut retirer des billets de 5 euros"
+                    },
+                    "1": {
+                        "then": "On peut retirer des billets de 10 euros"
+                    },
+                    "2": {
+                        "then": "On peut retirer des billets de 20 euros"
+                    },
+                    "3": {
+                        "then": "On peut retirer des billets de 50 euros"
+                    },
+                    "4": {
+                        "then": "On peut retirer des billets de 100 euros"
+                    },
+                    "5": {
+                        "then": "On peut retirer des billets de 200 euros"
+                    },
+                    "6": {
+                        "then": "On peut retirer des billets de 500 euros"
+                    }
+                },
                 "question": "Quels billets pouvez-vous retirer ici ?"
             },
             "name": {
@@ -558,10 +585,15 @@
                     "1": {
                         "then": "Ce banc n'a pas d'oeuvre d'art intégrée"
                     }
-                }
+                },
+                "question": "Est-ce que ce banc inclut un élément artistique ?",
+                "questionHint": "Par ex. il intègre une peinture, statue ou autre élément non commune, travail cratif"
             },
             "bench-backrest": {
                 "mappings": {
+                    "0": {
+                        "then": "Ce banc a deux côtés avec un dossier partagé"
+                    },
                     "1": {
                         "then": "Dossier : Oui"
                     },
@@ -615,28 +647,28 @@
                     }
                 },
                 "question": "Est-ce que ce banc possède une inscription ?",
-                "questionHint": "Par exemple, sur une plaque accrochée, sur le dossier, ...",
+                "questionHint": "Par exemple, sur une plaque accrochée, sur le dossier, …",
                 "render": "Ce banc a l'inscription suivante :<br/><p><i>{inscription}</i></p>"
             },
             "bench-material": {
                 "mappings": {
                     "0": {
-                        "then": "Matériau du siège : bois"
+                        "then": "L'assise est en bois"
                     },
                     "1": {
-                        "then": "Matériau du siège : métal"
+                        "then": "L'assise est en métal"
                     },
                     "2": {
-                        "then": "Matériau : pierre"
+                        "then": "L'assise est en pierre"
                     },
                     "3": {
                         "then": "Matériau du siège : béton"
                     },
                     "4": {
-                        "then": "Matériau : plastique"
+                        "then": "L'assise est en plastique"
                     },
                     "5": {
-                        "then": "Matériau  du siège : acier"
+                        "then": "L'assise est en acier"
                     }
                 },
                 "question": "De quel matériau ce banc est-il fait ?",
@@ -2102,12 +2134,33 @@
         }
     },
     "clock": {
+        "description": "Couche avec les horloges publiques",
+        "name": "Horloges",
         "presets": {
+            "0": {
+                "description": "Une horloge visible de l'espace public",
+                "title": "une horloge"
+            },
             "1": {
-                "description": "Une horloge publique fixée sur un mur"
+                "description": "Une horloge publique fixée sur un mur",
+                "title": "une horloge fixée au mur"
             }
         },
         "tagRenderings": {
+            "barometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette horloge affiche également la pression atmosphérique"
+                    },
+                    "1": {
+                        "then": "Cette horloge n'affiche pas la pression atmosphérique"
+                    },
+                    "2": {
+                        "then": "Cette horloge affiche probablement la pression atmosphérique"
+                    }
+                },
+                "question": "Est-ce que cette horloge affiche également la pression atmosphérique ?"
+            },
             "date": {
                 "mappings": {
                     "0": {
@@ -2115,6 +2168,9 @@
                     },
                     "1": {
                         "then": "Cette horloge n'indique pas la date"
+                    },
+                    "2": {
+                        "then": "Cette horloge n'affiche probablement pas la date"
                     }
                 },
                 "question": "Cette horloge indique-t-elle également la date ?"
@@ -2137,6 +2193,9 @@
                 "question": "Comment cette horloge indique-t-elle l'heure ?"
             },
             "faces": {
+                "freeform": {
+                    "placeholder": "Nombre de faces"
+                },
                 "mappings": {
                     "0": {
                         "then": "Cette horloge a une face"
@@ -2184,11 +2243,35 @@
             },
             "thermometer": {
                 "mappings": {
+                    "0": {
+                        "then": "Cette horloge affiche également la température"
+                    },
+                    "1": {
+                        "then": "Cette horloge n'affiche pas la température"
+                    },
                     "2": {
                         "then": "Cette horloge n'indique probablement pas la date"
                     }
-                }
+                },
+                "question": "Est-ce que cette horloge affiche également la température ?"
+            },
+            "visibility": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette horloge est visible d'environ 5 mètres (petite horloge fixée au mur)"
+                    },
+                    "1": {
+                        "then": "Cette horloge est visible d'environ 20 mètres (horloge sur un panneau publicitaire)"
+                    },
+                    "2": {
+                        "then": "Cette horloge est visible de plus de 20 mètres (par ex. horloge d'église ou de gare)"
+                    }
+                },
+                "question": "Quelle est la visibilité de cette horloge ?"
             }
+        },
+        "title": {
+            "render": "Horloge"
         }
     },
     "crossings": {
@@ -2205,6 +2288,28 @@
             }
         },
         "tagRenderings": {
+            "crossing-bicycle-allowed": {
+                "mappings": {
+                    "0": {
+                        "then": "Un cycliste peut utiliser ce passage"
+                    },
+                    "1": {
+                        "then": "Un cycliste ne peut pas utiliser ce passage"
+                    }
+                },
+                "question": "Est-ce que ce passage est également pour les vélos ?"
+            },
+            "crossing-button": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce feu a un bouton pour demander le vert"
+                    },
+                    "1": {
+                        "then": "Ce feu n'a pas de bouton pour demander le vert"
+                    }
+                },
+                "question": "Est-ce que ce feu a un bouton pour demander le passage au vert ?"
+            },
             "crossing-continue-through-red": {
                 "question": "Est-ce qu'un cycliste peut aller tout droit quand le feu est rouge ?"
             },
@@ -2251,6 +2356,12 @@
                     },
                     "1": {
                         "then": "Ce feu de signalisation n'a pas de signal sonore pour aider à traverser."
+                    },
+                    "2": {
+                        "then": "Ce feu a un signal sonore pour aider à situer les poteaux, mais pas de signal pour indiquer qu'on peut traverser en sécurité."
+                    },
+                    "3": {
+                        "then": "Cet feu a un signal sonore pour indiquer qu'on peut traverser en sécurité, mais pas de signal pour localiser les poteaux."
                     }
                 },
                 "question": "Est-ce que le feu de signalisation a une signalisation sonore pour aider à traverser ?"
@@ -2285,6 +2396,17 @@
                     }
                 },
                 "question": "Quel type de passage piéton est-ce ?"
+            },
+            "crossing-vibration": {
+                "mappings": {
+                    "0": {
+                        "then": "Le bouton de ce feu vibre pour indiquer qu'on peut traverser en sécurité."
+                    },
+                    "1": {
+                        "then": "Le bouton de ce feu ne vibre pas pour indiquer qu'on peut traverser en sécurité."
+                    }
+                },
+                "question": "Est-ce que ce feu a un signal vibrant pour aider à traverser ? (habituellement situé sous le bouton)"
             }
         },
         "title": {
@@ -2363,6 +2485,15 @@
                     "1": {
                         "then": "Cette piste cyclable est goudronée"
                     },
+                    "10": {
+                        "then": "Cette piste cyclable est faite en graviers fins"
+                    },
+                    "11": {
+                        "then": "Cette piste cyclable est en cailloux"
+                    },
+                    "12": {
+                        "then": "Cette piste cyclable est faite en sol brut"
+                    },
                     "2": {
                         "then": "Cette piste cyclable est asphaltée"
                     },
@@ -2386,15 +2517,6 @@
                     },
                     "9": {
                         "then": "Cette piste cyclable est faite en graviers"
-                    },
-                    "10": {
-                        "then": "Cette piste cyclable est faite en graviers fins"
-                    },
-                    "11": {
-                        "then": "Cette piste cyclable est en cailloux"
-                    },
-                    "12": {
-                        "then": "Cette piste cyclable est faite en sol brut"
                     }
                 },
                 "question": "De quoi est faite la surface de la piste cyclable ?",
@@ -2443,6 +2565,15 @@
                     "1": {
                         "then": "Cette piste cyclable est pavée"
                     },
+                    "10": {
+                        "then": "Cette piste cyclable est faite en graviers fins"
+                    },
+                    "11": {
+                        "then": "Cette piste cyclable est en cailloux"
+                    },
+                    "12": {
+                        "then": "Cette piste cyclable est faite en sol brut"
+                    },
                     "2": {
                         "then": "Cette piste cyclable est asphaltée"
                     },
@@ -2466,15 +2597,6 @@
                     },
                     "9": {
                         "then": "Cette piste cyclable est faite en graviers"
-                    },
-                    "10": {
-                        "then": "Cette piste cyclable est faite en graviers fins"
-                    },
-                    "11": {
-                        "then": "Cette piste cyclable est en cailloux"
-                    },
-                    "12": {
-                        "then": "Cette piste cyclable est faite en sol brut"
                     }
                 },
                 "question": "De quel materiel est faite cette rue ?",
@@ -3249,6 +3371,13 @@
             "render": "Station de pompiers"
         }
     },
+    "fixme": {
+        "tagRenderings": {
+            "note": {
+                "render": "Texte de la note : {note}"
+            }
+        }
+    },
     "food": {
         "deletion": {
             "extraDeleteReasons": {
@@ -3267,10 +3396,23 @@
         },
         "description": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
         "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Pas de réservation nécessaire"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
                         "question": "A un menu végétarien"
+                    },
+                    "1": {
+                        "question": "Seulement les fastfood"
+                    },
+                    "2": {
+                        "question": "Seulement les restaurants"
                     }
                 }
             },
@@ -3320,6 +3462,21 @@
                     "1": {
                         "then": "C'est une friterie"
                     },
+                    "10": {
+                        "then": "Des plats chinois sont servis ici"
+                    },
+                    "11": {
+                        "then": "Des plats grecs sont servis ici"
+                    },
+                    "12": {
+                        "then": "Des plats indiens sont servis ici"
+                    },
+                    "13": {
+                        "then": "Des plats turcs sont servis ici"
+                    },
+                    "14": {
+                        "then": "Des plats thaïlandais sont servis ici"
+                    },
                     "2": {
                         "then": "Restaurant Italien"
                     },
@@ -3343,21 +3500,6 @@
                     },
                     "9": {
                         "then": "Des plats français sont servis ici"
-                    },
-                    "10": {
-                        "then": "Des plats chinois sont servis ici"
-                    },
-                    "11": {
-                        "then": "Des plats grecs sont servis ici"
-                    },
-                    "12": {
-                        "then": "Des plats indiens sont servis ici"
-                    },
-                    "13": {
-                        "then": "Des plats turcs sont servis ici"
-                    },
-                    "14": {
-                        "then": "Des plats thaïlandais sont servis ici"
                     }
                 },
                 "question": "Quelle type de nourriture est servie ici ?",
@@ -3555,6 +3697,7 @@
         }
     },
     "ghost_bike": {
+        "description": "Une couche affichant les mémoriaux en l'hommage de cyclistes tuées lors d'accidents de la route",
         "name": "Vélos fantômes",
         "presets": {
             "0": {
@@ -3609,6 +3752,35 @@
             "Privacy notice": {
                 "render": "C'est le chemin que vous avez parcouru depuis l'ouverture de ce site. Ne vous inquiétez pas - ceci n'est visible que pour vous et personne d'autre. Vos données de localisation ne sont jamais envoyées hors de l'appareil."
             }
+        },
+        "title": {
+            "render": "Votre chemin"
+        }
+    },
+    "hotel": {
+        "description": "Couche affichant les hôtels",
+        "name": "Hôtels",
+        "presets": {
+            "0": {
+                "title": "un hôtel"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Nom de l'hôtel"
+                },
+                "question": "Quel est le nom de cet hôtel ?",
+                "render": "Cet hôtel s'appelle {name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hôtel {name}"
+                }
+            },
+            "render": "Hôtel"
         }
     },
     "hydrant": {
@@ -3795,7 +3967,25 @@
         "mapRendering": {
             "0": {
                 "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "Créer une nouvelle note de carte"
+                        }
+                    },
                     "render": "Cliquez ici pour ajouter un élément"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Ajouter un nouveau point ou ajouter une note"
+                },
+                "1": {
+                    "then": "Ajouter une nouvelle note"
+                },
+                "2": {
+                    "then": "Ajouter un nouveau point"
                 }
             }
         }
@@ -3845,10 +4035,38 @@
         }
     },
     "maxspeed": {
+        "description": "Affiche les vitesses autorisées sur toutes les routes",
+        "name": "Vitesse maximale",
         "tagRenderings": {
             "maxspeed-maxspeed": {
+                "mappings": {
+                    "0": {
+                        "then": "C'est une zone de rencontre, avec une vitesse maximale de 20 km/h"
+                    }
+                },
                 "question": "Quelle est la vitesse maximum autorisée sur cette route ?",
                 "render": "La vitesse maximum autorisée sur cette route est {canonical(maxspeed)}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Route sans nom"
+                }
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "kilomètres/heure",
+                        "humanShort": "km/h"
+                    },
+                    "1": {
+                        "human": "miles/heure",
+                        "humanShort": "mph"
+                    }
+                }
             }
         }
     },
@@ -3885,6 +4103,134 @@
                 "question": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? ",
                 "questionHint": "Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié"
             }
+        }
+    },
+    "note": {
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Ouverte par {search}"
+                    }
+                }
+            }
+        }
+    },
+    "osm_community_index": {
+        "description": "Une couche affichant les communautés OpenStreetMap",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Pays"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Région"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Territoire"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Monde"
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Autres communautés"
+                    }
+                }
+            }
+        },
+        "name": "Index des communautés OSM",
+        "title": {
+            "render": "Index des communautés OSM"
+        }
+    },
+    "parcel_lockers": {
+        "description": "Couche affichant les casiers pour récupérer ou envoyer des colis.",
+        "name": "Casiers à colis",
+        "presets": {
+            "0": {
+                "title": "un casier à colis"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Marque"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "C'est un Amazon Locker"
+                    },
+                    "2": {
+                        "then": "C'est une DPD Pickup Station"
+                    },
+                    "3": {
+                        "then": "C'est un PostNL Parcel Locker"
+                    }
+                },
+                "question": "Quelle est la marque de ce casier à colis ?",
+                "render": "C'est un casier à colis {brand}"
+            },
+            "mail-in": {
+                "mappings": {
+                    "0": {
+                        "then": "On peut envoyer des colis depuis ce casier"
+                    },
+                    "1": {
+                        "then": "On <b>ne peut pas</b> envoyer de colis depuis ce casier"
+                    }
+                },
+                "question": "Peut-on envoyer des colis depuis ce casier ?"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Exploitant"
+                },
+                "question": "Quel est l'exploitant de ce casier à colis ?",
+                "render": "Ce casier à colis est exploité par {operator}"
+            },
+            "pickup": {
+                "mappings": {
+                    "0": {
+                        "then": "On peut retirer des colis depuis ce casier"
+                    },
+                    "1": {
+                        "then": "On <b>ne peut pas</b> retirer de colis depuis ce casier"
+                    }
+                },
+                "question": "Peut-on retirer des colis depuis ce casier ?"
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Référence"
+                },
+                "question": "Quel est le numéro de référence/d'identification de ce casier à colis ?",
+                "render": "Ce casier a colis porte la référence {ref}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Casier à colis {brand}"
+                }
+            },
+            "render": "Casier à colis"
         }
     },
     "parking": {
@@ -3961,13 +4307,50 @@
             "render": "Lieu de stationnement"
         }
     },
+    "parking_ticket_machine": {
+        "description": "Couche avec les distributeurs de tickets pour payer le parking.",
+        "tagRenderings": {
+            "ref": {
+                "freeform": {
+                    "placeholder": "Numéro de référence"
+                }
+            }
+        }
+    },
     "pedestrian_path": {
         "description": "Sentiers piétonniers, particulièrement utilisés pour la navigation intérieure et les entrées d'accrochage à cette couche",
         "name": "Sentiers piétons"
     },
     "pharmacy": {
+        "description": "Une couche affichant les pharmacie qui (probablement) délivrent des médicaments",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "A une drive"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Pharmacie pouvant délivrer des médicaments sous prescription"
+                    }
+                }
+            }
+        },
+        "name": "Pharmacies",
+        "presets": {
+            "0": {
+                "title": "une pharmacie"
+            }
+        },
         "tagRenderings": {
             "name": {
+                "freeform": {
+                    "placeholder": "Nom de la pharmacie"
+                },
+                "question": "Quel est le nom de cette pharmacie ?",
                 "render": "Cette pharmacie s'appelle {name}"
             },
             "wheelchair": {
@@ -3984,6 +4367,14 @@
                 },
                 "question": "Cette pharmacie est-elle facilement accessible en chaise roulante ?"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Pharmacie"
+                }
+            },
+            "render": "{name}"
         }
     },
     "physiotherapist": {
@@ -4686,30 +5077,6 @@
                     "1": {
                         "question": "Recyclage de piles et batteries domestiques"
                     },
-                    "2": {
-                        "question": "Recyclage d'emballage de boissons"
-                    },
-                    "3": {
-                        "question": "Recyclage de boites de conserve et de canettes"
-                    },
-                    "4": {
-                        "question": "Recyclage de vêtements"
-                    },
-                    "5": {
-                        "question": "Recyclage des huiles de friture"
-                    },
-                    "6": {
-                        "question": "Recyclage des huiles de moteur"
-                    },
-                    "7": {
-                        "question": "Recyclage des lampes fluorescentes"
-                    },
-                    "8": {
-                        "question": "Recyclage des déchets verts"
-                    },
-                    "9": {
-                        "question": "Recyclage des bouteilles en verre et des bocaux"
-                    },
                     "10": {
                         "question": "Recyclage de tout type de verre"
                     },
@@ -4740,11 +5107,35 @@
                     "19": {
                         "question": "Recyclage des autres déchets"
                     },
+                    "2": {
+                        "question": "Recyclage d'emballage de boissons"
+                    },
                     "20": {
                         "question": "Recyclage des cartouches d'imprimante"
                     },
                     "21": {
                         "question": "Recyclage des vélos"
+                    },
+                    "3": {
+                        "question": "Recyclage de boites de conserve et de canettes"
+                    },
+                    "4": {
+                        "question": "Recyclage de vêtements"
+                    },
+                    "5": {
+                        "question": "Recyclage des huiles de friture"
+                    },
+                    "6": {
+                        "question": "Recyclage des huiles de moteur"
+                    },
+                    "7": {
+                        "question": "Recyclage des lampes fluorescentes"
+                    },
+                    "8": {
+                        "question": "Recyclage des déchets verts"
+                    },
+                    "9": {
+                        "question": "Recyclage des bouteilles en verre et des bocaux"
                     }
                 }
             },
@@ -4807,30 +5198,6 @@
                     "1": {
                         "then": "Les briques alimentaires en carton peuvent être recyclées ici"
                     },
-                    "2": {
-                        "then": "Les boites de conserve et canettes peuvent être recyclées ici"
-                    },
-                    "3": {
-                        "then": "Les vêtements peuvent être recyclés ici"
-                    },
-                    "4": {
-                        "then": "Les huiles de friture peuvent être recyclées ici"
-                    },
-                    "5": {
-                        "then": "Les huiles de moteur peuvent être recyclées ici"
-                    },
-                    "6": {
-                        "then": "Les lampes fluorescentes peuvent être recyclées ici"
-                    },
-                    "7": {
-                        "then": "Les déchets verts peuvent être recyclés ici"
-                    },
-                    "8": {
-                        "then": "Les déchets organiques peuvent être recyclés ici"
-                    },
-                    "9": {
-                        "then": "Les bouteilles en verre et bocaux peuvent être recyclés ici"
-                    },
                     "10": {
                         "then": "Tout type de verre peut être recyclé ici"
                     },
@@ -4861,6 +5228,9 @@
                     "19": {
                         "then": "Les chaussures peuvent être recyclées ici"
                     },
+                    "2": {
+                        "then": "Les boites de conserve et canettes peuvent être recyclées ici"
+                    },
                     "20": {
                         "then": "Les petits appareils électriques peuvent être recyclés ici"
                     },
@@ -4875,6 +5245,27 @@
                     },
                     "24": {
                         "then": "Les vélos peuvent être recyclés ici"
+                    },
+                    "3": {
+                        "then": "Les vêtements peuvent être recyclés ici"
+                    },
+                    "4": {
+                        "then": "Les huiles de friture peuvent être recyclées ici"
+                    },
+                    "5": {
+                        "then": "Les huiles de moteur peuvent être recyclées ici"
+                    },
+                    "6": {
+                        "then": "Les lampes fluorescentes peuvent être recyclées ici"
+                    },
+                    "7": {
+                        "then": "Les déchets verts peuvent être recyclés ici"
+                    },
+                    "8": {
+                        "then": "Les déchets organiques peuvent être recyclés ici"
+                    },
+                    "9": {
+                        "then": "Les bouteilles en verre et bocaux peuvent être recyclés ici"
                     }
                 },
                 "question": "Que peut-on recycler ici ?"
@@ -4983,7 +5374,9 @@
                 "render": {
                     "special": {
                         "no_known_languages": "La langue principale de cette école est inconnue",
-                        "question": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>"
+                        "question": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>",
+                        "render_all": "Ces langues sont utilisées dans cette école :{list()}",
+                        "render_single_language": "{language():font-bold} est la langue principale dans cette école"
                     }
                 }
             },
@@ -5094,8 +5487,23 @@
                     "render": "C'est une {shop}"
                 }
             },
+            "organic": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce commerce propose des produits bio"
+                    },
+                    "1": {
+                        "then": "Ce commerce ne propose que des produits bio"
+                    },
+                    "2": {
+                        "then": "Ce commerce ne propose pas de produit bio"
+                    }
+                },
+                "question": "Ce commerce propose-t-il des produits bio ?"
+            },
             "shops-name": {
-                "question": "Qu'est-ce que le nom de ce magasin ?"
+                "question": "Qu'est-ce que le nom de ce magasin ?",
+                "render": "Ce commerce s'appelle <i>{name}</i>"
             }
         },
         "title": {
@@ -5108,6 +5516,76 @@
                 }
             },
             "render": "Magasin"
+        }
+    },
+    "shower": {
+        "description": "Une couche affichant les douches (publiques)",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Eau chaude disponible"
+                    }
+                }
+            }
+        },
+        "name": "Douche",
+        "presets": {
+            "0": {
+                "description": "Une douche (publique)",
+                "title": "une douche"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Tout le monde peut utiliser cette douche"
+                    },
+                    "1": {
+                        "then": "Seuls les clients peuvent utiliser cette douche"
+                    },
+                    "2": {
+                        "then": "Accessible, mais il faut demander une clé"
+                    }
+                },
+                "question": "Qui peut utiliser cette douche ?"
+            },
+            "charge": {
+                "freeform": {
+                    "placeholder": "par ex. 1,50 EUR"
+                },
+                "question": "Quel est le prix pour utiliser cette douche ?",
+                "render": "Le prix de cette douche est {charge}"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Il faut payer pour utiliser cette douche"
+                    },
+                    "1": {
+                        "then": "Cette douche est gratuite"
+                    }
+                },
+                "question": "Faut-il payer pour utiliser cette douche ?"
+            },
+            "hot_water": {
+                "mappings": {
+                    "0": {
+                        "then": "De l'eau chaud est disponible"
+                    },
+                    "1": {
+                        "then": "De l'eau chaud est disponible, mais il faut payer"
+                    },
+                    "2": {
+                        "then": "Il n'y a pas d'eau chaude disponible"
+                    }
+                },
+                "question": "Est-ce que cette douche propose de l'eau chaude ?"
+            }
+        },
+        "title": {
+            "render": "Douche"
         }
     },
     "slow_roads": {
@@ -5140,6 +5618,28 @@
                     }
                 },
                 "render": "La surface en <b>{surface}</b>"
+            }
+        }
+    },
+    "speed_camera": {
+        "tagRenderings": {
+            "maxspeed": {
+                "freeform": {
+                    "placeholder": "Vitesse maximale autorisée"
+                },
+                "question": "Quelle est la vitesse maximale autorisée au niveau de ce radar ?",
+                "render": "La vitesse maximale autorisée est {canonical(maxspeed)}"
+            }
+        }
+    },
+    "speed_display": {
+        "tagRenderings": {
+            "maxspeed": {
+                "freeform": {
+                    "placeholder": "Vitesse autorisée au niveau de ce radar pédagogique"
+                },
+                "question": "Quelle est la vitesse maximale autorisée au niveau de ce radar pédagogique ?",
+                "render": "La vitesse maximale autorisée au niveau de ce radar pédagogique est {canonical(maxspeed)}"
             }
         }
     },
@@ -5257,7 +5757,16 @@
         }
     },
     "surveillance_camera": {
+        "description": "Cette couche affiche les caméras de surveillance et permet au contributeur de mettre à jour les informations et ajouter de nouvelles caméras",
         "name": "Caméras de surveillance",
+        "presets": {
+            "0": {
+                "title": "une caméra de surveillance"
+            },
+            "1": {
+                "title": "une caméra de surveillance fixée au mur"
+            }
+        },
         "tagRenderings": {
             "Camera type: fixed; panning; dome": {
                 "mappings": {
@@ -5749,8 +6258,12 @@
                     },
                     "1": {
                         "then": "Cet arrêt <b>n'a pas</b> de banc"
+                    },
+                    "2": {
+                        "then": "Cet arrêt a un banc, cartographié séparément"
                     }
-                }
+                },
+                "question": "Est-ce que cet arrêt a un banc ?"
             },
             "bin": {
                 "mappings": {
@@ -6007,6 +6520,160 @@
         },
         "title": {
             "render": "Paramètres"
+        }
+    },
+    "vending_machine": {
+        "description": "Couche affichant les distributeurs",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Tous les distributeurs"
+                    },
+                    "1": {
+                        "question": "Vente de boissons"
+                    },
+                    "10": {
+                        "question": "Vente de lait"
+                    },
+                    "11": {
+                        "question": "Vente de pain"
+                    },
+                    "12": {
+                        "question": "Vente d'œufs"
+                    },
+                    "13": {
+                        "question": "Vente de fromage"
+                    },
+                    "14": {
+                        "question": "Vente de miel"
+                    },
+                    "15": {
+                        "question": "Vente de pommes de terre"
+                    },
+                    "16": {
+                        "question": "Vente de fleurs"
+                    },
+                    "2": {
+                        "question": "Ventre de confiseries"
+                    },
+                    "3": {
+                        "question": "Ventre de nourriture"
+                    },
+                    "4": {
+                        "question": "Vente de cigarettes"
+                    },
+                    "5": {
+                        "question": "Vente de préservatifs"
+                    },
+                    "6": {
+                        "question": "Vente de café"
+                    },
+                    "7": {
+                        "question": "Vente d'eau"
+                    },
+                    "8": {
+                        "question": "Vente de journaux"
+                    },
+                    "9": {
+                        "question": "Vente de chambres à air pour vélo"
+                    }
+                }
+            }
+        },
+        "name": "Distributeurs",
+        "presets": {
+            "0": {
+                "title": "un distributeur"
+            }
+        },
+        "tagRenderings": {
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce distributeur est à l'extérieur"
+                    },
+                    "1": {
+                        "then": "Ce distributeur est à l'intérieur"
+                    },
+                    "2": {
+                        "then": "Ce distributeur est à l'extérieur"
+                    }
+                },
+                "question": "Est-ce que ce distributeur est en intérieur ?"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Nom de l'exploitant"
+                },
+                "question": "Qui exploite ce distributeur ?",
+                "render": "Ce distributeur est exploité par {operator}"
+            },
+            "vending": {
+                "mappings": {
+                    "0": {
+                        "then": "Vent des boissons"
+                    },
+                    "1": {
+                        "then": "Vent des confiseries"
+                    },
+                    "10": {
+                        "then": "Vent du pain"
+                    },
+                    "11": {
+                        "then": "Vent des œufs"
+                    },
+                    "12": {
+                        "then": "Vent du fromage"
+                    },
+                    "13": {
+                        "then": "Vent du miel"
+                    },
+                    "14": {
+                        "then": "Vent des pommes de terre"
+                    },
+                    "15": {
+                        "then": "Vent des fleurs"
+                    },
+                    "2": {
+                        "then": "Vent de la nourriture"
+                    },
+                    "3": {
+                        "then": "Vent des cigarettes"
+                    },
+                    "4": {
+                        "then": "Vent des préservatifs"
+                    },
+                    "5": {
+                        "then": "Vent du café"
+                    },
+                    "6": {
+                        "then": "Vent de l'eau"
+                    },
+                    "7": {
+                        "then": "Vent des journaux"
+                    },
+                    "8": {
+                        "then": "Vent des chambres à air pour vélo"
+                    },
+                    "9": {
+                        "then": "Vent du lait"
+                    }
+                },
+                "question": "Que vent ce distributeur ?",
+                "render": "Ce distributeur vent {vending}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Distributeur {name}"
+                },
+                "1": {
+                    "then": "Distributeur {brand}"
+                }
+            },
+            "render": "Distributeur"
         }
     },
     "veterinary": {

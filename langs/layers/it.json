@@ -69,6 +69,12 @@
                     "1": {
                         "then": "Murale"
                     },
+                    "10": {
+                        "then": "Azulejo (ornamento decorativo piastrellato spagnolo)"
+                    },
+                    "11": {
+                        "then": "Mosaico di piastrelle"
+                    },
                     "2": {
                         "then": "Dipinto"
                     },
@@ -92,12 +98,6 @@
                     },
                     "9": {
                         "then": "Rilievo"
-                    },
-                    "10": {
-                        "then": "Azulejo (ornamento decorativo piastrellato spagnolo)"
-                    },
-                    "11": {
-                        "then": "Mosaico di piastrelle"
                     }
                 },
                 "question": "Che tipo di opera d’arte è questo?",
@@ -383,6 +383,7 @@
         }
     },
     "bike_parking": {
+        "description": "Un livello che mostra dove puoi parcheggiare la tua bicicletta",
         "name": "Parcheggio bici",
         "presets": {
             "0": {
@@ -429,7 +430,7 @@
                         "then": "Colonnina"
                     },
                     "7": {
-                        "then": "Una zona del pavimento che è marcata per il parcheggio delle bici"
+                        "then": "Una zona del terreno che è marcata per il parcheggio delle bici"
                     }
                 },
                 "question": "Di che tipo di parcheggio bici si tratta?",
@@ -1886,27 +1887,6 @@
                     "1": {
                         "question": "Riciclo di batterie"
                     },
-                    "2": {
-                        "question": "Riciclo di confezioni per bevande"
-                    },
-                    "3": {
-                        "question": "Riciclo di lattine"
-                    },
-                    "4": {
-                        "question": "Riciclo di abiti"
-                    },
-                    "5": {
-                        "question": "Riciclo di olio da cucina"
-                    },
-                    "6": {
-                        "question": "Riciclo di olio da motore"
-                    },
-                    "8": {
-                        "question": "Riciclo di umido"
-                    },
-                    "9": {
-                        "question": "Riciclo di bottiglie di vetro"
-                    },
                     "10": {
                         "question": "Riciclo di vetro"
                     },
@@ -1934,8 +1914,29 @@
                     "19": {
                         "question": "Riciclo di secco"
                     },
+                    "2": {
+                        "question": "Riciclo di confezioni per bevande"
+                    },
                     "20": {
                         "question": "Riciclo di secco"
+                    },
+                    "3": {
+                        "question": "Riciclo di lattine"
+                    },
+                    "4": {
+                        "question": "Riciclo di abiti"
+                    },
+                    "5": {
+                        "question": "Riciclo di olio da cucina"
+                    },
+                    "6": {
+                        "question": "Riciclo di olio da motore"
+                    },
+                    "8": {
+                        "question": "Riciclo di umido"
+                    },
+                    "9": {
+                        "question": "Riciclo di bottiglie di vetro"
                     }
                 }
             },
@@ -1988,27 +1989,6 @@
                     "1": {
                         "then": "Cartoni per bevande"
                     },
-                    "2": {
-                        "then": "Lattine"
-                    },
-                    "3": {
-                        "then": "Abiti"
-                    },
-                    "4": {
-                        "then": "Olio da cucina"
-                    },
-                    "5": {
-                        "then": "Olio di motore"
-                    },
-                    "7": {
-                        "then": "Verde"
-                    },
-                    "8": {
-                        "then": "Umido"
-                    },
-                    "9": {
-                        "then": "Bottiglie di vetro"
-                    },
                     "10": {
                         "then": "Vetro"
                     },
@@ -2033,6 +2013,9 @@
                     "19": {
                         "then": "Scarpe"
                     },
+                    "2": {
+                        "then": "Lattine"
+                    },
                     "20": {
                         "then": "Piccoli elettrodomestici"
                     },
@@ -2044,6 +2027,24 @@
                     },
                     "23": {
                         "then": "Secco"
+                    },
+                    "3": {
+                        "then": "Abiti"
+                    },
+                    "4": {
+                        "then": "Olio da cucina"
+                    },
+                    "5": {
+                        "then": "Olio di motore"
+                    },
+                    "7": {
+                        "then": "Verde"
+                    },
+                    "8": {
+                        "then": "Umido"
+                    },
+                    "9": {
+                        "then": "Bottiglie di vetro"
                     }
                 },
                 "question": "Cosa si può riciclare qui?"
