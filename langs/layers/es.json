@@ -1939,10 +1939,10 @@
                         "then": "Este cruce no tiene superficie podotáctil"
                     },
                     "2": {
-                        "then": "Este cruce tiene superficie podotáctil, pero no es correcto"
+                        "then": "Este cruce tiene superficie podotáctil, pero no correctamente"
                     }
                 },
-                "question": "¿Tiene pavimento táctil este cruce?"
+                "question": "¿Este cruce tiene pavimento podotáctil?"
             },
             "crossing-type": {
                 "mappings": {
@@ -1956,7 +1956,7 @@
                         "then": "Paso de cebra"
                     },
                     "3": {
-                        "then": "Cruce sin marcas de cruce"
+                        "then": "Cruce sin señalizar"
                     }
                 },
                 "question": "¿Qué tipo de cruce es este?"
