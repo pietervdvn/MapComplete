@@ -768,7 +768,7 @@
                         "question": "Quin tipus d'edifici és aquest?"
                     },
                     "grb-reference": {
-                        "render": "Ha estat importat des de GRB, el número de referència és {font:geometry:ref}"
+                        "render": "Ha estat importat des de GRB, el número de referència és {source:geometry:ref}"
                     }
                 }
             },
