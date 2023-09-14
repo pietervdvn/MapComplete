@@ -13,7 +13,11 @@ export let title: string | undefined = undefined;
 export let path: (string | number)[] = [];
 
 </script>
-{#if title}
+{#if configs === undefined}
+  Bug: 'Region' received 'undefined'
+{:else if configs.length === 0}
+  Bug: Region received empty list as configuration
+{:else if title}
   <div class="w-full flex flex-col">
     <h3>{title}</h3>
     <div class="pl-2 border border-black flex flex-col gap-y-1 w-full">
@@ -24,6 +28,9 @@ export let path: (string | number)[] = [];
     </div>
   </div>
 {:else}
+  <div class="literal-code">
+    {JSON.stringify(configs, null, "  ")}
+  </div>
   <div class="pl-2 flex flex-col gap-y-1 w-full">
     {#each configs as config}
       <SchemaBasedInput {state} path={path.concat(config.path)} schema={config} />

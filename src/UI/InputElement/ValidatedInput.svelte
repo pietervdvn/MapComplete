@@ -110,7 +110,7 @@
           placeholder={_placeholder}></textarea>
     </form>
 {:else}
-    <form class="inline-flex" on:submit={() => dispatch("submit")}>
+    <form class="inline-flex" on:submit|preventDefault={() => dispatch("submit")}>
         <input
                 bind:this={htmlElem}
                 bind:value={$_value}

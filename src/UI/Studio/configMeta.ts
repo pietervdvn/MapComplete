@@ -22,3 +22,22 @@ export interface ConfigMeta {
     required: boolean
     description: string
 }
+
+export class ConfigMetaUtils {
+    static isTranslation(configMeta: ConfigMeta) {
+        /*      {
+    "$ref": "#/definitions/Record<string,string>"
+  },
+  {
+    "type": "string"
+  }*/
+        if (!configMeta.type) {
+            return false
+        }
+        if (Array.isArray(configMeta.type)) {
+            return configMeta.type.some((t) => t["$ref"] === "#/definitions/Record<string,string>")
+        } else {
+            return configMeta.type["$ref"] === "#/definitions/Record<string,string>"
+        }
+    }
+}

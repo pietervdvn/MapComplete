@@ -66,5 +66,5 @@
     />
   {/if}
 
-  <InputHelper args={config.freeform.helperArgs} {feature} type={config.freeform.type} {value} />
+  <InputHelper args={config.freeform.helperArgs} {feature} type={config.freeform.type} {value} on:submit={() => dispatch("submit")} />
 </div>

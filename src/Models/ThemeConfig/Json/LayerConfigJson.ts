@@ -64,8 +64,7 @@ export interface LayerConfigJson {
         | {
               /**
                * question: Which tags must be present on the feature to show it in this layer?
-               *
-               *     Every source must set which tags have to be present in order to load the given layer.
+               * Every source must set which tags have to be present in order to load the given layer.
                */
               osmTags: TagConfigJson
               /**
@@ -238,21 +237,19 @@ export interface LayerConfigJson {
 
     /**
      * Visualisation of the items on the map
-     *
+     * Set 'null' explicitly if you do not want a maprendering
      * group: maprendering
      */
-    mapRendering:
-        | null
-        | (
-              | PointRenderingConfigJson
+    mapRendering?: (
+        | PointRenderingConfigJson
+        | LineRenderingConfigJson
+        | RewritableConfigJson<
               | LineRenderingConfigJson
-              | RewritableConfigJson<
-                    | LineRenderingConfigJson
-                    | PointRenderingConfigJson
-                    | LineRenderingConfigJson[]
-                    | PointRenderingConfigJson[]
-                >
-          )[]
+              | PointRenderingConfigJson
+              | LineRenderingConfigJson[]
+              | PointRenderingConfigJson[]
+          >
+    )[]
 
     /**
      * If set, this layer will pass all the features it receives onto the next layer.
@@ -467,7 +464,7 @@ export interface LayerConfigJson {
      * A no-delete option is offered as 'reason to delete it', but secretly retags.
      *
      * group: editing
-     * types: use an advanced delete configuration ; boolean
+     * types: Use an advanced delete configuration ; boolean
      * iftrue: Allow deletion
      * iffalse: Do not allow deletion
      *

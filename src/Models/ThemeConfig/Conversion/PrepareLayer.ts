@@ -149,7 +149,7 @@ class ExpandTagRendering extends Conversion<
         this._options = options
         this._tagRenderingsByLabel = new Map<string, TagRenderingConfigJson[]>()
         for (const trconfig of state.tagRenderings?.values() ?? []) {
-            for (const label of trconfig.labels ?? []) {
+            for (const label of trconfig["labels"] ?? []) {
                 let withLabel = this._tagRenderingsByLabel.get(label)
                 if (withLabel === undefined) {
                     withLabel = []
@@ -193,7 +193,7 @@ class ExpandTagRendering extends Conversion<
                 for (let foundTr of indirect) {
                     foundTr = Utils.Clone<any>(foundTr)
                     Utils.Merge(tagRenderingConfigJson["override"] ?? {}, foundTr)
-                    foundTr.id = tagRenderingConfigJson.id ?? foundTr.id
+                    foundTr["id"] = tagRenderingConfigJson["id"] ?? foundTr["id"]
                     result.push(foundTr)
                 }
             } else {
@@ -239,9 +239,9 @@ class ExpandTagRendering extends Conversion<
             matchingTrs = layerTrs
         } else if (id.startsWith("*")) {
             const id_ = id.substring(1)
-            matchingTrs = layerTrs.filter((tr) => tr.labels?.indexOf(id_) >= 0)
+            matchingTrs = layerTrs.filter((tr) => tr["labels"]?.indexOf(id_) >= 0)
         } else {
-            matchingTrs = layerTrs.filter((tr) => tr.id === id || tr.labels?.indexOf(id) >= 0)
+            matchingTrs = layerTrs.filter((tr) => tr["id"] === id || tr["labels"]?.indexOf(id) >= 0)
         }
 
         const contextWriter = new AddContextToTranslations<TagRenderingConfigJson>("layers:")
@@ -489,7 +489,15 @@ class DetectInline extends DesugaringStep<QuestionableTagRenderingConfigJson> {
             }
         }
         json = JSON.parse(JSON.stringify(json))
-        json.freeform.inline ??= true
+        if (typeof json.freeform === "string") {
+            errors.push("At " + context + ": 'freeform' is a string, but should be an object")
+            return { result: json, errors }
+        }
+        try {
+            json.freeform.inline ??= true
+        } catch (e) {
+            errors.push("At " + context + ": " + e.message)
+        }
         return { result: json, errors }
     }
 }

@@ -2,7 +2,7 @@
 
   import { UIEventSource } from "../../../Logic/UIEventSource";
   import LanguageUtils from "../../../Utils/LanguageUtils";
-  import { onDestroy } from "svelte";
+  import { createEventDispatcher, onDestroy } from "svelte";
   import ValidatedInput from "../ValidatedInput.svelte";
 
   export let value: UIEventSource<string> = new UIEventSource<string>("");
@@ -18,6 +18,7 @@
   const allLanguages: string[] = LanguageUtils.usedLanguagesSorted;
   let currentLang = new UIEventSource("en");
   const currentVal = new UIEventSource<string>("");
+  let dispatch = createEventDispatcher<{ submit }>()
 
   function update() {
     const v = currentVal.data;
@@ -49,5 +50,5 @@
       </option>
     {/each}
   </select>
-  <ValidatedInput type="string" value={currentVal} />
+  <ValidatedInput type="string" value={currentVal} on:submit={() => dispatch("submit")} />
 </div>

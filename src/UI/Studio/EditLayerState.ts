@@ -2,6 +2,30 @@ import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import { ConfigMeta } from "./configMeta"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
+import { QueryParameters } from "../../Logic/Web/QueryParameters"
+
+/**
+ * Sends changes back to the server
+ */
+export class LayerStateSender {
+    constructor(serverLocation: string, layerState: EditLayerState) {
+        layerState.configuration.addCallback(async (config) => {
+            // console.log("Current config is", Utils.Clone(config))
+            const id = config.id
+            if (id === undefined) {
+                console.log("No id found in layer, not updating")
+                return
+            }
+            const response = await fetch(`${serverLocation}/layers/${id}/${id}.json`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json;charset=utf-8",
+                },
+                body: JSON.stringify(config, null, "  "),
+            })
+        })
+    }
+}
 
 export default class EditLayerState {
     public readonly osmConnection: OsmConnection
@@ -15,13 +39,17 @@ export default class EditLayerState {
 
     constructor(schema: ConfigMeta[]) {
         this.schema = schema
-        this.osmConnection = new OsmConnection({})
+        this.osmConnection = new OsmConnection({
+            oauth_token: QueryParameters.GetQueryParameter(
+                "oauth_token",
+                undefined,
+                "Used to complete the login"
+            ),
+        })
         this.featureSwitches = {
             featureSwitchIsDebugging: new UIEventSource<boolean>(true),
         }
-        this.configuration.addCallback((config) => {
-            // console.log("Current config is", Utils.Clone(config))
-        })
+        console.log("Configuration store:", this.configuration)
     }
 
     public getCurrentValueFor(path: ReadonlyArray<string | number>): any | undefined {
@@ -78,12 +106,17 @@ export default class EditLayerState {
             description: origConfig.description ?? "A translatable object",
         }
     }
+
     public getSchema(path: string[]): ConfigMeta[] {
-        return this.schema.filter(
+        const schemas = this.schema.filter(
             (sch) =>
                 sch !== undefined &&
                 !path.some((part, i) => !(sch.path.length == path.length && sch.path[i] === part))
         )
+        if (schemas.length == 0) {
+            console.warn("No schemas found for path", path.join("."))
+        }
+        return schemas
     }
 
     public setValueAt(path: ReadonlyArray<string | number>, v: any) {

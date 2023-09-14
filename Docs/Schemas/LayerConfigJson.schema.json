@@ -36,7 +36,7 @@
           "properties": {
             "osmTags": {
               "$ref": "#/definitions/TagConfigJson",
-              "description": "question: Which tags must be present on the feature to show it in this layer?\n\n    Every source must set which tags have to be present in order to load the given layer."
+              "description": "question: Which tags must be present on the feature to show it in this layer?\nEvery source must set which tags have to be present in order to load the given layer."
             },
             "maxCacheAge": {
               "description": "question: How long (in seconds) is the data allowed to remain cached until it must be refreshed?\nThe maximum amount of seconds that a tile is allowed to linger in the cache\n\ntype: nat\ndefault: 30 days",
@@ -167,28 +167,21 @@
       ]
     },
     "mapRendering": {
-      "description": "Visualisation of the items on the map\n\ngroup: maprendering",
-      "anyOf": [
-        {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/default_4"
-              },
-              {
-                "$ref": "#/definitions/default_5"
-              },
-              {
-                "$ref": "#/definitions/default<default|default|default[]|default[]>"
-              }
-            ]
+      "description": "Visualisation of the items on the map\nSet 'null' explicitly if you do not want a maprendering\ngroup: maprendering",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/default_4"
+          },
+          {
+            "$ref": "#/definitions/default_5"
+          },
+          {
+            "$ref": "#/definitions/default<default|default|default[]|default[]>"
           }
-        },
-        {
-          "type": "null"
-        }
-      ]
+        ]
+      }
     },
     "passAllFeatures": {
       "description": "If set, this layer will pass all the features it receives onto the next layer.\nThis is ideal for decoration, e.g. directions on cameras\niftrue: Make the features from this layer also available to the other layer; might result in this object being rendered by multiple layers\niffalse: normal behaviour: don't pass features allong\nquestion: should this layer pass features to the next layers?\ngroup: expert",
@@ -352,7 +345,7 @@
       ]
     },
     "deletion": {
-      "description": "This block defines under what circumstances the delete dialog is shown for objects of this layer.\nIf set, a dialog is shown to the user to (soft) delete the point.\nThe dialog is built to be user friendly and to prevent mistakes.\nIf deletion is not possible, the dialog will hide itself and show the reason of non-deletability instead.\n\nTo configure, the following values are possible:\n\n- false: never ever show the delete button\n- true: show the default delete button\n- undefined: use the mapcomplete default to show deletion or not. Currently, this is the same as 'false' but this will change in the future\n- or: a hash with options (see below)\n\n### The delete dialog\n\n\n\n#### Hard deletion if enough experience\n\nA feature can only be deleted from OpenStreetMap by mapcomplete if:\n\n- It is a node\n- No ways or relations use the node\n- The logged-in user has enough experience OR the user is the only one to have edited the point previously\n- The logged-in user has no unread messages (or has a ton of experience)\n- The user did not select one of the 'non-delete-options' (see below)\n\nIn all other cases, a 'soft deletion' is used.\n\n#### Soft deletion\n\nA 'soft deletion' is when the point isn't deleted fromOSM but retagged so that it'll won't how up in the mapcomplete theme anymore.\nThis makes it look like it was deleted, without doing damage. A fixme will be added to the point.\n\nNote that a soft deletion is _only_ possible if these tags are provided by the theme creator, as they'll be different for every theme\n\n##### No-delete options\n\nIn some cases, the contributor might want to delete something for the wrong reason (e.g. someone who wants to have a path removed \"because the path is on their private property\").\nHowever, the path exists in reality and should thus be on OSM - otherwise the next contributor will pass by and notice \"hey, there is a path missing here! Let me redraw it in OSM!)\n\nThe correct approach is to retag the feature in such a way that it is semantically correct *and* that it doesn't show up on the theme anymore.\nA no-delete option is offered as 'reason to delete it', but secretly retags.\n\ngroup: editing\ntypes: use an advanced delete configuration ; boolean\niftrue: Allow deletion\niffalse: Do not allow deletion",
+      "description": "This block defines under what circumstances the delete dialog is shown for objects of this layer.\nIf set, a dialog is shown to the user to (soft) delete the point.\nThe dialog is built to be user friendly and to prevent mistakes.\nIf deletion is not possible, the dialog will hide itself and show the reason of non-deletability instead.\n\nTo configure, the following values are possible:\n\n- false: never ever show the delete button\n- true: show the default delete button\n- undefined: use the mapcomplete default to show deletion or not. Currently, this is the same as 'false' but this will change in the future\n- or: a hash with options (see below)\n\n### The delete dialog\n\n\n\n#### Hard deletion if enough experience\n\nA feature can only be deleted from OpenStreetMap by mapcomplete if:\n\n- It is a node\n- No ways or relations use the node\n- The logged-in user has enough experience OR the user is the only one to have edited the point previously\n- The logged-in user has no unread messages (or has a ton of experience)\n- The user did not select one of the 'non-delete-options' (see below)\n\nIn all other cases, a 'soft deletion' is used.\n\n#### Soft deletion\n\nA 'soft deletion' is when the point isn't deleted fromOSM but retagged so that it'll won't how up in the mapcomplete theme anymore.\nThis makes it look like it was deleted, without doing damage. A fixme will be added to the point.\n\nNote that a soft deletion is _only_ possible if these tags are provided by the theme creator, as they'll be different for every theme\n\n##### No-delete options\n\nIn some cases, the contributor might want to delete something for the wrong reason (e.g. someone who wants to have a path removed \"because the path is on their private property\").\nHowever, the path exists in reality and should thus be on OSM - otherwise the next contributor will pass by and notice \"hey, there is a path missing here! Let me redraw it in OSM!)\n\nThe correct approach is to retag the feature in such a way that it is semantically correct *and* that it doesn't show up on the theme anymore.\nA no-delete option is offered as 'reason to delete it', but secretly retags.\n\ngroup: editing\ntypes: Use an advanced delete configuration ; boolean\niftrue: Allow deletion\niffalse: Do not allow deletion",
       "anyOf": [
         {
           "$ref": "#/definitions/DeleteConfigJson"
@@ -404,7 +397,6 @@
   },
   "required": [
     "id",
-    "mapRendering",
     "source"
   ],
   "definitions": {
@@ -1179,7 +1171,7 @@
               }
             },
             "inline": {
-              "description": "question: Show the freeform as box within the question?\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nifunset: do not show the",
+              "description": "question: Show the freeform as box within the question?\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nifunset: show the freeform input field full-width\niftrue: show the freeform input field as a small field within the question",
               "type": "boolean"
             },
             "default": {
@@ -1214,7 +1206,7 @@
           ]
         },
         "labels": {
-          "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away",
+          "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer",
           "type": "array",
           "items": {
             "type": "string"
@@ -1375,7 +1367,7 @@
               }
             },
             "inline": {
-              "description": "question: Show the freeform as box within the question?\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nifunset: do not show the",
+              "description": "question: Show the freeform as box within the question?\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nifunset: show the freeform input field full-width\niftrue: show the freeform input field as a small field within the question",
               "type": "boolean"
             },
             "default": {
@@ -1410,7 +1402,7 @@
           ]
         },
         "labels": {
-          "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away",
+          "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer",
           "type": "array",
           "items": {
             "type": "string"

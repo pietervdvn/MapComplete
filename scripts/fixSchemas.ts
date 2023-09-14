@@ -200,9 +200,6 @@ function addMetafields(fieldnames: string[], fullSchema: JsonSchema): ConfigMeta
         if (schemePart.description === undefined) {
             return
         }
-        if (path.length === 2 && path[0] === "mappings" && path[1] === "if") {
-            console.log("HI")
-        }
         const type = schemePart.items?.anyOf ?? schemePart.type ?? schemePart.anyOf
         let description = schemePart.description
 
@@ -291,10 +288,10 @@ function validateMeta(path: ConfigMeta): string | undefined {
         return undefined
     }
     if (path.hints.question === undefined && !Array.isArray(path.type)) {
-        /* return (
+        return (
             ctx +
             " does not have a question set. As such, MapComplete-studio users will not be able to set this property"
-        )//*/
+        ) //*/
     }
 
     return undefined
@@ -347,9 +344,9 @@ function main() {
         })
     }
     const errs: string[] = []
-    // errs = extractMeta("LayerConfigJson", "layerconfigmeta", allDefinitions)
-    //  errs.push(...extractMeta("LayoutConfigJson", "layoutconfigmeta", allDefinitions))
-    //   errs.push(...extractMeta("TagRenderingConfigJson", "tagrenderingconfigmeta", allDefinitions))
+    errs.push(...extractMeta("LayerConfigJson", "layerconfigmeta", allDefinitions))
+    // errs.push(...extractMeta("LayoutConfigJson", "layoutconfigmeta", allDefinitions))
+    errs.push(...extractMeta("TagRenderingConfigJson", "tagrenderingconfigmeta", allDefinitions))
     errs.push(
         ...extractMeta(
             "QuestionableTagRenderingConfigJson",

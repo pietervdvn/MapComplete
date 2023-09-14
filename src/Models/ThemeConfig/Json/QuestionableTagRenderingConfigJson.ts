@@ -260,7 +260,7 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
     questionHint?: string | Translatable
 
     /**
-     * A list of labels. These are strings that are used for various purposes, e.g. to filter them away
+     * A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer
      */
     labels?: string[]
 }

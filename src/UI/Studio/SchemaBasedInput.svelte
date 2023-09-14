@@ -5,7 +5,7 @@
   import SchemaBasedArray from "./SchemaBasedArray.svelte";
   import SchemaBasedMultiType from "./SchemaBasedMultiType.svelte";
   import SchemaBasedTranslationInput from "./SchemaBasedTranslationInput.svelte";
-
+  import { ConfigMetaUtils } from "./configMeta.ts"
   export let schema: ConfigMeta;
   export let state: EditLayerState;
   export let path: (string | number)[] = [];
@@ -16,8 +16,6 @@
   <SchemaBasedArray {path} {state} {schema} />
 {:else if schema.type === "array"}
   <SchemaBasedArray {path} {state} {schema} />
-{:else if schema.type === "translation"}
-  <SchemaBasedTranslationInput {path} {state} {schema} />
 {:else if schema.hints.types}
   <SchemaBasedMultiType {path} {state} {schema} />
 {:else}

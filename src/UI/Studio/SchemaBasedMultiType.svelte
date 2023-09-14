@@ -45,12 +45,12 @@
     configJson.mappings.unshift(
       {
         if: "direct=true",
-        then: "Yes " + (schema.hints.iftrue ?? ""),
+        then: (schema.hints.iftrue ?? "Yes"),
         addExtraTags: ["value="]
       },
       {
         if: "direct=false",
-        then: "No " + (schema.hints.iffalse ?? ""),
+        then: (schema.hints.iffalse ?? "No"),
         addExtraTags: ["value="]
       }
     );
@@ -95,7 +95,6 @@
     }
     possibleTypes.sort((a, b) => b.optionalMatches - a.optionalMatches);
     possibleTypes.sort((a, b) => b.matchingPropertiesCount - a.matchingPropertiesCount);
-    console.log(">>> possible types", possibleTypes)
     if (possibleTypes.length > 0) {
       tags.setData({ value: "" + possibleTypes[0].index });
     }
@@ -122,13 +121,19 @@
   onDestroy(tags.addCallbackAndRun(tags => {
     const oldOption = chosenOption;
     chosenOption = tags["value"] ? Number(tags["value"]) : defaultOption;
+    const type = schema.type[chosenOption];
+    console.log("Subtype is", type, {chosenOption, oldOption, schema});
     if (chosenOption !== oldOption) {
       // Reset the values beneath
       subSchemas = [];
-      state.setValueAt(path, undefined);
+      const o = state.getCurrentValueFor(path) ?? {}
+      console.log({o})
+      for(const key of type?.required ?? []){
+        console.log(key)
+        o[key] ??= {}
+      }
+      state.setValueAt(path, o);
     }
-    const type = schema.type[chosenOption];
-    console.log("Subtype is", type);
     if (!type) {
       return;
     }
@@ -148,6 +153,7 @@
     for (const crumble of Object.keys(type.properties)) {
       subSchemas.push(...(state.getSchema([...cleanPath, crumble])));
     }
+    console.log("Got subschemas for", path, ":", subSchemas)
   }));
 
 

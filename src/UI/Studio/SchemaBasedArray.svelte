@@ -121,7 +121,7 @@
   <div class="flex">
     <button on:click={() => createItem()}>Add {article} {singular}</button>
     {#if path.length === 1 && path[0] === "tagRenderings"}
-      <button on:click={() => {createItem();}}>Add a builtin tagRendering</button>
+      <button on:click={() => {createItem("images");}}>Add a builtin tagRendering</button>
     {/if}
     <slot name="extra-button" />
   </div>

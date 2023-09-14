@@ -1,10 +1,7 @@
 import { ValidatorType } from "./Validators"
 import { UIEventSource } from "../../Logic/UIEventSource"
-import SvelteUIElement from "../Base/SvelteUIElement"
-import DirectionInput from "./Helpers/DirectionInput.svelte"
+
 import { MapProperties } from "../../Models/MapProperties"
-import DateInput from "./Helpers/DateInput.svelte"
-import ColorInput from "./Helpers/ColorInput.svelte"
 import BaseUIElement from "../BaseUIElement"
 import OpeningHoursInput from "../OpeningHours/OpeningHoursInput"
 import WikidataSearchBox from "../Wikipedia/WikidataSearchBox"
@@ -13,10 +10,6 @@ import { Utils } from "../../Utils"
 import Locale from "../i18n/Locale"
 import { Feature } from "geojson"
 import { GeoOperations } from "../../Logic/GeoOperations"
-import ImageHelper from "./Helpers/ImageHelper.svelte"
-import TranslationInput from "./Helpers/TranslationInput.svelte"
-import TagInput from "./Helpers/TagInput.svelte"
-import SimpleTagInput from "./Helpers/SimpleTagInput.svelte"
 
 export interface InputHelperProperties {
     /**
@@ -39,6 +32,9 @@ export interface InputHelperProperties {
 }
 
 export default class InputHelpers {
+    /**
+     * @deprecated
+     */
     public static readonly AvailableInputHelpers: Readonly<
         Partial<
             Record<
@@ -50,30 +46,21 @@ export default class InputHelpers {
             >
         >
     > = {
-        direction: (value, properties) =>
-            new SvelteUIElement(DirectionInput, {
-                value,
-                mapProperties: InputHelpers.constructMapProperties(properties),
-            }),
-        date: (value) => new SvelteUIElement(DateInput, { value }),
-        color: (value) => new SvelteUIElement(ColorInput, { value }),
+        // TODO: remake in svelte,move selection logic to 'inputHelper.svelte'
         opening_hours: (value) => new OpeningHoursInput(value),
         wikidata: InputHelpers.constructWikidataHelper,
-        image: (value) => new SvelteUIElement(ImageHelper, { value }),
-        translation: (value) => new SvelteUIElement(TranslationInput, { value }),
-        tag: (value) => new SvelteUIElement(TagInput, { value }),
-        simple_tag: (value) => new SvelteUIElement(SimpleTagInput, { value }),
     } as const
 
     public static hideInputField: string[] = ["translation", "simple_tag", "tag"]
 
+    // noinspection JSUnusedLocalSymbols
     /**
      * Constructs a mapProperties-object for the given properties.
      * Assumes that the first helper-args contains the desired zoom-level
      * @param properties
      * @private
      */
-    private static constructMapProperties(
+    public static constructMapProperties(
         properties: InputHelperProperties
     ): Partial<MapProperties> {
         let location = properties?.mapProperties?.location

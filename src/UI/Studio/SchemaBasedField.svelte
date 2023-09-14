@@ -11,21 +11,21 @@
     import EditLayerState from "./EditLayerState";
     import { onDestroy } from "svelte";
     import type { JsonSchemaType } from "./jsonSchema";
-
+    import { ConfigMetaUtils } from "./configMeta.ts"
 
     export let state: EditLayerState
     export let path: (string | number)[] = []
     export let schema: ConfigMeta
     let value = new UIEventSource<string>(undefined)
     
+    const isTranslation = schema.hints.typehint === "translation" || schema.hints.typehint === "rendered" || ConfigMetaUtils.isTranslation(schema)
     let type = schema.hints.typehint ?? "string"
-    if(type === "rendered"){
+    if(isTranslation){
         type = "translation"
     }
     if(type.endsWith("[]")){
         type = type.substring(0, type.length - 2) 
     }
-    const isTranslation =schema.hints.typehint === "translation" || schema.hints.typehint === "rendered"
 
     const configJson: QuestionableTagRenderingConfigJson = {
         id: path.join("_"),

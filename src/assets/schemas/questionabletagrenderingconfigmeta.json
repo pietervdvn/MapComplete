@@ -601,7 +601,8 @@
     "required": false,
     "hints": {
       "question": "Show the freeform as box within the question?",
-      "ifunset": "do not show the"
+      "iftrue": "show the freeform input field as a small field within the question",
+      "ifunset": "show the freeform input field full-width"
     },
     "type": "boolean",
     "description": "Instead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout."
@@ -661,7 +662,7 @@
     "required": false,
     "hints": {},
     "type": "array",
-    "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away"
+    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer"
   },
   {
     "path": [

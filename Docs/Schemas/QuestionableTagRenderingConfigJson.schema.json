@@ -44,7 +44,7 @@
           }
         },
         "inline": {
-          "description": "question: Show the freeform as box within the question?\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nifunset: do not show the",
+          "description": "question: Show the freeform as box within the question?\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nifunset: show the freeform input field full-width\niftrue: show the freeform input field as a small field within the question",
           "type": "boolean"
         },
         "default": {
@@ -79,7 +79,7 @@
       ]
     },
     "labels": {
-      "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away",
+      "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer",
       "type": "array",
       "items": {
         "type": "string"
