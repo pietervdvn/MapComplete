@@ -1642,16 +1642,12 @@
                 "title": "un observatori d'ocells"
             },
             "1": {
-                "description": "Una pantalla o paret amb obertures per a observar ocells",
-                "title": ""
+                "description": "Una pantalla o paret amb obertures per a observar ocells"
             }
         },
         "tagRenderings": {
             "bird-hide-shelter-or-wall": {
                 "mappings": {
-                    "0": {
-                        "then": ""
-                    },
                     "1": {
                         "then": "Observatori d'ocells"
                     },
