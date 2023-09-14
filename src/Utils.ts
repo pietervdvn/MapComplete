@@ -442,6 +442,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * Utils.SubstituteKeys("abc{def}ghi", {def: 'XYZ'}) // => "abcXYZghi"
      * Utils.SubstituteKeys("abc{def}{def}ghi", {def: 'XYZ'}) // => "abcXYZXYZghi"
      * Utils.SubstituteKeys("abc{def}ghi", {def: '{XYZ}'}) // => "abc{XYZ}ghi"
+     * Utils.SubstituteKeys("abc\n\n{def}ghi", {def: '{XYZ}'}) // => "abc\n\n{XYZ}ghi"
      *
      * @param txt
      * @param tags
@@ -456,7 +457,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         if (txt === undefined) {
             return undefined
         }
-        const regex = /(.*?){([^}]*)}(.*)/
+        const regex = /(.*?){([^}]*)}(.*)/s
 
         let match = txt.match(regex)
 
