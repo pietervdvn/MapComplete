@@ -1,4 +1,3 @@
-import { Utils } from "./Utils"
 import AllThemesGui from "./UI/AllThemesGui"
 import { QueryParameters } from "./Logic/Web/QueryParameters"
 
