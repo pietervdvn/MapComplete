@@ -405,19 +405,9 @@
         "doDelete": "Remove image",
         "dontDelete": "Cancel",
         "isDeleted": "Deleted",
-        "nearbyPictures": {
-            "allFiltered": "No images matched your filter",
-            "browseNearby": "Browse nearby images…",
-            "confirm": "The selected image shows {title()}",
-            "hasMatchingPicture": "Does a picture match the object? Select it below",
-            "loadMore": "Load more images",
-            "loading": "Loading nearby images…",
-            "noImageSelected": "Select an image to link it to the object",
-            "nothingFound": "No nearby images found…",
-            "onlyTowards": "Only show pictures which are taken towards this object",
-            "removeFilters": "Click here to remove the filters",
-            "title": "Nearby pictures",
-            "withinRadius": "Only show pictures which are taken within {radius} meter of this object"
+        "nearby": {
+            "link": "This picture shows the object",
+            "seeNearby": "Browse and link nearby pictures"
         },
         "pleaseLogin": "Please log in to add a picture",
         "respectPrivacy": "Do not photograph people nor license plates. Do not upload Google Maps, Google Streetview or other copyrighted sources.",

@@ -242,7 +242,6 @@
         "doDelete": "Kép eltávolítása",
         "dontDelete": "Mégse",
         "isDeleted": "Törölve",
-        "nearbyPictures": {},
         "pleaseLogin": "Kép hozzáadásához be kell jelentkezni",
         "respectPrivacy": "Ne készíts fényképet emberekről és rendszámtáblákról. Ne tölts fel képet a Google Mapsről, a Google Streetview-ról (utcaképről) és egyéb szerzői jog által védett forrásokból.",
         "toBig": "A kép túl nagy ({actual_size}). Kérjük, legfeljebb {max_size} méretű képeket használj",

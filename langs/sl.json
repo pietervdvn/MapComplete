@@ -66,8 +66,7 @@
         "addPicture": "Dodaj sliko",
         "doDelete": "Odstrani sliko",
         "dontDelete": "Prekliči",
-        "isDeleted": "Izbrisana",
-        "nearbyPictures": {}
+        "isDeleted": "Izbrisana"
     },
     "importInspector": {},
     "importLayer": {},
