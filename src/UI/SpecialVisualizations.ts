@@ -77,7 +77,13 @@ import NearbyImagesCollapsed from "./Popup/NearbyImagesCollapsed.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
-    args: { name: string; defaultValue?: string; doc: string; required?: boolean }[] = []
+    args: { name: string; defaultValue?: string; doc: string; required?: boolean }[] = [
+        {
+            name: "mode",
+            defaultValue: "closed",
+            doc: "Either `open` or `closed`. If `open`, then the image carousel will always be shown",
+        },
+    ]
     docs =
         "A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature"
     funcName = "nearby_images"
@@ -89,8 +95,16 @@ class NearbyImageVis implements SpecialVisualization {
         feature: Feature,
         layer: LayerConfig
     ): BaseUIElement {
+        const isOpen = args[0] === "open"
         const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
-        return new SvelteUIElement(NearbyImagesCollapsed, { tags, state, lon, lat, feature, layer })
+        return new SvelteUIElement(isOpen ? NearbyImages : NearbyImagesCollapsed, {
+            tags,
+            state,
+            lon,
+            lat,
+            feature,
+            layer,
+        })
     }
 }
 
