@@ -60,13 +60,15 @@
         "de": "Dieser Arzt ist spezialisiert auf {healthcare:speciality}",
         "nl": "Deze dokter is gespecialiseerd in {healthcare:speciality}",
         "fr": "Ce médecin est spécialisé dans {healthcare:speciality}",
-        "he": "רופא זה מתמחה ב {healthcare:speciality}"
+        "he": "רופא זה מתמחה ב {healthcare:speciality}",
+        "pl": "Ten lekarz specjalizuje się w {healthcare:speciality}"
       },
       "question": {
         "en": "What is this doctor specialized in?",
         "de": "Worauf ist dieser Arzt spezialisiert?",
         "nl": "Waar is deze dokter in gespecialiseerd?",
-        "fr": "En quoi ce médecin est-il spécialisé ?"
+        "fr": "En quoi ce médecin est-il spécialisé ?",
+        "pl": "W czym specjalizuje się ten lekarz?"
       },
       "freeform": {
         "key": "healthcare:speciality"
@@ -88,7 +90,8 @@
             "en": "This is a gynaecologist",
             "de": "Dies ist ein Gynäkologe",
             "nl": "Dit is een gynaecoloog",
-            "fr": "C'est un gynécologue"
+            "fr": "C'est un gynécologue",
+            "pl": "To jest ginekolog"
           }
         },
         {
@@ -97,7 +100,8 @@
             "en": "This is a psychiatrist",
             "de": "Dies ist ein Psychiater",
             "nl": "Dit is een psychiater",
-            "fr": "C'est un psychiatre"
+            "fr": "C'est un psychiatre",
+            "pl": "To jest psychiatra"
           }
         },
         {
@@ -106,7 +110,8 @@
             "en": "This is a paediatrician",
             "de": "Dies ist ein Kinderarzt",
             "nl": "Dit is een kinderarts",
-            "fr": "C'est un pédiatre"
+            "fr": "C'est un pédiatre",
+            "pl": "To jest pediatra"
           }
         }
       ]

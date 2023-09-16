@@ -387,6 +387,7 @@
         }
     },
     "bike_parking": {
+        "description": "Un livello che mostra dove puoi parcheggiare la tua bicicletta",
         "name": "Parcheggio bici",
         "presets": {
             "0": {
@@ -433,7 +434,7 @@
                         "then": "Colonnina"
                     },
                     "7": {
-                        "then": "Una zona del pavimento che è marcata per il parcheggio delle bici"
+                        "then": "Una zona del terreno che è marcata per il parcheggio delle bici"
                     }
                 },
                 "question": "Di che tipo di parcheggio bici si tratta?",

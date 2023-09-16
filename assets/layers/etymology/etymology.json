@@ -181,14 +181,16 @@
         "en": "What is this object named after?",
         "nl": "Naar wat is dit object vernoemd?",
         "de": "Wonach ist dieses Objekt benannt?",
-        "fr": "En référence à quoi cet objet est-il nommé ?"
+        "fr": "En référence à quoi cet objet est-il nommé ?",
+        "pl": "Po czym nazwany jest ten obiekt?"
       },
       "render": {
         "en": "Named after {name:etymology}",
         "nl": "Vernoemd naar {name:etymology}",
         "de": "Benannt nach {name:etymology}",
         "da": "Opkaldt efter {name:etymology}",
-        "fr": "Nommé en référence à {name:etymology}"
+        "fr": "Nommé en référence à {name:etymology}",
+        "pl": "Nazwane po {name:etymology}"
       },
       "freeform": {
         "key": "name:etymology"
@@ -252,7 +254,8 @@
         "en": "A Wikipedia article about this <b>street</b> exists:<br/>{wikipedia():max-height:25rem}",
         "nl": "Een Wikipedia artikel over deze <b>straat</b> bestaat:<br/>{wikipedia():max-height:25rem}",
         "de": "Zu dieser <b>Straße</b> existiert ein Wikipedia-Artikel:<br/>{wikipedia():max-height:25rem}",
-        "fr": "Un article Wikipédia à propos de cette <b>rue</b> existe :<br/>{wikipedia():max-height:25rem}"
+        "fr": "Un article Wikipédia à propos de cette <b>rue</b> existe :<br/>{wikipedia():max-height:25rem}",
+        "pl": "Istnieje artykuł Wikipedii na temat tej <b>ulicy</b>:<br/>{wikipedia():max-height:25rem}"
       },
       "condition": "wikidata~*"
     }

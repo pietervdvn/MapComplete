@@ -608,8 +608,8 @@
         "title": "Educación"
     },
     "elongated_coin": {
-        "description": "Encuentra prensas de centavo para crear tus propias monedas alargadas.",
-        "title": "Prensa de centavo"
+        "description": "Encuentra prensas de centimos para crear tus propias monedas alargadas.",
+        "title": "Prensa de céntimos"
     },
     "etymology": {
         "description": "En este mapa, puedes ver el nombre de un objeto. Las calles, edificios, ... provienen de OpenStreetMap que tienen enlace con Wikidata. En la ventana emergente, verás el artículo de Wikipedia (si existe) o un recuadro de wikidata del nombre del objeto. Si el objeto en sí tiene una página wikipedia, también se mostrará.<br/><br/><b>¡Puedes contribuir!</b> Acerca el zoom lo suficiente y aparecerán <i>todas</i> las calles. Puedes hacer clic en una y aparecerá un cuadro de búsqueda en Wikidata. Con unos pocos clics, puedes añadir un enlace etimológico. Ten en cuenta que para ello necesitas una cuenta gratuita de OpenStreetMap.",

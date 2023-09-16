@@ -144,6 +144,8 @@ In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "ar
       * [Example usage of link](#example-usage-of-link)
     + [multi](#multi)
       * [Example usage of multi](#example-usage-of-multi)
+    + [fediverse_link](#fediverse_link)
+      * [Example usage of fediverse_link](#example-usage-of-fediverse_link)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
@@ -1020,6 +1022,21 @@ tagrendering | _undefined_ | An entire tagRenderingConfig
   }
 }
 ```
+
+
+
+### fediverse_link 
+
+ Converts a fediverse username or link into a clickable link 
+
+name | default | description
+------ | --------- | -------------
+key | _undefined_ | The attribute-name containing the link
+ 
+
+#### Example usage of fediverse_link 
+
+ `{fediverse_link()}`
 
 
 

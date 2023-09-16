@@ -14,7 +14,8 @@
     "fr": "Rue cyclables",
     "da": "Cykelgader",
     "pa_PK": "سائیکل سڑکاں",
-    "cs": "Cyklostezky"
+    "cs": "Cyklostezky",
+    "eu": "Bidegorriak"
   },
   "shortDescription": {
     "nl": "Een kaart met alle gekende fietsstraten",
@@ -72,7 +73,8 @@
         "fr": "Rue cyclables",
         "da": "Cykelgader",
         "pa_PK": "سائیکاں دیاں سڑکاں",
-        "cs": "Cyklostezky"
+        "cs": "Cyklostezky",
+        "eu": "Bidegorriak"
       },
       "minzoom": 7,
       "source": {
@@ -236,7 +238,8 @@
               "fr": "{name} va bientôt devenir une rue cyclable",
               "da": "{name} bliver snart en cykelgade",
               "cs": "{name} se brzy stane cyklostezkou",
-              "ca": "{name} es convertirà en un ciclocarrer pròximament"
+              "ca": "{name} es convertirà en un ciclocarrer pròximament",
+              "eu": "{name} laster bidegorri bihurtuko da"
             },
             "if": "name~*"
           }
@@ -287,7 +290,8 @@
         "fr": "Toutes les rues",
         "da": "Alle gader",
         "pa_PK": "ساریاں سڑکاں",
-        "cs": "Všechny ulice"
+        "cs": "Všechny ulice",
+        "pl": "Wszystkie ulice"
       },
       "description": {
         "nl": "Laag waar je een straat als fietsstraat kan markeren",
@@ -329,7 +333,9 @@
           "fr": "Rue",
           "da": "Gade",
           "pa_PK": "سڑک",
-          "cs": "Ulice"
+          "cs": "Ulice",
+          "eu": "Kalea",
+          "pl": "Ulica"
         },
         "mappings": [
           {
@@ -430,7 +436,8 @@
               "fr": "Cette rue est une piste cyclable",
               "ca": "Aquest carrer és una pista ciclable",
               "cs": "Tato ulice je cyklistickou silnicí",
-              "es": "Esta calle tiene ciclovías"
+              "es": "Esta calle tiene ciclovías",
+              "pl": "To jest droga dla rowerów"
             },
             "hideInAnswer": true
           },
@@ -648,7 +655,8 @@
               "cs": "Vjezd aut povolen",
               "nb_NO": "Biler tillatt",
               "ca": "Cotxes permesos",
-              "es": "Coches permitidos"
+              "es": "Coches permitidos",
+              "pl": "Samochody dozwolone"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg",

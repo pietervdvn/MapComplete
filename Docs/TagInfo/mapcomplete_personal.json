@@ -6239,6 +6239,243 @@
       "value": "no"
     },
     {
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer Penny Presses showing features with this tag",
+      "value": "vending_machine"
+    },
+    {
+      "key": "vending",
+      "description": "The MapComplete theme Personal theme has a layer Penny Presses showing features with this tag",
+      "value": "elongated_coin"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Penny Presses' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Penny Presses allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Penny Presses allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Penny Presses allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Penny Presses allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Penny Presses' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Penny Presses' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "24/7"
+    },
+    {
+      "key": "coin:design_count",
+      "description": "Layer 'Penny Presses' shows and asks freeform values for key 'coin:design_count' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "coin:design_count",
+      "description": "Layer 'Penny Presses' shows coin:design_count=1 with a fixed text, namely 'This penny press has one design available.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "1"
+    },
+    {
+      "key": "coin:design_count",
+      "description": "Layer 'Penny Presses' shows coin:design_count=2 with a fixed text, namely 'This penny press has two designs available.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "2"
+    },
+    {
+      "key": "coin:design_count",
+      "description": "Layer 'Penny Presses' shows coin:design_count=3 with a fixed text, namely 'This penny press has three designs available.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "3"
+    },
+    {
+      "key": "coin:design_count",
+      "description": "Layer 'Penny Presses' shows coin:design_count=4 with a fixed text, namely 'This penny press has four designs available.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "4"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Penny Presses' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Penny Presses' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Penny Presses' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Penny Presses' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Penny Presses' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:debit_cards",
+      "description": "Layer 'Penny Presses' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:credit_cards",
+      "description": "Layer 'Penny Presses' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "coin:type",
+      "description": "Layer 'Penny Presses' shows and asks freeform values for key 'coin:type' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "coin:type",
+      "description": "Layer 'Penny Presses' shows coin:type=2cent with a fixed text, namely 'This penny press uses a 2 cent coin for pressing.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "2cent"
+    },
+    {
+      "key": "coin:type",
+      "description": "Layer 'Penny Presses' shows coin:type=5cent with a fixed text, namely 'This penny press uses a 5 cent coin for pressing.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "5cent"
+    },
+    {
+      "key": "coin:type",
+      "description": "Layer 'Penny Presses' shows coin:type=10cent with a fixed text, namely 'This penny press uses a 10 cent coin for pressing.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "10cent"
+    },
+    {
+      "key": "coin:type",
+      "description": "Layer 'Penny Presses' shows coin:type=25cent with a fixed text, namely 'This penny press uses a 25 cent coin for pressing.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "25cent"
+    },
+    {
+      "key": "coin:type",
+      "description": "Layer 'Penny Presses' shows coin:type=50cent with a fixed text, namely 'This penny press uses a 50 cent coin for pressing.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "50cent"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Penny Presses' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Penny Presses' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Penny Presses' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Penny Presses' shows charge=1 EUR with a fixed text, namely 'It costs 1 euro to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "1 EUR"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Penny Presses' shows charge=2 EUR with a fixed text, namely 'It costs 2 euros to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "2 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.01 EUR with a fixed text, namely '1 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "value": "0.01 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.02 EUR with a fixed text, namely '2 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "value": "0.02 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.05 EUR with a fixed text, namely '5 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "value": "0.05 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.10 EUR with a fixed text, namely '10 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "value": "0.10 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.20 EUR with a fixed text, namely '20 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "value": "0.20 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "value": "0.50 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "value": "1 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "value": "2 EUR"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Penny Presses' shows indoor=yes with a fixed text, namely 'This penny press is located indoors.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Penny Presses' shows indoor=no with a fixed text, namely 'This penny press is located outdoors.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Penny Presses' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Penny Presses' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Penny Presses' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Penny Presses' shows  with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Penny Presses' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Penny Presses' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "-1"
+    },
+    {
+      "key": "check_date",
+      "description": "Layer 'Penny Presses' shows and asks freeform values for key 'check_date' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "check_date",
+      "description": "Layer 'Penny Presses' shows check_date= with a fixed text, namely 'This object was last checked today' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key check_date.",
+      "value": ""
+    },
+    {
       "key": "entrance",
       "description": "The MapComplete theme Personal theme has a layer Entrance showing features with this tag"
     },
@@ -7638,6 +7875,10 @@
       "description": "Layer 'Hackerspace' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
+      "key": "contact:mastodon",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'contact:mastodon' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
       "key": "opening_hours",
       "description": "Layer 'Hackerspace' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Personal theme')"
     },
@@ -8415,11 +8656,6 @@
     {
       "key": "maxspeed",
       "description": "Layer 'Maxspeed' shows and asks freeform values for key 'maxspeed' (in the mapcomplete.org theme 'Personal theme')"
-    },
-    {
-      "key": "highway",
-      "description": "Layer 'Maxspeed' shows highway=living_street&_country!=be with a fixed text, namely 'This is a living street, which has a maxspeed of 20km/h' (in the mapcomplete.org theme 'Personal theme')",
-      "value": "living_street"
     },
     {
       "key": "highway",
@@ -9800,6 +10036,21 @@
       "key": "post_office:stamps",
       "description": "Layer 'Post offices' shows post_office:stamps=no with a fixed text, namely 'You can't buy stamps here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "no"
+    },
+    {
+      "key": "atm",
+      "description": "Layer 'Post offices' shows atm=yes with a fixed text, namely 'This post office has an ATM' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "atm",
+      "description": "Layer 'Post offices' shows atm=no with a fixed text, namely 'This post office does <b>not</b> have an ATM' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "atm",
+      "description": "Layer 'Post offices' shows atm=separate with a fixed text, namely 'This post office does have an ATM, but it is mapped as a different icon' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "separate"
     },
     {
       "key": "amenity",
@@ -12511,6 +12762,184 @@
     },
     {
       "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer Ticket Machines showing features with this tag",
+      "value": "vending_machine"
+    },
+    {
+      "key": "vending",
+      "description": "The MapComplete theme Personal theme has a layer Ticket Machines showing features with this tag",
+      "value": "public_transport_tickets"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Ticket Machines' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Ticket Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Ticket Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Ticket Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Ticket Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Ticket Machines' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Ticket Machines' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Ticket Machines' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Ticket Machines' shows  with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Ticket Machines' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Ticket Machines' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "-1"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Ticket Machines' shows and asks freeform values for key 'operator' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Ticket Machines' shows operator=Nederlandse Spoorwegen with a fixed text, namely 'Dutch Railways (NS)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "Nederlandse Spoorwegen"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Ticket Machines' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Ticket Machines' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Ticket Machines' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Ticket Machines' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Ticket Machines' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:debit_cards",
+      "description": "Layer 'Ticket Machines' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:credit_cards",
+      "description": "Layer 'Ticket Machines' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.01 EUR with a fixed text, namely '1 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "value": "0.01 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.02 EUR with a fixed text, namely '2 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "value": "0.02 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.05 EUR with a fixed text, namely '5 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "value": "0.05 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.10 EUR with a fixed text, namely '10 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "value": "0.10 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.20 EUR with a fixed text, namely '20 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "value": "0.20 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "value": "0.50 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "value": "1 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "value": "2 EUR"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=5 EUR with a fixed text, namely '5 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "value": "5 EUR"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=10 EUR with a fixed text, namely '10 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "value": "10 EUR"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=20 EUR with a fixed text, namely '20 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "value": "20 EUR"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=50 EUR with a fixed text, namely '50 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "value": "50 EUR"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=100 EUR with a fixed text, namely '100 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "value": "100 EUR"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=200 EUR with a fixed text, namely '200 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "value": "200 EUR"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=500 EUR with a fixed text, namely '500 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "value": "500 EUR"
+    },
+    {
+      "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Toilets showing features with this tag",
       "value": "toilets"
     },
@@ -13417,6 +13846,21 @@
       "key": "vending",
       "description": "Layer 'Vending Machines' shows vending=flowers with a fixed text, namely 'Flowers are sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "flowers"
+    },
+    {
+      "key": "vending",
+      "description": "Layer 'Vending Machines' shows vending=parking_tickets with a fixed text, namely 'Parking tickets are sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "parking_tickets"
+    },
+    {
+      "key": "vending",
+      "description": "Layer 'Vending Machines' shows vending=elongated_coin with a fixed text, namely 'Pressed pennies are sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "elongated_coin"
+    },
+    {
+      "key": "vending",
+      "description": "Layer 'Vending Machines' shows vending=public_transport_tickets with a fixed text, namely 'Public transport tickets are sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "public_transport_tickets"
     },
     {
       "key": "opening_hours",

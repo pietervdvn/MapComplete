@@ -3,13 +3,17 @@
   "name": {
     "en": "OSM Community Index",
     "de": "OSM-Community-Index",
-    "ca": "Índex de comunitats d'OSM"
+    "ca": "Índex de comunitats d'OSM",
+    "fr": "Index des communautés OSM",
+    "pl": "Indeks społeczności OSM"
   },
   "title": {
     "render": {
       "en": "OSM Community Index",
       "de": "OSM-Community-Index",
-      "ca": "Índex de comunitats d'OSM"
+      "ca": "Índex de comunitats d'OSM",
+      "fr": "Index des communautés OSM",
+      "pl": "Indeks społeczności OSM"
     }
   },
   "source": {
@@ -58,7 +62,9 @@
             "en": "Country",
             "de": "Land",
             "nl": "Land",
-            "ca": "País"
+            "ca": "País",
+            "fr": "Pays",
+            "pl": "Kraj"
           },
           "osmTags": "level=country"
         }
@@ -85,7 +91,9 @@
             "en": "Region",
             "de": "Region",
             "nl": "Regio",
-            "ca": "Regió"
+            "ca": "Regió",
+            "fr": "Région",
+            "pl": "Region"
           },
           "osmTags": "level=region"
         }
@@ -111,7 +119,9 @@
           "question": {
             "en": "Territory",
             "de": "Gebiet",
-            "ca": "Territori"
+            "ca": "Territori",
+            "fr": "Territoire",
+            "pl": "Terytorium"
           },
           "osmTags": "level=territory"
         }
@@ -125,7 +135,9 @@
             "en": "World",
             "de": "Welt",
             "nl": "Wereld",
-            "ca": "Món"
+            "ca": "Món",
+            "fr": "Monde",
+            "pl": "Świat"
           },
           "osmTags": "level=world"
         }
@@ -138,7 +150,9 @@
           "question": {
             "en": "Other Communities",
             "de": "Andere Communities",
-            "ca": "Altres Comunitats"
+            "ca": "Altres Comunitats",
+            "fr": "Autres communautés",
+            "pl": "Inne społeczności"
           },
           "osmTags": "level="
         }
@@ -148,6 +162,8 @@
   "description": {
     "en": "A layer showing the OpenStreetMap Communities",
     "de": "Eine Ebene aller OpenStreetMap-Communities",
-    "ca": "Una capa que mostra les comunitats d'OpenStreetMap"
+    "ca": "Una capa que mostra les comunitats d'OpenStreetMap",
+    "fr": "Une couche affichant les communautés OpenStreetMap",
+    "pl": "Warstwa pokazująca społeczności OpenStreetMap"
   }
 }

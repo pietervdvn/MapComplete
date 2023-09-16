@@ -1,24 +1,24 @@
 <script lang="ts">
-  import LoginToggle from "../../Base/LoginToggle.svelte";
-  import type { SpecialVisualizationState } from "../../SpecialVisualization";
-  import Translations from "../../i18n/Translations";
-  import Tr from "../../Base/Tr.svelte";
-  import { TrashIcon } from "@babeard/svelte-heroicons/mini";
-  import type { OsmId, OsmTags } from "../../../Models/OsmFeature";
-  import DeleteConfig from "../../../Models/ThemeConfig/DeleteConfig";
-  import TagRenderingQuestion from "../TagRendering/TagRenderingQuestion.svelte";
-  import type { Feature } from "geojson";
-  import { UIEventSource } from "../../../Logic/UIEventSource";
-  import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
-  import { TagsFilter } from "../../../Logic/Tags/TagsFilter";
-  import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid";
-  import { TagUtils } from "../../../Logic/Tags/TagUtils";
-  import OsmChangeAction from "../../../Logic/Osm/Actions/OsmChangeAction";
-  import DeleteAction from "../../../Logic/Osm/Actions/DeleteAction";
-  import ChangeTagAction from "../../../Logic/Osm/Actions/ChangeTagAction";
-  import Loading from "../../Base/Loading.svelte";
-  import { DeleteFlowState } from "./DeleteFlowState";
-  import { twJoin } from "tailwind-merge";
+  import LoginToggle from "../../Base/LoginToggle.svelte"
+  import type { SpecialVisualizationState } from "../../SpecialVisualization"
+  import Translations from "../../i18n/Translations"
+  import Tr from "../../Base/Tr.svelte"
+  import { TrashIcon } from "@babeard/svelte-heroicons/mini"
+  import type { OsmId, OsmTags } from "../../../Models/OsmFeature"
+  import DeleteConfig from "../../../Models/ThemeConfig/DeleteConfig"
+  import TagRenderingQuestion from "../TagRendering/TagRenderingQuestion.svelte"
+  import type { Feature } from "geojson"
+  import { UIEventSource } from "../../../Logic/UIEventSource"
+  import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
+  import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
+  import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { TagUtils } from "../../../Logic/Tags/TagUtils"
+  import OsmChangeAction from "../../../Logic/Osm/Actions/OsmChangeAction"
+  import DeleteAction from "../../../Logic/Osm/Actions/DeleteAction"
+  import ChangeTagAction from "../../../Logic/Osm/Actions/ChangeTagAction"
+  import Loading from "../../Base/Loading.svelte"
+  import { DeleteFlowState } from "./DeleteFlowState"
+  import { twJoin } from "tailwind-merge"
 
   export let state: SpecialVisualizationState
   export let deleteConfig: DeleteConfig

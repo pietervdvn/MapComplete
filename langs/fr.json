@@ -71,6 +71,9 @@
     "general": {
         "404": "Cette page n'existe pas",
         "about": "Éditer facilement et ajouter OpenStreetMap pour un certain thème",
+        "aboutMapComplete": {
+            "intro": "Utilisez MapComplete pour ajouter des informations à OpenStreetMap <b>par thématiques.</b> Réponsez à des question et, en quelques minutes, vos contributions seront disponibles partout. Dans la plupart des thèmes vous pouvez ajouter des photos et même laisser un commentaire. Le <b>responsable du thème</b> définit les éléments, les questions et les langues."
+        },
         "add": {
             "addNew": "Ajouter {category}",
             "backToSelect": "Sélectionner une catégorie différente",

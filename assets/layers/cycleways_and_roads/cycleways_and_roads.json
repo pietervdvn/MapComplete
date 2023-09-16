@@ -129,7 +129,8 @@
           "de": "Fahrradspur",
           "fr": "Bande cyclable",
           "ca": "Carril bici",
-          "es": "Carril bici"
+          "es": "Carril bici",
+          "pl": "Pas rowerowy"
         }
       },
       {
@@ -285,7 +286,8 @@
         "da": "Er denne gade belyst?",
         "es": "¿Esta calle está iluminada?",
         "fr": "Cette rue est-elle éclairée ?",
-        "ca": "Aquesta carretera està il·luminada?"
+        "ca": "Aquesta carretera està il·luminada?",
+        "pl": "Czy ta ulica jest oświetlona?"
       },
       "mappings": [
         {
@@ -295,7 +297,8 @@
             "nl": "Deze weg is verlicht",
             "de": "Diese Straße ist beleuchtet",
             "es": "La calle está iluminada",
-            "fr": "Cette rue est éclairée"
+            "fr": "Cette rue est éclairée",
+            "pl": "Ta ulica jest oświetlona"
           }
         },
         {
@@ -307,7 +310,8 @@
             "da": "Denne vej er ikke belyst",
             "es": "Esta carretera no está iluminada",
             "fr": "Cette rue n'est pas éclairée",
-            "ca": "Aquesta carretera no està il·luminada"
+            "ca": "Aquesta carretera no està il·luminada",
+            "pl": "Ta droga nie jest oświetlona"
           }
         },
         {
@@ -319,7 +323,8 @@
             "da": "Denne vej er belyst om natten",
             "es": "Esta carretera está iluminada por la noche",
             "fr": "Cette route est éclairée la nuit",
-            "ca": "Aquesta carretera està il·luminada per la nit"
+            "ca": "Aquesta carretera està il·luminada per la nit",
+            "pl": "Ta droga jest oświetlona w nocy"
           },
           "hideInAnswer": true
         },
@@ -332,7 +337,8 @@
             "da": "Denne vej er belyst døgnet rundt",
             "es": "Esta carretera está iluminada 24/7",
             "fr": "Cette route est éclairée 24h/24 et 7j/7",
-            "ca": "Aquesta carretera està il·luminada 24/7"
+            "ca": "Aquesta carretera està il·luminada 24/7",
+            "pl": "Ta droga jest oświetlona 24/7"
           }
         }
       ],
@@ -404,7 +410,8 @@
         "id": "Kecepatan maksimum di jalan ini adalah {maxspeed} km/jam",
         "es": "La velocidad máxima en esta carretera es de {maxspeed} km/h",
         "fr": "La vitesse maximum dans cette rue est de {maxspeed} km/h",
-        "ca": "La velocitat màxima a aquesta carretera és {maxspeed} km/h"
+        "ca": "La velocitat màxima a aquesta carretera és {maxspeed} km/h",
+        "pl": "Maksymalna prędkość na tej drodze to {maxspeed} km/h"
       },
       "freeform": {
         "key": "maxspeed",
@@ -425,7 +432,8 @@
             "nl": "De maximumsnelheid is 20 km/u",
             "de": "Die Höchstgeschwindigkeit ist 20 km/h",
             "es": "La velocidad máxima es de 20km/h",
-            "fr": "La vitesse maximum est de 20 km/h"
+            "fr": "La vitesse maximum est de 20 km/h",
+            "pl": "Maksymalna prędkość tutaj to 20 km/h"
           }
         },
         {
@@ -435,7 +443,8 @@
             "nl": "De maximumsnelheid is 30 km/u",
             "de": "Die Höchstgeschwindigkeit ist 30 km/h",
             "es": "La velocidad máxima es de 30km/h",
-            "fr": "La vitesse maximum est de 30 km/h"
+            "fr": "La vitesse maximum est de 30 km/h",
+            "pl": "Maksymalna prędkość tutaj to 30 km/h"
           }
         },
         {
@@ -445,7 +454,8 @@
             "nl": "De maximumsnelheid is 50 km/u",
             "de": "Die Höchstgeschwindigkeit ist 50 km/h",
             "es": "La velocidad máxima es de 50km/h",
-            "fr": "La vitesse maximum est de 50 km/h"
+            "fr": "La vitesse maximum est de 50 km/h",
+            "pl": "Maksymalna prędkość tutaj to 50 km/h"
           }
         },
         {
@@ -456,7 +466,8 @@
             "de": "Die Höchstgeschwindigkeit ist 70 km/h",
             "id": "Kecepatan maksimum 70 km/jam",
             "es": "La velocidad máxima es de 70km/h",
-            "fr": "La vitesse maximum est de 70 km/h"
+            "fr": "La vitesse maximum est de 70 km/h",
+            "pl": "Maksymalna prędkość tutaj to 70 km/h"
           }
         },
         {
@@ -468,7 +479,8 @@
             "id": "Kecepatan maksimum 90 km/jam",
             "es": "La velocidad máxima es de 90km/h",
             "fr": "La vitesse maximum est de 90 km/h",
-            "ca": "La velocitat màxima és de 90km/h"
+            "ca": "La velocitat màxima és de 90km/h",
+            "pl": "Maksymalna prędkość tutaj to 90 km/h"
           }
         }
       ],
@@ -479,7 +491,8 @@
         "id": "Berapa kecepatan maksimum di jalan ini?",
         "es": "¿Cual es la velocidad máxima en esta calle?",
         "fr": "Quelle est la vitesse maximum dans cette rue ?",
-        "ca": "Quina és la velocitat màxima a aquest carrer?"
+        "ca": "Quina és la velocitat màxima a aquest carrer?",
+        "pl": "Jaka jest maksymalna prędkość na tej ulicy?"
       },
       "id": "Maxspeed (for road)"
     },

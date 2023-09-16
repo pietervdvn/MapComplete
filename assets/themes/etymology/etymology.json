@@ -9,11 +9,12 @@
     "zh_Hant": "開放詞源地圖",
     "hu": "Etimológiai térkép",
     "fr": "Étymologie - d'où les rues tirent leur nom ?",
-    "ca": "Mapa obert d'etimologia",
+    "ca": "Etimologia: com rep el nom un carrer?",
     "da": "Åbn oprindelseskort",
     "nb_NO": "Åpent etymologikart",
     "cs": "Otevřít etymologickou mapu",
-    "es": "Etimología - a qué se debe el nombre de una calle?"
+    "es": "Etimología - a qué se debe el nombre de una calle?",
+    "pl": "Etymologia - od czego pochodzi nazwa ulicy?"
   },
   "shortDescription": {
     "en": "What is the origin of a toponym?",
@@ -68,7 +69,8 @@
           "ca": "Carrers sense informació etimològica",
           "da": "Gader uden oprindelses information",
           "nb_NO": "Gater uten etymologi-info",
-          "cs": "Ulice bez etymologických informací"
+          "cs": "Ulice bez etymologických informací",
+          "pl": "Ulice bez informacji o etymologii"
         },
         "minzoom": 15,
         "source": {
@@ -98,7 +100,8 @@
           "ca": "Parcs i boscos sense informació etimològica",
           "da": "Parker og skove uden oprindelses information",
           "nb_NO": "Parker og skoger uten etymologi-info",
-          "cs": "Parky a lesy bez etymologických informací"
+          "cs": "Parky a lesy bez etymologických informací",
+          "pl": "Parki i lasy bez informacji o etymologii"
         },
         "minzoom": 18,
         "source": {
@@ -129,7 +132,8 @@
           "ca": "Institucions educatives sense informació d'etimològica",
           "da": "Uddannelsesinstitutioner uden oprindelses oplysninger",
           "nb_NO": "Utdannelsesinstitusjoner uten etymologi-info",
-          "cs": "Vzdělávací instituce bez etymologických informací"
+          "cs": "Vzdělávací instituce bez etymologických informací",
+          "pl": "Instytucje edukacyjne bez informacji o etymologii"
         },
         "minzoom": 18,
         "source": {
@@ -197,7 +201,8 @@
           "ca": "Llocs turístics sense informació etimològica",
           "da": "Turistiske steder uden oprindelses information",
           "nb_NO": "Turiststeder uten etymologi-info",
-          "cs": "Toursistická místa bez etymologických informací"
+          "cs": "Toursistická místa bez etymologických informací",
+          "pl": "Miejsca turystyczne bez informacji o etymologii"
         },
         "minzoom": 18,
         "source": {

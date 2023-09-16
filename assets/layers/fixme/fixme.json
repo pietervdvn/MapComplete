@@ -2,7 +2,8 @@
   "id": "fixme",
   "name": {
     "en": "OSM objects with FIXME tags",
-    "de": "OSM-Objekte mit FIXME-Tags"
+    "de": "OSM-Objekte mit FIXME-Tags",
+    "pl": "Obiekty OSM z znacznikami FIXME"
   },
   "minzoom": 16,
   "description": {
@@ -21,7 +22,8 @@
   "title": {
     "render": {
       "en": "OSM object with FIXME tag",
-      "de": "OSM-Objekt mit FIXME-Tags"
+      "de": "OSM-Objekt mit FIXME-Tags",
+      "pl": "Obiekt OSM z znacznikiem FIXME"
     }
   },
   "tagRenderings": [
@@ -33,14 +35,16 @@
       },
       "question": {
         "en": "What is wrong with this feature?",
-        "de": "Was stimmt mit diesem Objekt nicht?"
+        "de": "Was stimmt mit diesem Objekt nicht?",
+        "pl": "Co jest nie tak z tym obiektem?"
       },
       "mappings": [
         {
           "if": "fixme=",
           "then": {
             "en": "This issue has been resolved",
-            "de": "Dieses Problem wurde behoben"
+            "de": "Dieses Problem wurde behoben",
+            "pl": "Ten problem został rozwiązany"
           }
         }
       ],
@@ -54,7 +58,9 @@
       "condition": "note~*",
       "render": {
         "en": "Note Text: {note}",
-        "de": "Notiz Text: {note}"
+        "de": "Notiz Text: {note}",
+        "fr": "Texte de la note : {note}",
+        "pl": "Tekst notatki: {note}"
       }
     },
     "all_tags"

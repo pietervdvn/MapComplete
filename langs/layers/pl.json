@@ -1,601 +1,2664 @@
 {
-    "address": {
-        "description": "Adresy",
-        "tagRenderings": {
-            "fixme": {
-                "question": "Co wymaga naprawy? Proszę wytłumaczyć"
-            },
-            "housenumber": {
-                "mappings": {
-                    "0": {
-                        "then": "Ten budynek nie ma numeru"
-                    }
-                },
-                "question": "Jaki jest numer tego domu?",
-                "render": "Numer tego domu to <b>{addr:housenumber}</b>"
-            },
-            "street": {
-                "question": "Na jakiej ulicy znajduje się ten adres?",
-                "render": "Ten adres znajduje się na ulicy <b>{addr:street}</b>"
-            }
+  "address": {
+    "description": "Adresy",
+    "name": "Znane adresy w OSM",
+    "tagRenderings": {
+      "fixme": {
+        "question": "Co wymaga naprawy? Proszę wytłumaczyć"
+      },
+      "housenumber": {
+        "mappings": {
+          "0": {
+            "then": "Ten budynek nie ma numeru"
+          }
         },
-        "title": {
-            "render": "Znany adres"
-        }
+        "question": "Jaki jest numer tego domu?",
+        "render": "Numer tego domu to <b>{addr:housenumber}</b>"
+      },
+      "street": {
+        "question": "Na jakiej ulicy znajduje się ten adres?",
+        "render": "Ten adres znajduje się na ulicy <b>{addr:street}</b>"
+      }
     },
-    "artwork": {
-        "name": "Dzieła sztuki",
-        "presets": {
+    "title": {
+      "render": "Znany adres"
+    }
+  },
+  "advertising": {
+    "presets": {
+      "0": {
+        "description": "Duża struktura reklamowa na dworze, zwykle znajdująca się w obszarach z dużym ruchem, np. w pobliżu ruchliwych dróg",
+        "title": "bilbord"
+      },
+      "3": {
+        "description": "Mały bilbord dla reklam lokalnych, przeznaczony głównie dla pieszych",
+        "title": "tablica"
+      },
+      "4": {
+        "title": "kolumna"
+      },
+      "5": {
+        "title": "flaga"
+      },
+      "6": {
+        "title": "ekran"
+      },
+      "7": {
+        "title": "ekran zamontowany na ścianie"
+      },
+      "10": {
+        "title": "znak"
+      },
+      "11": {
+        "title": "rzeźba"
+      },
+      "12": {
+        "title": "mural ścienny"
+      }
+    },
+    "tagRenderings": {
+      "Sides": {
+        "mappings": {
+          "0": {
+            "then": "Ten obiekt ma reklamy po jednej stronie"
+          },
+          "1": {
+            "then": "Ten obiekt ma reklamy po dwóch stronach"
+          }
+        },
+        "question": "Z ilu stron można oglądać reklamy?"
+      },
+      "animated": {
+        "mappings": {
+          "0": {
+            "then": "<b>Statyczne</b>, zawsze pokazuje tą samą wiadomość"
+          },
+          "1": {
+            "then": "Ten obiekt ma wbudowany <b>cyfrowy wyświetlacz</b> do pokazywania cen lub innych informacji"
+          }
+        },
+        "question": "Czy ta reklama przechodzi przez wiele różnych wiadomości?"
+      },
+      "message_type": {
+        "mappings": {
+          "0": {
+            "then": "Wiadomość komercyjna"
+          },
+          "1": {
+            "then": "Informacja lokalna"
+          },
+          "2": {
+            "then": "Informacje dotyczące bezpieczeństwa"
+          },
+          "3": {
+            "then": "Reklamy wyborcze"
+          },
+          "4": {
+            "then": "Informacje dotyczące teatru, koncertów, …"
+          },
+          "5": {
+            "then": "Wiadomość od organizacji non-profit"
+          },
+          "6": {
+            "then": "Żeby wyrazić swoją opinię"
+          },
+          "7": {
+            "then": "Przekaz religijny"
+          },
+          "9": {
+            "then": "Mapa"
+          }
+        },
+        "question": "Jaki rodzaj wiadomości jest pokazany?"
+      },
+      "operator": {
+        "question": "Kto obsługuje ten obiekt?",
+        "render": "Obsługiwane przez {operator}"
+      },
+      "ref": {
+        "question": "Jaki jest numer referencyjny?",
+        "render": "Numer referencyjny to {ref}"
+      },
+      "type": {
+        "mappings": {
+          "0": {
+            "then": "To jest bilbord"
+          },
+          "1": {
+            "then": "To jest tablica"
+          },
+          "2": {
+            "then": "To jest kolumna"
+          },
+          "3": {
+            "then": "To jest flaga"
+          },
+          "5": {
+            "then": "To jest ekran"
+          },
+          "6": {
+            "then": "To jest rzeźba"
+          },
+          "7": {
+            "then": "To jest znak"
+          },
+          "10": {
+            "then": "To jest mural ścienny"
+          }
+        },
+        "question": "Jakiego rodzaju jest to obiekt reklamowy?",
+        "render": "To jest {advertising}"
+      }
+    },
+    "title": {
+      "mappings": {
+        "0": {
+          "then": "Bilbord"
+        },
+        "1": {
+          "then": "Tablica"
+        },
+        "3": {
+          "then": "Kolumna"
+        },
+        "4": {
+          "then": "Flaga"
+        },
+        "5": {
+          "then": "Ekran"
+        },
+        "6": {
+          "then": "Rzeźba"
+        },
+        "7": {
+          "then": "Znak"
+        },
+        "10": {
+          "then": "Mural ścienny"
+        }
+      }
+    }
+  },
+  "artwork": {
+    "name": "Dzieła sztuki",
+    "presets": {
+      "0": {
+        "title": "Dzieło sztuki"
+      },
+      "1": {
+        "title": "Dzieło sztuki na ścianie"
+      }
+    },
+    "tagRenderings": {
+      "artwork-artist-wikidata": {
+        "question": "Kto stworzył to dzieło sztuki?",
+        "render": "To dzieło sztuki zostało zrobione przez {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+      },
+      "artwork-artist_name": {
+        "question": "Który artysta to stworzył?",
+        "render": "Stworzone przez {artist_name}"
+      },
+      "artwork-artwork_type": {
+        "mappings": {
+          "0": {
+            "then": "Architektura"
+          },
+          "1": {
+            "then": "Mural"
+          },
+          "2": {
+            "then": "Obraz"
+          },
+          "3": {
+            "then": "Rzeźba"
+          },
+          "4": {
+            "then": "Posąg"
+          },
+          "5": {
+            "then": "Popiersie"
+          },
+          "6": {
+            "then": "Skała"
+          },
+          "7": {
+            "then": "Instalacja artystyczna"
+          },
+          "8": {
+            "then": "Graffiti"
+          },
+          "9": {
+            "then": "Płaskorzeźba"
+          },
+          "10": {
+            "then": "Azulejo (hiszpańskie płytka dekoracyjna)"
+          },
+          "11": {
+            "then": "Płyta ceramiczna (fliza)"
+          }
+        },
+        "question": "Jakiego rodzaju jest to dzieło sztuki?",
+        "render": "Jest to {artwork_type}"
+      },
+      "artwork-website": {
+        "question": "Gdzie znajdę więcej informacji na temat tego dzieła sztuki?",
+        "render": {
+          "special": {
+            "text": "Więcej informacji na tej stronie"
+          }
+        },
+        "artwork_subject": {
+          "question": "Co przedstawia to dzieło sztuki?",
+          "render": "To dzieło sztuki przedstawia {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+        },
+        "doubles_as_bench": {
+          "mappings": {
             "0": {
-                "title": "Dzieło sztuki"
-            }
-        },
-        "tagRenderings": {
-            "artwork-artist_name": {
-                "question": "Który artysta to stworzył?",
-                "render": "Stworzone przez {artist_name}"
-            },
-            "artwork-artwork_type": {
-                "mappings": {
-                    "0": {
-                        "then": "Architektura"
-                    },
-                    "1": {
-                        "then": "Mural"
-                    },
-                    "2": {
-                        "then": "Obraz"
-                    },
-                    "3": {
-                        "then": "Rzeźba"
-                    },
-                    "4": {
-                        "then": "Posąg"
-                    },
-                    "5": {
-                        "then": "Popiersie"
-                    },
-                    "6": {
-                        "then": "Skała"
-                    },
-                    "7": {
-                        "then": "Instalacja artystyczna"
-                    },
-                    "8": {
-                        "then": "Graffiti"
-                    },
-                    "9": {
-                        "then": "Płaskorzeźba"
-                    },
-                    "10": {
-                        "then": "Azulejo (hiszpańskie płytka dekoracyjna)"
-                    },
-                    "11": {
-                        "then": "Płyta ceramiczna (fliza)"
-                    }
-                },
-                "question": "Jakiego rodzaju jest to dzieło sztuki?",
-                "render": "Jest to {artwork_type}"
-            },
-            "artwork-website": {
-                "question": "Gdzie znajdę więcej informacji na temat tego dzieła sztuki?",
-                "render": {
-                    "special": {
-                        "text": "Więcej informacji na tej stronie"
-                    }
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Dzieło sztuki <i>{name}</i>"
-                }
-            },
-            "render": "Dzieło sztuki"
-        }
-    },
-    "bench": {
-        "name": "Ławki",
-        "presets": {
-            "0": {
-                "title": "Ławka"
-            }
-        },
-        "tagRenderings": {
-            "bench-backrest": {
-                "mappings": {
-                    "1": {
-                        "then": "Oparcie: Tak"
-                    },
-                    "2": {
-                        "then": "Oparcie: Nie"
-                    }
-                },
-                "question": "Czy ta ławka ma oparcie?"
-            },
-            "bench-colour": {
-                "mappings": {
-                    "0": {
-                        "then": "Kolor: brązowy"
-                    },
-                    "1": {
-                        "then": "Kolor: zielony"
-                    },
-                    "2": {
-                        "then": "Kolor: szary"
-                    },
-                    "3": {
-                        "then": "Kolor: biały"
-                    },
-                    "4": {
-                        "then": "Kolor: czerwony"
-                    },
-                    "5": {
-                        "then": "Kolor: czarny"
-                    },
-                    "6": {
-                        "then": "Kolor: niebieski"
-                    },
-                    "7": {
-                        "then": "Kolor: żółty"
-                    }
-                },
-                "question": "Jaki kolor ma ta ławka?",
-                "render": "Kolor: {colour}"
-            },
-            "bench-direction": {
-                "question": "W jakim kierunku patrzysz siedząc na ławce?",
-                "render": "Siedząc na ławce, patrzy się w kierunku {direction}°."
-            },
-            "bench-material": {
-                "mappings": {
-                    "0": {
-                        "then": "Materiał: drewno"
-                    },
-                    "1": {
-                        "then": "Materiał: metal"
-                    },
-                    "2": {
-                        "then": "Materiał: kamień"
-                    },
-                    "3": {
-                        "then": "Materiał: beton"
-                    },
-                    "4": {
-                        "then": "Materiał: plastik"
-                    },
-                    "5": {
-                        "then": "Materiał: stal"
-                    }
-                },
-                "question": "Z czego wykonana jest ławka (siedzisko)?",
-                "render": "Materiał: {material}"
-            },
-            "bench-seats": {
-                "question": "Ile siedzeń ma ta ławka?",
-                "render": "{seats} siedzeń"
-            },
-            "bench-survey:date": {
-                "question": "Kiedy ostatnio badano tę ławkę?",
-                "render": "Ławka ta była ostatnio badana w dniu {survey:date}"
-            }
-        },
-        "title": {
-            "render": "Ławka"
-        }
-    },
-    "bench_at_pt": {
-        "name": "Ławki na przystankach komunikacji miejskiej",
-        "tagRenderings": {
-            "bench_at_pt-name": {
-                "render": "{name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Ławka na przystanku komunikacji miejskiej"
-                }
-            },
-            "render": "Ławka"
-        }
-    },
-    "bicycle_library": {
-        "description": "Obiekt, w którym rowery można wypożyczyć na dłuższy okres"
-    },
-    "bike_parking": {
-        "name": "Parking dla rowerów",
-        "presets": {
-            "0": {
-                "title": "Parking dla rowerów"
-            }
-        },
-        "tagRenderings": {
-            "Bicycle parking type": {
-                "question": "Jaki jest typ tego parkingu dla rowerów?",
-                "render": "Jest to parking rowerowy typu: {bicycle_parking}"
-            },
-            "Underground?": {
-                "question": "Jaka jest względna lokalizacja tego parkingu rowerowego?"
-            }
-        },
-        "title": {
-            "render": "Parking dla rowerów"
-        }
-    },
-    "bike_repair_station": {
-        "presets": {
-            "0": {
-                "description": "Urządzenie do pompowania opon w stałym miejscu w przestrzeni publicznej.",
-                "title": "pompka do roweru"
+              "then": "To dzieło sztuki pełni również funkcję ławki"
             },
             "1": {
-                "title": "stacja naprawy rowerów i pompka"
+              "then": "To dzieło sztuki nie pełni funkcji ławki"
+            },
+            "2": {
+              "then": "To dzieło sztuki nie pełni funkcji ławki"
             }
-        },
-        "tagRenderings": {
-            "Operational status": {
-                "mappings": {
-                    "0": {
-                        "then": "Pompka rowerowa jest zepsuta"
-                    },
-                    "1": {
-                        "then": "Pompka rowerowa jest sprawna"
-                    }
-                },
-                "question": "Czy pompka rowerowa jest nadal sprawna?"
-            },
-            "bike_repair_station-electrical_pump": {
-                "mappings": {
-                    "0": {
-                        "then": "Pompa ręczna"
-                    },
-                    "1": {
-                        "then": "Pompka elektryczna"
-                    }
-                },
-                "question": "Czy jest to elektryczna pompka do roweru?"
-            },
-            "bike_repair_station-manometer": {
-                "mappings": {
-                    "0": {
-                        "then": "Jest manometr"
-                    },
-                    "1": {
-                        "then": "Nie ma manometru"
-                    },
-                    "2": {
-                        "then": "Jest manometr, ale jest uszkodzony"
-                    }
-                },
-                "question": "Czy pompka posiada wskaźnik ciśnienia lub manometr?"
-            },
-            "bike_repair_station-valves": {
-                "question": "Jakie zawory są obsługiwane?",
-                "render": "Ta pompka obsługuje następujące zawory: {valves}"
-            }
+          },
+          "question": "Czy to dzieło sztuki pełni funkcję ławki?"
         }
+      },
+      "title": {
+        "mappings": {
+          "0": {
+            "then": "Dzieło sztuki <i>{name}</i>"
+          }
+        },
+        "render": "Dzieło sztuki"
+      }
+    },
+    "atm": {
+      "description": "Bankomaty do wypłacania pieniędzy",
+      "name": "Bankomaty",
+      "presets": {
+        "0": {
+          "title": "bankomat"
+        }
+      },
+      "tagRenderings": {
+        "cash_in": {
+          "mappings": {
+            "0": {
+              "then": "Prawdopodobnie ten bankomat nie pozwala wpłacać pieniędzy"
+            },
+            "1": {
+              "then": "Ten bankomat pozwala wpłacać pieniądze"
+            },
+            "2": {
+              "then": "Ten bankomat nie pozwala wpłacać pieniędzy"
+            }
+          },
+          "question": "Czy ten bankomat pozwala wpłacać pieniądze?"
+        },
+        "cash_out": {
+          "mappings": {
+            "0": {
+              "then": "Z tego bankomatu można wypłacić pieniądze"
+            }
+          }
+        },
+        "cash_out-denominations-notes": {
+          "question": "Jakie banknoty można tutaj wypłacić?"
+        },
+        "name": {
+          "render": "Nazwa tego bankomatu to {name}"
+        },
+        "operator": {
+          "question": "Jaka firma obsługuje ten bankomat?",
+          "render": "Ten bankomat jest obsługiwany przez {operator}"
+        }
+      },
+      "title": {
+        "mappings": {
+          "0": {
+            "then": "Bankomat {brand}"
+          }
+        },
+        "render": "Bankomat"
+      }
+    },
+    "bank": {
+      "description": "Instytucja finansowa pozwalająca wpłacić pieniądze",
+      "filter": {
+        "1": {
+          "options": {
+            "0": {
+              "question": "Za pomocą bankomatu"
+            }
+          }
+        }
+      },
+      "name": "Banki",
+      "tagRenderings": {
+        "has_atm": {
+          "mappings": {
+            "0": {
+              "then": "Ten bank ma bankomat"
+            },
+            "1": {
+              "then": "Ten bank <b>nie ma</b> bankomatu"
+            }
+          },
+          "question": "Czy ten bank ma bankomat?"
+        }
+      }
+    },
+    "barrier": {
+      "name": "Barierki"
+    },
+    "bench": {
+      "filter": {
+        "1": {
+          "options": {
+            "0": {
+              "question": "Z oraz bez oparcia"
+            },
+            "1": {
+              "question": "Ma oparcie"
+            },
+            "2": {
+              "question": "Nie ma oparcia"
+            }
+          }
+        }
+      },
+      "name": "Ławki",
+      "presets": {
+        "0": {
+          "title": "Ławka"
+        }
+      },
+      "tagRenderings": {
+        "bench-artwork": {
+          "mappings": {
+            "0": {
+              "then": "Ta ławka ma wbudowane dzieło sztuki"
+            },
+            "1": {
+              "then": "Ta ławka nie ma wbudowanego dzieła sztuki"
+            }
+          },
+          "question": "Czy ta ławka ma wbudowane dzieło sztuki?",
+          "questionHint": "Np. jest na niej coś namalowane, ma rzeźbę lub inną nietrywialną pracę"
+        },
+        "bench-backrest": {
+          "mappings": {
+            "0": {
+              "then": "Ta ławka jest dwustronna ze wspólnym oparciem"
+            },
+            "1": {
+              "then": "Oparcie: Tak"
+            },
+            "2": {
+              "then": "Oparcie: Nie"
+            }
+          },
+          "question": "Czy ta ławka ma oparcie?"
+        },
+        "bench-colour": {
+          "mappings": {
+            "0": {
+              "then": "Kolor: brązowy"
+            },
+            "1": {
+              "then": "Kolor: zielony"
+            },
+            "2": {
+              "then": "Kolor: szary"
+            },
+            "3": {
+              "then": "Kolor: biały"
+            },
+            "4": {
+              "then": "Kolor: czerwony"
+            },
+            "5": {
+              "then": "Kolor: czarny"
+            },
+            "6": {
+              "then": "Kolor: niebieski"
+            },
+            "7": {
+              "then": "Kolor: żółty"
+            }
+          },
+          "question": "Jaki kolor ma ta ławka?",
+          "render": "Kolor: {colour}"
+        },
+        "bench-direction": {
+          "question": "W jakim kierunku patrzysz siedząc na ławce?",
+          "render": "Siedząc na ławce, patrzy się w kierunku {direction}°."
+        },
+        "bench-material": {
+          "mappings": {
+            "0": {
+              "then": "Materiał: drewno"
+            },
+            "1": {
+              "then": "Materiał: metal"
+            },
+            "2": {
+              "then": "Materiał: kamień"
+            },
+            "3": {
+              "then": "Materiał: beton"
+            },
+            "4": {
+              "then": "Materiał: plastik"
+            },
+            "5": {
+              "then": "Materiał: stal"
+            }
+          },
+          "question": "Z czego wykonana jest ławka (siedzisko)?",
+          "render": "Materiał: {material}"
+        },
+        "bench-memorial": {
+          "mappings": {
+            "0": {
+              "then": "Ta ławka jest pomnikiem upamiętniającym kogoś lub coś"
+            },
+            "1": {
+              "then": "Ta ławka <b>nie</b> jest pomnikiem upamiętniającym kogoś lub coś"
+            }
+          },
+          "question": "Czy ta ławka służy jako pomnik upamiętniający kogoś lub coś?"
+        },
+        "bench-seats": {
+          "question": "Ile siedzeń ma ta ławka?",
+          "render": "{seats} siedzeń"
+        },
+        "bench-survey:date": {
+          "question": "Kiedy ostatnio badano tę ławkę?",
+          "render": "Ławka ta była ostatnio badana w dniu {survey:date}"
+        }
+      },
+      "title": {
+        "render": "Ławka"
+      }
+    },
+    "bench_at_pt": {
+      "deletion": {
+        "extraDeleteReasons": {
+          "0": {
+            "explanation": "Ten przystanek autobusowy nie jest już używany"
+          }
+        },
+        "nonDeleteMappings": {
+          "0": {
+            "then": "Ten przystanek autobusowy nie ma ławki (nigdy jej nie było lub została usunięta)"
+          }
+        }
+      },
+      "description": "Warstwa pokazująca wszystkie przystanki transportu publicznego, które mają ławki",
+      "name": "Ławki na przystankach komunikacji miejskiej",
+      "tagRenderings": {
+        "bench_at_pt-name": {
+          "render": "{name}"
+        }
+      },
+      "title": {
+        "mappings": {
+          "0": {
+            "then": "Ławka na przystanku komunikacji miejskiej"
+          }
+        },
+        "render": "Ławka"
+      }
+    },
+    "bicycle_library": {
+      "description": "Obiekt, w którym rowery można wypożyczyć na dłuższy okres"
+    },
+    "bicycle_rental": {
+      "tagRenderings": {
+        "rental_types": {
+          "rewrite": {
+            "into": {
+              "0": {
+                "1": "rowery miejskie"
+              },
+              "1": {
+                "1": "rowery elektryczne"
+              },
+              "2": {
+                "1": "rowery dla dzieci"
+              },
+              "3": {
+                "1": "rowery BMX"
+              },
+              "4": {
+                "1": "rowery górskie"
+              },
+              "6": {
+                "1": "tandem"
+              }
+            }
+          }
+        }
+      },
+      "title": {
+        "mappings": {
+          "0": {
+            "then": "{name}"
+          }
+        },
+        "render": "Wypożyczalnia rowerów"
+      }
+    },
+    "bike_parking": {
+      "name": "Parking dla rowerów",
+      "presets": {
+        "0": {
+          "title": "Parking dla rowerów"
+        }
+      },
+      "tagRenderings": {
+        "Access": {
+          "mappings": {
+            "0": {
+              "then": "Dostępne publicznie"
+            }
+          },
+          "question": "Kto może używać tego parkingu dla rowerów?",
+          "render": "{access}"
+        },
+        "Bicycle parking type": {
+          "question": "Jaki jest typ tego parkingu dla rowerów?",
+          "render": "Jest to parking rowerowy typu: {bicycle_parking}"
+        },
+        "Capacity": {
+          "render": "Miejsce na {capacity} rowerów"
+        },
+        "Underground?": {
+          "mappings": {
+            "2": {
+              "then": "Parking na dachu"
+            }
+          },
+          "question": "Jaka jest względna lokalizacja tego parkingu rowerowego?"
+        }
+      },
+      "title": {
+        "render": "Parking dla rowerów"
+      }
+    },
+    "bike_repair_station": {
+      "presets": {
+        "0": {
+          "description": "Urządzenie do pompowania opon w stałym miejscu w przestrzeni publicznej.",
+          "title": "pompka do roweru"
+        },
+        "1": {
+          "title": "stacja naprawy rowerów i pompka"
+        }
+      },
+      "tagRenderings": {
+        "Operational status": {
+          "mappings": {
+            "0": {
+              "then": "Pompka rowerowa jest zepsuta"
+            },
+            "1": {
+              "then": "Pompka rowerowa jest sprawna"
+            }
+          },
+          "question": "Czy pompka rowerowa jest nadal sprawna?"
+        },
+        "access": {
+          "mappings": {
+            "1": {
+              "then": "Dostępne publicznie"
+            },
+            "2": {
+              "then": "Tylko dla klientów"
+            }
+          }
+        },
+        "bike_repair_station-electrical_pump": {
+          "mappings": {
+            "0": {
+              "then": "Pompa ręczna"
+            },
+            "1": {
+              "then": "Pompka elektryczna"
+            }
+          },
+          "question": "Czy jest to elektryczna pompka do roweru?"
+        },
+        "bike_repair_station-manometer": {
+          "mappings": {
+            "0": {
+              "then": "Jest manometr"
+            },
+            "1": {
+              "then": "Nie ma manometru"
+            },
+            "2": {
+              "then": "Jest manometr, ale jest uszkodzony"
+            }
+          },
+          "question": "Czy pompka posiada wskaźnik ciśnienia lub manometr?"
+        },
+        "bike_repair_station-valves": {
+          "question": "Jakie zawory są obsługiwane?",
+          "render": "Ta pompka obsługuje następujące zawory: {valves}"
+        },
+        "send_email_about_broken_pump": {
+          "render": {
+            "special": {
+              "button_text": "Zgłoś, że ta pompka rowerowa jest zepsuta",
+              "subject": "Zepsuta pompka rowerowa"
+            }
+          }
+        }
+      },
+      "title": {
+        "mappings": {
+          "0": {
+            "then": "Stacja naprawy rowerów"
+          },
+          "1": {
+            "then": "Stacja naprawy rowerów"
+          },
+          "2": {
+            "then": "Zepsuta pompka"
+          },
+          "3": {
+            "then": "Pompka do rowerów <i>{name}</i>"
+          },
+          "4": {
+            "then": "Pompka do rowerów"
+          }
+        }
+      }
+    },
+    "bike_shop": {
+      "tagRenderings": {
+        "bike_shop-access": {
+          "render": "Dostępne tylko dla {access}"
+        }
+      }
+    },
+    "bike_themed_object": {
+      "name": "Obiekt związany z rowerami",
+      "title": {
+        "render": "Obiekt związany z rowerami"
+      }
+    },
+    "birdhide": {
+      "name": "Miejsca do obserwacji ptaków",
+      "tagRenderings": {
+        "bird-hide-wheelchair": {
+          "mappings": {
+            "3": {
+              "then": "Niedostępne dla osób na wózkach"
+            }
+          }
+        },
+        "birdhide-operator": {
+          "mappings": {
+            "0": {
+              "then": "Obsługiwane przez Natuurpunt"
+            }
+          },
+          "render": "Obsługiwane przez {operator}"
+        }
+      }
+    },
+    "cafe_pub": {
+      "name": "Kawiarnie i puby",
+      "presets": {
+        "0": {
+          "title": "pub"
+        },
+        "1": {
+          "title": "bar"
+        },
+        "2": {
+          "title": "Kawiarnia"
+        },
+        "3": {
+          "title": "klub nocny lub dyskoteka"
+        }
+      },
+      "tagRenderings": {
+        "Classification": {
+          "question": "Jakiego rodzaju jest to kawiarnia?"
+        }
+      },
+      "title": {
+        "render": "Pub"
+      }
+    },
+    "car_rental": {
+      "description": "Miejsca, w których można wypożyczyć samochód",
+      "name": "Wypożyczalnia samochodów",
+      "presets": {
+        "0": {
+          "description": "Miejsce, w którym można wypożyczyć samochód",
+          "title": "wypożyczalnia samochodów"
+        }
+      },
+      "tagRenderings": {
+        "name": {
+          "freeform": {
+            "placeholder": "Nazwa wypożyczalni samochodów"
+          },
+          "mappings": {
+            "0": {
+              "then": "Ta wypożyczalnia samochodów nie ma nazwy"
+            }
+          },
+          "question": "Jaka jest nazwa tej wypożyczalni samochodów?",
+          "render": "Ta wypożyczalnia samochodów nazywa się {name}"
+        }
+      },
+      "title": {
+        "render": "Wypożyczalnia samochodów"
+      }
+    },
+    "charging_station": {
+      "description": "Stacja ładowania",
+      "filter": {
+        "0": {
+          "options": {
+            "0": {
+              "question": "Wszystkie rodzaje pojazdów"
+            },
+            "1": {
+              "question": "Stacja ładowania dla rowerów"
+            },
+            "2": {
+              "question": "Stacja ładowania dla samochodów"
+            }
+          }
+        },
+        "1": {
+          "options": {
+            "0": {
+              "question": "Tylko działające stacje ładowania"
+            }
+          }
+        }
+      },
+      "name": "Stacje ładowania",
+      "presets": {
+        "1": {
+          "title": "stacja ładowania dla samochodów"
+        }
+      },
+      "tagRenderings": {
+        "Available_charging_stations (generated)": {
+          "mappings": {
+            "13": {
+              "then": "<b>Tesla Supercharger</b>"
+            }
+          }
+        },
+        "Network": {
+          "mappings": {
+            "1": {
+              "then": "Nie jest częścią większej sieci"
+            }
+          },
+          "question": "Czy ta stacja ładowania jest częścią sieci?"
+        },
+        "OH": {
+          "override": {
+            "question": "Kiedy otwiera się ta stacja ładowania?"
+          }
+        },
+        "Operational status": {
+          "mappings": {
+            "0": {
+              "then": "Ta stacja ładowania działa"
+            },
+            "1": {
+              "then": "Ta stacja ładowania jest zepsuta"
+            },
+            "2": {
+              "then": "Planowana jest tutaj stacja ładowania"
+            },
+            "3": {
+              "then": "Budowana jest tutaj stacja ładowania"
+            }
+          }
+        },
+        "Operator": {
+          "render": "Ta stacja ładowania jest obsługiwana przez {operator}"
+        }
+      },
+      "title": {
+        "render": "Stacja ładowania"
+      },
+      "units": {
+        "0": {
+          "applicableUnits": {
+            "0": {
+              "human": " minut",
+              "humanSingular": " minuta"
+            },
+            "1": {
+              "human": " godzin",
+              "humanSingular": " godzina"
+            },
+            "2": {
+              "human": " dni",
+              "humanSingular": " dzień"
+            }
+          }
+        }
+      }
+    },
+    "climbing_gym": {
+      "tagRenderings": {
+        "shoe_rental": {
+          "mappings": {
+            "2": {
+              "then": "Można tutaj wypożyczyć buty do wspinaczki"
+            },
+            "3": {
+              "then": "<b>Nie</b> można wypożyczyć tutaj butów do wspinaczki"
+            }
+          },
+          "question": "Czy można tutaj wypożyczyć buty do wspinaczki?"
+        }
+      }
+    },
+    "climbing_opportunity": {
+      "tagRenderings": {
+        "climbing-opportunity-name": {
+          "render": "<strong>{name}</strong>"
+        }
+      }
+    },
+    "clock": {
+      "presets": {
+        "0": {
+          "title": "zegar"
+        },
+        "1": {
+          "description": "Publicznie widoczny zegar zamontowany na ścianie",
+          "title": "zegar na ścianie"
+        }
+      },
+      "tagRenderings": {
+        "barometer": {
+          "mappings": {
+            "0": {
+              "then": "Ten zegar wyświetla również ciśnienie"
+            },
+            "1": {
+              "then": "Ten zegar nie wyświetla ciśnienia"
+            },
+            "2": {
+              "then": "Ten zegar prawdopodobnie nie wyświetla ciśnienia"
+            }
+          },
+          "question": "Czy ten zegar wyświetla ciśnienie?"
+        },
+        "date": {
+          "mappings": {
+            "0": {
+              "then": "Ten zegar wyświetla również datę"
+            },
+            "1": {
+              "then": "Ten zegar nie wyświetla daty"
+            },
+            "2": {
+              "then": "Ten zegar prawdopodobnie nie wyświetla daty"
+            }
+          },
+          "question": "Czy ten zegar wyświetla datę?"
+        },
+        "display": {
+          "mappings": {
+            "0": {
+              "then": "Ten zegar pokazuje czas za pomocą wskazówek"
+            },
+            "1": {
+              "then": "Ten zegar wyświetla czas za pomocą cyfr"
+            },
+            "3": {
+              "then": "Ten zegar wyświetla czas w niestandardowy sposób, np. używając systemu binarnego, wody lub czegoś innego"
+            }
+          },
+          "question": "Jak ten zegar wyświetla czas?"
+        },
+        "hygrometer": {
+          "mappings": {
+            "0": {
+              "then": "Ten zegar wyświetla również wilgotność"
+            },
+            "1": {
+              "then": "Ten zegar nie wyświetla wilgotności"
+            },
+            "2": {
+              "then": "Ten zegar prawdopodobnie nie wyświetla wilgotności"
+            }
+          },
+          "question": "Czy ten zegar wyświetla również wilgotność?"
+        },
+        "support": {
+          "mappings": {
+            "0": {
+              "then": "Ten zegar jest zamontowany na słupie"
+            },
+            "1": {
+              "then": "Ten zegar jest zamontowany na ścianie"
+            },
+            "2": {
+              "then": "Ten zegar jest częścią bilbordu"
+            },
+            "3": {
+              "then": "Ten zegar jest na ziemi"
+            }
+          },
+          "question": "W jaki sposób zamontowany jest ten zegar?"
+        },
+        "thermometer": {
+          "mappings": {
+            "0": {
+              "then": "Ten zegar wyświetla również temperaturę"
+            },
+            "1": {
+              "then": "Ten zegar nie wyświetla temperatury"
+            },
+            "2": {
+              "then": "Ten zegar prawdopodobnie nie wyświetla temperatury"
+            }
+          },
+          "question": "Czy ten zegar wyświetla również temperaturę?"
+        },
+        "visibility": {
+          "mappings": {
+            "0": {
+              "then": "Ten zegar jest widoczny z około 5 metrów (mały zegar ścienny)"
+            },
+            "1": {
+              "then": "Ten zegar jest widoczny z około 20 metrów (średniej wielkości zegar na bilbordzie)"
+            },
+            "2": {
+              "then": "Ten zegar jest widoczny z ponad 20 metrów (np. zegar kościelny lub stacyjny)"
+            }
+          },
+          "question": "Jaka jest widoczność tego zegara?"
+        }
+      },
+      "title": {
+        "render": "Zegar"
+      }
+    },
+    "crossings": {
+      "tagRenderings": {
+        "crossing-is-zebra": {
+          "question": "Czy to jest przejście dla pieszych typu \"zebra\"?"
+        }
+      }
+    },
+    "cycleways_and_roads": {
+      "tagRenderings": {
+        "Maxspeed (for road)": {
+          "mappings": {
+            "0": {
+              "then": "Maksymalna prędkość tutaj to 20 km/h"
+            },
+            "1": {
+              "then": "Maksymalna prędkość tutaj to 30 km/h"
+            },
+            "2": {
+              "then": "Maksymalna prędkość tutaj to 50 km/h"
+            },
+            "3": {
+              "then": "Maksymalna prędkość tutaj to 70 km/h"
+            },
+            "4": {
+              "then": "Maksymalna prędkość tutaj to 90 km/h"
+            }
+          },
+          "question": "Jaka jest maksymalna prędkość na tej ulicy?",
+          "render": "Maksymalna prędkość na tej drodze to {maxspeed} km/h"
+        },
+        "is lit?": {
+          "mappings": {
+            "0": {
+              "then": "Ta ulica jest oświetlona"
+            },
+            "1": {
+              "then": "Ta droga nie jest oświetlona"
+            },
+            "2": {
+              "then": "Ta droga jest oświetlona w nocy"
+            },
+            "3": {
+              "then": "Ta droga jest oświetlona 24/7"
+            }
+          },
+          "question": "Czy ta ulica jest oświetlona?"
+        }
+      },
+      "title": {
+        "mappings": {
+          "5": {
+            "then": "Pas rowerowy"
+          }
+        }
+      }
+    },
+    "defibrillator": {
+      "presets": {
+        "0": {
+          "title": "defibrylator"
+        },
+        "1": {
+          "title": "defibrylator na ścianie"
+        }
+      },
+      "tagRenderings": {
+        "defibrillator-access": {
+          "mappings": {
+            "0": {
+              "then": "Dostępny publicznie"
+            },
+            "1": {
+              "then": "Dostępny publicznie"
+            },
+            "2": {
+              "then": "Dostępny tylko dla klientów"
+            },
+            "3": {
+              "then": "Niedostępny publicznie (np. dostępny tylko dla personelu, właścicieli, ...)"
+            },
+            "4": {
+              "then": "Niedostępny, być może tylko do profesjonalnego użytku"
+            }
+          },
+          "question": "Czy ten defibrylator jest swobodnie dostępny?"
+        },
+        "defibrillator-defibrillator": {
+          "mappings": {
+            "0": {
+              "then": "Nie ma informacji o rodzaju urządzenia"
+            },
+            "1": {
+              "then": "To jest ręczny defibrylator dla profesjonalistów"
+            },
+            "2": {
+              "then": "To jest zwykły automatyczny defibrylator"
+            },
+            "3": {
+              "then": "To jest specjalny rodzaj defibrylatora: {defibrillator}"
+            }
+          },
+          "question": "Czy to jest zwykły automatyczny defibrylator czy ręczny defibrylator tylko dla profesjonalistów?"
+        },
+        "defibrillator-defibrillator:location": {
+          "question": "Proszę podaj opis gdzie znajduje się defibrylator (w lokalnym języku)",
+          "render": "<i>Dodatkowe informacje o lokalizacji (w lokalnym języku):</i><br/>{defibrillator:location}"
+        },
+        "defibrillator-defibrillator:location:en": {
+          "question": "Proszę podaj opis gdzie znajduje się defibrylator (po angielsku)",
+          "render": "<i>Dodatkowe informacje o lokalizacji (po angielsku):</i><br/>{defibrillator:location:en}"
+        },
+        "defibrillator-defibrillator:location:fr": {
+          "question": "Proszę podaj opis gdzie znajduje się defibrylator (po francusku)",
+          "render": "<i>Dodatkowe informacje o lokalizacji (po francusku):</i><br/>{defibrillator:location:fr}"
+        },
+        "defibrillator-description": {
+          "render": "Dodatkowe informacje: {description}"
+        },
+        "defibrillator-fixme": {
+          "render": "Więcej informacji dla doświadczonych użytkowników OpenStreetMap: {fixme}"
+        },
+        "defibrillator-indoors": {
+          "mappings": {
+            "0": {
+              "then": "Ten defibrylator jest wewnątrz budynku"
+            },
+            "1": {
+              "then": "Ten defibrylator jest na dworze"
+            }
+          },
+          "question": "Czy ten defibrylator znajduje się wewnątrz budynku?"
+        },
+        "defibrillator-level": {
+          "mappings": {
+            "0": {
+              "then": "Ten defibrylator jest na <b>parterze</b>"
+            },
+            "1": {
+              "then": "Ten defibrylator jest na <b>pierwszym piętrze</b>"
+            }
+          },
+          "question": "Na którym piętrze jest ten defibrylator?",
+          "render": "Ten defibrylator jest na piętrze {level}"
+        },
+        "defibrillator-ref": {
+          "render": "Oficjalny numer identyfikacyjny urządzenia: <i>{ref}</i>"
+        },
+        "defibrillator-survey:date": {
+          "mappings": {
+            "0": {
+              "then": "Sprawdzone dzisiaj!"
+            }
+          }
+        },
+        "opening_hours_24_7": {
+          "override": {
+            "question": "W jakich godzinach dostępny jest ten defibrylator?"
+          }
+        }
+      },
+      "title": {
+        "render": "Defibrylator"
+      }
+    },
+    "dentist": {
+      "description": "Ta warstwa pokazuje gabinety dentystyczne",
+      "name": "Dentysta",
+      "tagRenderings": {
+        "name": {
+          "question": "Jaka jest nazwa tego gabinetu dentystycznego?",
+          "render": "Nazwa tego gabinetu dentystycznego to {name}"
+        }
+      }
+    },
+    "doctors": {
+      "tagRenderings": {
+        "specialty": {
+          "mappings": {
+            "1": {
+              "then": "To jest ginekolog"
+            },
+            "2": {
+              "then": "To jest psychiatra"
+            },
+            "3": {
+              "then": "To jest pediatra"
+            }
+          },
+          "question": "W czym specjalizuje się ten lekarz?",
+          "render": "Ten lekarz specjalizuje się w {healthcare:speciality}"
+        }
+      }
+    },
+    "elevator": {
+      "name": "Winda",
+      "presets": {
+        "0": {
+          "title": "winda"
+        }
+      },
+      "tagRenderings": {
+        "door-width": {
+          "question": "Jaka jest szerokość drzwi windy?",
+          "render": "Drzwi tej windy mają szerokość {canonical(door:width)}"
+        },
+        "elevator-width": {
+          "question": "Jaka jest szerokość tej windy?",
+          "render": "Szerokość tej windy to {canonical(elevator:width)}"
+        },
+        "operational_status": {
+          "mappings": {
+            "0": {
+              "then": "Ta winda jest zepsuta"
+            },
+            "1": {
+              "then": "Ta winda jest nieczynna <span class='subtle'>np. z powodu renowacji</span>"
+            },
+            "2": {
+              "then": "Ta winda działa"
+            },
+            "3": {
+              "then": "Ta winda działa"
+            }
+          },
+          "question": "Czy ta winda działa?"
+        }
+      },
+      "title": {
+        "render": "Winda"
+      },
+      "units": {
+        "0": {
+          "applicableUnits": {
+            "0": {
+              "human": "metr"
+            },
+            "1": {
+              "human": "centymetr"
+            }
+          }
+        }
+      }
+    },
+    "elongated_coin": {
+      "tagRenderings": {
+        "coin": {
+          "freeform": {
+            "placeholder": "Rodzaj monety (np. 10 centów)"
+          }
+        }
+      }
+    },
+    "entrance": {
+      "tagRenderings": {
+        "Entrance type": {
+          "mappings": {
+            "2": {
+              "then": "To jest główne wejście"
+            },
+            "4": {
+              "then": "To jest wejście serwisowe - zazwyczaj używane tylko przez pracowników, dostawy, …"
+            },
+            "5": {
+              "then": "To jest wyjście bez możliwości wejścia"
+            },
+            "6": {
+              "then": "To jest wejście, którym nie można wychodzić"
+            },
+            "7": {
+              "then": "To jest wyjście ewakuacyjne"
+            },
+            "8": {
+              "then": "To jest wejście do prywatnego domu"
+            }
+          },
+          "question": "Jakiego rodzaju jest to wejście?"
+        },
+        "automatic_door": {
+          "mappings": {
+            "0": {
+              "then": "Te drzwi są automatyczne"
+            },
+            "1": {
+              "then": "Te drzwi <b>nie</b> są automatyczne"
+            },
+            "2": {
+              "then": "Te drzwi automatycznie się otwierają, kiedy zostanie wykryty <b>ruch</b>"
+            }
+          }
+        },
+        "kerb-height": {
+          "freeform": {
+            "placeholder": "Wysokość progu w drzwiach"
+          },
+          "mappings": {
+            "0": {
+              "then": "Te drzwi nie mają progu"
+            }
+          }
+        }
+      },
+      "title": {
+        "render": "Wejście"
+      },
+      "units": {
+        "0": {
+          "applicableUnits": {
+            "0": {
+              "human": "metr"
+            },
+            "1": {
+              "human": "centrymetr"
+            }
+          }
+        }
+      }
+    },
+    "etymology": {
+      "tagRenderings": {
+        "simple etymology": {
+          "question": "Po czym nazwany jest ten obiekt?",
+          "render": "Nazwane po {name:etymology}"
+        },
+        "wikipedia": {
+          "render": "Istnieje artykuł Wikipedii na temat tej <b>ulicy</b>:<br/>{wikipedia():max-height:25rem}"
+        }
+      }
+    },
+    "extinguisher": {
+      "description": "Warstwa mapy pokazująca gaśnice.",
+      "name": "Mapa gaśnic",
+      "presets": {
+        "0": {
+          "description": "Gaśnica to małe, przenośne urządzenie do gaszenia ognia",
+          "title": "gaśnica"
+        }
+      },
+      "tagRenderings": {
+        "extinguisher-location": {
+          "mappings": {
+            "0": {
+              "then": "Znajduje się wewnątrz budynku."
+            },
+            "1": {
+              "then": "Znajduje się na dworze."
+            }
+          },
+          "question": "Gdzie się znajduje?",
+          "render": "Lokalizacja: {location}"
+        }
+      },
+      "title": {
+        "render": "Gaśnice"
+      }
+    },
+    "filters": {
+      "filter": {
+        "0": {
+          "options": {
+            "0": {
+              "question": "Otwarte teraz"
+            }
+          }
+        },
+        "1": {
+          "options": {
+            "0": {
+              "question": "Przyjmuje gotówkę"
+            }
+          }
+        },
+        "2": {
+          "options": {
+            "0": {
+              "question": "Przyjmuje karty płatnicze"
+            }
+          }
+        },
+        "3": {
+          "options": {
+            "0": {
+              "question": "Przyjmuje karty debetowe"
+            }
+          }
+        },
+        "4": {
+          "options": {
+            "0": {
+              "question": "Przyjmuje karty kredytowe"
+            }
+          }
+        },
+        "5": {
+          "options": {
+            "0": {
+              "question": "Z oraz bez zdjęć"
+            },
+            "1": {
+              "question": "Ma co najmniej jedno zdjęcie"
+            },
+            "2": {
+              "question": "Prawdopodobnie nie ma zdjęcia"
+            }
+          }
+        },
+        "6": {
+          "options": {
+            "0": {
+              "question": "Z wypustkami dla niewidomych"
+            }
+          }
+        },
+        "7": {
+          "options": {
+            "0": {
+              "question": "Z lub bez wypustek dla niewidomych"
+            },
+            "1": {
+              "question": "Z wypustkami dla niewidomych"
+            },
+            "2": {
+              "question": "Bez wypustek dla niewidomych"
+            },
+            "3": {
+              "question": "Brak informacji o wypustkach dla niewidomych"
+            }
+          }
+        }
+      }
+    },
+    "fixme": {
+      "name": "Obiekty OSM z znacznikami FIXME",
+      "tagRenderings": {
+        "fixme": {
+          "mappings": {
+            "0": {
+              "then": "Ten problem został rozwiązany"
+            }
+          },
+          "question": "Co jest nie tak z tym obiektem?"
+        },
+        "note": {
+          "render": "Tekst notatki: {note}"
+        }
+      },
+      "title": {
+        "render": "Obiekt OSM z znacznikiem FIXME"
+      }
+    },
+    "food": {
+      "deletion": {
+        "extraDeleteReasons": {
+          "0": {
+            "explanation": "{title()} jest zamknięte na stałe"
+          }
+        },
+        "nonDeleteMappings": {
+          "0": {
+            "then": "To tak naprawdę jest pub"
+          },
+          "1": {
+            "then": "To tak naprawdę jest kawiarnia"
+          }
+        }
+      },
+      "filter": {
+        "1": {
+          "options": {
+            "0": {
+              "question": "Rezerwacja nie jest wymagana"
+            }
+          }
+        },
+        "2": {
+          "options": {
+            "0": {
+              "question": "Ma menu wegetariańskie"
+            },
+            "1": {
+              "question": "Tylko fast-foody"
+            },
+            "2": {
+              "question": "Tylko restauracje"
+            }
+          }
+        },
+        "3": {
+          "options": {
+            "0": {
+              "question": "Ma menu wegańskie"
+            }
+          }
+        }
+      },
+      "name": "Restauracje i fast-foody",
+      "presets": {
+        "0": {
+          "title": "restauracja"
+        }
+      },
+      "tagRenderings": {
+        "Cuisine": {
+          "mappings": {
+            "0": {
+              "then": "To jest pizzeria"
+            },
+            "2": {
+              "then": "Podaje głównie makarony"
+            },
+            "3": {
+              "then": "To jest stoisko z kebabem"
+            },
+            "5": {
+              "then": "Są tu podawane burgery"
+            }
+          }
+        },
+        "Reservation": {
+          "mappings": {
+            "2": {
+              "then": "W tym miejscu możliwa jest rezerwacja"
+            },
+            "3": {
+              "then": "Rezerwacja nie jest możliwa w tym miejscu"
+            }
+          },
+          "question": "Czy w tym miejscu rezerwacja jest wymagana?"
+        },
+        "Vegan (no friture)": {
+          "mappings": {
+            "0": {
+              "then": "Brak dań wegańskich"
+            },
+            "1": {
+              "then": "Pewne dania wegańskie są dostępne"
+            },
+            "2": {
+              "then": "Dostępne są dania wegańskie"
+            },
+            "3": {
+              "then": "Wszystkie dania są wegańskie"
+            }
+          }
+        },
+        "Vegetarian (no friture)": {
+          "mappings": {
+            "0": {
+              "then": "Brak dań wegetariańskich"
+            },
+            "1": {
+              "then": "Pewne dania wegetariańskie są dostępne"
+            },
+            "2": {
+              "then": "Dostępne są dania wegetariańskie"
+            },
+            "3": {
+              "then": "Wszystkie dania są wegetariańskie"
+            }
+          },
+          "question": "Czy ta restauracja ma danie wegetariańskie?"
+        },
+        "friture-oil": {
+          "mappings": {
+            "0": {
+              "then": "Smażenie jest na oleju roślinnym"
+            },
+            "1": {
+              "then": "Smażenie jest na oleju zwierzęcym"
+            }
+          }
+        }
+      },
+      "title": {
+        "mappings": {
+          "0": {
+            "then": "Restauracja <i>{name}</i>"
+          }
+        },
+        "render": "Restauracja"
+      }
     },
     "ghost_bike": {
-        "name": "Duch roweru",
-        "presets": {
-            "0": {
-                "title": "Duch roweru"
-            }
-        },
-        "title": {
-            "render": "Duch roweru"
+      "description": "Warstwa pokazujące miejsca upamiętnienia rowerzystów, którzy zginęli w wypadkach drogowych",
+      "name": "Duch roweru",
+      "presets": {
+        "0": {
+          "title": "Duch roweru"
         }
+      },
+      "tagRenderings": {
+        "ghost_bike-name": {
+          "mappings": {
+            "0": {
+              "then": "Ku pamięci {name}"
+            }
+          }
+        }
+      },
+      "title": {
+        "render": "Duch roweru"
+      }
+    },
+    "indoors": {
+      "tagRenderings": {
+        "ref": {
+          "question": "Jaki jest numer referencyjny tego pomieszczenia?",
+          "render": "To pomieszczenie ma numer referencyjny {ref}"
+        }
+      },
+      "title": {
+        "mappings": {
+          "0": {
+            "then": "Wewnętrzne pomieszczenie {name}"
+          }
+        }
+      }
+    },
+    "information_board": {
+      "description": "Warstwa pokazujące przydrożne tablice informacyjne dla turystów (np. informujące o krajobrazie, budynku, obiekcie, mapa, ...)",
+      "name": "Tablice informacyjne",
+      "presets": {
+        "0": {
+          "title": "tablica informacyjna"
+        }
+      },
+      "title": {
+        "render": "Tablica informacyjna"
+      }
+    },
+    "kerbs": {
+      "description": "Warstwa pokazująca krawężniki.",
+      "filter": {
+        "0": {
+          "options": {
+            "0": {
+              "question": "Wszystkie rodzaje krawężników"
+            },
+            "1": {
+              "question": "Podniesiony krawężnik (>3 cm)"
+            },
+            "2": {
+              "question": "Obniżony krawężnik (~3 cm)"
+            },
+            "4": {
+              "question": "Brak krawężnika"
+            },
+            "5": {
+              "question": "Krawężnik z nieznaną wysokością"
+            }
+          }
+        }
+      },
+      "name": "Krawężniki",
+      "presets": {
+        "0": {
+          "title": "krawężnik"
+        }
+      },
+      "tagRenderings": {
+        "kerb-height": {
+          "freeform": {
+            "placeholder": "Wysokość krawężnika"
+          },
+          "question": "Jaka jest wysokość tego krawężnika?",
+          "render": "Wysokość krawężnika: {kerb:height}"
+        },
+        "kerb-type": {
+          "mappings": {
+            "0": {
+              "then": "Ten krawężnik jest wyniesiony (>3 cm)"
+            },
+            "1": {
+              "then": "Ten krawężnik jest obniżony (~3 cm)"
+            },
+            "3": {
+              "then": "Nie ma tutaj krawężnika"
+            },
+            "4": {
+              "then": "Jest krawężnik o nieznanej wysokości"
+            }
+          },
+          "question": "Jaka jest wysokość tego krawężnika?"
+        },
+        "tactile-paving": {
+          "mappings": {
+            "0": {
+              "then": "Ten krawężnik ma wypustki dla niewidomych."
+            },
+            "1": {
+              "then": "Ten krawężnik nie ma wypustek dla niewidomych."
+            },
+            "2": {
+              "then": "Ten krawężnik ma wypustki dla niewidomych, ale nieprawidłowe."
+            }
+          },
+          "question": "Czy na tym krawężniku są wypustki dla niewidomych?"
+        }
+      },
+      "title": {
+        "render": "Krawężnik"
+      },
+      "units": {
+        "0": {
+          "applicableUnits": {
+            "0": {
+              "human": "centymetry",
+              "humanSingular": "centymetr"
+            },
+            "1": {
+              "human": "metry",
+              "humanSingular": "metr"
+            }
+          }
+        }
+      }
+    },
+    "kindergarten_childcare": {
+      "name": "Przedszkola i żłobki",
+      "presets": {
+        "0": {
+          "title": "przedszkole"
+        },
+        "1": {
+          "title": "żłobek"
+        }
+      },
+      "tagRenderings": {
+        "capacity": {
+          "question": "Jak wiele dzieci (maksymalnie) może być tutaj zapisanych?",
+          "render": "Ta placówka ma miejsce na {capacity} dzieci"
+        },
+        "childcare-type": {
+          "mappings": {
+            "0": {
+              "then": "To jest przedszkole, gdzie małe dzieci otrzymują wczesną edukację."
+            }
+          },
+          "question": "Jaki to rodzaj placówki?"
+        },
+        "name": {
+          "question": "Jaka jest nazwa tej placówki?",
+          "render": "Ta placówka nazywa się <b>{name}</b>"
+        },
+        "opening_hours": {
+          "override": {
+            "question": "W jakich godzinach ten żłobek jest otwarty?"
+          }
+        }
+      },
+      "title": {
+        "mappings": {
+          "0": {
+            "then": "Przedszkole {name}"
+          },
+          "1": {
+            "then": "Żłobek {name}"
+          }
+        }
+      }
+    },
+    "last_click": {
+      "mapRendering": {
+        "0": {
+          "label": {
+            "mappings": {
+              "0": {
+                "then": "Utwórz nową notatkę na mapie"
+              }
+            },
+            "render": "Kliknij tutaj, aby dodać nowy obiekt"
+          }
+        }
+      },
+      "title": {
+        "mappings": {
+          "0": {
+            "then": "Dodaj nowy punkt lub dodaj notatkę"
+          },
+          "1": {
+            "then": "Dodaj nową notatkę"
+          },
+          "2": {
+            "then": "Dodaj nowy punkt"
+          }
+        }
+      }
+    },
+    "map": {
+      "description": "Mapa, przeznaczona dla turystów, która jest zainstalowana w przestrzeni publicznej na stałe",
+      "name": "Mapy",
+      "presets": {
+        "0": {
+          "description": "Dodaj brakującą mapę",
+          "title": "mapa"
+        }
+      },
+      "tagRenderings": {
+        "map-attribution": {
+          "mappings": {
+            "0": {
+              "then": "Źródło, czyli OpenStreetMap, jest w widoczny sposób podane, zawiera informację o licencji ODBL"
+            }
+          }
+        },
+        "map-map_source": {
+          "mappings": {
+            "0": {
+              "then": "Ta mapa bazuje na OpenStreetMap"
+            }
+          },
+          "question": "Na jakich danych bazuje ta mapa?",
+          "render": "Ta mapa bazuje na {map_source}"
+        },
+        "map_size": {
+          "mappings": {
+            "0": {
+              "then": "Plan pomieszczeń w budynku"
+            },
+            "2": {
+              "then": "Mapa pokazująca wieś lub niewielkie miasto"
+            },
+            "3": {
+              "then": " Mapa miasta"
+            },
+            "4": {
+              "then": "Mapa całego regionu, pokazująca wiele miast i wsi"
+            }
+          },
+          "question": "Jaki jest rozmiar obszaru pokazanego na tej mapie?"
+        },
+        "map_type": {
+          "mappings": {
+            "1": {
+              "then": "Mapa z wszystkimi ulicami i ścieżkami w danym obszarze. <p class='subtle'>Ulica w większości mają nazwy; kąty, odległości itp. są poprawne</p>"
+            },
+            "2": {
+              "then": "To jest mapa schematyczna. <p class='subtle'>Mapa-szkic z tylko ważnymi drogami i POI. Kąty, odległości itp. są tylko ilustratywne, niedokładne.</p> "
+            }
+          },
+          "question": "Jaki rodzaj mapy jest pokazany?"
+        }
+      },
+      "title": {
+        "render": "Mapa"
+      }
+    },
+    "maproulette": {
+      "description": "Warstwa pokazująca wszystkie zadania w MapRoulette",
+      "filter": {
+        "0": {
+          "options": {
+            "0": {
+              "question": "Pokaż zadania z wszystkimi statusami"
+            },
+            "1": {
+              "question": "Pokaż zadania, które zostały stworzone"
+            },
+            "6": {
+              "question": "Pokaż zadania, które są już wykonane"
+            },
+            "7": {
+              "question": "Pokaż zadania oznaczone jako zbyt trudne"
+            },
+            "8": {
+              "question": "Pokaż zadania, które są wyłączone"
+            }
+          }
+        },
+        "1": {
+          "options": {
+            "0": {
+              "question": "Nazwa wyzwania zawiera {search}"
+            }
+          }
+        },
+        "2": {
+          "options": {
+            "0": {
+              "question": "ID wyzwania pasuje do {search}"
+            }
+          }
+        }
+      },
+      "name": "Zadania MapRoulette",
+      "tagRenderings": {
+        "mark_duplicate": {
+          "render": {
+            "special": {
+              "message": "Oznacz jako nieznalezione lub fałszywie pozytywne"
+            }
+          }
+        },
+        "mark_fixed": {
+          "render": {
+            "special": {
+              "message": "Oznacz jako naprawione"
+            }
+          }
+        },
+        "mark_too_hard": {
+          "render": {
+            "special": {
+              "message": "Oznacz jako zbyt trudne"
+            }
+          }
+        },
+        "status": {
+          "mappings": {
+            "0": {
+              "then": "Zadanie jest stworzone"
+            },
+            "1": {
+              "then": "Zadanie jest naprawione"
+            },
+            "2": {
+              "then": "Zadanie jest fałszywie pozytywne"
+            },
+            "3": {
+              "then": "Zadanie jest pominięte"
+            },
+            "4": {
+              "then": "Zadania jest usunięte"
+            },
+            "5": {
+              "then": "Zadania jest już wykonane"
+            },
+            "6": {
+              "then": "Zadanie jest oznaczone jako zbyt trudne"
+            },
+            "7": {
+              "then": "Zadanie jest wyłączone"
+            }
+          }
+        }
+      },
+      "title": {
+        "render": "Obiekt MapRoulette: {parentName}"
+      }
+    },
+    "maproulette_challenge": {
+      "filter": {
+        "0": {
+          "options": {
+            "0": {
+              "question": "Pokaż zadania z wszystkimi statusami"
+            },
+            "1": {
+              "question": "Pokaż zadania, które zostały stworzone"
+            },
+            "2": {
+              "question": "Pokaż zadania, które są już wykonane"
+            }
+          }
+        }
+      }
+    },
+    "note": {
+      "title": {
+        "mappings": {
+          "0": {
+            "then": "Zamknięta notatka"
+          }
+        },
+        "render": "Notatka"
+      }
+    },
+    "observation_tower": {
+      "description": "Wieże z panoramicznym widokiem",
+      "name": "Wieże obserwacyjne",
+      "tagRenderings": {
+        "Fee": {
+          "mappings": {
+            "0": {
+              "then": "Darmowe wejście"
+            }
+          },
+          "question": "Ile kosztuje wstęp na tę wieżę?",
+          "render": "Wizyta na tej wieży kosztuje <b>{charge}</b>"
+        },
+        "Height": {
+          "question": "Jaka jest wysokość tej wieży?",
+          "render": "Ta wieża ma wysokość {height}"
+        },
+        "Operator": {
+          "question": "Kto obsługuje tę wieżę?",
+          "render": "Obsługiwana przez <b>{operator}</b>"
+        },
+        "access": {
+          "mappings": {
+            "0": {
+              "then": "Ta wieża jest publicznie dostępna"
+            },
+            "1": {
+              "then": "Ta wieża można być zwiedzana tylko z przewodnikiem"
+            }
+          }
+        },
+        "elevator": {
+          "mappings": {
+            "0": {
+              "then": "Ta wieża ma windę, która zabiera zwiedzających na górę"
+            },
+            "1": {
+              "then": "Ta wieża nie ma windy"
+            }
+          },
+          "question": "Czy ta wieża ma windę?"
+        },
+        "name": {
+          "mappings": {
+            "0": {
+              "then": "Ta wieża nie ma określonej nazwy"
+            }
+          },
+          "question": "Jaka jest nazwa tej wieży?",
+          "render": "Ta wieża nazywa się <b>{name}</b>"
+        },
+        "step_count": {
+          "question": "Ile pojedynczych stopni trzeba pokonać, aby dostać się na górę tej wieży?",
+          "render": "Ta wieża ma {step_count} stopni na górę"
+        }
+      },
+      "title": {
+        "mappings": {
+          "0": {
+            "then": "<b>{name}</b>"
+          }
+        },
+        "render": "Wieża obserwacyjna"
+      },
+      "units": {
+        "0": {
+          "applicableUnits": {
+            "0": {
+              "human": " metr"
+            }
+          }
+        }
+      }
+    },
+    "osm_community_index": {
+      "description": "Warstwa pokazująca społeczności OpenStreetMap",
+      "filter": {
+        "0": {
+          "options": {
+            "0": {
+              "question": "Kraj"
+            }
+          }
+        },
+        "2": {
+          "options": {
+            "0": {
+              "question": "Region"
+            }
+          }
+        },
+        "4": {
+          "options": {
+            "0": {
+              "question": "Terytorium"
+            }
+          }
+        },
+        "5": {
+          "options": {
+            "0": {
+              "question": "Świat"
+            }
+          }
+        },
+        "6": {
+          "options": {
+            "0": {
+              "question": "Inne społeczności"
+            }
+          }
+        }
+      },
+      "name": "Indeks społeczności OSM",
+      "title": {
+        "render": "Indeks społeczności OSM"
+      }
+    },
+    "parcel_lockers": {
+      "description": "Warstwa pokazująca paczkomaty umożliwiające odbieranie i wysyłanie przesyłek.",
+      "name": "Paczkomaty",
+      "presets": {
+        "0": {
+          "title": "paczkomat"
+        }
+      },
+      "tagRenderings": {
+        "brand": {
+          "freeform": {
+            "placeholder": "Marka"
+          },
+          "mappings": {
+            "0": {
+              "then": "To jest paczkomat Amazonu"
+            },
+            "3": {
+              "then": "To jest paczkomat PostNL"
+            }
+          },
+          "question": "Jakiej marki jest ten paczkomat?",
+          "render": "To jest paczkomat marki {brand}"
+        },
+        "mail-in": {
+          "mappings": {
+            "0": {
+              "then": "Z tego paczkomatu można wysyłać przesyłki"
+            },
+            "1": {
+              "then": "Z tego paczkomatu <b>nie można</b> wysyłać przesyłek"
+            }
+          },
+          "question": "Czy z tego paczkomatu można wysyłać przesyłki?"
+        },
+        "operator": {
+          "freeform": {
+            "placeholder": "Operator"
+          },
+          "render": "Ten paczkomat jest obsługiwany przez {operator}"
+        },
+        "pickup": {
+          "mappings": {
+            "0": {
+              "then": "Z tego paczkomatu można odbierać przesyłki"
+            },
+            "1": {
+              "then": "Z tego paczkomatu <b>nie można</b> odbierać przesyłek"
+            }
+          },
+          "question": "Czy z tego paczkomatu można odbierać przesyłki?"
+        }
+      },
+      "title": {
+        "mappings": {
+          "0": {
+            "then": "Paczkomat {brand}"
+          }
+        },
+        "render": "Paczkomat"
+      }
+    },
+    "parking": {
+      "description": "Warstwa pokazująca parkingi samochodowe",
+      "name": "Parking",
+      "presets": {
+        "0": {
+          "title": "parking samochodowy"
+        }
+      },
+      "tagRenderings": {
+        "capacity": {
+          "freeform": {
+            "placeholder": "Liczba miejsc parkingowych"
+          },
+          "question": "Ile miejsc parkingowych jest na tym parkingu?",
+          "render": "Jest {capacity} miejsc parkingowych"
+        },
+        "capacity-disabled": {
+          "freeform": {
+            "placeholder": "Liczba miejsc parkingowych przeznaczonych dla niepełnosprawnych"
+          },
+          "mappings": {
+            "0": {
+              "then": "Są tutaj miejsca parkingowe dla niepełnosprawnych, ale nie wiadomo ile"
+            },
+            "1": {
+              "then": "Nie ma tutaj żadnych miejsc parkingowych dla niepełnosprawnych"
+            },
+            "2": {
+              "then": "Nie ma tutaj żadnych miejsc parkingowych dla niepełnosprawnych"
+            }
+          },
+          "question": "Jak wiele miejsc parkingowych dla niepełnosprawnych znajduje się na tym parkingu?",
+          "render": "Jest {capacity:disabled} miejsc parkingowych dla niepełnosprawnych"
+        },
+        "parking-type": {
+          "mappings": {
+            "2": {
+              "then": "To jest podziemny parking"
+            },
+            "3": {
+              "then": "To jest wielopiętrowy parking"
+            },
+            "5": {
+              "then": "To jest pas do parkowania na jezdni"
+            }
+          },
+          "question": "Jaki to rodzaj parkingu?"
+        }
+      },
+      "title": {
+        "render": "Parking samochodowy"
+      }
+    },
+    "parking_spaces": {
+      "description": "Warstwa pokazująca pojedyncze miejsca parkingowe.",
+      "name": "Miejsca parkingowe",
+      "tagRenderings": {
+        "type": {
+          "mappings": {
+            "0": {
+              "then": "To jest zwykłe miejsce parkingowe."
+            },
+            "1": {
+              "then": "To jest zwykłe miejsce parkingowe."
+            },
+            "2": {
+              "then": "To jest miejsce parkingowe dla niepełnosprawnych."
+            },
+            "3": {
+              "then": "To jest prywatne miejsce parkingowe."
+            },
+            "4": {
+              "then": "To miejsce parkingowe jest zarezerwowane dla ładowania pojazdów."
+            },
+            "5": {
+              "then": "To miejsce parkingowe jest przeznaczone dla dostaw."
+            },
+            "8": {
+              "then": "To miejsce parkingowe jest przeznaczone dla busów."
+            },
+            "9": {
+              "then": "To miejsce parkingowe jest przeznaczone dla motocykli."
+            },
+            "10": {
+              "then": "To miejsce jest przeznaczone dla rodziców z dziećmi."
+            },
+            "11": {
+              "then": "To jest miejsce parkingowe przeznaczone dla pracowników."
+            },
+            "12": {
+              "then": "To miejsce parkingowe jest przeznaczone dla taksówek."
+            }
+          }
+        }
+      }
+    },
+    "postoffices": {
+      "tagRenderings": {
+        "parcel-from": {
+          "mappings": {
+            "0": {
+              "then": "Można tutaj wysłać paczki"
+            },
+            "1": {
+              "then": "Nie można tutaj wysłać paczek"
+            }
+          },
+          "question": "Czy można tutaj wysłać paczkę?"
+        }
+      }
+    },
+    "public_bookcase": {
+      "tagRenderings": {
+        "public_bookcase-brand": {
+          "mappings": {
+            "0": {
+              "then": "Część sieci \"Little Free Library\""
+            }
+          }
+        }
+      }
     },
     "questions": {
-        "tagRenderings": {
-            "denominations-coins": {
-                "mappings": {
-                    "0": {
-                        "then": "Akceptowane są monety 1 centowe"
-                    },
-                    "1": {
-                        "then": "Akceptowane są monety 2 centowe"
-                    },
-                    "2": {
-                        "then": "Akceptowane są monety 5 centowe"
-                    },
-                    "3": {
-                        "then": "Akceptowane są monety 10-centowe"
-                    },
-                    "4": {
-                        "then": "Akceptowane są monety 20-centowe"
-                    },
-                    "5": {
-                        "then": "Akceptowane są monety 50-centowe"
-                    },
-                    "6": {
-                        "then": "Akceptowane są monety 1 euro"
-                    },
-                    "7": {
-                        "then": "Akceptowane są monety 2 euro"
-                    }
-                },
-                "question": "Jakimi monetami można tutaj zapłacić?"
-            },
-            "denominations-notes": {
-                "mappings": {
-                    "0": {
-                        "then": "Banknoty 5 euro są akceptowane"
-                    },
-                    "1": {
-                        "then": "Banknoty 10 euro są akceptowane"
-                    },
-                    "2": {
-                        "then": "Banknoty 20 euro są akceptowane"
-                    },
-                    "3": {
-                        "then": "Banknoty 50 euro są akceptowane"
-                    },
-                    "4": {
-                        "then": "Banknoty 100 euro są akceptowane"
-                    },
-                    "5": {
-                        "then": "Banknoty 200 euro są akceptowane"
-                    },
-                    "6": {
-                        "then": "Banknoty 500 euro są akceptowane"
-                    }
-                },
-                "question": "Jakimi banknotami można tu zapłacić?"
-            },
-            "description": {
-                "question": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.",
-                "questionHint": "Nie powtarzaj już podanych faktów"
-            },
-            "dog-access": {
-                "mappings": {
-                    "0": {
-                        "then": "Psy dozwolone"
-                    },
-                    "1": {
-                        "then": "Psy <b>nie</b> dozwolone"
-                    },
-                    "2": {
-                        "then": "Psy dozwolone, ale muszą być na smyczy"
-                    },
-                    "3": {
-                        "then": "Psy dozwolone i mogą biegać bez ograniczeń"
-                    }
-                },
-                "question": "Czy w tej firmie psy są dozwolone?"
-            },
-            "email": {
-                "question": "Jaki jest adres e-mail do {title()}?"
-            },
-            "induction-loop": {
-                "mappings": {
-                    "0": {
-                        "then": "To miejsce ma pętlę indukcyjną audio"
-                    },
-                    "1": {
-                        "then": "To miejsce <b>nie ma</b> pętli indukcyjnej dźwięku"
-                    }
-                },
-                "question": "Czy to miejsce ma pętlę indukcyjną dźwięku dla osób niedosłyszących?"
-            },
-            "internet": {
-                "mappings": {
-                    "0": {
-                        "then": "To miejsce oferuje bezprzewodowy dostęp do Internetu"
-                    },
-                    "1": {
-                        "then": "To miejsce <b>nie</b> oferuje dostępu do Internetu"
-                    },
-                    "2": {
-                        "then": "To miejsce oferuje dostęp do Internetu"
-                    },
-                    "3": {
-                        "then": "To miejsce oferuje dostęp do Internetu za pośrednictwem terminala lub komputera"
-                    },
-                    "4": {
-                        "then": "To miejsce oferuje przewodowy dostęp do Internetu"
-                    }
-                },
-                "question": "Czy to miejsce oferuje dostęp do Internetu?"
-            },
-            "internet-fee": {
-                "mappings": {
-                    "0": {
-                        "then": "W tym miejscu dostęp do Internetu jest płatny"
-                    },
-                    "1": {
-                        "then": "Dostęp do Internetu jest w tym miejscu bezpłatny"
-                    },
-                    "2": {
-                        "then": "Dostęp do Internetu jest w tym miejscu bezpłatny, tylko dla klientów"
-                    }
-                },
-                "question": "Czy dostęp do Internetu jest płatny?"
-            },
-            "internet-ssid": {
-                "freeform": {
-                    "placeholder": "Wprowadź nazwę sieci"
-                },
-                "question": "Jaka jest nazwa sieci dla bezprzewodowego dostępu do Internetu?",
-                "render": "Nazwa sieci to <b>{internet_access:ssid}</b>"
-            },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Znajduje się pod ziemią"
-                    },
-                    "1": {
-                        "then": "Znajduje się na parterze"
-                    },
-                    "2": {
-                        "then": "Znajduje się na parterze"
-                    },
-                    "3": {
-                        "then": "Znajduje się na pierwszym piętrze"
-                    },
-                    "4": {
-                        "then": "Położone na pierwszym poziomie piwnicy"
-                    }
-                },
-                "question": "Na jakim poziomie znajduje się ta funkcja?",
-                "render": "Znajduje się na {level} piętrze"
-            },
-            "luminous_or_lit": {
-                "mappings": {
-                    "0": {
-                        "then": "Ten obiekt zarówno emituje światło, jak i jest oświetlany przez zewnętrzne źródło światła"
-                    },
-                    "1": {
-                        "then": "Ten obiekt emituje światło"
-                    },
-                    "2": {
-                        "then": "Ten obiekt jest oświetlony zewnętrznie, np. przez reflektor lub inne światła"
-                    },
-                    "3": {
-                        "then": "Obiekt ten nie emituje światła i nie jest oświetlany z zewnątrz"
-                    }
-                },
-                "question": "Czy ten obiekt jest oświetlony lub emituje światło?"
-            },
-            "multilevels": {
-                "override": {
-                    "question": "Na jakie poziomy jedzie ta winda?",
-                    "render": "Ta winda jedzie na piętra {level}"
-                }
-            },
-            "opening_hours": {
-                "question": "Jakie są godziny otwarcia {title()}?",
-                "render": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}"
-            },
-            "opening_hours_24_7": {
-                "override": {
-                    "mappings": {
-                        "0": {
-                            "then": "Otwarte 24/7 (również w święta)"
-                        }
-                    }
-                }
-            },
-            "opening_hours_by_appointment": {
-                "override": {
-                    "mappings": {
-                        "0": {
-                            "then": "Tylko po wcześniejszym umówieniu się"
-                        },
-                        "1": {
-                            "then": "Tylko po wcześniejszym umówieniu się"
-                        }
-                    }
-                }
-            },
-            "payment-options": {
-                "mappings": {
-                    "0": {
-                        "then": "Płatność gotówkowa jest tutaj dostępna"
-                    },
-                    "1": {
-                        "then": "Płatność kartą jest tutaj dostępna"
-                    }
-                },
-                "question": "Jakie metody płatności są tutaj dostępne?"
-            },
-            "payment-options-advanced": {
-                "override": {
-                    "mappings+": {
-                        "0": {
-                            "then": "Płatność odbywa się za pomocą dedykowanej aplikacji"
-                        },
-                        "1": {
-                            "then": "Płatność odbywa się za pomocą karty członkowskiej"
-                        }
-                    }
-                }
-            },
-            "payment-options-split": {
-                "override": {
-                    "mappings+": {
-                        "0": {
-                            "then": "Monety są tutaj akceptowane"
-                        },
-                        "1": {
-                            "then": "Banknoty są tutaj akceptowane"
-                        },
-                        "2": {
-                            "then": "Akceptowane są tutaj karty debetowe"
-                        },
-                        "3": {
-                            "then": "Akceptowane są tutaj karty kredytowe"
-                        }
-                    }
-                }
-            },
-            "phone": {
-                "question": "Jaki jest numer telefonu do {title()}?"
-            },
-            "service:electricity": {
-                "mappings": {
-                    "0": {
-                        "then": "W budynku znajduje się wiele gniazdek elektrycznych, gdzie klienci mogą naładować swoje urządzenia"
-                    },
-                    "1": {
-                        "then": "W budynku znajduje się kilka gniazdek elektrycznych, gdzie klienci mogą naładować swoje urządzenia"
-                    },
-                    "2": {
-                        "then": "W budynku nie ma gniazdek elektrycznych dostępnych dla klientów, ale mogą zostać one udostępnione po spytaniu obsługi"
-                    },
-                    "3": {
-                        "then": "W budynku nie ma gniazdek elektrycznych dostępnych dla klientów"
-                    }
-                },
-                "question": "Czy w tym przybytku znajdują się gniazdka elektryczne, gdzie klienci mogą naładować swoje urządzenia?"
-            },
-            "smoking": {
-                "mappings": {
-                    "0": {
-                        "then": "Palenie jest <b>dozwolone</b>"
-                    },
-                    "1": {
-                        "then": "Palenie jest <b>zakazane</b>"
-                    },
-                    "2": {
-                        "then": "Palenie jest <b>dozwolone na zewnątrz</b>."
-                    }
-                },
-                "question": "Czy w {title()} wolno palić?"
-            },
-            "website": {
-                "question": "Jaka jest strona internetowa {title()}?"
-            },
-            "wheelchair-access": {
-                "mappings": {
-                    "0": {
-                        "then": "W tym miejscu zainstalowane zostały udogodnienia dla osób na wózkach inwalidzkich"
-                    },
-                    "1": {
-                        "then": "To miejsce jest łatwo dostępne dla osób na wózkach inwalidzkich"
-                    },
-                    "2": {
-                        "then": "To miejsce jest dostępne dla osób na wózkach inwalidzkich, ale z pewnymi trudnościami"
-                    },
-                    "3": {
-                        "then": "To miejsce jest niedostępne dla osób na wózkach inwalidzkich"
-                    }
-                },
-                "question": "Czy to miejsce jest dostępne dla osób na wózkach inwalidzkich?"
-            },
-            "wikipedia": {
-                "mappings": {
-                    "0": {
-                        "then": "Link do strony Wikipedii nie został jeszcze określony"
-                    },
-                    "1": {
-                        "then": "Link do strony Wikipedii nie został jeszcze określony"
-                    }
-                },
-                "question": "Jaki jest powiązany obiekt Wikidata?"
+      "tagRenderings": {
+        "check_date": {
+          "mappings": {
+            "0": {
+              "then": "Ten obiekt został ostatnio sprawdzony dzisiaj"
             }
+          },
+          "question": "Kiedy ten obiekt został ostatnio sprawdzony?",
+          "render": "Ten obiekt był ostatnio sprawdzony <b>{check_date}</b>"
+        },
+        "denominations-coins": {
+          "mappings": {
+            "0": {
+              "then": "Akceptowane są monety 1 centowe"
+            },
+            "1": {
+              "then": "Akceptowane są monety 2 centowe"
+            },
+            "2": {
+              "then": "Akceptowane są monety 5 centowe"
+            },
+            "3": {
+              "then": "Akceptowane są monety 10-centowe"
+            },
+            "4": {
+              "then": "Akceptowane są monety 20-centowe"
+            },
+            "5": {
+              "then": "Akceptowane są monety 50-centowe"
+            },
+            "6": {
+              "then": "Akceptowane są monety 1 euro"
+            },
+            "7": {
+              "then": "Akceptowane są monety 2 euro"
+            }
+          },
+          "question": "Jakimi monetami można tutaj zapłacić?"
+        },
+        "denominations-notes": {
+          "mappings": {
+            "0": {
+              "then": "Banknoty 5 euro są akceptowane"
+            },
+            "1": {
+              "then": "Banknoty 10 euro są akceptowane"
+            },
+            "2": {
+              "then": "Banknoty 20 euro są akceptowane"
+            },
+            "3": {
+              "then": "Banknoty 50 euro są akceptowane"
+            },
+            "4": {
+              "then": "Banknoty 100 euro są akceptowane"
+            },
+            "5": {
+              "then": "Banknoty 200 euro są akceptowane"
+            },
+            "6": {
+              "then": "Banknoty 500 euro są akceptowane"
+            }
+          },
+          "question": "Jakimi banknotami można tu zapłacić?"
+        },
+        "description": {
+          "question": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.",
+          "questionHint": "Nie powtarzaj już podanych faktów"
+        },
+        "dog-access": {
+          "mappings": {
+            "0": {
+              "then": "Psy dozwolone"
+            },
+            "1": {
+              "then": "Psy <b>nie</b> dozwolone"
+            },
+            "2": {
+              "then": "Psy dozwolone, ale muszą być na smyczy"
+            },
+            "3": {
+              "then": "Psy dozwolone i mogą biegać bez ograniczeń"
+            }
+          },
+          "question": "Czy w tej firmie psy są dozwolone?"
+        },
+        "email": {
+          "question": "Jaki jest adres e-mail do {title()}?"
+        },
+        "induction-loop": {
+          "mappings": {
+            "0": {
+              "then": "To miejsce ma pętlę indukcyjną audio"
+            },
+            "1": {
+              "then": "To miejsce <b>nie ma</b> pętli indukcyjnej dźwięku"
+            }
+          },
+          "question": "Czy to miejsce ma pętlę indukcyjną dźwięku dla osób niedosłyszących?"
+        },
+        "internet": {
+          "mappings": {
+            "0": {
+              "then": "To miejsce oferuje bezprzewodowy dostęp do Internetu"
+            },
+            "1": {
+              "then": "To miejsce <b>nie</b> oferuje dostępu do Internetu"
+            },
+            "2": {
+              "then": "To miejsce oferuje dostęp do Internetu"
+            },
+            "3": {
+              "then": "To miejsce oferuje dostęp do Internetu za pośrednictwem terminala lub komputera"
+            },
+            "4": {
+              "then": "To miejsce oferuje przewodowy dostęp do Internetu"
+            }
+          },
+          "question": "Czy to miejsce oferuje dostęp do Internetu?"
+        },
+        "internet-fee": {
+          "mappings": {
+            "0": {
+              "then": "W tym miejscu dostęp do Internetu jest płatny"
+            },
+            "1": {
+              "then": "Dostęp do Internetu jest w tym miejscu bezpłatny"
+            },
+            "2": {
+              "then": "Dostęp do Internetu jest w tym miejscu bezpłatny, tylko dla klientów"
+            }
+          },
+          "question": "Czy dostęp do Internetu jest płatny?"
+        },
+        "internet-ssid": {
+          "freeform": {
+            "placeholder": "Wprowadź nazwę sieci"
+          },
+          "question": "Jaka jest nazwa sieci dla bezprzewodowego dostępu do Internetu?",
+          "render": "Nazwa sieci to <b>{internet_access:ssid}</b>"
+        },
+        "level": {
+          "mappings": {
+            "0": {
+              "then": "Znajduje się pod ziemią"
+            },
+            "1": {
+              "then": "Znajduje się na parterze"
+            },
+            "2": {
+              "then": "Znajduje się na parterze"
+            },
+            "3": {
+              "then": "Znajduje się na pierwszym piętrze"
+            },
+            "4": {
+              "then": "Położone na pierwszym poziomie piwnicy"
+            }
+          },
+          "question": "Na jakim poziomie znajduje się ta funkcja?",
+          "render": "Znajduje się na {level} piętrze"
+        },
+        "luminous_or_lit": {
+          "mappings": {
+            "0": {
+              "then": "Ten obiekt zarówno emituje światło, jak i jest oświetlany przez zewnętrzne źródło światła"
+            },
+            "1": {
+              "then": "Ten obiekt emituje światło"
+            },
+            "2": {
+              "then": "Ten obiekt jest oświetlony zewnętrznie, np. przez reflektor lub inne światła"
+            },
+            "3": {
+              "then": "Obiekt ten nie emituje światła i nie jest oświetlany z zewnątrz"
+            }
+          },
+          "question": "Czy ten obiekt jest oświetlony lub emituje światło?"
+        },
+        "multilevels": {
+          "override": {
+            "question": "Na jakie poziomy jedzie ta winda?",
+            "render": "Ta winda jedzie na piętra {level}"
+          }
+        },
+        "opening_hours": {
+          "question": "Jakie są godziny otwarcia {title()}?",
+          "render": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}"
+        },
+        "opening_hours_24_7": {
+          "override": {
+            "mappings": {
+              "0": {
+                "then": "Otwarte 24/7 (również w święta)"
+              }
+            }
+          }
+        },
+        "opening_hours_by_appointment": {
+          "override": {
+            "mappings": {
+              "0": {
+                "then": "Tylko po wcześniejszym umówieniu się"
+              },
+              "1": {
+                "then": "Tylko po wcześniejszym umówieniu się"
+              }
+            }
+          }
+        },
+        "payment-options": {
+          "mappings": {
+            "0": {
+              "then": "Płatność gotówkowa jest tutaj dostępna"
+            },
+            "1": {
+              "then": "Płatność kartą jest tutaj dostępna"
+            }
+          },
+          "question": "Jakie metody płatności są tutaj dostępne?"
+        },
+        "payment-options-advanced": {
+          "override": {
+            "mappings+": {
+              "0": {
+                "then": "Płatność odbywa się za pomocą dedykowanej aplikacji"
+              },
+              "1": {
+                "then": "Płatność odbywa się za pomocą karty członkowskiej"
+              }
+            }
+          }
+        },
+        "payment-options-split": {
+          "override": {
+            "mappings+": {
+              "0": {
+                "then": "Monety są tutaj akceptowane"
+              },
+              "1": {
+                "then": "Banknoty są tutaj akceptowane"
+              },
+              "2": {
+                "then": "Akceptowane są tutaj karty debetowe"
+              },
+              "3": {
+                "then": "Akceptowane są tutaj karty kredytowe"
+              }
+            }
+          }
+        },
+        "phone": {
+          "question": "Jaki jest numer telefonu do {title()}?"
+        },
+        "service:electricity": {
+          "mappings": {
+            "0": {
+              "then": "W budynku znajduje się wiele gniazdek elektrycznych, gdzie klienci mogą naładować swoje urządzenia"
+            },
+            "1": {
+              "then": "W budynku znajduje się kilka gniazdek elektrycznych, gdzie klienci mogą naładować swoje urządzenia"
+            },
+            "2": {
+              "then": "W budynku nie ma gniazdek elektrycznych dostępnych dla klientów, ale mogą zostać one udostępnione po spytaniu obsługi"
+            },
+            "3": {
+              "then": "W budynku nie ma gniazdek elektrycznych dostępnych dla klientów"
+            }
+          },
+          "question": "Czy w tym przybytku znajdują się gniazdka elektryczne, gdzie klienci mogą naładować swoje urządzenia?"
+        },
+        "smoking": {
+          "mappings": {
+            "0": {
+              "then": "Palenie jest <b>dozwolone</b>"
+            },
+            "1": {
+              "then": "Palenie jest <b>zakazane</b>"
+            },
+            "2": {
+              "then": "Palenie jest <b>dozwolone na zewnątrz</b>."
+            }
+          },
+          "question": "Czy w {title()} wolno palić?"
+        },
+        "website": {
+          "question": "Jaka jest strona internetowa {title()}?"
+        },
+        "wheelchair-access": {
+          "mappings": {
+            "0": {
+              "then": "W tym miejscu zainstalowane zostały udogodnienia dla osób na wózkach inwalidzkich"
+            },
+            "1": {
+              "then": "To miejsce jest łatwo dostępne dla osób na wózkach inwalidzkich"
+            },
+            "2": {
+              "then": "To miejsce jest dostępne dla osób na wózkach inwalidzkich, ale z pewnymi trudnościami"
+            },
+            "3": {
+              "then": "To miejsce jest niedostępne dla osób na wózkach inwalidzkich"
+            }
+          },
+          "question": "Czy to miejsce jest dostępne dla osób na wózkach inwalidzkich?"
+        },
+        "wikipedia": {
+          "mappings": {
+            "0": {
+              "then": "Link do strony Wikipedii nie został jeszcze określony"
+            },
+            "1": {
+              "then": "Link do strony Wikipedii nie został jeszcze określony"
+            }
+          },
+          "question": "Jaki jest powiązany obiekt Wikidata?"
         }
+      }
+    },
+    "reception_desk": {
+      "tagRenderings": {
+        "desk-height": {
+          "question": "Jaka jest wysokość tego biurka recepcji? ",
+          "questionHint": "Jest to mierzone od podłogi do najniższej użytecznej części biurka",
+          "render": "Wysokość tego biurka to <b>{canonical(desk:height)}</b>"
+        }
+      },
+      "units": {
+        "0": {
+          "applicableUnits": {
+            "0": {
+              "human": "metr"
+            },
+            "1": {
+              "human": "centymetr"
+            }
+          }
+        }
+      }
+    },
+    "recycling": {
+      "tagRenderings": {
+        "recycling-accepts": {
+          "mappings": {
+            "16": {
+              "then": "Plastik może być tutaj poddany recyklingowi"
+            }
+          }
+        }
+      }
+    },
+    "school": {
+      "tagRenderings": {
+        "school-language": {
+          "render": {
+            "special": {
+              "render_all": "Następujące języki są używane w tej szkole:{list()}",
+              "render_single_language": "Język {language():font-bold} jest głównym językiem używanym w tej szkole"
+            }
+          }
+        },
+        "school-name": {
+          "question": "Jaką nazwę ma ta szkoła?",
+          "render": "Ta szkoła nazywa się {name}"
+        },
+        "target-audience": {
+          "mappings": {
+            "3": {
+              "then": "To jest szkoła dla uczniów z autyzmem"
+            },
+            "6": {
+              "then": "To jest szkoła dla uczniów głuchych i słabosłyszących"
+            },
+            "7": {
+              "then": "To jest szkoła dla uczniów z niepełnosprawnościami"
+            },
+            "8": {
+              "then": "To jest szkoła dla uczniów z specjalnymi potrzebami"
+            }
+          }
+        }
+      },
+      "title": {
+        "render": "Szkoła <i>{name}</i>"
+      }
+    },
+    "windturbine": {
+      "title": {
+        "mappings": {
+          "0": {
+            "then": "{name}"
+          }
+        },
+        "render": "turbina wiatrowa"
+      }
     }
-}
+  }

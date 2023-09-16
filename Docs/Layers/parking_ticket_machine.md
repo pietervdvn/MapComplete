@@ -27,6 +27,7 @@ Layer with parking ticket machines to pay for parking.
 
   - [parkings](https://mapcomplete.org/parkings)
   - [personal](https://mapcomplete.org/personal)
+  - [vending_machine](https://mapcomplete.org/vending_machine)
 
 
 This is a special layer - data is not sourced from OpenStreetMap

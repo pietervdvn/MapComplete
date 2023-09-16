@@ -5,18 +5,21 @@
     "de": "Apotheken",
     "nl": "Apotheken",
     "pa_PK": "فارمیسی",
-    "ca": "Farmàcies"
+    "ca": "Farmàcies",
+    "fr": "Pharmacies"
   },
   "description": {
     "en": "A layer showing pharmacies, which (probably) dispense prescription drugs",
     "de": "Eine Ebene mit Apotheken, die (wahrscheinlich) verschreibungspflichtige Medikamente ausgeben",
-    "nl": "Deze laag toont apotheken, welke (waarschijnlijk) ook medicijnen onder voorschrift verkopen"
+    "nl": "Deze laag toont apotheken, welke (waarschijnlijk) ook medicijnen onder voorschrift verkopen",
+    "fr": "Une couche affichant les pharmacie qui (probablement) délivrent des médicaments"
   },
   "title": {
     "render": {
       "en": "{name}",
       "de": "{name}",
-      "nl": "{name}"
+      "nl": "{name}",
+      "fr": "{name}"
     },
     "mappings": [
       {
@@ -25,7 +28,8 @@
           "en": "Pharmacy",
           "de": "Apotheke",
           "nl": "Apotheek",
-          "pa_PK": "فارمیسی"
+          "pa_PK": "فارمیسی",
+          "fr": "Pharmacie"
         }
       }
     ]
@@ -48,13 +52,15 @@
         "placeholder": {
           "en": "Name of the pharmacy",
           "de": "Name der Apotheke",
-          "nl": "Naam van de apotheek"
+          "nl": "Naam van de apotheek",
+          "fr": "Nom de la pharmacie"
         }
       },
       "question": {
         "en": "What is the name of the pharmacy?",
         "de": "Wie lautet der Name der Apotheke?",
-        "nl": "Wat is de naam van deze apotheek?"
+        "nl": "Wat is de naam van deze apotheek?",
+        "fr": "Quel est le nom de cette pharmacie ?"
       },
       "render": {
         "en": "This pharmacy is called {name}",
@@ -144,7 +150,8 @@
           "question": {
             "en": "Has drive through",
             "de": "Bietet einen Durchfahr-Service an",
-            "nl": "Heeft een drive-through"
+            "nl": "Heeft een drive-through",
+            "fr": "A une drive"
           },
           "osmTags": "drive_through=yes"
         }
@@ -157,7 +164,8 @@
           "question": {
             "en": "Pharmacy able to provide prescription drugs",
             "de": "Apotheke, die verschreibungspflichtige Arzneimittel ausgibt",
-            "nl": "Deze apotheek verdeelt medicijnen met voorschrift"
+            "nl": "Deze apotheek verdeelt medicijnen met voorschrift",
+            "fr": "Pharmacie pouvant délivrer des médicaments sous prescription"
           },
           "osmTags": "dispensing=yes"
         }
@@ -173,7 +181,8 @@
       "title": {
         "en": "a pharmacy",
         "nl": "een apotheek",
-        "de": "eine Apotheke"
+        "de": "eine Apotheke",
+        "fr": "une pharmacie"
       }
     }
   ],

@@ -55,7 +55,8 @@
         "ru": "<strong>{name}</strong>",
         "ja": "<strong>{name}</strong>",
         "nl": "<strong>{name}</strong>",
-        "it": "<strong>{name}</strong>"
+        "it": "<strong>{name}</strong>",
+        "pl": "<strong>{name}</strong>"
       },
       "condition": "name~*"
     },

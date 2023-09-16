@@ -9,7 +9,8 @@
     "hu": "Kávézók és kocsmák",
     "es": "Cafeterías y bares",
     "da": "Caféer og pubber",
-    "ca": "Cafés i bars"
+    "ca": "Cafés i bars",
+    "pl": "Kawiarnie i puby"
   },
   "source": {
     "osmTags": {
@@ -36,7 +37,8 @@
         "ca": "un bar",
         "da": "en pub",
         "es": "un bar",
-        "fr": "un pub"
+        "fr": "un pub",
+        "pl": "pub"
       },
       "description": {
         "en": "A pub, mostly for drinking beers in a warm, relaxed interior",
@@ -61,7 +63,8 @@
         "ca": "un bar de copes",
         "da": "en bar",
         "es": "un bar de copas",
-        "fr": "un bar"
+        "fr": "un bar",
+        "pl": "bar"
       },
       "description": {
         "en": "A more modern and commercial <b>bar</b>, possibly with a music and light installation",
@@ -86,7 +89,8 @@
         "ca": "un cafè",
         "da": "en cafe",
         "es": "una cafetería",
-        "fr": "un café"
+        "fr": "un café",
+        "pl": "Kawiarnia"
       },
       "description": {
         "en": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
@@ -109,7 +113,8 @@
         "es": "un club nocturno o una discoteca",
         "fr": "une boîte de nuit ou discothèque",
         "da": "en natklub eller et diskotek",
-        "ca": "un club nocturn o discoteca"
+        "ca": "un club nocturn o discoteca",
+        "pl": "klub nocny lub dyskoteka"
       },
       "description": {
         "en": "A <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks",
@@ -131,7 +136,9 @@
       "da": "Pub",
       "es": "Bar",
       "fr": "Bar",
-      "pa_PK": "پب"
+      "pa_PK": "پب",
+      "eu": "Edaritegia",
+      "pl": "Pub"
     },
     "mappings": [
       {
@@ -148,7 +155,8 @@
           "ca": "<i>{name}</i>",
           "da": "<i>{name}</i>",
           "es": "<i>{name}</i>",
-          "fr": "<i>{name}</i>"
+          "fr": "<i>{name}</i>",
+          "eu": "<i>{name}</i>"
         }
       }
     ]
@@ -191,7 +199,8 @@
         "da": "Hvilken slags cafe er dette?",
         "es": "Qué tipo de cafe es este?",
         "fr": "Quel genre de café est-ce ?",
-        "ca": "Quin tipus de cafeteria és aquesta?"
+        "ca": "Quin tipus de cafeteria és aquesta?",
+        "pl": "Jakiego rodzaju jest to kawiarnia?"
       },
       "mappings": [
         {

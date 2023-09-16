@@ -179,7 +179,8 @@
                 "es": "El jardín está parcialmente a la sombra",
                 "da": "Haven er i delvis skygge",
                 "cs": "Zahrada je v polostínu",
-                "ca": "El jardí està parcialment a l'ombra"
+                "ca": "El jardí està parcialment a l'ombra",
+                "pl": "Ogród jest częściowo w cieniu"
               }
             },
             {
@@ -483,7 +484,8 @@
             "nb_NO": "Flere detaljer: {description}",
             "da": "Flere detaljer: {description}",
             "ca": "Més detalls: {description}",
-            "cs": "Další podrobnosti: {description}"
+            "cs": "Další podrobnosti: {description}",
+            "pl": "Więcej szczegółów: {description}"
           },
           "question": {
             "nl": "Aanvullende omschrijving van de tuin (indien nodig, en voor zover nog niet omschreven hierboven)",

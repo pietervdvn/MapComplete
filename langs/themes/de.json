@@ -912,7 +912,7 @@
                     "7": {
                         "options": {
                             "0": {
-                                "question": "Changeset fügte mindestens ein Bild hinzu"
+                                "question": "Im Änderungssatz wurde mindestens ein Bild hinzugefügt"
                             }
                         }
                     }
@@ -920,16 +920,16 @@
                 "name": "Zentrum der Änderungssätze",
                 "tagRenderings": {
                     "contributor": {
-                        "question": "Welcher Mitwirkende hat diese Änderung vorgenommen?",
-                        "render": "Änderung gemacht von <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                        "question": "Wer hat diese Änderung vorgenommen?",
+                        "render": "Änderung von <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
                     },
                     "host": {
-                        "question": "Mit welchem Host / welcher Website wurde diese Änderung gemacht?",
-                        "render": "Änderung vorgenommen mit <a href='{host}'>{host}</a>"
+                        "question": "Über welchen Host (Webseite) wurde diese Änderung vorgenommen?",
+                        "render": "Änderung über <a href='{host}'>{host}</a>"
                     },
                     "locale": {
-                        "question": "In welcher Sprache wurde diese Änderung vorgenommen?",
-                        "render": "Usersprache ist {locale}"
+                        "question": "In welcher Benutzersprache wurde diese Änderung vorgenommen?",
+                        "render": "Benutzersprache {locale}"
                     },
                     "show_changeset_id": {
                         "render": "Änderungssatz <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"

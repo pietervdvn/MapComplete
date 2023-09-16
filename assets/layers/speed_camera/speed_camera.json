@@ -31,7 +31,8 @@
         "en": "What is the maximum speed allowed at this speed camera?",
         "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit an diesem Blitzer?",
         "nl": "Wat is de maximum toegestane snelheid bij deze flitspaal?",
-        "es": "¿Cuál es la velocidad máxima permitida en este radar?"
+        "es": "¿Cuál es la velocidad máxima permitida en este radar?",
+        "fr": "Quelle est la vitesse maximale autorisée au niveau de ce radar ?"
       },
       "freeform": {
         "key": "maxspeed",
@@ -40,14 +41,16 @@
           "en": "Maximum speed allowed",
           "de": "Zulässige Höchstgeschwindigkeit",
           "nl": "Maximum toegestane snelheid",
-          "es": "Velocidad máxima permitida"
+          "es": "Velocidad máxima permitida",
+          "fr": "Vitesse maximale autorisée"
         }
       },
       "render": {
         "en": "The maximum speed allowed is {canonical(maxspeed)}",
         "de": "Die zulässige Höchstgeschwindigkeit beträgt {canonical(maxspeed)}",
         "nl": "De maximum toegestane snelheid is {canonical(maxspeed)}",
-        "es": "La velocidad máxima permitida es {canonical(maxspeed)}"
+        "es": "La velocidad máxima permitida es {canonical(maxspeed)}",
+        "fr": "La vitesse maximale autorisée est {canonical(maxspeed)}"
       }
     },
     {

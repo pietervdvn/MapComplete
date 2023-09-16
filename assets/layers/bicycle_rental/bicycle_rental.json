@@ -34,7 +34,8 @@
       "da": "Cykeludlejning",
       "fr": "Location de vélo",
       "cs": "Půjčovna kol",
-      "ca": "Lloguer de bicicletes"
+      "ca": "Lloguer de bicicletes",
+      "pl": "Wypożyczalnia rowerów"
     },
     "mappings": [
       {
@@ -51,7 +52,9 @@
           "es": "{name}",
           "da": "{name}",
           "fr": "{name}",
-          "cs": "{name}"
+          "cs": "{name}",
+          "eu": "{name}",
+          "pl": "{name}"
         }
       }
     ]
@@ -358,7 +361,8 @@
               "eo": "urbaj bicikloj",
               "fr": "vélos de ville",
               "cs": "městská kola",
-              "ca": "Bicicletes de ciutat"
+              "ca": "Bicicletes de ciutat",
+              "pl": "rowery miejskie"
             }
           ],
           [
@@ -372,7 +376,8 @@
               "eo": "elektraj bicikloj",
               "fr": "vélos électriques",
               "cs": "elektrokola",
-              "ca": "bicicletes elèctriques"
+              "ca": "bicicletes elèctriques",
+              "pl": "rowery elektryczne"
             }
           ],
           [
@@ -386,7 +391,8 @@
               "eo": "bicikloj por infanoj",
               "fr": "vélos d'enfants",
               "cs": "kola pro děti",
-              "ca": "bicicletes per a xiquets"
+              "ca": "bicicletes per a xiquets",
+              "pl": "rowery dla dzieci"
             }
           ],
           [
@@ -400,7 +406,8 @@
               "eo": "BMX-bicikloj",
               "fr": "BMX",
               "cs": "BMX kola",
-              "ca": "Bicicletes BMX"
+              "ca": "Bicicletes BMX",
+              "pl": "rowery BMX"
             }
           ],
           [
@@ -414,7 +421,9 @@
               "da": "mountainbike",
               "eo": "montobicikloj",
               "fr": "vélos de montagne",
-              "cs": "horská kola"
+              "cs": "horská kola",
+              "eu": "mendiko bizikletak",
+              "pl": "rowery górskie"
             }
           ],
           [
@@ -440,7 +449,9 @@
               "da": "tandem",
               "es": "tándem",
               "fr": "tandem",
-              "cs": "tandem"
+              "cs": "tandem",
+              "eu": "tandem",
+              "pl": "tandem"
             }
           ]
         ]

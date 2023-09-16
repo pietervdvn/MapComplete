@@ -4527,6 +4527,20 @@
                     }
                 }
             },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Akzeptiert Debitkarten"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Akzeptiert Kreditkarten"
+                    }
+                }
+            },
             "5": {
                 "options": {
                     "0": {
@@ -4827,6 +4841,12 @@
                 "options": {
                     "0": {
                         "question": "Vegetarische Gerichte im Angebot"
+                    },
+                    "1": {
+                        "question": "Nur Fastfood-Geschäfte"
+                    },
+                    "2": {
+                        "question": "Nur Restaurants"
                     }
                 }
             },
@@ -7317,6 +7337,9 @@
                     }
                 },
                 "question": "Wird das Objekt beleuchtet oder leuchtet es selbst?"
+            },
+            "mastodon": {
+                "question": "Wie lautet der Mastodon-Handle von {title()}?"
             },
             "multilevels": {
                 "override": {

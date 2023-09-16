@@ -19,7 +19,8 @@
             "da": "Åbent nu",
             "zh_Hant": "目前開放",
             "id": "Saat ini buka",
-            "it": "Aperto ora"
+            "it": "Aperto ora",
+            "pl": "Otwarte teraz"
           },
           "osmTags": "_isOpen=yes"
         }
@@ -35,7 +36,8 @@
             "de": "Akzeptiert Barzahlung",
             "nl": "Accepteert cash",
             "es": "Acepta efectivo",
-            "fr": "Accepte les espèces"
+            "fr": "Accepte les espèces",
+            "pl": "Przyjmuje gotówkę"
           }
         }
       ]
@@ -50,7 +52,8 @@
             "de": "Akzeptiert Kartenzahlung",
             "nl": "Accepteert betaalkaarten",
             "es": "Acepta el pago por tarjeta",
-            "fr": "Accepte les cartes de paiement"
+            "fr": "Accepte les cartes de paiement",
+            "pl": "Przyjmuje karty płatnicze"
           }
         }
       ]
@@ -61,7 +64,9 @@
         {
           "osmTags": "payment:debit_cards=yes",
           "question": {
-            "en": "Accepts debit cards"
+            "en": "Accepts debit cards",
+            "de": "Akzeptiert Debitkarten",
+            "pl": "Przyjmuje karty debetowe"
           }
         }
       ]
@@ -72,7 +77,9 @@
         {
           "osmTags": "payment:credit_cards=yes",
           "question": {
-            "en": "Accepts credit cards"
+            "en": "Accepts credit cards",
+            "de": "Akzeptiert Kreditkarten",
+            "pl": "Przyjmuje karty kredytowe"
           }
         }
       ]
@@ -84,14 +91,16 @@
           "question": {
             "en": "With and without images",
             "nl": "Met en zonder afbeelding",
-            "de": "Mit und ohne Bild"
+            "de": "Mit und ohne Bild",
+            "pl": "Z oraz bez zdjęć"
           }
         },
         {
           "question": {
             "en": "Has at least one image",
             "de": "Hat mindestens ein Bild",
-            "nl": "Heeft minstens één afbeelding"
+            "nl": "Heeft minstens één afbeelding",
+            "pl": "Ma co najmniej jedno zdjęcie"
           },
           "osmTags": {
             "or": [
@@ -108,7 +117,8 @@
           "question": {
             "en": "Probably does not have an image",
             "de": "Hat wahrscheinlich kein Bild",
-            "nl": "Heeft waarschijnlijk geen afbeelding"
+            "nl": "Heeft waarschijnlijk geen afbeelding",
+            "pl": "Prawdopodobnie nie ma zdjęcia"
           },
           "osmTags": {
             "and": [
@@ -131,7 +141,8 @@
             "en": "With tactile paving",
             "de": "Mit taktilem Pflaster",
             "fr": "Avec revêtement podotactile",
-            "nl": "Met voelbare bestrating"
+            "nl": "Met voelbare bestrating",
+            "pl": "Z wypustkami dla niewidomych"
           },
           "osmTags": "tactile_paving=yes"
         }
@@ -146,7 +157,8 @@
             "en": "With or without tactile paving",
             "de": "Mit oder ohne taktiles Pflaster",
             "fr": "Avec ou sans revêtement podotactile",
-            "nl": "Met of zonder voelbare bestrating"
+            "nl": "Met of zonder voelbare bestrating",
+            "pl": "Z lub bez wypustek dla niewidomych"
           }
         },
         {
@@ -154,7 +166,8 @@
             "en": "With tactile paving",
             "de": "Mit taktilem Pflaster",
             "fr": "Avec revêtement podotactile",
-            "nl": "Met voelbare bestrating"
+            "nl": "Met voelbare bestrating",
+            "pl": "Z wypustkami dla niewidomych"
           },
           "osmTags": "tactile_paving=yes"
         },
@@ -163,7 +176,8 @@
             "en": "Without tactile paving",
             "de": "Ohne taktiles Pflaster",
             "fr": "Sans revêtement podotactile",
-            "nl": "Zonder voelbare bestrating"
+            "nl": "Zonder voelbare bestrating",
+            "pl": "Bez wypustek dla niewidomych"
           },
           "osmTags": "tactile_paving=no"
         },
@@ -173,7 +187,8 @@
             "en": "No information about tactile paving",
             "de": "Keine Informationen über taktiles Pflaster",
             "fr": "Sans information sur le revêtement podotactile",
-            "nl": "Geen informatie over voelbare bestrating"
+            "nl": "Geen informatie over voelbare bestrating",
+            "pl": "Brak informacji o wypustkach dla niewidomych"
           }
         }
       ]

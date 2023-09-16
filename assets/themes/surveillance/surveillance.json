@@ -13,7 +13,8 @@
     "nb_NO": "Overvåkning under overvåkning",
     "da": "Overvågning under Overvågning",
     "es": "Vigilancia bajo vigilancia",
-    "cs": "Dohled pod dohledem"
+    "cs": "Dohled pod dohledem",
+    "pl": "Monitoring monitoringu"
   },
   "shortDescription": {
     "en": "Surveillance cameras and other means of surveillance",
@@ -23,7 +24,7 @@
     "fr": "Caméras et autres dispositifs de surveillance",
     "pl": "Kamery monitorujące i inne środki nadzoru",
     "de": "Überwachungskameras und andere Mittel zur Überwachung",
-    "it": "Telecamere di sorveglianza e altri mezzi di sorveglianza.",
+    "it": "Telecamere di sorveglianza e altri mezzi di sorveglianza",
     "hu": "Térfigyelő kamerák és más figyelőeszközök",
     "da": "Overvågningskameraer og andre overvågningsmidler",
     "nb_NO": "Overvåkningskameraer og andre typer overvåkning",
@@ -39,7 +40,7 @@
     "fr": "Cette carte indique l’emplacement des caméras de surveillance.",
     "pl": "Na tej otwartej mapie można znaleźć kamery monitoringu.",
     "de": "Auf dieser offenen Karte finden Sie Überwachungskameras.",
-    "it": "In questa cartina puoi trovare le telecamera di sorveglianza.",
+    "it": "In questa cartina puoi trovare le telecamere di sorveglianza.",
     "hu": "Ezen a térképen térfigyelő kamerák láthatók.",
     "ru": "На этой открытой карте можно найти камеры слежения.",
     "da": "På dette åbne kort kan du finde overvågningskameraer.",

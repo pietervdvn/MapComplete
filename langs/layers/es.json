@@ -1441,13 +1441,13 @@
                         "question": "Todos los conectores"
                     },
                     "2": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>enchufe de pared Europeo</b> con un pin de tierra (CEE7/4 tipo E</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>enchufe de pared Europeo</b> con un pin de tierra (CEE7/4 tipo E)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
                     },
                     "3": {
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>Chademo</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
                     },
                     "4": {
-                        "question": "Tiene un conector de <div style='display: inline-block'><b><b>Tipo 1 con cable</b> (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 1 con cable</b> (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     },
                     "5": {
                         "question": "Tiene un conector de <div style='display: inline-block'><b>Tipo 1 <i>sin</i> cable (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
@@ -1937,13 +1937,13 @@
             "crossing-tactile": {
                 "mappings": {
                     "0": {
-                        "then": "Este cruce tiene pavimento táctil"
+                        "then": "Este cruce tiene superficie podotáctil"
                     },
                     "1": {
-                        "then": "Este cruce no tiene pavimento táctil"
+                        "then": "Este cruce no tiene superficie podotáctil"
                     },
                     "2": {
-                        "then": "Este cruce tiene pavimento táctil, pero no es correcto"
+                        "then": "Este cruce tiene superficie podotáctil, pero no es correcto"
                     }
                 },
                 "question": "¿Tiene pavimento táctil este cruce?"

@@ -14,7 +14,8 @@
       "en": "School <i>{name}</i>",
       "nl": "School <i>{name}</i>",
       "de": "Schule <i>{name}</i>",
-      "fr": "School <i>{name}</i>"
+      "fr": "School <i>{name}</i>",
+      "pl": "Szkoła <i>{name}</i>"
     }
   },
   "calculatedTags": [
@@ -34,14 +35,16 @@
         "nl": "Deze school heet <b>{name}</b>",
         "de": "Diese Schule heißt {name}",
         "fr": "Cet établissement scolaire s'appelle {name}",
-        "ca": "L'escola s'anomena {name}"
+        "ca": "L'escola s'anomena {name}",
+        "pl": "Ta szkoła nazywa się {name}"
       },
       "question": {
         "en": "What is the name of this school?",
         "nl": "Wat is de naam van deze school?",
         "de": "Wie lautet der Name dieser Schule?",
         "fr": "Quel est le nom de cet établissement scolaire?",
-        "ca": "Quin és el nom d'aquesta escola?"
+        "ca": "Quin és el nom d'aquesta escola?",
+        "pl": "Jaką nazwę ma ta szkoła?"
       },
       "freeform": {
         "key": "name"
@@ -262,7 +265,8 @@
             "nl": "Deze school richt zich op studenten in het autisme-spectrum",
             "de": "Dies ist eine Schule für Schüler mit Autismus",
             "fr": "C'est un établissement scolaire pour les étudiants ayant un trouble du spectre de l’autisme (TSA)",
-            "ca": "Aquesta és una escola per a estudiants amb autisme"
+            "ca": "Aquesta és una escola per a estudiants amb autisme",
+            "pl": "To jest szkoła dla uczniów z autyzmem"
           }
         },
         {
@@ -292,7 +296,8 @@
             "nl": "Deze school richt zich op dove en hardhorende studenten",
             "de": "Dies ist eine Schule für gehörlose oder hörgeschädigte Schüler",
             "fr": "C'est un établissement scolaire pour les étudiants sourds ou malentendants",
-            "ca": "Aquesta és una escola per a estudiants sords o amb dificultats auditives"
+            "ca": "Aquesta és una escola per a estudiants sords o amb dificultats auditives",
+            "pl": "To jest szkoła dla uczniów głuchych i słabosłyszących"
           }
         },
         {
@@ -302,7 +307,8 @@
             "nl": "Deze school richt zich op studenten met een beperking",
             "de": "Dies ist eine Schule für Schüler mit Behinderungen",
             "fr": "C'est un établissement scolaire pour les étudiants en situation de handicap",
-            "ca": "Aquesta és una escola per a estudiants amb discapacitats"
+            "ca": "Aquesta és una escola per a estudiants amb discapacitats",
+            "pl": "To jest szkoła dla uczniów z niepełnosprawnościami"
           }
         },
         {
@@ -312,7 +318,8 @@
             "nl": "Deze school richt zich op studenten met extra zorgbehoeften",
             "de": "Dies ist eine Schule für Schüler mit besonderen Bedürfnissen",
             "fr": "C'est un établissement scolaire pour les étudiants ayant des besoins particuliers",
-            "ca": "Aquesta és una escola per a estudiants amb necessitats especials"
+            "ca": "Aquesta és una escola per a estudiants amb necessitats especials",
+            "pl": "To jest szkoła dla uczniów z specjalnymi potrzebami"
           }
         }
       ],
@@ -334,12 +341,16 @@
           "render_all": {
             "en": "The following languages are used in this school:{list()}",
             "de": "Folgende Sprachen werden in der Schule verwendet:{list()}",
-            "ca": "En aquesta escola s'utilitzen els idiomes següents:{list()}"
+            "ca": "En aquesta escola s'utilitzen els idiomes següents:{list()}",
+            "fr": "Ces langues sont utilisées dans cette école :{list()}",
+            "pl": "Następujące języki są używane w tej szkole:{list()}"
           },
           "render_single_language": {
             "en": "{language():font-bold} is the main language of this school",
             "de": "{language():font-bold} ist die Hauptsprache der Schule",
-            "ca": "{language():font-bold} és la llengua principal d'aquesta escola"
+            "ca": "{language():font-bold} és la llengua principal d'aquesta escola",
+            "fr": "{language():font-bold} est la langue principale dans cette école",
+            "pl": "Język {language():font-bold} jest głównym językiem używanym w tej szkole"
           },
           "question": {
             "en": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>",

@@ -274,7 +274,8 @@
         "en": "Can you send a parcel here?",
         "de": "Können Sie hier Pakete versenden?",
         "nl": "Kan je hier pakketten versturen?",
-        "ca": "Pots enviar un paquet des d'aquí?"
+        "ca": "Pots enviar un paquet des d'aquí?",
+        "pl": "Czy można tutaj wysłać paczkę?"
       },
       "freeform": {
         "key": "post_office:parcel_from",
@@ -287,7 +288,8 @@
             "en": "You can send parcels here",
             "de": "Hier können Sie Pakete versenden",
             "nl": "Je kan hier pakketten versturen",
-            "ca": "Pots enviar paquets des d'aquí"
+            "ca": "Pots enviar paquets des d'aquí",
+            "pl": "Można tutaj wysłać paczki"
           }
         },
         {
@@ -296,7 +298,8 @@
             "en": "You can't send parcels here",
             "de": "Sie können hier keine Pakete versenden",
             "nl": "Je kan hier geen pakketten versturen",
-            "ca": "No pots enviar paquets des d'aquí"
+            "ca": "No pots enviar paquets des d'aquí",
+            "pl": "Nie można tutaj wysłać paczek"
           }
         }
       ]

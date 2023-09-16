@@ -32,7 +32,8 @@
       "zh_Hant": "風機",
       "id": "turbin angin",
       "hu": "szélerőmű",
-      "da": "vindmølle"
+      "da": "vindmølle",
+      "pl": "turbina wiatrowa"
     },
     "mappings": [
       {
@@ -48,7 +49,8 @@
           "de": "{name}",
           "ca": "{name}",
           "nl": "{name}",
-          "da": "{name}"
+          "da": "{name}",
+          "pl": "{name}"
         }
       }
     ]

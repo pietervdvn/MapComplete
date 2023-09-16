@@ -11,11 +11,12 @@
     "de": "Trinkwasserstellen",
     "nb_NO": "Drikkevann",
     "hu": "Ivóvíz",
-    "ca": "Aigua potable",
+    "ca": "Aigua Potable",
     "es": "Agua Potable",
     "da": "Drikkevand",
     "pa_PK": "پیݨ والا پاݨی",
-    "cs": "Pitná voda"
+    "cs": "Pitná voda",
+    "pl": "Woda pitna"
   },
   "description": {
     "en": "On this map, publicly accessible drinking water spots are shown and can be easily added",
@@ -31,7 +32,8 @@
     "es": "En este mapa, se muestran los puntos de agua potable accesibles públicamente y pueden añadirse fácilmente",
     "ca": "En aquest mapa es mostren els punts d'aigua potable accessibles al públic i es poden afegir fàcilment",
     "da": "På dette kort er offentligt tilgængelige drikkevandsteder vist og kan nemt tilføjes",
-    "cs": "Na této mapě jsou zobrazena veřejně přístupná místa s pitnou vodou, která lze snadno přidat"
+    "cs": "Na této mapě jsou zobrazena veřejně přístupná místa s pitnou vodou, která lze snadno přidat",
+    "pl": "Na tej mapie znajdują się dostępne publicznie źródła pitnej wody i mogą łatwo być dodane"
   },
   "icon": "./assets/themes/drinking_water/logo.svg",
   "startLat": 50.8465573,

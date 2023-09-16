@@ -10,7 +10,8 @@
     "es": "Prismáticos",
     "fr": "Jumelles",
     "pa_PK": "بائینوکولر",
-    "cs": "Dalekohledy"
+    "cs": "Dalekohledy",
+    "eu": "Prismatikoak"
   },
   "minzoom": 0,
   "title": {
@@ -23,7 +24,8 @@
       "es": "Prismáticos",
       "da": "Kikkert",
       "fr": "Jumelles",
-      "pa_PK": "بائینوکولر"
+      "pa_PK": "بائینوکولر",
+      "eu": "Prismatikoak"
     }
   },
   "description": {
@@ -36,7 +38,8 @@
     "es": "Prismáticos",
     "fr": "Jumelles",
     "pa_PK": "بائینوکولر",
-    "cs": "Dalekohledy"
+    "cs": "Dalekohledy",
+    "eu": "Prismatikoak"
   },
   "tagRenderings": [
     "images",

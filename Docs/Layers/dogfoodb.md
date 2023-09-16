@@ -727,14 +727,23 @@ reservation.0 | Reservation not required | reservation=no\|reservation=optional|
 
 id | question | osmTags
 ---- | ---------- | ---------
-vegetarian.0 | Has a vegetarian menu | diet:vegetarian=yes\|diet:vegetarian=only|diet:vegan=yes|diet:vegan=only
+food-category.0 | Has a vegetarian menu (default) | 
+food-category.1 | Only fastfood businesses | amenity=fast_food
+food-category.2 | Only restaurants | amenity=restaurant
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-vegan.0 | Has a vegan menu | diet:vegan=yes\|diet:vegan=only
+vegetarian.0 | Has a vegan menu | diet:vegetarian=yes\|diet:vegetarian=only|diet:vegan=yes|diet:vegan=only
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+vegan.0 | Has a halal menu | diet:vegan=yes\|diet:vegan=only
 
 
 

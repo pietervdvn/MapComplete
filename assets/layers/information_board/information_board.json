@@ -8,7 +8,8 @@
     "de": "Informationstafeln",
     "ru": "Информационные щиты",
     "ca": "Panells d'informació",
-    "es": "Paneles informativos"
+    "es": "Paneles informativos",
+    "pl": "Tablice informacyjne"
   },
   "minzoom": 12,
   "source": {
@@ -27,7 +28,8 @@
       "de": "Informationstafel",
       "ru": "Информационный щит",
       "ca": "Panell d'informació",
-      "es": "Panel informativo"
+      "es": "Panel informativo",
+      "pl": "Tablica informacyjna"
     }
   },
   "tagRenderings": [
@@ -47,7 +49,8 @@
         "de": "eine Informationstafel",
         "ru": "информационный щит",
         "es": "un panel informativo",
-        "ca": "un tauler informatiu"
+        "ca": "un tauler informatiu",
+        "pl": "tablica informacyjna"
       }
     }
   ],
@@ -84,6 +87,7 @@
     "nl": "Deze laag toont informatieborden in de publieke ruimte die uitleg geven over een bezienswaardigheid (bv. uitleg over het landschap, een ruine, een kaart van de omgeving, ...)",
     "de": "Eine Ebene mit touristischen, straßenseitigen Informationstafeln (z. B. mit Informationen über die Landschaft, ein Gebäude, ein Merkmal, eine Karte, …)",
     "es": "Una capa que muestra paneles informativos turísticos (ej. informan sobre el paisaje, una construcción, una característica, un mapa, ...)",
-    "ca": "Una capa que mostra panells informatius turístics (p.e. informen sobre el paissatge, una construcció, una característica, un mapa, …)"
+    "ca": "Una capa que mostra panells informatius turístics (p.e. informen sobre el paissatge, una construcció, una característica, un mapa, …)",
+    "pl": "Warstwa pokazujące przydrożne tablice informacyjne dla turystów (np. informujące o krajobrazie, budynku, obiekcie, mapa, ...)"
   }
 }

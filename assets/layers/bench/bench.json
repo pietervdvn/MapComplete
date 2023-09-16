@@ -21,7 +21,8 @@
     "da": "Bænke",
     "cs": "Lavičky",
     "pa_PK": "بینچ",
-    "he": "ספסלים"
+    "he": "ספסלים",
+    "eu": "Bankuak"
   },
   "minzoom": 14,
   "source": {
@@ -49,7 +50,8 @@
       "da": "Bænk",
       "cs": "Lavička",
       "pa_PK": "بینچ",
-      "he": "ספסל"
+      "he": "ספסל",
+      "eu": "Bankua"
     }
   },
   "description": {
@@ -81,7 +83,9 @@
             "ca": "Aquest banc té dues cares i comparteix el respatller",
             "cs": "Tato lavička je oboustranná a má společné opěradlo",
             "es": "Este banco tiene dos caras y comparte el respaldo",
-            "he": "ספסל זה דו צדדי וחולק את משענת הגב"
+            "he": "ספסל זה דו צדדי וחולק את משענת הגב",
+            "fr": "Ce banc a deux côtés avec un dossier partagé",
+            "pl": "Ta ławka jest dwustronna ze wspólnym oparciem"
           },
           "icon": {
             "path": "./assets/layers/bench/two_sided.svg",
@@ -266,7 +270,7 @@
           "then": {
             "en": "The seating is made from wood",
             "de": "Die Sitzfläche ist aus Holz",
-            "fr": "Matériau du siège : bois",
+            "fr": "L'assise est en bois",
             "nl": "Gemaakt uit hout",
             "es": "El asiento está hecho de madera",
             "hu": "Ülőfelület: fa",
@@ -291,7 +295,7 @@
           "then": {
             "en": "The seating is made from metal",
             "de": "Die Sitzfläche ist aus Metall",
-            "fr": "Matériau du siège : métal",
+            "fr": "L'assise est en métal",
             "nl": "Gemaakt uit metaal",
             "es": "El asiento está hecho de metal",
             "hu": "Ülőfelület: fém",
@@ -315,7 +319,7 @@
           "then": {
             "en": "The seating is made from stone",
             "de": "Die Sitzfläche ist aus Stein",
-            "fr": "Matériau : pierre",
+            "fr": "L'assise est en pierre",
             "nl": "Het zitgedeelte is gemaakt uit steen",
             "es": "El asiento está hecho de piedra",
             "hu": "Ülőfelület: kő",
@@ -365,7 +369,7 @@
           "then": {
             "en": "The seating is made from plastic",
             "de": "Die Sitzfläche ist aus Kunststoff",
-            "fr": "Matériau : plastique",
+            "fr": "L'assise est en plastique",
             "nl": "Het zitgedeelte is gemaakt uit plastiek",
             "es": "El asiento está hecho de plástico",
             "hu": "Ülőfelület: műanyag",
@@ -390,7 +394,7 @@
           "then": {
             "en": "The seating is made from steel",
             "de": "Die Sitzfläche ist aus Stahl",
-            "fr": "Matériau  du siège : acier",
+            "fr": "L'assise est en acier",
             "nl": "Het zitgedeelte is gemaakt uit staal",
             "es": "El asiento está hecho de acero",
             "hu": "Ülőfelület: acél",
@@ -865,8 +869,8 @@
         "en": "E.g. on a mounted plaque, in the backrest, …",
         "nl": "Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, ...",
         "de": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, …",
-        "fr": "Par exemple, sur une plaque accrochée, sur le dossier, ...",
-        "ca": "P. ex. en una placa, al respatller, ...",
+        "fr": "Par exemple, sur une plaque accrochée, sur le dossier, …",
+        "ca": "P. ex. en una placa, al respatller, …",
         "cs": "Např. na připevněné desce, v opěradle, …",
         "pt": "Por exemplo: em placa montada, no encosto, ..."
       }
@@ -879,7 +883,9 @@
         "de": "Hat diese Bank ein künstlerisches Element?",
         "ca": "Aquest banc té algun element artístic?",
         "cs": "Má tato lavička umělecké prvky?",
-        "he": "האם לספסל הזה יש אלמנט אומנותי?"
+        "he": "האם לספסל הזה יש אלמנט אומנותי?",
+        "fr": "Est-ce que ce banc inclut un élément artistique ?",
+        "pl": "Czy ta ławka ma wbudowane dzieło sztuki?"
       },
       "mappings": [
         {
@@ -891,7 +897,8 @@
             "fr": "Une oeuvre d'art est intégrée à ce banc",
             "ca": "Aquest banc té integrada una obra d'art",
             "cs": "Tato lavička má integrované umělecké dílo",
-            "he": "לספסל זה יצירת אמנות משולבת"
+            "he": "לספסל זה יצירת אמנות משולבת",
+            "pl": "Ta ławka ma wbudowane dzieło sztuki"
           }
         },
         {
@@ -904,7 +911,8 @@
             "es": "Este banco no tiene una obra de arte integrada",
             "ca": "Aquest banc no té una obra d'art integrada",
             "cs": "Tato lavička nemá integrované umělecké dílo",
-            "he": "לספסל זה אין יצירת אמנות משולבת"
+            "he": "לספסל זה אין יצירת אמנות משולבת",
+            "pl": "Ta ławka nie ma wbudowanego dzieła sztuki"
           }
         }
       ],
@@ -913,7 +921,9 @@
         "nl": "Bijvoorbeeld een standbeeld, schildering of ander, niet-triviaal kunstwerk",
         "de": "Z.B. hat es ein integriertes Gemälde, eine Statue oder eine andere nicht triviale, kreative Arbeit",
         "ca": "P.e. té una pintura integrada, estatua o altres treballs no trivials i creatius",
-        "cs": "Např. má integrovaný obraz, sochu nebo jiné netriviální tvůrčí dílo"
+        "cs": "Např. má integrovaný obraz, sochu nebo jiné netriviální tvůrčí dílo",
+        "fr": "Par ex. il intègre une peinture, statue ou autre élément non commune, travail cratif",
+        "pl": "Np. jest na niej coś namalowane, ma rzeźbę lub inną nietrywialną pracę"
       }
     },
     {
@@ -936,7 +946,8 @@
         "fr": "Ce banc sert-il de mémorial pour quelqu'un ou quelque chose ?",
         "ca": "Aquest banc actua com a memorial per a algú o algo?",
         "cs": "Slouží tato lavička jako památník někoho nebo něčeho?",
-        "pt": "Este banco serve como memorial para alguém ou algo?"
+        "pt": "Este banco serve como memorial para alguém ou algo?",
+        "pl": "Czy ta ławka służy jako pomnik upamiętniający kogoś lub coś?"
       },
       "mappings": [
         {
@@ -948,7 +959,8 @@
             "fr": "Ce banc est un mémorial pour quelqu'un ou quelque chose",
             "ca": "Aquest banc és un memorial per a algú o alguna cosa",
             "cs": "Tato lavička je pomníkem pro někoho nebo něco",
-            "pt": "Este banco é um memorial para alguém ou algo"
+            "pt": "Este banco é um memorial para alguém ou algo",
+            "pl": "Ta ławka jest pomnikiem upamiętniającym kogoś lub coś"
           },
           "addExtraTags": [
             "memorial=bench"
@@ -968,7 +980,8 @@
             "fr": "Ce banc n'est <b>pas</b> un mémorial pour quelqu'un ou quelque chose",
             "ca": "Aquest banc <b>no</b> és un memorial per a algú o alguna cosa",
             "cs": "Tato lavička <b>není</b> pro někoho nebo něco památníkem",
-            "pt": "Este banco <b>não é</b> um memorial para alguém ou algo"
+            "pt": "Este banco <b>não é</b> um memorial para alguém ou algo",
+            "pl": "Ta ławka <b>nie</b> jest pomnikiem upamiętniającym kogoś lub coś"
           },
           "addExtraTags": [
             "memorial="
@@ -1077,7 +1090,8 @@
             "fr": "Avec et sans dossier",
             "ca": "Amb i sense respatller",
             "cs": "S opěradlem a bez opěradla",
-            "he": "עם ובלי משענת גב"
+            "he": "עם ובלי משענת גב",
+            "pl": "Z oraz bez oparcia"
           }
         },
         {
@@ -1089,7 +1103,8 @@
             "fr": "A un dossier",
             "ca": "Té un respatller",
             "cs": "Má opěradlo",
-            "he": "בעל משענת גב"
+            "he": "בעל משענת גב",
+            "pl": "Ma oparcie"
           }
         },
         {
@@ -1101,7 +1116,8 @@
             "fr": "N'a pas de dossier",
             "ca": "No té respatller",
             "cs": "Nemá opěradlo",
-            "he": "אין משענת גב"
+            "he": "אין משענת גב",
+            "pl": "Nie ma oparcia"
           }
         }
       ]

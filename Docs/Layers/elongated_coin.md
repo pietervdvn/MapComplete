@@ -26,6 +26,8 @@ Layer showing penny presses.
 
 
   - [elongated_coin](https://mapcomplete.org/elongated_coin)
+  - [personal](https://mapcomplete.org/personal)
+  - [vending_machine](https://mapcomplete.org/vending_machine)
 
 
 This is a special layer - data is not sourced from OpenStreetMap
@@ -54,6 +56,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/payment:coins:denominations#values) [payment:coins:denominations](https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations) | Multiple choice | [0.01 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.01 EUR) [0.02 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.02 EUR) [0.05 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 EUR) [0.10 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 EUR) [0.20 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 EUR) [0.50 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 EUR) [1 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 EUR) [2 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 EUR)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/indoor#values) [indoor](https://wiki.openstreetmap.org/wiki/Key:indoor) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/check_date#values) [check_date](https://wiki.openstreetmap.org/wiki/Key:check_date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:check_date%3D)
 
 
 
@@ -126,6 +129,36 @@ This is rendered with  `This penny press has {coin:design_count} designs availab
   - *This penny press has two designs available.*  corresponds with  `coin:design_count=2`
   - *This penny press has three designs available.*  corresponds with  `coin:design_count=3`
   - *This penny press has four designs available.*  corresponds with  `coin:design_count=4`
+
+
+
+
+### payment-options-split 
+
+
+
+The question is  *Which methods of payment are accepted here?*
+
+
+
+
+
+  - *Cash is accepted here*  corresponds with  `payment:cash=yes`
+  - This option cannot be chosen as answer
+  - Unselecting this answer will add 
+  - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
+  - This option cannot be chosen as answer
+  - Unselecting this answer will add 
+  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
+  - *Coins are accepted here*  corresponds with  `payment:coins=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dno' target='_blank'>no</a>
+  - *Bank notes are accepted here*  corresponds with  `payment:notes=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dno' target='_blank'>no</a>
+  - *Debit cards are accepted here*  corresponds with  `payment:debit_cards=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dno' target='_blank'>no</a>
+  - *Credit cards are accepted here*  corresponds with  `payment:credit_cards=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dno' target='_blank'>no</a>
 
 
 
@@ -260,6 +293,25 @@ This is rendered with  `Located on the {level}th floor`
 
 
 
+### check_date 
+
+
+
+The question is  *When was this object last checked?*
+
+This rendering asks information about the property  [check_date](https://wiki.openstreetmap.org/wiki/Key:check_date) 
+
+This is rendered with  `This object was last checked on <b>{check_date}</b>`
+
+
+
+
+
+  - *This object was last checked today*  corresponds with  `check_date=`
+
+
+
+
 ### leftover-questions 
 
 
@@ -275,6 +327,26 @@ This tagrendering has no question and is thus read-only
 
 
 Shows a small map with the feature. Added by default to every popup
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### move-button 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### delete-button 
+
+
 
 This tagrendering has no question and is thus read-only
 
@@ -315,6 +387,20 @@ This tagrendering has no question and is thus read-only
 id | question | osmTags
 ---- | ---------- | ---------
 open_now.0 | Open now | _isOpen=yes
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+accepts_debit_cards.0 | Accepts debit cards | payment:debit_cards=yes
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+accepts_credit_cards.0 | Accepts credit cards | payment:credit_cards=yes
  
 
-This document is autogenerated from [assets/themes/elongated_coin/elongated_coin.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/themes/elongated_coin/elongated_coin.json)
+This document is autogenerated from [assets/layers/elongated_coin/elongated_coin.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/elongated_coin/elongated_coin.json)
