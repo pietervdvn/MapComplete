@@ -7,9 +7,22 @@ import Combine from "./UI/Base/Combine"
 import { SubtleButton } from "./UI/Base/SubtleButton"
 import Svg from "./Svg"
 import { Utils } from "./Utils"
-
+function webgl_support() {
+    try {
+        var canvas = document.createElement("canvas")
+        return (
+            !!window.WebGLRenderingContext &&
+            (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
+        )
+    } catch (e) {
+        return false
+    }
+}
 // @ts-ignore
 try {
+    if (!webgl_support()) {
+        throw "WebGL is not supported or not enabled. This is essential for MapComplete to function, please enable this."
+    }
     DetermineLayout.GetLayout()
         .then((layout) => {
             const state = new ThemeViewState(layout)
