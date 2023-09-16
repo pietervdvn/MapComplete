@@ -86,7 +86,7 @@ export class Mapillary extends ImageProvider {
 
     public async DownloadAttribution(url: string): Promise<LicenseInfo> {
         const license = new LicenseInfo()
-        license.artist = "Contributor name unavailable"
+        license.artist = undefined
         license.license = "CC BY-SA 4.0"
         // license.license = "Creative Commons Attribution-ShareAlike 4.0 International License";
         license.attributionRequired = true
