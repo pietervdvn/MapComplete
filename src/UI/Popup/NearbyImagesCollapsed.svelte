@@ -9,6 +9,8 @@
   import NearbyImages from "./NearbyImages.svelte";
   import Svg from "../../Svg";
   import ToSvelte from "../Base/ToSvelte.svelte";
+  import { XCircleIcon } from "@babeard/svelte-heroicons/solid";
+  import exp from "constants";
 
   export let tags: Store<OsmTags>;
   export let state: SpecialVisualizationState;
@@ -24,7 +26,9 @@
 </script>
 
 {#if expanded}
-  <NearbyImages {tags} {state} {lon} {lat} {feature} {linkable}/>
+  <NearbyImages {tags} {state} {lon} {lat} {feature} {linkable}>
+    <XCircleIcon slot="corner" class="w-6 h-6 cursor-pointer" on:click={() => {expanded = false}}/>
+  </NearbyImages>
 {:else}
   <button class="w-full flex items-center" on:click={() => { expanded = true; }}>
     <ToSvelte construct={ Svg.camera_plus_svg().SetClass("block w-8 h-8 p-1 mr-2 ")}/>

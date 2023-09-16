@@ -11,6 +11,8 @@ import type { Feature } from "geojson";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import Loading from "../Base/Loading.svelte";
 import AllImageProviders from "../../Logic/ImageProviders/AllImageProviders";
+import Tr from "../Base/Tr.svelte";
+import Translations from "../i18n/Translations";
 
 export let tags: Store<OsmTags>;
 export let state: SpecialVisualizationState;
@@ -30,12 +32,23 @@ let images: Store<P4CPicture[]> = imagesProvider.store.map(images => images.slic
 
 </script>
 
-{#if $images.length === 0}
-  <Loading />
-{:else}
-  <div class="py-2 interactive overflow-x-auto w-full flex space-x-1">
-    {#each $images as image (image.pictureUrl)}
-      <LinkableImage {tags} {image} {state} {lon} {lat} {feature} {layer} {linkable} />
-    {/each}
+<div class="interactive rounded-2xl border-interactive p-2">
+  <div class="flex justify-between">
+
+    <h4>
+      <Tr t={Translations.t.image.nearby.title} />
+    </h4>
+    <slot name="corner" />
   </div>
-{/if}
+  {#if $images.length === 0}
+    <Loading />
+  {:else}
+    <div class="overflow-x-auto w-full flex space-x-1" style="scroll-snap-type: x proximity">
+      {#each $images as image (image.pictureUrl)}
+        <span class="w-fit shrink-0" style="scroll-snap-align: start">
+          <LinkableImage {tags} {image} {state} {lon} {lat} {feature} {layer} {linkable} />
+        </span>
+      {/each}
+    </div>
+  {/if}
+</div>
