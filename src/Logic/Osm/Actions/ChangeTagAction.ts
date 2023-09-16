@@ -28,7 +28,7 @@ export default class ChangeTagAction extends OsmChangeAction {
         currentTags: Record<string, string>,
         meta: {
             theme: string
-            changeType: "answer" | "soft-delete" | "add-image" | string
+            changeType: "answer" | "soft-delete" | "add-image" | "link-image" | string
         }
     ) {
         super(elementId, true)

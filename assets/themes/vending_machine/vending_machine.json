@@ -17,6 +17,46 @@
   "startLon": 6.56511,
   "startZoom": 19,
   "layers": [
-    "vending_machine"
+    "vending_machine",
+    {
+      "builtin": "vending_machine",
+      "override": {
+        "id": "all_vending_machine",
+        "name": null,
+        "filter": {
+          "sameAs": "vending_machine"
+        },
+        "minzoom": 18,
+        "source": {
+          "osmTags": {
+            "and": [
+              "amenity=vending_machine",
+              "vending!~(parking_tickets|elongated_coin|public_transport_tickets)"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "builtin": "parking_ticket_machine",
+      "override": {
+        "name": null,
+        "minzoom": 18
+      }
+    },
+    {
+      "builtin": "elongated_coin",
+      "override": {
+        "name": null,
+        "minzoom": 18
+      }
+    },
+    {
+      "builtin": "ticket_machine",
+      "override": {
+        "name": null,
+        "minzoom": 18
+      }
+    }
   ]
 }

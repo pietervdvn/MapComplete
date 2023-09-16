@@ -335,7 +335,11 @@
             },
             "artwork-website": {
                 "question": "Existe-t-il un site web où trouver plus d'informations sur cette œuvre d'art ?",
-                "render": "Plus d'info <a href='{website}' target='_blank'>sûr ce site web</a>"
+                "render": {
+                    "special": {
+                        "text": "Plus d'info sûr ce site web"
+                    }
+                }
             },
             "artwork_subject": {
                 "question": "Que représente cette oeuvre d'art ?",
@@ -2943,6 +2947,15 @@
             }
         }
     },
+    "elongated_coin": {
+        "tagRenderings": {
+            "charge": {
+                "freeform": {
+                    "placeholder": "Coût (par ex. 0.50 EUR)"
+                }
+            }
+        }
+    },
     "entrance": {
         "description": "Une couche montrant les entrées et offrant des capacités pour étudier certaines données avancées qui sont importantes, par exemple. les utilisateurs de fauteuils roulants (mais aussi les utilisateurs de vélos, les personnes qui veulent faire des livraisons, …)",
         "name": "Entrée",
@@ -3154,14 +3167,14 @@
                     }
                 }
             },
-            "4": {
+            "6": {
                 "options": {
                     "0": {
                         "question": "Avec revêtement podotactile"
                     }
                 }
             },
-            "5": {
+            "7": {
                 "options": {
                     "0": {
                         "question": "Avec ou sans revêtement podotactile"
@@ -3177,7 +3190,7 @@
                     }
                 }
             },
-            "7": {
+            "9": {
                 "options": {
                     "0": {
                         "question": "Utilisation gratuite"
@@ -3575,7 +3588,11 @@
             },
             "ghost_bike-source": {
                 "question": "Sur quelle page web peut-on trouver plus d'informations sur le Vélo fantôme ou l'accident ?",
-                "render": "<a href='{source}' target='_blank'>Plus d'informations sont disponibles</a>"
+                "render": {
+                    "special": {
+                        "text": "Plus d'informations sont disponibles"
+                    }
+                }
             },
             "ghost_bike-start_date": {
                 "question": "Quand ce vélo fantôme a-t-il été installée ?",
@@ -3866,8 +3883,7 @@
             },
             "Email": {
                 "question": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ? ",
-                "questionHint": "Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée",
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+                "questionHint": "Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée"
             },
             "Surface area": {
                 "render": "Superficie : {_surface:ha}&nbsp;ha"
@@ -4256,7 +4272,11 @@
             },
             "public_bookcase-website": {
                 "question": "Y a-t-il un site web avec plus d'informations sur cette microbibliothèque ?",
-                "render": "Plus d'infos sur <a href='{website}' target='_blank'>le site web</a>"
+                "render": {
+                    "special": {
+                        "text": "Plus d'infos sur le site web"
+                    }
+                }
             }
         },
         "title": {
@@ -5991,7 +6011,7 @@
             "verified-mastodon": {
                 "mappings": {
                     "0": {
-                        "then": "Un lien vers votre profil Mastodon a été trouvé : <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                        "then": "Un lien vers votre profil Mastodon a été trouvé : <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
                     }
                 }
             }

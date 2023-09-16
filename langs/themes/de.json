@@ -609,93 +609,6 @@
     },
     "elongated_coin": {
         "description": "Finde Münzpresse um deine eigenen Prägemünzen zu Pressen.",
-        "layers": {
-            "0": {
-                "description": "Ebene mit Münzpressen.",
-                "name": "Münzpressen",
-                "presets": {
-                    "0": {
-                        "title": "Eine Münzpresse"
-                    }
-                },
-                "tagRenderings": {
-                    "charge": {
-                        "freeform": {
-                            "placeholder": "Einwurf (z.B. 0,5€)"
-                        },
-                        "mappings": {
-                            "0": {
-                                "then": "Eine Münze zu Pressen kostet 1 Euro."
-                            },
-                            "1": {
-                                "then": "Eine Münze zu Pressen kostet 2€."
-                            }
-                        },
-                        "question": "Wieviel kostet es eine Münze zu Pressen?",
-                        "render": "Es kostet {charge}€ um eine Münze zu Pressen."
-                    },
-                    "coin": {
-                        "freeform": {
-                            "placeholder": "Münzenart (z.B. 10 Cent)"
-                        },
-                        "mappings": {
-                            "0": {
-                                "then": "Die Münzpresse benötigt eine 2 Cent Münze um zu Pressen."
-                            },
-                            "1": {
-                                "then": "Die Münzpresse benötigt eine 5 Cent Münze um zu Pressen."
-                            },
-                            "2": {
-                                "then": "Die Münzpresse benötigt eine 10 Cent Münze um zu Pressen."
-                            },
-                            "3": {
-                                "then": "Die Münzpresse benötigt eine 25 Cent Münze um zu Pressen."
-                            },
-                            "4": {
-                                "then": "Die Münzpresse benötigt eine 50 Cent Münze um zu Pressen."
-                            }
-                        },
-                        "question": "Welche Münze wird zum Pressen verwendet?",
-                        "render": "Die Münzpresse benötigt eine {coin:type} Münze um zu Pressen."
-                    },
-                    "designs": {
-                        "freeform": {
-                            "placeholder": "Motivanzahl (z.B. 5)"
-                        },
-                        "mappings": {
-                            "0": {
-                                "then": "Die Münzpresse hat ein Motiv zur Auswahl."
-                            },
-                            "1": {
-                                "then": "Die Münzpresse hat zwei Motive zur Auswahl."
-                            },
-                            "2": {
-                                "then": "Die Münzpresse hat drei Motive zur Auswahl."
-                            },
-                            "3": {
-                                "then": "Die Münzpresse hat vier Motive zur Auswahl."
-                            }
-                        },
-                        "question": "Wieviele Motive sind verfügbar?",
-                        "render": "Die Münzpresse hat {coin:design_count} Motive zur Auswahl."
-                    },
-                    "indoor": {
-                        "mappings": {
-                            "0": {
-                                "then": "Die Münzpresse befindet sich im Inneren."
-                            },
-                            "1": {
-                                "then": "Die Münzpresse befindet sich Draußen."
-                            }
-                        },
-                        "question": "Befindet sich die Münzpresse im Inneren?"
-                    }
-                },
-                "title": {
-                    "render": "Münzpresse"
-                }
-            }
-        },
         "title": "Münzpressen"
     },
     "etymology": {
@@ -1023,7 +936,7 @@
                     },
                     "theme-id": {
                         "question": "Welches Thema wurde für diese Änderung verwendet?",
-                        "render": "Geändert mit Thema <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
+                        "render": "Geändert mit Thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
                     },
                     "version": {
                         "question": "Mit welcher Version von MapComplete wurde diese Änderung gemacht?",

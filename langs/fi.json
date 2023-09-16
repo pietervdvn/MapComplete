@@ -69,8 +69,7 @@
         "addPicture": "Lisää kuva",
         "doDelete": "Poista kuva",
         "dontDelete": "Peruuta",
-        "isDeleted": "Poistettu",
-        "nearbyPictures": {}
+        "isDeleted": "Poistettu"
     },
     "importInspector": {},
     "importLayer": {},

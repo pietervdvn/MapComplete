@@ -1,10 +1,10 @@
 import { existsSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "fs"
 import ScriptUtils from "./ScriptUtils"
-import { Utils } from "../Utils"
+import { Utils } from "../src/Utils"
 import Script from "./Script"
-import { GeoOperations } from "../Logic/GeoOperations"
+import { GeoOperations } from "../src/Logic/GeoOperations"
 import { Feature, Polygon } from "geojson"
-import { Tiles } from "../Models/TileRange"
+import { Tiles } from "../src/Models/TileRange"
 
 class StatsDownloader {
     private readonly urlTemplate =

@@ -351,7 +351,11 @@
             },
             "artwork-website": {
                 "question": "Auf welcher Webseite gibt es weitere Informationen zum Kunstwerk?",
-                "render": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>"
+                "render": {
+                    "special": {
+                        "text": "Weitere Informationen auf dieser Webseite"
+                    }
+                }
             },
             "artwork_subject": {
                 "question": "Was zeigt dieses Kunstwerk?",
@@ -4224,6 +4228,91 @@
             }
         }
     },
+    "elongated_coin": {
+        "description": "Ebene mit Münzpressen.",
+        "name": "Münzpressen",
+        "presets": {
+            "0": {
+                "title": "Eine Münzpresse"
+            }
+        },
+        "tagRenderings": {
+            "charge": {
+                "freeform": {
+                    "placeholder": "Einwurf (z.B. 0,5€)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Eine Münze zu Pressen kostet 1 Euro."
+                    },
+                    "1": {
+                        "then": "Eine Münze zu Pressen kostet 2€."
+                    }
+                },
+                "question": "Wieviel kostet es eine Münze zu Pressen?",
+                "render": "Es kostet {charge}€ um eine Münze zu Pressen."
+            },
+            "coin": {
+                "freeform": {
+                    "placeholder": "Münzenart (z.B. 10 Cent)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Die Münzpresse benötigt eine 2 Cent Münze um zu Pressen."
+                    },
+                    "1": {
+                        "then": "Die Münzpresse benötigt eine 5 Cent Münze um zu Pressen."
+                    },
+                    "2": {
+                        "then": "Die Münzpresse benötigt eine 10 Cent Münze um zu Pressen."
+                    },
+                    "3": {
+                        "then": "Die Münzpresse benötigt eine 25 Cent Münze um zu Pressen."
+                    },
+                    "4": {
+                        "then": "Die Münzpresse benötigt eine 50 Cent Münze um zu Pressen."
+                    }
+                },
+                "question": "Welche Münze wird zum Pressen verwendet?",
+                "render": "Die Münzpresse benötigt eine {coin:type} Münze um zu Pressen."
+            },
+            "designs": {
+                "freeform": {
+                    "placeholder": "Motivanzahl (z.B. 5)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Die Münzpresse hat ein Motiv zur Auswahl."
+                    },
+                    "1": {
+                        "then": "Die Münzpresse hat zwei Motive zur Auswahl."
+                    },
+                    "2": {
+                        "then": "Die Münzpresse hat drei Motive zur Auswahl."
+                    },
+                    "3": {
+                        "then": "Die Münzpresse hat vier Motive zur Auswahl."
+                    }
+                },
+                "question": "Wieviele Motive sind verfügbar?",
+                "render": "Die Münzpresse hat {coin:design_count} Motive zur Auswahl."
+            },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Münzpresse befindet sich im Inneren."
+                    },
+                    "1": {
+                        "then": "Die Münzpresse befindet sich Draußen."
+                    }
+                },
+                "question": "Befindet sich die Münzpresse im Inneren?"
+            }
+        },
+        "title": {
+            "render": "Münzpresse"
+        }
+    },
     "entrance": {
         "description": "Eine Ebene, die Eingänge anzeigt und die Möglichkeit bietet, weitere Daten zu erheben, die z. B. für Rollstuhlfahrer wichtig sind (aber auch für Radfahrer, Lieferpersonal, …)",
         "name": "Eingänge",
@@ -4438,7 +4527,7 @@
                     }
                 }
             },
-            "3": {
+            "5": {
                 "options": {
                     "0": {
                         "question": "Mit und ohne Bild"
@@ -4451,14 +4540,14 @@
                     }
                 }
             },
-            "4": {
+            "6": {
                 "options": {
                     "0": {
                         "question": "Mit taktilem Pflaster"
                     }
                 }
             },
-            "5": {
+            "7": {
                 "options": {
                     "0": {
                         "question": "Mit oder ohne taktiles Pflaster"
@@ -4474,14 +4563,14 @@
                     }
                 }
             },
-            "6": {
+            "8": {
                 "options": {
                     "0": {
                         "question": "Bio-Produkte im Angebot"
                     }
                 }
             },
-            "7": {
+            "9": {
                 "options": {
                     "0": {
                         "question": "Nutzung kostenlos"
@@ -5066,7 +5155,11 @@
             },
             "ghost_bike-source": {
                 "question": "Auf welcher Webseite kann man mehr Informationen über das Geisterrad oder den Unfall finden?",
-                "render": "<a href='{source}' target='_blank'>Mehr Informationen</a>"
+                "render": {
+                    "special": {
+                        "text": "Mehr Informationen"
+                    }
+                }
             },
             "ghost_bike-start_date": {
                 "question": "Wann wurde dieses Geisterrad aufgestellt?",
@@ -5982,8 +6075,7 @@
             },
             "Email": {
                 "question": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Gebiet wenden?",
-                "questionHint": "Respektieren Sie die Privatsphäre. Geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist",
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+                "questionHint": "Respektieren Sie die Privatsphäre. Geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist"
             },
             "Name tag": {
                 "mappings": {
@@ -7016,7 +7108,11 @@
             },
             "public_bookcase-website": {
                 "question": "Auf welcher Webseite findet man Informationen zu diesem Bücherschrank?",
-                "render": "Weitere Informationen auf <a href='{website}' target='_blank'>der Webseite</a>"
+                "render": {
+                    "special": {
+                        "text": "Weitere Informationen auf der Webseite"
+                    }
+                }
             }
         },
         "title": {
@@ -7030,6 +7126,15 @@
     },
     "questions": {
         "tagRenderings": {
+            "check_date": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Objekt wurde heute zuletzt kontrolliert"
+                    }
+                },
+                "question": "Wann wurde dieses Objekt zuletzt kontrolliert?",
+                "render": "Dieses Objekt wurde zuletzt kontrolliert am <b>{check_date}</b>"
+            },
             "denominations-coins": {
                 "mappings": {
                     "0": {
@@ -9547,10 +9652,10 @@
             "verified-mastodon": {
                 "mappings": {
                     "0": {
-                        "then": "Es wurde ein Link zu deinem Mastodon-Profil gefunden: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                        "then": "Es wurde ein Link zu deinem Mastodon-Profil gefunden: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
                     },
                     "1": {
-                        "then": "Wir haben einen Link gefunden, der aussieht wie ein Mastodon-Konto, aber nicht verifiziert ist. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Bearbeiten Sie Ihre Profilbeschreibung</a> und fügen Sie dort Folgendes ein: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+                        "then": "Wir haben einen Link gefunden, der aussieht wie ein Mastodon-Konto, aber nicht verifiziert ist. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Bearbeiten Sie Ihre Profilbeschreibung</a> und fügen Sie dort Folgendes ein: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
                     }
                 }
             }

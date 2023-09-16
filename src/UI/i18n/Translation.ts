@@ -226,16 +226,27 @@ export class Translation extends BaseUIElement {
         return new Translation(this.translations, this.context)
     }
 
-    FirstSentence() {
+    /**
+     * Build a new translation which only contains the first sentence of every language
+     * A sentence stops at either a dot (`.`) or a HTML-break ('<br/>').
+     * The dot or linebreak are _not_ returned.
+     *
+     * new Translation({"en": "This is a sentence. This is another sentence"}).FirstSentence().textFor("en") // "This is a sentence"
+     * new Translation({"en": "This is a sentence <br/> This is another sentence"}).FirstSentence().textFor("en") // "This is a sentence"
+     * new Translation({"en": "This is a sentence <br> This is another sentence"}).FirstSentence().textFor("en") // "This is a sentence"
+     * new Translation({"en": "This is a sentence with a <b>bold</b> word. This is another sentence"}).FirstSentence().textFor("en") // "This is a sentence with a <b>bold</b> word"
+     * @constructor
+     */
+    public FirstSentence(): Translation {
         const tr = {}
         for (const lng in this.translations) {
             if (!this.translations.hasOwnProperty(lng)) {
                 continue
             }
             let txt = this.translations[lng]
-            txt = txt.replace(/[.<].*/, "")
+            txt = txt.replace(/(\.|<br\/>|<br>).*/, "")
             txt = Utils.EllipsesAfter(txt, 255)
-            tr[lng] = txt
+            tr[lng] = txt.trim()
         }
 
         return new Translation(tr)

@@ -189,7 +189,7 @@
     },
     {
       "key": "message",
-      "description": "Layer 'Advertise' shows message=opinion with a fixed text, namely 'To expres your opinion' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertise' shows message=opinion with a fixed text, namely 'To express your opinion' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "opinion"
     },
     {

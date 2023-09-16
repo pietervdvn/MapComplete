@@ -18,6 +18,9 @@ runs:
       run: npm ci
       shell: bash
 
+    - name: REUSE compliance check
+      uses: fsfe/reuse-action@v2
+      
     - name: create generated dir
       run: mkdir ./assets/generated
       shell: bash

@@ -139,9 +139,6 @@
         "doDelete": "Usuń ilustrację",
         "dontDelete": "Anuluj",
         "isDeleted": "Usunięte",
-        "nearbyPictures": {
-            "loading": "Wczytywanie obrazów w pobliżu…"
-        },
         "pleaseLogin": "Zaloguj się, by dodać zdjęcie",
         "respectPrivacy": "Nie fotografuj ludzi i tablic rejestracyjnych. Nie wysyłaj także treści z Google Maps, Google Streetview ani innych licencjonowanych źródeł.",
         "uploadDone": "Twoje zdjęcie zostało dodane. Dzięki za pomoc!",

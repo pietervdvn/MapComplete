@@ -69,7 +69,6 @@
         "doDelete": "Ta bort bild",
         "dontDelete": "Avbryt",
         "isDeleted": "Borttagen",
-        "nearbyPictures": {},
         "pleaseLogin": "Logga in för att lägga till en bild",
         "respectPrivacy": "Fotografera inte personer eller registreringsskyltar. Ladda inte upp från Google Maps, Google Streetview eller andra upphovsrättsskyddade källor.",
         "toBig": "Din bild är för stor då den är {actual_size}. Vänligen använd endast bilder som är högst {max_size}",

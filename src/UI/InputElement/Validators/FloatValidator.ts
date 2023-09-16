@@ -1,7 +1,7 @@
 import { Translation } from "../../i18n/Translation"
 import Translations from "../../i18n/Translations"
 import { Validator } from "../Validator"
-import { ValidatorType } from "../Validators";
+import { ValidatorType } from "../Validators"
 
 export default class FloatValidator extends Validator {
     inputmode: "decimal" = "decimal"

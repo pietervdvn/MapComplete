@@ -8,7 +8,8 @@
     "it": "Oggetto relativo alle bici",
     "es": "Objeto relacionado con bicis",
     "da": "Cykelrelateret genstand",
-    "ca": "Objectes relacionats amb bicicletes"
+    "ca": "Objectes relacionats amb bicicletes",
+    "cs": "Objekt související s jízdním kolem"
   },
   "minzoom": 13,
   "source": {
@@ -35,7 +36,8 @@
       "it": "Oggetto relativo alle bici",
       "es": "Objeto relacionado con bicis",
       "da": "Cykelrelateret objekt",
-      "ca": "Objecte relacionat amb bicis"
+      "ca": "Objecte relacionat amb bicis",
+      "cs": "Objekt související s jízdním kolem"
     },
     "mappings": [
       {
@@ -53,7 +55,8 @@
           "ru": "Велотрек",
           "ca": "Pista ciclable",
           "es": "Carril bici",
-          "da": "Cykelsti"
+          "da": "Cykelsti",
+          "cs": "Cyklostezka"
         }
       }
     ]
@@ -89,6 +92,7 @@
     "es": "Una capa con los objetos relacionados con bicis pero que no coinciden con ninguna otra capa",
     "fr": "Une couche sur le thème des vélos mais qui ne correspondent à aucune autre couche",
     "da": "Et lag med objekter med cykeltema, men som ikke matcher noget andet lag",
-    "ca": "Una capa amb els objectes relacionats amb bicis però que no coinxideixen amb cap altra capa"
+    "ca": "Una capa amb els objectes relacionats amb bicis però que no coinxideixen amb cap altra capa",
+    "cs": "Vrstva s objekty s tématikou jízdních kol, které však neodpovídají žádné jiné vrstvě"
   }
 }

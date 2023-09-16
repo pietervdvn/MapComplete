@@ -67,7 +67,7 @@
         "fr": "La vitesse maximum autorisée sur cette route est {canonical(maxspeed)}"
       },
       "question": {
-        "es": "Qué velocidad tiene",
+        "es": "Qué es la velocidad máxima legal uno está permitido conducir en esta carretera?",
         "ca": "Quina és la velocitat màxima legal que es permet conduir en aquesta carretera?",
         "en": "What is the legal maximum speed one is allowed to drive on this road?",
         "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?",

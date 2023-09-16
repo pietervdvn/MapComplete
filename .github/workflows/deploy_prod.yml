@@ -1,4 +1,4 @@
-name: Theme Validation and deployment
+name: Deploy master on mapcomplete.org
 on:
   push:
     branches:
@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -69,6 +69,7 @@ jobs:
           cp -r dist/* mapcomplete.github.io/
           cd mapcomplete.github.io/
           echo "mapcomplete.org" > CNAME
+          touch .nojekyll
           git add *
           if git status | grep -q "Changes to be committed"
           then

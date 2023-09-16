@@ -1,10 +1,10 @@
 import * as fs from "fs"
-import { DesugaringStep } from "../Models/ThemeConfig/Conversion/Conversion"
-import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
-import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+import { DesugaringStep } from "../src/Models/ThemeConfig/Conversion/Conversion"
+import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
+import { QuestionableTagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import * as fakedom from "fake-dom"
 import Script from "./Script"
-import { FixedUiElement } from "../UI/Base/FixedUiElement"
+import { FixedUiElement } from "../src/UI/Base/FixedUiElement"
 
 class ExtractQuestionHint extends DesugaringStep<QuestionableTagRenderingConfigJson> {
     constructor() {
