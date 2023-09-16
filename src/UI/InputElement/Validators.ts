@@ -53,6 +53,7 @@ export default class Validators {
         "icon",
         "fediverse",
         "tag",
+        "fediverse",
     ] as const
 
     public static readonly AllValidators: ReadonlyArray<Validator> = [

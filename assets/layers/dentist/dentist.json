@@ -5,12 +5,14 @@
     "nl": "Tandarts",
     "de": "Zahnärzte",
     "es": "Dentista",
-    "ca": "Dentista"
+    "ca": "Dentista",
+    "pl": "Dentysta"
   },
   "description": {
     "en": "This layer shows dentist offices",
     "de": "Diese Ebene zeigt Zahnarztpraxen",
-    "nl": "Deze laag toont tandartsen"
+    "nl": "Deze laag toont tandartsen",
+    "pl": "Ta warstwa pokazuje gabinety dentystyczne"
   },
   "source": {
     "osmTags": "amenity=dentist"
@@ -35,13 +37,15 @@
         "en": "What is the name of this dentist?",
         "de": "Wie lautet der Name dieses Zahnarztes?",
         "nl": "Hoe heet deze tandarts?",
-        "ca": "Com s'anomena aquest dentista?"
+        "ca": "Com s'anomena aquest dentista?",
+        "pl": "Jaka jest nazwa tego gabinetu dentystycznego?"
       },
       "render": {
         "en": "This dentist is called {name}",
         "de": "Dieser Zahnarzt heißt {name}",
         "nl": "Deze tandarts heet {name}",
-        "ca": "El dentista s'anomena {name}"
+        "ca": "El dentista s'anomena {name}",
+        "pl": "Nazwa tego gabinetu dentystycznego to {name}"
       },
       "freeform": {
         "key": "name"

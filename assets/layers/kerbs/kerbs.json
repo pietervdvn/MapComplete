@@ -6,14 +6,16 @@
     "de": "Bordsteine",
     "fr": "Bordures",
     "pa_PK": "کرب",
-    "ru": "Бордюры"
+    "ru": "Бордюры",
+    "pl": "Krawężniki"
   },
   "description": {
     "en": "A layer showing kerbs.",
     "nl": "Een laag met stoepranden.",
     "de": "Eine Ebene, die Bordsteine zeigt.",
     "fr": "Un calque montrant les bordures.",
-    "ru": "Слой, изображающий бордюры."
+    "ru": "Слой, изображающий бордюры.",
+    "pl": "Warstwa pokazująca krawężniki."
   },
   "source": {
     "osmTags": "barrier=kerb"
@@ -26,7 +28,8 @@
       "de": "Bordstein",
       "fr": "Bordure",
       "pa_PK": "کرب",
-      "ru": "Бордюр"
+      "ru": "Бордюр",
+      "pl": "Krawężnik"
     }
   },
   "mapRendering": [
@@ -72,7 +75,8 @@
         "de": "Wie hoch ist der Bordstein?",
         "fr": "Quelle est la hauteur de ce trottoir ?",
         "ca": "Quina és l'altura d'aquest gual?",
-        "ru": "Какая высота у этого бордюра?"
+        "ru": "Какая высота у этого бордюра?",
+        "pl": "Jaka jest wysokość tego krawężnika?"
       },
       "mappings": [
         {
@@ -82,7 +86,8 @@
             "nl": "Deze stoeprand is hoog (>3 cm)",
             "de": "Der Bordstein ist erhöht (>3 cm)",
             "fr": "Cette bordure est surélevée (>3 cm)",
-            "ca": "Aquest gual està elevat (>3cm)"
+            "ca": "Aquest gual està elevat (>3cm)",
+            "pl": "Ten krawężnik jest wyniesiony (>3 cm)"
           },
           "icon": {
             "path": "./assets/layers/kerbs/raised.svg",
@@ -97,7 +102,8 @@
             "de": "Der Bordstein ist abgesenkt (~3 cm)",
             "fr": "Cette bordure est abaissée (~3 cm)",
             "ca": "Aquest gual està rebaixat (~3 cm)",
-            "ru": "Это пониженный бордюр (~3 см)"
+            "ru": "Это пониженный бордюр (~3 см)",
+            "pl": "Ten krawężnik jest obniżony (~3 cm)"
           },
           "icon": {
             "path": "./assets/layers/kerbs/lowered.svg",
@@ -126,7 +132,8 @@
             "nl": "Er is hier geen stoeprand",
             "de": "Hier gibt es keinen Bordstein",
             "fr": "Il n'y a pas de bordure ici",
-            "ru": "Здесь нет бордюра"
+            "ru": "Здесь нет бордюра",
+            "pl": "Nie ma tutaj krawężnika"
           },
           "hideInAnswer": true,
           "icon": {
@@ -140,7 +147,8 @@
             "en": "There is a kerb of unknown height",
             "nl": "Er is een stoeprand met onbekende hoogte",
             "de": "Es gibt einen Bordstein mit unbekannter Höhe",
-            "fr": "Il y a un trottoir de hauteur inconnue"
+            "fr": "Il y a un trottoir de hauteur inconnue",
+            "pl": "Jest krawężnik o nieznanej wysokości"
           },
           "hideInAnswer": true
         }
@@ -155,7 +163,8 @@
         "fr": "Y a-t-il un revêtement tactile sur cette bordure ?",
         "nl": "Is er voelbare bestrating bij deze stoeprand?",
         "ca": "Hi ha una superfície podotàctil a aquest gual?",
-        "ru": "Есть ли тактильная плитка у этого бордюра?"
+        "ru": "Есть ли тактильная плитка у этого бордюра?",
+        "pl": "Czy na tym krawężniku są wypustki dla niewidomych?"
       },
       "mappings": [
         {
@@ -166,7 +175,8 @@
             "fr": "Cette bordure a un revêtement podotactile.",
             "nl": "Deze stoeprand heeft voelbare bestrating.",
             "ca": "Aquest gual té superfície podotàctil.",
-            "ru": "У этого бордюра есть тактильная плитка."
+            "ru": "У этого бордюра есть тактильная плитка.",
+            "pl": "Ten krawężnik ma wypustki dla niewidomych."
           }
         },
         {
@@ -177,7 +187,8 @@
             "fr": "Cette bordure n'a pas de revêtement podotactile.",
             "nl": "Deze stoeprand heeft geen voelbare bestrating.",
             "ca": "Aquest gual no té superfície podotàctil.",
-            "ru": "У этого бордюра нет тактильной плитки."
+            "ru": "У этого бордюра нет тактильной плитки.",
+            "pl": "Ten krawężnik nie ma wypustek dla niewidomych."
           }
         },
         {
@@ -188,7 +199,8 @@
             "fr": "Cette bordure a un pavage tactile, mais il est incorrect.",
             "nl": "Deze stoeprand heeft voelbare bestrating, maar deze is incorrect.",
             "ca": "La vorera té superfície podotàctil, però és incorrecte.",
-            "ru": "У этого бордюра неверно выложенная тактильная плитка."
+            "ru": "У этого бордюра неверно выложенная тактильная плитка.",
+            "pl": "Ten krawężnik ma wypustki dla niewidomych, ale nieprawidłowe."
           },
           "hideInAnswer": true
         }
@@ -203,14 +215,16 @@
         "de": "Wie hoch ist der Bordstein?",
         "fr": "Quelle est la hauteur de ce trottoir ?",
         "ca": "Quina és l'altura d'aquest gual?",
-        "ru": "Какая высота у этого бордюра?"
+        "ru": "Какая высота у этого бордюра?",
+        "pl": "Jaka jest wysokość tego krawężnika?"
       },
       "render": {
         "en": "Kerb height: {kerb:height}",
         "nl": "Stoeprandhoogte: {kerb:height}",
         "de": "Bordsteinhöhe: {kerb:height}",
         "fr": "Hauteur du trottoir : {kerb:height}",
-        "ru": "Высота бордюра: {kerb:height}"
+        "ru": "Высота бордюра: {kerb:height}",
+        "pl": "Wysokość krawężnika: {kerb:height}"
       },
       "freeform": {
         "key": "kerb:height",
@@ -219,7 +233,8 @@
           "nl": "Hoogte van de stoeprand",
           "de": "Höhe des Bordsteins",
           "fr": "Hauteur de la bordure",
-          "ru": "Высота бордюра"
+          "ru": "Высота бордюра",
+          "pl": "Wysokość krawężnika"
         },
         "type": "pnat"
       },
@@ -243,7 +258,8 @@
         "nl": "een stoeprand",
         "de": "einen Bordstein",
         "fr": "une bordure",
-        "ru": "бордюр"
+        "ru": "бордюр",
+        "pl": "krawężnik"
       },
       "tags": [
         "barrier=kerb"
@@ -271,7 +287,8 @@
             "nl": "Alle typen stoepranden",
             "de": "Alle Bordsteine",
             "fr": "Tous types de bordures",
-            "ru": "Все виды бордюров"
+            "ru": "Все виды бордюров",
+            "pl": "Wszystkie rodzaje krawężników"
           }
         },
         {
@@ -280,7 +297,8 @@
             "en": "Raised kerb (>3 cm)",
             "nl": "Hoge stoeprand (>3 cm)",
             "de": "Erhöhte Bordsteine (>3 cm)",
-            "fr": "Bordure surélevée (>3 cm)"
+            "fr": "Bordure surélevée (>3 cm)",
+            "pl": "Podniesiony krawężnik (>3 cm)"
           }
         },
         {
@@ -290,7 +308,8 @@
             "nl": "Verlaagde stoeprand (~3 cm)",
             "de": "Abgesenkte Bordsteine (~3 cm)",
             "fr": "Bordure abaissée (~3 cm)",
-            "ru": "Пониженный бордюр (~3 см)"
+            "ru": "Пониженный бордюр (~3 см)",
+            "pl": "Obniżony krawężnik (~3 cm)"
           }
         },
         {
@@ -310,7 +329,8 @@
             "nl": "Geen stoeprand",
             "de": "Kein Bordstein",
             "fr": "Pas de trottoir",
-            "ru": "Нет бордюра"
+            "ru": "Нет бордюра",
+            "pl": "Brak krawężnika"
           }
         },
         {
@@ -319,7 +339,8 @@
             "en": "Kerb with unknown height",
             "nl": "Stoeprand met onbekende hoogte",
             "de": "Bordsteine unbekannter Höhe",
-            "fr": "Bordure de hauteur inconnue"
+            "fr": "Bordure de hauteur inconnue",
+            "pl": "Krawężnik z nieznaną wysokością"
           }
         }
       ]
@@ -342,7 +363,8 @@
             "fr": "centimètres",
             "pa_PK": "سینٹیمیٹر",
             "ru": "сантиметры",
-            "ca": "centímetres"
+            "ca": "centímetres",
+            "pl": "centymetry"
           },
           "humanSingular": {
             "en": "centimeter",
@@ -351,7 +373,8 @@
             "fr": "centimètre",
             "pa_PK": "سینٹیمیٹر",
             "ru": "сантиметр",
-            "ca": "centímetre"
+            "ca": "centímetre",
+            "pl": "centymetr"
           }
         },
         {
@@ -367,7 +390,8 @@
             "fr": "mètres",
             "pa_PK": "میٹر",
             "ru": "метры",
-            "ca": "metres"
+            "ca": "metres",
+            "pl": "metry"
           },
           "humanSingular": {
             "en": "meter",
@@ -376,7 +400,8 @@
             "fr": "mètre",
             "pa_PK": "میٹر",
             "ru": "метр",
-            "ca": "metre"
+            "ca": "metre",
+            "pl": "metr"
           }
         }
       ],

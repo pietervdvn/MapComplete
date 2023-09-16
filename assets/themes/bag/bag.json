@@ -18,7 +18,8 @@
     "fr": "Outil de facilitation d'import BAG",
     "ca": "Ferramenta d'ajuda per a importar el BAG",
     "es": "Herramienta de ayuda a la importación BAG",
-    "cs": "Pomocný nástroj pro import BAG"
+    "cs": "Pomocný nástroj pro import BAG",
+    "eu": "BAGak inportatzen laguntzeko tresna"
   },
   "description": {
     "nl": "Dit thema helpt het importeren van BAG data",
@@ -28,7 +29,8 @@
     "fr": "Ce thème aide à l'importation de données depuis BAG",
     "ca": "Aquest tema ajuda amb la importació de dades del BAG",
     "zgh": "ⵉⵜⵜⴰⵡⵙ ⵉⵎⵔⵙⵉ ⴰⴷ ⴳ ⵡⴰⵎⵎⴰⵥ ⵏ ⵜⵎⵓⵛⴰ ⵙⴳ BAG",
-    "es": "Este tema ayuda a importar datos de BAG"
+    "es": "Este tema ayuda a importar datos de BAG",
+    "eu": "Gai honek BAGeko datuak inportatzen laguntzen du"
   },
   "credits": "Wouter van der Wal",
   "icon": "./assets/themes/bag/logo.svg",
@@ -183,7 +185,8 @@
         "ca": "Edificis del registre BAG",
         "zgh": "ⵜⵓⵚⴽⴰⵡⵉⵏ ⵙⴳ ⵡⴰⵔⵔⴰ ⵏ BAG",
         "es": "Edificios del registro BAG",
-        "cs": "Budovy z registru BAG"
+        "cs": "Budovy z registru BAG",
+        "pl": "Budynki z rejestru BAG"
       },
       "source": {
         "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Apand&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
@@ -260,7 +263,8 @@
                 "ca": "El valors correctes encara no s'ha calculat. Refresca la pàgina",
                 "cs": "Zatím nebyly vypočteny správné hodnoty. Aktualizujte stránku",
                 "nb_NO": "Har ikke regnet ut riktige verdier enda. Gjenoppfrisk siden.",
-                "es": "Aún no se han calculado los valores correctos. Actualice esta página"
+                "es": "Aún no se han calculado los valores correctos. Actualice esta página",
+                "pl": "Jeszcze nie obliczono poprawnych wartości. Odśwież tę stronę"
               }
             },
             {
@@ -302,7 +306,8 @@
             "ca": "L’edifici va ser construït al <b> {_bag_obj:start_date}4</b>",
             "es": "El edificio fue construido en <b>{_bag_obj:start_date}</b>",
             "cs": "Tato budova byla postavena v <b>{_bag_obj:start_date}</b>",
-            "nb_NO": "Bygning oppført <b>{_bag_obj:start_date}</b>"
+            "nb_NO": "Bygning oppført <b>{_bag_obj:start_date}</b>",
+            "pl": "Ten budynek zbudowano w <b>{_bag_obj:start_date}</b>"
           },
           "mappings": [
             {
@@ -330,7 +335,8 @@
             "ca": "El tipus d'edifici és <b>{_bag_obj:building}</b>",
             "cs": "Typ budovy je <b>{_bag_obj:building}.</b>",
             "nb_NO": "Dette er en bygning av typen <b>{_bag_obj:building}</b>",
-            "es": "El edificio es de tipo <b>{_bag_obj:building}</b>"
+            "es": "El edificio es de tipo <b>{_bag_obj:building}</b>",
+            "pl": "Rodzaj budynku to <b>{_bag_obj:building}</b>"
           },
           "mappings": [
             {

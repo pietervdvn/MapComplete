@@ -79,9 +79,7 @@
             "previewbox": {}
         }
     },
-    "image": {
-        "nearbyPictures": {}
-    },
+    "image": {},
     "importInspector": {},
     "importLayer": {},
     "index": {},

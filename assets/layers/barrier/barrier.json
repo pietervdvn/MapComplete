@@ -13,7 +13,9 @@
     "cs": "Překážky",
     "pa_PK": "رُکاوٹاں",
     "nb_NO": "Barrièrer",
-    "he": "מחסומים"
+    "he": "מחסומים",
+    "eu": "Barrerak",
+    "pl": "Barierki"
   },
   "description": {
     "en": "Obstacles while cycling, such as bollards and cycle barriers",
@@ -48,7 +50,8 @@
       "da": "Barriere",
       "cs": "Bariéra",
       "pa_PK": "رُکاوٹ",
-      "he": "מחסום"
+      "he": "מחסום",
+      "eu": "Barrera"
     },
     "mappings": [
       {
@@ -63,7 +66,8 @@
           "ca": "Pilona",
           "da": "Pullert",
           "cs": "Sloupek",
-          "pa_PK": "بولارڈ"
+          "pa_PK": "بولارڈ",
+          "eu": "Bolardoa"
         }
       },
       {

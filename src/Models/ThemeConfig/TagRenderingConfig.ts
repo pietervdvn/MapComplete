@@ -247,7 +247,10 @@ export default class TagRenderingConfig {
                 if (txt === "") {
                     throw context + " Rendering for language " + ln + " is empty"
                 }
-                if (txt.indexOf("{" + this.freeform.key + "}") >= 0) {
+                if (
+                    txt.indexOf("{" + this.freeform.key + "}") >= 0 ||
+                    txt.indexOf("&LBRACE" + this.freeform.key + "&RBRACE")
+                ) {
                     continue
                 }
                 if (txt.indexOf("{" + this.freeform.key + ":") >= 0) {

@@ -14,7 +14,8 @@
     "fr": "Notes sur OpenStreetMap",
     "da": "Noter på OpenStreetMap",
     "cs": "Poznámky k OpenStreetMap",
-    "zh_Hant": "開放街圖上的註解"
+    "zh_Hant": "開放街圖上的註解",
+    "pl": "Notatki na OpenStreetMap"
   },
   "description": {
     "en": "A note is a pin on the map with some text to indicate something wrong.<br/><br/>Make sure to checkout the <a href='#filters'>filter view</a> to search for users and text.",

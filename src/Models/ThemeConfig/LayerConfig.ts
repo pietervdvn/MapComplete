@@ -490,9 +490,7 @@ export default class LayerConfig extends WithContextLoader {
             usingLayer = [
                 new Title("Themes using this layer", 4),
                 new List(
-                    (usedInThemes ?? []).map(
-                        (id) => new Link(id, "https://mapcomplete.org/" + id)
-                    )
+                    (usedInThemes ?? []).map((id) => new Link(id, "https://mapcomplete.org/" + id))
                 ),
             ]
         }

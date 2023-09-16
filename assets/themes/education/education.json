@@ -20,7 +20,9 @@
     "da": "Uddannelse",
     "pa_PK": "سکھیا",
     "cs": "Vzdělání",
-    "es": "Educación"
+    "es": "Educación",
+    "eu": "Hezkuntza",
+    "pl": "Edukacja"
   },
   "defaultBackgroundId": "CartoDB.Voyager",
   "startLat": 0,

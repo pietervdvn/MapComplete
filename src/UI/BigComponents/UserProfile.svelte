@@ -37,6 +37,7 @@
       <a
         href={osmConnection.Backend() + "/profile/edit"}
         target="_blank"
+        rel="noopener"
         class="link-no-underline flex items-center self-end"
       >
         <PencilAltIcon slot="image" class="h-8 w-8 p-2" />

@@ -9,7 +9,8 @@
     "de": "Karten",
     "ca": "Mapes",
     "es": "Mapas",
-    "pa_PK": "نقشے"
+    "pa_PK": "نقشے",
+    "pl": "Mapy"
   },
   "minzoom": 12,
   "source": {
@@ -30,7 +31,8 @@
       "de": "Karte",
       "ca": "Mapa",
       "es": "Mapa",
-      "pa_PK": "نقشہ"
+      "pa_PK": "نقشہ",
+      "pl": "Mapa"
     }
   },
   "description": {
@@ -39,7 +41,8 @@
     "it": "Una mappa, destinata ai turisti e che è sistemata in maniera permanente in uno spazio pubblico",
     "fr": "Une carte, destinée aux touristes, installée en permanence dans l'espace public",
     "de": "Eine Karte, die für Touristen gedacht ist und dauerhaft im öffentlichen Raum aufgestellt ist",
-    "es": "Un mapa, pensado para turistas y que está instalado de manera permanente en un espacio público"
+    "es": "Un mapa, pensado para turistas y que está instalado de manera permanente en un espacio público",
+    "pl": "Mapa, przeznaczona dla turystów, która jest zainstalowana w przestrzeni publicznej na stałe"
   },
   "tagRenderings": [
     "images",
@@ -47,7 +50,8 @@
       "id": "map_type",
       "question": {
         "en": "What type of map is shown?",
-        "de": "Was für eine Karte ist das?"
+        "de": "Was für eine Karte ist das?",
+        "pl": "Jaki rodzaj mapy jest pokazany?"
       },
       "mappings": [
         {
@@ -61,14 +65,16 @@
           "if": "map_type=street",
           "then": {
             "en": "A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>",
-            "de": "Eine Karte mit allen Straßen und Wegen eines Gebietes. <p class='subtle'>Die Straßen sind meist benannt; die Winkel, die Entfernungen, etc. stimmen</p>"
+            "de": "Eine Karte mit allen Straßen und Wegen eines Gebietes. <p class='subtle'>Die Straßen sind meist benannt; die Winkel, die Entfernungen, etc. stimmen</p>",
+            "pl": "Mapa z wszystkimi ulicami i ścieżkami w danym obszarze. <p class='subtle'>Ulica w większości mają nazwy; kąty, odległości itp. są poprawne</p>"
           }
         },
         {
           "if": "map_type=scheme",
           "then": {
             "en": "This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> ",
-            "de": "Dies ist eine schematische Karte. <p class='subtle'>Eine skizzierte Karte mit nur wichtigen Wegen und POIs. Die Winkel, Entfernungen usw. sind lediglich illustrativ, nicht genau.</p> "
+            "de": "Dies ist eine schematische Karte. <p class='subtle'>Eine skizzierte Karte mit nur wichtigen Wegen und POIs. Die Winkel, Entfernungen usw. sind lediglich illustrativ, nicht genau.</p> ",
+            "pl": "To jest mapa schematyczna. <p class='subtle'>Mapa-szkic z tylko ważnymi drogami i POI. Kąty, odległości itp. są tylko ilustratywne, niedokładne.</p> "
           }
         },
         {
@@ -84,14 +90,16 @@
       "id": "map_size",
       "question": {
         "en": "What is the size of the shown area on the map?",
-        "de": "Was wird von der Fläche abgedeckt?"
+        "de": "Was wird von der Fläche abgedeckt?",
+        "pl": "Jaki jest rozmiar obszaru pokazanego na tej mapie?"
       },
       "mappings": [
         {
           "if": "map_size=building",
           "then": {
             "en": "A map of the rooms within a building",
-            "de": "Eine Karte der Räume innerhalb eines Gebäudes"
+            "de": "Eine Karte der Räume innerhalb eines Gebäudes",
+            "pl": "Plan pomieszczeń w budynku"
           }
         },
         {
@@ -105,21 +113,24 @@
           "if": "map_size=village",
           "then": {
             "en": "A map showing the village or town",
-            "de": "Eine Karte, die das Dorf oder die Stadt anzeigt"
+            "de": "Eine Karte, die das Dorf oder die Stadt anzeigt",
+            "pl": "Mapa pokazująca wieś lub niewielkie miasto"
           }
         },
         {
           "if": "map_size=city",
           "then": {
             "en": " A map of a city",
-            "de": "Stadt"
+            "de": "Stadt",
+            "pl": " Mapa miasta"
           }
         },
         {
           "if": "map_size=region",
           "then": {
             "en": "The map of an entire region, showing multiple cities and villages",
-            "de": "Region"
+            "de": "Region",
+            "pl": "Mapa całego regionu, pokazująca wiele miast i wsi"
           }
         }
       ]
@@ -135,7 +146,8 @@
         "fr": "Sur quelles données cette carte est-elle basée ?",
         "de": "Auf welchen Daten basiert diese Karte?",
         "es": "¿En qué datos se basa este mapa?",
-        "ca": "En quines dades es basa aquest mapa?"
+        "ca": "En quines dades es basa aquest mapa?",
+        "pl": "Na jakich danych bazuje ta mapa?"
       },
       "mappings": [
         {
@@ -153,7 +165,8 @@
             "fr": "Cette carte est basée sur OpenStreetMap",
             "de": "Diese Karte basiert auf OpenStreetMap",
             "es": "Este mapa se basa en OpenStreetMap",
-            "ca": "Aquest mapa està basat en OpenStreetMap"
+            "ca": "Aquest mapa està basat en OpenStreetMap",
+            "pl": "Ta mapa bazuje na OpenStreetMap"
           }
         }
       ],
@@ -167,7 +180,8 @@
         "ru": "Эта карта основана на {map_source}",
         "fr": "Cette carte est basée sur {map_source}",
         "de": "Diese Karte basiert auf {map_source}",
-        "es": "Este mapa se basa en {map_source}"
+        "es": "Este mapa se basa en {map_source}",
+        "pl": "Ta mapa bazuje na {map_source}"
       },
       "id": "map-map_source"
     },
@@ -197,7 +211,8 @@
             "it": "L’attribuzione a OpenStreetMap è chiaramente specificata, inclusa la licenza ODBL",
             "de": "OpenStreetMap ist eindeutig attributiert, einschließlich der ODBL-Lizenz",
             "fr": "L’attribution est clairement inscrite ainsi que la licence ODBL",
-            "es": "Se atribuye claramente a OpenStreetMap, incluyendo la licencia ODBL"
+            "es": "Se atribuye claramente a OpenStreetMap, incluyendo la licencia ODBL",
+            "pl": "Źródło, czyli OpenStreetMap, jest w widoczny sposób podane, zawiera informację o licencji ODBL"
           }
         },
         {
@@ -285,7 +300,8 @@
         "fr": "une carte",
         "de": "eine Karte",
         "ca": "un mapa",
-        "es": "un mapa"
+        "es": "un mapa",
+        "pl": "mapa"
       },
       "description": {
         "en": "Add a missing map",
@@ -295,7 +311,8 @@
         "de": "Fehlende Karte hinzufügen",
         "ru": "Добавить отсутствующую карту",
         "es": "Añadir un mapa que falta",
-        "ca": "Afegeix un mapa que falta"
+        "ca": "Afegeix un mapa que falta",
+        "pl": "Dodaj brakującą mapę"
       }
     }
   ],

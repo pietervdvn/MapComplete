@@ -15,7 +15,9 @@
     "fr": "Cafés et pubs",
     "da": "Caféer og pubber",
     "pa_PK": "کیفے یا پب",
-    "cs": "Kavárny a hospody"
+    "cs": "Kavárny a hospody",
+    "eu": "Kafetegiak eta pubak",
+    "pl": "Kawiarnie i puby"
   },
   "description": {
     "en": "Coffeehouses, pubs and bars",
@@ -29,7 +31,8 @@
     "pa_PK": "پب (بار)",
     "cs": "Kavárny, hospody a bary",
     "it": "Pub e bar",
-    "zh_Hant": "咖啡廳、俱樂部與酒吧"
+    "zh_Hant": "咖啡廳、俱樂部與酒吧",
+    "eu": "Kafetegiak, pubak eta tabernak"
   },
   "icon": "./assets/layers/cafe_pub/pub.svg",
   "startLat": 0,

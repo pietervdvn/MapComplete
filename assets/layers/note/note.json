@@ -22,7 +22,8 @@
       "ca": "Nota",
       "de": "Notiz",
       "es": "Nota",
-      "pa_PK": "نوٹ"
+      "pa_PK": "نوٹ",
+      "pl": "Notatka"
     },
     "mappings": [
       {
@@ -31,7 +32,8 @@
           "en": "Closed note",
           "nl": "Gesloten Note",
           "de": "Geschlossene Notiz",
-          "es": "Nota cerrada"
+          "es": "Nota cerrada",
+          "pl": "Zamknięta notatka"
         }
       }
     ]
@@ -180,7 +182,8 @@
             "en": "Opened by contributor {search}",
             "nl": "Geopend door bijdrager {search}",
             "de": "Erstellt von {search}",
-            "es": "Abierto por el contributor {search}"
+            "es": "Abierto por el contributor {search}",
+            "fr": "Ouverte par {search}"
           }
         }
       ]

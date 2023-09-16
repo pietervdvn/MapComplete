@@ -105,7 +105,11 @@
             },
             "artwork-website": {
                 "question": "この作品についての詳しい情報はどのウェブサイトにありますか?",
-                "render": "<a href='{website}' target='_blank'>Webサイト</a>に詳細情報がある"
+                "render": {
+                    "special": {
+                        "text": "Webサイトに詳細情報がある"
+                    }
+                }
             }
         },
         "title": {

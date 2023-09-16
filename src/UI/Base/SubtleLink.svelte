@@ -34,6 +34,7 @@
   class={twMerge(options.extraClasses, "button text-ellipsis")}
   {href}
   target={newTab ? "_blank" : undefined}
+  rel={newTab ? "noopener" : undefined}
 >
   <slot name="image">
     {#if imageUrl !== undefined}

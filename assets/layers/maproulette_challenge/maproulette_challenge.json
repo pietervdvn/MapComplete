@@ -154,14 +154,16 @@
           "question": {
             "en": "Show tasks with all statuses",
             "de": "Aufgaben mit allen Status anzeigen",
-            "nl": "Toon alle taken, ongeacht de status"
+            "nl": "Toon alle taken, ongeacht de status",
+            "pl": "Pokaż zadania z wszystkimi statusami"
           }
         },
         {
           "question": {
             "en": "Show tasks that are created",
             "de": "Aufgaben anzeigen, die erstellt wurden",
-            "nl": "Toon taken die zijn gecreëerd"
+            "nl": "Toon taken die zijn gecreëerd",
+            "pl": "Pokaż zadania, które zostały stworzone"
           },
           "osmTags": "mr_taskStatus=Created"
         },
@@ -169,7 +171,8 @@
           "question": {
             "en": "Show tasks that are fixed",
             "de": "Aufgaben anzeigen, die erledigt wurden",
-            "nl": "Toon taken die zijn opgelost"
+            "nl": "Toon taken die zijn opgelost",
+            "pl": "Pokaż zadania, które są już wykonane"
           },
           "osmTags": "mr_taskStatus=Fixed"
         },

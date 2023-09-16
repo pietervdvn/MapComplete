@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 5849,
+      "commits": 5914,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 388,
+      "commits": 393,
       "contributor": "Robin van der Linde"
     },
     {
@@ -38,6 +38,10 @@
     },
     {
       "commits": 26,
+      "contributor": "Hosted Weblate"
+    },
+    {
+      "commits": 26,
       "contributor": "Joost"
     },
     {
@@ -47,10 +51,6 @@
     {
       "commits": 24,
       "contributor": "Ward"
-    },
-    {
-      "commits": 21,
-      "contributor": "Hosted Weblate"
     },
     {
       "commits": 21,
@@ -122,15 +122,15 @@
     },
     {
       "commits": 8,
+      "contributor": "pelderson"
+    },
+    {
+      "commits": 8,
       "contributor": "Codain"
     },
     {
       "commits": 8,
       "contributor": "Mateusz Konieczny"
-    },
-    {
-      "commits": 7,
-      "contributor": "pelderson"
     },
     {
       "commits": 7,
@@ -231,6 +231,14 @@
     {
       "commits": 2,
       "contributor": "Stanislas Gueniffey"
+    },
+    {
+      "commits": 1,
+      "contributor": "Ciprian"
+    },
+    {
+      "commits": 1,
+      "contributor": "redfast00"
     },
     {
       "commits": 1,

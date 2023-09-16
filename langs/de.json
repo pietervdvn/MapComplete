@@ -95,7 +95,7 @@
         "404": "Diese Seite existiert nicht",
         "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
         "aboutMapComplete": {
-            "intro": "Nutze MapComplete, um Daten zu <b>einem bestimmten Thema</b> auf OpenStreetMap einzutragen. Beantworte Frage, und in wenigen Minuten sind die Beiträge überall verfügbar. In den meisten Themen kannst Du Bilder hinzufügen oder sogar eine Bewertung hinterlassen. Die <b>Themen-Ersteller*innen</b> definieren Objekte, Fragen und Begriffe für das jeweilige Thema."
+            "intro": "Nutze MapComplete, um Daten zu <b>einem bestimmten Thema</b> auf OpenStreetMap einzutragen. Beantworte Fragen, und in wenigen Minuten sind deine Beiträge überall verfügbar. In den meisten Themen kannst Du Bilder hinzufügen oder sogar eine Bewertung hinterlassen. Die <b>Themen-Ersteller</b> definieren Objekte, Fragen und Begriffe für das jeweilige Thema."
         },
         "add": {
             "addNew": "{category} hinzufügen",
@@ -305,6 +305,7 @@
         },
         "sharescreen": {
             "copiedToClipboard": "Verknüpfung in Zwischenablage kopiert",
+            "documentation": "Für weitere Informationen über verfügbare URL-Parameter, <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>siehe Dokumentation</a>",
             "embedIntro": "<h3>Karte in Webseiten einbetten</h3>Betten Sie diese Karte in Ihre Webseite ein. <br/>Wir ermutigen Sie gern dazu - Sie müssen nicht mal um Erlaubnis fragen.<br/> Die Karte ist kostenlos und wird es immer sein. Je mehr Leute die Karte benutzen, desto wertvoller wird sie.",
             "fsUserbadge": "Anmeldefeld aktivieren",
             "fsWelcomeMessage": "Begrüßung und Registerkarten anzeigen",
@@ -404,20 +405,6 @@
         "doDelete": "Bild entfernen",
         "dontDelete": "Abbrechen",
         "isDeleted": "Gelöscht",
-        "nearbyPictures": {
-            "allFiltered": "Keine Bilder passen zu Ihrem Filter",
-            "browseNearby": "Bilder in der Nähe suchen…",
-            "confirm": "Das ausgewählte Bild zeigt {title()}",
-            "hasMatchingPicture": "Passt ein Bild zum Objekt? Wählen Sie es unten aus",
-            "loadMore": "Weitere Bilder laden",
-            "loading": "Bilder in der Nähe laden…",
-            "noImageSelected": "Wählen Sie ein Bild aus, um es mit dem Objekt zu verknüpfen",
-            "nothingFound": "Keine Bilder in der Nähe gefunden…",
-            "onlyTowards": "Nur Bilder anzeigen, die in Richtung dieses Objekts aufgenommen wurden",
-            "removeFilters": "Hier klicken, um die Filter zu entfernen",
-            "title": "Bilder in der Nähe",
-            "withinRadius": "Nur Bilder anzeigen, die im Umkreis von {radius} Metern um dieses Objekt aufgenommen wurden"
-        },
         "pleaseLogin": "Bitte anmelden, um ein Bild hinzuzufügen",
         "respectPrivacy": "Bitte respektieren Sie die Privatsphäre. Fotografieren Sie weder Personen noch Nummernschilder. Benutzen Sie keine urheberrechtlich geschützten Quellen wie z.B. Google Maps oder Google Streetview.",
         "toBig": "Ihr Bild ist mit {actual_size} zu groß. Die maximale Bildgröße ist {max_size}",
@@ -575,7 +562,7 @@
         "editDescription": "Eigene Profilbeschreibung bearbeiten",
         "gotoInbox": "Deinen Posteingang öffnen",
         "gotoSettings": "Einstellungen auf OpenStreetMap.org öffnen",
-        "noDescription": "Sie haben noch keine Profilbeschreibung",
+        "noDescription": "Noch keine Profilbeschreibung vorhanden",
         "noDescriptionCallToAction": "Profilbeschreibung hinzufügen",
         "notLoggedIn": "Du hast Dich abgemeldet"
     },
@@ -596,6 +583,11 @@
             "description": "E-Mail Adresse",
             "feedback": "Dies ist keine gültige E-Mail Adresse",
             "noAt": "Eine E-Mail-Adresse muss ein @ enthalten"
+        },
+        "fediverse": {
+            "description": "Eine Fediverse Adresse, häufig @username@server.tld",
+            "feedback": "Eine Fediverse Adresse besteht aus @username@server.tld oder ist ein Direktlink zu einem Profil",
+            "invalidHost": "{host} ist kein gültiger hostname"
         },
         "float": {
             "description": "eine Zahl",

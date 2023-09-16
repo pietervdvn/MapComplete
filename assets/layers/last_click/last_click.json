@@ -23,7 +23,10 @@
         "then": {
           "en": "Add a new point or add a note",
           "nl": "Voeg een nieuw punt of een nieuwe kaartnota toe",
-          "de": "Objekt oder Hinweis auf der Karte hinzufügen"
+          "de": "Objekt oder Hinweis auf der Karte hinzufügen",
+          "ca": "Afegeix un nou punt o nota",
+          "fr": "Ajouter un nouveau point ou ajouter une note",
+          "pl": "Dodaj nowy punkt lub dodaj notatkę"
         }
       },
       {
@@ -31,7 +34,10 @@
         "then": {
           "en": "Add a new note",
           "nl": "Voeg een nieuwe kaartnota toe",
-          "de": "Hinweis hinzufügen"
+          "de": "Hinweis hinzufügen",
+          "ca": "Afegeix una nova nota",
+          "fr": "Ajouter une nouvelle note",
+          "pl": "Dodaj nową notatkę"
         }
       },
       {
@@ -39,7 +45,10 @@
         "then": {
           "en": "Add a new point",
           "nl": "Voeg een nieuw punt toe",
-          "de": "Objekt hinzufügen"
+          "de": "Objekt hinzufügen",
+          "ca": "Afegeix un nou punt",
+          "fr": "Ajouter un nouveau point",
+          "pl": "Dodaj nowy punkt"
         }
       }
     ]
@@ -98,7 +107,8 @@
           "nb_NO": "Legg til nytt element",
           "nl": "Klik hier om een item toe te voegen",
           "pt": "Adicionar novo item",
-          "zh_Hant": "點這邊新增新項目"
+          "zh_Hant": "點這邊新增新項目",
+          "pl": "Kliknij tutaj, aby dodać nowy obiekt"
         },
         "mappings": [
           {
@@ -111,7 +121,10 @@
             "then": {
               "en": "Create a new map note",
               "nl": "Maak een nieuwe kaartnotitie",
-              "de": "Hinweis auf der Karte hinzufügen"
+              "de": "Hinweis auf der Karte hinzufügen",
+              "ca": "Crea una nova nota del mapa",
+              "fr": "Créer une nouvelle note de carte",
+              "pl": "Utwórz nową notatkę na mapie"
             }
           }
         ]

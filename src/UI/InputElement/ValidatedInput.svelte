@@ -10,11 +10,11 @@
     import UnitInput from "../Popup/UnitInput.svelte"
     import {Utils} from "../../Utils";
 
-    export let type: ValidatorType
-    export let feedback: UIEventSource<Translation> | undefined
-    export let getCountry: () => string | undefined
-    export let placeholder: string | Translation | undefined
-    export let unit: Unit = undefined
+  export let type: ValidatorType
+  export let feedback: UIEventSource<Translation> | undefined = undefined
+  export let getCountry: () => string | undefined
+  export let placeholder: string | Translation | undefined
+  export let unit: Unit = undefined
 
     export let value: UIEventSource<string>
     /**

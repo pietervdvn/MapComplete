@@ -7,7 +7,7 @@
     "it": "Bici fantasma",
     "fr": "Vélos fantômes",
     "eo": "Fantombiciklo",
-    "es": "Bicicleta blanca",
+    "es": "Bicicletas blanca",
     "fi": "Haamupyörä",
     "gl": "Bicicleta pantasma",
     "hu": "Emlékkerékpárok",
@@ -144,7 +144,9 @@
             "de": "Im Gedenken an {name}",
             "it": "In ricordo di {name}",
             "fr": "En souvenir de {name}",
-            "ru": "В знак памяти о {name}"
+            "ru": "В знак памяти о {name}",
+            "ca": "En record de {name}",
+            "pl": "Ku pamięci {name}"
           },
           "hideInAnswer": true
         },
@@ -184,14 +186,20 @@
         "ca": "En quina pàgina web es pot trobar més informació sobre la bicicleta blanca o l'accident?"
       },
       "render": {
-        "en": "<a href='{source}' target='_blank'>More info available</a>",
-        "nl": "<a href='{source}' target='_blank'>Meer informatie</a>",
-        "de": "<a href='{source}' target='_blank'>Mehr Informationen</a>",
-        "it": "<a href='{source}' target='_blank'>Sono disponibili ulteriori informazioni</a>",
-        "ru": "<a href='{source}' target='_blank'>Доступна более подробная информация</a>",
-        "fr": "<a href='{source}' target='_blank'>Plus d'informations sont disponibles</a>",
-        "id": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>",
-        "ca": "<a href='{source}' target='_blank'>Més informació disponible</a>"
+        "special": {
+          "type": "link",
+          "href": "{source}",
+          "text": {
+            "en": "More info available",
+            "nl": "Meer informatie",
+            "de": "Mehr Informationen",
+            "it": "Sono disponibili ulteriori informazioni",
+            "ru": "Доступна более подробная информация",
+            "fr": "Plus d'informations sont disponibles",
+            "id": "Informasi lanjut tersedia",
+            "ca": "Més informació disponible"
+          }
+        }
       },
       "freeform": {
         "type": "url",
@@ -273,6 +281,8 @@
   "description": {
     "en": "A layer showing memorials for cyclists, killed in road accidents",
     "nl": "Een laag die herdenkingsplaatsen voor verongelukte fietsers toont",
-    "de": "Eine Ebene mit Gedenkstätten für Radfahrer, die bei Verkehrsunfällen ums Leben gekommen sind"
+    "de": "Eine Ebene mit Gedenkstätten für Radfahrer, die bei Verkehrsunfällen ums Leben gekommen sind",
+    "fr": "Une couche affichant les mémoriaux en l'hommage de cyclistes tuées lors d'accidents de la route",
+    "pl": "Warstwa pokazujące miejsca upamiętnienia rowerzystów, którzy zginęli w wypadkach drogowych"
   }
 }

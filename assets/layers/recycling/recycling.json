@@ -1023,7 +1023,8 @@
             "es": "Aquí se puede reciclar plástico",
             "it": "Plastica",
             "ca": "Aquí es pot reciclar plàstic",
-            "fr": "Le plastique peut être recyclé ici"
+            "fr": "Le plastique peut être recyclé ici",
+            "pl": "Plastik może być tutaj poddany recyklingowi"
           },
           "icon": {
             "path": "./assets/layers/recycling/plastic.svg",
@@ -1206,7 +1207,8 @@
           "nl": "Wat zijn de openingstijden van deze recyclingfaciliteit?",
           "de": "Wie sind die Öffnungszeiten dieser Recyclinganlage?",
           "es": "¿A qué horas abre esta facilidad de reciclado?",
-          "it": "Quali sono gli orari di apertura di questo impianto di raccolta e riciclo?"
+          "it": "Quali sono gli orari di apertura di questo impianto di raccolta e riciclo?",
+          "ca": "Quin és l'horari d'obertura d'aquesta instal·lació de reciclatge?"
         }
       }
     },

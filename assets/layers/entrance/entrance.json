@@ -36,7 +36,8 @@
       "de": "Eingang",
       "es": "Entrada",
       "fr": "Entrée",
-      "pa_PK": "دروازہ"
+      "pa_PK": "دروازہ",
+      "pl": "Wejście"
     }
   },
   "tagRenderings": [
@@ -49,7 +50,8 @@
         "nl": "Wat voor ingang is dit?",
         "de": "Um welchen Eingangstyp handelt es sich?",
         "es": "¿Qué tipo de entrada es esta?",
-        "fr": "De quel type d'entrée s'agit-il ?"
+        "fr": "De quel type d'entrée s'agit-il ?",
+        "pl": "Jakiego rodzaju jest to wejście?"
       },
       "mappings": [
         {
@@ -91,7 +93,8 @@
             "nl": "Dit is de hoofdingang",
             "de": "Dies ist der Haupteingang",
             "es": "Esta es la entrada principal",
-            "fr": "Ceci est l'entrée principale"
+            "fr": "Ceci est l'entrée principale",
+            "pl": "To jest główne wejście"
           }
         },
         {
@@ -122,7 +125,8 @@
             "de": "Dies ist ein Diensteingang - normalerweise nur für Mitarbeiter, Anlieferung, …",
             "es": "Esta es una entrada de servicio - normalmente solo la utilizan empleados, repartidores, …",
             "fr": "C'est une entrée de service - normalement utilisée uniquement pour les employés, la livraison, …",
-            "ca": "Aquesta és una entrada de servei - normalment utilitzada per empleats, repartidors, …"
+            "ca": "Aquesta és una entrada de servei - normalment utilitzada per empleats, repartidors, …",
+            "pl": "To jest wejście serwisowe - zazwyczaj używane tylko przez pracowników, dostawy, …"
           }
         },
         {
@@ -137,7 +141,8 @@
             "nl": "Dit is enkel een uitgang, je kan hier niet naar binnen",
             "de": "Dies ist ein Ausgang, ohne Zutrittsmöglichkeit",
             "es": "Esta es una salida por la cual no se puede entrar",
-            "fr": "C'est une sortie où l'on ne peut pas entrer"
+            "fr": "C'est une sortie où l'on ne peut pas entrer",
+            "pl": "To jest wyjście bez możliwości wejścia"
           }
         },
         {
@@ -152,7 +157,8 @@
             "nl": "Dit is een ingang waar je enkel naar binnen kunt (niet naar buiten)",
             "de": "Dies ist ein Eingang, an dem man nur hineingehen kann (aber nicht hinausgehen)",
             "es": "Esta es una entrada por la que solo se puede entrar (pero no salir)",
-            "fr": "C'est une entrée où l'on ne peut qu'entrer (mais pas sortir)"
+            "fr": "C'est une entrée où l'on ne peut qu'entrer (mais pas sortir)",
+            "pl": "To jest wejście, którym nie można wychodzić"
           }
         },
         {
@@ -168,7 +174,8 @@
             "de": "Dies ist ein Notausgang",
             "es": "Esta es una salida de emergencia",
             "fr": "C'est la sortie de secours",
-            "he": "זו יציאת חירום"
+            "he": "זו יציאת חירום",
+            "pl": "To jest wyjście ewakuacyjne"
           }
         },
         {
@@ -183,7 +190,8 @@
             "nl": "Dit is de ingang van een private woning",
             "de": "Dies ist ein Eingang zu einem privaten Haus",
             "es": "Esta es la entrada a una vivienda privada",
-            "fr": "C'est l'entrée d'une maison privée"
+            "fr": "C'est l'entrée d'une maison privée",
+            "pl": "To jest wejście do prywatnego domu"
           }
         }
       ]
@@ -281,7 +289,8 @@
             "nl": "Dit is een automatische deur",
             "de": "Dies ist eine Automatiktür",
             "es": "Esta es una puerta automática",
-            "fr": "C'est une porte automatique"
+            "fr": "C'est une porte automatique",
+            "pl": "Te drzwi są automatyczne"
           },
           "hideInAnswer": true
         },
@@ -293,7 +302,8 @@
             "de": "Diese Tür ist <b>nicht</b> automatisiert",
             "es": "Esta puerta <b>no</b> está automatizada",
             "fr": "Cette porte n'est <b>pas</b> automatisée",
-            "ca": "Aquesta porta <b>no </b> està automatitzada"
+            "ca": "Aquesta porta <b>no </b> està automatitzada",
+            "pl": "Te drzwi <b>nie</b> są automatyczne"
           }
         },
         {
@@ -303,7 +313,8 @@
             "nl": "De deur gaat automatisch open wanneer er <b>beweging</b> wordt gedetecteerd",
             "de": "Diese Tür öffnet sich automatisch, wenn <b>Bewegung</b> erkannt wird",
             "es": "Esta puerta se abre automáticamente cuando se detecta <b>movimiento</b>",
-            "fr": "Cette porte s'ouvrira automatiquement lorsqu'un <b>mouvement</b> sera détecté"
+            "fr": "Cette porte s'ouvrira automatiquement lorsqu'un <b>mouvement</b> sera détecté",
+            "pl": "Te drzwi automatycznie się otwierają, kiedy zostanie wykryty <b>ruch</b>"
           }
         },
         {
@@ -412,7 +423,8 @@
           "en": "Height of the door kerb",
           "fr": "Hauteur du seuil de porte",
           "de": "Höhe der Türschwelle",
-          "nl": "Hoogte van de drempel"
+          "nl": "Hoogte van de drempel",
+          "pl": "Wysokość progu w drzwiach"
         },
         "type": "pnat"
       },
@@ -423,7 +435,8 @@
             "en": "This door does not have a kerb",
             "nl": "Deze deur heeft geen drempel",
             "fr": "Cette porte n'a pas de seuil",
-            "de": "Diese Tür hat keine Türschwelle"
+            "de": "Diese Tür hat keine Türschwelle",
+            "pl": "Te drzwi nie mają progu"
           }
         }
       ]
@@ -495,7 +508,8 @@
             "fr": "mètre",
             "de": "Meter",
             "nl": "meter",
-            "pa_PK": "میٹر"
+            "pa_PK": "میٹر",
+            "pl": "metr"
           }
         },
         {
@@ -509,7 +523,8 @@
             "fr": "centimètre",
             "de": "Zentimeter",
             "nl": "centimeter",
-            "pa_PK": "سینٹیمیٹر"
+            "pa_PK": "سینٹیمیٹر",
+            "pl": "centrymetr"
           }
         }
       ]

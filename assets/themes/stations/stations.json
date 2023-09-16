@@ -9,7 +9,8 @@
     "ca": "Estacions de tren",
     "es": "Estaciones de tren",
     "cs": "Vlaková nádraží",
-    "zh_Hant": "火車站"
+    "zh_Hant": "火車站",
+    "pl": "Stacje Kolejowe"
   },
   "description": {
     "en": "View, edit and add details to a train station",
@@ -18,7 +19,8 @@
     "fr": "Voir, modifier et ajouter des détails à une gare ferroviaire",
     "ca": "Veure, editar i afegir detalls a una estació de tren",
     "es": "Ver, editar y añadir detalles a una estación de tren",
-    "cs": "Zobrazení, úprava a přidání podrobností o vlakovém nádraží"
+    "cs": "Zobrazení, úprava a přidání podrobností o vlakovém nádraží",
+    "pl": "Przeglądaj, edytuj i dodawaj szczegóły do stacji kolejowej"
   },
   "icon": "./assets/themes/stations/rail-light.svg",
   "startLat": 0,
@@ -79,7 +81,9 @@
         "fr": "Gares ferroviaires",
         "ca": "Estació de tren",
         "es": "Estación de Tren",
-        "cs": "Vlaková nádraží"
+        "cs": "Vlaková nádraží",
+        "it": "Stazioni ferroviarie",
+        "pl": "Stacje Kolejowe"
       },
       "description": {
         "en": "Layer showing train stations",
@@ -90,7 +94,8 @@
         "ca": "Capa que mostra les estacions de tren",
         "es": "Capa que muestra las estaciones de tren",
         "cs": "Vrstva zobrazující vlaková nádraží",
-        "zh_Hant": "顯示火車站的圖層"
+        "zh_Hant": "顯示火車站的圖層",
+        "pl": "Warstwa pokazująca stacje kolejowe"
       },
       "mapRendering": [
         {
@@ -264,7 +269,8 @@
         "fr": "Panneaux des départs",
         "ca": "Taulers de sortides",
         "es": "Tableros de salidas",
-        "cs": "Odjezdové tabule"
+        "cs": "Odjezdové tabule",
+        "pl": "Tablice odjazdów"
       },
       "description": {
         "en": "Displays showing the trains that will leave from this station",
@@ -347,7 +353,8 @@
                 "ca": "Aquest és un horari en paper",
                 "es": "Este es un horario en papel",
                 "cs": "Jedná se o papírový rozvrh",
-                "zh_Hant": "這份是紙本時刻表"
+                "zh_Hant": "這份是紙本時刻表",
+                "pl": "To jest papierowy rozkład jazdy"
               }
             },
             {
@@ -359,7 +366,8 @@
                 "ca": "Hi ha un cartell que mostra la freqüència dels trens",
                 "es": "Hay un cartel que muestra la frecuencia de los trenes",
                 "cs": "Nachází se zde cedule zobrazující frekvenci odjezdů vlaků",
-                "fr": "Il y a un panneau indiquant la fréquence des trains"
+                "fr": "Il y a un panneau indiquant la fréquence des trains",
+                "pl": "Jest tu znak informujący częstotliwość jazdy pociągów"
               }
             }
           ]
@@ -379,7 +387,8 @@
             "ca": "un tauler de sortides",
             "es": "un tablero de salidas",
             "cs": "odjezdová tabule",
-            "zh_Hant": "時刻表"
+            "zh_Hant": "時刻表",
+            "pl": "tablica odjazdów"
           },
           "description": {
             "en": "Add a board showing departures, either electronic or paper",

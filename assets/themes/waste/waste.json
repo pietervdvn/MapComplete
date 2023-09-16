@@ -12,7 +12,8 @@
     "es": "Basura y reciclaje",
     "ru": "Мусор",
     "cs": "Odpad",
-    "zh_Hant": "廢棄物"
+    "zh_Hant": "廢棄物",
+    "eu": "Hondakinak eta birziklapena"
   },
   "description": {
     "en": "Map showing waste baskets and recycling facilities.",

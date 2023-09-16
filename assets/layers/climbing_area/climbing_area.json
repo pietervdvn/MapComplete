@@ -159,7 +159,8 @@
         "id": "<strong>{name}</strong>",
         "ru": "<strong>{name}</strong>",
         "ja": "<strong>{name}</strong>",
-        "it": "<strong>{name}</strong>"
+        "it": "<strong>{name}</strong>",
+        "eu": "<strong>{name}</strong>"
       },
       "question": {
         "en": "What is the name of this climbing opportunity?",
@@ -249,7 +250,8 @@
             "fr": "Calcaire",
             "de": "Kalkstein",
             "it": "Calcare",
-            "pa_PK": "چونہ پتھر"
+            "pa_PK": "چونہ پتھر",
+            "eu": "Kareharria"
           }
         }
       ],

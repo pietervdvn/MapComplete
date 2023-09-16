@@ -37,7 +37,8 @@
         "then": {
           "en": "Indoor Room {name}",
           "de": "Innenraum {name}",
-          "nl": "Binnenruimte {name}"
+          "nl": "Binnenruimte {name}",
+          "pl": "Wewnętrzne pomieszczenie {name}"
         }
       },
       {
@@ -91,12 +92,14 @@
         "en": "What is the reference number of this room?",
         "de": "Wie lautet die Nummer dieses Raums?",
         "nl": "Wat is het referentienummer van deze ruimte?",
-        "fr": "Quel est le numéro de référence de cette pièce ?"
+        "fr": "Quel est le numéro de référence de cette pièce ?",
+        "pl": "Jaki jest numer referencyjny tego pomieszczenia?"
       },
       "render": {
         "en": "This room has the reference number {ref}",
         "de": "Dieser Raum hat die Raumnummer {ref}",
-        "nl": "Deze ruimte heeft het referentienummer {ref}"
+        "nl": "Deze ruimte heeft het referentienummer {ref}",
+        "pl": "To pomieszczenie ma numer referencyjny {ref}"
       },
       "freeform": {
         "key": "ref",

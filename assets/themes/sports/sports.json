@@ -9,7 +9,9 @@
     "ca": "Esports",
     "es": "Deportes",
     "cs": "Sport",
-    "zh_Hant": "運動"
+    "zh_Hant": "運動",
+    "eu": "Kirolak",
+    "pl": "Sporty"
   },
   "shortDescription": {
     "en": "Map showing sport facilities.",
@@ -19,7 +21,8 @@
     "ca": "Mapa amb instal·lacions esportives.",
     "es": "Mapa con instalaciones deportivas.",
     "cs": "Mapa se sportovními zařízeními.",
-    "zh_Hant": "顯示運動設施的地圖。"
+    "zh_Hant": "顯示運動設施的地圖。",
+    "pl": "Mapa pokazująca obiekty sportowe."
   },
   "description": {
     "en": "All about sports, find sport pitches, fitness centres and more.",
@@ -63,7 +66,8 @@
               "es": "una tienda de deportes",
               "cs": "sportovní obchod",
               "zh_Hant": "運動用品店",
-              "fr": "une boutique de sport"
+              "fr": "une boutique de sport",
+              "pl": "sklep sportowy"
             },
             "description": {
               "en": "Add a new shop selling sports goods.",

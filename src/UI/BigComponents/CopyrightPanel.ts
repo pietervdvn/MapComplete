@@ -102,7 +102,7 @@ export default class CopyrightPanel extends Combine {
                         let bgAttr: BaseUIElement | string = undefined
                         if (attrText && attrUrl) {
                             bgAttr =
-                                "<a href='" + attrUrl + "' target='_blank'>" + attrText + "</a>"
+                                "<a href='" + attrUrl + "' target='_blank' rel='noopener'>" + attrText + "</a>"
                         } else if (attrUrl) {
                             bgAttr = attrUrl
                         } else {

@@ -7,7 +7,8 @@
     "ca": "Aparcament",
     "es": "Aparcamiento",
     "fr": "Lieu de stationnement",
-    "pa_PK": "پارکنگ"
+    "pa_PK": "پارکنگ",
+    "pl": "Parking"
   },
   "minzoom": 12,
   "source": {
@@ -19,7 +20,8 @@
       "en": "Car parking",
       "de": "Parkplatz",
       "es": "aparcamiento de coches",
-      "fr": "Lieu de stationnement"
+      "fr": "Lieu de stationnement",
+      "pl": "Parking samochodowy"
     }
   },
   "description": {
@@ -28,7 +30,8 @@
     "de": "Eine Ebene mit Parkplätzen",
     "es": "Una capa que muestra aparcamientos para coches",
     "fr": "Un calque montrant les parkings",
-    "ca": "Una capa que mostra aparcaments per a cotxes"
+    "ca": "Una capa que mostra aparcaments per a cotxes",
+    "pl": "Warstwa pokazująca parkingi samochodowe"
   },
   "tagRenderings": [
     "images",
@@ -62,7 +65,8 @@
             "nl": "Dit is een ondergrondse parkeergarage",
             "de": "Dies ist eine Tiefgarage",
             "fr": "C'est un parking souterrain",
-            "ca": "Aquest és un aparcament subterrani"
+            "ca": "Aquest és un aparcament subterrani",
+            "pl": "To jest podziemny parking"
           }
         },
         {
@@ -71,7 +75,8 @@
             "en": "This is a multi-storey parking garage",
             "nl": "Dit is een bovengrondse parkeergarage met meerdere verdiepingen",
             "de": "Dies ist ein mehrstöckiges oberirdisches Parkhaus",
-            "fr": "C'est un parking à plusieurs étages"
+            "fr": "C'est un parking à plusieurs étages",
+            "pl": "To jest wielopiętrowy parking"
           }
         },
         {
@@ -89,7 +94,8 @@
             "en": "This is a lane for parking on the road",
             "nl": "Dit is een strook voor parkeren op de weg",
             "de": "Dies ist eine Fahrspur zum Parken auf der Straße",
-            "fr": "C'est une voie de stationnement sur la route"
+            "fr": "C'est une voie de stationnement sur la route",
+            "pl": "To jest pas do parkowania na jezdni"
           }
         },
         {
@@ -134,7 +140,8 @@
         "nl": "Wat voor parking is dit?",
         "de": "Was ist das für ein Parkplatz?",
         "fr": "De quel type de stationnement s'agit-il ?",
-        "ca": "Quin tipus d'aparcament és aquest?"
+        "ca": "Quin tipus d'aparcament és aquest?",
+        "pl": "Jaki to rodzaj parkingu?"
       }
     },
     {
@@ -147,7 +154,8 @@
           "nl": "Aantal parkeerplaatsen voor gehandicapten",
           "de": "Anzahl barrierefreier Stellplätze",
           "fr": "Nombre de places de stationnement réservées aux personnes à mobilité réduite",
-          "ca": "Quantitat de places d'aparcament reservades per a persones amb mobilitat reduïda"
+          "ca": "Quantitat de places d'aparcament reservades per a persones amb mobilitat reduïda",
+          "pl": "Liczba miejsc parkingowych przeznaczonych dla niepełnosprawnych"
         }
       },
       "mappings": [
@@ -158,7 +166,8 @@
             "nl": "Er zijn parkeerplaatsen voor gehandicapten, maar het is niet bekend hoeveel er zijn",
             "de": "Es gibt barrierefreie Stellplätze, aber die Anzahl ist unbekannt",
             "fr": "Il y a des places de stationnement pour personnes à mobilité réduite, mais on ne sait pas combien",
-            "ca": "Hi ha places d'aparcament per a gent amb mobilitat reduïda, però no es sap quantes"
+            "ca": "Hi ha places d'aparcament per a gent amb mobilitat reduïda, però no es sap quantes",
+            "pl": "Są tutaj miejsca parkingowe dla niepełnosprawnych, ale nie wiadomo ile"
           },
           "hideInAnswer": true
         },
@@ -168,7 +177,8 @@
             "en": "There are no disabled parking spots",
             "nl": "Er zijn geen parkeerplaatsen voor gehandicapten",
             "de": "Es gibt keine barrierefreien Stellplätze",
-            "fr": "Il n'y a pas de places de stationnement pour personnes à mobilité réduite"
+            "fr": "Il n'y a pas de places de stationnement pour personnes à mobilité réduite",
+            "pl": "Nie ma tutaj żadnych miejsc parkingowych dla niepełnosprawnych"
           },
           "hideInAnswer": true
         },
@@ -179,7 +189,8 @@
             "nl": "Er zijn geen parkeerplaatsen voor gehandicapten",
             "de": "Es gibt keine barrierefreien Stellplätze",
             "fr": "Il n'y a pas de places de stationnement pour personnes à mobilité réduite",
-            "ca": "No hi ha places d'aparcament per a persones amb mobilitat reduïda"
+            "ca": "No hi ha places d'aparcament per a persones amb mobilitat reduïda",
+            "pl": "Nie ma tutaj żadnych miejsc parkingowych dla niepełnosprawnych"
           }
         }
       ],
@@ -188,14 +199,16 @@
         "nl": "Hoeveel parkeerplaatsen voor gehandicapten zijn er op deze parking?",
         "de": "Wie viele barrierefreie Stellplätze gibt es auf diesem Parkplatz?",
         "fr": "Combien y a-t-il de places de stationnement pour personnes à mobilité réduite dans ce parking ?",
-        "ca": "Quantes places d'aparcament per a persones amb mobilitat reduïda hi ha al parking?"
+        "ca": "Quantes places d'aparcament per a persones amb mobilitat reduïda hi ha al parking?",
+        "pl": "Jak wiele miejsc parkingowych dla niepełnosprawnych znajduje się na tym parkingu?"
       },
       "render": {
         "en": "There are {capacity:disabled} disabled parking spots",
         "nl": "Er zijn {capacity:disabled} parkeerplaatsen voor gehandicapten",
         "de": "Es gibt {capacity:disabled} barrierefreie Stellplätze",
         "fr": "Il y a {capacity:disabled} places de stationnement pour personnes à mobilité réduite",
-        "ca": "Hi ha {capacity:disabled} places d'aparcament per a discapacitats"
+        "ca": "Hi ha {capacity:disabled} places d'aparcament per a discapacitats",
+        "pl": "Jest {capacity:disabled} miejsc parkingowych dla niepełnosprawnych"
       }
     },
     {
@@ -208,7 +221,8 @@
           "nl": "Aantal parkeerplaatsen",
           "de": "Anzahl der Parkplätze",
           "fr": "Nombre de places de stationnement",
-          "ca": "Quantitat de places d'aparcament"
+          "ca": "Quantitat de places d'aparcament",
+          "pl": "Liczba miejsc parkingowych"
         }
       },
       "question": {
@@ -216,14 +230,16 @@
         "nl": "Hoeveel parkeerplaatsen zijn er op deze parking?",
         "de": "Wie viele Stellplätze gibt es auf diesem Parkplatz?",
         "fr": "Combien de places de stationnement y a-t-il dans ce parking ?",
-        "ca": "Quantes places d'aparcament hi han a aquest aparcament?"
+        "ca": "Quantes places d'aparcament hi han a aquest aparcament?",
+        "pl": "Ile miejsc parkingowych jest na tym parkingu?"
       },
       "render": {
         "en": "There are {capacity} parking spots",
         "nl": "Er zijn {capacity} parkeerplaatsen",
         "de": "Es gibt {capacity} Stellplätze",
         "fr": "Il y a {capacity} places de stationnement",
-        "ca": "Hi han {capacity} places d'aparcament"
+        "ca": "Hi han {capacity} places d'aparcament",
+        "pl": "Jest {capacity} miejsc parkingowych"
       }
     }
   ],
@@ -238,7 +254,8 @@
         "de": "einen Parkplatz",
         "es": "un aparcamiento de coches",
         "fr": "un lieu de stationnement pour voitures",
-        "ca": "un aparcament per a cotxes"
+        "ca": "un aparcament per a cotxes",
+        "pl": "parking samochodowy"
       }
     }
   ],

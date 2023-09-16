@@ -360,14 +360,7 @@
         "ca": "A quina adreça de correu electrònic es pot enviar amb preguntes i problemes amb aquest parc natural?"
       },
       "render": {
-        "nl": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-        "en": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-        "ca": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-        "de": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-        "fr": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-        "it": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-        "ru": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-        "id": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+        "*": "<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>"
       },
       "freeform": {
         "key": "email",
@@ -393,7 +386,7 @@
         "ca": "A quin número de telèfon es pot trucar amb preguntes i problemes amb aquest parc natural?"
       },
       "render": {
-        "*": "<a href='tel:{phone}' target='_blank'>{phone}</a>"
+        "*": "<a href='tel:{phone}' target='_blank' rel='noopener'>{phone}</a>"
       },
       "freeform": {
         "key": "phone",

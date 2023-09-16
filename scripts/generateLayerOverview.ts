@@ -1,26 +1,26 @@
-import ScriptUtils from "./ScriptUtils"
-import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "fs"
-import licenses from "../src/assets/generated/license_info.json"
-import { LayoutConfigJson } from "../src/Models/ThemeConfig/Json/LayoutConfigJson"
-import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
-import Constants from "../src/Models/Constants"
+import ScriptUtils from "./ScriptUtils";
+import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "fs";
+import licenses from "../src/assets/generated/license_info.json";
+import { LayoutConfigJson } from "../src/Models/ThemeConfig/Json/LayoutConfigJson";
+import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson";
+import Constants from "../src/Models/Constants";
 import {
     DetectDuplicateFilters,
     DoesImageExist,
     PrevalidateTheme,
     ValidateLayer,
-    ValidateThemeAndLayers,
-} from "../src/Models/ThemeConfig/Conversion/Validation"
-import { Translation } from "../src/UI/i18n/Translation"
-import { TagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
-import PointRenderingConfigJson from "../src/Models/ThemeConfig/Json/PointRenderingConfigJson"
-import { PrepareLayer } from "../src/Models/ThemeConfig/Conversion/PrepareLayer"
-import { PrepareTheme } from "../src/Models/ThemeConfig/Conversion/PrepareTheme"
-import { DesugaringContext } from "../src/Models/ThemeConfig/Conversion/Conversion"
-import { Utils } from "../src/Utils"
-import Script from "./Script"
-import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
-
+    ValidateThemeAndLayers
+} from "../src/Models/ThemeConfig/Conversion/Validation";
+import { Translation } from "../src/UI/i18n/Translation";
+import { TagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/TagRenderingConfigJson";
+import PointRenderingConfigJson from "../src/Models/ThemeConfig/Json/PointRenderingConfigJson";
+import { PrepareLayer } from "../src/Models/ThemeConfig/Conversion/PrepareLayer";
+import { PrepareTheme } from "../src/Models/ThemeConfig/Conversion/PrepareTheme";
+import { DesugaringContext } from "../src/Models/ThemeConfig/Conversion/Conversion";
+import { Utils } from "../src/Utils";
+import Script from "./Script";
+import { AllSharedLayers } from "../src/Customizations/AllSharedLayers";
+import {parse as parse_html} from "node-html-parser"
 // This scripts scans 'src/assets/layers/*.json' for layer definition files and 'src/assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
 
@@ -523,7 +523,10 @@ class LayerOverviewUtils extends Script {
                     hideFromOverview: t.hideFromOverview ?? false,
                     shortDescription:
                         t.shortDescription ??
-                        new Translation(t.description).FirstSentence().translations,
+                        new Translation(t.description)
+                            .FirstSentence()
+                            .OnEveryLanguage(s => parse_html(s).innerText)
+                            .translations,
                     mustHaveLanguage: t.mustHaveLanguage?.length > 0,
                 }
             })
