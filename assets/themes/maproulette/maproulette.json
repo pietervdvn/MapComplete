@@ -10,7 +10,8 @@
     "nl": "MapRoulette taken",
     "es": "Tareas de MapRoulette",
     "cs": "Úkoly MapRoulette",
-    "zh_Hant": "MapRoulette 任務"
+    "zh_Hant": "MapRoulette 任務",
+    "pl": "Zadania MapRoulette"
   },
   "description": {
     "en": "Theme showing MapRoulette tasks, allowing you to search, filter and fix them.",

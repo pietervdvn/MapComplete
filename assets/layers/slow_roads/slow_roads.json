@@ -138,7 +138,8 @@
             "it": "La superficie è <b>erba</b>",
             "de": "Die Oberfläche ist <b>Gras</b>",
             "eo": "La surfaco estas <b>herba</b>",
-            "es": "La superficie es <b>hierba</b>"
+            "es": "La superficie es <b>hierba</b>",
+            "ca": "La superfície és <b>herba</b>"
           }
         },
         {
@@ -149,7 +150,8 @@
             "ru": "Поверхность - <b>земля</b>",
             "fr": "La surface est en <b>terre</b>",
             "it": "La superficie è <b>terreno</b>",
-            "de": "Die Oberfläche ist <b>Erde</b>"
+            "de": "Die Oberfläche ist <b>Erde</b>",
+            "ca": "La superfície és <b>terra</b>"
           }
         },
         {
@@ -174,7 +176,8 @@
             "it": "La superficie è <b>sabbia</b>",
             "de": "Die Oberfläche ist <b>Sand</b>",
             "eo": "La surfaco estas <b>sabla</b>",
-            "es": "La superficie es <b>arena</b>"
+            "es": "La superficie es <b>arena</b>",
+            "ca": "La superfície és <b>sorra</b>"
           }
         },
         {

@@ -94,7 +94,8 @@
           "fr": "Magasin",
           "da": "Winkel",
           "ca": "Winkel",
-          "cs": "Winkel"
+          "cs": "Winkel",
+          "eu": "Winkela"
         }
       },
       {
@@ -316,7 +317,8 @@
         "fr": "Seulement accessible à {access}",
         "da": "Kun tilgængelig for {access}",
         "ca": "Només accessible per a {access}",
-        "cs": "Přístupné pouze pro {access}"
+        "cs": "Přístupné pouze pro {access}",
+        "pl": "Dostępne tylko dla {access}"
       },
       "freeform": {
         "key": "access"
@@ -890,7 +892,8 @@
             "nl": "Biedt doe-het-zelfreparaties aan",
             "it": "Offre riparazioni fai da te",
             "cs": "Nabízí opravy kol \"Udělej si sám\"",
-            "fr": "Offre des services DIY"
+            "fr": "Offre des services DIY",
+            "ca": "Ofereix reparar un mateix la bici"
           },
           "osmTags": {
             "or": [

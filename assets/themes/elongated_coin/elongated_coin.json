@@ -3,12 +3,14 @@
   "title": {
     "en": "Penny Presses",
     "de": "Münzpressen",
-    "es": "Prensa de centavo"
+    "es": "Prensa de céntimos",
+    "ca": "Premsa de cèntims"
   },
   "description": {
     "en": "Find penny presses to create your own elongated coins.",
     "de": "Finde Münzpresse um deine eigenen Prägemünzen zu Pressen.",
-    "es": "Encuentra prensas de centavo para crear tus propias monedas alargadas."
+    "es": "Encuentra prensas de centimos para crear tus propias monedas alargadas.",
+    "ca": "Trobeu premses de cèntims per crear les vostres pròpies monedes allargades."
   },
   "icon": "./assets/themes/elongated_coin/penny.svg",
   "layers": [

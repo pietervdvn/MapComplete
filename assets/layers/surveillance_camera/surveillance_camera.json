@@ -577,7 +577,8 @@
         "en": "a surveillance camera",
         "nl": "een bewakingscamera",
         "de": "eine Überwachungskamera",
-        "es": "una cámara de vigilancia"
+        "es": "una cámara de vigilancia",
+        "fr": "une caméra de surveillance"
       }
     },
     {
@@ -590,7 +591,8 @@
         "en": "a surveillance camera mounted on a wall",
         "nl": "een bewakingscamera gemonteerd op een muur",
         "de": "eine an einer Wand montierte Überwachungskamera",
-        "es": "una cámara de vigilancia montada en una pared"
+        "es": "una cámara de vigilancia montada en una pared",
+        "fr": "une caméra de surveillance fixée au mur"
       },
       "snapToLayer": "walls_and_buildings"
     }
@@ -656,6 +658,7 @@
     "en": "This layer shows surveillance cameras and allows a contributor to update information and add new cameras",
     "nl": "Deze laag toont bewakingscamera's en laat toe om de informatie te verrijken en om nieuwe camera\"s toe te voegen",
     "de": "Diese Ebene zeigt die Überwachungskameras an und ermöglicht es, Informationen zu aktualisieren und neue Kameras hinzuzufügen",
-    "es": "Esta capa muestra las cámaras de vigilancia y permite a quien colabora, actualizar la información y agregar nuevas cámaras"
+    "es": "Esta capa muestra las cámaras de vigilancia y permite a quien colabora, actualizar la información y agregar nuevas cámaras",
+    "fr": "Cette couche affiche les caméras de surveillance et permet au contributeur de mettre à jour les informations et ajouter de nouvelles caméras"
   }
 }

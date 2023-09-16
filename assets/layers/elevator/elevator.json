@@ -6,7 +6,8 @@
     "de": "Aufzüge",
     "nl": "Lift",
     "pa_PK": "ایلیویٹر",
-    "ca": "Ascensor"
+    "ca": "Ascensor",
+    "pl": "Winda"
   },
   "source": {
     "osmTags": "highway=elevator"
@@ -24,7 +25,8 @@
       "fr": "Ascenseur",
       "de": "Aufzug",
       "nl": "Lift",
-      "pa_PK": "ایلیویٹر"
+      "pa_PK": "ایلیویٹر",
+      "pl": "Winda"
     }
   },
   "tagRenderings": [
@@ -36,7 +38,8 @@
         "en": "Does this elevator work?",
         "fr": "Cet ascenseur fonctionne-t-il ?",
         "de": "Ist dieser Aufzug in Betrieb?",
-        "nl": "Werkt deze lift?"
+        "nl": "Werkt deze lift?",
+        "pl": "Czy ta winda działa?"
       },
       "mappings": [
         {
@@ -45,7 +48,8 @@
             "en": "This elevator is broken",
             "fr": "Cet ascenseur est en panne",
             "de": "Dieser Aufzug ist kaputt",
-            "nl": "Deze lift is kapot"
+            "nl": "Deze lift is kapot",
+            "pl": "Ta winda jest zepsuta"
           },
           "icon": "close:red"
         },
@@ -55,7 +59,8 @@
             "en": "This elevator is closed <span class='subtle'>e.g. because renovation works are going on</span>",
             "fr": "Cet ascenseur est fermé <span class='subtle'>par ex. parce que des travaux de rénovation sont en cours</span>",
             "de": "Dieser Aufzug ist außer Betrieb <span class='subtle'>z.B. wegen Renovierungsarbeiten</span>",
-            "nl": "Deze lift is tijdelijk gesloten <span class='subtle'>bijvoorbeeld door renovatiewerken</span>"
+            "nl": "Deze lift is tijdelijk gesloten <span class='subtle'>bijvoorbeeld door renovatiewerken</span>",
+            "pl": "Ta winda jest nieczynna <span class='subtle'>np. z powodu renowacji</span>"
           },
           "icon": "invalid:red"
         },
@@ -65,7 +70,8 @@
             "en": "This elevator works",
             "fr": "Cet ascenseur fonctionne",
             "de": "Dieser Aufzug ist in Betrieb",
-            "nl": "Deze lift werkt"
+            "nl": "Deze lift werkt",
+            "pl": "Ta winda działa"
           }
         },
         {
@@ -75,7 +81,8 @@
             "fr": "Cet ascenseur fonctionne",
             "de": "Dieser Aufzug ist in Betrieb",
             "nl": "Deze lift werkt",
-            "ca": "Aquest ascensor funciona"
+            "ca": "Aquest ascensor funciona",
+            "pl": "Ta winda działa"
           },
           "hideInAnswer": true
         }
@@ -87,14 +94,16 @@
         "en": "This elevator's doors have a width of {canonical(door:width)}",
         "fr": "Les portes de cet ascenseur ont une largeur de {canonical(door:width)}",
         "de": "Die Türen des Aufzugs haben eine Breite von {canonical(door:width)}",
-        "nl": "De breedte van de liftdeur is {canonical(door:width)}"
+        "nl": "De breedte van de liftdeur is {canonical(door:width)}",
+        "pl": "Drzwi tej windy mają szerokość {canonical(door:width)}"
       },
       "question": {
         "en": "What is the width of this elevator's entrance?",
         "fr": "Quelle est la largeur de l'entrée de cet ascenseur ?",
         "de": "Wie breit ist die Tür dieses Aufzugs?",
         "nl": "Wat is de breedte van de liftdeur?",
-        "ca": "Quina és l'amplada de l'entrada d'aquest ascensor?"
+        "ca": "Quina és l'amplada de l'entrada d'aquest ascensor?",
+        "pl": "Jaka jest szerokość drzwi windy?"
       },
       "freeform": {
         "key": "door:width",
@@ -107,13 +116,15 @@
         "en": "This elevator has a width of {canonical(elevator:width)}",
         "fr": "Cet ascenseur a une largeur de {canonical(elevator:width)}",
         "de": "Die Aufzugskabine hat eine Breite von {canonical(elevator:width)}",
-        "nl": "Deze lift heeft een breedte van {canonical(elevator:width)}"
+        "nl": "Deze lift heeft een breedte van {canonical(elevator:width)}",
+        "pl": "Szerokość tej windy to {canonical(elevator:width)}"
       },
       "question": {
         "en": "What is the width of this elevator?",
         "fr": "Quelle est la largeur de cet ascenseur ?",
         "de": "Wie breit ist die Kabine dieses Aufzugs?",
-        "nl": "Wat is de breedte van deze lift?"
+        "nl": "Wat is de breedte van deze lift?",
+        "pl": "Jaka jest szerokość tej windy?"
       },
       "freeform": {
         "key": "elevator:width",
@@ -218,7 +229,8 @@
         "nl": "een lift",
         "fr": "un ascenseur",
         "de": "einen Aufzug",
-        "ca": "un ascensor"
+        "ca": "un ascensor",
+        "pl": "winda"
       },
       "tags": [
         "highway=elevator"
@@ -245,7 +257,8 @@
             "fr": "mètre",
             "de": "Meter",
             "nl": "meter",
-            "pa_PK": "میٹر"
+            "pa_PK": "میٹر",
+            "pl": "metr"
           }
         },
         {
@@ -259,7 +272,8 @@
             "fr": "centimètre",
             "de": "Zentimeter",
             "nl": "centimeter",
-            "pa_PK": "سینٹیمیٹر"
+            "pa_PK": "سینٹیمیٹر",
+            "pl": "centymetr"
           }
         }
       ]

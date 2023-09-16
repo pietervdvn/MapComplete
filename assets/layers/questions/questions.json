@@ -194,7 +194,8 @@
       "id": "mastodon",
       "description": "Shows and asks for the mastodon handle",
       "question": {
-        "en": "What is the Mastodon-handle of {title()}?"
+        "en": "What is the Mastodon-handle of {title()}?",
+        "de": "Wie lautet der Mastodon-Handle von {title()}?"
       },
       "freeform": {
         "key": "contact:mastodon",
@@ -2201,7 +2202,8 @@
       "question": {
         "en": "When was this object last checked?",
         "de": "Wann wurde dieses Objekt zuletzt kontrolliert?",
-        "nl": "Wanneer is dit object voor het laatst gecontroleerd?"
+        "nl": "Wanneer is dit object voor het laatst gecontroleerd?",
+        "pl": "Kiedy ten obiekt został ostatnio sprawdzony?"
       },
       "freeform": {
         "key": "check_date",
@@ -2210,7 +2212,8 @@
       "render": {
         "en": "This object was last checked on <b>{check_date}</b>",
         "de": "Dieses Objekt wurde zuletzt kontrolliert am <b>{check_date}</b>",
-        "nl": "Dit object is voor het laatst gecontroleerd op <b>{check_date}</b>"
+        "nl": "Dit object is voor het laatst gecontroleerd op <b>{check_date}</b>",
+        "pl": "Ten obiekt był ostatnio sprawdzony <b>{check_date}</b>"
       },
       "mappings": [
         {
@@ -2218,7 +2221,8 @@
           "then": {
             "en": "This object was last checked today",
             "de": "Dieses Objekt wurde heute zuletzt kontrolliert",
-            "nl": "Dit object is vandaag voor het laatst gecontroleerd"
+            "nl": "Dit object is vandaag voor het laatst gecontroleerd",
+            "pl": "Ten obiekt został ostatnio sprawdzony dzisiaj"
           }
         }
       ]

@@ -86,7 +86,8 @@
         "en": "Can one rent climbing shoes here?",
         "nl": "Kunnen hier klimschoenen gehuurd worden?",
         "fr": "Peut-on louer des chaussures d'escalade ici ?",
-        "de": "Kann man hier Kletterschuhe ausleihen?"
+        "de": "Kann man hier Kletterschuhe ausleihen?",
+        "pl": "Czy można tutaj wypożyczyć buty do wspinaczki?"
       },
       "mappings": [
         {
@@ -132,7 +133,8 @@
             "en": "Climbing shoes can be rented here",
             "nl": "Klimschoenen kunnen hier gehuurd worden",
             "fr": "Les chaussures d'escalade peuvent être louées ici",
-            "de": "Kletterschuhe können hier ausgeliehen werden"
+            "de": "Kletterschuhe können hier ausgeliehen werden",
+            "pl": "Można tutaj wypożyczyć buty do wspinaczki"
           },
           "addExtraTags": [
             "service:climbing_shoes:rental:charge="
@@ -144,7 +146,8 @@
             "en": "Climbing shoes can <b>not</b> be rented here",
             "nl": "Hier kunnen <b>geen</b> klimschoenen gehuurd worden",
             "fr": "Les chaussures d'escalade ne peuvent <b>pas</b> être louées ici",
-            "de": "Kletterschuhe können hier <b>nicht</b> ausgeliehen werden"
+            "de": "Kletterschuhe können hier <b>nicht</b> ausgeliehen werden",
+            "pl": "<b>Nie</b> można wypożyczyć tutaj butów do wspinaczki"
           },
           "addExtraTags": [
             "service:climbing_shoes:rental:fee=",

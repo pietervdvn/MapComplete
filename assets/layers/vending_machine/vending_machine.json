@@ -3,12 +3,14 @@
   "name": {
     "en": "Vending Machines",
     "nl": "Verkoopautomaten",
-    "de": "Verkaufsautomaten"
+    "de": "Verkaufsautomaten",
+    "fr": "Distributeurs"
   },
   "description": {
     "en": "Layer showing vending machines",
     "nl": "Laag met verkoopautomaten",
-    "de": "Ebene mit Verkaufsautomaten"
+    "de": "Ebene mit Verkaufsautomaten",
+    "fr": "Couche affichant les distributeurs"
   },
   "source": {
     "osmTags": {
@@ -22,7 +24,8 @@
     "render": {
       "en": "Vending machine",
       "nl": "Verkoopautomaat",
-      "de": "Verkaufsautomat"
+      "de": "Verkaufsautomat",
+      "fr": "Distributeur"
     },
     "mappings": [
       {
@@ -30,7 +33,8 @@
         "then": {
           "en": "Vending machine {name}",
           "nl": "Verkoopautomaat {name}",
-          "de": "Verkaufsautomat {name}"
+          "de": "Verkaufsautomat {name}",
+          "fr": "Distributeur {name}"
         }
       },
       {
@@ -38,7 +42,8 @@
         "then": {
           "en": "Vending machine {brand}",
           "nl": "Verkoopautomaat {brand}",
-          "de": "Verkaufsautomat {brand}"
+          "de": "Verkaufsautomat {brand}",
+          "fr": "Distributeur {brand}"
         }
       }
     ]
@@ -50,7 +55,8 @@
       "question": {
         "en": "What does this vending machine sell?",
         "nl": "Wat verkoopt deze verkoopautomaat?",
-        "de": "Was wird in diesem Automaten verkauft?"
+        "de": "Was wird in diesem Automaten verkauft?",
+        "fr": "Que vent ce distributeur ?"
       },
       "freeform": {
         "key": "vending",
@@ -61,7 +67,8 @@
       "render": {
         "en": "This vending machine sells {vending}",
         "nl": "Deze verkoopautomaat verkoopt {vending}",
-        "de": "Dieser Automat verkauft {vending}"
+        "de": "Dieser Automat verkauft {vending}",
+        "fr": "Ce distributeur vent {vending}"
       },
       "mappings": [
         {
@@ -69,7 +76,8 @@
           "then": {
             "en": "Drinks are sold",
             "nl": "Dranken worden verkocht",
-            "de": "Getränke werden verkauft"
+            "de": "Getränke werden verkauft",
+            "fr": "Vent des boissons"
           },
           "icon": "./assets/layers/id_presets/temaki-bottles.svg"
         },
@@ -78,7 +86,8 @@
           "then": {
             "en": "Sweets are sold",
             "nl": "Snoep wordt verkocht",
-            "de": "Süßigkeiten werden verkauft"
+            "de": "Süßigkeiten werden verkauft",
+            "fr": "Vent des confiseries"
           },
           "icon": "./assets/layers/id_presets/maki-confectionery.svg"
         },
@@ -87,7 +96,8 @@
           "then": {
             "en": "Food is sold",
             "nl": "Eten wordt verkocht",
-            "de": "Lebensmittel werden verkauft"
+            "de": "Lebensmittel werden verkauft",
+            "fr": "Vent de la nourriture"
           },
           "icon": "./assets/layers/vending_machine/utensils.svg"
         },
@@ -96,7 +106,8 @@
           "then": {
             "en": "Cigarettes are sold",
             "nl": "Sigaretten worden verkocht",
-            "de": "Zigaretten werden verkauft"
+            "de": "Zigaretten werden verkauft",
+            "fr": "Vent des cigarettes"
           },
           "icon": "./assets/layers/vending_machine/smoking.svg"
         },
@@ -105,7 +116,8 @@
           "then": {
             "en": "Condoms are sold",
             "nl": "Condooms worden verkocht",
-            "de": "Kondome werden verkauft"
+            "de": "Kondome werden verkauft",
+            "fr": "Vent des préservatifs"
           }
         },
         {
@@ -113,7 +125,8 @@
           "then": {
             "en": "Coffee is sold",
             "nl": "Koffie wordt verkocht",
-            "de": "Kaffee wird verkauft"
+            "de": "Kaffee wird verkauft",
+            "fr": "Vent du café"
           },
           "icon": "./assets/layers/vending_machine/mug-saucer.svg"
         },
@@ -122,7 +135,8 @@
           "then": {
             "en": "Drinking water is sold",
             "nl": "Drinkwater wordt verkocht",
-            "de": "Trinkwasser wird verkauft"
+            "de": "Trinkwasser wird verkauft",
+            "fr": "Vent de l'eau"
           },
           "icon": "./assets/layers/id_presets/temaki-water_bottle.svg"
         },
@@ -131,7 +145,8 @@
           "then": {
             "en": "Newspapers are sold",
             "nl": "Kranten worden verkocht",
-            "de": "Zeitungen werden verkauft"
+            "de": "Zeitungen werden verkauft",
+            "fr": "Vent des journaux"
           },
           "icon": "./assets/layers/id_presets/fas-newspaper.svg"
         },
@@ -140,7 +155,8 @@
           "then": {
             "en": "Bicycle inner tubes are sold",
             "nl": "Binnenbanden voor fietsen worden verkocht",
-            "de": "Fahrradschläuche werden verkauft"
+            "de": "Fahrradschläuche werden verkauft",
+            "fr": "Vent des chambres à air pour vélo"
           }
         },
         {
@@ -148,7 +164,8 @@
           "then": {
             "en": "Milk is sold",
             "nl": "Melk wordt verkocht",
-            "de": "Milch wird verkauft"
+            "de": "Milch wird verkauft",
+            "fr": "Vent du lait"
           },
           "icon": "./assets/layers/vending_machine/cow.svg"
         },
@@ -157,7 +174,8 @@
           "then": {
             "en": "Bread is sold",
             "nl": "Brood wordt verkocht",
-            "de": "Brot wird verkauft"
+            "de": "Brot wird verkauft",
+            "fr": "Vent du pain"
           },
           "icon": "./assets/layers/id_presets/maki-bakery.svg"
         },
@@ -166,7 +184,8 @@
           "then": {
             "en": "Eggs are sold",
             "nl": "Eieren worden verkocht",
-            "de": "Eier werden verkauft"
+            "de": "Eier werden verkauft",
+            "fr": "Vent des œufs"
           },
           "icon": "./assets/layers/vending_machine/egg.svg"
         },
@@ -175,7 +194,8 @@
           "then": {
             "en": "Cheese is sold",
             "nl": "Kaas wordt verkocht",
-            "de": "Käse wird verkauft"
+            "de": "Käse wird verkauft",
+            "fr": "Vent du fromage"
           },
           "icon": "./assets/layers/id_presets/fas-cheese.svg"
         },
@@ -184,7 +204,8 @@
           "then": {
             "en": "Honey is sold",
             "nl": "Honing wordt verkocht",
-            "de": "Honig wird verkauft"
+            "de": "Honig wird verkauft",
+            "fr": "Vent du miel"
           },
           "icon": "./assets/layers/vending_machine/honey.svg"
         },
@@ -193,7 +214,8 @@
           "then": {
             "en": "Potatoes are sold",
             "nl": "Aardappelen worden verkocht",
-            "de": "Kartoffeln werden verkauft"
+            "de": "Kartoffeln werden verkauft",
+            "fr": "Vent des pommes de terre"
           },
           "icon": "./assets/layers/vending_machine/potato.svg"
         },
@@ -202,7 +224,8 @@
           "then": {
             "en": "Flowers are sold",
             "nl": "Bloemen worden verkocht",
-            "de": "Blumen werden verkauft"
+            "de": "Blumen werden verkauft",
+            "fr": "Vent des fleurs"
           },
           "icon": "./assets/layers/id_presets/maki-florist.svg"
         },
@@ -241,20 +264,23 @@
       "question": {
         "en": "Who operates this vending machine?",
         "nl": "Wie beheert deze verkoopautomaat?",
-        "de": "Wer betreibt diesen Verkaufsautomaten?"
+        "de": "Wer betreibt diesen Verkaufsautomaten?",
+        "fr": "Qui exploite ce distributeur ?"
       },
       "freeform": {
         "key": "operator",
         "placeholder": {
           "en": "Name of operator",
           "nl": "Naam van beheerder",
-          "de": "Name des Betreibers"
+          "de": "Name des Betreibers",
+          "fr": "Nom de l'exploitant"
         }
       },
       "render": {
         "en": "This vending machine is operated by {operator}",
         "nl": "Deze verkoopautomaat wordt beheerd door {operator}",
-        "de": "Dieser Verkaufsautomat wird betrieben von {operator}"
+        "de": "Dieser Verkaufsautomat wird betrieben von {operator}",
+        "fr": "Ce distributeur est exploité par {operator}"
       }
     },
     {
@@ -262,7 +288,8 @@
       "question": {
         "en": "Is this vending machine indoors?",
         "nl": "Is deze verkoopautomaat binnen?",
-        "de": "Ist dieser Automat in einem Gebäude untergebracht?"
+        "de": "Ist dieser Automat in einem Gebäude untergebracht?",
+        "fr": "Est-ce que ce distributeur est en intérieur ?"
       },
       "mappings": [
         {
@@ -270,7 +297,8 @@
           "then": {
             "en": "This vending machine is outdoors",
             "nl": "Deze verkoopautomaat is buiten",
-            "de": "Dieser Automat befindet sich im Freien"
+            "de": "Dieser Automat befindet sich im Freien",
+            "fr": "Ce distributeur est à l'extérieur"
           },
           "hideInAnswer": true
         },
@@ -279,7 +307,8 @@
           "then": {
             "en": "This vending machine is indoors",
             "nl": "Deze verkoopautomaat is binnen",
-            "de": "Dieser Verkaufsautomat befindet sich im Innenbereich"
+            "de": "Dieser Verkaufsautomat befindet sich im Innenbereich",
+            "fr": "Ce distributeur est à l'intérieur"
           }
         },
         {
@@ -287,7 +316,8 @@
           "then": {
             "en": "This vending machine is outdoors",
             "nl": "Deze verkoopautomaat is buiten",
-            "de": "Dieser Automat befindet sich im Freien"
+            "de": "Dieser Automat befindet sich im Freien",
+            "fr": "Ce distributeur est à l'extérieur"
           }
         }
       ]
@@ -302,7 +332,8 @@
       "title": {
         "en": "a vending machine",
         "nl": "een verkoopautomaat",
-        "de": "ein Verkaufsautomat"
+        "de": "ein Verkaufsautomat",
+        "fr": "un distributeur"
       },
       "tags": [
         "amenity=vending_machine"
@@ -546,14 +577,16 @@
           "question": {
             "en": "All vending machines",
             "nl": "Alle verkoopautomaten",
-            "de": "Alle Verkaufsautomaten"
+            "de": "Alle Verkaufsautomaten",
+            "fr": "Tous les distributeurs"
           }
         },
         {
           "question": {
             "en": "Sale of drinks",
             "nl": "Verkoop van dranken",
-            "de": "Verkauf von Getränken"
+            "de": "Verkauf von Getränken",
+            "fr": "Vente de boissons"
           },
           "osmTags": "vending~i~.*drinks.*"
         },
@@ -561,7 +594,8 @@
           "question": {
             "en": "Sale of sweets",
             "nl": "Verkoop van snoep",
-            "de": "Verkauf von Süßigkeiten"
+            "de": "Verkauf von Süßigkeiten",
+            "fr": "Ventre de confiseries"
           },
           "osmTags": "vending~i~.*sweets.*"
         },
@@ -569,7 +603,8 @@
           "question": {
             "en": "Sale of food",
             "nl": "Verkoop van eten",
-            "de": "Verkauf von Lebensmitteln"
+            "de": "Verkauf von Lebensmitteln",
+            "fr": "Ventre de nourriture"
           },
           "osmTags": "vending~i~.*food.*"
         },
@@ -577,7 +612,8 @@
           "question": {
             "en": "Sale of cigarettes",
             "nl": "Verkoop van sigaretten",
-            "de": "Verkauf von Zigaretten"
+            "de": "Verkauf von Zigaretten",
+            "fr": "Vente de cigarettes"
           },
           "osmTags": "vending~i~.*cigarettes.*"
         },
@@ -585,7 +621,8 @@
           "question": {
             "en": "Sale of condoms",
             "nl": "Verkoop van condooms",
-            "de": "Verkauf von Kondomen"
+            "de": "Verkauf von Kondomen",
+            "fr": "Vente de préservatifs"
           },
           "osmTags": "vending~i~.*condoms.*"
         },
@@ -593,7 +630,8 @@
           "question": {
             "en": "Sale of coffee",
             "nl": "Verkoop van koffie",
-            "de": "Verkauf von Kaffee"
+            "de": "Verkauf von Kaffee",
+            "fr": "Vente de café"
           },
           "osmTags": "vending~i~.*coffee.*"
         },
@@ -601,7 +639,8 @@
           "question": {
             "en": "Sale of water",
             "nl": "Verkoop van water",
-            "de": "Verkauf von Trinkwasser"
+            "de": "Verkauf von Trinkwasser",
+            "fr": "Vente d'eau"
           },
           "osmTags": "vending~i~.*water.*"
         },
@@ -609,7 +648,8 @@
           "question": {
             "en": "Sale of newspapers",
             "nl": "Verkoop van kranten",
-            "de": "Verkauf von Zeitungen"
+            "de": "Verkauf von Zeitungen",
+            "fr": "Vente de journaux"
           },
           "osmTags": "vending~i~.*newspapers.*"
         },
@@ -617,7 +657,8 @@
           "question": {
             "en": "Sale of bicycle inner tubes",
             "nl": "Verkoop van fietsbinnenbanden",
-            "de": "Verkauf von Fahrradschläuchen"
+            "de": "Verkauf von Fahrradschläuchen",
+            "fr": "Vente de chambres à air pour vélo"
           },
           "osmTags": "vending~i~.*bicycle_tube.*"
         },
@@ -625,7 +666,8 @@
           "question": {
             "en": "Sale of milk",
             "nl": "Verkoop van melk",
-            "de": "Verkauf von Milch"
+            "de": "Verkauf von Milch",
+            "fr": "Vente de lait"
           },
           "osmTags": "vending~i~.*milk.*"
         },
@@ -633,7 +675,8 @@
           "question": {
             "en": "Sale of bread",
             "nl": "Verkoop van brood",
-            "de": "Verkauf von Brot"
+            "de": "Verkauf von Brot",
+            "fr": "Vente de pain"
           },
           "osmTags": "vending~i~.*bread.*"
         },
@@ -641,7 +684,8 @@
           "question": {
             "en": "Sale of eggs",
             "nl": "Verkoop van eieren",
-            "de": "Verkauf von Eiern"
+            "de": "Verkauf von Eiern",
+            "fr": "Vente d'œufs"
           },
           "osmTags": "vending~i~.*eggs.*"
         },
@@ -649,7 +693,8 @@
           "question": {
             "en": "Sale of cheese",
             "nl": "Verkoop van kaas",
-            "de": "Verkauf von Käse"
+            "de": "Verkauf von Käse",
+            "fr": "Vente de fromage"
           },
           "osmTags": "vending~i~.*cheese.*"
         },
@@ -657,7 +702,8 @@
           "question": {
             "en": "Sale of honey",
             "nl": "Verkoop van honing",
-            "de": "Verkauf von Honig"
+            "de": "Verkauf von Honig",
+            "fr": "Vente de miel"
           },
           "osmTags": "vending~i~.*honey.*"
         },
@@ -665,7 +711,8 @@
           "question": {
             "en": "Sale of potatoes",
             "nl": "Verkoop van aardappelen",
-            "de": "Verkauf von Kartoffeln"
+            "de": "Verkauf von Kartoffeln",
+            "fr": "Vente de pommes de terre"
           },
           "osmTags": "vending~i~.*potatoes.*"
         },
@@ -673,7 +720,8 @@
           "question": {
             "en": "Sale of flowers",
             "nl": "Verkoop van bloemen",
-            "de": "Verkauf von Blumen"
+            "de": "Verkauf von Blumen",
+            "fr": "Vente de fleurs"
           },
           "osmTags": "vending~i~.*flowers.*"
         }

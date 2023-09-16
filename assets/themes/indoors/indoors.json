@@ -10,7 +10,9 @@
     "ca": "Interiors",
     "pa_PK": "اندروں",
     "cs": "Vnitřní prostory",
-    "es": "En interiores"
+    "es": "En interiores",
+    "eu": "Barnealdean",
+    "pl": "Wewnątrz"
   },
   "description": {
     "en": "On this map, publicly accessible indoor places are shown",

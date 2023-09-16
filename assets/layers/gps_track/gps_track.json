@@ -7,7 +7,9 @@
     "render": {
       "en": "Your travelled path",
       "nl": "Jouw traject",
-      "de": "Deine zurückgelegte Strecke"
+      "de": "Deine zurückgelegte Strecke",
+      "ca": "El teu camí recorregut",
+      "fr": "Votre chemin"
     }
   },
   "shownByDefault": false,

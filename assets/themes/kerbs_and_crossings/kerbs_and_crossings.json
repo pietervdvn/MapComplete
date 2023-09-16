@@ -10,7 +10,8 @@
     "nb_NO": "Fortauskanter og fotgjengerfelt.",
     "ru": "Бордюры и пешеходные переходы",
     "es": "Bordillos y cruces",
-    "ca": "Vorals i encreuaments"
+    "ca": "Vorals i encreuaments",
+    "pl": "Krawężniki i przejścia"
   },
   "description": {
     "en": "A map showing kerbs and crossings.",
@@ -21,7 +22,8 @@
     "cs": "Mapa zobrazující obrubníky a přechody.",
     "nb_NO": "Fortauskanter og fotgjengerfelt.",
     "es": "Un mapa que muestra bordillos y cruces.",
-    "ca": "Un mapa amb voreres i encreuaments."
+    "ca": "Un mapa amb voreres i encreuaments.",
+    "pl": "Mapa pokazująca krawężniki i przejścia."
   },
   "icon": "./assets/layers/kerbs/KerbIcon.svg",
   "startZoom": 19,
@@ -50,7 +52,8 @@
               "fr": "une traversée",
               "ca": "un pas de vianants",
               "da": "en overgang",
-              "es": "un cruce"
+              "es": "un cruce",
+              "eu": "bidegurutze bat"
             },
             "tags": [
               "highway=crossing"
@@ -61,7 +64,9 @@
               "de": "Kreuzung für Fußgänger und/oder Radfahrer",
               "fr": "Traversée pour piétons et/ou cyclistes",
               "da": "Overgang for fodgængere og/eller cyklister",
-              "es": "Cruce para peatones y/o ciclistas"
+              "es": "Cruce para peatones y/o ciclistas",
+              "ca": "Creuament per vianants i/o ciclistes",
+              "pl": "Przejście dla pieszych i/lub przejazd dla rowerów"
             },
             "snapToLayer": "cycleways_and_roads",
             "maxSnapDistance": 25

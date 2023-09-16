@@ -6,7 +6,8 @@
     "ca": "Velocitat",
     "de": "Höchstgeschwindigkeiten",
     "nl": "Maximumsnelheid",
-    "pa_PK": "حد رفتار"
+    "pa_PK": "حد رفتار",
+    "fr": "Vitesse maximale"
   },
   "source": {
     "osmTags": {
@@ -45,7 +46,8 @@
         "then": {
           "en": "Road without a name",
           "de": "Straße ohne Namen",
-          "nl": "Weg zonder een naam"
+          "nl": "Weg zonder een naam",
+          "fr": "Route sans nom"
         }
       }
     ]
@@ -55,7 +57,8 @@
     "de": "Zeigt die zulässige Geschwindigkeit für jede Straße an",
     "nl": "Toont de toegestane snelheid voor elke weg",
     "cs": "Zobrazuje povolenou rychlost pro každou silnici",
-    "ca": "Mostra la velocitat permesa per a cada carretera"
+    "ca": "Mostra la velocitat permesa per a cada carretera",
+    "fr": "Affiche les vitesses autorisées sur toutes les routes"
   },
   "tagRenderings": [
     {
@@ -84,7 +87,8 @@
           "then": {
             "en": "This is a living street, which has a maxspeed of 20km/h",
             "nl": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h",
-            "de": "Dies ist eine Wohnstraße, auf der eine Höchstgeschwindigkeit von 20 km/h gilt"
+            "de": "Dies ist eine Wohnstraße, auf der eine Höchstgeschwindigkeit von 20 km/h gilt",
+            "fr": "C'est une zone de rencontre, avec une vitesse maximale de 20 km/h"
           },
           "icon": {
             "path": "./assets/layers/maxspeed/living_street_be.svg",
@@ -152,7 +156,8 @@
             "es": "kilómetros/hora",
             "nl": "kilometers/uur",
             "de": "Kilometer/Stunde",
-            "pa_PK": "ہر گھنٹہ وچ کیلومیٹر"
+            "pa_PK": "ہر گھنٹہ وچ کیلومیٹر",
+            "fr": "kilomètres/heure"
           },
           "humanShort": {
             "en": "km/h",
@@ -161,7 +166,8 @@
             "nl": "km/u",
             "de": "km/h",
             "pa_PK": "ہر گھنٹے وچ کیلومیٹر",
-            "ru": "км/ч"
+            "ru": "км/ч",
+            "fr": "km/h"
           }
         },
         {
@@ -181,7 +187,8 @@
             "es": "millas/hora",
             "nl": "miles/uur",
             "de": "Meilen/Stunde",
-            "pa_PK": "ہر گھنٹہ وچ میل"
+            "pa_PK": "ہر گھنٹہ وچ میل",
+            "fr": "miles/heure"
           },
           "humanShort": {
             "en": "mph",
@@ -189,7 +196,8 @@
             "es": "mph",
             "nl": "mph",
             "de": "mph",
-            "pa_PK": "ہر گھنٹہ وچ میل"
+            "pa_PK": "ہر گھنٹہ وچ میل",
+            "fr": "mph"
           }
         }
       ],

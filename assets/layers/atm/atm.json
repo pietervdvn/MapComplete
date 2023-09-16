@@ -8,7 +8,9 @@
     "ca": "Caixers Automàtics",
     "nb_NO": "Minibanker",
     "cs": "Bankomaty",
-    "he": "כספומטים"
+    "he": "כספומטים",
+    "eu": "kutxazainak",
+    "pl": "Bankomaty"
   },
   "description": {
     "en": "ATMs to withdraw money",
@@ -19,7 +21,8 @@
     "nb_NO": "Minibanker fo rå ta ut penger",
     "cs": "Bankomaty pro výběr peněz",
     "es": "Cajeros automáticos para retirar dinero",
-    "he": "כספומטים למשיכת כסף"
+    "he": "כספומטים למשיכת כסף",
+    "pl": "Bankomaty do wypłacania pieniędzy"
   },
   "title": {
     "render": {
@@ -30,7 +33,9 @@
       "nb_NO": "Minibank",
       "ca": "Caixer Automàtic",
       "cs": "Bankomat",
-      "he": "כספומט"
+      "he": "כספומט",
+      "eu": "Kutxazaina",
+      "pl": "Bankomat"
     },
     "mappings": [
       {
@@ -43,7 +48,8 @@
           "nb_NO": "{brand}-minibank",
           "ca": "Caixer automàtic {brand}",
           "cs": "Bankomat {brand}",
-          "he": "כספומט {brand}"
+          "he": "כספומט {brand}",
+          "pl": "Bankomat {brand}"
         }
       }
     ]
@@ -64,7 +70,8 @@
         "nl": "een geldautomaat",
         "ca": "un caixer automàtic",
         "nb_NO": "en minibank",
-        "cs": "bankomat"
+        "cs": "bankomat",
+        "pl": "bankomat"
       }
     }
   ],
@@ -80,7 +87,8 @@
         "ca": "El nom d'aquest caixer és {name}",
         "nb_NO": "Navnet på denne minibanken er {name}",
         "cs": "Název tohoto bankomatu je {name}",
-        "he": "שמו של כספומט זה הוא {name}"
+        "he": "שמו של כספומט זה הוא {name}",
+        "pl": "Nazwa tego bankomatu to {name}"
       },
       "condition": "name~*"
     },
@@ -132,7 +140,8 @@
         "nb_NO": "Hvilket selskap driver denne minibanken?",
         "ca": "Quina companyia opera aquest caixer?",
         "cs": "Která společnost provozuje tento bankomat?",
-        "he": "איזו חברה מפעילה את הכספומט הזה?"
+        "he": "איזו חברה מפעילה את הכספומט הזה?",
+        "pl": "Jaka firma obsługuje ten bankomat?"
       },
       "freeform": {
         "key": "operator",
@@ -144,7 +153,8 @@
           "nl": "Beheerder",
           "ca": "Operador",
           "cs": "Operátor",
-          "he": "מפעיל"
+          "he": "מפעיל",
+          "eu": "Operadorea"
         }
       },
       "render": {
@@ -155,7 +165,8 @@
         "nb_NO": "Minibanken drives av {operator}",
         "ca": "{operator} opera aquest caixer",
         "cs": "Bankomat provozuje {operator}",
-        "he": "הכספומט מופעל על ידי {operator}"
+        "he": "הכספומט מופעל על ידי {operator}",
+        "pl": "Ten bankomat jest obsługiwany przez {operator}"
       }
     },
     "opening_hours",
@@ -180,7 +191,8 @@
             "ca": "Pots retirar diners a aquest caixer",
             "nb_NO": "Du kan gjøre uttak i denne minibanken",
             "cs": "Z tohoto bankomatu můžete vybírat hotovost",
-            "he": "אתה יכול למשוך מזומן מהכספומט הזה"
+            "he": "אתה יכול למשוך מזומן מהכספומט הזה",
+            "pl": "Z tego bankomatu można wypłacić pieniądze"
           },
           "hideInAnswer": true
         },
@@ -217,7 +229,8 @@
         "ca": "Pots dipositar diners a aquest caixer?",
         "cs": "Můžete do tohoto bankomatu vložit hotovost?",
         "fr": "Pouvez-vous déposer de l'argent liquide dans ce DAB ?",
-        "he": "האם אתה יכול להפקיד מזומן בכספומט הזה?"
+        "he": "האם אתה יכול להפקיד מזומן בכספומט הזה?",
+        "pl": "Czy ten bankomat pozwala wpłacać pieniądze?"
       },
       "mappings": [
         {
@@ -230,7 +243,8 @@
             "nb_NO": "Du kan antagelig ikke gjøre innskudd i denne minibanken",
             "cs": "Do tohoto bankomatu pravděpodobně nelze vložit hotovost",
             "fr": "Vous ne pouvez probablement pas déposer d'argent liquide dans ce DAB",
-            "he": "כנראה שלא תוכל להפקיד מזומן בכספומט הזה"
+            "he": "כנראה שלא תוכל להפקיד מזומן בכספומט הזה",
+            "pl": "Prawdopodobnie ten bankomat nie pozwala wpłacać pieniędzy"
           },
           "hideInAnswer": true
         },
@@ -244,7 +258,8 @@
             "ca": "Pots dipositar diners a aquest caixer",
             "cs": "Do tohoto bankomatu můžete vkládat hotovost",
             "fr": "Vous pouvez déposer de l'argent liquide dans ce DAB",
-            "he": "אתה יכול להפקיד מזומן לכספומט זה"
+            "he": "אתה יכול להפקיד מזומן לכספומט זה",
+            "pl": "Ten bankomat pozwala wpłacać pieniądze"
           }
         },
         {
@@ -257,7 +272,8 @@
             "ca": "No pots dipositar diners a aquest caixer",
             "cs": "Do tohoto bankomatu nelze vkládat hotovost",
             "fr": "Vous ne pouvez pas déposer d'agent liquide dans ce DAB",
-            "he": "לא ניתן להפקיד מזומן לכספומט זה"
+            "he": "לא ניתן להפקיד מזומן לכספומט זה",
+            "pl": "Ten bankomat nie pozwala wpłacać pieniędzy"
           }
         }
       ]
@@ -305,7 +321,9 @@
         "fr": "Quels billets pouvez-vous retirer ici ?",
         "de": "Welche Geldscheine können Sie hier abheben?",
         "cs": "Jaké bankovky zde můžete vybírat?",
-        "he": "אילו הערות תוכל למשוך כאן?"
+        "he": "אילו הערות תוכל למשוך כאן?",
+        "ca": "Quins bitllets pots retirar aquí?",
+        "pl": "Jakie banknoty można tutaj wypłacić?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -316,7 +334,9 @@
             "en": "5 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 5 euro afhalen",
             "de": "5-Euro-Scheine können abgehoben werden",
-            "cs": "Bankovky v hodnotě 5 eur lze vybírat"
+            "cs": "Bankovky v hodnotě 5 eur lze vybírat",
+            "ca": "es poden retirar bitllets de 5 euros",
+            "fr": "On peut retirer des billets de 5 euros"
           }
         },
         {
@@ -326,7 +346,9 @@
             "en": "10 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 10 euro afhalen",
             "de": "10-Euro-Scheine können abgehoben werden",
-            "cs": "Bankovky v hodnotě 10 eur lze vybírat"
+            "cs": "Bankovky v hodnotě 10 eur lze vybírat",
+            "ca": "es poden retirar bitllets de 10 euros",
+            "fr": "On peut retirer des billets de 10 euros"
           }
         },
         {
@@ -336,7 +358,9 @@
             "en": "20 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 20 euro afhalen",
             "de": "20-Euro-Scheine können abgehoben werden",
-            "cs": "Bankovky v hodnotě 20 eur lze vybírat"
+            "cs": "Bankovky v hodnotě 20 eur lze vybírat",
+            "ca": "es poden retirar bitllets de 20 euros",
+            "fr": "On peut retirer des billets de 20 euros"
           }
         },
         {
@@ -346,7 +370,9 @@
             "en": "50 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 50 euro afhalen",
             "de": "Es können 50-Euro-Scheine abgehoben werden",
-            "cs": "50 eurové bankovky lze vybírat"
+            "cs": "50 eurové bankovky lze vybírat",
+            "ca": "es poden retirar bitllets de 50 euros",
+            "fr": "On peut retirer des billets de 50 euros"
           }
         },
         {
@@ -356,7 +382,9 @@
             "en": "100 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 100 euro afhalen",
             "de": "100-Euro-Scheine können abgehoben werden",
-            "cs": "100 eurové bankovky lze vybírat"
+            "cs": "100 eurové bankovky lze vybírat",
+            "ca": "es poden retirar bitllets de 100 euros",
+            "fr": "On peut retirer des billets de 100 euros"
           }
         },
         {
@@ -366,7 +394,9 @@
             "en": "200 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 200 euro afhalen",
             "de": "200-Euro-Scheine können abgehoben werden",
-            "cs": "200 eurové bankovky lze vybírat"
+            "cs": "200 eurové bankovky lze vybírat",
+            "ca": "es poden retirar bitllets de 200 euros",
+            "fr": "On peut retirer des billets de 200 euros"
           }
         },
         {
@@ -376,7 +406,9 @@
             "en": "500 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 500 euro afhalen",
             "de": "500-Euro-Scheine können abgehoben werden",
-            "cs": "Bankovky v hodnotě 500 eur lze vybírat"
+            "cs": "Bankovky v hodnotě 500 eur lze vybírat",
+            "ca": "es poden retirar bitllets de 500 euros",
+            "fr": "On peut retirer des billets de 500 euros"
           }
         }
       ]

@@ -55,7 +55,8 @@
       "da": "Bænk",
       "cs": "Lavička",
       "pa_PK": "بینچ",
-      "he": "ספסל"
+      "he": "ספסל",
+      "eu": "Banku"
     },
     "mappings": [
       {
@@ -135,7 +136,8 @@
         "es": "{name}",
         "ca": "{name}",
         "da": "{name}",
-        "cs": "{name}"
+        "cs": "{name}",
+        "eu": "{name}"
       },
       "freeform": {
         "key": "name"
@@ -230,7 +232,8 @@
           "nl": "Deze bushalte heeft geen zitbank (er is er nooit een geweest of deze is verwijderd)",
           "ca": "Aquesta para de bus no té un banc (mai n'ha tingut un o ha estat eliminat)",
           "cs": "Na této autobusové zastávce není lavička (nikdy zde nebyla nebo byla odstraněna)",
-          "pt": "Este ponto de ônibus não tem banco (nunca houve ou foi removido)"
+          "pt": "Este ponto de ônibus não tem banco (nunca houve ou foi removido)",
+          "pl": "Ten przystanek autobusowy nie ma ławki (nigdy jej nie było lub została usunięta)"
         }
       }
     ],
@@ -244,7 +247,8 @@
           "nl": "Deze bushalte wordt niet meer gebruikt",
           "ca": "Aquesta parada de bus no s'utilitza més",
           "cs": "Tato autobusová zastávka se již nepoužívá",
-          "pt": "Este ponto de ônibus não é mais usado"
+          "pt": "Este ponto de ônibus não é mais usado",
+          "pl": "Ten przystanek autobusowy nie jest już używany"
         }
       }
     ],
@@ -264,6 +268,7 @@
     "da": "Et lag, der viser alle offentlige stoppesteder, som har en bænk",
     "cs": "Vrstva zobrazující všechny zastávky veřejné dopravy, které mají lavičku",
     "ca": "Una capa que mostra totes les parades de transport públic que tenen bancs",
-    "pt": "Uma camada mostrando todas as paradas de transporte público que possuem um banco"
+    "pt": "Uma camada mostrando todas as paradas de transporte público que possuem um banco",
+    "pl": "Warstwa pokazująca wszystkie przystanki transportu publicznego, które mają ławki"
   }
 }

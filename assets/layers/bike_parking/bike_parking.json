@@ -189,7 +189,8 @@
             "ru": "Стойка",
             "ca": "Enganxament",
             "da": "Stativ",
-            "cs": "Stojan"
+            "cs": "Stojan",
+            "eu": "Rack-a"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/rack.svg",
@@ -233,7 +234,8 @@
             "da": "Skur",
             "cs": "Přístřešek",
             "pa_PK": "شیڈ",
-            "ca": "cobert"
+            "ca": "cobert",
+            "eu": "Etxola"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/shed.svg",
@@ -253,7 +255,8 @@
             "es": "Bolardo",
             "da": "Pullert",
             "cs": "Sloupek",
-            "pa_PK": "بولارڈ"
+            "pa_PK": "بولارڈ",
+            "eu": "Bolardo"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/bollard.svg",
@@ -266,7 +269,7 @@
             "en": "An area on the floor which is marked for bicycle parking",
             "nl": "Een oppervlakte die gemarkeerd is om fietsen te parkeren",
             "fr": "Zone au sol qui est marquée pour le stationnement des vélos",
-            "it": "Una zona del pavimento che è marcata per il parcheggio delle bici",
+            "it": "Una zona del terreno che è marcata per il parcheggio delle bici",
             "de": "Ein Bereich auf dem Boden, der für das Abstellen von Fahrrädern gekennzeichnet ist",
             "zh_Hant": "樓層當中標示為單車停車場的區域",
             "es": "Una área en el suelo que está marcada para el aparcamiento de bicicletas",
@@ -348,7 +351,8 @@
             "ca": "Aparcament al terrat",
             "es": "Aparcamiento de azotea",
             "da": "Tagparkering",
-            "cs": "Parkoviště na střeše"
+            "cs": "Parkoviště na střeše",
+            "pl": "Parking na dachu"
           }
         },
         {
@@ -468,7 +472,8 @@
         "es": "Espacio para {capacity} bicis",
         "da": "Plads til {capacity} cykler",
         "cs": "Místo pro {capacity} kol",
-        "ca": "Espai per a {capacity} bicis"
+        "ca": "Espai per a {capacity} bicis",
+        "pl": "Miejsce na {capacity} rowerów"
       },
       "freeform": {
         "key": "capacity",
@@ -490,7 +495,8 @@
         "es": "¿Quién puede utilizar este aparcamiento de bicicletas?",
         "da": "Hvem kan bruge denne cykelparkering?",
         "cs": "Kdo může parkoviště pro jízdní kola využívat?",
-        "ca": "Qui pot utilitzar aquest aparcament de bicicletes?"
+        "ca": "Qui pot utilitzar aquest aparcament de bicicletes?",
+        "pl": "Kto może używać tego parkingu dla rowerów?"
       },
       "render": {
         "en": "{access}",
@@ -508,7 +514,9 @@
         "ca": "{access}",
         "es": "{access}",
         "da": "{access}",
-        "cs": "{access}"
+        "cs": "{access}",
+        "eu": "{access}",
+        "pl": "{access}"
       },
       "freeform": {
         "key": "access",
@@ -531,7 +539,8 @@
             "ca": "Accessible al públic",
             "es": "Accesible públicamente",
             "da": "Offentligt tilgængelig",
-            "cs": "Veřejně přístupné"
+            "cs": "Veřejně přístupné",
+            "pl": "Dostępne publicznie"
           }
         },
         {
@@ -717,6 +726,7 @@
     "da": "Et lag, der viser, hvor man kan parkere sin cykel",
     "fr": "Une couche montrant où stationner son vélo",
     "cs": "Vrstva ukazující, kde můžete zaparkovat kolo",
-    "ca": "Una capa que mostra on pots aparcar la teva bicicleta"
+    "ca": "Una capa que mostra on pots aparcar la teva bicicleta",
+    "it": "Un livello che mostra dove puoi parcheggiare la tua bicicletta"
   }
 }

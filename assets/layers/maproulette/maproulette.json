@@ -9,7 +9,8 @@
     "en": "Layer showing all tasks in MapRoulette",
     "de": "Ebene, die alle MapRoulette-Aufgaben zeigt",
     "nl": "Laag met alle taken uit MapRoulette",
-    "ca": "Capa que mostra totes les tasques de MapRoulette"
+    "ca": "Capa que mostra totes les tasques de MapRoulette",
+    "pl": "Warstwa pokazująca wszystkie zadania w MapRoulette"
   },
   "mapRendering": [
     {
@@ -68,7 +69,8 @@
             "en": "Task is created",
             "de": "Aufgabe wurde erstellt",
             "nl": "Taak werd gecreëerd",
-            "ca": "Es crea la tasca"
+            "ca": "Es crea la tasca",
+            "pl": "Zadanie jest stworzone"
           }
         },
         {
@@ -76,7 +78,8 @@
           "then": {
             "en": "Task is fixed",
             "de": "Aufgabe wurde erledigt",
-            "nl": "Taak werd opgelost"
+            "nl": "Taak werd opgelost",
+            "pl": "Zadanie jest naprawione"
           }
         },
         {
@@ -84,7 +87,8 @@
           "then": {
             "en": "Task is a false positive",
             "de": "Aufgabe ist ein falsches Positiv",
-            "nl": "Taak was vals positief"
+            "nl": "Taak was vals positief",
+            "pl": "Zadanie jest fałszywie pozytywne"
           }
         },
         {
@@ -92,7 +96,8 @@
           "then": {
             "en": "Task is skipped",
             "de": "Aufgabe wurde übersprungen",
-            "nl": "Taak werd overgeslagen"
+            "nl": "Taak werd overgeslagen",
+            "pl": "Zadanie jest pominięte"
           }
         },
         {
@@ -100,7 +105,8 @@
           "then": {
             "en": "Task is deleted",
             "de": "Aufgabe wurde gelöscht",
-            "nl": "Taak werd verwijderd"
+            "nl": "Taak werd verwijderd",
+            "pl": "Zadania jest usunięte"
           }
         },
         {
@@ -108,7 +114,8 @@
           "then": {
             "en": "Task is already fixed",
             "de": "Aufgabe wurde bereits erledigt",
-            "nl": "Taak was al opgelost"
+            "nl": "Taak was al opgelost",
+            "pl": "Zadania jest już wykonane"
           }
         },
         {
@@ -116,7 +123,8 @@
           "then": {
             "en": "Task is marked as too hard",
             "de": "Aufgabe wurde als zu schwer markiert",
-            "nl": "Taak werd als te moeilijk ervaren"
+            "nl": "Taak werd als te moeilijk ervaren",
+            "pl": "Zadanie jest oznaczone jako zbyt trudne"
           }
         },
         {
@@ -124,7 +132,8 @@
           "then": {
             "en": "Task is disabled",
             "de": "Aufgabe wurde deaktiviert",
-            "nl": "Taak is uitgeschakeld"
+            "nl": "Taak is uitgeschakeld",
+            "pl": "Zadanie jest wyłączone"
           }
         }
       ]
@@ -140,7 +149,8 @@
           "message": {
             "en": "Mark as fixed",
             "de": "Als behoben markieren",
-            "ca": "Marca com a solucionat"
+            "ca": "Marca com a solucionat",
+            "pl": "Oznacz jako naprawione"
           }
         }
       }
@@ -156,7 +166,8 @@
           "message": {
             "en": "Mark as not found or false positive",
             "de": "Als nicht gefunden oder Falschmeldung markieren",
-            "ca": "Marca com a no trobat o com a fals positiu"
+            "ca": "Marca com a no trobat o com a fals positiu",
+            "pl": "Oznacz jako nieznalezione lub fałszywie pozytywne"
           },
           "status": "2",
           "image": "close"
@@ -174,7 +185,8 @@
           "message": {
             "en": "Mark as too hard",
             "de": "Als zu schwer markieren",
-            "ca": "Marca com a massa complicat"
+            "ca": "Marca com a massa complicat",
+            "pl": "Oznacz jako zbyt trudne"
           },
           "status": "6",
           "image": "not_found"
@@ -186,13 +198,15 @@
   "name": {
     "en": "MapRoulette Tasks",
     "de": "MapRoulette-Aufgaben",
-    "nl": "MapRoulette Taken"
+    "nl": "MapRoulette Taken",
+    "pl": "Zadania MapRoulette"
   },
   "title": {
     "render": {
       "en": "MapRoulette Item: {parentName}",
       "de": "MapRoulette-Element: {parentName}",
-      "nl": "MapRoulette Item: {parentName}"
+      "nl": "MapRoulette Item: {parentName}",
+      "pl": "Obiekt MapRoulette: {parentName}"
     }
   },
   "titleIcons": [
@@ -209,14 +223,16 @@
           "question": {
             "en": "Show tasks with all statuses",
             "de": "Aufgaben mit allen Status anzeigen",
-            "nl": "Toon taken met alle statussen"
+            "nl": "Toon taken met alle statussen",
+            "pl": "Pokaż zadania z wszystkimi statusami"
           }
         },
         {
           "question": {
             "en": "Show tasks that are created",
             "de": "Aufgaben anzeigen, die erstellt wurden",
-            "nl": "Toon aangemaakte taken"
+            "nl": "Toon aangemaakte taken",
+            "pl": "Pokaż zadania, które zostały stworzone"
           },
           "osmTags": "status=0"
         },
@@ -256,7 +272,8 @@
           "question": {
             "en": "Show tasks that are already fixed",
             "de": "Aufgaben anzeigen, die bereits erledigt wurden",
-            "nl": "Toon al opgeloste taken"
+            "nl": "Toon al opgeloste taken",
+            "pl": "Pokaż zadania, które są już wykonane"
           },
           "osmTags": "status=5"
         },
@@ -264,7 +281,8 @@
           "question": {
             "en": "Show tasks that are marked as too hard",
             "de": "Aufgaben anzeigen, die als zu schwierig markiert wurden",
-            "nl": "Toon taken die als te lastig gemarkeerd zijn"
+            "nl": "Toon taken die als te lastig gemarkeerd zijn",
+            "pl": "Pokaż zadania oznaczone jako zbyt trudne"
           },
           "osmTags": "status=6"
         },
@@ -272,7 +290,8 @@
           "question": {
             "en": "Show tasks that are disabled",
             "de": "Aufgaben anzeigen, die deaktiviert wurden",
-            "nl": "Toon uitgeschakelde taken"
+            "nl": "Toon uitgeschakelde taken",
+            "pl": "Pokaż zadania, które są wyłączone"
           },
           "osmTags": "status=9"
         }
@@ -291,7 +310,8 @@
           "question": {
             "en": "Challenge name contains {search}",
             "de": "Name der Kampagne enthält {search}",
-            "nl": "Naam uitdaging bevat {search}"
+            "nl": "Naam uitdaging bevat {search}",
+            "pl": "Nazwa wyzwania zawiera {search}"
           }
         }
       ]
@@ -309,7 +329,8 @@
           "question": {
             "en": "Challenge ID matches {search}",
             "de": "Kampagnen ID stimmt mit {search} überein",
-            "nl": "ID uitdaging is {search}"
+            "nl": "ID uitdaging is {search}",
+            "pl": "ID wyzwania pasuje do {search}"
           }
         }
       ]

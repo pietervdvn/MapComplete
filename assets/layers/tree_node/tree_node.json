@@ -616,7 +616,8 @@
             "es": "Registrado como patrimonio por una organización diferente",
             "id": "Terdaftar sebagai warisan oleh organisasi yang berbeda",
             "da": "Registreret som kulturarv af en anden organisation",
-            "pt": "Registrado como patrimônio por uma organização diferente"
+            "pt": "Registrado como patrimônio por uma organização diferente",
+            "ca": "Registrat com a patrimoni per una organització diferent"
           }
         },
         {
@@ -635,7 +636,8 @@
             "es": "No registrado como patrimonio",
             "id": "Tidak terdaftar sebagai warisan",
             "da": "Ikke registreret som kulturarv",
-            "pt": "Não registrado como patrimônio"
+            "pt": "Não registrado como patrimônio",
+            "ca": "No registrat com a patrimoni"
           }
         },
         {

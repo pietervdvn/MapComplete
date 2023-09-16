@@ -11,10 +11,12 @@
     "nb_NO": "Kart over åpne butikker",
     "hu": "Bolttérkép",
     "nl": "Winkels",
-    "ca": "Mapa obert de botigues",
+    "ca": "Botigues",
     "da": "Åbn butikskort",
     "es": "Mapa Abierto de Tiendas",
-    "cs": "Open Shop Map"
+    "cs": "Open Shop Map",
+    "eu": "Denda",
+    "pl": "Sklepy"
   },
   "shortDescription": {
     "en": "An editable map with basic shop information",

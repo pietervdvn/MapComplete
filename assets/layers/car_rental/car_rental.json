@@ -5,7 +5,8 @@
     "nl": "Autoverhuur",
     "de": "Autovermietung",
     "fr": "Société de location de véhicules",
-    "ca": "Lloguer de cotxes"
+    "ca": "Lloguer de cotxes",
+    "pl": "Wypożyczalnia samochodów"
   },
   "source": {
     "osmTags": "amenity=car_rental"
@@ -17,7 +18,8 @@
       "nl": "Autoverhuur",
       "de": "Autovermietung",
       "fr": "Société de location de véhicules",
-      "ca": "Lloguer de cotxes"
+      "ca": "Lloguer de cotxes",
+      "pl": "Wypożyczalnia samochodów"
     },
     "mappings": [
       {
@@ -31,7 +33,8 @@
     "nl": "Plaatsen waar je een auto kunt huren",
     "de": "Orte, an denen Sie ein Auto mieten können",
     "fr": "Lieu où vous pouvez louer une voiture",
-    "ca": "Llocs on pots llogar un cotxe"
+    "ca": "Llocs on pots llogar un cotxe",
+    "pl": "Miejsca, w których można wypożyczyć samochód"
   },
   "tagRenderings": [
     "images",
@@ -45,7 +48,8 @@
           "nl": "Naam van de autoverhuur",
           "de": "Name der Autovermietung",
           "fr": "Nom de la société de location de véhicules",
-          "ca": "Nom del lloguer de cotxes"
+          "ca": "Nom del lloguer de cotxes",
+          "pl": "Nazwa wypożyczalni samochodów"
         }
       },
       "question": {
@@ -53,7 +57,8 @@
         "nl": "Wat is de naam van deze autoverhuur?",
         "de": "Wie lautet der Name dieser Autovermietung?",
         "fr": "Quel est le nom de cette société de location de véhicules ?",
-        "ca": "Com es diu aquest lloguer de cotxes?"
+        "ca": "Com es diu aquest lloguer de cotxes?",
+        "pl": "Jaka jest nazwa tej wypożyczalni samochodów?"
       },
       "mappings": [
         {
@@ -63,7 +68,8 @@
             "nl": "Deze autoverhuur heeft geen naam",
             "de": "Diese Autovermietung hat keinen Namen",
             "fr": "Cette société de location de véhicules n'a pas de nom",
-            "ca": "Aquest lloguer de cotxes no té nom"
+            "ca": "Aquest lloguer de cotxes no té nom",
+            "pl": "Ta wypożyczalnia samochodów nie ma nazwy"
           }
         }
       ],
@@ -72,7 +78,8 @@
         "nl": "Deze autoverhuur heet {name}",
         "de": "Der Name der Autovermietung lautet {name}",
         "fr": "Cette société de location de véhicules est appelée {name}",
-        "ca": "Aquest lloguer de cotxes es diu {name}"
+        "ca": "Aquest lloguer de cotxes es diu {name}",
+        "pl": "Ta wypożyczalnia samochodów nazywa się {name}"
       }
     },
     "website",
@@ -90,14 +97,16 @@
         "nl": "een autoverhuur",
         "de": "eine Autovermietung",
         "fr": "Une société de location de véhicules",
-        "ca": "un lloguer de cotxes"
+        "ca": "un lloguer de cotxes",
+        "pl": "wypożyczalnia samochodów"
       },
       "description": {
         "en": "A place where you can rent a car",
         "nl": "Een plaats waar je een auto kunt huren",
         "de": "Ein Ort, an dem Sie ein Auto mieten können",
         "fr": "Un lieu où vous pouvez louer une voiture",
-        "ca": "Un lloc on pots llogar un cotxe"
+        "ca": "Un lloc on pots llogar un cotxe",
+        "pl": "Miejsce, w którym można wypożyczyć samochód"
       }
     }
   ],

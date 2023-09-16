@@ -15,7 +15,9 @@
     "da": "Parkering",
     "pa_PK": "پارکنگ",
     "ca": "Aparcament",
-    "cs": "Parkoviště"
+    "cs": "Parkoviště",
+    "eu": "Aparkalekua",
+    "pl": "Parking"
   },
   "shortDescription": {
     "nl": "Deze kaart toont verschillende parkeerplekken",

@@ -74,6 +74,41 @@
       "value": "4"
     },
     {
+      "key": "payment:cash",
+      "description": "Layer 'Penny Presses' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Penny Presses' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Penny Presses' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Penny Presses' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Penny Presses' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:debit_cards",
+      "description": "Layer 'Penny Presses' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:credit_cards",
+      "description": "Layer 'Penny Presses' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
       "key": "coin:type",
       "description": "Layer 'Penny Presses' shows and asks freeform values for key 'coin:type' (in the mapcomplete.org theme 'Penny Presses')"
     },
@@ -202,6 +237,15 @@
       "key": "level",
       "description": "Layer 'Penny Presses' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
       "value": "-1"
+    },
+    {
+      "key": "check_date",
+      "description": "Layer 'Penny Presses' shows and asks freeform values for key 'check_date' (in the mapcomplete.org theme 'Penny Presses')"
+    },
+    {
+      "key": "check_date",
+      "description": "Layer 'Penny Presses' shows check_date= with a fixed text, namely 'This object was last checked today' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') Picking this answer will delete the key check_date.",
+      "value": ""
     }
   ]
 }

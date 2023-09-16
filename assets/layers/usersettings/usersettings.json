@@ -194,7 +194,8 @@
           "if": "mapcomplete-show_tags=full",
           "then": {
             "en": "Show the tags that will be applied when making a change and show the tags table on every feature",
-            "de": "Tags anzeigen, die bei der Änderung hinzugefügt werden, und Tag-Tabelle bei jedem Objekt anzeigen"
+            "de": "Tags anzeigen, die bei der Änderung hinzugefügt werden, und Tag-Tabelle bei jedem Objekt anzeigen",
+            "ca": "Mostra les etiquetes que s'aplicaran a l'hora de fer un canvi i mostra la taula d'etiquetes a cada element"
           }
         }
       ]
@@ -213,7 +214,7 @@
           "then": {
             "en": "Show all questions in the infobox together",
             "de": "Alle Fragen in der Infobox zusammen anzeigen",
-            "ca": "Mostra totes les preguntes juntes a la caixa d'informació",
+            "ca": "Mostra totes les preguntes al quadre d'informació",
             "fr": "Afficher toutes les question en même temps dans l'infobox",
             "pt": "Mostrar todas as perguntas na caixa de informações juntas"
           }

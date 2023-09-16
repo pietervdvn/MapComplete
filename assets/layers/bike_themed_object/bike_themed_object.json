@@ -9,7 +9,8 @@
     "es": "Objeto relacionado con bicis",
     "da": "Cykelrelateret genstand",
     "ca": "Objectes relacionats amb bicicletes",
-    "cs": "Objekt související s jízdním kolem"
+    "cs": "Objekt související s jízdním kolem",
+    "pl": "Obiekt związany z rowerami"
   },
   "minzoom": 13,
   "source": {
@@ -37,7 +38,8 @@
       "es": "Objeto relacionado con bicis",
       "da": "Cykelrelateret objekt",
       "ca": "Objecte relacionat amb bicis",
-      "cs": "Objekt související s jízdním kolem"
+      "cs": "Objekt související s jízdním kolem",
+      "pl": "Obiekt związany z rowerami"
     },
     "mappings": [
       {

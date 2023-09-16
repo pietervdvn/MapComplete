@@ -183,7 +183,8 @@
           "then": {
             "en": "This stop has a bench, that's separately mapped",
             "de": "Die Haltestelle hat eine Bank, die separat kartiert ist",
-            "nl": "Deze halte heeft een zitbank, die los aangegeven is op de kaart"
+            "nl": "Deze halte heeft een zitbank, die los aangegeven is op de kaart",
+            "fr": "Cet arrêt a un banc, cartographié séparément"
           },
           "hideInAnswer": true
         }
@@ -193,7 +194,8 @@
         "de": "Gibt es an der Haltestelle eine Sitzbank?",
         "da": "Har dette stop en bænk?",
         "nl": "Heeft deze halte een zitbank?",
-        "ca": "Aquesta parada té un banc?"
+        "ca": "Aquesta parada té un banc?",
+        "fr": "Est-ce que cet arrêt a un banc ?"
       }
     },
     {

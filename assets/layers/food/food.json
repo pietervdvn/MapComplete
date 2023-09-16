@@ -7,7 +7,8 @@
     "da": "Restauranter og fastfood",
     "es": "Restaurantes y comida rápida",
     "fr": "Restaurants et nourriture rapide",
-    "ca": "Restaurants i menjar ràpid"
+    "ca": "Restaurants i menjar ràpid",
+    "pl": "Restauracje i fast-foody"
   },
   "source": {
     "osmTags": {
@@ -27,7 +28,8 @@
         "de": "ein Restaurant",
         "ca": "un restaurant",
         "es": "un restaurante",
-        "fr": "un restaurant"
+        "fr": "un restaurant",
+        "pl": "restauracja"
       },
       "tags": [
         "amenity=restaurant"
@@ -89,7 +91,8 @@
       "de": "Restaurant",
       "es": "Restaurante",
       "fr": "Restaurant",
-      "pa_PK": "بھون آلہ"
+      "pa_PK": "بھون آلہ",
+      "pl": "Restauracja"
     },
     "mappings": [
       {
@@ -105,7 +108,8 @@
           "de": "Restaurant <i>{name}</i>",
           "ca": "Restaurant <i>{name}</i>",
           "es": "Restaurante <i>{name}</i>",
-          "fr": "Restaurant <i>{name}</i>"
+          "fr": "Restaurant <i>{name}</i>",
+          "pl": "Restauracja <i>{name}</i>"
         }
       },
       {
@@ -238,7 +242,8 @@
             "de": "Dies ist eine Pizzeria",
             "es": "Esto es una pizzería",
             "fr": "C'est une pizzéria",
-            "ca": "Això és una pizzeria"
+            "ca": "Això és una pizzeria",
+            "pl": "To jest pizzeria"
           }
         },
         {
@@ -259,7 +264,8 @@
             "de": "Bietet vorwiegend Pastagerichte an",
             "es": "Principalmente sirve pasta",
             "fr": "Restaurant Italien",
-            "ca": "Principalment serveix pasta"
+            "ca": "Principalment serveix pasta",
+            "pl": "Podaje głównie makarony"
           }
         },
         {
@@ -269,7 +275,8 @@
             "nl": "Dit is een kebabzaak",
             "de": "Das ist ein Dönerladen",
             "es": "Esta es una tienda de kebak",
-            "fr": "C'est un resto kebab"
+            "fr": "C'est un resto kebab",
+            "pl": "To jest stoisko z kebabem"
           }
         },
         {
@@ -290,7 +297,8 @@
             "de": "Hier werden Burger serviert",
             "es": "Aquí se sirven hamburguesas",
             "fr": "Des hamburgers sont servis ici",
-            "ca": "Aquí es serveixen hamburgueses"
+            "ca": "Aquí es serveixen hamburgueses",
+            "pl": "Są tu podawane burgery"
           }
         },
         {
@@ -402,7 +410,8 @@
         "nl": "Is reserveren verplicht voor deze zaak?",
         "de": "Ist an diesem Ort eine Reservierung erforderlich?",
         "ca": "És necessari reservar en aquest lloc?",
-        "fr": "Est-il nécessaire de réserver à cet endroit ?"
+        "fr": "Est-il nécessaire de réserver à cet endroit ?",
+        "pl": "Czy w tym miejscu rezerwacja jest wymagana?"
       },
       "mappings": [
         {
@@ -432,7 +441,8 @@
             "nl": "Reserveren is mogelijk voor deze zaak",
             "de": "Eine Reservierung ist an diesem Ort möglich",
             "ca": "És possible reservar en aquest lloc",
-            "fr": "La réservation est possible à cet endroit"
+            "fr": "La réservation est possible à cet endroit",
+            "pl": "W tym miejscu możliwa jest rezerwacja"
           }
         },
         {
@@ -442,7 +452,8 @@
             "nl": "Reserveren is niet mogelijk voor deze zaak",
             "de": "Eine Reservierung ist an diesem Ort nicht möglich",
             "ca": "En aquest lloc no es pot reservar",
-            "fr": "Il n'est pas possible de réserver à cet endroit"
+            "fr": "Il n'est pas possible de réserver à cet endroit",
+            "pl": "Rezerwacja nie jest możliwa w tym miejscu"
           }
         }
       ]
@@ -532,7 +543,8 @@
         "de": "Werden hier vegetarische Gerichte angeboten?",
         "es": "¿Este restaurante tiene una opción vegetariana?",
         "fr": "Ce restaurant propose-t-il une option végétarienne ?",
-        "ca": "Aquest restaurant té opció vegetariana?"
+        "ca": "Aquest restaurant té opció vegetariana?",
+        "pl": "Czy ta restauracja ma danie wegetariańskie?"
       },
       "mappings": [
         {
@@ -543,7 +555,8 @@
             "de": "Hier werden keine vegetarischen Gerichte angeboten",
             "es": "Sin opciones vegetarianas",
             "fr": "Aucune option végétarienne n'est disponible",
-            "ca": "No hi ha opcions vegetarianes disponibles"
+            "ca": "No hi ha opcions vegetarianes disponibles",
+            "pl": "Brak dań wegetariańskich"
           }
         },
         {
@@ -554,7 +567,8 @@
             "de": "Hier werden nur wenige vegetarische Gerichte angeboten",
             "es": "Algunas opciones vegetarianas",
             "fr": "Certaines options végétariennes sont disponibles",
-            "ca": "Algunes opcions vegetarianes"
+            "ca": "Algunes opcions vegetarianes",
+            "pl": "Pewne dania wegetariańskie są dostępne"
           }
         },
         {
@@ -565,7 +579,8 @@
             "de": "Hier werden vegetarische Gerichte angeboten",
             "es": "Opciones vegetarianas disponibles",
             "fr": "Des options végétariennes sont disponibles",
-            "ca": "Hi ha opcions vegetarianes disponibles"
+            "ca": "Hi ha opcions vegetarianes disponibles",
+            "pl": "Dostępne są dania wegetariańskie"
           }
         },
         {
@@ -576,7 +591,8 @@
             "de": "Hier werden ausschließlich vegetarische Gerichte angeboten",
             "es": "Todos los platos son vegetarianos",
             "fr": "Tous les plats sont végétariens",
-            "ca": "Tots els plats són vegetarians"
+            "ca": "Tots els plats són vegetarians",
+            "pl": "Wszystkie dania są wegetariańskie"
           }
         }
       ],
@@ -601,7 +617,8 @@
             "de": "Hier werden keine veganen Gerichte angeboten",
             "es": "Sin opciones veganas disponibles",
             "fr": "Aucune option végétalienne disponible",
-            "ca": "No hi ha opcions veganes disponibles"
+            "ca": "No hi ha opcions veganes disponibles",
+            "pl": "Brak dań wegańskich"
           }
         },
         {
@@ -612,7 +629,8 @@
             "de": "Hier werden nur wenige vegane Gerichte angeboten",
             "es": "Alguna opciones veganas disponibles",
             "fr": "Certaines options végétaliennes sont disponibles",
-            "ca": "Hi ha algunes opcions veganes disponibles"
+            "ca": "Hi ha algunes opcions veganes disponibles",
+            "pl": "Pewne dania wegańskie są dostępne"
           }
         },
         {
@@ -623,7 +641,8 @@
             "de": "Hier werden vegane Gerichte angeboten",
             "es": "Opciones veganas disponibles",
             "fr": "Des options végétaliennes sont disponibles",
-            "ca": "Hi ha opcions veganes disponibles"
+            "ca": "Hi ha opcions veganes disponibles",
+            "pl": "Dostępne są dania wegańskie"
           }
         },
         {
@@ -634,7 +653,8 @@
             "de": "Hier werden ausschließlich vegane Gerichte angeboten",
             "es": "Todos los platos son veganos",
             "fr": "Tous les plats sont végétaliens",
-            "ca": "Tots els plats són vegans"
+            "ca": "Tots els plats són vegans",
+            "pl": "Wszystkie dania są wegańskie"
           }
         }
       ],
@@ -868,7 +888,8 @@
             "fr": "La friture est faite avec de l'huile végétale",
             "de": "Es wird pflanzliches Fett zum Frittieren verwendet",
             "es": "La fritura se hace con aceite vegetal",
-            "ca": "El fregit es fa amb oli vegetal"
+            "ca": "El fregit es fa amb oli vegetal",
+            "pl": "Smażenie jest na oleju roślinnym"
           }
         },
         {
@@ -879,7 +900,8 @@
             "fr": "La friture est faite avec de la graisse animale",
             "de": "Es wird tierisches Fett zum Frittieren verwendet",
             "es": "La fritura se hace con aceite animal",
-            "ca": "El fregit es fa amb oli animal"
+            "ca": "El fregit es fa amb oli animal",
+            "pl": "Smażenie jest na oleju zwierzęcym"
           }
         }
       ],
@@ -949,7 +971,9 @@
           "question": {
             "en": "Reservation not required",
             "nl": "Reserveren niet vereist",
-            "de": "Reservierung nicht erforderlich"
+            "de": "Reservierung nicht erforderlich",
+            "fr": "Pas de réservation nécessaire",
+            "pl": "Rezerwacja nie jest wymagana"
           },
           "osmTags": {
             "or": [
@@ -970,18 +994,25 @@
             "de": "Vegetarische Gerichte im Angebot",
             "es": "Tiene menú vegetariano",
             "fr": "A un menu végétarien",
-            "nl": "Heeft een vegetarisch menu"
+            "nl": "Heeft een vegetarisch menu",
+            "pl": "Ma menu wegetariańskie"
           }
         },
         {
           "question": {
-            "en": "Only fastfood buisinesses"
+            "en": "Only fastfood businesses",
+            "de": "Nur Fastfood-Geschäfte",
+            "fr": "Seulement les fastfood",
+            "pl": "Tylko fast-foody"
           },
           "osmTags": "amenity=fast_food"
         },
         {
           "question": {
-            "en": "Only restaurants"
+            "en": "Only restaurants",
+            "de": "Nur Restaurants",
+            "fr": "Seulement les restaurants",
+            "pl": "Tylko restauracje"
           },
           "osmTags": "amenity=restaurant"
         }
@@ -996,7 +1027,8 @@
             "nl": "Heeft een veganistisch menu",
             "de": "Vegane Gerichte im Angebot",
             "es": "Tiene menú vegano",
-            "fr": "A un menu végétalien"
+            "fr": "A un menu végétalien",
+            "pl": "Ma menu wegańskie"
           },
           "osmTags": {
             "or": [
@@ -1063,7 +1095,8 @@
           "en": "This is actually a pub",
           "de": "Dies ist eigentlich eine Kneipe",
           "fr": "C'est en fait un bar",
-          "nl": "Dit is eigenlijk een bruin cafe of kroeg"
+          "nl": "Dit is eigenlijk een bruin cafe of kroeg",
+          "pl": "To tak naprawdę jest pub"
         }
       },
       {
@@ -1072,7 +1105,8 @@
           "en": "This is actually a cafe",
           "de": "Dies ist eigentlich ein Café",
           "fr": "C'est en fait un café",
-          "nl": "Dit is eigenlijk een cafe (een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen)"
+          "nl": "Dit is eigenlijk een cafe (een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen)",
+          "pl": "To tak naprawdę jest kawiarnia"
         }
       }
     ],
@@ -1089,7 +1123,8 @@
           "en": "{title()} has closed down permanently",
           "de": "{title()} wurde dauerhaft geschlossen",
           "es": "{title()} ha cerrado permanentemente",
-          "fr": "{title()} a fermé définitivement"
+          "fr": "{title()} a fermé définitivement",
+          "pl": "{title()} jest zamknięte na stałe"
         },
         "changesetMessage": "shop_closed"
       }

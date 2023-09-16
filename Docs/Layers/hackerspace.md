@@ -53,6 +53,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/contact:mastodon#values) [contact:mastodon](https://wiki.openstreetmap.org/wiki/Key:contact:mastodon) | [fediverse](../SpecialInputElements.md#fediverse) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:3dprinter#values) [service:3dprinter](https://wiki.openstreetmap.org/wiki/Key:service:3dprinter) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:lasercutter#values) [service:lasercutter](https://wiki.openstreetmap.org/wiki/Key:service:lasercutter) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dno)
@@ -213,6 +214,22 @@ This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 This tagrendering has labels  `contact`
+
+
+
+### mastodon 
+
+
+
+Shows and asks for the mastodon handle
+
+The question is  *What is the Mastodon-handle of {title()}?*
+
+This rendering asks information about the property  [contact:mastodon](https://wiki.openstreetmap.org/wiki/Key:contact:mastodon) 
+
+This is rendered with  `{fediverse_link(contact:mastodon)}`
+
+
 
 
 

@@ -98,7 +98,8 @@
         "placeholder": {
           "en": "Coin type (e.g. 10cent)",
           "de": "Münzenart (z.B. 10 Cent)",
-          "es": "Tipo de moneda (por ejemplo, 10 centavos)"
+          "es": "Tipo de moneda (por ejemplo, 10 centavos)",
+          "pl": "Rodzaj monety (np. 10 centów)"
         }
       },
       "mappings": [

@@ -144,7 +144,9 @@
             "de": "Im Gedenken an {name}",
             "it": "In ricordo di {name}",
             "fr": "En souvenir de {name}",
-            "ru": "В знак памяти о {name}"
+            "ru": "В знак памяти о {name}",
+            "ca": "En record de {name}",
+            "pl": "Ku pamięci {name}"
           },
           "hideInAnswer": true
         },
@@ -273,6 +275,8 @@
   "description": {
     "en": "A layer showing memorials for cyclists, killed in road accidents",
     "nl": "Een laag die herdenkingsplaatsen voor verongelukte fietsers toont",
-    "de": "Eine Ebene mit Gedenkstätten für Radfahrer, die bei Verkehrsunfällen ums Leben gekommen sind"
+    "de": "Eine Ebene mit Gedenkstätten für Radfahrer, die bei Verkehrsunfällen ums Leben gekommen sind",
+    "fr": "Une couche affichant les mémoriaux en l'hommage de cyclistes tuées lors d'accidents de la route",
+    "pl": "Warstwa pokazujące miejsca upamiętnienia rowerzystów, którzy zginęli w wypadkach drogowych"
   }
 }

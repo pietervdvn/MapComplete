@@ -16,7 +16,7 @@
     "es": "Este mapa muestra redes de nodos ciclistas y te permita añadir nodos nuevos de manera sencilla",
     "nl": "Deze kaart toont fietsknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen",
     "fr": "Cette carte montre les réseaux de nœuds cyclistes et vous permet d'ajouter facilement de nouveaux nœuds",
-    "ca": "Aquest mapa mostra xarxes de nodes ciclistes i et permet afegir nodes nous de manera senzilla",
+    "ca": "Aquest mapa mostra xarxes de nodes ciclistes i et permet afegir-ne de nous de manera senzilla",
     "da": "Dette kort viser cykel netværk og giver dig mulighed for nemt at tilføje nye punkter",
     "cs": "Tato mapa zobrazuje sítě uzlů cyklu a umožňuje snadno přidávat nové uzly"
   },
@@ -129,7 +129,8 @@
         "nl": "knooppunten",
         "fr": "noeuds",
         "pa_PK": "نوڈ",
-        "cs": "uzly"
+        "cs": "uzly",
+        "eu": "nodoak"
       },
       "source": {
         "osmTags": {

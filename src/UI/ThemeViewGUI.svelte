@@ -1,57 +1,57 @@
 <script lang="ts">
-  import { Store, UIEventSource } from "../Logic/UIEventSource";
-  import { Map as MlMap } from "maplibre-gl";
-  import MaplibreMap from "./Map/MaplibreMap.svelte";
-  import FeatureSwitchState from "../Logic/State/FeatureSwitchState";
-  import MapControlButton from "./Base/MapControlButton.svelte";
-  import ToSvelte from "./Base/ToSvelte.svelte";
-  import If from "./Base/If.svelte";
-  import { GeolocationControl } from "./BigComponents/GeolocationControl";
-  import type { Feature } from "geojson";
-  import SelectedElementView from "./BigComponents/SelectedElementView.svelte";
-  import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-  import Filterview from "./BigComponents/Filterview.svelte";
-  import ThemeViewState from "../Models/ThemeViewState";
-  import type { MapProperties } from "../Models/MapProperties";
-  import Geosearch from "./BigComponents/Geosearch.svelte";
-  import Translations from "./i18n/Translations";
-  import { CogIcon, EyeIcon, MenuIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid";
+  import { Store, UIEventSource } from "../Logic/UIEventSource"
+  import { Map as MlMap } from "maplibre-gl"
+  import MaplibreMap from "./Map/MaplibreMap.svelte"
+  import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
+  import MapControlButton from "./Base/MapControlButton.svelte"
+  import ToSvelte from "./Base/ToSvelte.svelte"
+  import If from "./Base/If.svelte"
+  import { GeolocationControl } from "./BigComponents/GeolocationControl"
+  import type { Feature } from "geojson"
+  import SelectedElementView from "./BigComponents/SelectedElementView.svelte"
+  import LayerConfig from "../Models/ThemeConfig/LayerConfig"
+  import Filterview from "./BigComponents/Filterview.svelte"
+  import ThemeViewState from "../Models/ThemeViewState"
+  import type { MapProperties } from "../Models/MapProperties"
+  import Geosearch from "./BigComponents/Geosearch.svelte"
+  import Translations from "./i18n/Translations"
+  import { CogIcon, EyeIcon, MenuIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
 
-  import Tr from "./Base/Tr.svelte";
-  import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte";
-  import FloatOver from "./Base/FloatOver.svelte";
-  import PrivacyPolicy from "./BigComponents/PrivacyPolicy";
-  import Constants from "../Models/Constants";
-  import TabbedGroup from "./Base/TabbedGroup.svelte";
-  import UserRelatedState from "../Logic/State/UserRelatedState";
-  import LoginToggle from "./Base/LoginToggle.svelte";
-  import LoginButton from "./Base/LoginButton.svelte";
-  import CopyrightPanel from "./BigComponents/CopyrightPanel";
-  import DownloadPanel from "./DownloadFlow/DownloadPanel.svelte";
-  import ModalRight from "./Base/ModalRight.svelte";
-  import { Utils } from "../Utils";
-  import Hotkeys from "./Base/Hotkeys";
-  import { VariableUiElement } from "./Base/VariableUIElement";
-  import SvelteUIElement from "./Base/SvelteUIElement";
-  import OverlayToggle from "./BigComponents/OverlayToggle.svelte";
-  import LevelSelector from "./BigComponents/LevelSelector.svelte";
-  import ExtraLinkButton from "./BigComponents/ExtraLinkButton";
-  import SelectedElementTitle from "./BigComponents/SelectedElementTitle.svelte";
-  import Svg from "../Svg";
-  import ThemeIntroPanel from "./BigComponents/ThemeIntroPanel.svelte";
-  import type { RasterLayerPolygon } from "../Models/RasterLayers";
-  import { AvailableRasterLayers } from "../Models/RasterLayers";
-  import RasterLayerOverview from "./Map/RasterLayerOverview.svelte";
-  import IfHidden from "./Base/IfHidden.svelte";
-  import { onDestroy } from "svelte";
-  import { OpenJosm } from "./BigComponents/OpenJosm";
-  import MapillaryLink from "./BigComponents/MapillaryLink.svelte";
-  import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte";
-  import OpenBackgroundSelectorButton from "./BigComponents/OpenBackgroundSelectorButton.svelte";
-  import StateIndicator from "./BigComponents/StateIndicator.svelte";
-  import LanguagePicker from "./LanguagePicker";
-  import Locale from "./i18n/Locale";
-  import ShareScreen from "./BigComponents/ShareScreen.svelte";
+  import Tr from "./Base/Tr.svelte"
+  import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
+  import FloatOver from "./Base/FloatOver.svelte"
+  import PrivacyPolicy from "./BigComponents/PrivacyPolicy"
+  import Constants from "../Models/Constants"
+  import TabbedGroup from "./Base/TabbedGroup.svelte"
+  import UserRelatedState from "../Logic/State/UserRelatedState"
+  import LoginToggle from "./Base/LoginToggle.svelte"
+  import LoginButton from "./Base/LoginButton.svelte"
+  import CopyrightPanel from "./BigComponents/CopyrightPanel"
+  import DownloadPanel from "./DownloadFlow/DownloadPanel.svelte"
+  import ModalRight from "./Base/ModalRight.svelte"
+  import { Utils } from "../Utils"
+  import Hotkeys from "./Base/Hotkeys"
+  import { VariableUiElement } from "./Base/VariableUIElement"
+  import SvelteUIElement from "./Base/SvelteUIElement"
+  import OverlayToggle from "./BigComponents/OverlayToggle.svelte"
+  import LevelSelector from "./BigComponents/LevelSelector.svelte"
+  import ExtraLinkButton from "./BigComponents/ExtraLinkButton"
+  import SelectedElementTitle from "./BigComponents/SelectedElementTitle.svelte"
+  import Svg from "../Svg"
+  import ThemeIntroPanel from "./BigComponents/ThemeIntroPanel.svelte"
+  import type { RasterLayerPolygon } from "../Models/RasterLayers"
+  import { AvailableRasterLayers } from "../Models/RasterLayers"
+  import RasterLayerOverview from "./Map/RasterLayerOverview.svelte"
+  import IfHidden from "./Base/IfHidden.svelte"
+  import { onDestroy } from "svelte"
+  import { OpenJosm } from "./BigComponents/OpenJosm"
+  import MapillaryLink from "./BigComponents/MapillaryLink.svelte"
+  import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte"
+  import OpenBackgroundSelectorButton from "./BigComponents/OpenBackgroundSelectorButton.svelte"
+  import StateIndicator from "./BigComponents/StateIndicator.svelte"
+  import LanguagePicker from "./LanguagePicker"
+  import Locale from "./i18n/Locale"
+  import ShareScreen from "./BigComponents/ShareScreen.svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -319,7 +319,7 @@
         <Tr t={Translations.t.general.sharescreen.title} />
       </div>
       <div class="m-2" slot="content4">
-        <ShareScreen {state}/>
+        <ShareScreen {state} />
       </div>
     </TabbedGroup>
   </FloatOver>
