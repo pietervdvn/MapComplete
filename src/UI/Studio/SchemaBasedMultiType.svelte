@@ -122,7 +122,6 @@
     const oldOption = chosenOption;
     chosenOption = tags["value"] ? Number(tags["value"]) : defaultOption;
     const type = schema.type[chosenOption];
-    console.log("Subtype is", type, {chosenOption, oldOption, schema});
     if (chosenOption !== oldOption) {
       // Reset the values beneath
       subSchemas = [];

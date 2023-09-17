@@ -167,7 +167,7 @@ export default {
       ]
     },
     "mapRendering": {
-      "description": "Visualisation of the items on the map\nSet 'null' explicitly if you do not want a maprendering\ngroup: maprendering",
+      "description": "Visualisation of the items on the map\nSet 'null' explicitly if you do not want a maprendering\ngroup: maprendering\ntypes: PointRendering ; LineRendering ;",
       "type": "array",
       "items": {
         "anyOf": [

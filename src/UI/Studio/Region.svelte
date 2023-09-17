@@ -28,9 +28,6 @@ export let path: (string | number)[] = [];
     </div>
   </div>
 {:else}
-  <div class="literal-code">
-    {JSON.stringify(configs, null, "  ")}
-  </div>
   <div class="pl-2 flex flex-col gap-y-1 w-full">
     {#each configs as config}
       <SchemaBasedInput {state} path={path.concat(config.path)} schema={config} />

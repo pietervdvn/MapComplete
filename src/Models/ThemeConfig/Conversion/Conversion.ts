@@ -1,9 +1,10 @@
 import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import { Utils } from "../../../Utils"
+import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 
 export interface DesugaringContext {
-    tagRenderings: Map<string, TagRenderingConfigJson>
+    tagRenderings: Map<string, QuestionableTagRenderingConfigJson>
     sharedLayers: Map<string, LayerConfigJson>
     publicLayers?: Set<string>
 }

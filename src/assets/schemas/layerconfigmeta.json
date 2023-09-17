@@ -1583,6 +1583,7 @@
     ],
     "required": false,
     "hints": {
+      "types": "PointRendering ; LineRendering ;",
       "group": "maprendering"
     },
     "type": [
@@ -43329,6 +43330,10 @@
         {
           "if": "value=elevator",
           "then": "elevator - This layer show elevators and asks for operational status and elevator dimensions. Useful for wheelchair accessibility information"
+        },
+        {
+          "if": "value=elongated_coin",
+          "then": "elongated_coin - Layer showing penny presses."
         },
         {
           "if": "value=entrance",

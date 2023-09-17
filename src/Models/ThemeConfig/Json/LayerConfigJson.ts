@@ -10,6 +10,8 @@ import { QuestionableTagRenderingConfigJson } from "./QuestionableTagRenderingCo
 import RewritableConfigJson from "./RewritableConfigJson"
 import { Translatable } from "./Translatable"
 
+type MapRendering = {}
+
 /**
  * Configuration for a single layer
  */
@@ -239,17 +241,9 @@ export interface LayerConfigJson {
      * Visualisation of the items on the map
      * Set 'null' explicitly if you do not want a maprendering
      * group: maprendering
+     * types: PointRendering ; LineRendering
      */
-    mapRendering?: (
-        | PointRenderingConfigJson
-        | LineRenderingConfigJson
-        | RewritableConfigJson<
-              | LineRenderingConfigJson
-              | PointRenderingConfigJson
-              | LineRenderingConfigJson[]
-              | PointRenderingConfigJson[]
-          >
-    )[]
+    mapRendering?: (PointRenderingConfigJson | LineRenderingConfigJson)[]
 
     /**
      * If set, this layer will pass all the features it receives onto the next layer.

@@ -161,9 +161,12 @@ class ExpandTagRendering extends Conversion<
     }
 
     convert(
-        json: string | TagRenderingConfigJson | { builtin: string | string[]; override: any },
+        json:
+            | string
+            | QuestionableTagRenderingConfigJson
+            | { builtin: string | string[]; override: any },
         context: string
-    ): { result: TagRenderingConfigJson[]; errors: string[]; warnings: string[] } {
+    ): { result: QuestionableTagRenderingConfigJson[]; errors: string[]; warnings: string[] } {
         const errors = []
         const warnings = []
 
@@ -303,7 +306,7 @@ class ExpandTagRendering extends Conversion<
                 }
 
                 return [
-                    {
+                    <any>{
                         render: tr,
                         id: tr.replace(/[^a-zA-Z0-9]/g, ""),
                     },
@@ -416,7 +419,7 @@ class ExpandTagRendering extends Conversion<
         warnings: string[],
         errors: string[],
         ctx: string
-    ): TagRenderingConfigJson[] {
+    ): QuestionableTagRenderingConfigJson[] {
         const trs = this.convertOnce(spec, warnings, errors, ctx)
 
         const result = []
@@ -547,7 +550,11 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
 
         // ALl labels that are used in this layer
         const allLabels = new Set(
-            [].concat(...json.tagRenderings.map((tr) => (<TagRenderingConfigJson>tr).labels ?? []))
+            [].concat(
+                ...json.tagRenderings.map(
+                    (tr) => (<QuestionableTagRenderingConfigJson>tr).labels ?? []
+                )
+            )
         )
         const seen = new Set()
         for (const questionSpecial of questionSpecials) {
@@ -593,7 +600,7 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
             /* At this point, we know which question labels are not yet handled and which already are handled, and we
              * know there is no previous catch-all questions
              */
-            const question: TagRenderingConfigJson = {
+            const question: QuestionableTagRenderingConfigJson = {
                 id: "leftover-questions",
                 render: {
                     "*": `{questions( ,${Array.from(seen).join(";")})}`,
@@ -670,7 +677,7 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
         }
 
         if (!ValidationUtils.hasSpecialVisualisation(json, "all_tags")) {
-            const trc: TagRenderingConfigJson = {
+            const trc: QuestionableTagRenderingConfigJson = {
                 id: "all-tags",
                 render: { "*": "{all_tags()}" },
 
@@ -802,6 +809,8 @@ export class ExpandRewrite<T> extends Conversion<T | RewritableConfigJson<T>, T[
             // not a rewrite
             return { result: [<T>json] }
         }
+
+        console.log("Rewriting at", context)
 
         const rewrite = <RewritableConfigJson<T>>json
         const keysToRewrite = rewrite.rewrite
@@ -1142,7 +1151,7 @@ class ExpandIconBadges extends DesugaringStep<PointRenderingConfigJson | LineRen
             const iconBadge: { if: TagConfigJson; then: string | TagRenderingConfigJson } =
                 badgesJson[i]
             const { errors, result, warnings } = this._expand.convert(
-                iconBadge.then,
+                <QuestionableTagRenderingConfigJson>iconBadge.then,
                 context + ".iconBadges[" + i + "]"
             )
             errs.push(...errors)
