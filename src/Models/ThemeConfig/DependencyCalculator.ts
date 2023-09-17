@@ -42,7 +42,9 @@ export default class DependencyCalculator {
             const preset = layer.presets[i]
             const snapTo = preset.preciseInput?.snapToLayers
             if (snapTo && !Array.isArray(snapTo)) {
-                throw new Error("snapToLayers is not an array; it is " + snapTo)
+                throw new Error(
+                    `snapToLayers is not an array; it is ${snapTo}(used in preset ${i} for: ${layer.id})`
+                )
             }
             preset.preciseInput?.snapToLayers?.forEach((id) => {
                 deps.push({
