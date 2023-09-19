@@ -10,11 +10,12 @@
       ]
     }
   },
-  "mapRendering": [
+  "shownByDefault": false,
+  "pointRendering": [],
+  "lineRendering": [
     {
       "color": "#ccc",
       "width": "3"
     }
-  ],
-  "shownByDefault": false
+  ]
 }

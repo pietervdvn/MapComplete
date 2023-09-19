@@ -65,7 +65,7 @@
     },
     "all_tags"
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "centroid",
@@ -73,7 +73,9 @@
       ],
       "icon": "./assets/svg/bug.svg",
       "label": "<div class='bg-white rounded p-2'>{fixme}</div>"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#ff0000",
       "dashArray": "5,5",

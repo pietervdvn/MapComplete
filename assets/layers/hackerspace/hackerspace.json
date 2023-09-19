@@ -320,7 +320,9 @@
       ]
     }
   },
-  "mapRendering": [
+  "allowMove": true,
+  "deletion": true,
+  "pointRendering": [
     {
       "icon": {
         "render": "./assets/themes/hackerspaces/glider.svg",
@@ -341,12 +343,12 @@
         "centroid"
       ],
       "anchor": "center"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#00f",
       "width": "8"
     }
-  ],
-  "allowMove": true,
-  "deletion": true
+  ]
 }

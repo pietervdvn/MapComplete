@@ -260,7 +260,7 @@
       "condition": "wikidata~*"
     }
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": {
         "render": "pin:#05d7fcaa",
@@ -281,7 +281,9 @@
         "point"
       ],
       "anchor": "center"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": {
         "render": "#05d7fcaa",

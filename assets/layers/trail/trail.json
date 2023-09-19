@@ -207,7 +207,7 @@
   "description": {
     "nl": "Aangeduide wandeltochten"
   },
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": {
         "render": "./assets/layers/trail/trail.svg",
@@ -227,7 +227,9 @@
         "point"
       ],
       "anchor": "center"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": {
         "render": "#335D9F",

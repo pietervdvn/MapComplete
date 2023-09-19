@@ -74,7 +74,7 @@
   },
   "tagRenderings": [],
   "presets": [],
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": "./assets/layers/visitor_information_centre/information.svg",
       "iconSize": "40,40",
@@ -84,5 +84,6 @@
       ],
       "anchor": "center"
     }
-  ]
+  ],
+  "lineRendering": []
 }

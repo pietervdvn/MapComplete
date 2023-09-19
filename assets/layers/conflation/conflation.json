@@ -5,7 +5,7 @@
   "source": "special",
   "name": "Conflation",
   "title": "Conflation",
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": "point",
       "icon": {
@@ -58,7 +58,9 @@
           }
         ]
       }
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "width": {
         "render": "3",

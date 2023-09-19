@@ -32,15 +32,6 @@
   "source": {
     "osmTags": "amenity=bank"
   },
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/layers/bank/bank.svg",
-      "location": [
-        "point",
-        "centroid"
-      ]
-    }
-  ],
   "tagRenderings": [
     {
       "id": "has_atm",
@@ -113,5 +104,15 @@
         }
       ]
     }
-  ]
+  ],
+  "pointRendering": [
+    {
+      "icon": "circle:white;./assets/layers/bank/bank.svg",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "lineRendering": []
 }

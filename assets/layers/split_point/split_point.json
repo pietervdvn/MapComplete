@@ -5,7 +5,7 @@
   "source": "special",
   "name": "Split point",
   "title": "Split point",
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "point",
@@ -15,5 +15,6 @@
       "iconSize": "30,30",
       "anchor": "center"
     }
-  ]
+  ],
+  "lineRendering": []
 }

@@ -27,7 +27,12 @@
       }
     }
   ],
-  "mapRendering": [
+  "deletion": true,
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
+  "pointRendering": [
     {
       "location": [
         "centroid",
@@ -36,9 +41,5 @@
       "icon": "circle:white;./assets/layers/memorial/plaque.svg"
     }
   ],
-  "deletion": true,
-  "allowMove": {
-    "enableImproveAccuracy": true,
-    "enableRelocation": false
-  }
+  "lineRendering": []
 }

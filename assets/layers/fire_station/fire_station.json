@@ -295,7 +295,7 @@
       }
     }
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": "./assets/themes/hailhydrant/Twemoji12_1f692.svg",
       "iconSize": "35,35",
@@ -304,7 +304,9 @@
         "centroid"
       ],
       "anchor": "center"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#c22",
       "width": "1"

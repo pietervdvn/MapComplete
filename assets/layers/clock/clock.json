@@ -488,7 +488,7 @@
   ],
   "allowMove": true,
   "deletion": true,
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "point",
@@ -513,5 +513,6 @@
         ]
       }
     }
-  ]
+  ],
+  "lineRendering": []
 }

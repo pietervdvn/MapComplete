@@ -272,7 +272,7 @@
     "enableRelocation": false,
     "enableImproveAccuracy": true
   },
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": "./assets/layers/parking/parking.svg",
       "iconSize": "36,36",
@@ -292,7 +292,9 @@
         }
       ],
       "anchor": "center"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "width": 2,
       "color": "#ddcc00"

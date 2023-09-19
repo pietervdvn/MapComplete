@@ -9,7 +9,18 @@
   },
   "name": "CRAB-addressen",
   "title": "CRAB-adres",
-  "mapRendering": [
+  "calculatedTags": [
+    "_HNRLABEL=(() => {const lbl = feat.properties.HNRLABEL?.split('-')?.map(l => Number(l))?.filter(i => !isNaN (i)) ;if(lbl?.length != 2) {return feat.properties.HNRLABEL}; const addresses = []; for(let i = lbl[0]; i <= lbl[1]; i += 1){addresses.push(''+i);}; return addresses.join(';')        })()"
+  ],
+  "tagRenderings": [
+    {
+      "id": "render_crab",
+      "render": {
+        "nl": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
+      }
+    }
+  ],
+  "pointRendering": [
     {
       "location": [
         "point",
@@ -21,15 +32,5 @@
       "anchor": "center"
     }
   ],
-  "calculatedTags": [
-    "_HNRLABEL=(() => {const lbl = feat.properties.HNRLABEL?.split('-')?.map(l => Number(l))?.filter(i => !isNaN (i)) ;if(lbl?.length != 2) {return feat.properties.HNRLABEL}; const addresses = []; for(let i = lbl[0]; i <= lbl[1]; i += 1){addresses.push(''+i);}; return addresses.join(';')        })()"
-  ],
-  "tagRenderings": [
-    {
-      "id": "render_crab",
-      "render": {
-        "nl": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
-      }
-    }
-  ]
+  "lineRendering": []
 }

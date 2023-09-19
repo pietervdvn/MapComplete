@@ -82,8 +82,8 @@ export class UpdateLegacyLayer extends DesugaringStep<
             }
         }
 
-        if (config.mapRendering === undefined) {
-            config.mapRendering = []
+        if (config["mapRendering"] === undefined) {
+            config["mapRendering"] = []
             // This is a legacy format, lets create a pointRendering
             let location: ("point" | "centroid")[] = ["point"]
             let wayHandling: number = config["wayHandling"] ?? 0
@@ -99,7 +99,7 @@ export class UpdateLegacyLayer extends DesugaringStep<
                     location,
                     rotation: config["rotation"],
                 }
-                config.mapRendering.push(pointConfig)
+                config["mapRendering"].push(pointConfig)
             }
 
             if (wayHandling !== 1) {
@@ -109,10 +109,10 @@ export class UpdateLegacyLayer extends DesugaringStep<
                     dashArray: config["dashArray"],
                 }
                 if (Object.keys(lineRenderConfig).length > 0) {
-                    config.mapRendering.push(lineRenderConfig)
+                    config["mapRendering"].push(lineRenderConfig)
                 }
             }
-            if (config.mapRendering.length === 0) {
+            if (config["mapRendering"].length === 0) {
                 throw (
                     "Could not convert the legacy theme into a new theme: no renderings defined for layer " +
                     config.id
@@ -132,7 +132,7 @@ export class UpdateLegacyLayer extends DesugaringStep<
         delete config["wayHandling"]
         delete config["hideUnderlayingFeaturesMinPercentage"]
 
-        for (const mapRenderingElement of config.mapRendering ?? []) {
+        for (const mapRenderingElement of config["mapRendering"] ?? []) {
             if (mapRenderingElement["iconOverlays"] !== undefined) {
                 mapRenderingElement["iconBadges"] = mapRenderingElement["iconOverlays"]
             }
@@ -144,13 +144,28 @@ export class UpdateLegacyLayer extends DesugaringStep<
             }
         }
 
-        for (const rendering of config.mapRendering ?? []) {
-            if (!rendering["iconSize"]) {
+        if (config["mapRendering"]) {
+            const pointRenderings: PointRenderingConfigJson[] = []
+            const lineRenderings: LineRenderingConfigJson[] = []
+            for (const mapRenderingElement of config["mapRendering"]) {
+                if (mapRenderingElement["location"]) {
+                    // This is a pointRendering
+                    pointRenderings.push(<any>mapRenderingElement)
+                } else {
+                    lineRenderings.push(<any>mapRenderingElement)
+                }
+            }
+            config["pointRendering"] = pointRenderings
+            config["lineRendering"] = lineRenderings
+            delete config["mapRendering"]
+        }
+
+        for (const rendering of config.pointRendering ?? []) {
+            const pr = rendering
+            let iconSize = pr.iconSize
+            if (!iconSize) {
                 continue
             }
-            const pr = <PointRenderingConfigJson>rendering
-            let iconSize = pr.iconSize
-            console.log("Iconsize is", iconSize)
 
             if (Object.keys(pr.iconSize).length === 1 && pr.iconSize["render"] !== undefined) {
                 iconSize = pr.iconSize["render"]
@@ -164,7 +179,22 @@ export class UpdateLegacyLayer extends DesugaringStep<
                 }
         }
 
-        for (const rendering of config.mapRendering) {
+        for (const rendering of config.pointRendering) {
+            for (const key in rendering) {
+                if (!rendering[key]) {
+                    continue
+                }
+                if (
+                    typeof rendering[key]["render"] === "string" &&
+                    Object.keys(rendering[key]).length === 1
+                ) {
+                    console.log("Rewrite: ", rendering[key])
+                    rendering[key] = rendering[key]["render"]
+                }
+            }
+        }
+
+        for (const rendering of config.lineRendering) {
             for (const key in rendering) {
                 if (!rendering[key]) {
                     continue

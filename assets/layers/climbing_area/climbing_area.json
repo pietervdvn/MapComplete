@@ -298,7 +298,7 @@
       }
     }
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": "./assets/themes/climbing/climbing_no_rope.svg",
       "iconSize": "40,40",
@@ -307,7 +307,9 @@
         "centroid"
       ],
       "anchor": "center"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "dashArray": "8 16",
       "lineCap": "square",

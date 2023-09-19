@@ -44,11 +44,12 @@
     "da": "Dit tilbagelagte spor",
     "ca": "La teva traça recorreguda"
   },
-  "mapRendering": [
+  "syncSelection": "global",
+  "pointRendering": [],
+  "lineRendering": [
     {
       "width": 3,
       "color": "#bb000077"
     }
-  ],
-  "syncSelection": "global"
+  ]
 }

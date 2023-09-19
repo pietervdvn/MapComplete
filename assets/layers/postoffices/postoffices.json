@@ -464,7 +464,7 @@
   "filter": [
     "open_now"
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": "square:white;./assets/layers/postoffices/post_office.svg",
       "iconBadges": [
@@ -483,7 +483,9 @@
         "centroid"
       ],
       "anchor": "center"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#DADADA",
       "width": "1"

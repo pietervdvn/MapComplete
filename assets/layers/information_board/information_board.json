@@ -69,19 +69,6 @@
     "enableRelocation": false,
     "enableImproveAccuraccy": true
   },
-  "mapRendering": [
-    {
-      "icon": "./assets/layers/information_board/board.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#00f"
-    }
-  ],
   "description": {
     "en": "A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, …)",
     "nl": "Deze laag toont informatieborden in de publieke ruimte die uitleg geven over een bezienswaardigheid (bv. uitleg over het landschap, een ruine, een kaart van de omgeving, ...)",
@@ -89,5 +76,20 @@
     "es": "Una capa que muestra paneles informativos turísticos (ej. informan sobre el paisaje, una construcción, una característica, un mapa, ...)",
     "ca": "Una capa que mostra panells informatius turístics (p.e. informen sobre el paissatge, una construcció, una característica, un mapa, …)",
     "pl": "Warstwa pokazujące przydrożne tablice informacyjne dla turystów (np. informujące o krajobrazie, budynku, obiekcie, mapa, ...)"
-  }
+  },
+  "pointRendering": [
+    {
+      "icon": "./assets/layers/information_board/board.svg",
+      "iconSize": "40,40",
+      "location": [
+        "point"
+      ],
+      "anchor": "center"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f"
+    }
+  ]
 }

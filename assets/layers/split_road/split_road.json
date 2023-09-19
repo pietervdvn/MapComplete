@@ -5,7 +5,7 @@
   "source": "special",
   "name": null,
   "title": null,
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "point"
@@ -13,7 +13,9 @@
       "icon": "bug",
       "iconSize": "30,30",
       "anchor": "center"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "width": "8",
       "color": "black"

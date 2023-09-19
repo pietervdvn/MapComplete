@@ -336,7 +336,7 @@
     "enableRelocation": false,
     "enableImproveAccuraccy": true
   },
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": "circle:white;./assets/layers/observation_tower/Tower_observation.svg",
       "iconSize": "40,40",
@@ -346,5 +346,6 @@
       ],
       "anchor": "center"
     }
-  ]
+  ],
+  "lineRendering": []
 }

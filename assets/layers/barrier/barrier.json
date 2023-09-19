@@ -578,17 +578,6 @@
       "id": "Overlap (cyclebarrier)"
     }
   ],
-  "mapRendering": [
-    {
-      "icon": "./assets/layers/barrier/barrier.svg",
-      "location": [
-        "point"
-      ]
-    },
-    {
-      "width": "5"
-    }
-  ],
   "deletion": {
     "softDeletionTags": {
       "and": [
@@ -612,5 +601,18 @@
         "fixme="
       ]
     }
-  }
+  },
+  "pointRendering": [
+    {
+      "icon": "./assets/layers/barrier/barrier.svg",
+      "location": [
+        "point"
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": "5"
+    }
+  ]
 }

@@ -39,19 +39,6 @@
       }
     ]
   },
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": {
-        "render": "./assets/layers/transit_stops/bus_stop.svg",
-        "mappings": []
-      },
-      "label": "<div style=\"background: white; display: block\">{name}</div>"
-    }
-  ],
   "calculatedTags": [
     "_routes=feat.memberships()",
     "_contained_routes_properties=feat.memberships().map(p => {return {id: p.relation.id, name: p.relation.properties.name} }).filter((v,i,a)=>a.findIndex(t=>(JSON.stringify(t) === JSON.stringify(v)))===i)",
@@ -436,5 +423,19 @@
     },
     "tactile_paving"
   ],
-  "allowMove": false
+  "allowMove": false,
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": {
+        "render": "./assets/layers/transit_stops/bus_stop.svg",
+        "mappings": []
+      },
+      "label": "<div style=\"background: white; display: block\">{name}</div>"
+    }
+  ],
+  "lineRendering": []
 }

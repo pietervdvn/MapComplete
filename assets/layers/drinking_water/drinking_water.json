@@ -245,7 +245,16 @@
     "enableRelocation": false,
     "enableImproveAccuraccy": true
   },
-  "mapRendering": [
+  "description": {
+    "en": "A layer showing drinking water fountains",
+    "nl": "Deze laag toont drinkwaterpunten",
+    "hu": "Ivóvizet adó kutakat megjelenítő réteg",
+    "de": "Eine Ebene mit Trinkwasserbrunnen",
+    "es": "Una capa que muestra fuentes de agua potable",
+    "fr": "Une couche montrant les fontaines d'eau potable",
+    "ca": "Una capa que mostra fonts d'aigua potable"
+  },
+  "pointRendering": [
     {
       "icon": "pin:#6BC4F7;./assets/layers/drinking_water/drips.svg",
       "iconBadges": [
@@ -267,13 +276,5 @@
       "anchor": "bottom"
     }
   ],
-  "description": {
-    "en": "A layer showing drinking water fountains",
-    "nl": "Deze laag toont drinkwaterpunten",
-    "hu": "Ivóvizet adó kutakat megjelenítő réteg",
-    "de": "Eine Ebene mit Trinkwasserbrunnen",
-    "es": "Una capa que muestra fuentes de agua potable",
-    "fr": "Une couche montrant les fontaines d'eau potable",
-    "ca": "Una capa que mostra fonts d'aigua potable"
-  }
+  "lineRendering": []
 }

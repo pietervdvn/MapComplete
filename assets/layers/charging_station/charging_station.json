@@ -4671,68 +4671,6 @@
       }
     }
   ],
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": {
-        "render": "pin:#fff;./assets/themes/charging_stations/plug.svg",
-        "mappings": [
-          {
-            "if": "bicycle=yes",
-            "then": "pin:#fff;./assets/themes/charging_stations/bicycle.svg"
-          },
-          {
-            "if": {
-              "or": [
-                "car=yes",
-                "motorcar=yes"
-              ]
-            },
-            "then": "pin:#fff;./assets/themes/charging_stations/car.svg"
-          }
-        ]
-      },
-      "iconBadges": [
-        {
-          "if": {
-            "or": [
-              "disused:amenity=charging_station",
-              "operational_status=broken"
-            ]
-          },
-          "then": "close:#c22;"
-        },
-        {
-          "if": {
-            "or": [
-              "proposed:amenity=charging_station",
-              "planned:amenity=charging_station"
-            ]
-          },
-          "then": "./assets/layers/charging_station/under_construction.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "bicycle=yes",
-              {
-                "or": [
-                  "motorcar=yes",
-                  "car=yes"
-                ]
-              }
-            ]
-          },
-          "then": "circle:#fff;./assets/themes/charging_stations/car.svg"
-        }
-      ],
-      "anchor": "bottom",
-      "iconSize": "50,50"
-    }
-  ],
   "presets": [
     {
       "tags": [
@@ -5284,5 +5222,68 @@
       ]
     },
     "neededChangesets": 10
-  }
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": {
+        "render": "pin:#fff;./assets/themes/charging_stations/plug.svg",
+        "mappings": [
+          {
+            "if": "bicycle=yes",
+            "then": "pin:#fff;./assets/themes/charging_stations/bicycle.svg"
+          },
+          {
+            "if": {
+              "or": [
+                "car=yes",
+                "motorcar=yes"
+              ]
+            },
+            "then": "pin:#fff;./assets/themes/charging_stations/car.svg"
+          }
+        ]
+      },
+      "iconBadges": [
+        {
+          "if": {
+            "or": [
+              "disused:amenity=charging_station",
+              "operational_status=broken"
+            ]
+          },
+          "then": "close:#c22;"
+        },
+        {
+          "if": {
+            "or": [
+              "proposed:amenity=charging_station",
+              "planned:amenity=charging_station"
+            ]
+          },
+          "then": "./assets/layers/charging_station/under_construction.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "bicycle=yes",
+              {
+                "or": [
+                  "motorcar=yes",
+                  "car=yes"
+                ]
+              }
+            ]
+          },
+          "then": "circle:#fff;./assets/themes/charging_stations/car.svg"
+        }
+      ],
+      "anchor": "bottom",
+      "iconSize": "50,50"
+    }
+  ],
+  "lineRendering": []
 }

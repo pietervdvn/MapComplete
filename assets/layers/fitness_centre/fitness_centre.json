@@ -85,7 +85,10 @@
       "icon": "./assets/layers/fitness_centre/gym.svg"
     }
   ],
-  "mapRendering": [
+  "filter": [
+    "open_now"
+  ],
+  "pointRendering": [
     {
       "location": [
         "point",
@@ -103,7 +106,5 @@
       "anchor": "center"
     }
   ],
-  "filter": [
-    "open_now"
-  ]
+  "lineRendering": []
 }

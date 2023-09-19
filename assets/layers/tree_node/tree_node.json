@@ -825,7 +825,15 @@
   "deletion": {
     "minNeededChangesets": 5
   },
-  "mapRendering": [
+  "description": {
+    "en": "A layer showing trees",
+    "nl": "Een laag die bomen toont",
+    "es": "Una capa que muestra árboles",
+    "de": "Eine Ebene, die Bäume zeigt",
+    "fr": "Une couche montrant les arbres",
+    "da": "Et lag, der viser træer"
+  },
+  "pointRendering": [
     {
       "icon": {
         "render": "circle:#ffffff;./assets/layers/tree_node/unknown.svg",
@@ -856,12 +864,5 @@
       "anchor": "bottom"
     }
   ],
-  "description": {
-    "en": "A layer showing trees",
-    "nl": "Een laag die bomen toont",
-    "es": "Una capa que muestra árboles",
-    "de": "Eine Ebene, die Bäume zeigt",
-    "fr": "Une couche montrant les arbres",
-    "da": "Et lag, der viser træer"
-  }
+  "lineRendering": []
 }

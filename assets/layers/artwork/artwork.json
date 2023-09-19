@@ -654,7 +654,6 @@
             "ca": "Més informació a aquesta pàgina web"
           }
         }
-       
       },
       "freeform": {
         "key": "website",
@@ -782,20 +781,22 @@
     "enableRelocation": false,
     "enableImproveAccuraccy": true
   },
-  "mapRendering": [
+  "filter": [
+    "has_image"
+  ],
+  "pointRendering": [
     {
       "icon": "circle:white;./assets/themes/artwork/artwork.svg",
       "location": [
         "point",
         "centroid"
       ]
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#0000ff",
       "width": "10"
     }
-  ],
-  "filter": [
-    "has_image"
   ]
 }

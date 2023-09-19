@@ -129,7 +129,7 @@
     "enableRelocation": false,
     "enableImproveAccuraccy": true
   },
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": "circle:#e6cf39;./assets/layers/picnic_table/picnic_table.svg",
       "iconSize": "35,35",
@@ -139,5 +139,6 @@
       ],
       "anchor": "center"
     }
-  ]
+  ],
+  "lineRendering": []
 }

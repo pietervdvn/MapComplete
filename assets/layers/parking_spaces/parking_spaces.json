@@ -199,7 +199,7 @@
       }
     ]
   },
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": {
         "render": "./assets/layers/parking_spaces/parking_space.svg",
@@ -216,7 +216,9 @@
         "centroid"
       ],
       "anchor": "center"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#696969",
       "width": "1"

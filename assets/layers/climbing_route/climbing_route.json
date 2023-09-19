@@ -219,7 +219,7 @@
       ]
     }
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": "circle:white;./assets/themes/climbing/climbing_route.svg",
       "iconSize": "28,28",
@@ -245,7 +245,9 @@
         ]
       },
       "anchor": "center"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#0f0",
       "width": "4"

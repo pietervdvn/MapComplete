@@ -152,18 +152,7 @@
       }
     }
   ],
-  "mapRendering": [
-    {
-      "color": "#d3d7d588",
-      "width": "8",
-      "offset": "-4",
-      "fill": "no"
-    },
-    {
-      "color": "#4f5551",
-      "fill": "no",
-      "width": "2"
-    },
+  "pointRendering": [
     {
       "label": {
         "render": "<div style='margin-top: -20px; color:#013220; background:white' class='rounded-full p-1 font-bold'>{name}</div>",
@@ -244,6 +233,19 @@
       },
       "iconSize": "15,15",
       "anchor": "bottom"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#d3d7d588",
+      "width": "8",
+      "offset": "-4",
+      "fill": "no"
+    },
+    {
+      "color": "#4f5551",
+      "fill": "no",
+      "width": "2"
     }
   ]
 }

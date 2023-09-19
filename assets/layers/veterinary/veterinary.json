@@ -60,35 +60,6 @@
       }
     ]
   },
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": "./assets/layers/veterinary/vet.svg",
-      "iconSize": "30,40",
-      "label": {
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
-          }
-        ]
-      },
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        }
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#ff0",
-      "width": 5
-    }
-  ],
   "tagRenderings": [
     "website",
     "reviews",
@@ -115,6 +86,37 @@
         "key": "name"
       },
       "id": "vetName"
+    }
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "./assets/layers/veterinary/vet.svg",
+      "iconSize": "30,40",
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      },
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        }
+      ],
+      "anchor": "center"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#ff0",
+      "width": 5
     }
   ]
 }

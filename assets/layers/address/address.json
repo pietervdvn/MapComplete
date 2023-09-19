@@ -263,7 +263,7 @@
       ]
     }
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
       "label": {
         "render": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
@@ -294,7 +294,9 @@
         "centroid"
       ],
       "anchor": "center"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": {
         "render": "#00f",

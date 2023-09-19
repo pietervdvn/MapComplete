@@ -43,7 +43,13 @@
       ]
     }
   ],
-  "mapRendering": [
+  "allowMove": {
+    "enableImproveAccuracy": true
+  },
+  "filter": [
+    "open_now"
+  ],
+  "pointRendering": [
     {
       "icon": "circle:white;./assets/layers/sports_centre/sports_centre.svg",
       "iconBadges": [
@@ -56,16 +62,12 @@
         "point",
         "centroid"
       ]
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "darkgreen",
       "fill": "no"
     }
-  ],
-  "allowMove": {
-    "enableImproveAccuracy": true
-  },
-  "filter": [
-    "open_now"
   ]
 }

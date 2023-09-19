@@ -213,7 +213,12 @@
     "enableImproveAccuracy": true,
     "enableRelocation": false
   },
-  "mapRendering": [
+  "description": {
+    "en": "A layer showing (public) showers",
+    "de": "Eine Ebene mit (öffentlichen) Duschen",
+    "fr": "Une couche affichant les douches (publiques)"
+  },
+  "pointRendering": [
     {
       "icon": "circle:white;./assets/layers/shower/shower.svg",
       "location": [
@@ -228,9 +233,5 @@
       ]
     }
   ],
-  "description": {
-    "en": "A layer showing (public) showers",
-    "de": "Eine Ebene mit (öffentlichen) Duschen",
-    "fr": "Une couche affichant les douches (publiques)"
-  }
+  "lineRendering": []
 }

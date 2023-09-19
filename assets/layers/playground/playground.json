@@ -594,7 +594,7 @@
       ]
     }
   },
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": "./assets/themes/playgrounds/playground.svg",
       "iconBadges": [
@@ -633,7 +633,9 @@
         "point",
         "centroid"
       ]
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#5dbaa9",
       "width": "1"

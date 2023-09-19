@@ -684,7 +684,11 @@
     "enableRelocation": false,
     "enableImproveAccuraccy": true
   },
-  "mapRendering": [
+  "filter": [
+    "has_image",
+    "open_now"
+  ],
+  "pointRendering": [
     {
       "icon": {
         "render": "square:#008754;./assets/layers/defibrillator/defibrillator.svg",
@@ -698,13 +702,11 @@
       "location": [
         "point"
       ]
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#0000ff"
     }
-  ],
-  "filter": [
-    "has_image",
-    "open_now"
   ]
 }

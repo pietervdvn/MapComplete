@@ -24,13 +24,15 @@
     "de": "Fußgängerwege, insbesondere für die Navigation in Gebäuden und die Aufnahme von Eingängen in diese Ebene",
     "fr": "Sentiers piétonniers, particulièrement utilisés pour la navigation intérieure et les entrées d'accrochage à cette couche"
   },
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": "./assets/svg/bug.svg",
       "location": [
         "point"
       ]
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#b33",
       "width": 4,

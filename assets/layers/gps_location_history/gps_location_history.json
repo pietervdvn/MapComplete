@@ -5,7 +5,7 @@
   "name": null,
   "source": "special",
   "shownByDefault": false,
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "point",
@@ -15,5 +15,6 @@
       "iconSize": "5,5",
       "anchor": "center"
     }
-  ]
+  ],
+  "lineRendering": []
 }

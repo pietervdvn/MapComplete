@@ -12,8 +12,6 @@ import MoveConfig from "./MoveConfig"
 import PointRenderingConfig from "./PointRenderingConfig"
 import WithContextLoader from "./WithContextLoader"
 import LineRenderingConfig from "./LineRenderingConfig"
-import PointRenderingConfigJson from "./Json/PointRenderingConfigJson"
-import LineRenderingConfigJson from "./Json/LineRenderingConfigJson"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 import BaseUIElement from "../../UI/BaseUIElement"
 import Combine from "../../UI/Base/Combine"
@@ -265,34 +263,27 @@ export default class LayerConfig extends WithContextLoader {
             return config
         })
 
-        if (json.mapRendering === undefined) {
-            throw "MapRendering is undefined in " + context
+        if (json.pointRendering === undefined && json.lineRendering === undefined) {
+            throw "Both pointRendering and lineRendering are undefined in " + context
         }
 
-        if (json.mapRendering === null) {
-            this.mapRendering = []
-            this.lineRendering = []
+        if (json.lineRendering) {
+            this.lineRendering = Utils.NoNull(json.lineRendering).map(
+                (r, i) => new LineRenderingConfig(r, `${context}[${i}]`)
+            )
         } else {
-            this.mapRendering = Utils.NoNull(json.mapRendering)
-                .filter((r) => r["location"] !== undefined)
-                .map(
-                    (r, i) =>
-                        new PointRenderingConfig(
-                            <PointRenderingConfigJson>r,
-                            context + ".mapRendering[" + i + "]"
-                        )
-                )
+            this.lineRendering = []
+        }
 
-            this.lineRendering = Utils.NoNull(json.mapRendering)
-                .filter((r) => r["location"] === undefined)
-                .map(
-                    (r, i) =>
-                        new LineRenderingConfig(
-                            <LineRenderingConfigJson>r,
-                            context + ".mapRendering[" + i + "]"
-                        )
-                )
+        if (json.pointRendering) {
+            this.mapRendering = Utils.NoNull(json.pointRendering).map(
+                (r, i) => new PointRenderingConfig(r, `${context}[${i}]`)
+            )
+        } else {
+            this.mapRendering = []
+        }
 
+        {
             const hasCenterRendering = this.mapRendering.some(
                 (r) =>
                     r.location.has("centroid") ||
@@ -301,16 +292,22 @@ export default class LayerConfig extends WithContextLoader {
                     r.location.has("end")
             )
 
-            if (this.lineRendering.length === 0 && this.mapRendering.length === 0) {
+            if (
+                json.pointRendering !== null &&
+                json.lineRendering !== null &&
+                this.lineRendering.length === 0 &&
+                this.mapRendering.length === 0
+            ) {
                 throw (
                     "The layer " +
                     this.id +
-                    " does not have any maprenderings defined and will thus not show up on the map at all. If this is intentional, set maprenderings to 'null' instead of '[]'"
+                    " does not have any maprenderings defined and will thus not show up on the map at all. If this is intentional, set `pointRendering` and `lineRendering` to 'null' instead of '[]'"
                 )
             } else if (
                 !hasCenterRendering &&
                 this.lineRendering.length === 0 &&
                 Constants.priviliged_layers.indexOf(<any>this.id) < 0 &&
+                this.source !== null /*library layer*/ &&
                 !this.source?.geojsonSource?.startsWith(
                     "https://api.openstreetmap.org/api/0.6/notes.json"
                 )

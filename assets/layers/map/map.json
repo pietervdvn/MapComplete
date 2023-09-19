@@ -329,7 +329,7 @@
     "enableRelocation": false,
     "enableImproveAccuraccy": true
   },
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": {
         "render": "./assets/layers/map/map.svg",
@@ -368,7 +368,9 @@
         "centroid"
       ],
       "anchor": "center"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#00f",
       "width": "8"

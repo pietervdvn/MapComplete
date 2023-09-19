@@ -41,24 +41,6 @@
       }
     ]
   },
-  "mapRendering": [
-    {
-      "color": {
-        "render": {
-          "en": "#ff0000",
-          "de": "#ff0000",
-          "da": "#ff0000",
-          "nl": "#ff0000"
-        },
-        "mappings": [
-          {
-            "if": "colour~*",
-            "then": "{colour}"
-          }
-        ]
-      }
-    }
-  ],
   "tagRenderings": [
     {
       "id": "name",
@@ -200,6 +182,25 @@
         "de": "Welches Unternehmen betreibt die Buslinie?",
         "nl": "Welk bedrijf exploiteert deze buslijn?",
         "da": "Hvilket selskab driver denne buslinje?"
+      }
+    }
+  ],
+  "pointRendering": [],
+  "lineRendering": [
+    {
+      "color": {
+        "render": {
+          "en": "#ff0000",
+          "de": "#ff0000",
+          "da": "#ff0000",
+          "nl": "#ff0000"
+        },
+        "mappings": [
+          {
+            "if": "colour~*",
+            "then": "{colour}"
+          }
+        ]
       }
     }
   ]

@@ -703,21 +703,6 @@
     "enableRelocation": false,
     "enableImproveAccuracy": true
   },
-  "mapRendering": [
-    {
-      "icon": "pin:#5473de;./assets/layers/bike_parking/parking.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "bottom"
-    },
-    {
-      "color": "#00f",
-      "width": "1"
-    }
-  ],
   "description": {
     "en": "A layer showing where you can park your bike",
     "nl": "Een laag die toont waar je je fiets kunt parkeren",
@@ -728,5 +713,22 @@
     "cs": "Vrstva ukazující, kde můžete zaparkovat kolo",
     "ca": "Una capa que mostra on pots aparcar la teva bicicleta",
     "it": "Un livello che mostra dove puoi parcheggiare la tua bicicletta"
-  }
+  },
+  "pointRendering": [
+    {
+      "icon": "pin:#5473de;./assets/layers/bike_parking/parking.svg",
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f",
+      "width": "1"
+    }
+  ]
 }

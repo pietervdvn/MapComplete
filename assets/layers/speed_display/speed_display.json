@@ -84,15 +84,6 @@
       ]
     }
   ],
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": "./assets/layers/speed_display/speed_display.svg"
-    }
-  ],
   "units": [
     {
       "appliesToKey": [
@@ -150,5 +141,15 @@
         }
       ]
     }
-  ]
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "./assets/layers/speed_display/speed_display.svg"
+    }
+  ],
+  "lineRendering": []
 }

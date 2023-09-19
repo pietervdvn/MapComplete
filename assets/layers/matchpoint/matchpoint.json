@@ -2,7 +2,7 @@
   "id": "matchpoint",
   "description": "The default rendering for a locationInput which snaps onto another object",
   "source": "special",
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "point",
@@ -10,5 +10,6 @@
       ],
       "icon": "./assets/svg/crosshair-empty.svg"
     }
-  ]
+  ],
+  "lineRendering": []
 }

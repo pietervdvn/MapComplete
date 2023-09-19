@@ -51,49 +51,6 @@
       "calculatedTags": [
         "_surface:strict:=feat(get)('_surface')"
       ],
-      "mapRendering": [
-        {
-          "width": {
-            "render": "2",
-            "mappings": [
-              {
-                "if": "fixme~*",
-                "then": "5"
-              }
-            ]
-          },
-          "color": {
-            "render": "#00c",
-            "mappings": [
-              {
-                "if": "fixme~*",
-                "then": "#ff00ff"
-              },
-              {
-                "if": "building=house",
-                "then": "#a00"
-              },
-              {
-                "if": "building=shed",
-                "then": "#563e02"
-              },
-              {
-                "if": {
-                  "or": [
-                    "building=garage",
-                    "building=garages"
-                  ]
-                },
-                "then": "#f9bfbb"
-              },
-              {
-                "if": "building=yes",
-                "then": "#0774f2"
-              }
-            ]
-          }
-        }
-      ],
       "tagRenderings": [
         {
           "id": "Reference",
@@ -135,6 +92,10 @@
           "render": "This building is a <b>{building}</b>",
           "question": "What kind of building is this?"
         }
+      ],
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -155,22 +116,9 @@
         "maxCacheAge": 0
       },
       "minzoom": 19,
-      "mapRendering": [
-        {
-          "label": {
-            "render": "<div style='color: black' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
-            "condition": "addr:housenumber~*"
-          },
-          "location": [
-            "point",
-            "centroid"
-          ]
-        },
-        {
-          "width": {
-            "render": 1
-          }
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -210,28 +158,6 @@
         "_osm_obj:id=feat(get)('_overlaps_with_properties')?.id",
         "_osm_obj:building=feat(get)('_overlaps_with_properties')?.building",
         "_imported_osm_object_found:=Number(feat.properties.identificatie)==Number(feat(get)('_overlaps_with_properties')['ref:bag'])"
-      ],
-      "mapRendering": [
-        {
-          "width": {
-            "render": 5,
-            "mappings": [
-              {
-                "if": "_imported_osm_object_found=true",
-                "then": "1"
-              }
-            ]
-          },
-          "color": {
-            "render": "#00a",
-            "mappings": [
-              {
-                "if": "_imported_osm_object_found=true",
-                "then": "#0f0"
-              }
-            ]
-          }
-        }
       ],
       "tagRenderings": [
         {
@@ -366,6 +292,10 @@
           "id": "Buidling function",
           "render": "The current function of the building is <b>{gebruiksdoel}</b>"
         }
+      ],
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -391,28 +321,6 @@
         "_osm_obj:addr:street:=feat(get)('_closed_osm_addr')['addr:street']",
         "_imported_osm_object_found:=(feat.properties.woonplaats==feat(get)('_closed_osm_addr')['addr:city'])&&(feat(get)('_bag_obj:addr:housenumber')==feat(get)('_closed_osm_addr')['addr:housenumber'])&&(feat.properties.postcode==feat(get)('_closed_osm_addr')['addr:postcode'])&&(feat.properties.openbare_ruimte==feat(get)('_closed_osm_addr')['addr:street'])"
       ],
-      "mapRendering": [
-        {
-          "label": {
-            "render": "<div style='color: black' class='rounded-full p-1 font-bold relative'>{_bag_obj:addr:housenumber}</div>",
-            "mappings": [
-              {
-                "if": "_imported_osm_object_found=true",
-                "then": "<div style='color: #107c10' class='rounded-full p-1 font-bold relative'>{_bag_obj:addr:housenumber}</div>"
-              }
-            ]
-          },
-          "location": [
-            "point",
-            "centroid"
-          ]
-        },
-        {
-          "width": {
-            "render": 1
-          }
-        }
-      ],
       "tagRenderings": [
         {
           "id": "Import button",
@@ -423,6 +331,10 @@
           "id": "Address",
           "render": "{openbare_ruimte} {_bag_obj:addr:housenumber}, {woonplaats} {postcode}"
         }
+      ],
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     }
   ],

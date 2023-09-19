@@ -109,7 +109,7 @@
       ]
     }
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": {
         "render": "./assets/themes/rainbow_crossings/crossing.svg",
@@ -126,7 +126,9 @@
         "centroid"
       ],
       "anchor": "center"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "red",
       "width": "5",

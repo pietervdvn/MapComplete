@@ -302,7 +302,7 @@
     "enableImproveAccuracy": true
   },
   "deletion": true,
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": "square:white;./assets/layers/parcel_lockers/parcel_lockers.svg",
       "iconBadges": [
@@ -318,5 +318,6 @@
       ],
       "anchor": "center"
     }
-  ]
+  ],
+  "lineRendering": []
 }

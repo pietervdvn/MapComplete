@@ -402,7 +402,7 @@
     "enableRelocation": false,
     "enableImproveAccuracy": true
   },
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": {
         "render": "./assets/layers/birdhide/birdhide.svg",
@@ -424,5 +424,6 @@
         "centroid"
       ]
     }
-  ]
+  ],
+  "lineRendering": []
 }

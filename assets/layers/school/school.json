@@ -388,7 +388,7 @@
   "source": {
     "osmTags": "amenity=school"
   },
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": "circle:white;./assets/layers/school/school.svg",
       "label": {
@@ -405,7 +405,9 @@
         "centroid"
       ],
       "anchor": "center"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#fcd862",
       "width": 1

@@ -110,7 +110,13 @@
       }
     }
   ],
-  "mapRendering": [
+  "allowMove": {
+    "enableImproveAccuracy": true
+  },
+  "filter": [
+    "open_now"
+  ],
+  "pointRendering": [
     {
       "icon": "circle:white;./assets/layers/car_rental/car_rental.svg",
       "location": [
@@ -118,16 +124,12 @@
         "centroid"
       ],
       "label": "<div class='bg-white block p-1 rounded'>{name}</div>"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "darkblue",
       "width": 2
     }
-  ],
-  "allowMove": {
-    "enableImproveAccuracy": true
-  },
-  "filter": [
-    "open_now"
   ]
 }

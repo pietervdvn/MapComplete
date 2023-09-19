@@ -74,10 +74,7 @@
     },
     "level"
   ],
-  "mapRendering": [
-    {
-      "color": "gray"
-    },
+  "pointRendering": [
     {
       "icon": "./assets/themes/stations/rail-light.svg",
       "location": [
@@ -92,6 +89,11 @@
           }
         ]
       }
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "gray"
     }
   ]
 }

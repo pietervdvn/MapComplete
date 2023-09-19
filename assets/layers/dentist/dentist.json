@@ -69,7 +69,9 @@
   "filter": [
     "open_now"
   ],
-  "mapRendering": [
+  "deletion": true,
+  "allowMove": true,
+  "pointRendering": [
     {
       "icon": "circle:white;./assets/layers/dentist/dentist.svg",
       "iconSize": "40,40",
@@ -80,6 +82,5 @@
       "anchor": "center"
     }
   ],
-  "deletion": true,
-  "allowMove": true
+  "lineRendering": []
 }

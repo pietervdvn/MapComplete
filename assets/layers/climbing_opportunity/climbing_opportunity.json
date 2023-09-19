@@ -120,14 +120,16 @@
       ]
     }
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": "./assets/themes/climbing/climbing_unknown.svg",
       "location": [
         "point",
         "centroid"
       ]
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#ddff55AA",
       "width": "2"

@@ -2,7 +2,6 @@ import { Conversion } from "./Conversion"
 import LayerConfig from "../LayerConfig"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import Translations from "../../../UI/i18n/Translations"
-import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
 import { Translation, TypedTranslation } from "../../../UI/i18n/Translation"
 
 export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, LayerConfigJson> {
@@ -45,13 +44,6 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
             isShownIfAny.push({ and: mustMatchAll })
         }
 
-        const pointRenderings = (layerJson.mapRendering ?? []).filter(
-            (r) => r !== null && r["location"] !== undefined
-        )
-        const firstRender = <PointRenderingConfigJson>pointRenderings[0]
-        if (firstRender === undefined) {
-            throw `Layer ${layerJson.id} does not have a pointRendering: ` + context
-        }
         const title = layer.presets[0].title
 
         const importButton = {}
@@ -186,7 +178,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                     },
                 },
             ],
-            mapRendering: [
+            pointRendering: [
                 {
                     location: ["point"],
                     icon: {

@@ -464,15 +464,6 @@
       }
     }
   ],
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/layers/atm/atm.svg",
-      "location": [
-        "point",
-        "centroid"
-      ]
-    }
-  ],
   "allowMove": {
     "enableImproveAccuracy": true,
     "enableRelocation": false
@@ -503,5 +494,15 @@
         }
       ]
     }
-  ]
+  ],
+  "pointRendering": [
+    {
+      "icon": "circle:white;./assets/layers/atm/atm.svg",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "lineRendering": []
 }

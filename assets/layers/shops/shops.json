@@ -329,7 +329,55 @@
     ]
   },
   "allowMove": true,
-  "mapRendering": [
+  "filter": [
+    "open_now",
+    {
+      "id": "shop-type",
+      "options": [
+        {
+          "fields": [
+            {
+              "name": "search",
+              "type": "string"
+            }
+          ],
+          "osmTags": "shop~i~.*{search}.*",
+          "question": {
+            "en": "Only show shops selling {search}",
+            "de": "Nur Geschäfte, die {search} verkaufen",
+            "nl": "Toon enkel winkels die {search} verkopen",
+            "es": "Solo mostrar tiendas que vendan {search}",
+            "fr": "N'afficher que les magasins vendant {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "shop-name",
+      "options": [
+        {
+          "fields": [
+            {
+              "name": "search",
+              "type": "string"
+            }
+          ],
+          "osmTags": "name~i~.*{search}.*",
+          "question": {
+            "en": "Only show shops with name {search}",
+            "de": "Nur Geschäfte mit dem Namen {search} anzeigen",
+            "nl": "Toon enkel winkels met naam {search}",
+            "es": "Solo mostrar tiendas con nombre {search}",
+            "fr": "N'afficher que les magasins portant le nom {search}"
+          }
+        }
+      ]
+    },
+    "accepts_cash",
+    "accepts_cards",
+    "has_organic"
+  ],
+  "pointRendering": [
     {
       "icon": {
         "builtin": "id_presets.shop_rendering",
@@ -386,58 +434,12 @@
         "centroid"
       ],
       "anchor": "center"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#00f",
       "width": "8"
     }
-  ],
-  "filter": [
-    "open_now",
-    {
-      "id": "shop-type",
-      "options": [
-        {
-          "fields": [
-            {
-              "name": "search",
-              "type": "string"
-            }
-          ],
-          "osmTags": "shop~i~.*{search}.*",
-          "question": {
-            "en": "Only show shops selling {search}",
-            "de": "Nur Geschäfte, die {search} verkaufen",
-            "nl": "Toon enkel winkels die {search} verkopen",
-            "es": "Solo mostrar tiendas que vendan {search}",
-            "fr": "N'afficher que les magasins vendant {search}"
-          }
-        }
-      ]
-    },
-    {
-      "id": "shop-name",
-      "options": [
-        {
-          "fields": [
-            {
-              "name": "search",
-              "type": "string"
-            }
-          ],
-          "osmTags": "name~i~.*{search}.*",
-          "question": {
-            "en": "Only show shops with name {search}",
-            "de": "Nur Geschäfte mit dem Namen {search} anzeigen",
-            "nl": "Toon enkel winkels met naam {search}",
-            "es": "Solo mostrar tiendas con nombre {search}",
-            "fr": "N'afficher que les magasins portant le nom {search}"
-          }
-        }
-      ]
-    },
-    "accepts_cash",
-    "accepts_cards",
-    "has_organic"
   ]
 }

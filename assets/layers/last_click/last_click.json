@@ -69,7 +69,24 @@
       }
     }
   ],
-  "mapRendering": [
+  "filter": [
+    {
+      "id": "action",
+      "options": [
+        {
+          "default": true,
+          "question": "only_if_action_is_possible",
+          "osmTags": {
+            "or": [
+              "has_note_layer=yes",
+              "has_presets=yes"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "pointRendering": [
     {
       "icon": {
         "mappings": [
@@ -160,21 +177,5 @@
       }
     }
   ],
-  "filter": [
-    {
-      "id": "action",
-      "options": [
-        {
-          "default": true,
-          "question": "only_if_action_is_possible",
-          "osmTags": {
-            "or": [
-              "has_note_layer=yes",
-              "has_presets=yes"
-            ]
-          }
-        }
-      ]
-    }
-  ]
+  "lineRendering": []
 }

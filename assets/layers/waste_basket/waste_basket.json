@@ -374,7 +374,7 @@
     "enableRelocation": false,
     "enableImproveAccuracy": true
   },
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": "./assets/themes/waste_basket/waste_basket.svg",
       "iconSize": {
@@ -404,7 +404,9 @@
       "location": [
         "point"
       ]
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#00f",
       "width": "8"

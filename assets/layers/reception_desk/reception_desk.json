@@ -23,17 +23,6 @@
   "source": {
     "osmTags": "amenity=reception_desk"
   },
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": "circle:white;./assets/layers/reception_desk/reception_desk.svg",
-      "iconSize": "40,40",
-      "anchor": "center"
-    }
-  ],
   "tagRenderings": [
     "images",
     "level",
@@ -119,5 +108,17 @@
         }
       ]
     }
-  ]
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "circle:white;./assets/layers/reception_desk/reception_desk.svg",
+      "iconSize": "40,40",
+      "anchor": "center"
+    }
+  ],
+  "lineRendering": []
 }

@@ -159,7 +159,7 @@
       }
     }
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": "./assets/themes/climbing/club.svg",
       "iconBadges": [
@@ -183,5 +183,6 @@
       },
       "anchor": "center"
     }
-  ]
+  ],
+  "lineRendering": []
 }

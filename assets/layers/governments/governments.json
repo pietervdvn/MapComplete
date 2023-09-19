@@ -62,7 +62,7 @@
       ]
     }
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": "circle:white;./assets/layers/governments/government.svg",
       "iconSize": "40,40",
@@ -72,5 +72,6 @@
       ],
       "anchor": "center"
     }
-  ]
+  ],
+  "lineRendering": []
 }

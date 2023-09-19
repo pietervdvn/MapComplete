@@ -117,7 +117,7 @@
           }
         }
       ],
-      "mapRendering": [
+      "pointRendering": [
         {
           "location": [
             "point",

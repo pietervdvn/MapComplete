@@ -325,7 +325,8 @@
       }
     }
   ],
-  "mapRendering": [
+  "deletion": true,
+  "pointRendering": [
     {
       "icon": "pin:#22ff55;./assets/layers/bicycle_library/bicycle_library.svg",
       "iconBadges": [
@@ -344,11 +345,12 @@
         "centroid"
       ],
       "anchor": "bottom"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#c00",
       "width": "1"
     }
-  ],
-  "deletion": true
+  ]
 }

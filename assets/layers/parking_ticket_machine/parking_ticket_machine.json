@@ -83,7 +83,7 @@
       ]
     }
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "point",
@@ -93,5 +93,6 @@
       "iconSize": "20,20",
       "anchor": "center"
     }
-  ]
+  ],
+  "lineRendering": []
 }

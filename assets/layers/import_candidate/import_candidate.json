@@ -2,7 +2,14 @@
   "id": "import_candidate",
   "description": "Layer used as template in the importHelper",
   "source": "special",
-  "mapRendering": [
+  "title": "Import candidate",
+  "tagRenderings": [
+    {
+      "id": "all_tags",
+      "render": "{all_tags()}"
+    }
+  ],
+  "pointRendering": [
     {
       "location": [
         "point",
@@ -13,11 +20,5 @@
       "anchor": "center"
     }
   ],
-  "title": "Import candidate",
-  "tagRenderings": [
-    {
-      "id": "all_tags",
-      "render": "{all_tags()}"
-    }
-  ]
+  "lineRendering": []
 }

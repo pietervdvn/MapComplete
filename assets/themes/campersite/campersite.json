@@ -887,32 +887,9 @@
           }
         }
       ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "circle:white;./assets/themes/campersite/caravan.svg",
-            "mappings": [
-              {
-                "if": {
-                  "and": [
-                    "fee=no"
-                  ]
-                },
-                "then": "circle:white;./assets/themes/campersite/caravan_green.svg"
-              }
-            ]
-          },
-          "iconSize": "40,40",
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "anchor": "center"
-        },
-        {
-          "color": "#00f",
-          "width": "8"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -1486,19 +1463,9 @@
           }
         }
       ],
-      "mapRendering": [
-        {
-          "icon": "circle:white;./assets/themes/campersite/sanitary_dump_station.svg",
-          "iconSize": "32,32",
-          "location": [
-            "point"
-          ],
-          "anchor": "center"
-        },
-        {
-          "color": "#00f",
-          "width": "8"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     }
   ],

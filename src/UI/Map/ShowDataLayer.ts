@@ -404,7 +404,7 @@ class LineRenderingLayer {
 
 export default class ShowDataLayer {
     private static rangeLayer = new LayerConfig(
-        <LayerConfigJson>range_layer,
+        <any>range_layer,
         "ShowDataLayer.ts:range.json"
     )
     private readonly _map: Store<MlMap>

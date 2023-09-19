@@ -365,7 +365,7 @@
       ]
     }
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
       "icon": "./assets/themes/openwindpowermap/wind_turbine.svg",
       "label": {
@@ -383,5 +383,6 @@
         "centroid"
       ]
     }
-  ]
+  ],
+  "lineRendering": []
 }

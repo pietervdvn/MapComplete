@@ -987,7 +987,17 @@
     "enableRelocation": false,
     "enableImproveAccuraccy": true
   },
-  "mapRendering": [
+  "description": {
+    "en": "A layer showing bicycle pumps and bicycle repair tool stands",
+    "nl": "Deze laag toont fietspompen en herstelpunten voor fietsen",
+    "de": "Eine Ebene mit Fahrradpumpen und Werkzeugständern für die Fahrradreparatur",
+    "es": "Una capa que muestra bombas de bicicletas y puestos de herramientas de reparación de bicicletas",
+    "da": "Et lag med cykelpumper og cykelreværktøjsstativer",
+    "fr": "Une couche montrant les pompes à vélo et les centres de réparation",
+    "cs": "Vrstva zobrazující vzduchové kompresory na jízdní kola a stojany na nářadí pro opravu jízdních kol",
+    "ca": "Una capa que mostra bombes de bicicletes i suports d'eines de reparació de bicicletes"
+  },
+  "pointRendering": [
     {
       "icon": {
         "render": "pin:#88d32c;./assets/layers/bike_repair_station/repair_station.svg",
@@ -1059,14 +1069,5 @@
       "anchor": "bottom"
     }
   ],
-  "description": {
-    "en": "A layer showing bicycle pumps and bicycle repair tool stands",
-    "nl": "Deze laag toont fietspompen en herstelpunten voor fietsen",
-    "de": "Eine Ebene mit Fahrradpumpen und Werkzeugständern für die Fahrradreparatur",
-    "es": "Una capa que muestra bombas de bicicletas y puestos de herramientas de reparación de bicicletas",
-    "da": "Et lag med cykelpumper og cykelreværktøjsstativer",
-    "fr": "Une couche montrant les pompes à vélo et les centres de réparation",
-    "cs": "Vrstva zobrazující vzduchové kompresory na jízdní kola a stojany na nářadí pro opravu jízdních kol",
-    "ca": "Una capa que mostra bombes de bicicletes i suports d'eines de reparació de bicicletes"
-  }
+  "lineRendering": []
 }

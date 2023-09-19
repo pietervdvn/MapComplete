@@ -9,6 +9,8 @@ import LineRenderingConfigJson from "./LineRenderingConfigJson"
 import { QuestionableTagRenderingConfigJson } from "./QuestionableTagRenderingConfigJson"
 import RewritableConfigJson from "./RewritableConfigJson"
 import { Translatable } from "./Translatable"
+import { Point } from "geojson"
+import PointRenderingConfig from "../PointRenderingConfig"
 
 type MapRendering = {}
 
@@ -238,12 +240,16 @@ export interface LayerConfigJson {
     titleIcons?: (string | TagRenderingConfigJson)[] | ["defaults"]
 
     /**
-     * Visualisation of the items on the map
-     * Set 'null' explicitly if you do not want a maprendering
+     * Creates points to render on the map.
+     * This can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered
      * group: maprendering
-     * types: PointRendering ; LineRendering
      */
-    mapRendering?: (PointRenderingConfigJson | LineRenderingConfigJson)[]
+    pointRendering: PointRenderingConfigJson[]
+    /**
+     * Creates lines and areas to render on the map
+     * group: maprendering
+     */
+    lineRendering?: LineRenderingConfigJson[]
 
     /**
      * If set, this layer will pass all the features it receives onto the next layer.

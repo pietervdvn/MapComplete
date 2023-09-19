@@ -30,23 +30,6 @@
       }
     ]
   },
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": "./assets/layers/street_lamps/street_lamp.svg",
-      "iconBadges": [
-        {
-          "if": "light:colour~*",
-          "then": "circle:{light:colour}"
-        }
-      ],
-      "iconSize": "40,40",
-      "anchor": "bottom"
-    }
-  ],
   "presets": [
     {
       "title": {
@@ -499,5 +482,23 @@
     "nl": "Een laag die alle straatlantaarns toont",
     "de": "Eine Ebene mit Straßenbeleuchtung",
     "es": "Una capa que muestra luces callejeras"
-  }
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "./assets/layers/street_lamps/street_lamp.svg",
+      "iconBadges": [
+        {
+          "if": "light:colour~*",
+          "then": "circle:{light:colour}"
+        }
+      ],
+      "iconSize": "40,40",
+      "anchor": "bottom"
+    }
+  ],
+  "lineRendering": []
 }
