@@ -504,7 +504,8 @@
         "it": "Indirizzo email per le domande su questo defibrillatore:<a href='mailto:{email}'>{email}</a>",
         "de": "E-Mail für Fragen zu diesem Defibrillator: <a href='mailto:{email}'>{email}</a>",
         "sl": "Email naslov za vprašanja o tem defibrilatorju: <a href='mailto:{email}'>{email}</a>",
-        "es": "Correo electrónico para preguntas sobre este desfibrilador: <a href='mailto:{email}'>{email}</a>"
+        "es": "Correo electrónico para preguntas sobre este desfibrilador: <a href='mailto:{email}'>{email}</a>",
+        "ca": "Correu electrònic per a preguntes sobre aquest desfibrilador: <a href='mailto:{email}'>{email}</a>"
       },
       "question": {
         "en": "What is the email for questions about this defibrillator?",

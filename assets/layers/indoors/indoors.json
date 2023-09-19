@@ -29,7 +29,8 @@
     "render": {
       "en": "Indoor area {name}",
       "de": "Innenbereich {name}",
-      "nl": "Binnenruimte {name}"
+      "nl": "Binnenruimte {name}",
+      "ca": "Àrea interior {name}"
     },
     "mappings": [
       {
@@ -38,7 +39,8 @@
           "en": "Indoor Room {name}",
           "de": "Innenraum {name}",
           "nl": "Binnenruimte {name}",
-          "pl": "Wewnętrzne pomieszczenie {name}"
+          "pl": "Wewnętrzne pomieszczenie {name}",
+          "ca": "Habitació interior {name}"
         }
       },
       {
@@ -46,7 +48,8 @@
         "then": {
           "en": "Indoor Area {name}",
           "de": "Innenbereich {name}",
-          "nl": "Gebied in gebouw {name}"
+          "nl": "Gebied in gebouw {name}",
+          "ca": "Àrea interior {name}"
         }
       },
       {
@@ -54,7 +57,8 @@
         "then": {
           "en": "Indoor Wall {name}",
           "de": "Innenwand {name}",
-          "nl": "Muur in gebouw {name}"
+          "nl": "Muur in gebouw {name}",
+          "ca": "Paret interior {name}"
         }
       },
       {
@@ -62,7 +66,8 @@
         "then": {
           "en": "Indoor Corridor {name}",
           "de": "Innengang {name}",
-          "nl": "Gang in gebouw {name}"
+          "nl": "Gang in gebouw {name}",
+          "ca": "Passadis interior {name}"
         }
       },
       {
@@ -70,7 +75,8 @@
         "then": {
           "en": "Indoor Door {name}",
           "de": "Innentür {name}",
-          "nl": "Binnendeur {name}"
+          "nl": "Binnendeur {name}",
+          "ca": "Porta interior {name}"
         }
       },
       {
@@ -93,13 +99,15 @@
         "de": "Wie lautet die Nummer dieses Raums?",
         "nl": "Wat is het referentienummer van deze ruimte?",
         "fr": "Quel est le numéro de référence de cette pièce ?",
-        "pl": "Jaki jest numer referencyjny tego pomieszczenia?"
+        "pl": "Jaki jest numer referencyjny tego pomieszczenia?",
+        "ca": "Quin és el número de referència d'aquesta habitació?"
       },
       "render": {
         "en": "This room has the reference number {ref}",
         "de": "Dieser Raum hat die Raumnummer {ref}",
         "nl": "Deze ruimte heeft het referentienummer {ref}",
-        "pl": "To pomieszczenie ma numer referencyjny {ref}"
+        "pl": "To pomieszczenie ma numer referencyjny {ref}",
+        "ca": "Aquesta habitació té el número de referència {ref}"
       },
       "freeform": {
         "key": "ref",
@@ -107,7 +115,8 @@
         "placeholder": {
           "en": "Reference number of the room (e.g. '1.1' or 'A1')",
           "de": "Raumnummer (z.B. '1.1' oder 'A1')",
-          "nl": "Referentienummer van de ruimte (bv. '1.1' of A1' )"
+          "nl": "Referentienummer van de ruimte (bv. '1.1' of A1' )",
+          "ca": "Número de referència de l'habitació (p. e. '1.1' o 'A1')"
         }
       },
       "condition": {
@@ -124,14 +133,16 @@
         "en": "What is the name of this room?",
         "de": "Wie lautet der Name dieses Raums?",
         "nl": "Wat is de naam van deze ruimte?",
-        "ru": "Как называется эта комната?"
+        "ru": "Как называется эта комната?",
+        "ca": "Quin és el nom d'aquesta habitació?"
       },
       "render": {
         "en": "This room is named {name}",
         "de": "Der Name des Raums lautet {name}",
         "nl": "Deze ruimte heet {name}",
         "ru": "Эта комната называется {name}",
-        "fr": "Cette pièce s'appelle {name}"
+        "fr": "Cette pièce s'appelle {name}",
+        "ca": "Aquesta habitació es diu {name}"
       },
       "freeform": {
         "key": "name",
@@ -140,7 +151,8 @@
           "en": "Name of the room",
           "de": "Name des Raums",
           "nl": "Naam van de ruimte",
-          "ru": "Название комнаты"
+          "ru": "Название комнаты",
+          "ca": "Nom de l'habitació"
         }
       },
       "condition": {

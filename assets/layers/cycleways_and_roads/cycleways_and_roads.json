@@ -900,7 +900,8 @@
             "de": "Der Radweg ist aus Schotter",
             "id": "Jalur sepeda ini terbuat dari kerikil",
             "es": "Este carril bici está hecho de grava",
-            "fr": "Cette piste cyclable est faite en graviers"
+            "fr": "Cette piste cyclable est faite en graviers",
+            "ca": "Aquesta via ciclista està feta de grava"
           }
         },
         {
@@ -911,7 +912,8 @@
             "de": "Dieser Radweg besteht aus feinem Schotter",
             "id": "Jalur sepeda ini terbuat dari kerikil halus",
             "es": "Este carril bici está hecho de gravilla",
-            "fr": "Cette piste cyclable est faite en graviers fins"
+            "fr": "Cette piste cyclable est faite en graviers fins",
+            "ca": "Aquesta via ciclista està feta de gravilla"
           }
         },
         {

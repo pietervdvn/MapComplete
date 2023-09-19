@@ -110,7 +110,8 @@
           "en": "{_entrances_count_without_width_count} entrances don't have width information yet",
           "de": "{_entrances_count_without_width_count} Eingänge haben keine Angaben zur Breite",
           "da": "{_entrances_count_without_width_count} indgange har endnu ikke oplysninger om bredde",
-          "nl": "{_entrances_count_without_width_count} ingangen hebben nog geen informatie over de breedte"
+          "nl": "{_entrances_count_without_width_count} ingangen hebben nog geen informatie over de breedte",
+          "ca": "{_entrances_count_without_width_count} entrades encara no tenen informació d'amplada"
         },
         "special": {
           "type": "multi",
@@ -142,7 +143,7 @@
             "de": "Keiner der {_entrance_count} Eingänge hat bisher Angaben zur Breite",
             "da": "Ingen af {_entrance_count}-indgangene har oplysninger om bredde endnu",
             "nl": "Geen van de {_entrance_count} ingangen hebben al informatie over de breedte",
-            "ca": "Cap de les entrades de {_entrance_count} encara no tenen informació de l'ampalda"
+            "ca": "Cap de les {_entrance_count} entrades té informació d'amplada encara"
           }
         }
       ]

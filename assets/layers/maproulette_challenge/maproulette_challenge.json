@@ -4,7 +4,8 @@
   "description": {
     "en": "Layer showing tasks of a single MapRoulette challenge. This layer is intended to be reused and extended in themes; refer to [the documentation](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md) on how to do this.",
     "de": "Ebene mit Aufgaben einer einzelnen MapRoulette-Herausforderung. Diese Ebene soll in Themen wiederverwendet und erweitert werden; Informationen dazu finden Sie in der [Dokumentation](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md).",
-    "nl": "Laag met taken van een MapRoulette uitdaging"
+    "nl": "Laag met taken van een MapRoulette uitdaging",
+    "ca": "Capa que mostra les tasques d'un sol repte de MapRoulette. Aquesta capa està pensada per ser reutilitzada i ampliada en temes; consulteu [la documentació](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md) sobre com fer-ho."
   },
   "source": {
     "osmTags": "mr_taskId~*",
@@ -15,7 +16,8 @@
     "render": {
       "en": "Item in MapRoulette",
       "de": "Aufgabe in MapRoulette",
-      "nl": "Item uit MapRoulette"
+      "nl": "Item uit MapRoulette",
+      "ca": "Element a MapRoulette"
     }
   },
   "titleIcons": [
@@ -155,7 +157,8 @@
             "en": "Show tasks with all statuses",
             "de": "Aufgaben mit allen Status anzeigen",
             "nl": "Toon alle taken, ongeacht de status",
-            "pl": "Pokaż zadania z wszystkimi statusami"
+            "pl": "Pokaż zadania z wszystkimi statusami",
+            "ca": "Mostra les tasques amb tots els estats"
           }
         },
         {
@@ -163,7 +166,8 @@
             "en": "Show tasks that are created",
             "de": "Aufgaben anzeigen, die erstellt wurden",
             "nl": "Toon taken die zijn gecreëerd",
-            "pl": "Pokaż zadania, które zostały stworzone"
+            "pl": "Pokaż zadania, które zostały stworzone",
+            "ca": "Mostra les tasques que es creen"
           },
           "osmTags": "mr_taskStatus=Created"
         },
@@ -172,7 +176,8 @@
             "en": "Show tasks that are fixed",
             "de": "Aufgaben anzeigen, die erledigt wurden",
             "nl": "Toon taken die zijn opgelost",
-            "pl": "Pokaż zadania, które są już wykonane"
+            "pl": "Pokaż zadania, które są już wykonane",
+            "ca": "Mostra les tasques que estan arreglades"
           },
           "osmTags": "mr_taskStatus=Fixed"
         },
@@ -180,7 +185,8 @@
           "question": {
             "en": "Show tasks that are false positives",
             "de": "Aufgaben anzeigen, die falsch positiv sind",
-            "nl": "Toon taken die vals positief waren"
+            "nl": "Toon taken die vals positief waren",
+            "ca": "Mostra les tasques que son falsos positius"
           },
           "osmTags": "mr_taskStatus=False positive"
         },
@@ -188,7 +194,8 @@
           "question": {
             "en": "Show tasks that are skipped",
             "de": "Aufgaben anzeigen, die übersprungen wurden",
-            "nl": "Toon taken die zijn overgeslagen"
+            "nl": "Toon taken die zijn overgeslagen",
+            "ca": "Mostra les tasques que s'han omès"
           },
           "osmTags": "mr_taskStatus=Skipped"
         },

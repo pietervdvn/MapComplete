@@ -2,7 +2,8 @@
   "id": "icons",
   "description": {
     "en": "A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI",
-    "de": "Eine Ebene, die als Bibliothek für Symbol-Tag-Renderings dient, insbesondere um als Abzeichen neben einem POI angezeigt zu werden"
+    "de": "Eine Ebene, die als Bibliothek für Symbol-Tag-Renderings dient, insbesondere um als Abzeichen neben einem POI angezeigt zu werden",
+    "ca": "Una capa que actua com a biblioteca per a les icones d'etiquetes, especialment per mostrar-se com a insígnia al costat d'un PDI"
   },
   "source": "special:library",
   "title": null,

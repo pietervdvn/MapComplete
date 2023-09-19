@@ -6726,6 +6726,27 @@
                     },
                     "7": {
                         "then": "Munten van 2 euro worden geaccepteerd"
+                    },
+                    "8": {
+                        "then": "Munten van 5 rappen worden geaccepteerd"
+                    },
+                    "9": {
+                        "then": "Munten van 10 rappen worden geaccepteerd"
+                    },
+                    "10": {
+                        "then": "Munten van 20 rappen worden geaccepteerd"
+                    },
+                    "11": {
+                        "then": "Munten van ½ frank worden geaccepteerd"
+                    },
+                    "12": {
+                        "then": "Munten van 1 frank worden geaccepteerd"
+                    },
+                    "13": {
+                        "then": "Munten van 2 frank worden geaccepteerd"
+                    },
+                    "14": {
+                        "then": "Munten van 5 frank worden geaccepteerd"
                     }
                 },
                 "question": "Met welke munten kan je hier betalen?"
@@ -6752,6 +6773,24 @@
                     },
                     "6": {
                         "then": "Biljetten van 500 euro worden geaccepteerd"
+                    },
+                    "7": {
+                        "then": "Biljetten van 10 frank worden geaccepteerd"
+                    },
+                    "8": {
+                        "then": "Biljetten van 20 frank worden geaccepteerd"
+                    },
+                    "9": {
+                        "then": "Biljetten van 50 frank worden geaccepteerd"
+                    },
+                    "10": {
+                        "then": "Biljetten van 100 frank worden geaccepteerd"
+                    },
+                    "11": {
+                        "then": "Biljetten van 200 frank worden geaccepteerd"
+                    },
+                    "12": {
+                        "then": "Biljetten van 1000 frank worden geaccepteerd"
                     }
                 },
                 "question": "Met welke bankbiljetten kan je hier betalen?"

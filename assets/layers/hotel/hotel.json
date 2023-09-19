@@ -6,13 +6,15 @@
     "de": "Hotels",
     "pa_PK": "ہوٹل",
     "ru": "Гостиницы",
-    "fr": "Hôtels"
+    "fr": "Hôtels",
+    "ca": "Hotels"
   },
   "description": {
     "en": "Layer showing all hotels",
     "nl": "Laag die alle hotels toont",
     "de": "Eine Ebene mit Hotels",
-    "fr": "Couche affichant les hôtels"
+    "fr": "Couche affichant les hôtels",
+    "ca": "Capa que mostra tots els hotels"
   },
   "source": {
     "osmTags": "tourism=hotel"
@@ -24,7 +26,8 @@
       "nl": "Hotel",
       "de": "Hotel",
       "pa_PK": "ہوٹل",
-      "fr": "Hôtel"
+      "fr": "Hôtel",
+      "ca": "Hotel"
     },
     "mappings": [
       {
@@ -33,7 +36,8 @@
           "en": "Hotel {name}",
           "nl": "Hotel {name}",
           "de": "Hotel {name}",
-          "fr": "Hôtel {name}"
+          "fr": "Hôtel {name}",
+          "ca": "Hotel {name}"
         }
       }
     ]
@@ -76,7 +80,8 @@
           "nl": "Naam van het hotel",
           "de": "Name des Hotels",
           "ru": "Название гостиницы",
-          "fr": "Nom de l'hôtel"
+          "fr": "Nom de l'hôtel",
+          "ca": "Nom de l'hotel"
         }
       },
       "question": {
@@ -84,7 +89,8 @@
         "nl": "Wat is de naam van dit hotel?",
         "de": "Wie lautet der Name des Hotels?",
         "ru": "Как называется эта гостиница?",
-        "fr": "Quel est le nom de cet hôtel ?"
+        "fr": "Quel est le nom de cet hôtel ?",
+        "ca": "Quin és el nom d'aquest hotel?"
       },
       "render": {
         "en": "This hotel is called {name}",

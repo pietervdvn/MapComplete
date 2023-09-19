@@ -47,7 +47,8 @@
           "en": "Road without a name",
           "de": "Straße ohne Namen",
           "nl": "Weg zonder een naam",
-          "fr": "Route sans nom"
+          "fr": "Route sans nom",
+          "ca": "Carretera sense nom"
         }
       }
     ]
@@ -88,7 +89,8 @@
             "en": "This is a living street, which has a maxspeed of 20km/h",
             "nl": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h",
             "de": "Dies ist eine Wohnstraße, auf der eine Höchstgeschwindigkeit von 20 km/h gilt",
-            "fr": "C'est une zone de rencontre, avec une vitesse maximale de 20 km/h"
+            "fr": "C'est une zone de rencontre, avec une vitesse maximale de 20 km/h",
+            "ca": "Aquest és un carrer residencial, que té una velocitat màxima de 20 km/h"
           },
           "icon": {
             "path": "./assets/layers/maxspeed/living_street_be.svg",

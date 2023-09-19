@@ -37,7 +37,8 @@
             "nl": "Accepteert cash",
             "es": "Acepta efectivo",
             "fr": "Accepte les espèces",
-            "pl": "Przyjmuje gotówkę"
+            "pl": "Przyjmuje gotówkę",
+            "ca": "Accepta efectu"
           }
         }
       ]
@@ -53,7 +54,8 @@
             "nl": "Accepteert betaalkaarten",
             "es": "Acepta el pago por tarjeta",
             "fr": "Accepte les cartes de paiement",
-            "pl": "Przyjmuje karty płatnicze"
+            "pl": "Przyjmuje karty płatnicze",
+            "ca": "Accepta el pagament amb targeta"
           }
         }
       ]
@@ -66,7 +68,8 @@
           "question": {
             "en": "Accepts debit cards",
             "de": "Akzeptiert Debitkarten",
-            "pl": "Przyjmuje karty debetowe"
+            "pl": "Przyjmuje karty debetowe",
+            "ca": "Accepta targetes de dèbit"
           }
         }
       ]
@@ -79,7 +82,8 @@
           "question": {
             "en": "Accepts credit cards",
             "de": "Akzeptiert Kreditkarten",
-            "pl": "Przyjmuje karty kredytowe"
+            "pl": "Przyjmuje karty kredytowe",
+            "ca": "Accepta targetes de crèdit"
           }
         }
       ]
@@ -92,7 +96,8 @@
             "en": "With and without images",
             "nl": "Met en zonder afbeelding",
             "de": "Mit und ohne Bild",
-            "pl": "Z oraz bez zdjęć"
+            "pl": "Z oraz bez zdjęć",
+            "ca": "Amb i sense imatges"
           }
         },
         {
@@ -100,7 +105,8 @@
             "en": "Has at least one image",
             "de": "Hat mindestens ein Bild",
             "nl": "Heeft minstens één afbeelding",
-            "pl": "Ma co najmniej jedno zdjęcie"
+            "pl": "Ma co najmniej jedno zdjęcie",
+            "ca": "Té com a mínim una imatge"
           },
           "osmTags": {
             "or": [
@@ -118,7 +124,8 @@
             "en": "Probably does not have an image",
             "de": "Hat wahrscheinlich kein Bild",
             "nl": "Heeft waarschijnlijk geen afbeelding",
-            "pl": "Prawdopodobnie nie ma zdjęcia"
+            "pl": "Prawdopodobnie nie ma zdjęcia",
+            "ca": "Probablement no té una imatge"
           },
           "osmTags": {
             "and": [
@@ -142,7 +149,8 @@
             "de": "Mit taktilem Pflaster",
             "fr": "Avec revêtement podotactile",
             "nl": "Met voelbare bestrating",
-            "pl": "Z wypustkami dla niewidomych"
+            "pl": "Z wypustkami dla niewidomych",
+            "ca": "Amb superfícies podotàctils"
           },
           "osmTags": "tactile_paving=yes"
         }
@@ -158,7 +166,8 @@
             "de": "Mit oder ohne taktiles Pflaster",
             "fr": "Avec ou sans revêtement podotactile",
             "nl": "Met of zonder voelbare bestrating",
-            "pl": "Z lub bez wypustek dla niewidomych"
+            "pl": "Z lub bez wypustek dla niewidomych",
+            "ca": "Amb o sense superfícies podotàctils"
           }
         },
         {
@@ -167,7 +176,8 @@
             "de": "Mit taktilem Pflaster",
             "fr": "Avec revêtement podotactile",
             "nl": "Met voelbare bestrating",
-            "pl": "Z wypustkami dla niewidomych"
+            "pl": "Z wypustkami dla niewidomych",
+            "ca": "Amb paviments superfícies podotàctils"
           },
           "osmTags": "tactile_paving=yes"
         },
@@ -189,7 +199,8 @@
             "de": "Keine Informationen über taktiles Pflaster",
             "fr": "Sans information sur le revêtement podotactile",
             "nl": "Geen informatie over voelbare bestrating",
-            "pl": "Brak informacji o wypustkach dla niewidomych"
+            "pl": "Brak informacji o wypustkach dla niewidomych",
+            "ca": "No hi ha informació sobre superfícies podotàctils"
           }
         }
       ]
@@ -207,7 +218,8 @@
           "question": {
             "en": "Has organic options",
             "de": "Bio-Produkte im Angebot",
-            "nl": "Heeft biologische opties"
+            "nl": "Heeft biologische opties",
+            "ca": "Té opcions orgàniques"
           }
         }
       ]

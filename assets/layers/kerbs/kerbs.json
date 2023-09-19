@@ -7,7 +7,8 @@
     "fr": "Bordures",
     "pa_PK": "کرب",
     "ru": "Бордюры",
-    "pl": "Krawężniki"
+    "pl": "Krawężniki",
+    "ca": "Vroades"
   },
   "description": {
     "en": "A layer showing kerbs.",
@@ -15,7 +16,8 @@
     "de": "Eine Ebene, die Bordsteine zeigt.",
     "fr": "Un calque montrant les bordures.",
     "ru": "Слой, изображающий бордюры.",
-    "pl": "Warstwa pokazująca krawężniki."
+    "pl": "Warstwa pokazująca krawężniki.",
+    "ca": "Una capa que mostra les vorades."
   },
   "source": {
     "osmTags": "barrier=kerb"
@@ -29,7 +31,8 @@
       "fr": "Bordure",
       "pa_PK": "کرب",
       "ru": "Бордюр",
-      "pl": "Krawężnik"
+      "pl": "Krawężnik",
+      "ca": "Vorada"
     }
   },
   "mapRendering": [
@@ -133,7 +136,8 @@
             "de": "Hier gibt es keinen Bordstein",
             "fr": "Il n'y a pas de bordure ici",
             "ru": "Здесь нет бордюра",
-            "pl": "Nie ma tutaj krawężnika"
+            "pl": "Nie ma tutaj krawężnika",
+            "ca": "Aquí no hi ha vorada"
           },
           "hideInAnswer": true,
           "icon": {
@@ -148,7 +152,8 @@
             "nl": "Er is een stoeprand met onbekende hoogte",
             "de": "Es gibt einen Bordstein mit unbekannter Höhe",
             "fr": "Il y a un trottoir de hauteur inconnue",
-            "pl": "Jest krawężnik o nieznanej wysokości"
+            "pl": "Jest krawężnik o nieznanej wysokości",
+            "ca": "Hi ha una vorada d'altura desconeguda"
           },
           "hideInAnswer": true
         }
@@ -224,7 +229,8 @@
         "de": "Bordsteinhöhe: {kerb:height}",
         "fr": "Hauteur du trottoir : {kerb:height}",
         "ru": "Высота бордюра: {kerb:height}",
-        "pl": "Wysokość krawężnika: {kerb:height}"
+        "pl": "Wysokość krawężnika: {kerb:height}",
+        "ca": "Altura de la vorada {kerb:height}"
       },
       "freeform": {
         "key": "kerb:height",
@@ -234,7 +240,8 @@
           "de": "Höhe des Bordsteins",
           "fr": "Hauteur de la bordure",
           "ru": "Высота бордюра",
-          "pl": "Wysokość krawężnika"
+          "pl": "Wysokość krawężnika",
+          "ca": "Altura de la vorada"
         },
         "type": "pnat"
       },
@@ -259,7 +266,8 @@
         "de": "einen Bordstein",
         "fr": "une bordure",
         "ru": "бордюр",
-        "pl": "krawężnik"
+        "pl": "krawężnik",
+        "ca": "una vorada"
       },
       "tags": [
         "barrier=kerb"
@@ -288,7 +296,8 @@
             "de": "Alle Bordsteine",
             "fr": "Tous types de bordures",
             "ru": "Все виды бордюров",
-            "pl": "Wszystkie rodzaje krawężników"
+            "pl": "Wszystkie rodzaje krawężników",
+            "ca": "Tots els tipus de vorades"
           }
         },
         {
@@ -298,7 +307,8 @@
             "nl": "Hoge stoeprand (>3 cm)",
             "de": "Erhöhte Bordsteine (>3 cm)",
             "fr": "Bordure surélevée (>3 cm)",
-            "pl": "Podniesiony krawężnik (>3 cm)"
+            "pl": "Podniesiony krawężnik (>3 cm)",
+            "ca": "Vorada elevada (>3 cm)"
           }
         },
         {
@@ -309,7 +319,8 @@
             "de": "Abgesenkte Bordsteine (~3 cm)",
             "fr": "Bordure abaissée (~3 cm)",
             "ru": "Пониженный бордюр (~3 см)",
-            "pl": "Obniżony krawężnik (~3 cm)"
+            "pl": "Obniżony krawężnik (~3 cm)",
+            "ca": "Vorada rebaixada (~3 cm)"
           }
         },
         {
@@ -319,7 +330,8 @@
             "nl": "Vlakke stoeprand (~0cm)",
             "de": "Bündige Bordsteine (~0 cm)",
             "fr": "Bordure affleurante (~0cm)",
-            "ru": "Вровень с дорогой (~0 см)"
+            "ru": "Вровень с дорогой (~0 см)",
+            "ca": "Vorada a ras (~0 cm)"
           }
         },
         {
@@ -330,7 +342,8 @@
             "de": "Kein Bordstein",
             "fr": "Pas de trottoir",
             "ru": "Нет бордюра",
-            "pl": "Brak krawężnika"
+            "pl": "Brak krawężnika",
+            "ca": "Sense vorada"
           }
         },
         {
@@ -340,7 +353,8 @@
             "nl": "Stoeprand met onbekende hoogte",
             "de": "Bordsteine unbekannter Höhe",
             "fr": "Bordure de hauteur inconnue",
-            "pl": "Krawężnik z nieznaną wysokością"
+            "pl": "Krawężnik z nieznaną wysokością",
+            "ca": "Vorada sense altura coneguda"
           }
         }
       ]

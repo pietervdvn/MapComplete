@@ -14,7 +14,8 @@
       "de": "Krankenhaus",
       "nl": "Ziekenhuis",
       "pa_PK": "ہسپتال",
-      "ru": "Больница"
+      "ru": "Больница",
+      "ca": "Hospital"
     },
     "mappings": [
       {
@@ -26,7 +27,8 @@
   "description": {
     "en": "A layer showing hospital grounds",
     "de": "Eine Ebene mit Krankenhäusern",
-    "nl": "Een laag die ziekehuizen toont"
+    "nl": "Een laag die ziekehuizen toont",
+    "ca": "Una capa que mostra els terrenys de l'hospital"
   },
   "minzoom": 12,
   "source": {
@@ -94,11 +96,13 @@
       "id": "oh-visitor",
       "question": {
         "en": "When are visitors allowed to visit?",
-        "de": "Wann ist der Besuch für Besucher gestattet?"
+        "de": "Wann ist der Besuch für Besucher gestattet?",
+        "ca": "Quan poden anar els visitants?"
       },
       "questionHint": {
         "en": "These are the regular visitor hours. Some wands have different visitor hours or might allow visitors in emergencies",
-        "de": "Dies sind die regulären Besuchszeiten. Einige Stationen haben andere Besuchszeiten oder erlauben Besucher in Notfällen"
+        "de": "Dies sind die regulären Besuchszeiten. Einige Stationen haben andere Besuchszeiten oder erlauben Besucher in Notfällen",
+        "ca": "Aquests són els horaris habituals dels visitants. Algunes plantes tenen diferents horaris de visita o poden permetre els visitants en cas d'emergència"
       },
       "freeform": {
         "key": "opening_hours:visitors",
@@ -106,7 +110,8 @@
       },
       "render": {
         "en": "<h3>Opening hours for visitors</h3>Regular visitors are allowed at the following moments: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Some wands might have different opening hours. Many hospitals allow visits during emergencies too.</p>",
-        "de": "<h3>Öffnungszeiten für Besucher</h3>Regelmäßige Besucher sind zu den folgenden Zeiten zugelassen: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Einige Krankenhäuser haben möglicherweise andere Öffnungszeiten. Viele Krankenhäuser erlauben Besuche auch in Notfällen.</p>"
+        "de": "<h3>Öffnungszeiten für Besucher</h3>Regelmäßige Besucher sind zu den folgenden Zeiten zugelassen: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Einige Krankenhäuser haben möglicherweise andere Öffnungszeiten. Viele Krankenhäuser erlauben Besuche auch in Notfällen.</p>",
+        "ca": "<h3>Horari d'obertura per a visitants</h3>S'admeten visitants habituals en els moments següents: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Algunes palntes poden tenir un horari d'obertura diferent. Molts hospitals també permeten visites en cas d'emergència.</p>"
       }
     }
   ],

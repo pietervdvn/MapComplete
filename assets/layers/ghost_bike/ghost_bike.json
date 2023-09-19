@@ -55,7 +55,8 @@
           "nl": "Witte fiets ter nagedachtenis van {subject}",
           "de": "Geisterrad im Gedenken an {subject}",
           "it": "Bici fantasma in ricordo di {subject}",
-          "fr": "Vélo fantôme en souvenir de {subject}"
+          "fr": "Vélo fantôme en souvenir de {subject}",
+          "ca": "Bicicleta fantasma en el record de {subject}"
         }
       },
       {
@@ -65,7 +66,8 @@
           "nl": "Witte fiets ter nagedachtenis van {name}",
           "de": "Geisterrad im Gedenken an {name}",
           "it": "Bici fantasma in ricordo di {name}",
-          "fr": "Vélo fantôme en souvenir de {name}"
+          "fr": "Vélo fantôme en souvenir de {name}",
+          "ca": "Bicicleta fantasma en el record de {name}"
         }
       }
     ]
@@ -118,7 +120,8 @@
         "nl": "Aan wie is deze witte fiets een eerbetoon?",
         "de": "An wen erinnert dieses Geisterrad?",
         "it": "A chi è dedicata questa bici fantasma?",
-        "fr": "À qui est dédié ce vélo fantôme ?"
+        "fr": "À qui est dédié ce vélo fantôme ?",
+        "ca": "A qui recorda aquesta bicicleta fantasma?"
       },
       "render": {
         "en": "In remembrance of {subject}",
@@ -126,7 +129,8 @@
         "de": "Im Gedenken an {subject}",
         "it": "In ricordo di {subject}",
         "fr": "En souvenir de {subject}",
-        "ru": "В знак памяти о {subject}"
+        "ru": "В знак памяти о {subject}",
+        "ca": "En record de {subject}"
       },
       "freeform": {
         "key": "subject",
@@ -237,7 +241,8 @@
         "en": "When was this Ghost bike installed?",
         "it": "Quando è stata installata questa bici fantasma?",
         "fr": "Quand ce vélo fantôme a-t-il été installée ?",
-        "de": "Wann wurde dieses Geisterrad aufgestellt?"
+        "de": "Wann wurde dieses Geisterrad aufgestellt?",
+        "ca": "Quan es va instal·lar aquesta bicicleta Ghost?"
       },
       "render": {
         "nl": "Geplaatst op {start_date}",
@@ -283,6 +288,7 @@
     "nl": "Een laag die herdenkingsplaatsen voor verongelukte fietsers toont",
     "de": "Eine Ebene mit Gedenkstätten für Radfahrer, die bei Verkehrsunfällen ums Leben gekommen sind",
     "fr": "Une couche affichant les mémoriaux en l'hommage de cyclistes tuées lors d'accidents de la route",
-    "pl": "Warstwa pokazujące miejsca upamiętnienia rowerzystów, którzy zginęli w wypadkach drogowych"
+    "pl": "Warstwa pokazujące miejsca upamiętnienia rowerzystów, którzy zginęli w wypadkach drogowych",
+    "ca": "Una capa que mostra monuments commemoratius als ciclistes morts en accidents de trànsit"
   }
 }

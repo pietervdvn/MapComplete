@@ -3,12 +3,14 @@
   "name": {
     "en": "Penny Presses",
     "de": "Münzpressen",
-    "es": "Prensas de centavo"
+    "es": "Prensas de centavo",
+    "ca": "Premses de cèntims"
   },
   "description": {
     "en": "Layer showing penny presses.",
     "de": "Ebene mit Münzpressen.",
-    "es": "Capa mostrando prensas de centavo."
+    "es": "Capa que muestra prensas de centavos.",
+    "ca": "Capa que mostra premses de cèntims."
   },
   "source": {
     "osmTags": {
@@ -22,7 +24,8 @@
     "render": {
       "en": "Penny Press",
       "de": "Münzpresse",
-      "es": "Prensa de centavo"
+      "es": "Prensa de centavo",
+      "ca": "Premsa de cèntims"
     }
   },
   "tagRenderings": [
@@ -33,7 +36,8 @@
       "question": {
         "en": "How many designs are available?",
         "de": "Wieviele Motive sind verfügbar?",
-        "es": "Cuántos diseños son disponibles?"
+        "es": "Cuántos diseños hay disponibles?",
+        "ca": "Quants dissenys hi han disponibles?"
       },
       "freeform": {
         "key": "coin:design_count",
@@ -41,13 +45,15 @@
         "placeholder": {
           "en": "Number of designs (e.g. 5)",
           "de": "Motivanzahl (z.B. 5)",
-          "es": "Número de diseños (por ejemplo, 5)"
+          "es": "Número de diseños (por ejemplo, 5)",
+          "ca": "Nombre de dissenys (p. e. 5)"
         }
       },
       "render": {
         "en": "This penny press has {coin:design_count} designs available.",
         "de": "Die Münzpresse hat {coin:design_count} Motive zur Auswahl.",
-        "es": "Esta prensa tiene {coin:design_count} diseños disponibles."
+        "es": "Esta prensa tiene {coin:design_count} diseños disponibles.",
+        "ca": "Esta premsa té {coin:design_count} dissenys disponibles."
       },
       "mappings": [
         {
@@ -55,7 +61,8 @@
           "then": {
             "en": "This penny press has one design available.",
             "de": "Die Münzpresse hat ein Motiv zur Auswahl.",
-            "es": "Esta prensa tiene un diseño disponible."
+            "es": "Esta prensa tiene un diseño disponible.",
+            "ca": "Esta premsa té un disseny disponible."
           }
         },
         {
@@ -63,7 +70,8 @@
           "then": {
             "en": "This penny press has two designs available.",
             "de": "Die Münzpresse hat zwei Motive zur Auswahl.",
-            "es": "Esta prensa tiene dos diseños disponibles."
+            "es": "Esta prensa tiene dos diseños disponibles.",
+            "ca": "Esta premsa té dos dissenys disponibles."
           }
         },
         {
@@ -71,7 +79,8 @@
           "then": {
             "en": "This penny press has three designs available.",
             "de": "Die Münzpresse hat drei Motive zur Auswahl.",
-            "es": "Esta prensa tiene tres diseños disponibles."
+            "es": "Esta prensa tiene tres diseños disponibles.",
+            "ca": "Esta premsa té tres dissenys disponibles."
           }
         },
         {
@@ -79,7 +88,8 @@
           "then": {
             "en": "This penny press has four designs available.",
             "de": "Die Münzpresse hat vier Motive zur Auswahl.",
-            "es": "Esta prensa tiene cuatro diseños disponibles."
+            "es": "Esta prensa tiene cuatro diseños disponibles.",
+            "ca": "Esta premsa té quatre dissenys disponibles."
           }
         }
       ]
@@ -133,7 +143,8 @@
       "question": {
         "en": "What coin is used for pressing?",
         "de": "Welche Münze wird zum Pressen verwendet?",
-        "es": "Qué moneda se utiliza para presionar?"
+        "es": "Qué moneda se utiliza para prensar?",
+        "ca": "Quina moneda s'utilitza per a premsar?"
       },
       "freeform": {
         "key": "coin:type",
@@ -142,7 +153,8 @@
           "en": "Coin type (e.g. 10cent)",
           "de": "Münzenart (z.B. 10 Cent)",
           "es": "Tipo de moneda (por ejemplo, 10 centavos)",
-          "pl": "Rodzaj monety (np. 10 centów)"
+          "pl": "Rodzaj monety (np. 10 centów)",
+          "ca": "Tipus de moneda (p. e. 10 cèntims)"
         }
       },
       "mappings": [
@@ -151,7 +163,8 @@
           "then": {
             "en": "This penny press uses a 2 cent coin for pressing.",
             "de": "Die Münzpresse benötigt eine 2 Cent Münze um zu Pressen.",
-            "es": "Esta prensa de centavo utiliza una moneda de 2 centavos para presionar."
+            "es": "Esta prensa de centavo utiliza una moneda de 2 centavos para prensar.",
+            "ca": "Esta premsa de cèntims utilitza una moneda de 2 cèntims per a premsar."
           },
           "hideInAnswer": {
             "and": [
@@ -165,7 +178,8 @@
           "then": {
             "en": "This penny press uses a 5 cent coin for pressing.",
             "de": "Die Münzpresse benötigt eine 5 Cent Münze um zu Pressen.",
-            "es": "Esta prensa de centavo utiliza una moneda de 5 centavos para presionar."
+            "es": "Esta prensa de centavo utiliza una moneda de 5 centavos para prensar.",
+            "ca": "Esta premsa de cèntims utilitza una moneda de 5 cèntims per a premsar."
           },
           "hideInAnswer": {
             "and": [
@@ -179,7 +193,8 @@
           "then": {
             "en": "This penny press uses a 10 cent coin for pressing.",
             "de": "Die Münzpresse benötigt eine 10 Cent Münze um zu Pressen.",
-            "es": "Esta prensa de centavo utiliza una moneda de 10 centavos para presionar."
+            "es": "Esta prensa de centavo utiliza una moneda de 10 centavos para prensar.",
+            "ca": "Esta premsa de cèntims utilitza una moneda de 10 cèntims per a premsar."
           },
           "hideInAnswer": {
             "and": [
@@ -193,7 +208,8 @@
           "then": {
             "en": "This penny press uses a 25 cent coin for pressing.",
             "de": "Die Münzpresse benötigt eine 25 Cent Münze um zu Pressen.",
-            "es": "Esta prensa de centavo utiliza una moneda de 25 centavos para presionar."
+            "es": "Esta prensa de centavo utiliza una moneda de 25 centavos para prensar.",
+            "ca": "Esta premsa de cèntims utilitza una moneda de 20 cèntims per a premsar."
           },
           "hideInAnswer": "_currency!~.*USD.*"
         },
@@ -202,7 +218,8 @@
           "then": {
             "en": "This penny press uses a 50 cent coin for pressing.",
             "de": "Die Münzpresse benötigt eine 50 Cent Münze um zu Pressen.",
-            "es": "Esta prensa de centavo utiliza una moneda de 50 centavos para presionar."
+            "es": "Esta prensa de centavo utiliza una moneda de 50 centavos para prensar.",
+            "ca": "Esta premsa de cèntims utilitza una moneda de 50 cèntims per a premsar."
           },
           "hideInAnswer": "_currency!~.*USD.*"
         },
@@ -224,7 +241,8 @@
       "render": {
         "en": "This penny press uses a {coin:type} coin for pressing.",
         "de": "Die Münzpresse benötigt eine {coin:type} Münze um zu Pressen.",
-        "es": "Esta prensa de centavo utiliza una moneda {coin:type} para presionar."
+        "es": "Esta prensa de centavo utiliza una moneda {coin:type} para prensar.",
+        "ca": "Esta premsa de cèntims utilitza una moneda de {coin:type} per a premsar."
       }
     },
     "website",
@@ -239,7 +257,8 @@
       "question": {
         "en": "How much does it cost to press a penny?",
         "de": "Wieviel kostet es eine Münze zu Pressen?",
-        "es": "¿Cuánto cuesta presionar un centavo?"
+        "es": "¿Cuánto cuesta prensar un centavo?",
+        "ca": "Quant costa premsar un cèntim?"
       },
       "freeform": {
         "key": "charge",
@@ -247,7 +266,8 @@
           "en": "Cost (e.g. 0.50 EUR)",
           "de": "Einwurf (z.B. 0,5€)",
           "fr": "Coût (par ex. 0.50 EUR)",
-          "es": "Costo (por ejemplo, 0.50 euros)"
+          "es": "Costo (por ejemplo, 0.50 euros)",
+          "ca": "Cost (p. e, 0.50 euros)"
         }
       },
       "mappings": [
@@ -256,7 +276,8 @@
           "then": {
             "en": "It costs 1 euro to press a penny.",
             "de": "Eine Münze zu Pressen kostet 1 Euro.",
-            "es": "Cuesta 1 euro para presionar un centavo."
+            "es": "Cuesta 1 euro prensar un centavo.",
+            "ca": "Costa 1 euro premsar un cèntim."
           },
           "hideInAnswer": "_currency!~.*EUR.*"
         },
@@ -265,7 +286,8 @@
           "then": {
             "en": "It costs 2 euros to press a penny.",
             "de": "Eine Münze zu Pressen kostet 2€.",
-            "es": "Cuesta 2 euros para presionar un centavo."
+            "es": "Cuesta 2 euros prensa un centavo.",
+            "ca": "Costa 2 euros premsar un cèntim."
           },
           "hideInAnswer": "_currency!~.*EUR.*"
         },
@@ -287,7 +309,8 @@
       "render": {
         "en": "It costs {charge} to press a penny.",
         "de": "Es kostet {charge}€ um eine Münze zu Pressen.",
-        "es": "Cuesta {charge} para presionar un centavo."
+        "es": "Cuesta {charge} prensar un centavo.",
+        "ca": "Costa {charge} premsar un cèntim."
       }
     },
     "denominations-coins",
@@ -296,7 +319,8 @@
       "question": {
         "en": "Is the penny press indoors?",
         "de": "Befindet sich die Münzpresse im Inneren?",
-        "es": "La prensa de centavo esta al interior?"
+        "es": "La prensa de centavo esta al interior?",
+        "ca": "La premsa de cèntims està a l'interior?"
       },
       "mappings": [
         {
@@ -304,7 +328,8 @@
           "then": {
             "en": "This penny press is located indoors.",
             "de": "Die Münzpresse befindet sich im Inneren.",
-            "es": "Esta prensa está ubicada en interior."
+            "es": "Esta prensa está ubicada en interior.",
+            "ca": "Esta premsa està ubicada en interior."
           }
         },
         {
@@ -312,7 +337,8 @@
           "then": {
             "en": "This penny press is located outdoors.",
             "de": "Die Münzpresse befindet sich Draußen.",
-            "es": "Esta prensa está ubicada al aire libre."
+            "es": "Esta prensa está ubicada al aire libre.",
+            "ca": "Esta premsa està ubicada a l'exterior."
           }
         }
       ]
@@ -340,7 +366,8 @@
       "title": {
         "en": "a penny press",
         "de": "Eine Münzpresse",
-        "es": "una prensa de centavo"
+        "es": "una prensa de centavo",
+        "ca": "una premsa de cèntim"
       },
       "tags": [
         "amenity=vending_machine",

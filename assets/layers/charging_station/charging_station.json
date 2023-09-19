@@ -50,7 +50,8 @@
           "en": "Charging station for electrical bicycles",
           "nl": "Oplaadpunt voor elektrische fietsen",
           "de": "Ladestation für Elektrofahrräder",
-          "es": "Estación de carga para bicicletas eléctricas"
+          "es": "Estación de carga para bicicletas eléctricas",
+          "ca": "Estació de càrrega per a bicicletes elèctriques"
         }
       },
       {
@@ -69,7 +70,8 @@
           "en": "Charging station for cars",
           "nl": "Oplaadpunt voor elektrische auto's",
           "de": "Ladestation für Autos",
-          "es": "Estación de carga para coches"
+          "es": "Estación de carga para coches",
+          "ca": "Estació de càrrega per a cotxes"
         }
       }
     ]
@@ -4473,7 +4475,8 @@
       "render": {
         "en": "More info on <a href='{website}'>{website}</a>",
         "nl": "Meer informatie op <a href='{website}'>{website}</a>",
-        "de": "Weitere Informationen unter <a href='{website}'>{website}</a>"
+        "de": "Weitere Informationen unter <a href='{website}'>{website}</a>",
+        "ca": "Més info a <a href='{website}'>{website}</a>"
       },
       "freeform": {
         "key": "website",

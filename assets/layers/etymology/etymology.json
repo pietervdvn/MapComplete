@@ -5,7 +5,8 @@
     "en": "Has etymology",
     "nl": "Heeft etymology info",
     "de": "Objekte mit Namensherkunft",
-    "fr": "A une étymologie"
+    "fr": "A une étymologie",
+    "ca": "Té etimologia"
   },
   "minzoom": 12,
   "source": {
@@ -30,7 +31,8 @@
     "nl": "Alle lagen met een gelinkt etymology",
     "de": "Alle Objekte, die eine bekannte Namensherkunft haben",
     "hu": "Minden olyan objektum, amelynél ismert a nevének az eredete",
-    "fr": "Tous les objets dont l’étymologie est connue"
+    "fr": "Tous les objets dont l’étymologie est connue",
+    "ca": "Tots els objectes que tenen una etimologia coneguda"
   },
   "calculatedTags": [
     "_same_name_ids=closestn(feat)('*', 250, undefined, 5000)?.filter(f => f.feat.properties.name === feat.properties.name)?.map(f => f.feat.properties.id)??[]"
@@ -203,7 +205,8 @@
             "nl": "De oorsprong van deze naam is onbekend in de literatuur",
             "de": "Der Ursprung dieses Namens ist in der gesamten Literatur unbekannt",
             "da": "Oprindelsen af dette navn er ukendt i al litteratur",
-            "fr": "L'origine de ce nom est inconnu"
+            "fr": "L'origine de ce nom est inconnu",
+            "ca": "L'origen d'aquest nom és desconegut en tota la literatura"
           }
         }
       ],
@@ -244,7 +247,8 @@
         "en": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}",
         "nl": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Wijzigingen worden automatisch gedaan op alle segmenten met dezelfde naam, true)}",
         "de": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Automatische Datenübernahme auf alle Segmente mit demselben Namen, true)}",
-        "fr": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Appliquer automatiquement aux segments avec le même nom, true)}"
+        "fr": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Appliquer automatiquement aux segments avec le même nom, true)}",
+        "ca": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etimology, aplicació automàtica de dades a tots els segments amb el mateix nom, vertader)}"
       }
     },
     {
@@ -255,7 +259,8 @@
         "nl": "Een Wikipedia artikel over deze <b>straat</b> bestaat:<br/>{wikipedia():max-height:25rem}",
         "de": "Zu dieser <b>Straße</b> existiert ein Wikipedia-Artikel:<br/>{wikipedia():max-height:25rem}",
         "fr": "Un article Wikipédia à propos de cette <b>rue</b> existe :<br/>{wikipedia():max-height:25rem}",
-        "pl": "Istnieje artykuł Wikipedii na temat tej <b>ulicy</b>:<br/>{wikipedia():max-height:25rem}"
+        "pl": "Istnieje artykuł Wikipedii na temat tej <b>ulicy</b>:<br/>{wikipedia():max-height:25rem}",
+        "ca": "Existeix un article de la Viquipèdia sobre aquest <b>carrer</b>:<br/>{wikipedia():max-height:25rem}"
       },
       "condition": "wikidata~*"
     }

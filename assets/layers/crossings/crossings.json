@@ -48,7 +48,7 @@
           "de": "Ampel",
           "fr": "Feu de signalisation",
           "ca": "Semàfor",
-          "es": "Señal de tráfico"
+          "es": "Semáforo"
         }
       },
       {
@@ -58,7 +58,8 @@
           "nl": "Oversteekplaats met verkeerslichten",
           "de": "Kreuzung mit Ampeln",
           "fr": "Traversée avec feu de signalisation",
-          "es": "Cruce con señales de tráfico"
+          "es": "Cruce con semáforos",
+          "ca": "Creuament amb semàfors"
         }
       }
     ]
@@ -97,8 +98,8 @@
         "de": "eine Ampel",
         "fr": "une feu de signalisation",
         "da": "et trafiksignal",
-        "es": "una señal de tráfico",
-        "ca": "una senyal de trànsit"
+        "es": "un semáforo",
+        "ca": "un semàfor"
       },
       "tags": [
         "highway=traffic_signals"
@@ -109,8 +110,8 @@
         "de": "Ampel an einer Straße",
         "fr": "Feu de signalisation sur la voie",
         "da": "Trafiksignal på en vej",
-        "es": "Señal de tráfico en una carretera",
-        "ca": "Senyal de trànsit en una carretera"
+        "es": "Semáforo en una carretera",
+        "ca": "Semàfor en una carretera"
       },
       "snapToLayer": "cycleways_and_roads",
       "maxSnapDistance": 25
@@ -147,9 +148,9 @@
             "en": "Crossing with traffic signals",
             "nl": "Oversteekplaats met verkeerslichten",
             "de": "Kreuzungen mit Ampeln",
-            "es": "Cruce con señales de tráfico",
+            "es": "Cruce con semáforo",
             "fr": "Passage piéton avec des feux de signalisation",
-            "ca": "Creuament amb senyals de trànsit"
+            "ca": "Creuament amb semàfors"
           }
         },
         {

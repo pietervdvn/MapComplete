@@ -4202,6 +4202,29 @@
                     }
                 }
             },
+            "speech_output_available": {
+                "mappings": {
+                    "0": {
+                        "then": "This elevator has speech output"
+                    },
+                    "1": {
+                        "then": "This elevator does not have speech output"
+                    }
+                },
+                "question": "Has this elevator speech output?",
+                "questionHint": "E.g. it announces the current floor"
+            },
+            "tactile_writing_available": {
+                "mappings": {
+                    "0": {
+                        "then": "This elevator has tactile writing in Braille"
+                    },
+                    "1": {
+                        "then": "This elevator does not have tactile writing"
+                    }
+                },
+                "question": "Has this elevator tactile writing?"
+            },
             "tactile_writing_language": {
                 "render": {
                     "special": {
@@ -4247,6 +4270,12 @@
                     },
                     "1": {
                         "then": "It costs 2 euros to press a penny."
+                    },
+                    "2": {
+                        "then": "It costs 2 Swiss francs to press a penny."
+                    },
+                    "3": {
+                        "then": "It costs 1 Swiss franc to press a penny."
                     }
                 },
                 "question": "How much does it cost to press a penny?",
@@ -4271,6 +4300,12 @@
                     },
                     "4": {
                         "then": "This penny press uses a 50 cent coin for pressing."
+                    },
+                    "5": {
+                        "then": "This penny press uses a 10 centimes coin for pressing."
+                    },
+                    "6": {
+                        "then": "This penny press uses a 20 centimes coin for pressing."
                     }
                 },
                 "question": "What coin is used for pressing?",
@@ -4296,6 +4331,20 @@
                 },
                 "question": "How many designs are available?",
                 "render": "This penny press has {coin:design_count} designs available."
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "It costs money to press a penny."
+                    },
+                    "1": {
+                        "then": "It costs money to press a penny."
+                    },
+                    "2": {
+                        "then": "It is free to press a penny."
+                    }
+                },
+                "question": "Does it cost money to press a penny?"
             },
             "indoor": {
                 "mappings": {
@@ -7194,6 +7243,27 @@
                     },
                     "7": {
                         "then": "2 euro coins are accepted"
+                    },
+                    "8": {
+                        "then": "5 centimes coins are accepted"
+                    },
+                    "9": {
+                        "then": "10 centimes coins are accepted"
+                    },
+                    "10": {
+                        "then": "20 centimes coins are accepted"
+                    },
+                    "11": {
+                        "then": "½ franc coins are accepted"
+                    },
+                    "12": {
+                        "then": "1 franc coins are accepted"
+                    },
+                    "13": {
+                        "then": "2 francs coins are accepted"
+                    },
+                    "14": {
+                        "then": "5 francs coins are accepted"
                     }
                 },
                 "question": "What coins can you use to pay here?"
@@ -7220,6 +7290,24 @@
                     },
                     "6": {
                         "then": "500 euro notes are accepted"
+                    },
+                    "7": {
+                        "then": "10 francs notes are accepted"
+                    },
+                    "8": {
+                        "then": "20 francs notes are accepted"
+                    },
+                    "9": {
+                        "then": "50 francs notes are accepted"
+                    },
+                    "10": {
+                        "then": "100 francs notes are accepted"
+                    },
+                    "11": {
+                        "then": "200 francs notes are accepted"
+                    },
+                    "12": {
+                        "then": "1000 francs notes are accepted"
                     }
                 },
                 "question": "what notes can you use to pay here?"

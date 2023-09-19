@@ -4,7 +4,8 @@
     "en": "Nature reserve",
     "nl": "Natuurgebied",
     "de": "Naturschutzgebiete",
-    "es": "Reserva Natural"
+    "es": "Reserva Natural",
+    "ca": "Reserva Natural"
   },
   "minzoom": 12,
   "source": {
@@ -47,7 +48,8 @@
   "description": {
     "en": "A nature reserve is an area where nature can take its course",
     "nl": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid.",
-    "de": "Ein Naturschutzgebiet ist ein Gebiet, das der Natur überlassen wurde"
+    "de": "Ein Naturschutzgebiet ist ein Gebiet, das der Natur überlassen wurde",
+    "ca": "Una reserva natural és una zona on la natura pot seguir el seu curs"
   },
   "tagRenderings": [
     "images",
@@ -55,7 +57,8 @@
       "render": {
         "en": "Accessin this nature reserve: {access:description}",
         "nl": "De toegankelijkheid van dit gebied is: {access:description}",
-        "de": "Zugang zu diesem Naturschutzgebiet: {access:description}"
+        "de": "Zugang zu diesem Naturschutzgebiet: {access:description}",
+        "ca": "Accés a aquesta reserva natural: {access:description}"
       },
       "question": {
         "en": "Is this nature reserve accessible to the public?",
@@ -291,7 +294,8 @@
             "it": "I cani devono essere tenuti al guinzaglio",
             "fr": "Les chiens doivent être tenus en laisse",
             "de": "Hunde müssen angeleint sein",
-            "es": "Los perros deben de ir con correa"
+            "es": "Los perros deben de ir con correa",
+            "ca": "Els gossos han d'anar lligats"
           }
         },
         {
@@ -302,7 +306,8 @@
             "it": "I cani non sono ammessi",
             "fr": "Chiens interdits",
             "de": "Hunde sind nicht erlaubt",
-            "es": "No se permiten perros"
+            "es": "No se permiten perros",
+            "ca": "No s'admeten gossos"
           }
         },
         {
@@ -334,7 +339,8 @@
         "en": "{curator} is the curator of this nature reserve",
         "it": "{curator} è il curatore di questa riserva naturale",
         "fr": "{curator} est en charge de la conservation de la réserve",
-        "de": "{curator} ist der Pfleger dieses Naturschutzgebietes"
+        "de": "{curator} ist der Pfleger dieses Naturschutzgebietes",
+        "ca": "{curator} és el conservador d'aquesta reserva natural"
       },
       "freeform": {
         "key": "curator",
@@ -476,7 +482,8 @@
           "question": {
             "en": "Freely accesible",
             "nl": "Vrij te bezoeken",
-            "de": "Frei zugänglich"
+            "de": "Frei zugänglich",
+            "ca": "De lliure accés"
           },
           "osmTags": "access=yes"
         }
@@ -489,7 +496,8 @@
           "question": {
             "en": "All nature reserves",
             "nl": "Alle natuurgebieden",
-            "de": "Alle Naturschutzgebiete"
+            "de": "Alle Naturschutzgebiete",
+            "ca": "Totes les reserves naturals"
           }
         },
         {

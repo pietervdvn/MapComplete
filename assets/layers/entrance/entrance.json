@@ -51,7 +51,8 @@
         "de": "Um welchen Eingangstyp handelt es sich?",
         "es": "¿Qué tipo de entrada es esta?",
         "fr": "De quel type d'entrée s'agit-il ?",
-        "pl": "Jakiego rodzaju jest to wejście?"
+        "pl": "Jakiego rodzaju jest to wejście?",
+        "ca": "Quin tipus d'entrada és aquesta?"
       },
       "mappings": [
         {
@@ -78,7 +79,8 @@
             "nl": "Dit is een binnendeur, die een kamer of een gang volledig binnen hetzelfde gebouw afsluit",
             "de": "Dies ist eine Innentür, die Räume oder Gänge innerhalb eines Gebäudes verbindet",
             "es": "Esta es una puerta interior, que separa una habitación o pasillo dentro de un único edificio",
-            "fr": "C'est une porte intérieure, séparant une pièce ou un couloir d'un même bâtiment"
+            "fr": "C'est une porte intérieure, séparant une pièce ou un couloir d'un même bâtiment",
+            "ca": "Es tracta d'una porta interior, que separa una habitació o un passadís dins d'un únic edifici"
           }
         },
         {
@@ -94,7 +96,8 @@
             "de": "Dies ist der Haupteingang",
             "es": "Esta es la entrada principal",
             "fr": "Ceci est l'entrée principale",
-            "pl": "To jest główne wejście"
+            "pl": "To jest główne wejście",
+            "ca": "Aquesta és l'entrada principal"
           }
         },
         {
@@ -109,7 +112,8 @@
             "nl": "Dit is een secundaire ingang",
             "de": "Dies ist ein Nebeneingang",
             "es": "Esta es una entrada secundaria",
-            "fr": "C'est une entrée secondaire"
+            "fr": "C'est une entrée secondaire",
+            "ca": "Aquesta és una entrada secundària"
           }
         },
         {
@@ -142,7 +146,8 @@
             "de": "Dies ist ein Ausgang, ohne Zutrittsmöglichkeit",
             "es": "Esta es una salida por la cual no se puede entrar",
             "fr": "C'est une sortie où l'on ne peut pas entrer",
-            "pl": "To jest wyjście bez możliwości wejścia"
+            "pl": "To jest wyjście bez możliwości wejścia",
+            "ca": "Aquesta és una sortida on no es pot entrar"
           }
         },
         {
@@ -158,7 +163,8 @@
             "de": "Dies ist ein Eingang, an dem man nur hineingehen kann (aber nicht hinausgehen)",
             "es": "Esta es una entrada por la que solo se puede entrar (pero no salir)",
             "fr": "C'est une entrée où l'on ne peut qu'entrer (mais pas sortir)",
-            "pl": "To jest wejście, którym nie można wychodzić"
+            "pl": "To jest wejście, którym nie można wychodzić",
+            "ca": "Aquesta és una entrada per on només es pot entrar (però no sortir)"
           }
         },
         {
@@ -175,7 +181,8 @@
             "es": "Esta es una salida de emergencia",
             "fr": "C'est la sortie de secours",
             "he": "זו יציאת חירום",
-            "pl": "To jest wyjście ewakuacyjne"
+            "pl": "To jest wyjście ewakuacyjne",
+            "ca": "Aquesta és la sortida d'emergència"
           }
         },
         {
@@ -191,7 +198,8 @@
             "de": "Dies ist ein Eingang zu einem privaten Haus",
             "es": "Esta es la entrada a una vivienda privada",
             "fr": "C'est l'entrée d'une maison privée",
-            "pl": "To jest wejście do prywatnego domu"
+            "pl": "To jest wejście do prywatnego domu",
+            "ca": "Aquesta és l'entrada d'una casa particular"
           }
         }
       ]
@@ -203,7 +211,8 @@
         "nl": "Om wat voor deur gaat het?",
         "de": "Welche Tür gibt es an diesem Eingang?",
         "es": "¿Cual es el tipo de esta puerta?",
-        "fr": "Quel est le type de cette porte ?"
+        "fr": "Quel est le type de cette porte ?",
+        "ca": "Quin és el tipus d'aquesta porta?"
       },
       "mappings": [
         {
@@ -213,7 +222,8 @@
             "nl": "Het type deur is onbekend",
             "de": "Der Türtyp ist nicht bekannt",
             "es": "Se desconoce el tipo de puerta",
-            "fr": "Le type de porte n'est pas connu"
+            "fr": "Le type de porte n'est pas connu",
+            "ca": "El tipus de porta és desconegut"
           },
           "hideInAnswer": true
         },
@@ -224,7 +234,8 @@
             "nl": "Een gewone deur die aan scharnieren ophangt en openzwaait",
             "de": "Der Eingang hat eine normale Tür mit seitlichem Anschlag",
             "es": "Una puerta clásica, con bisagras soportadas por uniones",
-            "fr": "Une porte battante classique soutenue par des joints"
+            "fr": "Une porte battante classique soutenue par des joints",
+            "ca": "Una porta clàssica, amb frontisses suportades per unions"
           }
         },
         {
@@ -234,7 +245,8 @@
             "nl": "Een tourniquet-deur (draaideur) die in een cylinder rond een centrale as draait",
             "de": "Der Eingang hat eine Karusselltür, die sich um ihre eigene Achse dreht",
             "es": "Una puerta giratoria que cuelga de un eje central y que rota dentro de una carcasa cilíndrica",
-            "fr": "Une porte tournante suspendue à un arbre central, tournant dans une enceinte cylindrique"
+            "fr": "Une porte tournante suspendue à un arbre central, tournant dans une enceinte cylindrique",
+            "ca": "Una porta giratòria que penja d'un eix central i que rota dins d'una carcasa cilíndrica"
           }
         },
         {
@@ -243,8 +255,9 @@
             "en": "A sliding door where the door slides sidewards, typically parallel with a wall",
             "nl": "Een schuifdeur or roldeur die bij het openen en sluiten zijwaarts beweegt",
             "de": "Der Eingang hat eine Schiebetür, bei der sich die Tür zur Seite bewegt",
-            "es": "Una puerta corredera donde las hojas se deslizan de lado a lado, típicamente con una pared",
-            "fr": "Une porte coulissante où la porte coulisse latéralement, généralement parallèlement à un mur"
+            "es": "Una puerta corredera donde la puerta se desliza hacia un lado, generalmente paralela a una pared",
+            "fr": "Une porte coulissante où la porte coulisse latéralement, généralement parallèlement à un mur",
+            "ca": "Una porta corredissa on la porta llisca cap als costats, normalment paral·lela a una paret"
           }
         },
         {
@@ -253,7 +266,8 @@
             "en": "A door which rolls from overhead, typically seen for garages",
             "nl": "Een poort die langs boven dichtrolt, typisch voor garages",
             "de": "Der Eingang hat ein Rolltor, das von oben nach unten rollt, typischerweise für Garagen",
-            "fr": "Une porte qui roule du haut, généralement vue pour les garages"
+            "fr": "Une porte qui roule du haut, généralement vue pour les garages",
+            "ca": "Una porta que roda des de dalt, normalment es veu per als garatges"
           }
         },
         {
@@ -263,7 +277,8 @@
             "nl": "Er is een toegang zonder een deur",
             "de": "Der Eingang hat eine keine Tür",
             "es": "Esta es una entrada sin una puerta física",
-            "fr": "Ceci est une entrée sans porte physique"
+            "fr": "Ceci est une entrée sans porte physique",
+            "ca": "Açò és una entrada sense una porta física"
           },
           "hideInAnswer": "entrance="
         }
@@ -290,7 +305,8 @@
             "de": "Dies ist eine Automatiktür",
             "es": "Esta es una puerta automática",
             "fr": "C'est une porte automatique",
-            "pl": "Te drzwi są automatyczne"
+            "pl": "Te drzwi są automatyczne",
+            "ca": "Aquesta és una porta automàtica"
           },
           "hideInAnswer": true
         },
@@ -314,7 +330,8 @@
             "de": "Diese Tür öffnet sich automatisch, wenn <b>Bewegung</b> erkannt wird",
             "es": "Esta puerta se abre automáticamente cuando se detecta <b>movimiento</b>",
             "fr": "Cette porte s'ouvrira automatiquement lorsqu'un <b>mouvement</b> sera détecté",
-            "pl": "Te drzwi automatycznie się otwierają, kiedy zostanie wykryty <b>ruch</b>"
+            "pl": "Te drzwi automatycznie się otwierają, kiedy zostanie wykryty <b>ruch</b>",
+            "ca": "Aquesta porta s'obrirà automàticament quan es detecti <b>moviment</b>"
           }
         },
         {
@@ -324,7 +341,8 @@
             "nl": "De deur gaat automatisch open wanneer <b>een sensor in de vloer</b> wordt geactiveerd",
             "de": "Diese Tür öffnet sich automatisch, wenn ein <b>Sensor im Boden</b> ausgelöst wird",
             "es": "Esta puerta se abre automáticamente cuando se activa un <b>sensor en el suelo</b>",
-            "fr": "Cette porte s'ouvrira automatiquement lorsqu'un <b>capteur au sol</b> est déclenché"
+            "fr": "Cette porte s'ouvrira automatiquement lorsqu'un <b>capteur au sol</b> est déclenché",
+            "ca": "Aquesta porta s'obrirà automàticament quan s'active un <b>sensor al terra</b>"
           }
         },
         {
@@ -334,7 +352,8 @@
             "nl": "De deur gaat open wanneer <b>een knop wordt ingedrukt</b>",
             "de": "Diese Tür öffnet sich automatisch, wenn ein <b>Taster betätigt wird</b>",
             "es": "Esta puerta se abre automáticamente cuando se <b>pulsa un botón</b>",
-            "fr": "Cette porte s'ouvrira automatiquement lorsqu'un <b>bouton est pressé</b>"
+            "fr": "Cette porte s'ouvrira automatiquement lorsqu'un <b>bouton est pressé</b>",
+            "ca": "Aquesta porta s'obrirà automàticament quan es <b>prem un botó</b>"
           }
         },
         {
@@ -344,7 +363,8 @@
             "nl": "De deur draait continue automatisch, maar heeft een <b>knop om te vertragen</b>, bijvoorbeeld voor rolstoelgebruikers",
             "de": "Diese Tür dreht sich durchgehend automatisch, hat aber einen<b>Knopf, um die Drehgeschwindigkeit zu reduzieren</b>, z.B. für Rollstuhlnutzer",
             "es": "Esta puerta gira automáticamente todo el rato, pero tiene un <b>botón para ralentizarla</b>, por ejemplo, para usuarios de sillas de ruedas",
-            "fr": "Cette porte tourne automatiquement tout le temps, mais dispose d'un <b>bouton pour la ralentir</b>, par ex. pour les utilisateurs de fauteuils roulants"
+            "fr": "Cette porte tourne automatiquement tout le temps, mais dispose d'un <b>bouton pour la ralentir</b>, par ex. pour les utilisateurs de fauteuils roulants",
+            "ca": "Aquesta porta gira automàticament tot el temps, però té un <b>botó per a frenar-la</b>, p. e. per a usuaris de cadira de rodes"
           },
           "hideInAnswer": "door!=revolving"
         },
@@ -355,7 +375,8 @@
             "nl": "De deur draait continue automatisch",
             "de": "Diese Tür dreht sich durchgehend automatisch",
             "es": "Esta puerta gira automáticamente todo el rato",
-            "fr": "Cette porte tourne automatiquement tout le temps"
+            "fr": "Cette porte tourne automatiquement tout le temps",
+            "ca": "Aquesta porta gira automàticament tot el temps"
           },
           "hideInAnswer": "door!=revolving"
         },
@@ -377,7 +398,8 @@
             "nl": "De deur wordt geopend door personeel wanneer je het vraagt",
             "de": "Diese Tür wird von Mitarbeitern geöffnet auf Anfrage",
             "es": "Esta puerta la abrirá el personal cuando se pida",
-            "fr": "Cette porte sera ouverte par le personnel sur demande"
+            "fr": "Cette porte sera ouverte par le personnel sur demande",
+            "ca": "Aquesta porta l'obrirà el personal quan es sol·liciti"
           }
         }
       ]
@@ -397,7 +419,8 @@
         "nl": "Wat is de breedte van deze deur/toegang?",
         "de": "Wie breit ist diese Tür bzw. dieser Eingang?",
         "es": "¿Cual es el ancho de esta puerta/entrada?",
-        "fr": "Quelle est la largeur de cette porte/entrée ?"
+        "fr": "Quelle est la largeur de cette porte/entrée ?",
+        "ca": "Quina és l'amplada d'aquesta porta/entrada?"
       },
       "freeform": {
         "key": "width"
@@ -409,13 +432,15 @@
         "en": "What is the height of this kerb?",
         "fr": "Quelle est la hauteur de ce seuil ?",
         "de": "Wie hoch ist die Türschwelle?",
-        "nl": "Hoe hoog is de drempel?"
+        "nl": "Hoe hoog is de drempel?",
+        "ca": "Quina és l'altura d'aquest voral?"
       },
       "render": {
         "en": "The kerb height of this door is {kerb:height}",
         "fr": "La hauteur du seuil de porte de cette porte est {kerb:height}",
         "de": "Die Höhe der Türschwelle ist {kerb:height}",
-        "nl": "De drempel bij deze deur is {kerb:height}"
+        "nl": "De drempel bij deze deur is {kerb:height}",
+        "ca": "L'alçada del voral d'aquesta porta és {kerb:height}"
       },
       "freeform": {
         "key": "kerb:height",
@@ -424,7 +449,8 @@
           "fr": "Hauteur du seuil de porte",
           "de": "Höhe der Türschwelle",
           "nl": "Hoogte van de drempel",
-          "pl": "Wysokość progu w drzwiach"
+          "pl": "Wysokość progu w drzwiach",
+          "ca": "Alçada de la vorada de la porta"
         },
         "type": "pnat"
       },
@@ -436,7 +462,8 @@
             "nl": "Deze deur heeft geen drempel",
             "fr": "Cette porte n'a pas de seuil",
             "de": "Diese Tür hat keine Türschwelle",
-            "pl": "Te drzwi nie mają progu"
+            "pl": "Te drzwi nie mają progu",
+            "ca": "Aquesta porta no té voral"
           }
         }
       ]
@@ -465,7 +492,8 @@
         "en": "an entrance",
         "fr": "une entrée",
         "de": "einen Eingang",
-        "nl": "een toegang"
+        "nl": "een toegang",
+        "ca": "una entrada"
       },
       "tags": [
         "entrance=yes"
@@ -479,7 +507,8 @@
       "title": {
         "en": "an indoor door",
         "de": "eine Innentür",
-        "nl": "een binnendeur"
+        "nl": "een binnendeur",
+        "ca": "una porta interior"
       },
       "tags": [
         "indoor=door"
@@ -509,7 +538,8 @@
             "de": "Meter",
             "nl": "meter",
             "pa_PK": "میٹر",
-            "pl": "metr"
+            "pl": "metr",
+            "ca": "metre"
           }
         },
         {
@@ -524,7 +554,8 @@
             "de": "Zentimeter",
             "nl": "centimeter",
             "pa_PK": "سینٹیمیٹر",
-            "pl": "centrymetr"
+            "pl": "centrymetr",
+            "ca": "centimetre"
           }
         }
       ]

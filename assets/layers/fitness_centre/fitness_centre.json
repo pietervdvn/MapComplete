@@ -20,7 +20,8 @@
     "render": {
       "en": "Fitness Centre",
       "de": "Fitnessstudio",
-      "nl": "Fitness-centrum"
+      "nl": "Fitness-centrum",
+      "ca": "Centre de fitness"
     },
     "mappings": [
       {
@@ -35,14 +36,16 @@
       "question": {
         "en": "What is the name of this fitness centre?",
         "de": "Wie lautet der Name des Fitnessstudios?",
-        "nl": "Wat is de naam van dit fitness-centrum?"
+        "nl": "Wat is de naam van dit fitness-centrum?",
+        "ca": "Quin és el nom d'aquest centre de fitness?"
       },
       "freeform": {
         "key": "name",
         "placeholder": {
           "en": "Name of fitness centre",
           "de": "Name des Fitnessstudios",
-          "nl": "Naam van dit fitness-centrum"
+          "nl": "Naam van dit fitness-centrum",
+          "ca": "Nom del centre de fitness"
         },
         "type": "string"
       },
@@ -52,7 +55,8 @@
           "then": {
             "en": "This fitness centre has no name",
             "de": "Das Fitnessstudio hat keinen Namen",
-            "nl": "Dit fitness-centrum heeft geen naam"
+            "nl": "Dit fitness-centrum heeft geen naam",
+            "ca": "Aquest centre de fitness no té nom"
           }
         }
       ],
@@ -80,7 +84,8 @@
       "title": {
         "en": "a fitness centre",
         "de": "ein Fitnessstudio",
-        "nl": "een fitness-centrum"
+        "nl": "een fitness-centrum",
+        "ca": "un centre de fitness"
       },
       "icon": "./assets/layers/fitness_centre/gym.svg"
     }

@@ -652,7 +652,6 @@
             "ca": "Més informació a aquesta pàgina web"
           }
         }
-       
       },
       "freeform": {
         "key": "website",
@@ -664,7 +663,21 @@
       "id": "artwork-website",
       "labels": [
         "artwork-question"
-      ]
+      ],
+      "pl": {
+        "mappings": {
+          "0": {
+            "then": "To dzieło sztuki pełni również funkcję ławki"
+          },
+          "1": {
+            "then": "To dzieło sztuki nie pełni funkcji ławki"
+          },
+          "2": {
+            "then": "To dzieło sztuki nie pełni funkcji ławki"
+          }
+        },
+        "question": "Czy to dzieło sztuki pełni funkcję ławki?"
+      }
     },
     "wikipedia",
     {
@@ -795,5 +808,15 @@
   ],
   "filter": [
     "has_image"
-  ]
+  ],
+  "pl": {
+    "title": {
+      "mappings": {
+        "0": {
+          "then": "{name}"
+        }
+      },
+      "render": "turbina wiatrowa"
+    }
+  }
 }

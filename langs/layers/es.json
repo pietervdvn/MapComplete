@@ -1857,8 +1857,8 @@
                 "title": "un cruce"
             },
             "1": {
-                "description": "Señal de tráfico en una carretera",
-                "title": "una señal de tráfico"
+                "description": "Semáforo en una carretera",
+                "title": "un semáforo"
             }
         },
         "tagRenderings": {
@@ -1954,7 +1954,7 @@
                         "then": "Cruce, sin semáforos"
                     },
                     "1": {
-                        "then": "Cruce con señales de tráfico"
+                        "then": "Cruce con semáforo"
                     },
                     "2": {
                         "then": "Paso de cebra"
@@ -1969,10 +1969,10 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Señal de tráfico"
+                    "then": "Semáforo"
                 },
                 "1": {
-                    "then": "Cruce con señales de tráfico"
+                    "then": "Cruce con semáforos"
                 }
             },
             "render": "Cruce"
@@ -2406,7 +2406,7 @@
         }
     },
     "elongated_coin": {
-        "description": "Capa mostrando prensas de centavo.",
+        "description": "Capa que muestra prensas de centavos.",
         "name": "Prensas de centavo",
         "presets": {
             "0": {
@@ -2420,14 +2420,14 @@
                 },
                 "mappings": {
                     "0": {
-                        "then": "Cuesta 1 euro para presionar un centavo."
+                        "then": "Cuesta 1 euro prensar un centavo."
                     },
                     "1": {
-                        "then": "Cuesta 2 euros para presionar un centavo."
+                        "then": "Cuesta 2 euros prensa un centavo."
                     }
                 },
-                "question": "¿Cuánto cuesta presionar un centavo?",
-                "render": "Cuesta {charge} para presionar un centavo."
+                "question": "¿Cuánto cuesta prensar un centavo?",
+                "render": "Cuesta {charge} prensar un centavo."
             },
             "coin": {
                 "freeform": {
@@ -2435,23 +2435,23 @@
                 },
                 "mappings": {
                     "0": {
-                        "then": "Esta prensa de centavo utiliza una moneda de 2 centavos para presionar."
+                        "then": "Esta prensa de centavo utiliza una moneda de 2 centavos para prensar."
                     },
                     "1": {
-                        "then": "Esta prensa de centavo utiliza una moneda de 5 centavos para presionar."
+                        "then": "Esta prensa de centavo utiliza una moneda de 5 centavos para prensar."
                     },
                     "2": {
-                        "then": "Esta prensa de centavo utiliza una moneda de 10 centavos para presionar."
+                        "then": "Esta prensa de centavo utiliza una moneda de 10 centavos para prensar."
                     },
                     "3": {
-                        "then": "Esta prensa de centavo utiliza una moneda de 25 centavos para presionar."
+                        "then": "Esta prensa de centavo utiliza una moneda de 25 centavos para prensar."
                     },
                     "4": {
-                        "then": "Esta prensa de centavo utiliza una moneda de 50 centavos para presionar."
+                        "then": "Esta prensa de centavo utiliza una moneda de 50 centavos para prensar."
                     }
                 },
-                "question": "Qué moneda se utiliza para presionar?",
-                "render": "Esta prensa de centavo utiliza una moneda {coin:type} para presionar."
+                "question": "Qué moneda se utiliza para prensar?",
+                "render": "Esta prensa de centavo utiliza una moneda {coin:type} para prensar."
             },
             "designs": {
                 "freeform": {
@@ -2471,7 +2471,7 @@
                         "then": "Esta prensa tiene cuatro diseños disponibles."
                     }
                 },
-                "question": "Cuántos diseños son disponibles?",
+                "question": "Cuántos diseños hay disponibles?",
                 "render": "Esta prensa tiene {coin:design_count} diseños disponibles."
             },
             "indoor": {
@@ -2506,7 +2506,7 @@
                         "then": "Una puerta giratoria que cuelga de un eje central y que rota dentro de una carcasa cilíndrica"
                     },
                     "3": {
-                        "then": "Una puerta corredera donde las hojas se deslizan de lado a lado, típicamente con una pared"
+                        "then": "Una puerta corredera donde la puerta se desliza hacia un lado, generalmente paralela a una pared"
                     },
                     "5": {
                         "then": "Esta es una entrada sin una puerta física"
