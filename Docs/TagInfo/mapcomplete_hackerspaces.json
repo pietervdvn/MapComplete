@@ -1,0 +1,183 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Hackerspaces",
+    "description": "A map of hackerspaces",
+    "project_url": "https://mapcomplete.org/hackerspaces",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/themes/hackerspaces/glider.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Hackerspaces has a layer Hackerspace showing features with this tag",
+      "value": "hackerspace"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Hackerspace' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Hackerspaces') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Hackerspace allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Hackerspace allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Hackerspace allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Hackerspace allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "hackerspace",
+      "description": "Layer 'Hackerspace' shows hackerspace=makerspace with a fixed text, namely 'This is a makerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces')",
+      "value": "makerspace"
+    },
+    {
+      "key": "hackerspace",
+      "description": "Layer 'Hackerspace' shows  with a fixed text, namely 'This is a traditional (software oriented) hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces') Picking this answer will delete the key hackerspace.",
+      "value": ""
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Hackerspaces')"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Hackerspaces')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Hackerspace' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Hackerspaces')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Hackerspace' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Hackerspace' shows  with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Hackerspaces') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Hackerspace' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Hackerspace' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces')",
+      "value": "-1"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Hackerspaces')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Hackerspace' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Hackerspaces')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Hackerspaces')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Hackerspace' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Hackerspaces')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Hackerspaces')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Hackerspace' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Hackerspaces')"
+    },
+    {
+      "key": "contact:mastodon",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'contact:mastodon' (in the mapcomplete.org theme 'Hackerspaces')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Hackerspaces')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Hackerspace' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces')",
+      "value": "24/7"
+    },
+    {
+      "key": "service:3dprinter",
+      "description": "Layer 'Hackerspace' shows service:3dprinter=yes with a fixed text, namely 'There is a 3D-printer available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces')",
+      "value": "yes"
+    },
+    {
+      "key": "service:3dprinter",
+      "description": "Layer 'Hackerspace' shows service:3dprinter=no with a fixed text, namely 'There is no 3D-printer available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces')",
+      "value": "no"
+    },
+    {
+      "key": "service:lasercutter",
+      "description": "Layer 'Hackerspace' shows service:lasercutter=yes with a fixed text, namely 'There is a laser cutter available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces')",
+      "value": "yes"
+    },
+    {
+      "key": "service:lasercutter",
+      "description": "Layer 'Hackerspace' shows service:lasercutter=no with a fixed text, namely 'There is no laser cutter available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces')",
+      "value": "no"
+    },
+    {
+      "key": "service:cnc_drilling_machine",
+      "description": "Layer 'Hackerspace' shows service:cnc_drilling_machine=yes with a fixed text, namely 'There is a CNC drill available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces')",
+      "value": "yes"
+    },
+    {
+      "key": "service:cnc_drilling_machine",
+      "description": "Layer 'Hackerspace' shows service:cnc_drilling_machine=no with a fixed text, namely 'There is no CNC drill available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces')",
+      "value": "no"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Hackerspace' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces')",
+      "value": "designated"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Hackerspace' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Hackerspace' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces')",
+      "value": "limited"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Hackerspace' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces')",
+      "value": "no"
+    },
+    {
+      "key": "drink:club-mate",
+      "description": "Layer 'Hackerspace' shows drink:club-mate=yes with a fixed text, namely 'This hackerspace serves Club-Mate' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces')",
+      "value": "yes"
+    },
+    {
+      "key": "drink:club-mate",
+      "description": "Layer 'Hackerspace' shows drink:club-mate=no with a fixed text, namely 'This hackerspace does not serve Club-Mate' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces')",
+      "value": "no"
+    },
+    {
+      "key": "start_date",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'start_date' (in the mapcomplete.org theme 'Hackerspaces')"
+    }
+  ]
+}

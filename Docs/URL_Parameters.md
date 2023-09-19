@@ -355,7 +355,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  Wether or not the layer with id <layer-id> is shown
 
-This documentation is defined in the source code at [QueryParameterDocumentation.ts](/src/UI/QueryParameterDocumentation.ts#L53)
+This documentation is defined in the source code at [QueryParameterDocumentation.ts](/src/UI/QueryParameterDocumentation.ts#L59)
 
  The default value is _true_ 
 

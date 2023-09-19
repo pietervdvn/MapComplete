@@ -640,17 +640,12 @@ way_to_conflate | _undefined_ | The key, of which the corresponding value is the
 
 name | default | description
 ------ | --------- | -------------
-mode | expandable | Indicates how this component is initialized. Options are: 
-
-- `open`: always show and load the pictures
-- `collapsable`: show the pictures, but a user can collapse them
-- `expandable`: shown by default; but a user can collapse them.
-mapillary | true | If 'true', includes a link to mapillary on this location.
+mode | closed | Either `open` or `closed`. If `open`, then the image carousel will always be shown
  
 
 #### Example usage of nearby_images 
 
- `{nearby_images(expandable,true)}`
+ `{nearby_images(closed)}`
 
 
 
@@ -984,7 +979,7 @@ button_text | _undefined_ | The text shown on the button in the UI
 
 ### link 
 
- Construct a link. By using the 'special' visualisation notation, translation should be easier 
+ Construct a link. By using the 'special' visualisation notation, translations should be easier 
 
 name | default | description
 ------ | --------- | -------------

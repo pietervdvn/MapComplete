@@ -46,14 +46,15 @@
     + [opening_hours_by_appointment](#opening_hours_by_appointment)
     + [multilevels](#multilevels)
     + [induction-loop](#induction-loop)
+    + [payment-options-split](#payment-options-split)
+    + [denominations-coins](#denominations-coins)
+    + [check_date](#check_date)
     + [all_tags](#all_tags)
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
     + [minimap](#minimap)
     + [mastodon](#mastodon)
     + [contact](#contact)
-    + [payment-options-split](#payment-options-split)
-    + [denominations-coins](#denominations-coins)
     + [denominations-notes](#denominations-notes)
     + [survey_date](#survey_date)
     + [id_presets.shop_types](#id_presetsshop_types)
@@ -114,6 +115,7 @@
   - dogpark
   - drinking_water
   - elevator
+  - elongated_coin
   - entrance
   - extinguisher
   - fire_station
@@ -267,6 +269,7 @@
   - climbing_gym
   - dentist
   - doctors
+  - elongated_coin
   - fitness_centre
   - food
   - governments
@@ -413,6 +416,7 @@
   - bike_repair_station
   - charging_station
   - defibrillator
+  - elongated_coin
   - fitness_station
   - hackerspace
   - parcel_lockers
@@ -432,6 +436,7 @@
   - bike_repair_station
   - cafe_pub
   - charging_station
+  - elongated_coin
   - entrance
   - fitness_centre
   - food
@@ -745,6 +750,47 @@
 
 
 
+### payment-options-split 
+
+
+
+
+
+  - elongated_coin
+  - parking_ticket_machine
+  - shower
+  - ticket_machine
+  - toilet
+  - vending_machine
+
+
+
+
+### denominations-coins 
+
+
+
+
+
+  - elongated_coin
+  - parking_ticket_machine
+  - ticket_machine
+  - vending_machine
+
+
+
+
+### check_date 
+
+
+
+
+
+  - elongated_coin
+
+
+
+
 ### all_tags 
 
 
@@ -807,34 +853,6 @@
 
 
   - hospital
-
-
-
-
-### payment-options-split 
-
-
-
-
-
-  - parking_ticket_machine
-  - shower
-  - ticket_machine
-  - toilet
-  - vending_machine
-
-
-
-
-### denominations-coins 
-
-
-
-
-
-  - parking_ticket_machine
-  - ticket_machine
-  - vending_machine
 
 
 
