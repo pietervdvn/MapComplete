@@ -1,5 +1,4 @@
 import colors from "./assets/colors.json"
-import { HTMLElement } from "node-html-parser"
 
 export class Utils {
     /**
@@ -236,7 +235,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     public static TimesT<T>(count: number, f: (i: number) => T): T[] {
-        let res: T[] = []
+        const res: T[] = []
         for (let i = 0; i < count; i++) {
             res.push(f(i))
         }
@@ -443,6 +442,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * Utils.SubstituteKeys("abc{def}ghi", {def: 'XYZ'}) // => "abcXYZghi"
      * Utils.SubstituteKeys("abc{def}{def}ghi", {def: 'XYZ'}) // => "abcXYZXYZghi"
      * Utils.SubstituteKeys("abc{def}ghi", {def: '{XYZ}'}) // => "abc{XYZ}ghi"
+     * Utils.SubstituteKeys("abc\n\n{def}ghi", {def: '{XYZ}'}) // => "abc\n\n{XYZ}ghi"
      *
      * @param txt
      * @param tags
@@ -457,7 +457,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         if (txt === undefined) {
             return undefined
         }
-        const regex = /(.*?){([^}]*)}(.*)/
+        const regex = /(.*?){([^}]*)}(.*)/s
 
         let match = txt.match(regex)
 
@@ -490,7 +490,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                         "\nThe value is",
                         v
                     )
-                    v = (<HTMLElement>v.InnerConstructElement())?.textContent
+                    v = v.InnerConstructElement()?.textContent
                 }
 
                 if (typeof v !== "string") {
@@ -829,7 +829,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     static getOrSetDefault<K, V>(dict: Map<K, V>, k: K, v: () => V) {
-        let found = dict.get(k)
+        const found = dict.get(k)
         if (found !== undefined) {
             return found
         }
@@ -850,7 +850,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             if (i >= 124) {
                 code += 1 // Character 127 is our 'escape' character |
             }
-            let replacement = "|" + String.fromCharCode(code)
+            const replacement = "|" + String.fromCharCode(code)
             stringified = stringified.replace(new RegExp(`\"${knownKey}\":`, "g"), replacement)
         }
 
@@ -1127,7 +1127,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         seconds = seconds % 60
         let hours = Math.floor(minutes / 60)
         minutes = minutes % 60
-        let days = Math.floor(hours / 24)
+        const days = Math.floor(hours / 24)
         hours = hours % 24
         if (days > 0) {
             return days + "days" + " " + hours + "h"
@@ -1290,7 +1290,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
         for (const k in d) {
             const vs = d[k]
-            for (let v of vs) {
+            for (const v of vs) {
                 const list = newD[v]
                 if (list === undefined) {
                     newD[v] = [k] // Left: indexing; right: list with one element
@@ -1312,7 +1312,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
 
         function componentToHex(n) {
-            let hex = n.toString(16)
+            const hex = n.toString(16)
             return hex.length == 1 ? "0" + hex : hex
         }
 
@@ -1431,8 +1431,8 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             return false
         }
         for (let i = 0; i < a.length; i++) {
-            let ai = a[i]
-            let bi = b[i]
+            const ai = a[i]
+            const bi = b[i]
             if (ai == bi) {
                 continue
             }
@@ -1526,7 +1526,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         if (matchWithFuncName) {
             ;[_, functionName, path, line, column] = matchWithFuncName
         } else {
-            let regexNoFuncName: RegExp = new RegExp("at ([a-zA-Z0-9/.]+):([0-9]+):([0-9]+)")
+            const regexNoFuncName: RegExp = new RegExp("at ([a-zA-Z0-9/.]+):([0-9]+):([0-9]+)")
             ;[_, path, line, column] = stackItem.match(regexNoFuncName)
         }
 

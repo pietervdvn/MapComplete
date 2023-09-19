@@ -73,7 +73,7 @@ export class ImageUploadFlow extends Toggle {
         ]).SetClass("w-full flex justify-center items-center")
 
         const licenseStore = state?.osmConnection?.GetPreference(
-            Constants.OsmPreferenceKeyPicturesLicense,
+            "pictures-license",
             "CC0"
         )
 

@@ -85,12 +85,7 @@
         "addPicture": "تصویر پایو",
         "doDelete": "تصویر ہٹاؤ",
         "dontDelete": "رد کرو",
-        "isDeleted": "مٹائی گئی",
-        "nearbyPictures": {
-            "browseNearby": "نیڑے تیڑے تے تصویراں ویکھو۔ ۔ ۔",
-            "loadMore": "ہور تصویراں لوڈ کرو",
-            "title": "نیڑے تیڑے تے تصویراں"
-        }
+        "isDeleted": "مٹائی گئی"
     },
     "move": {
         "cancel": "چلݨ رد کرو"

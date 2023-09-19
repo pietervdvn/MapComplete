@@ -439,13 +439,19 @@
     },
     {
       "render": {
-        "en": "More info on <a href='{website}' target='_blank'>the website</a>",
-        "nl": "Meer info op <a href='{website}' target='_blank'>de website</a>",
-        "de": "Weitere Informationen auf <a href='{website}' target='_blank'>der Webseite</a>",
-        "fr": "Plus d'infos sur <a href='{website}' target='_blank'>le site web</a>",
-        "ru": "Более подробная информация <a href='{website}' target='_blank'>на сайте</a>",
-        "it": "Maggiori informazioni sul <a href='{website}' target='_blank'>sito web</a>",
-        "hu": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>"
+        "special": {
+          "type": "link",
+          "href": "{website}",
+          "text": {
+            "en": "More info on the website",
+            "nl": "Meer info op de website",
+            "de": "Weitere Informationen auf der Webseite",
+            "fr": "Plus d'infos sur le site web",
+            "ru": "Более подробная информация на сайте",
+            "it": "Maggiori informazioni sul sito web",
+            "hu": "További információ ezen a weboldalon"
+          }
+        }
       },
       "question": {
         "en": "Is there a website with more information about this public bookcase?",

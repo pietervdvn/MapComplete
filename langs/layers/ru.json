@@ -117,7 +117,11 @@
             },
             "artwork-website": {
                 "question": "Есть ли сайт с более подробной информацией об этой работе?",
-                "render": "Больше информации на <a href='{website}' target='_blank'>этом сайте</a>"
+                "render": {
+                    "special": {
+                        "text": "Больше информации на этом сайте"
+                    }
+                }
             }
         },
         "title": {
@@ -996,7 +1000,11 @@
                 "render": "В знак памяти о {subject}"
             },
             "ghost_bike-source": {
-                "render": "<a href='{source}' target='_blank'>Доступна более подробная информация</a>"
+                "render": {
+                    "special": {
+                        "text": "Доступна более подробная информация"
+                    }
+                }
             },
             "ghost_bike-start_date": {
                 "render": "Установлен {start_date}"
@@ -1295,13 +1303,6 @@
             }
         }
     },
-    "nature_reserve": {
-        "tagRenderings": {
-            "Email": {
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
-            }
-        }
-    },
     "observation_tower": {
         "name": "Смотровые башни",
         "title": {
@@ -1515,7 +1516,11 @@
             },
             "public_bookcase-website": {
                 "question": "Есть ли веб-сайт с более подробной информацией об этом общественном книжном шкафе?",
-                "render": "Более подробная информация <a href='{website}' target='_blank'>на сайте</a>"
+                "render": {
+                    "special": {
+                        "text": "Более подробная информация на сайте"
+                    }
+                }
             }
         },
         "title": {

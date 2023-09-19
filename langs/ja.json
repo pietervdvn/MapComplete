@@ -138,7 +138,6 @@
         "doDelete": "イメージの削除",
         "dontDelete": "[キャンセル]",
         "isDeleted": "削除済み",
-        "nearbyPictures": {},
         "pleaseLogin": "写真を追加するにはログインしてください",
         "respectPrivacy": "人やナンバープレートを撮影しないでください。Googleマップ、Google Streetview、その他著作権で保護された情報源をアップロードしないでください。",
         "uploadDone": "<span class=\"thanks\">あなたの写真が追加されました。ご協力ありがとうございます!</span>",

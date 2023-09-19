@@ -268,13 +268,6 @@
         "doDelete": "Usuń ilustrację",
         "dontDelete": "Anuluj",
         "isDeleted": "Usunięte",
-        "nearbyPictures": {
-            "browseNearby": "Przeglądaj zdjęcia w pobliżu…",
-            "loadMore": "Załaduj więcej zdjęć",
-            "loading": "Wczytywanie obrazów w pobliżu…",
-            "nothingFound": "Nie znaleziono zdjęć w pobliżu…",
-            "removeFilters": "Kliknij tutaj, aby usunąć filtry"
-        },
         "pleaseLogin": "Zaloguj się, by dodać zdjęcie",
         "respectPrivacy": "Nie fotografuj ludzi i tablic rejestracyjnych. Nie wysyłaj także treści z Google Maps, Google Streetview ani innych licencjonowanych źródeł.",
         "uploadDone": "Twoje zdjęcie zostało dodane. Dzięki za pomoc!",

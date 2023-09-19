@@ -15,7 +15,7 @@
       "id": "images",
       "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
       "render": {
-        "*": "{image_carousel()}{image_upload()}"
+        "*": "{image_carousel()}{image_upload()}{nearby_images()}"
       }
     },
     {
@@ -209,7 +209,7 @@
     {
       "id": "osmlink",
       "render": {
-        "*": "<a href='https://openstreetmap.org/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>"
+        "*": "<a href='https://openstreetmap.org/{id}' target='_blank' rel='noopener'F><img src='./assets/svg/osm-logo-us.svg'/></a>"
       },
       "mappings": [
         {
@@ -221,7 +221,7 @@
     {
       "id": "email",
       "render": {
-        "*": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+        "*": "<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>"
       },
       "icon": "./assets/svg/envelope.svg",
       "labels": [
@@ -256,7 +256,7 @@
         {
           "if": "contact:email~*",
           "icon": "./assets/svg/envelope.svg",
-          "then": "<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>",
+          "then": "<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>",
           "hideInAnswer": true
         }
       ],
@@ -1127,7 +1127,8 @@
           },
           {
             "or": [
-              "_currency=EUR"
+              "_currency~.*EUR.*",
+              "_currency~.*CHF.*"
             ]
           }
         ]
@@ -1147,7 +1148,7 @@
       "mappings": [
         {
           "if": "payment:coins:denominations=0.01 EUR",
-          "icon": "./assets/layers/questions/1cent.svg",
+          "icon": "./assets/layers/questions/denominations/eur/1cent.svg",
           "then": {
             "en": "1 cent coins are accepted",
             "de": "1-Cent-Münzen werden akzeptiert",
@@ -1164,7 +1165,7 @@
         },
         {
           "if": "payment:coins:denominations=0.02 EUR",
-          "icon": "./assets/layers/questions/2cent.svg",
+          "icon": "./assets/layers/questions/denominations/eur/2cent.svg",
           "then": {
             "en": "2 cent coins are accepted",
             "de": "2-Cent-Münzen werden akzeptiert",
@@ -1181,7 +1182,7 @@
         },
         {
           "if": "payment:coins:denominations=0.05 EUR",
-          "icon": "./assets/layers/questions/5cent.svg",
+          "icon": "./assets/layers/questions/denominations/eur/5cent.svg",
           "then": {
             "en": "5 cent coins are accepted",
             "de": "5-Cent-Münzen werden akzeptiert",
@@ -1198,7 +1199,7 @@
         },
         {
           "if": "payment:coins:denominations=0.10 EUR",
-          "icon": "./assets/layers/questions/10cent.svg",
+          "icon": "./assets/layers/questions/denominations/eur/10cent.svg",
           "then": {
             "en": "10 cent coins are accepted",
             "de": "10-Cent-Münzen werden akzeptiert",
@@ -1215,7 +1216,7 @@
         },
         {
           "if": "payment:coins:denominations=0.20 EUR",
-          "icon": "./assets/layers/questions/20cent.svg",
+          "icon": "./assets/layers/questions/denominations/eur/20cent.svg",
           "then": {
             "en": "20 cent coins are accepted",
             "de": "20-Cent-Münzen werden akzeptiert",
@@ -1232,7 +1233,7 @@
         },
         {
           "if": "payment:coins:denominations=0.50 EUR",
-          "icon": "./assets/layers/questions/50cent.svg",
+          "icon": "./assets/layers/questions/denominations/eur/50cent.svg",
           "then": {
             "en": "50 cent coins are accepted",
             "de": "50-Cent-Münzen werden akzeptiert",
@@ -1249,7 +1250,7 @@
         },
         {
           "if": "payment:coins:denominations=1 EUR",
-          "icon": "./assets/layers/questions/1euro.svg",
+          "icon": "./assets/layers/questions/denominations/eur/1euro.svg",
           "then": {
             "en": "1 euro coins are accepted",
             "de": "1-Euro-Münzen werden akzeptiert",
@@ -1265,7 +1266,7 @@
         },
         {
           "if": "payment:coins:denominations=2 EUR",
-          "icon": "./assets/layers/questions/2euro.svg",
+          "icon": "./assets/layers/questions/denominations/eur/2euro.svg",
           "then": {
             "en": "2 euro coins are accepted",
             "de": "2-Euro-Münzen werden akzeptiert",
@@ -1278,6 +1279,69 @@
             "cs": "Jsou přijímány mince v hodnotě 2 euro"
           },
           "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:coins:denominations=0.05 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/5rp-2019-800px.png",
+          "then": {
+            "en": "5 centimes coins are accepted",
+            "nl": "Munten van 5 rappen worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:coins:denominations=0.10 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/10rp-2019-800px.png",
+          "then": {
+            "en": "10 centimes coins are accepted",
+            "nl": "Munten van 10 rappen worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:coins:denominations=0.20 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/20rp-2019-800px.png",
+          "then": {
+            "en": "20 centimes coins are accepted",
+            "nl": "Munten van 20 rappen worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:coins:denominations=0.50 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/50rp-2019-800px.png",
+          "then": {
+            "en": "½ franc coins are accepted",
+            "nl": "Munten van ½ frank worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:coins:denominations=1 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/1fr-2019-800px.png",
+          "then": {
+            "en": "1 franc coins are accepted",
+            "nl": "Munten van 1 frank worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:coins:denominations=2 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/2fr-2019-800px.png",
+          "then": {
+            "en": "2 francs coins are accepted",
+            "nl": "Munten van 2 frank worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:coins:denominations=5 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/5fr-2019-800px.png",
+          "then": {
+            "en": "5 francs coins are accepted",
+            "nl": "Munten van 5 frank worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
         }
       ]
     },
@@ -1293,7 +1357,8 @@
           },
           {
             "or": [
-              "_currency=EUR"
+              "_currency~.*EUR.*",
+              "_currency~.*CHF.*"
             ]
           }
         ]
@@ -1312,7 +1377,7 @@
       "mappings": [
         {
           "if": "payment:notes:denominations=5 EUR",
-          "icon": "./assets/layers/questions/5euro.svg",
+          "icon": "./assets/layers/questions/denominations/eur/5euro.svg",
           "then": {
             "en": "5 euro notes are accepted",
             "nl": "Biljetten van 5 euro worden geaccepteerd",
@@ -1327,7 +1392,7 @@
         },
         {
           "if": "payment:notes:denominations=10 EUR",
-          "icon": "./assets/layers/questions/10euro.svg",
+          "icon": "./assets/layers/questions/denominations/eur/10euro.svg",
           "then": {
             "en": "10 euro notes are accepted",
             "nl": "Biljetten van 10 euro worden geaccepteerd",
@@ -1342,7 +1407,7 @@
         },
         {
           "if": "payment:notes:denominations=20 EUR",
-          "icon": "./assets/layers/questions/20euro.svg",
+          "icon": "./assets/layers/questions/denominations/eur/20euro.svg",
           "then": {
             "en": "20 euro notes are accepted",
             "nl": "Biljetten van 20 euro worden geaccepteerd",
@@ -1357,7 +1422,7 @@
         },
         {
           "if": "payment:notes:denominations=50 EUR",
-          "icon": "./assets/layers/questions/50euro.svg",
+          "icon": "./assets/layers/questions/denominations/eur/50euro.svg",
           "then": {
             "en": "50 euro notes are accepted",
             "nl": "Biljetten van 50 euro worden geaccepteerd",
@@ -1372,7 +1437,7 @@
         },
         {
           "if": "payment:notes:denominations=100 EUR",
-          "icon": "./assets/layers/questions/100euro.svg",
+          "icon": "./assets/layers/questions/denominations/eur/100euro.svg",
           "then": {
             "en": "100 euro notes are accepted",
             "nl": "Biljetten van 100 euro worden geaccepteerd",
@@ -1387,7 +1452,7 @@
         },
         {
           "if": "payment:notes:denominations=200 EUR",
-          "icon": "./assets/layers/questions/200euro.svg",
+          "icon": "./assets/layers/questions/denominations/eur/200euro.svg",
           "then": {
             "en": "200 euro notes are accepted",
             "nl": "Biljetten van 200 euro worden geaccepteerd",
@@ -1402,7 +1467,7 @@
         },
         {
           "if": "payment:notes:denominations=500 EUR",
-          "icon": "./assets/layers/questions/500euro.svg",
+          "icon": "./assets/layers/questions/denominations/eur/500euro.svg",
           "then": {
             "en": "500 euro notes are accepted",
             "nl": "Biljetten van 500 euro worden geaccepteerd",
@@ -1414,6 +1479,60 @@
             "fr": "Les billets de 500 euros sont acceptés"
           },
           "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:notes:denominations=10 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/10chf.svg",
+          "then": {
+            "en": "10 francs notes are accepted",
+            "nl": "Biljetten van 10 frank worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:notes:denominations=20 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/20chf.svg",
+          "then": {
+            "en": "20 francs notes are accepted",
+            "nl": "Biljetten van 20 frank worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:notes:denominations=50 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/50chf.svg",
+          "then": {
+            "en": "50 francs notes are accepted",
+            "nl": "Biljetten van 50 frank worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:notes:denominations=100 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/100chf.svg",
+          "then": {
+            "en": "100 francs notes are accepted",
+            "nl": "Biljetten van 100 frank worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:notes:denominations=200 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/200chf.svg",
+          "then": {
+            "en": "200 francs notes are accepted",
+            "nl": "Biljetten van 200 frank worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:notes:denominations=1000 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/1000chf.svg",
+          "then": {
+            "en": "1000 francs notes are accepted",
+            "nl": "Biljetten van 1000 frank worden geaccepteerd"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
         }
       ]
     },

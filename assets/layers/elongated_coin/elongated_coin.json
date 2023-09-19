@@ -84,7 +84,50 @@
         }
       ]
     },
-    "payment-options-split",
+    {
+      "id": "fee",
+      "question": {
+        "en": "Does it cost money to press a penny?"
+      },
+      "mappings": [
+        {
+          "if": "fee=",
+          "then": {
+            "en": "It costs money to press a penny."
+          }
+        },
+        {
+          "if": "fee=yes",
+          "then": {
+            "en": "It costs money to press a penny."
+          }
+        },
+        {
+          "if": "fee=no",
+          "then": {
+            "en": "It is free to press a penny."
+          },
+          "addExtraTags": [
+            "payment:qr_code=",
+            "payment:coins=",
+            "payment:notes=",
+            "payment:debit_cards=",
+            "payment:credit_cards="
+          ]
+        }
+      ]
+    },
+    {
+      "builtin": "payment-options-split",
+      "override": {
+        "condition": {
+          "or": [
+            "fee=yes",
+            "fee="
+          ]
+        }
+      }
+    },
     {
       "id": "coin",
       "question": {
@@ -109,6 +152,12 @@
             "en": "This penny press uses a 2 cent coin for pressing.",
             "de": "Die Münzpresse benötigt eine 2 Cent Münze um zu Pressen.",
             "es": "Esta prensa de centavo utiliza una moneda de 2 centavos para presionar."
+          },
+          "hideInAnswer": {
+            "and": [
+              "_currency!~.*EUR.*",
+              "_currency!~.*USD.*"
+            ]
           }
         },
         {
@@ -117,6 +166,12 @@
             "en": "This penny press uses a 5 cent coin for pressing.",
             "de": "Die Münzpresse benötigt eine 5 Cent Münze um zu Pressen.",
             "es": "Esta prensa de centavo utiliza una moneda de 5 centavos para presionar."
+          },
+          "hideInAnswer": {
+            "and": [
+              "_currency!~.*EUR.*",
+              "_currency!~.*USD.*"
+            ]
           }
         },
         {
@@ -125,6 +180,12 @@
             "en": "This penny press uses a 10 cent coin for pressing.",
             "de": "Die Münzpresse benötigt eine 10 Cent Münze um zu Pressen.",
             "es": "Esta prensa de centavo utiliza una moneda de 10 centavos para presionar."
+          },
+          "hideInAnswer": {
+            "and": [
+              "_currency!~.*EUR.*",
+              "_currency!~.*USD.*"
+            ]
           }
         },
         {
@@ -144,6 +205,20 @@
             "es": "Esta prensa de centavo utiliza una moneda de 50 centavos para presionar."
           },
           "hideInAnswer": "_currency!~.*USD.*"
+        },
+        {
+          "if": "coin:type=10centimes",
+          "then": {
+            "en": "This penny press uses a 10 centimes coin for pressing."
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "coin:type=20centimes",
+          "then": {
+            "en": "This penny press uses a 20 centimes coin for pressing."
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
         }
       ],
       "render": {
@@ -155,6 +230,12 @@
     "website",
     {
       "id": "charge",
+      "condition": {
+        "or": [
+          "fee=yes",
+          "fee="
+        ]
+      },
       "question": {
         "en": "How much does it cost to press a penny?",
         "de": "Wieviel kostet es eine Münze zu Pressen?",
@@ -187,6 +268,20 @@
             "es": "Cuesta 2 euros para presionar un centavo."
           },
           "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "charge=2 CHF",
+          "then": {
+            "en": "It costs 2 Swiss francs to press a penny."
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "charge=1 CHF",
+          "then": {
+            "en": "It costs 1 Swiss franc to press a penny."
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
         }
       ],
       "render": {

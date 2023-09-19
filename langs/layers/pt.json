@@ -233,7 +233,11 @@
             },
             "artwork-website": {
                 "question": "Existe um site com mais informações sobre esta obra de arte?",
-                "render": "Mais informações <a href='{website}' target='_blank'>neste site</a>"
+                "render": {
+                    "special": {
+                        "text": "Mais informações neste site"
+                    }
+                }
             },
             "artwork_subject": {
                 "question": "O que esta obra de arte representa?",

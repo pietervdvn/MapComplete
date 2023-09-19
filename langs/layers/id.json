@@ -81,7 +81,11 @@
             },
             "artwork-website": {
                 "question": "Adakah situs web mengenai informasi lebih lanjut tentang karya seni ini?",
-                "render": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini"
+                "render": {
+                    "special": {
+                        "text": "Info lanjut tersedia di laman web ini"
+                    }
+                }
             }
         },
         "title": {
@@ -341,7 +345,11 @@
                 "render": "<i>{inscription}</i>"
             },
             "ghost_bike-source": {
-                "render": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>"
+                "render": {
+                    "special": {
+                        "text": "Informasi lanjut tersedia"
+                    }
+                }
             }
         }
     },
@@ -362,13 +370,6 @@
                 "label": {
                     "render": "Klik di sini untuk menambahkan item baru"
                 }
-            }
-        }
-    },
-    "nature_reserve": {
-        "tagRenderings": {
-            "Email": {
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             }
         }
     },

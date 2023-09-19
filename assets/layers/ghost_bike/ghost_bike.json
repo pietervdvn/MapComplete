@@ -186,14 +186,20 @@
         "ca": "En quina pàgina web es pot trobar més informació sobre la bicicleta blanca o l'accident?"
       },
       "render": {
-        "en": "<a href='{source}' target='_blank'>More info available</a>",
-        "nl": "<a href='{source}' target='_blank'>Meer informatie</a>",
-        "de": "<a href='{source}' target='_blank'>Mehr Informationen</a>",
-        "it": "<a href='{source}' target='_blank'>Sono disponibili ulteriori informazioni</a>",
-        "ru": "<a href='{source}' target='_blank'>Доступна более подробная информация</a>",
-        "fr": "<a href='{source}' target='_blank'>Plus d'informations sont disponibles</a>",
-        "id": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>",
-        "ca": "<a href='{source}' target='_blank'>Més informació disponible</a>"
+        "special": {
+          "type": "link",
+          "href": "{source}",
+          "text": {
+            "en": "More info available",
+            "nl": "Meer informatie",
+            "de": "Mehr Informationen",
+            "it": "Sono disponibili ulteriori informazioni",
+            "ru": "Доступна более подробная информация",
+            "fr": "Plus d'informations sont disponibles",
+            "id": "Informasi lanjut tersedia",
+            "ca": "Més informació disponible"
+          }
+        }
       },
       "freeform": {
         "type": "url",

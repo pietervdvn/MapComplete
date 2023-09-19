@@ -300,17 +300,6 @@
         "doDelete": "Fjern bilde",
         "dontDelete": "Avbryt",
         "isDeleted": "Slettet",
-        "nearbyPictures": {
-            "allFiltered": "Ingen bilder samsvarte",
-            "browseNearby": "Utforsk bilder i nærheten …",
-            "confirm": "Valgt bilde viser {title()}",
-            "loadMore": "Last inn flere bilder",
-            "loading": "Laster inn bilder i nærheten …",
-            "noImageSelected": "Velg et bilde for å knytte det til objektet",
-            "nothingFound": "Fant ingen bilder i nærheten …",
-            "removeFilters": "Klikk her for å fjerne filterne",
-            "title": "Bilder i nærheten"
-        },
         "pleaseLogin": "Logg inn for å legge til et bilde",
         "respectPrivacy": "Ikke ta bilder av folk eller bilskilt. Ikke last opp Google Maps, Google Streetview eller andre opphavsrettsbeskyttede kilder.",
         "toBig": "Bildet ditt på {actual_size} er for stort. Det kan maksimalt være {max_size}.",

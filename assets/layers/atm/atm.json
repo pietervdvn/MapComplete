@@ -290,27 +290,8 @@
           },
           {
             "or": [
-              "_country=",
-              "_country=at",
-              "_country=be",
-              "_country=cy",
-              "_country=de",
-              "_country=ee",
-              "_country=es",
-              "_country=fi",
-              "_country=fr",
-              "_country=gr",
-              "_country=hr",
-              "_country=ie",
-              "_country=it",
-              "_country=lt",
-              "_country=lu",
-              "_country=lv",
-              "_country=mt",
-              "_country=nl",
-              "_country=pt",
-              "_country=si",
-              "_country=sk"
+              "_currency=",
+              "_currency~.*EUR.*"
             ]
           }
         ]
@@ -329,7 +310,7 @@
       "mappings": [
         {
           "if": "cash_out:notes:denominations=5 EUR",
-          "icon": "./assets/layers/questions/5euro.svg",
+          "icon": "./assets/layers/questions/denominations/eur/5euro.svg",
           "then": {
             "en": "5 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 5 euro afhalen",
@@ -341,7 +322,7 @@
         },
         {
           "if": "cash_out:notes:denominations=10 EUR",
-          "icon": "./assets/layers/questions/10euro.svg",
+          "icon": "./assets/layers/questions/denominations/eur/10euro.svg",
           "then": {
             "en": "10 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 10 euro afhalen",
@@ -353,7 +334,7 @@
         },
         {
           "if": "cash_out:notes:denominations=20 EUR",
-          "icon": "./assets/layers/questions/20euro.svg",
+          "icon": "./assets/layers/questions/denominations/eur/20euro.svg",
           "then": {
             "en": "20 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 20 euro afhalen",
@@ -365,7 +346,7 @@
         },
         {
           "if": "cash_out:notes:denominations=50 EUR",
-          "icon": "./assets/layers/questions/50euro.svg",
+          "icon": "./assets/layers/questions/denominations/eur/50euro.svg",
           "then": {
             "en": "50 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 50 euro afhalen",
@@ -377,7 +358,7 @@
         },
         {
           "if": "cash_out:notes:denominations=100 EUR",
-          "icon": "./assets/layers/questions/100euro.svg",
+          "icon": "./assets/layers/questions/denominations/eur/100euro.svg",
           "then": {
             "en": "100 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 100 euro afhalen",
@@ -389,7 +370,7 @@
         },
         {
           "if": "cash_out:notes:denominations=200 EUR",
-          "icon": "./assets/layers/questions/200euro.svg",
+          "icon": "./assets/layers/questions/denominations/eur/200euro.svg",
           "then": {
             "en": "200 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 200 euro afhalen",
@@ -401,7 +382,7 @@
         },
         {
           "if": "cash_out:notes:denominations=500 EUR",
-          "icon": "./assets/layers/questions/500euro.svg",
+          "icon": "./assets/layers/questions/denominations/eur/500euro.svg",
           "then": {
             "en": "500 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 500 euro afhalen",
