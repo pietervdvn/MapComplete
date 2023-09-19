@@ -1642,7 +1642,8 @@
                 "title": "un observatori d'ocells"
             },
             "1": {
-                "description": "Una pantalla o paret amb obertures per a observar ocells"
+                "description": "Una pantalla o paret amb obertures per a observar ocells",
+                "title": "un observatori d'ocells"
             }
         },
         "tagRenderings": {
@@ -1819,7 +1820,7 @@
                         "question": "Té un connector <div style='display: inline-block'><b><b>endoll de paret Europeu</b> amb un pin de terra (CEE7/4 tipus F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
                     },
                     "3": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/>"
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
                     },
                     "4": {
                         "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 1 amb cable</b> (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
@@ -1984,7 +1985,7 @@
                         "then": "<b>Supercarregador Tesla (destí)</b> (Un tipus 2 amb un cable marca tesla)"
                     },
                     "25": {
-                        "then": "Supercarregador Tesla (destinació)</b> (Un Tipus 2 amb un cable de marca Tesla)"
+                        "then": "<b>Supercarregador Tesla (destinació)</b> (Un Tipus 2 amb un cable de marca Tesla)"
                     },
                     "26": {
                         "then": "<b>USB</b> per a carregar mòbils i dispositius petits"
@@ -2658,14 +2659,25 @@
                     "2": {
                         "then": "Este creuament té superfície podotàctil, però no correctament"
                     }
-                }
+                },
+                "question": "Aquest creuament té superfície podotàctil?"
             },
             "crossing-type": {
                 "mappings": {
+                    "0": {
+                        "then": "Creuament, sense semàfors"
+                    },
+                    "1": {
+                        "then": "Creuament amb senyals de trànsit"
+                    },
                     "2": {
                         "then": "Pas de zebra"
+                    },
+                    "3": {
+                        "then": "Creuament sense senyalitzar"
                     }
-                }
+                },
+                "question": "Quin tipus de creuament és aquest?"
             }
         },
         "title": {
@@ -2679,16 +2691,105 @@
     },
     "cycleways_and_roads": {
         "description": "Totes les infraestructures per les quals algú pot ciclar, acompanyades de preguntes sobre aquesta infraestructura",
+        "name": "Vies ciclistes i carreteres",
         "tagRenderings": {
             "Cycleway type for a road": {
                 "mappings": {
+                    "0": {
+                        "then": "Hi ha un carril compartit"
+                    },
                     "1": {
                         "then": "Hi ha un carril al costat de la carretera (separat amb pintura)"
+                    },
+                    "2": {
+                        "then": "Hi ha una pista, però no hi ha una via ciclista dibuixada separada d'aquesta carretera al mapa."
+                    },
+                    "3": {
+                        "then": "Hi ha una via ciclista dibuixada per separat"
+                    },
+                    "4": {
+                        "then": "No hi ha via ciclista"
+                    },
+                    "5": {
+                        "then": "No hi ha via ciclista"
+                    }
+                },
+                "question": "Quin tipus de via ciclista hi ha aquí?"
+            },
+            "Cycleway:smoothness": {
+                "mappings": {
+                    "0": {
+                        "then": "Utilitzable per a rodets prims: patins, monopatí"
+                    },
+                    "1": {
+                        "then": "Utilitzable per a rodes primes: bicicleta de carreres"
+                    },
+                    "2": {
+                        "then": "Utilitzable per a rodes normals: bici de ciutat, cadira de rodes, patinets"
+                    },
+                    "3": {
+                        "then": "Utilitzable per a rodes robustes: bicicleta de senderisme, cotxe, rickshaw"
+                    },
+                    "4": {
+                        "then": "Utilitzable per a vehicles amb gran espai lliure: vehicle tot terreny lleuger"
+                    },
+                    "5": {
+                        "then": "Utilitzable per a vehicles tot terreny: vehicle tot terreny resistent"
+                    },
+                    "6": {
+                        "then": "Utilitzable per a vehicles tot terreny especialitzats: tractor, ATV"
                     }
                 }
             },
+            "Cycleway:surface": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta via ciclista no està pavimentada"
+                    },
+                    "1": {
+                        "then": "Aquesta via ciclista està pavimentada"
+                    },
+                    "2": {
+                        "then": "Aquesta via ciclista està feta d'asfalt"
+                    },
+                    "4": {
+                        "then": "Aquesta via ciclista està feta de formigó"
+                    },
+                    "8": {
+                        "then": "Aquesta via ciclista està feta de fusta"
+                    }
+                },
+                "question": "De quina superfície està fet aquesta via ciclista?",
+                "render": "Aquesta via ciclista està feta de {cycleway:surface}"
+            },
+            "Is this a cyclestreet? (For a road)": {
+                "mappings": {
+                    "0": {
+                        "then": "Açò és un ciclocarrer, i una zona de 30km/h."
+                    },
+                    "1": {
+                        "then": "Açò és un ciclocarrer"
+                    },
+                    "2": {
+                        "then": "Açò no és un ciclocarrer."
+                    }
+                },
+                "question": "Açò és un ciclocarrer?"
+            },
             "Maxspeed (for road)": {
                 "mappings": {
+                    "0": {
+                        "then": "La velocitat màxima és de 20km/h"
+                    },
+                    "1": {
+                        "then": "La velocitat màxima és de 30km/h"
+                    },
+                    "2": {
+                        "then": "La velocitat màxima és de 50km/h"
+                    },
+                    "3": {
+                        "then": "La velocitat màxima és de 70km/h"
+                    },
                     "4": {
                         "then": "La velocitat màxima és de 90km/h"
                     }
@@ -2730,23 +2831,67 @@
                     }
                 }
             },
+            "cyclelan-segregation": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta via ciclista està separada per una línia discontínua"
+                    },
+                    "1": {
+                        "then": "Aquesta via ciclista està separat per una línia contínua"
+                    },
+                    "2": {
+                        "then": "Aquesta via ciclista està separat per una línia d'aparcament"
+                    },
+                    "3": {
+                        "then": "Aquesta via ciclista està separada per una vorada"
+                    }
+                },
+                "question": "Com està separada aquesta via ciclista de la carretera?"
+            },
             "cycleway-lane-track-traffic-signs": {
                 "mappings": {
                     "0": {
                         "then": "Via ciclista obligatòria"
+                    },
+                    "1": {
+                        "then": "Ciclovia obligatòria (amb senyal suplementari)<br>"
                     },
                     "2": {
                         "then": "Via segregada a peu/ciclista"
                     },
                     "3": {
                         "then": "Via no segregada a peu/ciclista"
+                    },
+                    "4": {
+                        "then": "Sense senyal de trànsit"
                     }
-                }
+                },
+                "question": "Quina senyal de trànsit té aquesta via ciclista?"
+            },
+            "cycleway-segregation": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta via ciclista està separada per una línia discontinua"
+                    },
+                    "1": {
+                        "then": "Aquesta via ciclista està separada per una línia continua"
+                    },
+                    "2": {
+                        "then": "Aquesta via ciclista està separada per una línia d'aparcament"
+                    },
+                    "3": {
+                        "then": "Aquesta via ciclista està separada per una vorada"
+                    }
+                },
+                "question": "Com està separat aquesta via ciclista?"
             },
             "cycleway-traffic-signs": {
                 "mappings": {
                     "0": {
                         "then": "Via ciclista obligatòria"
+                    },
+                    "1": {
+                        "then": "Ciclovia obligatòria (amb senyal suplementari)<br>"
                     },
                     "2": {
                         "then": "Via segregada a peu/ciclista"
@@ -2756,13 +2901,29 @@
                     },
                     "4": {
                         "then": "Via ciclista obligatòria"
+                    },
+                    "5": {
+                        "then": "Ciclovia (ciclomotor) obligatòria"
+                    },
+                    "6": {
+                        "then": "via ciclista no obligatòria"
+                    },
+                    "7": {
+                        "then": "No hi ha cap senyal de trànsit"
                     }
-                }
+                },
+                "question": "Quina senyal de trànsit té aquesta via ciclista?"
             },
             "cycleway-traffic-signs-supplementary": {
                 "mappings": {
+                    "0": {
+                        "then": "Els ciclomotors han d'utilitzar la via ciclista"
+                    },
                     "3": {
                         "then": "Els ciclomotors no estan permesos"
+                    },
+                    "6": {
+                        "then": "No hi ha cap senyal de trànsit addicional"
                     }
                 }
             },
@@ -2771,6 +2932,9 @@
             },
             "is lit?": {
                 "mappings": {
+                    "0": {
+                        "then": "Aquest carrer està il·luminat"
+                    },
                     "1": {
                         "then": "Aquesta carretera no està il·luminada"
                     },
@@ -2784,7 +2948,9 @@
                 "question": "Aquesta carretera està il·luminada?"
             },
             "width:carriageway": {
-                "questionHint": "Això es mesura de vorera a vorera i, per tant, inclou l'amplada dels aparcaments en línia"
+                "question": "Quina és l'amplada dels carrils d'aquesta carretera (en metres)?",
+                "questionHint": "Això es mesura de vorera a vorera i, per tant, inclou l'amplada dels aparcaments en línia",
+                "render": "L'amplada dels carrils d'aquesta carretera és <strong>{width:carriageway}m</strong>"
             }
         },
         "title": {
@@ -2806,6 +2972,15 @@
                 },
                 "5": {
                     "then": "Carril bici"
+                },
+                "6": {
+                    "then": "Carretera amb via ciclista al costat de la carretera {name}"
+                },
+                "7": {
+                    "then": "Via ciclista al costat de la carretera"
+                },
+                "8": {
+                    "then": "Ciclocarrer {name}"
                 },
                 "9": {
                     "then": "Carrer ciclista"
@@ -2950,16 +3125,46 @@
         "name": "Direcció de la visualització"
     },
     "doctors": {
+        "description": "Aquesta capa mostra els consultoris mèdics",
         "name": "Metges",
+        "presets": {
+            "0": {
+                "title": "un consultori mèdic"
+            }
+        },
         "tagRenderings": {
             "name": {
-                "question": "Com es diu aquesta consulta mèdica?"
+                "question": "Com es diu aquesta consulta mèdica?",
+                "render": "Aquest consultori mèdic és diu {name}"
+            },
+            "specialty": {
+                "mappings": {
+                    "0": {
+                        "then": "Açò és un metge generalista"
+                    },
+                    "1": {
+                        "then": "Açò és un ginecòleg"
+                    },
+                    "2": {
+                        "then": "Açò és un psiquiatra"
+                    },
+                    "3": {
+                        "then": "Açò és un pediatre"
+                    }
+                },
+                "question": "En què està especialitzat aquest metge?",
+                "render": "Aquest metge està especialitzat en {healthcare:speciality}"
             }
+        },
+        "title": {
+            "render": "Consultori metge {name}"
         }
     },
     "dogpark": {
+        "name": "parcs de gossos",
         "presets": {
             "0": {
+                "description": "Un lloc per a gossos, on poden correr sense corretja",
                 "title": "un parc per a gossos"
             }
         },
@@ -2975,9 +3180,27 @@
                 "mappings": {
                     "0": {
                         "then": "Aquest parc per a gossos està tancat per tot arreu"
+                    },
+                    "1": {
+                        "then": "Aquest parc de gossos no està tancat per tot el voltant"
                     }
-                }
+                },
+                "question": "Aquest parc de gossos està tancat?"
+            },
+            "smalldogs": {
+                "mappings": {
+                    "0": {
+                        "then": "Té un espai separat per a cadells i gossos petits"
+                    },
+                    "1": {
+                        "then": "<strong>No</strong> té un espai separat per a cadells i gossos petits"
+                    }
+                },
+                "question": "Aquest parc per a gossos té una zona tancada per a gossos petits i cadells?"
             }
+        },
+        "title": {
+            "render": "parc per a gossos"
         }
     },
     "drinking_water": {
@@ -3134,6 +3357,13 @@
                 "options": {
                     "0": {
                         "question": "Obert ara"
+                    }
+                }
+            },
+            "7": {
+                "options": {
+                    "2": {
+                        "question": "Sense superfície podotàctil"
                     }
                 }
             }
