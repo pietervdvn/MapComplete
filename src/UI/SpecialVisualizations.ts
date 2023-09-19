@@ -538,7 +538,7 @@ export default class SpecialVisualizations {
                     const keys = args[0].split(";").map((k) => k.trim())
                     const wikiIds: Store<string[]> = tagsSource.map((tags) => {
                         const key = keys.find((k) => tags[k] !== undefined && tags[k] !== "")
-                        return tags[key]?.split(";")?.map((id) => id.trim())
+                        return tags[key]?.split(";")?.map((id) => id.trim()) ?? []
                     })
                     return new SvelteUIElement(WikipediaPanel, {
                         wikiIds,

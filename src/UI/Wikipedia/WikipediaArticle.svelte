@@ -11,7 +11,7 @@
   import Translations from "../i18n/Translations";
 
   /**
-   * Small helper
+   * Shows a wikipedia-article + wikidata preview for the given item
    */
   export let wikipediaDetails: Store<FullWikipediaDetails>;
 </script>
@@ -23,9 +23,11 @@
     <Tr t={Translations.t.general.wikipedia.fromWikipedia} />
   </a>
 {/if}
+
 {#if $wikipediaDetails.wikidata}
   <ToSvelte construct={WikidataPreviewBox.WikidataResponsePreview($wikipediaDetails.wikidata)} />
 {/if}
+
 {#if $wikipediaDetails.articleUrl}
 
   {#if $wikipediaDetails.firstParagraph === "" || $wikipediaDetails.firstParagraph === undefined}
@@ -42,7 +44,7 @@
             style={(open ? "transform: rotate(90deg); " : "") +
               "  transition: all .25s linear; width: 1.5rem; height: 1.5rem"}
           />
-          Read the rest of the article
+          <Tr t={Translations.t.general.wikipedia.readMore}/>
         </span>
       </DisclosureButton>
       <DisclosurePanel>

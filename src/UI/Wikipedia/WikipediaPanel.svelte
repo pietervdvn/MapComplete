@@ -16,7 +16,7 @@
    */
   export let wikiIds: Store<string[]>;
   let wikipediaStores: Store<Store<FullWikipediaDetails>[]> = Locale.language.bind((language) =>
-    wikiIds.map((wikiIds) => wikiIds.map((id) => Wikipedia.fetchArticleAndWikidata(id, language)))
+    wikiIds?.map((wikiIds) => wikiIds?.map((id) => Wikipedia.fetchArticleAndWikidata(id, language)))
   );
   let _wikipediaStores;
   onDestroy(

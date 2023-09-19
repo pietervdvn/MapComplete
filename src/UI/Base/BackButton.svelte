@@ -10,12 +10,13 @@
 
   const dispatch = createEventDispatcher<{ click }>()
   export let clss: string | undefined = undefined
+  export let imageClass: string | undefined = undefined
 </script>
 
 <SubtleButton
   on:click={() => dispatch("click")}
   options={{ extraClasses: twMerge("flex items-center", clss) }}
 >
-  <ChevronLeftIcon class="h-12 w-12" slot="image" />
+  <ChevronLeftIcon class={imageClass ?? "h-12 w-12"} slot="image" />
   <slot slot="message" />
 </SubtleButton>
