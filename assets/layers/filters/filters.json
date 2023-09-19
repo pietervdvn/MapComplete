@@ -177,7 +177,8 @@
             "de": "Ohne taktiles Pflaster",
             "fr": "Sans revêtement podotactile",
             "nl": "Zonder voelbare bestrating",
-            "pl": "Bez wypustek dla niewidomych"
+            "pl": "Bez wypustek dla niewidomych",
+            "ca": "Sense superfície podotàctil"
           },
           "osmTags": "tactile_paving=no"
         },

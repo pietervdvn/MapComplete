@@ -414,28 +414,32 @@
       "id": "has_atm",
       "question": {
         "en": "Does this post office have an ATM?",
-        "nl": "Heeft dit postkantoor een bankautomaat?"
+        "nl": "Heeft dit postkantoor een bankautomaat?",
+        "de": "Verfügt die Postfiliale über einen Geldautomat?"
       },
       "mappings": [
         {
           "if": "atm=yes",
           "then": {
             "en": "This post office has an ATM",
-            "nl": "Dit postkantoor heeft een bankautomaat"
+            "nl": "Dit postkantoor heeft een bankautomaat",
+            "de": "Die Postfiliale verfügt über einen Geldautomat"
           }
         },
         {
           "if": "atm=no",
           "then": {
             "en": "This post office does <b>not</b> have an ATM",
-            "nl": "Dit postkantoor heeft <b>geen</b> bankautomaaat"
+            "nl": "Dit postkantoor heeft <b>geen</b> bankautomaaat",
+            "de": "Die Postfiliale verfügt <b>nicht</b> über einen Geldautomat"
           }
         },
         {
           "if": "atm=separate",
           "then": {
             "en": "This post office does have an ATM, but it is mapped as a different icon",
-            "nl": "Dit postkantoor heeft een bankautomaat, maar deze staat apart op de kaart aangeduid"
+            "nl": "Dit postkantoor heeft een bankautomaat, maar deze staat apart op de kaart aangeduid",
+            "de": "Die Postfiliale verfügt über einen Geldautomat, der aber bereits separat kartiert ist"
           }
         }
       ]

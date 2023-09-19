@@ -125,7 +125,8 @@
         "nl": "Wat voor oversteekplaats is dit?",
         "de": "Was ist das für eine Kreuzung?",
         "es": "¿Qué tipo de cruce es este?",
-        "fr": "Quel type de passage piéton est-ce ?"
+        "fr": "Quel type de passage piéton est-ce ?",
+        "ca": "Quin tipus de creuament és aquest?"
       },
       "condition": "highway=crossing",
       "mappings": [
@@ -136,7 +137,8 @@
             "nl": "Oversteekplaats, zonder verkeerslichten",
             "de": "Kreuzungen ohne Ampeln",
             "es": "Cruce, sin semáforos",
-            "fr": "Passage piéton, sans feux de signalisation"
+            "fr": "Passage piéton, sans feux de signalisation",
+            "ca": "Creuament, sense semàfors"
           }
         },
         {
@@ -146,7 +148,8 @@
             "nl": "Oversteekplaats met verkeerslichten",
             "de": "Kreuzungen mit Ampeln",
             "es": "Cruce con señales de tráfico",
-            "fr": "Passage piéton avec des feux de signalisation"
+            "fr": "Passage piéton avec des feux de signalisation",
+            "ca": "Creuament amb senyals de trànsit"
           }
         },
         {
@@ -167,8 +170,9 @@
             "en": "Crossing without crossing markings",
             "nl": "Oversteekplaats zonder kruispuntmarkeringen",
             "de": "Kreuzung ohne Kreuzungsmarkierungen",
-            "es": "Cruce sin marcas de cruce",
-            "fr": "Passage piéton sans marquages"
+            "es": "Cruce sin señalizar",
+            "fr": "Passage piéton sans marquages",
+            "ca": "Creuament sense senyalitzar"
           }
         }
       ]
@@ -291,8 +295,9 @@
         "en": "Does this crossing have tactile paving?",
         "nl": "Heeft deze oversteekplaats een geleidelijn?",
         "de": "Gibt es an dieser Kreuzung ein Blindenleitsystem?",
-        "es": "¿Tiene pavimento táctil este cruce?",
-        "fr": "Est-ce que ce passage piéton a une surface podotactile ?"
+        "es": "¿Este cruce tiene pavimento podotáctil?",
+        "fr": "Est-ce que ce passage piéton a une surface podotactile ?",
+        "ca": "Aquest creuament té superfície podotàctil?"
       },
       "condition": "highway=crossing",
       "mappings": [
@@ -324,7 +329,7 @@
             "en": "This crossing has tactile paving, but is not correct",
             "nl": "Deze oversteekplaats heeft een geleidelijn, die incorrect is.",
             "de": "Diese Kreuzung hat taktile Pflasterung, ist aber nicht korrekt",
-            "es": "Este cruce tiene superficie podotáctil, pero no es correcto",
+            "es": "Este cruce tiene superficie podotáctil, pero no correctamente",
             "fr": "Ce passage piéton a une surface podotactile, mais elle n'est pas adéquate",
             "ca": "Este creuament té superfície podotàctil, però no correctament"
           },

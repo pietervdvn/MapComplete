@@ -33,7 +33,8 @@
         "da": "En hundeskov eller hundeg&aring;rd beregnet til hunde, hvor de kan l&oslash;be uden snor",
         "de": "Ein Ort ohne Leinenzwang für Hunde",
         "es": "Un lugar para perros, donde pueden correr sin correa",
-        "nl": "Een plaats waar honden vrij mogen rondlopen"
+        "nl": "Een plaats waar honden vrij mogen rondlopen",
+        "ca": "Un lloc per a gossos, on poden correr sense corretja"
       }
     }
   ],
@@ -42,7 +43,8 @@
     "da": "hundeskove",
     "de": "Hundeparks",
     "es": "parques de perros",
-    "nl": "hondenweides"
+    "nl": "hondenweides",
+    "ca": "parcs de gossos"
   },
   "title": {
     "render": {
@@ -50,7 +52,8 @@
       "da": "hundeskov",
       "de": "Hundepark",
       "es": "parque para perros",
-      "nl": "hondenweide"
+      "nl": "hondenweide",
+      "ca": "parc per a gossos"
     },
     "mappings": [
       {
@@ -106,7 +109,8 @@
             "da": "Denne hundskov er ikke indhegnet",
             "de": "Dieser Hundepark ist nicht komplett umzäunt",
             "es": "Este parque para perros no está cerrado todo alrededor",
-            "nl": "Deze hondenweide is <strong>niet</strong> volledig omheind"
+            "nl": "Deze hondenweide is <strong>niet</strong> volledig omheind",
+            "ca": "Aquest parc de gossos no està tancat per tot el voltant"
           }
         }
       ],
@@ -115,7 +119,8 @@
         "da": "Er denne hundeskov indhegnet?",
         "de": "Ist dieser Hundepark umzäunt?",
         "es": "¿Este parque para perros está vallado?",
-        "nl": "Is deze hondenweide volledig omheind?"
+        "nl": "Is deze hondenweide volledig omheind?",
+        "ca": "Aquest parc de gossos està tancat?"
       }
     },
     {
@@ -128,7 +133,8 @@
             "da": "Har en indhegning til hvalpe og sm&aring; hunde",
             "de": "Hat einen separaten Bereich für Hundewelpen und kleine Hunde",
             "es": "Tiene un espacio separado para cachorros y perros pequeños",
-            "nl": "Heeft gescheiden deel voor puppy's en kleine honden"
+            "nl": "Heeft gescheiden deel voor puppy's en kleine honden",
+            "ca": "Té un espai separat per a cadells i gossos petits"
           }
         },
         {
@@ -138,7 +144,8 @@
             "da": "Har <strong>ikke</strong> en indhegning til hvalpe og sm&aring; hunde",
             "de": "Hat <strong>keinen</strong> separaten Bereich für Hundewelpen und kleine Hunde",
             "es": "<strong>No</strong> tiene un espacio separado para cachorros y perros pequeños",
-            "nl": "Heeft <strong>geen</strong> gescheiden deel voor puppy's en kleine honden"
+            "nl": "Heeft <strong>geen</strong> gescheiden deel voor puppy's en kleine honden",
+            "ca": "<strong>No</strong> té un espai separat per a cadells i gossos petits"
           }
         }
       ],
@@ -147,7 +154,8 @@
         "da": "Har denne hundeskov et separat indhegnet omr&aring;de for sm&aring; hunde og hvalpe (hvalpeg&aring;rd)?",
         "de": "Hat der Hundepark einen separaten Bereich für Hundewelpen und kleine Hunde?",
         "es": "¿Este parque para perros tiene una zona separada vallada para perros pequeños y cachorros?",
-        "nl": "Heeft deze hondenweide een gescheiden en omheind deel voor puppy's en kleine honden?"
+        "nl": "Heeft deze hondenweide een gescheiden en omheind deel voor puppy's en kleine honden?",
+        "ca": "Aquest parc per a gossos té una zona tancada per a gossos petits i cadells?"
       }
     },
     {

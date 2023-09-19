@@ -1070,7 +1070,7 @@
           "then": {
             "en": "<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)",
             "nl": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)",
-            "ca": "Supercarregador Tesla (destinació)</b> (Un Tipus 2 amb un cable de marca Tesla)",
+            "ca": "<b>Supercarregador Tesla (destinació)</b> (Un Tipus 2 amb un cable de marca Tesla)",
             "de": "<b>Tesla supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)",
             "es": "<b>Supercargador Tesla (destino)</b> (Un Tipo 2 con un cable de marca tesla)"
           },
@@ -4879,7 +4879,7 @@
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> connector",
             "nl": "Heeft een <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>",
-            "ca": "Té un connector <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/>",
+            "ca": "Té un connector <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>",
             "da": "Har et <div style='display: inline-block'><b><b> Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> stik",
             "de": "Verfügt über einen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> Stecker",
             "es": "Tiene un conector <div style='display: inline-block'><b><b>Chademo</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"

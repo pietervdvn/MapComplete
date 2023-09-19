@@ -13,7 +13,8 @@
     "en": "This layer shows doctor offices",
     "de": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen",
     "nl": "Deze laag toont dokterspraktijken",
-    "he": "שכבה זו מציגה מרפאות רופאים"
+    "he": "שכבה זו מציגה מרפאות רופאים",
+    "ca": "Aquesta capa mostra els consultoris mèdics"
   },
   "source": {
     "osmTags": "amenity=doctors"
@@ -23,7 +24,8 @@
       "en": "Doctors Office {name}",
       "de": "Arztpraxis {name}",
       "nl": "Dokterspraktijk {name}",
-      "fr": "Cabinet medical {name}"
+      "fr": "Cabinet medical {name}",
+      "ca": "Consultori metge {name}"
     }
   },
   "minzoom": 13,
@@ -42,7 +44,8 @@
         "en": "This doctors place is called {name}",
         "de": "Diese Arztpraxis heißt {name}",
         "nl": "Deze dokterspraktijk heet {name}",
-        "fr": "Ce cabinet médical s'appelle {name}"
+        "fr": "Ce cabinet médical s'appelle {name}",
+        "ca": "Aquest consultori mèdic és diu {name}"
       },
       "freeform": {
         "key": "name"
@@ -61,14 +64,16 @@
         "nl": "Deze dokter is gespecialiseerd in {healthcare:speciality}",
         "fr": "Ce médecin est spécialisé dans {healthcare:speciality}",
         "he": "רופא זה מתמחה ב {healthcare:speciality}",
-        "pl": "Ten lekarz specjalizuje się w {healthcare:speciality}"
+        "pl": "Ten lekarz specjalizuje się w {healthcare:speciality}",
+        "ca": "Aquest metge està especialitzat en {healthcare:speciality}"
       },
       "question": {
         "en": "What is this doctor specialized in?",
         "de": "Worauf ist dieser Arzt spezialisiert?",
         "nl": "Waar is deze dokter in gespecialiseerd?",
         "fr": "En quoi ce médecin est-il spécialisé ?",
-        "pl": "W czym specjalizuje się ten lekarz?"
+        "pl": "W czym specjalizuje się ten lekarz?",
+        "ca": "En què està especialitzat aquest metge?"
       },
       "freeform": {
         "key": "healthcare:speciality"
@@ -81,7 +86,8 @@
             "en": "This is a general practitioner",
             "de": "Dies ist ein Allgemeinmediziner",
             "nl": "Dit is een huisarts",
-            "fr": "C'est un médecin généraliste"
+            "fr": "C'est un médecin généraliste",
+            "ca": "Açò és un metge generalista"
           }
         },
         {
@@ -91,7 +97,8 @@
             "de": "Dies ist ein Gynäkologe",
             "nl": "Dit is een gynaecoloog",
             "fr": "C'est un gynécologue",
-            "pl": "To jest ginekolog"
+            "pl": "To jest ginekolog",
+            "ca": "Açò és un ginecòleg"
           }
         },
         {
@@ -101,7 +108,8 @@
             "de": "Dies ist ein Psychiater",
             "nl": "Dit is een psychiater",
             "fr": "C'est un psychiatre",
-            "pl": "To jest psychiatra"
+            "pl": "To jest psychiatra",
+            "ca": "Açò és un psiquiatra"
           }
         },
         {
@@ -111,7 +119,8 @@
             "de": "Dies ist ein Kinderarzt",
             "nl": "Dit is een kinderarts",
             "fr": "C'est un pédiatre",
-            "pl": "To jest pediatra"
+            "pl": "To jest pediatra",
+            "ca": "Açò és un pediatre"
           }
         }
       ]
@@ -123,7 +132,8 @@
         "en": "a doctors office",
         "de": "eine Arztpraxis",
         "nl": "een dokterspraktijk",
-        "fr": "un cabinet médical"
+        "fr": "un cabinet médical",
+        "ca": "un consultori mèdic"
       },
       "tags": [
         "amenity=doctors"

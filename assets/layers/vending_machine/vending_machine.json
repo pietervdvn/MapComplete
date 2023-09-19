@@ -233,7 +233,8 @@
           "if": "vending=parking_tickets",
           "then": {
             "en": "Parking tickets are sold",
-            "nl": "Parkeerkaarten worden verkocht"
+            "nl": "Parkeerkaarten worden verkocht",
+            "de": "Parkscheine werden verkauft"
           },
           "icon": "./assets/layers/parking_ticket_machine/parking_tickets.svg"
         },
@@ -248,7 +249,8 @@
           "if": "vending=public_transport_tickets",
           "then": {
             "en": "Public transport tickets are sold",
-            "nl": "Openbaar vervoerkaartjes worden verkocht"
+            "nl": "Openbaar vervoerkaartjes worden verkocht",
+            "de": "Fahrscheine werden verkauft"
           },
           "icon": "./assets/themes/stations/public_transport_tickets.svg"
         }
