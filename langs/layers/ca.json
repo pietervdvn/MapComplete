@@ -3359,8 +3359,8 @@
                 "render": {
                     "special": {
                         "question": "Aquest ascensor en quins idiomes té l'escriptura tàctil (braille)?",
-                        "render_list_item": "Aquest ascensor té l'escriptura tàctil en language():font-bold}",
-                        "render_single_language": "Aquest ascensor té l'escriptura tàctil en language():font-bold}"
+                        "render_list_item": "Aquest ascensor té l'escriptura tàctil en {language():font-bold}",
+                        "render_single_language": "Aquest ascensor té l'escriptura tàctil en {language():font-bold}"
                     }
                 }
             }
@@ -4244,7 +4244,7 @@
                 },
                 "question": "A qui recorda aquesta bicicleta fantasma?",
                 "questionHint": "Si us plau, respecteu la privadesa: només ompliu el nom si està àmpliament publicat o marcat a la bicicleta. Opta per deixar de banda el cognom.",
-                "render": "En record de {subjecte}"
+                "render": "En record de {subject}"
             },
             "ghost_bike-source": {
                 "question": "En quina pàgina web es pot trobar més informació sobre la bicicleta blanca o l'accident?",
@@ -4257,7 +4257,7 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Bicicleta fantasma en el record de {subjecte}"
+                    "then": "Bicicleta fantasma en el record de {subject}"
                 },
                 "1": {
                     "then": "Bicicleta fantasma en el record de {name}"
@@ -4578,7 +4578,7 @@
                     "then": "Porta interior {name}"
                 }
             },
-            "render": "Àrea interior {nom}"
+            "render": "Àrea interior {name}"
         }
     },
     "information_board": {
@@ -4806,14 +4806,14 @@
             "1": {
                 "options": {
                     "0": {
-                        "question": "El nom del repte conté {cerca}"
+                        "question": "El nom del repte conté {search}"
                     }
                 }
             },
             "2": {
                 "options": {
                     "0": {
-                        "question": "L'identificador de desafiament coincideix amb {cerca}"
+                        "question": "L'identificador de desafiament coincideix amb {search}"
                     }
                 }
             }
@@ -4920,7 +4920,7 @@
         "tagRenderings": {
             "inscription": {
                 "question": "Quina és la inscripció d'aquesta placa?",
-                "render": "La inscripció d'aquesta placa diu: <p><i>{inscripció}<i></p>"
+                "render": "La inscripció d'aquesta placa diu: <p><i>{inscription}<i></p>"
             }
         },
         "title": {
