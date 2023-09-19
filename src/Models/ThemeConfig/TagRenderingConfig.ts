@@ -243,7 +243,10 @@ export default class TagRenderingConfig {
                 if (txt === "") {
                     throw context + " Rendering for language " + ln + " is empty"
                 }
-                if (txt.indexOf("{" + this.freeform.key + "}") >= 0 || txt.indexOf("&LBRACE" + this.freeform.key + "&RBRACE") ) {
+                if (
+                    txt.indexOf("{" + this.freeform.key + "}") >= 0 ||
+                    txt.indexOf("&LBRACE" + this.freeform.key + "&RBRACE")
+                ) {
                     continue
                 }
                 if (txt.indexOf("{" + this.freeform.key + ":") >= 0) {
@@ -644,6 +647,16 @@ export default class TagRenderingConfig {
 
     /**
      * Given a value for the freeform key and an overview of the selected mappings, construct the correct tagsFilter to apply
+     *
+     * const config = new TagRenderingConfig({"id":"bookcase-booktypes","render":{"en":"This place mostly serves {books}" },
+     * "question":{"en":"What kind of books can be found in this public bookcase?"},
+     * "freeform":{"key":"books","addExtraTags":["fixme=Freeform tag `books` used, to be doublechecked"],
+     * "inline":true},
+     * "multiAnswer":true,
+     * "mappings":[{"if":"books=children","then":"Mostly children books"},
+     * {"if":"books=adults","then": "Mostly books for adults"}]}
+     * , "testcase")
+     * config.constructChangeSpecification(undefined, undefined, [false, true, false], {amenity: "public_bookcase"}) // => new And([new Tag("books","adult")])
      *
      * @param freeformValue The freeform value which will be applied as 'freeform.key'. Ignored if 'freeform.key' is not set
      *
