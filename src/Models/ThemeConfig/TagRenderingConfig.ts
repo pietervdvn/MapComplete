@@ -656,7 +656,7 @@ export default class TagRenderingConfig {
      * "mappings":[{"if":"books=children","then":"Mostly children books"},
      * {"if":"books=adults","then": "Mostly books for adults"}]}
      * , "testcase")
-     * config.constructChangeSpecification(undefined, undefined, [false, true, false], {amenity: "public_bookcase"}) // => new And([new Tag("books","adult")])
+     * config.constructChangeSpecification(undefined, undefined, [false, true, false], {amenity: "public_bookcase"}) // => new And([new Tag("books","adults")])
      *
      * @param freeformValue The freeform value which will be applied as 'freeform.key'. Ignored if 'freeform.key' is not set
      *
