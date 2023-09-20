@@ -21,7 +21,7 @@ const latestTags = {
     "public_bookcase:type": "reading_box",
 }
 
-Utils.injectJsonDownloadForTests("https://www.openstreetmap.org/api/0.6/node/5568693115", {
+Utils.injectJsonDownloadForTests("https://api.openstreetmap.org/api/0.6/node/5568693115", {
     version: "0.6",
     generator: "CGImap 0.8.5 (1815943 spike-06.openstreetmap.org)",
     copyright: "OpenStreetMap and contributors",

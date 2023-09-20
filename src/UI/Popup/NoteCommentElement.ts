@@ -41,7 +41,7 @@ export default class NoteCommentElement extends Combine {
 
         let userinfo = Stores.FromPromise(
             Utils.downloadJsonCached(
-                "https://www.openstreetmap.org/api/0.6/user/" + comment.uid,
+                "https://api.openstreetmap.org/api/0.6/user/" + comment.uid,
                 24 * 60 * 60 * 1000
             )
         )

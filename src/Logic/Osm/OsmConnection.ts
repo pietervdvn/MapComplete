@@ -85,7 +85,7 @@ export class OsmConnection {
             this._oauth_config = {
                 oauth_client_id: import.meta.env.VITE_OSM_OAUTH_CLIENT_ID,
                 oauth_secret: import.meta.env.VITE_OSM_OAUTH_SECRET,
-                url: "https://www.openstreetmap.org",
+                url: "https://api.openstreetmap.org",
             }
         }
 
@@ -179,7 +179,7 @@ export class OsmConnection {
     /**
      * The backend host, without path or trailing '/'
      *
-     * new OsmConnection().Backend() // => "https://www.openstreetmap.org"
+     * new OsmConnection().Backend() // => "https://api.openstreetmap.org"
      */
     public Backend(): string {
         return this._oauth_config.url
@@ -365,7 +365,6 @@ export class OsmConnection {
                 )
             })
         }
-        const auth = this.auth
         const content = { lat, lon, text }
         const response = await this.post("notes.json", JSON.stringify(content), {
             "Content-Type": "application/json",
@@ -414,7 +413,6 @@ export class OsmConnection {
                 '"\r\nContent-Type: application/gpx+xml',
         }
 
-        const auth = this.auth
         const boundary = "987654"
 
         let body = ""

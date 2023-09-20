@@ -27,6 +27,9 @@ Note that these values can be prepare with javascript in the theme by using a [c
     public static readonly imageExtensions = new Set(["jpg", "png", "svg", "jpeg", ".gif"])
 
     public static initDomPurify() {
+        if (Utils.runningFromConsole) {
+            return
+        }
         DOMPurify.addHook("afterSanitizeAttributes", function (node) {
             // set all elements owning target to target=_blank + add noopener noreferrer
             if ("target" in node) {

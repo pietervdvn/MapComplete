@@ -327,7 +327,7 @@ describe("ReplaceGeometryAction", () => {
     const wayId = "way/160909312"
 
     Utils.injectJsonDownloadForTests(
-        "https://www.openstreetmap.org/api/0.6/map.json?bbox=3.2166673243045807,51.21467321525788,3.217007964849472,51.21482442824023",
+        "https://api.openstreetmap.org/api/0.6/map.json?bbox=3.2166673243045807,51.21467321525788,3.217007964849472,51.21482442824023",
         {
             version: "0.6",
             generator: "CGImap 0.8.6 (1549677 spike-06.openstreetmap.org)",
@@ -715,7 +715,7 @@ describe("ReplaceGeometryAction", () => {
         }
     )
 
-    Utils.injectJsonDownloadForTests("https://www.openstreetmap.org/api/0.6/way/160909312/full", {
+    Utils.injectJsonDownloadForTests("https://api.openstreetmap.org/api/0.6/way/160909312/full", {
         version: "0.6",
         generator: "CGImap 0.8.6 (2407324 spike-06.openstreetmap.org)",
         copyright: "OpenStreetMap and contributors",
@@ -880,7 +880,7 @@ describe("ReplaceGeometryAction", () => {
             [3.2166673243045807, 51.21467321525788],
             [3.217007964849472, 51.21482442824023],
         ])
-        const url = `https://www.openstreetmap.org/api/0.6/map.json?bbox=${bbox.minLon},${bbox.minLat},${bbox.maxLon},${bbox.maxLat}`
+        const url = `https://api.openstreetmap.org/api/0.6/map.json?bbox=${bbox.minLon},${bbox.minLat},${bbox.maxLon},${bbox.maxLat}`
         const data = await Utils.downloadJson(url)
         const fullNodeDatabase = new FullNodeDatabaseSource()
         fullNodeDatabase.handleOsmJson(data, 0, 0, 0)
