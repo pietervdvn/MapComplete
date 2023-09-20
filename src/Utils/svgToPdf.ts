@@ -679,13 +679,6 @@ class SvgToPdfPage {
                 ".json",
             24 * 60 * 60 * 1000
         )
-        const shared_questions = await Utils.downloadJsonCached(
-            "https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/langs/shared-questions/" +
-                language +
-                ".json",
-            24 * 60 * 60 * 1000
-        )
-        this.layerTranslations[language]["shared-questions"] = shared_questions["shared_questions"]
     }
 
     public async Prepare() {
