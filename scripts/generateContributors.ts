@@ -26,7 +26,7 @@ function asList(hist: Map<string, number>): ContributorList {
 }
 
 function main() {
-    exec("git log --pretty='%aN %%!%% %s' ", (error, stdout, stderr) => {
+    exec("git log --pretty='%aN %%!%% %s' ", (_, stdout) => {
         const entries = stdout.split("\n").filter((str) => str !== "")
         const codeContributors = new Map<string, number>()
         const translationContributors = new Map<string, number>()

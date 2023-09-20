@@ -25,20 +25,6 @@ Remark that the syntax is slightly different then expected; it uses '$' to note 
 Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
  `
     public static readonly imageExtensions = new Set(["jpg", "png", "svg", "jpeg", ".gif"])
-
-    public static initDomPurify() {
-        if (Utils.runningFromConsole) {
-            return
-        }
-        DOMPurify.addHook("afterSanitizeAttributes", function (node) {
-            // set all elements owning target to target=_blank + add noopener noreferrer
-            if ("target" in node) {
-                node.setAttribute("target", "_blank")
-                node.setAttribute("rel", "noopener noreferrer")
-            }
-        })
-    }
-
     public static readonly special_visualizations_importRequirementDocs = `#### Importing a dataset into OpenStreetMap: requirements
 
 If you want to import a dataset, make sure that:
@@ -159,6 +145,26 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             timestamp: number
         }
     >()
+
+    public static initDomPurify() {
+        if (Utils.runningFromConsole) {
+            return
+        }
+        DOMPurify.addHook("afterSanitizeAttributes", function (node) {
+            // set all elements owning target to target=_blank + add noopener noreferrer
+            if ("target" in node) {
+                node.setAttribute("target", "_blank")
+                node.setAttribute("rel", "noopener noreferrer")
+            }
+        })
+    }
+
+    public static purify(src: string): string {
+        return DOMPurify.sanitize(src, {
+            USE_PROFILES: { html: true },
+            ADD_ATTR: ["target"], // Don't remove target='_blank'. Note that Utils.initDomPurify does add a hook which automatically adds 'rel=noopener'
+        })
+    }
 
     /**
      * Parses the arguments for special visualisations

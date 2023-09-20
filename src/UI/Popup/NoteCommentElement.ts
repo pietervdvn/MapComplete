@@ -56,7 +56,7 @@ export default class NoteCommentElement extends Combine {
         )
 
         const htmlElement = document.createElement("div")
-        htmlElement.innerHTML = comment.html
+        htmlElement.innerHTML = Utils.purify(comment.html)
         const images = Array.from(htmlElement.getElementsByTagName("a"))
             .map((link) => link.href)
             .filter((link) => {

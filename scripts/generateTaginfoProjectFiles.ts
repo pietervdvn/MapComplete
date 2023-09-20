@@ -34,8 +34,6 @@ function generateTagOverview(
     return overview
 }
 
-function tagrenderingToTaginfoDescription(tr: TagRenderingConfig) {}
-
 function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any[] {
     if (layer.name === undefined) {
         return [] // Probably a duplicate or irrelevant layer

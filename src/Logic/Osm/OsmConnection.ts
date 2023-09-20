@@ -227,8 +227,6 @@ export class OsmConnection {
                 // details is an XML DOM of user details
                 let userInfo = details.getElementsByTagName("user")[0]
 
-                // let moreDetails = new DOMParser().parseFromString(userInfo.innerHTML, "text/xml");
-
                 let data = self.userDetails.data
                 data.loggedIn = true
                 console.log("Login completed, userinfo is ", userInfo)

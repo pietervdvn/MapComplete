@@ -1,7 +1,6 @@
 import { OsmNode, OsmObject, OsmWay } from "../../Osm/OsmObject"
 import { UIEventSource } from "../../UIEventSource"
 import { BBox } from "../../BBox"
-import StaticFeatureSource from "../Sources/StaticFeatureSource"
 import { Tiles } from "../../../Models/TileRange"
 
 export default class FullNodeDatabaseSource {
@@ -48,11 +47,7 @@ export default class FullNodeDatabaseSource {
                 src.ping()
             }
         }
-        const asGeojsonFeatures = Array.from(nodesById.values()).map((osmNode) =>
-            osmNode.asGeoJson()
-        )
 
-        const featureSource = new StaticFeatureSource(asGeojsonFeatures)
         const tileId = Tiles.tile_index(z, x, y)
         this.loadedTiles.set(tileId, nodesById)
     }
