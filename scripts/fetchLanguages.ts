@@ -50,8 +50,11 @@ async function fetchRegularLanguages() {
     const result = await Utils.downloadJson(url, { "User-Agent": "MapComplete script" })
     const bindings = <LanguageSpecResult[]>result.results.bindings
 
+    // Traditional chinese = 繁體中文 or 正體中文
     const zh_hant = await fetchSpecial(18130932, "zh_Hant")
-    const zh_hans = await fetchSpecial(13414913, "zh_Hant")
+
+    // Simplified chinese = 簡體中文 or 简体中文(
+    const zh_hans = await fetchSpecial(13414913, "zh_Hans")
     const pt_br = await fetchSpecial(750553, "pt_BR")
     const punjabi = await fetchSpecial(58635, "pa_PK")
     const Shahmukhi = await Wikidata.LoadWikidataEntryAsync(133800)
