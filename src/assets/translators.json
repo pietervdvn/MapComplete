@@ -1,23 +1,23 @@
 {
   "contributors": [
     {
-      "commits": 289,
+      "commits": 299,
       "contributor": "kjon"
     },
     {
-      "commits": 277,
+      "commits": 281,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 142,
+      "commits": 151,
       "contributor": "paunofu"
     },
     {
-      "commits": 94,
+      "commits": 95,
       "contributor": "Allan Nordhøy"
     },
     {
-      "commits": 69,
+      "commits": 70,
       "contributor": "Robin van der Linde"
     },
     {
@@ -38,19 +38,19 @@
     },
     {
       "commits": 31,
-      "contributor": "Supaplex"
+      "contributor": "Lucas"
     },
     {
-      "commits": 30,
+      "commits": 31,
       "contributor": "Jiří Podhorecký"
+    },
+    {
+      "commits": 31,
+      "contributor": "Supaplex"
     },
     {
       "commits": 29,
       "contributor": "Artem"
-    },
-    {
-      "commits": 25,
-      "contributor": "Lucas"
     },
     {
       "commits": 25,
@@ -154,6 +154,10 @@
     },
     {
       "commits": 7,
+      "contributor": "NetworkedPoncho"
+    },
+    {
+      "commits": 7,
       "contributor": "Joost Schouppe"
     },
     {
@@ -167,6 +171,10 @@
     {
       "commits": 7,
       "contributor": "Niels Elgaard Larsen"
+    },
+    {
+      "commits": 6,
+      "contributor": "Juele juele"
     },
     {
       "commits": 6,
@@ -247,6 +255,10 @@
     {
       "commits": 5,
       "contributor": "Alexey Shabanov"
+    },
+    {
+      "commits": 4,
+      "contributor": "Krzysztof Chorzempa"
     },
     {
       "commits": 4,
@@ -338,6 +350,14 @@
     },
     {
       "commits": 2,
+      "contributor": "nilocram"
+    },
+    {
+      "commits": 2,
+      "contributor": "מוימוי טרייצקי"
+    },
+    {
+      "commits": 2,
       "contributor": "lmagreault"
     },
     {
@@ -419,6 +439,10 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "Traladarer"
     },
     {
       "commits": 1,

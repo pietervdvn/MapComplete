@@ -7,7 +7,8 @@
     "da": "Restauranter og fastfood",
     "es": "Restaurantes y comida rápida",
     "fr": "Restaurants et nourriture rapide",
-    "ca": "Restaurants i menjar ràpid"
+    "ca": "Restaurants i menjar ràpid",
+    "pl": "Restauracje i fast-foody"
   },
   "source": {
     "osmTags": {
@@ -27,7 +28,8 @@
         "de": "ein Restaurant",
         "ca": "un restaurant",
         "es": "un restaurante",
-        "fr": "un restaurant"
+        "fr": "un restaurant",
+        "pl": "restauracja"
       },
       "tags": [
         "amenity=restaurant"
@@ -37,7 +39,8 @@
         "en": "A formal eating place with sit-down facilities selling full meals served by waiters",
         "de": "Ein klassisches Speiselokal mit Sitzgelegenheiten, in dem vollständige Mahlzeiten von Kellnern serviert werden",
         "es": "Un lugar de comidas formal, con mesas y sillas y que vende comidas completas servidas por camareros",
-        "fr": "Un lieu de restauration formel avec des installations pour s'asseoir vendant des repas complets servis par des serveurs"
+        "fr": "Un lieu de restauration formel avec des installations pour s'asseoir vendant des repas complets servis par des serveurs",
+        "ca": "Un lloc per menjar formal amb instal·lacions per seure que venen àpats complets servits per cambrers"
       }
     },
     {
@@ -57,7 +60,8 @@
         "en": "A food business concentrating on fast counter-only service and take-away food",
         "de": "Ein Lebensmittelunternehmen, das sich auf schnellen Thekendienst und Essen zum Mitnehmen konzentriert",
         "es": "Un negocio de comida centrado en servicio rápido solo en mostrador y comida para llevar",
-        "fr": "Une entreprise alimentaire se concentrant sur le service rapide au comptoir et les plats à emporter"
+        "fr": "Une entreprise alimentaire se concentrant sur le service rapide au comptoir et les plats à emporter",
+        "ca": "Un negoci de menjar centrat en el servei ràpid sols en mostrador i menjar per a endur"
       }
     },
     {
@@ -89,7 +93,8 @@
       "de": "Restaurant",
       "es": "Restaurante",
       "fr": "Restaurant",
-      "pa_PK": "بھون آلہ"
+      "pa_PK": "بھون آلہ",
+      "pl": "Restauracja"
     },
     "mappings": [
       {
@@ -105,7 +110,8 @@
           "de": "Restaurant <i>{name}</i>",
           "ca": "Restaurant <i>{name}</i>",
           "es": "Restaurante <i>{name}</i>",
-          "fr": "Restaurant <i>{name}</i>"
+          "fr": "Restaurant <i>{name}</i>",
+          "pl": "Restauracja <i>{name}</i>"
         }
       },
       {
@@ -150,7 +156,8 @@
         "en": "What is the name of this business?",
         "de": "Was ist der Name dieses Unternehmens?",
         "es": "¿Cual es el nombre de este restaurante?",
-        "fr": "Quel est le nom de ce restaurant ?"
+        "fr": "Quel est le nom de ce restaurant ?",
+        "ca": "Quin és el nom d'aquest negoci?"
       },
       "render": {
         "nl": "De naam van deze eetgelegeheid is {name}",
@@ -171,7 +178,8 @@
         "nl": "Wat voor soort zaak is dit?",
         "de": "Um was für einen Ort handelt es sich?",
         "es": "¿Qué tipo de negocio es este?",
-        "fr": "Quel type de restaurant est-ce ?"
+        "fr": "Quel type de restaurant est-ce ?",
+        "ca": "Quin tipus de negoci és aquest?"
       },
       "mappings": [
         {
@@ -238,7 +246,8 @@
             "de": "Dies ist eine Pizzeria",
             "es": "Esto es una pizzería",
             "fr": "C'est une pizzéria",
-            "ca": "Això és una pizzeria"
+            "ca": "Això és una pizzeria",
+            "pl": "To jest pizzeria"
           }
         },
         {
@@ -259,7 +268,8 @@
             "de": "Bietet vorwiegend Pastagerichte an",
             "es": "Principalmente sirve pasta",
             "fr": "Restaurant Italien",
-            "ca": "Principalment serveix pasta"
+            "ca": "Principalment serveix pasta",
+            "pl": "Podaje głównie makarony"
           }
         },
         {
@@ -269,7 +279,9 @@
             "nl": "Dit is een kebabzaak",
             "de": "Das ist ein Dönerladen",
             "es": "Esta es una tienda de kebak",
-            "fr": "C'est un resto kebab"
+            "fr": "C'est un resto kebab",
+            "pl": "To jest stoisko z kebabem",
+            "ca": "Aquesta és una botiga de kebabs"
           }
         },
         {
@@ -290,7 +302,8 @@
             "de": "Hier werden Burger serviert",
             "es": "Aquí se sirven hamburguesas",
             "fr": "Des hamburgers sont servis ici",
-            "ca": "Aquí es serveixen hamburgueses"
+            "ca": "Aquí es serveixen hamburgueses",
+            "pl": "Są tu podawane burgery"
           }
         },
         {
@@ -402,7 +415,8 @@
         "nl": "Is reserveren verplicht voor deze zaak?",
         "de": "Ist an diesem Ort eine Reservierung erforderlich?",
         "ca": "És necessari reservar en aquest lloc?",
-        "fr": "Est-il nécessaire de réserver à cet endroit ?"
+        "fr": "Est-il nécessaire de réserver à cet endroit ?",
+        "pl": "Czy w tym miejscu rezerwacja jest wymagana?"
       },
       "mappings": [
         {
@@ -432,7 +446,8 @@
             "nl": "Reserveren is mogelijk voor deze zaak",
             "de": "Eine Reservierung ist an diesem Ort möglich",
             "ca": "És possible reservar en aquest lloc",
-            "fr": "La réservation est possible à cet endroit"
+            "fr": "La réservation est possible à cet endroit",
+            "pl": "W tym miejscu możliwa jest rezerwacja"
           }
         },
         {
@@ -442,7 +457,8 @@
             "nl": "Reserveren is niet mogelijk voor deze zaak",
             "de": "Eine Reservierung ist an diesem Ort nicht möglich",
             "ca": "En aquest lloc no es pot reservar",
-            "fr": "Il n'est pas possible de réserver à cet endroit"
+            "fr": "Il n'est pas possible de réserver à cet endroit",
+            "pl": "Rezerwacja nie jest możliwa w tym miejscu"
           }
         }
       ]
@@ -532,7 +548,8 @@
         "de": "Werden hier vegetarische Gerichte angeboten?",
         "es": "¿Este restaurante tiene una opción vegetariana?",
         "fr": "Ce restaurant propose-t-il une option végétarienne ?",
-        "ca": "Aquest restaurant té opció vegetariana?"
+        "ca": "Aquest restaurant té opció vegetariana?",
+        "pl": "Czy ta restauracja ma danie wegetariańskie?"
       },
       "mappings": [
         {
@@ -543,7 +560,8 @@
             "de": "Hier werden keine vegetarischen Gerichte angeboten",
             "es": "Sin opciones vegetarianas",
             "fr": "Aucune option végétarienne n'est disponible",
-            "ca": "No hi ha opcions vegetarianes disponibles"
+            "ca": "No hi ha opcions vegetarianes disponibles",
+            "pl": "Brak dań wegetariańskich"
           }
         },
         {
@@ -554,7 +572,8 @@
             "de": "Hier werden nur wenige vegetarische Gerichte angeboten",
             "es": "Algunas opciones vegetarianas",
             "fr": "Certaines options végétariennes sont disponibles",
-            "ca": "Algunes opcions vegetarianes"
+            "ca": "Algunes opcions vegetarianes",
+            "pl": "Pewne dania wegetariańskie są dostępne"
           }
         },
         {
@@ -565,7 +584,8 @@
             "de": "Hier werden vegetarische Gerichte angeboten",
             "es": "Opciones vegetarianas disponibles",
             "fr": "Des options végétariennes sont disponibles",
-            "ca": "Hi ha opcions vegetarianes disponibles"
+            "ca": "Hi ha opcions vegetarianes disponibles",
+            "pl": "Dostępne są dania wegetariańskie"
           }
         },
         {
@@ -576,7 +596,8 @@
             "de": "Hier werden ausschließlich vegetarische Gerichte angeboten",
             "es": "Todos los platos son vegetarianos",
             "fr": "Tous les plats sont végétariens",
-            "ca": "Tots els plats són vegetarians"
+            "ca": "Tots els plats són vegetarians",
+            "pl": "Wszystkie dania są wegetariańskie"
           }
         }
       ],
@@ -601,7 +622,8 @@
             "de": "Hier werden keine veganen Gerichte angeboten",
             "es": "Sin opciones veganas disponibles",
             "fr": "Aucune option végétalienne disponible",
-            "ca": "No hi ha opcions veganes disponibles"
+            "ca": "No hi ha opcions veganes disponibles",
+            "pl": "Brak dań wegańskich"
           }
         },
         {
@@ -612,7 +634,8 @@
             "de": "Hier werden nur wenige vegane Gerichte angeboten",
             "es": "Alguna opciones veganas disponibles",
             "fr": "Certaines options végétaliennes sont disponibles",
-            "ca": "Hi ha algunes opcions veganes disponibles"
+            "ca": "Hi ha algunes opcions veganes disponibles",
+            "pl": "Pewne dania wegańskie są dostępne"
           }
         },
         {
@@ -623,7 +646,8 @@
             "de": "Hier werden vegane Gerichte angeboten",
             "es": "Opciones veganas disponibles",
             "fr": "Des options végétaliennes sont disponibles",
-            "ca": "Hi ha opcions veganes disponibles"
+            "ca": "Hi ha opcions veganes disponibles",
+            "pl": "Dostępne są dania wegańskie"
           }
         },
         {
@@ -634,7 +658,8 @@
             "de": "Hier werden ausschließlich vegane Gerichte angeboten",
             "es": "Todos los platos son veganos",
             "fr": "Tous les plats sont végétaliens",
-            "ca": "Tots els plats són vegans"
+            "ca": "Tots els plats són vegans",
+            "pl": "Wszystkie dania są wegańskie"
           }
         }
       ],
@@ -743,7 +768,8 @@
         "en": "Does this fries shop have vegetarian snacks?",
         "nl": "Heeft deze frituur vegetarische snacks?",
         "fr": "Cette friterie est-elle équipée de snacks végétariens ?",
-        "de": "Hat dieser Frittenladen vegetarische Snacks?"
+        "de": "Hat dieser Frittenladen vegetarische Snacks?",
+        "ca": "Aquesta botiga de patates fregides ofereix snacks vegetarians?"
       },
       "mappings": [
         {
@@ -752,7 +778,8 @@
             "en": "Vegetarian snacks are available",
             "nl": "Er zijn vegetarische snacks aanwezig",
             "fr": "Des collations végétariens sont disponibles",
-            "de": "Vegetarische Snacks sind erhältlich"
+            "de": "Vegetarische Snacks sind erhältlich",
+            "ca": "Hi ha snacks vegetarians disponibles"
           }
         },
         {
@@ -761,7 +788,8 @@
             "en": "Only a small selection of snacks are vegetarian",
             "nl": "Slechts enkele vegetarische snacks",
             "fr": "Quelques snacks végétariens seulement",
-            "de": "Nur eine kleine Auswahl an vegetarischen Snacks ist erhältlich"
+            "de": "Nur eine kleine Auswahl an vegetarischen Snacks ist erhältlich",
+            "ca": "Només una petita selecció de snacks son vegetarians"
           }
         },
         {
@@ -770,7 +798,8 @@
             "en": "No vegetarian snacks are available",
             "nl": "Geen vegetarische snacks beschikbaar",
             "fr": "Pas d'en-cas végétariens disponibles",
-            "de": "Es sind keine vegetarischen Snacks erhältlich"
+            "de": "Es sind keine vegetarischen Snacks erhältlich",
+            "ca": "No hi han sacks disponibles"
           }
         }
       ],
@@ -782,7 +811,8 @@
         "en": "Does this fries shop have vegan snacks?",
         "nl": "Heeft deze frituur veganistische snacks?",
         "fr": "Cette friterie est-elle équipée de snacks végétaliens ?",
-        "de": "Gibt es in dieser Pommesbude auch vegane Snacks?"
+        "de": "Gibt es in dieser Pommesbude auch vegane Snacks?",
+        "ca": "Aquesta botiga de patates fregides té snacks vegans?"
       },
       "mappings": [
         {
@@ -791,7 +821,8 @@
             "en": "Vegan snacks are available",
             "nl": "Er zijn veganistische snacks aanwezig",
             "fr": "Des collations végétaliens sont disponibles",
-            "de": "Vegane Snacks sind erhältlich"
+            "de": "Vegane Snacks sind erhältlich",
+            "ca": "Hi han snacks vegans disponibles"
           }
         },
         {
@@ -800,7 +831,8 @@
             "en": "A small selection of vegan snacks are available",
             "nl": "Slechts enkele veganistische snacks",
             "fr": "Quelques snacks végétaliens seulement",
-            "de": "Nur eine kleine Auswahl an veganen Snacks ist erhältlich"
+            "de": "Nur eine kleine Auswahl an veganen Snacks ist erhältlich",
+            "ca": "Hi ha una petita selecció de snacks vegans disponibles"
           }
         },
         {
@@ -809,7 +841,8 @@
             "en": "No vegan snacks are available",
             "nl": "Geen veganistische snacks beschikbaar",
             "fr": "Pas d'en-cas végétaliens disponibles",
-            "de": "Es sind keine veganen Snacks verfügbar"
+            "de": "Es sind keine veganen Snacks verfügbar",
+            "ca": "No hi ha snacks vegans disponibles"
           }
         }
       ],
@@ -820,7 +853,8 @@
       "question": {
         "en": "Does this fries shop offer organic snacks?",
         "nl": "Heeft deze frituur biologische snacks?",
-        "de": "Bietet diese Pommesbude biologische Snacks an?"
+        "de": "Bietet diese Pommesbude biologische Snacks an?",
+        "ca": "Aquesta botiga de patates fregides ofereix snacks orgànics?"
       },
       "mappings": [
         {
@@ -828,7 +862,8 @@
           "then": {
             "en": "Organic snacks are available",
             "nl": "Er zijn biologische snacks aanwezig",
-            "de": "Biologische Snacks sind erhältlich"
+            "de": "Biologische Snacks sind erhältlich",
+            "ca": "Hi ha disponibles snacks orgànics"
           }
         },
         {
@@ -836,7 +871,8 @@
           "then": {
             "en": "No organic snacks are available",
             "nl": "Geen biologische snacks beschikbaar",
-            "de": "Es sind keine biologischen Snacks erhältlich"
+            "de": "Es sind keine biologischen Snacks erhältlich",
+            "ca": "No hi han disponibles snacks orgànics"
           }
         },
         {
@@ -844,7 +880,8 @@
           "then": {
             "en": "Only organic snacks are available",
             "nl": "Enkel biologische snacks zijn beschikbaar",
-            "de": "Es sind nur biologische Snacks erhältlich"
+            "de": "Es sind nur biologische Snacks erhältlich",
+            "ca": "Només hi han disponibles snacks orgànics"
           }
         }
       ],
@@ -868,7 +905,8 @@
             "fr": "La friture est faite avec de l'huile végétale",
             "de": "Es wird pflanzliches Fett zum Frittieren verwendet",
             "es": "La fritura se hace con aceite vegetal",
-            "ca": "El fregit es fa amb oli vegetal"
+            "ca": "El fregit es fa amb oli vegetal",
+            "pl": "Smażenie jest na oleju roślinnym"
           }
         },
         {
@@ -879,7 +917,8 @@
             "fr": "La friture est faite avec de la graisse animale",
             "de": "Es wird tierisches Fett zum Frittieren verwendet",
             "es": "La fritura se hace con aceite animal",
-            "ca": "El fregit es fa amb oli animal"
+            "ca": "El fregit es fa amb oli animal",
+            "pl": "Smażenie jest na oleju zwierzęcym"
           }
         }
       ],
@@ -893,7 +932,8 @@
         "en": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?",
         "ja": "お客様が持参容器(調理用の鍋や小さな鍋など)をもってきた場合は、注文の梱包に使用されますか?",
         "de": "Wenn Sie Ihr eigenes Behältnis mitbringen (z. B. einen Kochtopf und kleine Töpfe), wird es dann zum Verpacken Ihrer Bestellung verwendet?",
-        "es": "Si traes tu propio recipiente (como ollas de cocina y ollas pequeñas), ¿se utiliza para empaquetar tu pedido?"
+        "es": "Si traes tu propio recipiente (como ollas de cocina y ollas pequeñas), ¿se utiliza para empaquetar tu pedido?",
+        "ca": "Si portes el teu propi recipient (com olla de cuina o olles menudes), s'utilitza per a empaquetar la teua comanda?"
       },
       "mappings": [
         {
@@ -904,7 +944,8 @@
             "en": "You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste",
             "ja": "<b>自分の容器</b>を持ってきて、注文を受け取ることができ、使い捨ての梱包材を節約して、無駄を省くことができます",
             "de": "Sie können <b>ihre eigenen Behälter</b> mitbringen, um Ihre Bestellung zu erhalten, was Einwegverpackungsmaterial und damit Abfall spart",
-            "es": "Puedes traer <b>tus propios recipientes</b> para recoger tu pedido, ahorrando material de un solo uso y por tanto basura"
+            "es": "Puedes traer <b>tus propios recipientes</b> para recoger tu pedido, ahorrando material de un solo uso y por tanto basura",
+            "ca": "Pots portar els <b>teus propis recipients</b> per a arreplegar la teua comanda, estalviant material d'un sol ús i, per tant, brossa"
           }
         },
         {
@@ -916,7 +957,8 @@
             "ja": "独自の容器を持参することは<b>できません</b>",
             "ru": "Приносить свою тару <b>не разрешено</b>",
             "de": "Das Mitbringen eines eigenen Containers ist <b>nicht erlaubt</b>",
-            "es": "Traer tu propio recipiente <b>no está permitido</b>"
+            "es": "Traer tu propio recipiente <b>no está permitido</b>",
+            "ca": "Portar el teu propi recipient <b>no està permès</b>"
           }
         },
         {
@@ -927,7 +969,8 @@
             "ja": "自身の容器が注文に<b>必要</b>。",
             "fr": "Il est <b>obligatoire</b> d’apporter ses propres contenants.",
             "de": "Sie <b>müssen</b> Ihren eigenen Behälter mitbringen, um hier zu bestellen.",
-            "es": "<b>Debes</b> de traer tu propio recipiente para pedir aquí."
+            "es": "<b>Debes</b> de traer tu propio recipiente para pedir aquí.",
+            "ca": "<b>Has</b> de portar el teu propi recipient per a demanar aquí."
           }
         }
       ],
@@ -949,7 +992,10 @@
           "question": {
             "en": "Reservation not required",
             "nl": "Reserveren niet vereist",
-            "de": "Reservierung nicht erforderlich"
+            "de": "Reservierung nicht erforderlich",
+            "fr": "Pas de réservation nécessaire",
+            "pl": "Rezerwacja nie jest wymagana",
+            "ca": "No cal reservar"
           },
           "osmTags": {
             "or": [
@@ -970,18 +1016,28 @@
             "de": "Vegetarische Gerichte im Angebot",
             "es": "Tiene menú vegetariano",
             "fr": "A un menu végétarien",
-            "nl": "Heeft een vegetarisch menu"
+            "nl": "Heeft een vegetarisch menu",
+            "pl": "Ma menu wegetariańskie",
+            "ca": "Té menú vegetarià"
           }
         },
         {
           "question": {
-            "en": "Only fastfood buisinesses"
+            "en": "Only fastfood businesses",
+            "de": "Nur Fastfood-Geschäfte",
+            "fr": "Seulement les fastfood",
+            "pl": "Tylko fast-foody",
+            "ca": "Només negocis de menjar ràpid"
           },
           "osmTags": "amenity=fast_food"
         },
         {
           "question": {
-            "en": "Only restaurants"
+            "en": "Only restaurants",
+            "de": "Nur Restaurants",
+            "fr": "Seulement les restaurants",
+            "pl": "Tylko restauracje",
+            "ca": "Només restaurants"
           },
           "osmTags": "amenity=restaurant"
         }
@@ -996,7 +1052,9 @@
             "nl": "Heeft een veganistisch menu",
             "de": "Vegane Gerichte im Angebot",
             "es": "Tiene menú vegano",
-            "fr": "A un menu végétalien"
+            "fr": "A un menu végétalien",
+            "pl": "Ma menu wegańskie",
+            "ca": "Té menú vegà"
           },
           "osmTags": {
             "or": [
@@ -1019,7 +1077,8 @@
             "de": "Halal Gerichte im Angebot",
             "es": "Tiene menú halah",
             "fr": "A un menu halal",
-            "da": "Har en halalmenu"
+            "da": "Har en halalmenu",
+            "ca": "Té menú halal"
           },
           "osmTags": {
             "or": [
@@ -1040,7 +1099,8 @@
             "de": "Halal Gerichte im Angebot",
             "da": "Har en halalmenu",
             "es": "Tiene menú halah",
-            "fr": "A un menu halal"
+            "fr": "A un menu halal",
+            "ca": "Té menú halal"
           },
           "osmTags": {
             "or": [
@@ -1063,7 +1123,9 @@
           "en": "This is actually a pub",
           "de": "Dies ist eigentlich eine Kneipe",
           "fr": "C'est en fait un bar",
-          "nl": "Dit is eigenlijk een bruin cafe of kroeg"
+          "nl": "Dit is eigenlijk een bruin cafe of kroeg",
+          "pl": "To tak naprawdę jest pub",
+          "ca": "Això és en realitat un bar"
         }
       },
       {
@@ -1072,7 +1134,9 @@
           "en": "This is actually a cafe",
           "de": "Dies ist eigentlich ein Café",
           "fr": "C'est en fait un café",
-          "nl": "Dit is eigenlijk een cafe (een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen)"
+          "nl": "Dit is eigenlijk een cafe (een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen)",
+          "pl": "To tak naprawdę jest kawiarnia",
+          "ca": "Això és en realitat un cafè"
         }
       }
     ],
@@ -1089,7 +1153,9 @@
           "en": "{title()} has closed down permanently",
           "de": "{title()} wurde dauerhaft geschlossen",
           "es": "{title()} ha cerrado permanentemente",
-          "fr": "{title()} a fermé définitivement"
+          "fr": "{title()} a fermé définitivement",
+          "pl": "{title()} jest zamknięte na stałe",
+          "ca": "{title()} ha tancat permanentment"
         },
         "changesetMessage": "shop_closed"
       }
@@ -1162,7 +1228,7 @@
     "en": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
     "nl": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)",
     "de": "Eine Ebene mit Restaurants und Fast-Food-Einrichtungen (mit speziellem Rendering für Pommesbuden)",
-    "es": "Una capa que muestra restaurantes y locales de comida rápida (con un renderizado especial para freidurías)",
+    "es": "Una capa mostrando restaurantes y locales de comida rápida (con un renderizado especial para friterías)",
     "fr": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
     "ca": "Una capa que mostra restaurants i locals de menjar ràpid (amb un renderitzat especial per a fregiduries)",
     "cs": "Vrstva zobrazující restaurace a zařízení rychlého občerstvení (se speciálním vykreslením pro fritézy)"

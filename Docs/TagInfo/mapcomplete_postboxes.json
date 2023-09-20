@@ -194,6 +194,21 @@
       "value": "no"
     },
     {
+      "key": "atm",
+      "description": "Layer 'Post offices' shows atm=yes with a fixed text, namely 'This post office has an ATM' and allows to pick this as a default answer (in the mapcomplete.org theme 'Postbox and Post Office Map')",
+      "value": "yes"
+    },
+    {
+      "key": "atm",
+      "description": "Layer 'Post offices' shows atm=no with a fixed text, namely 'This post office does <b>not</b> have an ATM' and allows to pick this as a default answer (in the mapcomplete.org theme 'Postbox and Post Office Map')",
+      "value": "no"
+    },
+    {
+      "key": "atm",
+      "description": "Layer 'Post offices' shows atm=separate with a fixed text, namely 'This post office does have an ATM, but it is mapped as a different icon' and allows to pick this as a default answer (in the mapcomplete.org theme 'Postbox and Post Office Map')",
+      "value": "separate"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Postbox and Post Office Map has a layer Parcel Lockers showing features with this tag",
       "value": "parcel_locker"

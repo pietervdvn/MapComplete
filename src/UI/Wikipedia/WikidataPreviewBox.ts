@@ -126,7 +126,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
             new Combine([
                 Translation.fromMap(wikidata.labels)?.SetClass("font-bold"),
                 link,
-            ]).SetClass("flex justify-between"),
+            ]).SetClass("flex justify-between flex-wrap-reverse"),
             Translation.fromMap(wikidata.descriptions),
             WikidataPreviewBox.QuickFacts(wikidata, options),
             ...(options?.extraItems ?? []),

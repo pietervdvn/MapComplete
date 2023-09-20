@@ -20,7 +20,7 @@ import { DesugaringContext } from "../src/Models/ThemeConfig/Conversion/Conversi
 import { Utils } from "../src/Utils"
 import Script from "./Script"
 import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
-
+import { parse as parse_html } from "node-html-parser"
 // This scripts scans 'src/assets/layers/*.json' for layer definition files and 'src/assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
 
@@ -269,7 +269,8 @@ class LayerOverviewUtils extends Script {
 
         if (
             recompiledThemes.length > 0 &&
-            !(recompiledThemes.length === 1 && recompiledThemes[0] === "mapcomplete-changes")
+            !(recompiledThemes.length === 1 && recompiledThemes[0] === "mapcomplete-changes") &&
+            args.indexOf("--generate-change-map") >= 0
         ) {
             // mapcomplete-changes shows an icon for each corresponding mapcomplete-theme
             const iconsPerTheme = Array.from(sharedThemes.values()).map((th) => ({
@@ -516,7 +517,9 @@ class LayerOverviewUtils extends Script {
                     hideFromOverview: t.hideFromOverview ?? false,
                     shortDescription:
                         t.shortDescription ??
-                        new Translation(t.description).FirstSentence().translations,
+                        new Translation(t.description)
+                            .FirstSentence()
+                            .OnEveryLanguage((s) => parse_html(s).innerText).translations,
                     mustHaveLanguage: t.mustHaveLanguage?.length > 0,
                 }
             })

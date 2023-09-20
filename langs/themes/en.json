@@ -438,7 +438,7 @@
                                     "then": "This shop does not repair climbing shoes"
                                 }
                             },
-                            "question": "Does this shoe repair shop also repair clibming shoes?"
+                            "question": "Does this shoe repair shop also repair climbing shoes?"
                         }
                     },
                     "=presets": {
@@ -858,12 +858,12 @@
         "description": "This maps shows all the changes made with MapComplete",
         "layers": {
             "0": {
-                "description": "Shows all MapComplete changes",
+                "description": "Show all MapComplete changes",
                 "filter": {
                     "0": {
                         "options": {
                             "0": {
-                                "question": "Themename contains {search}"
+                                "question": "Theme name contains {search}"
                             }
                         }
                     },
@@ -920,12 +920,12 @@
                 "name": "Changeset centers",
                 "tagRenderings": {
                     "contributor": {
-                        "question": "What contributor did make this change?",
+                        "question": "Which contributor made this change?",
                         "render": "Change made by <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
                     },
                     "host": {
                         "question": "What host (website) was this change made with?",
-                        "render": "Change with with <a href='{host}'>{host}</a>"
+                        "render": "Change made with <a href='{host}'>{host}</a>"
                     },
                     "locale": {
                         "question": "What locale (language) was this change made in?",
@@ -936,7 +936,7 @@
                     },
                     "theme-id": {
                         "question": "What theme was used to make this change?",
-                        "render": "Change with theme <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
+                        "render": "Change with theme <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
                     },
                     "version": {
                         "question": "What version of MapComplete was used to make this change?",
@@ -957,7 +957,7 @@
                 }
             }
         },
-        "shortDescription": "Shows changes made by MapComplete",
+        "shortDescription": "Show changes made with MapComplete",
         "title": "Changes made with MapComplete"
     },
     "maproulette": {

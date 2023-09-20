@@ -4,7 +4,8 @@
     "en": "Kindergartens and childcare",
     "nl": "Kleuterscholen en kinderopvang",
     "de": "Kindergärten und Kinderkrippen",
-    "ca": "Llars d'infants i guarderies"
+    "ca": "Llars d'infants i guarderies",
+    "pl": "Przedszkola i żłobki"
   },
   "description": "Shows kindergartens and preschools. Both are grouped in one layer, as they are regularly confused with each other",
   "minzoom": 12,
@@ -24,7 +25,8 @@
         "then": {
           "en": "Kindergarten {name}",
           "nl": "Kleuterschool {name}",
-          "de": "Kindergarten {name}"
+          "de": "Kindergarten {name}",
+          "pl": "Przedszkole {name}"
         }
       },
       {
@@ -32,7 +34,8 @@
         "then": {
           "en": "Childcare {name}",
           "nl": "Kinderopvang {name}",
-          "de": "Kinderkrippe {name}"
+          "de": "Kinderkrippe {name}",
+          "pl": "Żłobek {name}"
         }
       }
     ]
@@ -43,7 +46,8 @@
       "question": {
         "en": "What type of facility is this?",
         "nl": "Wat voor faciliteit is dit?",
-        "de": "Um welche Art von Einrichtung handelt es sich?"
+        "de": "Um welche Art von Einrichtung handelt es sich?",
+        "pl": "Jaki to rodzaj placówki?"
       },
       "mappings": [
         {
@@ -52,7 +56,8 @@
             "en": "This is a kindergarten (also known as <i>preschool</i>) where small kids receive early education.",
             "nl": "Dit is een kleuterschool waar kindjes (voorbereidend) onderwijs krijgen.",
             "de": "Dies ist ein Kindergarten (auch bekannt als <i>Vorschule</i>), in dem kleine Kinder eine Früherziehung erhalten.",
-            "ca": "Aquesta és una llar d'infants (també coneguda com a <i>preescolar</i>) on els nens petits reben educació primerenca."
+            "ca": "Aquesta és una llar d'infants (també coneguda com a <i>preescolar</i>) on els nens petits reben educació primerenca.",
+            "pl": "To jest przedszkole, gdzie małe dzieci otrzymują wczesną edukację."
           },
           "addExtraTags": [
             "isced:level=0",
@@ -79,13 +84,15 @@
         "en": "What is the name of this facility?",
         "de": "Wie lautet der Name dieser Einrichtung?",
         "nl": "Wat is de naam van deze faciliteit?",
-        "ca": "Com s'anomena aquesta instal·lació?"
+        "ca": "Com s'anomena aquesta instal·lació?",
+        "pl": "Jaka jest nazwa tej placówki?"
       },
       "render": {
         "en": "This facility is named <b>{name}</b>",
         "de": "Diese Einrichtung hat den Namen <b>{name}</b>",
         "ca": "Aquesta instal·lació s'anomena <b>{name}</b>",
-        "nl": "Deze faciliteit heet <b>{name}</b>"
+        "nl": "Deze faciliteit heet <b>{name}</b>",
+        "pl": "Ta placówka nazywa się <b>{name}</b>"
       },
       "freeform": {
         "key": "name"
@@ -100,7 +107,8 @@
         "question": {
           "en": "When is this childcare opened?",
           "nl": "Wanneer is deze kinderopvang geopend?",
-          "de": "Wann ist diese Kinderbetreuung geöffnet?"
+          "de": "Wann ist diese Kinderbetreuung geöffnet?",
+          "pl": "W jakich godzinach ten żłobek jest otwarty?"
         },
         "condition": "amenity=childcare"
       }
@@ -111,13 +119,15 @@
         "en": "How much kids (at most) can be enrolled here?",
         "nl": "Hoeveel kinderen kunnen hier terecht?",
         "de": "Wie viele Kinder können hier maximal angemeldet werden?",
-        "ca": "Quants nens (com a màxim) es poden inscriure aquí?"
+        "ca": "Quants nens (com a màxim) es poden inscriure aquí?",
+        "pl": "Jak wiele dzieci (maksymalnie) może być tutaj zapisanych?"
       },
       "render": {
         "en": "This facility has room for {capacity} kids",
         "nl": "Hier kunnen {capacity} kinderen terecht",
         "de": "Diese Einrichtung bietet Platz für {capacity} Kinder",
-        "ca": "Aquesta instal·lació té espai per a {capacity} nens"
+        "ca": "Aquesta instal·lació té espai per a {capacity} nens",
+        "pl": "Ta placówka ma miejsce na {capacity} dzieci"
       },
       "freeform": {
         "key": "capacity",
@@ -132,7 +142,8 @@
         "nl": "een kleuterschool",
         "de": "einen Kindergarten",
         "ru": "детский сад",
-        "ca": "una llar d'infants"
+        "ca": "una llar d'infants",
+        "pl": "przedszkole"
       },
       "description": "A kindergarten (also known as <i>preschool</i>) is a school where small kids receive early education.",
       "tags": [
@@ -146,7 +157,8 @@
         "en": "a childcare",
         "nl": "een kinderopvang",
         "de": "eine Kinderkrippe",
-        "ca": "una guarderia"
+        "ca": "una guarderia",
+        "pl": "żłobek"
       },
       "description": "A childcare (also known as <i>a nursery</i> or <i>daycare</i>) is a facility which looks after small kids, but does not offer them an education program.",
       "tags": [

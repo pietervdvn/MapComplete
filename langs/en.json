@@ -380,6 +380,7 @@
                 "born": "Born: {value}",
                 "died": "Died: {value}"
             },
+            "readMore": "Read the rest of the article",
             "searchToShort": "Your search query is too short, enter a longer text",
             "searchWikidata": "Search on Wikidata",
             "wikipediaboxTitle": "Wikipedia"
@@ -405,19 +406,10 @@
         "doDelete": "Remove image",
         "dontDelete": "Cancel",
         "isDeleted": "Deleted",
-        "nearbyPictures": {
-            "allFiltered": "No images matched your filter",
-            "browseNearby": "Browse nearby images…",
-            "confirm": "The selected image shows {title()}",
-            "hasMatchingPicture": "Does a picture match the object? Select it below",
-            "loadMore": "Load more images",
-            "loading": "Loading nearby images…",
-            "noImageSelected": "Select an image to link it to the object",
-            "nothingFound": "No nearby images found…",
-            "onlyTowards": "Only show pictures which are taken towards this object",
-            "removeFilters": "Click here to remove the filters",
-            "title": "Nearby pictures",
-            "withinRadius": "Only show pictures which are taken within {radius} meter of this object"
+        "nearby": {
+            "link": "This picture shows the object",
+            "seeNearby": "Browse and link nearby pictures",
+            "title": "Nearby streetview imagery"
         },
         "pleaseLogin": "Please log in to add a picture",
         "respectPrivacy": "Do not photograph people nor license plates. Do not upload Google Maps, Google Streetview or other copyrighted sources.",
@@ -507,7 +499,9 @@
     },
     "plantDetection": {
         "back": "Back to species overview",
+        "button": "Automatically detect the plant species using the AI of Plantnet.org",
         "confirm": "Select species",
+        "done": "The species has been applied",
         "error": "Something went wrong while detecting the tree species: {error}",
         "howTo": {
             "intro": "For optimal results,",
@@ -524,7 +518,8 @@
         "poweredByPlantnet": "Powered by <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
         "querying": "Querying plantnet.org with {length} images",
         "seeInfo": "See more information about the species",
-        "takeImages": "Take images of the tree to automatically detect the tree type"
+        "takeImages": "Take images of the tree to automatically detect the tree type",
+        "tryAgain": "Select a different species"
     },
     "privacy": {
         "editing": "When you make a change to the map, this change is recorded on OpenStreetMap and is publicly available to anyone. A changeset made with MapComplete includes the following data: <ul><li>The changes you made</li><li>Your username</li><li>When this change is made</li><li>The theme you used while making the change</li><li>The language of the user interface</li><li>An indication of how close you were to changed objects. Other mappers can use this information to determine if a change was made based on survey or on remote research</li></ul> Please refer to <a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>the privacy policy on OpenStreetMap.org</a> for detailed information. We'd like to remind you that you can use a fictional name when signing up.",

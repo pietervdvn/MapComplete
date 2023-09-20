@@ -1,52 +1,56 @@
 import Combine from "./Base/Combine"
-import {FixedUiElement} from "./Base/FixedUiElement"
+import { FixedUiElement } from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import Table from "./Base/Table"
-import {RenderingSpecification, SpecialVisualization, SpecialVisualizationState,} from "./SpecialVisualization"
-import {HistogramViz} from "./Popup/HistogramViz"
-import {MinimapViz} from "./Popup/MinimapViz"
-import {ShareLinkViz} from "./Popup/ShareLinkViz"
-import {UploadToOsmViz} from "./Popup/UploadToOsmViz"
-import {MultiApplyViz} from "./Popup/MultiApplyViz"
-import {AddNoteCommentViz} from "./Popup/AddNoteCommentViz"
-import {PlantNetDetectionViz} from "./Popup/PlantNetDetectionViz"
+import {
+    RenderingSpecification,
+    SpecialVisualization,
+    SpecialVisualizationState,
+} from "./SpecialVisualization"
+import { HistogramViz } from "./Popup/HistogramViz"
+import { MinimapViz } from "./Popup/MinimapViz"
+import { ShareLinkViz } from "./Popup/ShareLinkViz"
+import { UploadToOsmViz } from "./Popup/UploadToOsmViz"
+import { MultiApplyViz } from "./Popup/MultiApplyViz"
+import { AddNoteCommentViz } from "./Popup/AddNoteCommentViz"
+import { PlantNetDetectionViz } from "./Popup/PlantNetDetectionViz"
 import TagApplyButton from "./Popup/TagApplyButton"
-import {CloseNoteButton} from "./Popup/CloseNoteButton"
-import {MapillaryLinkVis} from "./Popup/MapillaryLinkVis"
-import {Store, Stores, UIEventSource} from "../Logic/UIEventSource"
+import { CloseNoteButton } from "./Popup/CloseNoteButton"
+import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis"
+import { Store, Stores, UIEventSource } from "../Logic/UIEventSource"
 import AllTagsPanel from "./Popup/AllTagsPanel.svelte"
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders"
-import {ImageCarousel} from "./Image/ImageCarousel"
-import {ImageUploadFlow} from "./Image/ImageUploadFlow"
-import {VariableUiElement} from "./Base/VariableUIElement"
-import {Utils} from "../Utils"
-import Wikidata, {WikidataResponse} from "../Logic/Web/Wikidata"
-import {Translation} from "./i18n/Translation"
+import { ImageCarousel } from "./Image/ImageCarousel"
+import { ImageUploadFlow } from "./Image/ImageUploadFlow"
+import { VariableUiElement } from "./Base/VariableUIElement"
+import { Utils } from "../Utils"
+import Wikidata, { WikidataResponse } from "../Logic/Web/Wikidata"
+import { Translation } from "./i18n/Translation"
 import Translations from "./i18n/Translations"
 import ReviewForm from "./Reviews/ReviewForm"
 import ReviewElement from "./Reviews/ReviewElement"
 import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
 import LiveQueryHandler from "../Logic/Web/LiveQueryHandler"
-import {SubtleButton} from "./Base/SubtleButton"
+import { SubtleButton } from "./Base/SubtleButton"
 import Svg from "../Svg"
 import NoteCommentElement from "./Popup/NoteCommentElement"
 import ImgurUploader from "../Logic/ImageProviders/ImgurUploader"
 import FileSelectorButton from "./Input/FileSelectorButton"
-import {LoginToggle} from "./Popup/LoginButton"
+import { LoginToggle } from "./Popup/LoginButton"
 import Toggle from "./Input/Toggle"
-import {SubstitutedTranslation} from "./SubstitutedTranslation"
+import { SubstitutedTranslation } from "./SubstitutedTranslation"
 import List from "./Base/List"
 import StatisticsPanel from "./BigComponents/StatisticsPanel"
 import AutoApplyButton from "./Popup/AutoApplyButton"
-import {LanguageElement} from "./Popup/LanguageElement"
+import { LanguageElement } from "./Popup/LanguageElement"
 import FeatureReviews from "../Logic/Web/MangroveReviews"
 import Maproulette from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
-import {BBoxFeatureSourceForLayer} from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
+import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import QuestionViz from "./Popup/QuestionViz"
-import {Feature, Point} from "geojson"
-import {GeoOperations} from "../Logic/GeoOperations"
+import { Feature, Point } from "geojson"
+import { GeoOperations } from "../Logic/GeoOperations"
 import CreateNewNote from "./Popup/CreateNewNote.svelte"
 import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
 import UserProfile from "./BigComponents/UserProfile.svelte"
@@ -54,40 +58,30 @@ import LanguagePicker from "./LanguagePicker"
 import Link from "./Base/Link"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
-import NearbyImages, {NearbyImageOptions, P4CPicture, SelectOneNearbyImage,} from "./Popup/NearbyImages"
-import {Tag} from "../Logic/Tags/Tag"
-import ChangeTagAction from "../Logic/Osm/Actions/ChangeTagAction"
-import {And} from "../Logic/Tags/And"
-import {SaveButton} from "./Popup/SaveButton"
-import Lazy from "./Base/Lazy"
-import {CheckBox} from "./Input/Checkboxes"
-import Slider from "./Input/Slider"
-import {OsmTags, WayId} from "../Models/OsmFeature"
+import { OsmTags, WayId } from "../Models/OsmFeature"
 import MoveWizard from "./Popup/MoveWizard"
 import SplitRoadWizard from "./Popup/SplitRoadWizard"
-import {ExportAsGpxViz} from "./Popup/ExportAsGpxViz"
+import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz"
 import WikipediaPanel from "./Wikipedia/WikipediaPanel.svelte"
 import TagRenderingEditable from "./Popup/TagRendering/TagRenderingEditable.svelte"
-import {PointImportButtonViz} from "./Popup/ImportButtons/PointImportButtonViz"
+import { PointImportButtonViz } from "./Popup/ImportButtons/PointImportButtonViz"
 import WayImportButtonViz from "./Popup/ImportButtons/WayImportButtonViz"
 import ConflateImportButtonViz from "./Popup/ImportButtons/ConflateImportButtonViz"
 import DeleteWizard from "./Popup/DeleteFlow/DeleteWizard.svelte"
-import {OpenJosm} from "./BigComponents/OpenJosm"
+import { OpenJosm } from "./BigComponents/OpenJosm"
 import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte"
-import FediverseValidator from "./InputElement/Validators/FediverseValidator";
+import FediverseValidator from "./InputElement/Validators/FediverseValidator"
+import SendEmail from "./Popup/SendEmail.svelte"
+import NearbyImages from "./Popup/NearbyImages.svelte"
+import NearbyImagesCollapsed from "./Popup/NearbyImagesCollapsed.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
     args: { name: string; defaultValue?: string; doc: string; required?: boolean }[] = [
         {
             name: "mode",
-            defaultValue: "expandable",
-            doc: "Indicates how this component is initialized. Options are: \n\n- `open`: always show and load the pictures\n- `collapsable`: show the pictures, but a user can collapse them\n- `expandable`: shown by default; but a user can collapse them.",
-        },
-        {
-            name: "mapillary",
-            defaultValue: "true",
-            doc: "If 'true', includes a link to mapillary on this location.",
+            defaultValue: "closed",
+            doc: "Either `open` or `closed`. If `open`, then the image carousel will always be shown",
         },
     ]
     docs =
@@ -96,110 +90,21 @@ class NearbyImageVis implements SpecialVisualization {
 
     constr(
         state: SpecialVisualizationState,
-        tagSource: UIEventSource<Record<string, string>>,
+        tags: UIEventSource<Record<string, string>>,
         args: string[],
         feature: Feature,
         layer: LayerConfig
     ): BaseUIElement {
-        const t = Translations.t.image.nearbyPictures
-        const mode: "open" | "expandable" | "collapsable" = <any>args[0]
+        const isOpen = args[0] === "open"
         const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
-        const id: string = tagSource.data["id"]
-        const canBeEdited: boolean = !!id?.match("(node|way|relation)/-?[0-9]+")
-        const selectedImage = new UIEventSource<P4CPicture>(undefined)
-
-        let saveButton: BaseUIElement = undefined
-        if (canBeEdited) {
-            const confirmText: BaseUIElement = new SubstitutedTranslation(
-                t.confirm,
-                tagSource,
-                state
-            )
-
-            const onSave = async () => {
-                console.log("Selected a picture...", selectedImage.data)
-                const osmTags = selectedImage.data.osmTags
-                const tags: Tag[] = []
-                for (const key in osmTags) {
-                    tags.push(new Tag(key, osmTags[key]))
-                }
-                await state?.changes?.applyAction(
-                    new ChangeTagAction(id, new And(tags), tagSource.data, {
-                        theme: state?.layout.id,
-                        changeType: "link-image",
-                    })
-                )
-            }
-            saveButton = new SaveButton(selectedImage, state, confirmText, t.noImageSelected)
-                .onClick(onSave)
-                .SetClass("flex justify-end")
-        }
-
-        const nearby = new Lazy(() => {
-            const towardsCenter = new CheckBox(t.onlyTowards, false)
-
-            const maxSearchRadius = 100
-            const stepSize = 10
-            const defaultValue = Math.floor(maxSearchRadius / (2 * stepSize)) * stepSize
-            const fromOsmPreferences = state?.osmConnection
-                ?.GetPreference("nearby-images-radius", "" + defaultValue)
-                .sync(
-                    (s) => Number(s),
-                    [],
-                    (i) => "" + i
-                )
-            const radiusValue = new UIEventSource(fromOsmPreferences.data)
-            radiusValue.addCallbackAndRunD((v) => fromOsmPreferences.setData(v))
-
-            const radius = new Slider(stepSize, maxSearchRadius, {
-                value: radiusValue,
-                step: 10,
-            })
-            const alreadyInTheImage = AllImageProviders.LoadImagesFor(tagSource)
-            const options: NearbyImageOptions & { value } = {
-                lon,
-                lat,
-                searchRadius: maxSearchRadius,
-                shownRadius: radius.GetValue(),
-                value: selectedImage,
-                blacklist: alreadyInTheImage,
-                towardscenter: towardsCenter.GetValue(),
-                maxDaysOld: 365 * 3,
-            }
-            const slideshow = canBeEdited
-                ? new SelectOneNearbyImage(options, state.indexedFeatures)
-                : new NearbyImages(options, state.indexedFeatures)
-            const controls = new Combine([
-                towardsCenter,
-                new Combine([
-                    new VariableUiElement(
-                        radius.GetValue().map((radius) => t.withinRadius.Subs({radius}))
-                    ),
-                    radius,
-                ]).SetClass("flex justify-between"),
-            ]).SetClass("flex flex-col")
-            return new Combine([
-                slideshow,
-                controls,
-                saveButton,
-                new MapillaryLinkVis().constr(state, tagSource, [], feature).SetClass("mt-6"),
-            ])
+        return new SvelteUIElement(isOpen ? NearbyImages : NearbyImagesCollapsed, {
+            tags,
+            state,
+            lon,
+            lat,
+            feature,
+            layer,
         })
-
-        let withEdit: BaseUIElement = nearby
-        if (canBeEdited) {
-            withEdit = new Combine([t.hasMatchingPicture, nearby]).SetClass("flex flex-col")
-        }
-
-        if (mode === "open") {
-            return withEdit
-        }
-        const toggleState = new UIEventSource<boolean>(mode === "collapsable")
-        return new Toggle(
-            new Combine([new Title(t.title), withEdit]),
-            new Title(t.browseNearby).onClick(() => toggleState.setData(true)),
-            toggleState
-        )
     }
 }
 
@@ -386,24 +291,24 @@ export default class SpecialVisualizations {
             viz.docs,
             viz.args.length > 0
                 ? new Table(
-                    ["name", "default", "description"],
-                    viz.args.map((arg) => {
-                        let defaultArg = arg.defaultValue ?? "_undefined_"
-                        if (defaultArg == "") {
-                            defaultArg = "_empty string_"
-                        }
-                        return [arg.name, defaultArg, arg.doc]
-                    })
-                )
+                      ["name", "default", "description"],
+                      viz.args.map((arg) => {
+                          let defaultArg = arg.defaultValue ?? "_undefined_"
+                          if (defaultArg == "") {
+                              defaultArg = "_empty string_"
+                          }
+                          return [arg.name, defaultArg, arg.doc]
+                      })
+                  )
                 : undefined,
             new Title("Example usage of " + viz.funcName, 4),
             new FixedUiElement(
                 viz.example ??
-                "`{" +
-                viz.funcName +
-                "(" +
-                viz.args.map((arg) => arg.defaultValue).join(",") +
-                ")}`"
+                    "`{" +
+                        viz.funcName +
+                        "(" +
+                        viz.args.map((arg) => arg.defaultValue).join(",") +
+                        ")}`"
             ).SetClass("literal-code"),
         ])
     }
@@ -462,14 +367,14 @@ export default class SpecialVisualizations {
             s.structuredExamples === undefined
                 ? []
                 : s.structuredExamples().map((e) => {
-                    return s.constr(
-                        state,
-                        new UIEventSource<Record<string, string>>(e.feature.properties),
-                        e.args,
-                        e.feature,
-                        undefined
-                    )
-                })
+                      return s.constr(
+                          state,
+                          new UIEventSource<Record<string, string>>(e.feature.properties),
+                          e.args,
+                          e.feature,
+                          undefined
+                      )
+                  })
         return new Combine([new Title(s.funcName), s.docs, ...examples])
     }
 
@@ -484,7 +389,7 @@ export default class SpecialVisualizations {
                     let [lon, lat] = GeoOperations.centerpointCoordinates(feature)
                     return new SvelteUIElement(AddNewPoint, {
                         state,
-                        coordinate: {lon, lat},
+                        coordinate: { lon, lat },
                     })
                 },
             },
@@ -603,7 +508,7 @@ export default class SpecialVisualizations {
                     feature: Feature
                 ): BaseUIElement {
                     const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
-                    return new SvelteUIElement(CreateNewNote, {state, coordinate: {lon, lat}})
+                    return new SvelteUIElement(CreateNewNote, { state, coordinate: { lon, lat } })
                 },
             },
             new CloseNoteButton(),
@@ -633,7 +538,7 @@ export default class SpecialVisualizations {
                     const keys = args[0].split(";").map((k) => k.trim())
                     const wikiIds: Store<string[]> = tagsSource.map((tags) => {
                         const key = keys.find((k) => tags[k] !== undefined && tags[k] !== "")
-                        return tags[key]?.split(";")?.map((id) => id.trim())
+                        return tags[key]?.split(";")?.map((id) => id.trim()) ?? []
                     })
                     return new SvelteUIElement(WikipediaPanel, {
                         wikiIds,
@@ -680,7 +585,7 @@ export default class SpecialVisualizations {
                 docs: "Prints all key-value pairs of the object - used for debugging",
                 args: [],
                 constr: (state, tags: UIEventSource<any>) =>
-                    new SvelteUIElement(AllTagsPanel, {tags, state}),
+                    new SvelteUIElement(AllTagsPanel, { tags, state }),
             },
             {
                 funcName: "image_carousel",
@@ -1229,28 +1134,12 @@ export default class SpecialVisualizations {
                     },
                 ],
                 constr(__, tags, args) {
-                    return new VariableUiElement(
-                        tags.map((tags) => {
-                            const [to, subject, body, button_text] = args.map((str) =>
-                                Utils.SubstituteKeys(str, tags)
-                            )
-                            const url =
-                                "mailto:" +
-                                to +
-                                "?subject=" +
-                                encodeURIComponent(subject) +
-                                "&body=" +
-                                encodeURIComponent(body)
-                            return new SubtleButton(Svg.envelope_svg(), button_text, {
-                                url,
-                            })
-                        })
-                    )
+                    return new SvelteUIElement(SendEmail, { args, tags })
                 },
             },
             {
                 funcName: "link",
-                docs: "Construct a link. By using the 'special' visualisation notation, translation should be easier",
+                docs: "Construct a link. By using the 'special' visualisation notation, translations should be easier",
                 args: [
                     {
                         name: "text",
@@ -1319,7 +1208,7 @@ export default class SpecialVisualizations {
                 ],
                 constr(state, featureTags, args) {
                     const [key, tr] = args
-                    const translation = new Translation({"*": tr})
+                    const translation = new Translation({ "*": tr })
                     return new VariableUiElement(
                         featureTags.map((tags) => {
                             const properties: object[] = JSON.parse(tags[key])
@@ -1340,29 +1229,46 @@ export default class SpecialVisualizations {
             {
                 funcName: "fediverse_link",
                 docs: "Converts a fediverse username or link into a clickable link",
-                args: [{
-                    name: "key",
-                    doc: "The attribute-name containing the link",
-                    required: true
-                }],
-                constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, argument: string[], feature: Feature, layer: LayerConfig): BaseUIElement {
+                args: [
+                    {
+                        name: "key",
+                        doc: "The attribute-name containing the link",
+                        required: true,
+                    },
+                ],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
                     const key = argument[0]
                     const validator = new FediverseValidator()
-                    return new VariableUiElement(tagSource.map(tags => tags[key]).map(fediAccount => {
-                            fediAccount = validator.reformat(fediAccount)
-                            const [_, username, host] = fediAccount.match(FediverseValidator.usernameAtServer)
+                    return new VariableUiElement(
+                        tagSource
+                            .map((tags) => tags[key])
+                            .map((fediAccount) => {
+                                fediAccount = validator.reformat(fediAccount)
+                                const [_, username, host] = fediAccount.match(
+                                    FediverseValidator.usernameAtServer
+                                )
 
-                            return new Link(fediAccount, "https://" + host + "/@" + username, true)
-                        }
-                    ))
-                }
-            }
+                                return new Link(
+                                    fediAccount,
+                                    "https://" + host + "/@" + username,
+                                    true
+                                )
+                            })
+                    )
+                },
+            },
         ]
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
 
         const invalid = specialVisualizations
-            .map((sp, i) => ({sp, i}))
+            .map((sp, i) => ({ sp, i }))
             .filter((sp) => sp.sp.funcName === undefined)
         if (invalid.length > 0) {
             throw (

@@ -32,7 +32,7 @@
           "club="
         ]
       },
-      "render": "<a href='{url}' target='_blank'>{url}</a>",
+      "render": "<a href='{url}' target='_blank' rel='noopener'>{url}</a>",
       "freeform": {
         "key": "url",
         "type": "url"

@@ -45,7 +45,7 @@
     <Tr t={layout.description} />
     <Tr t={Translations.t.general.welcomeExplanation.general} />
     {#if layout.layers.some((l) => l.presets?.length > 0)}
-        <Tr t={Translations.t.general.welcomeExplanation.addNew} />
+      <Tr t={Translations.t.general.welcomeExplanation.addNew} />
     {/if}
 
     <Tr t={layout.descriptionTail} />

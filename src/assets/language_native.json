@@ -6,11 +6,13 @@
   "en": "English",
   "eo": "Esperanto",
   "es": "español",
+  "eu": "euskara",
   "fi": "suomi",
   "fr": "français",
   "gl": "lingua galega",
+  "he": "עברית",
   "hu": "magyar",
-  "id": "Bahasa Indonesia",
+  "id": "bahasa Indonesia",
   "it": "italiano",
   "ja": "日本語",
   "nb_NO": "bokmål",
@@ -21,5 +23,6 @@
   "ru": "русский язык",
   "sl": "slovenščina",
   "sv": "svenska",
-  "zh_Hant": "簡體中文"
+  "zh_Hans": "简体中文",
+  "zh_Hant": "繁體中文"
 }

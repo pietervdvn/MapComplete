@@ -2,7 +2,8 @@
   "id": "shower",
   "name": {
     "en": "Shower",
-    "de": "Dusche"
+    "de": "Dusche",
+    "fr": "Douche"
   },
   "minzoom": 12,
   "source": {
@@ -11,18 +12,22 @@
   "title": {
     "render": {
       "en": "Shower",
-      "de": "Dusche"
+      "de": "Dusche",
+      "ca": "Dutxa",
+      "fr": "Douche"
     }
   },
   "presets": [
     {
       "title": {
         "en": "a shower",
-        "de": "eine Dusche"
+        "de": "eine Dusche",
+        "fr": "une douche"
       },
       "description": {
         "en": "A (public) shower",
-        "de": "Eine (öffentliche) Dusche"
+        "de": "Eine (öffentliche) Dusche",
+        "fr": "Une douche (publique)"
       },
       "tags": [
         "amenity=shower"
@@ -36,28 +41,32 @@
       "id": "access",
       "question": {
         "en": "Who can use this shower?",
-        "de": "Wer darf diese Dusche nutzen?"
+        "de": "Wer darf diese Dusche nutzen?",
+        "fr": "Qui peut utiliser cette douche ?"
       },
       "mappings": [
         {
           "if": "access=yes",
           "then": {
             "en": "Anyone can use this shower",
-            "de": "Jeder darf diese Dusche nutzen"
+            "de": "Jeder darf diese Dusche nutzen",
+            "fr": "Tout le monde peut utiliser cette douche"
           }
         },
         {
           "if": "access=customers",
           "then": {
             "en": "Only customers can use this shower",
-            "de": "Nur Kunden dürfen diese Dusche nutzen"
+            "de": "Nur Kunden dürfen diese Dusche nutzen",
+            "fr": "Seuls les clients peuvent utiliser cette douche"
           }
         },
         {
           "if": "access=key",
           "then": {
             "en": "Accesible, but one has to ask for a key",
-            "de": "Zugänglich, aber man muss nach einem Schlüssel fragen"
+            "de": "Zugänglich, aber man muss nach einem Schlüssel fragen",
+            "fr": "Accessible, mais il faut demander une clé"
           }
         }
       ]
@@ -66,21 +75,27 @@
       "id": "fee",
       "question": {
         "en": "Is there a fee for using this shower?",
-        "de": "Ist die Nutzung der Dusche kostenpflichtig?"
+        "de": "Ist die Nutzung der Dusche kostenpflichtig?",
+        "ca": "És allà un cost per utilitzar aquesta dutxa?",
+        "fr": "Faut-il payer pour utiliser cette douche ?"
       },
       "mappings": [
         {
           "if": "fee=yes",
           "then": {
             "en": "There is a fee for using this shower",
-            "de": "Die Nutzung der Dusche ist kostenpflichtig"
+            "de": "Die Nutzung der Dusche ist kostenpflichtig",
+            "ca": "Hi ha un preu per utilitzar aquesta dutxa",
+            "fr": "Il faut payer pour utiliser cette douche"
           }
         },
         {
           "if": "fee=no",
           "then": {
             "en": "This shower is free to use",
-            "de": "Die Nutzung der Dusche ist kostenlos"
+            "de": "Die Nutzung der Dusche ist kostenlos",
+            "ca": "Aquesta dutxa és gratuïta",
+            "fr": "Cette douche est gratuite"
           },
           "addExtraTags": [
             "charge="
@@ -93,19 +108,23 @@
       "condition": "fee=yes",
       "question": {
         "en": "How much does it cost to use this shower?",
-        "de": "Wie viel kostet es, diese Dusche zu nutzen?"
+        "de": "Wie viel kostet es, diese Dusche zu nutzen?",
+        "fr": "Quel est le prix pour utiliser cette douche ?"
       },
       "freeform": {
         "key": "charge",
         "type": "string",
         "placeholder": {
           "en": "e.g. 1.50 EUR",
-          "de": "z.B. 1,50 EUR"
+          "de": "z.B. 1,50 EUR",
+          "fr": "par ex. 1,50 EUR"
         }
       },
       "render": {
         "en": "It costs {charge} to use this shower",
-        "de": "Es kostet {charge} um diese Dusche zu nutzen"
+        "de": "Es kostet {charge} um diese Dusche zu nutzen",
+        "ca": "Costa {charge} utilitzar aquesta dutxa",
+        "fr": "Le prix de cette douche est {charge}"
       }
     },
     "opening_hours",
@@ -113,28 +132,36 @@
       "id": "hot_water",
       "question": {
         "en": "Does this shower have hot water available?",
-        "de": "Verfügt diese Dusche über Warmwasser?"
+        "de": "Verfügt diese Dusche über Warmwasser?",
+        "ca": "Aquesta dutxa té aigua calenta disponible?",
+        "fr": "Est-ce que cette douche propose de l'eau chaude ?"
       },
       "mappings": [
         {
           "if": "hot_water=yes",
           "then": {
             "en": "Hot water is available here",
-            "de": "Warmwasser ist hier verfügbar"
+            "de": "Warmwasser ist hier verfügbar",
+            "ca": "Aquí hi ha aigua calenta disponible",
+            "fr": "De l'eau chaud est disponible"
           }
         },
         {
           "if": "hot_water=fee",
           "then": {
             "en": "Hot water is available here, but there is a fee",
-            "de": "Warmes Wasser ist hier verfügbar, aber kostenpflichtig"
+            "de": "Warmes Wasser ist hier verfügbar, aber kostenpflichtig",
+            "ca": "Aquí hi ha aigua calenta disponible, però té un cost",
+            "fr": "De l'eau chaud est disponible, mais il faut payer"
           }
         },
         {
           "if": "hot_water=no",
           "then": {
             "en": "There is no hot water available here",
-            "de": "Hier gibt es kein warmes Wasser"
+            "de": "Hier gibt es kein warmes Wasser",
+            "ca": "Aquí no hi ha aigua calenta disponible",
+            "fr": "Il n'y a pas d'eau chaude disponible"
           }
         }
       ]
@@ -159,7 +186,8 @@
         {
           "question": {
             "en": "Hot water available",
-            "de": "Warmwasser verfügbar"
+            "de": "Warmwasser verfügbar",
+            "fr": "Eau chaude disponible"
           },
           "osmTags": {
             "or": [
@@ -202,6 +230,7 @@
   ],
   "description": {
     "en": "A layer showing (public) showers",
-    "de": "Eine Ebene mit (öffentlichen) Duschen"
+    "de": "Eine Ebene mit (öffentlichen) Duschen",
+    "fr": "Une couche affichant les douches (publiques)"
   }
 }

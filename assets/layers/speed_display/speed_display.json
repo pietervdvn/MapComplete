@@ -27,7 +27,8 @@
       "question": {
         "en": "What is the maximum speed allowed at this speed display?",
         "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit bei dieser Geschwindigkeitsanzeige?",
-        "nl": "Wat is de maximum toegestane snelheid bij dit snelheidsdisplay?"
+        "nl": "Wat is de maximum toegestane snelheid bij dit snelheidsdisplay?",
+        "fr": "Quelle est la vitesse maximale autorisée au niveau de ce radar pédagogique ?"
       },
       "freeform": {
         "key": "maxspeed",
@@ -35,14 +36,16 @@
         "placeholder": {
           "en": "Speed allowed at speed display",
           "de": "Zulässige Geschwindigkeit bei Geschwindigkeitsanzeige",
-          "nl": "Maximum toegestane snelheid bij snelheidsdisplay"
+          "nl": "Maximum toegestane snelheid bij snelheidsdisplay",
+          "fr": "Vitesse autorisée au niveau de ce radar pédagogique"
         }
       },
       "render": {
         "en": "The maximum speed allowed at this speed display is {canonical(maxspeed)}",
         "de": "Die zulässige Höchstgeschwindigkeit bei dieser Geschwindigkeitsanzeige ist {canonical(maxspeed)}",
         "ca": "La velocitat màxima permesa a aquest radar pedagògic és {canonical(maxspeed)}",
-        "nl": "De maximum toegestane snelheid bij dit snelheidsdisplay is {canonical(maxspeed)}"
+        "nl": "De maximum toegestane snelheid bij dit snelheidsdisplay is {canonical(maxspeed)}",
+        "fr": "La vitesse maximale autorisée au niveau de ce radar pédagogique est {canonical(maxspeed)}"
       }
     },
     {

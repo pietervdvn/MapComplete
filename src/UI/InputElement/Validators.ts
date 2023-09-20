@@ -18,7 +18,7 @@ import ColorValidator from "./Validators/ColorValidator"
 import BaseUIElement from "../BaseUIElement"
 import Combine from "../Base/Combine"
 import Title from "../Base/Title"
-import FediverseValidator from "./Validators/FediverseValidator";
+import FediverseValidator from "./Validators/FediverseValidator"
 
 export type ValidatorType = (typeof Validators.availableTypes)[number]
 
@@ -40,7 +40,7 @@ export default class Validators {
         "phone",
         "opening_hours",
         "color",
-        "fediverse"
+        "fediverse",
     ] as const
 
     public static readonly AllValidators: ReadonlyArray<Validator> = [
@@ -60,7 +60,7 @@ export default class Validators {
         new PhoneValidator(),
         new OpeningHoursValidator(),
         new ColorValidator(),
-        new FediverseValidator()
+        new FediverseValidator(),
     ]
 
     private static _byType = Validators._byTypeConstructor()

@@ -8,7 +8,8 @@
   "description": {
     "en": "Layer with parking ticket machines to pay for parking.",
     "nl": "Laag met parkeerkaartautomaten om voor parkeren te betalen.",
-    "de": "Ebene mit Parkscheinautomaten zum Bezahlen des Parkens."
+    "de": "Ebene mit Parkscheinautomaten zum Bezahlen des Parkens.",
+    "fr": "Couche avec les distributeurs de tickets pour payer le parking."
   },
   "title": {
     "render": {
@@ -59,7 +60,8 @@
           "en": "Reference number",
           "nl": "Referentienummer",
           "de": "Referenznummer",
-          "ca": "Número de referència"
+          "ca": "Número de referència",
+          "fr": "Numéro de référence"
         }
       },
       "render": {

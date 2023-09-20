@@ -49,7 +49,7 @@
 {{service_item
 |name= [https://mapcomplete.org/cafes_and_pubs cafes_and_pubs]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nb_NO|en}}, {{#language:pa_PK|en}}, {{#language:cs|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nb_NO|en}}, {{#language:pa_PK|en}}, {{#language:cs|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:eu|en}}
 |descr= A MapComplete theme: Coffeehouses, pubs and bars
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -58,7 +58,7 @@
 {{service_item
 |name= [https://mapcomplete.org/playgrounds playgrounds]
 |region= Worldwide
-|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:ru|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:nb_NO|en}}, {{#language:id|en}}, {{#language:hu|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}
+|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:ru|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:nb_NO|en}}, {{#language:id|en}}, {{#language:hu|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:pl|en}}
 |descr= A MapComplete theme: A map with playgrounds
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -85,7 +85,7 @@
 {{service_item
 |name= [https://mapcomplete.org/aed aed]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:id|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:sv|en}}, {{#language:pl|en}}, {{#language:pt_BR|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:sl|en}}, {{#language:zh_Hans|en}}, {{#language:da|en}}, {{#language:fil|en}}, {{#language:cs|en}}, {{#language:zgh|en}}
+|lang= {{#language:en|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:id|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:sv|en}}, {{#language:pl|en}}, {{#language:pt_BR|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:sl|en}}, {{#language:zh_Hans|en}}, {{#language:da|en}}, {{#language:fil|en}}, {{#language:cs|en}}, {{#language:zgh|en}}, {{#language:eu|en}}
 |descr= A MapComplete theme: On this map, one can find and mark nearby defibrillators
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -94,7 +94,7 @@
 {{service_item
 |name= [https://mapcomplete.org/bookcases bookcases]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:eu|en}}
 |descr= A MapComplete theme: A public bookcase is a small streetside cabinet, box, old phone booth or some other objects where books are stored
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -103,7 +103,7 @@
 {{service_item
 |name= [https://mapcomplete.org/advertising advertising]
 |region= Worldwide
-|lang= {{#language:ca|en}}, {{#language:es|en}}, {{#language:en|en}}, {{#language:de|en}}, {{#language:cs|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:zh_Hant|en}}
+|lang= {{#language:ca|en}}, {{#language:es|en}}, {{#language:en|en}}, {{#language:de|en}}, {{#language:cs|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:zh_Hant|en}}, {{#language:eu|en}}, {{#language:pl|en}}
 |descr= A MapComplete theme: Where I can find advertising features?
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -112,7 +112,7 @@
 {{service_item
 |name= [https://mapcomplete.org/artwork artwork]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:id|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:es|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:pl|en}}, {{#language:ca|en}}, {{#language:zh_Hans|en}}, {{#language:fil|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:zgh|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:id|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:es|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:pl|en}}, {{#language:ca|en}}, {{#language:zh_Hans|en}}, {{#language:fil|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:zgh|en}}, {{#language:eu|en}}
 |descr= A MapComplete theme: An open map of statues, busts, graffitis and other artwork all over the world
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -121,7 +121,7 @@
 {{service_item
 |name= [https://mapcomplete.org/atm atm]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}, {{#language:es|en}}, {{#language:id|en}}, {{#language:zh_Hant|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}, {{#language:es|en}}, {{#language:id|en}}, {{#language:zh_Hant|en}}, {{#language:eu|en}}, {{#language:it|en}}, {{#language:pl|en}}
 |descr= A MapComplete theme: This map shows ATMs to withdraw or deposit money
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -130,7 +130,7 @@
 {{service_item
 |name= [https://mapcomplete.org/benches benches]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:nb_NO|en}}, {{#language:pt_BR|en}}, {{#language:hu|en}}, {{#language:id|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:zh_Hans|en}}, {{#language:da|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:nb_NO|en}}, {{#language:pt_BR|en}}, {{#language:hu|en}}, {{#language:id|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:zh_Hans|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:eu|en}}, {{#language:pl|en}}
 |descr= A MapComplete theme: A map of benches
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -139,7 +139,7 @@
 {{service_item
 |name= [https://mapcomplete.org/bicycle_rental bicycle_rental]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:id|en}}, {{#language:fr|en}}, {{#language:es|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:id|en}}, {{#language:fr|en}}, {{#language:es|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:eu|en}}
 |descr= A MapComplete theme: A map with bicycle rental stations and bicycle rental shops
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -148,7 +148,7 @@
 {{service_item
 |name= [https://mapcomplete.org/bicyclelib bicyclelib]
 |region= Worldwide
-|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:fr|en}}, {{#language:zh_Hant|en}}, {{#language:de|en}}, {{#language:hu|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}
+|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:fr|en}}, {{#language:zh_Hant|en}}, {{#language:de|en}}, {{#language:hu|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}, {{#language:eu|en}}
 |descr= A MapComplete theme: A bicycle library is a place where bicycles can be lent, often for a small yearly fee
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -157,7 +157,7 @@
 {{service_item
 |name= [https://mapcomplete.org/binoculars binoculars]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:nb_NO|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:fr|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:nb_NO|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:fr|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:eu|en}}
 |descr= A MapComplete theme: A map with fixed binoculars
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -166,7 +166,7 @@
 {{service_item
 |name= [https://mapcomplete.org/blind_osm blind_osm]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}, {{#language:es|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}, {{#language:es|en}}, {{#language:eu|en}}, {{#language:it|en}}, {{#language:pl|en}}
 |descr= A MapComplete theme: Help to map features relevant for the blind
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -184,7 +184,7 @@
 {{service_item
 |name= [https://mapcomplete.org/charging_stations charging_stations]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:it|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:nb_NO|en}}, {{#language:ru|en}}, {{#language:hu|en}}, {{#language:fr|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:it|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:nb_NO|en}}, {{#language:ru|en}}, {{#language:hu|en}}, {{#language:fr|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:eu|en}}
 |descr= A MapComplete theme: A worldwide map of charging stations
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -229,7 +229,7 @@
 {{service_item
 |name= [https://mapcomplete.org/drinking_water drinking_water]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:de|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:de|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:pl|en}}
 |descr= A MapComplete theme: On this map, publicly accessible drinking water spots are shown and can be easily added
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -247,7 +247,7 @@
 {{service_item
 |name= [https://mapcomplete.org/elongated_coin elongated_coin]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:ca|en}}
 |descr= A MapComplete theme: Find penny presses to create your own elongated coins
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -319,7 +319,7 @@
 {{service_item
 |name= [https://mapcomplete.org/kerbs_and_crossings kerbs_and_crossings]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}, {{#language:es|en}}, {{#language:ca|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:pl|en}}
 |descr= A MapComplete theme: A map showing kerbs and crossings
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -364,7 +364,7 @@
 {{service_item
 |name= [https://mapcomplete.org/observation_towers observation_towers]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:pl|en}}
 |descr= A MapComplete theme: Publicly accessible towers to enjoy the view
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -382,7 +382,7 @@
 {{service_item
 |name= [https://mapcomplete.org/openwindpowermap openwindpowermap]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:nb_NO|en}}, {{#language:cs|en}}, {{#language:ca|en}}
+|lang= {{#language:en|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:nb_NO|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:pl|en}}
 |descr= A MapComplete theme: A map for showing and editing wind turbines
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -454,7 +454,7 @@
 {{service_item
 |name= [https://mapcomplete.org/sports sports]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:zh_Hant|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:zh_Hant|en}}, {{#language:pl|en}}
 |descr= A MapComplete theme: Map showing sport facilities.
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -463,7 +463,7 @@
 {{service_item
 |name= [https://mapcomplete.org/street_lighting street_lighting]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:nb_NO|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:nb_NO|en}}, {{#language:cs|en}}, {{#language:pl|en}}
 |descr= A MapComplete theme: On this map you can find everything about street lighting
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -499,7 +499,7 @@
 {{service_item
 |name= [https://mapcomplete.org/vending_machine vending_machine]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:ca|en}}
 |descr= A MapComplete theme: Find vending machines for everything
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -508,7 +508,7 @@
 {{service_item
 |name= [https://mapcomplete.org/waste_basket waste_basket]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:fr|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:fr|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:pl|en}}
 |descr= A MapComplete theme: A map with waste baskets
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png

@@ -16,7 +16,7 @@ export class OpenJosm extends Combine {
 
         const josmState = new UIEventSource<string>(undefined)
         // Reset after 15s
-        josmState.stabilized(15000).addCallbackD((_) => josmState.setData(undefined))
+        josmState.stabilized(15000).addCallbackD(() => josmState.setData(undefined))
 
         const stateIndication = new VariableUiElement(
             josmState.map((state) => {
@@ -45,7 +45,7 @@ export class OpenJosm extends Combine {
                     const josmLink = `http://127.0.0.1:8111/load_and_zoom?left=${left}&right=${right}&top=${top}&bottom=${bottom}`
                     Utils.download(josmLink)
                         .then((answer) => josmState.setData(answer.replace(/\n/g, "").trim()))
-                        .catch((_) => josmState.setData("ERROR"))
+                        .catch(() => josmState.setData("ERROR"))
                 })
                 .SetClass("w-full"),
             undefined,

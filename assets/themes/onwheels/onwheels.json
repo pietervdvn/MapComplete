@@ -9,7 +9,8 @@
     "ca": "Sobre rodes",
     "pa_PK": "آن‌ویل",
     "es": "Sobre ruedas",
-    "cs": "OnWheels"
+    "cs": "OnWheels",
+    "eu": "Gurpil gainean"
   },
   "description": {
     "en": "On this map, publicly weelchair accessible places are shown and can be easily added",
@@ -105,7 +106,8 @@
                   "cs": "Bez informací o šířce",
                   "nb_NO": "Uten breddeinfo",
                   "ca": "Sense informació de l'amplada",
-                  "es": "Sin información de anchura"
+                  "es": "Sin información de anchura",
+                  "pl": "Bez informacji o szerokości"
                 }
               }
             ]
@@ -152,7 +154,8 @@
                   "da": "Alle typer kantsten",
                   "cs": "Všechny typy obrubníků",
                   "es": "Todos los tipos de bordillos",
-                  "ca": "Tot tipus de vorals"
+                  "ca": "Tot tipus de vorals",
+                  "pl": "Wszystkie rodzaje kraweżnika"
                 }
               },
               {
@@ -165,7 +168,8 @@
                   "da": "Hævet kantsten (>3 cm)",
                   "cs": "Zvýšený obrubník (>3 cm)",
                   "es": "Bordillo elevado (>3 cm)",
-                  "ca": "Voral elevat (>3 cm)"
+                  "ca": "Voral elevat (>3 cm)",
+                  "pl": "Krawężnik podniesiony (>3 cm)"
                 }
               },
               {
@@ -178,7 +182,8 @@
                   "da": "Sænket kantsten (~3 cm)",
                   "cs": "Snížený obrubník (~3 cm)",
                   "es": "Bordillo rebajado (~3 cm)",
-                  "ca": "Voral baix (~3 cm)"
+                  "ca": "Voral baix (~3 cm)",
+                  "pl": "Krawężnik obniżony (~3 cm)"
                 }
               },
               {
@@ -256,7 +261,8 @@
           "fr": "Places de stationnement pour personnes handicapées",
           "cs": "Parkovací místa pro osoby se zdravotním postižením",
           "es": "Plazas de aparcamiento para discapacitados",
-          "ca": "Places d'aparcament per a minusvàlids"
+          "ca": "Places d'aparcament per a minusvàlids",
+          "pl": "Miejsca parkingowe dla niepełnosprawnych"
         }
       },
       "hideTagRenderingsWithLabels": [
@@ -413,7 +419,9 @@
             "pa_PK": "انکڑے",
             "nl": "Statistieken",
             "cs": "Statistiky",
-            "es": "Estadísticas"
+            "es": "Estadísticas",
+            "eu": "Estatistika",
+            "pl": "Statystyki"
           }
         },
         "tagRenderings+": [
@@ -454,7 +462,9 @@
                   "pa_PK": "ایمپورٹ کرو",
                   "nl": "Importeren",
                   "cs": "Dovoz",
-                  "es": "Importar"
+                  "es": "Importar",
+                  "eu": "Inportatu",
+                  "pl": "Import"
                 },
                 "icon": "./assets/svg/addSmall.svg",
                 "maproulette_id": "mr_taskId"
@@ -477,7 +487,8 @@
                   "nl": "Voeg alle gesuggereerde tags toe",
                   "cs": "Přidat všechny navrhované značky",
                   "es": "Añadir todas las etiquetas sugeridas",
-                  "ca": "Afegiu totes les etiquetes suggerides"
+                  "ca": "Afegiu totes les etiquetes suggerides",
+                  "pl": "Dodaj wszystkie sugerowane znaczniki"
                 },
                 "image": "./assets/svg/addSmall.svg",
                 "id_of_object_to_apply_this_one": "_closest_osm_hotel"

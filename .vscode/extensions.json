@@ -1,10 +1,11 @@
 {
-    "recommendations": [
-        "esbenp.prettier-vscode",
-        "eamodio.gitlens",
-        "github.vscode-pull-request-github",
-        "svelte.svelte-vscode",
-        "bradlc.vscode-tailwindcss",
-        "editorconfig.editorconfig"
-    ]
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "eamodio.gitlens",
+    "github.vscode-pull-request-github",
+    "svelte.svelte-vscode",
+    "bradlc.vscode-tailwindcss",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint"
+  ]
 }

@@ -129,7 +129,7 @@
                         "then": "Publicidad electoral"
                     },
                     "4": {
-                        "then": "Información sobre teatros, conciertos, ..."
+                        "then": "Información sobre teatros, conciertos, …"
                     },
                     "5": {
                         "then": "Mensaje de organizaciones sin ánimo de lucro"
@@ -144,7 +144,7 @@
                         "then": "Cartel de financiación"
                     },
                     "9": {
-                        "then": "un mapa"
+                        "then": "Un mapa"
                     }
                 },
                 "question": "Que tipo de mensaje se muestra?"
@@ -351,7 +351,11 @@
             },
             "artwork-website": {
                 "question": "¿Hay un sitio web con más información sobre esta obra de arte?",
-                "render": "Más información en <a href='{website}' target='_blank'>este sitio web</a>"
+                "render": {
+                    "special": {
+                        "text": "Más información en este sitio web"
+                    }
+                }
             },
             "artwork_subject": {
                 "question": "¿Qué representa esta obra de arte?",
@@ -799,7 +803,7 @@
                     }
                 },
                 "question": "¿Todavía funciona esta máquina expendedora?",
-                "render": "El estado operacional es <i>{operational_status}</i></i>"
+                "render": "El estado operacional es <i>{operational_status}</i>"
             }
         }
     },
@@ -886,7 +890,7 @@
                         "then": "Bolardo"
                     },
                     "7": {
-                        "then": "Una área en el suelo que está marcada  para el aparcamiento de bicicletas"
+                        "then": "Una área en el suelo que está marcada para el aparcamiento de bicicletas"
                     }
                 },
                 "question": "¿Cual es el tipo de este aparcamiento de bicicletas?",
@@ -1392,7 +1396,7 @@
                         "then": "Este es un <b>club nocturno</b> o discoteca centrado en bailar, música de un DJ con un espectáculo de luces que la acompaña y un bar donde conseguir bebidas (alcohólicas)"
                     }
                 },
-                "question": "Qué tipo de cafetería es esta"
+                "question": "Qué tipo de cafe es este?"
             },
             "Name": {
                 "question": "¿Cual es el nombre de este pub?",
@@ -1405,7 +1409,7 @@
                     "then": "<i>{name}</i>"
                 }
             },
-            "render": "Pub"
+            "render": "Bar"
         }
     },
     "charging_station": {
@@ -1437,13 +1441,13 @@
                         "question": "Todos los conectores"
                     },
                     "2": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>enchufe de pared Europeo</b> con un pin de tierra (CEE7/4 tipo E</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>enchufe de pared Europeo</b> con un pin de tierra (CEE7/4 tipo E)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
                     },
                     "3": {
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>Chademo</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
                     },
                     "4": {
-                        "question": "Tiene un conector de <div style='display: inline-block'><b><b>Tipo 1 con cable</b> (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 1 con cable</b> (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     },
                     "5": {
                         "question": "Tiene un conector de <div style='display: inline-block'><b>Tipo 1 <i>sin</i> cable (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
@@ -1735,11 +1739,11 @@
                     }
                 },
                 "question": "¿Qué corriente ofrecen los conectores con <div style='display:i nline-block'><b><b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños</b> <img style='width:1rem;display:inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>USB</b> para carga teléfonos y dispositivos electrónicos pequeños</b> <img style='width:1rem; display: inline-block' src='./assets/layers/changing_station/usb_port.svg'></div> salida de hasta {socket:USB-A:current}A"
+                "render": "<div style='display: inline-block'><b><b>USB</b> para carga teléfonos y dispositivos electrónicos pequeños</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> salida de hasta {socket:USB-A:current}A"
             },
             "email": {
                 "question": "¿Cual es la dirección de correo electrónico de esta operadora?",
-                "render": "En caso de problemas, envía un correo electrónico a <a href=\"mailto:{email}'>{email}</a>"
+                "render": "En caso de problemas, envía un correo electrónico a <a href='mailto:{email}'>{email}</a>"
             },
             "fee": {
                 "mappings": {
@@ -1853,8 +1857,8 @@
                 "title": "un cruce"
             },
             "1": {
-                "description": "Señal de tráfico en una carretera",
-                "title": "una señal de tráfico"
+                "description": "Semáforo en una carretera",
+                "title": "un semáforo"
             }
         },
         "tagRenderings": {
@@ -1933,16 +1937,16 @@
             "crossing-tactile": {
                 "mappings": {
                     "0": {
-                        "then": "Este cruce tiene pavimento táctil"
+                        "then": "Este cruce tiene superficie podotáctil"
                     },
                     "1": {
-                        "then": "Este cruce no tiene pavimento táctil"
+                        "then": "Este cruce no tiene superficie podotáctil"
                     },
                     "2": {
-                        "then": "Este cruce tiene pavimento táctil, pero no es correcto"
+                        "then": "Este cruce tiene superficie podotáctil, pero no correctamente"
                     }
                 },
-                "question": "¿Tiene pavimento táctil este cruce?"
+                "question": "¿Este cruce tiene pavimento podotáctil?"
             },
             "crossing-type": {
                 "mappings": {
@@ -1950,13 +1954,13 @@
                         "then": "Cruce, sin semáforos"
                     },
                     "1": {
-                        "then": "Cruce con señales de tráfico"
+                        "then": "Cruce con semáforo"
                     },
                     "2": {
                         "then": "Paso de cebra"
                     },
                     "3": {
-                        "then": "Cruce sin marcas de cruce"
+                        "then": "Cruce sin señalizar"
                     }
                 },
                 "question": "¿Qué tipo de cruce es este?"
@@ -1965,10 +1969,10 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Señal de tráfico"
+                    "then": "Semáforo"
                 },
                 "1": {
-                    "then": "Cruce con señales de tráfico"
+                    "then": "Cruce con semáforos"
                 }
             },
             "render": "Cruce"
@@ -2401,6 +2405,91 @@
             "render": "Agua potable"
         }
     },
+    "elongated_coin": {
+        "description": "Capa que muestra prensas de centavos.",
+        "name": "Prensas de centavo",
+        "presets": {
+            "0": {
+                "title": "una prensa de centavo"
+            }
+        },
+        "tagRenderings": {
+            "charge": {
+                "freeform": {
+                    "placeholder": "Costo (por ejemplo, 0.50 euros)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Cuesta 1 euro prensar un centavo."
+                    },
+                    "1": {
+                        "then": "Cuesta 2 euros prensa un centavo."
+                    }
+                },
+                "question": "¿Cuánto cuesta prensar un centavo?",
+                "render": "Cuesta {charge} prensar un centavo."
+            },
+            "coin": {
+                "freeform": {
+                    "placeholder": "Tipo de moneda (por ejemplo, 10 centavos)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Esta prensa de centavo utiliza una moneda de 2 centavos para prensar."
+                    },
+                    "1": {
+                        "then": "Esta prensa de centavo utiliza una moneda de 5 centavos para prensar."
+                    },
+                    "2": {
+                        "then": "Esta prensa de centavo utiliza una moneda de 10 centavos para prensar."
+                    },
+                    "3": {
+                        "then": "Esta prensa de centavo utiliza una moneda de 25 centavos para prensar."
+                    },
+                    "4": {
+                        "then": "Esta prensa de centavo utiliza una moneda de 50 centavos para prensar."
+                    }
+                },
+                "question": "Qué moneda se utiliza para prensar?",
+                "render": "Esta prensa de centavo utiliza una moneda {coin:type} para prensar."
+            },
+            "designs": {
+                "freeform": {
+                    "placeholder": "Número de diseños (por ejemplo, 5)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Esta prensa tiene un diseño disponible."
+                    },
+                    "1": {
+                        "then": "Esta prensa tiene dos diseños disponibles."
+                    },
+                    "2": {
+                        "then": "Esta prensa tiene tres diseños disponibles."
+                    },
+                    "3": {
+                        "then": "Esta prensa tiene cuatro diseños disponibles."
+                    }
+                },
+                "question": "Cuántos diseños hay disponibles?",
+                "render": "Esta prensa tiene {coin:design_count} diseños disponibles."
+            },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta prensa está ubicada en interior."
+                    },
+                    "1": {
+                        "then": "Esta prensa está ubicada al aire libre."
+                    }
+                },
+                "question": "La prensa de centavo esta al interior?"
+            }
+        },
+        "title": {
+            "render": "Prensa de centavo"
+        }
+    },
     "entrance": {
         "description": "Una capa que muestra capas y ofrece la posibilidad de sondear algunos datos avanzados que son importantes para, por ejemplo, usuarios de sillas de ruedas (pero también incluye ciclistas, gente que quiere repartir, ...)",
         "name": "Entrada",
@@ -2417,7 +2506,7 @@
                         "then": "Una puerta giratoria que cuelga de un eje central y que rota dentro de una carcasa cilíndrica"
                     },
                     "3": {
-                        "then": "Una puerta corredera donde las hojas se deslizan de lado a lado, típicamente con una pared"
+                        "then": "Una puerta corredera donde la puerta se desliza hacia un lado, generalmente paralela a una pared"
                     },
                     "5": {
                         "then": "Esta es una entrada sin una puerta física"
@@ -2588,7 +2677,7 @@
                 }
             }
         },
-        "description": "Una capa que muestra restaurantes y locales de comida rápida (con un renderizado especial para freidurías)",
+        "description": "Una capa mostrando restaurantes y locales de comida rápida (con un renderizado especial para friterías)",
         "filter": {
             "2": {
                 "options": {
@@ -2776,7 +2865,7 @@
         }
     },
     "ghost_bike": {
-        "name": "Bicicleta blanca",
+        "name": "Bicicletas blanca",
         "presets": {
             "0": {
                 "title": "una bicicleta blanca"
@@ -2962,7 +3051,7 @@
         "name": "Velocidad",
         "tagRenderings": {
             "maxspeed-maxspeed": {
-                "question": "Qué velocidad tiene"
+                "question": "Qué es la velocidad máxima legal uno está permitido conducir en esta carretera?"
             }
         },
         "units": {
@@ -3353,7 +3442,7 @@
         }
     },
     "postboxes": {
-        "description": "La capa que muestra buzones de correo.",
+        "description": "La capa que mostrando buzones de correo.",
         "name": "Buzones de correo",
         "presets": {
             "0": {
@@ -4323,7 +4412,7 @@
             "Surveillance type: public, outdoor, indoor": {
                 "mappings": {
                     "0": {
-                        "then": "Es un área pública, como una calle, un puente, una plaza, un parque, una estación de tren, un corredor público o túnel, ..."
+                        "then": "Es un área pública, como una calle, un puente, una plaza, un parque, una estación de tren, un corredor público o túnel, …"
                     },
                     "1": {
                         "then": "Es un área exterior pero privada (ej: estacionamiento, gasolinera, patio, entrada, camino privado, ...)"

@@ -13,7 +13,9 @@
     "da": "Postnumre",
     "pa_PK": "ڈاک کوڈ",
     "cs": "Poštovní směrovací čísla",
-    "zh_Hant": "郵遞區號"
+    "zh_Hant": "郵遞區號",
+    "it": "Codici postali",
+    "pl": "Kody pocztowe"
   },
   "shortDescription": {
     "en": "Postal codes",
@@ -28,7 +30,9 @@
     "da": "Postnumre",
     "pa_PK": "ڈاک کوڈ",
     "cs": "Poštovní směrovací čísla",
-    "zh_Hant": "郵遞區號"
+    "zh_Hant": "郵遞區號",
+    "it": "Codici postali",
+    "pl": "Kody pocztowe"
   },
   "description": {
     "en": "Postal codes",
@@ -43,7 +47,8 @@
     "nb_NO": "Postnummer",
     "pa_PK": "ڈاک کوڈ",
     "cs": "Poštovní směrovací čísla",
-    "zh_Hant": "郵遞區號"
+    "zh_Hant": "郵遞區號",
+    "pl": "Kody pocztowe"
   },
   "icon": "./assets/themes/postal_codes/townhall.svg",
   "startLat": 0,
@@ -69,7 +74,8 @@
         "da": "postnumre",
         "pa_PK": "ڈاک کوڈ",
         "cs": "poštovní směrovací čísla",
-        "zh_Hant": "郵遞區號"
+        "zh_Hant": "郵遞區號",
+        "pl": "kody pocztowe"
       },
       "minzoom": 8,
       "title": {
@@ -85,7 +91,8 @@
           "da": "Postnummer {postal_code}",
           "ca": "Codi postal {postal_code}",
           "cs": "Poštovní směrovací číslo {postal_code}",
-          "zh_Hant": "郵遞區號 {postal_code}"
+          "zh_Hant": "郵遞區號 {postal_code}",
+          "pl": "Kod pocztowy {postal_code}"
         }
       },
       "description": {},
@@ -104,7 +111,8 @@
             "da": "Postnummeret er {postal_code}",
             "ca": "El codi postal és {postal_code}",
             "cs": "Poštovní směrovací číslo je {postal_code}",
-            "zh_Hant": "郵遞區號是 {postal_code}"
+            "zh_Hant": "郵遞區號是 {postal_code}",
+            "pl": "Kod pocztowy to {postal_code}"
           }
         }
       ],
@@ -170,7 +178,8 @@
         "da": "rådhuse",
         "es": "Municipios",
         "cs": "radnice",
-        "zh_Hant": "城鎮"
+        "zh_Hant": "城鎮",
+        "pl": "ratusz"
       },
       "minzoom": 12,
       "title": {
@@ -186,7 +195,8 @@
           "ca": "Ajuntament de {name}",
           "es": "Municipio {name}",
           "cs": "Radnice {name}",
-          "zh_Hant": "城鎮 {name}"
+          "zh_Hant": "城鎮 {name}",
+          "pl": "Ratusz {name}"
         }
       },
       "calculatedTags": [

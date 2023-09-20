@@ -14,6 +14,31 @@
     },
     "atm": {
         "description": "Este mapa muestra los cajeros automáticos para retirar o ingresar dinero",
+        "layers": {
+            "3": {
+                "override": {
+                    "=tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importar este ATM"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": "OpenStreetMap sabe sobre <a href='#{_closest_osm_poi}'>un ATM que es {_closest_osm_poi_distance} de distancia.</a> "
+                        },
+                        "2": {
+                            "render": {
+                                "special": {
+                                    "message": "Añade todas las etiquetas sugieridas al ATM más cercano"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "title": "Cajeros automáticos"
     },
     "bag": {
@@ -91,7 +116,7 @@
     },
     "bookcases": {
         "description": "Una librería pública es un pequeño armario en la calle, una caja, una vieja cabina telefónica o algún otro objeto donde se guardan libros. Todo el mundo puede colocar o coger un libro. Este mapa pretende recoger todas estas librerías.",
-        "title": "Mapa abierto de estanterías"
+        "title": "Estanterías publicas"
     },
     "cafes_and_pubs": {
         "description": "Cafés, pubs y bares",
@@ -383,9 +408,48 @@
                         }
                     }
                 }
+            },
+            "1": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Esta tienda repara zapatos de escalada"
+                                },
+                                "1": {
+                                    "then": "Esta tienda no repara zapatos de escalada"
+                                }
+                            },
+                            "question": "¿Esta tienda de reparación de zapatos repara zapatos de escalada?"
+                        }
+                    }
+                }
+            },
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Esta tienda repara zapatos de escalada"
+                                },
+                                "1": {
+                                    "then": "Esta tienda no repara zapatos de escalada"
+                                }
+                            },
+                            "question": "¿Esta tienda de reparación de zapatos también repara zapatos de escalada?"
+                        }
+                    },
+                    "=presets": {
+                        "0": {
+                            "title": "una tienda de reparación de zapatos"
+                        }
+                    }
+                }
             }
         },
-        "title": "Mapa Abierto de Escalada"
+        "title": "Gimnasios de escalada, clubes y lugares"
     },
     "clock": {
         "description": "Mapa con todos los relojes públicos",
@@ -533,7 +597,7 @@
     },
     "cyclofix": {
         "description": "El objetivo de este mapa es presentar a los ciclistas con una solución fácil de utilizar para encontrar la infraestructura apropiada para sus necesidades. <br><br>Puedes seguir tu localización precisa (móvil solo) y seleccionar las capas que son relevantes para ti en la esquina inferior izquierda. Tgambién puedes utilizar esta herramienta para editar o añadir pines (puntos de interés) al mapa y proveer más datos respondiendo a preguntas.<br><br>Todos los cambios que hagas se guardarán de manera automática en la base de datos global de OpenStreetMap y podrán ser utilizados libremente por otros. <br><br>Para más información sobre el proyecto cyclofix, ve a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-        "title": "Cyclofix - un mapa abierto para ciclistas"
+        "title": "Cyclofix - un mapa para ciclistas"
     },
     "drinking_water": {
         "description": "En este mapa, se muestran los puntos de agua potable accesibles públicamente y pueden añadirse fácilmente",
@@ -542,6 +606,10 @@
     "education": {
         "description": "En este mapa, encontrará información sobre todos los tipos de escuelas y centros de educación y puede añadir fácilmente más información",
         "title": "Educación"
+    },
+    "elongated_coin": {
+        "description": "Encuentra prensas de centimos para crear tus propias monedas alargadas.",
+        "title": "Prensa de céntimos"
     },
     "etymology": {
         "description": "En este mapa, puedes ver el nombre de un objeto. Las calles, edificios, ... provienen de OpenStreetMap que tienen enlace con Wikidata. En la ventana emergente, verás el artículo de Wikipedia (si existe) o un recuadro de wikidata del nombre del objeto. Si el objeto en sí tiene una página wikipedia, también se mostrará.<br/><br/><b>¡Puedes contribuir!</b> Acerca el zoom lo suficiente y aparecerán <i>todas</i> las calles. Puedes hacer clic en una y aparecerá un cuadro de búsqueda en Wikidata. Con unos pocos clics, puedes añadir un enlace etimológico. Ten en cuenta que para ello necesitas una cuenta gratuita de OpenStreetMap.",
@@ -583,7 +651,7 @@
             }
         },
         "shortDescription": "¿Cual es el origen de un topónimo?",
-        "title": "Mapa Abierto Etimológico"
+        "title": "Etimología - a qué se debe el nombre de una calle?"
     },
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Los jardines de fachada</a>, las fachadas verdes y los árboles en la ciudad no sólo aportan paz y tranquilidad, sino también una ciudad más bella, una mayor biodiversidad, un efecto refrescante y una mejor calidad del aire. <br/> Klimaan VZW y Mechelen Klimaatneutraal quieren trazar un mapa de los jardines de fachada existentes y nuevos como ejemplo para las personas que quieran construir su propio jardín o para los paseantes urbanos amantes de la naturaleza. <br/>Más información sobre el proyecto en <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -689,7 +757,7 @@
     },
     "ghostbikes": {
         "description": "Una <b>bicicleta fantasma</b> es un monumento en memoria de un ciclista fallecido en un accidente de tráfico, en forma de una bicicleta blanca colocada permanentemente cerca del lugar del accidente.<br/><br/>En este mapa se pueden ver todas las bicicletas fantasma conocidas por OpenStreetMap. ¿Falta alguna bicicleta fantasma? Todo el mundo puede añadir o actualizar información aquí - sólo necesitas tener una cuenta (gratuita) de OpenStreetMap. <p>Existe una <a href='https://masto.bike/@ghostbikebot' target='_blank'>cuenta automatizada en Mastodon que publica un resumen mensual de las bicis fantasma de todo el mundo</a></p>",
-        "title": "Bicicleta blanca"
+        "title": "Bicicletas blanca"
     },
     "grb": {
         "description": "Este tema es un intento de automatizar la importación GRB.",

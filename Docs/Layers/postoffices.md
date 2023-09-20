@@ -25,6 +25,7 @@ A layer showing post offices.
 
 
 
+  - [atm](https://mapcomplete.org/atm)
   - [personal](https://mapcomplete.org/personal)
   - [postboxes](https://mapcomplete.org/postboxes)
 
@@ -55,6 +56,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:parcel_pickup#values) [post_office:parcel_pickup](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_pickup) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_pickup%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_pickup%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:parcel_to#values) [post_office:parcel_to](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_to) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_to%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_to%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:stamps#values) [post_office:stamps](https://wiki.openstreetmap.org/wiki/Key:post_office:stamps) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:stamps%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:stamps%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/atm#values) [atm](https://wiki.openstreetmap.org/wiki/Key:atm) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:atm%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:atm%3Dno) [separate](https://wiki.openstreetmap.org/wiki/Tag:atm%3Dseparate)
 
 
 
@@ -256,6 +258,23 @@ This is rendered with  `You can buy stamps from companies: {post_office:stamps}`
 
   - *You can buy stamps here*  corresponds with  `post_office:stamps=yes`
   - *You can't buy stamps here*  corresponds with  `post_office:stamps=no`
+
+
+
+
+### has_atm 
+
+
+
+The question is  *Does this post office have an ATM?*
+
+
+
+
+
+  - *This post office has an ATM*  corresponds with  `atm=yes`
+  - *This post office does <b>not</b> have an ATM*  corresponds with  `atm=no`
+  - *This post office does have an ATM, but it is mapped as a different icon*  corresponds with  `atm=separate`
 
 
 

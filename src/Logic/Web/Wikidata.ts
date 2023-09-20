@@ -159,7 +159,7 @@ export default class Wikidata {
      */
     public static async searchAdvanced(
         text: string,
-        options: WikidataAdvancedSearchoptions
+        options?: WikidataAdvancedSearchoptions
     ): Promise<
         {
             id: string
@@ -185,7 +185,7 @@ export default class Wikidata {
                 ?num wikibase:apiOrdinal true .
                 bd:serviceParam wikibase:limit ${
                     Math.round(
-                        (options.maxCount ?? 20) * 1.5
+                        (options?.maxCount ?? 20) * 1.5
                     ) /*Some padding for disambiguation pages */
                 } .
                 ?label wikibase:apiOutput mwapi:label .
@@ -193,7 +193,7 @@ export default class Wikidata {
             }
             ${instanceOf}
             ${minusPhrases.join("\n    ")}
-        } ORDER BY ASC(?num) LIMIT ${options.maxCount ?? 20}`
+        } ORDER BY ASC(?num) LIMIT ${options?.maxCount ?? 20}`
         const url = wds.sparqlQuery(sparql)
 
         const result = await Utils.downloadJson(url)

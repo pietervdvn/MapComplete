@@ -105,7 +105,11 @@
             },
             "artwork-website": {
                 "question": "Esiste un sito web con maggiori informazioni su quest’opera?",
-                "render": "Ulteriori informazioni su <a href='{website}' target='_blank'>questo sito web</a>"
+                "render": {
+                    "special": {
+                        "text": "Ulteriori informazioni su questo sito web"
+                    }
+                }
             }
         },
         "title": {
@@ -383,6 +387,7 @@
         }
     },
     "bike_parking": {
+        "description": "Un livello che mostra dove puoi parcheggiare la tua bicicletta",
         "name": "Parcheggio bici",
         "presets": {
             "0": {
@@ -429,7 +434,7 @@
                         "then": "Colonnina"
                     },
                     "7": {
-                        "then": "Una zona del pavimento che è marcata per il parcheggio delle bici"
+                        "then": "Una zona del terreno che è marcata per il parcheggio delle bici"
                     }
                 },
                 "question": "Di che tipo di parcheggio bici si tratta?",
@@ -1344,7 +1349,11 @@
             },
             "ghost_bike-source": {
                 "question": "In quale pagina web si possono trovare informazioni sulla bici fantasma o l’incidente?",
-                "render": "<a href='{source}' target='_blank'>Sono disponibili ulteriori informazioni</a>"
+                "render": {
+                    "special": {
+                        "text": "Sono disponibili ulteriori informazioni"
+                    }
+                }
             },
             "ghost_bike-start_date": {
                 "question": "Quando è stata installata questa bici fantasma?",
@@ -1509,8 +1518,7 @@
             },
             "Email": {
                 "question": "Qual è l’indirizzo email a cui scrivere per fare domande o segnalare problemi su questa riserva naturale?",
-                "questionHint": "Rispetta la privacy (compila l’indirizzo email personale solo se è stato reso pubblico)",
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+                "questionHint": "Rispetta la privacy (compila l’indirizzo email personale solo se è stato reso pubblico)"
             },
             "Surface area": {
                 "render": "Area: {_surface:ha} ha"
@@ -1759,7 +1767,11 @@
             },
             "public_bookcase-website": {
                 "question": "C'è un sito web con maggiori informazioni su questa microbiblioteca?",
-                "render": "Maggiori informazioni sul <a href='{website}' target='_blank'>sito web</a>"
+                "render": {
+                    "special": {
+                        "text": "Maggiori informazioni sul sito web"
+                    }
+                }
             }
         },
         "title": {

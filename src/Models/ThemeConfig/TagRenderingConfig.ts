@@ -1,24 +1,25 @@
-import {Translation, TypedTranslation} from "../../UI/i18n/Translation"
-import {TagsFilter} from "../../Logic/Tags/TagsFilter"
+import { Translation, TypedTranslation } from "../../UI/i18n/Translation"
+import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 import Translations from "../../UI/i18n/Translations"
-import {TagUtils, UploadableTag} from "../../Logic/Tags/TagUtils"
-import {And} from "../../Logic/Tags/And"
-import {Utils} from "../../Utils"
-import {Tag} from "../../Logic/Tags/Tag"
+import { TagUtils, UploadableTag } from "../../Logic/Tags/TagUtils"
+import { And } from "../../Logic/Tags/And"
+import { Utils } from "../../Utils"
+import { Tag } from "../../Logic/Tags/Tag"
 import BaseUIElement from "../../UI/BaseUIElement"
 import Combine from "../../UI/Base/Combine"
 import Title from "../../UI/Base/Title"
 import Link from "../../UI/Base/Link"
 import List from "../../UI/Base/List"
-import {MappingConfigJson, QuestionableTagRenderingConfigJson,} from "./Json/QuestionableTagRenderingConfigJson"
-import {FixedUiElement} from "../../UI/Base/FixedUiElement"
-import {Paragraph} from "../../UI/Base/Paragraph"
+import {
+    MappingConfigJson,
+    QuestionableTagRenderingConfigJson,
+} from "./Json/QuestionableTagRenderingConfigJson"
+import { FixedUiElement } from "../../UI/Base/FixedUiElement"
+import { Paragraph } from "../../UI/Base/Paragraph"
 import Svg from "../../Svg"
-import Validators, {ValidatorType} from "../../UI/InputElement/Validators"
+import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
 
-export interface Icon {
-
-}
+export interface Icon {}
 
 export interface Mapping {
     readonly if: UploadableTag
@@ -124,16 +125,16 @@ export default class TagRenderingConfig {
         this.question = Translations.T(json.question, translationKey + ".question")
         this.questionhint = Translations.T(json.questionHint, translationKey + ".questionHint")
         this.description = Translations.T(json.description, translationKey + ".description")
-        this.condition = TagUtils.Tag(json.condition ?? {and: []}, `${context}.condition`)
+        this.condition = TagUtils.Tag(json.condition ?? { and: [] }, `${context}.condition`)
         if (typeof json.icon === "string") {
             this.renderIcon = json.icon
             this.renderIconClass = "small"
-        }else if (typeof json.icon === "object"){
+        } else if (typeof json.icon === "object") {
             this.renderIcon = json.icon.path
             this.renderIconClass = json.icon.class
         }
         this.metacondition = TagUtils.Tag(
-            json.metacondition ?? {and: []},
+            json.metacondition ?? { and: [] },
             `${context}.metacondition`
         )
         if (json.freeform) {
@@ -242,7 +243,7 @@ export default class TagRenderingConfig {
                 if (txt === "") {
                     throw context + " Rendering for language " + ln + " is empty"
                 }
-                if (txt.indexOf("{" + this.freeform.key + "}") >= 0) {
+                if (txt.indexOf("{" + this.freeform.key + "}") >= 0 || txt.indexOf("&LBRACE" + this.freeform.key + "&RBRACE") ) {
                     continue
                 }
                 if (txt.indexOf("{" + this.freeform.key + ":") >= 0) {
@@ -256,7 +257,11 @@ export default class TagRenderingConfig {
                     continue
                 }
                 const keyFirstArg = ["canonical", "fediverse_link"]
-                if (keyFirstArg.some(funcName => txt.indexOf(`{${funcName}(${this.freeform.key}`) >= 0)) {
+                if (
+                    keyFirstArg.some(
+                        (funcName) => txt.indexOf(`{${funcName}(${this.freeform.key}`) >= 0
+                    )
+                ) {
                     continue
                 }
                 if (
@@ -544,7 +549,7 @@ export default class TagRenderingConfig {
      */
     public GetRenderValueWithImage(
         tags: Record<string, string>
-    ): { then: TypedTranslation<any>; icon?: string, iconClass?: string } | undefined {
+    ): { then: TypedTranslation<any>; icon?: string; iconClass?: string } | undefined {
         if (this.condition !== undefined) {
             if (!this.condition.matchesProperties(tags)) {
                 return undefined
@@ -563,7 +568,7 @@ export default class TagRenderingConfig {
         }
 
         if (this.freeform?.key === undefined || tags[this.freeform.key] !== undefined) {
-            return {then: this.render, icon: this.renderIcon, iconClass: this.renderIconClass}
+            return { then: this.render, icon: this.renderIcon, iconClass: this.renderIconClass }
         }
 
         return undefined
@@ -785,7 +790,7 @@ export default class TagRenderingConfig {
                         if (m.ifnot !== undefined) {
                             msgs.push(
                                 "Unselecting this answer will add " +
-                                m.ifnot.asHumanString(true, false, {})
+                                    m.ifnot.asHumanString(true, false, {})
                             )
                         }
                         return msgs
@@ -815,12 +820,12 @@ export default class TagRenderingConfig {
             this.description,
             this.question !== undefined
                 ? new Combine([
-                    "The question is ",
-                    new FixedUiElement(this.question.txt).SetClass("font-bold bold"),
-                ])
+                      "The question is ",
+                      new FixedUiElement(this.question.txt).SetClass("font-bold bold"),
+                  ])
                 : new FixedUiElement(
-                    "This tagrendering has no question and is thus read-only"
-                ).SetClass("italic"),
+                      "This tagrendering has no question and is thus read-only"
+                  ).SetClass("italic"),
             new Combine(withRender),
             mappings,
             condition,

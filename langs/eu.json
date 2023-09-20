@@ -1,15 +1,20 @@
 {
+    "advanced": {
+        "title": "Ezaugarri aurreratuak"
+    },
     "centerMessage": {
+        "allFilteredAway": "Ageriko ezaugarriek ez dituzte iragazkin guztiak betetzen",
         "loadingData": "Datuak kargatzen…",
+        "noData": "Ez dago elementu egokirik uneko ikuspegian",
         "ready": "Egina!",
         "retrying": "Datuak kargatzen akatsa egon da. Saia zaitez berriro {count} segundotan…",
         "zoomIn": "Zooma gerturatu datuak ikusi edo aldatu ahal izateko"
     },
     "communityIndex": {
         "available": "Komunitate honek {native} hitz egiten du",
-        "intro": "Jar zaitez harremanetan beste pertsona batzuekin, ezagutu itzazu eta ikasi eurengandik...",
+        "intro": "Jar zaitez harremanetan beste pertsona batzuekin, ezagutu itzazu eta ikasi eurengandik…",
         "notAvailable": "Komunitate honek ez du {native} hitz egiten",
-        "title": "Komunitatearen indizea"
+        "title": "Jarri gurekin harremaneta"
     },
     "delete": {
         "cancel": "Ezeztatu",

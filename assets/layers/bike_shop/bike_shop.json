@@ -54,7 +54,8 @@
       "pt": "Reparo/loja de bicicletas",
       "ca": "Botiga/reparació de bicicletes",
       "da": "Cykelværksted/butik",
-      "es": "Taller/tienda de bicis"
+      "es": "Taller/tienda de bicis",
+      "cs": "Oprava kol/obchod"
     },
     "mappings": [
       {
@@ -93,7 +94,8 @@
           "fr": "Magasin",
           "da": "Winkel",
           "ca": "Winkel",
-          "cs": "Winkel"
+          "cs": "Winkel",
+          "eu": "Winkela"
         }
       },
       {
@@ -165,7 +167,8 @@
           "pt": "Loja de bicicletas <i>{name}</i>",
           "es": "Tienda de bicis <i>{name}</i>",
           "da": "Cykelforretning <i>{name}</i>",
-          "ca": "Botiga de bicis <i>{name}</i>"
+          "ca": "Botiga de bicis <i>{name}</i>",
+          "cs": "Prodejna kol <i>{name}</i>"
         }
       },
       {
@@ -181,7 +184,8 @@
           "pt": "Loja/reparo de bicicletas <i>{name}</i>",
           "da": "Cykelværksted<i>{name}</i>",
           "es": "Taller/tienda de bicis <i>{name}</i>",
-          "ca": "Taller/botiga de bicis <i>{name}</i>"
+          "ca": "Taller/botiga de bicis <i>{name}</i>",
+          "cs": "Oprava kol/obchod <i>{name}</i>"
         }
       }
     ]
@@ -313,7 +317,8 @@
         "fr": "Seulement accessible à {access}",
         "da": "Kun tilgængelig for {access}",
         "ca": "Només accessible per a {access}",
-        "cs": "Přístupné pouze pro {access}"
+        "cs": "Přístupné pouze pro {access}",
+        "pl": "Dostępne tylko dla {access}"
       },
       "freeform": {
         "key": "access"
@@ -887,7 +892,8 @@
             "nl": "Biedt doe-het-zelfreparaties aan",
             "it": "Offre riparazioni fai da te",
             "cs": "Nabízí opravy kol \"Udělej si sám\"",
-            "fr": "Offre des services DIY"
+            "fr": "Offre des services DIY",
+            "ca": "Ofereix reparar un mateix la bici"
           },
           "osmTags": {
             "or": [

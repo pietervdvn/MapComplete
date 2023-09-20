@@ -47,6 +47,9 @@
             "8": {
                 "description": "Een stuk groot, weerbestendig textiel met opgedrukte reclameboodschap die permanent aan de muur hangt",
                 "title": "een spandoek"
+            },
+            "12": {
+                "title": "een muurschildering"
             }
         },
         "tagRenderings": {
@@ -61,6 +64,12 @@
             },
             "message_type": {
                 "mappings": {
+                    "0": {
+                        "then": "Commerciële boodschap"
+                    },
+                    "1": {
+                        "then": "Lokale informatie"
+                    },
                     "4": {
                         "then": "Informatie over cultuurevenementen zoals theaters, optredens, …"
                     },
@@ -238,7 +247,11 @@
             },
             "artwork-website": {
                 "question": "Is er een website met meer informatie over dit kunstwerk?",
-                "render": "Meer informatie op <a href='{website}' target='_blank'>deze website</a>"
+                "render": {
+                    "special": {
+                        "text": "Meer informatie op deze website"
+                    }
+                }
             },
             "artwork_subject": {
                 "question": "Wat beeldt dit kunstwerk af?",
@@ -4305,7 +4318,7 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Nu geopened"
+                        "question": "Nu open"
                     }
                 }
             },
@@ -4842,7 +4855,11 @@
             },
             "ghost_bike-source": {
                 "question": "Op welke website kan men meer informatie vinden over de Witte fiets of over het ongeval?",
-                "render": "<a href='{source}' target='_blank'>Meer informatie</a>"
+                "render": {
+                    "special": {
+                        "text": "Meer informatie"
+                    }
+                }
             },
             "ghost_bike-start_date": {
                 "question": "Wanneer werd deze witte fiets geplaatst?",
@@ -5669,8 +5686,7 @@
             },
             "Email": {
                 "question": "Waar kan men naartoe emailen voor vragen en meldingen van dit natuurgebied?",
-                "questionHint": "Respecteer privacy - geef enkel persoonlijke emailadressen als deze elders zijn gepubliceerd",
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+                "questionHint": "Respecteer privacy - geef enkel persoonlijke emailadressen als deze elders zijn gepubliceerd"
             },
             "Name tag": {
                 "mappings": {
@@ -6452,6 +6468,20 @@
             }
         },
         "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit postkantoor heeft een bankautomaat"
+                    },
+                    "1": {
+                        "then": "Dit postkantoor heeft <b>geen</b> bankautomaaat"
+                    },
+                    "2": {
+                        "then": "Dit postkantoor heeft een bankautomaat, maar deze staat apart op de kaart aangeduid"
+                    }
+                },
+                "question": "Heeft dit postkantoor een bankautomaat?"
+            },
             "letter-from": {
                 "mappings": {
                     "0": {
@@ -6644,7 +6674,11 @@
             },
             "public_bookcase-website": {
                 "question": "Is er een website over dit boekenruilkastje?",
-                "render": "Meer info op <a href='{website}' target='_blank'>de website</a>"
+                "render": {
+                    "special": {
+                        "text": "Meer info op de website"
+                    }
+                }
             }
         },
         "title": {
@@ -6692,6 +6726,27 @@
                     },
                     "7": {
                         "then": "Munten van 2 euro worden geaccepteerd"
+                    },
+                    "8": {
+                        "then": "Munten van 5 rappen worden geaccepteerd"
+                    },
+                    "9": {
+                        "then": "Munten van 10 rappen worden geaccepteerd"
+                    },
+                    "10": {
+                        "then": "Munten van 20 rappen worden geaccepteerd"
+                    },
+                    "11": {
+                        "then": "Munten van ½ frank worden geaccepteerd"
+                    },
+                    "12": {
+                        "then": "Munten van 1 frank worden geaccepteerd"
+                    },
+                    "13": {
+                        "then": "Munten van 2 frank worden geaccepteerd"
+                    },
+                    "14": {
+                        "then": "Munten van 5 frank worden geaccepteerd"
                     }
                 },
                 "question": "Met welke munten kan je hier betalen?"
@@ -6718,6 +6773,24 @@
                     },
                     "6": {
                         "then": "Biljetten van 500 euro worden geaccepteerd"
+                    },
+                    "7": {
+                        "then": "Biljetten van 10 frank worden geaccepteerd"
+                    },
+                    "8": {
+                        "then": "Biljetten van 20 frank worden geaccepteerd"
+                    },
+                    "9": {
+                        "then": "Biljetten van 50 frank worden geaccepteerd"
+                    },
+                    "10": {
+                        "then": "Biljetten van 100 frank worden geaccepteerd"
+                    },
+                    "11": {
+                        "then": "Biljetten van 200 frank worden geaccepteerd"
+                    },
+                    "12": {
+                        "then": "Biljetten van 1000 frank worden geaccepteerd"
                     }
                 },
                 "question": "Met welke bankbiljetten kan je hier betalen?"
@@ -8917,10 +8990,10 @@
             "verified-mastodon": {
                 "mappings": {
                     "0": {
-                        "then": "Een link naar je Mastodon-profiel werd gevonden: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                        "then": "Een link naar je Mastodon-profiel werd gevonden: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
                     },
                     "1": {
-                        "then": "Je profielbeschrijving bevat een link die vermoedelijk naar je Mastodon gaat, maar deze link is niet verifieerdbaar voor Mastodon.<a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Pas je profielbeschrijving aan</a> en plaats er de volgende code: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+                        "then": "Je profielbeschrijving bevat een link die vermoedelijk naar je Mastodon gaat, maar deze link is niet verifieerdbaar voor Mastodon.<a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Pas je profielbeschrijving aan</a> en plaats er de volgende code: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
                     }
                 }
             }
@@ -9065,6 +9138,12 @@
                     },
                     "15": {
                         "then": "Bloemen worden verkocht"
+                    },
+                    "16": {
+                        "then": "Parkeerkaarten worden verkocht"
+                    },
+                    "18": {
+                        "then": "Openbaar vervoerkaartjes worden verkocht"
                     }
                 },
                 "question": "Wat verkoopt deze verkoopautomaat?",

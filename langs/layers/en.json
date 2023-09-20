@@ -351,7 +351,11 @@
             },
             "artwork-website": {
                 "question": "Is there a website with more information about this artwork?",
-                "render": "More information on <a href='{website}' target='_blank'>this website</a>"
+                "render": {
+                    "special": {
+                        "text": "More information on this website"
+                    }
+                }
             },
             "artwork_subject": {
                 "question": "What does this artwork depict?",
@@ -4198,6 +4202,29 @@
                     }
                 }
             },
+            "speech_output_available": {
+                "mappings": {
+                    "0": {
+                        "then": "This elevator has speech output"
+                    },
+                    "1": {
+                        "then": "This elevator does not have speech output"
+                    }
+                },
+                "question": "Has this elevator speech output?",
+                "questionHint": "E.g. it announces the current floor"
+            },
+            "tactile_writing_available": {
+                "mappings": {
+                    "0": {
+                        "then": "This elevator has tactile writing in Braille"
+                    },
+                    "1": {
+                        "then": "This elevator does not have tactile writing"
+                    }
+                },
+                "question": "Has this elevator tactile writing?"
+            },
             "tactile_writing_language": {
                 "render": {
                     "special": {
@@ -4243,6 +4270,12 @@
                     },
                     "1": {
                         "then": "It costs 2 euros to press a penny."
+                    },
+                    "2": {
+                        "then": "It costs 2 Swiss francs to press a penny."
+                    },
+                    "3": {
+                        "then": "It costs 1 Swiss franc to press a penny."
                     }
                 },
                 "question": "How much does it cost to press a penny?",
@@ -4267,6 +4300,12 @@
                     },
                     "4": {
                         "then": "This penny press uses a 50 cent coin for pressing."
+                    },
+                    "5": {
+                        "then": "This penny press uses a 10 centimes coin for pressing."
+                    },
+                    "6": {
+                        "then": "This penny press uses a 20 centimes coin for pressing."
                     }
                 },
                 "question": "What coin is used for pressing?",
@@ -4292,6 +4331,20 @@
                 },
                 "question": "How many designs are available?",
                 "render": "This penny press has {coin:design_count} designs available."
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "It costs money to press a penny."
+                    },
+                    "1": {
+                        "then": "It costs money to press a penny."
+                    },
+                    "2": {
+                        "then": "It is free to press a penny."
+                    }
+                },
+                "question": "Does it cost money to press a penny?"
             },
             "indoor": {
                 "mappings": {
@@ -4839,7 +4892,7 @@
                         "question": "Has a vegetarian menu"
                     },
                     "1": {
-                        "question": "Only fastfood buisinesses"
+                        "question": "Only fastfood businesses"
                     },
                     "2": {
                         "question": "Only restaurants"
@@ -5171,7 +5224,11 @@
             },
             "ghost_bike-source": {
                 "question": "On what webpage can one find more info about the ghost bike or the accident?",
-                "render": "<a href='{source}' target='_blank'>More info available</a>"
+                "render": {
+                    "special": {
+                        "text": "More info available"
+                    }
+                }
             },
             "ghost_bike-start_date": {
                 "question": "When was this Ghost bike installed?",
@@ -6087,8 +6144,7 @@
             },
             "Email": {
                 "question": "What email adress can one send to with questions and problems with this nature reserve?",
-                "questionHint": "Respect privacy - only fill out a personal email address if this is widely published",
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+                "questionHint": "Respect privacy - only fill out a personal email address if this is widely published"
             },
             "Name tag": {
                 "mappings": {
@@ -6883,6 +6939,20 @@
             }
         },
         "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "This post office has an ATM"
+                    },
+                    "1": {
+                        "then": "This post office does <b>not</b> have an ATM"
+                    },
+                    "2": {
+                        "then": "This post office does have an ATM, but it is mapped as a different icon"
+                    }
+                },
+                "question": "Does this post office have an ATM?"
+            },
             "letter-from": {
                 "mappings": {
                     "0": {
@@ -7121,7 +7191,11 @@
             },
             "public_bookcase-website": {
                 "question": "Is there a website with more information about this public bookcase?",
-                "render": "More info on <a href='{website}' target='_blank'>the website</a>"
+                "render": {
+                    "special": {
+                        "text": "More info on the website"
+                    }
+                }
             }
         },
         "title": {
@@ -7169,6 +7243,27 @@
                     },
                     "7": {
                         "then": "2 euro coins are accepted"
+                    },
+                    "8": {
+                        "then": "5 centimes coins are accepted"
+                    },
+                    "9": {
+                        "then": "10 centimes coins are accepted"
+                    },
+                    "10": {
+                        "then": "20 centimes coins are accepted"
+                    },
+                    "11": {
+                        "then": "½ franc coins are accepted"
+                    },
+                    "12": {
+                        "then": "1 franc coins are accepted"
+                    },
+                    "13": {
+                        "then": "2 francs coins are accepted"
+                    },
+                    "14": {
+                        "then": "5 francs coins are accepted"
                     }
                 },
                 "question": "What coins can you use to pay here?"
@@ -7195,6 +7290,24 @@
                     },
                     "6": {
                         "then": "500 euro notes are accepted"
+                    },
+                    "7": {
+                        "then": "10 francs notes are accepted"
+                    },
+                    "8": {
+                        "then": "20 francs notes are accepted"
+                    },
+                    "9": {
+                        "then": "50 francs notes are accepted"
+                    },
+                    "10": {
+                        "then": "100 francs notes are accepted"
+                    },
+                    "11": {
+                        "then": "200 francs notes are accepted"
+                    },
+                    "12": {
+                        "then": "1000 francs notes are accepted"
                     }
                 },
                 "question": "what notes can you use to pay here?"
@@ -9664,10 +9777,10 @@
             "verified-mastodon": {
                 "mappings": {
                     "0": {
-                        "then": "A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                        "then": "A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
                     },
                     "1": {
-                        "then": "We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Edit your profile description</a> and place the following there: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+                        "then": "We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Edit your profile description</a> and place the following there: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
                     }
                 }
             }
@@ -9812,6 +9925,15 @@
                     },
                     "15": {
                         "then": "Flowers are sold"
+                    },
+                    "16": {
+                        "then": "Parking tickets are sold"
+                    },
+                    "17": {
+                        "then": "Pressed pennies are sold"
+                    },
+                    "18": {
+                        "then": "Public transport tickets are sold"
                     }
                 },
                 "question": "What does this vending machine sell?",

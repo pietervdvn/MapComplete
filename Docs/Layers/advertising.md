@@ -195,7 +195,7 @@ The question is  *What kind of message is shown?*
   - Unselecting this answer will add 
   - *Message from non-profit organizations*  corresponds with  `message=non_profit`
   - Unselecting this answer will add 
-  - *To expres your opinion*  corresponds with  `message=opinion`
+  - *To express your opinion*  corresponds with  `message=opinion`
   - Unselecting this answer will add 
   - *Religious message*  corresponds with  `message=religion`
   - Unselecting this answer will add 

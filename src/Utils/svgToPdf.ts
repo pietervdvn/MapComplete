@@ -209,7 +209,7 @@ class SvgToPdfInternals {
                 if (element.childElementCount == 0) {
                     this.drawTspan(element)
                 } else {
-                    for (let child of Array.from(element.children)) {
+                    for (const child of Array.from(element.children)) {
                         this.handleElement(child)
                     }
                 }
@@ -224,7 +224,7 @@ class SvgToPdfInternals {
             }
 
             if (element.tagName === "g" || element.tagName === "text") {
-                for (let child of Array.from(element.children)) {
+                for (const child of Array.from(element.children)) {
                     this.handleElement(child)
                 }
             }
@@ -256,7 +256,7 @@ class SvgToPdfInternals {
         const css = SvgToPdfInternals.css(element)
         this.doc.saveGraphicsState()
         if (css["fill-opacity"] !== "0" && css["fill"] !== "none") {
-            let color = css["fill"] ?? "black"
+            const color = css["fill"] ?? "black"
             let opacity = 1
             if (css["fill-opacity"]) {
                 opacity = Number(css["fill-opacity"])
@@ -314,13 +314,13 @@ class SvgToPdfInternals {
             console.log("Creating image with key", key, "searching rect in", x, y)
             const rectangle: SVGRectElement = this.page.findSmallestRectContaining(x, y, false)
             console.log("Got rect", rectangle)
-            let w = SvgToPdfInternals.attrNumber(rectangle, "width")
-            let h = SvgToPdfInternals.attrNumber(rectangle, "height")
+            const w = SvgToPdfInternals.attrNumber(rectangle, "width")
+            const h = SvgToPdfInternals.attrNumber(rectangle, "height")
             x = SvgToPdfInternals.attrNumber(rectangle, "x")
             y = SvgToPdfInternals.attrNumber(rectangle, "y")
 
             // Actually, dots per mm, not dots per inch ;)
-            let dpi = 60
+            const dpi = 60
             const img = this.page.options.createImage(key, dpi * w + "px", dpi * h + "px")
 
             const canvas = document.createElement("canvas")
@@ -363,7 +363,7 @@ class SvgToPdfInternals {
             fontFamily = "Ubuntu"
         }
 
-        let fontWeight = css["font-weight"] ?? "normal"
+        const fontWeight = css["font-weight"] ?? "normal"
         this.doc.setFont(fontFamily, fontWeight)
 
         const fontColor = css["fill"]
@@ -372,13 +372,13 @@ class SvgToPdfInternals {
         } else {
             this.doc.setTextColor("black")
         }
-        let fontsize = parseFloat(css["font-size"])
+        const fontsize = parseFloat(css["font-size"])
         this.doc.setFontSize(fontsize * 2.5)
 
-        let textTemplate = tspan.textContent.split(" ")
+        const textTemplate = tspan.textContent.split(" ")
         let result: string = ""
         let addSpace = false
-        for (let text of textTemplate) {
+        for (const text of textTemplate) {
             if (text === "\\n") {
                 result += "\n"
                 addSpace = false
@@ -446,7 +446,7 @@ class SvgToPdfInternals {
         const svgWidth = SvgToPdfInternals.attrNumber(svgRoot, "width")
         const svgHeight = SvgToPdfInternals.attrNumber(svgRoot, "height")
 
-        let img = this.page.images[base64src]
+        const img = this.page.images[base64src]
         // This is an svg image, we use the canvas to convert it to a png
         const canvas = document.createElement("canvas")
         const ctx = canvas.getContext("2d")
@@ -607,7 +607,7 @@ class SvgToPdfPage {
             const parts = tc.split(" ").filter((p) => p.startsWith("$") && p.indexOf("(") < 0)
             for (let part of parts) {
                 part = part.substring(1) // Drop the $
-                let path = part.split(".")
+                const path = part.split(".")
                 const importPath = this.importedTranslations[path[0]]
                 if (importPath) {
                     translations.add(importPath + "." + path.slice(1).join("."))
@@ -636,7 +636,7 @@ class SvgToPdfPage {
 
         if (element.tagName === "tspan" && element.childElementCount == 0) {
             const specialValues = element.textContent.split(" ").filter((t) => t.startsWith("$"))
-            for (let specialValue of specialValues) {
+            for (const specialValue of specialValues) {
                 const importMatch = element.textContent.match(
                     /\$import ([a-zA-Z-_0-9.? ]+) as ([a-zA-Z0-9]+)/
                 )
@@ -665,7 +665,7 @@ class SvgToPdfPage {
             element.tagName === "tspan" ||
             element.tagName === "defs"
         ) {
-            for (let child of Array.from(element.children)) {
+            for (const child of Array.from(element.children)) {
                 await this.prepareElement(child, mapTextSpecs, inDefs || element.tagName === "defs")
             }
         }
@@ -694,7 +694,7 @@ class SvgToPdfPage {
         }
         this._isPrepared = true
         const mapSpecs: SVGTSpanElement[] = []
-        for (let child of Array.from(this._svgRoot.children)) {
+        for (const child of Array.from(this._svgRoot.children)) {
             await this.prepareElement(<any>child, mapSpecs, child.tagName === "defs")
         }
 
@@ -715,7 +715,7 @@ class SvgToPdfPage {
         const internal = new SvgToPdfInternals(advancedApi, this, (key) =>
             self.extractTranslation(key, language)
         )
-        for (let child of Array.from(this._svgRoot.children)) {
+        for (const child of Array.from(this._svgRoot.children)) {
             internal.handleElement(<any>child)
         }
     }
@@ -805,11 +805,11 @@ class SvgToPdfPage {
 
     private loadImage(element: Element | string): Promise<void> {
         const xlink = typeof element === "string" ? element : element.getAttribute("xlink:href")
-        let img = document.createElement("img")
+        const img = document.createElement("img")
 
         if (xlink.startsWith("data:image/svg+xml;")) {
             const base64src = xlink
-            let svgXml = atob(
+            const svgXml = atob(
                 base64src.substring(base64src.indexOf(";base64,") + ";base64,".length)
             )
             const parser = new DOMParser()
@@ -884,7 +884,7 @@ class SvgToPdfPage {
                 throw "Invalid mapspec:" + spec
             }
             const params = SvgToPdfInternals.parseCss(match[1], ",")
-            let layout = AllKnownLayouts.allKnownLayouts.get(params["theme"])
+            const layout = AllKnownLayouts.allKnownLayouts.get(params["theme"])
             if (layout === undefined) {
                 console.error("Could not show map with parameters", params)
                 throw (

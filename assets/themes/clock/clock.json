@@ -7,7 +7,9 @@
     "es": "Relojes",
     "ca": "Rellotges",
     "cs": "Hodiny",
-    "fr": "Horloges"
+    "fr": "Horloges",
+    "eu": "Erlojuak",
+    "pl": "Zegary"
   },
   "description": {
     "en": "Map showing all public clocks",

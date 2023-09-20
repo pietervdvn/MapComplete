@@ -35,7 +35,7 @@
         src={`https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/community_index/${resource.type}.svg`}
       />
       <div class="flex flex-col">
-        <a href={resource.resolved.url} target="_blank" rel="noreferrer nofollow" class="font-bold">
+        <a href={resource.resolved.url} target="_blank" rel="noreferrer nofollow noopener" class="font-bold">
           {resource.resolved.name ?? resource.resolved.url}
         </a>
         {resource.resolved?.description}

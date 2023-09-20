@@ -13,7 +13,8 @@
     "nb_NO": "Et kart over kart",
     "ca": "Un mapa de mapes",
     "es": "Un mapa de mapas",
-    "cs": "Mapa map"
+    "cs": "Mapa map",
+    "pl": "Mapa map"
   },
   "shortDescription": {
     "en": "This theme shows all (touristic) maps that OpenStreetMap knows of",

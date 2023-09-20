@@ -86,8 +86,6 @@ This is rendered with  `The maximum allowed speed on this road is {canonical(max
 
 
 
-  - *This is a living street, which has a maxspeed of 20km/h*  corresponds with  `highway=living_street&_country!=be`
-  - This option cannot be chosen as answer
   - *This is a living street, which has a maxspeed of 20km/h*  corresponds with  `highway=living_street`
 
 

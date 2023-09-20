@@ -19,7 +19,9 @@
     "pa_PK": "او‌ایس‌ایم وچ جاݨ پچھاݨے پتے",
     "ca": "Adreces conegudes a OSM",
     "zgh": "ⴰⵏⵙⵉⵡⵏ ⵉⵜⵜⵡⴰⵙⵙⵏⵏ ⴳ OSM",
-    "pt_BR": "Endereços conhecidos no OSM"
+    "pt_BR": "Endereços conhecidos no OSM",
+    "eu": "OSMko helbide ezagunak",
+    "pl": "Znane adresy w OSM"
   },
   "minzoom": 18,
   "source": {
@@ -54,7 +56,8 @@
       "ca": "Adreça coneguda",
       "pt": "Endereço conhecido",
       "pt_BR": "Endereço conhecido",
-      "he": "כתובת ידועה"
+      "he": "כתובת ידועה",
+      "eu": "Helbide ezaguna"
     }
   },
   "description": {
@@ -78,7 +81,8 @@
     "pa_PK": "پتے",
     "zgh": "ⴰⵏⵙⵉⵡⵏ",
     "pt_BR": "Endereços",
-    "he": "כתובות"
+    "he": "כתובות",
+    "eu": "Helbideak"
   },
   "tagRenderings": [
     {
@@ -100,7 +104,8 @@
         "nb_NO": "Husnummeret er <b>{addr:housenumber}</b>",
         "ca": "El número de porta és <b>{addr:housenumber}</b>",
         "pt_BR": "O número da casa é <b>{addr:housenumber}</b>",
-        "he": "מספר הבית הוא <b>{addr:housenumber}</b>"
+        "he": "מספר הבית הוא <b>{addr:housenumber}</b>",
+        "eu": "Etxearen zenbakia <b>{addr:housenumber}</b> da"
       },
       "question": {
         "en": "What is the number of this house?",
@@ -119,7 +124,8 @@
         "nb_NO": "Hvilket husnummer har dette huset?",
         "ca": "Quin és el número d'aquesta casa?",
         "pt_BR": "Qual é o número desta casa?",
-        "he": "מה המספר של הבית הזה?"
+        "he": "מה המספר של הבית הזה?",
+        "eu": "Zein da etxe honen zenbakia?"
       },
       "freeform": {
         "key": "addr:housenumber",
@@ -152,7 +158,8 @@
             "nb_NO": "Denne bygningen har ikke noe husnummer",
             "ca": "Aquest edifici no té número",
             "pt_BR": "Este prédio não tem número",
-            "he": "למבנה זה אין מספר בית"
+            "he": "למבנה זה אין מספר בית",
+            "eu": "Eraikin honek ez du etxe zenbakirik"
           }
         }
       ]
@@ -174,7 +181,8 @@
         "ca": "L'adreça està a aquest carrer <b>{addr:street}</b>",
         "pt": "Este endereço é na rua <b>{addr:street}</b>",
         "pt_BR": "Este endereço fica na rua <b>{addr:street}</b>",
-        "he": "כתובת זו נמצאת ברחוב <b>{addr:street}</b>"
+        "he": "כתובת זו נמצאת ברחוב <b>{addr:street}</b>",
+        "eu": "Helbide hau <b>{addr:street}</b> kalean dago"
       },
       "question": {
         "en": "What street is this address located in?",
@@ -192,7 +200,8 @@
         "ca": "A quin carrer es troba l'adreça?",
         "pt": "Em que rua fica esse endereço?",
         "pt_BR": "Em que rua fica esse endereço?",
-        "he": "באיזה רחוב נמצאת הכתובת הזו?"
+        "he": "באיזה רחוב נמצאת הכתובת הזו?",
+        "eu": "Zein kaletan dago helbide hori?"
       },
       "freeform": {
         "key": "addr:street"
@@ -240,7 +249,8 @@
         "nb_NO": "Hva bør fikses her? Forklar.",
         "ca": "Què s’hauria de corregir aquí? Exposa-ho",
         "pt_BR": "O que deve ser corrigido aqui? Explique",
-        "he": "מה צריך לתקן כאן? אנא הסבר"
+        "he": "מה צריך לתקן כאן? אנא הסבר",
+        "eu": "Zer konpondu behar da hemen? Azaldu mesedez"
       },
       "freeform": {
         "key": "fixme"

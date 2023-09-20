@@ -17,6 +17,18 @@ Find ticket machines for public transport tickets
   - This layer is shown at zoomlevel **19** and higher
 
 
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [personal](https://mapcomplete.org/personal)
+  - [vending_machine](https://mapcomplete.org/vending_machine)
+
+
 This is a special layer - data is not sourced from OpenStreetMap
 
 

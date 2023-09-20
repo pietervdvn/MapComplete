@@ -351,7 +351,11 @@
             },
             "artwork-website": {
                 "question": "Auf welcher Webseite gibt es weitere Informationen zum Kunstwerk?",
-                "render": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>"
+                "render": {
+                    "special": {
+                        "text": "Weitere Informationen auf dieser Webseite"
+                    }
+                }
             },
             "artwork_subject": {
                 "question": "Was zeigt dieses Kunstwerk?",
@@ -4523,6 +4527,20 @@
                     }
                 }
             },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Akzeptiert Debitkarten"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Akzeptiert Kreditkarten"
+                    }
+                }
+            },
             "5": {
                 "options": {
                     "0": {
@@ -4823,6 +4841,12 @@
                 "options": {
                     "0": {
                         "question": "Vegetarische Gerichte im Angebot"
+                    },
+                    "1": {
+                        "question": "Nur Fastfood-Geschäfte"
+                    },
+                    "2": {
+                        "question": "Nur Restaurants"
                     }
                 }
             },
@@ -5151,7 +5175,11 @@
             },
             "ghost_bike-source": {
                 "question": "Auf welcher Webseite kann man mehr Informationen über das Geisterrad oder den Unfall finden?",
-                "render": "<a href='{source}' target='_blank'>Mehr Informationen</a>"
+                "render": {
+                    "special": {
+                        "text": "Mehr Informationen"
+                    }
+                }
             },
             "ghost_bike-start_date": {
                 "question": "Wann wurde dieses Geisterrad aufgestellt?",
@@ -6067,8 +6095,7 @@
             },
             "Email": {
                 "question": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Gebiet wenden?",
-                "questionHint": "Respektieren Sie die Privatsphäre. Geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist",
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+                "questionHint": "Respektieren Sie die Privatsphäre. Geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist"
             },
             "Name tag": {
                 "mappings": {
@@ -6863,6 +6890,20 @@
             }
         },
         "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Postfiliale verfügt über einen Geldautomat"
+                    },
+                    "1": {
+                        "then": "Die Postfiliale verfügt <b>nicht</b> über einen Geldautomat"
+                    },
+                    "2": {
+                        "then": "Die Postfiliale verfügt über einen Geldautomat, der aber bereits separat kartiert ist"
+                    }
+                },
+                "question": "Verfügt die Postfiliale über einen Geldautomat?"
+            },
             "letter-from": {
                 "mappings": {
                     "0": {
@@ -7101,7 +7142,11 @@
             },
             "public_bookcase-website": {
                 "question": "Auf welcher Webseite findet man Informationen zu diesem Bücherschrank?",
-                "render": "Weitere Informationen auf <a href='{website}' target='_blank'>der Webseite</a>"
+                "render": {
+                    "special": {
+                        "text": "Weitere Informationen auf der Webseite"
+                    }
+                }
             }
         },
         "title": {
@@ -7306,6 +7351,9 @@
                     }
                 },
                 "question": "Wird das Objekt beleuchtet oder leuchtet es selbst?"
+            },
+            "mastodon": {
+                "question": "Wie lautet der Mastodon-Handle von {title()}?"
             },
             "multilevels": {
                 "override": {
@@ -9641,10 +9689,10 @@
             "verified-mastodon": {
                 "mappings": {
                     "0": {
-                        "then": "Es wurde ein Link zu deinem Mastodon-Profil gefunden: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                        "then": "Es wurde ein Link zu deinem Mastodon-Profil gefunden: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
                     },
                     "1": {
-                        "then": "Wir haben einen Link gefunden, der aussieht wie ein Mastodon-Konto, aber nicht verifiziert ist. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Bearbeiten Sie Ihre Profilbeschreibung</a> und fügen Sie dort Folgendes ein: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+                        "then": "Wir haben einen Link gefunden, der aussieht wie ein Mastodon-Konto, aber nicht verifiziert ist. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Bearbeiten Sie Ihre Profilbeschreibung</a> und fügen Sie dort Folgendes ein: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
                     }
                 }
             }
@@ -9789,6 +9837,12 @@
                     },
                     "15": {
                         "then": "Blumen werden verkauft"
+                    },
+                    "16": {
+                        "then": "Parkscheine werden verkauft"
+                    },
+                    "18": {
+                        "then": "Fahrscheine werden verkauft"
                     }
                 },
                 "question": "Was wird in diesem Automaten verkauft?",
