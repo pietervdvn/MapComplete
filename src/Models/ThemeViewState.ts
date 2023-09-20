@@ -113,6 +113,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly floors: Store<string[]>
 
     constructor(layout: LayoutConfig) {
+        Utils.initDomPurify()
         this.layout = layout
         this.featureSwitches = new FeatureSwitchState(layout)
         this.guistate = new MenuState(

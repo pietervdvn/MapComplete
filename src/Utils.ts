@@ -1,4 +1,5 @@
 import colors from "./assets/colors.json"
+import DOMPurify from "dompurify"
 
 export class Utils {
     /**
@@ -24,6 +25,16 @@ Remark that the syntax is slightly different then expected; it uses '$' to note 
 Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
  `
     public static readonly imageExtensions = new Set(["jpg", "png", "svg", "jpeg", ".gif"])
+
+    public static initDomPurify() {
+        DOMPurify.addHook("afterSanitizeAttributes", function (node) {
+            // set all elements owning target to target=_blank + add noopener noreferrer
+            if ("target" in node) {
+                node.setAttribute("target", "_blank")
+                node.setAttribute("rel", "noopener noreferrer")
+            }
+        })
+    }
 
     public static readonly special_visualizations_importRequirementDocs = `#### Importing a dataset into OpenStreetMap: requirements
 
