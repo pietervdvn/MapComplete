@@ -52,7 +52,7 @@
         {
           "if": "surveillance:type=camera",
           "then": {
-            "en": "This is a normal camera"
+            "en": "This is a camera without number plate recognition."
           }
         },
         {
@@ -79,11 +79,7 @@
       },
       "mappings": [
         {
-          "if": {
-            "and": [
-              "camera:type=fixed"
-            ]
-          },
+          "if": "camera:type=fixed",
           "then": {
             "en": "A fixed (non-moving) camera",
             "nl": "Een vaste camera",
@@ -92,14 +88,11 @@
             "de": "Eine fest montierte (nicht bewegliche) Kamera",
             "ca": "Una càmera fixa (no movible)",
             "es": "Cámara fija (no móvil)"
-          }
+          },
+          "icon": "./assets/themes/surveillance/cam_right.svg"
         },
         {
-          "if": {
-            "and": [
-              "camera:type=dome"
-            ]
-          },
+          "if": "camera:type=dome",
           "then": {
             "en": "A dome camera (which can turn)",
             "nl": "Een dome (bolvormige camera die kan draaien)",
@@ -109,7 +102,8 @@
             "de": "Eine Kuppelkamera (drehbar)",
             "ca": "Càmera de cúpula (que pot girar)",
             "es": "Cámara con domo (que se puede girar)"
-          }
+          },
+          "icon": "./assets/themes/surveillance/dome.svg"
         },
         {
           "if": {
