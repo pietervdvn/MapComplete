@@ -36,9 +36,7 @@ const wikidataId: Store<string> = UIEventSource.FromPromise(
 ).mapD(wd => wd[0]?.species?.value);
 </script>
 
-<NextButton on:click={() =>{ 
-  console.log("Dispatching: ", $wikidataId)
-  return dispatch("selected", $wikidataId); }}>
+<NextButton on:click={() => dispatch("selected", $wikidataId)}>
   {#if $wikidata === undefined}
     <Loading>
       <Tr t={ t.loadingWikidata.Subs({

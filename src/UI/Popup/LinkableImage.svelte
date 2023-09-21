@@ -25,7 +25,7 @@
   export let layer: LayerConfig;
 
   export let linkable = true;
-  let isLinked = false;
+  let isLinked = Object.values(tags.data).some(v => image.pictureUrl === v);
 
   const t = Translations.t.image.nearby;
   const c = [lon, lat];
@@ -35,6 +35,7 @@
     date: new Date(image.date)
   });
   let distance = Math.round(GeoOperations.distanceBetween([image.coordinates.lng, image.coordinates.lat], c));
+  
   $: {
     const currentTags = tags.data;
     const key = Object.keys(image.osmTags)[0];

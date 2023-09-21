@@ -99,11 +99,11 @@
 
         <WikipediaPanel wikiIds={new ImmutableStore([selectedOption])} />
       </div>
-      <div class="flex justify-between">
+      <div class="flex flex-col items-stretch">
         <BackButton on:click={() => {selectedOption = undefined}}>
           <Tr t={t.back} />
         </BackButton>
-        <NextButton clss="primary shrink-0" on:click={() => { done = true; onConfirm(selectedOption); }} >
+        <NextButton clss="primary" on:click={() => { done = true; onConfirm(selectedOption); }} >
           <Tr t={t.confirm} />
         </NextButton>
       </div>
@@ -115,8 +115,8 @@
       <Tr t={t.tryAgain} />
     </BackButton>
   {/if}
-  <div class="flex p-2 bg-gray-200 rounded-xl self-end">
-    <ToSvelte construct={Svg.plantnet_logo_svg().SetClass("w-10 h-10 pr-1 mr-1 bg-white rounded-full")} />
+  <div class="flex p-2 low-interaction rounded-xl self-end">
+    <ToSvelte construct={Svg.plantnet_logo_svg().SetClass("w-8 h-8 p-1 mr-1 bg-white rounded-full")} />
     <Tr t={t.poweredByPlantnet} />
   </div>
 

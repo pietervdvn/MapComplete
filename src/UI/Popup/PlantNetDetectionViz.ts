@@ -1,6 +1,5 @@
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { ProvidedImage } from "../../Logic/ImageProviders/ImageProvider"
-import PlantNetSpeciesSearch from "../BigComponents/PlantNetSpeciesSearch"
 import Wikidata from "../../Logic/Web/Wikidata"
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
 import { And } from "../../Logic/Tags/And"
