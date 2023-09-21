@@ -9,7 +9,7 @@ describe("SplitAction", () => {
     {
         // Setup of download
         Utils.injectJsonDownloadForTests(
-            "https://api.openstreetmap.org/api/0.6/way/941079939/full",
+            "https://www.openstreetmap.org/api/0.6/way/941079939/full",
             {
                 version: "0.6",
                 generator: "CGImap 0.8.5 (957273 spike-08.openstreetmap.org)",
@@ -210,7 +210,7 @@ describe("SplitAction", () => {
         )
 
         Utils.injectJsonDownloadForTests(
-            "https://api.openstreetmap.org/api/0.6/way/941079939/relations",
+            "https://www.openstreetmap.org/api/0.6/way/941079939/relations",
             {
                 version: "0.6",
                 generator: "CGImap 0.8.5 (2419440 spike-07.openstreetmap.org)",
@@ -222,7 +222,7 @@ describe("SplitAction", () => {
         )
 
         Utils.injectJsonDownloadForTests(
-            "https://api.openstreetmap.org/api/0.6/way/295132739/full",
+            "https://www.openstreetmap.org/api/0.6/way/295132739/full",
             {
                 version: "0.6",
                 generator: "CGImap 0.8.5 (3138407 spike-07.openstreetmap.org)",
@@ -409,7 +409,7 @@ describe("SplitAction", () => {
             }
         )
         Utils.injectJsonDownloadForTests(
-            "https://api.openstreetmap.org/api/0.6/way/295132739/relations",
+            "https://www.openstreetmap.org/api/0.6/way/295132739/relations",
             // Mimick that there are no relations relation is missing
             {
                 version: "0.6",
@@ -422,7 +422,7 @@ describe("SplitAction", () => {
         )
 
         Utils.injectJsonDownloadForTests(
-            "https://api.openstreetmap.org/api/0.6/way/61435323/full",
+            "https://www.openstreetmap.org/api/0.6/way/61435323/full",
             {
                 version: "0.6",
                 generator: "CGImap 0.8.5 (53092 spike-08.openstreetmap.org)",
@@ -488,7 +488,7 @@ describe("SplitAction", () => {
             }
         )
         Utils.injectJsonDownloadForTests(
-            "https://api.openstreetmap.org/api/0.6/way/61435323/relations",
+            "https://www.openstreetmap.org/api/0.6/way/61435323/relations",
             {
                 version: "0.6",
                 generator: "CGImap 0.8.5 (3622541 spike-06.openstreetmap.org)",
@@ -2567,7 +2567,7 @@ describe("SplitAction", () => {
             }
         )
         Utils.injectJsonDownloadForTests(
-            "https://api.openstreetmap.org/api/0.6/way/61435332/full",
+            "https://www.openstreetmap.org/api/0.6/way/61435332/full",
             {
                 version: "0.6",
                 generator: "CGImap 0.8.5 (3819319 spike-06.openstreetmap.org)",
@@ -2620,7 +2620,7 @@ describe("SplitAction", () => {
             }
         )
         Utils.injectJsonDownloadForTests(
-            "https://api.openstreetmap.org/api/0.6/way/509668834/full",
+            "https://www.openstreetmap.org/api/0.6/way/509668834/full",
             {
                 version: "0.6",
                 generator: "CGImap 0.8.5 (3735280 spike-06.openstreetmap.org)",

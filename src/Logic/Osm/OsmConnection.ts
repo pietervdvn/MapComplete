@@ -179,7 +179,7 @@ export class OsmConnection {
     /**
      * The backend host, without path or trailing '/'
      *
-     * new OsmConnection().Backend() // => "https://api.openstreetmap.org"
+     * new OsmConnection().Backend() // => "https://www.openstreetmap.org"
      */
     public Backend(): string {
         return this._oauth_config.url
