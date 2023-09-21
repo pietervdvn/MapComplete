@@ -89,7 +89,7 @@ jobs:
         env:
           TARGET_BRANCH: ${{ env.TARGET_BRANCH }}
 
-      - uses: mshick/add-pr-comment@v1
+      - uses: mshick/add-pr-comment@a96c578acba98b60f16c6866d5f20478dc4ef68b
         name: Comment the PR with the review URL
         if: ${{ success() && github.ref != 'refs/heads/develop' && github.ref != 'refs/heads/master' }}
         with:
