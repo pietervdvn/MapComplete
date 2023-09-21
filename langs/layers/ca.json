@@ -8313,7 +8313,7 @@
             },
             "turbine-height": {
                 "question": "Quina és l'alçada total d'aquest aerogenerador (inclòs el radi del rotor), en metres?",
-                "render": "L'alçada total (inclòs el radi del rotor) d'aquest aerogenerador és de {altura} metres."
+                "render": "L'alçada total (inclòs el radi del rotor) d'aquest aerogenerador és de {height} metres."
             },
             "turbine-operator": {
                 "question": "Qui opera aquest aerogenerador?",
