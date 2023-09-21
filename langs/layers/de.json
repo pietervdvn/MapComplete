@@ -9592,7 +9592,12 @@
                 }
             },
             "mangrove-keys": {
-                "render": "<a href='data:application/json,{mangroveidentity}' download='mangrove_private_key_{_name}'>Laden Sie den privaten Schlüssel für Ihr Mangrove-Konto herunter</a> <p>Jeder, der diese Datei besitzt, kann mit Ihrer Identität Rezensionen vornehmen</p>"
+                "render": {
+                    "after": "Jeder, der diese Datei besitzt, kann mit Ihrer Identität Rezensionen vornehmen",
+                    "special": {
+                        "text": "Laden Sie den privaten Schlüssel für Ihr Mangrove-Konto herunter"
+                    }
+                }
             },
             "picture-license": {
                 "mappings": {

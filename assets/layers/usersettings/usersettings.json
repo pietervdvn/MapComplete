@@ -264,9 +264,21 @@
     {
       "id": "mangrove-keys",
       "render": {
-        "en": "<a href='data:application/json,{mangroveidentity}' download='mangrove_private_key_{_name}'>Download the private key for your Mangrove Account</a> <p>Anyone possessing this file can make reviews with your identity</p>",
-        "de": "<a href='data:application/json,{mangroveidentity}' download='mangrove_private_key_{_name}'>Laden Sie den privaten Schlüssel für Ihr Mangrove-Konto herunter</a> <p>Jeder, der diese Datei besitzt, kann mit Ihrer Identität Rezensionen vornehmen</p>",
-        "da": "<a href='data:application/json,{mangroveidentity}' download='mangrove_private_key_{_name}'>Hent den private nøgle til din Mangrove-konto</a> <p>Enhver, der har denne fil, kan lave ændringer med din identitet</p>"
+        "special": {
+          "type": "link",
+          "href": "data:application/json,{mangroveidentity}",
+          "download": "mangrove_private_key_{_name}",
+          "text": {
+            "en": "Download the private key for your Mangrove Account",
+            "de": "Laden Sie den privaten Schlüssel für Ihr Mangrove-Konto herunter",
+            "da": "Hent den private nøgle til din Mangrove-konto"
+          }
+        },
+        "after": {
+          "en": "Anyone possessing this file can make reviews with your identity",
+          "de": "Jeder, der diese Datei besitzt, kann mit Ihrer Identität Rezensionen vornehmen",
+          "da": "Enhver, der har denne fil, kan lave ændringer med din identitet"
+        }
       }
     },
     {

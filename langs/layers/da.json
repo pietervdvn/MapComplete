@@ -2966,7 +2966,12 @@
                 }
             },
             "mangrove-keys": {
-                "render": "<a href='data:application/json,{mangroveidentity}' download='mangrove_private_key_{_name}'>Hent den private nøgle til din Mangrove-konto</a> <p>Enhver, der har denne fil, kan lave ændringer med din identitet</p>"
+                "render": {
+                    "after": "Enhver, der har denne fil, kan lave ændringer med din identitet",
+                    "special": {
+                        "text": "Hent den private nøgle til din Mangrove-konto"
+                    }
+                }
             },
             "picture-license": {
                 "mappings": {

@@ -1,18 +1,22 @@
 import Translations from "../i18n/Translations"
 import BaseUIElement from "../BaseUIElement"
 import { Store } from "../../Logic/UIEventSource"
+import { Utils } from "../../Utils"
 
 export default class Link extends BaseUIElement {
     private readonly _href: string | Store<string>
     private readonly _embeddedShow: BaseUIElement
     private readonly _newTab: boolean
+    private readonly _download: string
 
     constructor(
         embeddedShow: BaseUIElement | string,
         href: string | Store<string>,
-        newTab: boolean = false
+        newTab: boolean = false,
+        download: string = undefined
     ) {
         super()
+        this._download = download
         this._embeddedShow = Translations.W(embeddedShow)
         this._href = href
         this._newTab = newTab
@@ -57,6 +61,9 @@ export default class Link extends BaseUIElement {
         }
         if (this._newTab) {
             el.target = "_blank"
+        }
+        if (this._download) {
+            el.download = this._download
         }
         el.appendChild(embeddedShow)
         return el
