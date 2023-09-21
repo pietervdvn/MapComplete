@@ -7410,7 +7410,7 @@
             },
             "wheelchair-door-width": {
                 "question": "Quina és l'amplada de la porta per al lavabo accéssible?",
-                "render": "La porta del vàter accessible amb cadira de rodes té {canònic(porta:amplada)} d'ample"
+                "render": "La porta del vàter accessible amb cadira de rodes té {canonical(door:width)} d'ample"
             }
         },
         "title": {
@@ -7460,11 +7460,11 @@
                     }
                 },
                 "question": "Aquests serveis són d'accés públic?",
-                "render": "L'accés és {toilet:access}"
+                "render": "L'accés és {toilets:access}"
             },
             "toilet-charge": {
                 "question": "Quant s'ha de pagar per aquests lavabos?",
-                "render": "La taxa és {toilet:charge}"
+                "render": "La taxa és {toilets:charge}"
             },
             "toilets-fee": {
                 "mappings": {
