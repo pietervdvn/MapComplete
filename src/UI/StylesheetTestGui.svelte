@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Svg from "../Svg";
-  import Loading from "./Base/Loading.svelte";
-  import ToSvelte from "./Base/ToSvelte.svelte";
+  import Svg from "../Svg"
+  import Loading from "./Base/Loading.svelte"
+  import ToSvelte from "./Base/ToSvelte.svelte"
 </script>
 
 <div>
@@ -39,12 +39,8 @@
         Main action (disabled)
       </button>
 
-      <button class="small primary">
-        Small button
-      </button>
-      <button class="small primary disabled">
-        Small, disabled button
-      </button>
+      <button class="small primary">Small button</button>
+      <button class="small primary disabled">Small, disabled button</button>
     </div>
     <div class="flex">
       <button>

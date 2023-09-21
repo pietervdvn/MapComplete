@@ -29,7 +29,15 @@ export default class Table extends BaseUIElement {
         const header = Utils.NoNull(headerMarkdownParts).join(" | ")
         const headerSep = headerMarkdownParts.map((part) => "-".repeat(part.length + 2)).join(" | ")
         const table = this._contents
-            .map((row) => row.map((el) => el?.AsMarkdown()?.replaceAll("\\","\\\\")?.replaceAll("|", "\\|") ?? " ").join(" | "))
+            .map((row) =>
+                row
+                    .map(
+                        (el) =>
+                            el?.AsMarkdown()?.replaceAll("\\", "\\\\")?.replaceAll("|", "\\|") ??
+                            " "
+                    )
+                    .join(" | ")
+            )
             .join("\n")
 
         return "\n\n" + [header, headerSep, table, ""].join("\n")

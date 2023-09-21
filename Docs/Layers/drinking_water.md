@@ -27,6 +27,7 @@ A layer showing drinking water fountains
 
 
 
+  - [climbing](https://mapcomplete.org/climbing)
   - [cyclofix](https://mapcomplete.org/cyclofix)
   - [drinking_water](https://mapcomplete.org/drinking_water)
   - [nature](https://mapcomplete.org/nature)

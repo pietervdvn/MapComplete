@@ -2,7 +2,7 @@
   "data_format": 1,
   "project": {
     "name": "MapComplete Veterinarians, dog parks and other pet-amenities",
-    "description": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ",
+    "description": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants,",
     "project_url": "https://mapcomplete.org/pets",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.org/assets/layers/dogpark/dog-park.svg",
@@ -175,7 +175,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Dog friendly eateries' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+      "description": "Layer 'Dog friendly eateries' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
     },
     {
       "key": "phone",
@@ -1443,7 +1443,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Dog-friendly shops' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+      "description": "Layer 'Dog-friendly shops' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
     },
     {
       "key": "phone",

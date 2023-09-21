@@ -3,12 +3,14 @@
   "name": {
     "en": "Ticket Machines",
     "de": "Fahrkartenautomaten",
-    "nl": "Kaartautomaten"
+    "nl": "Kaartautomaten",
+    "ca": "Màquines de bitllets"
   },
   "description": {
     "en": "Find ticket machines for public transport tickets",
     "de": "Fahrkartenautomaten für ÖPNV-Tickets finden",
-    "nl": "Zoek kaartautomaten voor het openbaar vervoer"
+    "nl": "Zoek kaartautomaten voor het openbaar vervoer",
+    "ca": "Troba màquines de bitllets per a bitllets de transport públic"
   },
   "source": {
     "osmTags": {
@@ -23,7 +25,8 @@
     "render": {
       "en": "Ticket Machine",
       "de": "Fahrkartenautomat",
-      "nl": "Kaartautomaat"
+      "nl": "Kaartautomaat",
+      "ca": "Màquina de bitllets"
     }
   },
   "tagRenderings": [
@@ -40,7 +43,8 @@
       "render": {
         "en": "This ticket machine is operated by {operator}",
         "de": "Dieser Fahrkartenautomat wird betrieben von {operator}",
-        "nl": "Deze kaartautomaat wordt beheerd door {operator}"
+        "nl": "Deze kaartautomaat wordt beheerd door {operator}",
+        "ca": "{operator} opera aquesta màquina de bitllets"
       },
       "freeform": {
         "key": "operator",
@@ -48,7 +52,8 @@
         "placeholder": {
           "en": "Name of the operator",
           "de": "Name des Betreibers",
-          "nl": "Naam van de beheerder"
+          "nl": "Naam van de beheerder",
+          "ca": "Nom de l'operador"
         }
       },
       "mappings": [
@@ -57,7 +62,8 @@
           "then": {
             "en": "Dutch Railways (NS)",
             "nl": "Nederlandse Spoorwegen (NS)",
-            "de": "Niederländische Eisenbahn (NS)"
+            "de": "Niederländische Eisenbahn (NS)",
+            "ca": "Ferrocarrils holandesos (NS)"
           },
           "addExtraTags": [
             "operator:wikidata=Q23076"

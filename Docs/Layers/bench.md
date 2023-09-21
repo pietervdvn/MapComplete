@@ -367,7 +367,7 @@ The question is  *Is there a website with more information about this artwork?*
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
-This is rendered with  `More information on <a href='{website}' target='_blank'>this website</a>`
+This is rendered with  `{link(More information on this website,&LBRACEwebsite&RBRACE,,)}`
 
 
 
@@ -486,7 +486,7 @@ has_backrest.2 | Has no backrest | backrest=no
 id | question | osmTags
 ---- | ---------- | ---------
 has_image.0 | With and without images (default) | 
-has_image.1 | Has at least one image | image~.+\|image:0~.+|image:1~.+|image:2~.+|image:3~.+|mapillary~.+
+has_image.1 | Has at least one image | image~.+\|image:0~.+\|image:1~.+\|image:2~.+\|image:3~.+\|mapillary~.+
 has_image.2 | Probably does not have an image | 
  
 

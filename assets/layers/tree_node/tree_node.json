@@ -88,7 +88,8 @@
         "fr": "Quelle est l'espèce de cet arbre ?",
         "da": "Hvilken art er dette træ?",
         "pt": "Que espécie é esta árvore?",
-        "pt_BR": "Que espécie é esta árvore?"
+        "pt_BR": "Que espécie é esta árvore?",
+        "ca": "Quina espècie és aquest arbre?"
       },
       "render": {
         "*": "{wikipedia(species:wikidata):max-height: 25rem}"
@@ -343,7 +344,8 @@
         "fr": "Cet arbre est-il un feuillu ou un résineux ?",
         "de": "Ist dies ein Laub- oder Nadelbaum?",
         "es": "¿Es un árbol de hoja ancha o de hoja aguja?",
-        "pt": "Esta é uma árvore de folhas largas ou acículas?"
+        "pt": "Esta é uma árvore de folhas largas ou acículas?",
+        "ca": "És un arbre de fulla ampla o d'agulla?"
       },
       "mappings": [
         {
@@ -405,7 +407,8 @@
             "es": "Permanentemente sin hojas",
             "id": "Tanpa daun permanen",
             "da": "Permanent bladløs",
-            "pt": "permanentemente sem folhas"
+            "pt": "permanentemente sem folhas",
+            "ca": "Permanentment sense fulles"
           },
           "hideInAnswer": true,
           "icon": {
@@ -494,7 +497,8 @@
         "eo": "Nomo: {name}",
         "es": "Nombre: {name}",
         "da": "Navn: {name}",
-        "pt": "Nome: {name}"
+        "pt": "Nome: {name}",
+        "ca": "Nom : {name}"
       },
       "question": {
         "nl": "Heeft de boom een naam?",
@@ -506,7 +510,8 @@
         "es": "¿Tiene nombre este árbol?",
         "id": "Apakah pohon ini memiliki nama?",
         "da": "Har træet et navn?",
-        "pt": "A árvore tem nome?"
+        "pt": "A árvore tem nome?",
+        "ca": "Té nom aquest arbre?"
       },
       "freeform": {
         "key": "name",
@@ -529,10 +534,11 @@
             "fr": "L'arbre n'a pas de nom.",
             "ru": "У этого дерева нет названия.",
             "de": "Der Baum hat keinen Namen.",
-            "es": "No identificas la especie.",
+            "es": "El árbol no tiene nombre.",
             "id": "Pohon ini tidak memiliki nama.",
             "da": "Træet har ikke et navn.",
-            "pt": "A árvore não tem nome."
+            "pt": "A árvore não tem nome.",
+            "ca": "L'arbre no té nom."
           }
         }
       ],
@@ -556,7 +562,8 @@
         "es": "¿Este árbol es patrimonio registrado?",
         "id": "Apakah pohon ini merupakan warisan yang terdaftar?",
         "da": "Er dette træ registreret som kulturarv?",
-        "pt": "Esta árvore é patrimônio tombado?"
+        "pt": "Esta árvore é patrimônio tombado?",
+        "ca": "Aquest arbre és patrimoni registrat?"
       },
       "mappings": [
         {
@@ -597,7 +604,8 @@
             "es": "Registrado como patrimonio por la <i>Dirección de Patrimonio Cultural</i> de Bruselas",
             "id": "Terdaftar sebagai warisan budaya oleh <i>Direction du Patrimoine culturel</i> Brussels",
             "da": "Registreret som kulturarv af <i>Direction du Patrimoine culturel</i> Bruxelles",
-            "pt": "Registrado como patrimônio por <i>Direction du Patrimoine culturel</i> Brussels"
+            "pt": "Registrado como patrimônio por <i>Direction du Patrimoine culturel</i> Brussels",
+            "ca": "Registrat com a patrimoni per la <i>Direction du Patrimoine culturel</i> Brussel·les"
           }
         },
         {
@@ -655,7 +663,8 @@
             "es": "Registrado como patrimonio por un organización diferente",
             "id": "Terdaftar sebagai warisan oleh organisasi yang berbeda",
             "da": "Registreret som kulturarv af en anden organisation",
-            "pt": "Registrado como patrimônio por uma organização diferente"
+            "pt": "Registrado como patrimônio por uma organização diferente",
+            "ca": "Registrat com a patrimoni per una organització diferent"
           },
           "hideInAnswer": true
         }
@@ -675,7 +684,8 @@
         "ru": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
         "fr": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Identifiant Onroerend Erfgoed : <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
         "de": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed Kennung: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
-        "da": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
+        "da": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+        "ca": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/>Identifiació Onroerend Erfgoed: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
       },
       "question": {
         "nl": "Wat is het ID uitgegeven door Onroerend Erfgoed Vlaanderen?",
@@ -685,7 +695,8 @@
         "de": "Wie lautet die Kennung der Onroerend Erfgoed Flanders?",
         "es": "¿Cuál es el número de identificación emitido por Onroerend Erfgoed Flandes?",
         "da": "Hvad er ID udstedt af Onroerend Erfgoed Flanders?",
-        "pt": "Qual é o ID emitido por Onroerend Erfgoed Flanders?"
+        "pt": "Qual é o ID emitido por Onroerend Erfgoed Flanders?",
+        "ca": "Quina és la identificació emesa per Onroerend Erfgoed Flanders?"
       },
       "freeform": {
         "key": "ref:OnroerendErfgoed",
@@ -708,7 +719,8 @@
         "fr": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata : <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
         "de": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
         "es": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
-        "da": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
+        "da": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
+        "ca": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/>Wikidata<a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
       },
       "question": {
         "nl": "Wat is het Wikidata-ID van deze boom?",
@@ -718,7 +730,8 @@
         "de": "Was ist das passende Wikidata Element zu diesem Baum?",
         "es": "¿Cuál es el ID de Wikidata para este árbol?",
         "da": "Hvad er Wikidata-id'et for dette træ?",
-        "pt": "Qual é o ID do Wikidata para esta árvore?"
+        "pt": "Qual é o ID do Wikidata para esta árvore?",
+        "ca": "Quin és l'identificador de Wikidata d'aquest arbre?"
       },
       "freeform": {
         "key": "wikidata",

@@ -221,7 +221,7 @@ The question is  *What email adress can one send to with questions and problems 
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 
-This is rendered with  `<a href='mailto:{email}' target='_blank'>{email}</a>`
+This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
 
 
 
@@ -235,7 +235,7 @@ The question is  *What phone number can one call to with questions and problems 
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 
-This is rendered with  `<a href='tel:{phone}' target='_blank'>{phone}</a>`
+This is rendered with  `<a href='tel:{phone}' target='_blank' rel='noopener'>{phone}</a>`
 
 
 

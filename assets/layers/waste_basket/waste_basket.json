@@ -219,7 +219,8 @@
             "it": "Questo cestino <b>non</b> ha un distributore di sacchetti per escrementi dei cani",
             "id": "Keranjang sampah ini <b> tidak</b> memiliki dispenser untuk kantong kotoran (anjing)",
             "da": "Denne affaldskurv <b>har ikke</b> en dispenser til poser til (hunde)ekskrementer",
-            "fr": "Cette poubelle <b>n'a pas</b> de distributeur de sac pour ramasser les déjections canines"
+            "fr": "Cette poubelle <b>n'a pas</b> de distributeur de sac pour ramasser les déjections canines",
+            "ca": "Aquesta paperera <b>no</b> té un dispensador per a bosses d'excrements (gossos)"
           },
           "hideInAnswer": true
         }

@@ -638,17 +638,12 @@ way_to_conflate | _undefined_ | The key, of which the corresponding value is the
 
 name | default | description
 ------ | --------- | -------------
-mode | expandable | Indicates how this component is initialized. Options are: 
-
-- `open`: always show and load the pictures
-- `collapsable`: show the pictures, but a user can collapse them
-- `expandable`: shown by default; but a user can collapse them.
-mapillary | true | If 'true', includes a link to mapillary on this location.
+mode | closed | Either `open` or `closed`. If `open`, then the image carousel will always be shown
  
 
 #### Example usage of nearby_images 
 
- `{nearby_images(expandable,true)}`
+ `{nearby_images(closed)}`
 
 
 
@@ -982,18 +977,19 @@ button_text | _undefined_ | The text shown on the button in the UI
 
 ### link 
 
- Construct a link. By using the 'special' visualisation notation, translation should be easier 
+ Construct a link. By using the 'special' visualisation notation, translations should be easier 
 
 name | default | description
 ------ | --------- | -------------
 text | _undefined_ | Text to be shown
 href | _undefined_ | The URL to link to
 class | _undefined_ | CSS-classes to add to the element
+download | _undefined_ | If set, this link will act as a download-button. The contents of `href` will be offered for download; this parameter will act as the proposed filename
  
 
 #### Example usage of link 
 
- `{link(,,)}`
+ `{link(,,,)}`
 
 
 

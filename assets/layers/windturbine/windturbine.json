@@ -68,7 +68,8 @@
         "hu": "A szélerőmű teljesítménye: {generator:output:electricity}.",
         "de": "Das Windrad erzeugt {generator:output:electricity} Strom.",
         "nl": "Deze windturbine genereert {generator:output:electricity}",
-        "da": "Denne vindmølle har en effekt på {generator:output:electricity}."
+        "da": "Denne vindmølle har en effekt på {generator:output:electricity}.",
+        "ca": "La potència de sortida d'aquest aerogenerador és {generator:output:electricity}."
       },
       "question": {
         "en": "What is the power output of this wind turbine? (e.g. 2.3 MW)",
@@ -79,7 +80,8 @@
         "hu": "Mekkora a teljesítménye ennek a szélturbinának? (pl. 2.3 MW)",
         "de": "Wieviel Strom erzeugt das Windrad? (z.B. 2.3 MW)",
         "nl": "Wat is de output",
-        "da": "Hvad er effekten af denne vindmølle? (f.eks. 2,3 MW)"
+        "da": "Hvad er effekten af denne vindmølle? (f.eks. 2,3 MW)",
+        "ca": "Quina és la potència de sortida d'aquest aerogenerador? (p. ex. 2,3 MW)"
       },
       "freeform": {
         "key": "generator:output:electricity",
@@ -97,7 +99,8 @@
         "hu": "Ennek a szélerőműnek az üzemeltetője: {operator}.",
         "de": "Die Windturbine wird betrieben von {operator}.",
         "da": "Denne vindmølle drives af {operator}.",
-        "nl": "Deze windturbine wordt beheerd door {operator}."
+        "nl": "Deze windturbine wordt beheerd door {operator}.",
+        "ca": "{operator} gestiona aquest aerogenerador."
       },
       "question": {
         "en": "Who operates this wind turbine?",
@@ -108,7 +111,8 @@
         "de": "Wer betreibt das Windrad?",
         "id": "Siapa yang mengoperasikan turbin angin ini?",
         "da": "Hvem driver denne vindmølle?",
-        "nl": "Wie beheert deze windturbine?"
+        "nl": "Wie beheert deze windturbine?",
+        "ca": "Qui opera aquest aerogenerador?"
       },
       "freeform": {
         "key": "operator"
@@ -124,7 +128,8 @@
         "hu": "A szélerőmű teljes (rotor sugarával együtt számított) magassága: {height} méter.",
         "de": "Die Gesamthöhe dieses Windrads beträgt (einschließlich Rotorradius) {height} Meter.",
         "da": "Den samlede højde (inklusive rotorradius) for denne vindmølle er {height} meter.",
-        "nl": "De totale hoogte (inclusief rotor-radius) van deze windturbine is {height} meter"
+        "nl": "De totale hoogte (inclusief rotor-radius) van deze windturbine is {height} meter",
+        "ca": "L'alçada total (inclòs el radi del rotor) d'aquest aerogenerador és de {height} metres."
       },
       "question": {
         "en": "What is the total height of this wind turbine (including rotor radius), in metres?",
@@ -134,7 +139,8 @@
         "hu": "Hány méter a szélerőmű teljes magassága (a rotor sugarával együtt)?",
         "de": "Wie hoch ist das Windrad (inklusive Rotorradius) in Metern?",
         "da": "Hvad er den samlede højde af denne vindmølle (inklusive rotorradius), i meter?",
-        "nl": "Wat is de totale hoogte in meter van deze windturbine (inclusief rotor-radius)?"
+        "nl": "Wat is de totale hoogte in meter van deze windturbine (inclusief rotor-radius)?",
+        "ca": "Quina és l'alçada total d'aquest aerogenerador (inclòs el radi del rotor), en metres?"
       },
       "freeform": {
         "key": "height",
@@ -181,7 +187,8 @@
         "hu": "A szélerőmű üzembe helyezése: {start_date}.",
         "de": "Das Windrad wurde am {start_date} in Betrieb genommen.",
         "nl": "Deze windturbine werd op {start_date} in gebruik genomen",
-        "da": "Denne vindmølle blev sat i drift den/den {start_date}."
+        "da": "Denne vindmølle blev sat i drift den/den {start_date}.",
+        "ca": "Aquest aerogenerador va entrar en funcionament el dia {start_date}."
       },
       "question": {
         "en": "When did this wind turbine go into operation?",
@@ -192,7 +199,8 @@
         "hu": "Mikor helyezték üzembe ezt a szélerőművet?",
         "de": "Wann wurde das Windrad in Betrieb genommen?",
         "nl": "Wanneer werd deze windturbine in gebruik genomen?",
-        "da": "Hvornår blev denne vindmølle taget i brug?"
+        "da": "Hvornår blev denne vindmølle taget i brug?",
+        "ca": "Quan va entrar en funcionament aquest aerogenerador?"
       },
       "freeform": {
         "key": "start_date",
@@ -214,7 +222,8 @@
       "question": {
         "en": "Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)",
         "nl": "Is er iets mis met de informatie over deze windturbine dat je hier niet opgelost kreeg? (laat hier een berichtje achter voor OpenStreetMap experts)",
-        "de": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlassen Sie eine Nachricht an OpenStreetMap-Experten)"
+        "de": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlassen Sie eine Nachricht an OpenStreetMap-Experten)",
+        "ca": "Hi ha alguna cosa malament en la manera que està mapejat això que no heu pogut solucionar aquí? (deixeu una nota als experts d'OpenStreetMap)"
       },
       "freeform": {
         "key": "fixme",

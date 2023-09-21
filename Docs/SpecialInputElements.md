@@ -108,11 +108,11 @@ key | the value of this tag will initialize search (default: name)
 options | A JSON-object of type `{ removePrefixes: string[], removePostfixes: string[] }`. 
 
 subarg \| doc
--------- | -----
-removePrefixes | remove these snippets of text from the start of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes
-removePostfixes | remove these snippets of text from the end of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes.
-instanceOf | A list of Q-identifier which indicates that the search results _must_ be an entity of this type, e.g. [`Q5`](https://www.wikidata.org/wiki/Q5) for humans
-notInstanceof | A list of Q-identifiers which indicates that the search results _must not_ be an entity of this type, e.g. [`Q79007`](https://www.wikidata.org/wiki/Q79007) to filter away all streets from the search results
+-------- \| -----
+removePrefixes \| remove these snippets of text from the start of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes
+removePostfixes \| remove these snippets of text from the end of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes.
+instanceOf \| A list of Q-identifier which indicates that the search results _must_ be an entity of this type, e.g. [`Q5`](https://www.wikidata.org/wiki/Q5) for humans
+notInstanceof \| A list of Q-identifiers which indicates that the search results _must not_ be an entity of this type, e.g. [`Q79007`](https://www.wikidata.org/wiki/Q79007) to filter away all streets from the search results
 
  
 
@@ -226,9 +226,9 @@ name | doc
 options | A JSON-object of type `{ prefix: string, postfix: string }`.  
 
 subarg \| doc
--------- | -----
-prefix | Piece of text that will always be added to the front of the generated opening hours. If the OSM-data does not start with this, it will fail to parse.
-postfix | Piece of text that will always be added to the end of the generated opening hours
+-------- \| -----
+prefix \| Piece of text that will always be added to the front of the generated opening hours. If the OSM-data does not start with this, it will fail to parse.
+postfix \| Piece of text that will always be added to the end of the generated opening hours
 
  
 

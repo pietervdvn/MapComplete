@@ -55,6 +55,8 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/elevator:width#values) [elevator:width](https://wiki.openstreetmap.org/wiki/Key:elevator:width) | [pfloat](../SpecialInputElements.md#pfloat) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/elevator:depth#values) [elevator:depth](https://wiki.openstreetmap.org/wiki/Key:elevator:depth) | [pfloat](../SpecialInputElements.md#pfloat) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/hearing_loop#values) [hearing_loop](https://wiki.openstreetmap.org/wiki/Key:hearing_loop) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/tactile_writing:braille#values) [tactile_writing:braille](https://wiki.openstreetmap.org/wiki/Key:tactile_writing:braille) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:tactile_writing:braille%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:tactile_writing:braille%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/speech_output#values) [speech_output](https://wiki.openstreetmap.org/wiki/Key:speech_output) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dno)
 
 
 
@@ -194,12 +196,46 @@ The question is  *Does this place have an audio induction loop for people with r
 
 
 
+### tactile_writing_available 
+
+
+
+The question is  *Has this elevator tactile writing?*
+
+
+
+
+
+  - *This elevator has tactile writing in Braille*  corresponds with  `tactile_writing:braille=yes`
+  - *This elevator does not have tactile writing*  corresponds with  `tactile_writing:braille=no`
+
+
+
+
 ### tactile_writing_language 
 
 
 
 This tagrendering has no question and is thus read-only
 
+
+
+This tagrendering is only visible in the popup if the following condition is met: `tactile_writing:braille=yes`
+
+
+
+### speech_output_available 
+
+
+
+The question is  *Has this elevator speech output?*
+
+
+
+
+
+  - *This elevator has speech output*  corresponds with  `speech_output=yes`
+  - *This elevator does not have speech output*  corresponds with  `speech_output=no`
 
 
 
@@ -211,6 +247,8 @@ This tagrendering has no question and is thus read-only
 This tagrendering has no question and is thus read-only
 
 
+
+This tagrendering is only visible in the popup if the following condition is met: `speech_output=yes`
 
 
 

@@ -299,7 +299,7 @@ This tagrendering has no question and is thus read-only
 
 id | question | osmTags
 ---- | ---------- | ---------
-free.0 | Free to use | fee=no\|fee=0|charge=0
+free.0 | Free to use | fee=no\|fee=0\|charge=0
 
 
 

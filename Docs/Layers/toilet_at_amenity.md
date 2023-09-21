@@ -405,7 +405,7 @@ changing_table.0 | Has a changing table | changing_table=yes
 
 id | question | osmTags
 ---- | ---------- | ---------
-free.0 | Free to use | toilets:fee=no\|toilets:fee=0|toilets:charge=0
+free.0 | Free to use | toilets:fee=no\|toilets:fee=0\|toilets:charge=0
 
 
 

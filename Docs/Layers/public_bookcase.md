@@ -258,7 +258,7 @@ The question is  *Is there a website with more information about this public boo
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
-This is rendered with  `More info on <a href='{website}' target='_blank'>the website</a>`
+This is rendered with  `{link(More info on the website,&LBRACEwebsite&RBRACE,,)}`
 
 
 
@@ -362,7 +362,7 @@ inside.2 | Located outdoors | indoor=no\|
 id | question | osmTags
 ---- | ---------- | ---------
 has_image.0 | With and without images (default) | 
-has_image.1 | Has at least one image | image~.+\|image:0~.+|image:1~.+|image:2~.+|image:3~.+|mapillary~.+
+has_image.1 | Has at least one image | image~.+\|image:0~.+\|image:1~.+\|image:2~.+\|image:3~.+\|mapillary~.+
 has_image.2 | Probably does not have an image | 
  
 

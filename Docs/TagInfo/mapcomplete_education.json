@@ -100,7 +100,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Colleges and universities' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Education')"
+      "description": "Layer 'Colleges and universities' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Education')"
     },
     {
       "key": "phone",
@@ -253,7 +253,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Primary and secondary schools' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Education')"
+      "description": "Layer 'Primary and secondary schools' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Education')"
     },
     {
       "key": "amenity",
@@ -302,7 +302,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Kindergartens and childcare' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Education')"
+      "description": "Layer 'Kindergartens and childcare' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Education')"
     },
     {
       "key": "phone",

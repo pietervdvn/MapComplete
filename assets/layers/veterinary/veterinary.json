@@ -17,7 +17,8 @@
         "de": "ein Tierarzt",
         "es": "un veterinario",
         "nl": "een dierenarts",
-        "fr": "un vétérinaire"
+        "fr": "un vétérinaire",
+        "ca": "un veterinari"
       },
       "tags": [
         "amenity=veterinary",
@@ -29,7 +30,8 @@
         "de": "ein Tierarzt, der Hunde behandelt",
         "es": "un veterinario, que trata a perros",
         "nl": "een dierenarts die honden verzorgt",
-        "fr": "un vétérinaire, qui soigne les chiens"
+        "fr": "un vétérinaire, qui soigne les chiens",
+        "ca": "un veterinari, que tracta gossos"
       }
     }
   ],
@@ -49,7 +51,8 @@
       "de": "Tierarzt",
       "id": "Dokter hewan",
       "es": "Veterinario",
-      "nl": "Dierenarts"
+      "nl": "Dierenarts",
+      "ca": "Veterinari"
     },
     "mappings": [
       {
@@ -101,7 +104,8 @@
         "de": "Wie lautet der Name dieses Tierarztes?",
         "es": "¿Cual es el nombre de este veterinario?",
         "nl": "Wat is de naam van deze dierenartspraktijk?",
-        "fr": "Quel est le nom de ce vétérinaire ?"
+        "fr": "Quel est le nom de ce vétérinaire ?",
+        "ca": "Qui és el nom d'aquest veterinari?"
       },
       "render": {
         "en": "The name of this veterinarian is {name}",
@@ -109,7 +113,8 @@
         "es": "El nombre de este veterinario es {name}",
         "nl": "Deze dierenartspraktijk heet {name}",
         "da": "Navnet på denne dyrlæge er {name}",
-        "fr": "Le nom de ce vétérinaire est {name}"
+        "fr": "Le nom de ce vétérinaire est {name}",
+        "ca": "El nom d'aquest veterinari és {name}"
       },
       "freeform": {
         "key": "name"
