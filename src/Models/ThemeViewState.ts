@@ -244,7 +244,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.newFeatures = new NewGeometryFromChangesFeatureSource(
                 this.changes,
                 indexedElements,
-                this.osmConnection.Backend()
+                this.featureProperties
             )
             layoutSource.addSource(this.newFeatures)
 

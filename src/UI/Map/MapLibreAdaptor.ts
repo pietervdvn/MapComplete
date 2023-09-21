@@ -376,12 +376,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
         const background: RasterLayerProperties = this.rasterLayer?.data?.properties
         if (!background) {
-            console.error(
-                "Attempting to 'setBackground', but the background is",
-                background,
-                "for",
-                map.getCanvas()
-            )
             return
         }
         if (this._currentRasterLayer === background.id) {
@@ -457,7 +451,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (!map) {
             return
         }
-        console.log("Rotation allowed:", allow)
         if (allow === false) {
             map.rotateTo(0, { duration: 0 })
             map.setPitch(0)

@@ -1,5 +1,6 @@
 import { FeatureSource } from "../FeatureSource"
 import { UIEventSource } from "../../UIEventSource"
+import { OsmTags } from "../../../Models/OsmFeature"
 
 /**
  * Constructs a UIEventStore for the properties of every Feature, indexed by id
@@ -11,40 +12,6 @@ export default class FeaturePropertiesStore {
         for (const source of sources) {
             this.trackFeatureSource(source)
         }
-    }
-
-    public getStore(id: string): UIEventSource<Record<string, string>> {
-        return this._elements.get(id)
-    }
-
-    public trackFeatureSource(source: FeatureSource) {
-        const self = this
-        source.features.addCallbackAndRunD((features) => {
-            for (const feature of features) {
-                const id = feature.properties.id
-                if (id === undefined) {
-                    console.trace("Error: feature without ID:", feature)
-                    throw "Error: feature without ID"
-                }
-
-                const source = self._elements.get(id)
-                if (source === undefined) {
-                    self._elements.set(id, new UIEventSource<any>(feature.properties))
-                    continue
-                }
-
-                if (source.data === feature.properties) {
-                    continue
-                }
-
-                // Update the tags in the old store and link them
-                const changeMade = FeaturePropertiesStore.mergeTags(source.data, feature.properties)
-                feature.properties = source.data
-                if (changeMade) {
-                    source.ping()
-                }
-            }
-        })
     }
 
     /**
@@ -67,7 +34,7 @@ export default class FeaturePropertiesStore {
             }
             if (newProperties[oldPropertiesKey] === undefined) {
                 changeMade = true
-                delete oldProperties[oldPropertiesKey]
+                //  delete oldProperties[oldPropertiesKey]
             }
         }
 
@@ -81,6 +48,48 @@ export default class FeaturePropertiesStore {
         }
 
         return changeMade
+    }
+
+    public getStore(id: string): UIEventSource<Record<string, string>> {
+        const store = this._elements.get(id)
+        if (store === undefined) {
+            console.error("PANIC: no store for", id)
+        }
+        return store
+    }
+
+    public trackFeature(feature: { properties: OsmTags }) {
+        const id = feature.properties.id
+        if (id === undefined) {
+            console.trace("Error: feature without ID:", feature)
+            throw "Error: feature without ID"
+        }
+
+        const source = this._elements.get(id)
+        if (source === undefined) {
+            this._elements.set(id, new UIEventSource<any>(feature.properties))
+            return
+        }
+
+        if (source.data === feature.properties) {
+            return
+        }
+
+        // Update the tags in the old store and link them
+        const changeMade = FeaturePropertiesStore.mergeTags(source.data, feature.properties)
+        feature.properties = <any>source.data
+        if (changeMade) {
+            source.ping()
+        }
+    }
+
+    public trackFeatureSource(source: FeatureSource) {
+        const self = this
+        source.features.addCallbackAndRunD((features) => {
+            for (const feature of features) {
+                self.trackFeature(<any>feature)
+            }
+        })
     }
 
     // noinspection JSUnusedGlobalSymbols

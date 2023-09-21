@@ -88,7 +88,6 @@
       
       
     }
-    console.log("Inited 'checkMappings' to", checkedMappings);
     if (confg.freeform?.key) {
       if (!confg.multiAnswer) {
         // Somehow, setting multi-answer freeform values is broken if this is not set
