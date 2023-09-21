@@ -6525,11 +6525,6 @@
         "name": "Refugi",
         "tagRenderings": {
             "shelter-type": {
-                "mappings": {
-                    "4": {
-                        "then": ""
-                    }
-                },
                 "question": "Quin tipus de refugi és aquest?"
             }
         },
