@@ -15,7 +15,8 @@
       "nl": "School <i>{name}</i>",
       "de": "Schule <i>{name}</i>",
       "fr": "School <i>{name}</i>",
-      "pl": "Szkoła <i>{name}</i>"
+      "pl": "Szkoła <i>{name}</i>",
+      "ca": "Escola <i>{name}</i>"
     }
   },
   "calculatedTags": [
@@ -79,7 +80,8 @@
         "en": "What level of education is given on this school?",
         "nl": "Wat is het onderwijsniveau van deze school?",
         "de": "Welches Bildungsniveau wird an dieser Schule vermittelt?",
-        "fr": "Quel est le niveau d'enseignement dispensé dans cette école ?"
+        "fr": "Quel est le niveau d'enseignement dispensé dans cette école ?",
+        "ca": "Quin nivell d'educació s'imparteix en aquesta escola?"
       },
       "mappings": [
         {
@@ -98,7 +100,8 @@
             "en": "This is a school where one learns primary skills such as basic literacy and numerical skills. <div class='subtle'>Pupils typically enroll from 6 years old till 12 years old</div>",
             "nl": "Dit is een lagere school",
             "de": "In dieser Schule lernt man grundlegende Fähigkeiten wie Lesen, Schreiben und Rechnen. <div class='subtle'>Schüler besuchen die Schule in der Regel im Alter von 6 bis 12 Jahren</div>",
-            "fr": "C'est une école où l'on apprend les compétences primaires telles que l'alphabétisation de base et les compétences numériques.. <div class='subtle'>Les élèves s'inscrivent généralement de 6 à 12 ans.</div>"
+            "fr": "C'est une école où l'on apprend les compétences primaires telles que l'alphabétisation de base et les compétences numériques.. <div class='subtle'>Les élèves s'inscrivent généralement de 6 à 12 ans.</div>",
+            "ca": "Aquesta és una escola on s'aprèn competències primàries com ara l'alfabetització bàsica i les habilitats numèriques. <div class='subtle'>Els alumnes solen matricular-se des dels 6 anys fins als 12 anys</div>"
           }
         },
         {
@@ -107,7 +110,8 @@
             "en": "This is a secondary school which offers all grades",
             "nl": "Dit is een middelbare school die alle schooljaren aanbiedt (dus van het eerste tot en met het zesde middelbaar)",
             "de": "Dies ist eine weiterführende Schule, die alle Jahrgangsstufen anbietet",
-            "fr": "C'est une école secondaire qui offre toutes les classes"
+            "fr": "C'est une école secondaire qui offre toutes les classes",
+            "ca": "Aquesta és una escola secundària que ofereix tots els graus"
           }
         },
         {
@@ -234,7 +238,8 @@
             "en": "This is a school where students study skills at their age-adequate level. <div>There are little or no special facilities to cater for students with special needs or facilities are ad-hoc</div>",
             "nl": "Deze school richt zich op studenten zonder extra zorgbehoefte. <div class='subtle>Dit omvat leerlingen waarbij kleine, ad-hoc maatregelen volstaan om de lessen te volgen.</div>",
             "de": "Es handelt sich um eine Schule, in der die Schüler Fähigkeiten auf ihrem altersgemäßen Niveau erlernen. <div>Es gibt wenig oder keine speziellen Einrichtungen für Schüler mit besonderen Bedürfnissen oder die Einrichtungen sind ad-hoc</div>",
-            "fr": "C'est un établissement scolaire où les étudiants acquièrent des compétences à un niveau adapté à leur âge. <div>Il y a peu ou pas d'adaptations spéciales pour aider les étudiants ayant des besoins particuliers, ou les installations sont ad-hoc</div> Remark: isn't it contradictory to say there's no special facility + the facilities are ad-hoc?"
+            "fr": "C'est un établissement scolaire où les étudiants acquièrent des compétences à un niveau adapté à leur âge. <div>Il y a peu ou pas d'adaptations spéciales pour aider les étudiants ayant des besoins particuliers, ou les installations sont ad-hoc</div> Remark: isn't it contradictory to say there's no special facility + the facilities are ad-hoc?",
+            "ca": "Aquesta és una escola on els estudiants estudien habilitats al nivell adequat per a la seva edat. <div>Hi ha poques o cap instal·lació especial per atendre els estudiants amb necessitats especials o les instal·lacions són ad-hoc</div>"
           },
           "hideInAnswer": true
         },

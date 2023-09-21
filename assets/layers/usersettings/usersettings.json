@@ -11,7 +11,8 @@
       "en": "Settings",
       "nl": "Instellingen",
       "de": "Einstellungen",
-      "fr": "Paramètres"
+      "fr": "Paramètres",
+      "da": "Indstillinger"
     }
   },
   "source": "special",
@@ -129,7 +130,8 @@
             "cs": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu.",
             "ca": "Les imatges que feu tindran llicència <b>CC0</b> i s'afegiran al domini públic. Això vol dir que tothom pot utilitzar les vostres imatges per a qualsevol propòsit.",
             "es": "Las fotografías que tome tendrán una licencia con <b>CC0</b> y se agregarán al dominio público. Esto significa que todos pueden usar sus imágenes para cualquier propósito.",
-            "pt": "As fotos que você tirar serão licenciadas com <b>CC0</b> e adicionadas ao domínio público. Isso significa que todos podem usar suas fotos para qualquer finalidade."
+            "pt": "As fotos que você tirar serão licenciadas com <b>CC0</b> e adicionadas ao domínio público. Isso significa que todos podem usar suas fotos para qualquer finalidade.",
+            "da": "Billeder, som du har taget, vil blive udgivet under <b>CC0</b>-licensen og lagt ud i fælleseje. Det betyder, at alle kan bruge dine billeder til ethvert formål."
           }
         },
         {
@@ -245,7 +247,8 @@
             "en": "Allow to rotate the map",
             "de": "Drehen der Karte zulassen",
             "ca": "Permet girar el mapa",
-            "fr": "Autoriser la rotation de la carte"
+            "fr": "Autoriser la rotation de la carte",
+            "da": "Tillad rotation af kortet"
           }
         },
         {
@@ -262,7 +265,8 @@
       "id": "mangrove-keys",
       "render": {
         "en": "<a href='data:application/json,{mangroveidentity}' download='mangrove_private_key_{_name}'>Download the private key for your Mangrove Account</a> <p>Anyone possessing this file can make reviews with your identity</p>",
-        "de": "<a href='data:application/json,{mangroveidentity}' download='mangrove_private_key_{_name}'>Laden Sie den privaten Schlüssel für Ihr Mangrove-Konto herunter</a> <p>Jeder, der diese Datei besitzt, kann mit Ihrer Identität Rezensionen vornehmen</p>"
+        "de": "<a href='data:application/json,{mangroveidentity}' download='mangrove_private_key_{_name}'>Laden Sie den privaten Schlüssel für Ihr Mangrove-Konto herunter</a> <p>Jeder, der diese Datei besitzt, kann mit Ihrer Identität Rezensionen vornehmen</p>",
+        "da": "<a href='data:application/json,{mangroveidentity}' download='mangrove_private_key_{_name}'>Hent den private nøgle til din Mangrove-konto</a> <p>Enhver, der har denne fil, kan lave ændringer med din identitet</p>"
       }
     },
     {
@@ -305,7 +309,8 @@
             "de": "Schaltfläche anzeigen zum schnellen Öffnen von Übersetzungen beim Verwenden von MapComplete auf einem großen Bildschirm",
             "fr": "Afficher un bouton pour ouvrir rapidement les traductions lorsque vous utilisez MapComplete sur un grand écran",
             "ca": "Mostra un botó per a obrir ràpidament les traduccions quan utilitzes MapComplet en una pantalla gran",
-            "pt": "Mostrar um botão para abrir traduções rapidamente ao usar o MapComplete em uma tela grande"
+            "pt": "Mostrar um botão para abrir traduções rapidamente ao usar o MapComplete em uma tela grande",
+            "da": "Vis en knap for hurtigt at åbne oversættelser, når du bruger MapComplete på en stor skærm"
           }
         },
         {
@@ -447,7 +452,8 @@
             "ca": "Has fet {_csCount} en diferents ocasions! Això és sorprenent!",
             "fr": "Vous avez fait {_csCount} modifications ! C'est génial !",
             "pt": "Você fez alterações em {_csCount} ocasiões diferentes! Isso é incrível!",
-            "nl": "Je hebt {_csCount} verschillende keren bijgedragen! Dat is indrukwekkend!"
+            "nl": "Je hebt {_csCount} verschillende keren bijgedragen! Dat is indrukwekkend!",
+            "da": "Du har lavet ændringer ved {_csCount} forskellige begivenheder! Det er fantastisk!"
           },
           "icon": "party"
         }
@@ -522,7 +528,8 @@
             "en": "Don't show debug info",
             "de": "Keine Debug-Informationen anzeigen",
             "cs": "Nezobrazovat informace o ladění",
-            "pt": "Não mostrar informações de depuração"
+            "pt": "Não mostrar informações de depuração",
+            "da": "Vis ikke debug-informationer"
           },
           "hideInAnswer": true
         }

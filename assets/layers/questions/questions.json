@@ -1285,7 +1285,8 @@
           "icon": "./assets/layers/questions/denominations/chf/5rp-2019-800px.png",
           "then": {
             "en": "5 centimes coins are accepted",
-            "nl": "Munten van 5 rappen worden geaccepteerd"
+            "nl": "Munten van 5 rappen worden geaccepteerd",
+            "ca": "S'accepten monedes de 5 cèntims"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1294,7 +1295,8 @@
           "icon": "./assets/layers/questions/denominations/chf/10rp-2019-800px.png",
           "then": {
             "en": "10 centimes coins are accepted",
-            "nl": "Munten van 10 rappen worden geaccepteerd"
+            "nl": "Munten van 10 rappen worden geaccepteerd",
+            "ca": "S'accepten monedes de 10 cèntims"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1303,7 +1305,8 @@
           "icon": "./assets/layers/questions/denominations/chf/20rp-2019-800px.png",
           "then": {
             "en": "20 centimes coins are accepted",
-            "nl": "Munten van 20 rappen worden geaccepteerd"
+            "nl": "Munten van 20 rappen worden geaccepteerd",
+            "ca": "S'accepten monedes de 20 cèntims"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -2322,7 +2325,8 @@
         "en": "When was this object last checked?",
         "de": "Wann wurde dieses Objekt zuletzt kontrolliert?",
         "nl": "Wanneer is dit object voor het laatst gecontroleerd?",
-        "pl": "Kiedy ten obiekt został ostatnio sprawdzony?"
+        "pl": "Kiedy ten obiekt został ostatnio sprawdzony?",
+        "ca": "Quan es va comprovar per última vegada aquest objecte?"
       },
       "freeform": {
         "key": "check_date",
@@ -2332,7 +2336,8 @@
         "en": "This object was last checked on <b>{check_date}</b>",
         "de": "Dieses Objekt wurde zuletzt kontrolliert am <b>{check_date}</b>",
         "nl": "Dit object is voor het laatst gecontroleerd op <b>{check_date}</b>",
-        "pl": "Ten obiekt był ostatnio sprawdzony <b>{check_date}</b>"
+        "pl": "Ten obiekt był ostatnio sprawdzony <b>{check_date}</b>",
+        "ca": "Aquest objecte es va comprovar per darrera vegada el <b>{check_date}</b>"
       },
       "mappings": [
         {
@@ -2341,7 +2346,8 @@
             "en": "This object was last checked today",
             "de": "Dieses Objekt wurde heute zuletzt kontrolliert",
             "nl": "Dit object is vandaag voor het laatst gecontroleerd",
-            "pl": "Ten obiekt został ostatnio sprawdzony dzisiaj"
+            "pl": "Ten obiekt został ostatnio sprawdzony dzisiaj",
+            "ca": "Aquest objecte es va comprovar per última vegada avui"
           }
         }
       ]

@@ -3,12 +3,14 @@
   "name": {
     "en": "Speed Display",
     "de": "Geschwindigkeitsanzeigen",
-    "nl": "Snelheidsdisplay"
+    "nl": "Snelheidsdisplay",
+    "ca": "Radar pedagògic"
   },
   "description": {
     "en": "Layer showing speed displays that alert drivers of their speed.",
     "de": "Ebene mit Geschwindigkeitsanzeigen, die Fahrer auf ihre Geschwindigkeit hinweisen.",
-    "nl": "Laag met snelheidsdisplays om bestuurders op hun snelheid te wijzen."
+    "nl": "Laag met snelheidsdisplays om bestuurders op hun snelheid te wijzen.",
+    "ca": "Capa que mostra radars pedagògics que alerten als conductors de la seva velocitat."
   },
   "title": {
     "render": {
@@ -62,13 +64,15 @@
         "placeholder": {
           "en": "Text on speed display (e.g. 'Your speed')",
           "de": "Text auf der Geschwindigkeitsanzeige (z. B. \"Ihre Geschwindigkeit\")",
-          "nl": "Tekst op snelheidsdisplay (b.v. 'Uw snelheid')"
+          "nl": "Tekst op snelheidsdisplay (b.v. 'Uw snelheid')",
+          "ca": "Text al radar pedagògic (p. e. 'La seva velocitat')"
         }
       },
       "render": {
         "en": "The text on this speed display is {inscription}",
         "de": "Der Text auf dieser Geschwindigkeitsanzeige ist {inscription}",
-        "nl": "De tekst op dit snelheidsdisplay is {inscription}"
+        "nl": "De tekst op dit snelheidsdisplay is {inscription}",
+        "ca": "El text a aquest radar pedagogic és {inscription}"
       }
     }
   ],
@@ -77,7 +81,8 @@
       "title": {
         "en": "a speed display",
         "de": "eine Geschwindigkeitsanzeige",
-        "nl": "een snelheidsdisplay"
+        "nl": "een snelheidsdisplay",
+        "ca": "un radar pedagògic"
       },
       "tags": [
         "highway=speed_display"

@@ -94,12 +94,6 @@
                     "1": {
                         "then": "Vægmaleri"
                     },
-                    "10": {
-                        "then": "Azulejo (spansk dekorativt flisebeklædning)"
-                    },
-                    "11": {
-                        "then": "flisebeklædning"
-                    },
                     "2": {
                         "then": "Maleri"
                     },
@@ -123,6 +117,12 @@
                     },
                     "9": {
                         "then": "Relief"
+                    },
+                    "10": {
+                        "then": "Azulejo (spansk dekorativt flisebeklædning)"
+                    },
+                    "11": {
+                        "then": "flisebeklædning"
                     }
                 },
                 "question": "Hvilken slags kunstværk er det?",
@@ -1312,27 +1312,6 @@
                     "1": {
                         "question": "Har et <div style='display: inline-block'><b><b> Schuko-vægstik</b> uden jordstik (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> stik"
                     },
-                    "10": {
-                        "question": "Har et <div style='display: inline-block'><b><b> Type 2 med kabel</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> stik"
-                    },
-                    "11": {
-                        "question": "Har et <div style='display: inline-block'><b><b> Tesla Supercharger CCS-stik</b> (et mærkevarer type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> stik"
-                    },
-                    "12": {
-                        "question": "Har en <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> stik"
-                    },
-                    "13": {
-                        "question": "Har et <div style='display: inline-block'><b><b> Tesla Supercharger (Destination)</b> (En type 2 med kabel med tesla-mærket kabel)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> stik"
-                    },
-                    "14": {
-                        "question": "Har et <div style='display: inline-block'><b><b> USB-stik</b> til opladning af telefoner og mindre elektronik</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> stik"
-                    },
-                    "15": {
-                        "question": "Har et <div style='display: inline-block'><b><b> Bosch Active Connect med 3 pins</b> og et kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> stik"
-                    },
-                    "16": {
-                        "question": "Har et <div style='display: inline-block'><b><b> Bosch Active Connect-stik med 5 pins</b> og kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> stik"
-                    },
                     "2": {
                         "question": "Har et <div style='display: inline-block'><b><b> Europæisk vægstik</b> med jordstik (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> stik"
                     },
@@ -1356,6 +1335,27 @@
                     },
                     "9": {
                         "question": "Har en <div style='display: inline-block'><b><b> Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> connector"
+                    },
+                    "10": {
+                        "question": "Har et <div style='display: inline-block'><b><b> Type 2 med kabel</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> stik"
+                    },
+                    "11": {
+                        "question": "Har et <div style='display: inline-block'><b><b> Tesla Supercharger CCS-stik</b> (et mærkevarer type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> stik"
+                    },
+                    "12": {
+                        "question": "Har en <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> stik"
+                    },
+                    "13": {
+                        "question": "Har et <div style='display: inline-block'><b><b> Tesla Supercharger (Destination)</b> (En type 2 med kabel med tesla-mærket kabel)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> stik"
+                    },
+                    "14": {
+                        "question": "Har et <div style='display: inline-block'><b><b> USB-stik</b> til opladning af telefoner og mindre elektronik</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> stik"
+                    },
+                    "15": {
+                        "question": "Har et <div style='display: inline-block'><b><b> Bosch Active Connect med 3 pins</b> og et kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> stik"
+                    },
+                    "16": {
+                        "question": "Har et <div style='display: inline-block'><b><b> Bosch Active Connect-stik med 5 pins</b> og kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> stik"
                     }
                 }
             }
@@ -1411,6 +1411,30 @@
                     "1": {
                         "then": "<b>Schuko vægstik</b> uden jordstift (CEE7/4 type F)"
                     },
+                    "2": {
+                        "then": "<b>Europæisk vægstik</b> med jordstik (CEE7/4 type E)"
+                    },
+                    "3": {
+                        "then": "<b>Europæisk vægstik</b> med jordstik (CEE7/4 type E)"
+                    },
+                    "4": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "6": {
+                        "then": "<b>Type 1 med kabel</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<b>Type 1 med kabel</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Type 1 <i>uden</i> kabel</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<b>Type 1 <i>uden</i> kabel</b> (J1772)"
+                    },
                     "10": {
                         "then": "<b>Type 1 CCS</b> (også kendt som Type 1 Combo)"
                     },
@@ -1441,9 +1465,6 @@
                     "19": {
                         "then": "<b>Type 2 med kabel</b> (mennekes)"
                     },
-                    "2": {
-                        "then": "<b>Europæisk vægstik</b> med jordstik (CEE7/4 type E)"
-                    },
                     "20": {
                         "then": "<b>Tesla Supercharger CCS</b> (en mærkevare type2_css)"
                     },
@@ -1468,32 +1489,11 @@
                     "29": {
                         "then": "<b>Bosch Active Connect med 3 ben</b> og kabel"
                     },
-                    "3": {
-                        "then": "<b>Europæisk vægstik</b> med jordstik (CEE7/4 type E)"
-                    },
                     "30": {
                         "then": "<b>Bosch Active Connect med 5 ben</b> og kabel"
                     },
                     "31": {
                         "then": "<b>Bosch Active Connect med 5 ben</b> og kabel"
-                    },
-                    "4": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "6": {
-                        "then": "<b>Type 1 med kabel</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Type 1 med kabel</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Type 1 <i>uden</i> kabel</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b>Type 1 <i>uden</i> kabel</b> (J1772)"
                     }
                 },
                 "question": "Hvilke ladestik er tilgængelige her?"

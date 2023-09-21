@@ -2763,7 +2763,8 @@
             "en": "<b>Type 2</b> (mennekes) outputs at most 16 A",
             "nl": "<b>Type 2</b> (mennekes) levert een stroom van maximaal 16 A",
             "da": "<b>Type 2</b> (mennekes) udgange højst 16 A",
-            "de": "<b>Typ 2</b> (Mennekes) liefert maximal 16 A"
+            "de": "<b>Typ 2</b> (Mennekes) liefert maximal 16 A",
+            "ca": "<b>Tipus 2</b> (menneks) surt com a màxim a 16 A"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_socket.svg",
@@ -2776,7 +2777,8 @@
             "en": "<b>Type 2</b> (mennekes) outputs at most 32 A",
             "nl": "<b>Type 2</b> (mennekes) levert een stroom van maximaal 32 A",
             "da": "<b>Type 2</b> (mennekes) udgange højst 32 A",
-            "de": "<b>Typ 2</b> (Mennekes) liefert maximal 32 A"
+            "de": "<b>Typ 2</b> (Mennekes) liefert maximal 32 A",
+            "ca": "<b>Tipus 2</b> (menneks) surt com a màxim a 32 A"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_socket.svg",
@@ -3528,7 +3530,8 @@
         "en": "What current do the plugs with <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?",
         "nl": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
         "da": "Hvilken strømstyrke har stikkene med <div style='display: inline-block'><b><b> Tesla Supercharger (Destination)</b> (A Type 2 med kabel med Tesla-mærket)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> ?",
-        "de": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?"
+        "de": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
+        "ca": "Quin corrent donen els endolls amb <div style='display: inline-block'><b><b>Tesla Supercharger (destinació)</b> (un tipus 2 amb cable amb la marca Tesla)</b> <img style ='amplada: 1rem; mostrar: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> oferta?"
       },
       "render": {
         "en": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most {socket:tesla_destination:current}A",
@@ -3546,7 +3549,8 @@
             "en": "<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as tesla) outputs at most 16 A",
             "nl": "<b>Tesla supercharger (Destination</b> (Een Type 2 met kabel en Tesla-logo) levert een stroom van maximaal 16 A",
             "da": "<b>Tesla Supercharger (Destination)</b> (A Type 2 med kabel mærket som tesla) yder højst 16 A",
-            "de": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel) liefert maximal 16 A"
+            "de": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel) liefert maximal 16 A",
+            "ca": "<b>Supercarregador Tesla (destinació)</b> (Un Tipus 2 amb un cable de marca Tesla) surt com a màxim a 16 A"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_tethered.svg",
@@ -3559,7 +3563,8 @@
             "en": "<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 32 A",
             "nl": "<b>Tesla Supercharger (Destination</b> (Een Type 2 met kabel en Tesla-logo) levert een stroom van maximaal 32 A",
             "da": "<b>Tesla Supercharger (Destination)</b> (A Type 2 med kabel af Tesla-mærket) yder højst 32 A",
-            "de": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla) liefert maximal 32 A"
+            "de": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla) liefert maximal 32 A",
+            "ca": "<b>Supercarregador Tesla (destinació)</b> (Un Tipus 2 amb un cable de marca Tesla) surt com a màxim a 32 A"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_tethered.svg",
@@ -4949,7 +4954,7 @@
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> connector",
             "nl": "Heeft een <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>",
-            "ca": "Té un connector <div style='display: inline-block'><b><b> Tipus 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>",
+            "ca": "Té un connector <div style='display: inline-block'><b><b> CCS Tipus 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>",
             "da": "Har en <div style='display: inline-block'><b><b> Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> connector",
             "de": "Hat einen <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> Anschluss",
             "es": "Tiene un conector <div style='display: inline-block'><b>Tipo 2 CCS</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
@@ -4971,7 +4976,7 @@
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> connector",
             "nl": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>",
-            "ca": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (un tipus2_css de marca)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>",
+            "ca": "Té un connector <div style='display: inline-block'><b><b>CCS Tesla Supercharger </b> (un tipus2_css de marca)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>",
             "da": "Har et <div style='display: inline-block'><b><b> Tesla Supercharger CCS-stik</b> (et mærkevarer type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> stik",
             "de": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (Typ 2 CSS vonTesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> Anschluss",
             "es": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (un tipo2_css de marca)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"

@@ -33,7 +33,8 @@
       "de": "Überweg",
       "nl": "Oversteekplaats",
       "pa_PK": "کراسنگ",
-      "fr": "Passage"
+      "fr": "Passage",
+      "ca": "Creuament"
     }
   },
   "presets": [
@@ -42,7 +43,8 @@
         "en": "a crossing",
         "de": "einen Überweg",
         "nl": "een oversteekplaats",
-        "fr": "un passage"
+        "fr": "un passage",
+        "ca": "un creuament"
       },
       "tags": [
         "highway=footway",
