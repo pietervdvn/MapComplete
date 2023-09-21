@@ -672,6 +672,9 @@
                     },
                     "1": {
                         "then": "This bench does not have an integrated artwork"
+                    },
+                    "2": {
+                        "then": "This bench <span class=\"subtle\">probably</span> doesn't have an integrated artwork"
                     }
                 },
                 "question": "Does this bench have an artistic element?",
@@ -8765,6 +8768,14 @@
             },
             "1": {
                 "title": "a surveillance camera mounted on a wall"
+            },
+            "2": {
+                "description": "An ALPR typically has two lenses and an array of infrared lights.",
+                "title": "an ALPR camera (Automatic Number Plate Reader)"
+            },
+            "3": {
+                "description": "An ALPR typically has two lenses and an array of infrared lights.",
+                "title": "an ALPR camera (Automatic Number Plate Reader) mounted on a wall"
             }
         },
         "tagRenderings": {
@@ -8857,6 +8868,18 @@
                 },
                 "question": "In which geographical direction does this camera film?",
                 "render": "Films to a compass heading of {camera:direction}"
+            },
+            "has_alpr": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a normal camera"
+                    },
+                    "1": {
+                        "then": "This is an ALPR (Automatic License Plate Reader)"
+                    }
+                },
+                "question": "Can this camera automatically detect license plates?",
+                "questionHint": "An <b>ALPR</b> (Automatic License Plate Reader) typically has two lenses and an array of infrared LEDS in between."
             },
             "is_indoor": {
                 "mappings": {

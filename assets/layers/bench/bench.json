@@ -890,7 +890,9 @@
       "mappings": [
         {
           "if": "tourism=artwork",
-          "addExtraTags": ["not:tourism:artwork="],
+          "addExtraTags": [
+            "not:tourism:artwork="
+          ],
           "then": {
             "en": "This bench has an integrated artwork",
             "nl": "Deze bank heeft een geïntegreerd kunstwerk",
@@ -915,7 +917,9 @@
             "he": "לספסל זה אין יצירת אמנות משולבת",
             "pl": "Ta ławka nie ma wbudowanego dzieła sztuki"
           },
-          "addExtraTags": ["tourism="]
+          "addExtraTags": [
+            "tourism="
+          ]
         },
         {
           "if": "tourism=",

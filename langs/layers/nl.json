@@ -568,6 +568,9 @@
                     },
                     "1": {
                         "then": "Deze bank heeft geen geïntegreerd kunstwerk"
+                    },
+                    "2": {
+                        "then": "Deze bank heeft <span class=\"subtle\">waarschijnlijk</span> geen geïntegreerd kunstwerk"
                     }
                 },
                 "question": "Heeft deze bank een geïntegreerd kunstwerk?",
