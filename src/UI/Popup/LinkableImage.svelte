@@ -23,9 +23,6 @@
   export let feature: Feature
   export let layer: LayerConfig
 
-  export let linkable = true
-  let isLinked = false
-
   export let linkable = true;
   let isLinked = Object.values(tags.data).some(v => image.pictureUrl === v);
 
