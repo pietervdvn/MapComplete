@@ -637,37 +637,37 @@
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=5 EUR with a fixed text, namely '5 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=5 EUR with a fixed text, namely '5 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if |cash_out=yes&|_currency~^(.*EUR.*)$)",
       "value": "5 EUR"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=10 EUR with a fixed text, namely '10 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=10 EUR with a fixed text, namely '10 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if |cash_out=yes&|_currency~^(.*EUR.*)$)",
       "value": "10 EUR"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=20 EUR with a fixed text, namely '20 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=20 EUR with a fixed text, namely '20 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if |cash_out=yes&|_currency~^(.*EUR.*)$)",
       "value": "20 EUR"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=50 EUR with a fixed text, namely '50 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=50 EUR with a fixed text, namely '50 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if |cash_out=yes&|_currency~^(.*EUR.*)$)",
       "value": "50 EUR"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=100 EUR with a fixed text, namely '100 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=100 EUR with a fixed text, namely '100 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if |cash_out=yes&|_currency~^(.*EUR.*)$)",
       "value": "100 EUR"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=200 EUR with a fixed text, namely '200 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=200 EUR with a fixed text, namely '200 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if |cash_out=yes&|_currency~^(.*EUR.*)$)",
       "value": "200 EUR"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=500 EUR with a fixed text, namely '500 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if |cash_out=yes&|_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=500 EUR with a fixed text, namely '500 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if |cash_out=yes&|_currency~^(.*EUR.*)$)",
       "value": "500 EUR"
     },
     {
@@ -1189,7 +1189,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Bicycle library' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Bicycle library' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "opening_hours",
@@ -1330,7 +1330,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Bicycle rental' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Bicycle rental' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -1692,7 +1692,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Bike cafe' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Bike cafe' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "opening_hours",
@@ -2192,7 +2192,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Bike repair/shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Bike repair/shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "opening_hours",
@@ -2480,7 +2480,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Bike-related object' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Bike-related object' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -2777,7 +2777,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Cafés and pubs' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Cafés and pubs' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -4338,7 +4338,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Climbing club' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Climbing club' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -4408,7 +4408,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Climbing gyms' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Climbing gyms' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "charge",
@@ -5920,7 +5920,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Dentist' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Dentist' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "website",
@@ -5990,7 +5990,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Doctors' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Doctors' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "website",
@@ -6239,6 +6239,26 @@
       "value": "no"
     },
     {
+      "key": "tactile_writing:braille",
+      "description": "Layer 'Elevator' shows tactile_writing:braille=yes with a fixed text, namely 'This elevator has tactile writing in Braille' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "tactile_writing:braille",
+      "description": "Layer 'Elevator' shows tactile_writing:braille=no with a fixed text, namely 'This elevator does not have tactile writing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "speech_output",
+      "description": "Layer 'Elevator' shows speech_output=yes with a fixed text, namely 'This elevator has speech output' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "speech_output",
+      "description": "Layer 'Elevator' shows speech_output=no with a fixed text, namely 'This elevator does not have speech output' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Penny Presses showing features with this tag",
       "value": "vending_machine"
@@ -6302,38 +6322,53 @@
       "value": "4"
     },
     {
+      "key": "fee",
+      "description": "Layer 'Penny Presses' shows  with a fixed text, namely 'It costs money to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key fee.",
+      "value": ""
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Penny Presses' shows fee=yes with a fixed text, namely 'It costs money to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Penny Presses' shows fee=no with a fixed text, namely 'It is free to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
       "key": "payment:cash",
-      "description": "Layer 'Penny Presses' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Penny Presses' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Personal theme') (This is only shown if fee=yes|)",
       "value": "yes"
     },
     {
       "key": "payment:cards",
-      "description": "Layer 'Penny Presses' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Penny Presses' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Personal theme') (This is only shown if fee=yes|)",
       "value": "yes"
     },
     {
       "key": "payment:qr_code",
-      "description": "Layer 'Penny Presses' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Penny Presses' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if fee=yes|)",
       "value": "yes"
     },
     {
       "key": "payment:coins",
-      "description": "Layer 'Penny Presses' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Penny Presses' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if fee=yes|)",
       "value": "yes"
     },
     {
       "key": "payment:notes",
-      "description": "Layer 'Penny Presses' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Penny Presses' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if fee=yes|)",
       "value": "yes"
     },
     {
       "key": "payment:debit_cards",
-      "description": "Layer 'Penny Presses' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Penny Presses' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if fee=yes|)",
       "value": "yes"
     },
     {
       "key": "payment:credit_cards",
-      "description": "Layer 'Penny Presses' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Penny Presses' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if fee=yes|)",
       "value": "yes"
     },
     {
@@ -6366,6 +6401,16 @@
       "value": "50cent"
     },
     {
+      "key": "coin:type",
+      "description": "Layer 'Penny Presses' shows coin:type=10centimes with a fixed text, namely 'This penny press uses a 10 centimes coin for pressing.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "10centimes"
+    },
+    {
+      "key": "coin:type",
+      "description": "Layer 'Penny Presses' shows coin:type=20centimes with a fixed text, namely 'This penny press uses a 20 centimes coin for pressing.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "20centimes"
+    },
+    {
       "key": "website",
       "description": "Layer 'Penny Presses' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Personal theme')"
     },
@@ -6375,57 +6420,102 @@
     },
     {
       "key": "charge",
-      "description": "Layer 'Penny Presses' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Penny Presses' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Personal theme') (This is only shown if fee=yes|)"
     },
     {
       "key": "charge",
-      "description": "Layer 'Penny Presses' shows charge=1 EUR with a fixed text, namely 'It costs 1 euro to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Penny Presses' shows charge=1 EUR with a fixed text, namely 'It costs 1 euro to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if fee=yes|)",
       "value": "1 EUR"
     },
     {
       "key": "charge",
-      "description": "Layer 'Penny Presses' shows charge=2 EUR with a fixed text, namely 'It costs 2 euros to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Penny Presses' shows charge=2 EUR with a fixed text, namely 'It costs 2 euros to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if fee=yes|)",
       "value": "2 EUR"
     },
     {
+      "key": "charge",
+      "description": "Layer 'Penny Presses' shows charge=2 CHF with a fixed text, namely 'It costs 2 Swiss francs to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if fee=yes|)",
+      "value": "2 CHF"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Penny Presses' shows charge=1 CHF with a fixed text, namely 'It costs 1 Swiss franc to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if fee=yes|)",
+      "value": "1 CHF"
+    },
+    {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.01 EUR with a fixed text, namely '1 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.01 EUR with a fixed text, namely '1 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.01 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.02 EUR with a fixed text, namely '2 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.02 EUR with a fixed text, namely '2 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.02 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.05 EUR with a fixed text, namely '5 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.05 EUR with a fixed text, namely '5 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.05 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.10 EUR with a fixed text, namely '10 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.10 EUR with a fixed text, namely '10 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.10 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.20 EUR with a fixed text, namely '20 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.20 EUR with a fixed text, namely '20 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.20 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.50 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "1 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "2 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.05 CHF with a fixed text, namely '5 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "0.05 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.10 CHF with a fixed text, namely '10 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "0.10 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.20 CHF with a fixed text, namely '20 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "0.20 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.50 CHF with a fixed text, namely '½ franc coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "0.50 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=1 CHF with a fixed text, namely '1 franc coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "1 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=2 CHF with a fixed text, namely '2 francs coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "2 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=5 CHF with a fixed text, namely '5 francs coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "5 CHF"
     },
     {
       "key": "indoor",
@@ -6929,7 +7019,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Fitness Centres' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Fitness Centres' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "website",
@@ -7276,7 +7366,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Restaurants and fast food' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Restaurants and fast food' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -7768,7 +7858,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'governments' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'governments' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "website",
@@ -7864,7 +7954,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Hackerspace' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Hackerspace' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -7993,7 +8083,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Hospitals' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Hospitals' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "website",
@@ -8050,7 +8140,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Hotels' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Hotels' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "website",
@@ -8447,7 +8537,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Kindergartens and childcare' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Kindergartens and childcare' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -9375,78 +9465,143 @@
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.01 EUR with a fixed text, namely '1 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.01 EUR with a fixed text, namely '1 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.01 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.02 EUR with a fixed text, namely '2 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.02 EUR with a fixed text, namely '2 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.02 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.05 EUR with a fixed text, namely '5 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.05 EUR with a fixed text, namely '5 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.05 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.10 EUR with a fixed text, namely '10 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.10 EUR with a fixed text, namely '10 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.10 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.20 EUR with a fixed text, namely '20 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.20 EUR with a fixed text, namely '20 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.20 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.50 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "1 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "2 EUR"
     },
     {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.05 CHF with a fixed text, namely '5 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "0.05 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.10 CHF with a fixed text, namely '10 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "0.10 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.20 CHF with a fixed text, namely '20 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "0.20 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.50 CHF with a fixed text, namely '½ franc coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "0.50 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=1 CHF with a fixed text, namely '1 franc coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "1 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=2 CHF with a fixed text, namely '2 francs coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "2 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=5 CHF with a fixed text, namely '5 francs coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "5 CHF"
+    },
+    {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=5 EUR with a fixed text, namely '5 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=5 EUR with a fixed text, namely '5 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "5 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=10 EUR with a fixed text, namely '10 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=10 EUR with a fixed text, namely '10 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "10 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=20 EUR with a fixed text, namely '20 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=20 EUR with a fixed text, namely '20 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "20 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=50 EUR with a fixed text, namely '50 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=50 EUR with a fixed text, namely '50 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "50 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=100 EUR with a fixed text, namely '100 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=100 EUR with a fixed text, namely '100 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "100 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=200 EUR with a fixed text, namely '200 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=200 EUR with a fixed text, namely '200 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "200 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=500 EUR with a fixed text, namely '500 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=500 EUR with a fixed text, namely '500 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "500 EUR"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=10 CHF with a fixed text, namely '10 francs notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "10 CHF"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=20 CHF with a fixed text, namely '20 francs notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "20 CHF"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=50 CHF with a fixed text, namely '50 francs notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "50 CHF"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=100 CHF with a fixed text, namely '100 francs notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "100 CHF"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=200 CHF with a fixed text, namely '200 francs notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "200 CHF"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=1000 CHF with a fixed text, namely '1000 francs notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "1000 CHF"
     },
     {
       "key": "ref",
@@ -9524,7 +9679,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Pharmacies' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Pharmacies' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "website",
@@ -9605,7 +9760,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Physiotherapist' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Physiotherapist' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "website",
@@ -10524,7 +10679,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Recycling' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme') (This is only shown if recycling_type=centre)"
+      "description": "Layer 'Recycling' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme') (This is only shown if recycling_type=centre)"
     },
     {
       "key": "phone",
@@ -10714,7 +10869,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Primary and secondary schools' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Primary and secondary schools' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "amenity",
@@ -11624,7 +11779,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -12164,7 +12319,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Sports centres' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Sports centres' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "wheelchair",
@@ -12750,7 +12905,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Colleges and universities' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Colleges and universities' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -12865,78 +13020,143 @@
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.01 EUR with a fixed text, namely '1 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.01 EUR with a fixed text, namely '1 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.01 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.02 EUR with a fixed text, namely '2 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.02 EUR with a fixed text, namely '2 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.02 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.05 EUR with a fixed text, namely '5 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.05 EUR with a fixed text, namely '5 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.05 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.10 EUR with a fixed text, namely '10 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.10 EUR with a fixed text, namely '10 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.10 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.20 EUR with a fixed text, namely '20 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.20 EUR with a fixed text, namely '20 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.20 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.50 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "1 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "2 EUR"
     },
     {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.05 CHF with a fixed text, namely '5 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "0.05 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.10 CHF with a fixed text, namely '10 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "0.10 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.20 CHF with a fixed text, namely '20 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "0.20 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=0.50 CHF with a fixed text, namely '½ franc coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "0.50 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=1 CHF with a fixed text, namely '1 franc coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "1 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=2 CHF with a fixed text, namely '2 francs coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "2 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:coins:denominations=5 CHF with a fixed text, namely '5 francs coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "5 CHF"
+    },
+    {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=5 EUR with a fixed text, namely '5 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=5 EUR with a fixed text, namely '5 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "5 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=10 EUR with a fixed text, namely '10 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=10 EUR with a fixed text, namely '10 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "10 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=20 EUR with a fixed text, namely '20 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=20 EUR with a fixed text, namely '20 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "20 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=50 EUR with a fixed text, namely '50 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=50 EUR with a fixed text, namely '50 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "50 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=100 EUR with a fixed text, namely '100 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=100 EUR with a fixed text, namely '100 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "100 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=200 EUR with a fixed text, namely '200 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=200 EUR with a fixed text, namely '200 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "200 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=500 EUR with a fixed text, namely '500 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=500 EUR with a fixed text, namely '500 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "500 EUR"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=10 CHF with a fixed text, namely '10 francs notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "10 CHF"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=20 CHF with a fixed text, namely '20 francs notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "20 CHF"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=50 CHF with a fixed text, namely '50 francs notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "50 CHF"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=100 CHF with a fixed text, namely '100 francs notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "100 CHF"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=200 CHF with a fixed text, namely '200 francs notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "200 CHF"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Ticket Machines' shows payment:notes:denominations=1000 CHF with a fixed text, namely '1000 francs notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "1000 CHF"
     },
     {
       "key": "amenity",
@@ -13908,78 +14128,143 @@
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Vending Machines' shows payment:coins:denominations=0.01 EUR with a fixed text, namely '1 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Vending Machines' shows payment:coins:denominations=0.01 EUR with a fixed text, namely '1 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.01 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Vending Machines' shows payment:coins:denominations=0.02 EUR with a fixed text, namely '2 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Vending Machines' shows payment:coins:denominations=0.02 EUR with a fixed text, namely '2 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.02 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Vending Machines' shows payment:coins:denominations=0.05 EUR with a fixed text, namely '5 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Vending Machines' shows payment:coins:denominations=0.05 EUR with a fixed text, namely '5 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.05 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Vending Machines' shows payment:coins:denominations=0.10 EUR with a fixed text, namely '10 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Vending Machines' shows payment:coins:denominations=0.10 EUR with a fixed text, namely '10 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.10 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Vending Machines' shows payment:coins:denominations=0.20 EUR with a fixed text, namely '20 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Vending Machines' shows payment:coins:denominations=0.20 EUR with a fixed text, namely '20 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.20 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Vending Machines' shows payment:coins:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Vending Machines' shows payment:coins:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "0.50 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Vending Machines' shows payment:coins:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Vending Machines' shows payment:coins:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "1 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Vending Machines' shows payment:coins:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Vending Machines' shows payment:coins:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "2 EUR"
     },
     {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Vending Machines' shows payment:coins:denominations=0.05 CHF with a fixed text, namely '5 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "0.05 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Vending Machines' shows payment:coins:denominations=0.10 CHF with a fixed text, namely '10 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "0.10 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Vending Machines' shows payment:coins:denominations=0.20 CHF with a fixed text, namely '20 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "0.20 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Vending Machines' shows payment:coins:denominations=0.50 CHF with a fixed text, namely '½ franc coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "0.50 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Vending Machines' shows payment:coins:denominations=1 CHF with a fixed text, namely '1 franc coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "1 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Vending Machines' shows payment:coins:denominations=2 CHF with a fixed text, namely '2 francs coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "2 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Vending Machines' shows payment:coins:denominations=5 CHF with a fixed text, namely '5 francs coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "5 CHF"
+    },
+    {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Vending Machines' shows payment:notes:denominations=5 EUR with a fixed text, namely '5 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Vending Machines' shows payment:notes:denominations=5 EUR with a fixed text, namely '5 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "5 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Vending Machines' shows payment:notes:denominations=10 EUR with a fixed text, namely '10 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Vending Machines' shows payment:notes:denominations=10 EUR with a fixed text, namely '10 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "10 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Vending Machines' shows payment:notes:denominations=20 EUR with a fixed text, namely '20 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Vending Machines' shows payment:notes:denominations=20 EUR with a fixed text, namely '20 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "20 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Vending Machines' shows payment:notes:denominations=50 EUR with a fixed text, namely '50 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Vending Machines' shows payment:notes:denominations=50 EUR with a fixed text, namely '50 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "50 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Vending Machines' shows payment:notes:denominations=100 EUR with a fixed text, namely '100 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Vending Machines' shows payment:notes:denominations=100 EUR with a fixed text, namely '100 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "100 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Vending Machines' shows payment:notes:denominations=200 EUR with a fixed text, namely '200 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Vending Machines' shows payment:notes:denominations=200 EUR with a fixed text, namely '200 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "200 EUR"
     },
     {
       "key": "payment:notes:denominations",
-      "description": "Layer 'Vending Machines' shows payment:notes:denominations=500 EUR with a fixed text, namely '500 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency=EUR)",
+      "description": "Layer 'Vending Machines' shows payment:notes:denominations=500 EUR with a fixed text, namely '500 euro notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
       "value": "500 EUR"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Vending Machines' shows payment:notes:denominations=10 CHF with a fixed text, namely '10 francs notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "10 CHF"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Vending Machines' shows payment:notes:denominations=20 CHF with a fixed text, namely '20 francs notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "20 CHF"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Vending Machines' shows payment:notes:denominations=50 CHF with a fixed text, namely '50 francs notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "50 CHF"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Vending Machines' shows payment:notes:denominations=100 CHF with a fixed text, namely '100 francs notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "100 CHF"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Vending Machines' shows payment:notes:denominations=200 CHF with a fixed text, namely '200 francs notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "200 CHF"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Vending Machines' shows payment:notes:denominations=1000 CHF with a fixed text, namely '1000 francs notes are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "value": "1000 CHF"
     },
     {
       "key": "operator",

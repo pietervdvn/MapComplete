@@ -18,6 +18,8 @@ This theme contains the following layers:
   - [climbing_opportunity](../Layers/climbing_opportunity.md)
   - [shops_with_climbing_shoe_repair](../Layers/shops_with_climbing_shoe_repair.md)
   - [shops](../Layers/shops.md)
+  - [drinking_water](../Layers/drinking_water.md)
+  - [toilet](../Layers/toilet.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)

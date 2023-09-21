@@ -425,7 +425,7 @@ This tagrendering has no question and is thus read-only
 id | question | osmTags
 ---- | ---------- | ---------
 has_image.0 | With and without images (default) | 
-has_image.1 | Has at least one image | image~.+\|image:0~.+|image:1~.+|image:2~.+|image:3~.+|mapillary~.+
+has_image.1 | Has at least one image | image~.+\|image:0~.+\|image:1~.+\|image:2~.+\|image:3~.+\|mapillary~.+
 has_image.2 | Probably does not have an image | 
 
 

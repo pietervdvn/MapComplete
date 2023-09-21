@@ -237,7 +237,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Fitness Centres' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Sports')"
+      "description": "Layer 'Fitness Centres' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Sports')"
     },
     {
       "key": "website",
@@ -523,7 +523,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Sports centres' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Sports')"
+      "description": "Layer 'Sports centres' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Sports')"
     },
     {
       "key": "wheelchair",
@@ -1396,7 +1396,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Sports')"
+      "description": "Layer 'Shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Sports')"
     },
     {
       "key": "phone",

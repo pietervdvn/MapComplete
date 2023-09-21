@@ -72,10 +72,7 @@ export class ImageUploadFlow extends Toggle {
             labelContent,
         ]).SetClass("w-full flex justify-center items-center")
 
-        const licenseStore = state?.osmConnection?.GetPreference(
-            "pictures-license",
-            "CC0"
-        )
+        const licenseStore = state?.osmConnection?.GetPreference("pictures-license", "CC0")
 
         const fileSelector = new FileSelectorButton(label, {
             acceptType: "image/*",

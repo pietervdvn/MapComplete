@@ -180,6 +180,26 @@
       "value": "no"
     },
     {
+      "key": "tactile_writing:braille",
+      "description": "Layer 'Elevator' shows tactile_writing:braille=yes with a fixed text, namely 'This elevator has tactile writing in Braille' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "yes"
+    },
+    {
+      "key": "tactile_writing:braille",
+      "description": "Layer 'Elevator' shows tactile_writing:braille=no with a fixed text, namely 'This elevator does not have tactile writing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "no"
+    },
+    {
+      "key": "speech_output",
+      "description": "Layer 'Elevator' shows speech_output=yes with a fixed text, namely 'This elevator has speech output' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "yes"
+    },
+    {
+      "key": "speech_output",
+      "description": "Layer 'Elevator' shows speech_output=no with a fixed text, namely 'This elevator does not have speech output' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "no"
+    },
+    {
       "key": "entrance",
       "description": "The MapComplete theme Indoors has a layer Entrance showing features with this tag"
     },

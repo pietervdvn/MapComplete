@@ -1974,7 +1974,7 @@
                         "then": "<b>Tipus 2 amb cable</b> (mennekes)"
                     },
                     "20": {
-                        "then": "<b>CSS Supercarregador Tesla</b> (tipus2_css de la marca)"
+                        "then": "<b>CSS Supercarregador Tesla</b> (un tipus2_css de la marca)"
                     },
                     "21": {
                         "then": "<b>CSS Supercarregador Tesla</b> (un tipus2_css de la marca)"
@@ -2061,7 +2061,7 @@
             "Parking:fee": {
                 "mappings": {
                     "0": {
-                        "then": "No hi ha costos d'aparcament addicionals mentre es carrega"
+                        "then": "No cal pagar una taxa addicional mentres es carrega"
                     },
                     "1": {
                         "then": "Cal pagar una taxa addicional d'aparcament mentres es carrega"
@@ -2253,6 +2253,9 @@
                         "then": "<b>Tipus 2 CCS</b> (mennekes) surt com a màxim 50 kw A"
                     }
                 }
+            },
+            "questions-technical": {
+                "render": "<h3>Preguntes tècniques</h3>Les preguntes següents són molt tècniques. No dubteu a ignorar-les<br/>{questions(technical)}"
             },
             "ref": {
                 "question": "Quin és el número de referència d'aquest punt de càrrega?"
@@ -7183,23 +7186,107 @@
         }
     },
     "ticket_machine": {
+        "description": "Troba màquines de bitllets per a bitllets de transport públic",
+        "name": "Màquines de bitllets",
         "tagRenderings": {
             "operator": {
-                "question": "Qui és l'operador d'aquesta màquina de venda de bitllets?"
+                "freeform": {
+                    "placeholder": "Nom de l'operador"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Ferrocarrils holandesos (NS)"
+                    }
+                },
+                "question": "Qui és l'operador d'aquesta màquina de venda de bitllets?",
+                "render": "{operator} opera aquesta màquina de bitllets"
             }
+        },
+        "title": {
+            "render": "Màquina de bitllets"
+        }
+    },
+    "ticket_validator": {
+        "description": "Trobeu validadors de bitllets per validar bitllets de transport públic",
+        "name": "Validadors de bitllets",
+        "presets": {
+            "0": {
+                "description": "Un validador de bitllets per validar un bitllet de transport públic. Pot ser un lector digital, llegir una targeta o un bitllet, o una màquina que estampa o perfora un bitllet.",
+                "title": "un validador de bitllets"
+            }
+        },
+        "tagRenderings": {
+            "barrier": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest validador de bitllets forma part d'una porta"
+                    }
+                },
+                "render": "Aquest validador de bitllets forma part d'una barrera de tipus {barrier}"
+            },
+            "payment-options": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Aquest validador de bitllets accepta OV-Chipkaart"
+                        },
+                        "1": {
+                            "then": "Aquest validador de bitllets accepta OV-Chipkaart"
+                        }
+                    }
+                }
+            },
+            "validator-operator": {
+                "freeform": {
+                    "placeholder": "Nom de l'operador"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Ferrocarrils holandesos (NS)"
+                    }
+                },
+                "question": "Qui és l'operador d'aquest validador de bitllets?",
+                "render": "{operator} opera aquest validador de bitllets"
+            }
+        },
+        "title": {
+            "render": "Validador de bitllets"
         }
     },
     "toilet": {
+        "description": "Una capa que mostra banys (publics)",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Accessible amb cadira de rodes"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Té un canviador"
+                    }
+                }
+            }
+        },
         "name": "Lavabos",
         "presets": {
             "0": {
                 "title": "un lavabo públic"
             },
             "1": {
+                "description": "Un lavabo que tingui almenys un lavabo accessible per a cadira de rodes",
                 "title": "un lavabo amb lavabo accessible per a cadires de rodes"
             }
         },
         "tagRenderings": {
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Quan obrin aquests lavabos?"
+                }
+            },
             "toilet-access": {
                 "mappings": {
                     "0": {
@@ -7213,12 +7300,36 @@
                     },
                     "3": {
                         "then": "Accessible, però s'ha de demanar la clau per a entrar"
+                    },
+                    "4": {
+                        "then": "Accés públic"
                     }
                 },
                 "question": "Aquests serveis són d'accés públic?",
                 "render": "L'accés és {access}"
             },
+            "toilet-changing_table:location": {
+                "mappings": {
+                    "0": {
+                        "then": "El canviador està al lavabo per a dones. "
+                    },
+                    "1": {
+                        "then": "El canviador està al lavabo per a homes. "
+                    },
+                    "2": {
+                        "then": "El canviador està al lavabo per a usuaris de cadira de rodes. "
+                    },
+                    "3": {
+                        "then": "El canviador està en una habitació dedicada. "
+                    }
+                },
+                "question": "On està el canviador?",
+                "render": "El cambiador està a {changing_table:location}"
+            },
             "toilet-charge": {
+                "freeform": {
+                    "placeholder": "p. ex. 0.50 eur"
+                },
                 "question": "Quant s'ha de pagar per aquests lavabos?",
                 "render": "La taxa és {charge}"
             },
@@ -7298,22 +7409,62 @@
                 "question": "Hi ha un lavabo específic per a usuaris amb cadira de rodes?"
             },
             "wheelchair-door-width": {
-                "question": "Quina és l'amplada de la porta per al lavabo accéssible?"
+                "question": "Quina és l'amplada de la porta per al lavabo accéssible?",
+                "render": "La porta del vàter accessible amb cadira de rodes té {canonical(door:width)} d'ample"
             }
         },
         "title": {
             "render": "Lavabo"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "metre"
+                    },
+                    "1": {
+                        "human": "centimetre"
+                    }
+                }
+            }
         }
     },
     "toilet_at_amenity": {
+        "description": "Una capa que mostra banys (públics) ubicats en diferents llocs",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Accessible amb cadira de rodes"
+                    }
+                }
+            }
+        },
         "tagRenderings": {
             "toilet-access": {
                 "mappings": {
+                    "0": {
+                        "then": "Accés públic"
+                    },
                     "1": {
                         "then": "Només accessible a clients de l'instal·lació"
+                    },
+                    "2": {
+                        "then": "No accessible, inclús per als clients de la instal·lació"
+                    },
+                    "3": {
+                        "then": "Accessible, però hi ha que demanar la clau per a entrar"
+                    },
+                    "4": {
+                        "then": "Accés públic"
                     }
                 },
-                "question": "Aquests serveis són d'accés públic?"
+                "question": "Aquests serveis són d'accés públic?",
+                "render": "L'accés és {toilets:access}"
+            },
+            "toilet-charge": {
+                "question": "Quant s'ha de pagar per aquests lavabos?",
+                "render": "La taxa és {toilets:charge}"
             },
             "toilets-fee": {
                 "mappings": {
@@ -7352,6 +7503,7 @@
         "name": "Línies de bus",
         "tagRenderings": {
             "colour": {
+                "question": "Quin és el color d'aquest línia d'autobús?",
                 "render": "Aquesta línea d'autobús té el color {colour}"
             },
             "from": {
@@ -7363,6 +7515,7 @@
                 "render": "Aquesta línea d'autobús és part de la xarxa {network}"
             },
             "operator": {
+                "question": "Quina companyia opera aquesta línia d'autobús?",
                 "render": "{operator} opera aquesta línea d'autobús"
             },
             "to": {
@@ -7499,13 +7652,20 @@
             },
             "tree-heritage": {
                 "mappings": {
+                    "1": {
+                        "then": "Registrat com a patrimoni per la <i>Direction du Patrimoine culturel</i> Brussel·les"
+                    },
                     "2": {
                         "then": "Registrat com a patrimoni per una organització diferent"
                     },
                     "3": {
                         "then": "No registrat com a patrimoni"
+                    },
+                    "4": {
+                        "then": "Registrat com a patrimoni per una organització diferent"
                     }
-                }
+                },
+                "question": "Aquest arbre és patrimoni registrat?"
             },
             "tree-leaf_type": {
                 "mappings": {
@@ -7514,8 +7674,32 @@
                     },
                     "1": {
                         "then": "Amb fulles d'agulla"
+                    },
+                    "2": {
+                        "then": "Permanentment sense fulles"
                     }
-                }
+                },
+                "question": "És un arbre de fulla ampla o d'agulla?"
+            },
+            "tree-species-wikidata": {
+                "question": "Quina espècie és aquest arbre?"
+            },
+            "tree_node-name": {
+                "mappings": {
+                    "0": {
+                        "then": "L'arbre no té nom."
+                    }
+                },
+                "question": "Té nom aquest arbre?",
+                "render": "Nom : {name}"
+            },
+            "tree_node-ref:OnroerendErfgoed": {
+                "question": "Quina és la identificació emesa per Onroerend Erfgoed Flanders?",
+                "render": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/>Identifiació Onroerend Erfgoed: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
+            },
+            "tree_node-wikidata": {
+                "question": "Quin és l'identificador de Wikidata d'aquest arbre?",
+                "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/>Wikidata<a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
             }
         },
         "title": {
@@ -7523,6 +7707,7 @@
         }
     },
     "usersettings": {
+        "description": "Una capa especial que no està pensada per mostrar-se en un mapa, però que s'utilitza per configurar la configuració de l'usuari",
         "tagRenderings": {
             "all-questions-at-once": {
                 "mappings": {
@@ -7532,7 +7717,8 @@
                     "1": {
                         "then": "Mostra les preguntes una per una"
                     }
-                }
+                },
+                "question": "Les preguntes amb camps de dades desconeguts haurien d'aparèixer una per una o juntes?"
             },
             "contributor-thanks": {
                 "mappings": {
@@ -7552,6 +7738,43 @@
                 "mappings": {
                     "0": {
                         "then": "Permet girar el mapa"
+                    },
+                    "1": {
+                        "then": "Mantingueu sempre el nord apuntant cap amunt"
+                    }
+                },
+                "question": "El nord hauria d'estar sempre amunt?"
+            },
+            "inbox": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Obre la teva safata d'entrada"
+                            }
+                        }
+                    },
+                    "1": {
+                        "then": {
+                            "special": {
+                                "text": "<b class='alert'>Tens {_unreadMessages}</b><br/>Open your inbox"
+                            }
+                        }
+                    }
+                }
+            },
+            "language_picker": {
+                "mappings": {
+                    "0": {
+                        "then": "L'idioma es va establir mitjançant un paràmetre d'URL i l'usuari no pot definir-lo.²"
+                    }
+                }
+            },
+            "mangrove-keys": {
+                "render": {
+                    "after": "Qualsevol persona que tingui aquest fitxer pot fer ressenyes amb la vostra identitat",
+                    "special": {
+                        "text": "Baixeu la clau privada del vostre compte de Mangrove"
                     }
                 }
             },
@@ -7572,6 +7795,13 @@
                 },
                 "question": "Sota quina llicència vols publicar les teves fotos?"
             },
+            "settings-link": {
+                "render": {
+                    "special": {
+                        "text": "Obriu la vostra configuració a OpenStreetMap.org"
+                    }
+                }
+            },
             "show_debug": {
                 "mappings": {
                     "0": {
@@ -7579,16 +7809,30 @@
                     },
                     "1": {
                         "then": "No mostris informació de depuració"
+                    },
+                    "2": {
+                        "then": "No mostris informació de depuració"
                     }
                 },
                 "question": "Vols mostrar la informació de depuració de la configuració de l'usuari?"
             },
             "show_tags": {
                 "mappings": {
+                    "0": {
+                        "then": "No mostris mai les etiquetes."
+                    },
+                    "1": {
+                        "then": "Mostra les etiquetes que s'aplicaran un cop hagi fet {__userjourney_tagsVisibleAt} conjunts de canvis"
+                    },
+                    "2": {
+                        "then": "Mostra les etiquetes que s'aplicaran en fer un canvi"
+                    },
                     "3": {
                         "then": "Mostra les etiquetes que s'aplicaran a l'hora de fer un canvi i mostra la taula d'etiquetes a cada element"
                     }
-                }
+                },
+                "question": "Mostra les etiquetes d'OpenStreetMap en brut?",
+                "questionHint": "Les <b>etiquetes</b> són atributs que té cada element. Aquestes són les dades tècniques que s'emmagatzemen a la base de dades. No necessiteu aquesta informació per editar amb MapComplete, però és possible que els usuaris avançats la vulguin fer servir com a referència."
             },
             "translation-completeness": {
                 "mappings": {
@@ -7630,19 +7874,209 @@
                 "mappings": {
                     "0": {
                         "then": "S'ha trobat un enllaç al vostre perfil de Mastodon: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
+                    },
+                    "1": {
+                        "then": "Hem trobat un enllaç al que sembla ser un compte de mastodon, però no està verificat. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Editeu la descripció del vostre perfil</a> i col·loqueu-hi el següent: <span class='code '>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
                     }
                 }
             }
+        },
+        "title": {
+            "render": "Configuració"
+        }
+    },
+    "vending_machine": {
+        "description": "Capa que mostra màquines expenedores",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Totes les màquines expenedores"
+                    },
+                    "1": {
+                        "question": "Venda de begudes"
+                    },
+                    "2": {
+                        "question": "Venda de llaminadures"
+                    },
+                    "3": {
+                        "question": "Venda de menjar"
+                    },
+                    "4": {
+                        "question": "Venda de tabaco"
+                    },
+                    "5": {
+                        "question": "Venda de preservatius"
+                    },
+                    "6": {
+                        "question": "Venda de cafè"
+                    },
+                    "7": {
+                        "question": "Venda d'aigua"
+                    },
+                    "8": {
+                        "question": "Venda de diaris"
+                    },
+                    "9": {
+                        "question": "Venda de càmeres interiors de bicicletes"
+                    },
+                    "10": {
+                        "question": "Venda de llet"
+                    },
+                    "11": {
+                        "question": "Venda de pa"
+                    },
+                    "12": {
+                        "question": "Venda d'ous"
+                    },
+                    "13": {
+                        "question": "Venda de formatge"
+                    },
+                    "14": {
+                        "question": "Venda de mel"
+                    },
+                    "15": {
+                        "question": "Venda de patates"
+                    },
+                    "16": {
+                        "question": "Venda de flors"
+                    }
+                }
+            }
+        },
+        "name": "Màquines expenedores",
+        "presets": {
+            "0": {
+                "title": "una màquina expenedora"
+            }
+        },
+        "tagRenderings": {
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta màquina expenedora està a l'exterior"
+                    },
+                    "1": {
+                        "then": "Aquesta màquina expenedora està a l'interior"
+                    },
+                    "2": {
+                        "then": "Aquesta màquina expenedora està a l'exterior"
+                    }
+                },
+                "question": "Aquesta màquina expenedora està a l'exterior?"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Nom de l'operadora"
+                },
+                "question": "Qui opera aquesta màquina expenedora?",
+                "render": "{operator} gestiona aquesta màquina expenedora"
+            },
+            "vending": {
+                "mappings": {
+                    "0": {
+                        "then": "Es venen begudes"
+                    },
+                    "1": {
+                        "then": "Es venen llaminadures"
+                    },
+                    "2": {
+                        "then": "Es ven menjar"
+                    },
+                    "3": {
+                        "then": "Es ven tabaco"
+                    },
+                    "4": {
+                        "then": "Es venen preservatius"
+                    },
+                    "5": {
+                        "then": "Es ven cafè"
+                    },
+                    "6": {
+                        "then": "Es ven aigua"
+                    },
+                    "7": {
+                        "then": "Es venen diaris"
+                    },
+                    "8": {
+                        "then": "Es venen càmeres interiors de bicicletes"
+                    },
+                    "9": {
+                        "then": "Es ven llet"
+                    },
+                    "10": {
+                        "then": "Es ven pa"
+                    },
+                    "11": {
+                        "then": "Es venen ous"
+                    },
+                    "12": {
+                        "then": "Es ven formatge"
+                    },
+                    "13": {
+                        "then": "Es ven mel"
+                    },
+                    "14": {
+                        "then": "Es venen papes"
+                    },
+                    "15": {
+                        "then": "Es venen flors"
+                    },
+                    "16": {
+                        "then": "Es venen tiquets d'aparcament"
+                    },
+                    "17": {
+                        "then": "Es venen cèntims premsats"
+                    },
+                    "18": {
+                        "then": "Es venen bitllets de transport públic"
+                    }
+                },
+                "question": "Que ven aquesta màquina expenedora?",
+                "render": "Aquesta màquina expenedora ven {vending}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Maquina expenedora {name}"
+                },
+                "1": {
+                    "then": "Màquina expenedora {brand}"
+                }
+            },
+            "render": "Màquina expenedora"
         }
     },
     "veterinary": {
-        "name": "Veterinari"
+        "name": "Veterinari",
+        "presets": {
+            "0": {
+                "description": "un veterinari, que tracta gossos",
+                "title": "un veterinari"
+            }
+        },
+        "tagRenderings": {
+            "vetName": {
+                "question": "Qui és el nom d'aquest veterinari?",
+                "render": "El nom d'aquest veterinari és {name}"
+            }
+        },
+        "title": {
+            "render": "Veterinari"
+        }
     },
     "viewpoint": {
+        "description": "Un bon mirador o una bonica vista. Ideal per afegir una imatge si no hi caben cap altra categoria",
         "name": "Mirador",
         "presets": {
             "0": {
                 "title": "un mirador"
+            }
+        },
+        "tagRenderings": {
+            "viewpoint-description": {
+                "question": "Vols afegir una descripció?"
             }
         },
         "title": {
@@ -7653,6 +8087,8 @@
         "description": "Una capa que mostra “village-green” (que són zones verdes comunals, però no parcs del tot)"
     },
     "visitor_information_centre": {
+        "description": "Un centre de visitants ofereix informació sobre una atracció o lloc d'interès específic on es troba.",
+        "name": "Centre d'Informació al Visitant",
         "title": {
             "mappings": {
                 "1": {
@@ -7760,6 +8196,9 @@
                     },
                     "1": {
                         "then": "Aquesta paperera <b>no</b> té un dispensador per a bosses d'excrements (gossos)"
+                    },
+                    "2": {
+                        "then": "Aquesta paperera <b>no</b> té un dispensador per a bosses d'excrements (gossos)"
                     }
                 },
                 "question": "Aquesta paperera té un dispensador per a bosses per a excrements de gossos?"
@@ -7796,6 +8235,7 @@
         }
     },
     "waste_disposal": {
+        "description": "Contenidor de fem, contenidor mitjà o gran per a l'eliminació de residus (domèstics)",
         "filter": {
             "0": {
                 "options": {
@@ -7853,6 +8293,9 @@
                 },
                 "question": "Quin tipus de contenidor de brossa és aquest?"
             }
+        },
+        "title": {
+            "render": "Contenidor de fem"
         }
     },
     "windturbine": {
@@ -7868,7 +8311,24 @@
                 "question": "Quin és el diàmetre del rotor d'aquest aerogenerador en metres?",
                 "render": "El diàmetre del rotor d'aquest aerogenerador és de {rotor:diameter} metres."
             },
+            "turbine-height": {
+                "question": "Quina és l'alçada total d'aquest aerogenerador (inclòs el radi del rotor), en metres?",
+                "render": "L'alçada total (inclòs el radi del rotor) d'aquest aerogenerador és de {height} metres."
+            },
+            "turbine-operator": {
+                "question": "Qui opera aquest aerogenerador?",
+                "render": "{operator} gestiona aquest aerogenerador."
+            },
+            "turbine-output": {
+                "question": "Quina és la potència de sortida d'aquest aerogenerador? (p. ex. 2,3 MW)",
+                "render": "La potència de sortida d'aquest aerogenerador és {generator:output:electricity}."
+            },
+            "turbine-start-date": {
+                "question": "Quan va entrar en funcionament aquest aerogenerador?",
+                "render": "Aquest aerogenerador va entrar en funcionament el dia {start_date}."
+            },
             "windturbine-fixme": {
+                "question": "Hi ha alguna cosa malament en la manera que està mapejat això que no heu pogut solucionar aquí? (deixeu una nota als experts d'OpenStreetMap)",
                 "render": "Informació addicional per als experts en OpenStreetMap: {fixme}"
             }
         },

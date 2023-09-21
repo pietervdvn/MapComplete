@@ -219,7 +219,7 @@ The question is  *What is the email address of the operator?*
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 
-This is rendered with  `<a href='mailto:{email}' target='_blank'>{email}</a>`
+This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
 
 
 
@@ -314,7 +314,7 @@ This tagrendering has no question and is thus read-only
 
 id | question | osmTags
 ---- | ---------- | ---------
-accessibility.0 | Publicly accessible | access=yes\|access=public|
+accessibility.0 | Publicly accessible | access=yes\|access=public\|
 
 
 

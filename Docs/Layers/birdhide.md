@@ -216,7 +216,7 @@ This tagrendering has no question and is thus read-only
 
 id | question | osmTags
 ---- | ---------- | ---------
-wheelchair.0 | Wheelchair accessible | wheelchair=yes\|wheelchair=designated|wheelchair=permissive
+wheelchair.0 | Wheelchair accessible | wheelchair=yes\|wheelchair=designated\|wheelchair=permissive
 
 
 

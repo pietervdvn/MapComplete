@@ -44,7 +44,8 @@
         "nl": "Toegankelijkheid is {toilets:access}",
         "it": "L'accesso è {toilets:access}",
         "es": "El acceso es {toilets:access}",
-        "da": "Adgang er {toilets:access}"
+        "da": "Adgang er {toilets:access}",
+        "ca": "L'accés és {toilets:access}"
       },
       "freeform": {
         "key": "toilets:access",
@@ -63,7 +64,8 @@
             "it": "Accesso pubblico",
             "ru": "Свободный доступ",
             "es": "Acceso públic",
-            "da": "Offentlig adgang"
+            "da": "Offentlig adgang",
+            "ca": "Accés públic"
           }
         },
         {
@@ -82,7 +84,8 @@
             "en": "Not accessible, even for customers of the amenity",
             "de": "Nicht zugänglich, auch nicht für Kunden der Einrichtung",
             "nl": "Niet toegankelijk, ook niet voor klanten van de voorziening",
-            "fr": "Non accessibles, même pour les clients du lieu"
+            "fr": "Non accessibles, même pour les clients du lieu",
+            "ca": "No accessible, inclús per als clients de la instal·lació"
           }
         },
         {
@@ -94,7 +97,8 @@
             "nl": "Toegankelijk na het vragen van de sleutel",
             "it": "Accessibile, ma occorre chiedere una chiave per accedere",
             "es": "Accesible, pero hay que pedir la llave para entrar",
-            "da": "Tilgængelig, men man skal bede om en nøgle for at komme ind"
+            "da": "Tilgængelig, men man skal bede om en nøgle for at komme ind",
+            "ca": "Accessible, però hi ha que demanar la clau per a entrar"
           }
         },
         {
@@ -107,7 +111,8 @@
             "it": "Accesso pubblico",
             "ru": "Свободный доступ",
             "es": "De acceso público",
-            "da": "Offentlig adgang"
+            "da": "Offentlig adgang",
+            "ca": "Accés públic"
           },
           "hideInAnswer": true
         }
@@ -164,7 +169,8 @@
         "it": "Quanto costa l'accesso a questi servizi igienici?",
         "ru": "Сколько стоит посещение туалета?",
         "es": "¿Cuánto hay que pagar para estos baños?",
-        "da": "Hvor meget skal man betale for disse toiletter?"
+        "da": "Hvor meget skal man betale for disse toiletter?",
+        "ca": "Quant s'ha de pagar per aquests lavabos?"
       },
       "render": {
         "en": "The fee is {toilets:charge}",
@@ -174,7 +180,8 @@
         "it": "La tariffa è {toilets:charge}",
         "ru": "Стоимость {toilets:charge}",
         "es": "La tasa es {toilets:charge}",
-        "da": "Gebyret er {toilets:charge}"
+        "da": "Gebyret er {toilets:charge}",
+        "ca": "La taxa és {toilets:charge}"
       },
       "condition": "toilets:fee=yes",
       "freeform": {
@@ -298,7 +305,8 @@
             "de": "Barrierefrei",
             "es": "Accesible con sillas de ruedas",
             "fr": "Accessible aux fauteuils roulants",
-            "da": "Tilgængelig for kørestolsbrugere"
+            "da": "Tilgængelig for kørestolsbrugere",
+            "ca": "Accessible amb cadira de rodes"
           },
           "osmTags": {
             "or": [
@@ -426,7 +434,8 @@
   "description": {
     "en": "A layer showing (public) toilets located at different places.",
     "de": "Eine Ebene mit (öffentlichen) Toiletten an verschiedenen Orten.",
-    "nl": "Een laag die (publiek toegankelijke) toiletten toont in verschillende andere voorzieningen."
+    "nl": "Een laag die (publiek toegankelijke) toiletten toont in verschillende andere voorzieningen.",
+    "ca": "Una capa que mostra banys (públics) ubicats en diferents llocs"
   },
   "units": [
     {

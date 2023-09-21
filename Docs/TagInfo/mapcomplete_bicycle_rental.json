@@ -102,7 +102,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Bicycle rental' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Bicycle rental')"
+      "description": "Layer 'Bicycle rental' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Bicycle rental')"
     },
     {
       "key": "phone",

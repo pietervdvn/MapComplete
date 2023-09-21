@@ -126,7 +126,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Bike cafe' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+      "description": "Layer 'Bike cafe' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
       "key": "opening_hours",
@@ -208,7 +208,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Bike repair/shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+      "description": "Layer 'Bike repair/shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
       "key": "opening_hours",
@@ -505,7 +505,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Bicycle rental' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+      "description": "Layer 'Bicycle rental' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
       "key": "phone",
@@ -682,7 +682,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Bicycle library' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+      "description": "Layer 'Bicycle library' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
       "key": "opening_hours",
@@ -1197,7 +1197,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Bike-related object' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+      "description": "Layer 'Bike-related object' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
       "key": "phone",

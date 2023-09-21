@@ -4773,7 +4773,7 @@
             "tree_node-name": {
                 "mappings": {
                     "0": {
-                        "then": "No identificas la especie."
+                        "then": "El árbol no tiene nombre."
                     }
                 },
                 "question": "¿Tiene nombre este árbol?",
@@ -4831,7 +4831,7 @@
         }
     },
     "viewpoint": {
-        "description": "Un buen punto de vista o una buena vista. Ideal para añadir una imagen si no encaja en ninguna otra categoría",
+        "description": "Un buen mirador o una buena vista. Ideal para añadir una imagen si no encaja en ninguna otra categoría",
         "tagRenderings": {
             "viewpoint-description": {
                 "question": "¿Quieres añadir una descripción?"

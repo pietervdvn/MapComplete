@@ -196,7 +196,7 @@ The question is  *Is there a (unofficial) website with more informations (e.g. t
 
 This rendering asks information about the property  [url](https://wiki.openstreetmap.org/wiki/Key:url) 
 
-This is rendered with  `<a href='{url}' target='_blank'>{url}</a>`
+This is rendered with  `<a href='{url}' target='_blank' rel='noopener'>{url}</a>`
 
 
 

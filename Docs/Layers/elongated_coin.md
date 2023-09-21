@@ -50,10 +50,11 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/coin:design_count#values) [coin:design_count](https://wiki.openstreetmap.org/wiki/Key:coin:design_count) | [pnat](../SpecialInputElements.md#pnat) | [1](https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D2) [3](https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D3) [4](https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D4)
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/coin:type#values) [coin:type](https://wiki.openstreetmap.org/wiki/Key:coin:type) | [string](../SpecialInputElements.md#string) | [2cent](https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D2cent) [5cent](https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D5cent) [10cent](https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D10cent) [25cent](https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D25cent) [50cent](https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D50cent)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/fee#values) [fee](https://wiki.openstreetmap.org/wiki/Key:fee) | Multiple choice | [](https://wiki.openstreetmap.org/wiki/Tag:fee%3D) [yes](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/coin:type#values) [coin:type](https://wiki.openstreetmap.org/wiki/Key:coin:type) | [string](../SpecialInputElements.md#string) | [2cent](https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D2cent) [5cent](https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D5cent) [10cent](https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D10cent) [25cent](https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D25cent) [50cent](https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D50cent) [10centimes](https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D10centimes) [20centimes](https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D20centimes)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/charge#values) [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [string](../SpecialInputElements.md#string) | [1 EUR](https://wiki.openstreetmap.org/wiki/Tag:charge%3D1 EUR) [2 EUR](https://wiki.openstreetmap.org/wiki/Tag:charge%3D2 EUR)
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/payment:coins:denominations#values) [payment:coins:denominations](https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations) | Multiple choice | [0.01 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.01 EUR) [0.02 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.02 EUR) [0.05 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 EUR) [0.10 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 EUR) [0.20 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 EUR) [0.50 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 EUR) [1 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 EUR) [2 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 EUR)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/charge#values) [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [string](../SpecialInputElements.md#string) | [1 EUR](https://wiki.openstreetmap.org/wiki/Tag:charge%3D1 EUR) [2 EUR](https://wiki.openstreetmap.org/wiki/Tag:charge%3D2 EUR) [2 CHF](https://wiki.openstreetmap.org/wiki/Tag:charge%3D2 CHF) [1 CHF](https://wiki.openstreetmap.org/wiki/Tag:charge%3D1 CHF)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/payment:coins:denominations#values) [payment:coins:denominations](https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations) | Multiple choice | [0.01 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.01 EUR) [0.02 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.02 EUR) [0.05 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 EUR) [0.10 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 EUR) [0.20 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 EUR) [0.50 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 EUR) [1 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 EUR) [2 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 EUR) [0.05 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 CHF) [0.10 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 CHF) [0.20 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 CHF) [0.50 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 CHF) [1 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 CHF) [2 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 CHF) [5 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D5 CHF)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/indoor#values) [indoor](https://wiki.openstreetmap.org/wiki/Key:indoor) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/check_date#values) [check_date](https://wiki.openstreetmap.org/wiki/Key:check_date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:check_date%3D)
@@ -133,6 +134,23 @@ This is rendered with  `This penny press has {coin:design_count} designs availab
 
 
 
+### fee 
+
+
+
+The question is  *Does it cost money to press a penny?*
+
+
+
+
+
+  - *It costs money to press a penny.*  corresponds with  ``
+  - *It costs money to press a penny.*  corresponds with  `fee=yes`
+  - *It is free to press a penny.*  corresponds with  `fee=no`
+
+
+
+
 ### payment-options-split 
 
 
@@ -182,6 +200,8 @@ This is rendered with  `This penny press uses a {coin:type} coin for pressing.`
   - *This penny press uses a 10 cent coin for pressing.*  corresponds with  `coin:type=10cent`
   - *This penny press uses a 25 cent coin for pressing.*  corresponds with  `coin:type=25cent`
   - *This penny press uses a 50 cent coin for pressing.*  corresponds with  `coin:type=50cent`
+  - *This penny press uses a 10 centimes coin for pressing.*  corresponds with  `coin:type=10centimes`
+  - *This penny press uses a 20 centimes coin for pressing.*  corresponds with  `coin:type=20centimes`
 
 
 
@@ -224,6 +244,8 @@ This is rendered with  `It costs {charge} to press a penny.`
 
   - *It costs 1 euro to press a penny.*  corresponds with  `charge=1 EUR`
   - *It costs 2 euros to press a penny.*  corresponds with  `charge=2 EUR`
+  - *It costs 2 Swiss francs to press a penny.*  corresponds with  `charge=2 CHF`
+  - *It costs 1 Swiss franc to press a penny.*  corresponds with  `charge=1 CHF`
 
 
 
@@ -246,9 +268,16 @@ The question is  *What coins can you use to pay here?*
   - *50 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.50 EUR`
   - *1 euro coins are accepted*  corresponds with  `payment:coins:denominations=1 EUR`
   - *2 euro coins are accepted*  corresponds with  `payment:coins:denominations=2 EUR`
+  - *5 centimes coins are accepted*  corresponds with  `payment:coins:denominations=0.05 CHF`
+  - *10 centimes coins are accepted*  corresponds with  `payment:coins:denominations=0.10 CHF`
+  - *20 centimes coins are accepted*  corresponds with  `payment:coins:denominations=0.20 CHF`
+  - *½ franc coins are accepted*  corresponds with  `payment:coins:denominations=0.50 CHF`
+  - *1 franc coins are accepted*  corresponds with  `payment:coins:denominations=1 CHF`
+  - *2 francs coins are accepted*  corresponds with  `payment:coins:denominations=2 CHF`
+  - *5 francs coins are accepted*  corresponds with  `payment:coins:denominations=5 CHF`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `payment:coins=yes|payment:cash=yes&_currency=EUR`
+This tagrendering is only visible in the popup if the following condition is met: `payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$`
 
 
 

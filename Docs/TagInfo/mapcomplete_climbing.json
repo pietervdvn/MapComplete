@@ -50,7 +50,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Climbing club' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
+      "description": "Layer 'Climbing club' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
     },
     {
       "key": "phone",
@@ -149,7 +149,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Climbing gyms' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
+      "description": "Layer 'Climbing gyms' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
     },
     {
       "key": "charge",
@@ -772,7 +772,7 @@
       "description": "Layer 'Climbing opportunities?' shows values with key 'access:description' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
     },
     {
-      "key": "service:repair:climbing_shoes",
+      "key": "service:climbing_shoes:repair",
       "description": "The MapComplete theme Climbing gyms, clubs and spots has a layer Shop showing features with this tag",
       "value": "yes"
     },
@@ -787,13 +787,13 @@
       "value": "shoemaker"
     },
     {
-      "key": "service:repair:climbing_shoes",
-      "description": "Layer 'Shop' shows service:repair:climbing_shoes=yes with a fixed text, namely 'This shop repairs climbing shoes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "key": "service:climbing_shoes:repair",
+      "description": "Layer 'Shop' shows service:climbing_shoes:repair=yes with a fixed text, namely 'This shop repairs climbing shoes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
       "value": "yes"
     },
     {
-      "key": "service:repair:climbing_shoes",
-      "description": "Layer 'Shop' shows service:repair:climbing_shoes=no with a fixed text, namely 'This shop does not repair climbing shoes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "key": "service:climbing_shoes:repair",
+      "description": "Layer 'Shop' shows service:climbing_shoes:repair=no with a fixed text, namely 'This shop does not repair climbing shoes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
       "value": "no"
     },
     {
@@ -1642,7 +1642,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
+      "description": "Layer 'Shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
     },
     {
       "key": "phone",
@@ -1800,13 +1800,13 @@
       "value": "key_cutter"
     },
     {
-      "key": "service:repair:climbing_shoes",
-      "description": "Layer 'Shop' shows service:repair:climbing_shoes=yes with a fixed text, namely 'This shop repairs climbing shoes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "key": "service:climbing_shoes:repair",
+      "description": "Layer 'Shop' shows service:climbing_shoes:repair=yes with a fixed text, namely 'This shop repairs climbing shoes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
       "value": "yes"
     },
     {
-      "key": "service:repair:climbing_shoes",
-      "description": "Layer 'Shop' shows service:repair:climbing_shoes=no with a fixed text, namely 'This shop does not repair climbing shoes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "key": "service:climbing_shoes:repair",
+      "description": "Layer 'Shop' shows service:climbing_shoes:repair=no with a fixed text, namely 'This shop does not repair climbing shoes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
       "value": "no"
     },
     {
@@ -2655,7 +2655,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
+      "description": "Layer 'Shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
     },
     {
       "key": "phone",
@@ -2797,6 +2797,303 @@
       "key": "organic",
       "description": "Layer 'Shop' shows organic=no with a fixed text, namely 'This shop does not offer organic products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=clothes|shop=shoes|shop=butcher|shop=cosmetics|shop=deli|shop=bakery|shop=alcohol|shop=seafood|shop=beverages|shop=florist)",
       "value": "no"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Climbing gyms, clubs and spots has a layer Drinking water showing features with this tag",
+      "value": "drinking_water"
+    },
+    {
+      "key": "drinking_water",
+      "description": "The MapComplete theme Climbing gyms, clubs and spots has a layer Drinking water showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Drinking water' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'operational_status' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows  with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows operational_status=broken with a fixed text, namely 'This drinking water is broken' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "broken"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows operational_status=closed with a fixed text, namely 'This drinking water is closed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "closed"
+    },
+    {
+      "key": "bottle",
+      "description": "Layer 'Drinking water' shows bottle=yes with a fixed text, namely 'It is easy to refill water bottles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "bottle",
+      "description": "Layer 'Drinking water' shows bottle=no with a fixed text, namely 'Water bottles may not fit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "no"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Climbing gyms, clubs and spots has a layer Toilets showing features with this tag",
+      "value": "toilets"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Toilets' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Toilets' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows  with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "-1"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'access' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Toilets' shows access=yes with a fixed text, namely 'Public access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Toilets' shows access=customers with a fixed text, namely 'Only access to customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Toilets' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "no"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Toilets' shows access=key with a fixed text, namely 'Accessible, but one has to ask a key to enter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "key"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Toilets' shows access=public with a fixed text, namely 'Public access' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "public"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Toilets' shows fee=yes with a fixed text, namely 'These are paid toilets' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access!=no)",
+      "value": "yes"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Toilets' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access!=no)",
+      "value": "no"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if fee=yes)"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Toilets' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Toilets' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Toilets' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Toilets' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Toilets' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:debit_cards",
+      "description": "Layer 'Toilets' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:credit_cards",
+      "description": "Layer 'Toilets' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access!=no)"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Toilets' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access!=no)",
+      "value": "24/7"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Toilets' shows wheelchair=yes with a fixed text, namely 'There is a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Toilets' shows wheelchair=no with a fixed text, namely 'No wheelchair access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "no"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Toilets' shows wheelchair=designated with a fixed text, namely 'There is only a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "designated"
+    },
+    {
+      "key": "door:width",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'door:width' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if wheelchair=yes|wheelchair=designated)"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Toilets' shows toilets:position=seated with a fixed text, namely 'There are only seated toilets' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "seated"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Toilets' shows toilets:position=urinal with a fixed text, namely 'There are only urinals here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "urinal"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Toilets' shows toilets:position=squat with a fixed text, namely 'There are only squat toilets here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "squat"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Toilets' shows toilets:position=seated;urinal with a fixed text, namely 'Both seated toilets and urinals are available here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "seated;urinal"
+    },
+    {
+      "key": "changing_table",
+      "description": "Layer 'Toilets' shows changing_table=yes with a fixed text, namely 'A changing table is available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "changing_table",
+      "description": "Layer 'Toilets' shows changing_table=no with a fixed text, namely 'No changing table is available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "no"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'changing_table:location' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if changing_table=yes)"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Toilets' shows changing_table:location=female_toilet with a fixed text, namely 'The changing table is in the toilet for women. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if changing_table=yes)",
+      "value": "female_toilet"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Toilets' shows changing_table:location=male_toilet with a fixed text, namely 'The changing table is in the toilet for men. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if changing_table=yes)",
+      "value": "male_toilet"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Toilets' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'The changing table is in the toilet for wheelchair users. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if changing_table=yes)",
+      "value": "wheelchair_toilet"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Toilets' shows changing_table:location=dedicated_room with a fixed text, namely 'The changing table is in a dedicated room. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if changing_table=yes)",
+      "value": "dedicated_room"
+    },
+    {
+      "key": "toilets:handwashing",
+      "description": "Layer 'Toilets' shows toilets:handwashing=yes with a fixed text, namely 'This toilets have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "toilets:handwashing",
+      "description": "Layer 'Toilets' shows toilets:handwashing=no with a fixed text, namely 'This toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "no"
+    },
+    {
+      "key": "toilets:paper_supplied",
+      "description": "Layer 'Toilets' shows toilets:paper_supplied=yes with a fixed text, namely 'This toilet is equipped with toilet paper' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if toilets:position!=urinal)",
+      "value": "yes"
+    },
+    {
+      "key": "toilets:paper_supplied",
+      "description": "Layer 'Toilets' shows toilets:paper_supplied=no with a fixed text, namely 'You have to bring your own toilet paper to this toilet' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if toilets:position!=urinal)",
+      "value": "no"
+    },
+    {
+      "key": "description",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'description' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
     }
   ]
 }

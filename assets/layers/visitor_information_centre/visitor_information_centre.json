@@ -6,7 +6,8 @@
     "de": "Besucherinformationszentrum",
     "id": "Pusat Informasi Pengunjung",
     "es": "Centro de Información al Visitante",
-    "da": "Informationscenter for besøgende"
+    "da": "Informationscenter for besøgende",
+    "ca": "Centre d'Informació al Visitant"
   },
   "minzoom": 12,
   "source": {
@@ -70,7 +71,8 @@
     "en": "A visitor center offers information about a specific attraction or place of interest where it is located.",
     "nl": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd.",
     "de": "Ein Besucherzentrum bietet Informationen über eine bestimmte Attraktion oder Sehenswürdigkeit, an der es sich befindet.",
-    "es": "Un centro de visitantes ofrece información sobre una atracción específica o lugar de interese donde se sitúa."
+    "es": "Un centro de visitantes ofrece información sobre una atracción específica o lugar de interese donde se sitúa.",
+    "ca": "Un centre de visitants ofereix informació sobre una atracció o lloc d'interès específic on es troba."
   },
   "tagRenderings": [],
   "presets": [],

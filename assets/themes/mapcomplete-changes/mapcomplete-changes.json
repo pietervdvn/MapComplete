@@ -102,7 +102,7 @@
           },
           "render": {
             "en": "Change with theme <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
-            "ca": "Canvi amb el tema <a href='https://mapcomplete.org/{theme}'>{theme}</a>",
+            "ca": "Canvi amb el tema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
             "de": "Geändert mit Thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
             "fr": "Modifié avec le thème <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
           }
@@ -130,7 +130,7 @@
           "id": "host",
           "render": {
             "en": "Change made with <a href='{host}'>{host}</a>",
-            "ca": "Canviat amb <a href='{host}'>{host}</a>",
+            "ca": "Canviat fet amb <a href='{host}'>{host}</a>",
             "de": "Änderung über <a href='{host}'>{host}</a>",
             "fr": "Modification faite avec <a href='{host}'>{host}</a>",
             "nl": "Wijziging gemaakt met <a href='{host}'>{host}</a>"

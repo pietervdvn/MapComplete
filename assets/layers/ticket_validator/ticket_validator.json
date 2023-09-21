@@ -2,11 +2,13 @@
   "id": "ticket_validator",
   "name": {
     "en": "Ticket Validators",
-    "de": "Fahrkartenentwerter"
+    "de": "Fahrkartenentwerter",
+    "ca": "Validadors de bitllets"
   },
   "description": {
     "en": "Find ticket validators to validate public transport tickets",
-    "de": "Finden Sie Fahrkartenentwerter, um Tickets für den öffentlichen Nahverkehr zu entwerten"
+    "de": "Finden Sie Fahrkartenentwerter, um Tickets für den öffentlichen Nahverkehr zu entwerten",
+    "ca": "Trobeu validadors de bitllets per validar bitllets de transport públic"
   },
   "source": {
     "osmTags": "amenity=ticket_validator"
@@ -15,7 +17,8 @@
   "title": {
     "render": {
       "en": "Ticket Validator",
-      "de": "Fahrkartenentwerter"
+      "de": "Fahrkartenentwerter",
+      "ca": "Validador de bitllets"
     }
   },
   "tagRenderings": [
@@ -26,14 +29,16 @@
       "condition": "barrier~*",
       "render": {
         "en": "This ticket validator is part of a barrier of type {barrier}",
-        "de": "Dieser Fahrkartenentwerter ist Teil einer Zugangsbarriere vom Typ {barrier}"
+        "de": "Dieser Fahrkartenentwerter ist Teil einer Zugangsbarriere vom Typ {barrier}",
+        "ca": "Aquest validador de bitllets forma part d'una barrera de tipus {barrier}"
       },
       "mappings": [
         {
           "if": "barrier=gate",
           "then": {
             "en": "This ticket validator is part of a gate",
-            "de": "Dieser Fahrscheinentwerter ist Teil einer Zugangsbarriere"
+            "de": "Dieser Fahrscheinentwerter ist Teil einer Zugangsbarriere",
+            "ca": "Aquest validador de bitllets forma part d'una porta"
           }
         }
       ]
@@ -42,11 +47,13 @@
       "id": "validator-operator",
       "question": {
         "en": "Who is the operator of this ticket validator?",
-        "de": "Wer ist der Betreiber dieses Fahrkartenentwerters?"
+        "de": "Wer ist der Betreiber dieses Fahrkartenentwerters?",
+        "ca": "Qui és l'operador d'aquest validador de bitllets?"
       },
       "render": {
         "en": "This ticket validator is operated by {operator}",
-        "de": "Dieser Fahrkartenentwerter wird betrieben von {operator}"
+        "de": "Dieser Fahrkartenentwerter wird betrieben von {operator}",
+        "ca": "{operator} opera aquest validador de bitllets"
       },
       "freeform": {
         "key": "operator",
@@ -54,7 +61,8 @@
         "placeholder": {
           "en": "Name of the operator",
           "de": "Name des Betreibers",
-          "nl": "Naam van de beheerder"
+          "nl": "Naam van de beheerder",
+          "ca": "Nom de l'operador"
         }
       },
       "mappings": [
@@ -63,7 +71,8 @@
           "then": {
             "en": "Dutch Railways (NS)",
             "nl": "Nederlandse Spoorwegen (NS)",
-            "de": "Niederländische Eisenbahn (NS)"
+            "de": "Niederländische Eisenbahn (NS)",
+            "ca": "Ferrocarrils holandesos (NS)"
           },
           "addExtraTags": [
             "operator:wikidata=Q23076"
@@ -81,7 +90,8 @@
             "ifnot": "payment:OV-Chipkaart=no",
             "then": {
               "en": "This ticket validator accepts OV-Chipkaart",
-              "de": "Dieser Fahrkartenentwerter akzeptiert die OV-Chipkaart"
+              "de": "Dieser Fahrkartenentwerter akzeptiert die OV-Chipkaart",
+              "ca": "Aquest validador de bitllets accepta OV-Chipkaart"
             },
             "hideInAnswer": true
           },
@@ -90,7 +100,8 @@
             "ifnot": "payment:ov-chipkaart=no",
             "then": {
               "en": "This ticket validator accepts OV-Chipkaart",
-              "de": "Dieser Ticketentwerter akzeptiert die OV-Chipkaart"
+              "de": "Dieser Ticketentwerter akzeptiert die OV-Chipkaart",
+              "ca": "Aquest validador de bitllets accepta OV-Chipkaart"
             },
             "hideInAnswer": "_country!=nl"
           }
@@ -105,11 +116,13 @@
       ],
       "title": {
         "en": "a ticket validator",
-        "de": "einen Fahrkartenentwerter"
+        "de": "einen Fahrkartenentwerter",
+        "ca": "un validador de bitllets"
       },
       "description": {
         "en": "A ticket validator to validate a public transport ticket. This can be either a digital reader, reading a card or ticket, or a machine stamping or punching a ticket.",
-        "de": "Ein Fahrkartenentwerter zur Entwertung einer Fahrkarte für öffentliche Verkehrsmittel. Dabei kann es sich entweder um ein digitales Lesegerät handeln, das eine Karte oder einen Fahrschein liest, oder um eine Maschine, die einen Fahrschein stempelt oder locht."
+        "de": "Ein Fahrkartenentwerter zur Entwertung einer Fahrkarte für öffentliche Verkehrsmittel. Dabei kann es sich entweder um ein digitales Lesegerät handeln, das eine Karte oder einen Fahrschein liest, oder um eine Maschine, die einen Fahrschein stempelt oder locht.",
+        "ca": "Un validador de bitllets per validar un bitllet de transport públic. Pot ser un lector digital, llegir una targeta o un bitllet, o una màquina que estampa o perfora un bitllet."
       }
     }
   ],

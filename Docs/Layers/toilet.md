@@ -25,6 +25,7 @@ A layer showing (public) toilets
 
 
 
+  - [climbing](https://mapcomplete.org/climbing)
   - [nature](https://mapcomplete.org/nature)
   - [onwheels](https://mapcomplete.org/onwheels)
   - [personal](https://mapcomplete.org/personal)
@@ -454,7 +455,7 @@ changing_table.0 | Has a changing table | changing_table=yes
 
 id | question | osmTags
 ---- | ---------- | ---------
-free.0 | Free to use | fee=no\|fee=0|charge=0
+free.0 | Free to use | fee=no\|fee=0\|charge=0
 
 
 

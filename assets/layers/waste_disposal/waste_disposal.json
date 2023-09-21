@@ -16,7 +16,8 @@
     "de": "Entsorgungsbehälter, mittlerer bis großer Behälter zur Entsorgung von (Haushalts-)Abfällen",
     "it": "Cestino per lo smaltimento dei rifiuti, contenitore di dimensioni medio grandi per lo smaltimento dei rifiuti (domestici)",
     "da": "Affaldsspande, mellemstor til stor skraldespand til bortskaffelse af (husholdnings)affald",
-    "fr": "Réceptacle destiné à recevoir des déchets (domestiques) enveloppés dans des sacs en plastique"
+    "fr": "Réceptacle destiné à recevoir des déchets (domestiques) enveloppés dans des sacs en plastique",
+    "ca": "Contenidor de fem, contenidor mitjà o gran per a l'eliminació de residus (domèstics)"
   },
   "source": {
     "osmTags": "amenity=waste_disposal"
@@ -30,7 +31,8 @@
       "de": "Mülltonne",
       "it": "Smaltimento rifiuti",
       "id": "Pembuangan Limbah",
-      "da": "Bortskaffelse af affald"
+      "da": "Bortskaffelse af affald",
+      "ca": "Contenidor de fem"
     }
   },
   "mapRendering": [

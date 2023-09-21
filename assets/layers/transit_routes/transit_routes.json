@@ -157,7 +157,8 @@
         "en": "What is the colour for this bus line?",
         "de": "Welche Farbe hat diese Buslinie?",
         "nl": "Wat is de kleur van deze buslijn?",
-        "da": "Hvad er farven på denne buslinje?"
+        "da": "Hvad er farven på denne buslinje?",
+        "ca": "Quin és el color d'aquest línia d'autobús?"
       }
     },
     {
@@ -199,7 +200,8 @@
         "en": "What company operates this bus line?",
         "de": "Welches Unternehmen betreibt die Buslinie?",
         "nl": "Welk bedrijf exploiteert deze buslijn?",
-        "da": "Hvilket selskab driver denne buslinje?"
+        "da": "Hvilket selskab driver denne buslinje?",
+        "ca": "Quina companyia opera aquesta línia d'autobús?"
       }
     }
   ]

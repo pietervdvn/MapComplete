@@ -56,6 +56,15 @@
 |genre= POI, editor, cafes_and_pubs
 }}
 {{service_item
+|name= [https://mapcomplete.org/shops shops]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:zh_Hant|en}}
+|descr= A MapComplete theme: An editable map with basic shop information
+|material= {{yes|[https://mapcomplete.org/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, shops
+}}
+{{service_item
 |name= [https://mapcomplete.org/playgrounds playgrounds]
 |region= Worldwide
 |lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:ru|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:nb_NO|en}}, {{#language:id|en}}, {{#language:hu|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:pl|en}}
@@ -275,7 +284,7 @@
 |name= [https://mapcomplete.org/ghostbikes ghostbikes]
 |region= Worldwide
 |lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}, {{#language:ca|en}}
-|descr= A MapComplete theme: A 
+|descr= A MapComplete theme: A ghost bike is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
 |genre= POI, editor, ghostbikes
@@ -410,7 +419,7 @@
 |name= [https://mapcomplete.org/pets pets]
 |region= Worldwide
 |lang= {{#language:en|en}}, {{#language:da|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}
-|descr= A MapComplete theme: On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, 
+|descr= A MapComplete theme: On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants,
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
 |genre= POI, editor, pets
@@ -432,15 +441,6 @@
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
 |genre= POI, editor, rainbow_crossings
-}}
-{{service_item
-|name= [https://mapcomplete.org/shops shops]
-|region= Worldwide
-|lang= {{#language:en|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:zh_Hant|en}}
-|descr= A MapComplete theme: An editable map with basic shop information
-|material= {{yes|[https://mapcomplete.org/ Yes]}}
-|image= MapComplete_Screenshot.png
-|genre= POI, editor, shops
 }}
 {{service_item
 |name= [https://mapcomplete.org/sport_pitches sport_pitches]

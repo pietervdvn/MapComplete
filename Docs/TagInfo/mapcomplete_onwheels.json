@@ -136,7 +136,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Cafés and pubs' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
+      "description": "Layer 'Cafés and pubs' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "phone",
@@ -611,7 +611,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Restaurants and fast food' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
+      "description": "Layer 'Restaurants and fast food' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "phone",
@@ -2100,7 +2100,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
+      "description": "Layer 'Shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "phone",
@@ -2528,7 +2528,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Pharmacies' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
+      "description": "Layer 'Pharmacies' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "website",
@@ -2609,7 +2609,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Doctors' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
+      "description": "Layer 'Doctors' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "website",
@@ -2685,7 +2685,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Hospitals' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
+      "description": "Layer 'Hospitals' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "website",
@@ -2864,6 +2864,26 @@
       "value": "no"
     },
     {
+      "key": "tactile_writing:braille",
+      "description": "Layer 'Elevator' shows tactile_writing:braille=yes with a fixed text, namely 'This elevator has tactile writing in Braille' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "yes"
+    },
+    {
+      "key": "tactile_writing:braille",
+      "description": "Layer 'Elevator' shows tactile_writing:braille=no with a fixed text, namely 'This elevator does not have tactile writing' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "no"
+    },
+    {
+      "key": "speech_output",
+      "description": "Layer 'Elevator' shows speech_output=yes with a fixed text, namely 'This elevator has speech output' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "yes"
+    },
+    {
+      "key": "speech_output",
+      "description": "Layer 'Elevator' shows speech_output=no with a fixed text, namely 'This elevator does not have speech output' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "no"
+    },
+    {
       "key": "tourism",
       "description": "The MapComplete theme OnWheels has a layer Hotels showing features with this tag",
       "value": "hotel"
@@ -2906,7 +2926,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Hotels' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
+      "description": "Layer 'Hotels' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "website",
@@ -3024,7 +3044,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'governments' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
+      "description": "Layer 'governments' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "website",
