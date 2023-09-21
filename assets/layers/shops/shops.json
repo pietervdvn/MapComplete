@@ -101,7 +101,8 @@
         "ja": "このお店の名前は何ですか?",
         "nl": "Wat is de naam van deze winkel?",
         "de": "Wie ist der Name dieses Geschäfts?",
-        "es": "¿Cual es el nombre de esta tienda?"
+        "es": "¿Cual es el nombre de esta tienda?",
+        "ca": "Quin és el nom d'aquesta botiga?"
       },
       "render": {
         "en": "This shop is called <i>{name}</i>",
@@ -122,13 +123,15 @@
           "en": "What kind of shop is this?",
           "nl": "Wat voor soort winkel is dit?",
           "de": "Um was für ein Geschäft handelt es sich?",
-          "fr": "Quel genre de magasin est-ce?"
+          "fr": "Quel genre de magasin est-ce?",
+          "ca": "Quin tipus de botiga és aquesta?"
         },
         "render": {
           "en": "This is a {shop}",
           "de": "Das ist ein {shop}",
           "fr": "C'est une {shop}",
-          "nl": "Dit is een {shop}"
+          "nl": "Dit is een {shop}",
+          "ca": "Açò és una {shop}"
         },
         "freeform": {
           "key": "shop",
@@ -158,7 +161,8 @@
         "en": "What paper formats does this shop offer?",
         "de": "Welche Papierformate bietet das Geschäft an?",
         "fr": "Quels formats de papier cette boutique propose-t-elle ?",
-        "nl": "Op welke papiergroottes kan deze zaak printen?"
+        "nl": "Op welke papiergroottes kan deze zaak printen?",
+        "ca": "Quins formats de paper ofereix aquesta botiga?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -168,7 +172,8 @@
             "en": "This shop can print on papers of size A4",
             "de": "Das Geschäft kann Unterlagen auf A4 Papier drucken",
             "fr": "Cette boutique peut imprimer sur des papiers de format A4",
-            "nl": "Deze zaak kan printen op A4-formaat"
+            "nl": "Deze zaak kan printen op A4-formaat",
+            "ca": "Aquesta botiga pot imprimir en papers de mida A4"
           },
           "ifnot": "service:print:A4=no"
         },
@@ -178,7 +183,8 @@
             "en": "This shop can print on papers of size A3",
             "de": "Das Geschäft kann Unterlagen auf A3 Papier drucken",
             "fr": "Cette boutique peut imprimer sur des papiers de format A3",
-            "nl": "Deze zaak kan printen op A3-formaat"
+            "nl": "Deze zaak kan printen op A3-formaat",
+            "ca": "Aquesta botiga pot imprimir en papers de mida A3"
           },
           "ifnot": "service:print:A3=no"
         },
@@ -188,7 +194,8 @@
             "en": "This shop can print on papers of size A2",
             "de": "Das Geschäft kann Unterlagen auf A2 Papier drucken",
             "fr": "Cette boutique peut imprimer sur des papiers de format A2",
-            "nl": "Deze zaak kan printen op A2-formaat"
+            "nl": "Deze zaak kan printen op A2-formaat",
+            "ca": "Aquesta botiga pot imprimir en papers de mida A2"
           },
           "ifnot": "service:print:A2=no"
         },
@@ -198,7 +205,8 @@
             "en": "This shop can print on papers of size A1",
             "de": "Das Geschäft kann Unterlagen auf A1 Papier drucken",
             "fr": "Cette boutique peut imprimer sur des papiers de format A1",
-            "nl": "Deze zaak kan printen op A1-formaat"
+            "nl": "Deze zaak kan printen op A1-formaat",
+            "ca": "Aquesta botiga pot imprimir en papers de mida A1"
           },
           "ifnot": "service:print:A1=no"
         },
@@ -208,7 +216,8 @@
             "en": "This shop can print on papers of size A0",
             "de": "Das Geschäft kann Unterlagen auf A0 Papier drucken",
             "fr": "Cette boutique peut imprimer sur des papiers de format A0",
-            "nl": "Deze zaak kan printen op A0-formaat"
+            "nl": "Deze zaak kan printen op A0-formaat",
+            "ca": "Aquesta botiga pot imprimir en papers de mida A0"
           },
           "ifnot": "service:print:A0=no"
         }
@@ -294,7 +303,8 @@
         "nl": "een winkel",
         "de": "ein Geschäft",
         "eo": "Butiko",
-        "es": "una tienda"
+        "es": "una tienda",
+        "ca": "una botiga"
       },
       "description": {
         "en": "Add a new shop",
@@ -304,7 +314,8 @@
         "nl": "Voeg een nieuwe winkel toe",
         "de": "Ein neues Geschäft hinzufügen",
         "eo": "Enmeti novan butikon",
-        "es": "Añadir una nueva tienda"
+        "es": "Añadir una nueva tienda",
+        "ca": "Afegir una botiga nova"
       }
     }
   ],
@@ -322,7 +333,8 @@
           "en": "{title()} has closed down permanently",
           "de": "{title()} wurde dauerhaft geschlossen",
           "es": "{title()} ha cerrado permanentemente",
-          "fr": "{title()} a fermé définitivement"
+          "fr": "{title()} a fermé définitivement",
+          "ca": "{title()} ha tancat permanentment"
         },
         "changesetMessage": "shop_closed"
       }
@@ -410,7 +422,8 @@
             "de": "Nur Geschäfte, die {search} verkaufen",
             "nl": "Toon enkel winkels die {search} verkopen",
             "es": "Solo mostrar tiendas que vendan {search}",
-            "fr": "N'afficher que les magasins vendant {search}"
+            "fr": "N'afficher que les magasins vendant {search}",
+            "ca": "Sols mostrar botigues que venen {search}"
           }
         }
       ]

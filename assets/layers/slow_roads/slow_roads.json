@@ -162,7 +162,8 @@
             "fr": "La surface est <b>non pavée</b>",
             "it": "La superficie è <b>non pavimentata</b>",
             "de": "Die Oberfläche ist <b>ohne festen Belag</b>",
-            "es": "La superficie está <b>sin pavimentar</b>"
+            "es": "La superficie está <b>sin pavimentar</b>",
+            "ca": "La superfície és <b>sense asfaltar</b>"
           },
           "hideInAnswer": true
         },
@@ -289,6 +290,7 @@
   "description": {
     "en": "All carfree roads",
     "nl": "Alle verkeersvrije wegen",
-    "de": "Alle autofreien Straßen"
+    "de": "Alle autofreien Straßen",
+    "ca": "Totes les carreteres sense cotxe"
   }
 }

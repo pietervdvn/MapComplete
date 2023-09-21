@@ -78,7 +78,8 @@
         "fr": "Le nom de cette microbibliothèque est {name}",
         "ru": "Название книжного шкафа — {name}",
         "it": "Questa microbiblioteca si chiama {name}",
-        "hu": "Ennek a könyvespolcnak a neve: {name}"
+        "hu": "Ennek a könyvespolcnak a neve: {name}",
+        "ca": "El nom d'aquesta prestatgeria és {name}"
       },
       "question": {
         "en": "What is the name of this public bookcase?",
@@ -87,7 +88,8 @@
         "fr": "Quel est le nom de cette microbibliothèque ?",
         "ru": "Как называется этот общественный книжный шкаф?",
         "it": "Come si chiama questa microbiblioteca pubblica?",
-        "hu": "Mi a neve ennek a nyilvános könyvespolcnak?"
+        "hu": "Mi a neve ennek a nyilvános könyvespolcnak?",
+        "ca": "Com es diu aquesta prestatgeria pública?"
       },
       "freeform": {
         "key": "name",
@@ -108,7 +110,8 @@
             "fr": "Cette microbibliothèque n'a pas de nom",
             "ru": "У этого книжного шкафа нет названия",
             "it": "Questa microbiblioteca non ha un nome proprio",
-            "hu": "Ennek a könyvespolcnak nincs neve"
+            "hu": "Ennek a könyvespolcnak nincs neve",
+            "ca": "Aquesta prestatgeria no té un nom"
           }
         }
       ],
@@ -122,7 +125,8 @@
         "fr": "{capacity} livres peuvent entrer dans cette microbibliothèque",
         "it": "Questa microbiblioteca può contenere fino a {capacity} libri",
         "ru": "{capacity} книг помещается в этот книжный шкаф",
-        "hu": "Ezen a könyvespolcon {capacity} könyv fér el"
+        "hu": "Ezen a könyvespolcon {capacity} könyv fér el",
+        "ca": "Caben {capacity} llibres en aquesta prestatgeria"
       },
       "question": {
         "en": "How many books fit into this public bookcase?",
@@ -131,7 +135,8 @@
         "fr": "Combien de livres peuvent entrer dans cette microbibliothèque ?",
         "ru": "Сколько книг помещается в этом общественном книжном шкафу?",
         "it": "Quanti libri può contenere questa microbiblioteca?",
-        "hu": "Hány könyv fér el ezen a nyilvános könyvespolcon?"
+        "hu": "Hány könyv fér el ezen a nyilvános könyvespolcon?",
+        "ca": "Quants llibres caben en aquesta prestatgeria pública?"
       },
       "freeform": {
         "key": "capacity",
@@ -149,7 +154,8 @@
         "fr": "Quel type de livres peut-on dans cette microbibliothèque ?",
         "it": "Che tipo di libri si possono trovare in questa microbiblioteca?",
         "ru": "Какие книги можно найти в этом общественном книжном шкафу?",
-        "hu": "Milyen fajta könyvek találhatók ezen a közösségi könyvespolcon?"
+        "hu": "Milyen fajta könyvek találhatók ezen a közösségi könyvespolcon?",
+        "ca": "Quins tipus de llibres pots trobar a aquesta prestatgeria pública?"
       },
       "render": {
         "nl": "Deze plaats serveert vooral {books}",
@@ -174,7 +180,8 @@
             "ru": "В основном детские книги",
             "it": "Principalmente libri per l'infanzia",
             "hu": "Többnyire gyermekkönyvek",
-            "es": "Mayoritariamente libros infantiles"
+            "es": "Mayoritariamente libros infantiles",
+            "ca": "Majoritàriament llibres infantils"
           }
         },
         {
@@ -187,7 +194,8 @@
             "ru": "В основном книги для взрослых",
             "it": "Principalmente libri per persone in età adulta",
             "hu": "Többnyire felnőtteknek szóló könyvek",
-            "es": "Mayoritariamente libros para adultos"
+            "es": "Mayoritariamente libros para adultos",
+            "ca": "Majoritàriament llibres per a adults"
           }
         }
       ]
@@ -200,7 +208,8 @@
         "de": "Befindet sich der Bücherschrank im Freien?",
         "fr": "Cette microbiliothèque est-elle en extérieur ?",
         "it": "Questa microbiblioteca si trova all'aperto?",
-        "hu": "A szabadban van-e ez a könyvespolc?"
+        "hu": "A szabadban van-e ez a könyvespolc?",
+        "ca": "Aquesta prestatgeria es troba a l'exterior?"
       },
       "mappings": [
         {
@@ -210,7 +219,8 @@
             "de": "Der Bücherschrank befindet sich im Innenbereich",
             "fr": "Cette microbibliothèque est en intérieur",
             "it": "Questa microbiblioteca si trova al chiuso",
-            "hu": "Ez a könyvespolc beltérben található"
+            "hu": "Ez a könyvespolc beltérben található",
+            "ca": "Aquesta prestatgeria es troba a l'interior"
           },
           "if": "indoor=yes"
         },
@@ -221,7 +231,8 @@
             "de": "Dieser Bücherschrank befindet sich im Freien",
             "fr": "Cette microbibliothèque est en extérieur",
             "it": "Questa microbiblioteca si trova all'aperto",
-            "hu": "Ez a könyvespolc a szabadban van"
+            "hu": "Ez a könyvespolc a szabadban van",
+            "ca": "Aquesta prestatgeria es troba a l'exterior"
           },
           "if": "indoor=no"
         },
@@ -249,7 +260,8 @@
         "fr": "Cette microbibliothèque est-elle librement accèssible ?",
         "it": "Questa microbiblioteca è ad accesso libero?",
         "ru": "Имеется ли свободный доступ к этому общественному книжному шкафу?",
-        "hu": "Szabadon hozzáférhető-e ez a közösségi könyvespolc?"
+        "hu": "Szabadon hozzáférhető-e ez a közösségi könyvespolc?",
+        "ca": "Aquesta prestatgeria pública és de lliure accés?"
       },
       "condition": "indoor=yes",
       "mappings": [
@@ -275,7 +287,8 @@
             "fr": "Accèssible aux clients",
             "it": "L'accesso è riservato ai clienti",
             "hu": "Csak ügyfelek használhatják",
-            "es": "Solo accesible a clientes"
+            "es": "Solo accesible a clientes",
+            "ca": "Només accessible per als clients"
           },
           "if": "access=customers"
         }
@@ -288,7 +301,8 @@
         "de": "Wer betreibt den Bücherschrank?",
         "fr": "Qui entretien cette microbibliothèque ?",
         "it": "Chi mantiene questa microbiblioteca?",
-        "hu": "Ki tartja fenn ezt a nyilvános könyvespolcot?"
+        "hu": "Ki tartja fenn ezt a nyilvános könyvespolcot?",
+        "ca": "Qui gestiona aquesta prestatgeria pública?"
       },
       "render": {
         "en": "Operated by {operator}",
@@ -296,7 +310,8 @@
         "de": "Betrieben von {operator}",
         "fr": "Entretenue par {operator}",
         "it": "È gestita da {operator}",
-        "hu": "Üzemeltető: {operator}"
+        "hu": "Üzemeltető: {operator}",
+        "ca": "Gestionant per {operator}"
       },
       "freeform": {
         "type": "string",
@@ -311,7 +326,8 @@
         "de": "Gehört der Bücherschrank zu einem Netzwerk?",
         "fr": "Cette microbibliothèque fait-elle partie d'un réseau/groupe ?",
         "it": "Questa microbiblioteca fa parte di una rete?",
-        "hu": "Része-e egy nagyobb hálózatnak ez a nyilvános könyvespolc?"
+        "hu": "Része-e egy nagyobb hálózatnak ez a nyilvános könyvespolc?",
+        "ca": "Aquesta prestatgeria pública forma part d'una xarxa més gran?"
       },
       "render": {
         "en": "This public bookcase is part of {brand}",
@@ -319,7 +335,8 @@
         "de": "Dieser Bücherschrank ist Teil von {brand}",
         "fr": "Cette microbibliothèque fait partie du groupe {brand}",
         "it": "Questa microbiblioteca fa parte di {brand}",
-        "hu": "Ez a nyilvános könyvespolc a(z) {brand} része"
+        "hu": "Ez a nyilvános könyvespolc a(z) {brand} része",
+        "ca": "Aquesta prestatgeria pública forma part de {brand}"
       },
       "condition": "ref=",
       "freeform": {
@@ -335,7 +352,8 @@
             "it": "Fa parte della rete 'Little Free Library'",
             "hu": "A „Little Free Library” hálózat része",
             "es": "Parte de la red 'Little Free Library'",
-            "pl": "Część sieci \"Little Free Library\""
+            "pl": "Część sieci \"Little Free Library\"",
+            "ca": "Part de la xarxa 'Little Free Library'"
           },
           "if": {
             "and": [
@@ -397,7 +415,8 @@
             "de": "Dieser Bücherschrank ist nicht Teil eines größeren Netzwerks",
             "fr": "Cette microbibliothèque ne fait pas partie d'un réseau/groupe",
             "it": "Questa microbiblioteca non fa parte di una rete",
-            "hu": "Ez a könyvespolc nem része egy nagyobb hálózatnak"
+            "hu": "Ez a könyvespolc nem része egy nagyobb hálózatnak",
+            "ca": "Aquesta prestatgeria no forma part d'una xarxa més gran"
           },
           "if": {
             "and": [
@@ -449,7 +468,8 @@
             "fr": "Plus d'infos sur le site web",
             "ru": "Более подробная информация на сайте",
             "it": "Maggiori informazioni sul sito web",
-            "hu": "További információ ezen a weboldalon"
+            "hu": "További információ ezen a weboldalon",
+            "ca": "Més informació al web"
           }
         }
       },
@@ -488,7 +508,8 @@
           "question": {
             "en": "Has children books",
             "nl": "Kinderboeken aanwezig",
-            "de": "Hat Kinderbücher"
+            "de": "Hat Kinderbücher",
+            "ca": "Té llibres infantils"
           },
           "osmTags": "books~i~.*children.*"
         }
@@ -501,7 +522,8 @@
           "question": {
             "en": "Has books for adults",
             "nl": "Boeken voor volwassenen aanwezig",
-            "de": "Hat Bücher für Erwachsene"
+            "de": "Hat Bücher für Erwachsene",
+            "ca": "Té llibres per a adults"
           },
           "osmTags": "books~i~.*adults.*"
         }
@@ -516,14 +538,16 @@
             "en": "Indoor or outdoor",
             "de": "Innen oder Außen",
             "hu": "Beltéri vagy kültéri",
-            "es": "Interior o exterior"
+            "es": "Interior o exterior",
+            "ca": "Interior o exterior"
           }
         },
         {
           "question": {
             "en": "Located indoors",
             "nl": "Bevindt zich binnen",
-            "de": "Befindet sich im Innenbereich"
+            "de": "Befindet sich im Innenbereich",
+            "ca": "Situat a l'interior"
           },
           "osmTags": "indoor=yes"
         },
@@ -531,7 +555,8 @@
           "question": {
             "nl": "Bevindt zich buiten",
             "en": "Located outdoors",
-            "de": "Befindet sich im Freien"
+            "de": "Befindet sich im Freien",
+            "ca": "Situat a l'exterior"
           },
           "osmTags": {
             "or": [

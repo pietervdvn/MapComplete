@@ -23,7 +23,8 @@
     "render": {
       "en": "Shelter",
       "de": "Unterstand",
-      "nl": "Schuilplaats"
+      "nl": "Schuilplaats",
+      "ca": "Refugi"
     }
   },
   "mapRendering": [
@@ -90,7 +91,8 @@
       "question": {
         "en": "What kind of shelter is this?",
         "de": "Um welche Art von Unterstand handelt es sich?",
-        "nl": "Wat voor schuilplaats is dit?"
+        "nl": "Wat voor schuilplaats is dit?",
+        "ca": "Quin tipus de refugi és aquest?"
       },
       "render": {
         "en": "Shelter type: {shelter_type}",

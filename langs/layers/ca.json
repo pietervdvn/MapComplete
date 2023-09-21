@@ -1842,13 +1842,13 @@
                         "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>"
                     },
                     "9": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b> Tipus 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
+                        "question": "Té un connector <div style='display: inline-block'><b><b> CCS Tipus 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
                     },
                     "10": {
                         "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 2 amb cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
                     },
                     "11": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (un tipus2_css de marca)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
+                        "question": "Té un connector <div style='display: inline-block'><b><b>CCS Tesla Supercharger </b> (un tipus2_css de marca)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
                     },
                     "12": {
                         "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
@@ -2141,6 +2141,17 @@
                 "question": "Quin corrent fan els endolls amb <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> offer?",
                 "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destinació)</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> sortida com a màxim {socket:tesla_destination:current}A"
             },
+            "current-12": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Supercarregador Tesla (destinació)</b> (Un Tipus 2 amb un cable de marca Tesla) surt com a màxim a 16 A"
+                    },
+                    "1": {
+                        "then": "<b>Supercarregador Tesla (destinació)</b> (Un Tipus 2 amb un cable de marca Tesla) surt com a màxim a 32 A"
+                    }
+                },
+                "question": "Quin corrent donen els endolls amb <div style='display: inline-block'><b><b>Tesla Supercharger (destinació)</b> (un tipus 2 amb cable amb la marca Tesla)</b> <img style ='amplada: 1rem; mostrar: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> oferta?"
+            },
             "current-13": {
                 "mappings": {
                     "0": {
@@ -2160,6 +2171,16 @@
                     }
                 },
                 "question": "Quin corrent ofereixen els endolls amb <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?"
+            },
+            "current-7": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Tipus 2</b> (menneks) surt com a màxim a 16 A"
+                    },
+                    "1": {
+                        "then": "<b>Tipus 2</b> (menneks) surt com a màxim a 32 A"
+                    }
+                }
             },
             "current-8": {
                 "mappings": {
@@ -3957,7 +3978,7 @@
             },
             "1": {
                 "description": "Un negoci de menjar centrat en el servei ràpid sols en mostrador i menjar per a endur",
-                "title": "un de menjar ràpid"
+                "title": "un negoci de menjar ràpid"
             },
             "2": {
                 "description": "Un local de menjar ràpid centrat en les patates fregides",
@@ -5586,6 +5607,35 @@
         }
     },
     "public_bookcase": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Té llibres infantils"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Té llibres per a adults"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Interior o exterior"
+                    },
+                    "1": {
+                        "question": "Situat a l'interior"
+                    },
+                    "2": {
+                        "question": "Situat a l'exterior"
+                    }
+                }
+            }
+        },
         "name": "Bústies per llibres",
         "presets": {
             "0": {
@@ -5593,28 +5643,77 @@
             }
         },
         "tagRenderings": {
+            "bookcase-booktypes": {
+                "mappings": {
+                    "0": {
+                        "then": "Majoritàriament llibres infantils"
+                    },
+                    "1": {
+                        "then": "Majoritàriament llibres per a adults"
+                    }
+                },
+                "question": "Quins tipus de llibres pots trobar a aquesta prestatgeria pública?"
+            },
             "bookcase-is-accessible": {
                 "mappings": {
                     "0": {
                         "then": "Accessible al públic"
+                    },
+                    "1": {
+                        "then": "Només accessible per als clients"
                     }
-                }
+                },
+                "question": "Aquesta prestatgeria pública és de lliure accés?"
             },
             "bookcase-is-indoors": {
                 "mappings": {
+                    "0": {
+                        "then": "Aquesta prestatgeria es troba a l'interior"
+                    },
+                    "1": {
+                        "then": "Aquesta prestatgeria es troba a l'exterior"
+                    },
                     "2": {
                         "then": "La prestatgeria està ubicada a l'exterior"
                     }
-                }
+                },
+                "question": "Aquesta prestatgeria es troba a l'exterior?"
             },
             "public_bookcase-brand": {
                 "mappings": {
+                    "0": {
+                        "then": "Part de la xarxa 'Little Free Library'"
+                    },
                     "1": {
                         "then": "Aquesta prestatgeria pública no és part d'una xarxa més gran"
                     }
-                }
+                },
+                "question": "Aquesta prestatgeria pública forma part d'una xarxa més gran?",
+                "render": "Aquesta prestatgeria pública forma part de {brand}"
+            },
+            "public_bookcase-capacity": {
+                "question": "Quants llibres caben en aquesta prestatgeria pública?",
+                "render": "Caben {capacity} llibres en aquesta prestatgeria"
+            },
+            "public_bookcase-name": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta prestatgeria no té un nom"
+                    }
+                },
+                "question": "Com es diu aquesta prestatgeria pública?",
+                "render": "El nom d'aquesta prestatgeria és {name}"
+            },
+            "public_bookcase-operator": {
+                "question": "Qui gestiona aquesta prestatgeria pública?",
+                "render": "Gestionant per {operator}"
             },
             "public_bookcase-ref": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta prestatgeria no forma part d'una xarxa més gran"
+                    }
+                },
                 "question": "Quin és el número de referència d'aquesta prestatgeria pública?"
             },
             "public_bookcase-start_date": {
@@ -5622,7 +5721,12 @@
                 "render": "Instal·lat el dia {start_date}"
             },
             "public_bookcase-website": {
-                "question": "Hi ha algun lloc web amb més informació sobre aquesta prestatgeria pública?"
+                "question": "Hi ha algun lloc web amb més informació sobre aquesta prestatgeria pública?",
+                "render": {
+                    "special": {
+                        "text": "Més informació al web"
+                    }
+                }
             }
         },
         "title": {
@@ -5636,6 +5740,15 @@
     },
     "questions": {
         "tagRenderings": {
+            "check_date": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest objecte es va comprovar per última vegada avui"
+                    }
+                },
+                "question": "Quan es va comprovar per última vegada aquest objecte?",
+                "render": "Aquest objecte es va comprovar per darrera vegada el <b>{check_date}</b>"
+            },
             "denominations-coins": {
                 "mappings": {
                     "0": {
@@ -5661,6 +5774,15 @@
                     },
                     "7": {
                         "then": "S'accepten monedes de 2 euros"
+                    },
+                    "8": {
+                        "then": "S'accepten monedes de 5 cèntims"
+                    },
+                    "9": {
+                        "then": "S'accepten monedes de 10 cèntims"
+                    },
+                    "10": {
+                        "then": "S'accepten monedes de 20 cèntims"
                     }
                 },
                 "question": "Quines monedes es poden utilitzar per a pagar aquí?"
@@ -5980,7 +6102,8 @@
         "name": "Pasos de vianants pintats amb l'arc de Sant Martí",
         "presets": {
             "0": {
-                "description": "Pas de vianants"
+                "description": "Pas de vianants",
+                "title": "un creuament"
             }
         },
         "tagRenderings": {
@@ -5998,6 +6121,9 @@
                 },
                 "question": "Aquest pas de vianants està pintat amb l'arc de Sant Martí?"
             }
+        },
+        "title": {
+            "render": "Creuament"
         }
     },
     "reception_desk": {
@@ -6302,6 +6428,12 @@
                     "0": {
                         "then": "Aquesta és una escola amb una secció d’educació infantil on els més petits reben una educació que prepara la lectura i l’escriptura."
                     },
+                    "1": {
+                        "then": "Aquesta és una escola on s'aprèn competències primàries com ara l'alfabetització bàsica i les habilitats numèriques. <div class='subtle'>Els alumnes solen matricular-se des dels 6 anys fins als 12 anys</div>"
+                    },
+                    "2": {
+                        "then": "Aquesta és una escola secundària que ofereix tots els graus"
+                    },
                     "3": {
                         "then": "Aquesta és una escola secundària que <i>no</i> ofereix tots els graus, però ofereix <b>primer i segon</b> grau"
                     },
@@ -6314,7 +6446,8 @@
                     "6": {
                         "then": "Aquesta escola ofereix educació post secundària (p.e. un sèptim o vuité any d'especialitzció)"
                     }
-                }
+                },
+                "question": "Quin nivell d'educació s'imparteix en aquesta escola?"
             },
             "gender": {
                 "mappings": {
@@ -6349,6 +6482,9 @@
             },
             "target-audience": {
                 "mappings": {
+                    "0": {
+                        "then": "Aquesta és una escola on els estudiants estudien habilitats al nivell adequat per a la seva edat. <div>Hi ha poques o cap instal·lació especial per atendre els estudiants amb necessitats especials o les instal·lacions són ad-hoc</div>"
+                    },
                     "1": {
                         "then": "Aquesta és una escola per a estudiants sense necessitats especials <div class='subtle'> Açò inclou alumnes que poden seguir les classes amb petites mesures</div>"
                     },
@@ -6377,18 +6513,77 @@
                 "question": "Aquesta escola es dirigeix a estudiants amb necessitats especials? Quines instal·lacions estructurals té aquesta escola?",
                 "render": "Aquesta escola té instal·lacions per a estudiants amb {school:for}"
             }
+        },
+        "title": {
+            "render": "Escola <i>{name}</i>"
         }
     },
     "selected_element": {
         "description": "Ressalta l'element seleccionat actualment. Anul·leu aquesta capa per tenir diferents colors"
     },
     "shelter": {
-        "name": "Refugi"
+        "name": "Refugi",
+        "tagRenderings": {
+            "shelter-type": {
+                "question": "Quin tipus de refugi és aquest?"
+            }
+        },
+        "title": {
+            "render": "Refugi"
+        }
     },
     "shops": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} ha tancat permanentment"
+                }
+            }
+        },
         "description": "Una botiga",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Sols mostrar botigues que venen {search}"
+                    }
+                }
+            }
+        },
         "name": "Botiga",
+        "presets": {
+            "0": {
+                "description": "Afegir una botiga nova",
+                "title": "una botiga"
+            }
+        },
         "tagRenderings": {
+            "copyshop-print-sizes": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta botiga pot imprimir en papers de mida A4"
+                    },
+                    "1": {
+                        "then": "Aquesta botiga pot imprimir en papers de mida A3"
+                    },
+                    "2": {
+                        "then": "Aquesta botiga pot imprimir en papers de mida A2"
+                    },
+                    "3": {
+                        "then": "Aquesta botiga pot imprimir en papers de mida A1"
+                    },
+                    "4": {
+                        "then": "Aquesta botiga pot imprimir en papers de mida A0"
+                    }
+                },
+                "question": "Quins formats de paper ofereix aquesta botiga?"
+            },
+            "id_presets.shop_types": {
+                "override": {
+                    "question": "Quin tipus de botiga és aquesta?",
+                    "render": "Açò és una {shop}"
+                }
+            },
             "organic": {
                 "mappings": {
                     "0": {
@@ -6404,6 +6599,7 @@
                 "question": "Aquesta botiga ofereix productes orgànics?"
             },
             "shops-name": {
+                "question": "Quin és el nom d'aquesta botiga?",
                 "render": "La botiga s'anomena <i>{name}</i>"
             }
         },
@@ -6420,8 +6616,43 @@
         }
     },
     "shower": {
+        "description": "Una capa que mostra dutxes (públiques)",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Aigua calenta disponible"
+                    }
+                }
+            }
+        },
+        "name": "Dutxa",
+        "presets": {
+            "0": {
+                "description": "Una dutxa (pública)",
+                "title": "una dutxa"
+            }
+        },
         "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Qualsevol pot utilitzar aquesta dutxa"
+                    },
+                    "1": {
+                        "then": "Només els clients poden utilitzar aquesta dutxa"
+                    },
+                    "2": {
+                        "then": "Accessible, però s'ha de demanar una clau"
+                    }
+                },
+                "question": "Qui pot utilitzar aquesta dutxa?"
+            },
             "charge": {
+                "freeform": {
+                    "placeholder": "p. e. 1.50 eur"
+                },
+                "question": "Quant costa utilitzar aquesta dutxa?",
                 "render": "Costa {charge} utilitzar aquesta dutxa"
             },
             "fee": {
@@ -6455,6 +6686,7 @@
         }
     },
     "slow_roads": {
+        "description": "Totes les carreteres sense cotxe",
         "tagRenderings": {
             "slow_roads-surface": {
                 "mappings": {
@@ -6464,6 +6696,9 @@
                     "1": {
                         "then": "La superfície és <b>terra</b>"
                     },
+                    "2": {
+                        "then": "La superfície és <b>sense asfaltar</b>"
+                    },
                     "3": {
                         "then": "La superfície és <b>sorra</b>"
                     }
@@ -6472,6 +6707,25 @@
         }
     },
     "speed_camera": {
+        "description": "Capa que mostra càmeres de velocitat",
+        "name": "Càmera de velocitat",
+        "presets": {
+            "0": {
+                "title": "una càmera de velocitat"
+            }
+        },
+        "tagRenderings": {
+            "maxspeed": {
+                "freeform": {
+                    "placeholder": "Velocitat màxima permesa"
+                },
+                "question": "Quina és la velocitat màxima permesa en aquest radar?",
+                "render": "La velocitat màxima permesa és {canonical(maxspeed)}"
+            }
+        },
+        "title": {
+            "render": "Càmera de velocitat"
+        },
         "units": {
             "0": {
                 "applicableUnits": {
@@ -6488,9 +6742,20 @@
         }
     },
     "speed_display": {
+        "description": "Capa que mostra radars pedagògics que alerten als conductors de la seva velocitat.",
+        "name": "Radar pedagògic",
+        "presets": {
+            "0": {
+                "title": "un radar pedagògic"
+            }
+        },
         "tagRenderings": {
             "inscription": {
-                "question": "Quin text es mostra al radar pedagògic?"
+                "freeform": {
+                    "placeholder": "Text al radar pedagògic (p. e. 'La seva velocitat')"
+                },
+                "question": "Quin text es mostra al radar pedagògic?",
+                "render": "El text a aquest radar pedagogic és {inscription}"
             },
             "maxspeed": {
                 "render": "La velocitat màxima permesa a aquest radar pedagògic és {canonical(maxspeed)}"
@@ -6541,6 +6806,11 @@
             }
         },
         "name": "Camps d'esports",
+        "presets": {
+            "1": {
+                "title": "una pista d'esports"
+            }
+        },
         "tagRenderings": {
             "sport-pitch-access": {
                 "mappings": {
@@ -7607,7 +7877,8 @@
                 "0": {
                     "then": "{name}"
                 }
-            }
+            },
+            "render": "Turbina eòlica"
         },
         "units": {
             "0": {

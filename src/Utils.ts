@@ -471,7 +471,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      */
     public static SubstituteKeys(
         txt: string | undefined,
-        tags?: Record<string, any>,
+        tags: Record<string, any> | undefined,
         useLang?: string
     ): string | undefined {
         if (txt === undefined) {

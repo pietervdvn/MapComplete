@@ -3,7 +3,8 @@
   "name": {
     "en": "Shower",
     "de": "Dusche",
-    "fr": "Douche"
+    "fr": "Douche",
+    "ca": "Dutxa"
   },
   "minzoom": 12,
   "source": {
@@ -22,12 +23,14 @@
       "title": {
         "en": "a shower",
         "de": "eine Dusche",
-        "fr": "une douche"
+        "fr": "une douche",
+        "ca": "una dutxa"
       },
       "description": {
         "en": "A (public) shower",
         "de": "Eine (öffentliche) Dusche",
-        "fr": "Une douche (publique)"
+        "fr": "Une douche (publique)",
+        "ca": "Una dutxa (pública)"
       },
       "tags": [
         "amenity=shower"
@@ -42,7 +45,8 @@
       "question": {
         "en": "Who can use this shower?",
         "de": "Wer darf diese Dusche nutzen?",
-        "fr": "Qui peut utiliser cette douche ?"
+        "fr": "Qui peut utiliser cette douche ?",
+        "ca": "Qui pot utilitzar aquesta dutxa?"
       },
       "mappings": [
         {
@@ -50,7 +54,8 @@
           "then": {
             "en": "Anyone can use this shower",
             "de": "Jeder darf diese Dusche nutzen",
-            "fr": "Tout le monde peut utiliser cette douche"
+            "fr": "Tout le monde peut utiliser cette douche",
+            "ca": "Qualsevol pot utilitzar aquesta dutxa"
           }
         },
         {
@@ -58,7 +63,8 @@
           "then": {
             "en": "Only customers can use this shower",
             "de": "Nur Kunden dürfen diese Dusche nutzen",
-            "fr": "Seuls les clients peuvent utiliser cette douche"
+            "fr": "Seuls les clients peuvent utiliser cette douche",
+            "ca": "Només els clients poden utilitzar aquesta dutxa"
           }
         },
         {
@@ -66,7 +72,8 @@
           "then": {
             "en": "Accesible, but one has to ask for a key",
             "de": "Zugänglich, aber man muss nach einem Schlüssel fragen",
-            "fr": "Accessible, mais il faut demander une clé"
+            "fr": "Accessible, mais il faut demander une clé",
+            "ca": "Accessible, però s'ha de demanar una clau"
           }
         }
       ]
@@ -109,7 +116,8 @@
       "question": {
         "en": "How much does it cost to use this shower?",
         "de": "Wie viel kostet es, diese Dusche zu nutzen?",
-        "fr": "Quel est le prix pour utiliser cette douche ?"
+        "fr": "Quel est le prix pour utiliser cette douche ?",
+        "ca": "Quant costa utilitzar aquesta dutxa?"
       },
       "freeform": {
         "key": "charge",
@@ -117,7 +125,8 @@
         "placeholder": {
           "en": "e.g. 1.50 EUR",
           "de": "z.B. 1,50 EUR",
-          "fr": "par ex. 1,50 EUR"
+          "fr": "par ex. 1,50 EUR",
+          "ca": "p. e. 1.50 eur"
         }
       },
       "render": {
@@ -187,7 +196,8 @@
           "question": {
             "en": "Hot water available",
             "de": "Warmwasser verfügbar",
-            "fr": "Eau chaude disponible"
+            "fr": "Eau chaude disponible",
+            "ca": "Aigua calenta disponible"
           },
           "osmTags": {
             "or": [
@@ -231,6 +241,7 @@
   "description": {
     "en": "A layer showing (public) showers",
     "de": "Eine Ebene mit (öffentlichen) Duschen",
-    "fr": "Une couche affichant les douches (publiques)"
+    "fr": "Une couche affichant les douches (publiques)",
+    "ca": "Una capa que mostra dutxes (públiques)"
   }
 }

@@ -565,7 +565,8 @@
         "ru": "Спортивная площадка",
         "it": "una campo sportivo",
         "de": "einen Sportplatz",
-        "es": "una pista de deportes"
+        "es": "una pista de deportes",
+        "ca": "una pista d'esports"
       },
       "tags": [
         "leisure=pitch",

@@ -4279,7 +4279,7 @@
             },
             "wikipedia-etymology": {
                 "question": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?",
-                "render": "<h3>Wikipedia artikel van de naamgever</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
+                "render": "<h3>Wikipedia-artikel van de naamgever</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
             },
             "zoeken op inventaris onroerend erfgoed": {
                 "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Zoeken op inventaris onroerend erfgoed</a>"
@@ -8135,7 +8135,7 @@
             "Surveillance type: public, outdoor, indoor": {
                 "mappings": {
                     "0": {
-                        "then": "Bewaking van de publieke ruilmte, dus een straat, een brug, een park, een plein, een stationsgebouw, een publiek toegankelijke gang of tunnel…"
+                        "then": "Bewaking van de publieke ruimte, dus een straat, een brug, een park, een plein, een stationsgebouw, een publiek toegankelijke gang of tunnel…"
                     },
                     "1": {
                         "then": "Een buitenruimte met privaat karakter (zoals een privé-oprit, een parking, tankstation, …)"

@@ -1155,19 +1155,24 @@ export default class SpecialVisualizations {
                         name: "class",
                         doc: "CSS-classes to add to the element",
                     },
+                    {
+                        name: "download",
+                        doc: "If set, this link will act as a download-button. The contents of `href` will be offered for download; this parameter will act as the proposed filename",
+                    },
                 ],
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
                     args: string[]
                 ): BaseUIElement {
-                    const [text, href, classnames] = args
+                    const [text, href, classnames, download] = args
                     return new VariableUiElement(
                         tagSource.map((tags) =>
                             new Link(
                                 Utils.SubstituteKeys(text, tags),
                                 Utils.SubstituteKeys(href, tags),
-                                true
+                                download === undefined,
+                                Utils.SubstituteKeys(download, tags)
                             ).SetClass(classnames)
                         )
                     )

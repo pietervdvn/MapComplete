@@ -2951,6 +2951,42 @@
     },
     "usersettings": {
         "tagRenderings": {
+            "cscount-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Du har lavet ændringer ved {_csCount} forskellige begivenheder! Det er fantastisk!"
+                    }
+                }
+            },
+            "fixate-north": {
+                "mappings": {
+                    "0": {
+                        "then": "Tillad rotation af kortet"
+                    }
+                }
+            },
+            "mangrove-keys": {
+                "render": {
+                    "after": "Enhver, der har denne fil, kan lave ændringer med din identitet",
+                    "special": {
+                        "text": "Hent den private nøgle til din Mangrove-konto"
+                    }
+                }
+            },
+            "picture-license": {
+                "mappings": {
+                    "1": {
+                        "then": "Billeder, som du har taget, vil blive udgivet under <b>CC0</b>-licensen og lagt ud i fælleseje. Det betyder, at alle kan bruge dine billeder til ethvert formål."
+                    }
+                }
+            },
+            "show_debug": {
+                "mappings": {
+                    "2": {
+                        "then": "Vis ikke debug-informationer"
+                    }
+                }
+            },
             "translation-completeness": {
                 "render": "Oversættelser for {_theme} i {_language} er på {_translation_percentage}%: {_translation_translated_count} strenge ud af {_translation_total} er oversat"
             },
@@ -2960,7 +2996,17 @@
                         "then": "Klik på 'oversæt'-ikonet ved siden af en streng for at indtaste eller opdatere et stykke tekst. Du skal have en Weblate-konto for at kunne gøre dette. Opret en med dit OSM-brugernavn for automatisk at låse oversættelsestilstanden op."
                     }
                 }
+            },
+            "translation-mode": {
+                "mappings": {
+                    "1": {
+                        "then": "Vis en knap for hurtigt at åbne oversættelser, når du bruger MapComplete på en stor skærm"
+                    }
+                }
             }
+        },
+        "title": {
+            "render": "Indstillinger"
         }
     },
     "veterinary": {

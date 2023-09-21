@@ -132,6 +132,9 @@ export class TagUtils {
 
     /**
      * Given multiple tagsfilters which can be used as answer, will take the tags with the same keys together as set.
+     *
+     * @see MatchesMultiAnswer to do the reverse
+     *
      * E.g:
      *
      * const tag = TagUtils.ParseUploadableTag({"and": [
