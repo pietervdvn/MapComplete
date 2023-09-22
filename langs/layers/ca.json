@@ -35,6 +35,16 @@
             "1": {
                 "title": "un mupi"
             },
+            "10": {
+                "description": "S'utilitza per a cartells publicitaris, rètols de neó, logotips i cartells en entrades institucionals",
+                "title": "un lletrer"
+            },
+            "11": {
+                "title": "una escupltura"
+            },
+            "12": {
+                "title": "una paret pintada"
+            },
             "2": {
                 "title": "un mupi sobre la paret"
             },
@@ -61,16 +71,6 @@
             },
             "9": {
                 "title": "un tòtem"
-            },
-            "10": {
-                "description": "S'utilitza per a cartells publicitaris, rètols de neó, logotips i cartells en entrades institucionals",
-                "title": "un lletrer"
-            },
-            "11": {
-                "title": "una escupltura"
-            },
-            "12": {
-                "title": "una paret pintada"
             }
         },
         "tagRenderings": {
@@ -165,6 +165,9 @@
                     "1": {
                         "then": "Açò és un tauló d'anunis"
                     },
+                    "10": {
+                        "then": "Açò és una paret pintada"
+                    },
                     "2": {
                         "then": "Açò és una columna"
                     },
@@ -188,9 +191,6 @@
                     },
                     "9": {
                         "then": "Açò és un tòtem"
-                    },
-                    "10": {
-                        "then": "Açò és una paret pintada"
                     }
                 },
                 "question": "Quin tipus d'element publicitari és aquest?",
@@ -204,6 +204,9 @@
                 },
                 "1": {
                     "then": "Tauló d'anuncis"
+                },
+                "10": {
+                    "then": "Paret Pintada"
                 },
                 "2": {
                     "then": "Mupi"
@@ -228,9 +231,6 @@
                 },
                 "9": {
                     "then": "Tòtem"
-                },
-                "10": {
-                    "then": "Paret Pintada"
                 }
             }
         }
@@ -312,6 +312,15 @@
                     "1": {
                         "then": "Mural"
                     },
+                    "10": {
+                        "then": "Azulejo (Rajoles decoratives espanyoles i portugueses)"
+                    },
+                    "11": {
+                        "then": "Enrajolat"
+                    },
+                    "12": {
+                        "then": "Tallat a la fusta"
+                    },
                     "2": {
                         "then": "Pintura"
                     },
@@ -335,15 +344,6 @@
                     },
                     "9": {
                         "then": "Relleu"
-                    },
-                    "10": {
-                        "then": "Azulejo (Rajoles decoratives espanyoles i portugueses)"
-                    },
-                    "11": {
-                        "then": "Enrajolat"
-                    },
-                    "12": {
-                        "then": "Tallat a la fusta"
                     }
                 },
                 "question": "Quin tipus d'obra és aquesta peça?",
@@ -1820,6 +1820,27 @@
                     "1": {
                         "question": "Té un connector <div style='display: inline-block'><b><b>Schuko</b> sense pin de terra (CEE7/4 tipus F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> connector"
                     },
+                    "10": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 2 amb cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                    },
+                    "11": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>CCS Tesla Supercharger </b> (un tipus2_css de marca)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
+                    },
+                    "12": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
+                    },
+                    "13": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipus 2 amb un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                    },
+                    "14": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>USB</b> per a carregar telèfons i dispositius electrònics petits</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
+                    },
+                    "15": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Bosch Active Connect amb 3 pins</b> i cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
+                    },
+                    "16": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Bosch Active Connect amb 5 pins</b> i cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
+                    },
                     "2": {
                         "question": "Té un connector <div style='display: inline-block'><b><b>endoll de paret Europeu</b> amb un pin de terra (CEE7/4 tipus F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
                     },
@@ -1843,27 +1864,6 @@
                     },
                     "9": {
                         "question": "Té un connector <div style='display: inline-block'><b><b> CCS Tipus 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-                    },
-                    "10": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 2 amb cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-                    },
-                    "11": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>CCS Tesla Supercharger </b> (un tipus2_css de marca)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-                    },
-                    "12": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
-                    },
-                    "13": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipus 2 amb un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-                    },
-                    "14": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>USB</b> per a carregar telèfons i dispositius electrònics petits</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
-                    },
-                    "15": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Bosch Active Connect amb 3 pins</b> i cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
-                    },
-                    "16": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Bosch Active Connect amb 5 pins</b> i cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
                     }
                 }
             }
@@ -1919,30 +1919,6 @@
                     "1": {
                         "then": "<b>Endoll de paret Schuko</b> sense pin a terra (CEE7/4 tipus F)"
                     },
-                    "2": {
-                        "then": "<b>Endoll de paret Europeu</b> amb pin de terra (CEE7/4 tipus E)"
-                    },
-                    "3": {
-                        "then": "<b>Endoll de paret Europeu</b> amb pin a terra (CEE7/4 tipus E)"
-                    },
-                    "4": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "6": {
-                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
-                    },
                     "10": {
                         "then": "<b>CSS 1Tipus 1</b> (també conegut com Tipus 1 combo)"
                     },
@@ -1972,6 +1948,9 @@
                     },
                     "19": {
                         "then": "<b>Tipus 2 amb cable</b> (mennekes)"
+                    },
+                    "2": {
+                        "then": "<b>Endoll de paret Europeu</b> amb pin de terra (CEE7/4 tipus E)"
                     },
                     "20": {
                         "then": "<b>CSS Supercarregador Tesla</b> (un tipus2_css de la marca)"
@@ -2003,11 +1982,32 @@
                     "29": {
                         "then": "<b>Bosch Active Connect amb 3 pins</b> i cable"
                     },
+                    "3": {
+                        "then": "<b>Endoll de paret Europeu</b> amb pin a terra (CEE7/4 tipus E)"
+                    },
                     "30": {
                         "then": "<b>Bosch Active Connect amb 5 pins</b> i cable"
                     },
                     "31": {
                         "then": "<b>Bosch Active Connect amb 5 pins</b> i cable"
+                    },
+                    "4": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "6": {
+                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
                     }
                 },
                 "question": "Quins tipus de connexions de càrrega estan disponibles aquí?"
@@ -2865,6 +2865,9 @@
                     "1": {
                         "then": "Aquest carril bici està pavimentat"
                     },
+                    "10": {
+                        "then": "Aquesta via ciclista està feta de gravilla"
+                    },
                     "2": {
                         "then": "Aquest carril bici està fet d'asfalt"
                     },
@@ -2876,9 +2879,6 @@
                     },
                     "9": {
                         "then": "Aquesta via ciclista està feta de grava"
-                    },
-                    "10": {
-                        "then": "Aquesta via ciclista està feta de gravilla"
                     }
                 },
                 "question": "De què està feta la superfície d'aquest carrer?",
@@ -3997,6 +3997,21 @@
                     "1": {
                         "then": "Això és una fregiduria"
                     },
+                    "10": {
+                        "then": "Aquí es serveixen plats xinesos"
+                    },
+                    "11": {
+                        "then": "Aquí es serveixen plats grecs"
+                    },
+                    "12": {
+                        "then": "Aquí es serveixen plats indis"
+                    },
+                    "13": {
+                        "then": "Aquí es serveixen plats turcs"
+                    },
+                    "14": {
+                        "then": "Aquí es serveixen plats tailandesos"
+                    },
                     "2": {
                         "then": "Principalment serveix pasta"
                     },
@@ -4020,21 +4035,6 @@
                     },
                     "9": {
                         "then": "Aquí es serveixen plats francesos"
-                    },
-                    "10": {
-                        "then": "Aquí es serveixen plats xinesos"
-                    },
-                    "11": {
-                        "then": "Aquí es serveixen plats grecs"
-                    },
-                    "12": {
-                        "then": "Aquí es serveixen plats indis"
-                    },
-                    "13": {
-                        "then": "Aquí es serveixen plats turcs"
-                    },
-                    "14": {
-                        "then": "Aquí es serveixen plats tailandesos"
                     }
                 },
                 "question": "Quin menjar es serveix aquí?",
@@ -4795,6 +4795,36 @@
                     }
                 },
                 "question": "En quines dades es basa aquest mapa?"
+            },
+            "map_size": {
+                "mappings": {
+                    "0": {
+                        "then": "Un mapa de les habitacions dins d'un edifici"
+                    },
+                    "1": {
+                        "then": "Un mapa d'un lloc especial, com un castell històric, un parc, un campus, un bosc, …"
+                    },
+                    "2": {
+                        "then": "Un mapa que mostra el poble o la ciutat"
+                    },
+                    "3": {
+                        "then": " Un mapa d'una ciutat"
+                    },
+                    "4": {
+                        "then": "El mapa d'una regió sencera, mostrant múltiples ciutats i pobles"
+                    }
+                },
+                "question": "Quina és la mida de l'àrea mostrada en el mapa?"
+            },
+            "map_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Mapa topogràfic <p class='subtle'>El mapa conté línies de contorn. </p>"
+                    },
+                    "2": {
+                        "then": "Això és un mapa esquemàtic. <p class='subtle'>Un mapa esbossat amb només camins importants i PDI. Els angles, els trajectes etc. són merament il·lustratius, no acurat.</p> "
+                    }
+                }
             }
         },
         "title": {
@@ -5061,18 +5091,56 @@
         }
     },
     "note": {
+        "filter": {
+            "10": {
+                "options": {
+                    "1": {
+                        "question": "Oculta les notes d'importació"
+                    },
+                    "2": {
+                        "question": "Mostrar només les notes d'importació"
+                    }
+                }
+            }
+        },
+        "name": "Notes d'OpenStreetMap",
+        "tagRenderings": {
+            "nearby-images": {
+                "render": {
+                    "before": "<h3>Imatges properes</h3>Les imatges de sota són imatges geoetiquetades properes i poden ser útils per a encarregar-se d'aquesta nota."
+                }
+            },
+            "report-contributor": {
+                "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reporta {_first_user} per spam o missatges inapropiats</a>"
+            },
+            "report-note": {
+                "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta aquesta nota com spam o inapropiada</a>"
+            }
+        },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Nota tancada"
+                }
+            },
             "render": "Nota"
         }
     },
     "observation_tower": {
+        "description": "Torres amb vista panoràmica",
         "name": "Torres d'observació",
         "tagRenderings": {
+            "Fee": {
+                "question": "Quant hi ha que pagar per entrar a aquesta torre?",
+                "render": "Visitar aquesta torre costa <b>{charge}</b>"
+            },
             "Height": {
-                "question": "Quina és l'alçada d'aquesta torre?"
+                "question": "Quina és l'alçada d'aquesta torre?",
+                "render": "Aquesta torre fa {height}"
             },
             "Operator": {
-                "question": "Qui manté aquesta torre?"
+                "question": "Qui manté aquesta torre?",
+                "render": "Mantés per {operator}"
             },
             "access": {
                 "mappings": {
@@ -5084,6 +5152,17 @@
                     }
                 },
                 "question": "Es pot visitar aquesta torre?"
+            },
+            "elevator": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta torre té un ascensor que porta els visitants al cim"
+                    },
+                    "1": {
+                        "then": "Aquesta torre no té ascensor"
+                    }
+                },
+                "question": "Aquesta torre té ascensor?"
             },
             "name": {
                 "mappings": {
@@ -5272,6 +5351,9 @@
                     "0": {
                         "then": "Hi ha places d'aparcament per a gent amb mobilitat reduïda, però no es sap quantes"
                     },
+                    "1": {
+                        "then": "No hi ha places d'aparcament per a minusvàlids"
+                    },
                     "2": {
                         "then": "No hi ha places d'aparcament per a persones amb mobilitat reduïda"
                     }
@@ -5284,15 +5366,32 @@
                     "0": {
                         "then": "Aquest és un aparcament en superfície"
                     },
+                    "1": {
+                        "then": "Es tracta d'un aparcament al costat d'un carrer"
+                    },
                     "2": {
                         "then": "Aquest és un aparcament subterrani"
+                    },
+                    "3": {
+                        "then": "Es tracta d'un garatge de diverses plantes"
+                    },
+                    "5": {
+                        "then": "Aquest és un carril per aparcar al carrer"
+                    },
+                    "8": {
+                        "then": "Aquest és un aparcament en una zona de descans"
                     }
                 },
                 "question": "Quin tipus d'aparcament és aquest?"
             }
+        },
+        "title": {
+            "render": "Aparcament de cotxes"
         }
     },
     "parking_spaces": {
+        "description": "Capa que mostra aparcaments de cotxes individuals.",
+        "name": "Places d'aparcament",
         "tagRenderings": {
             "capacity": {
                 "mappings": {
@@ -5306,6 +5405,33 @@
                 "mappings": {
                     "0": {
                         "then": "És un lloc normal d'aparcament."
+                    },
+                    "1": {
+                        "then": "Aquesta és una plaça d'aparcament normal."
+                    },
+                    "10": {
+                        "then": "Es tracta d'una plaça d'aparcament reservada per a pares amb fills."
+                    },
+                    "11": {
+                        "then": "Es tracta d'una plaça d'aparcament reservada al personal."
+                    },
+                    "2": {
+                        "then": "Aquesta és una plaça d'aparcament per a minusvàlids."
+                    },
+                    "3": {
+                        "then": "Es tracta d'una plaça d'aparcament privada."
+                    },
+                    "4": {
+                        "then": "Es tracta d'una plaça d'aparcament reservada per a la recàrrega de vehicles."
+                    },
+                    "5": {
+                        "then": "Es tracta d'una plaça d'aparcament reservada per a repartidors."
+                    },
+                    "8": {
+                        "then": "Es tracta d'una plaça d'aparcament reservada per a autobusos."
+                    },
+                    "9": {
+                        "then": "Es tracta d'una plaça d'aparcament reservada per a motos."
                     }
                 }
             }
@@ -5512,6 +5638,20 @@
             }
         },
         "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta oficina postal té un caixer automàtic"
+                    },
+                    "1": {
+                        "then": "Aquesta oficina postal <b>no</b> té un caixer automàtic"
+                    },
+                    "2": {
+                        "then": "Aquesta oficina postal té un caixer automàtic, però està mapejat com a un element diferent"
+                    }
+                },
+                "question": "Aquesta oficina postal té un caixer automàtic?"
+            },
             "letter-from": {
                 "mappings": {
                     "0": {
@@ -5606,6 +5746,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "1": {
+                    "then": "Col·laborador postal a {name}"
+                }
+            },
             "render": "Oficina de correus"
         }
     },
@@ -5760,6 +5905,9 @@
                     "1": {
                         "then": "S'accepten monedes de 2 cèntims"
                     },
+                    "10": {
+                        "then": "S'accepten monedes de 20 cèntims"
+                    },
                     "2": {
                         "then": "S'accepten monedes de 5 cèntims"
                     },
@@ -5783,9 +5931,6 @@
                     },
                     "9": {
                         "then": "S'accepten monedes de 10 cèntims"
-                    },
-                    "10": {
-                        "then": "S'accepten monedes de 20 cèntims"
                     }
                 },
                 "question": "Quines monedes es poden utilitzar per a pagar aquí?"
@@ -6171,30 +6316,6 @@
                     "1": {
                         "question": "Reciclatge de piles"
                     },
-                    "2": {
-                        "question": "Reciclatge de cartrons de begudes"
-                    },
-                    "3": {
-                        "question": "Reciclatge de llaunes"
-                    },
-                    "4": {
-                        "question": "Reciclatge de roba"
-                    },
-                    "5": {
-                        "question": "Reciclatge d'oli de cuina"
-                    },
-                    "6": {
-                        "question": "Reciclatge d'oli de motor"
-                    },
-                    "7": {
-                        "question": "Reciclatge de tubs fluorescents"
-                    },
-                    "8": {
-                        "question": "Reciclatge de residus verds"
-                    },
-                    "9": {
-                        "question": "Reciclatge d'ampolles de vidre"
-                    },
                     "10": {
                         "question": "Reciclatge de vidre"
                     },
@@ -6225,11 +6346,35 @@
                     "19": {
                         "question": "Reciclatge del rebuig"
                     },
+                    "2": {
+                        "question": "Reciclatge de cartrons de begudes"
+                    },
                     "20": {
                         "question": "Reciclatge de cartutxos d'impressora"
                     },
                     "21": {
                         "question": "Reciclatge de bicicletes"
+                    },
+                    "3": {
+                        "question": "Reciclatge de llaunes"
+                    },
+                    "4": {
+                        "question": "Reciclatge de roba"
+                    },
+                    "5": {
+                        "question": "Reciclatge d'oli de cuina"
+                    },
+                    "6": {
+                        "question": "Reciclatge d'oli de motor"
+                    },
+                    "7": {
+                        "question": "Reciclatge de tubs fluorescents"
+                    },
+                    "8": {
+                        "question": "Reciclatge de residus verds"
+                    },
+                    "9": {
+                        "question": "Reciclatge d'ampolles de vidre"
                     }
                 }
             },
@@ -6297,30 +6442,6 @@
                     "1": {
                         "then": "Aquí es poden reciclar els cartons de begudes"
                     },
-                    "2": {
-                        "then": "Aquí es poden reciclar llaunes"
-                    },
-                    "3": {
-                        "then": "Aquí es pot reciclar roba"
-                    },
-                    "4": {
-                        "then": "Aquí es pot reciclar oli de cuina"
-                    },
-                    "5": {
-                        "then": "Aquí es pot reciclar oli de motor"
-                    },
-                    "6": {
-                        "then": "Aquí es poden reciclar tub fluroescents"
-                    },
-                    "7": {
-                        "then": "Aquí es poden reciclar residus verds"
-                    },
-                    "8": {
-                        "then": "Ací es poden reciclar residus orgànics"
-                    },
-                    "9": {
-                        "then": "Aquí es poden reciclar ampolles de vidre"
-                    },
                     "10": {
                         "then": "Aquí es pot reciclar vidre"
                     },
@@ -6351,6 +6472,9 @@
                     "19": {
                         "then": "Aquí es poden reciclar sabates"
                     },
+                    "2": {
+                        "then": "Aquí es poden reciclar llaunes"
+                    },
                     "20": {
                         "then": "Aquí es poden reciclar petits electrodomèstics"
                     },
@@ -6365,6 +6489,27 @@
                     },
                     "24": {
                         "then": "Aquí es poden reciclar bicicletes"
+                    },
+                    "3": {
+                        "then": "Aquí es pot reciclar roba"
+                    },
+                    "4": {
+                        "then": "Aquí es pot reciclar oli de cuina"
+                    },
+                    "5": {
+                        "then": "Aquí es pot reciclar oli de motor"
+                    },
+                    "6": {
+                        "then": "Aquí es poden reciclar tub fluroescents"
+                    },
+                    "7": {
+                        "then": "Aquí es poden reciclar residus verds"
+                    },
+                    "8": {
+                        "then": "Ací es poden reciclar residus orgànics"
+                    },
+                    "9": {
+                        "then": "Aquí es poden reciclar ampolles de vidre"
                     }
                 },
                 "question": "Què es pot reciclar aquí?"
@@ -7023,6 +7168,12 @@
                     "1": {
                         "then": "Aquest fanal utilitza LED"
                     },
+                    "10": {
+                        "then": "Aquest fanal utilitza làmpades de sodi d'alta pressió (taronja amb blanc)"
+                    },
+                    "11": {
+                        "then": "Aquest fanal s'il·lumina amb gas"
+                    },
                     "2": {
                         "then": "Aquest fanal utilitza il·luminació incandescent"
                     },
@@ -7046,12 +7197,6 @@
                     },
                     "9": {
                         "then": "Aquest fanal utilitza làmpades de sodi de baixa pressió (taronja monocroma)"
-                    },
-                    "10": {
-                        "then": "Aquest fanal utilitza làmpades de sodi d'alta pressió (taronja amb blanc)"
-                    },
-                    "11": {
-                        "then": "Aquest fanal s'il·lumina amb gas"
                     }
                 },
                 "question": "Quin tipus d'il·luminació utilitza aquest fanal?"
@@ -7896,6 +8041,27 @@
                     "1": {
                         "question": "Venda de begudes"
                     },
+                    "10": {
+                        "question": "Venda de llet"
+                    },
+                    "11": {
+                        "question": "Venda de pa"
+                    },
+                    "12": {
+                        "question": "Venda d'ous"
+                    },
+                    "13": {
+                        "question": "Venda de formatge"
+                    },
+                    "14": {
+                        "question": "Venda de mel"
+                    },
+                    "15": {
+                        "question": "Venda de patates"
+                    },
+                    "16": {
+                        "question": "Venda de flors"
+                    },
                     "2": {
                         "question": "Venda de llaminadures"
                     },
@@ -7919,27 +8085,6 @@
                     },
                     "9": {
                         "question": "Venda de càmeres interiors de bicicletes"
-                    },
-                    "10": {
-                        "question": "Venda de llet"
-                    },
-                    "11": {
-                        "question": "Venda de pa"
-                    },
-                    "12": {
-                        "question": "Venda d'ous"
-                    },
-                    "13": {
-                        "question": "Venda de formatge"
-                    },
-                    "14": {
-                        "question": "Venda de mel"
-                    },
-                    "15": {
-                        "question": "Venda de patates"
-                    },
-                    "16": {
-                        "question": "Venda de flors"
                     }
                 }
             }
@@ -7980,30 +8125,6 @@
                     "1": {
                         "then": "Es venen llaminadures"
                     },
-                    "2": {
-                        "then": "Es ven menjar"
-                    },
-                    "3": {
-                        "then": "Es ven tabaco"
-                    },
-                    "4": {
-                        "then": "Es venen preservatius"
-                    },
-                    "5": {
-                        "then": "Es ven cafè"
-                    },
-                    "6": {
-                        "then": "Es ven aigua"
-                    },
-                    "7": {
-                        "then": "Es venen diaris"
-                    },
-                    "8": {
-                        "then": "Es venen càmeres interiors de bicicletes"
-                    },
-                    "9": {
-                        "then": "Es ven llet"
-                    },
                     "10": {
                         "then": "Es ven pa"
                     },
@@ -8030,6 +8151,30 @@
                     },
                     "18": {
                         "then": "Es venen bitllets de transport públic"
+                    },
+                    "2": {
+                        "then": "Es ven menjar"
+                    },
+                    "3": {
+                        "then": "Es ven tabaco"
+                    },
+                    "4": {
+                        "then": "Es venen preservatius"
+                    },
+                    "5": {
+                        "then": "Es ven cafè"
+                    },
+                    "6": {
+                        "then": "Es ven aigua"
+                    },
+                    "7": {
+                        "then": "Es venen diaris"
+                    },
+                    "8": {
+                        "then": "Es venen càmeres interiors de bicicletes"
+                    },
+                    "9": {
+                        "then": "Es ven llet"
                     }
                 },
                 "question": "Que ven aquesta màquina expenedora?",
