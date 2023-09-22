@@ -316,7 +316,9 @@ export default class MetaTagging {
         helpers: Record<ExtraFuncType, (feature: Feature) => Function>
     ): (feature: Feature, tags: UIEventSource<Record<string, any>>) => boolean {
         if (MetaTagging.metataggingObject) {
-            const funcName = "metaTaggging_for_" + layer.id
+            const id = layer.id.replace(/[^a-zA-Z0-9_]/g, "_")
+
+            const funcName = "metaTaggging_for_" + id
             if (typeof MetaTagging.metataggingObject[funcName] !== "function") {
                 console.log(MetaTagging.metataggingObject)
                 throw (

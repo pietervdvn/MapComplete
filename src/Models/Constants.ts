@@ -37,7 +37,6 @@ export default class Constants {
         "split_point",
         "split_road",
         "current_view",
-        "matchpoint",
         "import_candidate",
         "usersettings",
     ] as const
