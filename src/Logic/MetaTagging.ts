@@ -9,7 +9,6 @@ import { IndexedFeatureSource } from "./FeatureSource/FeatureSource"
 import OsmObjectDownloader from "./Osm/OsmObjectDownloader"
 import { Utils } from "../Utils"
 import { Store, UIEventSource } from "./UIEventSource"
-import { SpecialVisualizationState } from "../UI/SpecialVisualization"
 
 /**
  * Metatagging adds various tags to the elements, e.g. lat, lon, surface area, ...
@@ -19,6 +18,7 @@ import { SpecialVisualizationState } from "../UI/SpecialVisualization"
 export default class MetaTagging {
     private static errorPrintCount = 0
     private static readonly stopErrorOutputAt = 10
+    private static metataggingObject: any = undefined
     private static retaggingFuncCache = new Map<
         string,
         ((feature: Feature, propertiesStore: UIEventSource<any>) => void)[]
@@ -75,6 +75,23 @@ export default class MetaTagging {
                 }
             )
         })
+    }
+
+    // noinspection JSUnusedGlobalSymbols
+    /**
+     * The 'metaTagging'-object is an object which contains some functions.
+     * Those functions are named `metaTaggging_for_<layer_name>` and are constructed based on the 'calculatedField' for this layer.
+     *
+     * If they are set, those functions will be used instead of parsing them at runtime.
+     *
+     * This means that we can avoid using eval, resulting in faster and safer code (at the cost of more complexity) - at least for official themes.
+     *
+     * Note: this function might appear unused while developing, it is used in the generated `index_<themename>.ts` files.
+     *
+     * @param metatagging
+     */
+    public static setThemeMetatagging(metatagging: any) {
+        MetaTagging.metataggingObject = metatagging
     }
 
     /**
@@ -298,6 +315,38 @@ export default class MetaTagging {
         layer: LayerConfig,
         helpers: Record<ExtraFuncType, (feature: Feature) => Function>
     ): (feature: Feature, tags: UIEventSource<Record<string, any>>) => boolean {
+        if (MetaTagging.metataggingObject) {
+            const funcName = "metaTaggging_for_" + layer.id
+            if (typeof MetaTagging.metataggingObject[funcName] !== "function") {
+                console.log(MetaTagging.metataggingObject)
+                throw (
+                    "Error: metatagging-object for this theme does not have an entry at " +
+                    funcName +
+                    " (or it is not a function)"
+                )
+            }
+            // public metaTaggging_for_walls_and_buildings(feat: Feature, helperFunctions: Record<ExtraFuncType, (feature: Feature) => Function>) {
+            //
+            const func: (feat: Feature, helperFunctions: Record<string, any>) => void =
+                MetaTagging.metataggingObject[funcName]
+            return (feature: Feature) => {
+                const tags = feature.properties
+                if (tags === undefined) {
+                    return
+                }
+                try {
+                    func(feature, helpers)
+                } catch (e) {
+                    console.error("Could not calculate calculated tags in exported class: ", e)
+                }
+                return true // Something changed
+            }
+        }
+
+        console.warn(
+            "Static MetataggingObject for theme is not set; using `new Function` (aka `eval`) to get calculated tags. This might trip up the CSP"
+        )
+
         const calculatedTags: [string, string, boolean][] = layer.calculatedTags
         if (calculatedTags === undefined || calculatedTags.length === 0) {
             return undefined

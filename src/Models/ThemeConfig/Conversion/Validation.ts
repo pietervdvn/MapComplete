@@ -838,6 +838,15 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             }
         }
 
+        const layerConfig = new LayerConfig(json, "validation", true)
+        for (const [attribute, code, isStrict] of layerConfig.calculatedTags ?? []) {
+            try {
+                new Function("feat", "return " + code + ";")
+            } catch (e) {
+                throw `Invalid function definition: the custom javascript is invalid:${e} (at ${context}). The offending javascript code is:\n    ${code}`
+            }
+        }
+
         if (json.source === "special") {
             if (!Constants.priviliged_layers.find((x) => x == json.id)) {
                 errors.push(

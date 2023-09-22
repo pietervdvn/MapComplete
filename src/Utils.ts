@@ -152,7 +152,8 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         DOMPurify.addHook("afterSanitizeAttributes", function (node) {
             // set all elements owning target to target=_blank + add noopener noreferrer
-            if ("target" in node) {
+            const target = node.getAttribute("target")
+            if (target) {
                 node.setAttribute("target", "_blank")
                 node.setAttribute("rel", "noopener noreferrer")
             }
@@ -307,10 +308,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     /**
-     * Adds a property to the given object, but the value will _only_ be calculated when it is actually requested
+     * Adds a property to the given object, but the value will _only_ be calculated when it is actually requested.
+     * This calculation will run once
      * @param object
      * @param name
      * @param init
+     * @param whenDone: called when the value is updated. Note that this will be called at most once
      * @constructor
      */
     public static AddLazyProperty(

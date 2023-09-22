@@ -16,6 +16,7 @@ import LinkToWeblate from "../../UI/Base/LinkToWeblate"
 import FeatureSwitchState from "./FeatureSwitchState"
 import Constants from "../../Models/Constants"
 import { QueryParameters } from "../Web/QueryParameters"
+import { ThemeMetaTagging } from "./UserSettingsMetaTagging"
 
 /**
  * The part of the state which keeps track of user-related stuff, e.g. the OSM-connection,
@@ -326,12 +327,15 @@ export default class UserRelatedState {
             },
             [translationMode]
         )
+
+        const usersettingMetaTagging = new ThemeMetaTagging()
         osmConnection.userDetails.addCallback((userDetails) => {
             for (const k in userDetails) {
                 amendedPrefs.data["_" + k] = "" + userDetails[k]
             }
 
-            for (const [name, code, _] of usersettingsConfig.calculatedTags) {
+            usersettingMetaTagging.metaTaggging_for_usersettings({ properties: amendedPrefs.data })
+            /*for (const [name, code, _] of usersettingsConfig.calculatedTags) {
                 try {
                     let result = new Function("feat", "return " + code + ";")({
                         properties: amendedPrefs.data,
@@ -349,7 +353,7 @@ export default class UserRelatedState {
                         e
                     )
                 }
-            }
+            }*/
 
             const simplifiedName = userDetails.name.toLowerCase().replace(/\s+/g, "")
             const isTranslator = translators.contributors.find(

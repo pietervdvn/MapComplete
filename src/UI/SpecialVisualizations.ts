@@ -1171,7 +1171,7 @@ export default class SpecialVisualizations {
                             new Link(
                                 Utils.SubstituteKeys(text, tags),
                                 Utils.SubstituteKeys(href, tags),
-                                download === undefined,
+                                download === undefined && !href.startsWith("#"),
                                 Utils.SubstituteKeys(download, tags)
                             ).SetClass(classnames)
                         )

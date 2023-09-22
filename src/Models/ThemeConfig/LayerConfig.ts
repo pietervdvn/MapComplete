@@ -204,12 +204,6 @@ export default class LayerConfig extends WithContextLoader {
                 }
                 const code = kv.substring(index + 1)
 
-                try {
-                    new Function("feat", "return " + code + ";")
-                } catch (e) {
-                    throw `Invalid function definition: the custom javascript is invalid:${e} (at ${context}). The offending javascript code is:\n    ${code}`
-                }
-
                 this.calculatedTags.push([key, code, isStrict])
             }
         }
