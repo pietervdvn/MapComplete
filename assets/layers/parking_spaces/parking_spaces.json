@@ -4,13 +4,15 @@
     "en": "Parking Spaces",
     "de": "Stellplätze",
     "nl": "Parkeerplekken",
-    "pl": "Miejsca parkingowe"
+    "pl": "Miejsca parkingowe",
+    "ca": "Places d'aparcament"
   },
   "description": {
     "en": "Layer showing individual parking spaces.",
     "de": "Ebene mit den einzelnen PKW Stellplätzen.",
     "nl": "Laag met individuele parkeerplekken.",
-    "pl": "Warstwa pokazująca pojedyncze miejsca parkingowe."
+    "pl": "Warstwa pokazująca pojedyncze miejsca parkingowe.",
+    "ca": "Capa que mostra aparcaments de cotxes individuals."
   },
   "minzoom": 19,
   "source": {
@@ -43,7 +45,8 @@
             "en": "This is a normal parking space.",
             "de": "Dies ist ein normaler Stellplatz.",
             "nl": "Dit is een normale parkeerplek.",
-            "pl": "To jest zwykłe miejsce parkingowe."
+            "pl": "To jest zwykłe miejsce parkingowe.",
+            "ca": "Aquesta és una plaça d'aparcament normal."
           }
         },
         {
@@ -52,7 +55,8 @@
             "en": "This is a disabled parking space.",
             "de": "Dies ist ein Behindertenstellplatz.",
             "nl": "Dit is een gehandicaptenparkeerplaats.",
-            "pl": "To jest miejsce parkingowe dla niepełnosprawnych."
+            "pl": "To jest miejsce parkingowe dla niepełnosprawnych.",
+            "ca": "Aquesta és una plaça d'aparcament per a minusvàlids."
           }
         },
         {
@@ -61,7 +65,8 @@
             "en": "This is a private parking space.",
             "de": "Dies ist ein privater Stellplatz.",
             "nl": "Dit is een privéparkeerplek.",
-            "pl": "To jest prywatne miejsce parkingowe."
+            "pl": "To jest prywatne miejsce parkingowe.",
+            "ca": "Es tracta d'una plaça d'aparcament privada."
           }
         },
         {
@@ -70,7 +75,8 @@
             "en": "This is parking space reserved for charging vehicles.",
             "de": "Dies ist ein Stellplatz, der für das Laden von Fahrzeugen reserviert ist.",
             "nl": "Deze parkeerplek is gereserveerd voor het opladen van voertuigen.",
-            "pl": "To miejsce parkingowe jest zarezerwowane dla ładowania pojazdów."
+            "pl": "To miejsce parkingowe jest zarezerwowane dla ładowania pojazdów.",
+            "ca": "Es tracta d'una plaça d'aparcament reservada per a la recàrrega de vehicles."
           }
         },
         {
@@ -79,7 +85,8 @@
             "en": "This is parking space reserved for deliveries.",
             "de": "Dies ist ein Stellplatz, der für Lieferfahrzeuge reserviert ist.",
             "nl": "Deze parkeerplek is gereserveerd voor leveringen.",
-            "pl": "To miejsce parkingowe jest przeznaczone dla dostaw."
+            "pl": "To miejsce parkingowe jest przeznaczone dla dostaw.",
+            "ca": "Es tracta d'una plaça d'aparcament reservada per a repartidors."
           }
         },
         {
@@ -104,7 +111,8 @@
             "en": "This is parking space reserved for buses.",
             "de": "Dies ist ein Stellplatz, der für Busse reserviert ist.",
             "nl": "Deze parkeerplek is gereserveerd voor bussen.",
-            "pl": "To miejsce parkingowe jest przeznaczone dla busów."
+            "pl": "To miejsce parkingowe jest przeznaczone dla busów.",
+            "ca": "Es tracta d'una plaça d'aparcament reservada per a autobusos."
           }
         },
         {
@@ -113,7 +121,8 @@
             "en": "This is parking space reserved for motorcycles.",
             "de": "Dies ist ein Stellplatz, der für Motorräder reserviert ist.",
             "nl": "Deze parkeerplek is gereserveerd voor motoren.",
-            "pl": "To miejsce parkingowe jest przeznaczone dla motocykli."
+            "pl": "To miejsce parkingowe jest przeznaczone dla motocykli.",
+            "ca": "Es tracta d'una plaça d'aparcament reservada per a motos."
           }
         },
         {
@@ -122,7 +131,8 @@
             "en": "This is a parking space reserved for parents with children.",
             "de": "Dies ist ein Stellplatz, der für Eltern mit Kindern reserviert ist.",
             "nl": "Deze parkeerplek is gereserveerd voor ouders met kinderen.",
-            "pl": "To miejsce jest przeznaczone dla rodziców z dziećmi."
+            "pl": "To miejsce jest przeznaczone dla rodziców z dziećmi.",
+            "ca": "Es tracta d'una plaça d'aparcament reservada per a pares amb fills."
           }
         },
         {
@@ -131,7 +141,8 @@
             "en": "This is a parking space reserved for staff.",
             "de": "Dies ist ein Stellplatz, der für das Personal reserviert ist.",
             "nl": "Deze parkeerplek is gereserveerd voor personeel.",
-            "pl": "To jest miejsce parkingowe przeznaczone dla pracowników."
+            "pl": "To jest miejsce parkingowe przeznaczone dla pracowników.",
+            "ca": "Es tracta d'una plaça d'aparcament reservada al personal."
           }
         },
         {

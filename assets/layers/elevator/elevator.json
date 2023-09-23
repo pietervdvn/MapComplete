@@ -213,22 +213,26 @@
     {
       "id": "speech_output_available",
       "question": {
-        "en": "Has this elevator speech output?"
+        "en": "Has this elevator speech output?",
+        "de": "Verfügt der Aufzug über eine Sprachausgabe?"
       },
       "questionHint": {
-        "en": "E.g. it announces the current floor"
+        "en": "E.g. it announces the current floor",
+        "de": "Z.B. werden Stockwerke angesagt"
       },
       "mappings": [
         {
           "if": "speech_output=yes",
           "then": {
-            "en": "This elevator has speech output"
+            "en": "This elevator has speech output",
+            "de": "Der Aufzug verfügt über eine Sprachausgabe"
           }
         },
         {
           "if": "speech_output=no",
           "then": {
-            "en": "This elevator does not have speech output"
+            "en": "This elevator does not have speech output",
+            "de": "Der Aufzug verfügt über keine Sprachausgabe"
           }
         }
       ]
