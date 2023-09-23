@@ -2679,24 +2679,10 @@
         },
         "description": "Una capa mostrando restaurantes y locales de comida rápida (con un renderizado especial para friterías)",
         "filter": {
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Tiene menú vegetariano"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Tiene menú vegano"
-                    }
-                }
-            },
             "4": {
                 "options": {
                     "0": {
-                        "question": "Tiene menú halah"
+                        "question": "Tiene menú vegano"
                     }
                 }
             },
@@ -3215,7 +3201,7 @@
                         "question": "Todas las notas"
                     },
                     "1": {
-                        "question": "Ocultar las nostras de importación"
+                        "question": "Ocultar las notas de importación"
                     },
                     "2": {
                         "question": "Solo mostrar las notas de importación"
@@ -3282,7 +3268,7 @@
                         "then": "Esta torre no tiene ascensor"
                     }
                 },
-                "question": "¿Tiene ascensor esta torre?"
+                "question": "¿Esta torre tiene ascensor?"
             },
             "name": {
                 "mappings": {

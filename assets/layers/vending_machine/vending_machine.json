@@ -130,7 +130,8 @@
             "de": "Kondome werden verkauft",
             "fr": "Vent des préservatifs",
             "ca": "Es venen preservatius"
-          }
+          },
+          "icon": "./assets/layers/vending_machine/condom.svg"
         },
         {
           "if": "vending=coffee",
@@ -279,6 +280,14 @@
             "ca": "Es venen bitllets de transport públic"
           },
           "icon": "./assets/themes/stations/public_transport_tickets.svg"
+        },
+        {
+          "if": "vending=meat",
+          "then": {
+            "en": "Meat products are being sold",
+            "nl": "Vleesproducten worden hier verkocht"
+          },
+          "icon": "./assets/layers/id_presets/temaki-meat.svg"
         }
       ],
       "multiAnswer": true
@@ -357,7 +366,18 @@
         }
       ]
     },
-    "level"
+    "level",
+    {
+      "builtin": "phone",
+      "override": {
+        "question": {
+          "en": "What is the phone number of the operator of this vending machine?"
+        },
+        "questionHint": {
+          "en": "This is the number you can call in case of problems with the vending machine"
+        }
+      }
+    }
   ],
   "calculatedTags": [
     "_vending_count=feat.properties.vending.split(';').length"
@@ -436,6 +456,10 @@
           {
             "if": "vending=flowers",
             "then": "circle:white;./assets/layers/id_presets/maki-florist.svg"
+          },
+          {
+            "if": "vending=condoms",
+            "then": "circle:white;./assets/layers/vending_machine/condom.svg"
           }
         ]
       },
@@ -777,6 +801,30 @@
             "ca": "Venda de flors"
           },
           "osmTags": "vending~i~.*flowers.*"
+        },
+        {
+          "osmTags": "vending~i~.*parking_tickets.*",
+          "question": {
+            "en": "Sale of parking"
+          }
+        },
+        {
+          "osmTags": "vending=elongated_coin",
+          "question": {
+            "en": "Sale of pressed pennies"
+          }
+        },
+        {
+          "osmTags": "vending~i~.*public_transport_tickets.*",
+          "question": {
+            "en": "Sale of public transport tickets"
+          }
+        },
+        {
+          "osmTags": "vending=meat",
+          "question": {
+            "en": "Sale of meat products"
+          }
         }
       ]
     }
