@@ -9849,6 +9849,18 @@
                     },
                     "16": {
                         "question": "Sale of flowers"
+                    },
+                    "17": {
+                        "question": "Sale of parking"
+                    },
+                    "18": {
+                        "question": "Sale of pressed pennies"
+                    },
+                    "19": {
+                        "question": "Sale of public transport tickets"
+                    },
+                    "20": {
+                        "question": "Sale of meat products"
                     }
                 }
             }
@@ -9880,6 +9892,12 @@
                 },
                 "question": "Who operates this vending machine?",
                 "render": "This vending machine is operated by {operator}"
+            },
+            "phone": {
+                "override": {
+                    "question": "What is the phone number of the operator of this vending machine?",
+                    "questionHint": "This is the number you can call in case of problems with the vending machine"
+                }
             },
             "vending": {
                 "mappings": {
@@ -9939,6 +9957,9 @@
                     },
                     "18": {
                         "then": "Public transport tickets are sold"
+                    },
+                    "19": {
+                        "then": "Meat products are being sold"
                     }
                 },
                 "question": "What does this vending machine sell?",

@@ -9144,6 +9144,9 @@
                     },
                     "18": {
                         "then": "Openbaar vervoerkaartjes worden verkocht"
+                    },
+                    "19": {
+                        "then": "Vleesproducten worden hier verkocht"
                     }
                 },
                 "question": "Wat verkoopt deze verkoopautomaat?",

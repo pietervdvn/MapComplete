@@ -368,7 +368,7 @@
     },
     "level",
     {
-      "builtin": ["phone"],
+      "builtin": "phone",
       "override": {
         "question": {
           "en": "What is the phone number of the operator of this vending machine?"
@@ -460,7 +460,6 @@
           {
             "if": "vending=condoms",
             "then": "circle:white;./assets/layers/vending_machine/condom.svg"
-
           }
         ]
       },
