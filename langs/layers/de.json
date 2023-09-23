@@ -4851,9 +4851,6 @@
             },
             "2": {
                 "options": {
-                    "0": {
-                        "question": "Vegetarische Gerichte im Angebot"
-                    },
                     "1": {
                         "question": "Nur Fastfood-Geschäfte"
                     },
@@ -4862,17 +4859,10 @@
                     }
                 }
             },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Vegane Gerichte im Angebot"
-                    }
-                }
-            },
             "4": {
                 "options": {
                     "0": {
-                        "question": "Halal Gerichte im Angebot"
+                        "question": "Vegane Gerichte im Angebot"
                     }
                 }
             },

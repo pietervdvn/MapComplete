@@ -1012,13 +1012,7 @@
       "options": [
         {
           "question": {
-            "en": "Has a vegetarian menu",
-            "de": "Vegetarische Gerichte im Angebot",
-            "es": "Tiene menú vegetariano",
-            "fr": "A un menu végétarien",
-            "nl": "Heeft een vegetarisch menu",
-            "pl": "Ma menu wegetariańskie",
-            "ca": "Té menú vegetarià"
+            "en": "Restaurants and fast food businesses"
           }
         },
         {
@@ -1048,13 +1042,8 @@
       "options": [
         {
           "question": {
-            "en": "Has a vegan menu",
-            "nl": "Heeft een veganistisch menu",
-            "de": "Vegane Gerichte im Angebot",
-            "es": "Tiene menú vegano",
-            "fr": "A un menu végétalien",
-            "pl": "Ma menu wegańskie",
-            "ca": "Té menú vegà"
+            "en": "Has a vegetarian menu",
+            "nl": "Heeft een vegetarisch menu"
           },
           "osmTags": {
             "or": [
@@ -1072,13 +1061,13 @@
       "options": [
         {
           "question": {
-            "en": "Has a halal menu",
-            "nl": "Heeft een halal menu",
-            "de": "Halal Gerichte im Angebot",
-            "es": "Tiene menú halah",
-            "fr": "A un menu halal",
-            "da": "Har en halalmenu",
-            "ca": "Té menú halal"
+            "en": "Has a vegan menu",
+            "nl": "Heeft een veganistisch menu",
+            "de": "Vegane Gerichte im Angebot",
+            "es": "Tiene menú vegano",
+            "fr": "A un menu végétalien",
+            "pl": "Ma menu wegańskie",
+            "ca": "Té menú vegà"
           },
           "osmTags": {
             "or": [

@@ -4889,7 +4889,7 @@
             "2": {
                 "options": {
                     "0": {
-                        "question": "Has a vegetarian menu"
+                        "question": "Restaurants and fast food businesses"
                     },
                     "1": {
                         "question": "Only fastfood businesses"
@@ -4902,14 +4902,14 @@
             "3": {
                 "options": {
                     "0": {
-                        "question": "Has a vegan menu"
+                        "question": "Has a vegetarian menu"
                     }
                 }
             },
             "4": {
                 "options": {
                     "0": {
-                        "question": "Has a halal menu"
+                        "question": "Has a vegan menu"
                     }
                 }
             },

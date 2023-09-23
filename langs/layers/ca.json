@@ -3940,9 +3940,6 @@
             },
             "2": {
                 "options": {
-                    "0": {
-                        "question": "Té menú vegetarià"
-                    },
                     "1": {
                         "question": "Només negocis de menjar ràpid"
                     },
@@ -3951,17 +3948,10 @@
                     }
                 }
             },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Té menú vegà"
-                    }
-                }
-            },
             "4": {
                 "options": {
                     "0": {
-                        "question": "Té menú halal"
+                        "question": "Té menú vegà"
                     }
                 }
             },
