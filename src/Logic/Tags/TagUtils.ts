@@ -98,7 +98,7 @@ export class TagUtils {
                         "Invalid type to flatten the multiAnswer: key is a regex too",
                         tagsFilter
                     )
-                    throw "Invalid type to FlattenMultiAnswer"
+                    throw "Invalid type to FlattenMultiAnswer: key is a regex too"
                 }
                 const keystr = <string>key
                 if (keyValues[keystr] === undefined) {
@@ -109,7 +109,10 @@ export class TagUtils {
             }
 
             console.error("Invalid type to flatten the multiAnswer", tagsFilter)
-            throw "Invalid type to FlattenMultiAnswer"
+            throw (
+                "Invalid type to FlattenMultiAnswer, not one of RegexTag, Tag or And: " +
+                tagsFilter.asHumanString(false, false, {})
+            )
         }
         return keyValues
     }
