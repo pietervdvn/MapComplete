@@ -242,6 +242,14 @@
           "icon": "./assets/layers/vending_machine/potato.svg"
         },
         {
+          "if": "vending=meat",
+          "then": {
+            "en": "Meat is sold",
+            "nl": "Vlees wordt verkocht"
+          },
+          "icon": "./assets/layers/id_presets/temaki-meat.svg"
+        },
+        {
           "if": "vending=flowers",
           "then": {
             "en": "Flowers are sold",
@@ -432,6 +440,10 @@
           {
             "if": "vending=potatoes",
             "then": "circle:white;./assets/layers/vending_machine/potato.svg"
+          },
+          {
+            "if": "vending=meat",
+            "then": "./assets/layers/id_presets/temaki-meat.svg"
           },
           {
             "if": "vending=flowers",
@@ -767,6 +779,14 @@
             "ca": "Venda de patates"
           },
           "osmTags": "vending~i~.*potatoes.*"
+        },
+        {
+          "question": {
+            "en": "Sale of meat",
+            "nl": "Verkoop van vlees",
+            "de": "Verkauf von Fleisch"
+          },
+          "osmTags": "vending~i~.*meat.*"
         },
         {
           "question": {

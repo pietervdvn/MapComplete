@@ -9059,6 +9059,9 @@
                         "question": "Verkoop van aardappelen"
                     },
                     "16": {
+                        "question": "Verkoop van vlees"
+                    },
+                    "17": {
                         "question": "Verkoop van bloemen"
                     }
                 }
@@ -9140,12 +9143,15 @@
                         "then": "Aardappelen worden verkocht"
                     },
                     "15": {
-                        "then": "Bloemen worden verkocht"
+                        "then": "Vlees wordt verkocht"
                     },
                     "16": {
+                        "then": "Bloemen worden verkocht"
+                    },
+                    "17": {
                         "then": "Parkeerkaarten worden verkocht"
                     },
-                    "18": {
+                    "19": {
                         "then": "Openbaar vervoerkaartjes worden verkocht"
                     }
                 },

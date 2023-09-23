@@ -9760,6 +9760,9 @@
                         "question": "Verkauf von Kartoffeln"
                     },
                     "16": {
+                        "question": "Verkauf von Fleisch"
+                    },
+                    "17": {
                         "question": "Verkauf von Blumen"
                     }
                 }
@@ -9840,13 +9843,13 @@
                     "14": {
                         "then": "Kartoffeln werden verkauft"
                     },
-                    "15": {
+                    "16": {
                         "then": "Blumen werden verkauft"
                     },
-                    "16": {
+                    "17": {
                         "then": "Parkscheine werden verkauft"
                     },
-                    "18": {
+                    "19": {
                         "then": "Fahrscheine werden verkauft"
                     }
                 },

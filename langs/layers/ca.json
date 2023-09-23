@@ -7938,7 +7938,7 @@
                     "15": {
                         "question": "Venda de patates"
                     },
-                    "16": {
+                    "17": {
                         "question": "Venda de flors"
                     }
                 }
@@ -8019,16 +8019,16 @@
                     "14": {
                         "then": "Es venen papes"
                     },
-                    "15": {
+                    "16": {
                         "then": "Es venen flors"
                     },
-                    "16": {
+                    "17": {
                         "then": "Es venen tiquets d'aparcament"
                     },
-                    "17": {
+                    "18": {
                         "then": "Es venen cèntims premsats"
                     },
-                    "18": {
+                    "19": {
                         "then": "Es venen bitllets de transport públic"
                     }
                 },

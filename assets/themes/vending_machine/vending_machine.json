@@ -36,7 +36,8 @@
               "vending!~(parking_tickets|elongated_coin|public_transport_tickets)"
             ]
           }
-        }
+        },
+        "=presets": []
       }
     },
     {
