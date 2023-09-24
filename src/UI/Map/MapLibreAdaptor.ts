@@ -455,8 +455,10 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             map.rotateTo(0, { duration: 0 })
             map.setPitch(0)
             map.dragRotate.disable()
+            map.touchZoomRotate.disableRotation();
         } else {
             map.dragRotate.enable()
+            map.touchZoomRotate.enableRotation();
         }
     }
 
