@@ -3,10 +3,10 @@ import { writeFileSync } from "fs"
 import {
     FixLegacyTheme,
     UpdateLegacyLayer,
-} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert"
-import Translations from "../UI/i18n/Translations"
-import { Translation } from "../UI/i18n/Translation"
-import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
+} from "../src/Models/ThemeConfig/Conversion/LegacyJsonConvert"
+import Translations from "../src/UI/i18n/Translations"
+import { Translation } from "../src/UI/i18n/Translation"
+import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 
 /*
  * This script reads all theme and layer files and reformats them inplace
