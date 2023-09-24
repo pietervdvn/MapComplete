@@ -198,7 +198,7 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
 
         this.backgroundLayerId = QueryParameters.GetQueryParameter(
             "background",
-            layoutToUse?.defaultBackgroundId ?? "osm",
+            layoutToUse?.defaultBackgroundId,
             "The id of the background layer to start with"
         )
     }
