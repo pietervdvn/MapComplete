@@ -134,6 +134,8 @@ The question is  *How much basketball hoops does this pitch have?*
   - This option cannot be chosen as answer
 
 
+This tagrendering is only visible in the popup if the following condition is met: `sport~^((^|.*;)basketball(;.*|$))$`
+
 
 
 ### sport_pitch-surface 
