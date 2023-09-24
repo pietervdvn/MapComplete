@@ -405,7 +405,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             this.removeCurrentLayer(map)
         } else {
             // Make sure that the default maptiler style is loaded as it gives an overlay with roads
-            const maptiler = AvailableRasterLayers.maplibre.properties
+            const maptiler = AvailableRasterLayers.maptilerDefaultLayer.properties
             if (!map.getSource(maptiler.id)) {
                 this.removeCurrentLayer(map)
                 map.addSource(maptiler.id, MapLibreAdaptor.prepareWmsSource(maptiler))

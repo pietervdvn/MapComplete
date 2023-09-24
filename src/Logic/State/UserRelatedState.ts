@@ -43,6 +43,7 @@ export default class UserRelatedState {
     public readonly homeLocation: FeatureSource
     public readonly language: UIEventSource<string>
     public readonly preferredBackgroundLayer: UIEventSource<string | "photo" | "map" | "osmbasedmap" | undefined>
+    public readonly preferredBackgroundLayerForTheme: UIEventSource<string | "photo" | "map" | "osmbasedmap" | undefined>
     /**
      * The number of seconds that the GPS-locations are stored in memory.
      * Time in seconds
@@ -258,6 +259,7 @@ export default class UserRelatedState {
     ): UIEventSource<Record<string, string>> {
         const amendedPrefs = new UIEventSource<Record<string, string>>({
             _theme: layout?.id,
+            "_theme:backgroundLayer": layout?.defaultBackgroundId,
             _backend: this.osmConnection.Backend(),
             _applicationOpened: new Date().toISOString(),
             _supports_sharing:
