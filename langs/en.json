@@ -344,6 +344,8 @@
         },
         "useSearch": "Use the search above to see presets",
         "useSearchForMore": "Use the search function to search within {total} more values…",
+        "waitingForGeopermission": "Waiting for your permission to use the geolocation...",
+        "waitingForLocation": "Searching your current location...",
         "weekdays": {
             "abbreviations": {
                 "friday": "Fri",
