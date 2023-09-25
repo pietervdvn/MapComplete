@@ -1,0 +1,4 @@
+{
+  "#":"Some configuration tweaks specifically for hetzner",
+  "country_coder_host": "https://countrycoder.mapcomplete.org/"
+}
