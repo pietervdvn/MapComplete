@@ -1034,9 +1034,61 @@
                 },
                 "question": "Is this vending machine still operational?",
                 "render": "The operational status is <i>{operational_status}</i>"
+            },
+            "bicycle_tube_vending_machine-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Continental tubes are sold here"
+                    },
+                    "1": {
+                        "then": "Schwalbe tubes are sold here"
+                    }
+                },
+                "question": "Which brand of tubes are sold here?",
+                "render": "{brand} tubes are sold here"
+            },
+            "bicycle_tube_vending_machine-charge": {
+                "question": "How much does a bicycle tube cost?",
+                "render": "A bicycle tube costs {charge}"
+            },
+            "bicycle_tube_vending_machine-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Maintained by Schwalbe"
+                    },
+                    "1": {
+                        "then": "Maintained by Continental"
+                    }
+                },
+                "question": "Who maintains this vending machine?"
+            },
+            "other-items-vending": {
+                "mappings": {
+                    "0": {
+                        "then": "Bicycle lights are sold here"
+                    },
+                    "1": {
+                        "then": "Gloves are sold here"
+                    },
+                    "2": {
+                        "then": "Bicycle repair kits are sold here"
+                    },
+                    "3": {
+                        "then": "Bicycle pumps are sold here"
+                    },
+                    "4": {
+                        "then": "Bicycle locks are sold here"
+                    }
+                },
+                "question": "Are other biycle accessories sold here?"
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Bicycle tube vending machine {name}"
+                }
+            },
             "render": "Bicycle tube vending machine"
         }
     },
@@ -9910,6 +9962,21 @@
                     },
                     "20": {
                         "question": "Sale of public transport tickets"
+                    },
+                    "21": {
+                        "question": "Sale of bicycle lights"
+                    },
+                    "22": {
+                        "question": "Sale of gloves"
+                    },
+                    "23": {
+                        "question": "Sale of bicycle repair kits"
+                    },
+                    "24": {
+                        "question": "Sale of bicycle pumps"
+                    },
+                    "25": {
+                        "question": "Sale of bicycle locks"
                     }
                 }
             }
@@ -10011,7 +10078,19 @@
                         "then": "Public transport tickets are sold"
                     },
                     "20": {
-                        "then": "Meat products are being sold"
+                        "then": "Bicycle lights are sold"
+                    },
+                    "21": {
+                        "then": "Gloves are sold"
+                    },
+                    "22": {
+                        "then": "Bicycle repair kits are sold"
+                    },
+                    "23": {
+                        "then": "Bicycle pumps are sold"
+                    },
+                    "24": {
+                        "then": "Bicycle locks are sold"
                     }
                 },
                 "question": "What does this vending machine sell?",

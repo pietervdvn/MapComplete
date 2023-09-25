@@ -930,6 +930,25 @@
                 },
                 "question": "Is deze verkoopsautomaat nog steeds werkende?",
                 "render": "Deze verkoopsautomaat is <i>{operational_status}</i>"
+            },
+            "other-items-vending": {
+                "mappings": {
+                    "0": {
+                        "then": "Fietslampjes worden hier verkocht"
+                    },
+                    "1": {
+                        "then": "Handschoenen worden hier verkocht"
+                    },
+                    "2": {
+                        "then": "Fietsreparatiesets worden hier verkocht"
+                    },
+                    "3": {
+                        "then": "Fietspompen worden hier verkocht"
+                    },
+                    "4": {
+                        "then": "Fietssloten worden hier verkocht"
+                    }
+                }
             }
         },
         "title": {
@@ -9056,6 +9075,21 @@
                     },
                     "17": {
                         "question": "Verkoop van bloemen"
+                    },
+                    "21": {
+                        "question": "Verkoop van fietslampjes"
+                    },
+                    "22": {
+                        "question": "Verkoop van handschoenen"
+                    },
+                    "23": {
+                        "question": "Verkoop van fietsreparatiesets"
+                    },
+                    "24": {
+                        "question": "Verkoop van fietspompen"
+                    },
+                    "25": {
+                        "question": "Verkoop van fietssloten"
                     }
                 }
             }
@@ -9148,7 +9182,19 @@
                         "then": "Openbaar vervoerkaartjes worden verkocht"
                     },
                     "20": {
-                        "then": "Vleesproducten worden verkocht"
+                        "then": "Fietslampjes worden verkocht"
+                    },
+                    "21": {
+                        "then": "Handschoenen worden verkocht"
+                    },
+                    "22": {
+                        "then": "Fietsreparatiesets worden verkocht"
+                    },
+                    "23": {
+                        "then": "Fietspompen worden verkocht"
+                    },
+                    "24": {
+                        "then": "Fietssloten worden verkocht"
                     }
                 },
                 "question": "Wat verkoopt deze verkoopautomaat?",
