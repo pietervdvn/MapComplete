@@ -7,7 +7,7 @@ import { Store } from "../../UIEventSource";
 
 export default class LinkImageAction extends OsmChangeAction {
     private readonly _proposedKey: "image" | "mapillary" | "wiki_commons" | string;
-    private readonly _url: string;
+    public readonly _url: string;
     private readonly _currentTags: Store<Record<string, string>>;
     private readonly _meta: { theme: string; changeType: "add-image" | "link-image" };
 

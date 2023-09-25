@@ -16,6 +16,10 @@ import Svg from "../../Svg";
 export let state: SpecialVisualizationState;
 
 export let tags: Store<OsmTags>;
+/**
+ * Image to show in the button
+ * NOT the image to upload!
+ */
 export let image: string = undefined;
 if (image === "") {
   image = undefined;
@@ -30,7 +34,7 @@ function handleFiles(files: FileList) {
     const file = files.item(i);
     console.log("Got file", file.name)
     try {
-      state.imageUploadManager.uploadImageAndApply(file, tags.data);
+      state.imageUploadManager.uploadImageAndApply(file, tags);
     } catch (e) {
       alert(e);
     }

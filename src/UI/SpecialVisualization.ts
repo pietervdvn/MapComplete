@@ -16,6 +16,7 @@ import { MenuState } from "../Models/MenuState";
 import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader";
 import { RasterLayerPolygon } from "../Models/RasterLayers";
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager";
+import { OsmTags } from "../Models/OsmFeature";
 
 /**
  * The state needed to render a special Visualisation.
@@ -26,7 +27,7 @@ export interface SpecialVisualizationState {
   readonly featureSwitches: FeatureSwitchState;
 
   readonly layerState: LayerState;
-  readonly featureProperties: { getStore(id: string): UIEventSource<Record<string, string>> };
+  readonly featureProperties: { getStore(id: string): UIEventSource<Record<string, string>>, trackFeature?(feature: { properties: OsmTags }) };
 
   readonly indexedFeatures: IndexedFeatureSource;
 

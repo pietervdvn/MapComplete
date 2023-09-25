@@ -7,6 +7,7 @@ import { Store, UIEventSource } from "../UIEventSource";
 import { OsmConnection } from "../Osm/OsmConnection";
 import { Changes } from "../Osm/Changes";
 import Translations from "../../UI/i18n/Translations";
+import NoteCommentElement from "../../UI/Popup/NoteCommentElement";
 
 
 /**
@@ -58,24 +59,25 @@ export class ImageUploadManager {
   }
 
   /**
-   * Uploads the given image, applies the correct title and license for the known user
+   * Uploads the given image, applies the correct title and license for the known user.
+   * Will then add this image to the OSM-feature or the OSM-note
    */
-  public async uploadImageAndApply(file: File, tags: OsmTags) {
+  public async uploadImageAndApply(file: File, tagsStore: UIEventSource<OsmTags>) : Promise<void>{
 
-      const sizeInBytes = file.size
-    const featureId = <OsmId> tags.id
-      console.log(file.name + " has a size of " + sizeInBytes + " Bytes, attaching to", tags.id)
-      const self = this
-      if (sizeInBytes > this._uploader.maxFileSizeInMegabytes * 1000000) {
-          this.increaseCountFor(this._uploadStarted, featureId)
-          this.increaseCountFor(this._uploadFailed, featureId)
-          throw(
-            Translations.t.image.toBig.Subs({
-                actual_size: Math.floor(sizeInBytes / 1000000) + "MB",
-                max_size: self._uploader.maxFileSizeInMegabytes + "MB",
-            }).txt
-          )
-      }
+    const sizeInBytes = file.size;
+    const tags= tagsStore.data
+    const featureId = <OsmId>tags.id;
+    const self = this;
+    if (sizeInBytes > this._uploader.maxFileSizeInMegabytes * 1000000) {
+      this.increaseCountFor(this._uploadStarted, featureId);
+      this.increaseCountFor(this._uploadFailed, featureId);
+      throw (
+        Translations.t.image.toBig.Subs({
+          actual_size: Math.floor(sizeInBytes / 1000000) + "MB",
+          max_size: self._uploader.maxFileSizeInMegabytes + "MB"
+        }).txt
+      );
+    }
 
 
     const licenseStore = this._osmConnection?.GetPreference("pictures-license", "CC0");
@@ -93,8 +95,15 @@ export class ImageUploadManager {
       "osmid:" + tags.id
     ].join("\n");
 
-    console.log("Upload done, creating ")
+    console.log("Upload done, creating ");
     const action = await this.uploadImageWithLicense(featureId, title, description, file);
+    if(!isNaN(Number( featureId))){
+      // THis is a map note
+      const url = action._url
+      await this._osmConnection.addCommentToNote(featureId, url)
+      NoteCommentElement.addCommentTo(url, <UIEventSource<any>> tagsStore, {osmConnection: this._osmConnection})
+      return
+    }
     await this._changes.applyAction(action);
   }
 
@@ -121,7 +130,7 @@ export class ImageUploadManager {
       }
 
     }
-    console.log("Uploading done, creating action for", featureId)
+    console.log("Uploading done, creating action for", featureId);
     const action = new LinkImageAction(featureId, key, value, properties, {
       theme: this._layout.id,
       changeType: "add-image"
