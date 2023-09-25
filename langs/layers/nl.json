@@ -934,18 +934,21 @@
             "other-items-vending": {
                 "mappings": {
                     "0": {
-                        "then": "Fietslampjes worden hier verkocht"
+                        "then": "Fietsbinnenbanden worden hier verkocht"
                     },
                     "1": {
-                        "then": "Handschoenen worden hier verkocht"
+                        "then": "Fietslampjes worden hier verkocht"
                     },
                     "2": {
-                        "then": "Fietsreparatiesets worden hier verkocht"
+                        "then": "Handschoenen worden hier verkocht"
                     },
                     "3": {
-                        "then": "Fietspompen worden hier verkocht"
+                        "then": "Fietsreparatiesets worden hier verkocht"
                     },
                     "4": {
+                        "then": "Fietspompen worden hier verkocht"
+                    },
+                    "5": {
                         "then": "Fietssloten worden hier verkocht"
                     }
                 }

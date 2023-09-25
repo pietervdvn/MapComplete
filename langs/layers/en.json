@@ -1065,18 +1065,21 @@
             "other-items-vending": {
                 "mappings": {
                     "0": {
-                        "then": "Bicycle lights are sold here"
+                        "then": "Bicycle inner tubes are sold here"
                     },
                     "1": {
-                        "then": "Gloves are sold here"
+                        "then": "Bicycle lights are sold here"
                     },
                     "2": {
-                        "then": "Bicycle repair kits are sold here"
+                        "then": "Gloves are sold here"
                     },
                     "3": {
-                        "then": "Bicycle pumps are sold here"
+                        "then": "Bicycle repair kits are sold here"
                     },
                     "4": {
+                        "then": "Bicycle pumps are sold here"
+                    },
+                    "5": {
                         "then": "Bicycle locks are sold here"
                     }
                 },
