@@ -155,13 +155,13 @@
             "mapillaryHelp": "<b>Mapillary</b> ist ein Online-Dienst, der Straßenbilder sammelt und sie unter einer freien Lizenz anbietet. Mitwirkende dürfen diese Bilder verwenden, um OpenStreetMap zu verbessern",
             "openIssueTracker": "Fehler melden",
             "openMapillary": "Mapillary öffnen",
-            "openOsmcha": "Letzte Bearbeitungen zum Thema {theme} ansehen",
+            "openOsmcha": "Neueste Bearbeitungen mit {theme} ansehen",
             "themeBy": "Dieses Thema wurde erstellt von {author}",
             "title": "Copyright und Urheberrechtsangabe",
             "translatedBy": "MapComplete wurde übersetzt von {contributors} und <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} weiteren Personen</a>"
         },
         "back": "Zurück",
-        "backToIndex": "Zurück zur Übersicht aller thematischen Karten",
+        "backToIndex": "Zur Übersicht aller Themenkarten",
         "backgroundMap": "Hintergrundkarte auswählen",
         "backgroundSwitch": "Hintergrund wechseln",
         "cancel": "Abbrechen",
@@ -344,6 +344,8 @@
         },
         "useSearch": "Verwenden Sie die Suche oben, um Voreinstellungen anzuzeigen",
         "useSearchForMore": "Verwenden Sie die Suchfunktion, um innerhalb von {total} weitere Werte zu suchen…",
+        "waitingForGeopermission": "Warten auf Ihre Erlaubnis, Standortdaten zu verwenden…",
+        "waitingForLocation": "Ihr Standort wird gesucht…",
         "weekdays": {
             "abbreviations": {
                 "friday": "Fr",
@@ -380,6 +382,7 @@
                 "born": "Geboren am: {value}",
                 "died": "Gestorben am: {value}"
             },
+            "readMore": "Weiterlesen",
             "searchToShort": "Ihre Suchanfrage ist zu kurz, geben Sie einen längeren Text ein",
             "searchWikidata": "Wikidata durchsuchen",
             "wikipediaboxTitle": "Wikipedia"
@@ -413,6 +416,9 @@
         "pleaseLogin": "Bitte anmelden, um ein Bild hinzuzufügen",
         "respectPrivacy": "Bitte respektieren Sie die Privatsphäre. Fotografieren Sie weder Personen noch Nummernschilder. Benutzen Sie keine urheberrechtlich geschützten Quellen wie z.B. Google Maps oder Google Streetview.",
         "toBig": "Ihr Bild ist mit {actual_size} zu groß. Die maximale Bildgröße ist {max_size}",
+        "upload": {
+            "failReasons": "Keine Internetverbindung"
+        },
         "uploadDone": "Ihr Bild wurde hinzugefügt. Vielen Dank für Ihre Hilfe!",
         "uploadFailed": "Das Bild konnte nicht hochladen werden. Haben Sie eine aktive Internetverbindung und sind APIs von Dritten erlaubt? Der Brave Browser oder UMatrix blockieren diese eventuell.",
         "uploadMultipleDone": "{count} Bilder wurden hinzugefügt. Vielen Dank für die Hilfe!",
@@ -533,7 +539,7 @@
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Partner-Rezension)",
-        "attribution": "Rezensionen werden bereitgestellt von <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> und sind unter <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a> verfügbar.",
+        "attribution": "Rezensionen von <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> sind unter <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a> verfügbar.",
         "i_am_affiliated": "<span>Ich bin an diesem Objekt beteiligt</span><br/><span class='subtle'>Auswählen, wenn Sie Eigentümer, Ersteller, Angestellter … sind</span>",
         "name_required": "Der Name des Objekts ist erforderlich, um Bewertungen zu erstellen und anzuzeigen",
         "no_reviews_yet": "Es gibt noch keine Bewertungen. Hilf mit der ersten Bewertung dem Geschäft und der Open Data Bewegung!",
