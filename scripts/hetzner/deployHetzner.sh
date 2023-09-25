@@ -21,3 +21,4 @@ scp -r dist.zip hetzner:/root/ &&
 scp ./scripts/hetzner/config/* hetzner:/root/
 ssh hetzner -t "unzip dist.zip && rm dist.zip && rm -rf public/ && mv dist public && caddy stop && caddy start"
 rm dist.zip
+npm run clean
