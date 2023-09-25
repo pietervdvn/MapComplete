@@ -41,6 +41,5 @@
   "layers": [
     "windturbine"
   ],
-  "defaultBackgroundId": "CartoDB.Voyager",
   "credits": "Seppe Santens"
 }

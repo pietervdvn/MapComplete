@@ -19,6 +19,9 @@ export default abstract class OsmChangeAction {
     constructor(mainObjectId: string, trackStatistics: boolean = true) {
         this.trackStatistics = trackStatistics
         this.mainObjectId = mainObjectId
+        if(mainObjectId === undefined || mainObjectId === null){
+            throw "OsmObject received '"+mainObjectId+"' as mainObjectId"
+        }
     }
 
     public async Perform(changes: Changes) {

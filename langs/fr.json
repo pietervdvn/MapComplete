@@ -279,7 +279,8 @@
                 "public": {
                     "name": "Publique"
                 }
-            }
+            },
+            "title": "Envoyer votre trace sur OpenStreetMap.org"
         },
         "weekdays": {
             "abbreviations": {

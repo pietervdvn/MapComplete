@@ -46,7 +46,7 @@ export class PngMapCreator {
             const pixelRatio = 4
             const mapElem = new MlMap({
                 container: div.id,
-                style: AvailableRasterLayers.maplibre.properties.url,
+                style: AvailableRasterLayers.maptilerDefaultLayer.properties.url,
                 center: [l.lon, l.lat],
                 zoom: settings.zoom.data,
                 pixelRatio,

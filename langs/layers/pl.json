@@ -1473,9 +1473,6 @@
             },
             "2": {
                 "options": {
-                    "0": {
-                        "question": "Ma menu wegetariańskie"
-                    },
                     "1": {
                         "question": "Tylko fast-foody"
                     },
@@ -1484,7 +1481,7 @@
                     }
                 }
             },
-            "3": {
+            "4": {
                 "options": {
                     "0": {
                         "question": "Ma menu wegańskie"

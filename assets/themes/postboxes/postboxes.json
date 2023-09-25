@@ -46,7 +46,6 @@
   "startLon": 9.9937,
   "startZoom": 13,
   "widenFactor": 1.5,
-  "defaultBackgroundId": "CartoDB.Voyager",
   "clustering": {
     "maxZoom": 14,
     "minNeededElements": 100

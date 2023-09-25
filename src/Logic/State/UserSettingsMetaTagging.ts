@@ -9,5 +9,6 @@ export class ThemeMetaTagging {
       Utils.AddLazyProperty(feat.properties, '_mastodon_candidate_a', () => (feat => {const e = document.createElement('div');e.innerHTML = feat.properties._d;return Array.from(e.getElementsByTagName("a")).filter(a => a.href.match(/mastodon|en.osm.town/) !== null)[0]?.href   }) (feat)  ) 
       Utils.AddLazyProperty(feat.properties, '_mastodon_link', () => (feat => {const e = document.createElement('div');e.innerHTML = feat.properties._d;return Array.from(e.getElementsByTagName("a")).filter(a => a.getAttribute("rel")?.indexOf('me') >= 0)[0]?.href})(feat)  ) 
       Utils.AddLazyProperty(feat.properties, '_mastodon_candidate', () => feat.properties._mastodon_candidate_md ?? feat.properties._mastodon_candidate_a ) 
+      feat.properties['__current_backgroun'] = 'initial_value'
    }
 }

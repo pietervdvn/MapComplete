@@ -4,7 +4,8 @@
     "en": "OpenStreetMap notes",
     "nl": "OpenStreetMap Notes",
     "de": "OpenStreetMap-Hinweise",
-    "es": "Notas de OpenStreetMap"
+    "es": "Notas de OpenStreetMap",
+    "ca": "Notes d'OpenStreetMap"
   },
   "description": "This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)",
   "source": {
@@ -33,7 +34,8 @@
           "nl": "Gesloten Note",
           "de": "Geschlossene Notiz",
           "es": "Nota cerrada",
-          "pl": "Zamknięta notatka"
+          "pl": "Zamknięta notatka",
+          "ca": "Nota tancada"
         }
       }
     ]
@@ -72,7 +74,8 @@
           "en": "<h3>Nearby images</h3>The pictures below are nearby geotagged images and might be helpful to handle this note.",
           "de": "<h3>Bilder aus der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus der Nähe und könnten für die Bearbeitung dieser Notiz hilfreich sein.",
           "es": "<h3>Imágenes cercanas</h3>Las imágenes de debajo son imágenes geoetiquetadas cercanas y pueden ser útiles para encargarse de esta nota.",
-          "nl": "<h3>Afbeeldingen in de buurt</h3>Onderstaande afbeeldingen zijn afbeeldingen met geo-referentie en die in de buurt genomen zijn. Mogelijks zijn ze nuttig om deze kaartnota af te handelen."
+          "nl": "<h3>Afbeeldingen in de buurt</h3>Onderstaande afbeeldingen zijn afbeeldingen met geo-referentie en die in de buurt genomen zijn. Mogelijks zijn ze nuttig om deze kaartnota af te handelen.",
+          "ca": "<h3>Imatges properes</h3>Les imatges de sota són imatges geoetiquetades properes i poden ser útils per a encarregar-se d'aquesta nota."
         },
         "special": {
           "type": "nearby_images",
@@ -86,7 +89,8 @@
         "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Report {_first_user} for spam or inappropriate messages</a>",
         "nl": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>{_first_user} melden voor spam of ongepaste opmerkingen</a>",
         "de": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle' {_first_user} für Spam oder unangemessene Nachrichten melden</a>",
-        "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reportar {_first_user}"
+        "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reportar {_first_user}",
+        "ca": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reporta {_first_user} per spam o missatges inapropiats</a>"
       },
       "condition": "_opened_by_anonymous_user=false"
     },
@@ -96,7 +100,8 @@
         "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Report this note as spam or inappropriate</a>",
         "nl": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Deze note melden als spam of ongepast</a>",
         "de": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Notiz als Spam oder unangemessen melden</a>",
-        "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta esta nota como spam o inapropiada</a>"
+        "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta esta nota como spam o inapropiada</a>",
+        "ca": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta aquesta nota com spam o inapropiada</a>"
       }
     }
   ],
@@ -330,7 +335,8 @@
             "en": "Hide import notes",
             "nl": "Verberg import Notes",
             "de": "Importnotizen ausblenden",
-            "es": "Ocultar las nostras de importación"
+            "es": "Ocultar las notas de importación",
+            "ca": "Oculta les notes d'importació"
           }
         },
         {
@@ -339,7 +345,8 @@
             "en": "Show only import Notes",
             "nl": "Toon enkel import Notes",
             "de": "Nur Importnotizen anzeigen",
-            "es": "Solo mostrar las notas de importación"
+            "es": "Solo mostrar las notas de importación",
+            "ca": "Mostrar només les notes d'importació"
           }
         }
       ]

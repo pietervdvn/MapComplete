@@ -6,7 +6,7 @@
   import ToSvelte from "../Base/ToSvelte.svelte"
   import { AttributedImage } from "../Image/AttributedImage"
   import AllImageProviders from "../../Logic/ImageProviders/AllImageProviders"
-  import LinkPicture from "../../Logic/Osm/Actions/LinkPicture"
+  import LinkImageAction from "../../Logic/Osm/Actions/LinkImageAction"
   import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
   import { Tag } from "../../Logic/Tags/Tag"
   import { GeoOperations } from "../../Logic/GeoOperations"
@@ -40,7 +40,7 @@
     const key = Object.keys(image.osmTags)[0]
     const url = image.osmTags[key]
     if (isLinked) {
-      const action = new LinkPicture(currentTags.id, key, url, currentTags, {
+      const action = new LinkImageAction(currentTags.id, key, url, currentTags, {
         theme: state.layout.id,
         changeType: "link-image",
       })

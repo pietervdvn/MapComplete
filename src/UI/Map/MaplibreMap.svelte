@@ -24,7 +24,7 @@
     writable({ lng: 0, lat: 0 })
   export let zoom: Readable<number> = writable(1)
 
-  const styleUrl = AvailableRasterLayers.maplibre.properties.url
+  const styleUrl = AvailableRasterLayers.maptilerDefaultLayer.properties.url
 
   let _map: Map
   onMount(() => {

@@ -858,6 +858,10 @@ video {
   margin-right: 3rem;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -884,10 +888,6 @@ video {
 
 .mr-1 {
   margin-right: 0.25rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
 }
 
 .ml-1 {
@@ -2660,6 +2660,26 @@ a.link-underline {
 
 .hover\:opacity-100:hover {
   opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @-webkit-keyframes spin {
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes spin {
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+
+  .motion-safe\:animate-spin {
+    -webkit-animation: spin 1s linear infinite;
+            animation: spin 1s linear infinite;
+  }
 }
 
 @media (max-width: 480px) {

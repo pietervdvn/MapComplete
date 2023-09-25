@@ -131,7 +131,7 @@
           "render": {
             "en": "Change made with <a href='{host}'>{host}</a>",
             "ca": "Canviat fet amb <a href='{host}'>{host}</a>",
-            "de": "Änderung über <a href='{host}'>{host}</a>",
+            "de": "Geändert über <a href='{host}'>{host}</a>",
             "fr": "Modification faite avec <a href='{host}'>{host}</a>",
             "nl": "Wijziging gemaakt met <a href='{host}'>{host}</a>"
           },

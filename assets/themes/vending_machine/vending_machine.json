@@ -29,6 +29,7 @@
           "sameAs": "vending_machine"
         },
         "minzoom": 18,
+        "=presets": [],
         "source": {
           "osmTags": {
             "and": [
@@ -36,8 +37,7 @@
               "vending!~(parking_tickets|elongated_coin|public_transport_tickets)"
             ]
           }
-        },
-        "=presets": []
+        }
       }
     },
     {

@@ -4202,6 +4202,18 @@
                     }
                 }
             },
+            "speech_output_available": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Aufzug verfügt über eine Sprachausgabe"
+                    },
+                    "1": {
+                        "then": "Der Aufzug verfügt über keine Sprachausgabe"
+                    }
+                },
+                "question": "Verfügt der Aufzug über eine Sprachausgabe?",
+                "questionHint": "Z.B. werden Stockwerke angesagt"
+            },
             "tactile_writing_language": {
                 "render": {
                     "special": {
@@ -4839,9 +4851,6 @@
             },
             "2": {
                 "options": {
-                    "0": {
-                        "question": "Vegetarische Gerichte im Angebot"
-                    },
                     "1": {
                         "question": "Nur Fastfood-Geschäfte"
                     },
@@ -4850,17 +4859,10 @@
                     }
                 }
             },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Vegane Gerichte im Angebot"
-                    }
-                }
-            },
             "4": {
                 "options": {
                     "0": {
-                        "question": "Halal Gerichte im Angebot"
+                        "question": "Vegane Gerichte im Angebot"
                     }
                 }
             },

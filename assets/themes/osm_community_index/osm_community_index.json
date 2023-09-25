@@ -29,7 +29,6 @@
   },
   "icon": "./assets/themes/osm_community_index/osm.svg",
   "startLat": 50.8465573,
-  "defaultBackgroundId": "CartoDB.Voyager",
   "startLon": 4.351697,
   "startZoom": 16,
   "clustering": false,

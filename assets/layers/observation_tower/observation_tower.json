@@ -40,7 +40,8 @@
     "nl": "Torens om van het uitzicht te genieten",
     "de": "Türme zur Aussicht auf die umgebende Landschaft",
     "es": "Torres con vista panorámica",
-    "pl": "Wieże z panoramicznym widokiem"
+    "pl": "Wieże z panoramicznym widokiem",
+    "ca": "Torres amb vista panoràmica"
   },
   "tagRenderings": [
     "images",
@@ -93,7 +94,8 @@
         "nl": "Deze toren is {height} hoog",
         "de": "Dieser Turm ist {height} hoch",
         "es": "Esta torre mide {height}",
-        "pl": "Ta wieża ma wysokość {height}"
+        "pl": "Ta wieża ma wysokość {height}",
+        "ca": "Aquesta torre fa {height}"
       },
       "freeform": {
         "key": "height",
@@ -141,14 +143,16 @@
         "nl": "Hoeveel moet men betalen om deze toren te bezoeken?",
         "de": "Was kostet der Zugang zu diesem Turm?",
         "es": "¿Cuánto hay que pagar para entrar en esta torre?",
-        "pl": "Ile kosztuje wstęp na tę wieżę?"
+        "pl": "Ile kosztuje wstęp na tę wieżę?",
+        "ca": "Quant hi ha que pagar per entrar a aquesta torre?"
       },
       "render": {
         "en": "Visiting this tower costs <b>{charge}</b>",
         "nl": "Deze toren bezoeken kost <b>{charge}</b>",
         "de": "Der Besuch des Turms kostet <b>{charge}</b>",
         "es": "Visitar esta torre cuesta <b>{charge}</b>",
-        "pl": "Wizyta na tej wieży kosztuje <b>{charge}</b>"
+        "pl": "Wizyta na tej wieży kosztuje <b>{charge}</b>",
+        "ca": "Visitar aquesta torre costa <b>{charge}</b>"
       },
       "freeform": {
         "key": "charge",
@@ -228,8 +232,9 @@
         "en": "Does this tower have an elevator?",
         "nl": "Heeft deze toren een lift?",
         "de": "Hat dieser Turm einen Aufzug?",
-        "es": "¿Tiene ascensor esta torre?",
-        "pl": "Czy ta wieża ma windę?"
+        "es": "¿Esta torre tiene ascensor?",
+        "pl": "Czy ta wieża ma windę?",
+        "ca": "Aquesta torre té ascensor?"
       },
       "mappings": [
         {
@@ -239,7 +244,8 @@
             "nl": "Deze toren heeft een lift die bezoekers naar de top van de toren brengt",
             "de": "Dieser Turm verfügt über einen Aufzug, der die Besucher nach oben bringt",
             "es": "Esta torre tiene un ascensor que lleva a los visitantes a la cima",
-            "pl": "Ta wieża ma windę, która zabiera zwiedzających na górę"
+            "pl": "Ta wieża ma windę, która zabiera zwiedzających na górę",
+            "ca": "Aquesta torre té un ascensor que porta els visitants al cim"
           }
         },
         {
@@ -249,7 +255,8 @@
             "nl": "Deze toren heeft geen lift",
             "de": "Dieser Turm hat keinen Aufzug",
             "es": "Esta torre no tiene ascensor",
-            "pl": "Ta wieża nie ma windy"
+            "pl": "Ta wieża nie ma windy",
+            "ca": "Aquesta torre no té ascensor"
           }
         }
       ],
@@ -274,7 +281,8 @@
         "en": "Maintained by <b>{operator}</b>",
         "de": "Betrieben von <b>{operator}</b>",
         "es": "Mantenida por <b>{operator}</b>",
-        "pl": "Obsługiwana przez <b>{operator}</b>"
+        "pl": "Obsługiwana przez <b>{operator}</b>",
+        "ca": "Mantés per {operator}"
       },
       "freeform": {
         "key": "operator"

@@ -4526,24 +4526,17 @@
                     }
                 }
             },
-            "2": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Heeft een vegetarisch menu"
                     }
                 }
             },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Heeft een veganistisch menu"
-                    }
-                }
-            },
             "4": {
                 "options": {
                     "0": {
-                        "question": "Heeft een halal menu"
+                        "question": "Heeft een veganistisch menu"
                     }
                 }
             },
@@ -9153,6 +9146,9 @@
                     },
                     "19": {
                         "then": "Openbaar vervoerkaartjes worden verkocht"
+                    },
+                    "20": {
+                        "then": "Vleesproducten worden verkocht"
                     }
                 },
                 "question": "Wat verkoopt deze verkoopautomaat?",

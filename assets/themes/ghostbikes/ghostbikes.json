@@ -44,7 +44,7 @@
   "layers": [
     "ghost_bike"
   ],
-  "defaultBackgroundId": "CartoDB.Positron",
+  "defaultBackgroundId": "maptiler.backdrop",
   "clustering": {
     "maxZoom": 0
   }

@@ -92,7 +92,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
         maplibreMap.addCallbackAndRunD((map) => {
             map.on("load", () => {
-                self.setBackground()
+                map.resize()
                 self.MoveMapToCurrentLoc(self.location.data)
                 self.SetZoom(self.zoom.data)
                 self.setMaxBounds(self.maxbounds.data)
@@ -102,8 +102,10 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 self.setMinzoom(self.minzoom.data)
                 self.setMaxzoom(self.maxzoom.data)
                 self.setBounds(self.bounds.data)
+                self.setBackground()
                 this.updateStores(true)
             })
+            map.resize()
             self.MoveMapToCurrentLoc(self.location.data)
             self.SetZoom(self.zoom.data)
             self.setMaxBounds(self.maxbounds.data)
@@ -113,6 +115,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             self.setMinzoom(self.minzoom.data)
             self.setMaxzoom(self.maxzoom.data)
             self.setBounds(self.bounds.data)
+            self.setBackground()
             this.updateStores(true)
             map.on("moveend", () => this.updateStores())
             map.on("click", (e) => {
@@ -126,7 +129,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             })
         })
 
-        this.rasterLayer.addCallback((_) =>
+        this.rasterLayer.addCallbackAndRun((_) =>
             self.setBackground().catch((_) => {
                 console.error("Could not set background")
             })
@@ -402,7 +405,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             this.removeCurrentLayer(map)
         } else {
             // Make sure that the default maptiler style is loaded as it gives an overlay with roads
-            const maptiler = AvailableRasterLayers.maplibre.properties
+            const maptiler = AvailableRasterLayers.maptilerDefaultLayer.properties
             if (!map.getSource(maptiler.id)) {
                 this.removeCurrentLayer(map)
                 map.addSource(maptiler.id, MapLibreAdaptor.prepareWmsSource(maptiler))
@@ -417,7 +420,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (!map.getSource(background.id)) {
             map.addSource(background.id, MapLibreAdaptor.prepareWmsSource(background))
         }
-        map.resize()
         if (!map.getLayer(background.id)) {
             map.addLayer(
                 {
@@ -430,7 +432,9 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             )
         }
         await this.awaitStyleIsLoaded()
-        this.removeCurrentLayer(map)
+        if(this._currentRasterLayer !== background?.id){
+            this.removeCurrentLayer(map)
+        }
         this._currentRasterLayer = background?.id
     }
 
@@ -455,8 +459,10 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             map.rotateTo(0, { duration: 0 })
             map.setPitch(0)
             map.dragRotate.disable()
+            map.touchZoomRotate.disableRotation();
         } else {
             map.dragRotate.enable()
+            map.touchZoomRotate.enableRotation();
         }
     }
 

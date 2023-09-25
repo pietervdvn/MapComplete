@@ -54,6 +54,7 @@
 
     if (
       confg.mappings?.length > 0 &&
+      confg.multiAnswer &&
       (checkedMappings === undefined ||
         checkedMappings?.length < confg.mappings.length + (confg.freeform ? 1 : 0))
     ) {

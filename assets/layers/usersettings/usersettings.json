@@ -23,7 +23,8 @@
     "_d=feat.properties._description?.replace(/&lt;/g,'<')?.replace(/&gt;/g,'>') ?? ''",
     "_mastodon_candidate_a=(feat => {const e = document.createElement('div');e.innerHTML = feat.properties._d;return Array.from(e.getElementsByTagName(\"a\")).filter(a => a.href.match(/mastodon|en.osm.town/) !== null)[0]?.href   }) (feat) ",
     "_mastodon_link=(feat => {const e = document.createElement('div');e.innerHTML = feat.properties._d;return Array.from(e.getElementsByTagName(\"a\")).filter(a => a.getAttribute(\"rel\")?.indexOf('me') >= 0)[0]?.href})(feat) ",
-    "_mastodon_candidate=feat.properties._mastodon_candidate_md ?? feat.properties._mastodon_candidate_a"
+    "_mastodon_candidate=feat.properties._mastodon_candidate_md ?? feat.properties._mastodon_candidate_a",
+    "__current_background:='initial_value'"
   ],
   "tagRenderings": [
     {
@@ -102,6 +103,72 @@
       "render": {
         "*": "{logout()}"
       }
+    },
+    {
+      "id": "background-layer-readonly",
+      "condition": {
+        "and": [
+          "_theme:backgroundLayer~*",
+          "mapcomplete-preferred-background-layer~*",
+          "_theme:backgroundLayer!:={mapcomplete-preferred-background-layer}"
+        ]
+      },
+      "render": {
+        "en": "This thematic map has a predefined background layer set. Your default theme setting does not apply"
+      }
+    },
+    {
+      "id": "background-layer",
+      "question": {
+        "en": "What background layer should be shown by default?"
+      },
+      "condition": "_theme:backgroundLayer=",
+      "mappings": [
+        {
+          "if": "mapcomplete-preferred-background-layer=",
+          "then": {
+            "en": "Use the default background layer"
+          }
+        },
+        {
+          "if": "mapcomplete-preferred-background-layer=osm",
+          "then": {
+            "en": "Use OpenStreetMap-carto as default layer"
+          }
+        },
+        {
+          "if": "mapcomplete-preferred-background-layer=photo",
+          "then": {
+            "en": "Use aerial imagery as default background"
+          }
+        },
+        {
+          "if": "mapcomplete-preferred-background-layer=map",
+          "then": {
+            "en": "Use a non-openstreetmap based map as default background"
+          }
+        },
+        {
+          "if": "mapcomplete-preferred-background-layer:={__current_background}",
+          "then": {
+            "en": "Use the current background layer (<span class='code'>{__current_background}</span>) as default background"
+          },
+          "hideInAnswer": {
+            "or": [
+              "__current_background=",
+              "__current_background=osm",
+              "__current_background=initial_value"
+            ]
+          }
+        },
+        {
+          "if": "mapcomplete-preferred-background-layer~*",
+          "then": {
+            "en": "Use background layer <span class='code'>{mapcomplete-preferred-background-layer}</span> as default background"
+          },
+          "hideInAnswer": true
+        }
+      ]
     },
     {
       "id": "picture-license",

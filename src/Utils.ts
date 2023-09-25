@@ -387,7 +387,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return newArr
     }
 
-    public static Dupiclates(arr: string[]): string[] {
+    public static Duplicates(arr: string[]): string[] {
         if (arr === undefined) {
             return undefined
         }

@@ -24,7 +24,6 @@
     "eu": "Hezkuntza",
     "pl": "Edukacja"
   },
-  "defaultBackgroundId": "CartoDB.Voyager",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 0,

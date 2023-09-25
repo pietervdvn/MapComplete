@@ -1,60 +1,30 @@
-import ImageProvider, { ProvidedImage } from "./ImageProvider"
-import BaseUIElement from "../../UI/BaseUIElement"
-import { Utils } from "../../Utils"
-import Constants from "../../Models/Constants"
-import { LicenseInfo } from "./LicenseInfo"
+import ImageProvider, { ProvidedImage } from "./ImageProvider";
+import BaseUIElement from "../../UI/BaseUIElement";
+import { Utils } from "../../Utils";
+import Constants from "../../Models/Constants";
+import { LicenseInfo } from "./LicenseInfo";
+import { ImageUploader } from "./ImageUploader";
 
-export class Imgur extends ImageProvider {
+export class Imgur extends ImageProvider implements ImageUploader{
     public static readonly defaultValuePrefix = ["https://i.imgur.com"]
     public static readonly singleton = new Imgur()
     public readonly defaultKeyPrefixes: string[] = ["image"]
-
+    public readonly  maxFileSizeInMegabytes = 10
     private constructor() {
         super()
     }
 
-    static uploadMultiple(
+    /**
+     * Uploads an image, returns the URL where to find the image
+     * @param title
+     * @param description
+     * @param blob
+     */
+    public async uploadImage(
         title: string,
         description: string,
-        blobs: FileList,
-        handleSuccessfullUpload: (imageURL: string) => Promise<void>,
-        allDone: () => void,
-        onFail: (reason: string) => void,
-        offset: number = 0
-    ) {
-        if (blobs.length == offset) {
-            allDone()
-            return
-        }
-        const blob = blobs.item(offset)
-        const self = this
-        this.uploadImage(
-            title,
-            description,
-            blob,
-            async (imageUrl) => {
-                await handleSuccessfullUpload(imageUrl)
-                self.uploadMultiple(
-                    title,
-                    description,
-                    blobs,
-                    handleSuccessfullUpload,
-                    allDone,
-                    onFail,
-                    offset + 1
-                )
-            },
-            onFail
-        )
-    }
-
-    static uploadImage(
-        title: string,
-        description: string,
-        blob: File,
-        handleSuccessfullUpload: (imageURL: string) => Promise<void>,
-        onFail: (reason: string) => void
-    ) {
+        blob: File
+    ): Promise<{ key: string, value: string }> {
         const apiUrl = "https://api.imgur.com/3/image"
         const apiKey = Constants.ImgurApiKey
 
@@ -62,6 +32,7 @@ export class Imgur extends ImageProvider {
         formData.append("image", blob)
         formData.append("title", title)
         formData.append("description", description)
+
 
         const settings: RequestInit = {
             method: "POST",
@@ -74,17 +45,9 @@ export class Imgur extends ImageProvider {
         }
 
         // Response contains stringified JSON
-        // Image URL available at response.data.link
-        fetch(apiUrl, settings)
-            .then(async function (response) {
-                const content = await response.json()
-                await handleSuccessfullUpload(content.data.link)
-            })
-            .catch((reason) => {
-                console.log("Uploading to IMGUR failed", reason)
-                // @ts-ignore
-                onFail(reason)
-            })
+        const response = await fetch(apiUrl, settings)
+        const content = await response.json()
+        return { key: "image", value: content.data.link }
     }
 
     SourceIcon(): BaseUIElement {

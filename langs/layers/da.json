@@ -2063,13 +2063,6 @@
     },
     "food": {
         "filter": {
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Har en halalmenu"
-                    }
-                }
-            },
             "5": {
                 "options": {
                     "0": {

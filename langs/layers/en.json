@@ -4892,7 +4892,7 @@
             "2": {
                 "options": {
                     "0": {
-                        "question": "Has a vegetarian menu"
+                        "question": "Restaurants and fast food businesses"
                     },
                     "1": {
                         "question": "Only fastfood businesses"
@@ -4905,14 +4905,14 @@
             "3": {
                 "options": {
                     "0": {
-                        "question": "Has a vegan menu"
+                        "question": "Has a vegetarian menu"
                     }
                 }
             },
             "4": {
                 "options": {
                     "0": {
-                        "question": "Has a halal menu"
+                        "question": "Has a vegan menu"
                     }
                 }
             },
@@ -8872,7 +8872,7 @@
             "has_alpr": {
                 "mappings": {
                     "0": {
-                        "then": "This is a normal camera"
+                        "then": "This is a camera without number plate recognition."
                     },
                     "1": {
                         "then": "This is an ALPR (Automatic License Plate Reader)"
@@ -9652,6 +9652,32 @@
                 },
                 "question": "Should questions for unknown data fields appear one-by-one or together?"
             },
+            "background-layer": {
+                "mappings": {
+                    "0": {
+                        "then": "Use the default background layer"
+                    },
+                    "1": {
+                        "then": "Use OpenStreetMap-carto as default layer"
+                    },
+                    "2": {
+                        "then": "Use aerial imagery as default background"
+                    },
+                    "3": {
+                        "then": "Use a non-openstreetmap based map as default background"
+                    },
+                    "4": {
+                        "then": "Use the current background layer (<span class='code'>{__current_background}</span>) as default background"
+                    },
+                    "5": {
+                        "then": "Use background layer <span class='code'>{mapcomplete-preferred-background-layer}</span> as default background"
+                    }
+                },
+                "question": "What background layer should be shown by default?"
+            },
+            "background-layer-readonly": {
+                "render": "This thematic map has a predefined background layer set. Your default theme setting does not apply"
+            },
             "contributor-thanks": {
                 "mappings": {
                     "0": {
@@ -9870,8 +9896,20 @@
                     "15": {
                         "question": "Sale of potatoes"
                     },
+                    "16": {
+                        "question": "Sale of meat"
+                    },
                     "17": {
                         "question": "Sale of flowers"
+                    },
+                    "18": {
+                        "question": "Sale of parking tickets"
+                    },
+                    "19": {
+                        "question": "Sale of pressed pennies"
+                    },
+                    "20": {
+                        "question": "Sale of public transport tickets"
                     }
                 }
             }
@@ -9903,6 +9941,12 @@
                 },
                 "question": "Who operates this vending machine?",
                 "render": "This vending machine is operated by {operator}"
+            },
+            "phone": {
+                "override": {
+                    "question": "What is the phone number of the operator of this vending machine?",
+                    "questionHint": "This is the number you can call in case of problems with the vending machine"
+                }
             },
             "vending": {
                 "mappings": {
@@ -9965,6 +10009,9 @@
                     },
                     "19": {
                         "then": "Public transport tickets are sold"
+                    },
+                    "20": {
+                        "then": "Meat products are being sold"
                     }
                 },
                 "question": "What does this vending machine sell?",

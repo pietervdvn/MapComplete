@@ -59,7 +59,8 @@
           "if": "map_type=topo",
           "then": {
             "en": "Topographical map <p class='subtle'>The map contains contour lines. </p>",
-            "de": "Topographische Katte <p class='subtle'> Die Karte enthält Höhenlinien. </p>"
+            "de": "Topographische Katte <p class='subtle'> Die Karte enthält Höhenlinien. </p>",
+            "ca": "Mapa topogràfic <p class='subtle'>El mapa conté línies de contorn. </p>"
           }
         },
         {
@@ -75,7 +76,8 @@
           "then": {
             "en": "This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> ",
             "de": "Dies ist eine schematische Karte. <p class='subtle'>Eine skizzierte Karte mit nur wichtigen Wegen und POIs. Die Winkel, Entfernungen usw. sind lediglich illustrativ, nicht genau.</p> ",
-            "pl": "To jest mapa schematyczna. <p class='subtle'>Mapa-szkic z tylko ważnymi drogami i POI. Kąty, odległości itp. są tylko ilustratywne, niedokładne.</p> "
+            "pl": "To jest mapa schematyczna. <p class='subtle'>Mapa-szkic z tylko ważnymi drogami i POI. Kąty, odległości itp. są tylko ilustratywne, niedokładne.</p> ",
+            "ca": "Això és un mapa esquemàtic. <p class='subtle'>Un mapa esbossat amb només camins importants i PDI. Els angles, els trajectes etc. són merament il·lustratius, no acurat.</p> "
           }
         },
         {
@@ -92,7 +94,8 @@
       "question": {
         "en": "What is the size of the shown area on the map?",
         "de": "Was wird von der Fläche abgedeckt?",
-        "pl": "Jaki jest rozmiar obszaru pokazanego na tej mapie?"
+        "pl": "Jaki jest rozmiar obszaru pokazanego na tej mapie?",
+        "ca": "Quina és la mida de l'àrea mostrada en el mapa?"
       },
       "mappings": [
         {
@@ -100,14 +103,16 @@
           "then": {
             "en": "A map of the rooms within a building",
             "de": "Eine Karte der Räume innerhalb eines Gebäudes",
-            "pl": "Plan pomieszczeń w budynku"
+            "pl": "Plan pomieszczeń w budynku",
+            "ca": "Un mapa de les habitacions dins d'un edifici"
           }
         },
         {
           "if": "map_size=site",
           "then": {
             "en": "A map of special site, like of a historical castle, a park, a campus, a forest, ....",
-            "de": "Örtlichkeit (z.B. Burg)"
+            "de": "Örtlichkeit (z.B. Burg)",
+            "ca": "Un mapa d'un lloc especial, com un castell històric, un parc, un campus, un bosc, …"
           }
         },
         {
@@ -115,7 +120,8 @@
           "then": {
             "en": "A map showing the village or town",
             "de": "Eine Karte, die das Dorf oder die Stadt anzeigt",
-            "pl": "Mapa pokazująca wieś lub niewielkie miasto"
+            "pl": "Mapa pokazująca wieś lub niewielkie miasto",
+            "ca": "Un mapa que mostra el poble o la ciutat"
           }
         },
         {
@@ -123,7 +129,8 @@
           "then": {
             "en": " A map of a city",
             "de": "Stadt",
-            "pl": " Mapa miasta"
+            "pl": " Mapa miasta",
+            "ca": " Un mapa d'una ciutat"
           }
         },
         {
@@ -131,7 +138,8 @@
           "then": {
             "en": "The map of an entire region, showing multiple cities and villages",
             "de": "Region",
-            "pl": "Mapa całego regionu, pokazująca wiele miast i wsi"
+            "pl": "Mapa całego regionu, pokazująca wiele miast i wsi",
+            "ca": "El mapa d'una regió sencera, mostrant múltiples ciutats i pobles"
           }
         }
       ]

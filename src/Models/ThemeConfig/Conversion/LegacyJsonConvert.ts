@@ -4,6 +4,7 @@ import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import { DesugaringStep, Each, Fuse, On } from "./Conversion"
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
+import { del } from "idb-keyval";
 
 export class UpdateLegacyLayer extends DesugaringStep<
     LayerConfigJson | string | { builtin; override }
@@ -41,7 +42,6 @@ export class UpdateLegacyLayer extends DesugaringStep<
                 delete preset["preciseInput"]
             } else if (preciseInput !== undefined) {
                 delete preciseInput["preferredBackground"]
-                console.log("Precise input:", preciseInput)
                 preset.snapToLayer = preciseInput.snapToLayer
                 delete preciseInput.snapToLayer
                 if (preciseInput.maxSnapDistance) {
@@ -146,7 +146,6 @@ export class UpdateLegacyLayer extends DesugaringStep<
             }
             const pr = <PointRenderingConfigJson>rendering
             let iconSize = pr.iconSize
-            console.log("Iconsize is", iconSize)
 
             if (Object.keys(pr.iconSize).length === 1 && pr.iconSize["render"] !== undefined) {
                 iconSize = pr.iconSize["render"]
@@ -196,6 +195,10 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
 
         if (oldThemeConfig.socialImage === "") {
             delete oldThemeConfig.socialImage
+        }
+
+        if(oldThemeConfig.defaultBackgroundId === "osm"){
+            console.log("Removing old background in", json.id)
         }
 
         if (oldThemeConfig["roamingRenderings"] !== undefined) {
