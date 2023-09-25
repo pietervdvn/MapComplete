@@ -406,7 +406,9 @@
         "dontDelete": "Cancel·lar",
         "isDeleted": "Esborrada",
         "nearby": {
-            "seeNearby": "Explora i vincula imatges properes"
+            "link": "Aquesta imatge mostra l'objecte",
+            "seeNearby": "Explora i vincula imatges properes",
+            "title": "Imatges a peu de carrer properes"
         },
         "pleaseLogin": "Entrar per pujar una foto",
         "respectPrivacy": "Respecta la privacitat. No fotografiïs gent o matrícules. No facis servir imatges de Google Maps, Google Streetview o altres fonts amb copyright.",
