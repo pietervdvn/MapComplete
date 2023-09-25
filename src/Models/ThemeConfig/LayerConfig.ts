@@ -204,12 +204,6 @@ export default class LayerConfig extends WithContextLoader {
                 }
                 const code = kv.substring(index + 1)
 
-                try {
-                    new Function("feat", "return " + code + ";")
-                } catch (e) {
-                    throw `Invalid function definition: the custom javascript is invalid:${e} (at ${context}). The offending javascript code is:\n    ${code}`
-                }
-
                 this.calculatedTags.push([key, code, isStrict])
             }
         }
@@ -365,7 +359,7 @@ export default class LayerConfig extends WithContextLoader {
         }
 
         {
-            const duplicateIds = Utils.Dupiclates(this.filters.map((f) => f.id))
+            const duplicateIds = Utils.Duplicates(this.filters.map((f) => f.id))
             if (duplicateIds.length > 0) {
                 throw `Some filters have a duplicate id: ${duplicateIds} (at ${context}.filters)`
             }

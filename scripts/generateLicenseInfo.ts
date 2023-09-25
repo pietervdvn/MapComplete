@@ -3,7 +3,7 @@ import SmallLicense from "../src/Models/smallLicense"
 import ScriptUtils from "./ScriptUtils"
 import Script from "./Script"
 import { Utils } from "../src/Utils"
-
+const prompt = require("prompt-sync")()
 export class GenerateLicenseInfo extends Script {
     private static readonly needsLicenseRef = new Set(
         ScriptUtils.readDirRecSync("./LICENSES")

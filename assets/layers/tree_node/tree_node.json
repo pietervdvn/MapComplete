@@ -74,8 +74,7 @@
     "images",
     {
       "id": "plantnet",
-      "render": "{plantnet_detection()}",
-      "condition": "species:wikidata="
+      "render": "{plantnet_detection()}"
     },
     {
       "id": "tree-species-wikidata",

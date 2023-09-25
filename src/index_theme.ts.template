@@ -2,7 +2,10 @@ import ThemeViewState from "./src/Models/ThemeViewState"
 import SvelteUIElement from "./src/UI/Base/SvelteUIElement"
 import ThemeViewGUI from "./src/UI/ThemeViewGUI.svelte"
 import LayoutConfig from "./src/Models/ThemeConfig/LayoutConfig";
+import MetaTagging from "./src/Logic/MetaTagging";
 
+
+MetaTagging.setThemeMetatagging(new ThemeMetaTagging())
 const state = new ThemeViewState(new LayoutConfig(<any> layout))
 const main = new SvelteUIElement(ThemeViewGUI, { state })
 main.AttachTo("maindiv")

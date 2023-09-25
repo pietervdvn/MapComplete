@@ -1,7 +1,11 @@
 import { Store } from "../../Logic/UIEventSource"
 import BaseUIElement from "../BaseUIElement"
 import Combine from "./Combine"
+import { Utils } from "../../Utils"
 
+/**
+ * @deprecated
+ */
 export class VariableUiElement extends BaseUIElement {
     private readonly _contents?: Store<string | BaseUIElement | BaseUIElement[]>
 
@@ -42,7 +46,7 @@ export class VariableUiElement extends BaseUIElement {
                 return
             }
             if (typeof contents === "string") {
-                el.innerHTML = contents
+                el.innerHTML = Utils.purify(contents)
             } else if (contents instanceof Array) {
                 for (const content of contents) {
                     const c = content?.ConstructElement()

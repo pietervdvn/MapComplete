@@ -1,18 +1,13 @@
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import Toggle from "../Input/Toggle"
-import Lazy from "../Base/Lazy"
 import { ProvidedImage } from "../../Logic/ImageProviders/ImageProvider"
-import PlantNetSpeciesSearch from "../BigComponents/PlantNetSpeciesSearch"
 import Wikidata from "../../Logic/Web/Wikidata"
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
 import { And } from "../../Logic/Tags/And"
 import { Tag } from "../../Logic/Tags/Tag"
-import { SubtleButton } from "../Base/SubtleButton"
-import Combine from "../Base/Combine"
-import Svg from "../../Svg"
-import Translations from "../i18n/Translations"
 import AllImageProviders from "../../Logic/ImageProviders/AllImageProviders"
 import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import PlantNet from "../PlantNet/PlantNet.svelte"
 
 export class PlantNetDetectionViz implements SpecialVisualization {
     funcName = "plantnet_detection"
@@ -37,45 +32,29 @@ export class PlantNetDetectionViz implements SpecialVisualization {
             imagePrefixes = [].concat(...args.map((a) => a.split(",")))
         }
 
-        const detect = new UIEventSource(false)
-        const toggle = new Toggle(
-            new Lazy(() => {
-                const allProvidedImages: Store<ProvidedImage[]> = AllImageProviders.LoadImagesFor(
-                    tags,
-                    imagePrefixes
-                )
-                const allImages: Store<string[]> = allProvidedImages.map((pi) =>
-                    pi.map((pi) => pi.url)
-                )
-                return new PlantNetSpeciesSearch(allImages, async (selectedWikidata) => {
-                    selectedWikidata = Wikidata.ExtractKey(selectedWikidata)
-                    const change = new ChangeTagAction(
-                        tags.data.id,
-                        new And([
-                            new Tag("species:wikidata", selectedWikidata),
-                            new Tag("source:species:wikidata", "PlantNet.org AI"),
-                        ]),
-                        tags.data,
-                        {
-                            theme: state.layout.id,
-                            changeType: "plantnet-ai-detection",
-                        }
-                    )
-                    await state.changes.applyAction(change)
-                })
-            }),
-            new SubtleButton(undefined, "Detect plant species with plantnet.org").onClick(() =>
-                detect.setData(true)
-            ),
-            detect
+        const allProvidedImages: Store<ProvidedImage[]> = AllImageProviders.LoadImagesFor(
+            tags,
+            imagePrefixes
         )
+        const imageUrls: Store<string[]> = allProvidedImages.map((pi) => pi.map((pi) => pi.url))
 
-        return new Combine([
-            toggle,
-            new Combine([
-                Svg.plantnet_logo_svg().SetClass("w-10 h-10 p-1 mr-1 bg-white rounded-full"),
-                Translations.t.plantDetection.poweredByPlantnet,
-            ]).SetClass("flex p-2 bg-gray-200 rounded-xl self-end"),
-        ]).SetClass("flex flex-col")
+        async function applySpecies(selectedWikidata) {
+            selectedWikidata = Wikidata.ExtractKey(selectedWikidata)
+            const change = new ChangeTagAction(
+                tags.data.id,
+                new And([
+                    new Tag("species:wikidata", selectedWikidata),
+                    new Tag("source:species:wikidata", "PlantNet.org AI"),
+                ]),
+                tags.data,
+                {
+                    theme: state.layout.id,
+                    changeType: "plantnet-ai-detection",
+                }
+            )
+            await state.changes.applyAction(change)
+        }
+
+        return new SvelteUIElement(PlantNet, { imageUrls, onConfirm: applySpecies })
     }
 }

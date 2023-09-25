@@ -62,8 +62,13 @@
     state.newFeatures.features.data.push(feature)
     state.newFeatures.features.ping()
     state.selectedElement?.setData(feature)
+    if(state.featureProperties.trackFeature){
+      state.featureProperties.trackFeature(feature)
+    }
     comment.setData("")
     created = true
+    state.selectedElement.setData(feature)
+    state.selectedLayer.setData(state.layerState.filteredLayers.get("note"))
   }
 </script>
 

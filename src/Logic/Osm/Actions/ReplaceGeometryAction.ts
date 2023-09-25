@@ -215,7 +215,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction implements Pr
                 throw "Invalid ID to conflate: " + this.wayToReplaceId
             }
             const url = `${
-                this.state.osmConnection?._oauth_config?.url ?? "https://openstreetmap.org"
+                this.state.osmConnection?._oauth_config?.url ?? "https://api.openstreetmap.org"
             }/api/0.6/${this.wayToReplaceId}/full`
             const rawData = await Utils.downloadJsonCached(url, 1000)
             parsed = OsmObject.ParseObjects(rawData.elements)

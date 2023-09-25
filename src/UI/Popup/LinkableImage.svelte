@@ -6,7 +6,7 @@
   import ToSvelte from "../Base/ToSvelte.svelte"
   import { AttributedImage } from "../Image/AttributedImage"
   import AllImageProviders from "../../Logic/ImageProviders/AllImageProviders"
-  import LinkPicture from "../../Logic/Osm/Actions/LinkPicture"
+  import LinkImageAction from "../../Logic/Osm/Actions/LinkImageAction"
   import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
   import { Tag } from "../../Logic/Tags/Tag"
   import { GeoOperations } from "../../Logic/GeoOperations"
@@ -23,25 +23,24 @@
   export let feature: Feature
   export let layer: LayerConfig
 
-  export let linkable = true
-  let isLinked = false
+  export let linkable = true;
+  let isLinked = Object.values(tags.data).some(v => image.pictureUrl === v);
 
-  const t = Translations.t.image.nearby
-  const c = [lon, lat]
+  const t = Translations.t.image.nearby;
+  const c = [lon, lat];
   let attributedImage = new AttributedImage({
     url: image.thumbUrl ?? image.pictureUrl,
     provider: AllImageProviders.byName(image.provider),
-    date: new Date(image.date),
-  })
-  let distance = Math.round(
-    GeoOperations.distanceBetween([image.coordinates.lng, image.coordinates.lat], c)
-  )
+    date: new Date(image.date)
+  });
+  let distance = Math.round(GeoOperations.distanceBetween([image.coordinates.lng, image.coordinates.lat], c));
+  
   $: {
     const currentTags = tags.data
     const key = Object.keys(image.osmTags)[0]
     const url = image.osmTags[key]
     if (isLinked) {
-      const action = new LinkPicture(currentTags.id, key, url, currentTags, {
+      const action = new LinkImageAction(currentTags.id, key, url, currentTags, {
         theme: state.layout.id,
         changeType: "link-image",
       })

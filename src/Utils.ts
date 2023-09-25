@@ -1,4 +1,5 @@
 import colors from "./assets/colors.json"
+import DOMPurify from "dompurify"
 
 export class Utils {
     /**
@@ -24,7 +25,6 @@ Remark that the syntax is slightly different then expected; it uses '$' to note 
 Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
  `
     public static readonly imageExtensions = new Set(["jpg", "png", "svg", "jpeg", ".gif"])
-
     public static readonly special_visualizations_importRequirementDocs = `#### Importing a dataset into OpenStreetMap: requirements
 
 If you want to import a dataset, make sure that:
@@ -145,6 +145,27 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             timestamp: number
         }
     >()
+
+    public static initDomPurify() {
+        if (Utils.runningFromConsole) {
+            return
+        }
+        DOMPurify.addHook("afterSanitizeAttributes", function (node) {
+            // set all elements owning target to target=_blank + add noopener noreferrer
+            const target = node.getAttribute("target")
+            if (target) {
+                node.setAttribute("target", "_blank")
+                node.setAttribute("rel", "noopener noreferrer")
+            }
+        })
+    }
+
+    public static purify(src: string): string {
+        return DOMPurify.sanitize(src, {
+            USE_PROFILES: { html: true },
+            ADD_ATTR: ["target"], // Don't remove target='_blank'. Note that Utils.initDomPurify does add a hook which automatically adds 'rel=noopener'
+        })
+    }
 
     /**
      * Parses the arguments for special visualisations
@@ -287,10 +308,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     /**
-     * Adds a property to the given object, but the value will _only_ be calculated when it is actually requested
+     * Adds a property to the given object, but the value will _only_ be calculated when it is actually requested.
+     * This calculation will run once
      * @param object
      * @param name
      * @param init
+     * @param whenDone: called when the value is updated. Note that this will be called at most once
      * @constructor
      */
     public static AddLazyProperty(
@@ -364,7 +387,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return newArr
     }
 
-    public static Dupiclates(arr: string[]): string[] {
+    public static Duplicates(arr: string[]): string[] {
         if (arr === undefined) {
             return undefined
         }

@@ -40,7 +40,7 @@ export default class FediverseValidator extends Validator {
         if (match) {
             const host = match[2]
             try {
-                const url = new URL("https://" + host)
+                new URL("https://" + host)
                 return undefined
             } catch (e) {
                 return Translations.t.validation.fediverse.invalidHost.Subs({ host })

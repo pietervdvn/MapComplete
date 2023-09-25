@@ -985,6 +985,27 @@ export default class PlantNet {
     }
 }
 
+export interface PlantNetSpeciesMatch {
+    score: number
+    gbif: { id: string /*Actually a number*/ }
+    species: {
+        scientificNameWithoutAuthor: string
+        scientificNameAuthorship: string
+        genus: {
+            scientificNameWithoutAuthor: string
+            scientificNameAuthorship: string
+            scientificName: string
+        }
+        family: {
+            scientificNameWithoutAuthor: string
+            scientificNameAuthorship: string
+            scientificName: string
+        }
+        commonNames: string[]
+        scientificName: string
+    }
+}
+
 export interface PlantNetResult {
     query: {
         project: string
@@ -995,26 +1016,7 @@ export interface PlantNetResult {
     language: string
     preferedReferential: string
     bestMatch: string
-    results: {
-        score: number
-        gbif: { id: string /*Actually a number*/ }
-        species: {
-            scientificNameWithoutAuthor: string
-            scientificNameAuthorship: string
-            genus: {
-                scientificNameWithoutAuthor: string
-                scientificNameAuthorship: string
-                scientificName: string
-            }
-            family: {
-                scientificNameWithoutAuthor: string
-                scientificNameAuthorship: string
-                scientificName: string
-            }
-            commonNames: string[]
-            scientificName: string
-        }
-    }[]
+    results: PlantNetSpeciesMatch[]
     version: string
     remainingIdentificationRequests: number
 }

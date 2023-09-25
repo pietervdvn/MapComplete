@@ -47,7 +47,7 @@
   "startLon": 0,
   "startZoom": 1,
   "widenFactor": 5,
-  "defaultBackgroundId": "CartoDB.Positron",
+  "defaultBackgroundId": "maptiler.backdrop",
   "layers": [
     "map"
   ]

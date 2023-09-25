@@ -1,14 +1,11 @@
-import * as meta from "../../package.json"
+import * as packagefile from "../../package.json"
+import * as extraconfig from "../../config.json"
 import { Utils } from "../Utils"
 
 export type PriviligedLayerType = (typeof Constants.priviliged_layers)[number]
 
 export default class Constants {
-    public static vNumber = meta.version
-
-    public static ImgurApiKey = meta.config.api_keys.imgur
-    public static readonly mapillary_client_token_v4 = meta.config.api_keys.mapillary_v4
-
+    public static vNumber = packagefile.version
     /**
      * API key for Maproulette
      *
@@ -17,9 +14,6 @@ export default class Constants {
      * Using an empty string however does work for most actions, but will attribute all actions to the Superuser.
      */
     public static readonly MaprouletteApiKey = ""
-
-    public static defaultOverpassUrls = meta.config.default_overpass_urls
-
     public static readonly added_by_default = [
         "selected_element",
         "gps_location",
@@ -37,7 +31,6 @@ export default class Constants {
         "split_point",
         "split_road",
         "current_view",
-        "matchpoint",
         "import_candidate",
         "usersettings",
     ] as const
@@ -48,7 +41,6 @@ export default class Constants {
         ...Constants.added_by_default,
         ...Constants.no_include,
     ] as const
-
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
         moreScreenUnlock: 1,
@@ -105,7 +97,14 @@ export default class Constants {
      * In seconds
      */
     static zoomToLocationTimeout = 15
-    static countryCoderEndpoint: string = meta.config.country_coder_host
+    private static readonly config = (() => {
+        const defaultConfig = packagefile.config
+        return { ...defaultConfig, ...extraconfig }
+    })()
+    public static ImgurApiKey = Constants.config.api_keys.imgur
+    public static readonly mapillary_client_token_v4 = Constants.config.api_keys.mapillary_v4
+    public static defaultOverpassUrls = Constants.config.default_overpass_urls
+    static countryCoderEndpoint: string = Constants.config.country_coder_host
 
     /**
      * These are the values that are allowed to use as 'backdrop' icon for a map pin

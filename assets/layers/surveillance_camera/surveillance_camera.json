@@ -41,6 +41,32 @@
   "tagRenderings": [
     "images",
     {
+      "id": "has_alpr",
+      "question": {
+        "en": "Can this camera automatically detect license plates?"
+      },
+      "questionHint": {
+        "en": "An <b>ALPR</b> (Automatic License Plate Reader) typically has two lenses and an array of infrared LEDS in between."
+      },
+      "mappings": [
+        {
+          "if": "surveillance:type=camera",
+          "then": {
+            "en": "This is a camera without number plate recognition."
+          }
+        },
+        {
+          "if": "surveillance:type=ALPR",
+          "then": {
+            "en": "This is an ALPR (Automatic License Plate Reader)"
+          },
+          "icon": {
+            "path": "./assets/layers/surveillance_camera/ALPR.svg"
+          }
+        }
+      ]
+    },
+    {
       "question": {
         "en": "What kind of camera is this?",
         "nl": "Wat voor soort camera is dit?",
@@ -53,11 +79,7 @@
       },
       "mappings": [
         {
-          "if": {
-            "and": [
-              "camera:type=fixed"
-            ]
-          },
+          "if": "camera:type=fixed",
           "then": {
             "en": "A fixed (non-moving) camera",
             "nl": "Een vaste camera",
@@ -66,14 +88,11 @@
             "de": "Eine fest montierte (nicht bewegliche) Kamera",
             "ca": "Una càmera fixa (no movible)",
             "es": "Cámara fija (no móvil)"
-          }
+          },
+          "icon": "./assets/themes/surveillance/cam_right.svg"
         },
         {
-          "if": {
-            "and": [
-              "camera:type=dome"
-            ]
-          },
+          "if": "camera:type=dome",
           "then": {
             "en": "A dome camera (which can turn)",
             "nl": "Een dome (bolvormige camera die kan draaien)",
@@ -83,7 +102,8 @@
             "de": "Eine Kuppelkamera (drehbar)",
             "ca": "Càmera de cúpula (que pot girar)",
             "es": "Cámara con domo (que se puede girar)"
-          }
+          },
+          "icon": "./assets/themes/surveillance/dome.svg"
         },
         {
           "if": {
@@ -595,6 +615,40 @@
         "fr": "une caméra de surveillance fixée au mur"
       },
       "snapToLayer": "walls_and_buildings"
+    },
+    {
+      "tags": [
+        "man_made=surveillance",
+        "surveillance:type=ALPR"
+      ],
+      "title": {
+        "en": "an ALPR camera (Automatic Number Plate Reader)"
+      },
+      "description": {
+        "en": "An ALPR typically has two lenses and an array of infrared lights."
+      },
+      "exampleImages": [
+        "./assets/layers/surveillance_camera/ALPR_Example.jpg",
+        "./assets/layers/surveillance_camera/ALPR_Example2.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "man_made=surveillance",
+        "surveillance:type=ALPR",
+        "camera:mount=wall"
+      ],
+      "title": {
+        "en": "an ALPR camera (Automatic Number Plate Reader) mounted on a wall"
+      },
+      "description": {
+        "en": "An ALPR typically has two lenses and an array of infrared lights."
+      },
+      "exampleImages": [
+        "./assets/layers/surveillance_camera/ALPR_Example.jpg",
+        "./assets/layers/surveillance_camera/ALPR_Example2.jpg"
+      ],
+      "snapToLayer": "walls_and_buildings"
     }
   ],
   "mapRendering": [
@@ -602,6 +656,10 @@
       "icon": {
         "render": "./assets/themes/surveillance/logo.svg",
         "mappings": [
+          {
+            "if": "surveillance:type=ALPR",
+            "then": "./assets/layers/surveillance_camera/ALPR.svg"
+          },
           {
             "if": "camera:type=dome",
             "then": "./assets/themes/surveillance/dome.svg"
@@ -619,15 +677,17 @@
       "iconSize": {
         "mappings": [
           {
-            "if": "camera:type=dome",
-            "then": "50,50,center"
-          },
-          {
-            "if": "_direction:leftright~*",
+            "if": {
+              "and": [
+                "camera:type=fixed",
+                "surveillance:type=camera",
+                "_direction:leftright~*"
+              ]
+            },
             "then": "100,35,center"
           }
         ],
-        "render": "50,50,center"
+        "render": "35,35,center"
       },
       "location": [
         "point",
@@ -638,7 +698,12 @@
         "render": "calc({_direction:numerical}deg + 90deg)",
         "mappings": [
           {
-            "if": "camera:type=dome",
+            "if": {
+              "or": [
+                "camera:type=dome",
+                "surveillance:type=ALPR"
+              ]
+            },
             "then": "0"
           },
           {

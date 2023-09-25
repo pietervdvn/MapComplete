@@ -27,7 +27,6 @@
   },
   "icon": "./assets/layers/doctors/doctors.svg",
   "startLat": 50.8465573,
-  "defaultBackgroundId": "CartoDB.Voyager",
   "startLon": 4.351697,
   "startZoom": 16,
   "widenFactor": 2,

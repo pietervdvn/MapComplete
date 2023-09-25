@@ -97,7 +97,7 @@ export default class CreateNewNodeAction extends OsmCreateAction {
             },
             meta: this.meta,
         }
-        if (this._snapOnto === undefined) {
+        if (this._snapOnto?.coordinates === undefined) {
             return [newPointChange]
         }
 
@@ -113,6 +113,7 @@ export default class CreateNewNodeAction extends OsmCreateAction {
         console.log("Attempting to snap:", { geojson, projected, projectedCoor, index })
         // We check that it isn't close to an already existing point
         let reusedPointId = undefined
+        let reusedPointCoordinates: [number, number] = undefined
         let outerring: [number, number][]
 
         if (geojson.geometry.type === "LineString") {
@@ -125,11 +126,13 @@ export default class CreateNewNodeAction extends OsmCreateAction {
         if (GeoOperations.distanceBetween(prev, projectedCoor) < this._reusePointDistance) {
             // We reuse this point instead!
             reusedPointId = this._snapOnto.nodes[index]
+            reusedPointCoordinates = this._snapOnto.coordinates[index]
         }
         const next = outerring[index + 1]
         if (GeoOperations.distanceBetween(next, projectedCoor) < this._reusePointDistance) {
             // We reuse this point instead!
             reusedPointId = this._snapOnto.nodes[index + 1]
+            reusedPointCoordinates = this._snapOnto.coordinates[index + 1]
         }
         if (reusedPointId !== undefined) {
             this.setElementId(reusedPointId)
@@ -139,12 +142,13 @@ export default class CreateNewNodeAction extends OsmCreateAction {
                     type: "node",
                     id: reusedPointId,
                     meta: this.meta,
+                    changes: { lat: reusedPointCoordinates[0], lon: reusedPointCoordinates[1] },
                 },
             ]
         }
 
         const locations = [
-            ...this._snapOnto.coordinates.map(([lat, lon]) => <[number, number]>[lon, lat]),
+            ...this._snapOnto.coordinates?.map(([lat, lon]) => <[number, number]>[lon, lat]),
         ]
         const ids = [...this._snapOnto.nodes]
 

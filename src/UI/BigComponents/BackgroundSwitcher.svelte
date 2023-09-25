@@ -37,7 +37,7 @@
   function updatedAltLayer() {
     const available = availableRasterLayers.data
     const current = rasterLayer.data
-    const defaultLayer = AvailableRasterLayers.maplibre
+    const defaultLayer = AvailableRasterLayers.maptilerDefaultLayer
     const firstOther = available.find((l) => l !== defaultLayer)
     const secondOther = available.find((l) => l !== defaultLayer && l !== firstOther)
     raster0.setData(firstOther === current ? defaultLayer : firstOther)

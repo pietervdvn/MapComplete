@@ -17,7 +17,7 @@ export default class OsmObjectDownloader {
     private historyCache = new Map<string, UIEventSource<OsmObject[]>>()
 
     constructor(
-        backend: string = "https://www.openstreetmap.org",
+        backend: string = "https://api.openstreetmap.org",
         changes?: {
             readonly pendingChanges: UIEventSource<ChangeDescription[]>
             readonly isUploading: Store<boolean>

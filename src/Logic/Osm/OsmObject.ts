@@ -5,7 +5,7 @@ import OsmToGeoJson from "osmtogeojson"
 import { Feature, LineString, Polygon } from "geojson"
 
 export abstract class OsmObject {
-    private static defaultBackend = "https://www.openstreetmap.org/"
+    private static defaultBackend = "https://api.openstreetmap.org/"
     protected static backendURL = OsmObject.defaultBackend
     private static polygonFeatures = OsmObject.constructPolygonFeatures()
     type: "node" | "way" | "relation"

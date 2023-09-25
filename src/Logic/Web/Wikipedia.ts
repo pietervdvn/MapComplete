@@ -73,7 +73,6 @@ export default class Wikipedia {
         if (cached) {
             return cached
         }
-        console.log("Constructing store for", cachekey)
         const store = new UIEventSource<FullWikipediaDetails>({}, cachekey)
         Wikipedia._fullDetailsCache.set(cachekey, store)
 
@@ -123,12 +122,15 @@ export default class Wikipedia {
             }
             const wikipedia = new Wikipedia({ language: data.language })
             wikipedia.GetArticleHtml(data.pagename).then((article) => {
+                article = Utils.purify(article)
                 data.fullArticle = article
                 const content = document.createElement("div")
                 content.innerHTML = article
                 const firstParagraph = content.getElementsByTagName("p").item(0)
-                data.firstParagraph = firstParagraph.innerHTML
-                content.removeChild(firstParagraph)
+                if (firstParagraph) {
+                    data.firstParagraph = firstParagraph.innerHTML
+                    content.removeChild(firstParagraph)
+                }
                 data.restOfArticle = content.innerHTML
                 store.ping()
             })
@@ -194,53 +196,6 @@ export default class Wikipedia {
             encodeURIComponent(searchTerm)
         return (await Utils.downloadJson(url))["query"]["search"]
     }
-
-    /**
-     * Searches via 'index.php' and scrapes the result.
-     * This gives better results then via the API
-     * @param searchTerm
-     */
-    public async searchViaIndex(
-        searchTerm: string
-    ): Promise<{ title: string; snippet: string; url: string }[]> {
-        const url = `${this.backend}/w/index.php?search=${encodeURIComponent(searchTerm)}&ns0=1`
-        const result = await Utils.downloadAdvanced(url)
-        if (result["redirect"]) {
-            const targetUrl = result["redirect"]
-            // This is an exact match
-            return [
-                {
-                    title: this.extractPageName(targetUrl)?.trim(),
-                    url: targetUrl,
-                    snippet: "",
-                },
-            ]
-        }
-        if (result["error"]) {
-            throw "Could not download: " + JSON.stringify(result)
-        }
-        const el = document.createElement("html")
-        el.innerHTML = result["content"].replace(/href="\//g, 'href="' + this.backend + "/")
-        const searchResults = el.getElementsByClassName("mw-search-results")
-        const individualResults = Array.from(
-            searchResults[0]?.getElementsByClassName("mw-search-result") ?? []
-        )
-        return individualResults.map((result) => {
-            const toRemove = Array.from(result.getElementsByClassName("searchalttitle"))
-            for (const toRm of toRemove) {
-                toRm.parentElement.removeChild(toRm)
-            }
-
-            return {
-                title: result
-                    .getElementsByClassName("mw-search-result-heading")[0]
-                    .textContent.trim(),
-                url: result.getElementsByTagName("a")[0].href,
-                snippet: result.getElementsByClassName("searchresult")[0].textContent,
-            }
-        })
-    }
-
     /**
      * Returns the innerHTML for the given article as string.
      * Some cleanup is applied to this.
@@ -262,7 +217,7 @@ export default class Wikipedia {
         if (response?.parse?.text === undefined) {
             return undefined
         }
-        const html = response["parse"]["text"]["*"]
+        const html = Utils.purify(response["parse"]["text"]["*"])
         if (html === undefined) {
             return undefined
         }

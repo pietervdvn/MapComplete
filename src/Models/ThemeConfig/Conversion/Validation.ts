@@ -18,6 +18,8 @@ import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRende
 import Validators from "../../../UI/InputElement/Validators"
 import TagRenderingConfig from "../TagRenderingConfig"
 import { parse as parse_html } from "node-html-parser"
+import PresetConfig from "../PresetConfig"
+import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
     private readonly _languages: string[]
@@ -167,9 +169,9 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         json: LayoutConfigJson,
         context: string
     ): { result: LayoutConfigJson; errors: string[]; warnings: string[]; information: string[] } {
-        const errors = []
-        const warnings = []
-        const information = []
+        const errors: string[] = []
+        const warnings: string[] = []
+        const information: string[] = []
 
         const theme = new LayoutConfig(json, this._isBuiltin)
 
@@ -245,7 +247,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                     information
                 )
             }
-            const dups = Utils.Dupiclates(json.layers.map((layer) => layer["id"]))
+            const dups = Utils.Duplicates(json.layers.map((layer) => layer["id"]))
             if (dups.length > 0) {
                 errors.push(
                     `The theme ${json.id} defines multiple layers with id ${dups.join(", ")}`
@@ -273,6 +275,10 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
             }
         } catch (e) {
             errors.push(e)
+        }
+
+        if (theme.id !== "personal") {
+            new DetectDuplicatePresets().convertJoin(theme, context, errors, warnings, information)
         }
 
         return {
@@ -838,6 +844,15 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             }
         }
 
+        const layerConfig = new LayerConfig(json, "validation", true)
+        for (const [attribute, code, isStrict] of layerConfig.calculatedTags ?? []) {
+            try {
+                new Function("feat", "return " + code + ";")
+            } catch (e) {
+                throw `Invalid function definition: the custom javascript is invalid:${e} (at ${context}). The offending javascript code is:\n    ${code}`
+            }
+        }
+
         if (json.source === "special") {
             if (!Constants.priviliged_layers.find((x) => x == json.id)) {
                 errors.push(
@@ -880,7 +895,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
         {
             // duplicate ids in tagrenderings check
             const duplicates = Utils.Dedup(
-                Utils.Dupiclates(Utils.NoNull((json.tagRenderings ?? []).map((tr) => tr["id"])))
+                Utils.Duplicates(Utils.NoNull((json.tagRenderings ?? []).map((tr) => tr["id"])))
             )
             if (duplicates.length > 0) {
                 console.log(json.tagRenderings)
@@ -976,7 +991,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                     )
                 }
 
-                const duplicateIds = Utils.Dupiclates(
+                const duplicateIds = Utils.Duplicates(
                     (json.tagRenderings ?? [])
                         ?.map((f) => f["id"])
                         .filter((id) => id !== "questions")
@@ -1232,5 +1247,70 @@ export class DetectDuplicateFilters extends DesugaringStep<{
                 })
             }
         }
+    }
+}
+
+export class DetectDuplicatePresets extends DesugaringStep<LayoutConfig> {
+    constructor() {
+        super(
+            "Detects mappings which have identical (english) names or identical mappings.",
+            ["presets"],
+            "DetectDuplicatePresets"
+        )
+    }
+    convert(
+        json: LayoutConfig,
+        context: string
+    ): {
+        result: LayoutConfig
+        errors?: string[]
+        warnings?: string[]
+        information?: string[]
+    } {
+        const presets: PresetConfig[] = [].concat(...json.layers.map((l) => l.presets))
+
+        const errors = []
+        const enNames = presets.map((p) => p.title.textFor("en"))
+        if (new Set(enNames).size != enNames.length) {
+            const dups = Utils.Duplicates(enNames)
+            const layersWithDup = json.layers.filter((l) =>
+                l.presets.some((p) => dups.indexOf(p.title.textFor("en")) >= 0)
+            )
+            const layerIds = layersWithDup.map((l) => l.id)
+            errors.push(
+                `At ${context}: this themes has multiple presets which are named:${dups}, namely layers ${layerIds.join(
+                    ", "
+                )} this is confusing for contributors and is probably the result of reusing the same layer multiple times. Use \`{"override": {"=presets": []}}\` to remove some presets`
+            )
+        }
+
+        const optimizedTags = <TagsFilter[]>presets.map((p) => new And(p.tags).optimize())
+        for (let i = 0; i < presets.length; i++) {
+            const presetATags = optimizedTags[i]
+            const presetA = presets[i]
+            for (let j = i + 1; j < presets.length; j++) {
+                const presetBTags = optimizedTags[j]
+                const presetB = presets[j]
+                if (
+                    Utils.SameObject(presetATags, presetBTags) &&
+                    Utils.sameList(
+                        presetA.preciseInput.snapToLayers,
+                        presetB.preciseInput.snapToLayers
+                    )
+                ) {
+                    errors.push(
+                        `At ${context}: this themes has multiple presets with the same tags: ${presetATags.asHumanString(
+                            false,
+                            false,
+                            {}
+                        )}, namely the preset '${presets[i].title.textFor("en")}' and '${presets[
+                            j
+                        ].title.textFor("en")}'`
+                    )
+                }
+            }
+        }
+
+        return { errors, result: json }
     }
 }

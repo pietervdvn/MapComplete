@@ -11,7 +11,7 @@
   import Translations from "../i18n/Translations"
 
   /**
-   * Small helper
+   * Shows a wikipedia-article + wikidata preview for the given item
    */
   export let wikipediaDetails: Store<FullWikipediaDetails>
 </script>
@@ -22,31 +22,33 @@
     <Tr t={Translations.t.general.wikipedia.fromWikipedia} />
   </a>
 {/if}
+
 {#if $wikipediaDetails.wikidata}
   <ToSvelte construct={WikidataPreviewBox.WikidataResponsePreview($wikipediaDetails.wikidata)} />
 {/if}
+
 {#if $wikipediaDetails.articleUrl}
   {#if $wikipediaDetails.firstParagraph === "" || $wikipediaDetails.firstParagraph === undefined}
     <Loading>
       <Tr t={Translations.t.general.wikipedia.loading} />
     </Loading>
   {:else}
-    <span class="wikipedia-article">
-      <FromHtml src={$wikipediaDetails.firstParagraph} />
-      <Disclosure let:open>
-        <DisclosureButton>
-          <span class="flex">
-            <ChevronRightIcon
-              style={(open ? "transform: rotate(90deg); " : "") +
-                "  transition: all .25s linear; width: 1.5rem; height: 1.5rem"}
-            />
-            Read the rest of the article
-          </span>
-        </DisclosureButton>
-        <DisclosurePanel>
-          <FromHtml src={$wikipediaDetails.restOfArticle} />
-        </DisclosurePanel>
-      </Disclosure>
-    </span>
+  <span class="wikipedia-article">
+    <FromHtml src={$wikipediaDetails.firstParagraph} />
+    <Disclosure let:open>
+      <DisclosureButton>
+        <span class="flex">
+          <ChevronRightIcon
+            style={(open ? "transform: rotate(90deg); " : "") +
+              "  transition: all .25s linear; width: 1.5rem; height: 1.5rem"}
+          />
+          <Tr t={Translations.t.general.wikipedia.readMore}/>
+        </span>
+      </DisclosureButton>
+      <DisclosurePanel>
+        <FromHtml src={$wikipediaDetails.restOfArticle} />
+      </DisclosurePanel>
+    </Disclosure>
+  </span>
   {/if}
 {/if}

@@ -24,7 +24,6 @@
   },
   "icon": "./assets/themes/onwheels/crest.svg",
   "startLat": 50.86622,
-  "defaultBackgroundId": "CartoDB.Voyager",
   "startLon": 4.350103,
   "startZoom": 17,
   "widenFactor": 2,

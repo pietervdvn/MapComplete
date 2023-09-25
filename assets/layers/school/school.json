@@ -20,7 +20,7 @@
     }
   },
   "calculatedTags": [
-    "_enclosing=feat.enclosingFeatures('school').map(f => f.feat.properties.id)",
+    "_enclosing=enclosingFeatures(feat)('school').map(f => f.feat.properties.id)",
     "_is_enclosed=feat.properties._enclosing != '[]'"
   ],
   "isShown": {

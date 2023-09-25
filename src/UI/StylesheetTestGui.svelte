@@ -29,6 +29,10 @@
       areas, where some buttons might appear.
     </p>
 
+    <div class="border-interactive interactive">
+      Highly interactive area (mostly: active question)
+    </div>
+    
     <div class="flex">
       <button class="primary">
         <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />

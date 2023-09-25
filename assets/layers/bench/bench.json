@@ -890,6 +890,9 @@
       "mappings": [
         {
           "if": "tourism=artwork",
+          "addExtraTags": [
+            "not:tourism:artwork="
+          ],
           "then": {
             "en": "This bench has an integrated artwork",
             "nl": "Deze bank heeft een geïntegreerd kunstwerk",
@@ -902,7 +905,7 @@
           }
         },
         {
-          "if": "tourism=",
+          "if": "not:tourism:artwork=yes",
           "then": {
             "en": "This bench does not have an integrated artwork",
             "nl": "Deze bank heeft geen geïntegreerd kunstwerk",
@@ -913,7 +916,18 @@
             "cs": "Tato lavička nemá integrované umělecké dílo",
             "he": "לספסל זה אין יצירת אמנות משולבת",
             "pl": "Ta ławka nie ma wbudowanego dzieła sztuki"
-          }
+          },
+          "addExtraTags": [
+            "tourism="
+          ]
+        },
+        {
+          "if": "tourism=",
+          "then": {
+            "en": "This bench <span class=\"subtle\">probably</span> doesn't have an integrated artwork",
+            "nl": "Deze bank heeft <span class=\"subtle\">waarschijnlijk</span> geen geïntegreerd kunstwerk"
+          },
+          "hideInAnswer": true
         }
       ],
       "questionHint": {

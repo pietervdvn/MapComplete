@@ -1,6 +1,6 @@
 {
   "name": "mapcomplete",
-  "version": "0.32.0",
+  "version": "0.33.4",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
@@ -8,7 +8,8 @@
   "main": "index.ts",
   "type": "module",
   "config": {
-    "#": "Various endpoints that are instance-specific",
+    "#": "Various endpoints that are instance-specific. This is the default configuration, which is re-exported in 'Constants.ts'.",
+    "#": "Use MAPCOMPLETE_CONFIGURATION to use an additional configuration, e.g. `MAPCOMPLETE_CONFIGURATION=config_hetzner`",
     "#oauth_credentials:comment": [
       "`oauth_credentials` are the OAuth-2 credentials for the production-OSM server and the test-server.",
       "Are you deploying your own instance? Register your application too.",
@@ -115,12 +116,14 @@
     "@turf/distance": "^6.5.0",
     "@turf/length": "^6.5.0",
     "@turf/turf": "^6.5.0",
+    "@types/dompurify": "^3.0.2",
     "@types/showdown": "^2.0.0",
     "chart.js": "^3.8.0",
     "country-language": "^0.1.7",
     "country-to-currency": "^1.0.10",
     "csv-parse": "^5.1.0",
     "doctest-ts-improved": "^0.8.8",
+    "dompurify": "^3.0.5",
     "email-validator": "^2.0.4",
     "escape-html": "^1.0.3",
     "fake-dom": "^1.0.4",

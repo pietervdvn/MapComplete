@@ -29,7 +29,7 @@
     const templateUrls = SvgToPdf.templates[templateName].pages
     const templates: string[] = await Promise.all(templateUrls.map((url) => Utils.download(url)))
     console.log("Templates are", templates)
-    const bg = state.mapProperties.rasterLayer.data ?? AvailableRasterLayers.maplibre
+    const bg = state.mapProperties.rasterLayer.data ?? AvailableRasterLayers.maptilerDefaultLayer
     const creator = new SvgToPdf(title, templates, {
       state,
       freeComponentId: "belowmap",
