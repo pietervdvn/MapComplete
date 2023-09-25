@@ -1,0 +1,7 @@
+{
+  "store": "console",
+  "allowedOrigin": null,
+  "port": 2600,
+  "domainWhitelist": ["localhost:10179", "localhost:2600","hosted.mapcomplete.org", "dev.mapcomplete.org", "mapcomplete.org","*"],
+  "sourceBlacklist": ["chrome-extension://gighmmpiobklfepjocnamgkkbiglidom"]
+}
