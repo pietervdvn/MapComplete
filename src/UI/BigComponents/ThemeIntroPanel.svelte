@@ -74,11 +74,17 @@
           <ToSvelte construct={Svg.crosshair_svg().SetClass("w-8 h-8").SetClass("animate-spin")} />
           <Tr t={Translations.t.general.waitingForGeopermission} />
         </button>
-      {:else if $geopermission !== "denied"}
+      {:else if $geopermission === "denied"}
         <button class="flex w-full items-center gap-x-2 disabled">
-          <ToSvelte construct={Svg.crosshair_svg().SetClass("w-8 h-8").SetClass("motion-safe:animate-spin")} />
+          <ToSvelte construct={Svg.location_refused_svg().SetClass("w-8 h-8")} />
+          <Tr t={Translations.t.general.geopermissionDenied} />
+        </button>
+      {:else }
+        <button class="flex w-full items-center gap-x-2 disabled">
+          <ToSvelte construct={Svg.crosshair_svg().SetClass("w-8 h-8").SetClass("animate-spin")} />
           <Tr t={Translations.t.general.waitingForLocation} />
         </button>
+
       {/if}
 
       <div class=".button low-interaction m-1 flex w-full items-center gap-x-2 rounded border p-2">
