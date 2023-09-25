@@ -1,22 +1,22 @@
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import { OsmConnection } from "../Osm/OsmConnection"
-import { MangroveIdentity } from "../Web/MangroveReviews"
-import { Store, Stores, UIEventSource } from "../UIEventSource"
-import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource"
-import { FeatureSource } from "../FeatureSource/FeatureSource"
-import { Feature } from "geojson"
-import { Utils } from "../../Utils"
-import translators from "../../assets/translators.json"
-import codeContributors from "../../assets/contributors.json"
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
-import usersettings from "../../../src/assets/generated/layers/usersettings.json"
-import Locale from "../../UI/i18n/Locale"
-import LinkToWeblate from "../../UI/Base/LinkToWeblate"
-import FeatureSwitchState from "./FeatureSwitchState"
-import Constants from "../../Models/Constants"
-import { QueryParameters } from "../Web/QueryParameters"
-import { ThemeMetaTagging } from "./UserSettingsMetaTagging"
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import { OsmConnection } from "../Osm/OsmConnection";
+import { MangroveIdentity } from "../Web/MangroveReviews";
+import { Store, Stores, UIEventSource } from "../UIEventSource";
+import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource";
+import { FeatureSource } from "../FeatureSource/FeatureSource";
+import { Feature } from "geojson";
+import { Utils } from "../../Utils";
+import translators from "../../assets/translators.json";
+import codeContributors from "../../assets/contributors.json";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson";
+import usersettings from "../../../src/assets/generated/layers/usersettings.json";
+import Locale from "../../UI/i18n/Locale";
+import LinkToWeblate from "../../UI/Base/LinkToWeblate";
+import FeatureSwitchState from "./FeatureSwitchState";
+import Constants from "../../Models/Constants";
+import { QueryParameters } from "../Web/QueryParameters";
+import { ThemeMetaTagging } from "./UserSettingsMetaTagging";
 import { MapProperties } from "../../Models/MapProperties";
 
 /**
@@ -43,7 +43,7 @@ export default class UserRelatedState {
     public readonly homeLocation: FeatureSource
     public readonly language: UIEventSource<string>
     public readonly preferredBackgroundLayer: UIEventSource<string | "photo" | "map" | "osmbasedmap" | undefined>
-    public readonly preferredBackgroundLayerForTheme: UIEventSource<string | "photo" | "map" | "osmbasedmap" | undefined>
+    public readonly imageLicense : UIEventSource<string>
     /**
      * The number of seconds that the GPS-locations are stored in memory.
      * Time in seconds
@@ -108,6 +108,9 @@ export default class UserRelatedState {
             documentation: "The ID of a layer or layer category that MapComplete uses by default"
         })
 
+        this.imageLicense =  this.osmConnection.GetPreference("pictures-license", "CC0", {
+            documentation: "The license under which new images are uploaded"
+        })
         this.installedUserThemes = this.InitInstalledUserThemes()
 
         this.homeLocation = this.initHomeLocation()

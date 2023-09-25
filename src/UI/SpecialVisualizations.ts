@@ -35,7 +35,6 @@ import LiveQueryHandler from "../Logic/Web/LiveQueryHandler"
 import { SubtleButton } from "./Base/SubtleButton"
 import Svg from "../Svg"
 import NoteCommentElement from "./Popup/NoteCommentElement"
-import ImgurUploader from "../Logic/ImageProviders/ImgurUploader"
 import FileSelectorButton from "./Input/FileSelectorButton"
 import { LoginToggle } from "./Popup/LoginButton"
 import Toggle from "./Input/Toggle"
@@ -74,6 +73,7 @@ import FediverseValidator from "./InputElement/Validators/FediverseValidator"
 import SendEmail from "./Popup/SendEmail.svelte"
 import NearbyImages from "./Popup/NearbyImages.svelte"
 import NearbyImagesCollapsed from "./Popup/NearbyImagesCollapsed.svelte"
+import UploadImage from "./Image/UploadImage.svelte";
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -616,16 +616,19 @@ export default class SpecialVisualizations {
                     {
                         name: "image-key",
                         doc: "Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)",
-                        defaultValue: "image",
+                        required: false
                     },
                     {
                         name: "label",
                         doc: "The text to show on the button",
-                        defaultValue: "Add image",
+                        required: false
                     },
                 ],
                 constr: (state, tags, args) => {
-                    return new ImageUploadFlow(tags, state, args[0], args[1])
+                    return new SvelteUIElement(UploadImage, {
+                        state,tags, labelText: args[1], image: args[0]
+                    })
+                   // return new ImageUploadFlow(tags, state, args[0], args[1])
                 },
             },
             {

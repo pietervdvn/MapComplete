@@ -344,8 +344,8 @@
         },
         "useSearch": "Use the search above to see presets",
         "useSearchForMore": "Use the search function to search within {total} more values…",
-        "waitingForGeopermission": "Waiting for your permission to use the geolocation...",
-        "waitingForLocation": "Searching your current location...",
+        "waitingForGeopermission": "Waiting for your permission to use the geolocation…",
+        "waitingForLocation": "Searching your current location…",
         "weekdays": {
             "abbreviations": {
                 "friday": "Fri",
@@ -416,6 +416,22 @@
         "pleaseLogin": "Please log in to add a picture",
         "respectPrivacy": "Do not photograph people nor license plates. Do not upload Google Maps, Google Streetview or other copyrighted sources.",
         "toBig": "Your image is too large as it is {actual_size}. Please use images of at most {max_size}",
+        "upload": {
+            "failReasons": "You might have lost connection to the internet",
+            "failReasonsAdvanced": "Alternatively, make sure your browser and extensions do not block third-party API's.",
+            "multiple": {
+                "done": "{count} images are successfully uploaded. Thank you!",
+                "partiallyDone": "{count} images are getting uploaded, {done} images are done…",
+                "someFailed": "Sorry, we could not upload {count} images",
+                "uploading": "{count} images are getting uploaded…"
+            },
+            "one": {
+                "done": "Your image was successfully uploaded. Thank you!",
+                "failed": "Sorry, we could not upload your image",
+                "retrying": "Your image is getting uploaded again…",
+                "uploading": "Your image is getting uploaded…"
+            }
+        },
         "uploadDone": "Your picture has been added. Thanks for helping out!",
         "uploadFailed": "Could not upload your picture. Are you connected to the Internet, and allow third party API's? The Brave browser or the uMatrix plugin might block them.",
         "uploadMultipleDone": "{count} pictures have been added. Thanks for helping out!",

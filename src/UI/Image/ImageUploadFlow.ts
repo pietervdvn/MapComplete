@@ -15,8 +15,9 @@ import Loading from "../Base/Loading"
 import { LoginToggle } from "../Popup/LoginButton"
 import Constants from "../../Models/Constants"
 import { SpecialVisualizationState } from "../SpecialVisualization"
+import exp from "constants";
 
-export class ImageUploadFlow extends Toggle {
+export class ImageUploadFlow extends Combine {
     private static readonly uploadCountsPerId = new Map<string, UIEventSource<number>>()
 
     constructor(
@@ -129,7 +130,7 @@ export class ImageUploadFlow extends Toggle {
             uploader.uploadMany(title, description, filelist)
         })
 
-        const uploadFlow: BaseUIElement = new Combine([
+        super([
             new VariableUiElement(
                 uploader.queue
                     .map((q) => q.length)
@@ -183,17 +184,9 @@ export class ImageUploadFlow extends Toggle {
                     })
                     .SetClass("underline"),
             ]).SetStyle("font-size:small;"),
-        ]).SetClass("flex flex-col image-upload-flow mt-4 mb-8 text-center leading-none")
+        ])
+        this.SetClass("flex flex-col image-upload-flow mt-4 mb-8 text-center leading-none")
 
-        super(
-            new LoginToggle(
-                /*We can show the actual upload button!*/
-                uploadFlow,
-                /* User not logged in*/ t.pleaseLogin.Clone(),
-                state
-            ),
-            undefined /* Nothing as the user badge is disabled*/,
-            state?.featureSwitchUserbadge
-        )
+
     }
 }

@@ -51,6 +51,8 @@ import ThemeViewStateHashActor from "../Logic/Web/ThemeViewStateHashActor";
 import NoElementsInViewDetector, { FeatureViewState } from "../Logic/Actors/NoElementsInViewDetector";
 import FilteredLayer from "./FilteredLayer";
 import { PreferredRasterLayerSelector } from "../Logic/Actors/PreferredRasterLayerSelector";
+import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager";
+import { Imgur } from "../Logic/ImageProviders/Imgur";
 
 /**
  *
@@ -98,6 +100,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly selectedLayer: UIEventSource<LayerConfig>;
     readonly userRelatedState: UserRelatedState;
     readonly geolocation: GeoLocationHandler;
+
+    readonly imageUploadManager: ImageUploadManager
 
     readonly lastClickObject: WritableFeatureSource;
     readonly overlayLayerStates: ReadonlyMap<
@@ -167,6 +171,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         );
 
         this.availableLayers = AvailableRasterLayers.layersAvailableAt(this.mapProperties.location);
+
 
         const self = this;
         this.layerState = new LayerState(this.osmConnection, layout.layers, layout.id);
@@ -323,6 +328,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.perLayerFiltered = this.showNormalDataOn(this.map);
 
         this.hasDataInView = new NoElementsInViewDetector(this).hasFeatureInView;
+        this.imageUploadManager = new ImageUploadManager(layout, Imgur.singleton, this.featureProperties, this.osmConnection, this.changes)
 
         this.initActors();
         this.addLastClick(lastClick);

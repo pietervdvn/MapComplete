@@ -2682,26 +2682,6 @@ a.link-underline {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  @-webkit-keyframes spin {
-    to {
-      -webkit-transform: rotate(360deg);
-              transform: rotate(360deg);
-    }
-  }
-  @keyframes spin {
-    to {
-      -webkit-transform: rotate(360deg);
-              transform: rotate(360deg);
-    }
-  }
-
-  .motion-reduce\:animate-spin {
-    -webkit-animation: spin 1s linear infinite;
-            animation: spin 1s linear infinite;
-  }
-}
-
 @media (max-width: 480px) {
   .max-\[480px\]\:w-full {
     width: 100%;

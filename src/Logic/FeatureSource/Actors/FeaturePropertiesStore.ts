@@ -7,7 +7,7 @@ import { OsmTags } from "../../../Models/OsmFeature"
  */
 export default class FeaturePropertiesStore {
     private readonly _elements = new Map<string, UIEventSource<Record<string, string>>>()
-
+    public readonly aliases = new Map<string, string>()
     constructor(...sources: FeatureSource[]) {
         for (const source of sources) {
             this.trackFeatureSource(source)
@@ -92,7 +92,6 @@ export default class FeaturePropertiesStore {
         })
     }
 
-    // noinspection JSUnusedGlobalSymbols
     public addAlias(oldId: string, newId: string): void {
         if (newId === undefined) {
             // We removed the node/way/relation with type 'type' and id 'oldId' on openstreetmap!
@@ -112,6 +111,7 @@ export default class FeaturePropertiesStore {
         }
         element.data.id = newId
         this._elements.set(newId, element)
+        this.aliases.set(newId, oldId)
         element.ping()
     }
 
