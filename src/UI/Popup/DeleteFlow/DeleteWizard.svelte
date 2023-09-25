@@ -38,7 +38,6 @@
   const hasSoftDeletion = deleteConfig.softDeletionTags !== undefined
   let currentState: "start" | "confirm" | "applying" | "deleted" = "start"
   $: {
-    console.log("Current state is", currentState, $canBeDeleted, canBeDeletedReason)
     deleteAbility.CheckDeleteability(true)
   }
 
@@ -55,7 +54,6 @@
     let actionToTake: OsmChangeAction
     const changedProperties = TagUtils.changeAsProperties(selectedTags.asChange(tags?.data ?? {}))
     const deleteReason = changedProperties[DeleteConfig.deleteReasonKey]
-    console.log("Deleting! Hard?:", canBeDeleted.data, deleteReason)
     if (deleteReason) {
       // This is a proper, hard deletion
       actionToTake = new DeleteAction(

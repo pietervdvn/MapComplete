@@ -61,7 +61,6 @@ export class GeoLocationState {
         const self = this;
 
         this.permission.addCallbackAndRunD(async (state) => {
-            console.trace("GEOPERMISSION", state)
             if (state === "granted") {
                 self._previousLocationGrant.setData("true");
                 self._grantedThisSession.setData(true);
