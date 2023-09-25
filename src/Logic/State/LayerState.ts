@@ -66,11 +66,11 @@ export default class LayerState {
         }
         const t = Translations.t.general.levelSelection
         const conditionsOrred = [
-            new Tag("level", "" + level),
-            new RegexTag("level", new RegExp("(.*;)?" + level + "(;.*)?")),
+            new Tag("_level", "" + level),
+            new RegexTag("_level", new RegExp("(.*;)?" + level + "(;.*)?")),
         ]
         if (level === "0") {
-            conditionsOrred.push(new Tag("level", "")) // No level tag is the same as level '0'
+            conditionsOrred.push(new Tag("_level", "")) // No level tag is the same as level '0'
         }
         console.log("Setting levels filter to", conditionsOrred)
         this.globalFilters.data.push({

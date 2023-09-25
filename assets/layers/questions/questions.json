@@ -1619,7 +1619,7 @@
     },
     {
       "id": "multilevels",
-      "builtin": "level",
+      "builtin": "single_level",
       "override": {
         "question": {
           "en": "What levels does this elevator go to?",
@@ -1657,7 +1657,18 @@
       }
     },
     {
-      "id": "level",
+      "id": "repeated",
+      "labels": ["level"],
+      "condition": "repeat_on~*",
+      "render": {
+        "en": "Multiple, identical objects can be found on floors {repeat_on}.",
+        "nl": "Er zijn verschillende, identieke objecten op verdiepingen {repeat_on}."
+      }
+    },
+    {
+      "id": "single_level",
+      "labels": ["level"],
+      "condition": "repeat_on=",
       "question": {
         "nl": "Op welke verdieping bevindt dit punt zich?",
         "en": "On what level is this feature located?",
