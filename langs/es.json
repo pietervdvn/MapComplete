@@ -424,7 +424,7 @@
     },
     "split": {
         "cancel": "Cancelar",
-        "hasBeenSplit": "Esta característica se ha separado",
+        "hasBeenSplit": "Esta vía se ha dividido",
         "inviteToSplit": "Dividir esta carretera en segmentos más pequeños. Esto te permite darle propiedades diferentes a partes diferentes de la carretera.",
         "loginToSplit": "Debes de haber iniciado sesión para dividir una carretera",
         "split": "Dividir",
