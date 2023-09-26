@@ -339,21 +339,37 @@ export default class SimpleMetaTaggers {
     )
     private static levels = new InlineMetaTagger(
         {
-            doc: "Extract the 'level'-tag into a normalized, ';'-separated value",
+            doc: "Extract the 'level'-tag into a normalized, ';'-separated value called '_level' (which also includes 'repeat_on'). The `level` tag (without underscore) will be normalized with only the value of `level`.",
             keys: ["_level"],
         },
         (feature) => {
-            if (feature.properties["level"] === undefined) {
-                return false
+            let somethingChanged = false
+            if (feature.properties["level"] !== undefined) {
+                const l = feature.properties["level"]
+                const newValue = TagUtils.LevelsParser(l).join(";")
+                if (l !== newValue) {
+                    feature.properties["level"] = newValue
+                    somethingChanged = true
+                }
             }
 
-            const l = feature.properties["level"]
-            const newValue = TagUtils.LevelsParser(l).join(";")
-            if (l === newValue) {
-                return false
+            if (feature.properties["repeat_on"] !== undefined) {
+                const l = feature.properties["repeat_on"]
+                const newValue = TagUtils.LevelsParser(l).join(";")
+                if (l !== newValue) {
+                    feature.properties["repeat_on"] = newValue
+                    somethingChanged = true
+                }
             }
-            feature.properties["level"] = newValue
-            return true
+
+            const combined = TagUtils.LevelsParser(
+                (feature.properties.repeat_on ?? "") + ";" + (feature.properties.level ?? "")
+            ).join(";")
+            if (feature.properties["_level"] !== combined) {
+                feature.properties["_level"] = combined
+                somethingChanged = true
+            }
+            return somethingChanged
         }
     )
     private static canonicalize = new InlineMetaTagger(

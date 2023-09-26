@@ -8,7 +8,8 @@
   "main": "index.ts",
   "type": "module",
   "config": {
-    "#": "Various endpoints that are instance-specific",
+    "#": "Various endpoints that are instance-specific. This is the default configuration, which is re-exported in 'Constants.ts'.",
+    "#": "Use MAPCOMPLETE_CONFIGURATION to use an additional configuration, e.g. `MAPCOMPLETE_CONFIGURATION=config_hetzner`",
     "#oauth_credentials:comment": [
       "`oauth_credentials` are the OAuth-2 credentials for the production-OSM server and the test-server.",
       "Are you deploying your own instance? Register your application too.",
