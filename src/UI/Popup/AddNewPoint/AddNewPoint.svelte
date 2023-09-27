@@ -102,7 +102,7 @@
     console.log("Creating new point at", location, "snapped to", snapTo, "with tags", tags);
 
     let snapToWay: undefined | OsmWay = undefined;
-    if (snapTo !== undefined) {
+    if (snapTo !== undefined && snapTo !== null) {
       const downloaded = await state.osmObjectDownloader.DownloadObjectAsync(snapTo, 0);
       if (downloaded !== "deleted") {
         snapToWay = downloaded;
