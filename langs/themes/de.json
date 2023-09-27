@@ -452,7 +452,7 @@
         "title": "Kletterhallen, Vereine und Kletterstellen"
     },
     "clock": {
-        "description": "Karte mit allen öffentlichen Uhren",
+        "description": "Eine Karte mit öffentlichen Uhren",
         "title": "Uhren"
     },
     "cycle_highways": {
@@ -608,8 +608,8 @@
         "title": "Bildungseinrichtungen"
     },
     "elongated_coin": {
-        "description": "Finde Münzpresse um deine eigenen Prägemünzen zu Pressen.",
-        "title": "Münzpressen"
+        "description": "Finde Automaten um Souvenirmünzen zu prägen.",
+        "title": "Münzprägeautomaten"
     },
     "etymology": {
         "description": "Auf dieser Karte können Sie sehen, wonach ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, und wurden mit Wikidata verknüpft. Im Popup sehen Sie den Wikipedia-Artikel (falls vorhanden) oder ein Wikidata-Feld, nach dem das Objekt benannt ist. Wenn das Objekt selbst eine Wikipedia-Seite hat, wird auch diese angezeigt.<br/><br/><b>Sie können auch einen Beitrag leisten!</b> Wenn Sie weit genug hinein zoomen werden <i>alle</i> Straßen angezeigt. Wenn Sie auf eine Straße klicken, öffnet sich ein Wikidata-Suchfeld. Mit ein paar Klicks können Sie einen Etymologie-Link hinzufügen. Beachten Sie, dass Sie dazu ein kostenloses OpenStreetMap-Konto benötigen.",
@@ -991,6 +991,33 @@
     "onwheels": {
         "description": "Auf dieser Karte können Sie öffentlich zugängliche Orte für Rollstuhlfahrer ansehen, bearbeiten oder hinzufügen",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistik"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Alle vorgeschlagenen Tags hinzufügen"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -1032,33 +1059,6 @@
             "8": {
                 "override": {
                     "name": "Barrierefreie Parkplätze"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistik"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Import"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Alle vorgeschlagenen Tags hinzufügen"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1220,10 +1220,6 @@
     "stations": {
         "description": "Bahnhofsdetails ansehen, bearbeiten und hinzufügen",
         "layers": {
-            "3": {
-                "description": "Ebene mit Bahnhöfen",
-                "name": "Bahnhöfe"
-            },
             "16": {
                 "description": "Anzeigen der Züge, die von diesem Bahnhof abfahren",
                 "name": "Abfahrtstafeln",
@@ -1255,6 +1251,10 @@
                 "title": {
                     "render": "Abfahrtstafel"
                 }
+            },
+            "3": {
+                "description": "Ebene mit Bahnhöfen",
+                "name": "Bahnhöfe"
             }
         },
         "title": "Bahnhöfe"
