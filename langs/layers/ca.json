@@ -5075,9 +5075,6 @@
         "tagRenderings": {
             "status": {
                 "mappings": {
-                    "0": {
-                        "then": ""
-                    },
                     "1": {
                         "then": "La tasca està arreglada"
                     },
@@ -5281,13 +5278,6 @@
                 "options": {
                     "0": {
                         "question": "Has de mencionar {search} en el primer comentari"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": ""
                     }
                 }
             },
