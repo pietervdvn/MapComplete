@@ -1102,7 +1102,8 @@
     },
     "has_organic",
     "accepts_cash",
-    "accepts_cards"
+    "accepts_cards",
+    "dogs"
   ],
   "deletion": {
     "nonDeleteMappings": [

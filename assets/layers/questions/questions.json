@@ -487,6 +487,7 @@
       "mappings": [
         {
           "if": "dog=yes",
+          "icon": "./assets/layers/questions/dogs_allowed.svg",
           "then": {
             "en": "Dogs are allowed",
             "nl": "honden zijn toegelaten",
@@ -515,6 +516,7 @@
         },
         {
           "if": "dog=no",
+          "icon": "./assets/layers/questions/no_dogs.svg",
           "then": {
             "en": "Dogs are <b>not</b> allowed",
             "nl": "honden zijn <b>niet</b> toegelaten",
@@ -542,6 +544,7 @@
         },
         {
           "if": "dog=leashed",
+          "icon": "./assets/layers/questions/dogs_leashed.svg",
           "then": {
             "en": "Dogs are allowed, but they have to be leashed",
             "nl": "honden zijn <b>enkel aan de leiband</b> welkom",
@@ -568,6 +571,8 @@
         },
         {
           "if": "dog=unleashed",
+          "icon": "./assets/layers/questions/dogs_allowed.svg",
+          
           "then": {
             "en": "Dogs are allowed and can run around freely",
             "nl": "honden zijn welkom en mogen vrij rondlopen",

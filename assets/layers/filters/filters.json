@@ -244,6 +244,33 @@
           }
         }
       ]
+    },
+    {
+      "id": "dogs",
+      "options": [
+        {
+          "question": {
+            "en": "No preference towards dogs"
+          }
+        },
+        {
+          "question": {
+            "en": "Dogs allowed"
+          },
+          "osmTags": {
+            "or": [
+              "dog=unleashed",
+              "dog=yes"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "No dogs allowed"
+          },
+          "osmTags": "dog=no"
+        }
+      ]
     }
   ]
 }
