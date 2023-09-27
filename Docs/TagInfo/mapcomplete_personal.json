@@ -12155,22 +12155,22 @@
     },
     {
       "key": "hoops",
-      "description": "Layer 'Sport pitches' shows hoops=1 with a fixed text, namely 'This basketball pitch has a single hoop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Sport pitches' shows hoops=1 with a fixed text, namely 'This basketball pitch has a single hoop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if sport~^((^|.*;)basketball(;.*|$))$)",
       "value": "1"
     },
     {
       "key": "hoops",
-      "description": "Layer 'Sport pitches' shows hoops=2 with a fixed text, namely 'This basketball pitch has two hoops' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Sport pitches' shows hoops=2 with a fixed text, namely 'This basketball pitch has two hoops' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if sport~^((^|.*;)basketball(;.*|$))$)",
       "value": "2"
     },
     {
       "key": "hoops",
-      "description": "Layer 'Sport pitches' shows hoops=4 with a fixed text, namely 'This basketball pitch has four hoops' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Sport pitches' shows hoops=4 with a fixed text, namely 'This basketball pitch has four hoops' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if sport~^((^|.*;)basketball(;.*|$))$)",
       "value": "4"
     },
     {
       "key": "hoops",
-      "description": "Layer 'Sport pitches' shows hoops~.+ with a fixed text, namely 'This basketball pitch has {hoops} hoops' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Sport pitches' shows hoops~.+ with a fixed text, namely 'This basketball pitch has {hoops} hoops' (in the mapcomplete.org theme 'Personal theme') (This is only shown if sport~^((^|.*;)basketball(;.*|$))$)"
     },
     {
       "key": "surface",
@@ -14083,6 +14083,11 @@
       "value": "public_transport_tickets"
     },
     {
+      "key": "vending",
+      "description": "Layer 'Vending Machines' shows vending=meat with a fixed text, namely 'Meat products are being sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "meat"
+    },
+    {
       "key": "opening_hours",
       "description": "Layer 'Vending Machines' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Personal theme')"
     },
@@ -14313,6 +14318,14 @@
       "key": "level",
       "description": "Layer 'Vending Machines' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "-1"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Vending Machines' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Vending Machines' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "amenity",

@@ -76,22 +76,22 @@
     },
     {
       "key": "hoops",
-      "description": "Layer 'Sport pitches' shows hoops=1 with a fixed text, namely 'This basketball pitch has a single hoop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "description": "Layer 'Sport pitches' shows hoops=1 with a fixed text, namely 'This basketball pitch has a single hoop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if sport~^((^|.*;)basketball(;.*|$))$)",
       "value": "1"
     },
     {
       "key": "hoops",
-      "description": "Layer 'Sport pitches' shows hoops=2 with a fixed text, namely 'This basketball pitch has two hoops' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "description": "Layer 'Sport pitches' shows hoops=2 with a fixed text, namely 'This basketball pitch has two hoops' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if sport~^((^|.*;)basketball(;.*|$))$)",
       "value": "2"
     },
     {
       "key": "hoops",
-      "description": "Layer 'Sport pitches' shows hoops=4 with a fixed text, namely 'This basketball pitch has four hoops' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "description": "Layer 'Sport pitches' shows hoops=4 with a fixed text, namely 'This basketball pitch has four hoops' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if sport~^((^|.*;)basketball(;.*|$))$)",
       "value": "4"
     },
     {
       "key": "hoops",
-      "description": "Layer 'Sport pitches' shows hoops~.+ with a fixed text, namely 'This basketball pitch has {hoops} hoops' (in the mapcomplete.org theme 'Sports')"
+      "description": "Layer 'Sport pitches' shows hoops~.+ with a fixed text, namely 'This basketball pitch has {hoops} hoops' (in the mapcomplete.org theme 'Sports') (This is only shown if sport~^((^|.*;)basketball(;.*|$))$)"
     },
     {
       "key": "surface",
