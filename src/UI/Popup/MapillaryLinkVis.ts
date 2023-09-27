@@ -9,6 +9,8 @@ import MapillaryLink from "../BigComponents/MapillaryLink.svelte"
 export class MapillaryLinkVis implements SpecialVisualization {
     funcName = "mapillary_link"
     docs = "Adds a button to open mapillary on the specified location"
+    needsUrls = []
+
     args = [
         {
             name: "zoom",

@@ -1,6 +1,7 @@
 import * as packagefile from "../../package.json"
 import * as extraconfig from "../../config.json"
 import { Utils } from "../Utils"
+import { AuthConfig } from "../Logic/Osm/AuthConfig"
 
 export type PriviligedLayerType = (typeof Constants.priviliged_layers)[number]
 
@@ -104,7 +105,8 @@ export default class Constants {
     public static ImgurApiKey = Constants.config.api_keys.imgur
     public static readonly mapillary_client_token_v4 = Constants.config.api_keys.mapillary_v4
     public static defaultOverpassUrls = Constants.config.default_overpass_urls
-    static countryCoderEndpoint: string = Constants.config.country_coder_host
+    public static countryCoderEndpoint: string = Constants.config.country_coder_host
+    public static osmAuthConfig: AuthConfig = Constants.config.oauth_credentials
 
     /**
      * These are the values that are allowed to use as 'backdrop' icon for a map pin

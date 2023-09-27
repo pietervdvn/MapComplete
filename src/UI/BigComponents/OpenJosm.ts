@@ -11,6 +11,7 @@ import { Utils } from "../../Utils"
 import Constants from "../../Models/Constants"
 
 export class OpenJosm extends Combine {
+    public static readonly needsUrls = ["http://127.0.0.1:8111/load_and_zoom"]
     constructor(osmConnection: OsmConnection, bounds: Store<BBox>, iconStyle?: string) {
         const t = Translations.t.general.attribution
 

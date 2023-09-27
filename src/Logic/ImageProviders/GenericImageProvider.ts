@@ -3,6 +3,10 @@ import ImageProvider, { ProvidedImage } from "./ImageProvider"
 export default class GenericImageProvider extends ImageProvider {
     public defaultKeyPrefixes: string[] = ["image"]
 
+    public apiUrls(): string[] {
+        return []
+    }
+
     private readonly _valuePrefixBlacklist: string[]
 
     public constructor(valuePrefixBlacklist: string[]) {

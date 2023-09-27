@@ -12,8 +12,8 @@ mkdir dist/assets 2> /dev/null
 export NODE_OPTIONS="--max-old-space-size=8192"
 
 # This script ends every line with '&&' to chain everything. A failure will thus stop the build
-# npm run generate:editor-layer-index &&
-# npm run generate &&
+npm run generate:editor-layer-index &&
+npm run generate &&
 npm run generate:layouts
 
 if [ $? -ne 0 ]; then
@@ -38,7 +38,8 @@ then
     export ASSET_URL
     echo "$ASSET_URL"
 else
-  ASSET_URL="$BRANCH"
+  # ASSET_URL="$BRANCH"
+  ASSET_URL="./"
   export ASSET_URL
   echo "$ASSET_URL"
 fi

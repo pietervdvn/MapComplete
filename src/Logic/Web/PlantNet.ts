@@ -1,7 +1,7 @@
 import { Utils } from "../../Utils"
 
 export default class PlantNet {
-    private static baseUrl =
+    public static baseUrl =
         "https://my-api.plantnet.org/v2/identify/all?api-key=2b10AAsjzwzJvucA5Ncm5qxe"
 
     public static query(imageUrls: string[]): Promise<PlantNetResult> {

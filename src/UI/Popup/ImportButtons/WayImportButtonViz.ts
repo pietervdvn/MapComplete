@@ -20,6 +20,7 @@ import FullNodeDatabaseSource from "../../../Logic/FeatureSource/TiledFeatureSou
  */
 export default class WayImportButtonViz implements AutoAction, SpecialVisualization {
     public readonly funcName: string = "import_way_button"
+    needsUrls = []
     public readonly docs: string =
         "This button will copy the data from an external dataset into OpenStreetMap, copying the geometry and adding it as a 'line'" +
         ImportFlowUtils.documentationGeneral

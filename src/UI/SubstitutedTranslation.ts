@@ -37,6 +37,7 @@ export class SubstitutedTranslation extends VariableUiElement {
                 constr: typeof value === "function" ? value : () => value,
                 docs: "Dynamically injected input element",
                 args: [],
+                needsUrls: [],
                 example: "",
             })
         })

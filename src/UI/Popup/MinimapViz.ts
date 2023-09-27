@@ -13,6 +13,7 @@ import { BBox } from "../../Logic/BBox"
 export class MinimapViz implements SpecialVisualization {
     funcName = "minimap"
     docs = "A small map showing the selected feature."
+    needsUrls = []
     args = [
         {
             doc: "The (maximum) zoomlevel: the target zoomlevel after fitting the entire feature. The minimap will fit the entire feature, then zoom out to this zoom level. The higher, the more zoomed in with 1 being the entire world and 19 being really close",

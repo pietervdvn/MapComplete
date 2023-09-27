@@ -1658,7 +1658,9 @@
     },
     {
       "id": "repeated",
-      "labels": ["level"],
+      "labels": [
+        "level"
+      ],
       "condition": "repeat_on~*",
       "render": {
         "en": "Multiple, identical objects can be found on floors {repeat_on}.",
@@ -1667,7 +1669,9 @@
     },
     {
       "id": "single_level",
-      "labels": ["level"],
+      "labels": [
+        "level"
+      ],
       "condition": "repeat_on=",
       "question": {
         "nl": "Op welke verdieping bevindt dit punt zich?",

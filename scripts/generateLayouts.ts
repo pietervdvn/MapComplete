@@ -8,6 +8,10 @@ import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
 import xml2js from "xml2js"
 import ScriptUtils from "./ScriptUtils"
 import { Utils } from "../src/Utils"
+import SpecialVisualizations from "../src/UI/SpecialVisualizations"
+import Constants from "../src/Models/Constants"
+import { AvailableRasterLayers, RasterLayerPolygon } from "../src/Models/RasterLayers"
+import { ImmutableStore } from "../src/Logic/UIEventSource"
 
 const sharp = require("sharp")
 const template = readFileSync("theme.html", "utf8")
@@ -195,29 +199,72 @@ function asLangSpan(t: Translation, tag = "span"): string {
         if (lang === "_context") {
             continue
         }
-        values.push(`<${tag} lang='${lang}'>${t.translations[lang]}</${tag}>`)
+        values.push(`<${tag} lang="${lang}">${t.translations[lang]}</${tag}>`)
     }
     return values.join("\n")
 }
 
-let cspCached: string = undefined
-function generateCsp(): string {
-    if (cspCached !== undefined) {
-        return cspCached
+let previousSrc: Set<string> = new Set<string>()
+function generateCsp(layout: LayoutConfig): string {
+    const apiUrls: string[] = [
+        "self",
+        ...Constants.defaultOverpassUrls,
+        Constants.countryCoderEndpoint,
+        "https://api.openstreetmap.org",
+        "https://pietervdvn.goatcounter.com",
+    ].concat(...SpecialVisualizations.specialVisualizations.map((sv) => sv.needsUrls))
+
+    const geojsonSources: string[] = layout.layers.map((l) => l.source?.geojsonSource)
+    const hosts = new Set<string>()
+    const eliLayers: RasterLayerPolygon[] = AvailableRasterLayers.layersAvailableAt(
+        new ImmutableStore({ lon: 0, lat: 0 })
+    ).data
+    const vectorLayers = eliLayers.filter((l) => l.properties.type === "vector")
+    const vectorSources = vectorLayers.map((l) => l.properties.url)
+    apiUrls.push(...vectorSources)
+    for (const connectSource of apiUrls.concat(geojsonSources)) {
+        if (!connectSource) {
+            continue
+        }
+        try {
+            const url = new URL(connectSource)
+            hosts.add("https://" + url.host)
+        } catch (e) {
+            hosts.add(connectSource)
+        }
     }
+
+    const connectSrc = Array.from(hosts).sort()
+
+    const newSrcs = connectSrc.filter((newItem) => !previousSrc.has(newItem))
+
+    console.log(
+        "Got",
+        hosts.size,
+        "connect-src items for theme",
+        layout.id,
+        "(extra sources: ",
+        newSrcs.join(" ") + ")"
+    )
+    previousSrc = hosts
 
     const csp = {
         "default-src": "'self'",
-        "script-src": "'self'",
-        "img-src": "*",
-        "connect-src": "*",
+        "script-src": "'self' https://gc.zgo.at/count.js",
+        "img-src": "* data:", // maplibre depends on 'data:' to load
+        "connect-src": connectSrc.join(" "),
+        "report-to": "https://report.mapcomplete.org/csp",
+        "worker-src": "'self' blob:", // Vite somehow loads the worker via a 'blob'
+        "style-src": "'self' 'unsafe-inline'", // unsafe-inline is needed to change the default background pin colours
     }
     const content = Object.keys(csp)
-        .map((k) => k + ": " + csp[k])
+        .map((k) => k + " " + csp[k])
         .join("; ")
 
-    cspCached = `<meta http-equiv="Content-Security-Policy" content="${content}">`
-    return cspCached
+    return [
+        `<meta http-equiv ="Report-To" content='{"group":"csp-endpoint", "max_age": 86400,"endpoints": [\{"url": "https://report.mapcomplete.org/csp"}], "include_subdomains": true}'>`,
+        `<meta http-equiv="Content-Security-Policy" content="${content}">`,
+    ].join("\n")
 }
 
 async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alreadyWritten) {
@@ -290,7 +337,7 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
         ...apple_icons,
     ].join("\n")
 
-    const loadingText = Translations.t.general.loadingTheme.Subs({ theme: ogTitle })
+    const loadingText = Translations.t.general.loadingTheme.Subs({ theme: layout.title })
 
     let output = template
         .replace("Loading MapComplete, hang on...", asLangSpan(loadingText, "h1"))
@@ -299,7 +346,7 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
             Translations.t.general.poweredByOsm.textFor(targetLanguage)
         )
         .replace(/<!-- THEME-SPECIFIC -->.*<!-- THEME-SPECIFIC-END-->/s, themeSpecific)
-        .replace(/<!-- CSP -->/, generateCsp())
+        .replace(/<!-- CSP -->/, generateCsp(layout))
         .replace(
             /<!-- DESCRIPTION START -->.*<!-- DESCRIPTION END -->/s,
             asLangSpan(layout.shortDescription)
@@ -311,7 +358,7 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
 
         .replace(
             '<script src="./src/index.ts" type="module"></script>',
-            `<script type="module" src='./index_${layout.id}.ts'></script>`
+            `<script type="module" src="./index_${layout.id}.ts"></script>`
         )
 
     return output

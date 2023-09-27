@@ -140,8 +140,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 "oauth_token",
                 undefined,
                 "Used to complete the login"
-            ),
-            osmConfiguration: <"osm" | "osm-test">this.featureSwitches.featureSwitchApiURL.data,
+            )
         })
         this.userRelatedState = new UserRelatedState(
             this.osmConnection,

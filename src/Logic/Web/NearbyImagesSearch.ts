@@ -1,9 +1,9 @@
 import { IndexedFeatureSource } from "../FeatureSource/FeatureSource"
 import { GeoOperations } from "../GeoOperations"
 import { ImmutableStore, Store, Stores, UIEventSource } from "../UIEventSource"
-import { Mapillary } from "../ImageProviders/Mapillary"
 import P4C from "pic4carto"
 import { Utils } from "../../Utils"
+
 export interface NearbyImageOptions {
     lon: number
     lat: number
@@ -35,17 +35,12 @@ export interface P4CPicture {
 }
 
 /**
- * Uses Pic4wCarto to fetch nearby images from various providers
+ * Uses Pic4Carto to fetch nearby images from various providers
  */
 export default class NearbyImagesSearch {
-    private static readonly services = [
-        "mapillary",
-        "flickr",
-        "openstreetcam",
-        "wikicommons",
-    ] as const
-
-    private individualStores
+    public static readonly services = ["mapillary", "flickr", "kartaview", "wikicommons"] as const
+    public static readonly apiUrls = ["https://api.flickr.com"]
+    private readonly individualStores: Store<{ images: P4CPicture[]; beforeFilter: number }>[]
     private readonly _store: UIEventSource<P4CPicture[]> = new UIEventSource<P4CPicture[]>([])
     public readonly store: Store<P4CPicture[]> = this._store
     private readonly _options: NearbyImageOptions
@@ -71,16 +66,16 @@ export default class NearbyImagesSearch {
         this.update()
     }
 
-    private static buildPictureFetcher(
+    private static async fetchImages(
         options: NearbyImageOptions,
-        fetcher: "mapillary" | "flickr" | "openstreetcam" | "wikicommons"
-    ): Store<{ images: P4CPicture[]; beforeFilter: number }> {
+        fetcher: P4CService
+    ): Promise<P4CPicture[]> {
         const picManager = new P4C.PicturesManager({ usefetchers: [fetcher] })
-        const searchRadius = options.searchRadius ?? 100
         const maxAgeSeconds = (options.maxDaysOld ?? 3 * 365) * 24 * 60 * 60 * 1000
+        const searchRadius = options.searchRadius ?? 100
 
-        const p4cStore = Stores.FromPromise<P4CPicture[]>(
-            picManager.startPicsRetrievalAround(
+        try {
+            const pics: P4CPicture[] = await picManager.startPicsRetrievalAround(
                 new P4C.LatLng(options.lat, options.lon),
                 searchRadius,
                 {
@@ -88,7 +83,21 @@ export default class NearbyImagesSearch {
                     towardscenter: false,
                 }
             )
+            return pics
+        } catch (e) {
+            console.error("Could not fetch images from service", fetcher, e)
+            return []
+        }
+    }
+
+    private static buildPictureFetcher(
+        options: NearbyImageOptions,
+        fetcher: P4CService
+    ): Store<{ images: P4CPicture[]; beforeFilter: number }> {
+        const p4cStore = Stores.FromPromise<P4CPicture[]>(
+            NearbyImagesSearch.fetchImages(options, fetcher)
         )
+        const searchRadius = options.searchRadius ?? 100
         return p4cStore.map(
             (images) => {
                 if (images === undefined) {
@@ -220,3 +229,5 @@ class ImagesInLoadedDataFetcher {
         return foundImages
     }
 }
+
+type P4CService = (typeof NearbyImagesSearch.services)[number]

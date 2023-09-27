@@ -4,6 +4,7 @@ import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisua
 
 export class MultiApplyViz implements SpecialVisualization {
     funcName = "multi_apply"
+    needsUrls = []
     docs =
         "A button to apply the tagging of this object onto a list of other features. This is an advanced feature for which you'll need calculatedTags"
     args = [

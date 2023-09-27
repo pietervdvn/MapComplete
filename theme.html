@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
-    <!-- CSP // disabled -->
+    <!-- CSP -->
     <link href="./css/mobile.css" rel="stylesheet"/>
     <link href="./css/openinghourstable.css" rel="stylesheet"/>
     <link href="./css/tagrendering.css" rel="stylesheet"/>
@@ -65,57 +65,12 @@
     </div>
 </div>
 <div id="belowmap" class="absolute top-0 left-0 -z-10">Below</div>
+<script async src="./src/UI/RemoveOtherLanguages.ts" type="module"></script>
+<script async src="./src/InstallServiceWorker.ts" type="module"></script>
+<script defer src="./src/index.ts" type="module"></script>
+<script async data-goatcounter="https://pietervdvn.goatcounter.com/count" src="https://gc.zgo.at/count.js" crossorigin="anonymous" integrity="sha384-gtO6vSydQeOAGGK19NHrlVLNtaDSJjN4aGMWschK+dwAZOdPQWbjXgL+FM5XsgFJ"></script>
 
-<script>
-
-    let lang = ((navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || 'en').substr(0, 2);
-
-    function filterLangs(maindiv) {
-        let foundLangs = 0
-        for (const child of Array.from(maindiv.children)) {
-            if (child.attributes.lang?.value === lang) {
-                foundLangs++
-            }
-        }
-        if (foundLangs === 0) {
-            lang = "en"
-        }
-        for (const child of Array.from(maindiv.children)) {
-            const childLang = child.attributes.lang
-            if (childLang === undefined) {
-                continue
-            }
-            if (childLang.value === lang) {
-                continue
-            }
-            child.parentElement.removeChild(child)
-        }
-    }
-
-    filterLangs(document.getElementById("descriptions-while-loading"))
-    filterLangs(document.getElementById("default-title"))
-</script>
-
-
-<script src="./src/index.ts" type="module"></script>
-<script async data-goatcounter="https://pietervdvn.goatcounter.com/count" src="//gc.zgo.at/count.js" crossorigin="anonymous" integrity="sha384-gtO6vSydQeOAGGK19NHrlVLNtaDSJjN4aGMWschK+dwAZOdPQWbjXgL+FM5XsgFJ"></script>
-
-<script>
-    window.addEventListener('load', () => {
-        if ('serviceWorker' in navigator) {
-            // register service worker
-            navigator.serviceWorker.register('/service-worker.js').then(
-                () => {
-                    console.log('Service worker registration successful');
-                },
-                err => {
-                    console.error('Service worker registration failed', err)
-                });
-        } else {
-            console.log("Service workers are not supported")
-        }
-    });
-</script>
+    
 
 </body>
 </html>

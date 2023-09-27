@@ -1,71 +1,79 @@
-import Combine from "./Base/Combine";
-import { FixedUiElement } from "./Base/FixedUiElement";
-import BaseUIElement from "./BaseUIElement";
-import Title from "./Base/Title";
-import Table from "./Base/Table";
-import { RenderingSpecification, SpecialVisualization, SpecialVisualizationState } from "./SpecialVisualization";
-import { HistogramViz } from "./Popup/HistogramViz";
-import { MinimapViz } from "./Popup/MinimapViz";
-import { ShareLinkViz } from "./Popup/ShareLinkViz";
-import { UploadToOsmViz } from "./Popup/UploadToOsmViz";
-import { MultiApplyViz } from "./Popup/MultiApplyViz";
-import { AddNoteCommentViz } from "./Popup/AddNoteCommentViz";
-import { PlantNetDetectionViz } from "./Popup/PlantNetDetectionViz";
-import TagApplyButton from "./Popup/TagApplyButton";
-import { CloseNoteButton } from "./Popup/CloseNoteButton";
-import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis";
-import { Store, Stores, UIEventSource } from "../Logic/UIEventSource";
-import AllTagsPanel from "./Popup/AllTagsPanel.svelte";
-import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
-import { ImageCarousel } from "./Image/ImageCarousel";
-import { VariableUiElement } from "./Base/VariableUIElement";
-import { Utils } from "../Utils";
-import Wikidata, { WikidataResponse } from "../Logic/Web/Wikidata";
-import { Translation } from "./i18n/Translation";
-import Translations from "./i18n/Translations";
-import ReviewForm from "./Reviews/ReviewForm";
-import ReviewElement from "./Reviews/ReviewElement";
-import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization";
-import LiveQueryHandler from "../Logic/Web/LiveQueryHandler";
-import { SubtleButton } from "./Base/SubtleButton";
-import Svg from "../Svg";
-import NoteCommentElement from "./Popup/NoteCommentElement";
-import { SubstitutedTranslation } from "./SubstitutedTranslation";
-import List from "./Base/List";
-import StatisticsPanel from "./BigComponents/StatisticsPanel";
-import AutoApplyButton from "./Popup/AutoApplyButton";
-import { LanguageElement } from "./Popup/LanguageElement";
-import FeatureReviews from "../Logic/Web/MangroveReviews";
-import Maproulette from "../Logic/Maproulette";
-import SvelteUIElement from "./Base/SvelteUIElement";
-import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource";
-import QuestionViz from "./Popup/QuestionViz";
-import { Feature, Point } from "geojson";
-import { GeoOperations } from "../Logic/GeoOperations";
-import CreateNewNote from "./Popup/CreateNewNote.svelte";
-import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte";
-import UserProfile from "./BigComponents/UserProfile.svelte";
-import LanguagePicker from "./LanguagePicker";
-import Link from "./Base/Link";
-import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
-import { OsmTags, WayId } from "../Models/OsmFeature";
-import MoveWizard from "./Popup/MoveWizard";
-import SplitRoadWizard from "./Popup/SplitRoadWizard";
-import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz";
-import WikipediaPanel from "./Wikipedia/WikipediaPanel.svelte";
-import TagRenderingEditable from "./Popup/TagRendering/TagRenderingEditable.svelte";
-import { PointImportButtonViz } from "./Popup/ImportButtons/PointImportButtonViz";
-import WayImportButtonViz from "./Popup/ImportButtons/WayImportButtonViz";
-import ConflateImportButtonViz from "./Popup/ImportButtons/ConflateImportButtonViz";
-import DeleteWizard from "./Popup/DeleteFlow/DeleteWizard.svelte";
-import { OpenJosm } from "./BigComponents/OpenJosm";
-import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte";
-import FediverseValidator from "./InputElement/Validators/FediverseValidator";
-import SendEmail from "./Popup/SendEmail.svelte";
-import NearbyImages from "./Popup/NearbyImages.svelte";
-import NearbyImagesCollapsed from "./Popup/NearbyImagesCollapsed.svelte";
-import UploadImage from "./Image/UploadImage.svelte";
+import Combine from "./Base/Combine"
+import { FixedUiElement } from "./Base/FixedUiElement"
+import BaseUIElement from "./BaseUIElement"
+import Title from "./Base/Title"
+import Table from "./Base/Table"
+import {
+    RenderingSpecification,
+    SpecialVisualization,
+    SpecialVisualizationState,
+} from "./SpecialVisualization"
+import { HistogramViz } from "./Popup/HistogramViz"
+import { MinimapViz } from "./Popup/MinimapViz"
+import { ShareLinkViz } from "./Popup/ShareLinkViz"
+import { UploadToOsmViz } from "./Popup/UploadToOsmViz"
+import { MultiApplyViz } from "./Popup/MultiApplyViz"
+import { AddNoteCommentViz } from "./Popup/AddNoteCommentViz"
+import { PlantNetDetectionViz } from "./Popup/PlantNetDetectionViz"
+import TagApplyButton from "./Popup/TagApplyButton"
+import { CloseNoteButton } from "./Popup/CloseNoteButton"
+import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis"
+import { Store, Stores, UIEventSource } from "../Logic/UIEventSource"
+import AllTagsPanel from "./Popup/AllTagsPanel.svelte"
+import AllImageProviders from "../Logic/ImageProviders/AllImageProviders"
+import { ImageCarousel } from "./Image/ImageCarousel"
+import { VariableUiElement } from "./Base/VariableUIElement"
+import { Utils } from "../Utils"
+import Wikidata, { WikidataResponse } from "../Logic/Web/Wikidata"
+import { Translation } from "./i18n/Translation"
+import Translations from "./i18n/Translations"
+import ReviewForm from "./Reviews/ReviewForm"
+import ReviewElement from "./Reviews/ReviewElement"
+import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
+import { SubtleButton } from "./Base/SubtleButton"
+import Svg from "../Svg"
+import NoteCommentElement from "./Popup/NoteCommentElement"
+import { SubstitutedTranslation } from "./SubstitutedTranslation"
+import List from "./Base/List"
+import StatisticsPanel from "./BigComponents/StatisticsPanel"
+import AutoApplyButton from "./Popup/AutoApplyButton"
+import { LanguageElement } from "./Popup/LanguageElement"
+import FeatureReviews from "../Logic/Web/MangroveReviews"
+import Maproulette from "../Logic/Maproulette"
+import SvelteUIElement from "./Base/SvelteUIElement"
+import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
+import QuestionViz from "./Popup/QuestionViz"
+import { Feature, Point } from "geojson"
+import { GeoOperations } from "../Logic/GeoOperations"
+import CreateNewNote from "./Popup/CreateNewNote.svelte"
+import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
+import UserProfile from "./BigComponents/UserProfile.svelte"
+import LanguagePicker from "./LanguagePicker"
+import Link from "./Base/Link"
+import LayerConfig from "../Models/ThemeConfig/LayerConfig"
+import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
+import { OsmTags, WayId } from "../Models/OsmFeature"
+import MoveWizard from "./Popup/MoveWizard"
+import SplitRoadWizard from "./Popup/SplitRoadWizard"
+import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz"
+import WikipediaPanel from "./Wikipedia/WikipediaPanel.svelte"
+import TagRenderingEditable from "./Popup/TagRendering/TagRenderingEditable.svelte"
+import { PointImportButtonViz } from "./Popup/ImportButtons/PointImportButtonViz"
+import WayImportButtonViz from "./Popup/ImportButtons/WayImportButtonViz"
+import ConflateImportButtonViz from "./Popup/ImportButtons/ConflateImportButtonViz"
+import DeleteWizard from "./Popup/DeleteFlow/DeleteWizard.svelte"
+import { OpenJosm } from "./BigComponents/OpenJosm"
+import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte"
+import FediverseValidator from "./InputElement/Validators/FediverseValidator"
+import SendEmail from "./Popup/SendEmail.svelte"
+import NearbyImages from "./Popup/NearbyImages.svelte"
+import NearbyImagesCollapsed from "./Popup/NearbyImagesCollapsed.svelte"
+import UploadImage from "./Image/UploadImage.svelte"
+import { Imgur } from "../Logic/ImageProviders/Imgur"
+import Constants from "../Models/Constants"
+import { MangroveReviews } from "mangrove-reviews-typescript"
+import Wikipedia from "../Logic/Web/Wikipedia"
+import NearbyImagesSearch from "../Logic/Web/NearbyImagesSearch"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -79,7 +87,7 @@ class NearbyImageVis implements SpecialVisualization {
     docs =
         "A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature"
     funcName = "nearby_images"
-
+    needsUrls = NearbyImagesSearch.apiUrls
     constr(
         state: SpecialVisualizationState,
         tags: UIEventSource<Record<string, string>>,
@@ -117,6 +125,7 @@ class StealViz implements SpecialVisualization {
             required: true,
         },
     ]
+    needsUrls = []
 
     constr(state: SpecialVisualizationState, featureTags, args) {
         const [featureIdKey, layerAndtagRenderingIds] = args
@@ -264,7 +273,6 @@ export default class SpecialVisualizations {
                     SpecialVisualizations.specialVisualizations
                         .map((sp) => sp.funcName + "()")
                         .join(", ")
-
             }
         }
 
@@ -378,6 +386,7 @@ export default class SpecialVisualizations {
                 funcName: "add_new_point",
                 docs: "An element which allows to add a new point on the 'last_click'-location. Only makes sense in the layer `last_click`",
                 args: [],
+                needsUrls: [],
                 constr(state: SpecialVisualizationState, _, __, feature): BaseUIElement {
                     let [lon, lat] = GeoOperations.centerpointCoordinates(feature)
                     return new SvelteUIElement(AddNewPoint, {
@@ -389,6 +398,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "user_profile",
                 args: [],
+                needsUrls: [],
                 docs: "A component showing information about the currently logged in user (username, profile description, profile picture + link to edit them). Mostly meant to be used in the 'user-settings'",
                 constr(state: SpecialVisualizationState): BaseUIElement {
                     return new SvelteUIElement(UserProfile, {
@@ -399,6 +409,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "language_picker",
                 args: [],
+                needsUrls: [],
                 docs: "A component to set the language of the user interface",
                 constr(state: SpecialVisualizationState): BaseUIElement {
                     return new LanguagePicker(
@@ -410,6 +421,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "logout",
                 args: [],
+                needsUrls: [Constants.osmAuthConfig.url],
                 docs: "Shows a button where the user can log out",
                 constr(state: SpecialVisualizationState): BaseUIElement {
                     return new SubtleButton(Svg.logout_svg(), Translations.t.general.logout, {
@@ -426,6 +438,7 @@ export default class SpecialVisualizations {
                 funcName: "split_button",
                 docs: "Adds a button which allows to split a way",
                 args: [],
+                needsUrls: [],
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>
@@ -446,6 +459,7 @@ export default class SpecialVisualizations {
                 funcName: "move_button",
                 docs: "Adds a button which allows to move the object to another location. The config will be read from the layer config",
                 args: [],
+                needsUrls: [],
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
@@ -469,6 +483,7 @@ export default class SpecialVisualizations {
                 funcName: "delete_button",
                 docs: "Adds a button which allows to delete the object at this location. The config will be read from the layer config",
                 args: [],
+                needsUrls: [],
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
@@ -493,6 +508,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "open_note",
                 args: [],
+                needsUrls: [Constants.osmAuthConfig.url],
                 docs: "Creates a new map note on the given location. This options is placed in the 'last_click'-popup automatically if the 'notes'-layer is enabled",
                 constr(
                     state: SpecialVisualizationState,
@@ -525,6 +541,7 @@ export default class SpecialVisualizations {
                         defaultValue: "wikidata;wikipedia",
                     },
                 ],
+                needsUrls: [...Wikidata.neededUrls, ...Wikipedia.neededUrls],
                 example:
                     "`{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height",
                 constr: (_, tagsSource, args) => {
@@ -548,6 +565,7 @@ export default class SpecialVisualizations {
                         defaultValue: "wikidata",
                     },
                 ],
+                needsUrls: Wikidata.neededUrls,
                 example:
                     "`{wikidata_label()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the label itself",
                 constr: (_, tagsSource, args) =>
@@ -577,6 +595,7 @@ export default class SpecialVisualizations {
                 funcName: "all_tags",
                 docs: "Prints all key-value pairs of the object - used for debugging",
                 args: [],
+                needsUrls: [],
                 constr: (state, tags: UIEventSource<any>) =>
                     new SvelteUIElement(AllTagsPanel, { tags, state }),
             },
@@ -590,6 +609,7 @@ export default class SpecialVisualizations {
                         doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated ",
                     },
                 ],
+                needsUrls: AllImageProviders.apiUrls,
                 constr: (state, tags, args) => {
                     let imagePrefixes: string[] = undefined
                     if (args.length > 0) {
@@ -605,27 +625,32 @@ export default class SpecialVisualizations {
             {
                 funcName: "image_upload",
                 docs: "Creates a button where a user can upload an image to IMGUR",
+                needsUrls: [Imgur.apiUrl],
                 args: [
                     {
                         name: "image-key",
                         doc: "Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)",
-                        required: false
+                        required: false,
                     },
                     {
                         name: "label",
                         doc: "The text to show on the button",
-                        required: false
+                        required: false,
                     },
                 ],
                 constr: (state, tags, args) => {
                     return new SvelteUIElement(UploadImage, {
-                        state,tags, labelText: args[1], image: args[0]
+                        state,
+                        tags,
+                        labelText: args[1],
+                        image: args[0],
                     })
                 },
             },
             {
                 funcName: "reviews",
                 docs: "Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten",
+                needsUrls: [MangroveReviews.ORIGINAL_API],
                 example:
                     "`{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used",
                 args: [
@@ -676,6 +701,7 @@ export default class SpecialVisualizations {
                         doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__",
                     },
                 ],
+                needsUrls: [],
                 example:
                     "A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}`",
                 constr: (state, tagSource: UIEventSource<any>, args) => {
@@ -689,37 +715,8 @@ export default class SpecialVisualizations {
                 },
             },
             {
-                funcName: "live",
-                docs: "Downloads a JSON from the given URL, e.g. '{live(example.org/data.json, shorthand:x.y.z, other:a.b.c, shorthand)}' will download the given file, will create an object {shorthand: json[x][y][z], other: json[a][b][c] out of it and will return 'other' or 'json[a][b][c]. This is made to use in combination with tags, e.g. {live({url}, {url:format}, needed_value)}",
-                example:
-                    "{live({url},{url:format},hour)} {live(https://data.mobility.brussels/bike/api/counts/?request=live&featureID=CB2105,hour:data.hour_cnt;day:data.day_cnt;year:data.year_cnt,hour)}",
-                args: [
-                    {
-                        name: "Url",
-                        doc: "The URL to load",
-                        required: true,
-                    },
-                    {
-                        name: "Shorthands",
-                        doc: "A list of shorthands, of the format 'shorthandname:path.path.path'. separated by ;",
-                    },
-                    {
-                        name: "path",
-                        doc: "The path (or shorthand) that should be returned",
-                    },
-                ],
-                constr: (_, tagSource: UIEventSource<any>, args) => {
-                    const url = args[0]
-                    const shorthands = args[1]
-                    const neededValue = args[2]
-                    const source = LiveQueryHandler.FetchLiveData(url, shorthands.split(";"))
-                    return new VariableUiElement(
-                        source.map((data) => data[neededValue] ?? "Loading...")
-                    )
-                },
-            },
-            {
                 funcName: "canonical",
+                needsUrls: [],
                 docs: "Converts a short, canonical value into the long, translated text including the unit. This only works if a `unit` is defined for the corresponding value. The unit specification will be included in the text. ",
                 example:
                     "If the object has `length=42`, then `{canonical(length)}` will be shown as **42 meter** (in english), **42 metre** (in french), ...",
@@ -757,6 +754,7 @@ export default class SpecialVisualizations {
                 funcName: "export_as_geojson",
                 docs: "Exports the selected feature as GeoJson-file",
                 args: [],
+                needsUrls: [],
                 constr: (state, tagSource, tagsSource, feature, layer) => {
                     const t = Translations.t.general.download
 
@@ -786,6 +784,7 @@ export default class SpecialVisualizations {
                 funcName: "open_in_iD",
                 docs: "Opens the current view in the iD-editor",
                 args: [],
+                needsUrls: [],
                 constr: (state, feature) => {
                     return new SvelteUIElement(OpenIdEditor, {
                         mapProperties: state.mapProperties,
@@ -797,6 +796,8 @@ export default class SpecialVisualizations {
                 funcName: "open_in_josm",
                 docs: "Opens the current view in the JOSM-editor",
                 args: [],
+                needsUrls: OpenJosm.needsUrls,
+
                 constr: (state) => {
                     return new OpenJosm(state.osmConnection, state.mapProperties.bounds)
                 },
@@ -805,6 +806,7 @@ export default class SpecialVisualizations {
                 funcName: "clear_location_history",
                 docs: "A button to remove the travelled track information from the device",
                 args: [],
+                needsUrls: [],
                 constr: (state) => {
                     return new SubtleButton(
                         Svg.delete_icon_svg().SetStyle("height: 1.5rem"),
@@ -830,6 +832,7 @@ export default class SpecialVisualizations {
                         defaultValue: "0",
                     },
                 ],
+                needsUrls: [Constants.osmAuthConfig.url],
                 constr: (state, tags, args) =>
                     new VariableUiElement(
                         tags
@@ -858,16 +861,18 @@ export default class SpecialVisualizations {
                         defaultValue: "id",
                     },
                 ],
+                needsUrls: [Imgur.apiUrl],
                 constr: (state, tags, args) => {
                     const id = tags.data[args[0] ?? "id"]
                     tags = state.featureProperties.getStore(id)
                     console.log("Id is", id)
-                    return new SvelteUIElement(UploadImage, {state, tags})
-                    }
+                    return new SvelteUIElement(UploadImage, { state, tags })
+                },
             },
             {
                 funcName: "title",
                 args: [],
+                needsUrls: [],
                 docs: "Shows the title of the popup. Useful for some cases, e.g. 'What is phone number of {title()}?'",
                 example:
                     "`What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.",
@@ -888,6 +893,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "maproulette_task",
                 args: [],
+                needsUrls: [Maproulette.defaultEndpoint],
                 constr(state, tagSource) {
                     let parentId = tagSource.data.mr_challengeId
                     if (parentId === undefined) {
@@ -931,6 +937,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "maproulette_set_status",
                 docs: "Change the status of the given MapRoulette task",
+                needsUrls: [Maproulette.defaultEndpoint],
                 example:
                     " The following example sets the status to '2' (false positive)\n" +
                     "\n" +
@@ -1054,6 +1061,7 @@ export default class SpecialVisualizations {
                 funcName: "statistics",
                 docs: "Show general statistics about the elements currently in view. Intended to use on the `current_view`-layer",
                 args: [],
+                needsUrls: [],
                 constr: (state) => {
                     return new Combine(
                         state.layout.layers
@@ -1096,6 +1104,8 @@ export default class SpecialVisualizations {
                         required: true,
                     },
                 ],
+                needsUrls: [],
+
                 constr(__, tags, args) {
                     return new SvelteUIElement(SendEmail, { args, tags })
                 },
@@ -1123,6 +1133,7 @@ export default class SpecialVisualizations {
                         doc: "If set, this link will act as a download-button. The contents of `href` will be offered for download; this parameter will act as the proposed filename",
                     },
                 ],
+                needsUrls: [],
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
@@ -1144,6 +1155,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "multi",
                 docs: "Given an embedded tagRendering (read only) and a key, will read the keyname as a JSON-list. Every element of this list will be considered as tags and rendered with the tagRendering",
+                needsUrls: [],
                 example:
                     "```json\n" +
                     JSON.stringify(
@@ -1204,6 +1216,7 @@ export default class SpecialVisualizations {
                         required: true,
                     },
                 ],
+                needsUrls: [],
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,

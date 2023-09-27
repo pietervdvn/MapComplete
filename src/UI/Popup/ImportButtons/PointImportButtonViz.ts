@@ -18,6 +18,7 @@ export class PointImportButtonViz implements SpecialVisualization {
     public readonly docs: string | BaseUIElement
     public readonly example?: string
     public readonly args: { name: string; defaultValue?: string; doc: string }[]
+    public needsUrls = []
 
     constructor() {
         this.funcName = "import_button"

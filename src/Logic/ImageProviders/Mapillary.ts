@@ -17,6 +17,10 @@ export class Mapillary extends ImageProvider {
     ]
     defaultKeyPrefixes = ["mapillary", "image"]
 
+    apiUrls(): string[] {
+        return ["https://mapillary.com", "https://www.mapillary.com", "https://graph.mapillary.com"]
+    }
+
     /**
      * Indicates that this is the same URL
      * Ignores 'stp' parameter

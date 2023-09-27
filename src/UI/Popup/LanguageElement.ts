@@ -20,6 +20,7 @@ import { Feature } from "geojson"
 
 export class LanguageElement implements SpecialVisualization {
     funcName: string = "language_chooser"
+    needsUrls = []
 
     docs: string | BaseUIElement =
         "The language element allows to show and pick all known (modern) languages. The key can be set"
