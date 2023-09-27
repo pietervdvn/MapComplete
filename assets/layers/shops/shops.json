@@ -349,6 +349,11 @@
           "render": "./assets/layers/id_presets/maki-shop.svg",
           "+mappings": [
             {
+              "#": "Layer icon rendering",
+              "if": "id=",
+              "then": "circle:white;./assets/layers/id_presets/maki-shop.svg"
+            },
+            {
               "if": {
                 "or": [
                   "shop=vacant",
