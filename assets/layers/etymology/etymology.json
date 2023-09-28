@@ -46,6 +46,7 @@
     },
     {
       "id": "wikipedia-etymology",
+      "condition": "name~*",
       "question": {
         "en": "What is the Wikidata-item that this object is named after?",
         "nl": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?",
