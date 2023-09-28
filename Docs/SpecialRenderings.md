@@ -110,8 +110,12 @@ In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "ar
       * [Example usage of image_carousel](#example-usage-of-image_carousel)
     + [image_upload](#image_upload)
       * [Example usage of image_upload](#example-usage-of-image_upload)
-    + [reviews](#reviews)
-      * [Example usage of reviews](#example-usage-of-reviews)
+    + [rating](#rating)
+      * [Example usage of rating](#example-usage-of-rating)
+    + [create_review](#create_review)
+      * [Example usage of create_review](#example-usage-of-create_review)
+    + [list_reviews](#list_reviews)
+      * [Example usage of list_reviews](#example-usage-of-list_reviews)
     + [opening_hours_table](#opening_hours_table)
       * [Example usage of opening_hours_table](#example-usage-of-opening_hours_table)
     + [live](#live)
@@ -744,17 +748,49 @@ image_key | image,mapillary,image,wikidata,wikimedia_commons,image,image | The k
 
 name | default | description
 ------ | --------- | -------------
-image-key | image | Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)
-label | Add image | The text to show on the button
+image-key | _undefined_ | Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)
+label | _undefined_ | The text to show on the button
  
 
 #### Example usage of image_upload 
 
- `{image_upload(image,Add image)}`
+ `{image_upload(,)}`
 
 
 
-### reviews 
+### rating 
+
+ Shows stars which represent the avarage rating on mangrove.reviews 
+
+name | default | description
+------ | --------- | -------------
+subjectKey | name | The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>
+fallback | _undefined_ | The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value
+ 
+
+#### Example usage of rating 
+
+ `{rating(name,)}`
+
+
+
+### create_review 
+
+ Invites the contributor to leave a review. Somewhat small UI-element until interacted 
+
+name | default | description
+------ | --------- | -------------
+subjectKey | name | The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>
+fallback | _undefined_ | The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value
+ 
+
+#### Example usage of create_review 
+
+ `{create_review(name,)}`
+
+
+
+### list_reviews 
 
  Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten 
 
@@ -764,7 +800,7 @@ subjectKey | name | The key to use to determine the subject. If specified, the s
 fallback | _undefined_ | The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value
  
 
-#### Example usage of reviews 
+#### Example usage of list_reviews 
 
  `{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used
 

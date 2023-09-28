@@ -1,32 +1,32 @@
 <script lang="ts">
-  import { Review } from "mangrove-reviews-typescript";
-  import { Store } from "../../Logic/UIEventSource";
-  import StarsBar from "./StarsBar.svelte";
-  import Translations from "../i18n/Translations";
-  import Tr from "../Base/Tr.svelte";
+  import { Review } from "mangrove-reviews-typescript"
+  import { Store } from "../../Logic/UIEventSource"
+  import StarsBar from "./StarsBar.svelte"
+  import Translations from "../i18n/Translations"
+  import Tr from "../Base/Tr.svelte"
 
-  export let review: Review & { madeByLoggedInUser: Store<boolean> };
-  let name = review.metadata.nickname;
-  name ??= (review.metadata.given_name ?? "") + " " + (review.metadata.family_name ?? "").trim();
+  export let review: Review & { madeByLoggedInUser: Store<boolean> }
+  let name = review.metadata.nickname
+  name ??= (review.metadata.given_name ?? "") + " " + (review.metadata.family_name ?? "").trim()
   if (name.length === 0) {
-    name = "Anonymous";
+    name = "Anonymous"
   }
-  let d = new Date();
-  d.setTime(review.iat * 1000);
-  let date = d.toDateString();
-  let byLoggedInUser = review.madeByLoggedInUser;
+  let d = new Date()
+  d.setTime(review.iat * 1000)
+  let date = d.toDateString()
+  let byLoggedInUser = review.madeByLoggedInUser
 </script>
 
-<div class={"low-interaction p-1 px-2 rounded-lg "+ ($byLoggedInUser ? "border-interactive" : "")}>
-  <div class="flex justify-between items-center">
-    <StarsBar score={review.rating}></StarsBar>
+<div class={"low-interaction rounded-lg p-1 px-2 " + ($byLoggedInUser ? "border-interactive" : "")}>
+  <div class="flex items-center justify-between">
+    <StarsBar score={review.rating} />
     <div class="flex flex-wrap space-x-2">
       <div class="font-bold">
         {name}
       </div>
-    <span class="subtle">
-      {date}
-    </span>
+      <span class="subtle">
+        {date}
+      </span>
     </div>
   </div>
   {#if review.opinion}

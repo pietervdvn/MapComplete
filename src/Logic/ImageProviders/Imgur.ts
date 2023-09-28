@@ -1,15 +1,15 @@
-import ImageProvider, { ProvidedImage } from "./ImageProvider";
-import BaseUIElement from "../../UI/BaseUIElement";
-import { Utils } from "../../Utils";
-import Constants from "../../Models/Constants";
-import { LicenseInfo } from "./LicenseInfo";
-import { ImageUploader } from "./ImageUploader";
+import ImageProvider, { ProvidedImage } from "./ImageProvider"
+import BaseUIElement from "../../UI/BaseUIElement"
+import { Utils } from "../../Utils"
+import Constants from "../../Models/Constants"
+import { LicenseInfo } from "./LicenseInfo"
+import { ImageUploader } from "./ImageUploader"
 
-export class Imgur extends ImageProvider implements ImageUploader{
+export class Imgur extends ImageProvider implements ImageUploader {
     public static readonly defaultValuePrefix = ["https://i.imgur.com"]
     public static readonly singleton = new Imgur()
     public readonly defaultKeyPrefixes: string[] = ["image"]
-    public readonly  maxFileSizeInMegabytes = 10
+    public readonly maxFileSizeInMegabytes = 10
     private constructor() {
         super()
     }
@@ -24,7 +24,7 @@ export class Imgur extends ImageProvider implements ImageUploader{
         title: string,
         description: string,
         blob: File
-    ): Promise<{ key: string, value: string }> {
+    ): Promise<{ key: string; value: string }> {
         const apiUrl = "https://api.imgur.com/3/image"
         const apiKey = Constants.ImgurApiKey
 
@@ -32,7 +32,6 @@ export class Imgur extends ImageProvider implements ImageUploader{
         formData.append("image", blob)
         formData.append("title", title)
         formData.append("description", description)
-
 
         const settings: RequestInit = {
             method: "POST",

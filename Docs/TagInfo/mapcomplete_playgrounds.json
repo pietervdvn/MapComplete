@@ -341,8 +341,13 @@
       "value": "artwork"
     },
     {
+      "key": "not:tourism:artwork",
+      "description": "Layer 'Benches' shows not:tourism:artwork=yes with a fixed text, namely 'This bench does not have an integrated artwork' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "yes"
+    },
+    {
       "key": "tourism",
-      "description": "Layer 'Benches' shows  with a fixed text, namely 'This bench does not have an integrated artwork' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') Picking this answer will delete the key tourism.",
+      "description": "Layer 'Benches' shows  with a fixed text, namely 'This bench <span class=\"subtle\">probably</span> doesn't have an integrated artwork' (in the mapcomplete.org theme 'Playgrounds') Picking this answer will delete the key tourism.",
       "value": ""
     },
     {

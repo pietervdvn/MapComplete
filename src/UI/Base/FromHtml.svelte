@@ -2,7 +2,7 @@
   /**
    * Given an HTML string, properly shows this
    */
-  import { Utils } from "../../Utils";
+  import { Utils } from "../../Utils"
 
   export let src: string
 
