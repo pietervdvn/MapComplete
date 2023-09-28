@@ -53,7 +53,8 @@
           "de": "Universität",
           "fr": "Universitée",
           "da": "Universitet",
-          "pa_PK": "یونیورسٹی"
+          "pa_PK": "یونیورسٹی",
+          "ca": "Universitat"
         }
       },
       {
@@ -76,7 +77,8 @@
         "nl": "Wat voor onderwijsinstelling is dit?",
         "de": "Was für eine Art von Institution ist das?",
         "fr": "De quel type d'établissement s'agit-il ?",
-        "da": "Hvad er det for en institution?"
+        "da": "Hvad er det for en institution?",
+        "ca": "Quin tipus d'institució és aquesta?"
       },
       "mappings": [
         {
@@ -193,7 +195,8 @@
         "nl": "een universiteit",
         "de": "eine Universität",
         "fr": "une université",
-        "da": "et universitet"
+        "da": "et universitet",
+        "ca": "una universitat"
       },
       "description": {
         "en": "An institute where tertiary education is given (at the level equivalent of a bachelors degree or higher). A single point per campus is enough - buildings and faculties should not be mapped with different university points.",

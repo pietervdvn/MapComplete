@@ -31,7 +31,7 @@
       "id": "Kantor Pos",
       "hu": "Posta",
       "nl": "Postkantoor",
-      "ca": "Oficina de correus",
+      "ca": "Oficina postal",
       "es": "Oficina de Correo",
       "fr": "Bureau de poste",
       "nb_NO": "Postkontor"
@@ -72,9 +72,10 @@
     "id": "Layer yang menunjukkan kantor pos.",
     "hu": "Postákat megjelenítő réteg.",
     "nl": "Een laag die postkantoren toont.",
-    "es": "Una capa que muestra oficinas de correo.",
+    "es": "Una capa que muestra oficinas postales.",
     "fr": "Un claque montrant les bureaux de poste.",
-    "nb_NO": "Et lag som viser postkontor."
+    "nb_NO": "Et lag som viser postkontor.",
+    "ca": "Una capa que mostra oficines postals."
   },
   "tagRenderings": [
     "images",
@@ -91,7 +92,7 @@
           "id": "Jam berapa kantor pos ini buka?",
           "hu": "Mikor van nyitva ez a posta?",
           "de": "Wie sind die Öffnungszeiten dieser Poststelle?",
-          "es": "¿Cuáles son las horas de apertura para esta oficina de correos?",
+          "es": "¿Cuáles son las horas de apertura para esta oficina postal?",
           "nl": "Wat zijn de openingsuren voor dit postkantoor?",
           "fr": "Quelles sont les heures d’ouverture de ce bureau de poste ?"
         }
@@ -231,7 +232,8 @@
       "render": {
         "en": "You can post letters with these companies: {post_office:letter_from}",
         "de": "Mit diesen Unternehmen können Sie Briefe aufgeben: {post_office:letter_from}",
-        "nl": "Je kan brieven posten met de volgende bedrijven: {post_office:letter_from}"
+        "nl": "Je kan brieven posten met de volgende bedrijven: {post_office:letter_from}",
+        "ca": "Podeu enviar cartes amb aquestes empreses: {post_office:letter_from}"
       },
       "question": {
         "en": "Can you post a letter here?",
@@ -269,7 +271,8 @@
       "render": {
         "en": "You can post parcels with these companies: {post_office:parcel_from}",
         "de": "Sie können Pakete mit diesen Unternehmen versenden: {post_office:parcel_from}",
-        "nl": "Je kan pakketten versturen met deze bedrijven: {post_office:parcel_from}"
+        "nl": "Je kan pakketten versturen met deze bedrijven: {post_office:parcel_from}",
+        "ca": "Podeu enviar paquets amb aquestes empreses: {post_office:parcel_from}"
       },
       "question": {
         "en": "Can you send a parcel here?",
@@ -309,7 +312,8 @@
       "id": "parcel-pickup",
       "render": {
         "en": "You can pick up parcels from these companies: {post_office:parcel_pickup}",
-        "de": "Sie können Pakete von diesen Unternehmen abholen: {post_office:parcel_pickup}"
+        "de": "Sie können Pakete von diesen Unternehmen abholen: {post_office:parcel_pickup}",
+        "ca": "Podeu recollir paquets d'aquestes empreses: {post_office:parcel_pickup}"
       },
       "question": {
         "en": "Can you pick up missed parcels here?",
@@ -343,7 +347,8 @@
       "id": "parcel-to",
       "render": {
         "en": "You can send parcels to here for pickup with these companies: {post_office:parcel_to}",
-        "de": "Mit diesen Unternehmen können Sie Pakete zur Abholung hierher senden: {post_office:parcel_to}"
+        "de": "Mit diesen Unternehmen können Sie Pakete zur Abholung hierher senden: {post_office:parcel_to}",
+        "ca": "Podeu enviar paquets aquí per recollir-los amb aquestes empreses: {post_office:parcel_to}"
       },
       "question": {
         "en": "Can you send parcels to here for pickup?",

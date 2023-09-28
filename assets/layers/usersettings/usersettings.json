@@ -114,44 +114,51 @@
         ]
       },
       "render": {
-        "en": "This thematic map has a predefined background layer set. Your default theme setting does not apply"
+        "en": "This thematic map has a predefined background layer set. Your default theme setting does not apply",
+        "ca": "Aquest mapa temàtic té un conjunt de capes de fons predefinides. La configuració predeterminada del tema no s'aplica"
       }
     },
     {
       "id": "background-layer",
       "question": {
-        "en": "What background layer should be shown by default?"
+        "en": "What background layer should be shown by default?",
+        "ca": "Quina capa de fons s'ha de mostrar per defecte?"
       },
       "condition": "_theme:backgroundLayer=",
       "mappings": [
         {
           "if": "mapcomplete-preferred-background-layer=",
           "then": {
-            "en": "Use the default background layer"
+            "en": "Use the default background layer",
+            "ca": "Utilitzeu la capa de fons predeterminada"
           }
         },
         {
           "if": "mapcomplete-preferred-background-layer=osm",
           "then": {
-            "en": "Use OpenStreetMap-carto as default layer"
+            "en": "Use OpenStreetMap-carto as default layer",
+            "ca": "Utilitzeu OpenStreetMap-carto com a capa predeterminada"
           }
         },
         {
           "if": "mapcomplete-preferred-background-layer=photo",
           "then": {
-            "en": "Use aerial imagery as default background"
+            "en": "Use aerial imagery as default background",
+            "ca": "Utilitzeu imatges aèries com a fons predeterminat"
           }
         },
         {
           "if": "mapcomplete-preferred-background-layer=map",
           "then": {
-            "en": "Use a non-openstreetmap based map as default background"
+            "en": "Use a non-openstreetmap based map as default background",
+            "ca": "Utilitzeu un mapa que no sigui openstreetmap com a fons predeterminat"
           }
         },
         {
           "if": "mapcomplete-preferred-background-layer:={__current_background}",
           "then": {
-            "en": "Use the current background layer (<span class='code'>{__current_background}</span>) as default background"
+            "en": "Use the current background layer (<span class='code'>{__current_background}</span>) as default background",
+            "ca": "Utilitzeu la capa de fons actual (<span class='code'>{__current_background}</span>) com a fons predeterminat"
           },
           "hideInAnswer": {
             "or": [
@@ -164,7 +171,8 @@
         {
           "if": "mapcomplete-preferred-background-layer~*",
           "then": {
-            "en": "Use background layer <span class='code'>{mapcomplete-preferred-background-layer}</span> as default background"
+            "en": "Use background layer <span class='code'>{mapcomplete-preferred-background-layer}</span> as default background",
+            "ca": "Utilitza la capa de fons <span class='code'>{mapcomplete-preferred-background-layer}</span> com a fons predeterminat"
           },
           "hideInAnswer": true
         }
@@ -287,7 +295,8 @@
         "de": "Sollen Fragen für unbekannte Datenfelder einzeln oder zusammen angezeigt werden?",
         "fr": "Est-ce que les questions pour les champs sans donnée doivent apparaître une à une ou toutes ensembles ?",
         "pt": "As perguntas para campos de dados desconhecidos devem aparecer uma a uma ou juntas?",
-        "ca": "Les preguntes amb camps de dades desconeguts haurien d'aparèixer una per una o juntes?"
+        "ca": "Les preguntes amb camps de dades desconeguts haurien d'aparèixer una per una o juntes?",
+        "nl": "Moeten onbeantwoorde vragen om beurt of allemaal samen getoond worden?"
       },
       "mappings": [
         {
@@ -297,7 +306,8 @@
             "de": "Alle Fragen in der Infobox zusammen anzeigen",
             "ca": "Mostra totes les preguntes al quadre d'informació",
             "fr": "Afficher toutes les question en même temps dans l'infobox",
-            "pt": "Mostrar todas as perguntas na caixa de informações juntas"
+            "pt": "Mostrar todas as perguntas na caixa de informações juntas",
+            "nl": "Toon alle onbeantwoorde vragen"
           }
         },
         {

@@ -8939,10 +8939,14 @@
         "tagRenderings": {
             "all-questions-at-once": {
                 "mappings": {
+                    "0": {
+                        "then": "Toon alle onbeantwoorde vragen"
+                    },
                     "1": {
                         "then": "Toon de vragen één per één"
                     }
-                }
+                },
+                "question": "Moeten onbeantwoorde vragen om beurt of allemaal samen getoond worden?"
             },
             "contributor-thanks": {
                 "mappings": {

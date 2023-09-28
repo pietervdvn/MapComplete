@@ -3,12 +3,14 @@
   "name": {
     "en": "Physiotherapist",
     "nl": "Kinesist",
-    "de": "Physiotherapeuten"
+    "de": "Physiotherapeuten",
+    "ca": "Fisioterapeuta"
   },
   "description": {
     "en": "This layer shows physiotherapists",
     "nl": "Deze laag toont kinesisten",
-    "de": "Diese Ebene zeigt Physiotherapeuten"
+    "de": "Diese Ebene zeigt Physiotherapeuten",
+    "ca": "Aquesta capa mostra fisioterapeutes"
   },
   "source": {
     "osmTags": "healthcare=physiotherapist"
@@ -17,7 +19,8 @@
     "render": {
       "en": "Physiotherapist {name}",
       "nl": "Kinesist {name}",
-      "de": "Physiotherapeut {name}"
+      "de": "Physiotherapeut {name}",
+      "ca": "Fisioterapeuta {name}"
     }
   },
   "minzoom": 13,
@@ -27,12 +30,14 @@
       "question": {
         "en": "What is the name of this physiotherapists office?",
         "nl": "Wat is de naam van deze kinesistenpraktijk?",
-        "de": "Wie heißt die Praxis des Physiotherapeuten?"
+        "de": "Wie heißt die Praxis des Physiotherapeuten?",
+        "ca": "Quin és el nom d'aquesta consulta fisioterapèutica?"
       },
       "render": {
         "en": "This physiotherapists office is called {name}",
         "nl": "Deze kinesistenpraktijk heet {name}",
-        "de": "Die Praxis des Physiotherapeuten heißt {name}"
+        "de": "Die Praxis des Physiotherapeuten heißt {name}",
+        "ca": "Aquesta consulta fisioterapèutica es diu {name}"
       },
       "freeform": {
         "key": "name"
@@ -50,7 +55,8 @@
         "en": "a physiotherapists office",
         "de": "Praxis eines Physiotherapeuten",
         "nl": "een fysiotherapeutenpraktijk",
-        "fr": "un cabinet de kinésithérapeutes"
+        "fr": "un cabinet de kinésithérapeutes",
+        "ca": "una consulta fisioterapèutica"
       },
       "tags": [
         "healthcare=physiotherapist"

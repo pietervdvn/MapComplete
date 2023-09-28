@@ -47,7 +47,8 @@
         "en": "What type of facility is this?",
         "nl": "Wat voor faciliteit is dit?",
         "de": "Um welche Art von Einrichtung handelt es sich?",
-        "pl": "Jaki to rodzaj placówki?"
+        "pl": "Jaki to rodzaj placówki?",
+        "ca": "Quin tipus d'instal·lació és aquesta?"
       },
       "mappings": [
         {

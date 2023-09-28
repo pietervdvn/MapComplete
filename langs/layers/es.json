@@ -3440,7 +3440,7 @@
         }
     },
     "postoffices": {
-        "description": "Una capa que muestra oficinas de correo.",
+        "description": "Una capa que muestra oficinas postales.",
         "name": "Oficinas de correo",
         "presets": {
             "0": {
@@ -3450,7 +3450,7 @@
         "tagRenderings": {
             "opening_hours": {
                 "override": {
-                    "question": "¿Cuáles son las horas de apertura para esta oficina de correos?"
+                    "question": "¿Cuáles son las horas de apertura para esta oficina postal?"
                 }
             }
         },
@@ -4389,7 +4389,7 @@
             },
             "Level": {
                 "question": "¿A qué nivel está colocada esta cámara?",
-                "render": "Está colocada a nivel {level}"
+                "render": "Ubicado en la planta {level}"
             },
             "Operator": {
                 "question": "¿Quién opera el sistema de esta cámara?",
@@ -4688,7 +4688,7 @@
                         "then": "Siempreverde."
                     }
                 },
-                "question": "¿El árbol es Siempreverde o Caduco?"
+                "question": "¿El árbol es perenne o caduco?"
             },
             "tree-denotation": {
                 "mappings": {
@@ -4708,7 +4708,7 @@
                         "then": "El árbol está en un jardín privado o residencial."
                     },
                     "5": {
-                        "then": "El árbol está en bandejón de una avenida."
+                        "then": "Este es un árbol a lo largo de una avenida."
                     },
                     "6": {
                         "then": "El árbol está en un zona urbana."

@@ -1,72 +1,76 @@
-import Combine from "./Base/Combine";
-import { FixedUiElement } from "./Base/FixedUiElement";
-import BaseUIElement from "./BaseUIElement";
-import Title from "./Base/Title";
-import Table from "./Base/Table";
-import { RenderingSpecification, SpecialVisualization, SpecialVisualizationState } from "./SpecialVisualization";
-import { HistogramViz } from "./Popup/HistogramViz";
-import { MinimapViz } from "./Popup/MinimapViz";
-import { ShareLinkViz } from "./Popup/ShareLinkViz";
-import { UploadToOsmViz } from "./Popup/UploadToOsmViz";
-import { MultiApplyViz } from "./Popup/MultiApplyViz";
-import { AddNoteCommentViz } from "./Popup/AddNoteCommentViz";
-import { PlantNetDetectionViz } from "./Popup/PlantNetDetectionViz";
-import TagApplyButton from "./Popup/TagApplyButton";
-import { CloseNoteButton } from "./Popup/CloseNoteButton";
-import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis";
-import { Store, Stores, UIEventSource } from "../Logic/UIEventSource";
-import AllTagsPanel from "./Popup/AllTagsPanel.svelte";
-import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
-import { ImageCarousel } from "./Image/ImageCarousel";
-import { VariableUiElement } from "./Base/VariableUIElement";
-import { Utils } from "../Utils";
-import Wikidata, { WikidataResponse } from "../Logic/Web/Wikidata";
-import { Translation } from "./i18n/Translation";
-import Translations from "./i18n/Translations";
-import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization";
-import LiveQueryHandler from "../Logic/Web/LiveQueryHandler";
-import { SubtleButton } from "./Base/SubtleButton";
-import Svg from "../Svg";
-import NoteCommentElement from "./Popup/NoteCommentElement";
-import { SubstitutedTranslation } from "./SubstitutedTranslation";
-import List from "./Base/List";
-import StatisticsPanel from "./BigComponents/StatisticsPanel";
-import AutoApplyButton from "./Popup/AutoApplyButton";
-import { LanguageElement } from "./Popup/LanguageElement";
-import FeatureReviews from "../Logic/Web/MangroveReviews";
-import Maproulette from "../Logic/Maproulette";
-import SvelteUIElement from "./Base/SvelteUIElement";
-import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource";
-import QuestionViz from "./Popup/QuestionViz";
-import { Feature, Point } from "geojson";
-import { GeoOperations } from "../Logic/GeoOperations";
-import CreateNewNote from "./Popup/CreateNewNote.svelte";
-import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte";
-import UserProfile from "./BigComponents/UserProfile.svelte";
-import LanguagePicker from "./LanguagePicker";
-import Link from "./Base/Link";
-import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
-import { OsmTags, WayId } from "../Models/OsmFeature";
-import MoveWizard from "./Popup/MoveWizard";
-import SplitRoadWizard from "./Popup/SplitRoadWizard";
-import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz";
-import WikipediaPanel from "./Wikipedia/WikipediaPanel.svelte";
-import TagRenderingEditable from "./Popup/TagRendering/TagRenderingEditable.svelte";
-import { PointImportButtonViz } from "./Popup/ImportButtons/PointImportButtonViz";
-import WayImportButtonViz from "./Popup/ImportButtons/WayImportButtonViz";
-import ConflateImportButtonViz from "./Popup/ImportButtons/ConflateImportButtonViz";
-import DeleteWizard from "./Popup/DeleteFlow/DeleteWizard.svelte";
-import { OpenJosm } from "./BigComponents/OpenJosm";
-import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte";
-import FediverseValidator from "./InputElement/Validators/FediverseValidator";
-import SendEmail from "./Popup/SendEmail.svelte";
-import NearbyImages from "./Popup/NearbyImages.svelte";
-import NearbyImagesCollapsed from "./Popup/NearbyImagesCollapsed.svelte";
-import UploadImage from "./Image/UploadImage.svelte";
-import AllReviews from "./Reviews/AllReviews.svelte";
-import StarsBarIcon from "./Reviews/StarsBarIcon.svelte";
-import ReviewForm from "./Reviews/ReviewForm.svelte";
+import Combine from "./Base/Combine"
+import { FixedUiElement } from "./Base/FixedUiElement"
+import BaseUIElement from "./BaseUIElement"
+import Title from "./Base/Title"
+import Table from "./Base/Table"
+import {
+    RenderingSpecification,
+    SpecialVisualization,
+    SpecialVisualizationState,
+} from "./SpecialVisualization"
+import { HistogramViz } from "./Popup/HistogramViz"
+import { MinimapViz } from "./Popup/MinimapViz"
+import { ShareLinkViz } from "./Popup/ShareLinkViz"
+import { UploadToOsmViz } from "./Popup/UploadToOsmViz"
+import { MultiApplyViz } from "./Popup/MultiApplyViz"
+import { AddNoteCommentViz } from "./Popup/AddNoteCommentViz"
+import { PlantNetDetectionViz } from "./Popup/PlantNetDetectionViz"
+import TagApplyButton from "./Popup/TagApplyButton"
+import { CloseNoteButton } from "./Popup/CloseNoteButton"
+import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis"
+import { Store, Stores, UIEventSource } from "../Logic/UIEventSource"
+import AllTagsPanel from "./Popup/AllTagsPanel.svelte"
+import AllImageProviders from "../Logic/ImageProviders/AllImageProviders"
+import { ImageCarousel } from "./Image/ImageCarousel"
+import { VariableUiElement } from "./Base/VariableUIElement"
+import { Utils } from "../Utils"
+import Wikidata, { WikidataResponse } from "../Logic/Web/Wikidata"
+import { Translation } from "./i18n/Translation"
+import Translations from "./i18n/Translations"
+import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
+import LiveQueryHandler from "../Logic/Web/LiveQueryHandler"
+import { SubtleButton } from "./Base/SubtleButton"
+import Svg from "../Svg"
+import NoteCommentElement from "./Popup/NoteCommentElement"
+import { SubstitutedTranslation } from "./SubstitutedTranslation"
+import List from "./Base/List"
+import StatisticsPanel from "./BigComponents/StatisticsPanel"
+import AutoApplyButton from "./Popup/AutoApplyButton"
+import { LanguageElement } from "./Popup/LanguageElement"
+import FeatureReviews from "../Logic/Web/MangroveReviews"
+import Maproulette from "../Logic/Maproulette"
+import SvelteUIElement from "./Base/SvelteUIElement"
+import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
+import QuestionViz from "./Popup/QuestionViz"
+import { Feature, Point } from "geojson"
+import { GeoOperations } from "../Logic/GeoOperations"
+import CreateNewNote from "./Popup/CreateNewNote.svelte"
+import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
+import UserProfile from "./BigComponents/UserProfile.svelte"
+import LanguagePicker from "./LanguagePicker"
+import Link from "./Base/Link"
+import LayerConfig from "../Models/ThemeConfig/LayerConfig"
+import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
+import { OsmTags, WayId } from "../Models/OsmFeature"
+import MoveWizard from "./Popup/MoveWizard"
+import SplitRoadWizard from "./Popup/SplitRoadWizard"
+import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz"
+import WikipediaPanel from "./Wikipedia/WikipediaPanel.svelte"
+import TagRenderingEditable from "./Popup/TagRendering/TagRenderingEditable.svelte"
+import { PointImportButtonViz } from "./Popup/ImportButtons/PointImportButtonViz"
+import WayImportButtonViz from "./Popup/ImportButtons/WayImportButtonViz"
+import ConflateImportButtonViz from "./Popup/ImportButtons/ConflateImportButtonViz"
+import DeleteWizard from "./Popup/DeleteFlow/DeleteWizard.svelte"
+import { OpenJosm } from "./BigComponents/OpenJosm"
+import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte"
+import FediverseValidator from "./InputElement/Validators/FediverseValidator"
+import SendEmail from "./Popup/SendEmail.svelte"
+import NearbyImages from "./Popup/NearbyImages.svelte"
+import NearbyImagesCollapsed from "./Popup/NearbyImagesCollapsed.svelte"
+import UploadImage from "./Image/UploadImage.svelte"
+import AllReviews from "./Reviews/AllReviews.svelte"
+import StarsBarIcon from "./Reviews/StarsBarIcon.svelte"
+import ReviewForm from "./Reviews/ReviewForm.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -265,7 +269,6 @@ export default class SpecialVisualizations {
                     SpecialVisualizations.specialVisualizations
                         .map((sp) => sp.funcName + "()")
                         .join(", ")
-
             }
         }
 
@@ -610,17 +613,20 @@ export default class SpecialVisualizations {
                     {
                         name: "image-key",
                         doc: "Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)",
-                        required: false
+                        required: false,
                     },
                     {
                         name: "label",
                         doc: "The text to show on the button",
-                        required: false
+                        required: false,
                     },
                 ],
                 constr: (state, tags, args) => {
                     return new SvelteUIElement(UploadImage, {
-                        state,tags, labelText: args[1], image: args[0]
+                        state,
+                        tags,
+                        labelText: args[1],
+                        image: args[0],
                     })
                 },
             },
@@ -642,15 +648,22 @@ export default class SpecialVisualizations {
                     const nameKey = args[0] ?? "name"
                     let fallbackName = args[1]
                     const reviews = FeatureReviews.construct(
-                      feature,
-                      tags,
-                      state.userRelatedState.mangroveIdentity,
-                      {
-                          nameKey: nameKey,
-                          fallbackName,
-                      }
+                        feature,
+                        tags,
+                        state.userRelatedState.mangroveIdentity,
+                        {
+                            nameKey: nameKey,
+                            fallbackName,
+                        }
                     )
-                    return new SvelteUIElement(StarsBarIcon, {score:reviews.average, reviews, state, tags, feature, layer})
+                    return new SvelteUIElement(StarsBarIcon, {
+                        score: reviews.average,
+                        reviews,
+                        state,
+                        tags,
+                        feature,
+                        layer,
+                    })
                 },
             },
 
@@ -672,15 +685,15 @@ export default class SpecialVisualizations {
                     const nameKey = args[0] ?? "name"
                     let fallbackName = args[1]
                     const reviews = FeatureReviews.construct(
-                      feature,
-                      tags,
-                      state.userRelatedState.mangroveIdentity,
-                      {
-                          nameKey: nameKey,
-                          fallbackName,
-                      }
+                        feature,
+                        tags,
+                        state.userRelatedState.mangroveIdentity,
+                        {
+                            nameKey: nameKey,
+                            fallbackName,
+                        }
                     )
-                    return new SvelteUIElement(ReviewForm, {reviews, state, tags, feature, layer})
+                    return new SvelteUIElement(ReviewForm, { reviews, state, tags, feature, layer })
                 },
             },
             {
@@ -711,7 +724,7 @@ export default class SpecialVisualizations {
                             fallbackName,
                         }
                     )
-                    return new SvelteUIElement(AllReviews, {reviews, state, tags, feature, layer})
+                    return new SvelteUIElement(AllReviews, { reviews, state, tags, feature, layer })
                 },
             },
             {
@@ -920,8 +933,8 @@ export default class SpecialVisualizations {
                     const id = tags.data[args[0] ?? "id"]
                     tags = state.featureProperties.getStore(id)
                     console.log("Id is", id)
-                    return new SvelteUIElement(UploadImage, {state, tags})
-                    }
+                    return new SvelteUIElement(UploadImage, { state, tags })
+                },
             },
             {
                 funcName: "title",

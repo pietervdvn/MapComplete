@@ -572,7 +572,6 @@
         {
           "if": "dog=unleashed",
           "icon": "./assets/layers/questions/dogs_allowed.svg",
-          
           "then": {
             "en": "Dogs are allowed and can run around freely",
             "nl": "honden zijn welkom en mogen vrij rondlopen",
@@ -1329,7 +1328,8 @@
           "icon": "./assets/layers/questions/denominations/chf/1fr-2019-800px.png",
           "then": {
             "en": "1 franc coins are accepted",
-            "nl": "Munten van 1 frank worden geaccepteerd"
+            "nl": "Munten van 1 frank worden geaccepteerd",
+            "ca": "S'accepten monedes d'1 franc"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1338,7 +1338,8 @@
           "icon": "./assets/layers/questions/denominations/chf/2fr-2019-800px.png",
           "then": {
             "en": "2 francs coins are accepted",
-            "nl": "Munten van 2 frank worden geaccepteerd"
+            "nl": "Munten van 2 frank worden geaccepteerd",
+            "ca": "S'accepten monedes de 2 francs"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1347,7 +1348,8 @@
           "icon": "./assets/layers/questions/denominations/chf/5fr-2019-800px.png",
           "then": {
             "en": "5 francs coins are accepted",
-            "nl": "Munten van 5 frank worden geaccepteerd"
+            "nl": "Munten van 5 frank worden geaccepteerd",
+            "ca": "S'accepten monedes de 5 francs"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         }
@@ -1493,7 +1495,8 @@
           "icon": "./assets/layers/questions/denominations/chf/10chf.svg",
           "then": {
             "en": "10 francs notes are accepted",
-            "nl": "Biljetten van 10 frank worden geaccepteerd"
+            "nl": "Biljetten van 10 frank worden geaccepteerd",
+            "ca": "S'accepten bitllets de 10 francs"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1502,7 +1505,8 @@
           "icon": "./assets/layers/questions/denominations/chf/20chf.svg",
           "then": {
             "en": "20 francs notes are accepted",
-            "nl": "Biljetten van 20 frank worden geaccepteerd"
+            "nl": "Biljetten van 20 frank worden geaccepteerd",
+            "ca": "S'accepten bitllets de 20 francs"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1511,7 +1515,8 @@
           "icon": "./assets/layers/questions/denominations/chf/50chf.svg",
           "then": {
             "en": "50 francs notes are accepted",
-            "nl": "Biljetten van 50 frank worden geaccepteerd"
+            "nl": "Biljetten van 50 frank worden geaccepteerd",
+            "ca": "S'accepten bitllets de 50 francs"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1520,7 +1525,8 @@
           "icon": "./assets/layers/questions/denominations/chf/100chf.svg",
           "then": {
             "en": "100 francs notes are accepted",
-            "nl": "Biljetten van 100 frank worden geaccepteerd"
+            "nl": "Biljetten van 100 frank worden geaccepteerd",
+            "ca": "S'accepten bitllets de 100 francs"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1529,7 +1535,8 @@
           "icon": "./assets/layers/questions/denominations/chf/200chf.svg",
           "then": {
             "en": "200 francs notes are accepted",
-            "nl": "Biljetten van 200 frank worden geaccepteerd"
+            "nl": "Biljetten van 200 frank worden geaccepteerd",
+            "ca": "S'accepten bitllets de 200 francs"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1538,7 +1545,8 @@
           "icon": "./assets/layers/questions/denominations/chf/1000chf.svg",
           "then": {
             "en": "1000 francs notes are accepted",
-            "nl": "Biljetten van 1000 frank worden geaccepteerd"
+            "nl": "Biljetten van 1000 frank worden geaccepteerd",
+            "ca": "S'accepten bitllets de 1000 francs"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         }
@@ -1568,7 +1576,8 @@
           "text": {
             "en": "Last edited on {_last_edit:timestamp} by {_last_edit:contributor}",
             "nl": "Laatst gewijzigd op {_last_edit:timestamp} door {_last_edit:contributor} ",
-            "de": "Zuletzt bearbeitet am {_last_edit:timestamp} von {_last_edit:contributor}"
+            "de": "Zuletzt bearbeitet am {_last_edit:timestamp} von {_last_edit:contributor}",
+            "ca": "Darrera edició el {_last_edit:timestamp} per {_last_edit:contributor}"
           },
           "class": "subtle font-small"
         }

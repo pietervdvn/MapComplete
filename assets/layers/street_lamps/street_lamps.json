@@ -16,7 +16,8 @@
       "en": "Street Lamp",
       "nl": "Straatlantaarn",
       "de": "Straßenlaterne",
-      "es": "Lámpara Callejera"
+      "es": "Lámpara Callejera",
+      "ca": "Fanal"
     },
     "mappings": [
       {
@@ -25,7 +26,8 @@
           "en": "Street Lamp {ref}",
           "nl": "Straatlantaarn {ref}",
           "de": "Straßenlaterne {ref}",
-          "es": "Lámpara Callejera {ref}"
+          "es": "Lámpara Callejera {ref}",
+          "ca": "Fanal {ref}"
         }
       }
     ]
@@ -69,7 +71,8 @@
         "en": "This street lamp has the reference number {ref}",
         "nl": "Deze straatlantaarn heeft het nummer {ref}",
         "de": "Diese Straßenlaterne hat die Referenznummer {ref}",
-        "es": "Esta lámpara callejera tiene el número de referencia {ref}"
+        "es": "Esta lámpara callejera tiene el número de referencia {ref}",
+        "ca": "Aquest fanal té el número de referència {ref}"
       },
       "question": {
         "en": "What is the reference number of this street lamp?",
@@ -88,7 +91,8 @@
         "en": "How is this street lamp mounted?",
         "nl": "Hoe is deze straatlantaarn gemonteerd?",
         "de": "Wie ist diese Straßenlaterne befestigt?",
-        "es": "¿Cómo está montada esta lámpara?"
+        "es": "¿Cómo está montada esta lámpara?",
+        "ca": "Com està muntada aquesta làmpada?"
       },
       "mappings": [
         {
@@ -97,7 +101,8 @@
             "en": "This lamp is suspended using cables",
             "nl": "Deze lantaarn hangt aan kabels",
             "de": "Die Straßenlaterne ist an einem Kabel befestigt",
-            "es": "Esta lámpara se suspende utilizando cables"
+            "es": "Esta lámpara se suspende utilizando cables",
+            "ca": "Aquesta làmpada està suspès mitjançant cables"
           }
         },
         {
@@ -106,7 +111,8 @@
             "en": "This lamp is mounted on a ceiling",
             "nl": "Deze lantaarn hangt aan een plafond",
             "de": "Die Straßenlaterne ist an einer Decke befestigt",
-            "es": "Esta lámpara está montada en un techo"
+            "es": "Esta lámpara está montada en un techo",
+            "ca": "Aquesta làmpada està muntat al sostre"
           }
         },
         {
@@ -115,7 +121,8 @@
             "en": "This lamp is mounted in the ground",
             "nl": "Deze lantaarn zit in de grond",
             "de": "Die Straßenlaterne ist am Boden befestigt",
-            "es": "Esta lámpara está montada en el suelo"
+            "es": "Esta lámpara está montada en el suelo",
+            "ca": "Aquesta làmpada està muntat a terra"
           }
         },
         {
@@ -124,7 +131,8 @@
             "en": "This lamp is mounted on a short pole (mostly < 1.5m)",
             "nl": "Deze lantaarn zit op een korte paal (meestal < 1.5m)",
             "de": "Die Straßenlaterne ist an einem kurzen Mast (< 1,5m) befestigt",
-            "es": "Esta lámpara está montada en un poste corto (mayoritariamente < 1.5m)"
+            "es": "Esta lámpara está montada en un poste corto (mayoritariamente < 1.5m)",
+            "ca": "Aquesta làmpada està muntada en un pal curt (principalment <1,5 m)"
           }
         },
         {
@@ -134,7 +142,7 @@
             "nl": "Deze lantaarn zit op een paal",
             "de": "Die Straßenlaterne ist an einem Mast befestigt",
             "es": "Esta lámpara está montada en un poste",
-            "ca": "Aquest fanal està muntat en un pal"
+            "ca": "Aquesta làmpada està muntada en un pal"
           }
         },
         {
@@ -143,7 +151,8 @@
             "en": "This lamp is mounted directly to the wall",
             "nl": "Deze lantaarn hangt direct aan de muur",
             "de": "Die Straßenlaterne ist direkt an der Wand befestigt",
-            "es": "Esta lámpara está montada directamente en la pared"
+            "es": "Esta lámpara está montada directamente en la pared",
+            "ca": "Aquesta làmpada està muntada directament a la paret"
           }
         },
         {
@@ -153,7 +162,7 @@
             "nl": "Deze lantaarn hangt aan de muur met een metalen balk",
             "de": "Die Straßenlaterne ist mit einer Metallstange an der Wand befestigt",
             "es": "Esta lámpara está montada en la pared utilizando una barra metálica",
-            "ca": "Aquest fanal està muntat a la paret utilitzat una barra metàl·lica"
+            "ca": "Aquesta làmpada està muntada a la paret utilitzat una barra metàl·lica"
           }
         }
       ]
@@ -207,7 +216,8 @@
             "en": "This lamp is lit electrically",
             "nl": "Deze lantaarn is elektrisch verlicht",
             "de": "Diese Straßenlaterne leuchtet elektrisch",
-            "es": "Esta lámpara se ilumina eléctricamente"
+            "es": "Esta lámpara se ilumina eléctricamente",
+            "ca": "Aquest fanal s'encén elèctricament"
           },
           "hideInAnswer": true
         },
@@ -335,7 +345,8 @@
         "en": "This lamp emits {light:colour} light",
         "nl": "Deze lantaarn geeft {light:colour} licht",
         "de": "Diese Lampe strahlt {light:colour} Licht aus",
-        "es": "Esta lámpara emite luz {light:colour}"
+        "es": "Esta lámpara emite luz {light:colour}",
+        "ca": "Aquesta làmpada emet llum {light:colour}"
       },
       "freeform": {
         "key": "light:colour",
@@ -379,7 +390,8 @@
       "render": {
         "en": "This lamp has {light:count} fixtures",
         "nl": "Deze lantaarn heeft {light:count} lampen",
-        "de": "Diese Straßenlaterne hat {light:count} Leuchten"
+        "de": "Diese Straßenlaterne hat {light:count} Leuchten",
+        "ca": "Aquesta làmpada té {light:count} aparells"
       },
       "question": {
         "en": "How many fixtures does this light have?",
@@ -498,6 +510,7 @@
     "en": "A layer showing street lights",
     "nl": "Een laag die alle straatlantaarns toont",
     "de": "Eine Ebene mit Straßenbeleuchtung",
-    "es": "Una capa que muestra luces callejeras"
+    "es": "Una capa que muestra luces callejeras",
+    "ca": "Una capa que mostra els llums del carrer"
   }
 }

@@ -1012,7 +1012,8 @@
       "options": [
         {
           "question": {
-            "en": "Restaurants and fast food businesses"
+            "en": "Restaurants and fast food businesses",
+            "ca": "Restaurants i negocis de menjar ràpid"
           }
         },
         {
@@ -1043,7 +1044,8 @@
         {
           "question": {
             "en": "Has a vegetarian menu",
-            "nl": "Heeft een vegetarisch menu"
+            "nl": "Heeft een vegetarisch menu",
+            "ca": "Té menú vegetarià"
           },
           "osmTags": {
             "or": [

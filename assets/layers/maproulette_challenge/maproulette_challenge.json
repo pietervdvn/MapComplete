@@ -94,7 +94,8 @@
           "then": {
             "en": "Task is fixed",
             "de": "Aufgabe wurde erledigt",
-            "nl": "Taak is opgelost"
+            "nl": "Taak is opgelost",
+            "ca": "La tasca està arreglada"
           }
         },
         {
@@ -102,7 +103,8 @@
           "then": {
             "en": "Task is a false positive",
             "de": "Aufgabe ist ein falsches Positiv",
-            "nl": "Taak is vals positief"
+            "nl": "Taak is vals positief",
+            "ca": "La tasca és un fals positiu"
           }
         },
         {
@@ -110,7 +112,8 @@
           "then": {
             "en": "Task is skipped",
             "de": "Aufgabe wurde übersprungen",
-            "nl": "Taak is overgeslagen"
+            "nl": "Taak is overgeslagen",
+            "ca": "S'ha saltat la tasca"
           }
         },
         {
@@ -118,7 +121,8 @@
           "then": {
             "en": "Task is deleted",
             "de": "Aufgabe wurde gelöscht",
-            "nl": "Taak is verwijderd"
+            "nl": "Taak is verwijderd",
+            "ca": "S'ha suprimit la tasca"
           }
         },
         {
@@ -126,7 +130,8 @@
           "then": {
             "en": "Task is already fixed",
             "de": "Aufgabe wurde bereits erledigt",
-            "nl": "Taak is al opgelost"
+            "nl": "Taak is al opgelost",
+            "ca": "La tasca ja està arreglada"
           }
         },
         {
@@ -134,7 +139,8 @@
           "then": {
             "en": "Task is marked as too hard",
             "de": "Aufgabe wurde als zu schwer markiert",
-            "nl": "Taak is gemarkeerd als te lastig"
+            "nl": "Taak is gemarkeerd als te lastig",
+            "ca": "La tasca està marcada com a massa difícil"
           }
         },
         {
@@ -142,7 +148,8 @@
           "then": {
             "en": "Task is disabled",
             "de": "Aufgabe wurde deaktiviert",
-            "nl": "Taak is uitgeschakeld"
+            "nl": "Taak is uitgeschakeld",
+            "ca": "La tasca està desactivada"
           }
         }
       ]
@@ -203,7 +210,8 @@
           "question": {
             "en": "Show tasks that are deleted",
             "de": "Aufgaben anzeigen, die gelöscht wurden",
-            "nl": "Toon taken die zijn verwijderd"
+            "nl": "Toon taken die zijn verwijderd",
+            "ca": "Mostra tasques eliminades"
           },
           "osmTags": "mr_taskStatus=Deleted"
         },
@@ -211,7 +219,8 @@
           "question": {
             "en": "Show tasks that are already fixed",
             "de": "Aufgaben anzeigen, die bereits erledigt wurden",
-            "nl": "Toon taken die reeds opgelost waren"
+            "nl": "Toon taken die reeds opgelost waren",
+            "ca": "Mostra les tasques que ja estan arreglades"
           },
           "osmTags": "mr_taskStatus=Already fixed"
         },
@@ -219,7 +228,8 @@
           "question": {
             "en": "Show tasks that are marked as too hard",
             "de": "Aufgaben anzeigen, die als zu schwierig markiert wurden",
-            "nl": "Toon taken die als te moeilijk waren ervaren"
+            "nl": "Toon taken die als te moeilijk waren ervaren",
+            "ca": "Mostra les tasques marcades com a massa difícils"
           },
           "osmTags": "mr_taskStatus=Too hard"
         },
@@ -227,7 +237,8 @@
           "question": {
             "en": "Show tasks that are disabled",
             "de": "Aufgaben anzeigen, die deaktiviert wurden",
-            "nl": "Toon taken die zijn uitgeschakeld"
+            "nl": "Toon taken die zijn uitgeschakeld",
+            "ca": "Mostra tasques que s'han desactivat"
           },
           "osmTags": "mr_taskStatus=Disabled"
         }

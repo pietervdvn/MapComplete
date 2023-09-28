@@ -71,7 +71,8 @@
           "nl": "Vogelkijkwand {name}",
           "de": "Vogelversteck {name}",
           "fr": "Camouflage d’observation ornithologique {name}",
-          "da": "Fugletårn {name}"
+          "da": "Fugletårn {name}",
+          "ca": "Observatori d'ocells {name}"
         }
       }
     ]
@@ -109,7 +110,8 @@
             "nl": "Vogelkijkwand",
             "de": "Sichtschutz zur Vogelbeobachtung",
             "fr": "Camouflage d’observation ornithologique",
-            "da": "Fugletårn"
+            "da": "Fugletårn",
+            "ca": "Observatori d'ocells"
           }
         },
         {
@@ -171,7 +173,8 @@
         "nl": "Is deze vogelkijkplaats rolstoeltoegankelijk?",
         "da": "Er dette fugleskjul tilgængeligt for kørestolsbrugere?",
         "de": "Ist der Ort rollstuhlgerecht gestaltet?",
-        "fr": "Cet observatoire ornithologique est-il accessible en chaise roulante ?"
+        "fr": "Cet observatoire ornithologique est-il accessible en chaise roulante ?",
+        "ca": "Aquest observatori d'ocells és accessible per als usuaris de cadira de rodes?"
       },
       "mappings": [
         {

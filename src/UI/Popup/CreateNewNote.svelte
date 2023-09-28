@@ -62,7 +62,7 @@
     state.newFeatures.features.data.push(feature)
     state.newFeatures.features.ping()
     state.selectedElement?.setData(feature)
-    if(state.featureProperties.trackFeature){
+    if (state.featureProperties.trackFeature) {
       state.featureProperties.trackFeature(feature)
     }
     comment.setData("")

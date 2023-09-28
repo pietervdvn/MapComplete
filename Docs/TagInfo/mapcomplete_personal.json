@@ -980,8 +980,13 @@
       "value": "artwork"
     },
     {
+      "key": "not:tourism:artwork",
+      "description": "Layer 'Benches' shows not:tourism:artwork=yes with a fixed text, namely 'This bench does not have an integrated artwork' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
       "key": "tourism",
-      "description": "Layer 'Benches' shows  with a fixed text, namely 'This bench does not have an integrated artwork' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key tourism.",
+      "description": "Layer 'Benches' shows  with a fixed text, namely 'This bench <span class=\"subtle\">probably</span> doesn't have an integrated artwork' (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key tourism.",
       "value": ""
     },
     {
@@ -7306,35 +7311,6 @@
       "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
-      "key": "level",
-      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Personal theme')"
-    },
-    {
-      "key": "location",
-      "description": "Layer 'Restaurants and fast food' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Personal theme')",
-      "value": "underground"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Restaurants and fast food' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "0"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Restaurants and fast food' shows  with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key level.",
-      "value": ""
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Restaurants and fast food' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "1"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Restaurants and fast food' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "-1"
-    },
-    {
       "key": "name",
       "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Personal theme')"
     },
@@ -7390,6 +7366,35 @@
       "key": "payment:qr_code",
       "description": "Layer 'Restaurants and fast food' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "yes"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Restaurants and fast food' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Restaurants and fast food' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Restaurants and fast food' shows  with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Restaurants and fast food' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Restaurants and fast food' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "-1"
     },
     {
       "key": "wheelchair",
@@ -8384,12 +8389,164 @@
       "description": "The layer 'Indoors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
+      "key": "level",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Indoors' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Indoors' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Indoors' shows  with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Indoors' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Indoors' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "-1"
+    },
+    {
       "key": "ref",
       "description": "Layer 'Indoors' shows and asks freeform values for key 'ref' (in the mapcomplete.org theme 'Personal theme') (This is only shown if indoor=room|indoor=area|indoor=corridor)"
     },
     {
       "key": "name",
       "description": "Layer 'Indoors' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Personal theme') (This is only shown if indoor=room|indoor=area|indoor=corridor)"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=administration with a fixed text, namely 'This is a administrative room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "administration"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=auditorium with a fixed text, namely 'This is a auditorium' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "auditorium"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=bedroom with a fixed text, namely 'This is a bedroom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "bedroom"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=chapel with a fixed text, namely 'This is a chapel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "chapel"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=class with a fixed text, namely 'This is a classroom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "class"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=classroom with a fixed text, namely 'This is a classroom' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "classroom"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=computer with a fixed text, namely 'This is a computer room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "computer"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=conference with a fixed text, namely 'This is a conference room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "conference"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=crypt with a fixed text, namely 'This is a crypt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "crypt"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=kitchen with a fixed text, namely 'This is a kitchen' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "kitchen"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=laboratory with a fixed text, namely 'This is a laboratory' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "laboratory"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=library with a fixed text, namely 'This is a library' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "library"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=locker with a fixed text, namely 'This is a locker room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "locker"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=nursery with a fixed text, namely 'This is a nursery' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "nursery"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=office with a fixed text, namely 'This is an office' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "office"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=prison_cell with a fixed text, namely 'This is a prison_cell' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "prison_cell"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=restaurant with a fixed text, namely 'This is a restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "restaurant"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=security_check with a fixed text, namely 'This is a room to perform security checks' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "security_check"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=sport with a fixed text, namely 'This is a sport room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "sport"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=storage with a fixed text, namely 'This is a storage room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "storage"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=technical with a fixed text, namely 'This is a technical room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "technical"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=toilets with a fixed text, namely 'These are toilets' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "toilets"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=waiting with a fixed text, namely 'This is a waiting room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "waiting"
+    },
+    {
+      "key": "capacity",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'capacity' (in the mapcomplete.org theme 'Personal theme') (This is only shown if room=waiting|room=restaurant|room=office|room=nursery|room=conference|room=auditorium|room=chapel|room=bedroom|room=classroom)"
+    },
+    {
+      "key": "name:etymology:wikidata",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'name:etymology:wikidata' (in the mapcomplete.org theme 'Personal theme') (This is only shown if name:etymology!=unknown)"
     },
     {
       "key": "information",
@@ -12685,6 +12842,16 @@
     {
       "key": "wikipedia",
       "description": "The layer 'Surveillance camera's allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "surveillance:type",
+      "description": "Layer 'Surveillance camera's' shows surveillance:type=camera with a fixed text, namely 'This is a camera without number plate recognition.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "camera"
+    },
+    {
+      "key": "surveillance:type",
+      "description": "Layer 'Surveillance camera's' shows surveillance:type=ALPR with a fixed text, namely 'This is an ALPR (Automatic License Plate Reader)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "ALPR"
     },
     {
       "key": "camera:type",

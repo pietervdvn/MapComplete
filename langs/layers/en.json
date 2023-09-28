@@ -4697,6 +4697,19 @@
                         "question": "Free to use"
                     }
                 }
+            },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "No preference towards dogs"
+                    },
+                    "1": {
+                        "question": "Dogs allowed"
+                    },
+                    "2": {
+                        "question": "No dogs allowed"
+                    }
+                }
             }
         }
     },
@@ -5608,6 +5621,84 @@
                 },
                 "question": "What is the reference number of this room?",
                 "render": "This room has the reference number {ref}"
+            },
+            "room-capacity": {
+                "question": "How much people can at most fit in this room?",
+                "render": "At most {capacity} people fit this room"
+            },
+            "room-type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a administrative room"
+                    },
+                    "1": {
+                        "then": "This is a auditorium"
+                    },
+                    "2": {
+                        "then": "This is a bedroom"
+                    },
+                    "3": {
+                        "then": "This is a chapel"
+                    },
+                    "4": {
+                        "then": "This is a classroom"
+                    },
+                    "5": {
+                        "then": "This is a classroom"
+                    },
+                    "6": {
+                        "then": "This is a computer room"
+                    },
+                    "7": {
+                        "then": "This is a conference room"
+                    },
+                    "8": {
+                        "then": "This is a crypt"
+                    },
+                    "9": {
+                        "then": "This is a kitchen"
+                    },
+                    "10": {
+                        "then": "This is a laboratory"
+                    },
+                    "11": {
+                        "then": "This is a library"
+                    },
+                    "12": {
+                        "then": "This is a locker room"
+                    },
+                    "13": {
+                        "then": "This is a nursery"
+                    },
+                    "14": {
+                        "then": "This is an office"
+                    },
+                    "15": {
+                        "then": "This is a prison_cell"
+                    },
+                    "16": {
+                        "then": "This is a restaurant"
+                    },
+                    "17": {
+                        "then": "This is a room to perform security checks"
+                    },
+                    "18": {
+                        "then": "This is a sport room"
+                    },
+                    "19": {
+                        "then": "This is a storage room"
+                    },
+                    "20": {
+                        "then": "This is a technical room"
+                    },
+                    "21": {
+                        "then": "These are toilets"
+                    },
+                    "22": {
+                        "then": "This is a waiting room"
+                    }
+                },
+                "question": "What type of room is this?"
             }
         },
         "title": {

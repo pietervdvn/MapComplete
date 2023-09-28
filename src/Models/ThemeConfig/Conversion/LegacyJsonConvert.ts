@@ -4,7 +4,7 @@ import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import { DesugaringStep, Each, Fuse, On } from "./Conversion"
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
-import { del } from "idb-keyval";
+import { del } from "idb-keyval"
 
 export class UpdateLegacyLayer extends DesugaringStep<
     LayerConfigJson | string | { builtin; override }
@@ -197,7 +197,7 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
             delete oldThemeConfig.socialImage
         }
 
-        if(oldThemeConfig.defaultBackgroundId === "osm"){
+        if (oldThemeConfig.defaultBackgroundId === "osm") {
             console.log("Removing old background in", json.id)
         }
 

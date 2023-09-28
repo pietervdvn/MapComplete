@@ -1,9 +1,8 @@
 <script lang="ts">
+  import { Store } from "../../Logic/UIEventSource"
+  import StarsBar from "./StarsBar.svelte"
 
-  import { Store } from "../../Logic/UIEventSource";
-  import StarsBar from "./StarsBar.svelte";
-
-  export let score: Store<number>;
+  export let score: Store<number>
 </script>
 
 {#if $score !== undefined && $score !== null}

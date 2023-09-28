@@ -29,7 +29,8 @@
     "render": {
       "nl": "Natuurgebied",
       "en": "Nature reserve",
-      "de": "Naturschutzgebiet"
+      "de": "Naturschutzgebiet",
+      "ca": "Reserva Natural"
     },
     "mappings": [
       {
@@ -167,7 +168,8 @@
         "en": "Operated by {operator}",
         "nl": "Beheer door {operator}",
         "de": "Betrieben von {operator}",
-        "es": "Operado por {operator}"
+        "es": "Operado por {operator}",
+        "ca": "Gestionat per {operator}"
       },
       "question": {
         "en": "Who operates this area?",
@@ -205,7 +207,8 @@
             "en": "Operated by {operator}",
             "nl": "Dit gebied wordt beheerd door {operator}",
             "de": "Betrieben von {operator}",
-            "es": "Operado por {operator}"
+            "es": "Operado por {operator}",
+            "ca": "Gestionat per {operator}"
           },
           "icon": "./assets/layers/nature_reserve/Natuurpunt.jpg",
           "hideInAnswer": true
@@ -239,7 +242,8 @@
         "nl": "Wat is de naam van dit gebied?",
         "en": "What is the name of this area?",
         "de": "Wie heißt das Gebiet?",
-        "es": "¿Cual es el nombre de esta área?"
+        "es": "¿Cual es el nombre de esta área?",
+        "ca": "Quin és el nom d'aquesta àrea?"
       },
       "freeform": {
         "key": "name",
@@ -264,7 +268,8 @@
             "en": "This area doesn't have a name",
             "nl": "Dit gebied heeft geen naam",
             "de": "Das Gebiet hat keinen Namen",
-            "es": "Esta área no tiene un nombre"
+            "es": "Esta área no tiene un nombre",
+            "ca": "Aquesta àrea no té un nom"
           }
         }
       ],
@@ -276,7 +281,8 @@
         "en": "Are dogs allowed in this nature reserve?",
         "it": "I cani sono ammessi in questa riserva naturale?",
         "fr": "Les chiens sont-ils autorisés dans cette réserve naturelle ?",
-        "de": "Sind Hunde in diesem Naturschutzgebiet erlaubt?"
+        "de": "Sind Hunde in diesem Naturschutzgebiet erlaubt?",
+        "ca": "Els gossos estan permesos en aquesta reserva natural?"
       },
       "condition": {
         "or": [
@@ -318,7 +324,8 @@
             "it": "I cani sono liberi di girare liberi",
             "fr": "Les chiens sont autorisés à se promener librement",
             "de": "Hunde dürfen frei herumlaufen",
-            "es": "Los perros pueden ir sueltos"
+            "es": "Los perros pueden ir sueltos",
+            "ca": "Els gossos poden anar solts"
           }
         }
       ],
@@ -413,7 +420,8 @@
         "en": "Extra information: <i>{description}</i>",
         "nl": "Extra info: <i>{description}</i>",
         "de": "Zusätzliche Informationen: <i>{description}</i>",
-        "es": "Información adicional: <i>{description}</i>"
+        "es": "Información adicional: <i>{description}</i>",
+        "ca": "Informació adicional: <i>{description}</i>"
       },
       "freeform": {
         "key": "description"
@@ -432,7 +440,8 @@
         "en": "Extra info: <i>{description:0}</i>",
         "nl": "Extra info: <i>{description:0}</i>",
         "de": "Zusätzliche Informationen: <i>{description:0}</i>",
-        "es": "Información adicional: <i>{description:0}</i>"
+        "es": "Información adicional: <i>{description:0}</i>",
+        "ca": "Informació adicional: <i>{description:0}</i>"
       },
       "freeform": {
         "key": "description:0"

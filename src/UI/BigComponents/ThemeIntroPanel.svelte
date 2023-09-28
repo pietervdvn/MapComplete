@@ -72,7 +72,11 @@
       {:else if $geopermission === "requested"}
         <button class="disabled flex w-full items-center gap-x-2" on:click={jumpToCurrentLocation}>
           <!-- Even though disabled, when clicking we request the location again in case the contributor dismissed the location popup -->
-          <ToSvelte construct={Svg.crosshair_svg().SetClass("w-8 h-8").SetStyle("animation: 3s linear 0s infinite normal none running spin;")} />
+          <ToSvelte
+            construct={Svg.crosshair_svg()
+              .SetClass("w-8 h-8")
+              .SetStyle("animation: 3s linear 0s infinite normal none running spin;")}
+          />
           <Tr t={Translations.t.general.waitingForGeopermission} />
         </button>
       {:else if $geopermission === "denied"}
@@ -80,9 +84,13 @@
           <ToSvelte construct={Svg.location_refused_svg().SetClass("w-8 h-8")} />
           <Tr t={Translations.t.general.geopermissionDenied} />
         </button>
-      {:else }
-        <button class="flex w-full items-center gap-x-2 disabled">
-          <ToSvelte construct={Svg.crosshair_svg().SetClass("w-8 h-8").SetStyle("animation: 3s linear 0s infinite normal none running spin;")} />
+      {:else}
+        <button class="disabled flex w-full items-center gap-x-2">
+          <ToSvelte
+            construct={Svg.crosshair_svg()
+              .SetClass("w-8 h-8")
+              .SetStyle("animation: 3s linear 0s infinite normal none running spin;")}
+          />
           <Tr t={Translations.t.general.waitingForLocation} />
         </button>
       {/if}

@@ -672,6 +672,9 @@
                     },
                     "1": {
                         "then": "Diese Bank hat kein integriertes Kunstwerk"
+                    },
+                    "2": {
+                        "then": "Die Bank hat <span class=\"subtle\">vermutlich</span> kein integriertes Kunstwerk"
                     }
                 },
                 "question": "Hat diese Bank ein künstlerisches Element?",
@@ -4241,28 +4244,34 @@
         }
     },
     "elongated_coin": {
-        "description": "Ebene mit Münzpressen.",
-        "name": "Münzpressen",
+        "description": "Ebene mit Münzprägeautomaten.",
+        "name": "Münzprägeautomaten",
         "presets": {
             "0": {
-                "title": "Eine Münzpresse"
+                "title": "Einen Münzprägeautomaten"
             }
         },
         "tagRenderings": {
             "charge": {
                 "freeform": {
-                    "placeholder": "Einwurf (z.B. 0,5€)"
+                    "placeholder": "Gebühr (z.B. 0,50 €)"
                 },
                 "mappings": {
                     "0": {
-                        "then": "Eine Münze zu Pressen kostet 1 Euro."
+                        "then": "Die Prägung einer Münze kostet 1,00 €."
                     },
                     "1": {
-                        "then": "Eine Münze zu Pressen kostet 2€."
+                        "then": "Die Prägung einer Münze kostet 2,00 €."
+                    },
+                    "2": {
+                        "then": "Die Prägung einer Münze kostet 2 Schweizer Franken."
+                    },
+                    "3": {
+                        "then": "Die Prägung einer Münze kostet 1 Schweizer Franken."
                     }
                 },
-                "question": "Wieviel kostet es eine Münze zu Pressen?",
-                "render": "Es kostet {charge}€ um eine Münze zu Pressen."
+                "question": "Wieviel kostet die Prägung einer Münze?",
+                "render": "Die Prägung einer Münze kostet {charge}."
             },
             "coin": {
                 "freeform": {
@@ -4270,23 +4279,29 @@
                 },
                 "mappings": {
                     "0": {
-                        "then": "Die Münzpresse benötigt eine 2 Cent Münze um zu Pressen."
+                        "then": "Der Automat prägt 2 Cent Münzen."
                     },
                     "1": {
-                        "then": "Die Münzpresse benötigt eine 5 Cent Münze um zu Pressen."
+                        "then": "Der Automat prägt 5 Cent Münzen."
                     },
                     "2": {
-                        "then": "Die Münzpresse benötigt eine 10 Cent Münze um zu Pressen."
+                        "then": "Der Automat prägt 10 Cent Münzen."
                     },
                     "3": {
-                        "then": "Die Münzpresse benötigt eine 25 Cent Münze um zu Pressen."
+                        "then": "Der Automat prägt 25 Cent Münzen."
                     },
                     "4": {
-                        "then": "Die Münzpresse benötigt eine 50 Cent Münze um zu Pressen."
+                        "then": "Der Automat prägt 50 Cent Münzen."
+                    },
+                    "5": {
+                        "then": "Der Automat prägt 10 Centime Münzen."
+                    },
+                    "6": {
+                        "then": "Der Automat prägt 5 Centime Münzen."
                     }
                 },
-                "question": "Welche Münze wird zum Pressen verwendet?",
-                "render": "Die Münzpresse benötigt eine {coin:type} Münze um zu Pressen."
+                "question": "Welche Münzen können geprägt werden?",
+                "render": "Der Automat prägt {coin:type} Cent Münzen."
             },
             "designs": {
                 "freeform": {
@@ -4294,35 +4309,49 @@
                 },
                 "mappings": {
                     "0": {
-                        "then": "Die Münzpresse hat ein Motiv zur Auswahl."
+                        "then": "Der Prägeautomat hat ein Motiv zur Auswahl."
                     },
                     "1": {
-                        "then": "Die Münzpresse hat zwei Motive zur Auswahl."
+                        "then": "Der Prägeautomat hat zwei Motive zur Auswahl."
                     },
                     "2": {
-                        "then": "Die Münzpresse hat drei Motive zur Auswahl."
+                        "then": "Der Prägeautomat hat drei Motive zur Auswahl."
                     },
                     "3": {
-                        "then": "Die Münzpresse hat vier Motive zur Auswahl."
+                        "then": "Der Prägeautomat hat vier Motive zur Auswahl."
                     }
                 },
                 "question": "Wieviele Motive sind verfügbar?",
-                "render": "Die Münzpresse hat {coin:design_count} Motive zur Auswahl."
+                "render": "Der Prägeautomat hat {coin:design_count} Motive zur Auswahl."
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Das Prägen ist kostenpflichtig."
+                    },
+                    "1": {
+                        "then": "Das Prägen ist kostenpflichtig."
+                    },
+                    "2": {
+                        "then": "Das Prägen ist kostenlos."
+                    }
+                },
+                "question": "Ist das Prägen kostenpflichtig?"
             },
             "indoor": {
                 "mappings": {
                     "0": {
-                        "then": "Die Münzpresse befindet sich im Inneren."
+                        "then": "Der Prägeautomat befindet sich im Inneren."
                     },
                     "1": {
-                        "then": "Die Münzpresse befindet sich Draußen."
+                        "then": "Der Prägeautomat befindet sich im Freien."
                     }
                 },
-                "question": "Befindet sich die Münzpresse im Inneren?"
+                "question": "Befindet sich der Prägeautomat im Inneren?"
             }
         },
         "title": {
-            "render": "Münzpresse"
+            "render": "Prägeautomat"
         }
     },
     "entrance": {

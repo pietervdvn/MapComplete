@@ -23,18 +23,20 @@
   export let feature: Feature
   export let layer: LayerConfig
 
-  export let linkable = true;
-  let isLinked = Object.values(tags.data).some(v => image.pictureUrl === v);
+  export let linkable = true
+  let isLinked = Object.values(tags.data).some((v) => image.pictureUrl === v)
 
-  const t = Translations.t.image.nearby;
-  const c = [lon, lat];
+  const t = Translations.t.image.nearby
+  const c = [lon, lat]
   let attributedImage = new AttributedImage({
     url: image.thumbUrl ?? image.pictureUrl,
     provider: AllImageProviders.byName(image.provider),
-    date: new Date(image.date)
-  });
-  let distance = Math.round(GeoOperations.distanceBetween([image.coordinates.lng, image.coordinates.lat], c));
-  
+    date: new Date(image.date),
+  })
+  let distance = Math.round(
+    GeoOperations.distanceBetween([image.coordinates.lng, image.coordinates.lat], c)
+  )
+
   $: {
     const currentTags = tags.data
     const key = Object.keys(image.osmTags)[0]

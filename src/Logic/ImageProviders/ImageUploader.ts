@@ -1,5 +1,5 @@
 export interface ImageUploader {
-  maxFileSizeInMegabytes?: number;
+    maxFileSizeInMegabytes?: number
     /**
      * Uploads the 'blob' as image, with some metadata.
      * Returns the URL to be linked + the appropriate key to add this to OSM
@@ -11,5 +11,5 @@ export interface ImageUploader {
         title: string,
         description: string,
         blob: File
-    ): Promise<{ key: string, value: string }>;
+    ): Promise<{ key: string; value: string }>
 }
