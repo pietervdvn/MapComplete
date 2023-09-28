@@ -930,6 +930,28 @@
                 },
                 "question": "Is deze verkoopsautomaat nog steeds werkende?",
                 "render": "Deze verkoopsautomaat is <i>{operational_status}</i>"
+            },
+            "other-items-vending": {
+                "mappings": {
+                    "0": {
+                        "then": "Fietsbinnenbanden worden hier verkocht"
+                    },
+                    "1": {
+                        "then": "Fietslampjes worden hier verkocht"
+                    },
+                    "2": {
+                        "then": "Handschoenen worden hier verkocht"
+                    },
+                    "3": {
+                        "then": "Fietsreparatiesets worden hier verkocht"
+                    },
+                    "4": {
+                        "then": "Fietspompen worden hier verkocht"
+                    },
+                    "5": {
+                        "then": "Fietssloten worden hier verkocht"
+                    }
+                }
             }
         },
         "title": {
@@ -6881,27 +6903,6 @@
                     }
                 }
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Bevindt zich ondergronds"
-                    },
-                    "1": {
-                        "then": "Bevindt zich op de begane grond"
-                    },
-                    "2": {
-                        "then": "Bevindt zich gelijkvloers"
-                    },
-                    "3": {
-                        "then": "Bevindt zich op de eerste verdieping"
-                    },
-                    "4": {
-                        "then": "Bevindt zich in de eerste kelderverdieping"
-                    }
-                },
-                "question": "Op welke verdieping bevindt dit punt zich?",
-                "render": "Bevindt zich op de {level}de verdieping"
-            },
             "multilevels": {
                 "override": {
                     "question": "Naar welke verdiepingen gaat deze lift?",
@@ -6980,6 +6981,9 @@
             "phone": {
                 "question": "Wat is het telefoonnummer van {title()}?"
             },
+            "repeated": {
+                "render": "Er zijn verschillende, identieke objecten op verdiepingen {repeat_on}."
+            },
             "service:electricity": {
                 "mappings": {
                     "0": {
@@ -6996,6 +7000,27 @@
                     }
                 },
                 "question": "Zijn er stekkers beschikbaar voor klanten die binnen zitten?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Bevindt zich ondergronds"
+                    },
+                    "1": {
+                        "then": "Bevindt zich op de begane grond"
+                    },
+                    "2": {
+                        "then": "Bevindt zich gelijkvloers"
+                    },
+                    "3": {
+                        "then": "Bevindt zich op de eerste verdieping"
+                    },
+                    "4": {
+                        "then": "Bevindt zich in de eerste kelderverdieping"
+                    }
+                },
+                "question": "Op welke verdieping bevindt dit punt zich?",
+                "render": "Bevindt zich op de {level}de verdieping"
             },
             "smoking": {
                 "mappings": {
@@ -8914,10 +8939,14 @@
         "tagRenderings": {
             "all-questions-at-once": {
                 "mappings": {
+                    "0": {
+                        "then": "Toon alle onbeantwoorde vragen"
+                    },
                     "1": {
                         "then": "Toon de vragen één per één"
                     }
-                }
+                },
+                "question": "Moeten onbeantwoorde vragen om beurt of allemaal samen getoond worden?"
             },
             "contributor-thanks": {
                 "mappings": {
@@ -9052,7 +9081,25 @@
                         "question": "Verkoop van aardappelen"
                     },
                     "16": {
+                        "question": "Verkoop van vlees"
+                    },
+                    "17": {
                         "question": "Verkoop van bloemen"
+                    },
+                    "21": {
+                        "question": "Verkoop van fietslampjes"
+                    },
+                    "22": {
+                        "question": "Verkoop van handschoenen"
+                    },
+                    "23": {
+                        "question": "Verkoop van fietsreparatiesets"
+                    },
+                    "24": {
+                        "question": "Verkoop van fietspompen"
+                    },
+                    "25": {
+                        "question": "Verkoop van fietssloten"
                     }
                 }
             }
@@ -9133,16 +9180,31 @@
                         "then": "Aardappelen worden verkocht"
                     },
                     "15": {
-                        "then": "Bloemen worden verkocht"
+                        "then": "Vlees wordt verkocht"
                     },
                     "16": {
+                        "then": "Bloemen worden verkocht"
+                    },
+                    "17": {
                         "then": "Parkeerkaarten worden verkocht"
                     },
-                    "18": {
+                    "19": {
                         "then": "Openbaar vervoerkaartjes worden verkocht"
                     },
-                    "19": {
-                        "then": "Vleesproducten worden hier verkocht"
+                    "20": {
+                        "then": "Fietslampjes worden verkocht"
+                    },
+                    "21": {
+                        "then": "Handschoenen worden verkocht"
+                    },
+                    "22": {
+                        "then": "Fietsreparatiesets worden verkocht"
+                    },
+                    "23": {
+                        "then": "Fietspompen worden verkocht"
+                    },
+                    "24": {
+                        "then": "Fietssloten worden verkocht"
                     }
                 },
                 "question": "Wat verkoopt deze verkoopautomaat?",

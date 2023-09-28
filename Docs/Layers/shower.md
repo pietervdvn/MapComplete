@@ -88,7 +88,21 @@ This tagrendering has no question and is thus read-only
 
 
 
-### level 
+### repeated 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `repeat_on~.+`
+
+This tagrendering has labels  `level`
+
+
+
+### single_level 
 
 
 
@@ -110,6 +124,8 @@ This is rendered with  `Located on the {level}th floor`
   - *Located on the first floor*  corresponds with  `level=1`
   - *Located on the first basement level*  corresponds with  `level=-1`
 
+
+This tagrendering has labels  `level`
 
 
 

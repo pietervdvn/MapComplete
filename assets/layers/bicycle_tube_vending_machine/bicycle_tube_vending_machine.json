@@ -32,7 +32,9 @@
     "mappings": [
       {
         "if": "name~*",
-        "then": "Bicycle tube vending machine {name}"
+        "then": {
+          "en": "Bicycle tube vending machine {name}"
+        }
       }
     ]
   },
@@ -70,8 +72,7 @@
       },
       "tags": [
         "amenity=vending_machine",
-        "vending=bicycle_tube",
-        "vending:bicycle_tube=yes"
+        "vending=bicycle_tube"
       ]
     }
   ],
@@ -176,65 +177,62 @@
       "id": "Still in use?"
     },
     {
-      "question": "How much does a bicycle tube cost?",
-      "render": "A bicycle tube costs {charge}",
+      "question": {
+        "en": "How much does a bicycle tube cost?"
+      },
+      "render": {
+        "en": "A bicycle tube costs {charge}"
+      },
       "freeform": {
         "key": "charge"
       },
       "id": "bicycle_tube_vending_machine-charge"
     },
+    "payment-options-split",
     {
-      "id": "vending-machine-payment-methods",
-      "question": "How can one pay at this tube vending machine?",
-      "mappings": [
-        {
-          "if": "payment:coins=yes",
-          "ifnot": "payment:coins=no",
-          "then": "Payment with coins is possible"
-        },
-        {
-          "if": "payment:notes=yes",
-          "ifnot": "payment:notes=no",
-          "then": "Payment with notes is possible"
-        },
-        {
-          "if": "payment:cards=yes",
-          "ifnot": "payment:cards=no",
-          "then": "Payment with cards is possible"
-        }
-      ],
-      "multiAnswer": true
-    },
-    {
-      "question": "Which brand of tubes are sold here?",
+      "question": {
+        "en": "Which brand of tubes are sold here?"
+      },
       "freeform": {
         "key": "brand"
       },
-      "render": "{brand} tubes are sold here",
+      "render": {
+        "en": "{brand} tubes are sold here"
+      },
       "mappings": [
         {
           "if": "brand=Continental",
-          "then": "Continental tubes are sold here"
+          "then": {
+            "en": "Continental tubes are sold here"
+          }
         },
         {
           "if": "brand=Schwalbe",
-          "then": "Schwalbe tubes are sold here"
+          "then": {
+            "en": "Schwalbe tubes are sold here"
+          }
         }
       ],
       "multiAnswer": true,
       "id": "bicycle_tube_vending_machine-brand"
     },
     {
-      "question": "Who maintains this vending machine?",
+      "question": {
+        "en": "Who maintains this vending machine?"
+      },
       "render": "This vending machine is maintained by {operator}",
       "mappings": [
         {
           "if": "operator=Schwalbe",
-          "then": "Maintained by Schwalbe"
+          "then": {
+            "en": "Maintained by Schwalbe"
+          }
         },
         {
           "if": "operator=Continental",
-          "then": "Maintained by Continental"
+          "then": {
+            "en": "Maintained by Continental"
+          }
         }
       ],
       "freeform": {
@@ -243,33 +241,52 @@
       "id": "bicycle_tube_vending_machine-operator"
     },
     {
-      "id": "bicycle_tube_vending_maching-other-items",
-      "question": "Are other bicycle bicycle accessories sold here?",
+      "id": "other-items-vending",
+      "question": {
+        "en": "Are other biycle accessories sold here?"
+      },
       "mappings": [
         {
-          "if": "vending:bicycle_light=yes",
-          "ifnot": "vending:bicycle_light=no",
-          "then": "Bicycle lights are sold here"
+          "if": "vending=bicycle_tube",
+          "then": {
+            "en": "Bicycle inner tubes are sold here",
+            "nl": "Fietsbinnenbanden worden hier verkocht"
+          }
         },
         {
-          "if": "vending:gloves=yes",
-          "ifnot": "vending:gloves=no",
-          "then": "Gloves are sold here"
+          "if": "vending=bicycle_light",
+          "then": {
+            "en": "Bicycle lights are sold here",
+            "nl": "Fietslampjes worden hier verkocht"
+          }
         },
         {
-          "if": "vending:bicycle_repair_kit=yes",
-          "ifnot": "vending:bicycle_repair_kit=no",
-          "then": "Bicycle repair kits are sold here"
+          "if": "vending=gloves",
+          "then": {
+            "en": "Gloves are sold here",
+            "nl": "Handschoenen worden hier verkocht"
+          }
         },
         {
-          "if": "vending:bicycle_pump=yes",
-          "ifnot": "vending:bicycle_pump=no",
-          "then": "Bicycle pumps are sold here"
+          "if": "vending=bicycle_repair_kit",
+          "then": {
+            "en": "Bicycle repair kits are sold here",
+            "nl": "Fietsreparatiesets worden hier verkocht"
+          }
         },
         {
-          "if": "vending:bicycle_lock=yes",
-          "ifnot": "vending:bicycle_lock=no",
-          "then": "Bicycle locks are sold here"
+          "if": "vending=bicycle_pump",
+          "then": {
+            "en": "Bicycle pumps are sold here",
+            "nl": "Fietspompen worden hier verkocht"
+          }
+        },
+        {
+          "if": "vending=bicycle_lock",
+          "then": {
+            "en": "Bicycle locks are sold here",
+            "nl": "Fietssloten worden hier verkocht"
+          }
         }
       ],
       "multiAnswer": true

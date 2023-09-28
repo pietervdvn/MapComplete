@@ -198,7 +198,7 @@ Adds the geometry type as property. This is identical to the GoeJson geometry ty
 
 
 
-Extract the 'level'-tag into a normalized, ';'-separated value
+Extract the 'level'-tag into a normalized, ';'-separated value called '_level' (which also includes 'repeat_on'). The `level` tag (without underscore) will be normalized with only the value of `level`.
 
 
 
@@ -260,7 +260,9 @@ To enable this feature,  add a field `calculatedTags` in the layer object, e.g.:
 
 "calculatedTags": [
 
-    "_someKey=javascript-expression",
+    "_someKey=javascript-expression (lazy execution)",
+
+    "_some_other_key:=javascript expression (strict execution)
 
     "name=feat.properties.name ?? feat.properties.ref ?? feat.properties.operator",
 
@@ -269,6 +271,12 @@ To enable this feature,  add a field `calculatedTags` in the layer object, e.g.:
   ]
 
 ````
+
+
+
+By using `:=` as separator, the attribute will be calculated as soone as the data is loaded (strict evaluation)
+
+The default behaviour, using `=` as separator, is lazy loading
 
 
 

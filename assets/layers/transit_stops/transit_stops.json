@@ -34,7 +34,8 @@
           "en": "Stop {name}",
           "de": "Haltestelle {name}",
           "da": "Stop {name}",
-          "nl": "Halte {name}"
+          "nl": "Halte {name}",
+          "ca": "Parada {name}"
         }
       }
     ]
@@ -80,7 +81,8 @@
           "en": "Name of the stop",
           "de": "Name der Haltestelle",
           "da": "Navn på stoppestedet",
-          "nl": "Naam van de halte"
+          "nl": "Naam van de halte",
+          "ca": "Nom de la parada"
         }
       },
       "mappings": [
@@ -139,7 +141,8 @@
           "then": {
             "en": "This stop has a shelter, that's separately mapped",
             "de": "Die Haltestelle hat einen Unterstand, der separat kariert ist",
-            "nl": "Deze halte heeft een schuilplaats, die apart op de kaart staat"
+            "nl": "Deze halte heeft een schuilplaats, die apart op de kaart staat",
+            "ca": "Aquesta parada té un refugi que està mapejat separadament"
           },
           "hideInAnswer": true
         }
@@ -184,7 +187,8 @@
             "en": "This stop has a bench, that's separately mapped",
             "de": "Die Haltestelle hat eine Bank, die separat kartiert ist",
             "nl": "Deze halte heeft een zitbank, die los aangegeven is op de kaart",
-            "fr": "Cet arrêt a un banc, cartographié séparément"
+            "fr": "Cet arrêt a un banc, cartographié séparément",
+            "ca": "Aquesta parada té un banc que està mapejat separadament"
           },
           "hideInAnswer": true
         }
@@ -228,7 +232,8 @@
           "then": {
             "en": "This stop has a bin, that's separately mapped",
             "de": "Die Haltestelle hat einen Mülleimer, der separat kartiert ist",
-            "nl": "Deze heeft een vuilnisbak, die los op de kaart staat"
+            "nl": "Deze heeft een vuilnisbak, die los op de kaart staat",
+            "ca": "Aquesta parada té una paperera que està mapejada separadament"
           },
           "hideInAnswer": true
         }
@@ -315,7 +320,8 @@
           "then": {
             "en": "This stop has a departures board of unknown type",
             "de": "Die Haltestelle hat einen Fahrplan, der nicht näher definiert ist",
-            "da": "Dette stoppested har en afgangstavle af ukendt type"
+            "da": "Dette stoppested har en afgangstavle af ukendt type",
+            "ca": "Aquesta parada té un tauler de sortides de tipus desconegut"
           },
           "hideInAnswer": true
         },
@@ -344,7 +350,8 @@
           "then": {
             "en": "This stop has a timetable showing regular departures",
             "de": "Die Haltestelle hat einen Fahrplan, der die regulären Abfahrtszeiten anzeigt",
-            "da": "Dette stop har en køreplan, der viser regelmæssige afgange"
+            "da": "Dette stop har en køreplan, der viser regelmæssige afgange",
+            "ca": "Aquesta parada té un horari que mostra les sortides regulars"
           }
         },
         {
@@ -352,7 +359,8 @@
           "then": {
             "en": "This stop has a timetable containing just the interval between departures",
             "de": "Die Haltestelle hat einen Fahrplan, der den Abstand zwischen Abfahrten anzeigt",
-            "da": "Dette stop har en køreplan, der kun indeholder intervallet mellem afgangene"
+            "da": "Dette stop har en køreplan, der kun indeholder intervallet mellem afgangene",
+            "ca": "Aquesta parada té un horari que conté només l'interval entre sortides"
           }
         },
         {
@@ -360,7 +368,8 @@
           "then": {
             "en": "This stop does <b>not</b> have a departures board",
             "de": "Die Haltestelle hat <b>keinen</b> Fahrplan",
-            "da": "Dette stop har ikke en afgangstavle"
+            "da": "Dette stop har ikke en afgangstavle",
+            "ca": "Aquesta parada <b>no</b> té un tauler de sortides"
           }
         }
       ]
@@ -410,7 +419,8 @@
           "question": {
             "en": "With a bench",
             "de": "Mit Sitzbank",
-            "fr": "Avec un banc"
+            "fr": "Avec un banc",
+            "ca": "Amb un banc"
           }
         }
       ]

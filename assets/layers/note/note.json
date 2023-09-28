@@ -149,7 +149,8 @@
             "en": "Should mention {search} in the first comment",
             "nl": "Moet in de eerste opmerking \"{search}\" bevatten",
             "de": "Sollte {search} im ersten Kommentar erwähnen",
-            "es": "Debe mencionar {search} en el primer comentario"
+            "es": "Debe mencionar {search} en el primer comentario",
+            "ca": "Has de mencionar {search} en el primer comentari"
           }
         }
       ]
@@ -188,7 +189,8 @@
             "nl": "Geopend door bijdrager {search}",
             "de": "Erstellt von {search}",
             "es": "Abierto por el contributor {search}",
-            "fr": "Ouverte par {search}"
+            "fr": "Ouverte par {search}",
+            "ca": "Obert pel contribuïdor {search}"
           }
         }
       ]
@@ -207,7 +209,8 @@
             "en": "<b>Not</b> opened by contributor {search}",
             "nl": "<b>Niet</b> geopend door bijdrager {search}",
             "de": "<b>Nicht</b> erstellt von {search}",
-            "es": "<b>No</b> abierto por el contributor {search}"
+            "es": "<b>No</b> abierto por el contributor {search}",
+            "ca": "<b>No</b> obert pel contribuïdor {search}"
           }
         }
       ]
@@ -226,7 +229,8 @@
             "en": "Last edited by contributor {search}",
             "nl": "Laatst bewerkt door bijdrager {search}",
             "de": "Zuletzt bearbeitet von {search}",
-            "es": "Editada por última vez por el contributor {search}"
+            "es": "Editada por última vez por el contributor {search}",
+            "ca": "Editat per última vega pel contribuïdor {search}"
           }
         }
       ]
@@ -245,7 +249,8 @@
             "en": "Opened after {search}",
             "nl": "Geopend na {search}",
             "de": "Zuletzt bearbeitet nach dem {search}",
-            "es": "Abierta después de {search}"
+            "es": "Abierta después de {search}",
+            "ca": "Oberta després de {search}"
           }
         }
       ]
@@ -265,7 +270,8 @@
             "en": "Created before {search}",
             "nl": "Aangemaakt voor {search}",
             "de": "Erstellt vor dem {search}",
-            "es": "Creada antes de {search}"
+            "es": "Creada antes de {search}",
+            "ca": "Creada abans de {search}"
           }
         }
       ]
@@ -285,7 +291,8 @@
             "en": "Created after {search}",
             "nl": "Aangemaakt na {search}",
             "de": "Erstellt nach dem {search}",
-            "es": "Creada después de {search}"
+            "es": "Creada después de {search}",
+            "ca": "Creada després de {search}"
           }
         }
       ]
@@ -299,7 +306,8 @@
             "en": "Only show notes opened by an anonymous contributor",
             "nl": "Toon enkel de Notes geopend door een anonieme bijdrager",
             "de": "Nur Notizen anzeigen, die anonym erstellt wurden",
-            "es": "Solo mostrar las notas abiertas por contributores anómimos"
+            "es": "Solo mostrar las notas abiertas por contributores anómimos",
+            "ca": "Sols mostrar les notes obertes per contribuïdors anònims"
           }
         }
       ]
@@ -313,7 +321,8 @@
             "en": "Only show open notes",
             "nl": "Toon enkel open Notes",
             "de": "Nur offene Notizen anzeigen",
-            "es": "Solo mostrar las notas abiertas"
+            "es": "Solo mostrar las notas abiertas",
+            "ca": "Sols mostra les notes obertes"
           }
         }
       ]
@@ -326,7 +335,8 @@
             "en": "All Notes",
             "nl": "Alle Notes",
             "de": "Alle Notizen",
-            "es": "Todas las notas"
+            "es": "Todas las notas",
+            "ca": "Totes les notes"
           }
         },
         {

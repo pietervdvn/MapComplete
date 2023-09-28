@@ -73,7 +73,8 @@
           "if": "shelter_type=lean_to",
           "then": {
             "en": "This is a shed with 3 walls, primarily intended for camping.",
-            "de": "Es handelt sich um einen an 3 Seiten geschlossenen Unterstand, der in erster Linie zum Campen gedacht ist."
+            "de": "Es handelt sich um einen an 3 Seiten geschlossenen Unterstand, der in erster Linie zum Campen gedacht ist.",
+            "ca": "Es tracta d'un cobert amb 3 parets, destinat principalment a l'acampada."
           }
         },
         {

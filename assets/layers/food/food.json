@@ -149,7 +149,6 @@
   },
   "tagRenderings": [
     "images",
-    "level",
     {
       "question": {
         "nl": "Wat is de naam van deze eetgelegenheid?",
@@ -213,6 +212,7 @@
     "email",
     "phone",
     "payment-options",
+    "level",
     "wheelchair-access",
     {
       "question": {
@@ -1012,7 +1012,8 @@
       "options": [
         {
           "question": {
-            "en": "Restaurants and fast food businesses"
+            "en": "Restaurants and fast food businesses",
+            "ca": "Restaurants i negocis de menjar ràpid"
           }
         },
         {
@@ -1043,7 +1044,8 @@
         {
           "question": {
             "en": "Has a vegetarian menu",
-            "nl": "Heeft een vegetarisch menu"
+            "nl": "Heeft een vegetarisch menu",
+            "ca": "Té menú vegetarià"
           },
           "osmTags": {
             "or": [
@@ -1102,7 +1104,8 @@
     },
     "has_organic",
     "accepts_cash",
-    "accepts_cards"
+    "accepts_cards",
+    "dogs"
   ],
   "deletion": {
     "nonDeleteMappings": [

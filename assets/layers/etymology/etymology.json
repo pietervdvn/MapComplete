@@ -46,6 +46,7 @@
     },
     {
       "id": "wikipedia-etymology",
+      "condition": "name:etymology!=unknown",
       "question": {
         "en": "What is the Wikidata-item that this object is named after?",
         "nl": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?",
@@ -164,8 +165,7 @@
         "de": "<h3>Wikipedia Artikel zur Namensherkunft</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
         "fr": "<h3>Article Wikipedia de la référence au nom</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
         "ca": "<h3> Article de la Viquipèdia del nom donant</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
-      },
-      "condition": "name:etymology!=unknown"
+      }
     },
     {
       "id": "zoeken op inventaris onroerend erfgoed",

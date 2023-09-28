@@ -22,3 +22,4 @@ rsync -rzh --progress dist.zip hetzner:/root/ &&
 echo "Upload completed, deploying config and booting" &&
 ssh hetzner -t "unzip dist.zip && rm dist.zip && rm -rf public/ && mv dist public && caddy stop && caddy start" &&
 rm dist.zip
+npm run clean

@@ -163,10 +163,7 @@
     "reviews": {
         "affiliated_reviewer_warning": "(Recensión de afiliado)",
         "name_required": "Requírese un nome para amosar e crear recensións",
-        "no_rating": "Sen puntuacións",
         "no_reviews_yet": "Non hai recensións aínda. Se o primeiro en escribir unha e axuda ao negocio e aos datos libres!",
-        "plz_login": "Inicia sesión para deixar unha recensión",
-        "posting_as": "Publicar como",
         "saved": "<span class=\"thanks\">Recensión compartida. Grazas por compartir!</span>",
         "saving_review": "Gardando…",
         "title": "{count} recensións",

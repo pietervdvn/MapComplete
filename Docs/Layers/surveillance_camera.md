@@ -16,6 +16,7 @@ This layer shows surveillance cameras and allows a contributor to update informa
 
   - This layer is shown at zoomlevel **12** and higher
   - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[1])
+  - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[3])
 
 
 
@@ -48,6 +49,7 @@ this quick overview is incomplete
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/surveillance:type#values) [surveillance:type](https://wiki.openstreetmap.org/wiki/Key:surveillance:type) | Multiple choice | [camera](https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dcamera) [ALPR](https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3DALPR)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/camera:type#values) [camera:type](https://wiki.openstreetmap.org/wiki/Key:camera:type) | Multiple choice | [fixed](https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Dfixed) [dome](https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Ddome) [panning](https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Dpanning)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/camera:direction#values) [camera:direction](https://wiki.openstreetmap.org/wiki/Key:camera:direction) | [direction](../SpecialInputElements.md#direction) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
@@ -87,6 +89,22 @@ This block shows the known images which are linked with the `image`-keys, but al
 
 This tagrendering has no question and is thus read-only
 
+
+
+
+
+### has_alpr 
+
+
+
+The question is  *Can this camera automatically detect license plates?*
+
+
+
+
+
+  - *This is a camera without number plate recognition.*  corresponds with  `surveillance:type=camera`
+  - *This is an ALPR (Automatic License Plate Reader)*  corresponds with  `surveillance:type=ALPR`
 
 
 

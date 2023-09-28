@@ -233,7 +233,8 @@
             "nl": "Gratis toegankelijk",
             "de": "Nutzung kostenlos",
             "fr": "Utilisation gratuite",
-            "da": "Gratis at bruge"
+            "da": "Gratis at bruge",
+            "ca": "Ús gratuït"
           },
           "osmTags": {
             "or": [
@@ -242,6 +243,33 @@
               "charge=0"
             ]
           }
+        }
+      ]
+    },
+    {
+      "id": "dogs",
+      "options": [
+        {
+          "question": {
+            "en": "No preference towards dogs"
+          }
+        },
+        {
+          "question": {
+            "en": "Dogs allowed"
+          },
+          "osmTags": {
+            "or": [
+              "dog=unleashed",
+              "dog=yes"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "No dogs allowed"
+          },
+          "osmTags": "dog=no"
         }
       ]
     }

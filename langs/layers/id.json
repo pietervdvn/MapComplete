@@ -503,27 +503,6 @@
                 "question": "Apa nama jaringan internet nirkabelnya?",
                 "render": "Nama jaringan ini adalah <b>{internet_access:ssid}</b>"
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Terletak di bawah tanah"
-                    },
-                    "1": {
-                        "then": "Terletak di lantai dasar"
-                    },
-                    "2": {
-                        "then": "Terletak di lantai dasar"
-                    },
-                    "3": {
-                        "then": "Berlokasi di lantai pertama"
-                    },
-                    "4": {
-                        "then": "Terletak di lantai basement pertama"
-                    }
-                },
-                "question": "Pada tingkat apa fitur ini diletakkan?",
-                "render": "Terletak di lantai {level}"
-            },
             "multilevels": {
                 "override": {
                     "question": "Pada lantai berapa saja lift ini berjalan?",
@@ -568,6 +547,27 @@
             },
             "phone": {
                 "question": "Berapa nomor telepon dari {title()}?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Terletak di bawah tanah"
+                    },
+                    "1": {
+                        "then": "Terletak di lantai dasar"
+                    },
+                    "2": {
+                        "then": "Terletak di lantai dasar"
+                    },
+                    "3": {
+                        "then": "Berlokasi di lantai pertama"
+                    },
+                    "4": {
+                        "then": "Terletak di lantai basement pertama"
+                    }
+                },
+                "question": "Pada tingkat apa fitur ini diletakkan?",
+                "render": "Terletak di lantai {level}"
             },
             "smoking": {
                 "mappings": {

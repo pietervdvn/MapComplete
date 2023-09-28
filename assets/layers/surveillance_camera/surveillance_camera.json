@@ -43,22 +43,26 @@
     {
       "id": "has_alpr",
       "question": {
-        "en": "Can this camera automatically detect license plates?"
+        "en": "Can this camera automatically detect license plates?",
+        "ca": "Aquesta càmera pot detectar matrícules automàticament?"
       },
       "questionHint": {
-        "en": "An <b>ALPR</b> (Automatic License Plate Reader) typically has two lenses and an array of infrared LEDS in between."
+        "en": "An <b>ALPR</b> (Automatic License Plate Reader) typically has two lenses and an array of infrared LEDS in between.",
+        "ca": "Un <b>ALPR</b> (lector automàtic de matrícules, per les seves sigles en anglès) normalment té dues lents i una sèrie de LEDs infrarojos entremig."
       },
       "mappings": [
         {
           "if": "surveillance:type=camera",
           "then": {
-            "en": "This is a camera without number plate recognition."
+            "en": "This is a camera without number plate recognition.",
+            "ca": "Es tracta d'una càmera sense reconeixement de matrícules."
           }
         },
         {
           "if": "surveillance:type=ALPR",
           "then": {
-            "en": "This is an ALPR (Automatic License Plate Reader)"
+            "en": "This is an ALPR (Automatic License Plate Reader)",
+            "ca": "Açò és un ALPR (lector automàtic de matrícules, per les seves sigles en anglès)"
           },
           "icon": {
             "path": "./assets/layers/surveillance_camera/ALPR.svg"
@@ -178,7 +182,8 @@
             "it": "Punta in direzione {direction}",
             "de": "filmt in Himmelsrichtung {direction}",
             "da": "Filmer til en kompasretning af {direction}",
-            "es": "Graba en dirección a {direction}"
+            "es": "Graba en dirección a {direction}",
+            "ca": "Grava en direcció {direction}"
           },
           "hideInAnswer": true
         }
@@ -283,7 +288,8 @@
         "it": "Lo spazio pubblico sorvegliato da questa videocamera è all'aperto o al chiuso?",
         "de": "Handelt es sich bei dem von dieser Kamera überwachten öffentlichen Raum um einen Innen- oder Außenbereich?",
         "da": "Er det offentlige rum, der overvåges af dette kamera, et indendørs eller udendørs rum?",
-        "es": "¿El espacio público vigilado por esta cámara es un espacio interior o exterior?"
+        "es": "¿El espacio público vigilado por esta cámara es un espacio interior o exterior?",
+        "ca": "L'espai públic vigilat per aquesta càmera és un espai interior o exterior?"
       },
       "condition": {
         "and": [
@@ -300,7 +306,8 @@
             "it": "Questa videocamera si trova al chiuso",
             "de": "Diese Kamera befindet sich im Innenraum",
             "da": "Dette kamera er placeret indendørs",
-            "es": "Esta cámara está ubicada en un lugar interior"
+            "es": "Esta cámara está ubicada en un lugar interior",
+            "ca": "Aquesta càmera es troba a l'interior"
           }
         },
         {
@@ -313,7 +320,8 @@
             "ru": "Эта камера расположена снаружи",
             "de": "Diese Kamera befindet sich im Freien",
             "da": "Dette kamera er placeret udendørs",
-            "es": "Esta cámara está ubicada en un lugar exterior"
+            "es": "Esta cámara está ubicada en un lugar exterior",
+            "ca": "Aquesta càmera es troba a l'exterior"
           }
         },
         {
@@ -326,7 +334,8 @@
             "ru": "Возможно, эта камера расположена снаружи",
             "de": "Diese Kamera ist möglicherweise im Freien",
             "da": "Dette kamera er sandsynligvis placeret udendørs",
-            "es": "Esta cámara está probablemente colocada en el exterior"
+            "es": "Esta cámara está probablemente colocada en el exterior",
+            "ca": "Aquesta càmera probablement es troba a l'exterior"
           },
           "hideInAnswer": true
         }
@@ -348,7 +357,8 @@
         "fr": "Situé au niveau {level}",
         "it": "Si trova al piano {level}",
         "de": "Befindet sich auf Ebene {level}",
-        "es": "Está colocada a nivel {level}"
+        "es": "Ubicado en la planta {level}",
+        "ca": "Ubicat a la planta {level}"
       },
       "freeform": {
         "key": "level",
@@ -598,7 +608,8 @@
         "nl": "een bewakingscamera",
         "de": "eine Überwachungskamera",
         "es": "una cámara de vigilancia",
-        "fr": "une caméra de surveillance"
+        "fr": "une caméra de surveillance",
+        "ca": "una càmera de vigilància"
       }
     },
     {
@@ -612,7 +623,8 @@
         "nl": "een bewakingscamera gemonteerd op een muur",
         "de": "eine an einer Wand montierte Überwachungskamera",
         "es": "una cámara de vigilancia montada en una pared",
-        "fr": "une caméra de surveillance fixée au mur"
+        "fr": "une caméra de surveillance fixée au mur",
+        "ca": "una càmera de vigilància muntada en una paret"
       },
       "snapToLayer": "walls_and_buildings"
     },
@@ -622,10 +634,12 @@
         "surveillance:type=ALPR"
       ],
       "title": {
-        "en": "an ALPR camera (Automatic Number Plate Reader)"
+        "en": "an ALPR camera (Automatic Number Plate Reader)",
+        "ca": "una càmera ALPR (lector automàtic de matrícules, per les seves sigles en anglès)"
       },
       "description": {
-        "en": "An ALPR typically has two lenses and an array of infrared lights."
+        "en": "An ALPR typically has two lenses and an array of infrared lights.",
+        "ca": "Un ALPR normalment té dues lents i una sèrie de llums infrarojes."
       },
       "exampleImages": [
         "./assets/layers/surveillance_camera/ALPR_Example.jpg",
@@ -639,10 +653,12 @@
         "camera:mount=wall"
       ],
       "title": {
-        "en": "an ALPR camera (Automatic Number Plate Reader) mounted on a wall"
+        "en": "an ALPR camera (Automatic Number Plate Reader) mounted on a wall",
+        "ca": "una càmera ALPR (lector automàtic de matrícules) muntada a la paret"
       },
       "description": {
-        "en": "An ALPR typically has two lenses and an array of infrared lights."
+        "en": "An ALPR typically has two lenses and an array of infrared lights.",
+        "ca": "Un ALPR normalment té dues lents i una sèrie de llums infrarojes."
       },
       "exampleImages": [
         "./assets/layers/surveillance_camera/ALPR_Example.jpg",
@@ -724,6 +740,7 @@
     "nl": "Deze laag toont bewakingscamera's en laat toe om de informatie te verrijken en om nieuwe camera\"s toe te voegen",
     "de": "Diese Ebene zeigt die Überwachungskameras an und ermöglicht es, Informationen zu aktualisieren und neue Kameras hinzuzufügen",
     "es": "Esta capa muestra las cámaras de vigilancia y permite a quien colabora, actualizar la información y agregar nuevas cámaras",
-    "fr": "Cette couche affiche les caméras de surveillance et permet au contributeur de mettre à jour les informations et ajouter de nouvelles caméras"
+    "fr": "Cette couche affiche les caméras de surveillance et permet au contributeur de mettre à jour les informations et ajouter de nouvelles caméras",
+    "ca": "Aquesta capa mostra les càmeres de vigilància i permet a qui col·labora, actualitzar la informació i afegir noves càmeres"
   }
 }

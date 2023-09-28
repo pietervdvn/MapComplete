@@ -55,7 +55,9 @@
     + [minimap](#minimap)
     + [mastodon](#mastodon)
     + [contact](#contact)
+    + [etymology.wikipedia-etymology](#etymologywikipedia-etymology)
     + [denominations-notes](#denominations-notes)
+    + [single_level](#single_level)
     + [survey_date](#survey_date)
     + [id_presets.shop_types](#id_presetsshop_types)
     + [school.capacity](#schoolcapacity)
@@ -321,6 +323,7 @@
   - shops
   - sports_centre
   - tertiary_education
+  - vending_machine
   - veterinary
 
 
@@ -441,9 +444,9 @@
   - fitness_centre
   - food
   - hackerspace
+  - indoors
   - parking
   - picnic_table
-  - questions
   - railway_platforms
   - reception_desk
   - shops
@@ -857,6 +860,17 @@
 
 
 
+### etymology.wikipedia-etymology 
+
+
+
+
+
+  - indoors
+
+
+
+
 ### denominations-notes 
 
 
@@ -866,6 +880,17 @@
   - parking_ticket_machine
   - ticket_machine
   - vending_machine
+
+
+
+
+### single_level 
+
+
+
+
+
+  - questions
 
 
 

@@ -530,24 +530,6 @@
             "email": {
                 "question": "{title()}のEメールアドレスは何ですか？"
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "地下にあります"
-                    },
-                    "1": {
-                        "then": "1階にあります"
-                    },
-                    "2": {
-                        "then": "1階にあります"
-                    },
-                    "3": {
-                        "then": "1階にあります"
-                    }
-                },
-                "question": "この機能は何階にあるのでしょうか？",
-                "render": "{level}階にあります"
-            },
             "opening_hours": {
                 "question": "{title()}の営業時間は？",
                 "render": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}"
@@ -582,6 +564,24 @@
                     }
                 },
                 "question": "このアメニティにはコンセントがあり、お客様が店内にいるときにも利用できますか？"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "地下にあります"
+                    },
+                    "1": {
+                        "then": "1階にあります"
+                    },
+                    "2": {
+                        "then": "1階にあります"
+                    },
+                    "3": {
+                        "then": "1階にあります"
+                    }
+                },
+                "question": "この機能は何階にあるのでしょうか？",
+                "render": "{level}階にあります"
             },
             "website": {
                 "question": "{title()}のウェブサイトは？"

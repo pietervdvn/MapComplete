@@ -1034,9 +1034,64 @@
                 },
                 "question": "Is this vending machine still operational?",
                 "render": "The operational status is <i>{operational_status}</i>"
+            },
+            "bicycle_tube_vending_machine-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Continental tubes are sold here"
+                    },
+                    "1": {
+                        "then": "Schwalbe tubes are sold here"
+                    }
+                },
+                "question": "Which brand of tubes are sold here?",
+                "render": "{brand} tubes are sold here"
+            },
+            "bicycle_tube_vending_machine-charge": {
+                "question": "How much does a bicycle tube cost?",
+                "render": "A bicycle tube costs {charge}"
+            },
+            "bicycle_tube_vending_machine-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Maintained by Schwalbe"
+                    },
+                    "1": {
+                        "then": "Maintained by Continental"
+                    }
+                },
+                "question": "Who maintains this vending machine?"
+            },
+            "other-items-vending": {
+                "mappings": {
+                    "0": {
+                        "then": "Bicycle inner tubes are sold here"
+                    },
+                    "1": {
+                        "then": "Bicycle lights are sold here"
+                    },
+                    "2": {
+                        "then": "Gloves are sold here"
+                    },
+                    "3": {
+                        "then": "Bicycle repair kits are sold here"
+                    },
+                    "4": {
+                        "then": "Bicycle pumps are sold here"
+                    },
+                    "5": {
+                        "then": "Bicycle locks are sold here"
+                    }
+                },
+                "question": "Are other biycle accessories sold here?"
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Bicycle tube vending machine {name}"
+                }
+            },
             "render": "Bicycle tube vending machine"
         }
     },
@@ -4642,6 +4697,19 @@
                         "question": "Free to use"
                     }
                 }
+            },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "No preference towards dogs"
+                    },
+                    "1": {
+                        "question": "Dogs allowed"
+                    },
+                    "2": {
+                        "question": "No dogs allowed"
+                    }
+                }
             }
         }
     },
@@ -5553,6 +5621,84 @@
                 },
                 "question": "What is the reference number of this room?",
                 "render": "This room has the reference number {ref}"
+            },
+            "room-capacity": {
+                "question": "How much people can at most fit in this room?",
+                "render": "At most {capacity} people fit this room"
+            },
+            "room-type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a administrative room"
+                    },
+                    "1": {
+                        "then": "This is a auditorium"
+                    },
+                    "2": {
+                        "then": "This is a bedroom"
+                    },
+                    "3": {
+                        "then": "This is a chapel"
+                    },
+                    "4": {
+                        "then": "This is a classroom"
+                    },
+                    "5": {
+                        "then": "This is a classroom"
+                    },
+                    "6": {
+                        "then": "This is a computer room"
+                    },
+                    "7": {
+                        "then": "This is a conference room"
+                    },
+                    "8": {
+                        "then": "This is a crypt"
+                    },
+                    "9": {
+                        "then": "This is a kitchen"
+                    },
+                    "10": {
+                        "then": "This is a laboratory"
+                    },
+                    "11": {
+                        "then": "This is a library"
+                    },
+                    "12": {
+                        "then": "This is a locker room"
+                    },
+                    "13": {
+                        "then": "This is a nursery"
+                    },
+                    "14": {
+                        "then": "This is an office"
+                    },
+                    "15": {
+                        "then": "This is a prison_cell"
+                    },
+                    "16": {
+                        "then": "This is a restaurant"
+                    },
+                    "17": {
+                        "then": "This is a room to perform security checks"
+                    },
+                    "18": {
+                        "then": "This is a sport room"
+                    },
+                    "19": {
+                        "then": "This is a storage room"
+                    },
+                    "20": {
+                        "then": "This is a technical room"
+                    },
+                    "21": {
+                        "then": "These are toilets"
+                    },
+                    "22": {
+                        "then": "This is a waiting room"
+                    }
+                },
+                "question": "What type of room is this?"
             }
         },
         "title": {
@@ -7405,27 +7551,6 @@
                     }
                 }
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Located underground"
-                    },
-                    "1": {
-                        "then": "Located on the ground floor"
-                    },
-                    "2": {
-                        "then": "Located on the ground floor"
-                    },
-                    "3": {
-                        "then": "Located on the first floor"
-                    },
-                    "4": {
-                        "then": "Located on the first basement level"
-                    }
-                },
-                "question": "On what level is this feature located?",
-                "render": "Located on the {level}th floor"
-            },
             "luminous_or_lit": {
                 "mappings": {
                     "0": {
@@ -7524,6 +7649,9 @@
             "phone": {
                 "question": "What is the phone number of {title()}?"
             },
+            "repeated": {
+                "render": "Multiple, identical objects can be found on floors {repeat_on}."
+            },
             "service:electricity": {
                 "mappings": {
                     "0": {
@@ -7540,6 +7668,27 @@
                     }
                 },
                 "question": "Does this amenity have electrical outlets, available to customers when they are inside?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Located underground"
+                    },
+                    "1": {
+                        "then": "Located on the ground floor"
+                    },
+                    "2": {
+                        "then": "Located on the ground floor"
+                    },
+                    "3": {
+                        "then": "Located on the first floor"
+                    },
+                    "4": {
+                        "then": "Located on the first basement level"
+                    }
+                },
+                "question": "On what level is this feature located?",
+                "render": "Located on the {level}th floor"
             },
             "smoking": {
                 "mappings": {
@@ -9897,19 +10046,34 @@
                         "question": "Sale of potatoes"
                     },
                     "16": {
-                        "question": "Sale of flowers"
+                        "question": "Sale of meat"
                     },
                     "17": {
-                        "question": "Sale of parking"
+                        "question": "Sale of flowers"
                     },
                     "18": {
-                        "question": "Sale of pressed pennies"
+                        "question": "Sale of parking tickets"
                     },
                     "19": {
-                        "question": "Sale of public transport tickets"
+                        "question": "Sale of pressed pennies"
                     },
                     "20": {
-                        "question": "Sale of meat products"
+                        "question": "Sale of public transport tickets"
+                    },
+                    "21": {
+                        "question": "Sale of bicycle lights"
+                    },
+                    "22": {
+                        "question": "Sale of gloves"
+                    },
+                    "23": {
+                        "question": "Sale of bicycle repair kits"
+                    },
+                    "24": {
+                        "question": "Sale of bicycle pumps"
+                    },
+                    "25": {
+                        "question": "Sale of bicycle locks"
                     }
                 }
             }
@@ -9996,19 +10160,34 @@
                         "then": "Potatoes are sold"
                     },
                     "15": {
-                        "then": "Flowers are sold"
+                        "then": "Meat is sold"
                     },
                     "16": {
-                        "then": "Parking tickets are sold"
+                        "then": "Flowers are sold"
                     },
                     "17": {
-                        "then": "Pressed pennies are sold"
+                        "then": "Parking tickets are sold"
                     },
                     "18": {
-                        "then": "Public transport tickets are sold"
+                        "then": "Pressed pennies are sold"
                     },
                     "19": {
-                        "then": "Meat products are being sold"
+                        "then": "Public transport tickets are sold"
+                    },
+                    "20": {
+                        "then": "Bicycle lights are sold"
+                    },
+                    "21": {
+                        "then": "Gloves are sold"
+                    },
+                    "22": {
+                        "then": "Bicycle repair kits are sold"
+                    },
+                    "23": {
+                        "then": "Bicycle pumps are sold"
+                    },
+                    "24": {
+                        "then": "Bicycle locks are sold"
                     }
                 },
                 "question": "What does this vending machine sell?",

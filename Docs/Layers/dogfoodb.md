@@ -46,13 +46,13 @@ this quick overview is incomplete
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/amenity#values) [amenity](https://wiki.openstreetmap.org/wiki/Key:amenity) | Multiple choice | [fast_food](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfast_food) [restaurant](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wheelchair#values) [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [designated](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated) [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cuisine#values) [cuisine](https://wiki.openstreetmap.org/wiki/Key:cuisine) | [string](../SpecialInputElements.md#string) | [pizza](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dpizza) [friture](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dfriture) [pasta](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dpasta) [kebab](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dkebab) [sandwich](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dsandwich) [burger](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dburger) [sushi](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dsushi) [coffee](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dcoffee) [italian](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Ditalian) [french](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dfrench) [chinese](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dchinese) [greek](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dgreek) [indian](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dindian) [turkish](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dturkish) [thai](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dthai)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/reservation#values) [reservation](https://wiki.openstreetmap.org/wiki/Key:reservation) | Multiple choice | [required](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drequired) [recommended](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drecommended) [yes](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dno)
@@ -103,31 +103,6 @@ This block shows the known images which are linked with the `image`-keys, but al
 
 This tagrendering has no question and is thus read-only
 
-
-
-
-
-### level 
-
-
-
-The question is  *On what level is this feature located?*
-
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
-
-This is rendered with  `Located on the {level}th floor`
-
-
-
-
-
-  - *Located underground*  corresponds with  `location=underground`
-  - This option cannot be chosen as answer
-  - *Located on the ground floor*  corresponds with  `level=0`
-  - *Located on the ground floor*  corresponds with  ``
-  - This option cannot be chosen as answer
-  - *Located on the first floor*  corresponds with  `level=1`
-  - *Located on the first basement level*  corresponds with  `level=-1`
 
 
 
@@ -259,6 +234,47 @@ The question is  *Which methods of payment are accepted here?*
   - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
 
+
+
+
+### repeated 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `repeat_on~.+`
+
+This tagrendering has labels  `level`
+
+
+
+### single_level 
+
+
+
+The question is  *On what level is this feature located?*
+
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
+
+This is rendered with  `Located on the {level}th floor`
+
+
+
+
+
+  - *Located underground*  corresponds with  `location=underground`
+  - This option cannot be chosen as answer
+  - *Located on the ground floor*  corresponds with  `level=0`
+  - *Located on the ground floor*  corresponds with  ``
+  - This option cannot be chosen as answer
+  - *Located on the first floor*  corresponds with  `level=1`
+  - *Located on the first basement level*  corresponds with  `level=-1`
+
+
+This tagrendering has labels  `level`
 
 
 
@@ -727,7 +743,7 @@ reservation.0 | Reservation not required | reservation=no\|reservation=optional\
 
 id | question | osmTags
 ---- | ---------- | ---------
-food-category.0 | Has a vegetarian menu (default) | 
+food-category.0 | Restaurants and fast food businesses (default) | 
 food-category.1 | Only fastfood businesses | amenity=fast_food
 food-category.2 | Only restaurants | amenity=restaurant
 
@@ -736,14 +752,14 @@ food-category.2 | Only restaurants | amenity=restaurant
 
 id | question | osmTags
 ---- | ---------- | ---------
-vegetarian.0 | Has a vegan menu | diet:vegetarian=yes\|diet:vegetarian=only\|diet:vegan=yes\|diet:vegan=only
+vegetarian.0 | Has a vegetarian menu | diet:vegetarian=yes\|diet:vegetarian=only\|diet:vegan=yes\|diet:vegan=only
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-vegan.0 | Has a halal menu | diet:vegan=yes\|diet:vegan=only
+vegan.0 | Has a vegan menu | diet:vegan=yes\|diet:vegan=only
 
 
 
@@ -772,6 +788,15 @@ accepts_cash.0 | Accepts cash | payment:cash=yes
 id | question | osmTags
 ---- | ---------- | ---------
 accepts_cards.0 | Accepts payment cards | payment:cards=yes
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+dogs.0 | No preference towards dogs (default) | 
+dogs.1 | Dogs allowed | dog=unleashed\|dog=yes
+dogs.2 | No dogs allowed | dog=no
  
 
 This document is autogenerated from [assets/themes/pets/pets.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/themes/pets/pets.json)

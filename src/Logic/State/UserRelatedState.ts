@@ -1,23 +1,23 @@
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
-import { OsmConnection } from "../Osm/OsmConnection";
-import { MangroveIdentity } from "../Web/MangroveReviews";
-import { Store, Stores, UIEventSource } from "../UIEventSource";
-import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource";
-import { FeatureSource } from "../FeatureSource/FeatureSource";
-import { Feature } from "geojson";
-import { Utils } from "../../Utils";
-import translators from "../../assets/translators.json";
-import codeContributors from "../../assets/contributors.json";
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson";
-import usersettings from "../../../src/assets/generated/layers/usersettings.json";
-import Locale from "../../UI/i18n/Locale";
-import LinkToWeblate from "../../UI/Base/LinkToWeblate";
-import FeatureSwitchState from "./FeatureSwitchState";
-import Constants from "../../Models/Constants";
-import { QueryParameters } from "../Web/QueryParameters";
-import { ThemeMetaTagging } from "./UserSettingsMetaTagging";
-import { MapProperties } from "../../Models/MapProperties";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import { OsmConnection } from "../Osm/OsmConnection"
+import { MangroveIdentity } from "../Web/MangroveReviews"
+import { Store, Stores, UIEventSource } from "../UIEventSource"
+import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource"
+import { FeatureSource } from "../FeatureSource/FeatureSource"
+import { Feature } from "geojson"
+import { Utils } from "../../Utils"
+import translators from "../../assets/translators.json"
+import codeContributors from "../../assets/contributors.json"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
+import usersettings from "../../../src/assets/generated/layers/usersettings.json"
+import Locale from "../../UI/i18n/Locale"
+import LinkToWeblate from "../../UI/Base/LinkToWeblate"
+import FeatureSwitchState from "./FeatureSwitchState"
+import Constants from "../../Models/Constants"
+import { QueryParameters } from "../Web/QueryParameters"
+import { ThemeMetaTagging } from "./UserSettingsMetaTagging"
+import { MapProperties } from "../../Models/MapProperties"
 
 /**
  * The part of the state which keeps track of user-related stuff, e.g. the OSM-connection,
@@ -42,8 +42,10 @@ export default class UserRelatedState {
     public readonly fixateNorth: UIEventSource<undefined | "yes">
     public readonly homeLocation: FeatureSource
     public readonly language: UIEventSource<string>
-    public readonly preferredBackgroundLayer: UIEventSource<string | "photo" | "map" | "osmbasedmap" | undefined>
-    public readonly imageLicense : UIEventSource<string>
+    public readonly preferredBackgroundLayer: UIEventSource<
+        string | "photo" | "map" | "osmbasedmap" | undefined
+    >
+    public readonly imageLicense: UIEventSource<string>
     /**
      * The number of seconds that the GPS-locations are stored in memory.
      * Time in seconds
@@ -61,7 +63,7 @@ export default class UserRelatedState {
      * Note: these are linked via OsmConnection.preferences which exports all preferences as UIEventSource
      */
     public readonly preferencesAsTags: UIEventSource<Record<string, string>>
-    private readonly _mapProperties: MapProperties;
+    private readonly _mapProperties: MapProperties
 
     constructor(
         osmConnection: OsmConnection,
@@ -71,7 +73,7 @@ export default class UserRelatedState {
         mapProperties?: MapProperties
     ) {
         this.osmConnection = osmConnection
-        this._mapProperties = mapProperties;
+        this._mapProperties = mapProperties
         {
             const translationMode: UIEventSource<undefined | "true" | "false" | "mobile" | string> =
                 this.osmConnection.GetPreference("translation-mode", "false")
@@ -104,12 +106,17 @@ export default class UserRelatedState {
         this.mangroveIdentity = new MangroveIdentity(
             this.osmConnection.GetLongPreference("identity", "mangrove")
         )
-        this.preferredBackgroundLayer= this.osmConnection.GetPreference("preferred-background-layer", undefined, {
-            documentation: "The ID of a layer or layer category that MapComplete uses by default"
-        })
+        this.preferredBackgroundLayer = this.osmConnection.GetPreference(
+            "preferred-background-layer",
+            undefined,
+            {
+                documentation:
+                    "The ID of a layer or layer category that MapComplete uses by default",
+            }
+        )
 
-        this.imageLicense =  this.osmConnection.GetPreference("pictures-license", "CC0", {
-            documentation: "The license under which new images are uploaded"
+        this.imageLicense = this.osmConnection.GetPreference("pictures-license", "CC0", {
+            documentation: "The license under which new images are uploaded",
         })
         this.installedUserThemes = this.InitInstalledUserThemes()
 
@@ -277,7 +284,6 @@ export default class UserRelatedState {
             amendedPrefs.data["__url_parameter_initialized:" + key] = "yes"
         }
 
-
         const osmConnection = this.osmConnection
         osmConnection.preferencesHandler.preferences.addCallback((newPrefs) => {
             for (const k in newPrefs) {
@@ -405,12 +411,10 @@ export default class UserRelatedState {
             }
         }
 
-
-        this._mapProperties?.rasterLayer?.addCallbackAndRun(l => {
+        this._mapProperties?.rasterLayer?.addCallbackAndRun((l) => {
             amendedPrefs.data["__current_background"] = l?.properties?.id
             amendedPrefs.ping()
         })
-
 
         return amendedPrefs
     }

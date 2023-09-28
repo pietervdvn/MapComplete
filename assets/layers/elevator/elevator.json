@@ -165,19 +165,22 @@
     {
       "id": "tactile_writing_available",
       "question": {
-        "en": "Has this elevator tactile writing?"
+        "en": "Has this elevator tactile writing?",
+        "ca": "Aquest ascensor té escriptura tàctil?"
       },
       "mappings": [
         {
           "if": "tactile_writing:braille=yes",
           "then": {
-            "en": "This elevator has tactile writing in Braille"
+            "en": "This elevator has tactile writing in Braille",
+            "ca": "L'ascensor té escriptura tàctil en Braille"
           }
         },
         {
           "if": "tactile_writing:braille=no",
           "then": {
-            "en": "This elevator does not have tactile writing"
+            "en": "This elevator does not have tactile writing",
+            "ca": "Aquest ascensor no té escriptura tàctil"
           }
         }
       ]
@@ -218,7 +221,8 @@
       },
       "questionHint": {
         "en": "E.g. it announces the current floor",
-        "de": "Z.B. werden Stockwerke angesagt"
+        "de": "Z.B. werden Stockwerke angesagt",
+        "ca": "P. e. anuncia la planta actual"
       },
       "mappings": [
         {

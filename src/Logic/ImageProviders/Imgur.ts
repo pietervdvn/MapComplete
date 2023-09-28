@@ -1,10 +1,9 @@
-import ImageProvider, { ProvidedImage } from "./ImageProvider";
-import BaseUIElement from "../../UI/BaseUIElement";
-import { Utils } from "../../Utils";
-import Constants from "../../Models/Constants";
-import { LicenseInfo } from "./LicenseInfo";
-import { ImageUploader } from "./ImageUploader";
-import Img from "../../UI/Base/Img";
+import ImageProvider, { ProvidedImage } from "./ImageProvider"
+import BaseUIElement from "../../UI/BaseUIElement"
+import { Utils } from "../../Utils"
+import Constants from "../../Models/Constants"
+import { LicenseInfo } from "./LicenseInfo"
+import { ImageUploader } from "./ImageUploader"
 
 export class Imgur extends ImageProvider implements ImageUploader {
     public static readonly defaultValuePrefix = ["https://i.imgur.com"]

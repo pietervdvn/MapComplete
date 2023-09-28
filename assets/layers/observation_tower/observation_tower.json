@@ -282,7 +282,7 @@
         "de": "Betrieben von <b>{operator}</b>",
         "es": "Mantenida por <b>{operator}</b>",
         "pl": "Obsługiwana przez <b>{operator}</b>",
-        "ca": "Mantés per {operator}"
+        "ca": "Mantés per <b>{operator}</b>"
       },
       "freeform": {
         "key": "operator"

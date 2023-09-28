@@ -432,7 +432,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             )
         }
         await this.awaitStyleIsLoaded()
-        if(this._currentRasterLayer !== background?.id){
+        if (this._currentRasterLayer !== background?.id) {
             this.removeCurrentLayer(map)
         }
         this._currentRasterLayer = background?.id
@@ -459,10 +459,10 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             map.rotateTo(0, { duration: 0 })
             map.setPitch(0)
             map.dragRotate.disable()
-            map.touchZoomRotate.disableRotation();
+            map.touchZoomRotate.disableRotation()
         } else {
             map.dragRotate.enable()
-            map.touchZoomRotate.enableRotation();
+            map.touchZoomRotate.enableRotation()
         }
     }
 
