@@ -4384,7 +4384,7 @@
             },
             "Level": {
                 "question": "¿A qué nivel está colocada esta cámara?",
-                "render": "Está colocada a nivel {level}"
+                "render": "Ubicado en la planta {level}"
             },
             "Operator": {
                 "question": "¿Quién opera el sistema de esta cámara?",
@@ -4683,7 +4683,7 @@
                         "then": "Siempreverde."
                     }
                 },
-                "question": "¿El árbol es Siempreverde o Caduco?"
+                "question": "¿El árbol es perenne o caduco?"
             },
             "tree-denotation": {
                 "mappings": {

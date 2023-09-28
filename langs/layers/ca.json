@@ -2446,10 +2446,31 @@
         }
     },
     "climbing_route": {
+        "name": "Rutes d'escalada",
+        "presets": {
+            "0": {
+                "title": "una ruta d'escalada"
+            }
+        },
         "tagRenderings": {
+            "Difficulty": {
+                "question": "Quin és el grau d'aquesta via d'escalada segons el sistema francès/belga?"
+            },
+            "Length": {
+                "question": "Quant dura aquesta via d'escalada (en metres)?"
+            },
             "Name": {
+                "question": "Quin és el nom d'aquesta ruta d'escalada?",
                 "render": "<strong>{name}</strong>"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Ruta d'escalada <strong>{name}</strong>"
+                }
+            },
+            "render": "Ruta d'escalada"
         }
     },
     "clock": {
@@ -2748,6 +2769,17 @@
                     }
                 },
                 "question": "Quin tipus de creuament és aquest?"
+            },
+            "crossing-vibration": {
+                "mappings": {
+                    "0": {
+                        "then": "El botó d'aquest semàfor té un senyal de vibració per indicar que és segur creuar."
+                    },
+                    "1": {
+                        "then": "El botó d'aquest semàfor no té cap senyal de vibració que indiqui que és segur creuar."
+                    }
+                },
+                "question": "Aquest semàfor té senyals de vibració per facilitar el pas? (normalment es troba a la part inferior del botó d'encreuament)"
             }
         },
         "title": {
@@ -2812,7 +2844,8 @@
                     "6": {
                         "then": "Utilitzable per a vehicles tot terreny especialitzats: tractor, ATV"
                     }
-                }
+                },
+                "question": "Quina és la suavitat d'aquesta via ciclista?"
             },
             "Cycleway:surface": {
                 "mappings": {
@@ -2822,14 +2855,32 @@
                     "1": {
                         "then": "Aquesta via ciclista està pavimentada"
                     },
+                    "10": {
+                        "then": "Aquesta via ciclista està feta de grava fina"
+                    },
                     "2": {
                         "then": "Aquesta via ciclista està feta d'asfalt"
+                    },
+                    "3": {
+                        "then": "Aquesta via ciclista està feta de pedres de paviment suaus"
                     },
                     "4": {
                         "then": "Aquesta via ciclista està feta de formigó"
                     },
+                    "5": {
+                        "then": "Aquesta via ciclista està feta de llambordes (sense tallar o muntar)"
+                    },
+                    "6": {
+                        "then": "Aquesta via ciclista està feta de llambordes naturals"
+                    },
+                    "7": {
+                        "then": "Aquesta via ciclista està feta de llamborda plana i quadrada"
+                    },
                     "8": {
                         "then": "Aquesta via ciclista està feta de fusta"
+                    },
+                    "9": {
+                        "then": "Aquesta via ciclista està feta de grava"
                     }
                 },
                 "question": "De quina superfície està fet aquesta via ciclista?",
@@ -6246,6 +6297,12 @@
                     "10": {
                         "then": "S'accepten monedes de 20 cèntims"
                     },
+                    "12": {
+                        "then": "S'accepten monedes d'1 franc"
+                    },
+                    "13": {
+                        "then": "S'accepten monedes de 2 francs"
+                    },
                     "14": {
                         "then": "S'accepten monedes de 5 francs"
                     },
@@ -6409,27 +6466,6 @@
                         "text": "Darrera edició el {_last_edit:timestamp} per {_last_edit:contributor}"
                     }
                 }
-            },
-            "single_level": {
-                "mappings": {
-                    "0": {
-                        "then": "Situat a planta subterrani"
-                    },
-                    "1": {
-                        "then": "Situat a planta zero"
-                    },
-                    "2": {
-                        "then": "Situat a la planta zero"
-                    },
-                    "3": {
-                        "then": "Situat a primera planta"
-                    },
-                    "4": {
-                        "then": "Localitzat a la planta base"
-                    }
-                },
-                "question": "A quina planta està situat aquest element?",
-                "render": "Situat a la planta {level}"
             },
             "luminous_or_lit": {
                 "mappings": {
@@ -7548,7 +7584,7 @@
                     }
                 },
                 "question": "Quin color de llum emet aquest fanal?",
-                "render": "Aquesta làmpada emet llum {light:color}"
+                "render": "Aquesta làmpada emet llum {light:colour}"
             },
             "count": {
                 "mappings": {
@@ -7708,6 +7744,9 @@
                     }
                 },
                 "question": "Quin tipus de càmera és aquesta?"
+            },
+            "Level": {
+                "render": "Ubicat a la planta {level}"
             },
             "Operator": {
                 "question": "Qui opera aquest circuit de televisió tancat?",
@@ -8390,7 +8429,16 @@
         "description": "Una capa que mostra arbres",
         "name": "Arbre",
         "presets": {
+            "0": {
+                "description": "Arbre d'una espècie amb fulles, com el roure o el pollancre.",
+                "title": "un arbre de fulla ampla"
+            },
+            "1": {
+                "description": "Arbre d'una espècie amb agulles, com el pi o l'avet.",
+                "title": "un arbre amb fulles d'agulla"
+            },
             "2": {
+                "description": "Si no esteu segur de si es tracta d'un arbre amb fulles amples o amb fulles d'agulles.",
                 "title": "un arbre"
             }
         },
@@ -8401,17 +8449,28 @@
                 "render": "El tronc de l'arbre té una circumferència de {circumference} metre"
             },
             "height": {
-                "question": "Quina és l'alçada d'aquest arbre?"
+                "question": "Quina és l'alçada d'aquest arbre?",
+                "render": "Aquest arbre té {height} metres d'altura"
             },
             "tree-decidouous": {
                 "mappings": {
+                    "0": {
+                        "then": "Caducifoli: l'arbre perd les fulles durant alguna època de l'any."
+                    },
                     "1": {
                         "then": "Perenne."
                     }
-                }
+                },
+                "question": "Aquest arbre és perenne o caducifoli?"
             },
             "tree-denotation": {
                 "mappings": {
+                    "0": {
+                        "then": "L'arbre és notable per la seva mida o per la seva ubicació destacada. És útil per a la navegació."
+                    },
+                    "1": {
+                        "then": "L'arbre és un monument natural, p. e. perquè és especialment antic o d'una espècie valuosa."
+                    },
                     "2": {
                         "then": "L'arbre s'utilitza amb finalitats agrícoles, p. en un hort."
                     },
@@ -8426,11 +8485,18 @@
                     },
                     "6": {
                         "then": "L'arbre està en una àrea urbana."
+                    },
+                    "7": {
+                        "then": "L'arbre es troba fora d'una zona urbana."
                     }
-                }
+                },
+                "question": "Quina importància té aquest arbre? Trieu la primera resposta que correspongui."
             },
             "tree-heritage": {
                 "mappings": {
+                    "0": {
+                        "then": "Registrat com a patrimoni per <i>Onroerend Erfgoed</i> Flandes"
+                    },
                     "1": {
                         "then": "Registrat com a patrimoni per la <i>Direction du Patrimoine culturel</i> Brussel·les"
                     },
