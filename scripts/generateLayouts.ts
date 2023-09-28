@@ -12,6 +12,7 @@ import SpecialVisualizations from "../src/UI/SpecialVisualizations"
 import Constants from "../src/Models/Constants"
 import { AvailableRasterLayers, RasterLayerPolygon } from "../src/Models/RasterLayers"
 import { ImmutableStore } from "../src/Logic/UIEventSource"
+import * as crypto from "crypto"
 
 const sharp = require("sharp")
 const template = readFileSync("theme.html", "utf8")
@@ -205,9 +206,14 @@ function asLangSpan(t: Translation, tag = "span"): string {
 }
 
 let previousSrc: Set<string> = new Set<string>()
-function generateCsp(layout: LayoutConfig): string {
+function generateCsp(
+    layout: LayoutConfig,
+    options: {
+        scriptSrcs: string[]
+    }
+): string {
     const apiUrls: string[] = [
-        "self",
+        "'self'",
         ...Constants.defaultOverpassUrls,
         Constants.countryCoderEndpoint,
         "https://api.openstreetmap.org",
@@ -248,9 +254,11 @@ function generateCsp(layout: LayoutConfig): string {
     )
     previousSrc = hosts
 
-    const csp = {
+    const csp: Record<string, string> = {
         "default-src": "'self'",
-        "script-src": "'self' https://gc.zgo.at/count.js",
+        "script-src": ["'self'", "https://gc.zgo.at/count.js", ...(options?.scriptSrcs ?? [])].join(
+            " "
+        ),
         "img-src": "* data:", // maplibre depends on 'data:' to load
         "connect-src": connectSrc.join(" "),
         "report-to": "https://report.mapcomplete.org/csp",
@@ -267,6 +275,14 @@ function generateCsp(layout: LayoutConfig): string {
     ].join("\n")
 }
 
+const removeOtherLanguages = readFileSync("./src/UI/RemoveOtherLanguages.js", "utf8")
+    .split("\n")
+    .map((s) => s.trim())
+    .join("\n")
+const removeOtherLanguagesHash = crypto
+    .createHash("sha256")
+    .update(removeOtherLanguages)
+    .digest("base64")
 async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alreadyWritten) {
     Locale.language.setData(layout.language[0])
     const targetLanguage = layout.language[0]
@@ -338,7 +354,10 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
     ].join("\n")
 
     const loadingText = Translations.t.general.loadingTheme.Subs({ theme: layout.title })
-
+    const templateLines = template.split("\n")
+    const removeOtherLanguagesReference = templateLines.find(
+        (line) => line.indexOf("./src/UI/RemoveOtherLanguages.js") >= 0
+    )
     let output = template
         .replace("Loading MapComplete, hang on...", asLangSpan(loadingText, "h1"))
         .replace(
@@ -346,7 +365,13 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
             Translations.t.general.poweredByOsm.textFor(targetLanguage)
         )
         .replace(/<!-- THEME-SPECIFIC -->.*<!-- THEME-SPECIFIC-END-->/s, themeSpecific)
-        .replace(/<!-- CSP -->/, generateCsp(layout))
+        .replace(
+            /<!-- CSP -->/,
+            generateCsp(layout, {
+                scriptSrcs: [`'sha256-${removeOtherLanguagesHash}'`],
+            })
+        )
+        .replace(removeOtherLanguagesReference, "<script>" + removeOtherLanguages + "</script>")
         .replace(
             /<!-- DESCRIPTION START -->.*<!-- DESCRIPTION END -->/s,
             asLangSpan(layout.shortDescription)
@@ -357,7 +382,7 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
         )
 
         .replace(
-            '<script src="./src/index.ts" type="module"></script>',
+            /.*\/src\/index\.ts.*/,
             `<script type="module" src="./index_${layout.id}.ts"></script>`
         )
 

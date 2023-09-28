@@ -8,7 +8,6 @@
   "main": "index.ts",
   "type": "module",
   "config": {
-    "#": "Various endpoints that are instance-specific. This is the default configuration, which is re-exported in 'Constants.ts'.",
     "#": "Use MAPCOMPLETE_CONFIGURATION to use an additional configuration, e.g. `MAPCOMPLETE_CONFIGURATION=config_hetzner`",
     "#oauth_credentials:comment": [
       "`oauth_credentials` are the OAuth-2 credentials for the production-OSM server and the test-server.",
@@ -18,10 +17,10 @@
       "Alternatively, you can override the `osm` credentials using the environment variables `VITE_OSM_OAUTH_CLIENT_ID` and `VITE_OSM_OAUTH_SECRET`"
     ],
     "oauth_credentials": {
-        "#": "This client-id is registered by 'MapComplete' on osm.org",
-        "oauth_client_id": "K93H1d8ve7p-tVLE1ZwsQ4lAFLQk8INx5vfTLMu5DWk",
-        "oauth_secret": "NBWGhWDrD3QDB35xtVuxv4aExnmIt4FA_WgeLtwxasg",
-        "url": "https://www.openstreetmap.org"
+      "#": "This client-id is registered by 'MapComplete' on osm.org",
+      "oauth_client_id": "K93H1d8ve7p-tVLE1ZwsQ4lAFLQk8INx5vfTLMu5DWk",
+      "oauth_secret": "NBWGhWDrD3QDB35xtVuxv4aExnmIt4FA_WgeLtwxasg",
+      "url": "https://www.openstreetmap.org"
     },
     "api_keys": {
       "#": "Various API-keys for various services. Feel free to reuse those in another MapComplete-hosted version",
@@ -108,6 +107,7 @@
     "chart.js": "^3.8.0",
     "country-language": "^0.1.7",
     "country-to-currency": "^1.0.10",
+    "crypto": "^1.0.1",
     "csv-parse": "^5.1.0",
     "doctest-ts-improved": "^0.8.8",
     "dompurify": "^3.0.5",
