@@ -11,7 +11,8 @@
     "en": "Layer showing bus lines",
     "de": "Ebene mit Buslinien",
     "nl": "Laag met buslijnen",
-    "da": "Lag, der viser buslinjer"
+    "da": "Lag, der viser buslinjer",
+    "ca": "Capa que mostra les línies d'autobús"
   },
   "source": {
     "osmTags": {
@@ -27,7 +28,8 @@
       "en": "Bus line",
       "de": "Buslinie",
       "nl": "Buslijn",
-      "da": "Buslinje"
+      "da": "Buslinje",
+      "ca": "Línia de bus"
     },
     "mappings": [
       {
@@ -36,7 +38,8 @@
           "en": "{name}",
           "de": "{name}",
           "da": "{name}",
-          "nl": "{name}"
+          "nl": "{name}",
+          "ca": "{name}"
         }
       }
     ]
@@ -48,7 +51,8 @@
           "en": "#ff0000",
           "de": "#ff0000",
           "da": "#ff0000",
-          "nl": "#ff0000"
+          "nl": "#ff0000",
+          "ca": "#ff0000"
         },
         "mappings": [
           {
@@ -109,7 +113,8 @@
         "de": "Die Buslinie fährt über {via}",
         "nl": "Deze buslijn gaat via {via}",
         "da": "Denne buslinje går via {via}",
-        "fr": "Cette ligne de bus passe par {via}"
+        "fr": "Cette ligne de bus passe par {via}",
+        "ca": "Aquesta línia d'autobús passa per {via}"
       },
       "question": {
         "en": "What is the via point for this bus line?",

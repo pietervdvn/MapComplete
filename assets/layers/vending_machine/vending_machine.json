@@ -285,7 +285,8 @@
           "if": "vending=meat",
           "then": {
             "en": "Meat products are being sold",
-            "nl": "Vleesproducten worden hier verkocht"
+            "nl": "Vleesproducten worden hier verkocht",
+            "ca": "Es venen productes carnis"
           },
           "icon": "./assets/layers/id_presets/temaki-meat.svg"
         }
@@ -371,10 +372,12 @@
       "builtin": "phone",
       "override": {
         "question": {
-          "en": "What is the phone number of the operator of this vending machine?"
+          "en": "What is the phone number of the operator of this vending machine?",
+          "ca": "Quin és el número de telèfon de l'operador d'aquesta màquina expenedora?"
         },
         "questionHint": {
-          "en": "This is the number you can call in case of problems with the vending machine"
+          "en": "This is the number you can call in case of problems with the vending machine",
+          "ca": "Aquest és el número al qual podeu trucar en cas de problemes amb la màquina expenedora"
         }
       }
     }
@@ -805,25 +808,29 @@
         {
           "osmTags": "vending~i~.*parking_tickets.*",
           "question": {
-            "en": "Sale of parking"
+            "en": "Sale of parking",
+            "ca": "Venda d'aparcament"
           }
         },
         {
           "osmTags": "vending=elongated_coin",
           "question": {
-            "en": "Sale of pressed pennies"
+            "en": "Sale of pressed pennies",
+            "ca": "Venda de monedes premsades"
           }
         },
         {
           "osmTags": "vending~i~.*public_transport_tickets.*",
           "question": {
-            "en": "Sale of public transport tickets"
+            "en": "Sale of public transport tickets",
+            "ca": "Venda de bitllets de transport públic"
           }
         },
         {
           "osmTags": "vending=meat",
           "question": {
-            "en": "Sale of meat products"
+            "en": "Sale of meat products",
+            "ca": "Venda de productes carnis"
           }
         }
       ]

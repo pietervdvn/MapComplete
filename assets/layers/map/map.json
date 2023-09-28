@@ -52,7 +52,8 @@
       "question": {
         "en": "What type of map is shown?",
         "de": "Was für eine Karte ist das?",
-        "pl": "Jaki rodzaj mapy jest pokazany?"
+        "pl": "Jaki rodzaj mapy jest pokazany?",
+        "ca": "Quin tipus de mapa es mostra?"
       },
       "mappings": [
         {
@@ -68,7 +69,8 @@
           "then": {
             "en": "A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>",
             "de": "Eine Karte mit allen Straßen und Wegen eines Gebietes. <p class='subtle'>Die Straßen sind meist benannt; die Winkel, die Entfernungen, etc. stimmen</p>",
-            "pl": "Mapa z wszystkimi ulicami i ścieżkami w danym obszarze. <p class='subtle'>Ulica w większości mają nazwy; kąty, odległości itp. są poprawne</p>"
+            "pl": "Mapa z wszystkimi ulicami i ścieżkami w danym obszarze. <p class='subtle'>Ulica w większości mają nazwy; kąty, odległości itp. są poprawne</p>",
+            "ca": "Un mapa amb tots els carrers o camins d'una àrea. <p class='subtle'>Els carrers estan majoritàriament nomenats; els angles, distàncies etc. són acurades</p>"
           }
         },
         {
@@ -84,7 +86,8 @@
           "if": "map_type=toposcope",
           "then": {
             "en": "This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>",
-            "de": "Dies ist ein Toposkop. <p class='subtle'>Eine Markierung, die an hohen Stellen angebracht ist und die Richtung zu wichtigen Landschaftsobjekten anzeigt, die von diesem Punkt aus gesehen werden können<p>"
+            "de": "Dies ist ein Toposkop. <p class='subtle'>Eine Markierung, die an hohen Stellen angebracht ist und die Richtung zu wichtigen Landschaftsobjekten anzeigt, die von diesem Punkt aus gesehen werden können<p>",
+            "ca": "Això és un toposcope. <p class='subtle'>Un marcador erigit en llocs alts que indica la direcció cap als elements paisatgístics notables que es poden veure des d'aquest punt<p>"
           }
         }
       ]
@@ -190,7 +193,8 @@
         "fr": "Cette carte est basée sur {map_source}",
         "de": "Diese Karte basiert auf {map_source}",
         "es": "Este mapa se basa en {map_source}",
-        "pl": "Ta mapa bazuje na {map_source}"
+        "pl": "Ta mapa bazuje na {map_source}",
+        "ca": "Aquest mapa està basat en {map_source}"
       },
       "id": "map-map_source"
     },
@@ -205,7 +209,8 @@
         "it": "L’attribuzione a OpenStreetMap è presente?",
         "de": "Ist die OpenStreetMap-Attribution vorhanden?",
         "fr": "L’attribution à OpenStreetMap est elle-présente ?",
-        "es": "¿Hay una atribución a OpenStreetMap?"
+        "es": "¿Hay una atribución a OpenStreetMap?",
+        "ca": "Hi ha atribució a OpenStreetMap?"
       },
       "mappings": [
         {
@@ -221,7 +226,8 @@
             "de": "OpenStreetMap ist eindeutig attributiert, einschließlich der ODBL-Lizenz",
             "fr": "L’attribution est clairement inscrite ainsi que la licence ODBL",
             "es": "Se atribuye claramente a OpenStreetMap, incluyendo la licencia ODBL",
-            "pl": "Źródło, czyli OpenStreetMap, jest w widoczny sposób podane, zawiera informację o licencji ODBL"
+            "pl": "Źródło, czyli OpenStreetMap, jest w widoczny sposób podane, zawiera informację o licencji ODBL",
+            "ca": "OpenStreetMap està clarament atribuït, incloent la llicència ODBL"
           }
         },
         {
@@ -236,7 +242,8 @@
             "it": "L’attribuzione a OpenStreetMap è chiaramente specificata ma la licenza non compare",
             "de": "OpenStreetMap ist eindeutig attributiert, aber die Lizenz wird nicht erwähnt",
             "fr": "L’attribution est clairement inscrite mais la licence est absente",
-            "es": "Se atribuya claramente a OpenStreetMap, pero no se menciona la licencia"
+            "es": "Se atribuya claramente a OpenStreetMap, pero no se menciona la licencia",
+            "ca": "OpenStreetMap està clarament atribuït, però no es menciona la llicència"
           }
         },
         {
@@ -251,7 +258,8 @@
             "it": "Non era presente alcun cenno a OpenStreetMap ma qualcuno vi ha attaccato un adesivo di OpenStreetMap",
             "de": "OpenStreetMap wurde nicht erwähnt, aber jemand hat einen OpenStreetMap-Aufkleber darauf geklebt",
             "fr": "OpenStreetMap n’est pas mentionné, un sticker OpenStreetMap a été collé",
-            "es": "No se mencionaba OpenStreetMap, pero alguien le pegó una pegatina de OpenStreetMap"
+            "es": "No se mencionaba OpenStreetMap, pero alguien le pegó una pegatina de OpenStreetMap",
+            "ca": "OpenStreetMap no es mencionava, però algú hi ha posat una enganxina d'OpenStreetMap"
           }
         },
         {
@@ -266,7 +274,8 @@
             "it": "Non c’è alcuna attribuzione",
             "fr": "Il n'y a aucune attribution",
             "de": "Es gibt überhaupt keine Namensnennung",
-            "es": "No hay atribución"
+            "es": "No hay atribución",
+            "ca": "No hi ha atribució"
           }
         },
         {
@@ -281,7 +290,8 @@
             "it": "Non c’è alcuna attribuzione",
             "fr": "Il n'y a aucune attribution",
             "de": "Es gibt überhaupt keine Namensnennung",
-            "es": "No hay atribución"
+            "es": "No hay atribución",
+            "ca": "No hi ha atribució"
           },
           "hideInAnswer": true
         }
