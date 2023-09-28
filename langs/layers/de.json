@@ -7345,27 +7345,6 @@
                     }
                 }
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Das Objekt befindet sich unter der Erde"
-                    },
-                    "1": {
-                        "then": "Das Objekt befindet sich im Erdgeschoss"
-                    },
-                    "2": {
-                        "then": "Das Objekt befindet sich im Erdgeschoss"
-                    },
-                    "3": {
-                        "then": "Das Objekt befindet sich im 1. Obergeschoss"
-                    },
-                    "4": {
-                        "then": "Das Objekt befindet sich im 1. Untergeschoss"
-                    }
-                },
-                "question": "Auf welcher Ebene befindet sich das Objekt?",
-                "render": "Das Objekt befindet sich im {level}. Geschoss"
-            },
             "luminous_or_lit": {
                 "mappings": {
                     "0": {
@@ -7480,6 +7459,27 @@
                     }
                 },
                 "question": "Gibt es hier Steckdosen, an denen Kunden ihre Geräte laden können?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Das Objekt befindet sich unter der Erde"
+                    },
+                    "1": {
+                        "then": "Das Objekt befindet sich im Erdgeschoss"
+                    },
+                    "2": {
+                        "then": "Das Objekt befindet sich im Erdgeschoss"
+                    },
+                    "3": {
+                        "then": "Das Objekt befindet sich im 1. Obergeschoss"
+                    },
+                    "4": {
+                        "then": "Das Objekt befindet sich im 1. Untergeschoss"
+                    }
+                },
+                "question": "Auf welcher Ebene befindet sich das Objekt?",
+                "render": "Das Objekt befindet sich im {level}. Geschoss"
             },
             "smoking": {
                 "mappings": {

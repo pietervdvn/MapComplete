@@ -40,6 +40,26 @@
     ]
   },
   {
+    "path": "dogs_allowed.svg",
+    "license": "PUBLIC-DOMAIN",
+    "authors": [
+      "OpenClipArt"
+    ],
+    "sources": [
+      "https://freesvg.org/no-dogs-round-sign-vector-graphics"
+    ]
+  },
+  {
+    "path": "dogs_leashed.svg",
+    "license": "PUBLIC-DOMAIN",
+    "authors": [
+      " \tNPS Graphics, converted by User:ZyMOS"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Pictograms-nps-pets_on_leash-2.svg"
+    ]
+  },
+  {
     "path": "nfc_card.svg",
     "license": "CC0-1.0",
     "authors": [
@@ -47,6 +67,16 @@
     ],
     "sources": [
       "https://wens.be/free-antwerpenize-bicycle-font"
+    ]
+  },
+  {
+    "path": "no_dogs.svg",
+    "license": "Public Domain",
+    "authors": [
+      "OpenClipArt"
+    ],
+    "sources": [
+      "https://freesvg.org/no-dogs-round-sign-vector-graphics"
     ]
   },
   {

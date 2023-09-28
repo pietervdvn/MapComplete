@@ -3631,27 +3631,6 @@
                 "question": "¿Cuál es el nombre de red para el acceso inalámbrico a internet?",
                 "render": "El nombre de red es <b>{internet_access:ssid}</b>"
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Localizado bajo tierra"
-                    },
-                    "1": {
-                        "then": "Localizado en la planta baja"
-                    },
-                    "2": {
-                        "then": "Localizado en la planta baja"
-                    },
-                    "3": {
-                        "then": "Localizado en la primera planta"
-                    },
-                    "4": {
-                        "then": "Localizada en el primer sótano"
-                    }
-                },
-                "question": "¿En qué nivel se encuentra esta característica?",
-                "render": "Localizada en la {level}° planta"
-            },
             "luminous_or_lit": {
                 "mappings": {
                     "0": {
@@ -3763,6 +3742,27 @@
                     }
                 },
                 "question": "¿Esta facilidad tiene enchufes eléctricos, disponibles para los clientes cuando están dentro?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Localizado bajo tierra"
+                    },
+                    "1": {
+                        "then": "Localizado en la planta baja"
+                    },
+                    "2": {
+                        "then": "Localizado en la planta baja"
+                    },
+                    "3": {
+                        "then": "Localizado en la primera planta"
+                    },
+                    "4": {
+                        "then": "Localizada en el primer sótano"
+                    }
+                },
+                "question": "¿En qué nivel se encuentra esta característica?",
+                "render": "Localizada en la {level}° planta"
             },
             "smoking": {
                 "mappings": {

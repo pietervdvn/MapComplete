@@ -89,9 +89,25 @@
       }
     ]
   },
+  "titleIcons": [
+    "icons.defaults",
+    {
+      "render": "{ref}",
+      "condition": "ref~*"
+    },
+    {
+      "mappings": [
+        {
+          "if": "capacity~*",
+          "then": "<div class='w-fit font-bold '><img class='w-4 h-4' src='./assets/layers/indoors/room_conference.svg'/> {capacity}<div>"
+        }
+      ]
+    }
+  ],
   "minzoom": 13,
   "tagRenderings": [
     "images",
+    "level",
     {
       "id": "ref",
       "question": {
@@ -162,7 +178,204 @@
           "indoor=corridor"
         ]
       }
-    }
+    },
+    {
+      "id": "room-type",
+      "question": {
+        "en": "What type of room is this?"
+      },
+      "mappings": [
+        {
+          "if": "room=administration",
+          "then": {
+            "en": "This is a administrative room"
+          },
+          "icon": "./assets/layers/indoors/room_administration.svg"
+        },
+        {
+          "if": "room=auditorium",
+          "then": {
+            "en": "This is a auditorium"
+          },
+          "icon": "./assets/layers/indoors/room_auditorium.svg"
+        },
+        {
+          "if": "room=bedroom",
+          "then": {
+            "en": "This is a bedroom"
+          },
+          "icon": "./assets/layers/indoors/room_bedroom.svg"
+        },
+        {
+          "if": "room=chapel",
+          "then": {
+            "en": "This is a chapel"
+          },
+          "icon": "./assets/layers/indoors/room_chapel.svg"
+        },
+        {
+          "if": "room=class",
+          "then": {
+            "en": "This is a classroom"
+          },
+          "icon": "./assets/layers/indoors/room_class.svg"
+        },
+        {
+          "if": "room=classroom",
+          "then": {
+            "en": "This is a classroom"
+          },
+          "icon": "./assets/layers/indoors/room_class.svg",
+          "hideInAnswer": true
+        },
+        {
+          "if": "room=computer",
+          "then": {
+            "en": "This is a computer room"
+          },
+          "icon": "./assets/layers/indoors/room_computer.svg"
+        },
+        {
+          "if": "room=conference",
+          "then": {
+            "en": "This is a conference room"
+          },
+          "icon": "./assets/layers/indoors/room_conference.svg"
+        },
+        {
+          "if": "room=crypt",
+          "then": {
+            "en": "This is a crypt"
+          },
+          "icon": "./assets/layers/indoors/room_crypt.svg"
+        },
+        {
+          "if": "room=kitchen",
+          "then": {
+            "en": "This is a kitchen"
+          },
+          "icon": "./assets/layers/indoors/room_kitchen.svg"
+        },
+        {
+          "if": "room=laboratory",
+          "then": {
+            "en": "This is a laboratory"
+          },
+          "icon": "./assets/layers/indoors/room_laboratory.svg"
+        },
+        {
+          "if": "room=library",
+          "then": {
+            "en": "This is a library"
+          },
+          "icon": "./assets/layers/indoors/room_library.svg"
+        },
+        {
+          "if": "room=locker",
+          "then": {
+            "en": "This is a locker room"
+          },
+          "icon": "./assets/layers/indoors/room_locker.svg"
+        },
+        {
+          "if": "room=nursery",
+          "then": {
+            "en": "This is a nursery"
+          },
+          "icon": "./assets/layers/indoors/room_nursery.svg"
+        },
+        {
+          "if": "room=office",
+          "then": {
+            "en": "This is an office"
+          },
+          "icon": "./assets/layers/indoors/room_office.svg"
+        },
+        {
+          "if": "room=prison_cell",
+          "then": {
+            "en": "This is a prison_cell"
+          },
+          "icon": "./assets/layers/indoors/room_prison_cell.svg"
+        },
+        {
+          "if": "room=restaurant",
+          "then": {
+            "en": "This is a restaurant"
+          },
+          "icon": "./assets/layers/indoors/room_restaurant.svg"
+        },
+        {
+          "if": "room=security_check",
+          "then": {
+            "en": "This is a room to perform security checks"
+          },
+          "icon": "./assets/layers/indoors/room_security_check.svg"
+        },
+        {
+          "if": "room=sport",
+          "then": {
+            "en": "This is a sport room"
+          },
+          "icon": "./assets/layers/indoors/room_sport.svg"
+        },
+        {
+          "if": "room=storage",
+          "then": {
+            "en": "This is a storage room"
+          },
+          "icon": "./assets/layers/indoors/room_storage.svg"
+        },
+        {
+          "if": "room=technical",
+          "then": {
+            "en": "This is a technical room"
+          },
+          "icon": "./assets/layers/indoors/room_technical.svg"
+        },
+        {
+          "if": "room=toilets",
+          "then": {
+            "en": "These are toilets"
+          },
+          "icon": "./assets/layers/indoors/room_toilets.svg"
+        },
+        {
+          "if": "room=waiting",
+          "then": {
+            "en": "This is a waiting room"
+          },
+          "icon": "./assets/layers/indoors/room_waiting.svg"
+        }
+      ]
+    },
+    {
+      "id": "room-capacity",
+      "question": {
+        "en": "How much people can at most fit in this room?"
+      },
+      "condition": {
+        "or": [
+          "room=waiting",
+          "room=restaurant",
+          "room=office",
+          "room=nursery",
+          "room=conference",
+          "room=auditorium",
+          "room=chapel",
+          "room=bedroom",
+          "room=classroom"
+        ]
+      },
+      "render": {
+        "en": "At most {capacity} people fit this room"
+      },
+      "freeform": {
+        "key": "capacity",
+        "type": "pnat"
+      }
+    },
+    "etymology.wikipedia-etymology"
   ],
   "mapRendering": [
     {
@@ -222,7 +435,7 @@
           {
             "if": {
               "or": [
-                "room=adminstration",
+                "room=administration",
                 "room=auditorium",
                 "room=bedroom",
                 "room=chapel",

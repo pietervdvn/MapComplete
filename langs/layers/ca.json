@@ -6410,7 +6410,7 @@
                     }
                 }
             },
-            "level": {
+            "single_level": {
                 "mappings": {
                     "0": {
                         "then": "Situat a planta subterrani"
@@ -6542,6 +6542,27 @@
                     }
                 },
                 "question": "Aquest servei té endolls elèctrics, disponibles pels clients quan hi són dins?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Situat a planta subterrani"
+                    },
+                    "1": {
+                        "then": "Situat a planta zero"
+                    },
+                    "2": {
+                        "then": "Situat a la planta zero"
+                    },
+                    "3": {
+                        "then": "Situat a primera planta"
+                    },
+                    "4": {
+                        "then": "Localitzat a la planta base"
+                    }
+                },
+                "question": "A quina planta està situat aquest element?",
+                "render": "Situat a la planta {level}"
             },
             "smoking": {
                 "mappings": {
