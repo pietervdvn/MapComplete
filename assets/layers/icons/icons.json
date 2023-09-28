@@ -182,6 +182,16 @@
           "then": "<img textmode='\uD83D\uDC15' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
         }
       ]
+    },
+    {
+      "id": "rating",
+      "labels": [
+        "defaults"
+      ],
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
     }
   ],
   "mapRendering": null

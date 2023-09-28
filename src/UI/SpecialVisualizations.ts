@@ -23,8 +23,6 @@ import { Utils } from "../Utils";
 import Wikidata, { WikidataResponse } from "../Logic/Web/Wikidata";
 import { Translation } from "./i18n/Translation";
 import Translations from "./i18n/Translations";
-import ReviewForm from "./Reviews/ReviewForm";
-import ReviewElement from "./Reviews/ReviewElement";
 import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization";
 import LiveQueryHandler from "../Logic/Web/LiveQueryHandler";
 import { SubtleButton } from "./Base/SubtleButton";
@@ -66,6 +64,9 @@ import SendEmail from "./Popup/SendEmail.svelte";
 import NearbyImages from "./Popup/NearbyImages.svelte";
 import NearbyImagesCollapsed from "./Popup/NearbyImagesCollapsed.svelte";
 import UploadImage from "./Image/UploadImage.svelte";
+import AllReviews from "./Reviews/AllReviews.svelte";
+import StarsBarIcon from "./Reviews/StarsBarIcon.svelte";
+import ReviewForm from "./Reviews/ReviewForm.svelte";
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -624,7 +625,66 @@ export default class SpecialVisualizations {
                 },
             },
             {
-                funcName: "reviews",
+                funcName: "rating",
+                docs: "Shows stars which represent the avarage rating on mangrove.reviews",
+                args: [
+                    {
+                        name: "subjectKey",
+                        defaultValue: "name",
+                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>",
+                    },
+                    {
+                        name: "fallback",
+                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
+                    },
+                ],
+                constr: (state, tags, args, feature, layer) => {
+                    const nameKey = args[0] ?? "name"
+                    let fallbackName = args[1]
+                    const reviews = FeatureReviews.construct(
+                      feature,
+                      tags,
+                      state.userRelatedState.mangroveIdentity,
+                      {
+                          nameKey: nameKey,
+                          fallbackName,
+                      }
+                    )
+                    return new SvelteUIElement(StarsBarIcon, {score:reviews.average, reviews, state, tags, feature, layer})
+                },
+            },
+
+            {
+                funcName: "create_review",
+                docs: "Invites the contributor to leave a review. Somewhat small UI-element until interacted",
+                args: [
+                    {
+                        name: "subjectKey",
+                        defaultValue: "name",
+                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>",
+                    },
+                    {
+                        name: "fallback",
+                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
+                    },
+                ],
+                constr: (state, tags, args, feature, layer) => {
+                    const nameKey = args[0] ?? "name"
+                    let fallbackName = args[1]
+                    const reviews = FeatureReviews.construct(
+                      feature,
+                      tags,
+                      state.userRelatedState.mangroveIdentity,
+                      {
+                          nameKey: nameKey,
+                          fallbackName,
+                      }
+                    )
+                    return new SvelteUIElement(ReviewForm, {reviews, state, tags, feature, layer})
+                },
+            },
+            {
+                funcName: "list_reviews",
                 docs: "Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten",
                 example:
                     "`{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used",
@@ -639,10 +699,10 @@ export default class SpecialVisualizations {
                         doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
                     },
                 ],
-                constr: (state, tags, args, feature) => {
+                constr: (state, tags, args, feature, layer) => {
                     const nameKey = args[0] ?? "name"
                     let fallbackName = args[1]
-                    const mangrove = FeatureReviews.construct(
+                    const reviews = FeatureReviews.construct(
                         feature,
                         tags,
                         state.userRelatedState.mangroveIdentity,
@@ -651,9 +711,7 @@ export default class SpecialVisualizations {
                             fallbackName,
                         }
                     )
-
-                    const form = new ReviewForm((r) => mangrove.createReview(r), state)
-                    return new ReviewElement(mangrove, form)
+                    return new SvelteUIElement(AllReviews, {reviews, state, tags, feature, layer})
                 },
             },
             {

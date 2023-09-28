@@ -149,7 +149,6 @@
   },
   "tagRenderings": [
     "images",
-    "level",
     {
       "question": {
         "nl": "Wat is de naam van deze eetgelegenheid?",
@@ -213,6 +212,7 @@
     "email",
     "phone",
     "payment-options",
+    "level",
     "wheelchair-access",
     {
       "question": {

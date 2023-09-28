@@ -130,7 +130,7 @@
       "id": "reviews",
       "description": "Shows the reviews module (including the possibility to leave a review)",
       "render": {
-        "*": "{reviews()}"
+        "*": "{create_review()}{list_reviews()}"
       }
     },
     {
