@@ -6467,27 +6467,6 @@
                     }
                 }
             },
-            "single_level": {
-                "mappings": {
-                    "0": {
-                        "then": "Situat a planta subterrani"
-                    },
-                    "1": {
-                        "then": "Situat a planta zero"
-                    },
-                    "2": {
-                        "then": "Situat a la planta zero"
-                    },
-                    "3": {
-                        "then": "Situat a primera planta"
-                    },
-                    "4": {
-                        "then": "Localitzat a la planta base"
-                    }
-                },
-                "question": "A quina planta està situat aquest element?",
-                "render": "Situat a la planta {level}"
-            },
             "luminous_or_lit": {
                 "mappings": {
                     "0": {
@@ -7605,7 +7584,7 @@
                     }
                 },
                 "question": "Quin color de llum emet aquest fanal?",
-                "render": "Aquesta làmpada emet llum {light:color}"
+                "render": "Aquesta làmpada emet llum {light:colour}"
             },
             "count": {
                 "mappings": {
