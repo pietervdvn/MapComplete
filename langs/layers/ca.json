@@ -8907,21 +8907,6 @@
                     },
                     "14": {
                         "then": "Es venen papes"
-                    },
-                    "16": {
-                        "then": "Es venen flors"
-                    },
-                    "17": {
-                        "then": "Es venen tiquets d'aparcament"
-                    },
-                    "18": {
-                        "then": "Es venen cèntims premsats"
-                    },
-                    "19": {
-                        "then": "Es venen bitllets de transport públic"
-                    },
-                    "19": {
-                        "then": "Es venen productes carnis"
                     }
                 },
                 "question": "Que ven aquesta màquina expenedora?",
