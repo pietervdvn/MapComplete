@@ -130,7 +130,7 @@
       "id": "reviews",
       "description": "Shows the reviews module (including the possibility to leave a review)",
       "render": {
-        "*": "{reviews()}"
+        "*": "{create_review()}{list_reviews()}"
       }
     },
     {
@@ -487,6 +487,7 @@
       "mappings": [
         {
           "if": "dog=yes",
+          "icon": "./assets/layers/questions/dogs_allowed.svg",
           "then": {
             "en": "Dogs are allowed",
             "nl": "honden zijn toegelaten",
@@ -515,6 +516,7 @@
         },
         {
           "if": "dog=no",
+          "icon": "./assets/layers/questions/no_dogs.svg",
           "then": {
             "en": "Dogs are <b>not</b> allowed",
             "nl": "honden zijn <b>niet</b> toegelaten",
@@ -542,6 +544,7 @@
         },
         {
           "if": "dog=leashed",
+          "icon": "./assets/layers/questions/dogs_leashed.svg",
           "then": {
             "en": "Dogs are allowed, but they have to be leashed",
             "nl": "honden zijn <b>enkel aan de leiband</b> welkom",
@@ -568,6 +571,8 @@
         },
         {
           "if": "dog=unleashed",
+          "icon": "./assets/layers/questions/dogs_allowed.svg",
+          
           "then": {
             "en": "Dogs are allowed and can run around freely",
             "nl": "honden zijn welkom en mogen vrij rondlopen",
@@ -1619,8 +1624,9 @@
     },
     {
       "id": "multilevels",
-      "builtin": "level",
+      "builtin": "single_level",
       "override": {
+        "=labels": [],
         "question": {
           "en": "What levels does this elevator go to?",
           "de": "Auf welchen Geschossen hält dieser Aufzug?",
@@ -1657,7 +1663,22 @@
       }
     },
     {
-      "id": "level",
+      "id": "repeated",
+      "labels": [
+        "level"
+      ],
+      "condition": "repeat_on~*",
+      "render": {
+        "en": "Multiple, identical objects can be found on floors {repeat_on}.",
+        "nl": "Er zijn verschillende, identieke objecten op verdiepingen {repeat_on}."
+      }
+    },
+    {
+      "id": "single_level",
+      "labels": [
+        "level"
+      ],
+      "condition": "repeat_on=",
       "question": {
         "nl": "Op welke verdieping bevindt dit punt zich?",
         "en": "On what level is this feature located?",

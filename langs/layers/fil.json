@@ -34,27 +34,6 @@
             "email": {
                 "question": "Ano ang email address ng {title()}?"
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Nasa ilalim ng lupa"
-                    },
-                    "1": {
-                        "then": "Nasa unang palapag"
-                    },
-                    "2": {
-                        "then": "Nasa unang palapag"
-                    },
-                    "3": {
-                        "then": "Nasa unang palapag"
-                    },
-                    "4": {
-                        "then": "Nasa silong"
-                    }
-                },
-                "question": "Anong palapag matatagpuan ang tampók?",
-                "render": "Natagpuan sa ika-{level} na palapag"
-            },
             "opening_hours": {
                 "question": "Anong oras nagbubukas ang {title()}?",
                 "render": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}"
@@ -101,6 +80,27 @@
                     }
                 },
                 "question": "Merong bang mga intsupe (outlet) sa loob, para sa mga suki?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Nasa ilalim ng lupa"
+                    },
+                    "1": {
+                        "then": "Nasa unang palapag"
+                    },
+                    "2": {
+                        "then": "Nasa unang palapag"
+                    },
+                    "3": {
+                        "then": "Nasa unang palapag"
+                    },
+                    "4": {
+                        "then": "Nasa silong"
+                    }
+                },
+                "question": "Anong palapag matatagpuan ang tampók?",
+                "render": "Natagpuan sa ika-{level} na palapag"
             },
             "website": {
                 "question": "Ano ang website ng {title()}?"

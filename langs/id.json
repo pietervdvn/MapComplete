@@ -162,9 +162,6 @@
     },
     "reviews": {
         "attribution": "Ulasan didukung oleh <a href=\"https://mangrove.reviews/\" target=\"_blank\"> Mangrove Reviews</a> dan tersedia di bawah <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
-        "no_rating": "Tidak ada peringkat yang diberikan",
-        "plz_login": "Masuk untuk meninggalkan ulasan",
-        "posting_as": "Posting sebagai",
         "saved": "<span class=\"thanks\"> Ulasan disimpan. Terima kasih sudah berbagi! </span>",
         "saving_review": "Menyimpan…",
         "title": "{count} ulasan",

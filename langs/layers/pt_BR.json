@@ -628,24 +628,6 @@
             "email": {
                 "question": "Qual o endereço de e-mail de {title()}?"
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Localizado no subsolo"
-                    },
-                    "1": {
-                        "then": "Localizado no térreo"
-                    },
-                    "2": {
-                        "then": "Localizado no térreo"
-                    },
-                    "3": {
-                        "then": "Localizado no primeiro andar"
-                    }
-                },
-                "question": "Em que nível esse recurso está localizado?",
-                "render": "Localizado no {level}o andar"
-            },
             "opening_hours": {
                 "question": "Qual o horário de funcionamento de {title()}?",
                 "render": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}"
@@ -663,6 +645,24 @@
             },
             "phone": {
                 "question": "Qual o número de telefone de {title()}?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Localizado no subsolo"
+                    },
+                    "1": {
+                        "then": "Localizado no térreo"
+                    },
+                    "2": {
+                        "then": "Localizado no térreo"
+                    },
+                    "3": {
+                        "then": "Localizado no primeiro andar"
+                    }
+                },
+                "question": "Em que nível esse recurso está localizado?",
+                "render": "Localizado no {level}o andar"
             },
             "website": {
                 "question": "Qual o site de {title()}?"

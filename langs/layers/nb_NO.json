@@ -642,27 +642,6 @@
                 "question": "Hva er nettverksnavnet for det trådløse nettverket?",
                 "render": "Nettverksnavnet er <b>{internet_access:ssid}</b>"
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Under bakken"
-                    },
-                    "1": {
-                        "then": "På gateplan"
-                    },
-                    "2": {
-                        "then": "På gateplan"
-                    },
-                    "3": {
-                        "then": "I andre etasje"
-                    },
-                    "4": {
-                        "then": "Er å finne på første kjellernivå"
-                    }
-                },
-                "question": "Hvilken etasje befinner funksjonen seg i?",
-                "render": "Ligger i {level} etasje"
-            },
             "multilevels": {
                 "override": {
                     "question": "Hvilke etasjer går heisen til?",
@@ -754,6 +733,27 @@
                     }
                 },
                 "question": "Har denne fasiliteten stikkontakter, tilgjengelig for kunder innendørs?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Under bakken"
+                    },
+                    "1": {
+                        "then": "På gateplan"
+                    },
+                    "2": {
+                        "then": "På gateplan"
+                    },
+                    "3": {
+                        "then": "I andre etasje"
+                    },
+                    "4": {
+                        "then": "Er å finne på første kjellernivå"
+                    }
+                },
+                "question": "Hvilken etasje befinner funksjonen seg i?",
+                "render": "Ligger i {level} etasje"
             },
             "smoking": {
                 "mappings": {

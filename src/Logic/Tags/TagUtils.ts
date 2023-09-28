@@ -483,13 +483,22 @@ export class TagUtils {
      * TagUtils.LevelsParser("-1") // => ["-1"]
      * TagUtils.LevelsParser("0;-1") // => ["0", "-1"]
      * TagUtils.LevelsParser(undefined) // => []
+     * TagUtils.LevelsParser("") // => []
+     * TagUtils.LevelsParser(";") // => []
+     *
      */
     public static LevelsParser(level: string): string[] {
+        if (level === undefined || level === null) {
+            return []
+        }
         let spec = Utils.NoNull([level])
         spec = [].concat(...spec.map((s) => s?.split(";")))
         spec = [].concat(
             ...spec.map((s) => {
                 s = s.trim()
+                if (s === "") {
+                    return undefined
+                }
                 if (s.indexOf("-") < 0 || s.startsWith("-")) {
                     return s
                 }

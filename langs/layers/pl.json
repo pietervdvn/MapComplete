@@ -2405,27 +2405,6 @@
                 "question": "Jaka jest nazwa sieci dla bezprzewodowego dostępu do Internetu?",
                 "render": "Nazwa sieci to <b>{internet_access:ssid}</b>"
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Znajduje się pod ziemią"
-                    },
-                    "1": {
-                        "then": "Znajduje się na parterze"
-                    },
-                    "2": {
-                        "then": "Znajduje się na parterze"
-                    },
-                    "3": {
-                        "then": "Znajduje się na pierwszym piętrze"
-                    },
-                    "4": {
-                        "then": "Położone na pierwszym poziomie piwnicy"
-                    }
-                },
-                "question": "Na jakim poziomie znajduje się ta funkcja?",
-                "render": "Znajduje się na {level} piętrze"
-            },
             "luminous_or_lit": {
                 "mappings": {
                     "0": {
@@ -2534,6 +2513,27 @@
                     }
                 },
                 "question": "Czy w tym przybytku znajdują się gniazdka elektryczne, gdzie klienci mogą naładować swoje urządzenia?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Znajduje się pod ziemią"
+                    },
+                    "1": {
+                        "then": "Znajduje się na parterze"
+                    },
+                    "2": {
+                        "then": "Znajduje się na parterze"
+                    },
+                    "3": {
+                        "then": "Znajduje się na pierwszym piętrze"
+                    },
+                    "4": {
+                        "then": "Położone na pierwszym poziomie piwnicy"
+                    }
+                },
+                "question": "Na jakim poziomie znajduje się ta funkcja?",
+                "render": "Znajduje się na {level} piętrze"
             },
             "smoking": {
                 "mappings": {
