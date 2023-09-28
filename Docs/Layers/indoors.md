@@ -49,8 +49,12 @@ this quick overview is incomplete
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/ref#values) [ref](https://wiki.openstreetmap.org/wiki/Key:ref) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/room#values) [room](https://wiki.openstreetmap.org/wiki/Key:room) | Multiple choice | [administration](https://wiki.openstreetmap.org/wiki/Tag:room%3Dadministration) [auditorium](https://wiki.openstreetmap.org/wiki/Tag:room%3Dauditorium) [bedroom](https://wiki.openstreetmap.org/wiki/Tag:room%3Dbedroom) [chapel](https://wiki.openstreetmap.org/wiki/Tag:room%3Dchapel) [class](https://wiki.openstreetmap.org/wiki/Tag:room%3Dclass) [computer](https://wiki.openstreetmap.org/wiki/Tag:room%3Dcomputer) [conference](https://wiki.openstreetmap.org/wiki/Tag:room%3Dconference) [crypt](https://wiki.openstreetmap.org/wiki/Tag:room%3Dcrypt) [kitchen](https://wiki.openstreetmap.org/wiki/Tag:room%3Dkitchen) [laboratory](https://wiki.openstreetmap.org/wiki/Tag:room%3Dlaboratory) [library](https://wiki.openstreetmap.org/wiki/Tag:room%3Dlibrary) [locker](https://wiki.openstreetmap.org/wiki/Tag:room%3Dlocker) [nursery](https://wiki.openstreetmap.org/wiki/Tag:room%3Dnursery) [office](https://wiki.openstreetmap.org/wiki/Tag:room%3Doffice) [prison_cell](https://wiki.openstreetmap.org/wiki/Tag:room%3Dprison_cell) [restaurant](https://wiki.openstreetmap.org/wiki/Tag:room%3Drestaurant) [security_check](https://wiki.openstreetmap.org/wiki/Tag:room%3Dsecurity_check) [sport](https://wiki.openstreetmap.org/wiki/Tag:room%3Dsport) [storage](https://wiki.openstreetmap.org/wiki/Tag:room%3Dstorage) [technical](https://wiki.openstreetmap.org/wiki/Tag:room%3Dtechnical) [toilets](https://wiki.openstreetmap.org/wiki/Tag:room%3Dtoilets) [waiting](https://wiki.openstreetmap.org/wiki/Tag:room%3Dwaiting)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity#values) [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name:etymology:wikidata#values) [name:etymology:wikidata](https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) | 
 
 
 
@@ -86,6 +90,47 @@ This tagrendering has no question and is thus read-only
 
 
 
+### repeated 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `repeat_on~.+`
+
+This tagrendering has labels  `level`
+
+
+
+### single_level 
+
+
+
+The question is  *On what level is this feature located?*
+
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
+
+This is rendered with  `Located on the {level}th floor`
+
+
+
+
+
+  - *Located underground*  corresponds with  `location=underground`
+  - This option cannot be chosen as answer
+  - *Located on the ground floor*  corresponds with  `level=0`
+  - *Located on the ground floor*  corresponds with  ``
+  - This option cannot be chosen as answer
+  - *Located on the first floor*  corresponds with  `level=1`
+  - *Located on the first basement level*  corresponds with  `level=-1`
+
+
+This tagrendering has labels  `level`
+
+
+
 ### ref 
 
 
@@ -115,6 +160,74 @@ This is rendered with  `This room is named {name}`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `indoor=room|indoor=area|indoor=corridor`
+
+
+
+### room-type 
+
+
+
+The question is  *What type of room is this?*
+
+
+
+
+
+  - *This is a administrative room*  corresponds with  `room=administration`
+  - *This is a auditorium*  corresponds with  `room=auditorium`
+  - *This is a bedroom*  corresponds with  `room=bedroom`
+  - *This is a chapel*  corresponds with  `room=chapel`
+  - *This is a classroom*  corresponds with  `room=class`
+  - *This is a classroom*  corresponds with  `room=classroom`
+  - This option cannot be chosen as answer
+  - *This is a computer room*  corresponds with  `room=computer`
+  - *This is a conference room*  corresponds with  `room=conference`
+  - *This is a crypt*  corresponds with  `room=crypt`
+  - *This is a kitchen*  corresponds with  `room=kitchen`
+  - *This is a laboratory*  corresponds with  `room=laboratory`
+  - *This is a library*  corresponds with  `room=library`
+  - *This is a locker room*  corresponds with  `room=locker`
+  - *This is a nursery*  corresponds with  `room=nursery`
+  - *This is an office*  corresponds with  `room=office`
+  - *This is a prison_cell*  corresponds with  `room=prison_cell`
+  - *This is a restaurant*  corresponds with  `room=restaurant`
+  - *This is a room to perform security checks*  corresponds with  `room=security_check`
+  - *This is a sport room*  corresponds with  `room=sport`
+  - *This is a storage room*  corresponds with  `room=storage`
+  - *This is a technical room*  corresponds with  `room=technical`
+  - *These are toilets*  corresponds with  `room=toilets`
+  - *This is a waiting room*  corresponds with  `room=waiting`
+
+
+
+
+### room-capacity 
+
+
+
+The question is  *How much people can at most fit in this room?*
+
+This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) 
+
+This is rendered with  `At most {capacity} people fit this room`
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `room=waiting|room=restaurant|room=office|room=nursery|room=conference|room=auditorium|room=chapel|room=bedroom|room=classroom`
+
+
+
+### wikipedia-etymology 
+
+
+
+The question is  *What is the Wikidata-item that this object is named after?*
+
+This rendering asks information about the property  [name:etymology:wikidata](https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata) 
+
+This is rendered with  `<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}`
+
+
 
 
 

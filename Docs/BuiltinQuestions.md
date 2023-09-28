@@ -46,7 +46,8 @@ Special library layer which does not need a '.questions'-prefix before being imp
     + [all_tags](#all_tags)
     + [just_created](#just_created)
     + [multilevels](#multilevels)
-    + [level](#level)
+    + [repeated](#repeated)
+    + [single_level](#single_level)
     + [smoking](#smoking)
     + [induction-loop](#induction-loop)
     + [internet](#internet)
@@ -655,7 +656,21 @@ This is rendered with  `This elevator goes to floors {level}`
 
 
 
-### level 
+### repeated 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `repeat_on~.+`
+
+This tagrendering has labels  `level`
+
+
+
+### single_level 
 
 
 
@@ -677,6 +692,8 @@ This is rendered with  `Located on the {level}th floor`
   - *Located on the first floor*  corresponds with  `level=1`
   - *Located on the first basement level*  corresponds with  `level=-1`
 
+
+This tagrendering has labels  `level`
 
 
 

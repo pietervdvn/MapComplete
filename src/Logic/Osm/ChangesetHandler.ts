@@ -5,7 +5,7 @@ import Locale from "../../UI/i18n/Locale"
 import Constants from "../../Models/Constants"
 import { Changes } from "./Changes"
 import { Utils } from "../../Utils"
-import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore";
+import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
 
 export interface ChangesetTag {
     key: string
@@ -30,11 +30,14 @@ export class ChangesetHandler {
     constructor(
         dryRun: Store<boolean>,
         osmConnection: OsmConnection,
-        allElements: FeaturePropertiesStore |  { addAlias: (id0: string, id1: string) => void } | undefined,
+        allElements:
+            | FeaturePropertiesStore
+            | { addAlias: (id0: string, id1: string) => void }
+            | undefined,
         changes: Changes
     ) {
         this.osmConnection = osmConnection
-        this.allElements = <FeaturePropertiesStore> allElements
+        this.allElements = <FeaturePropertiesStore>allElements
         this.changes = changes
         this._dryRun = dryRun
         this.userDetails = osmConnection.userDetails
