@@ -930,6 +930,28 @@
                 },
                 "question": "Is deze verkoopsautomaat nog steeds werkende?",
                 "render": "Deze verkoopsautomaat is <i>{operational_status}</i>"
+            },
+            "other-items-vending": {
+                "mappings": {
+                    "0": {
+                        "then": "Fietsbinnenbanden worden hier verkocht"
+                    },
+                    "1": {
+                        "then": "Fietslampjes worden hier verkocht"
+                    },
+                    "2": {
+                        "then": "Handschoenen worden hier verkocht"
+                    },
+                    "3": {
+                        "then": "Fietsreparatiesets worden hier verkocht"
+                    },
+                    "4": {
+                        "then": "Fietspompen worden hier verkocht"
+                    },
+                    "5": {
+                        "then": "Fietssloten worden hier verkocht"
+                    }
+                }
             }
         },
         "title": {
@@ -9055,7 +9077,25 @@
                         "question": "Verkoop van aardappelen"
                     },
                     "16": {
+                        "question": "Verkoop van vlees"
+                    },
+                    "17": {
                         "question": "Verkoop van bloemen"
+                    },
+                    "21": {
+                        "question": "Verkoop van fietslampjes"
+                    },
+                    "22": {
+                        "question": "Verkoop van handschoenen"
+                    },
+                    "23": {
+                        "question": "Verkoop van fietsreparatiesets"
+                    },
+                    "24": {
+                        "question": "Verkoop van fietspompen"
+                    },
+                    "25": {
+                        "question": "Verkoop van fietssloten"
                     }
                 }
             }
@@ -9136,16 +9176,31 @@
                         "then": "Aardappelen worden verkocht"
                     },
                     "15": {
-                        "then": "Bloemen worden verkocht"
+                        "then": "Vlees wordt verkocht"
                     },
                     "16": {
+                        "then": "Bloemen worden verkocht"
+                    },
+                    "17": {
                         "then": "Parkeerkaarten worden verkocht"
                     },
-                    "18": {
+                    "19": {
                         "then": "Openbaar vervoerkaartjes worden verkocht"
                     },
-                    "19": {
-                        "then": "Vleesproducten worden hier verkocht"
+                    "20": {
+                        "then": "Fietslampjes worden verkocht"
+                    },
+                    "21": {
+                        "then": "Handschoenen worden verkocht"
+                    },
+                    "22": {
+                        "then": "Fietsreparatiesets worden verkocht"
+                    },
+                    "23": {
+                        "then": "Fietspompen worden verkocht"
+                    },
+                    "24": {
+                        "then": "Fietssloten worden verkocht"
                     }
                 },
                 "question": "Wat verkoopt deze verkoopautomaat?",

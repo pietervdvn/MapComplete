@@ -243,6 +243,14 @@
           "icon": "./assets/layers/vending_machine/potato.svg"
         },
         {
+          "if": "vending=meat",
+          "then": {
+            "en": "Meat is sold",
+            "nl": "Vlees wordt verkocht"
+          },
+          "icon": "./assets/layers/id_presets/temaki-meat.svg"
+        },
+        {
           "if": "vending=flowers",
           "then": {
             "en": "Flowers are sold",
@@ -282,12 +290,39 @@
           "icon": "./assets/themes/stations/public_transport_tickets.svg"
         },
         {
-          "if": "vending=meat",
+          "if": "vending=bicycle_light",
           "then": {
-            "en": "Meat products are being sold",
-            "nl": "Vleesproducten worden hier verkocht"
-          },
-          "icon": "./assets/layers/id_presets/temaki-meat.svg"
+            "en": "Bicycle lights are sold",
+            "nl": "Fietslampjes worden verkocht"
+          }
+        },
+        {
+          "if": "vending=gloves",
+          "then": {
+            "en": "Gloves are sold",
+            "nl": "Handschoenen worden verkocht"
+          }
+        },
+        {
+          "if": "vending=bicycle_repair_kit",
+          "then": {
+            "en": "Bicycle repair kits are sold",
+            "nl": "Fietsreparatiesets worden verkocht"
+          }
+        },
+        {
+          "if": "vending=bicycle_pump",
+          "then": {
+            "en": "Bicycle pumps are sold",
+            "nl": "Fietspompen worden verkocht"
+          }
+        },
+        {
+          "if": "vending=bicycle_lock",
+          "then": {
+            "en": "Bicycle locks are sold",
+            "nl": "Fietssloten worden verkocht"
+          }
         }
       ],
       "multiAnswer": true
@@ -452,6 +487,10 @@
           {
             "if": "vending=potatoes",
             "then": "circle:white;./assets/layers/vending_machine/potato.svg"
+          },
+          {
+            "if": "vending=meat",
+            "then": "./assets/layers/id_presets/temaki-meat.svg"
           },
           {
             "if": "vending=flowers",
@@ -794,6 +833,14 @@
         },
         {
           "question": {
+            "en": "Sale of meat",
+            "nl": "Verkoop van vlees",
+            "de": "Verkauf von Fleisch"
+          },
+          "osmTags": "vending~i~.*meat.*"
+        },
+        {
+          "question": {
             "en": "Sale of flowers",
             "nl": "Verkoop van bloemen",
             "de": "Verkauf von Blumen",
@@ -805,7 +852,7 @@
         {
           "osmTags": "vending~i~.*parking_tickets.*",
           "question": {
-            "en": "Sale of parking"
+            "en": "Sale of parking tickets"
           }
         },
         {
@@ -821,9 +868,38 @@
           }
         },
         {
-          "osmTags": "vending=meat",
+          "osmTags": "vending=bicycle_light",
           "question": {
-            "en": "Sale of meat products"
+            "en": "Sale of bicycle lights",
+            "nl": "Verkoop van fietslampjes"
+          }
+        },
+        {
+          "osmTags": "vending=gloves",
+          "question": {
+            "en": "Sale of gloves",
+            "nl": "Verkoop van handschoenen"
+          }
+        },
+        {
+          "osmTags": "vending=bicycle_repair_kit",
+          "question": {
+            "en": "Sale of bicycle repair kits",
+            "nl": "Verkoop van fietsreparatiesets"
+          }
+        },
+        {
+          "osmTags": "vending=bicycle_pump",
+          "question": {
+            "en": "Sale of bicycle pumps",
+            "nl": "Verkoop van fietspompen"
+          }
+        },
+        {
+          "osmTags": "vending=bicycle_lock",
+          "question": {
+            "en": "Sale of bicycle locks",
+            "nl": "Verkoop van fietssloten"
           }
         }
       ]

@@ -1,44 +1,45 @@
 <script lang="ts">
-  import Translations from "../i18n/Translations";
-  import Svg from "../../Svg";
-  import Tr from "../Base/Tr.svelte";
-  import NextButton from "../Base/NextButton.svelte";
-  import Geosearch from "./Geosearch.svelte";
-  import ToSvelte from "../Base/ToSvelte.svelte";
-  import ThemeViewState from "../../Models/ThemeViewState";
-  import { Store, UIEventSource } from "../../Logic/UIEventSource";
-  import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid";
-  import { twJoin } from "tailwind-merge";
-  import { Utils } from "../../Utils";
-  import type { GeolocationPermissionState } from "../../Logic/State/GeoLocationState";
+  import Translations from "../i18n/Translations"
+  import Svg from "../../Svg"
+  import Tr from "../Base/Tr.svelte"
+  import NextButton from "../Base/NextButton.svelte"
+  import Geosearch from "./Geosearch.svelte"
+  import ToSvelte from "../Base/ToSvelte.svelte"
+  import ThemeViewState from "../../Models/ThemeViewState"
+  import { Store, UIEventSource } from "../../Logic/UIEventSource"
+  import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { twJoin } from "tailwind-merge"
+  import { Utils } from "../../Utils"
+  import type { GeolocationPermissionState } from "../../Logic/State/GeoLocationState"
 
   /**
    * The theme introduction panel
    */
-  export let state: ThemeViewState;
-  let layout = state.layout;
-  let selectedElement = state.selectedElement;
-  let selectedLayer = state.selectedLayer;
+  export let state: ThemeViewState
+  let layout = state.layout
+  let selectedElement = state.selectedElement
+  let selectedLayer = state.selectedLayer
 
-  let triggerSearch: UIEventSource<any> = new UIEventSource<any>(undefined);
-  let searchEnabled = false;
+  let triggerSearch: UIEventSource<any> = new UIEventSource<any>(undefined)
+  let searchEnabled = false
 
-  let geopermission: Store<GeolocationPermissionState> = state.geolocation.geolocationState.permission;
-  let currentGPSLocation = state.geolocation.geolocationState.currentGPSLocation;
+  let geopermission: Store<GeolocationPermissionState> =
+    state.geolocation.geolocationState.permission
+  let currentGPSLocation = state.geolocation.geolocationState.currentGPSLocation
 
-  geopermission.addCallback(perm => console.log(">>>> Permission", perm));
+  geopermission.addCallback((perm) => console.log(">>>> Permission", perm))
 
   function jumpToCurrentLocation() {
-    const glstate = state.geolocation.geolocationState;
+    const glstate = state.geolocation.geolocationState
     if (glstate.currentGPSLocation.data !== undefined) {
-      const c: GeolocationCoordinates = glstate.currentGPSLocation.data;
-      state.guistate.themeIsOpened.setData(false);
-      const coor = { lon: c.longitude, lat: c.latitude };
-      state.mapProperties.location.setData(coor);
+      const c: GeolocationCoordinates = glstate.currentGPSLocation.data
+      state.guistate.themeIsOpened.setData(false)
+      const coor = { lon: c.longitude, lat: c.latitude }
+      state.mapProperties.location.setData(coor)
     }
     if (glstate.permission.data !== "granted") {
-      glstate.requestPermission();
-      return;
+      glstate.requestPermission()
+      return
     }
   }
 </script>
@@ -69,13 +70,13 @@
         </button>
         <!-- No geolocation granted - we don't show the button -->
       {:else if $geopermission === "requested"}
-        <button class="flex w-full items-center gap-x-2 disabled" on:click={jumpToCurrentLocation}>
+        <button class="disabled flex w-full items-center gap-x-2" on:click={jumpToCurrentLocation}>
           <!-- Even though disabled, when clicking we request the location again in case the contributor dismissed the location popup -->
           <ToSvelte construct={Svg.crosshair_svg().SetClass("w-8 h-8").SetStyle("animation: 3s linear 0s infinite normal none running spin;")} />
           <Tr t={Translations.t.general.waitingForGeopermission} />
         </button>
       {:else if $geopermission === "denied"}
-        <button class="flex w-full items-center gap-x-2 disabled">
+        <button class="disabled flex w-full items-center gap-x-2">
           <ToSvelte construct={Svg.location_refused_svg().SetClass("w-8 h-8")} />
           <Tr t={Translations.t.general.geopermissionDenied} />
         </button>
@@ -84,7 +85,6 @@
           <ToSvelte construct={Svg.crosshair_svg().SetClass("w-8 h-8").SetStyle("animation: 3s linear 0s infinite normal none running spin;")} />
           <Tr t={Translations.t.general.waitingForLocation} />
         </button>
-
       {/if}
 
       <div class=".button low-interaction m-1 flex w-full items-center gap-x-2 rounded border p-2">
