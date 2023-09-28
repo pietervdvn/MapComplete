@@ -50,7 +50,8 @@
         "nl": "Deze wandeling is {_length:km} kilometer lang",
         "de": "Der Wanderweg ist {_length:km} Kilometer lang",
         "fr": "Le sentier fait {_length:km} kilomètres de long",
-        "da": "Stien er {_length:km} kilometer lang"
+        "da": "Stien er {_length:km} kilometer lang",
+        "ca": "El sender té {_length:km} quilòmetres"
       }
     },
     {
@@ -127,7 +128,8 @@
             "en": "Blue trail",
             "de": "Blauer Weg",
             "fr": "Sentier bleu",
-            "da": "Blå sti"
+            "da": "Blå sti",
+            "ca": "Ruta blava"
           }
         },
         {
@@ -137,7 +139,8 @@
             "en": "Red trail",
             "de": "Roter Weg",
             "fr": "Sentier rouge",
-            "da": "Rød sti"
+            "da": "Rød sti",
+            "ca": "Ruta vermella"
           }
         },
         {
@@ -147,7 +150,8 @@
             "en": "Green trail",
             "de": "Grüner Weg",
             "fr": "Sentier vert",
-            "da": "Grøn sti"
+            "da": "Grøn sti",
+            "ca": "Ruta verda"
           }
         },
         {
@@ -157,7 +161,8 @@
             "en": "Yellow trail",
             "de": "Gelber Weg",
             "fr": "Sentier jaune",
-            "da": "Gul sti"
+            "da": "Gul sti",
+            "ca": "Ruta groga"
           }
         }
       ],

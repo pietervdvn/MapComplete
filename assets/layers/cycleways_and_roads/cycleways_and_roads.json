@@ -577,7 +577,8 @@
             "nl": "Dit fietspad is gemaakt van straatstenen",
             "de": "Dieser Fahrradweg besteht aus ebenen Pflastersteinen",
             "es": "Este carril bici está hecho de piedras de pavimento suaves",
-            "fr": "Cette piste cyclable est faite de petits pavés"
+            "fr": "Cette piste cyclable est faite de petits pavés",
+            "ca": "Aquesta via ciclista està feta de pedres de paviment suaus"
           }
         },
         {
@@ -597,7 +598,8 @@
             "en": "This cycleway is made of cobblestone (unhewn or sett)",
             "nl": "Dit fietspad is gemaakt van kasseien (natuurlijk of verwerkt)",
             "de": "Dieser Radweg besteht aus Kopfsteinpflaster",
-            "fr": "Cette piste cyclable est faite de pavés (taillé ou non)"
+            "fr": "Cette piste cyclable est faite de pavés (taillé ou non)",
+            "ca": "Aquesta via ciclista està feta de llambordes (sense tallar o muntar)"
           },
           "hideInAnswer": true
         },
@@ -607,7 +609,8 @@
             "en": "This cycleway is made of raw, natural cobblestone",
             "nl": "Dit fietspad is gemaakt van ruwe, natuurlijke kasseien",
             "de": "Dieser Fahrradweg besteht aus unregelmäßigem, unbehauenem Kopfsteinpflaster",
-            "fr": "Cette piste cyclable est en pavés bruts et naturels"
+            "fr": "Cette piste cyclable est en pavés bruts et naturels",
+            "ca": "Aquesta via ciclista està feta de llambordes naturals"
           }
         },
         {
@@ -616,7 +619,8 @@
             "en": "This cycleway is made of flat, square cobblestone",
             "nl": "Dit fietspad is gemaakt van vlakke, rechthoekige kasseien",
             "de": "Dieser Fahrradweg besteht aus regelmäßigem, behauenem Kopfsteinpflaster",
-            "fr": "Cette piste cyclable est en pavés plats ou carrés"
+            "fr": "Cette piste cyclable est en pavés plats ou carrés",
+            "ca": "Aquesta via ciclista està feta de llamborda plana i quadrada"
           }
         },
         {
@@ -637,7 +641,8 @@
             "nl": "Dit fietspad is gemaakt van grind",
             "de": "Der Radweg ist aus Schotter",
             "es": "Este carril bici está hecho de grava",
-            "fr": "Cette piste cyclable est faite en graviers"
+            "fr": "Cette piste cyclable est faite en graviers",
+            "ca": "Aquesta via ciclista està feta de grava"
           }
         },
         {
@@ -647,7 +652,8 @@
             "nl": "Dit fietspad is gemaakt van fijn grind",
             "de": "Dieser Radweg besteht aus feinem Schotter",
             "es": "Este carril bici está hecho de gravilla",
-            "fr": "Cette piste cyclable est faite en graviers fins"
+            "fr": "Cette piste cyclable est faite en graviers fins",
+            "ca": "Aquesta via ciclista està feta de grava fina"
           }
         },
         {
@@ -686,7 +692,8 @@
         "nl": "Wat is de kwaliteit van dit fietspad?",
         "de": "Wie eben ist dieser Radweg?",
         "es": "¿Cual es la suavidad de este carril bici?",
-        "fr": "Quel est l'état de la piste cyclable ?"
+        "fr": "Quel est l'état de la piste cyclable ?",
+        "ca": "Quina és la suavitat d'aquesta via ciclista?"
       },
       "condition": {
         "or": [

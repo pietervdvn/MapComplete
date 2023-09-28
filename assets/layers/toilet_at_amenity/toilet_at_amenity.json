@@ -3,7 +3,8 @@
   "name": {
     "en": "Toilets at other amenities",
     "de": "Toiletten in anderen Einrichtungen",
-    "nl": "Toilet in een voorziening"
+    "nl": "Toilet in een voorziening",
+    "ca": "Lavabos a altres instal·lacions"
   },
   "minzoom": 12,
   "source": {
@@ -264,7 +265,8 @@
         "nl": "Hoe breed is de deur van de rolstoeltoegankelijke toilet?",
         "fr": "Quelle est la largeur de la porte des toilettes accessibles aux fauteuils roulants ?",
         "de": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
-        "da": "Hvad er bredden på døren til det kørestolsvenlige toilet?"
+        "da": "Hvad er bredden på døren til det kørestolsvenlige toilet?",
+        "ca": "Quina és l'amplada de la porta del lavabo accessible per a cadira de rodes?"
       },
       "render": {
         "en": "The door to the wheelchair-accessible toilet is {canonical(toilets:door:width)} wide",
@@ -435,7 +437,7 @@
     "en": "A layer showing (public) toilets located at different places.",
     "de": "Eine Ebene mit (öffentlichen) Toiletten an verschiedenen Orten.",
     "nl": "Een laag die (publiek toegankelijke) toiletten toont in verschillende andere voorzieningen.",
-    "ca": "Una capa que mostra banys (públics) ubicats en diferents llocs"
+    "ca": "Una capa que mostra banys (públics) ubicats en diferents llocs."
   },
   "units": [
     {
@@ -453,7 +455,8 @@
             "nl": "meter",
             "fr": "mètre",
             "de": "Meter",
-            "da": "meter"
+            "da": "meter",
+            "ca": "metre"
           }
         },
         {
@@ -467,7 +470,8 @@
             "nl": "centimeter",
             "fr": "centimètre",
             "de": "Zentimeter",
-            "da": "centimeter"
+            "da": "centimeter",
+            "ca": "centimetre"
           }
         }
       ]

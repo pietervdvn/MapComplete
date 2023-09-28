@@ -130,7 +130,8 @@
           "if": "fitness_station=stretch_bars",
           "then": {
             "en": "This fitness station has bars for stretching.",
-            "de": "Die Fitness-Station hat Stangen zum Dehnen."
+            "de": "Die Fitness-Station hat Stangen zum Dehnen.",
+            "ca": "Aquesta estació de fitness disposa de barres per fer estiraments."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_stretch_bars.jpg",
@@ -141,7 +142,8 @@
           "if": "fitness_station=hyperextension",
           "then": {
             "en": "This fitness station has a station for making hyperextensions.",
-            "de": "Die Fitness-Station hat eine Vorrichtung für Rückenstrecker (Hyperextensions)."
+            "de": "Die Fitness-Station hat eine Vorrichtung für Rückenstrecker (Hyperextensions).",
+            "ca": "Aquesta estació de fitness disposa d'una estació per fer hiperextensions."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Inclined_sit-up_and_hyperextension_bench.jpg",
@@ -152,7 +154,8 @@
           "if": "fitness_station=rings",
           "then": {
             "en": "This fitness station has rings for gymnastic exercises.",
-            "de": "Die Fitness-Station hat Ringe für Gymnastikübungen."
+            "de": "Die Fitness-Station hat Ringe für Gymnastikübungen.",
+            "ca": "Aquesta estació de fitness disposa d'anelles per fer exercicis de gimnàstica."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Exercise9159.jpg",
@@ -163,7 +166,8 @@
           "if": "fitness_station=horizontal_ladder",
           "then": {
             "en": "This fitness station has a horizontal ladder, also known as monkey bars.",
-            "de": "Die Fitness-Station hat eine horizontale Leiter (Monkey Bars)."
+            "de": "Die Fitness-Station hat eine horizontale Leiter (Monkey Bars).",
+            "ca": "Aquest gimnàs té una escala horitzontal, també coneguda com a barres de mico."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Horizontal_ladder.jpg",
@@ -174,7 +178,8 @@
           "if": "fitness_station=wall_bars",
           "then": {
             "en": "This fitness station has wall bars to climb on.",
-            "de": "Die Fitness-Station hat eine Sprossenwand zum Klettern."
+            "de": "Die Fitness-Station hat eine Sprossenwand zum Klettern.",
+            "ca": "Aquesta estació de fitness té barres per pujar-hi."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/RIAN_archive_493268_Sports_at_a_kindergarten.jpg",
@@ -185,7 +190,8 @@
           "if": "fitness_station=slalom",
           "then": {
             "en": "This fitness station has posts for performing slalom exercises.",
-            "de": "Die Fitness-Station hat Pfosten für Slalomübungen."
+            "de": "Die Fitness-Station hat Pfosten für Slalomübungen.",
+            "ca": "Aquesta estació de fitness té llocs per fer exercicis d'eslàlom."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_slalom.jpg",
@@ -196,7 +202,8 @@
           "if": "fitness_station=stepping_stones",
           "then": {
             "en": "This fitness station has stepping stones.",
-            "de": "Die Fitness-Station hat Trittsteine."
+            "de": "Die Fitness-Station hat Trittsteine.",
+            "ca": "Aquesta estació de gimnàs té esglaons."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_stepping_stone.jpg",
@@ -207,7 +214,8 @@
           "if": "fitness_station=leapfrog",
           "then": {
             "en": "This fitness station has cones for performing leapfrog jumps.",
-            "de": "Die Fitness-Station hat Hütchen für Bocksprünge."
+            "de": "Die Fitness-Station hat Hütchen für Bocksprünge.",
+            "ca": "Aquesta estació de fitness disposa de cons per fer salts de granota."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_leapfrog.jpg",
@@ -218,7 +226,8 @@
           "if": "fitness_station=beam_jump",
           "then": {
             "en": "This fitness station has beams to jump over.",
-            "de": "Die Fitness-Station hat Balken zum überspringen."
+            "de": "Die Fitness-Station hat Balken zum überspringen.",
+            "ca": "Aquesta estació de fitness té bigues per saltar."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_beam_jump.jpg",
@@ -229,7 +238,8 @@
           "if": "fitness_station=hurdling",
           "then": {
             "en": "This fitness station has hurdles to cross.",
-            "de": "Die Fitnessstation hat Hürden zum überspringen."
+            "de": "Die Fitnessstation hat Hürden zum überspringen.",
+            "ca": "Aquesta estació de fitness té obstacles per a travesar."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_hurdling.jpg",
@@ -240,7 +250,8 @@
           "if": "fitness_station=wall",
           "then": {
             "en": "This fitness station has a wall to climb on.",
-            "de": "Die Fitness-Station hat eine Kletterwand."
+            "de": "Die Fitness-Station hat eine Kletterwand.",
+            "ca": "Aquesta estació de fitness té una paret per enfilar-se."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_wall.jpg",

@@ -925,7 +925,9 @@
           "if": "tourism=",
           "then": {
             "en": "This bench <span class=\"subtle\">probably</span> doesn't have an integrated artwork",
-            "nl": "Deze bank heeft <span class=\"subtle\">waarschijnlijk</span> geen geïntegreerd kunstwerk"
+            "nl": "Deze bank heeft <span class=\"subtle\">waarschijnlijk</span> geen geïntegreerd kunstwerk",
+            "ca": "Aquest banc <span class=\"subtle\">probablement</span> no té cap obra d'art integrada",
+            "de": "Die Bank hat <span class=\"subtle\">vermutlich</span> kein integriertes Kunstwerk"
           },
           "hideInAnswer": true
         }

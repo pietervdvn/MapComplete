@@ -164,12 +164,12 @@
         {
           "if": "dog=no",
           "#": "ignore-image-in-then",
-          "then": "<img textmode='\uD83D\uDC15 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
         },
         {
           "if": "dog=leashed",
           "#": "ignore-image-in-then",
-          "then": "<img textmode='\uD83D\uDC15' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
         },
         {
           "if": {
@@ -179,7 +179,7 @@
             ]
           },
           "#": "ignore-image-in-then",
-          "then": "<img textmode='\uD83D\uDC15' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
         }
       ]
     },
