@@ -1626,6 +1626,7 @@
       "id": "multilevels",
       "builtin": "single_level",
       "override": {
+        "=labels": [],
         "question": {
           "en": "What levels does this elevator go to?",
           "de": "Auf welchen Geschossen hält dieser Aufzug?",
@@ -1663,7 +1664,9 @@
     },
     {
       "id": "repeated",
-      "labels": ["level"],
+      "labels": [
+        "level"
+      ],
       "condition": "repeat_on~*",
       "render": {
         "en": "Multiple, identical objects can be found on floors {repeat_on}.",
@@ -1672,7 +1675,9 @@
     },
     {
       "id": "single_level",
-      "labels": ["level"],
+      "labels": [
+        "level"
+      ],
       "condition": "repeat_on=",
       "question": {
         "nl": "Op welke verdieping bevindt dit punt zich?",
