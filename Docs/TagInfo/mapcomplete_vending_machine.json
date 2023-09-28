@@ -135,6 +135,11 @@
       "value": "public_transport_tickets"
     },
     {
+      "key": "vending",
+      "description": "Layer 'Vending Machines' shows vending=meat with a fixed text, namely 'Meat products are being sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Vending Machines')",
+      "value": "meat"
+    },
+    {
       "key": "opening_hours",
       "description": "Layer 'Vending Machines' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Vending Machines')"
     },
@@ -365,6 +370,14 @@
       "key": "level",
       "description": "Layer 'Vending Machines' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Vending Machines')",
       "value": "-1"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Vending Machines' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Vending Machines')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Vending Machines' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Vending Machines')"
     }
   ]
 }

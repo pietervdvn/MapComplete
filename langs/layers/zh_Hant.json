@@ -628,27 +628,6 @@
             "email": {
                 "question": "{title()} 的電子郵件地址是什麼？"
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "位於地下"
-                    },
-                    "1": {
-                        "then": "位於 1 樓"
-                    },
-                    "2": {
-                        "then": "位於 1 樓"
-                    },
-                    "3": {
-                        "then": "位於 2 樓"
-                    },
-                    "4": {
-                        "then": "位於地下一樓"
-                    }
-                },
-                "question": "此圖徽位於哪個樓層／層級？",
-                "render": "位於 {level} 樓"
-            },
             "opening_hours": {
                 "question": "{title()} 的開放時間是什麼？",
                 "render": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}"
@@ -704,6 +683,27 @@
                     }
                 },
                 "question": "這個便利設施有電器設備，能給客戶使用嗎？"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "位於地下"
+                    },
+                    "1": {
+                        "then": "位於 1 樓"
+                    },
+                    "2": {
+                        "then": "位於 1 樓"
+                    },
+                    "3": {
+                        "then": "位於 2 樓"
+                    },
+                    "4": {
+                        "then": "位於地下一樓"
+                    }
+                },
+                "question": "此圖徽位於哪個樓層／層級？",
+                "render": "位於 {level} 樓"
             },
             "website": {
                 "question": "{title()} 網址是什麼？"

@@ -46,7 +46,7 @@
       >
         {#each layer.titleIcons as titleIconConfig}
           {#if (titleIconConfig.condition?.matchesProperties(_tags) ?? true) && (titleIconConfig.metacondition?.matchesProperties( { ..._metatags, ..._tags } ) ?? true) && titleIconConfig.IsKnown(_tags)}
-            <div class="flex h-8 w-8 items-center">
+            <div class={titleIconConfig.renderIconClass ?? "flex h-8 w-8 items-center"}>
               <TagRenderingAnswer
                 config={titleIconConfig}
                 {tags}

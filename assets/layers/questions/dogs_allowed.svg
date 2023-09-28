@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="svg3125"
+   sodipodi:docname="dogs_allowed.svg"
+   viewBox="0 0 360.94291 306.6074"
+   sodipodi:version="0.32"
+   version="1.0"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   width="360.9429"
+   height="306.60739"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs13" />
+  <sodipodi:namedview
+     id="base"
+     bordercolor="#666666"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     pagecolor="#ffffff"
+     inkscape:zoom="1.3715616"
+     inkscape:window-x="0"
+     showgrid="false"
+     borderopacity="1.0"
+     inkscape:current-layer="svg3125"
+     inkscape:cx="144.361"
+     inkscape:cy="169.51481"
+     inkscape:window-y="0"
+     inkscape:window-height="995"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:window-maximized="1" />
+  <path
+     id="path3137"
+     style="fill:#000000;stroke:#ffffff;stroke-width:1.15616"
+     d="M 218.33368,212.89652 H 106.97743 v 65.97861 c 0,36.20557 -54.947977,36.20557 -54.947977,0 V 134.81319 H 27.31312 c -35.3487001,0 -35.6624811,-48.841311 -0.832728,-48.841311 h 44.206996 v 0.0603 L 210.09088,85.983879 294.67915,1.3956086 V 44.480229 l 58.53233,58.532331 c 13.62536,14.14431 5.78082,31.41436 -6.77044,31.41436 h -73.48523 l -0.25344,144.44821 c 0,36.20557 -54.42903,36.20557 -54.42903,0 v -65.97861" />
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

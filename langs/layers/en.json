@@ -7460,27 +7460,6 @@
                     }
                 }
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Located underground"
-                    },
-                    "1": {
-                        "then": "Located on the ground floor"
-                    },
-                    "2": {
-                        "then": "Located on the ground floor"
-                    },
-                    "3": {
-                        "then": "Located on the first floor"
-                    },
-                    "4": {
-                        "then": "Located on the first basement level"
-                    }
-                },
-                "question": "On what level is this feature located?",
-                "render": "Located on the {level}th floor"
-            },
             "luminous_or_lit": {
                 "mappings": {
                     "0": {
@@ -7579,6 +7558,9 @@
             "phone": {
                 "question": "What is the phone number of {title()}?"
             },
+            "repeated": {
+                "render": "Multiple, identical objects can be found on floors {repeat_on}."
+            },
             "service:electricity": {
                 "mappings": {
                     "0": {
@@ -7595,6 +7577,27 @@
                     }
                 },
                 "question": "Does this amenity have electrical outlets, available to customers when they are inside?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Located underground"
+                    },
+                    "1": {
+                        "then": "Located on the ground floor"
+                    },
+                    "2": {
+                        "then": "Located on the ground floor"
+                    },
+                    "3": {
+                        "then": "Located on the first floor"
+                    },
+                    "4": {
+                        "then": "Located on the first basement level"
+                    }
+                },
+                "question": "On what level is this feature located?",
+                "render": "Located on the {level}th floor"
             },
             "smoking": {
                 "mappings": {

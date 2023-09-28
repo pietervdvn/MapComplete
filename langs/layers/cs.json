@@ -1767,27 +1767,6 @@
                 "question": "Jaký je název sítě pro bezdrátový přístup k internetu?",
                 "render": "Název sítě je <b>{internet_access:ssid}</b>"
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Nachází se v podzemí"
-                    },
-                    "1": {
-                        "then": "Nachází se v přízemí"
-                    },
-                    "2": {
-                        "then": "Nachází se v přízemí"
-                    },
-                    "3": {
-                        "then": "Nachází se v prvním patře"
-                    },
-                    "4": {
-                        "then": "Nachází se v prvním suterénu"
-                    }
-                },
-                "question": "V jaké úrovni se tento prvek nachází?",
-                "render": "Nachází se v {level}. patře"
-            },
             "luminous_or_lit": {
                 "mappings": {
                     "0": {
@@ -1896,6 +1875,27 @@
                     }
                 },
                 "question": "Má toto zařízení elektrické zásuvky, které jsou zákazníkům k dispozici, když jsou uvnitř?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Nachází se v podzemí"
+                    },
+                    "1": {
+                        "then": "Nachází se v přízemí"
+                    },
+                    "2": {
+                        "then": "Nachází se v přízemí"
+                    },
+                    "3": {
+                        "then": "Nachází se v prvním patře"
+                    },
+                    "4": {
+                        "then": "Nachází se v prvním suterénu"
+                    }
+                },
+                "question": "V jaké úrovni se tento prvek nachází?",
+                "render": "Nachází se v {level}. patře"
             },
             "smoking": {
                 "mappings": {

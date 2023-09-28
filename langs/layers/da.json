@@ -2163,27 +2163,6 @@
                 "question": "Hvad er netværksnavnet for den trådløse internetadgang?",
                 "render": "Netværksnavnet er <b>{internet_access:ssid}</b>"
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Placeret under jorden"
-                    },
-                    "1": {
-                        "then": "Beliggende i stueetagen"
-                    },
-                    "2": {
-                        "then": "Beliggende i stueetagen"
-                    },
-                    "3": {
-                        "then": "Beliggende på første sal"
-                    },
-                    "4": {
-                        "then": "Beliggende på første kælderetage"
-                    }
-                },
-                "question": "På hvilket niveau er denne funktion placeret?",
-                "render": "Beliggende på {level}. etage"
-            },
             "multilevels": {
                 "override": {
                     "question": "Hvilke niveauer går denne elevator til?",
@@ -2236,6 +2215,27 @@
                     }
                 },
                 "question": "Har denne faciliteter stikkontakter tilgængelige for kunder, når de er inde?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Placeret under jorden"
+                    },
+                    "1": {
+                        "then": "Beliggende i stueetagen"
+                    },
+                    "2": {
+                        "then": "Beliggende i stueetagen"
+                    },
+                    "3": {
+                        "then": "Beliggende på første sal"
+                    },
+                    "4": {
+                        "then": "Beliggende på første kælderetage"
+                    }
+                },
+                "question": "På hvilket niveau er denne funktion placeret?",
+                "render": "Beliggende på {level}. etage"
             },
             "smoking": {
                 "mappings": {

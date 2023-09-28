@@ -321,6 +321,7 @@
   - shops
   - sports_centre
   - tertiary_education
+  - vending_machine
   - veterinary
 
 

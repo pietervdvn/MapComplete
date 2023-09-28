@@ -882,27 +882,6 @@
                 "question": "Qual é o nome da rede para o acesso sem fios à Internet?",
                 "render": "O nome da rede é <b>{internet_access:ssid}</b>"
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Está no subsolo"
-                    },
-                    "1": {
-                        "then": "Está ao nível do rés-do-chão"
-                    },
-                    "2": {
-                        "then": "Está ao nível do rés-do-chão"
-                    },
-                    "3": {
-                        "then": "Está no primeiro andar"
-                    },
-                    "4": {
-                        "then": "Localizado no primeiro nível da cave"
-                    }
-                },
-                "question": "Em que nível se encontra este elemento?",
-                "render": "Está no {level}º andar"
-            },
             "multilevels": {
                 "override": {
                     "question": "Para que pisos vai este elevador?",
@@ -955,6 +934,27 @@
                     }
                 },
                 "question": "Esta infraestrutura tem tomadas elétricas, disponíveis para os clientes quando estão no interior?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Está no subsolo"
+                    },
+                    "1": {
+                        "then": "Está ao nível do rés-do-chão"
+                    },
+                    "2": {
+                        "then": "Está ao nível do rés-do-chão"
+                    },
+                    "3": {
+                        "then": "Está no primeiro andar"
+                    },
+                    "4": {
+                        "then": "Localizado no primeiro nível da cave"
+                    }
+                },
+                "question": "Em que nível se encontra este elemento?",
+                "render": "Está no {level}º andar"
             },
             "smoking": {
                 "mappings": {

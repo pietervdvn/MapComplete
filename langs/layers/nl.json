@@ -6903,27 +6903,6 @@
                     }
                 }
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Bevindt zich ondergronds"
-                    },
-                    "1": {
-                        "then": "Bevindt zich op de begane grond"
-                    },
-                    "2": {
-                        "then": "Bevindt zich gelijkvloers"
-                    },
-                    "3": {
-                        "then": "Bevindt zich op de eerste verdieping"
-                    },
-                    "4": {
-                        "then": "Bevindt zich in de eerste kelderverdieping"
-                    }
-                },
-                "question": "Op welke verdieping bevindt dit punt zich?",
-                "render": "Bevindt zich op de {level}de verdieping"
-            },
             "multilevels": {
                 "override": {
                     "question": "Naar welke verdiepingen gaat deze lift?",
@@ -7002,6 +6981,9 @@
             "phone": {
                 "question": "Wat is het telefoonnummer van {title()}?"
             },
+            "repeated": {
+                "render": "Er zijn verschillende, identieke objecten op verdiepingen {repeat_on}."
+            },
             "service:electricity": {
                 "mappings": {
                     "0": {
@@ -7018,6 +7000,27 @@
                     }
                 },
                 "question": "Zijn er stekkers beschikbaar voor klanten die binnen zitten?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Bevindt zich ondergronds"
+                    },
+                    "1": {
+                        "then": "Bevindt zich op de begane grond"
+                    },
+                    "2": {
+                        "then": "Bevindt zich gelijkvloers"
+                    },
+                    "3": {
+                        "then": "Bevindt zich op de eerste verdieping"
+                    },
+                    "4": {
+                        "then": "Bevindt zich in de eerste kelderverdieping"
+                    }
+                },
+                "question": "Op welke verdieping bevindt dit punt zich?",
+                "render": "Bevindt zich op de {level}de verdieping"
             },
             "smoking": {
                 "mappings": {

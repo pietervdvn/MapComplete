@@ -149,26 +149,6 @@
             "email": {
                 "question": "Kakšen naslov elektronske pošte ima {title()}?"
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Nahaja se pod zemljo"
-                    },
-                    "1": {
-                        "then": "Nahaja se v pritličju"
-                    },
-                    "2": {
-                        "then": "Nahaja se v pritličju"
-                    },
-                    "3": {
-                        "then": "Nahaja se v prvem nadstropju"
-                    },
-                    "4": {
-                        "then": "Nahaja se v prvi kletni etaži"
-                    }
-                },
-                "render": "Nahaja se v {level}. nadstropju"
-            },
             "opening_hours": {
                 "question": "Kakšen odpiralni čas ima {title()}?",
                 "render": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}"
@@ -198,6 +178,26 @@
             },
             "phone": {
                 "question": "Kakšno telefonsko številko ima {title()}?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Nahaja se pod zemljo"
+                    },
+                    "1": {
+                        "then": "Nahaja se v pritličju"
+                    },
+                    "2": {
+                        "then": "Nahaja se v pritličju"
+                    },
+                    "3": {
+                        "then": "Nahaja se v prvem nadstropju"
+                    },
+                    "4": {
+                        "then": "Nahaja se v prvi kletni etaži"
+                    }
+                },
+                "render": "Nahaja se v {level}. nadstropju"
             }
         }
     },

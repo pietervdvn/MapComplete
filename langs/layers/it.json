@@ -1809,24 +1809,6 @@
             "email": {
                 "question": "Qual è l'indirizzo email di {title()}?"
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Si trova sotto il livello stradale"
-                    },
-                    "1": {
-                        "then": "Si trova al pianoterra"
-                    },
-                    "2": {
-                        "then": "Si trova al pianoterra"
-                    },
-                    "3": {
-                        "then": "Si trova al primo piano"
-                    }
-                },
-                "question": "A quale piano si trova questo elemento?",
-                "render": "Si trova al piano numero {level}"
-            },
             "opening_hours": {
                 "question": "Quali sono gli orari di apertura di {title()}?",
                 "render": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}"
@@ -1853,6 +1835,24 @@
             },
             "phone": {
                 "question": "Qual è il numero di telefono di {title()}?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Si trova sotto il livello stradale"
+                    },
+                    "1": {
+                        "then": "Si trova al pianoterra"
+                    },
+                    "2": {
+                        "then": "Si trova al pianoterra"
+                    },
+                    "3": {
+                        "then": "Si trova al primo piano"
+                    }
+                },
+                "question": "A quale piano si trova questo elemento?",
+                "render": "Si trova al piano numero {level}"
             },
             "website": {
                 "question": "Qual è il sito web di {title()}?"
