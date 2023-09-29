@@ -151,6 +151,19 @@
             "fr": "Une poubelle pour plastiques",
             "ca": "Una paperera per a plàstic"
           }
+        },
+        {
+          "if": "waste=paper",
+          "then": {
+            "en": "A waste basket for paper",
+            "nl": "Een vuilnisbak voor papier",
+            "de": "Der Abfalleimer ist für Papier",
+            "it": "Un cestino rifiuti per la carta",
+            "id": "Keranjang sampah untuk kertas",
+            "da": "En affaldskurv til papir",
+            "fr": "Une poubelle pour papier",
+            "ca": "Una paperera per a paper"
+          }
         }
       ]
     },
