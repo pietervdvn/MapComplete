@@ -96,10 +96,13 @@
       "condition": "ref~*"
     },
     {
+      "icon": {
+        "class": ""
+      },
       "mappings": [
         {
           "if": "capacity~*",
-          "then": "<div class='w-fit font-bold '><img class='w-4 h-4' src='./assets/layers/indoors/room_conference.svg'/> {capacity}<div>"
+          "then": "<div class='flex rounded-full low-interaction font-bold space-x-1 items-center mx-1'><img class='w-4 h-4' src='./assets/layers/indoors/room_conference.svg'/> {capacity}<div>"
         }
       ]
     }
@@ -338,7 +341,8 @@
           "then": {
             "en": "These are toilets"
           },
-          "icon": "./assets/layers/indoors/room_toilets.svg"
+          "icon": "./assets/layers/indoors/room_toilets.svg",
+          "addExtraTags": ["amenity=toilets"]
         },
         {
           "if": "room=waiting",
@@ -375,7 +379,15 @@
         "type": "pnat"
       }
     },
-    "etymology.wikipedia-etymology"
+    "etymology.wikipedia-etymology",
+    {
+      "builtin": "toilet.relevant-questions",
+      "override": {
+        "condition": {
+          "+and": ["amenity=toilets"]
+        }
+      }
+    }
   ],
   "mapRendering": [
     {

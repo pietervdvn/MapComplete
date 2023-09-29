@@ -174,11 +174,21 @@
           "hideInAnswer": true
         }
       ],
+      "labels": [
+        "relevant-questions"
+      ],
       "id": "toilet-access"
     },
     {
       "id": "toilets-fee",
-      "condition": "access!=no",
+      "labels": [
+        "relevant-questions"
+      ],
+      "condition": {
+        "and": [
+          "access!=no"
+        ]
+      },
       "question": {
         "en": "Are these toilets free to use?",
         "de": "Können diese Toiletten kostenlos benutzt werden?",
@@ -218,6 +228,9 @@
       ]
     },
     {
+      "labels": [
+        "relevant-questions"
+      ],
       "question": {
         "en": "How much does one have to pay for these toilets?",
         "de": "Wie viel muss man für die Nutzung bezahlen?",
@@ -240,7 +253,11 @@
         "da": "Gebyret er {charge}",
         "ca": "La taxa és {charge}"
       },
-      "condition": "fee=yes",
+      "condition": {
+        "and": [
+          "fee=yes"
+        ]
+      },
       "freeform": {
         "key": "charge",
         "type": "string",
@@ -256,13 +273,27 @@
     {
       "builtin": "payment-options-split",
       "override": {
-        "condition": "fee=yes"
+        "condition": {
+          "and": [
+            "fee=yes"
+          ]
+        },
+        "=labels": [
+          "relevant-questions"
+        ]
       }
     },
     {
       "builtin": "opening_hours_24_7",
       "override": {
-        "condition": "access!=no",
+        "condition": {
+          "and": [
+            "access!=no"
+          ]
+        },
+        "=labels": [
+          "relevant-questions"
+        ],
         "question": {
           "en": "When are these toilets opened?",
           "nl": "Wanneer zijn deze toiletten open?",
@@ -275,6 +306,9 @@
     },
     {
       "id": "toilets-wheelchair",
+      "labels": [
+        "relevant-questions"
+      ],
       "question": {
         "en": "Is there a dedicated toilet for wheelchair users?",
         "de": "Können Rollstuhlfahrer die Toilette benutzen?",
@@ -327,11 +361,18 @@
     {
       "id": "wheelchair-door-width",
       "condition": {
-        "or": [
-          "wheelchair=yes",
-          "wheelchair=designated"
+        "and": [
+          {
+            "or": [
+              "wheelchair=yes",
+              "wheelchair=designated"
+            ]
+          }
         ]
       },
+      "labels": [
+        "relevant-questions"
+      ],
       "question": {
         "en": "What is the width of the door to the wheelchair accessible toilet?",
         "nl": "Hoe breed is de deur van de rolstoeltoegankelijke toilet?",
@@ -355,6 +396,9 @@
     },
     {
       "id": "toilets-type",
+      "labels": [
+        "relevant-questions"
+      ],
       "question": {
         "en": "Which kind of toilets are this?",
         "de": "Welche Toiletten gibt es hier?",
@@ -420,6 +464,9 @@
     },
     {
       "id": "toilets-changing-table",
+      "labels": [
+        "relevant-questions"
+      ],
       "question": {
         "en": "Is a changing table (to change diapers) available?",
         "de": "Ist hier ein Wickeltisch (zum Wechseln von Babywindeln) vorhanden?",
@@ -459,6 +506,9 @@
       ]
     },
     {
+      "labels": [
+        "relevant-questions"
+      ],
       "question": {
         "en": "Where is the changing table located?",
         "de": "Wo befindet sich der Wickeltisch?",
@@ -479,7 +529,9 @@
         "da": "Puslebordet er placeret på {changing_table:location}",
         "ca": "El cambiador està a {changing_table:location}"
       },
-      "condition": "changing_table=yes",
+      "condition": {
+        "and":["changing_table=yes"]
+      },
       "freeform": {
         "key": "changing_table:location",
         "inline": true
@@ -537,6 +589,9 @@
       "id": "toilet-changing_table:location"
     },
     {
+      "labels": [
+        "relevant-questions"
+      ],
       "id": "toilet-handwashing",
       "question": {
         "en": "Do these toilets have a sink to wash your hands?",
@@ -576,6 +631,9 @@
     },
     {
       "id": "toilet-has-paper",
+      "labels": [
+        "relevant-questions"
+      ],
       "question": {
         "en": "Does one have to bring their own toilet paper to this toilet?",
         "nl": "Moet je je eigen toiletpapier meenemen naar deze toilet?",
