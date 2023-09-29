@@ -206,6 +206,7 @@ function asLangSpan(t: Translation, tag = "span"): string {
 }
 
 let previousSrc: Set<string> = new Set<string>()
+
 function generateCsp(
     layout: LayoutConfig,
     options: {
@@ -216,6 +217,7 @@ function generateCsp(
         "'self'",
         ...Constants.defaultOverpassUrls,
         Constants.countryCoderEndpoint,
+        Constants.nominatimEndpoint,
         "https://api.openstreetmap.org",
         "https://pietervdvn.goatcounter.com",
     ].concat(...SpecialVisualizations.specialVisualizations.map((sv) => sv.needsUrls))
@@ -283,6 +285,7 @@ const removeOtherLanguagesHash = crypto
     .createHash("sha256")
     .update(removeOtherLanguages)
     .digest("base64")
+
 async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alreadyWritten) {
     Locale.language.setData(layout.language[0])
     const targetLanguage = layout.language[0]
