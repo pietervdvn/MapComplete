@@ -10,9 +10,11 @@ import Combine from "../Base/Combine"
 import Title from "../Base/Title"
 import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
 import { UIEventSource } from "../../Logic/UIEventSource"
+import Constants from "../../Models/Constants"
 
 export class AddNoteCommentViz implements SpecialVisualization {
     funcName = "add_note_comment"
+    needsUrls = [Constants.osmAuthConfig.url]
     docs = "A textfield to add a comment to a node (with the option to close the note)."
     args = [
         {

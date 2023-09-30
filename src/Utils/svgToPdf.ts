@@ -566,6 +566,7 @@ class SvgToPdfPage {
     images: Record<string, HTMLImageElement> = {}
     rects: Record<string, { rect: SVGRectElement; isInDef: boolean }> = {}
     readonly options: SvgToPdfOptions
+    public readonly status: UIEventSource<string>
     private readonly importedTranslations: Record<string, string> = {}
     private readonly layerTranslations: Record<string, Record<string, any>> = {}
     /**
@@ -574,7 +575,6 @@ class SvgToPdfPage {
      */
     private readonly _state: UIEventSource<string>
     private _isPrepared = false
-    public readonly status: UIEventSource<string>
 
     constructor(
         page: string,
@@ -674,7 +674,10 @@ class SvgToPdfPage {
     public async PrepareLanguage(language: string) {
         // Always fetch the remote data - it's cached anyway
         this.layerTranslations[language] = await Utils.downloadJsonCached(
-            "https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/langs/layers/" +
+            window.location.protocol +
+                "//" +
+                window.location.host +
+                "/assets/langs/layers/" +
                 language +
                 ".json",
             24 * 60 * 60 * 1000
@@ -995,6 +998,7 @@ export interface PdfTemplateInfo {
     orientation: "portrait" | "landscape"
     isPublic: boolean
 }
+
 export class SvgToPdf {
     public static readonly templates: Record<
         "flyer_a4" | "poster_a3" | "poster_a2" | "current_view_a4" | "current_view_a3",

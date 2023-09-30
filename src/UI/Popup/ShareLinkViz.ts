@@ -15,6 +15,7 @@ export class ShareLinkViz implements SpecialVisualization {
             doc: "The url to share (default: current URL)",
         },
     ]
+    needsUrls = []
 
     public constr(
         state: SpecialVisualizationState,

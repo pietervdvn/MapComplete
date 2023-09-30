@@ -11,6 +11,8 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
  */
 export default class QuestionViz implements SpecialVisualization {
     funcName = "questions"
+    needsUrls = []
+
     docs =
         "The special element which shows the questions which are unkown. Added by default if not yet there"
     args = [

@@ -21,6 +21,7 @@ import Maproulette from "../../Logic/Maproulette"
 
 export default class TagApplyButton implements AutoAction, SpecialVisualization {
     public readonly funcName = "tag_apply"
+    needsUrls = []
     public readonly docs =
         "Shows a big button; clicking this button will apply certain tags onto the feature.\n\nThe first argument takes a specification of which tags to add.\n" +
         Utils.Special_visualizations_tagsToApplyHelpText

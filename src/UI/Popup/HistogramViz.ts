@@ -2,10 +2,13 @@ import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
 import Histogram from "../BigComponents/Histogram"
 import { Feature } from "geojson"
+import Constants from "../../Models/Constants"
 
 export class HistogramViz implements SpecialVisualization {
     funcName = "histogram"
     docs = "Create a histogram for a list of given values, read from the properties."
+    needsUrls = []
+
     example =
         '`{histogram(\'some_key\')}` with properties being `{some_key: ["a","b","a","c"]} to create a histogram'
     args = [

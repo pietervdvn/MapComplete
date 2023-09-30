@@ -4,7 +4,8 @@ import { Store, Stores, UIEventSource } from "../UIEventSource"
 import { OsmPreferences } from "./OsmPreferences"
 import { Utils } from "../../Utils"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
-import * as config from "../../../package.json"
+import { AuthConfig } from "./AuthConfig"
+import Constants from "../../Models/Constants"
 
 export default class UserDetails {
     public loggedIn = false
@@ -25,18 +26,9 @@ export default class UserDetails {
     }
 }
 
-export interface AuthConfig {
-    "#"?: string // optional comment
-    oauth_client_id: string
-    oauth_secret: string
-    url: string
-}
-
 export type OsmServiceState = "online" | "readonly" | "offline" | "unknown" | "unreachable"
 
 export class OsmConnection {
-    public static readonly oauth_configs: Record<string, AuthConfig> =
-        config.config.oauth_credentials
     public auth
     public userDetails: UIEventSource<UserDetails>
     public isLoggedIn: Store<boolean>
@@ -53,7 +45,7 @@ export class OsmConnection {
     public preferencesHandler: OsmPreferences
     public readonly _oauth_config: AuthConfig
     private readonly _dryRun: Store<boolean>
-    private fakeUser: boolean
+    private readonly fakeUser: boolean
     private _onLoggedIn: ((userDetails: UserDetails) => void)[] = []
     private readonly _iframeMode: Boolean | boolean
     private readonly _singlePage: boolean
@@ -65,15 +57,12 @@ export class OsmConnection {
         oauth_token?: UIEventSource<string>
         // Used to keep multiple changesets open and to write to the correct changeset
         singlePage?: boolean
-        osmConfiguration?: "osm" | "osm-test"
         attemptLogin?: true | boolean
     }) {
-        options = options ?? {}
-        this.fakeUser = options.fakeUser ?? false
-        this._singlePage = options.singlePage ?? true
-        this._oauth_config =
-            OsmConnection.oauth_configs[options.osmConfiguration ?? "osm"] ??
-            OsmConnection.oauth_configs.osm
+        options ??= {}
+        this.fakeUser = options?.fakeUser ?? false
+        this._singlePage = options?.singlePage ?? true
+        this._oauth_config = Constants.osmAuthConfig
         console.debug("Using backend", this._oauth_config.url)
         this._iframeMode = Utils.runningFromConsole ? false : window !== window.top
 

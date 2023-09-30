@@ -28,14 +28,8 @@ class FeatureSwitchUtils {
 
 export class OsmConnectionFeatureSwitches {
     public readonly featureSwitchFakeUser: UIEventSource<boolean>
-    public readonly featureSwitchApiURL: UIEventSource<string>
 
     constructor() {
-        this.featureSwitchApiURL = QueryParameters.GetQueryParameter(
-            "backend",
-            "osm",
-            "The OSM backend to use - can be used to redirect mapcomplete to the testing backend when using 'osm-test'"
-        )
 
         this.featureSwitchFakeUser = QueryParameters.GetBooleanQueryParameter(
             "fake-user",
@@ -143,7 +137,6 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
 
         let testingDefaultValue = false
         if (
-            this.featureSwitchApiURL.data !== "osm-test" &&
             !Utils.runningFromConsole &&
             (location.hostname === "localhost" || location.hostname === "127.0.0.1")
         ) {

@@ -8,9 +8,11 @@ import Toggle from "../Input/Toggle"
 import { LoginToggle } from "./LoginButton"
 import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
 import { UIEventSource } from "../../Logic/UIEventSource"
+import Constants from "../../Models/Constants"
 
 export class CloseNoteButton implements SpecialVisualization {
     public readonly funcName = "close_note"
+    public readonly needsUrls = [Constants.osmAuthConfig.url]
     public readonly docs =
         "Button to close a note. A predifined text can be defined to close the note with. If the note is already closed, will show a small text."
     public readonly args = [

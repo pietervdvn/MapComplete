@@ -8,9 +8,10 @@ import AllImageProviders from "../../Logic/ImageProviders/AllImageProviders"
 import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import PlantNet from "../PlantNet/PlantNet.svelte"
-
+import { default as PlantNetCode } from "../../Logic/Web/PlantNet"
 export class PlantNetDetectionViz implements SpecialVisualization {
     funcName = "plantnet_detection"
+    needsUrls = [PlantNetCode.baseUrl]
 
     docs =
         "Sends the images linked to the current object to plantnet.org and asks it what plant species is shown on it. The user can then select the correct species; the corresponding wikidata-identifier will then be added to the object (together with `source:species:wikidata=plantnet.org AI`). "

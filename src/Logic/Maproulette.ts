@@ -32,11 +32,12 @@ export default class Maproulette {
     private readonly apiKey: string
 
     public static singleton = new Maproulette()
+    public static readonly defaultEndpoint = "https://maproulette.org/api/v2"
     /**
      * Creates a new Maproulette instance
      * @param endpoint The API endpoint to use
      */
-    constructor(endpoint: string = "https://maproulette.org/api/v2") {
+    constructor(endpoint: string = Maproulette.defaultEndpoint) {
         this.endpoint = endpoint
         this.apiKey = Constants.MaprouletteApiKey
     }
