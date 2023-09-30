@@ -99,6 +99,15 @@ export class GeoLocationState {
      * This class will start watching
      */
     public requestPermission() {
+        this.requestPermissionAsync()
+    }
+
+    /**
+     * Requests the user to allow access to their position.
+     * When granted, will be written to the 'geolocationState'.
+     * This class will start watching
+     */
+    public async requestPermissionAsync() {
         if (typeof navigator === "undefined") {
             // Not compatible with this browser
             this.permission.setData("denied")
@@ -112,23 +121,21 @@ export class GeoLocationState {
 
         this.permission.setData("requested")
         try {
-            navigator?.permissions
-                ?.query({ name: "geolocation" })
-                .then((status) => {
-                    const self = this
-                    if (status.state === "granted" || status.state === "denied") {
-                        self.permission.setData(status.state)
-                        return
-                    }
-                    status.addEventListener("change", (e) => {
-                        self.permission.setData(status.state)
-                    })
-                    // The code above might have reset it to 'prompt', but we _did_ request permission!
-                    this.permission.setData("requested")
-                    // We _must_ call 'startWatching', as that is the actual trigger for the popup...
-                    self.startWatching()
-                })
-                .catch((e) => console.error("Could not get geopermission", e))
+            const status = await navigator?.permissions?.query({ name: "geolocation" })
+            const self = this
+            console.log("Got geolocation state", status.state)
+            if (status.state === "granted" || status.state === "denied") {
+                self.permission.setData(status.state)
+                self.startWatching()
+                return
+            }
+            status.addEventListener("change", (e) => {
+                self.permission.setData(status.state)
+            })
+            // The code above might have reset it to 'prompt', but we _did_ request permission!
+            this.permission.setData("requested")
+            // We _must_ call 'startWatching', as that is the actual trigger for the popup...
+            self.startWatching()
         } catch (e) {
             console.error("Could not get permission:", e)
         }
