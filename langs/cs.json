@@ -1,4 +1,7 @@
 {
+    "advanced": {
+        "title": "Pokročilé funkce"
+    },
     "centerMessage": {
         "loadingData": "Načítání dat…",
         "ready": "Hotovo!",
