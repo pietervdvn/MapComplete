@@ -1514,18 +1514,38 @@
       "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
-      "key": "payment:coins",
-      "description": "Layer 'Bicycle tube vending machine' shows payment:coins=yes with a fixed text, namely 'Payment with coins is possible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "payment:notes",
-      "description": "Layer 'Bicycle tube vending machine' shows payment:notes=yes with a fixed text, namely 'Payment with notes is possible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "key": "payment:cash",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Personal theme')",
       "value": "yes"
     },
     {
       "key": "payment:cards",
-      "description": "Layer 'Bicycle tube vending machine' shows payment:cards=yes with a fixed text, namely 'Payment with cards is possible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:debit_cards",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:credit_cards",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "yes"
     },
     {
@@ -1557,29 +1577,34 @@
       "value": "Continental"
     },
     {
-      "key": "vending:bicycle_light",
-      "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_light=yes with a fixed text, namely 'Bicycle lights are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "yes"
+      "key": "vending",
+      "description": "Layer 'Bicycle tube vending machine' shows vending=bicycle_tube with a fixed text, namely 'Bicycle inner tubes are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "bicycle_tube"
     },
     {
-      "key": "vending:gloves",
-      "description": "Layer 'Bicycle tube vending machine' shows vending:gloves=yes with a fixed text, namely 'Gloves are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "yes"
+      "key": "vending",
+      "description": "Layer 'Bicycle tube vending machine' shows vending=bicycle_light with a fixed text, namely 'Bicycle lights are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "bicycle_light"
     },
     {
-      "key": "vending:bicycle_repair_kit",
-      "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_repair_kit=yes with a fixed text, namely 'Bicycle repair kits are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "yes"
+      "key": "vending",
+      "description": "Layer 'Bicycle tube vending machine' shows vending=gloves with a fixed text, namely 'Gloves are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "gloves"
     },
     {
-      "key": "vending:bicycle_pump",
-      "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_pump=yes with a fixed text, namely 'Bicycle pumps are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "yes"
+      "key": "vending",
+      "description": "Layer 'Bicycle tube vending machine' shows vending=bicycle_repair_kit with a fixed text, namely 'Bicycle repair kits are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "bicycle_repair_kit"
     },
     {
-      "key": "vending:bicycle_lock",
-      "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_lock=yes with a fixed text, namely 'Bicycle locks are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "yes"
+      "key": "vending",
+      "description": "Layer 'Bicycle tube vending machine' shows vending=bicycle_pump with a fixed text, namely 'Bicycle pumps are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "bicycle_pump"
+    },
+    {
+      "key": "vending",
+      "description": "Layer 'Bicycle tube vending machine' shows vending=bicycle_lock with a fixed text, namely 'Bicycle locks are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "bicycle_lock"
     },
     {
       "key": "amenity",
@@ -8549,6 +8574,186 @@
       "description": "Layer 'Indoors' shows and asks freeform values for key 'name:etymology:wikidata' (in the mapcomplete.org theme 'Personal theme') (This is only shown if name:etymology!=unknown)"
     },
     {
+      "key": "access",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'access' (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets)"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Indoors' shows access=yes with a fixed text, namely 'Public access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets)",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Indoors' shows access=customers with a fixed text, namely 'Only access to customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets)",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Indoors' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets)",
+      "value": "no"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Indoors' shows access=key with a fixed text, namely 'Accessible, but one has to ask a key to enter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets)",
+      "value": "key"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Indoors' shows access=public with a fixed text, namely 'Public access' (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets)",
+      "value": "public"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Indoors' shows fee=yes with a fixed text, namely 'These are paid toilets' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&access!=no)",
+      "value": "yes"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Indoors' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&access!=no)",
+      "value": "no"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&fee=yes)"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Indoors' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Indoors' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Indoors' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Indoors' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Indoors' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:debit_cards",
+      "description": "Layer 'Indoors' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:credit_cards",
+      "description": "Layer 'Indoors' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&access!=no)"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Indoors' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&access!=no)",
+      "value": "24/7"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Indoors' shows wheelchair=yes with a fixed text, namely 'There is a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets)",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Indoors' shows wheelchair=no with a fixed text, namely 'No wheelchair access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets)",
+      "value": "no"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Indoors' shows wheelchair=designated with a fixed text, namely 'There is only a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets)",
+      "value": "designated"
+    },
+    {
+      "key": "door:width",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'door:width' (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&wheelchair=yes|wheelchair=designated)"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Indoors' shows toilets:position=seated with a fixed text, namely 'There are only seated toilets' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets)",
+      "value": "seated"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Indoors' shows toilets:position=urinal with a fixed text, namely 'There are only urinals here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets)",
+      "value": "urinal"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Indoors' shows toilets:position=squat with a fixed text, namely 'There are only squat toilets here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets)",
+      "value": "squat"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Indoors' shows toilets:position=seated;urinal with a fixed text, namely 'Both seated toilets and urinals are available here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets)",
+      "value": "seated;urinal"
+    },
+    {
+      "key": "changing_table",
+      "description": "Layer 'Indoors' shows changing_table=yes with a fixed text, namely 'A changing table is available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets)",
+      "value": "yes"
+    },
+    {
+      "key": "changing_table",
+      "description": "Layer 'Indoors' shows changing_table=no with a fixed text, namely 'No changing table is available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets)",
+      "value": "no"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'changing_table:location' (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&changing_table=yes)"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Indoors' shows changing_table:location=female_toilet with a fixed text, namely 'The changing table is in the toilet for women. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&changing_table=yes)",
+      "value": "female_toilet"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Indoors' shows changing_table:location=male_toilet with a fixed text, namely 'The changing table is in the toilet for men. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&changing_table=yes)",
+      "value": "male_toilet"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Indoors' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'The changing table is in the toilet for wheelchair users. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&changing_table=yes)",
+      "value": "wheelchair_toilet"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Indoors' shows changing_table:location=dedicated_room with a fixed text, namely 'The changing table is in a dedicated room. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&changing_table=yes)",
+      "value": "dedicated_room"
+    },
+    {
+      "key": "toilets:handwashing",
+      "description": "Layer 'Indoors' shows toilets:handwashing=yes with a fixed text, namely 'This toilets have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets)",
+      "value": "yes"
+    },
+    {
+      "key": "toilets:handwashing",
+      "description": "Layer 'Indoors' shows toilets:handwashing=no with a fixed text, namely 'This toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets)",
+      "value": "no"
+    },
+    {
+      "key": "toilets:paper_supplied",
+      "description": "Layer 'Indoors' shows toilets:paper_supplied=yes with a fixed text, namely 'This toilet is equipped with toilet paper' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&toilets:position!=urinal)",
+      "value": "yes"
+    },
+    {
+      "key": "toilets:paper_supplied",
+      "description": "Layer 'Indoors' shows toilets:paper_supplied=no with a fixed text, namely 'You have to bring your own toilet paper to this toilet' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets&toilets:position!=urinal)",
+      "value": "no"
+    },
+    {
       "key": "information",
       "description": "The MapComplete theme Personal theme has a layer Information boards showing features with this tag",
       "value": "board"
@@ -14231,6 +14436,11 @@
     },
     {
       "key": "vending",
+      "description": "Layer 'Vending Machines' shows vending=meat with a fixed text, namely 'Meat is sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "meat"
+    },
+    {
+      "key": "vending",
       "description": "Layer 'Vending Machines' shows vending=flowers with a fixed text, namely 'Flowers are sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "flowers"
     },
@@ -14251,8 +14461,28 @@
     },
     {
       "key": "vending",
-      "description": "Layer 'Vending Machines' shows vending=meat with a fixed text, namely 'Meat products are being sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "meat"
+      "description": "Layer 'Vending Machines' shows vending=bicycle_light with a fixed text, namely 'Bicycle lights are sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "bicycle_light"
+    },
+    {
+      "key": "vending",
+      "description": "Layer 'Vending Machines' shows vending=gloves with a fixed text, namely 'Gloves are sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "gloves"
+    },
+    {
+      "key": "vending",
+      "description": "Layer 'Vending Machines' shows vending=bicycle_repair_kit with a fixed text, namely 'Bicycle repair kits are sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "bicycle_repair_kit"
+    },
+    {
+      "key": "vending",
+      "description": "Layer 'Vending Machines' shows vending=bicycle_pump with a fixed text, namely 'Bicycle pumps are sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "bicycle_pump"
+    },
+    {
+      "key": "vending",
+      "description": "Layer 'Vending Machines' shows vending=bicycle_lock with a fixed text, namely 'Bicycle locks are sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "bicycle_lock"
     },
     {
       "key": "opening_hours",
@@ -14586,6 +14816,11 @@
       "key": "waste",
       "description": "Layer 'Waste Basket' shows waste=plastic with a fixed text, namely 'A waste basket for plastic' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "plastic"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=paper with a fixed text, namely 'A waste basket for paper' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "paper"
     },
     {
       "key": "vending",

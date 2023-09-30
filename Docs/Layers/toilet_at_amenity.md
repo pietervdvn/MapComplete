@@ -255,6 +255,8 @@ The question is  *Which kind of toilets are this?*
   - *Both seated toilets and urinals are available here*  corresponds with  `toilets:position=seated;urinal`
 
 
+This tagrendering has labels  `relevant-questions`
+
 
 
 ### toilets-changing-table 
@@ -270,6 +272,8 @@ The question is  *Is a changing table (to change diapers) available?*
   - *A changing table is available*  corresponds with  `changing_table=yes`
   - *No changing table is available*  corresponds with  `changing_table=no`
 
+
+This tagrendering has labels  `relevant-questions`
 
 
 
@@ -295,6 +299,8 @@ This is rendered with  `The changing table is located at {changing_table:locatio
 
 This tagrendering is only visible in the popup if the following condition is met: `changing_table=yes`
 
+This tagrendering has labels  `relevant-questions`
+
 
 
 ### toilet-handwashing 
@@ -311,6 +317,8 @@ The question is  *Do these toilets have a sink to wash your hands?*
   - *This toilets <b>don't</b> have a sink to wash your hands*  corresponds with  `toilets:handwashing=no`
 
 
+This tagrendering has labels  `relevant-questions`
+
 
 
 ### toilet-has-paper 
@@ -326,6 +334,8 @@ The question is  *Does one have to bring their own toilet paper to this toilet?*
   - *This toilet is equipped with toilet paper*  corresponds with  `toilets:paper_supplied=yes`
   - *You have to bring your own toilet paper to this toilet*  corresponds with  `toilets:paper_supplied=no`
 
+
+This tagrendering has labels  `relevant-questions`
 
 
 
