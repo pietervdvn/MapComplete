@@ -39,3 +39,4 @@ service-worker.js
 *.vsix
 public/*.webmanifest
 public/assets/generated/
+public/assets/langs/*
