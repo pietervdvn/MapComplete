@@ -6827,6 +6827,9 @@
                     },
                     "6": {
                         "then": "Une poubelle pour plastiques"
+                    },
+                    "7": {
+                        "then": "Une poubelle pour papier"
                     }
                 },
                 "question": "De quel type de poubelle s'agit-il ?"

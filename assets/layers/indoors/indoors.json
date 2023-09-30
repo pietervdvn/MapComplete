@@ -342,7 +342,9 @@
             "en": "These are toilets"
           },
           "icon": "./assets/layers/indoors/room_toilets.svg",
-          "addExtraTags": ["amenity=toilets"]
+          "addExtraTags": [
+            "amenity=toilets"
+          ]
         },
         {
           "if": "room=waiting",
@@ -384,7 +386,9 @@
       "builtin": "toilet.relevant-questions",
       "override": {
         "condition": {
-          "+and": ["amenity=toilets"]
+          "+and": [
+            "amenity=toilets"
+          ]
         }
       }
     }

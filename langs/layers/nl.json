@@ -9412,6 +9412,9 @@
                     },
                     "6": {
                         "then": "Een vuilnisbak voor plastic"
+                    },
+                    "7": {
+                        "then": "Een vuilnisbak voor papier"
                     }
                 },
                 "question": "Wat voor soort vuilnisbak is dit?"

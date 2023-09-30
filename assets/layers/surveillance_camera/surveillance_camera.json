@@ -349,7 +349,8 @@
         "fr": "À quel niveau se trouve cette caméra ?",
         "it": "A che piano si trova questa videocamera?",
         "de": "Auf welcher Ebene befindet sich diese Kamera?",
-        "es": "¿A qué nivel está colocada esta cámara?"
+        "es": "¿A qué nivel está colocada esta cámara?",
+        "ca": "A quina planta es troba aquesta càmera?"
       },
       "render": {
         "en": "Located on level {level}",

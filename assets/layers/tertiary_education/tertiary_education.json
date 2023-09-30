@@ -5,7 +5,8 @@
     "nl": "Universiteiten en hogescholen",
     "de": "Hochschulen und Universitäten",
     "fr": "Collèges et universités",
-    "da": "Gymnasier og universiteter"
+    "da": "Gymnasier og universiteter",
+    "ca": "Instituts superiors i universitats"
   },
   "description": "Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)",
   "source": {
@@ -42,7 +43,8 @@
           "nl": "Hogeschool",
           "de": "(Fach)hochschule",
           "fr": "Établissement d'enseignement supérieur non universitaire",
-          "pa_PK": "کالج"
+          "pa_PK": "کالج",
+          "ca": "Institut superior"
         }
       },
       {
@@ -64,7 +66,8 @@
           "nl": "Onderwijsinstelling die tertiair onderwijs geeft",
           "de": "Schule mit tertiärem Bildungsangebot",
           "fr": "École dispensant un enseignement supérieur",
-          "da": "Skole, der udbyder videregående uddannelser"
+          "da": "Skole, der udbyder videregående uddannelser",
+          "ca": "Escola que imparteix educació terciària"
         }
       }
     ]
@@ -88,7 +91,8 @@
             "nl": "Dit is een onderwijsinstelling waar post-secundair, niet-tertiair onderwijs wordt gegeven. Om dit onderwijs te volgen, moet je je secundair onderwijs afgewerkt hebben maar de opleiding behaalt niet het niveau van van een bachelor.",
             "de": "Es handelt sich um eine postsekundäre, nicht-tertiäre Bildungseinrichtung. Man muss die Sekundarstufe abgeschlossen haben, um sich hier einzuschreiben, aber es werden keine Bachelor-Abschlüsse (oder höhere Abschlüsse) verliehen",
             "fr": "C'est un établissement d'enseignement post-secondaire, non tertiaire. Il faut avoir terminé l'enseignement secondaire pour s'inscrire ici, mais aucun baccalauréat (ou diplôme supérieur) n'est délivré ici",
-            "da": "Dette er en institution for post-gymnasial, ikke-tertiær uddannelse. Man skal have gennemført en ungdomsuddannelse for at tilmelde sig her, men her uddeles ingen bachelor (eller højere) grader"
+            "da": "Dette er en institution for post-gymnasial, ikke-tertiær uddannelse. Man skal have gennemført en ungdomsuddannelse for at tilmelde sig her, men her uddeles ingen bachelor (eller højere) grader",
+            "ca": "Aquesta és una institució d'educació postsecundària i no terciària. S'ha d'haver completat l'educació secundària per matricular-se aquí, però aquí no s'obtenen títols de batxillerat (o superiors)"
           }
         },
         {
@@ -202,7 +206,8 @@
         "en": "An institute where tertiary education is given (at the level equivalent of a bachelors degree or higher). A single point per campus is enough - buildings and faculties should not be mapped with different university points.",
         "nl": "Een onderwijsinstelling waar tertiair onderwijs wordt gegeven - dit is onderwijs waarvan het niveau overeenkomt met een bachelor of hoger is. Eén enkel punt per campus is genoeg - gebouwen en faculteiten worden hier niet op aangeduid.",
         "de": "Eine Einrichtung, an der tertiäre Bildung vermittelt wird (auf dem Niveau eines Bachelor-Abschlusses oder höher). Ein einziger Punkt pro Campus ist ausreichend - Gebäude und Fakultäten sollten nicht mit Universitätspunkten gekennzeichnet werden.",
-        "fr": "Un institut où l'on dispense un enseignement supérieur (au niveau équivalent à un bachelor ou plus). Un simple point par campus est suffisant - les bâtiments et les facultés ne doivent pas être cartographiés avec différents points d'université."
+        "fr": "Un institut où l'on dispense un enseignement supérieur (au niveau équivalent à un bachelor ou plus). Un simple point par campus est suffisant - les bâtiments et les facultés ne doivent pas être cartographiés avec différents points d'université.",
+        "ca": "Un institut on s'imparteix ensenyament terciari (al nivell equivalent de batxillerat o superior). N'hi ha prou amb un únic punt per campus: els edificis i les facultats no s'han de cartografiar amb diferents punts universitaris."
       },
       "tags": [
         "amenity=university",

@@ -10077,6 +10077,9 @@
                     },
                     "6": {
                         "then": "Der Abfalleimer ist für Plastik"
+                    },
+                    "7": {
+                        "then": "Der Abfalleimer ist für Papier"
                     }
                 },
                 "question": "Um was für einen Abfalleimer handelt es sich?"

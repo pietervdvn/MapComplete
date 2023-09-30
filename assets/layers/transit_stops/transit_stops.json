@@ -10,7 +10,8 @@
   "description": {
     "en": "Layer showing different types of transit stops.",
     "de": "Ebene mit verschiedenen Arten von Haltestellen.",
-    "da": "Lag, der viser forskellige typer transitstop."
+    "da": "Lag, der viser forskellige typer transitstop.",
+    "ca": "Capa que mostra diferents tipus de parades de transport públic"
   },
   "source": {
     "osmTags": {
@@ -25,7 +26,8 @@
       "en": "Transit Stop",
       "de": "Haltestelle",
       "da": "Transit Stop",
-      "nl": "Bushalte"
+      "nl": "Bushalte",
+      "ca": "Parada de transport públic"
     },
     "mappings": [
       {

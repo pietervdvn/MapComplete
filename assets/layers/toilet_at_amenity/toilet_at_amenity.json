@@ -14,7 +14,8 @@
     "render": {
       "en": "Toilet at amenity",
       "de": "Toilette in Einrichtung",
-      "nl": "Toilet in een voorziening"
+      "nl": "Toilet in een voorziening",
+      "ca": "Lavabo a la instal·lació"
     },
     "mappings": [
       {
@@ -22,7 +23,8 @@
         "then": {
           "en": "Toilet at {name}",
           "de": "Toilette in {name}",
-          "nl": "Toilet bij {name}"
+          "nl": "Toilet bij {name}",
+          "ca": "Bany a {name}"
         }
       }
     ]
@@ -197,7 +199,8 @@
         "condition": "toilets:access!=no",
         "question": {
           "en": "When is the amenity where these toilets are located open?",
-          "de": "Wann ist der Ort, an dem sich diese Toiletten befinden, geöffnet?"
+          "de": "Wann ist der Ort, an dem sich diese Toiletten befinden, geöffnet?",
+          "ca": "Quan està oberta la instal·lació on es troben aquests lavabos?"
         }
       }
     },
@@ -273,7 +276,8 @@
         "nl": "De deur naar de rolstoeltoegankelijke toilet is {canonical(toilets:door:width)} wide",
         "fr": "La porte des toilettes accessibles aux fauteuils roulants a une large de {canonical(toilets:door:width)}",
         "de": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(toilets:door:width)} breit",
-        "da": "Døren til det kørestolsvenlige toilet er {canonical(toilets:door:width)} bred"
+        "da": "Døren til det kørestolsvenlige toilet er {canonical(toilets:door:width)} bred",
+        "ca": "La porta del vàter accessible amb cadira de rodes és {canonical(toilets:door:width)} d'ample"
       },
       "freeform": {
         "key": "toilets:door:width",
@@ -329,7 +333,8 @@
             "nl": "Gratis toegankelijk",
             "de": "Nutzung kostenlos",
             "fr": "Utilisation gratuite",
-            "da": "Gratis at bruge"
+            "da": "Gratis at bruge",
+            "ca": "Ús gratuït"
           },
           "osmTags": {
             "or": [

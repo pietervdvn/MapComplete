@@ -849,7 +849,7 @@
             "nl": "Verkoop van bloemen",
             "de": "Verkauf von Blumen",
             "fr": "Vente de fleurs",
-            "ca": "Venda de flors"
+            "ca": "Venda d'aparcament"
           },
           "osmTags": "vending~i~.*flowers.*"
         },
@@ -857,21 +857,21 @@
           "osmTags": "vending~i~.*parking_tickets.*",
           "question": {
             "en": "Sale of parking tickets",
-            "ca": "Venda d'aparcament"
+            "ca": "Venda de monedes premsades"
           }
         },
         {
           "osmTags": "vending=elongated_coin",
           "question": {
             "en": "Sale of pressed pennies",
-            "ca": "Venda de monedes premsades"
+            "ca": "Venda de bitllets de transport públic"
           }
         },
         {
           "osmTags": "vending~i~.*public_transport_tickets.*",
           "question": {
             "en": "Sale of public transport tickets",
-            "ca": "Venda de bitllets de transport públic"
+            "ca": "Venda de productes carnis"
           }
         },
         {

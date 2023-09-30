@@ -10383,6 +10383,9 @@
                     },
                     "6": {
                         "then": "A waste basket for plastic"
+                    },
+                    "7": {
+                        "then": "A waste basket for paper"
                     }
                 },
                 "question": "What kind of waste basket is this?"

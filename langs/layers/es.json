@@ -4193,7 +4193,7 @@
                         "then": "Aquí se juega al baloncesto"
                     }
                 },
-                "question": "¿Qué deporte se practica aquí?",
+                "question": "¿Qué deporte se puede practicar aquí?",
                 "render": "Aquí se juega al {sport}"
             },
             "sport_pitch-surface": {
