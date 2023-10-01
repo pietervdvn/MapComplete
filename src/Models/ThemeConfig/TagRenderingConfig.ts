@@ -18,6 +18,7 @@ import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import { Paragraph } from "../../UI/Base/Paragraph"
 import Svg from "../../Svg"
 import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
+import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 
 export interface Icon {}
 
@@ -76,7 +77,11 @@ export default class TagRenderingConfig {
     public readonly labels: string[]
     public readonly classes: string[]
 
-    constructor(json: string | QuestionableTagRenderingConfigJson, context?: string) {
+    constructor(
+        config: string | TagRenderingConfigJson | QuestionableTagRenderingConfigJson,
+        context?: string
+    ) {
+        let json = <string | QuestionableTagRenderingConfigJson>config
         if (json === undefined) {
             throw "Initing a TagRenderingConfig with undefined in " + context
         }

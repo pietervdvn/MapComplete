@@ -102,14 +102,15 @@ export default class PointRenderingConfig extends WithContextLoader {
                 )
             }
         }
-        this.iconSize = this.tr("iconSize", "40,40")
-        this.anchor = this.tr("anchor", "center")
-        this.label = this.tr("label", undefined)
-        this.rotation = this.tr("rotation", "0")
-        this.pitchAlignment = this.tr("pitchAlignment", "canvas")
+        this.iconSize = this.tr("iconSize", "40,40", context + ".iconsize")
+        this.anchor = this.tr("anchor", "center", context + ".anchor")
+        this.label = this.tr("label", undefined, context + ".label")
+        this.rotation = this.tr("rotation", "0", context + ".rotation")
+        this.pitchAlignment = this.tr("pitchAlignment", "canvas", context + ".pitchAlignment")
         this.rotationAlignment = this.tr(
             "rotationAlignment",
-            json.pitchAlignment === "map" ? "map" : "canvas"
+            json.pitchAlignment === "map" ? "map" : "canvas",
+            context + ".rotationAlignment"
         )
     }
 

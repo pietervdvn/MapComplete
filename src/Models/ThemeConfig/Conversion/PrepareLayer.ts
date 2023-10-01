@@ -368,8 +368,7 @@ class ExpandTagRendering extends Conversion<
                                         name +
                                         ": layer " +
                                         layerName +
-                                        " not found. Maybe you meant on of " +
-                                        candidates.slice(0, 3).join(", ")
+                                        " not found for now, but ignoring as this is a bootstrapping run. "
                                 )
                             } else {
                                 errors.push(
@@ -378,7 +377,7 @@ class ExpandTagRendering extends Conversion<
                                         name +
                                         ": layer " +
                                         layerName +
-                                        " not found. Maybe you meant on of " +
+                                        " not found. Maybe you meant one of " +
                                         candidates.slice(0, 3).join(", ")
                                 )
                             }

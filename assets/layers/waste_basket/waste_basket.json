@@ -391,9 +391,8 @@
   "pointRendering": [
     {
       "icon": "./assets/themes/waste_basket/waste_basket.svg",
-      "iconSize": {
-        "render": "40,40,center"
-      },
+      "iconSize": "40,40",
+      "anchor": "center",
       "location": [
         "point"
       ]
