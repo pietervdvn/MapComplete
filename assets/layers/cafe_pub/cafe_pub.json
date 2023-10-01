@@ -296,7 +296,9 @@
   "filter": [
     "open_now",
     "accepts_cash",
-    "accepts_cards"
+    "accepts_cards",
+    "has_internet",
+    "has_electricity"
   ],
   "deletion": {
     "softDeletionTags": {
