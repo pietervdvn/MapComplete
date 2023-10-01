@@ -234,6 +234,6 @@
       ]
     }
   ],
-  "defaultBackgroundId": "CartoDB.Positron",
+  "defaultBackgroundId": "maptiler.backdrop",
   "credits": "L'imaginaire"
 }

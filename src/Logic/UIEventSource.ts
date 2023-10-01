@@ -357,14 +357,18 @@ class ListenerTracker<T> {
         let toDelete = undefined
         let startTime = new Date().getTime() / 1000
         for (const callback of this._callbacks) {
-            if (callback(data) === true) {
-                // This callback wants to be deleted
-                // Note: it has to return precisely true in order to avoid accidental deletions
-                if (toDelete === undefined) {
-                    toDelete = [callback]
-                } else {
-                    toDelete.push(callback)
+            try {
+                if (callback(data) === true) {
+                    // This callback wants to be deleted
+                    // Note: it has to return precisely true in order to avoid accidental deletions
+                    if (toDelete === undefined) {
+                        toDelete = [callback]
+                    } else {
+                        toDelete.push(callback)
+                    }
                 }
+            } catch (e) {
+                console.error("Got an error while running a callback:", e)
             }
         }
         let endTime = new Date().getTime() / 1000
@@ -511,7 +515,7 @@ class MappedStore<TIn, T> extends Store<T> {
     }
 
     private unregisterFromUpstream() {
-        console.log("Unregistering callbacks for", this.tag)
+        console.debug("Unregistering callbacks for", this.tag)
         this._callbacksAreRegistered = false
         this._unregisterFromUpstream()
         this._unregisterFromExtraStores?.forEach((unr) => unr())

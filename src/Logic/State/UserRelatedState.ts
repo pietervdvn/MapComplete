@@ -16,6 +16,8 @@ import LinkToWeblate from "../../UI/Base/LinkToWeblate"
 import FeatureSwitchState from "./FeatureSwitchState"
 import Constants from "../../Models/Constants"
 import { QueryParameters } from "../Web/QueryParameters"
+import { ThemeMetaTagging } from "./UserSettingsMetaTagging"
+import { MapProperties } from "../../Models/MapProperties"
 
 /**
  * The part of the state which keeps track of user-related stuff, e.g. the OSM-connection,
@@ -40,6 +42,10 @@ export default class UserRelatedState {
     public readonly fixateNorth: UIEventSource<undefined | "yes">
     public readonly homeLocation: FeatureSource
     public readonly language: UIEventSource<string>
+    public readonly preferredBackgroundLayer: UIEventSource<
+        string | "photo" | "map" | "osmbasedmap" | undefined
+    >
+    public readonly imageLicense: UIEventSource<string>
     /**
      * The number of seconds that the GPS-locations are stored in memory.
      * Time in seconds
@@ -51,16 +57,23 @@ export default class UserRelatedState {
     /**
      * Preferences as tags exposes many preferences and state properties as record.
      * This is used to bridge the internal state with the usersettings.json layerconfig file
+     *
+     * Some metainformation that should not be edited starts with a single underscore
+     * Constants and query parameters start with two underscores
+     * Note: these are linked via OsmConnection.preferences which exports all preferences as UIEventSource
      */
     public readonly preferencesAsTags: UIEventSource<Record<string, string>>
+    private readonly _mapProperties: MapProperties
 
     constructor(
         osmConnection: OsmConnection,
         availableLanguages?: string[],
         layout?: LayoutConfig,
-        featureSwitches?: FeatureSwitchState
+        featureSwitches?: FeatureSwitchState,
+        mapProperties?: MapProperties
     ) {
         this.osmConnection = osmConnection
+        this._mapProperties = mapProperties
         {
             const translationMode: UIEventSource<undefined | "true" | "false" | "mobile" | string> =
                 this.osmConnection.GetPreference("translation-mode", "false")
@@ -89,11 +102,22 @@ export default class UserRelatedState {
         )
         this.language = this.osmConnection.GetPreference("language")
         this.showTags = <UIEventSource<any>>this.osmConnection.GetPreference("show_tags")
-        this.fixateNorth = <any>this.osmConnection.GetPreference("fixate-north")
+        this.fixateNorth = <UIEventSource<"yes">>this.osmConnection.GetPreference("fixate-north")
         this.mangroveIdentity = new MangroveIdentity(
             this.osmConnection.GetLongPreference("identity", "mangrove")
         )
+        this.preferredBackgroundLayer = this.osmConnection.GetPreference(
+            "preferred-background-layer",
+            undefined,
+            {
+                documentation:
+                    "The ID of a layer or layer category that MapComplete uses by default",
+            }
+        )
 
+        this.imageLicense = this.osmConnection.GetPreference("pictures-license", "CC0", {
+            documentation: "The license under which new images are uploaded",
+        })
         this.installedUserThemes = this.InitInstalledUserThemes()
 
         this.homeLocation = this.initHomeLocation()
@@ -245,6 +269,7 @@ export default class UserRelatedState {
     ): UIEventSource<Record<string, string>> {
         const amendedPrefs = new UIEventSource<Record<string, string>>({
             _theme: layout?.id,
+            "_theme:backgroundLayer": layout?.defaultBackgroundId,
             _backend: this.osmConnection.Backend(),
             _applicationOpened: new Date().toISOString(),
             _supports_sharing:
@@ -279,7 +304,6 @@ export default class UserRelatedState {
             amendedPrefs.ping()
             console.log("Amended prefs are:", amendedPrefs.data)
         })
-        const usersettingsConfig = UserRelatedState.usersettingsConfig
         const translationMode = osmConnection.GetPreference("translation-mode")
 
         Locale.language.mapD(
@@ -326,30 +350,14 @@ export default class UserRelatedState {
             },
             [translationMode]
         )
+
+        const usersettingMetaTagging = new ThemeMetaTagging()
         osmConnection.userDetails.addCallback((userDetails) => {
             for (const k in userDetails) {
                 amendedPrefs.data["_" + k] = "" + userDetails[k]
             }
 
-            for (const [name, code, _] of usersettingsConfig.calculatedTags) {
-                try {
-                    let result = new Function("feat", "return " + code + ";")({
-                        properties: amendedPrefs.data,
-                    })
-                    if (result !== undefined && result !== "" && result !== null) {
-                        if (typeof result !== "string") {
-                            result = JSON.stringify(result)
-                        }
-                        amendedPrefs.data[name] = result
-                    }
-                } catch (e) {
-                    console.error(
-                        "Calculating a tag for userprofile-settings failed for variable",
-                        name,
-                        e
-                    )
-                }
-            }
+            usersettingMetaTagging.metaTaggging_for_usersettings({ properties: amendedPrefs.data })
 
             const simplifiedName = userDetails.name.toLowerCase().replace(/\s+/g, "")
             const isTranslator = translators.contributors.find(
@@ -402,6 +410,11 @@ export default class UserRelatedState {
                 })
             }
         }
+
+        this._mapProperties?.rasterLayer?.addCallbackAndRun((l) => {
+            amendedPrefs.data["__current_background"] = l?.properties?.id
+            amendedPrefs.ping()
+        })
 
         return amendedPrefs
     }

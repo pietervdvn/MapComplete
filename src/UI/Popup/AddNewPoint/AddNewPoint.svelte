@@ -102,7 +102,7 @@
     console.log("Creating new point at", location, "snapped to", snapTo, "with tags", tags)
 
     let snapToWay: undefined | OsmWay = undefined
-    if (snapTo !== undefined) {
+    if (snapTo !== undefined && snapTo !== null) {
       const downloaded = await state.osmObjectDownloader.DownloadObjectAsync(snapTo, 0)
       if (downloaded !== "deleted") {
         snapToWay = downloaded
@@ -113,6 +113,7 @@
       theme: state.layout?.id ?? "unkown",
       changeType: "create",
       snapOnto: snapToWay,
+      reusePointWithinMeters: 1,
     })
     await state.changes.applyAction(newElementAction)
     state.newFeatures.features.ping()
@@ -120,6 +121,9 @@
     const newId = newElementAction.newElementId
     console.log("Applied pending changes, fetching store for", newId)
     const tagsStore = state.featureProperties.getStore(newId)
+    if (!tagsStore) {
+      console.error("Bug: no tagsStore found for", newId)
+    }
     {
       // Set some metainfo
       const properties = tagsStore.data
@@ -136,10 +140,17 @@
       tagsStore.ping()
     }
     const feature = state.indexedFeatures.featuresById.data.get(newId)
+    console.log("Selecting feature", feature, "and opening their popup")
     abort()
     state.selectedLayer.setData(selectedPreset.layer)
     state.selectedElement.setData(feature)
     tagsStore.ping()
+  }
+
+  function confirmSync() {
+    confirm()
+      .then((_) => console.debug("New point successfully handled"))
+      .catch((e) => console.error("Handling the new point went wrong due to", e))
   }
 </script>
 
@@ -328,7 +339,7 @@
           "absolute top-0 flex w-full justify-center p-12"
         )}
       >
-        <NextButton on:click={confirm} clss="primary w-fit">
+        <NextButton on:click={confirmSync} clss="primary w-fit">
           <div class="flex w-full justify-end gap-x-2">
             <Tr t={Translations.t.general.add.confirmLocation} />
           </div>

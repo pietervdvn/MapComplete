@@ -273,7 +273,6 @@ class GenerateSeries extends Script {
         allFeatures = allFeatures.filter((f) => f.properties.metadata?.theme !== "EMPTY CS")
         const centerpoints = allFeatures.map((f) => GeoOperations.centerpoint(f))
         console.log("Found", centerpoints.length, " changesets in total")
-        const path = `${targetDir}/all_centerpoints.geojson`
 
         const perBbox = GeoOperations.spreadIntoBboxes(centerpoints, options.zoomlevel)
 

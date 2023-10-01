@@ -1,15 +1,14 @@
 import BaseUIElement from "../BaseUIElement"
-
+import { Utils } from "../../Utils"
+/**
+ * @deprecated
+ */
 export class FixedUiElement extends BaseUIElement {
     public readonly content: string
 
     constructor(html: string) {
         super()
         this.content = html ?? ""
-    }
-
-    InnerRender(): string {
-        return this.content
     }
 
     AsMarkdown(): string {
@@ -27,7 +26,7 @@ export class FixedUiElement extends BaseUIElement {
 
     protected InnerConstructElement(): HTMLElement {
         const e = document.createElement("span")
-        e.innerHTML = this.content
+        e.innerHTML = Utils.purify(this.content)
         return e
     }
 }

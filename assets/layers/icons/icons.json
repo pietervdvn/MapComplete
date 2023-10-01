@@ -2,7 +2,8 @@
   "id": "icons",
   "description": {
     "en": "A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI",
-    "de": "Eine Ebene, die als Bibliothek für Symbol-Tag-Renderings dient, insbesondere um als Abzeichen neben einem POI angezeigt zu werden"
+    "de": "Eine Ebene, die als Bibliothek für Symbol-Tag-Renderings dient, insbesondere um als Abzeichen neben einem POI angezeigt zu werden",
+    "ca": "Una capa que actua com a biblioteca per a les icones d'etiquetes, especialment per mostrar-se com a insígnia al costat d'un PDI"
   },
   "source": "special:library",
   "title": null,
@@ -153,7 +154,46 @@
         }
       ],
       "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "rating",
+      "labels": [
+        "defaults"
+      ],
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
     }
   ],
-  "mapRendering": null
+  "lineRendering": null,
+  "pointRendering": null
 }

@@ -12,7 +12,8 @@
     "en": "This layer shows dentist offices",
     "de": "Diese Ebene zeigt Zahnarztpraxen",
     "nl": "Deze laag toont tandartsen",
-    "pl": "Ta warstwa pokazuje gabinety dentystyczne"
+    "pl": "Ta warstwa pokazuje gabinety dentystyczne",
+    "ca": "Aquesta capa mostra clíniques dentals"
   },
   "source": {
     "osmTags": "amenity=dentist"
@@ -22,7 +23,8 @@
       "en": "Dentist Office {name}",
       "de": "Zahnarztpraxis {name}",
       "nl": "Tandartspraktijk {name}",
-      "fr": "Cabinet medical {name}"
+      "fr": "Cabinet medical {name}",
+      "ca": "Clínica Dental {name}"
     }
   },
   "minzoom": 13,
@@ -59,7 +61,8 @@
         "en": "a dentists office",
         "de": "eine Zahnarztpraxis",
         "nl": "een tandartspraktijk",
-        "fr": "un cabinet de dentistes"
+        "fr": "un cabinet de dentistes",
+        "ca": "una clínica dental"
       },
       "tags": [
         "amenity=dentist"

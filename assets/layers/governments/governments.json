@@ -4,12 +4,14 @@
     "en": "governments",
     "de": "Öffentliche Verwaltung",
     "nl": "Overheidsdiensten",
-    "pa_PK": "سرکارسں"
+    "pa_PK": "سرکارسں",
+    "ca": "Governs"
   },
   "description": {
     "en": "This layer show governmental buildings. It was setup as commissioned layer for the client of OSOC '22",
     "de": "Diese Ebene zeigt Gebäude der öffentlichen Verwaltung. Sie wurde im Auftrag für den Kunden von OSOC '22 erstellt",
-    "nl": "Deze laag toont overheidsgebouwen. Opgezet voor OSOC '22"
+    "nl": "Deze laag toont overheidsgebouwen. Opgezet voor OSOC '22",
+    "ca": "Aquesta capa mostra edificis governamentals. Es va configurar com a capa encarregada per al client d'OSOC '22"
   },
   "source": {
     "osmTags": {
@@ -22,7 +24,8 @@
     "render": {
       "en": "Governmental Office {name}",
       "de": "Behörde {name}",
-      "nl": "Overheidsdienst {name}"
+      "nl": "Overheidsdienst {name}",
+      "ca": "Oficina governamental {name}"
     }
   },
   "minzoom": 13,
@@ -55,7 +58,8 @@
       "title": {
         "en": "a Governmental Office",
         "de": "ein Büro der öffentlichen Verwaltung",
-        "nl": "een overheidsdienst"
+        "nl": "een overheidsdienst",
+        "ca": "una oficina Governamental"
       },
       "tags": [
         "office=government"

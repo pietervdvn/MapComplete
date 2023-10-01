@@ -346,7 +346,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
 This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L199)
 
- The default value is _osm_
+ No default value set
 
 
 

@@ -2,7 +2,8 @@
   "id": "questions",
   "description": "Special library layer which does not need a '.questions'-prefix before being imported",
   "source": "special:library",
-  "mapRendering": null,
+  "lineRendering": null,
+  "pointRendering": null,
   "tagRenderings": [
     {
       "id": "questions",
@@ -130,7 +131,7 @@
       "id": "reviews",
       "description": "Shows the reviews module (including the possibility to leave a review)",
       "render": {
-        "*": "{reviews()}"
+        "*": "{create_review()}{list_reviews()}"
       }
     },
     {
@@ -487,6 +488,7 @@
       "mappings": [
         {
           "if": "dog=yes",
+          "icon": "./assets/layers/questions/dogs_allowed.svg",
           "then": {
             "en": "Dogs are allowed",
             "nl": "honden zijn toegelaten",
@@ -515,6 +517,7 @@
         },
         {
           "if": "dog=no",
+          "icon": "./assets/layers/questions/no_dogs.svg",
           "then": {
             "en": "Dogs are <b>not</b> allowed",
             "nl": "honden zijn <b>niet</b> toegelaten",
@@ -542,6 +545,7 @@
         },
         {
           "if": "dog=leashed",
+          "icon": "./assets/layers/questions/dogs_leashed.svg",
           "then": {
             "en": "Dogs are allowed, but they have to be leashed",
             "nl": "honden zijn <b>enkel aan de leiband</b> welkom",
@@ -568,6 +572,7 @@
         },
         {
           "if": "dog=unleashed",
+          "icon": "./assets/layers/questions/dogs_allowed.svg",
           "then": {
             "en": "Dogs are allowed and can run around freely",
             "nl": "honden zijn welkom en mogen vrij rondlopen",
@@ -1285,7 +1290,8 @@
           "icon": "./assets/layers/questions/denominations/chf/5rp-2019-800px.png",
           "then": {
             "en": "5 centimes coins are accepted",
-            "nl": "Munten van 5 rappen worden geaccepteerd"
+            "nl": "Munten van 5 rappen worden geaccepteerd",
+            "ca": "S'accepten monedes de 5 cèntims"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1294,7 +1300,8 @@
           "icon": "./assets/layers/questions/denominations/chf/10rp-2019-800px.png",
           "then": {
             "en": "10 centimes coins are accepted",
-            "nl": "Munten van 10 rappen worden geaccepteerd"
+            "nl": "Munten van 10 rappen worden geaccepteerd",
+            "ca": "S'accepten monedes de 10 cèntims"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1303,7 +1310,8 @@
           "icon": "./assets/layers/questions/denominations/chf/20rp-2019-800px.png",
           "then": {
             "en": "20 centimes coins are accepted",
-            "nl": "Munten van 20 rappen worden geaccepteerd"
+            "nl": "Munten van 20 rappen worden geaccepteerd",
+            "ca": "S'accepten monedes de 20 cèntims"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1321,7 +1329,8 @@
           "icon": "./assets/layers/questions/denominations/chf/1fr-2019-800px.png",
           "then": {
             "en": "1 franc coins are accepted",
-            "nl": "Munten van 1 frank worden geaccepteerd"
+            "nl": "Munten van 1 frank worden geaccepteerd",
+            "ca": "S'accepten monedes d'1 franc"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1330,7 +1339,8 @@
           "icon": "./assets/layers/questions/denominations/chf/2fr-2019-800px.png",
           "then": {
             "en": "2 francs coins are accepted",
-            "nl": "Munten van 2 frank worden geaccepteerd"
+            "nl": "Munten van 2 frank worden geaccepteerd",
+            "ca": "S'accepten monedes de 2 francs"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1339,7 +1349,8 @@
           "icon": "./assets/layers/questions/denominations/chf/5fr-2019-800px.png",
           "then": {
             "en": "5 francs coins are accepted",
-            "nl": "Munten van 5 frank worden geaccepteerd"
+            "nl": "Munten van 5 frank worden geaccepteerd",
+            "ca": "S'accepten monedes de 5 francs"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         }
@@ -1485,7 +1496,8 @@
           "icon": "./assets/layers/questions/denominations/chf/10chf.svg",
           "then": {
             "en": "10 francs notes are accepted",
-            "nl": "Biljetten van 10 frank worden geaccepteerd"
+            "nl": "Biljetten van 10 frank worden geaccepteerd",
+            "ca": "S'accepten bitllets de 10 francs"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1494,7 +1506,8 @@
           "icon": "./assets/layers/questions/denominations/chf/20chf.svg",
           "then": {
             "en": "20 francs notes are accepted",
-            "nl": "Biljetten van 20 frank worden geaccepteerd"
+            "nl": "Biljetten van 20 frank worden geaccepteerd",
+            "ca": "S'accepten bitllets de 20 francs"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1503,7 +1516,8 @@
           "icon": "./assets/layers/questions/denominations/chf/50chf.svg",
           "then": {
             "en": "50 francs notes are accepted",
-            "nl": "Biljetten van 50 frank worden geaccepteerd"
+            "nl": "Biljetten van 50 frank worden geaccepteerd",
+            "ca": "S'accepten bitllets de 50 francs"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1512,7 +1526,8 @@
           "icon": "./assets/layers/questions/denominations/chf/100chf.svg",
           "then": {
             "en": "100 francs notes are accepted",
-            "nl": "Biljetten van 100 frank worden geaccepteerd"
+            "nl": "Biljetten van 100 frank worden geaccepteerd",
+            "ca": "S'accepten bitllets de 100 francs"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1521,7 +1536,8 @@
           "icon": "./assets/layers/questions/denominations/chf/200chf.svg",
           "then": {
             "en": "200 francs notes are accepted",
-            "nl": "Biljetten van 200 frank worden geaccepteerd"
+            "nl": "Biljetten van 200 frank worden geaccepteerd",
+            "ca": "S'accepten bitllets de 200 francs"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1530,7 +1546,8 @@
           "icon": "./assets/layers/questions/denominations/chf/1000chf.svg",
           "then": {
             "en": "1000 francs notes are accepted",
-            "nl": "Biljetten van 1000 frank worden geaccepteerd"
+            "nl": "Biljetten van 1000 frank worden geaccepteerd",
+            "ca": "S'accepten bitllets de 1000 francs"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         }
@@ -1560,7 +1577,8 @@
           "text": {
             "en": "Last edited on {_last_edit:timestamp} by {_last_edit:contributor}",
             "nl": "Laatst gewijzigd op {_last_edit:timestamp} door {_last_edit:contributor} ",
-            "de": "Zuletzt bearbeitet am {_last_edit:timestamp} von {_last_edit:contributor}"
+            "de": "Zuletzt bearbeitet am {_last_edit:timestamp} von {_last_edit:contributor}",
+            "ca": "Darrera edició el {_last_edit:timestamp} per {_last_edit:contributor}"
           },
           "class": "subtle font-small"
         }
@@ -1616,8 +1634,9 @@
     },
     {
       "id": "multilevels",
-      "builtin": "level",
+      "builtin": "single_level",
       "override": {
+        "=labels": [],
         "question": {
           "en": "What levels does this elevator go to?",
           "de": "Auf welchen Geschossen hält dieser Aufzug?",
@@ -1654,7 +1673,22 @@
       }
     },
     {
-      "id": "level",
+      "id": "repeated",
+      "labels": [
+        "level"
+      ],
+      "condition": "repeat_on~*",
+      "render": {
+        "en": "Multiple, identical objects can be found on floors {repeat_on}.",
+        "nl": "Er zijn verschillende, identieke objecten op verdiepingen {repeat_on}."
+      }
+    },
+    {
+      "id": "single_level",
+      "labels": [
+        "level"
+      ],
+      "condition": "repeat_on=",
       "question": {
         "nl": "Op welke verdieping bevindt dit punt zich?",
         "en": "On what level is this feature located?",
@@ -2322,7 +2356,8 @@
         "en": "When was this object last checked?",
         "de": "Wann wurde dieses Objekt zuletzt kontrolliert?",
         "nl": "Wanneer is dit object voor het laatst gecontroleerd?",
-        "pl": "Kiedy ten obiekt został ostatnio sprawdzony?"
+        "pl": "Kiedy ten obiekt został ostatnio sprawdzony?",
+        "ca": "Quan es va comprovar per última vegada aquest objecte?"
       },
       "freeform": {
         "key": "check_date",
@@ -2332,7 +2367,8 @@
         "en": "This object was last checked on <b>{check_date}</b>",
         "de": "Dieses Objekt wurde zuletzt kontrolliert am <b>{check_date}</b>",
         "nl": "Dit object is voor het laatst gecontroleerd op <b>{check_date}</b>",
-        "pl": "Ten obiekt był ostatnio sprawdzony <b>{check_date}</b>"
+        "pl": "Ten obiekt był ostatnio sprawdzony <b>{check_date}</b>",
+        "ca": "Aquest objecte es va comprovar per darrera vegada el <b>{check_date}</b>"
       },
       "mappings": [
         {
@@ -2341,7 +2377,8 @@
             "en": "This object was last checked today",
             "de": "Dieses Objekt wurde heute zuletzt kontrolliert",
             "nl": "Dit object is vandaag voor het laatst gecontroleerd",
-            "pl": "Ten obiekt został ostatnio sprawdzony dzisiaj"
+            "pl": "Ten obiekt został ostatnio sprawdzony dzisiaj",
+            "ca": "Aquest objecte es va comprovar per última vegada avui"
           }
         }
       ]

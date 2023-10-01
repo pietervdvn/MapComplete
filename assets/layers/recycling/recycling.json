@@ -23,7 +23,7 @@
     "osmTags": "amenity=recycling"
   },
   "calculatedTags": [
-    "_waste_amount=Object.values(Object.keys(feat.properties).filter((key) => key.startsWith('recycling:')).reduce((cur, key) => { return Object.assign(cur, { [key]: feat.properties[key] })}, {})).reduce((n, x) => n + (x == \"yes\"), 0);"
+    "_waste_amount=Object.keys(feat.properties).filter(key => key.startsWith('recycling:')).filter(k => feat.properties[k] === 'yes').length"
   ],
   "minzoom": 10,
   "title": {

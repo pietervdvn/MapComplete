@@ -15,6 +15,8 @@ Schools giving primary and secondary education and post-secondary, non-tertiary 
 
 
   - This layer is shown at zoomlevel **12** and higher
+  - This layer will automatically load  [school](./school.md)  into the layout as it depends on it:  a calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _enclosing)
+  - This layer is needed as dependency for layer [school](#school)
 
 
 

@@ -9,9 +9,7 @@
     "ca": "Una capa fictícia que conté renderització d'etiquetes compartides entre les capes d'escalada"
   },
   "minzoom": 19,
-  "source": {
-    "osmTags": "sport=climbing"
-  },
+  "source": "special:library",
   "tagRenderings": [
     {
       "id": "website",
@@ -415,5 +413,6 @@
       ]
     }
   ],
-  "mapRendering": null
+  "lineRendering": null,
+  "pointRendering": null
 }

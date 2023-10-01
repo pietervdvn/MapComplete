@@ -4,14 +4,13 @@
   import Tr from "../Base/Tr.svelte"
   import NextButton from "../Base/NextButton.svelte"
   import Geosearch from "./Geosearch.svelte"
-  import IfNot from "../Base/IfNot.svelte"
   import ToSvelte from "../Base/ToSvelte.svelte"
   import ThemeViewState from "../../Models/ThemeViewState"
-  import If from "../Base/If.svelte"
-  import { UIEventSource } from "../../Logic/UIEventSource"
+  import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { twJoin } from "tailwind-merge"
   import { Utils } from "../../Utils"
+  import type { GeolocationPermissionState } from "../../Logic/State/GeoLocationState"
 
   /**
    * The theme introduction panel
@@ -23,6 +22,12 @@
 
   let triggerSearch: UIEventSource<any> = new UIEventSource<any>(undefined)
   let searchEnabled = false
+
+  let geopermission: Store<GeolocationPermissionState> =
+    state.geolocation.geolocationState.permission
+  let currentGPSLocation = state.geolocation.geolocationState.currentGPSLocation
+
+  geopermission.addCallback((perm) => console.log(">>>> Permission", perm))
 
   function jumpToCurrentLocation() {
     const glstate = state.geolocation.geolocationState
@@ -58,12 +63,37 @@
     </NextButton>
 
     <div class="flex w-full flex-wrap sm:flex-nowrap">
-      <IfNot condition={state.geolocation.geolocationState.permission.map((p) => p === "denied")}>
+      {#if $currentGPSLocation !== undefined || $geopermission === "prompt"}
         <button class="flex w-full items-center gap-x-2" on:click={jumpToCurrentLocation}>
           <ToSvelte construct={Svg.crosshair_svg().SetClass("w-8 h-8")} />
           <Tr t={Translations.t.general.openTheMapAtGeolocation} />
         </button>
-      </IfNot>
+        <!-- No geolocation granted - we don't show the button -->
+      {:else if $geopermission === "requested"}
+        <button class="disabled flex w-full items-center gap-x-2" on:click={jumpToCurrentLocation}>
+          <!-- Even though disabled, when clicking we request the location again in case the contributor dismissed the location popup -->
+          <ToSvelte
+            construct={Svg.crosshair_svg()
+              .SetClass("w-8 h-8")
+              .SetStyle("animation: 3s linear 0s infinite normal none running spin;")}
+          />
+          <Tr t={Translations.t.general.waitingForGeopermission} />
+        </button>
+      {:else if $geopermission === "denied"}
+        <button class="disabled flex w-full items-center gap-x-2">
+          <ToSvelte construct={Svg.location_refused_svg().SetClass("w-8 h-8")} />
+          <Tr t={Translations.t.general.geopermissionDenied} />
+        </button>
+      {:else}
+        <button class="disabled flex w-full items-center gap-x-2">
+          <ToSvelte
+            construct={Svg.crosshair_svg()
+              .SetClass("w-8 h-8")
+              .SetStyle("animation: 3s linear 0s infinite normal none running spin;")}
+          />
+          <Tr t={Translations.t.general.waitingForLocation} />
+        </button>
+      {/if}
 
       <div class=".button low-interaction m-1 flex w-full items-center gap-x-2 rounded border p-2">
         <div class="w-full">

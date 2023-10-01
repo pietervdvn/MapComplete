@@ -4,7 +4,8 @@
     "en": "OpenStreetMap notes",
     "nl": "OpenStreetMap Notes",
     "de": "OpenStreetMap-Hinweise",
-    "es": "Notas de OpenStreetMap"
+    "es": "Notas de OpenStreetMap",
+    "ca": "Notes d'OpenStreetMap"
   },
   "description": "This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)",
   "source": {
@@ -33,7 +34,8 @@
           "nl": "Gesloten Note",
           "de": "Geschlossene Notiz",
           "es": "Nota cerrada",
-          "pl": "Zamknięta notatka"
+          "pl": "Zamknięta notatka",
+          "ca": "Nota tancada"
         }
       }
     ]
@@ -72,7 +74,8 @@
           "en": "<h3>Nearby images</h3>The pictures below are nearby geotagged images and might be helpful to handle this note.",
           "de": "<h3>Bilder aus der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus der Nähe und könnten für die Bearbeitung dieser Notiz hilfreich sein.",
           "es": "<h3>Imágenes cercanas</h3>Las imágenes de debajo son imágenes geoetiquetadas cercanas y pueden ser útiles para encargarse de esta nota.",
-          "nl": "<h3>Afbeeldingen in de buurt</h3>Onderstaande afbeeldingen zijn afbeeldingen met geo-referentie en die in de buurt genomen zijn. Mogelijks zijn ze nuttig om deze kaartnota af te handelen."
+          "nl": "<h3>Afbeeldingen in de buurt</h3>Onderstaande afbeeldingen zijn afbeeldingen met geo-referentie en die in de buurt genomen zijn. Mogelijks zijn ze nuttig om deze kaartnota af te handelen.",
+          "ca": "<h3>Imatges properes</h3>Les imatges de sota són imatges geoetiquetades properes i poden ser útils per a encarregar-se d'aquesta nota."
         },
         "special": {
           "type": "nearby_images",
@@ -86,7 +89,8 @@
         "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Report {_first_user} for spam or inappropriate messages</a>",
         "nl": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>{_first_user} melden voor spam of ongepaste opmerkingen</a>",
         "de": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle' {_first_user} für Spam oder unangemessene Nachrichten melden</a>",
-        "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reportar {_first_user}"
+        "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reportar {_first_user}",
+        "ca": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reporta {_first_user} per spam o missatges inapropiats</a>"
       },
       "condition": "_opened_by_anonymous_user=false"
     },
@@ -96,7 +100,8 @@
         "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Report this note as spam or inappropriate</a>",
         "nl": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Deze note melden als spam of ongepast</a>",
         "de": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Notiz als Spam oder unangemessen melden</a>",
-        "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta esta nota como spam o inapropiada</a>"
+        "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta esta nota como spam o inapropiada</a>",
+        "ca": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta aquesta nota com spam o inapropiada</a>"
       }
     }
   ],
@@ -115,7 +120,8 @@
             "en": "Should mention {search} in the first comment",
             "nl": "Moet in de eerste opmerking \"{search}\" bevatten",
             "de": "Sollte {search} im ersten Kommentar erwähnen",
-            "es": "Debe mencionar {search} en el primer comentario"
+            "es": "Debe mencionar {search} en el primer comentario",
+            "ca": "Has de mencionar {search} en el primer comentari"
           }
         }
       ]
@@ -154,7 +160,8 @@
             "nl": "Geopend door bijdrager {search}",
             "de": "Erstellt von {search}",
             "es": "Abierto por el contributor {search}",
-            "fr": "Ouverte par {search}"
+            "fr": "Ouverte par {search}",
+            "ca": "Obert pel contribuïdor {search}"
           }
         }
       ]
@@ -173,7 +180,8 @@
             "en": "<b>Not</b> opened by contributor {search}",
             "nl": "<b>Niet</b> geopend door bijdrager {search}",
             "de": "<b>Nicht</b> erstellt von {search}",
-            "es": "<b>No</b> abierto por el contributor {search}"
+            "es": "<b>No</b> abierto por el contributor {search}",
+            "ca": "<b>No</b> obert pel contribuïdor {search}"
           }
         }
       ]
@@ -192,7 +200,8 @@
             "en": "Last edited by contributor {search}",
             "nl": "Laatst bewerkt door bijdrager {search}",
             "de": "Zuletzt bearbeitet von {search}",
-            "es": "Editada por última vez por el contributor {search}"
+            "es": "Editada por última vez por el contributor {search}",
+            "ca": "Editat per última vega pel contribuïdor {search}"
           }
         }
       ]
@@ -211,7 +220,8 @@
             "en": "Opened after {search}",
             "nl": "Geopend na {search}",
             "de": "Zuletzt bearbeitet nach dem {search}",
-            "es": "Abierta después de {search}"
+            "es": "Abierta después de {search}",
+            "ca": "Oberta després de {search}"
           }
         }
       ]
@@ -231,7 +241,8 @@
             "en": "Created before {search}",
             "nl": "Aangemaakt voor {search}",
             "de": "Erstellt vor dem {search}",
-            "es": "Creada antes de {search}"
+            "es": "Creada antes de {search}",
+            "ca": "Creada abans de {search}"
           }
         }
       ]
@@ -251,7 +262,8 @@
             "en": "Created after {search}",
             "nl": "Aangemaakt na {search}",
             "de": "Erstellt nach dem {search}",
-            "es": "Creada después de {search}"
+            "es": "Creada después de {search}",
+            "ca": "Creada després de {search}"
           }
         }
       ]
@@ -265,7 +277,8 @@
             "en": "Only show notes opened by an anonymous contributor",
             "nl": "Toon enkel de Notes geopend door een anonieme bijdrager",
             "de": "Nur Notizen anzeigen, die anonym erstellt wurden",
-            "es": "Solo mostrar las notas abiertas por contributores anómimos"
+            "es": "Solo mostrar las notas abiertas por contributores anómimos",
+            "ca": "Sols mostrar les notes obertes per contribuïdors anònims"
           }
         }
       ]
@@ -279,7 +292,8 @@
             "en": "Only show open notes",
             "nl": "Toon enkel open Notes",
             "de": "Nur offene Notizen anzeigen",
-            "es": "Solo mostrar las notas abiertas"
+            "es": "Solo mostrar las notas abiertas",
+            "ca": "Sols mostra les notes obertes"
           }
         }
       ]
@@ -292,7 +306,8 @@
             "en": "All Notes",
             "nl": "Alle Notes",
             "de": "Alle Notizen",
-            "es": "Todas las notas"
+            "es": "Todas las notas",
+            "ca": "Totes les notes"
           }
         },
         {
@@ -301,7 +316,8 @@
             "en": "Hide import notes",
             "nl": "Verberg import Notes",
             "de": "Importnotizen ausblenden",
-            "es": "Ocultar las nostras de importación"
+            "es": "Ocultar las notas de importación",
+            "ca": "Oculta les notes d'importació"
           }
         },
         {
@@ -310,7 +326,8 @@
             "en": "Show only import Notes",
             "nl": "Toon enkel import Notes",
             "de": "Nur Importnotizen anzeigen",
-            "es": "Solo mostrar las notas de importación"
+            "es": "Solo mostrar las notas de importación",
+            "ca": "Mostrar només les notes d'importació"
           }
         }
       ]

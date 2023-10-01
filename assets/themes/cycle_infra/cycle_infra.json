@@ -45,7 +45,6 @@
     "cs": "Mapa, kde můžete prohlížet a upravovat věci související s cyklistickou infrastrukturou. Vytvořeno během #osoc21."
   },
   "hideFromOverview": false,
-  "defaultBackgroundId": "CartoDB.Voyager",
   "icon": "./assets/themes/cycle_infra/cycle-infra.svg",
   "startLat": 51,
   "startLon": 3.75,

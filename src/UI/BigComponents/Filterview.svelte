@@ -55,8 +55,7 @@
 
 {#if filteredLayer.layerDef.name}
   <div bind:this={mainElem} class="mb-1.5">
-    <label class="no-image-background flex gap-1">
-      <Checkbox selected={isDisplayed} />
+    <Checkbox selected={isDisplayed}>
       <If condition={filteredLayer.isDisplayed}>
         <ToSvelte
           construct={() => layer.defaultIcon()?.SetClass("block h-6 w-6 no-image-background")}
@@ -75,7 +74,7 @@
           <Tr t={Translations.t.general.layerSelection.zoomInToSeeThisLayer} />
         </span>
       {/if}
-    </label>
+    </Checkbox>
 
     {#if $isDisplayed && filteredLayer.layerDef.filters?.length > 0}
       <div id="subfilters" class="ml-4 flex flex-col gap-y-1">
@@ -83,10 +82,9 @@
           <div>
             <!-- There are three (and a half) modes of filters: a single checkbox, a radio button/dropdown or with searchable fields -->
             {#if filter.options.length === 1 && filter.options[0].fields.length === 0}
-              <label>
-                <Checkbox selected={getBooleanStateFor(filter)} />
+              <Checkbox selected={getBooleanStateFor(filter)}>
                 {filter.options[0].question}
-              </label>
+              </Checkbox>
             {/if}
 
             {#if filter.options.length === 1 && filter.options[0].fields.length > 0}

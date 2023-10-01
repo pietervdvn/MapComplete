@@ -82,7 +82,7 @@ export default class FeatureSourceMerger implements IndexedFeatureSource {
         }
 
         const newList = []
-        all.forEach((value, key) => {
+        all.forEach((value) => {
             newList.push(value)
         })
         this.features.setData(newList)

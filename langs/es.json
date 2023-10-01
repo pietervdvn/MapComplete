@@ -414,10 +414,7 @@
     "reviews": {
         "affiliated_reviewer_warning": "(Revisión afiliada)",
         "name_required": "Se requiere un nombre para mostrar y crear comentarios",
-        "no_rating": "Da una calificación antes de enviar…",
         "no_reviews_yet": "Aún no hay reseñas. ¡Sé el primero en escribir una y ayuda a los datos abiertos y a los negocios!",
-        "plz_login": "Inicia sesión para dejar una reseña",
-        "posting_as": "Publicación como",
         "saved": "<span class=\"thanks\">Reseña guardada. ¡Gracias por compartir!</span>",
         "saving_review": "Guardando…",
         "title": "{count} comentarios",
@@ -427,7 +424,7 @@
     },
     "split": {
         "cancel": "Cancelar",
-        "hasBeenSplit": "Esta característica se ha separado",
+        "hasBeenSplit": "Esta vía se ha dividido",
         "inviteToSplit": "Dividir esta carretera en segmentos más pequeños. Esto te permite darle propiedades diferentes a partes diferentes de la carretera.",
         "loginToSplit": "Debes de haber iniciado sesión para dividir una carretera",
         "split": "Dividir",

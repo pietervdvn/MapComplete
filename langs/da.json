@@ -1,9 +1,16 @@
 {
+    "advanced": {
+        "title": "Avancerede egenskaber"
+    },
     "centerMessage": {
         "loadingData": "Indlæser data…",
         "ready": "Færdig!",
         "retrying": "Indlæsning af data fejlede. Prøver igen om {count} sekunder…",
         "zoomIn": "Zoom ind for at se og redigere data"
+    },
+    "communityIndex": {
+        "available": "Dette brugerfællesskab taler {native}",
+        "intro": "Få kontakt med andre personer for at lære mere fra dem …"
     },
     "delete": {
         "cancel": "Afbryd",
@@ -95,6 +102,7 @@
             "translatedBy": "MapComplete er oversat af {contributors} og <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} flere bidragsydere</a>"
         },
         "back": "Tilbage",
+        "backToIndex": "Gå tilbage til oversigten med alle tema-kort",
         "backgroundMap": "Baggrundskort",
         "cancel": "Afbryd",
         "confirm": "Bekræft",
@@ -140,6 +148,9 @@
         "loginToStart": "Log ind for at besvare dette spørgsmål",
         "loginWithOpenStreetMap": "Logind med OpenStreetMap",
         "logout": "Log ud",
+        "menu": {
+            "aboutMapComplete": "Om MapComplete"
+        },
         "morescreen": {
             "createYourOwnTheme": "Lave dit eget MapComplete tema fra bunden af",
             "hiddenExplanation": "Disse temaer er kun tilgængelige med linket. Du har opdaget {hidden_discovered} af {total_hidden} skjulte temaer.",
@@ -183,6 +194,10 @@
         },
         "pickLanguage": "Vælg et sprog: ",
         "poweredByOsm": "Drevet af OpenStreetMap",
+        "questionBox": {
+            "answeredOne": "Du besvarede ét spørgsmål",
+            "done": "Ikke flere spørgsmål! Mange tak!"
+        },
         "questions": {
             "emailIs": "Emailadressen på denne {category} er <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "Hvad er emailadressen på {category}?",
@@ -236,6 +251,7 @@
             "general": "På dette kort kan du se, redigere og tilføje <i> interessepunkter</i>. Zoom rundt for at se POI'et, tryk på et for at se eller redigere oplysningerne. Alle data er hentet fra og gemt i OpenStreetMap, som frit kan genbruges."
         },
         "wikipedia": {
+            "addEntry": "Tilføj endnu en Wikipedia-side",
             "createNewWikidata": "Opret et nyt Wikidata element",
             "doSearch": "Søg ovenfor for at se resultater",
             "failed": "Indlæsning af Wikipedia-artikel mislykkedes",
@@ -252,8 +268,14 @@
             "wikipediaboxTitle": "Wikipedia"
         }
     },
+    "hotkeyDocumentation": {
+        "action": "Handling",
+        "intro": "MapComplete understøtter følgende genvejstaster:",
+        "key": "Tastekombination"
+    },
     "image": {
         "addPicture": "Tilføj Billede",
+        "currentLicense": "Dine billeder vil blive udgivet under {license}",
         "doDelete": "Fjern billede",
         "dontDelete": "Afbryd",
         "isDeleted": "Slettet",
@@ -361,10 +383,7 @@
         "attribution": "Anmeldelserne er baseret på <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> og er tilgængelige under <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
         "i_am_affiliated": "<span>Jeg er tilknyttet dette objekt</span><br><span class=\"subtle\">Tjek, om du er ejer, skaber, ansat, ...</span>",
         "name_required": "Der kræves et navn for at vise og oprette anmeldelser",
-        "no_rating": "Ingen vurdering givet",
         "no_reviews_yet": "Der er ingen anmeldelser endnu. Vær den første til at skrive en og hjælpe åbne data og forretningen!",
-        "plz_login": "Log ind for at give en anmeldelse",
-        "posting_as": "Anmelder som",
         "saved": "<span class=\"thanks\">Anmeldelse gemt. Tak for at bidrage!</span>",
         "saving_review": "Gemmer…",
         "title": "{count} Anmeldelser",
@@ -385,6 +404,9 @@
         "allMissing": "Ingen oversættelser endnu",
         "missing": "{count} uoversatte strenge",
         "notImmediate": "Oversættelser opdateres ikke direkte. Det tager typisk et par dage"
+    },
+    "userinfo": {
+        "editDescription": "Ret din profilbeskrivelse"
     },
     "validation": {
         "color": {

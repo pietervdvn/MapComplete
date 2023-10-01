@@ -37,7 +37,7 @@ export class AvailableRasterLayers {
         geometry: BBox.global.asGeometry(),
     }
 
-    public static readonly maplibre: RasterLayerPolygon = {
+    public static readonly maptilerDefaultLayer: RasterLayerPolygon = {
         type: "Feature",
         properties: {
             name: "MapTiler",
@@ -53,6 +53,37 @@ export class AvailableRasterLayers {
         geometry: BBox.global.asGeometry(),
     }
 
+    public static readonly maptilerCarto: RasterLayerPolygon = {
+        type: "Feature",
+        properties: {
+            name: "MapTiler Carto",
+            url: "https://api.maptiler.com/maps/openstreetmap/style.json?key=GvoVAJgu46I5rZapJuAy",
+            category: "osmbasedmap",
+            id: "maptiler.carto",
+            type: "vector",
+            attribution: {
+                text: "Maptiler",
+                url: "https://www.maptiler.com/copyright/",
+            },
+        },
+        geometry: BBox.global.asGeometry(),
+    }
+
+    public static readonly maptilerBackdrop: RasterLayerPolygon = {
+        type: "Feature",
+        properties: {
+            name: "MapTiler Backdrop",
+            url: "https://api.maptiler.com/maps/backdrop/style.json?key=GvoVAJgu46I5rZapJuAy",
+            category: "osmbasedmap",
+            id: "maptiler.backdrop",
+            type: "vector",
+            attribution: {
+                text: "Maptiler",
+                url: "https://www.maptiler.com/copyright/",
+            },
+        },
+        geometry: BBox.global.asGeometry(),
+    }
     public static readonly americana: RasterLayerPolygon = {
         type: "Feature",
         properties: {
@@ -90,10 +121,14 @@ export class AvailableRasterLayers {
                     }
                     return GeoOperations.inside(lonlat, eliPolygon)
                 })
-                matching.unshift(AvailableRasterLayers.osmCarto)
-                matching.unshift(AvailableRasterLayers.americana)
-                matching.unshift(AvailableRasterLayers.maplibre)
                 matching.push(...AvailableRasterLayers.globalLayers)
+                matching.unshift(
+                    AvailableRasterLayers.maptilerDefaultLayer,
+                    AvailableRasterLayers.osmCarto,
+                    AvailableRasterLayers.maptilerCarto,
+                    AvailableRasterLayers.maptilerBackdrop,
+                    AvailableRasterLayers.americana
+                )
                 return matching
             })
         )

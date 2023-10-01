@@ -54,6 +54,7 @@ export class MangroveIdentity {
 export default class FeatureReviews {
     private static readonly _featureReviewsCache: Record<string, FeatureReviews> = {}
     public readonly subjectUri: Store<string>
+    public readonly average: Store<number | null>
     private readonly _reviews: UIEventSource<(Review & { madeByLoggedInUser: Store<boolean> })[]> =
         new UIEventSource([])
     public readonly reviews: Store<(Review & { madeByLoggedInUser: Store<boolean> })[]> =
@@ -123,6 +124,23 @@ export default class FeatureReviews {
             } catch (e) {
                 console.log("Could not fetch reviews for partially incorrect query ", sub)
             }
+        })
+        this.average = this._reviews.map((reviews) => {
+            if (!reviews) {
+                return null
+            }
+            if (reviews.length === 0) {
+                return null
+            }
+            let sum = 0
+            let count = 0
+            for (const review of reviews) {
+                if (review.rating !== undefined) {
+                    count++
+                    sum += review.rating
+                }
+            }
+            return Math.round(sum / count)
         })
     }
 
@@ -211,6 +229,8 @@ export default class FeatureReviews {
             hasNew = true
         }
         if (hasNew) {
+            self._reviews.data.sort((a, b) => b.iat - a.iat) // Sort with most recent first
+
             self._reviews.ping()
         }
     }

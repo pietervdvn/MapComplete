@@ -131,7 +131,7 @@ Another example is to search for species and trees:
         const searchResult: Store<{ success?: WikidataResponse[]; error?: any }> = searchField
             .GetValue()
             .bind((searchText) => {
-                if (searchText.length < 3) {
+                if (searchText.length < 3 && !searchText.match(/[qQ][0-9]+/)) {
                     return tooShort
                 }
                 const lang = Locale.language.data

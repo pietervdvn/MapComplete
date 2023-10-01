@@ -22,23 +22,16 @@ import { Store, Stores, UIEventSource } from "../Logic/UIEventSource"
 import AllTagsPanel from "./Popup/AllTagsPanel.svelte"
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders"
 import { ImageCarousel } from "./Image/ImageCarousel"
-import { ImageUploadFlow } from "./Image/ImageUploadFlow"
 import { VariableUiElement } from "./Base/VariableUIElement"
 import { Utils } from "../Utils"
 import Wikidata, { WikidataResponse } from "../Logic/Web/Wikidata"
 import { Translation } from "./i18n/Translation"
 import Translations from "./i18n/Translations"
-import ReviewForm from "./Reviews/ReviewForm"
-import ReviewElement from "./Reviews/ReviewElement"
 import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
 import LiveQueryHandler from "../Logic/Web/LiveQueryHandler"
 import { SubtleButton } from "./Base/SubtleButton"
 import Svg from "../Svg"
 import NoteCommentElement from "./Popup/NoteCommentElement"
-import ImgurUploader from "../Logic/ImageProviders/ImgurUploader"
-import FileSelectorButton from "./Input/FileSelectorButton"
-import { LoginToggle } from "./Popup/LoginButton"
-import Toggle from "./Input/Toggle"
 import { SubstitutedTranslation } from "./SubstitutedTranslation"
 import List from "./Base/List"
 import StatisticsPanel from "./BigComponents/StatisticsPanel"
@@ -74,6 +67,10 @@ import FediverseValidator from "./InputElement/Validators/FediverseValidator"
 import SendEmail from "./Popup/SendEmail.svelte"
 import NearbyImages from "./Popup/NearbyImages.svelte"
 import NearbyImagesCollapsed from "./Popup/NearbyImagesCollapsed.svelte"
+import UploadImage from "./Image/UploadImage.svelte"
+import AllReviews from "./Reviews/AllReviews.svelte"
+import StarsBarIcon from "./Reviews/StarsBarIcon.svelte"
+import ReviewForm from "./Reviews/ReviewForm.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -538,7 +535,7 @@ export default class SpecialVisualizations {
                     const keys = args[0].split(";").map((k) => k.trim())
                     const wikiIds: Store<string[]> = tagsSource.map((tags) => {
                         const key = keys.find((k) => tags[k] !== undefined && tags[k] !== "")
-                        return tags[key]?.split(";")?.map((id) => id.trim())
+                        return tags[key]?.split(";")?.map((id) => id.trim()) ?? []
                     })
                     return new SvelteUIElement(WikipediaPanel, {
                         wikiIds,
@@ -616,20 +613,91 @@ export default class SpecialVisualizations {
                     {
                         name: "image-key",
                         doc: "Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)",
-                        defaultValue: "image",
+                        required: false,
                     },
                     {
                         name: "label",
                         doc: "The text to show on the button",
-                        defaultValue: "Add image",
+                        required: false,
                     },
                 ],
                 constr: (state, tags, args) => {
-                    return new ImageUploadFlow(tags, state, args[0], args[1])
+                    return new SvelteUIElement(UploadImage, {
+                        state,
+                        tags,
+                        labelText: args[1],
+                        image: args[0],
+                    })
                 },
             },
             {
-                funcName: "reviews",
+                funcName: "rating",
+                docs: "Shows stars which represent the avarage rating on mangrove.reviews",
+                args: [
+                    {
+                        name: "subjectKey",
+                        defaultValue: "name",
+                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>",
+                    },
+                    {
+                        name: "fallback",
+                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
+                    },
+                ],
+                constr: (state, tags, args, feature, layer) => {
+                    const nameKey = args[0] ?? "name"
+                    let fallbackName = args[1]
+                    const reviews = FeatureReviews.construct(
+                        feature,
+                        tags,
+                        state.userRelatedState.mangroveIdentity,
+                        {
+                            nameKey: nameKey,
+                            fallbackName,
+                        }
+                    )
+                    return new SvelteUIElement(StarsBarIcon, {
+                        score: reviews.average,
+                        reviews,
+                        state,
+                        tags,
+                        feature,
+                        layer,
+                    })
+                },
+            },
+
+            {
+                funcName: "create_review",
+                docs: "Invites the contributor to leave a review. Somewhat small UI-element until interacted",
+                args: [
+                    {
+                        name: "subjectKey",
+                        defaultValue: "name",
+                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>",
+                    },
+                    {
+                        name: "fallback",
+                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
+                    },
+                ],
+                constr: (state, tags, args, feature, layer) => {
+                    const nameKey = args[0] ?? "name"
+                    let fallbackName = args[1]
+                    const reviews = FeatureReviews.construct(
+                        feature,
+                        tags,
+                        state.userRelatedState.mangroveIdentity,
+                        {
+                            nameKey: nameKey,
+                            fallbackName,
+                        }
+                    )
+                    return new SvelteUIElement(ReviewForm, { reviews, state, tags, feature, layer })
+                },
+            },
+            {
+                funcName: "list_reviews",
                 docs: "Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten",
                 example:
                     "`{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used",
@@ -644,10 +712,10 @@ export default class SpecialVisualizations {
                         doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
                     },
                 ],
-                constr: (state, tags, args, feature) => {
+                constr: (state, tags, args, feature, layer) => {
                     const nameKey = args[0] ?? "name"
                     let fallbackName = args[1]
-                    const mangrove = FeatureReviews.construct(
+                    const reviews = FeatureReviews.construct(
                         feature,
                         tags,
                         state.userRelatedState.mangroveIdentity,
@@ -656,9 +724,7 @@ export default class SpecialVisualizations {
                             fallbackName,
                         }
                     )
-
-                    const form = new ReviewForm((r) => mangrove.createReview(r), state)
-                    return new ReviewElement(mangrove, form)
+                    return new SvelteUIElement(AllReviews, { reviews, state, tags, feature, layer })
                 },
             },
             {
@@ -864,42 +930,10 @@ export default class SpecialVisualizations {
                     },
                 ],
                 constr: (state, tags, args) => {
-                    const isUploading = new UIEventSource(false)
-                    const t = Translations.t.notes
                     const id = tags.data[args[0] ?? "id"]
-
-                    const uploader = new ImgurUploader(async (url) => {
-                        isUploading.setData(false)
-                        await state.osmConnection.addCommentToNote(id, url)
-                        NoteCommentElement.addCommentTo(url, tags, state)
-                    })
-
-                    const label = new Combine([
-                        Svg.camera_plus_svg().SetClass("block w-12 h-12 p-1 text-4xl "),
-                        Translations.t.image.addPicture,
-                    ]).SetClass(
-                        "p-2 border-4 border-black rounded-full font-bold h-full align-center w-full flex justify-center"
-                    )
-
-                    const fileSelector = new FileSelectorButton(label)
-                    fileSelector.GetValue().addCallback((filelist) => {
-                        isUploading.setData(true)
-                        uploader.uploadMany("Image for osm.org/note/" + id, "CC0", filelist)
-                    })
-                    const ti = Translations.t.image
-                    const uploadPanel = new Combine([
-                        fileSelector,
-                        ti.respectPrivacy.SetClass("text-sm"),
-                    ]).SetClass("flex flex-col")
-                    return new LoginToggle(
-                        new Toggle(
-                            Translations.t.image.uploadingPicture.SetClass("alert"),
-                            uploadPanel,
-                            isUploading
-                        ),
-                        t.loginToAddPicture,
-                        state
-                    )
+                    tags = state.featureProperties.getStore(id)
+                    console.log("Id is", id)
+                    return new SvelteUIElement(UploadImage, { state, tags })
                 },
             },
             {
@@ -1155,19 +1189,24 @@ export default class SpecialVisualizations {
                         name: "class",
                         doc: "CSS-classes to add to the element",
                     },
+                    {
+                        name: "download",
+                        doc: "If set, this link will act as a download-button. The contents of `href` will be offered for download; this parameter will act as the proposed filename",
+                    },
                 ],
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
                     args: string[]
                 ): BaseUIElement {
-                    const [text, href, classnames] = args
+                    const [text, href, classnames, download] = args
                     return new VariableUiElement(
                         tagSource.map((tags) =>
                             new Link(
                                 Utils.SubstituteKeys(text, tags),
                                 Utils.SubstituteKeys(href, tags),
-                                true
+                                download === undefined && !href.startsWith("#"),
+                                Utils.SubstituteKeys(download, tags)
                             ).SetClass(classnames)
                         )
                     )

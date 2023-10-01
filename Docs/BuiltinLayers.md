@@ -76,9 +76,13 @@
     + [inbox](#inbox)
     + [settings-link](#settings-link)
     + [logout](#logout)
+    + [background-layer-readonly](#background-layer-readonly)
+    + [background-layer](#background-layer)
     + [picture-license](#picture-license)
     + [show_tags](#show_tags)
     + [all-questions-at-once](#all-questions-at-once)
+    + [fixate-north](#fixate-north)
+    + [mangrove-keys](#mangrove-keys)
     + [translations-title](#translations-title)
     + [translation-mode](#translation-mode)
     + [translation-help](#translation-help)
@@ -117,7 +121,6 @@ MapComplete has a few data layers available in the theme which have special prop
   - [split_point](#split_point)
   - [split_road](#split_road)
   - [current_view](#current_view)
-  - [matchpoint](#matchpoint)
   - [import_candidate](#import_candidate)
   - [usersettings](#usersettings)
 
@@ -473,7 +476,9 @@ Meta-layer, simply showing a bbox in red
 
   - This layer is shown at zoomlevel **0** and higher
   - **This layer is included automatically in every theme. This layer might contain no points**
+  - This layer is not visible by default and must be enabled in the filter by the user. 
   - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
+  - This layer is not visible by default and the visibility cannot be toggled, effectively resulting in a fully hidden layer. This can be useful, e.g. to calculate some metatags. If you want to render this layer (e.g. for debugging), enable it by setting the URL-parameter layer-<id>=true
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
 
@@ -861,6 +866,7 @@ This tagrendering has no question and is thus read-only
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  matchpoint 
 ============
@@ -903,6 +909,8 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
+>>>>>>> develop
+=======
 >>>>>>> develop
  import_candidate 
 ==================
@@ -1043,9 +1051,12 @@ this quick overview is incomplete
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/__url_parameter_initialized:language#values) [__url_parameter_initialized:language](https://wiki.openstreetmap.org/wiki/Key:__url_parameter_initialized:language) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:__url_parameter_initialized:language%3Dyes)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-preferred-background-layer#values) [mapcomplete-preferred-background-layer](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-preferred-background-layer) | Multiple choice | [](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-preferred-background-layer%3D) [osm](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-preferred-background-layer%3Dosm) [photo](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-preferred-background-layer%3Dphoto) [map](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-preferred-background-layer%3Dmap) [](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-preferred-background-layer%3D)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-pictures-license#values) [mapcomplete-pictures-license](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-pictures-license) | Multiple choice | [CC0](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC0) [CC-BY 4.0](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC-BY 4.0) [CC-BY-SA 4.0](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC-BY-SA 4.0)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-show_tags#values) [mapcomplete-show_tags](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show_tags) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_tags%3Dno) [](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_tags%3D) [yes](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_tags%3Dyes) [full](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_tags%3Dfull)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-show-all-questions#values) [mapcomplete-show-all-questions](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show-all-questions) | Multiple choice | [true](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show-all-questions%3Dtrue) [false](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show-all-questions%3Dfalse)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-fixate-north#values) [mapcomplete-fixate-north](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-fixate-north) | Multiple choice | [](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-fixate-north%3D) [yes](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-fixate-north%3Dyes)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-translation-mode#values) [mapcomplete-translation-mode](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode) | Multiple choice | [false](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dfalse) [true](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dtrue) [mobile](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dmobile)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-translation-mode#values) [mapcomplete-translation-mode](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dyes)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/_translation_percentage#values) [_translation_percentage](https://wiki.openstreetmap.org/wiki/Key:_translation_percentage) | Multiple choice | [100](https://wiki.openstreetmap.org/wiki/Tag:_translation_percentage%3D100)
@@ -1093,6 +1104,11 @@ This tagrendering has no question and is thus read-only
 
 
 
+  - *The language was set via an URL-parameter and cannot be set by the user.²*  corresponds with  `__url_parameter_initialized:language=yes`
+
+
+
+
 ### inbox 
 
 
@@ -1103,8 +1119,8 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *{link(Open your inbox,&LBRACE_backend&RBRACE/messages/inbox,)}*  corresponds with  `_unreadMessages=0`
-  - *{link(<b class='alert'>You have &LBRACE_unreadMessages&RBRACE</b><br/>Open your inbox,&LBRACE_backend&RBRACE/messages/inbox,)}*  corresponds with  `_unreadMessages>0`
+  - *{link(Open your inbox,&LBRACE_backend&RBRACE/messages/inbox,,)}*  corresponds with  `_unreadMessages=0`
+  - *{link(<b class='alert'>You have &LBRACE_unreadMessages&RBRACE</b><br/>Open your inbox,&LBRACE_backend&RBRACE/messages/inbox,,)}*  corresponds with  `_unreadMessages>0`
 
 
 
@@ -1125,6 +1141,39 @@ This tagrendering has no question and is thus read-only
 
 This tagrendering has no question and is thus read-only
 
+
+
+
+
+### background-layer-readonly 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_theme:backgroundLayer~.+&mapcomplete-preferred-background-layer~.+&_theme:backgroundLayer!=`
+
+
+
+### background-layer 
+
+
+
+The question is  *What background layer should be shown by default?*
+
+
+
+
+
+  - *Use the default background layer*  corresponds with  ``
+  - *Use OpenStreetMap-carto as default layer*  corresponds with  `mapcomplete-preferred-background-layer=osm`
+  - *Use aerial imagery as default background*  corresponds with  `mapcomplete-preferred-background-layer=photo`
+  - *Use a non-openstreetmap based map as default background*  corresponds with  `mapcomplete-preferred-background-layer=map`
+  - *Use the current background layer (<span class='code'>{__current_background}</span>) as default background*  corresponds with  `mapcomplete-preferred-background-layer=`
+  - *Use background layer <span class='code'>{mapcomplete-preferred-background-layer}</span> as default background*  corresponds with  `mapcomplete-preferred-background-layer~.+`
+  - This option cannot be chosen as answer
 
 
 
@@ -1180,6 +1229,32 @@ The question is  *Should questions for unknown data fields appear one-by-one or 
 
   - *Show all questions in the infobox together*  corresponds with  `mapcomplete-show-all-questions=true`
   - *Show questions one-by-one*  corresponds with  `mapcomplete-show-all-questions=false`
+
+
+
+
+### fixate-north 
+
+
+
+The question is  *Should north always be up?*
+
+
+
+
+
+  - *Allow to rotate the map*  corresponds with  ``
+  - *Always keep north pointing up*  corresponds with  `mapcomplete-fixate-north=yes`
+
+
+
+
+### mangrove-keys 
+
+
+
+This tagrendering has no question and is thus read-only
+
 
 
 
@@ -1265,8 +1340,8 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>*  corresponds with  `_mastodon_link~.+`
-  - *We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Edit your profile description</a> and place the following there: <span class='code'>&lta href="{_mastodon_candidate}" rel="me"&gtMastodon&lt/a&gt*  corresponds with  `_mastodon_candidate~.+`
+  - *A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>*  corresponds with  `_mastodon_link~.+`
+  - *We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Edit your profile description</a> and place the following there: <span class='code'>&lta href="{_mastodon_candidate}" rel="me"&gtMastodon&lt/a&gt*  corresponds with  `_mastodon_candidate~.+`
 
 
 
@@ -1408,6 +1483,7 @@ The following layers are included in MapComplete:
   - [dogpark](./Layers/dogpark.md)
   - [drinking_water](./Layers/drinking_water.md)
   - [elevator](./Layers/elevator.md)
+  - [elongated_coin](./Layers/elongated_coin.md)
   - [entrance](./Layers/entrance.md)
   - [etymology](./Layers/etymology.md)
   - [extinguisher](./Layers/extinguisher.md)
@@ -1439,6 +1515,7 @@ The following layers are included in MapComplete:
   - [maproulette](./Layers/maproulette.md)
   - [maproulette_challenge](./Layers/maproulette_challenge.md)
   - [maxspeed](./Layers/maxspeed.md)
+  - [memorial](./Layers/memorial.md)
   - [named_streets](./Layers/named_streets.md)
   - [nature_reserve](./Layers/nature_reserve.md)
   - [note](./Layers/note.md)
@@ -1457,6 +1534,7 @@ The following layers are included in MapComplete:
   - [postboxes](./Layers/postboxes.md)
   - [postoffices](./Layers/postoffices.md)
   - [public_bookcase](./Layers/public_bookcase.md)
+  - [questions](./Layers/questions.md)
   - [railway_platforms](./Layers/railway_platforms.md)
   - [rainbow_crossings](./Layers/rainbow_crossings.md)
   - [range](./Layers/range.md)
@@ -1466,6 +1544,7 @@ The following layers are included in MapComplete:
   - [selected_element](./Layers/selected_element.md)
   - [shelter](./Layers/shelter.md)
   - [shops](./Layers/shops.md)
+  - [shower](./Layers/shower.md)
   - [slow_roads](./Layers/slow_roads.md)
   - [speed_camera](./Layers/speed_camera.md)
   - [speed_display](./Layers/speed_display.md)
@@ -1486,6 +1565,7 @@ The following layers are included in MapComplete:
   - [transit_stops](./Layers/transit_stops.md)
   - [tree_node](./Layers/tree_node.md)
   - [usersettings](./Layers/usersettings.md)
+  - [vending_machine](./Layers/vending_machine.md)
   - [veterinary](./Layers/veterinary.md)
   - [viewpoint](./Layers/viewpoint.md)
   - [village_green](./Layers/village_green.md)
@@ -1496,4 +1576,4 @@ The following layers are included in MapComplete:
   - [windturbine](./Layers/windturbine.md)
  
 
-This document is autogenerated from [Customizations/AllKnownLayouts.ts](https://github.com/pietervdvn/MapComplete/blob/develop/Customizations/AllKnownLayouts.ts)
+This document is autogenerated from [src/Customizations/AllKnownLayouts.ts](https://github.com/pietervdvn/MapComplete/blob/develop/src/Customizations/AllKnownLayouts.ts)

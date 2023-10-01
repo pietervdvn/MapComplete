@@ -68,7 +68,8 @@
         "fr": "Toilettes avec au moins un WC accessible aux personnes à mobilité réduite",
         "nl": "Deze toiletten hebben op zijn minst één rolstoeltoegankelijke WC",
         "it": "Servizi igienici che hanno almeno una toilette accessibile a persone in sedia a rotelle",
-        "da": "Et toilet, der har mindst et kørestolsvenligt toilet"
+        "da": "Et toilet, der har mindst et kørestolsvenligt toilet",
+        "ca": "Un lavabo que tingui almenys un lavabo accessible per a cadira de rodes"
       }
     }
   ],
@@ -167,16 +168,27 @@
             "it": "Accesso pubblico",
             "ru": "Свободный доступ",
             "es": "De acceso público",
-            "da": "Offentlig adgang"
+            "da": "Offentlig adgang",
+            "ca": "Accés públic"
           },
           "hideInAnswer": true
         }
+      ],
+      "labels": [
+        "relevant-questions"
       ],
       "id": "toilet-access"
     },
     {
       "id": "toilets-fee",
-      "condition": "access!=no",
+      "labels": [
+        "relevant-questions"
+      ],
+      "condition": {
+        "and": [
+          "access!=no"
+        ]
+      },
       "question": {
         "en": "Are these toilets free to use?",
         "de": "Können diese Toiletten kostenlos benutzt werden?",
@@ -216,6 +228,9 @@
       ]
     },
     {
+      "labels": [
+        "relevant-questions"
+      ],
       "question": {
         "en": "How much does one have to pay for these toilets?",
         "de": "Wie viel muss man für die Nutzung bezahlen?",
@@ -238,14 +253,19 @@
         "da": "Gebyret er {charge}",
         "ca": "La taxa és {charge}"
       },
-      "condition": "fee=yes",
+      "condition": {
+        "and": [
+          "fee=yes"
+        ]
+      },
       "freeform": {
         "key": "charge",
         "type": "string",
         "placeholder": {
           "en": "e.g. 0.50 EUR",
           "nl": "bijv. 0.50 EUR",
-          "de": "z.B. 0.50 EUR"
+          "de": "z.B. 0.50 EUR",
+          "ca": "p. ex. 0.50 eur"
         }
       },
       "id": "toilet-charge"
@@ -253,24 +273,42 @@
     {
       "builtin": "payment-options-split",
       "override": {
-        "condition": "fee=yes"
+        "condition": {
+          "and": [
+            "fee=yes"
+          ]
+        },
+        "=labels": [
+          "relevant-questions"
+        ]
       }
     },
     {
       "builtin": "opening_hours_24_7",
       "override": {
-        "condition": "access!=no",
+        "condition": {
+          "and": [
+            "access!=no"
+          ]
+        },
+        "=labels": [
+          "relevant-questions"
+        ],
         "question": {
           "en": "When are these toilets opened?",
           "nl": "Wanneer zijn deze toiletten open?",
           "de": "Wann sind diese Toiletten geöffnet?",
           "fr": "Quand ces toilettes sont-elles ouvertes ?",
-          "da": "Hvornår åbnes disse toiletter?"
+          "da": "Hvornår åbnes disse toiletter?",
+          "ca": "Quan obrin aquests lavabos?"
         }
       }
     },
     {
       "id": "toilets-wheelchair",
+      "labels": [
+        "relevant-questions"
+      ],
       "question": {
         "en": "Is there a dedicated toilet for wheelchair users?",
         "de": "Können Rollstuhlfahrer die Toilette benutzen?",
@@ -323,11 +361,18 @@
     {
       "id": "wheelchair-door-width",
       "condition": {
-        "or": [
-          "wheelchair=yes",
-          "wheelchair=designated"
+        "and": [
+          {
+            "or": [
+              "wheelchair=yes",
+              "wheelchair=designated"
+            ]
+          }
         ]
       },
+      "labels": [
+        "relevant-questions"
+      ],
       "question": {
         "en": "What is the width of the door to the wheelchair accessible toilet?",
         "nl": "Hoe breed is de deur van de rolstoeltoegankelijke toilet?",
@@ -341,7 +386,8 @@
         "nl": "De deur naar de rolstoeltoegankelijke toilet is {canonical(door:width)} wide",
         "fr": "La porte des toilettes accessibles aux fauteuils roulants a une large de {canonical(door:width)}",
         "de": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(door:width)} breit",
-        "da": "Døren til det kørestolsvenlige toilet er {canonical(door:width)} bred"
+        "da": "Døren til det kørestolsvenlige toilet er {canonical(door:width)} bred",
+        "ca": "La porta del vàter accessible amb cadira de rodes té {canonical(door:width)} d'ample"
       },
       "freeform": {
         "key": "door:width",
@@ -350,6 +396,9 @@
     },
     {
       "id": "toilets-type",
+      "labels": [
+        "relevant-questions"
+      ],
       "question": {
         "en": "Which kind of toilets are this?",
         "de": "Welche Toiletten gibt es hier?",
@@ -415,6 +464,9 @@
     },
     {
       "id": "toilets-changing-table",
+      "labels": [
+        "relevant-questions"
+      ],
       "question": {
         "en": "Is a changing table (to change diapers) available?",
         "de": "Ist hier ein Wickeltisch (zum Wechseln von Babywindeln) vorhanden?",
@@ -454,6 +506,9 @@
       ]
     },
     {
+      "labels": [
+        "relevant-questions"
+      ],
       "question": {
         "en": "Where is the changing table located?",
         "de": "Wo befindet sich der Wickeltisch?",
@@ -461,7 +516,8 @@
         "nl": "Waar bevindt de luiertafel zich?",
         "it": "Dove si trova il fasciatoio?",
         "es": "¿Dónde está el cambiador?",
-        "da": "Hvor er puslebordet placeret?"
+        "da": "Hvor er puslebordet placeret?",
+        "ca": "On està el canviador?"
       },
       "render": {
         "en": "The changing table is located at {changing_table:location}",
@@ -470,9 +526,12 @@
         "nl": "De luiertafel bevindt zich in {changing_table:location}",
         "it": "Il fasciatoio si trova presso {changing_table:location}",
         "es": "El cambiador está en {changing_table:location}",
-        "da": "Puslebordet er placeret på {changing_table:location}"
+        "da": "Puslebordet er placeret på {changing_table:location}",
+        "ca": "El cambiador està a {changing_table:location}"
       },
-      "condition": "changing_table=yes",
+      "condition": {
+        "and":["changing_table=yes"]
+      },
       "freeform": {
         "key": "changing_table:location",
         "inline": true
@@ -485,7 +544,8 @@
             "fr": "La table à langer est dans les toilettes pour femmes. ",
             "nl": "De luiertafel bevindt zich in de vrouwentoiletten ",
             "it": "Il fasciatoio è nei servizi igienici femminili. ",
-            "da": "Puslebordet er på toilettet til kvinder. "
+            "da": "Puslebordet er på toilettet til kvinder. ",
+            "ca": "El canviador està al lavabo per a dones. "
           },
           "if": "changing_table:location=female_toilet"
         },
@@ -495,7 +555,8 @@
             "de": "Der Wickeltisch befindet sich in der Herrentoilette. ",
             "fr": "La table à langer est dans les toilettes pour hommes. ",
             "nl": "De luiertafel bevindt zich in de herentoiletten ",
-            "it": "Il fasciatoio è nei servizi igienici maschili. "
+            "it": "Il fasciatoio è nei servizi igienici maschili. ",
+            "ca": "El canviador està al lavabo per a homes. "
           },
           "if": "changing_table:location=male_toilet"
         },
@@ -507,7 +568,8 @@
             "fr": "La table à langer est dans les toilettes pour personnes à mobilité réduite. ",
             "nl": "De luiertafel bevindt zich in de rolstoeltoegankelijke toilet ",
             "it": "Il fasciatoio è nei servizi igienici per persone in sedia a rotelle. ",
-            "da": "Puslebordet er på toilettet for kørestolsbrugere. "
+            "da": "Puslebordet er på toilettet for kørestolsbrugere. ",
+            "ca": "El canviador està al lavabo per a usuaris de cadira de rodes. "
           }
         },
         {
@@ -519,13 +581,17 @@
             "nl": "De luiertafel bevindt zich in een daartoe voorziene kamer ",
             "it": "Il fasciatoio è in una stanza dedicata. ",
             "es": "El cambiador está en una habitación dedicada ",
-            "da": "Vuggestuen står i et særligt rum. "
+            "da": "Vuggestuen står i et særligt rum. ",
+            "ca": "El canviador està en una habitació dedicada. "
           }
         }
       ],
       "id": "toilet-changing_table:location"
     },
     {
+      "labels": [
+        "relevant-questions"
+      ],
       "id": "toilet-handwashing",
       "question": {
         "en": "Do these toilets have a sink to wash your hands?",
@@ -565,6 +631,9 @@
     },
     {
       "id": "toilet-has-paper",
+      "labels": [
+        "relevant-questions"
+      ],
       "question": {
         "en": "Does one have to bring their own toilet paper to this toilet?",
         "nl": "Moet je je eigen toiletpapier meenemen naar deze toilet?",
@@ -620,7 +689,8 @@
             "de": "Barrierefrei",
             "es": "Accesible con sillas de ruedas",
             "fr": "Accessible aux fauteuils roulants",
-            "da": "Tilgængelig for kørestolsbrugere"
+            "da": "Tilgængelig for kørestolsbrugere",
+            "ca": "Accessible amb cadira de rodes"
           },
           "osmTags": {
             "or": [
@@ -641,7 +711,8 @@
             "de": "Mit Wickeltisch",
             "es": "Tiene un cambiador",
             "fr": "A une table à langer",
-            "da": "Har et puslebord"
+            "da": "Har et puslebord",
+            "ca": "Té un canviador"
           },
           "osmTags": "changing_table=yes"
         }
@@ -669,7 +740,8 @@
     "de": "Eine Ebene mit (öffentlichen) Toiletten",
     "es": "Una capa que muestra baños (públicos)",
     "fr": "Un calque montrant les toilettes (publiques)",
-    "da": "Et lag, der viser (offentlige) toiletter"
+    "da": "Et lag, der viser (offentlige) toiletter",
+    "ca": "Una capa que mostra banys (publics)"
   },
   "units": [
     {
@@ -688,7 +760,8 @@
             "fr": "mètre",
             "de": "Meter",
             "da": "meter",
-            "pa_PK": "میٹر"
+            "pa_PK": "میٹر",
+            "ca": "metre"
           }
         },
         {
@@ -703,7 +776,8 @@
             "fr": "centimètre",
             "de": "Zentimeter",
             "da": "centimeter",
-            "pa_PK": "سینٹیمیٹر"
+            "pa_PK": "سینٹیمیٹر",
+            "ca": "centimetre"
           }
         }
       ]

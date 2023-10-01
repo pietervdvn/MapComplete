@@ -1,0 +1,21 @@
+hosted.mapcomplete.org {
+	root * public/
+	file_server
+	header {
+		+Permissions-Policy "interest-cohort=()"
+        +Report-To `\{"group":"csp-endpoint", "max_age": 86400,"endpoints": [\{"url": "https://report.mapcomplete.org/csp"}], "include_subdomains": true}`
+		+Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' https://gc.zgo.at ; img-src * ; report-uri https://report.mapcomplete.org/csp ; report-to csp-endpoint ;"
+	}
+}
+
+countrycoder.mapcomplete.org {
+	root * tiles/
+	file_server
+}
+
+
+report.mapcomplete.org {
+	reverse_proxy {
+		to http://127.0.0.1:2600
+	}
+}

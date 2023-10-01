@@ -672,6 +672,9 @@
                     },
                     "1": {
                         "then": "Diese Bank hat kein integriertes Kunstwerk"
+                    },
+                    "2": {
+                        "then": "Die Bank hat <span class=\"subtle\">vermutlich</span> kein integriertes Kunstwerk"
                     }
                 },
                 "question": "Hat diese Bank ein künstlerisches Element?",
@@ -4202,6 +4205,18 @@
                     }
                 }
             },
+            "speech_output_available": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Aufzug verfügt über eine Sprachausgabe"
+                    },
+                    "1": {
+                        "then": "Der Aufzug verfügt über keine Sprachausgabe"
+                    }
+                },
+                "question": "Verfügt der Aufzug über eine Sprachausgabe?",
+                "questionHint": "Z.B. werden Stockwerke angesagt"
+            },
             "tactile_writing_language": {
                 "render": {
                     "special": {
@@ -4229,28 +4244,34 @@
         }
     },
     "elongated_coin": {
-        "description": "Ebene mit Münzpressen.",
-        "name": "Münzpressen",
+        "description": "Ebene mit Münzprägeautomaten.",
+        "name": "Münzprägeautomaten",
         "presets": {
             "0": {
-                "title": "Eine Münzpresse"
+                "title": "Einen Münzprägeautomaten"
             }
         },
         "tagRenderings": {
             "charge": {
                 "freeform": {
-                    "placeholder": "Einwurf (z.B. 0,5€)"
+                    "placeholder": "Gebühr (z.B. 0,50 €)"
                 },
                 "mappings": {
                     "0": {
-                        "then": "Eine Münze zu Pressen kostet 1 Euro."
+                        "then": "Die Prägung einer Münze kostet 1,00 €."
                     },
                     "1": {
-                        "then": "Eine Münze zu Pressen kostet 2€."
+                        "then": "Die Prägung einer Münze kostet 2,00 €."
+                    },
+                    "2": {
+                        "then": "Die Prägung einer Münze kostet 2 Schweizer Franken."
+                    },
+                    "3": {
+                        "then": "Die Prägung einer Münze kostet 1 Schweizer Franken."
                     }
                 },
-                "question": "Wieviel kostet es eine Münze zu Pressen?",
-                "render": "Es kostet {charge}€ um eine Münze zu Pressen."
+                "question": "Wieviel kostet die Prägung einer Münze?",
+                "render": "Die Prägung einer Münze kostet {charge}."
             },
             "coin": {
                 "freeform": {
@@ -4258,23 +4279,29 @@
                 },
                 "mappings": {
                     "0": {
-                        "then": "Die Münzpresse benötigt eine 2 Cent Münze um zu Pressen."
+                        "then": "Der Automat prägt 2 Cent Münzen."
                     },
                     "1": {
-                        "then": "Die Münzpresse benötigt eine 5 Cent Münze um zu Pressen."
+                        "then": "Der Automat prägt 5 Cent Münzen."
                     },
                     "2": {
-                        "then": "Die Münzpresse benötigt eine 10 Cent Münze um zu Pressen."
+                        "then": "Der Automat prägt 10 Cent Münzen."
                     },
                     "3": {
-                        "then": "Die Münzpresse benötigt eine 25 Cent Münze um zu Pressen."
+                        "then": "Der Automat prägt 25 Cent Münzen."
                     },
                     "4": {
-                        "then": "Die Münzpresse benötigt eine 50 Cent Münze um zu Pressen."
+                        "then": "Der Automat prägt 50 Cent Münzen."
+                    },
+                    "5": {
+                        "then": "Der Automat prägt 10 Centime Münzen."
+                    },
+                    "6": {
+                        "then": "Der Automat prägt 5 Centime Münzen."
                     }
                 },
-                "question": "Welche Münze wird zum Pressen verwendet?",
-                "render": "Die Münzpresse benötigt eine {coin:type} Münze um zu Pressen."
+                "question": "Welche Münzen können geprägt werden?",
+                "render": "Der Automat prägt {coin:type} Cent Münzen."
             },
             "designs": {
                 "freeform": {
@@ -4282,35 +4309,49 @@
                 },
                 "mappings": {
                     "0": {
-                        "then": "Die Münzpresse hat ein Motiv zur Auswahl."
+                        "then": "Der Prägeautomat hat ein Motiv zur Auswahl."
                     },
                     "1": {
-                        "then": "Die Münzpresse hat zwei Motive zur Auswahl."
+                        "then": "Der Prägeautomat hat zwei Motive zur Auswahl."
                     },
                     "2": {
-                        "then": "Die Münzpresse hat drei Motive zur Auswahl."
+                        "then": "Der Prägeautomat hat drei Motive zur Auswahl."
                     },
                     "3": {
-                        "then": "Die Münzpresse hat vier Motive zur Auswahl."
+                        "then": "Der Prägeautomat hat vier Motive zur Auswahl."
                     }
                 },
                 "question": "Wieviele Motive sind verfügbar?",
-                "render": "Die Münzpresse hat {coin:design_count} Motive zur Auswahl."
+                "render": "Der Prägeautomat hat {coin:design_count} Motive zur Auswahl."
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Das Prägen ist kostenpflichtig."
+                    },
+                    "1": {
+                        "then": "Das Prägen ist kostenpflichtig."
+                    },
+                    "2": {
+                        "then": "Das Prägen ist kostenlos."
+                    }
+                },
+                "question": "Ist das Prägen kostenpflichtig?"
             },
             "indoor": {
                 "mappings": {
                     "0": {
-                        "then": "Die Münzpresse befindet sich im Inneren."
+                        "then": "Der Prägeautomat befindet sich im Inneren."
                     },
                     "1": {
-                        "then": "Die Münzpresse befindet sich Draußen."
+                        "then": "Der Prägeautomat befindet sich im Freien."
                     }
                 },
-                "question": "Befindet sich die Münzpresse im Inneren?"
+                "question": "Befindet sich der Prägeautomat im Inneren?"
             }
         },
         "title": {
-            "render": "Münzpresse"
+            "render": "Prägeautomat"
         }
     },
     "entrance": {
@@ -4839,9 +4880,6 @@
             },
             "2": {
                 "options": {
-                    "0": {
-                        "question": "Vegetarische Gerichte im Angebot"
-                    },
                     "1": {
                         "question": "Nur Fastfood-Geschäfte"
                     },
@@ -4850,17 +4888,10 @@
                     }
                 }
             },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Vegane Gerichte im Angebot"
-                    }
-                }
-            },
             "4": {
                 "options": {
                     "0": {
-                        "question": "Halal Gerichte im Angebot"
+                        "question": "Vegane Gerichte im Angebot"
                     }
                 }
             },
@@ -6890,6 +6921,20 @@
             }
         },
         "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Postfiliale verfügt über einen Geldautomat"
+                    },
+                    "1": {
+                        "then": "Die Postfiliale verfügt <b>nicht</b> über einen Geldautomat"
+                    },
+                    "2": {
+                        "then": "Die Postfiliale verfügt über einen Geldautomat, der aber bereits separat kartiert ist"
+                    }
+                },
+                "question": "Verfügt die Postfiliale über einen Geldautomat?"
+            },
             "letter-from": {
                 "mappings": {
                     "0": {
@@ -7300,27 +7345,6 @@
                     }
                 }
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Das Objekt befindet sich unter der Erde"
-                    },
-                    "1": {
-                        "then": "Das Objekt befindet sich im Erdgeschoss"
-                    },
-                    "2": {
-                        "then": "Das Objekt befindet sich im Erdgeschoss"
-                    },
-                    "3": {
-                        "then": "Das Objekt befindet sich im 1. Obergeschoss"
-                    },
-                    "4": {
-                        "then": "Das Objekt befindet sich im 1. Untergeschoss"
-                    }
-                },
-                "question": "Auf welcher Ebene befindet sich das Objekt?",
-                "render": "Das Objekt befindet sich im {level}. Geschoss"
-            },
             "luminous_or_lit": {
                 "mappings": {
                     "0": {
@@ -7435,6 +7459,27 @@
                     }
                 },
                 "question": "Gibt es hier Steckdosen, an denen Kunden ihre Geräte laden können?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Das Objekt befindet sich unter der Erde"
+                    },
+                    "1": {
+                        "then": "Das Objekt befindet sich im Erdgeschoss"
+                    },
+                    "2": {
+                        "then": "Das Objekt befindet sich im Erdgeschoss"
+                    },
+                    "3": {
+                        "then": "Das Objekt befindet sich im 1. Obergeschoss"
+                    },
+                    "4": {
+                        "then": "Das Objekt befindet sich im 1. Untergeschoss"
+                    }
+                },
+                "question": "Auf welcher Ebene befindet sich das Objekt?",
+                "render": "Das Objekt befindet sich im {level}. Geschoss"
             },
             "smoking": {
                 "mappings": {
@@ -9578,7 +9623,12 @@
                 }
             },
             "mangrove-keys": {
-                "render": "<a href='data:application/json,{mangroveidentity}' download='mangrove_private_key_{_name}'>Laden Sie den privaten Schlüssel für Ihr Mangrove-Konto herunter</a> <p>Jeder, der diese Datei besitzt, kann mit Ihrer Identität Rezensionen vornehmen</p>"
+                "render": {
+                    "after": "Jeder, der diese Datei besitzt, kann mit Ihrer Identität Rezensionen vornehmen",
+                    "special": {
+                        "text": "Laden Sie den privaten Schlüssel für Ihr Mangrove-Konto herunter"
+                    }
+                }
             },
             "picture-license": {
                 "mappings": {
@@ -9741,6 +9791,9 @@
                         "question": "Verkauf von Kartoffeln"
                     },
                     "16": {
+                        "question": "Verkauf von Fleisch"
+                    },
+                    "17": {
                         "question": "Verkauf von Blumen"
                     }
                 }
@@ -9821,8 +9874,14 @@
                     "14": {
                         "then": "Kartoffeln werden verkauft"
                     },
-                    "15": {
+                    "16": {
                         "then": "Blumen werden verkauft"
+                    },
+                    "17": {
+                        "then": "Parkscheine werden verkauft"
+                    },
+                    "19": {
+                        "then": "Fahrscheine werden verkauft"
                     }
                 },
                 "question": "Was wird in diesem Automaten verkauft?",

@@ -283,10 +283,6 @@
                 "then": "./assets/layers/kerbs/KerbIcon.svg"
               },
               {
-                "if": "theme=mapcomplete-changes",
-                "then": "./assets/svg/logo.svg"
-              },
-              {
                 "if": "theme=maproulette",
                 "then": "./assets/layers/maproulette/logomark.svg"
               },

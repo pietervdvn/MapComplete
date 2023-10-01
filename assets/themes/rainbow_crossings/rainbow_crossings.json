@@ -24,7 +24,6 @@
   },
   "icon": "./assets/themes/rainbow_crossings/logo.svg",
   "startLat": 50.8465573,
-  "defaultBackgroundId": "CartoDB.Voyager",
   "startLon": 4.351697,
   "startZoom": 16,
   "widenFactor": 2,

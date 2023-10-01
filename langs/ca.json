@@ -344,6 +344,8 @@
         },
         "useSearch": "Utilitzeu la cerca de dalt per veure els valors predefinits",
         "useSearchForMore": "Utilitzeu la funció de cerca per cercar dins de {total} valors més…",
+        "waitingForGeopermission": "Esperant al vostre permís per a utilitzar la geolocalització…",
+        "waitingForLocation": "Buscant la vostra ubicació actual…",
         "weekdays": {
             "abbreviations": {
                 "friday": "Div",
@@ -380,6 +382,7 @@
                 "born": "Nascut: {value}",
                 "died": "Mort: {value}"
             },
+            "readMore": "Llig la resta de l'article",
             "searchToShort": "La vostra consulta de cerca és massa curta, introduïu un text més llarg",
             "searchWikidata": "Cercar a Wikidata",
             "wikipediaboxTitle": "Viquipèdia"
@@ -405,9 +408,30 @@
         "doDelete": "Esborrar imatge",
         "dontDelete": "Cancel·lar",
         "isDeleted": "Esborrada",
+        "nearby": {
+            "link": "Aquesta imatge mostra l'objecte",
+            "seeNearby": "Explora i vincula imatges properes",
+            "title": "Imatges a peu de carrer properes"
+        },
         "pleaseLogin": "Entrar per pujar una foto",
         "respectPrivacy": "Respecta la privacitat. No fotografiïs gent o matrícules. No facis servir imatges de Google Maps, Google Streetview o altres fonts amb copyright.",
         "toBig": "La teva imatge és massa gran ara que medeix {actual_size}. Usa imatges de com a molt {max_size}",
+        "upload": {
+            "failReasons": "És possible que hàgiu perdut la connexió a Internet",
+            "failReasonsAdvanced": "Com a alternativa, assegureu-vos que el vostre navegador i les extensions no bloquegen les API de tercers.",
+            "multiple": {
+                "done": "{count} imatges s'han penjat correctament. Gràcies!",
+                "partiallyDone": "S'estan penjant {count} imatges, {done} imatges s'hanpenjat…",
+                "someFailed": "Ho sentim, no hem pogut penjar {count} imatges",
+                "uploading": "S'estan penjant {count} imatges…"
+            },
+            "one": {
+                "done": "La teva imatge s'ha penjat correctament. Gràcies!",
+                "failed": "Ho sentim, no hem pogut penjar la teva imatge",
+                "retrying": "La teva imatge està tornant a penjar-se…",
+                "uploading": "La teva imatge s'està penjant…"
+            }
+        },
         "uploadDone": "La teva imatge ha estat afegida. Gràcies per ajudar!",
         "uploadFailed": "No s'ha pogut pujar la imatge. Tens Internet i es permeten API de tercers? El navegador Brave o UMatrix podria bloquejar-les.",
         "uploadMultipleDone": "S'han afegit {count} imatges. Gràcies per ajudar!",
@@ -493,7 +517,9 @@
     },
     "plantDetection": {
         "back": "Tornar a la visió general de les espècies",
+        "button": "Detecta automàticament les espècies vegetals mitjançant la IA de Plantnet.org",
         "confirm": "Seleccioneu espècies",
+        "done": "S'ha aplicat l'espècie",
         "error": "S'ha produït un error en detectar l'espècie d'arbre: {error}",
         "howTo": {
             "intro": "Per obtenir resultats òptims,",
@@ -510,7 +536,8 @@
         "poweredByPlantnet": "Desenvolupat per <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
         "querying": "Consultant a plantnet.org amb {length} imatges",
         "seeInfo": "Veure més informació sobre l'espècie",
-        "takeImages": "Feu imatges de l'arbre per detectar automàticament el tipus d'arbre"
+        "takeImages": "Feu imatges de l'arbre per detectar automàticament el tipus d'arbre",
+        "tryAgain": "Seleccioneu una espècie diferent"
     },
     "privacy": {
         "editing": "Quan facis un canvi al mapa, aquest canvi es registra a OpenStreetMap i està disponible públicament per a tothom. Un conjunt de canvis fet amb MapComplete inclou les dades següents: <ul><li>Els canvis que has fet</li><li>El teu nom d'usuari</li><li>Quan es fa aquest canvi</li><li>La petició que vas utilitzar mentre feies el canvi</li><li>L'idioma de la interfície d'usuari</li><li>Una indicació de la proximitat a la que estaves dels objectes canviats. Altres mapejadors poden utilitzar aquesta informació per determinar si es va fer un canvi basant-se en una enquesta o en una investigació remota</li></ul> Consulta <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">la política de privadesa a OpenStreetMap.org</a> per obtenir informació detallada. Ens agradaria recordar-te que pots utilitzar un nom de ficció quan et registris.",
@@ -531,24 +558,21 @@
         "attribution": "Les ressenyes funcionen gràcies a <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> i estan disponibles sota <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
         "i_am_affiliated": "<span>Tinc alguna filiació amb aquest objecte</span><br/><span class='subtle'>Marca-ho si n'ets cap, creador, treballador, …</span>",
         "name_required": "És requerit un nom per mostrar i crear revisions",
-        "no_rating": "Doneu una puntuació abans d'enviar…",
         "no_reviews_yet": "No hi ha revisions encara. Sigues el primer a escriure'n una i ajuda al negoci i a les dades lliures!",
-        "plz_login": "Entra per deixar una revisió",
-        "posting_as": "Enviat com",
         "save": "Desar",
         "saved": "<span class=\"thanks\">Revisió compartida. Gràcies per compartir!</span>",
         "saving_review": "Desant…",
         "title": "{count} revisions",
         "title_singular": "Una revisió",
         "tos": "Si crees una ressenya estàs d'acord amb <a href=\"https://mangrove.reviews/terms\" target=\"_blank\"> els Termes de Servei i política de privacitat de Mangrove.reviews</a>",
-        "write_a_comment": "Deixa una revisió…"
+        "write_a_comment": "Deixa una ressenya…"
     },
     "split": {
         "cancel": "Cancel·lar",
-        "hasBeenSplit": "Has tallat aquesta via",
+        "hasBeenSplit": "Aquesta via s'ha dividit",
         "inviteToSplit": "Talla aquesta carretera en trossos més petits. Això et permetrà afegir informacions diferents a les parts.",
-        "loginToSplit": "Has d'entrar per poder tallar una carretera",
-        "split": "Tallar",
+        "loginToSplit": "Has d'entrar per poder dividir una carretera",
+        "split": "Dividir",
         "splitAgain": "Torneu a dividir aquesta carretera",
         "splitTitle": "Trieu al mapa on canvien les propietats d'aquesta carretera"
     },
@@ -568,7 +592,7 @@
     },
     "validation": {
         "color": {
-            "description": "Un color o codi hex"
+            "description": "Un color o codi hexadecimal"
         },
         "date": {
             "description": "Una data, començant per l'any"

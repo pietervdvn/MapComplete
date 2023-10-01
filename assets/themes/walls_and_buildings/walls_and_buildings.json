@@ -26,7 +26,6 @@
   },
   "icon": "./assets/layers/walls_and_buildings/walls_and_buildings.png",
   "startLat": 50.8465573,
-  "defaultBackgroundId": "CartoDB.Voyager",
   "startLon": 4.351697,
   "startZoom": 16,
   "widenFactor": 2,

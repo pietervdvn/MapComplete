@@ -54,7 +54,7 @@
   "startLon": 0,
   "startZoom": 1,
   "widenFactor": 2,
-  "defaultBackgroundId": "osm",
+  "defaultBackgroundId": "maptiler.carto",
   "layers": [
     "surveillance_camera"
   ]

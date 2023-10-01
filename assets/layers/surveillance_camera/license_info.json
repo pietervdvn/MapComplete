@@ -1,0 +1,30 @@
+[
+  {
+    "path": "ALPR.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "ALPR_Example.jpg",
+    "license": "CC-BY-NC 2.0",
+    "authors": [
+      "synx508"
+    ],
+    "sources": [
+      "https://www.flickr.com/photos/synx508/5742253934/"
+    ]
+  },
+  {
+    "path": "ALPR_Example2.jpg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "https://commons.wikimedia.org/wiki/User:Mbrickn"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:ANPR_Camera_Front.jpg"
+    ]
+  }
+]

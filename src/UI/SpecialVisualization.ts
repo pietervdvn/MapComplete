@@ -15,6 +15,8 @@ import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
 import { MenuState } from "../Models/MenuState"
 import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader"
 import { RasterLayerPolygon } from "../Models/RasterLayers"
+import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
+import { OsmTags } from "../Models/OsmFeature"
 
 /**
  * The state needed to render a special Visualisation.
@@ -25,7 +27,10 @@ export interface SpecialVisualizationState {
     readonly featureSwitches: FeatureSwitchState
 
     readonly layerState: LayerState
-    readonly featureProperties: { getStore(id: string): UIEventSource<Record<string, string>> }
+    readonly featureProperties: {
+        getStore(id: string): UIEventSource<Record<string, string>>
+        trackFeature?(feature: { properties: OsmTags })
+    }
 
     readonly indexedFeatures: IndexedFeatureSource
 
@@ -65,6 +70,7 @@ export interface SpecialVisualizationState {
 
     readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
     readonly userRelatedState: {
+        readonly imageLicense: UIEventSource<string>
         readonly showTags: UIEventSource<"no" | undefined | "always" | "yes" | "full">
         readonly mangroveIdentity: MangroveIdentity
         readonly showAllQuestionsAtOnce: UIEventSource<boolean>
@@ -74,6 +80,8 @@ export interface SpecialVisualizationState {
     readonly lastClickObject: WritableFeatureSource
 
     readonly availableLayers: Store<RasterLayerPolygon[]>
+
+    readonly imageUploadManager: ImageUploadManager
 }
 
 export interface SpecialVisualization {

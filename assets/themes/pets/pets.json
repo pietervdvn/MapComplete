@@ -144,14 +144,7 @@
             "width": 5
           }
         ],
-        "presets": [
-          {
-            "tags": [
-              "shop=yes",
-              "dog=yes"
-            ]
-          }
-        ],
+        "=presets": [],
         "source": {
           "=osmTags": {
             "and": [

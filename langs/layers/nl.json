@@ -568,6 +568,9 @@
                     },
                     "1": {
                         "then": "Deze bank heeft geen geïntegreerd kunstwerk"
+                    },
+                    "2": {
+                        "then": "Deze bank heeft <span class=\"subtle\">waarschijnlijk</span> geen geïntegreerd kunstwerk"
                     }
                 },
                 "question": "Heeft deze bank een geïntegreerd kunstwerk?",
@@ -927,6 +930,28 @@
                 },
                 "question": "Is deze verkoopsautomaat nog steeds werkende?",
                 "render": "Deze verkoopsautomaat is <i>{operational_status}</i>"
+            },
+            "other-items-vending": {
+                "mappings": {
+                    "0": {
+                        "then": "Fietsbinnenbanden worden hier verkocht"
+                    },
+                    "1": {
+                        "then": "Fietslampjes worden hier verkocht"
+                    },
+                    "2": {
+                        "then": "Handschoenen worden hier verkocht"
+                    },
+                    "3": {
+                        "then": "Fietsreparatiesets worden hier verkocht"
+                    },
+                    "4": {
+                        "then": "Fietspompen worden hier verkocht"
+                    },
+                    "5": {
+                        "then": "Fietssloten worden hier verkocht"
+                    }
+                }
             }
         },
         "title": {
@@ -4279,7 +4304,7 @@
             },
             "wikipedia-etymology": {
                 "question": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?",
-                "render": "<h3>Wikipedia artikel van de naamgever</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
+                "render": "<h3>Wikipedia-artikel van de naamgever</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
             },
             "zoeken op inventaris onroerend erfgoed": {
                 "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Zoeken op inventaris onroerend erfgoed</a>"
@@ -4523,24 +4548,17 @@
                     }
                 }
             },
-            "2": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Heeft een vegetarisch menu"
                     }
                 }
             },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Heeft een veganistisch menu"
-                    }
-                }
-            },
             "4": {
                 "options": {
                     "0": {
-                        "question": "Heeft een halal menu"
+                        "question": "Heeft een veganistisch menu"
                     }
                 }
             },
@@ -6726,6 +6744,27 @@
                     },
                     "7": {
                         "then": "Munten van 2 euro worden geaccepteerd"
+                    },
+                    "8": {
+                        "then": "Munten van 5 rappen worden geaccepteerd"
+                    },
+                    "9": {
+                        "then": "Munten van 10 rappen worden geaccepteerd"
+                    },
+                    "10": {
+                        "then": "Munten van 20 rappen worden geaccepteerd"
+                    },
+                    "11": {
+                        "then": "Munten van ½ frank worden geaccepteerd"
+                    },
+                    "12": {
+                        "then": "Munten van 1 frank worden geaccepteerd"
+                    },
+                    "13": {
+                        "then": "Munten van 2 frank worden geaccepteerd"
+                    },
+                    "14": {
+                        "then": "Munten van 5 frank worden geaccepteerd"
                     }
                 },
                 "question": "Met welke munten kan je hier betalen?"
@@ -6752,6 +6791,24 @@
                     },
                     "6": {
                         "then": "Biljetten van 500 euro worden geaccepteerd"
+                    },
+                    "7": {
+                        "then": "Biljetten van 10 frank worden geaccepteerd"
+                    },
+                    "8": {
+                        "then": "Biljetten van 20 frank worden geaccepteerd"
+                    },
+                    "9": {
+                        "then": "Biljetten van 50 frank worden geaccepteerd"
+                    },
+                    "10": {
+                        "then": "Biljetten van 100 frank worden geaccepteerd"
+                    },
+                    "11": {
+                        "then": "Biljetten van 200 frank worden geaccepteerd"
+                    },
+                    "12": {
+                        "then": "Biljetten van 1000 frank worden geaccepteerd"
                     }
                 },
                 "question": "Met welke bankbiljetten kan je hier betalen?"
@@ -6846,27 +6903,6 @@
                     }
                 }
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Bevindt zich ondergronds"
-                    },
-                    "1": {
-                        "then": "Bevindt zich op de begane grond"
-                    },
-                    "2": {
-                        "then": "Bevindt zich gelijkvloers"
-                    },
-                    "3": {
-                        "then": "Bevindt zich op de eerste verdieping"
-                    },
-                    "4": {
-                        "then": "Bevindt zich in de eerste kelderverdieping"
-                    }
-                },
-                "question": "Op welke verdieping bevindt dit punt zich?",
-                "render": "Bevindt zich op de {level}de verdieping"
-            },
             "multilevels": {
                 "override": {
                     "question": "Naar welke verdiepingen gaat deze lift?",
@@ -6945,6 +6981,9 @@
             "phone": {
                 "question": "Wat is het telefoonnummer van {title()}?"
             },
+            "repeated": {
+                "render": "Er zijn verschillende, identieke objecten op verdiepingen {repeat_on}."
+            },
             "service:electricity": {
                 "mappings": {
                     "0": {
@@ -6961,6 +7000,27 @@
                     }
                 },
                 "question": "Zijn er stekkers beschikbaar voor klanten die binnen zitten?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Bevindt zich ondergronds"
+                    },
+                    "1": {
+                        "then": "Bevindt zich op de begane grond"
+                    },
+                    "2": {
+                        "then": "Bevindt zich gelijkvloers"
+                    },
+                    "3": {
+                        "then": "Bevindt zich op de eerste verdieping"
+                    },
+                    "4": {
+                        "then": "Bevindt zich in de eerste kelderverdieping"
+                    }
+                },
+                "question": "Op welke verdieping bevindt dit punt zich?",
+                "render": "Bevindt zich op de {level}de verdieping"
             },
             "smoking": {
                 "mappings": {
@@ -8096,7 +8156,7 @@
             "Surveillance type: public, outdoor, indoor": {
                 "mappings": {
                     "0": {
-                        "then": "Bewaking van de publieke ruilmte, dus een straat, een brug, een park, een plein, een stationsgebouw, een publiek toegankelijke gang of tunnel…"
+                        "then": "Bewaking van de publieke ruimte, dus een straat, een brug, een park, een plein, een stationsgebouw, een publiek toegankelijke gang of tunnel…"
                     },
                     "1": {
                         "then": "Een buitenruimte met privaat karakter (zoals een privé-oprit, een parking, tankstation, …)"
@@ -8879,10 +8939,14 @@
         "tagRenderings": {
             "all-questions-at-once": {
                 "mappings": {
+                    "0": {
+                        "then": "Toon alle onbeantwoorde vragen"
+                    },
                     "1": {
                         "then": "Toon de vragen één per één"
                     }
-                }
+                },
+                "question": "Moeten onbeantwoorde vragen om beurt of allemaal samen getoond worden?"
             },
             "contributor-thanks": {
                 "mappings": {
@@ -9017,7 +9081,25 @@
                         "question": "Verkoop van aardappelen"
                     },
                     "16": {
+                        "question": "Verkoop van vlees"
+                    },
+                    "17": {
                         "question": "Verkoop van bloemen"
+                    },
+                    "21": {
+                        "question": "Verkoop van fietslampjes"
+                    },
+                    "22": {
+                        "question": "Verkoop van handschoenen"
+                    },
+                    "23": {
+                        "question": "Verkoop van fietsreparatiesets"
+                    },
+                    "24": {
+                        "question": "Verkoop van fietspompen"
+                    },
+                    "25": {
+                        "question": "Verkoop van fietssloten"
                     }
                 }
             }
@@ -9098,13 +9180,31 @@
                         "then": "Aardappelen worden verkocht"
                     },
                     "15": {
-                        "then": "Bloemen worden verkocht"
+                        "then": "Vlees wordt verkocht"
                     },
                     "16": {
+                        "then": "Bloemen worden verkocht"
+                    },
+                    "17": {
                         "then": "Parkeerkaarten worden verkocht"
                     },
-                    "18": {
+                    "19": {
                         "then": "Openbaar vervoerkaartjes worden verkocht"
+                    },
+                    "20": {
+                        "then": "Fietslampjes worden verkocht"
+                    },
+                    "21": {
+                        "then": "Handschoenen worden verkocht"
+                    },
+                    "22": {
+                        "then": "Fietsreparatiesets worden verkocht"
+                    },
+                    "23": {
+                        "then": "Fietspompen worden verkocht"
+                    },
+                    "24": {
+                        "then": "Fietssloten worden verkocht"
                     }
                 },
                 "question": "Wat verkoopt deze verkoopautomaat?",

@@ -351,7 +351,7 @@
         "source": {
           "=osmTags": {
             "and": [
-              "service:repair:climbing_shoes=yes",
+              "service:climbing_shoes:repair=yes",
               {
                 "or": [
                   "shop=shoe_repair",
@@ -375,7 +375,7 @@
             },
             "mappings": [
               {
-                "if": "service:repair:climbing_shoes=yes",
+                "if": "service:climbing_shoes:repair=yes",
                 "then": {
                   "en": "This shop repairs climbing shoes",
                   "de": "Dieser Laden repariert Kletterschuhe",
@@ -385,7 +385,7 @@
                 }
               },
               {
-                "if": "service:repair:climbing_shoes=no",
+                "if": "service:climbing_shoes:repair=no",
                 "then": {
                   "en": "This shop does not repair climbing shoes",
                   "de": "Dieser Shop repariert keine Kletterschuhe",
@@ -423,7 +423,7 @@
             },
             "mappings": [
               {
-                "if": "service:repair:climbing_shoes=yes",
+                "if": "service:climbing_shoes:repair=yes",
                 "then": {
                   "en": "This shop repairs climbing shoes",
                   "de": "Dieses Geschäft repariert Kletterschuhe",
@@ -433,7 +433,7 @@
                 }
               },
               {
-                "if": "service:repair:climbing_shoes=no",
+                "if": "service:climbing_shoes:repair=no",
                 "then": {
                   "en": "This shop does not repair climbing shoes",
                   "de": "Dieses Geschäft repariert keine Kletterschuhe",

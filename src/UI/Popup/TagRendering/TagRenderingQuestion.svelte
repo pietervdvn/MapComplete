@@ -22,6 +22,7 @@
   import { Unit } from "../../../Models/Unit";
   import UserRelatedState from "../../../Logic/State/UserRelatedState";
   import { twJoin } from "tailwind-merge";
+  import { TagUtils } from "../../../Logic/Tags/TagUtils";
 
   export let config: TagRenderingConfig;
   export let tags: UIEventSource<Record<string, string>>;
@@ -34,12 +35,15 @@
   let unit: Unit = layer?.units?.find((unit) => unit.appliesToKeys.has(config.freeform?.key));
 
   // Will be bound if a freeform is available
-  let freeformInput = new UIEventSource<string>(tags?.[config.freeform?.key]);
-  let selectedMapping: number = undefined;
-  let checkedMappings: boolean[];
-  $: {
-    let tgs = $tags;
-    mappings = config.mappings?.filter((m) => {
+  let freeformInput = new UIEventSource<string>(tags?.[config.freeform?.key])
+  let selectedMapping: number = undefined
+  let checkedMappings: boolean[]
+
+  /**
+   * Prepares and fills the checkedMappings
+   */
+  function initialize(tgs: Record<string, string>, confg: TagRenderingConfig) {
+    mappings = confg.mappings?.filter((m) => {
       if (typeof m.hideInAnswer === "boolean") {
         return !m.hideInAnswer;
       }
@@ -49,25 +53,58 @@
     unit = layer?.units?.find((unit) => unit.appliesToKeys.has(config.freeform?.key));
 
     if (
-      config.mappings?.length > 0 &&
-      (checkedMappings === undefined || checkedMappings?.length + 1 < config.mappings.length)
+      confg.mappings?.length > 0 &&
+      confg.multiAnswer &&
+      (checkedMappings === undefined ||
+        checkedMappings?.length < confg.mappings.length + (confg.freeform ? 1 : 0))
     ) {
+      const seenFreeforms = []
+      TagUtils.FlattenMultiAnswer()
       checkedMappings = [
-        ...config.mappings.map((_) => false),
-        false /*One element extra in case a freeform value is added*/
-      ];
+        ...confg.mappings.map((mapping) => {
+          const matches = TagUtils.MatchesMultiAnswer(mapping.if, tgs)
+          if (matches && confg.freeform) {
+            const newProps = TagUtils.changeAsProperties(mapping.if.asChange())
+            seenFreeforms.push(newProps[confg.freeform.key])
+          }
+          return matches
+        }),
+      ]
+
+      if (tgs !== undefined && confg.freeform) {
+        const unseenFreeformValues = tgs[confg.freeform.key]?.split(";") ?? []
+        for (const seenFreeform of seenFreeforms) {
+          if (!seenFreeform) {
+            continue
+          }
+          const index = unseenFreeformValues.indexOf(seenFreeform)
+          if (index < 0) {
+            continue
+          }
+          unseenFreeformValues.splice(index, 1)
+        }
+        // TODO this has _to much_ values
+        freeformInput.setData(unseenFreeformValues.join(";"))
+        checkedMappings.push(unseenFreeformValues.length > 0)
+      }
     }
-    if (config.freeform?.key) {
-      if (!config.multiAnswer) {
-        // Somehow, setting multianswer freeform values is broken if this is not set
-        freeformInput.setData(tgs[config.freeform.key]);
+    if (confg.freeform?.key) {
+      if (!confg.multiAnswer) {
+        // Somehow, setting multi-answer freeform values is broken if this is not set
+        freeformInput.setData(tgs[confg.freeform.key])
       }
     } else {
       freeformInput.setData(undefined);
     }
     feedback.setData(undefined);
   }
-  export let selectedTags: TagsFilter = undefined;
+
+  $: {
+    // Even though 'config' is not declared as a store, Svelte uses it as one to update the component
+    // We want to (re)-initialize whenever the 'tags' or 'config' change - but not when 'checkedConfig' changes
+    initialize($tags, config)
+  }
+  export let selectedTags: TagsFilter = undefined
 
   let mappings: Mapping[] = config?.mappings;
   let searchTerm: UIEventSource<string> = new UIEventSource("");

@@ -771,7 +771,6 @@ export class GeoOperations {
             const splitup = turf.lineSplit(<Feature<LineString>>toSplit, boundary)
             const kept = []
             for (const f of splitup.features) {
-                const ls = <Feature<LineString>>f
                 if (!GeoOperations.inside(GeoOperations.centerpointCoordinates(f), boundary)) {
                     continue
                 }

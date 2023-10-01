@@ -724,6 +724,16 @@
     "sources": []
   },
   {
+    "path": "mangrove_logo.svg",
+    "license": "LOGO",
+    "authors": [
+      "Mangrove.reviews"
+    ],
+    "sources": [
+      "https://mangrove.reviews/"
+    ]
+  },
+  {
     "path": "mapcomplete_logo.svg",
     "license": "LOGO AND CC-BY-SA-4.0",
     "authors": [

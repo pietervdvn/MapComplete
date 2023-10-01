@@ -3409,9 +3409,6 @@
             },
             "2": {
                 "options": {
-                    "0": {
-                        "question": "A un menu végétarien"
-                    },
                     "1": {
                         "question": "Seulement les fastfood"
                     },
@@ -3420,17 +3417,10 @@
                     }
                 }
             },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "A un menu végétalien"
-                    }
-                }
-            },
             "4": {
                 "options": {
                     "0": {
-                        "question": "A un menu halal"
+                        "question": "A un menu végétalien"
                     }
                 }
             },
@@ -4819,27 +4809,6 @@
                     }
                 }
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "En sous-sol"
-                    },
-                    "1": {
-                        "then": "Rez-de-chaussée"
-                    },
-                    "2": {
-                        "then": "Rez-de-chaussée"
-                    },
-                    "3": {
-                        "then": "Premier étage"
-                    },
-                    "4": {
-                        "then": "Sous-sol"
-                    }
-                },
-                "question": "À quel étage se situe l’élément ?",
-                "render": "Étage {level}"
-            },
             "luminous_or_lit": {
                 "mappings": {
                     "0": {
@@ -4948,6 +4917,27 @@
                     }
                 },
                 "question": "Des prises sont elles à disposition des client·e·s en intérieur ?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "En sous-sol"
+                    },
+                    "1": {
+                        "then": "Rez-de-chaussée"
+                    },
+                    "2": {
+                        "then": "Rez-de-chaussée"
+                    },
+                    "3": {
+                        "then": "Premier étage"
+                    },
+                    "4": {
+                        "then": "Sous-sol"
+                    }
+                },
+                "question": "À quel étage se situe l’élément ?",
+                "render": "Étage {level}"
             },
             "smoking": {
                 "mappings": {
@@ -6586,7 +6576,7 @@
                     "15": {
                         "question": "Vente de pommes de terre"
                     },
-                    "16": {
+                    "17": {
                         "question": "Vente de fleurs"
                     }
                 }
@@ -6667,7 +6657,7 @@
                     "14": {
                         "then": "Vent des pommes de terre"
                     },
-                    "15": {
+                    "16": {
                         "then": "Vent des fleurs"
                     }
                 },

@@ -7,7 +7,8 @@
     "ja": "登坂ルート",
     "nb_NO": "Klatreruter",
     "fr": "Voies d’escalade",
-    "it": "Vie di arrampicata"
+    "it": "Vie di arrampicata",
+    "ca": "Rutes d'escalada"
   },
   "description": {
     "en": "A single climbing route and its properties. Some properties are derived from the containing features",
@@ -32,7 +33,8 @@
       "nb_NO": "Klatrerute",
       "it": "Via di arrampicata",
       "fr": "Voie d’escalade",
-      "da": "Klatrerute"
+      "da": "Klatrerute",
+      "ca": "Ruta d'escalada"
     },
     "mappings": [
       {
@@ -44,7 +46,8 @@
           "ja": "登坂ルート<strong>{name}</strong>",
           "it": "Via di arrampicata <strong>{name}</strong>",
           "fr": "Voie d’escalade <strong>{name}</strong>",
-          "da": "Klatrerute <strong>{name}</strong>"
+          "da": "Klatrerute <strong>{name}</strong>",
+          "ca": "Ruta d'escalada <strong>{name}</strong>"
         }
       }
     ]
@@ -73,7 +76,8 @@
         "it": "Come si chiama questa via di arrampicata?",
         "fr": "Quel est le nom de cette voie d’escalade ?",
         "nb_NO": "Hva er navnet på denne klatreruten?",
-        "da": "Hvad hedder denne klatrerute?"
+        "da": "Hvad hedder denne klatrerute?",
+        "ca": "Quin és el nom d'aquesta ruta d'escalada?"
       },
       "freeform": {
         "key": "name"
@@ -108,7 +112,8 @@
         "fr": "Quelle est la longueur de cette voie (en mètres) ?",
         "de": "Wie lang ist diese Kletterroute (in Metern)?",
         "nb_NO": "Hvor mange meter er klatreruten?",
-        "da": "Hvor lang er denne klatrerute (i meter)?"
+        "da": "Hvor lang er denne klatrerute (i meter)?",
+        "ca": "Quant dura aquesta via d'escalada (en metres)?"
       },
       "render": {
         "de": "Diese Route ist {canonical(climbing:length)} lang",
@@ -131,7 +136,8 @@
         "nl": "Hoe moeilijk is deze klimroute volgens het Franse/Belgische systeem?",
         "it": "Qual è la difficoltà di questa via di arrampicata nel sistema francese/belga?",
         "fr": "Quelle est la difficulté de cette voie selon le système franco-belge ?",
-        "de": "Wie hoch ist der Schwierigkeitsgrad dieser Kletterroute nach dem französisch/belgischen System?"
+        "de": "Wie hoch ist der Schwierigkeitsgrad dieser Kletterroute nach dem französisch/belgischen System?",
+        "ca": "Quin és el grau d'aquesta via d'escalada segons el sistema francès/belga?"
       },
       "render": {
         "de": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems",
@@ -208,7 +214,8 @@
         "nl": "een klimroute",
         "fr": "une voie d’escalade",
         "de": "eine Kletterroute",
-        "it": "una via di arrampicata"
+        "it": "una via di arrampicata",
+        "ca": "una ruta d'escalada"
       },
       "snapToLayer": [
         "climbing_opportunity"

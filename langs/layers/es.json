@@ -1857,8 +1857,8 @@
                 "title": "un cruce"
             },
             "1": {
-                "description": "Señal de tráfico en una carretera",
-                "title": "una señal de tráfico"
+                "description": "Semáforo en una carretera",
+                "title": "un semáforo"
             }
         },
         "tagRenderings": {
@@ -1943,10 +1943,10 @@
                         "then": "Este cruce no tiene superficie podotáctil"
                     },
                     "2": {
-                        "then": "Este cruce tiene superficie podotáctil, pero no es correcto"
+                        "then": "Este cruce tiene superficie podotáctil, pero no correctamente"
                     }
                 },
-                "question": "¿Tiene pavimento táctil este cruce?"
+                "question": "¿Este cruce tiene pavimento podotáctil?"
             },
             "crossing-type": {
                 "mappings": {
@@ -1954,13 +1954,13 @@
                         "then": "Cruce, sin semáforos"
                     },
                     "1": {
-                        "then": "Cruce con señales de tráfico"
+                        "then": "Cruce con semáforo"
                     },
                     "2": {
                         "then": "Paso de cebra"
                     },
                     "3": {
-                        "then": "Cruce sin marcas de cruce"
+                        "then": "Cruce sin señalizar"
                     }
                 },
                 "question": "¿Qué tipo de cruce es este?"
@@ -1969,10 +1969,10 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Señal de tráfico"
+                    "then": "Semáforo"
                 },
                 "1": {
-                    "then": "Cruce con señales de tráfico"
+                    "then": "Cruce con semáforos"
                 }
             },
             "render": "Cruce"
@@ -2406,7 +2406,7 @@
         }
     },
     "elongated_coin": {
-        "description": "Capa mostrando prensas de centavo.",
+        "description": "Capa que muestra prensas de centavos.",
         "name": "Prensas de centavo",
         "presets": {
             "0": {
@@ -2420,14 +2420,14 @@
                 },
                 "mappings": {
                     "0": {
-                        "then": "Cuesta 1 euro para presionar un centavo."
+                        "then": "Cuesta 1 euro prensar un centavo."
                     },
                     "1": {
-                        "then": "Cuesta 2 euros para presionar un centavo."
+                        "then": "Cuesta 2 euros prensa un centavo."
                     }
                 },
-                "question": "¿Cuánto cuesta presionar un centavo?",
-                "render": "Cuesta {charge} para presionar un centavo."
+                "question": "¿Cuánto cuesta prensar un centavo?",
+                "render": "Cuesta {charge} prensar un centavo."
             },
             "coin": {
                 "freeform": {
@@ -2435,23 +2435,23 @@
                 },
                 "mappings": {
                     "0": {
-                        "then": "Esta prensa de centavo utiliza una moneda de 2 centavos para presionar."
+                        "then": "Esta prensa de centavo utiliza una moneda de 2 centavos para prensar."
                     },
                     "1": {
-                        "then": "Esta prensa de centavo utiliza una moneda de 5 centavos para presionar."
+                        "then": "Esta prensa de centavo utiliza una moneda de 5 centavos para prensar."
                     },
                     "2": {
-                        "then": "Esta prensa de centavo utiliza una moneda de 10 centavos para presionar."
+                        "then": "Esta prensa de centavo utiliza una moneda de 10 centavos para prensar."
                     },
                     "3": {
-                        "then": "Esta prensa de centavo utiliza una moneda de 25 centavos para presionar."
+                        "then": "Esta prensa de centavo utiliza una moneda de 25 centavos para prensar."
                     },
                     "4": {
-                        "then": "Esta prensa de centavo utiliza una moneda de 50 centavos para presionar."
+                        "then": "Esta prensa de centavo utiliza una moneda de 50 centavos para prensar."
                     }
                 },
-                "question": "Qué moneda se utiliza para presionar?",
-                "render": "Esta prensa de centavo utiliza una moneda {coin:type} para presionar."
+                "question": "Qué moneda se utiliza para prensar?",
+                "render": "Esta prensa de centavo utiliza una moneda {coin:type} para prensar."
             },
             "designs": {
                 "freeform": {
@@ -2471,7 +2471,7 @@
                         "then": "Esta prensa tiene cuatro diseños disponibles."
                     }
                 },
-                "question": "Cuántos diseños son disponibles?",
+                "question": "Cuántos diseños hay disponibles?",
                 "render": "Esta prensa tiene {coin:design_count} diseños disponibles."
             },
             "indoor": {
@@ -2506,7 +2506,7 @@
                         "then": "Una puerta giratoria que cuelga de un eje central y que rota dentro de una carcasa cilíndrica"
                     },
                     "3": {
-                        "then": "Una puerta corredera donde las hojas se deslizan de lado a lado, típicamente con una pared"
+                        "then": "Una puerta corredera donde la puerta se desliza hacia un lado, generalmente paralela a una pared"
                     },
                     "5": {
                         "then": "Esta es una entrada sin una puerta física"
@@ -2679,24 +2679,10 @@
         },
         "description": "Una capa mostrando restaurantes y locales de comida rápida (con un renderizado especial para friterías)",
         "filter": {
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Tiene menú vegetariano"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Tiene menú vegano"
-                    }
-                }
-            },
             "4": {
                 "options": {
                     "0": {
-                        "question": "Tiene menú halah"
+                        "question": "Tiene menú vegano"
                     }
                 }
             },
@@ -3215,7 +3201,7 @@
                         "question": "Todas las notas"
                     },
                     "1": {
-                        "question": "Ocultar las nostras de importación"
+                        "question": "Ocultar las notas de importación"
                     },
                     "2": {
                         "question": "Solo mostrar las notas de importación"
@@ -3282,7 +3268,7 @@
                         "then": "Esta torre no tiene ascensor"
                     }
                 },
-                "question": "¿Tiene ascensor esta torre?"
+                "question": "¿Esta torre tiene ascensor?"
             },
             "name": {
                 "mappings": {
@@ -3454,7 +3440,7 @@
         }
     },
     "postoffices": {
-        "description": "Una capa que muestra oficinas de correo.",
+        "description": "Una capa que muestra oficinas postales.",
         "name": "Oficinas de correo",
         "presets": {
             "0": {
@@ -3464,7 +3450,7 @@
         "tagRenderings": {
             "opening_hours": {
                 "override": {
-                    "question": "¿Cuáles son las horas de apertura para esta oficina de correos?"
+                    "question": "¿Cuáles son las horas de apertura para esta oficina postal?"
                 }
             }
         },
@@ -3645,27 +3631,6 @@
                 "question": "¿Cuál es el nombre de red para el acceso inalámbrico a internet?",
                 "render": "El nombre de red es <b>{internet_access:ssid}</b>"
             },
-            "level": {
-                "mappings": {
-                    "0": {
-                        "then": "Localizado bajo tierra"
-                    },
-                    "1": {
-                        "then": "Localizado en la planta baja"
-                    },
-                    "2": {
-                        "then": "Localizado en la planta baja"
-                    },
-                    "3": {
-                        "then": "Localizado en la primera planta"
-                    },
-                    "4": {
-                        "then": "Localizada en el primer sótano"
-                    }
-                },
-                "question": "¿En qué nivel se encuentra esta característica?",
-                "render": "Localizada en la {level}° planta"
-            },
             "luminous_or_lit": {
                 "mappings": {
                     "0": {
@@ -3777,6 +3742,27 @@
                     }
                 },
                 "question": "¿Esta facilidad tiene enchufes eléctricos, disponibles para los clientes cuando están dentro?"
+            },
+            "single_level": {
+                "mappings": {
+                    "0": {
+                        "then": "Localizado bajo tierra"
+                    },
+                    "1": {
+                        "then": "Localizado en la planta baja"
+                    },
+                    "2": {
+                        "then": "Localizado en la planta baja"
+                    },
+                    "3": {
+                        "then": "Localizado en la primera planta"
+                    },
+                    "4": {
+                        "then": "Localizada en el primer sótano"
+                    }
+                },
+                "question": "¿En qué nivel se encuentra esta característica?",
+                "render": "Localizada en la {level}° planta"
             },
             "smoking": {
                 "mappings": {
@@ -4403,7 +4389,7 @@
             },
             "Level": {
                 "question": "¿A qué nivel está colocada esta cámara?",
-                "render": "Está colocada a nivel {level}"
+                "render": "Ubicado en la planta {level}"
             },
             "Operator": {
                 "question": "¿Quién opera el sistema de esta cámara?",
@@ -4702,7 +4688,7 @@
                         "then": "Siempreverde."
                     }
                 },
-                "question": "¿El árbol es Siempreverde o Caduco?"
+                "question": "¿El árbol es perenne o caduco?"
             },
             "tree-denotation": {
                 "mappings": {
@@ -4722,7 +4708,7 @@
                         "then": "El árbol está en un jardín privado o residencial."
                     },
                     "5": {
-                        "then": "El árbol está en bandejón de una avenida."
+                        "then": "Este es un árbol a lo largo de una avenida."
                     },
                     "6": {
                         "then": "El árbol está en un zona urbana."
@@ -4773,7 +4759,7 @@
             "tree_node-name": {
                 "mappings": {
                     "0": {
-                        "then": "No identificas la especie."
+                        "then": "El árbol no tiene nombre."
                     }
                 },
                 "question": "¿Tiene nombre este árbol?",
@@ -4831,7 +4817,7 @@
         }
     },
     "viewpoint": {
-        "description": "Un buen punto de vista o una buena vista. Ideal para añadir una imagen si no encaja en ninguna otra categoría",
+        "description": "Un buen mirador o una buena vista. Ideal para añadir una imagen si no encaja en ninguna otra categoría",
         "tagRenderings": {
             "viewpoint-description": {
                 "question": "¿Quieres añadir una descripción?"

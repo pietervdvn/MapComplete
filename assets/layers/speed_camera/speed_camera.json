@@ -4,20 +4,23 @@
     "en": "Speed Camera",
     "de": "Blitzer",
     "nl": "Flitspaal",
-    "es": "Cámara de velocidad"
+    "es": "Cámara de velocidad",
+    "ca": "Càmera de velocitat"
   },
   "description": {
     "en": "Layer showing speed cameras",
     "de": "Ebene mit Blitzern",
     "nl": "Laag met flitspalen",
-    "es": "Capa con cámaras de velocidad"
+    "es": "Capa con cámaras de velocidad",
+    "ca": "Capa que mostra càmeres de velocitat"
   },
   "title": {
     "render": {
       "en": "Speed Camera",
       "de": "Blitzer",
       "nl": "Flitspaal",
-      "es": "Cámara de velocidad"
+      "es": "Cámara de velocidad",
+      "ca": "Càmera de velocitat"
     }
   },
   "minzoom": 12,
@@ -32,7 +35,8 @@
         "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit an diesem Blitzer?",
         "nl": "Wat is de maximum toegestane snelheid bij deze flitspaal?",
         "es": "¿Cuál es la velocidad máxima permitida en este radar?",
-        "fr": "Quelle est la vitesse maximale autorisée au niveau de ce radar ?"
+        "fr": "Quelle est la vitesse maximale autorisée au niveau de ce radar ?",
+        "ca": "Quina és la velocitat màxima permesa en aquest radar?"
       },
       "freeform": {
         "key": "maxspeed",
@@ -42,7 +46,8 @@
           "de": "Zulässige Höchstgeschwindigkeit",
           "nl": "Maximum toegestane snelheid",
           "es": "Velocidad máxima permitida",
-          "fr": "Vitesse maximale autorisée"
+          "fr": "Vitesse maximale autorisée",
+          "ca": "Velocitat màxima permesa"
         }
       },
       "render": {
@@ -50,7 +55,8 @@
         "de": "Die zulässige Höchstgeschwindigkeit beträgt {canonical(maxspeed)}",
         "nl": "De maximum toegestane snelheid is {canonical(maxspeed)}",
         "es": "La velocidad máxima permitida es {canonical(maxspeed)}",
-        "fr": "La vitesse maximale autorisée est {canonical(maxspeed)}"
+        "fr": "La vitesse maximale autorisée est {canonical(maxspeed)}",
+        "ca": "La velocitat màxima permesa és {canonical(maxspeed)}"
       }
     },
     {
@@ -73,7 +79,8 @@
         "en": "a speed camera",
         "de": "einen Blitzer",
         "nl": "een flitspaal",
-        "es": "una cámara de velocidad"
+        "es": "una cámara de velocidad",
+        "ca": "una càmera de velocitat"
       },
       "snapToLayer": [
         "maxspeed"

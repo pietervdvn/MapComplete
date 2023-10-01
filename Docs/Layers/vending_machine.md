@@ -47,13 +47,14 @@ this quick overview is incomplete
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/vending#values) [vending](https://wiki.openstreetmap.org/wiki/Key:vending) | [string](../SpecialInputElements.md#string) | [drinks](https://wiki.openstreetmap.org/wiki/Tag:vending%3Ddrinks) [sweets](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dsweets) [food](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dfood) [cigarettes](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcigarettes) [condoms](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcondoms) [coffee](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcoffee) [water](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dwater) [newspapers](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dnewspapers) [bicycle_tube](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_tube) [milk](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dmilk) [bread](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbread) [eggs](https://wiki.openstreetmap.org/wiki/Tag:vending%3Deggs) [cheese](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcheese) [honey](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dhoney) [potatoes](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dpotatoes) [flowers](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dflowers) [parking_tickets](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dparking_tickets) [elongated_coin](https://wiki.openstreetmap.org/wiki/Tag:vending%3Delongated_coin) [public_transport_tickets](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dpublic_transport_tickets)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/vending#values) [vending](https://wiki.openstreetmap.org/wiki/Key:vending) | [string](../SpecialInputElements.md#string) | [drinks](https://wiki.openstreetmap.org/wiki/Tag:vending%3Ddrinks) [sweets](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dsweets) [food](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dfood) [cigarettes](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcigarettes) [condoms](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcondoms) [coffee](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcoffee) [water](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dwater) [newspapers](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dnewspapers) [bicycle_tube](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_tube) [milk](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dmilk) [bread](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbread) [eggs](https://wiki.openstreetmap.org/wiki/Tag:vending%3Deggs) [cheese](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcheese) [honey](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dhoney) [potatoes](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dpotatoes) [meat](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dmeat) [flowers](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dflowers) [parking_tickets](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dparking_tickets) [elongated_coin](https://wiki.openstreetmap.org/wiki/Tag:vending%3Delongated_coin) [public_transport_tickets](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dpublic_transport_tickets) [bicycle_light](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_light) [gloves](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dgloves) [bicycle_repair_kit](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_repair_kit) [bicycle_pump](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_pump) [bicycle_lock](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_lock)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/payment:coins:denominations#values) [payment:coins:denominations](https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations) | Multiple choice | [0.01 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.01 EUR) [0.02 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.02 EUR) [0.05 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 EUR) [0.10 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 EUR) [0.20 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 EUR) [0.50 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 EUR) [1 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 EUR) [2 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 EUR) [0.05 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 CHF) [0.10 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 CHF) [0.20 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 CHF) [0.50 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 CHF) [1 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 CHF) [2 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 CHF) [5 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D5 CHF)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/payment:notes:denominations#values) [payment:notes:denominations](https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations) | Multiple choice | [5 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D5 EUR) [10 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D10 EUR) [20 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D20 EUR) [50 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D50 EUR) [100 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D100 EUR) [200 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D200 EUR) [500 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D500 EUR) [10 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D10 CHF) [20 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D20 CHF) [50 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D50 CHF) [100 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D100 CHF) [200 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D200 CHF) [1000 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D1000 CHF)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/indoor#values) [indoor](https://wiki.openstreetmap.org/wiki/Key:indoor) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
 
 
 
@@ -118,10 +119,16 @@ This is rendered with  `This vending machine sells {vending}`
   - *Cheese is sold*  corresponds with  `vending=cheese`
   - *Honey is sold*  corresponds with  `vending=honey`
   - *Potatoes are sold*  corresponds with  `vending=potatoes`
+  - *Meat is sold*  corresponds with  `vending=meat`
   - *Flowers are sold*  corresponds with  `vending=flowers`
   - *Parking tickets are sold*  corresponds with  `vending=parking_tickets`
   - *Pressed pennies are sold*  corresponds with  `vending=elongated_coin`
   - *Public transport tickets are sold*  corresponds with  `vending=public_transport_tickets`
+  - *Bicycle lights are sold*  corresponds with  `vending=bicycle_light`
+  - *Gloves are sold*  corresponds with  `vending=gloves`
+  - *Bicycle repair kits are sold*  corresponds with  `vending=bicycle_repair_kit`
+  - *Bicycle pumps are sold*  corresponds with  `vending=bicycle_pump`
+  - *Bicycle locks are sold*  corresponds with  `vending=bicycle_lock`
 
 
 
@@ -267,7 +274,21 @@ The question is  *Is this vending machine indoors?*
 
 
 
-### level 
+### repeated 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `repeat_on~.+`
+
+This tagrendering has labels  `level`
+
+
+
+### single_level 
 
 
 
@@ -289,6 +310,30 @@ This is rendered with  `Located on the {level}th floor`
   - *Located on the first floor*  corresponds with  `level=1`
   - *Located on the first basement level*  corresponds with  `level=-1`
 
+
+This tagrendering has labels  `level`
+
+
+
+### phone 
+
+
+
+The question is  *What is the phone number of the operator of this vending machine?*
+
+This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
+
+This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
+
+
+
+
+
+  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  `contact:phone~.+`
+  - This option cannot be chosen as answer
+
+
+This tagrendering has labels  `contact`
 
 
 
@@ -389,7 +434,16 @@ vending.12 | Sale of eggs | vending~^(.*eggs.*)$
 vending.13 | Sale of cheese | vending~^(.*cheese.*)$
 vending.14 | Sale of honey | vending~^(.*honey.*)$
 vending.15 | Sale of potatoes | vending~^(.*potatoes.*)$
-vending.16 | Sale of flowers | vending~^(.*flowers.*)$
+vending.16 | Sale of meat | vending~^(.*meat.*)$
+vending.17 | Sale of flowers | vending~^(.*flowers.*)$
+vending.18 | Sale of parking tickets | vending~^(.*parking_tickets.*)$
+vending.19 | Sale of pressed pennies | vending=elongated_coin
+vending.20 | Sale of public transport tickets | vending~^(.*public_transport_tickets.*)$
+vending.21 | Sale of bicycle lights | vending=bicycle_light
+vending.22 | Sale of gloves | vending=gloves
+vending.23 | Sale of bicycle repair kits | vending=bicycle_repair_kit
+vending.24 | Sale of bicycle pumps | vending=bicycle_pump
+vending.25 | Sale of bicycle locks | vending=bicycle_lock
  
 
 This document is autogenerated from [assets/layers/vending_machine/vending_machine.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/vending_machine/vending_machine.json)

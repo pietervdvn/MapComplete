@@ -5,6 +5,7 @@ import { OsmPreferences } from "./OsmPreferences"
 import { Utils } from "../../Utils"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import * as config from "../../../package.json"
+
 export default class UserDetails {
     public loggedIn = false
     public name = "Not logged in"
@@ -85,7 +86,7 @@ export class OsmConnection {
             this._oauth_config = {
                 oauth_client_id: import.meta.env.VITE_OSM_OAUTH_CLIENT_ID,
                 oauth_secret: import.meta.env.VITE_OSM_OAUTH_SECRET,
-                url: "https://www.openstreetmap.org",
+                url: "https://api.openstreetmap.org",
             }
         }
 
@@ -227,8 +228,6 @@ export class OsmConnection {
                 // details is an XML DOM of user details
                 let userInfo = details.getElementsByTagName("user")[0]
 
-                // let moreDetails = new DOMParser().parseFromString(userInfo.innerHTML, "text/xml");
-
                 let data = self.userDetails.data
                 data.loggedIn = true
                 console.log("Login completed, userinfo is ", userInfo)
@@ -365,10 +364,10 @@ export class OsmConnection {
                 )
             })
         }
-        const auth = this.auth
-        const content = { lat, lon, text }
-        const response = await this.post("notes.json", JSON.stringify(content), {
-            "Content-Type": "application/json",
+        // Lat and lon must be strings for the API to accept it
+        const content = `lat=${lat}&lon=${lon}&text=${encodeURIComponent(text)}`
+        const response = await this.post("notes.json", content, {
+            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
         })
         const parsed = JSON.parse(response)
         const id = parsed.properties
@@ -414,7 +413,6 @@ export class OsmConnection {
                 '"\r\nContent-Type: application/gpx+xml',
         }
 
-        const auth = this.auth
         const boundary = "987654"
 
         let body = ""
@@ -467,6 +465,18 @@ export class OsmConnection {
         })
     }
 
+    /**
+     * To be called by land.html
+     */
+    public finishLogin(callback: (previousURL: string) => void) {
+        this.auth.authenticate(function () {
+            // Fully authed at this point
+            console.log("Authentication successful!")
+            const previousLocation = LocalStorageSource.Get("location_before_login")
+            callback(previousLocation.data)
+        })
+    }
+
     private updateAuthObject() {
         let pwaStandAloneMode = false
         try {
@@ -499,18 +509,6 @@ export class OsmConnection {
                 : window.location.protocol + "//" + window.location.host + "/land.html",
             singlepage: !standalone,
             auto: true,
-        })
-    }
-
-    /**
-     * To be called by land.html
-     */
-    public finishLogin(callback: (previousURL: string) => void) {
-        this.auth.authenticate(function () {
-            // Fully authed at this point
-            console.log("Authentication successful!")
-            const previousLocation = LocalStorageSource.Get("location_before_login")
-            callback(previousLocation.data)
         })
     }
 

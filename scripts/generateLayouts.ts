@@ -200,6 +200,26 @@ function asLangSpan(t: Translation, tag = "span"): string {
     return values.join("\n")
 }
 
+let cspCached: string = undefined
+function generateCsp(): string {
+    if (cspCached !== undefined) {
+        return cspCached
+    }
+
+    const csp = {
+        "default-src": "'self'",
+        "script-src": "'self'",
+        "img-src": "*",
+        "connect-src": "*",
+    }
+    const content = Object.keys(csp)
+        .map((k) => k + ": " + csp[k])
+        .join("; ")
+
+    cspCached = `<meta http-equiv="Content-Security-Policy" content="${content}">`
+    return cspCached
+}
+
 async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alreadyWritten) {
     Locale.language.setData(layout.language[0])
     const targetLanguage = layout.language[0]
@@ -279,6 +299,7 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
             Translations.t.general.poweredByOsm.textFor(targetLanguage)
         )
         .replace(/<!-- THEME-SPECIFIC -->.*<!-- THEME-SPECIFIC-END-->/s, themeSpecific)
+        .replace(/<!-- CSP -->/, generateCsp())
         .replace(
             /<!-- DESCRIPTION START -->.*<!-- DESCRIPTION END -->/s,
             asLangSpan(layout.shortDescription)
@@ -298,7 +319,12 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
 
 async function createIndexFor(theme: LayoutConfig) {
     const filename = "index_" + theme.id + ".ts"
-    writeFileSync(filename, `import layout from "./src/assets/generated/themes/${theme.id}.json"\n`)
+
+    const imports = [
+        `import layout from "./src/assets/generated/themes/${theme.id}.json"`,
+        `import { ThemeMetaTagging } from "./src/assets/generated/metatagging/${theme.id}"`,
+    ]
+    writeFileSync(filename, imports.join("\n") + "\n")
 
     appendFileSync(filename, codeTemplate)
 }

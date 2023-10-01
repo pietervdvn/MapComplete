@@ -11,7 +11,8 @@
     "en": "Layer showing bus lines",
     "de": "Ebene mit Buslinien",
     "nl": "Laag met buslijnen",
-    "da": "Lag, der viser buslinjer"
+    "da": "Lag, der viser buslinjer",
+    "ca": "Capa que mostra les línies d'autobús"
   },
   "source": {
     "osmTags": {
@@ -27,7 +28,8 @@
       "en": "Bus line",
       "de": "Buslinie",
       "nl": "Buslijn",
-      "da": "Buslinje"
+      "da": "Buslinje",
+      "ca": "Línia de bus"
     },
     "mappings": [
       {
@@ -36,7 +38,8 @@
           "en": "{name}",
           "de": "{name}",
           "da": "{name}",
-          "nl": "{name}"
+          "nl": "{name}",
+          "ca": "{name}"
         }
       }
     ]
@@ -91,7 +94,8 @@
         "de": "Die Buslinie fährt über {via}",
         "nl": "Deze buslijn gaat via {via}",
         "da": "Denne buslinje går via {via}",
-        "fr": "Cette ligne de bus passe par {via}"
+        "fr": "Cette ligne de bus passe par {via}",
+        "ca": "Aquesta línia d'autobús passa per {via}"
       },
       "question": {
         "en": "What is the via point for this bus line?",
@@ -139,7 +143,8 @@
         "en": "What is the colour for this bus line?",
         "de": "Welche Farbe hat diese Buslinie?",
         "nl": "Wat is de kleur van deze buslijn?",
-        "da": "Hvad er farven på denne buslinje?"
+        "da": "Hvad er farven på denne buslinje?",
+        "ca": "Quin és el color d'aquest línia d'autobús?"
       }
     },
     {
@@ -181,7 +186,8 @@
         "en": "What company operates this bus line?",
         "de": "Welches Unternehmen betreibt die Buslinie?",
         "nl": "Welk bedrijf exploiteert deze buslijn?",
-        "da": "Hvilket selskab driver denne buslinje?"
+        "da": "Hvilket selskab driver denne buslinje?",
+        "ca": "Quina companyia opera aquesta línia d'autobús?"
       }
     }
   ],
@@ -189,12 +195,7 @@
   "lineRendering": [
     {
       "color": {
-        "render": {
-          "en": "#ff0000",
-          "de": "#ff0000",
-          "da": "#ff0000",
-          "nl": "#ff0000"
-        },
+        "render": "#ff0000",
         "mappings": [
           {
             "if": "colour~*",

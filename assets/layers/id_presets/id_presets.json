@@ -6,7 +6,8 @@
   "#dont-translate": "*",
   "source": "special:library",
   "title": null,
-  "mapRendering": null,
+  "lineRendering": null,
+  "pointRendering": null,
   "tagRenderings": [
     {
       "id": "shop_types",

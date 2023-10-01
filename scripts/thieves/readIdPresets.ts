@@ -3,10 +3,10 @@
  */
 import ScriptUtils from "../ScriptUtils"
 import { existsSync, readFileSync, writeFileSync } from "fs"
-import known_languages from "../../assets/language_native.json"
-import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
-import { MappingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
-import SmallLicense from "../../Models/smallLicense"
+import known_languages from "../../src/assets/language_native.json"
+import { LayerConfigJson } from "../../src/Models/ThemeConfig/Json/LayerConfigJson"
+import { MappingConfigJson } from "../../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+import SmallLicense from "../../src/Models/smallLicense"
 
 interface IconThief {
     steal(iconName: string): boolean

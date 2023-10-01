@@ -21,6 +21,7 @@
     + [description](#description)
     + [payment-options](#payment-options)
     + [payment-options-advanced](#payment-options-advanced)
+    + [payment-options-split](#payment-options-split)
     + [opening_hours_24_7](#opening_hours_24_7)
     + [level](#level)
     + [bicycle_rental.*bicycle_rental](#bicycle_rental*bicycle_rental)
@@ -46,7 +47,6 @@
     + [opening_hours_by_appointment](#opening_hours_by_appointment)
     + [multilevels](#multilevels)
     + [induction-loop](#induction-loop)
-    + [payment-options-split](#payment-options-split)
     + [denominations-coins](#denominations-coins)
     + [check_date](#check_date)
     + [all_tags](#all_tags)
@@ -55,7 +55,10 @@
     + [minimap](#minimap)
     + [mastodon](#mastodon)
     + [contact](#contact)
+    + [etymology.wikipedia-etymology](#etymologywikipedia-etymology)
+    + [toilet.relevant-questions](#toiletrelevant-questions)
     + [denominations-notes](#denominations-notes)
+    + [single_level](#single_level)
     + [survey_date](#survey_date)
     + [id_presets.shop_types](#id_presetsshop_types)
     + [school.capacity](#schoolcapacity)
@@ -321,6 +324,7 @@
   - shops
   - sports_centre
   - tertiary_education
+  - vending_machine
   - veterinary
 
 
@@ -407,6 +411,23 @@
 
 
 
+### payment-options-split 
+
+
+
+
+
+  - bicycle_tube_vending_machine
+  - elongated_coin
+  - parking_ticket_machine
+  - shower
+  - ticket_machine
+  - toilet
+  - vending_machine
+
+
+
+
 ### opening_hours_24_7 
 
 
@@ -441,9 +462,9 @@
   - fitness_centre
   - food
   - hackerspace
+  - indoors
   - parking
   - picnic_table
-  - questions
   - railway_platforms
   - reception_desk
   - shops
@@ -750,22 +771,6 @@
 
 
 
-### payment-options-split 
-
-
-
-
-
-  - elongated_coin
-  - parking_ticket_machine
-  - shower
-  - ticket_machine
-  - toilet
-  - vending_machine
-
-
-
-
 ### denominations-coins 
 
 
@@ -857,6 +862,28 @@
 
 
 
+### etymology.wikipedia-etymology 
+
+
+
+
+
+  - indoors
+
+
+
+
+### toilet.relevant-questions 
+
+
+
+
+
+  - indoors
+
+
+
+
 ### denominations-notes 
 
 
@@ -866,6 +893,17 @@
   - parking_ticket_machine
   - ticket_machine
   - vending_machine
+
+
+
+
+### single_level 
+
+
+
+
+
+  - questions
 
 
 

@@ -32,7 +32,8 @@
             "en": "Task is fixed",
             "de": "Aufgabe wurde erledigt",
             "nl": "Taak werd opgelost",
-            "pl": "Zadanie jest naprawione"
+            "pl": "Zadanie jest naprawione",
+            "ca": "La tasca està arreglada"
           }
         },
         {
@@ -41,7 +42,8 @@
             "en": "Task is a false positive",
             "de": "Aufgabe ist ein falsches Positiv",
             "nl": "Taak was vals positief",
-            "pl": "Zadanie jest fałszywie pozytywne"
+            "pl": "Zadanie jest fałszywie pozytywne",
+            "ca": "La tasca és un fals positiu"
           }
         },
         {
@@ -152,7 +154,8 @@
     "en": "MapRoulette Tasks",
     "de": "MapRoulette-Aufgaben",
     "nl": "MapRoulette Taken",
-    "pl": "Zadania MapRoulette"
+    "pl": "Zadania MapRoulette",
+    "ca": "Tasques de MapRoulette"
   },
   "title": {
     "render": {
@@ -177,7 +180,8 @@
             "en": "Show tasks with all statuses",
             "de": "Aufgaben mit allen Status anzeigen",
             "nl": "Toon taken met alle statussen",
-            "pl": "Pokaż zadania z wszystkimi statusami"
+            "pl": "Pokaż zadania z wszystkimi statusami",
+            "ca": "Mostra les tasques amb tots els estats"
           }
         },
         {
@@ -185,7 +189,8 @@
             "en": "Show tasks that are created",
             "de": "Aufgaben anzeigen, die erstellt wurden",
             "nl": "Toon aangemaakte taken",
-            "pl": "Pokaż zadania, które zostały stworzone"
+            "pl": "Pokaż zadania, które zostały stworzone",
+            "ca": "Mostra les tasques que es creen"
           },
           "osmTags": "status=0"
         },
@@ -193,7 +198,8 @@
           "question": {
             "en": "Show tasks that are fixed",
             "de": "Aufgaben anzeigen, die erledigt wurden",
-            "nl": "Toon opgeloste taken"
+            "nl": "Toon opgeloste taken",
+            "ca": "Mostra les tasques que estan arreglades"
           },
           "osmTags": "status=1"
         },
@@ -201,7 +207,8 @@
           "question": {
             "en": "Show tasks that are false positives",
             "de": "Aufgaben anzeigen, die falsch positiv sind",
-            "nl": "Toon vals-positieve taken"
+            "nl": "Toon vals-positieve taken",
+            "ca": "Mostra tasques que són falsos positius"
           },
           "osmTags": "status=2"
         },
@@ -209,7 +216,8 @@
           "question": {
             "en": "Show tasks that are skipped",
             "de": "Aufgaben anzeigen, die übersprungen wurden",
-            "nl": "Toon overgeslagen taken"
+            "nl": "Toon overgeslagen taken",
+            "ca": "Mostra les tasques que s'han omès"
           },
           "osmTags": "status=3"
         },
@@ -217,7 +225,8 @@
           "question": {
             "en": "Show tasks that are deleted",
             "de": "Aufgaben anzeigen, die gelöscht wurden",
-            "nl": "Toon verwijderde taken"
+            "nl": "Toon verwijderde taken",
+            "ca": "Mostra les tasques que s'han suprimit"
           },
           "osmTags": "status=4"
         },
@@ -226,7 +235,8 @@
             "en": "Show tasks that are already fixed",
             "de": "Aufgaben anzeigen, die bereits erledigt wurden",
             "nl": "Toon al opgeloste taken",
-            "pl": "Pokaż zadania, które są już wykonane"
+            "pl": "Pokaż zadania, które są już wykonane",
+            "ca": "Mostra les tasques que ja estan arreglades"
           },
           "osmTags": "status=5"
         },
@@ -235,7 +245,8 @@
             "en": "Show tasks that are marked as too hard",
             "de": "Aufgaben anzeigen, die als zu schwierig markiert wurden",
             "nl": "Toon taken die als te lastig gemarkeerd zijn",
-            "pl": "Pokaż zadania oznaczone jako zbyt trudne"
+            "pl": "Pokaż zadania oznaczone jako zbyt trudne",
+            "ca": "Mostra les tasques marcades com a massa difícils"
           },
           "osmTags": "status=6"
         },
@@ -244,7 +255,8 @@
             "en": "Show tasks that are disabled",
             "de": "Aufgaben anzeigen, die deaktiviert wurden",
             "nl": "Toon uitgeschakelde taken",
-            "pl": "Pokaż zadania, które są wyłączone"
+            "pl": "Pokaż zadania, które są wyłączone",
+            "ca": "Mostra les tasques que estan desactivades"
           },
           "osmTags": "status=9"
         }
@@ -264,7 +276,8 @@
             "en": "Challenge name contains {search}",
             "de": "Name der Kampagne enthält {search}",
             "nl": "Naam uitdaging bevat {search}",
-            "pl": "Nazwa wyzwania zawiera {search}"
+            "pl": "Nazwa wyzwania zawiera {search}",
+            "ca": "El nom del repte conté {search}"
           }
         }
       ]
@@ -283,7 +296,8 @@
             "en": "Challenge ID matches {search}",
             "de": "Kampagnen ID stimmt mit {search} überein",
             "nl": "ID uitdaging is {search}",
-            "pl": "ID wyzwania pasuje do {search}"
+            "pl": "ID wyzwania pasuje do {search}",
+            "ca": "L'identificador de desafiament coincideix amb {search}"
           }
         }
       ]

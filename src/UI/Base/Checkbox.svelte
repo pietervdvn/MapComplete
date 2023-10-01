@@ -1,12 +1,15 @@
 <script lang="ts">
-  import { UIEventSource } from "../../Logic/UIEventSource.js"
+  import type { Writable } from "svelte/store"
 
   /**
    * For some stupid reason, it is very hard to bind inputs
    */
-  export let selected: UIEventSource<boolean>
+  export let selected: Writable<boolean>
   let _c: boolean = selected.data ?? true
-  $: selected.setData(_c)
+  $: selected.set(_c)
 </script>
 
-<input type="checkbox" bind:checked={_c} />
+<label class="no-image-background flex gap-1">
+  <input bind:checked={_c} type="checkbox" />
+  <slot />
+</label>

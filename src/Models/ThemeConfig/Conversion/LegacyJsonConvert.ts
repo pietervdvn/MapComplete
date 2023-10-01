@@ -41,7 +41,6 @@ export class UpdateLegacyLayer extends DesugaringStep<
                 delete preset["preciseInput"]
             } else if (preciseInput !== undefined) {
                 delete preciseInput["preferredBackground"]
-                console.log("Precise input:", preciseInput)
                 preset.snapToLayer = preciseInput.snapToLayer
                 delete preciseInput.snapToLayer
                 if (preciseInput.maxSnapDistance) {
@@ -230,6 +229,10 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
 
         if (oldThemeConfig.socialImage === "") {
             delete oldThemeConfig.socialImage
+        }
+
+        if (oldThemeConfig.defaultBackgroundId === "osm") {
+            console.log("Removing old background in", json.id)
         }
 
         if (oldThemeConfig["roamingRenderings"] !== undefined) {

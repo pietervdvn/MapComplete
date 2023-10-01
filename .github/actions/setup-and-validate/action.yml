@@ -19,7 +19,7 @@ runs:
       shell: bash
 
     - name: REUSE compliance check
-      uses: fsfe/reuse-action@v2
+      uses: fsfe/reuse-action@952281636420dd0b691786c93e9d3af06032f138
       
     - name: create generated dir
       run: mkdir ./assets/generated

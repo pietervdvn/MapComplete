@@ -76,7 +76,8 @@
         "ru": "Поверхность - <b>{surface}</b>",
         "de": "Die Oberfläche ist <b>{surface}</b>",
         "fr": "La surface est en <b>{surface}</b>",
-        "es": "La superficie es <b>{surface}</b>"
+        "es": "La superficie es <b>{surface}</b>",
+        "ca": "La superfícies és <b>{surface}</b>"
       },
       "freeform": {
         "key": "surface"
@@ -167,7 +168,8 @@
             "it": "La superficie è <b>non pavimentato</b>",
             "de": "Die Oberfläche ist <b>unbefestigt</b>",
             "fr": "La surface n’a <b>pas de revêtement</b>",
-            "es": "La superficie está <b>sin pavimentar</b>"
+            "es": "La superficie está <b>sin pavimentar</b>",
+            "ca": "La superfícies està <b>sense pavimentar</b>"
           },
           "hideInAnswer": true
         },
@@ -179,7 +181,8 @@
             "it": "La superficie è <b>pavimentato</b>",
             "de": "Die Oberfläche ist <b>befestigt</b>",
             "fr": "La surface a <b>un revêtement</b>",
-            "es": "La superficie está <b>pavimentada</b>"
+            "es": "La superficie está <b>pavimentada</b>",
+            "ca": "La superfície està <b>pavimentada</b>"
           },
           "hideInAnswer": true
         }
@@ -274,7 +277,8 @@
         "fr": "Accessible aux enfants de {max_age} au maximum",
         "ru": "Доступно детям до {max_age}",
         "de": "Zugang nur für Kinder bis maximal {max_age}",
-        "es": "Accesible a niños de hasta {max_age}"
+        "es": "Accesible a niños de hasta {max_age}",
+        "ca": "Accessible per a nens de com a màxim {max_age}"
       },
       "question": {
         "nl": "Wat is de maximaal toegestane leeftijd voor deze speeltuin?",
@@ -374,7 +378,8 @@
             "it": "Accessibile solamente agli studenti della scuola",
             "de": "Nur für Schüler der Schule zugänglich",
             "fr": "Réservée aux élèves de l’école",
-            "es": "Solo accesibles para estudiantes de la escuela"
+            "es": "Solo accesibles para estudiantes de la escuela",
+            "ca": "Només accessible per als alumnes de l'escola"
           },
           "hideInAnswer": true
         },

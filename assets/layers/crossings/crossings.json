@@ -48,7 +48,7 @@
           "de": "Ampel",
           "fr": "Feu de signalisation",
           "ca": "Semàfor",
-          "es": "Señal de tráfico"
+          "es": "Semáforo"
         }
       },
       {
@@ -58,7 +58,8 @@
           "nl": "Oversteekplaats met verkeerslichten",
           "de": "Kreuzung mit Ampeln",
           "fr": "Traversée avec feu de signalisation",
-          "es": "Cruce con señales de tráfico"
+          "es": "Cruce con semáforos",
+          "ca": "Creuament amb semàfors"
         }
       }
     ]
@@ -99,8 +100,8 @@
         "de": "eine Ampel",
         "fr": "une feu de signalisation",
         "da": "et trafiksignal",
-        "es": "una señal de tráfico",
-        "ca": "una senyal de trànsit"
+        "es": "un semáforo",
+        "ca": "un semàfor"
       },
       "tags": [
         "highway=traffic_signals"
@@ -111,8 +112,8 @@
         "de": "Ampel an einer Straße",
         "fr": "Feu de signalisation sur la voie",
         "da": "Trafiksignal på en vej",
-        "es": "Señal de tráfico en una carretera",
-        "ca": "Senyal de trànsit en una carretera"
+        "es": "Semáforo en una carretera",
+        "ca": "Semàfor en una carretera"
       },
       "snapToLayer": [
         "cycleways_and_roads"
@@ -129,7 +130,8 @@
         "nl": "Wat voor oversteekplaats is dit?",
         "de": "Was ist das für eine Kreuzung?",
         "es": "¿Qué tipo de cruce es este?",
-        "fr": "Quel type de passage piéton est-ce ?"
+        "fr": "Quel type de passage piéton est-ce ?",
+        "ca": "Quin tipus de creuament és aquest?"
       },
       "condition": "highway=crossing",
       "mappings": [
@@ -140,7 +142,8 @@
             "nl": "Oversteekplaats, zonder verkeerslichten",
             "de": "Kreuzungen ohne Ampeln",
             "es": "Cruce, sin semáforos",
-            "fr": "Passage piéton, sans feux de signalisation"
+            "fr": "Passage piéton, sans feux de signalisation",
+            "ca": "Creuament, sense semàfors"
           }
         },
         {
@@ -149,8 +152,9 @@
             "en": "Crossing with traffic signals",
             "nl": "Oversteekplaats met verkeerslichten",
             "de": "Kreuzungen mit Ampeln",
-            "es": "Cruce con señales de tráfico",
-            "fr": "Passage piéton avec des feux de signalisation"
+            "es": "Cruce con semáforo",
+            "fr": "Passage piéton avec des feux de signalisation",
+            "ca": "Creuament amb semàfors"
           }
         },
         {
@@ -171,8 +175,9 @@
             "en": "Crossing without crossing markings",
             "nl": "Oversteekplaats zonder kruispuntmarkeringen",
             "de": "Kreuzung ohne Kreuzungsmarkierungen",
-            "es": "Cruce sin marcas de cruce",
-            "fr": "Passage piéton sans marquages"
+            "es": "Cruce sin señalizar",
+            "fr": "Passage piéton sans marquages",
+            "ca": "Creuament sense senyalitzar"
           }
         }
       ]
@@ -295,8 +300,9 @@
         "en": "Does this crossing have tactile paving?",
         "nl": "Heeft deze oversteekplaats een geleidelijn?",
         "de": "Gibt es an dieser Kreuzung ein Blindenleitsystem?",
-        "es": "¿Tiene pavimento táctil este cruce?",
-        "fr": "Est-ce que ce passage piéton a une surface podotactile ?"
+        "es": "¿Este cruce tiene pavimento podotáctil?",
+        "fr": "Est-ce que ce passage piéton a une surface podotactile ?",
+        "ca": "Aquest creuament té superfície podotàctil?"
       },
       "condition": "highway=crossing",
       "mappings": [
@@ -328,7 +334,7 @@
             "en": "This crossing has tactile paving, but is not correct",
             "nl": "Deze oversteekplaats heeft een geleidelijn, die incorrect is.",
             "de": "Diese Kreuzung hat taktile Pflasterung, ist aber nicht korrekt",
-            "es": "Este cruce tiene superficie podotáctil, pero no es correcto",
+            "es": "Este cruce tiene superficie podotáctil, pero no correctamente",
             "fr": "Ce passage piéton a une surface podotactile, mais elle n'est pas adéquate",
             "ca": "Este creuament té superfície podotàctil, però no correctament"
           },
@@ -436,7 +442,8 @@
         "en": "Does this traffic light have vibration signals to aid crossing? (usually located at the bottom of the crossing button)",
         "de": "Gibt die Ampel ein Vibrationssignal, um das Überqueren zu erleichtern? (in der Regel am unteren Ende der Ampeltaste)",
         "nl": "Heeft dit verkeerslicht een element dat trilt om te helpen bij het oversteken? (meestal onderaan de oversteekknop geplaatst)",
-        "fr": "Est-ce que ce feu a un signal vibrant pour aider à traverser ? (habituellement situé sous le bouton)"
+        "fr": "Est-ce que ce feu a un signal vibrant pour aider à traverser ? (habituellement situé sous le bouton)",
+        "ca": "Aquest semàfor té senyals de vibració per facilitar el pas? (normalment es troba a la part inferior del botó d'encreuament)"
       },
       "condition": {
         "and": [
@@ -451,7 +458,8 @@
             "en": "The button for this traffic light has a vibration signal to indicate that it is safe to cross.",
             "de": "Die Ampeltaste vibriert während der Grünphase.",
             "nl": "De knop bij dit verkeerslicht trilt om aan te geven dat men veilig kan oversteken.",
-            "fr": "Le bouton de ce feu vibre pour indiquer qu'on peut traverser en sécurité."
+            "fr": "Le bouton de ce feu vibre pour indiquer qu'on peut traverser en sécurité.",
+            "ca": "El botó d'aquest semàfor té un senyal de vibració per indicar que és segur creuar."
           },
           "icon": {
             "path": "./assets/layers/crossings/Vibrating_button_illustration.jpg",
@@ -464,7 +472,8 @@
             "en": "The button for this traffic light does not have a vibration signal to indicate that it is safe to cross.",
             "de": "Die Ampeltaste vibriert nicht während der Grünphase.",
             "nl": "De knop bij dit verkeerslicht kan <b>niet</b> trillen om aan te geven dat men veilig kan oversteken.",
-            "fr": "Le bouton de ce feu ne vibre pas pour indiquer qu'on peut traverser en sécurité."
+            "fr": "Le bouton de ce feu ne vibre pas pour indiquer qu'on peut traverser en sécurité.",
+            "ca": "El botó d'aquest semàfor no té cap senyal de vibració que indiqui que és segur creuar."
           }
         }
       ]

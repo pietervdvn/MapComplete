@@ -57,19 +57,10 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:retail#values) [service:bicycle:retail](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:repair#values) [service:bicycle:repair](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno) [only_sold](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Donly_sold) [brand](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dbrand)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:rental#values) [service:bicycle:rental](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dno)
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/rental#values) [rental](https://wiki.openstreetmap.org/wiki/Key:rental) | [string](../SpecialInputElements.md#string) | [city_bike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcity_bike) [ebike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Debike) [bmx](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbmx) [mtb](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dmtb) [kid_bike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dkid_bike) [tandem](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dtandem) [racebike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dracebike) [bike_helmet](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbike_helmet)
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:city_bike#values) [capacity:city_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:city_bike) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:ebike#values) [capacity:ebike](https://wiki.openstreetmap.org/wiki/Key:capacity:ebike) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:kid_bike#values) [capacity:kid_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:kid_bike) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:bmx#values) [capacity:bmx](https://wiki.openstreetmap.org/wiki/Key:capacity:bmx) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:mtb#values) [capacity:mtb](https://wiki.openstreetmap.org/wiki/Key:capacity:mtb) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:bicycle_pannier#values) [capacity:bicycle_pannier](https://wiki.openstreetmap.org/wiki/Key:capacity:bicycle_pannier) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:tandem_bicycle#values) [capacity:tandem_bicycle](https://wiki.openstreetmap.org/wiki/Key:capacity:tandem_bicycle) | [pnat](../SpecialInputElements.md#pnat) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:second_hand#values) [service:bicycle:second_hand](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dno) [only](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:pump#values) [service:bicycle:pump](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno) [separate](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dseparate)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:diy#values) [service:bicycle:diy](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno) [only_sold](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Donly_sold)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:cleaning#values) [service:bicycle:cleaning](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dyes) [diy](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Ddiy) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dno)
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:cleaning:charge#values) [service:bicycle:cleaning:charge](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:charge) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/description#values) [description](https://wiki.openstreetmap.org/wiki/Key:description) | [string](../SpecialInputElements.md#string) | 
 
 
@@ -281,162 +272,6 @@ The question is  *Does this shop rent out bikes?*
 
 
 
-### bicycle-types 
-
-
-
-The question is  *What kind of bicycles and accessories are rented here?*
-
-This rendering asks information about the property  [rental](https://wiki.openstreetmap.org/wiki/Key:rental) 
-
-This is rendered with  `{rental} is rented here`
-
-
-
-
-
-  - *Normal city bikes can be rented here*  corresponds with  `rental=city_bike`
-  - *Electrical bikes can be rented here*  corresponds with  `rental=ebike`
-  - *BMX bikes can be rented here*  corresponds with  `rental=bmx`
-  - *Mountainbikes can be rented here*  corresponds with  `rental=mtb`
-  - *Bikes for children can be rented here*  corresponds with  `rental=kid_bike`
-  - *Tandem bicycles can be rented here*  corresponds with  `rental=tandem`
-  - *Race bicycles can be rented here*  corresponds with  `rental=racebike`
-  - *Bike helmets can be rented here*  corresponds with  `rental=bike_helmet`
-
-
-This tagrendering is only visible in the popup if the following condition is met: `service:bicycle:rental=yes`
-
-This tagrendering has labels  `bicycle_rental`
-
-
-
-### rental-capacity-city_bike 
-
-
-
-The question is  *How many city bikes can be rented here?*
-
-This rendering asks information about the property  [capacity:city_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:city_bike) 
-
-This is rendered with  `{capacity:city_bike} city bikes can be rented here`
-
-
-
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*city_bike.*)$&service:bicycle:rental=yes`
-
-This tagrendering has labels  `bicycle_rental`
-
-
-
-### rental-capacity-ebike 
-
-
-
-The question is  *How many electrical bikes can be rented here?*
-
-This rendering asks information about the property  [capacity:ebike](https://wiki.openstreetmap.org/wiki/Key:capacity:ebike) 
-
-This is rendered with  `{capacity:ebike} electrical bikes can be rented here`
-
-
-
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*ebike.*)$&service:bicycle:rental=yes`
-
-This tagrendering has labels  `bicycle_rental`
-
-
-
-### rental-capacity-kid_bike 
-
-
-
-The question is  *How many bikes for children can be rented here?*
-
-This rendering asks information about the property  [capacity:kid_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:kid_bike) 
-
-This is rendered with  `{capacity:kid_bike} bikes for children can be rented here`
-
-
-
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*kid_bike.*)$&service:bicycle:rental=yes`
-
-This tagrendering has labels  `bicycle_rental`
-
-
-
-### rental-capacity-bmx 
-
-
-
-The question is  *How many BMX bikes can be rented here?*
-
-This rendering asks information about the property  [capacity:bmx](https://wiki.openstreetmap.org/wiki/Key:capacity:bmx) 
-
-This is rendered with  `{capacity:bmx} BMX bikes can be rented here`
-
-
-
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*bmx.*)$&service:bicycle:rental=yes`
-
-This tagrendering has labels  `bicycle_rental`
-
-
-
-### rental-capacity-mtb 
-
-
-
-The question is  *How many mountainbikes can be rented here?*
-
-This rendering asks information about the property  [capacity:mtb](https://wiki.openstreetmap.org/wiki/Key:capacity:mtb) 
-
-This is rendered with  `{capacity:mtb} mountainbikes can be rented here`
-
-
-
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*mtb.*)$&service:bicycle:rental=yes`
-
-This tagrendering has labels  `bicycle_rental`
-
-
-
-### rental-capacity-bicycle_pannier 
-
-
-
-The question is  *How many bicycle panniers can be rented here?*
-
-This rendering asks information about the property  [capacity:bicycle_pannier](https://wiki.openstreetmap.org/wiki/Key:capacity:bicycle_pannier) 
-
-This is rendered with  `{capacity:bicycle_pannier} bicycle panniers can be rented here`
-
-
-
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*bicycle_pannier.*)$&service:bicycle:rental=yes`
-
-This tagrendering has labels  `bicycle_rental`
-
-
-
-### rental-capacity-tandem_bicycle 
-
-
-
-The question is  *How many tandem can be rented here?*
-
-This rendering asks information about the property  [capacity:tandem_bicycle](https://wiki.openstreetmap.org/wiki/Key:capacity:tandem_bicycle) 
-
-This is rendered with  `{capacity:tandem_bicycle} tandem can be rented here`
-
-
-
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*tandem_bicycle.*)$&service:bicycle:rental=yes`
-
-This tagrendering has labels  `bicycle_rental`
-
-
-
 ### bike_repair_second-hand-bikes 
 
 
@@ -505,23 +340,12 @@ The question is  *Are bicycles washed here?*
 
 
 
-### bike_cleaning-service:bicycle:cleaning:charge 
+### bikecleaningbikecleaningservicebicyclecleaningcharge 
 
 
 
-The question is  *How much does it cost to use the cleaning service?*
+This tagrendering has no question and is thus read-only
 
-This rendering asks information about the property  [service:bicycle:cleaning:charge](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:charge) 
-
-This is rendered with  `Using the cleaning service costs {service:bicycle:cleaning:charge}`
-
-
-
-
-
-  - *The cleaning service is free to use*  corresponds with  `service:bicycle:cleaning:fee=no`
-  - *Free to use*  corresponds with  `service:bicycle:cleaning:fee=yes`
-  - This option cannot be chosen as answer
 
 
 

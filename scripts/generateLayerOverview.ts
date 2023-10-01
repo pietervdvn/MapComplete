@@ -12,8 +12,6 @@ import {
     ValidateThemeAndLayers,
 } from "../src/Models/ThemeConfig/Conversion/Validation"
 import { Translation } from "../src/UI/i18n/Translation"
-import { TagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
-import PointRenderingConfigJson from "../src/Models/ThemeConfig/Json/PointRenderingConfigJson"
 import { PrepareLayer } from "../src/Models/ThemeConfig/Conversion/PrepareLayer"
 import { PrepareTheme } from "../src/Models/ThemeConfig/Conversion/PrepareTheme"
 import { DesugaringContext } from "../src/Models/ThemeConfig/Conversion/Conversion"
@@ -21,6 +19,8 @@ import { Utils } from "../src/Utils"
 import Script from "./Script"
 import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
 import { parse as parse_html } from "node-html-parser"
+import { ExtraFunctions } from "../src/Logic/ExtraFunctions"
+import { QuestionableTagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 // This scripts scans 'src/assets/layers/*.json' for layer definition files and 'src/assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
 
@@ -161,8 +161,8 @@ class LayerOverviewUtils extends Script {
 
     getSharedTagRenderings(
         doesImageExist: DoesImageExist,
-        bootstrapTagRenderings: Map<string, TagRenderingConfigJson> = null
-    ): Map<string, TagRenderingConfigJson> {
+        bootstrapTagRenderings: Map<string, QuestionableTagRenderingConfigJson> = null
+    ): Map<string, QuestionableTagRenderingConfigJson> {
         const prepareLayer = new PrepareLayer({
             tagRenderings: bootstrapTagRenderings,
             sharedLayers: null,
@@ -172,10 +172,10 @@ class LayerOverviewUtils extends Script {
         let path = "assets/layers/questions/questions.json"
         const sharedQuestions = this.parseLayer(doesImageExist, prepareLayer, path)
 
-        const dict = new Map<string, TagRenderingConfigJson>()
+        const dict = new Map<string, QuestionableTagRenderingConfigJson>()
 
         for (const tr of sharedQuestions.tagRenderings) {
-            const tagRendering = <TagRenderingConfigJson>tr
+            const tagRendering = <QuestionableTagRenderingConfigJson>tr
             dict.set(tagRendering["id"], tagRendering)
         }
 
@@ -276,7 +276,8 @@ class LayerOverviewUtils extends Script {
 
         if (
             recompiledThemes.length > 0 &&
-            !(recompiledThemes.length === 1 && recompiledThemes[0] === "mapcomplete-changes")
+            !(recompiledThemes.length === 1 && recompiledThemes[0] === "mapcomplete-changes") &&
+            args.indexOf("--generate-change-map") >= 0
         ) {
             // mapcomplete-changes shows an icon for each corresponding mapcomplete-theme
             const iconsPerTheme = Array.from(sharedThemes.values()).map((th) => ({
@@ -401,8 +402,131 @@ class LayerOverviewUtils extends Script {
                 skippedLayers.length +
                 " layers"
         )
+        // We always need the calculated tags of 'usersettings', so we export them separately
+        this.extractJavascriptCodeForLayer(
+            state.sharedLayers.get("usersettings"),
+            "./src/Logic/State/UserSettingsMetaTagging.ts"
+        )
 
         return sharedLayers
+    }
+
+    /**
+     * Given: a fully expanded themeConfigJson
+     *
+     * Will extract a dictionary of the special code and write it into a javascript file which can be imported.
+     * This removes the need for _eval_, allowing for a correct CSP
+     * @param themeFile
+     * @private
+     */
+    private extractJavascriptCode(themeFile: LayoutConfigJson) {
+        const allCode = [
+            "import {Feature} from 'geojson'",
+            'import { ExtraFuncType } from "../../../Logic/ExtraFunctions";',
+            'import { Utils } from "../../../Utils"',
+            "export class ThemeMetaTagging {",
+            "   public static readonly themeName = " + JSON.stringify(themeFile.id),
+            "",
+        ]
+        for (const layer of themeFile.layers) {
+            const l = <LayerConfigJson>layer
+            const id = l.id.replace(/[^a-zA-Z0-9_]/g, "_")
+            const code = l.calculatedTags ?? []
+
+            allCode.push(
+                "   public metaTaggging_for_" +
+                    id +
+                    "(feat: Feature, helperFunctions: Record<ExtraFuncType, (feature: Feature) => Function>) {"
+            )
+            allCode.push("      const {" + ExtraFunctions.types.join(", ") + "} = helperFunctions")
+            for (const line of code) {
+                const firstEq = line.indexOf("=")
+                let attributeName = line.substring(0, firstEq).trim()
+                const expression = line.substring(firstEq + 1)
+                const isStrict = attributeName.endsWith(":")
+                if (!isStrict) {
+                    allCode.push(
+                        "      Utils.AddLazyProperty(feat.properties, '" +
+                            attributeName +
+                            "', () => " +
+                            expression +
+                            " ) "
+                    )
+                } else {
+                    attributeName = attributeName.substring(0, attributeName.length - 1).trim()
+                    allCode.push("      feat.properties['" + attributeName + "'] = " + expression)
+                }
+            }
+            allCode.push("   }")
+        }
+
+        const targetDir = "./src/assets/generated/metatagging/"
+        if (!existsSync(targetDir)) {
+            mkdirSync(targetDir)
+        }
+        allCode.push("}")
+
+        writeFileSync(targetDir + themeFile.id + ".ts", allCode.join("\n"))
+    }
+
+    private extractJavascriptCodeForLayer(l: LayerConfigJson, targetPath?: string) {
+        if (!l) {
+            return // Probably a bootstrapping run
+        }
+        let importPath = "../../../"
+        if (targetPath) {
+            const l = targetPath.split("/")
+            if (l.length == 1) {
+                importPath = "./"
+            } else {
+                importPath = ""
+                for (let i = 0; i < l.length - 3; i++) {
+                    const _ = l[i]
+                    importPath += "../"
+                }
+            }
+        }
+        const allCode = [
+            `import { Utils } from "${importPath}Utils"`,
+            `/** This code is autogenerated - do not edit. Edit ./assets/layers/${l?.id}/${l?.id}.json instead */`,
+            "export class ThemeMetaTagging {",
+            "   public static readonly themeName = " + JSON.stringify(l.id),
+            "",
+        ]
+        const code = l.calculatedTags ?? []
+
+        allCode.push(
+            "   public metaTaggging_for_" + l.id + "(feat: {properties: Record<string, string>}) {"
+        )
+        for (const line of code) {
+            const firstEq = line.indexOf("=")
+            let attributeName = line.substring(0, firstEq).trim()
+            const expression = line.substring(firstEq + 1)
+            const isStrict = attributeName.endsWith(":")
+            if (!isStrict) {
+                allCode.push(
+                    "      Utils.AddLazyProperty(feat.properties, '" +
+                        attributeName +
+                        "', () => " +
+                        expression +
+                        " ) "
+                )
+            } else {
+                attributeName = attributeName.substring(0, attributeName.length - 2).trim()
+                allCode.push("      feat.properties['" + attributeName + "'] = " + expression)
+            }
+        }
+        allCode.push("   }")
+        allCode.push("}")
+
+        const targetDir = "./src/assets/generated/metatagging/"
+        if (!targetPath) {
+            if (!existsSync(targetDir)) {
+                mkdirSync(targetDir)
+            }
+        }
+
+        writeFileSync(targetPath ?? targetDir + "layer_" + l.id + ".ts", allCode.join("\n"))
     }
 
     private buildThemeIndex(
@@ -442,6 +566,7 @@ class LayerOverviewUtils extends Script {
         })
 
         const skippedThemes: string[] = []
+
         for (let i = 0; i < themeFiles.length; i++) {
             const themeInfo = themeFiles[i]
             const themePath = themeInfo.path
@@ -449,6 +574,7 @@ class LayerOverviewUtils extends Script {
 
             const targetPath =
                 LayerOverviewUtils.themePath + "/" + themePath.substring(themePath.lastIndexOf("/"))
+
             const usedLayers = Array.from(
                 LayerOverviewUtils.extractLayerIdsFrom(themeFile, false)
             ).map((id) => LayerOverviewUtils.layerPath + id + ".json")
@@ -510,6 +636,8 @@ class LayerOverviewUtils extends Script {
 
                 this.writeTheme(themeFile)
                 fixed.set(themeFile.id, themeFile)
+
+                this.extractJavascriptCode(themeFile)
             } catch (e) {
                 console.error("ERROR: could not prepare theme " + themePath + " due to " + e)
                 throw e

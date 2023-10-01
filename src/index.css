@@ -154,6 +154,11 @@ input[type=text] {
     border-radius: 0.5rem;
 }
 
+.border-region {
+    border: 2px dashed var(--interactive-background);
+    border-radius: 0.5rem;
+}
+
 
 /******************* Styling of input elements **********************/
 

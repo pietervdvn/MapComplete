@@ -286,7 +286,7 @@ export class TagUtils {
                         "Invalid type to flatten the multiAnswer: key is a regex too",
                         tagsFilter
                     )
-                    throw "Invalid type to FlattenMultiAnswer"
+                    throw "Invalid type to FlattenMultiAnswer: key is a regex too"
                 }
                 const keystr = <string>key
                 if (keyValues[keystr] === undefined) {
@@ -297,7 +297,10 @@ export class TagUtils {
             }
 
             console.error("Invalid type to flatten the multiAnswer", tagsFilter)
-            throw "Invalid type to FlattenMultiAnswer"
+            throw (
+                "Invalid type to FlattenMultiAnswer, not one of RegexTag, Tag or And: " +
+                tagsFilter.asHumanString(false, false, {})
+            )
         }
         return keyValues
     }
@@ -320,6 +323,9 @@ export class TagUtils {
 
     /**
      * Given multiple tagsfilters which can be used as answer, will take the tags with the same keys together as set.
+     *
+     * @see MatchesMultiAnswer to do the reverse
+     *
      * E.g:
      *
      * const tag = TagUtils.ParseUploadableTag({"and": [
@@ -665,13 +671,22 @@ export class TagUtils {
      * TagUtils.LevelsParser("-1") // => ["-1"]
      * TagUtils.LevelsParser("0;-1") // => ["0", "-1"]
      * TagUtils.LevelsParser(undefined) // => []
+     * TagUtils.LevelsParser("") // => []
+     * TagUtils.LevelsParser(";") // => []
+     *
      */
     public static LevelsParser(level: string): string[] {
+        if (level === undefined || level === null) {
+            return []
+        }
         let spec = Utils.NoNull([level])
         spec = [].concat(...spec.map((s) => s?.split(";")))
         spec = [].concat(
             ...spec.map((s) => {
                 s = s.trim()
+                if (s === "") {
+                    return undefined
+                }
                 if (s.indexOf("-") < 0 || s.startsWith("-")) {
                     return s
                 }

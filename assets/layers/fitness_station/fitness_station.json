@@ -3,12 +3,14 @@
   "name": {
     "en": "Fitness Stations",
     "de": "Fitness-Stationen",
-    "nl": "Fitness-toestel"
+    "nl": "Fitness-toestel",
+    "ca": "Estacions de fitness"
   },
   "description": {
     "en": "Find a fitness station near you, and add missing ones.",
     "de": "Finden Sie eine Fitness-Station in der Nähe und fügen Sie fehlende hinzu.",
-    "nl": "Vind een fitness-centrum in je buurt en voeg ontbrekende fitness-centra toe"
+    "nl": "Vind een fitness-centrum in je buurt en voeg ontbrekende fitness-centra toe",
+    "ca": "Troba una estació de fitness a prop teu i afegeix-ne les que falten."
   },
   "source": {
     "osmTags": "leisure=fitness_station"
@@ -17,14 +19,16 @@
   "title": {
     "render": {
       "en": "Fitness Station",
-      "de": "Fitness-Station"
+      "de": "Fitness-Station",
+      "ca": "Estació de fitness"
     },
     "mappings": [
       {
         "if": "name~*",
         "then": {
           "en": "Fitness Station {name}",
-          "de": "Fitness-Station {name}"
+          "de": "Fitness-Station {name}",
+          "ca": "Estació de fitness {name}"
         }
       }
     ]
@@ -36,14 +40,16 @@
       "question": {
         "en": "What is the name of this fitness station?",
         "de": "Wie lautet der Name der Fitness-Station?",
-        "nl": "Wat is de naam van dit fitness-toestel?"
+        "nl": "Wat is de naam van dit fitness-toestel?",
+        "ca": "Quin és el nom d'aquesta estació de fitness?"
       },
       "freeform": {
         "key": "name",
         "placeholder": {
           "en": "Name of the fitness station",
           "de": "Name der Fitness-Station",
-          "nl": "Naam van het fitness-toestell"
+          "nl": "Naam van het fitness-toestell",
+          "ca": "Nom de l'estació de fitness"
         },
         "type": "string"
       },
@@ -53,14 +59,16 @@
           "then": {
             "en": "This fitness station doesn't have a name",
             "de": "Die Fitness-Station hat keinen Namen",
-            "nl": "Dit fitness-toestel heeft geen naam"
+            "nl": "Dit fitness-toestel heeft geen naam",
+            "ca": "L'estació de fitness no té nom"
           }
         }
       ],
       "render": {
         "en": "This fitness station is called {name}",
         "de": "Die Fitness-Station heißt {name}",
-        "nl": "Dit fitness-toestel heet {name}"
+        "nl": "Dit fitness-toestel heet {name}",
+        "ca": "L'estació de fitness es diu {name}"
       }
     },
     {
@@ -74,7 +82,8 @@
           "if": "fitness_station=horizontal_bar",
           "then": {
             "en": "This fitness station has a horizontal bar, high enough for pull-ups.",
-            "de": "Die Fitness-Station hat eine Reckstange für Klimmzüge."
+            "de": "Die Fitness-Station hat eine Reckstange für Klimmzüge.",
+            "ca": "Aquesta estació de fitness té una barra horitzontal, prou alta per a fer traccions."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Trimm-Dich-Pfad_Grünwalder_Forst_Klimmzüge.jpg",
@@ -85,7 +94,8 @@
           "if": "fitness_station=sign",
           "then": {
             "en": "This fitness station has a sign with instructions for a specific exercise.",
-            "de": "Die Fitness-Station hat ein Schild mit Anweisungen für eine bestimmte Übung."
+            "de": "Die Fitness-Station hat ein Schild mit Anweisungen für eine bestimmte Übung.",
+            "ca": "Aquesta estació de fitness té un cartell amb instruccions per a un exercici concret."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Outdoor_fitness_station_sign.jpg",
@@ -96,7 +106,8 @@
           "if": "fitness_station=sit-up",
           "then": {
             "en": "This fitness station has a facility for sit-ups.",
-            "de": "Die Fitness-Station hat eine Einrichtung für Sit-ups."
+            "de": "Die Fitness-Station hat eine Einrichtung für Sit-ups.",
+            "ca": "Aquesta estació de fitness té una instal·lació per fer abdominals."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Inclined_sit-up_bench.jpg",
@@ -107,7 +118,8 @@
           "if": "fitness_station=push-up",
           "then": {
             "en": "This fitness station has a facility for push-ups. Usually consists of one or more low horizontal bars.",
-            "de": "Die Fitness-Station hat eine Vorrichtung für Liegestütze. In der Regel eine oder mehrere niedrige Reckstangen."
+            "de": "Die Fitness-Station hat eine Vorrichtung für Liegestütze. In der Regel eine oder mehrere niedrige Reckstangen.",
+            "ca": "Aquest estació de fitness té una instal·lació per a flexions. Normalment consta d'una o més barres horitzontals baixes."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Push-up_bars.jpg",
@@ -118,7 +130,8 @@
           "if": "fitness_station=stretch_bars",
           "then": {
             "en": "This fitness station has bars for stretching.",
-            "de": "Die Fitness-Station hat Stangen zum Dehnen."
+            "de": "Die Fitness-Station hat Stangen zum Dehnen.",
+            "ca": "Aquesta estació de fitness disposa de barres per fer estiraments."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_stretch_bars.jpg",
@@ -129,7 +142,8 @@
           "if": "fitness_station=hyperextension",
           "then": {
             "en": "This fitness station has a station for making hyperextensions.",
-            "de": "Die Fitness-Station hat eine Vorrichtung für Rückenstrecker (Hyperextensions)."
+            "de": "Die Fitness-Station hat eine Vorrichtung für Rückenstrecker (Hyperextensions).",
+            "ca": "Aquesta estació de fitness disposa d'una estació per fer hiperextensions."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Inclined_sit-up_and_hyperextension_bench.jpg",
@@ -140,7 +154,8 @@
           "if": "fitness_station=rings",
           "then": {
             "en": "This fitness station has rings for gymnastic exercises.",
-            "de": "Die Fitness-Station hat Ringe für Gymnastikübungen."
+            "de": "Die Fitness-Station hat Ringe für Gymnastikübungen.",
+            "ca": "Aquesta estació de fitness disposa d'anelles per fer exercicis de gimnàstica."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Exercise9159.jpg",
@@ -151,7 +166,8 @@
           "if": "fitness_station=horizontal_ladder",
           "then": {
             "en": "This fitness station has a horizontal ladder, also known as monkey bars.",
-            "de": "Die Fitness-Station hat eine horizontale Leiter (Monkey Bars)."
+            "de": "Die Fitness-Station hat eine horizontale Leiter (Monkey Bars).",
+            "ca": "Aquest gimnàs té una escala horitzontal, també coneguda com a barres de mico."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Horizontal_ladder.jpg",
@@ -162,7 +178,8 @@
           "if": "fitness_station=wall_bars",
           "then": {
             "en": "This fitness station has wall bars to climb on.",
-            "de": "Die Fitness-Station hat eine Sprossenwand zum Klettern."
+            "de": "Die Fitness-Station hat eine Sprossenwand zum Klettern.",
+            "ca": "Aquesta estació de fitness té barres per pujar-hi."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/RIAN_archive_493268_Sports_at_a_kindergarten.jpg",
@@ -173,7 +190,8 @@
           "if": "fitness_station=slalom",
           "then": {
             "en": "This fitness station has posts for performing slalom exercises.",
-            "de": "Die Fitness-Station hat Pfosten für Slalomübungen."
+            "de": "Die Fitness-Station hat Pfosten für Slalomübungen.",
+            "ca": "Aquesta estació de fitness té llocs per fer exercicis d'eslàlom."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_slalom.jpg",
@@ -184,7 +202,8 @@
           "if": "fitness_station=stepping_stones",
           "then": {
             "en": "This fitness station has stepping stones.",
-            "de": "Die Fitness-Station hat Trittsteine."
+            "de": "Die Fitness-Station hat Trittsteine.",
+            "ca": "Aquesta estació de gimnàs té esglaons."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_stepping_stone.jpg",
@@ -195,7 +214,8 @@
           "if": "fitness_station=leapfrog",
           "then": {
             "en": "This fitness station has cones for performing leapfrog jumps.",
-            "de": "Die Fitness-Station hat Hütchen für Bocksprünge."
+            "de": "Die Fitness-Station hat Hütchen für Bocksprünge.",
+            "ca": "Aquesta estació de fitness disposa de cons per fer salts de granota."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_leapfrog.jpg",
@@ -206,7 +226,8 @@
           "if": "fitness_station=beam_jump",
           "then": {
             "en": "This fitness station has beams to jump over.",
-            "de": "Die Fitness-Station hat Balken zum überspringen."
+            "de": "Die Fitness-Station hat Balken zum überspringen.",
+            "ca": "Aquesta estació de fitness té bigues per saltar."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_beam_jump.jpg",
@@ -217,7 +238,8 @@
           "if": "fitness_station=hurdling",
           "then": {
             "en": "This fitness station has hurdles to cross.",
-            "de": "Die Fitnessstation hat Hürden zum überspringen."
+            "de": "Die Fitnessstation hat Hürden zum überspringen.",
+            "ca": "Aquesta estació de fitness té obstacles per a travesar."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_hurdling.jpg",
@@ -228,7 +250,8 @@
           "if": "fitness_station=wall",
           "then": {
             "en": "This fitness station has a wall to climb on.",
-            "de": "Die Fitness-Station hat eine Kletterwand."
+            "de": "Die Fitness-Station hat eine Kletterwand.",
+            "ca": "Aquesta estació de fitness té una paret per enfilar-se."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_wall.jpg",
@@ -353,7 +376,8 @@
       "question": {
         "en": "Who maintains this fitness station?",
         "de": "Wer betreibt die Fitness-Station?",
-        "nl": "Wie beheert dit fitness-toestel?"
+        "nl": "Wie beheert dit fitness-toestel?",
+        "ca": "Qui manté l'estació de fitness?"
       },
       "freeform": {
         "key": "operator",
@@ -367,7 +391,8 @@
       "render": {
         "en": "The fitness station is maintained by {operator}.",
         "de": "Die Fitness-Station wird betrieben von {operator}.",
-        "nl": "Dit fitness-toestel wordt beheerd door {operator}"
+        "nl": "Dit fitness-toestel wordt beheerd door {operator}",
+        "ca": "{operator} manté l'estació de fitness."
       }
     },
     "opening_hours_24_7"
@@ -381,7 +406,8 @@
       "title": {
         "en": "a fitness station",
         "de": "eine Fitness-Station",
-        "nl": "een fitness-toestel"
+        "nl": "een fitness-toestel",
+        "ca": "una estació de fitness"
       },
       "icon": "./assets/layers/fitness_station/fitness.svg"
     }

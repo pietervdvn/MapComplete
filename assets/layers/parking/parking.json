@@ -21,7 +21,8 @@
       "de": "Parkplatz",
       "es": "aparcamiento de coches",
       "fr": "Lieu de stationnement",
-      "pl": "Parking samochodowy"
+      "pl": "Parking samochodowy",
+      "ca": "Aparcament de cotxes"
     }
   },
   "description": {
@@ -55,7 +56,8 @@
             "en": "This is a parking bay next to a street",
             "nl": "Dit is een parkeerplek langs een weg",
             "de": "Dies ist eine Parkbucht neben einer Straße",
-            "fr": "C'est un lieu de stationnement à côté d'une route"
+            "fr": "C'est un lieu de stationnement à côté d'une route",
+            "ca": "Es tracta d'un aparcament al costat d'un carrer"
           }
         },
         {
@@ -76,7 +78,8 @@
             "nl": "Dit is een bovengrondse parkeergarage met meerdere verdiepingen",
             "de": "Dies ist ein mehrstöckiges oberirdisches Parkhaus",
             "fr": "C'est un parking à plusieurs étages",
-            "pl": "To jest wielopiętrowy parking"
+            "pl": "To jest wielopiętrowy parking",
+            "ca": "Es tracta d'un garatge de diverses plantes"
           }
         },
         {
@@ -95,7 +98,8 @@
             "nl": "Dit is een strook voor parkeren op de weg",
             "de": "Dies ist eine Fahrspur zum Parken auf der Straße",
             "fr": "C'est une voie de stationnement sur la route",
-            "pl": "To jest pas do parkowania na jezdni"
+            "pl": "To jest pas do parkowania na jezdni",
+            "ca": "Aquest és un carril per aparcar al carrer"
           }
         },
         {
@@ -122,7 +126,8 @@
             "en": "This is a parking on a layby",
             "nl": "Dit is een parkeerplek op een layby",
             "de": "Hier gibt es Parkmöglichkeiten auf einem kleinen Rastplatz",
-            "fr": "C'est un parking sur une aire de stationnement"
+            "fr": "C'est un parking sur une aire de stationnement",
+            "ca": "Aquest és un aparcament en una zona de descans"
           }
         },
         {
@@ -178,7 +183,8 @@
             "nl": "Er zijn geen parkeerplaatsen voor gehandicapten",
             "de": "Es gibt keine barrierefreien Stellplätze",
             "fr": "Il n'y a pas de places de stationnement pour personnes à mobilité réduite",
-            "pl": "Nie ma tutaj żadnych miejsc parkingowych dla niepełnosprawnych"
+            "pl": "Nie ma tutaj żadnych miejsc parkingowych dla niepełnosprawnych",
+            "ca": "No hi ha places d'aparcament per a minusvàlids"
           },
           "hideInAnswer": true
         },

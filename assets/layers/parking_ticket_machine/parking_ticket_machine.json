@@ -15,7 +15,8 @@
     "render": {
       "en": "Parking Ticket Machine",
       "nl": "Parkeerkaartautomaat",
-      "de": "Parkscheinautomat"
+      "de": "Parkscheinautomat",
+      "ca": "Màquina de bitllets d'aparcament"
     }
   },
   "source": {
@@ -51,7 +52,8 @@
       "question": {
         "en": "What is the reference number of this parking ticket machine?",
         "nl": "Wat is het referentienummer van deze parkeerkaartautomaat?",
-        "de": "Wie lautet die Referenznummer dieses Parkscheinautomaten?"
+        "de": "Wie lautet die Referenznummer dieses Parkscheinautomaten?",
+        "ca": "Quin és el número de referència d'aquesta màquina de bitllets d'aparcament?"
       },
       "freeform": {
         "key": "ref",

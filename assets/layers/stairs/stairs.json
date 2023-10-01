@@ -15,7 +15,8 @@
     "render": {
       "en": "Stairs",
       "nl": "Trap",
-      "de": "Treppe"
+      "de": "Treppe",
+      "ca": "Escales"
     },
     "mappings": [
       {
@@ -23,7 +24,8 @@
         "then": {
           "en": "Escalator",
           "nl": "Roltrap",
-          "de": "Rolltreppe"
+          "de": "Rolltreppe",
+          "ca": "Escala mecànica"
         }
       }
     ]
@@ -40,12 +42,14 @@
         "question": {
           "en": "Between which levels are these stairs?",
           "nl": "Tussen welke verdiepingen loopt deze trap?",
-          "de": "Zwischen welchen Stockwerken befindet sich diese Treppe?"
+          "de": "Zwischen welchen Stockwerken befindet sich diese Treppe?",
+          "ca": "Entre quines plantes estan aquestes escales?"
         },
         "render": {
           "en": "These stairs are between the levels {level}",
           "nl": "Deze trap loopt tussen de verdiepingen {level}",
-          "de": "Diese Treppe ist zwischen den Stockwerken {level}"
+          "de": "Diese Treppe ist zwischen den Stockwerken {level}",
+          "ca": "Aquestes escales estan entre les plantes {level}"
         }
       }
     },
@@ -54,7 +58,8 @@
       "question": {
         "en": "Does this stair have a handrail?",
         "nl": "Heeft deze trap een leuning?",
-        "de": "Hat die Treppe einen Handlauf?"
+        "de": "Hat die Treppe einen Handlauf?",
+        "ca": "Aquestes escales tenen un passamà?"
       },
       "mappings": [
         {
@@ -71,7 +76,8 @@
           "then": {
             "en": "These stairs do <b>not</b> have a handrail",
             "nl": "Deze trap heeft <b>geen</b> leuning",
-            "de": "Die Treppe hat <b>keinen</b> Handlauf"
+            "de": "Die Treppe hat <b>keinen</b> Handlauf",
+            "ca": "Aquestes escales <b>no</b> tenen un passamà"
           }
         }
       ]
@@ -116,17 +122,20 @@
           "question": {
             "en": "In which languages is there tactile writing (braille) for navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
             "de": "In welchen Sprachen gibt es taktile Schrift (Braille) für die Navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
-            "nl": "In welke talen is er voelbaar schrift (braille) voor navigatie? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />"
+            "nl": "In welke talen is er voelbaar schrift (braille) voor navigatie? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
+            "ca": "En quins idiomes hi ha escriptura tàctil (braille) per a la navegació? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />"
           },
           "render_list_item": {
             "en": "These stairs have tactile writing in {language():font-bold}",
             "de": "Die Treppe hat taktile Schrift in {language():font-bold}",
-            "nl": "Deze trap heeft voelbaar schrijft in {language():font-bold}"
+            "nl": "Deze trap heeft voelbaar schrijft in {language():font-bold}",
+            "ca": "Aquestes escales tenen escriptura tàctil en {language():font-bold}"
           },
           "render_single_language": {
             "en": "These stairs have tactile writing in {language():font-bold}",
             "de": "Die Treppe hat taktile Schrift in {language():font-bold}",
-            "nl": "Deze trap heeft voelbaar schrijft in {language():font-bold}"
+            "nl": "Deze trap heeft voelbaar schrijft in {language():font-bold}",
+            "ca": "Aquestes escales tenen escriptura tàctil en {language():font-bold}"
           }
         }
       }
@@ -139,7 +148,8 @@
           "then": {
             "en": "This is an escalator",
             "nl": "Dit is een roltrap",
-            "de": "Das ist eine Rolltreppe"
+            "de": "Das ist eine Rolltreppe",
+            "ca": "Açò és una escala mecànica"
           }
         },
         {
@@ -147,7 +157,8 @@
           "then": {
             "en": "This is not an escalator",
             "nl": "Dit is geen roltrap",
-            "de": "Das ist keine Rolltreppe"
+            "de": "Das ist keine Rolltreppe",
+            "ca": "Açò no és una escala mecànica"
           }
         },
         {
@@ -197,7 +208,8 @@
           "then": {
             "en": "There is ramp for wheelchairs here, but it is shown separately on the map",
             "de": "Hier gibt es eine Rampe für Rollstühle, die jedoch auf der Karte separat angezeigt wird",
-            "nl": "Er is hier een helling voor rolstoelen, maar deze is los aangegeven op de kaart"
+            "nl": "Er is hier een helling voor rolstoelen, maar deze is los aangegeven op de kaart",
+            "ca": "Aquí hi ha una rampa per a cadira de rodes, però es mostra separadament al mapa"
           },
           "hideInAnswer": true
         },

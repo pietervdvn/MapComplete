@@ -31,7 +31,7 @@
   "startLat": 52.99238,
   "startLon": 6.570614,
   "startZoom": 20,
-  "defaultBackgroundId": "CartoDB.Positron",
+  "defaultBackgroundId": "maptiler.backdrop",
   "layers": [
     {
       "builtin": "cycleways_and_roads",

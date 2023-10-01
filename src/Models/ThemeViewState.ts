@@ -1,55 +1,62 @@
-import LayoutConfig from "./ThemeConfig/LayoutConfig";
-import { SpecialVisualizationState } from "../UI/SpecialVisualization";
-import { Changes } from "../Logic/Osm/Changes";
-import { ImmutableStore, Store, UIEventSource } from "../Logic/UIEventSource";
-import { FeatureSource, IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource";
-import { OsmConnection } from "../Logic/Osm/OsmConnection";
-import { ExportableMap, MapProperties } from "./MapProperties";
-import LayerState from "../Logic/State/LayerState";
-import { Feature, Point, Polygon } from "geojson";
-import FullNodeDatabaseSource from "../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource";
-import { Map as MlMap } from "maplibre-gl";
-import InitialMapPositioning from "../Logic/Actors/InitialMapPositioning";
-import { MapLibreAdaptor } from "../UI/Map/MapLibreAdaptor";
-import { GeoLocationState } from "../Logic/State/GeoLocationState";
-import FeatureSwitchState from "../Logic/State/FeatureSwitchState";
-import { QueryParameters } from "../Logic/Web/QueryParameters";
-import UserRelatedState from "../Logic/State/UserRelatedState";
-import LayerConfig from "./ThemeConfig/LayerConfig";
-import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler";
-import { AvailableRasterLayers, RasterLayerPolygon, RasterLayerUtils } from "./RasterLayers";
-import LayoutSource from "../Logic/FeatureSource/Sources/LayoutSource";
-import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource";
-import FeaturePropertiesStore from "../Logic/FeatureSource/Actors/FeaturePropertiesStore";
-import PerLayerFeatureSourceSplitter from "../Logic/FeatureSource/PerLayerFeatureSourceSplitter";
-import FilteringFeatureSource from "../Logic/FeatureSource/Sources/FilteringFeatureSource";
-import ShowDataLayer from "../UI/Map/ShowDataLayer";
-import TitleHandler from "../Logic/Actors/TitleHandler";
-import ChangeToElementsActor from "../Logic/Actors/ChangeToElementsActor";
-import PendingChangesUploader from "../Logic/Actors/PendingChangesUploader";
-import SelectedElementTagsUpdater from "../Logic/Actors/SelectedElementTagsUpdater";
-import { BBox } from "../Logic/BBox";
-import Constants from "./Constants";
-import Hotkeys from "../UI/Base/Hotkeys";
-import Translations from "../UI/i18n/Translations";
-import { GeoIndexedStoreForLayer } from "../Logic/FeatureSource/Actors/GeoIndexedStore";
-import { LastClickFeatureSource } from "../Logic/FeatureSource/Sources/LastClickFeatureSource";
-import { MenuState } from "./MenuState";
-import MetaTagging from "../Logic/MetaTagging";
-import ChangeGeometryApplicator from "../Logic/FeatureSource/Sources/ChangeGeometryApplicator";
+import LayoutConfig from "./ThemeConfig/LayoutConfig"
+import { SpecialVisualizationState } from "../UI/SpecialVisualization"
+import { Changes } from "../Logic/Osm/Changes"
+import { Store, UIEventSource } from "../Logic/UIEventSource"
 import {
-    NewGeometryFromChangesFeatureSource
-} from "../Logic/FeatureSource/Sources/NewGeometryFromChangesFeatureSource";
-import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader";
-import ShowOverlayRasterLayer from "../UI/Map/ShowOverlayRasterLayer";
-import { Utils } from "../Utils";
-import { EliCategory } from "./RasterLayerProperties";
-import BackgroundLayerResetter from "../Logic/Actors/BackgroundLayerResetter";
-import SaveFeatureSourceToLocalStorage from "../Logic/FeatureSource/Actors/SaveFeatureSourceToLocalStorage";
-import BBoxFeatureSource from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource";
-import ThemeViewStateHashActor from "../Logic/Web/ThemeViewStateHashActor";
-import NoElementsInViewDetector, { FeatureViewState } from "../Logic/Actors/NoElementsInViewDetector";
-import FilteredLayer from "./FilteredLayer";
+    FeatureSource,
+    IndexedFeatureSource,
+    WritableFeatureSource,
+} from "../Logic/FeatureSource/FeatureSource"
+import { OsmConnection } from "../Logic/Osm/OsmConnection"
+import { ExportableMap, MapProperties } from "./MapProperties"
+import LayerState from "../Logic/State/LayerState"
+import { Feature, Point, Polygon } from "geojson"
+import FullNodeDatabaseSource from "../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
+import { Map as MlMap } from "maplibre-gl"
+import InitialMapPositioning from "../Logic/Actors/InitialMapPositioning"
+import { MapLibreAdaptor } from "../UI/Map/MapLibreAdaptor"
+import { GeoLocationState } from "../Logic/State/GeoLocationState"
+import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
+import { QueryParameters } from "../Logic/Web/QueryParameters"
+import UserRelatedState from "../Logic/State/UserRelatedState"
+import LayerConfig from "./ThemeConfig/LayerConfig"
+import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
+import { AvailableRasterLayers, RasterLayerPolygon, RasterLayerUtils } from "./RasterLayers"
+import LayoutSource from "../Logic/FeatureSource/Sources/LayoutSource"
+import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource"
+import FeaturePropertiesStore from "../Logic/FeatureSource/Actors/FeaturePropertiesStore"
+import PerLayerFeatureSourceSplitter from "../Logic/FeatureSource/PerLayerFeatureSourceSplitter"
+import FilteringFeatureSource from "../Logic/FeatureSource/Sources/FilteringFeatureSource"
+import ShowDataLayer from "../UI/Map/ShowDataLayer"
+import TitleHandler from "../Logic/Actors/TitleHandler"
+import ChangeToElementsActor from "../Logic/Actors/ChangeToElementsActor"
+import PendingChangesUploader from "../Logic/Actors/PendingChangesUploader"
+import SelectedElementTagsUpdater from "../Logic/Actors/SelectedElementTagsUpdater"
+import { BBox } from "../Logic/BBox"
+import Constants from "./Constants"
+import Hotkeys from "../UI/Base/Hotkeys"
+import Translations from "../UI/i18n/Translations"
+import { GeoIndexedStoreForLayer } from "../Logic/FeatureSource/Actors/GeoIndexedStore"
+import { LastClickFeatureSource } from "../Logic/FeatureSource/Sources/LastClickFeatureSource"
+import { MenuState } from "./MenuState"
+import MetaTagging from "../Logic/MetaTagging"
+import ChangeGeometryApplicator from "../Logic/FeatureSource/Sources/ChangeGeometryApplicator"
+import { NewGeometryFromChangesFeatureSource } from "../Logic/FeatureSource/Sources/NewGeometryFromChangesFeatureSource"
+import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader"
+import ShowOverlayRasterLayer from "../UI/Map/ShowOverlayRasterLayer"
+import { Utils } from "../Utils"
+import { EliCategory } from "./RasterLayerProperties"
+import BackgroundLayerResetter from "../Logic/Actors/BackgroundLayerResetter"
+import SaveFeatureSourceToLocalStorage from "../Logic/FeatureSource/Actors/SaveFeatureSourceToLocalStorage"
+import BBoxFeatureSource from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
+import ThemeViewStateHashActor from "../Logic/Web/ThemeViewStateHashActor"
+import NoElementsInViewDetector, {
+    FeatureViewState,
+} from "../Logic/Actors/NoElementsInViewDetector"
+import FilteredLayer from "./FilteredLayer"
+import { PreferredRasterLayerSelector } from "../Logic/Actors/PreferredRasterLayerSelector"
+import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
+import { Imgur } from "../Logic/ImageProviders/Imgur"
 
 /**
  *
@@ -98,6 +105,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly userRelatedState: UserRelatedState
     readonly geolocation: GeoLocationHandler
 
+    readonly imageUploadManager: ImageUploadManager
+
     readonly lastClickObject: WritableFeatureSource
     readonly overlayLayerStates: ReadonlyMap<
         string,
@@ -109,6 +118,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly floors: Store<string[]>
 
     constructor(layout: LayoutConfig) {
+        Utils.initDomPurify()
         this.layout = layout
         this.featureSwitches = new FeatureSwitchState(layout)
         this.guistate = new MenuState(
@@ -137,7 +147,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.osmConnection,
             layout?.language,
             layout,
-            this.featureSwitches
+            this.featureSwitches,
+            this.mapProperties
         )
         this.userRelatedState.fixateNorth.addCallbackAndRunD((fixated) => {
             this.mapProperties.allowRotating.setData(fixated !== "yes")
@@ -239,7 +250,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.newFeatures = new NewGeometryFromChangesFeatureSource(
                 this.changes,
                 indexedElements,
-                this.osmConnection.Backend()
+                this.featureProperties
             )
             layoutSource.addSource(this.newFeatures)
 
@@ -280,7 +291,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             }
             const floors = new Set<string>()
             for (const feature of features) {
-                const level = feature.properties["level"]
+                let level = feature.properties["_level"]
                 if (level) {
                     const levels = level.split(";")
                     for (const l of levels) {
@@ -319,6 +330,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.perLayerFiltered = this.showNormalDataOn(this.map)
 
         this.hasDataInView = new NoElementsInViewDetector(this).hasFeatureInView
+        this.imageUploadManager = new ImageUploadManager(
+            layout,
+            Imgur.singleton,
+            this.featureProperties,
+            this.osmConnection,
+            this.changes
+        )
 
         this.initActors()
         this.addLastClick(lastClick)
@@ -599,5 +617,11 @@ export default class ThemeViewState implements SpecialVisualizationState {
         new PendingChangesUploader(this.changes, this.selectedElement)
         new SelectedElementTagsUpdater(this)
         new BackgroundLayerResetter(this.mapProperties.rasterLayer, this.availableLayers)
+        new PreferredRasterLayerSelector(
+            this.mapProperties.rasterLayer,
+            this.availableLayers,
+            this.featureSwitches.backgroundLayerId,
+            this.userRelatedState.preferredBackgroundLayer
+        )
     }
 }

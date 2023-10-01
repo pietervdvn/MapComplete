@@ -29,6 +29,7 @@
           "sameAs": "vending_machine"
         },
         "minzoom": 18,
+        "=presets": [],
         "source": {
           "osmTags": {
             "and": [

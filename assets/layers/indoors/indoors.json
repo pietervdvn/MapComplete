@@ -29,7 +29,8 @@
     "render": {
       "en": "Indoor area {name}",
       "de": "Innenbereich {name}",
-      "nl": "Binnenruimte {name}"
+      "nl": "Binnenruimte {name}",
+      "ca": "Àrea interior {name}"
     },
     "mappings": [
       {
@@ -38,7 +39,8 @@
           "en": "Indoor Room {name}",
           "de": "Innenraum {name}",
           "nl": "Binnenruimte {name}",
-          "pl": "Wewnętrzne pomieszczenie {name}"
+          "pl": "Wewnętrzne pomieszczenie {name}",
+          "ca": "Habitació interior {name}"
         }
       },
       {
@@ -46,7 +48,8 @@
         "then": {
           "en": "Indoor Area {name}",
           "de": "Innenbereich {name}",
-          "nl": "Gebied in gebouw {name}"
+          "nl": "Gebied in gebouw {name}",
+          "ca": "Àrea interior {name}"
         }
       },
       {
@@ -54,7 +57,8 @@
         "then": {
           "en": "Indoor Wall {name}",
           "de": "Innenwand {name}",
-          "nl": "Muur in gebouw {name}"
+          "nl": "Muur in gebouw {name}",
+          "ca": "Paret interior {name}"
         }
       },
       {
@@ -62,7 +66,8 @@
         "then": {
           "en": "Indoor Corridor {name}",
           "de": "Innengang {name}",
-          "nl": "Gang in gebouw {name}"
+          "nl": "Gang in gebouw {name}",
+          "ca": "Passadis interior {name}"
         }
       },
       {
@@ -70,7 +75,8 @@
         "then": {
           "en": "Indoor Door {name}",
           "de": "Innentür {name}",
-          "nl": "Binnendeur {name}"
+          "nl": "Binnendeur {name}",
+          "ca": "Porta interior {name}"
         }
       },
       {
@@ -83,9 +89,28 @@
       }
     ]
   },
+  "titleIcons": [
+    "icons.defaults",
+    {
+      "render": "{ref}",
+      "condition": "ref~*"
+    },
+    {
+      "icon": {
+        "class": ""
+      },
+      "mappings": [
+        {
+          "if": "capacity~*",
+          "then": "<div class='flex rounded-full low-interaction font-bold space-x-1 items-center mx-1'><img class='w-4 h-4' src='./assets/layers/indoors/room_conference.svg'/> {capacity}<div>"
+        }
+      ]
+    }
+  ],
   "minzoom": 13,
   "tagRenderings": [
     "images",
+    "level",
     {
       "id": "ref",
       "question": {
@@ -93,13 +118,15 @@
         "de": "Wie lautet die Nummer dieses Raums?",
         "nl": "Wat is het referentienummer van deze ruimte?",
         "fr": "Quel est le numéro de référence de cette pièce ?",
-        "pl": "Jaki jest numer referencyjny tego pomieszczenia?"
+        "pl": "Jaki jest numer referencyjny tego pomieszczenia?",
+        "ca": "Quin és el número de referència d'aquesta habitació?"
       },
       "render": {
         "en": "This room has the reference number {ref}",
         "de": "Dieser Raum hat die Raumnummer {ref}",
         "nl": "Deze ruimte heeft het referentienummer {ref}",
-        "pl": "To pomieszczenie ma numer referencyjny {ref}"
+        "pl": "To pomieszczenie ma numer referencyjny {ref}",
+        "ca": "Aquesta habitació té el número de referència {ref}"
       },
       "freeform": {
         "key": "ref",
@@ -107,7 +134,8 @@
         "placeholder": {
           "en": "Reference number of the room (e.g. '1.1' or 'A1')",
           "de": "Raumnummer (z.B. '1.1' oder 'A1')",
-          "nl": "Referentienummer van de ruimte (bv. '1.1' of A1' )"
+          "nl": "Referentienummer van de ruimte (bv. '1.1' of A1' )",
+          "ca": "Número de referència de l'habitació (p. e. '1.1' o 'A1')"
         }
       },
       "condition": {
@@ -124,14 +152,16 @@
         "en": "What is the name of this room?",
         "de": "Wie lautet der Name dieses Raums?",
         "nl": "Wat is de naam van deze ruimte?",
-        "ru": "Как называется эта комната?"
+        "ru": "Как называется эта комната?",
+        "ca": "Quin és el nom d'aquesta habitació?"
       },
       "render": {
         "en": "This room is named {name}",
         "de": "Der Name des Raums lautet {name}",
         "nl": "Deze ruimte heet {name}",
         "ru": "Эта комната называется {name}",
-        "fr": "Cette pièce s'appelle {name}"
+        "fr": "Cette pièce s'appelle {name}",
+        "ca": "Aquesta habitació es diu {name}"
       },
       "freeform": {
         "key": "name",
@@ -140,7 +170,8 @@
           "en": "Name of the room",
           "de": "Name des Raums",
           "nl": "Naam van de ruimte",
-          "ru": "Название комнаты"
+          "ru": "Название комнаты",
+          "ca": "Nom de l'habitació"
         }
       },
       "condition": {
@@ -149,6 +180,212 @@
           "indoor=area",
           "indoor=corridor"
         ]
+      }
+    },
+    {
+      "id": "room-type",
+      "question": {
+        "en": "What type of room is this?"
+      },
+      "mappings": [
+        {
+          "if": "room=administration",
+          "then": {
+            "en": "This is a administrative room"
+          },
+          "icon": "./assets/layers/indoors/room_administration.svg"
+        },
+        {
+          "if": "room=auditorium",
+          "then": {
+            "en": "This is a auditorium"
+          },
+          "icon": "./assets/layers/indoors/room_auditorium.svg"
+        },
+        {
+          "if": "room=bedroom",
+          "then": {
+            "en": "This is a bedroom"
+          },
+          "icon": "./assets/layers/indoors/room_bedroom.svg"
+        },
+        {
+          "if": "room=chapel",
+          "then": {
+            "en": "This is a chapel"
+          },
+          "icon": "./assets/layers/indoors/room_chapel.svg"
+        },
+        {
+          "if": "room=class",
+          "then": {
+            "en": "This is a classroom"
+          },
+          "icon": "./assets/layers/indoors/room_class.svg"
+        },
+        {
+          "if": "room=classroom",
+          "then": {
+            "en": "This is a classroom"
+          },
+          "icon": "./assets/layers/indoors/room_class.svg",
+          "hideInAnswer": true
+        },
+        {
+          "if": "room=computer",
+          "then": {
+            "en": "This is a computer room"
+          },
+          "icon": "./assets/layers/indoors/room_computer.svg"
+        },
+        {
+          "if": "room=conference",
+          "then": {
+            "en": "This is a conference room"
+          },
+          "icon": "./assets/layers/indoors/room_conference.svg"
+        },
+        {
+          "if": "room=crypt",
+          "then": {
+            "en": "This is a crypt"
+          },
+          "icon": "./assets/layers/indoors/room_crypt.svg"
+        },
+        {
+          "if": "room=kitchen",
+          "then": {
+            "en": "This is a kitchen"
+          },
+          "icon": "./assets/layers/indoors/room_kitchen.svg"
+        },
+        {
+          "if": "room=laboratory",
+          "then": {
+            "en": "This is a laboratory"
+          },
+          "icon": "./assets/layers/indoors/room_laboratory.svg"
+        },
+        {
+          "if": "room=library",
+          "then": {
+            "en": "This is a library"
+          },
+          "icon": "./assets/layers/indoors/room_library.svg"
+        },
+        {
+          "if": "room=locker",
+          "then": {
+            "en": "This is a locker room"
+          },
+          "icon": "./assets/layers/indoors/room_locker.svg"
+        },
+        {
+          "if": "room=nursery",
+          "then": {
+            "en": "This is a nursery"
+          },
+          "icon": "./assets/layers/indoors/room_nursery.svg"
+        },
+        {
+          "if": "room=office",
+          "then": {
+            "en": "This is an office"
+          },
+          "icon": "./assets/layers/indoors/room_office.svg"
+        },
+        {
+          "if": "room=prison_cell",
+          "then": {
+            "en": "This is a prison_cell"
+          },
+          "icon": "./assets/layers/indoors/room_prison_cell.svg"
+        },
+        {
+          "if": "room=restaurant",
+          "then": {
+            "en": "This is a restaurant"
+          },
+          "icon": "./assets/layers/indoors/room_restaurant.svg"
+        },
+        {
+          "if": "room=security_check",
+          "then": {
+            "en": "This is a room to perform security checks"
+          },
+          "icon": "./assets/layers/indoors/room_security_check.svg"
+        },
+        {
+          "if": "room=sport",
+          "then": {
+            "en": "This is a sport room"
+          },
+          "icon": "./assets/layers/indoors/room_sport.svg"
+        },
+        {
+          "if": "room=storage",
+          "then": {
+            "en": "This is a storage room"
+          },
+          "icon": "./assets/layers/indoors/room_storage.svg"
+        },
+        {
+          "if": "room=technical",
+          "then": {
+            "en": "This is a technical room"
+          },
+          "icon": "./assets/layers/indoors/room_technical.svg"
+        },
+        {
+          "if": "room=toilets",
+          "then": {
+            "en": "These are toilets"
+          },
+          "icon": "./assets/layers/indoors/room_toilets.svg",
+          "addExtraTags": ["amenity=toilets"]
+        },
+        {
+          "if": "room=waiting",
+          "then": {
+            "en": "This is a waiting room"
+          },
+          "icon": "./assets/layers/indoors/room_waiting.svg"
+        }
+      ]
+    },
+    {
+      "id": "room-capacity",
+      "question": {
+        "en": "How much people can at most fit in this room?"
+      },
+      "condition": {
+        "or": [
+          "room=waiting",
+          "room=restaurant",
+          "room=office",
+          "room=nursery",
+          "room=conference",
+          "room=auditorium",
+          "room=chapel",
+          "room=bedroom",
+          "room=classroom"
+        ]
+      },
+      "render": {
+        "en": "At most {capacity} people fit this room"
+      },
+      "freeform": {
+        "key": "capacity",
+        "type": "pnat"
+      }
+    },
+    "etymology.wikipedia-etymology",
+    {
+      "builtin": "toilet.relevant-questions",
+      "override": {
+        "condition": {
+          "+and": ["amenity=toilets"]
+        }
       }
     }
   ],
@@ -199,7 +436,7 @@
           {
             "if": {
               "or": [
-                "room=adminstration",
+                "room=administration",
                 "room=auditorium",
                 "room=bedroom",
                 "room=chapel",

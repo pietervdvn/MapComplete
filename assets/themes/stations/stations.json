@@ -27,7 +27,7 @@
   "startLon": 0,
   "startZoom": 0,
   "hideFromOverview": true,
-  "defaultBackgroundId": "CartoDB.Positron",
+  "defaultBackgroundId": "maptiler.backdrop",
   "layers": [
     {
       "builtin": "indoors",

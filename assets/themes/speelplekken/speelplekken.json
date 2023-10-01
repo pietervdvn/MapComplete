@@ -27,7 +27,7 @@
   "startZoom": 12,
   "widenFactor": 1.2,
   "socialImage": "./assets/themes/speelplekken/social_image.jpg",
-  "defaultBackgroundId": "CartoDB.Positron",
+  "defaultBackgroundId": "maptiler.backdrop",
   "layers": [
     {
       "id": "shadow",

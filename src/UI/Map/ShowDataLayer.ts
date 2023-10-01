@@ -1,21 +1,21 @@
-import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
-import type { Map as MlMap } from "maplibre-gl"
-import { GeoJSONSource, Marker } from "maplibre-gl"
-import { ShowDataLayerOptions } from "./ShowDataLayerOptions"
-import { GeoOperations } from "../../Logic/GeoOperations"
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import PointRenderingConfig from "../../Models/ThemeConfig/PointRenderingConfig"
-import { OsmTags } from "../../Models/OsmFeature"
-import { FeatureSource, FeatureSourceForLayer } from "../../Logic/FeatureSource/FeatureSource"
-import { BBox } from "../../Logic/BBox"
-import { Feature, Point } from "geojson"
-import LineRenderingConfig from "../../Models/ThemeConfig/LineRenderingConfig"
-import { Utils } from "../../Utils"
-import * as range_layer from "../../../assets/layers/range/range.json"
-import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
-import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFeatureSourceSplitter"
-import FilteredLayer from "../../Models/FilteredLayer"
-import SimpleFeatureSource from "../../Logic/FeatureSource/Sources/SimpleFeatureSource"
+import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource";
+import type { Map as MlMap } from "maplibre-gl";
+import { GeoJSONSource, Marker } from "maplibre-gl";
+import { ShowDataLayerOptions } from "./ShowDataLayerOptions";
+import { GeoOperations } from "../../Logic/GeoOperations";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import PointRenderingConfig from "../../Models/ThemeConfig/PointRenderingConfig";
+import { OsmTags } from "../../Models/OsmFeature";
+import { FeatureSource, FeatureSourceForLayer } from "../../Logic/FeatureSource/FeatureSource";
+import { BBox } from "../../Logic/BBox";
+import { Feature, Point } from "geojson";
+import LineRenderingConfig from "../../Models/ThemeConfig/LineRenderingConfig";
+import { Utils } from "../../Utils";
+import * as range_layer from "../../../assets/layers/range/range.json";
+import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson";
+import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFeatureSourceSplitter";
+import FilteredLayer from "../../Models/FilteredLayer";
+import SimpleFeatureSource from "../../Logic/FeatureSource/Sources/SimpleFeatureSource";
 
 class PointRenderingLayer {
     private readonly _config: PointRenderingConfig
@@ -284,86 +284,94 @@ class LineRenderingLayer {
             // Already up to date
             return
         }
-        if (src === undefined) {
-            this.currentSourceData = features
-            map.addSource(this._layername, {
-                type: "geojson",
-                data: {
-                    type: "FeatureCollection",
-                    features,
-                },
-                promoteId: "id",
-            })
-            // @ts-ignore
-            const linelayer = this._layername + "_line"
-            map.addLayer({
-                source: this._layername,
-                id: linelayer,
-                type: "line",
-                paint: {
-                    "line-color": ["feature-state", "color"],
-                    "line-opacity": ["feature-state", "color-opacity"],
-                    "line-width": ["feature-state", "width"],
-                    "line-offset": ["feature-state", "offset"],
-                },
-                layout: {
-                    "line-cap": "round",
-                },
-            })
-
-            map.on("click", linelayer, (e) => {
-                // line-layer-listener
-                e.originalEvent["consumed"] = true
-                this._onClick(e.features[0])
-            })
-            const polylayer = this._layername + "_polygon"
-
-            map.addLayer({
-                source: this._layername,
-                id: polylayer,
-                type: "fill",
-                filter: ["in", ["geometry-type"], ["literal", ["Polygon", "MultiPolygon"]]],
-                layout: {},
-                paint: {
-                    "fill-color": ["feature-state", "fillColor"],
-                    "fill-opacity": ["feature-state", "fillColor-opacity"],
-                },
-            })
-            if (this._onClick) {
-                map.on("click", polylayer, (e) => {
-                    // polygon-layer-listener
-                    if (e.originalEvent["consumed"]) {
-                        // This is a polygon beneath a marker, we can ignore it
-                        return
+        {// Add source to the map or update the features
+            if (src === undefined) {
+                this.currentSourceData = features;
+                map.addSource(this._layername, {
+                    type: "geojson",
+                    data: {
+                        type: "FeatureCollection",
+                        features
+                    },
+                    promoteId: "id"
+                });
+                const linelayer = this._layername + "_line";
+                map.addLayer({
+                    source: this._layername,
+                    id: linelayer,
+                    type: "line",
+                    paint: {
+                        "line-color": ["feature-state", "color"],
+                        "line-opacity": ["feature-state", "color-opacity"],
+                        "line-width": ["feature-state", "width"],
+                        "line-offset": ["feature-state", "offset"]
+                    },
+                    layout: {
+                        "line-cap": "round"
                     }
-                    e.originalEvent["consumed"] = true
-                    console.log("Got features:", e.features, e)
-                    this._onClick(e.features[0])
-                })
-            }
+                });
 
-            this._visibility?.addCallbackAndRunD((visible) => {
-                try {
-                    map.setLayoutProperty(linelayer, "visibility", visible ? "visible" : "none")
-                    map.setLayoutProperty(polylayer, "visibility", visible ? "visible" : "none")
-                } catch (e) {
-                    console.warn(
-                        "Error while setting visibility of layers ",
-                        linelayer,
-                        polylayer,
-                        e
+                for (const feature of features) {
+                    map.setFeatureState(
+                        { source: this._layername, id: feature.properties.id },
+                        this.calculatePropsFor(feature.properties)
                     )
                 }
-            })
-        } else {
-            this.currentSourceData = features
-            src.setData({
-                type: "FeatureCollection",
-                features: this.currentSourceData,
-            })
-        }
 
+                map.on("click", linelayer, (e) => {
+                    // line-layer-listener
+                    e.originalEvent["consumed"] = true;
+                    this._onClick(e.features[0]);
+                });
+                const polylayer = this._layername + "_polygon";
+
+                map.addLayer({
+                    source: this._layername,
+                    id: polylayer,
+                    type: "fill",
+                    filter: ["in", ["geometry-type"], ["literal", ["Polygon", "MultiPolygon"]]],
+                    layout: {},
+                    paint: {
+                        "fill-color": ["feature-state", "fillColor"],
+                        "fill-opacity": ["feature-state", "fillColor-opacity"]
+                    }
+                });
+                if (this._onClick) {
+                    map.on("click", polylayer, (e) => {
+                        // polygon-layer-listener
+                        if (e.originalEvent["consumed"]) {
+                            // This is a polygon beneath a marker, we can ignore it
+                            return;
+                        }
+                        e.originalEvent["consumed"] = true;
+                        console.log("Got features:", e.features, e);
+                        this._onClick(e.features[0]);
+                    });
+                }
+
+                this._visibility?.addCallbackAndRunD((visible) => {
+                    try {
+                        map.setLayoutProperty(linelayer, "visibility", visible ? "visible" : "none");
+                        map.setLayoutProperty(polylayer, "visibility", visible ? "visible" : "none");
+                    } catch (e) {
+                        console.warn(
+                            "Error while setting visibility of layers ",
+                            linelayer,
+                            polylayer,
+                            e
+                        );
+                    }
+                });
+            } else {
+                this.currentSourceData = features;
+                src.setData({
+                    type: "FeatureCollection",
+                    features: this.currentSourceData
+                });
+            }
+        }
         for (let i = 0; i < features.length; i++) {
+            // Installs a listener on the 'Tags' of every individual feature to update the rendering
             const feature = features[i]
             const id = feature.properties.id ?? feature.id
             if (id === undefined) {
@@ -392,6 +400,9 @@ class LineRenderingLayer {
                 const tags = this._fetchStore(id)
                 this._listenerInstalledOn.add(id)
                 tags.addCallbackAndRunD((properties) => {
+                    if(!map.getLayer(this._layername)){
+                        return
+                    }
                     map.setFeatureState(
                         { source: this._layername, id },
                         this.calculatePropsFor(properties)

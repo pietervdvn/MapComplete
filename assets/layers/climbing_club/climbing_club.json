@@ -10,7 +10,8 @@
     "nb_NO": "Klatreklubb",
     "fr": "Club d’escalade",
     "it": "Club di arrampicata",
-    "hu": "Mászóegyesület"
+    "hu": "Mászóegyesület",
+    "ca": "Club d'escalada"
   },
   "minzoom": 10,
   "source": {
@@ -69,7 +70,8 @@
     "nb_NO": "En klatreklubb eller organisasjoner",
     "fr": "Club ou association d’escalade",
     "it": "Un club o associazione di arrampacata",
-    "hu": "Mászóegyesület vagy -szervezet"
+    "hu": "Mászóegyesület vagy -szervezet",
+    "ca": "Un club d'escalada o organització"
   },
   "tagRenderings": [
     {
@@ -120,7 +122,8 @@
         "ru": "Клуб скалолазания",
         "fr": "un club d’escalade",
         "it": "una club di arrampicata",
-        "hu": "Mászóegyesület"
+        "hu": "Mászóegyesület",
+        "ca": "un club d'escalada"
       },
       "description": {
         "de": "Ein Kletterverein",
@@ -131,7 +134,8 @@
         "ru": "Клуб скалолазания",
         "fr": "Un club d’escalade",
         "it": "Un club di arrampicata",
-        "hu": "Egy mászóegyesület"
+        "hu": "Egy mászóegyesület",
+        "ca": "Un club d'escalada"
       }
     },
     {
