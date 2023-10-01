@@ -293,6 +293,7 @@
     "internet-ssid",
     "reviews"
   ],
+  "minzoom": 12,
   "filter": [
     "open_now",
     "accepts_cash",
