@@ -5884,33 +5884,6 @@
             }
         }
     },
-    "last_click": {
-        "mapRendering": {
-            "0": {
-                "label": {
-                    "mappings": {
-                        "0": {
-                            "then": "Create a new map note"
-                        }
-                    },
-                    "render": "Click here to add a new item"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Add a new point or add a note"
-                },
-                "1": {
-                    "then": "Add a new note"
-                },
-                "2": {
-                    "then": "Add a new point"
-                }
-            }
-        }
-    },
     "map": {
         "description": "A map, meant for tourists which is permanently installed in the public space",
         "name": "Maps",
@@ -9478,13 +9451,6 @@
     },
     "transit_routes": {
         "description": "Layer showing bus lines",
-        "mapRendering": {
-            "0": {
-                "color": {
-                    "render": "#ff0000"
-                }
-            }
-        },
         "name": "Bus lines",
         "tagRenderings": {
             "colour": {
@@ -9786,6 +9752,33 @@
         },
         "title": {
             "render": "Tree"
+        }
+    },
+    "undefined": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "Create a new map note"
+                        }
+                    },
+                    "render": "Click here to add a new item"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Add a new point or add a note"
+                },
+                "1": {
+                    "then": "Add a new note"
+                },
+                "2": {
+                    "then": "Add a new point"
+                }
+            }
         }
     },
     "usersettings": {
@@ -10330,17 +10323,6 @@
                 }
             }
         },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Waste Basket"
-                        }
-                    }
-                }
-            }
-        },
         "name": "Waste Basket",
         "presets": {
             "0": {
@@ -10384,6 +10366,9 @@
                     },
                     "6": {
                         "then": "A waste basket for plastic"
+                    },
+                    "7": {
+                        "then": "A waste basket for paper"
                     }
                 },
                 "question": "What kind of waste basket is this?"

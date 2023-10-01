@@ -618,15 +618,6 @@
             "render": "Hackerspace"
         }
     },
-    "last_click": {
-        "mapRendering": {
-            "0": {
-                "label": {
-                    "render": "Új elem hozzáadásához kattints ide"
-                }
-            }
-        }
-    },
     "postboxes": {
         "description": "Postaládákat megjelenítő réteg.",
         "name": "Postaládák",
@@ -910,6 +901,15 @@
     },
     "shops": {
         "description": "Egy bolt"
+    },
+    "undefined": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "render": "Új elem hozzáadásához kattints ide"
+                }
+            }
+        }
     },
     "waste_basket": {
         "description": "Ez egy nyilvános szemétkosár vagy kuka, ahová kidobhatod a szemetedet."

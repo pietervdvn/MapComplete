@@ -2076,15 +2076,6 @@
     "gps_track": {
         "name": "Dit tilbagelagte spor"
     },
-    "last_click": {
-        "mapRendering": {
-            "0": {
-                "label": {
-                    "render": "Klik her for at tilføje et nyt punkt"
-                }
-            }
-        }
-    },
     "questions": {
         "tagRenderings": {
             "description": {
@@ -2701,13 +2692,6 @@
     },
     "transit_routes": {
         "description": "Lag, der viser buslinjer",
-        "mapRendering": {
-            "0": {
-                "color": {
-                    "render": "#ff0000"
-                }
-            }
-        },
         "name": "Buslinjer",
         "tagRenderings": {
             "colour": {
@@ -2942,6 +2926,15 @@
             "render": "Træ"
         }
     },
+    "undefined": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "render": "Klik her for at tilføje et nyt punkt"
+                }
+            }
+        }
+    },
     "usersettings": {
         "tagRenderings": {
             "cscount-thanks": {
@@ -3116,17 +3109,6 @@
                 }
             }
         },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Affaldskurv"
-                        }
-                    }
-                }
-            }
-        },
         "name": "Affaldskurv",
         "presets": {
             "0": {
@@ -3170,6 +3152,9 @@
                     },
                     "6": {
                         "then": "En affaldskurv til plast"
+                    },
+                    "7": {
+                        "then": "En affaldskurv til papir"
                     }
                 },
                 "question": "Hvad er det for en affaldskurv?"

@@ -862,7 +862,8 @@
     "es": "Una capa que muestra árboles",
     "de": "Eine Ebene, die Bäume zeigt",
     "fr": "Une couche montrant les arbres",
-    "da": "Et lag, der viser træer"
+    "da": "Et lag, der viser træer",
+    "ca": "Una capa que mostra arbres"
   },
   "pointRendering": [
     {
@@ -895,14 +896,5 @@
       "anchor": "bottom"
     }
   ],
-  "lineRendering": [],
-  "description": {
-    "en": "A layer showing trees",
-    "nl": "Een laag die bomen toont",
-    "es": "Una capa que muestra árboles",
-    "de": "Eine Ebene, die Bäume zeigt",
-    "fr": "Une couche montrant les arbres",
-    "da": "Et lag, der viser træer",
-    "ca": "Una capa que mostra arbres"
-  }
+  "lineRendering": []
 }

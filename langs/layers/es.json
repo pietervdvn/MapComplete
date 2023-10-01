@@ -2980,15 +2980,6 @@
             "render": "Panel informativo"
         }
     },
-    "last_click": {
-        "mapRendering": {
-            "0": {
-                "label": {
-                    "render": "Haga clic aquí para añadir un nuevo ítem"
-                }
-            }
-        }
-    },
     "map": {
         "description": "Un mapa, pensado para turistas y que está instalado de manera permanente en un espacio público",
         "name": "Mapas",
@@ -4777,6 +4768,15 @@
             "render": "Árbol"
         }
     },
+    "undefined": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "render": "Haga clic aquí para añadir un nuevo ítem"
+                }
+            }
+        }
+    },
     "usersettings": {
         "tagRenderings": {
             "picture-license": {
@@ -4868,17 +4868,6 @@
                 "options": {
                     "0": {
                         "question": "Papelera con dispensador de bolsas de excrementos (para perros)"
-                    }
-                }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Papelera"
-                        }
                     }
                 }
             }

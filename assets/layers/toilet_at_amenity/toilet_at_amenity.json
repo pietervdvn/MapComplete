@@ -355,7 +355,8 @@
   "description": {
     "en": "A layer showing (public) toilets located at different places.",
     "de": "Eine Ebene mit (öffentlichen) Toiletten an verschiedenen Orten.",
-    "nl": "Een laag die (publiek toegankelijke) toiletten toont in verschillende andere voorzieningen."
+    "nl": "Een laag die (publiek toegankelijke) toiletten toont in verschillende andere voorzieningen.",
+    "ca": "Una capa que mostra banys (públics) ubicats en diferents llocs."
   },
   "units": [
     {
@@ -373,7 +374,8 @@
             "nl": "meter",
             "fr": "mètre",
             "de": "Meter",
-            "da": "meter"
+            "da": "meter",
+            "ca": "metre"
           }
         },
         {
@@ -387,7 +389,8 @@
             "nl": "centimeter",
             "fr": "centimètre",
             "de": "Zentimeter",
-            "da": "centimeter"
+            "da": "centimeter",
+            "ca": "centimetre"
           }
         }
       ]
@@ -474,49 +477,5 @@
       ]
     }
   ],
-  "lineRendering": [],
-  "description": {
-    "en": "A layer showing (public) toilets located at different places.",
-    "de": "Eine Ebene mit (öffentlichen) Toiletten an verschiedenen Orten.",
-    "nl": "Een laag die (publiek toegankelijke) toiletten toont in verschillende andere voorzieningen.",
-    "ca": "Una capa que mostra banys (públics) ubicats en diferents llocs."
-  },
-  "units": [
-    {
-      "appliesToKey": [
-        "toilets:door:width"
-      ],
-      "applicableUnits": [
-        {
-          "canonicalDenomination": "m",
-          "alternativeDenomination": [
-            "meter"
-          ],
-          "human": {
-            "en": "meter",
-            "nl": "meter",
-            "fr": "mètre",
-            "de": "Meter",
-            "da": "meter",
-            "ca": "metre"
-          }
-        },
-        {
-          "canonicalDenomination": "cm",
-          "alternativeDenomination": [
-            "centimeter",
-            "cms"
-          ],
-          "human": {
-            "en": "centimeter",
-            "nl": "centimeter",
-            "fr": "centimètre",
-            "de": "Zentimeter",
-            "da": "centimeter",
-            "ca": "centimetre"
-          }
-        }
-      ]
-    }
-  ]
+  "lineRendering": []
 }

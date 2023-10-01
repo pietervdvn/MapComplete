@@ -666,7 +666,9 @@
         "./assets/layers/surveillance_camera/ALPR_Example.jpg",
         "./assets/layers/surveillance_camera/ALPR_Example2.jpg"
       ],
-      "snapToLayer": ["walls_and_buildings"]
+      "snapToLayer": [
+        "walls_and_buildings"
+      ]
     }
   ],
   "deletion": true,
@@ -675,7 +677,8 @@
     "nl": "Deze laag toont bewakingscamera's en laat toe om de informatie te verrijken en om nieuwe camera\"s toe te voegen",
     "de": "Diese Ebene zeigt die Überwachungskameras an und ermöglicht es, Informationen zu aktualisieren und neue Kameras hinzuzufügen",
     "es": "Esta capa muestra las cámaras de vigilancia y permite a quien colabora, actualizar la información y agregar nuevas cámaras",
-    "fr": "Cette couche affiche les caméras de surveillance et permet au contributeur de mettre à jour les informations et ajouter de nouvelles caméras"
+    "fr": "Cette couche affiche les caméras de surveillance et permet au contributeur de mettre à jour les informations et ajouter de nouvelles caméras",
+    "ca": "Aquesta capa mostra les càmeres de vigilància i permet a qui col·labora, actualitzar la informació i afegir noves càmeres"
   },
   "pointRendering": [
     {
@@ -745,14 +748,5 @@
       "color": "#f00",
       "width": "8"
     }
-  ],
-  "deletion": true,
-  "description": {
-    "en": "This layer shows surveillance cameras and allows a contributor to update information and add new cameras",
-    "nl": "Deze laag toont bewakingscamera's en laat toe om de informatie te verrijken en om nieuwe camera\"s toe te voegen",
-    "de": "Diese Ebene zeigt die Überwachungskameras an und ermöglicht es, Informationen zu aktualisieren und neue Kameras hinzuzufügen",
-    "es": "Esta capa muestra las cámaras de vigilancia y permite a quien colabora, actualizar la información y agregar nuevas cámaras",
-    "fr": "Cette couche affiche les caméras de surveillance et permet au contributeur de mettre à jour les informations et ajouter de nouvelles caméras",
-    "ca": "Aquesta capa mostra les càmeres de vigilància i permet a qui col·labora, actualitzar la informació i afegir noves càmeres"
-  }
+  ]
 }

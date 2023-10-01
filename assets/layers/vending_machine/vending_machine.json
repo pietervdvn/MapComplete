@@ -444,7 +444,8 @@
             "en": "All vending machines",
             "nl": "Alle verkoopautomaten",
             "de": "Alle Verkaufsautomaten",
-            "fr": "Tous les distributeurs"
+            "fr": "Tous les distributeurs",
+            "ca": "Totes les màquines expenedores"
           }
         },
         {
@@ -452,7 +453,8 @@
             "en": "Sale of drinks",
             "nl": "Verkoop van dranken",
             "de": "Verkauf von Getränken",
-            "fr": "Vente de boissons"
+            "fr": "Vente de boissons",
+            "ca": "Venda de begudes"
           },
           "osmTags": "vending~i~.*drinks.*"
         },
@@ -461,7 +463,8 @@
             "en": "Sale of sweets",
             "nl": "Verkoop van snoep",
             "de": "Verkauf von Süßigkeiten",
-            "fr": "Ventre de confiseries"
+            "fr": "Ventre de confiseries",
+            "ca": "Venda de llaminadures"
           },
           "osmTags": "vending~i~.*sweets.*"
         },
@@ -470,7 +473,8 @@
             "en": "Sale of food",
             "nl": "Verkoop van eten",
             "de": "Verkauf von Lebensmitteln",
-            "fr": "Ventre de nourriture"
+            "fr": "Ventre de nourriture",
+            "ca": "Venda de menjar"
           },
           "osmTags": "vending~i~.*food.*"
         },
@@ -479,7 +483,8 @@
             "en": "Sale of cigarettes",
             "nl": "Verkoop van sigaretten",
             "de": "Verkauf von Zigaretten",
-            "fr": "Vente de cigarettes"
+            "fr": "Vente de cigarettes",
+            "ca": "Venda de tabaco"
           },
           "osmTags": "vending~i~.*cigarettes.*"
         },
@@ -488,7 +493,8 @@
             "en": "Sale of condoms",
             "nl": "Verkoop van condooms",
             "de": "Verkauf von Kondomen",
-            "fr": "Vente de préservatifs"
+            "fr": "Vente de préservatifs",
+            "ca": "Venda de preservatius"
           },
           "osmTags": "vending~i~.*condoms.*"
         },
@@ -497,7 +503,8 @@
             "en": "Sale of coffee",
             "nl": "Verkoop van koffie",
             "de": "Verkauf von Kaffee",
-            "fr": "Vente de café"
+            "fr": "Vente de café",
+            "ca": "Venda de cafè"
           },
           "osmTags": "vending~i~.*coffee.*"
         },
@@ -506,7 +513,8 @@
             "en": "Sale of water",
             "nl": "Verkoop van water",
             "de": "Verkauf von Trinkwasser",
-            "fr": "Vente d'eau"
+            "fr": "Vente d'eau",
+            "ca": "Venda d'aigua"
           },
           "osmTags": "vending~i~.*water.*"
         },
@@ -515,7 +523,8 @@
             "en": "Sale of newspapers",
             "nl": "Verkoop van kranten",
             "de": "Verkauf von Zeitungen",
-            "fr": "Vente de journaux"
+            "fr": "Vente de journaux",
+            "ca": "Venda de diaris"
           },
           "osmTags": "vending~i~.*newspapers.*"
         },
@@ -524,7 +533,8 @@
             "en": "Sale of bicycle inner tubes",
             "nl": "Verkoop van fietsbinnenbanden",
             "de": "Verkauf von Fahrradschläuchen",
-            "fr": "Vente de chambres à air pour vélo"
+            "fr": "Vente de chambres à air pour vélo",
+            "ca": "Venda de càmeres interiors de bicicletes"
           },
           "osmTags": "vending~i~.*bicycle_tube.*"
         },
@@ -533,7 +543,8 @@
             "en": "Sale of milk",
             "nl": "Verkoop van melk",
             "de": "Verkauf von Milch",
-            "fr": "Vente de lait"
+            "fr": "Vente de lait",
+            "ca": "Venda de llet"
           },
           "osmTags": "vending~i~.*milk.*"
         },
@@ -542,7 +553,8 @@
             "en": "Sale of bread",
             "nl": "Verkoop van brood",
             "de": "Verkauf von Brot",
-            "fr": "Vente de pain"
+            "fr": "Vente de pain",
+            "ca": "Venda de pa"
           },
           "osmTags": "vending~i~.*bread.*"
         },
@@ -551,7 +563,8 @@
             "en": "Sale of eggs",
             "nl": "Verkoop van eieren",
             "de": "Verkauf von Eiern",
-            "fr": "Vente d'œufs"
+            "fr": "Vente d'œufs",
+            "ca": "Venda d'ous"
           },
           "osmTags": "vending~i~.*eggs.*"
         },
@@ -560,7 +573,8 @@
             "en": "Sale of cheese",
             "nl": "Verkoop van kaas",
             "de": "Verkauf von Käse",
-            "fr": "Vente de fromage"
+            "fr": "Vente de fromage",
+            "ca": "Venda de formatge"
           },
           "osmTags": "vending~i~.*cheese.*"
         },
@@ -569,7 +583,8 @@
             "en": "Sale of honey",
             "nl": "Verkoop van honing",
             "de": "Verkauf von Honig",
-            "fr": "Vente de miel"
+            "fr": "Vente de miel",
+            "ca": "Venda de mel"
           },
           "osmTags": "vending~i~.*honey.*"
         },
@@ -578,18 +593,85 @@
             "en": "Sale of potatoes",
             "nl": "Verkoop van aardappelen",
             "de": "Verkauf von Kartoffeln",
-            "fr": "Vente de pommes de terre"
+            "fr": "Vente de pommes de terre",
+            "ca": "Venda de patates"
           },
           "osmTags": "vending~i~.*potatoes.*"
+        },
+        {
+          "question": {
+            "en": "Sale of meat",
+            "nl": "Verkoop van vlees",
+            "de": "Verkauf von Fleisch",
+            "ca": "Venda de productes carnis"
+          },
+          "osmTags": "vending~i~.*meat.*"
         },
         {
           "question": {
             "en": "Sale of flowers",
             "nl": "Verkoop van bloemen",
             "de": "Verkauf von Blumen",
-            "fr": "Vente de fleurs"
+            "fr": "Vente de fleurs",
+            "ca": "Venda d'aparcament"
           },
           "osmTags": "vending~i~.*flowers.*"
+        },
+        {
+          "osmTags": "vending~i~.*parking_tickets.*",
+          "question": {
+            "en": "Sale of parking tickets",
+            "ca": "Venda de monedes premsades"
+          }
+        },
+        {
+          "osmTags": "vending=elongated_coin",
+          "question": {
+            "en": "Sale of pressed pennies",
+            "ca": "Venda de bitllets de transport públic"
+          }
+        },
+        {
+          "osmTags": "vending~i~.*public_transport_tickets.*",
+          "question": {
+            "en": "Sale of public transport tickets",
+            "ca": "Venda de productes carnis"
+          }
+        },
+        {
+          "osmTags": "vending=bicycle_light",
+          "question": {
+            "en": "Sale of bicycle lights",
+            "nl": "Verkoop van fietslampjes"
+          }
+        },
+        {
+          "osmTags": "vending=gloves",
+          "question": {
+            "en": "Sale of gloves",
+            "nl": "Verkoop van handschoenen"
+          }
+        },
+        {
+          "osmTags": "vending=bicycle_repair_kit",
+          "question": {
+            "en": "Sale of bicycle repair kits",
+            "nl": "Verkoop van fietsreparatiesets"
+          }
+        },
+        {
+          "osmTags": "vending=bicycle_pump",
+          "question": {
+            "en": "Sale of bicycle pumps",
+            "nl": "Verkoop van fietspompen"
+          }
+        },
+        {
+          "osmTags": "vending=bicycle_lock",
+          "question": {
+            "en": "Sale of bicycle locks",
+            "nl": "Verkoop van fietssloten"
+          }
         }
       ]
     }
@@ -835,252 +917,5 @@
       ]
     }
   ],
-  "lineRendering": [],
-  "filter": [
-    "open_now",
-    {
-      "id": "vending",
-      "options": [
-        {
-          "question": {
-            "en": "All vending machines",
-            "nl": "Alle verkoopautomaten",
-            "de": "Alle Verkaufsautomaten",
-            "fr": "Tous les distributeurs",
-            "ca": "Totes les màquines expenedores"
-          }
-        },
-        {
-          "question": {
-            "en": "Sale of drinks",
-            "nl": "Verkoop van dranken",
-            "de": "Verkauf von Getränken",
-            "fr": "Vente de boissons",
-            "ca": "Venda de begudes"
-          },
-          "osmTags": "vending~i~.*drinks.*"
-        },
-        {
-          "question": {
-            "en": "Sale of sweets",
-            "nl": "Verkoop van snoep",
-            "de": "Verkauf von Süßigkeiten",
-            "fr": "Ventre de confiseries",
-            "ca": "Venda de llaminadures"
-          },
-          "osmTags": "vending~i~.*sweets.*"
-        },
-        {
-          "question": {
-            "en": "Sale of food",
-            "nl": "Verkoop van eten",
-            "de": "Verkauf von Lebensmitteln",
-            "fr": "Ventre de nourriture",
-            "ca": "Venda de menjar"
-          },
-          "osmTags": "vending~i~.*food.*"
-        },
-        {
-          "question": {
-            "en": "Sale of cigarettes",
-            "nl": "Verkoop van sigaretten",
-            "de": "Verkauf von Zigaretten",
-            "fr": "Vente de cigarettes",
-            "ca": "Venda de tabaco"
-          },
-          "osmTags": "vending~i~.*cigarettes.*"
-        },
-        {
-          "question": {
-            "en": "Sale of condoms",
-            "nl": "Verkoop van condooms",
-            "de": "Verkauf von Kondomen",
-            "fr": "Vente de préservatifs",
-            "ca": "Venda de preservatius"
-          },
-          "osmTags": "vending~i~.*condoms.*"
-        },
-        {
-          "question": {
-            "en": "Sale of coffee",
-            "nl": "Verkoop van koffie",
-            "de": "Verkauf von Kaffee",
-            "fr": "Vente de café",
-            "ca": "Venda de cafè"
-          },
-          "osmTags": "vending~i~.*coffee.*"
-        },
-        {
-          "question": {
-            "en": "Sale of water",
-            "nl": "Verkoop van water",
-            "de": "Verkauf von Trinkwasser",
-            "fr": "Vente d'eau",
-            "ca": "Venda d'aigua"
-          },
-          "osmTags": "vending~i~.*water.*"
-        },
-        {
-          "question": {
-            "en": "Sale of newspapers",
-            "nl": "Verkoop van kranten",
-            "de": "Verkauf von Zeitungen",
-            "fr": "Vente de journaux",
-            "ca": "Venda de diaris"
-          },
-          "osmTags": "vending~i~.*newspapers.*"
-        },
-        {
-          "question": {
-            "en": "Sale of bicycle inner tubes",
-            "nl": "Verkoop van fietsbinnenbanden",
-            "de": "Verkauf von Fahrradschläuchen",
-            "fr": "Vente de chambres à air pour vélo",
-            "ca": "Venda de càmeres interiors de bicicletes"
-          },
-          "osmTags": "vending~i~.*bicycle_tube.*"
-        },
-        {
-          "question": {
-            "en": "Sale of milk",
-            "nl": "Verkoop van melk",
-            "de": "Verkauf von Milch",
-            "fr": "Vente de lait",
-            "ca": "Venda de llet"
-          },
-          "osmTags": "vending~i~.*milk.*"
-        },
-        {
-          "question": {
-            "en": "Sale of bread",
-            "nl": "Verkoop van brood",
-            "de": "Verkauf von Brot",
-            "fr": "Vente de pain",
-            "ca": "Venda de pa"
-          },
-          "osmTags": "vending~i~.*bread.*"
-        },
-        {
-          "question": {
-            "en": "Sale of eggs",
-            "nl": "Verkoop van eieren",
-            "de": "Verkauf von Eiern",
-            "fr": "Vente d'œufs",
-            "ca": "Venda d'ous"
-          },
-          "osmTags": "vending~i~.*eggs.*"
-        },
-        {
-          "question": {
-            "en": "Sale of cheese",
-            "nl": "Verkoop van kaas",
-            "de": "Verkauf von Käse",
-            "fr": "Vente de fromage",
-            "ca": "Venda de formatge"
-          },
-          "osmTags": "vending~i~.*cheese.*"
-        },
-        {
-          "question": {
-            "en": "Sale of honey",
-            "nl": "Verkoop van honing",
-            "de": "Verkauf von Honig",
-            "fr": "Vente de miel",
-            "ca": "Venda de mel"
-          },
-          "osmTags": "vending~i~.*honey.*"
-        },
-        {
-          "question": {
-            "en": "Sale of potatoes",
-            "nl": "Verkoop van aardappelen",
-            "de": "Verkauf von Kartoffeln",
-            "fr": "Vente de pommes de terre",
-            "ca": "Venda de patates"
-          },
-          "osmTags": "vending~i~.*potatoes.*"
-        },
-        {
-          "question": {
-            "en": "Sale of meat",
-            "nl": "Verkoop van vlees",
-            "de": "Verkauf von Fleisch",
-            "ca": "Venda de productes carnis"
-          },
-          "osmTags": "vending~i~.*meat.*"
-        },
-        {
-          "question": {
-            "en": "Sale of flowers",
-            "nl": "Verkoop van bloemen",
-            "de": "Verkauf von Blumen",
-            "fr": "Vente de fleurs",
-            "ca": "Venda de flors"
-          },
-          "osmTags": "vending~i~.*flowers.*"
-        },
-        {
-          "osmTags": "vending~i~.*parking_tickets.*",
-          "question": {
-            "en": "Sale of parking tickets",
-            "ca": "Venda d'aparcament"
-          }
-        },
-        {
-          "osmTags": "vending=elongated_coin",
-          "question": {
-            "en": "Sale of pressed pennies",
-            "ca": "Venda de monedes premsades"
-          }
-        },
-        {
-          "osmTags": "vending~i~.*public_transport_tickets.*",
-          "question": {
-            "en": "Sale of public transport tickets",
-            "ca": "Venda de bitllets de transport públic"
-          }
-        },
-        {
-          "osmTags": "vending=bicycle_light",
-          "question": {
-            "en": "Sale of bicycle lights",
-            "nl": "Verkoop van fietslampjes"
-          }
-        },
-        {
-          "osmTags": "vending=gloves",
-          "question": {
-            "en": "Sale of gloves",
-            "nl": "Verkoop van handschoenen"
-          }
-        },
-        {
-          "osmTags": "vending=bicycle_repair_kit",
-          "question": {
-            "en": "Sale of bicycle repair kits",
-            "nl": "Verkoop van fietsreparatiesets"
-          }
-        },
-        {
-          "osmTags": "vending=bicycle_pump",
-          "question": {
-            "en": "Sale of bicycle pumps",
-            "nl": "Verkoop van fietspompen"
-          }
-        },
-        {
-          "osmTags": "vending=bicycle_lock",
-          "question": {
-            "en": "Sale of bicycle locks",
-            "nl": "Verkoop van fietssloten"
-          }
-        }
-      ]
-    }
-  ],
-  "allowMove": {
-    "enableImproveAccuracy": true,
-    "enableRelocation": true
-  },
-  "deletion": true
+  "lineRendering": []
 }

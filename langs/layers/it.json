@@ -1442,15 +1442,6 @@
             "render": "Pannello informativo"
         }
     },
-    "last_click": {
-        "mapRendering": {
-            "0": {
-                "label": {
-                    "render": "Aggiungi nuovo elemento"
-                }
-            }
-        }
-    },
     "map": {
         "description": "Una mappa, destinata ai turisti e che è sistemata in maniera permanente in uno spazio pubblico",
         "name": "Mappe",
@@ -2624,6 +2615,15 @@
             "render": "Albero"
         }
     },
+    "undefined": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "render": "Aggiungi nuovo elemento"
+                }
+            }
+        }
+    },
     "viewpoint": {
         "description": "Un punto panoramico che offre una bella vista. L'ideale è aggiungere un'immagine, se nessun'altra categoria è appropriata",
         "name": "Punto panoramico",
@@ -2677,17 +2677,6 @@
                 }
             }
         },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Cestino dei rifiuti"
-                        }
-                    }
-                }
-            }
-        },
         "name": "Cestino dei rifiuti",
         "presets": {
             "0": {
@@ -2731,6 +2720,9 @@
                     },
                     "6": {
                         "then": "Un cestino rifiuti per la plastica"
+                    },
+                    "7": {
+                        "then": "Un cestino rifiuti per la carta"
                     }
                 },
                 "question": "Che tipo di cestino dei rifiuti è questo?"

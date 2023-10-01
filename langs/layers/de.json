@@ -5716,33 +5716,6 @@
             }
         }
     },
-    "last_click": {
-        "mapRendering": {
-            "0": {
-                "label": {
-                    "mappings": {
-                        "0": {
-                            "then": "Hinweis auf der Karte hinzufügen"
-                        }
-                    },
-                    "render": "Hier klicken, um ein neues Element hinzuzufügen"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Objekt oder Hinweis auf der Karte hinzufügen"
-                },
-                "1": {
-                    "then": "Hinweis hinzufügen"
-                },
-                "2": {
-                    "then": "Objekt hinzufügen"
-                }
-            }
-        }
-    },
     "map": {
         "description": "Eine Karte, die für Touristen gedacht ist und dauerhaft im öffentlichen Raum aufgestellt ist",
         "name": "Karten",
@@ -9248,13 +9221,6 @@
     },
     "transit_routes": {
         "description": "Ebene mit Buslinien",
-        "mapRendering": {
-            "0": {
-                "color": {
-                    "render": "#ff0000"
-                }
-            }
-        },
         "name": "Buslinien",
         "tagRenderings": {
             "colour": {
@@ -9556,6 +9522,33 @@
         },
         "title": {
             "render": "Baum"
+        }
+    },
+    "undefined": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "Hinweis auf der Karte hinzufügen"
+                        }
+                    },
+                    "render": "Hier klicken, um ein neues Element hinzuzufügen"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Objekt oder Hinweis auf der Karte hinzufügen"
+                },
+                "1": {
+                    "then": "Hinweis hinzufügen"
+                },
+                "2": {
+                    "then": "Objekt hinzufügen"
+                }
+            }
         }
     },
     "usersettings": {
@@ -10023,17 +10016,6 @@
                 }
             }
         },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Abfalleimer"
-                        }
-                    }
-                }
-            }
-        },
         "name": "Mülleimer",
         "presets": {
             "0": {
@@ -10077,6 +10059,9 @@
                     },
                     "6": {
                         "then": "Der Abfalleimer ist für Plastik"
+                    },
+                    "7": {
+                        "then": "Der Abfalleimer ist für Papier"
                     }
                 },
                 "question": "Um was für einen Abfalleimer handelt es sich?"

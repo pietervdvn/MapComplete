@@ -226,7 +226,8 @@
   "description": {
     "en": "A layer showing (public) showers",
     "de": "Eine Ebene mit (öffentlichen) Duschen",
-    "fr": "Une couche affichant les douches (publiques)"
+    "fr": "Une couche affichant les douches (publiques)",
+    "ca": "Una capa que mostra dutxes (públiques)"
   },
   "pointRendering": [
     {
@@ -243,11 +244,5 @@
       ]
     }
   ],
-  "lineRendering": [],
-  "description": {
-    "en": "A layer showing (public) showers",
-    "de": "Eine Ebene mit (öffentlichen) Duschen",
-    "fr": "Une couche affichant les douches (publiques)",
-    "ca": "Una capa que mostra dutxes (públiques)"
-  }
+  "lineRendering": []
 }

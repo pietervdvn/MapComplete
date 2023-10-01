@@ -3961,33 +3961,6 @@
             }
         }
     },
-    "last_click": {
-        "mapRendering": {
-            "0": {
-                "label": {
-                    "mappings": {
-                        "0": {
-                            "then": "Créer une nouvelle note de carte"
-                        }
-                    },
-                    "render": "Cliquez ici pour ajouter un élément"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Ajouter un nouveau point ou ajouter une note"
-                },
-                "1": {
-                    "then": "Ajouter une nouvelle note"
-                },
-                "2": {
-                    "then": "Ajouter un nouveau point"
-                }
-            }
-        }
-    },
     "map": {
         "description": "Une carte, destinée aux touristes, installée en permanence dans l'espace public",
         "name": "Cartes",
@@ -6447,6 +6420,33 @@
             "render": "Arbre"
         }
     },
+    "undefined": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "Créer une nouvelle note de carte"
+                        }
+                    },
+                    "render": "Cliquez ici pour ajouter un élément"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Ajouter un nouveau point ou ajouter une note"
+                },
+                "1": {
+                    "then": "Ajouter une nouvelle note"
+                },
+                "2": {
+                    "then": "Ajouter un nouveau point"
+                }
+            }
+        }
+    },
     "usersettings": {
         "tagRenderings": {
             "all-questions-at-once": {
@@ -6773,17 +6773,6 @@
                 }
             }
         },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Poubelle"
-                        }
-                    }
-                }
-            }
-        },
         "name": "Poubelle",
         "presets": {
             "0": {
@@ -6827,6 +6816,9 @@
                     },
                     "6": {
                         "then": "Une poubelle pour plastiques"
+                    },
+                    "7": {
+                        "then": "Une poubelle pour papier"
                     }
                 },
                 "question": "De quel type de poubelle s'agit-il ?"

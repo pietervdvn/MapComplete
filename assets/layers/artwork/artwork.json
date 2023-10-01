@@ -813,9 +813,6 @@
       "width": "10"
     }
   ],
-  "filter": [
-    "has_image"
-  ],
   "pl": {
     "title": {
       "mappings": {

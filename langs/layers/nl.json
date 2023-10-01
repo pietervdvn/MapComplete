@@ -5363,33 +5363,6 @@
             }
         }
     },
-    "last_click": {
-        "mapRendering": {
-            "0": {
-                "label": {
-                    "mappings": {
-                        "0": {
-                            "then": "Maak een nieuwe kaartnotitie"
-                        }
-                    },
-                    "render": "Klik hier om een item toe te voegen"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Voeg een nieuw punt of een nieuwe kaartnota toe"
-                },
-                "1": {
-                    "then": "Voeg een nieuwe kaartnota toe"
-                },
-                "2": {
-                    "then": "Voeg een nieuw punt toe"
-                }
-            }
-        }
-    },
     "map": {
         "description": "Een permantent geinstalleerde kaart",
         "name": "Kaarten",
@@ -8671,13 +8644,6 @@
     },
     "transit_routes": {
         "description": "Laag met buslijnen",
-        "mapRendering": {
-            "0": {
-                "color": {
-                    "render": "#ff0000"
-                }
-            }
-        },
         "name": "Buslijnen",
         "tagRenderings": {
             "colour": {
@@ -8932,6 +8898,33 @@
         },
         "title": {
             "render": "Boom"
+        }
+    },
+    "undefined": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "Maak een nieuwe kaartnotitie"
+                        }
+                    },
+                    "render": "Klik hier om een item toe te voegen"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Voeg een nieuw punt of een nieuwe kaartnota toe"
+                },
+                "1": {
+                    "then": "Voeg een nieuwe kaartnota toe"
+                },
+                "2": {
+                    "then": "Voeg een nieuw punt toe"
+                }
+            }
         }
     },
     "usersettings": {
@@ -9358,17 +9351,6 @@
                 }
             }
         },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Vuilnisbak"
-                        }
-                    }
-                }
-            }
-        },
         "name": "Vuilnisbak",
         "presets": {
             "0": {
@@ -9412,6 +9394,9 @@
                     },
                     "6": {
                         "then": "Een vuilnisbak voor plastic"
+                    },
+                    "7": {
+                        "then": "Een vuilnisbak voor papier"
                     }
                 },
                 "question": "Wat voor soort vuilnisbak is dit?"

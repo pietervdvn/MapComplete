@@ -530,7 +530,9 @@
         "ca": "El cambiador està a {changing_table:location}"
       },
       "condition": {
-        "and":["changing_table=yes"]
+        "and": [
+          "changing_table=yes"
+        ]
       },
       "freeform": {
         "key": "changing_table:location",

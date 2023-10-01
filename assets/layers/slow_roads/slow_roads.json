@@ -252,7 +252,8 @@
   "description": {
     "en": "All carfree roads",
     "nl": "Alle verkeersvrije wegen",
-    "de": "Alle autofreien Straßen"
+    "de": "Alle autofreien Straßen",
+    "ca": "Totes les carreteres sense cotxe"
   },
   "pointRendering": [
     {
@@ -293,11 +294,5 @@
         ]
       }
     }
-  ],
-  "description": {
-    "en": "All carfree roads",
-    "nl": "Alle verkeersvrije wegen",
-    "de": "Alle autofreien Straßen",
-    "ca": "Totes les carreteres sense cotxe"
-  }
+  ]
 }

@@ -364,15 +364,6 @@
             }
         }
     },
-    "last_click": {
-        "mapRendering": {
-            "0": {
-                "label": {
-                    "render": "Klik di sini untuk menambahkan item baru"
-                }
-            }
-        }
-    },
     "playground": {
         "tagRenderings": {
             "playground-email": {
@@ -681,6 +672,15 @@
             }
         }
     },
+    "undefined": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "render": "Klik di sini untuk menambahkan item baru"
+                }
+            }
+        }
+    },
     "usersettings": {
         "tagRenderings": {
             "translation-completeness": {
@@ -721,17 +721,6 @@
         }
     },
     "waste_basket": {
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Keranjang Sampah"
-                        }
-                    }
-                }
-            }
-        },
         "name": "Keranjang Sampah",
         "presets": {
             "0": {
@@ -775,6 +764,9 @@
                     },
                     "6": {
                         "then": "Keranjang sampah untuk plastik"
+                    },
+                    "7": {
+                        "then": "Keranjang sampah untuk kertas"
                     }
                 },
                 "question": "Keranjang sampah macam apa ini?"
