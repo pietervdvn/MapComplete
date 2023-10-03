@@ -72,11 +72,8 @@ export class OsmConnection {
             import.meta.env.VITE_OSM_OAUTH_SECRET !== undefined
         ) {
             console.debug("Using environment variables for oauth config")
-            this._oauth_config = {
-                oauth_client_id: import.meta.env.VITE_OSM_OAUTH_CLIENT_ID,
-                oauth_secret: import.meta.env.VITE_OSM_OAUTH_SECRET,
-                url: "https://api.openstreetmap.org",
-            }
+            this._oauth_config.oauth_client_id = import.meta.env.VITE_OSM_OAUTH_CLIENT_ID
+            this._oauth_config.oauth_secret = import.meta.env.VITE_OSM_OAUTH_SECRET
         }
 
         this.userDetails = new UIEventSource<UserDetails>(
