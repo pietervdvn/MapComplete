@@ -8809,20 +8809,20 @@
                     "15": {
                         "question": "Venda de patates"
                     },
-                    "17": {
-                        "question": "Venda de flors"
-                    },
-                    "17": {
-                        "question": "Venda d'aparcament"
-                    },
-                    "18": {
-                        "question": "Venda de monedes premsades"
+                    "16": {
+                        "question": "Venda de productes carnis"
                     },
                     "19": {
-                        "question": "Venda de bitllets de transport públic"
+                        "question": "Venda de flors"
                     },
                     "20": {
-                        "question": "Venda de productes carnis"
+                        "question": "Venda d'aparcament"
+                    },
+                    "21": {
+                        "question": "Venda de monedes premsades"
+                    },
+                    "22": {
+                        "question": "Venda de bitllets de transport públic"
                     }
                 }
             }
@@ -8907,6 +8907,21 @@
                     },
                     "14": {
                         "then": "Es venen papes"
+                    },
+                    "15": {
+                        "then": "Es venen productes carnis"
+                    },
+                    "18": {
+                        "then": "Es venen flors"
+                    },
+                    "19": {
+                        "then": "Es venen tiquets d'aparcament"
+                    },
+                    "20": {
+                        "then": "Es venen cèntims premsats"
+                    },
+                    "21": {
+                        "then": "Es venen bitllets de transport públic"
                     }
                 },
                 "question": "Que ven aquesta màquina expenedora?",
@@ -9102,6 +9117,9 @@
                     },
                     "6": {
                         "then": "Una paperera per a plàstic"
+                    },
+                    "7": {
+                        "then": "Una paperera per a paper"
                     }
                 },
                 "question": "Quin tipus de paperera és aquesta?"

@@ -6576,7 +6576,7 @@
                     "15": {
                         "question": "Vente de pommes de terre"
                     },
-                    "17": {
+                    "19": {
                         "question": "Vente de fleurs"
                     }
                 }
@@ -6657,7 +6657,7 @@
                     "14": {
                         "then": "Vent des pommes de terre"
                     },
-                    "16": {
+                    "18": {
                         "then": "Vent des fleurs"
                     }
                 },
@@ -6827,6 +6827,9 @@
                     },
                     "6": {
                         "then": "Une poubelle pour plastiques"
+                    },
+                    "7": {
+                        "then": "Une poubelle pour papier"
                     }
                 },
                 "question": "De quel type de poubelle s'agit-il ?"
