@@ -1,0 +1,12 @@
+[
+  {
+    "path": "relatify.png",
+    "license": "AGPLv3",
+    "authors": [
+      "Kamil Monicz"
+    ],
+    "sources": [
+      "https://github.com/Zaczero/osm-relatify/blob/main/web/static/img/icon.png"
+    ]
+  }
+]
