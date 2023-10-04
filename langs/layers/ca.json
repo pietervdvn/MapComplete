@@ -2254,7 +2254,7 @@
             },
             "current-14": {
                 "question": "Quina intensitat ofereixen els connectors <div style='display: inline-block'><b><b>Bosch Active Connect amb 3 pins</b> i cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect amb 3 pins</b> i cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> surt com a màxim a"
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect amb 3 pins</b> i cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> surt com a màxim a {socket:bosch_3pin:current}A"
             },
             "current-15": {
                 "question": "Quina corrent ofereixen els connectors <div style='display: inline-block'><b><b>Bosch Active Connect amb 5 pins</b> i cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
@@ -2333,7 +2333,7 @@
                     }
                 },
                 "question": "Quina intensitat ofereixen els connectors <div style='display: inline-block'><b><b>Tipus 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tipus 2 CSS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
+                "render": "<div style='display: inline-block'><b><b>Tipus 2 CSS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>surt com a màxim a {socket:type2_combo:current}"
             },
             "current-9": {
                 "mappings": {
