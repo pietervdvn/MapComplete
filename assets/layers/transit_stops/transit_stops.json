@@ -55,13 +55,6 @@
       "label": "<div style=\"background: white; display: block\">{name}</div>"
     }
   ],
-  "calculatedTags": [
-    "_routes=feat.memberships()",
-    "_contained_routes_properties=feat.memberships().map(p => {return {id: p.relation.id, name: p.relation.properties.name} }).filter((v,i,a)=>a.findIndex(t=>(JSON.stringify(t) === JSON.stringify(v)))===i)",
-    "_contained_route_ids=JSON.parse(feat.properties._contained_routes_properties ?? '[]').map(p => p.id)",
-    "_contained_routes=JSON.parse(feat.properties._contained_routes_properties ?? '[]').map(p => `<li><a href='#relation/${p.id}'>${p.name ?? 'bus route'}</a></li>`).join('')",
-    "_contained_routes_count=JSON.parse(feat.properties._contained_routes_properties ?? '[]').length"
-  ],
   "tagRenderings": [
     {
       "id": "stop_name",
