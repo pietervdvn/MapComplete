@@ -50,6 +50,9 @@
   $: isHardDelete = changedProperties[DeleteConfig.deleteReasonKey] !== undefined
 
   async function onDelete() {
+    if(selectedTags === undefined){
+      return
+    }
     currentState = "applying"
     let actionToTake: OsmChangeAction
     const changedProperties = TagUtils.changeAsProperties(selectedTags.asChange(tags?.data ?? {}))
