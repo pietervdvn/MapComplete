@@ -241,6 +241,8 @@ function generateCsp(
         ...Constants.defaultOverpassUrls,
         Constants.countryCoderEndpoint,
         Constants.nominatimEndpoint,
+        AvailableRasterLayers.maptilerCarto.properties.url,
+        AvailableRasterLayers.maptilerDefaultLayer.properties.url,
         "https://api.openstreetmap.org",
         "https://pietervdvn.goatcounter.com",
     ].concat(...SpecialVisualizations.specialVisualizations.map((sv) => sv.needsUrls))
