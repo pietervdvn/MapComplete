@@ -61,7 +61,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         })
 
         if (json.icon === undefined && json.label === undefined) {
-            throw `A point rendering should define at least an icon or a label`
+            throw `At ${context}: A point rendering should define at least an icon or a label`
         }
 
         if (this.location.size == 0) {

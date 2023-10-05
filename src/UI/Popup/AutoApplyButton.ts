@@ -116,7 +116,7 @@ class ApplyButton extends UIElement {
             this.state.indexedFeatures.featuresById.data.get(id)
         )
 
-        new ShowDataLayer(mlmap, {
+        new ShowDataLayer(mlmap,{
             features: StaticFeatureSource.fromGeojson(features),
             zoomToFeatures: true,
             layer: this.layer.layerDef,

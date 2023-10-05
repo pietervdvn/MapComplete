@@ -228,6 +228,10 @@ class LineRenderingLayer {
         this._onClick = onClick
         const self = this
         features.features.addCallbackAndRunD(() => self.update(features.features))
+
+        map.on("styledata", () => self.update(features.features))
+      //  map.on("style.load", () => self.update(features.features))
+
     }
 
     public destruct(): void {
@@ -280,11 +284,12 @@ class LineRenderingLayer {
         // As such, we only now read the features from the featureSource and compare with the previously set data
         const features = featureSource.data
         const src = <GeoJSONSource>map.getSource(this._layername)
-        if (this.currentSourceData === features) {
+        if (src !== undefined && this.currentSourceData === features && src._data === <any> features) {
             // Already up to date
             return
         }
-        {// Add source to the map or update the features
+        {
+            // Add source to the map or update the feature source
             if (src === undefined) {
                 this.currentSourceData = features;
                 map.addSource(this._layername, {
@@ -312,6 +317,10 @@ class LineRenderingLayer {
                 });
 
                 for (const feature of features) {
+                    if(!feature.properties.id){
+                        console.warn("Feature without id:", feature)
+                        continue
+                    }
                     map.setFeatureState(
                         { source: this._layername, id: feature.properties.id },
                         this.calculatePropsFor(feature.properties)
@@ -411,6 +420,7 @@ class LineRenderingLayer {
             }
         }
     }
+
 }
 
 export default class ShowDataLayer {
@@ -418,7 +428,6 @@ export default class ShowDataLayer {
         <LayerConfigJson>range_layer,
         "ShowDataLayer.ts:range.json"
     )
-    private readonly _map: Store<MlMap>
     private readonly _options: ShowDataLayerOptions & {
         layer: LayerConfig
         drawMarkers?: true | boolean
@@ -432,10 +441,9 @@ export default class ShowDataLayer {
         options: ShowDataLayerOptions & {
             layer: LayerConfig
             drawMarkers?: true | boolean
-            drawLines?: true | boolean
+            drawLines?: true | boolean,
         }
     ) {
-        this._map = map
         this._options = options
         const self = this
         this.onDestroy.push(map.addCallbackAndRunD((map) => self.initDrawFeatures(map)))
@@ -456,7 +464,7 @@ export default class ShowDataLayer {
                 }
             )
         perLayer.forEach((fs) => {
-            new ShowDataLayer(mlmap, {
+            new ShowDataLayer(mlmap,{
                 layer: fs.layer.layerDef,
                 features: fs,
                 ...(options ?? {}),
@@ -469,7 +477,7 @@ export default class ShowDataLayer {
         features: FeatureSource,
         doShowLayer?: Store<boolean>
     ): ShowDataLayer {
-        return new ShowDataLayer(map, {
+        return new ShowDataLayer(map,{
             layer: ShowDataLayer.rangeLayer,
             features,
             doShowLayer,
