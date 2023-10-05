@@ -532,7 +532,7 @@
         "name_required": "De naam van dit object moet gekend zijn om een review te kunnen maken",
         "no_reviews_yet": "Er zijn nog geen beoordelingen. Wees de eerste om een beoordeling te schrijven en help open data en het bedrijf!",
         "save": "Opslaan",
-        "saved": "<span class='thanks'>Bedankt om je beoordeling te delen!</span>",
+        "saved": "Bedankt om je beoordeling te delen!",
         "saving_review": "Opslaan...",
         "title": "{count} beoordelingen",
         "title_singular": "Eén beoordeling",
