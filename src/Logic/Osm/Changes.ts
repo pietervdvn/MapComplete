@@ -517,6 +517,17 @@ export class Changes {
             ...motivations,
             ...perBinMessage,
         ]
+        {
+            const changes: {
+                newObjects: OsmObject[]
+                modifiedObjects: OsmObject[]
+                deletedObjects: OsmObject[]
+            } = self.CreateChangesetObjects(pending, objects);
+            if(changes.newObjects.length + changes.modifiedObjects.length + changes.deletedObjects.length === 0){
+                console.log("Not opening/uploading a changeset; seems like all changes are already applied")
+                return true
+            }
+        }
 
         await this._changesetHandler.UploadChangeset(
             (csId, remappings) => {
@@ -525,11 +536,14 @@ export class Changes {
                     pending = pending.map((ch) => ChangeDescriptionTools.rewriteIds(ch, remappings))
                     console.log("Result is", pending)
                 }
+
                 const changes: {
                     newObjects: OsmObject[]
                     modifiedObjects: OsmObject[]
                     deletedObjects: OsmObject[]
                 } = self.CreateChangesetObjects(pending, objects)
+
+
                 return Changes.createChangesetFor("" + csId, changes)
             },
             metatags,
