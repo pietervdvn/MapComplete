@@ -1,28 +1,28 @@
-import { Utils } from "../Utils"
-import { Readable, Subscriber, Unsubscriber, Updater, Writable } from "svelte/store"
+import { Utils } from "../Utils";
+import { Readable, Subscriber, Unsubscriber, Updater, Writable } from "svelte/store";
 
 /**
  * Various static utils
  */
 export class Stores {
     public static Chronic(millis: number, asLong: () => boolean = undefined): Store<Date> {
-        const source = new UIEventSource<Date>(undefined)
+        const source = new UIEventSource<Date>(undefined);
 
         function run() {
-            source.setData(new Date())
+            source.setData(new Date());
             if (asLong === undefined || asLong()) {
-                window.setTimeout(run, millis)
+                window.setTimeout(run, millis);
             }
         }
 
-        run()
-        return source
+        run();
+        return source;
     }
 
     public static FromPromiseWithErr<T>(
         promise: Promise<T>
     ): Store<{ success: T } | { error: any }> {
-        return UIEventSource.FromPromiseWithErr(promise)
+        return UIEventSource.FromPromiseWithErr(promise);
     }
 
     /**
@@ -32,14 +32,14 @@ export class Stores {
      * @constructor
      */
     public static FromPromise<T>(promise: Promise<T>): Store<T> {
-        const src = new UIEventSource<T>(undefined)
-        promise?.then((d) => src.setData(d))
-        promise?.catch((err) => console.warn("Promise failed:", err))
-        return src
+        const src = new UIEventSource<T>(undefined);
+        promise?.then((d) => src.setData(d));
+        promise?.catch((err) => console.warn("Promise failed:", err));
+        return src;
     }
 
     public static flatten<X>(source: Store<Store<X>>, possibleSources?: Store<any>[]): Store<X> {
-        return UIEventSource.flatten(source, possibleSources)
+        return UIEventSource.flatten(source, possibleSources);
     }
 
     /**
@@ -57,39 +57,39 @@ export class Stores {
      * @constructor
      */
     public static ListStabilized<T>(src: Store<T[]>): Store<T[]> {
-        const stable = new UIEventSource<T[]>(undefined)
+        const stable = new UIEventSource<T[]>(undefined);
         src.addCallbackAndRun((list) => {
             if (list === undefined) {
-                stable.setData(undefined)
-                return
+                stable.setData(undefined);
+                return;
             }
             if (Utils.sameList(stable.data, list)) {
-                return
+                return;
             }
-            stable.setData(list)
-        })
-        return stable
+            stable.setData(list);
+        });
+        return stable;
     }
 }
 
 export abstract class Store<T> implements Readable<T> {
-    abstract readonly data: T
+    abstract readonly data: T;
 
     /**
      * Optional value giving a title to the UIEventSource, mainly used for debugging
      */
-    public readonly tag: string | undefined
+    public readonly tag: string | undefined;
 
     constructor(tag: string = undefined) {
-        this.tag = tag
+        this.tag = tag;
         if (tag === undefined || tag === "") {
-            let createStack = Utils.runningFromConsole
+            let createStack = Utils.runningFromConsole;
             if (!Utils.runningFromConsole) {
-                createStack = window.location.hostname === "127.0.0.1"
+                createStack = window.location.hostname === "127.0.0.1";
             }
             if (createStack) {
-                const callstack = new Error().stack.split("\n")
-                this.tag = callstack[1]
+                const callstack = new Error().stack.split("\n");
+                this.tag = callstack[1];
             }
         }
     }
@@ -100,13 +100,13 @@ export abstract class Store<T> implements Readable<T> {
     public mapD<J>(f: (t: T) => J, extraStoresToWatch?: Store<any>[]): Store<J> {
         return this.map((t) => {
             if (t === undefined) {
-                return undefined
+                return undefined;
             }
             if (t === null) {
-                return null
+                return null;
             }
-            return f(t)
-        }, extraStoresToWatch)
+            return f(t);
+        }, extraStoresToWatch);
     }
 
     /**
@@ -135,17 +135,17 @@ export abstract class Store<T> implements Readable<T> {
     public withEqualityStabilized(
         comparator: (t: T | undefined, t1: T | undefined) => boolean
     ): Store<T> {
-        let oldValue = undefined
+        let oldValue = undefined;
         return this.map((v) => {
             if (v == oldValue) {
-                return oldValue
+                return oldValue;
             }
             if (comparator(oldValue, v)) {
-                return oldValue
+                return oldValue;
             }
-            oldValue = v
-            return v
-        })
+            oldValue = v;
+            return v;
+        });
     }
 
     /**
@@ -195,49 +195,49 @@ export abstract class Store<T> implements Readable<T> {
      * lastValue // => "def"
      */
     public bind<X>(f: (t: T) => Store<X>): Store<X> {
-        const mapped = this.map(f)
-        const sink = new UIEventSource<X>(undefined)
-        const seenEventSources = new Set<Store<X>>()
+        const mapped = this.map(f);
+        const sink = new UIEventSource<X>(undefined);
+        const seenEventSources = new Set<Store<X>>();
         mapped.addCallbackAndRun((newEventSource) => {
             if (newEventSource === null) {
-                sink.setData(null)
+                sink.setData(null);
             } else if (newEventSource === undefined) {
-                sink.setData(undefined)
+                sink.setData(undefined);
             } else if (!seenEventSources.has(newEventSource)) {
-                seenEventSources.add(newEventSource)
+                seenEventSources.add(newEventSource);
                 newEventSource.addCallbackAndRun((resultData) => {
                     if (mapped.data === newEventSource) {
-                        sink.setData(resultData)
+                        sink.setData(resultData);
                     }
-                })
+                });
             } else {
                 // Already seen, so we don't have to add a callback, just update the value
-                sink.setData(newEventSource.data)
+                sink.setData(newEventSource.data);
             }
-        })
+        });
 
-        return sink
+        return sink;
     }
 
     public stabilized(millisToStabilize): Store<T> {
         if (Utils.runningFromConsole) {
-            return this
+            return this;
         }
 
-        const newSource = new UIEventSource<T>(this.data)
+        const newSource = new UIEventSource<T>(this.data);
 
-        const self = this
+        const self = this;
         this.addCallback((latestData) => {
             window.setTimeout(() => {
                 if (self.data == latestData) {
                     // compare by reference.
                     // Note that 'latestData' and 'self.data' are both from the same UIEVentSource, but both are dereferenced at a different time
-                    newSource.setData(latestData)
+                    newSource.setData(latestData);
                 }
-            }, millisToStabilize)
-        })
+            }, millisToStabilize);
+        });
 
-        return newSource
+        return newSource;
     }
 
     /**
@@ -247,23 +247,23 @@ export abstract class Store<T> implements Readable<T> {
      * @constructor
      */
     public AsPromise(condition?: (t: T) => boolean): Promise<T> {
-        const self = this
-        condition = condition ?? ((t) => t !== undefined)
+        const self = this;
+        condition = condition ?? ((t) => t !== undefined);
         return new Promise((resolve) => {
-            const data = self.data
+            const data = self.data;
             if (condition(data)) {
-                resolve(data)
+                resolve(data);
             } else {
                 self.addCallbackD((data) => {
                     if (condition(data)) {
-                        resolve(data)
-                        return true // return true to unregister as we only need to be called once
+                        resolve(data);
+                        return true; // return true to unregister as we only need to be called once
                     } else {
-                        return false // We didn't resolve yet, wait for the next ping
+                        return false; // We didn't resolve yet, wait for the next ping
                     }
-                })
+                });
             }
-        })
+        });
     }
 
     /**
@@ -275,50 +275,51 @@ export abstract class Store<T> implements Readable<T> {
 
         // Note: run is wrapped in an anonymous function. 'Run' returns the value. If this value happens to be true, it would unsubscribe
         return this.addCallbackAndRun((v) => {
-            run(v)
-        })
+            run(v);
+        });
     }
 }
 
 export class ImmutableStore<T> extends Store<T> {
-    public readonly data: T
+    public readonly data: T;
 
     constructor(data: T) {
-        super()
-        this.data = data
+        super();
+        this.data = data;
     }
 
-    private static readonly pass: () => void = () => {}
+    private static readonly pass: () => void = () => {
+    };
 
     addCallback(_: (data: T) => void): () => void {
         // pass: data will never change
-        return ImmutableStore.pass
+        return ImmutableStore.pass;
     }
 
     addCallbackAndRun(callback: (data: T) => void): () => void {
-        callback(this.data)
+        callback(this.data);
         // no callback registry: data will never change
-        return ImmutableStore.pass
+        return ImmutableStore.pass;
     }
 
     addCallbackAndRunD(callback: (data: T) => void): () => void {
         if (this.data !== undefined) {
-            callback(this.data)
+            callback(this.data);
         }
         // no callback registry: data will never change
-        return ImmutableStore.pass
+        return ImmutableStore.pass;
     }
 
     addCallbackD(_: (data: T) => void): () => void {
         // pass: data will never change
-        return ImmutableStore.pass
+        return ImmutableStore.pass;
     }
 
     map<J>(f: (t: T) => J, extraStores: Store<any>[] = undefined): ImmutableStore<J> {
         if (extraStores?.length > 0) {
-            return new MappedStore(this, f, extraStores, undefined, f(this.data))
+            return new MappedStore(this, f, extraStores, undefined, f(this.data));
         }
-        return new ImmutableStore<J>(f(this.data))
+        return new ImmutableStore<J>(f(this.data));
     }
 }
 
@@ -326,8 +327,8 @@ export class ImmutableStore<T> extends Store<T> {
  * Keeps track of the callback functions
  */
 class ListenerTracker<T> {
-    public pingCount = 0
-    private readonly _callbacks: ((t: T) => boolean | void | any)[] = []
+    public pingCount = 0;
+    private readonly _callbacks: ((t: T) => boolean | void | any)[] = [];
 
     /**
      * Adds a callback which can be called; a function to unregister is returned
@@ -335,17 +336,17 @@ class ListenerTracker<T> {
     public addCallback(callback: (t: T) => boolean | void | any): () => void {
         if (callback === console.log) {
             // This ^^^ actually works!
-            throw "Don't add console.log directly as a callback - you'll won't be able to find it afterwards. Wrap it in a lambda instead."
+            throw "Don't add console.log directly as a callback - you'll won't be able to find it afterwards. Wrap it in a lambda instead.";
         }
-        this._callbacks.push(callback)
+        this._callbacks.push(callback);
 
         // Give back an unregister-function!
         return () => {
-            const index = this._callbacks.indexOf(callback)
+            const index = this._callbacks.indexOf(callback);
             if (index >= 0) {
-                this._callbacks.splice(index, 1)
+                this._callbacks.splice(index, 1);
             }
-        }
+        };
     }
 
     /**
@@ -353,40 +354,40 @@ class ListenerTracker<T> {
      * Returns the number of registered callbacks
      */
     public ping(data: T): number {
-        this.pingCount++
-        let toDelete = undefined
-        let startTime = new Date().getTime() / 1000
+        this.pingCount++;
+        let toDelete = undefined;
+        let startTime = new Date().getTime() / 1000;
         for (const callback of this._callbacks) {
             try {
                 if (callback(data) === true) {
                     // This callback wants to be deleted
                     // Note: it has to return precisely true in order to avoid accidental deletions
                     if (toDelete === undefined) {
-                        toDelete = [callback]
+                        toDelete = [callback];
                     } else {
-                        toDelete.push(callback)
+                        toDelete.push(callback);
                     }
                 }
             } catch (e) {
-                console.error("Got an error while running a callback:", e)
+                console.error("Got an error while running a callback:", e);
             }
         }
-        let endTime = new Date().getTime() / 1000
+        let endTime = new Date().getTime() / 1000;
         if (endTime - startTime > 500) {
             console.trace(
                 "Warning: a ping took more then 500ms; this is probably a performance issue"
-            )
+            );
         }
         if (toDelete !== undefined) {
             for (const toDeleteElement of toDelete) {
-                this._callbacks.splice(this._callbacks.indexOf(toDeleteElement), 1)
+                this._callbacks.splice(this._callbacks.indexOf(toDeleteElement), 1);
             }
         }
-        return this._callbacks.length
+        return this._callbacks.length;
     }
 
     length() {
-        return this._callbacks.length
+        return this._callbacks.length;
     }
 }
 
@@ -394,16 +395,16 @@ class ListenerTracker<T> {
  * The mapped store is a helper type which does the mapping of a function.
  */
 class MappedStore<TIn, T> extends Store<T> {
-    private static readonly pass: () => {}
-    private readonly _upstream: Store<TIn>
-    private readonly _upstreamCallbackHandler: ListenerTracker<TIn> | undefined
-    private _upstreamPingCount: number = -1
-    private _unregisterFromUpstream: () => void
-    private readonly _f: (t: TIn) => T
-    private readonly _extraStores: Store<any>[] | undefined
-    private _unregisterFromExtraStores: (() => void)[] | undefined
-    private _callbacks: ListenerTracker<T> = new ListenerTracker<T>()
-    private _callbacksAreRegistered = false
+    private static readonly pass: () => {};
+    private readonly _upstream: Store<TIn>;
+    private readonly _upstreamCallbackHandler: ListenerTracker<TIn> | undefined;
+    private _upstreamPingCount: number = -1;
+    private _unregisterFromUpstream: () => void;
+    private readonly _f: (t: TIn) => T;
+    private readonly _extraStores: Store<any>[] | undefined;
+    private _unregisterFromExtraStores: (() => void)[] | undefined;
+    private _callbacks: ListenerTracker<T> = new ListenerTracker<T>();
+    private _callbacksAreRegistered = false;
 
     constructor(
         upstream: Store<TIn>,
@@ -413,20 +414,20 @@ class MappedStore<TIn, T> extends Store<T> {
         initialState: T,
         onDestroy?: (f: () => void) => void
     ) {
-        super()
-        this._upstream = upstream
-        this._upstreamCallbackHandler = upstreamListenerHandler
-        this._f = f
-        this._data = initialState
-        this._upstreamPingCount = upstreamListenerHandler?.pingCount
-        this._extraStores = extraStores
-        this.registerCallbacksToUpstream()
+        super();
+        this._upstream = upstream;
+        this._upstreamCallbackHandler = upstreamListenerHandler;
+        this._f = f;
+        this._data = initialState;
+        this._upstreamPingCount = upstreamListenerHandler?.pingCount;
+        this._extraStores = extraStores;
+        this.registerCallbacksToUpstream();
         if (onDestroy !== undefined) {
-            onDestroy(() => this.unregisterFromUpstream())
+            onDestroy(() => this.unregisterFromUpstream());
         }
     }
 
-    private _data: T
+    private _data: T;
 
     /**
      * Gets the current data from the store
@@ -442,27 +443,27 @@ class MappedStore<TIn, T> extends Store<T> {
             // Callbacks are not registered, so we haven't been listening for updates from the upstream which might have changed
             if (this._upstreamCallbackHandler?.pingCount != this._upstreamPingCount) {
                 // Upstream has pinged - let's update our data first
-                this._data = this._f(this._upstream.data)
+                this._data = this._f(this._upstream.data);
             }
-            return this._data
+            return this._data;
         }
-        return this._data
+        return this._data;
     }
 
     map<J>(f: (t: T) => J, extraStores: Store<any>[] = undefined): Store<J> {
-        let stores: Store<any>[] = undefined
+        let stores: Store<any>[] = undefined;
         if (extraStores?.length > 0 || this._extraStores?.length > 0) {
-            stores = []
+            stores = [];
         }
         if (extraStores?.length > 0) {
-            stores.push(...extraStores)
+            stores.push(...extraStores);
         }
         if (this._extraStores?.length > 0) {
             this._extraStores?.forEach((store) => {
                 if (stores.indexOf(store) < 0) {
-                    stores.push(store)
+                    stores.push(store);
                 }
-            })
+            });
         }
         return new MappedStore(
             this,
@@ -470,111 +471,111 @@ class MappedStore<TIn, T> extends Store<T> {
             stores,
             this._callbacks,
             f(this.data)
-        )
+        );
     }
 
     addCallback(callback: (data: T) => any | boolean | void): () => void {
         if (!this._callbacksAreRegistered) {
             // This is the first callback that is added
             // We register this 'map' to the upstream object and all the streams
-            this.registerCallbacksToUpstream()
+            this.registerCallbacksToUpstream();
         }
-        const unregister = this._callbacks.addCallback(callback)
+        const unregister = this._callbacks.addCallback(callback);
         return () => {
-            unregister()
+            unregister();
             if (this._callbacks.length() == 0) {
-                this.unregisterFromUpstream()
+                this.unregisterFromUpstream();
             }
-        }
+        };
     }
 
     addCallbackAndRun(callback: (data: T) => any | boolean | void): () => void {
-        const unregister = this.addCallback(callback)
-        const doRemove = callback(this.data)
+        const unregister = this.addCallback(callback);
+        const doRemove = callback(this.data);
         if (doRemove === true) {
-            unregister()
-            return MappedStore.pass
+            unregister();
+            return MappedStore.pass;
         }
-        return unregister
+        return unregister;
     }
 
     addCallbackAndRunD(callback: (data: T) => any | boolean | void): () => void {
         return this.addCallbackAndRun((data) => {
             if (data !== undefined) {
-                return callback(data)
+                return callback(data);
             }
-        })
+        });
     }
 
     addCallbackD(callback: (data: T) => any | boolean | void): () => void {
         return this.addCallback((data) => {
             if (data !== undefined) {
-                return callback(data)
+                return callback(data);
             }
-        })
+        });
     }
 
     private unregisterFromUpstream() {
-        console.debug("Unregistering callbacks for", this.tag)
-        this._callbacksAreRegistered = false
-        this._unregisterFromUpstream()
-        this._unregisterFromExtraStores?.forEach((unr) => unr())
+        console.debug("Unregistering callbacks for", this.tag);
+        this._callbacksAreRegistered = false;
+        this._unregisterFromUpstream();
+        this._unregisterFromExtraStores?.forEach((unr) => unr());
     }
 
     private registerCallbacksToUpstream() {
-        const self = this
+        const self = this;
 
-        this._unregisterFromUpstream = this._upstream.addCallback((_) => self.update())
+        this._unregisterFromUpstream = this._upstream.addCallback((_) => self.update());
         this._unregisterFromExtraStores = this._extraStores?.map((store) =>
             store?.addCallback((_) => self.update())
-        )
-        this._callbacksAreRegistered = true
+        );
+        this._callbacksAreRegistered = true;
     }
 
     private update(): void {
-        const newData = this._f(this._upstream.data)
-        this._upstreamPingCount = this._upstreamCallbackHandler?.pingCount
+        const newData = this._f(this._upstream.data);
+        this._upstreamPingCount = this._upstreamCallbackHandler?.pingCount;
         if (this._data == newData) {
-            return
+            return;
         }
-        this._data = newData
-        this._callbacks.ping(this._data)
+        this._data = newData;
+        this._callbacks.ping(this._data);
     }
 }
 
 export class UIEventSource<T> extends Store<T> implements Writable<T> {
-    private static readonly pass: () => {}
-    public data: T
-    _callbacks: ListenerTracker<T> = new ListenerTracker<T>()
+    private static readonly pass: () => {};
+    public data: T;
+    _callbacks: ListenerTracker<T> = new ListenerTracker<T>();
 
     constructor(data: T, tag: string = "") {
-        super(tag)
-        this.data = data
+        super(tag);
+        this.data = data;
     }
 
     public static flatten<X>(
         source: Store<Store<X>>,
         possibleSources?: Store<any>[]
     ): UIEventSource<X> {
-        const sink = new UIEventSource<X>(source.data?.data)
+        const sink = new UIEventSource<X>(source.data?.data);
 
         source.addCallback((latestData) => {
-            sink.setData(latestData?.data)
+            sink.setData(latestData?.data);
             latestData.addCallback((data) => {
                 if (source.data !== latestData) {
-                    return true
+                    return true;
                 }
-                sink.setData(data)
-            })
-        })
+                sink.setData(data);
+            });
+        });
 
         for (const possibleSource of possibleSources ?? []) {
             possibleSource?.addCallback(() => {
-                sink.setData(source.data?.data)
-            })
+                sink.setData(source.data?.data);
+            });
         }
 
-        return sink
+        return sink;
     }
 
     /**
@@ -585,16 +586,16 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         promise: Promise<T>,
         onError: (e: any) => void = undefined
     ): UIEventSource<T> {
-        const src = new UIEventSource<T>(undefined)
-        promise?.then((d) => src.setData(d))
+        const src = new UIEventSource<T>(undefined);
+        promise?.then((d) => src.setData(d));
         promise?.catch((err) => {
             if (onError !== undefined) {
-                onError(err)
+                onError(err);
             } else {
-                console.warn("Promise failed:", err)
+                console.warn("Promise failed:", err);
             }
-        })
-        return src
+        });
+        return src;
     }
 
     /**
@@ -606,26 +607,68 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
     public static FromPromiseWithErr<T>(
         promise: Promise<T>
     ): UIEventSource<{ success: T } | { error: any }> {
-        const src = new UIEventSource<{ success: T } | { error: any }>(undefined)
-        promise?.then((d) => src.setData({ success: d }))
-        promise?.catch((err) => src.setData({ error: err }))
-        return src
+        const src = new UIEventSource<{ success: T } | { error: any }>(undefined);
+        promise?.then((d) => src.setData({ success: d }));
+        promise?.catch((err) => src.setData({ error: err }));
+        return src;
     }
 
-    public static asFloat(source: UIEventSource<string>): UIEventSource<number> {
+    /**
+     *
+     * @param source
+     * UIEventSource.asInt(new UIEventSource("123")).data // => 123
+     * UIEventSource.asInt(new UIEventSource("123456789")).data // => 123456789
+     *
+     * const srcStr = new UIEventSource("123456789"))
+     * const srcInt = UIEventSource.asInt(srcStr)
+     * srcInt.setData(987654321)
+     * srcStr.data // => "987654321"
+     */
+    public static asInt(source: UIEventSource<string>): UIEventSource<number> {
         return source.sync(
             (str) => {
-                let parsed = parseFloat(str)
-                return isNaN(parsed) ? undefined : parsed
+                let parsed = parseInt(str);
+                return isNaN(parsed) ? undefined : parsed;
             },
             [],
             (fl) => {
                 if (fl === undefined || isNaN(fl)) {
-                    return undefined
+                    return undefined;
                 }
-                return ("" + fl).substr(0, 8)
+                return ("" + fl);
             }
-        )
+        );
+    }
+
+    /**
+     * UIEventSource.asFloat(new UIEventSource("123")).data // => 123
+     * UIEventSource.asFloat(new UIEventSource("123456789")).data // => 123456789
+     * UIEventSource.asFloat(new UIEventSource("0.5")).data // => 0.5
+     * UIEventSource.asFloat(new UIEventSource("0.125")).data // => 0.125
+     * UIEventSource.asFloat(new UIEventSource("0.0000000001")).data // => 0.0000000001
+     *
+     *
+     * const srcStr = new UIEventSource("123456789"))
+     * const srcInt = UIEventSource.asFloat(srcStr)
+     * srcInt.setData(987654321)
+     * srcStr.data // => "987654321"
+     * @param source
+     */
+
+    public static asFloat(source: UIEventSource<string>): UIEventSource<number> {
+        return source.sync(
+            (str) => {
+                let parsed = parseFloat(str);
+                return isNaN(parsed) ? undefined : parsed;
+            },
+            [],
+            (fl) => {
+                if (fl === undefined || isNaN(fl)) {
+                    return undefined;
+                }
+                return ("" + fl);
+            }
+        );
     }
 
     static asBoolean(stringUIEventSource: UIEventSource<string>) {
@@ -633,7 +676,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
             (str) => str === "true",
             [],
             (b) => "" + b
-        )
+        );
     }
 
     /**
@@ -641,9 +684,9 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
      * However, this value can be overriden without affecting source
      */
     static feedFrom<T>(store: Store<T>): UIEventSource<T> {
-        const src = new UIEventSource(store.data)
-        store.addCallback((t) => src.setData(t))
-        return src
+        const src = new UIEventSource(store.data);
+        store.addCallback((t) => src.setData(t));
+        return src;
     }
 
     /**
@@ -653,46 +696,46 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
      * @param callback
      */
     public addCallback(callback: (latestData: T) => boolean | void | any): () => void {
-        return this._callbacks.addCallback(callback)
+        return this._callbacks.addCallback(callback);
     }
 
     public addCallbackAndRun(callback: (latestData: T) => boolean | void | any): () => void {
-        const doDeleteCallback = callback(this.data)
+        const doDeleteCallback = callback(this.data);
         if (doDeleteCallback !== true) {
-            return this.addCallback(callback)
+            return this.addCallback(callback);
         } else {
-            return UIEventSource.pass
+            return UIEventSource.pass;
         }
     }
 
     public addCallbackAndRunD(callback: (data: T) => void): () => void {
         return this.addCallbackAndRun((data) => {
             if (data !== undefined && data !== null) {
-                return callback(data)
+                return callback(data);
             }
-        })
+        });
     }
 
     public addCallbackD(callback: (data: T) => void): () => void {
         return this.addCallback((data) => {
             if (data !== undefined && data !== null) {
-                return callback(data)
+                return callback(data);
             }
-        })
+        });
     }
 
     public setData(t: T): UIEventSource<T> {
         if (this.data == t) {
             // MUST COMPARE BY REFERENCE!
-            return
+            return;
         }
-        this.data = t
-        this._callbacks.ping(t)
-        return this
+        this.data = t;
+        this._callbacks.ping(t);
+        return this;
     }
 
     public ping(): void {
-        this._callbacks.ping(this.data)
+        this._callbacks.ping(this.data);
     }
 
     /**
@@ -724,7 +767,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         extraSources: Store<any>[] = [],
         onDestroy?: (f: () => void) => void
     ): Store<J> {
-        return new MappedStore(this, f, extraSources, this._callbacks, f(this.data), onDestroy)
+        return new MappedStore(this, f, extraSources, this._callbacks, f(this.data), onDestroy);
     }
 
     /**
@@ -736,14 +779,14 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
             this,
             (t) => {
                 if (t === undefined) {
-                    return undefined
+                    return undefined;
                 }
-                return f(t)
+                return f(t);
             },
             extraSources,
             this._callbacks,
             this.data === undefined ? undefined : f(this.data)
-        )
+        );
     }
 
     /**
@@ -760,53 +803,53 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         g: (j: J, t: T) => T,
         allowUnregister = false
     ): UIEventSource<J> {
-        const self = this
+        const self = this;
 
-        const stack = new Error().stack.split("\n")
-        const callee = stack[1]
+        const stack = new Error().stack.split("\n");
+        const callee = stack[1];
 
-        const newSource = new UIEventSource<J>(f(this.data), "map(" + this.tag + ")@" + callee)
+        const newSource = new UIEventSource<J>(f(this.data), "map(" + this.tag + ")@" + callee);
 
-        const update = function () {
-            newSource.setData(f(self.data))
-            return allowUnregister && newSource._callbacks.length() === 0
-        }
+        const update = function() {
+            newSource.setData(f(self.data));
+            return allowUnregister && newSource._callbacks.length() === 0;
+        };
 
-        this.addCallback(update)
+        this.addCallback(update);
         for (const extraSource of extraSources) {
-            extraSource?.addCallback(update)
+            extraSource?.addCallback(update);
         }
 
         if (g !== undefined) {
             newSource.addCallback((latest) => {
-                self.setData(g(latest, self.data))
-            })
+                self.setData(g(latest, self.data));
+            });
         }
 
-        return newSource
+        return newSource;
     }
 
     public syncWith(otherSource: UIEventSource<T>, reverseOverride = false): UIEventSource<T> {
-        this.addCallback((latest) => otherSource.setData(latest))
-        const self = this
-        otherSource.addCallback((latest) => self.setData(latest))
+        this.addCallback((latest) => otherSource.setData(latest));
+        const self = this;
+        otherSource.addCallback((latest) => self.setData(latest));
         if (reverseOverride) {
             if (otherSource.data !== undefined) {
-                this.setData(otherSource.data)
+                this.setData(otherSource.data);
             }
         } else if (this.data === undefined) {
-            this.setData(otherSource.data)
+            this.setData(otherSource.data);
         } else {
-            otherSource.setData(this.data)
+            otherSource.setData(this.data);
         }
-        return this
+        return this;
     }
 
     set(value: T): void {
-        this.setData(value)
+        this.setData(value);
     }
 
     update(f: Updater<T> & ((value: T) => T)): void {
-        this.setData(f(this.data))
+        this.setData(f(this.data));
     }
 }

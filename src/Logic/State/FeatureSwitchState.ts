@@ -172,7 +172,7 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
             (urls) => urls?.join(",")
         )
 
-        this.overpassTimeout = UIEventSource.asFloat(
+        this.overpassTimeout = UIEventSource.asInt(
             QueryParameters.GetQueryParameter(
                 "overpassTimeout",
                 "" + layoutToUse?.overpassTimeout,
@@ -188,7 +188,7 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
             )
         )
 
-        this.osmApiTileSize = UIEventSource.asFloat(
+        this.osmApiTileSize = UIEventSource.asInt(
             QueryParameters.GetQueryParameter(
                 "osmApiTileSize",
                 "" + layoutToUse?.osmApiTileSize,
