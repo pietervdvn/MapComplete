@@ -9084,21 +9084,27 @@
                         "question": "Verkoop van vlees"
                     },
                     "17": {
+                        "question": "Verkoop van fruit"
+                    },
+                    "18": {
+                        "question": "Verkoop van aardbeien"
+                    },
+                    "19": {
                         "question": "Verkoop van bloemen"
                     },
-                    "21": {
+                    "23": {
                         "question": "Verkoop van fietslampjes"
                     },
-                    "22": {
+                    "24": {
                         "question": "Verkoop van handschoenen"
                     },
-                    "23": {
+                    "25": {
                         "question": "Verkoop van fietsreparatiesets"
                     },
-                    "24": {
+                    "26": {
                         "question": "Verkoop van fietspompen"
                     },
-                    "25": {
+                    "27": {
                         "question": "Verkoop van fietssloten"
                     }
                 }
@@ -9183,27 +9189,33 @@
                         "then": "Vlees wordt verkocht"
                     },
                     "16": {
-                        "then": "Bloemen worden verkocht"
+                        "then": "Fruit wordt verkocht"
                     },
                     "17": {
-                        "then": "Parkeerkaarten worden verkocht"
+                        "then": "Aardbeien worden verkocht"
+                    },
+                    "18": {
+                        "then": "Bloemen worden verkocht"
                     },
                     "19": {
-                        "then": "Openbaar vervoerkaartjes worden verkocht"
-                    },
-                    "20": {
-                        "then": "Fietslampjes worden verkocht"
+                        "then": "Parkeerkaarten worden verkocht"
                     },
                     "21": {
-                        "then": "Handschoenen worden verkocht"
+                        "then": "Openbaar vervoerkaartjes worden verkocht"
                     },
                     "22": {
-                        "then": "Fietsreparatiesets worden verkocht"
+                        "then": "Fietslampjes worden verkocht"
                     },
                     "23": {
-                        "then": "Fietspompen worden verkocht"
+                        "then": "Handschoenen worden verkocht"
                     },
                     "24": {
+                        "then": "Fietsreparatiesets worden verkocht"
+                    },
+                    "25": {
+                        "then": "Fietspompen worden verkocht"
+                    },
+                    "26": {
                         "then": "Fietssloten worden verkocht"
                     }
                 },
@@ -9412,6 +9424,9 @@
                     },
                     "6": {
                         "then": "Een vuilnisbak voor plastic"
+                    },
+                    "7": {
+                        "then": "Een vuilnisbak voor papier"
                     }
                 },
                 "question": "Wat voor soort vuilnisbak is dit?"

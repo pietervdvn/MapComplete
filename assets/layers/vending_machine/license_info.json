@@ -30,6 +30,17 @@
     ]
   },
   {
+    "path": "fruits.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "OpenClipart",
+      "frankes"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/244990/fruits-coloured"
+    ]
+  },
+  {
     "path": "honey.svg",
     "license": "CC-BY-4.0",
     "authors": [
@@ -68,6 +79,17 @@
     ],
     "sources": [
       "https://fontawesome.com/icons/smoking?f=classic&s=solid"
+    ]
+  },
+  {
+    "path": "strawberry.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "OpenClipart",
+      "baroquon"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/23540/strawberry"
     ]
   },
   {

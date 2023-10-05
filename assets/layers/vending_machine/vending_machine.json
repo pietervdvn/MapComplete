@@ -252,6 +252,22 @@
           "icon": "./assets/layers/id_presets/temaki-meat.svg"
         },
         {
+          "if": "vending=fruit",
+          "then": {
+            "en": "Fruit is sold",
+            "nl": "Fruit wordt verkocht"
+          },
+          "icon": "./assets/layers/vending_machine/fruits.svg"
+        },
+        {
+          "if": "vending=strawberries",
+          "then": {
+            "en": "Strawberries are sold",
+            "nl": "Aardbeien worden verkocht"
+          },
+          "icon": "./assets/layers/vending_machine/strawberry.svg"
+        },
+        {
           "if": "vending=flowers",
           "then": {
             "en": "Flowers are sold",
@@ -415,7 +431,8 @@
           "ca": "Aquest és el número al qual podeu trucar en cas de problemes amb la màquina expenedora"
         }
       }
-    }
+    },
+    "website"
   ],
   "calculatedTags": [
     "_vending_count=feat.properties.vending.split(';').length"
@@ -494,6 +511,14 @@
           {
             "if": "vending=meat",
             "then": "./assets/layers/id_presets/temaki-meat.svg"
+          },
+          {
+            "if": "vending=fruit",
+            "then": "./assets/layers/vending_machine/fruits.svg"
+          },
+          {
+            "if": "vending=strawberries",
+            "then": "./assets/layers/vending_machine/strawberry.svg"
           },
           {
             "if": "vending=flowers",
@@ -630,6 +655,33 @@
             ]
           },
           "then": "circle:white;./assets/layers/vending_machine/potato.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*meat.*"
+            ]
+          },
+          "then": "./assets/layers/id_presets/temaki-meat.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*fruit.*"
+            ]
+          },
+          "then": "./assets/layers/vending_machine/fruits.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*strawberries.*"
+            ]
+          },
+          "then": "./assets/layers/vending_machine/strawberry.svg"
         },
         {
           "if": {
@@ -842,6 +894,20 @@
             "ca": "Venda de productes carnis"
           },
           "osmTags": "vending~i~.*meat.*"
+        },
+        {
+          "question": {
+            "en": "Sale of fruit",
+            "nl": "Verkoop van fruit"
+          },
+          "osmTags": "vending~i~.*fruit.*"
+        },
+        {
+          "question": {
+            "en": "Sale of strawberries",
+            "nl": "Verkoop van aardbeien"
+          },
+          "osmTags": "vending~i~.*strawberries.*"
         },
         {
           "question": {

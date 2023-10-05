@@ -9793,7 +9793,7 @@
                     "16": {
                         "question": "Verkauf von Fleisch"
                     },
-                    "17": {
+                    "19": {
                         "question": "Verkauf von Blumen"
                     }
                 }
@@ -9874,13 +9874,13 @@
                     "14": {
                         "then": "Kartoffeln werden verkauft"
                     },
-                    "16": {
+                    "18": {
                         "then": "Blumen werden verkauft"
                     },
-                    "17": {
+                    "19": {
                         "then": "Parkscheine werden verkauft"
                     },
-                    "19": {
+                    "21": {
                         "then": "Fahrscheine werden verkauft"
                     }
                 },
@@ -10077,6 +10077,9 @@
                     },
                     "6": {
                         "then": "Der Abfalleimer ist für Plastik"
+                    },
+                    "7": {
+                        "then": "Der Abfalleimer ist für Papier"
                     }
                 },
                 "question": "Um was für einen Abfalleimer handelt es sich?"

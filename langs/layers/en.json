@@ -10049,30 +10049,36 @@
                         "question": "Sale of meat"
                     },
                     "17": {
-                        "question": "Sale of flowers"
+                        "question": "Sale of fruit"
                     },
                     "18": {
-                        "question": "Sale of parking tickets"
+                        "question": "Sale of strawberries"
                     },
                     "19": {
-                        "question": "Sale of pressed pennies"
+                        "question": "Sale of flowers"
                     },
                     "20": {
-                        "question": "Sale of public transport tickets"
+                        "question": "Sale of parking tickets"
                     },
                     "21": {
-                        "question": "Sale of bicycle lights"
+                        "question": "Sale of pressed pennies"
                     },
                     "22": {
-                        "question": "Sale of gloves"
+                        "question": "Sale of public transport tickets"
                     },
                     "23": {
-                        "question": "Sale of bicycle repair kits"
+                        "question": "Sale of bicycle lights"
                     },
                     "24": {
-                        "question": "Sale of bicycle pumps"
+                        "question": "Sale of gloves"
                     },
                     "25": {
+                        "question": "Sale of bicycle repair kits"
+                    },
+                    "26": {
+                        "question": "Sale of bicycle pumps"
+                    },
+                    "27": {
                         "question": "Sale of bicycle locks"
                     }
                 }
@@ -10163,30 +10169,36 @@
                         "then": "Meat is sold"
                     },
                     "16": {
-                        "then": "Flowers are sold"
+                        "then": "Fruit is sold"
                     },
                     "17": {
-                        "then": "Parking tickets are sold"
+                        "then": "Strawberries are sold"
                     },
                     "18": {
-                        "then": "Pressed pennies are sold"
+                        "then": "Flowers are sold"
                     },
                     "19": {
-                        "then": "Public transport tickets are sold"
+                        "then": "Parking tickets are sold"
                     },
                     "20": {
-                        "then": "Bicycle lights are sold"
+                        "then": "Pressed pennies are sold"
                     },
                     "21": {
-                        "then": "Gloves are sold"
+                        "then": "Public transport tickets are sold"
                     },
                     "22": {
-                        "then": "Bicycle repair kits are sold"
+                        "then": "Bicycle lights are sold"
                     },
                     "23": {
-                        "then": "Bicycle pumps are sold"
+                        "then": "Gloves are sold"
                     },
                     "24": {
+                        "then": "Bicycle repair kits are sold"
+                    },
+                    "25": {
+                        "then": "Bicycle pumps are sold"
+                    },
+                    "26": {
                         "then": "Bicycle locks are sold"
                     }
                 },
@@ -10383,6 +10395,9 @@
                     },
                     "6": {
                         "then": "A waste basket for plastic"
+                    },
+                    "7": {
+                        "then": "A waste basket for paper"
                     }
                 },
                 "question": "What kind of waste basket is this?"
