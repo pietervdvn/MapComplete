@@ -969,7 +969,7 @@ export default class SpecialVisualizations {
                     }
                     let challenge = Stores.FromPromise(
                         Utils.downloadJsonCached(
-                            `https://maproulette.org/api/v2/challenge/${parentId}`,
+                            `${Maproulette.defaultEndpoint}/challenge/${parentId}`,
                             24 * 60 * 60 * 1000
                         )
                     )
