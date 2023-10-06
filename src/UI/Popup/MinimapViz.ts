@@ -81,7 +81,7 @@ export class MinimapViz implements SpecialVisualization {
 
         const mlmap = new UIEventSource(undefined)
         const mla = new MapLibreAdaptor(mlmap, {
-            rasterLayer: state.mapProperties.rasterLayer
+            rasterLayer: state.mapProperties.rasterLayer,
         })
 
         mla.maxzoom.setData(17)

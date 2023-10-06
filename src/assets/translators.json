@@ -1,15 +1,15 @@
 {
   "contributors": [
     {
-      "commits": 308,
+      "commits": 310,
       "contributor": "kjon"
     },
     {
-      "commits": 287,
+      "commits": 288,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 176,
+      "commits": 178,
       "contributor": "paunofu"
     },
     {
@@ -34,15 +34,15 @@
     },
     {
       "commits": 32,
+      "contributor": "Jiří Podhorecký"
+    },
+    {
+      "commits": 32,
       "contributor": "Lucas"
     },
     {
       "commits": 32,
       "contributor": "Babos Gábor"
-    },
-    {
-      "commits": 31,
-      "contributor": "Jiří Podhorecký"
     },
     {
       "commits": 31,
@@ -126,6 +126,10 @@
     },
     {
       "commits": 9,
+      "contributor": "Ettore Atalan"
+    },
+    {
+      "commits": 9,
       "contributor": "deep map"
     },
     {
@@ -143,10 +147,6 @@
     {
       "commits": 9,
       "contributor": "Jacque Fresco"
-    },
-    {
-      "commits": 8,
-      "contributor": "Ettore Atalan"
     },
     {
       "commits": 8,
@@ -443,6 +443,14 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "Kelson Vibber"
+    },
+    {
+      "commits": 1,
+      "contributor": "Juan"
     },
     {
       "commits": 1,

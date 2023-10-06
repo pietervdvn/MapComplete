@@ -50,7 +50,7 @@
   $: isHardDelete = changedProperties[DeleteConfig.deleteReasonKey] !== undefined
 
   async function onDelete() {
-    if(selectedTags === undefined){
+    if (selectedTags === undefined) {
       return
     }
     currentState = "applying"

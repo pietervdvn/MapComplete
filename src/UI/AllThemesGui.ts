@@ -22,7 +22,7 @@ export default class AllThemesGui {
                     "oauth_token",
                     undefined,
                     "Used to complete the login"
-                )
+                ),
             })
             const state = new UserRelatedState(osmConnection)
             const intro = new Combine([

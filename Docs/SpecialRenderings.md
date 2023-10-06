@@ -118,8 +118,6 @@ In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "ar
       * [Example usage of list_reviews](#example-usage-of-list_reviews)
     + [opening_hours_table](#opening_hours_table)
       * [Example usage of opening_hours_table](#example-usage-of-opening_hours_table)
-    + [live](#live)
-      * [Example usage of live](#example-usage-of-live)
     + [canonical](#canonical)
       * [Example usage of canonical](#example-usage-of-canonical)
     + [export_as_geojson](#export_as_geojson)
@@ -820,23 +818,6 @@ postfix | _empty string_ | Remove this string from the end of the value before p
 #### Example usage of opening_hours_table 
 
  A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}`
-
-
-
-### live 
-
- Downloads a JSON from the given URL, e.g. '{live(example.org/data.json, shorthand:x.y.z, other:a.b.c, shorthand)}' will download the given file, will create an object {shorthand: json[x][y][z], other: json[a][b][c] out of it and will return 'other' or 'json[a][b][c]. This is made to use in combination with tags, e.g. {live({url}, {url:format}, needed_value)} 
-
-name | default | description
------- | --------- | -------------
-Url | _undefined_ | The URL to load
-Shorthands | _undefined_ | A list of shorthands, of the format 'shorthandname:path.path.path'. separated by ;
-path | _undefined_ | The path (or shorthand) that should be returned
- 
-
-#### Example usage of live 
-
- {live({url},{url:format},hour)} {live(https://data.mobility.brussels/bike/api/counts/?request=live&featureID=CB2105,hour:data.hour_cnt;day:data.day_cnt;year:data.year_cnt,hour)}
 
 
 

@@ -30,7 +30,6 @@ export class OsmConnectionFeatureSwitches {
     public readonly featureSwitchFakeUser: UIEventSource<boolean>
 
     constructor() {
-
         this.featureSwitchFakeUser = QueryParameters.GetBooleanQueryParameter(
             "fake-user",
             false,

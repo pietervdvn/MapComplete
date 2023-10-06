@@ -1,4 +1,3 @@
-import QuestionViz from "./Popup/QuestionViz"
 import Combine from "./Base/Combine"
 import { FixedUiElement } from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
@@ -75,6 +74,7 @@ import NearbyImagesSearch from "../Logic/Web/NearbyImagesSearch"
 import AllReviews from "./Reviews/AllReviews.svelte"
 import StarsBarIcon from "./Reviews/StarsBarIcon.svelte"
 import ReviewForm from "./Reviews/ReviewForm.svelte"
+import Questionbox from "./Popup/TagRendering/Questionbox.svelte";
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -178,6 +178,52 @@ class StealViz implements SpecialVisualization {
         }
         const [layerId, __] = tagRenderingId.split(".")
         return [layerId]
+    }
+}
+
+
+/**
+ * Thin wrapper around QuestionBox.svelte to include it into the special Visualisations
+ */
+export class QuestionViz implements SpecialVisualization {
+    funcName = "questions"
+    needsUrls = []
+    docs =
+      "The special element which shows the questions which are unkown. Added by default if not yet there"
+    args = [
+        {
+            name: "labels",
+            doc: "One or more ';'-separated labels. If these are given, only questions with these labels will be given. Use `unlabeled` for all questions that don't have an explicit label. If none given, all questions will be shown",
+        },
+        {
+            name: "blacklisted-labels",
+            doc: "One or more ';'-separated labels of questions which should _not_ be included",
+        },
+    ]
+
+    constr(
+      state: SpecialVisualizationState,
+      tags: UIEventSource<Record<string, string>>,
+      args: string[],
+      feature: Feature,
+      layer: LayerConfig
+    ): BaseUIElement {
+        const labels = args[0]
+          ?.split(";")
+          ?.map((s) => s.trim())
+          ?.filter((s) => s !== "")
+        const blacklist = args[1]
+          ?.split(";")
+          ?.map((s) => s.trim())
+          ?.filter((s) => s !== "")
+        return new SvelteUIElement(Questionbox, {
+            layer,
+            tags,
+            selectedElement: feature,
+            state,
+            onlyForLabels: labels,
+            notForLabels: blacklist,
+        })
     }
 }
 

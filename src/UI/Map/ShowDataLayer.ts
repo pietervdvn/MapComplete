@@ -282,7 +282,11 @@ class LineRenderingLayer {
         // As such, we only now read the features from the featureSource and compare with the previously set data
         const features = featureSource.data
         const src = <GeoJSONSource>map.getSource(this._layername)
-        if (src !== undefined && this.currentSourceData === features && src._data === <any> features) {
+        if (
+            src !== undefined &&
+            this.currentSourceData === features &&
+            src._data === <any>features
+        ) {
             // Already up to date
             return
         }
@@ -315,7 +319,7 @@ class LineRenderingLayer {
                 })
 
                 for (const feature of features) {
-                    if(!feature.properties.id){
+                    if (!feature.properties.id) {
                         console.warn("Feature without id:", feature)
                         continue
                     }
@@ -403,8 +407,8 @@ class LineRenderingLayer {
                 const tags = this._fetchStore(id)
                 this._listenerInstalledOn.add(id)
                 map.setFeatureState(
-                  { source: this._layername, id },
-                  this.calculatePropsFor(feature.properties)
+                    { source: this._layername, id },
+                    this.calculatePropsFor(feature.properties)
                 )
                 tags.addCallbackD((properties) => {
                     if (!map.getLayer(this._layername)) {
@@ -418,7 +422,6 @@ class LineRenderingLayer {
             }
         }
     }
-
 }
 
 export default class ShowDataLayer {
@@ -439,7 +442,7 @@ export default class ShowDataLayer {
         options: ShowDataLayerOptions & {
             layer: LayerConfig
             drawMarkers?: true | boolean
-            drawLines?: true | boolean,
+            drawLines?: true | boolean
         }
     ) {
         this._options = options
@@ -462,7 +465,7 @@ export default class ShowDataLayer {
                 }
             )
         perLayer.forEach((fs) => {
-            new ShowDataLayer(mlmap,{
+            new ShowDataLayer(mlmap, {
                 layer: fs.layer.layerDef,
                 features: fs,
                 ...(options ?? {}),
@@ -475,7 +478,7 @@ export default class ShowDataLayer {
         features: FeatureSource,
         doShowLayer?: Store<boolean>
     ): ShowDataLayer {
-        return new ShowDataLayer(map,{
+        return new ShowDataLayer(map, {
             layer: ShowDataLayer.rangeLayer,
             features,
             doShowLayer,

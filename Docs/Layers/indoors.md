@@ -408,7 +408,7 @@ This tagrendering has labels  `relevant-questions`
 
 
 
-The question is  *Which kind of toilets are this?*
+The question is  *Which kind of toilets are these?*
 
 
 
@@ -482,8 +482,8 @@ The question is  *Do these toilets have a sink to wash your hands?*
 
 
 
-  - *This toilets have a sink to wash your hands*  corresponds with  `toilets:handwashing=yes`
-  - *This toilets <b>don't</b> have a sink to wash your hands*  corresponds with  `toilets:handwashing=no`
+  - *These toilets have a sink to wash your hands*  corresponds with  `toilets:handwashing=yes`
+  - *These toilets <b>don't</b> have a sink to wash your hands*  corresponds with  `toilets:handwashing=no`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `amenity=toilets`

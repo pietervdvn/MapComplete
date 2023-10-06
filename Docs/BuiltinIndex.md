@@ -289,6 +289,7 @@
   - shops
   - sports_centre
   - tertiary_education
+  - vending_machine
   - veterinary
 
 
@@ -611,6 +612,7 @@
   - food
   - hackerspace
   - hotel
+  - pharmacy
   - shops
   - veterinary
 

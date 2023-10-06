@@ -90,6 +90,18 @@ This tagrendering has no question and is thus read-only
 
 
 
+### reviews 
+
+
+
+Shows the reviews module (including the possibility to leave a review)
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
 ### name 
 
 

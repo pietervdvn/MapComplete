@@ -422,7 +422,14 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             map.addSource(background.id, MapLibreAdaptor.prepareWmsSource(background))
         }
         if (!map.getLayer(background.id)) {
-            console.log("Adding background layer", background.id, "beforeId", addLayerBeforeId,"; all layers are", map.getStyle().layers.map(l => l.id))
+            console.log(
+                "Adding background layer",
+                background.id,
+                "beforeId",
+                addLayerBeforeId,
+                "; all layers are",
+                map.getStyle().layers.map((l) => l.id)
+            )
             map.addLayer(
                 {
                     id: background.id,

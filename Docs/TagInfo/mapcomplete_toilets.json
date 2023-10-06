@@ -226,12 +226,12 @@
     },
     {
       "key": "toilets:handwashing",
-      "description": "Layer 'Toilets' shows toilets:handwashing=yes with a fixed text, namely 'This toilets have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets')",
+      "description": "Layer 'Toilets' shows toilets:handwashing=yes with a fixed text, namely 'These toilets have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets')",
       "value": "yes"
     },
     {
       "key": "toilets:handwashing",
-      "description": "Layer 'Toilets' shows toilets:handwashing=no with a fixed text, namely 'This toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets')",
+      "description": "Layer 'Toilets' shows toilets:handwashing=no with a fixed text, namely 'These toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets')",
       "value": "no"
     },
     {
@@ -424,12 +424,12 @@
     },
     {
       "key": "toilets:handwashing",
-      "description": "Layer 'Toilets at other amenities' shows toilets:handwashing=yes with a fixed text, namely 'This toilets have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets')",
+      "description": "Layer 'Toilets at other amenities' shows toilets:handwashing=yes with a fixed text, namely 'These toilets have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets')",
       "value": "yes"
     },
     {
       "key": "toilets:handwashing",
-      "description": "Layer 'Toilets at other amenities' shows toilets:handwashing=no with a fixed text, namely 'This toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets')",
+      "description": "Layer 'Toilets at other amenities' shows toilets:handwashing=no with a fixed text, namely 'These toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets')",
       "value": "no"
     },
     {

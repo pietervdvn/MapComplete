@@ -2800,65 +2800,6 @@
     },
     {
       "key": "amenity",
-      "description": "The MapComplete theme Climbing gyms, clubs and spots has a layer Drinking water showing features with this tag",
-      "value": "drinking_water"
-    },
-    {
-      "key": "drinking_water",
-      "description": "The MapComplete theme Climbing gyms, clubs and spots has a layer Drinking water showing features with this tag",
-      "value": "yes"
-    },
-    {
-      "key": "id",
-      "description": "Layer 'Drinking water' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
-    },
-    {
-      "key": "image",
-      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "mapillary",
-      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikidata",
-      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikipedia",
-      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "operational_status",
-      "description": "Layer 'Drinking water' shows and asks freeform values for key 'operational_status' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
-    },
-    {
-      "key": "operational_status",
-      "description": "Layer 'Drinking water' shows  with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') Picking this answer will delete the key operational_status.",
-      "value": ""
-    },
-    {
-      "key": "operational_status",
-      "description": "Layer 'Drinking water' shows operational_status=broken with a fixed text, namely 'This drinking water is broken' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
-      "value": "broken"
-    },
-    {
-      "key": "operational_status",
-      "description": "Layer 'Drinking water' shows operational_status=closed with a fixed text, namely 'This drinking water is closed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
-      "value": "closed"
-    },
-    {
-      "key": "bottle",
-      "description": "Layer 'Drinking water' shows bottle=yes with a fixed text, namely 'It is easy to refill water bottles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
-      "value": "yes"
-    },
-    {
-      "key": "bottle",
-      "description": "Layer 'Drinking water' shows bottle=no with a fixed text, namely 'Water bottles may not fit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
-      "value": "no"
-    },
-    {
-      "key": "amenity",
       "description": "The MapComplete theme Climbing gyms, clubs and spots has a layer Toilets showing features with this tag",
       "value": "toilets"
     },
@@ -3073,12 +3014,12 @@
     },
     {
       "key": "toilets:handwashing",
-      "description": "Layer 'Toilets' shows toilets:handwashing=yes with a fixed text, namely 'This toilets have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "description": "Layer 'Toilets' shows toilets:handwashing=yes with a fixed text, namely 'These toilets have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
       "value": "yes"
     },
     {
       "key": "toilets:handwashing",
-      "description": "Layer 'Toilets' shows toilets:handwashing=no with a fixed text, namely 'This toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "description": "Layer 'Toilets' shows toilets:handwashing=no with a fixed text, namely 'These toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
       "value": "no"
     },
     {
@@ -3094,6 +3035,65 @@
     {
       "key": "description",
       "description": "Layer 'Toilets' shows and asks freeform values for key 'description' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Climbing gyms, clubs and spots has a layer Drinking water showing features with this tag",
+      "value": "drinking_water"
+    },
+    {
+      "key": "drinking_water",
+      "description": "The MapComplete theme Climbing gyms, clubs and spots has a layer Drinking water showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Drinking water' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'operational_status' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows  with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows operational_status=broken with a fixed text, namely 'This drinking water is broken' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "broken"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows operational_status=closed with a fixed text, namely 'This drinking water is closed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "closed"
+    },
+    {
+      "key": "bottle",
+      "description": "Layer 'Drinking water' shows bottle=yes with a fixed text, namely 'It is easy to refill water bottles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "bottle",
+      "description": "Layer 'Drinking water' shows bottle=no with a fixed text, namely 'Water bottles may not fit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "no"
     }
   ]
 }

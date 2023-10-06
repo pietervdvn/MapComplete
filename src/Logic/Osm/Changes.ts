@@ -532,7 +532,6 @@ export class Changes {
                     deletedObjects: OsmObject[]
                 } = self.CreateChangesetObjects(pending, objects)
 
-
                 return Changes.createChangesetFor("" + csId, changes)
             },
             metatags,
@@ -561,8 +560,11 @@ export class Changes {
             const successes = await Promise.all(
                 Array.from(pendingPerTheme, async ([theme, pendingChanges]) => {
                     try {
-                        const openChangeset = UIEventSource.asInt(this.state.osmConnection
-                            .GetPreference("current-open-changeset-" + theme))
+                        const openChangeset = UIEventSource.asInt(
+                            this.state.osmConnection.GetPreference(
+                                "current-open-changeset-" + theme
+                            )
+                        )
                         console.log(
                             "Using current-open-changeset-" +
                                 theme +

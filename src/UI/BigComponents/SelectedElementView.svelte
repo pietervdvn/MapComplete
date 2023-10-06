@@ -14,7 +14,6 @@
   export let tags: UIEventSource<Record<string, string>>
   export let highlightedRendering: UIEventSource<string> = undefined
 
-
   let _metatags: Record<string, string>
   onDestroy(
     state.userRelatedState.preferencesAsTags.addCallbackAndRun((tags) => {
@@ -31,7 +30,7 @@
 {:else}
   <div class="flex flex-col gap-y-2 overflow-y-auto p-1 px-2">
     {#each layer.tagRenderings as config (config.id)}
-      {#if (config.condition?.matchesProperties($tags) ?? true) && (config.metacondition?.matchesProperties( { ...$tags, ..._metatags } ?? true))}
+      {#if (config.condition?.matchesProperties($tags) ?? true) && config.metacondition?.matchesProperties({ ...$tags, ..._metatags } ?? true)}
         {#if config.IsKnown($tags)}
           <TagRenderingEditable
             {tags}

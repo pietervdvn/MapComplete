@@ -111,7 +111,7 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
 
         while (spec.length > 0) {
             const [part] = spec.match(/((\\;)|[^;])*/)
-            console.log(("Spec is"), part, spec)
+            console.log("Spec is", part, spec)
             spec = spec.substring(part.length + 1) // +1 to remove the pending ';' as well
             const kv = part.split("=").map((s) => s.trim().replace("\\;", ";"))
             if (kv.length == 2) {

@@ -10,11 +10,15 @@ import ScriptUtils from "./ScriptUtils"
 import { Utils } from "../src/Utils"
 import SpecialVisualizations from "../src/UI/SpecialVisualizations"
 import Constants from "../src/Models/Constants"
-import { AvailableRasterLayers, EditorLayerIndexProperties, RasterLayerPolygon } from "../src/Models/RasterLayers";
+import {
+    AvailableRasterLayers,
+    EditorLayerIndexProperties,
+    RasterLayerPolygon,
+} from "../src/Models/RasterLayers"
 import { ImmutableStore } from "../src/Logic/UIEventSource"
 import * as crypto from "crypto"
 import * as eli from "../src/assets/editor-layer-index.json"
-import dom from "svelte/types/compiler/compile/render_dom";
+import dom from "svelte/types/compiler/compile/render_dom"
 const sharp = require("sharp")
 const template = readFileSync("theme.html", "utf8")
 const codeTemplate = readFileSync("src/index_theme.ts.template", "utf8")
@@ -208,21 +212,21 @@ function asLangSpan(t: Translation, tag = "span"): string {
 
 let previousSrc: Set<string> = new Set<string>()
 
-let eliUrlsCached : string[]
-function eliUrls(): string[]{
-    if(eliUrlsCached){
+let eliUrlsCached: string[]
+function eliUrls(): string[] {
+    if (eliUrlsCached) {
         return eliUrlsCached
     }
     const urls: string[] = []
-    const regex =/{switch:([^}]+)}/
+    const regex = /{switch:([^}]+)}/
     for (const feature of eli.features) {
-        const url = (<RasterLayerPolygon> feature).properties.url
+        const url = (<RasterLayerPolygon>feature).properties.url
         const match = url.match(regex)
-        if(match){
+        if (match) {
             const domains = match[1].split(",")
             const subpart = match[0]
-            urls.push(...domains.map(d => url.replace(subpart, d)))
-        }else{
+            urls.push(...domains.map((d) => url.replace(subpart, d)))
+        } else {
             urls.push(url)
         }
     }
@@ -245,7 +249,8 @@ function generateCsp(
         AvailableRasterLayers.maptilerDefaultLayer.properties.url,
         "https://api.openstreetmap.org",
         "https://pietervdvn.goatcounter.com",
-    ].concat(...SpecialVisualizations.specialVisualizations.map((sv) => sv.needsUrls))
+    ]
+        .concat(...SpecialVisualizations.specialVisualizations.map((sv) => sv.needsUrls))
         .concat(...eliUrls())
 
     const geojsonSources: string[] = layout.layers.map((l) => l.source?.geojsonSource)
