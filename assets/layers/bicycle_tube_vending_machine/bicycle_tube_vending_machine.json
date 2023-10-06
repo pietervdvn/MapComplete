@@ -316,7 +316,6 @@
   },
   "pointRendering": [
     {
-      "icon": "pin:#ffffff;./assets/layers/bicycle_tube_vending_machine/pinIcon.svg",
       "iconBadges": [
         {
           "if": {
@@ -333,7 +332,16 @@
         "point",
         "centroid"
       ],
-      "anchor": "bottom"
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#ffffff"
+        },
+        {
+          "icon": "./assets/layers/bicycle_tube_vending_machine/pinIcon.svg"
+        }
+      ]
     }
   ],
   "lineRendering": [

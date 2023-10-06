@@ -347,19 +347,23 @@
   "deletion": true,
   "pointRendering": [
     {
-      "icon": {
-        "render": "./assets/themes/hackerspaces/glider.svg",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "hackerspace=makerspace"
-              ]
-            },
-            "then": "./assets/themes/hackerspaces/led.png"
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/themes/hackerspaces/glider.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "hackerspace=makerspace"
+                  ]
+                },
+                "then": "./assets/themes/hackerspaces/led.png"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "iconSize": "40,40",
       "location": [
         "point",

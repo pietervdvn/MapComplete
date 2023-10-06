@@ -148,10 +148,18 @@
   ],
   "pointRendering": [
     {
-      "icon": "square:white;./assets/layers/speed_camera/speed_camera.svg",
       "location": [
         "point",
         "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "square",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/speed_camera/speed_camera.svg"
+        }
       ]
     }
   ],

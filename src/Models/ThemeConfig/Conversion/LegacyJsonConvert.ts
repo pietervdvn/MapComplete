@@ -81,7 +81,11 @@ export class UpdateLegacyLayer extends DesugaringStep<
             }
         }
 
-        if (config["mapRendering"] === undefined) {
+        if (
+            config["mapRendering"] === undefined &&
+            config.pointRendering === undefined &&
+            config.lineRendering === undefined
+        ) {
             config["mapRendering"] = []
             // This is a legacy format, lets create a pointRendering
             let location: ("point" | "centroid")[] = ["point"]
@@ -144,6 +148,7 @@ export class UpdateLegacyLayer extends DesugaringStep<
         }
 
         if (config["mapRendering"]) {
+            console.log("MapRendering is", config["mapRendering"], json.id)
             const pointRenderings: PointRenderingConfigJson[] = []
             const lineRenderings: LineRenderingConfigJson[] = []
             for (const mapRenderingElement of config["mapRendering"]) {
@@ -161,6 +166,21 @@ export class UpdateLegacyLayer extends DesugaringStep<
 
         for (const rendering of config.pointRendering ?? []) {
             const pr = rendering
+            if (pr["icon"]) {
+                try {
+                    const icon = Utils.NoEmpty(pr["icon"].split(";"))
+                    pr.marker = icon.map((i) => {
+                        const [iconPath, color] = i.split(":")
+                        return { icon: iconPath, color }
+                    })
+                    delete pr["icon"]
+                } catch (e) {
+                    console.error("Could not handle icon in", json.id)
+                    pr.marker = [{ icon: pr["icon"] }]
+                    delete pr["icon"]
+                }
+            }
+
             let iconSize = pr.iconSize
             if (!iconSize) {
                 continue
@@ -178,35 +198,36 @@ export class UpdateLegacyLayer extends DesugaringStep<
                 }
         }
 
-        for (const rendering of config.pointRendering) {
-            for (const key in rendering) {
-                if (!rendering[key]) {
-                    continue
-                }
-                if (
-                    typeof rendering[key]["render"] === "string" &&
-                    Object.keys(rendering[key]).length === 1
-                ) {
-                    console.log("Rewrite: ", rendering[key])
-                    rendering[key] = rendering[key]["render"]
-                }
-            }
-        }
-
-        for (const rendering of config.lineRendering) {
-            for (const key in rendering) {
-                if (!rendering[key]) {
-                    continue
-                }
-                if (
-                    typeof rendering[key]["render"] === "string" &&
-                    Object.keys(rendering[key]).length === 1
-                ) {
-                    console.log("Rewrite: ", rendering[key])
-                    rendering[key] = rendering[key]["render"]
+        if (config.pointRendering)
+            for (const rendering of config.pointRendering) {
+                for (const key in rendering) {
+                    if (!rendering[key]) {
+                        continue
+                    }
+                    if (
+                        typeof rendering[key]["render"] === "string" &&
+                        Object.keys(rendering[key]).length === 1
+                    ) {
+                        console.log("Rewrite: ", rendering[key])
+                        rendering[key] = rendering[key]["render"]
+                    }
                 }
             }
-        }
+        if (config.lineRendering)
+            for (const rendering of config.lineRendering) {
+                for (const key in rendering) {
+                    if (!rendering[key]) {
+                        continue
+                    }
+                    if (
+                        typeof rendering[key]["render"] === "string" &&
+                        Object.keys(rendering[key]).length === 1
+                    ) {
+                        console.log("Rewrite: ", rendering[key])
+                        rendering[key] = rendering[key]["render"]
+                    }
+                }
+            }
 
         return {
             result: config,

@@ -102,7 +102,11 @@
         "point",
         "centroid"
       ],
-      "icon": "./assets/layers/shelter/shelter.svg"
+      "marker": [
+        {
+          "icon": "./assets/layers/shelter/shelter.svg"
+        }
+      ]
     }
   ],
   "lineRendering": []

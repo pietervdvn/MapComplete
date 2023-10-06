@@ -188,7 +188,7 @@ class IdThief {
 
             const mapping = {
                 if: preset.parseTags(),
-                then: "circle:white;./assets/layers/id_presets/" + preset.icon + ".svg",
+                then: "./assets/layers/id_presets/" + preset.icon + ".svg",
             }
             mappings.push(mapping)
         }
@@ -328,5 +328,5 @@ idPresets.tagRenderings = [
         mappings: thief.readShopIcons(),
     },
 ]
-
+console.log("Writing id presets to", id_presets_path)
 writeFileSync(id_presets_path, JSON.stringify(idPresets, null, "  "), "utf8")

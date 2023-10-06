@@ -586,13 +586,17 @@
   },
   "pointRendering": [
     {
-      "icon": "./assets/themes/bicycle_rental/logo.svg",
       "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
       ],
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/themes/bicycle_rental/logo.svg"
+        }
+      ]
     }
   ],
   "lineRendering": [

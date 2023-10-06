@@ -51,7 +51,6 @@
   ],
   "pointRendering": [
     {
-      "icon": "circle:white;./assets/layers/sports_centre/sports_centre.svg",
       "iconBadges": [
         {
           "if": "opening_hours~*",
@@ -61,6 +60,15 @@
       "location": [
         "point",
         "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/sports_centre/sports_centre.svg"
+        }
       ]
     }
   ],

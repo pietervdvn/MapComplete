@@ -122,7 +122,11 @@
   ],
   "pointRendering": [
     {
-      "icon": "./assets/themes/climbing/climbing_unknown.svg",
+      "marker": [
+        {
+          "icon": "./assets/themes/climbing/climbing_unknown.svg"
+        }
+      ],
       "location": [
         "point",
         "centroid"

@@ -153,7 +153,11 @@
         "point",
         "centroid"
       ],
-      "icon": "./assets/layers/speed_display/speed_display.svg"
+      "marker": [
+        {
+          "icon": "./assets/layers/speed_display/speed_display.svg"
+        }
+      ]
     }
   ],
   "lineRendering": []

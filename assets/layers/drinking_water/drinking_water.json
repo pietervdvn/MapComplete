@@ -256,7 +256,6 @@
   },
   "pointRendering": [
     {
-      "icon": "pin:#6BC4F7;./assets/layers/drinking_water/drips.svg",
       "iconBadges": [
         {
           "if": {
@@ -273,7 +272,16 @@
         "point",
         "centroid"
       ],
-      "anchor": "bottom"
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#6BC4F7"
+        },
+        {
+          "icon": "./assets/layers/drinking_water/drips.svg"
+        }
+      ]
     }
   ],
   "lineRendering": []

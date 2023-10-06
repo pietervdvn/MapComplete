@@ -15,9 +15,14 @@
         "point",
         "centroid"
       ],
-      "icon": "square:red;",
       "iconSize": "15,15",
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "square",
+          "color": "red"
+        }
+      ]
     }
   ],
   "lineRendering": []

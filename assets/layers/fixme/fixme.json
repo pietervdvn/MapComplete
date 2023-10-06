@@ -78,8 +78,12 @@
         "centroid",
         "point"
       ],
-      "icon": "./assets/svg/bug.svg",
-      "label": "<div class='bg-white rounded p-2'>{fixme}</div>"
+      "label": "<div class='bg-white rounded p-2'>{fixme}</div>",
+      "marker": [
+        {
+          "icon": "./assets/svg/bug.svg"
+        }
+      ]
     }
   ],
   "lineRendering": [

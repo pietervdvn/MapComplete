@@ -602,6 +602,37 @@ export default {
         }
       }
     },
+    "MinimalTagRenderingConfigJson": {
+      "description": "Mostly used for lineRendering and pointRendering",
+      "type": "object",
+      "properties": {
+        "render": {
+          "description": "question: What value should be rendered?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`",
+          "type": "string"
+        },
+        "mappings": {
+          "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "if": {
+                "$ref": "#/definitions/TagConfigJson",
+                "description": "question: When should this single mapping match?\n\nIf this condition is met, then the text under `then` will be shown.\nIf no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.\n\nFor example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}\n\nThis can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}"
+              },
+              "then": {
+                "description": "question: What text should be shown?\n\nIf the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option",
+                "type": "string"
+              }
+            },
+            "required": [
+              "if",
+              "then"
+            ]
+          }
+        }
+      }
+    },
     "Record<string,string[]>": {
       "type": "object"
     },
@@ -721,22 +752,43 @@ export default {
       "type": "object",
       "properties": {
         "location": {
-          "description": "All the locations that this point should be rendered at.\nPossible values are:\n- `point`: only renders points at their location\n- `centroid`: show a symbol at the centerpoint of a (multi)Linestring and (multi)polygon. Points will _not_ be rendered with this\n- `projected_centerpoint`: Only on (multi)linestrings: calculate the centerpoint and snap it to the way\n- `start` and `end`: only on linestrings: add a point to the first/last coordinate of the LineString",
+          "description": "question: At what location should this icon be shown?\nmultianswer: true\nsuggestions: return [{if: \"value=point\",then: \"Show an icon for point (node) objects\"},{if: \"value=centroid\",then: \"Show an icon for line or polygon (way) objects at their centroid location\"}, {if: \"value=start\",then: \"Show an icon for line (way) objects at the start\"},{if: \"value=end\",then: \"Show an icon for line (way) object at the end\"},{if: \"value=projected_centerpoint\",then: \"Show an icon for line (way) object near the centroid location, but moved onto the line\"}]",
           "type": "array",
           "items": {
             "type": "string"
           }
         },
-        "icon": {
-          "description": "The icon for an element.\nNote that this also doubles as the icon for this layer (rendered with the overpass-tags) ánd the icon in the presets.\n\nThe result of the icon is rendered as follows:\nthe resulting string is interpreted as a _list_ of items, separated by \";\". The bottommost layer is the first layer.\nAs a result, on could use a generic pin, then overlay it with a specific icon.\nTo make things even more practical, one can use all SVG's from the folder \"assets/svg\" and _substitute the color_ in it.\nE.g. to draw a red pin, use \"pin:#f00\", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`\n\nType: icon",
-          "anyOf": [
-            {
-              "$ref": "#/definitions/TagRenderingConfigJson"
+        "marker": {
+          "description": "question: What marker should be used to\nThe icon for an element.\nNote that this also doubles as the icon for this layer (rendered with the overpass-tags) ánd the icon in the presets.\n\nThe result of the icon is rendered as follows:\nthe resulting string is interpreted as a _list_ of items, separated by \";\". The bottommost layer is the first layer.\nAs a result, on could use a generic pin, then overlay it with a specific icon.\nTo make things even more practical, one c    an use all SVG's from the folder \"assets/svg\" and _substitute the color_ in it.\nE.g. to draw a red pin, use \"pin:#f00\", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`\n\nType: icon",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": {
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/TagRenderingConfigJson"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              },
+              "color": {
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/TagRenderingConfigJson"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              }
             },
-            {
-              "type": "string"
-            }
-          ]
+            "required": [
+              "icon"
+            ]
+          }
         },
         "iconBadges": {
           "description": "A list of extra badges to show next to the icon as small badge\nThey will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.\n\nNote: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle",
@@ -778,7 +830,7 @@ export default {
           ]
         },
         "anchor": {
-          "description": "question: What is the anchorpoint of the icon?\n\nThis matches the geographical point with a location on the icon.\nFor example, a feature attached to the ground can use 'bottom' as zooming in will give the appearance of being anchored to a fixed location.",
+          "description": "question: What is the anchorpoint of the icon?\n\nThis matches the geographical point with a location on the icon.\n\nifunset: Use MapComplete-default (<b>center</b>)\nsuggestions: return [{if: \"value=center\", then: \"Place the <b>center</b> of the icon on the geographical location\"},{if: \"value=top\", then: \"Place the <b>top</b> of the icon on the geographical location\"},{if: \"value=bottom\", then: \"Place the <b>bottom</b> of the icon on the geographical location\"},{if: \"value=left\", then: \"Place the <b>left</b> of the icon on the geographical location\"},{if: \"value=right\", then: \"Place the <b>right</b> of the icon on the geographical location\"}]",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -800,7 +852,7 @@ export default {
           ]
         },
         "label": {
-          "description": "A HTML-fragment that is shown below the icon, for example:\n<div style=\"background: white\">{name}</div>\n\nIf the icon is undefined, then the label is shown in the center of the feature.\nNote that, if the wayhandling hides the icon then no label is shown as well.",
+          "description": "question: What label should be shown beneath the marker?\nFor example: <div style=\"background: white\">{name}</div>\n\nIf the icon is undefined, then the label is shown in the center of the feature.\ntypes: Dynamic value | string\ninline: Always show label <b>{value}</b> beneath the marker",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -811,7 +863,7 @@ export default {
           ]
         },
         "css": {
-          "description": "A snippet of css code which is applied onto the container of the entire marker",
+          "description": "question: What CSS should be applied to the entire marker?\nYou can set the css-properties here, e.g. `background: red; font-size: 12px; `\nThis will be applied to the _container_ containing both the marker and the label\ninline: Apply CSS-style <b>{value}</b> to the _entire marker_\ntypes: Dynamic value ; string",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -822,7 +874,7 @@ export default {
           ]
         },
         "cssClasses": {
-          "description": "A snippet of css-classes which are applied onto the container of the entire marker. They can be space-separated",
+          "description": "question: Which CSS-classes should be applied to the entire marker?\nThis will be applied to the _container_ containing both the marker and the label\n\nThe classes should be separated by a space (` `)\nYou can use most Tailwind-css classes, see https://tailwindcss.com/ for more information\nFor example: `center bg-gray-500 mx-2 my-1 rounded-full`\ninline: Apply CSS-classes <b>{value}</b> to the entire container\ntypes: Dynamic value ; string",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -833,7 +885,7 @@ export default {
           ]
         },
         "labelCss": {
-          "description": "Css that is applied onto the label",
+          "description": "question: What CSS should be applied to the label?\nYou can set the css-properties here, e.g. `background: red; font-size: 12px; `\ninline: Apply CSS-style <b>{value}</b> to the label\ntypes: Dynamic value ; string",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -844,7 +896,7 @@ export default {
           ]
         },
         "labelCssClasses": {
-          "description": "Css classes that are applied onto the label; can be space-separated",
+          "description": "question: Which CSS-classes should be applied to the label?\n\nThe classes should be separated by a space (` `)\nYou can use most Tailwind-css classes, see https://tailwindcss.com/ for more information\nFor example: `center bg-gray-500 mx-2 my-1 rounded-full`\ninline: Apply CSS-classes <b>{value}</b> to the label\ntypes: Dynamic value ; string",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -870,7 +922,7 @@ export default {
           ]
         },
         "rotationAlignment": {
-          "description": "If the map is rotated, the icon will still point to the north if no rotation was applied",
+          "description": "question: Should the icon be rotated or tilted if the map is rotated or tilted?\nifunset: Do not rotate or tilt icons. Always keep the icons straight\nsuggestions: return [{if: \"value=canvas\", then: \"If the map is tilted, tilt the icon as well. This gives the impression of an icon that is glued to the ground.\"}, {if: \"value=map\", then: \"If the map is rotated, rotate the icon as well. This gives the impression of an icon that floats perpendicular above the ground.\"}]",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -894,10 +946,10 @@ export default {
       "type": "object",
       "properties": {
         "color": {
-          "description": "The color for way-elements and SVG-elements.\nIf the value starts with \"--\", the style of the body element will be queried for the corresponding variable instead",
+          "description": "question: What color should lines be drawn in?\n\nFor an area, this will be the colour of the outside line.\nIf the value starts with \"--\", the style of the body element will be queried for the corresponding variable instead\n\ntypes: dynamic value ; string\ntitle: Line Colour\ninline: The line colour always is <b>{value}</b>\nifunset: Round ending\ntype: color",
           "anyOf": [
             {
-              "$ref": "#/definitions/TagRenderingConfigJson"
+              "$ref": "#/definitions/MinimalTagRenderingConfigJson"
             },
             {
               "type": "string"
@@ -905,10 +957,10 @@ export default {
           ]
         },
         "width": {
-          "description": "The stroke-width for way-elements",
+          "description": "question: How wide should the line be?\nThe stroke-width for way-elements\n\ntypes: dynamic value ; string\ntitle: Line width\ninline: The line width is <b>{value} pixels</b>\ntype: pnat\nifunset: Use the default-linewidth of 7 pixels",
           "anyOf": [
             {
-              "$ref": "#/definitions/TagRenderingConfigJson"
+              "$ref": "#/definitions/MinimalTagRenderingConfigJson"
             },
             {
               "type": [
@@ -919,21 +971,14 @@ export default {
           ]
         },
         "dashArray": {
-          "description": "A dasharray, e.g. \"5 6\"\nThe dasharray defines 'pixels of line, pixels of gap, pixels of line, pixels of gap',\nDefault value: \"\" (empty string == full line)",
-          "anyOf": [
-            {
-              "$ref": "#/definitions/TagRenderingConfigJson"
-            },
-            {
-              "type": "string"
-            }
-          ]
+          "description": "question: Should a dasharray be used to render the lines?\nThe dasharray defines 'pixels of line, pixels of gap, pixels of line, pixels of gap, ...'. For example, `5 6` will be 5 pixels of line followed by a 6 pixel gap.\nCannot be a dynamic property due to a mapbox limitation\nifunset: Ways are rendered with a full line",
+          "type": "string"
         },
         "lineCap": {
-          "description": "The form at the end of a line",
+          "description": "question: What form should the line-ending have?\nsuggestions: return [{if:\"value=round\",then:\"Round endings\"}, {if: \"value=square\", then: \"square endings\"}, {if: \"value=butt\", then: \"no ending (square ending at the end, without padding)\"}]\ntypes: dynamic value ; string\ntitle: Line Cap\nifunset: Use the default value (round ending)",
           "anyOf": [
             {
-              "$ref": "#/definitions/TagRenderingConfigJson"
+              "$ref": "#/definitions/MinimalTagRenderingConfigJson"
             },
             {
               "type": "string"
@@ -941,10 +986,10 @@ export default {
           ]
         },
         "fillColor": {
-          "description": "The color to fill a polygon with.\nIf undefined, this will be slightly more opaque version of the stroke line.\nUse '#00000000' to make the fill invisible",
+          "description": "question: What colour should be used as fill colour for polygons?\nifunset: The polygon fill colour will be a more transparent version of the stroke colour\nsuggestions: return [{if: \"value=#00000000\", then: \"Use a transparent fill (only render the outline)\"}]\ninline: The fill colour is <b>{value}</b>\ntypes: dynamic value ; string\ntype: color",
           "anyOf": [
             {
-              "$ref": "#/definitions/TagRenderingConfigJson"
+              "$ref": "#/definitions/MinimalTagRenderingConfigJson"
             },
             {
               "type": "string"
@@ -952,10 +997,10 @@ export default {
           ]
         },
         "offset": {
-          "description": "The number of pixels this line should be moved.\nUse a positive numbe to move to the right, a negative to move to the left (left/right as defined by the drawing direction of the line).\n\nIMPORTANT: MapComplete will already normalize 'key:both:property' and 'key:both' into the corresponding 'key:left' and 'key:right' tagging (same for 'sidewalk=left/right/both' which is rewritten to 'sidewalk:left' and 'sidewalk:right')\nThis simplifies programming. Refer to the CalculatedTags.md-documentation for more details",
+          "description": "question: Should the lines be moved (offsetted) with a number of pixels against the geographical lines?\nThe number of pixels this line should be moved.\nUse a positive number to move to the right in the drawing direction or a negative to move to the left (left/right as defined by the drawing direction of the line).\n\nIMPORTANT: MapComplete will already normalize 'key:both:property' and 'key:both' into the corresponding 'key:left' and 'key:right' tagging (same for 'sidewalk=left/right/both' which is rewritten to 'sidewalk:left' and 'sidewalk:right')\nThis simplifies programming. Refer to the CalculatedTags.md-documentation for more details\nifunset: don't offset lines on the map\ninline: Pixel offset by <b>{value}</b> pixels\ntypes: dynamic value ; number\ntype: int",
           "anyOf": [
             {
-              "$ref": "#/definitions/TagRenderingConfigJson"
+              "$ref": "#/definitions/MinimalTagRenderingConfigJson"
             },
             {
               "type": "number"
@@ -963,60 +1008,6 @@ export default {
           ]
         }
       }
-    },
-    "default<default|default|default[]|default[]>": {
-      "description": "Rewrites and multiplies the given renderings of type T.\n\nThis can be used for introducing many similar questions automatically,\nwhich also makes translations easier.\n\n(Note that the key does _not_ need to be wrapped in {}.\nHowever, we recommend to use them if the key is used in a translation, as missing keys will be picked up and warned for by the translation scripts)\n\nFor example:\n\n```\n{\n    rewrite: {\n        sourceString: [\"key\", \"a|b|c\"],\n        into: [\n            [\"X\", 0]\n            [\"Y\", 1],\n            [\"Z\", 2]\n        ],\n        renderings: [{\n            \"key\":\"a|b|c\"\n        }]\n    }\n}\n```\nwill result in _three_ copies (as the values to rewrite into have three values, namely:\n\n[\n  {\n  # The first pair: key --> X, a|b|c --> 0\n      \"X\": 0\n  },\n  {\n      \"Y\": 1\n  },\n  {\n      \"Z\": 2\n  }\n\n]",
-      "type": "object",
-      "properties": {
-        "rewrite": {
-          "type": "object",
-          "properties": {
-            "sourceString": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "into": {
-              "type": "array",
-              "items": {
-                "type": "array",
-                "items": {}
-              }
-            }
-          },
-          "required": [
-            "into",
-            "sourceString"
-          ]
-        },
-        "renderings": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/default_4"
-            },
-            {
-              "$ref": "#/definitions/default_5"
-            },
-            {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/default_5"
-              }
-            },
-            {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/default_4"
-              }
-            }
-          ]
-        }
-      },
-      "required": [
-        "renderings",
-        "rewrite"
-      ]
     },
     "QuestionableTagRenderingConfigJson": {
       "description": "A QuestionableTagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nIf the desired tags are missing and a question is defined, a question will be shown instead.",
@@ -1739,7 +1730,7 @@ export default {
           ]
         },
         "source": {
-          "description": "Question: Where should the data be fetched from?\n\nThis determines where the data for the layer is fetched: from OSM or from an external geojson dataset.\n\nIf no 'geojson' is defined, data will be fetched from overpass and the OSM-API.\n\nEvery source _must_ define which tags _must_ be present in order to be picked up.\n\nNote: a source must always be defined. 'special' is only allowed if this is a builtin-layer\n\ntypes: Load data with specific tags from OpenStreetMap ; Load data from an external geojson source ;\ntypesdefault: 0\ngroup: Basic",
+          "description": "Question: Where should the data be fetched from?\ntitle: Data Source\n\nThis determines where the data for the layer is fetched: from OSM or from an external geojson dataset.\n\nIf no 'geojson' is defined, data will be fetched from overpass and the OSM-API.\n\nEvery source _must_ define which tags _must_ be present in order to be picked up.\n\nNote: a source must always be defined. 'special' is only allowed if this is a builtin-layer\n\ntypes: Load data with specific tags from OpenStreetMap ; Load data from an external geojson source ;\ntypesdefault: 0\ngroup: Basic",
           "anyOf": [
             {
               "type": "object",
@@ -1876,21 +1867,18 @@ export default {
             }
           ]
         },
-        "mapRendering": {
-          "description": "Visualisation of the items on the map\nSet 'null' explicitly if you do not want a maprendering\ngroup: maprendering\ntypes: PointRendering ; LineRendering ;",
+        "pointRendering": {
+          "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered\ngroup: pointrendering",
           "type": "array",
           "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/default_4"
-              },
-              {
-                "$ref": "#/definitions/default_5"
-              },
-              {
-                "$ref": "#/definitions/default<default|default|default[]|default[]>"
-              }
-            ]
+            "$ref": "#/definitions/default_4"
+          }
+        },
+        "lineRendering": {
+          "description": "Creates lines and areas to render on the map\ngroup: linerendering",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/default_5"
           }
         },
         "passAllFeatures": {
@@ -2107,6 +2095,7 @@ export default {
       },
       "required": [
         "id",
+        "pointRendering",
         "source"
       ]
     },
@@ -2140,7 +2129,7 @@ export default {
           ]
         },
         "source": {
-          "description": "Question: Where should the data be fetched from?\n\nThis determines where the data for the layer is fetched: from OSM or from an external geojson dataset.\n\nIf no 'geojson' is defined, data will be fetched from overpass and the OSM-API.\n\nEvery source _must_ define which tags _must_ be present in order to be picked up.\n\nNote: a source must always be defined. 'special' is only allowed if this is a builtin-layer\n\ntypes: Load data with specific tags from OpenStreetMap ; Load data from an external geojson source ;\ntypesdefault: 0\ngroup: Basic",
+          "description": "Question: Where should the data be fetched from?\ntitle: Data Source\n\nThis determines where the data for the layer is fetched: from OSM or from an external geojson dataset.\n\nIf no 'geojson' is defined, data will be fetched from overpass and the OSM-API.\n\nEvery source _must_ define which tags _must_ be present in order to be picked up.\n\nNote: a source must always be defined. 'special' is only allowed if this is a builtin-layer\n\ntypes: Load data with specific tags from OpenStreetMap ; Load data from an external geojson source ;\ntypesdefault: 0\ngroup: Basic",
           "anyOf": [
             {
               "type": "object",
@@ -2277,21 +2266,18 @@ export default {
             }
           ]
         },
-        "mapRendering": {
-          "description": "Visualisation of the items on the map\nSet 'null' explicitly if you do not want a maprendering\ngroup: maprendering\ntypes: PointRendering ; LineRendering ;",
+        "pointRendering": {
+          "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered\ngroup: pointrendering",
           "type": "array",
           "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/default_4"
-              },
-              {
-                "$ref": "#/definitions/default_5"
-              },
-              {
-                "$ref": "#/definitions/default<default|default|default[]|default[]>"
-              }
-            ]
+            "$ref": "#/definitions/default_4"
+          }
+        },
+        "lineRendering": {
+          "description": "Creates lines and areas to render on the map\ngroup: linerendering",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/default_5"
           }
         },
         "passAllFeatures": {

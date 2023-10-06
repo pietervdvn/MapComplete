@@ -120,21 +120,20 @@ export default class EditLayerState {
     }
 
     public setValueAt(path: ReadonlyArray<string | number>, v: any) {
-        {
-            let entry = this.configuration.data
-            for (let i = 0; i < path.length - 1; i++) {
-                const breadcrumb = path[i]
-                if (entry[breadcrumb] === undefined) {
-                    entry[breadcrumb] = typeof path[i + 1] === "number" ? [] : {}
-                }
-                entry = entry[breadcrumb]
+        let entry = this.configuration.data
+        console.log("Setting value", v, "to", path, "in entry", entry)
+        for (let i = 0; i < path.length - 1; i++) {
+            const breadcrumb = path[i]
+            if (entry[breadcrumb] === undefined) {
+                entry[breadcrumb] = typeof path[i + 1] === "number" ? [] : {}
             }
-            if (v) {
-                entry[path.at(-1)] = v
-            } else if (entry) {
-                delete entry[path.at(-1)]
-            }
-            this.configuration.ping()
+            entry = entry[breadcrumb]
         }
+        if (v) {
+            entry[path.at(-1)] = v
+        } else if (entry) {
+            delete entry[path.at(-1)]
+        }
+        this.configuration.ping()
     }
 }

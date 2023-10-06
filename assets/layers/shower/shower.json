@@ -231,7 +231,6 @@
   },
   "pointRendering": [
     {
-      "icon": "circle:white;./assets/layers/shower/shower.svg",
       "location": [
         "point",
         "centroid"
@@ -240,6 +239,15 @@
         {
           "if": "opening_hours~*",
           "then": "icons.isOpen"
+        }
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/shower/shower.svg"
         }
       ]
     }

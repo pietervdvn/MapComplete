@@ -44,7 +44,7 @@
       const tags = TagUtils.KVtoProperties(preset.tags ?? [])
 
       const icon: string = layer.mapRendering[0]
-        .RenderIcon(new ImmutableStore<any>(tags), false)
+        .RenderIcon(new ImmutableStore<any>(tags))
         .html.SetClass("w-12 h-12 block relative")
         .ConstructElement().innerHTML
 

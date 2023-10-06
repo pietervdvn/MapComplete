@@ -27,9 +27,13 @@
   },
   "pointRendering": [
     {
-      "icon": "./assets/svg/bug.svg",
       "location": [
         "point"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/svg/bug.svg"
+        }
       ]
     }
   ],

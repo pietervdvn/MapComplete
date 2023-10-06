@@ -173,7 +173,6 @@
   "allowMove": true,
   "pointRendering": [
     {
-      "icon": "./assets/layers/pharmacy/pharmacy.svg",
       "iconSize": "40,40",
       "location": [
         "point",
@@ -193,7 +192,12 @@
           }
         ]
       },
-      "anchor": "bottom"
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "./assets/layers/pharmacy/pharmacy.svg"
+        }
+      ]
     }
   ],
   "lineRendering": []

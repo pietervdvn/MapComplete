@@ -481,7 +481,6 @@
   ],
   "pointRendering": [
     {
-      "icon": "./assets/themes/climbing/climbing_gym.svg",
       "iconBadges": [
         {
           "if": "opening_hours~*",
@@ -501,7 +500,12 @@
           }
         ]
       },
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/themes/climbing/climbing_gym.svg"
+        }
+      ]
     }
   ],
   "lineRendering": []

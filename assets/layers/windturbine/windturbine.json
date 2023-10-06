@@ -377,7 +377,6 @@
   ],
   "pointRendering": [
     {
-      "icon": "./assets/themes/openwindpowermap/wind_turbine.svg",
       "label": {
         "mappings": [
           {
@@ -391,6 +390,11 @@
       "location": [
         "point",
         "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/themes/openwindpowermap/wind_turbine.svg"
+        }
       ]
     }
   ],

@@ -1695,10 +1695,14 @@
   },
   "pointRendering": [
     {
-      "icon": "./assets/themes/cycle_infra/bicycleway.svg",
       "iconSize": "40,40",
       "location": [
         "point"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/themes/cycle_infra/bicycleway.svg"
+        }
       ]
     }
   ],

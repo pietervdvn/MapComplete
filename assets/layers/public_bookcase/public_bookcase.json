@@ -571,7 +571,6 @@
   ],
   "pointRendering": [
     {
-      "icon": "circle:#ffffff;./assets/themes/bookcases/bookcase.svg",
       "label": {
         "mappings": [
           {
@@ -583,6 +582,15 @@
       "location": [
         "point",
         "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "#ffffff"
+        },
+        {
+          "icon": "./assets/themes/bookcases/bookcase.svg"
+        }
       ]
     }
   ],

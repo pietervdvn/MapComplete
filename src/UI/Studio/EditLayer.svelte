@@ -58,7 +58,8 @@
 
     <div slot="title2">Rendering on the map</div>
     <div slot="content2">
-      <Region configs={perRegion["maprendering"]} {state} />
+      <Region configs={perRegion["linerendering"]} {state} />
+      <Region configs={perRegion["pointrendering"]} {state} />
     </div>
     <div slot="title3">Configuration file</div>
     <div slot="content3">

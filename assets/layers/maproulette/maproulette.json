@@ -309,43 +309,48 @@
         "point",
         "centroid"
       ],
-      "icon": {
-        "render": "./assets/layers/maproulette/logomark.svg",
-        "mappings": [
-          {
-            "if": "status=0",
-            "then": "pin:#959DFF"
-          },
-          {
-            "if": "status=1",
-            "then": "pin:#65D2DA"
-          },
-          {
-            "if": "status=2",
-            "then": "pin:#F7BB59"
-          },
-          {
-            "if": "status=3",
-            "then": "pin:#F7BB59"
-          },
-          {
-            "if": "status=4",
-            "then": "pin:#737373"
-          },
-          {
-            "if": "status=5",
-            "then": "pin:#CCB186"
-          },
-          {
-            "if": "status=6",
-            "then": "pin:#FF5E63"
-          },
-          {
-            "if": "status=9",
-            "then": "pin:#FF349C"
+      "marker": [
+        {
+          "icon": "pin",
+          "color": {
+            "render": "#00",
+            "mappings": [
+              {
+                "if": "status=0",
+                "then": "#959DFF"
+              },
+              {
+                "if": "status=1",
+                "then": "#65D2DA"
+              },
+              {
+                "if": "status=2",
+                "then": "#F7BB59"
+              },
+              {
+                "if": "status=3",
+                "then": "#F7BB59"
+              },
+              {
+                "if": "status=4",
+                "then": "#737373"
+              },
+              {
+                "if": "status=5",
+                "then": "#CCB186"
+              },
+              {
+                "if": "status=6",
+                "then": "#FF5E63"
+              },
+              {
+                "if": "status=9",
+                "then": "#FF349C"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "iconSize": "40,40",
       "anchor": "bottom"
     }

@@ -1,11 +1,11 @@
 import ScriptUtils from "./ScriptUtils"
 import { readFileSync, writeFileSync } from "fs"
 import { JsonSchema } from "../src/UI/Studio/jsonSchema"
-import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
-import { AllKnownLayouts } from "../src/Customizations/AllKnownLayouts"
 import { ConfigMeta } from "../src/UI/Studio/configMeta"
 import { Utils } from "../src/Utils"
 import Validators from "../src/UI/InputElement/Validators"
+import { AllKnownLayouts } from "../src/Customizations/AllKnownLayouts"
+import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
 
 const metainfo = {
     type: "One of the inputValidator types",
@@ -19,7 +19,10 @@ const metainfo = {
     ifunset:
         "Only applicable if _not_ a required item. This will appear in the 'not set'-option as extra description",
     inline: "A text, containing `{value}`. This will be used as freeform rendering and will be included into the rendering",
-    suggestions: "a javascript expression generating mappings",
+    suggestions:
+        'a javascript expression generating mappings; executed in an environment which has access to `layers: Map<string, LayerConfig>` and `themes: Map<string, ThemeConfig>`. Should return an array of type `{if: \'value=*\', then: string}[]`. Example: `return Array.from(layers.keys()).map(key => ({if: "value="+key, then: key+" - "+layers.get(key).description}))`. This code is executed at compile time, so no CSP is needed  ',
+    title: "a title that is given to a MultiType",
+    multianswer: "set to 'true' if multiple options should be selectable",
 }
 
 /**
@@ -38,13 +41,13 @@ function WalkScheme<T>(
     fullScheme: JsonSchema & { definitions?: any } = undefined,
     path: string[] = [],
     isHandlingReference = [],
-    required: string[]
+    required: string[],
+    skipRoot = false
 ): { path: string[]; required: boolean; t: T }[] {
     const results: { path: string[]; required: boolean; t: T }[] = []
     if (scheme === undefined) {
         return []
     }
-
     if (scheme["$ref"] !== undefined) {
         const ref = scheme["$ref"]
         const prefix = "#/definitions/"
@@ -68,42 +71,48 @@ function WalkScheme<T>(
             fullScheme,
             path,
             [...isHandlingReference, definitionName],
-            required
+            required,
+            skipRoot
         )
     }
 
     fullScheme = fullScheme ?? scheme
-    let t = onEach(scheme, path)
-    if (t !== undefined) {
-        const isRequired = required?.indexOf(path.at(-1)) >= 0
-        results.push({
-            path,
-            required: isRequired,
-            t,
-        })
+    if (!skipRoot) {
+        let t = onEach(scheme, path)
+        if (t !== undefined) {
+            const isRequired = required?.indexOf(path.at(-1)) >= 0
+            results.push({
+                path,
+                required: isRequired,
+                t,
+            })
+        }
     }
 
-    function walk(v: JsonSchema) {
+    function walk(v: JsonSchema, skipRoot = false) {
         if (v === undefined) {
             return
         }
-        results.push(...WalkScheme(onEach, v, fullScheme, path, isHandlingReference, v.required))
+        results.push(
+            ...WalkScheme(onEach, v, fullScheme, path, isHandlingReference, v.required, skipRoot)
+        )
     }
 
-    function walkEach(scheme: JsonSchema[]) {
+    function walkEach(scheme: JsonSchema[], skipRoot: boolean = false) {
         if (scheme === undefined) {
             return
         }
 
-        scheme.forEach((v) => walk(v))
+        scheme.forEach((v) => walk(v, skipRoot))
     }
 
     {
         walkEach(scheme.enum)
-        walkEach(scheme.anyOf)
+        walkEach(scheme.anyOf, true)
         walkEach(scheme.allOf)
 
         if (Array.isArray(scheme.items)) {
+            // walk and walkEach are local functions which push to the result array
             walkEach(<any>scheme.items)
         } else {
             walk(<any>scheme.items)
@@ -222,7 +231,7 @@ function addMetafields(fieldnames: string[], fullSchema: JsonSchema): ConfigMeta
         return {
             hints,
             type,
-            description: cleanedDescription.join("\n"),
+            description: cleanedDescription.filter((l) => l !== "").join("\n"),
         }
     }
 
@@ -240,6 +249,7 @@ function substituteReferences(
         if (!Array.isArray(path.type)) {
             continue
         }
+
         for (let i = 0; i < path.type.length; i++) {
             const typeElement = path.type[i]
             const ref = typeElement["$ref"]
@@ -261,7 +271,6 @@ function substituteReferences(
                     throw "Cannot expand reference for type " + name + "; it does not exist "
                 }
                 path.type[i] = target
-                continue
             }
         }
     }
@@ -271,7 +280,7 @@ function validateMeta(path: ConfigMeta): string | undefined {
     if (path.path.length == 0) {
         return
     }
-    const ctx = "Definition for field in " + path.path.join(".")
+    const ctx = "Definition for field '" + path.path.join(".") + "'"
     if (path.hints.group === undefined && path.path.length == 1) {
         return (
             ctx +
@@ -288,10 +297,10 @@ function validateMeta(path: ConfigMeta): string | undefined {
         return undefined
     }
     if (path.hints.question === undefined && !Array.isArray(path.type)) {
-        return (
-            ctx +
-            " does not have a question set. As such, MapComplete-studio users will not be able to set this property"
-        ) //*/
+        /* return (
+        ctx +
+        " does not have a question set. As such, MapComplete-studio users will not be able to set this property"
+    ) //*/
     }
 
     return undefined
@@ -345,7 +354,7 @@ function main() {
     }
     const errs: string[] = []
     errs.push(...extractMeta("LayerConfigJson", "layerconfigmeta", allDefinitions))
-    // errs.push(...extractMeta("LayoutConfigJson", "layoutconfigmeta", allDefinitions))
+    errs.push(...extractMeta("LayoutConfigJson", "layoutconfigmeta", allDefinitions))
     errs.push(...extractMeta("TagRenderingConfigJson", "tagrenderingconfigmeta", allDefinitions))
     errs.push(
         ...extractMeta(

@@ -867,27 +867,35 @@
   },
   "pointRendering": [
     {
-      "icon": {
-        "render": "circle:#ffffff;./assets/layers/tree_node/unknown.svg",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "leaf_type=broadleaved"
-              ]
-            },
-            "then": "circle:#ffffff;./assets/layers/tree_node/broadleaved.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "leaf_type=needleleaved"
-              ]
-            },
-            "then": "circle:#ffffff;./assets/layers/tree_node/needleleaved.svg"
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "#ffffff"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/tree_node/unknown.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "leaf_type=broadleaved"
+                  ]
+                },
+                "then": "./assets/layers/tree_node/broadleaved.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "leaf_type=needleleaved"
+                  ]
+                },
+                "then": "./assets/layers/tree_node/needleleaved.svg"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "iconSize": "40,40",
       "location": [
         "point",

@@ -339,15 +339,19 @@
         "point",
         "centroid"
       ],
-      "icon": {
-        "render": "note",
-        "mappings": [
-          {
-            "if": "closed_at~*",
-            "then": "resolved"
+      "marker": [
+        {
+          "icon": {
+            "render": "note",
+            "mappings": [
+              {
+                "if": "closed_at~*",
+                "then": "resolved"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "iconSize": "40,40",
       "iconBadges": [
         {

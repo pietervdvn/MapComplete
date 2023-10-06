@@ -293,7 +293,7 @@ class LayerOverviewUtils extends Script {
                 proto.layers.filter((l) => l["id"] === "mapcomplete-changes")[0]
             )
             const rendering = protolayer.pointRendering[0]
-            rendering.icon["mappings"] = iconsPerTheme
+            rendering.marker[0].icon["mappings"] = iconsPerTheme
             writeFileSync(
                 "./assets/themes/mapcomplete-changes/mapcomplete-changes.json",
                 JSON.stringify(proto, null, "  ")

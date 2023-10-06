@@ -537,13 +537,17 @@
   ],
   "pointRendering": [
     {
-      "icon": "./assets/layers/nature_reserve/nature_reserve.svg",
       "iconSize": "50,50",
       "location": [
         "point",
         "centroid"
       ],
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/layers/nature_reserve/nature_reserve.svg"
+        }
+      ]
     }
   ],
   "lineRendering": [

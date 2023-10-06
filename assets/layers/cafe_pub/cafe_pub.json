@@ -333,19 +333,6 @@
   },
   "pointRendering": [
     {
-      "icon": {
-        "render": "circle:white;./assets/layers/cafe_pub/pub.svg",
-        "mappings": [
-          {
-            "if": "amenity=cafe",
-            "then": "circle:white;./assets/layers/cafe_pub/cafe.svg"
-          },
-          {
-            "if": "amenity=nightclub",
-            "then": "circle:white;./assets/layers/cafe_pub/nightclub.svg"
-          }
-        ]
-      },
       "iconBadges": [
         {
           "if": "opening_hours~*",
@@ -363,6 +350,23 @@
       "location": [
         "point",
         "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "circle:white;./assets/layers/cafe_pub/pub.svg",
+            "mappings": [
+              {
+                "if": "amenity=cafe",
+                "then": "circle:white;./assets/layers/cafe_pub/cafe.svg"
+              },
+              {
+                "if": "amenity=nightclub",
+                "then": "circle:white;./assets/layers/cafe_pub/nightclub.svg"
+              }
+            ]
+          }
+        }
       ]
     }
   ],

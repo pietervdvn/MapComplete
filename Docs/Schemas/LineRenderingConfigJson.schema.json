@@ -3,10 +3,10 @@
   "type": "object",
   "properties": {
     "color": {
-      "description": "The color for way-elements and SVG-elements.\nIf the value starts with \"--\", the style of the body element will be queried for the corresponding variable instead",
+      "description": "question: What color should lines be drawn in?\n\nFor an area, this will be the colour of the outside line.\nIf the value starts with \"--\", the style of the body element will be queried for the corresponding variable instead\n\ntypes: dynamic value ; string\ntitle: Line Colour\ninline: The line colour always is <b>{value}</b>\nifunset: Round ending\ntype: color",
       "anyOf": [
         {
-          "$ref": "#/definitions/TagRenderingConfigJson"
+          "$ref": "#/definitions/MinimalTagRenderingConfigJson"
         },
         {
           "type": "string"
@@ -14,10 +14,10 @@
       ]
     },
     "width": {
-      "description": "The stroke-width for way-elements",
+      "description": "question: How wide should the line be?\nThe stroke-width for way-elements\n\ntypes: dynamic value ; string\ntitle: Line width\ninline: The line width is <b>{value} pixels</b>\ntype: pnat\nifunset: Use the default-linewidth of 7 pixels",
       "anyOf": [
         {
-          "$ref": "#/definitions/TagRenderingConfigJson"
+          "$ref": "#/definitions/MinimalTagRenderingConfigJson"
         },
         {
           "type": [
@@ -28,21 +28,14 @@
       ]
     },
     "dashArray": {
-      "description": "A dasharray, e.g. \"5 6\"\nThe dasharray defines 'pixels of line, pixels of gap, pixels of line, pixels of gap',\nDefault value: \"\" (empty string == full line)",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/TagRenderingConfigJson"
-        },
-        {
-          "type": "string"
-        }
-      ]
+      "description": "question: Should a dasharray be used to render the lines?\nThe dasharray defines 'pixels of line, pixels of gap, pixels of line, pixels of gap, ...'. For example, `5 6` will be 5 pixels of line followed by a 6 pixel gap.\nCannot be a dynamic property due to a mapbox limitation\nifunset: Ways are rendered with a full line",
+      "type": "string"
     },
     "lineCap": {
-      "description": "The form at the end of a line",
+      "description": "question: What form should the line-ending have?\nsuggestions: return [{if:\"value=round\",then:\"Round endings\"}, {if: \"value=square\", then: \"square endings\"}, {if: \"value=butt\", then: \"no ending (square ending at the end, without padding)\"}]\ntypes: dynamic value ; string\ntitle: Line Cap\nifunset: Use the default value (round ending)",
       "anyOf": [
         {
-          "$ref": "#/definitions/TagRenderingConfigJson"
+          "$ref": "#/definitions/MinimalTagRenderingConfigJson"
         },
         {
           "type": "string"
@@ -50,10 +43,10 @@
       ]
     },
     "fillColor": {
-      "description": "The color to fill a polygon with.\nIf undefined, this will be slightly more opaque version of the stroke line.\nUse '#00000000' to make the fill invisible",
+      "description": "question: What colour should be used as fill colour for polygons?\nifunset: The polygon fill colour will be a more transparent version of the stroke colour\nsuggestions: return [{if: \"value=#00000000\", then: \"Use a transparent fill (only render the outline)\"}]\ninline: The fill colour is <b>{value}</b>\ntypes: dynamic value ; string\ntype: color",
       "anyOf": [
         {
-          "$ref": "#/definitions/TagRenderingConfigJson"
+          "$ref": "#/definitions/MinimalTagRenderingConfigJson"
         },
         {
           "type": "string"
@@ -61,10 +54,10 @@
       ]
     },
     "offset": {
-      "description": "The number of pixels this line should be moved.\nUse a positive numbe to move to the right, a negative to move to the left (left/right as defined by the drawing direction of the line).\n\nIMPORTANT: MapComplete will already normalize 'key:both:property' and 'key:both' into the corresponding 'key:left' and 'key:right' tagging (same for 'sidewalk=left/right/both' which is rewritten to 'sidewalk:left' and 'sidewalk:right')\nThis simplifies programming. Refer to the CalculatedTags.md-documentation for more details",
+      "description": "question: Should the lines be moved (offsetted) with a number of pixels against the geographical lines?\nThe number of pixels this line should be moved.\nUse a positive number to move to the right in the drawing direction or a negative to move to the left (left/right as defined by the drawing direction of the line).\n\nIMPORTANT: MapComplete will already normalize 'key:both:property' and 'key:both' into the corresponding 'key:left' and 'key:right' tagging (same for 'sidewalk=left/right/both' which is rewritten to 'sidewalk:left' and 'sidewalk:right')\nThis simplifies programming. Refer to the CalculatedTags.md-documentation for more details\nifunset: don't offset lines on the map\ninline: Pixel offset by <b>{value}</b> pixels\ntypes: dynamic value ; number\ntype: int",
       "anyOf": [
         {
-          "$ref": "#/definitions/TagRenderingConfigJson"
+          "$ref": "#/definitions/MinimalTagRenderingConfigJson"
         },
         {
           "type": "number"
@@ -372,6 +365,38 @@
         "classes": {
           "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
           "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MinimalTagRenderingConfigJson": {
+      "description": "Mostly used for lineRendering and pointRendering",
+      "type": "object",
+      "properties": {
+        "render": {
+          "description": "question: What value should be rendered?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`",
+          "type": "string"
+        },
+        "mappings": {
+          "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "if": {
+                "$ref": "#/definitions/TagConfigJson",
+                "description": "question: When should this single mapping match?\n\nIf this condition is met, then the text under `then` will be shown.\nIf no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.\n\nFor example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}\n\nThis can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}"
+              },
+              "then": {
+                "description": "question: What text should be shown?\n\nIf the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option",
+                "type": "string"
+              }
+            },
+            "required": [
+              "if",
+              "then"
+            ]
+          }
         }
       },
       "additionalProperties": false

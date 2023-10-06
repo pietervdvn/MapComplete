@@ -76,13 +76,21 @@
   "allowMove": true,
   "pointRendering": [
     {
-      "icon": "circle:white;./assets/layers/dentist/dentist.svg",
       "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
       ],
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/dentist/dentist.svg"
+        }
+      ]
     }
   ],
   "lineRendering": []

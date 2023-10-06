@@ -5238,60 +5238,32 @@
         "point",
         "centroid"
       ],
-      "icon": {
-        "render": "pin:#fff;./assets/themes/charging_stations/plug.svg",
-        "mappings": [
-          {
-            "if": "bicycle=yes",
-            "then": "pin:#fff;./assets/themes/charging_stations/bicycle.svg"
-          },
-          {
-            "if": {
-              "or": [
-                "car=yes",
-                "motorcar=yes"
-              ]
-            },
-            "then": "pin:#fff;./assets/themes/charging_stations/car.svg"
-          }
-        ]
-      },
-      "iconBadges": [
+      "marker": [
         {
-          "if": {
-            "or": [
-              "disused:amenity=charging_station",
-              "operational_status=broken"
-            ]
-          },
-          "then": "close:#c22;"
+          "icon": "pin",
+          "color": "#fff"
         },
         {
-          "if": {
-            "or": [
-              "proposed:amenity=charging_station",
-              "planned:amenity=charging_station"
-            ]
-          },
-          "then": "./assets/layers/charging_station/under_construction.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "bicycle=yes",
+          "icon": {
+            "render": "./assets/themes/charging_stations/plug.svg",
+            "mappings": [
               {
-                "or": [
-                  "motorcar=yes",
-                  "car=yes"
-                ]
+                "if": "bicycle=yes",
+                "then": "./assets/themes/charging_stations/bicycle.svg"
+              },
+              {
+                "if": {
+                  "or": [
+                    "car=yes",
+                    "motorcar=yes"
+                  ]
+                },
+                "then": "./assets/themes/charging_stations/car.svg"
               }
             ]
-          },
-          "then": "circle:#fff;./assets/themes/charging_stations/car.svg"
+          }
         }
-      ],
-      "anchor": "bottom",
-      "iconSize": "50,50"
+      ]
     }
   ],
   "lineRendering": []

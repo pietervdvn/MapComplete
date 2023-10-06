@@ -249,7 +249,6 @@
   },
   "pointRendering": [
     {
-      "icon": "./assets/layers/bike_cleaning/bike_cleaning.svg",
       "iconBadges": [
         {
           "if": {
@@ -270,7 +269,12 @@
         "point",
         "centroid"
       ],
-      "anchor": "bottom"
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "./assets/layers/bike_cleaning/bike_cleaning.svg"
+        }
+      ]
     }
   ],
   "lineRendering": []

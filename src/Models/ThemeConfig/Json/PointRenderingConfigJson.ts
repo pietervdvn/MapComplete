@@ -1,6 +1,11 @@
 import { TagRenderingConfigJson } from "./TagRenderingConfigJson"
 import { TagConfigJson } from "./TagConfigJson"
 
+export interface IconConfigJson {
+    icon: string | TagRenderingConfigJson | { builtin: string; override: any }
+    color?: string | TagRenderingConfigJson | { builtin: string; override: any }
+}
+
 /**
  * The PointRenderingConfig gives all details onto how to render a single point of a feature.
  *
@@ -11,28 +16,26 @@ import { TagConfigJson } from "./TagConfigJson"
  */
 export default interface PointRenderingConfigJson {
     /**
-     * All the locations that this point should be rendered at.
-     * Possible values are:
-     * - `point`: only renders points at their location
-     * - `centroid`: show a symbol at the centerpoint of a (multi)Linestring and (multi)polygon. Points will _not_ be rendered with this
-     * - `projected_centerpoint`: Only on (multi)linestrings: calculate the centerpoint and snap it to the way
-     * - `start` and `end`: only on linestrings: add a point to the first/last coordinate of the LineString
+     * question: At what location should this icon be shown?
+     * multianswer: true
+     * suggestions: return [{if: "value=point",then: "Show an icon for point (node) objects"},{if: "value=centroid",then: "Show an icon for line or polygon (way) objects at their centroid location"}, {if: "value=start",then: "Show an icon for line (way) objects at the start"},{if: "value=end",then: "Show an icon for line (way) object at the end"},{if: "value=projected_centerpoint",then: "Show an icon for line (way) object near the centroid location, but moved onto the line"}]
      */
     location: ("point" | "centroid" | "start" | "end" | "projected_centerpoint" | string)[]
 
     /**
-     * The icon for an element.
-     * Note that this also doubles as the icon for this layer (rendered with the overpass-tags) ánd the icon in the presets.
-     *
-     * The result of the icon is rendered as follows:
-     * the resulting string is interpreted as a _list_ of items, separated by ";". The bottommost layer is the first layer.
-     * As a result, on could use a generic pin, then overlay it with a specific icon.
-     * To make things even more practical, one can use all SVG's from the folder "assets/svg" and _substitute the color_ in it.
-     * E.g. to draw a red pin, use "pin:#f00", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`
+   * question: What marker should be used to
+   * The icon for an element.
+   * Note that this also doubles as the icon for this layer (rendered with the overpass-tags) ánd the icon in the presets.
+   *
+   * The result of the icon is rendered as follows:
+   * the resulting string is interpreted as a _list_ of items, separated by ";". The bottommost layer is the first layer.
+   * As a result, on could use a generic pin, then overlay it with a specific icon.
+   * To make things even more practical, one c    an use all SVG's from the folder "assets/svg" and _substitute the color_ in it.
+   * E.g. to draw a red pin, use "pin:#f00", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`
 
-     * Type: icon
-     */
-    icon?: string | TagRenderingConfigJson
+   * Type: icon
+   */
+    marker?: IconConfigJson[]
 
     /**
      * A list of extra badges to show next to the icon as small badge
@@ -59,8 +62,9 @@ export default interface PointRenderingConfigJson {
      * question: What is the anchorpoint of the icon?
      *
      * This matches the geographical point with a location on the icon.
-     * For example, a feature attached to the ground can use 'bottom' as zooming in will give the appearance of being anchored to a fixed location.
      *
+     * ifunset: Use MapComplete-default (<b>center</b>)
+     * suggestions: return [{if: "value=center", then: "Place the <b>center</b> of the icon on the geographical location"},{if: "value=top", then: "Place the <b>top</b> of the icon on the geographical location"},{if: "value=bottom", then: "Place the <b>bottom</b> of the icon on the geographical location"},{if: "value=left", then: "Place the <b>left</b> of the icon on the geographical location"},{if: "value=right", then: "Place the <b>right</b> of the icon on the geographical location"}]
      */
     anchor?: "center" | "top" | "bottom" | "left" | "right" | string | TagRenderingConfigJson
 
@@ -70,31 +74,52 @@ export default interface PointRenderingConfigJson {
      */
     rotation?: string | TagRenderingConfigJson
     /**
-     * A HTML-fragment that is shown below the icon, for example:
-     * <div style="background: white">{name}</div>
+     * question: What label should be shown beneath the marker?
+     * For example: <div style="background: white">{name}</div>
      *
      * If the icon is undefined, then the label is shown in the center of the feature.
-     * Note that, if the wayhandling hides the icon then no label is shown as well.
+     * types: Dynamic value | string
+     * inline: Always show label <b>{value}</b> beneath the marker
      */
     label?: string | TagRenderingConfigJson
 
     /**
-     * A snippet of css code which is applied onto the container of the entire marker
+     * question: What CSS should be applied to the entire marker?
+     * You can set the css-properties here, e.g. `background: red; font-size: 12px; `
+     * This will be applied to the _container_ containing both the marker and the label
+     * inline: Apply CSS-style <b>{value}</b> to the _entire marker_
+     * types: Dynamic value ; string
      */
     css?: string | TagRenderingConfigJson
 
     /**
-     * A snippet of css-classes which are applied onto the container of the entire marker. They can be space-separated
+     * question: Which CSS-classes should be applied to the entire marker?
+     * This will be applied to the _container_ containing both the marker and the label
+     *
+     * The classes should be separated by a space (` `)
+     * You can use most Tailwind-css classes, see https://tailwindcss.com/ for more information
+     * For example: `center bg-gray-500 mx-2 my-1 rounded-full`
+     * inline: Apply CSS-classes <b>{value}</b> to the entire container
+     * types: Dynamic value ; string
      */
     cssClasses?: string | TagRenderingConfigJson
 
     /**
-     * Css that is applied onto the label
+     * question: What CSS should be applied to the label?
+     * You can set the css-properties here, e.g. `background: red; font-size: 12px; `
+     * inline: Apply CSS-style <b>{value}</b> to the label
+     * types: Dynamic value ; string
      */
-    labelCss?: string | TagRenderingConfigJson
+    labelCss?: TagRenderingConfigJson | string
 
     /**
-     * Css classes that are applied onto the label; can be space-separated
+     * question: Which CSS-classes should be applied to the label?
+     *
+     * The classes should be separated by a space (` `)
+     * You can use most Tailwind-css classes, see https://tailwindcss.com/ for more information
+     * For example: `center bg-gray-500 mx-2 my-1 rounded-full`
+     * inline: Apply CSS-classes <b>{value}</b> to the label
+     * types: Dynamic value ; string
      */
     labelCssClasses?: string | TagRenderingConfigJson
 
@@ -105,7 +130,9 @@ export default interface PointRenderingConfigJson {
     pitchAlignment?: "canvas" | "map" | TagRenderingConfigJson
 
     /**
-     * If the map is rotated, the icon will still point to the north if no rotation was applied
+     * question: Should the icon be rotated or tilted if the map is rotated or tilted?
+     * ifunset: Do not rotate or tilt icons. Always keep the icons straight
+     * suggestions: return [{if: "value=canvas", then: "If the map is tilted, tilt the icon as well. This gives the impression of an icon that is glued to the ground."}, {if: "value=map", then: "If the map is rotated, rotate the icon as well. This gives the impression of an icon that floats perpendicular above the ground."}]
      */
     rotationAlignment?: "map" | "canvas" | TagRenderingConfigJson
 }

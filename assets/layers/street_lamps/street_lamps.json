@@ -502,7 +502,6 @@
         "point",
         "centroid"
       ],
-      "icon": "./assets/layers/street_lamps/street_lamp.svg",
       "iconBadges": [
         {
           "if": "light:colour~*",
@@ -510,7 +509,12 @@
         }
       ],
       "iconSize": "40,40",
-      "anchor": "bottom"
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "./assets/layers/street_lamps/street_lamp.svg"
+        }
+      ]
     }
   ],
   "lineRendering": []

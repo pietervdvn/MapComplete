@@ -100,28 +100,33 @@
         startValue = JSON.stringify(startValue)
     }
     const tags = new UIEventSource<Record<string, string>>({value: startValue ?? ""})
-    onDestroy(state.register(path, tags.map(tgs => {
-        const v = tgs["value"];
-        if (schema.type === "boolan") {
-            return v === "true" || v === "yes" || v === "1"
-        }
-        if (schema.type === "number") {
-            return Number(v)
-        }
-        if(isTranslation) {
-            if(v === ""){
-                return {}
+    try {
+        onDestroy(state.register(path, tags.map(tgs => {
+            const v = tgs["value"];
+            if (schema.type === "boolan") {
+                return v === "true" || v === "yes" || v === "1"
             }
-            return JSON.parse(v)
-        }
-        return v
-    }),  isTranslation))
+            if (schema.type === "number") {
+                return Number(v)
+            }
+            if (isTranslation) {
+                if (v === "") {
+                    return {}
+                }
+                return JSON.parse(v)
+            }
+            return v
+        }), isTranslation))
+    }catch (e) {
+        console.error("Could not register", path,"due to",e)
+    }
 </script>
 
 {#if err !== undefined}
     <span class="alert">{err}</span>
 {:else}
     <div class="w-full flex flex-col">
+      <span class="subtle">{path.join(".")}</span>
         <TagRenderingEditable {config} selectedElement={undefined} showQuestionIfUnknown={true} {state} {tags}/>
     </div>
 {/if}

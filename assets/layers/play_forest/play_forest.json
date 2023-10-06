@@ -108,13 +108,17 @@
   ],
   "pointRendering": [
     {
-      "icon": "./assets/layers/play_forest/icon.svg",
       "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
       ],
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/layers/play_forest/icon.svg"
+        }
+      ]
     }
   ],
   "lineRendering": [

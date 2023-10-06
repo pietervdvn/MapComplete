@@ -800,7 +800,15 @@
   ],
   "pointRendering": [
     {
-      "icon": "circle:white;./assets/themes/artwork/artwork.svg",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/themes/artwork/artwork.svg"
+        }
+      ],
       "location": [
         "point",
         "centroid"
@@ -812,15 +820,5 @@
       "color": "#0000ff",
       "width": "10"
     }
-  ],
-  "pl": {
-    "title": {
-      "mappings": {
-        "0": {
-          "then": "{name}"
-        }
-      },
-      "render": "turbina wiatrowa"
-    }
-  }
+  ]
 }

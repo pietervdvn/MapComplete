@@ -297,13 +297,17 @@
   ],
   "pointRendering": [
     {
-      "icon": "./assets/themes/hailhydrant/Twemoji12_1f692.svg",
       "iconSize": "35,35",
       "location": [
         "point",
         "centroid"
       ],
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/themes/hailhydrant/Twemoji12_1f692.svg"
+        }
+      ]
     }
   ],
   "lineRendering": [

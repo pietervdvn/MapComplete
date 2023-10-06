@@ -107,9 +107,17 @@
         "point",
         "centroid"
       ],
-      "icon": "circle:white;./assets/layers/hotel/hotel.svg",
       "iconSize": "40,40",
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/hotel/hotel.svg"
+        }
+      ]
     }
   ],
   "lineRendering": []

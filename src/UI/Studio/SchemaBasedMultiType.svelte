@@ -29,49 +29,81 @@
     types.splice(hasBooleanOption);
   }
 
+  let lastIsString = false;
+  {
+    const types: string | string[] = Array.isArray(schema.type) ? schema.type[schema.type.length - 1].type : [];
+    lastIsString = types === "string" || (Array.isArray(types) && types.some(i => i === "string"));
+  }
+
+  if (lastIsString) {
+    types.splice(types.length - 1, 1);
+  }
   const configJson: QuestionableTagRenderingConfigJson = {
     id: "TYPE_OF:" + path.join("_"),
-    question: "Which subcategory is needed?",
+    question: "Which subcategory is needed for "+schema.path.at(-1)+"?",
     questionHint: nmd(schema.description),
     mappings: types.map(opt => opt.trim()).filter(opt => opt.length > 0).map((opt, i) => ({
-      if: "value=" + i,
-      addExtraTags: ["direct="],
+      if: "chosen_type_index=" + i,
+      addExtraTags: ["value="],
       then: opt + (i === defaultOption ? " (Default)" : "")
-    }))
+    })),
+    render: !lastIsString ? undefined : (schema.hints.inline ?? "Use a hardcoded value: <b>{value}</b>"),
+    freeform: !lastIsString ? undefined : {
+      key: "value",
+      inline: true,
+      type: schema.hints.typehint,
+      addExtraTags: ["chosen_type_index="]
+    }
   };
   let tags = new UIEventSource<Record<string, string>>({});
+
+  if (schema.hints.ifunset) {
+    configJson.mappings.push(
+      {
+        if: { and: ["value=", "chosen_type_index="] },
+        then: schema.hints.ifunset
+      }
+    );
+  }
+  if (schema.hints.suggestions) {
+    configJson.mappings.push(...schema.hints.suggestions);
+  }
 
   if (hasBooleanOption >= 0) {
     configJson.mappings.unshift(
       {
-        if: "direct=true",
+        if: "value=true",
         then: (schema.hints.iftrue ?? "Yes"),
-        addExtraTags: ["value="]
+        addExtraTags: ["chosen_type_index="]
       },
       {
-        if: "direct=false",
+        if: "value=false",
         then: (schema.hints.iffalse ?? "No"),
-        addExtraTags: ["value="]
+        addExtraTags: ["chosen_type_index="]
       }
     );
   }
   const config = new TagRenderingConfig(configJson, "config based on " + schema.path.join("."));
+  let chosenOption: number = defaultOption;
 
 
   const existingValue = state.getCurrentValueFor(path);
-  console.log("Setting direct: ", hasBooleanOption, path.join("."), existingValue);
+  console.log("Initial value is", existingValue);
   if (hasBooleanOption >= 0 && (existingValue === true || existingValue === false)) {
-    tags.setData({ direct: "" + existingValue });
+    tags.setData({ value: "" + existingValue });
+  } else if (lastIsString && typeof existingValue === "string") {
+    tags.setData({ value: existingValue });
+    chosenOption = undefined;
   } else if (existingValue) {
     // We found an existing value. Let's figure out what type it matches and select that one
     // We run over all possibilities and check what is required
     const possibleTypes: { index: number, matchingPropertiesCount: number, optionalMatches: number }[] = [];
     outer: for (let i = 0; i < (<[]>schema.type).length; i++) {
       const type = schema.type[i];
-      let optionalMatches = 0
+      let optionalMatches = 0;
       for (const key of Object.keys(type.properties ?? {})) {
-        if(!!existingValue[key]){
-          optionalMatches++
+        if (!!existingValue[key]) {
+          optionalMatches++;
         }
       }
       if (type.required) {
@@ -85,51 +117,56 @@
           }
           numberOfMatches++;
         }
-        possibleTypes.push({ index: i, matchingPropertiesCount: numberOfMatches , optionalMatches});
+        possibleTypes.push({ index: i, matchingPropertiesCount: numberOfMatches, optionalMatches });
       } else {
         possibleTypes.push({ index: i, matchingPropertiesCount: 0, optionalMatches });
       }
-
 
 
     }
     possibleTypes.sort((a, b) => b.optionalMatches - a.optionalMatches);
     possibleTypes.sort((a, b) => b.matchingPropertiesCount - a.matchingPropertiesCount);
     if (possibleTypes.length > 0) {
-      tags.setData({ value: "" + possibleTypes[0].index });
+      tags.setData({ chosen_type_index: "" + possibleTypes[0].index });
     }
   } else if (defaultOption !== undefined) {
-    tags.setData({ value: "" + defaultOption });
+    tags.setData({ chosen_type_index: "" + defaultOption });
   }
 
-  if (hasBooleanOption >= 0) {
+  if (hasBooleanOption >= 0 || lastIsString) {
 
     const directValue = tags.mapD(tags => {
-      if (tags["value"]) {
-        return undefined;
+      if (tags["chosen_type_index"]) {
+        return "";
       }
-      return tags["direct"] === "true";
+      if (lastIsString) {
+        return tags["value"];
+      }
+      return tags["value"] === "true";
     });
     onDestroy(state.register(path, directValue, true));
   }
 
-  let chosenOption: number = defaultOption;
   let subSchemas: ConfigMeta[] = [];
 
   let subpath = path;
-
+  console.log("Initial chosen option is", chosenOption);
   onDestroy(tags.addCallbackAndRun(tags => {
+    if (tags["value"] !== "") {
+      chosenOption = undefined;
+      return;
+    }
     const oldOption = chosenOption;
-    chosenOption = tags["value"] ? Number(tags["value"]) : defaultOption;
+    chosenOption = tags["chosen_type_index"] ? Number(tags["chosen_type_index"]) : defaultOption;
     const type = schema.type[chosenOption];
     if (chosenOption !== oldOption) {
       // Reset the values beneath
       subSchemas = [];
-      const o = state.getCurrentValueFor(path) ?? {}
-      console.log({o})
-      for(const key of type?.required ?? []){
-        console.log(key)
-        o[key] ??= {}
+      const o = state.getCurrentValueFor(path) ?? {};
+      console.log({ o });
+      for (const key of type?.required ?? []) {
+        console.log(key);
+        o[key] ??= {};
       }
       state.setValueAt(path, o);
     }
@@ -152,13 +189,16 @@
     for (const crumble of Object.keys(type.properties)) {
       subSchemas.push(...(state.getSchema([...cleanPath, crumble])));
     }
-    console.log("Got subschemas for", path, ":", subSchemas)
   }));
 
 
 </script>
 
-<div class="p-2 border-2 border-dashed border-gray-300 flex flex-col gap-y-2">
+<div class="p-2 border-2 border-dashed border-gray-300 flex flex-col gap-y-2 m-1">
+  {#if schema.hints.title !== undefined}
+    <h3>{schema.hints.title}</h3>
+    <div> {schema.description} </div>
+  {/if}
   <div>
     <TagRenderingEditable {config} selectedElement={undefined} showQuestionIfUnknown={true} {state} {tags} />
   </div>

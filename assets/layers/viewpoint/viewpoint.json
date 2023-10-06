@@ -82,12 +82,16 @@
   ],
   "pointRendering": [
     {
-      "icon": "./assets/layers/viewpoint/viewpoint.svg",
       "iconSize": "20,20",
       "location": [
         "point"
       ],
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/layers/viewpoint/viewpoint.svg"
+        }
+      ]
     }
   ],
   "lineRendering": [

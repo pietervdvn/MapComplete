@@ -24,8 +24,12 @@ import {
     ValidateThemeAndLayers,
 } from "../Models/ThemeConfig/Conversion/Validation"
 import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
-import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
+import {
+  MinimalTagRenderingConfigJson,
+  TagRenderingConfigJson
+} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import Hash from "./Web/Hash"
+import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
 
 export default class DetermineLayout {
     private static readonly _knownImages = new Set(Array.from(licenses).map((l) => l.path))
@@ -151,8 +155,8 @@ export default class DetermineLayout {
             .AttachTo("maindiv")
     }
 
-    private static getSharedTagRenderings(): Map<string, TagRenderingConfigJson> {
-        const dict = new Map<string, TagRenderingConfigJson>()
+    private static getSharedTagRenderings(): Map<string, QuestionableTagRenderingConfigJson> {
+        const dict = new Map<string, QuestionableTagRenderingConfigJson>()
 
         for (const tagRendering of questions.tagRenderings) {
             dict.set(tagRendering.id, tagRendering)
@@ -163,7 +167,9 @@ export default class DetermineLayout {
 
     private static prepCustomTheme(json: any, sourceUrl?: string, forceId?: string): LayoutConfig {
         if (json.layers === undefined && json.tagRenderings !== undefined) {
-            const iconTr = json.mapRendering.map((mr) => mr.icon).find((icon) => icon !== undefined)
+            // We got fed a layer instead of a theme
+          const layerConfig = <LayerConfigJson>json
+            const iconTr: string | TagRenderingConfigJson = layerConfig.pointRendering.map((mr) => mr.marker.find(icon => icon.icon !== undefined).icon).find((i) => i !== undefined)
             const icon = new TagRenderingConfig(iconTr).render.txt
             json = {
                 id: json.id,

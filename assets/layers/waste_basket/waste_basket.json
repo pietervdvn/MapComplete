@@ -390,11 +390,15 @@
   },
   "pointRendering": [
     {
-      "icon": "./assets/themes/waste_basket/waste_basket.svg",
       "iconSize": "40,40",
       "anchor": "center",
       "location": [
         "point"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/themes/waste_basket/waste_basket.svg"
+        }
       ]
     }
   ],

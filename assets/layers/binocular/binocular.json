@@ -167,12 +167,20 @@
   },
   "pointRendering": [
     {
-      "icon": "circle:white;./assets/layers/binocular/telescope.svg",
       "iconSize": "40,40",
       "location": [
         "point"
       ],
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/binocular/telescope.svg"
+        }
+      ]
     }
   ],
   "lineRendering": [

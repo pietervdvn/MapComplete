@@ -94,8 +94,8 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                 maxCacheAge: 0,
             },
             /* We need to set 'pass_all_features'
-             There are probably many note_import-layers, and we don't want the first one to gobble up all notes and then discard them...
-             */
+       There are probably many note_import-layers, and we don't want the first one to gobble up all notes and then discard them...
+       */
             passAllFeatures: true,
             minzoom: Math.min(12, layerJson.minzoom - 2),
             title: {
@@ -181,15 +181,24 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
             pointRendering: [
                 {
                     location: ["point"],
-                    icon: {
-                        render: "circle:white;help:black",
-                        mappings: [
-                            {
-                                if: { or: ["closed_at~*", "_imported=yes"] },
-                                then: "circle:white;checkmark:black",
+                    marker: [
+                        {
+                            icon: "circle",
+                            color: "#fff",
+                        },
+                        {
+                            icon: {
+                                render: "help",
+                                mappings: [
+                                    {
+                                        if: { or: ["closed_at~*", "_imported=yes"] },
+                                        then: "checkmark",
+                                    },
+                                ],
                             },
-                        ],
-                    },
+                            color: "#00",
+                        },
+                    ],
                     iconSize: "40,40",
                     anchor: "center",
                 },

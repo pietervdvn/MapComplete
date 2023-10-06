@@ -21,8 +21,7 @@ import { AddContextToTranslations } from "./AddContextToTranslations"
 import FilterConfigJson from "../Json/FilterConfigJson"
 import predifined_filters from "../../../../assets/layers/filters/filters.json"
 import { TagConfigJson } from "../Json/TagConfigJson"
-import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
-import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
+import PointRenderingConfigJson, { IconConfigJson } from "../Json/PointRenderingConfigJson"
 import ValidationUtils from "./ValidationUtils"
 import { RenderingSpecification } from "../../../UI/SpecialVisualization"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
@@ -127,6 +126,7 @@ class ExpandTagRendering extends Conversion<
 > {
     private readonly _state: DesugaringContext
     private readonly _tagRenderingsByLabel: Map<string, TagRenderingConfigJson[]>
+    // Only used for self-reference
     private readonly _self: LayerConfigJson
     private readonly _options: {
         /* If true, will copy the 'osmSource'-tags into the condition */
@@ -224,7 +224,7 @@ class ExpandTagRendering extends Conversion<
 
         const spl = name.split(".")
         let layer = state.sharedLayers?.get(spl[0])
-        if (spl[0] === this._self.id) {
+        if (spl[0] === this._self?.id) {
             layer = this._self
         }
 
@@ -352,7 +352,7 @@ class ExpandTagRendering extends Conversion<
                     if (name.indexOf(".") > 0) {
                         const [layerName] = name.split(".")
                         let layer = state.sharedLayers.get(layerName)
-                        if (layerName === this._self.id) {
+                        if (layerName === this._self?.id) {
                             layer = this._self
                         }
                         if (layer === undefined) {
@@ -1116,23 +1116,19 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
     }
 }
 
-class ExpandIconBadges extends DesugaringStep<PointRenderingConfigJson | LineRenderingConfigJson> {
-    private _state: DesugaringContext
-    private _layer: LayerConfigJson
+class ExpandIconBadges extends DesugaringStep<PointRenderingConfigJson> {
     private _expand: ExpandTagRendering
 
     constructor(state: DesugaringContext, layer: LayerConfigJson) {
         super("Expands shorthand properties on iconBadges", ["iconBadges"], "ExpandIconBadges")
-        this._state = state
-        this._layer = layer
         this._expand = new ExpandTagRendering(state, layer)
     }
 
     convert(
-        json: PointRenderingConfigJson | LineRenderingConfigJson,
+        json: PointRenderingConfigJson,
         context: string
     ): {
-        result: PointRenderingConfigJson | LineRenderingConfigJson
+        result: PointRenderingConfigJson
         errors?: string[]
         warnings?: string[]
         information?: string[]
@@ -1140,7 +1136,7 @@ class ExpandIconBadges extends DesugaringStep<PointRenderingConfigJson | LineRen
         if (!json["iconBadges"]) {
             return { result: json }
         }
-        const badgesJson = (<PointRenderingConfigJson>json).iconBadges
+        const badgesJson = json.iconBadges
 
         const iconBadges: { if: TagConfigJson; then: string | TagRenderingConfigJson }[] = []
 
@@ -1176,7 +1172,7 @@ class ExpandIconBadges extends DesugaringStep<PointRenderingConfigJson | LineRen
     }
 }
 
-class PreparePointRendering extends Fuse<PointRenderingConfigJson | LineRenderingConfigJson> {
+class PreparePointRendering extends Fuse<PointRenderingConfigJson> {
     constructor(state: DesugaringContext, layer: LayerConfigJson) {
         super(
             "Prepares point renderings by expanding 'icon' and 'iconBadges'",
@@ -1262,6 +1258,47 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
     }
 }
 
+class ExpandMarkerRenderings extends DesugaringStep<IconConfigJson> {
+    private readonly _layer: LayerConfigJson
+    private readonly _state: DesugaringContext
+
+    constructor(state: DesugaringContext, layer: LayerConfigJson) {
+        super(
+            "Expands tagRenderings in the icons, if needed",
+            ["icon", "color"],
+            "ExpandMarkerRenderings"
+        )
+        this._layer = layer
+        this._state = state
+    }
+
+    convert(
+        json: IconConfigJson,
+        context: string
+    ): {
+        result: IconConfigJson
+        errors?: string[]
+        warnings?: string[]
+        information?: string[]
+    } {
+        const expander = new ExpandTagRendering(this._state, this._layer)
+        const result: IconConfigJson = { icon: undefined, color: undefined }
+        const errors: string[] = []
+        const warnings: string[] = []
+        if (json.icon && json.icon["builtin"]) {
+            result.icon = expander.convertJoin(<any>json.icon, context, errors, warnings)[0]
+        } else {
+            result.icon = json.icon
+        }
+        if (json.color && json.color["builtin"]) {
+            result.color = expander.convertJoin(<any>json.color, context, errors, warnings)[0]
+        } else {
+            result.color = json.color
+        }
+        return { result, errors, warnings }
+    }
+}
+
 export class PrepareLayer extends Fuse<LayerConfigJson> {
     constructor(state: DesugaringContext) {
         super(
@@ -1274,9 +1311,13 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
             new AddMiniMap(state),
             new AddEditingElements(state),
             new SetFullNodeDatabase(),
-            new On("mapRendering", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
-            new On<(PointRenderingConfigJson | LineRenderingConfigJson)[], LayerConfigJson>(
-                "mapRendering",
+            new On<PointRenderingConfigJson[], LayerConfigJson>(
+                "pointRendering",
+                (layer) =>
+                    new Each(new On("marker", new Each(new ExpandMarkerRenderings(state, layer))))
+            ),
+            new On<PointRenderingConfigJson[], LayerConfigJson>(
+                "pointRendering",
                 (layer) => new Each(new PreparePointRendering(state, layer))
             ),
             new SetDefault("titleIcons", ["icons.defaults"]),

@@ -682,27 +682,31 @@
   },
   "pointRendering": [
     {
-      "icon": {
-        "render": "./assets/themes/surveillance/logo.svg",
-        "mappings": [
-          {
-            "if": "surveillance:type=ALPR",
-            "then": "./assets/layers/surveillance_camera/ALPR.svg"
-          },
-          {
-            "if": "camera:type=dome",
-            "then": "./assets/themes/surveillance/dome.svg"
-          },
-          {
-            "if": "_direction:leftright=right",
-            "then": "./assets/themes/surveillance/cam_right.svg"
-          },
-          {
-            "if": "_direction:leftright=left",
-            "then": "./assets/themes/surveillance/cam_left.svg"
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/themes/surveillance/logo.svg",
+            "mappings": [
+              {
+                "if": "surveillance:type=ALPR",
+                "then": "./assets/layers/surveillance_camera/ALPR.svg"
+              },
+              {
+                "if": "camera:type=dome",
+                "then": "./assets/themes/surveillance/dome.svg"
+              },
+              {
+                "if": "_direction:leftright=right",
+                "then": "./assets/themes/surveillance/cam_right.svg"
+              },
+              {
+                "if": "_direction:leftright=left",
+                "then": "./assets/themes/surveillance/cam_left.svg"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "iconSize": {
         "mappings": [
           {

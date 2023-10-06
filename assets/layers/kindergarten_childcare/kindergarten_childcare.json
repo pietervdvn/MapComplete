@@ -186,18 +186,22 @@
           }
         ]
       },
-      "icon": {
-        "mappings": [
-          {
-            "if": "amenity=kindergarten",
-            "then": "circle:white;./assets/layers/kindergarten_childcare/kindergarten.svg"
-          },
-          {
-            "if": "amenity=childcare",
-            "then": "circle:white;./assets/layers/kindergarten_childcare/childcare.svg"
+      "marker": [
+        {
+          "icon": {
+            "mappings": [
+              {
+                "if": "amenity=kindergarten",
+                "then": "circle:white;./assets/layers/kindergarten_childcare/kindergarten.svg"
+              },
+              {
+                "if": "amenity=childcare",
+                "then": "circle:white;./assets/layers/kindergarten_childcare/childcare.svg"
+              }
+            ]
           }
-        ]
-      }
+        }
+      ]
     }
   ],
   "lineRendering": [

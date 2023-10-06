@@ -435,43 +435,47 @@
         "point",
         "centroid"
       ],
-      "icon": {
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                "room=administration",
-                "room=auditorium",
-                "room=bedroom",
-                "room=chapel",
-                "room=class",
-                "room=computer",
-                "room=conference",
-                "room=crypt",
-                "room=kitchen",
-                "room=laboratory",
-                "room=library",
-                "room=locker",
-                "room=nursery",
-                "room=office",
-                "room=prison_cell",
-                "room=restaurant",
-                "room=security_check",
-                "room=sport",
-                "room=storage",
-                "room=technical",
-                "room=toilets",
-                "room=waiting"
-              ]
-            },
-            "then": "./assets/layers/indoors/room_{room}.svg"
-          },
-          {
-            "if": "room=toilet",
-            "then": "./assets/layers/indoors/room_toilets.svg"
+      "marker": [
+        {
+          "icon": {
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "room=administration",
+                    "room=auditorium",
+                    "room=bedroom",
+                    "room=chapel",
+                    "room=class",
+                    "room=computer",
+                    "room=conference",
+                    "room=crypt",
+                    "room=kitchen",
+                    "room=laboratory",
+                    "room=library",
+                    "room=locker",
+                    "room=nursery",
+                    "room=office",
+                    "room=prison_cell",
+                    "room=restaurant",
+                    "room=security_check",
+                    "room=sport",
+                    "room=storage",
+                    "room=technical",
+                    "room=toilets",
+                    "room=waiting"
+                  ]
+                },
+                "then": "./assets/layers/indoors/room_{room}.svg"
+              },
+              {
+                "if": "room=toilet",
+                "then": "./assets/layers/indoors/room_toilets.svg"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "iconSize": "15,15",
       "anchor": "bottom"
     }

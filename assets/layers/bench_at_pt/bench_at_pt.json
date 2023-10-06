@@ -259,12 +259,20 @@
   },
   "pointRendering": [
     {
-      "icon": "circle:white;./assets/themes/benches/bench_public_transport.svg",
       "iconSize": "35,35",
       "location": [
         "point"
       ],
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/themes/benches/bench_public_transport.svg"
+        }
+      ]
     }
   ],
   "lineRendering": [

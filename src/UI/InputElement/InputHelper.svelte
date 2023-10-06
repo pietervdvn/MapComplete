@@ -52,11 +52,8 @@
   <SimpleTagInput { value } />
 
 {:else if $construct !== undefined}
-  {#if isBaseUIElement}
-    <ToSvelte
-      construct={() =>
+  <ToSvelte
+    construct={() =>
       new VariableUiElement(construct.mapD((construct) => construct(value, properties)))}
-    />
-
-  {/if}
+  />
 {/if}

@@ -392,37 +392,45 @@
   ],
   "pointRendering": [
     {
-      "icon": {
-        "builtin": "id_presets.shop_rendering",
-        "override": {
-          "render": "./assets/layers/id_presets/maki-shop.svg",
-          "+mappings": [
-            {
-              "#": "Layer icon rendering",
-              "if": "id=",
-              "then": "circle:white;./assets/layers/id_presets/maki-shop.svg"
-            },
-            {
-              "if": {
-                "or": [
-                  "shop=vacant",
-                  "shop=disused",
-                  "disused:shop=yes"
-                ]
-              },
-              "then": "circle:white;./assets/layers/shops/shop-disused.svg"
-            },
-            {
-              "if": "craft=shoemaker",
-              "then": "circle:white;./assets/layers/id_presets/temaki-hammer_shoe.svg"
-            },
-            {
-              "if": "craft=key_cutter",
-              "then": "circle:white;./assets/layers/id_presets/fas-key.svg"
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "builtin": "id_presets.shop_rendering",
+            "override": {
+              "render": "./assets/layers/id_presets/maki-shop.svg",
+              "+mappings": [
+                {
+                  "#": "Layer icon rendering",
+                  "if": "id=",
+                  "then": "./assets/layers/id_presets/maki-shop.svg"
+                },
+                {
+                  "if": {
+                    "or": [
+                      "shop=vacant",
+                      "shop=disused",
+                      "disused:shop=yes"
+                    ]
+                  },
+                  "then": "./assets/layers/shops/shop-disused.svg"
+                },
+                {
+                  "if": "craft=shoemaker",
+                  "then": "./assets/layers/id_presets/temaki-hammer_shoe.svg"
+                },
+                {
+                  "if": "craft=key_cutter",
+                  "then": "./assets/layers/id_presets/fas-key.svg"
+                }
+              ]
             }
-          ]
+          }
         }
-      },
+      ],
       "iconBadges": [
         {
           "if": "opening_hours~*",

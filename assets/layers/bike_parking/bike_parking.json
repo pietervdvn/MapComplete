@@ -716,13 +716,21 @@
   },
   "pointRendering": [
     {
-      "icon": "pin:#5473de;./assets/layers/bike_parking/parking.svg",
       "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
       ],
-      "anchor": "bottom"
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#5473de"
+        },
+        {
+          "icon": "./assets/layers/bike_parking/parking.svg"
+        }
+      ]
     }
   ],
   "lineRendering": [

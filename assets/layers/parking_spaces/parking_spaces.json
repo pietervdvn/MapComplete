@@ -212,15 +212,19 @@
   },
   "pointRendering": [
     {
-      "icon": {
-        "render": "./assets/layers/parking_spaces/parking_space.svg",
-        "mappings": [
-          {
-            "if": "parking_space=disabled",
-            "then": "./assets/layers/toilet/wheelchair.svg"
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/parking_spaces/parking_space.svg",
+            "mappings": [
+              {
+                "if": "parking_space=disabled",
+                "then": "./assets/layers/toilet/wheelchair.svg"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "iconSize": "20,20",
       "location": [
         "point",

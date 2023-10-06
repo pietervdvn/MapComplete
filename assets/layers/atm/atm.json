@@ -476,6 +476,23 @@
       ]
     }
   },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/atm/atm.svg"
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
   "filter": [
     "open_now",
     {
@@ -492,15 +509,6 @@
           },
           "osmTags": "speech_output=yes"
         }
-      ]
-    }
-  ],
-  "pointRendering": [
-    {
-      "icon": "circle:white;./assets/layers/atm/atm.svg",
-      "location": [
-        "point",
-        "centroid"
       ]
     }
   ],

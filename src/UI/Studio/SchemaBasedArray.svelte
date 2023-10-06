@@ -23,8 +23,10 @@
   export let path: (string | number)[] = [];
   const isTagRenderingBlock = path.length === 1 && path[0] === "tagRenderings";
 
-  const subparts = state.getSchemaStartingWith(schema.path);
-
+  
+  const subparts: ConfigMeta = state.getSchemaStartingWith(schema.path)
+    .filter(part => part.path.length - 1 === schema.path.length);
+console.log("For ", schema.path, "got subparts", subparts)
   /**
    * Store the _indices_
    */

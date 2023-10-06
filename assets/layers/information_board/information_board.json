@@ -79,12 +79,16 @@
   },
   "pointRendering": [
     {
-      "icon": "./assets/layers/information_board/board.svg",
       "iconSize": "40,40",
       "location": [
         "point"
       ],
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/layers/information_board/board.svg"
+        }
+      ]
     }
   ],
   "lineRendering": [

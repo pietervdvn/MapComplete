@@ -604,7 +604,11 @@
   },
   "pointRendering": [
     {
-      "icon": "./assets/layers/barrier/barrier.svg",
+      "marker": [
+        {
+          "icon": "./assets/layers/barrier/barrier.svg"
+        }
+      ],
       "location": [
         "point"
       ]

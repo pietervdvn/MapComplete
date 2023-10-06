@@ -228,7 +228,6 @@
   ],
   "pointRendering": [
     {
-      "icon": "circle:white;./assets/themes/climbing/climbing_route.svg",
       "iconSize": "28,28",
       "location": [
         "point",
@@ -251,7 +250,16 @@
           }
         ]
       },
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/themes/climbing/climbing_route.svg"
+        }
+      ]
     }
   ],
   "lineRendering": [

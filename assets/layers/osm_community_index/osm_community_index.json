@@ -154,12 +154,20 @@
   },
   "pointRendering": [
     {
-      "icon": "pin:#6BC4F7;./assets/layers/osm_community_index/osm.svg",
       "iconSize": "40,40",
       "location": [
         "point"
       ],
-      "anchor": "bottom"
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#6BC4F7"
+        },
+        {
+          "icon": "./assets/layers/osm_community_index/osm.svg"
+        }
+      ]
     }
   ],
   "lineRendering": [

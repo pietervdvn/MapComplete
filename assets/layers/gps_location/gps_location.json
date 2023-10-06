@@ -5,15 +5,20 @@
   "source": "special",
   "pointRendering": [
     {
-      "icon": {
-        "render": "crosshair:var(--catch-detail-color)",
-        "mappings": [
-          {
-            "if": "speed>2",
-            "then": "gps_arrow"
+      "marker": [
+        {
+          "color": "--catch-detail-color",
+          "icon": {
+            "render": "crosshair",
+            "mappings": [
+              {
+                "if": "speed>2",
+                "then": "gps_arrow"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "iconSize": "40,40",
       "pitchAlignment": "map",
       "rotation": {

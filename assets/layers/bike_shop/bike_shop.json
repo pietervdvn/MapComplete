@@ -867,19 +867,47 @@
   "deletion": true,
   "pointRendering": [
     {
-      "icon": {
-        "render": "pin:#f04c4c;./assets/layers/bike_shop/repair_shop.svg",
-        "mappings": [
-          {
-            "if": "operator=De Fietsambassade Gent",
-            "then": "./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg"
+      "marker": [
+        {
+          "icon": {
+            "render": "pin",
+            "mappings": [
+              {
+                "if": "operator=De Fietsambassade Gent",
+                "then": null
+              }
+            ]
           },
-          {
-            "if": "service:bicycle:retail=yes",
-            "then": "pin:#353d57;./assets/layers/bike_shop/shop.svg"
+          "color": {
+            "render": "#f04c4c",
+            "mappings": [
+              {
+                "if": "operator=De Fietsambassade Gent",
+                "then": null
+              },
+              {
+                "if": "service:bicycle:retail=yes",
+                "then": "#353d57"
+              }
+            ]
           }
-        ]
-      },
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/bike_shop/repair_shop.svg",
+            "mappings": [
+              {
+                "if": "operator=De Fietsambassade Gent",
+                "then": "./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg"
+              },
+              {
+                "if": "service:bicycle:retail=yes",
+                "then": "./assets/layers/bike_shop/shop.svg"
+              }
+            ]
+          }
+        }
+      ],
       "iconBadges": [
         {
           "if": "opening_hours~*",

@@ -331,7 +331,6 @@
   ],
   "pointRendering": [
     {
-      "icon": "circle:white;./assets/layers/elevator/elevator_wheelchair.svg",
       "iconSize": "40,40",
       "location": [
         "point",
@@ -348,7 +347,16 @@
           "then": "close:#c33"
         }
       ],
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/elevator/elevator_wheelchair.svg"
+        }
+      ]
     }
   ],
   "lineRendering": []

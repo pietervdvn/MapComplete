@@ -75,7 +75,6 @@ export default class LayerConfig extends WithContextLoader {
         const translationContext = "layers:" + json.id
         super(json, context)
         this.id = json.id
-
         if (typeof json === "string") {
             throw `Not a valid layer: the layerConfig is a string. 'npm run generate:layeroverview' might be needed (at ${context})`
         }
@@ -295,7 +294,9 @@ export default class LayerConfig extends WithContextLoader {
                 throw (
                     "The layer " +
                     this.id +
-                    " does not have any maprenderings defined and will thus not show up on the map at all. If this is intentional, set `pointRendering` and `lineRendering` to 'null' instead of '[]'"
+                    ` does not have any maprenderings defined and will thus not show up on the map at all:
+\t ${this.lineRendering?.length} linerenderings and ${this.mapRendering?.length} pointRenderings.
+\t If this is intentional, set \`pointRendering\` and \`lineRendering\` to 'null' instead of '[]'`
                 )
             } else if (
                 !hasCenterRendering &&
@@ -403,7 +404,7 @@ export default class LayerConfig extends WithContextLoader {
         if (mapRendering === undefined) {
             return undefined
         }
-        return mapRendering.GetBaseIcon(this.GetBaseTags(), { noFullWidth: true })
+        return mapRendering.GetBaseIcon(this.GetBaseTags())
     }
 
     public GetBaseTags(): Record<string, string> {
@@ -555,23 +556,12 @@ export default class LayerConfig extends WithContextLoader {
 
         let iconImg: BaseUIElement = new FixedUiElement("")
 
-        if (Utils.runningFromConsole) {
-            const icon = this.mapRendering
-                .filter((mr) => mr.location.has("point"))
-                .map((mr) => mr.icon?.render?.txt)
-                .find((i) => i !== undefined)
-            // This is for the documentation in a markdown-file, so we have to use raw HTML
-            if (icon !== undefined) {
-                iconImg = new FixedUiElement(
-                    `<img src='https://mapcomplete.org/${icon}' height="100px"> `
-                )
-            }
-        } else {
+        if (!Utils.runningFromConsole) {
             iconImg = this.mapRendering
                 .filter((mr) => mr.location.has("point"))
                 .map(
                     (mr) =>
-                        mr.RenderIcon(new ImmutableStore<OsmTags>({ id: "node/-1" }), false, {
+                        mr.RenderIcon(new ImmutableStore<OsmTags>({ id: "node/-1" }), {
                             includeBadges: false,
                         }).html
                 )

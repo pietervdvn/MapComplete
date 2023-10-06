@@ -395,7 +395,6 @@
   },
   "pointRendering": [
     {
-      "icon": "circle:white;./assets/layers/school/school.svg",
       "label": {
         "mappings": [
           {
@@ -409,7 +408,16 @@
         "point",
         "centroid"
       ],
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/school/school.svg"
+        }
+      ]
     }
   ],
   "lineRendering": [

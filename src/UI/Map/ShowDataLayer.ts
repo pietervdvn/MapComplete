@@ -142,7 +142,7 @@ class PointRenderingLayer {
         } else {
             store = new ImmutableStore(<OsmTags>feature.properties)
         }
-        const { html, iconAnchor } = this._config.RenderIcon(store, true)
+        const { html, iconAnchor } = this._config.RenderIcon(store)
         html.SetClass("marker")
         if (this._onClick !== undefined) {
             html.SetClass("cursor-pointer")

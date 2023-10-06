@@ -1,6 +1,6 @@
 import { TagConfigJson } from "./TagConfigJson"
 import { TagRenderingConfigJson } from "./TagRenderingConfigJson"
-import { Translatable } from "./Translatable"
+import type { Translatable } from "./Translatable"
 
 export interface MappingConfigJson {
     /**

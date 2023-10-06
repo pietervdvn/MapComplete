@@ -10,9 +10,13 @@
       "location": [
         "point"
       ],
-      "icon": "bug",
       "iconSize": "30,30",
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "bug"
+        }
+      ]
     }
   ],
   "lineRendering": [

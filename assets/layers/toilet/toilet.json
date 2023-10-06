@@ -787,29 +787,6 @@
   ],
   "pointRendering": [
     {
-      "icon": {
-        "render": "circle:#ffffff;./assets/layers/toilet/toilets.svg",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                "wheelchair=yes",
-                "wheelchair=designated"
-              ]
-            },
-            "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
-          },
-          {
-            "if": {
-              "or": [
-                "toilets:position=urinals",
-                "toilets:position=urinal"
-              ]
-            },
-            "then": "./assets/layers/toilet/urinal.svg"
-          }
-        ]
-      },
       "iconBadges": [
         {
           "if": "opening_hours~*",
@@ -819,6 +796,33 @@
       "location": [
         "point",
         "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "circle:#ffffff;./assets/layers/toilet/toilets.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "wheelchair=yes",
+                    "wheelchair=designated"
+                  ]
+                },
+                "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
+              },
+              {
+                "if": {
+                  "or": [
+                    "toilets:position=urinals",
+                    "toilets:position=urinal"
+                  ]
+                },
+                "then": "./assets/layers/toilet/urinal.svg"
+              }
+            ]
+          }
+        }
       ]
     }
   ],

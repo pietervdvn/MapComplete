@@ -9,10 +9,6 @@ import LineRenderingConfigJson from "./LineRenderingConfigJson"
 import { QuestionableTagRenderingConfigJson } from "./QuestionableTagRenderingConfigJson"
 import RewritableConfigJson from "./RewritableConfigJson"
 import { Translatable } from "./Translatable"
-import { Point } from "geojson"
-import PointRenderingConfig from "../PointRenderingConfig"
-
-type MapRendering = {}
 
 /**
  * Configuration for a single layer
@@ -49,6 +45,7 @@ export interface LayerConfigJson {
     /**
      *
      * Question: Where should the data be fetched from?
+     * title: Data Source
      *
      * This determines where the data for the layer is fetched: from OSM or from an external geojson dataset.
      *
@@ -242,12 +239,12 @@ export interface LayerConfigJson {
     /**
      * Creates points to render on the map.
      * This can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered
-     * group: maprendering
+     * group: pointrendering
      */
     pointRendering: PointRenderingConfigJson[]
     /**
      * Creates lines and areas to render on the map
-     * group: maprendering
+     * group: linerendering
      */
     lineRendering?: LineRenderingConfigJson[]
 

@@ -389,7 +389,6 @@
   ],
   "pointRendering": [
     {
-      "icon": "circle:#FFFFFF00;./assets/themes/elongated_coin/penny.svg",
       "location": [
         "point",
         "centroid"
@@ -398,6 +397,15 @@
         {
           "if": "opening_hours~*",
           "then": "icons.isOpen"
+        }
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "#FFFFFF00"
+        },
+        {
+          "icon": "./assets/themes/elongated_coin/penny.svg"
         }
       ]
     }

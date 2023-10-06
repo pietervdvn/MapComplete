@@ -99,7 +99,6 @@
         "point",
         "centroid"
       ],
-      "icon": "circle:white;./assets/layers/fitness_centre/gym.svg",
       "iconSize": "40,40",
       "label": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>",
       "iconBadges": [
@@ -108,7 +107,16 @@
           "then": "icons.isOpen"
         }
       ],
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/fitness_centre/gym.svg"
+        }
+      ]
     }
   ],
   "lineRendering": []

@@ -41,7 +41,15 @@
         "centroid",
         "point"
       ],
-      "icon": "circle:white;./assets/layers/memorial/plaque.svg"
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/memorial/plaque.svg"
+        }
+      ]
     }
   ],
   "lineRendering": []

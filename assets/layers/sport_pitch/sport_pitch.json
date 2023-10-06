@@ -649,28 +649,32 @@
   ],
   "pointRendering": [
     {
-      "icon": {
-        "render": "circle:white;./assets/layers/sport_pitch/sport_pitch.svg",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                "sport=baseball",
-                "sport=basketball",
-                "sport=beachvolleyball",
-                "sport=boules",
-                "sport=skateboard",
-                "sport=soccer",
-                "sport=table_tennis",
-                "sport=tennis",
-                "sport=volleyball",
-                "sport=equestrian"
-              ]
-            },
-            "then": "circle:white;./assets/layers/sport_pitch/{sport}.svg"
+      "marker": [
+        {
+          "icon": {
+            "render": "circle:white;./assets/layers/sport_pitch/sport_pitch.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "sport=baseball",
+                    "sport=basketball",
+                    "sport=beachvolleyball",
+                    "sport=boules",
+                    "sport=skateboard",
+                    "sport=soccer",
+                    "sport=table_tennis",
+                    "sport=tennis",
+                    "sport=volleyball",
+                    "sport=equestrian"
+                  ]
+                },
+                "then": "circle:white;./assets/layers/sport_pitch/{sport}.svg"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "iconBadges": [
         {
           "if": {

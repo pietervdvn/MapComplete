@@ -1165,24 +1165,6 @@
   },
   "pointRendering": [
     {
-      "icon": {
-        "render": "circle:white;./assets/layers/food/restaurant.svg",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "amenity=fast_food",
-                "cuisine=friture"
-              ]
-            },
-            "then": "circle:white;./assets/layers/food/fries.svg"
-          },
-          {
-            "if": "amenity=fast_food",
-            "then": "circle:white;./assets/layers/food/fastfood.svg"
-          }
-        ]
-      },
       "iconBadges": [
         {
           "if": "opening_hours~*",
@@ -1222,6 +1204,28 @@
       "location": [
         "point",
         "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "circle:white;./assets/layers/food/restaurant.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "amenity=fast_food",
+                    "cuisine=friture"
+                  ]
+                },
+                "then": "circle:white;./assets/layers/food/fries.svg"
+              },
+              {
+                "if": "amenity=fast_food",
+                "then": "circle:white;./assets/layers/food/fastfood.svg"
+              }
+            ]
+          }
+        }
       ]
     }
   ],

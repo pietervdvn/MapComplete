@@ -214,19 +214,23 @@
   },
   "pointRendering": [
     {
-      "icon": {
-        "render": "./assets/layers/trail/trail.svg",
-        "mappings": [
-          {
-            "if": "wheelchair=yes",
-            "then": "./assets/layers/trail/wheelchair.svg"
-          },
-          {
-            "if": "pushchair=yes",
-            "then": "./assets/layers/trail/pushchair.svg"
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/trail/trail.svg",
+            "mappings": [
+              {
+                "if": "wheelchair=yes",
+                "then": "./assets/layers/trail/wheelchair.svg"
+              },
+              {
+                "if": "pushchair=yes",
+                "then": "./assets/layers/trail/pushchair.svg"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "iconSize": "35,35",
       "location": [
         "point"

@@ -683,75 +683,6 @@
   "deletion": true,
   "pointRendering": [
     {
-      "icon": {
-        "render": "./assets/layers/vending_machine/vending_machine.svg",
-        "mappings": [
-          {
-            "if": "vending=drinks",
-            "then": "circle:white;./assets/layers/id_presets/temaki-bottles.svg"
-          },
-          {
-            "if": "vending=sweets",
-            "then": "circle:white;./assets/layers/id_presets/maki-confectionery.svg"
-          },
-          {
-            "if": "vending=food",
-            "then": "circle:white;./assets/layers/vending_machine/utensils.svg"
-          },
-          {
-            "if": "vending=cigarettes",
-            "then": "circle:white;./assets/layers/vending_machine/smoking.svg"
-          },
-          {
-            "if": "vending=coffee",
-            "then": "circle:white;./assets/layers/vending_machine/mug-saucer.svg"
-          },
-          {
-            "if": "vending=water",
-            "then": "circle:white;./assets/layers/id_presets/temaki-water_bottle.svg"
-          },
-          {
-            "if": "vending=newspapers",
-            "then": "circle:white;./assets/layers/id_presets/fas-newspaper.svg"
-          },
-          {
-            "if": "vending=milk",
-            "then": "circle:white;./assets/layers/vending_machine/cow.svg"
-          },
-          {
-            "if": "vending=bread",
-            "then": "circle:white;./assets/layers/id_presets/maki-bakery.svg"
-          },
-          {
-            "if": "vending=eggs",
-            "then": "circle:white;./assets/layers/vending_machine/egg.svg"
-          },
-          {
-            "if": "vending=cheese",
-            "then": "circle:white;./assets/layers/id_presets/fas-cheese.svg"
-          },
-          {
-            "if": "vending=honey",
-            "then": "circle:white;./assets/layers/vending_machine/honey.svg"
-          },
-          {
-            "if": "vending=potatoes",
-            "then": "circle:white;./assets/layers/vending_machine/potato.svg"
-          },
-          {
-            "if": "vending=meat",
-            "then": "./assets/layers/id_presets/temaki-meat.svg"
-          },
-          {
-            "if": "vending=flowers",
-            "then": "circle:white;./assets/layers/id_presets/maki-florist.svg"
-          },
-          {
-            "if": "vending=condoms",
-            "then": "circle:white;./assets/layers/vending_machine/condom.svg"
-          }
-        ]
-      },
       "location": [
         "point",
         "centroid"
@@ -913,6 +844,79 @@
             ]
           },
           "then": "circle:white;./assets/themes/stations/public_transport_tickets.svg"
+        }
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/vending_machine/vending_machine.svg",
+            "mappings": [
+              {
+                "if": "vending=drinks",
+                "then": "circle:white;./assets/layers/id_presets/temaki-bottles.svg"
+              },
+              {
+                "if": "vending=sweets",
+                "then": "circle:white;./assets/layers/id_presets/maki-confectionery.svg"
+              },
+              {
+                "if": "vending=food",
+                "then": "circle:white;./assets/layers/vending_machine/utensils.svg"
+              },
+              {
+                "if": "vending=cigarettes",
+                "then": "circle:white;./assets/layers/vending_machine/smoking.svg"
+              },
+              {
+                "if": "vending=coffee",
+                "then": "circle:white;./assets/layers/vending_machine/mug-saucer.svg"
+              },
+              {
+                "if": "vending=water",
+                "then": "circle:white;./assets/layers/id_presets/temaki-water_bottle.svg"
+              },
+              {
+                "if": "vending=newspapers",
+                "then": "circle:white;./assets/layers/id_presets/fas-newspaper.svg"
+              },
+              {
+                "if": "vending=milk",
+                "then": "circle:white;./assets/layers/vending_machine/cow.svg"
+              },
+              {
+                "if": "vending=bread",
+                "then": "circle:white;./assets/layers/id_presets/maki-bakery.svg"
+              },
+              {
+                "if": "vending=eggs",
+                "then": "circle:white;./assets/layers/vending_machine/egg.svg"
+              },
+              {
+                "if": "vending=cheese",
+                "then": "circle:white;./assets/layers/id_presets/fas-cheese.svg"
+              },
+              {
+                "if": "vending=honey",
+                "then": "circle:white;./assets/layers/vending_machine/honey.svg"
+              },
+              {
+                "if": "vending=potatoes",
+                "then": "circle:white;./assets/layers/vending_machine/potato.svg"
+              },
+              {
+                "if": "vending=meat",
+                "then": "./assets/layers/id_presets/temaki-meat.svg"
+              },
+              {
+                "if": "vending=flowers",
+                "then": "circle:white;./assets/layers/id_presets/maki-florist.svg"
+              },
+              {
+                "if": "vending=condoms",
+                "then": "circle:white;./assets/layers/vending_machine/condom.svg"
+              }
+            ]
+          }
         }
       ]
     }

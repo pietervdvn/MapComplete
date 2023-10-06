@@ -177,7 +177,6 @@
         "point",
         "centroid"
       ],
-      "icon": "./assets/layers/dogpark/dog-park.svg",
       "iconSize": "40,40",
       "label": {
         "mappings": [
@@ -187,7 +186,12 @@
           }
         ]
       },
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/layers/dogpark/dog-park.svg"
+        }
+      ]
     }
   ],
   "lineRendering": [

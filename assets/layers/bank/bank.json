@@ -107,7 +107,15 @@
   ],
   "pointRendering": [
     {
-      "icon": "circle:white;./assets/layers/bank/bank.svg",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/bank/bank.svg"
+        }
+      ],
       "location": [
         "point",
         "centroid"

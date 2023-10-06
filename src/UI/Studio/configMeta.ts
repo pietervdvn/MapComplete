@@ -18,6 +18,8 @@ export interface ConfigMeta {
         default?: string
         typesdefault?: string
         suggestions?: []
+        title?: string
+        multianswer?: "true" | string
     }
     required: boolean
     description: string

@@ -1125,7 +1125,6 @@
   ],
   "pointRendering": [
     {
-      "icon": "circle:#99bd54;./assets/layers/bench/bench.svg",
       "iconSize": "35,35",
       "iconBadges": [
         {
@@ -1137,7 +1136,16 @@
         "point",
         "centroid"
       ],
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "#99bd54"
+        },
+        {
+          "icon": "./assets/layers/bench/bench.svg"
+        }
+      ]
     }
   ],
   "lineRendering": []
