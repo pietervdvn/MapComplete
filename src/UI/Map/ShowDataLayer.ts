@@ -230,8 +230,6 @@ class LineRenderingLayer {
         features.features.addCallbackAndRunD(() => self.update(features.features))
 
         map.on("styledata", () => self.update(features.features))
-      //  map.on("style.load", () => self.update(features.features))
-
     }
 
     public destruct(): void {
@@ -353,7 +351,6 @@ class LineRenderingLayer {
                             return;
                         }
                         e.originalEvent["consumed"] = true;
-                        console.log("Got features:", e.features, e);
                         this._onClick(e.features[0]);
                     });
                 }
@@ -397,9 +394,6 @@ class LineRenderingLayer {
             if (this._listenerInstalledOn.has(id)) {
                 continue
             }
-            if (!map.getSource(this._layername)) {
-                continue
-            }
             if (this._fetchStore === undefined) {
                 map.setFeatureState(
                     { source: this._layername, id },
@@ -408,7 +402,11 @@ class LineRenderingLayer {
             } else {
                 const tags = this._fetchStore(id)
                 this._listenerInstalledOn.add(id)
-                tags.addCallbackAndRunD((properties) => {
+                map.setFeatureState(
+                  { source: this._layername, id },
+                  this.calculatePropsFor(feature.properties)
+                )
+                tags.addCallbackD((properties) => {
                     if(!map.getLayer(this._layername)){
                         return
                     }

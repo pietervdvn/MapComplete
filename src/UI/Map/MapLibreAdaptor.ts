@@ -417,6 +417,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (!map.getLayer(addLayerBeforeId)) {
             addLayerBeforeId = undefined
         }
+        await this.awaitStyleIsLoaded()
         if (!map.getSource(background.id)) {
             map.addSource(background.id, MapLibreAdaptor.prepareWmsSource(background))
         }
