@@ -677,11 +677,6 @@ export default class SpecialVisualizations {
                     )
                     return new SvelteUIElement(StarsBarIcon, {
                         score: reviews.average,
-                        reviews,
-                        state,
-                        tags,
-                        feature,
-                        layer,
                     })
                 },
             },
