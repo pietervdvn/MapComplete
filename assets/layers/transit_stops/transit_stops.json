@@ -10,7 +10,8 @@
   "description": {
     "en": "Layer showing different types of transit stops.",
     "de": "Ebene mit verschiedenen Arten von Haltestellen.",
-    "da": "Lag, der viser forskellige typer transitstop."
+    "da": "Lag, der viser forskellige typer transitstop.",
+    "ca": "Capa que mostra diferents tipus de parades de transport públic"
   },
   "source": {
     "osmTags": {
@@ -25,7 +26,8 @@
       "en": "Transit Stop",
       "de": "Haltestelle",
       "da": "Transit Stop",
-      "nl": "Bushalte"
+      "nl": "Bushalte",
+      "ca": "Parada de transport públic"
     },
     "mappings": [
       {
@@ -52,13 +54,6 @@
       },
       "label": "<div style=\"background: white; display: block\">{name}</div>"
     }
-  ],
-  "calculatedTags": [
-    "_routes=feat.memberships()",
-    "_contained_routes_properties=feat.memberships().map(p => {return {id: p.relation.id, name: p.relation.properties.name} }).filter((v,i,a)=>a.findIndex(t=>(JSON.stringify(t) === JSON.stringify(v)))===i)",
-    "_contained_route_ids=JSON.parse(feat.properties._contained_routes_properties ?? '[]').map(p => p.id)",
-    "_contained_routes=JSON.parse(feat.properties._contained_routes_properties ?? '[]').map(p => `<li><a href='#relation/${p.id}'>${p.name ?? 'bus route'}</a></li>`).join('')",
-    "_contained_routes_count=JSON.parse(feat.properties._contained_routes_properties ?? '[]').length"
   ],
   "tagRenderings": [
     {

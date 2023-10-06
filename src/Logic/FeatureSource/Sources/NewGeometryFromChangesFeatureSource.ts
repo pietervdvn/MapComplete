@@ -55,10 +55,14 @@ export class NewGeometryFromChangesFeatureSource implements WritableFeatureSourc
      * @private
      */
     private handleChange(change: ChangeDescription): boolean {
-        const backend = this._backend
-        const allElementStorage = this._allElementStorage
+        if (change.changes === undefined) {
+            // The geometry is not described - not a new point or geometry change, but probably a tagchange to a newly created point
+            // Not something that should be handled here
+            return false
+        }
 
-        console.log("Handling pending change")
+        const allElementStorage = this._allElementStorage
+        console.log("Handling pending change", change)
         if (change.id > 0) {
             // This is an already existing object
             // In _most_ of the cases, this means that this _isn't_ a new object
@@ -86,10 +90,6 @@ export class NewGeometryFromChangesFeatureSource implements WritableFeatureSourc
             this._featureProperties.trackFeature(feature)
             this.addNewFeature(feature)
             return true
-        } else if (change.changes === undefined) {
-            // The geometry is not described - not a new point or geometry change, but probably a tagchange to a newly created point
-            // Not something that should be handled here
-            return false
         }
 
         try {
@@ -151,7 +151,7 @@ export class NewGeometryFromChangesFeatureSource implements WritableFeatureSourc
                 continue
             }
 
-            somethingChanged ||= this.handleChange(change)
+            somethingChanged = this.handleChange(change) || somethingChanged // important: _first_ evaluate the method, to avoid shortcutting
         }
         if (somethingChanged) {
             this.features.ping()

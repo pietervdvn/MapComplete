@@ -272,6 +272,33 @@
           "osmTags": "dog=no"
         }
       ]
+    },
+    {
+      "id": "has_internet",
+      "options": [
+        {
+          "question": {
+            "en": "Offers internet"
+          },
+          "osmTags": {
+            "or": [
+              "internet_access=wlan",
+              "internet_access=yes",
+              "internet_access=wired"
+            ]
+          }
+        }
+      ]
+    },
+    {"id": "has_electricity",
+      "options": [
+        {
+          "question": {
+            "en": "Offers electricity"
+          },
+          "osmTags": "service:electricity=yes"
+        }
+      ]
     }
   ]
 }

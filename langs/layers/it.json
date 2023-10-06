@@ -2731,6 +2731,9 @@
                     },
                     "6": {
                         "then": "Un cestino rifiuti per la plastica"
+                    },
+                    "7": {
+                        "then": "Un cestino rifiuti per la carta"
                     }
                 },
                 "question": "Che tipo di cestino dei rifiuti è questo?"

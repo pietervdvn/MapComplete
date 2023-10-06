@@ -461,8 +461,12 @@
         ]
       }
     },
-    "drinking_water",
-    "toilet"
+    {
+      "builtin": ["toilet","drinking_water"],
+      "override": {
+        "minzoom": 15
+      }
+    }
   ],
   "credits": "Christian Neumann <christian@utopicode.de>"
 }

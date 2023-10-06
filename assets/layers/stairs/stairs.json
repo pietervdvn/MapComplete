@@ -9,7 +9,8 @@
   "description": {
     "en": "Layer showing stairs and escalators",
     "de": "Ebene mit Treppen und Rolltreppen",
-    "nl": "Laag met trappen en roltrappen"
+    "nl": "Laag met trappen en roltrappen",
+    "ca": "Capa que mostra escales i escales mecàniques"
   },
   "title": {
     "render": {

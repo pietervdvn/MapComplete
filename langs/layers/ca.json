@@ -2396,9 +2396,24 @@
             }
         },
         "tagRenderings": {
+            "Contained_climbing_routes": {
+                "render": "<h3>Conté {_contained_climbing_routes_count} rutes</h3> <ul>{_contained_climbing_routes}</ul>"
+            },
             "Rock type (crag/rock/cliff only)": {
+                "mappings": {
+                    "0": {
+                        "then": "Calcària"
+                    }
+                },
                 "question": "Quin és el tipus de roca aquí?",
                 "render": "El tipus de roca és {rock}"
+            },
+            "Type": {
+                "mappings": {
+                    "0": {
+                        "then": "Una roca d'escalada: una única roca o penya-segat amb una o unes quantes vies d'escalada que es poden escalar amb seguretat sense corda"
+                    }
+                }
             },
             "name": {
                 "render": "<strong>{name}</strong>"
@@ -4424,7 +4439,8 @@
                 }
             },
             "ghost_bike-start_date": {
-                "question": "Quan es va instal·lar aquesta bicicleta Ghost?"
+                "question": "Quan es va instal·lar aquesta bicicleta Ghost?",
+                "render": "Col·locat el {start_date}"
             }
         },
         "title": {
@@ -7451,8 +7467,13 @@
                     },
                     "4": {
                         "then": "Aquí es juga al corfbol"
+                    },
+                    "6": {
+                        "then": "Açò és un skatepark"
                     }
-                }
+                },
+                "question": "Quin esport es pot practicar aquí?",
+                "render": "{sport} es juga aquí"
             },
             "sport_pitch-surface": {
                 "mappings": {
@@ -7472,14 +7493,28 @@
                         "then": "La superfície és <b>formigó</b>"
                     }
                 },
-                "question": "Quina és la superfície d'aquest camp esportiu?"
+                "question": "Quina és la superfície d'aquest camp esportiu?",
+                "render": "La superfícies és <b>{surface}</b>"
             }
         },
         "title": {
             "render": "Camp d'esports"
         }
     },
+    "sports_centre": {
+        "description": "En aquesta capa es poden trobar centres esportius interiors i exteriors",
+        "name": "Centres esportius",
+        "presets": {
+            "0": {
+                "title": "un centre esportiu"
+            }
+        },
+        "title": {
+            "render": "Centre esportiu"
+        }
+    },
     "stairs": {
+        "description": "Capa que mostra escales i escales mecàniques",
         "name": "Escales",
         "tagRenderings": {
             "conveying": {
@@ -7746,6 +7781,7 @@
                 "question": "Quin tipus de càmera és aquesta?"
             },
             "Level": {
+                "question": "A quina planta es troba aquesta càmera?",
                 "render": "Ubicat a la planta {level}"
             },
             "Operator": {
@@ -7852,14 +7888,19 @@
         }
     },
     "tertiary_education": {
+        "name": "Instituts superiors i universitats",
         "presets": {
             "0": {
+                "description": "Un institut on s'imparteix ensenyament terciari (al nivell equivalent de batxillerat o superior). N'hi ha prou amb un únic punt per campus: els edificis i les facultats no s'han de cartografiar amb diferents punts universitaris.",
                 "title": "una universitat"
             }
         },
         "tagRenderings": {
             "institution-kind": {
                 "mappings": {
+                    "0": {
+                        "then": "Aquesta és una institució d'educació postsecundària i no terciària. S'ha d'haver completat l'educació secundària per matricular-se aquí, però aquí no s'obtenen títols de batxillerat (o superiors)"
+                    },
                     "1": {
                         "then": "Açò és una universitat, una institució d'educació terciaria on s'imparteixen carreres universitàries o superior."
                     }
@@ -7883,8 +7924,14 @@
         },
         "title": {
             "mappings": {
+                "1": {
+                    "then": "Institut superior"
+                },
                 "2": {
                     "then": "Universitat"
+                },
+                "3": {
+                    "then": "Escola que imparteix educació terciària"
                 }
             }
         }
@@ -8147,10 +8194,22 @@
                         "question": "Accessible amb cadira de rodes"
                     }
                 }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Ús gratuït"
+                    }
+                }
             }
         },
         "name": "Lavabos a altres instal·lacions",
         "tagRenderings": {
+            "opening_hours": {
+                "override": {
+                    "question": "Quan està oberta la instal·lació on es troben aquests lavabos?"
+                }
+            },
             "toilet-access": {
                 "mappings": {
                     "0": {
@@ -8202,8 +8261,17 @@
                 "question": "Hi ha un lavabo específic per a usuaris amb cadira de rodes?"
             },
             "wheelchair-door-width": {
-                "question": "Quina és l'amplada de la porta del lavabo accessible per a cadira de rodes?"
+                "question": "Quina és l'amplada de la porta del lavabo accessible per a cadira de rodes?",
+                "render": "La porta del vàter accessible amb cadira de rodes és {canonical(toilets:door:width)} d'ample"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Bany a {name}"
+                }
+            },
+            "render": "Lavabo a la instal·lació"
         },
         "units": {
             "0": {
@@ -8290,6 +8358,7 @@
         }
     },
     "transit_stops": {
+        "description": "Capa que mostra diferents tipus de parades de transport públic",
         "filter": {
             "0": {
                 "options": {
@@ -8422,7 +8491,8 @@
                 "0": {
                     "then": "Parada {name}"
                 }
-            }
+            },
+            "render": "Parada de transport públic"
         }
     },
     "tree_node": {
@@ -8811,6 +8881,12 @@
                     },
                     "16": {
                         "question": "Venda de productes carnis"
+                    },
+                    "17": {
+                        "question": "Venda d'aparcament"
+                    },
+                    "18": {
+                        "question": "Venda de monedes premsades"
                     },
                     "19": {
                         "question": "Venda de flors"

@@ -147,7 +147,8 @@
         "fr": "<h3>Contient {_contained_climbing_routes_count} voies</h3> <ul>{_contained_climbing_routes}</ul>",
         "it": "<h3>Contiene {_contained_climbing_routes_count} vie</h3> <ul>{_contained_climbing_routes}</ul>",
         "de": "<h3> Enthält {_contained_climbing_routes_count} Routen</h3> <ul>{_contained_climbing_routes}</ul>",
-        "nl": "<h3>Bevat {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>"
+        "nl": "<h3>Bevat {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>",
+        "ca": "<h3>Conté {_contained_climbing_routes_count} rutes</h3> <ul>{_contained_climbing_routes}</ul>"
       },
       "condition": "_contained_climbing_routes~*",
       "id": "Contained_climbing_routes"
@@ -206,7 +207,8 @@
             "fr": "Rocher d’escalade, rocher avec une ou peu de voie permettant d’escalader sans corde",
             "de": "Ein Kletterfelsen - ein einzelner Felsen oder eine Klippe mit einer oder wenigen Kletterrouten, die ohne Seil sicher bestiegen werden können",
             "it": "Un masso per arrampicata (una singola roccia o falesia con una o poche vie di arrampicata che possono essere scalate in sicurezza senza una corda)",
-            "nl": "Een klimboulder - een enkele rots of klif met één of enkele klimroutes die veilig zonder touw kunnen worden beklommen"
+            "nl": "Een klimboulder - een enkele rots of klif met één of enkele klimroutes die veilig zonder touw kunnen worden beklommen",
+            "ca": "Una roca d'escalada: una única roca o penya-segat amb una o unes quantes vies d'escalada que es poden escalar amb seguretat sense corda"
           }
         },
         {
@@ -256,7 +258,8 @@
             "de": "Kalkstein",
             "it": "Calcare",
             "pa_PK": "چونہ پتھر",
-            "eu": "Kareharria"
+            "eu": "Kareharria",
+            "ca": "Calcària"
           }
         }
       ],

@@ -988,18 +988,38 @@
       "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
-      "key": "payment:coins",
-      "description": "Layer 'Bicycle tube vending machine' shows payment:coins=yes with a fixed text, namely 'Payment with coins is possible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "yes"
-    },
-    {
-      "key": "payment:notes",
-      "description": "Layer 'Bicycle tube vending machine' shows payment:notes=yes with a fixed text, namely 'Payment with notes is possible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "key": "payment:cash",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "yes"
     },
     {
       "key": "payment:cards",
-      "description": "Layer 'Bicycle tube vending machine' shows payment:cards=yes with a fixed text, namely 'Payment with cards is possible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:debit_cards",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:credit_cards",
+      "description": "Layer 'Bicycle tube vending machine' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "yes"
     },
     {
@@ -1031,29 +1051,34 @@
       "value": "Continental"
     },
     {
-      "key": "vending:bicycle_light",
-      "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_light=yes with a fixed text, namely 'Bicycle lights are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "yes"
+      "key": "vending",
+      "description": "Layer 'Bicycle tube vending machine' shows vending=bicycle_tube with a fixed text, namely 'Bicycle inner tubes are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "bicycle_tube"
     },
     {
-      "key": "vending:gloves",
-      "description": "Layer 'Bicycle tube vending machine' shows vending:gloves=yes with a fixed text, namely 'Gloves are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "yes"
+      "key": "vending",
+      "description": "Layer 'Bicycle tube vending machine' shows vending=bicycle_light with a fixed text, namely 'Bicycle lights are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "bicycle_light"
     },
     {
-      "key": "vending:bicycle_repair_kit",
-      "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_repair_kit=yes with a fixed text, namely 'Bicycle repair kits are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "yes"
+      "key": "vending",
+      "description": "Layer 'Bicycle tube vending machine' shows vending=gloves with a fixed text, namely 'Gloves are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "gloves"
     },
     {
-      "key": "vending:bicycle_pump",
-      "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_pump=yes with a fixed text, namely 'Bicycle pumps are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "yes"
+      "key": "vending",
+      "description": "Layer 'Bicycle tube vending machine' shows vending=bicycle_repair_kit with a fixed text, namely 'Bicycle repair kits are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "bicycle_repair_kit"
     },
     {
-      "key": "vending:bicycle_lock",
-      "description": "Layer 'Bicycle tube vending machine' shows vending:bicycle_lock=yes with a fixed text, namely 'Bicycle locks are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "yes"
+      "key": "vending",
+      "description": "Layer 'Bicycle tube vending machine' shows vending=bicycle_pump with a fixed text, namely 'Bicycle pumps are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "bicycle_pump"
+    },
+    {
+      "key": "vending",
+      "description": "Layer 'Bicycle tube vending machine' shows vending=bicycle_lock with a fixed text, namely 'Bicycle locks are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "bicycle_lock"
     },
     {
       "key": "amenity",

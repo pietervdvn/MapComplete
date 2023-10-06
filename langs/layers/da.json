@@ -3170,6 +3170,9 @@
                     },
                     "6": {
                         "then": "En affaldskurv til plast"
+                    },
+                    "7": {
+                        "then": "En affaldskurv til papir"
                     }
                 },
                 "question": "Hvad er det for en affaldskurv?"

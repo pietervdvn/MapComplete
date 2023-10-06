@@ -71,6 +71,11 @@
       "value": "plastic"
     },
     {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=paper with a fixed text, namely 'A waste basket for paper' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste Basket')",
+      "value": "paper"
+    },
+    {
       "key": "vending",
       "description": "Layer 'Waste Basket' shows vending=dog_excrement_bag with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste Basket') (This is only shown if waste=dog_excrement|waste=trash|)",
       "value": "dog_excrement_bag"

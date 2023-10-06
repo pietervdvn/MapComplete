@@ -161,6 +161,8 @@ This is rendered with  `Access is {access}`
   - This option cannot be chosen as answer
 
 
+This tagrendering has labels  `relevant-questions`
+
 
 
 ### toilets-fee 
@@ -177,6 +179,8 @@ The question is  *Are these toilets free to use?*
   - *Free to use*  corresponds with  `fee=no`
 
 
+This tagrendering has labels  `relevant-questions`
+
 
 
 ### toilet-charge 
@@ -192,6 +196,8 @@ This is rendered with  `The fee is {charge}`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `fee=yes`
+
+This tagrendering has labels  `relevant-questions`
 
 
 
@@ -225,6 +231,8 @@ The question is  *Which methods of payment are accepted here?*
 
 This tagrendering is only visible in the popup if the following condition is met: `fee=yes`
 
+This tagrendering has labels  `relevant-questions`
+
 
 
 ### opening_hours_24_7 
@@ -244,6 +252,8 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
   - *24/7 opened (including holidays)*  corresponds with  `opening_hours=24/7`
 
 
+This tagrendering has labels  `relevant-questions`
+
 
 
 ### toilets-wheelchair 
@@ -261,6 +271,8 @@ The question is  *Is there a dedicated toilet for wheelchair users?*
   - *There is only a dedicated toilet for wheelchair users*  corresponds with  `wheelchair=designated`
 
 
+This tagrendering has labels  `relevant-questions`
+
 
 
 ### wheelchair-door-width 
@@ -276,6 +288,8 @@ This is rendered with  `The door to the wheelchair-accessible toilet is {canonic
 
 
 This tagrendering is only visible in the popup if the following condition is met: `wheelchair=yes|wheelchair=designated`
+
+This tagrendering has labels  `relevant-questions`
 
 
 
@@ -295,6 +309,8 @@ The question is  *Which kind of toilets are this?*
   - *Both seated toilets and urinals are available here*  corresponds with  `toilets:position=seated;urinal`
 
 
+This tagrendering has labels  `relevant-questions`
+
 
 
 ### toilets-changing-table 
@@ -310,6 +326,8 @@ The question is  *Is a changing table (to change diapers) available?*
   - *A changing table is available*  corresponds with  `changing_table=yes`
   - *No changing table is available*  corresponds with  `changing_table=no`
 
+
+This tagrendering has labels  `relevant-questions`
 
 
 
@@ -335,6 +353,8 @@ This is rendered with  `The changing table is located at {changing_table:locatio
 
 This tagrendering is only visible in the popup if the following condition is met: `changing_table=yes`
 
+This tagrendering has labels  `relevant-questions`
+
 
 
 ### toilet-handwashing 
@@ -351,6 +371,8 @@ The question is  *Do these toilets have a sink to wash your hands?*
   - *This toilets <b>don't</b> have a sink to wash your hands*  corresponds with  `toilets:handwashing=no`
 
 
+This tagrendering has labels  `relevant-questions`
+
 
 
 ### toilet-has-paper 
@@ -366,6 +388,8 @@ The question is  *Does one have to bring their own toilet paper to this toilet?*
   - *This toilet is equipped with toilet paper*  corresponds with  `toilets:paper_supplied=yes`
   - *You have to bring your own toilet paper to this toilet*  corresponds with  `toilets:paper_supplied=no`
 
+
+This tagrendering has labels  `relevant-questions`
 
 
 
