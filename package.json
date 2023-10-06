@@ -37,7 +37,7 @@
   },
   "scripts": {
     "start": "npm run generate:layeroverview && npm run strt",
-    "strt": "vite --host",
+    "strt": "vite --host | sed 's/localhost:/127.0.0.1:/g'",
     "strttest": "export NODE_OPTIONS=--max_old_space_size=8364 && parcel serve test.html assets/templates/*.svg assets/templates/fonts/*.ttf",
     "watch:css": "tailwindcss -i index.css -o public/css/index-tailwind-output.css --watch",
     "generate:css": "tailwindcss -i src/index.css -o public/css/index-tailwind-output.css",
