@@ -1290,7 +1290,8 @@
           "then": {
             "en": "5 centimes coins are accepted",
             "nl": "Munten van 5 rappen worden geaccepteerd",
-            "ca": "S'accepten monedes de 5 cèntims"
+            "ca": "S'accepten monedes de 5 cèntims",
+            "de": "5-Centime-Münzen werden akzeptiert"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1300,7 +1301,8 @@
           "then": {
             "en": "10 centimes coins are accepted",
             "nl": "Munten van 10 rappen worden geaccepteerd",
-            "ca": "S'accepten monedes de 10 cèntims"
+            "ca": "S'accepten monedes de 10 cèntims",
+            "de": "10-Centime-Münzen werden akzeptiert"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1310,7 +1312,8 @@
           "then": {
             "en": "20 centimes coins are accepted",
             "nl": "Munten van 20 rappen worden geaccepteerd",
-            "ca": "S'accepten monedes de 20 cèntims"
+            "ca": "S'accepten monedes de 20 cèntims",
+            "de": "20-Centime-Münzen werden akzeptiert"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1319,7 +1322,9 @@
           "icon": "./assets/layers/questions/denominations/chf/50rp-2019-800px.png",
           "then": {
             "en": "½ franc coins are accepted",
-            "nl": "Munten van ½ frank worden geaccepteerd"
+            "nl": "Munten van ½ frank worden geaccepteerd",
+            "ca": "S'accepten monedes de ½ franc",
+            "de": "½-Schweizer Franken-Münzen werden akzeptiert"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1329,7 +1334,8 @@
           "then": {
             "en": "1 franc coins are accepted",
             "nl": "Munten van 1 frank worden geaccepteerd",
-            "ca": "S'accepten monedes d'1 franc"
+            "ca": "S'accepten monedes d'1 franc",
+            "de": "1-Schweizer Franken-Münzen werden akzeptiert"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1339,7 +1345,8 @@
           "then": {
             "en": "2 francs coins are accepted",
             "nl": "Munten van 2 frank worden geaccepteerd",
-            "ca": "S'accepten monedes de 2 francs"
+            "ca": "S'accepten monedes de 2 francs",
+            "de": "2-Schweizer Franken-Münzen werden akzeptiert"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1349,7 +1356,8 @@
           "then": {
             "en": "5 francs coins are accepted",
             "nl": "Munten van 5 frank worden geaccepteerd",
-            "ca": "S'accepten monedes de 5 francs"
+            "ca": "S'accepten monedes de 5 francs",
+            "de": "5-Schweizer Franken-Münzen werden akzeptiert"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         }
@@ -1496,7 +1504,8 @@
           "then": {
             "en": "10 francs notes are accepted",
             "nl": "Biljetten van 10 frank worden geaccepteerd",
-            "ca": "S'accepten bitllets de 10 francs"
+            "ca": "S'accepten bitllets de 10 francs",
+            "de": "10-Schweizer Franken-Scheine werden akzeptiert"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1506,7 +1515,8 @@
           "then": {
             "en": "20 francs notes are accepted",
             "nl": "Biljetten van 20 frank worden geaccepteerd",
-            "ca": "S'accepten bitllets de 20 francs"
+            "ca": "S'accepten bitllets de 20 francs",
+            "de": "20-Schweizer Franken-Scheine werden akzeptiert"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1516,7 +1526,8 @@
           "then": {
             "en": "50 francs notes are accepted",
             "nl": "Biljetten van 50 frank worden geaccepteerd",
-            "ca": "S'accepten bitllets de 50 francs"
+            "ca": "S'accepten bitllets de 50 francs",
+            "de": "50-Schweizer Franken-Scheine werden akzeptiert"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1526,7 +1537,8 @@
           "then": {
             "en": "100 francs notes are accepted",
             "nl": "Biljetten van 100 frank worden geaccepteerd",
-            "ca": "S'accepten bitllets de 100 francs"
+            "ca": "S'accepten bitllets de 100 francs",
+            "de": "100-Schweizer Franken-Scheine werden akzeptiert"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1536,7 +1548,8 @@
           "then": {
             "en": "200 francs notes are accepted",
             "nl": "Biljetten van 200 frank worden geaccepteerd",
-            "ca": "S'accepten bitllets de 200 francs"
+            "ca": "S'accepten bitllets de 200 francs",
+            "de": "200-Schweizer Franken-Scheine werden akzeptiert"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1546,7 +1559,8 @@
           "then": {
             "en": "1000 francs notes are accepted",
             "nl": "Biljetten van 1000 frank worden geaccepteerd",
-            "ca": "S'accepten bitllets de 1000 francs"
+            "ca": "S'accepten bitllets de 1000 francs",
+            "de": "1000-Schweizer Franken-Scheine werden akzeptiert"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         }
@@ -1679,7 +1693,8 @@
       "condition": "repeat_on~*",
       "render": {
         "en": "Multiple, identical objects can be found on floors {repeat_on}.",
-        "nl": "Er zijn verschillende, identieke objecten op verdiepingen {repeat_on}."
+        "nl": "Er zijn verschillende, identieke objecten op verdiepingen {repeat_on}.",
+        "de": "Mehrere identische Objekte können in Geschossen {repeat_on} gefunden werden."
       }
     },
     {

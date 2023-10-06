@@ -9,7 +9,8 @@
     "en": "Layer with parking ticket machines to pay for parking.",
     "nl": "Laag met parkeerkaartautomaten om voor parkeren te betalen.",
     "de": "Ebene mit Parkscheinautomaten zum Bezahlen des Parkens.",
-    "fr": "Couche avec les distributeurs de tickets pour payer le parking."
+    "fr": "Couche avec les distributeurs de tickets pour payer le parking.",
+    "ca": "Capa amb màquines de bitllets d'aparcament per pagar l'aparcament."
   },
   "title": {
     "render": {

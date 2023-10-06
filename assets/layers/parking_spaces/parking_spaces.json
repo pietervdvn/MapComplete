@@ -25,7 +25,8 @@
       "question": {
         "en": "What kind of parking space is this?",
         "de": "Welche Art von Stellplatz ist dies?",
-        "nl": "Wat voor parkeerplek is dit?"
+        "nl": "Wat voor parkeerplek is dit?",
+        "ca": "Quin tipus d'espai d'aparcament és aquest?"
       },
       "mappings": [
         {
@@ -151,7 +152,8 @@
             "en": "This is a parking space reserved for taxis.",
             "de": "Dies ist ein Stellplatz, der für Taxis reserviert ist.",
             "nl": "Deze parkeerplek is gereserveerd voor taxis.",
-            "pl": "To miejsce parkingowe jest przeznaczone dla taksówek."
+            "pl": "To miejsce parkingowe jest przeznaczone dla taksówek.",
+            "ca": "Aquest espai d'aparcament està reservat per a taxi."
           }
         },
         {
@@ -197,7 +199,8 @@
     "render": {
       "en": "Parking Space",
       "de": "Stellplatz",
-      "nl": "Parkeerplek"
+      "nl": "Parkeerplek",
+      "ca": "Espai d'aparcament"
     },
     "mappings": [
       {

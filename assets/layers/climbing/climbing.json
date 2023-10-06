@@ -182,7 +182,7 @@
             "ja": "{climbing:boulder} ボルダールートがある",
             "fr": "Il y a {climbing:boulder} problèmes de bloc",
             "it": "Sono presenti {climbing:boulder} vie di arrampicata su massi",
-            "ca": "Hi han {climbing:boulder} rutes d'escalada en bloc"
+            "ca": "Hi han {climbing:boulder} problemes d'escalada en bloc"
           },
           "hideInAnswer": true
         }

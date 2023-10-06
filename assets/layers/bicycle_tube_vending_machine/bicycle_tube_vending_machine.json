@@ -33,7 +33,9 @@
       {
         "if": "name~*",
         "then": {
-          "en": "Bicycle tube vending machine {name}"
+          "en": "Bicycle tube vending machine {name}",
+          "ca": "Màquina expenedora de cambres d'aire de bicicletes {name}",
+          "de": "{name} Fahrradschlauch-Automat"
         }
       }
     ]
@@ -178,10 +180,14 @@
     },
     {
       "question": {
-        "en": "How much does a bicycle tube cost?"
+        "en": "How much does a bicycle tube cost?",
+        "ca": "Quant costa una cambra d'aire de bicicleta?",
+        "de": "Wie viel kostet ein Fahrradschlauch?"
       },
       "render": {
-        "en": "A bicycle tube costs {charge}"
+        "en": "A bicycle tube costs {charge}",
+        "ca": "Una cambra d'aire de bicicleta costa {charge}",
+        "de": "Ein Fahrradschlauch kostet {charge}"
       },
       "freeform": {
         "key": "charge"
@@ -191,25 +197,33 @@
     "payment-options-split",
     {
       "question": {
-        "en": "Which brand of tubes are sold here?"
+        "en": "Which brand of tubes are sold here?",
+        "ca": "Quines marques de cambres d'aire es venen aquí?",
+        "de": "Welche Fahrradschläuche werden hier verkauft?"
       },
       "freeform": {
         "key": "brand"
       },
       "render": {
-        "en": "{brand} tubes are sold here"
+        "en": "{brand} tubes are sold here",
+        "ca": "Aquí es venen cambres d'aire {brand}",
+        "de": "Hier werden Fahrradschläuche von {brand} verkauft"
       },
       "mappings": [
         {
           "if": "brand=Continental",
           "then": {
-            "en": "Continental tubes are sold here"
+            "en": "Continental tubes are sold here",
+            "ca": "Aquí es venen cambres d'aire Continental",
+            "de": "Hier werden Fahrradschläuche von Continental verkauft"
           }
         },
         {
           "if": "brand=Schwalbe",
           "then": {
-            "en": "Schwalbe tubes are sold here"
+            "en": "Schwalbe tubes are sold here",
+            "ca": "Aquí es venen cambres d'aire Schwalbe",
+            "de": "Hier werden Fahrradschläuche von Schwalbe verkauft"
           }
         }
       ],
@@ -218,20 +232,26 @@
     },
     {
       "question": {
-        "en": "Who maintains this vending machine?"
+        "en": "Who maintains this vending machine?",
+        "ca": "Qui manté aquesta màquina expenedora?",
+        "de": "Wer betreibt den Automaten?"
       },
       "render": "This vending machine is maintained by {operator}",
       "mappings": [
         {
           "if": "operator=Schwalbe",
           "then": {
-            "en": "Maintained by Schwalbe"
+            "en": "Maintained by Schwalbe",
+            "ca": "Mantés per Schwalbe",
+            "de": "Betrieben von Schwalbe"
           }
         },
         {
           "if": "operator=Continental",
           "then": {
-            "en": "Maintained by Continental"
+            "en": "Maintained by Continental",
+            "ca": "Mantés per Continental",
+            "de": "Betrieben von Continental"
           }
         }
       ],
@@ -243,49 +263,63 @@
     {
       "id": "other-items-vending",
       "question": {
-        "en": "Are other biycle accessories sold here?"
+        "en": "Are other biycle accessories sold here?",
+        "ca": "Es venen altres accessoris per a bicicletes aquí?",
+        "de": "Wird weiteres Fahrradzubehör verkauft?"
       },
       "mappings": [
         {
           "if": "vending=bicycle_tube",
           "then": {
             "en": "Bicycle inner tubes are sold here",
-            "nl": "Fietsbinnenbanden worden hier verkocht"
+            "nl": "Fietsbinnenbanden worden hier verkocht",
+            "ca": "Aquí es venen cambres d'aire de bicicletes",
+            "de": "Hier werden Fahrradschläuche verkauft"
           }
         },
         {
           "if": "vending=bicycle_light",
           "then": {
             "en": "Bicycle lights are sold here",
-            "nl": "Fietslampjes worden hier verkocht"
+            "nl": "Fietslampjes worden hier verkocht",
+            "ca": "Aquí es venen llums per a bicicletes",
+            "de": "Hier werden Fahrradlampen verkauft"
           }
         },
         {
           "if": "vending=gloves",
           "then": {
             "en": "Gloves are sold here",
-            "nl": "Handschoenen worden hier verkocht"
+            "nl": "Handschoenen worden hier verkocht",
+            "ca": "Aquí es venen guants",
+            "de": "Hier werden Fahrradhandschuhe verkauft"
           }
         },
         {
           "if": "vending=bicycle_repair_kit",
           "then": {
             "en": "Bicycle repair kits are sold here",
-            "nl": "Fietsreparatiesets worden hier verkocht"
+            "nl": "Fietsreparatiesets worden hier verkocht",
+            "ca": "Aquí es venen kits de reparació de bicicletes",
+            "de": "Hier werden Fahrrad-Reparatursets verkauft"
           }
         },
         {
           "if": "vending=bicycle_pump",
           "then": {
             "en": "Bicycle pumps are sold here",
-            "nl": "Fietspompen worden hier verkocht"
+            "nl": "Fietspompen worden hier verkocht",
+            "ca": "Aquí es venen bombes de bicicletes",
+            "de": "Hier werden Fahrradpumpen verkauft"
           }
         },
         {
           "if": "vending=bicycle_lock",
           "then": {
             "en": "Bicycle locks are sold here",
-            "nl": "Fietssloten worden hier verkocht"
+            "nl": "Fietssloten worden hier verkocht",
+            "ca": "Aquí es venen cadenats per a bicicletes",
+            "de": "Hier werden Fahrradschlösser verkauft"
           }
         }
       ],

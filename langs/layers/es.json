@@ -4779,6 +4779,13 @@
     },
     "usersettings": {
         "tagRenderings": {
+            "cscount-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Has hecho cambios en {_csCount} ocasiones diferentes. ¡Es alucinante!"
+                    }
+                }
+            },
             "picture-license": {
                 "mappings": {
                     "1": {

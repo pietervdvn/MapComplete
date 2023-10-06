@@ -169,7 +169,8 @@
             "en": "Should <b>not</b> mention {search} in the first comment",
             "nl": "Mag in de eerste opmerking <b>niet</b> \"{search}\" bevatten",
             "de": "Sollte <b>nicht</b> {search} im ersten Kommentar erwähnen",
-            "es": "<b>No</b> debe mencionar {search} en el primer comentario"
+            "es": "<b>No</b> debe mencionar {search} en el primer comentario",
+            "ca": "<b>No</b> s'ha de mencionar {search} al primer comentari"
           }
         }
       ]

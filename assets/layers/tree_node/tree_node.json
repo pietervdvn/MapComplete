@@ -88,7 +88,7 @@
         "da": "Hvilken art er dette træ?",
         "pt": "Que espécie é esta árvore?",
         "pt_BR": "Que espécie é esta árvore?",
-        "ca": "Quina espècie és aquest arbre?"
+        "ca": "De quina espècie és aquest arbre?"
       },
       "render": {
         "*": "{wikipedia(species:wikidata):max-height: 25rem}"

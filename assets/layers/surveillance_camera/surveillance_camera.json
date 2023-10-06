@@ -44,25 +44,29 @@
       "id": "has_alpr",
       "question": {
         "en": "Can this camera automatically detect license plates?",
-        "ca": "Aquesta càmera pot detectar matrícules automàticament?"
+        "ca": "Aquesta càmera pot detectar matrícules automàticament?",
+        "de": "Dient diese Kamera der Nummernschilderkennung?"
       },
       "questionHint": {
         "en": "An <b>ALPR</b> (Automatic License Plate Reader) typically has two lenses and an array of infrared LEDS in between.",
-        "ca": "Un <b>ALPR</b> (lector automàtic de matrícules, per les seves sigles en anglès) normalment té dues lents i una sèrie de LEDs infrarojos entremig."
+        "ca": "Un <b>ALPR</b> (lector automàtic de matrícules, per les seves sigles en anglès) normalment té dues lents i una sèrie de LEDs infrarojos entremig.",
+        "de": "Eine Kamera zur <b>Nummernschilderkennung</b> hat üblicherweise zwei Linsen mit dazwischenliegenden Infrarot-LEDs."
       },
       "mappings": [
         {
           "if": "surveillance:type=camera",
           "then": {
             "en": "This is a camera without number plate recognition.",
-            "ca": "Es tracta d'una càmera sense reconeixement de matrícules."
+            "ca": "Es tracta d'una càmera sense reconeixement de matrícules.",
+            "de": "Dies ist eine Kamera ohne Nummernschilderkennung."
           }
         },
         {
           "if": "surveillance:type=ALPR",
           "then": {
             "en": "This is an ALPR (Automatic License Plate Reader)",
-            "ca": "Açò és un ALPR (lector automàtic de matrícules, per les seves sigles en anglès)"
+            "ca": "Açò és un ALPR (lector automàtic de matrícules, per les seves sigles en anglès)",
+            "de": "Dies ist eine Kamera mit Nummernschilderkennung"
           },
           "icon": {
             "path": "./assets/layers/surveillance_camera/ALPR.svg"
@@ -636,11 +640,13 @@
       ],
       "title": {
         "en": "an ALPR camera (Automatic Number Plate Reader)",
-        "ca": "una càmera ALPR (lector automàtic de matrícules, per les seves sigles en anglès)"
+        "ca": "una càmera ALPR (lector automàtic de matrícules, per les seves sigles en anglès)",
+        "de": "Eine Kamera zur automatischen Nummernschilderkennung"
       },
       "description": {
         "en": "An ALPR typically has two lenses and an array of infrared lights.",
-        "ca": "Un ALPR normalment té dues lents i una sèrie de llums infrarojes."
+        "ca": "Un ALPR normalment té dues lents i una sèrie de llums infrarojes.",
+        "de": "Eine automatische Nummernschilderkennung hat üblicherweise zwei Linsen und ein Reihe aus Infrarotlichtern."
       },
       "exampleImages": [
         "./assets/layers/surveillance_camera/ALPR_Example.jpg",
@@ -655,11 +661,13 @@
       ],
       "title": {
         "en": "an ALPR camera (Automatic Number Plate Reader) mounted on a wall",
-        "ca": "una càmera ALPR (lector automàtic de matrícules) muntada a la paret"
+        "ca": "una càmera ALPR (lector automàtic de matrícules) muntada a la paret",
+        "de": "eine Kamera zur Nummernschilderkennung, die an einer Wand befestigt ist"
       },
       "description": {
         "en": "An ALPR typically has two lenses and an array of infrared lights.",
-        "ca": "Un ALPR normalment té dues lents i una sèrie de llums infrarojes."
+        "ca": "Un ALPR normalment té dues lents i una sèrie de llums infrarojes.",
+        "de": "Eine automatische Nummernschilderkennung hat üblicherweise zwei Linsen und ein Reihe aus Infrarotlichtern."
       },
       "exampleImages": [
         "./assets/layers/surveillance_camera/ALPR_Example.jpg",

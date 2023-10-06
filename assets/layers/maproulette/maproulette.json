@@ -99,7 +99,8 @@
             "en": "Task is skipped",
             "de": "Aufgabe wurde übersprungen",
             "nl": "Taak werd overgeslagen",
-            "pl": "Zadanie jest pominięte"
+            "pl": "Zadanie jest pominięte",
+            "ca": "La tasca s'ha botat"
           }
         },
         {
@@ -108,7 +109,8 @@
             "en": "Task is deleted",
             "de": "Aufgabe wurde gelöscht",
             "nl": "Taak werd verwijderd",
-            "pl": "Zadania jest usunięte"
+            "pl": "Zadania jest usunięte",
+            "ca": "La tasca s'ha eliminat"
           }
         },
         {
@@ -117,7 +119,8 @@
             "en": "Task is already fixed",
             "de": "Aufgabe wurde bereits erledigt",
             "nl": "Taak was al opgelost",
-            "pl": "Zadania jest już wykonane"
+            "pl": "Zadania jest już wykonane",
+            "ca": "La tasca ja està arreglada"
           }
         },
         {
@@ -126,7 +129,8 @@
             "en": "Task is marked as too hard",
             "de": "Aufgabe wurde als zu schwer markiert",
             "nl": "Taak werd als te moeilijk ervaren",
-            "pl": "Zadanie jest oznaczone jako zbyt trudne"
+            "pl": "Zadanie jest oznaczone jako zbyt trudne",
+            "ca": "La tasca s'ha marcat com a molt difícil"
           }
         },
         {
@@ -135,7 +139,8 @@
             "en": "Task is disabled",
             "de": "Aufgabe wurde deaktiviert",
             "nl": "Taak is uitgeschakeld",
-            "pl": "Zadanie jest wyłączone"
+            "pl": "Zadanie jest wyłączone",
+            "ca": "La tasca està deshabilitada"
           }
         }
       ]

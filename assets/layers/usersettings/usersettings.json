@@ -115,14 +115,16 @@
       },
       "render": {
         "en": "This thematic map has a predefined background layer set. Your default theme setting does not apply",
-        "ca": "Aquest mapa temàtic té un conjunt de capes de fons predefinides. La configuració predeterminada del tema no s'aplica"
+        "ca": "Aquest mapa temàtic té un conjunt de capes de fons predefinides. La configuració predeterminada del tema no s'aplica",
+        "de": "Diese thematische Karte hat einen vordefinierten Hintergrund. Ihr Standardhintergrund wird nicht angewendet"
       }
     },
     {
       "id": "background-layer",
       "question": {
         "en": "What background layer should be shown by default?",
-        "ca": "Quina capa de fons s'ha de mostrar per defecte?"
+        "ca": "Quina capa de fons s'ha de mostrar per defecte?",
+        "de": "Welche Hintergrundebene soll als Standard verwendet werden?"
       },
       "condition": "_theme:backgroundLayer=",
       "mappings": [
@@ -130,35 +132,40 @@
           "if": "mapcomplete-preferred-background-layer=",
           "then": {
             "en": "Use the default background layer",
-            "ca": "Utilitzeu la capa de fons predeterminada"
+            "ca": "Utilitzeu la capa de fons predeterminada",
+            "de": "Standardhintergrund verwenden"
           }
         },
         {
           "if": "mapcomplete-preferred-background-layer=osm",
           "then": {
             "en": "Use OpenStreetMap-carto as default layer",
-            "ca": "Utilitzeu OpenStreetMap-carto com a capa predeterminada"
+            "ca": "Utilitzeu OpenStreetMap-carto com a capa predeterminada",
+            "de": "OpenStreetMap-carto als Standardhintergrund verwenden"
           }
         },
         {
           "if": "mapcomplete-preferred-background-layer=photo",
           "then": {
             "en": "Use aerial imagery as default background",
-            "ca": "Utilitzeu imatges aèries com a fons predeterminat"
+            "ca": "Utilitzeu imatges aèries com a fons predeterminat",
+            "de": "Satellitenbilder als Standardhintergrund verwenden"
           }
         },
         {
           "if": "mapcomplete-preferred-background-layer=map",
           "then": {
             "en": "Use a non-openstreetmap based map as default background",
-            "ca": "Utilitzeu un mapa que no sigui openstreetmap com a fons predeterminat"
+            "ca": "Utilitzeu un mapa que no sigui openstreetmap com a fons predeterminat",
+            "de": "Eine eigene Karte als Standardhintergrund verwenden"
           }
         },
         {
           "if": "mapcomplete-preferred-background-layer:={__current_background}",
           "then": {
             "en": "Use the current background layer (<span class='code'>{__current_background}</span>) as default background",
-            "ca": "Utilitzeu la capa de fons actual (<span class='code'>{__current_background}</span>) com a fons predeterminat"
+            "ca": "Utilitzeu la capa de fons actual (<span class='code'>{__current_background}</span>) com a fons predeterminat",
+            "de": "Aktuelle Hintergrundebene (<span class='code'>{__current_background}</span>) als Standardhintergrund verwenden"
           },
           "hideInAnswer": {
             "or": [
@@ -172,7 +179,8 @@
           "if": "mapcomplete-preferred-background-layer~*",
           "then": {
             "en": "Use background layer <span class='code'>{mapcomplete-preferred-background-layer}</span> as default background",
-            "ca": "Utilitza la capa de fons <span class='code'>{mapcomplete-preferred-background-layer}</span> com a fons predeterminat"
+            "ca": "Utilitza la capa de fons <span class='code'>{mapcomplete-preferred-background-layer}</span> com a fons predeterminat",
+            "de": "Hintergrundebene <span class='code'>{mapcomplete-preferred-background-layer}</span> als Standardhintergrund verwenden"
           },
           "hideInAnswer": true
         }
@@ -559,7 +567,8 @@
             "fr": "Vous avez fait {_csCount} modifications ! C'est génial !",
             "pt": "Você fez alterações em {_csCount} ocasiões diferentes! Isso é incrível!",
             "nl": "Je hebt {_csCount} verschillende keren bijgedragen! Dat is indrukwekkend!",
-            "da": "Du har lavet ændringer ved {_csCount} forskellige begivenheder! Det er fantastisk!"
+            "da": "Du har lavet ændringer ved {_csCount} forskellige begivenheder! Det er fantastisk!",
+            "es": "Has hecho cambios en {_csCount} ocasiones diferentes. ¡Es alucinante!"
           },
           "icon": "party"
         }

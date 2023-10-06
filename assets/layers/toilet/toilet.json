@@ -400,7 +400,7 @@
         "relevant-questions"
       ],
       "question": {
-        "en": "Which kind of toilets are this?",
+        "en": "Which kind of toilets are these?",
         "de": "Welche Toiletten gibt es hier?",
         "fr": "De quel type sont ces toilettes ?",
         "nl": "Welke toiletten zijn dit?",
@@ -608,7 +608,7 @@
         {
           "if": "toilets:handwashing=yes",
           "then": {
-            "en": "This toilets have a sink to wash your hands",
+            "en": "These toilets have a sink to wash your hands",
             "nl": "Deze toiletten hebben een lavabo waar men de handen kan wassen",
             "de": "Die Toilette hat ein Handwaschbecken",
             "es": "Estos baños tienen una pileta para lavarse las manos",
@@ -620,7 +620,7 @@
         {
           "if": "toilets:handwashing=no",
           "then": {
-            "en": "This toilets <b>don't</b> have a sink to wash your hands",
+            "en": "These toilets <b>don't</b> have a sink to wash your hands",
             "nl": "Deze toiletten hebben <b>geen</b> lavabo waar men de handen kan wassen",
             "de": "Die Toilette hat <b>kein</b> Handwaschbecken",
             "es": "Estos baños <b>no</b> tienen una pileta para lavarse las manos",

@@ -77,7 +77,7 @@
         "cuisine=friture"
       ],
       "description": {
-        "en": "A fastfood-business focused on french fries",
+        "en": "A fast-food business focused on french fries",
         "nl": "Een fastfood-zaak waar je frieten koopt",
         "de": "Eine Pommesbude",
         "fr": "Une restauration rapide centré sur la vente de frites",
@@ -184,7 +184,7 @@
         {
           "if": "amenity=fast_food",
           "then": {
-            "en": "This is a fastfood-business, focused on fast service. If seating is available, these are rather limited and functional.",
+            "en": "This is a fast-food business, focused on fast service. If seating is available, it is rather limited and functional.",
             "nl": "Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel.",
             "de": "Es handelt sich um einen Schnellimbiss, mit Fokus auf schnelle Bedienung am Tresen. Sitzmöglichkeiten sind begrenzt und funktional.",
             "es": "Este es un negocio de comida rápida, centrado en servicio rápido. Si hay asientos disponibles, son más bien limitados y funcionales.",
@@ -217,7 +217,7 @@
     {
       "question": {
         "nl": "Welk soort gerechten worden hier geserveerd?",
-        "en": "Which food is served here?",
+        "en": "What kind of food is served here?",
         "de": "Was für Essen gibt es hier?",
         "es": "¿Qué comida se sirve aquí?",
         "fr": "Quelle type de nourriture est servie ici ?",
@@ -287,7 +287,7 @@
         {
           "if": "cuisine=sandwich",
           "then": {
-            "en": "This is a sandwichbar",
+            "en": "This is a sandwich shop",
             "nl": "Dit is een broodjeszaak",
             "de": "Dies ist ein Sandwichladen",
             "fr": "C'est une sandwicherie",
@@ -331,7 +331,7 @@
         {
           "if": "cuisine=italian",
           "then": {
-            "en": "This is an italian restaurant (which serves more then pasta and pizza)",
+            "en": "This is an Italian restaurant (which serves more than pasta and pizza)",
             "nl": "Dit is een Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)",
             "de": "Dies ist ein italienisches Restaurant (das mehr als nur Pasta und Pizza serviert)",
             "es": "Este es un restaurante italiano (que sirve más que pasta y pizza)",
@@ -512,7 +512,7 @@
     {
       "id": "delivery",
       "question": {
-        "en": "Delivers {title()} their food at home?",
+        "en": "Does {title()} deliver food to your home?",
         "de": "Liefert {title()} Essen nach Hause?",
         "nl": "Levert {title()} aan huis?",
         "fr": "Est-ce que {title()} livre sa nourriture à domicile ?",

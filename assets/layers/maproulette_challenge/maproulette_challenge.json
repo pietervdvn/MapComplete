@@ -86,7 +86,8 @@
           "then": {
             "en": "Task is created",
             "de": "Aufgabe wurde erstellt",
-            "nl": "Taak is aangemaakt"
+            "nl": "Taak is aangemaakt",
+            "ca": "La tasca s'ha creat"
           }
         },
         {

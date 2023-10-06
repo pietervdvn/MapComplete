@@ -5017,7 +5017,7 @@
                 "title": "a fastfood"
             },
             "2": {
-                "description": "A fastfood-business focused on french fries",
+                "description": "A fast-food business focused on french fries",
                 "title": "a fries shop"
             }
         },
@@ -5037,7 +5037,7 @@
                         "then": "This is kebab shop"
                     },
                     "4": {
-                        "then": "This is a sandwichbar"
+                        "then": "This is a sandwich shop"
                     },
                     "5": {
                         "then": "Burgers are served here"
@@ -5049,7 +5049,7 @@
                         "then": "Coffee is served here"
                     },
                     "8": {
-                        "then": "This is an italian restaurant (which serves more then pasta and pizza)"
+                        "then": "This is an Italian restaurant (which serves more than pasta and pizza)"
                     },
                     "9": {
                         "then": "French dishes are served here"
@@ -5070,13 +5070,13 @@
                         "then": "Thai dishes are served here"
                     }
                 },
-                "question": "Which food is served here?",
+                "question": "What kind of food is served here?",
                 "render": "This place mostly serves {cuisine}"
             },
             "Fastfood vs restaurant": {
                 "mappings": {
                     "0": {
-                        "then": "This is a fastfood-business, focused on fast service. If seating is available, these are rather limited and functional."
+                        "then": "This is a fast-food business, focused on fast service. If seating is available, it is rather limited and functional."
                     },
                     "1": {
                         "then": "A <b>restaurant</b>, focused on creating a nice experience where one is served at the table"
@@ -5162,7 +5162,7 @@
                         "then": "This business does not deliver at home"
                     }
                 },
-                "question": "Delivers {title()} their food at home?"
+                "question": "Does {title()} deliver food to your home?"
             },
             "friture-oil": {
                 "mappings": {
@@ -9268,10 +9268,10 @@
             "toilet-handwashing": {
                 "mappings": {
                     "0": {
-                        "then": "This toilets have a sink to wash your hands"
+                        "then": "These toilets have a sink to wash your hands"
                     },
                     "1": {
-                        "then": "This toilets <b>don't</b> have a sink to wash your hands"
+                        "then": "These toilets <b>don't</b> have a sink to wash your hands"
                     }
                 },
                 "question": "Do these toilets have a sink to wash your hands?"
@@ -9324,7 +9324,7 @@
                         "then": "Both seated toilets and urinals are available here"
                     }
                 },
-                "question": "Which kind of toilets are this?"
+                "question": "Which kind of toilets are these?"
             },
             "toilets-wheelchair": {
                 "mappings": {

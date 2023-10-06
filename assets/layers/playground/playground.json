@@ -249,7 +249,8 @@
         "ru": "Доступно для детей старше {min_age} лет",
         "fr": "Accessible aux enfants de plus de {min_age} ans",
         "de": "Zugang nur für Kinder ab {min_age} Jahren",
-        "es": "Accesible a niños menores de {min_age} años"
+        "es": "Accesible a niños menores de {min_age} años",
+        "ca": "Accessible a nens menors de {min_age} anys"
       },
       "question": {
         "nl": "Wat is de minimale leeftijd om op deze speeltuin te mogen?",

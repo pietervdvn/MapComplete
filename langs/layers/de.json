@@ -1034,9 +1034,64 @@
                 },
                 "question": "Ist dieser Automat in Betrieb?",
                 "render": "Der Betriebszustand ist <i>{operational_status}</i>"
+            },
+            "bicycle_tube_vending_machine-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier werden Fahrradschläuche von Continental verkauft"
+                    },
+                    "1": {
+                        "then": "Hier werden Fahrradschläuche von Schwalbe verkauft"
+                    }
+                },
+                "question": "Welche Fahrradschläuche werden hier verkauft?",
+                "render": "Hier werden Fahrradschläuche von {brand} verkauft"
+            },
+            "bicycle_tube_vending_machine-charge": {
+                "question": "Wie viel kostet ein Fahrradschlauch?",
+                "render": "Ein Fahrradschlauch kostet {charge}"
+            },
+            "bicycle_tube_vending_machine-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Betrieben von Schwalbe"
+                    },
+                    "1": {
+                        "then": "Betrieben von Continental"
+                    }
+                },
+                "question": "Wer betreibt den Automaten?"
+            },
+            "other-items-vending": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier werden Fahrradschläuche verkauft"
+                    },
+                    "1": {
+                        "then": "Hier werden Fahrradlampen verkauft"
+                    },
+                    "2": {
+                        "then": "Hier werden Fahrradhandschuhe verkauft"
+                    },
+                    "3": {
+                        "then": "Hier werden Fahrrad-Reparatursets verkauft"
+                    },
+                    "4": {
+                        "then": "Hier werden Fahrradpumpen verkauft"
+                    },
+                    "5": {
+                        "then": "Hier werden Fahrradschlösser verkauft"
+                    }
+                },
+                "question": "Wird weiteres Fahrradzubehör verkauft?"
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name} Fahrradschlauch-Automat"
+                }
+            },
             "render": "Fahrradschlauch-Automat"
         }
     },
@@ -5568,7 +5623,8 @@
                 "render": "Dieser Raum hat die Raumnummer {ref}"
             },
             "room-capacity": {
-                "question": "Wie viele Personen passen höchstens in diesen Raum?"
+                "question": "Wie viele Personen passen höchstens in diesen Raum?",
+                "render": "Kapazität für höchstens {capacity} Personen"
             },
             "room-type": {
                 "mappings": {
@@ -5611,6 +5667,9 @@
                     "12": {
                         "then": "Dies ist ein Umkleideraum"
                     },
+                    "13": {
+                        "then": "Dies ist ein Kinderzimmer"
+                    },
                     "14": {
                         "then": "Dies ist ein Büro"
                     },
@@ -5619,8 +5678,27 @@
                     },
                     "16": {
                         "then": "Dies ist ein Restaurant"
+                    },
+                    "17": {
+                        "then": "Dies ist ein Raum für Sicherheitskontrollen"
+                    },
+                    "18": {
+                        "then": "Dies ist ein Raum um Sport zu treiben"
+                    },
+                    "19": {
+                        "then": "Dies ist ein Lagerraum"
+                    },
+                    "20": {
+                        "then": "Dies ist ein Technikraum"
+                    },
+                    "21": {
+                        "then": "Dies ist ein WC-Raum"
+                    },
+                    "22": {
+                        "then": "Dies ist ein Wartezimmer"
                     }
-                }
+                },
+                "question": "Wie wird dieser Raum genutzt?"
             }
         },
         "title": {
@@ -7314,6 +7392,27 @@
                     },
                     "7": {
                         "then": "2-Euro-Münzen werden akzeptiert"
+                    },
+                    "8": {
+                        "then": "5-Centime-Münzen werden akzeptiert"
+                    },
+                    "9": {
+                        "then": "10-Centime-Münzen werden akzeptiert"
+                    },
+                    "10": {
+                        "then": "20-Centime-Münzen werden akzeptiert"
+                    },
+                    "11": {
+                        "then": "½-Schweizer Franken-Münzen werden akzeptiert"
+                    },
+                    "12": {
+                        "then": "1-Schweizer Franken-Münzen werden akzeptiert"
+                    },
+                    "13": {
+                        "then": "2-Schweizer Franken-Münzen werden akzeptiert"
+                    },
+                    "14": {
+                        "then": "5-Schweizer Franken-Münzen werden akzeptiert"
                     }
                 },
                 "question": "Mit welchen Münzen kann man hier bezahlen?"
@@ -7340,6 +7439,24 @@
                     },
                     "6": {
                         "then": "500-Euro-Scheine werden angenommen"
+                    },
+                    "7": {
+                        "then": "10-Schweizer Franken-Scheine werden akzeptiert"
+                    },
+                    "8": {
+                        "then": "20-Schweizer Franken-Scheine werden akzeptiert"
+                    },
+                    "9": {
+                        "then": "50-Schweizer Franken-Scheine werden akzeptiert"
+                    },
+                    "10": {
+                        "then": "100-Schweizer Franken-Scheine werden akzeptiert"
+                    },
+                    "11": {
+                        "then": "200-Schweizer Franken-Scheine werden akzeptiert"
+                    },
+                    "12": {
+                        "then": "1000-Schweizer Franken-Scheine werden akzeptiert"
                     }
                 },
                 "question": "Mit welchen Banknoten kann man hier bezahlen?"
@@ -7531,6 +7648,9 @@
             },
             "phone": {
                 "question": "Wie lautet die Telefonnummer von {title()}?"
+            },
+            "repeated": {
+                "render": "Mehrere identische Objekte können in Geschossen {repeat_on} gefunden werden."
             },
             "service:electricity": {
                 "mappings": {
@@ -8797,6 +8917,14 @@
             },
             "1": {
                 "title": "eine an einer Wand montierte Überwachungskamera"
+            },
+            "2": {
+                "description": "Eine automatische Nummernschilderkennung hat üblicherweise zwei Linsen und ein Reihe aus Infrarotlichtern.",
+                "title": "Eine Kamera zur automatischen Nummernschilderkennung"
+            },
+            "3": {
+                "description": "Eine automatische Nummernschilderkennung hat üblicherweise zwei Linsen und ein Reihe aus Infrarotlichtern.",
+                "title": "eine Kamera zur Nummernschilderkennung, die an einer Wand befestigt ist"
             }
         },
         "tagRenderings": {
@@ -8889,6 +9017,18 @@
                 },
                 "question": "In welche Himmelsrichtung filmt diese Kamera?",
                 "render": "filmt in Himmelsrichtung {camera:direction}"
+            },
+            "has_alpr": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist eine Kamera ohne Nummernschilderkennung."
+                    },
+                    "1": {
+                        "then": "Dies ist eine Kamera mit Nummernschilderkennung"
+                    }
+                },
+                "question": "Dient diese Kamera der Nummernschilderkennung?",
+                "questionHint": "Eine Kamera zur <b>Nummernschilderkennung</b> hat üblicherweise zwei Linsen mit dazwischenliegenden Infrarot-LEDs."
             },
             "is_indoor": {
                 "mappings": {
@@ -9661,6 +9801,32 @@
                 },
                 "question": "Sollen Fragen für unbekannte Datenfelder einzeln oder zusammen angezeigt werden?"
             },
+            "background-layer": {
+                "mappings": {
+                    "0": {
+                        "then": "Standardhintergrund verwenden"
+                    },
+                    "1": {
+                        "then": "OpenStreetMap-carto als Standardhintergrund verwenden"
+                    },
+                    "2": {
+                        "then": "Satellitenbilder als Standardhintergrund verwenden"
+                    },
+                    "3": {
+                        "then": "Eine eigene Karte als Standardhintergrund verwenden"
+                    },
+                    "4": {
+                        "then": "Aktuelle Hintergrundebene (<span class='code'>{__current_background}</span>) als Standardhintergrund verwenden"
+                    },
+                    "5": {
+                        "then": "Hintergrundebene <span class='code'>{mapcomplete-preferred-background-layer}</span> als Standardhintergrund verwenden"
+                    }
+                },
+                "question": "Welche Hintergrundebene soll als Standard verwendet werden?"
+            },
+            "background-layer-readonly": {
+                "render": "Diese thematische Karte hat einen vordefinierten Hintergrund. Ihr Standardhintergrund wird nicht angewendet"
+            },
             "contributor-thanks": {
                 "mappings": {
                     "0": {
@@ -9884,6 +10050,30 @@
                     },
                     "19": {
                         "question": "Verkauf von Blumen"
+                    },
+                    "20": {
+                        "question": "Verkauf von Parkscheinen"
+                    },
+                    "21": {
+                        "question": "Verkauf von Souvenirmünzen"
+                    },
+                    "22": {
+                        "question": "Verkauf von Fahrscheinen"
+                    },
+                    "23": {
+                        "question": "Verkauf von Fahrradlampen"
+                    },
+                    "24": {
+                        "question": "Verkauf von Fahrradhandschuhen"
+                    },
+                    "25": {
+                        "question": "Verkauf von Fahrrad-Reparatursets"
+                    },
+                    "26": {
+                        "question": "Verkauf von Fahrradpumpen"
+                    },
+                    "27": {
+                        "question": "Verkauf von Fahrradschlössern"
                     }
                 }
             }
@@ -9915,6 +10105,12 @@
                 },
                 "question": "Wer betreibt diesen Verkaufsautomaten?",
                 "render": "Dieser Verkaufsautomat wird betrieben von {operator}"
+            },
+            "phone": {
+                "override": {
+                    "question": "Wie lautet die Telefonnummer des Automatenbetreibers?",
+                    "questionHint": "Die ist die Telefonnummer, die bei Problemen mit dem Automaten kontaktiert werden kann"
+                }
             },
             "vending": {
                 "mappings": {
@@ -9963,14 +10159,41 @@
                     "14": {
                         "then": "Kartoffeln werden verkauft"
                     },
+                    "15": {
+                        "then": "Fleisch wird verkauft"
+                    },
+                    "16": {
+                        "then": "Blumen werden verkauft"
+                    },
+                    "17": {
+                        "then": "Parkscheine werden verkauft"
+                    },
                     "18": {
                         "then": "Blumen werden verkauft"
                     },
                     "19": {
                         "then": "Parkscheine werden verkauft"
                     },
+                    "20": {
+                        "then": "Souvenirmünzen werden verkauft"
+                    },
                     "21": {
                         "then": "Fahrscheine werden verkauft"
+                    },
+                    "22": {
+                        "then": "Fahrradlampen werden verkauft"
+                    },
+                    "23": {
+                        "then": "Fahrradhandschuhe werden verkauft"
+                    },
+                    "24": {
+                        "then": "Fahrrad-Reparaturset werden verkauft"
+                    },
+                    "25": {
+                        "then": "Fahrradpumpen werden verkauft"
+                    },
+                    "26": {
+                        "then": "Fahrradschlösser werden verkauft"
                     }
                 },
                 "question": "Was wird in diesem Automaten verkauft?",

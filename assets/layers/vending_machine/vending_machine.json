@@ -247,7 +247,8 @@
           "then": {
             "en": "Meat is sold",
             "nl": "Vlees wordt verkocht",
-            "ca": "Es venen productes carnis"
+            "ca": "Es venen productes carnis",
+            "de": "Fleisch wird verkauft"
           },
           "icon": "./assets/layers/id_presets/temaki-meat.svg"
         },
@@ -255,7 +256,8 @@
           "if": "vending=fruit",
           "then": {
             "en": "Fruit is sold",
-            "nl": "Fruit wordt verkocht"
+            "nl": "Fruit wordt verkocht",
+            "de": "Blumen werden verkauft"
           },
           "icon": "./assets/layers/vending_machine/fruits.svg"
         },
@@ -263,7 +265,8 @@
           "if": "vending=strawberries",
           "then": {
             "en": "Strawberries are sold",
-            "nl": "Aardbeien worden verkocht"
+            "nl": "Aardbeien worden verkocht",
+            "de": "Parkscheine werden verkauft"
           },
           "icon": "./assets/layers/vending_machine/strawberry.svg"
         },
@@ -292,7 +295,8 @@
           "if": "vending=elongated_coin",
           "then": {
             "en": "Pressed pennies are sold",
-            "ca": "Es venen cèntims premsats"
+            "ca": "Es venen cèntims premsats",
+            "de": "Souvenirmünzen werden verkauft"
           },
           "icon": "./assets/themes/elongated_coin/penny.svg"
         },
@@ -310,35 +314,40 @@
           "if": "vending=bicycle_light",
           "then": {
             "en": "Bicycle lights are sold",
-            "nl": "Fietslampjes worden verkocht"
+            "nl": "Fietslampjes worden verkocht",
+            "de": "Fahrradlampen werden verkauft"
           }
         },
         {
           "if": "vending=gloves",
           "then": {
             "en": "Gloves are sold",
-            "nl": "Handschoenen worden verkocht"
+            "nl": "Handschoenen worden verkocht",
+            "de": "Fahrradhandschuhe werden verkauft"
           }
         },
         {
           "if": "vending=bicycle_repair_kit",
           "then": {
             "en": "Bicycle repair kits are sold",
-            "nl": "Fietsreparatiesets worden verkocht"
+            "nl": "Fietsreparatiesets worden verkocht",
+            "de": "Fahrrad-Reparaturset werden verkauft"
           }
         },
         {
           "if": "vending=bicycle_pump",
           "then": {
             "en": "Bicycle pumps are sold",
-            "nl": "Fietspompen worden verkocht"
+            "nl": "Fietspompen worden verkocht",
+            "de": "Fahrradpumpen werden verkauft"
           }
         },
         {
           "if": "vending=bicycle_lock",
           "then": {
             "en": "Bicycle locks are sold",
-            "nl": "Fietssloten worden verkocht"
+            "nl": "Fietssloten worden verkocht",
+            "de": "Fahrradschlösser werden verkauft"
           }
         }
       ],
@@ -424,11 +433,13 @@
       "override": {
         "question": {
           "en": "What is the phone number of the operator of this vending machine?",
-          "ca": "Quin és el número de telèfon de l'operador d'aquesta màquina expenedora?"
+          "ca": "Quin és el número de telèfon de l'operador d'aquesta màquina expenedora?",
+          "de": "Wie lautet die Telefonnummer des Automatenbetreibers?"
         },
         "questionHint": {
           "en": "This is the number you can call in case of problems with the vending machine",
-          "ca": "Aquest és el número al qual podeu trucar en cas de problemes amb la màquina expenedora"
+          "ca": "Aquest és el número al qual podeu trucar en cas de problemes amb la màquina expenedora",
+          "de": "Die ist die Telefonnummer, die bei Problemen mit dem Automaten kontaktiert werden kann"
         }
       }
     },
@@ -899,7 +910,7 @@
           "question": {
             "en": "Sale of fruit",
             "nl": "Verkoop van fruit",
-            "ca": "Venda d'aparcament"
+            "ca": "Venda de flors"
           },
           "osmTags": "vending~i~.*fruit.*"
         },
@@ -907,7 +918,7 @@
           "question": {
             "en": "Sale of strawberries",
             "nl": "Verkoop van aardbeien",
-            "ca": "Venda de monedes premsades"
+            "ca": "Venda de tiquets d'aparcament"
           },
           "osmTags": "vending~i~.*strawberries.*"
         },
@@ -925,56 +936,64 @@
           "osmTags": "vending~i~.*parking_tickets.*",
           "question": {
             "en": "Sale of parking tickets",
-            "ca": "Venda d'aparcament"
+            "ca": "Venda de bitllets de transport públic",
+            "de": "Verkauf von Parkscheinen"
           }
         },
         {
           "osmTags": "vending=elongated_coin",
           "question": {
             "en": "Sale of pressed pennies",
-            "ca": "Venda de monedes premsades"
+            "ca": "Venda de monedes premsades",
+            "de": "Verkauf von Souvenirmünzen"
           }
         },
         {
           "osmTags": "vending~i~.*public_transport_tickets.*",
           "question": {
             "en": "Sale of public transport tickets",
-            "ca": "Venda de bitllets de transport públic"
+            "ca": "Venda de bitllets de transport públic",
+            "de": "Verkauf von Fahrscheinen"
           }
         },
         {
           "osmTags": "vending=bicycle_light",
           "question": {
             "en": "Sale of bicycle lights",
-            "nl": "Verkoop van fietslampjes"
+            "nl": "Verkoop van fietslampjes",
+            "de": "Verkauf von Fahrradlampen"
           }
         },
         {
           "osmTags": "vending=gloves",
           "question": {
             "en": "Sale of gloves",
-            "nl": "Verkoop van handschoenen"
+            "nl": "Verkoop van handschoenen",
+            "de": "Verkauf von Fahrradhandschuhen"
           }
         },
         {
           "osmTags": "vending=bicycle_repair_kit",
           "question": {
             "en": "Sale of bicycle repair kits",
-            "nl": "Verkoop van fietsreparatiesets"
+            "nl": "Verkoop van fietsreparatiesets",
+            "de": "Verkauf von Fahrrad-Reparatursets"
           }
         },
         {
           "osmTags": "vending=bicycle_pump",
           "question": {
             "en": "Sale of bicycle pumps",
-            "nl": "Verkoop van fietspompen"
+            "nl": "Verkoop van fietspompen",
+            "de": "Verkauf von Fahrradpumpen"
           }
         },
         {
           "osmTags": "vending=bicycle_lock",
           "question": {
             "en": "Sale of bicycle locks",
-            "nl": "Verkoop van fietssloten"
+            "nl": "Verkoop van fietssloten",
+            "de": "Verkauf von Fahrradschlössern"
           }
         }
       ]
