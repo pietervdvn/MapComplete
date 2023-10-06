@@ -230,10 +230,7 @@ class LineRenderingLayer {
         const self = this
         features.features.addCallbackAndRunD(() => self.update(features.features))
 
-        map.on("styledata", () => {
-            self._listenerInstalledOn.clear()
-            return self.update(features.features);
-        })
+        map.on("styledata", () => self.update(features.features))
     }
 
     public destruct(): void {
