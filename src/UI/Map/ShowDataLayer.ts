@@ -16,6 +16,7 @@ import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
 import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFeatureSourceSplitter"
 import FilteredLayer from "../../Models/FilteredLayer"
 import SimpleFeatureSource from "../../Logic/FeatureSource/Sources/SimpleFeatureSource"
+import { CLIENT_RENEG_LIMIT } from "tls";
 
 class PointRenderingLayer {
     private readonly _config: PointRenderingConfig
@@ -229,7 +230,10 @@ class LineRenderingLayer {
         const self = this
         features.features.addCallbackAndRunD(() => self.update(features.features))
 
-        map.on("styledata", () => self.update(features.features))
+        map.on("styledata", () => {
+            self._listenerInstalledOn.clear()
+            return self.update(features.features);
+        })
     }
 
     public destruct(): void {
@@ -406,13 +410,10 @@ class LineRenderingLayer {
             } else {
                 const tags = this._fetchStore(id)
                 this._listenerInstalledOn.add(id)
-                map.setFeatureState(
-                    { source: this._layername, id },
-                    this.calculatePropsFor(feature.properties)
-                )
-                tags.addCallbackD((properties) => {
-                    if (!map.getLayer(this._layername)) {
-                        return
+                tags.addCallbackAndRunD((properties) => {
+                    // Make sure to use 'getSource' here, the layer names are different!
+                    if(map.getSource(this._layername) === undefined){
+                        return true
                     }
                     map.setFeatureState(
                         { source: this._layername, id },
