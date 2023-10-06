@@ -462,7 +462,10 @@
       }
     },
     {
-      "builtin": ["toilet","drinking_water"],
+      "builtin": [
+        "toilet",
+        "drinking_water"
+      ],
       "override": {
         "minzoom": 15
       }

@@ -166,21 +166,24 @@
       "id": "tactile_writing_available",
       "question": {
         "en": "Has this elevator tactile writing?",
-        "ca": "Aquest ascensor té escriptura tàctil?"
+        "ca": "Aquest ascensor té escriptura tàctil?",
+        "de": "Hat dieser Aufzug taktile Schrift?"
       },
       "mappings": [
         {
           "if": "tactile_writing:braille=yes",
           "then": {
             "en": "This elevator has tactile writing in Braille",
-            "ca": "L'ascensor té escriptura tàctil en Braille"
+            "ca": "L'ascensor té escriptura tàctil en Braille",
+            "de": "Dieser Aufzug hat eine taktile Schrift in Brailleschrift"
           }
         },
         {
           "if": "tactile_writing:braille=no",
           "then": {
             "en": "This elevator does not have tactile writing",
-            "ca": "Aquest ascensor no té escriptura tàctil"
+            "ca": "Aquest ascensor no té escriptura tàctil",
+            "de": "Dieser Aufzug hat keine taktile Schrift"
           }
         }
       ]

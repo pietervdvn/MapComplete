@@ -251,12 +251,14 @@
       "options": [
         {
           "question": {
-            "en": "No preference towards dogs"
+            "en": "No preference towards dogs",
+            "de": "Keine Bevorzugung von Hunden"
           }
         },
         {
           "question": {
-            "en": "Dogs allowed"
+            "en": "Dogs allowed",
+            "de": "Hunde erlaubt"
           },
           "osmTags": {
             "or": [
@@ -267,7 +269,8 @@
         },
         {
           "question": {
-            "en": "No dogs allowed"
+            "en": "No dogs allowed",
+            "de": "Keine Hunde erlaubt"
           },
           "osmTags": "dog=no"
         }
@@ -290,7 +293,8 @@
         }
       ]
     },
-    {"id": "has_electricity",
+    {
+      "id": "has_electricity",
       "options": [
         {
           "question": {

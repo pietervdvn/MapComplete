@@ -191,42 +191,48 @@
         {
           "if": "room=administration",
           "then": {
-            "en": "This is a administrative room"
+            "en": "This is a administrative room",
+            "de": "Dies ist ein Verwaltungsraum"
           },
           "icon": "./assets/layers/indoors/room_administration.svg"
         },
         {
           "if": "room=auditorium",
           "then": {
-            "en": "This is a auditorium"
+            "en": "This is a auditorium",
+            "de": "Dies ist ein Auditorium"
           },
           "icon": "./assets/layers/indoors/room_auditorium.svg"
         },
         {
           "if": "room=bedroom",
           "then": {
-            "en": "This is a bedroom"
+            "en": "This is a bedroom",
+            "de": "Dies ist ein Schlafzimmer"
           },
           "icon": "./assets/layers/indoors/room_bedroom.svg"
         },
         {
           "if": "room=chapel",
           "then": {
-            "en": "This is a chapel"
+            "en": "This is a chapel",
+            "de": "Dies ist eine Kapelle"
           },
           "icon": "./assets/layers/indoors/room_chapel.svg"
         },
         {
           "if": "room=class",
           "then": {
-            "en": "This is a classroom"
+            "en": "This is a classroom",
+            "de": "Dies ist ein Klassenzimmer"
           },
           "icon": "./assets/layers/indoors/room_class.svg"
         },
         {
           "if": "room=classroom",
           "then": {
-            "en": "This is a classroom"
+            "en": "This is a classroom",
+            "de": "Dies ist ein Klassenzimmer"
           },
           "icon": "./assets/layers/indoors/room_class.svg",
           "hideInAnswer": true
@@ -234,49 +240,56 @@
         {
           "if": "room=computer",
           "then": {
-            "en": "This is a computer room"
+            "en": "This is a computer room",
+            "de": "Dies ist ein Computerraum"
           },
           "icon": "./assets/layers/indoors/room_computer.svg"
         },
         {
           "if": "room=conference",
           "then": {
-            "en": "This is a conference room"
+            "en": "This is a conference room",
+            "de": "Dies ist ein Konferenzraum"
           },
           "icon": "./assets/layers/indoors/room_conference.svg"
         },
         {
           "if": "room=crypt",
           "then": {
-            "en": "This is a crypt"
+            "en": "This is a crypt",
+            "de": "Dies ist eine Krypta"
           },
           "icon": "./assets/layers/indoors/room_crypt.svg"
         },
         {
           "if": "room=kitchen",
           "then": {
-            "en": "This is a kitchen"
+            "en": "This is a kitchen",
+            "de": "Dies ist eine Küche"
           },
           "icon": "./assets/layers/indoors/room_kitchen.svg"
         },
         {
           "if": "room=laboratory",
           "then": {
-            "en": "This is a laboratory"
+            "en": "This is a laboratory",
+            "de": "Dies ist ein Labor"
           },
           "icon": "./assets/layers/indoors/room_laboratory.svg"
         },
         {
           "if": "room=library",
           "then": {
-            "en": "This is a library"
+            "en": "This is a library",
+            "de": "Dies ist eine Bibliothek"
           },
           "icon": "./assets/layers/indoors/room_library.svg"
         },
         {
           "if": "room=locker",
           "then": {
-            "en": "This is a locker room"
+            "en": "This is a locker room",
+            "de": "Dies ist ein Umkleideraum"
           },
           "icon": "./assets/layers/indoors/room_locker.svg"
         },
@@ -290,21 +303,24 @@
         {
           "if": "room=office",
           "then": {
-            "en": "This is an office"
+            "en": "This is an office",
+            "de": "Dies ist ein Büro"
           },
           "icon": "./assets/layers/indoors/room_office.svg"
         },
         {
           "if": "room=prison_cell",
           "then": {
-            "en": "This is a prison_cell"
+            "en": "This is a prison_cell",
+            "de": "Dies ist eine Gefängniszelle"
           },
           "icon": "./assets/layers/indoors/room_prison_cell.svg"
         },
         {
           "if": "room=restaurant",
           "then": {
-            "en": "This is a restaurant"
+            "en": "This is a restaurant",
+            "de": "Dies ist ein Restaurant"
           },
           "icon": "./assets/layers/indoors/room_restaurant.svg"
         },
@@ -358,7 +374,8 @@
     {
       "id": "room-capacity",
       "question": {
-        "en": "How much people can at most fit in this room?"
+        "en": "How much people can at most fit in this room?",
+        "de": "Wie viele Personen passen höchstens in diesen Raum?"
       },
       "condition": {
         "or": [

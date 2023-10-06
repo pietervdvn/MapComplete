@@ -4710,6 +4710,20 @@
                         "question": "No dogs allowed"
                     }
                 }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Offers internet"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Offers electricity"
+                    }
+                }
             }
         }
     },
