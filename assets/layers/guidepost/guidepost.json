@@ -32,18 +32,18 @@
     "enableImproveAccuracy": "true",
     "enableRelocation": "false"
   },
-  "title": {},
-  "pointRendering": [
+  "title": {
+    "render": {
+      "en": "Guidepost"
+    }
+  },
+  "mapRendering": [
     {
       "location": [
         "centroid",
         "point"
       ],
-      "marker": [
-        {
-          "icon": "./assets/layers/guidepost/guidepost.svg"
-        }
-      ],
+      "icon": "./assets/layers/guidepost/guidepost.svg",
       "anchor": "bottom"
     }
   ],

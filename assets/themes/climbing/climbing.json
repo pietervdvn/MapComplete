@@ -464,7 +464,8 @@
     {
       "builtin": [
         "toilet",
-        "drinking_water"
+        "drinking_water",
+        "guidepost"
       ],
       "override": {
         "minzoom": 15
