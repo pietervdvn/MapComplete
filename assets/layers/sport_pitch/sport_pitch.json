@@ -651,8 +651,12 @@
     {
       "marker": [
         {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
           "icon": {
-            "render": "circle:white;./assets/layers/sport_pitch/sport_pitch.svg",
+            "render": "./assets/layers/sport_pitch/sport_pitch.svg",
             "mappings": [
               {
                 "if": {
@@ -669,7 +673,7 @@
                     "sport=equestrian"
                   ]
                 },
-                "then": "circle:white;./assets/layers/sport_pitch/{sport}.svg"
+                "then": "./assets/layers/sport_pitch/{sport}.svg"
               }
             ]
           }

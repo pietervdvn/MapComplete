@@ -353,16 +353,20 @@
       ],
       "marker": [
         {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
           "icon": {
-            "render": "circle:white;./assets/layers/cafe_pub/pub.svg",
+            "render": "./assets/layers/cafe_pub/pub.svg",
             "mappings": [
               {
                 "if": "amenity=cafe",
-                "then": "circle:white;./assets/layers/cafe_pub/cafe.svg"
+                "then": "./assets/layers/cafe_pub/cafe.svg"
               },
               {
                 "if": "amenity=nightclub",
-                "then": "circle:white;./assets/layers/cafe_pub/nightclub.svg"
+                "then": "./assets/layers/cafe_pub/nightclub.svg"
               }
             ]
           }

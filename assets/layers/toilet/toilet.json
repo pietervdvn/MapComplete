@@ -799,8 +799,12 @@
       ],
       "marker": [
         {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
           "icon": {
-            "render": "circle:#ffffff;./assets/layers/toilet/toilets.svg",
+            "render": "./assets/layers/toilet/toilets.svg",
             "mappings": [
               {
                 "if": {
@@ -809,7 +813,7 @@
                     "wheelchair=designated"
                   ]
                 },
-                "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
+                "then": "./assets/layers/toilet/wheelchair.svg"
               },
               {
                 "if": {

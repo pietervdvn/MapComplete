@@ -188,15 +188,19 @@
       },
       "marker": [
         {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
           "icon": {
             "mappings": [
               {
                 "if": "amenity=kindergarten",
-                "then": "circle:white;./assets/layers/kindergarten_childcare/kindergarten.svg"
+                "then": "./assets/layers/kindergarten_childcare/kindergarten.svg"
               },
               {
                 "if": "amenity=childcare",
-                "then": "circle:white;./assets/layers/kindergarten_childcare/childcare.svg"
+                "then": "./assets/layers/kindergarten_childcare/childcare.svg"
               }
             ]
           }

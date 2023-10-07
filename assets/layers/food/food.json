@@ -1207,8 +1207,12 @@
       ],
       "marker": [
         {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
           "icon": {
-            "render": "circle:white;./assets/layers/food/restaurant.svg",
+            "render": "./assets/layers/food/restaurant.svg",
             "mappings": [
               {
                 "if": {
@@ -1217,11 +1221,11 @@
                     "cuisine=friture"
                   ]
                 },
-                "then": "circle:white;./assets/layers/food/fries.svg"
+                "then": "./assets/layers/food/fries.svg"
               },
               {
                 "if": "amenity=fast_food",
-                "then": "circle:white;./assets/layers/food/fastfood.svg"
+                "then": "./assets/layers/food/fastfood.svg"
               }
             ]
           }

@@ -274,8 +274,9 @@
       "anchor": "center",
       "marker": [
         {
-          "icon": {
-            "render": "pin:#05d7fcaa",
+          "icon": "pin",
+          "color": {
+            "render": "#05d7fcaa",
             "mappings": [
               {
                 "if": {
@@ -284,7 +285,7 @@
                     "name:etymology:wikidata="
                   ]
                 },
-                "then": "pin:#fcca05aa"
+                "then": "#fcca05aa"
               }
             ]
           }
