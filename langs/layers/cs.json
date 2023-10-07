@@ -35,6 +35,16 @@
             "1": {
                 "title": "volně stojící plakátovací skříň"
             },
+            "10": {
+                "description": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
+                "title": "cedule"
+            },
+            "11": {
+                "title": "socha"
+            },
+            "12": {
+                "title": "nástěnná malba"
+            },
             "2": {
                 "title": "plakátovací skříň připevněná na stěnu"
             },
@@ -61,16 +71,6 @@
             },
             "9": {
                 "title": "totem"
-            },
-            "10": {
-                "description": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
-                "title": "cedule"
-            },
-            "11": {
-                "title": "socha"
-            },
-            "12": {
-                "title": "nástěnná malba"
             }
         },
         "tagRenderings": {
@@ -165,6 +165,9 @@
                     "1": {
                         "then": "Toto je deska"
                     },
+                    "10": {
+                        "then": "Toto je nástěnná malba"
+                    },
                     "2": {
                         "then": "Toto je sloup"
                     },
@@ -188,9 +191,6 @@
                     },
                     "9": {
                         "then": "Toto je totem"
-                    },
-                    "10": {
-                        "then": "Toto je nástěnná malba"
                     }
                 },
                 "question": "O jaký typ reklamního prvku se jedná?",
@@ -204,6 +204,9 @@
                 },
                 "1": {
                     "then": "Deska"
+                },
+                "10": {
+                    "then": "Nástěnná malba"
                 },
                 "2": {
                     "then": "Skříň na plakáty"
@@ -228,9 +231,6 @@
                 },
                 "9": {
                     "then": "Totem"
-                },
-                "10": {
-                    "then": "Nástěnná malba"
                 }
             }
         }
@@ -312,6 +312,15 @@
                     "1": {
                         "then": "Nástěnná malba"
                     },
+                    "10": {
+                        "then": "Azulejo (španělské dekorativní dlaždice)"
+                    },
+                    "11": {
+                        "then": "Obklady a dlažba"
+                    },
+                    "12": {
+                        "then": "Dřevořezba"
+                    },
                     "2": {
                         "then": "Malba"
                     },
@@ -335,15 +344,6 @@
                     },
                     "9": {
                         "then": "Reliéf"
-                    },
-                    "10": {
-                        "then": "Azulejo (španělské dekorativní dlaždice)"
-                    },
-                    "11": {
-                        "then": "Obklady a dlažba"
-                    },
-                    "12": {
-                        "then": "Dřevořezba"
                     }
                 },
                 "question": "Jaký je typ tohoto uměleckého díla?",
@@ -1031,6 +1031,21 @@
                 },
                 "question": "Je tento automat stále v provozu?",
                 "render": "Provozní stav je <i>{operational_status}</i>"
+            },
+            "bicycle_tube_vending_machine-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Continental pláště jsou zde prodávány"
+                    },
+                    "1": {
+                        "then": "Schwalbe pláště jsou zde prodávány"
+                    }
+                },
+                "question": "Jaká značka plášťů je zde prodávána?",
+                "render": "{brand} pláště jsou zde prodávány"
+            },
+            "bicycle_tube_vending_machine-charge": {
+                "question": "Kolik stojí plášť na kolo?"
             }
         },
         "title": {
@@ -1613,6 +1628,100 @@
             }
         }
     },
+    "birdhide": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Bezbariérový přístup"
+                    }
+                }
+            }
+        }
+    },
+    "cafe_pub": {
+        "description": "Vrstva s kavárnami a hospodami, kde se můžete sejít u skleničky. Vrstva se ptá na několik důležitých otázek",
+        "name": "Kavárny a hospody",
+        "presets": {
+            "0": {
+                "description": "Hospoda, kde se většinou pije pivo v příjemném a uvolněném interiéru",
+                "title": "hospoda"
+            },
+            "1": {
+                "description": "Modernější a komerčnější <b>bar</b>, případně s hudební a světelnou instalací",
+                "title": "bar"
+            },
+            "2": {
+                "description": "<b>kavárna</b>, kde si můžete v klidném prostředí vypít čaj, kávu nebo alkoholický nápoj",
+                "title": "kavárna"
+            },
+            "3": {
+                "description": "<b>noční klub</b> nebo diskotéka se zaměřením na tanec, hudbu od DJ s doprovodnou světelnou show a barem na (alkoholické) nápoje",
+                "title": "noční klub nebo diskotéka"
+            }
+        },
+        "tagRenderings": {
+            "Classification": {
+                "mappings": {
+                    "0": {
+                        "then": "Hospoda, kde se většinou pije pivo v příjemném a uvolněném interiéru"
+                    },
+                    "1": {
+                        "then": "Modernější a komerčnější <b>bar</b>, případně s hudební a světelnou instalací"
+                    },
+                    "2": {
+                        "then": "<b>kavárna</b>, kde si můžete v klidném prostředí vypít čaj, kávu nebo alkoholický nápoj"
+                    },
+                    "3": {
+                        "then": "<b>Restaurace</b>, kde se dá pořádně najíst"
+                    },
+                    "4": {
+                        "then": "Otevřený prostor, kde se podává pivo, typicky k vidění v Německu"
+                    },
+                    "5": {
+                        "then": "Jedná se o <b>noční klub</b> nebo diskotéku se zaměřením na tanec, hudbu DJ s doprovodnou světelnou show a bar, kde si můžete dát (alkoholické) nápoje"
+                    }
+                },
+                "question": "O jakou kavárnu se jedná?"
+            },
+            "Name": {
+                "question": "Jak se tento podnik jmenuje?",
+                "render": "Tento podnik se jmenuje {name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            },
+            "render": "Hospoda"
+        }
+    },
+    "car_rental": {
+        "description": "Místa, kde si můžete pronajmout auto",
+        "name": "Půjčovna aut",
+        "presets": {
+            "0": {
+                "description": "Místo, kde si můžete pronajmout auto",
+                "title": "půjčovna aut"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Název autopůjčovny"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Tato autopůjčovna nemá jméno"
+                    }
+                },
+                "question": "Jak se jmenuje tato půjčovna aut?",
+                "render": "Tato autopůjčovna se jmenuje {name}"
+            }
+        }
+    },
     "climbing": {
         "description": "Falešná vrstva, která obsahuje tagrenderingy sdílené mezi lezeckými vrstvami"
     },
@@ -1946,6 +2055,31 @@
     },
     "usersettings": {
         "tagRenderings": {
+            "inbox": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Otevřít schránku"
+                            }
+                        }
+                    },
+                    "1": {
+                        "then": {
+                            "special": {
+                                "text": "<b class='alert'>Máte {_unreadMessages}</b><br/>Otevřít schránku"
+                            }
+                        }
+                    }
+                }
+            },
+            "mangrove-keys": {
+                "render": {
+                    "special": {
+                        "text": "Stáhnout soukromý klíč pro Mangrove účet"
+                    }
+                }
+            },
             "picture-license": {
                 "mappings": {
                     "0": {
@@ -1959,6 +2093,14 @@
                     },
                     "3": {
                         "then": "Pořízené fotografie budou licencovány pod <b>CC-BY-SA 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku a že odvozené fotky musí být dále sdíleny se stejnou licencí."
+                    }
+                },
+                "question": "Pod jakou licencí chcete své fotografie zveřejnit?"
+            },
+            "settings-link": {
+                "render": {
+                    "special": {
+                        "text": "Otevřít vaše nastavení na OpenStreetMap.org"
                     }
                 }
             },
@@ -1975,6 +2117,13 @@
                     }
                 },
                 "question": "Zobrazit informace o ladění v nastavení?"
+            },
+            "translation-completeness": {
+                "mappings": {
+                    "0": {
+                        "then": "Kompletně přeloženo"
+                    }
+                }
             },
             "translation-mode": {
                 "question": "Chcete pomoci s překladem MapComplete?"
