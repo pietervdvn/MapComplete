@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/recycling/recycling-14.svg' height="100px"> 
+
 
 A layer with recycling containers and centres
 

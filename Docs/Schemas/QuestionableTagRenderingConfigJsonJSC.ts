@@ -491,6 +491,62 @@ export default {
         }
       }
     },
+    "IconConfigJson": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "description": "question: What icon should be used?\ntype: icon\nsuggestions: return [\"pin\",\"square\",\"circle\",\"checkmark\",\"clock\",\"close\",\"crosshair\",\"help\",\"home\",\"invalid\",\"location\",\"location_empty\",\"location_locked\",\"note\",\"resolved\",\"ring\",\"scissors\",\"teardrop\",\"teardrop_with_hole_green\",\"triangle\"].map(i => ({if: \"value=\"+i, then: i, icon: i}))",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/TagRenderingConfigJson"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "builtin": {
+                  "type": "string"
+                },
+                "override": {}
+              },
+              "required": [
+                "builtin",
+                "override"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "color": {
+          "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntype: color",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/TagRenderingConfigJson"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "builtin": {
+                  "type": "string"
+                },
+                "override": {}
+              },
+              "required": [
+                "builtin",
+                "override"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "icon"
+      ]
+    },
     "MinimalTagRenderingConfigJson": {
       "description": "Mostly used for lineRendering and pointRendering",
       "type": "object",

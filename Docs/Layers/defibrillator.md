@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/square:#008754;./assets/layers/defibrillator/defibrillator.svg' height="100px"> 
+
 
 A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device
 

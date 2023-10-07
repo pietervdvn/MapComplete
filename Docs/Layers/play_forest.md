@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/play_forest/icon.svg' height="100px"> 
+
 
 Een speelbos is een vrij toegankelijke zone in een bos
 

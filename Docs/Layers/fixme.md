@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/svg/bug.svg' height="100px"> 
+
 
 OSM objects that likely need to be fixed, based on a FIXME tag.
 

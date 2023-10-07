@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/pharmacy/pharmacy.svg' height="100px"> 
+
 
 A layer showing pharmacies, which (probably) dispense prescription drugs
 

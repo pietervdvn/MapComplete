@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/physiotherapist/doctors.svg' height="100px"> 
+
 
 This layer shows physiotherapists
 

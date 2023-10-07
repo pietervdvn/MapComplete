@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/pin:#ffffff;./assets/layers/bicycle_tube_vending_machine/pinIcon.svg' height="100px"> 
+
 
 A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, …)
 

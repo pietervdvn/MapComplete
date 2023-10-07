@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/bike_cleaning/bike_cleaning.svg' height="100px"> 
+
 
 A layer showing facilities where one can clean their bike
 

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/openwindpowermap/wind_turbine.svg' height="100px"> 
+
 
 Modern windmills generating electricity
 

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/bike_themed_object/other_services.svg' height="100px"> 
+
 
 A layer with bike-themed objects but who don't match any other layer
 

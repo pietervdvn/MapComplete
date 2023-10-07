@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/dogpark/dog-park.svg' height="100px"> 
+
 
 A layer showing dogparks, which are areas where dog are allowed to run without a leash
 

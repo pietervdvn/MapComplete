@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/pin:#fff;./assets/themes/charging_stations/plug.svg' height="100px"> 
+
 
 A charging station
 

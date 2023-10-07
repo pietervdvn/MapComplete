@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/barrier/barrier.svg' height="100px"> 
+
 
 Obstacles while cycling, such as bollards and cycle barriers
 

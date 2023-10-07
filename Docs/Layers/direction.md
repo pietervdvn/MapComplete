@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/direction_gradient:var(--catch-detail-color)' height="100px"> 
+
 
 This layer visualizes directions
 

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/sport_pitch/sport_pitch.svg' height="100px"> 
+
 
 A sport pitch
 

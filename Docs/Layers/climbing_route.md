@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/themes/climbing/climbing_route.svg' height="100px"> 
+
 
 A single climbing route and its properties. Some properties are derived from the containing features
 

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/elevator/elevator_wheelchair.svg' height="100px"> 
+
 
 This layer show elevators and asks for operational status and elevator dimensions. Useful for wheelchair accessibility information
 

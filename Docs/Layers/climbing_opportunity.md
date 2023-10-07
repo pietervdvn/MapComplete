@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/climbing/climbing_unknown.svg' height="100px"> 
+
 
 Fallback layer with items on which climbing _might_ be possible. It is loaded when zoomed in a lot, to prevent duplicate items to be added
 

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/hotel/hotel.svg' height="100px"> 
+
 
 Layer showing all hotels
 

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/viewpoint/viewpoint.svg' height="100px"> 
+
 
 A nice viewpoint or nice view. Ideal to add an image if no other category fits
 

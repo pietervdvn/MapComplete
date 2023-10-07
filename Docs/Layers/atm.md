@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/atm/atm.svg' height="100px"> 
+
 
 ATMs to withdraw money
 

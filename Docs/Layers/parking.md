@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/parking/parking.svg' height="100px"> 
+
 
 A layer showing car parkings
 

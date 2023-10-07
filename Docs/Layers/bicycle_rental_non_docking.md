@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/bicycle_rental/logo.svg' height="100px"> 
+
 
 Bicycle rental stations
 

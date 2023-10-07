@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/nature_reserve/nature_reserve.svg' height="100px"> 
+
 
 A nature reserve is an area where nature can take its course
 

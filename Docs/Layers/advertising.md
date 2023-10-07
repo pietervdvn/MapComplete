@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/advertising/sign.svg' height="100px"> 
+
 
 We will complete data from advertising features with reference, operator and lit
 

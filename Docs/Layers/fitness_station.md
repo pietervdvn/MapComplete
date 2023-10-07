@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/fitness_station/fitness.svg' height="100px"> 
+
 
 Find a fitness station near you, and add missing ones.
 

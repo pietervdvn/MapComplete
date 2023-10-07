@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/pin:#5473de;./assets/layers/bike_parking/parking.svg' height="100px"> 
+
 
 A layer showing where you can park your bike
 

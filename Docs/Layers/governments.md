@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/governments/government.svg' height="100px"> 
+
 
 This layer show governmental buildings. It was setup as commissioned layer for the client of OSOC '22
 

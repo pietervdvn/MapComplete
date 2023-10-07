@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/parking_spaces/parking_space.svg' height="100px"> 
+
 
 Layer showing individual parking spaces.
 

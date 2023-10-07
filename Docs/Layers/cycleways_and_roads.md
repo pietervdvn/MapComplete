@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/cycle_infra/bicycleway.svg' height="100px"> 
+
 
 All infrastructure that someone can cycle over, accompanied with questions about this infrastructure
 

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/food/restaurant.svg' height="100px"> 
+
 
 A layer showing restaurants and fast-food amenities (with a special rendering for friteries)
 

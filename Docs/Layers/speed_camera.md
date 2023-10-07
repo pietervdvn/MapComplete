@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/square:white;./assets/layers/speed_camera/speed_camera.svg' height="100px"> 
+
 
 Layer showing speed cameras
 

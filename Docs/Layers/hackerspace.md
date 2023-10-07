@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/hackerspaces/glider.svg' height="100px"> 
+
 
 Hackerspace
 

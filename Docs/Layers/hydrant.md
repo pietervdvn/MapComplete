@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/hailhydrant/hydrant.svg' height="100px"> 
+
 
 Map layer to show fire hydrants.
 

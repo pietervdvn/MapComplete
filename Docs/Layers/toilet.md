@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:#ffffff;./assets/layers/toilet/toilets.svg' height="100px"> 
+
 
 A layer showing (public) toilets
 

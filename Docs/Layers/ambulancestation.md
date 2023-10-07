@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/hailhydrant/Twemoji_1f691.svg' height="100px"> 
+
 
 An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.
 

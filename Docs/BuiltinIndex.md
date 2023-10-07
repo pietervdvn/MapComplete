@@ -90,6 +90,7 @@
   - ambulancestation
   - artwork
   - atm
+  - atm
   - barrier
   - bench
   - bench_at_pt
@@ -127,6 +128,7 @@
   - food
   - ghost_bike
   - governments
+  - guidepost
   - hackerspace
   - hotel
   - hydrant
@@ -217,6 +219,7 @@
 
 
 
+  - atm
   - atm
   - bicycle_library
   - bicycle_rental

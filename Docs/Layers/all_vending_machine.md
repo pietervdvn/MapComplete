@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/vending_machine/vending_machine.svg' height="100px"> 
+
 
 Layer showing vending machines
 

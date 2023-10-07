@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/climbing/club.svg' height="100px"> 
+
 
 A climbing club or organisation
 

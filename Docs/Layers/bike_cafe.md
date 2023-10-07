@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/pin:#684c2b;./assets/layers/bike_cafe/bike_cafe.svg' height="100px"> 
+
 
 A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …
 

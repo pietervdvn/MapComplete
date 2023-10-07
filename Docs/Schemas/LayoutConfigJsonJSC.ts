@@ -602,6 +602,62 @@ export default {
         }
       }
     },
+    "IconConfigJson": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "description": "question: What icon should be used?\ntype: icon\nsuggestions: return [\"pin\",\"square\",\"circle\",\"checkmark\",\"clock\",\"close\",\"crosshair\",\"help\",\"home\",\"invalid\",\"location\",\"location_empty\",\"location_locked\",\"note\",\"resolved\",\"ring\",\"scissors\",\"teardrop\",\"teardrop_with_hole_green\",\"triangle\"].map(i => ({if: \"value=\"+i, then: i, icon: i}))",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/TagRenderingConfigJson"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "builtin": {
+                  "type": "string"
+                },
+                "override": {}
+              },
+              "required": [
+                "builtin",
+                "override"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "color": {
+          "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntype: color",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/TagRenderingConfigJson"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "builtin": {
+                  "type": "string"
+                },
+                "override": {}
+              },
+              "required": [
+                "builtin",
+                "override"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "icon"
+      ]
+    },
     "MinimalTagRenderingConfigJson": {
       "description": "Mostly used for lineRendering and pointRendering",
       "type": "object",
@@ -759,35 +815,10 @@ export default {
           }
         },
         "marker": {
-          "description": "question: What marker should be used to\nThe icon for an element.\nNote that this also doubles as the icon for this layer (rendered with the overpass-tags) ánd the icon in the presets.\n\nThe result of the icon is rendered as follows:\nthe resulting string is interpreted as a _list_ of items, separated by \";\". The bottommost layer is the first layer.\nAs a result, on could use a generic pin, then overlay it with a specific icon.\nTo make things even more practical, one c    an use all SVG's from the folder \"assets/svg\" and _substitute the color_ in it.\nE.g. to draw a red pin, use \"pin:#f00\", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`\n\nType: icon",
+          "description": "The marker for an element.\nNote that this also defines the icon for this layer (rendered with the overpass-tags) <i>and</i> the icon in the presets.\n\nThe result of the icon is rendered as follows:\n- The first icon is rendered on the map\n- The second entry is overlayed on top of it\n- ...\n\nAs a result, on could use a generic icon (`pin`, `circle`, `square`) with a color, then overlay it with a specific icon.",
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "icon": {
-                "anyOf": [
-                  {
-                    "$ref": "#/definitions/TagRenderingConfigJson"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ]
-              },
-              "color": {
-                "anyOf": [
-                  {
-                    "$ref": "#/definitions/TagRenderingConfigJson"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ]
-              }
-            },
-            "required": [
-              "icon"
-            ]
+            "$ref": "#/definitions/IconConfigJson"
           }
         },
         "iconBadges": {
@@ -819,7 +850,7 @@ export default {
           }
         },
         "iconSize": {
-          "description": "A string containing \"width,height\" or \"width,height,anchorpoint\" where anchorpoint is any of 'center', 'top', 'bottom', 'left', 'right', 'bottomleft','topright', ...\nDefault is '40,40,center'",
+          "description": "question: What size should the marker be on the map?\nA string containing \"<width>,<height>\" in pixels\nifunset: Use the default size (<b>40,40</b> px)",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -841,7 +872,7 @@ export default {
           ]
         },
         "rotation": {
-          "description": "The rotation of an icon, useful for e.g. directions.\nUsage: as if it were a css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``",
+          "description": "question: What rotation should be applied on the icon?\nThis is mostly useful for items that face a specific direction, such as surveillance cameras\nThis is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``\nifunset: Do not rotate",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -852,7 +883,7 @@ export default {
           ]
         },
         "label": {
-          "description": "question: What label should be shown beneath the marker?\nFor example: <div style=\"background: white\">{name}</div>\n\nIf the icon is undefined, then the label is shown in the center of the feature.\ntypes: Dynamic value | string\ninline: Always show label <b>{value}</b> beneath the marker",
+          "description": "question: What label should be shown beneath the marker?\nFor example: `&LT;div style=\"background: white\">{name}&LT;/div>`\n\nIf the icon is undefined, then the label is shown in the center of the feature.\ntypes: Dynamic value | string\ninline: Always show label <b>{value}</b> beneath the marker",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -907,7 +938,7 @@ export default {
           ]
         },
         "pitchAlignment": {
-          "description": "If the map is pitched, the marker will stay parallel to the screen.\nSet to 'map' if you want to put it flattened on the map",
+          "description": "question: If the map is pitched, should the icon stay parallel to the screen or to the groundplane?\nsuggestions: return [{if: \"value=canvas\", then: \"The icon will stay upward and not be transformed as if it sticks to the screen\"}, {if: \"value=map\", then: \"The icon will be transformed as if it were painted onto the ground. (Automatically sets rotationAlignment)\"}]",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -922,7 +953,7 @@ export default {
           ]
         },
         "rotationAlignment": {
-          "description": "question: Should the icon be rotated or tilted if the map is rotated or tilted?\nifunset: Do not rotate or tilt icons. Always keep the icons straight\nsuggestions: return [{if: \"value=canvas\", then: \"If the map is tilted, tilt the icon as well. This gives the impression of an icon that is glued to the ground.\"}, {if: \"value=map\", then: \"If the map is rotated, rotate the icon as well. This gives the impression of an icon that floats perpendicular above the ground.\"}]",
+          "description": "question: Should the icon be rotated if the map is rotated?\nifunset: Do not rotate or tilt icons. Always keep the icons straight\nsuggestions: return [{if: \"value=canvas\", then: \"Never rotate the icon\"}, {if: \"value=map\", then: \"If the map is rotated, rotate the icon as well. This gives the impression of an icon that floats perpendicular above the ground.\"}]",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -1819,7 +1850,7 @@ export default {
           "type": "number"
         },
         "title": {
-          "description": "The title shown in a popup for elements of this layer.\n\ngroup: title\nquestion: What title should be shown on the infobox?\ntypes: use a fixed translation ; Use a dynamic tagRendering ; use a fixed string for all languages\ntypesdefault: 1",
+          "description": "question: What title should be shown on the infobox?\nThe title shown in a popup for elements of this layer.\n\ngroup: title\ntypes: use a fixed translation ; Use a dynamic tagRendering ; hidden\ntypesdefault: 1\ntype: translation",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -2218,7 +2249,7 @@ export default {
           "type": "number"
         },
         "title": {
-          "description": "The title shown in a popup for elements of this layer.\n\ngroup: title\nquestion: What title should be shown on the infobox?\ntypes: use a fixed translation ; Use a dynamic tagRendering ; use a fixed string for all languages\ntypesdefault: 1",
+          "description": "question: What title should be shown on the infobox?\nThe title shown in a popup for elements of this layer.\n\ngroup: title\ntypes: use a fixed translation ; Use a dynamic tagRendering ; hidden\ntypesdefault: 1\ntype: translation",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/pin:#05d7fcaa' height="100px"> 
+
 
 All objects which have an etymology known
 

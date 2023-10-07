@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/pin:#6BC4F7;./assets/layers/drinking_water/drips.svg' height="100px"> 
+
 
 A layer showing drinking water fountains
 

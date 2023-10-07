@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/maproulette/logomark.svg' height="100px"> 
+
 
 Layer showing all tasks in MapRoulette
 

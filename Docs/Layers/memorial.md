@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/memorial/plaque.svg' height="100px"> 
+
 
 Layer showing memorial plaques, based upon a unofficial theme. Can be expanded to have multiple types of memorials later on
 

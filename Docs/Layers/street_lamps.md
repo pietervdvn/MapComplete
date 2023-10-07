@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/street_lamps/street_lamp.svg' height="100px"> 
+
 
 A layer showing street lights
 
