@@ -623,6 +623,11 @@
             "description": "a number",
             "feedback": "This is not a number"
         },
+        "id": {
+            "description": "an identifier",
+            "invalidCharacter": "An id can only contain letters, digits and underscores",
+            "shouldBeLonger": "An id should be at least 3 characters long"
+        },
         "int": {
             "description": "a whole number"
         },

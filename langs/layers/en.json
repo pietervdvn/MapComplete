@@ -5348,6 +5348,16 @@
             "render": "Your travelled path"
         }
     },
+    "guidepost": {
+        "description": "Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations",
+        "name": "Guideposts",
+        "presets": {
+            "0": {
+                "description": "A guidepost (also known as fingerpost) is often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations",
+                "title": "a guidepost"
+            }
+        }
+    },
     "hackerspace": {
         "description": "Hackerspace",
         "name": "Hackerspace",
@@ -5880,6 +5890,33 @@
                 },
                 "1": {
                     "then": "Childcare {name}"
+                }
+            }
+        }
+    },
+    "last_click": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "Create a new map note"
+                        }
+                    },
+                    "render": "Click here to add a new item"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Add a new point or add a note"
+                },
+                "1": {
+                    "then": "Add a new note"
+                },
+                "2": {
+                    "then": "Add a new point"
                 }
             }
         }
@@ -9752,33 +9789,6 @@
         },
         "title": {
             "render": "Tree"
-        }
-    },
-    "undefined": {
-        "pointRendering": {
-            "0": {
-                "label": {
-                    "mappings": {
-                        "0": {
-                            "then": "Create a new map note"
-                        }
-                    },
-                    "render": "Click here to add a new item"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Add a new point or add a note"
-                },
-                "1": {
-                    "then": "Add a new note"
-                },
-                "2": {
-                    "then": "Add a new point"
-                }
-            }
         }
     },
     "usersettings": {

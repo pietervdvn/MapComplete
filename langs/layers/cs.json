@@ -1622,6 +1622,15 @@
     "indoors": {
         "description": "Základní mapování interiérů: zobrazuje obrysy místností"
     },
+    "last_click": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "render": "Klikněte zde pro přidání nové položky"
+                }
+            }
+        }
+    },
     "maxspeed": {
         "description": "Zobrazuje povolenou rychlost pro každou silnici"
     },
@@ -1932,15 +1941,6 @@
                     }
                 },
                 "question": "Jaká je odpovídající entita Wikidata?"
-            }
-        }
-    },
-    "undefined": {
-        "pointRendering": {
-            "0": {
-                "label": {
-                    "render": "Klikněte zde pro přidání nové položky"
-                }
             }
         }
     },

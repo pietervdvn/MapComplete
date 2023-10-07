@@ -5716,6 +5716,33 @@
             }
         }
     },
+    "last_click": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "Hinweis auf der Karte hinzufügen"
+                        }
+                    },
+                    "render": "Hier klicken, um ein neues Element hinzuzufügen"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Objekt oder Hinweis auf der Karte hinzufügen"
+                },
+                "1": {
+                    "then": "Hinweis hinzufügen"
+                },
+                "2": {
+                    "then": "Objekt hinzufügen"
+                }
+            }
+        }
+    },
     "map": {
         "description": "Eine Karte, die für Touristen gedacht ist und dauerhaft im öffentlichen Raum aufgestellt ist",
         "name": "Karten",
@@ -9522,33 +9549,6 @@
         },
         "title": {
             "render": "Baum"
-        }
-    },
-    "undefined": {
-        "pointRendering": {
-            "0": {
-                "label": {
-                    "mappings": {
-                        "0": {
-                            "then": "Hinweis auf der Karte hinzufügen"
-                        }
-                    },
-                    "render": "Hier klicken, um ein neues Element hinzuzufügen"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Objekt oder Hinweis auf der Karte hinzufügen"
-                },
-                "1": {
-                    "then": "Hinweis hinzufügen"
-                },
-                "2": {
-                    "then": "Objekt hinzufügen"
-                }
-            }
         }
     },
     "usersettings": {

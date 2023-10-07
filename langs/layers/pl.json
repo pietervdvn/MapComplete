@@ -1755,6 +1755,33 @@
             }
         }
     },
+    "last_click": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "Utwórz nową notatkę na mapie"
+                        }
+                    },
+                    "render": "Kliknij tutaj, aby dodać nowy obiekt"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Dodaj nowy punkt lub dodaj notatkę"
+                },
+                "1": {
+                    "then": "Dodaj nową notatkę"
+                },
+                "2": {
+                    "then": "Dodaj nowy punkt"
+                }
+            }
+        }
+    },
     "map": {
         "description": "Mapa, przeznaczona dla turystów, która jest zainstalowana w przestrzeni publicznej na stałe",
         "name": "Mapy",
@@ -2620,33 +2647,6 @@
         },
         "title": {
             "render": "Szkoła <i>{name}</i>"
-        }
-    },
-    "undefined": {
-        "pointRendering": {
-            "0": {
-                "label": {
-                    "mappings": {
-                        "0": {
-                            "then": "Utwórz nową notatkę na mapie"
-                        }
-                    },
-                    "render": "Kliknij tutaj, aby dodać nowy obiekt"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Dodaj nowy punkt lub dodaj notatkę"
-                },
-                "1": {
-                    "then": "Dodaj nową notatkę"
-                },
-                "2": {
-                    "then": "Dodaj nowy punkt"
-                }
-            }
         }
     },
     "windturbine": {

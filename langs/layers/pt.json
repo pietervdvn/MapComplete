@@ -806,6 +806,15 @@
             "render": "Bicicleta fantasma"
         }
     },
+    "last_click": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "render": "Adicionar novo item"
+                }
+            }
+        }
+    },
     "questions": {
         "tagRenderings": {
             "description": {
@@ -1108,15 +1117,6 @@
         },
         "title": {
             "render": "Árvore"
-        }
-    },
-    "undefined": {
-        "pointRendering": {
-            "0": {
-                "label": {
-                    "render": "Adicionar novo item"
-                }
-            }
         }
     },
     "usersettings": {

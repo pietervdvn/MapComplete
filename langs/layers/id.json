@@ -364,6 +364,15 @@
             }
         }
     },
+    "last_click": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "render": "Klik di sini untuk menambahkan item baru"
+                }
+            }
+        }
+    },
     "playground": {
         "tagRenderings": {
             "playground-email": {
@@ -669,15 +678,6 @@
                 },
                 "question": "Apakah pohon ini memiliki nama?",
                 "render": "Nama: {name}"
-            }
-        }
-    },
-    "undefined": {
-        "pointRendering": {
-            "0": {
-                "label": {
-                    "render": "Klik di sini untuk menambahkan item baru"
-                }
             }
         }
     },

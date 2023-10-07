@@ -2076,6 +2076,15 @@
     "gps_track": {
         "name": "Dit tilbagelagte spor"
     },
+    "last_click": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "render": "Klik her for at tilføje et nyt punkt"
+                }
+            }
+        }
+    },
     "questions": {
         "tagRenderings": {
             "description": {
@@ -2924,15 +2933,6 @@
         },
         "title": {
             "render": "Træ"
-        }
-    },
-    "undefined": {
-        "pointRendering": {
-            "0": {
-                "label": {
-                    "render": "Klik her for at tilføje et nyt punkt"
-                }
-            }
         }
     },
     "usersettings": {

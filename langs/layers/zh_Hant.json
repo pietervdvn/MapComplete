@@ -562,6 +562,15 @@
         "description": "顯示消防栓的地圖圖層。",
         "name": "消防栓地圖"
     },
+    "last_click": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "render": "點這邊新增新項目"
+                }
+            }
+        }
+    },
     "postboxes": {
         "description": "這圖層顯示郵筒。",
         "name": "郵筒",
@@ -726,15 +735,6 @@
                     }
                 },
                 "question": "對應的維基資料項目是？"
-            }
-        }
-    },
-    "undefined": {
-        "pointRendering": {
-            "0": {
-                "label": {
-                    "render": "點這邊新增新項目"
-                }
             }
         }
     },

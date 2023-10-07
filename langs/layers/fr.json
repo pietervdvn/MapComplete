@@ -3961,6 +3961,33 @@
             }
         }
     },
+    "last_click": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "Créer une nouvelle note de carte"
+                        }
+                    },
+                    "render": "Cliquez ici pour ajouter un élément"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Ajouter un nouveau point ou ajouter une note"
+                },
+                "1": {
+                    "then": "Ajouter une nouvelle note"
+                },
+                "2": {
+                    "then": "Ajouter un nouveau point"
+                }
+            }
+        }
+    },
     "map": {
         "description": "Une carte, destinée aux touristes, installée en permanence dans l'espace public",
         "name": "Cartes",
@@ -6418,33 +6445,6 @@
         },
         "title": {
             "render": "Arbre"
-        }
-    },
-    "undefined": {
-        "pointRendering": {
-            "0": {
-                "label": {
-                    "mappings": {
-                        "0": {
-                            "then": "Créer une nouvelle note de carte"
-                        }
-                    },
-                    "render": "Cliquez ici pour ajouter un élément"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Ajouter un nouveau point ou ajouter une note"
-                },
-                "1": {
-                    "then": "Ajouter une nouvelle note"
-                },
-                "2": {
-                    "then": "Ajouter un nouveau point"
-                }
-            }
         }
     },
     "usersettings": {

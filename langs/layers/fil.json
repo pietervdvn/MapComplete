@@ -1,4 +1,13 @@
 {
+    "last_click": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "render": "I-click ito para mag-dagdag ng bagong bagay"
+                }
+            }
+        }
+    },
     "questions": {
         "tagRenderings": {
             "description": {
@@ -123,15 +132,6 @@
                     }
                 },
                 "question": "Ano ang nau-ukol na entidad sa Wikidata?"
-            }
-        }
-    },
-    "undefined": {
-        "pointRendering": {
-            "0": {
-                "label": {
-                    "render": "I-click ito para mag-dagdag ng bagong bagay"
-                }
             }
         }
     }

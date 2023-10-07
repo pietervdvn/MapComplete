@@ -4893,6 +4893,33 @@
             }
         }
     },
+    "last_click": {
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "Crea una nova nota del mapa"
+                        }
+                    },
+                    "render": "Afegir nou element"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Afegeix un nou punt o nota"
+                },
+                "1": {
+                    "then": "Afegeix una nova nota"
+                },
+                "2": {
+                    "then": "Afegeix un nou punt"
+                }
+            }
+        }
+    },
     "map": {
         "description": "Un mapa",
         "name": "Mapes",
@@ -8515,33 +8542,6 @@
         },
         "title": {
             "render": "Arbre"
-        }
-    },
-    "undefined": {
-        "pointRendering": {
-            "0": {
-                "label": {
-                    "mappings": {
-                        "0": {
-                            "then": "Crea una nova nota del mapa"
-                        }
-                    },
-                    "render": "Afegir nou element"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Afegeix un nou punt o nota"
-                },
-                "1": {
-                    "then": "Afegeix una nova nota"
-                },
-                "2": {
-                    "then": "Afegeix un nou punt"
-                }
-            }
         }
     },
     "usersettings": {
