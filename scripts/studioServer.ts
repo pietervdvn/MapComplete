@@ -22,21 +22,19 @@ const MIME_TYPES = {
 
 const STATIC_PATH = path.join(process.cwd(), "./assets")
 
-const toBool = [() => true, () => false]
-
-const prepareFile: (url) => Promise<{ ext: string; found: boolean; stream: ReadStream }> = async (
-    url
-) => {
+async function prepareFile(url: string): Promise<string> {
     const paths = [STATIC_PATH, url]
     if (url.endsWith("/")) paths.push("index.html")
     const filePath = path.join(...paths)
-    const pathTraversal = !filePath.startsWith(STATIC_PATH)
-    const exists = await fs.promises.access(filePath).then(...toBool)
-    const found = !pathTraversal && exists
-    const streamPath = found ? filePath : STATIC_PATH + "/404.html"
+    const exists = fs.existsSync(filePath)
+    console.log("Checking", filePath, exists)
+    const found = exists
+    if (!found) {
+        return null
+    }
+    const streamPath = filePath
     const ext = path.extname(streamPath).substring(1).toLowerCase()
-    const stream = fs.createReadStream(streamPath)
-    return { found, ext, stream }
+    return fs.readFileSync(streamPath, "utf8")
 }
 
 http.createServer(async (req, res) => {
@@ -86,10 +84,16 @@ http.createServer(async (req, res) => {
             return
         }
         const file = await prepareFile(req.url)
-        const statusCode = file.found ? 200 : 404
-        const mimeType = MIME_TYPES[file.ext] || MIME_TYPES.default
+        if (file === null) {
+            res.writeHead(404, { "Content-Type": MIME_TYPES.html })
+            res.write("<html><body><p>Not found...</p></body></html>")
+            res.end()
+            return
+        }
+        const statusCode = 200
+        const mimeType = MIME_TYPES.json || MIME_TYPES.default
         res.writeHead(statusCode, { "Content-Type": mimeType })
-        file.stream.pipe(res)
+        res.write(file)
         res.end()
     } catch (e) {
         console.error(e)
