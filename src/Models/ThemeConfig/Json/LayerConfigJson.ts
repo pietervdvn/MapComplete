@@ -43,7 +43,6 @@ export interface LayerConfigJson {
     description?: Translatable
 
     /**
-     *
      * Question: Where should the data be fetched from?
      * title: Data Source
      *
@@ -202,13 +201,13 @@ export interface LayerConfigJson {
     minzoomVisible?: number
 
     /**
+     * question: What title should be shown on the infobox?
      * The title shown in a popup for elements of this layer.
      *
      * group: title
-     * question: What title should be shown on the infobox?
-     * types: use a fixed translation ; Use a dynamic tagRendering ; use a fixed string for all languages
+     * types: use a fixed translation ; Use a dynamic tagRendering ; hidden
      * typesdefault: 1
-     *
+     * type: translation
      */
     title?: TagRenderingConfigJson | Translatable
 

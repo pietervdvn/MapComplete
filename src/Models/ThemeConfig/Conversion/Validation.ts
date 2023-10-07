@@ -1033,7 +1033,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             }
 
             {
-                const hasCondition = json.mapRendering?.filter(
+                const hasCondition = json.pointRendering?.filter(
                     (mr) => mr["icon"] !== undefined && mr["icon"]["condition"] !== undefined
                 )
                 if (hasCondition?.length > 0) {

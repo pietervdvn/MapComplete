@@ -645,6 +645,7 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
         }
 
         if (json.allowSplit && !ValidationUtils.hasSpecialVisualisation(json, "split_button")) {
+            json.tagRenderings ??= []
             json.tagRenderings.push({
                 id: "split-button",
                 render: { "*": "{split_button()}" },
@@ -653,6 +654,7 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
         }
 
         if (json.allowMove && !ValidationUtils.hasSpecialVisualisation(json, "move_button")) {
+            json.tagRenderings ??= []
             json.tagRenderings.push({
                 id: "move-button",
                 render: { "*": "{move_button()}" },

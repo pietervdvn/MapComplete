@@ -13,6 +13,7 @@
   import type { JsonSchemaType } from "./jsonSchema";
   // @ts-ignore
   import nmd from "nano-markdown";
+  import { writable } from "svelte/store";
 
   /**
    * If 'types' is defined: allow the user to pick one of the types to input.
@@ -84,7 +85,7 @@
     );
   }
   const config = new TagRenderingConfig(configJson, "config based on " + schema.path.join("."));
-  let chosenOption: number = defaultOption;
+  let chosenOption: number = writable(defaultOption);
 
 
   const existingValue = state.getCurrentValueFor(path);
@@ -126,8 +127,11 @@
     }
     possibleTypes.sort((a, b) => b.optionalMatches - a.optionalMatches);
     possibleTypes.sort((a, b) => b.matchingPropertiesCount - a.matchingPropertiesCount);
+    console.log("Possible types are", possibleTypes)
     if (possibleTypes.length > 0) {
-      tags.setData({ chosen_type_index: "" + possibleTypes[0].index });
+      chosenOption = possibleTypes[0].index
+      tags.setData({ chosen_type_index: "" + chosenOption});
+      
     }
   } else if (defaultOption !== undefined) {
     tags.setData({ chosen_type_index: "" + defaultOption });
@@ -150,13 +154,14 @@
   let subSchemas: ConfigMeta[] = [];
 
   let subpath = path;
-  console.log("Initial chosen option is", chosenOption);
+  console.log("Initial chosen option for",path.join("."),"is", chosenOption);
   onDestroy(tags.addCallbackAndRun(tags => {
     if (tags["value"] !== "") {
       chosenOption = undefined;
       return;
     }
     const oldOption = chosenOption;
+    console.log("Updating chosenOption based on", tags, oldOption)
     chosenOption = tags["chosen_type_index"] ? Number(tags["chosen_type_index"]) : defaultOption;
     const type = schema.type[chosenOption];
     if (chosenOption !== oldOption) {
@@ -209,4 +214,5 @@
                         path={[...subpath, (subschema?.path?.at(-1) ?? "???")]}></SchemaBasedInput>
     {/each}
   {/if}
+  {chosenOption}
 </div>

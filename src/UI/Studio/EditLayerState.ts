@@ -129,7 +129,7 @@ export default class EditLayerState {
             }
             entry = entry[breadcrumb]
         }
-        if (v) {
+        if (v !== undefined && v !== null && v !== "") {
             entry[path.at(-1)] = v
         } else if (entry) {
             delete entry[path.at(-1)]

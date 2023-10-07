@@ -2,7 +2,17 @@ import { TagRenderingConfigJson } from "./TagRenderingConfigJson"
 import { TagConfigJson } from "./TagConfigJson"
 
 export interface IconConfigJson {
+    /**
+     * question: What icon should be used?
+     * type: icon
+     * suggestions: return ["pin","square","circle","checkmark","clock","close","crosshair","help","home","invalid","location","location_empty","location_locked","note","resolved","ring","scissors","teardrop","teardrop_with_hole_green","triangle"].map(i => ({if: "value="+i, then: i, icon: i}))
+     */
     icon: string | TagRenderingConfigJson | { builtin: string; override: any }
+    /**
+     * question: What colour should the icon be?
+     * This will only work for the default icons such as `pin`,`circle`,...
+     * type: color
+     */
     color?: string | TagRenderingConfigJson | { builtin: string; override: any }
 }
 
@@ -23,18 +33,16 @@ export default interface PointRenderingConfigJson {
     location: ("point" | "centroid" | "start" | "end" | "projected_centerpoint" | string)[]
 
     /**
-   * question: What marker should be used to
-   * The icon for an element.
-   * Note that this also doubles as the icon for this layer (rendered with the overpass-tags) ánd the icon in the presets.
-   *
-   * The result of the icon is rendered as follows:
-   * the resulting string is interpreted as a _list_ of items, separated by ";". The bottommost layer is the first layer.
-   * As a result, on could use a generic pin, then overlay it with a specific icon.
-   * To make things even more practical, one c    an use all SVG's from the folder "assets/svg" and _substitute the color_ in it.
-   * E.g. to draw a red pin, use "pin:#f00", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`
-
-   * Type: icon
-   */
+     * The marker for an element.
+     * Note that this also defines the icon for this layer (rendered with the overpass-tags) <i>and</i> the icon in the presets.
+     *
+     * The result of the icon is rendered as follows:
+     * - The first icon is rendered on the map
+     * - The second entry is overlayed on top of it
+     * - ...
+     *
+     * As a result, on could use a generic icon (`pin`, `circle`, `square`) with a color, then overlay it with a specific icon.
+     */
     marker?: IconConfigJson[]
 
     /**
@@ -53,8 +61,9 @@ export default interface PointRenderingConfigJson {
     }[]
 
     /**
-     * A string containing "width,height" or "width,height,anchorpoint" where anchorpoint is any of 'center', 'top', 'bottom', 'left', 'right', 'bottomleft','topright', ...
-     * Default is '40,40,center'
+     * question: What size should the marker be on the map?
+     * A string containing "<width>,<height>" in pixels
+     * ifunset: Use the default size (<b>40,40</b> px)
      */
     iconSize?: string | TagRenderingConfigJson
 
@@ -69,13 +78,15 @@ export default interface PointRenderingConfigJson {
     anchor?: "center" | "top" | "bottom" | "left" | "right" | string | TagRenderingConfigJson
 
     /**
-     * The rotation of an icon, useful for e.g. directions.
-     * Usage: as if it were a css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``
+     * question: What rotation should be applied on the icon?
+     * This is mostly useful for items that face a specific direction, such as surveillance cameras
+     * This is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``
+     * ifunset: Do not rotate
      */
     rotation?: string | TagRenderingConfigJson
     /**
      * question: What label should be shown beneath the marker?
-     * For example: <div style="background: white">{name}</div>
+     * For example: `&LT;div style="background: white">{name}&LT;/div>`
      *
      * If the icon is undefined, then the label is shown in the center of the feature.
      * types: Dynamic value | string
@@ -124,15 +135,15 @@ export default interface PointRenderingConfigJson {
     labelCssClasses?: string | TagRenderingConfigJson
 
     /**
-     * If the map is pitched, the marker will stay parallel to the screen.
-     * Set to 'map' if you want to put it flattened on the map
+     * question: If the map is pitched, should the icon stay parallel to the screen or to the groundplane?
+     * suggestions: return [{if: "value=canvas", then: "The icon will stay upward and not be transformed as if it sticks to the screen"}, {if: "value=map", then: "The icon will be transformed as if it were painted onto the ground. (Automatically sets rotationAlignment)"}]
      */
     pitchAlignment?: "canvas" | "map" | TagRenderingConfigJson
 
     /**
-     * question: Should the icon be rotated or tilted if the map is rotated or tilted?
+     * question: Should the icon be rotated if the map is rotated?
      * ifunset: Do not rotate or tilt icons. Always keep the icons straight
-     * suggestions: return [{if: "value=canvas", then: "If the map is tilted, tilt the icon as well. This gives the impression of an icon that is glued to the ground."}, {if: "value=map", then: "If the map is rotated, rotate the icon as well. This gives the impression of an icon that floats perpendicular above the ground."}]
+     * suggestions: return [{if: "value=canvas", then: "Never rotate the icon"}, {if: "value=map", then: "If the map is rotated, rotate the icon as well. This gives the impression of an icon that floats perpendicular above the ground."}]
      */
     rotationAlignment?: "map" | "canvas" | TagRenderingConfigJson
 }

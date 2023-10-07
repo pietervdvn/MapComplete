@@ -534,7 +534,7 @@ class MappedStore<TIn, T> extends Store<T> {
     private update(): void {
         const newData = this._f(this._upstream.data)
         this._upstreamPingCount = this._upstreamCallbackHandler?.pingCount
-        if (this._data == newData) {
+        if (this._data === newData) {
             return
         }
         this._data = newData

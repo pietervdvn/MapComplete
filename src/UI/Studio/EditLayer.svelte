@@ -7,10 +7,12 @@
   import { Store, UIEventSource } from "../../Logic/UIEventSource";
   import type { ConfigMeta } from "./configMeta";
   import { Utils } from "../../Utils";
+  import type { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson";
 
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw;
   let state = new EditLayerState(layerSchema);
-  state.configuration.setData({});
+  export let initialLayerConfig: Partial<LayerConfigJson> = {}
+  state.configuration.setData(initialLayerConfig);
   const configuration = state.configuration;
   new LayerStateSender("http://localhost:1235", state);
   /**

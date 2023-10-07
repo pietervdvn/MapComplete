@@ -5,7 +5,7 @@ import { TagUtils } from "../../Logic/Tags/TagUtils"
 import { Utils } from "../../Utils"
 import Svg from "../../Svg"
 import WithContextLoader from "./WithContextLoader"
-import { Store } from "../../Logic/UIEventSource"
+import { ImmutableStore, Store } from "../../Logic/UIEventSource"
 import BaseUIElement from "../../UI/BaseUIElement"
 import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import Img from "../../UI/Base/Img"
@@ -93,7 +93,7 @@ export default class PointRenderingConfig extends WithContextLoader {
                 ".location)"
             )
         }
-        this.marker = (json.marker ?? []).map((m) => new IconConfig(m))
+        this.marker = (json.marker ?? []).map((m) => new IconConfig(<any>m))
         if (json.css !== undefined) {
             this.cssDef = this.tr("css", undefined)
         }
@@ -192,7 +192,7 @@ export default class PointRenderingConfig extends WithContextLoader {
     }
 
     public GetBaseIcon(tags?: Record<string, string>): BaseUIElement {
-        return new SvelteUIElement(Marker, { icons: this.marker, tags })
+        return new SvelteUIElement(Marker, { config: this, tags: new ImmutableStore(tags) })
     }
     public RenderIcon(
         tags: Store<Record<string, string>>,

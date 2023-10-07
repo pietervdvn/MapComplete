@@ -25,6 +25,7 @@ import TranslationValidator from "./Validators/TranslationValidator"
 import FediverseValidator from "./Validators/FediverseValidator"
 import IconValidator from "./Validators/IconValidator"
 import TagValidator from "./Validators/TagValidator"
+import IdValidator from "./Validators/IdValidator"
 
 export type ValidatorType = (typeof Validators.availableTypes)[number]
 
@@ -54,6 +55,7 @@ export default class Validators {
         "fediverse",
         "tag",
         "fediverse",
+        "id",
     ] as const
 
     public static readonly AllValidators: ReadonlyArray<Validator> = [
@@ -80,6 +82,7 @@ export default class Validators {
         new TranslationValidator(),
         new IconValidator(),
         new FediverseValidator(),
+        new IdValidator(),
     ]
 
     private static _byType = Validators._byTypeConstructor()

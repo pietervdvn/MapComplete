@@ -4,9 +4,8 @@
   import EditLayerState from "./EditLayerState";
   import SchemaBasedArray from "./SchemaBasedArray.svelte";
   import SchemaBasedMultiType from "./SchemaBasedMultiType.svelte";
-  import SchemaBasedTranslationInput from "./SchemaBasedTranslationInput.svelte";
-  import { ConfigMetaUtils } from "./configMeta.ts"
   import ArrayMultiAnswer from "./ArrayMultiAnswer.svelte";
+
   export let schema: ConfigMeta;
   export let state: EditLayerState;
   export let path: (string | number)[] = [];

@@ -11,7 +11,12 @@ export default class IconValidator extends Validator {
         super("icon", "Makes sure that a valid .svg-path is added")
     }
 
+    reformat(s: string, _?: () => string): string {
+        return s.trim()
+    }
+
     getFeedback(s: string, getCountry, sloppy?: boolean): Translation | undefined {
+        s = this.reformat(s)
         if (!s.startsWith("http")) {
             if (!IconValidator.allLicenses.has(s)) {
                 const close = sloppy

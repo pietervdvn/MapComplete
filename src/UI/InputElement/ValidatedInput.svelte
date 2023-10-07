@@ -79,7 +79,7 @@
 
     onDestroy(_value.addCallbackAndRun((_) => setValues()))
     onDestroy(value.addCallbackAndRunD(fromUpstream => {
-        if(_value.data !== fromUpstream){
+        if(_value.data !== fromUpstream && fromUpstream !== ""){
             _value.setData(fromUpstream)
         }
     }))

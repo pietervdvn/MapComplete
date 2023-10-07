@@ -72,11 +72,11 @@
         configJson.mappings.push(
             {
                 if: "value=true",
-                then: "Yes "+(schema.hints?.iftrue??"")
+                then: "Yes: "+(schema.hints?.iftrue??"")
             },
             {
                 if: "value=false",
-                then: "No "+(schema.hints?.iffalse??"")
+                then: "No: "+(schema.hints?.iffalse??"")
             }
         )
     }
@@ -105,6 +105,15 @@
             const v = tgs["value"];
             if (schema.type === "boolan") {
                 return v === "true" || v === "yes" || v === "1"
+            }
+            if(mightBeBoolean(schema.type)){
+              if(v === "true" || v === "yes" || v === "1"){
+                return true
+              }
+              if(v === "false" || v === "no" || v === "0"){
+                console.log("Setting false...")
+                return false
+              }
             }
             if (schema.type === "number") {
                 return Number(v)
