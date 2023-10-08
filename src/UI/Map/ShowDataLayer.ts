@@ -515,7 +515,7 @@ export default class ShowDataLayer {
                 const l = new LineRenderingLayer(
                     map,
                     features,
-                    this._options.layer.id + "_linerendering_" + i,
+                    "mapcomplete_"+this._options.layer.id + "_linerendering_" + i,
                     lineRenderingConfig,
                     doShowLayer,
                     fetchStore,
