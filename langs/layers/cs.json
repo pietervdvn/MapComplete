@@ -340,7 +340,7 @@
                         "then": "Instalace"
                     },
                     "8": {
-                        "then": "Graffiti"
+                        "then": "Grafiti"
                     },
                     "9": {
                         "then": "Reliéf"
@@ -1724,6 +1724,44 @@
     },
     "climbing": {
         "description": "Falešná vrstva, která obsahuje tagrenderingy sdílené mezi lezeckými vrstvami"
+    },
+    "clock": {
+        "tagRenderings": {
+            "support": {
+                "mappings": {
+                    "1": {
+                        "then": "Hodiny jsou připevněny na zdi"
+                    }
+                }
+            }
+        }
+    },
+    "defibrillator": {
+        "tagRenderings": {
+            "defibrillator-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Veřejně přístupné"
+                    },
+                    "2": {
+                        "then": "Přístupné pouze zákazníkům"
+                    },
+                    "3": {
+                        "then": "Nepřístupné široké veřejnosti (např. přístupné pouze zaměstnancům, majitelům, …)"
+                    },
+                    "4": {
+                        "then": "Nepřístupné, případně pouze pro profesionální použití"
+                    }
+                }
+            },
+            "defibrillator-indoors": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento defibrilátor je umístěn v interiéru"
+                    }
+                }
+            }
+        }
     },
     "food": {
         "description": "Vrstva zobrazující restaurace a zařízení rychlého občerstvení (se speciálním vykreslením pro fritézy)"
