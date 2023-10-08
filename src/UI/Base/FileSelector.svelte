@@ -12,7 +12,28 @@
   let id = Math.random() * 1000000000 + ""
 </script>
 
-<form>
+<form  on:change|preventDefault={() => {
+      drawAttention = false
+      dispatcher("submit", inputElement.files)
+    }}
+       on:dragend={() => {
+      console.log("Drag end")
+      drawAttention = false
+    }}
+       on:dragenter|preventDefault|stopPropagation={(e) => {
+      console.log("Dragging enter")
+      drawAttention = true
+      e.dataTransfer.drop = "copy"
+    }}
+       on:dragstart={() => {
+      console.log("DragStart")
+      drawAttention = false
+    }}
+       on:drop|preventDefault|stopPropagation={(e) => {
+      console.log("Got a 'drop'")
+      drawAttention = false
+      dispatcher("submit", e.dataTransfer.files)
+    }}>
   <label class={twMerge(cls, drawAttention ? "glowing-shadow" : "")} for={"fileinput" + id}>
     <slot />
   </label>
@@ -23,26 +44,7 @@
     id={"fileinput" + id}
     {multiple}
     name="file-input"
-    on:change|preventDefault={() => {
-      drawAttention = false
-      dispatcher("submit", inputElement.files)
-    }}
-    on:dragend={() => {
-      drawAttention = false
-    }}
-    on:dragover|preventDefault|stopPropagation={(e) => {
-      console.log("Dragging over!")
-      drawAttention = true
-      e.dataTransfer.drop = "copy"
-    }}
-    on:dragstart={() => {
-      drawAttention = false
-    }}
-    on:drop|preventDefault|stopPropagation={(e) => {
-      console.log("Got a 'drop'")
-      drawAttention = false
-      dispatcher("submit", e.dataTransfer.files)
-    }}
+   
     type="file"
   />
 </form>
