@@ -1,24 +1,21 @@
-import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFile, writeFileSync } from "fs"
-import Locale from "../src/UI/i18n/Locale"
-import Translations from "../src/UI/i18n/Translations"
-import { Translation } from "../src/UI/i18n/Translation"
-import all_known_layouts from "../src/assets/generated/known_themes.json"
-import { LayoutConfigJson } from "../src/Models/ThemeConfig/Json/LayoutConfigJson"
-import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
-import xml2js from "xml2js"
-import ScriptUtils from "./ScriptUtils"
-import { Utils } from "../src/Utils"
-import SpecialVisualizations from "../src/UI/SpecialVisualizations"
-import Constants from "../src/Models/Constants"
-import {
-    AvailableRasterLayers,
-    EditorLayerIndexProperties,
-    RasterLayerPolygon,
-} from "../src/Models/RasterLayers"
-import { ImmutableStore } from "../src/Logic/UIEventSource"
-import * as crypto from "crypto"
-import * as eli from "../src/assets/editor-layer-index.json"
-import dom from "svelte/types/compiler/compile/render_dom"
+import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFile, writeFileSync } from "fs";
+import Locale from "../src/UI/i18n/Locale";
+import Translations from "../src/UI/i18n/Translations";
+import { Translation } from "../src/UI/i18n/Translation";
+import all_known_layouts from "../src/assets/generated/known_themes.json";
+import { LayoutConfigJson } from "../src/Models/ThemeConfig/Json/LayoutConfigJson";
+import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig";
+import xml2js from "xml2js";
+import ScriptUtils from "./ScriptUtils";
+import { Utils } from "../src/Utils";
+import SpecialVisualizations from "../src/UI/SpecialVisualizations";
+import Constants from "../src/Models/Constants";
+import { AvailableRasterLayers, RasterLayerPolygon } from "../src/Models/RasterLayers";
+import { ImmutableStore } from "../src/Logic/UIEventSource";
+import * as crypto from "crypto";
+import * as eli from "../src/assets/editor-layer-index.json";
+import * as eli_global from "../src/assets/global-raster-layers.json";
+
 const sharp = require("sharp")
 const template = readFileSync("theme.html", "utf8")
 const codeTemplate = readFileSync("src/index_theme.ts.template", "utf8")
@@ -219,7 +216,8 @@ function eliUrls(): string[] {
     }
     const urls: string[] = []
     const regex = /{switch:([^}]+)}/
-    for (const feature of eli.features) {
+    const rasterLayers = [...AvailableRasterLayers.vectorLayers, ...eli.features, ...eli_global.layers.map(properties => ({properties})) ]
+  for (const feature of rasterLayers) {
         const url = (<RasterLayerPolygon>feature).properties.url
         const match = url.match(regex)
         if (match) {
@@ -245,7 +243,6 @@ function generateCsp(
         ...Constants.defaultOverpassUrls,
         Constants.countryCoderEndpoint,
         Constants.nominatimEndpoint,
-        ...AvailableRasterLayers.vectorLayers.map(l => l.properties.url),
         "https://api.openstreetmap.org",
         "https://pietervdvn.goatcounter.com",
     ]
