@@ -303,6 +303,57 @@
           "osmTags": "service:electricity=yes"
         }
       ]
+    },
+    {
+      "id": "sugar_free",
+      "options": [
+        {
+          "question": {
+            "en": "Has a sugar-free offering"
+          },
+          "osmTags": {
+            "or": [
+              "diet:sugar_free=yes",
+              "diet:sugar_free=only",
+              "diet:sugar_free=limited"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gluten_free",
+      "options": [
+        {
+          "question": {
+            "en": "Has a gluten free offering"
+          },
+          "osmTags": {
+            "or": [
+              "diet:gluten_free=yes",
+              "diet:gluten_free=only",
+              "diet:gluten_free=limited"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "lactose_free",
+      "options": [
+        {
+          "question": {
+            "en": "Has a lactose free offering"
+          },
+          "osmTags": {
+            "or": [
+              "diet:lactose_free=yes",
+              "diet:lactose_free=only",
+              "diet:lactose_free=limited"
+            ]
+          }
+        }
+      ]
     }
   ]
 }

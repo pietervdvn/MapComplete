@@ -2396,6 +2396,105 @@
           }
         }
       ]
+    },
+    {
+      "id": "sugar_free",
+      "question": {
+        "en": "Does this shop have a sugar free offering?"
+      },
+      "questionHint": {
+        "en": "This is important for people following a sugar-free diet, such as people with Diabetes"
+      },
+      "mappings": [
+        {
+          "if": "diet:sugar_free=only",
+          "then": {
+            "en": "This shop <b>only sells sugar free</b> products"
+          }
+        },
+        {
+          "if": "diet:sugar_free=yes",
+          "then": {
+            "en": "This shop has a big sugar free offering"
+          }
+        },
+        {
+          "if": "diet:sugar_free=limited",
+          "then": {
+            "en": "This shop has a <b>limited sugar free</b> offering"
+          }
+        },
+        {
+          "if": "diet:sugar_free=no",
+          "then": {
+            "en": "This shop has no sugar free offering"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lactose_free",
+      "question": {
+        "en": "Does {title()} have a lactose-free offering?"
+      },
+      "mappings": [
+        {
+          "if": "diet:lactose_free=only",
+          "then": {
+            "en": "<b>Only sells lactose free</b> products"
+          }
+        },
+        {
+          "if": "diet:lactose_free=yes",
+          "then": {
+            "en": "Big lactose free offering"
+          }
+        },
+        {
+          "if": "diet:lactose_free=limited",
+          "then": {
+            "en": "<b>Limited lactose free</b> offering"
+          }
+        },
+        {
+          "if": "diet:lactose_free=no",
+          "then": {
+            "en": "No lactose free offering"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gluten_free",
+      "question": {
+        "en": "Does this shop have a gluten free offering?"
+      },
+      "mappings": [
+        {
+          "if": "diet:gluten_free=only",
+          "then": {
+            "en": "This shop <b>only sells gluten free</b> products"
+          }
+        },
+        {
+          "if": "diet:gluten_free=yes",
+          "then": {
+            "en": "This shop has a big gluten free offering"
+          }
+        },
+        {
+          "if": "diet:gluten_free=limited",
+          "then": {
+            "en": "This shop has a <b>limited gluten free</b> offering"
+          }
+        },
+        {
+          "if": "diet:gluten_free=no",
+          "then": {
+            "en": "This shop has no gluten free offering"
+          }
+        }
+      ]
     }
   ]
 }
