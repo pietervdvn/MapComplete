@@ -100,6 +100,12 @@ export class AvailableRasterLayers {
         geometry: BBox.global.asGeometry(),
     }
 
+    public static readonly vectorLayers = [             AvailableRasterLayers.maptilerDefaultLayer,
+        AvailableRasterLayers.osmCarto,
+        AvailableRasterLayers.maptilerCarto,
+        AvailableRasterLayers.maptilerBackdrop,
+        AvailableRasterLayers.americana]
+
     public static layersAvailableAt(
         location: Store<{ lon: number; lat: number }>
     ): Store<RasterLayerPolygon[]> {
@@ -122,13 +128,7 @@ export class AvailableRasterLayers {
                     return GeoOperations.inside(lonlat, eliPolygon)
                 })
                 matching.push(...AvailableRasterLayers.globalLayers)
-                matching.unshift(
-                    AvailableRasterLayers.maptilerDefaultLayer,
-                    AvailableRasterLayers.osmCarto,
-                    AvailableRasterLayers.maptilerCarto,
-                    AvailableRasterLayers.maptilerBackdrop,
-                    AvailableRasterLayers.americana
-                )
+                matching.unshift(...AvailableRasterLayers.vectorLayers)
                 return matching
             })
         )
