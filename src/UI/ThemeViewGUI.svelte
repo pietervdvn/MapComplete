@@ -52,6 +52,7 @@
   import LanguagePicker from "./LanguagePicker"
   import Locale from "./i18n/Locale"
   import ShareScreen from "./BigComponents/ShareScreen.svelte"
+  import { Square3Stack3dIcon } from "@babeard/svelte-heroicons/solid";
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -170,6 +171,10 @@
   <div class="flex w-full items-end justify-between px-4">
     <div class="flex">
       <!-- bottom left elements -->
+      <MapControlButton on:click={() => state.guistate.openFilterView()}>
+        <ToSvelte construct={Svg.filter_svg().SetClass("h-6 w-6")}/>
+      </MapControlButton>
+
       <OpenBackgroundSelectorButton hideTooltip={true} {state} />
       <a
         class="bg-black-transparent pointer-events-auto h-fit max-h-12 cursor-pointer self-end overflow-hidden rounded-2xl pl-1 pr-2 text-white opacity-50 hover:opacity-100"
