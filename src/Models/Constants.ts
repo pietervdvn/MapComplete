@@ -58,7 +58,7 @@ export default class Constants {
 
         importHelperUnlock: 5000,
     }
-    static readonly minZoomLevelToAddNewPoint = Constants.isRetina() ? 18 : 19
+    static readonly minZoomLevelToAddNewPoint = Constants.isRetina() ? 17 : 18
     /**
      * Used by 'PendingChangesUploader', which waits this amount of seconds to upload changes.
      * (Note that pendingChanges might upload sooner if the popup is closed or similar)
