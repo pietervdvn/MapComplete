@@ -323,6 +323,7 @@
       }
     },
     {
+      "id": "diets",
       "builtin": [
         "sugar_free",
         "gluten_free",
