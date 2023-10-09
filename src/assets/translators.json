@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 310,
+      "commits": 311,
       "contributor": "kjon"
     },
     {
@@ -350,6 +350,10 @@
     },
     {
       "commits": 2,
+      "contributor": "macpac"
+    },
+    {
+      "commits": 2,
       "contributor": "Peter Brodersen"
     },
     {
@@ -443,6 +447,10 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "Michal Čermák"
     },
     {
       "commits": 1,

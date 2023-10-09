@@ -281,7 +281,8 @@
       "options": [
         {
           "question": {
-            "en": "Offers internet"
+            "en": "Offers internet",
+            "de": "Internetzugang vorhanden"
           },
           "osmTags": {
             "or": [
@@ -298,7 +299,8 @@
       "options": [
         {
           "question": {
-            "en": "Offers electricity"
+            "en": "Offers electricity",
+            "de": "Stromanschluss vorhanden"
           },
           "osmTags": "service:electricity=yes"
         }

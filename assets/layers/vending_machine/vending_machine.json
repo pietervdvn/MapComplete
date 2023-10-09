@@ -257,7 +257,7 @@
           "then": {
             "en": "Fruit is sold",
             "nl": "Fruit wordt verkocht",
-            "de": "Blumen werden verkauft"
+            "de": "Obst wird verkauft"
           },
           "icon": "./assets/layers/vending_machine/fruits.svg"
         },
@@ -266,7 +266,7 @@
           "then": {
             "en": "Strawberries are sold",
             "nl": "Aardbeien worden verkocht",
-            "de": "Parkscheine werden verkauft"
+            "de": "Erdbeeren werden verkauft"
           },
           "icon": "./assets/layers/vending_machine/strawberry.svg"
         },
@@ -389,7 +389,7 @@
       "question": {
         "en": "Is this vending machine indoors?",
         "nl": "Is deze verkoopautomaat binnen?",
-        "de": "Ist dieser Automat in einem Gebäude untergebracht?",
+        "de": "Ist der Automat in einem Gebäude untergebracht?",
         "fr": "Est-ce que ce distributeur est en intérieur ?",
         "ca": "Aquesta màquina expenedora està a l'exterior?"
       },
@@ -399,7 +399,7 @@
           "then": {
             "en": "This vending machine is outdoors",
             "nl": "Deze verkoopautomaat is buiten",
-            "de": "Dieser Automat befindet sich im Freien",
+            "de": "Der Automat befindet sich im Freien",
             "fr": "Ce distributeur est à l'extérieur",
             "ca": "Aquesta màquina expenedora està a l'exterior"
           },
@@ -410,7 +410,7 @@
           "then": {
             "en": "This vending machine is indoors",
             "nl": "Deze verkoopautomaat is binnen",
-            "de": "Dieser Verkaufsautomat befindet sich im Innenbereich",
+            "de": "Der Automat befindet sich im Innenbereich",
             "fr": "Ce distributeur est à l'intérieur",
             "ca": "Aquesta màquina expenedora està a l'interior"
           }
@@ -910,7 +910,8 @@
           "question": {
             "en": "Sale of fruit",
             "nl": "Verkoop van fruit",
-            "ca": "Venda de flors"
+            "ca": "Venda de flors",
+            "de": "Verkauf von Obst"
           },
           "osmTags": "vending~i~.*fruit.*"
         },
@@ -918,7 +919,8 @@
           "question": {
             "en": "Sale of strawberries",
             "nl": "Verkoop van aardbeien",
-            "ca": "Venda de tiquets d'aparcament"
+            "ca": "Venda de tiquets d'aparcament",
+            "de": "Verkauf von Erdbeeren"
           },
           "osmTags": "vending~i~.*strawberries.*"
         },

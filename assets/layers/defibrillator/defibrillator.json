@@ -107,7 +107,8 @@
             "de": "Der Defibrillator befindet sich in einem Gebäude",
             "it": "Questo defibrillatore si trova all’interno",
             "sl": "Defibrilator se nahaja znotraj",
-            "pl": "Ten defibrylator jest wewnątrz budynku"
+            "pl": "Ten defibrylator jest wewnątrz budynku",
+            "cs": "Tento defibrilátor je umístěn v interiéru"
           }
         },
         {
@@ -169,7 +170,8 @@
             "ru": "Общедоступный",
             "sl": "Javno dostopen",
             "da": "Offentligt tilgængelig",
-            "pl": "Dostępny publicznie"
+            "pl": "Dostępny publicznie",
+            "cs": "Veřejně přístupné"
           }
         },
         {
@@ -201,7 +203,8 @@
             "it": "Accessibile solo ai clienti",
             "ru": "Доступно только для клиентов",
             "sl": "Dostopen samo strankam",
-            "pl": "Dostępny tylko dla klientów"
+            "pl": "Dostępny tylko dla klientów",
+            "cs": "Přístupné pouze zákazníkům"
           }
         },
         {
@@ -215,7 +218,8 @@
             "de": "Der Defibrillator ist nicht öffentlich zugänglich (z.B. nur für Personal, Eigentümer, …)",
             "it": "Non accessibile al pubblico (ad esempio riservato al personale, ai proprietari, etc.)",
             "sl": "Ni dostopen splošni javnosti (npr. samo za osebje, za lastnike, ...)",
-            "pl": "Niedostępny publicznie (np. dostępny tylko dla personelu, właścicieli, ...)"
+            "pl": "Niedostępny publicznie (np. dostępny tylko dla personelu, właścicieli, ...)",
+            "cs": "Nepřístupné široké veřejnosti (např. přístupné pouze zaměstnancům, majitelům, …)"
           }
         },
         {
@@ -229,7 +233,8 @@
             "sl": "Ni dostopen, morda samo za profesionalno rabo",
             "es": "No accesible, posiblemente solo para el uso profesional",
             "ca": "No accessible, posiblemente només d'ús profesional",
-            "pl": "Niedostępny, być może tylko do profesjonalnego użytku"
+            "pl": "Niedostępny, być może tylko do profesjonalnego użytku",
+            "cs": "Nepřístupné, případně pouze pro profesionální použití"
           }
         }
       ],

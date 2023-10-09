@@ -50,6 +50,9 @@
     + [denominations-coins](#denominations-coins)
     + [check_date](#check_date)
     + [all_tags](#all_tags)
+    + [sugar_free](#sugar_free)
+    + [gluten_free](#gluten_free)
+    + [lactose_free](#lactose_free)
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
     + [minimap](#minimap)
@@ -805,6 +808,42 @@
 
 
   - fixme
+
+
+
+
+### sugar_free 
+
+
+
+
+
+  - food
+  - shops
+
+
+
+
+### gluten_free 
+
+
+
+
+
+  - food
+  - shops
+
+
+
+
+### lactose_free 
+
+
+
+
+
+  - food
+  - shops
 
 
 
