@@ -13,7 +13,7 @@
   "source": {
     "osmTags": "amenity=ticket_validator"
   },
-  "minzoom": 19,
+  "minzoom": 18,
   "title": {
     "render": {
       "en": "Ticket Validator",
