@@ -1955,9 +1955,6 @@
                     "11": {
                         "then": "<b>Typ 1 CCS</b> (aka Typ 1 Combo)"
                     },
-                    "12": {
-                        "then": ""
-                    },
                     "14": {
                         "then": "<b>Typ 2</b> (mennekes)"
                     },
@@ -3034,9 +3031,6 @@
                 "question": "Můžete si vyzvednout balíčky z této skříňky na balíky?"
             },
             "ref": {
-                "freeform": {
-                    "placeholder": ""
-                },
                 "question": "Jaké je referenční číslo/identifikátor této parcelní skříňky?"
             }
         },
