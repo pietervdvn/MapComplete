@@ -175,7 +175,6 @@ export default class ThemeViewStateHashActor {
     }
 
     private back() {
-        console.trace("Got a back event")
         const state = this._state
         // history.pushState(null, null, window.location.pathname);
         if (state.selectedElement.data) {

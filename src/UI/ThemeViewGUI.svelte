@@ -267,7 +267,7 @@
 
 <If condition={state.guistate.themeIsOpened}>
   <!-- Theme menu -->
-  <FloatOver>
+  <FloatOver   on:close={() => state.guistate.themeIsOpened.setData(false)}>
     <span slot="close-button"><!-- Disable the close button --></span>
     <TabbedGroup tab={state.guistate.themeViewTabIndex}>
       <div slot="post-tablist">
@@ -339,7 +339,7 @@
 
 <IfHidden condition={state.guistate.backgroundLayerSelectionIsOpened}>
   <!-- background layer selector -->
-  <FloatOver on:close={() => state.guistate.backgroundLayerSelectionIsOpened.setData(false)}>
+  <FloatOver on:close={() => {state.guistate.backgroundLayerSelectionIsOpened.setData(false)}}>
     <div class="h-full p-2">
       <RasterLayerOverview
         {availableLayers}
@@ -354,9 +354,7 @@
 
 <If condition={state.guistate.menuIsOpened}>
   <!-- Menu page -->
-  <FloatOver on:close={() => {
-      selectedElement.setData(undefined)
-    }}>
+  <FloatOver on:close={() =>      state.guistate.menuIsOpened.setData(false)    }>
     <span slot="close-button"><!-- Hide the default close button --></span>
     <TabbedGroup tab={state.guistate.menuViewTabIndex}>
       <div slot="post-tablist">
