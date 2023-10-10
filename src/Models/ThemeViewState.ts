@@ -338,7 +338,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
     );
 
     this.initActors();
-   // TODO remove this.addLastClick(lastClick);
     this.drawSpecialLayers();
     this.initHotkeys();
     this.miscSetup();
@@ -417,52 +416,61 @@ export default class ThemeViewState implements SpecialVisualizationState {
       }
     );
 
-    Hotkeys.RegisterHotkey(
-      {
-        nomod: "b"
-      },
-      Translations.t.hotkeyDocumentation.openLayersPanel,
-      () => {
-        if (this.featureSwitches.featureSwitchFilter.data) {
-          this.guistate.openFilterView();
+    this.featureSwitches.featureSwitchBackgroundSelection.addCallbackAndRun(enable => {
+        if(!enable){
+            return
         }
-      }
-    );
+        Hotkeys.RegisterHotkey(
+            {
+                nomod: "b"
+            },
+            Translations.t.hotkeyDocumentation.openLayersPanel,
+            () => {
+                if (this.featureSwitches.featureSwitchFilter.data) {
+                    this.guistate.openFilterView();
+                }
+            }
+        );
+        Hotkeys.RegisterHotkey(
+            { shift: "O" },
+            Translations.t.hotkeyDocumentation.selectMapnik,
+            () => {
+                this.mapProperties.rasterLayer.setData(AvailableRasterLayers.osmCarto);
+            }
+        );
+        const setLayerCategory = (category: EliCategory) => {
+            const available = this.availableLayers.data;
+            const current = this.mapProperties.rasterLayer;
+            const best = RasterLayerUtils.SelectBestLayerAccordingTo(
+                available,
+                category,
+                current.data
+            );
+            console.log("Best layer for category", category, "is", best.properties.id);
+            current.setData(best);
+        };
 
-    Hotkeys.RegisterHotkey(
-      { shift: "O" },
-      Translations.t.hotkeyDocumentation.selectMapnik,
-      () => {
-        this.mapProperties.rasterLayer.setData(AvailableRasterLayers.osmCarto);
-      }
-    );
-    const setLayerCategory = (category: EliCategory) => {
-      const available = this.availableLayers.data;
-      const current = this.mapProperties.rasterLayer;
-      const best = RasterLayerUtils.SelectBestLayerAccordingTo(
-        available,
-        category,
-        current.data
-      );
-      console.log("Best layer for category", category, "is", best.properties.id);
-      current.setData(best);
-    };
+        Hotkeys.RegisterHotkey(
+            { nomod: "O" },
+            Translations.t.hotkeyDocumentation.selectOsmbasedmap,
+            () => setLayerCategory("osmbasedmap")
+        );
 
-    Hotkeys.RegisterHotkey(
-      { nomod: "O" },
-      Translations.t.hotkeyDocumentation.selectOsmbasedmap,
-      () => setLayerCategory("osmbasedmap")
-    );
+        Hotkeys.RegisterHotkey({ nomod: "M" }, Translations.t.hotkeyDocumentation.selectMap, () =>
+            setLayerCategory("map")
+        );
 
-    Hotkeys.RegisterHotkey({ nomod: "M" }, Translations.t.hotkeyDocumentation.selectMap, () =>
-      setLayerCategory("map")
-    );
+        Hotkeys.RegisterHotkey(
+            { nomod: "P" },
+            Translations.t.hotkeyDocumentation.selectAerial,
+            () => setLayerCategory("photo")
+        );
+        return true
+    })
 
-    Hotkeys.RegisterHotkey(
-      { nomod: "P" },
-      Translations.t.hotkeyDocumentation.selectAerial,
-      () => setLayerCategory("photo")
-    );
+
+
+
   }
 
   private addLastClick(last_click: LastClickFeatureSource) {
