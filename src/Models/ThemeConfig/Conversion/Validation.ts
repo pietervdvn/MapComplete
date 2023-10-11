@@ -750,10 +750,12 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
 
         if (json.minzoom > Constants.minZoomLevelToAddNewPoint) {
             const c = context.enter("minzoom")
-            const w = json.presets?.length > 0 ? c.err : c.warn
-            w(
-                `Minzoom is ${json.minzoom}, this should be at most ${Constants.minZoomLevelToAddNewPoint} as a preset is set. Why? Selecting the pin for a new item will zoom in to level before adding the point. Having a greater minzoom will hide the points, resulting in possible duplicates`
-            )
+            const msg = `Minzoom is ${json.minzoom}, this should be at most ${Constants.minZoomLevelToAddNewPoint} as a preset is set. Why? Selecting the pin for a new item will zoom in to level before adding the point. Having a greater minzoom will hide the points, resulting in possible duplicates`
+            if (json.presets?.length > 0) {
+                c.err(msg)
+            } else {
+                c.warn(msg)
+            }
         }
         {
             // duplicate ids in tagrenderings check
