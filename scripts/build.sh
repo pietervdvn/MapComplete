@@ -51,8 +51,8 @@ vite build $SRC_MAPS
 cp -r assets/layers/ dist/assets/layers/
 cp -r assets/themes/ dist/assets/themes/
 cp -r assets/svg/ dist/assets/svg/
-mkdir dist/assets/langs 2> /dev/null
-mkdir dist/assets/langs/layers 2> /dev/null
+mkdir dist/assets/langs
+mkdir dist/assets/langs/layers
 cp -r langs/layers/ dist/assets/langs/layers/
 ls dist/assets/langs/layers/
 export NODE_OPTIONS=""
