@@ -76,6 +76,15 @@
         "text": "Stamen/Stadiamaps",
         "url": "https://stadiamaps.com/"
       }
+    },   {
+      "name": "Stamen Watercolor",
+      "url": "https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg?key=14c5a900-7137-42f7-9cb9-fff0f4696f75",
+      "category": "osmbasedmap",
+      "id": "stamen.watercolor",
+      "attribution": {
+        "text": "Stamen/Stadiamaps",
+        "url": "https://stadiamaps.com/"
+      }
     },
     {
       "url": "https://tiles-eu.stadiamaps.com/styles/osm_bright.json",
