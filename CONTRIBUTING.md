@@ -11,7 +11,7 @@ There are multiple ways to contribute:
 - A good start to contribute is to create a single map layer showing features which interest you. Read more about [making your own theme](/Docs/Making_Your_Own_Theme.md).
 - If you want to improve a theme, create a new theme, spot a typo in the repo... the best way is to open a pull request. 
 
-People who stick around and contribute in a meaningful way, _might_ be granted write access to the repository. This is
+People who stick around and contribute in a meaningful way, _might_ be granted write access to the repository (except the branches *master* and *develop*). This is
 done on a purely subjective basis, e.g. after a few pull requests and if you are a member of the OSM community.
 
 Rights of contributors
