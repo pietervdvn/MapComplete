@@ -53,10 +53,7 @@ export class AvailableRasterLayers {
         geometry: BBox.global.asGeometry(),
     }
 
-    public static readonly vectorLayers = [
-        AvailableRasterLayers.maptilerDefaultLayer,
-        AvailableRasterLayers.osmCarto,
-    ]
+    public static readonly vectorLayers = [AvailableRasterLayers.maptilerDefaultLayer]
 
     public static layersAvailableAt(
         location: Store<{ lon: number; lat: number }>
@@ -79,6 +76,7 @@ export class AvailableRasterLayers {
                     }
                     return GeoOperations.inside(lonlat, eliPolygon)
                 })
+                matching.push(AvailableRasterLayers.maptilerDefaultLayer)
                 matching.push(...AvailableRasterLayers.globalLayers)
                 return matching
             })
