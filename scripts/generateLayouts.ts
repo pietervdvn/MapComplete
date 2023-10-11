@@ -233,16 +233,31 @@ async function eliUrls(): Promise<string[]> {
         if (f.properties.type === "vector") {
             // We also need to whitelist eventual sources
             const styleSpec = await Utils.downloadJsonCached(f.properties.url, 1000 * 120)
-            for (const key in styleSpec.sources) {
+            for (const key of Object.keys(styleSpec.sources)) {
                 const url = styleSpec.sources[key].url
+                if(!url){
+                    continue
+                }
+                let urlClipped = url
+                if(url.indexOf("?") > 0){
+                    urlClipped = url?.substring(0, url.indexOf("?"))
+                }
+                console.log("Source url ",key,url)
                 urls.push(url)
+                if(urlClipped.endsWith(".json")){
+                    const tileInfo = await Utils.downloadJsonCached(url, 1000*120)
+                    urls.push(tileInfo["tiles"] ?? [])
+                }
+
             }
             urls.push(...(styleSpec["tiles"] ?? []))
+            urls.push(styleSpec["sprite"])
+            urls.push(styleSpec["glyphs"])
         }
 
     }
     eliUrlsCached = urls
-    return urls
+    return Utils.NoNull(urls).sort()
 }
 
 async function generateCsp(
