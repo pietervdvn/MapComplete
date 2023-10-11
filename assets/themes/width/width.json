@@ -32,7 +32,7 @@
       51.190748429411705
     ]
   ],
-  "defaultBackgroundId": "CartoDB.DarkMatterNoLabels",
+  "defaultBackgroundId": "alidade.smooth_dark",
   "layers": [
     {
       "id": "street_with_width",

@@ -1,97 +1,92 @@
 {
   "layers": [
     {
-      "id": "Stamen.TonerLite",
-      "name": "Toner Lite (by Stamen)",
-      "url": "https://stamen-tiles-{switch:a,b,c,d}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png",
+      "name": "Americana",
+      "url": "https://zelonewolf.github.io/openstreetmap-americana/style.json",
       "category": "osmbasedmap",
+      "id": "americana",
+      "type": "vector",
       "attribution": {
-        "html": "Map tiles by <a href=\"http://stamen.com\">Stamen Design</a>, <a href=\"http://creativecommons.org/licenses/by/3.0\">CC BY 3.0</a> &mdash; Map data {attribution.OpenStreetMap}"
-      },
-      "min_zoom": 0,
-      "max_zoom": 20
+        "text": "Americana",
+        "url": "https://github.com/ZeLonewolf/openstreetmap-americana/"
+      }
     },
     {
-      "id": "Stamen.TonerBackground",
-      "name": "Toner Background - no labels (by Stamen)",
+      "name": "MapTiler Backdrop",
+      "url": "https://api.maptiler.com/maps/backdrop/style.json?key=GvoVAJgu46I5rZapJuAy",
       "category": "osmbasedmap",
-      "url": "https://stamen-tiles-{switch:a,b,c,d}.a.ssl.fastly.net/toner-background/{z}/{x}/{y}.png",
+      "id": "maptiler.backdrop",
+      "type": "vector",
       "attribution": {
-        "html": "Map tiles by <a href=\"http://stamen.com\">Stamen Design</a>, <a href=\"http://creativecommons.org/licenses/by/3.0\">CC BY 3.0</a> &mdash; Map data {attribution.OpenStreetMap}"
-      },
-      "min_zoom": 0,
-      "max_zoom": 20
+        "text": "Maptiler",
+        "url": "https://www.maptiler.com/copyright/"
+      }
     },
     {
-      "id": "Stamen.Watercolor",
-      "name": "Watercolor (by Stamen)",
+      "name": "MapTiler Carto",
+      "url": "https://api.maptiler.com/maps/openstreetmap/style.json?key=GvoVAJgu46I5rZapJuAy",
       "category": "osmbasedmap",
-      "url": "https://stamen-tiles-{switch:a,b,c,d}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png",
+      "id": "maptiler.carto",
+      "type": "vector",
       "attribution": {
-        "html": "Map tiles by <a href=\"http://stamen.com\">Stamen Design</a>, <a href=\"http://creativecommons.org/licenses/by/3.0\">CC BY 3.0</a> &mdash; Map data {attribution.OpenStreetMap}"
-      },
-      "min_zoom": 0,
-      "max_zoom": 20
+        "text": "Maptiler",
+        "url": "https://www.maptiler.com/copyright/"
+      }
     },
     {
-      "id": "CartoDB.Positron",
-      "name": "Positron (by CartoDB)",
-      "url": "https://{switch:a,b,c,d}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}@2x.png",
+      "name": "Alidade Smooth",
+      "url": "https://tiles-eu.stadiamaps.com/styles/alidade_smooth.json?key=14c5a900-7137-42f7-9cb9-fff0f4696f75",
+      "category": "osmbasedmap",
+      "id": "alidade.smooth",
+      "type": "vector",
       "attribution": {
-        "html": "<a href=\"https://carto.com/attributions\">CARTO</a>"
-      },
-      "max_zoom": 20,
-      "category": "osmbasedmap"
+        "text": "Alidade",
+        "url": "https://stadiamaps.com/"
+      }
     },
     {
-      "id": "CartoDB.PositronNoLabels",
-      "name": "Positron  - no labels (by CartoDB)",
-      "url": "https://{switch:a,b,c,d}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png",
+      "name": "Alidade Smooth Dark",
+      "url": "https://tiles-eu.stadiamaps.com/styles/alidade_smooth_dark.json?key=14c5a900-7137-42f7-9cb9-fff0f4696f75",
       "category": "osmbasedmap",
+      "id": "alidade.smooth_dark",
+      "type": "vector",
       "attribution": {
-        "html": "<a href=\"https://carto.com/attributions\">CARTO</a>"
-      },
-      "max_zoom": 20
+        "text": "Alidade/Stadiamaps",
+        "url": "https://stadiamaps.com/"
+      }
     },
     {
-      "id": "CartoDB.Voyager",
-      "name": "Voyager (by CartoDB)",
-      "url": "https://{switch:a,b,c,d}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png",
+      "name": "Stamen Terrain",
+      "url": "https://tiles-eu.stadiamaps.com/styles/stamen_terrain.json?key=14c5a900-7137-42f7-9cb9-fff0f4696f75",
       "category": "osmbasedmap",
+      "id": "stamen.terrain",
+      "type": "vector",
       "attribution": {
-        "html": "<a href=\"https://carto.com/attributions\">CARTO</a>"
-      },
-      "max_zoom": 20
+        "text": "Stamen/Stadiamaps",
+        "url": "https://stadiamaps.com/"
+      }
     },
     {
-      "id": "CartoDB.VoyagerNoLabels",
-      "name": "Voyager  - no labels (by CartoDB)",
-      "url": "https://{switch:a,b,c,d}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png",
+      "name": "Stamen Toner",
+      "url": "https://tiles-eu.stadiamaps.com/styles/stamen_toner.json?key=14c5a900-7137-42f7-9cb9-fff0f4696f75",
       "category": "osmbasedmap",
+      "id": "stamen.toner",
+      "type": "vector",
       "attribution": {
-        "html": "<a href=\"https://carto.com/attributions\">CARTO</a>"
-      },
-      "max_zoom": 20
+        "text": "Stamen/Stadiamaps",
+        "url": "https://stadiamaps.com/"
+      }
     },
     {
-      "id": "CartoDB.DarkMatter",
-      "name": "Dark Matter (by CartoDB)",
-      "url": "https://{switch:a,b,c,d}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
+      "url": "https://tiles-eu.stadiamaps.com/styles/osm_bright.json",
+      "name": "StadiaMaps OSM Bright",
       "category": "osmbasedmap",
+      "id": "stadia.bright",
+      "type": "vector",
       "attribution": {
-        "html": "<a href=\"https://carto.com/attributions\">CARTO</a>"
-      },
-      "max_zoom": 20
-    },
-    {
-      "id": "CartoDB.DarkMatterNoLabels",
-      "name": "Dark Matter  - no labels (by CartoDB)",
-      "url": "https://{switch:a,b,c,d}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png",
-      "category": "osmbasedmap",
-      "attribution": {
-        "html": "<a href=\"https://carto.com/attributions\">CARTO</a>"
-      },
-      "max_zoom": 20
+        "text": "Stadiamaps",
+        "url": "https://stadiamaps.com/"
+      }
     }
   ]
 }
