@@ -14,13 +14,18 @@ import {
 import { Translation } from "../src/UI/i18n/Translation"
 import { PrepareLayer } from "../src/Models/ThemeConfig/Conversion/PrepareLayer"
 import { PrepareTheme } from "../src/Models/ThemeConfig/Conversion/PrepareTheme"
-import { DesugaringContext } from "../src/Models/ThemeConfig/Conversion/Conversion"
+import {
+    ConversionContext,
+    DesugaringContext,
+} from "../src/Models/ThemeConfig/Conversion/Conversion"
 import { Utils } from "../src/Utils"
 import Script from "./Script"
 import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
 import { parse as parse_html } from "node-html-parser"
 import { ExtraFunctions } from "../src/Logic/ExtraFunctions"
 import { QuestionableTagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+import LayerConfig from "../src/Models/ThemeConfig/LayerConfig"
+import PointRenderingConfig from "../src/Models/ThemeConfig/PointRenderingConfig"
 // This scripts scans 'src/assets/layers/*.json' for layer definition files and 'src/assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
 
@@ -307,7 +312,7 @@ class LayerOverviewUtils extends Script {
                 layers: ScriptUtils.getLayerFiles().map((f) => f.parsed),
                 themes: ScriptUtils.getThemeFiles().map((f) => f.parsed),
             },
-            "GenerateLayerOverview:"
+            ConversionContext.construct([], [])
         )
 
         if (AllSharedLayers.getSharedLayersConfigs().size == 0) {
@@ -329,8 +334,13 @@ class LayerOverviewUtils extends Script {
         } catch (e) {
             throw "Could not parse or read file " + sharedLayerPath
         }
-        const context = "While building builtin layer " + sharedLayerPath
-        const fixed = prepLayer.convertStrict(parsed, context)
+        if (parsed === undefined) {
+            throw "File " + sharedLayerPath + " yielded undefined"
+        }
+        const fixed = prepLayer.convertStrict(
+            parsed,
+            ConversionContext.construct([sharedLayerPath], ["PrepareLayer"])
+        )
 
         if (!fixed.source) {
             console.error(sharedLayerPath, "has no source configured:", fixed)
@@ -346,7 +356,10 @@ class LayerOverviewUtils extends Script {
         }
 
         const validator = new ValidateLayer(sharedLayerPath, true, doesImageExist)
-        validator.convertStrict(fixed, context)
+        validator.convertStrict(
+            fixed,
+            ConversionContext.construct([sharedLayerPath], ["PrepareLayer"])
+        )
 
         return fixed
     }
@@ -386,11 +399,34 @@ class LayerOverviewUtils extends Script {
             const fixed = this.parseLayer(doesImageExist, prepLayer, sharedLayerPath)
 
             if (sharedLayers.has(fixed.id)) {
-                throw "There are multiple layers with the id " + fixed.id
+                throw "There are multiple layers with the id " + fixed.id + ", " + sharedLayerPath
             }
 
             sharedLayers.set(fixed.id, fixed)
             recompiledLayers.push(fixed.id)
+
+            {
+                // Add a summary of the icon
+                const layerConfig = new LayerConfig(fixed, "generating_icon")
+                const pointRendering: PointRenderingConfig = layerConfig.mapRendering.find((pr) =>
+                    pr.location.has("point")
+                )
+                const defaultTags = layerConfig.GetBaseTags()
+                fixed["_layerIcon"] = Utils.NoNull(
+                    (pointRendering?.marker ?? []).map((i) => {
+                        const icon = i.icon?.GetRenderValue(defaultTags)?.txt
+                        if (!icon) {
+                            return undefined
+                        }
+                        const result = { icon }
+                        const c = i.color?.GetRenderValue(defaultTags)?.txt
+                        if (c) {
+                            result["color"] = c
+                        }
+                        return result
+                    })
+                )
+            }
 
             this.writeLayer(fixed)
         }
@@ -594,16 +630,25 @@ class LayerOverviewUtils extends Script {
 
             recompiledThemes.push(themeFile.id)
 
-            new PrevalidateTheme().convertStrict(themeFile, themePath)
+            new PrevalidateTheme().convertStrict(
+                themeFile,
+                ConversionContext.construct([themePath], ["PrepareLayer"])
+            )
             try {
-                themeFile = new PrepareTheme(convertState).convertStrict(themeFile, themePath)
+                themeFile = new PrepareTheme(convertState).convertStrict(
+                    themeFile,
+                    ConversionContext.construct([themePath], ["PrepareLayer"])
+                )
 
                 new ValidateThemeAndLayers(
                     new DoesImageExist(licensePaths, existsSync, knownTagRenderings),
                     themePath,
                     true,
                     knownTagRenderings
-                ).convertStrict(themeFile, themePath)
+                ).convertStrict(
+                    themeFile,
+                    ConversionContext.construct([themePath], ["PrepareLayer"])
+                )
 
                 if (themeFile.icon.endsWith(".svg")) {
                     try {

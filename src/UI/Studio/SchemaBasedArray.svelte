@@ -65,8 +65,13 @@ console.log("For ", schema.path, "got subparts", subparts)
   }
 
   function del(value) {
-    values.data.splice(values.data.indexOf(value));
+    const index = values.data.indexOf(value)
+    console.log("Deleting",value, index)
+    values.data.splice(index, 1);
+    const store = <UIEventSource<[]>>state.getStoreFor(path);
+    store.data.splice(index, 1)
     values.ping();
+    store.ping()
   }
 
 </script>

@@ -1,7 +1,6 @@
 import * as fs from "node:fs"
 import * as http from "node:http"
 import * as path from "node:path"
-import { ReadStream } from "fs"
 import ScriptUtils from "./ScriptUtils"
 
 const PORT = 1235
@@ -26,15 +25,10 @@ async function prepareFile(url: string): Promise<string> {
     const paths = [STATIC_PATH, url]
     if (url.endsWith("/")) paths.push("index.html")
     const filePath = path.join(...paths)
-    const exists = fs.existsSync(filePath)
-    console.log("Checking", filePath, exists)
-    const found = exists
-    if (!found) {
-        return null
+    if (fs.existsSync(filePath)) {
+        return fs.readFileSync(filePath, "utf8")
     }
-    const streamPath = filePath
-    const ext = path.extname(streamPath).substring(1).toLowerCase()
-    return fs.readFileSync(streamPath, "utf8")
+    return null
 }
 
 http.createServer(async (req, res) => {
@@ -61,7 +55,7 @@ http.createServer(async (req, res) => {
                     fs.mkdirSync(dir)
                 }
             }
-            req.pipe(fs.createWriteStream(STATIC_PATH + paths.join("/") + ".new.json"))
+            req.pipe(fs.createWriteStream(STATIC_PATH + paths.join("/")))
             res.writeHead(200, { "Content-Type": MIME_TYPES.html })
             res.write("<html><body>OK</body></html>", "utf8")
             res.end()

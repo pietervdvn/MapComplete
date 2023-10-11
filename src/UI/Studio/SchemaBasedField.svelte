@@ -96,13 +96,13 @@
         err = path.join(".") + " " + e
     }
     let startValue = state.getCurrentValueFor(path)
-    if (typeof startValue !== "string") {
-        startValue = JSON.stringify(startValue)
-    }
     const tags = new UIEventSource<Record<string, string>>({value: startValue ?? ""})
     try {
         onDestroy(state.register(path, tags.map(tgs => {
             const v = tgs["value"];
+            if(typeof v !== "string"){
+                return v
+            }
             if (schema.type === "boolan") {
                 return v === "true" || v === "yes" || v === "1"
             }
@@ -135,7 +135,6 @@
     <span class="alert">{err}</span>
 {:else}
     <div class="w-full flex flex-col">
-      <span class="subtle">{path.join(".")}</span>
         <TagRenderingEditable {config} selectedElement={undefined} showQuestionIfUnknown={true} {state} {tags}/>
     </div>
 {/if}

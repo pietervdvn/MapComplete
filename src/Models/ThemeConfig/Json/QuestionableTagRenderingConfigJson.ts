@@ -197,7 +197,7 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
      */
     freeform?: {
         /**
-         * question What is the name of the attribute that should be written to?
+         * question: What is the name of the attribute that should be written to?
          * ifunset: do not offer a freeform textfield as answer option
          */
         key: string
@@ -206,11 +206,14 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
          * question: What is the input type?
          * The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...
          * See Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values
+         * ifunset: use an unconstrained <b>string</b> as input (default)
          * suggestions: return validators.AllValidators.filter(type => !type.isMeta).map((type) => ({if: "value="+type.name, then: "<b>"+type.name+"</b> "+type.explanation.split("\n")[0]}))
          */
         type?: string
         /**
+         * question: What placeholder text should be shown in the input-element if there is no input?
          * A (translated) text that is shown (as gray text) within the textfield
+         * type: translation
          */
         placeholder?: string | any
 
@@ -236,8 +239,9 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
         inline?: boolean
 
         /**
-         * default value to enter if no previous tagging is present.
-         * Normally undefined (aka do not enter anything)
+         * question: What value should be entered in the text field if no value is set?
+         * This can help people to quickly enter the most common option
+         * ifunset: do not prefill the textfield
          */
         default?: string
     }

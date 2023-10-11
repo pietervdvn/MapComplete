@@ -1,4 +1,4 @@
-import { Conversion, DesugaringStep } from "./Conversion"
+import { Conversion, ConversionContext, DesugaringStep } from "./Conversion"
 import { LayoutConfigJson } from "../Json/LayoutConfigJson"
 import { Utils } from "../../../Utils"
 import metapaths from "../../../assets/schemas/layoutconfigmeta.json"
@@ -6,13 +6,11 @@ import tagrenderingmetapaths from "../../../assets/schemas/questionabletagrender
 import Translations from "../../../UI/i18n/Translations"
 
 import { parse as parse_html } from "node-html-parser"
+
 export class ExtractImages extends Conversion<
     LayoutConfigJson,
     { path: string; context: string }[]
 > {
-    private _isOfficial: boolean
-    private _sharedTagRenderings: Set<string>
-
     private static readonly layoutMetaPaths = metapaths.filter((mp) => {
         const typeHint = mp.hints.typehint
         return (
@@ -25,6 +23,8 @@ export class ExtractImages extends Conversion<
         )
     })
     private static readonly tagRenderingMetaPaths = tagrenderingmetapaths
+    private _isOfficial: boolean
+    private _sharedTagRenderings: Set<string>
 
     constructor(isOfficial: boolean, sharedTagRenderings: Set<string>) {
         super("Extract all images from a layoutConfig using the meta paths.", [], "ExctractImages")
@@ -89,11 +89,9 @@ export class ExtractImages extends Conversion<
      */
     convert(
         json: LayoutConfigJson,
-        context: string
-    ): { result: { path: string; context: string }[]; errors: string[]; warnings: string[] } {
+        context: ConversionContext
+    ): { path: string; context: string }[] {
         const allFoundImages: { path: string; context: string }[] = []
-        const errors = []
-        const warnings = []
         for (const metapath of ExtractImages.layoutMetaPaths) {
             const mightBeTr = ExtractImages.mightBeTagRendering(<any>metapath)
             const allRenderedValuesAreImages =
@@ -110,7 +108,7 @@ export class ExtractImages extends Conversion<
                         }
 
                         if (foundImage == "") {
-                            warnings.push(context + "." + path.join(".") + " Found an empty image")
+                            context.warn(context + "." + path.join(".") + " Found an empty image")
                         }
 
                         if (this._sharedTagRenderings?.has(foundImage)) {
@@ -135,17 +133,15 @@ export class ExtractImages extends Conversion<
                                 if (allRenderedValuesAreImages && isRendered) {
                                     // What we found is an image
                                     if (img.leaf === "" || img.leaf["path"] == "") {
-                                        warnings.push(
-                                            context +
-                                                [...path, ...img.path].join(".") +
-                                                ": Found an empty image at "
-                                        )
+                                        context
+                                            .enter(path)
+                                            .enter(img.path)
+                                            .warn("Found an emtpy image")
                                     } else if (typeof img.leaf !== "string") {
-                                        ;(this._isOfficial ? errors : warnings).push(
-                                            context +
-                                                "." +
-                                                img.path.join(".") +
-                                                ": found an image path that is not a string: " +
+                                        const c = context.enter(img.path)
+                                        const w = this._isOfficial ? c.err : c.warn
+                                        w(
+                                            "found an image path that is not a string: " +
                                                 JSON.stringify(img.leaf)
                                         )
                                     } else {
@@ -176,9 +172,8 @@ export class ExtractImages extends Conversion<
             } else {
                 for (const foundElement of found) {
                     if (foundElement.leaf === "") {
-                        warnings.push(
-                            context + "." + foundElement.path.join(".") + " Found an empty image"
-                        )
+                        context.enter(foundElement.path).warn("Found an empty image")
+
                         continue
                     }
                     if (typeof foundElement.leaf !== "string") {
@@ -215,7 +210,7 @@ export class ExtractImages extends Conversion<
             }
         }
 
-        return { result: cleanedImages, errors, warnings }
+        return cleanedImages
     }
 }
 
@@ -265,26 +260,22 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
      * fixed.layers[0]["mapRendering"][0].icon // => "https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/TS_bolt.svg"
      * fixed.layers[0]["mapRendering"][0].iconBadges[0].then.mappings[0].then // => "https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/Something.svg"
      */
-    convert(
-        json: LayoutConfigJson,
-        context: string
-    ): { result: LayoutConfigJson; warnings?: string[] } {
+    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
         let url: URL
         try {
             url = new URL(json.id)
         } catch (e) {
             // Not a URL, we don't rewrite
-            return { result: json }
+            return json
         }
 
-        const warnings: string[] = []
         const absolute = url.protocol + "//" + url.host
         let relative = url.protocol + "//" + url.host + url.pathname
         relative = relative.substring(0, relative.lastIndexOf("/"))
         const self = this
 
         if (relative.endsWith("assets/generated/themes")) {
-            warnings.push(
+            context.warn(
                 "Detected 'assets/generated/themes' as relative URL. I'm assuming that you are loading your file for the MC-repository, so I'm rewriting all image links as if they were absolute instead of relative"
             )
             relative = absolute
@@ -296,7 +287,7 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
             }
 
             if (typeof leaf !== "string") {
-                warnings.push(
+                context.warn(
                     "Found a non-string object while replacing images: " + JSON.stringify(leaf)
                 )
                 return leaf
@@ -318,7 +309,7 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
                 continue
             }
             const mightBeTr = ExtractImages.mightBeTagRendering(<any>metapath)
-            Utils.WalkPath(metapath.path, json, (leaf, path) => {
+            Utils.WalkPath(metapath.path, json, (leaf) => {
                 if (typeof leaf === "string") {
                     return replaceString(leaf)
                 }
@@ -340,9 +331,6 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
             })
         }
 
-        return {
-            warnings,
-            result: json,
-        }
+        return json
     }
 }

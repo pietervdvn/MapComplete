@@ -9,6 +9,7 @@ import { Utils } from "../../Utils"
 import LanguageUtils from "../../Utils/LanguageUtils"
 
 import { RasterLayerProperties } from "../RasterLayerProperties"
+import { ConversionContext } from "./Conversion/Conversion"
 
 /**
  * Minimal information about a theme
@@ -97,10 +98,7 @@ export default class LayoutConfig implements LayoutInformation {
         this.language = json.mustHaveLanguage ?? Object.keys(json.title)
         this.usedImages = Array.from(
             new ExtractImages(official, undefined)
-                .convertStrict(
-                    json,
-                    "while extracting the images of " + json.id + " " + context ?? ""
-                )
+                .convertStrict(json, ConversionContext.construct([json.id], ["ExtractImages"]))
                 .map((i) => i.path)
         ).sort()
         {

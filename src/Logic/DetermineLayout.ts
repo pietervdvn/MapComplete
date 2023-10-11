@@ -24,12 +24,9 @@ import {
     ValidateThemeAndLayers,
 } from "../Models/ThemeConfig/Conversion/Validation"
 import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
-import {
-  MinimalTagRenderingConfigJson,
-  TagRenderingConfigJson
-} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
+import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
 import Hash from "./Web/Hash"
-import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
+import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 
 export default class DetermineLayout {
     private static readonly _knownImages = new Set(Array.from(licenses).map((l) => l.path))
@@ -168,8 +165,12 @@ export default class DetermineLayout {
     private static prepCustomTheme(json: any, sourceUrl?: string, forceId?: string): LayoutConfig {
         if (json.layers === undefined && json.tagRenderings !== undefined) {
             // We got fed a layer instead of a theme
-          const layerConfig = <LayerConfigJson>json
-            const iconTr: string | TagRenderingConfigJson = layerConfig.pointRendering.map((mr) => mr.marker.find(icon => icon.icon !== undefined).icon).find((i) => i !== undefined)
+            const layerConfig = <LayerConfigJson>json
+            const iconTr: string | TagRenderingConfigJson = <any>(
+                layerConfig.pointRendering
+                    .map((mr) => mr.marker.find((icon) => icon.icon !== undefined).icon)
+                    .find((i) => i !== undefined)
+            )
             const icon = new TagRenderingConfig(iconTr).render.txt
             json = {
                 id: json.id,
@@ -193,34 +194,25 @@ export default class DetermineLayout {
             sharedLayers: knownLayersDict,
             publicLayers: new Set<string>(),
         }
-        json = new FixLegacyTheme().convertStrict(json, "While loading a dynamic theme")
+        json = new FixLegacyTheme().convertStrict(json)
         const raw = json
 
-        json = new FixImages(DetermineLayout._knownImages).convertStrict(
-            json,
-            "While fixing the images"
-        )
+        json = new FixImages(DetermineLayout._knownImages).convertStrict(json)
         json.enableNoteImports = json.enableNoteImports ?? false
-        json = new PrepareTheme(convertState).convertStrict(json, "While preparing a dynamic theme")
+        json = new PrepareTheme(convertState).convertStrict(json)
         console.log("The layoutconfig is ", json)
 
         json.id = forceId ?? json.id
 
         {
-            let { errors } = new PrevalidateTheme().convert(json, "validation")
-            if (errors.length > 0) {
-                throw "Detected errors: " + errors.join("\n")
-            }
+            new PrevalidateTheme().convertStrict(json)
         }
         {
-            let { errors } = new ValidateThemeAndLayers(
+            new ValidateThemeAndLayers(
                 new DoesImageExist(new Set<string>(), (_) => true),
                 "",
                 false
-            ).convert(json, "validation")
-            if (errors.length > 0) {
-                throw "Detected errors: " + errors.join("\n")
-            }
+            ).convertStrict(json)
         }
         return new LayoutConfig(json, false, {
             definitionRaw: JSON.stringify(raw, null, "  "),

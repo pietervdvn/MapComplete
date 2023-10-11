@@ -1,4 +1,4 @@
-import { Conversion } from "./Conversion"
+import { Conversion, ConversionContext } from "./Conversion"
 import LayerConfig from "../LayerConfig"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import Translations from "../../../UI/i18n/Translations"
@@ -23,7 +23,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
         this._includeClosedNotesDays = includeClosedNotesDays
     }
 
-    convert(layerJson: LayerConfigJson, context: string): { result: LayerConfigJson } {
+    convert(layerJson: LayerConfigJson, context: ConversionContext): LayerConfigJson {
         const t = Translations.t.importLayer
 
         /**
@@ -78,7 +78,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
             return { ...translation.Subs(subs).translations, _context: translation.context }
         }
 
-        const result: LayerConfigJson = {
+        return {
             id: "note_import_" + layer.id,
             // By disabling the name, the import-layers won't pollute the filter view "name": t.layerName.Subs({title: layer.title.render}).translations,
             description: trs(t.description, { title: layer.title.render }),
@@ -203,10 +203,6 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                     anchor: "center",
                 },
             ],
-        }
-
-        return {
-            result,
         }
     }
 }

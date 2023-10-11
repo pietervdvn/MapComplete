@@ -1,4 +1,4 @@
-import { DesugaringStep } from "./Conversion"
+import { ConversionContext, DesugaringStep } from "./Conversion"
 import { Utils } from "../../../Utils"
 import Translations from "../../../UI/i18n/Translations"
 
@@ -117,15 +117,12 @@ export class AddContextToTranslations<T> extends DesugaringStep<T> {
      * rewritten // => theme
      *
      */
-    convert(
-        json: T,
-        context: string
-    ): { result: T; errors?: string[]; warnings?: string[]; information?: string[] } {
+    convert(json: T, context: ConversionContext): T {
         if (json["#dont-translate"] === "*") {
-            return { result: json }
+            return json
         }
 
-        const result = Utils.WalkJson(
+        return Utils.WalkJson(
             json,
             (leaf, path) => {
                 if (leaf === undefined || leaf === null) {
@@ -149,9 +146,5 @@ export class AddContextToTranslations<T> extends DesugaringStep<T> {
             },
             (obj) => obj === undefined || obj === null || Translations.isProbablyATranslation(obj)
         )
-
-        return {
-            result,
-        }
     }
 }

@@ -2,7 +2,7 @@ import { LayoutConfigJson } from "../Json/LayoutConfigJson"
 import { Utils } from "../../../Utils"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
-import { DesugaringStep, Each, Fuse, On } from "./Conversion"
+import { ConversionContext, DesugaringStep, Each, Fuse, On } from "./Conversion"
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
 
 export class UpdateLegacyLayer extends DesugaringStep<
@@ -16,15 +16,12 @@ export class UpdateLegacyLayer extends DesugaringStep<
         )
     }
 
-    convert(
-        json: LayerConfigJson,
-        context: string
-    ): { result: LayerConfigJson; errors: string[]; warnings: string[] } {
-        const warnings = []
+    convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
         if (typeof json === "string" || json["builtin"] !== undefined) {
             // Reuse of an already existing layer; return as-is
-            return { result: json, errors: [], warnings: [] }
+            return json
         }
+        context = context.enter(json.id)
         let config = { ...json }
 
         if (config["overpassTags"]) {
@@ -141,7 +138,7 @@ export class UpdateLegacyLayer extends DesugaringStep<
             }
             for (const overlay of mapRenderingElement["iconBadges"] ?? []) {
                 if (overlay["badge"] !== true) {
-                    warnings.push("Warning: non-overlay element for ", config.id)
+                    context.enters("iconBadges", "badge").warn("Non-overlay element")
                 }
                 delete overlay["badge"]
             }
@@ -229,11 +226,7 @@ export class UpdateLegacyLayer extends DesugaringStep<
                 }
             }
 
-        return {
-            result: config,
-            errors: [],
-            warnings,
-        }
+        return config
     }
 }
 
@@ -242,10 +235,7 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
         super("Small fixes in the theme config", ["roamingRenderings"], "UpdateLegacyTheme")
     }
 
-    convert(
-        json: LayoutConfigJson,
-        context: string
-    ): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
+    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
         const oldThemeConfig = { ...json }
 
         if (oldThemeConfig.socialImage === "") {
@@ -260,14 +250,8 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
             if (oldThemeConfig["roamingRenderings"].length == 0) {
                 delete oldThemeConfig["roamingRenderings"]
             } else {
-                return {
-                    result: null,
-                    errors: [
-                        context +
-                            ": The theme contains roamingRenderings. These are not supported anymore",
-                    ],
-                    warnings: [],
-                }
+                context.err("The theme contains roamingRenderings. These are not supported anymore")
+                return null
             }
         }
 
@@ -292,11 +276,7 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
             }
         }
 
-        return {
-            errors: [],
-            warnings: [],
-            result: oldThemeConfig,
-        }
+        return oldThemeConfig
     }
 }
 

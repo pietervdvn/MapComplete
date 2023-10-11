@@ -1,6 +1,7 @@
 import {
     Concat,
     Conversion,
+    ConversionContext,
     DesugaringContext,
     DesugaringStep,
     Each,
@@ -33,12 +34,7 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
         this._state = state
     }
 
-    convert(
-        json: string | LayerConfigJson,
-        context: string
-    ): { result: LayerConfigJson[]; errors: string[]; information?: string[] } {
-        const errors = []
-        const information = []
+    convert(json: string | LayerConfigJson, context: ConversionContext): LayerConfigJson[] {
         const state = this._state
 
         function reportNotFound(name: string) {
@@ -50,7 +46,7 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
             withDistance.sort((a, b) => a[1] - b[1])
             const ids = withDistance.map((n) => n[0])
             // Known builtin layers are "+.join(",")+"\n    For more information, see "
-            errors.push(`${context}: The layer with name ${name} was not found as a builtin layer. Perhaps you meant ${ids[0]}, ${ids[1]} or ${ids[2]}?
+            context.err(`The layer with name ${name} was not found as a builtin layer. Perhaps you meant ${ids[0]}, ${ids[1]} or ${ids[2]}?
  For an overview of all available layers, refer to https://github.com/pietervdvn/MapComplete/blob/develop/Docs/BuiltinLayers.md`)
         }
 
@@ -58,119 +54,101 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
             const found = state.sharedLayers.get(json)
             if (found === undefined) {
                 reportNotFound(json)
-                return {
-                    result: null,
-                    errors,
-                }
+                return null
             }
-            return {
-                result: [found],
-                errors,
-            }
+            return [found]
         }
 
-        if (json["builtin"] !== undefined) {
-            let names = json["builtin"]
-            if (typeof names === "string") {
-                names = [names]
+        if (json["builtin"] === undefined) {
+            return [json]
+        }
+
+        let names = json["builtin"]
+        if (typeof names === "string") {
+            names = [names]
+        }
+        const layers = []
+
+        for (const name of names) {
+            const found = Utils.Clone(state.sharedLayers.get(name))
+            if (found === undefined) {
+                reportNotFound(name)
+                continue
             }
-            const layers = []
+            if (
+                json["override"]["tagRenderings"] !== undefined &&
+                (found["tagRenderings"] ?? []).length > 0
+            ) {
+                context.err(
+                    `When overriding a layer, an override is not allowed to override into tagRenderings. Use "+tagRenderings" or "tagRenderings+" instead to prepend or append some questions.`
+                )
+            }
+            try {
+                Utils.Merge(json["override"], found)
+                layers.push(found)
+            } catch (e) {
+                context.err(
+                    `Could not apply an override due to: ${e}.\nThe override is: ${JSON.stringify(
+                        json["override"]
+                    )}`
+                )
+            }
 
-            for (const name of names) {
-                const found = Utils.Clone(state.sharedLayers.get(name))
-                if (found === undefined) {
-                    reportNotFound(name)
-                    continue
-                }
-                if (
-                    json["override"]["tagRenderings"] !== undefined &&
-                    (found["tagRenderings"] ?? []).length > 0
-                ) {
-                    errors.push(
-                        `At ${context}: when overriding a layer, an override is not allowed to override into tagRenderings. Use "+tagRenderings" or "tagRenderings+" instead to prepend or append some questions.`
-                    )
-                }
-                try {
-                    Utils.Merge(json["override"], found)
-                    layers.push(found)
-                } catch (e) {
-                    errors.push(
-                        `At ${context}: could not apply an override due to: ${e}.\nThe override is: ${JSON.stringify(
-                            json["override"]
-                        )}`
-                    )
-                }
-
-                if (json["hideTagRenderingsWithLabels"]) {
-                    const hideLabels: Set<string> = new Set(json["hideTagRenderingsWithLabels"])
-                    // These labels caused at least one deletion
-                    const usedLabels: Set<string> = new Set<string>()
-                    const filtered = []
-                    for (const tr of found.tagRenderings) {
-                        const labels = tr["labels"]
-                        if (labels !== undefined) {
-                            const forbiddenLabel = labels.findIndex((l) => hideLabels.has(l))
-                            if (forbiddenLabel >= 0) {
-                                usedLabels.add(labels[forbiddenLabel])
-                                information.push(
-                                    context +
-                                        ": Dropping tagRendering " +
-                                        tr["id"] +
-                                        " as it has a forbidden label: " +
-                                        labels[forbiddenLabel]
-                                )
-                                continue
-                            }
-                        }
-
-                        if (hideLabels.has(tr["id"])) {
-                            usedLabels.add(tr["id"])
-                            information.push(
-                                context +
-                                    ": Dropping tagRendering " +
+            if (json["hideTagRenderingsWithLabels"]) {
+                const hideLabels: Set<string> = new Set(json["hideTagRenderingsWithLabels"])
+                // These labels caused at least one deletion
+                const usedLabels: Set<string> = new Set<string>()
+                const filtered = []
+                for (const tr of found.tagRenderings) {
+                    const labels = tr["labels"]
+                    if (labels !== undefined) {
+                        const forbiddenLabel = labels.findIndex((l) => hideLabels.has(l))
+                        if (forbiddenLabel >= 0) {
+                            usedLabels.add(labels[forbiddenLabel])
+                            context.info(
+                                "Dropping tagRendering " +
                                     tr["id"] +
-                                    " as its id is a forbidden label"
+                                    " as it has a forbidden label: " +
+                                    labels[forbiddenLabel]
                             )
                             continue
                         }
-
-                        if (hideLabels.has(tr["group"])) {
-                            usedLabels.add(tr["group"])
-                            information.push(
-                                context +
-                                    ": Dropping tagRendering " +
-                                    tr["id"] +
-                                    " as its group `" +
-                                    tr["group"] +
-                                    "` is a forbidden label"
-                            )
-                            continue
-                        }
-
-                        filtered.push(tr)
                     }
-                    const unused = Array.from(hideLabels).filter((l) => !usedLabels.has(l))
-                    if (unused.length > 0) {
-                        errors.push(
-                            "This theme specifies that certain tagrenderings have to be removed based on forbidden layers. One or more of these layers did not match any tagRenderings and caused no deletions: " +
-                                unused.join(", ") +
-                                "\n   This means that this label can be removed or that the original tagRendering that should be deleted does not have this label anymore"
+
+                    if (hideLabels.has(tr["id"])) {
+                        usedLabels.add(tr["id"])
+                        context.info(
+                            "Dropping tagRendering " + tr["id"] + " as its id is a forbidden label"
                         )
+                        continue
                     }
-                    found.tagRenderings = filtered
-                }
-            }
-            return {
-                result: layers,
-                errors,
-                information,
-            }
-        }
 
-        return {
-            result: [json],
-            errors,
+                    if (hideLabels.has(tr["group"])) {
+                        usedLabels.add(tr["group"])
+                        context.info(
+                            "Dropping tagRendering " +
+                                tr["id"] +
+                                " as its group `" +
+                                tr["group"] +
+                                "` is a forbidden label"
+                        )
+                        continue
+                    }
+
+                    filtered.push(tr)
+                }
+                const unused = Array.from(hideLabels).filter((l) => !usedLabels.has(l))
+                if (unused.length > 0) {
+                    context.err(
+                        "This theme specifies that certain tagrenderings have to be removed based on forbidden layers. One or more of these layers did not match any tagRenderings and caused no deletions: " +
+                            unused.join(", ") +
+                            "\n   This means that this label can be removed or that the original tagRendering that should be deleted does not have this label anymore"
+                    )
+                }
+                found.tagRenderings = filtered
+            }
         }
+        return layers
     }
 }
 
@@ -186,12 +164,7 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
         this._state = state
     }
 
-    convert(
-        json: LayoutConfigJson,
-        context: string
-    ): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
-        const errors = []
-        const warnings = []
+    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
         const state = this._state
         json.layers = [...json.layers]
         const alreadyLoaded = new Set(json.layers.map((l) => l["id"]))
@@ -199,11 +172,11 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
         for (const layerName of Constants.added_by_default) {
             const v = state.sharedLayers.get(layerName)
             if (v === undefined) {
-                errors.push("Default layer " + layerName + " not found")
+                context.err("Default layer " + layerName + " not found")
                 continue
             }
             if (alreadyLoaded.has(v.id)) {
-                warnings.push(
+                context.warn(
                     "Layout " +
                         context +
                         " already has a layer with name " +
@@ -215,11 +188,7 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
             json.layers.push(v)
         }
 
-        return {
-            result: json,
-            errors,
-            warnings,
-        }
+        return json
     }
 }
 
@@ -232,21 +201,13 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
         )
     }
 
-    convert(
-        json: LayoutConfigJson,
-        context: string
-    ): { result: LayoutConfigJson; errors?: string[]; warnings?: string[] } {
+    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
         if (!(json.enableNoteImports ?? true)) {
-            return {
-                warnings: [
-                    "Not creating a note import layers for theme " +
-                        json.id +
-                        " as they are disabled",
-                ],
-                result: json,
-            }
+            context.info(
+                "Not creating a note import layers for theme " + json.id + " as they are disabled"
+            )
+            return json
         }
-        const errors = []
 
         json = { ...json }
         const allLayers: LayerConfigJson[] = <LayerConfigJson[]>json.layers
@@ -278,20 +239,17 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
             try {
                 const importLayerResult = creator.convert(
                     layer,
-                    context + ".(noteimportlayer)[" + i1 + "]"
+                    context.inOperation(this.name).enter(i1)
                 )
-                if (importLayerResult.result !== undefined) {
-                    json.layers.push(importLayerResult.result)
+                if (importLayerResult !== undefined) {
+                    json.layers.push(importLayerResult)
                 }
             } catch (e) {
-                errors.push("Could not generate an import-layer for " + layer.id + " due to " + e)
+                context.err("Could not generate an import-layer for " + layer.id + " due to " + e)
             }
         }
 
-        return {
-            errors,
-            result: json,
-        }
+        return json
     }
 }
 
@@ -304,17 +262,9 @@ class AddContextToTranslationsInLayout extends DesugaringStep<LayoutConfigJson> 
         )
     }
 
-    convert(
-        json: LayoutConfigJson,
-        context: string
-    ): {
-        result: LayoutConfigJson
-        errors?: string[]
-        warnings?: string[]
-        information?: string[]
-    } {
+    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
         const conversion = new AddContextToTranslations<LayoutConfigJson>("themes:")
-        return conversion.convert(json, json.id)
+        return conversion.convert(json, context)
     }
 }
 
@@ -327,13 +277,10 @@ class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
         )
     }
 
-    convert(
-        json: LayoutConfigJson,
-        context: string
-    ): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
+    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
         const overrideAll = json.overrideAll
         if (overrideAll === undefined) {
-            return { result: json, warnings: [], errors: [] }
+            return json
         }
 
         json = { ...json }
@@ -346,8 +293,7 @@ class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
             newLayers.push(layer)
         }
         json.layers = newLayers
-
-        return { result: json, warnings: [], errors: [] }
+        return json
     }
 }
 
@@ -458,18 +404,14 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
         return dependenciesToAdd
     }
 
-    convert(
-        theme: LayoutConfigJson,
-        context: string
-    ): { result: LayoutConfigJson; information: string[] } {
+    convert(theme: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
         const state = this._state
         const allKnownLayers: Map<string, LayerConfigJson> = state.sharedLayers
         const knownTagRenderings: Map<string, TagRenderingConfigJson> = state.tagRenderings
-        const information = []
         const layers: LayerConfigJson[] = <LayerConfigJson[]>theme.layers // Layers should be expanded at this point
 
         knownTagRenderings.forEach((value, key) => {
-            value.id = key
+            value["id"] = key
         })
 
         const dependencies = AddDependencyLayersToTheme.CalculateDependencies(
@@ -481,23 +423,16 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
         }
         if (dependencies.length > 0) {
             for (const dependency of dependencies) {
-                information.push(
-                    context +
-                        ": added " +
-                        dependency.config.id +
-                        " to the theme. " +
-                        dependency.reason
+                context.info(
+                    "Added " + dependency.config.id + " to the theme. " + dependency.reason
                 )
             }
         }
         layers.unshift(...dependencies.map((l) => l.config))
 
         return {
-            result: {
-                ...theme,
-                layers: layers,
-            },
-            information,
+            ...theme,
+            layers: layers,
         }
     }
 }
@@ -510,17 +445,9 @@ class PreparePersonalTheme extends DesugaringStep<LayoutConfigJson> {
         this._state = state
     }
 
-    convert(
-        json: LayoutConfigJson,
-        context: string
-    ): {
-        result: LayoutConfigJson
-        errors?: string[]
-        warnings?: string[]
-        information?: string[]
-    } {
+    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
         if (json.id !== "personal") {
-            return { result: json }
+            return json
         }
 
         // The only thing this _really_ does, is adding the layer-ids into 'layers'
@@ -529,10 +456,8 @@ class PreparePersonalTheme extends DesugaringStep<LayoutConfigJson> {
         json.layers = Array.from(this._state.sharedLayers.keys())
             .filter((l) => this._state.sharedLayers.get(l).source !== null)
             .filter((l) => this._state.publicLayers.has(l))
-        return {
-            result: json,
-            information: ["The personal theme has " + json.layers.length + " public layers"],
-        }
+        context.info("The personal theme has " + json.layers.length + " public layers")
+        return json
     }
 }
 
@@ -545,19 +470,10 @@ class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson>
         )
     }
 
-    convert(
-        json: LayoutConfigJson,
-        context: string
-    ): {
-        result: LayoutConfigJson
-        errors?: string[]
-        warnings?: string[]
-        information?: string[]
-    } {
+    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
         if (json.hideFromOverview === true) {
-            return { result: json }
+            return json
         }
-        const warnings = []
         for (const layer of json.layers) {
             if (typeof layer === "string") {
                 continue
@@ -570,18 +486,15 @@ class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson>
                 continue
             }
 
-            const wrn =
+            context.warn(
                 "The theme " +
-                json.id +
-                " has an inline layer: " +
-                layer["id"] +
-                ". This is discouraged."
-            warnings.push(wrn)
+                    json.id +
+                    " has an inline layer: " +
+                    layer["id"] +
+                    ". This is discouraged."
+            )
         }
-        return {
-            result: json,
-            warnings,
-        }
+        return json
     }
 }
 
@@ -616,29 +529,25 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
         this.state = state
     }
 
-    convert(
-        json: LayoutConfigJson,
-        context: string
-    ): { result: LayoutConfigJson; errors: string[]; warnings: string[]; information: string[] } {
+    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
         const result = super.convert(json, context)
         if (this.state.publicLayers.size === 0) {
             // THis is a bootstrapping run, no need to already set this flag
             return result
         }
 
-        const needsNodeDatabase = result.result.layers?.some((l: LayerConfigJson) =>
-            l.tagRenderings?.some((tr: TagRenderingConfigJson) =>
-                ValidationUtils.getSpecialVisualisations(tr)?.some(
+        const needsNodeDatabase = result.layers?.some((l: LayerConfigJson) =>
+            l.tagRenderings?.some((tr) =>
+                ValidationUtils.getSpecialVisualisations(<any>tr)?.some(
                     (special) => special.needsNodeDatabase
                 )
             )
         )
         if (needsNodeDatabase) {
-            result.information.push(
-                context +
-                    ": setting 'enableNodeDatabase' as this theme uses a special visualisation which needs to keep track of _all_ nodes"
+            context.info(
+                "Setting 'enableNodeDatabase' as this theme uses a special visualisation which needs to keep track of _all_ nodes"
             )
-            result.result.enableNodeDatabase = true
+            result.enableNodeDatabase = true
         }
 
         return result

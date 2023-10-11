@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { IconConfig } from "../../Models/ThemeConfig/PointRenderingConfig";
-  import { Store } from "../../Logic/UIEventSource";
   import Pin from "../../assets/svg/Pin.svelte";
   import Square from "../../assets/svg/Square.svelte";
   import Circle from "../../assets/svg/Circle.svelte";
@@ -27,60 +25,56 @@
    *
    * Icons -placed on top of each other- form a 'Marker' together
    */
-  export let icon: IconConfig;
-  export let tags: Store<Record<string, string>>;
 
-  let iconItem = icon.icon?.GetRenderValue(tags)?.txt;
-  $: iconItem = icon.icon?.GetRenderValue($tags)?.txt;
-  let color = icon.color?.GetRenderValue(tags)?.txt ?? "#000000";
-  $: color = icon.color?.GetRenderValue($tags)?.txt ?? "#000000";
+  export let icon: string | undefined;
+  export let color: string | undefined;
 
 </script>
 
-{#if iconItem}
+{#if icon}
   <div class="absolute top-0 left-0 w-full h-full">
-    {#if iconItem === "pin"}
+    {#if icon === "pin"}
       <Pin {color} />
-    {:else if iconItem === "square"}
+    {:else if icon === "square"}
       <Square {color} />
-    {:else if iconItem === "circle"}
+    {:else if icon === "circle"}
       <Circle {color} />
-    {:else if iconItem === "checkmark"}
+    {:else if icon === "checkmark"}
       <Checkmark {color} />
-    {:else if iconItem === "clock"}
+    {:else if icon === "clock"}
       <Clock {color} />
-    {:else if iconItem === "close"}
+    {:else if icon === "close"}
       <Close {color} />
-    {:else if iconItem === "crosshair"}
+    {:else if icon === "crosshair"}
       <Crosshair {color} />
-    {:else if iconItem === "help"}
+    {:else if icon === "help"}
       <Help {color} />
-    {:else if iconItem === "home"}
+    {:else if icon === "home"}
       <Home {color} />
-    {:else if iconItem === "invalid"}
+    {:else if icon === "invalid"}
       <Invalid {color} />
-    {:else if iconItem === "location"}
+    {:else if icon === "location"}
       <Location {color} />
-    {:else if iconItem === "location_empty"}
+    {:else if icon === "location_empty"}
       <Location_empty {color} />
-    {:else if iconItem === "location_locked"}
+    {:else if icon === "location_locked"}
       <Location_locked {color} />
-    {:else if iconItem === "note"}
+    {:else if icon === "note"}
       <Note {color} />
-    {:else if iconItem === "resolved"}
+    {:else if icon === "resolved"}
       <Resolved {color} />
-    {:else if iconItem === "ring"}
+    {:else if icon === "ring"}
       <Ring {color} />
-    {:else if iconItem === "scissors"}
+    {:else if icon === "scissors"}
       <Scissors {color} />
-    {:else if iconItem === "teardrop"}
+    {:else if icon === "teardrop"}
       <Teardrop {color} />
-    {:else if iconItem === "teardrop_with_hole_green"}
+    {:else if icon === "teardrop_with_hole_green"}
       <Teardrop_with_hole_green {color} />
-    {:else if iconItem === "triangle"}
+    {:else if icon === "triangle"}
       <Triangle {color} />
     {:else}
-      <img class="w-full h-full" src={iconItem} />
+      <img class="w-full h-full" src={icon} />
     {/if}
   </div>
 {/if}

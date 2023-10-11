@@ -214,5 +214,4 @@
                         path={[...subpath, (subschema?.path?.at(-1) ?? "???")]}></SchemaBasedInput>
     {/each}
   {/if}
-  {chosenOption}
 </div>

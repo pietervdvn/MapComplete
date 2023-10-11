@@ -11746,6 +11746,10 @@
           "then": "gps_track - Meta layer showing the previous locations of the user as single line with controls, e.g. to erase, upload or download this track. Add this to your theme and override the maprendering to change the appearance of the travelled track."
         },
         {
+          "if": "value=guidepost",
+          "then": "guidepost - Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations"
+        },
+        {
           "if": "value=hackerspace",
           "then": "hackerspace - Hackerspace"
         },
@@ -12102,15 +12106,15 @@
             "type": "object",
             "properties": {
               "key": {
-                "description": "question What is the name of the attribute that should be written to?\nifunset: do not offer a freeform textfield as answer option",
+                "description": "question: What is the name of the attribute that should be written to?\nifunset: do not offer a freeform textfield as answer option",
                 "type": "string"
               },
               "type": {
-                "description": "question: What is the input type?\nThe type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values\nsuggestions: return validators.AllValidators.filter(type => !type.isMeta).map((type) => ({if: \"value=\"+type.name, then: \"<b>\"+type.name+\"</b> \"+type.explanation.split(\"\\n\")[0]}))",
+                "description": "question: What is the input type?\nThe type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values\nifunset: use an unconstrained <b>string</b> as input (default)\nsuggestions: return validators.AllValidators.filter(type => !type.isMeta).map((type) => ({if: \"value=\"+type.name, then: \"<b>\"+type.name+\"</b> \"+type.explanation.split(\"\\n\")[0]}))",
                 "type": "string"
               },
               "placeholder": {
-                "description": "A (translated) text that is shown (as gray text) within the textfield"
+                "description": "question: What placeholder text should be shown in the input-element if there is no input?\nA (translated) text that is shown (as gray text) within the textfield\ntype: translation"
               },
               "helperArgs": {
                 "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'",
@@ -12129,7 +12133,7 @@
                 "type": "boolean"
               },
               "default": {
-                "description": "default value to enter if no previous tagging is present.\nNormally undefined (aka do not enter anything)",
+                "description": "question: What value should be entered in the text field if no value is set?\nThis can help people to quickly enter the most common option\nifunset: do not prefill the textfield",
                 "type": "string"
               }
             },
@@ -12816,10 +12820,11 @@
     ],
     "required": true,
     "hints": {
+      "question": "What is the name of the attribute that should be written to?",
       "ifunset": "do not offer a freeform textfield as answer option"
     },
     "type": "string",
-    "description": "question What is the name of the attribute that should be written to?"
+    "description": ""
   },
   {
     "path": [
@@ -12830,6 +12835,7 @@
     "required": false,
     "hints": {
       "question": "What is the input type?",
+      "ifunset": "use an unconstrained <b>string</b> as input (default)",
       "suggestions": [
         {
           "if": "value=string",
@@ -12902,6 +12908,10 @@
         {
           "if": "value=fediverse",
           "then": "<b>fediverse</b> Validates fediverse addresses and normalizes them into `@username@server`-format"
+        },
+        {
+          "if": "value=id",
+          "then": "<b>id</b> Checks for valid identifiers for layers, will automatically replace spaces and uppercase"
         }
       ]
     },
@@ -12915,7 +12925,10 @@
       "placeholder"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "typehint": "translation",
+      "question": "What placeholder text should be shown in the input-element if there is no input?"
+    },
     "description": "A (translated) text that is shown (as gray text) within the textfield"
   },
   {
@@ -12962,9 +12975,12 @@
       "default"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What value should be entered in the text field if no value is set?",
+      "ifunset": "do not prefill the textfield"
+    },
     "type": "string",
-    "description": "default value to enter if no previous tagging is present.\nNormally undefined (aka do not enter anything)"
+    "description": "This can help people to quickly enter the most common option"
   },
   {
     "path": [
@@ -13837,10 +13853,11 @@
     ],
     "required": true,
     "hints": {
+      "question": "What is the name of the attribute that should be written to?",
       "ifunset": "do not offer a freeform textfield as answer option"
     },
     "type": "string",
-    "description": "question What is the name of the attribute that should be written to?"
+    "description": ""
   },
   {
     "path": [
@@ -13852,6 +13869,7 @@
     "required": false,
     "hints": {
       "question": "What is the input type?",
+      "ifunset": "use an unconstrained <b>string</b> as input (default)",
       "suggestions": [
         {
           "if": "value=string",
@@ -13924,6 +13942,10 @@
         {
           "if": "value=fediverse",
           "then": "<b>fediverse</b> Validates fediverse addresses and normalizes them into `@username@server`-format"
+        },
+        {
+          "if": "value=id",
+          "then": "<b>id</b> Checks for valid identifiers for layers, will automatically replace spaces and uppercase"
         }
       ]
     },
@@ -13938,7 +13960,10 @@
       "placeholder"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "typehint": "translation",
+      "question": "What placeholder text should be shown in the input-element if there is no input?"
+    },
     "description": "A (translated) text that is shown (as gray text) within the textfield"
   },
   {
@@ -13989,9 +14014,12 @@
       "default"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What value should be entered in the text field if no value is set?",
+      "ifunset": "do not prefill the textfield"
+    },
     "type": "string",
-    "description": "default value to enter if no previous tagging is present.\nNormally undefined (aka do not enter anything)"
+    "description": "This can help people to quickly enter the most common option"
   },
   {
     "path": [
@@ -14888,10 +14916,11 @@
     ],
     "required": true,
     "hints": {
+      "question": "What is the name of the attribute that should be written to?",
       "ifunset": "do not offer a freeform textfield as answer option"
     },
     "type": "string",
-    "description": "question What is the name of the attribute that should be written to?"
+    "description": ""
   },
   {
     "path": [
@@ -14903,6 +14932,7 @@
     "required": false,
     "hints": {
       "question": "What is the input type?",
+      "ifunset": "use an unconstrained <b>string</b> as input (default)",
       "suggestions": [
         {
           "if": "value=string",
@@ -14975,6 +15005,10 @@
         {
           "if": "value=fediverse",
           "then": "<b>fediverse</b> Validates fediverse addresses and normalizes them into `@username@server`-format"
+        },
+        {
+          "if": "value=id",
+          "then": "<b>id</b> Checks for valid identifiers for layers, will automatically replace spaces and uppercase"
         }
       ]
     },
@@ -14989,7 +15023,10 @@
       "placeholder"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "typehint": "translation",
+      "question": "What placeholder text should be shown in the input-element if there is no input?"
+    },
     "description": "A (translated) text that is shown (as gray text) within the textfield"
   },
   {
@@ -15040,9 +15077,12 @@
       "default"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What value should be entered in the text field if no value is set?",
+      "ifunset": "do not prefill the textfield"
+    },
     "type": "string",
-    "description": "default value to enter if no previous tagging is present.\nNormally undefined (aka do not enter anything)"
+    "description": "This can help people to quickly enter the most common option"
   },
   {
     "path": [
@@ -15951,10 +15991,11 @@
     ],
     "required": true,
     "hints": {
+      "question": "What is the name of the attribute that should be written to?",
       "ifunset": "do not offer a freeform textfield as answer option"
     },
     "type": "string",
-    "description": "question What is the name of the attribute that should be written to?"
+    "description": ""
   },
   {
     "path": [
@@ -15967,6 +16008,7 @@
     "required": false,
     "hints": {
       "question": "What is the input type?",
+      "ifunset": "use an unconstrained <b>string</b> as input (default)",
       "suggestions": [
         {
           "if": "value=string",
@@ -16039,6 +16081,10 @@
         {
           "if": "value=fediverse",
           "then": "<b>fediverse</b> Validates fediverse addresses and normalizes them into `@username@server`-format"
+        },
+        {
+          "if": "value=id",
+          "then": "<b>id</b> Checks for valid identifiers for layers, will automatically replace spaces and uppercase"
         }
       ]
     },
@@ -16054,7 +16100,10 @@
       "placeholder"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "typehint": "translation",
+      "question": "What placeholder text should be shown in the input-element if there is no input?"
+    },
     "description": "A (translated) text that is shown (as gray text) within the textfield"
   },
   {
@@ -16109,9 +16158,12 @@
       "default"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What value should be entered in the text field if no value is set?",
+      "ifunset": "do not prefill the textfield"
+    },
     "type": "string",
-    "description": "default value to enter if no previous tagging is present.\nNormally undefined (aka do not enter anything)"
+    "description": "This can help people to quickly enter the most common option"
   },
   {
     "path": [

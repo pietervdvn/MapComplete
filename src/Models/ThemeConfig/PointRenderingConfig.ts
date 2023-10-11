@@ -14,6 +14,7 @@ import { VariableUiElement } from "../../UI/Base/VariableUIElement"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 import SvelteUIElement from "../../UI/Base/SvelteUIElement"
 import Marker from "../../UI/Map/Marker.svelte"
+import DynamicMarker from "../../UI/Map/DynamicMarker.svelte"
 
 export class IconConfig extends WithContextLoader {
     public readonly icon: TagRenderingConfig
@@ -45,8 +46,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         "point" | "centroid" | "start" | "end" | "projected_centerpoint" | string
     >
 
-    //   public readonly icon?: TagRenderingConfig
-    private readonly marker: IconConfig[]
+    public readonly marker: IconConfig[]
     public readonly iconBadges: { if: TagsFilter; then: TagRenderingConfig }[]
     public readonly iconSize: TagRenderingConfig
     public readonly anchor: TagRenderingConfig
@@ -192,7 +192,7 @@ export default class PointRenderingConfig extends WithContextLoader {
     }
 
     public GetBaseIcon(tags?: Record<string, string>): BaseUIElement {
-        return new SvelteUIElement(Marker, { config: this, tags: new ImmutableStore(tags) })
+        return new SvelteUIElement(DynamicMarker, { config: this, tags: new ImmutableStore(tags) })
     }
     public RenderIcon(
         tags: Store<Record<string, string>>,
@@ -244,7 +244,9 @@ export default class PointRenderingConfig extends WithContextLoader {
             anchorH = -iconH / 2
         }
 
-        const icon = new SvelteUIElement(Marker, { config: this, tags }).SetClass("w-full h-full")
+        const icon = new SvelteUIElement(DynamicMarker, { config: this, tags }).SetClass(
+            "w-full h-full"
+        )
         let badges = undefined
         if (options?.includeBadges ?? true) {
             badges = this.GetBadges(tags)

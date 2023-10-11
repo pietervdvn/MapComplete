@@ -1,21 +1,17 @@
 <script lang="ts">
 
-  import PointRenderingConfig, { IconConfig } from "../../Models/ThemeConfig/PointRenderingConfig";
   import Icon from "./Icon.svelte";
-  import { Store } from "../../Logic/UIEventSource";
 
   /**
    * Renders a 'marker', which consists of multiple 'icons'
    */
-  export let config: PointRenderingConfig;
-  let icons: IconConfig[] = config.marker;
-  export let tags: Store<Record<string, string>>;
+export  let icons: { icon: string, color: string }[] 
 
 </script>
-{#if config !== undefined}
+{#if icons !== undefined && icons.length > 0}
   <div class="relative w-full h-full">
     {#each icons as icon}
-      <Icon {icon} {tags} />
+      <Icon icon={icon.icon} color={icon.color} />
     {/each}
   </div>
 {/if}

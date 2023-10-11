@@ -19,7 +19,7 @@
    * Blacklist of regions for the general area tab
    * These are regions which are handled by a different tab
    */
-  const regionBlacklist = ["hidden", undefined, "infobox", "tagrenderings", "maprendering", "editing", "title"];
+  const regionBlacklist = ["hidden", undefined, "infobox", "tagrenderings", "maprendering", "editing", "title","linerendering","pointrendering"];
   const allNames = Utils.Dedup(layerSchema.map(meta => meta.hints.group));
 
   const perRegion: Record<string, ConfigMeta[]> = {};
@@ -27,7 +27,7 @@
     perRegion[region] = layerSchema.filter(meta => meta.hints.group === region);
   }
 
-  const baselayerRegions: string[] = ["Basic", "presets", "filters", "advanced", "expert"];
+  const baselayerRegions: string[] = ["Basic", "presets", "filters"];
   for (const baselayerRegion of baselayerRegions) {
     if (perRegion[baselayerRegion] === undefined) {
       console.error("BaseLayerRegions in editLayer: no items have group '" + baselayerRegion + "\"");
@@ -38,16 +38,11 @@
 </script>
 
 <h3>Editing layer {$title}</h3>
-<h4>Leftover regions</h4>
-{leftoverRegions.join("; ")}
 <div class="m4">
   <TabbedGroup tab={new UIEventSource(2)}>
     <div slot="title0">General properties</div>
     <div class="flex flex-col" slot="content0">
       {#each baselayerRegions as region}
-        <Region {state} configs={perRegion[region]} title={region} />
-      {/each}
-      {#each leftoverRegions as region}
         <Region {state} configs={perRegion[region]} title={region} />
       {/each}
     </div>
@@ -63,8 +58,14 @@
       <Region configs={perRegion["linerendering"]} {state} />
       <Region configs={perRegion["pointrendering"]} {state} />
     </div>
-    <div slot="title3">Configuration file</div>
+    
+    <div slot="title3">Advanced functionality</div>
     <div slot="content3">
+      <Region configs={perRegion["advanced"]} {state} />
+      <Region configs={perRegion["expert"]} {state} />
+    </div>
+    <div slot="title4">Configuration file</div>
+    <div slot="content4">
       <div>
         Below, you'll find the raw configuration file in `.json`-format.
         This is mostly for debugging purposes

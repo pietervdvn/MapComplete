@@ -239,7 +239,9 @@ export default class LayerConfig extends WithContextLoader {
                 throw (
                     "Layer " +
                     this.id +
-                    " defines a maxSnapDistance, but does not include a `snapToLayer`"
+                    " defines a maxSnapDistance, but does not include a `snapToLayer` (at " +
+                    context +
+                    ")"
                 )
             }
 

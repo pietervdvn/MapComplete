@@ -19,3 +19,10 @@ report.mapcomplete.org {
 		to http://127.0.0.1:2600
 	}
 }
+
+studio.mapcomplete.org {
+	reverse_proxy {
+		to http://127.0.0.1:1235
+	}
+}
+

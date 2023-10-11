@@ -21,15 +21,15 @@ export default {
       "type": "object",
       "properties": {
         "key": {
-          "description": "question What is the name of the attribute that should be written to?\nifunset: do not offer a freeform textfield as answer option",
+          "description": "question: What is the name of the attribute that should be written to?\nifunset: do not offer a freeform textfield as answer option",
           "type": "string"
         },
         "type": {
-          "description": "question: What is the input type?\nThe type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values\nsuggestions: return validators.AllValidators.filter(type => !type.isMeta).map((type) => ({if: \"value=\"+type.name, then: \"<b>\"+type.name+\"</b> \"+type.explanation.split(\"\\n\")[0]}))",
+          "description": "question: What is the input type?\nThe type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values\nifunset: use an unconstrained <b>string</b> as input (default)\nsuggestions: return validators.AllValidators.filter(type => !type.isMeta).map((type) => ({if: \"value=\"+type.name, then: \"<b>\"+type.name+\"</b> \"+type.explanation.split(\"\\n\")[0]}))",
           "type": "string"
         },
         "placeholder": {
-          "description": "A (translated) text that is shown (as gray text) within the textfield"
+          "description": "question: What placeholder text should be shown in the input-element if there is no input?\nA (translated) text that is shown (as gray text) within the textfield\ntype: translation"
         },
         "helperArgs": {
           "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'",
@@ -48,7 +48,7 @@ export default {
           "type": "boolean"
         },
         "default": {
-          "description": "default value to enter if no previous tagging is present.\nNormally undefined (aka do not enter anything)",
+          "description": "question: What value should be entered in the text field if no value is set?\nThis can help people to quickly enter the most common option\nifunset: do not prefill the textfield",
           "type": "string"
         }
       },
