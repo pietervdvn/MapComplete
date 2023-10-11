@@ -111,7 +111,7 @@
       "=presets": [],
       "=name": null,
       "override": {
-        "minzoom": 19
+        "minzoom": 18
       }
     }
   ]

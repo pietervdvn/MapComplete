@@ -95,6 +95,9 @@ export default class LayoutConfig implements LayoutInformation {
         }
         const context = this.id
         this.credits = json.credits
+        if(!json.title){
+            throw `The theme ${json.id} does not have a title defined.`
+        }
         this.language = json.mustHaveLanguage ?? Object.keys(json.title)
         this.usedImages = Array.from(
             new ExtractImages(official, undefined)

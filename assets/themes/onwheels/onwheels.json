@@ -32,7 +32,7 @@
     {
       "builtin": "indoors",
       "override": {
-        "minzoom": 19,
+        "minzoom": 18,
         "name": null,
         "passAllFeatures": true
       }
@@ -43,7 +43,7 @@
         "name": null,
         "tagRendering": null,
         "title": "null",
-        "minzoom": 19,
+        "minzoom": 18,
         "shownByDefault": false
       }
     },
@@ -71,7 +71,7 @@
     {
       "builtin": "entrance",
       "override": {
-        "minzoom": 19,
+        "minzoom": 18,
         "mapRendering": [
           {
             "icon": "circle:white;./assets/themes/onwheels/entrance.svg"
@@ -131,7 +131,7 @@
     {
       "builtin": "kerbs",
       "override": {
-        "minzoom": 19,
+        "minzoom": 18,
         "syncSelection": "theme-only",
         "mapRendering": [
           {
@@ -289,7 +289,7 @@
     {
       "builtin": "toilet",
       "override": {
-        "minzoom": 19,
+        "minzoom": 18,
         "syncSelection": "theme-only",
         "mapRendering": [
           {
@@ -349,7 +349,7 @@
     {
       "builtin": "reception_desk",
       "override": {
-        "minzoom": 19,
+        "minzoom": 18,
         "syncSelection": "theme-only"
       }
     },
@@ -357,7 +357,7 @@
     {
       "builtin": "elevator",
       "override": {
-        "minzoom": 19,
+        "minzoom": 18,
         "syncSelection": "theme-only",
         "mapRendering": [
           {

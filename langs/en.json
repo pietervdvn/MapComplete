@@ -124,7 +124,7 @@
             "pleaseLogin": "Please log in to add a new feature",
             "presetInfo": "The new POI will have {tags}",
             "stillLoading": "The data is still loading. Please wait a bit before you add a new feature.",
-            "title": "Add a new feature?",
+            "title": "Add a new feature",
             "warnVisibleForEveryone": "Your addition will be visible for everyone",
             "wrongType": "This feature is not a node or a way and can not be imported",
             "zoomInFurther": "Zoom in further to add a feature.",

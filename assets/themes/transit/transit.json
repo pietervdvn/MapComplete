@@ -36,22 +36,19 @@
     {
       "builtin": "bike_parking",
       "override": {
-        "minzoom": 19,
-        "minzoomVisible": 19
+        "minzoom": 18
       }
     },
     {
       "builtin": "parking",
       "override": {
-        "minzoom": 19,
-        "minzoomVisible": 19
+        "minzoom": 18
       }
     },
     {
       "builtin": "shelter",
       "override": {
-        "minzoom": 19,
-        "minzoomVisible": 19,
+        "minzoom": 18,
         "source": {
           "osmTags": {
             "and": [

@@ -22,7 +22,14 @@ export default class Hotkeys {
         }[]
     >([])
 
-    private static textElementSelected(): boolean {
+    private static textElementSelected(event: KeyboardEvent): boolean {
+        if(event.ctrlKey || event.altKey){
+            // This is an event with a modifier-key, lets not ignore it
+            return false
+        }
+        if(event.key === "Escape"){
+            return false // Another not-printable character that should not be ignored
+        }
         return ["input", "textarea"].includes(document?.activeElement?.tagName?.toLowerCase())
     }
     public static RegisterHotkey(
@@ -68,7 +75,7 @@ export default class Hotkeys {
             })
         } else if (key["shift"] !== undefined) {
             document.addEventListener(type, function (event) {
-                if (Hotkeys.textElementSelected()) {
+                if (Hotkeys.textElementSelected(event)) {
                     // A text element is selected, we don't do anything special
                     return
                 }
@@ -86,7 +93,7 @@ export default class Hotkeys {
             })
         } else if (key["nomod"] !== undefined) {
             document.addEventListener(type, function (event) {
-                if (Hotkeys.textElementSelected()) {
+                if (Hotkeys.textElementSelected(event)) {
                     // A text element is selected, we don't do anything special
                     return
                 }

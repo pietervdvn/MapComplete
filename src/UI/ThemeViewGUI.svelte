@@ -1,114 +1,114 @@
 <script lang="ts">
-  import { Store, UIEventSource } from "../Logic/UIEventSource"
-  import { Map as MlMap } from "maplibre-gl"
-  import MaplibreMap from "./Map/MaplibreMap.svelte"
-  import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
-  import MapControlButton from "./Base/MapControlButton.svelte"
-  import ToSvelte from "./Base/ToSvelte.svelte"
-  import If from "./Base/If.svelte"
-  import { GeolocationControl } from "./BigComponents/GeolocationControl"
-  import type { Feature } from "geojson"
-  import SelectedElementView from "./BigComponents/SelectedElementView.svelte"
-  import LayerConfig from "../Models/ThemeConfig/LayerConfig"
-  import Filterview from "./BigComponents/Filterview.svelte"
-  import ThemeViewState from "../Models/ThemeViewState"
-  import type { MapProperties } from "../Models/MapProperties"
-  import Geosearch from "./BigComponents/Geosearch.svelte"
-  import Translations from "./i18n/Translations"
-  import { CogIcon, EyeIcon, MenuIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
+    import { Store, UIEventSource } from "../Logic/UIEventSource";
+    import { Map as MlMap } from "maplibre-gl";
+    import MaplibreMap from "./Map/MaplibreMap.svelte";
+    import FeatureSwitchState from "../Logic/State/FeatureSwitchState";
+    import MapControlButton from "./Base/MapControlButton.svelte";
+    import ToSvelte from "./Base/ToSvelte.svelte";
+    import If from "./Base/If.svelte";
+    import { GeolocationControl } from "./BigComponents/GeolocationControl";
+    import type { Feature } from "geojson";
+    import SelectedElementView from "./BigComponents/SelectedElementView.svelte";
+    import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+    import Filterview from "./BigComponents/Filterview.svelte";
+    import ThemeViewState from "../Models/ThemeViewState";
+    import type { MapProperties } from "../Models/MapProperties";
+    import Geosearch from "./BigComponents/Geosearch.svelte";
+    import Translations from "./i18n/Translations";
+    import { CogIcon, EyeIcon, MenuIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid";
 
-  import Tr from "./Base/Tr.svelte"
-  import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
-  import FloatOver from "./Base/FloatOver.svelte"
-  import PrivacyPolicy from "./BigComponents/PrivacyPolicy"
-  import Constants from "../Models/Constants"
-  import TabbedGroup from "./Base/TabbedGroup.svelte"
-  import UserRelatedState from "../Logic/State/UserRelatedState"
-  import LoginToggle from "./Base/LoginToggle.svelte"
-  import LoginButton from "./Base/LoginButton.svelte"
-  import CopyrightPanel from "./BigComponents/CopyrightPanel"
-  import DownloadPanel from "./DownloadFlow/DownloadPanel.svelte"
-  import ModalRight from "./Base/ModalRight.svelte"
-  import { Utils } from "../Utils"
-  import Hotkeys from "./Base/Hotkeys"
-  import { VariableUiElement } from "./Base/VariableUIElement"
-  import SvelteUIElement from "./Base/SvelteUIElement"
-  import OverlayToggle from "./BigComponents/OverlayToggle.svelte"
-  import LevelSelector from "./BigComponents/LevelSelector.svelte"
-  import ExtraLinkButton from "./BigComponents/ExtraLinkButton"
-  import SelectedElementTitle from "./BigComponents/SelectedElementTitle.svelte"
-  import Svg from "../Svg"
-  import ThemeIntroPanel from "./BigComponents/ThemeIntroPanel.svelte"
-  import type { RasterLayerPolygon } from "../Models/RasterLayers"
-  import { AvailableRasterLayers } from "../Models/RasterLayers"
-  import RasterLayerOverview from "./Map/RasterLayerOverview.svelte"
-  import IfHidden from "./Base/IfHidden.svelte"
-  import { onDestroy } from "svelte"
-  import { OpenJosm } from "./BigComponents/OpenJosm"
-  import MapillaryLink from "./BigComponents/MapillaryLink.svelte"
-  import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte"
-  import OpenBackgroundSelectorButton from "./BigComponents/OpenBackgroundSelectorButton.svelte"
-  import StateIndicator from "./BigComponents/StateIndicator.svelte"
-  import LanguagePicker from "./LanguagePicker"
-  import Locale from "./i18n/Locale"
-  import ShareScreen from "./BigComponents/ShareScreen.svelte"
+    import Tr from "./Base/Tr.svelte";
+    import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte";
+    import FloatOver from "./Base/FloatOver.svelte";
+    import PrivacyPolicy from "./BigComponents/PrivacyPolicy";
+    import Constants from "../Models/Constants";
+    import TabbedGroup from "./Base/TabbedGroup.svelte";
+    import UserRelatedState from "../Logic/State/UserRelatedState";
+    import LoginToggle from "./Base/LoginToggle.svelte";
+    import LoginButton from "./Base/LoginButton.svelte";
+    import CopyrightPanel from "./BigComponents/CopyrightPanel";
+    import DownloadPanel from "./DownloadFlow/DownloadPanel.svelte";
+    import ModalRight from "./Base/ModalRight.svelte";
+    import { Utils } from "../Utils";
+    import Hotkeys from "./Base/Hotkeys";
+    import { VariableUiElement } from "./Base/VariableUIElement";
+    import SvelteUIElement from "./Base/SvelteUIElement";
+    import OverlayToggle from "./BigComponents/OverlayToggle.svelte";
+    import LevelSelector from "./BigComponents/LevelSelector.svelte";
+    import ExtraLinkButton from "./BigComponents/ExtraLinkButton";
+    import SelectedElementTitle from "./BigComponents/SelectedElementTitle.svelte";
+    import Svg from "../Svg";
+    import ThemeIntroPanel from "./BigComponents/ThemeIntroPanel.svelte";
+    import type { RasterLayerPolygon } from "../Models/RasterLayers";
+    import { AvailableRasterLayers } from "../Models/RasterLayers";
+    import RasterLayerOverview from "./Map/RasterLayerOverview.svelte";
+    import IfHidden from "./Base/IfHidden.svelte";
+    import { onDestroy } from "svelte";
+    import { OpenJosm } from "./BigComponents/OpenJosm";
+    import MapillaryLink from "./BigComponents/MapillaryLink.svelte";
+    import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte";
+    import OpenBackgroundSelectorButton from "./BigComponents/OpenBackgroundSelectorButton.svelte";
+    import StateIndicator from "./BigComponents/StateIndicator.svelte";
+    import LanguagePicker from "./LanguagePicker";
+    import Locale from "./i18n/Locale";
+    import ShareScreen from "./BigComponents/ShareScreen.svelte";
 
-  export let state: ThemeViewState
-  let layout = state.layout
+    export let state: ThemeViewState;
+    let layout = state.layout;
 
-  let maplibremap: UIEventSource<MlMap> = state.map
-  let selectedElement: UIEventSource<Feature> = state.selectedElement
-  let selectedLayer: UIEventSource<LayerConfig> = state.selectedLayer
+    let maplibremap: UIEventSource<MlMap> = state.map;
+    let selectedElement: UIEventSource<Feature> = state.selectedElement;
+    let selectedLayer: UIEventSource<LayerConfig> = state.selectedLayer;
 
-  const selectedElementView = selectedElement.map(
-    (selectedElement) => {
-      // Svelte doesn't properly reload some of the legacy UI-elements
-      // As such, we _reconstruct_ the selectedElementView every time a new feature is selected
-      // This is a bit wasteful, but until everything is a svelte-component, this should do the trick
-      const layer = selectedLayer.data
-      if (selectedElement === undefined || layer === undefined) {
-        return undefined
-      }
+    const selectedElementView = selectedElement.map(
+        (selectedElement) => {
+            // Svelte doesn't properly reload some of the legacy UI-elements
+            // As such, we _reconstruct_ the selectedElementView every time a new feature is selected
+            // This is a bit wasteful, but until everything is a svelte-component, this should do the trick
+            const layer = selectedLayer.data;
+            if (selectedElement === undefined || layer === undefined) {
+                return undefined;
+            }
 
-      if (!(layer.tagRenderings?.length > 0) || layer.title === undefined) {
-        return undefined
-      }
+            if (!(layer.tagRenderings?.length > 0) || layer.title === undefined) {
+                return undefined;
+            }
 
-      const tags = state.featureProperties.getStore(selectedElement.properties.id)
-      return new SvelteUIElement(SelectedElementView, { state, layer, selectedElement, tags })
-    },
-    [selectedLayer]
-  )
+            const tags = state.featureProperties.getStore(selectedElement.properties.id);
+            return new SvelteUIElement(SelectedElementView, { state, layer, selectedElement, tags });
+        },
+        [selectedLayer]
+    );
 
-  const selectedElementTitle = selectedElement.map(
-    (selectedElement) => {
-      // Svelte doesn't properly reload some of the legacy UI-elements
-      // As such, we _reconstruct_ the selectedElementView every time a new feature is selected
-      // This is a bit wasteful, but until everything is a svelte-component, this should do the trick
-      const layer = selectedLayer.data
-      if (selectedElement === undefined || layer === undefined) {
-        return undefined
-      }
+    const selectedElementTitle = selectedElement.map(
+        (selectedElement) => {
+            // Svelte doesn't properly reload some of the legacy UI-elements
+            // As such, we _reconstruct_ the selectedElementView every time a new feature is selected
+            // This is a bit wasteful, but until everything is a svelte-component, this should do the trick
+            const layer = selectedLayer.data;
+            if (selectedElement === undefined || layer === undefined) {
+                return undefined;
+            }
 
-      const tags = state.featureProperties.getStore(selectedElement.properties.id)
-      return new SvelteUIElement(SelectedElementTitle, { state, layer, selectedElement, tags })
-    },
-    [selectedLayer]
-  )
+            const tags = state.featureProperties.getStore(selectedElement.properties.id);
+            return new SvelteUIElement(SelectedElementTitle, { state, layer, selectedElement, tags });
+        },
+        [selectedLayer]
+    );
 
-  let mapproperties: MapProperties = state.mapProperties
-  let featureSwitches: FeatureSwitchState = state.featureSwitches
-  let availableLayers = state.availableLayers
-  let userdetails = state.osmConnection.userDetails
-  let currentViewLayer = layout.layers.find((l) => l.id === "current_view")
-  let rasterLayer: Store<RasterLayerPolygon> = state.mapProperties.rasterLayer
-  let rasterLayerName =
-    rasterLayer.data?.properties?.name ?? AvailableRasterLayers.maptilerDefaultLayer.properties.name
-  onDestroy(
-    rasterLayer.addCallbackAndRunD((l) => {
-      rasterLayerName = l.properties.name
-    })
-  )
+    let mapproperties: MapProperties = state.mapProperties;
+    let featureSwitches: FeatureSwitchState = state.featureSwitches;
+    let availableLayers = state.availableLayers;
+    let userdetails = state.osmConnection.userDetails;
+    let currentViewLayer = layout.layers.find((l) => l.id === "current_view");
+    let rasterLayer: Store<RasterLayerPolygon> = state.mapProperties.rasterLayer;
+    let rasterLayerName =
+        rasterLayer.data?.properties?.name ?? AvailableRasterLayers.maptilerDefaultLayer.properties.name;
+    onDestroy(
+        rasterLayer.addCallbackAndRunD((l) => {
+            rasterLayerName = l.properties.name;
+        })
+    );
 </script>
 
 <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden">
@@ -168,18 +168,39 @@
 <div class="pointer-events-none absolute bottom-0 left-0 mb-4 w-screen">
   <!-- bottom controls -->
   <div class="flex w-full items-end justify-between px-4">
-    <div class="flex">
-      <!-- bottom left elements -->
-      <OpenBackgroundSelectorButton hideTooltip={true} {state} />
-      <a
-        class="bg-black-transparent pointer-events-auto h-fit max-h-12 cursor-pointer self-end overflow-hidden rounded-2xl pl-1 pr-2 text-white opacity-50 hover:opacity-100"
-        on:click={() => {
+    <div class="flex flex-col">
+      <If condition={featureSwitches.featureSwitchEnableLogin}>
+        {#if state.lastClickObject.hasPresets || state.lastClickObject.hasNoteLayer}
+          <button class="w-fit pointer-events-auto" on:click={() => {state.openNewDialog()}}>
+            {#if state.lastClickObject.hasPresets}
+              <Tr t={Translations.t.general.add.title} />
+            {:else}
+              <Tr t={Translations.t.notes.addAComment} />
+            {/if}
+          </button>
+        {/if}
+      </If>
+
+      <div class="flex">
+        <!-- bottom left elements -->
+        <If condition={state.featureSwitches.featureSwitchFilter}>
+          <MapControlButton on:click={() => state.guistate.openFilterView()}>
+            <ToSvelte construct={Svg.filter_svg().SetClass("h-6 w-6")} />
+          </MapControlButton>
+        </If>
+        <If condition={state.featureSwitches.featureSwitchBackgroundSelection}>
+          <OpenBackgroundSelectorButton hideTooltip={true} {state} />
+        </If>
+        <a
+          class="bg-black-transparent pointer-events-auto h-fit max-h-12 cursor-pointer self-end overflow-hidden rounded-2xl pl-1 pr-2 text-white opacity-50 hover:opacity-100"
+          on:click={() => {
           state.guistate.themeViewTab.setData("copyright")
           state.guistate.themeIsOpened.setData(true)
         }}
-      >
-        © OpenStreetMap, <span class="w-24">{rasterLayerName}</span>
-      </a>
+        >
+          © OpenStreetMap, <span class="w-24">{rasterLayerName}</span>
+        </a>
+      </div>
     </div>
 
     <div class="flex flex-col items-end">
@@ -255,9 +276,9 @@
 
 <If condition={state.guistate.themeIsOpened}>
   <!-- Theme menu -->
-  <FloatOver>
+  <FloatOver on:close={() => state.guistate.themeIsOpened.setData(false)}>
     <span slot="close-button"><!-- Disable the close button --></span>
-    <TabbedGroup tab={state.guistate.themeViewTabIndex}>
+    <TabbedGroup condition1={state.featureSwitches.featureSwitchFilter} tab={state.guistate.themeViewTabIndex}>
       <div slot="post-tablist">
         <XCircleIcon
           class="mr-2 h-8 w-8"
@@ -275,10 +296,8 @@
       </div>
 
       <div class="flex" slot="title1">
-        <If condition={state.featureSwitches.featureSwitchFilter}>
-          <ToSvelte construct={Svg.filter_svg().SetClass("w-4 h-4")} />
-          <Tr t={Translations.t.general.menu.filter} />
-        </If>
+        <ToSvelte construct={Svg.filter_svg().SetClass("w-4 h-4")} />
+        <Tr t={Translations.t.general.menu.filter} />
       </div>
 
       <div class="m-2 flex flex-col" slot="content1">
@@ -298,6 +317,7 @@
           />
         {/each}
       </div>
+
       <div class="flex" slot="title2">
         <If condition={state.featureSwitches.featureSwitchEnableExport}>
           <ToSvelte construct={Svg.download_svg().SetClass("w-4 h-4")} />
@@ -314,7 +334,7 @@
 
       <ToSvelte construct={() => new CopyrightPanel(state)} slot="content3" />
 
-      <div slot="title4" class="flex">
+      <div class="flex" slot="title4">
         <ToSvelte construct={Svg.share_svg().SetClass("w-4 h-4")} />
         <Tr t={Translations.t.general.sharescreen.title} />
       </div>
@@ -327,7 +347,7 @@
 
 <IfHidden condition={state.guistate.backgroundLayerSelectionIsOpened}>
   <!-- background layer selector -->
-  <FloatOver on:close={() => state.guistate.backgroundLayerSelectionIsOpened.setData(false)}>
+  <FloatOver on:close={() => {state.guistate.backgroundLayerSelectionIsOpened.setData(false)}}>
     <div class="h-full p-2">
       <RasterLayerOverview
         {availableLayers}
@@ -342,9 +362,10 @@
 
 <If condition={state.guistate.menuIsOpened}>
   <!-- Menu page -->
-  <FloatOver>
+  <FloatOver on:close={() =>      state.guistate.menuIsOpened.setData(false)    }>
     <span slot="close-button"><!-- Hide the default close button --></span>
-    <TabbedGroup tab={state.guistate.menuViewTabIndex}>
+    <TabbedGroup condition1={featureSwitches.featureSwitchEnableLogin} condition2={state.featureSwitches. featureSwitchCommunityIndex}
+                 tab={state.guistate.menuViewTabIndex}>
       <div slot="post-tablist">
         <XCircleIcon
           class="mr-2 h-8 w-8"
@@ -419,7 +440,6 @@
       <div class="m-2" slot="content2">
         <CommunityIndexView location={state.mapProperties.location} />
       </div>
-
       <div class="flex" slot="title3">
         <EyeIcon class="w-6" />
         <Tr t={Translations.t.privacy.title} />
@@ -430,12 +450,15 @@
 
       <Tr slot="title4" t={Translations.t.advanced.title} />
       <div class="m-2 flex flex-col" slot="content4">
-        <OpenIdEditor mapProperties={state.mapProperties} />
-        <ToSvelte
-          construct={() =>
+        <If condition={featureSwitches.featureSwitchEnableLogin}>
+          <OpenIdEditor mapProperties={state.mapProperties} />
+          <ToSvelte
+            construct={() =>
             new OpenJosm(state.osmConnection, state.mapProperties.bounds).SetClass("w-full")}
-        />
-        <MapillaryLink mapProperties={state.mapProperties} />
+          />
+          <MapillaryLink mapProperties={state.mapProperties} />
+        </If>
+
         <ToSvelte construct={Hotkeys.generateDocumentationDynamic} />
       </div>
     </TabbedGroup>

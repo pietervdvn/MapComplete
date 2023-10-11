@@ -92,7 +92,7 @@
   <LoginToggle ignoreLoading={true} {state}>
     {#if currentState === "start"}
       <button
-        class="flex"
+        class="flex items-center"
         on:click={() => {
           currentState = "confirm"
         }}
@@ -112,7 +112,7 @@
         <button
           slot="save-button"
           on:click={onDelete}
-          class={twJoin(selectedTags === undefined && "disabled", "primary flex bg-red-600")}
+          class={twJoin(selectedTags === undefined && "disabled", "primary flex bg-red-600 items-center")}
         >
           <TrashIcon
             class={twJoin(
@@ -122,7 +122,7 @@
           />
           <Tr t={t.delete} />
         </button>
-        <button slot="cancel" on:click={() => (currentState = "start")}>
+        <button slot="cancel" class="items-center" on:click={() => (currentState = "start")}>
           <Tr t={t.cancel} />
         </button>
         <XCircleIcon

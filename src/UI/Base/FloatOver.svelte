@@ -11,8 +11,9 @@
 <div
   class="absolute top-0 right-0 h-screen w-screen p-4 md:p-6"
   style="background-color: #00000088"
+  on:click={() => {dispatch("close")}}
 >
-  <div class="content normal-background">
+  <div class="content normal-background" on:click|stopPropagation={() => {}}>
     <div class="h-full rounded-xl">
       <slot />
     </div>
