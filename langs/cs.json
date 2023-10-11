@@ -653,7 +653,7 @@
         "text": {
             "description": "kus textu"
         },
-        "tooLong": "Text je příliš dlouhý, povoleno je maximálně 255 znaků. Nyní máte {počet} znaků.",
+        "tooLong": "Text je příliš dlouhý, povoleno je maximálně 255 znaků. Nyní máte {count} znaků.",
         "url": {
             "description": "odkaz na webové stránky",
             "feedback": "Toto není platná webová adresa"
