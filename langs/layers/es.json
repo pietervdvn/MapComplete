@@ -4193,7 +4193,7 @@
                         "then": "Aquí se juega al baloncesto"
                     }
                 },
-                "question": "¿Qué deporte se practica aquí?",
+                "question": "¿Qué deporte se puede practicar aquí?",
                 "render": "Aquí se juega al {sport}"
             },
             "sport_pitch-surface": {
@@ -4779,6 +4779,13 @@
     },
     "usersettings": {
         "tagRenderings": {
+            "cscount-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Has hecho cambios en {_csCount} ocasiones diferentes. ¡Es alucinante!"
+                    }
+                }
+            },
             "picture-license": {
                 "mappings": {
                     "1": {

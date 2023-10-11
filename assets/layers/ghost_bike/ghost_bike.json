@@ -250,7 +250,8 @@
         "it": "Piazzata in data {start_date}",
         "fr": "Placé le {start_date}",
         "ru": "Установлен {start_date}",
-        "de": "Aufgestellt am {start_date}"
+        "de": "Aufgestellt am {start_date}",
+        "ca": "Col·locat el {start_date}"
       },
       "freeform": {
         "key": "start_date",

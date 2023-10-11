@@ -50,7 +50,7 @@
     },
     {
       "key": "amenity",
-      "description": "Layer 'Fries shop' shows amenity=fast_food with a fixed text, namely 'This is a fastfood-business, focused on fast service. If seating is available, these are rather limited and functional.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "description": "Layer 'Fries shop' shows amenity=fast_food with a fixed text, namely 'This is a fast-food business, focused on fast service. If seating is available, it is rather limited and functional.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
       "value": "fast_food"
     },
     {
@@ -176,7 +176,7 @@
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Fries shop' shows cuisine=sandwich with a fixed text, namely 'This is a sandwichbar' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "description": "Layer 'Fries shop' shows cuisine=sandwich with a fixed text, namely 'This is a sandwich shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
       "value": "sandwich"
     },
     {
@@ -196,7 +196,7 @@
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Fries shop' shows cuisine=italian with a fixed text, namely 'This is an italian restaurant (which serves more then pasta and pizza)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "description": "Layer 'Fries shop' shows cuisine=italian with a fixed text, namely 'This is an Italian restaurant (which serves more than pasta and pizza)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
       "value": "italian"
     },
     {

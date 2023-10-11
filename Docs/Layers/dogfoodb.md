@@ -131,7 +131,7 @@ The question is  *What type of business is this?*
 
 
 
-  - *This is a fastfood-business, focused on fast service. If seating is available, these are rather limited and functional.*  corresponds with  `amenity=fast_food`
+  - *This is a fast-food business, focused on fast service. If seating is available, it is rather limited and functional.*  corresponds with  `amenity=fast_food`
   - *A <b>restaurant</b>, focused on creating a nice experience where one is served at the table*  corresponds with  `amenity=restaurant`
 
 
@@ -300,7 +300,7 @@ The question is  *Is this place accessible with a wheelchair?*
 
 
 
-The question is  *Which food is served here?*
+The question is  *What kind of food is served here?*
 
 This rendering asks information about the property  [cuisine](https://wiki.openstreetmap.org/wiki/Key:cuisine) 
 
@@ -314,11 +314,11 @@ This is rendered with  `This place mostly serves {cuisine}`
   - *This is a friture*  corresponds with  `cuisine=friture`
   - *Mainly serves pasta*  corresponds with  `cuisine=pasta`
   - *This is kebab shop*  corresponds with  `cuisine=kebab`
-  - *This is a sandwichbar*  corresponds with  `cuisine=sandwich`
+  - *This is a sandwich shop*  corresponds with  `cuisine=sandwich`
   - *Burgers are served here*  corresponds with  `cuisine=burger`
   - *Sushi is served here*  corresponds with  `cuisine=sushi`
   - *Coffee is served here*  corresponds with  `cuisine=coffee`
-  - *This is an italian restaurant (which serves more then pasta and pizza)*  corresponds with  `cuisine=italian`
+  - *This is an Italian restaurant (which serves more than pasta and pizza)*  corresponds with  `cuisine=italian`
   - *French dishes are served here*  corresponds with  `cuisine=french`
   - *Chinese dishes are served here*  corresponds with  `cuisine=chinese`
   - *Greek dishes are served here*  corresponds with  `cuisine=greek`
@@ -370,7 +370,7 @@ The question is  *Does this place offer take-away?*
 
 
 
-The question is  *Delivers {title()} their food at home?*
+The question is  *Does {title()} deliver food to your home?*
 
 
 

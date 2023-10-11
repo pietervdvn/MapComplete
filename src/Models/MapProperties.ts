@@ -13,7 +13,6 @@ export interface MapProperties {
     readonly allowMoving: UIEventSource<true | boolean>
     readonly allowRotating: UIEventSource<true | boolean>
     readonly lastClickLocation: Store<{ lon: number; lat: number }>
-
     readonly allowZooming: UIEventSource<true | boolean>
 }
 

@@ -34,6 +34,8 @@ export default class Wikipedia {
 
     private static readonly idsToRemove = ["sjabloon_zie"]
 
+    public static readonly neededUrls = ["*.wikipedia.org"]
+
     private static readonly _cache = new Map<string, Promise<string>>()
     private static _fullDetailsCache = new Map<string, Store<FullWikipediaDetails>>()
     public readonly backend: string

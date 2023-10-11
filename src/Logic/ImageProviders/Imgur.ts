@@ -10,8 +10,14 @@ export class Imgur extends ImageProvider implements ImageUploader {
     public static readonly singleton = new Imgur()
     public readonly defaultKeyPrefixes: string[] = ["image"]
     public readonly maxFileSizeInMegabytes = 10
+    public static readonly apiUrl = "https://api.imgur.com/3/image"
+
     private constructor() {
         super()
+    }
+
+    apiUrls(): string[] {
+        return [Imgur.apiUrl]
     }
 
     /**
@@ -25,7 +31,7 @@ export class Imgur extends ImageProvider implements ImageUploader {
         description: string,
         blob: File
     ): Promise<{ key: string; value: string }> {
-        const apiUrl = "https://api.imgur.com/3/image"
+        const apiUrl = Imgur.apiUrl
         const apiKey = Constants.ImgurApiKey
 
         const formData = new FormData()

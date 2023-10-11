@@ -4711,6 +4711,20 @@
                         "question": "No dogs allowed"
                     }
                 }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Offers internet"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Offers electricity"
+                    }
+                }
             }
         }
     },
@@ -5004,7 +5018,7 @@
                 "title": "a fastfood"
             },
             "2": {
-                "description": "A fastfood-business focused on french fries",
+                "description": "A fast-food business focused on french fries",
                 "title": "a fries shop"
             }
         },
@@ -5024,7 +5038,7 @@
                         "then": "This is kebab shop"
                     },
                     "4": {
-                        "then": "This is a sandwichbar"
+                        "then": "This is a sandwich shop"
                     },
                     "5": {
                         "then": "Burgers are served here"
@@ -5036,7 +5050,7 @@
                         "then": "Coffee is served here"
                     },
                     "8": {
-                        "then": "This is an italian restaurant (which serves more then pasta and pizza)"
+                        "then": "This is an Italian restaurant (which serves more than pasta and pizza)"
                     },
                     "9": {
                         "then": "French dishes are served here"
@@ -5057,13 +5071,13 @@
                         "then": "Thai dishes are served here"
                     }
                 },
-                "question": "Which food is served here?",
+                "question": "What kind of food is served here?",
                 "render": "This place mostly serves {cuisine}"
             },
             "Fastfood vs restaurant": {
                 "mappings": {
                     "0": {
-                        "then": "This is a fastfood-business, focused on fast service. If seating is available, these are rather limited and functional."
+                        "then": "This is a fast-food business, focused on fast service. If seating is available, it is rather limited and functional."
                     },
                     "1": {
                         "then": "A <b>restaurant</b>, focused on creating a nice experience where one is served at the table"
@@ -5149,7 +5163,7 @@
                         "then": "This business does not deliver at home"
                     }
                 },
-                "question": "Delivers {title()} their food at home?"
+                "question": "Does {title()} deliver food to your home?"
             },
             "friture-oil": {
                 "mappings": {
@@ -9265,10 +9279,10 @@
             "toilet-handwashing": {
                 "mappings": {
                     "0": {
-                        "then": "This toilets have a sink to wash your hands"
+                        "then": "These toilets have a sink to wash your hands"
                     },
                     "1": {
-                        "then": "This toilets <b>don't</b> have a sink to wash your hands"
+                        "then": "These toilets <b>don't</b> have a sink to wash your hands"
                     }
                 },
                 "question": "Do these toilets have a sink to wash your hands?"
@@ -9321,7 +9335,7 @@
                         "then": "Both seated toilets and urinals are available here"
                     }
                 },
-                "question": "Which kind of toilets are this?"
+                "question": "Which kind of toilets are these?"
             },
             "toilets-wheelchair": {
                 "mappings": {
@@ -10053,30 +10067,36 @@
                         "question": "Sale of meat"
                     },
                     "17": {
-                        "question": "Sale of flowers"
+                        "question": "Sale of fruit"
                     },
                     "18": {
-                        "question": "Sale of parking tickets"
+                        "question": "Sale of strawberries"
                     },
                     "19": {
-                        "question": "Sale of pressed pennies"
+                        "question": "Sale of flowers"
                     },
                     "20": {
-                        "question": "Sale of public transport tickets"
+                        "question": "Sale of parking tickets"
                     },
                     "21": {
-                        "question": "Sale of bicycle lights"
+                        "question": "Sale of pressed pennies"
                     },
                     "22": {
-                        "question": "Sale of gloves"
+                        "question": "Sale of public transport tickets"
                     },
                     "23": {
-                        "question": "Sale of bicycle repair kits"
+                        "question": "Sale of bicycle lights"
                     },
                     "24": {
-                        "question": "Sale of bicycle pumps"
+                        "question": "Sale of gloves"
                     },
                     "25": {
+                        "question": "Sale of bicycle repair kits"
+                    },
+                    "26": {
+                        "question": "Sale of bicycle pumps"
+                    },
+                    "27": {
                         "question": "Sale of bicycle locks"
                     }
                 }
@@ -10167,30 +10187,36 @@
                         "then": "Meat is sold"
                     },
                     "16": {
-                        "then": "Flowers are sold"
+                        "then": "Fruit is sold"
                     },
                     "17": {
-                        "then": "Parking tickets are sold"
+                        "then": "Strawberries are sold"
                     },
                     "18": {
-                        "then": "Pressed pennies are sold"
+                        "then": "Flowers are sold"
                     },
                     "19": {
-                        "then": "Public transport tickets are sold"
+                        "then": "Parking tickets are sold"
                     },
                     "20": {
-                        "then": "Bicycle lights are sold"
+                        "then": "Pressed pennies are sold"
                     },
                     "21": {
-                        "then": "Gloves are sold"
+                        "then": "Public transport tickets are sold"
                     },
                     "22": {
-                        "then": "Bicycle repair kits are sold"
+                        "then": "Bicycle lights are sold"
                     },
                     "23": {
-                        "then": "Bicycle pumps are sold"
+                        "then": "Gloves are sold"
                     },
                     "24": {
+                        "then": "Bicycle repair kits are sold"
+                    },
+                    "25": {
+                        "then": "Bicycle pumps are sold"
+                    },
+                    "26": {
                         "then": "Bicycle locks are sold"
                     }
                 },

@@ -23,7 +23,6 @@ export default class AllThemesGui {
                     undefined,
                     "Used to complete the login"
                 ),
-                osmConfiguration: <"osm" | "osm-test">featureSwitches.featureSwitchApiURL.data,
             })
             const state = new UserRelatedState(osmConnection)
             const intro = new Combine([

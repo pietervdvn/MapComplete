@@ -1067,12 +1067,12 @@
     },
     {
       "key": "toilets:handwashing",
-      "description": "Layer 'Toilets' shows toilets:handwashing=yes with a fixed text, namely 'This toilets have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Toilets' shows toilets:handwashing=yes with a fixed text, namely 'These toilets have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "toilets:handwashing",
-      "description": "Layer 'Toilets' shows toilets:handwashing=no with a fixed text, namely 'This toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Toilets' shows toilets:handwashing=no with a fixed text, namely 'These toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "no"
     },
     {

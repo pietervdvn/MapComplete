@@ -13,7 +13,7 @@ export class ExportAsGpxViz implements SpecialVisualization {
     funcName = "export_as_gpx"
     docs = "Exports the selected feature as GPX-file"
     args = []
-
+    needsUrls = []
     constr(
         state: SpecialVisualizationState,
         tagSource: UIEventSource<Record<string, string>>,

@@ -21,6 +21,7 @@ import Maproulette from "../../Logic/Maproulette"
 
 export default class TagApplyButton implements AutoAction, SpecialVisualization {
     public readonly funcName = "tag_apply"
+    needsUrls = []
     public readonly docs =
         "Shows a big button; clicking this button will apply certain tags onto the feature.\n\nThe first argument takes a specification of which tags to add.\n" +
         Utils.Special_visualizations_tagsToApplyHelpText
@@ -110,6 +111,7 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
 
         while (spec.length > 0) {
             const [part] = spec.match(/((\\;)|[^;])*/)
+            console.log("Spec is", part, spec)
             spec = spec.substring(part.length + 1) // +1 to remove the pending ';' as well
             const kv = part.split("=").map((s) => s.trim().replace("\\;", ";"))
             if (kv.length == 2) {

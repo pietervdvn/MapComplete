@@ -8,7 +8,17 @@ import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
 import xml2js from "xml2js"
 import ScriptUtils from "./ScriptUtils"
 import { Utils } from "../src/Utils"
-
+import SpecialVisualizations from "../src/UI/SpecialVisualizations"
+import Constants from "../src/Models/Constants"
+import {
+    AvailableRasterLayers,
+    EditorLayerIndexProperties,
+    RasterLayerPolygon,
+} from "../src/Models/RasterLayers"
+import { ImmutableStore } from "../src/Logic/UIEventSource"
+import * as crypto from "crypto"
+import * as eli from "../src/assets/editor-layer-index.json"
+import dom from "svelte/types/compiler/compile/render_dom"
 const sharp = require("sharp")
 const template = readFileSync("theme.html", "utf8")
 const codeTemplate = readFileSync("src/index_theme.ts.template", "utf8")
@@ -195,30 +205,117 @@ function asLangSpan(t: Translation, tag = "span"): string {
         if (lang === "_context") {
             continue
         }
-        values.push(`<${tag} lang='${lang}'>${t.translations[lang]}</${tag}>`)
+        values.push(`<${tag} lang="${lang}">${t.translations[lang]}</${tag}>`)
     }
     return values.join("\n")
 }
 
-let cspCached: string = undefined
-function generateCsp(): string {
-    if (cspCached !== undefined) {
-        return cspCached
+let previousSrc: Set<string> = new Set<string>()
+
+let eliUrlsCached: string[]
+function eliUrls(): string[] {
+    if (eliUrlsCached) {
+        return eliUrlsCached
+    }
+    const urls: string[] = []
+    const regex = /{switch:([^}]+)}/
+    for (const feature of eli.features) {
+        const url = (<RasterLayerPolygon>feature).properties.url
+        const match = url.match(regex)
+        if (match) {
+            const domains = match[1].split(",")
+            const subpart = match[0]
+            urls.push(...domains.map((d) => url.replace(subpart, d)))
+        } else {
+            urls.push(url)
+        }
+    }
+    eliUrlsCached = urls
+    return urls
+}
+
+function generateCsp(
+    layout: LayoutConfig,
+    options: {
+        scriptSrcs: string[]
+    }
+): string {
+    const apiUrls: string[] = [
+        "'self'",
+        ...Constants.defaultOverpassUrls,
+        Constants.countryCoderEndpoint,
+        Constants.nominatimEndpoint,
+        AvailableRasterLayers.maptilerCarto.properties.url,
+        AvailableRasterLayers.maptilerDefaultLayer.properties.url,
+        "https://api.openstreetmap.org",
+        "https://pietervdvn.goatcounter.com",
+    ]
+        .concat(...SpecialVisualizations.specialVisualizations.map((sv) => sv.needsUrls))
+        .concat(...eliUrls())
+
+    const geojsonSources: string[] = layout.layers.map((l) => l.source?.geojsonSource)
+    const hosts = new Set<string>()
+    const eliLayers: RasterLayerPolygon[] = AvailableRasterLayers.layersAvailableAt(
+        new ImmutableStore({ lon: 0, lat: 0 })
+    ).data
+    const vectorLayers = eliLayers.filter((l) => l.properties.type === "vector")
+    const vectorSources = vectorLayers.map((l) => l.properties.url)
+    apiUrls.push(...vectorSources)
+    for (const connectSource of apiUrls.concat(geojsonSources)) {
+        if (!connectSource) {
+            continue
+        }
+        try {
+            const url = new URL(connectSource)
+            hosts.add("https://" + url.host)
+        } catch (e) {
+            hosts.add(connectSource)
+        }
     }
 
-    const csp = {
+    const connectSrc = Array.from(hosts).sort()
+
+    const newSrcs = connectSrc.filter((newItem) => !previousSrc.has(newItem))
+
+    console.log(
+        "Got",
+        hosts.size,
+        "connect-src items for theme",
+        layout.id,
+        "(extra sources: ",
+        newSrcs.join(" ") + ")"
+    )
+    previousSrc = hosts
+
+    const csp: Record<string, string> = {
         "default-src": "'self'",
-        "script-src": "'self'",
-        "img-src": "*",
-        "connect-src": "*",
+        "script-src": ["'self'", "https://gc.zgo.at/count.js", ...(options?.scriptSrcs ?? [])].join(
+            " "
+        ),
+        "img-src": "* data:", // maplibre depends on 'data:' to load
+        "connect-src": connectSrc.join(" "),
+        "report-to": "https://report.mapcomplete.org/csp",
+        "worker-src": "'self' blob:", // Vite somehow loads the worker via a 'blob'
+        "style-src": "'self' 'unsafe-inline'", // unsafe-inline is needed to change the default background pin colours
     }
     const content = Object.keys(csp)
-        .map((k) => k + ": " + csp[k])
+        .map((k) => k + " " + csp[k])
         .join("; ")
 
-    cspCached = `<meta http-equiv="Content-Security-Policy" content="${content}">`
-    return cspCached
+    return [
+        `<meta http-equiv ="Report-To" content='{"group":"csp-endpoint", "max_age": 86400,"endpoints": [\{"url": "https://report.mapcomplete.org/csp"}], "include_subdomains": true}'>`,
+        `<meta http-equiv="Content-Security-Policy" content="${content}">`,
+    ].join("\n")
 }
+
+const removeOtherLanguages = readFileSync("./src/UI/RemoveOtherLanguages.js", "utf8")
+    .split("\n")
+    .map((s) => s.trim())
+    .join("\n")
+const removeOtherLanguagesHash = crypto
+    .createHash("sha256")
+    .update(removeOtherLanguages)
+    .digest("base64")
 
 async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alreadyWritten) {
     Locale.language.setData(layout.language[0])
@@ -290,8 +387,11 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
         ...apple_icons,
     ].join("\n")
 
-    const loadingText = Translations.t.general.loadingTheme.Subs({ theme: ogTitle })
-
+    const loadingText = Translations.t.general.loadingTheme.Subs({ theme: layout.title })
+    const templateLines = template.split("\n")
+    const removeOtherLanguagesReference = templateLines.find(
+        (line) => line.indexOf("./src/UI/RemoveOtherLanguages.js") >= 0
+    )
     let output = template
         .replace("Loading MapComplete, hang on...", asLangSpan(loadingText, "h1"))
         .replace(
@@ -299,7 +399,13 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
             Translations.t.general.poweredByOsm.textFor(targetLanguage)
         )
         .replace(/<!-- THEME-SPECIFIC -->.*<!-- THEME-SPECIFIC-END-->/s, themeSpecific)
-        .replace(/<!-- CSP -->/, generateCsp())
+        .replace(
+            /<!-- CSP -->/,
+            generateCsp(layout, {
+                scriptSrcs: [`'sha256-${removeOtherLanguagesHash}'`],
+            })
+        )
+        .replace(removeOtherLanguagesReference, "<script>" + removeOtherLanguages + "</script>")
         .replace(
             /<!-- DESCRIPTION START -->.*<!-- DESCRIPTION END -->/s,
             asLangSpan(layout.shortDescription)
@@ -310,8 +416,8 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
         )
 
         .replace(
-            '<script src="./src/index.ts" type="module"></script>',
-            `<script type="module" src='./index_${layout.id}.ts'></script>`
+            /.*\/src\/index\.ts.*/,
+            `<script type="module" src="./index_${layout.id}.ts"></script>`
         )
 
     return output

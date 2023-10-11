@@ -47,6 +47,7 @@
   "minzoom": 13,
   "tagRenderings": [
     "images",
+    "reviews",
     {
       "id": "name",
       "freeform": {

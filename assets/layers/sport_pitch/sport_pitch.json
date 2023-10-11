@@ -51,7 +51,8 @@
         "en": "{sport} is played here",
         "it": "Qui si gioca a {sport}",
         "de": "Hier wird {sport} gespielt",
-        "es": "Aquí se juega al {sport}"
+        "es": "Aquí se juega al {sport}",
+        "ca": "{sport} es juga aquí"
       },
       "freeform": {
         "key": "sport"
@@ -62,7 +63,8 @@
         "en": "Which sport can be played here?",
         "it": "Quale sport si gioca qui?",
         "de": "Welche Sportarten können hier gespielt werden?",
-        "es": "¿Qué deporte se practica aquí?"
+        "es": "¿Qué deporte se puede practicar aquí?",
+        "ca": "Quin esport es pot practicar aquí?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -172,7 +174,8 @@
           "then": {
             "en": "This is a skatepark",
             "nl": "Dit is een skatepark",
-            "de": "Dies ist ein Skatepark"
+            "de": "Dies ist ein Skatepark",
+            "ca": "Açò és un skatepark"
           }
         }
       ],
@@ -235,7 +238,8 @@
         "ru": "Поверхность - <b>{surface}</b>",
         "it": "La superficie è <b>{surface}</b>",
         "de": "Der Belag ist <b>{surface}</b>",
-        "es": "La superficie es <b>{surface}</b>"
+        "es": "La superficie es <b>{surface}</b>",
+        "ca": "La superfícies és <b>{surface}</b>"
       },
       "freeform": {
         "key": "surface"

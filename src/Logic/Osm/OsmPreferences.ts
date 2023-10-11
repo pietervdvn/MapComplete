@@ -1,9 +1,17 @@
 import { UIEventSource } from "../UIEventSource"
 import UserDetails, { OsmConnection } from "./OsmConnection"
 import { Utils } from "../../Utils"
+import { LocalStorageSource } from "../Web/LocalStorageSource"
 
 export class OsmPreferences {
-    public preferences = new UIEventSource<Record<string, string>>({}, "all-osm-preferences")
+    /**
+     * A dictionary containing all the preferences. The 'preferenceSources' will be initialized from this
+     * We keep a local copy of them, to init mapcomplete with the previous choices and to be able to get the open changesets right away
+     */
+    public preferences = LocalStorageSource.GetParsed<Record<string, string>>(
+        "all-osm-preferences",
+        {}
+    )
     private readonly preferenceSources = new Map<string, UIEventSource<string>>()
     private auth: any
     private userDetails: UIEventSource<UserDetails>

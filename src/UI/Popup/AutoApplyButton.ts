@@ -9,7 +9,6 @@ import { Utils } from "../../Utils"
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
 import { VariableUiElement } from "../Base/VariableUIElement"
 import Loading from "../Base/Loading"
-import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import Translations from "../i18n/Translations"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { Changes } from "../../Logic/Osm/Changes"
@@ -209,6 +208,8 @@ class ApplyButton extends UIElement {
 export default class AutoApplyButton implements SpecialVisualization {
     public readonly docs: BaseUIElement
     public readonly funcName: string = "auto_apply"
+    public readonly needsUrls = []
+
     public readonly args: {
         name: string
         defaultValue?: string
@@ -271,14 +272,7 @@ export default class AutoApplyButton implements SpecialVisualization {
         argument: string[]
     ): BaseUIElement {
         try {
-            if (
-                !state.layout.official &&
-                !(
-                    state.featureSwitchIsTesting.data ||
-                    state.osmConnection._oauth_config.url ===
-                        OsmConnection.oauth_configs["osm-test"].url
-                )
-            ) {
+            if (!state.layout.official && !state.featureSwitchIsTesting.data) {
                 const t = Translations.t.general.add.import
                 return new Combine([
                     new FixedUiElement(

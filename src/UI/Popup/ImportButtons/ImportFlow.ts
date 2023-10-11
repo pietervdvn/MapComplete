@@ -194,10 +194,7 @@ export default abstract class ImportFlow<ArgT extends ImportFlowArguments> {
                     return { error: t.hasBeenImported }
                 }
 
-                const usesTestUrl =
-                    this.state.osmConnection._oauth_config.url ===
-                    OsmConnection.oauth_configs["osm-test"].url
-                if (!state.layout.official && !(isTesting || usesTestUrl)) {
+                if (!state.layout.official && !isTesting) {
                     // Unofficial theme - imports not allowed
                     return {
                         error: t.officialThemesOnly,

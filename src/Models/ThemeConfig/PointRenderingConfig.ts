@@ -13,7 +13,6 @@ import Combine from "../../UI/Base/Combine"
 import { VariableUiElement } from "../../UI/Base/VariableUIElement"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 import SvelteUIElement from "../../UI/Base/SvelteUIElement"
-import Marker from "../../UI/Map/Marker.svelte"
 import DynamicMarker from "../../UI/Map/DynamicMarker.svelte"
 
 export class IconConfig extends WithContextLoader {
@@ -83,7 +82,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         })
 
         if (json.marker === undefined && json.label === undefined) {
-            throw `${context}: A point rendering should define at least an icon or a marker`
+            throw `At ${context}: A point rendering should define at least an marker or a label`
         }
 
         if (this.location.size == 0) {

@@ -556,7 +556,7 @@
     },
     {
       "key": "amenity",
-      "description": "Layer 'Restaurants and fast food' shows amenity=fast_food with a fixed text, namely 'This is a fastfood-business, focused on fast service. If seating is available, these are rather limited and functional.' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Restaurants and fast food' shows amenity=fast_food with a fixed text, namely 'This is a fast-food business, focused on fast service. If seating is available, it is rather limited and functional.' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "fast_food"
     },
     {
@@ -682,7 +682,7 @@
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=sandwich with a fixed text, namely 'This is a sandwichbar' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=sandwich with a fixed text, namely 'This is a sandwich shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "sandwich"
     },
     {
@@ -702,7 +702,7 @@
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=italian with a fixed text, namely 'This is an italian restaurant (which serves more then pasta and pizza)' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=italian with a fixed text, namely 'This is an Italian restaurant (which serves more than pasta and pizza)' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "italian"
     },
     {
@@ -2479,12 +2479,12 @@
     },
     {
       "key": "toilets:handwashing",
-      "description": "Layer 'Toilets' shows toilets:handwashing=yes with a fixed text, namely 'This toilets have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Toilets' shows toilets:handwashing=yes with a fixed text, namely 'These toilets have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "yes"
     },
     {
       "key": "toilets:handwashing",
-      "description": "Layer 'Toilets' shows toilets:handwashing=no with a fixed text, namely 'This toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Toilets' shows toilets:handwashing=no with a fixed text, namely 'These toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "no"
     },
     {

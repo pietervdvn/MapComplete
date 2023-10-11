@@ -123,6 +123,11 @@ export interface WikidataAdvancedSearchoptions extends WikidataSearchoptions {
  * Utility functions around wikidata
  */
 export default class Wikidata {
+    public static readonly neededUrls = [
+        "https://www.wikidata.org/",
+        "https://wikidata.org/",
+        "https://query.wikidata.org",
+    ]
     private static readonly _identifierPrefixes = ["Q", "L"].map((str) => str.toLowerCase())
     private static readonly _prefixesToRemove = [
         "https://www.wikidata.org/wiki/Lexeme:",
@@ -130,11 +135,11 @@ export default class Wikidata {
         "http://www.wikidata.org/entity/",
         "Lexeme:",
     ].map((str) => str.toLowerCase())
-
     private static readonly _storeCache = new Map<
         string,
         Store<{ success: WikidataResponse } | { error: any }>
     >()
+
     /**
      * Same as LoadWikidataEntry, but wrapped into a UIEventSource
      * @param value
@@ -388,6 +393,7 @@ export default class Wikidata {
     }
 
     private static _cache = new Map<string, Promise<WikidataResponse>>()
+
     public static async LoadWikidataEntryAsync(value: string | number): Promise<WikidataResponse> {
         const key = "" + value
         const cached = Wikidata._cache.get(key)
@@ -398,6 +404,7 @@ export default class Wikidata {
         Wikidata._cache.set(key, uncached)
         return uncached
     }
+
     /**
      * Loads a wikidata page
      * @returns the entity of the given value

@@ -141,7 +141,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 undefined,
                 "Used to complete the login"
             ),
-            osmConfiguration: <"osm" | "osm-test">this.featureSwitches.featureSwitchApiURL.data,
         })
         this.userRelatedState = new UserRelatedState(
             this.osmConnection,
@@ -538,7 +537,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.mapProperties.maxbounds.setData(bbox)
             ShowDataLayer.showRange(
                 this.map,
-                new StaticFeatureSource([bbox.asGeoJson({})]),
+                new StaticFeatureSource([bbox.asGeoJson({ id: "range" })]),
                 this.featureSwitches.featureSwitchIsTesting
             )
         }
@@ -576,7 +575,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
             }
 
             this.featureProperties.trackFeatureSource(features)
-            //  this.indexedFeatures.addSource(features)
             new ShowDataLayer(this.map, {
                 features,
                 doShowLayer: flayer.isDisplayed,

@@ -1,21 +1,21 @@
-import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource";
-import type { Map as MlMap } from "maplibre-gl";
-import { GeoJSONSource, Marker } from "maplibre-gl";
-import { ShowDataLayerOptions } from "./ShowDataLayerOptions";
-import { GeoOperations } from "../../Logic/GeoOperations";
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-import PointRenderingConfig from "../../Models/ThemeConfig/PointRenderingConfig";
-import { OsmTags } from "../../Models/OsmFeature";
-import { FeatureSource, FeatureSourceForLayer } from "../../Logic/FeatureSource/FeatureSource";
-import { BBox } from "../../Logic/BBox";
-import { Feature, Point } from "geojson";
-import LineRenderingConfig from "../../Models/ThemeConfig/LineRenderingConfig";
-import { Utils } from "../../Utils";
-import * as range_layer from "../../../assets/layers/range/range.json";
-import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson";
-import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFeatureSourceSplitter";
-import FilteredLayer from "../../Models/FilteredLayer";
-import SimpleFeatureSource from "../../Logic/FeatureSource/Sources/SimpleFeatureSource";
+import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
+import type { Map as MlMap } from "maplibre-gl"
+import { GeoJSONSource, Marker } from "maplibre-gl"
+import { ShowDataLayerOptions } from "./ShowDataLayerOptions"
+import { GeoOperations } from "../../Logic/GeoOperations"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import PointRenderingConfig from "../../Models/ThemeConfig/PointRenderingConfig"
+import { OsmTags } from "../../Models/OsmFeature"
+import { FeatureSource, FeatureSourceForLayer } from "../../Logic/FeatureSource/FeatureSource"
+import { BBox } from "../../Logic/BBox"
+import { Feature, Point } from "geojson"
+import LineRenderingConfig from "../../Models/ThemeConfig/LineRenderingConfig"
+import { Utils } from "../../Utils"
+import * as range_layer from "../../../assets/layers/range/range.json"
+import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
+import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFeatureSourceSplitter"
+import FilteredLayer from "../../Models/FilteredLayer"
+import SimpleFeatureSource from "../../Logic/FeatureSource/Sources/SimpleFeatureSource"
 
 class PointRenderingLayer {
     private readonly _config: PointRenderingConfig
@@ -228,6 +228,8 @@ class LineRenderingLayer {
         this._onClick = onClick
         const self = this
         features.features.addCallbackAndRunD(() => self.update(features.features))
+
+        map.on("styledata", () => self.update(features.features))
     }
 
     public destruct(): void {
@@ -280,22 +282,27 @@ class LineRenderingLayer {
         // As such, we only now read the features from the featureSource and compare with the previously set data
         const features = featureSource.data
         const src = <GeoJSONSource>map.getSource(this._layername)
-        if (this.currentSourceData === features) {
+        if (
+            src !== undefined &&
+            this.currentSourceData === features &&
+            src._data === <any>features
+        ) {
             // Already up to date
             return
         }
-        {// Add source to the map or update the features
+        {
+            // Add source to the map or update the feature source
             if (src === undefined) {
-                this.currentSourceData = features;
+                this.currentSourceData = features
                 map.addSource(this._layername, {
                     type: "geojson",
                     data: {
                         type: "FeatureCollection",
-                        features
+                        features,
                     },
-                    promoteId: "id"
-                });
-                const linelayer = this._layername + "_line";
+                    promoteId: "id",
+                })
+                const linelayer = this._layername + "_line"
                 map.addLayer({
                     source: this._layername,
                     id: linelayer,
@@ -304,14 +311,18 @@ class LineRenderingLayer {
                         "line-color": ["feature-state", "color"],
                         "line-opacity": ["feature-state", "color-opacity"],
                         "line-width": ["feature-state", "width"],
-                        "line-offset": ["feature-state", "offset"]
+                        "line-offset": ["feature-state", "offset"],
                     },
                     layout: {
-                        "line-cap": "round"
-                    }
-                });
+                        "line-cap": "round",
+                    },
+                })
 
                 for (const feature of features) {
+                    if (!feature.properties.id) {
+                        console.warn("Feature without id:", feature)
+                        continue
+                    }
                     map.setFeatureState(
                         { source: this._layername, id: feature.properties.id },
                         this.calculatePropsFor(feature.properties)
@@ -320,10 +331,10 @@ class LineRenderingLayer {
 
                 map.on("click", linelayer, (e) => {
                     // line-layer-listener
-                    e.originalEvent["consumed"] = true;
-                    this._onClick(e.features[0]);
-                });
-                const polylayer = this._layername + "_polygon";
+                    e.originalEvent["consumed"] = true
+                    this._onClick(e.features[0])
+                })
+                const polylayer = this._layername + "_polygon"
 
                 map.addLayer({
                     source: this._layername,
@@ -333,41 +344,40 @@ class LineRenderingLayer {
                     layout: {},
                     paint: {
                         "fill-color": ["feature-state", "fillColor"],
-                        "fill-opacity": ["feature-state", "fillColor-opacity"]
-                    }
-                });
+                        "fill-opacity": ["feature-state", "fillColor-opacity"],
+                    },
+                })
                 if (this._onClick) {
                     map.on("click", polylayer, (e) => {
                         // polygon-layer-listener
                         if (e.originalEvent["consumed"]) {
                             // This is a polygon beneath a marker, we can ignore it
-                            return;
+                            return
                         }
-                        e.originalEvent["consumed"] = true;
-                        console.log("Got features:", e.features, e);
-                        this._onClick(e.features[0]);
-                    });
+                        e.originalEvent["consumed"] = true
+                        this._onClick(e.features[0])
+                    })
                 }
 
                 this._visibility?.addCallbackAndRunD((visible) => {
                     try {
-                        map.setLayoutProperty(linelayer, "visibility", visible ? "visible" : "none");
-                        map.setLayoutProperty(polylayer, "visibility", visible ? "visible" : "none");
+                        map.setLayoutProperty(linelayer, "visibility", visible ? "visible" : "none")
+                        map.setLayoutProperty(polylayer, "visibility", visible ? "visible" : "none")
                     } catch (e) {
                         console.warn(
                             "Error while setting visibility of layers ",
                             linelayer,
                             polylayer,
                             e
-                        );
+                        )
                     }
-                });
+                })
             } else {
-                this.currentSourceData = features;
+                this.currentSourceData = features
                 src.setData({
                     type: "FeatureCollection",
-                    features: this.currentSourceData
-                });
+                    features: this.currentSourceData,
+                })
             }
         }
         for (let i = 0; i < features.length; i++) {
@@ -388,9 +398,6 @@ class LineRenderingLayer {
             if (this._listenerInstalledOn.has(id)) {
                 continue
             }
-            if (!map.getSource(this._layername)) {
-                continue
-            }
             if (this._fetchStore === undefined) {
                 map.setFeatureState(
                     { source: this._layername, id },
@@ -399,8 +406,12 @@ class LineRenderingLayer {
             } else {
                 const tags = this._fetchStore(id)
                 this._listenerInstalledOn.add(id)
-                tags.addCallbackAndRunD((properties) => {
-                    if(!map.getLayer(this._layername)){
+                map.setFeatureState(
+                    { source: this._layername, id },
+                    this.calculatePropsFor(feature.properties)
+                )
+                tags.addCallbackD((properties) => {
+                    if (!map.getLayer(this._layername)) {
                         return
                     }
                     map.setFeatureState(
@@ -418,7 +429,6 @@ export default class ShowDataLayer {
         <any>range_layer,
         "ShowDataLayer.ts:range.json"
     )
-    private readonly _map: Store<MlMap>
     private readonly _options: ShowDataLayerOptions & {
         layer: LayerConfig
         drawMarkers?: true | boolean
@@ -435,7 +445,6 @@ export default class ShowDataLayer {
             drawLines?: true | boolean
         }
     ) {
-        this._map = map
         this._options = options
         const self = this
         this.onDestroy.push(map.addCallbackAndRunD((map) => self.initDrawFeatures(map)))

@@ -2,11 +2,13 @@
   "id": "sports_centre",
   "name": {
     "en": "Sports centres",
-    "de": "Sportzentren"
+    "de": "Sportzentren",
+    "ca": "Centres esportius"
   },
   "description": {
     "en": "Indoor and outdoor sports centres can be found on this layer",
-    "de": "Hallen- und Freiluftsportzentren sind auf dieser Ebene zu finden"
+    "de": "Hallen- und Freiluftsportzentren sind auf dieser Ebene zu finden",
+    "ca": "En aquesta capa es poden trobar centres esportius interiors i exteriors"
   },
   "minzoom": 12,
   "source": {
@@ -15,7 +17,8 @@
   "title": {
     "render": {
       "en": "Sports centre",
-      "de": "Sportzentrum"
+      "de": "Sportzentrum",
+      "ca": "Centre esportiu"
     },
     "mappings": [
       {
@@ -36,7 +39,8 @@
     {
       "title": {
         "en": "a sports centre",
-        "de": "ein Sportzentrum"
+        "de": "ein Sportzentrum",
+        "ca": "un centre esportiu"
       },
       "tags": [
         "leisure=sports_centre"

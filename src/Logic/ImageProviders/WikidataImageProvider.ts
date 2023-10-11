@@ -5,6 +5,9 @@ import { WikimediaImageProvider } from "./WikimediaImageProvider"
 import Wikidata from "../Web/Wikidata"
 
 export class WikidataImageProvider extends ImageProvider {
+    public apiUrls(): string[] {
+        return Wikidata.neededUrls
+    }
     public static readonly singleton = new WikidataImageProvider()
     public readonly defaultKeyPrefixes = ["wikidata"]
 

@@ -612,6 +612,48 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         return src
     }
 
+    /**
+     *
+     * @param source
+     * UIEventSource.asInt(new UIEventSource("123")).data // => 123
+     * UIEventSource.asInt(new UIEventSource("123456789")).data // => 123456789
+     *
+     * const srcStr = new UIEventSource("123456789"))
+     * const srcInt = UIEventSource.asInt(srcStr)
+     * srcInt.setData(987654321)
+     * srcStr.data // => "987654321"
+     */
+    public static asInt(source: UIEventSource<string>): UIEventSource<number> {
+        return source.sync(
+            (str) => {
+                let parsed = parseInt(str)
+                return isNaN(parsed) ? undefined : parsed
+            },
+            [],
+            (fl) => {
+                if (fl === undefined || isNaN(fl)) {
+                    return undefined
+                }
+                return "" + fl
+            }
+        )
+    }
+
+    /**
+     * UIEventSource.asFloat(new UIEventSource("123")).data // => 123
+     * UIEventSource.asFloat(new UIEventSource("123456789")).data // => 123456789
+     * UIEventSource.asFloat(new UIEventSource("0.5")).data // => 0.5
+     * UIEventSource.asFloat(new UIEventSource("0.125")).data // => 0.125
+     * UIEventSource.asFloat(new UIEventSource("0.0000000001")).data // => 0.0000000001
+     *
+     *
+     * const srcStr = new UIEventSource("123456789"))
+     * const srcInt = UIEventSource.asFloat(srcStr)
+     * srcInt.setData(987654321)
+     * srcStr.data // => "987654321"
+     * @param source
+     */
+
     public static asFloat(source: UIEventSource<string>): UIEventSource<number> {
         return source.sync(
             (str) => {
@@ -623,7 +665,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
                 if (fl === undefined || isNaN(fl)) {
                     return undefined
                 }
-                return ("" + fl).substr(0, 8)
+                return "" + fl
             }
         )
     }

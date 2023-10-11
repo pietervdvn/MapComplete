@@ -2,6 +2,7 @@ import UploadTraceToOsmUI from "../BigComponents/UploadTraceToOsmUI"
 import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
 import { UIEventSource } from "../../Logic/UIEventSource"
 import { GeoOperations } from "../../Logic/GeoOperations"
+import Constants from "../../Models/Constants"
 
 /**
  * Wrapper  around 'UploadTraceToOsmUI'
@@ -11,6 +12,7 @@ export class UploadToOsmViz implements SpecialVisualization {
     docs =
         "Uploads the GPS-history as GPX to OpenStreetMap.org; clears the history afterwards. The actual feature is ignored."
     args = []
+    needsUrls = [Constants.osmAuthConfig.url]
 
     constr(
         state: SpecialVisualizationState,

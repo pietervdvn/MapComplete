@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 6039,
+      "commits": 6085,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 408,
+      "commits": 417,
       "contributor": "Robin van der Linde"
     },
     {
@@ -54,15 +54,15 @@
     },
     {
       "commits": 21,
+      "contributor": "dependabot[bot]"
+    },
+    {
+      "commits": 21,
       "contributor": "wjtje"
     },
     {
       "commits": 21,
       "contributor": "AlexanderRebai"
-    },
-    {
-      "commits": 20,
-      "contributor": "dependabot[bot]"
     },
     {
       "commits": 19,
@@ -106,11 +106,11 @@
     },
     {
       "commits": 11,
-      "contributor": "RobJN"
+      "contributor": "Thibault Molleman"
     },
     {
-      "commits": 10,
-      "contributor": "Thibault Molleman"
+      "commits": 11,
+      "contributor": "RobJN"
     },
     {
       "commits": 10,

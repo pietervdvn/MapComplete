@@ -11,11 +11,11 @@ import Wikimedia from "../Web/Wikimedia"
  */
 export class WikimediaImageProvider extends ImageProvider {
     public static readonly singleton = new WikimediaImageProvider()
-    public static readonly commonsPrefixes = [
+    public static readonly apiUrls = [
         "https://commons.wikimedia.org/wiki/",
         "https://upload.wikimedia.org",
-        "File:",
     ]
+    public static readonly commonsPrefixes = [...WikimediaImageProvider.apiUrls, "File:"]
     private readonly commons_key = "wikimedia_commons"
     public readonly defaultKeyPrefixes = [this.commons_key, "image"]
 
@@ -64,6 +64,10 @@ export class WikimediaImageProvider extends ImageProvider {
             }
         }
         return value
+    }
+
+    apiUrls(): string[] {
+        return WikimediaImageProvider.apiUrls
     }
 
     SourceIcon(backlink: string): BaseUIElement {

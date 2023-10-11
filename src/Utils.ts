@@ -1,5 +1,5 @@
-import colors from "./assets/colors.json";
-import DOMPurify from "dompurify";
+import colors from "./assets/colors.json"
+import DOMPurify from "dompurify"
 
 export class Utils {
     /**
@@ -7,12 +7,12 @@ export class Utils {
      * However, ts-node crashes when it sees 'document'. When running from console, we flag this and disable all code where document is needed.
      * This is a workaround and yet another hack
      */
-    public static runningFromConsole = typeof window === "undefined";
-    public static readonly assets_path = "./assets/svg/";
+    public static runningFromConsole = typeof window === "undefined"
+    public static readonly assets_path = "./assets/svg/"
     public static externalDownloadFunction: (
         url: string,
         headers?: any
-    ) => Promise<{ content: string } | { redirect: string }>;
+    ) => Promise<{ content: string } | { redirect: string }>
     public static Special_visualizations_tagsToApplyHelpText = `These can either be a tag to add, such as \`amenity=fast_food\` or can use a substitution, e.g. \`addr:housenumber=$number\`.
 This new point will then have the tags \`amenity=fast_food\` and \`addr:housenumber\` with the value that was saved in \`number\` in the original feature.
 
@@ -23,8 +23,8 @@ This supports multiple values, e.g. \`ref=$source:geometry:type/$source:geometry
 Remark that the syntax is slightly different then expected; it uses '$' to note a value to copy, followed by a name (matched with \`[a-zA-Z0-9_:]*\`). Sadly, delimiting with \`{}\` as these already mark the boundaries of the special rendering...
 
 Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
- `;
-    public static readonly imageExtensions = new Set(["jpg", "png", "svg", "jpeg", ".gif"]);
+ `
+    public static readonly imageExtensions = new Set(["jpg", "png", "svg", "jpeg", ".gif"])
     public static readonly special_visualizations_importRequirementDocs = `#### Importing a dataset into OpenStreetMap: requirements
 
 If you want to import a dataset, make sure that:
@@ -47,7 +47,7 @@ There are also some technicalities in your theme to keep in mind:
 
 The import button can be tested in an unofficial theme by adding \`test=true\` or \`backend=osm-test\` as [URL-paramter](URL_Parameters.md).
 The import button will show up then. If in testmode, you can read the changeset-XML directly in the web console.
-In the case that MapComplete is pointed to the testing grounds, the edit will be made on https://master.apis.dev.openstreetmap.org`;
+In the case that MapComplete is pointed to the testing grounds, the edit will be made on https://master.apis.dev.openstreetmap.org`
     private static knownKeys = [
         "addExtraTags",
         "and",
@@ -116,8 +116,8 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         "version",
         "wayHandling",
         "widenFactor",
-        "width"
-    ];
+        "width",
+    ]
     private static extraKeys = [
         "nl",
         "en",
@@ -135,36 +135,36 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         "yes",
         "no",
         "true",
-        "false"
-    ];
-    private static injectedDownloads = {};
+        "false",
+    ]
+    private static injectedDownloads = {}
     private static _download_cache = new Map<
         string,
         {
             promise: Promise<any | { error: string; url: string; statuscode?: number }>
             timestamp: number
         }
-    >();
+    >()
 
     public static initDomPurify() {
         if (Utils.runningFromConsole) {
-            return;
+            return
         }
-        DOMPurify.addHook("afterSanitizeAttributes", function(node) {
+        DOMPurify.addHook("afterSanitizeAttributes", function (node) {
             // set all elements owning target to target=_blank + add noopener noreferrer
-            const target = node.getAttribute("target");
+            const target = node.getAttribute("target")
             if (target) {
-                node.setAttribute("target", "_blank");
-                node.setAttribute("rel", "noopener noreferrer");
+                node.setAttribute("target", "_blank")
+                node.setAttribute("rel", "noopener noreferrer")
             }
-        });
+        })
     }
 
     public static purify(src: string): string {
         return DOMPurify.sanitize(src, {
             USE_PROFILES: { html: true },
-            ADD_ATTR: ["target"] // Don't remove target='_blank'. Note that Utils.initDomPurify does add a hook which automatically adds 'rel=noopener'
-        });
+            ADD_ATTR: ["target"], // Don't remove target='_blank'. Note that Utils.initDomPurify does add a hook which automatically adds 'rel=noopener'
+        })
     }
 
     /**
@@ -174,7 +174,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         specs: { name: string; defaultValue?: string }[],
         args: string[]
     ): Record<string, string> {
-        const parsed: Record<string, string> = {};
+        const parsed: Record<string, string> = {}
         if (args.length > specs.length) {
             throw (
                 "To much arguments for special visualization: got " +
@@ -182,23 +182,23 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 " but expected only " +
                 args.length +
                 " arguments"
-            );
+            )
         }
         for (let i = 0; i < specs.length; i++) {
-            const spec = specs[i];
-            let arg = args[i]?.trim();
+            const spec = specs[i]
+            let arg = args[i]?.trim()
             if (arg === undefined || arg === "") {
-                arg = spec.defaultValue;
+                arg = spec.defaultValue
             }
-            parsed[spec.name] = arg;
+            parsed[spec.name] = arg
         }
 
-        return parsed;
+        return parsed
     }
 
     static EncodeXmlValue(str) {
         if (typeof str !== "string") {
-            str = "" + str;
+            str = "" + str
         }
 
         return str
@@ -206,7 +206,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             .replace(/</g, "&lt;")
             .replace(/>/g, "&gt;")
             .replace(/"/g, "&quot;")
-            .replace(/'/g, "&apos;");
+            .replace(/'/g, "&apos;")
     }
 
     /**
@@ -215,24 +215,24 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      */
     static asFloat(str): number {
         if (str) {
-            const i = parseFloat(str);
+            const i = parseFloat(str)
             if (isNaN(i)) {
-                return undefined;
+                return undefined
             }
-            return i;
+            return i
         }
-        return undefined;
+        return undefined
     }
 
     public static Upper(str: string) {
-        return str.substr(0, 1).toUpperCase() + str.substr(1);
+        return str.substr(0, 1).toUpperCase() + str.substr(1)
     }
 
     public static TwoDigits(i: number) {
         if (i < 10) {
-            return "0" + i;
+            return "0" + i
         }
-        return "" + i;
+        return "" + i
     }
 
     /**
@@ -242,37 +242,37 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      */
     public static Round7(i: number): number {
         if (i == undefined) {
-            return undefined;
+            return undefined
         }
-        return Math.round(i * 10000000) / 10000000;
+        return Math.round(i * 10000000) / 10000000
     }
 
     public static Times(f: (i: number) => string, count: number): string {
-        let res = "";
+        let res = ""
         for (let i = 0; i < count; i++) {
-            res += f(i);
+            res += f(i)
         }
-        return res;
+        return res
     }
 
     public static TimesT<T>(count: number, f: (i: number) => T): T[] {
-        const res: T[] = [];
+        const res: T[] = []
         for (let i = 0; i < count; i++) {
-            res.push(f(i));
+            res.push(f(i))
         }
-        return res;
+        return res
     }
 
     public static NoNull<T>(array: T[]): NonNullable<T>[] {
-        return <any>array?.filter((o) => o !== undefined && o !== null);
+        return <any>array?.filter((o) => o !== undefined && o !== null)
     }
 
     public static Hist(array: string[]): Map<string, number> {
-        const hist = new Map<string, number>();
+        const hist = new Map<string, number>()
         for (const s of array) {
-            hist.set(s, 1 + (hist.get(s) ?? 0));
+            hist.set(s, 1 + (hist.get(s) ?? 0))
         }
-        return hist;
+        return hist
     }
 
     /**
@@ -284,27 +284,27 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      *
      */
     public static NoEmpty(array: string[]): string[] {
-        const ls: string[] = [];
+        const ls: string[] = []
         if (!array) {
-            return ls;
+            return ls
         }
         for (const t of array) {
             if (t === "") {
-                continue;
+                continue
             }
-            ls.push(t);
+            ls.push(t)
         }
-        return ls;
+        return ls
     }
 
     public static EllipsesAfter(str: string, l: number = 100) {
         if (str === undefined || str === null) {
-            return undefined;
+            return undefined
         }
         if (str.length <= l) {
-            return str;
+            return str
         }
-        return str.substr(0, l - 3) + "...";
+        return str.substr(0, l - 3) + "..."
     }
 
     /**
@@ -326,14 +326,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             enumerable: false,
             configurable: true,
             get: () => {
-                delete object[name];
-                object[name] = init();
+                delete object[name]
+                object[name] = init()
                 if (whenDone) {
-                    whenDone();
+                    whenDone()
                 }
-                return object[name];
-            }
-        });
+                return object[name]
+            },
+        })
     }
 
     /**
@@ -350,22 +350,22 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             configurable: true,
             get: () => {
                 init().then((r) => {
-                    delete object[name];
-                    object[name] = r;
+                    delete object[name]
+                    object[name] = r
                     if (whenDone) {
-                        whenDone();
+                        whenDone()
                     }
-                });
-            }
-        });
+                })
+            },
+        })
     }
 
     public static FixedLength(str: string, l: number) {
-        str = Utils.EllipsesAfter(str, l);
+        str = Utils.EllipsesAfter(str, l)
         while (str.length < l) {
-            str = " " + str;
+            str = " " + str
         }
-        return str;
+        return str
     }
 
     /**
@@ -376,30 +376,30 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      */
     public static Dedup(arr: string[]): string[] {
         if (arr === undefined) {
-            return undefined;
+            return undefined
         }
-        const newArr = [];
+        const newArr = []
         for (const string of arr) {
             if (newArr.indexOf(string) < 0) {
-                newArr.push(string);
+                newArr.push(string)
             }
         }
-        return newArr;
+        return newArr
     }
 
     public static Duplicates(arr: string[]): string[] {
         if (arr === undefined) {
-            return undefined;
+            return undefined
         }
-        const newArr = [];
-        const seen = new Set<string>();
+        const newArr = []
+        const seen = new Set<string>()
         for (const string of arr) {
             if (seen.has(string)) {
-                newArr.push(string);
+                newArr.push(string)
             }
-            seen.add(string);
+            seen.add(string)
         }
-        return newArr;
+        return newArr
     }
 
     /**
@@ -408,15 +408,15 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * Utils.Flatten([ [1,2], 3, [4, [5 ,6]] ]) // => [1, 2, 3, 4, [5, 6]]
      */
     public static Flatten<T>(list: (T | T[])[]): T[] {
-        const result = [];
+        const result = []
         for (const value of list) {
             if (Array.isArray(value)) {
-                result.push(...value);
+                result.push(...value)
             } else {
-                result.push(value);
+                result.push(value)
             }
         }
-        return result;
+        return result
     }
 
     /**
@@ -426,37 +426,37 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      */
     public static Identical<T>(t1: T[], t2: T[], eq?: (t: T, t0: T) => boolean): boolean {
         if (t1.length !== t2.length) {
-            return false;
+            return false
         }
-        eq = (a, b) => a === b;
+        eq = (a, b) => a === b
         for (let i = 0; i < t1.length; i++) {
             if (!eq(t1[i], t2[i])) {
-                return false;
+                return false
             }
         }
-        return true;
+        return true
     }
 
     /**
      * Utils.MergeTags({k0:"v0","common":"0"},{k1:"v1", common: "1"}) // => {k0: "v0", k1:"v1", common: "1"}
      */
     public static MergeTags(a: any, b: any) {
-        const t = {};
+        const t = {}
         for (const k in a) {
-            t[k] = a[k];
+            t[k] = a[k]
         }
         for (const k in b) {
-            t[k] = b[k];
+            t[k] = b[k]
         }
-        return t;
+        return t
     }
 
     public static SplitFirst(a: string, sep: string): string[] {
-        const index = a.indexOf(sep);
+        const index = a.indexOf(sep)
         if (index < 0) {
-            return [a];
+            return [a]
         }
-        return [a.substr(0, index), a.substr(index + sep.length)];
+        return [a.substr(0, index), a.substr(index + sep.length)]
     }
 
     /**
@@ -478,32 +478,32 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         useLang?: string
     ): string | undefined {
         if (txt === undefined) {
-            return undefined;
+            return undefined
         }
-        const regex = /(.*?){([^}]*)}(.*)/s;
+        const regex = /(.*?){([^}]*)}(.*)/s
 
-        let match = txt.match(regex);
+        let match = txt.match(regex)
 
         if (!match) {
-            return txt;
+            return txt
         }
-        let result = "";
+        let result = ""
         while (match) {
-            const [_, normal, key, leftover] = match;
-            let v = tags === undefined ? undefined : tags[key];
+            const [_, normal, key, leftover] = match
+            let v = tags === undefined ? undefined : tags[key]
             if (v !== undefined && v !== null) {
                 if (v["toISOString"] != undefined) {
                     // This is a date, probably the timestamp of the object
                     // @ts-ignore
-                    const date: Date = el;
-                    v = date.toISOString();
+                    const date: Date = el
+                    v = date.toISOString()
                 }
 
                 if (useLang !== undefined && v?.translations !== undefined) {
                     v =
                         v.translations[useLang] ??
                         v.translations["*"] ??
-                        (v.textFor !== undefined ? v.textFor(useLang) : v);
+                        (v.textFor !== undefined ? v.textFor(useLang) : v)
                 }
 
                 if (v.InnerConstructElement !== undefined) {
@@ -512,45 +512,45 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                         key,
                         "\nThe value is",
                         v
-                    );
-                    v = v.InnerConstructElement()?.textContent;
+                    )
+                    v = v.InnerConstructElement()?.textContent
                 }
 
                 if (typeof v !== "string") {
-                    v = "" + v;
+                    v = "" + v
                 }
-                v = v.replace(/\n/g, "<br/>");
+                v = v.replace(/\n/g, "<br/>")
             } else {
                 // v === undefined
-                v = "";
+                v = ""
             }
 
-            result += normal + v;
-            match = leftover.match(regex);
+            result += normal + v
+            match = leftover.match(regex)
             if (!match) {
-                result += leftover;
+                result += leftover
             }
         }
-        return result;
+        return result
     }
 
     public static LoadCustomCss(location: string) {
-        const head = document.getElementsByTagName("head")[0];
-        const link = document.createElement("link");
-        link.id = "customCss";
-        link.rel = "stylesheet";
-        link.type = "text/css";
-        link.href = location;
-        link.media = "all";
-        head.appendChild(link);
-        console.log("Added custom css file ", location);
+        const head = document.getElementsByTagName("head")[0]
+        const link = document.createElement("link")
+        link.id = "customCss"
+        link.rel = "stylesheet"
+        link.type = "text/css"
+        link.href = location
+        link.media = "all"
+        head.appendChild(link)
+        console.log("Added custom css file ", location)
     }
 
     public static PushList<T>(target: T[], source?: T[]) {
         if (source === undefined) {
-            return;
+            return
         }
-        target.push(...source);
+        target.push(...source)
     }
 
     /**
@@ -561,8 +561,8 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * @constructor
      * @private
      */
-    private static CleanMergeObject(obj: any){
-        if(Array.isArray(obj)){
+    private static CleanMergeObject(obj: any) {
+        if (Array.isArray(obj)) {
             const result = []
             for (const el of obj) {
                 result.push(Utils.CleanMergeObject(el))
@@ -570,14 +570,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             return result
         }
         if (typeof obj !== "object") {
-            return obj;
+            return obj
         }
         const newObj = {}
         for (let objKey in obj) {
             let cleanKey = objKey
-            if(objKey.startsWith("+") || objKey.startsWith("=")){
+            if (objKey.startsWith("+") || objKey.startsWith("=")) {
                 cleanKey = objKey.substring(1)
-            }else  if(objKey.endsWith("+") || objKey.endsWith("=")){
+            } else if (objKey.endsWith("+") || objKey.endsWith("=")) {
                 cleanKey = objKey.substring(0, objKey.length - 1)
             }
             newObj[cleanKey] = Utils.CleanMergeObject(obj[objKey])
@@ -633,62 +633,70 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      */
     static Merge<T, S>(source: Readonly<S>, target: T): T & S {
         if (target === null) {
-            return <T & S> Utils.CleanMergeObject(source);
+            return <T & S>Utils.CleanMergeObject(source)
         }
 
         for (const key in source) {
             if (!source.hasOwnProperty(key)) {
-                continue;
+                continue
             }
             if (key.startsWith("=")) {
-                const trimmedKey = key.substr(1);
-                target[trimmedKey] = source[key];
-                continue;
+                const trimmedKey = key.substr(1)
+                target[trimmedKey] = source[key]
+                continue
             }
 
             if (key.startsWith("+") || key.endsWith("+")) {
-                const trimmedKey = key.replace("+", "");
-                const sourceV = source[key];
-                const targetV = target[trimmedKey] ?? [];
+                const trimmedKey = key.replace("+", "")
+                const sourceV = source[key]
+                const targetV = target[trimmedKey] ?? []
 
-                let newList: any[];
+                let newList: any[]
                 if (key.startsWith("+")) {
-                    if(!Array.isArray(targetV)){
-                        throw new Error("Cannot concatenate: value to add is not an array: "+JSON.stringify(targetV))
+                    if (!Array.isArray(targetV)) {
+                        throw new Error(
+                            "Cannot concatenate: value to add is not an array: " +
+                                JSON.stringify(targetV)
+                        )
                     }
                     if (Array.isArray(sourceV)) {
-                        newList = sourceV.concat(targetV) ?? targetV;
+                        newList = sourceV.concat(targetV) ?? targetV
                     } else {
-                        throw new Error("Could not merge concatenate " + JSON.stringify(sourceV) + " and " + JSON.stringify(targetV));
+                        throw new Error(
+                            "Could not merge concatenate " +
+                                JSON.stringify(sourceV) +
+                                " and " +
+                                JSON.stringify(targetV)
+                        )
                     }
                 } else {
-                    newList = targetV.concat(sourceV ?? []);
+                    newList = targetV.concat(sourceV ?? [])
                 }
 
-                target[trimmedKey] = newList;
-                continue;
+                target[trimmedKey] = newList
+                continue
             }
 
-            const sourceV = source[key];
+            const sourceV = source[key]
             // @ts-ignore
-            const targetV = target[key];
+            const targetV = target[key]
             if (typeof sourceV === "object") {
                 if (sourceV === null) {
                     // @ts-ignore
-                    target[key] = null;
+                    target[key] = null
                 } else if (targetV === undefined) {
                     // @ts-ignore
-                    target[key] = Utils.CleanMergeObject(sourceV);
+                    target[key] = Utils.CleanMergeObject(sourceV)
                 } else {
-                    Utils.Merge(sourceV, targetV);
+                    Utils.Merge(sourceV, targetV)
                 }
             } else {
                 // @ts-ignore
-                target[key] = Utils.CleanMergeObject(sourceV);
+                target[key] = Utils.CleanMergeObject(sourceV)
             }
         }
         // @ts-ignore
-        return target;
+        return target
     }
 
     /**
@@ -706,39 +714,39 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         travelledPath: string[] = []
     ): void {
         if (object == null) {
-            return;
+            return
         }
 
-        const head = path[0];
+        const head = path[0]
         if (path.length === 1) {
             // We have reached the leaf
-            const leaf = object[head];
+            const leaf = object[head]
             if (leaf !== undefined) {
                 if (Array.isArray(leaf)) {
-                    object[head] = leaf.map((o) => replaceLeaf(o, travelledPath));
+                    object[head] = leaf.map((o) => replaceLeaf(o, travelledPath))
                 } else {
-                    object[head] = replaceLeaf(leaf, travelledPath);
+                    object[head] = replaceLeaf(leaf, travelledPath)
                     if (object[head] === undefined) {
-                        delete object[head];
+                        delete object[head]
                     }
                 }
             }
-            return;
+            return
         }
-        const sub = object[head];
+        const sub = object[head]
         if (sub === undefined) {
-            return;
+            return
         }
         if (typeof sub !== "object") {
-            return;
+            return
         }
         if (Array.isArray(sub)) {
             sub.forEach((el, i) =>
                 Utils.WalkPath(path.slice(1), el, replaceLeaf, [...travelledPath, head, "" + i])
-            );
-            return;
+            )
+            return
         }
-        Utils.WalkPath(path.slice(1), sub, replaceLeaf, [...travelledPath, head]);
+        Utils.WalkPath(path.slice(1), sub, replaceLeaf, [...travelledPath, head])
     }
 
     /**
@@ -754,41 +762,41 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         travelledPath: string[] = []
     ): { leaf: any; path: string[] }[] {
         if (object === undefined || object === null) {
-            return collectedList;
+            return collectedList
         }
-        const head = path[0];
-        travelledPath = [...travelledPath, head];
+        const head = path[0]
+        travelledPath = [...travelledPath, head]
         if (path.length === 1) {
             // We have reached the leaf
-            const leaf = object[head];
+            const leaf = object[head]
             if (leaf === undefined || leaf === null) {
-                return collectedList;
+                return collectedList
             }
             if (Array.isArray(leaf)) {
                 for (let i = 0; i < (<any[]>leaf).length; i++) {
-                    const l = (<any[]>leaf)[i];
-                    collectedList.push({ leaf: l, path: [...travelledPath, "" + i] });
+                    const l = (<any[]>leaf)[i]
+                    collectedList.push({ leaf: l, path: [...travelledPath, "" + i] })
                 }
             } else {
-                collectedList.push({ leaf, path: travelledPath });
+                collectedList.push({ leaf, path: travelledPath })
             }
-            return collectedList;
+            return collectedList
         }
-        const sub = object[head];
+        const sub = object[head]
         if (sub === undefined || sub === null) {
-            return collectedList;
+            return collectedList
         }
 
         if (Array.isArray(sub)) {
             sub.forEach((el, i) =>
                 Utils.CollectPath(path.slice(1), el, collectedList, [...travelledPath, "" + i])
-            );
-            return collectedList;
+            )
+            return collectedList
         }
         if (typeof sub !== "object") {
-            return collectedList;
+            return collectedList
         }
-        return Utils.CollectPath(path.slice(1), sub, collectedList, travelledPath);
+        return Utils.CollectPath(path.slice(1), sub, collectedList, travelledPath)
     }
 
     /**
@@ -828,31 +836,31 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         path: string[] = []
     ) {
         if (json === undefined || json === null) {
-            return f(json, path);
+            return f(json, path)
         }
-        const jtp = typeof json;
+        const jtp = typeof json
         if (isLeaf !== undefined) {
             if (jtp === "object") {
                 if (isLeaf(json)) {
-                    return f(json, path);
+                    return f(json, path)
                 }
             } else {
-                return json;
+                return json
             }
         } else if (jtp === "boolean" || jtp === "string" || jtp === "number") {
-            return f(json, path);
+            return f(json, path)
         }
         if (Array.isArray(json)) {
             return json.map((sub, i) => {
-                return Utils.WalkJson(sub, f, isLeaf, [...path, "" + i]);
-            });
+                return Utils.WalkJson(sub, f, isLeaf, [...path, "" + i])
+            })
         }
 
-        const cp = { ...json };
+        const cp = { ...json }
         for (const key in json) {
-            cp[key] = Utils.WalkJson(json[key], f, isLeaf, [...path, key]);
+            cp[key] = Utils.WalkJson(json[key], f, isLeaf, [...path, key])
         }
-        return cp;
+        return cp
     }
 
     /**
@@ -867,94 +875,94 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         path = []
     ): void {
         if (json === undefined) {
-            return;
+            return
         }
-        const jtp = typeof json;
+        const jtp = typeof json
         if (isLeaf !== undefined) {
             if (jtp !== "object") {
-                return;
+                return
             }
 
             if (isLeaf(json)) {
-                return collect(json, path);
+                return collect(json, path)
             }
         } else if (jtp === "boolean" || jtp === "string" || jtp === "number") {
-            collect(json, path);
-            return;
+            collect(json, path)
+            return
         }
         if (Array.isArray(json)) {
             json.map((sub, i) => {
-                return Utils.WalkObject(sub, collect, isLeaf, [...path, i]);
-            });
-            return;
+                return Utils.WalkObject(sub, collect, isLeaf, [...path, i])
+            })
+            return
         }
 
         for (const key in json) {
-            Utils.WalkObject(json[key], collect, isLeaf, [...path, key]);
+            Utils.WalkObject(json[key], collect, isLeaf, [...path, key])
         }
     }
 
     static getOrSetDefault<K, V>(dict: Map<K, V>, k: K, v: () => V) {
-        const found = dict.get(k);
+        const found = dict.get(k)
         if (found !== undefined) {
-            return found;
+            return found
         }
-        dict.set(k, v());
-        return dict.get(k);
+        dict.set(k, v())
+        return dict.get(k)
     }
 
     /**
      * Tries to minify the given JSON by applying some compression
      */
     public static MinifyJSON(stringified: string): string {
-        stringified = stringified.replace(/\|/g, "||");
+        stringified = stringified.replace(/\|/g, "||")
 
-        const keys = Utils.knownKeys.concat(Utils.extraKeys);
+        const keys = Utils.knownKeys.concat(Utils.extraKeys)
         for (let i = 0; i < keys.length; i++) {
-            const knownKey = keys[i];
-            let code = i;
+            const knownKey = keys[i]
+            let code = i
             if (i >= 124) {
-                code += 1; // Character 127 is our 'escape' character |
+                code += 1 // Character 127 is our 'escape' character |
             }
-            const replacement = "|" + String.fromCharCode(code);
-            stringified = stringified.replace(new RegExp(`\"${knownKey}\":`, "g"), replacement);
+            const replacement = "|" + String.fromCharCode(code)
+            stringified = stringified.replace(new RegExp(`\"${knownKey}\":`, "g"), replacement)
         }
 
-        return stringified;
+        return stringified
     }
 
     public static UnMinify(minified: string): string {
         if (minified === undefined || minified === null) {
-            return undefined;
+            return undefined
         }
 
-        const parts = minified.split("|");
-        let result = parts.shift();
-        const keys = Utils.knownKeys.concat(Utils.extraKeys);
+        const parts = minified.split("|")
+        let result = parts.shift()
+        const keys = Utils.knownKeys.concat(Utils.extraKeys)
 
         for (const part of parts) {
             if (part == "") {
                 // Empty string => this was a || originally
-                result += "|";
-                continue;
+                result += "|"
+                continue
             }
-            const i = part.charCodeAt(0);
-            result += "\"" + keys[i] + "\":" + part.substring(1);
+            const i = part.charCodeAt(0)
+            result += '"' + keys[i] + '":' + part.substring(1)
         }
 
-        return result;
+        return result
     }
 
     public static injectJsonDownloadForTests(url: string, data) {
-        Utils.injectedDownloads[url] = data;
+        Utils.injectedDownloads[url] = data
     }
 
     public static async download(url: string, headers?: any): Promise<string | undefined> {
-        const result = await Utils.downloadAdvanced(url, headers);
+        const result = await Utils.downloadAdvanced(url, headers)
         if (result["error"] !== undefined) {
-            throw result["error"];
+            throw result["error"]
         }
-        return result["content"];
+        return result["content"]
     }
 
     /**
@@ -971,60 +979,60 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         | { error: string; url: string; statuscode?: number }
     > {
         if (this.externalDownloadFunction !== undefined) {
-            return this.externalDownloadFunction(url, headers);
+            return this.externalDownloadFunction(url, headers)
         }
 
         return new Promise((resolve, reject) => {
-            const xhr = new XMLHttpRequest();
+            const xhr = new XMLHttpRequest()
             xhr.onload = () => {
                 if (xhr.status == 200) {
-                    resolve({ content: xhr.response });
+                    resolve({ content: xhr.response })
                 } else if (xhr.status === 302) {
-                    resolve({ redirect: xhr.getResponseHeader("location") });
+                    resolve({ redirect: xhr.getResponseHeader("location") })
                 } else if (xhr.status === 509 || xhr.status === 429) {
-                    resolve({ error: "rate limited", url, statuscode: xhr.status });
+                    resolve({ error: "rate limited", url, statuscode: xhr.status })
                 } else {
                     resolve({
                         error: "other error: " + xhr.statusText,
                         url,
-                        statuscode: xhr.status
-                    });
+                        statuscode: xhr.status,
+                    })
                 }
-            };
-            xhr.open("GET", url);
+            }
+            xhr.open("GET", url)
             if (headers !== undefined) {
                 for (const key in headers) {
-                    xhr.setRequestHeader(key, headers[key]);
+                    xhr.setRequestHeader(key, headers[key])
                 }
             }
 
-            xhr.send();
-            xhr.onerror = reject;
-        });
+            xhr.send()
+            xhr.onerror = reject
+        })
     }
 
     public static upload(url: string, data, headers?: any): Promise<string> {
         return new Promise((resolve, reject) => {
-            const xhr = new XMLHttpRequest();
+            const xhr = new XMLHttpRequest()
             xhr.onload = () => {
                 if (xhr.status == 200) {
-                    resolve(xhr.response);
+                    resolve(xhr.response)
                 } else if (xhr.status === 509 || xhr.status === 429) {
-                    reject("rate limited");
+                    reject("rate limited")
                 } else {
-                    reject(xhr.statusText);
+                    reject(xhr.statusText)
                 }
-            };
-            xhr.open("POST", url);
+            }
+            xhr.open("POST", url)
             if (headers !== undefined) {
                 for (const key in headers) {
-                    xhr.setRequestHeader(key, headers[key]);
+                    xhr.setRequestHeader(key, headers[key])
                 }
             }
 
-            xhr.send(data);
-            xhr.onerror = reject;
-        });
+            xhr.send(data)
+            xhr.onerror = reject
+        })
     }
 
     public static async downloadJsonCached(
@@ -1032,11 +1040,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         maxCacheTimeMs: number,
         headers?: any
     ): Promise<any> {
-        const result = await Utils.downloadJsonAdvanced(url, headers);
+        const result = await Utils.downloadJsonAdvanced(url, headers)
         if (result["content"]) {
-            return result["content"];
+            return result["content"]
         }
-        throw result["error"];
+        throw result["error"]
     }
 
     public static async downloadJsonCachedAdvanced(
@@ -1044,54 +1052,54 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         maxCacheTimeMs: number,
         headers?: any
     ): Promise<{ content: any } | { error: string; url: string; statuscode?: number }> {
-        const cached = Utils._download_cache.get(url);
+        const cached = Utils._download_cache.get(url)
         if (cached !== undefined) {
             if (new Date().getTime() - cached.timestamp <= maxCacheTimeMs) {
-                return cached.promise;
+                return cached.promise
             }
         }
         const promise =
             /*NO AWAIT as we work with the promise directly */ Utils.downloadJsonAdvanced(
-            url,
-            headers
-        );
-        Utils._download_cache.set(url, { promise, timestamp: new Date().getTime() });
-        return await promise;
+                url,
+                headers
+            )
+        Utils._download_cache.set(url, { promise, timestamp: new Date().getTime() })
+        return await promise
     }
 
     public static async downloadJson(url: string, headers?: any): Promise<any> {
-        const result = await Utils.downloadJsonAdvanced(url, headers);
+        const result = await Utils.downloadJsonAdvanced(url, headers)
         if (result["content"]) {
-            return result["content"];
+            return result["content"]
         }
-        throw result["error"];
+        throw result["error"]
     }
 
     public static async downloadJsonAdvanced(
         url: string,
         headers?: any
     ): Promise<{ content: any } | { error: string; url: string; statuscode?: number }> {
-        const injected = Utils.injectedDownloads[url];
+        const injected = Utils.injectedDownloads[url]
         if (injected !== undefined) {
-            console.log("Using injected resource for test for URL", url);
-            return new Promise((resolve, _) => resolve({ content: injected }));
+            console.log("Using injected resource for test for URL", url)
+            return new Promise((resolve, _) => resolve({ content: injected }))
         }
         const result = await Utils.downloadAdvanced(
             url,
             Utils.Merge({ accept: "application/json" }, headers ?? {})
-        );
+        )
         if (result["error"] !== undefined) {
-            return <{ error: string; url: string; statuscode?: number }>result;
+            return <{ error: string; url: string; statuscode?: number }>result
         }
-        const data = result["content"];
+        const data = result["content"]
         try {
             if (typeof data === "string") {
-                return { content: JSON.parse(data) };
+                return { content: JSON.parse(data) }
             }
-            return { content: data };
+            return { content: data }
         } catch (e) {
-            console.error("Could not parse ", data, "due to", e, "\n", e.stack);
-            return { error: "malformed", url };
+            console.error("Could not parse ", data, "due to", e, "\n", e.stack)
+            return { error: "malformed", url }
         }
     }
 
@@ -1112,53 +1120,53 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 | "image/png"
         }
     ) {
-        const element = document.createElement("a");
-        let file;
+        const element = document.createElement("a")
+        let file
         if (typeof contents === "string") {
-            file = new Blob([contents], { type: options?.mimetype ?? "text/plain" });
+            file = new Blob([contents], { type: options?.mimetype ?? "text/plain" })
         } else {
-            file = contents;
+            file = contents
         }
-        element.href = URL.createObjectURL(file);
-        element.download = fileName;
-        document.body.appendChild(element); // Required for this to work in FireFox
-        element.click();
+        element.href = URL.createObjectURL(file)
+        element.download = fileName
+        document.body.appendChild(element) // Required for this to work in FireFox
+        element.click()
     }
 
     public static ColourNameToHex(color: string): string {
-        return colors[color.toLowerCase()] ?? color;
+        return colors[color.toLowerCase()] ?? color
     }
 
     public static HexToColourName(hex: string): string {
-        hex = hex.toLowerCase();
+        hex = hex.toLowerCase()
         if (!hex.startsWith("#")) {
-            return hex;
+            return hex
         }
-        const c = Utils.color(hex);
+        const c = Utils.color(hex)
 
-        let smallestDiff = Number.MAX_VALUE;
-        let bestColor = undefined;
+        let smallestDiff = Number.MAX_VALUE
+        let bestColor = undefined
         for (const color in colors) {
             if (!colors.hasOwnProperty(color)) {
-                continue;
+                continue
             }
-            const foundhex = colors[color];
+            const foundhex = colors[color]
             if (typeof foundhex !== "string") {
-                continue;
+                continue
             }
             if (foundhex === hex) {
-                return color;
+                return color
             }
-            const diff = this.colorDiff(Utils.color(foundhex), c);
+            const diff = this.colorDiff(Utils.color(foundhex), c)
             if (diff > 50) {
-                continue;
+                continue
             }
             if (diff < smallestDiff) {
-                smallestDiff = diff;
-                bestColor = color;
+                smallestDiff = diff
+                bestColor = color
             }
         }
-        return bestColor ?? hex;
+        return bestColor ?? hex
     }
 
     /**
@@ -1168,37 +1176,37 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * JSON.stringify(sorted) // => '{"abc":{"a":"a","x":"x"},"def":"def","x":"x"}'
      */
     static sortKeys(o: any) {
-        const copy = {};
-        let keys = Object.keys(o);
-        keys = keys.sort();
+        const copy = {}
+        let keys = Object.keys(o)
+        keys = keys.sort()
         for (const key of keys) {
-            let v = o[key];
+            let v = o[key]
             if (typeof v === "object") {
-                v = Utils.sortKeys(v);
+                v = Utils.sortKeys(v)
             }
-            copy[key] = v;
+            copy[key] = v
         }
-        return copy;
+        return copy
     }
 
     public static async waitFor(timeMillis: number): Promise<void> {
         return new Promise((resolve) => {
-            window.setTimeout(resolve, timeMillis);
-        });
+            window.setTimeout(resolve, timeMillis)
+        })
     }
 
     public static toHumanTime(seconds): string {
-        seconds = Math.floor(seconds);
-        let minutes = Math.floor(seconds / 60);
-        seconds = seconds % 60;
-        let hours = Math.floor(minutes / 60);
-        minutes = minutes % 60;
-        const days = Math.floor(hours / 24);
-        hours = hours % 24;
+        seconds = Math.floor(seconds)
+        let minutes = Math.floor(seconds / 60)
+        seconds = seconds % 60
+        let hours = Math.floor(minutes / 60)
+        minutes = minutes % 60
+        const days = Math.floor(hours / 24)
+        hours = hours % 24
         if (days > 0) {
-            return days + "days" + " " + hours + "h";
+            return days + "days" + " " + hours + "h"
         }
-        return hours + ":" + Utils.TwoDigits(minutes) + ":" + Utils.TwoDigits(seconds);
+        return hours + ":" + Utils.TwoDigits(minutes) + ":" + Utils.TwoDigits(seconds)
     }
 
     public static DisableLongPresses() {
@@ -1209,55 +1217,55 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 // Not compatible with IE < 9
 
                 if (e.target["nodeName"] === "INPUT") {
-                    return;
+                    return
                 }
-                e.preventDefault();
-                return false;
+                e.preventDefault()
+                return false
             },
             false
-        );
+        )
     }
 
     public static preventDefaultOnMouseEvent(event: any) {
-        event?.originalEvent?.preventDefault();
-        event?.originalEvent?.stopPropagation();
-        event?.originalEvent?.stopImmediatePropagation();
+        event?.originalEvent?.preventDefault()
+        event?.originalEvent?.stopPropagation()
+        event?.originalEvent?.stopImmediatePropagation()
         if (event?.originalEvent) {
             // This is a total workaround, as 'preventDefault' and everything above seems to be not working
-            event.originalEvent["dismissed"] = true;
+            event.originalEvent["dismissed"] = true
         }
     }
 
     public static HomepageLink(): string {
         if (typeof window === "undefined") {
-            return "https://mapcomplete.org";
+            return "https://mapcomplete.org"
         }
         const path = (
             window.location.protocol +
             "//" +
             window.location.host +
             window.location.pathname
-        ).split("/");
-        path.pop();
-        path.push("index.html");
-        return path.join("/");
+        ).split("/")
+        path.pop()
+        path.push("index.html")
+        return path.join("/")
     }
 
     public static OsmChaLinkFor(daysInThePast, theme = undefined): string {
-        const now = new Date();
-        const lastWeek = new Date(now.getTime() - daysInThePast * 24 * 60 * 60 * 1000);
+        const now = new Date()
+        const lastWeek = new Date(now.getTime() - daysInThePast * 24 * 60 * 60 * 1000)
         const date =
             lastWeek.getFullYear() +
             "-" +
             Utils.TwoDigits(lastWeek.getMonth() + 1) +
             "-" +
-            Utils.TwoDigits(lastWeek.getDate());
-        let osmcha_link = `"date__gte":[{"label":"${date}","value":"${date}"}],"editor":[{"label":"mapcomplete","value":"mapcomplete"}]`;
+            Utils.TwoDigits(lastWeek.getDate())
+        let osmcha_link = `"date__gte":[{"label":"${date}","value":"${date}"}],"editor":[{"label":"mapcomplete","value":"mapcomplete"}]`
         if (theme !== undefined) {
             osmcha_link =
-                osmcha_link + "," + `"comment":[{"label":"#${theme}","value":"#${theme}"}]`;
+                osmcha_link + "," + `"comment":[{"label":"#${theme}","value":"#${theme}"}]`
         }
-        return "https://osmcha.org/?filters=" + encodeURIComponent("{" + osmcha_link + "}");
+        return "https://osmcha.org/?filters=" + encodeURIComponent("{" + osmcha_link + "}")
     }
 
     /**
@@ -1267,31 +1275,31 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      */
     static Clone<T>(x: T): T {
         if (x === undefined) {
-            return undefined;
+            return undefined
         }
-        return JSON.parse(JSON.stringify(x));
+        return JSON.parse(JSON.stringify(x))
     }
 
     public static ParseDate(str: string): Date {
         if (str.endsWith(" UTC")) {
-            str = str.replace(" UTC", "+00");
+            str = str.replace(" UTC", "+00")
         }
-        return new Date(str);
+        return new Date(str)
     }
 
     public static selectTextIn(node) {
         if (document.body["createTextRange"]) {
-            const range = document.body["createTextRange"]();
-            range.moveToElementText(node);
-            range.select();
+            const range = document.body["createTextRange"]()
+            range.moveToElementText(node)
+            range.select()
         } else if (window.getSelection) {
-            const selection = window.getSelection();
-            const range = document.createRange();
-            range.selectNodeContents(node);
-            selection.removeAllRanges();
-            selection.addRange(range);
+            const selection = window.getSelection()
+            const range = document.createRange()
+            range.selectNodeContents(node)
+            selection.removeAllRanges()
+            selection.addRange(range)
         } else {
-            console.warn("Could not select text in node: Unsupported browser.");
+            console.warn("Could not select text in node: Unsupported browser.")
         }
     }
 
@@ -1302,46 +1310,46 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     ): T[] {
         const withDistance: [T, number][] = ts.map((t) => [
             t,
-            Utils.levenshteinDistance(getName(t), reference)
-        ]);
-        withDistance.sort(([_, a], [__, b]) => a - b);
-        return withDistance.map((n) => n[0]);
+            Utils.levenshteinDistance(getName(t), reference),
+        ])
+        withDistance.sort(([_, a], [__, b]) => a - b)
+        return withDistance.map((n) => n[0])
     }
 
     public static levenshteinDistance(str1: string, str2: string) {
         const track = Array(str2.length + 1)
             .fill(null)
-            .map(() => Array(str1.length + 1).fill(null));
+            .map(() => Array(str1.length + 1).fill(null))
         for (let i = 0; i <= str1.length; i += 1) {
-            track[0][i] = i;
+            track[0][i] = i
         }
         for (let j = 0; j <= str2.length; j += 1) {
-            track[j][0] = j;
+            track[j][0] = j
         }
         for (let j = 1; j <= str2.length; j += 1) {
             for (let i = 1; i <= str1.length; i += 1) {
-                const indicator = str1[i - 1] === str2[j - 1] ? 0 : 1;
+                const indicator = str1[i - 1] === str2[j - 1] ? 0 : 1
                 track[j][i] = Math.min(
                     track[j][i - 1] + 1, // deletion
                     track[j - 1][i] + 1, // insertion
                     track[j - 1][i - 1] + indicator // substitution
-                );
+                )
             }
         }
-        return track[str2.length][str1.length];
+        return track[str2.length][str1.length]
     }
 
     public static MapToObj<V, T>(
         d: Map<string, V>,
         onValue: (t: V, key: string) => T
     ): Record<string, T> {
-        const o = {};
-        const keys = Array.from(d.keys());
-        keys.sort();
+        const o = {}
+        const keys = Array.from(d.keys())
+        keys.sort()
         for (const key of keys) {
-            o[key] = onValue(d.get(key), key);
+            o[key] = onValue(d.get(key), key)
         }
-        return o;
+        return o
     }
 
     /**
@@ -1352,20 +1360,20 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     public static TransposeMap<K extends string, V extends string>(
         d: Record<K, V[]>
     ): Record<V, K[]> {
-        const newD: Record<V, K[]> = <any>{};
+        const newD: Record<V, K[]> = <any>{}
 
         for (const k in d) {
-            const vs = d[k];
+            const vs = d[k]
             for (const v of vs) {
-                const list = newD[v];
+                const list = newD[v]
                 if (list === undefined) {
-                    newD[v] = [k]; // Left: indexing; right: list with one element
+                    newD[v] = [k] // Left: indexing; right: list with one element
                 } else {
-                    list.push(k);
+                    list.push(k)
                 }
             }
         }
-        return newD;
+        return newD
     }
 
     /**
@@ -1374,15 +1382,15 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      */
     public static colorAsHex(c: { r: number; g: number; b: number }) {
         if (c === undefined) {
-            return undefined;
+            return undefined
         }
 
         function componentToHex(n) {
-            const hex = n.toString(16);
-            return hex.length == 1 ? "0" + hex : hex;
+            const hex = n.toString(16)
+            return hex.length == 1 ? "0" + hex : hex
         }
 
-        return "#" + componentToHex(c.r) + componentToHex(c.g) + componentToHex(c.b);
+        return "#" + componentToHex(c.r) + componentToHex(c.g) + componentToHex(c.b)
     }
 
     /**
@@ -1394,90 +1402,90 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      */
     public static color(hex: string): { r: number; g: number; b: number } {
         if (hex === undefined) {
-            return undefined;
+            return undefined
         }
-        hex = hex.replace(/[ \t]/g, "");
+        hex = hex.replace(/[ \t]/g, "")
         if (hex.startsWith("rgba(")) {
-            const match = hex.match(/rgba\(([0-9.]+),([0-9.]+),([0-9.]+)(,[0-9.]*)?\)/);
+            const match = hex.match(/rgba\(([0-9.]+),([0-9.]+),([0-9.]+)(,[0-9.]*)?\)/)
             if (match == undefined) {
-                return undefined;
+                return undefined
             }
-            return { r: Number(match[1]), g: Number(match[2]), b: Number(match[3]) };
+            return { r: Number(match[1]), g: Number(match[2]), b: Number(match[3]) }
         }
 
         if (!hex.startsWith("#")) {
-            return undefined;
+            return undefined
         }
         if (hex.length === 4) {
             return {
                 r: parseInt(hex.substr(1, 1), 16),
                 g: parseInt(hex.substr(2, 1), 16),
-                b: parseInt(hex.substr(3, 1), 16)
-            };
+                b: parseInt(hex.substr(3, 1), 16),
+            }
         }
 
         return {
             r: parseInt(hex.substr(1, 2), 16),
             g: parseInt(hex.substr(3, 2), 16),
-            b: parseInt(hex.substr(5, 2), 16)
-        };
+            b: parseInt(hex.substr(5, 2), 16),
+        }
     }
 
     public static asDict(
         tags: { key: string; value: string | number }[]
     ): Map<string, string | number> {
-        const d = new Map<string, string | number>();
+        const d = new Map<string, string | number>()
 
         for (const tag of tags) {
-            d.set(tag.key, tag.value);
+            d.set(tag.key, tag.value)
         }
 
-        return d;
+        return d
     }
 
     static toIdRecord<T extends { id: string }>(ts: T[]): Record<string, T> {
-        const result: Record<string, T> = {};
+        const result: Record<string, T> = {}
         for (const t of ts) {
-            result[t.id] = t;
+            result[t.id] = t
         }
-        return result;
+        return result
     }
 
     public static SetMidnight(d: Date): void {
-        d.setUTCHours(0);
-        d.setUTCSeconds(0);
-        d.setUTCMilliseconds(0);
-        d.setUTCMinutes(0);
+        d.setUTCHours(0)
+        d.setUTCSeconds(0)
+        d.setUTCMilliseconds(0)
+        d.setUTCMinutes(0)
     }
 
     public static scrollIntoView(element: HTMLBaseElement) {
         // Is the element completely in the view?
-        const parentRect = Utils.findParentWithScrolling(element).getBoundingClientRect();
-        const elementRect = element.getBoundingClientRect();
+        const parentRect = Utils.findParentWithScrolling(element).getBoundingClientRect()
+        const elementRect = element.getBoundingClientRect()
 
         // Check if the element is within the vertical bounds of the parent element
-        const topIsVisible = elementRect.top >= parentRect.top;
-        const bottomIsVisible = elementRect.bottom <= parentRect.bottom;
-        const inView = topIsVisible && bottomIsVisible;
+        const topIsVisible = elementRect.top >= parentRect.top
+        const bottomIsVisible = elementRect.bottom <= parentRect.bottom
+        const inView = topIsVisible && bottomIsVisible
         if (inView) {
-            return;
+            return
         }
-        element.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        element.scrollIntoView({ behavior: "smooth", block: "nearest" })
     }
 
     public static findParentWithScrolling(element: HTMLBaseElement): HTMLBaseElement {
         // Check if the element itself has scrolling
         if (element.scrollHeight > element.clientHeight) {
-            return element;
+            return element
         }
 
         // If the element does not have scrolling, check if it has a parent element
         if (!element.parentElement) {
-            return null;
+            return null
         }
 
         // If the element has a parent, repeat the process for the parent element
-        return Utils.findParentWithScrolling(<HTMLBaseElement>element.parentElement);
+        return Utils.findParentWithScrolling(<HTMLBaseElement>element.parentElement)
     }
 
     /**
@@ -1488,55 +1496,55 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      */
     public static sameList<T>(a: ReadonlyArray<T>, b: ReadonlyArray<T>) {
         if (a == b) {
-            return true;
+            return true
         }
         if (a === undefined || a === null || b === undefined || b === null) {
-            return false;
+            return false
         }
         if (a.length !== b.length) {
-            return false;
+            return false
         }
         for (let i = 0; i < a.length; i++) {
-            const ai = a[i];
-            const bi = b[i];
+            const ai = a[i]
+            const bi = b[i]
             if (ai == bi) {
-                continue;
+                continue
             }
             if (ai === bi) {
-                continue;
+                continue
             }
-            return false;
+            return false
         }
-        return true;
+        return true
     }
 
     public static SameObject(a: any, b: any) {
         if (a === b) {
-            return true;
+            return true
         }
         if (a === undefined || a === null || b === null || b === undefined) {
-            return false;
+            return false
         }
         if (typeof a === "object" && typeof b === "object") {
             for (const aKey in a) {
                 if (!(aKey in b)) {
-                    return false;
+                    return false
                 }
             }
 
             for (const bKey in b) {
                 if (!(bKey in a)) {
-                    return false;
+                    return false
                 }
             }
             for (const k in a) {
                 if (!Utils.SameObject(a[k], b[k])) {
-                    return false;
+                    return false
                 }
             }
-            return true;
+            return true
         }
-        return false;
+        return false
     }
 
     /**
@@ -1548,22 +1556,22 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     public static splitIntoSubstitutionParts(
         template: string
     ): ({ message: string } | { subs: string })[] {
-        const preparts = template.split("{");
-        const spec: ({ message: string } | { subs: string })[] = [];
+        const preparts = template.split("{")
+        const spec: ({ message: string } | { subs: string })[] = []
         for (const prepart of preparts) {
-            const postParts = prepart.split("}");
+            const postParts = prepart.split("}")
             if (postParts.length === 1) {
                 // This was a normal part
-                spec.push({ message: postParts[0] });
+                spec.push({ message: postParts[0] })
             } else {
-                const [subs, message] = postParts;
-                spec.push({ subs });
+                const [subs, message] = postParts
+                spec.push({ subs })
                 if (message !== "") {
-                    spec.push({ message });
+                    spec.push({ message })
                 }
             }
         }
-        return spec;
+        return spec
     }
 
     /**
@@ -1577,40 +1585,40 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         filename: string
         functionName: string
     } {
-        const error = new Error("No error");
-        const stack = error.stack.split("\n");
-        stack.shift(); // Remove "Error: No error"
-        const regex = /at (.*) \(([a-zA-Z0-9/.]+):([0-9]+):([0-9]+)\)/;
-        const stackItem = stack[Math.abs(offset) + 1];
+        const error = new Error("No error")
+        const stack = error.stack.split("\n")
+        stack.shift() // Remove "Error: No error"
+        const regex = /at (.*) \(([a-zA-Z0-9/.]+):([0-9]+):([0-9]+)\)/
+        const stackItem = stack[Math.abs(offset) + 1]
 
-        let functionName: string;
-        let path: string;
-        let line: string;
-        let column: string;
-        let _: string;
-        const matchWithFuncName = stackItem.match(regex);
+        let functionName: string
+        let path: string
+        let line: string
+        let column: string
+        let _: string
+        const matchWithFuncName = stackItem.match(regex)
         if (matchWithFuncName) {
-            ;[_, functionName, path, line, column] = matchWithFuncName;
+            ;[_, functionName, path, line, column] = matchWithFuncName
         } else {
             const regexNoFuncName: RegExp = new RegExp("at ([a-zA-Z0-9/.]+):([0-9]+):([0-9]+)")
-            ;[_, path, line, column] = stackItem.match(regexNoFuncName);
+            ;[_, path, line, column] = stackItem.match(regexNoFuncName)
         }
 
-        const markdownLocation = path.substring(path.indexOf("MapComplete/src") + 11) + "#L" + line;
+        const markdownLocation = path.substring(path.indexOf("MapComplete/src") + 11) + "#L" + line
         return {
             path,
             functionName,
             line: Number(line),
             column: Number(column),
             markdownLocation,
-            filename: path.substring(path.lastIndexOf("/") + 1)
-        };
+            filename: path.substring(path.lastIndexOf("/") + 1),
+        }
     }
 
     private static colorDiff(
         c0: { r: number; g: number; b: number },
         c1: { r: number; g: number; b: number }
     ) {
-        return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b);
+        return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b)
     }
 }

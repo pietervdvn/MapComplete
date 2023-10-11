@@ -1,5 +1,6 @@
 import { Utils } from "../../Utils"
 import { BBox } from "../BBox"
+import Constants from "../../Models/Constants"
 
 export interface GeoCodeResult {
     display_name: string
@@ -15,7 +16,7 @@ export interface GeoCodeResult {
 }
 
 export class Geocoding {
-    private static readonly host = "https://nominatim.openstreetmap.org/search?"
+    public static readonly host = Constants.nominatimEndpoint
 
     static async Search(query: string, bbox: BBox): Promise<GeoCodeResult[]> {
         const b = bbox ?? BBox.global

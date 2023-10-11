@@ -217,7 +217,7 @@
             "en": "This penny press uses a 25 cent coin for pressing.",
             "de": "Der Automat prägt 25 Cent Münzen.",
             "es": "Esta prensa de centavo utiliza una moneda de 25 centavos para prensar.",
-            "ca": "Esta premsa de cèntims utilitza una moneda de 20 cèntims per a premsar."
+            "ca": "Esta premsa de cèntims utilitza una moneda de 25 cèntims per a premsar."
           },
           "hideInAnswer": "_currency!~.*USD.*"
         },

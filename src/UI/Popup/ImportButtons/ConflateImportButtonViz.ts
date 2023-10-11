@@ -24,6 +24,7 @@ export interface ConflateFlowArguments extends ImportFlowArguments {
 
 export default class ConflateImportButtonViz implements SpecialVisualization, AutoAction {
     supportsAutoAction: boolean = true
+    needsUrls = []
     public readonly funcName: string = "conflate_button"
     public readonly args: {
         name: string

@@ -197,6 +197,7 @@
         "example": "Beispiel",
         "examples": "Beispiele",
         "fewChangesBefore": "Bitte beantworten Sie einige Fragen zu bestehenden Objekten, bevor Sie ein neues Objekt hinzufügen.",
+        "geopermissionDenied": "Die Verwendung der Standortbestimmung wurde verweigert",
         "getStartedLogin": "Bei OpenStreetMap anmelden, um loszulegen",
         "getStartedNewAccount": " oder <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">ein neues Konto anlegen</a>",
         "goToInbox": "Posteingang öffnen",
@@ -417,7 +418,20 @@
         "respectPrivacy": "Bitte respektieren Sie die Privatsphäre. Fotografieren Sie weder Personen noch Nummernschilder. Benutzen Sie keine urheberrechtlich geschützten Quellen wie z.B. Google Maps oder Google Streetview.",
         "toBig": "Ihr Bild ist mit {actual_size} zu groß. Die maximale Bildgröße ist {max_size}",
         "upload": {
-            "failReasons": "Keine Internetverbindung"
+            "failReasons": "Keine Internetverbindung",
+            "failReasonsAdvanced": "Alternativ dazu können Sie einstellen, dass Ihr Browser und Ihre Erweiterungen die APIs von Drittanbietern nicht blockieren.",
+            "multiple": {
+                "done": "{count} Bilder erfolgreich hochgeladen. Vielen Dank!",
+                "partiallyDone": "{count} Bilder werden hochgeladen, {done} Bilder erledigt…",
+                "someFailed": "Entschuldigung, {count} Bilder konnten nicht hochgeladen werden",
+                "uploading": "{count} Bilder werden hochgeladen…"
+            },
+            "one": {
+                "done": "Bild erfolgreich hochgeladen. Vielen Dank!",
+                "failed": "Entschuldigung, das Bild konnte nicht hochgeladen werden",
+                "retrying": "Das Bild wird wiederholt hochgeladen…",
+                "uploading": "Das Bild wird hochgeladen…"
+            }
         },
         "uploadDone": "Ihr Bild wurde hinzugefügt. Vielen Dank für Ihre Hilfe!",
         "uploadFailed": "Das Bild konnte nicht hochladen werden. Haben Sie eine aktive Internetverbindung und sind APIs von Dritten erlaubt? Der Brave Browser oder UMatrix blockieren diese eventuell.",
@@ -504,7 +518,9 @@
     },
     "plantDetection": {
         "back": "Zurück zur Artenübersicht",
+        "button": "Automatische Erkennung der Pflanzenart durch die KI von Plantnet.org",
         "confirm": "Arten auswählen",
+        "done": "Die Art wurde übernommen",
         "error": "Bei der Erkennung der Baumart ist ein Fehler aufgetreten: {error}",
         "howTo": {
             "intro": "Für optimale Ergebnisse,",
@@ -521,7 +537,8 @@
         "poweredByPlantnet": "Bereitgestellt von <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
         "querying": "Abfrage bei plantnet.org mit {length} Fotos",
         "seeInfo": "Weitere Informationen über diese Art",
-        "takeImages": "Machen Sie Fotos vom Baum, um die Baumart automatisch zu erkennen"
+        "takeImages": "Machen Sie Fotos vom Baum, um die Baumart automatisch zu erkennen",
+        "tryAgain": "Wähle eine andere Art"
     },
     "privacy": {
         "editing": "Ihre Änderungen werden auf OpenStreetMap gespeichert und sind öffentlich zugänglich. Ein mit MapComplete erstellter Änderungssatz enthält folgende Daten: <ul><li>Ihre Änderungen</li><li>Ihren Benutzernamen</li><li>Den Zeitpunkt Ihrer Änderungen</li><li>Das bei Ihren Änderungen verwendete MapComplete-Thema</li><li>Die Sprache Ihrer Benutzeroberfläche</li><li>Ihre Entfernung zu den geänderten Objekten. Dadurch kann festgestellt werden, ob die Änderungen vor Ort gespeichert wurden</li></ul> Ausführliche Informationen finden Sie in <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">den Datenschutzbestimmungen auf OpenStreetMap.org</a>. Wir möchten Sie daran erinnern, dass Sie zur Anmeldung einen fiktiven Namen verwenden können.",
@@ -540,11 +557,16 @@
     "reviews": {
         "affiliated_reviewer_warning": "(Partner-Rezension)",
         "attribution": "Rezensionen von <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> sind unter <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a> verfügbar.",
-        "i_am_affiliated": "<span>Ich bin an diesem Objekt beteiligt</span><br/><span class='subtle'>Auswählen, wenn Sie Eigentümer, Ersteller, Angestellter … sind</span>",
+        "i_am_affiliated": "Ich bin mit diesem Objekt vertraut",
+        "i_am_affiliated_explanation": "Prüfung, ob Sie der Eigentümer, Ersteller, Angestellter, … sind",
         "name_required": "Der Name des Objekts ist erforderlich, um Bewertungen zu erstellen und anzuzeigen",
         "no_reviews_yet": "Es gibt noch keine Bewertungen. Hilf mit der ersten Bewertung dem Geschäft und der Open Data Bewegung!",
+        "question": "Wie bewerten Sie {title()}?",
+        "question_opinion": "Wie war Ihre Erfahrung?",
+        "reviewing_as": "Als {nickname} bewerten",
+        "reviewing_as_anonymous": "Anonym bewerten",
         "save": "Speichern",
-        "saved": "<span class=\"thanks\">Bewertung gespeichert. Danke fürs Teilen!</span>",
+        "saved": "Bewertung gespeichert. Danke fürs Teilen!",
         "saving_review": "Speichern…",
         "title": "{count} Rezensionen",
         "title_singular": "Eine Rezension",

@@ -14,13 +14,6 @@
   export let tags: UIEventSource<Record<string, string>>
   export let highlightedRendering: UIEventSource<string> = undefined
 
-  let _tags: Record<string, string>
-  onDestroy(
-    tags.addCallbackAndRun((tags) => {
-      _tags = tags
-    })
-  )
-
   let _metatags: Record<string, string>
   onDestroy(
     state.userRelatedState.preferencesAsTags.addCallbackAndRun((tags) => {
@@ -29,7 +22,7 @@
   )
 </script>
 
-{#if _tags._deleted === "yes"}
+{#if $tags._deleted === "yes"}
   <Tr t={Translations.t.delete.isDeleted} />
   <button class="w-full" on:click={() => state.selectedElement.setData(undefined)}>
     <Tr t={Translations.t.general.returnToTheMap} />
@@ -37,8 +30,8 @@
 {:else}
   <div class="flex flex-col gap-y-2 overflow-y-auto p-1 px-2">
     {#each layer.tagRenderings as config (config.id)}
-      {#if (config.condition === undefined || config.condition.matchesProperties(_tags)) && (config.metacondition === undefined || config.metacondition.matchesProperties( { ..._tags, ..._metatags } ))}
-        {#if config.IsKnown(_tags)}
+      {#if (config.condition?.matchesProperties($tags) ?? true) && config.metacondition?.matchesProperties({ ...$tags, ..._metatags } ?? true)}
+        {#if config.IsKnown($tags)}
           <TagRenderingEditable
             {tags}
             {config}

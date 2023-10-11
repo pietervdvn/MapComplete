@@ -1,6 +1,6 @@
 {
   "id": "guidepost",
-  "name": {
+  "title": {
     "en": "Guideposts"
   },
   "description": {
@@ -32,7 +32,6 @@
     "enableImproveAccuracy": "true",
     "enableRelocation": "false"
   },
-  "title": {},
   "pointRendering": [
     {
       "location": [
