@@ -42,7 +42,7 @@ export class VariableUiElement extends BaseUIElement {
                 el.removeChild(el.lastChild)
             }
 
-            if (contents === undefined) {
+            if (contents === undefined || contents === null) {
                 return
             }
             if (typeof contents === "string") {
@@ -54,11 +54,13 @@ export class VariableUiElement extends BaseUIElement {
                         el.appendChild(c)
                     }
                 }
-            } else {
+            } else if (contents.ConstructElement) {
                 const c = contents.ConstructElement()
                 if (c !== undefined && c !== null) {
                     el.appendChild(c)
                 }
+            } else {
+                console.error("Could not construct a variable UI element for", contents)
             }
         })
         return el

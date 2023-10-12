@@ -631,6 +631,19 @@
   },
   {
     "path": [
+      "freeform",
+      "invalidValues"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What values of the freeform key should be interpreted as 'unknown'?",
+      "ifunset": "The question will be considered answered if any value is set for the key"
+    },
+    "type": "array",
+    "description": "For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked"
+  },
+  {
+    "path": [
       "question"
     ],
     "required": false,

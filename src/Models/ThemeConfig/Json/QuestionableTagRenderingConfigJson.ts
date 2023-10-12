@@ -1,6 +1,7 @@
 import { TagConfigJson } from "./TagConfigJson"
 import { TagRenderingConfigJson } from "./TagRenderingConfigJson"
 import type { Translatable } from "./Translatable"
+import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
 
 export interface MappingConfigJson {
     /**
@@ -244,6 +245,12 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
          * ifunset: do not prefill the textfield
          */
         default?: string
+        /**
+         * question: What values of the freeform key should be interpreted as 'unknown'?
+         * For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked
+         * ifunset: The question will be considered answered if any value is set for the key
+         */
+        invalidValues?: string[]
     }
 
     /**

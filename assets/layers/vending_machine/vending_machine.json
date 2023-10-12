@@ -657,7 +657,7 @@
             "nl": "Verkoop van bloemen",
             "de": "Verkauf von Blumen",
             "fr": "Vente de fleurs",
-            "ca": "Venda d'aparcament"
+            "ca": "Venda de flors"
           },
           "osmTags": "vending~i~.*flowers.*"
         },

@@ -1,4 +1,13 @@
-import { ConversionContext, DesugaringStep, Each, Fuse, On } from "./Conversion"
+import {
+    Conversion,
+    ConversionContext,
+    DesugaringStep,
+    Each,
+    Fuse,
+    On,
+    Pipe,
+    Pure,
+} from "./Conversion"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import LayerConfig from "../LayerConfig"
 import { Utils } from "../../../Utils"
@@ -254,7 +263,15 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
         super(
             "Validates a theme and the contained layers",
             new ValidateTheme(doesImageExist, path, isBuiltin, sharedTagRenderings),
-            new On("layers", new Each(new ValidateLayer(undefined, isBuiltin, doesImageExist)))
+            new On(
+                "layers",
+                new Each(
+                    new Pipe(
+                        new ValidateLayer(undefined, isBuiltin, doesImageExist),
+                        new Pure((x) => x.raw)
+                    )
+                )
+            )
         )
     }
 }
@@ -410,9 +427,10 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
      *            }
      *        ]
      *    }
-     * const r = new DetectShadowedMappings().convert(tr, "test");
-     * r.errors.length // => 1
-     * r.errors[0].indexOf("The mapping key=value is fully matched by a previous mapping (namely 0)") >= 0 // => true
+     * const context = ConversionContext.test()
+     * const r = new DetectShadowedMappings().convert(tr, context);
+     * context.getAll("error").length // => 1
+     * context.getAll("error")[0].message.indexOf("The mapping key=value is fully matched by a previous mapping (namely 0)") >= 0 // => true
      *
      * const tr = {mappings: [
      *         {
@@ -425,9 +443,10 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
      *         }
      *     ]
      * }
-     * const r = new DetectShadowedMappings().convert(tr, "test");
-     * r.errors.length // => 1
-     * r.errors[0].indexOf("The mapping key=value&x=y is fully matched by a previous mapping (namely 0)") >= 0 // => true
+     * const context = ConversionContext.test()
+     * const r = new DetectShadowedMappings().convert(tr, context);
+     * context.getAll("error").length // => 1
+     * context.getAll("error")[0].message.indexOf("The mapping key=value&x=y is fully matched by a previous mapping (namely 0)") >= 0 // => true
      */
     convert(json: TagRenderingConfigJson, context: ConversionContext): TagRenderingConfigJson {
         if (json.mappings === undefined || json.mappings.length === 0) {
@@ -510,6 +529,7 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
     }
 
     /**
+     * const context = ConversionContext.test()
      * const r = new DetectMappingsWithImages(new DoesImageExist(new Set<string>())).convert({
      *     "mappings": [
      *         {
@@ -525,9 +545,9 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
      *                 "zh_Hant": "單車架 <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
      *             }
      *         }]
-     * }, "test");
-     * r.errors.length > 0 // => true
-     * r.errors.some(msg => msg.indexOf("./assets/layers/bike_parking/staple.svg") >= 0) // => true
+     * }, context);
+     * context.hasErrors() // => true
+     * context.getAll("error").some(msg => msg.message.indexOf("./assets/layers/bike_parking/staple.svg") >= 0) // => true
      */
     convert(json: TagRenderingConfigJson, context: ConversionContext): TagRenderingConfigJson {
         if (json.mappings === undefined || json.mappings.length === 0) {
@@ -682,7 +702,10 @@ export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
     }
 }
 
-export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
+export class ValidateLayer extends Conversion<
+    LayerConfigJson,
+    { parsed: LayerConfig; raw: LayerConfigJson }
+> {
     /**
      * The paths where this layer is originally saved. Triggers some extra checks
      * @private
@@ -698,7 +721,10 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
         this._doesImageExist = doesImageExist
     }
 
-    convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
+    convert(
+        json: LayerConfigJson,
+        context: ConversionContext
+    ): { parsed: LayerConfig; raw: LayerConfigJson } {
         context = context.inOperation(this.name)
         if (typeof json === "string") {
             context.err("This layer hasn't been expanded: " + json)
@@ -887,15 +913,27 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             }
 
             {
-                const hasCondition = json.pointRendering?.filter(
-                    (mr) => mr["icon"] !== undefined && mr["icon"]["condition"] !== undefined
-                )
-                if (hasCondition?.length > 0) {
-                    context.err(
-                        "One or more icons in the mapRenderings have a condition set. Don't do this, as this will result in an invisible but clickable element. Use extra filters in the source instead. The offending mapRenderings are:\n" +
-                            JSON.stringify(hasCondition, null, "  ")
-                    )
-                }
+                json.pointRendering?.forEach((pointRendering, index) => {
+                    pointRendering?.marker?.forEach((icon, indexM) => {
+                        if (!icon.icon) {
+                            return
+                        }
+                        if (icon.icon["condition"]) {
+                            context
+                                .enters(
+                                    "pointRendering",
+                                    index,
+                                    "marker",
+                                    indexM,
+                                    "icon",
+                                    "condition"
+                                )
+                                .err(
+                                    "Don't set a condition in a marker as this will result in an invisible but clickable element. Use extra filters in the source instead."
+                                )
+                        }
+                    })
+                })
             }
 
             if (json.presets !== undefined) {
@@ -927,10 +965,10 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 }
             }
         } catch (e) {
-            context.err(e)
+            context.err("Could not validate layer due to: " + e + e.stack)
         }
 
-        return json
+        return { raw: json, parsed: layerConfig }
     }
 }
 

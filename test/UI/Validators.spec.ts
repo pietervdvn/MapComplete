@@ -1,5 +1,5 @@
-import { describe } from "vitest"
-import Validators from "../../UI/InputElement/Validators"
+import { describe, it } from "vitest"
+import Validators from "../../src/UI/InputElement/Validators"
 
 describe("validators", () => {
     it("should have a type for every validator", () => {

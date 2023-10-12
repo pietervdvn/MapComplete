@@ -506,7 +506,6 @@ export class OsmConnection {
         this.isChecking = true
         Stores.Chronic(5 * 60 * 1000).addCallback((_) => {
             if (self.isLoggedIn.data) {
-                console.log("Checking for messages")
                 self.AttemptLogin()
             }
         })

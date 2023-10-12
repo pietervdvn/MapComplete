@@ -469,9 +469,11 @@
       ],
       "override": {
         "minzoom": 15,
-        "mapRendering": [{
-          "iconSize": "30,30"
-        }]
+        "mapRendering": [
+          {
+            "iconSize": "30,30"
+          }
+        ]
       }
     }
   ],

@@ -11,7 +11,8 @@
 
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw;
   let state = new EditLayerState(layerSchema);
-  export let initialLayerConfig: Partial<LayerConfigJson> = {}
+  const messages = state.messages;
+  export let initialLayerConfig: Partial<LayerConfigJson> = {};
   state.configuration.setData(initialLayerConfig);
   const configuration = state.configuration;
   new LayerStateSender("http://localhost:1235", state);
@@ -19,7 +20,7 @@
    * Blacklist of regions for the general area tab
    * These are regions which are handled by a different tab
    */
-  const regionBlacklist = ["hidden", undefined, "infobox", "tagrenderings", "maprendering", "editing", "title","linerendering","pointrendering"];
+  const regionBlacklist = ["hidden", undefined, "infobox", "tagrenderings", "maprendering", "editing", "title", "linerendering", "pointrendering"];
   const allNames = Utils.Dedup(layerSchema.map(meta => meta.hints.group));
 
   const perRegion: Record<string, ConfigMeta[]> = {};
@@ -49,7 +50,7 @@
     <div slot="title1">Information panel (questions and answers)</div>
     <div slot="content1">
       <Region configs={perRegion["title"]} {state} title="Popup title" />
-      <Region configs={perRegion["tagrenderings"]} {state} title="Popup contents"/>
+      <Region configs={perRegion["tagrenderings"]} {state} title="Popup contents" />
       <Region configs={perRegion["editing"]} {state} title="Other editing elements" />
     </div>
 
@@ -58,7 +59,7 @@
       <Region configs={perRegion["linerendering"]} {state} />
       <Region configs={perRegion["pointrendering"]} {state} />
     </div>
-    
+
     <div slot="title3">Advanced functionality</div>
     <div slot="content3">
       <Region configs={perRegion["advanced"]} {state} />
@@ -73,6 +74,12 @@
       <div class="literal-code">
         {JSON.stringify($configuration, null, "  ")}
       </div>
+      {#each $messages as message}
+        <li>
+          <span class="literal-code">{message.context.path.join(".")}</span>
+          {message.message}
+        </li>
+      {/each}
     </div>
   </TabbedGroup>
 

@@ -85,11 +85,11 @@
     );
   }
   const config = new TagRenderingConfig(configJson, "config based on " + schema.path.join("."));
-  let chosenOption: number = writable(defaultOption);
+  let chosenOption: number = (defaultOption);
 
 
   const existingValue = state.getCurrentValueFor(path);
-  console.log("Initial value is", existingValue);
+  console.log("Initial, existing value for", path.join(".") ,"is", existingValue);
   if (hasBooleanOption >= 0 && (existingValue === true || existingValue === false)) {
     tags.setData({ value: "" + existingValue });
   } else if (lastIsString && typeof existingValue === "string") {
@@ -135,6 +135,8 @@
     }
   } else if (defaultOption !== undefined) {
     tags.setData({ chosen_type_index: "" + defaultOption });
+  }else{
+    chosenOption = defaultOption
   }
 
   if (hasBooleanOption >= 0 || lastIsString) {
@@ -156,8 +158,9 @@
   let subpath = path;
   console.log("Initial chosen option for",path.join("."),"is", chosenOption);
   onDestroy(tags.addCallbackAndRun(tags => {
-    if (tags["value"] !== "") {
+    if (tags["value"] !== undefined && tags["value"] !== "") {
       chosenOption = undefined;
+      console.log("Resetting chosenOption as `value` is present in the tags:", tags["value"])
       return;
     }
     const oldOption = chosenOption;
@@ -214,4 +217,5 @@
                         path={[...subpath, (subschema?.path?.at(-1) ?? "???")]}></SchemaBasedInput>
     {/each}
   {/if}
+  {chosenOption}
 </div>

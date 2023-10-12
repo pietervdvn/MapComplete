@@ -33,21 +33,28 @@ export class ExtractImages extends Conversion<
     }
 
     public static mightBeTagRendering(metapath: { type?: string | string[] }): boolean {
-        if (!Array.isArray(metapath.type)) {
+        if (!metapath.type) {
             return false
         }
-        return (
-            metapath.type?.some(
-                (t) =>
-                    t !== null &&
-                    (t["$ref"] == "#/definitions/TagRenderingConfigJson" ||
-                        t["$ref"] == "#/definitions/QuestionableTagRenderingConfigJson")
-            ) ?? false
+        let type: any[]
+        if (!Array.isArray(metapath.type)) {
+            type = [metapath.type]
+        } else {
+            type = metapath.type
+        }
+        return type.some(
+            (t) =>
+                t !== null &&
+                (t["$ref"] == "#/definitions/TagRenderingConfigJson" ||
+                    t["$ref"] == "#/definitions/MinimalTagRenderingConfigJson" ||
+                    t["$ref"] == "#/definitions/QuestionableTagRenderingConfigJson" ||
+                    (t["properties"]?.render !== undefined &&
+                        t["properties"]?.mappings !== undefined))
         )
     }
 
     /**
-     *  const images = new ExtractImages(true, new Map<string, any>()).convert(<any>{
+     *  const images = new ExtractImages(true, new Set<string>()).convert(<any>{
      *     "layers": [
      *         {
      *             tagRenderings: [
@@ -75,14 +82,14 @@ export class ExtractImages extends Conversion<
      *             ]
      *         }
      *     ]
-     * }, "test").result.map(i => i.path);
+     * }, ConversionContext.test()).map(i => i.path);
      * images.length // => 2
      * images.findIndex(img => img == "./assets/layers/bike_parking/staple.svg") >= 0 // => true
      * images.findIndex(img => img == "./assets/layers/bike_parking/bollard.svg") >= 0 // => true
      *
      * // should not pickup rotation, should drop color
-     * const images = new ExtractImages(true, new Set<string>()).convert(<any>{"layers": [{mapRendering: [{"location": ["point", "centroid"],"icon": "pin:black",rotation: 180,iconSize: "40,40,center"}]}]
-     * }, "test").result
+     * const images = new ExtractImages(true, new Set<string>()).convert(<any>{"layers": [{"pointRendering": [{"location": ["point", "centroid"],marker: [{"icon": "pin:black"}],rotation: 180,iconSize: "40,40,center"}]}]
+     * }, ConversionContext.test())
      * images.length // => 1
      * images[0].path // => "pin"
      *
@@ -233,9 +240,9 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
      *          "id": "https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/verkeerdeborden.json"
      *         "layers": [
      *             {
-     *                 "mapRendering": [
+     *                 "pointRendering": [
      *                     {
-     *                         "icon": "./TS_bolt.svg",
+     *                         marker: [{"icon": "./TS_bolt.svg"}],
      *                         iconBadges: [{
      *                             if: "id=yes",
      *                             then: {
@@ -256,9 +263,9 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
      *             }
      *         ],
      *     }
-     * const fixed = new FixImages(new Set<string>()).convert(<any> theme, "test").result
-     * fixed.layers[0]["mapRendering"][0].icon // => "https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/TS_bolt.svg"
-     * fixed.layers[0]["mapRendering"][0].iconBadges[0].then.mappings[0].then // => "https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/Something.svg"
+     * const fixed = new FixImages(new Set<string>()).convert(<any> theme, ConversionContext.test())
+     * fixed.layers[0]["pointRendering"][0].marker[0].icon // => "https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/TS_bolt.svg"
+     * fixed.layers[0]["pointRendering"][0].iconBadges[0].then.mappings[0].then // => "https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/Something.svg"
      */
     convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
         let url: URL

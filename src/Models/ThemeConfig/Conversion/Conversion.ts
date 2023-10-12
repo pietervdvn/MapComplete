@@ -9,17 +9,33 @@ export interface DesugaringContext {
 }
 
 export class ConversionContext {
+    /**
+     *  The path within the data structure where we are currently operating
+     */
     readonly path: ReadonlyArray<string | number>
+    /**
+     * Some information about the current operation
+     */
     readonly operation: ReadonlyArray<string>
-    readonly messages: ConversionMessage[] = []
+    readonly messages: ConversionMessage[]
 
-    private constructor(path: ReadonlyArray<string | number>, operation?: ReadonlyArray<string>) {
+    private constructor(
+        messages: ConversionMessage[],
+        path: ReadonlyArray<string | number>,
+        operation?: ReadonlyArray<string>
+    ) {
         this.path = path
         this.operation = operation ?? []
+        // Messages is shared by reference amonst all 'context'-objects for performance
+        this.messages = messages
     }
 
     public static construct(path: (string | number)[], operation: string[]) {
-        return new ConversionContext([...path], [...operation])
+        return new ConversionContext([], [...path], [...operation])
+    }
+
+    public static test(msg?: string) {
+        return new ConversionContext([], msg ? [msg] : [], ["test"])
     }
 
     static print(msg: ConversionMessage) {
@@ -38,12 +54,7 @@ export class ConversionContext {
                 msg.context.operation.join(".")
             )
         } else {
-            console.log(
-                "    ",
-                msg.context.path.join("."),
-                msg.message,
-                msg.context.operation.join(".")
-            )
+            console.log("    ", msg.context.path.join("."), msg.message)
         }
     }
 
@@ -57,9 +68,9 @@ export class ConversionContext {
 
     public enter(key: string | number | (string | number)[]) {
         if (!Array.isArray(key)) {
-            return new ConversionContext([...this.path, key], this.operation)
+            return new ConversionContext(this.messages, [...this.path, key], this.operation)
         }
-        return new ConversionContext([...this.path, ...key], this.operation)
+        return new ConversionContext(this.messages, [...this.path, ...key], this.operation)
     }
 
     public enters(...key: (string | number)[]) {
@@ -67,7 +78,7 @@ export class ConversionContext {
     }
 
     public inOperation(key: string) {
-        return new ConversionContext(this.path, [...this.operation, key])
+        return new ConversionContext(this.messages, this.path, [...this.operation, key])
     }
 
     warn(message: string) {
@@ -82,15 +93,19 @@ export class ConversionContext {
         this.messages.push({ context: this, level: "information", message })
     }
 
+    getAll(mode: ConversionMsgLevel): ConversionMessage[] {
+        return this.messages.filter((m) => m.level === mode)
+    }
     public hasErrors() {
         return this.messages?.find((m) => m.level === "error") !== undefined
     }
 }
 
+export type ConversionMsgLevel = "debug" | "information" | "warning" | "error"
 export interface ConversionMessage {
     context: ConversionContext
     message: string
-    level: "debug" | "information" | "warning" | "error"
+    level: ConversionMsgLevel
 }
 
 export abstract class Conversion<TIn, TOut> {
@@ -106,7 +121,7 @@ export abstract class Conversion<TIn, TOut> {
 
     public convertStrict(json: TIn, context?: ConversionContext): TOut {
         context ??= ConversionContext.construct([], [])
-        context = context.enter(this.name)
+        context = context.inOperation(this.name)
         const fixed = this.convert(json, context)
         for (const msg of context.messages) {
             ConversionContext.print(msg)
@@ -126,7 +141,7 @@ export abstract class Conversion<TIn, TOut> {
 
 export abstract class DesugaringStep<T> extends Conversion<T, T> {}
 
-class Pipe<TIn, TInter, TOut> extends Conversion<TIn, TOut> {
+export class Pipe<TIn, TInter, TOut> extends Conversion<TIn, TOut> {
     private readonly _step0: Conversion<TIn, TInter>
     private readonly _step1: Conversion<TInter, TOut>
 
@@ -145,7 +160,7 @@ class Pipe<TIn, TInter, TOut> extends Conversion<TIn, TOut> {
     }
 }
 
-class Pure<TIn, TOut> extends Conversion<TIn, TOut> {
+export class Pure<TIn, TOut> extends Conversion<TIn, TOut> {
     private readonly _f: (t: TIn) => TOut
 
     constructor(f: (t: TIn) => TOut) {
@@ -205,14 +220,14 @@ export class On<P, T> extends DesugaringStep<T> {
     }
 
     convert(json: T, context: ConversionContext): T {
-        json = { ...json }
-        const step = this.step(json)
         const key = this.key
         const value: P = json[key]
         if (value === undefined || value === null) {
-            return undefined
+            return json
         }
 
+        json = { ...json }
+        const step = this.step(json)
         json[key] = step.convert(value, context.enter(key).inOperation("on[" + key + "]"))
         return json
     }
@@ -280,7 +295,7 @@ export class Fuse<T> extends DesugaringStep<T> {
                 "This fused pipeline of the following steps: " +
                 steps.map((s) => s.name).join(", "),
             Utils.Dedup([].concat(...steps.map((step) => step.modifiedAttributes))),
-            "Fuse of " + steps.map((s) => s.name).join(", ")
+            "Fuse(" + steps.map((s) => s.name).join(", ") + ")"
         )
         this.steps = Utils.NoNull(steps)
     }
@@ -290,7 +305,7 @@ export class Fuse<T> extends DesugaringStep<T> {
             const step = this.steps[i]
             try {
                 const r = step.convert(json, context.inOperation(step.name))
-                if (r === undefined) {
+                if (r === undefined || r === null) {
                     break
                 }
                 if (context.hasErrors()) {

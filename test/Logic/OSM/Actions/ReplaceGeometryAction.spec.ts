@@ -31,7 +31,8 @@ describe("ReplaceGeometryAction", () => {
                 source: {
                     osmTags: "type=node",
                 },
-                mapRendering: null,
+                pointRendering: null,
+                lineRendering: [{}],
                 override: {
                     calculatedTags: [
                         "_is_part_of_building=feat.get('parent_ways')?.some(p => p.building !== undefined && p.building !== '') ?? false",
@@ -41,9 +42,14 @@ describe("ReplaceGeometryAction", () => {
                         "_is_part_of_landuse=feat.get('parent_ways')?.some(p => (p.landuse !== undefined && p.landuse !== '') || (p.natural !== undefined && p.natural !== '')) ?? false",
                         "_moveable=feat.get('_is_part_of_building') && !feat.get('_is_part_of_grb_building')",
                     ],
-                    mapRendering: [
+                    pointRendering: [
                         {
-                            icon: "square:#cc0",
+                            marker: [
+                                {
+                                    icon: "square",
+                                    color: "#cc0",
+                                },
+                            ],
                             iconSize: "5,5",
                             location: ["point"],
                         },
@@ -59,7 +65,7 @@ describe("ReplaceGeometryAction", () => {
                     maxCacheAge: 0,
                 },
                 calculatedTags: ["_surface:strict:=feat.get('_surface')"],
-                mapRendering: [
+                lineRendering: [
                     {
                         width: {
                             render: "2",
@@ -290,10 +296,14 @@ describe("ReplaceGeometryAction", () => {
                     "_intersects_with_other_features=feat.intersectionsWith('generic_osm_object').map(f => \"<a href='https://osm.org/\"+f.feat.properties.id+\"' target='_blank'>\" + f.feat.properties.id + \"</a>\").join(', ')",
                 ],
                 tagRenderings: [],
-                mapRendering: [
+                pointRendering: [
                     {
+                        marker: [
+                            {
+                                icon: "./assets/themes/grb/housenumber_blank.svg",
+                            },
+                        ],
                         iconSize: "50,50",
-                        icon: "./assets/themes/grb/housenumber_blank.svg",
                         location: ["point", "centroid"],
                     },
                 ],

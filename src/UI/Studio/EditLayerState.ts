@@ -3,6 +3,16 @@ import { ConfigMeta } from "./configMeta"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
 import { QueryParameters } from "../../Logic/Web/QueryParameters"
+import {
+    ConversionContext,
+    ConversionMessage,
+    DesugaringContext,
+    Pipe,
+} from "../../Models/ThemeConfig/Conversion/Conversion"
+import { PrepareLayer } from "../../Models/ThemeConfig/Conversion/PrepareLayer"
+import { ValidateLayer } from "../../Models/ThemeConfig/Conversion/Validation"
+import { AllSharedLayers } from "../../Customizations/AllSharedLayers"
+import { QuestionableTagRenderingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 
 /**
  * Sends changes back to the server
@@ -16,7 +26,7 @@ export class LayerStateSender {
                 console.log("No id found in layer, not updating")
                 return
             }
-            const response = await fetch(`${serverLocation}/layers/${id}/${id}.json`, {
+            const fresponse = await fetch(`${serverLocation}/layers/${id}/${id}.json`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json;charset=utf-8",
@@ -36,6 +46,7 @@ export default class EditLayerState {
     public readonly configuration: UIEventSource<Partial<LayerConfigJson>> = new UIEventSource<
         Partial<LayerConfigJson>
     >({})
+    public readonly messages: Store<ConversionMessage[]>
 
     constructor(schema: ConfigMeta[]) {
         this.schema = schema
@@ -49,6 +60,30 @@ export default class EditLayerState {
         this.featureSwitches = {
             featureSwitchIsDebugging: new UIEventSource<boolean>(true),
         }
+        let state: DesugaringContext
+        {
+            const layers = AllSharedLayers.getSharedLayersConfigs()
+            const questions = layers.get("questions")
+            const sharedQuestions = new Map<string, QuestionableTagRenderingConfigJson>()
+            for (const question of questions.tagRenderings) {
+                sharedQuestions.set(question["id"], <QuestionableTagRenderingConfigJson>question)
+            }
+            state = {
+                tagRenderings: sharedQuestions,
+                sharedLayers: layers,
+            }
+        }
+        this.messages = this.configuration.map((config) => {
+            const context = ConversionContext.construct([], ["prepare"])
+
+            const prepare = new Pipe(
+                new PrepareLayer(state),
+                new ValidateLayer("dynamic", false, undefined)
+            )
+            prepare.convert(<LayerConfigJson>config, context)
+            console.log(context.messages)
+            return context.messages
+        })
         console.log("Configuration store:", this.configuration)
     }
 

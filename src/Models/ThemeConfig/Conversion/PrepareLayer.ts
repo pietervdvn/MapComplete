@@ -11,7 +11,10 @@ import {
     SetDefault,
 } from "./Conversion"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
-import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
+import {
+    MinimalTagRenderingConfigJson,
+    TagRenderingConfigJson,
+} from "../Json/TagRenderingConfigJson"
 import { Utils } from "../../../Utils"
 import RewritableConfigJson from "../Json/RewritableConfigJson"
 import SpecialVisualizations from "../../../UI/SpecialVisualizations"
@@ -27,6 +30,7 @@ import ValidationUtils from "./ValidationUtils"
 import { RenderingSpecification } from "../../../UI/SpecialVisualization"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 import { ConfigMeta } from "../../../UI/Studio/configMeta"
+import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
 
 class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     private static readonly predefinedFilters = ExpandFilter.load_filters()
@@ -155,6 +159,25 @@ class ExpandTagRendering extends Conversion<
                 withLabel.push(trconfig)
             }
         }
+    }
+
+    public convert(
+        spec: string | any,
+        ctx: ConversionContext
+    ): QuestionableTagRenderingConfigJson[] {
+        const trs = this.convertOnce(spec, ctx)
+
+        const result = []
+        for (const tr of trs) {
+            if (typeof tr === "string" || tr["builtin"] !== undefined) {
+                const stable = this.convert(tr, ctx.inOperation("recursive_resolve"))
+                result.push(...stable)
+            } else {
+                result.push(tr)
+            }
+        }
+
+        return result
     }
 
     private lookup(name: string): TagRenderingConfigJson[] | undefined {
@@ -385,25 +408,6 @@ class ExpandTagRendering extends Conversion<
         }
 
         return [tr]
-    }
-
-    public convert(
-        spec: string | any,
-        ctx: ConversionContext
-    ): QuestionableTagRenderingConfigJson[] {
-        const trs = this.convertOnce(spec, ctx)
-
-        const result = []
-        for (const tr of trs) {
-            if (typeof tr === "string" || tr["builtin"] !== undefined) {
-                const stable = this.convert(tr, ctx.inOperation("recursive_resolve"))
-                result.push(...stable)
-            } else {
-                result.push(tr)
-            }
-        }
-
-        return result
     }
 }
 
@@ -711,7 +715,7 @@ export class ExpandRewrite<T> extends Conversion<T | RewritableConfigJson<T>, T[
      *     },
      *     renderings: "The value of xyz is abc"
      * }
-     * new ExpandRewrite().convertStrict(spec, "test") // => ["The value of X is A", "The value of Y is B", "The value of Z is C"]
+     * new ExpandRewrite().convertStrict(spec, ConversionContext.test()) // => ["The value of X is A", "The value of Y is B", "The value of Z is C"]
      *
      * // should rewrite with translations
      * const spec = <RewritableConfigJson<any>>{
@@ -733,7 +737,7 @@ export class ExpandRewrite<T> extends Conversion<T | RewritableConfigJson<T>, T[
      *      nl: "De waarde van Y is een andere waarde"
      *  }
      * ]
-     * new ExpandRewrite().convertStrict(spec, "test") // => expected
+     * new ExpandRewrite().convertStrict(spec, ConversionContext.test()) // => expected
      */
     convert(json: T | RewritableConfigJson<T>, context: ConversionContext): T[] {
         if (json === null || json === undefined) {
@@ -808,39 +812,38 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      * Does the heavy lifting and conversion
      *
      * // should not do anything if no 'special'-key is present
-     * RewriteSpecial.convertIfNeeded({"en": "xyz", "nl": "abc"}, [], "test") // => {"en": "xyz", "nl": "abc"}
+     * RewriteSpecial.convertIfNeeded({"en": "xyz", "nl": "abc"}, ConversionContext.test()) // => {"en": "xyz", "nl": "abc"}
      *
      * // should handle a simple special case
-     * RewriteSpecial.convertIfNeeded({"special": {"type":"image_carousel"}}, [], "test") // => {'*': "{image_carousel()}"}
+     * RewriteSpecial.convertIfNeeded({"special": {"type":"image_carousel"}}, ConversionContext.test()) // => {'*': "{image_carousel()}"}
      *
      * // should handle special case with a parameter
-     * RewriteSpecial.convertIfNeeded({"special": {"type":"image_carousel", "image_key": "some_image_key"}}, [], "test") // =>  {'*': "{image_carousel(some_image_key)}"}
+     * RewriteSpecial.convertIfNeeded({"special": {"type":"image_carousel", "image_key": "some_image_key"}}, ConversionContext.test()) // =>  {'*': "{image_carousel(some_image_key)}"}
      *
      * // should handle special case with a translated parameter
      * const spec = {"special": {"type":"image_upload", "label": {"en": "Add a picture to this object", "nl": "Voeg een afbeelding toe"}}}
-     * const r = RewriteSpecial.convertIfNeeded(spec, [], "test")
+     * const r = RewriteSpecial.convertIfNeeded(spec, ConversionContext.test())
      * r // => {"en": "{image_upload(,Add a picture to this object)}", "nl": "{image_upload(,Voeg een afbeelding toe)}" }
      *
      * // should handle special case with a prefix and postfix
      * const spec = {"special": {"type":"image_upload" }, before: {"en": "PREFIX "}, after: {"en": " POSTFIX", nl: " Achtervoegsel"} }
-     * const r = RewriteSpecial.convertIfNeeded(spec, [], "test")
+     * const r = RewriteSpecial.convertIfNeeded(spec, ConversionContext.test())
      * r // => {"en": "PREFIX {image_upload(,)} POSTFIX", "nl": "PREFIX {image_upload(,)} Achtervoegsel" }
      *
      * // should warn for unexpected keys
-     * const errors = []
-     * RewriteSpecial.convertIfNeeded({"special": {type: "image_carousel"}, "en": "xyz"}, errors, "test") // =>  {'*': "{image_carousel()}"}
-     * errors // => ["At test: The only keys allowed next to a 'special'-block are 'before' and 'after'. Perhaps you meant to put 'en' into the special block?"]
+     * const context = ConversionContext.test()
+     * RewriteSpecial.convertIfNeeded({"special": {type: "image_carousel"}, "en": "xyz"}, context) // =>  {'*': "{image_carousel()}"}
+     * context.getAll("error")[0].message // => "The only keys allowed next to a 'special'-block are 'before' and 'after'. Perhaps you meant to put 'en' into the special block?"
      *
      * // should give an error on unknown visualisations
-     * const errors = []
-     * RewriteSpecial.convertIfNeeded({"special": {type: "qsdf"}}, errors, "test") // => undefined
-     * errors.length // => 1
-     * errors[0].indexOf("Special visualisation 'qsdf' not found") >= 0 // => true
+     * const context = ConversionContext.test()
+     * RewriteSpecial.convertIfNeeded({"special": {type: "qsdf"}}, context) // => undefined
+     * context.getAll("error")[0].message.indexOf("Special visualisation 'qsdf' not found") >= 0 // => true
      *
      * // should give an error is 'type' is missing
-     * const errors = []
-     * RewriteSpecial.convertIfNeeded({"special": {}}, errors, "test") // => undefined
-     * errors // => ["A 'special'-block should define 'type' to indicate which visualisation should be used"]
+     * const context = ConversionContext.test()
+     * RewriteSpecial.convertIfNeeded({"special": {}}, context) // => undefined
+     * context.getAll("error")[0].message // => "A 'special'-block should define 'type' to indicate which visualisation should be used"
      *
      *
      * // an actual test
@@ -858,9 +861,9 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      *             "en": "An <a href='#{id}'>entrance</a> of {canonical(width)}"
      *           }
      *         }}
-     * const errors = []
-     * RewriteSpecial.convertIfNeeded(special, errors, "test") // => {"en": "<h3>Entrances</h3>This building has {_entrances_count} entrances:{multi(_entrance_properties_with_width,An <a href='#&LBRACEid&RBRACE'>entrance</a> of &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE)}{_entrances_count_without_width_count} entrances don't have width information yet"}
-     * errors // => []
+     * const context = ConversionContext.test()
+     * RewriteSpecial.convertIfNeeded(special, context) // => {"en": "<h3>Entrances</h3>This building has {_entrances_count} entrances:{multi(_entrance_properties_with_width,An <a href='#&LBRACEid&RBRACE'>entrance</a> of &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE)}{_entrances_count_without_width_count} entrances don't have width information yet"}
+     * context.getAll("error") // => []
      */
     private static convertIfNeeded(
         input:
@@ -870,8 +873,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
                   }
               })
             | any,
-        errors: string[],
-        context: string
+        context: ConversionContext
     ): any {
         const special = input["special"]
         if (special === undefined) {
@@ -880,7 +882,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
 
         const type = special["type"]
         if (type === undefined) {
-            errors.push(
+            context.err(
                 "A 'special'-block should define 'type' to indicate which visualisation should be used"
             )
             return undefined
@@ -893,37 +895,35 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
                 SpecialVisualizations.specialVisualizations,
                 (sp) => sp.funcName
             )
-            errors.push(
+            context.err(
                 `Special visualisation '${type}' not found. Did you perhaps mean ${options[0].funcName}, ${options[1].funcName} or ${options[2].funcName}?\n\tFor all known special visualisations, please see https://github.com/pietervdvn/MapComplete/blob/develop/Docs/SpecialRenderings.md`
             )
             return undefined
         }
-        errors.push(
-            ...Array.from(Object.keys(input))
-                .filter((k) => k !== "special" && k !== "before" && k !== "after")
-                .map((k) => {
-                    return `At ${context}: The only keys allowed next to a 'special'-block are 'before' and 'after'. Perhaps you meant to put '${k}' into the special block?`
-                })
-        )
+        Array.from(Object.keys(input))
+            .filter((k) => k !== "special" && k !== "before" && k !== "after")
+            .map((k) => {
+                return `The only keys allowed next to a 'special'-block are 'before' and 'after'. Perhaps you meant to put '${k}' into the special block?`
+            })
+            .forEach((e) => context.err(e))
 
         const argNamesList = vis.args.map((a) => a.name)
         const argNames = new Set<string>(argNamesList)
         // Check for obsolete and misspelled arguments
-        errors.push(
-            ...Object.keys(special)
-                .filter((k) => !argNames.has(k))
-                .filter((k) => k !== "type" && k !== "before" && k !== "after")
-                .map((wrongArg) => {
-                    const byDistance = Utils.sortedByLevenshteinDistance(
-                        wrongArg,
-                        argNamesList,
-                        (x) => x
-                    )
-                    return `At ${context}: Unexpected argument in special block at ${context} with name '${wrongArg}'. Did you mean ${
-                        byDistance[0]
-                    }?\n\tAll known arguments are ${argNamesList.join(", ")}`
-                })
-        )
+        Object.keys(special)
+            .filter((k) => !argNames.has(k))
+            .filter((k) => k !== "type" && k !== "before" && k !== "after")
+            .map((wrongArg) => {
+                const byDistance = Utils.sortedByLevenshteinDistance(
+                    wrongArg,
+                    argNamesList,
+                    (x) => x
+                )
+                return `Unexpected argument in special block at ${context} with name '${wrongArg}'. Did you mean ${
+                    byDistance[0]
+                }?\n\tAll known arguments are ${argNamesList.join(", ")}`
+            })
+            .forEach((e) => context.err(e))
 
         // Check that all obligated arguments are present. They are obligated if they don't have a preset value
         for (const arg of vis.args) {
@@ -932,10 +932,8 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
             }
             const param = special[arg.name]
             if (param === undefined) {
-                errors.push(
-                    `At ${context}: Obligated parameter '${
-                        arg.name
-                    }' in special rendering of type ${
+                context.err(
+                    `Obligated parameter '${arg.name}' in special rendering of type ${
                         vis.funcName
                     } not found.\n    The full special rendering specification is: '${JSON.stringify(
                         input
@@ -1014,7 +1012,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      *         }
      *     ]
      * }
-     * const result = new RewriteSpecial().convert(tr,"test").result
+     * const result = new RewriteSpecial().convertStrict(tr,ConversionContext.test())
      * const expected = {render:  {'*': "{image_carousel(image)}"}, mappings: [{if: "other_image_key", then:  {'*': "{image_carousel(other_image_key)}"}} ]}
      * result // => expected
      *
@@ -1022,7 +1020,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      * const tr = {
      *     render: {special: {type: "image_carousel", image_key: "image"}, before: {en: "Some introduction"} },
      * }
-     * const result = new RewriteSpecial().convert(tr,"test").result
+     * const result = new RewriteSpecial().convertStrict(tr,ConversionContext.test())
      * const expected = {render:  {'en': "Some introduction{image_carousel(image)}"}}
      * result // => expected
      *
@@ -1030,12 +1028,11 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      * const tr = {
      *     render: {special: {type: "image_carousel", image_key: "image"}, after: {en: "Some footer"} },
      * }
-     * const result = new RewriteSpecial().convert(tr,"test").result
+     * const result = new RewriteSpecial().convertStrict(tr,ConversionContext.test())
      * const expected = {render:  {'en': "{image_carousel(image)}Some footer"}}
      * result // => expected
      */
     convert(json: TagRenderingConfigJson, context: ConversionContext): TagRenderingConfigJson {
-        const errors = []
         json = Utils.Clone(json)
         const paths: ConfigMeta[] = tagrenderingconfigmeta
         for (const path of paths) {
@@ -1043,7 +1040,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
                 continue
             }
             Utils.WalkPath(path.path, json, (leaf, travelled) =>
-                RewriteSpecial.convertIfNeeded(leaf, errors, context + ":" + travelled.join("."))
+                RewriteSpecial.convertIfNeeded(leaf, context.enter(travelled))
             )
         }
 
@@ -1067,15 +1064,13 @@ class ExpandIconBadges extends DesugaringStep<PointRenderingConfigJson> {
 
         const iconBadges: {
             if: TagConfigJson
-            then: string | TagRenderingConfigJson
+            then: string | MinimalTagRenderingConfigJson
         }[] = []
 
-        const errs: string[] = []
-        const warns: string[] = []
         for (let i = 0; i < badgesJson.length; i++) {
             const iconBadge: {
                 if: TagConfigJson
-                then: string | TagRenderingConfigJson
+                then: string | MinimalTagRenderingConfigJson
             } = badgesJson[i]
             const expanded = this._expand.convert(
                 <QuestionableTagRenderingConfigJson>iconBadge.then,
@@ -1089,7 +1084,7 @@ class ExpandIconBadges extends DesugaringStep<PointRenderingConfigJson> {
             iconBadges.push(
                 ...expanded.map((resolved) => ({
                     if: iconBadge.if,
-                    then: resolved,
+                    then: <MinimalTagRenderingConfigJson>resolved,
                 }))
             )
         }
@@ -1103,8 +1098,13 @@ class PreparePointRendering extends Fuse<PointRenderingConfigJson> {
         super(
             "Prepares point renderings by expanding 'icon' and 'iconBadges'",
             new On(
-                "icon",
-                new FirstOf(new ExpandTagRendering(state, layer, { applyCondition: false }))
+                "marker",
+                new Each(
+                    new On(
+                        "icon",
+                        new FirstOf(new ExpandTagRendering(state, layer, { applyCondition: false }))
+                    )
+                )
             ),
             new ExpandIconBadges(state, layer)
         )
@@ -1189,15 +1189,17 @@ class ExpandMarkerRenderings extends DesugaringStep<IconConfigJson> {
     convert(json: IconConfigJson, context: ConversionContext): IconConfigJson {
         const expander = new ExpandTagRendering(this._state, this._layer)
         const result: IconConfigJson = { icon: undefined, color: undefined }
-        const errors: string[] = []
-        const warnings: string[] = []
         if (json.icon && json.icon["builtin"]) {
-            result.icon = expander.convert(<any>json.icon, context.enter("icon"))[0]
+            result.icon = <MinimalTagRenderingConfigJson>(
+                expander.convert(<any>json.icon, context.enter("icon"))[0]
+            )
         } else {
             result.icon = json.icon
         }
         if (json.color && json.color["builtin"]) {
-            result.color = expander.convert(<any>json.color, context.enter("color"))[0]
+            result.color = <MinimalTagRenderingConfigJson>(
+                expander.convert(<any>json.color, context.enter("color"))[0]
+            )
         } else {
             result.color = json.color
         }
@@ -1217,6 +1219,10 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
             new AddMiniMap(state),
             new AddEditingElements(state),
             new SetFullNodeDatabase(),
+            new On<
+                (LineRenderingConfigJson | RewritableConfigJson<LineRenderingConfigJson>)[],
+                LayerConfigJson
+            >("lineRendering", new Each(new ExpandRewrite()).andThenF(Utils.Flatten)),
             new On<PointRenderingConfigJson[], LayerConfigJson>(
                 "pointRendering",
                 (layer) =>

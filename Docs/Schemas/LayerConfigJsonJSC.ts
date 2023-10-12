@@ -1185,6 +1185,13 @@ export default {
             "default": {
               "description": "question: What value should be entered in the text field if no value is set?\nThis can help people to quickly enter the most common option\nifunset: do not prefill the textfield",
               "type": "string"
+            },
+            "invalidValues": {
+              "description": "question: What values of the freeform key should be interpreted as 'unknown'?\nFor example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked\nifunset: The question will be considered answered if any value is set for the key",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             }
           },
           "required": [
@@ -1380,6 +1387,13 @@ export default {
             "default": {
               "description": "question: What value should be entered in the text field if no value is set?\nThis can help people to quickly enter the most common option\nifunset: do not prefill the textfield",
               "type": "string"
+            },
+            "invalidValues": {
+              "description": "question: What values of the freeform key should be interpreted as 'unknown'?\nFor example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked\nifunset: The question will be considered answered if any value is set for the key",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             }
           },
           "required": [

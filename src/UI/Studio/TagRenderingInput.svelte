@@ -22,7 +22,7 @@ export let state: EditLayerState;
 export let schema: ConfigMeta;
 export let path: (string | number)[];
 
-let value = state.getCurrentValueFor(path);
+let value = state.getCurrentValueFor(path) ;
 
 let mappingsBuiltin: MappingConfigJson[] = [];
 for (const tr of questions.tagRenderings) {
@@ -65,7 +65,6 @@ function initMappings() {
 }
 
 const freeformSchema = <ConfigMeta[]>  questionableTagRenderingSchemaRaw.filter(schema => schema.path.length >= 1 && schema.path[0] === "freeform");
-console.log("FreeformSchema:", freeformSchema)
 </script>
 
 {#if typeof value === "string"}
@@ -105,11 +104,5 @@ console.log("FreeformSchema:", freeformSchema)
 
     <Region {state} {path} configs={freeformSchema}/>
 
-
-
-
-    <!-- {JSON.stringify(state.getCurrentValueFor(path))} <!-->
   </div>
-  <!--
-      <Region configs={freeformSchema} {state} path={[...path, "freeform"]} /> -->
 {/if}

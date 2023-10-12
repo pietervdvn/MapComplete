@@ -692,6 +692,13 @@
                         "default": {
                           "description": "question: What value should be entered in the text field if no value is set?\nThis can help people to quickly enter the most common option\nifunset: do not prefill the textfield",
                           "type": "string"
+                        },
+                        "invalidValues": {
+                          "description": "question: What values of the freeform key should be interpreted as 'unknown'?\nFor example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked\nifunset: The question will be considered answered if any value is set for the key",
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
                         }
                       },
                       "required": [
@@ -13598,6 +13605,13 @@
               "default": {
                 "description": "question: What value should be entered in the text field if no value is set?\nThis can help people to quickly enter the most common option\nifunset: do not prefill the textfield",
                 "type": "string"
+              },
+              "invalidValues": {
+                "description": "question: What values of the freeform key should be interpreted as 'unknown'?\nFor example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked\nifunset: The question will be considered answered if any value is set for the key",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             },
             "required": [
@@ -14471,6 +14485,21 @@
     },
     "type": "string",
     "description": "This can help people to quickly enter the most common option"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "freeform",
+      "invalidValues"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What values of the freeform key should be interpreted as 'unknown'?",
+      "ifunset": "The question will be considered answered if any value is set for the key"
+    },
+    "type": "array",
+    "description": "For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked"
   },
   {
     "path": [
@@ -15552,6 +15581,22 @@
     },
     "type": "string",
     "description": "This can help people to quickly enter the most common option"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "override",
+      "freeform",
+      "invalidValues"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What values of the freeform key should be interpreted as 'unknown'?",
+      "ifunset": "The question will be considered answered if any value is set for the key"
+    },
+    "type": "array",
+    "description": "For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked"
   },
   {
     "path": [
@@ -16664,6 +16709,22 @@
       "layers",
       "tagRenderings",
       "renderings",
+      "freeform",
+      "invalidValues"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What values of the freeform key should be interpreted as 'unknown'?",
+      "ifunset": "The question will be considered answered if any value is set for the key"
+    },
+    "type": "array",
+    "description": "For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
       "question"
     ],
     "required": false,
@@ -17781,6 +17842,23 @@
     },
     "type": "string",
     "description": "This can help people to quickly enter the most common option"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "override",
+      "freeform",
+      "invalidValues"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What values of the freeform key should be interpreted as 'unknown'?",
+      "ifunset": "The question will be considered answered if any value is set for the key"
+    },
+    "type": "array",
+    "description": "For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked"
   },
   {
     "path": [
@@ -31866,6 +31944,13 @@
               "default": {
                 "description": "question: What value should be entered in the text field if no value is set?\nThis can help people to quickly enter the most common option\nifunset: do not prefill the textfield",
                 "type": "string"
+              },
+              "invalidValues": {
+                "description": "question: What values of the freeform key should be interpreted as 'unknown'?\nFor example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked\nifunset: The question will be considered answered if any value is set for the key",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             },
             "required": [
@@ -32766,6 +32851,22 @@
     },
     "type": "string",
     "description": "This can help people to quickly enter the most common option"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
+      "freeform",
+      "invalidValues"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What values of the freeform key should be interpreted as 'unknown'?",
+      "ifunset": "The question will be considered answered if any value is set for the key"
+    },
+    "type": "array",
+    "description": "For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked"
   },
   {
     "path": [
@@ -33889,6 +33990,23 @@
     },
     "type": "string",
     "description": "This can help people to quickly enter the most common option"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
+      "override",
+      "freeform",
+      "invalidValues"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What values of the freeform key should be interpreted as 'unknown'?",
+      "ifunset": "The question will be considered answered if any value is set for the key"
+    },
+    "type": "array",
+    "description": "For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked"
   },
   {
     "path": [
@@ -35045,6 +35163,23 @@
       "override",
       "tagRenderings",
       "renderings",
+      "freeform",
+      "invalidValues"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What values of the freeform key should be interpreted as 'unknown'?",
+      "ifunset": "The question will be considered answered if any value is set for the key"
+    },
+    "type": "array",
+    "description": "For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
+      "renderings",
       "question"
     ],
     "required": false,
@@ -36203,6 +36338,24 @@
     },
     "type": "string",
     "description": "This can help people to quickly enter the most common option"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
+      "renderings",
+      "override",
+      "freeform",
+      "invalidValues"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What values of the freeform key should be interpreted as 'unknown'?",
+      "ifunset": "The question will be considered answered if any value is set for the key"
+    },
+    "type": "array",
+    "description": "For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked"
   },
   {
     "path": [

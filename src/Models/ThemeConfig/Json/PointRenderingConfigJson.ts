@@ -1,4 +1,4 @@
-import { TagRenderingConfigJson } from "./TagRenderingConfigJson"
+import { MinimalTagRenderingConfigJson, TagRenderingConfigJson } from "./TagRenderingConfigJson"
 import { TagConfigJson } from "./TagConfigJson"
 
 export interface IconConfigJson {
@@ -7,13 +7,13 @@ export interface IconConfigJson {
      * type: icon
      * suggestions: return ["pin","square","circle","checkmark","clock","close","crosshair","help","home","invalid","location","location_empty","location_locked","note","resolved","ring","scissors","teardrop","teardrop_with_hole_green","triangle"].map(i => ({if: "value="+i, then: i, icon: i}))
      */
-    icon: string | TagRenderingConfigJson | { builtin: string; override: any }
+    icon: string | MinimalTagRenderingConfigJson | { builtin: string; override: any }
     /**
      * question: What colour should the icon be?
      * This will only work for the default icons such as `pin`,`circle`,...
      * type: color
      */
-    color?: string | TagRenderingConfigJson | { builtin: string; override: any }
+    color?: string | MinimalTagRenderingConfigJson | { builtin: string; override: any }
 }
 
 /**
@@ -57,7 +57,7 @@ export default interface PointRenderingConfigJson {
          * Badge to show
          * Type: icon
          */
-        then: string | TagRenderingConfigJson
+        then: string | MinimalTagRenderingConfigJson
     }[]
 
     /**

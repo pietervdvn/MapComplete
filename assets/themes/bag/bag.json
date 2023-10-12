@@ -126,7 +126,9 @@
             "point",
             "centroid"
           ]
-        },
+        }
+      ],
+      "lineRendering": [
         {
           "width": {
             "render": 1
@@ -306,9 +308,29 @@
           "render": "The current function of the building is <b>{gebruiksdoel}</b>"
         }
       ],
-      "pointRendering": [],
+      "pointRendering": [
+        {
+          "label": {
+            "render": "<div style='color: black' class='rounded-full p-1 font-bold relative'>{_bag_obj:addr:housenumber}</div>",
+            "mappings": [
+              {
+                "if": "_imported_osm_object_found=true",
+                "then": "<div style='color: #107c10' class='rounded-full p-1 font-bold relative'>{_bag_obj:addr:housenumber}</div>"
+              }
+            ]
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        }
+      ],
       "lineRendering": [
-        {}
+        {
+          "width": {
+            "render": 1
+          }
+        }
       ]
     },
     {
@@ -345,9 +367,29 @@
           "render": "{openbare_ruimte} {_bag_obj:addr:housenumber}, {woonplaats} {postcode}"
         }
       ],
-      "pointRendering": [],
+      "pointRendering": [
+        {
+          "label": {
+            "render": "<div style='color: black' class='rounded-full p-1 font-bold relative'>{_bag_obj:addr:housenumber}</div>",
+            "mappings": [
+              {
+                "if": "_imported_osm_object_found=true",
+                "then": "<div style='color: #107c10' class='rounded-full p-1 font-bold relative'>{_bag_obj:addr:housenumber}</div>"
+              }
+            ]
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        }
+      ],
       "lineRendering": [
-        {}
+        {
+          "width": {
+            "render": 1
+          }
+        }
       ]
     }
   ],

@@ -1,6 +1,7 @@
 import LayoutConfig from "../../../../src/Models/ThemeConfig/LayoutConfig"
 import { FixLegacyTheme } from "../../../../src/Models/ThemeConfig/Conversion/LegacyJsonConvert"
 import { describe, expect, it } from "vitest"
+import { ConversionContext } from "../../../../src/Models/ThemeConfig/Conversion/Conversion"
 
 describe("FixLegacyTheme", () => {
     it("should create a working theme config", () => {
@@ -133,10 +134,11 @@ describe("FixLegacyTheme", () => {
                 },
             ],
         }
-        const fixed = new FixLegacyTheme().convert(<any>walking_node_theme, "While testing")
+        const context = ConversionContext.test()
+        const fixed = new FixLegacyTheme().convert(<any>walking_node_theme, context)
         // "Could not fix the legacy theme"
-        expect(fixed.errors).empty
-        const theme = new LayoutConfig(fixed.result, false)
+        expect(!context.hasErrors())
+        const theme = new LayoutConfig(fixed, false)
         expect(theme).toBeDefined()
     })
 })

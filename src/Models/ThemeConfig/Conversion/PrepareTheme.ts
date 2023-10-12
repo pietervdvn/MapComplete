@@ -172,7 +172,13 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
         for (const layerName of Constants.added_by_default) {
             const v = state.sharedLayers.get(layerName)
             if (v === undefined) {
-                context.err("Default layer " + layerName + " not found")
+                context.err(
+                    "Default layer " +
+                        layerName +
+                        " not found. " +
+                        state.sharedLayers.size +
+                        " layers are available"
+                )
                 continue
             }
             if (alreadyLoaded.has(v.id)) {

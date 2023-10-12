@@ -27,7 +27,7 @@
     if (layerId === "") {
       return;
     }
-    if (layers.data.has(layerId)) {
+    if (layers.data?.has(layerId)) {
       layerIdFeedback.setData("This id is already used");
     }
   }, [layers]);
@@ -40,6 +40,15 @@
     console.log(icon);
     return icon;
   }
+  
+async  function createNewLayer(){
+    state = "loading"
+    const id = newLayerId.data
+    const createdBy = osmConnection.userDetails.data.name
+
+    const loaded = await studio.fetchLayer(id, true)
+    initialLayerConfig = loaded ?? {id, credits: createdBy};
+    state = "editing_layer"}
   
   let osmConnection = new OsmConnection( new OsmConnection({
     oauth_token: QueryParameters.GetQueryParameter(
@@ -91,23 +100,29 @@
     {/each}
   </div>
 {:else if state === "new_layer"}
-  <ValidatedInput type="id" value={newLayerId} feedback={layerIdFeedback} />
+  <div class="interactive flex m-2 rounded-2xl flex-col p-2">
+  <h3>Enter the ID for the new layer</h3>
+  A good ID is:
+  <ul>
+    <li>a noun</li>
+    <li>singular</li>
+    <li>describes the object</li>
+    <li>in English</li>
+  </ul>
+    <div class="m-2 p-2 w-full">
+      
+  <ValidatedInput  type="id" value={newLayerId} feedback={layerIdFeedback} on:submit={() => createNewLayer()}/>
+    </div>
   {#if $layerIdFeedback !== undefined}
     <div class="alert">
       {$layerIdFeedback}
     </div>
   {:else }
-    <NextButton on:click={async () => {
-      state = "loading"
-      const id = newLayerId.data
-        const createdBy = osmConnection.userDetails.data.name
-      
-      const loaded = await studio.fetchLayer(id, true)
-      initialLayerConfig = loaded ?? {id, credits: createdBy};
-      state = "editing_layer"}}>
-      Create this layer
+    <NextButton clss="primary" on:click={() => createNewLayer()}>
+      Create layer {$newLayerId}
     </NextButton>
   {/if}
+  </div>
 {:else if state === "loading"}
   <div class="w-8 h-8">
     <Loading />
