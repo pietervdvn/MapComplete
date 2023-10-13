@@ -139,7 +139,8 @@
             "fixme=freeform shop key used, to be reviewed"
           ]
         },
-        "condition": "craft="
+        "condition": "craft=",
+        "invalidValues": "shop=yes"
       }
     },
     "opening_hours",
