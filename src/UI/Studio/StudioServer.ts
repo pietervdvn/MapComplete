@@ -3,15 +3,15 @@ import Constants from "../../Models/Constants"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
 
 export default class StudioServer {
-    private _url: string
+    private readonly url: string
 
     constructor(url: string) {
-        this._url = url
+        this.url = url
     }
 
     public async fetchLayerOverview(): Promise<Set<string>> {
         const { allFiles } = <{ allFiles: string[] }>(
-            await Utils.downloadJson(this._url + "/overview")
+            await Utils.downloadJson(this.url + "/overview")
         )
         const layers = allFiles
             .filter((f) => f.startsWith("layers/"))
@@ -20,19 +20,27 @@ export default class StudioServer {
         return new Set<string>(layers)
     }
 
-    async fetchLayer(layerId: string, checkNew: boolean = false): Promise<LayerConfigJson> {
+    async fetchLayer(layerId: string): Promise<LayerConfigJson> {
         try {
             return await Utils.downloadJson(
-                this._url +
-                    "/layers/" +
-                    layerId +
-                    "/" +
-                    layerId +
-                    ".json" +
-                    (checkNew ? ".new.json" : "")
+                this.url + "/layers/" + layerId + "/" + layerId + ".json"
             )
         } catch (e) {
             return undefined
         }
+    }
+
+    async updateLayer(config: LayerConfigJson) {
+        const id = config.id
+        if (id === undefined || id === "") {
+            return
+        }
+        await fetch(`${this.url}/layers/${id}/${id}.json`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json;charset=utf-8",
+            },
+            body: JSON.stringify(config, null, "  "),
+        })
     }
 }

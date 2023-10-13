@@ -100,6 +100,7 @@
     try {
         onDestroy(state.register(path, tags.map(tgs => {
             const v = tgs["value"];
+            console.log("Registering",path,"setting value to", v)
             if(typeof v !== "string"){
                 return v
             }
@@ -116,6 +117,9 @@
               }
             }
             if (schema.type === "number") {
+                if(v === ""){
+                  return undefined
+                }
                 return Number(v)
             }
             if (isTranslation) {

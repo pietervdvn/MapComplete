@@ -13,26 +13,21 @@ import { PrepareLayer } from "../../Models/ThemeConfig/Conversion/PrepareLayer"
 import { ValidateLayer } from "../../Models/ThemeConfig/Conversion/Validation"
 import { AllSharedLayers } from "../../Customizations/AllSharedLayers"
 import { QuestionableTagRenderingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+import { TagUtils } from "../../Logic/Tags/TagUtils"
+import StudioServer from "./StudioServer"
 
 /**
  * Sends changes back to the server
  */
 export class LayerStateSender {
-    constructor(serverLocation: string, layerState: EditLayerState) {
+    constructor(layerState: EditLayerState) {
         layerState.configuration.addCallback(async (config) => {
-            // console.log("Current config is", Utils.Clone(config))
             const id = config.id
             if (id === undefined) {
-                console.log("No id found in layer, not updating")
+                console.warn("No id found in layer, not updating")
                 return
             }
-            const fresponse = await fetch(`${serverLocation}/layers/${id}/${id}.json`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json;charset=utf-8",
-                },
-                body: JSON.stringify(config, null, "  "),
-            })
+            await layerState.server.updateLayer(<LayerConfigJson>config)
         })
     }
 }
@@ -47,9 +42,11 @@ export default class EditLayerState {
         Partial<LayerConfigJson>
     >({})
     public readonly messages: Store<ConversionMessage[]>
+    public readonly server: StudioServer
 
-    constructor(schema: ConfigMeta[]) {
+    constructor(schema: ConfigMeta[], server: StudioServer) {
         this.schema = schema
+        this.server = server
         this.osmConnection = new OsmConnection({
             oauth_token: QueryParameters.GetQueryParameter(
                 "oauth_token",
@@ -73,18 +70,36 @@ export default class EditLayerState {
                 sharedLayers: layers,
             }
         }
-        this.messages = this.configuration.map((config) => {
+        this.messages = this.configuration.mapD((config) => {
             const context = ConversionContext.construct([], ["prepare"])
+
+            for (let i = 0; i < (config.tagRenderings ?? []).length; i++) {
+                const tr = config.tagRenderings[i]
+                if (typeof tr === "string") {
+                    continue
+                }
+                if (!tr["id"] && !tr["override"]) {
+                    const qtr = <QuestionableTagRenderingConfigJson>tr
+                    let id = "" + i
+                    if (qtr?.freeform?.key) {
+                        id = qtr?.freeform?.key
+                    } else if (qtr.mappings?.[0]?.if) {
+                        id =
+                            qtr.freeform?.key ??
+                            TagUtils.Tag(qtr.mappings[0].if).usedKeys()?.[0] ??
+                            "" + i
+                    }
+                    qtr["id"] = id
+                }
+            }
 
             const prepare = new Pipe(
                 new PrepareLayer(state),
                 new ValidateLayer("dynamic", false, undefined)
             )
             prepare.convert(<LayerConfigJson>config, context)
-            console.log(context.messages)
             return context.messages
         })
-        console.log("Configuration store:", this.configuration)
     }
 
     public getCurrentValueFor(path: ReadonlyArray<string | number>): any | undefined {
@@ -104,7 +119,6 @@ export default class EditLayerState {
     public getStoreFor(path: ReadonlyArray<string | number>): UIEventSource<any | undefined> {
         const store = new UIEventSource<any>(this.getCurrentValueFor(path))
         store.addCallback((v) => {
-            console.log("UPdating store", path, v)
             this.setValueAt(path, v)
         })
         return store
@@ -156,7 +170,6 @@ export default class EditLayerState {
 
     public setValueAt(path: ReadonlyArray<string | number>, v: any) {
         let entry = this.configuration.data
-        console.log("Setting value", v, "to", path, "in entry", entry)
         for (let i = 0; i < path.length - 1; i++) {
             const breadcrumb = path[i]
             if (entry[breadcrumb] === undefined) {

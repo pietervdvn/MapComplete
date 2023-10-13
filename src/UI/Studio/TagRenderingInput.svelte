@@ -82,6 +82,7 @@ const freeformSchema = <ConfigMeta[]>  questionableTagRenderingSchemaRaw.filter(
 
     <SchemaBasedField {state} path={[...path,"question"]} schema={topLevelItems["question"]}></SchemaBasedField>
     <SchemaBasedField {state} path={[...path,"questionHint"]} schema={topLevelItems["questionHint"]}></SchemaBasedField>
+    <SchemaBasedField {state} path={[...path,"render"]} schema={topLevelItems["render"]}></SchemaBasedField>
 
     {#each ($mappings ?? []) as mapping, i (mapping)}
       <div class="flex interactive w-full">
@@ -102,7 +103,12 @@ const freeformSchema = <ConfigMeta[]>  questionableTagRenderingSchemaRaw.filter(
       Add a mapping
     </button>
 
+    <SchemaBasedField {state} path={[...path,"multiAnswer"]} schema={topLevelItems["multiAnswer"]}></SchemaBasedField>
+    
+    <div class="border border-gray-200 border-dashed">
+      <h3>Text field and input element configuration</h3>
     <Region {state} {path} configs={freeformSchema}/>
+    </div>
 
   </div>
 {/if}

@@ -731,6 +731,77 @@ export class ValidateLayer extends Conversion<
             return null
         }
 
+        if (typeof json === "string") {
+            context.err(
+                `Not a valid layer: the layerConfig is a string. 'npm run generate:layeroverview' might be needed`
+            )
+            return undefined
+        }
+
+        if (json.id === undefined) {
+            context.err(`Not a valid layer: id is undefined: ${JSON.stringify(json)}`)
+        }
+
+        if (json.source === undefined) {
+            context.enter("source").err("No source section is defined")
+        } else {
+            if (json.source === "special" || json.source === "special:library") {
+            } else if (json.source && json.source["osmTags"] === undefined) {
+                context
+                    .enters("source", "osmTags")
+                    .err(
+                        "No osmTags defined in the source section - these should always be present, even for geojson layer"
+                    )
+            } else {
+                const osmTags = TagUtils.Tag(json.source["osmTags"], context + "source.osmTags")
+                if (osmTags.isNegative()) {
+                    context
+                        .enters("source", "osmTags")
+                        .err(
+                            "The source states tags which give a very wide selection: it only uses negative expressions, which will result in too much and unexpected data. Add at least one required tag. The tags are:\n\t" +
+                                osmTags.asHumanString(false, false, {})
+                        )
+                }
+            }
+
+            if (json.source["geoJsonSource"] !== undefined) {
+                context
+                    .enters("source", "geoJsonSource")
+                    .err("Use 'geoJson' instead of 'geoJsonSource'")
+            }
+
+            if (json.source["geojson"] !== undefined) {
+                context
+                    .enters("source", "geojson")
+                    .err("Use 'geoJson' instead of 'geojson' (the J is a capital letter)")
+            }
+        }
+
+        if (json.id?.toLowerCase() !== json.id) {
+            context.enter("id").err(`The id of a layer should be lowercase: ${json.id}`)
+        }
+        if (json.id?.match(/[a-z0-9-_]/) == null) {
+            context.enter("id").err(`The id of a layer should match [a-z0-9-_]*: ${json.id}`)
+        }
+
+        if (
+            json.syncSelection !== undefined &&
+            LayerConfig.syncSelectionAllowed.indexOf(json.syncSelection) < 0
+        ) {
+            context
+                .enter("syncSelection")
+                .err(
+                    "Invalid sync-selection: must be one of " +
+                        LayerConfig.syncSelectionAllowed.map((v) => `'${v}'`).join(", ") +
+                        " but got '" +
+                        json.syncSelection +
+                        "'"
+                )
+        }
+
+        if (context.hasErrors()) {
+            return undefined
+        }
         let layerConfig: LayerConfig
         try {
             layerConfig = new LayerConfig(json, "validation", true)

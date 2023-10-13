@@ -141,7 +141,7 @@
        */
       const kv = selectedTags.asChange(tags.data);
       for (const { k, v } of kv) {
-        if (v === undefined) {
+        if (v === undefined || v === "") {
           delete tags.data[k];
         } else {
           tags.data[k] = v;

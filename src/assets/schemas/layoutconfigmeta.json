@@ -328,7 +328,7 @@
             "type": "number"
           },
           "title": {
-            "description": "question: What title should be shown on the infobox?\nThe title shown in a popup for elements of this layer.\n\ngroup: title\ntypes: use a fixed translation ; Use a dynamic tagRendering ; hidden\ntypesdefault: 1\ntype: translation",
+            "description": "question: What title should be shown on the infobox?\nThe title shown in a popup for elements of this layer.\n\ngroup: title\ntypes: use a fixed translation ; Use a dynamic tagRendering ; hidden\ntypesdefault: 1\ntype: translation\ninline: {translated{value}}",
             "anyOf": [
               {
                 "$ref": "#/definitions/Record<string,string>"
@@ -582,7 +582,7 @@
               "type": "object",
               "properties": {
                 "title": {
-                  "description": "The title - shown on the 'add-new'-button.\n\nThis should include the article of the noun, e.g. 'a hydrant', 'a bicycle pump'.\nThis text will be inserted into `Add {category} here`, becoming `Add a hydrant here`.\n\nDo _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!\n\nquestion: What is the word to describe this object?\ninline: Add <b>{value}</b> here",
+                  "description": "The title - shown on the 'add-new'-button.\n\nThis should include the article of the noun, e.g. 'a hydrant', 'a bicycle pump'.\nThis text will be inserted into `Add {category} here`, becoming `Add a hydrant here`.\n\nDo _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!\n\nquestion: What is the word to describe this object?\ninline: Add <b>{translated(value)}</b> here",
                   "anyOf": [
                     {
                       "$ref": "#/definitions/Record<string,string>"
@@ -625,7 +625,7 @@
                   }
                 },
                 "maxSnapDistance": {
-                  "description": "question: What is the maximum distance in the location-input that a point can be moved to be snapped to a way?\n\ninline: a point is snapped if the location input is at most <b>{value}m</b> away from an object\n\nIf specified, a new point will only be snapped if it is within this range.\nIf further away, it'll be placed in the center of the location input\nDistance in meter\n\nDefault: 10",
+                  "description": "question: What is the maximum distance in the location-input that a point can be moved to be snapped to a way?\n\ninline: a point is snapped if the location input is at most <b>{value}m</b> away from an object\n\nIf specified, a new point will only be snapped if it is within this range.\nIf further away, it'll be placed in the center of the location input\nDistance in meter\n\nifunset: Do not snap to a layer",
                   "type": "number"
                 }
               },
@@ -695,10 +695,17 @@
                         },
                         "invalidValues": {
                           "description": "question: What values of the freeform key should be interpreted as 'unknown'?\nFor example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked\nifunset: The question will be considered answered if any value is set for the key",
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
+                          "anyOf": [
+                            {
+                              "$ref": "#/definitions/{and:TagConfigJson[];}"
+                            },
+                            {
+                              "$ref": "#/definitions/{or:TagConfigJson[];}"
+                            },
+                            {
+                              "type": "string"
+                            }
+                          ]
                         }
                       },
                       "required": [
@@ -926,7 +933,7 @@
             ]
           },
           "deletion": {
-            "description": "This block defines under what circumstances the delete dialog is shown for objects of this layer.\nIf set, a dialog is shown to the user to (soft) delete the point.\nThe dialog is built to be user friendly and to prevent mistakes.\nIf deletion is not possible, the dialog will hide itself and show the reason of non-deletability instead.\n\nTo configure, the following values are possible:\n\n- false: never ever show the delete button\n- true: show the default delete button\n- undefined: use the mapcomplete default to show deletion or not. Currently, this is the same as 'false' but this will change in the future\n- or: a hash with options (see below)\n\n### The delete dialog\n\n\n\n#### Hard deletion if enough experience\n\nA feature can only be deleted from OpenStreetMap by mapcomplete if:\n\n- It is a node\n- No ways or relations use the node\n- The logged-in user has enough experience OR the user is the only one to have edited the point previously\n- The logged-in user has no unread messages (or has a ton of experience)\n- The user did not select one of the 'non-delete-options' (see below)\n\nIn all other cases, a 'soft deletion' is used.\n\n#### Soft deletion\n\nA 'soft deletion' is when the point isn't deleted fromOSM but retagged so that it'll won't how up in the mapcomplete theme anymore.\nThis makes it look like it was deleted, without doing damage. A fixme will be added to the point.\n\nNote that a soft deletion is _only_ possible if these tags are provided by the theme creator, as they'll be different for every theme\n\n##### No-delete options\n\nIn some cases, the contributor might want to delete something for the wrong reason (e.g. someone who wants to have a path removed \"because the path is on their private property\").\nHowever, the path exists in reality and should thus be on OSM - otherwise the next contributor will pass by and notice \"hey, there is a path missing here! Let me redraw it in OSM!)\n\nThe correct approach is to retag the feature in such a way that it is semantically correct *and* that it doesn't show up on the theme anymore.\nA no-delete option is offered as 'reason to delete it', but secretly retags.\n\ngroup: editing\ntypes: Use an advanced delete configuration ; boolean\niftrue: Allow deletion\niffalse: Do not allow deletion",
+            "description": "This block defines under what circumstances the delete dialog is shown for objects of this layer.\nIf set, a dialog is shown to the user to (soft) delete the point.\nThe dialog is built to be user friendly and to prevent mistakes.\nIf deletion is not possible, the dialog will hide itself and show the reason of non-deletability instead.\n\nTo configure, the following values are possible:\n\n- false: never ever show the delete button\n- true: show the default delete button\n- undefined: use the mapcomplete default to show deletion or not. Currently, this is the same as 'false' but this will change in the future\n- or: a hash with options (see below)\n\n### The delete dialog\n\n\n\n#### Hard deletion if enough experience\n\nA feature can only be deleted from OpenStreetMap by mapcomplete if:\n\n- It is a node\n- No ways or relations use the node\n- The logged-in user has enough experience OR the user is the only one to have edited the point previously\n- The logged-in user has no unread messages (or has a ton of experience)\n- The user did not select one of the 'non-delete-options' (see below)\n\nIn all other cases, a 'soft deletion' is used.\n\n#### Soft deletion\n\nA 'soft deletion' is when the point isn't deleted fromOSM but retagged so that it'll won't how up in the mapcomplete theme anymore.\nThis makes it look like it was deleted, without doing damage. A fixme will be added to the point.\n\nNote that a soft deletion is _only_ possible if these tags are provided by the theme creator, as they'll be different for every theme\n\n##### No-delete options\n\nIn some cases, the contributor might want to delete something for the wrong reason (e.g. someone who wants to have a path removed \"because the path is on their private property\").\nHowever, the path exists in reality and should thus be on OSM - otherwise the next contributor will pass by and notice \"hey, there is a path missing here! Let me redraw it in OSM!)\n\nThe correct approach is to retag the feature in such a way that it is semantically correct *and* that it doesn't show up on the theme anymore.\nA no-delete option is offered as 'reason to delete it', but secretly retags.\n\ngroup: editing\ntypes: Use an advanced delete configuration ; boolean\niftrue: Allow deletion\niffalse: Do not allow deletion\nifunset: Do not allow deletion",
             "anyOf": [
               {
                 "type": "object",
@@ -1503,7 +1510,8 @@
       "types": "use a fixed translation ; Use a dynamic tagRendering ; hidden",
       "typesdefault": "1",
       "group": "title",
-      "question": "What title should be shown on the infobox?"
+      "question": "What title should be shown on the infobox?",
+      "inline": "{translated{value}}"
     },
     "type": [
       {
@@ -2898,110 +2906,12 @@
     },
     "type": [
       {
-        "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one",
+        "description": "Mostly used for lineRendering and pointRendering",
         "type": "object",
         "properties": {
           "render": {
-            "description": "question: What text should be rendered?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`\ntype: rendered",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/Record<string,string>"
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "special": {
-                    "allOf": [
-                      {
-                        "$ref": "#/definitions/Record<string,string|Record<string,string>>"
-                      },
-                      {
-                        "type": "object",
-                        "properties": {
-                          "type": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "type"
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "required": [
-                  "special"
-                ]
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "icon": {
-            "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon",
-            "anyOf": [
-              {
-                "type": "object",
-                "properties": {
-                  "path": {
-                    "description": "The path to the icon\nType: icon",
-                    "type": "string"
-                  },
-                  "class": {
-                    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "path"
-                ]
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "condition": {
-            "description": "question: When should this item be shown?\n\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/{and:TagConfigJson[];}"
-              },
-              {
-                "$ref": "#/definitions/{or:TagConfigJson[];}"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "metacondition": {
-            "description": "question: When should this item be shown (including special conditions)?\n\nIf set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/{and:TagConfigJson[];}"
-              },
-              {
-                "$ref": "#/definitions/{or:TagConfigJson[];}"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "freeform": {
-            "description": "question: Should a freeform text field be shown?\nAllow freeform text input from the user\nifunset: Do not add a freeform text field",
-            "type": "object",
-            "properties": {
-              "key": {
-                "description": "What attribute should be filled out\nIf this key is present in the feature, then 'render' is used to display the value.\nIf this is undefined, the rendering is _always_ shown",
-                "type": "string"
-              }
-            },
-            "required": [
-              "key"
-            ]
+            "description": "question: What value should be rendered?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`",
+            "type": "string"
           },
           "mappings": {
             "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes",
@@ -3014,39 +2924,8 @@
                   "description": "question: When should this single mapping match?\n\nIf this condition is met, then the text under `then` will be shown.\nIf no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.\n\nFor example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}\n\nThis can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}"
                 },
                 "then": {
-                  "description": "question: What text should be shown?\n\nIf the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option\nType: rendered",
-                  "anyOf": [
-                    {
-                      "$ref": "#/definitions/Record<string,string>"
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
-                },
-                "icon": {
-                  "description": "question: What icon should be added to this mapping?\nAn icon supporting this mapping; typically shown pretty small\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
-                  "anyOf": [
-                    {
-                      "type": "object",
-                      "properties": {
-                        "path": {
-                          "description": "The path to the icon\nType: icon",
-                          "type": "string"
-                        },
-                        "class": {
-                          "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "path"
-                      ]
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
+                  "description": "question: What text should be shown?\n\nIf the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option",
+                  "type": "string"
                 }
               },
               "required": [
@@ -3054,21 +2933,6 @@
                 "then"
               ]
             }
-          },
-          "description": {
-            "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/Record<string,string>"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "classes": {
-            "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
-            "type": "string"
           }
         },
         "additionalProperties": false
@@ -3102,338 +2966,10 @@
     ],
     "required": false,
     "hints": {
-      "typehint": "rendered",
-      "question": "What text should be rendered?"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "special": {
-            "allOf": [
-              {
-                "$ref": "#/definitions/Record<string,string|Record<string,string>>"
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "type": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "type"
-                ]
-              }
-            ]
-          }
-        },
-        "required": [
-          "special"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "This piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "icon",
-      "icon"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "icon",
-      "question": "what icon should be shown next to the 'render' value?"
-    },
-    "type": [
-      {
-        "type": "object",
-        "properties": {
-          "path": {
-            "description": "The path to the icon\nType: icon",
-            "type": "string"
-          },
-          "class": {
-            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-            "type": "string"
-          }
-        },
-        "required": [
-          "path"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "An icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "icon",
-      "icon",
-      "path"
-    ],
-    "required": true,
-    "hints": {
-      "typehint": "icon"
+      "question": "What value should be rendered?"
     },
     "type": "string",
-    "description": "The path to the icon"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "icon",
-      "icon",
-      "class"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "string",
-    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "icon",
-      "condition"
-    ],
-    "required": false,
-    "hints": {
-      "question": "When should this item be shown?"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "$ref": "#/definitions/{or:TagConfigJson[];}"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "icon",
-      "condition",
-      "and"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "icon",
-      "condition",
-      "or"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "icon",
-      "metacondition"
-    ],
-    "required": false,
-    "hints": {
-      "question": "When should this item be shown (including special conditions)?"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "$ref": "#/definitions/{or:TagConfigJson[];}"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "If set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "icon",
-      "metacondition",
-      "and"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "icon",
-      "metacondition",
-      "or"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "icon",
-      "freeform"
-    ],
-    "required": false,
-    "hints": {
-      "question": "Should a freeform text field be shown?",
-      "ifunset": "Do not add a freeform text field"
-    },
-    "type": "object",
-    "description": "Allow freeform text input from the user"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "icon",
-      "freeform",
-      "key"
-    ],
-    "required": true,
-    "hints": {},
-    "type": "string",
-    "description": "What attribute should be filled out\nIf this key is present in the feature, then 'render' is used to display the value.\nIf this is undefined, the rendering is _always_ shown"
+    "description": "This piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`"
   },
   {
     "path": [
@@ -3497,123 +3033,10 @@
     ],
     "required": true,
     "hints": {
-      "typehint": "rendered",
       "question": "What text should be shown?"
     },
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
+    "type": "string",
     "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "icon",
-      "mappings",
-      "icon"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "icon",
-      "question": "What icon should be added to this mapping?",
-      "inline": "<img src='{icon}' class=\"w-8 h-8\" /> {icon}"
-    },
-    "type": [
-      {
-        "type": "object",
-        "properties": {
-          "path": {
-            "description": "The path to the icon\nType: icon",
-            "type": "string"
-          },
-          "class": {
-            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-            "type": "string"
-          }
-        },
-        "required": [
-          "path"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "An icon supporting this mapping; typically shown pretty small"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "icon",
-      "mappings",
-      "icon",
-      "path"
-    ],
-    "required": true,
-    "hints": {
-      "typehint": "icon"
-    },
-    "type": "string",
-    "description": "The path to the icon"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "icon",
-      "mappings",
-      "icon",
-      "class"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "string",
-    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "icon",
-      "description"
-    ],
-    "required": false,
-    "hints": {},
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "icon",
-      "classes"
-    ],
-    "required": false,
-    "hints": {
-      "question": "What css-classes should be applied to showing this attribute?"
-    },
-    "type": "string",
-    "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
   },
   {
     "path": [
@@ -3629,110 +3052,12 @@
     },
     "type": [
       {
-        "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one",
+        "description": "Mostly used for lineRendering and pointRendering",
         "type": "object",
         "properties": {
           "render": {
-            "description": "question: What text should be rendered?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`\ntype: rendered",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/Record<string,string>"
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "special": {
-                    "allOf": [
-                      {
-                        "$ref": "#/definitions/Record<string,string|Record<string,string>>"
-                      },
-                      {
-                        "type": "object",
-                        "properties": {
-                          "type": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "type"
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "required": [
-                  "special"
-                ]
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "icon": {
-            "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon",
-            "anyOf": [
-              {
-                "type": "object",
-                "properties": {
-                  "path": {
-                    "description": "The path to the icon\nType: icon",
-                    "type": "string"
-                  },
-                  "class": {
-                    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "path"
-                ]
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "condition": {
-            "description": "question: When should this item be shown?\n\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/{and:TagConfigJson[];}"
-              },
-              {
-                "$ref": "#/definitions/{or:TagConfigJson[];}"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "metacondition": {
-            "description": "question: When should this item be shown (including special conditions)?\n\nIf set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/{and:TagConfigJson[];}"
-              },
-              {
-                "$ref": "#/definitions/{or:TagConfigJson[];}"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "freeform": {
-            "description": "question: Should a freeform text field be shown?\nAllow freeform text input from the user\nifunset: Do not add a freeform text field",
-            "type": "object",
-            "properties": {
-              "key": {
-                "description": "What attribute should be filled out\nIf this key is present in the feature, then 'render' is used to display the value.\nIf this is undefined, the rendering is _always_ shown",
-                "type": "string"
-              }
-            },
-            "required": [
-              "key"
-            ]
+            "description": "question: What value should be rendered?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`",
+            "type": "string"
           },
           "mappings": {
             "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes",
@@ -3745,39 +3070,8 @@
                   "description": "question: When should this single mapping match?\n\nIf this condition is met, then the text under `then` will be shown.\nIf no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.\n\nFor example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}\n\nThis can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}"
                 },
                 "then": {
-                  "description": "question: What text should be shown?\n\nIf the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option\nType: rendered",
-                  "anyOf": [
-                    {
-                      "$ref": "#/definitions/Record<string,string>"
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
-                },
-                "icon": {
-                  "description": "question: What icon should be added to this mapping?\nAn icon supporting this mapping; typically shown pretty small\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
-                  "anyOf": [
-                    {
-                      "type": "object",
-                      "properties": {
-                        "path": {
-                          "description": "The path to the icon\nType: icon",
-                          "type": "string"
-                        },
-                        "class": {
-                          "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "path"
-                      ]
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
+                  "description": "question: What text should be shown?\n\nIf the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option",
+                  "type": "string"
                 }
               },
               "required": [
@@ -3785,21 +3079,6 @@
                 "then"
               ]
             }
-          },
-          "description": {
-            "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/Record<string,string>"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "classes": {
-            "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
-            "type": "string"
           }
         },
         "additionalProperties": false
@@ -3833,338 +3112,10 @@
     ],
     "required": false,
     "hints": {
-      "typehint": "rendered",
-      "question": "What text should be rendered?"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "special": {
-            "allOf": [
-              {
-                "$ref": "#/definitions/Record<string,string|Record<string,string>>"
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "type": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "type"
-                ]
-              }
-            ]
-          }
-        },
-        "required": [
-          "special"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "This piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "color",
-      "icon"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "icon",
-      "question": "what icon should be shown next to the 'render' value?"
-    },
-    "type": [
-      {
-        "type": "object",
-        "properties": {
-          "path": {
-            "description": "The path to the icon\nType: icon",
-            "type": "string"
-          },
-          "class": {
-            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-            "type": "string"
-          }
-        },
-        "required": [
-          "path"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "An icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "color",
-      "icon",
-      "path"
-    ],
-    "required": true,
-    "hints": {
-      "typehint": "icon"
+      "question": "What value should be rendered?"
     },
     "type": "string",
-    "description": "The path to the icon"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "color",
-      "icon",
-      "class"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "string",
-    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "color",
-      "condition"
-    ],
-    "required": false,
-    "hints": {
-      "question": "When should this item be shown?"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "$ref": "#/definitions/{or:TagConfigJson[];}"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "color",
-      "condition",
-      "and"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "color",
-      "condition",
-      "or"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "color",
-      "metacondition"
-    ],
-    "required": false,
-    "hints": {
-      "question": "When should this item be shown (including special conditions)?"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "$ref": "#/definitions/{or:TagConfigJson[];}"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "If set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "color",
-      "metacondition",
-      "and"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "color",
-      "metacondition",
-      "or"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "color",
-      "freeform"
-    ],
-    "required": false,
-    "hints": {
-      "question": "Should a freeform text field be shown?",
-      "ifunset": "Do not add a freeform text field"
-    },
-    "type": "object",
-    "description": "Allow freeform text input from the user"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "color",
-      "freeform",
-      "key"
-    ],
-    "required": true,
-    "hints": {},
-    "type": "string",
-    "description": "What attribute should be filled out\nIf this key is present in the feature, then 'render' is used to display the value.\nIf this is undefined, the rendering is _always_ shown"
+    "description": "This piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`"
   },
   {
     "path": [
@@ -4228,123 +3179,10 @@
     ],
     "required": true,
     "hints": {
-      "typehint": "rendered",
       "question": "What text should be shown?"
     },
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
+    "type": "string",
     "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "color",
-      "mappings",
-      "icon"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "icon",
-      "question": "What icon should be added to this mapping?",
-      "inline": "<img src='{icon}' class=\"w-8 h-8\" /> {icon}"
-    },
-    "type": [
-      {
-        "type": "object",
-        "properties": {
-          "path": {
-            "description": "The path to the icon\nType: icon",
-            "type": "string"
-          },
-          "class": {
-            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-            "type": "string"
-          }
-        },
-        "required": [
-          "path"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "An icon supporting this mapping; typically shown pretty small"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "color",
-      "mappings",
-      "icon",
-      "path"
-    ],
-    "required": true,
-    "hints": {
-      "typehint": "icon"
-    },
-    "type": "string",
-    "description": "The path to the icon"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "color",
-      "mappings",
-      "icon",
-      "class"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "string",
-    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "color",
-      "description"
-    ],
-    "required": false,
-    "hints": {},
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "marker",
-      "color",
-      "classes"
-    ],
-    "required": false,
-    "hints": {
-      "question": "What css-classes should be applied to showing this attribute?"
-    },
-    "type": "string",
-    "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
   },
   {
     "path": [
@@ -4405,110 +3243,12 @@
     },
     "type": [
       {
-        "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one",
+        "description": "Mostly used for lineRendering and pointRendering",
         "type": "object",
         "properties": {
           "render": {
-            "description": "question: What text should be rendered?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`\ntype: rendered",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/Record<string,string>"
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "special": {
-                    "allOf": [
-                      {
-                        "$ref": "#/definitions/Record<string,string|Record<string,string>>"
-                      },
-                      {
-                        "type": "object",
-                        "properties": {
-                          "type": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "type"
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "required": [
-                  "special"
-                ]
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "icon": {
-            "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon",
-            "anyOf": [
-              {
-                "type": "object",
-                "properties": {
-                  "path": {
-                    "description": "The path to the icon\nType: icon",
-                    "type": "string"
-                  },
-                  "class": {
-                    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "path"
-                ]
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "condition": {
-            "description": "question: When should this item be shown?\n\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/{and:TagConfigJson[];}"
-              },
-              {
-                "$ref": "#/definitions/{or:TagConfigJson[];}"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "metacondition": {
-            "description": "question: When should this item be shown (including special conditions)?\n\nIf set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/{and:TagConfigJson[];}"
-              },
-              {
-                "$ref": "#/definitions/{or:TagConfigJson[];}"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "freeform": {
-            "description": "question: Should a freeform text field be shown?\nAllow freeform text input from the user\nifunset: Do not add a freeform text field",
-            "type": "object",
-            "properties": {
-              "key": {
-                "description": "What attribute should be filled out\nIf this key is present in the feature, then 'render' is used to display the value.\nIf this is undefined, the rendering is _always_ shown",
-                "type": "string"
-              }
-            },
-            "required": [
-              "key"
-            ]
+            "description": "question: What value should be rendered?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`",
+            "type": "string"
           },
           "mappings": {
             "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes",
@@ -4521,39 +3261,8 @@
                   "description": "question: When should this single mapping match?\n\nIf this condition is met, then the text under `then` will be shown.\nIf no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.\n\nFor example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}\n\nThis can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}"
                 },
                 "then": {
-                  "description": "question: What text should be shown?\n\nIf the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option\nType: rendered",
-                  "anyOf": [
-                    {
-                      "$ref": "#/definitions/Record<string,string>"
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
-                },
-                "icon": {
-                  "description": "question: What icon should be added to this mapping?\nAn icon supporting this mapping; typically shown pretty small\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
-                  "anyOf": [
-                    {
-                      "type": "object",
-                      "properties": {
-                        "path": {
-                          "description": "The path to the icon\nType: icon",
-                          "type": "string"
-                        },
-                        "class": {
-                          "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "path"
-                      ]
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
+                  "description": "question: What text should be shown?\n\nIf the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option",
+                  "type": "string"
                 }
               },
               "required": [
@@ -4561,21 +3270,6 @@
                 "then"
               ]
             }
-          },
-          "description": {
-            "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/Record<string,string>"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "classes": {
-            "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
-            "type": "string"
           }
         },
         "additionalProperties": false
@@ -4596,338 +3290,10 @@
     ],
     "required": false,
     "hints": {
-      "typehint": "rendered",
-      "question": "What text should be rendered?"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "special": {
-            "allOf": [
-              {
-                "$ref": "#/definitions/Record<string,string|Record<string,string>>"
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "type": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "type"
-                ]
-              }
-            ]
-          }
-        },
-        "required": [
-          "special"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "This piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "icon"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "icon",
-      "question": "what icon should be shown next to the 'render' value?"
-    },
-    "type": [
-      {
-        "type": "object",
-        "properties": {
-          "path": {
-            "description": "The path to the icon\nType: icon",
-            "type": "string"
-          },
-          "class": {
-            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-            "type": "string"
-          }
-        },
-        "required": [
-          "path"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "An icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "icon",
-      "path"
-    ],
-    "required": true,
-    "hints": {
-      "typehint": "icon"
+      "question": "What value should be rendered?"
     },
     "type": "string",
-    "description": "The path to the icon"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "icon",
-      "class"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "string",
-    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "condition"
-    ],
-    "required": false,
-    "hints": {
-      "question": "When should this item be shown?"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "$ref": "#/definitions/{or:TagConfigJson[];}"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "condition",
-      "and"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "condition",
-      "or"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "metacondition"
-    ],
-    "required": false,
-    "hints": {
-      "question": "When should this item be shown (including special conditions)?"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "$ref": "#/definitions/{or:TagConfigJson[];}"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "If set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "metacondition",
-      "and"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "metacondition",
-      "or"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "freeform"
-    ],
-    "required": false,
-    "hints": {
-      "question": "Should a freeform text field be shown?",
-      "ifunset": "Do not add a freeform text field"
-    },
-    "type": "object",
-    "description": "Allow freeform text input from the user"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "freeform",
-      "key"
-    ],
-    "required": true,
-    "hints": {},
-    "type": "string",
-    "description": "What attribute should be filled out\nIf this key is present in the feature, then 'render' is used to display the value.\nIf this is undefined, the rendering is _always_ shown"
+    "description": "This piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`"
   },
   {
     "path": [
@@ -4991,123 +3357,10 @@
     ],
     "required": true,
     "hints": {
-      "typehint": "rendered",
       "question": "What text should be shown?"
     },
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
+    "type": "string",
     "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "mappings",
-      "icon"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "icon",
-      "question": "What icon should be added to this mapping?",
-      "inline": "<img src='{icon}' class=\"w-8 h-8\" /> {icon}"
-    },
-    "type": [
-      {
-        "type": "object",
-        "properties": {
-          "path": {
-            "description": "The path to the icon\nType: icon",
-            "type": "string"
-          },
-          "class": {
-            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-            "type": "string"
-          }
-        },
-        "required": [
-          "path"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "An icon supporting this mapping; typically shown pretty small"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "mappings",
-      "icon",
-      "path"
-    ],
-    "required": true,
-    "hints": {
-      "typehint": "icon"
-    },
-    "type": "string",
-    "description": "The path to the icon"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "mappings",
-      "icon",
-      "class"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "string",
-    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "description"
-    ],
-    "required": false,
-    "hints": {},
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings"
-  },
-  {
-    "path": [
-      "layers",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "classes"
-    ],
-    "required": false,
-    "hints": {
-      "question": "What css-classes should be applied to showing this attribute?"
-    },
-    "type": "string",
-    "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
   },
   {
     "path": [
@@ -7232,6 +5485,7 @@
     "hints": {
       "types": "Dynamic value | string",
       "question": "What label should be shown beneath the marker?",
+      "ifunset": "Do not show a label beneath the marker",
       "inline": "Always show label <b>{value}</b> beneath the marker"
     },
     "type": [
@@ -7930,6 +6184,7 @@
     "hints": {
       "types": "Dynamic value ; string",
       "question": "What CSS should be applied to the entire marker?",
+      "ifunset": "Do not apply extra CSS element to the entire marker",
       "inline": "Apply CSS-style <b>{value}</b> to the _entire marker_"
     },
     "type": [
@@ -8628,6 +6883,7 @@
     "hints": {
       "types": "Dynamic value ; string",
       "question": "Which CSS-classes should be applied to the entire marker?",
+      "ifunset": "Do not apply extra CSS-classes to the label",
       "inline": "Apply CSS-classes <b>{value}</b> to the entire container"
     },
     "type": [
@@ -9326,6 +7582,7 @@
     "hints": {
       "types": "Dynamic value ; string",
       "question": "What CSS should be applied to the label?",
+      "ifunset": "Do not apply extra CSS-labels to the label",
       "inline": "Apply CSS-style <b>{value}</b> to the label"
     },
     "type": [
@@ -10024,6 +8281,7 @@
     "hints": {
       "types": "Dynamic value ; string",
       "question": "Which CSS-classes should be applied to the label?",
+      "ifunset": "Do not apply extra CSS-classes to the label",
       "inline": "Apply CSS-classes <b>{value}</b> to the label"
     },
     "type": [
@@ -12915,7 +11173,7 @@
     "required": true,
     "hints": {
       "question": "What is the word to describe this object?",
-      "inline": "Add <b>{value}</b> here"
+      "inline": "Add <b>{translated(value)}</b> here"
     },
     "type": [
       {
@@ -13534,8 +11792,8 @@
     ],
     "required": false,
     "hints": {
-      "default": "10",
       "question": "What is the maximum distance in the location-input that a point can be moved to be snapped to a way?",
+      "ifunset": "Do not snap to a layer",
       "inline": "a point is snapped if the location input is at most <b>{value}m</b> away from an object"
     },
     "type": "number",
@@ -13608,10 +11866,17 @@
               },
               "invalidValues": {
                 "description": "question: What values of the freeform key should be interpreted as 'unknown'?\nFor example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked\nifunset: The question will be considered answered if any value is set for the key",
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/{and:TagConfigJson[];}"
+                  },
+                  {
+                    "$ref": "#/definitions/{or:TagConfigJson[];}"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
               }
             },
             "required": [
@@ -14498,8 +12763,90 @@
       "question": "What values of the freeform key should be interpreted as 'unknown'?",
       "ifunset": "The question will be considered answered if any value is set for the key"
     },
-    "type": "array",
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "freeform",
+      "invalidValues",
+      "and"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "freeform",
+      "invalidValues",
+      "or"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
   },
   {
     "path": [
@@ -15595,8 +13942,92 @@
       "question": "What values of the freeform key should be interpreted as 'unknown'?",
       "ifunset": "The question will be considered answered if any value is set for the key"
     },
-    "type": "array",
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "override",
+      "freeform",
+      "invalidValues",
+      "and"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "override",
+      "freeform",
+      "invalidValues",
+      "or"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
   },
   {
     "path": [
@@ -16717,8 +15148,92 @@
       "question": "What values of the freeform key should be interpreted as 'unknown'?",
       "ifunset": "The question will be considered answered if any value is set for the key"
     },
-    "type": "array",
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "invalidValues",
+      "and"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "invalidValues",
+      "or"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
   },
   {
     "path": [
@@ -17857,8 +16372,94 @@
       "question": "What values of the freeform key should be interpreted as 'unknown'?",
       "ifunset": "The question will be considered answered if any value is set for the key"
     },
-    "type": "array",
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "override",
+      "freeform",
+      "invalidValues",
+      "and"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "override",
+      "freeform",
+      "invalidValues",
+      "or"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
   },
   {
     "path": [
@@ -18456,7 +17057,8 @@
       "types": "Use an advanced delete configuration ; boolean",
       "group": "editing",
       "iftrue": "Allow deletion",
-      "iffalse": "Do not allow deletion"
+      "iffalse": "Do not allow deletion",
+      "ifunset": "Do not allow deletion"
     },
     "type": [
       {
@@ -19482,7 +18084,8 @@
       "types": "use a fixed translation ; Use a dynamic tagRendering ; hidden",
       "typesdefault": "1",
       "group": "title",
-      "question": "What title should be shown on the infobox?"
+      "question": "What title should be shown on the infobox?",
+      "inline": "{translated{value}}"
     },
     "type": [
       {
@@ -20924,110 +19527,12 @@
     },
     "type": [
       {
-        "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one",
+        "description": "Mostly used for lineRendering and pointRendering",
         "type": "object",
         "properties": {
           "render": {
-            "description": "question: What text should be rendered?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`\ntype: rendered",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/Record<string,string>"
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "special": {
-                    "allOf": [
-                      {
-                        "$ref": "#/definitions/Record<string,string|Record<string,string>>"
-                      },
-                      {
-                        "type": "object",
-                        "properties": {
-                          "type": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "type"
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "required": [
-                  "special"
-                ]
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "icon": {
-            "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon",
-            "anyOf": [
-              {
-                "type": "object",
-                "properties": {
-                  "path": {
-                    "description": "The path to the icon\nType: icon",
-                    "type": "string"
-                  },
-                  "class": {
-                    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "path"
-                ]
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "condition": {
-            "description": "question: When should this item be shown?\n\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/{and:TagConfigJson[];}"
-              },
-              {
-                "$ref": "#/definitions/{or:TagConfigJson[];}"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "metacondition": {
-            "description": "question: When should this item be shown (including special conditions)?\n\nIf set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/{and:TagConfigJson[];}"
-              },
-              {
-                "$ref": "#/definitions/{or:TagConfigJson[];}"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "freeform": {
-            "description": "question: Should a freeform text field be shown?\nAllow freeform text input from the user\nifunset: Do not add a freeform text field",
-            "type": "object",
-            "properties": {
-              "key": {
-                "description": "What attribute should be filled out\nIf this key is present in the feature, then 'render' is used to display the value.\nIf this is undefined, the rendering is _always_ shown",
-                "type": "string"
-              }
-            },
-            "required": [
-              "key"
-            ]
+            "description": "question: What value should be rendered?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`",
+            "type": "string"
           },
           "mappings": {
             "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes",
@@ -21040,39 +19545,8 @@
                   "description": "question: When should this single mapping match?\n\nIf this condition is met, then the text under `then` will be shown.\nIf no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.\n\nFor example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}\n\nThis can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}"
                 },
                 "then": {
-                  "description": "question: What text should be shown?\n\nIf the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option\nType: rendered",
-                  "anyOf": [
-                    {
-                      "$ref": "#/definitions/Record<string,string>"
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
-                },
-                "icon": {
-                  "description": "question: What icon should be added to this mapping?\nAn icon supporting this mapping; typically shown pretty small\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
-                  "anyOf": [
-                    {
-                      "type": "object",
-                      "properties": {
-                        "path": {
-                          "description": "The path to the icon\nType: icon",
-                          "type": "string"
-                        },
-                        "class": {
-                          "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "path"
-                      ]
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
+                  "description": "question: What text should be shown?\n\nIf the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option",
+                  "type": "string"
                 }
               },
               "required": [
@@ -21080,21 +19554,6 @@
                 "then"
               ]
             }
-          },
-          "description": {
-            "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/Record<string,string>"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "classes": {
-            "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
-            "type": "string"
           }
         },
         "additionalProperties": false
@@ -21129,349 +19588,10 @@
     ],
     "required": false,
     "hints": {
-      "typehint": "rendered",
-      "question": "What text should be rendered?"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "special": {
-            "allOf": [
-              {
-                "$ref": "#/definitions/Record<string,string|Record<string,string>>"
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "type": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "type"
-                ]
-              }
-            ]
-          }
-        },
-        "required": [
-          "special"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "This piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "icon",
-      "icon"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "icon",
-      "question": "what icon should be shown next to the 'render' value?"
-    },
-    "type": [
-      {
-        "type": "object",
-        "properties": {
-          "path": {
-            "description": "The path to the icon\nType: icon",
-            "type": "string"
-          },
-          "class": {
-            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-            "type": "string"
-          }
-        },
-        "required": [
-          "path"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "An icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "icon",
-      "icon",
-      "path"
-    ],
-    "required": true,
-    "hints": {
-      "typehint": "icon"
+      "question": "What value should be rendered?"
     },
     "type": "string",
-    "description": "The path to the icon"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "icon",
-      "icon",
-      "class"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "string",
-    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "icon",
-      "condition"
-    ],
-    "required": false,
-    "hints": {
-      "question": "When should this item be shown?"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "$ref": "#/definitions/{or:TagConfigJson[];}"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "icon",
-      "condition",
-      "and"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "icon",
-      "condition",
-      "or"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "icon",
-      "metacondition"
-    ],
-    "required": false,
-    "hints": {
-      "question": "When should this item be shown (including special conditions)?"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "$ref": "#/definitions/{or:TagConfigJson[];}"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "If set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "icon",
-      "metacondition",
-      "and"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "icon",
-      "metacondition",
-      "or"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "icon",
-      "freeform"
-    ],
-    "required": false,
-    "hints": {
-      "question": "Should a freeform text field be shown?",
-      "ifunset": "Do not add a freeform text field"
-    },
-    "type": "object",
-    "description": "Allow freeform text input from the user"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "icon",
-      "freeform",
-      "key"
-    ],
-    "required": true,
-    "hints": {},
-    "type": "string",
-    "description": "What attribute should be filled out\nIf this key is present in the feature, then 'render' is used to display the value.\nIf this is undefined, the rendering is _always_ shown"
+    "description": "This piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`"
   },
   {
     "path": [
@@ -21538,128 +19658,10 @@
     ],
     "required": true,
     "hints": {
-      "typehint": "rendered",
       "question": "What text should be shown?"
     },
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
+    "type": "string",
     "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "icon",
-      "mappings",
-      "icon"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "icon",
-      "question": "What icon should be added to this mapping?",
-      "inline": "<img src='{icon}' class=\"w-8 h-8\" /> {icon}"
-    },
-    "type": [
-      {
-        "type": "object",
-        "properties": {
-          "path": {
-            "description": "The path to the icon\nType: icon",
-            "type": "string"
-          },
-          "class": {
-            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-            "type": "string"
-          }
-        },
-        "required": [
-          "path"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "An icon supporting this mapping; typically shown pretty small"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "icon",
-      "mappings",
-      "icon",
-      "path"
-    ],
-    "required": true,
-    "hints": {
-      "typehint": "icon"
-    },
-    "type": "string",
-    "description": "The path to the icon"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "icon",
-      "mappings",
-      "icon",
-      "class"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "string",
-    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "icon",
-      "description"
-    ],
-    "required": false,
-    "hints": {},
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "icon",
-      "classes"
-    ],
-    "required": false,
-    "hints": {
-      "question": "What css-classes should be applied to showing this attribute?"
-    },
-    "type": "string",
-    "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
   },
   {
     "path": [
@@ -21676,110 +19678,12 @@
     },
     "type": [
       {
-        "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one",
+        "description": "Mostly used for lineRendering and pointRendering",
         "type": "object",
         "properties": {
           "render": {
-            "description": "question: What text should be rendered?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`\ntype: rendered",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/Record<string,string>"
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "special": {
-                    "allOf": [
-                      {
-                        "$ref": "#/definitions/Record<string,string|Record<string,string>>"
-                      },
-                      {
-                        "type": "object",
-                        "properties": {
-                          "type": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "type"
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "required": [
-                  "special"
-                ]
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "icon": {
-            "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon",
-            "anyOf": [
-              {
-                "type": "object",
-                "properties": {
-                  "path": {
-                    "description": "The path to the icon\nType: icon",
-                    "type": "string"
-                  },
-                  "class": {
-                    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "path"
-                ]
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "condition": {
-            "description": "question: When should this item be shown?\n\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/{and:TagConfigJson[];}"
-              },
-              {
-                "$ref": "#/definitions/{or:TagConfigJson[];}"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "metacondition": {
-            "description": "question: When should this item be shown (including special conditions)?\n\nIf set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/{and:TagConfigJson[];}"
-              },
-              {
-                "$ref": "#/definitions/{or:TagConfigJson[];}"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "freeform": {
-            "description": "question: Should a freeform text field be shown?\nAllow freeform text input from the user\nifunset: Do not add a freeform text field",
-            "type": "object",
-            "properties": {
-              "key": {
-                "description": "What attribute should be filled out\nIf this key is present in the feature, then 'render' is used to display the value.\nIf this is undefined, the rendering is _always_ shown",
-                "type": "string"
-              }
-            },
-            "required": [
-              "key"
-            ]
+            "description": "question: What value should be rendered?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`",
+            "type": "string"
           },
           "mappings": {
             "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes",
@@ -21792,39 +19696,8 @@
                   "description": "question: When should this single mapping match?\n\nIf this condition is met, then the text under `then` will be shown.\nIf no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.\n\nFor example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}\n\nThis can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}"
                 },
                 "then": {
-                  "description": "question: What text should be shown?\n\nIf the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option\nType: rendered",
-                  "anyOf": [
-                    {
-                      "$ref": "#/definitions/Record<string,string>"
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
-                },
-                "icon": {
-                  "description": "question: What icon should be added to this mapping?\nAn icon supporting this mapping; typically shown pretty small\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
-                  "anyOf": [
-                    {
-                      "type": "object",
-                      "properties": {
-                        "path": {
-                          "description": "The path to the icon\nType: icon",
-                          "type": "string"
-                        },
-                        "class": {
-                          "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "path"
-                      ]
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
+                  "description": "question: What text should be shown?\n\nIf the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option",
+                  "type": "string"
                 }
               },
               "required": [
@@ -21832,21 +19705,6 @@
                 "then"
               ]
             }
-          },
-          "description": {
-            "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/Record<string,string>"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "classes": {
-            "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
-            "type": "string"
           }
         },
         "additionalProperties": false
@@ -21881,349 +19739,10 @@
     ],
     "required": false,
     "hints": {
-      "typehint": "rendered",
-      "question": "What text should be rendered?"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "special": {
-            "allOf": [
-              {
-                "$ref": "#/definitions/Record<string,string|Record<string,string>>"
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "type": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "type"
-                ]
-              }
-            ]
-          }
-        },
-        "required": [
-          "special"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "This piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "color",
-      "icon"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "icon",
-      "question": "what icon should be shown next to the 'render' value?"
-    },
-    "type": [
-      {
-        "type": "object",
-        "properties": {
-          "path": {
-            "description": "The path to the icon\nType: icon",
-            "type": "string"
-          },
-          "class": {
-            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-            "type": "string"
-          }
-        },
-        "required": [
-          "path"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "An icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "color",
-      "icon",
-      "path"
-    ],
-    "required": true,
-    "hints": {
-      "typehint": "icon"
+      "question": "What value should be rendered?"
     },
     "type": "string",
-    "description": "The path to the icon"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "color",
-      "icon",
-      "class"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "string",
-    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "color",
-      "condition"
-    ],
-    "required": false,
-    "hints": {
-      "question": "When should this item be shown?"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "$ref": "#/definitions/{or:TagConfigJson[];}"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "color",
-      "condition",
-      "and"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "color",
-      "condition",
-      "or"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "color",
-      "metacondition"
-    ],
-    "required": false,
-    "hints": {
-      "question": "When should this item be shown (including special conditions)?"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "$ref": "#/definitions/{or:TagConfigJson[];}"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "If set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "color",
-      "metacondition",
-      "and"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "color",
-      "metacondition",
-      "or"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "color",
-      "freeform"
-    ],
-    "required": false,
-    "hints": {
-      "question": "Should a freeform text field be shown?",
-      "ifunset": "Do not add a freeform text field"
-    },
-    "type": "object",
-    "description": "Allow freeform text input from the user"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "color",
-      "freeform",
-      "key"
-    ],
-    "required": true,
-    "hints": {},
-    "type": "string",
-    "description": "What attribute should be filled out\nIf this key is present in the feature, then 'render' is used to display the value.\nIf this is undefined, the rendering is _always_ shown"
+    "description": "This piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`"
   },
   {
     "path": [
@@ -22290,128 +19809,10 @@
     ],
     "required": true,
     "hints": {
-      "typehint": "rendered",
       "question": "What text should be shown?"
     },
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
+    "type": "string",
     "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "color",
-      "mappings",
-      "icon"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "icon",
-      "question": "What icon should be added to this mapping?",
-      "inline": "<img src='{icon}' class=\"w-8 h-8\" /> {icon}"
-    },
-    "type": [
-      {
-        "type": "object",
-        "properties": {
-          "path": {
-            "description": "The path to the icon\nType: icon",
-            "type": "string"
-          },
-          "class": {
-            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-            "type": "string"
-          }
-        },
-        "required": [
-          "path"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "An icon supporting this mapping; typically shown pretty small"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "color",
-      "mappings",
-      "icon",
-      "path"
-    ],
-    "required": true,
-    "hints": {
-      "typehint": "icon"
-    },
-    "type": "string",
-    "description": "The path to the icon"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "color",
-      "mappings",
-      "icon",
-      "class"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "string",
-    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "color",
-      "description"
-    ],
-    "required": false,
-    "hints": {},
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "marker",
-      "color",
-      "classes"
-    ],
-    "required": false,
-    "hints": {
-      "question": "What css-classes should be applied to showing this attribute?"
-    },
-    "type": "string",
-    "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
   },
   {
     "path": [
@@ -22475,110 +19876,12 @@
     },
     "type": [
       {
-        "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one",
+        "description": "Mostly used for lineRendering and pointRendering",
         "type": "object",
         "properties": {
           "render": {
-            "description": "question: What text should be rendered?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`\ntype: rendered",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/Record<string,string>"
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "special": {
-                    "allOf": [
-                      {
-                        "$ref": "#/definitions/Record<string,string|Record<string,string>>"
-                      },
-                      {
-                        "type": "object",
-                        "properties": {
-                          "type": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "type"
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "required": [
-                  "special"
-                ]
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "icon": {
-            "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon",
-            "anyOf": [
-              {
-                "type": "object",
-                "properties": {
-                  "path": {
-                    "description": "The path to the icon\nType: icon",
-                    "type": "string"
-                  },
-                  "class": {
-                    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "path"
-                ]
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "condition": {
-            "description": "question: When should this item be shown?\n\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/{and:TagConfigJson[];}"
-              },
-              {
-                "$ref": "#/definitions/{or:TagConfigJson[];}"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "metacondition": {
-            "description": "question: When should this item be shown (including special conditions)?\n\nIf set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/{and:TagConfigJson[];}"
-              },
-              {
-                "$ref": "#/definitions/{or:TagConfigJson[];}"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "freeform": {
-            "description": "question: Should a freeform text field be shown?\nAllow freeform text input from the user\nifunset: Do not add a freeform text field",
-            "type": "object",
-            "properties": {
-              "key": {
-                "description": "What attribute should be filled out\nIf this key is present in the feature, then 'render' is used to display the value.\nIf this is undefined, the rendering is _always_ shown",
-                "type": "string"
-              }
-            },
-            "required": [
-              "key"
-            ]
+            "description": "question: What value should be rendered?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`",
+            "type": "string"
           },
           "mappings": {
             "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes",
@@ -22591,39 +19894,8 @@
                   "description": "question: When should this single mapping match?\n\nIf this condition is met, then the text under `then` will be shown.\nIf no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.\n\nFor example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}\n\nThis can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}"
                 },
                 "then": {
-                  "description": "question: What text should be shown?\n\nIf the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option\nType: rendered",
-                  "anyOf": [
-                    {
-                      "$ref": "#/definitions/Record<string,string>"
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
-                },
-                "icon": {
-                  "description": "question: What icon should be added to this mapping?\nAn icon supporting this mapping; typically shown pretty small\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
-                  "anyOf": [
-                    {
-                      "type": "object",
-                      "properties": {
-                        "path": {
-                          "description": "The path to the icon\nType: icon",
-                          "type": "string"
-                        },
-                        "class": {
-                          "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "path"
-                      ]
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
+                  "description": "question: What text should be shown?\n\nIf the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option",
+                  "type": "string"
                 }
               },
               "required": [
@@ -22631,21 +19903,6 @@
                 "then"
               ]
             }
-          },
-          "description": {
-            "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/Record<string,string>"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "classes": {
-            "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
-            "type": "string"
           }
         },
         "additionalProperties": false
@@ -22667,349 +19924,10 @@
     ],
     "required": false,
     "hints": {
-      "typehint": "rendered",
-      "question": "What text should be rendered?"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "special": {
-            "allOf": [
-              {
-                "$ref": "#/definitions/Record<string,string|Record<string,string>>"
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "type": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "type"
-                ]
-              }
-            ]
-          }
-        },
-        "required": [
-          "special"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "This piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "icon"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "icon",
-      "question": "what icon should be shown next to the 'render' value?"
-    },
-    "type": [
-      {
-        "type": "object",
-        "properties": {
-          "path": {
-            "description": "The path to the icon\nType: icon",
-            "type": "string"
-          },
-          "class": {
-            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-            "type": "string"
-          }
-        },
-        "required": [
-          "path"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "An icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "icon",
-      "path"
-    ],
-    "required": true,
-    "hints": {
-      "typehint": "icon"
+      "question": "What value should be rendered?"
     },
     "type": "string",
-    "description": "The path to the icon"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "icon",
-      "class"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "string",
-    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "condition"
-    ],
-    "required": false,
-    "hints": {
-      "question": "When should this item be shown?"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "$ref": "#/definitions/{or:TagConfigJson[];}"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "condition",
-      "and"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "condition",
-      "or"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "metacondition"
-    ],
-    "required": false,
-    "hints": {
-      "question": "When should this item be shown (including special conditions)?"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "$ref": "#/definitions/{or:TagConfigJson[];}"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "If set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "metacondition",
-      "and"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "metacondition",
-      "or"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "tag"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/{and:TagConfigJson[];}"
-      },
-      {
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "freeform"
-    ],
-    "required": false,
-    "hints": {
-      "question": "Should a freeform text field be shown?",
-      "ifunset": "Do not add a freeform text field"
-    },
-    "type": "object",
-    "description": "Allow freeform text input from the user"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "freeform",
-      "key"
-    ],
-    "required": true,
-    "hints": {},
-    "type": "string",
-    "description": "What attribute should be filled out\nIf this key is present in the feature, then 'render' is used to display the value.\nIf this is undefined, the rendering is _always_ shown"
+    "description": "This piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`"
   },
   {
     "path": [
@@ -23076,128 +19994,10 @@
     ],
     "required": true,
     "hints": {
-      "typehint": "rendered",
       "question": "What text should be shown?"
     },
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
+    "type": "string",
     "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "mappings",
-      "icon"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "icon",
-      "question": "What icon should be added to this mapping?",
-      "inline": "<img src='{icon}' class=\"w-8 h-8\" /> {icon}"
-    },
-    "type": [
-      {
-        "type": "object",
-        "properties": {
-          "path": {
-            "description": "The path to the icon\nType: icon",
-            "type": "string"
-          },
-          "class": {
-            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
-            "type": "string"
-          }
-        },
-        "required": [
-          "path"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "An icon supporting this mapping; typically shown pretty small"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "mappings",
-      "icon",
-      "path"
-    ],
-    "required": true,
-    "hints": {
-      "typehint": "icon"
-    },
-    "type": "string",
-    "description": "The path to the icon"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "mappings",
-      "icon",
-      "class"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "string",
-    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "description"
-    ],
-    "required": false,
-    "hints": {},
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "pointRendering",
-      "iconBadges",
-      "then",
-      "classes"
-    ],
-    "required": false,
-    "hints": {
-      "question": "What css-classes should be applied to showing this attribute?"
-    },
-    "type": "string",
-    "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
   },
   {
     "path": [
@@ -25386,6 +22186,7 @@
     "hints": {
       "types": "Dynamic value | string",
       "question": "What label should be shown beneath the marker?",
+      "ifunset": "Do not show a label beneath the marker",
       "inline": "Always show label <b>{value}</b> beneath the marker"
     },
     "type": [
@@ -26105,6 +22906,7 @@
     "hints": {
       "types": "Dynamic value ; string",
       "question": "What CSS should be applied to the entire marker?",
+      "ifunset": "Do not apply extra CSS element to the entire marker",
       "inline": "Apply CSS-style <b>{value}</b> to the _entire marker_"
     },
     "type": [
@@ -26824,6 +23626,7 @@
     "hints": {
       "types": "Dynamic value ; string",
       "question": "Which CSS-classes should be applied to the entire marker?",
+      "ifunset": "Do not apply extra CSS-classes to the label",
       "inline": "Apply CSS-classes <b>{value}</b> to the entire container"
     },
     "type": [
@@ -27543,6 +24346,7 @@
     "hints": {
       "types": "Dynamic value ; string",
       "question": "What CSS should be applied to the label?",
+      "ifunset": "Do not apply extra CSS-labels to the label",
       "inline": "Apply CSS-style <b>{value}</b> to the label"
     },
     "type": [
@@ -28262,6 +25066,7 @@
     "hints": {
       "types": "Dynamic value ; string",
       "question": "Which CSS-classes should be applied to the label?",
+      "ifunset": "Do not apply extra CSS-classes to the label",
       "inline": "Apply CSS-classes <b>{value}</b> to the label"
     },
     "type": [
@@ -31248,7 +28053,7 @@
     "required": true,
     "hints": {
       "question": "What is the word to describe this object?",
-      "inline": "Add <b>{value}</b> here"
+      "inline": "Add <b>{translated(value)}</b> here"
     },
     "type": [
       {
@@ -31872,8 +28677,8 @@
     ],
     "required": false,
     "hints": {
-      "default": "10",
       "question": "What is the maximum distance in the location-input that a point can be moved to be snapped to a way?",
+      "ifunset": "Do not snap to a layer",
       "inline": "a point is snapped if the location input is at most <b>{value}m</b> away from an object"
     },
     "type": "number",
@@ -31947,10 +28752,17 @@
               },
               "invalidValues": {
                 "description": "question: What values of the freeform key should be interpreted as 'unknown'?\nFor example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked\nifunset: The question will be considered answered if any value is set for the key",
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/{and:TagConfigJson[];}"
+                  },
+                  {
+                    "$ref": "#/definitions/{or:TagConfigJson[];}"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
               }
             },
             "required": [
@@ -32865,8 +29677,92 @@
       "question": "What values of the freeform key should be interpreted as 'unknown'?",
       "ifunset": "The question will be considered answered if any value is set for the key"
     },
-    "type": "array",
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
+      "freeform",
+      "invalidValues",
+      "and"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
+      "freeform",
+      "invalidValues",
+      "or"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
   },
   {
     "path": [
@@ -34005,8 +30901,94 @@
       "question": "What values of the freeform key should be interpreted as 'unknown'?",
       "ifunset": "The question will be considered answered if any value is set for the key"
     },
-    "type": "array",
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
+      "override",
+      "freeform",
+      "invalidValues",
+      "and"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
+      "override",
+      "freeform",
+      "invalidValues",
+      "or"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
   },
   {
     "path": [
@@ -35171,8 +32153,94 @@
       "question": "What values of the freeform key should be interpreted as 'unknown'?",
       "ifunset": "The question will be considered answered if any value is set for the key"
     },
-    "type": "array",
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "invalidValues",
+      "and"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "invalidValues",
+      "or"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
   },
   {
     "path": [
@@ -36354,8 +33422,96 @@
       "question": "What values of the freeform key should be interpreted as 'unknown'?",
       "ifunset": "The question will be considered answered if any value is set for the key"
     },
-    "type": "array",
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
+      "renderings",
+      "override",
+      "freeform",
+      "invalidValues",
+      "and"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
+      "renderings",
+      "override",
+      "freeform",
+      "invalidValues",
+      "or"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
   },
   {
     "path": [
@@ -36977,7 +34133,8 @@
       "types": "Use an advanced delete configuration ; boolean",
       "group": "editing",
       "iftrue": "Allow deletion",
-      "iffalse": "Do not allow deletion"
+      "iffalse": "Do not allow deletion",
+      "ifunset": "Do not allow deletion"
     },
     "type": [
       {

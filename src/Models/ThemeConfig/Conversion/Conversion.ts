@@ -153,9 +153,6 @@ export class Pipe<TIn, TInter, TOut> extends Conversion<TIn, TOut> {
 
     convert(json: TIn, context: ConversionContext): TOut {
         const r0 = this._step0.convert(json, context.inOperation(this._step0.name))
-        if (context.hasErrors()) {
-            return undefined
-        }
         return this._step1.convert(r0, context.inOperation(this._step1.name))
     }
 }
@@ -306,9 +303,6 @@ export class Fuse<T> extends DesugaringStep<T> {
             try {
                 const r = step.convert(json, context.inOperation(step.name))
                 if (r === undefined || r === null) {
-                    break
-                }
-                if (context.hasErrors()) {
                     break
                 }
                 json = r

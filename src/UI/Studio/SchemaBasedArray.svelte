@@ -26,7 +26,6 @@
   
   const subparts: ConfigMeta = state.getSchemaStartingWith(schema.path)
     .filter(part => part.path.length - 1 === schema.path.length);
-console.log("For ", schema.path, "got subparts", subparts)
   /**
    * Store the _indices_
    */

@@ -91,6 +91,7 @@ export default interface PointRenderingConfigJson {
      * If the icon is undefined, then the label is shown in the center of the feature.
      * types: Dynamic value | string
      * inline: Always show label <b>{value}</b> beneath the marker
+     * ifunset: Do not show a label beneath the marker
      */
     label?: string | TagRenderingConfigJson
 
@@ -100,6 +101,8 @@ export default interface PointRenderingConfigJson {
      * This will be applied to the _container_ containing both the marker and the label
      * inline: Apply CSS-style <b>{value}</b> to the _entire marker_
      * types: Dynamic value ; string
+     * ifunset: Do not apply extra CSS element to the entire marker
+     *
      */
     css?: string | TagRenderingConfigJson
 
@@ -111,7 +114,9 @@ export default interface PointRenderingConfigJson {
      * You can use most Tailwind-css classes, see https://tailwindcss.com/ for more information
      * For example: `center bg-gray-500 mx-2 my-1 rounded-full`
      * inline: Apply CSS-classes <b>{value}</b> to the entire container
+     * ifunset: Do not apply extra CSS-classes to the label
      * types: Dynamic value ; string
+     * ifunset: Do not apply extra CSS-classes to the entire marker
      */
     cssClasses?: string | TagRenderingConfigJson
 
@@ -120,6 +125,8 @@ export default interface PointRenderingConfigJson {
      * You can set the css-properties here, e.g. `background: red; font-size: 12px; `
      * inline: Apply CSS-style <b>{value}</b> to the label
      * types: Dynamic value ; string
+     * ifunset: Do not apply extra CSS-labels to the label
+     *
      */
     labelCss?: TagRenderingConfigJson | string
 
@@ -131,6 +138,7 @@ export default interface PointRenderingConfigJson {
      * For example: `center bg-gray-500 mx-2 my-1 rounded-full`
      * inline: Apply CSS-classes <b>{value}</b> to the label
      * types: Dynamic value ; string
+     * ifunset: Do not apply extra CSS-classes to the label
      */
     labelCssClasses?: string | TagRenderingConfigJson
 

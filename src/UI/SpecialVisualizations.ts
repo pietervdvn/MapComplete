@@ -1317,6 +1317,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "translated",
                 docs: "If the given key can be interpreted as a JSON, only show the key containing the current language (or 'en'). This specialRendering is meant to be used by MapComplete studio and is not useful in map themes",
+                needsUrls: [],
                 args: [
                     {
                         name: "key",

@@ -75,65 +75,17 @@ export default class LayerConfig extends WithContextLoader {
         const translationContext = "layers:" + json.id
         super(json, context)
         this.id = json.id
-        if (typeof json === "string") {
-            throw `Not a valid layer: the layerConfig is a string. 'npm run generate:layeroverview' might be needed (at ${context})`
-        }
-
-        if (json.id === undefined) {
-            throw `Not a valid layer: id is undefined: ${JSON.stringify(json)} (At ${context})`
-        }
-
-        if (json.source === undefined) {
-            throw "Layer " + this.id + " does not define a source section (" + context + ")"
-        }
 
         if (json.source === "special" || json.source === "special:library") {
             this.source = null
-        } else if (json.source["osmTags"] === undefined) {
-            throw (
-                "Layer " +
-                this.id +
-                " does not define a osmTags in the source section - these should always be present, even for geojson layers (" +
-                context +
-                ")"
-            )
         }
 
-        if (json.id.toLowerCase() !== json.id) {
-            throw `${context}: The id of a layer should be lowercase: ${json.id}`
-        }
-        if (json.id.match(/[a-z0-9-_]/) == null) {
-            throw `${context}: The id of a layer should match [a-z0-9-_]*: ${json.id}`
-        }
-
-        if (
-            json.syncSelection !== undefined &&
-            LayerConfig.syncSelectionAllowed.indexOf(json.syncSelection) < 0
-        ) {
-            throw (
-                context +
-                " Invalid sync-selection: must be one of " +
-                LayerConfig.syncSelectionAllowed.map((v) => `'${v}'`).join(", ") +
-                " but got '" +
-                json.syncSelection +
-                "'"
-            )
-        }
         this.syncSelection = json.syncSelection ?? "no"
         if (typeof json.source !== "string") {
             this.maxAgeOfCache = json.source["maxCacheAge"] ?? 24 * 60 * 60 * 30
-            const osmTags = TagUtils.Tag(json.source["osmTags"], context + "source.osmTags")
-            if (osmTags.isNegative()) {
-                throw (
-                    context +
-                    "The source states tags which give a very wide selection: it only uses negative expressions, which will result in too much and unexpected data. Add at least one required tag. The tags are:\n\t" +
-                    osmTags.asHumanString(false, false, {})
-                )
-            }
-
             this.source = new SourceConfig(
                 {
-                    osmTags: osmTags,
+                    osmTags: TagUtils.Tag(json.source["osmTags"], context + "source.osmTags"),
                     geojsonSource: json.source["geoJson"],
                     geojsonSourceLevel: json.source["geoJsonZoomLevel"],
                     overpassScript: json.source["overpassScript"],
@@ -143,14 +95,6 @@ export default class LayerConfig extends WithContextLoader {
                 },
                 json.id
             )
-        }
-
-        if (json.source["geoJsonSource"] !== undefined) {
-            throw context + "Use 'geoJson' instead of 'geoJsonSource'"
-        }
-
-        if (json.source["geojson"] !== undefined) {
-            throw context + "Use 'geoJson' instead of 'geojson' (the J is a capital letter)"
         }
 
         this.allowSplit = json.allowSplit ?? false

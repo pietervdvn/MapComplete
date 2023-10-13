@@ -1,6 +1,6 @@
 <script lang="ts">
 
-  import EditLayerState, { LayerStateSender } from "./EditLayerState";
+  import { LayerStateSender } from "./EditLayerState";
   import layerSchemaRaw from "../../assets/schemas/layerconfigmeta.json";
   import Region from "./Region.svelte";
   import TabbedGroup from "../Base/TabbedGroup.svelte";
@@ -10,12 +10,13 @@
   import type { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson";
 
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw;
-  let state = new EditLayerState(layerSchema);
+
+  export let state;
   const messages = state.messages;
   export let initialLayerConfig: Partial<LayerConfigJson> = {};
   state.configuration.setData(initialLayerConfig);
   const configuration = state.configuration;
-  new LayerStateSender("http://localhost:1235", state);
+  new LayerStateSender(state);
   /**
    * Blacklist of regions for the general area tab
    * These are regions which are handled by a different tab
@@ -76,6 +77,7 @@
       </div>
       {#each $messages as message}
         <li>
+          {message.level}
           <span class="literal-code">{message.context.path.join(".")}</span>
           {message.message}
         </li>

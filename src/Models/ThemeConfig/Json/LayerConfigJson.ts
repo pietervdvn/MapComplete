@@ -136,7 +136,7 @@ export interface LayerConfigJson {
      * There are a few extra functions available. Refer to <a>Docs/CalculatedTags.md</a> for more information
      * The functions will be run in order, e.g.
      * [
-     *  "_max_overlap_m2=Math.max(...feat.overlapsWith("someOtherLayer").map(o => o.overlap))
+ Not found...    *  "_max_overlap_m2=Math.max(...feat.overlapsWith("someOtherLayer").map(o => o.overlap))
      *  "_max_overlap_ratio=Number(feat._max_overlap_m2)/feat.area
      * ]
      *
@@ -208,6 +208,7 @@ export interface LayerConfigJson {
      * types: use a fixed translation ; Use a dynamic tagRendering ; hidden
      * typesdefault: 1
      * type: translation
+     * inline: {translated{value}}
      */
     title?: TagRenderingConfigJson | Translatable
 
@@ -309,7 +310,7 @@ export interface LayerConfigJson {
          * Do _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!
          *
          * question: What is the word to describe this object?
-         * inline: Add <b>{value}</b> here
+         * inline: Add <b>{translated(value)}</b> here
          */
         title: Translatable
         /**
@@ -360,7 +361,7 @@ export interface LayerConfigJson {
          * If further away, it'll be placed in the center of the location input
          * Distance in meter
          *
-         * Default: 10
+         * ifunset: Do not snap to a layer
          */
         maxSnapDistance?: number
     }[]
@@ -463,6 +464,7 @@ export interface LayerConfigJson {
      * types: Use an advanced delete configuration ; boolean
      * iftrue: Allow deletion
      * iffalse: Do not allow deletion
+     * ifunset: Do not allow deletion
      *
      **/
     deletion?: DeleteConfigJson | boolean

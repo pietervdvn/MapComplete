@@ -127,31 +127,6 @@ export default class DetermineLayout {
         return layoutToUse
     }
 
-    public static ShowErrorOnCustomTheme(
-        intro: string = "Error: could not parse the custom layout:",
-        error: BaseUIElement,
-        json?: any
-    ) {
-        new Combine([
-            intro,
-            error.SetClass("alert"),
-            new SubtleButton(Svg.back_svg(), "Go back to the theme overview", {
-                url: window.location.protocol + "//" + window.location.host + "/index.html",
-                newTab: false,
-            }),
-            json !== undefined
-                ? new SubtleButton(Svg.download_svg(), "Download the JSON file").onClick(() => {
-                      Utils.offerContentsAsDownloadableFile(
-                          JSON.stringify(json, null, "  "),
-                          "theme_definition.json"
-                      )
-                  })
-                : undefined,
-        ])
-            .SetClass("flex flex-col clickable")
-            .AttachTo("maindiv")
-    }
-
     private static getSharedTagRenderings(): Map<string, QuestionableTagRenderingConfigJson> {
         const dict = new Map<string, QuestionableTagRenderingConfigJson>()
 

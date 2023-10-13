@@ -18,7 +18,6 @@ export default interface LineRenderingConfigJson {
      * types: dynamic value ; string
      * title: Line Colour
      * inline: The line colour always is <b>{value}</b>
-     * ifunset: Round ending
      * type: color
      *
      */

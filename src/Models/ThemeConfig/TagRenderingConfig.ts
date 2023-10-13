@@ -53,6 +53,7 @@ export default class TagRenderingConfig {
     public readonly question?: TypedTranslation<object>
     public readonly questionhint?: TypedTranslation<object>
     public readonly condition?: TagsFilter
+    public readonly invalidValues?: TagsFilter
     /**
      * Evaluated against the current 'usersettings'-state
      */
@@ -133,6 +134,9 @@ export default class TagRenderingConfig {
         this.questionhint = Translations.T(json.questionHint, translationKey + ".questionHint")
         this.description = Translations.T(json.description, translationKey + ".description")
         this.condition = TagUtils.Tag(json.condition ?? { and: [] }, `${context}.condition`)
+        this.invalidValues = json["invalidValues"]
+            ? TagUtils.Tag(json["invalidValues"], `${context}.invalidValues`)
+            : undefined
         if (typeof json.icon === "string") {
             this.renderIcon = json.icon
             this.renderIconClass = "small"
@@ -469,8 +473,11 @@ export default class TagRenderingConfig {
      */
     public IsKnown(tags: Record<string, string>): boolean {
         if (this.condition && !this.condition.matchesProperties(tags)) {
-            // Filtered away by the condition, so it is kindof known
+            // Filtered away by the condition, so it is kind of known
             return true
+        }
+        if (this.invalidValues && this.invalidValues.matchesProperties(tags)) {
+            return false
         }
         if (this.multiAnswer) {
             for (const m of this.mappings ?? []) {
@@ -482,6 +489,9 @@ export default class TagRenderingConfig {
             const free = this.freeform?.key
             if (free !== undefined) {
                 const value = tags[free]
+                if (typeof value === "object") {
+                    return Object.keys(value).length > 0
+                }
                 return value !== undefined && value !== ""
             }
             return false
@@ -679,7 +689,9 @@ export default class TagRenderingConfig {
         multiSelectedMapping: boolean[] | undefined,
         currentProperties: Record<string, string>
     ): UploadableTag {
-        freeformValue = freeformValue?.trim()
+        if (typeof freeformValue === "string") {
+            freeformValue = freeformValue?.trim()
+        }
         const validator = Validators.get(<ValidatorType>this.freeform?.type)
         if (validator && freeformValue) {
             freeformValue = validator.reformat(freeformValue, () => currentProperties["_country"])

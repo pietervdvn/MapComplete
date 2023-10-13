@@ -187,7 +187,7 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
      *
      * question: Should a contributor be allowed to select multiple mappings?
      *
-     * iftrue: allow to select multiple mappigns
+     * iftrue: allow to select multiple mappings
      * iffalse: only allow to select a single mapping
      * ifunset: only allow to select a single mapping
      */
@@ -250,7 +250,7 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
          * For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked
          * ifunset: The question will be considered answered if any value is set for the key
          */
-        invalidValues?: string[]
+        invalidValues?: TagConfigJson
     }
 
     /**

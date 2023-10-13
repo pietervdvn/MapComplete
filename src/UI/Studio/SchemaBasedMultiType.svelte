@@ -30,6 +30,7 @@
     types.splice(hasBooleanOption);
   }
 
+  
   let lastIsString = false;
   {
     const types: string | string[] = Array.isArray(schema.type) ? schema.type[schema.type.length - 1].type : [];
@@ -217,5 +218,4 @@
                         path={[...subpath, (subschema?.path?.at(-1) ?? "???")]}></SchemaBasedInput>
     {/each}
   {/if}
-  {chosenOption}
 </div>

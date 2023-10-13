@@ -228,6 +228,93 @@ export default {
         "canonicalDenomination"
       ]
     },
+    "MinimalTagRenderingConfigJson": {
+      "description": "Mostly used for lineRendering and pointRendering",
+      "type": "object",
+      "properties": {
+        "render": {
+          "description": "question: What value should be rendered?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`",
+          "type": "string"
+        },
+        "mappings": {
+          "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "if": {
+                "$ref": "#/definitions/TagConfigJson",
+                "description": "question: When should this single mapping match?\n\nIf this condition is met, then the text under `then` will be shown.\nIf no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.\n\nFor example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}\n\nThis can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}"
+              },
+              "then": {
+                "description": "question: What text should be shown?\n\nIf the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option",
+                "type": "string"
+              }
+            },
+            "required": [
+              "if",
+              "then"
+            ]
+          }
+        }
+      }
+    },
+    "IconConfigJson": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "description": "question: What icon should be used?\ntype: icon\nsuggestions: return [\"pin\",\"square\",\"circle\",\"checkmark\",\"clock\",\"close\",\"crosshair\",\"help\",\"home\",\"invalid\",\"location\",\"location_empty\",\"location_locked\",\"note\",\"resolved\",\"ring\",\"scissors\",\"teardrop\",\"teardrop_with_hole_green\",\"triangle\"].map(i => ({if: \"value=\"+i, then: i, icon: i}))",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/MinimalTagRenderingConfigJson"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "builtin": {
+                  "type": "string"
+                },
+                "override": {}
+              },
+              "required": [
+                "builtin",
+                "override"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "color": {
+          "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntype: color",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/MinimalTagRenderingConfigJson"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "builtin": {
+                  "type": "string"
+                },
+                "override": {}
+              },
+              "required": [
+                "builtin",
+                "override"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "icon"
+      ]
+    },
     "TagRenderingConfigJson": {
       "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one",
       "type": "object",
@@ -400,93 +487,6 @@ export default {
         "classes": {
           "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
           "type": "string"
-        }
-      }
-    },
-    "IconConfigJson": {
-      "type": "object",
-      "properties": {
-        "icon": {
-          "description": "question: What icon should be used?\ntype: icon\nsuggestions: return [\"pin\",\"square\",\"circle\",\"checkmark\",\"clock\",\"close\",\"crosshair\",\"help\",\"home\",\"invalid\",\"location\",\"location_empty\",\"location_locked\",\"note\",\"resolved\",\"ring\",\"scissors\",\"teardrop\",\"teardrop_with_hole_green\",\"triangle\"].map(i => ({if: \"value=\"+i, then: i, icon: i}))",
-          "anyOf": [
-            {
-              "$ref": "#/definitions/TagRenderingConfigJson"
-            },
-            {
-              "type": "object",
-              "properties": {
-                "builtin": {
-                  "type": "string"
-                },
-                "override": {}
-              },
-              "required": [
-                "builtin",
-                "override"
-              ]
-            },
-            {
-              "type": "string"
-            }
-          ]
-        },
-        "color": {
-          "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntype: color",
-          "anyOf": [
-            {
-              "$ref": "#/definitions/TagRenderingConfigJson"
-            },
-            {
-              "type": "object",
-              "properties": {
-                "builtin": {
-                  "type": "string"
-                },
-                "override": {}
-              },
-              "required": [
-                "builtin",
-                "override"
-              ]
-            },
-            {
-              "type": "string"
-            }
-          ]
-        }
-      },
-      "required": [
-        "icon"
-      ]
-    },
-    "MinimalTagRenderingConfigJson": {
-      "description": "Mostly used for lineRendering and pointRendering",
-      "type": "object",
-      "properties": {
-        "render": {
-          "description": "question: What value should be rendered?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`",
-          "type": "string"
-        },
-        "mappings": {
-          "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "if": {
-                "$ref": "#/definitions/TagConfigJson",
-                "description": "question: When should this single mapping match?\n\nIf this condition is met, then the text under `then` will be shown.\nIf no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.\n\nFor example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}\n\nThis can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}"
-              },
-              "then": {
-                "description": "question: What text should be shown?\n\nIf the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option",
-                "type": "string"
-              }
-            },
-            "required": [
-              "if",
-              "then"
-            ]
-          }
         }
       }
     },
