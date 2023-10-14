@@ -250,6 +250,14 @@
     "sources": []
   },
   {
+    "path": "cross.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "cross_bottom_right.svg",
     "license": "TRIVIAL",
     "authors": [],

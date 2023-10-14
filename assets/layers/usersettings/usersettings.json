@@ -332,6 +332,30 @@
       ]
     },
     {
+      "id": "show_crosshair",
+      "question": {
+        "en":"Should a crosshair be shown in the center of the display?"
+      },
+      "questionHint": {
+        "en":"This can help to accurately position a new element"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-show_crosshair=yes",
+          "then": "Show a crosshair in the center of the map (when zoomed in above level 17)"
+        },
+        {
+          "if": "mapcomplete-show_crosshair=no",
+          "then": "Do not show a crosshair in the center of the map"
+        },
+        {
+          "if": "mapcomplete-show_crosshair=",
+          "then": "Do not show a crosshair in the center of the map",
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
       "id": "fixate-north",
       "question": {
         "en": "Should north always be up?",
