@@ -53,61 +53,6 @@ export class AvailableRasterLayers {
         geometry: BBox.global.asGeometry(),
     }
 
-    public static readonly maptilerCarto: RasterLayerPolygon = {
-        type: "Feature",
-        properties: {
-            name: "MapTiler Carto",
-            url: "https://api.maptiler.com/maps/openstreetmap/style.json?key=GvoVAJgu46I5rZapJuAy",
-            category: "osmbasedmap",
-            id: "maptiler.carto",
-            type: "vector",
-            attribution: {
-                text: "Maptiler",
-                url: "https://www.maptiler.com/copyright/",
-            },
-        },
-        geometry: BBox.global.asGeometry(),
-    }
-
-    public static readonly maptilerBackdrop: RasterLayerPolygon = {
-        type: "Feature",
-        properties: {
-            name: "MapTiler Backdrop",
-            url: "https://api.maptiler.com/maps/backdrop/style.json?key=GvoVAJgu46I5rZapJuAy",
-            category: "osmbasedmap",
-            id: "maptiler.backdrop",
-            type: "vector",
-            attribution: {
-                text: "Maptiler",
-                url: "https://www.maptiler.com/copyright/",
-            },
-        },
-        geometry: BBox.global.asGeometry(),
-    }
-    public static readonly americana: RasterLayerPolygon = {
-        type: "Feature",
-        properties: {
-            name: "Americana",
-            url: "https://zelonewolf.github.io/openstreetmap-americana/style.json",
-            category: "osmbasedmap",
-            id: "americana",
-            type: "vector",
-            attribution: {
-                text: "Americana",
-                url: "https://github.com/ZeLonewolf/openstreetmap-americana/",
-            },
-        },
-        geometry: BBox.global.asGeometry(),
-    }
-
-    public static readonly vectorLayers = [
-        AvailableRasterLayers.maptilerDefaultLayer,
-        AvailableRasterLayers.osmCarto,
-        AvailableRasterLayers.maptilerCarto,
-        AvailableRasterLayers.maptilerBackdrop,
-        AvailableRasterLayers.americana,
-    ]
-
     public static layersAvailableAt(
         location: Store<{ lon: number; lat: number }>
     ): Store<RasterLayerPolygon[]> {
@@ -119,7 +64,7 @@ export class AvailableRasterLayers {
                 )
             })
         )
-        const available = Stores.ListStabilized(
+        return Stores.ListStabilized(
             availableLayersBboxes.map((eliPolygons) => {
                 const loc = location.data
                 const lonlat: [number, number] = [loc.lon, loc.lat]
@@ -129,12 +74,11 @@ export class AvailableRasterLayers {
                     }
                     return GeoOperations.inside(lonlat, eliPolygon)
                 })
+                matching.push(AvailableRasterLayers.maptilerDefaultLayer)
                 matching.push(...AvailableRasterLayers.globalLayers)
-                matching.unshift(...AvailableRasterLayers.vectorLayers)
                 return matching
             })
         )
-        return available
     }
 }
 

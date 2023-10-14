@@ -464,10 +464,14 @@
     {
       "builtin": [
         "toilet",
-        "drinking_water"
+        "drinking_water",
+        "guidepost"
       ],
       "override": {
-        "minzoom": 15
+        "minzoom": 15,
+        "mapRendering": [{
+          "iconSize": "30,30"
+        }]
       }
     }
   ],

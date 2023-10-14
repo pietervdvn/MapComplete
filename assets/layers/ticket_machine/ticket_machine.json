@@ -20,7 +20,7 @@
       ]
     }
   },
-  "minzoom": 19,
+  "minzoom": 18,
   "title": {
     "render": {
       "en": "Ticket Machine",

@@ -165,7 +165,7 @@
     {
       "builtin": "food",
       "override": {
-        "minzoom": 19,
+        "minzoom": 18,
         "filter": null,
         "name": null
       }
@@ -181,7 +181,7 @@
     {
       "builtin": "shops",
       "override": {
-        "minzoom": 19,
+        "minzoom": 18,
         "filter": null,
         "presets": [
           {

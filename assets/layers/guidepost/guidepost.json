@@ -1,0 +1,53 @@
+{
+  "id": "guidepost",
+  "name": {
+    "en": "Guideposts"
+  },
+  "description": {
+    "en": "Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations"
+  },
+  "source": {
+    "osmTags": "information=guidepost"
+  },
+  "minzoom": 14,
+  "presets": [
+    {
+      "title": {
+        "en": "a guidepost"
+      },
+      "tags": [
+        "information=guidepost",
+        "tourism=information"
+      ],
+      "description": {
+        "en": "A guidepost (also known as fingerpost) is often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations"
+      },
+      "exampleImages": [
+        "./assets/layers/guidepost/guidepost_example.jpg"
+      ]
+    }
+  ],
+  "deletion": true,
+  "allowMove": {
+    "enableImproveAccuracy": "true",
+    "enableRelocation": "false"
+  },
+  "title": {
+    "render": {
+      "en": "Guidepost"
+    }
+  },
+  "mapRendering": [
+    {
+      "location": [
+        "centroid",
+        "point"
+      ],
+      "icon": "./assets/layers/guidepost/guidepost.svg",
+      "anchor": "bottom"
+    }
+  ],
+  "tagRenderings": [
+    "images"
+  ]
+}

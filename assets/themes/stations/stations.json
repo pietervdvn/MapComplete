@@ -32,7 +32,7 @@
     {
       "builtin": "indoors",
       "override": {
-        "minzoom": 19,
+        "minzoom": 18,
         "passAllFeatures": true,
         "mapRendering": [
           {},
@@ -50,7 +50,7 @@
     {
       "builtin": "stairs",
       "override": {
-        "minzoom": 19
+        "minzoom": 18
       }
     },
     {
@@ -130,7 +130,7 @@
           ]
         },
         "presets": null,
-        "minzoom": 19
+        "minzoom": 18
       }
     },
     {
@@ -143,7 +143,7 @@
           ]
         },
         "presets": null,
-        "minzoom": 19,
+        "minzoom": 18,
         "mapRendering": [
           {
             "icon": "circle:white;./assets/themes/stations/bicycle_parking.svg"
@@ -161,7 +161,7 @@
           ]
         },
         "presets": null,
-        "minzoom": 19,
+        "minzoom": 18,
         "mapRendering": [
           {
             "icon": "circle:white;./assets/themes/stations/rental_bicycle.svg"
@@ -179,7 +179,7 @@
           ]
         },
         "presets": null,
-        "minzoom": 19
+        "minzoom": 18
       }
     },
     {
@@ -195,7 +195,7 @@
           ]
         },
         "presets": null,
-        "minzoom": 19,
+        "minzoom": 18,
         "mapRendering+": [
           {
             "color": "#00f",
@@ -214,7 +214,7 @@
           ]
         },
         "presets": null,
-        "minzoom": 19,
+        "minzoom": 18,
         "mapRendering+": [
           {
             "color": "yellow",
@@ -235,13 +235,13 @@
         "clock"
       ],
       "override": {
-        "minzoom": 19
+        "minzoom": 18
       }
     },
     {
       "builtin": "bench",
       "override": {
-        "minzoom": 19,
+        "minzoom": 18,
         "mapRendering": [
           {
             "icon": "./assets/themes/stations/bench.svg"
@@ -252,7 +252,7 @@
     {
       "builtin": "drinking_water",
       "override": {
-        "minzoom": 19,
+        "minzoom": 18,
         "mapRendering": [
           {
             "icon": "circle:white;./assets/themes/stations/drinking_water.svg"
@@ -293,7 +293,7 @@
           "zh_Hant": "時刻表"
         }
       },
-      "minzoom": 19,
+      "minzoom": 18,
       "source": {
         "osmTags": {
           "and": [

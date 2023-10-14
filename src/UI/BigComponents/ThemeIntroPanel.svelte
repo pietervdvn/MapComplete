@@ -1,47 +1,48 @@
 <script lang="ts">
-  import Translations from "../i18n/Translations"
-  import Svg from "../../Svg"
-  import Tr from "../Base/Tr.svelte"
-  import NextButton from "../Base/NextButton.svelte"
-  import Geosearch from "./Geosearch.svelte"
-  import ToSvelte from "../Base/ToSvelte.svelte"
-  import ThemeViewState from "../../Models/ThemeViewState"
-  import { Store, UIEventSource } from "../../Logic/UIEventSource"
-  import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
-  import { twJoin } from "tailwind-merge"
-  import { Utils } from "../../Utils"
-  import type { GeolocationPermissionState } from "../../Logic/State/GeoLocationState"
+    import Translations from "../i18n/Translations";
+    import Svg from "../../Svg";
+    import Tr from "../Base/Tr.svelte";
+    import NextButton from "../Base/NextButton.svelte";
+    import Geosearch from "./Geosearch.svelte";
+    import ToSvelte from "../Base/ToSvelte.svelte";
+    import ThemeViewState from "../../Models/ThemeViewState";
+    import { Store, UIEventSource } from "../../Logic/UIEventSource";
+    import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid";
+    import { twJoin } from "tailwind-merge";
+    import { Utils } from "../../Utils";
+    import type { GeolocationPermissionState } from "../../Logic/State/GeoLocationState";
+    import If from "../Base/If.svelte";
 
-  /**
-   * The theme introduction panel
-   */
-  export let state: ThemeViewState
-  let layout = state.layout
-  let selectedElement = state.selectedElement
-  let selectedLayer = state.selectedLayer
+    /**
+     * The theme introduction panel
+     */
+    export let state: ThemeViewState;
+    let layout = state.layout;
+    let selectedElement = state.selectedElement;
+    let selectedLayer = state.selectedLayer;
 
-  let triggerSearch: UIEventSource<any> = new UIEventSource<any>(undefined)
-  let searchEnabled = false
+    let triggerSearch: UIEventSource<any> = new UIEventSource<any>(undefined);
+    let searchEnabled = false;
 
-  let geopermission: Store<GeolocationPermissionState> =
-    state.geolocation.geolocationState.permission
-  let currentGPSLocation = state.geolocation.geolocationState.currentGPSLocation
+    let geopermission: Store<GeolocationPermissionState> =
+        state.geolocation.geolocationState.permission;
+    let currentGPSLocation = state.geolocation.geolocationState.currentGPSLocation;
 
-  geopermission.addCallback((perm) => console.log(">>>> Permission", perm))
+    geopermission.addCallback((perm) => console.log(">>>> Permission", perm));
 
-  function jumpToCurrentLocation() {
-    const glstate = state.geolocation.geolocationState
-    if (glstate.currentGPSLocation.data !== undefined) {
-      const c: GeolocationCoordinates = glstate.currentGPSLocation.data
-      state.guistate.themeIsOpened.setData(false)
-      const coor = { lon: c.longitude, lat: c.latitude }
-      state.mapProperties.location.setData(coor)
+    function jumpToCurrentLocation() {
+        const glstate = state.geolocation.geolocationState;
+        if (glstate.currentGPSLocation.data !== undefined) {
+            const c: GeolocationCoordinates = glstate.currentGPSLocation.data;
+            state.guistate.themeIsOpened.setData(false);
+            const coor = { lon: c.longitude, lat: c.latitude };
+            state.mapProperties.location.setData(coor);
+        }
+        if (glstate.permission.data !== "granted") {
+            glstate.requestPermission();
+            return;
+        }
     }
-    if (glstate.permission.data !== "granted") {
-      glstate.requestPermission()
-      return
-    }
-  }
 </script>
 
 <div class="flex h-full flex-col justify-between">
@@ -62,61 +63,67 @@
       </div>
     </NextButton>
 
-    <div class="flex w-full flex-wrap sm:flex-nowrap">
-      {#if $currentGPSLocation !== undefined || $geopermission === "prompt"}
-        <button class="flex w-full items-center gap-x-2" on:click={jumpToCurrentLocation}>
-          <ToSvelte construct={Svg.crosshair_svg().SetClass("w-8 h-8")} />
-          <Tr t={Translations.t.general.openTheMapAtGeolocation} />
-        </button>
-        <!-- No geolocation granted - we don't show the button -->
-      {:else if $geopermission === "requested"}
-        <button class="disabled flex w-full items-center gap-x-2" on:click={jumpToCurrentLocation}>
-          <!-- Even though disabled, when clicking we request the location again in case the contributor dismissed the location popup -->
-          <ToSvelte
-            construct={Svg.crosshair_svg()
-              .SetClass("w-8 h-8")
-              .SetStyle("animation: 3s linear 0s infinite normal none running spin;")}
-          />
-          <Tr t={Translations.t.general.waitingForGeopermission} />
-        </button>
-      {:else if $geopermission === "denied"}
-        <button class="disabled flex w-full items-center gap-x-2">
-          <ToSvelte construct={Svg.location_refused_svg().SetClass("w-8 h-8")} />
-          <Tr t={Translations.t.general.geopermissionDenied} />
-        </button>
-      {:else}
-        <button class="disabled flex w-full items-center gap-x-2">
-          <ToSvelte
-            construct={Svg.crosshair_svg()
-              .SetClass("w-8 h-8")
-              .SetStyle("animation: 3s linear 0s infinite normal none running spin;")}
-          />
-          <Tr t={Translations.t.general.waitingForLocation} />
-        </button>
-      {/if}
 
-      <div class=".button low-interaction m-1 flex w-full items-center gap-x-2 rounded border p-2">
-        <div class="w-full">
-          <Geosearch
-            bounds={state.mapProperties.bounds}
-            on:searchCompleted={() => state.guistate.themeIsOpened.setData(false)}
-            on:searchIsValid={(isValid) => {
+    <div class="flex w-full flex-wrap sm:flex-nowrap">
+      <If condition={state.featureSwitches.featureSwitchGeolocation}>
+        {#if $currentGPSLocation !== undefined || $geopermission === "prompt"}
+          <button class="flex w-full items-center gap-x-2" on:click={jumpToCurrentLocation}>
+            <ToSvelte construct={Svg.crosshair_svg().SetClass("w-8 h-8")} />
+            <Tr t={Translations.t.general.openTheMapAtGeolocation} />
+          </button>
+          <!-- No geolocation granted - we don't show the button -->
+        {:else if $geopermission === "requested"}
+          <button class="disabled flex w-full items-center gap-x-2" on:click={jumpToCurrentLocation}>
+            <!-- Even though disabled, when clicking we request the location again in case the contributor dismissed the location popup -->
+            <ToSvelte
+              construct={Svg.crosshair_svg()
+              .SetClass("w-8 h-8")
+              .SetStyle("animation: 3s linear 0s infinite normal none running spin;")}
+            />
+            <Tr t={Translations.t.general.waitingForGeopermission} />
+          </button>
+        {:else if $geopermission === "denied"}
+          <button class="disabled flex w-full items-center gap-x-2">
+            <ToSvelte construct={Svg.location_refused_svg().SetClass("w-8 h-8")} />
+            <Tr t={Translations.t.general.geopermissionDenied} />
+          </button>
+        {:else}
+          <button class="disabled flex w-full items-center gap-x-2">
+            <ToSvelte
+              construct={Svg.crosshair_svg()
+              .SetClass("w-8 h-8")
+              .SetStyle("animation: 3s linear 0s infinite normal none running spin;")}
+            />
+            <Tr t={Translations.t.general.waitingForLocation} />
+          </button>
+        {/if}
+      </If>
+
+
+      <If condition={state.featureSwitches.featureSwitchSearch}>
+        <div class=".button low-interaction m-1 flex w-full items-center gap-x-2 rounded border p-2">
+          <div class="w-full">
+            <Geosearch
+              bounds={state.mapProperties.bounds}
+              on:searchCompleted={() => state.guistate.themeIsOpened.setData(false)}
+              on:searchIsValid={(isValid) => {
               searchEnabled = isValid
             }}
-            perLayer={state.perLayer}
-            {selectedElement}
-            {selectedLayer}
-            {triggerSearch}
-          />
+              perLayer={state.perLayer}
+              {selectedElement}
+              {selectedLayer}
+              {triggerSearch}
+            />
+          </div>
+          <button
+            class={twJoin("flex items-center justify-between gap-x-2", !searchEnabled && "disabled")}
+            on:click={() => triggerSearch.ping()}
+          >
+            <Tr t={Translations.t.general.search.searchShort} />
+            <SearchIcon class="h-6 w-6" />
+          </button>
         </div>
-        <button
-          class={twJoin("flex items-center justify-between gap-x-2", !searchEnabled && "disabled")}
-          on:click={() => triggerSearch.ping()}
-        >
-          <Tr t={Translations.t.general.search.searchShort} />
-          <SearchIcon class="h-6 w-6" />
-        </button>
-      </div>
+      </If>
     </div>
   </div>
 

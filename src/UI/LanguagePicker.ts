@@ -12,7 +12,7 @@ import { QueryParameters } from "../Logic/Web/QueryParameters"
 
 export default class LanguagePicker extends Toggle {
     constructor(languages: string[], assignTo: UIEventSource<string>) {
-        console.log("Constructing a language pîcker for languages", languages)
+        console.log("Constructing a language picker for languages", languages)
         if (
             languages === undefined ||
             languages.length <= 1 ||

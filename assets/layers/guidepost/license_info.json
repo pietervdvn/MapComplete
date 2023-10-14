@@ -1,0 +1,22 @@
+[
+  {
+    "path": "guidepost.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "OSM Carto"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Guidepost-14.svg"
+    ]
+  },
+  {
+    "path": "guidepost_example.jpg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Mschaeuble"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Signpost.jpg"
+    ]
+  }
+]

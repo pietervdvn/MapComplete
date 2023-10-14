@@ -47,7 +47,7 @@
         "osmTags": "building~*",
         "maxCacheAge": 0
       },
-      "minzoom": 19,
+      "minzoom": 18,
       "calculatedTags": [
         "_surface:strict:=feat(get)('_surface')"
       ],
@@ -154,7 +154,7 @@
         },
         "maxCacheAge": 0
       },
-      "minzoom": 19,
+      "minzoom": 18,
       "mapRendering": [
         {
           "label": {
@@ -194,7 +194,7 @@
         "osmTags": "identificatie~*",
         "maxCacheAge": 0
       },
-      "minzoom": 19,
+      "minzoom": 18,
       "calculatedTags": [
         "_overlaps_with_buildings=overlapWith(feat)('osm:buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
         "_overlaps_with=feat(get)('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
@@ -379,7 +379,7 @@
         "osmTags": "identificatie~*",
         "maxCacheAge": 0
       },
-      "minzoom": 19,
+      "minzoom": 18,
       "calculatedTags": [
         "_closed_osm_addr:=closest(feat)('osm:adresses').properties",
         "_bag_obj:addr:housenumber=`${feat.properties.huisnummer}${feat.properties.huisletter}${(feat.properties.toevoeging != '') ? '-' : ''}${feat.properties.toevoeging}`",

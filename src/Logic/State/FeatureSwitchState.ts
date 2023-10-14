@@ -99,7 +99,7 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
         )
         this.featureSwitchCommunityIndex = FeatureSwitchUtils.initSwitch(
             "fs-community-index",
-            true,
+            this.featureSwitchEnableLogin.data,
             "Disables/enables the button to get in touch with the community"
         )
         this.featureSwitchExtraLinkEnabled = FeatureSwitchUtils.initSwitch(
