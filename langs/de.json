@@ -124,7 +124,7 @@
             "pleaseLogin": "Bitte anmelden, um ein neues Objekt hinzuzufügen",
             "presetInfo": "Der neue POI hat {tags}",
             "stillLoading": "Die Daten werden noch geladen. Bitte warten Sie, bevor Sie ein neues Objekt hinzufügen.",
-            "title": "Neues Objekt hinzufügen?",
+            "title": "Neues Objekt hinzufügen",
             "warnVisibleForEveryone": "Ihre Ergänzung wird für alle sichtbar sein",
             "wrongType": "Dieses Objekt ist weder ein Punkt noch ein Weg und kann nicht importiert werden",
             "zoomInFurther": "Ausschnitt vergrößern, um ein Objekt hinzuzufügen.",
