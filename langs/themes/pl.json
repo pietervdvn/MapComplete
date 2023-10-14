@@ -83,7 +83,7 @@
                         }
                     },
                     "Reference": {
-                        "render": "Odniesienie w BAG to <b>{_bag_obj:ref:bag</b>"
+                        "render": "Odniesienie w BAG to <b>{_bag_obj:ref:bag}</b>"
                     }
                 }
             }
