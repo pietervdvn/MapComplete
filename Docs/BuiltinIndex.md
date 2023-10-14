@@ -11,13 +11,14 @@
   - [Existing builtin tagrenderings](#existing-builtin-tagrenderings)
     + [images](#images)
     + [luminous_or_lit](#luminous_or_lit)
+    + [reviews](#reviews)
+    + [website](#website)
+    + [phone](#phone)
+    + [email](#email)
     + [wikipedia](#wikipedia)
     + [bench.*bench-questions](#bench*bench-questions)
     + [opening_hours](#opening_hours)
     + [artwork.*artwork-question](#artwork*artwork-question)
-    + [website](#website)
-    + [phone](#phone)
-    + [email](#email)
     + [description](#description)
     + [payment-options](#payment-options)
     + [payment-options-advanced](#payment-options-advanced)
@@ -33,7 +34,6 @@
     + [internet](#internet)
     + [internet-fee](#internet-fee)
     + [internet-ssid](#internet-ssid)
-    + [reviews](#reviews)
     + [questions](#questions)
     + [climbing.website](#climbingwebsite)
     + [climbing.fee](#climbingfee)
@@ -50,6 +50,9 @@
     + [denominations-coins](#denominations-coins)
     + [check_date](#check_date)
     + [all_tags](#all_tags)
+    + [sugar_free](#sugar_free)
+    + [gluten_free](#gluten_free)
+    + [lactose_free](#lactose_free)
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
     + [minimap](#minimap)
@@ -88,6 +91,7 @@
 
   - advertising
   - ambulancestation
+  - animal_shelter
   - artwork
   - atm
   - barrier
@@ -188,6 +192,139 @@
 
 
 
+### reviews 
+
+
+
+
+
+  - animal_shelter
+  - cafe_pub
+  - dogpark
+  - fitness_centre
+  - food
+  - hackerspace
+  - hotel
+  - pharmacy
+  - shops
+  - veterinary
+
+
+
+
+### website 
+
+
+
+
+
+  - animal_shelter
+  - bicycle_library
+  - bicycle_rental
+  - bike_cafe
+  - bike_shop
+  - bike_themed_object
+  - cafe_pub
+  - car_rental
+  - climbing_club
+  - climbing_gym
+  - dentist
+  - doctors
+  - elongated_coin
+  - fitness_centre
+  - food
+  - governments
+  - hackerspace
+  - hotel
+  - kindergarten_childcare
+  - nature_reserve
+  - observation_tower
+  - pharmacy
+  - physiotherapist
+  - playground
+  - recycling
+  - school
+  - shops
+  - sports_centre
+  - tertiary_education
+  - vending_machine
+  - veterinary
+
+
+
+
+### phone 
+
+
+
+
+
+  - animal_shelter
+  - bicycle_library
+  - bicycle_rental
+  - bike_cafe
+  - bike_shop
+  - bike_themed_object
+  - cafe_pub
+  - car_rental
+  - climbing_club
+  - climbing_gym
+  - dentist
+  - doctors
+  - fitness_centre
+  - food
+  - governments
+  - hackerspace
+  - hotel
+  - kindergarten_childcare
+  - pharmacy
+  - physiotherapist
+  - recycling
+  - school
+  - shops
+  - sports_centre
+  - tertiary_education
+  - vending_machine
+  - veterinary
+
+
+
+
+### email 
+
+
+
+
+
+  - animal_shelter
+  - bicycle_library
+  - bicycle_rental
+  - bike_cafe
+  - bike_shop
+  - bike_themed_object
+  - cafe_pub
+  - car_rental
+  - climbing_club
+  - climbing_gym
+  - dentist
+  - doctors
+  - fitness_centre
+  - food
+  - governments
+  - hackerspace
+  - hotel
+  - kindergarten_childcare
+  - pharmacy
+  - physiotherapist
+  - recycling
+  - school
+  - shops
+  - sports_centre
+  - tertiary_education
+
+
+
+
 ### wikipedia 
 
 
@@ -252,116 +389,6 @@
 
 
   - bench
-
-
-
-
-### website 
-
-
-
-
-
-  - bicycle_library
-  - bicycle_rental
-  - bike_cafe
-  - bike_shop
-  - bike_themed_object
-  - cafe_pub
-  - car_rental
-  - climbing_club
-  - climbing_gym
-  - dentist
-  - doctors
-  - elongated_coin
-  - fitness_centre
-  - food
-  - governments
-  - hackerspace
-  - hotel
-  - kindergarten_childcare
-  - nature_reserve
-  - observation_tower
-  - pharmacy
-  - physiotherapist
-  - playground
-  - recycling
-  - school
-  - shops
-  - sports_centre
-  - tertiary_education
-  - vending_machine
-  - veterinary
-
-
-
-
-### phone 
-
-
-
-
-
-  - bicycle_library
-  - bicycle_rental
-  - bike_cafe
-  - bike_shop
-  - bike_themed_object
-  - cafe_pub
-  - car_rental
-  - climbing_club
-  - climbing_gym
-  - dentist
-  - doctors
-  - fitness_centre
-  - food
-  - governments
-  - hackerspace
-  - hotel
-  - kindergarten_childcare
-  - pharmacy
-  - physiotherapist
-  - recycling
-  - school
-  - shops
-  - sports_centre
-  - tertiary_education
-  - vending_machine
-  - veterinary
-
-
-
-
-### email 
-
-
-
-
-
-  - bicycle_library
-  - bicycle_rental
-  - bike_cafe
-  - bike_shop
-  - bike_themed_object
-  - cafe_pub
-  - car_rental
-  - climbing_club
-  - climbing_gym
-  - dentist
-  - doctors
-  - fitness_centre
-  - food
-  - governments
-  - hackerspace
-  - hotel
-  - kindergarten_childcare
-  - pharmacy
-  - physiotherapist
-  - recycling
-  - school
-  - shops
-  - sports_centre
-  - tertiary_education
 
 
 
@@ -601,25 +628,6 @@
 
 
 
-### reviews 
-
-
-
-
-
-  - cafe_pub
-  - dogpark
-  - fitness_centre
-  - food
-  - hackerspace
-  - hotel
-  - pharmacy
-  - shops
-  - veterinary
-
-
-
-
 ### questions 
 
 
@@ -806,6 +814,42 @@
 
 
   - fixme
+
+
+
+
+### sugar_free 
+
+
+
+
+
+  - food
+  - shops
+
+
+
+
+### gluten_free 
+
+
+
+
+
+  - food
+  - shops
+
+
+
+
+### lactose_free 
+
+
+
+
+
+  - food
+  - shops
 
 
 

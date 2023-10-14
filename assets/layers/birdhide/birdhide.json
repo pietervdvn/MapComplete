@@ -8,7 +8,8 @@
     "da": "Steder til fugleobservation",
     "fr": "Lieu pour observer des oiseaux",
     "ca": "Llocs per a vore ocells",
-    "pl": "Miejsca do obserwacji ptaków"
+    "pl": "Miejsca do obserwacji ptaków",
+    "cs": "Místa pro pozorování ptáků"
   },
   "minzoom": 14,
   "source": {
@@ -83,7 +84,8 @@
     "da": "Et fugleskjul",
     "de": "Ein Vogelbeobachtungsturm",
     "fr": "Un observatoire ornithologique",
-    "ca": "Un observatori d'ocells"
+    "ca": "Un observatori d'ocells",
+    "cs": "Pozorovatelna"
   },
   "tagRenderings": [
     "images",
@@ -128,7 +130,8 @@
             "da": "Fugleskjul",
             "de": "Vogelbeobachtungsturm",
             "fr": "Observatoire ornithologique",
-            "ca": "Observatori d'ocells"
+            "ca": "Observatori d'ocells",
+            "cs": "Ptačí skrýš"
           }
         },
         {
@@ -144,7 +147,8 @@
             "de": "Turm zur Vogelbeobachtung",
             "fr": "Tour d’observation ornithologique",
             "da": "Fugletårn skjul",
-            "ca": "Torre d'observació d'ocells"
+            "ca": "Torre d'observació d'ocells",
+            "cs": "Ptačí budka věž"
           }
         },
         {
@@ -190,7 +194,8 @@
             "de": "Für Rollstuhlfahrer gibt es besondere Vorrichtungen",
             "fr": "L’infrastructure est adaptée aux utilisateurs de chaises roulantes",
             "da": "Der er særlige bestemmelser for kørestolsbrugere",
-            "ca": "Hi ha provisions especials per als usuaris de cadira de rodes"
+            "ca": "Hi ha provisions especials per als usuaris de cadira de rodes",
+            "cs": "Pro vozíčkáře jsou připravena speciální opatření"
           }
         },
         {
@@ -237,7 +242,8 @@
             "da": "Ikke tilgængelig for kørestolsbrugere",
             "fr": "Pas accessible en chaise roulante",
             "ca": "No accessible per a persones amb cadira de rodes",
-            "pl": "Niedostępne dla osób na wózkach"
+            "pl": "Niedostępne dla osób na wózkach",
+            "cs": "Není přístupný pro osoby na invalidním vozíku"
           }
         }
       ]
@@ -251,7 +257,8 @@
         "da": "Drives af {operator}",
         "fr": "Opéré par {operator}",
         "ca": "Gestionat per {operator}",
-        "pl": "Obsługiwane przez {operator}"
+        "pl": "Obsługiwane przez {operator}",
+        "cs": "Provozuje {operator}"
       },
       "freeform": {
         "key": "operator"
@@ -275,7 +282,8 @@
             "da": "Drives af Natuurpunt",
             "fr": "Opéré par Natuurpunt",
             "ca": "Operat per Natuurpunt",
-            "pl": "Obsługiwane przez Natuurpunt"
+            "pl": "Obsługiwane przez Natuurpunt",
+            "cs": "Provozuje Natuurpunt"
           }
         },
         {
@@ -285,7 +293,8 @@
             "nl": "Beheer door het Agentschap Natuur en Bos",
             "de": "Betrieben von einer Forst- bzw. Naturschutzbehörde",
             "fr": "Opéré par l’Agence Nature et Forêts",
-            "da": "Drives af Natur- og Skovstyrelsen"
+            "da": "Drives af Natur- og Skovstyrelsen",
+            "cs": "Provozuje the Agency for Nature and Forests"
           }
         }
       ],
@@ -306,7 +315,8 @@
         "da": "et fugleskjul",
         "de": "ein Gebäude zur Vogelbeobachtung",
         "fr": "un observatoire ornithologique",
-        "ca": "un observatori d'ocells"
+        "ca": "un observatori d'ocells",
+        "cs": "pozorovatelna"
       },
       "description": {
         "en": "A covered shelter where one can watch birds comfortably",
@@ -315,7 +325,8 @@
         "es": "Un refugio cubierto donde se pueden ver pájaros confortablemente",
         "da": "Et overdækket ly, hvor man kan se fugle i ro og mag",
         "fr": "Un abris couvert pour observer les oiseaux confortablement",
-        "ca": "Un refugi cobert on es poden veure ocells confortablement"
+        "ca": "Un refugi cobert on es poden veure ocells confortablement",
+        "cs": "Krytý přístřešek, kde lze pohodlně pozorovat ptáky"
       }
     },
     {
@@ -339,7 +350,8 @@
         "da": "En skærm eller væg med åbninger til at se på fugle",
         "de": "Ein Schirm oder eine Wand mit Öffnungen zum Beobachten von Vögeln",
         "fr": "Un écran ou un mur avec des ouvertures pour observer les oiseaux",
-        "ca": "Una pantalla o paret amb obertures per a observar ocells"
+        "ca": "Una pantalla o paret amb obertures per a observar ocells",
+        "cs": "Obrazovka nebo stěna s otvory pro sledování ptáků"
       }
     }
   ],
@@ -355,7 +367,8 @@
             "fr": "Accessible aux fauteuils roulants",
             "ca": "Accessible per a cadires de rodes",
             "es": "Accesible con sillas de ruedas",
-            "da": "Tilgængelig for kørestolsbrugere"
+            "da": "Tilgængelig for kørestolsbrugere",
+            "cs": "Bezbariérový přístup"
           },
           "osmTags": {
             "or": [
@@ -377,7 +390,8 @@
             "de": "Nur überdachte Vogelbeobachtungsstellen",
             "da": "Kun overdækkede fugleskjul",
             "fr": "Seulement les observatoires ornithologiques couverts",
-            "ca": "Només observatoris d'ocells coberts"
+            "ca": "Només observatoris d'ocells coberts",
+            "cs": "Pouze zakryté pozorovatelny"
           },
           "osmTags": {
             "and": [

@@ -61,6 +61,9 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:vegetarian#values) [diet:vegetarian](https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dlimited) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Donly)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:vegan#values) [diet:vegan](https://wiki.openstreetmap.org/wiki/Key:diet:vegan) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Donly)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:halal#values) [diet:halal](https://wiki.openstreetmap.org/wiki/Key:diet:halal) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dlimited) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Donly)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:sugar_free#values) [diet:sugar_free](https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:gluten_free#values) [diet:gluten_free](https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:lactose_free#values) [diet:lactose_free](https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/organic#values) [organic](https://wiki.openstreetmap.org/wiki/Key:organic) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dno) [yes](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:organic%3Donly)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:vegetarian#values) [diet:vegetarian](https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:vegan#values) [diet:vegan](https://wiki.openstreetmap.org/wiki/Key:diet:vegan) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno)
@@ -436,6 +439,60 @@ The question is  *Does this restaurant offer a halal menu?*
 
 
 
+### sugar_free 
+
+
+
+The question is  *Does this shop have a sugar free offering?*
+
+
+
+
+
+  - *This shop <b>only sells sugar free</b> products*  corresponds with  `diet:sugar_free=only`
+  - *This shop has a big sugar free offering*  corresponds with  `diet:sugar_free=yes`
+  - *This shop has a <b>limited sugar free</b> offering*  corresponds with  `diet:sugar_free=limited`
+  - *This shop has no sugar free offering*  corresponds with  `diet:sugar_free=no`
+
+
+
+
+### gluten_free 
+
+
+
+The question is  *Does this shop have a gluten free offering?*
+
+
+
+
+
+  - *This shop <b>only sells gluten free</b> products*  corresponds with  `diet:gluten_free=only`
+  - *This shop has a big gluten free offering*  corresponds with  `diet:gluten_free=yes`
+  - *This shop has a <b>limited gluten free</b> offering*  corresponds with  `diet:gluten_free=limited`
+  - *This shop has no gluten free offering*  corresponds with  `diet:gluten_free=no`
+
+
+
+
+### lactose_free 
+
+
+
+The question is  *Does {title()} have a lactose-free offering?*
+
+
+
+
+
+  - *<b>Only sells lactose free</b> products*  corresponds with  `diet:lactose_free=only`
+  - *Big lactose free offering*  corresponds with  `diet:lactose_free=yes`
+  - *<b>Limited lactose free</b> offering*  corresponds with  `diet:lactose_free=limited`
+  - *No lactose free offering*  corresponds with  `diet:lactose_free=no`
+
+
+
+
 ### organic (no friture) 
 
 
@@ -774,6 +831,27 @@ halal.0 | Has a halal menu | diet:halal=yes\|diet:halal=only
 id | question | osmTags
 ---- | ---------- | ---------
 has_organic.0 | Has organic options | organic=yes\|organic=only
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+sugar_free.0 | Has a sugar-free offering | diet:sugar_free=yes\|diet:sugar_free=only\|diet:sugar_free=limited
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+gluten_free.0 | Has a gluten free offering | diet:gluten_free=yes\|diet:gluten_free=only\|diet:gluten_free=limited
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+lactose_free.0 | Has a lactose free offering | diet:lactose_free=yes\|diet:lactose_free=only\|diet:lactose_free=limited
 
 
 

@@ -6,7 +6,8 @@
     "de": "Autovermietung",
     "fr": "Société de location de véhicules",
     "ca": "Lloguer de cotxes",
-    "pl": "Wypożyczalnia samochodów"
+    "pl": "Wypożyczalnia samochodów",
+    "cs": "Půjčovna aut"
   },
   "source": {
     "osmTags": "amenity=car_rental"
@@ -19,7 +20,8 @@
       "de": "Autovermietung",
       "fr": "Société de location de véhicules",
       "ca": "Lloguer de cotxes",
-      "pl": "Wypożyczalnia samochodów"
+      "pl": "Wypożyczalnia samochodów",
+      "cs": "Půjčovna aut"
     },
     "mappings": [
       {
@@ -34,7 +36,8 @@
     "de": "Orte, an denen Sie ein Auto mieten können",
     "fr": "Lieu où vous pouvez louer une voiture",
     "ca": "Llocs on pots llogar un cotxe",
-    "pl": "Miejsca, w których można wypożyczyć samochód"
+    "pl": "Miejsca, w których można wypożyczyć samochód",
+    "cs": "Místa, kde si můžete pronajmout auto"
   },
   "tagRenderings": [
     "images",
@@ -49,7 +52,8 @@
           "de": "Name der Autovermietung",
           "fr": "Nom de la société de location de véhicules",
           "ca": "Nom del lloguer de cotxes",
-          "pl": "Nazwa wypożyczalni samochodów"
+          "pl": "Nazwa wypożyczalni samochodów",
+          "cs": "Název autopůjčovny"
         }
       },
       "question": {
@@ -58,7 +62,8 @@
         "de": "Wie lautet der Name dieser Autovermietung?",
         "fr": "Quel est le nom de cette société de location de véhicules ?",
         "ca": "Com es diu aquest lloguer de cotxes?",
-        "pl": "Jaka jest nazwa tej wypożyczalni samochodów?"
+        "pl": "Jaka jest nazwa tej wypożyczalni samochodów?",
+        "cs": "Jak se jmenuje tato půjčovna aut?"
       },
       "mappings": [
         {
@@ -69,7 +74,8 @@
             "de": "Diese Autovermietung hat keinen Namen",
             "fr": "Cette société de location de véhicules n'a pas de nom",
             "ca": "Aquest lloguer de cotxes no té nom",
-            "pl": "Ta wypożyczalnia samochodów nie ma nazwy"
+            "pl": "Ta wypożyczalnia samochodów nie ma nazwy",
+            "cs": "Tato autopůjčovna nemá jméno"
           }
         }
       ],
@@ -79,7 +85,8 @@
         "de": "Der Name der Autovermietung lautet {name}",
         "fr": "Cette société de location de véhicules est appelée {name}",
         "ca": "Aquest lloguer de cotxes es diu {name}",
-        "pl": "Ta wypożyczalnia samochodów nazywa się {name}"
+        "pl": "Ta wypożyczalnia samochodów nazywa się {name}",
+        "cs": "Tato autopůjčovna se jmenuje {name}"
       }
     },
     "website",
@@ -98,7 +105,8 @@
         "de": "eine Autovermietung",
         "fr": "Une société de location de véhicules",
         "ca": "un lloguer de cotxes",
-        "pl": "wypożyczalnia samochodów"
+        "pl": "wypożyczalnia samochodów",
+        "cs": "půjčovna aut"
       },
       "description": {
         "en": "A place where you can rent a car",
@@ -106,7 +114,8 @@
         "de": "Ein Ort, an dem Sie ein Auto mieten können",
         "fr": "Un lieu où vous pouvez louer une voiture",
         "ca": "Un lloc on pots llogar un cotxe",
-        "pl": "Miejsce, w którym można wypożyczyć samochód"
+        "pl": "Miejsce, w którym można wypożyczyć samochód",
+        "cs": "Místo, kde si můžete pronajmout auto"
       }
     }
   ],

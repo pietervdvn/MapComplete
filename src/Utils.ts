@@ -1098,7 +1098,16 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             }
             return { content: data }
         } catch (e) {
-            console.error("Could not parse ", data, "due to", e, "\n", e.stack)
+            console.error(
+                "Could not parse the response of",
+                url,
+                "which contains",
+                data,
+                "due to",
+                e,
+                "\n",
+                e.stack
+            )
             return { error: "malformed", url }
         }
     }

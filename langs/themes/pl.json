@@ -1,5 +1,6 @@
 {
     "advertising": {
+        "description": "Czy zastanawiałeś się kiedyś, ile reklam jest na naszych ulicach i drogach? Dzięki tej mapie możesz znaleźć i dodać informacje o wszystkich funkcjach reklamowych, które możesz znaleźć na ulicy",
         "shortDescription": "Gdzie mogę znaleźć obiekty reklamowe?",
         "title": "Reklamy"
     },
@@ -8,11 +9,11 @@
         "title": "Defibrylatory"
     },
     "artwork": {
-        "description": "Witaj w Open Artwork Map, mapie pomników, popierś, graffitti i innych dzieł sztuki z całego świata",
-        "title": "Otwórz mapę dzieł sztuki"
+        "description": "Otwarta mapa posągów, popiersi, graffiti i innych dzieł sztuki z całego świata",
+        "title": "Dzieło sztuki"
     },
     "atm": {
-        "description": "Ta mapa pokazuje bankomaty/wpłatomaty",
+        "description": "Ta mapa pokazuje bankomaty, w których można wypłacać lub wpłacać pieniądze",
         "layers": {
             "3": {
                 "override": {
@@ -38,7 +39,19 @@
         "title": "Bankomaty"
     },
     "bag": {
+        "description": "Motyw ten pomaga w importowaniu danych z BAG",
         "layers": {
+            "0": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "Budynek ten nie ma odniesienia w BAG"
+                            }
+                        }
+                    }
+                }
+            },
             "2": {
                 "description": "Budynki z rejestru BAG",
                 "tagRenderings": {
@@ -57,27 +70,64 @@
                     }
                 }
             }
-        }
+        },
+        "shortDescription": "Narzędzie wspomagające import BAG",
+        "title": "Pomocnik importowy BAG"
     },
     "benches": {
+        "description": "Mapa ta pokazuje wszystkie ławki zarejestrowane w OpenStreetMap: ławki indywidualne oraz ławki należące do przystanków komunikacji miejskiej lub wiat.",
         "shortDescription": "Mapa ławek",
         "title": "Ławki"
     },
+    "bicycle_rental": {
+        "description": "Na tej mapie znajdziesz wiele stacji wynajmu rowerów, znanych w OpenStreetMap",
+        "shortDescription": "Mapa ze stacjami wypożyczania rowerów i wypożyczalniami rowerów",
+        "title": "Wypożyczanie rowerów"
+    },
     "bicyclelib": {
+        "description": "Biblioteka rowerowa to miejsce, w którym można wypożyczyć rowery, często za niewielką opłatą roczną. Godnym uwagi przypadkiem zastosowania są biblioteki rowerowe dla dzieci, które pozwalają im zmienić rower na większy, gdy wyrosną z obecnego roweru",
         "title": "Wypożyczalnie rowerów"
+    },
+    "binoculars": {
+        "description": "Mapa z lornetkami zamocowanymi na słupku. Zwykle można je odnaleźć w lokalizacjach turystycznych, punktach widokowych, na szczytach wież panoramicznych lub czasami w rezerwacie przyrody.",
+        "shortDescription": "Mapa ze stałymi lornetkami",
+        "title": "Lornetki"
     },
     "blind_osm": {
         "description": "Pomóż umieszczać na mapie obiekty ważne dla niewidomych",
         "title": "OSM dla niewidomych"
     },
+    "bookcases": {
+        "description": "Publiczny regał na książki to mała przyuliczna szafka, pudełko, stara budka telefoniczna lub inne przedmioty, w których przechowywane są książki. Każdy może w nich zostawić lub zabrać książkę. Celem tej mapy jest zebranie wszystkich tych regałów.",
+        "title": "Publiczne regały na książki"
+    },
     "cafes_and_pubs": {
+        "description": "Kawiarnie, puby i bary",
         "title": "Kawiarnie i puby"
     },
     "campersite": {
+        "description": "Na tej stronie zebrano wszystkie oficjalne miejsca postoju kamperów oraz miejsca, w których można wylać zanieczyszczoną wodę. Możesz dodać szczegóły dotyczące świadczonych usług i kosztów. Dodaj zdjęcia i recenzje.",
         "layers": {
             "0": {
+                "description": "miejsca dla kamperów",
+                "name": "Miejsca kamperowe",
+                "presets": {
+                    "0": {
+                        "description": "Dodaj nowe oficjalne miejsce dla kamperów. Są to wyznaczone miejsca, w których można przenocować w swoim kamperze. Mogą wyglądać jak prawdziwy kemping lub po prostu wyglądać jak parking. Mogą one w ogóle nie być oznakowane, a jedynie określone w decyzji gminy. Zwykły parking przeznaczony dla kamperów, na którym nie przewiduje się nocowania, nie jest miejscem dla kamperów ",
+                        "title": "miejsce dla kampera"
+                    }
+                },
                 "tagRenderings": {
+                    "caravansites-capacity": {
+                        "question": "Ile kamperów może tu przebywać? (pomiń, jeśli nie ma oczywistej liczby miejsc lub dozwolonych pojazdów)",
+                        "render": "{capacity} kamperów może z tego miejsca korzystać jednocześnie"
+                    },
+                    "caravansites-charge": {
+                        "question": "Ile kosztuje to miejsce?",
+                        "render": "To miejsce pobiera opłatę w wysokości {charge}"
+                    },
                     "caravansites-description": {
+                        "question": "Chcesz dodać ogólny opis tego miejsca? (Nie powtarzaj informacji zadanych wcześniej lub pokazanych powyżej. Zachowaj obiektywizm – opinie trafiają do recenzji)",
                         "render": "Więcej szczegółów o tym miejscu: {description}"
                     },
                     "caravansites-fee": {
@@ -116,9 +166,34 @@
                         },
                         "question": "Czy trzeba płacić za dostęp do internetu?"
                     },
+                    "caravansites-long-term": {
+                        "mappings": {
+                            "0": {
+                                "then": "Są miejsca na wynajem długoterminowy, ale można też wynajmować na co dzień"
+                            },
+                            "1": {
+                                "then": "Nie ma tu stałych gości"
+                            },
+                            "2": {
+                                "then": "Zakwaterowanie tutaj jest możliwe tylko jeśli masz umowę długoterminową (jeśli wybierzesz tę opcję, to miejsce zniknie z mapy)"
+                            }
+                        },
+                        "question": "Czy to miejsce oferuje miejsca do wynajęcia długoterminowego?"
+                    },
                     "caravansites-name": {
                         "question": "Jak nazywa się to miejsce?",
                         "render": "To miejsce nazywa się {name}"
+                    },
+                    "caravansites-sanitary-dump": {
+                        "mappings": {
+                            "0": {
+                                "then": "W tym miejscu znajduje się stacja zrzutu ścieków sanitarnych"
+                            },
+                            "1": {
+                                "then": "Miejsce to nie posiada stacji zrzutu ścieków sanitarnych"
+                            }
+                        },
+                        "question": "Czy w tym miejscu znajduje się stacja zrzutu ścieków sanitarnych?"
                     },
                     "caravansites-toilets": {
                         "mappings": {
@@ -135,10 +210,58 @@
                         "question": "Czy to miejsce ma stronę internetową?",
                         "render": "Official website: <a href='{website}'>{website}</a>"
                     }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Nienazwane miejsce dla kamperów"
+                        }
+                    },
+                    "render": "Pole kamperowe {name}"
                 }
             },
             "1": {
+                "description": "Stacje zrzutów sanitarnych",
+                "name": "Stacje zrzutów sanitarnych",
+                "presets": {
+                    "0": {
+                        "description": "Dodaj nową stację zrzutu sanitarnego. To miejsce, w którym kierowcy kamperów mogą wyrzucać ścieki lub odpady z toalet chemicznych. Często jest tam też woda pitna i prąd.",
+                        "title": "stacja zrzutu sanitarnego"
+                    }
+                },
                 "tagRenderings": {
+                    "dumpstations-access": {
+                        "mappings": {
+                            "0": {
+                                "then": "Aby z tego skorzystać, potrzebny jest klucz/kod sieci"
+                            },
+                            "1": {
+                                "then": "Aby korzystać z tego miejsca, musisz być klientem kempingu/miejsca dla kamperów"
+                            },
+                            "2": {
+                                "then": "Każdy może korzystać z tej stacji zrzutu"
+                            },
+                            "3": {
+                                "then": "Każdy może korzystać z tej stacji zrzutu"
+                            }
+                        },
+                        "question": "Kto może korzystać z tej stacji zrzutów?"
+                    },
+                    "dumpstations-charge": {
+                        "question": "Ile kosztuje to miejsce?",
+                        "render": "To miejsce pobiera opłatę w wysokości {charge}"
+                    },
+                    "dumpstations-chemical-waste": {
+                        "mappings": {
+                            "0": {
+                                "then": "Tutaj możesz wyrzucić odpady chemiczne z toalet"
+                            },
+                            "1": {
+                                "then": "Nie można tutaj wyrzucać odpadów chemicznych z toalet"
+                            }
+                        },
+                        "question": "Czy można tutaj wyrzucać odpady chemiczne z toalet?"
+                    },
                     "dumpstations-fee": {
                         "mappings": {
                             "0": {
@@ -149,12 +272,50 @@
                             }
                         },
                         "question": "Czy to miejsce pobiera opłatę?"
+                    },
+                    "dumpstations-grey-water": {
+                        "mappings": {
+                            "0": {
+                                "then": "Tutaj możesz pozbyć się szarej wody"
+                            },
+                            "1": {
+                                "then": "Nie można tu wylewać szarej wody"
+                            }
+                        },
+                        "question": "Czy można tutaj pozbyć się szarej wody?"
+                    },
+                    "dumpstations-network": {
+                        "question": "Do jakiej sieci należy to miejsce? (pomiń, jeśli nie ma)",
+                        "render": "Ta stacja jest częścią sieci {network}"
+                    },
+                    "dumpstations-waterpoint": {
+                        "mappings": {
+                            "0": {
+                                "then": "To miejsce ma punkt poboru wody"
+                            },
+                            "1": {
+                                "then": "To miejsce nie ma punktu poboru wody"
+                            }
+                        },
+                        "question": "Czy to miejsce ma punkt z wodą?"
                     }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Stacja zrzutowa"
+                        }
+                    },
+                    "render": "Stacja zrzutów {name}"
                 }
             }
         },
         "overrideAll": {
             "tagRenderings+": {
+                "0": {
+                    "question": "Kto obsługuje to miejsce?",
+                    "render": "To miejsce jest obsługiwane przez {operator}"
+                },
                 "1": {
                     "mappings": {
                         "0": {
@@ -167,12 +328,17 @@
                     "question": "Czy to miejsce ma dostęp do prądu?"
                 }
             }
-        }
+        },
+        "shortDescription": "Znajdź miejsca, w których możesz spędzić noc w kamperze",
+        "title": "Miejsca dla kamperów"
     },
     "charging_stations": {
+        "description": "Na tej otwartej mapie można znaleźć i zaznaczyć informacje o stacjach ładowania",
+        "shortDescription": "Światowa mapa stacji ładowania",
         "title": "Stacje ładowania"
     },
     "climbing": {
+        "description": "Na tej mapie znajdziesz różne możliwości wspinaczki, takie jak sale wspinaczkowe, hale do boulderingu i skały w przyrodzie.",
         "layers": {
             "0": {
                 "override": {
@@ -181,6 +347,9 @@
                             "mappings": {
                                 "0": {
                                     "then": "Publicznie dostępne dla każdego"
+                                },
+                                "1": {
+                                    "then": "Potrzebujesz pozwolenia, żeby tu wejść"
                                 },
                                 "2": {
                                     "then": "Tylko klienci"
@@ -191,20 +360,126 @@
                             },
                             "question": "Kto ma tutaj dostęp?"
                         }
+                    },
+                    "units+": {
+                        "0": {
+                            "applicableUnits": {
+                                "0": {
+                                    "human": " metry"
+                                },
+                                "1": {
+                                    "human": " stopy"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "1": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Ten warsztat naprawia buty wspinaczkowe"
+                                },
+                                "1": {
+                                    "then": "Ten warsztat nie naprawia butów wspinaczkowych"
+                                }
+                            },
+                            "question": "Czy ten warsztat szewski naprawia buty wspinaczkowe?"
+                        }
+                    }
+                }
+            },
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Ten warsztat naprawia buty wspinaczkowe"
+                                },
+                                "1": {
+                                    "then": "Ten warsztat nie naprawia butów wspinaczkowych"
+                                }
+                            },
+                            "question": "Czy ten warsztat obuwniczy naprawia również buty wspinaczkowe?"
+                        }
+                    },
+                    "=presets": {
+                        "0": {
+                            "title": "warsztat szewski"
+                        }
                     }
                 }
             }
-        }
+        },
+        "title": "Siłownie, kluby i miejsca wspinaczkowe"
     },
     "clock": {
+        "description": "Mapa pokazująca wszystkie zegary publiczne",
         "title": "Zegary"
     },
+    "cycle_highways": {
+        "description": "Ta mapa pokazuje ścieżki rowerowe",
+        "layers": {
+            "0": {
+                "name": "ścieżki rowerowe",
+                "title": {
+                    "render": "ścieżka rowerowa"
+                }
+            }
+        },
+        "title": "Ścieżki rowerowe"
+    },
     "cycle_infra": {
+        "description": "Mapa, na której możesz przeglądać i edytować rzeczy związane z infrastrukturą rowerową. Wykonane podczas #osoc21.",
+        "shortDescription": "Mapa, na której możesz przeglądać i edytować rzeczy związane z infrastrukturą rowerową.",
         "title": "Infrastruktura rowerowa"
     },
-    "cyclestreets": {
+    "cyclenodes": {
+        "description": "Mapa ta przedstawia sieci węzłów rowerowych i umożliwia łatwe dodawanie nowych węzłów",
         "layers": {
+            "0": {
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "question": "Kiedy ostatnio badano to połączenie węzła z węzłem?"
+                    }
+                }
+            },
+            "1": {
+                "name": "węzły",
+                "tagRenderings": {
+                    "node-survey:date": {
+                        "question": "Kiedy ostatni raz badano ten węzeł rowerowy?"
+                    }
+                }
+            }
+        },
+        "title": "Sieci węzłów rowerowych"
+    },
+    "cyclestreets": {
+        "description": "Ulica rowerowa to ulica, na której <b>ruch samochodowy nie może wyprzedzać rowerzystów</b>. Są one oznaczone specjalnym znakiem drogowym. Ulice rowerowe można znaleźć w Holandii i Belgii, ale także w Niemczech i Francji. ",
+        "layers": {
+            "0": {
+                "description": "Ulica rowerowa to ulica, na której pojazdy zmotoryzowane nie mogą wyprzedzać rowerzystów",
+                "name": "Ulice rowerowe"
+            },
+            "1": {
+                "description": "Ta ulica wkrótce stanie się ulicą rowerową",
+                "name": "Przyszła ulica rowerowa",
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name} wkrótce stanie się ulicą rowerową"
+                        }
+                    },
+                    "render": "Przyszła ulica rowerowa"
+                }
+            },
             "2": {
+                "description": "Warstwa oznaczająca dowolną ulicę jako ulicę rowerową",
                 "name": "Wszystkie ulice",
                 "title": {
                     "render": "Ulica"
@@ -215,20 +490,58 @@
             "+tagRenderings": {
                 "0": {
                     "mappings": {
+                        "0": {
+                            "then": "Ta ulica jest ulicą rowerową (na której obowiązuje ograniczenie prędkości do 30 km/h)"
+                        },
                         "1": {
                             "then": "To jest droga dla rowerów"
+                        },
+                        "2": {
+                            "then": "Ulica ta jest drogą rowerową (ograniczona prędkość wynosi 30 km/h i nie wolno wjeżdżać pojazdom) (znak zostanie poproszony później)"
+                        },
+                        "3": {
+                            "then": "Ta ulica jest ulicą rowerową"
+                        },
+                        "4": {
+                            "then": "Ta ulica wkrótce stanie się ulicą rowerową"
+                        },
+                        "5": {
+                            "then": "Już niedługo ta ulica stanie się drogą rowerową"
+                        },
+                        "6": {
+                            "then": "Ta ulica nie jest ulicą rowerową"
                         }
-                    }
+                    },
+                    "question": "Czy ulica <b>{name}</b> jest ulicą rowerową?"
                 },
                 "1": {
                     "mappings": {
+                        "0": {
+                            "then": "Mieszkańcy dopuszczeni"
+                        },
+                        "1": {
+                            "then": "Pojazdy silnikowe dozwolone"
+                        },
+                        "2": {
+                            "then": "Motocykle dozwolone"
+                        },
                         "3": {
                             "then": "Samochody dozwolone"
+                        },
+                        "4": {
+                            "then": "Na tej drodze rowerowej nie ma żadnych dodatkowych znaków."
                         }
-                    }
+                    },
+                    "question": "Jaki znak ma ta droga rowerowa?"
+                },
+                "2": {
+                    "question": "Kiedy ta ulica stanie się ulicą rowerową?",
+                    "render": "Ta ulica stanie się ulicą rowerową {cyclestreet:start_date}"
                 }
             }
-        }
+        },
+        "shortDescription": "Mapa ulic rowerowych",
+        "title": "Ulice rowerowe"
     },
     "cyclofix": {
         "title": "Cyclofix - mapa dla rowerzystów"
@@ -238,7 +551,12 @@
         "title": "Woda pitna"
     },
     "education": {
+        "description": "Na tej mapie znajdziesz informacje o wszystkich typach szkół i edukacji, a także możesz łatwo dodać więcej informacji",
         "title": "Edukacja"
+    },
+    "elongated_coin": {
+        "description": "Znajdź prasy do groszy, aby stworzyć własne wydłużone monety.",
+        "title": "Prasy do groszy"
     },
     "etymology": {
         "layers": {
@@ -257,41 +575,144 @@
                     "=name": "Instytucje edukacyjne bez informacji o etymologii"
                 }
             },
+            "4": {
+                "override": {
+                    "=name": "Miejsca kulturowe bez informacji o etymologii"
+                }
+            },
             "5": {
                 "override": {
                     "=name": "Miejsca turystyczne bez informacji o etymologii"
                 }
+            },
+            "6": {
+                "override": {
+                    "=name": "Miejsca związane ze zdrowiem i społeczeństwem bez informacji o etymologii"
+                }
+            },
+            "7": {
+                "override": {
+                    "=name": "Miejsca sportowe bez informacji o etymologii"
+                }
             }
         },
+        "shortDescription": "Jakie jest pochodzenie toponimów?",
         "title": "Etymologia - od czego pochodzi nazwa ulicy?"
     },
     "facadegardens": {
         "layers": {
             "0": {
+                "description": "Ogrody fasadowe",
+                "name": "Ogrody fasadowe",
+                "presets": {
+                    "0": {
+                        "description": "Dodaj ogród fasadowy",
+                        "title": "ogród fasadowy"
+                    }
+                },
                 "tagRenderings": {
                     "facadegardens-description": {
+                        "question": "Dodatkowe informacje opisujące ogród (jeśli są potrzebne i nie zostały jeszcze opisane powyżej)",
                         "render": "Więcej szczegółów: {description}"
+                    },
+                    "facadegardens-direction": {
+                        "question": "Jaka jest orientacja ogrodu?",
+                        "render": "Orientacja: {direction} (gdzie 0=N i 90=E)"
+                    },
+                    "facadegardens-edible": {
+                        "mappings": {
+                            "0": {
+                                "then": "Istnieją rośliny jadalne"
+                            },
+                            "1": {
+                                "then": "Nie ma roślin jadalnych"
+                            }
+                        },
+                        "question": "Czy są jakieś rośliny jadalne?"
+                    },
+                    "facadegardens-plants": {
+                        "mappings": {
+                            "0": {
+                                "then": "Są winorośle"
+                            },
+                            "1": {
+                                "then": "Są rośliny kwitnące"
+                            },
+                            "2": {
+                                "then": "Są krzewy"
+                            },
+                            "3": {
+                                "then": "Istnieją rośliny okrywowe"
+                            }
+                        },
+                        "question": "Jakie rośliny tu rosną?"
+                    },
+                    "facadegardens-rainbarrel": {
+                        "mappings": {
+                            "0": {
+                                "then": "Jest beczka na deszczówkę"
+                            },
+                            "1": {
+                                "then": "Nie ma beczki na deszczówkę"
+                            }
+                        },
+                        "question": "Czy w ogrodzie zainstalowano beczkę na wodę?"
+                    },
+                    "facadegardens-start_date": {
+                        "question": "Kiedy powstał ogród? (rok wystarczy)",
+                        "render": "Data budowy ogrodu: {start_date}"
                     },
                     "facadegardens-sunshine": {
                         "mappings": {
+                            "0": {
+                                "then": "Ogród jest w pełnym słońcu"
+                            },
                             "1": {
                                 "then": "Ogród jest częściowo w cieniu"
+                            },
+                            "2": {
+                                "then": "Ogród jest w cieniu"
                             }
-                        }
+                        },
+                        "question": "Czy ogród jest zacieniony czy słoneczny?"
                     }
+                },
+                "title": {
+                    "render": "Ogród fasadowy"
                 }
             }
-        }
+        },
+        "shortDescription": "Mapa przedstawia ogrody fasadowe ze zdjęciami i przydatnymi informacjami na temat orientacji, nasłonecznienia i rodzajów roślin.",
+        "title": "Ogrody fasadowe"
+    },
+    "food": {
+        "description": "Restauracje i fast foody",
+        "title": "Restauracje i fast foody"
+    },
+    "fritures": {
+        "description": "Na tej mapie znajdziesz swój ulubiony sklep z frytkami!",
+        "layers": {
+            "0": {
+                "override": {
+                    "name": "Sklep z frytkami"
+                }
+            }
+        },
+        "title": "Sklepy z frytkami"
     },
     "ghostbikes": {
         "title": "Duch roweru"
     },
     "grb": {
+        "description": "Ten temat jest próbą pomocy w automatyzacji importu GRB.",
         "layers": {
             "0": {
                 "tagRenderings": {
                     "building type": {
                         "question": "Jaki to rodzaj budynku?"
+                    },
+                    "grb-reference": {
+                        "render": "Został zaimportowany z GRB, numer referencyjny to {source:geometry:ref}"
                     }
                 }
             },
@@ -319,7 +740,18 @@
             }
         }
     },
+    "hackerspaces": {
+        "description": "Na tej mapie możesz zobaczyć hackerspace, dodać nową hackerspace lub bezpośrednio zaktualizować dane",
+        "shortDescription": "Mapa hackerspaceów",
+        "title": "Hackerspace'y"
+    },
+    "hailhydrant": {
+        "description": "Na tej mapie możesz znaleźć i zaktualizować hydranty, remizy strażackie, karetki pogotowia i gaśnice w swoich ulubionych dzielnicach.",
+        "shortDescription": "Mapa przedstawiająca hydranty, gaśnice, remizy strażackie i karetki pogotowia.",
+        "title": "Hydranty, gaśnice, remizy strażackie i pogotowia ratunkowe"
+    },
     "healthcare": {
+        "description": "Na tej mapie pokazane są różne elementy związane z opieką zdrowotną",
         "layers": {
             "5": {
                 "override": {
@@ -334,9 +766,11 @@
         "title": "Służba zdrowia"
     },
     "hotels": {
+        "description": "Na tej mapie znajdziesz hotele w Twojej okolicy",
         "title": "Hotele"
     },
     "indoors": {
+        "description": "Na tej mapie pokazane są publicznie dostępne miejsca w pomieszczeniach zamkniętych",
         "title": "Wewnątrz"
     },
     "kerbs_and_crossings": {
@@ -346,7 +780,8 @@
                 "override": {
                     "=presets": {
                         "0": {
-                            "description": "Przejście dla pieszych i/lub przejazd dla rowerów"
+                            "description": "Przejście dla pieszych i/lub przejazd dla rowerów",
+                            "title": "przejście"
                         }
                     }
                 }
@@ -358,8 +793,29 @@
         "description": "Ta mapa pokazuje wszystkie zmiany wprowadzone za pomocą MapComplete",
         "layers": {
             "0": {
-                "description": "Pokazuje wszystkie zmiany MapComplete",
+                "description": "Wyświetl wszystkie zmiany MapComplete",
                 "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Nazwa tematu zawiera {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Wykonane przez współautora {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Nie</b> wykonane przez współautora {search}"
+                            }
+                        }
+                    },
                     "3": {
                         "options": {
                             "0": {
@@ -389,23 +845,58 @@
                         }
                     }
                 },
+                "name": "Centra zmian",
                 "tagRenderings": {
+                    "contributor": {
+                        "question": "Który współautor dokonał tej zmiany?"
+                    },
+                    "locale": {
+                        "question": "W jakim języku wprowadzono tę zmianę?",
+                        "render": "Ustawienia regionalne użytkownika to {locale}"
+                    },
+                    "show_changeset_id": {
+                        "render": "Zestaw zmian <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme-id": {
+                        "question": "Jakiego tematu użyto do wprowadzenia tej zmiany?",
+                        "render": "Zmiana za pomocą motywu <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    },
                     "version": {
                         "question": "Która wersja MapComplete została wykorzystana, aby zrobić tę zmianę?",
                         "render": "Zrobione za pomocą {editor}"
+                    }
+                },
+                "title": {
+                    "render": "Zestaw zmian dla {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "render": "Więcej statystyk można znaleźć <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>tutaj</a>"
+                        }
                     }
                 }
             }
         }
     },
     "maproulette": {
+        "description": "Temat pokazujący zadania MapRoulette, umożliwiający ich wyszukiwanie, filtrowanie i naprawianie.",
         "title": "Zadania MapRoulette"
     },
     "maps": {
+        "description": "Na tej mapie możesz znaleźć wszystkie mapy, jakie zna OpenStreetMap - zazwyczaj duże mapy na tablicy informacyjnej pokazująca obszar, miasto lub region, np. mapy turystyczne na odwrocie billboardu, mapy rezerwatu przyrody, mapy sieci rowerowych w regionie, ...) <br/><br/>Jeśli brakuje mapy, możesz łatwo zmapować ją na OpenStreetMap.",
+        "shortDescription": "Ten motyw pokazuje wszystkie mapy (turystyczne), które zna OpenStreetMap",
         "title": "Mapa map"
     },
     "maxspeed": {
         "title": "Prędkość maksymalna"
+    },
+    "nature": {
+        "description": "Na tej mapie można znaleźć ciekawe informacje dla turystów i miłośników przyrody.",
+        "shortDescription": "Mapa dla miłośników przyrody z ciekawymi punktami POI",
+        "title": "W naturze"
     },
     "notes": {
         "title": "Notatki na OpenStreetMap"
@@ -416,44 +907,8 @@
         "title": "Wieże obserwacyjne"
     },
     "onwheels": {
+        "description": "Na tej mapie pokazane są miejsca publicznie dostępne dla wózków inwalidzkich, które można łatwo dodać",
         "layers": {
-            "4": {
-                "override": {
-                    "filter": {
-                        "0": {
-                            "options": {
-                                "1": {
-                                    "question": "Bez informacji o szerokości"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "6": {
-                "override": {
-                    "=filter": {
-                        "0": {
-                            "options": {
-                                "0": {
-                                    "question": "Wszystkie rodzaje kraweżnika"
-                                },
-                                "1": {
-                                    "question": "Krawężnik podniesiony (>3 cm)"
-                                },
-                                "2": {
-                                    "question": "Krawężnik obniżony (~3 cm)"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "8": {
-                "override": {
-                    "name": "Miejsca parkingowe dla niepełnosprawnych"
-                }
-            },
             "19": {
                 "override": {
                     "=title": {
@@ -480,16 +935,71 @@
                         }
                     }
                 }
+            },
+            "4": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Dowolna/brak informacji o szerokości"
+                                },
+                                "1": {
+                                    "question": "Bez informacji o szerokości"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "=filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Wszystkie rodzaje kraweżnika"
+                                },
+                                "1": {
+                                    "question": "Krawężnik podniesiony (>3 cm)"
+                                },
+                                "2": {
+                                    "question": "Krawężnik obniżony (~3 cm)"
+                                },
+                                "3": {
+                                    "question": "Krawężnik zlicowany (~0cm)"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "8": {
+                "override": {
+                    "name": "Miejsca parkingowe dla niepełnosprawnych"
+                }
             }
-        }
+        },
+        "title": "Na kółkach"
     },
     "openwindpowermap": {
-        "description": "Mapa do pokazywania i edytowania turbin wiatrowych."
+        "description": "Mapa do pokazywania i edytowania turbin wiatrowych.",
+        "title": "Generatory wiatrowe"
+    },
+    "osm_community_index": {
+        "shortDescription": "Indeks zasobów społeczności dotyczących OpenStreetMap."
     },
     "parkings": {
+        "description": "Ta mapa pokazuje różne miejsca parkingowe",
+        "shortDescription": "Ta mapa pokazuje różne miejsca parkingowe",
         "title": "Parking"
     },
+    "personal": {
+        "description": "Utwórz osobisty temat w oparciu o wszystkie dostępne warstwy wszystkich tematów. Aby wyświetlić dane, otwórz <a href='#filter'>wybór warstwy</a>",
+        "title": "Temat osobisty"
+    },
     "pets": {
+        "description": "Na tej mapie znajdziesz różne ciekawe miejsca dla swoich zwierząt: weterynarze, wybiegi dla psów, sklepy zoologiczne, restauracje przyjazne psom, ...",
         "title": "Kliniki weterynaryjne, parki dla psów i inne obiekty dla zwierząt"
     },
     "playgrounds": {
@@ -521,11 +1031,22 @@
         "shortDescription": "Kody pocztowe",
         "title": "Kody pocztowe"
     },
+    "postboxes": {
+        "description": "Na tej mapie możesz znaleźć i dodać dane urzędów pocztowych i skrzynek pocztowych. Możesz skorzystać z tej mapy, aby dowiedzieć się, gdzie możesz wysłać kolejną pocztówkę! :)<br/>Zauważyłeś błąd lub brakuje skrzynki pocztowej? Możesz edytować tę mapę za pomocą bezpłatnego konta OpenStreetMap.",
+        "shortDescription": "Mapa pokazująca skrzynki pocztowe i urzędy pocztowe",
+        "title": "Mapa skrzynek i urzędów pocztowych"
+    },
+    "rainbow_crossings": {
+        "description": "Na tej mapie pokazane są tęczowo pomalowane przejścia dla pieszych, które można łatwo dodać",
+        "title": "Tęczowe przejścia dla pieszych"
+    },
     "shops": {
+        "description": "Na mapie tej można zaznaczyć podstawowe informacje o sklepach, dodać godziny otwarcia oraz numery telefonów",
+        "shortDescription": "Edytowalna mapa z podstawowymi informacjami o sklepach",
         "title": "Sklepy"
     },
     "sidewalks": {
-        "description": "Motyw eksperymentalny",
+        "description": "Temat eksperymentalny",
         "layers": {
             "0": {
                 "description": "Warstwa pokazująca chodniki przy drogach",
@@ -564,7 +1085,13 @@
         },
         "title": "Chodniki"
     },
+    "sport_pitches": {
+        "description": "Boisko sportowe to teren, na którym uprawia się sport",
+        "shortDescription": "Mapa przedstawiająca boiska sportowe",
+        "title": "Boiska sportowe"
+    },
     "sports": {
+        "description": "Wszystko o sporcie, znajdź boiska sportowe, centra fitness i nie tylko.",
         "layers": {
             "4": {
                 "override": {
@@ -582,10 +1109,6 @@
     "stations": {
         "description": "Przeglądaj, edytuj i dodawaj szczegóły do stacji kolejowej",
         "layers": {
-            "3": {
-                "description": "Warstwa pokazująca stacje kolejowe",
-                "name": "Stacje Kolejowe"
-            },
             "16": {
                 "name": "Tablice odjazdów",
                 "presets": {
@@ -605,6 +1128,10 @@
                         }
                     }
                 }
+            },
+            "3": {
+                "description": "Warstwa pokazująca stacje kolejowe",
+                "name": "Stacje Kolejowe"
             }
         },
         "title": "Stacje Kolejowe"
@@ -672,17 +1199,27 @@
     },
     "toilets": {
         "description": "Mapa toalet publicznych",
-        "title": "Mapa otwartych toalet"
+        "title": "Publiczne toalety"
     },
     "transit": {
         "title": "Trasy autobusowe"
     },
     "trees": {
-        "shortDescription": "Sporządzić mapę wszystkich drzew",
+        "description": "Zmapuj wszystkie drzewa!",
+        "shortDescription": "Mapa wszystkich drzew",
         "title": "Drzewa"
     },
+    "vending_machine": {
+        "description": "Znajdź automaty sprzedające do wszystkiego",
+        "title": "Automaty sprzedające"
+    },
     "walls_and_buildings": {
+        "description": "Specjalna warstwa zabudowana zapewniająca wszystkie mury i budynki. Warstwa ta jest przydatna w ustawieniach wstępnych obiektów, które można umieścić przy ścianach (np. AED, skrzynki pocztowe, wejścia, adresy, kamery monitorujące itp.). Warstwa ta jest domyślnie niewidoczna i użytkownik nie może jej przełączać.",
         "title": "Ściany i budynki"
+    },
+    "waste": {
+        "description": "Mapa przedstawiająca kosze na śmieci i zakłady recyklingu.",
+        "title": "Odpady"
     },
     "waste_basket": {
         "description": "Na tej mapie znajdziesz kosze na śmieci w twojej okolicy. Jeśli brakuje kosza, możesz go dodać",

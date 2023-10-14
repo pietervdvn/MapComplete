@@ -15,7 +15,6 @@ Guideposts (also known as fingerposts or finger posts) are often found along off
 
 
   - This layer is shown at zoomlevel **14** and higher
-  - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 
 
@@ -27,6 +26,8 @@ Guideposts (also known as fingerposts or finger posts) are often found along off
 
 
   - [climbing](https://mapcomplete.org/climbing)
+  - [guideposts](https://mapcomplete.org/guideposts)
+  - [personal](https://mapcomplete.org/personal)
 
 
 This is a special layer - data is not sourced from OpenStreetMap

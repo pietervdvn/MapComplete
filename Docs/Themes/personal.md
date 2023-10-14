@@ -58,6 +58,7 @@ This theme contains the following layers:
   - [food](../Layers/food.md)
   - [ghost_bike](../Layers/ghost_bike.md)
   - [governments](../Layers/governments.md)
+  - [guidepost](../Layers/guidepost.md)
   - [hackerspace](../Layers/hackerspace.md)
   - [hospital](../Layers/hospital.md)
   - [hotel](../Layers/hotel.md)

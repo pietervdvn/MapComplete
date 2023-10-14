@@ -719,6 +719,9 @@
       "condition": "cuisine!=friture",
       "id": "halal (no friture)"
     },
+    "sugar_free",
+    "gluten_free",
+    "lactose_free",
     {
       "id": "organic (no friture)",
       "question": {
@@ -1105,6 +1108,9 @@
       ]
     },
     "has_organic",
+    "sugar_free",
+    "gluten_free",
+    "lactose_free",
     "accepts_cash",
     "accepts_cards",
     "dogs"

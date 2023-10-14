@@ -1397,6 +1397,7 @@ The following layers are included in MapComplete:
   - [address](./Layers/address.md)
   - [advertising](./Layers/advertising.md)
   - [ambulancestation](./Layers/ambulancestation.md)
+  - [animal_shelter](./Layers/animal_shelter.md)
   - [artwork](./Layers/artwork.md)
   - [atm](./Layers/atm.md)
   - [bank](./Layers/bank.md)

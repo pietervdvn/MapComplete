@@ -143,6 +143,41 @@
         "invalidValues": "shop=yes"
       }
     },
+    {
+      "id": "second_hand",
+      "question": {
+        "en": "Does this shop sell second-hand items?"
+      },
+      "mappings": [
+        {
+          "if": "second_hand=only",
+          "then": "This shop sells second-hand items <b>only</b>"
+        },
+        {
+          "if": "second_hand=yes",
+          "then": "This shop sells second-hand items along with new items"
+        },
+        {
+          "if": "second_hand=no",
+          "then": "This shop only sells brand-new items"
+        }
+      ],
+      "condition": {
+        "or": [
+          "shop=clothes",
+          "shop=car",
+          "shop=books",
+          "shop=charity",
+          "shop=car_repair",
+          "shop=furniture",
+          "shop=bicycle",
+          "shop=bicycle",
+          "shop=mobile_phone",
+          "shop=computer",
+          "shop=toys"
+        ]
+      }
+    },
     "opening_hours",
     "website",
     "email",
@@ -288,6 +323,33 @@
         ]
       }
     },
+    {
+      "id": "diets",
+      "builtin": [
+        "sugar_free",
+        "gluten_free",
+        "lactose_free"
+      ],
+      "override": {
+        "condition": {
+          "or": [
+            "shop=supermarket",
+            "shop=convenience",
+            "shop=farm",
+            "shop=greengrocer",
+            "shop=health_food",
+            "shop=deli",
+            "shop=bakery",
+            "shop=beverages",
+            "shop=beverages",
+            "shop=pastry",
+            "shop=chocolate",
+            "shop=frozen_food",
+            "shop=ice_cream"
+          ]
+        }
+      }
+    },
     "questions",
     "reviews"
   ],
@@ -389,7 +451,29 @@
     },
     "accepts_cash",
     "accepts_cards",
-    "has_organic"
+
+    "has_organic",
+    {
+      "id": "second_hand",
+      "options": [
+        {
+          "question": {
+            "en": "Only show shops selling second-hand items"
+          },
+          "osmTags": {
+            "or": [
+              "shop=second_hand",
+              "shop=charity",
+              "second_hand=yes",
+              "second_hand=only"
+            ]
+          }
+        }
+      ]
+    },
+    "sugar_free",
+    "gluten_free",
+    "lactose_free"
   ],
   "pointRendering": [
     {

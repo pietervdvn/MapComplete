@@ -4710,6 +4710,20 @@
                         "question": "Keine Hunde erlaubt"
                     }
                 }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Internetzugang vorhanden"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Stromanschluss vorhanden"
+                    }
+                }
             }
         }
     },
@@ -10041,6 +10055,12 @@
                     "16": {
                         "question": "Verkauf von Fleisch"
                     },
+                    "17": {
+                        "question": "Verkauf von Obst"
+                    },
+                    "18": {
+                        "question": "Verkauf von Erdbeeren"
+                    },
                     "19": {
                         "question": "Verkauf von Blumen"
                     },
@@ -10081,16 +10101,16 @@
             "indoor": {
                 "mappings": {
                     "0": {
-                        "then": "Dieser Automat befindet sich im Freien"
+                        "then": "Der Automat befindet sich im Freien"
                     },
                     "1": {
-                        "then": "Dieser Verkaufsautomat befindet sich im Innenbereich"
+                        "then": "Der Automat befindet sich im Innenbereich"
                     },
                     "2": {
                         "then": "Dieser Automat befindet sich im Freien"
                     }
                 },
-                "question": "Ist dieser Automat in einem Gebäude untergebracht?"
+                "question": "Ist der Automat in einem Gebäude untergebracht?"
             },
             "operator": {
                 "freeform": {
@@ -10156,10 +10176,10 @@
                         "then": "Fleisch wird verkauft"
                     },
                     "16": {
-                        "then": "Blumen werden verkauft"
+                        "then": "Obst wird verkauft"
                     },
                     "17": {
-                        "then": "Parkscheine werden verkauft"
+                        "then": "Erdbeeren werden verkauft"
                     },
                     "18": {
                         "then": "Blumen werden verkauft"

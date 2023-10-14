@@ -377,12 +377,12 @@
     },
     {
       "key": "toilets:handwashing",
-      "description": "Layer 'Indoors' shows toilets:handwashing=yes with a fixed text, namely 'This toilets have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "description": "Layer 'Indoors' shows toilets:handwashing=yes with a fixed text, namely 'These toilets have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
       "value": "yes"
     },
     {
       "key": "toilets:handwashing",
-      "description": "Layer 'Indoors' shows toilets:handwashing=no with a fixed text, namely 'This toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "description": "Layer 'Indoors' shows toilets:handwashing=no with a fixed text, namely 'These toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
       "value": "no"
     },
     {

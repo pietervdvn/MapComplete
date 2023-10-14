@@ -63,7 +63,8 @@
                 "en": "Open your inbox",
                 "nl": "Ga naar je inbox",
                 "de": "Deinen Posteingang öffnen",
-                "ca": "Obre la teva safata d'entrada"
+                "ca": "Obre la teva safata d'entrada",
+                "cs": "Otevřít schránku"
               }
             }
           }
@@ -76,7 +77,8 @@
               "text": {
                 "en": "<b class='alert'>You have {_unreadMessages}</b><br/>Open your inbox",
                 "de": "<b class='alert'>Du hast {_unreadMessages}</b><br/>Öffne Deinen Posteingang",
-                "ca": "<b class='alert'>Tens {_unreadMessages}</b><br/>Open your inbox"
+                "ca": "<b class='alert'>Tens {_unreadMessages}</b><br/>Open your inbox",
+                "cs": "<b class='alert'>Máte {_unreadMessages}</b><br/>Otevřít schránku"
               },
               "href": "{_backend}/messages/inbox"
             }
@@ -92,7 +94,8 @@
           "text": {
             "en": "Open your settings on OpenStreetMap.org",
             "de": "Öffne Deine Einstellungen auf OpenStreetMap.org",
-            "ca": "Obriu la vostra configuració a OpenStreetMap.org"
+            "ca": "Obriu la vostra configuració a OpenStreetMap.org",
+            "cs": "Otevřít vaše nastavení na OpenStreetMap.org"
           },
           "href": "{_backend}/account/edit"
         }
@@ -194,7 +197,8 @@
         "de": "Unter welcher Lizenz möchten Sie Ihre Bilder veröffentlichen?",
         "nl": "Met welke licentie wil je je afbeeldingen toevoegen?",
         "ca": "Sota quina llicència vols publicar les teves fotos?",
-        "pt": "Sob que licença você deseja publicar suas fotos?"
+        "pt": "Sob que licença você deseja publicar suas fotos?",
+        "cs": "Pod jakou licencí chcete své fotografie zveřejnit?"
       },
       "mappings": [
         {
@@ -371,7 +375,8 @@
             "en": "Download the private key for your Mangrove Account",
             "de": "Laden Sie den privaten Schlüssel für Ihr Mangrove-Konto herunter",
             "da": "Hent den private nøgle til din Mangrove-konto",
-            "ca": "Baixeu la clau privada del vostre compte de Mangrove"
+            "ca": "Baixeu la clau privada del vostre compte de Mangrove",
+            "cs": "Stáhnout soukromý klíč pro Mangrove účet"
           }
         },
         "after": {
@@ -500,7 +505,8 @@
             "nl": "Volledig vertaald",
             "de": "Vollständig übersetzt",
             "ca": "Completament traduït",
-            "pt": "Traduzido completamente"
+            "pt": "Traduzido completamente",
+            "cs": "Kompletně přeloženo"
           }
         }
       ]

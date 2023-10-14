@@ -331,7 +331,7 @@
                         "then": "Instalace"
                     },
                     "8": {
-                        "then": "Graffiti"
+                        "then": "Grafiti"
                     },
                     "9": {
                         "then": "Reliéf"
@@ -672,6 +672,9 @@
                     },
                     "1": {
                         "then": "Tato lavička nemá integrované umělecké dílo"
+                    },
+                    "2": {
+                        "then": "Tato lavička <span class=\"subtle\">pravděpodobně</span> nemá integrované umělecké dílo"
                     }
                 },
                 "question": "Má tato lavička umělecké prvky?",
@@ -1031,9 +1034,56 @@
                 },
                 "question": "Je tento automat stále v provozu?",
                 "render": "Provozní stav je <i>{operational_status}</i>"
+            },
+            "bicycle_tube_vending_machine-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Continental pláště jsou zde prodávány"
+                    },
+                    "1": {
+                        "then": "Schwalbe pláště jsou zde prodávány"
+                    }
+                },
+                "question": "Jaká značka plášťů je zde prodávána?",
+                "render": "{brand} pláště jsou zde prodávány"
+            },
+            "bicycle_tube_vending_machine-charge": {
+                "question": "Kolik stojí plášť na kolo?",
+                "render": "Cena jednoho pláště {charge}"
+            },
+            "bicycle_tube_vending_machine-operator": {
+                "question": "Kdo se stará o tento automat?"
+            },
+            "other-items-vending": {
+                "mappings": {
+                    "0": {
+                        "then": "Zde se prodávají cyklistické duše"
+                    },
+                    "1": {
+                        "then": "Zde se prodávají světla na jízdní kola"
+                    },
+                    "2": {
+                        "then": "Prodávají se zde rukavice"
+                    },
+                    "3": {
+                        "then": "Zde se prodávají sady na opravu jízdních kol"
+                    },
+                    "4": {
+                        "then": "Prodávají se zde pumpy na kolo"
+                    },
+                    "5": {
+                        "then": "Prodávají se zde zámky na kola"
+                    }
+                },
+                "question": "Prodávají se zde další doplňky na kolo?"
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Automat na cyklistické pláště{name}"
+                }
+            },
             "render": "Automat na cyklistické duše"
         }
     },
@@ -1609,12 +1659,295 @@
                         "then": "Použití zdarma"
                     }
                 },
-                "question": "Kolik se platí za používání těchto dalekohledů?"
+                "question": "Kolik se platí za používání těchto dalekohledů?",
+                "render": "Použití tohoto dalekohledu stojí {charge}"
+            },
+            "binocular-direction": {
+                "question": "Při pohledu přes tento dalekohled, kterým směrem se člověk dívá?",
+                "render": "Dívá se směrem k {direction}°"
+            }
+        },
+        "title": {
+            "render": "Dalekohledy"
+        }
+    },
+    "birdhide": {
+        "description": "Pozorovatelna",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Bezbariérový přístup"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Pouze zakryté pozorovatelny"
+                    }
+                }
+            }
+        },
+        "name": "Místa pro pozorování ptáků",
+        "presets": {
+            "0": {
+                "description": "Krytý přístřešek, kde lze pohodlně pozorovat ptáky",
+                "title": "pozorovatelna"
+            },
+            "1": {
+                "description": "Obrazovka nebo stěna s otvory pro sledování ptáků"
+            }
+        },
+        "tagRenderings": {
+            "bird-hide-shelter-or-wall": {
+                "mappings": {
+                    "1": {
+                        "then": "Ptačí skrýš"
+                    },
+                    "2": {
+                        "then": "Ptačí budka věž"
+                    }
+                }
+            },
+            "bird-hide-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Pro vozíčkáře jsou připravena speciální opatření"
+                    },
+                    "3": {
+                        "then": "Není přístupný pro osoby na invalidním vozíku"
+                    }
+                }
+            },
+            "birdhide-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Provozuje Natuurpunt"
+                    },
+                    "1": {
+                        "then": "Provozuje the Agency for Nature and Forests"
+                    }
+                },
+                "render": "Provozuje {operator}"
+            }
+        }
+    },
+    "cafe_pub": {
+        "description": "Vrstva s kavárnami a hospodami, kde se můžete sejít u skleničky. Vrstva se ptá na několik důležitých otázek",
+        "name": "Kavárny a hospody",
+        "presets": {
+            "0": {
+                "description": "Hospoda, kde se většinou pije pivo v příjemném a uvolněném interiéru",
+                "title": "hospoda"
+            },
+            "1": {
+                "description": "Modernější a komerčnější <b>bar</b>, případně s hudební a světelnou instalací",
+                "title": "bar"
+            },
+            "2": {
+                "description": "<b>kavárna</b>, kde si můžete v klidném prostředí vypít čaj, kávu nebo alkoholický nápoj",
+                "title": "kavárna"
+            },
+            "3": {
+                "description": "<b>noční klub</b> nebo diskotéka se zaměřením na tanec, hudbu od DJ s doprovodnou světelnou show a barem na (alkoholické) nápoje",
+                "title": "noční klub nebo diskotéka"
+            }
+        },
+        "tagRenderings": {
+            "Classification": {
+                "mappings": {
+                    "0": {
+                        "then": "Hospoda, kde se většinou pije pivo v příjemném a uvolněném interiéru"
+                    },
+                    "1": {
+                        "then": "Modernější a komerčnější <b>bar</b>, případně s hudební a světelnou instalací"
+                    },
+                    "2": {
+                        "then": "<b>kavárna</b>, kde si můžete v klidném prostředí vypít čaj, kávu nebo alkoholický nápoj"
+                    },
+                    "3": {
+                        "then": "<b>Restaurace</b>, kde se dá pořádně najíst"
+                    },
+                    "4": {
+                        "then": "Otevřený prostor, kde se podává pivo, typicky k vidění v Německu"
+                    },
+                    "5": {
+                        "then": "Jedná se o <b>noční klub</b> nebo diskotéku se zaměřením na tanec, hudbu DJ s doprovodnou světelnou show a bar, kde si můžete dát (alkoholické) nápoje"
+                    }
+                },
+                "question": "O jakou kavárnu se jedná?"
+            },
+            "Name": {
+                "question": "Jak se tento podnik jmenuje?",
+                "render": "Tento podnik se jmenuje {name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            },
+            "render": "Hospoda"
+        }
+    },
+    "car_rental": {
+        "description": "Místa, kde si můžete pronajmout auto",
+        "name": "Půjčovna aut",
+        "presets": {
+            "0": {
+                "description": "Místo, kde si můžete pronajmout auto",
+                "title": "půjčovna aut"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Název autopůjčovny"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Tato autopůjčovna nemá jméno"
+                    }
+                },
+                "question": "Jak se jmenuje tato půjčovna aut?",
+                "render": "Tato autopůjčovna se jmenuje {name}"
+            }
+        },
+        "title": {
+            "render": "Půjčovna aut"
+        }
+    },
+    "charging_station": {
+        "description": "Nabíjecí stanice",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Všechny typy vozidel"
+                    },
+                    "1": {
+                        "question": "Napájecí stanice pro jízdní kola"
+                    },
+                    "2": {
+                        "question": "Napájecí stanice pro automobily"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Pouze funkční nabíjecí stanice"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Všechny konektory"
+                    },
+                    "1": {
+                        "question": "Má <div style='display: inline-block'><b><b>Schuko nástěnná zástrčka</b> bez zemního kolíku (CEE7/4 typu F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> konektor"
+                    },
+                    "2": {
+                        "question": "Má <div style='display: inline-block'><b><b>Evropskou zásuvku</b> se zemnícím kolíkem (CEE7/4 typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> konektor"
+                    },
+                    "3": {
+                        "question": "Má <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> konektor"
+                    },
+                    "4": {
+                        "question": "Má <div style='display: inline-block'><b><b>Type 1 s kabelem</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> konektor"
+                    },
+                    "5": {
+                        "question": "Má <div style='display: inline-block'><b>Type 1 <i> bez</i> kabel (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> konektor"
+                    },
+                    "6": {
+                        "question": "Má <div style='display: inline-block'><b>Type 1 CCS (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> konektor"
+                    },
+                    "7": {
+                        "question": "Má <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> konektor"
+                    },
+                    "8": {
+                        "question": "Má <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> konektor"
+                    },
+                    "9": {
+                        "question": "Má <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> konektor"
+                    },
+                    "10": {
+                        "question": "Má <div style='display: inline-block'><b><b>Type 2 s kabelem</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> konektor"
+                    },
+                    "11": {
+                        "question": "Má <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (na značkový typ2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> konektor"
+                    },
+                    "12": {
+                        "question": "Má <div style='display: inline-block'><b><b>Tesla Supercharger (destinace)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> konektor"
+                    },
+                    "13": {
+                        "question": "Má <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (typ 2 s kabelem označeným jako tesla)</b> <img style='width: 1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> konektor"
+                    },
+                    "14": {
+                        "question": "Má <div style='display: inline-block'><b><b>USB</b> pro nabíjení telefonů a drobné elektroniky</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> konektor"
+                    },
+                    "15": {
+                        "question": "Má <div style='display: inline-block'><b><b>Bosch Active Connect s 3 kolíky</b> a kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> konektor"
+                    },
+                    "16": {
+                        "question": "Má <div style='display: inline-block'><b><b>Bosch Active Connect s 5 kolíky</b> a kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> konektor"
+                    }
+                }
+            }
+        },
+        "name": "Nabíjecí stanice",
+        "presets": {
+            "0": {
+                "title": "nabíjecí stanice pro elektrokola s běžnou evropskou zástrčkou <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; výška: 2rem; plavat vlevo; pozadí: bílé; border-radius: 1rem; margin-right: 0,5rem'/> (určeno k nabíjení elektrických kol)"
+            },
+            "1": {
+                "title": "nabíjecí stanice pro automobily"
             }
         }
     },
     "climbing": {
         "description": "Falešná vrstva, která obsahuje tagrenderingy sdílené mezi lezeckými vrstvami"
+    },
+    "clock": {
+        "tagRenderings": {
+            "support": {
+                "mappings": {
+                    "1": {
+                        "then": "Hodiny jsou připevněny na zdi"
+                    }
+                }
+            }
+        }
+    },
+    "defibrillator": {
+        "tagRenderings": {
+            "defibrillator-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Veřejně přístupné"
+                    },
+                    "2": {
+                        "then": "Přístupné pouze zákazníkům"
+                    },
+                    "3": {
+                        "then": "Nepřístupné široké veřejnosti (např. přístupné pouze zaměstnancům, majitelům, …)"
+                    },
+                    "4": {
+                        "then": "Nepřístupné, případně pouze pro profesionální použití"
+                    }
+                }
+            },
+            "defibrillator-indoors": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento defibrilátor je umístěn v interiéru"
+                    }
+                }
+            }
+        }
     },
     "food": {
         "description": "Vrstva zobrazující restaurace a zařízení rychlého občerstvení (se speciálním vykreslením pro fritézy)"
@@ -1946,6 +2279,31 @@
     },
     "usersettings": {
         "tagRenderings": {
+            "inbox": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Otevřít schránku"
+                            }
+                        }
+                    },
+                    "1": {
+                        "then": {
+                            "special": {
+                                "text": "<b class='alert'>Máte {_unreadMessages}</b><br/>Otevřít schránku"
+                            }
+                        }
+                    }
+                }
+            },
+            "mangrove-keys": {
+                "render": {
+                    "special": {
+                        "text": "Stáhnout soukromý klíč pro Mangrove účet"
+                    }
+                }
+            },
             "picture-license": {
                 "mappings": {
                     "0": {
@@ -1959,6 +2317,14 @@
                     },
                     "3": {
                         "then": "Pořízené fotografie budou licencovány pod <b>CC-BY-SA 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku a že odvozené fotky musí být dále sdíleny se stejnou licencí."
+                    }
+                },
+                "question": "Pod jakou licencí chcete své fotografie zveřejnit?"
+            },
+            "settings-link": {
+                "render": {
+                    "special": {
+                        "text": "Otevřít vaše nastavení na OpenStreetMap.org"
                     }
                 }
             },
@@ -1975,6 +2341,13 @@
                     }
                 },
                 "question": "Zobrazit informace o ladění v nastavení?"
+            },
+            "translation-completeness": {
+                "mappings": {
+                    "0": {
+                        "then": "Kompletně přeloženo"
+                    }
+                }
             },
             "translation-mode": {
                 "question": "Chcete pomoci s překladem MapComplete?"

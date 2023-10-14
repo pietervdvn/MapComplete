@@ -48,6 +48,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/shop#values) [shop](https://wiki.openstreetmap.org/wiki/Key:shop) | [string](../SpecialInputElements.md#string) | [vacant](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvacant) [agrarian](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dagrarian) [alcohol](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dalcohol) [anime](https://wiki.openstreetmap.org/wiki/Tag:shop%3Danime) [antiques](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dantiques) [appliance](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dappliance) [art](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dart) [baby_goods](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbaby_goods) [bag](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbag) [bakery](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbakery) [bathroom_furnishing](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbathroom_furnishing) [beauty](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbeauty) [bed](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbed) [beverages](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbeverages) [bicycle](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle) [boat](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dboat) [bookmaker](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbookmaker) [books](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbooks) [brewing_supplies](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbrewing_supplies) [butcher](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbutcher) [camera](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcamera) [candles](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcandles) [cannabis](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcannabis) [car](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar) [car_parts](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar_parts) [car_repair](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar_repair) [caravan](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcaravan) [carpet](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcarpet) [catalogue](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcatalogue) [charity](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcharity) [cheese](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcheese) [chemist](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dchemist) [chocolate](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dchocolate) [clothes](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dclothes) [coffee](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcoffee) [collector](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcollector) [computer](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcomputer) [confectionery](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconfectionery) [convenience](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience) [copyshop](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcopyshop) [cosmetics](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcosmetics) [country_store](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcountry_store) [craft](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcraft) [curtain](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcurtain) [dairy](https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddairy) [deli](https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddeli) [department_store](https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddepartment_store) [doityourself](https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddoityourself) [doors](https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddoors) [dry_cleaning](https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddry_cleaning) [e-cigarette](https://wiki.openstreetmap.org/wiki/Tag:shop%3De-cigarette) [electrical](https://wiki.openstreetmap.org/wiki/Tag:shop%3Delectrical) [electronics](https://wiki.openstreetmap.org/wiki/Tag:shop%3Delectronics) [erotic](https://wiki.openstreetmap.org/wiki/Tag:shop%3Derotic) [fabric](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfabric) [farm](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfarm) [fashion_accessories](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfashion_accessories) [fireplace](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfireplace) [fishing](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfishing) [flooring](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dflooring) [florist](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dflorist) [frame](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dframe) [frozen_food](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfrozen_food) [fuel](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfuel) [funeral_directors](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfuneral_directors) [furniture](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfurniture) [games](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgames) [garden_centre](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgarden_centre) [gas](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgas) [general](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgeneral) [gift](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgift) [greengrocer](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgreengrocer) [hairdresser](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhairdresser) [hairdresser_supply](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhairdresser_supply) [hardware](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhardware) [health_food](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhealth_food) [hearing_aids](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhearing_aids) [herbalist](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dherbalist) [hifi](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhifi) [honey](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhoney) [household_linen](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhousehold_linen) [houseware](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhouseware) [hunting](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhunting) [interior_decoration](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dinterior_decoration) [jewelry](https://wiki.openstreetmap.org/wiki/Tag:shop%3Djewelry) [kiosk](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dkiosk) [kitchen](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dkitchen) [laundry](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlaundry) [leather](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dleather) [lighting](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlighting) [locksmith](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlocksmith) [lottery](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlottery) [mall](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmall) [massage](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmassage) [medical_supply](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmedical_supply) [military_surplus](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmilitary_surplus) [mobile_phone](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmobile_phone) [model](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmodel) [money_lender](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmoney_lender) [motorcycle](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmotorcycle) [motorcycle_repair](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmotorcycle_repair) [music](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmusic) [musical_instrument](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmusical_instrument) [newsagent](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dnewsagent) [nutrition_supplements](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dnutrition_supplements) [nuts](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dnuts) [optician](https://wiki.openstreetmap.org/wiki/Tag:shop%3Doptician) [outdoor](https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor) [outpost](https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutpost) [paint](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpaint) [party](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dparty) [pasta](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpasta) [pastry](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpastry) [pawnbroker](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpawnbroker) [perfumery](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dperfumery) [pet](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpet) [pet_grooming](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpet_grooming) [photo](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dphoto) [pottery](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpottery) [printer_ink](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dprinter_ink) [psychic](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpsychic) [pyrotechnics](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpyrotechnics) [radiotechnics](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dradiotechnics) [religion](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dreligion) [rental](https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental) [repair](https://wiki.openstreetmap.org/wiki/Tag:shop%3Drepair) [rice](https://wiki.openstreetmap.org/wiki/Tag:shop%3Drice) [scuba_diving](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dscuba_diving) [seafood](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dseafood) [second_hand](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsecond_hand) [sewing](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsewing) [shoe_repair](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dshoe_repair) [shoes](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dshoes) [spices](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dspices) [sports](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsports) [stationery](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dstationery) [storage_rental](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dstorage_rental) [supermarket](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket) [swimming_pool](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dswimming_pool) [tailor](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtailor) [tattoo](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtattoo) [tea](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtea) [telecommunication](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtelecommunication) [ticket](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dticket) [tiles](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtiles) [tobacco](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtobacco) [tool_hire](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtool_hire) [toys](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtoys) [trade](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtrade) [travel_agency](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtravel_agency) [trophy](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtrophy) [tyres](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtyres) [vacuum_cleaner](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvacuum_cleaner) [variety_store](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvariety_store) [video](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvideo) [video_games](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvideo_games) [watches](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwatches) [water](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwater) [water_sports](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwater_sports) [weapons](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dweapons) [wholesale](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwholesale) [wigs](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwigs) [window_blind](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwindow_blind) [wine](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwine)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/second_hand#values) [second_hand](https://wiki.openstreetmap.org/wiki/Key:second_hand) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:second_hand%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:second_hand%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:second_hand%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
@@ -57,6 +58,9 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access:fee#values) [internet_access:fee](https://wiki.openstreetmap.org/wiki/Key:internet_access:fee) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno) [customers](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access:ssid#values) [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) | [string](../SpecialInputElements.md#string) | [Telekom](https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/organic#values) [organic](https://wiki.openstreetmap.org/wiki/Key:organic) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:organic%3Donly) [no](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:sugar_free#values) [diet:sugar_free](https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:gluten_free#values) [diet:gluten_free](https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:lactose_free#values) [diet:lactose_free](https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno)
 
 
 
@@ -285,6 +289,25 @@ This is rendered with  `This is a {shop}`
   - *Window Blind Store*  corresponds with  `shop=window_blind`
   - *Wine Shop*  corresponds with  `shop=wine`
 
+
+
+
+### second_hand 
+
+
+
+The question is  *Does this shop sell second-hand items?*
+
+
+
+
+
+  - *This shop sells second-hand items <b>only</b>*  corresponds with  `second_hand=only`
+  - *This shop sells second-hand items along with new items*  corresponds with  `second_hand=yes`
+  - *This shop only sells brand-new items*  corresponds with  `second_hand=no`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `shop=clothes|shop=car|shop=books|shop=charity|shop=car_repair|shop=furniture|shop=bicycle|shop=bicycle|shop=mobile_phone|shop=computer|shop=toys`
 
 
 
@@ -534,6 +557,66 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
+### sugar_free 
+
+
+
+The question is  *Does this shop have a sugar free offering?*
+
+
+
+
+
+  - *This shop <b>only sells sugar free</b> products*  corresponds with  `diet:sugar_free=only`
+  - *This shop has a big sugar free offering*  corresponds with  `diet:sugar_free=yes`
+  - *This shop has a <b>limited sugar free</b> offering*  corresponds with  `diet:sugar_free=limited`
+  - *This shop has no sugar free offering*  corresponds with  `diet:sugar_free=no`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream`
+
+
+
+### gluten_free 
+
+
+
+The question is  *Does this shop have a gluten free offering?*
+
+
+
+
+
+  - *This shop <b>only sells gluten free</b> products*  corresponds with  `diet:gluten_free=only`
+  - *This shop has a big gluten free offering*  corresponds with  `diet:gluten_free=yes`
+  - *This shop has a <b>limited gluten free</b> offering*  corresponds with  `diet:gluten_free=limited`
+  - *This shop has no gluten free offering*  corresponds with  `diet:gluten_free=no`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream`
+
+
+
+### lactose_free 
+
+
+
+The question is  *Does {title()} have a lactose-free offering?*
+
+
+
+
+
+  - *<b>Only sells lactose free</b> products*  corresponds with  `diet:lactose_free=only`
+  - *Big lactose free offering*  corresponds with  `diet:lactose_free=yes`
+  - *<b>Limited lactose free</b> offering*  corresponds with  `diet:lactose_free=limited`
+  - *No lactose free offering*  corresponds with  `diet:lactose_free=no`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream`
+
+
+
 ### questions 
 
 
@@ -658,6 +741,34 @@ accepts_cards.0 | Accepts payment cards | payment:cards=yes
 id | question | osmTags
 ---- | ---------- | ---------
 has_organic.0 | Has organic options | organic=yes\|organic=only
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+second_hand.0 | Only show shops selling second-hand items | shop=second_hand\|shop=charity\|second_hand=yes\|second_hand=only
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+sugar_free.0 | Has a sugar-free offering | diet:sugar_free=yes\|diet:sugar_free=only\|diet:sugar_free=limited
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+gluten_free.0 | Has a gluten free offering | diet:gluten_free=yes\|diet:gluten_free=only\|diet:gluten_free=limited
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+lactose_free.0 | Has a lactose free offering | diet:lactose_free=yes\|diet:lactose_free=only\|diet:lactose_free=limited
  
 
 This document is autogenerated from [assets/themes/pets/pets.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/themes/pets/pets.json)
