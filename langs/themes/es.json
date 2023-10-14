@@ -766,6 +766,9 @@
                 "tagRenderings": {
                     "building type": {
                         "question": "¿Qué tipo de edificio es este?"
+                    },
+                    "grb-reference": {
+                        "render": "Se ha importado de GRB, el número de referencia es {source:geometry:ref}"
                     }
                 }
             },
@@ -899,6 +902,13 @@
                             }
                         }
                     },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Hecho con el host {search}"
+                            }
+                        }
+                    },
                     "7": {
                         "options": {
                             "0": {
@@ -907,13 +917,19 @@
                         }
                     }
                 },
+                "name": "Centro del conjunto de cambios",
                 "tagRenderings": {
                     "contributor": {
                         "question": "¿Qué contribuidor hizo este cambio?",
                         "render": "Cambio realizado por <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
                     },
+                    "host": {
+                        "question": "¿Con qué host (página web) se realizó este cambio?",
+                        "render": "Cambio realizado con <a href='{host}'>{host}</a>"
+                    },
                     "locale": {
-                        "question": "¿En qué configuración regional (idioma) se realizó este cambio?"
+                        "question": "¿En qué configuración regional (idioma) se realizó este cambio?",
+                        "render": "La configuración regional del usuario es {locale}"
                     },
                     "show_changeset_id": {
                         "render": "Conjunto de cambios <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
