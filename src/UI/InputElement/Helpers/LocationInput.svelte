@@ -89,7 +89,9 @@
   <div
     class="pointer-events-none absolute top-0 left-0 flex h-full w-full items-center p-8 opacity-50"
   >
-    <img class="h-full max-h-24" src="./assets/svg/move-arrows.svg" />
+    <slot name="image">
+      <img class="h-full max-h-24" src="./assets/svg/move-arrows.svg" />
+    </slot>
   </div>
 
   <DragInvitation hideSignal={mla.location} />

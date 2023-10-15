@@ -563,7 +563,10 @@ export default class SpecialVisualizations {
                     feature: Feature
                 ): BaseUIElement {
                     const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
-                    return new SvelteUIElement(CreateNewNote, { state, coordinate: { lon, lat } })
+                    return new SvelteUIElement(CreateNewNote, {
+                        state,
+                        coordinate: new UIEventSource({ lon, lat }),
+                    })
                 },
             },
             new CloseNoteButton(),

@@ -1100,12 +1100,20 @@ video {
   height: 12rem;
 }
 
-.h-40 {
-  height: 10rem;
+.h-56 {
+  height: 14rem;
+}
+
+.h-20 {
+  height: 5rem;
 }
 
 .h-10 {
   height: 2.5rem;
+}
+
+.h-40 {
+  height: 10rem;
 }
 
 .h-80 {
@@ -1124,12 +1132,12 @@ video {
   max-height: 3rem;
 }
 
-.max-h-7 {
-  max-height: 1.75rem;
-}
-
 .max-h-24 {
   max-height: 6rem;
+}
+
+.max-h-7 {
+  max-height: 1.75rem;
 }
 
 .max-h-screen {
@@ -1751,6 +1759,10 @@ video {
 
 .pr-1 {
   padding-right: 0.25rem;
+}
+
+.pb-10 {
+  padding-bottom: 2.5rem;
 }
 
 .pb-2 {
