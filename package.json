@@ -126,7 +126,7 @@
     "libphonenumber-js": "^1.10.8",
     "lz-string": "^1.4.4",
     "mangrove-reviews-typescript": "^1.1.0",
-    "maplibre-gl": "^3.2.0",
+    "maplibre-gl": "^3.5.0",
     "opening_hours": "^3.6.0",
     "osm-auth": "^2.2.0",
     "osmtogeojson": "^3.0.0-beta.5",
