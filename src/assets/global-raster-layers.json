@@ -6,6 +6,7 @@
       "category": "osmbasedmap",
       "id": "osm.carto",
       "type": "raster",
+      "max_zoom": 19,
       "attribution": {
         "text": "OpenStreetMap",
         "url": "https://osm.org/copyright"
