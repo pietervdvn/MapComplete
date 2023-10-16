@@ -799,6 +799,10 @@
             }
         }
     },
+    "guideposts": {
+        "description": "Los postes guía o indicadores (también conocidos como \"fingerposts\") suelen encontrarse a lo largo de las rutas oficiales de senderismo, ciclismo, esquí o equitación para indicar las direcciones a los distintos destinos. Además, suelen llevar el nombre de una región o lugar e indican la altitud.\n\nLa posición de un poste indicador puede servir al excursionista, ciclista, jinete o esquiador para confirmar su posición actual, sobre todo si utiliza un mapa impreso sin receptor GPS. ",
+        "title": "Poste guía"
+    },
     "hackerspaces": {
         "description": "En este mapa puedes ver hackerspaces, añadir un nuevo hackerspace o actualizar datos directamente",
         "shortDescription": "Un mapa de hackerspaces",
@@ -991,6 +995,33 @@
     "onwheels": {
         "description": "En este mapa se muestran los lugares accesibles al público en silla de ruedas, que pueden añadirse fácilmente",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Estadísticas"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importar"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Añadir todas las etiquetas sugeridas"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -1032,33 +1063,6 @@
             "8": {
                 "override": {
                     "name": "Plazas de aparcamiento para discapacitados"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Estadísticas"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importar"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Añadir todas las etiquetas sugeridas"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1141,7 +1145,7 @@
         "title": "Códigos postales"
     },
     "postboxes": {
-        "description": "En este mapa puede encontrar y añadir datos de oficinas de correo y buzones de correo. ¡Puede utilizar este mapa para encontrar donde puede enviar su próxima postal! :)<br/>¿Ha encontrado un error o un buzón que falta? Puede editar este mapa con una cuenta de OpenStreetMap gratuita.",
+        "description": "En este mapa podrás buscar y añadir los datos de las oficinas de correos y buzones de correo. ¡Puedes utilizar este mapa para encontrar dónde enviar tu próxima postal! :)<br/>¿Has detectado un error o falta algún buzón de correo? Puedes editar este mapa con una cuenta gratuita de OpenStreetMap.",
         "shortDescription": "Un mapa que muestra buzones y oficinas de correo",
         "title": "Mapa de Buzones y Oficinas de Correos"
     },
@@ -1220,10 +1224,6 @@
     "stations": {
         "description": "Ver, editar y añadir detalles a una estación de tren",
         "layers": {
-            "3": {
-                "description": "Capa que muestra las estaciones de tren",
-                "name": "Estación de Tren"
-            },
             "16": {
                 "description": "Pantallas que muestran los trenes que saldrán de esta estación",
                 "name": "Tableros de salidas",
@@ -1255,6 +1255,10 @@
                 "title": {
                     "render": "Tablero de salidas"
                 }
+            },
+            "3": {
+                "description": "Capa que muestra las estaciones de tren",
+                "name": "Estación de Tren"
             }
         },
         "title": "Estaciones de tren"
