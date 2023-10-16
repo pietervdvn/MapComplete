@@ -579,7 +579,7 @@ export class Changes {
                         )
 
                         const result = await self.flushSelectChanges(pendingChanges, openChangeset)
-                        if(result){
+                        if (result) {
                             this.errors.setData([])
                         }
                         return result

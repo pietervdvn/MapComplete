@@ -16,7 +16,7 @@ import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
 import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFeatureSourceSplitter"
 import FilteredLayer from "../../Models/FilteredLayer"
 import SimpleFeatureSource from "../../Logic/FeatureSource/Sources/SimpleFeatureSource"
-import { CLIENT_RENEG_LIMIT } from "tls";
+import { CLIENT_RENEG_LIMIT } from "tls"
 
 class PointRenderingLayer {
     private readonly _config: PointRenderingConfig
@@ -409,7 +409,7 @@ class LineRenderingLayer {
                 this._listenerInstalledOn.add(id)
                 tags.addCallbackAndRunD((properties) => {
                     // Make sure to use 'getSource' here, the layer names are different!
-                    if(map.getSource(this._layername) === undefined){
+                    if (map.getSource(this._layername) === undefined) {
                         return true
                     }
                     map.setFeatureState(

@@ -2,50 +2,50 @@
   /**
    * UIcomponent to create a new note at the given location
    */
-  import type { SpecialVisualizationState } from "../SpecialVisualization";
-  import { UIEventSource } from "../../Logic/UIEventSource";
-  import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource";
-  import ValidatedInput from "../InputElement/ValidatedInput.svelte";
-  import SubtleButton from "../Base/SubtleButton.svelte";
-  import Tr from "../Base/Tr.svelte";
-  import Translations from "../i18n/Translations.js";
-  import type { Feature, Point } from "geojson";
-  import LoginToggle from "../Base/LoginToggle.svelte";
-  import FilteredLayer from "../../Models/FilteredLayer";
-  import NewPointLocationInput from "../BigComponents/NewPointLocationInput.svelte";
-  import ToSvelte from "../Base/ToSvelte.svelte";
-  import Svg from "../../Svg";
+  import type { SpecialVisualizationState } from "../SpecialVisualization"
+  import { UIEventSource } from "../../Logic/UIEventSource"
+  import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource"
+  import ValidatedInput from "../InputElement/ValidatedInput.svelte"
+  import SubtleButton from "../Base/SubtleButton.svelte"
+  import Tr from "../Base/Tr.svelte"
+  import Translations from "../i18n/Translations.js"
+  import type { Feature, Point } from "geojson"
+  import LoginToggle from "../Base/LoginToggle.svelte"
+  import FilteredLayer from "../../Models/FilteredLayer"
+  import NewPointLocationInput from "../BigComponents/NewPointLocationInput.svelte"
+  import ToSvelte from "../Base/ToSvelte.svelte"
+  import Svg from "../../Svg"
 
-  export let coordinate: UIEventSource<{ lon: number; lat: number }>;
-  export let state: SpecialVisualizationState;
+  export let coordinate: UIEventSource<{ lon: number; lat: number }>
+  export let state: SpecialVisualizationState
 
-  let comment: UIEventSource<string> = LocalStorageSource.Get("note-text");
-  let created = false;
+  let comment: UIEventSource<string> = LocalStorageSource.Get("note-text")
+  let created = false
 
-  let notelayer: FilteredLayer = state.layerState.filteredLayers.get("note");
+  let notelayer: FilteredLayer = state.layerState.filteredLayers.get("note")
 
-  let hasFilter = notelayer?.hasFilter;
-  let isDisplayed = notelayer?.isDisplayed;
+  let hasFilter = notelayer?.hasFilter
+  let isDisplayed = notelayer?.isDisplayed
 
   function enableNoteLayer() {
-    state.guistate.closeAll();
-    isDisplayed.setData(true);
+    state.guistate.closeAll()
+    isDisplayed.setData(true)
   }
 
   async function uploadNote() {
-    let txt = comment.data;
+    let txt = comment.data
     if (txt === undefined || txt === "") {
-      return;
+      return
     }
-    const loc = coordinate.data;
-    txt += "\n\n #MapComplete #" + state?.layout?.id;
-    const id = await state?.osmConnection?.openNote(loc.lat, loc.lon, txt);
-    console.log("Created a note, got id", id);
+    const loc = coordinate.data
+    txt += "\n\n #MapComplete #" + state?.layout?.id
+    const id = await state?.osmConnection?.openNote(loc.lat, loc.lon, txt)
+    console.log("Created a note, got id", id)
     const feature = <Feature<Point>>{
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [loc.lon, loc.lat]
+        coordinates: [loc.lon, loc.lat],
       },
       properties: {
         id: "" + id.id,
@@ -56,22 +56,22 @@
             text: txt,
             html: txt,
             user: state.osmConnection?.userDetails?.data?.name,
-            uid: state.osmConnection?.userDetails?.data?.uid
-          }
-        ])
-      }
-    };
-    // Normally, the 'Changes' will generate the new element. The 'notes' are an exception to this
-    state.newFeatures.features.data.push(feature);
-    state.newFeatures.features.ping();
-    state.selectedElement?.setData(feature);
-    if (state.featureProperties.trackFeature) {
-      state.featureProperties.trackFeature(feature);
+            uid: state.osmConnection?.userDetails?.data?.uid,
+          },
+        ]),
+      },
     }
-    comment.setData("");
-    created = true;
-    state.selectedElement.setData(feature);
-    state.selectedLayer.setData(state.layerState.filteredLayers.get("note"));
+    // Normally, the 'Changes' will generate the new element. The 'notes' are an exception to this
+    state.newFeatures.features.data.push(feature)
+    state.newFeatures.features.ping()
+    state.selectedElement?.setData(feature)
+    if (state.featureProperties.trackFeature) {
+      state.featureProperties.trackFeature(feature)
+    }
+    comment.setData("")
+    created = true
+    state.selectedElement.setData(feature)
+    state.selectedLayer.setData(state.layerState.filteredLayers.get("note"))
   }
 </script>
 
@@ -109,14 +109,13 @@
             <ValidatedInput type="text" value={comment} />
           </div>
 
-          <div class="w-full h-56">
-            <NewPointLocationInput value={coordinate} {state} >
+          <div class="h-56 w-full">
+            <NewPointLocationInput value={coordinate} {state}>
               <div class="h-20 w-full pb-10" slot="image">
-                <ToSvelte construct={Svg.note_svg().SetClass("h-10 w-full")}/>
+                <ToSvelte construct={Svg.note_svg().SetClass("h-10 w-full")} />
               </div>
             </NewPointLocationInput>
           </div>
-
 
           <LoginToggle {state}>
             <span slot="loading"><!--empty: don't show a loading message--></span>

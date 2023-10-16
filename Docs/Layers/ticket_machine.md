@@ -14,7 +14,7 @@ Find ticket machines for public transport tickets
 
 
 
-  - This layer is shown at zoomlevel **19** and higher
+  - This layer is shown at zoomlevel **18** and higher
 
 
 

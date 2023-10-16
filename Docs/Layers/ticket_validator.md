@@ -14,7 +14,7 @@ Find ticket validators to validate public transport tickets
 
 
 
-  - This layer is shown at zoomlevel **19** and higher
+  - This layer is shown at zoomlevel **18** and higher
 
 
 This is a special layer - data is not sourced from OpenStreetMap

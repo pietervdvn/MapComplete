@@ -1,14 +1,14 @@
-import { Store, UIEventSource } from "../../Logic/UIEventSource";
-import type { Map as MLMap } from "maplibre-gl";
-import { Map as MlMap, SourceSpecification } from "maplibre-gl";
-import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers";
-import { Utils } from "../../Utils";
-import { BBox } from "../../Logic/BBox";
-import { ExportableMap, MapProperties } from "../../Models/MapProperties";
-import SvelteUIElement from "../Base/SvelteUIElement";
-import MaplibreMap from "./MaplibreMap.svelte";
-import { RasterLayerProperties } from "../../Models/RasterLayerProperties";
-import * as htmltoimage from "html-to-image";
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import type { Map as MLMap } from "maplibre-gl"
+import { Map as MlMap, SourceSpecification } from "maplibre-gl"
+import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers"
+import { Utils } from "../../Utils"
+import { BBox } from "../../Logic/BBox"
+import { ExportableMap, MapProperties } from "../../Models/MapProperties"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import MaplibreMap from "./MaplibreMap.svelte"
+import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
+import * as htmltoimage from "html-to-image"
 
 /**
  * The 'MapLibreAdaptor' bridges 'MapLibre' with the various properties of the `MapProperties`
