@@ -6,7 +6,7 @@ import { AuthConfig } from "../Logic/Osm/AuthConfig"
 export type PriviligedLayerType = (typeof Constants.priviliged_layers)[number]
 
 export default class Constants {
-    public static vNumber = packagefile.version
+    public static vNumber : string = packagefile.version
     /**
      * API key for Maproulette
      *

@@ -443,6 +443,7 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
             /.*\/src\/index\.ts.*/,
             `<script type="module" src="./index_${layout.id}.ts"></script>`,
         )
+        .replace("Version", Constants.vNumber)
 
     return output
 }
