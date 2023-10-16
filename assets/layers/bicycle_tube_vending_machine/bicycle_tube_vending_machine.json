@@ -35,7 +35,8 @@
         "then": {
           "en": "Bicycle tube vending machine {name}",
           "ca": "Màquina expenedora de cambres d'aire de bicicletes {name}",
-          "de": "{name} Fahrradschlauch-Automat"
+          "de": "{name} Fahrradschlauch-Automat",
+          "cs": "Automat na cyklistické pláště{name}"
         }
       }
     ]
@@ -182,12 +183,14 @@
       "question": {
         "en": "How much does a bicycle tube cost?",
         "ca": "Quant costa una cambra d'aire de bicicleta?",
-        "de": "Wie viel kostet ein Fahrradschlauch?"
+        "de": "Wie viel kostet ein Fahrradschlauch?",
+        "cs": "Kolik stojí plášť na kolo?"
       },
       "render": {
         "en": "A bicycle tube costs {charge}",
         "ca": "Una cambra d'aire de bicicleta costa {charge}",
-        "de": "Ein Fahrradschlauch kostet {charge}"
+        "de": "Ein Fahrradschlauch kostet {charge}",
+        "cs": "Cena jednoho pláště {charge}"
       },
       "freeform": {
         "key": "charge"
@@ -199,7 +202,8 @@
       "question": {
         "en": "Which brand of tubes are sold here?",
         "ca": "Quines marques de cambres d'aire es venen aquí?",
-        "de": "Welche Fahrradschläuche werden hier verkauft?"
+        "de": "Welche Fahrradschläuche werden hier verkauft?",
+        "cs": "Jaká značka plášťů je zde prodávána?"
       },
       "freeform": {
         "key": "brand"
@@ -207,7 +211,8 @@
       "render": {
         "en": "{brand} tubes are sold here",
         "ca": "Aquí es venen cambres d'aire {brand}",
-        "de": "Hier werden Fahrradschläuche von {brand} verkauft"
+        "de": "Hier werden Fahrradschläuche von {brand} verkauft",
+        "cs": "{brand} pláště jsou zde prodávány"
       },
       "mappings": [
         {
@@ -215,7 +220,8 @@
           "then": {
             "en": "Continental tubes are sold here",
             "ca": "Aquí es venen cambres d'aire Continental",
-            "de": "Hier werden Fahrradschläuche von Continental verkauft"
+            "de": "Hier werden Fahrradschläuche von Continental verkauft",
+            "cs": "Continental pláště jsou zde prodávány"
           }
         },
         {
@@ -223,7 +229,8 @@
           "then": {
             "en": "Schwalbe tubes are sold here",
             "ca": "Aquí es venen cambres d'aire Schwalbe",
-            "de": "Hier werden Fahrradschläuche von Schwalbe verkauft"
+            "de": "Hier werden Fahrradschläuche von Schwalbe verkauft",
+            "cs": "Schwalbe pláště jsou zde prodávány"
           }
         }
       ],
@@ -234,7 +241,8 @@
       "question": {
         "en": "Who maintains this vending machine?",
         "ca": "Qui manté aquesta màquina expenedora?",
-        "de": "Wer betreibt den Automaten?"
+        "de": "Wer betreibt den Automaten?",
+        "cs": "Kdo se stará o tento automat?"
       },
       "render": "This vending machine is maintained by {operator}",
       "mappings": [
@@ -265,7 +273,8 @@
       "question": {
         "en": "Are other biycle accessories sold here?",
         "ca": "Es venen altres accessoris per a bicicletes aquí?",
-        "de": "Wird weiteres Fahrradzubehör verkauft?"
+        "de": "Wird weiteres Fahrradzubehör verkauft?",
+        "cs": "Prodávají se zde další doplňky na kolo?"
       },
       "mappings": [
         {
@@ -274,7 +283,8 @@
             "en": "Bicycle inner tubes are sold here",
             "nl": "Fietsbinnenbanden worden hier verkocht",
             "ca": "Aquí es venen cambres d'aire de bicicletes",
-            "de": "Hier werden Fahrradschläuche verkauft"
+            "de": "Hier werden Fahrradschläuche verkauft",
+            "cs": "Zde se prodávají cyklistické duše"
           }
         },
         {
@@ -283,7 +293,8 @@
             "en": "Bicycle lights are sold here",
             "nl": "Fietslampjes worden hier verkocht",
             "ca": "Aquí es venen llums per a bicicletes",
-            "de": "Hier werden Fahrradlampen verkauft"
+            "de": "Hier werden Fahrradlampen verkauft",
+            "cs": "Zde se prodávají světla na jízdní kola"
           }
         },
         {
@@ -292,7 +303,8 @@
             "en": "Gloves are sold here",
             "nl": "Handschoenen worden hier verkocht",
             "ca": "Aquí es venen guants",
-            "de": "Hier werden Fahrradhandschuhe verkauft"
+            "de": "Hier werden Fahrradhandschuhe verkauft",
+            "cs": "Prodávají se zde rukavice"
           }
         },
         {
@@ -301,7 +313,8 @@
             "en": "Bicycle repair kits are sold here",
             "nl": "Fietsreparatiesets worden hier verkocht",
             "ca": "Aquí es venen kits de reparació de bicicletes",
-            "de": "Hier werden Fahrrad-Reparatursets verkauft"
+            "de": "Hier werden Fahrrad-Reparatursets verkauft",
+            "cs": "Zde se prodávají sady na opravu jízdních kol"
           }
         },
         {
@@ -310,7 +323,8 @@
             "en": "Bicycle pumps are sold here",
             "nl": "Fietspompen worden hier verkocht",
             "ca": "Aquí es venen bombes de bicicletes",
-            "de": "Hier werden Fahrradpumpen verkauft"
+            "de": "Hier werden Fahrradpumpen verkauft",
+            "cs": "Prodávají se zde pumpy na kolo"
           }
         },
         {
@@ -319,7 +333,8 @@
             "en": "Bicycle locks are sold here",
             "nl": "Fietssloten worden hier verkocht",
             "ca": "Aquí es venen cadenats per a bicicletes",
-            "de": "Hier werden Fahrradschlösser verkauft"
+            "de": "Hier werden Fahrradschlösser verkauft",
+            "cs": "Prodávají se zde zámky na kola"
           }
         }
       ],

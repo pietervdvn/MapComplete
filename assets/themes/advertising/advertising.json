@@ -6,7 +6,7 @@
     "ca": "Publicitat",
     "es": "Publicidad",
     "de": "Werbung",
-    "cs": "Otevřít reklamní mapu",
+    "cs": "Inzerce",
     "fr": "Publicité",
     "nl": "Reclame",
     "zh_Hant": "廣告物件",
@@ -35,7 +35,8 @@
     "nl": "Heb je je ooit afgevraagd hoeveel reclameborden er zijn in onze straten? Met deze kaart kan je deze vinden en informatie toevoegen",
     "pt_BR": "Você já se perguntou quantas propagandas existem em nossas ruas e estradas? Com este mapa você pode encontrar e adicionar informações sobre todos os recursos de publicidade que você pode encontrar na rua",
     "zh_Hant": "你曾經好奇路上有多少廣告物件？有了這份地圖，你可以找到所有路上能夠看到的廣告物件",
-    "eu": "Inoiz pentsatu duzu zenbat iragarki dauden gure kale eta errepideetan? Mapa honekin, kalean aurki ditzakezun publizitate-ezaugarri guztiei buruzko informazioa aurkitu eta erants dezakezu"
+    "eu": "Inoiz pentsatu duzu zenbat iragarki dauden gure kale eta errepideetan? Mapa honekin, kalean aurki ditzakezun publizitate-ezaugarri guztiei buruzko informazioa aurkitu eta erants dezakezu",
+    "pl": "Czy zastanawiałeś się kiedyś, ile reklam jest na naszych ulicach i drogach? Dzięki tej mapie możesz znaleźć i dodać informacje o wszystkich funkcjach reklamowych, które możesz znaleźć na ulicy"
   },
   "maintainer": "Offsel",
   "icon": "./assets/themes/advertising/icon.svg",

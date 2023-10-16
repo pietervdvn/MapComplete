@@ -5,7 +5,8 @@
     "nl": "Toont het geselecteerde element",
     "de": "Hebt das aktuell ausgewählte Element hervor. Überschreiben Sie diese Ebene, um unterschiedliche Farben zu erhalten",
     "fr": "Met en surbrillance l'élément actuellement sélectioné. Surcharger cette couche pour avoir d'autres couleurs.",
-    "ca": "Ressalta l'element seleccionat actualment. Anul·leu aquesta capa per tenir diferents colors"
+    "ca": "Ressalta l'element seleccionat actualment. Anul·leu aquesta capa per tenir diferents colors",
+    "cs": "Zvýrazní aktuálně vybraný prvek. Přepište tuto vrstvu, aby měla různé barvy"
   },
   "source": "special",
   "mapRendering": [

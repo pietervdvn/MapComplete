@@ -331,7 +331,7 @@
                         "then": "Instalace"
                     },
                     "8": {
-                        "then": "Graffiti"
+                        "then": "Grafiti"
                     },
                     "9": {
                         "then": "Reliéf"
@@ -672,6 +672,9 @@
                     },
                     "1": {
                         "then": "Tato lavička nemá integrované umělecké dílo"
+                    },
+                    "2": {
+                        "then": "Tato lavička <span class=\"subtle\">pravděpodobně</span> nemá integrované umělecké dílo"
                     }
                 },
                 "question": "Má tato lavička umělecké prvky?",
@@ -1031,9 +1034,56 @@
                 },
                 "question": "Je tento automat stále v provozu?",
                 "render": "Provozní stav je <i>{operational_status}</i>"
+            },
+            "bicycle_tube_vending_machine-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Continental pláště jsou zde prodávány"
+                    },
+                    "1": {
+                        "then": "Schwalbe pláště jsou zde prodávány"
+                    }
+                },
+                "question": "Jaká značka plášťů je zde prodávána?",
+                "render": "{brand} pláště jsou zde prodávány"
+            },
+            "bicycle_tube_vending_machine-charge": {
+                "question": "Kolik stojí plášť na kolo?",
+                "render": "Cena jednoho pláště {charge}"
+            },
+            "bicycle_tube_vending_machine-operator": {
+                "question": "Kdo se stará o tento automat?"
+            },
+            "other-items-vending": {
+                "mappings": {
+                    "0": {
+                        "then": "Zde se prodávají cyklistické duše"
+                    },
+                    "1": {
+                        "then": "Zde se prodávají světla na jízdní kola"
+                    },
+                    "2": {
+                        "then": "Prodávají se zde rukavice"
+                    },
+                    "3": {
+                        "then": "Zde se prodávají sady na opravu jízdních kol"
+                    },
+                    "4": {
+                        "then": "Prodávají se zde pumpy na kolo"
+                    },
+                    "5": {
+                        "then": "Prodávají se zde zámky na kola"
+                    }
+                },
+                "question": "Prodávají se zde další doplňky na kolo?"
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Automat na cyklistické pláště{name}"
+                }
+            },
             "render": "Automat na cyklistické duše"
         }
     },
@@ -1609,15 +1659,846 @@
                         "then": "Použití zdarma"
                     }
                 },
-                "question": "Kolik se platí za používání těchto dalekohledů?"
+                "question": "Kolik se platí za používání těchto dalekohledů?",
+                "render": "Použití tohoto dalekohledu stojí {charge}"
+            },
+            "binocular-direction": {
+                "question": "Při pohledu přes tento dalekohled, kterým směrem se člověk dívá?",
+                "render": "Dívá se směrem k {direction}°"
+            }
+        },
+        "title": {
+            "render": "Dalekohledy"
+        }
+    },
+    "birdhide": {
+        "description": "Pozorovatelna",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Bezbariérový přístup"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Pouze zakryté pozorovatelny"
+                    }
+                }
+            }
+        },
+        "name": "Místa pro pozorování ptáků",
+        "presets": {
+            "0": {
+                "description": "Krytý přístřešek, kde lze pohodlně pozorovat ptáky",
+                "title": "pozorovatelna"
+            },
+            "1": {
+                "description": "Obrazovka nebo stěna s otvory pro sledování ptáků"
+            }
+        },
+        "tagRenderings": {
+            "bird-hide-shelter-or-wall": {
+                "mappings": {
+                    "1": {
+                        "then": "Ptačí skrýš"
+                    },
+                    "2": {
+                        "then": "Ptačí budka věž"
+                    }
+                }
+            },
+            "bird-hide-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Pro vozíčkáře jsou připravena speciální opatření"
+                    },
+                    "3": {
+                        "then": "Není přístupný pro osoby na invalidním vozíku"
+                    }
+                }
+            },
+            "birdhide-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Provozuje Natuurpunt"
+                    },
+                    "1": {
+                        "then": "Provozuje the Agency for Nature and Forests"
+                    }
+                },
+                "render": "Provozuje {operator}"
+            }
+        }
+    },
+    "cafe_pub": {
+        "description": "Vrstva s kavárnami a hospodami, kde se můžete sejít u skleničky. Vrstva se ptá na několik důležitých otázek",
+        "name": "Kavárny a hospody",
+        "presets": {
+            "0": {
+                "description": "Hospoda, kde se většinou pije pivo v příjemném a uvolněném interiéru",
+                "title": "hospoda"
+            },
+            "1": {
+                "description": "Modernější a komerčnější <b>bar</b>, případně s hudební a světelnou instalací",
+                "title": "bar"
+            },
+            "2": {
+                "description": "<b>kavárna</b>, kde si můžete v klidném prostředí vypít čaj, kávu nebo alkoholický nápoj",
+                "title": "kavárna"
+            },
+            "3": {
+                "description": "<b>noční klub</b> nebo diskotéka se zaměřením na tanec, hudbu od DJ s doprovodnou světelnou show a barem na (alkoholické) nápoje",
+                "title": "noční klub nebo diskotéka"
+            }
+        },
+        "tagRenderings": {
+            "Classification": {
+                "mappings": {
+                    "0": {
+                        "then": "Hospoda, kde se většinou pije pivo v příjemném a uvolněném interiéru"
+                    },
+                    "1": {
+                        "then": "Modernější a komerčnější <b>bar</b>, případně s hudební a světelnou instalací"
+                    },
+                    "2": {
+                        "then": "<b>kavárna</b>, kde si můžete v klidném prostředí vypít čaj, kávu nebo alkoholický nápoj"
+                    },
+                    "3": {
+                        "then": "<b>Restaurace</b>, kde se dá pořádně najíst"
+                    },
+                    "4": {
+                        "then": "Otevřený prostor, kde se podává pivo, typicky k vidění v Německu"
+                    },
+                    "5": {
+                        "then": "Jedná se o <b>noční klub</b> nebo diskotéku se zaměřením na tanec, hudbu DJ s doprovodnou světelnou show a bar, kde si můžete dát (alkoholické) nápoje"
+                    }
+                },
+                "question": "O jakou kavárnu se jedná?"
+            },
+            "Name": {
+                "question": "Jak se tento podnik jmenuje?",
+                "render": "Tento podnik se jmenuje {name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            },
+            "render": "Hospoda"
+        }
+    },
+    "car_rental": {
+        "description": "Místa, kde si můžete pronajmout auto",
+        "name": "Půjčovna aut",
+        "presets": {
+            "0": {
+                "description": "Místo, kde si můžete pronajmout auto",
+                "title": "půjčovna aut"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Název autopůjčovny"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Tato autopůjčovna nemá jméno"
+                    }
+                },
+                "question": "Jak se jmenuje tato půjčovna aut?",
+                "render": "Tato autopůjčovna se jmenuje {name}"
+            }
+        },
+        "title": {
+            "render": "Půjčovna aut"
+        }
+    },
+    "charging_station": {
+        "description": "Nabíjecí stanice",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Všechny typy vozidel"
+                    },
+                    "1": {
+                        "question": "Napájecí stanice pro jízdní kola"
+                    },
+                    "2": {
+                        "question": "Napájecí stanice pro automobily"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Pouze funkční nabíjecí stanice"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Všechny konektory"
+                    },
+                    "1": {
+                        "question": "Má <div style='display: inline-block'><b><b>Schuko nástěnná zástrčka</b> bez zemního kolíku (CEE7/4 typu F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> konektor"
+                    },
+                    "2": {
+                        "question": "Má <div style='display: inline-block'><b><b>Evropskou zásuvku</b> se zemnícím kolíkem (CEE7/4 typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> konektor"
+                    },
+                    "3": {
+                        "question": "Má <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> konektor"
+                    },
+                    "4": {
+                        "question": "Má <div style='display: inline-block'><b><b>Type 1 s kabelem</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> konektor"
+                    },
+                    "5": {
+                        "question": "Má <div style='display: inline-block'><b>Type 1 <i> bez</i> kabel (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> konektor"
+                    },
+                    "6": {
+                        "question": "Má <div style='display: inline-block'><b>Type 1 CCS (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> konektor"
+                    },
+                    "7": {
+                        "question": "Má <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> konektor"
+                    },
+                    "8": {
+                        "question": "Má <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> konektor"
+                    },
+                    "9": {
+                        "question": "Má <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> konektor"
+                    },
+                    "10": {
+                        "question": "Má <div style='display: inline-block'><b><b>Type 2 s kabelem</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> konektor"
+                    },
+                    "11": {
+                        "question": "Má <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (na značkový typ2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> konektor"
+                    },
+                    "12": {
+                        "question": "Má <div style='display: inline-block'><b><b>Tesla Supercharger (destinace)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> konektor"
+                    },
+                    "13": {
+                        "question": "Má <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (typ 2 s kabelem označeným jako tesla)</b> <img style='width: 1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> konektor"
+                    },
+                    "14": {
+                        "question": "Má <div style='display: inline-block'><b><b>USB</b> pro nabíjení telefonů a drobné elektroniky</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> konektor"
+                    },
+                    "15": {
+                        "question": "Má <div style='display: inline-block'><b><b>Bosch Active Connect s 3 kolíky</b> a kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> konektor"
+                    },
+                    "16": {
+                        "question": "Má <div style='display: inline-block'><b><b>Bosch Active Connect s 5 kolíky</b> a kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> konektor"
+                    }
+                }
+            }
+        },
+        "name": "Nabíjecí stanice",
+        "presets": {
+            "0": {
+                "title": "nabíjecí stanice pro elektrokola s běžnou evropskou zástrčkou <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; výška: 2rem; plavat vlevo; pozadí: bílé; border-radius: 1rem; margin-right: 0,5rem'/> (určeno k nabíjení elektrických kol)"
+            },
+            "1": {
+                "title": "nabíjecí stanice pro automobily"
+            }
+        },
+        "tagRenderings": {
+            "Auth phone": {
+                "question": "Jaké je telefonní číslo pro ověřovací hovor nebo SMS?",
+                "render": "Ověření voláním nebo SMS na <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
+            },
+            "Authentication": {
+                "mappings": {
+                    "0": {
+                        "then": "Ověření pomocí členské karty"
+                    },
+                    "1": {
+                        "then": "Ověření pomocí aplikace"
+                    },
+                    "2": {
+                        "then": "Ověření prostřednictvím telefonního hovoru je k dispozici"
+                    },
+                    "3": {
+                        "then": "Ověření prostřednictvím SMS je k dispozici"
+                    },
+                    "4": {
+                        "then": "Ověření prostřednictvím NFC je k dispozici"
+                    },
+                    "5": {
+                        "then": "Ověřování prostřednictvím karty Money Card je k dispozici"
+                    },
+                    "6": {
+                        "then": "Ověření prostřednictvím debetní karty je k dispozici"
+                    },
+                    "7": {
+                        "then": "Nabíjení je zde možné (i) bez ověření"
+                    }
+                },
+                "question": "Jaký druh ověření je na nabíjecí stanici k dispozici?"
+            },
+            "Available_charging_stations (generated)": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Schuko nástěnná zástrčka</b> bez zemního kolíku (CEE7/4 typu F)"
+                    },
+                    "1": {
+                        "then": "<b>Schuko nástěnná zástrčka</b> bez zemního kolíku (CEE7/4 typu F)"
+                    },
+                    "2": {
+                        "then": "<b>Evropská zástrčka</b> se zemnícím kolíkem (CEE7/4 typ E)"
+                    },
+                    "3": {
+                        "then": "<b>Evropská zástrčka</b> se zemnícím kolíkem (CEE7/4 typ E)"
+                    },
+                    "6": {
+                        "then": "<b>Type 1 s kabelem</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<b>Type 1 s kabelem</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Type 1 <i> bez</i> kabelu</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<b>Type 1 <i> bez</i> kabelu</b> (J1772)"
+                    },
+                    "10": {
+                        "then": "<b>Typ 1 CCS</b> (aka Typ 1 Combo)"
+                    },
+                    "11": {
+                        "then": "<b>Typ 1 CCS</b> (aka Typ 1 Combo)"
+                    },
+                    "14": {
+                        "then": "<b>Typ 2</b> (mennekes)"
+                    },
+                    "15": {
+                        "then": "<b>Typ 2</b> (mennekes)"
+                    },
+                    "16": {
+                        "then": "<b>Typ 2 CCS</b> (mennekes)"
+                    },
+                    "17": {
+                        "then": "<b>Typ 2 CCS</b> (mennekes)"
+                    },
+                    "18": {
+                        "then": "<b>Typ 2 s kabelem</b> (mennekes)"
+                    },
+                    "19": {
+                        "then": "<b>Typ 2 s kabelem</b> (mennekes)"
+                    },
+                    "20": {
+                        "then": "<b>Tesla Supercharger CCS</b> (značkový typ2_css)"
+                    },
+                    "21": {
+                        "then": "<b>Tesla Supercharger CCS</b> (značkový typ2_css)"
+                    },
+                    "26": {
+                        "then": "<b>USB</b> pro nabíjení telefonů a malé elektroniky"
+                    },
+                    "27": {
+                        "then": "<b>USB</b> pro nabíjení telefonů a maléh elektroniky"
+                    }
+                },
+                "question": "Jaké nabíjecí přípojky jsou zde k dispozici?"
+            },
+            "Network": {
+                "mappings": {
+                    "0": {
+                        "then": "Není součástí větší sítě, např. proto, že dobíjecí stanici spravuje místní podnik"
+                    },
+                    "1": {
+                        "then": "Není součástí větší sítě"
+                    }
+                },
+                "question": "Je tato nabíjecí stanice součástí sítě?",
+                "render": "Část sítě <b>{network}</b>"
+            },
+            "OH": {
+                "override": {
+                    "question": "Kdy je tato nabíjecí stanice otevřena?"
+                }
+            },
+            "Operational status": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato nabíjecí stanice funguje"
+                    },
+                    "1": {
+                        "then": "Tato nabíjecí stanice je rozbitá"
+                    },
+                    "2": {
+                        "then": "Plánuje se zde nabíjecí stanice"
+                    },
+                    "4": {
+                        "then": "Tato nabíjecí stanice byla trvale vypnuta a již se nepoužívá, ale je stále viditelná"
+                    }
+                },
+                "question": "Je toto nabíjecí místo v provozu?"
+            },
+            "Operator": {
+                "question": "Kdo je provozovatelem této nabíjecí stanice?",
+                "render": "Tuto nabíjecí stanici provozuje {operator}"
+            },
+            "Parking:fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Žádné další náklady na parkování při nabíjení"
+                    },
+                    "1": {
+                        "then": "Při nabíjení by se měl platit dodatečný poplatek za parkování"
+                    }
+                },
+                "question": "Musí se při nabíjení platit parkovné?"
+            },
+            "Type": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Jízdní kola</b> lze nabíjet zde"
+                    },
+                    "1": {
+                        "then": "<b>Vozidla</b> lze nabíjet zde"
+                    },
+                    "2": {
+                        "then": "<b>Koloběžky</b> lze nabíjet zde"
+                    },
+                    "3": {
+                        "then": "<b>Těžká nákladní vozidla</b> (např. nákladní automobily) lze nabíjet zde"
+                    },
+                    "4": {
+                        "then": "<b>Autobusy</b> lze nabít zde"
+                    }
+                },
+                "question": "Jaká vozidla je zde povoleno nabíjet?"
+            },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Tuto nabíjecí stanici může používat kdokoli (může být vyžadována platba)"
+                    },
+                    "1": {
+                        "then": "Tuto nabíjecí stanici může používat kdokoli (může být vyžadována platba)"
+                    },
+                    "2": {
+                        "then": "Tuto nabíjecí stanici mohou používat pouze zákazníci místa, ke kterému tato stanice patří<br/><span class='subtle'>Např. nabíjecí stanice provozovaná hotelem, kterou mohou používat pouze jeho hosté</span>"
+                    },
+                    "3": {
+                        "then": "Pro přístup k této nabíjecí stanici je nutné vyžádat <b>klíč</b><br/><span class='subtle'>Např. nabíjecí stanice provozovaná hotelem, kterou mohou používat pouze jejich hosté, kteří od recepce obdrží klíč k odemknutí nabíjecí stanice</span>"
+                    },
+                    "4": {
+                        "then": "Nepřístupné široké veřejnosti (např. přístupné pouze majitelům, zaměstnancům, ...)"
+                    },
+                    "5": {
+                        "then": "Tato nabíjecí stanice je v určitých hodinách nebo za určitých podmínek přístupná veřejnosti. Mohou zde platit omezení, ale obecné použití je povoleno."
+                    }
+                },
+                "question": "Kdo může tuto nabíjecí stanici používat?",
+                "render": "Přístup je {access}"
+            },
+            "capacity": {
+                "question": "Kolik vozidel zde lze nabíjet najednou?",
+                "render": "{capacity} vozidel zde mohou být současně nabíjena"
+            },
+            "charge": {
+                "question": "Kolik se za použití této nabíjecí stanice platí?",
+                "render": "Použití této nabíjecí stanice stojí <b>{charge}</b>"
+            },
+            "email": {
+                "question": "Jaká je e-mailová adresa provozovatele?",
+                "render": "V případě problémů pošlete e-mail na <a href='mailto:{email}'>{email}</a>"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Zdarma k použití (bez ověření)"
+                    },
+                    "1": {
+                        "then": "Používání je zdarma, ale je třeba se ověřit"
+                    },
+                    "2": {
+                        "then": "Použití zdarma"
+                    },
+                    "3": {
+                        "then": "Placené použití, ale zdarma pro zákazníky hotelu/podniku/nemocnice/..., který dobíjecí stanici provozuje"
+                    },
+                    "4": {
+                        "then": "Placené použití"
+                    }
+                },
+                "question": "Musí se za použití této nabíjecí stanice platit?"
+            },
+            "maxstay": {
+                "mappings": {
+                    "0": {
+                        "then": "Žádný časový limit na opuštění vozidla zde"
+                    }
+                },
+                "question": "Jaká je maximální doba, po kterou zde můžete zůstat?"
             }
         }
     },
     "climbing": {
         "description": "Falešná vrstva, která obsahuje tagrenderingy sdílené mezi lezeckými vrstvami"
     },
+    "clock": {
+        "description": "Vrstva s veřejnými hodinami",
+        "tagRenderings": {
+            "display": {
+                "question": "Jak tyto hodiny zobrazují čas?"
+            },
+            "faces": {
+                "freeform": {
+                    "placeholder": "Počet ciferníků"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Tyto hodiny mají jeden ciferník"
+                    },
+                    "1": {
+                        "then": "Tyto hodiny mají dva ciferníky"
+                    },
+                    "2": {
+                        "then": "Tyto hodiny mají čtyři ciferníky"
+                    }
+                },
+                "question": "Kolik ciferníků mají tyto hodiny?",
+                "render": "Tyto hodiny mají {faces} ciferníků"
+            },
+            "hygrometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Tyto hodiny také zobrazují vlhkost"
+                    },
+                    "1": {
+                        "then": "Tyto hodiny nezobrazují vlhkost"
+                    },
+                    "2": {
+                        "then": "Tyto hodiny pravděpodobně nezobrazují vlhkost"
+                    }
+                },
+                "question": "Zobrazují tyto hodiny také vlhkost?"
+            },
+            "support": {
+                "mappings": {
+                    "0": {
+                        "then": "Tyto hodiny jsou namontovány na sloupu"
+                    },
+                    "1": {
+                        "then": "Tyto hodiny jsou namontovány na stěně"
+                    },
+                    "2": {
+                        "then": "Tyto hodiny jsou součástí billboardu"
+                    },
+                    "3": {
+                        "then": "Tyto hodiny jsou na zemi"
+                    }
+                },
+                "question": "Jakým způsobem jsou hodiny namontovány?"
+            },
+            "thermometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Tyto hodiny také zobrazují teplotu"
+                    },
+                    "1": {
+                        "then": "Tyto hodiny nezobrazují teplotu"
+                    },
+                    "2": {
+                        "then": "Tyto hodiny pravděpodobně nezobrazují teplotu"
+                    }
+                },
+                "question": "Zobrazují tyto hodiny také teplotu?"
+            },
+            "visibility": {
+                "mappings": {
+                    "0": {
+                        "then": "Tyto hodiny jsou viditelné ze vzdálenosti asi 5 metrů (malé nástěnné hodiny)"
+                    },
+                    "1": {
+                        "then": "Tyto hodiny jsou viditelné ze vzdálenosti asi 20 metrů (středně velké billboardové hodiny)"
+                    },
+                    "2": {
+                        "then": "Tyto hodiny jsou viditelné ze vzdálenosti větší než 20 metrů (např. kostelní nebo nádražní hodiny)"
+                    }
+                },
+                "question": "Jak viditelné jsou tyto hodiny?"
+            }
+        },
+        "title": {
+            "render": "Hodiny"
+        }
+    },
+    "crossings": {
+        "description": "Přechody pro chodce a cyklisty",
+        "name": "Přechody",
+        "presets": {
+            "0": {
+                "description": "Přechod pro chodce a/nebo cyklisty",
+                "title": "přechod"
+            },
+            "1": {
+                "description": "Semafor na silnici",
+                "title": "semafor"
+            }
+        },
+        "tagRenderings": {
+            "crossing-button": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento semafor má tlačítko pro vyžádání zeleného světla"
+                    },
+                    "1": {
+                        "then": "Tento semafor nemá tlačítko pro vyžádání zeleného světla"
+                    }
+                },
+                "question": "Má tento semafor tlačítko pro vyžádání zeleného světla?"
+            },
+            "crossing-continue-through-red": {
+                "mappings": {
+                    "0": {
+                        "then": "Cyklista může jet rovně, pokud svítí červená"
+                    },
+                    "1": {
+                        "then": "Cyklista může jet rovně, pokud svítí červená"
+                    },
+                    "2": {
+                        "then": "Cyklista nemůže jet rovně, pokud svítí červená"
+                    }
+                },
+                "question": "Může cyklista jet rovně, když svítí červená?"
+            },
+            "crossing-is-zebra": {
+                "mappings": {
+                    "0": {
+                        "then": "Toto je přechod pro chodce"
+                    },
+                    "1": {
+                        "then": "Tohle není přechod pro chodce"
+                    }
+                },
+                "question": "Jedná se o přechod pro chodce?"
+            }
+        }
+    },
+    "defibrillator": {
+        "tagRenderings": {
+            "defibrillator-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Veřejně přístupné"
+                    },
+                    "2": {
+                        "then": "Přístupné pouze zákazníkům"
+                    },
+                    "3": {
+                        "then": "Nepřístupné široké veřejnosti (např. přístupné pouze zaměstnancům, majitelům, …)"
+                    },
+                    "4": {
+                        "then": "Nepřístupné, případně pouze pro profesionální použití"
+                    }
+                }
+            },
+            "defibrillator-indoors": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento defibrilátor je umístěn v interiéru"
+                    }
+                }
+            }
+        }
+    },
+    "filters": {
+        "filter": {
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Přijímá kreditní karty"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "S obrázky i bez nich"
+                    },
+                    "1": {
+                        "question": "Má alespoň jeden obrázek"
+                    },
+                    "2": {
+                        "question": "Pravděpodobně nemá obrázek"
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "S hmatovou dlažbou"
+                    }
+                }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": "S nebo bez hmatové dlažby"
+                    },
+                    "1": {
+                        "question": "S hmatovou dlažbou"
+                    },
+                    "2": {
+                        "question": "Bez hmatové dlažby"
+                    },
+                    "3": {
+                        "question": "Žádné informace o hmatové dlažbě"
+                    }
+                }
+            },
+            "9": {
+                "options": {
+                    "0": {
+                        "question": "Použití zdarma"
+                    }
+                }
+            },
+            "10": {
+                "options": {
+                    "1": {
+                        "question": "Psi povoleny"
+                    },
+                    "2": {
+                        "question": "Psi nejsou povoleni"
+                    }
+                }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Nabízí internet"
+                    }
+                }
+            },
+            "13": {
+                "options": {
+                    "0": {
+                        "question": "Má nabídku bez cukru"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Má bezlepkovou nabídku"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Má nabídku bez laktózy"
+                    }
+                }
+            }
+        }
+    },
+    "fire_station": {
+        "description": "Vrstva mapy zobrazující požární stanice.",
+        "name": "Mapa požárních stanic",
+        "presets": {
+            "0": {
+                "description": "Hasičská zbrojnice je místo, kde se nacházejí hasičská vozidla a hasiči.",
+                "title": "požární stanice"
+            }
+        },
+        "tagRenderings": {
+            "station-agency": {
+                "mappings": {
+                    "0": {
+                        "then": "Úřad požární ochrany"
+                    }
+                },
+                "question": "Jaká agentura provozuje tuto stanici?",
+                "render": "Tuto stanici provozuje společnost {operator}."
+            },
+            "station-name": {
+                "question": "Jak se jmenuje tato požární stanice?",
+                "render": "Tato stanice se jmenuje {name}."
+            },
+            "station-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Provozovatelem stanice je vláda."
+                    },
+                    "1": {
+                        "then": "Provozovatelem stanice je komunitní nebo neformální organizace."
+                    },
+                    "2": {
+                        "then": "Stanice je provozována formální skupinou dobrovolníků."
+                    },
+                    "3": {
+                        "then": "Stanice je provozována soukromě."
+                    }
+                },
+                "question": "Jak je klasifikován provozovatel stanice?",
+                "render": "Provozovatel je {operator:type} subjekt."
+            },
+            "station-place": {
+                "question": "Kde se stanice nachází? (např. název čtvrti, obce nebo města)",
+                "render": "Tato stanice se nachází v {addr:place}."
+            },
+            "station-street": {
+                "question": " Jak se jmenuje ulice, kde se stanice nachází?",
+                "render": "Tato stanice je podél dálnice s názvem {addr:street}."
+            }
+        },
+        "title": {
+            "render": "Hasičská stanice"
+        }
+    },
+    "fitness_centre": {
+        "description": "Vrstva zobrazující fitness centra",
+        "name": "Fitness centra",
+        "presets": {
+            "0": {
+                "title": "fitness centra"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Název fitness centra"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Tento fitness centrum nemá žádné jméno"
+                    }
+                },
+                "question": "Jak se jmenuje toto fitness centrum?",
+                "render": "Toto fitness centrum se jmenuje {name}"
+            }
+        },
+        "title": {
+            "render": "Fitness centrum"
+        }
+    },
+    "fitness_station": {
+        "description": "Najděte fitness stanici ve svém okolí a přidejte chybějící."
+    },
     "food": {
         "description": "Vrstva zobrazující restaurace a zařízení rychlého občerstvení (se speciálním vykreslením pro fritézy)"
+    },
+    "gps_track": {
+        "name": "Vaše procestovaná trasa",
+        "tagRenderings": {
+            "Privacy notice": {
+                "render": "To je cesta, kterou jste urazili od otevření těchto webových stránek. Nemějte obavy - je viditelná pouze pro vás a pro nikoho jiného. Údaje o vaší poloze nejsou nikdy odesílány mimo zařízení."
+            }
+        },
+        "title": {
+            "render": "Ujetá cesta"
+        }
     },
     "indoors": {
         "description": "Základní mapování interiérů: zobrazuje obrysy místností"
@@ -1626,13 +2507,1044 @@
         "mapRendering": {
             "0": {
                 "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "Vytvoření nové poznámky k mapě"
+                        }
+                    },
                     "render": "Klikněte zde pro přidání nové položky"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Přidání nového bodu nebo přidání poznámky"
+                },
+                "1": {
+                    "then": "Přidání nové poznámky"
+                },
+                "2": {
+                    "then": "Přidání nového bodu"
                 }
             }
         }
     },
+    "maproulette": {
+        "description": "Vrstva zobrazující všechny úlohy v MapRoulette",
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "0": {
+                        "then": "Úkol je vytvořen"
+                    },
+                    "1": {
+                        "then": "Úkol je opraven"
+                    },
+                    "2": {
+                        "then": "Úkol je falešně pozitivní"
+                    },
+                    "3": {
+                        "then": "Úkol je přeskočen"
+                    },
+                    "4": {
+                        "then": "Úkol je odstraněn"
+                    },
+                    "5": {
+                        "then": "Úkol je již opraveno"
+                    },
+                    "6": {
+                        "then": "Úkol je označen jako příliš těžký"
+                    },
+                    "7": {
+                        "then": "Úloha je zakázána"
+                    }
+                }
+            }
+        }
+    },
+    "maproulette_challenge": {
+        "description": "Vrstva zobrazující úkoly jedné výzvy MapRoulette. Tato vrstva je určena k opětovnému použití a rozšíření v tématech; naleznete v [dokumentaci](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md), jak to provést.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Zobrazit úkoly se všemi stavy"
+                    },
+                    "1": {
+                        "question": "Zobrazit úkoly, které jsou vytvořeny"
+                    },
+                    "2": {
+                        "question": "Zobrazit úkoly, které jsou opravené"
+                    },
+                    "3": {
+                        "question": "Zobrazit úkoly, které jsou falešné pozitivní"
+                    },
+                    "4": {
+                        "question": "Zobrazit úkoly, které byly přeskočeny"
+                    },
+                    "5": {
+                        "question": "Zobrazit úkoly, které byly odstraněny"
+                    },
+                    "6": {
+                        "question": "Zobrazit úkoly, které jsou již opraveny"
+                    },
+                    "7": {
+                        "question": "Zobrazit úkoly, které jsou označeny jako příliš těžké"
+                    },
+                    "8": {
+                        "question": "Zobrazit úkoly, které jsou zakázány"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "0": {
+                        "then": "Úkol je vytvořen"
+                    },
+                    "1": {
+                        "then": "Úkol je opraven"
+                    },
+                    "2": {
+                        "then": "Úkol je falešně pozitivní"
+                    },
+                    "3": {
+                        "then": "Úkol je přeskočen"
+                    },
+                    "4": {
+                        "then": "Úkol je odstraněn"
+                    },
+                    "5": {
+                        "then": "Úkol je již opraveno"
+                    },
+                    "6": {
+                        "then": "Úkol je označen jako příliš těžký"
+                    },
+                    "7": {
+                        "then": "Úloha je zakázána"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Položka v MapRoulette"
+        }
+    },
     "maxspeed": {
-        "description": "Zobrazuje povolenou rychlost pro každou silnici"
+        "description": "Zobrazuje povolenou rychlost pro každou silnici",
+        "name": "Maximální rychlost",
+        "tagRenderings": {
+            "maxspeed-maxspeed": {
+                "mappings": {
+                    "0": {
+                        "then": "Toto je obytná zóna, která má maximální rychlost 20 km/h"
+                    }
+                },
+                "question": "Jaká je zákonná maximální povolená rychlost na této silnici?",
+                "render": "Maximální povolená rychlost na této cestě je {canonical(maxspeed)}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Silnice bez názvu"
+                }
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "km/hod"
+                    },
+                    "1": {
+                        "human": "míle/hod"
+                    }
+                }
+            }
+        }
+    },
+    "memorial": {
+        "tagRenderings": {
+            "inscription": {
+                "question": "Jaký je nápis na této desce?",
+                "render": "Nápis na této desce zní: <p><i>{inscription}<i></p>"
+            }
+        },
+        "title": {
+            "render": "Pamětní deska"
+        }
+    },
+    "nature_reserve": {
+        "description": "Přírodní rezervace je území, kde se příroda může rozvíjet",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Volně přístupné"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Všechny přírodní rezervace"
+                    },
+                    "1": {
+                        "question": "Psi se mohou volně pohybovat"
+                    },
+                    "2": {
+                        "question": "Psi jsou povoleni, pokud jsou na vodítku"
+                    }
+                }
+            }
+        },
+        "name": "Přírodní rezervace",
+        "presets": {
+            "0": {
+                "description": "Přidat chybějící přírodní rezervaci",
+                "title": "přírodní rezervace"
+            }
+        },
+        "tagRenderings": {
+            "Access tag": {
+                "mappings": {
+                    "0": {
+                        "then": "Veřejně přístupné"
+                    },
+                    "1": {
+                        "then": "Nepřístupné"
+                    },
+                    "2": {
+                        "then": "Není přístupné, protože se jedná o soukromou oblast"
+                    },
+                    "3": {
+                        "then": "Přístupné, přestože se jedná o soukromý areál"
+                    },
+                    "4": {
+                        "then": "Přístupné pouze s průvodcem nebo během organizovaných aktivit"
+                    },
+                    "5": {
+                        "then": "Přístupné za poplatek"
+                    }
+                },
+                "question": "Je tato přírodní rezervace přístupná veřejnosti?",
+                "render": "Přístup do této přírodní rezervace: {access:description}"
+            },
+            "Curator": {
+                "question": "Kdo je správcem této přírodní rezervace?",
+                "questionHint": "Respektujte soukromí - jméno vyplňte pouze v případě, že je široce publikováno",
+                "render": "{curator} je správcem této přírodní rezervace"
+            },
+            "Dogs?": {
+                "mappings": {
+                    "0": {
+                        "then": "Psi musí být na vodítku"
+                    },
+                    "1": {
+                        "then": "Psi nejsou povoleni"
+                    },
+                    "2": {
+                        "then": "Psi se mohou volně pohybovat"
+                    }
+                },
+                "question": "Jsou v této přírodní rezervaci povoleni psi?"
+            },
+            "Editable description": {
+                "question": "Jsou k dispozici nějaké další informace?",
+                "render": "Další informace: <i>{description:0}</i>"
+            },
+            "Email": {
+                "question": "Na jakou e-mailovou adresu lze poslat dotazy a problémy týkající se této přírodní rezervace?",
+                "questionHint": "Respektujte soukromí - osobní e-mailovou adresu vyplňte pouze v případě, že je široce publikována"
+            },
+            "Name tag": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato oblast nemá jméno"
+                    }
+                },
+                "question": "Jaký je název této oblasti?",
+                "render": "Tato oblast se jmenuje {name}"
+            },
+            "Non-editable description": {
+                "render": "Další informace: <i>{description}</i>"
+            },
+            "Operator tag": {
+                "mappings": {
+                    "0": {
+                        "then": "Provozuje Natuurpunt"
+                    },
+                    "1": {
+                        "then": "Provozuje {operator}"
+                    },
+                    "2": {
+                        "then": "Provozováno <i>Agentschap Natuur en Bos</i>"
+                    }
+                },
+                "question": "Kdo provozuje tuto oblast?",
+                "render": "Provozuje {operator}"
+            },
+            "Surface area": {
+                "render": "Plocha: {_surface:ha}Ha"
+            },
+            "phone": {
+                "question": "Na jaké telefonní číslo lze volat v případě dotazů a problémů s touto přírodní rezervací?",
+                "questionHint": "Respektujte soukromí - adresu s osobním telefonním číslem vyplňte pouze v případě, že je široce zveřejněna"
+            }
+        },
+        "title": {
+            "render": "Přírodní rezervace"
+        }
+    },
+    "note": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Měl by se zmínit {search} v prvním komentáři"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Otevřeno po {search}"
+                    }
+                }
+            },
+            "8": {
+                "options": {
+                    "0": {
+                        "question": "Zobrazovat pouze poznámky otevřené anonymním přispěvatelem"
+                    }
+                }
+            },
+            "9": {
+                "options": {
+                    "0": {
+                        "question": "Zobrazit pouze otevřené poznámky"
+                    }
+                }
+            },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Všechny poznámky"
+                    }
+                }
+            }
+        },
+        "name": "Poznámky OpenStreetMap",
+        "tagRenderings": {
+            "nearby-images": {
+                "render": {
+                    "before": "<h3>Obrázky v okolí</h3>Obrázky níže jsou obrázky s geografickými značkami v okolí a mohou vám pomoci s touto poznámkou."
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Uzavřená poznámka"
+                }
+            },
+            "render": "Poznámka"
+        }
+    },
+    "observation_tower": {
+        "description": "Věže s panoramatickým výhledem",
+        "name": "Rozhledny",
+        "tagRenderings": {
+            "Fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Zdarma k návštěvě"
+                    }
+                },
+                "question": "Kolik se platí za vstup do této věže?",
+                "render": "Návštěva této věže stojí <b>{charge}</b>"
+            },
+            "Height": {
+                "question": "Jaká je výška této věže?",
+                "render": "Tato věž je {height} vysoká"
+            },
+            "Operator": {
+                "question": "Kdo udržuje tuto věž?",
+                "render": "Udržováno <b>{operator}</b>"
+            },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato věž je veřejně dostupná"
+                    },
+                    "1": {
+                        "then": "Tuto věž lze navštívit pouze s průvodcem"
+                    }
+                },
+                "question": "Lze tuto věž navštívit?"
+            },
+            "elevator": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato věž má výtah, který návštěvníky vyveze na vrchol"
+                    },
+                    "1": {
+                        "then": "Tato věž nemá výtah"
+                    }
+                },
+                "question": "Má tato věž výtah?"
+            },
+            "name": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato věž nemá konkrétní jméno"
+                    }
+                },
+                "question": "Jak se jmenuje tato věž?",
+                "render": "Tato věž se jmenuje <b>{name}</b>"
+            },
+            "step_count": {
+                "question": "Kolik jednotlivých schodů musí člověk zdolat, aby se dostal na vrchol této věže?",
+                "render": "Na vrchol této věže vede {step_count} schodů"
+            }
+        },
+        "title": {
+            "render": "Rozhledna"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " metr"
+                    }
+                }
+            }
+        }
+    },
+    "osm_community_index": {
+        "description": "Vrstva zobrazující komunity OpenStreetMap",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Země"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Skupina dílčích zemí"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Střední region"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Území"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Svět"
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Ostatní komunity"
+                    }
+                }
+            }
+        }
+    },
+    "parcel_lockers": {
+        "description": "Vrstva se skříňkami na balíky pro vyzvedávání a odesílání balíků.",
+        "name": "Schránky na balíky",
+        "presets": {
+            "0": {
+                "title": "schránky na balíky"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Značka"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Toto je skříňka Amazon Locker"
+                    },
+                    "1": {
+                        "then": "Toto je DHL Packstation"
+                    },
+                    "2": {
+                        "then": "Toto je DPD Pickup Station"
+                    },
+                    "3": {
+                        "then": "Toto je PostNL Parcel Locker"
+                    }
+                },
+                "question": "Jaká je značka skříňky na balíky?",
+                "render": "To je {brand} schránka na balíky"
+            },
+            "mail-in": {
+                "mappings": {
+                    "0": {
+                        "then": "Z této skříňky na balíky můžete posílat balíky"
+                    },
+                    "1": {
+                        "then": "Z této skříňky na balíky <b>nemůžete posílat balíky</b>"
+                    }
+                },
+                "question": "Lze z této schránky na balíky odesílat balíky?"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Operátor"
+                },
+                "question": "Kdo je provozovatelem skříňky na balíky?",
+                "render": "Tuto skříňku na pozemky provozuje {operator}"
+            },
+            "pickup": {
+                "mappings": {
+                    "0": {
+                        "then": "Balíčky si můžete vyzvednout v této skříňce na balíky"
+                    },
+                    "1": {
+                        "then": "Z této skříňky na balíky <b>nemůžete vyzvedávat balíky</b>"
+                    }
+                },
+                "question": "Můžete si vyzvednout balíčky z této skříňky na balíky?"
+            },
+            "ref": {
+                "question": "Jaké je referenční číslo/identifikátor této parcelní skříňky?"
+            }
+        },
+        "title": {
+            "render": "Schránka na balíky"
+        }
+    },
+    "parking": {
+        "description": "Vrstva zobrazující parkoviště",
+        "name": "Parkoviště",
+        "presets": {
+            "0": {
+                "title": "parkoviště"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "freeform": {
+                    "placeholder": "Počet parkovacích míst"
+                },
+                "question": "Kolik je na tomto parkovišti parkovacích míst?",
+                "render": "Počet parkovacích míst {capacity}"
+            },
+            "capacity-disabled": {
+                "freeform": {
+                    "placeholder": "Počet parkovacích míst vyhrazených pro osoby se zdravotním postižením"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "K dispozici jsou parkovací místa pro osoby se zdravotním postižením, ale není známo, kolik jich je"
+                    },
+                    "1": {
+                        "then": "Nejsou zde žádná parkovací místa pro osoby se zdravotním postižením"
+                    },
+                    "2": {
+                        "then": "Nejsou zde žádná parkovací místa pro osoby se zdravotním postižením"
+                    }
+                },
+                "question": "Kolik je na tomto parkovišti parkovacích míst pro osoby se zdravotním postižením?",
+                "render": "K dispozici je {capacity:disabled} parkovacích míst pro osoby se zdravotním postižením"
+            },
+            "parking-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Jedná se o povrchové parkoviště"
+                    },
+                    "1": {
+                        "then": "Jedná se o parkoviště vedle ulice"
+                    },
+                    "2": {
+                        "then": "Jedná se o podzemní garáž"
+                    },
+                    "3": {
+                        "then": "Jedná se o vícepodlažní parkovací garáž"
+                    },
+                    "4": {
+                        "then": "Jedná se o střešní parkoviště"
+                    },
+                    "5": {
+                        "then": "Jedná se o pruh pro parkování na silnici"
+                    },
+                    "6": {
+                        "then": "Jedná se o parkoviště kryté přístřešky pro auta"
+                    },
+                    "7": {
+                        "then": "Jedná se o parkoviště skládající se z garážových boxů"
+                    },
+                    "8": {
+                        "then": "Jedná se o parkoviště na odpočívadle"
+                    },
+                    "9": {
+                        "then": "Jedná se o parkoviště tvořené přístřešky"
+                    }
+                },
+                "question": "Jaký je druh parkování?"
+            }
+        },
+        "title": {
+            "render": "Parkování"
+        }
+    },
+    "parking_spaces": {
+        "description": "Vrstva zobrazující jednotlivá parkovací místa.",
+        "name": "Parkovací místa",
+        "tagRenderings": {
+            "capacity": {
+                "mappings": {
+                    "0": {
+                        "then": "Toto parkoviště má 1 místo."
+                    }
+                },
+                "render": "Toto parkoviště má {capacity} míst."
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "To je normální parkovací místo."
+                    },
+                    "1": {
+                        "then": "To je normální parkovací místo."
+                    },
+                    "2": {
+                        "then": "Jedná se o parkovací místo pro osoby se zdravotním postižením."
+                    },
+                    "3": {
+                        "then": "Jedná se o soukromé parkovací místo."
+                    },
+                    "4": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro nabíjení vozidel."
+                    },
+                    "5": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro dodávky."
+                    },
+                    "6": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro těžká nákladní vozidla."
+                    },
+                    "7": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro karavany nebo obytná vozidla."
+                    },
+                    "8": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro autobusy."
+                    },
+                    "9": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro motocykly."
+                    },
+                    "10": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro rodiče s dětmi."
+                    },
+                    "11": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro zaměstnance."
+                    },
+                    "12": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro taxíky."
+                    },
+                    "13": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro vozidla táhnoucí přívěs."
+                    },
+                    "14": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro sdílení automobilů."
+                    }
+                },
+                "question": "Co je to za parkovací místo?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Parkovací místo pro osoby se zdravotním postižením"
+                }
+            },
+            "render": "Parkovací místo"
+        }
+    },
+    "parking_ticket_machine": {
+        "description": "Vrstva s parkovacími automaty pro placení parkovného.",
+        "name": "Parkovací automaty",
+        "presets": {
+            "0": {
+                "title": "parkovací automat"
+            }
+        },
+        "tagRenderings": {
+            "ref": {
+                "freeform": {
+                    "placeholder": "Referenční číslo"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Tento parkovací automat nemá žádné referenční číslo"
+                    }
+                },
+                "question": "Jaké je referenční číslo tohoto parkovacího automatu?",
+                "render": "Tento parkovací automat má referenční číslo {ref}"
+            }
+        },
+        "title": {
+            "render": "Parkovací automat"
+        }
+    },
+    "pedestrian_path": {
+        "description": "Chodníky pro pěší, používané zejména pro navigaci v interiéru a zachycení vstupů do této vrstvy",
+        "name": "Cesty pro chodce"
+    },
+    "pharmacy": {
+        "description": "Vrstva zobrazující lékárny, které (pravděpodobně) vydávají léky na předpis",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Má průjezd"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Lékárna schopná poskytovat léky na předpis"
+                    }
+                }
+            }
+        },
+        "name": "Lékárny",
+        "presets": {
+            "0": {
+                "title": "lékárna"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Název lékárny"
+                },
+                "question": "Jak se lékárna jmenuje?",
+                "render": "Tato lékárna se jmenuje {name}"
+            },
+            "wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato lékárna je snadno přístupná na invalidním vozíku"
+                    },
+                    "1": {
+                        "then": "Tato lékárna je těžko přístupná na invalidním vozíku"
+                    },
+                    "2": {
+                        "then": "Tato lékárna má omezený přístup pro vozíčkáře"
+                    }
+                },
+                "question": "Je tato lékárna snadno přístupná na invalidním vozíku?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Lékárna"
+                }
+            }
+        }
+    },
+    "physiotherapist": {
+        "description": "Tato vrstva zobrazuje fyzioterapeuty",
+        "name": "Fyzioterapeut",
+        "presets": {
+            "0": {
+                "title": "ordinace fyzioterapeuta"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Jak se jmenuje ordinace fyzioterapeuta?",
+                "render": "Tato ordinace fyzioterapeuta se jmenuje {name}"
+            }
+        },
+        "title": {
+            "render": "Fyzioterapeut {name}"
+        }
+    },
+    "picnic_table": {
+        "description": "Vrstva zobrazující piknikové stoly",
+        "name": "Piknikové stoly",
+        "presets": {
+            "0": {
+                "title": "piknikový stůl"
+            }
+        },
+        "tagRenderings": {
+            "picnic_table-material": {
+                "mappings": {
+                    "0": {
+                        "then": "Jedná se o dřevěný piknikový stůl"
+                    },
+                    "1": {
+                        "then": "Jedná se o betonový piknikový stůl"
+                    },
+                    "2": {
+                        "then": "Tento piknikový stůl je vyroben z plastu (recyklované)"
+                    }
+                },
+                "question": "Z jakého materiálu je vyroben tento piknikový stůl?",
+                "render": "Tento piknikový stůl je vyroben z {material}"
+            }
+        },
+        "title": {
+            "render": "Piknikový stůl"
+        }
+    },
+    "playground": {
+        "deletion": {
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Jedná se o školní dvůr - (venkovní) prostor, kde si mohou žáci školy hrát o přestávce a který není veřejně přístupný"
+                }
+            }
+        },
+        "description": "Dětská hřiště",
+        "name": "Dětská hřiště",
+        "presets": {
+            "0": {
+                "title": "hřiště"
+            }
+        },
+        "tagRenderings": {
+            "Playground-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Plně přístupné pro vozíčkáře"
+                    },
+                    "1": {
+                        "then": "Omezený přístup pro vozíčkáře"
+                    },
+                    "2": {
+                        "then": "Není přístupný pro vozíčkáře"
+                    }
+                },
+                "question": "Je toto hřiště přístupné pro vozíčkáře?"
+            },
+            "playground-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Přístupné široké veřejnosti"
+                    },
+                    "1": {
+                        "then": "Toto je <b>placené</b> hřiště"
+                    },
+                    "2": {
+                        "then": "Přístupné pouze pro klienty provozního podniku"
+                    },
+                    "3": {
+                        "then": "Přístupné pouze studentům školy"
+                    },
+                    "4": {
+                        "then": "Nepřístupné"
+                    },
+                    "5": {
+                        "then": "Jedná se o školní dvůr - venkovní areál, kde si mohou žáci o přestávkách hrát; ale není přístupný široké veřejnosti"
+                    }
+                },
+                "question": "Je toto hřiště dostupné veřejnosti?"
+            },
+            "playground-email": {
+                "question": "Jaká je e-mailová adresa správce hřiště?"
+            },
+            "playground-lit": {
+                "mappings": {
+                    "0": {
+                        "then": "Toto hřiště je v noci osvětleno"
+                    },
+                    "1": {
+                        "then": "Toto hřiště není v noci osvětleno"
+                    }
+                },
+                "question": "Je toto hřiště v noci osvětlené?"
+            },
+            "playground-max_age": {
+                "question": "Jaký je maximální věk pro vstup na toto hřiště?",
+                "render": "Přístupné pro děti maximálně {max_age}"
+            },
+            "playground-min_age": {
+                "question": "Jaký je minimální věk pro vstup na toto hřiště?",
+                "render": "Přístupné dětem starším {min_age} let"
+            },
+            "playground-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Přístupné od východu do západu slunce"
+                    },
+                    "1": {
+                        "then": "Vždy přístupné"
+                    }
+                },
+                "question": "Kdy je toto hřiště přístupné?"
+            },
+            "playground-operator": {
+                "question": "Kdo provozuje toto hřiště?",
+                "render": "Provozuje {operator}"
+            },
+            "playground-phone": {
+                "question": "Jaké je telefonní číslo na správce hřiště?"
+            },
+            "playground-surface": {
+                "mappings": {
+                    "0": {
+                        "then": "Povrch je <b>tráva</b>"
+                    },
+                    "1": {
+                        "then": "Povrch je <b>písek</b>"
+                    },
+                    "2": {
+                        "then": "Povrch tvoří <b>dřevěná štěpka</b>"
+                    },
+                    "3": {
+                        "then": "Povrch je <b>dlažební kostky</b>"
+                    },
+                    "4": {
+                        "then": "Povrch je <b>asfalt</b>"
+                    },
+                    "5": {
+                        "then": "Povrch je <b>beton</b>"
+                    },
+                    "6": {
+                        "then": "Povrch je <b>nezpevněný</b>"
+                    },
+                    "7": {
+                        "then": "Povrch je <b>zpevněný</b>"
+                    }
+                },
+                "question": "Jaký je povrch tohoto hřiště?",
+                "questionHint": "Pokud jich je více, vyberte nejčastěji se vyskytující",
+                "render": "Povrch je <b>{surface}</b>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hřiště <i>{name}</i>"
+                }
+            },
+            "render": "Dětské hřiště"
+        }
+    },
+    "postboxes": {
+        "description": "Vrstva zobrazující poštovní schránky."
+    },
+    "public_bookcase": {
+        "description": "Skříňka s knihami na ulici, která je přístupná komukoli",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Má dětské knihy"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Má knihy pro dospělé"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Vnitřní nebo venkovní"
+                    },
+                    "1": {
+                        "question": "Nachází se v interiéru"
+                    },
+                    "2": {
+                        "question": "Nachází se venku"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "bookcase-booktypes": {
+                "mappings": {
+                    "0": {
+                        "then": "Převážně dětské knihy"
+                    },
+                    "1": {
+                        "then": "Převážně knihy pro dospělé"
+                    }
+                },
+                "question": "Jaké knihy najdete v této veřejné knihovně?",
+                "render": "Toto místo nabízí hlavně {books}"
+            },
+            "bookcase-is-accessible": {
+                "mappings": {
+                    "0": {
+                        "then": "Veřejně přístupné"
+                    },
+                    "1": {
+                        "then": "Přístupné pouze zákazníkům"
+                    }
+                },
+                "question": "Je tato veřejná knihovna volně přístupná?"
+            },
+            "bookcase-is-indoors": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato knihovna je umístěna v interiéru"
+                    },
+                    "1": {
+                        "then": "Tato knihovna se nachází venku"
+                    },
+                    "2": {
+                        "then": "Tato knihovna se nachází venku"
+                    }
+                },
+                "question": "Je tato knihovna umístěna venku?"
+            },
+            "public_bookcase-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Součást sítě 'Little Free Library'"
+                    },
+                    "1": {
+                        "then": "Tato veřejná knihovna není součástí větší sítě"
+                    }
+                },
+                "question": "Je tato veřejná knihovna součástí větší sítě?"
+            },
+            "public_bookcase-capacity": {
+                "question": "Kolik knih se vejde do této veřejné knihovny?"
+            },
+            "public_bookcase-name": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato knihovna nemá jméno"
+                    }
+                },
+                "question": "Jak se jmenuje tato veřejná knihovna?"
+            }
+        }
     },
     "questions": {
         "tagRenderings": {
@@ -1944,8 +3856,237 @@
             }
         }
     },
-    "usersettings": {
+    "rainbow_crossings": {
+        "description": "Vrstva zobrazující přechody pro chodce s duhovými malbami"
+    },
+    "selected_element": {
+        "description": "Zvýrazní aktuálně vybraný prvek. Přepište tuto vrstvu, aby měla různé barvy"
+    },
+    "shops": {
+        "description": "Obchod"
+    },
+    "tree_node": {
+        "description": "Vrstva zobrazující stromy",
+        "name": "Strom",
+        "presets": {
+            "0": {
+                "description": "Strom s listy, například dub nebo topol.",
+                "title": "listnatý strom"
+            },
+            "1": {
+                "description": "Strom s jehlicemi, například borovice nebo smrk.",
+                "title": "jehličnatý strom"
+            },
+            "2": {
+                "description": "Pokud si nejste jisti, zda se jedná o listnatý nebo jehličnatý strom.",
+                "title": "strom"
+            }
+        },
         "tagRenderings": {
+            "circumference": {
+                "question": "Jaký je obvod kmene stromu?",
+                "questionHint": "Měří se ve výšce 1,30 m",
+                "render": "Kmen stromu má obvod {circumference} metr"
+            },
+            "height": {
+                "question": "Jaká je výška tohoto stromu?",
+                "render": "Tento strom je {height} metr vysoký"
+            },
+            "tree-decidouous": {
+                "mappings": {
+                    "0": {
+                        "then": "Opadavý: strom po určitou část roku ztrácí listy."
+                    },
+                    "1": {
+                        "then": "Stálozelený."
+                    }
+                },
+                "question": "Je tento strom stálezelený nebo opadavý?"
+            },
+            "tree-denotation": {
+                "mappings": {
+                    "0": {
+                        "then": "Strom je pozoruhodný svou velikostí nebo nápadným umístěním. Je užitečný pro navigaci."
+                    },
+                    "1": {
+                        "then": "Strom je přírodní památkou, např. proto, že je mimořádně starý nebo patří k cenným druhům."
+                    },
+                    "2": {
+                        "then": "Strom se používá pro zemědělské účely, např. v sadu."
+                    },
+                    "3": {
+                        "then": "Strom se nachází v parku nebo podobném místě (hřbitov, školní pozemek, ...)."
+                    },
+                    "4": {
+                        "then": "Strom se nachází v obytné zahradě."
+                    },
+                    "5": {
+                        "then": "Tohle je strom podél aleje."
+                    },
+                    "6": {
+                        "then": "Strom se nachází v městské oblasti."
+                    },
+                    "7": {
+                        "then": "Strom se nachází mimo městskou oblast."
+                    }
+                },
+                "question": "Jak významný je tento strom? Vyberte první správnou odpověď."
+            },
+            "tree-heritage": {
+                "mappings": {
+                    "0": {
+                        "then": "Zapsáno jako dědictví <i>Onroerend Erfgoed</i> Flanders"
+                    },
+                    "1": {
+                        "then": "Zapsáno jako kulturní dědictví <i>Direction du Patrimoine culturel</i> Brusel"
+                    },
+                    "2": {
+                        "then": "Registrováno jako kulturní dědictví jinou organizací"
+                    },
+                    "3": {
+                        "then": "Není zapsáno jako kulturní dědictví"
+                    },
+                    "4": {
+                        "then": "Registrováno jako kulturní dědictví jinou organizací"
+                    }
+                },
+                "question": "Je tento strom registrovaným dědictvím?"
+            },
+            "tree-leaf_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Listnatý"
+                    },
+                    "1": {
+                        "then": "Jehličnatý"
+                    },
+                    "2": {
+                        "then": "Trvale bez listů"
+                    }
+                },
+                "question": "Jedná se o listnatý nebo jehličnatý strom?"
+            },
+            "tree-species-wikidata": {
+                "question": "Jaký druh je tento strom?"
+            },
+            "tree_node-name": {
+                "mappings": {
+                    "0": {
+                        "then": "Strom nemá jméno."
+                    }
+                },
+                "question": "Má strom nějaké jméno?",
+                "render": "Jméno: {name}"
+            },
+            "tree_node-ref:OnroerendErfgoed": {
+                "question": "Jaké je ID vydané společností Onroerend Erfgoed Flanders?"
+            },
+            "tree_node-wikidata": {
+                "question": "Jaké je ID Wikidata pro tento strom?"
+            }
+        },
+        "title": {
+            "render": "Strom"
+        }
+    },
+    "usersettings": {
+        "description": "Speciální vrstva, která není určena k zobrazení na mapě, ale slouží k nastavení uživatelských nastavení",
+        "tagRenderings": {
+            "all-questions-at-once": {
+                "mappings": {
+                    "0": {
+                        "then": "Zobrazit všechny otázky v infoboxu dohromady"
+                    },
+                    "1": {
+                        "then": "Zobrazit otázky jednu po druhé"
+                    }
+                },
+                "question": "Mají se otázky pro neznámá datová pole zobrazovat jednotlivě, nebo společně?"
+            },
+            "background-layer": {
+                "mappings": {
+                    "0": {
+                        "then": "Použití výchozí vrstvu pozadí"
+                    },
+                    "1": {
+                        "then": "Použít OpenStreetMap-carto jako výchozí vrstvu"
+                    },
+                    "2": {
+                        "then": "Použít letecké snímky jako výchozí pozadí"
+                    },
+                    "3": {
+                        "then": "Použití mapy, která není založena na mapě openstreetmap, jako výchozího pozadí"
+                    },
+                    "4": {
+                        "then": "Použít aktuální vrstvu pozadí (<span class='code'>{__current_background}</span>) jako výchozí pozadí"
+                    },
+                    "5": {
+                        "then": "Použít vrstvu pozadí <span class='code'>{mapcomplete-preferred-background-layer}</span> jako výchozí pozadí"
+                    }
+                },
+                "question": "Jaká vrstva pozadí by se měla zobrazovat ve výchozím nastavení?"
+            },
+            "background-layer-readonly": {
+                "render": "Tato tematická mapa má předdefinovanou sadu podkladových vrstev. Vaše výchozí nastavení tématu se nepoužije"
+            },
+            "contributor-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Přispěli jste do MapComplete kódem s {_code_contributions} revizemi! To je úžasné!"
+                    }
+                }
+            },
+            "cscount-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Změny jste provedli při {_csCount} různých příležitostech! To je úžasné!"
+                    }
+                }
+            },
+            "fixate-north": {
+                "mappings": {
+                    "0": {
+                        "then": "Umožnit otáčení mapy"
+                    },
+                    "1": {
+                        "then": "Sever vždy směřujte nahoru"
+                    }
+                },
+                "question": "Měl by být sever vždy nahoře?"
+            },
+            "inbox": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Otevřít schránku"
+                            }
+                        }
+                    },
+                    "1": {
+                        "then": {
+                            "special": {
+                                "text": "<b class='alert'>Máte {_unreadMessages}</b><br/>Otevřít schránku"
+                            }
+                        }
+                    }
+                }
+            },
+            "language_picker": {
+                "mappings": {
+                    "0": {
+                        "then": "Jazyk byl nastaven pomocí parametru URL a uživatel jej nemůže nastavit.²"
+                    }
+                }
+            },
+            "mangrove-keys": {
+                "render": {
+                    "after": "Kdokoli, kdo má tento soubor, může provádět recenze s vaší identitou",
+                    "special": {
+                        "text": "Stáhnout soukromý klíč pro Mangrove účet"
+                    }
+                }
+            },
             "picture-license": {
                 "mappings": {
                     "0": {
@@ -1959,6 +4100,14 @@
                     },
                     "3": {
                         "then": "Pořízené fotografie budou licencovány pod <b>CC-BY-SA 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku a že odvozené fotky musí být dále sdíleny se stejnou licencí."
+                    }
+                },
+                "question": "Pod jakou licencí chcete své fotografie zveřejnit?"
+            },
+            "settings-link": {
+                "render": {
+                    "special": {
+                        "text": "Otevřít vaše nastavení na OpenStreetMap.org"
                     }
                 }
             },
@@ -1976,6 +4125,14 @@
                 },
                 "question": "Zobrazit informace o ladění v nastavení?"
             },
+            "translation-completeness": {
+                "mappings": {
+                    "0": {
+                        "then": "Kompletně přeloženo"
+                    }
+                },
+                "render": "Překlady pro {_theme} v {_language} jsou na úrovni {_translation_percentage}%: {_translation_translated_count} z {_translation_total} je přeloženo"
+            },
             "translation-mode": {
                 "question": "Chcete pomoci s překladem MapComplete?"
             },
@@ -1988,7 +4145,290 @@
             }
         }
     },
+    "vending_machine": {
+        "tagRenderings": {
+            "vending": {
+                "render": "Tento automat prodává {vending}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Prodejní automat {name}"
+                },
+                "1": {
+                    "then": "Prodejní automat {brand}"
+                }
+            },
+            "render": "Prodejní automat"
+        }
+    },
+    "veterinary": {
+        "name": "veterinář",
+        "presets": {
+            "0": {
+                "description": "veterinární lékař, který léčí psy",
+                "title": "veterinární lékař"
+            }
+        },
+        "tagRenderings": {
+            "vetName": {
+                "question": "Jak se jmenuje tento veterinární lékař?",
+                "render": "Jméno tohoto veterinárního lékaře je {name}"
+            }
+        },
+        "title": {
+            "render": "Veterina"
+        }
+    },
+    "viewpoint": {
+        "description": "Pěkný výhled nebo pěkný pohled. Ideální pro přidání obrázku, pokud se nehodí žádná jiná kategorie"
+    },
     "walls_and_buildings": {
-        "description": "Speciální zabudovaná vrstva poskytující všechny stěny a budovy. Tato vrstva je užitečná v předvolbách pro objekty, které lze umístit ke stěnám (např. AED, poštovní schránky, vchody, adresy, bezpečnostní kamery, …). Tato vrstva je ve výchozím nastavení neviditelná a uživatel ji nemůže přepínat."
+        "description": "Speciální zabudovaná vrstva poskytující všechny stěny a budovy. Tato vrstva je užitečná v předvolbách pro objekty, které lze umístit ke stěnám (např. AED, poštovní schránky, vchody, adresy, bezpečnostní kamery, …). Tato vrstva je ve výchozím nastavení neviditelná a uživatel ji nemůže přepínat.",
+        "title": {
+            "render": "Zeď nebo budova"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "metr"
+                    },
+                    "1": {
+                        "human": "centimetr"
+                    }
+                }
+            }
+        }
+    },
+    "waste_basket": {
+        "description": "Jedná se o veřejný odpadkový koš, odpadkový koš, kam můžete vyhodit odpadky.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Všechny typy"
+                    },
+                    "1": {
+                        "question": "Odpadový koš pro cigarety"
+                    },
+                    "2": {
+                        "question": "Odpadový koš pro léky"
+                    },
+                    "3": {
+                        "question": "Odpadkový koš na psí exkrementy"
+                    },
+                    "4": {
+                        "question": "Odpadkový koš na odpadky"
+                    },
+                    "5": {
+                        "question": "Odpadkový koš na ostré předměty"
+                    },
+                    "6": {
+                        "question": "Odpadkový koš na plast"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Odpadkový koš se zásobníkem na sáčky na (psí) exkrementy"
+                    }
+                }
+            }
+        },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Odpadkový koš"
+                        }
+                    }
+                }
+            }
+        },
+        "name": "Odpadkový koš",
+        "presets": {
+            "0": {
+                "title": "odpadkový koš"
+            }
+        },
+        "tagRenderings": {
+            "dispensing_dog_bags": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento odpadkový koš má zásobník na sáčky na (psí) exkrementy"
+                    },
+                    "1": {
+                        "then": "Tento odpadkový koš <b>nemá</b> zásobník na sáčky na (psí) exkrementy"
+                    },
+                    "2": {
+                        "then": "Tento odpadkový koš <b>nemá</b> zásobník na sáčky na (psí) exkrementy"
+                    }
+                },
+                "question": "Má tento odpadkový koš zásobník na sáčky na psí exkrementy?"
+            },
+            "waste-basket-waste-types": {
+                "mappings": {
+                    "0": {
+                        "then": "Odpadkový koš na běžný odpad"
+                    },
+                    "1": {
+                        "then": "Odpadkový koš na běžný odpad"
+                    },
+                    "2": {
+                        "then": "Odpadkový koš na psí exkrementy"
+                    },
+                    "3": {
+                        "then": "Odpadkový koš na cigarety"
+                    },
+                    "4": {
+                        "then": "Odpadkový koš na léky"
+                    },
+                    "5": {
+                        "then": "Odpadkový koš na jehly a jiné ostré předměty"
+                    },
+                    "6": {
+                        "then": "Odpadkový koš na plasty"
+                    },
+                    "7": {
+                        "then": "Odpadový koš na papír"
+                    }
+                },
+                "question": "Jaký druh koše na odpad je to?"
+            }
+        },
+        "title": {
+            "render": "Odpadkový koš"
+        }
+    },
+    "waste_disposal": {
+        "description": "Odpadkový koš, střední až velký koš na likvidaci (domácího) odpadu",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Pouze veřejný přístup"
+                    }
+                }
+            }
+        },
+        "name": "Odpadkové koše",
+        "presets": {
+            "0": {
+                "description": "Střední až velký kontejner na odpad (z domácností)",
+                "title": "koš na odpadky"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento koš může používat kdokoli"
+                    },
+                    "1": {
+                        "then": "Tento koš je soukromý"
+                    },
+                    "2": {
+                        "then": "Tento koš je určen pouze pro obyvatele"
+                    }
+                },
+                "question": "Kdo může používat tento koš na odpadky?",
+                "render": "Přístup: {access}"
+            },
+            "disposal-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Jedná se o podzemní kontejner"
+                    },
+                    "1": {
+                        "then": "Tento kontejner se nachází uvnitř"
+                    },
+                    "2": {
+                        "then": "Tento kontejner se nachází venku"
+                    }
+                },
+                "question": "Kde se nachází tento kontejner?"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Jedná se o střední až velkou popelnici na (domovní) odpad"
+                    },
+                    "1": {
+                        "then": "To je vlastně recyklační kontejner"
+                    }
+                },
+                "question": "Co je to za odpadkový koš?"
+            }
+        },
+        "title": {
+            "render": "Nakládání s odpady"
+        }
+    },
+    "windturbine": {
+        "description": "Moderní větrné mlýny vyrábějící elektřinu",
+        "name": "větrná turbína",
+        "presets": {
+            "0": {
+                "title": "větrná turbína"
+            }
+        },
+        "tagRenderings": {
+            "turbine-diameter": {
+                "question": "Jaký je průměr rotoru této větrné turbíny v metrech?",
+                "render": "Průměr rotoru této větrné turbíny je {rotor:diameter} metrů."
+            },
+            "turbine-height": {
+                "question": "Jaká je celková výška této větrné elektrárny (včetně poloměru rotoru) v metrech?",
+                "render": "Celková výška (včetně poloměru rotoru) této větrné turbíny je {height} metrů."
+            },
+            "turbine-operator": {
+                "question": "Kdo provozuje tuto větrnou turbínu?",
+                "render": "Tuto větrnou turbínu provozuje {operator}."
+            },
+            "turbine-output": {
+                "question": "Jaký je výkon této větrné turbíny? (např. 2,3 MW)",
+                "render": "Výkon této větrné turbíny je {generator:output:electricity}."
+            },
+            "turbine-start-date": {
+                "question": "Kdy byla tato větrná turbína uvedena do provozu?",
+                "render": "Tato větrná turbína byla uvedena do provozu dne/v {start_date}."
+            },
+            "windturbine-fixme": {
+                "question": "Je něco špatně s tím, jak je to mapováno, a vy jste to zde nedokázali opravit? (zanechte poznámku odborníkům na OpenStreetMap)",
+                "render": "Další informace pro odborníky na OpenStreetMap: {fixme}"
+            }
+        },
+        "title": {
+            "render": "větrná turbína"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " megawatty"
+                    },
+                    "1": {
+                        "human": " kilowatty"
+                    },
+                    "2": {
+                        "human": " watty"
+                    },
+                    "3": {
+                        "human": " gigawatty"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " metr"
+                    }
+                }
+            }
+        }
     }
 }

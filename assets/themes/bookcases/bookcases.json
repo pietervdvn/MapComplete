@@ -15,8 +15,9 @@
     "ca": "Llibreries públiques",
     "es": "Estanterías publicas",
     "pa_PK": "آزاد کتاب نقشہ",
-    "cs": "Otevřená mapa pouličních knihoven",
-    "eu": "Apalategi publikoak"
+    "cs": "Veřejné knihovničky",
+    "eu": "Apalategi publikoak",
+    "pl": "Publiczne regały na książki"
   },
   "description": {
     "en": "A public bookcase is a small streetside cabinet, box, old phone booth or some other objects where books are stored. Everyone can place or take a book. This map aims to collect all these bookcases.",
@@ -32,7 +33,8 @@
     "da": "Et offentligt bogskab er et lille skab, en kasse, en gammel telefonboks eller andre steder, hvor bøger opbevares. Alle kan lægge eller tage en bog. Dette kort har til formål at samle alle disse bogskabe. Du kan opdage nye bogkasser i nærheden og med en gratis OpenStreetMap-konto hurtigt tilføje dine yndlingsbogkasser.",
     "ca": "Una llibreria pública és un xicotet armari al carrer, una caixa, una vella cabina telefònica o algun altre objecte on es guarden llibres. Tothom pot col·locar o agafar un llibre. Aquest mapa pretén recollir totes aquestes llibreries.",
     "cs": "Veřejná knihovna je malá pouliční skříňka, krabice, stará telefonní budka nebo jiný předmět, ve kterém jsou uloženy knihy. Kdokoliv do ní může umístit, nebo si z ní vzít knihu. Cílem této mapy je shromáždit všechny tyto knihovny.",
-    "eu": "Kale-liburutegi publiko bat kale-armairu txiki bat da, kaxa, telefono-kabina zaharra edo liburuak gordetzeko beste objektu batzuk. Guztiek jar edo har dezakete liburu bat. Koaderno horiek guztiak biltzea da mapa honen helburua."
+    "eu": "Kale-liburutegi publiko bat kale-armairu txiki bat da, kaxa, telefono-kabina zaharra edo liburuak gordetzeko beste objektu batzuk. Guztiek jar edo har dezakete liburu bat. Koaderno horiek guztiak biltzea da mapa honen helburua.",
+    "pl": "Publiczny regał na książki to mała przyuliczna szafka, pudełko, stara budka telefoniczna lub inne przedmioty, w których przechowywane są książki. Każdy może w nich zostawić lub zabrać książkę. Celem tej mapy jest zebranie wszystkich tych regałów."
   },
   "icon": "./assets/themes/bookcases/bookcase.svg",
   "startLat": 0,

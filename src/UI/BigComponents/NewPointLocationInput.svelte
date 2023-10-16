@@ -29,16 +29,25 @@
    * The start coordinate
    */
   export let coordinate: { lon: number; lat: number }
-  export let snapToLayers: string[] | undefined
-  export let targetLayer: LayerConfig
-  export let maxSnapDistance: number = undefined
 
-  export let snappedTo: UIEventSource<string | undefined>
-
+  /**
+   * The center of the map at all times
+   * If undefined at the beginning, 'coordinate' will be used
+   */
   export let value: UIEventSource<{ lon: number; lat: number }>
   if (value.data === undefined) {
     value.setData(coordinate)
   }
+  if(coordinate === undefined){
+    coordinate = value.data
+  }
+  export let snapToLayers: string[] | undefined
+  export let targetLayer: LayerConfig | undefined
+  export let maxSnapDistance: number = undefined
+
+  export let snappedTo: UIEventSource<string | undefined>
+
+
 
   let preciseLocation: UIEventSource<{ lon: number; lat: number }> = new UIEventSource<{
     lon: number
@@ -66,12 +75,14 @@
     rasterLayer: UIEventSource.feedFrom(state.mapProperties.rasterLayer),
   }
 
-  const featuresForLayer = state.perLayer.get(targetLayer.id)
-  if (featuresForLayer) {
-    new ShowDataLayer(map, {
-      layer: targetLayer,
-      features: featuresForLayer,
-    })
+  if(targetLayer){
+    const featuresForLayer = state.perLayer.get(targetLayer.id)
+    if (featuresForLayer) {
+      new ShowDataLayer(map, {
+        layer: targetLayer,
+        features: featuresForLayer,
+      })
+    }
   }
 
   if (snapToLayers?.length > 0) {
@@ -114,4 +125,8 @@
   value={preciseLocation}
   initialCoordinate={coordinate}
   maxDistanceInMeters="50"
-/>
+>
+  <slot name="image" slot="image">
+    <img class="h-full max-h-24" src="./assets/svg/move-arrows.svg" />
+  </slot>
+</LocationInput>

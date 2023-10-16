@@ -841,6 +841,66 @@
       "value": "only"
     },
     {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=only with a fixed text, namely 'This shop <b>only sells sugar free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "only"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=yes with a fixed text, namely 'This shop has a big sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=limited with a fixed text, namely 'This shop has a <b>limited sugar free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=no with a fixed text, namely 'This shop has no sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "no"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:gluten_free=only with a fixed text, namely 'This shop <b>only sells gluten free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "only"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:gluten_free=yes with a fixed text, namely 'This shop has a big gluten free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:gluten_free=limited with a fixed text, namely 'This shop has a <b>limited gluten free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:gluten_free=no with a fixed text, namely 'This shop has no gluten free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "no"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=only with a fixed text, namely '<b>Only sells lactose free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "only"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=yes with a fixed text, namely 'Big lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=limited with a fixed text, namely '<b>Limited lactose free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=no with a fixed text, namely 'No lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "no"
+    },
+    {
       "key": "organic",
       "description": "Layer 'Restaurants and fast food' shows organic=no with a fixed text, namely 'There are no organic options available' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if cuisine!=friture)",
       "value": "no"
@@ -2083,6 +2143,21 @@
       "value": "wine"
     },
     {
+      "key": "second_hand",
+      "description": "Layer 'Shop' shows second_hand=only with a fixed text, namely 'This shop sells second-hand items <b>only</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=clothes|shop=car|shop=books|shop=charity|shop=car_repair|shop=furniture|shop=bicycle|shop=bicycle|shop=mobile_phone|shop=computer|shop=toys)",
+      "value": "only"
+    },
+    {
+      "key": "second_hand",
+      "description": "Layer 'Shop' shows second_hand=yes with a fixed text, namely 'This shop sells second-hand items along with new items' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=clothes|shop=car|shop=books|shop=charity|shop=car_repair|shop=furniture|shop=bicycle|shop=bicycle|shop=mobile_phone|shop=computer|shop=toys)",
+      "value": "yes"
+    },
+    {
+      "key": "second_hand",
+      "description": "Layer 'Shop' shows second_hand=no with a fixed text, namely 'This shop only sells brand-new items' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=clothes|shop=car|shop=books|shop=charity|shop=car_repair|shop=furniture|shop=bicycle|shop=bicycle|shop=mobile_phone|shop=computer|shop=toys)",
+      "value": "no"
+    },
+    {
       "key": "opening_hours",
       "description": "Layer 'Shop' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'OnWheels')"
     },
@@ -2241,6 +2316,66 @@
     {
       "key": "organic",
       "description": "Layer 'Shop' shows organic=no with a fixed text, namely 'This shop does not offer organic products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=clothes|shop=shoes|shop=butcher|shop=cosmetics|shop=deli|shop=bakery|shop=alcohol|shop=seafood|shop=beverages|shop=florist)",
+      "value": "no"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Shop' shows diet:sugar_free=only with a fixed text, namely 'This shop <b>only sells sugar free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "value": "only"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Shop' shows diet:sugar_free=yes with a fixed text, namely 'This shop has a big sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "value": "yes"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Shop' shows diet:sugar_free=limited with a fixed text, namely 'This shop has a <b>limited sugar free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "value": "limited"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Shop' shows diet:sugar_free=no with a fixed text, namely 'This shop has no sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "value": "no"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Shop' shows diet:gluten_free=only with a fixed text, namely 'This shop <b>only sells gluten free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "value": "only"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Shop' shows diet:gluten_free=yes with a fixed text, namely 'This shop has a big gluten free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "value": "yes"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Shop' shows diet:gluten_free=limited with a fixed text, namely 'This shop has a <b>limited gluten free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "value": "limited"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Shop' shows diet:gluten_free=no with a fixed text, namely 'This shop has no gluten free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "value": "no"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Shop' shows diet:lactose_free=only with a fixed text, namely '<b>Only sells lactose free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "value": "only"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Shop' shows diet:lactose_free=yes with a fixed text, namely 'Big lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "value": "yes"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Shop' shows diet:lactose_free=limited with a fixed text, namely '<b>Limited lactose free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "value": "limited"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Shop' shows diet:lactose_free=no with a fixed text, namely 'No lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
       "value": "no"
     },
     {

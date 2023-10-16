@@ -6,14 +6,16 @@
     "nl": "Apotheken",
     "pa_PK": "فارمیسی",
     "ca": "Farmàcies",
-    "fr": "Pharmacies"
+    "fr": "Pharmacies",
+    "cs": "Lékárny"
   },
   "description": {
     "en": "A layer showing pharmacies, which (probably) dispense prescription drugs",
     "de": "Eine Ebene mit Apotheken, die (wahrscheinlich) verschreibungspflichtige Medikamente ausgeben",
     "nl": "Deze laag toont apotheken, welke (waarschijnlijk) ook medicijnen onder voorschrift verkopen",
     "fr": "Une couche affichant les pharmacie qui (probablement) délivrent des médicaments",
-    "ca": "Una capa que mostra les farmàcies, que (probablement) distribueixen medicaments amb recepta"
+    "ca": "Una capa que mostra les farmàcies, que (probablement) distribueixen medicaments amb recepta",
+    "cs": "Vrstva zobrazující lékárny, které (pravděpodobně) vydávají léky na předpis"
   },
   "title": {
     "render": {
@@ -32,7 +34,8 @@
           "nl": "Apotheek",
           "pa_PK": "فارمیسی",
           "fr": "Pharmacie",
-          "ca": "Farmàcia"
+          "ca": "Farmàcia",
+          "cs": "Lékárna"
         }
       }
     ]
@@ -58,7 +61,8 @@
           "de": "Name der Apotheke",
           "nl": "Naam van de apotheek",
           "fr": "Nom de la pharmacie",
-          "ca": "Nom de la farmàcia"
+          "ca": "Nom de la farmàcia",
+          "cs": "Název lékárny"
         }
       },
       "question": {
@@ -66,14 +70,16 @@
         "de": "Wie lautet der Name der Apotheke?",
         "nl": "Wat is de naam van deze apotheek?",
         "fr": "Quel est le nom de cette pharmacie ?",
-        "ca": "Quin és el nom de la farmàcia?"
+        "ca": "Quin és el nom de la farmàcia?",
+        "cs": "Jak se lékárna jmenuje?"
       },
       "render": {
         "en": "This pharmacy is called {name}",
         "de": "Der Name der Apotheke lautet {name}",
         "nl": "Deze apotheek heet {name}",
         "ca": "Aquesta farmàcia es diu {name}",
-        "fr": "Cette pharmacie s'appelle {name}"
+        "fr": "Cette pharmacie s'appelle {name}",
+        "cs": "Tato lékárna se jmenuje {name}"
       }
     },
     "opening_hours",
@@ -87,7 +93,8 @@
         "de": "Ist die Apotheke für Rollstuhlfahrer leicht zugänglich?",
         "nl": "Is het mogelijk om deze apotheek te bereiken met een rolstoel?",
         "ca": "És fàcil accedir a aquesta farmàcia amb una cadira de rodes?",
-        "fr": "Cette pharmacie est-elle facilement accessible en chaise roulante ?"
+        "fr": "Cette pharmacie est-elle facilement accessible en chaise roulante ?",
+        "cs": "Je tato lékárna snadno přístupná na invalidním vozíku?"
       },
       "mappings": [
         {
@@ -97,7 +104,8 @@
             "ca": "Aquesta farmàcia és fàcil d'accedir en una cadira de rodes",
             "de": "Die Apotheke ist für Rollstuhlfahrer leicht zugänglich",
             "nl": "Deze apotheek is makkelijk te bereiken met een rolstoel",
-            "fr": "Cette pharmacie est facile d'accès en chaise roulante"
+            "fr": "Cette pharmacie est facile d'accès en chaise roulante",
+            "cs": "Tato lékárna je snadno přístupná na invalidním vozíku"
           }
         },
         {
@@ -107,7 +115,8 @@
             "de": "Die Apotheke ist für Rollstuhlfahrer nur schwer zugänglich",
             "nl": "Deze apotheek is moeilijk te bereiken met een rolstoel",
             "ca": "Aquesta farmàcia es difícil d'accedir amb una cadira de rodes",
-            "fr": "Cette pharmacie est difficilement accessible en chaise roulante"
+            "fr": "Cette pharmacie est difficilement accessible en chaise roulante",
+            "cs": "Tato lékárna je těžko přístupná na invalidním vozíku"
           }
         },
         {
@@ -117,7 +126,8 @@
             "de": "Die Apotheke ist für Rollstuhlfahrer nur eingeschränkt zugänglich",
             "nl": "Deze apotheek is bereikbaar met een rolstoel, maar het is niet makkelijk",
             "ca": "Aquesta farmàcia té un accés limitat per a usuaris amb cadira de rodes",
-            "fr": "L'accès à cette pharmacie est limité en chaise roulante"
+            "fr": "L'accès à cette pharmacie est limité en chaise roulante",
+            "cs": "Tato lékárna má omezený přístup pro vozíčkáře"
           }
         }
       ]
@@ -158,7 +168,8 @@
             "de": "Bietet einen Durchfahr-Service an",
             "nl": "Heeft een drive-through",
             "fr": "A une drive",
-            "ca": "Té autoservei"
+            "ca": "Té autoservei",
+            "cs": "Má průjezd"
           },
           "osmTags": "drive_through=yes"
         }
@@ -173,7 +184,8 @@
             "de": "Apotheke, die verschreibungspflichtige Arzneimittel ausgibt",
             "nl": "Deze apotheek verdeelt medicijnen met voorschrift",
             "fr": "Pharmacie pouvant délivrer des médicaments sous prescription",
-            "ca": "Farmàcia que subministra medicaments amb recepta"
+            "ca": "Farmàcia que subministra medicaments amb recepta",
+            "cs": "Lékárna schopná poskytovat léky na předpis"
           },
           "osmTags": "dispensing=yes"
         }
@@ -191,7 +203,8 @@
         "nl": "een apotheek",
         "de": "eine Apotheke",
         "fr": "une pharmacie",
-        "ca": "una farmàcia"
+        "ca": "una farmàcia",
+        "cs": "lékárna"
       }
     }
   ],

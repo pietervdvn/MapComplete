@@ -5,7 +5,8 @@
     "nl": "OpenStreetMap Notes",
     "de": "OpenStreetMap-Hinweise",
     "es": "Notas de OpenStreetMap",
-    "ca": "Notes d'OpenStreetMap"
+    "ca": "Notes d'OpenStreetMap",
+    "cs": "Poznámky OpenStreetMap"
   },
   "description": "This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)",
   "source": {
@@ -24,7 +25,8 @@
       "de": "Notiz",
       "es": "Nota",
       "pa_PK": "نوٹ",
-      "pl": "Notatka"
+      "pl": "Notatka",
+      "cs": "Poznámka"
     },
     "mappings": [
       {
@@ -35,7 +37,8 @@
           "de": "Geschlossene Notiz",
           "es": "Nota cerrada",
           "pl": "Zamknięta notatka",
-          "ca": "Nota tancada"
+          "ca": "Nota tancada",
+          "cs": "Uzavřená poznámka"
         }
       }
     ]
@@ -75,7 +78,8 @@
           "de": "<h3>Bilder aus der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus der Nähe und könnten für die Bearbeitung dieser Notiz hilfreich sein.",
           "es": "<h3>Imágenes cercanas</h3>Las imágenes de debajo son imágenes geoetiquetadas cercanas y pueden ser útiles para encargarse de esta nota.",
           "nl": "<h3>Afbeeldingen in de buurt</h3>Onderstaande afbeeldingen zijn afbeeldingen met geo-referentie en die in de buurt genomen zijn. Mogelijks zijn ze nuttig om deze kaartnota af te handelen.",
-          "ca": "<h3>Imatges properes</h3>Les imatges de sota són imatges geoetiquetades properes i poden ser útils per a encarregar-se d'aquesta nota."
+          "ca": "<h3>Imatges properes</h3>Les imatges de sota són imatges geoetiquetades properes i poden ser útils per a encarregar-se d'aquesta nota.",
+          "cs": "<h3>Obrázky v okolí</h3>Obrázky níže jsou obrázky s geografickými značkami v okolí a mohou vám pomoci s touto poznámkou."
         },
         "special": {
           "type": "nearby_images",
@@ -150,7 +154,8 @@
             "nl": "Moet in de eerste opmerking \"{search}\" bevatten",
             "de": "Sollte {search} im ersten Kommentar erwähnen",
             "es": "Debe mencionar {search} en el primer comentario",
-            "ca": "Has de mencionar {search} en el primer comentari"
+            "ca": "Has de mencionar {search} en el primer comentari",
+            "cs": "Měl by se zmínit {search} v prvním komentáři"
           }
         }
       ]
@@ -251,7 +256,8 @@
             "nl": "Geopend na {search}",
             "de": "Zuletzt bearbeitet nach dem {search}",
             "es": "Abierta después de {search}",
-            "ca": "Oberta després de {search}"
+            "ca": "Oberta després de {search}",
+            "cs": "Otevřeno po {search}"
           }
         }
       ]
@@ -308,7 +314,8 @@
             "nl": "Toon enkel de Notes geopend door een anonieme bijdrager",
             "de": "Nur Notizen anzeigen, die anonym erstellt wurden",
             "es": "Solo mostrar las notas abiertas por contributores anómimos",
-            "ca": "Sols mostrar les notes obertes per contribuïdors anònims"
+            "ca": "Sols mostrar les notes obertes per contribuïdors anònims",
+            "cs": "Zobrazovat pouze poznámky otevřené anonymním přispěvatelem"
           }
         }
       ]
@@ -323,7 +330,8 @@
             "nl": "Toon enkel open Notes",
             "de": "Nur offene Notizen anzeigen",
             "es": "Solo mostrar las notas abiertas",
-            "ca": "Sols mostra les notes obertes"
+            "ca": "Sols mostra les notes obertes",
+            "cs": "Zobrazit pouze otevřené poznámky"
           }
         }
       ]
@@ -337,7 +345,8 @@
             "nl": "Alle Notes",
             "de": "Alle Notizen",
             "es": "Todas las notas",
-            "ca": "Totes les notes"
+            "ca": "Totes les notes",
+            "cs": "Všechny poznámky"
           }
         },
         {

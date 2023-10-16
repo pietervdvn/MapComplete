@@ -25,7 +25,8 @@
       "da": "Kikkert",
       "fr": "Jumelles",
       "pa_PK": "بائینوکولر",
-      "eu": "Prismatikoak"
+      "eu": "Prismatikoak",
+      "cs": "Dalekohledy"
     }
   },
   "description": {
@@ -77,7 +78,8 @@
         "es": "Utilizar estos prismáticos cuesta {charge}",
         "da": "Brug af denne kikkert koster {charge}",
         "fr": "L’utilisation des ces jumelles coûte {charge}",
-        "ca": "L'ús d'aquests prismàtics costa {charge}"
+        "ca": "L'ús d'aquests prismàtics costa {charge}",
+        "cs": "Použití tohoto dalekohledu stojí {charge}"
       },
       "question": {
         "en": "How much does one have to pay to use these binoculars?",
@@ -99,7 +101,8 @@
         "es": "¿Cuándo uno mira a través de estos prismáticos, en qué dirección lo hace?",
         "da": "I hvilken retning kigger man, når man ser gennem denne kikkert?",
         "fr": "Dans quelle direction regarde-t-on en utilisant ces jumelles ?",
-        "ca": "En mirar a través d'aquest binocular, en quina direcció es mira?"
+        "ca": "En mirar a través d'aquest binocular, en quina direcció es mira?",
+        "cs": "Při pohledu přes tento dalekohled, kterým směrem se člověk dívá?"
       },
       "render": {
         "en": "Looks towards {direction}°",
@@ -108,7 +111,8 @@
         "es": "Mira hacia {direction}º",
         "da": "Kigger mod {direction}°",
         "fr": "Orienté à {direction}°",
-        "ca": "Mira cap a {direction}°"
+        "ca": "Mira cap a {direction}°",
+        "cs": "Dívá se směrem k {direction}°"
       },
       "freeform": {
         "key": "direction",

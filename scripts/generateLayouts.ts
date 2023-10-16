@@ -217,7 +217,7 @@ async function eliUrls(): Promise<string[]> {
     }
     const urls: string[] = []
     const regex = /{switch:([^}]+)}/
-    const rasterLayers = [...AvailableRasterLayers.vectorLayers, ...eli.features, ...eli_global.layers.map(properties => ({ properties }))]
+    const rasterLayers = [AvailableRasterLayers.maptilerDefaultLayer, ...eli.features, ...eli_global.layers.map(properties => ({ properties }))]
     for (const feature of rasterLayers) {
         const f = <RasterLayerPolygon>feature
         const url = f.properties.url
@@ -443,6 +443,7 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
             /.*\/src\/index\.ts.*/,
             `<script type="module" src="./index_${layout.id}.ts"></script>`,
         )
+        .replace("Version", Constants.vNumber)
 
     return output
 }

@@ -89,7 +89,8 @@
     "eo": "Butiko",
     "hu": "Egy bolt",
     "es": "Una tienda",
-    "ca": "Una botiga"
+    "ca": "Una botiga",
+    "cs": "Obchod"
   },
   "tagRenderings": [
     "images",
@@ -140,6 +141,42 @@
           ]
         },
         "condition": "craft="
+      }
+    },
+    {
+      "id": "second_hand",
+      "question": {
+        "en": "Does this shop sell second-hand items?",
+        "de": "Verlauft das Geschäft auch Second-Hand-Produkte?"
+      },
+      "mappings": [
+        {
+          "if": "second_hand=only",
+          "then": "This shop sells second-hand items <b>only</b>"
+        },
+        {
+          "if": "second_hand=yes",
+          "then": "This shop sells second-hand items along with new items"
+        },
+        {
+          "if": "second_hand=no",
+          "then": "This shop only sells brand-new items"
+        }
+      ],
+      "condition": {
+        "or": [
+          "shop=clothes",
+          "shop=car",
+          "shop=books",
+          "shop=charity",
+          "shop=car_repair",
+          "shop=furniture",
+          "shop=bicycle",
+          "shop=bicycle",
+          "shop=mobile_phone",
+          "shop=computer",
+          "shop=toys"
+        ]
       }
     },
     "opening_hours",
@@ -285,6 +322,33 @@
           "shop=beverages",
           "shop=florist"
         ]
+      }
+    },
+    {
+      "id": "diets",
+      "builtin": [
+        "sugar_free",
+        "gluten_free",
+        "lactose_free"
+      ],
+      "override": {
+        "condition": {
+          "or": [
+            "shop=supermarket",
+            "shop=convenience",
+            "shop=farm",
+            "shop=greengrocer",
+            "shop=health_food",
+            "shop=deli",
+            "shop=bakery",
+            "shop=beverages",
+            "shop=beverages",
+            "shop=pastry",
+            "shop=chocolate",
+            "shop=frozen_food",
+            "shop=ice_cream"
+          ]
+        }
       }
     },
     "questions",
@@ -456,6 +520,33 @@
     },
     "accepts_cash",
     "accepts_cards",
-    "has_organic"
+    "has_organic",
+    {
+      "id": "second_hand",
+      "options": [
+        {
+          "question": {
+            "en": "Only show shops selling second-hand items",
+            "de": "Nur Second-Hand-Geschäfte anzeigen"
+          },
+          "osmTags": {
+            "or": [
+              "shop=second_hand",
+              "shop=charity",
+              "second_hand=yes",
+              "second_hand=only"
+            ]
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "shop!=second_hand"
+        ]
+      }
+    },
+    "sugar_free",
+    "gluten_free",
+    "lactose_free"
   ]
 }

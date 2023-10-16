@@ -53,8 +53,6 @@ export class AvailableRasterLayers {
         geometry: BBox.global.asGeometry(),
     }
 
-    public static readonly vectorLayers = [AvailableRasterLayers.maptilerDefaultLayer]
-
     public static layersAvailableAt(
         location: Store<{ lon: number; lat: number }>
     ): Store<RasterLayerPolygon[]> {

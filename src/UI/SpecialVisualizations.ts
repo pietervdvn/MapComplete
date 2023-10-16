@@ -74,7 +74,7 @@ import NearbyImagesSearch from "../Logic/Web/NearbyImagesSearch"
 import AllReviews from "./Reviews/AllReviews.svelte"
 import StarsBarIcon from "./Reviews/StarsBarIcon.svelte"
 import ReviewForm from "./Reviews/ReviewForm.svelte"
-import Questionbox from "./Popup/TagRendering/Questionbox.svelte";
+import Questionbox from "./Popup/TagRendering/Questionbox.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -181,7 +181,6 @@ class StealViz implements SpecialVisualization {
     }
 }
 
-
 /**
  * Thin wrapper around QuestionBox.svelte to include it into the special Visualisations
  */
@@ -189,7 +188,7 @@ export class QuestionViz implements SpecialVisualization {
     funcName = "questions"
     needsUrls = []
     docs =
-      "The special element which shows the questions which are unkown. Added by default if not yet there"
+        "The special element which shows the questions which are unkown. Added by default if not yet there"
     args = [
         {
             name: "labels",
@@ -202,20 +201,20 @@ export class QuestionViz implements SpecialVisualization {
     ]
 
     constr(
-      state: SpecialVisualizationState,
-      tags: UIEventSource<Record<string, string>>,
-      args: string[],
-      feature: Feature,
-      layer: LayerConfig
+        state: SpecialVisualizationState,
+        tags: UIEventSource<Record<string, string>>,
+        args: string[],
+        feature: Feature,
+        layer: LayerConfig
     ): BaseUIElement {
         const labels = args[0]
-          ?.split(";")
-          ?.map((s) => s.trim())
-          ?.filter((s) => s !== "")
+            ?.split(";")
+            ?.map((s) => s.trim())
+            ?.filter((s) => s !== "")
         const blacklist = args[1]
-          ?.split(";")
-          ?.map((s) => s.trim())
-          ?.filter((s) => s !== "")
+            ?.split(";")
+            ?.map((s) => s.trim())
+            ?.filter((s) => s !== "")
         return new SvelteUIElement(Questionbox, {
             layer,
             tags,
@@ -564,7 +563,10 @@ export default class SpecialVisualizations {
                     feature: Feature
                 ): BaseUIElement {
                     const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
-                    return new SvelteUIElement(CreateNewNote, { state, coordinate: { lon, lat } })
+                    return new SvelteUIElement(CreateNewNote, {
+                        state,
+                        coordinate: new UIEventSource({ lon, lat }),
+                    })
                 },
             },
             new CloseNoteButton(),

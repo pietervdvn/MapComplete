@@ -2,18 +2,43 @@
     "advertising": {
         "description": "Přemýšleli jste někdy o tom, kolik je v našich ulicích a na silnicích reklam? Pomocí této mapy můžete najít a doplnit informace o všech reklamních prvcích, které můžete na ulici najít",
         "shortDescription": "Kde najdu reklamní objekty?",
-        "title": "Otevřít reklamní mapu"
+        "title": "Inzerce"
     },
     "aed": {
         "description": "Na této mapě lze najít a označit defibrilátory v okolí",
-        "title": "Open AED Mapa"
+        "title": "Defibrilátory"
     },
     "artwork": {
         "description": "Otevřená mapa soch, bust, graffiti a dalších uměleckých děl po celém světě",
-        "title": "Otevřená mapa uměleckých děl"
+        "title": "Umělecké dílo"
     },
     "atm": {
         "description": "Tato mapa zobrazuje bankomaty pro výběr nebo vklad peněz",
+        "layers": {
+            "3": {
+                "override": {
+                    "=tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importovat tento bankomat"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": "OpenStreetMap ví o <a href='#{_closest_osm_poi}'> bankomatu, který je {_closest_osm_poi_distance} metr daleko.</a> "
+                        },
+                        "2": {
+                            "render": {
+                                "special": {
+                                    "message": "Přidání všech navrhovaných značek do nejbližšího bankomatu"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "title": "Bankomaty"
     },
     "bag": {
@@ -91,7 +116,7 @@
     },
     "bookcases": {
         "description": "Veřejná knihovna je malá pouliční skříňka, krabice, stará telefonní budka nebo jiný předmět, ve kterém jsou uloženy knihy. Kdokoliv do ní může umístit, nebo si z ní vzít knihu. Cílem této mapy je shromáždit všechny tyto knihovny.",
-        "title": "Otevřená mapa pouličních knihoven"
+        "title": "Veřejné knihovničky"
     },
     "cafes_and_pubs": {
         "description": "Kavárny, hospody a bary",
@@ -383,9 +408,48 @@
                         }
                     }
                 }
+            },
+            "1": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Tento obchod opravuje lezeckou obuv"
+                                },
+                                "1": {
+                                    "then": "Tento obchod neopravuje lezeckou obuv"
+                                }
+                            },
+                            "question": "Opravuje tato opravna obuvy horolezecké boty?"
+                        }
+                    }
+                }
+            },
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Tento obchod opravuje lezeckou obuv"
+                                },
+                                "1": {
+                                    "then": "Tento obchod neopravuje lezeckou obuv"
+                                }
+                            },
+                            "question": "Opravuje tato opravna obuvy také lezeckou obuv?"
+                        }
+                    },
+                    "=presets": {
+                        "0": {
+                            "title": "opravna bot"
+                        }
+                    }
+                }
             }
         },
-        "title": "Otevřená lezecká mapa"
+        "title": "Lezecké tělocvičny, kluby a místa"
     },
     "clock": {
         "description": "Mapa zobrazující všechny veřejné hodiny",
@@ -491,10 +555,10 @@
                             "then": "Tato ulice je cykloulicí"
                         },
                         "4": {
-                            "then": "Tato ulice se brzy stane cyklo ulicí"
+                            "then": "Tato ulice se brzy stane cyklostezkou"
                         },
                         "5": {
-                            "then": "Tato ulice se brzy stane cyklo ulicí"
+                            "then": "Tato ulice se brzy stane cyklistickou silnicí"
                         },
                         "6": {
                             "then": "Tato ulice není cyklo ulicí"
@@ -533,7 +597,7 @@
     },
     "cyclofix": {
         "description": "Cílem této mapy je představit cyklistům snadno použitelné řešení pro vyhledání vhodné infrastruktury pro jejich potřeby.<br><br>Můžete sledovat svou přesnou polohu (pouze pro mobilní zařízení) a v levém dolním rohu vybrat vrstvy, které jsou pro vás relevantní. Pomocí tohoto nástroje můžete také přidávat nebo upravovat špendlíky (body zájmu) do mapy a poskytovat další údaje pomocí odpovědí na otázky.<br><br>Všechny vámi provedené změny se automaticky uloží do globální databáze OpenStreetMap a mohou být volně znovu použity ostatními.<br><br>Další informace o projektu cyklofix najdete na <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-        "title": "Cyklofix - otevřená mapa pro cyklisty"
+        "title": "Cyklofix - mapa pro cyklisty"
     },
     "drinking_water": {
         "description": "Na této mapě jsou zobrazena veřejně přístupná místa s pitnou vodou, která lze snadno přidat",
@@ -542,6 +606,10 @@
     "education": {
         "description": "Na této mapě najdete informace o všech typech škol a vzdělávání a můžete snadno přidat další informace",
         "title": "Vzdělání"
+    },
+    "elongated_coin": {
+        "description": "Najděte automaty na ražbu suvenýrových mincí.",
+        "title": "Stroje na ražbu mincí"
     },
     "etymology": {
         "description": "Na této mapě se můžete podívat, podle čeho je objekt pojmenován. Ulice, budovy, ... pocházejí z OpenStreetMap, které byly propojeny s Wikidaty. Ve vyskakovacím okně se zobrazí článek na Wikipedii (pokud existuje) nebo wikidatové pole toho, po čem je objekt pojmenován. Pokud má samotný objekt stránku na Wikipedii, zobrazí se i ta.<br/><br/><b> Přispět můžete i vy!</b>Dostatečně si objekt přiblížíte a zobrazí se <i>všechny</i>ulice. Na některou z nich můžete kliknout a objeví se okno pro vyhledávání na Wikidatech. Několika kliknutími můžete přidat etymologický odkaz. K provádění těchto úprav potřebujete bezplatný účet na OpenStreetMap.",
@@ -583,7 +651,7 @@
             }
         },
         "shortDescription": "Jaký je původ toponyma?",
-        "title": "Otevřít etymologickou mapu"
+        "title": "Etymologie - podle čeho se ulice jmenuje?"
     },
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fasádní zahrady</a>, zelené fasády a stromy ve městě přinášejí nejen klid a pohodu, ale také krásnější město, větší biodiverzitu, ochlazující efekt a lepší kvalitu ovzduší. <br/> Klimaan VZW a Mechelen Klimaatneutraal chtějí zmapovat stávající i nové fasádní zahrady jako příklad pro lidi, kteří si chtějí vybudovat vlastní zahradu, nebo pro městské chodce, kteří mají rádi přírodu.<br/>Více informací o projektu najdete na <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -698,6 +766,9 @@
                 "tagRenderings": {
                     "building type": {
                         "question": "Jaký druh budovy je toto?"
+                    },
+                    "grb-reference": {
+                        "render": "Byl importován z GRB, referenční číslo je {source:geometry:ref}"
                     }
                 }
             },
@@ -769,7 +840,118 @@
     },
     "kerbs_and_crossings": {
         "description": "Mapa zobrazující obrubníky a přechody.",
+        "layers": {
+            "1": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "description": "Přechod pro chodce a/nebo cyklisty",
+                            "title": "křížení"
+                        }
+                    }
+                }
+            }
+        },
         "title": "Obrubníky a přechody"
+    },
+    "mapcomplete-changes": {
+        "description": "Tato mapa zobrazuje všechny změny provedené pomocí MapComplete",
+        "layers": {
+            "0": {
+                "description": "Zobrazit všechny změny MapComplete",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Název motivu obsahuje {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Vytvořil přispěvatel {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Není</b> vytvořeno přispěvatelem {search}"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "Vytvořeno před {search}"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "Vytvořeno po {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Jazyk uživatele (iso-kód) {search}"
+                            }
+                        }
+                    },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Vytvořeno pomocí hostitele {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Sada změn přidala alespoň jeden obrázek"
+                            }
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "contributor": {
+                        "question": "Který přispěvatel tuto změnu provedl?",
+                        "render": "Změna provedená <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "host": {
+                        "question": "U jakého hostitele (webové stránky) byla tato změna provedena?",
+                        "render": "Změna provedená pomocí <a href='{host}'>{host}</a>"
+                    },
+                    "locale": {
+                        "question": "V jakém národním prostředí (jazyce) byla tato změna provedena?",
+                        "render": "Uživatelské prostředí je {locale}"
+                    },
+                    "theme-id": {
+                        "question": "Jaké téma bylo použito k provedení této změny?",
+                        "render": "Změna s motivem <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    },
+                    "version": {
+                        "question": "Jaká verze aplikace MapComplete byla použita k provedení této změny?",
+                        "render": "Vyrobeno pomocí {editor}"
+                    }
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "render": "Další statistiky najdete <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Zobrazení změn provedených pomocí nástroje MapComplete",
+        "title": "Změny provedené pomocí MapComplete"
     },
     "maproulette": {
         "description": "Téma zobrazující úkoly MapRoulette, které umožňuje vyhledávat, filtrovat a opravovat je.",
@@ -873,11 +1055,11 @@
                 }
             }
         },
-        "title": "OnWheels"
+        "title": "Na kolečkách"
     },
     "openwindpowermap": {
         "description": "Mapa pro zobrazení a úpravy větrných turbín.",
-        "title": "OpenWindPowerMap"
+        "title": "Větrné elektrárny"
     },
     "osm_community_index": {
         "description": "Seznam zdrojů pro uživatele OpenStreetMap. \"Zdroje\" mohou být odkazy na fóra, setkání, Slack skupiny, kanály IRC, poštovní konference atd. Cokoli, co by mohlo být pro mappery, zejména začátečníky, zajímavé nebo užitečné.",
@@ -952,7 +1134,7 @@
         "title": "Poštovní směrovací čísla"
     },
     "postboxes": {
-        "description": "Na této mapě můžete najít a přidat údaje o poštách a poštovních schránkách. Pomocí této mapy můžete zjistit, kam můžete poslat svou příští pohlednici! :)<br/>Všimli jste si chyby nebo vám chybí poštovní schránka? Tuto mapu můžete upravovat pomocí bezplatného účtu OpenStreetMap. ",
+        "description": "Na této mapě můžete najít a přidat údaje o poštách a poštovních schránkách. Pomocí této mapy můžete zjistit, kam můžete poslat svou příští pohlednici! :)<br/>Všimli jste si chyby nebo vám chybí poštovní schránka? Tuto mapu můžete upravovat pomocí bezplatného účtu OpenStreetMap.",
         "shortDescription": "Mapa s poštovními schránkami a poštami",
         "title": "Mapa poštovních schránek a pošt"
     },
@@ -963,7 +1145,7 @@
     "shops": {
         "description": "Na této mapě můžete označit základní informace o obchodech, přidat otevírací dobu a telefonní čísla",
         "shortDescription": "Upravitelná mapa se základními informacemi o obchodech",
-        "title": "Open Shop Map"
+        "title": "Obchody"
     },
     "sidewalks": {
         "description": "Experimentální téma",
@@ -1133,7 +1315,7 @@
     },
     "toilets": {
         "description": "Mapa veřejných toalet",
-        "title": "Open Toilet Map"
+        "title": "Veřejné toalety"
     },
     "transit": {
         "description": "Naplánujte si cestu pomocí systému veřejné dopravy.",
@@ -1143,6 +1325,10 @@
         "description": "Zmapujte všechny stromy!",
         "shortDescription": "Zmapujte všechny stromy",
         "title": "Stromy"
+    },
+    "vending_machine": {
+        "description": "Najít prodejní automaty na vše",
+        "title": "Prodejní automaty"
     },
     "walls_and_buildings": {
         "description": "Speciální zabudovaná vrstva poskytující všechny stěny a budovy. Tato vrstva je užitečná v předvolbách pro objekty, které lze umístit ke stěnám (např. AED, poštovní schránky, vchody, adresy, bezpečnostní kamery, …). Tato vrstva je ve výchozím nastavení neviditelná a uživatel ji nemůže přepínat.",

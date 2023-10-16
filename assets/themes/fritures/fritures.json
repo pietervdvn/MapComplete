@@ -9,7 +9,8 @@
     "da": "Pommes frites butik",
     "pa_PK": "فرائیاں دیاں دکاناں",
     "cs": "Obchody s hranolky",
-    "es": "Tiendas de patatas fritas"
+    "es": "Tiendas de patatas fritas",
+    "pl": "Sklepy z frytkami"
   },
   "description": {
     "en": "On this map, you'll find your favourite fries shop!",
@@ -19,7 +20,8 @@
     "da": "På dette kort finder du din foretrukne pomfrits-butik!",
     "cs": "Na této mapě najdete své oblíbené obchody s hranolky!",
     "ca": "A aquest mapa, trobaràs la teva botiga preferida de patates!",
-    "es": "¡En este mapa encontrarás tu tienda de patatas fritas favorita!"
+    "es": "¡En este mapa encontrarás tu tienda de patatas fritas favorita!",
+    "pl": "Na tej mapie znajdziesz swój ulubiony sklep z frytkami!"
   },
   "icon": "./assets/themes/fritures/logo.svg",
   "startLat": 0,
@@ -42,7 +44,8 @@
           "da": "Pommes frites butik",
           "pa_PK": "فرائیاں دی دکان",
           "cs": "Obchod s hranolky",
-          "es": "Tienda de patatas fritas"
+          "es": "Tienda de patatas fritas",
+          "pl": "Sklep z frytkami"
         },
         "=presets": [],
         "source": {

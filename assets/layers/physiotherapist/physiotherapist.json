@@ -4,13 +4,15 @@
     "en": "Physiotherapist",
     "nl": "Kinesist",
     "de": "Physiotherapeuten",
-    "ca": "Fisioterapeuta"
+    "ca": "Fisioterapeuta",
+    "cs": "Fyzioterapeut"
   },
   "description": {
     "en": "This layer shows physiotherapists",
     "nl": "Deze laag toont kinesisten",
     "de": "Diese Ebene zeigt Physiotherapeuten",
-    "ca": "Aquesta capa mostra fisioterapeutes"
+    "ca": "Aquesta capa mostra fisioterapeutes",
+    "cs": "Tato vrstva zobrazuje fyzioterapeuty"
   },
   "source": {
     "osmTags": "healthcare=physiotherapist"
@@ -20,7 +22,8 @@
       "en": "Physiotherapist {name}",
       "nl": "Kinesist {name}",
       "de": "Physiotherapeut {name}",
-      "ca": "Fisioterapeuta {name}"
+      "ca": "Fisioterapeuta {name}",
+      "cs": "Fyzioterapeut {name}"
     }
   },
   "minzoom": 13,
@@ -31,13 +34,15 @@
         "en": "What is the name of this physiotherapists office?",
         "nl": "Wat is de naam van deze kinesistenpraktijk?",
         "de": "Wie heißt die Praxis des Physiotherapeuten?",
-        "ca": "Quin és el nom d'aquesta consulta fisioterapèutica?"
+        "ca": "Quin és el nom d'aquesta consulta fisioterapèutica?",
+        "cs": "Jak se jmenuje ordinace fyzioterapeuta?"
       },
       "render": {
         "en": "This physiotherapists office is called {name}",
         "nl": "Deze kinesistenpraktijk heet {name}",
         "de": "Die Praxis des Physiotherapeuten heißt {name}",
-        "ca": "Aquesta consulta fisioterapèutica es diu {name}"
+        "ca": "Aquesta consulta fisioterapèutica es diu {name}",
+        "cs": "Tato ordinace fyzioterapeuta se jmenuje {name}"
       },
       "freeform": {
         "key": "name"
@@ -56,7 +61,8 @@
         "de": "Praxis eines Physiotherapeuten",
         "nl": "een fysiotherapeutenpraktijk",
         "fr": "un cabinet de kinésithérapeutes",
-        "ca": "una consulta fisioterapèutica"
+        "ca": "una consulta fisioterapèutica",
+        "cs": "ordinace fyzioterapeuta"
       },
       "tags": [
         "healthcare=physiotherapist"

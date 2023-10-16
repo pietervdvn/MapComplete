@@ -10,7 +10,8 @@
     "de": "Ebene, die alle MapRoulette-Aufgaben zeigt",
     "nl": "Laag met alle taken uit MapRoulette",
     "ca": "Capa que mostra totes les tasques de MapRoulette",
-    "pl": "Warstwa pokazująca wszystkie zadania w MapRoulette"
+    "pl": "Warstwa pokazująca wszystkie zadania w MapRoulette",
+    "cs": "Vrstva zobrazující všechny úlohy v MapRoulette"
   },
   "mapRendering": [
     {
@@ -70,7 +71,8 @@
             "de": "Aufgabe wurde erstellt",
             "nl": "Taak werd gecreëerd",
             "ca": "Es crea la tasca",
-            "pl": "Zadanie jest stworzone"
+            "pl": "Zadanie jest stworzone",
+            "cs": "Úkol je vytvořen"
           }
         },
         {
@@ -80,7 +82,8 @@
             "de": "Aufgabe wurde erledigt",
             "nl": "Taak werd opgelost",
             "pl": "Zadanie jest naprawione",
-            "ca": "La tasca està arreglada"
+            "ca": "La tasca està arreglada",
+            "cs": "Úkol je opraven"
           }
         },
         {
@@ -90,7 +93,8 @@
             "de": "Aufgabe ist ein falsches Positiv",
             "nl": "Taak was vals positief",
             "pl": "Zadanie jest fałszywie pozytywne",
-            "ca": "La tasca és un fals positiu"
+            "ca": "La tasca és un fals positiu",
+            "cs": "Úkol je falešně pozitivní"
           }
         },
         {
@@ -100,7 +104,8 @@
             "de": "Aufgabe wurde übersprungen",
             "nl": "Taak werd overgeslagen",
             "pl": "Zadanie jest pominięte",
-            "ca": "La tasca s'ha botat"
+            "ca": "La tasca s'ha botat",
+            "cs": "Úkol je přeskočen"
           }
         },
         {
@@ -110,7 +115,8 @@
             "de": "Aufgabe wurde gelöscht",
             "nl": "Taak werd verwijderd",
             "pl": "Zadania jest usunięte",
-            "ca": "La tasca s'ha eliminat"
+            "ca": "La tasca s'ha eliminat",
+            "cs": "Úkol je odstraněn"
           }
         },
         {
@@ -120,7 +126,8 @@
             "de": "Aufgabe wurde bereits erledigt",
             "nl": "Taak was al opgelost",
             "pl": "Zadania jest już wykonane",
-            "ca": "La tasca ja està arreglada"
+            "ca": "La tasca ja està arreglada",
+            "cs": "Úkol je již opraveno"
           }
         },
         {
@@ -130,7 +137,8 @@
             "de": "Aufgabe wurde als zu schwer markiert",
             "nl": "Taak werd als te moeilijk ervaren",
             "pl": "Zadanie jest oznaczone jako zbyt trudne",
-            "ca": "La tasca s'ha marcat com a molt difícil"
+            "ca": "La tasca s'ha marcat com a molt difícil",
+            "cs": "Úkol je označen jako příliš těžký"
           }
         },
         {
@@ -140,7 +148,8 @@
             "de": "Aufgabe wurde deaktiviert",
             "nl": "Taak is uitgeschakeld",
             "pl": "Zadanie jest wyłączone",
-            "ca": "La tasca està deshabilitada"
+            "ca": "La tasca està deshabilitada",
+            "cs": "Úloha je zakázána"
           }
         }
       ]

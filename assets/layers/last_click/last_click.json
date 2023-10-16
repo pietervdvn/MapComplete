@@ -26,7 +26,8 @@
           "de": "Objekt oder Hinweis auf der Karte hinzufügen",
           "ca": "Afegeix un nou punt o nota",
           "fr": "Ajouter un nouveau point ou ajouter une note",
-          "pl": "Dodaj nowy punkt lub dodaj notatkę"
+          "pl": "Dodaj nowy punkt lub dodaj notatkę",
+          "cs": "Přidání nového bodu nebo přidání poznámky"
         }
       },
       {
@@ -37,7 +38,8 @@
           "de": "Hinweis hinzufügen",
           "ca": "Afegeix una nova nota",
           "fr": "Ajouter une nouvelle note",
-          "pl": "Dodaj nową notatkę"
+          "pl": "Dodaj nową notatkę",
+          "cs": "Přidání nové poznámky"
         }
       },
       {
@@ -48,7 +50,8 @@
           "de": "Objekt hinzufügen",
           "ca": "Afegeix un nou punt",
           "fr": "Ajouter un nouveau point",
-          "pl": "Dodaj nowy punkt"
+          "pl": "Dodaj nowy punkt",
+          "cs": "Přidání nového bodu"
         }
       }
     ]
@@ -124,7 +127,8 @@
               "de": "Hinweis auf der Karte hinzufügen",
               "ca": "Crea una nova nota del mapa",
               "fr": "Créer une nouvelle note de carte",
-              "pl": "Utwórz nową notatkę na mapie"
+              "pl": "Utwórz nową notatkę na mapie",
+              "cs": "Vytvoření nové poznámky k mapě"
             }
           }
         ]

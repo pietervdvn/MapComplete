@@ -7,7 +7,8 @@
     "de": "Höchstgeschwindigkeiten",
     "nl": "Maximumsnelheid",
     "pa_PK": "حد رفتار",
-    "fr": "Vitesse maximale"
+    "fr": "Vitesse maximale",
+    "cs": "Maximální rychlost"
   },
   "source": {
     "osmTags": {
@@ -48,7 +49,8 @@
           "de": "Straße ohne Namen",
           "nl": "Weg zonder een naam",
           "fr": "Route sans nom",
-          "ca": "Carretera sense nom"
+          "ca": "Carretera sense nom",
+          "cs": "Silnice bez názvu"
         }
       }
     ]
@@ -68,7 +70,8 @@
         "de": "Die zulässige Höchstgeschwindigkeit auf dieser Straße beträgt {canonical(maxspeed)}",
         "nl": "De maximum toegestane snelheid op deze weg is {canonical(maxspeed)}",
         "ca": "La velocitat màxima permesa a aquesta via és {canonical(maxspeed)}",
-        "fr": "La vitesse maximum autorisée sur cette route est {canonical(maxspeed)}"
+        "fr": "La vitesse maximum autorisée sur cette route est {canonical(maxspeed)}",
+        "cs": "Maximální povolená rychlost na této cestě je {canonical(maxspeed)}"
       },
       "question": {
         "es": "Qué es la velocidad máxima legal uno está permitido conducir en esta carretera?",
@@ -76,7 +79,8 @@
         "en": "What is the legal maximum speed one is allowed to drive on this road?",
         "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?",
         "nl": "Wat is de legale maximumsnelheid voor deze weg?",
-        "fr": "Quelle est la vitesse maximum autorisée sur cette route ?"
+        "fr": "Quelle est la vitesse maximum autorisée sur cette route ?",
+        "cs": "Jaká je zákonná maximální povolená rychlost na této silnici?"
       },
       "freeform": {
         "key": "maxspeed",
@@ -90,7 +94,8 @@
             "nl": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h",
             "de": "Dies ist eine Wohnstraße, auf der eine Höchstgeschwindigkeit von 20 km/h gilt",
             "fr": "C'est une zone de rencontre, avec une vitesse maximale de 20 km/h",
-            "ca": "Aquest és un carrer residencial, que té una velocitat màxima de 20 km/h"
+            "ca": "Aquest és un carrer residencial, que té una velocitat màxima de 20 km/h",
+            "cs": "Toto je obytná zóna, která má maximální rychlost 20 km/h"
           },
           "icon": {
             "path": "./assets/layers/maxspeed/living_street_be.svg",
@@ -159,7 +164,8 @@
             "nl": "kilometers/uur",
             "de": "Kilometer/Stunde",
             "pa_PK": "ہر گھنٹہ وچ کیلومیٹر",
-            "fr": "kilomètres/heure"
+            "fr": "kilomètres/heure",
+            "cs": "km/hod"
           },
           "humanShort": {
             "en": "km/h",
@@ -190,7 +196,8 @@
             "nl": "miles/uur",
             "de": "Meilen/Stunde",
             "pa_PK": "ہر گھنٹہ وچ میل",
-            "fr": "miles/heure"
+            "fr": "miles/heure",
+            "cs": "míle/hod"
           },
           "humanShort": {
             "en": "mph",

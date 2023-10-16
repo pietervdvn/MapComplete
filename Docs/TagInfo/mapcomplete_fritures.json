@@ -335,6 +335,66 @@
       "value": "only"
     },
     {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Fries shop' shows diet:sugar_free=only with a fixed text, namely 'This shop <b>only sells sugar free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "value": "only"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Fries shop' shows diet:sugar_free=yes with a fixed text, namely 'This shop has a big sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Fries shop' shows diet:sugar_free=limited with a fixed text, namely 'This shop has a <b>limited sugar free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Fries shop' shows diet:sugar_free=no with a fixed text, namely 'This shop has no sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "value": "no"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Fries shop' shows diet:gluten_free=only with a fixed text, namely 'This shop <b>only sells gluten free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "value": "only"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Fries shop' shows diet:gluten_free=yes with a fixed text, namely 'This shop has a big gluten free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Fries shop' shows diet:gluten_free=limited with a fixed text, namely 'This shop has a <b>limited gluten free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Fries shop' shows diet:gluten_free=no with a fixed text, namely 'This shop has no gluten free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "value": "no"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Fries shop' shows diet:lactose_free=only with a fixed text, namely '<b>Only sells lactose free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "value": "only"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Fries shop' shows diet:lactose_free=yes with a fixed text, namely 'Big lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Fries shop' shows diet:lactose_free=limited with a fixed text, namely '<b>Limited lactose free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Fries shop' shows diet:lactose_free=no with a fixed text, namely 'No lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "value": "no"
+    },
+    {
       "key": "organic",
       "description": "Layer 'Fries shop' shows organic=no with a fixed text, namely 'There are no organic options available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops') (This is only shown if cuisine!=friture)",
       "value": "no"

@@ -14,7 +14,8 @@
     "es": "Bocas de incendios, Extintores, Parques de bomberos y Parques de ambulancias",
     "ca": "Hidrants, Extintors, Parcs de Bombers i estacions d'Ambulàncies",
     "da": "Brandhaner, brandslukkere, brandstationer og ambulancestationer",
-    "cs": "Hydranty, hasicí přístroje, požární stanice a stanice záchranné služby"
+    "cs": "Hydranty, hasicí přístroje, požární stanice a stanice záchranné služby",
+    "pl": "Hydranty, gaśnice, remizy strażackie i pogotowia ratunkowe"
   },
   "shortDescription": {
     "en": "Map to show hydrants, extinguishers, fire stations, and ambulance stations.",
@@ -29,7 +30,8 @@
     "ca": "Mapa per a mostrar hidrants, extintors, parcs de bombers i estacions d'ambulàncies.",
     "nl": "Kaart om hydranten, brandblussers, brandweerkazernes en ambulanceposten weer te geven.",
     "da": "Kort for at vise brandhaner, brandslukkere, brandstationer og ambulancestationer.",
-    "cs": "Mapa zobrazující hydranty, hasicí přístroje, požární stanice a stanice záchranné služby."
+    "cs": "Mapa zobrazující hydranty, hasicí přístroje, požární stanice a stanice záchranné služby.",
+    "pl": "Mapa przedstawiająca hydranty, gaśnice, remizy strażackie i karetki pogotowia."
   },
   "description": {
     "en": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.",
@@ -44,7 +46,8 @@
     "nl": "Op deze kaart kan je hydranten, brandblussers, brandweerkazernes en stalplaatsen voor ambulances vinden en updaten.",
     "da": "På dette kort kan du finde og opdatere brandhaner, brandstationer, ambulancestationer og brandslukkere i dine yndlingskvarterer.\n\nDu kan spore din præcise placering (kun mobil) og vælge lag, der er relevante for dig, i nederste venstre hjørne. Du kan også bruge dette værktøj til at tilføje eller redigere POI (points of interest) til kortet og give yderligere detaljer ved at besvare tilgængelige spørgsmål.\n\nAlle ændringer, du foretager, bliver automatisk gemt i den globale database af OpenStreetMap og kan frit genbruges af andre.",
     "ca": "A aquest mapa pots trobar i actualizar boques d'incendis, parcs de bombers, estacions d'ambulàncies i extintors als seus veïnats preferits.",
-    "cs": "Na této mapě můžete najít a aktualizovat informace o hydrantech, stanicích záchranné služby, hasičských stanicích a hasicích přístrojích ve vašich oblíbených čtvrtích."
+    "cs": "Na této mapě můžete najít a aktualizovat informace o hydrantech, stanicích záchranné služby, hasičských stanicích a hasicích přístrojích ve vašich oblíbených čtvrtích.",
+    "pl": "Na tej mapie możesz znaleźć i zaktualizować hydranty, remizy strażackie, karetki pogotowia i gaśnice w swoich ulubionych dzielnicach."
   },
   "icon": "./assets/themes/hailhydrant/logo.svg",
   "startLat": 13.67801,

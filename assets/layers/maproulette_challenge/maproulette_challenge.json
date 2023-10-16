@@ -5,7 +5,8 @@
     "en": "Layer showing tasks of a single MapRoulette challenge. This layer is intended to be reused and extended in themes; refer to [the documentation](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md) on how to do this.",
     "de": "Ebene mit Aufgaben einer einzelnen MapRoulette-Herausforderung. Diese Ebene soll in Themen wiederverwendet und erweitert werden; Informationen dazu finden Sie in der [Dokumentation](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md).",
     "nl": "Laag met taken van een MapRoulette uitdaging",
-    "ca": "Capa que mostra les tasques d'un sol repte de MapRoulette. Aquesta capa està pensada per ser reutilitzada i ampliada en temes; consulteu [la documentació](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md) sobre com fer-ho."
+    "ca": "Capa que mostra les tasques d'un sol repte de MapRoulette. Aquesta capa està pensada per ser reutilitzada i ampliada en temes; consulteu [la documentació](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md) sobre com fer-ho.",
+    "cs": "Vrstva zobrazující úkoly jedné výzvy MapRoulette. Tato vrstva je určena k opětovnému použití a rozšíření v tématech; naleznete v [dokumentaci](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md), jak to provést."
   },
   "source": {
     "osmTags": "mr_taskId~*",
@@ -17,7 +18,8 @@
       "en": "Item in MapRoulette",
       "de": "Aufgabe in MapRoulette",
       "nl": "Item uit MapRoulette",
-      "ca": "Element a MapRoulette"
+      "ca": "Element a MapRoulette",
+      "cs": "Položka v MapRoulette"
     }
   },
   "titleIcons": [
@@ -87,7 +89,8 @@
             "en": "Task is created",
             "de": "Aufgabe wurde erstellt",
             "nl": "Taak is aangemaakt",
-            "ca": "La tasca s'ha creat"
+            "ca": "La tasca s'ha creat",
+            "cs": "Úkol je vytvořen"
           }
         },
         {
@@ -96,7 +99,8 @@
             "en": "Task is fixed",
             "de": "Aufgabe wurde erledigt",
             "nl": "Taak is opgelost",
-            "ca": "La tasca està arreglada"
+            "ca": "La tasca està arreglada",
+            "cs": "Úkol je opraven"
           }
         },
         {
@@ -105,7 +109,8 @@
             "en": "Task is a false positive",
             "de": "Aufgabe ist ein falsches Positiv",
             "nl": "Taak is vals positief",
-            "ca": "La tasca és un fals positiu"
+            "ca": "La tasca és un fals positiu",
+            "cs": "Úkol je falešně pozitivní"
           }
         },
         {
@@ -114,7 +119,8 @@
             "en": "Task is skipped",
             "de": "Aufgabe wurde übersprungen",
             "nl": "Taak is overgeslagen",
-            "ca": "S'ha saltat la tasca"
+            "ca": "S'ha saltat la tasca",
+            "cs": "Úkol je přeskočen"
           }
         },
         {
@@ -123,7 +129,8 @@
             "en": "Task is deleted",
             "de": "Aufgabe wurde gelöscht",
             "nl": "Taak is verwijderd",
-            "ca": "S'ha suprimit la tasca"
+            "ca": "S'ha suprimit la tasca",
+            "cs": "Úkol je odstraněn"
           }
         },
         {
@@ -132,7 +139,8 @@
             "en": "Task is already fixed",
             "de": "Aufgabe wurde bereits erledigt",
             "nl": "Taak is al opgelost",
-            "ca": "La tasca ja està arreglada"
+            "ca": "La tasca ja està arreglada",
+            "cs": "Úkol je již opraveno"
           }
         },
         {
@@ -141,7 +149,8 @@
             "en": "Task is marked as too hard",
             "de": "Aufgabe wurde als zu schwer markiert",
             "nl": "Taak is gemarkeerd als te lastig",
-            "ca": "La tasca està marcada com a massa difícil"
+            "ca": "La tasca està marcada com a massa difícil",
+            "cs": "Úkol je označen jako příliš těžký"
           }
         },
         {
@@ -150,7 +159,8 @@
             "en": "Task is disabled",
             "de": "Aufgabe wurde deaktiviert",
             "nl": "Taak is uitgeschakeld",
-            "ca": "La tasca està desactivada"
+            "ca": "La tasca està desactivada",
+            "cs": "Úloha je zakázána"
           }
         }
       ]
@@ -166,7 +176,8 @@
             "de": "Aufgaben mit allen Status anzeigen",
             "nl": "Toon alle taken, ongeacht de status",
             "pl": "Pokaż zadania z wszystkimi statusami",
-            "ca": "Mostra les tasques amb tots els estats"
+            "ca": "Mostra les tasques amb tots els estats",
+            "cs": "Zobrazit úkoly se všemi stavy"
           }
         },
         {
@@ -175,7 +186,8 @@
             "de": "Aufgaben anzeigen, die erstellt wurden",
             "nl": "Toon taken die zijn gecreëerd",
             "pl": "Pokaż zadania, które zostały stworzone",
-            "ca": "Mostra les tasques que es creen"
+            "ca": "Mostra les tasques que es creen",
+            "cs": "Zobrazit úkoly, které jsou vytvořeny"
           },
           "osmTags": "mr_taskStatus=Created"
         },
@@ -185,7 +197,8 @@
             "de": "Aufgaben anzeigen, die erledigt wurden",
             "nl": "Toon taken die zijn opgelost",
             "pl": "Pokaż zadania, które są już wykonane",
-            "ca": "Mostra les tasques que estan arreglades"
+            "ca": "Mostra les tasques que estan arreglades",
+            "cs": "Zobrazit úkoly, které jsou opravené"
           },
           "osmTags": "mr_taskStatus=Fixed"
         },
@@ -194,7 +207,8 @@
             "en": "Show tasks that are false positives",
             "de": "Aufgaben anzeigen, die falsch positiv sind",
             "nl": "Toon taken die vals positief waren",
-            "ca": "Mostra les tasques que son falsos positius"
+            "ca": "Mostra les tasques que son falsos positius",
+            "cs": "Zobrazit úkoly, které jsou falešné pozitivní"
           },
           "osmTags": "mr_taskStatus=False positive"
         },
@@ -203,7 +217,8 @@
             "en": "Show tasks that are skipped",
             "de": "Aufgaben anzeigen, die übersprungen wurden",
             "nl": "Toon taken die zijn overgeslagen",
-            "ca": "Mostra les tasques que s'han omès"
+            "ca": "Mostra les tasques que s'han omès",
+            "cs": "Zobrazit úkoly, které byly přeskočeny"
           },
           "osmTags": "mr_taskStatus=Skipped"
         },
@@ -212,7 +227,8 @@
             "en": "Show tasks that are deleted",
             "de": "Aufgaben anzeigen, die gelöscht wurden",
             "nl": "Toon taken die zijn verwijderd",
-            "ca": "Mostra tasques eliminades"
+            "ca": "Mostra tasques eliminades",
+            "cs": "Zobrazit úkoly, které byly odstraněny"
           },
           "osmTags": "mr_taskStatus=Deleted"
         },
@@ -221,7 +237,8 @@
             "en": "Show tasks that are already fixed",
             "de": "Aufgaben anzeigen, die bereits erledigt wurden",
             "nl": "Toon taken die reeds opgelost waren",
-            "ca": "Mostra les tasques que ja estan arreglades"
+            "ca": "Mostra les tasques que ja estan arreglades",
+            "cs": "Zobrazit úkoly, které jsou již opraveny"
           },
           "osmTags": "mr_taskStatus=Already fixed"
         },
@@ -230,7 +247,8 @@
             "en": "Show tasks that are marked as too hard",
             "de": "Aufgaben anzeigen, die als zu schwierig markiert wurden",
             "nl": "Toon taken die als te moeilijk waren ervaren",
-            "ca": "Mostra les tasques marcades com a massa difícils"
+            "ca": "Mostra les tasques marcades com a massa difícils",
+            "cs": "Zobrazit úkoly, které jsou označeny jako příliš těžké"
           },
           "osmTags": "mr_taskStatus=Too hard"
         },
@@ -239,7 +257,8 @@
             "en": "Show tasks that are disabled",
             "de": "Aufgaben anzeigen, die deaktiviert wurden",
             "nl": "Toon taken die zijn uitgeschakeld",
-            "ca": "Mostra tasques que s'han desactivat"
+            "ca": "Mostra tasques que s'han desactivat",
+            "cs": "Zobrazit úkoly, které jsou zakázány"
           },
           "osmTags": "mr_taskStatus=Disabled"
         }

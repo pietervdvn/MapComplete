@@ -5,23 +5,11 @@ import { Utils } from "../../Utils"
 import { Feature } from "geojson"
 
 export default class PendingChangesUploader {
-    private lastChange: Date
 
     constructor(changes: Changes, selectedFeature: UIEventSource<Feature>) {
-        const self = this
-        this.lastChange = new Date()
-        changes.pendingChanges.addCallback(() => {
-            self.lastChange = new Date()
+        changes.pendingChanges.stabilized(Constants.updateTimeoutSec * 1000).addCallback(() => changes.flushChanges("Flushing changes due to timeout"))
 
-            window.setTimeout(() => {
-                const diff = (new Date().getTime() - self.lastChange.getTime()) / 1000
-                if (Constants.updateTimeoutSec >= diff - 1) {
-                    changes.flushChanges("Flushing changes due to timeout")
-                }
-            }, Constants.updateTimeoutSec * 1000)
-        })
-
-        selectedFeature.stabilized(10000).addCallback((feature) => {
+        selectedFeature.stabilized(1000).addCallback((feature) => {
             if (feature === undefined) {
                 // The popup got closed - we flush
                 changes.flushChanges("Flushing changes due to popup closed")

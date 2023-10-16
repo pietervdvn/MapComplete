@@ -23,7 +23,8 @@
     "da": "På dette kort er forskellige sundhedsrelaterede emner vist",
     "nl": "Op deze kaart vind je dokters, apothekers, kinesisten, ziekenhuizen en andere gezondheidsgerelateerde diensten",
     "cs": "Na této mapě jsou zobrazeny různé položky související se zdravotní péčí",
-    "es": "En este mapa se muestran varios elementos relacionados con la salud"
+    "es": "En este mapa se muestran varios elementos relacionados con la salud",
+    "pl": "Na tej mapie pokazane są różne elementy związane z opieką zdrowotną"
   },
   "icon": "./assets/layers/doctors/doctors.svg",
   "startLat": 50.8465573,
@@ -55,7 +56,8 @@
               "cs": "obchod se zdravotnickými potřebami",
               "ca": "una botiga de subministraments mèdics",
               "nl": "een winkel voor medische hulpmiddelen",
-              "fr": "un commerce d'équipements médicaux"
+              "fr": "un commerce d'équipements médicaux",
+              "pl": "sklep z artykułami medycznymi"
             },
             "tags": [
               "shop=medical_supply"
@@ -69,7 +71,8 @@
               "cs": "obchod se sluchadly",
               "ca": "una botiga d'audiòfons",
               "nl": "een hoorapparatenwinkel",
-              "fr": "un magasin d'appareils auditifs"
+              "fr": "un magasin d'appareils auditifs",
+              "pl": "sklep z aparatami słuchowymi"
             },
             "tags": [
               "shop=hearing_aids"

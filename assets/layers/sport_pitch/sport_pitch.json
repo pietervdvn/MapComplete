@@ -724,6 +724,13 @@
             "de": "Tennisplätze",
             "ca": "Camps de tennis"
           }
+        },
+        {
+          "osmTags": "sport=badminton",
+          "question": {
+            "nl": "Badmintonveld",
+            "en": "Badminton fields"
+          }
         }
       ]
     },

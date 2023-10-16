@@ -124,7 +124,7 @@
             "pleaseLogin": "Bitte anmelden, um ein neues Objekt hinzuzufügen",
             "presetInfo": "Der neue POI hat {tags}",
             "stillLoading": "Die Daten werden noch geladen. Bitte warten Sie, bevor Sie ein neues Objekt hinzufügen.",
-            "title": "Neues Objekt hinzufügen?",
+            "title": "Neues Objekt hinzufügen",
             "warnVisibleForEveryone": "Ihre Ergänzung wird für alle sichtbar sein",
             "wrongType": "Dieses Objekt ist weder ein Punkt noch ein Weg und kann nicht importiert werden",
             "zoomInFurther": "Ausschnitt vergrößern, um ein Objekt hinzuzufügen.",
@@ -465,7 +465,7 @@
         "cannotBeMoved": "Dieses Element kann nicht verschoben werden.",
         "confirmMove": "Hierhin verschieben",
         "inviteToMove": {
-            "generic": "Diesen Punkt verschieben",
+            "generic": "Objekt verschieben",
             "reasonInaccurate": "Lagegenauigkeit dieses Objekts verbessern",
             "reasonRelocation": "Dieses Element an einen anderen Ort verschieben, weil es sich verlagert hat"
         },
@@ -641,7 +641,7 @@
         "phone": {
             "description": "eine Telefonnummer",
             "feedback": "Dies ist keine gültige Telefonnummer",
-            "feedbackCountry": "Dies ist keine gültige Telefonnummer (in {country})"
+            "feedbackCountry": "Telefonnummer ungültig (in {country})"
         },
         "pnat": {
             "description": "eine positive, ganze Zahl",
@@ -656,7 +656,7 @@
         "tooLong": "Der Text ist zu lang, es sind maximal 255 Zeichen erlaubt. Sie haben bereits {count} Zeichen.",
         "url": {
             "description": "Link zu einer Website",
-            "feedback": "Dies ist keine gültige Webadresse"
+            "feedback": "Webadresse ungültig"
         },
         "wikidata": {
             "description": "Eine Wikidata-Kennung"

@@ -8,7 +8,8 @@
     "render": {
       "en": "Memorial plaque",
       "de": "Gedenktafel",
-      "ca": "Placa commemorativa"
+      "ca": "Placa commemorativa",
+      "cs": "Pamětní deska"
     }
   },
   "tagRenderings": [
@@ -17,12 +18,14 @@
       "question": {
         "en": "What is the inscription of this plaque?",
         "de": "Wie lautet die Inschrift auf dieser Gedenktafel?",
-        "ca": "Quina és la inscripció d'aquesta placa?"
+        "ca": "Quina és la inscripció d'aquesta placa?",
+        "cs": "Jaký je nápis na této desce?"
       },
       "render": {
         "en": "The inscription on this plaque reads: <p><i>{inscription}<i></p>",
         "de": "Die Inschrift auf dieser Gedenktafel lautet: <p><i>{inscription}<i></p>",
-        "ca": "La inscripció d'aquesta placa diu: <p><i>{inscription}<i></p>"
+        "ca": "La inscripció d'aquesta placa diu: <p><i>{inscription}<i></p>",
+        "cs": "Nápis na této desce zní: <p><i>{inscription}<i></p>"
       },
       "freeform": {
         "key": "inscription",

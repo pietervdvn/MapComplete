@@ -16,7 +16,6 @@
     import Geosearch from "./BigComponents/Geosearch.svelte"
     import Translations from "./i18n/Translations"
     import { CogIcon, EyeIcon, MenuIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
-
     import Tr from "./Base/Tr.svelte"
     import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
     import FloatOver from "./Base/FloatOver.svelte"
@@ -52,6 +51,8 @@
     import LanguagePicker from "./LanguagePicker"
     import Locale from "./i18n/Locale"
     import ShareScreen from "./BigComponents/ShareScreen.svelte"
+    import UploadingImageCounter from "./Image/UploadingImageCounter.svelte"
+    import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte"
 
     export let state: ThemeViewState
     let layout = state.layout
@@ -154,6 +155,8 @@
     <ToSvelte
       construct={() => new ExtraLinkButton(state, layout.extraLink).SetClass("pointer-events-auto")}
     />
+    <UploadingImageCounter {state} featureId="*" showThankYou={false}/>
+    <PendingChangesIndicator {state}/>
     <If condition={state.featureSwitchIsTesting}>
       <div class="alert w-fit">Testmode</div>
     </If>

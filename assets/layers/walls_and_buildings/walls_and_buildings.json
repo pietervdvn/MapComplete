@@ -9,7 +9,8 @@
       "es": "Pared o edificio",
       "fr": "Mur ou bâtiment",
       "da": "Mur eller bygning",
-      "ca": "Paret o edifici"
+      "ca": "Paret o edifici",
+      "cs": "Zeď nebo budova"
     }
   },
   "description": {
@@ -74,7 +75,8 @@
             "de": "Meter",
             "da": "meter",
             "nl": "meter",
-            "ca": "metre"
+            "ca": "metre",
+            "cs": "metr"
           }
         },
         {
@@ -89,7 +91,8 @@
             "de": "Zentimeter",
             "da": "centimeter",
             "nl": "centimeter",
-            "ca": "centimetre"
+            "ca": "centimetre",
+            "cs": "centimetr"
           }
         }
       ]

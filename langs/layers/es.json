@@ -64,7 +64,7 @@
             },
             "10": {
                 "description": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y carteles en entradas institucionales",
-                "title": "un lletrer"
+                "title": "un señal"
             },
             "11": {
                 "title": "una escultura"
@@ -80,7 +80,7 @@
                         "then": "Este mupi tiene publicidad en un único lado"
                     },
                     "1": {
-                        "then": "Este mupi tiene publicidad por los dos lados"
+                        "then": "Este objeto tiene publicidad por los dos lados"
                     }
                 },
                 "question": "¿Por cuantos lados puedes ver publicidad?"
@@ -4677,6 +4677,7 @@
                 "render": "El tronco del árbol tiene una circunferencia de {circumference} metros"
             },
             "height": {
+                "question": "¿Cuál es la altura de este árbol?",
                 "render": "Este árbol tiene {height} metros de altura"
             },
             "tree-decidouous": {

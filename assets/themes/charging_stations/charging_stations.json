@@ -34,7 +34,8 @@
     "da": "Et verdensomspændende kort over ladestationer",
     "ca": "Un mapa mundial d'estacions de càrrega",
     "cs": "Celosvětová mapa nabíjecích stanic",
-    "eu": "Karga-estazioen munduko mapa"
+    "eu": "Karga-estazioen munduko mapa",
+    "pl": "Światowa mapa stacji ładowania"
   },
   "description": {
     "en": "On this open map, one can find and mark information about charging stations",
@@ -50,7 +51,8 @@
     "nb_NO": "Finn og merk info om ladestasjoner",
     "da": "På dette åbne kort kan man finde og markere oplysninger om ladestandere",
     "ca": "A aquest mapa, un pot trobar i marcar informació sobre punts de càrrega",
-    "cs": "Na této otevřené mapě lze vyhledávat a označovat informace o nabíjecích stanicích"
+    "cs": "Na této otevřené mapě lze vyhledávat a označovat informace o nabíjecích stanicích",
+    "pl": "Na tej otwartej mapie można znaleźć i zaznaczyć informacje o stacjach ładowania"
   },
   "icon": "./assets/themes/charging_stations/logo.svg",
   "startLat": 0,

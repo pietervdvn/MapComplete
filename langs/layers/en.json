@@ -4724,6 +4724,27 @@
                         "question": "Offers electricity"
                     }
                 }
+            },
+            "13": {
+                "options": {
+                    "0": {
+                        "question": "Has a sugar-free offering"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Has a gluten free offering"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Has a lactose free offering"
+                    }
+                }
             }
         }
     },
@@ -5359,6 +5380,19 @@
         },
         "title": {
             "render": "Your travelled path"
+        }
+    },
+    "guidepost": {
+        "description": "Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations",
+        "name": "Guideposts",
+        "presets": {
+            "0": {
+                "description": "A guidepost (also known as fingerpost) is often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations",
+                "title": "a guidepost"
+            }
+        },
+        "title": {
+            "render": "Guidepost"
         }
     },
     "hackerspace": {
@@ -7499,6 +7533,23 @@
             "email": {
                 "question": "What is the email address of {title()}?"
             },
+            "gluten_free": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop <b>only sells gluten free</b> products"
+                    },
+                    "1": {
+                        "then": "This shop has a big gluten free offering"
+                    },
+                    "2": {
+                        "then": "This shop has a <b>limited gluten free</b> offering"
+                    },
+                    "3": {
+                        "then": "This shop has no gluten free offering"
+                    }
+                },
+                "question": "Does this shop have a gluten free offering?"
+            },
             "induction-loop": {
                 "mappings": {
                     "0": {
@@ -7557,6 +7608,23 @@
                         "then": "You just created this element! Thanks for sharing this info with the world and helping people worldwide."
                     }
                 }
+            },
+            "lactose_free": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Only sells lactose free</b> products"
+                    },
+                    "1": {
+                        "then": "Big lactose free offering"
+                    },
+                    "2": {
+                        "then": "<b>Limited lactose free</b> offering"
+                    },
+                    "3": {
+                        "then": "No lactose free offering"
+                    }
+                },
+                "question": "Does {title()} have a lactose-free offering?"
             },
             "last_edit": {
                 "render": {
@@ -7717,6 +7785,24 @@
                     }
                 },
                 "question": "Is smoking allowed at {title()}?"
+            },
+            "sugar_free": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop <b>only sells sugar free</b> products"
+                    },
+                    "1": {
+                        "then": "This shop has a big sugar free offering"
+                    },
+                    "2": {
+                        "then": "This shop has a <b>limited sugar free</b> offering"
+                    },
+                    "3": {
+                        "then": "This shop has no sugar free offering"
+                    }
+                },
+                "question": "Does this shop have a sugar free offering?",
+                "questionHint": "This is important for people following a sugar-free diet, such as people with Diabetes"
             },
             "survey_date": {
                 "mappings": {
@@ -8262,6 +8348,13 @@
                         "question": "Only show shops with name {search}"
                     }
                 }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Only show shops selling second-hand items"
+                    }
+                }
             }
         },
         "name": "Shop",
@@ -8311,6 +8404,9 @@
                     }
                 },
                 "question": "Does this shop offer organic products?"
+            },
+            "second_hand": {
+                "question": "Does this shop sell second-hand items?"
             },
             "shops-name": {
                 "question": "What is the name of this shop?",
@@ -8539,6 +8635,9 @@
                     },
                     "4": {
                         "question": "Tennis fields"
+                    },
+                    "5": {
+                        "question": "Badminton fields"
                     }
                 }
             }

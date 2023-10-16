@@ -8,7 +8,8 @@
     "it": "Campi da gioco",
     "fr": "Aire de jeu",
     "ca": "Parcs infantils",
-    "pa_PK": "کھید دے میدان"
+    "pa_PK": "کھید دے میدان",
+    "cs": "Dětská hřiště"
   },
   "minzoom": 13,
   "source": {
@@ -30,7 +31,8 @@
     "de": "Spielplätze",
     "fr": "Aire de jeu",
     "ca": "Parcs infantils",
-    "pa_PK": "کھید دے میدان"
+    "pa_PK": "کھید دے میدان",
+    "cs": "Dětská hřiště"
   },
   "title": {
     "render": {
@@ -41,7 +43,8 @@
       "de": "Spielplatz",
       "fr": "Aire de jeu",
       "ca": "Parc infantil",
-      "pa_PK": "کھید دے میدان"
+      "pa_PK": "کھید دے میدان",
+      "cs": "Dětské hřiště"
     },
     "mappings": [
       {
@@ -53,7 +56,8 @@
           "ru": "Детская площадка <i>{name}</i>",
           "de": "Spielplatz <i>{name}</i>",
           "fr": "Aire de jeu <i>{name}</i>",
-          "ca": "Parc infantil <i>{name}</i>"
+          "ca": "Parc infantil <i>{name}</i>",
+          "cs": "Hřiště <i>{name}</i>"
         }
       }
     ]
@@ -67,7 +71,8 @@
         "it": "Qual è la superficie di questo parco giochi?",
         "de": "Welchen Bodenbelag hat dieser Spielplatz?",
         "fr": "De quelle matière est la surface de l’aire de jeu ?",
-        "ca": "Quina és la superfície d'aquest parc infantil?"
+        "ca": "Quina és la superfície d'aquest parc infantil?",
+        "cs": "Jaký je povrch tohoto hřiště?"
       },
       "render": {
         "nl": "De ondergrond is <b>{surface}</b>",
@@ -77,7 +82,8 @@
         "de": "Die Oberfläche ist <b>{surface}</b>",
         "fr": "La surface est en <b>{surface}</b>",
         "es": "La superficie es <b>{surface}</b>",
-        "ca": "La superfícies és <b>{surface}</b>"
+        "ca": "La superfícies és <b>{surface}</b>",
+        "cs": "Povrch je <b>{surface}</b>"
       },
       "freeform": {
         "key": "surface"
@@ -93,7 +99,8 @@
             "de": "Der Bodenbelag ist aus <b>Gras</b>",
             "fr": "La surface est en <b>gazon</b>",
             "es": "La superficie es <b>hierba</b>",
-            "ca": "La superfície és <b>herba</b>"
+            "ca": "La superfície és <b>herba</b>",
+            "cs": "Povrch je <b>tráva</b>"
           }
         },
         {
@@ -106,7 +113,8 @@
             "de": "Der Bodenbelag ist aus <b>Sand</b>",
             "fr": "La surface est en <b>sable</b>",
             "es": "La superficie es <b>arena</b>",
-            "ca": "La superfície és <b>sorra</b>"
+            "ca": "La superfície és <b>sorra</b>",
+            "cs": "Povrch je <b>písek</b>"
           }
         },
         {
@@ -118,7 +126,8 @@
             "de": "Der Bodenbelag ist aus <b>Holzschnitzeln</b>",
             "ru": "Покрытие из <b>щепы</b>",
             "fr": "La surface est en <b>copeaux de bois</b>",
-            "ca": "La superfície consisteix en <b>estelles</b>"
+            "ca": "La superfície consisteix en <b>estelles</b>",
+            "cs": "Povrch tvoří <b>dřevěná štěpka</b>"
           }
         },
         {
@@ -131,7 +140,8 @@
             "de": "Der Bodenbelag ist aus <b>Pflastersteinen</b>",
             "fr": "La surface est en <b>pavés</b>",
             "es": "La superficie es <b>adoquines</b>",
-            "ca": "La superfície són <b>llambordes</b>"
+            "ca": "La superfície són <b>llambordes</b>",
+            "cs": "Povrch je <b>dlažební kostky</b>"
           }
         },
         {
@@ -144,7 +154,8 @@
             "de": "Der Bodenbelag ist aus <b>Asphalt</b>",
             "fr": "La surface est en <b>bitume</b>",
             "es": "La superficie es <b>asfalto</b>",
-            "ca": "La superfície és <b>asfalt</b>"
+            "ca": "La superfície és <b>asfalt</b>",
+            "cs": "Povrch je <b>asfalt</b>"
           }
         },
         {
@@ -157,7 +168,8 @@
             "de": "Der Bodenbelag ist aus <b>Beton</b>",
             "fr": "La surface est en <b>béton</b>",
             "es": "La superficie es <b>hormigón</b>",
-            "ca": "La superfície és <b>formigó</b>"
+            "ca": "La superfície és <b>formigó</b>",
+            "cs": "Povrch je <b>beton</b>"
           }
         },
         {
@@ -169,7 +181,8 @@
             "de": "Die Oberfläche ist <b>unbefestigt</b>",
             "fr": "La surface n’a <b>pas de revêtement</b>",
             "es": "La superficie está <b>sin pavimentar</b>",
-            "ca": "La superfícies està <b>sense pavimentar</b>"
+            "ca": "La superfícies està <b>sense pavimentar</b>",
+            "cs": "Povrch je <b>nezpevněný</b>"
           },
           "hideInAnswer": true
         },
@@ -182,7 +195,8 @@
             "de": "Die Oberfläche ist <b>befestigt</b>",
             "fr": "La surface a <b>un revêtement</b>",
             "es": "La superficie está <b>pavimentada</b>",
-            "ca": "La superfície està <b>pavimentada</b>"
+            "ca": "La superfície està <b>pavimentada</b>",
+            "cs": "Povrch je <b>zpevněný</b>"
           },
           "hideInAnswer": true
         }
@@ -194,7 +208,8 @@
         "it": "Se ve ne è più di una, seleziona quella predominante",
         "de": "Wenn es mehrere gibt, wähle den am häufigsten vorkommende aus",
         "fr": "Pour plusieurs matières, sélectionner la principale",
-        "ca": "Si n'hi ha múltiples, selecciona la més predominant"
+        "ca": "Si n'hi ha múltiples, selecciona la més predominant",
+        "cs": "Pokud jich je více, vyberte nejčastěji se vyskytující"
       }
     },
     {
@@ -209,7 +224,8 @@
         "fr": "Ce terrain de jeux est-il éclairé la nuit ?",
         "de": "Wird der Spielplatz nachts beleuchtet?",
         "ru": "Эта игровая площадка освещается ночью?",
-        "ca": "Aquest parc infantil està il·luminat per la nit?"
+        "ca": "Aquest parc infantil està il·luminat per la nit?",
+        "cs": "Je toto hřiště v noci osvětlené?"
       },
       "mappings": [
         {
@@ -221,7 +237,8 @@
             "de": "Der Spielplatz wird nachts beleuchtet",
             "ru": "Эта детская площадка освещается ночью",
             "fr": "L’aire de jeu est éclairée de nuit",
-            "ca": "Aquest parc infantil està il·luminat per la nit"
+            "ca": "Aquest parc infantil està il·luminat per la nit",
+            "cs": "Toto hřiště je v noci osvětleno"
           }
         },
         {
@@ -233,7 +250,8 @@
             "de": "Der Spielplatz wird nachts nicht beleuchtet",
             "ru": "Эта детская площадка не освещается ночью",
             "fr": "L’aire de jeu n’est pas éclairée de nuit",
-            "ca": "Aquest parc infantil no està il·luminat per la nit"
+            "ca": "Aquest parc infantil no està il·luminat per la nit",
+            "cs": "Toto hřiště není v noci osvětleno"
           }
         }
       ]
@@ -250,7 +268,8 @@
         "fr": "Accessible aux enfants de plus de {min_age} ans",
         "de": "Zugang nur für Kinder ab {min_age} Jahren",
         "es": "Accesible a niños menores de {min_age} años",
-        "ca": "Accessible a nens menors de {min_age} anys"
+        "ca": "Accessible a nens menors de {min_age} anys",
+        "cs": "Přístupné dětem starším {min_age} let"
       },
       "question": {
         "nl": "Wat is de minimale leeftijd om op deze speeltuin te mogen?",
@@ -259,7 +278,8 @@
         "fr": "Quel est l'âge minimal requis pour accéder à ce terrain de jeux ?",
         "ru": "С какого возраста доступна эта детская площадка?",
         "de": "Ab welchem Alter dürfen Kinder auf dem Spielplatz spielen?",
-        "ca": "Quina és l'edat mínima requerida per a accedir al parc infantil?"
+        "ca": "Quina és l'edat mínima requerida per a accedir al parc infantil?",
+        "cs": "Jaký je minimální věk pro vstup na toto hřiště?"
       },
       "freeform": {
         "key": "min_age",
@@ -279,7 +299,8 @@
         "ru": "Доступно детям до {max_age}",
         "de": "Zugang nur für Kinder bis maximal {max_age}",
         "es": "Accesible a niños de hasta {max_age}",
-        "ca": "Accessible per a nens de com a màxim {max_age}"
+        "ca": "Accessible per a nens de com a màxim {max_age}",
+        "cs": "Přístupné pro děti maximálně {max_age}"
       },
       "question": {
         "nl": "Wat is de maximaal toegestane leeftijd voor deze speeltuin?",
@@ -287,7 +308,8 @@
         "it": "Qual è l’età massima per accedere a questo parco giochi?",
         "fr": "Quel est l’âge maximum autorisé pour utiliser l’aire de jeu ?",
         "de": "Bis zu welchem Alter dürfen Kinder auf dem Spielplatz spielen?",
-        "ca": "Quina és l'edat màxima permesa per accedir al parc infantil?"
+        "ca": "Quina és l'edat màxima permesa per accedir al parc infantil?",
+        "cs": "Jaký je maximální věk pro vstup na toto hřiště?"
       },
       "freeform": {
         "key": "max_age",
@@ -302,7 +324,8 @@
         "it": "Chi è il responsabile di questo parco giochi?",
         "de": "Wer betreibt den Spielplatz?",
         "fr": "Qui est en charge de l’exploitation de l’aire de jeu ?",
-        "ca": "Qui gestiona aquest parc infantil?"
+        "ca": "Qui gestiona aquest parc infantil?",
+        "cs": "Kdo provozuje toto hřiště?"
       },
       "render": {
         "nl": "Beheer door {operator}",
@@ -311,7 +334,8 @@
         "fr": "Exploité par {operator}",
         "de": "Betrieben von {operator}",
         "es": "Operado por {operator}",
-        "ca": "Gestionat per {operator}"
+        "ca": "Gestionat per {operator}",
+        "cs": "Provozuje {operator}"
       },
       "freeform": {
         "key": "operator"
@@ -326,7 +350,8 @@
         "it": "Questo parco giochi è pubblicamente accessibile?",
         "de": "Ist der Spielplatz öffentlich zugänglich?",
         "fr": "L’aire de jeu est-elle accessible au public ?",
-        "ca": "Aquest parc infantil és accessible al públic en general?"
+        "ca": "Aquest parc infantil és accessible al públic en general?",
+        "cs": "Je toto hřiště dostupné veřejnosti?"
       },
       "mappings": [
         {
@@ -338,7 +363,8 @@
             "de": "Der Spielplatz ist öffentlich zugänglich",
             "fr": "Accessible au public",
             "es": "Accesible al público general",
-            "ca": "Accesible al públic general"
+            "ca": "Accesible al públic general",
+            "cs": "Přístupné široké veřejnosti"
           },
           "addExtraTags": [
             "fee=no"
@@ -350,7 +376,8 @@
             "en": "This is a <b>paid</b> playground",
             "nl": "Er moet <b>betaald</b> worden om deze speeltuin te mogen gebruiken",
             "de": "Der Spielplatz ist <b>gebührenpflichtig</b>",
-            "ca": "Aquest és un parc infantil <b>de pagament</b>"
+            "ca": "Aquest és un parc infantil <b>de pagament</b>",
+            "cs": "Toto je <b>placené</b> hřiště"
           },
           "addExtraTags": [
             "access=customers"
@@ -365,7 +392,8 @@
             "de": "Der Spielplatz ist nur für Kunden zugänglich",
             "fr": "Réservée aux clients",
             "es": "Solo accesible para clientes del negocio que lo opera",
-            "ca": "Només accessible per als clients del negoci que l'opera"
+            "ca": "Només accessible per als clients del negoci que l'opera",
+            "cs": "Přístupné pouze pro klienty provozního podniku"
           },
           "addExtraTags": [
             "fee=no"
@@ -380,7 +408,8 @@
             "de": "Nur für Schüler der Schule zugänglich",
             "fr": "Réservée aux élèves de l’école",
             "es": "Solo accesibles para estudiantes de la escuela",
-            "ca": "Només accessible per als alumnes de l'escola"
+            "ca": "Només accessible per als alumnes de l'escola",
+            "cs": "Přístupné pouze studentům školy"
           },
           "hideInAnswer": true
         },
@@ -394,7 +423,8 @@
             "fr": "Non accessible",
             "de": "Der Spielplatz ist nicht öffentlich zugänglich",
             "es": "No accesible",
-            "ca": "No accessible"
+            "ca": "No accessible",
+            "cs": "Nepřístupné"
           }
         },
         {
@@ -403,7 +433,8 @@
             "en": "This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public",
             "nl": "Dit is een schoolplein - een zone waar de leerlingen kunnen spelen tijdens de pauze. Dit schoolplein is niet toegankelijk voor het publiek",
             "de": "Dies ist ein Schulhof - ein Außenbereich, auf dem die Schüler in den Pausen spielen können; er ist jedoch für die Öffentlichkeit nicht zugänglich",
-            "ca": "Es tracta d'un pati de l'escola, una zona exterior on els alumnes poden jugar durant els descansos; però no és accessible al públic en general"
+            "ca": "Es tracta d'un pati de l'escola, una zona exterior on els alumnes poden jugar durant els descansos; però no és accessible al públic en general",
+            "cs": "Jedná se o školní dvůr - venkovní areál, kde si mohou žáci o přestávkách hrát; ale není přístupný široké veřejnosti"
           }
         }
       ]
@@ -416,7 +447,8 @@
         "it": "Qual è l’indirizzo email del gestore di questo parco giochi?",
         "fr": "Quelle est l'adresse électronique du responsable de l'aire de jeux ?",
         "de": "Wie lautet die E-Mail Adresse des Spielplatzbetreuers?",
-        "ca": "Quina és l'adreça de correu electrònic del mantenidor del parc infantil?"
+        "ca": "Quina és l'adreça de correu electrònic del mantenidor del parc infantil?",
+        "cs": "Jaká je e-mailová adresa správce hřiště?"
       },
       "render": {
         "nl": "De bevoegde dienst kan bereikt worden via <a href='mailto:{email}'>{email}</a>",
@@ -442,7 +474,8 @@
         "fr": "Quel est le numéro de téléphone du responsable du terrain de jeux ?",
         "it": "Qual è il numero di telefono del gestore del campetto?",
         "de": "Wie lautet die Telefonnummer vom Betreiber des Spielplatzes?",
-        "ca": "Quin és el telèfon del mantenidor del parc infantil?"
+        "ca": "Quin és el telèfon del mantenidor del parc infantil?",
+        "cs": "Jaké je telefonní číslo na správce hřiště?"
       },
       "render": {
         "nl": "De bevoegde dienst kan getelefoneerd worden via <a href='tel:{phone}'>{phone}</a>",
@@ -470,7 +503,8 @@
         "de": "Ist der Spielplatz für Rollstuhlfahrer zugänglich?",
         "it": "Il campetto è accessibile a persone in sedia a rotelle?",
         "ru": "Доступна ли детская площадка пользователям кресел-колясок?",
-        "ca": "Aquest parc infantil és accessible per a persones en cadira de rodes?"
+        "ca": "Aquest parc infantil és accessible per a persones en cadira de rodes?",
+        "cs": "Je toto hřiště přístupné pro vozíčkáře?"
       },
       "mappings": [
         {
@@ -483,7 +517,8 @@
             "it": "Completamente accessibile in sedia a rotelle",
             "ru": "Полностью доступна пользователям кресел-колясок",
             "es": "Completamente accesible para usuarios de silla de ruedas",
-            "ca": "Totalment accessible per a persones en cadira de rodes"
+            "ca": "Totalment accessible per a persones en cadira de rodes",
+            "cs": "Plně přístupné pro vozíčkáře"
           }
         },
         {
@@ -496,7 +531,8 @@
             "it": "Accesso limitato in sedia a rotelle",
             "ru": "Частично доступна пользователям кресел-колясок",
             "es": "Acceso limitado para usuarios de silla de ruedas",
-            "ca": "Accessibilitat limitada per a persones en cadira de rodes"
+            "ca": "Accessibilitat limitada per a persones en cadira de rodes",
+            "cs": "Omezený přístup pro vozíčkáře"
           }
         },
         {
@@ -509,7 +545,8 @@
             "it": "Non accessibile in sedia a rotelle",
             "ru": "Недоступна пользователям кресел-колясок",
             "es": "No accesible a usuarios de sillas de ruedas",
-            "ca": "No accessible per a persones en cadira de rodes"
+            "ca": "No accessible per a persones en cadira de rodes",
+            "cs": "Není přístupný pro vozíčkáře"
           }
         }
       ]
@@ -527,7 +564,8 @@
         "it": "Quando si può accedere a questo campetto?",
         "ru": "Когда открыта эта игровая площадка?",
         "de": "Wann ist dieser Spielplatz zugänglich?",
-        "ca": "Quan és accesible aquest parc infantil?"
+        "ca": "Quan és accesible aquest parc infantil?",
+        "cs": "Kdy je toto hřiště přístupné?"
       },
       "mappings": [
         {
@@ -540,7 +578,8 @@
             "ru": "Открыто от рассвета до заката",
             "de": "Zugänglich von Sonnenaufgang bis Sonnenuntergang",
             "es": "Accesible desde el amanecer hasta el anochecer",
-            "ca": "Accesible des de la sortida del sol fins al vespre"
+            "ca": "Accesible des de la sortida del sol fins al vespre",
+            "cs": "Přístupné od východu do západu slunce"
           }
         },
         {
@@ -553,7 +592,8 @@
             "it": "Si può sempre accedere",
             "de": "Immer zugänglich",
             "ca": "Sempre accessible",
-            "es": "Siempre accesible"
+            "es": "Siempre accesible",
+            "cs": "Vždy přístupné"
           }
         }
       ],
@@ -577,7 +617,8 @@
         "fr": "une terrain de jeux",
         "it": "una campetto",
         "de": "einen Spielplatz",
-        "ca": "un parc infantil"
+        "ca": "un parc infantil",
+        "cs": "hřiště"
       }
     }
   ],
@@ -589,7 +630,8 @@
           "en": "This is a schoolyard - an (outdoor) area where pupils of a school can play during recess and which is not publicly accessible",
           "nl": "Dit is een schoolplein - een ruimte waar de leerlingen van een school kunnen spelen tijdens de pauze maar die niet publiek toegankelijk is",
           "de": "Dies ist ein Schulhof - ein (Außen-)Bereich, auf dem die Schüler einer Schule in den Pausen spielen können und der nicht öffentlich zugänglich ist",
-          "ca": "Es tracta d'un pati d'escola: una zona (a l'aire lliure) on els alumnes d'una escola poden jugar durant l'esbarjo i que no és accessible al públic"
+          "ca": "Es tracta d'un pati d'escola: una zona (a l'aire lliure) on els alumnes d'una escola poden jugar durant l'esbarjo i que no és accessible al públic",
+          "cs": "Jedná se o školní dvůr - (venkovní) prostor, kde si mohou žáci školy hrát o přestávce a který není veřejně přístupný"
         }
       }
     ],

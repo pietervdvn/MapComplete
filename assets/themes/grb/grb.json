@@ -15,7 +15,8 @@
     "es": "Este tema es un intento de automatizar la importación GRB.",
     "da": "Dette tema er et forsøg på at hjælpe med at automatisere GRB-importen.",
     "ca": "Aquest tema és un intent d'automatitzar la importació GRB.",
-    "cs": "Toto téma je pokusem o automatizaci importu GRB."
+    "cs": "Toto téma je pokusem o automatizaci importu GRB.",
+    "pl": "Ten temat jest próbą pomocy w automatyzacji importu GRB."
   },
   "icon": "./assets/themes/grb/logo.svg",
   "startLat": 51.0249,
@@ -205,7 +206,10 @@
           "render": {
             "en": "Has been imported from GRB, reference number is {source:geometry:ref}",
             "de": "Wurde von GRB importiert, Referenznummer ist {source:geometry:ref}",
-            "ca": "Ha estat importat des de GRB, el número de referència és {source:geometry:ref}"
+            "ca": "Ha estat importat des de GRB, el número de referència és {source:geometry:ref}",
+            "cs": "Byl importován z GRB, referenční číslo je {source:geometry:ref}",
+            "es": "Se ha importado de GRB, el número de referencia es {source:geometry:ref}",
+            "pl": "Został zaimportowany z GRB, numer referencyjny to {source:geometry:ref}"
           },
           "condition": "source:geometry:ref~*"
         },
@@ -350,7 +354,8 @@
                 "nl": "Dit gebouw heeft openingen en is gemodelleerd als een relatie. Bijgevolg kan het niet worden samengevoegd. Voeg het manueel samen via <a href='https://buildings.osm.be/#/'>de export-site voor gebouwen</a> {open_in_josm()}",
                 "da": "Denne bygning har huller og er modelleret som en relation. Som sådan kan det ikke sammenblandes. Sammensæt det manuelt via <a href='https://buildings.osm.be/#/'>bygningseksportwebstedet</a> {open_in_josm()}",
                 "cs": "Tato budova má otvory a je modelována jako vztah. Jako takovou ji nelze spojovat. Spojte ji ručně pomocí <a href='https://buildings.osm.be/#/'>exportní stránky budovy</a> {open_in_josm()}",
-                "ca": "Aquest edifici té forats i està modelat com una relació. Com a tal, no es pot combinar. Combineu-lo manualment mitjançant <a href='https://buildings.osm.be/#/'>el lloc d'exportació de l'edifici</a> {open_in_josm()}"
+                "ca": "Aquest edifici té forats i està modelat com una relació. Com a tal, no es pot combinar. Combineu-lo manualment mitjançant <a href='https://buildings.osm.be/#/'>el lloc d'exportació de l'edifici</a> {open_in_josm()}",
+                "pl": "Budynek ten ma dziury i jest modelowany jako relacja. W związku z tym nie można go łączyć. Połącz to ręcznie za pomocą <a href='https://buildings.osm.be/#/'>strony eksportu budynków</a> {open_in_josm()}"
               }
             },
             {

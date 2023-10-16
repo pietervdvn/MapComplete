@@ -279,7 +279,8 @@
         "fr": "Panneau affichant les trains au départ depuis cette gare",
         "ca": "Pantalles que mostren els trens que sortiran de l'estació",
         "es": "Pantallas que muestran los trenes que saldrán de esta estación",
-        "cs": "Zobrazuje vlaky odjíždějící z této stanice"
+        "cs": "Zobrazuje vlaky odjíždějící z této stanice",
+        "pl": "Ekrany wyświetlające pokazujące pociągi, które odjadą z tej stacji"
       },
       "title": {
         "render": {
@@ -290,7 +291,8 @@
           "ca": "Tauler de sortides",
           "es": "Tablero de salidas",
           "cs": "Odjezdová tabule",
-          "zh_Hant": "時刻表"
+          "zh_Hant": "時刻表",
+          "pl": "Tablica odjazdów"
         }
       },
       "minzoom": 18,
@@ -315,7 +317,8 @@
             "ca": "Quin tipus de tauler de sortides és aquest?",
             "es": "¿Qué tipo de tablero de salidas es éste?",
             "cs": "Co je to za odjezdovou tabuli?",
-            "zh_Hant": "這是那種類型的時刻表？"
+            "zh_Hant": "這是那種類型的時刻表？",
+            "pl": "Co to za tablica odjazdów?"
           },
           "mappings": [
             {
@@ -327,7 +330,8 @@
                 "fr": "Panneau des départs de type inconnu",
                 "ca": "Aquest tauler de sortides és de tipus desconegut",
                 "es": "Este es un panel de salidas de tipo desconocido",
-                "cs": "Toto je odjezdová tabule neznámého typu"
+                "cs": "Toto je odjezdová tabule neznámého typu",
+                "pl": "Jest to tablica odjazdów nieznanego typu"
               }
             },
             {
@@ -339,7 +343,8 @@
                 "fr": "Panneau électronique, affichant les prochains départs en temps réel",
                 "ca": "Aquest és un tauler electrònic que mostra les pròximes sortides en temps real",
                 "es": "Este es un tablero electrónico que muestra las próximas salidas en tiempo real",
-                "cs": "Jedná se o elektronickou tabuli, která v reálném čase zobrazuje příští odjezdy"
+                "cs": "Jedná se o elektronickou tabuli, která v reálném čase zobrazuje příští odjezdy",
+                "pl": "To elektroniczna tablica, pokazująca w czasie rzeczywistym kolejne odjazdy"
               }
             },
             {
@@ -397,7 +402,8 @@
             "fr": "Ajouter un panneau indiquant les départs, qu'il soit électronique ou papier",
             "ca": "Afegeix un tauler que mostra les sortides, de forma electrònica o en paper",
             "es": "Añadir un panel de salidas, electrónico o en papel",
-            "cs": "Přidejte tabuli s odjezdy, ať už v elektronické nebo papírové podobě"
+            "cs": "Přidejte tabuli s odjezdy, ať už v elektronické nebo papírové podobě",
+            "pl": "Dodaj tablicę pokazującą odjazdy, w wersji elektronicznej lub papierowej"
           }
         }
       ],
