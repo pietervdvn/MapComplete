@@ -986,6 +986,9 @@ export default class SpecialVisualizations {
                 constr: (state, tagsSource) =>
                     new VariableUiElement(
                         tagsSource.map((tags) => {
+                            if (state.layout === undefined) {
+                                return "<feature title>"
+                            }
                             const layer = state.layout.getMatchingLayer(tags)
                             const title = layer?.title?.GetRenderValue(tags)
                             if (title === undefined) {
@@ -1335,10 +1338,10 @@ export default class SpecialVisualizations {
                         tagSource.map((tags) => {
                             const v = tags[argument[0] ?? "value"]
                             try {
-                                const tr = JSON.parse(v)
+                                const tr = typeof v === "string" ? JSON.parse(v) : v
                                 return new Translation(tr).SetClass("font-bold")
                             } catch (e) {
-                                return v
+                                return JSON.stringify(v)
                             }
                         })
                     )

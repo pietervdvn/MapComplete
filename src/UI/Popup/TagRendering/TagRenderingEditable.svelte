@@ -16,7 +16,7 @@
   export let tags: UIEventSource<Record<string, string>>
   export let selectedElement: Feature | undefined
   export let state: SpecialVisualizationState
-  export let layer: LayerConfig
+  export let layer: LayerConfig = undefined
 
   export let editingEnabled : Store<boolean> | undefined = state?.featureSwitchUserbadge
 

@@ -15,6 +15,7 @@ import { AllSharedLayers } from "../../Customizations/AllSharedLayers"
 import { QuestionableTagRenderingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
 import StudioServer from "./StudioServer"
+import { Utils } from "../../Utils"
 
 /**
  * Sends changes back to the server
@@ -72,9 +73,9 @@ export default class EditLayerState {
         }
         this.messages = this.configuration.mapD((config) => {
             const context = ConversionContext.construct([], ["prepare"])
-
-            for (let i = 0; i < (config.tagRenderings ?? []).length; i++) {
-                const tr = config.tagRenderings[i]
+            const trs = Utils.NoNull(config.tagRenderings ?? [])
+            for (let i = 0; i < trs.length; i++) {
+                const tr = trs[i]
                 if (typeof tr === "string") {
                     continue
                 }
@@ -116,11 +117,19 @@ export default class EditLayerState {
         return entry
     }
 
-    public getStoreFor(path: ReadonlyArray<string | number>): UIEventSource<any | undefined> {
+    private readonly _stores = new Map<string, UIEventSource<any>>()
+    public getStoreFor<T>(path: ReadonlyArray<string | number>): UIEventSource<T | undefined> {
+        const key = path.join(".")
+
+        // TODO check if this gives problems when changing the order of e.g. mappings and questions
+        if (this._stores.has(key)) {
+            return this._stores.get(key)
+        }
         const store = new UIEventSource<any>(this.getCurrentValueFor(path))
         store.addCallback((v) => {
             this.setValueAt(path, v)
         })
+        this._stores.set(key, store)
         return store
     }
 
@@ -170,19 +179,24 @@ export default class EditLayerState {
 
     public setValueAt(path: ReadonlyArray<string | number>, v: any) {
         let entry = this.configuration.data
+        const isUndefined =
+            v !== undefined &&
+            v !== null &&
+            v !== "" &&
+            !(typeof v === "object" && Object.keys({}).length === 0)
+
         for (let i = 0; i < path.length - 1; i++) {
             const breadcrumb = path[i]
             if (entry[breadcrumb] === undefined) {
                 entry[breadcrumb] = typeof path[i + 1] === "number" ? [] : {}
             }
             entry = entry[breadcrumb]
+            if (entry === undefined && isUndefined) {
+                // Nothing to do anymore: we cannot traverse the object, but don't have to set something anyway
+                return
+            }
         }
-        if (
-            v !== undefined &&
-            v !== null &&
-            v !== "" &&
-            !(typeof v === "object" && Object.keys({}).length === 0)
-        ) {
+        if (isUndefined) {
             entry[path.at(-1)] = v
         } else if (entry) {
             delete entry[path.at(-1)]

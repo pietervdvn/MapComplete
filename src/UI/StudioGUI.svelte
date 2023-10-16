@@ -17,7 +17,7 @@
   import layerSchemaRaw from "../../src/assets/schemas/layerconfigmeta.json";
   import If from "./Base/If.svelte";
 
-  export let studioUrl = /* "https://studio.mapcomplete.org"; /*/ "http://127.0.0.1:1235"; //*/
+  export let studioUrl = window.location.hostname === "127.0.0.1" ? "http://127.0.0.1:1235" : "https://studio.mapcomplete.org"; 
   const studio = new StudioServer(studioUrl);
   let layersWithErr = UIEventSource.FromPromiseWithErr(studio.fetchLayerOverview());
   let layers = layersWithErr.mapD(l => l.success);

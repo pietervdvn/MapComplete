@@ -44,9 +44,9 @@ const configBuiltin = new TagRenderingConfig(<QuestionableTagRenderingConfigJson
 
 
 const tags = new UIEventSource({ value });
-
+const store = state.getStoreFor(path)
 tags.addCallbackAndRunD(tgs => {
-  state.setValueAt(path, tgs["value"]);
+  store.setData(tgs["value"])
 });
 
 let mappings: UIEventSource<MappingConfigJson[]> = state.getStoreFor([...path, "mappings"]);

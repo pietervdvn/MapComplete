@@ -113,7 +113,6 @@
 
         for (const requiredAttribute of type.required) {
           if (existingValue[requiredAttribute] === undefined) {
-            console.log(path.join("."), " does not have required field", requiredAttribute, " so it cannot be type ", type);
             // The 'existingValue' does _not_ have this required attribute, so it cannot be of this type
             continue outer;
           }
@@ -128,7 +127,6 @@
     }
     possibleTypes.sort((a, b) => b.optionalMatches - a.optionalMatches);
     possibleTypes.sort((a, b) => b.matchingPropertiesCount - a.matchingPropertiesCount);
-    console.log("Possible types are", possibleTypes)
     if (possibleTypes.length > 0) {
       chosenOption = possibleTypes[0].index
       tags.setData({ chosen_type_index: "" + chosenOption});
@@ -157,27 +155,23 @@
   let subSchemas: ConfigMeta[] = [];
 
   let subpath = path;
-  console.log("Initial chosen option for",path.join("."),"is", chosenOption);
+  const store = state.getStoreFor(path)
   onDestroy(tags.addCallbackAndRun(tags => {
     if (tags["value"] !== undefined && tags["value"] !== "") {
       chosenOption = undefined;
-      console.log("Resetting chosenOption as `value` is present in the tags:", tags["value"])
       return;
     }
     const oldOption = chosenOption;
-    console.log("Updating chosenOption based on", tags, oldOption)
     chosenOption = tags["chosen_type_index"] ? Number(tags["chosen_type_index"]) : defaultOption;
     const type = schema.type[chosenOption];
     if (chosenOption !== oldOption) {
       // Reset the values beneath
       subSchemas = [];
       const o = state.getCurrentValueFor(path) ?? {};
-      console.log({ o });
       for (const key of type?.required ?? []) {
-        console.log(key);
         o[key] ??= {};
       }
-      state.setValueAt(path, o);
+      store.setData(o)
     }
     if (!type) {
       return;
@@ -187,7 +181,6 @@
     if (type["$ref"] === "#/definitions/Record<string,string>") {
       // The subtype is a translation object
       const schema = state.getTranslationAt(cleanPath);
-      console.log("Got a translation,", schema);
       subSchemas.push(schema);
       subpath = path.slice(0, path.length - 2);
       return;

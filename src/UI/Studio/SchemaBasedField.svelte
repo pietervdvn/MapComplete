@@ -29,7 +29,7 @@
 
     const configJson: QuestionableTagRenderingConfigJson = {
         id: path.join("_"),
-        render: schema.type === "boolean" ? undefined : ((schema.hints.inline ?? schema.path.at(-1) )+ ": <b>{translated(value)}</b>"),
+        render: schema.type === "boolean" ? undefined : ((schema.hints.inline ?? schema.path.at(-1) )+ ": translated value: <b>{translated(value)}</b>"),
         question: schema.hints.question,
         questionHint: nmd(schema.description),
         freeform: schema.type === "boolean" ? undefined : {
@@ -100,7 +100,9 @@
     try {
         onDestroy(state.register(path, tags.map(tgs => {
             const v = tgs["value"];
-            console.log("Registering",path,"setting value to", v)
+            if(v !== ""){
+                console.log("Registering",path,"setting value to", v)
+            }
             if(typeof v !== "string"){
                 return v
             }

@@ -28,7 +28,8 @@
 </script>
 
 {#if $badge}
-  {#if !ignoreLoading && $loadingStatus === "loading"}
+  <slot/>
+ <!-- {#if !ignoreLoading && $loadingStatus === "loading"}
     <slot name="loading">
       <Loading />
     </slot>
@@ -41,5 +42,5 @@
     <slot />
   {:else if $loadingStatus === "not-attempted"}
     <slot name="not-logged-in" />
-  {/if}
+  {/if} -->
 {/if}
