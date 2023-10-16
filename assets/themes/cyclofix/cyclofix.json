@@ -68,14 +68,14 @@
               "bicycle_rental!=docking_station"
             ]
           }
-        }
+        },
+        "name": null
       }
     },
     {
       "#": "All bicycle rental at a high zoom level, to avoid duplicates",
       "builtin": "bicycle_rental",
       "override": {
-        "name": null,
         "filter": {
           "sameAs": "bicycle_rental_non_docking"
         },
