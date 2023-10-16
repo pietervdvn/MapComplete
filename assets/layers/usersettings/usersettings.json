@@ -351,10 +351,10 @@
     {
       "id": "show_crosshair",
       "question": {
-        "en":"Should a crosshair be shown in the center of the display?"
+        "en": "Should a crosshair be shown in the center of the display?"
       },
       "questionHint": {
-        "en":"This can help to accurately position a new element"
+        "en": "This can help to accurately position a new element"
       },
       "mappings": [
         {

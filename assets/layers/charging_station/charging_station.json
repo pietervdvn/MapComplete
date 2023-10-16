@@ -32,7 +32,8 @@
       "ca": "Estació de càrrega",
       "de": "Ladestation",
       "es": "Estación de carga",
-      "pl": "Stacja ładowania"
+      "pl": "Stacja ładowania",
+      "cs": "Nabíjecí stanice"
     },
     "mappings": [
       {
@@ -52,7 +53,8 @@
           "nl": "Oplaadpunt voor elektrische fietsen",
           "ca": "Estació de càrrega per a bicicletes elèctriques",
           "de": "Ladestation für Elektrofahrräder",
-          "es": "Estación de carga para bicicletas eléctricas"
+          "es": "Estación de carga para bicicletas eléctricas",
+          "cs": "Nabíjecí stanice pro elektrická jízdní kola"
         }
       },
       {
@@ -72,7 +74,8 @@
           "nl": "Oplaadpunt voor elektrische auto's",
           "ca": "Estació de càrrega per a cotxes",
           "de": "Ladestation für Autos",
-          "es": "Estación de carga para coches"
+          "es": "Estación de carga para coches",
+          "cs": "Nabíjecí stanice pro automobily"
         }
       }
     ]
@@ -409,7 +412,8 @@
             "da": "<b>Chademo</b>",
             "de": "<b>Chademo-Anschluss</b>",
             "es": "<b>Chademo</b>",
-            "eu": "<b>Chademo</b>"
+            "eu": "<b>Chademo</b>",
+            "cs": "<b>Chademo</b>"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Chademo_type4.svg",
@@ -456,7 +460,8 @@
             "da": "<b>Chademo</b>",
             "de": "<b>Chademo-Anschluss</b>",
             "es": "<b>Chademo</b>",
-            "eu": "<b>Chademo</b>"
+            "eu": "<b>Chademo</b>",
+            "cs": "<b>Chademo</b>"
           },
           "hideInAnswer": true,
           "icon": {
@@ -668,7 +673,8 @@
             "ca": "<b>Supercarregador de Tesla</b>",
             "da": "<b>Tesla Supercharger</b>",
             "de": "<b>Tesla Supercharger</b>",
-            "es": "<b>Supercargador de Tesla</b>"
+            "es": "<b>Supercargador de Tesla</b>",
+            "cs": "<b>Tesla Supercharger</b>"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Tesla-hpwc-model-s.svg",
@@ -715,7 +721,8 @@
             "da": "<b>Tesla Supercharger</b>",
             "de": "<b>Tesla Supercharger</b>",
             "es": "<b>Supercargador de Tesla</b>",
-            "pl": "<b>Tesla Supercharger</b>"
+            "pl": "<b>Tesla Supercharger</b>",
+            "cs": "<b>Tesla Supercharger</b>"
           },
           "hideInAnswer": true,
           "icon": {
@@ -992,7 +999,8 @@
             "ca": "<b>Supercarregador Tesla (destí)</b>",
             "da": "<b> Tesla Supercharger (destination)</b>",
             "de": "<b>Tesla Supercharger (Destination)</b>",
-            "es": "<b>Supercargador Tesla (destino</b>"
+            "es": "<b>Supercargador Tesla (destino</b>",
+            "cs": "<b>Tesla Supercharger (cíl)</b>"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Tesla-hpwc-model-s.svg",
@@ -1044,7 +1052,8 @@
             "ca": "<b>Supercarregador Tesla (destí)</b>",
             "da": "<b> Tesla Supercharger (destination)</b>",
             "de": "<b>Tesla Supercharger (Destination)</b>",
-            "es": "<b>Supercargador Tesla (destino)</b>"
+            "es": "<b>Supercargador Tesla (destino)</b>",
+            "cs": "<b>Tesla Supercharger (cíl)</b>"
           },
           "hideInAnswer": true,
           "icon": {
@@ -1060,7 +1069,8 @@
             "nl": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)",
             "ca": "<b>Supercarregador Tesla (destí)</b> (Un tipus 2 amb un cable marca tesla)",
             "de": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)",
-            "es": "<b>Supercargador Tesla (destino)</b> (Un Tipo 2 con un cable de marca tesla)"
+            "es": "<b>Supercargador Tesla (destino)</b> (Un Tipo 2 con un cable de marca tesla)",
+            "cs": "<b>Tesla supercharger (cíl)</b> (Typ 2 s kabelem označeným jako Tesla)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_tethered.svg",
@@ -4585,13 +4595,15 @@
         "en": "What is the website where one can find more information about this charging station?",
         "nl": "Wat is de website waar men meer info kan vinden over dit oplaadpunt?",
         "ca": "Quina és la pàgina web on es pot trobar més informació sobre aquest punt de recàrrega?",
-        "de": "Auf welcher Webseite kann man weitere Informationen über diese Ladestation finden?"
+        "de": "Auf welcher Webseite kann man weitere Informationen über diese Ladestation finden?",
+        "cs": "Jaká je webová stránka, kde lze najít další informace o této nabíjecí stanici?"
       },
       "render": {
         "en": "More info on <a href='{website}'>{website}</a>",
         "nl": "Meer informatie op <a href='{website}'>{website}</a>",
         "ca": "Més info a <a href='{website}'>{website}</a>",
-        "de": "Weitere Informationen unter <a href='{website}'>{website}</a>"
+        "de": "Weitere Informationen unter <a href='{website}'>{website}</a>",
+        "cs": "Více informací na <a href='{website}'>{website}</a>"
       },
       "freeform": {
         "key": "website",
@@ -5208,7 +5220,8 @@
             "eu": " ·minutu",
             "pa_PK": " منٹ",
             "pl": " minut",
-            "ru": " минут"
+            "ru": " минут",
+            "cs": " minuty"
           },
           "humanSingular": {
             "en": " minute",
@@ -5218,7 +5231,8 @@
             "es": " minuto",
             "eu": " ·minutu",
             "pl": " minuta",
-            "ru": " минута"
+            "ru": " минута",
+            "cs": " minut"
           }
         },
         {
@@ -5240,7 +5254,8 @@
             "es": " horas",
             "eu": " ·ordu",
             "pl": " godzin",
-            "ru": " часов"
+            "ru": " часов",
+            "cs": " hodiny"
           },
           "humanSingular": {
             "en": " hour",
@@ -5250,7 +5265,8 @@
             "es": " hora",
             "eu": " ·ordu",
             "pl": " godzina",
-            "ru": " час"
+            "ru": " час",
+            "cs": " hodin"
           }
         },
         {
@@ -5269,7 +5285,8 @@
             "es": " días",
             "eu": " ·egun",
             "pl": " dni",
-            "ru": " дней"
+            "ru": " дней",
+            "cs": " dny"
           },
           "humanSingular": {
             "en": " day",
@@ -5279,7 +5296,8 @@
             "es": " día",
             "eu": " ·egun",
             "pl": " dzień",
-            "ru": " день"
+            "ru": " день",
+            "cs": " den"
           }
         }
       ]
@@ -5320,7 +5338,8 @@
             "de": "Volt",
             "es": "Voltios",
             "eu": "Voltio",
-            "ru": "Вольт"
+            "ru": "Вольт",
+            "cs": "Volty"
           }
         }
       ],
@@ -5360,7 +5379,8 @@
             "ca": "A",
             "de": "Ein",
             "es": "A",
-            "eu": "A"
+            "eu": "A",
+            "cs": "A"
           }
         }
       ],
@@ -5399,7 +5419,8 @@
             "es": "kilvatio",
             "eu": "kilovatio",
             "pa_PK": "کیلوواٹ",
-            "ru": "киловатт"
+            "ru": "киловатт",
+            "cs": "kilowatt"
           }
         },
         {
@@ -5415,7 +5436,8 @@
             "es": "megavatio",
             "eu": "megawatt",
             "pa_PK": "میگاواٹ",
-            "ru": "мегаватт"
+            "ru": "мегаватт",
+            "cs": "megawatt"
           }
         }
       ],

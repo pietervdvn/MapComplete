@@ -20,7 +20,8 @@
             "zh_Hant": "目前開放",
             "id": "Saat ini buka",
             "it": "Aperto ora",
-            "pl": "Otwarte teraz"
+            "pl": "Otwarte teraz",
+            "cs": "Nyní otevřeno"
           },
           "osmTags": "_isOpen=yes"
         }
@@ -38,7 +39,8 @@
             "es": "Acepta efectivo",
             "fr": "Accepte les espèces",
             "pl": "Przyjmuje gotówkę",
-            "ca": "Accepta efectu"
+            "ca": "Accepta efectu",
+            "cs": "Přijímá hotovost"
           }
         }
       ]
@@ -55,7 +57,8 @@
             "es": "Acepta el pago por tarjeta",
             "fr": "Accepte les cartes de paiement",
             "pl": "Przyjmuje karty płatnicze",
-            "ca": "Accepta el pagament amb targeta"
+            "ca": "Accepta el pagament amb targeta",
+            "cs": "Přijímá platební karty"
           }
         }
       ]
@@ -69,7 +72,8 @@
             "en": "Accepts debit cards",
             "de": "Akzeptiert Debitkarten",
             "pl": "Przyjmuje karty debetowe",
-            "ca": "Accepta targetes de dèbit"
+            "ca": "Accepta targetes de dèbit",
+            "cs": "Přijímá debetní karty"
           }
         }
       ]
