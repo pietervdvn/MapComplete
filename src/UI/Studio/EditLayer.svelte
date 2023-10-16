@@ -1,6 +1,6 @@
 <script lang="ts">
 
-  import { LayerStateSender } from "./EditLayerState";
+  import EditLayerState, { LayerStateSender } from "./EditLayerState";
   import layerSchemaRaw from "../../assets/schemas/layerconfigmeta.json";
   import Region from "./Region.svelte";
   import TabbedGroup from "../Base/TabbedGroup.svelte";
@@ -8,11 +8,13 @@
   import type { ConfigMeta } from "./configMeta";
   import { Utils } from "../../Utils";
   import type { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson";
+  import type { ConversionMessage } from "../../Models/ThemeConfig/Conversion/Conversion";
 
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw;
 
-  export let state;
+  export let state: EditLayerState;
   const messages = state.messages;
+  const hasErrors = messages.map((m: ConversionMessage[]) => m.filter(m => m.level === "error").length);
   export let initialLayerConfig: Partial<LayerConfigJson> = {};
   state.configuration.setData(initialLayerConfig);
   const configuration = state.configuration;
@@ -37,9 +39,18 @@
   }
   const leftoverRegions: string[] = allNames.filter(r => regionBlacklist.indexOf(r) < 0 && baselayerRegions.indexOf(r) < 0);
   const title: Store<string> = state.getStoreFor(["id"]);
+  const wl = window.location
+  const baseUrl = wl.protocol+"//"+wl.host+"/theme.html?userlayout="
 </script>
 
-<h3>Editing layer {$title}</h3>
+<div class="w-full flex justify-between">
+  <h3>Editing layer {$title}</h3>
+  {#if $hasErrors > 0}
+    <div class="alert">{$hasErrors} errors detected</div>
+  {:else}
+    <a class="primary button" href={baseUrl+state.server.layerUrl(title.data)} target="_blank" rel="noopener">Try it out</a>
+  {/if}
+</div>
 <div class="m4">
   <TabbedGroup tab={new UIEventSource(2)}>
     <div slot="title0">General properties</div>

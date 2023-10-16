@@ -22,9 +22,7 @@ export default class StudioServer {
 
     async fetchLayer(layerId: string): Promise<LayerConfigJson> {
         try {
-            return await Utils.downloadJson(
-                this.url + "/layers/" + layerId + "/" + layerId + ".json"
-            )
+            return await Utils.downloadJson(this.layerUrl(layerId))
         } catch (e) {
             return undefined
         }
@@ -35,12 +33,16 @@ export default class StudioServer {
         if (id === undefined || id === "") {
             return
         }
-        await fetch(`${this.url}/layers/${id}/${id}.json`, {
+        await fetch(this.layerUrl(id), {
             method: "POST",
             headers: {
                 "Content-Type": "application/json;charset=utf-8",
             },
             body: JSON.stringify(config, null, "  "),
         })
+    }
+
+    public layerUrl(id: string) {
+        return `${this.url}/layers/${id}/${id}.json`
     }
 }

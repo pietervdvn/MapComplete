@@ -177,7 +177,12 @@ export default class EditLayerState {
             }
             entry = entry[breadcrumb]
         }
-        if (v !== undefined && v !== null && v !== "") {
+        if (
+            v !== undefined &&
+            v !== null &&
+            v !== "" &&
+            !(typeof v === "object" && Object.keys({}).length === 0)
+        ) {
             entry[path.at(-1)] = v
         } else if (entry) {
             delete entry[path.at(-1)]

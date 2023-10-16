@@ -16,7 +16,7 @@
     export let state: EditLayerState
     export let path: (string | number)[] = []
     export let schema: ConfigMeta
-    let value = new UIEventSource<string>(undefined)
+    let value = new UIEventSource<string | any>(undefined)
     
     const isTranslation = schema.hints.typehint === "translation" || schema.hints.typehint === "rendered" || ConfigMetaUtils.isTranslation(schema)
     let type = schema.hints.typehint ?? "string"
@@ -122,7 +122,7 @@
                 }
                 return Number(v)
             }
-            if (isTranslation) {
+            if (isTranslation && typeof v === "string") {
                 if (v === "") {
                     return {}
                 }

@@ -39,6 +39,12 @@ export class ConversionContext {
     }
 
     static print(msg: ConversionMessage) {
+        const noString = msg.context.path.filter(
+            (p) => typeof p !== "string" && typeof p !== "number"
+        )
+        if (noString.length > 0) {
+            console.warn("Non-string value in path:", ...noString)
+        }
         if (msg.level === "error") {
             console.error(
                 ConversionContext.red("ERR "),
