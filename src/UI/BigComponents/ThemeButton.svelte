@@ -8,13 +8,26 @@
   import Tr from "../Base/Tr.svelte"
   import SubtleLink from "../Base/SubtleLink.svelte"
   import Translations from "../i18n/Translations"
+  import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource"
 
   export let theme: LayoutInformation
   export let isCustom: boolean = false
   export let userDetails: UIEventSource<UserDetails>
   export let state: { layoutToUse?: { id: string }; osmConnection: OsmConnection }
   export let selected: boolean = false
+  
+  let unlockedPersonal = LocalStorageSource.GetParsed("unlocked_personal_theme", false)
 
+  userDetails.addCallbackAndRunD(userDetails => {
+      if(!userDetails.loggedIn){
+          return
+      }
+      if(userDetails.csCount > Constants.userJourney.personalLayoutUnlock){
+          unlockedPersonal.setData(true)
+      }
+      return true
+  })
+  
   $: title = new Translation(
     theme.title,
     !isCustom && !theme.mustHaveLanguage ? "themes:" + theme.id + ".title" : undefined
@@ -72,7 +85,7 @@
   let href = createUrl(theme, isCustom, state)
 </script>
 
-{#if theme.id !== personal.id || $userDetails.csCount > Constants.userJourney.personalLayoutUnlock}
+{#if theme.id !== personal.id || $unlockedPersonal}
   <SubtleLink href={$href} options={{ extraClasses: "w-full" }}>
     <img slot="image" src={theme.icon} class="mx-4 block h-11 w-11" alt="" />
     <span class="flex flex-col overflow-hidden text-ellipsis">

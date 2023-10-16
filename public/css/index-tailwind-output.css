@@ -1054,6 +1054,11 @@ video {
   height: 8rem;
 }
 
+.h-min {
+  height: -webkit-min-content;
+  height: min-content;
+}
+
 .h-8 {
   height: 2rem;
 }
@@ -1339,10 +1344,6 @@ video {
 
 .items-center {
   align-items: center;
-}
-
-.items-baseline {
-  align-items: baseline;
 }
 
 .items-stretch {
@@ -2447,7 +2448,6 @@ select:hover {
 .subtle {
   /* For all information that is not important for 99% of the users */
   color: #999;
-  font-size: medium;
   font-weight: normal;
 }
 

@@ -402,7 +402,6 @@ select:hover {
 .subtle {
     /* For all information that is not important for 99% of the users */
     color: #999;
-    font-size: medium;
     font-weight: normal;
 }
 
