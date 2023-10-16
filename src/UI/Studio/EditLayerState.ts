@@ -180,26 +180,30 @@ export default class EditLayerState {
     public setValueAt(path: ReadonlyArray<string | number>, v: any) {
         let entry = this.configuration.data
         const isUndefined =
-            v !== undefined &&
-            v !== null &&
-            v !== "" &&
-            !(typeof v === "object" && Object.keys({}).length === 0)
+            v === undefined ||
+            v === null ||
+            v === "" ||
+            (typeof v === "object" && Object.keys(v).length === 0)
 
         for (let i = 0; i < path.length - 1; i++) {
             const breadcrumb = path[i]
             if (entry[breadcrumb] === undefined) {
+                if (isUndefined) {
+                    // we have a dead end _and_ we do not need to set a value - we do an early return
+                    return
+                }
                 entry[breadcrumb] = typeof path[i + 1] === "number" ? [] : {}
             }
             entry = entry[breadcrumb]
-            if (entry === undefined && isUndefined) {
-                // Nothing to do anymore: we cannot traverse the object, but don't have to set something anyway
-                return
-            }
         }
+        const lastBreadcrumb = path.at(-1)
         if (isUndefined) {
-            entry[path.at(-1)] = v
-        } else if (entry) {
-            delete entry[path.at(-1)]
+            if (entry && entry[lastBreadcrumb]) {
+                console.log("Deleting", lastBreadcrumb, "of", path.join("."))
+                delete entry[lastBreadcrumb]
+            }
+        } else {
+            entry[lastBreadcrumb] = v
         }
         this.configuration.ping()
     }

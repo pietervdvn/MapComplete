@@ -174,7 +174,10 @@ export class OsmConnection {
 
     public AttemptLogin() {
         this.UpdateCapabilities()
-        this.loadingStatus.setData("loading")
+        if (this.loadingStatus.data !== "logged-in") {
+            // Stay 'logged-in' if we are already logged in; this simply means we are checking for messages
+            this.loadingStatus.setData("loading")
+        }
         if (this.fakeUser) {
             this.loadingStatus.setData("logged-in")
             console.log("AttemptLogin called, but ignored as fakeUser is set")

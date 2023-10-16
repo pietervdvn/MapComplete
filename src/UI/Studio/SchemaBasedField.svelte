@@ -96,13 +96,10 @@
         err = path.join(".") + " " + e
     }
     let startValue = state.getCurrentValueFor(path)
-    const tags = new UIEventSource<Record<string, string>>({value: startValue ?? ""})
+    const tags = new UIEventSource<Record<string, string>>({value: startValue})
     try {
         onDestroy(state.register(path, tags.map(tgs => {
             const v = tgs["value"];
-            if(v !== ""){
-                console.log("Registering",path,"setting value to", v)
-            }
             if(typeof v !== "string"){
                 return v
             }

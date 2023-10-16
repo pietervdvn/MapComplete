@@ -90,7 +90,6 @@
 
 
   const existingValue = state.getCurrentValueFor(path);
-  console.log("Initial, existing value for", path.join(".") ,"is", existingValue);
   if (hasBooleanOption >= 0 && (existingValue === true || existingValue === false)) {
     tags.setData({ value: "" + existingValue });
   } else if (lastIsString && typeof existingValue === "string") {

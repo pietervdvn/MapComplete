@@ -1,7 +1,6 @@
 import { TagConfigJson } from "./TagConfigJson"
 import { TagRenderingConfigJson } from "./TagRenderingConfigJson"
 import type { Translatable } from "./Translatable"
-import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
 
 export interface MappingConfigJson {
     /**

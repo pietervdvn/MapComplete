@@ -515,7 +515,6 @@ class MappedStore<TIn, T> extends Store<T> {
     }
 
     private unregisterFromUpstream() {
-        console.debug("Unregistering callbacks for", this.tag)
         this._callbacksAreRegistered = false
         this._unregisterFromUpstream()
         this._unregisterFromExtraStores?.forEach((unr) => unr())

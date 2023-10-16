@@ -95,6 +95,19 @@
         }
       ],
       "multiAnswer": true
+    },
+    {
+      "question": {
+        "en": "When is this animal shelter opened?"
+      },
+      "id": "7",
+      "render": {
+        "en": "{opening_hours_table()}"
+      },
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours"
+      }
     }
   ],
   "deletion": true,
