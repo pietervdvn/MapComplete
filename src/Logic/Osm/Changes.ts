@@ -26,6 +26,7 @@ export class Changes {
     public readonly extraComment: UIEventSource<string> = new UIEventSource(undefined)
     public readonly backend: string
     public readonly isUploading = new UIEventSource(false)
+    public readonly errors = new UIEventSource<string[]>([], "upload-errors")
     private readonly historicalUserLocations?: FeatureSource
     private _nextId: number = -1 // Newly assigned ID's are negative
     private readonly previouslyCreated: OsmObject[] = []
@@ -128,8 +129,11 @@ export class Changes {
             const csNumber = await this.flushChangesAsync()
             this.isUploading.setData(false)
             console.log("Changes flushed. Your changeset is " + csNumber)
+            this.errors.setData([])
         } catch (e) {
             this.isUploading.setData(false)
+            this.errors.data.push(e)
+            this.errors.ping()
             console.error("Flushing changes failed due to", e)
         }
     }
@@ -415,6 +419,8 @@ export class Changes {
                         id,
                         " dropping it from the changes (" + e + ")"
                     )
+                    this.errors.data.push(e)
+                    this.errors.ping()
                     return undefined
                 }
             })
@@ -572,9 +578,15 @@ export class Changes {
                                 openChangeset.data
                         )
 
-                        return await self.flushSelectChanges(pendingChanges, openChangeset)
+                        const result = await self.flushSelectChanges(pendingChanges, openChangeset)
+                        if(result){
+                            this.errors.setData([])
+                        }
+                        return result
                     } catch (e) {
                         console.error("Could not upload some changes:", e)
+                        this.errors.data.push(e)
+                        this.errors.ping()
                         return false
                     }
                 })
@@ -589,6 +601,8 @@ export class Changes {
                 "Could not handle changes - probably an old, pending changeset in localstorage with an invalid format; erasing those",
                 e
             )
+            this.errors.data.push(e)
+            this.errors.ping()
             self.pendingChanges.setData([])
         } finally {
             self.isUploading.setData(false)

@@ -53,6 +53,7 @@
     import Locale from "./i18n/Locale";
     import ShareScreen from "./BigComponents/ShareScreen.svelte";
     import UploadingImageCounter from "./Image/UploadingImageCounter.svelte"
+    import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte"
 
     export let state: ThemeViewState;
     let layout = state.layout;
@@ -156,6 +157,7 @@
       construct={() => new ExtraLinkButton(state, layout.extraLink).SetClass("pointer-events-auto")}
     />
     <UploadingImageCounter {state} featureId="*" showThankYou={false}/>
+    <PendingChangesIndicator {state}/>
     <If condition={state.featureSwitchIsTesting}>
       <div class="alert w-fit">Testmode</div>
     </If>
