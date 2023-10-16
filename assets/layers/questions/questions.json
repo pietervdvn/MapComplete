@@ -2400,34 +2400,40 @@
     {
       "id": "sugar_free",
       "question": {
-        "en": "Does this shop have a sugar free offering?"
+        "en": "Does this shop have a sugar free offering?",
+        "de": "Verkauft das Geschäft zuckerfreie Produkte?"
       },
       "questionHint": {
-        "en": "This is important for people following a sugar-free diet, such as people with Diabetes"
+        "en": "This is important for people following a sugar-free diet, such as people with Diabetes",
+        "de": "Dies ist wichtig für Menschen, die eine zuckerfreie Diät einhalten, z. B. für Menschen mit Diabetes"
       },
       "mappings": [
         {
           "if": "diet:sugar_free=only",
           "then": {
-            "en": "This shop <b>only sells sugar free</b> products"
+            "en": "This shop <b>only sells sugar free</b> products",
+            "de": "Das Geschäft verkauft <b>ausschließlich</b> zuckerfreie Produkte"
           }
         },
         {
           "if": "diet:sugar_free=yes",
           "then": {
-            "en": "This shop has a big sugar free offering"
+            "en": "This shop has a big sugar free offering",
+            "de": "Das Geschäft verkauft <b>viele<b> zuckerfreie Produkte"
           }
         },
         {
           "if": "diet:sugar_free=limited",
           "then": {
-            "en": "This shop has a <b>limited sugar free</b> offering"
+            "en": "This shop has a <b>limited sugar free</b> offering",
+            "de": "Das Geschäft verkauft <b>wenige</b> zuckerfreie Produkte"
           }
         },
         {
           "if": "diet:sugar_free=no",
           "then": {
-            "en": "This shop has no sugar free offering"
+            "en": "This shop has no sugar free offering",
+            "de": "Das Geschäft verkauft <b>keine<b> zuckerfreie Produkte"
           }
         }
       ]
@@ -2435,31 +2441,36 @@
     {
       "id": "lactose_free",
       "question": {
-        "en": "Does {title()} have a lactose-free offering?"
+        "en": "Does {title()} have a lactose-free offering?",
+        "de": "Verkauft {title()} laktosefreie Produkte?"
       },
       "mappings": [
         {
           "if": "diet:lactose_free=only",
           "then": {
-            "en": "<b>Only sells lactose free</b> products"
+            "en": "<b>Only sells lactose free</b> products",
+            "de": "<b>Ausschließlich</b> laktosefreie Produkte"
           }
         },
         {
           "if": "diet:lactose_free=yes",
           "then": {
-            "en": "Big lactose free offering"
+            "en": "Big lactose free offering",
+            "de": "Viele laktosefreie Produkte"
           }
         },
         {
           "if": "diet:lactose_free=limited",
           "then": {
-            "en": "<b>Limited lactose free</b> offering"
+            "en": "<b>Limited lactose free</b> offering",
+            "de": "<b>Wenige</b> laktosefreie Produkte"
           }
         },
         {
           "if": "diet:lactose_free=no",
           "then": {
-            "en": "No lactose free offering"
+            "en": "No lactose free offering",
+            "de": "Keine laktosefreie Produkte"
           }
         }
       ]
@@ -2467,31 +2478,36 @@
     {
       "id": "gluten_free",
       "question": {
-        "en": "Does this shop have a gluten free offering?"
+        "en": "Does this shop have a gluten free offering?",
+        "de": "Verkauft das Geschäft glutenfreie Produkte?"
       },
       "mappings": [
         {
           "if": "diet:gluten_free=only",
           "then": {
-            "en": "This shop <b>only sells gluten free</b> products"
+            "en": "This shop <b>only sells gluten free</b> products",
+            "de": "Das Geschäft verkauft <b>ausschließlich glutenfreie</b> Produkte"
           }
         },
         {
           "if": "diet:gluten_free=yes",
           "then": {
-            "en": "This shop has a big gluten free offering"
+            "en": "This shop has a big gluten free offering",
+            "de": "Das Geschäft verkauft viele glutenfreie Produkte"
           }
         },
         {
           "if": "diet:gluten_free=limited",
           "then": {
-            "en": "This shop has a <b>limited gluten free</b> offering"
+            "en": "This shop has a <b>limited gluten free</b> offering",
+            "de": "Das Geschäft verkauft <b>wenige glutenfreie</b> Produkte"
           }
         },
         {
           "if": "diet:gluten_free=no",
           "then": {
-            "en": "This shop has no gluten free offering"
+            "en": "This shop has no gluten free offering",
+            "de": "Das Geschäft verkauft keine glutenfreie Produkte"
           }
         }
       ]

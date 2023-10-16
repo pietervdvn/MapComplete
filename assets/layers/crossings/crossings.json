@@ -8,7 +8,8 @@
     "ca": "Encreuaments",
     "da": "Overgange",
     "es": "Cruces",
-    "pa_PK": "کراسنگاں"
+    "pa_PK": "کراسنگاں",
+    "cs": "Přechody"
   },
   "description": {
     "en": "Crossings for pedestrians and cyclists",
@@ -17,7 +18,8 @@
     "fr": "Traversée pour piétons et cyclistes",
     "da": "Overgange for fodgængere og cyklister",
     "es": "Cruces para peatones y ciclistas",
-    "ca": "Creuaments per a vianants i ciclistes"
+    "ca": "Creuaments per a vianants i ciclistes",
+    "cs": "Přechody pro chodce a cyklisty"
   },
   "source": {
     "osmTags": {
@@ -73,7 +75,8 @@
         "fr": "une traversée",
         "ca": "un creuament",
         "da": "en overgang",
-        "es": "un cruce"
+        "es": "un cruce",
+        "cs": "přechod"
       },
       "tags": [
         "highway=crossing"
@@ -85,7 +88,8 @@
         "fr": "Traversée pour piétons et/ou cyclistes",
         "da": "Overgang for fodgængere og/eller cyklister",
         "es": "Cruce para peatones y/o ciclistas",
-        "ca": "Creuament per a vianants i/o ciclistes"
+        "ca": "Creuament per a vianants i/o ciclistes",
+        "cs": "Přechod pro chodce a/nebo cyklisty"
       },
       "snapToLayer": "cycleways_and_roads",
       "maxSnapDistance": 25
@@ -99,7 +103,8 @@
         "fr": "une feu de signalisation",
         "da": "et trafiksignal",
         "es": "un semáforo",
-        "ca": "un semàfor"
+        "ca": "un semàfor",
+        "cs": "semafor"
       },
       "tags": [
         "highway=traffic_signals"
@@ -111,7 +116,8 @@
         "fr": "Feu de signalisation sur la voie",
         "da": "Trafiksignal på en vej",
         "es": "Semáforo en una carretera",
-        "ca": "Semàfor en una carretera"
+        "ca": "Semàfor en una carretera",
+        "cs": "Semafor na silnici"
       },
       "snapToLayer": "cycleways_and_roads",
       "maxSnapDistance": 25
@@ -187,7 +193,8 @@
         "es": "¿Esto es un paso de cebra?",
         "fr": "Est-ce un passage piéton ?",
         "ca": "Açò és un pas de vianants?",
-        "pl": "Czy to jest przejście dla pieszych typu \"zebra\"?"
+        "pl": "Czy to jest przejście dla pieszych typu \"zebra\"?",
+        "cs": "Jedná se o přechod pro chodce?"
       },
       "condition": "crossing=uncontrolled",
       "mappings": [
@@ -199,7 +206,8 @@
             "de": "Dies ist ein Zebrastreifen",
             "es": "Esto es un paso de cebra",
             "fr": "C'est un passage piéton",
-            "ca": "Açò és un pas de vianants"
+            "ca": "Açò és un pas de vianants",
+            "cs": "Toto je přechod pro chodce"
           }
         },
         {
@@ -210,7 +218,8 @@
             "de": "Dies ist kein Zebrastreifen",
             "es": "Esto no es un paso de cebra",
             "fr": "Ce n'est pas un passage piéton",
-            "ca": "Açò no és un pas de vianants"
+            "ca": "Açò no és un pas de vianants",
+            "cs": "Tohle není přechod pro chodce"
           }
         }
       ]
@@ -346,7 +355,8 @@
         "de": "Hat diese Ampel eine Taste, um ein grünes Signal anzufordern?",
         "es": "¿Este semáforo tiene un botón para pedir luz verde?",
         "ca": "Aquest semàfor té un botó per a demanar la llum verda?",
-        "fr": "Est-ce que ce feu a un bouton pour demander le passage au vert ?"
+        "fr": "Est-ce que ce feu a un bouton pour demander le passage au vert ?",
+        "cs": "Má tento semafor tlačítko pro vyžádání zeleného světla?"
       },
       "condition": {
         "or": [
@@ -363,7 +373,8 @@
             "de": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern",
             "es": "Este semáforo tiene un botón para pedir luz verde",
             "ca": "Aquest semàfor té un botó per a demanar la llum verda",
-            "fr": "Ce feu a un bouton pour demander le vert"
+            "fr": "Ce feu a un bouton pour demander le vert",
+            "cs": "Tento semafor má tlačítko pro vyžádání zeleného světla"
           }
         },
         {
@@ -374,7 +385,8 @@
             "de": "Diese Ampel hat keine Taste, um ein grünes Signal anzufordern",
             "es": "Este semáforo no tiene un botón para pedir luz verde",
             "ca": "Aquest semàfor no té un botó per a demanar la llum verda",
-            "fr": "Ce feu n'a pas de bouton pour demander le vert"
+            "fr": "Ce feu n'a pas de bouton pour demander le vert",
+            "cs": "Tento semafor nemá tlačítko pro vyžádání zeleného světla"
           }
         }
       ]
@@ -595,7 +607,8 @@
         "de": "Dürfen Radfahrer bei roter Ampel geradeaus fahren?",
         "es": "¿Puede ir de frente un ciclista cuando la luz está roja?",
         "fr": "Est-ce qu'un cycliste peut aller tout droit quand le feu est rouge ?",
-        "ca": "Un ciclista pot seguir recte si el semàfor està en roig?"
+        "ca": "Un ciclista pot seguir recte si el semàfor està en roig?",
+        "cs": "Může cyklista jet rovně, když svítí červená?"
       },
       "condition": "highway=traffic_signals",
       "mappings": [
@@ -606,7 +619,8 @@
             "nl": "Een fietser mag wel rechtdoor gaan als het licht rood is",
             "de": "Ein Radfahrer kann bei roter Ampel geradeaus fahren",
             "es": "Un ciclista puede ir de frente si la luz está roja",
-            "ca": "Un ciclista pot seguir recte si el semàfor està en roig"
+            "ca": "Un ciclista pot seguir recte si el semàfor està en roig",
+            "cs": "Cyklista může jet rovně, pokud svítí červená"
           },
           "hideInAnswer": "_country!=be",
           "icon": {
@@ -621,7 +635,8 @@
             "nl": "Een fietser mag wel rechtdoor gaan als het licht rood is",
             "de": "Radfahrer dürfen bei roter Ampel geradeaus fahren",
             "es": "Un ciclista puede ir de frente si la luz está roja",
-            "ca": "Un ciclista pot seguir recte si el semàfor està en roig"
+            "ca": "Un ciclista pot seguir recte si el semàfor està en roig",
+            "cs": "Cyklista může jet rovně, pokud svítí červená"
           },
           "hideInAnswer": "_country=be"
         },
@@ -632,7 +647,8 @@
             "nl": "Een fietser mag niet rechtdoor gaan als het licht rood is",
             "de": "Radfahrer dürfen bei roter Ampel nicht geradeaus fahren",
             "es": "Un ciclista no puede ir de frente si la luz está roja",
-            "ca": "Un ciclista no pot seguir recte si el semàfor està en roig"
+            "ca": "Un ciclista no pot seguir recte si el semàfor està en roig",
+            "cs": "Cyklista nemůže jet rovně, pokud svítí červená"
           }
         }
       ]

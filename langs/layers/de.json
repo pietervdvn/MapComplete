@@ -4627,27 +4627,6 @@
                     }
                 }
             },
-            "13": {
-                "options": {
-                    "0": {
-                        "question": "Hat zuckerfreie Angebote"
-                    }
-                }
-            },
-            "14": {
-                "options": {
-                    "0": {
-                        "question": "Hat glutenfreie Angebote"
-                    }
-                }
-            },
-            "15": {
-                "options": {
-                    "0": {
-                        "question": "Hat laktosefreie Angebote"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
@@ -4719,7 +4698,6 @@
                     }
                 }
             },
-            
             "10": {
                 "options": {
                     "0": {
@@ -4744,6 +4722,27 @@
                 "options": {
                     "0": {
                         "question": "Stromanschluss vorhanden"
+                    }
+                }
+            },
+            "13": {
+                "options": {
+                    "0": {
+                        "question": "Hat zuckerfreie Angebote"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Hat glutenfreie Angebote"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Hat laktosefreie Angebote"
                     }
                 }
             }

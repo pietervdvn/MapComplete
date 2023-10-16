@@ -16,7 +16,8 @@
     "da": "Campingpladser",
     "pa_PK": "کیمپ‌سایٹاں",
     "cs": "Kempovací místa",
-    "eu": "Kanpinak"
+    "eu": "Kanpinak",
+    "pl": "Miejsca dla kamperów"
   },
   "shortDescription": {
     "en": "Find sites to spend the night with your camper",
@@ -32,7 +33,8 @@
     "es": "Encuentra sitios para pasar la noche con tu caravana",
     "da": "Find steder, hvor du kan overnatte med din autocamper",
     "ca": "Troba llocs on passar la nit amb la teua caravana",
-    "cs": "Najděte místa, kde můžete strávit noc se svým karavanem"
+    "cs": "Najděte místa, kde můžete strávit noc se svým karavanem",
+    "pl": "Znajdź miejsca, w których możesz spędzić noc w kamperze"
   },
   "description": {
     "en": "This site collects all official camper stopover places and places where you can dump grey and black water. You can add details about the services provided and the cost. Add pictures and reviews.",
@@ -48,7 +50,8 @@
     "ca": "Aquest lloc recull tots els llocs oficials de parada de caravanes i els llocs on es poden abocar les aigües grises i negres. Pots afegir detalls sobre els serveis prestats i el cost. Afig fotos i ressenyes.",
     "da": "Denne side samler alle officielle camper-stopsteder og steder, hvor du kan dumpe gråt og sort vand. Du kan tilføje detaljer om de leverede tjenester og omkostningerne. Tilføj billeder og anmeldelser. Dette er en hjemmeside og en webapp. Dataene gemmes i OpenStreetMap, så de vil være gratis for evigt og kan genbruges af enhver app.",
     "cs": "Na této stránce jsou shromážděna všechna oficiální místa pro zastavení karavanů a místa, kde můžete vypouštět šedou a černou vodu. Můžete přidat podrobnosti o poskytovaných službách a cenách. Přidávejte fotografie a recenze.",
-    "eu": "Karabanak gelditzeko leku ofizial guztiak eta ur gris eta beltzak botatzeko lekuak biltzen ditu. Emandako zerbitzuei eta kostuari buruzko xehetasunak gehitu ditzakezu. Erantsi argazkiak eta aipamenak."
+    "eu": "Karabanak gelditzeko leku ofizial guztiak eta ur gris eta beltzak botatzeko lekuak biltzen ditu. Emandako zerbitzuei eta kostuari buruzko xehetasunak gehitu ditzakezu. Erantsi argazkiak eta aipamenak.",
+    "pl": "Na tej stronie zebrano wszystkie oficjalne miejsca postoju kamperów oraz miejsca, w których można wylać zanieczyszczoną wodę. Możesz dodać szczegóły dotyczące świadczonych usług i kosztów. Dodaj zdjęcia i recenzje."
   },
   "icon": "./assets/themes/campersite/caravan.svg",
   "startLat": 43.14,
@@ -76,7 +79,8 @@
         "da": "Campingpladser",
         "pa_PK": "کیمب‌سائیٹاں",
         "cs": "Kempovací místa",
-        "eu": "Akanpatzeko tokiak"
+        "eu": "Akanpatzeko tokiak",
+        "pl": "Miejsca kamperowe"
       },
       "minzoom": 10,
       "source": {
@@ -102,7 +106,8 @@
           "ca": "Lloc d'acampada {name}",
           "da": "Camperplads {name}",
           "cs": "Kempovací místo {name}",
-          "es": "Sitio de camping {name}"
+          "es": "Sitio de camping {name}",
+          "pl": "Pole kamperowe {name}"
         },
         "mappings": [
           {
@@ -125,7 +130,8 @@
               "da": "Unavngiven autocamperplads",
               "pa_PK": "بے نام کیمپ‌سائیٹ",
               "cs": "Nepojmenované kempovací místo",
-              "es": "Camping sin nombre"
+              "es": "Camping sin nombre",
+              "pl": "Nienazwane miejsce dla kamperów"
             }
           }
         ]
@@ -147,7 +153,8 @@
         "da": "autocamperpladser",
         "pa_PK": "کیمب‌سائیٹاں",
         "cs": "kempovací místa",
-        "eu": "Kanpatzeko tokiak"
+        "eu": "Kanpatzeko tokiak",
+        "pl": "miejsca dla kamperów"
       },
       "tagRenderings": [
         "images",
@@ -282,7 +289,8 @@
             "da": "Dette sted koster {charge}",
             "ca": "Aquest lloc cobra {charge}",
             "cs": "Toto místo si účtuje {charge}",
-            "eu": "Leku honek {charge} kobratzen du"
+            "eu": "Leku honek {charge} kobratzen du",
+            "pl": "To miejsce pobiera opłatę w wysokości {charge}"
           },
           "question": {
             "en": "How much does this place charge?",
@@ -299,7 +307,8 @@
             "da": "Hvor meget koster dette sted?",
             "ca": "Quant cobra aquest lloc?",
             "cs": "Kolik si toto místo účtuje?",
-            "eu": "Zenbat kobratzen du leku honek?"
+            "eu": "Zenbat kobratzen du leku honek?",
+            "pl": "Ile kosztuje to miejsce?"
           },
           "freeform": {
             "key": "charge"
@@ -327,7 +336,8 @@
             "nl": "Heeft deze plaats een loosplaats?",
             "ca": "Aquest lloc té una estació d'abocament sanitari?",
             "da": "Har dette sted en sanitær afleveringsplads?",
-            "cs": "Má toto místo sanitární skládku?"
+            "cs": "Má toto místo sanitární skládku?",
+            "pl": "Czy w tym miejscu znajduje się stacja zrzutu ścieków sanitarnych?"
           },
           "mappings": [
             {
@@ -350,7 +360,8 @@
                 "nl": "Deze plaats heeft een loosplaats",
                 "ca": "Aquest lloc té una estació d'abocament sanitari",
                 "da": "Dette sted har en sanitær afleveringsplads",
-                "cs": "Toto místo má sanitární skládku"
+                "cs": "Toto místo má sanitární skládku",
+                "pl": "W tym miejscu znajduje się stacja zrzutu ścieków sanitarnych"
               }
             },
             {
@@ -373,7 +384,8 @@
                 "nl": "Deze plaats heeft geen loosplaats",
                 "ca": "Aquest lloc no té una estació d'abocament sanitari",
                 "da": "Dette sted har ikke en sanitær afleveringsplads",
-                "cs": "Toto místo nemá sanitární skládku"
+                "cs": "Toto místo nemá sanitární skládku",
+                "pl": "Miejsce to nie posiada stacji zrzutu ścieków sanitarnych"
               }
             }
           ]
@@ -393,7 +405,8 @@
             "da": "{capacity} campister kan bruge dette sted på samme tid",
             "ca": "{capacity} els acampadors poden utilitzar aquest lloc al mateix temps",
             "cs": "{capacity} táborníků může toto místo využívat současně",
-            "eu": "{capacity} kanpinlariek aldi berean erabil dezakete leku hau"
+            "eu": "{capacity} kanpinlariek aldi berean erabil dezakete leku hau",
+            "pl": "{capacity} kamperów może z tego miejsca korzystać jednocześnie"
           },
           "question": {
             "en": "How many campers can stay here? (skip if there is no obvious number of spaces or allowed vehicles)",
@@ -409,7 +422,8 @@
             "da": "Hvor mange campister kan bo her? (spring over, hvis der ikke er noget åbenlyst antal pladser eller tilladte køretøjer)",
             "ca": "Quants acampadors poden allotjar-se ací? (ometre si no hi ha un nombre evident de places o vehicles permesos)",
             "cs": "Kolik táborníků zde může zůstat? (přeskočte, pokud není zjevný počet míst nebo povolených vozidel)",
-            "eu": "Zenbat kanpinlari gera daitezke hemen? (jauzi egin leku edo ibilgailu kopuru nabaririk ez badago)"
+            "eu": "Zenbat kanpinlari gera daitezke hemen? (jauzi egin leku edo ibilgailu kopuru nabaririk ez badago)",
+            "pl": "Ile kamperów może tu przebywać? (pomiń, jeśli nie ma oczywistej liczby miejsc lub dozwolonych pojazdów)"
           },
           "freeform": {
             "key": "capacity",
@@ -729,7 +743,8 @@
             "nl": "Kan men hier plekken huren voor langere termijn?",
             "nb_NO": "Tilbyr dette stedet plasser for langtidsleie?",
             "ca": "Aquest lloc ofereix llocs de lloguer a llarg termini?",
-            "cs": "Nabízí zde místa k dlouhodobému pronájmu?"
+            "cs": "Nabízí zde místa k dlouhodobému pronájmu?",
+            "pl": "Czy to miejsce oferuje miejsca do wynajęcia długoterminowego?"
           },
           "mappings": [
             {
@@ -752,7 +767,8 @@
                 "nb_NO": "Det finnes noen plasser for langtidsleie, men man kan også bruke dem på dagsbasis",
                 "ca": "Hi ha alguns punts per al lloguer a llarg termini, però també es pot romandre diàriament",
                 "da": "Der er nogle pladser til langtidsleje, men du kan også bo på daglig basis",
-                "cs": "K dispozici jsou místa k dlouhodobému pronájmu, ale je také možné zde zůstat na denní bázi"
+                "cs": "K dispozici jsou místa k dlouhodobému pronájmu, ale je také možné zde zůstat na denní bázi",
+                "pl": "Są miejsca na wynajem długoterminowy, ale można też wynajmować na co dzień"
               }
             },
             {
@@ -776,7 +792,8 @@
                 "nb_NO": "Det er ingen permanente gjester her",
                 "ca": "No hi han hostes permanents aquí",
                 "cs": "Nejsou zde žádní trvalí hosté",
-                "eu": "Ez dago bezero iraunkorrik hemen"
+                "eu": "Ez dago bezero iraunkorrik hemen",
+                "pl": "Nie ma tu stałych gości"
               }
             },
             {
@@ -798,7 +815,8 @@
                 "nl": "Hier kan je enkel verblijven met een langetermijnscontract (deze plaats verdwijnt van deze kaart als je dit kiest)",
                 "ca": "Només és possible romandre aquí si teniu un contracte a llarg termini (aquest lloc desapareixerà d'aquest mapa si trieu això)",
                 "nb_NO": "Det er kun mulig å bo her hvis man har en langtidskontrakt (dette stedet vil forsvinne fra kartet hvis du velger dette)",
-                "cs": "Pobyt zde je možný pouze v případě, že máte dlouhodobou smlouvu (pokud se pro tuto možnost rozhodnete, toto místo z mapy zmizí)"
+                "cs": "Pobyt zde je možný pouze v případě, že máte dlouhodobou smlouvu (pokud se pro tuto možnost rozhodnete, toto místo z mapy zmizí)",
+                "pl": "Zakwaterowanie tutaj jest możliwe tylko jeśli masz umowę długoterminową (jeśli wybierzesz tę opcję, to miejsce zniknie z mapy)"
               }
             }
           ]
@@ -835,7 +853,8 @@
             "da": "Vil du tilføje en generel beskrivelse af dette sted? (Gentag ikke oplysninger, der tidligere er blevet spurgt eller vist ovenfor. Hold dem venligst objektive - udtalelser går ind i anmeldelserne)",
             "nb_NO": "Vil du legge til en generell beskrivelse av dette stedet? (Ikke gjenta info det har blitt spurt om eller som vises ovenfor. Hold det objektivt. Meninger henvises til vurderingene.)",
             "cs": "Chcete přidat obecný popis tohoto místa? (Neopakujte informace, na které jsme se ptali dříve, nebo které byly uvedeny výše. Zachovejte prosím objektivitu - názory patří do hodnocení)",
-            "eu": "Gustatuko litzaizuke toki honen deskribapen orokorra gehitzea? (Ez errepikatu aurretik eskatutako edo adierazitako informazioa. Mesedez, eutsi helburuari - berrikuspenetarako iritziak)"
+            "eu": "Gustatuko litzaizuke toki honen deskribapen orokorra gehitzea? (Ez errepikatu aurretik eskatutako edo adierazitako informazioa. Mesedez, eutsi helburuari - berrikuspenetarako iritziak)",
+            "pl": "Chcesz dodać ogólny opis tego miejsca? (Nie powtarzaj informacji zadanych wcześniej lub pokazanych powyżej. Zachowaj obiektywizm – opinie trafiają do recenzji)"
           },
           "freeform": {
             "key": "description",
@@ -867,7 +886,8 @@
             "da": "en autocamperplads",
             "pa_PK": "اِک کیمپ‌سائیٹ",
             "cs": "kempovací místa",
-            "eu": "Kanpin bat"
+            "eu": "Kanpin bat",
+            "pl": "miejsce dla kampera"
           },
           "description": {
             "en": "Add a new official camper site. These are designated places to stay overnight with your camper. They might look like a real camping or just look like a parking. They might not be signposted at all, but just be defined in a municipal decision. A regular parking intended for campers where it is not expected to spend the night, is -not- a camper site ",
@@ -883,7 +903,8 @@
             "ca": "Afig un nou lloc d'acampada oficial. Són llocs designats per a passar la nit amb la teua caravana. Poden semblar-se a un càmping real o simplement a un aparcament. Pot ser que no estiguen senyalitzats en absolut, sinó que simplement estiguen definits per una decisió municipal. Un aparcament normal destinat als acampadors en el qual no s'espera que es passe la nit, no és un càmping. ",
             "da": "Tilføj en ny officiel campingplads. Disse er udpegede steder at overnatte med din autocamper. De kan ligne en rigtig campingplads eller bare ligne en parkeringsplads. De er måske slet ikke skiltet, men er blot defineret i en kommunal beslutning. En almindelig parkering beregnet til campister, hvor det ikke forventes at overnatte, er -ikke- en autocamperplads ",
             "cs": "Přidejte nové oficiální kempovací místo. Jedná se o místa, určená pro přenocování s karavanem. Mohou vypadat jako skutečný kemp nebo jen jako parkoviště. Takováto místa nemusí být označena, ale stačí, pokud jsou pouze definována v rozhodnutí obce. Běžné parkoviště určené pro táborníky, kde se nepovažuje za kempovací místo. ",
-            "eu": "Kanpaleku ofizialeko beste leku bat gehitu du. Gaua zure karabanarekin igarotzeko lekuak dira. Benetako kanpin baten edo, besterik gabe, aparkaleku baten itxura izan dezakete. Baliteke ez egotea inola ere seinaleztatuta, baizik eta udal erabaki batean definitzea. Kanpinlarientzako aparkaleku arrunt bat ez da kanpin bat, gaua bertan pasatzea espero ez bada ere. "
+            "eu": "Kanpaleku ofizialeko beste leku bat gehitu du. Gaua zure karabanarekin igarotzeko lekuak dira. Benetako kanpin baten edo, besterik gabe, aparkaleku baten itxura izan dezakete. Baliteke ez egotea inola ere seinaleztatuta, baizik eta udal erabaki batean definitzea. Kanpinlarientzako aparkaleku arrunt bat ez da kanpin bat, gaua bertan pasatzea espero ez bada ere. ",
+            "pl": "Dodaj nowe oficjalne miejsce dla kamperów. Są to wyznaczone miejsca, w których można przenocować w swoim kamperze. Mogą wyglądać jak prawdziwy kemping lub po prostu wyglądać jak parking. Mogą one w ogóle nie być oznakowane, a jedynie określone w decyzji gminy. Zwykły parking przeznaczony dla kamperów, na którym nie przewiduje się nocowania, nie jest miejscem dla kamperów "
           }
         }
       ],
@@ -931,7 +952,8 @@
         "ca": "Estacions d'abocament sanitari",
         "da": "Sanitære afleveringspladser",
         "cs": "Sanitární skládky",
-        "es": "Estaciones sanitarias"
+        "es": "Estaciones sanitarias",
+        "pl": "Stacje zrzutów sanitarnych"
       },
       "minzoom": 10,
       "source": {
@@ -955,7 +977,8 @@
           "nl": "Loosplaats {name}",
           "ca": "Estació d'abocament {name}",
           "es": "Vertedero {name}",
-          "cs": "Odpadní stanice {name}"
+          "cs": "Odpadní stanice {name}",
+          "pl": "Stacja zrzutów {name}"
         },
         "mappings": [
           {
@@ -976,7 +999,8 @@
               "nl": "Loosplaats",
               "ca": "Estació d'abocament",
               "es": "Vertedero",
-              "cs": "Odpadní stanice"
+              "cs": "Odpadní stanice",
+              "pl": "Stacja zrzutowa"
             }
           }
         ]
@@ -995,7 +1019,8 @@
         "ca": "Estacions d'abocament sanitari",
         "da": "Sanitære afleveringspladser",
         "cs": "Sanitární skládky",
-        "es": "Vertederos Sanitarios"
+        "es": "Vertederos Sanitarios",
+        "pl": "Stacje zrzutów sanitarnych"
       },
       "tagRenderings": [
         "images",
@@ -1086,7 +1111,8 @@
             "es": "Este lugar cobra {charge}",
             "ca": "Aquest lloc costa {charge}",
             "da": "Dette sted opkræver {charge}",
-            "cs": "Toto místo si účtuje {charge}"
+            "cs": "Toto místo si účtuje {charge}",
+            "pl": "To miejsce pobiera opłatę w wysokości {charge}"
           },
           "question": {
             "en": "How much does this place charge?",
@@ -1103,7 +1129,8 @@
             "da": "Hvor meget koster det at bruge dette sted?",
             "cs": "Kolik si toto místo účtuje?",
             "nb_NO": "Hvor mye koster det å bruke dette stedet?",
-            "eu": "Zenbat kobratzen dute toki honetan?"
+            "eu": "Zenbat kobratzen dute toki honetan?",
+            "pl": "Ile kosztuje to miejsce?"
           },
           "freeform": {
             "key": "charge"
@@ -1131,7 +1158,8 @@
             "da": "Har dette sted et vandpost?",
             "ca": "Aquest lloc té un punt d'aigua?",
             "cs": "Má toto místo vodní zdroj?",
-            "es": "¿Este lugar tiene toma de agua?"
+            "es": "¿Este lugar tiene toma de agua?",
+            "pl": "Czy to miejsce ma punkt z wodą?"
           },
           "mappings": [
             {
@@ -1155,7 +1183,8 @@
                 "cs": "Na tomto místě se nachází vodní zdroj",
                 "nb_NO": "Dette stedet har en vannpost",
                 "es": "Este lugar tiene una toma de agua",
-                "eu": "Leku honek ur-hartune bat du"
+                "eu": "Leku honek ur-hartune bat du",
+                "pl": "To miejsce ma punkt poboru wody"
               }
             },
             {
@@ -1178,7 +1207,8 @@
                 "ca": "Aquest lloc no té un punt d'aigua",
                 "cs": "Toto místo nemá vodní zdroj",
                 "nb_NO": "Dette stedet har ikke en vannpost",
-                "es": "Este lugar no tiene toma de agua"
+                "es": "Este lugar no tiene toma de agua",
+                "pl": "To miejsce nie ma punktu poboru wody"
               }
             }
           ]
@@ -1198,7 +1228,8 @@
             "ca": "Aquí pots desfer-te de les aigües grises?",
             "cs": "Lze na tomto místě likvidovat šedou vodu?",
             "nb_NO": "Kan du kvitte deg med gråvann her?",
-            "es": "¿Puede desechar las aguas grises aquí?"
+            "es": "¿Puede desechar las aguas grises aquí?",
+            "pl": "Czy można tutaj pozbyć się szarej wody?"
           },
           "mappings": [
             {
@@ -1220,7 +1251,8 @@
                 "da": "Du kan bortskaffe gråt vand her",
                 "cs": "Zde můžete likvidovat šedou vodu",
                 "nb_NO": "Du kan kvitte deg med gråvann her",
-                "es": "Las aguas grises pueden eliminarse aquí"
+                "es": "Las aguas grises pueden eliminarse aquí",
+                "pl": "Tutaj możesz pozbyć się szarej wody"
               }
             },
             {
@@ -1242,7 +1274,8 @@
                 "ca": "Aquí no pots desfer-te de les aigües grises",
                 "cs": "Zde nelze likvidovat šedou vodu",
                 "nb_NO": "Du kan ikke kvitte deg med gråvann her",
-                "es": "No se pueden eliminar las aguas grises aquí"
+                "es": "No se pueden eliminar las aguas grises aquí",
+                "pl": "Nie można tu wylewać szarej wody"
               }
             }
           ]
@@ -1262,7 +1295,8 @@
             "da": "Kan man bortskaffe kemisk toiletaffald her?",
             "ca": "Aquí pots depositar els residus del vàter químic?",
             "cs": "Lze na tomto místě likvidovat chemický toaletní odpad?",
-            "es": "¿Se pueden tirar aquí los residuos químicos de los aseos?"
+            "es": "¿Se pueden tirar aquí los residuos químicos de los aseos?",
+            "pl": "Czy można tutaj wyrzucać odpady chemiczne z toalet?"
           },
           "mappings": [
             {
@@ -1284,7 +1318,8 @@
                 "da": "Her kan du bortskaffe kemisk toiletaffald",
                 "ca": "Aquí pots depositar els residus del vàter químic",
                 "cs": "Zde můžete likvidovat chemický toaletní odpad",
-                "es": "Puede eliminar aquí los residuos químicos de los aseos"
+                "es": "Puede eliminar aquí los residuos químicos de los aseos",
+                "pl": "Tutaj możesz wyrzucić odpady chemiczne z toalet"
               }
             },
             {
@@ -1306,7 +1341,8 @@
                 "da": "Du kan ikke bortskaffe kemisk toiletaffald her",
                 "ca": "Aquí no pots depositar els residus del vàter químic",
                 "cs": "Zde nemůžete likvidovat chemický toaletní odpad",
-                "es": "Aquí no se pueden tirar los residuos químicos de los aseos"
+                "es": "Aquí no se pueden tirar los residuos químicos de los aseos",
+                "pl": "Nie można tutaj wyrzucać odpadów chemicznych z toalet"
               }
             }
           ]
@@ -1326,7 +1362,8 @@
             "da": "Hvem kan bruge denne losseplads?",
             "cs": "Kdo může použít tuto skládku?",
             "es": "¿Quien puede usar el vertedero?",
-            "eu": "Nork erabil dezake hondakindegia?"
+            "eu": "Nork erabil dezake hondakindegia?",
+            "pl": "Kto może korzystać z tej stacji zrzutów?"
           },
           "mappings": [
             {
@@ -1347,7 +1384,8 @@
                 "da": "Du skal bruge en netværksnøgle/-kode for at bruge dette",
                 "ca": "Necessites un codi/clau de xarxa per usar-lo",
                 "cs": "K použití potřebujete síťový klíč/kód",
-                "es": "Necesitas una clave/código de red para usarlo"
+                "es": "Necesitas una clave/código de red para usarlo",
+                "pl": "Aby z tego skorzystać, potrzebny jest klucz/kod sieci"
               }
             },
             {
@@ -1367,7 +1405,8 @@
                 "ca": "Heu de ser client del càmping/lloc d'acampada per utilitzar aquest lloc",
                 "da": "Du skal være kunde hos camping/campingplads for at bruge dette sted",
                 "cs": "Abyste mohli toto místo používat, musíte být zákazníkem kempu/kempovacího místa",
-                "es": "Necesitas ser cliente del camping para usar este lugar"
+                "es": "Necesitas ser cliente del camping para usar este lugar",
+                "pl": "Aby korzystać z tego miejsca, musisz być klientem kempingu/miejsca dla kamperów"
               }
             },
             {
@@ -1389,7 +1428,8 @@
                 "da": "Alle kan bruge denne losseplads",
                 "cs": "Tuto skládku může použít kdokoli",
                 "es": "Cualquiera puede utilizar este vertedero",
-                "eu": "Edonork erabil dezake hondakindegi hau"
+                "eu": "Edonork erabil dezake hondakindegi hau",
+                "pl": "Każdy może korzystać z tej stacji zrzutu"
               },
               "hideInAnswer": true
             },
@@ -1412,7 +1452,8 @@
                 "da": "Alle kan bruge denne losseplads",
                 "cs": "Tuto skládku může použít kdokoli",
                 "es": "Cualquiera puede usar este vertedero",
-                "eu": "Edonork erabil dezake hondakindegi hau"
+                "eu": "Edonork erabil dezake hondakindegi hau",
+                "pl": "Każdy może korzystać z tej stacji zrzutu"
               }
             }
           ]
@@ -1430,7 +1471,8 @@
             "es": "Esta estación forma parte de la red {network}",
             "da": "Denne station er en del af netværket {network}",
             "ca": "Aquesta estació forma part de la xarxa {network}",
-            "cs": "Tato stanice je součástí sítě {network}"
+            "cs": "Tato stanice je součástí sítě {network}",
+            "pl": "Ta stacja jest częścią sieci {network}"
           },
           "question": {
             "en": "What network is this place a part of? (skip if none)",
@@ -1444,7 +1486,8 @@
             "es": "¿A qué red forma parte este lugar? (saltar si a ninguna)",
             "da": "Hvilket netværk er dette sted en del af? (spring over hvis ingen)",
             "ca": "A quina xarxa forma part aquest lloc? (Salta si a cap)",
-            "cs": "Jaké sítě je toto místo součástí? (přeskočte, pokud žádné)"
+            "cs": "Jaké sítě je toto místo součástí? (přeskočte, pokud žádné)",
+            "pl": "Do jakiej sieci należy to miejsce? (pomiń, jeśli nie ma)"
           },
           "freeform": {
             "key": "network"
@@ -1468,7 +1511,8 @@
             "da": "en sanitær afleveringsplads",
             "ca": "una estació d'abocament sanitari",
             "cs": "sanitární skládka",
-            "es": "un vertedero sanitario"
+            "es": "un vertedero sanitario",
+            "pl": "stacja zrzutu sanitarnego"
           },
           "description": {
             "en": "Add a new sanitary dump station. This is a place where camper drivers can dump waste water or chemical toilet waste. Often there's also drinking water and electricity.",
@@ -1482,7 +1526,8 @@
             "da": "Tilføj en ny sanitær afleveringsplads. Dette er et sted, hvor autocamperchauffører kan dumpe spildevand eller kemisk toiletaffald. Ofte er der også drikkevand og el.",
             "cs": "Přidejte novou sanitární skládku. Toto je místo, kam mohou řidiči obytných vozů vypouštět odpadní vodu nebo odpad z chemických toalet. Často je zde také dostupná pitná voda a elektřina.",
             "es": "Añadir un nuevo vertedero sanitario. Se trata de un lugar donde los autocaravanistas pueden verter las aguas residuales o los residuos químicos de los aseos. A menudo también hay agua potable y electricidad.",
-            "ca": "Afegir una nova estació d'abocador sanitari. Aquest és un lloc on els conductors de campers poden abocar aigües residuals o residus de vàter químic. Sovint també hi ha aigua potable i electricitat."
+            "ca": "Afegir una nova estació d'abocador sanitari. Aquest és un lloc on els conductors de campers poden abocar aigües residuals o residus de vàter químic. Sovint també hi ha aigua potable i electricitat.",
+            "pl": "Dodaj nową stację zrzutu sanitarnego. To miejsce, w którym kierowcy kamperów mogą wyrzucać ścieki lub odpady z toalet chemicznych. Często jest tam też woda pitna i prąd."
           }
         }
       ],
@@ -1519,7 +1564,8 @@
           "nb_NO": "Dette stedet drives av {operator}",
           "ca": "Aquest lloc és operat per {operator}",
           "cs": "Toto místo je provozováno {operator}",
-          "eu": "Leku hau {operator}k operatzen du"
+          "eu": "Leku hau {operator}k operatzen du",
+          "pl": "To miejsce jest obsługiwane przez {operator}"
         },
         "question": {
           "en": "Who operates this place?",
@@ -1533,7 +1579,8 @@
           "da": "Hvem driver dette sted?",
           "nb_NO": "Hvem driver dette stedet?",
           "ca": "Qui opera aquest lloc?",
-          "cs": "Kdo toto místo provozuje?"
+          "cs": "Kdo toto místo provozuje?",
+          "pl": "Kto obsługuje to miejsce?"
         },
         "freeform": {
           "key": "operator"

@@ -35,16 +35,6 @@
             "1": {
                 "title": "volně stojící plakátovací skříň"
             },
-            "10": {
-                "description": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
-                "title": "cedule"
-            },
-            "11": {
-                "title": "socha"
-            },
-            "12": {
-                "title": "nástěnná malba"
-            },
             "2": {
                 "title": "plakátovací skříň připevněná na stěnu"
             },
@@ -71,6 +61,16 @@
             },
             "9": {
                 "title": "totem"
+            },
+            "10": {
+                "description": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
+                "title": "cedule"
+            },
+            "11": {
+                "title": "socha"
+            },
+            "12": {
+                "title": "nástěnná malba"
             }
         },
         "tagRenderings": {
@@ -165,9 +165,6 @@
                     "1": {
                         "then": "Toto je deska"
                     },
-                    "10": {
-                        "then": "Toto je nástěnná malba"
-                    },
                     "2": {
                         "then": "Toto je sloup"
                     },
@@ -191,6 +188,9 @@
                     },
                     "9": {
                         "then": "Toto je totem"
+                    },
+                    "10": {
+                        "then": "Toto je nástěnná malba"
                     }
                 },
                 "question": "O jaký typ reklamního prvku se jedná?",
@@ -204,9 +204,6 @@
                 },
                 "1": {
                     "then": "Deska"
-                },
-                "10": {
-                    "then": "Nástěnná malba"
                 },
                 "2": {
                     "then": "Skříň na plakáty"
@@ -231,6 +228,9 @@
                 },
                 "9": {
                     "then": "Totem"
+                },
+                "10": {
+                    "then": "Nástěnná malba"
                 }
             }
         }
@@ -312,15 +312,6 @@
                     "1": {
                         "then": "Nástěnná malba"
                     },
-                    "10": {
-                        "then": "Azulejo (španělské dekorativní dlaždice)"
-                    },
-                    "11": {
-                        "then": "Obklady a dlažba"
-                    },
-                    "12": {
-                        "then": "Dřevořezba"
-                    },
                     "2": {
                         "then": "Malba"
                     },
@@ -344,6 +335,15 @@
                     },
                     "9": {
                         "then": "Reliéf"
+                    },
+                    "10": {
+                        "then": "Azulejo (španělské dekorativní dlaždice)"
+                    },
+                    "11": {
+                        "then": "Obklady a dlažba"
+                    },
+                    "12": {
+                        "then": "Dřevořezba"
                     }
                 },
                 "question": "Jaký je typ tohoto uměleckého díla?",
@@ -1850,27 +1850,6 @@
                     "1": {
                         "question": "Má <div style='display: inline-block'><b><b>Schuko nástěnná zástrčka</b> bez zemního kolíku (CEE7/4 typu F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> konektor"
                     },
-                    "10": {
-                        "question": "Má <div style='display: inline-block'><b><b>Type 2 s kabelem</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> konektor"
-                    },
-                    "11": {
-                        "question": "Má <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (na značkový typ2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> konektor"
-                    },
-                    "12": {
-                        "question": "Má <div style='display: inline-block'><b><b>Tesla Supercharger (destinace)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> konektor"
-                    },
-                    "13": {
-                        "question": "Má <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (typ 2 s kabelem označeným jako tesla)</b> <img style='width: 1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> konektor"
-                    },
-                    "14": {
-                        "question": "Má <div style='display: inline-block'><b><b>USB</b> pro nabíjení telefonů a drobné elektroniky</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> konektor"
-                    },
-                    "15": {
-                        "question": "Má <div style='display: inline-block'><b><b>Bosch Active Connect s 3 kolíky</b> a kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> konektor"
-                    },
-                    "16": {
-                        "question": "Má <div style='display: inline-block'><b><b>Bosch Active Connect s 5 kolíky</b> a kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> konektor"
-                    },
                     "2": {
                         "question": "Má <div style='display: inline-block'><b><b>Evropskou zásuvku</b> se zemnícím kolíkem (CEE7/4 typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> konektor"
                     },
@@ -1894,6 +1873,27 @@
                     },
                     "9": {
                         "question": "Má <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> konektor"
+                    },
+                    "10": {
+                        "question": "Má <div style='display: inline-block'><b><b>Type 2 s kabelem</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> konektor"
+                    },
+                    "11": {
+                        "question": "Má <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (na značkový typ2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> konektor"
+                    },
+                    "12": {
+                        "question": "Má <div style='display: inline-block'><b><b>Tesla Supercharger (destinace)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> konektor"
+                    },
+                    "13": {
+                        "question": "Má <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (typ 2 s kabelem označeným jako tesla)</b> <img style='width: 1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> konektor"
+                    },
+                    "14": {
+                        "question": "Má <div style='display: inline-block'><b><b>USB</b> pro nabíjení telefonů a drobné elektroniky</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> konektor"
+                    },
+                    "15": {
+                        "question": "Má <div style='display: inline-block'><b><b>Bosch Active Connect s 3 kolíky</b> a kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> konektor"
+                    },
+                    "16": {
+                        "question": "Má <div style='display: inline-block'><b><b>Bosch Active Connect s 5 kolíky</b> a kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> konektor"
                     }
                 }
             }
@@ -1949,6 +1949,24 @@
                     "1": {
                         "then": "<b>Schuko nástěnná zástrčka</b> bez zemního kolíku (CEE7/4 typu F)"
                     },
+                    "2": {
+                        "then": "<b>Evropská zástrčka</b> se zemnícím kolíkem (CEE7/4 typ E)"
+                    },
+                    "3": {
+                        "then": "<b>Evropská zástrčka</b> se zemnícím kolíkem (CEE7/4 typ E)"
+                    },
+                    "6": {
+                        "then": "<b>Type 1 s kabelem</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<b>Type 1 s kabelem</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Type 1 <i> bez</i> kabelu</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<b>Type 1 <i> bez</i> kabelu</b> (J1772)"
+                    },
                     "10": {
                         "then": "<b>Typ 1 CCS</b> (aka Typ 1 Combo)"
                     },
@@ -1973,9 +1991,6 @@
                     "19": {
                         "then": "<b>Typ 2 s kabelem</b> (mennekes)"
                     },
-                    "2": {
-                        "then": "<b>Evropská zástrčka</b> se zemnícím kolíkem (CEE7/4 typ E)"
-                    },
                     "20": {
                         "then": "<b>Tesla Supercharger CCS</b> (značkový typ2_css)"
                     },
@@ -1987,21 +2002,6 @@
                     },
                     "27": {
                         "then": "<b>USB</b> pro nabíjení telefonů a maléh elektroniky"
-                    },
-                    "3": {
-                        "then": "<b>Evropská zástrčka</b> se zemnícím kolíkem (CEE7/4 typ E)"
-                    },
-                    "6": {
-                        "then": "<b>Type 1 s kabelem</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Type 1 s kabelem</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Type 1 <i> bez</i> kabelu</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b>Type 1 <i> bez</i> kabelu</b> (J1772)"
                     }
                 },
                 "question": "Jaké nabíjecí přípojky jsou zde k dispozici?"
@@ -2313,44 +2313,6 @@
     },
     "filters": {
         "filter": {
-            "10": {
-                "options": {
-                    "1": {
-                        "question": "Psi povoleny"
-                    },
-                    "2": {
-                        "question": "Psi nejsou povoleni"
-                    }
-                }
-            },
-            "11": {
-                "options": {
-                    "0": {
-                        "question": "Nabízí internet"
-                    }
-                }
-            },
-            "13": {
-                "options": {
-                    "0": {
-                        "question": "Má nabídku bez cukru"
-                    }
-                }
-            },
-            "14": {
-                "options": {
-                    "0": {
-                        "question": "Má bezlepkovou nabídku"
-                    }
-                }
-            },
-            "15": {
-                "options": {
-                    "0": {
-                        "question": "Má nabídku bez laktózy"
-                    }
-                }
-            },
             "4": {
                 "options": {
                     "0": {
@@ -2398,6 +2360,44 @@
                 "options": {
                     "0": {
                         "question": "Použití zdarma"
+                    }
+                }
+            },
+            "10": {
+                "options": {
+                    "1": {
+                        "question": "Psi povoleny"
+                    },
+                    "2": {
+                        "question": "Psi nejsou povoleni"
+                    }
+                }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Nabízí internet"
+                    }
+                }
+            },
+            "13": {
+                "options": {
+                    "0": {
+                        "question": "Má nabídku bez cukru"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Má bezlepkovou nabídku"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Má nabídku bez laktózy"
                     }
                 }
             }
@@ -2808,13 +2808,6 @@
                     }
                 }
             },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Všechny poznámky"
-                    }
-                }
-            },
             "5": {
                 "options": {
                     "0": {
@@ -2833,6 +2826,13 @@
                 "options": {
                     "0": {
                         "question": "Zobrazit pouze otevřené poznámky"
+                    }
+                }
+            },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Všechny poznámky"
                     }
                 }
             }
@@ -3132,21 +3132,6 @@
                     "1": {
                         "then": "To je normální parkovací místo."
                     },
-                    "10": {
-                        "then": "Jedná se o parkovací místo vyhrazené pro rodiče s dětmi."
-                    },
-                    "11": {
-                        "then": "Jedná se o parkovací místo vyhrazené pro zaměstnance."
-                    },
-                    "12": {
-                        "then": "Jedná se o parkovací místo vyhrazené pro taxíky."
-                    },
-                    "13": {
-                        "then": "Jedná se o parkovací místo vyhrazené pro vozidla táhnoucí přívěs."
-                    },
-                    "14": {
-                        "then": "Jedná se o parkovací místo vyhrazené pro sdílení automobilů."
-                    },
                     "2": {
                         "then": "Jedná se o parkovací místo pro osoby se zdravotním postižením."
                     },
@@ -3170,6 +3155,21 @@
                     },
                     "9": {
                         "then": "Jedná se o parkovací místo vyhrazené pro motocykly."
+                    },
+                    "10": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro rodiče s dětmi."
+                    },
+                    "11": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro zaměstnance."
+                    },
+                    "12": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro taxíky."
+                    },
+                    "13": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro vozidla táhnoucí přívěs."
+                    },
+                    "14": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro sdílení automobilů."
                     }
                 },
                 "question": "Co je to za parkovací místo?"

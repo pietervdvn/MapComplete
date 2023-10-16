@@ -29,7 +29,7 @@
     "ja": "すべての樹木をマッピングする",
     "zh_Hant": "所有樹木的地圖",
     "ru": "Карта деревьев",
-    "pl": "Sporządzić mapę wszystkich drzew",
+    "pl": "Mapa wszystkich drzew",
     "de": "Kartieren Sie alle Bäume",
     "nb_NO": "Kartlegg alle trærne",
     "hu": "Az összes fa feltérképezése",
@@ -53,7 +53,8 @@
     "es": "¡Mapa de los Árboles!",
     "da": "Kortlæg alle træerne!",
     "cs": "Zmapujte všechny stromy!",
-    "pt_BR": "Mapeie todas as árvores!"
+    "pt_BR": "Mapeie todas as árvores!",
+    "pl": "Zmapuj wszystkie drzewa!"
   },
   "icon": "./assets/themes/trees/logo.svg",
   "startLat": 50.642,

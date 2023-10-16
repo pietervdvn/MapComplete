@@ -23,7 +23,8 @@
     "fr": "Sur cette carte, vous trouverez les hôtels dans votre zone",
     "cs": "Na této mapě najdete hotely ve vašem okolí",
     "es": "En este mapa encontrarás hoteles en tu zona",
-    "ca": "En aquest mapa trobareu hotels a la vostra zona"
+    "ca": "En aquest mapa trobareu hotels a la vostra zona",
+    "pl": "Na tej mapie znajdziesz hotele w Twojej okolicy"
   },
   "icon": "./assets/layers/hotel/hotel.svg",
   "startLat": 50.8552,

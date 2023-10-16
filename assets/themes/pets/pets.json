@@ -20,7 +20,8 @@
     "fr": "Retrouvez sur cette carte des points d’intérêts pour votre animal : vétérinaires, parcs à chien, animaleries, restaurants acceptant les chiens, etc.",
     "ca": "A aquest mapa, trobaràs diferents llocs interesants per a les teves mascotes: veterinaris, parcs per a gossos, botigues d'animals, restaurants amables amb gossos, ...",
     "es": "En este mapa, encontrarás varios lugares interesantes para tus mascotas: veterinarios, parques para perros, tiendas de mascotas, restaurantes aptos para perros, ...",
-    "cs": "Na této mapě najdete různá zajímavá místa pro vaše domácí mazlíčky: veterináře, psí parky, obchody pro zvířata, restaurace pro psy, ..."
+    "cs": "Na této mapě najdete různá zajímavá místa pro vaše domácí mazlíčky: veterináře, psí parky, obchody pro zvířata, restaurace pro psy, ...",
+    "pl": "Na tej mapie znajdziesz różne ciekawe miejsca dla swoich zwierząt: weterynarze, wybiegi dla psów, sklepy zoologiczne, restauracje przyjazne psom, ..."
   },
   "icon": "./assets/layers/dogpark/dog-park.svg",
   "startZoom": 10,
@@ -42,7 +43,8 @@
           "ca": "Restaurants que accepten gossos",
           "es": "Restaurantes que admiten perros",
           "cs": "Restaurace vhodné pro vstup se psy",
-          "zh_Hant": "寵物友善餐廳"
+          "zh_Hant": "寵物友善餐廳",
+          "pl": "Restauracje przyjazne psom"
         },
         "mapRendering": [
           {
@@ -92,7 +94,8 @@
           "pa_PK": "کُتیاں دی اِجازت دیاں دکاناں",
           "es": "Tiendas aptas para perros",
           "cs": "Obchody vhodné pro vstup se psy",
-          "zh_Hant": "寵物友善商家"
+          "zh_Hant": "寵物友善商家",
+          "pl": "Sklepy przyjazne psom"
         },
         "title": {
           "render": {
@@ -106,7 +109,8 @@
             "pa_PK": "کُتیاں دی اِجازت دیاں دکاناں",
             "es": "Tiendas aptas para perros",
             "cs": "Obchody vhodné pro vstup se psy",
-            "zh_Hant": "寵物友善商家"
+            "zh_Hant": "寵物友善商家",
+            "pl": "Sklepy przyjazne psom"
           },
           "mappings": [
             {
@@ -196,7 +200,8 @@
               "pa_PK": "کُتیاں دی اِجازت دی دکان",
               "es": "Tienda adaptada para perros",
               "cs": "obchod vhodný pro vstup se psem",
-              "zh_Hant": "寵物友善商家"
+              "zh_Hant": "寵物友善商家",
+              "pl": "sklep przyjazny psom"
             },
             "tags": [
               "dog=yes",
@@ -211,7 +216,8 @@
               "ca": "Una botiga on pots dur al gos gairebé a tot arreu",
               "es": "Una tienda a la que se puede llevar un perro a casi todas partes",
               "cs": "Obchod, ve kterém si můžete vzít psa téměř kamkoli",
-              "zh_Hant": "你幾乎可以攜帶寵物到處去的商店"
+              "zh_Hant": "你幾乎可以攜帶寵物到處去的商店",
+              "pl": "Sklep, w którym niemal wszędzie można zabrać psa"
             }
           }
         ],

@@ -64,7 +64,8 @@
             "nl": "Land",
             "ca": "País",
             "fr": "Pays",
-            "pl": "Kraj"
+            "pl": "Kraj",
+            "cs": "Země"
           },
           "osmTags": "level=country"
         }
@@ -77,7 +78,8 @@
           "question": {
             "en": "Sub Country Group",
             "de": "Regionale Gruppe",
-            "ca": "Subgrup de països"
+            "ca": "Subgrup de països",
+            "cs": "Skupina dílčích zemí"
           },
           "osmTags": "level=subcountryGroup"
         }
@@ -106,7 +108,8 @@
           "question": {
             "en": "Intermediate Region",
             "de": "Mittlere Region",
-            "ca": "Regió intermèdia"
+            "ca": "Regió intermèdia",
+            "cs": "Střední region"
           },
           "osmTags": "level=intermediateRegion"
         }
@@ -121,7 +124,8 @@
             "de": "Gebiet",
             "ca": "Territori",
             "fr": "Territoire",
-            "pl": "Terytorium"
+            "pl": "Terytorium",
+            "cs": "Území"
           },
           "osmTags": "level=territory"
         }
@@ -137,7 +141,8 @@
             "nl": "Wereld",
             "ca": "Món",
             "fr": "Monde",
-            "pl": "Świat"
+            "pl": "Świat",
+            "cs": "Svět"
           },
           "osmTags": "level=world"
         }
@@ -152,7 +157,8 @@
             "de": "Andere Communities",
             "ca": "Altres Comunitats",
             "fr": "Autres communautés",
-            "pl": "Inne społeczności"
+            "pl": "Inne społeczności",
+            "cs": "Ostatní komunity"
           },
           "osmTags": "level="
         }
@@ -164,6 +170,7 @@
     "de": "Eine Ebene aller OpenStreetMap-Communities",
     "ca": "Una capa que mostra les comunitats d'OpenStreetMap",
     "fr": "Une couche affichant les communautés OpenStreetMap",
-    "pl": "Warstwa pokazująca społeczności OpenStreetMap"
+    "pl": "Warstwa pokazująca społeczności OpenStreetMap",
+    "cs": "Vrstva zobrazující komunity OpenStreetMap"
   }
 }

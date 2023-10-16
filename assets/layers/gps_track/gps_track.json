@@ -9,7 +9,8 @@
       "nl": "Jouw traject",
       "de": "Deine zurückgelegte Strecke",
       "ca": "El teu camí recorregut",
-      "fr": "Votre chemin"
+      "fr": "Votre chemin",
+      "cs": "Ujetá cesta"
     }
   },
   "shownByDefault": false,
@@ -21,7 +22,8 @@
         "nl": "Dit is waar je was sinds je deze website hebt geopend. Dit is enkel zichtbaar voor jou en niemand anders. Je locatie wordt niet verstuurd buiten je apparaat.",
         "de": "Dies ist der Weg, den Sie seit dem Besuch dieser Webseite zurückgelegt haben. Keine Sorge - diese Daten sind nur für Sie sichtbar und für niemanden sonst. Ihre Standortdaten werden niemals an ein anderes Gerät gesendet.",
         "fr": "C'est le chemin que vous avez parcouru depuis l'ouverture de ce site. Ne vous inquiétez pas - ceci n'est visible que pour vous et personne d'autre. Vos données de localisation ne sont jamais envoyées hors de l'appareil.",
-        "ca": "Aquest és el camí que heu recorregut des que s'ha obert aquest lloc web. No et preocupis: això només és visible per a tu i ningú més. Les vostres dades d'ubicació mai s'envien fora del dispositiu."
+        "ca": "Aquest és el camí que heu recorregut des que s'ha obert aquest lloc web. No et preocupis: això només és visible per a tu i ningú més. Les vostres dades d'ubicació mai s'envien fora del dispositiu.",
+        "cs": "To je cesta, kterou jste urazili od otevření těchto webových stránek. Nemějte obavy - je viditelná pouze pro vás a pro nikoho jiného. Údaje o vaší poloze nejsou nikdy odesílány mimo zařízení."
       }
     },
     "export_as_gpx",
@@ -42,7 +44,8 @@
     "de": "Zurückgelegte Strecke",
     "fr": "Votre chemin parcouru",
     "da": "Dit tilbagelagte spor",
-    "ca": "La teva traça recorreguda"
+    "ca": "La teva traça recorreguda",
+    "cs": "Vaše procestovaná trasa"
   },
   "mapRendering": [
     {

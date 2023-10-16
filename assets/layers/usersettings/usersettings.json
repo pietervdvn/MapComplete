@@ -5,7 +5,8 @@
     "de": "Eine spezielle Ebene, die nicht für die Darstellung auf einer Karte gedacht ist, sondern für die Festlegung von Benutzereinstellungen verwendet wird",
     "nl": "Een speciale lag die niet getoond wordt op de kaart, maar die de instellingen van de gebruiker weergeeft",
     "pt": "Uma camada especial que não deve ser mostrada em um mapa, mas que é usada para definir as configurações do usuário",
-    "ca": "Una capa especial que no està pensada per mostrar-se en un mapa, però que s'utilitza per configurar la configuració de l'usuari"
+    "ca": "Una capa especial que no està pensada per mostrar-se en un mapa, però que s'utilitza per configurar la configuració de l'usuari",
+    "cs": "Speciální vrstva, která není určena k zobrazení na mapě, ale slouží k nastavení uživatelských nastavení"
   },
   "title": {
     "render": {
@@ -45,7 +46,8 @@
           "then": {
             "en": "The language was set via an URL-parameter and cannot be set by the user.²",
             "de": "Die Sprache wurde über einen URL-Parameter gesetzt und kann nicht vom Benutzer eingestellt werden.²",
-            "ca": "L'idioma es va establir mitjançant un paràmetre d'URL i l'usuari no pot definir-lo.²"
+            "ca": "L'idioma es va establir mitjançant un paràmetre d'URL i l'usuari no pot definir-lo.²",
+            "cs": "Jazyk byl nastaven pomocí parametru URL a uživatel jej nemůže nastavit.²"
           }
         }
       ]
@@ -119,7 +121,8 @@
       "render": {
         "en": "This thematic map has a predefined background layer set. Your default theme setting does not apply",
         "ca": "Aquest mapa temàtic té un conjunt de capes de fons predefinides. La configuració predeterminada del tema no s'aplica",
-        "de": "Diese thematische Karte hat einen vordefinierten Hintergrund. Ihr Standardhintergrund wird nicht angewendet"
+        "de": "Diese thematische Karte hat einen vordefinierten Hintergrund. Ihr Standardhintergrund wird nicht angewendet",
+        "cs": "Tato tematická mapa má předdefinovanou sadu podkladových vrstev. Vaše výchozí nastavení tématu se nepoužije"
       }
     },
     {
@@ -127,7 +130,8 @@
       "question": {
         "en": "What background layer should be shown by default?",
         "ca": "Quina capa de fons s'ha de mostrar per defecte?",
-        "de": "Welche Hintergrundebene soll als Standard verwendet werden?"
+        "de": "Welche Hintergrundebene soll als Standard verwendet werden?",
+        "cs": "Jaká vrstva pozadí by se měla zobrazovat ve výchozím nastavení?"
       },
       "condition": "_theme:backgroundLayer=",
       "mappings": [
@@ -136,7 +140,8 @@
           "then": {
             "en": "Use the default background layer",
             "ca": "Utilitzeu la capa de fons predeterminada",
-            "de": "Standardhintergrund verwenden"
+            "de": "Standardhintergrund verwenden",
+            "cs": "Použití výchozí vrstvu pozadí"
           }
         },
         {
@@ -144,7 +149,8 @@
           "then": {
             "en": "Use OpenStreetMap-carto as default layer",
             "ca": "Utilitzeu OpenStreetMap-carto com a capa predeterminada",
-            "de": "OpenStreetMap-carto als Standardhintergrund verwenden"
+            "de": "OpenStreetMap-carto als Standardhintergrund verwenden",
+            "cs": "Použít OpenStreetMap-carto jako výchozí vrstvu"
           }
         },
         {
@@ -152,7 +158,8 @@
           "then": {
             "en": "Use aerial imagery as default background",
             "ca": "Utilitzeu imatges aèries com a fons predeterminat",
-            "de": "Satellitenbilder als Standardhintergrund verwenden"
+            "de": "Satellitenbilder als Standardhintergrund verwenden",
+            "cs": "Použít letecké snímky jako výchozí pozadí"
           }
         },
         {
@@ -160,7 +167,8 @@
           "then": {
             "en": "Use a non-openstreetmap based map as default background",
             "ca": "Utilitzeu un mapa que no sigui openstreetmap com a fons predeterminat",
-            "de": "Eine eigene Karte als Standardhintergrund verwenden"
+            "de": "Eine eigene Karte als Standardhintergrund verwenden",
+            "cs": "Použití mapy, která není založena na mapě openstreetmap, jako výchozího pozadí"
           }
         },
         {
@@ -168,7 +176,8 @@
           "then": {
             "en": "Use the current background layer (<span class='code'>{__current_background}</span>) as default background",
             "ca": "Utilitzeu la capa de fons actual (<span class='code'>{__current_background}</span>) com a fons predeterminat",
-            "de": "Aktuelle Hintergrundebene (<span class='code'>{__current_background}</span>) als Standardhintergrund verwenden"
+            "de": "Aktuelle Hintergrundebene (<span class='code'>{__current_background}</span>) als Standardhintergrund verwenden",
+            "cs": "Použít aktuální vrstvu pozadí (<span class='code'>{__current_background}</span>) jako výchozí pozadí"
           },
           "hideInAnswer": {
             "or": [
@@ -183,7 +192,8 @@
           "then": {
             "en": "Use background layer <span class='code'>{mapcomplete-preferred-background-layer}</span> as default background",
             "ca": "Utilitza la capa de fons <span class='code'>{mapcomplete-preferred-background-layer}</span> com a fons predeterminat",
-            "de": "Hintergrundebene <span class='code'>{mapcomplete-preferred-background-layer}</span> als Standardhintergrund verwenden"
+            "de": "Hintergrundebene <span class='code'>{mapcomplete-preferred-background-layer}</span> als Standardhintergrund verwenden",
+            "cs": "Použít vrstvu pozadí <span class='code'>{mapcomplete-preferred-background-layer}</span> jako výchozí pozadí"
           },
           "hideInAnswer": true
         }
@@ -308,7 +318,8 @@
         "fr": "Est-ce que les questions pour les champs sans donnée doivent apparaître une à une ou toutes ensembles ?",
         "pt": "As perguntas para campos de dados desconhecidos devem aparecer uma a uma ou juntas?",
         "ca": "Les preguntes amb camps de dades desconeguts haurien d'aparèixer una per una o juntes?",
-        "nl": "Moeten onbeantwoorde vragen om beurt of allemaal samen getoond worden?"
+        "nl": "Moeten onbeantwoorde vragen om beurt of allemaal samen getoond worden?",
+        "cs": "Mají se otázky pro neznámá datová pole zobrazovat jednotlivě, nebo společně?"
       },
       "mappings": [
         {
@@ -319,7 +330,8 @@
             "ca": "Mostra totes les preguntes al quadre d'informació",
             "fr": "Afficher toutes les question en même temps dans l'infobox",
             "pt": "Mostrar todas as perguntas na caixa de informações juntas",
-            "nl": "Toon alle onbeantwoorde vragen"
+            "nl": "Toon alle onbeantwoorde vragen",
+            "cs": "Zobrazit všechny otázky v infoboxu dohromady"
           }
         },
         {
@@ -330,7 +342,8 @@
             "ca": "Mostra les preguntes una per una",
             "fr": "Afficher les questions une à une",
             "pt": "Mostrar perguntas uma a uma",
-            "nl": "Toon de vragen één per één"
+            "nl": "Toon de vragen één per één",
+            "cs": "Zobrazit otázky jednu po druhé"
           }
         }
       ]
@@ -340,7 +353,8 @@
       "question": {
         "en": "Should north always be up?",
         "de": "Soll Norden immer oben sein?",
-        "ca": "El nord hauria d'estar sempre amunt?"
+        "ca": "El nord hauria d'estar sempre amunt?",
+        "cs": "Měl by být sever vždy nahoře?"
       },
       "mappings": [
         {
@@ -350,7 +364,8 @@
             "de": "Drehen der Karte zulassen",
             "ca": "Permet girar el mapa",
             "fr": "Autoriser la rotation de la carte",
-            "da": "Tillad rotation af kortet"
+            "da": "Tillad rotation af kortet",
+            "cs": "Umožnit otáčení mapy"
           }
         },
         {
@@ -359,7 +374,8 @@
             "en": "Always keep north pointing up",
             "de": "Norden immer nach oben zeigen lassen",
             "fr": "Toujours garder le nord en haut",
-            "ca": "Mantingueu sempre el nord apuntant cap amunt"
+            "ca": "Mantingueu sempre el nord apuntant cap amunt",
+            "cs": "Sever vždy směřujte nahoru"
           }
         }
       ]
@@ -383,7 +399,8 @@
           "en": "Anyone possessing this file can make reviews with your identity",
           "de": "Jeder, der diese Datei besitzt, kann mit Ihrer Identität Rezensionen vornehmen",
           "da": "Enhver, der har denne fil, kan lave ændringer med din identitet",
-          "ca": "Qualsevol persona que tingui aquest fitxer pot fer ressenyes amb la vostra identitat"
+          "ca": "Qualsevol persona que tingui aquest fitxer pot fer ressenyes amb la vostra identitat",
+          "cs": "Kdokoli, kdo má tento soubor, může provádět recenze s vaší identitou"
         }
       }
     },
@@ -487,7 +504,8 @@
         "nb_NO": "Oversettelsen for {_theme} i {_language} har {_translation_percentage}% dekning: {_translation_translated_count} strenger av {_translation_total} har blitt oversatt",
         "nl": "Vertalingen voor {_theme} in {_language} zijn momenteel op {_translation_percentage}%: van {_translation_total} teksten zijn er reeds {_translation_translated_count} vertaald",
         "zh_Hant": "{_theme} 的 {_language} 翻譯目前是 {_translation_percentage}%：{_translation_total} 中的 {_translation_translated_count} 已經翻譯了",
-        "fr": "Les traductions pour {_theme} en {_language} sont à {_translation_percentage} % : {_translation_translated_count} chaînes traduites sur {_translation_total}"
+        "fr": "Les traductions pour {_theme} en {_language} sont à {_translation_percentage} % : {_translation_translated_count} chaînes traduites sur {_translation_total}",
+        "cs": "Překlady pro {_theme} v {_language} jsou na úrovni {_translation_percentage}%: {_translation_translated_count} z {_translation_total} je přeloženo"
       },
       "condition": {
         "or": [
@@ -574,7 +592,8 @@
             "pt": "Você fez alterações em {_csCount} ocasiões diferentes! Isso é incrível!",
             "nl": "Je hebt {_csCount} verschillende keren bijgedragen! Dat is indrukwekkend!",
             "da": "Du har lavet ændringer ved {_csCount} forskellige begivenheder! Det er fantastisk!",
-            "es": "Has hecho cambios en {_csCount} ocasiones diferentes. ¡Es alucinante!"
+            "es": "Has hecho cambios en {_csCount} ocasiones diferentes. ¡Es alucinante!",
+            "cs": "Změny jste provedli při {_csCount} různých příležitostech! To je úžasné!"
           },
           "icon": "party"
         }
@@ -606,7 +625,8 @@
             "en": "You have contributed code to MapComplete with {_code_contributions} commits! That's awesome!",
             "de": "Sie haben Code zu MapComplete mit {_code_contributions} Commits beigetragen! Das ist großartig!",
             "nl": "Je hebt mee geprogrammeerd aan MapComplete met {_code_contributions} commits! Das supercool van je! Bedankt hiervoor!",
-            "ca": "Heu aportat codi a MapComplete amb {_code_contributions} commits! Això és increïble!"
+            "ca": "Heu aportat codi a MapComplete amb {_code_contributions} commits! Això és increïble!",
+            "cs": "Přispěli jste do MapComplete kódem s {_code_contributions} revizemi! To je úžasné!"
           },
           "icon": "party",
           "hideInAnswer": true

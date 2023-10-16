@@ -888,7 +888,7 @@
           "then": {
             "en": "This object has advertisements on both sides",
             "ca": "Aquest mupi té publicitat pels dos costas",
-            "es": "Este mupi tiene publicidad por los dos lados",
+            "es": "Este objeto tiene publicidad por los dos lados",
             "de": "Werbung wird auf beiden Seiten angezeigt",
             "cs": "Tento objekt má reklamy na obou stranách",
             "fr": "Cet objet a de la publicité des deux côtés",
@@ -1321,7 +1321,7 @@
       ],
       "title": {
         "ca": "un lletrer",
-        "es": "un lletrer",
+        "es": "un señal",
         "en": "a sign",
         "de": "ein Schild",
         "cs": "cedule",

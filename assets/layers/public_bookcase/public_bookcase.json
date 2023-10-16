@@ -17,7 +17,8 @@
     "fr": "Une armoire ou une boite contenant des livres en libre accès",
     "it": "Una vetrinetta ai bordi della strada contenente libri, aperta al pubblico",
     "ru": "Уличный шкаф с книгами, доступными для всех",
-    "hu": "Egy utcai szekrény könyvekkel, amelyet bárki használhat"
+    "hu": "Egy utcai szekrény könyvekkel, amelyet bárki használhat",
+    "cs": "Skříňka s knihami na ulici, která je přístupná komukoli"
   },
   "source": {
     "osmTags": "amenity=public_bookcase"
@@ -89,7 +90,8 @@
         "ru": "Как называется этот общественный книжный шкаф?",
         "it": "Come si chiama questa microbiblioteca pubblica?",
         "hu": "Mi a neve ennek a nyilvános könyvespolcnak?",
-        "ca": "Com es diu aquesta prestatgeria pública?"
+        "ca": "Com es diu aquesta prestatgeria pública?",
+        "cs": "Jak se jmenuje tato veřejná knihovna?"
       },
       "freeform": {
         "key": "name",
@@ -111,7 +113,8 @@
             "ru": "У этого книжного шкафа нет названия",
             "it": "Questa microbiblioteca non ha un nome proprio",
             "hu": "Ennek a könyvespolcnak nincs neve",
-            "ca": "Aquesta prestatgeria no té un nom"
+            "ca": "Aquesta prestatgeria no té un nom",
+            "cs": "Tato knihovna nemá jméno"
           }
         }
       ],
@@ -136,7 +139,8 @@
         "ru": "Сколько книг помещается в этом общественном книжном шкафу?",
         "it": "Quanti libri può contenere questa microbiblioteca?",
         "hu": "Hány könyv fér el ezen a nyilvános könyvespolcon?",
-        "ca": "Quants llibres caben en aquesta prestatgeria pública?"
+        "ca": "Quants llibres caben en aquesta prestatgeria pública?",
+        "cs": "Kolik knih se vejde do této veřejné knihovny?"
       },
       "freeform": {
         "key": "capacity",
@@ -155,12 +159,14 @@
         "it": "Che tipo di libri si possono trovare in questa microbiblioteca?",
         "ru": "Какие книги можно найти в этом общественном книжном шкафу?",
         "hu": "Milyen fajta könyvek találhatók ezen a közösségi könyvespolcon?",
-        "ca": "Quins tipus de llibres pots trobar a aquesta prestatgeria pública?"
+        "ca": "Quins tipus de llibres pots trobar a aquesta prestatgeria pública?",
+        "cs": "Jaké knihy najdete v této veřejné knihovně?"
       },
       "render": {
         "nl": "Deze plaats serveert vooral {books}",
         "en": "This place mostly serves {books}",
-        "de": "An diesem Ort gibt es hauptsächlich {books}"
+        "de": "An diesem Ort gibt es hauptsächlich {books}",
+        "cs": "Toto místo nabízí hlavně {books}"
       },
       "freeform": {
         "key": "books",
@@ -181,7 +187,8 @@
             "it": "Principalmente libri per l'infanzia",
             "hu": "Többnyire gyermekkönyvek",
             "es": "Mayoritariamente libros infantiles",
-            "ca": "Majoritàriament llibres infantils"
+            "ca": "Majoritàriament llibres infantils",
+            "cs": "Převážně dětské knihy"
           }
         },
         {
@@ -195,7 +202,8 @@
             "it": "Principalmente libri per persone in età adulta",
             "hu": "Többnyire felnőtteknek szóló könyvek",
             "es": "Mayoritariamente libros para adultos",
-            "ca": "Majoritàriament llibres per a adults"
+            "ca": "Majoritàriament llibres per a adults",
+            "cs": "Převážně knihy pro dospělé"
           }
         }
       ]
@@ -209,7 +217,8 @@
         "fr": "Cette microbiliothèque est-elle en extérieur ?",
         "it": "Questa microbiblioteca si trova all'aperto?",
         "hu": "A szabadban van-e ez a könyvespolc?",
-        "ca": "Aquesta prestatgeria es troba a l'exterior?"
+        "ca": "Aquesta prestatgeria es troba a l'exterior?",
+        "cs": "Je tato knihovna umístěna venku?"
       },
       "mappings": [
         {
@@ -220,7 +229,8 @@
             "fr": "Cette microbibliothèque est en intérieur",
             "it": "Questa microbiblioteca si trova al chiuso",
             "hu": "Ez a könyvespolc beltérben található",
-            "ca": "Aquesta prestatgeria es troba a l'interior"
+            "ca": "Aquesta prestatgeria es troba a l'interior",
+            "cs": "Tato knihovna je umístěna v interiéru"
           },
           "if": "indoor=yes"
         },
@@ -232,7 +242,8 @@
             "fr": "Cette microbibliothèque est en extérieur",
             "it": "Questa microbiblioteca si trova all'aperto",
             "hu": "Ez a könyvespolc a szabadban van",
-            "ca": "Aquesta prestatgeria es troba a l'exterior"
+            "ca": "Aquesta prestatgeria es troba a l'exterior",
+            "cs": "Tato knihovna se nachází venku"
           },
           "if": "indoor=no"
         },
@@ -244,7 +255,8 @@
             "fr": "Cette microbibliothèque est en extérieur",
             "it": "Questa microbiblioteca si trova all'aperto",
             "hu": "Ez a könyvszekrény a szabadban van",
-            "ca": "La prestatgeria està ubicada a l'exterior"
+            "ca": "La prestatgeria està ubicada a l'exterior",
+            "cs": "Tato knihovna se nachází venku"
           },
           "if": "indoor=",
           "hideInAnswer": true
@@ -261,7 +273,8 @@
         "it": "Questa microbiblioteca è ad accesso libero?",
         "ru": "Имеется ли свободный доступ к этому общественному книжному шкафу?",
         "hu": "Szabadon hozzáférhető-e ez a közösségi könyvespolc?",
-        "ca": "Aquesta prestatgeria pública és de lliure accés?"
+        "ca": "Aquesta prestatgeria pública és de lliure accés?",
+        "cs": "Je tato veřejná knihovna volně přístupná?"
       },
       "condition": "indoor=yes",
       "mappings": [
@@ -275,7 +288,8 @@
             "ru": "Свободный доступ",
             "hu": "Nyilvánosan használható",
             "es": "Accesible públicamente",
-            "ca": "Accessible al públic"
+            "ca": "Accessible al públic",
+            "cs": "Veřejně přístupné"
           },
           "if": "access=yes"
         },
@@ -288,7 +302,8 @@
             "it": "L'accesso è riservato ai clienti",
             "hu": "Csak ügyfelek használhatják",
             "es": "Solo accesible a clientes",
-            "ca": "Només accessible per als clients"
+            "ca": "Només accessible per als clients",
+            "cs": "Přístupné pouze zákazníkům"
           },
           "if": "access=customers"
         }
@@ -327,7 +342,8 @@
         "fr": "Cette microbibliothèque fait-elle partie d'un réseau/groupe ?",
         "it": "Questa microbiblioteca fa parte di una rete?",
         "hu": "Része-e egy nagyobb hálózatnak ez a nyilvános könyvespolc?",
-        "ca": "Aquesta prestatgeria pública forma part d'una xarxa més gran?"
+        "ca": "Aquesta prestatgeria pública forma part d'una xarxa més gran?",
+        "cs": "Je tato veřejná knihovna součástí větší sítě?"
       },
       "render": {
         "en": "This public bookcase is part of {brand}",
@@ -353,7 +369,8 @@
             "hu": "A „Little Free Library” hálózat része",
             "es": "Parte de la red 'Little Free Library'",
             "pl": "Część sieci \"Little Free Library\"",
-            "ca": "Part de la xarxa 'Little Free Library'"
+            "ca": "Part de la xarxa 'Little Free Library'",
+            "cs": "Součást sítě 'Little Free Library'"
           },
           "if": {
             "and": [
@@ -379,7 +396,8 @@
             "fr": "Cette microbibliothèque ne fait pas partie d'un réseau/groupe",
             "it": "Questa microbiblioteca non fa parte di una rete",
             "hu": "Ez a nyilvános könyvespolc nem része egy nagyobb hálózatnak",
-            "ca": "Aquesta prestatgeria pública no és part d'una xarxa més gran"
+            "ca": "Aquesta prestatgeria pública no és part d'una xarxa més gran",
+            "cs": "Tato veřejná knihovna není součástí větší sítě"
           }
         }
       ],
@@ -509,7 +527,8 @@
             "en": "Has children books",
             "nl": "Kinderboeken aanwezig",
             "de": "Hat Kinderbücher",
-            "ca": "Té llibres infantils"
+            "ca": "Té llibres infantils",
+            "cs": "Má dětské knihy"
           },
           "osmTags": "books~i~.*children.*"
         }
@@ -523,7 +542,8 @@
             "en": "Has books for adults",
             "nl": "Boeken voor volwassenen aanwezig",
             "de": "Hat Bücher für Erwachsene",
-            "ca": "Té llibres per a adults"
+            "ca": "Té llibres per a adults",
+            "cs": "Má knihy pro dospělé"
           },
           "osmTags": "books~i~.*adults.*"
         }
@@ -539,7 +559,8 @@
             "de": "Innen oder Außen",
             "hu": "Beltéri vagy kültéri",
             "es": "Interior o exterior",
-            "ca": "Interior o exterior"
+            "ca": "Interior o exterior",
+            "cs": "Vnitřní nebo venkovní"
           }
         },
         {
@@ -547,7 +568,8 @@
             "en": "Located indoors",
             "nl": "Bevindt zich binnen",
             "de": "Befindet sich im Innenbereich",
-            "ca": "Situat a l'interior"
+            "ca": "Situat a l'interior",
+            "cs": "Nachází se v interiéru"
           },
           "osmTags": "indoor=yes"
         },
@@ -556,7 +578,8 @@
             "nl": "Bevindt zich buiten",
             "en": "Located outdoors",
             "de": "Befindet sich im Freien",
-            "ca": "Situat a l'exterior"
+            "ca": "Situat a l'exterior",
+            "cs": "Nachází se venku"
           },
           "osmTags": {
             "or": [

@@ -53,7 +53,9 @@
               "ca": "un pas de vianants",
               "da": "en overgang",
               "es": "un cruce",
-              "eu": "bidegurutze bat"
+              "eu": "bidegurutze bat",
+              "cs": "křížení",
+              "pl": "przejście"
             },
             "tags": [
               "highway=crossing"
@@ -66,7 +68,8 @@
               "da": "Overgang for fodgængere og/eller cyklister",
               "es": "Cruce para peatones y/o ciclistas",
               "ca": "Creuament per vianants i/o ciclistes",
-              "pl": "Przejście dla pieszych i/lub przejazd dla rowerów"
+              "pl": "Przejście dla pieszych i/lub przejazd dla rowerów",
+              "cs": "Přechod pro chodce a/nebo cyklisty"
             },
             "snapToLayer": "cycleways_and_roads",
             "maxSnapDistance": 25

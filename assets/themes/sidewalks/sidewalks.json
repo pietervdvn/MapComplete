@@ -27,7 +27,8 @@
     "it": "Mappatura del marciapiede",
     "da": "Kortlægning af fortov",
     "pa_PK": "فُت‌پیتھ دا نقشہ بݨاؤݨ",
-    "cs": "Mapování chodníků"
+    "cs": "Mapování chodníků",
+    "pl": "Mapowanie chodnika"
   },
   "description": {
     "en": "Experimental theme",
@@ -42,7 +43,7 @@
     "pa_PK": "آزمائش تھیم",
     "cs": "Experimentální téma",
     "zh_Hant": "實驗性的主題",
-    "pl": "Motyw eksperymentalny"
+    "pl": "Temat eksperymentalny"
   },
   "icon": "./assets/svg/bug.svg",
   "startLat": 0,

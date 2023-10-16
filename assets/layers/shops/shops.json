@@ -89,7 +89,8 @@
     "eo": "Butiko",
     "hu": "Egy bolt",
     "es": "Una tienda",
-    "ca": "Una botiga"
+    "ca": "Una botiga",
+    "cs": "Obchod"
   },
   "tagRenderings": [
     "images",
@@ -145,7 +146,8 @@
     {
       "id": "second_hand",
       "question": {
-        "en": "Does this shop sell second-hand items?"
+        "en": "Does this shop sell second-hand items?",
+        "de": "Verlauft das Geschäft auch Second-Hand-Produkte?"
       },
       "mappings": [
         {
@@ -524,7 +526,8 @@
       "options": [
         {
           "question": {
-            "en": "Only show shops selling second-hand items"
+            "en": "Only show shops selling second-hand items",
+            "de": "Nur Second-Hand-Geschäfte anzeigen"
           },
           "osmTags": {
             "or": [

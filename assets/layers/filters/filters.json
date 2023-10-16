@@ -83,7 +83,8 @@
             "en": "Accepts credit cards",
             "de": "Akzeptiert Kreditkarten",
             "pl": "Przyjmuje karty kredytowe",
-            "ca": "Accepta targetes de crèdit"
+            "ca": "Accepta targetes de crèdit",
+            "cs": "Přijímá kreditní karty"
           }
         }
       ]
@@ -97,7 +98,8 @@
             "nl": "Met en zonder afbeelding",
             "de": "Mit und ohne Bild",
             "pl": "Z oraz bez zdjęć",
-            "ca": "Amb i sense imatges"
+            "ca": "Amb i sense imatges",
+            "cs": "S obrázky i bez nich"
           }
         },
         {
@@ -106,7 +108,8 @@
             "de": "Hat mindestens ein Bild",
             "nl": "Heeft minstens één afbeelding",
             "pl": "Ma co najmniej jedno zdjęcie",
-            "ca": "Té com a mínim una imatge"
+            "ca": "Té com a mínim una imatge",
+            "cs": "Má alespoň jeden obrázek"
           },
           "osmTags": {
             "or": [
@@ -125,7 +128,8 @@
             "de": "Hat wahrscheinlich kein Bild",
             "nl": "Heeft waarschijnlijk geen afbeelding",
             "pl": "Prawdopodobnie nie ma zdjęcia",
-            "ca": "Probablement no té una imatge"
+            "ca": "Probablement no té una imatge",
+            "cs": "Pravděpodobně nemá obrázek"
           },
           "osmTags": {
             "and": [
@@ -150,7 +154,8 @@
             "fr": "Avec revêtement podotactile",
             "nl": "Met voelbare bestrating",
             "pl": "Z wypustkami dla niewidomych",
-            "ca": "Amb superfícies podotàctils"
+            "ca": "Amb superfícies podotàctils",
+            "cs": "S hmatovou dlažbou"
           },
           "osmTags": "tactile_paving=yes"
         }
@@ -167,7 +172,8 @@
             "fr": "Avec ou sans revêtement podotactile",
             "nl": "Met of zonder voelbare bestrating",
             "pl": "Z lub bez wypustek dla niewidomych",
-            "ca": "Amb o sense superfícies podotàctils"
+            "ca": "Amb o sense superfícies podotàctils",
+            "cs": "S nebo bez hmatové dlažby"
           }
         },
         {
@@ -177,7 +183,8 @@
             "fr": "Avec revêtement podotactile",
             "nl": "Met voelbare bestrating",
             "pl": "Z wypustkami dla niewidomych",
-            "ca": "Amb paviments superfícies podotàctils"
+            "ca": "Amb paviments superfícies podotàctils",
+            "cs": "S hmatovou dlažbou"
           },
           "osmTags": "tactile_paving=yes"
         },
@@ -188,7 +195,8 @@
             "fr": "Sans revêtement podotactile",
             "nl": "Zonder voelbare bestrating",
             "pl": "Bez wypustek dla niewidomych",
-            "ca": "Sense superfície podotàctil"
+            "ca": "Sense superfície podotàctil",
+            "cs": "Bez hmatové dlažby"
           },
           "osmTags": "tactile_paving=no"
         },
@@ -200,7 +208,8 @@
             "fr": "Sans information sur le revêtement podotactile",
             "nl": "Geen informatie over voelbare bestrating",
             "pl": "Brak informacji o wypustkach dla niewidomych",
-            "ca": "No hi ha informació sobre superfícies podotàctils"
+            "ca": "No hi ha informació sobre superfícies podotàctils",
+            "cs": "Žádné informace o hmatové dlažbě"
           }
         }
       ]
@@ -234,7 +243,8 @@
             "de": "Nutzung kostenlos",
             "fr": "Utilisation gratuite",
             "da": "Gratis at bruge",
-            "ca": "Ús gratuït"
+            "ca": "Ús gratuït",
+            "cs": "Použití zdarma"
           },
           "osmTags": {
             "or": [
@@ -258,7 +268,8 @@
         {
           "question": {
             "en": "Dogs allowed",
-            "de": "Hunde erlaubt"
+            "de": "Hunde erlaubt",
+            "cs": "Psi povoleny"
           },
           "osmTags": {
             "or": [
@@ -270,7 +281,8 @@
         {
           "question": {
             "en": "No dogs allowed",
-            "de": "Keine Hunde erlaubt"
+            "de": "Keine Hunde erlaubt",
+            "cs": "Psi nejsou povoleni"
           },
           "osmTags": "dog=no"
         }
@@ -282,7 +294,8 @@
         {
           "question": {
             "en": "Offers internet",
-            "de": "Internetzugang vorhanden"
+            "de": "Internetzugang vorhanden",
+            "cs": "Nabízí internet"
           },
           "osmTags": {
             "or": [
@@ -311,7 +324,9 @@
       "options": [
         {
           "question": {
-            "en": "Has a sugar-free offering"
+            "en": "Has a sugar-free offering",
+            "cs": "Má nabídku bez cukru",
+            "de": "Hat zuckerfreie Angebote"
           },
           "osmTags": {
             "or": [
@@ -328,7 +343,9 @@
       "options": [
         {
           "question": {
-            "en": "Has a gluten free offering"
+            "en": "Has a gluten free offering",
+            "cs": "Má bezlepkovou nabídku",
+            "de": "Hat glutenfreie Angebote"
           },
           "osmTags": {
             "or": [
@@ -345,7 +362,9 @@
       "options": [
         {
           "question": {
-            "en": "Has a lactose free offering"
+            "en": "Has a lactose free offering",
+            "cs": "Má nabídku bez laktózy",
+            "de": "Hat laktosefreie Angebote"
           },
           "osmTags": {
             "or": [

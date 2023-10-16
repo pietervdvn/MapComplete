@@ -5382,6 +5382,19 @@
             "render": "Your travelled path"
         }
     },
+    "guidepost": {
+        "description": "Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations",
+        "name": "Guideposts",
+        "presets": {
+            "0": {
+                "description": "A guidepost (also known as fingerpost) is often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations",
+                "title": "a guidepost"
+            }
+        },
+        "title": {
+            "render": "Guidepost"
+        }
+    },
     "hackerspace": {
         "description": "Hackerspace",
         "name": "Hackerspace",
@@ -8622,6 +8635,9 @@
                     },
                     "4": {
                         "question": "Tennis fields"
+                    },
+                    "5": {
+                        "question": "Badminton fields"
                     }
                 }
             }

@@ -29,7 +29,7 @@
     "zh_Hant": "這份地圖顯示領錢與存錢的 ATM",
     "eu": "Mapa honek dirua atera edo sartzeko kutxazain automatikoak erakusten ditu",
     "it": "Questa mappa mostra gli sportelli bancomat per ritirare o depositare del denaro",
-    "pl": "Ta mapa pokazuje bankomaty/wpłatomaty"
+    "pl": "Ta mapa pokazuje bankomaty, w których można wypłacać lub wpłacać pieniądze"
   },
   "icon": "./assets/themes/atm/logo.svg",
   "startLat": 0,
@@ -97,7 +97,8 @@
                   "ca": "Importar aquest caixer automàtic",
                   "eu": "Inportatu kutxazain automatiko hau",
                   "it": "Importa questo sportello bancomat",
-                  "pl": "Importuj ten bankomat"
+                  "pl": "Importuj ten bankomat",
+                  "cs": "Importovat tento bankomat"
                 },
                 "icon": "./assets/svg/addSmall.svg"
               }
@@ -110,7 +111,9 @@
               "en": "OpenStreetMap knows about <a href='#{_closest_osm_poi}'>an ATM which is {_closest_osm_poi_distance} meter away.</a> ",
               "de": "OpenStreetMap kennt <a href='#{_closest_osm_poi}'>einen Geldautomaten, der {_closest_osm_poi_distance} Meter entfernt ist.</a> ",
               "es": "OpenStreetMap sabe sobre <a href='#{_closest_osm_poi}'>un ATM que es {_closest_osm_poi_distance} de distancia.</a> ",
-              "ca": "OpenStreetMap sap sobre <a href='#{_closest_osm_poi}'>un caixer automàtic que està a {_closest_osm_poi_distance} de distància.</a> "
+              "ca": "OpenStreetMap sap sobre <a href='#{_closest_osm_poi}'>un caixer automàtic que està a {_closest_osm_poi_distance} de distància.</a> ",
+              "cs": "OpenStreetMap ví o <a href='#{_closest_osm_poi}'> bankomatu, který je {_closest_osm_poi_distance} metr daleko.</a> ",
+              "pl": "OpenStreetMap wie o <a href='#{_closest_osm_poi}'>bankomacie oddalonym o {_closest_osm_poi_distance} metry.</a> "
             }
           },
           {
@@ -128,7 +131,8 @@
                   "es": "Añade todas las etiquetas sugieridas al ATM más cercano",
                   "ca": "Afegeix totes les etiquetes suggerides al caixer automàtic més proper",
                   "eu": "Gehitu iradokitako etiketa guztiak hurbilen dagoen kutxazainari",
-                  "pl": "Dodaj wszystkie sugerowane znaczniki do najbliższego bankomatu"
+                  "pl": "Dodaj wszystkie sugerowane znaczniki do najbliższego bankomatu",
+                  "cs": "Přidání všech navrhovaných značek do nejbližšího bankomatu"
                 },
                 "image": "./assets/svg/addSmall.svg",
                 "maproulette_task_id": "mr_taskId"

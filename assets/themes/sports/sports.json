@@ -31,7 +31,8 @@
     "ca": "Tot sobre esports, troba camps d'esport, gimnasos i molt més.",
     "es": "Todo sobre deportes, encuentra campos de deporte, gimnasios y mucho más.",
     "cs": "Vše o sportu, sportovní hřiště, fitness centra a další.",
-    "fr": "Tout sur les sports, trouver les terrains de sport, les salles de sport et plus encore."
+    "fr": "Tout sur les sports, trouver les terrains de sport, les salles de sport et plus encore.",
+    "pl": "Wszystko o sporcie, znajdź boiska sportowe, centra fitness i nie tylko."
   },
   "icon": "./assets/themes/sports/sport.svg",
   "startLat": 0,
@@ -76,7 +77,8 @@
               "fr": "Ajouter un nouveau commerce vendant des équipements sportifs.",
               "ca": "Afegeix una nova botiga d'articles esportius.",
               "es": "Añade una nueva tienda de artículos deportivos.",
-              "cs": "Přidejte nový obchod se sportovním zbožím."
+              "cs": "Přidejte nový obchod se sportovním zbožím.",
+              "pl": "Dodaj nowy sklep sprzedający artykuły sportowe."
             }
           }
         ],
