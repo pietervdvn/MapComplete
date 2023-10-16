@@ -6,7 +6,8 @@
     "nl": "Heeft etymology info",
     "de": "Objekte mit Namensherkunft",
     "fr": "A une étymologie",
-    "ca": "Té etimologia"
+    "ca": "Té etimologia",
+    "cs": "Má etymologii"
   },
   "minzoom": 12,
   "source": {
@@ -32,7 +33,8 @@
     "de": "Alle Objekte, die eine bekannte Namensherkunft haben",
     "hu": "Minden olyan objektum, amelynél ismert a nevének az eredete",
     "fr": "Tous les objets dont l’étymologie est connue",
-    "ca": "Tots els objectes que tenen una etimologia coneguda"
+    "ca": "Tots els objectes que tenen una etimologia coneguda",
+    "cs": "Všechny objekty, které mají známou etymologii"
   },
   "calculatedTags": [
     "_same_name_ids=closestn(feat)('*', 250, undefined, 5000)?.filter(f => f.feat.properties.name === feat.properties.name)?.map(f => f.feat.properties.id)??[]"
@@ -164,7 +166,8 @@
         "nl": "<h3>Wikipedia-artikel van de naamgever</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
         "de": "<h3>Wikipedia Artikel zur Namensherkunft</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
         "fr": "<h3>Article Wikipedia de la référence au nom</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
-        "ca": "<h3> Article de la Viquipèdia del nom donant</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
+        "ca": "<h3> Article de la Viquipèdia del nom donant</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
+        "cs": "<h3>Článek autora jména na Wikipedii</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
       }
     },
     {
@@ -173,7 +176,8 @@
         "nl": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Zoeken op inventaris onroerend erfgoed</a>",
         "en": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Search on inventaris onroerend erfgoed</a>",
         "de": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Suche auf inventaris onroerend erfgoed</a>",
-        "fr": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Chercher sur inventaris onroerend erfgoed</a>"
+        "fr": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Chercher sur inventaris onroerend erfgoed</a>",
+        "cs": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Search on inventaris onroerend erfgoed</a>"
       },
       "condition": "_country=be"
     },
@@ -184,7 +188,8 @@
         "nl": "Naar wat is dit object vernoemd?",
         "de": "Wonach ist dieses Objekt benannt?",
         "fr": "En référence à quoi cet objet est-il nommé ?",
-        "pl": "Po czym nazwany jest ten obiekt?"
+        "pl": "Po czym nazwany jest ten obiekt?",
+        "cs": "Po čem je tento objekt pojmenován?"
       },
       "render": {
         "en": "Named after {name:etymology}",
@@ -192,7 +197,8 @@
         "de": "Benannt nach {name:etymology}",
         "da": "Opkaldt efter {name:etymology}",
         "fr": "Nommé en référence à {name:etymology}",
-        "pl": "Nazwane po {name:etymology}"
+        "pl": "Nazwane po {name:etymology}",
+        "cs": "Pojmenováno po {name:etymology}"
       },
       "freeform": {
         "key": "name:etymology"
@@ -206,7 +212,8 @@
             "de": "Der Ursprung dieses Namens ist in der gesamten Literatur unbekannt",
             "da": "Oprindelsen af dette navn er ukendt i al litteratur",
             "fr": "L'origine de ce nom est inconnu",
-            "ca": "L'origen d'aquest nom és desconegut en tota la literatura"
+            "ca": "L'origen d'aquest nom és desconegut en tota la literatura",
+            "cs": "Původ tohoto jména je neznámý v celé literatuře"
           }
         }
       ],
@@ -221,7 +228,8 @@
         "nl": "Dit staat mogelijks vermeld op het straatnaambordje",
         "de": "Das könnte auf einem Straßenschild stehen",
         "fr": "Cela peut être indiqué sur le panneau de la rue",
-        "ca": "Això podria estar escrit al cartell del nom del carrer"
+        "ca": "Això podria estar escrit al cartell del nom del carrer",
+        "cs": "To může být napsáno na ceduli s názvem ulice"
       }
     },
     "questions",
@@ -232,7 +240,8 @@
         "nl": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}",
         "de": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Bild eines Straßenschildes hinzufügen)}",
         "fr": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Ajouter une photo de la plaque de rue)}",
-        "ca": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Afegeix una imatge de la placa amb el nom del carrer)}"
+        "ca": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Afegeix una imatge de la placa amb el nom del carrer)}",
+        "cs": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}"
       }
     },
     {
@@ -248,7 +257,8 @@
         "nl": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Wijzigingen worden automatisch gedaan op alle segmenten met dezelfde naam, true)}",
         "de": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Automatische Datenübernahme auf alle Segmente mit demselben Namen, true)}",
         "fr": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Appliquer automatiquement aux segments avec le même nom, true)}",
-        "ca": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etimology, aplicació automàtica de dades a tots els segments amb el mateix nom, vertader)}"
+        "ca": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etimology, aplicació automàtica de dades a tots els segments amb el mateix nom, vertader)}",
+        "cs": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}"
       }
     },
     {
@@ -260,7 +270,8 @@
         "de": "Zu dieser <b>Straße</b> existiert ein Wikipedia-Artikel:<br/>{wikipedia():max-height:25rem}",
         "fr": "Un article Wikipédia à propos de cette <b>rue</b> existe :<br/>{wikipedia():max-height:25rem}",
         "pl": "Istnieje artykuł Wikipedii na temat tej <b>ulicy</b>:<br/>{wikipedia():max-height:25rem}",
-        "ca": "Existeix un article de la Viquipèdia sobre aquest <b>carrer</b>:<br/>{wikipedia():max-height:25rem}"
+        "ca": "Existeix un article de la Viquipèdia sobre aquest <b>carrer</b>:<br/>{wikipedia():max-height:25rem}",
+        "cs": "Článek na Wikipedii o této <b>ulici</b> existuje:<br/>{wikipedia():max-height:25rem}"
       },
       "condition": "wikidata~*"
     }

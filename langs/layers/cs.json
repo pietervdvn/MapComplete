@@ -1038,20 +1038,28 @@
             "bicycle_tube_vending_machine-brand": {
                 "mappings": {
                     "0": {
-                        "then": "Continental pláště jsou zde prodávány"
+                        "then": "Continental duše jsou zde prodávány"
                     },
                     "1": {
-                        "then": "Schwalbe pláště jsou zde prodávány"
+                        "then": "Schwalbe duše jsou zde prodávány"
                     }
                 },
-                "question": "Jaká značka plášťů je zde prodávána?",
-                "render": "{brand} pláště jsou zde prodávány"
+                "question": "Jaká značka duší je zde prodávána?",
+                "render": "{brand} duše jsou zde prodávány"
             },
             "bicycle_tube_vending_machine-charge": {
-                "question": "Kolik stojí plášť na kolo?",
-                "render": "Cena jednoho pláště {charge}"
+                "question": "Kolik stojí duše na kolo?",
+                "render": "Cena jedné duše {charge}"
             },
             "bicycle_tube_vending_machine-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Udržuje Schwalbe"
+                    },
+                    "1": {
+                        "then": "Udržuje Continental"
+                    }
+                },
                 "question": "Kdo se stará o tento automat?"
             },
             "other-items-vending": {
@@ -1734,6 +1742,13 @@
         }
     },
     "cafe_pub": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} byla trvale uzavřena"
+                }
+            }
+        },
         "description": "Vrstva s kavárnami a hospodami, kde se můžete sejít u skleničky. Vrstva se ptá na několik důležitých otázek",
         "name": "Kavárny a hospody",
         "presets": {
@@ -1955,6 +1970,12 @@
                     "3": {
                         "then": "<b>Evropská zástrčka</b> se zemnícím kolíkem (CEE7/4 typ E)"
                     },
+                    "4": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
                     "6": {
                         "then": "<b>Type 1 s kabelem</b> (J1772)"
                     },
@@ -1972,6 +1993,12 @@
                     },
                     "11": {
                         "then": "<b>Typ 1 CCS</b> (aka Typ 1 Combo)"
+                    },
+                    "12": {
+                        "then": "<b>Tesla Supercharger</b>"
+                    },
+                    "13": {
+                        "then": "<b>Tesla Supercharger</b>"
                     },
                     "14": {
                         "then": "<b>Typ 2</b> (mennekes)"
@@ -1996,6 +2023,15 @@
                     },
                     "21": {
                         "then": "<b>Tesla Supercharger CCS</b> (značkový typ2_css)"
+                    },
+                    "22": {
+                        "then": "<b>Tesla Supercharger (cíl)</b>"
+                    },
+                    "23": {
+                        "then": "<b>Tesla Supercharger (cíl)</b>"
+                    },
+                    "24": {
+                        "then": "<b>Tesla supercharger (cíl)</b> (Typ 2 s kabelem označeným jako Tesla)"
                     },
                     "26": {
                         "then": "<b>USB</b> pro nabíjení telefonů a malé elektroniky"
@@ -2138,16 +2174,385 @@
                     }
                 },
                 "question": "Jaká je maximální doba, po kterou zde můžete zůstat?"
+            },
+            "website": {
+                "question": "Jaká je webová stránka, kde lze najít další informace o této nabíjecí stanici?",
+                "render": "Více informací na <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Nabíjecí stanice pro elektrická jízdní kola"
+                },
+                "1": {
+                    "then": "Nabíjecí stanice pro automobily"
+                }
+            },
+            "render": "Nabíjecí stanice"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " minuty",
+                        "humanSingular": " minut"
+                    },
+                    "1": {
+                        "human": " hodiny",
+                        "humanSingular": " hodin"
+                    },
+                    "2": {
+                        "human": " dny",
+                        "humanSingular": " den"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Volty"
+                    }
+                }
+            },
+            "2": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "A"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "kilowatt"
+                    },
+                    "1": {
+                        "human": "megawatt"
+                    }
+                }
             }
         }
     },
     "climbing": {
-        "description": "Falešná vrstva, která obsahuje tagrenderingy sdílené mezi lezeckými vrstvami"
+        "description": "Falešná vrstva, která obsahuje tagrenderingy sdílené mezi lezeckými vrstvami",
+        "tagRenderings": {
+            "average_length": {
+                "question": "Jaká je (průměrná) délka tras v metrech?",
+                "render": "Cesty jsou <b>{canonical(climbing:length)}</b> v průměru dlouhé"
+            },
+            "bouldering": {
+                "mappings": {
+                    "0": {
+                        "then": "Bouldering je zde možný"
+                    },
+                    "1": {
+                        "then": "Bouldering zde není možný"
+                    },
+                    "2": {
+                        "then": "Bouldering je možný, i když je zde jen několik problémů"
+                    },
+                    "3": {
+                        "then": "Existují {climbing:boulder} boulderové problémy"
+                    }
+                },
+                "question": "Je zde možný bouldering?"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Lezení je zde zdarma"
+                    },
+                    "1": {
+                        "then": "Za výstup je třeba zaplatit poplatek"
+                    }
+                },
+                "question": "Vyžaduje se za výstup poplatek?",
+                "render": "Za výstup zde je třeba zaplatit poplatek ve výši {charge}"
+            },
+            "max_bolts": {
+                "question": "Kolik šroubů na trasu {title()} je potřeba?"
+            },
+            "max_difficulty": {
+                "question": "Jaká je zde trasa nejvyššího stupně podle francouzského klasifikačního systému?"
+            },
+            "sportclimbing": {
+                "mappings": {
+                    "0": {
+                        "then": "Sportovní lezení je zde možné"
+                    },
+                    "1": {
+                        "then": "Sportovní lezení zde není možné"
+                    }
+                },
+                "question": "Je zde možné sportovní lezení na fixní kotvy?"
+            },
+            "toprope": {
+                "mappings": {
+                    "0": {
+                        "then": "Lezení po laně je zde možné"
+                    },
+                    "1": {
+                        "then": "Lezení po laně zde není možné"
+                    }
+                }
+            }
+        }
+    },
+    "climbing_area": {
+        "name": "Lezecké příležitosti",
+        "presets": {
+            "0": {
+                "description": "Lezecká příležitost",
+                "title": "lezecká příležitost"
+            }
+        },
+        "tagRenderings": {
+            "Rock type (crag/rock/cliff only)": {
+                "mappings": {
+                    "0": {
+                        "then": "Vápenec"
+                    }
+                },
+                "question": "Jaký je zde typ skály?",
+                "render": "Typ skály je {rock}"
+            },
+            "Type": {
+                "mappings": {
+                    "0": {
+                        "then": "Lezecký balvan - jediná skála nebo útes s jednou nebo několika lezeckými cestami, na které lze bezpečně vylézt bez lana"
+                    },
+                    "1": {
+                        "then": "Lezecká skála - jediná skála nebo útes s alespoň několika lezeckými cestami"
+                    }
+                }
+            },
+            "name": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato lezecká příležitost nemá jméno"
+                    }
+                },
+                "question": "Jak se jmenuje tato lezecká příležitost?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Lezecká cesta <b>{name}</b>"
+                },
+                "1": {
+                    "then": "Lezecká oblast <b>{name}</b>"
+                },
+                "2": {
+                    "then": "Lezecká lokalita"
+                },
+                "3": {
+                    "then": "Lezecká příležitost <b>{name}</b>"
+                }
+            },
+            "render": "Příležitost k lezení"
+        }
+    },
+    "climbing_club": {
+        "description": "Lezecký klub nebo organizace",
+        "name": "Lezecký klub",
+        "presets": {
+            "0": {
+                "description": "Lezecký klub",
+                "title": "lezecký klub"
+            },
+            "1": {
+                "description": "Nevládní organizace působící v oblasti lezení",
+                "title": "lezecká nezisková organizace"
+            }
+        },
+        "tagRenderings": {
+            "climbing_club-name": {
+                "question": "Jak se jmenuje tento lezecký klub nebo nevládní organizace?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Nevládní lezecká organizace"
+                }
+            },
+            "render": "Lezecký klub"
+        }
+    },
+    "climbing_gym": {
+        "description": "Lezecká tělocvična",
+        "name": "Lezecké tělocvičny",
+        "presets": {
+            "0": {
+                "title": "Lezecká tělocvična"
+            }
+        },
+        "tagRenderings": {
+            "Speed climbing?": {
+                "mappings": {
+                    "0": {
+                        "then": "K dispozici je rychlostní lezecká stěna"
+                    },
+                    "1": {
+                        "then": "Není zde žádná rychlostní lezecká stěna"
+                    },
+                    "2": {
+                        "then": "K dispozici jsou {climbing:speed} rychlostní lezecké stěny"
+                    }
+                },
+                "question": "Je zde rychlostní lezecká stěna?"
+            },
+            "belay_device_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "U každého lana jsou k dispozici jistící zařízení"
+                    },
+                    "1": {
+                        "then": "Jištění si můžete zdarma vypůjčit zde"
+                    },
+                    "2": {
+                        "then": "Jištění si můžete půjčit zde za {service:climbing_belay_device:rental:charge}"
+                    },
+                    "3": {
+                        "then": "Jištění si můžete zapůjčit zde"
+                    },
+                    "4": {
+                        "then": "Zde si <b>nelze</b> půjčit jištění"
+                    }
+                },
+                "question": "Lze si zde půjčit jištění?"
+            },
+            "name": {
+                "question": "Jak se jmenuje tato lezecká tělocvična?"
+            },
+            "rope_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Lezecké lano si můžete zdarma vypůjčit zde"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Lezecká tělocvična"
+        }
+    },
+    "climbing_opportunity": {
+        "tagRenderings": {
+            "climbing-opportunity-name": {
+                "render": "<strong>{name}</strong>"
+            },
+            "climbing-possible": {
+                "mappings": {
+                    "0": {
+                        "then": "Lezení je zde možné"
+                    },
+                    "1": {
+                        "then": "Lezení zde není možné"
+                    },
+                    "2": {
+                        "then": "Lezení zde není možné"
+                    }
+                },
+                "question": "Je zde možné lezení?"
+            }
+        },
+        "title": {
+            "render": "Lezecká příležitost?"
+        }
+    },
+    "climbing_route": {
+        "name": "Lezecké trasy",
+        "presets": {
+            "0": {
+                "title": "lezecká trasa"
+            }
+        },
+        "tagRenderings": {
+            "Length": {
+                "question": "Jak dlouhá je tato lezecká trasa (v metrech)?",
+                "render": "Tato trasa je {canonical(climbing:length)} dlouhá"
+            },
+            "Name": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato lezecká trasa nemá jméno"
+                    }
+                },
+                "question": "Jak se jmenuje tato lezecká cesta?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Lezecká trasa <strong>{name}</strong>"
+                }
+            },
+            "render": "Lezecká trasa"
+        }
     },
     "clock": {
         "description": "Vrstva s veřejnými hodinami",
+        "name": "Hodiny",
+        "presets": {
+            "0": {
+                "description": "Veřejně viditelné hodiny",
+                "title": "hodiny"
+            },
+            "1": {
+                "description": "Veřejně viditelné hodiny umístěné na stěně",
+                "title": "hodiny na stěně"
+            }
+        },
         "tagRenderings": {
+            "barometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Tyto hodiny také zobrazují tlak vzduchu"
+                    },
+                    "1": {
+                        "then": "Tyto hodiny nezobrazují tlak vzduchu"
+                    },
+                    "2": {
+                        "then": "Tyto hodiny pravděpodobně nezobrazují tlak vzduchu"
+                    }
+                },
+                "question": "Zobrazují tyto hodiny také tlak vzduchu?"
+            },
+            "date": {
+                "mappings": {
+                    "0": {
+                        "then": "Tyto hodiny také zobrazují datum"
+                    },
+                    "1": {
+                        "then": "Tyto hodiny nezobrazují datum"
+                    },
+                    "2": {
+                        "then": "Tyto hodiny pravděpodobně nezobrazují datum"
+                    }
+                },
+                "question": "Zobrazují tyto hodiny také datum?"
+            },
             "display": {
+                "mappings": {
+                    "0": {
+                        "then": "Tyto hodiny zobrazují čas pomocí ručiček"
+                    },
+                    "1": {
+                        "then": "Tyto hodiny zobrazují čas s číslicemi"
+                    },
+                    "2": {
+                        "then": "Tyto hodiny zobrazují čas pomocí slunečních hodin"
+                    },
+                    "3": {
+                        "then": "Tyto hodiny zobrazují čas nestandardním způsobem, např. pomocí binárního systému, vody nebo něčeho jiného"
+                    }
+                },
                 "question": "Jak tyto hodiny zobrazují čas?"
             },
             "faces": {
@@ -2271,6 +2676,17 @@
                 },
                 "question": "Může cyklista jet rovně, když svítí červená?"
             },
+            "crossing-has-island": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento přechod má uprostřed ostrůvek"
+                    },
+                    "1": {
+                        "then": "Tento přechod nemá uprostřed ostrůvek"
+                    }
+                },
+                "question": "Má tento přechod uprostřed ostrůvek?"
+            },
             "crossing-is-zebra": {
                 "mappings": {
                     "0": {
@@ -2281,6 +2697,277 @@
                     }
                 },
                 "question": "Jedná se o přechod pro chodce?"
+            },
+            "crossing-right-turn-through-red": {
+                "mappings": {
+                    "0": {
+                        "then": "Cyklista může odbočit doprava, pokud svítí červená"
+                    },
+                    "1": {
+                        "then": "Cyklista může odbočit doprava, pokud svítí červená"
+                    },
+                    "2": {
+                        "then": "Cyklista nemůže odbočit vpravo, pokud svítí červená"
+                    }
+                },
+                "question": "Může cyklista odbočit doprava, když svítí červená?"
+            },
+            "crossing-sound": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento semafor je vybaven zvukovými signály pro usnadnění přecházení, a to jak pro vyhledání přechodu, tak pro přecházení."
+                    },
+                    "1": {
+                        "then": "Tento semafor není vybaven zvukovými signály pro usnadnění přecházení."
+                    },
+                    "2": {
+                        "then": "Tento semafor má zvukový signál, který pomáhá lokalizovat sloup, ale žádný signál, který by signalizoval, že je bezpečné přejít."
+                    },
+                    "3": {
+                        "then": "Tento semafor má zvukový signál, který signalizuje, že je bezpečné přejít, ale nemá žádný signál, který by pomohl lokalizovat sloup."
+                    }
+                },
+                "question": "Má tento semafor zvukové signály pro usnadnění přecházení?"
+            },
+            "crossing-tactile": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento přechod má hmatovou dlažbu"
+                    },
+                    "1": {
+                        "then": "Tento přechod nemá hmatovou dlažbu"
+                    },
+                    "2": {
+                        "then": "Tento přechod má hmatovou dlažbu, ale ne správně"
+                    }
+                },
+                "question": "Má tento přechod hmatovou dlažbu?"
+            },
+            "crossing-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Přechod bez světelné signalizace"
+                    },
+                    "1": {
+                        "then": "Přechod se světelnou signalizací"
+                    },
+                    "2": {
+                        "then": "Přechod pro chodce"
+                    },
+                    "3": {
+                        "then": "Přechod bez označení přechodu"
+                    }
+                },
+                "question": "Co je to za přechod?"
+            },
+            "crossing-vibration": {
+                "mappings": {
+                    "0": {
+                        "then": "Tlačítko tohoto semaforu má vibrační signál, který signalizuje, že je bezpečné přejít."
+                    },
+                    "1": {
+                        "then": "Tlačítko tohoto semaforu nemá vibrační signál, který by signalizoval, že je bezpečné přejít."
+                    }
+                },
+                "question": "Má tento semafor vibrační signály pro usnadnění přecházení? (obvykle se nachází ve spodní části tlačítka pro přecházení)"
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Přechod se světelnou signalizací"
+                }
+            },
+            "render": "Přechod"
+        }
+    },
+    "cycleways_and_roads": {
+        "description": "Veškerá infrastruktura, kterou může někdo projet na kole, doplněná o otázky týkající se této infrastruktury",
+        "name": "Cyklostezky a silnice",
+        "tagRenderings": {
+            "Cycleway type for a road": {
+                "mappings": {
+                    "0": {
+                        "then": "Je zde sdílený jízdní pruh"
+                    },
+                    "1": {
+                        "then": "Vedle silnice je pruh (oddělený barvou)"
+                    },
+                    "2": {
+                        "then": "Na mapě je vyznačena stezka, ale žádná cyklostezka odděleně od této silnice."
+                    },
+                    "3": {
+                        "then": "K dispozici je samostatně vedená cyklostezka"
+                    },
+                    "4": {
+                        "then": "Není zde žádná cyklostezka"
+                    },
+                    "5": {
+                        "then": "Není zde žádná cyklostezka"
+                    }
+                },
+                "question": "Co je to za cyklostezku?"
+            },
+            "Cycleway:smoothness": {
+                "mappings": {
+                    "0": {
+                        "then": "Použitelné pro malá kolečka: kolečkové brusle, skateboardy"
+                    },
+                    "1": {
+                        "then": "Použitelné pro úzká kola: závodní kolo"
+                    },
+                    "2": {
+                        "then": "Použitelné pro běžná kola: městské kolo, invalidní vozík, skútr"
+                    },
+                    "3": {
+                        "then": "Použitelné pro robustní kola: trekingové kolo, auto, rikša"
+                    },
+                    "4": {
+                        "then": "Použitelné pro vozidla s vysokou světlou výškou: lehké terénní vozidlo"
+                    },
+                    "5": {
+                        "then": "Použitelné pro terénní vozidla: těžké terénní vozidlo"
+                    },
+                    "6": {
+                        "then": "Použitelné pro specializovaná terénní vozidla: traktor, ATV"
+                    },
+                    "7": {
+                        "then": "Neprůjezdné / Zákaz vjezdu vozidel"
+                    }
+                },
+                "question": "Jaká je hladkost této cyklostezky?"
+            },
+            "Cycleway:surface": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato cyklostezka je nezpevněná"
+                    },
+                    "1": {
+                        "then": "Tato cyklostezka je zpevněná"
+                    },
+                    "2": {
+                        "then": "Tato cyklostezka je z asfaltu"
+                    },
+                    "3": {
+                        "then": "Tato cyklostezka je tvořena hladkou dlažbou"
+                    },
+                    "4": {
+                        "then": "Tato cyklostezka je betonová"
+                    },
+                    "5": {
+                        "then": "Tato cyklostezka je z dlážděných kamenů (neotesaných nebo usazených)"
+                    },
+                    "6": {
+                        "then": "Tato cyklostezka je vyrobena ze surové přírodního kamene"
+                    },
+                    "7": {
+                        "then": "Tato cyklostezka je tvořena plochou čtvercovou dlažbou"
+                    },
+                    "8": {
+                        "then": "Tato cyklostezka je dřevěná"
+                    },
+                    "9": {
+                        "then": "Tato cyklostezka je štěrková"
+                    },
+                    "10": {
+                        "then": "Tato cyklostezka je tvořena jemným štěrkem"
+                    },
+                    "11": {
+                        "then": "Tato cyklostezka je z oblázkového kamene"
+                    },
+                    "12": {
+                        "then": "Tato cyklostezka je vyrobena ze surové zeminy"
+                    }
+                },
+                "question": "Jaký je povrch cyklostezky?",
+                "render": "Povrch cyklostezky je {cycleway:surface}"
+            },
+            "Is this a cyclestreet? (For a road)": {
+                "mappings": {
+                    "0": {
+                        "then": "Jedná se o cyklostezku a zónu s rychlostí 30 km/h."
+                    },
+                    "1": {
+                        "then": "Tohle je cyklostezka"
+                    },
+                    "2": {
+                        "then": "Toto není cyklostezka."
+                    }
+                },
+                "question": "Je toto cyklostezka?"
+            },
+            "Maxspeed (for road)": {
+                "mappings": {
+                    "0": {
+                        "then": "Maximální rychlost je 20 km/h"
+                    },
+                    "1": {
+                        "then": "Maximální rychlost je 30 km/h"
+                    },
+                    "2": {
+                        "then": "Maximální rychlost je 50 km/h"
+                    },
+                    "3": {
+                        "then": "Maximální rychlost je 70 km/h"
+                    },
+                    "4": {
+                        "then": "Maximální rychlost je 90 km/h"
+                    }
+                },
+                "question": "Jaká je maximální rychlost na této silnici?",
+                "render": "Maximální rychlost na této silnici je {maxspeed} km/h"
+            },
+            "Surface of the road": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato cyklostezka není zpevněná"
+                    },
+                    "1": {
+                        "then": "Tato cyklostezka je zpevněná"
+                    },
+                    "2": {
+                        "then": "Tato cyklostezka je z asfaltu"
+                    },
+                    "3": {
+                        "then": "Tato cyklostezka je tvořena hladkými dlažebními kostkami"
+                    },
+                    "4": {
+                        "then": "Tato cyklostezka je betonová"
+                    },
+                    "5": {
+                        "then": "Tato cyklostezka je vyrobena z dlážděného kamene (netesaného nebo vydlabaného)"
+                    },
+                    "6": {
+                        "then": "Tato cyklostezka je vyrobena ze surového přírodního dlažebního kamene"
+                    },
+                    "7": {
+                        "then": "Tato cyklostezka je vyrobena z ploché čtvercové dlažební kostky"
+                    },
+                    "8": {
+                        "then": "Tato cyklostezka je vyrobena ze dřeva"
+                    },
+                    "9": {
+                        "then": "Tato cyklostezka je ze štěrku"
+                    },
+                    "10": {
+                        "then": "Tato cyklostezka je vyrobena z jemného štěrku"
+                    },
+                    "11": {
+                        "then": "Tato cyklostezka je z oblázků"
+                    },
+                    "12": {
+                        "then": "Tato cyklostezka je vyrobena ze surové půdy"
+                    }
+                },
+                "question": "Z čeho je povrch ulice vyroben?",
+                "render": "Tato silnice je vyrobena z {surface}"
+            },
+            "Surface of the street": {
+                "mappings": {
+                    "0": {
+                        "then": "Použitelné pro malé kolečka: kolečkové brusle, skateboard"
+                    }
+                }
             }
         }
     },
@@ -2311,8 +2998,225 @@
             }
         }
     },
+    "entrance": {
+        "name": "Vchod",
+        "presets": {
+            "0": {
+                "title": "vchod"
+            },
+            "1": {
+                "title": "vnitřní dveře"
+            }
+        },
+        "tagRenderings": {
+            "Door_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Typ dveří není znám"
+                    },
+                    "1": {
+                        "then": "Klasické, pantové dveře podporované klouby"
+                    },
+                    "2": {
+                        "then": "Otočné dveře, které visí na centrálním hřídeli a otáčejí se uvnitř válcového krytu"
+                    },
+                    "3": {
+                        "then": "Posuvné dveře, kde se dveře posouvají do strany, obvykle rovnoběžně se stěnou"
+                    },
+                    "4": {
+                        "then": "Dveře, které se otáčejí nad hlavou, obvykle se vyskytují u garáží"
+                    },
+                    "5": {
+                        "then": "Toto je vchod bez fyzických dveří"
+                    }
+                },
+                "question": "Jaký je typ těchto dveří?",
+                "questionHint": "Zda jsou dveře automatizované, se ptáte v další otázce"
+            },
+            "Entrance type": {
+                "mappings": {
+                    "0": {
+                        "then": "Není znám žádný konkrétní typ vstupu"
+                    },
+                    "1": {
+                        "then": "Jedná se o vnitřní dveře, oddělující místnost nebo chodbu v rámci jedné budovy"
+                    },
+                    "2": {
+                        "then": "Toto je hlavní vchod"
+                    },
+                    "3": {
+                        "then": "Toto je vedlejší vchod"
+                    },
+                    "4": {
+                        "then": "Jedná se o servisní vchod – běžně se používá pouze pro zaměstnance, rozvoz,…"
+                    },
+                    "5": {
+                        "then": "Toto je východ, kam člověk nemůže vstoupit"
+                    },
+                    "6": {
+                        "then": "Toto je vchod, kam lze pouze vstoupit (ale ne vystoupit)"
+                    },
+                    "7": {
+                        "then": "Toto je nouzový východ"
+                    },
+                    "8": {
+                        "then": "Toto je vchod do soukromého domu"
+                    }
+                },
+                "question": "O jaký typ vchodu se jedná?"
+            },
+            "automatic_door": {
+                "mappings": {
+                    "0": {
+                        "then": "Jedná se o automatické dveře"
+                    },
+                    "1": {
+                        "then": "Tyto dveře <b>nejsou</b> automatizované"
+                    },
+                    "2": {
+                        "then": "Tyto dveře se automaticky otevřou, když je detekován <b>pohyb</b>"
+                    },
+                    "3": {
+                        "then": "Tyto dveře se automaticky otevřou, když se spustí <b>senzor v podlaze</b>"
+                    },
+                    "4": {
+                        "then": "Tyto dveře se automaticky otevřou po <b>stisknutí tlačítka</b>"
+                    },
+                    "5": {
+                        "then": "Tyto dveře se neustále otáčí automaticky, ale mají <b>tlačítko pro jejich zpomalení</b>, např. pro vozíčkáře"
+                    },
+                    "6": {
+                        "then": "Tyto dveře se neustále automaticky otáčejí"
+                    },
+                    "7": {
+                        "then": "Tyto dveře otevře personál na požádání <b>stisknutím tlačítka</b>"
+                    },
+                    "8": {
+                        "then": "Tyto dveře otevře personál na požádání"
+                    }
+                }
+            },
+            "kerb-height": {
+                "freeform": {
+                    "placeholder": "Výška obrubníku/prahu dveří"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Tyto dveře nemají obrubník/práh"
+                    }
+                },
+                "question": "Jaká je výška tohoto obrubníku/prahu?",
+                "render": "Výška obrubníku/prahu těchto dveří je {kerb:height}"
+            },
+            "width": {
+                "question": "Jaká je šířka těchto dveří/vchodu?",
+                "render": "Tyto dveře mají šířku {canonical(width)}"
+            }
+        },
+        "title": {
+            "render": "Vchod"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "metr"
+                    },
+                    "1": {
+                        "human": "centimetr"
+                    }
+                }
+            }
+        }
+    },
+    "etymology": {
+        "description": "Všechny objekty, které mají známou etymologii",
+        "name": "Má etymologii",
+        "tagRenderings": {
+            "etymology_multi_apply": {
+                "render": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}"
+            },
+            "simple etymology": {
+                "mappings": {
+                    "0": {
+                        "then": "Původ tohoto jména je neznámý v celé literatuře"
+                    }
+                },
+                "question": "Po čem je tento objekt pojmenován?",
+                "questionHint": "To může být napsáno na ceduli s názvem ulice",
+                "render": "Pojmenováno po {name:etymology}"
+            },
+            "street-name-sign-image": {
+                "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}"
+            },
+            "wikipedia": {
+                "render": "Článek na Wikipedii o této <b>ulici</b> existuje:<br/>{wikipedia():max-height:25rem}"
+            },
+            "wikipedia-etymology": {
+                "render": "<h3>Článek autora jména na Wikipedii</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
+            },
+            "zoeken op inventaris onroerend erfgoed": {
+                "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Search on inventaris onroerend erfgoed</a>"
+            }
+        }
+    },
+    "extinguisher": {
+        "description": "Mapová vrstva pro zobrazení hasicích přístrojů.",
+        "name": "Mapa hasicích přístrojů",
+        "presets": {
+            "0": {
+                "description": "Hasicí přístroj je malé přenosné zařízení používané k zastavení požáru",
+                "title": "hasicí přístroj"
+            }
+        },
+        "tagRenderings": {
+            "extinguisher-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Nalezen uvnitř."
+                    },
+                    "1": {
+                        "then": "Nalezeno venku."
+                    }
+                },
+                "question": "Kde je umístěn?",
+                "render": "Místo: {location}"
+            }
+        },
+        "title": {
+            "render": "Hasicí přístroje"
+        }
+    },
     "filters": {
         "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Nyní otevřeno"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Přijímá hotovost"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Přijímá platební karty"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Přijímá debetní karty"
+                    }
+                }
+            },
             "4": {
                 "options": {
                     "0": {

@@ -8,7 +8,8 @@
     "nb_NO": "Klatreruter",
     "fr": "Voies d’escalade",
     "it": "Vie di arrampicata",
-    "ca": "Rutes d'escalada"
+    "ca": "Rutes d'escalada",
+    "cs": "Lezecké trasy"
   },
   "description": {
     "en": "A single climbing route and its properties. Some properties are derived from the containing features",
@@ -34,7 +35,8 @@
       "it": "Via di arrampicata",
       "fr": "Voie d’escalade",
       "da": "Klatrerute",
-      "ca": "Ruta d'escalada"
+      "ca": "Ruta d'escalada",
+      "cs": "Lezecká trasa"
     },
     "mappings": [
       {
@@ -47,7 +49,8 @@
           "it": "Via di arrampicata <strong>{name}</strong>",
           "fr": "Voie d’escalade <strong>{name}</strong>",
           "da": "Klatrerute <strong>{name}</strong>",
-          "ca": "Ruta d'escalada <strong>{name}</strong>"
+          "ca": "Ruta d'escalada <strong>{name}</strong>",
+          "cs": "Lezecká trasa <strong>{name}</strong>"
         }
       }
     ]
@@ -66,7 +69,8 @@
         "ja": "<strong>{name}</strong>",
         "it": "<strong>{name}</strong>",
         "nb_NO": "<strong>{name}</strong>",
-        "da": "<strong>{name}</strong>"
+        "da": "<strong>{name}</strong>",
+        "cs": "<strong>{name}</strong>"
       },
       "question": {
         "en": "What is the name of this climbing route?",
@@ -77,7 +81,8 @@
         "fr": "Quel est le nom de cette voie d’escalade ?",
         "nb_NO": "Hva er navnet på denne klatreruten?",
         "da": "Hvad hedder denne klatrerute?",
-        "ca": "Quin és el nom d'aquesta ruta d'escalada?"
+        "ca": "Quin és el nom d'aquesta ruta d'escalada?",
+        "cs": "Jak se jmenuje tato lezecká cesta?"
       },
       "freeform": {
         "key": "name"
@@ -98,7 +103,8 @@
             "it": "Questa via di arrampicata non ha un nome",
             "fr": "Cette voie n’a pas de nom",
             "nb_NO": "Denne klatreruten har ikke noe navn",
-            "da": "Denne klatrerute har ikke et navn"
+            "da": "Denne klatrerute har ikke et navn",
+            "cs": "Tato lezecká trasa nemá jméno"
           }
         }
       ],
@@ -113,7 +119,8 @@
         "de": "Wie lang ist diese Kletterroute (in Metern)?",
         "nb_NO": "Hvor mange meter er klatreruten?",
         "da": "Hvor lang er denne klatrerute (i meter)?",
-        "ca": "Quant dura aquesta via d'escalada (en metres)?"
+        "ca": "Quant dura aquesta via d'escalada (en metres)?",
+        "cs": "Jak dlouhá je tato lezecká trasa (v metrech)?"
       },
       "render": {
         "de": "Diese Route ist {canonical(climbing:length)} lang",
@@ -122,7 +129,8 @@
         "ja": "このルート長は、 {canonical(climbing:length)} メーターです",
         "nb_NO": "Denne ruten er {canonical(climbing:length)} lang",
         "it": "Questo percorso è lungo {canonical(climbing:length)}",
-        "fr": "Cette voie fait {canonical(climbing:length)} de long"
+        "fr": "Cette voie fait {canonical(climbing:length)} de long",
+        "cs": "Tato trasa je {canonical(climbing:length)} dlouhá"
       },
       "freeform": {
         "key": "climbing:length",
@@ -215,7 +223,8 @@
         "fr": "une voie d’escalade",
         "de": "eine Kletterroute",
         "it": "una via di arrampicata",
-        "ca": "una ruta d'escalada"
+        "ca": "una ruta d'escalada",
+        "cs": "lezecká trasa"
       },
       "snapToLayer": [
         "climbing_opportunity"
