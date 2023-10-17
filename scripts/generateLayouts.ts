@@ -316,6 +316,7 @@ async function generateCsp(
         "script-src": ["'self'", "https://gc.zgo.at/count.js", ...(options?.scriptSrcs ?? [])].join(
             " ",
         ),
+        "child-src": "self",
         "img-src": "* data:", // maplibre depends on 'data:' to load
         "connect-src": connectSrc.join(" "),
         "report-to": "https://report.mapcomplete.org/csp",
