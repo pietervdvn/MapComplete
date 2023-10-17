@@ -119,7 +119,7 @@ export class GeoLocationState {
             return
         }
 
-        if(navigator.permissions === undefined && navigator.geolocation !== undefined){
+        if (navigator.permissions === undefined && navigator.geolocation !== undefined) {
             // This is probably safari - we just start watching right away
             this.startWatching()
             return
@@ -158,8 +158,8 @@ export class GeoLocationState {
                 self.currentGPSLocation.setData(position.coords)
                 self._previousLocationGrant.setData("true")
             },
-            function () {
-                console.warn("Could not get location with navigator.geolocation")
+            function (e) {
+                console.warn("Could not get location with navigator.geolocation due to", e)
             },
             {
                 enableHighAccuracy: true,
