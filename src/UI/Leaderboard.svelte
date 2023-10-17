@@ -24,6 +24,7 @@
         },
         date: string
     }> = UIEventSource.FromPromise(Utils.downloadJsonCached(source))
+    
 </script>
 
 <h1>Contributed images with MapComplete: leaderboard</h1>
