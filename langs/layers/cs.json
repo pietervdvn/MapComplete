@@ -5142,17 +5142,6 @@
                 }
             }
         },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Odpadkový koš"
-                        }
-                    }
-                }
-            }
-        },
         "name": "Odpadkový koš",
         "presets": {
             "0": {

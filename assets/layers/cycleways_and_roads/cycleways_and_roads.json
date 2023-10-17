@@ -1750,7 +1750,8 @@
     "de": "Infrastruktur, die man mit dem Fahrrad befahren kann, begleitet von diesbezüglichen Fragen",
     "es": "Toda la infraestructura sobre la que alguien puede ir en bici, acompañado de preguntas sobre esta infraestructura\"",
     "fr": "Toutes les infrastructures sur lesquelles quelqu'un peut rouler, accompagnées de questions sur cette infrastructure",
-    "ca": "Totes les infraestructures per les quals algú pot ciclar, acompanyades de preguntes sobre aquesta infraestructura"
+    "ca": "Totes les infraestructures per les quals algú pot ciclar, acompanyades de preguntes sobre aquesta infraestructura",
+    "cs": "Veškerá infrastruktura, kterou může někdo projet na kole, doplněná o otázky týkající se této infrastruktury"
   },
   "pointRendering": [
     {

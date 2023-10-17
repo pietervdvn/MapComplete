@@ -284,6 +284,47 @@
             "render": "Ambulance Station"
         }
     },
+    "animal_shelter": {
+        "description": "An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. ",
+        "name": "Animal shelters",
+        "presets": {
+            "0": {
+                "title": "an animal shelter"
+            }
+        },
+        "tagRenderings": {
+            "2": {
+                "question": "What is the name of this animal shelter?",
+                "render": "This animal shelter is named <b>{name}</b>"
+            },
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": "Animals are kept here until adopted by a new owner"
+                    },
+                    "1": {
+                        "then": "Animals are taken care of for the rest of their lives"
+                    },
+                    "2": {
+                        "then": "Injured animals are rehabilitated here until they can be released in nature again "
+                    }
+                },
+                "question": "What is the purpose of the animal shelter?"
+            },
+            "7": {
+                "question": "When is this animal shelter opened?",
+                "render": "{opening_hours_table()}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Animal shelter"
+        }
+    },
     "artwork": {
         "description": "An open map of statues, busts, graffitis and other artwork all over the world",
         "name": "Artworks",

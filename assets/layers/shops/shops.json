@@ -453,7 +453,6 @@
     },
     "accepts_cash",
     "accepts_cards",
-
     "has_organic",
     {
       "id": "second_hand",

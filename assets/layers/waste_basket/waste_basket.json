@@ -432,5 +432,16 @@
       "color": "#00f",
       "width": "8"
     }
-  ]
+  ],
+  "cs": {
+    "0": {
+      "iconSize": {
+        "mappings": {
+          "0": {
+            "then": "Odpadkový koš"
+          }
+        }
+      }
+    }
+  }
 }
