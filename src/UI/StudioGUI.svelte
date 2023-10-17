@@ -109,7 +109,7 @@
   </div>
   <LoginToggle ignoreLoading={true} slot="else" state={{osmConnection}}>
     <div slot="not-logged-in">
-      <NextButton clss="primary">
+      <NextButton clss="primary" on:click={() => osmConnection.AttemptLogin()}>
         Please log in to use MapComplete Studio
       </NextButton>
     </div>
