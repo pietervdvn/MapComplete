@@ -4,11 +4,12 @@
   import layerSchemaRaw from "../../assets/schemas/layerconfigmeta.json";
   import Region from "./Region.svelte";
   import TabbedGroup from "../Base/TabbedGroup.svelte";
-  import { Store, UIEventSource } from "../../Logic/UIEventSource";
+  import { Store } from "../../Logic/UIEventSource";
   import type { ConfigMeta } from "./configMeta";
   import { Utils } from "../../Utils";
   import type { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson";
   import type { ConversionMessage } from "../../Models/ThemeConfig/Conversion/Conversion";
+  import ErrorIndicatorForRegion from "./ErrorIndicatorForRegion.svelte";
 
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw;
 
@@ -37,10 +38,22 @@
       console.error("BaseLayerRegions in editLayer: no items have group '" + baselayerRegion + "\"");
     }
   }
-  const leftoverRegions: string[] = allNames.filter(r => regionBlacklist.indexOf(r) < 0 && baselayerRegions.indexOf(r) < 0);
   const title: Store<string> = state.getStoreFor(["id"]);
-  const wl = window.location
-  const baseUrl = wl.protocol+"//"+wl.host+"/theme.html?userlayout="
+  const wl = window.location;
+  const baseUrl = wl.protocol + "//" + wl.host + "/theme.html?userlayout=";
+
+  function firstPathsFor(...regionNames: string[]): Set<string> {
+    const pathNames = new Set<string>();
+    for (const regionName of regionNames) {
+      const region: ConfigMeta[] = perRegion[regionName]
+      for (const configMeta of region) {
+        pathNames.add(configMeta.path[0])
+      }
+    }
+    return pathNames;
+
+  }
+
 </script>
 
 <div class="w-full flex justify-between">
@@ -48,31 +61,37 @@
   {#if $hasErrors > 0}
     <div class="alert">{$hasErrors} errors detected</div>
   {:else}
-    <a class="primary button" href={baseUrl+state.server.layerUrl(title.data)} target="_blank" rel="noopener">Try it out</a>
+    <a class="primary button" href={baseUrl+state.server.layerUrl(title.data)} target="_blank" rel="noopener">Try it
+      out</a>
   {/if}
 </div>
 <div class="m4">
-  <TabbedGroup tab={new UIEventSource(2)}>
-    <div slot="title0">General properties</div>
+  <TabbedGroup>
+    <div slot="title0" class="flex">General properties
+      <ErrorIndicatorForRegion firstPaths={firstPathsFor(...baselayerRegions)} {state} />
+    </div>
     <div class="flex flex-col" slot="content0">
       {#each baselayerRegions as region}
         <Region {state} configs={perRegion[region]} title={region} />
       {/each}
     </div>
-    <div slot="title1">Information panel (questions and answers)</div>
+    <div slot="title1" class="flex">Information panel (questions and answers)
+      <ErrorIndicatorForRegion firstPaths={firstPathsFor("title","tagrenderings","editing")} {state} /></div>
     <div slot="content1">
       <Region configs={perRegion["title"]} {state} title="Popup title" />
       <Region configs={perRegion["tagrenderings"]} {state} title="Popup contents" />
       <Region configs={perRegion["editing"]} {state} title="Other editing elements" />
     </div>
 
-    <div slot="title2">Rendering on the map</div>
+    <div slot="title2" class="flex">Rendering on the map
+      <ErrorIndicatorForRegion firstPaths={firstPathsFor("linerendering","pointrendering")} {state} /></div>
     <div slot="content2">
       <Region configs={perRegion["linerendering"]} {state} />
       <Region configs={perRegion["pointrendering"]} {state} />
     </div>
 
-    <div slot="title3">Advanced functionality</div>
+    <div slot="title3" class="flex">Advanced functionality
+      <ErrorIndicatorForRegion firstPaths={firstPathsFor("advanced","expert")} {state} /></div>
     <div slot="content3">
       <Region configs={perRegion["advanced"]} {state} />
       <Region configs={perRegion["expert"]} {state} />
@@ -91,6 +110,9 @@
           {message.level}
           <span class="literal-code">{message.context.path.join(".")}</span>
           {message.message}
+          <span class="literal-code">
+          {message.context.operation.join(".")}
+          </span>
         </li>
       {/each}
     </div>

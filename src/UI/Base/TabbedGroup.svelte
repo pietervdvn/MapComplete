@@ -19,7 +19,7 @@
     export let condition3: Store<boolean> = tr
     export let condition4: Store<boolean> = tr
     
-    export let tab: UIEventSource<number>;
+    export let tab: UIEventSource<number> = new UIEventSource<number>(0);
     let tabElements: HTMLElement[] = [];
     $: tabElements[$tab]?.click();
     $: {

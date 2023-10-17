@@ -89,6 +89,15 @@
     }
     let config: TagRenderingConfig
     let err: string = undefined
+    let messages  = state.messages.mapD(msgs => msgs.filter(msg => {
+        const pth = msg.context.path
+        for (let i = 0; i < Math.min(pth.length, path.length); i++) {
+            if(pth[i] !== path[i]){
+                return false
+            }
+        }
+        return true
+    }))
     try {
         config = new TagRenderingConfig(configJson, "config based on " + schema.path.join("."))
     } catch (e) {
@@ -133,11 +142,15 @@
         console.error("Could not register", path,"due to",e)
     }
 </script>
-
 {#if err !== undefined}
     <span class="alert">{err}</span>
 {:else}
     <div class="w-full flex flex-col">
         <TagRenderingEditable {config} selectedElement={undefined} showQuestionIfUnknown={true} {state} {tags}/>
+        {#if $messages.length > 0}
+            {#each $messages as msg}
+                <div class="alert">{msg.message}</div>
+                {/each}
+            {/if}
     </div>
 {/if}

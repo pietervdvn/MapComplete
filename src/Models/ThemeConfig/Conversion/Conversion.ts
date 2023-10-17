@@ -194,9 +194,9 @@ export class Each<X, Y> extends Conversion<X[], Y[]> {
         }
         const step = this._step
         const result: Y[] = []
-
+        const c = context.inOperation("each")
         for (let i = 0; i < values.length; i++) {
-            const context_ = context.enter(i).inOperation("each")
+            const context_ = c.enter(i - 1)
             const r = step.convert(values[i], context_)
             result.push(r)
         }

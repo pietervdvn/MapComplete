@@ -72,7 +72,6 @@ export default class EditLayerState {
             }
         }
         this.messages = this.configuration.mapD((config) => {
-            const context = ConversionContext.construct([], ["prepare"])
             const trs = Utils.NoNull(config.tagRenderings ?? [])
             for (let i = 0; i < trs.length; i++) {
                 const tr = trs[i]
@@ -98,6 +97,8 @@ export default class EditLayerState {
                 new PrepareLayer(state),
                 new ValidateLayer("dynamic", false, undefined)
             )
+
+            const context = ConversionContext.construct([], ["prepare"])
             prepare.convert(<LayerConfigJson>config, context)
             return context.messages
         })

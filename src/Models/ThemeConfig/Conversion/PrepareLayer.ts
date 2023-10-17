@@ -289,7 +289,11 @@ class ExpandTagRendering extends Conversion<
                 lookup = this.lookup(tr)
             }
             if (lookup === undefined) {
-                if (this._state.sharedLayers?.size > 0) {
+                if (
+                    this._state.sharedLayers?.size > 0 &&
+                    ctx.path.at(-1) !== "icon" &&
+                    !ctx.path.find((p) => p === "pointRendering")
+                ) {
                     ctx.warn(
                         `A literal rendering was detected: ${tr}
                       Did you perhaps forgot to add a layer name as 'layername.${tr}'? ` +

@@ -244,65 +244,6 @@ export default class TagRenderingConfig {
             throw `${context}: A question is defined, but no mappings nor freeform (key) are. The question is ${this.question.txt} at ${context}`
         }
 
-        if (this.freeform) {
-            if (this.render === undefined) {
-                throw `${context}: Detected a freeform key without rendering... Key: ${this.freeform.key} in ${context}`
-            }
-            for (const ln in this.render.translations) {
-                if (ln.startsWith("_")) {
-                    continue
-                }
-                const txt: string = this.render.translations[ln]
-                if (txt === "") {
-                    throw context + " Rendering for language " + ln + " is empty"
-                }
-                if (
-                    txt.indexOf("{" + this.freeform.key + "}") >= 0 ||
-                    txt.indexOf("&LBRACE" + this.freeform.key + "&RBRACE")
-                ) {
-                    continue
-                }
-                if (txt.indexOf("{" + this.freeform.key + ":") >= 0) {
-                    continue
-                }
-
-                if (
-                    this.freeform.type === "opening_hours" &&
-                    txt.indexOf("{opening_hours_table(") >= 0
-                ) {
-                    continue
-                }
-                const keyFirstArg = ["canonical", "fediverse_link", "translated"]
-                if (
-                    keyFirstArg.some(
-                        (funcName) => txt.indexOf(`{${funcName}(${this.freeform.key}`) >= 0
-                    )
-                ) {
-                    continue
-                }
-                if (
-                    this.freeform.type === "wikidata" &&
-                    txt.indexOf("{wikipedia(" + this.freeform.key) >= 0
-                ) {
-                    continue
-                }
-                if (this.freeform.key === "wikidata" && txt.indexOf("{wikipedia()") >= 0) {
-                    continue
-                }
-                if (
-                    this.freeform.type === "wikidata" &&
-                    txt.indexOf(`{wikidata_label(${this.freeform.key})`) >= 0
-                ) {
-                    continue
-                }
-                throw `${context}: The rendering for language ${ln} does not contain the freeform key {${this.freeform.key}}. This is a bug, as this rendering should show exactly this freeform key!\nThe rendering is ${txt} `
-            }
-        }
-
-        if (this.render && this.question && this.freeform === undefined) {
-            throw `${context}: Detected a tagrendering which takes input without freeform key in ${context}; the question is ${this.question.txt}`
-        }
-
         if (!json.multiAnswer && this.mappings !== undefined && this.question !== undefined) {
             let keys = []
             for (let i = 0; i < this.mappings.length; i++) {

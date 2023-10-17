@@ -665,6 +665,76 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
             context.err('Groups are deprecated, use `"label": ["' + json["group"] + '"]` instead')
         }
 
+        if (json.freeform) {
+            const c = context.enters("freeform", "render")
+            if (json.render === undefined) {
+                c.err(
+                    "This tagRendering allows to set a freeform, but does not define a way to `render` this value"
+                )
+            } else {
+                const render = new Translation(<any>json.render)
+
+                for (const ln in render.translations) {
+                    if (ln.startsWith("_")) {
+                        continue
+                    }
+                    const txt: string = render.translations[ln]
+                    if (txt === "") {
+                        c.err(" Rendering for language " + ln + " is empty")
+                    }
+                    if (
+                        txt.indexOf("{" + json.freeform.key + "}") >= 0 ||
+                        txt.indexOf("&LBRACE" + json.freeform.key + "&RBRACE")
+                    ) {
+                        continue
+                    }
+                    if (txt.indexOf("{" + json.freeform.key + ":") >= 0) {
+                        continue
+                    }
+
+                    if (
+                        json.freeform["type"] === "opening_hours" &&
+                        txt.indexOf("{opening_hours_table(") >= 0
+                    ) {
+                        continue
+                    }
+                    const keyFirstArg = ["canonical", "fediverse_link", "translated"]
+                    if (
+                        keyFirstArg.some(
+                            (funcName) => txt.indexOf(`{${funcName}(${json.freeform.key}`) >= 0
+                        )
+                    ) {
+                        continue
+                    }
+                    if (
+                        json.freeform["type"] === "wikidata" &&
+                        txt.indexOf("{wikipedia(" + json.freeform.key) >= 0
+                    ) {
+                        continue
+                    }
+                    if (json.freeform.key === "wikidata" && txt.indexOf("{wikipedia()") >= 0) {
+                        continue
+                    }
+                    if (
+                        json.freeform["type"] === "wikidata" &&
+                        txt.indexOf(`{wikidata_label(${json.freeform.key})`) >= 0
+                    ) {
+                        continue
+                    }
+                    c.err(
+                        `The rendering for language ${ln} does not contain the freeform key {${json.freeform.key}}. This is a bug, as this rendering should show exactly this freeform key!\nThe rendering is ${txt} `
+                    )
+                }
+            }
+        }
+        if (json.render && json["question"] && json.freeform === undefined) {
+            context.err(
+                `Detected a tagrendering which takes input without freeform key in ${context}; the question is ${new Translation(
+                    json["question"]
+                ).textFor("en")}`
+            )
+        }
+
         const freeformType = json["freeform"]?.["type"]
         if (freeformType) {
             if (Validators.availableTypes.indexOf(freeformType) < 0) {
@@ -806,14 +876,20 @@ export class ValidateLayer extends Conversion<
         try {
             layerConfig = new LayerConfig(json, "validation", true)
         } catch (e) {
-            context.err(e)
+            console.error(e)
+            context.err("Could not parse layer due to:" + e)
             return undefined
         }
-        for (const [_, code, __] of layerConfig.calculatedTags ?? []) {
+        for (let i = 0; i < (layerConfig.calculatedTags ?? []).length; i++) {
+            const [_, code, __] = layerConfig.calculatedTags[i]
             try {
                 new Function("feat", "return " + code + ";")
             } catch (e) {
-                throw `Invalid function definition: the custom javascript is invalid:${e} (at ${context}). The offending javascript code is:\n    ${code}`
+                context
+                    .enters("calculatedTags", i)
+                    .err(
+                        `Invalid function definition: the custom javascript is invalid:${e}. The offending javascript code is:\n    ${code}`
+                    )
             }
         }
 
@@ -828,6 +904,7 @@ export class ValidateLayer extends Conversion<
         }
 
         if (json.tagRenderings !== undefined && json.tagRenderings.length > 0) {
+            new On("tagRendering", new Each(new ValidateTagRenderings(json)))
             if (json.title === undefined && json.source !== "special:library") {
                 context.err(
                     "This layer does not have a title defined but it does have tagRenderings. Not having a title will disable the popups, resulting in an unclickable element. Please add a title. If not having a popup is intended and the tagrenderings need to be kept (e.g. in a library layer), set `title: null` to disable this error."
