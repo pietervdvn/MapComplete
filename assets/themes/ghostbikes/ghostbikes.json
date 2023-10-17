@@ -14,7 +14,7 @@
     "gl": "Bicicleta pantasma",
     "hu": "Szellemkerékpárok",
     "it": "Bici fantasma",
-    "pl": "Duch roweru",
+    "pl": "Duchy roweru",
     "pt_BR": "Bicicleta fantasma",
     "ru": "Призрачные велосипеды",
     "sv": "Spökcykel",
@@ -34,7 +34,8 @@
     "da": "En <b>spøgelsescykel</b> er et mindesmærke for en cyklist, der døde i en trafikulykke, i form af en hvid cykel placeret permanent i nærheden af ulykkesstedet.<br/><br/>På dette kort er en kan se alle de spøgelsescykler, som er kendt af OpenStreetMap. Mangler der en spøgelsescykel? Alle kan tilføje eller opdatere oplysninger her - du behøver kun at have en (gratis) OpenStreetMap-konto.",
     "cs": "<b>Kolo duchů</b> je památník pro cyklisty, kteří zemřeli při dopravní nehodě, ve formě bílého kola trvale umístěného poblíž místa nehody.<br/><br/>Na této mapě je možné vidět všechna kola duchů, která jsou známa OpenStreetMap. Chybí na mapě nějaké? Každý může přidat nebo aktualizovat informace zde - stačí mít pouze (bezplatný) účet OpenStreetMap. <p>Na Mastodonu existuje <a href='https://masto.bike/@ghostbikebot' target='_blank'>automatizovaný účet, který posílá měsíční přehled kol duchů po celém světě</a></p>",
     "es": "Una <b>bicicleta fantasma</b> es un monumento en memoria de un ciclista fallecido en un accidente de tráfico, en forma de una bicicleta blanca colocada permanentemente cerca del lugar del accidente.<br/><br/>En este mapa se pueden ver todas las bicicletas fantasma conocidas por OpenStreetMap. ¿Falta alguna bicicleta fantasma? Todo el mundo puede añadir o actualizar información aquí - sólo necesitas tener una cuenta (gratuita) de OpenStreetMap. <p>Existe una <a href='https://masto.bike/@ghostbikebot' target='_blank'>cuenta automatizada en Mastodon que publica un resumen mensual de las bicis fantasma de todo el mundo</a></p>",
-    "ca": "Una <b>bicicleta fantasma</b> és un monument commemoratiu d'un ciclista que va morir en un accident de trànsit en forma d'una bicicleta blanca col·locada permanentment a prop del lloc de l'accident.<br/><br/>En aquest mapa, un pot veure totes les bicicletes fantasma conegudes per OpenStreetMap. Falta una bicicleta fantasma? Tothom pot afegir o actualitzar informació aquí; només cal que tingueu un compte d'OpenStreetMap (gratuït). <p>Hi ha un <a href='https://masto.bike/@ghostbikebot' target='_blank'>compte automatitzat a Mastodon que publica una visió mensual de les bicicletes fantasma a tot el món</a></p>"
+    "ca": "Una <b>bicicleta fantasma</b> és un monument commemoratiu d'un ciclista que va morir en un accident de trànsit en forma d'una bicicleta blanca col·locada permanentment a prop del lloc de l'accident.<br/><br/>En aquest mapa, un pot veure totes les bicicletes fantasma conegudes per OpenStreetMap. Falta una bicicleta fantasma? Tothom pot afegir o actualitzar informació aquí; només cal que tingueu un compte d'OpenStreetMap (gratuït). <p>Hi ha un <a href='https://masto.bike/@ghostbikebot' target='_blank'>compte automatitzat a Mastodon que publica una visió mensual de les bicicletes fantasma a tot el món</a></p>",
+    "pl": "<b>Duch roweru</b> to pomnik upamiętniający rowerzystę, który zginął w wypadku drogowym, w postaci białego roweru umieszczonego na stałe w pobliżu miejsca wypadku.<br/><br/>Na tej mapie każdy może zobaczyć wszystkie takie duchy roweru znane w OpenStreetMap. Czy brakuje ducha roweru? Każdy może tu dodać lub zaktualizować informacje - wystarczy posiadać (bezpłatne) konto OpenStreetMap. <p>Istnieje <a href='https://masto.bike/@ghostbikebot' target='_blank'>automatyczne konto na Mastodonie, na którym publikowany jest miesięczny przegląd duchów roweru na całym świecie</a></p>"
   },
   "icon": "./assets/themes/ghostbikes/logo.svg",
   "startZoom": 1,

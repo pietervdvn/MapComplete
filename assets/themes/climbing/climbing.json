@@ -13,8 +13,9 @@
     "hu": "Mászótérkép",
     "ca": "Gimnasos, clubs i llocs d'escalada",
     "da": "Åbn klatrekort",
-    "cs": "Otevřená lezecká mapa",
-    "es": "Gimnasios de escalada, clubes y lugares"
+    "cs": "Lezecké tělocvičny, kluby a místa",
+    "es": "Gimnasios de escalada, clubes y lugares",
+    "pl": "Siłownie, kluby i miejsca wspinaczkowe"
   },
   "description": {
     "nl": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
@@ -30,7 +31,8 @@
     "da": "På dette kort finder du forskellige klatremuligheder såsom klatremotionsrum, boulderinghaller og sten i naturen.",
     "cs": "Na této mapě najdete nejrůznější možnosti lezení, jako lezecké tělocvičny, boulderingové haly a skály v přírodě.",
     "ca": "A aquest mapa trobaràs varies oportunitats d'escalada, como gimnasos d'escalada, sales d'escalada en bloc i roques a la natura.",
-    "es": "En este mapa encontrará diversas posibilidades de escalada, como rocódromos, salas de búlder y rocas en la naturaleza."
+    "es": "En este mapa encontrará diversas posibilidades de escalada, como rocódromos, salas de búlder y rocas en la naturaleza.",
+    "pl": "Na tej mapie znajdziesz różne możliwości wspinaczki, takie jak sale wspinaczkowe, hale do boulderingu i skały w przyrodzie."
   },
   "descriptionTail": {
     "nl": "De klimkaart is oorspronkelijk gemaakt door <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> op <a href='https://kletterspots.de' target='_blank'>kletterspots.de</a>.",
@@ -44,7 +46,8 @@
     "hu": "A mászótérképet eredetileg <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> készítette. Ha észrevétele vagy kérdése van, kérjük, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>vele lépjen kapcsolatba</a>.</p> <p>A projekt az <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> adatait használja</p>",
     "cs": "Horolezeckou mapu původně vytvořil <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. V případě připomínek nebo dotazů ho prosím <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>kontaktujte</a>.</p><p>Projekt využívá data projektu <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
     "es": "El mapa de escalada fue realizado originalmente por <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Por favor, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>ponte en contacto</a> si tienes comentarios o preguntas.</p><p>El proyecto utiliza datos del proyecto <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
-    "ca": "El mapa d'escalada va ser creat originalment per <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>Contacteu-vos</a> si teniu comentaris o preguntes.</p>< p>El projecte utilitza dades del projecte <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>"
+    "ca": "El mapa d'escalada va ser creat originalment per <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>Contacteu-vos</a> si teniu comentaris o preguntes.</p>< p>El projecte utilitza dades del projecte <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
+    "pl": "Mapa wspinaczkowa została pierwotnie stworzona przez <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christiana Neumanna</a>. Jeśli masz uwagi lub pytania, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>skontaktuj się z nim</a>.</p>< p>Projekt wykorzystuje dane projektu <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>"
   },
   "icon": "./assets/themes/climbing/climbing_icon.svg",
   "startLat": 0,
@@ -143,7 +146,8 @@
                   "da": " meter",
                   "pa_PK": " ؜ میٹر",
                   "cs": " metr",
-                  "eu": " ·metro"
+                  "eu": " ·metro",
+                  "pl": " metry"
                 }
               },
               {
@@ -165,7 +169,8 @@
                   "da": " fod",
                   "pa_PK": " ؜ فوٹ",
                   "cs": " stopa",
-                  "eu": " ·hanka"
+                  "eu": " ·hanka",
+                  "pl": " stopy"
                 }
               }
             ]
@@ -186,7 +191,8 @@
                   "da": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne er</span> offentligt tilgængelig<br/>{_embedding_feature:access:description}",
                   "es": "<span class='subtle'>La <a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que es de</span> acceso público<br/>{_embedding_feature:access:description}",
                   "ca": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>l'element que el conté</a>indica que és d'</span>accés públic<br/>{_embedding_feature:access:description}",
-                  "cs": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že toto je</span> veřejně dostupné<br/>{_embedding_feature:access:description}"
+                  "cs": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že toto je</span> veřejně dostupné<br/>{_embedding_feature:access:description}",
+                  "pl": "<span class='subtle'><a href='#{_embedding_feature:id}'>Obiekt zawarty</a> stwierdza, że jest on</span> publicznie dostępny<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -200,7 +206,8 @@
                   "da": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at </span> en tilladelse er nødvendig for at få adgang til<br/>{_embedding_feature:access:description}",
                   "es": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que se necesita</span> un permiso para acceder a él<br/>{_embedding_feature:access:description}",
                   "ca": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>l'element que el conté</a> indica que es necessita </span> un permís per a accedir-hi<br/>{_embedding_feature:access:description}",
-                  "cs": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že </span> je k přístupu potřeba povolení<br/>{_embedding_feature:access:description}"
+                  "cs": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že </span> je k přístupu potřeba povolení<br/>{_embedding_feature:access:description}",
+                  "pl": "<span class='subtle'><a href='#{_embedding_feature:id}'>Obiekt zawarty</a> stwierdza, że</span> potrzebne jest pozwolenie, aby do niego wejść<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -214,7 +221,8 @@
                   "da": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne</span> kun er tilgængelig for kunder<br/>{_embedding_feature:access:description}",
                   "es": "<span class='subtle'>La <a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que</span> sólo es accesible para los clientes<br/>{_embedding_feature:access:description}",
                   "cs": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že toto je</span> dostupné pouze zákazníkům<br/>{_embedding_feature:access:description}",
-                  "ca": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>característica que ho conté</a> indica que</span> sols és accessible per als clients<br/>{_embedding_feature:access:description}"
+                  "ca": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>característica que ho conté</a> indica que</span> sols és accessible per als clients<br/>{_embedding_feature:access:description}",
+                  "pl": "<span class='subtle'><a href='#{_embedding_feature:id}'>Obiekt zawarty</a> stwierdza, że jest on</span> dostępny tylko dla jego klientów<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -228,7 +236,8 @@
                   "da": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne</span> kun er tilgængelig for klubmedlemmer<br/>{_embedding_feature:access:description}",
                   "es": "<span class='subtle'>La <a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que </span> sólo es accesible para los socios del club<br/>{_embedding_feature:access:description}",
                   "cs": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že toto je</span> dostupné pouze členům klubu<br/>{_embedding_feature:access:description}",
-                  "ca": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>característica que ho conté</a> indica que</span> sols és accessible per als socis del club<br/>{_embedding_feature:access:description}"
+                  "ca": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>característica que ho conté</a> indica que</span> sols és accessible per als socis del club<br/>{_embedding_feature:access:description}",
+                  "pl": "<span class='subtle'><a href='#{_embedding_feature:id}'>Obiekt zawarty</a> stwierdza, że jest on</span> dostępny tylko dla członków klubu<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -280,7 +289,8 @@
                   "es": "Necesitas un permiso para acceder aquí",
                   "da": "Du skal have en tilladelse for at få adgang her",
                   "ca": "Necesites un permís per a accedir ací",
-                  "cs": "K přístupu je potřeba povolení"
+                  "cs": "K přístupu je potřeba povolení",
+                  "pl": "Potrzebujesz pozwolenia, żeby tu wejść"
                 }
               },
               {
@@ -371,7 +381,9 @@
               "de": "Repariert das Schuhgeschäft Kletterschuhe?",
               "fr": "Est-ce que cette cordonnerie répare les chaussons d'escalade ?",
               "es": "¿Esta tienda de reparación de zapatos repara zapatos de escalada?",
-              "ca": "Aquesta botiga de reparació de calçat repara sabates d'escalada?"
+              "ca": "Aquesta botiga de reparació de calçat repara sabates d'escalada?",
+              "cs": "Opravuje tato opravna obuvy horolezecké boty?",
+              "pl": "Czy ten warsztat szewski naprawia buty wspinaczkowe?"
             },
             "mappings": [
               {
@@ -381,7 +393,9 @@
                   "de": "Dieser Laden repariert Kletterschuhe",
                   "fr": "Ce commerce répare les chaussures d'escalade",
                   "es": "Esta tienda repara zapatos de escalada",
-                  "ca": "Aquesta botiga repara sabates d'escalada"
+                  "ca": "Aquesta botiga repara sabates d'escalada",
+                  "cs": "Tento obchod opravuje lezeckou obuv",
+                  "pl": "Ten warsztat naprawia buty wspinaczkowe"
                 }
               },
               {
@@ -391,7 +405,9 @@
                   "de": "Dieser Shop repariert keine Kletterschuhe",
                   "fr": "Ce commerce ne répare pas les chaussures d'escalade",
                   "es": "Esta tienda no repara zapatos de escalada",
-                  "ca": "Aquesta botiga no repara sabates d'escalada"
+                  "ca": "Aquesta botiga no repara sabates d'escalada",
+                  "cs": "Tento obchod neopravuje lezeckou obuv",
+                  "pl": "Ten warsztat nie naprawia butów wspinaczkowych"
                 }
               }
             ]
@@ -419,7 +435,9 @@
               "de": "Repariert dieses Schuhgeschäft auch Kletterschuhe?",
               "fr": "Est-ce que cette cordonnerie répare les chaussons d'escalade ?",
               "es": "¿Esta tienda de reparación de zapatos también repara zapatos de escalada?",
-              "ca": "Aquesta botiga de reparació de calçat també repara sabates d'escalada?"
+              "ca": "Aquesta botiga de reparació de calçat també repara sabates d'escalada?",
+              "cs": "Opravuje tato opravna obuvy také lezeckou obuv?",
+              "pl": "Czy ten warsztat obuwniczy naprawia również buty wspinaczkowe?"
             },
             "mappings": [
               {
@@ -429,7 +447,9 @@
                   "de": "Dieses Geschäft repariert Kletterschuhe",
                   "fr": "Ce commerce répare les chaussons d'escalade",
                   "es": "Esta tienda repara zapatos de escalada",
-                  "ca": "Aquesta botiga repara sabates d'escalada"
+                  "ca": "Aquesta botiga repara sabates d'escalada",
+                  "cs": "Tento obchod opravuje lezeckou obuv",
+                  "pl": "Ten warsztat naprawia buty wspinaczkowe"
                 }
               },
               {
@@ -439,7 +459,9 @@
                   "de": "Dieses Geschäft repariert keine Kletterschuhe",
                   "fr": "Ce commerce ne répare pas les chaussons d'escalade",
                   "es": "Esta tienda no repara zapatos de escalada",
-                  "ca": "Aquesta botiga no repara sabates d'escalada"
+                  "ca": "Aquesta botiga no repara sabates d'escalada",
+                  "cs": "Tento obchod neopravuje lezeckou obuv",
+                  "pl": "Ten warsztat nie naprawia butów wspinaczkowych"
                 }
               }
             ]
@@ -455,7 +477,9 @@
               "de": "Ein Schuhmacher",
               "fr": "une cordonnerie",
               "es": "una tienda de reparación de zapatos",
-              "ca": "una botiga de reparació de calçat"
+              "ca": "una botiga de reparació de calçat",
+              "cs": "opravna bot",
+              "pl": "warsztat szewski"
             }
           }
         ]

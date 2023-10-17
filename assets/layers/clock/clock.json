@@ -5,14 +5,16 @@
     "nl": "Klokken",
     "de": "Uhren",
     "ca": "Rellotges",
-    "fr": "Horloges"
+    "fr": "Horloges",
+    "cs": "Hodiny"
   },
   "description": {
     "en": "Layer with public clocks",
     "nl": "Laag met publieke klokken",
     "de": "Ebene mit öffentlichen Uhren",
     "ca": "Capa amb rellotges públics",
-    "fr": "Couche avec les horloges publiques"
+    "fr": "Couche avec les horloges publiques",
+    "cs": "Vrstva s veřejnými hodinami"
   },
   "title": {
     "render": {
@@ -21,7 +23,8 @@
       "de": "Uhr",
       "ca": "Rellotge",
       "fr": "Horloge",
-      "pl": "Zegar"
+      "pl": "Zegar",
+      "cs": "Hodiny"
     }
   },
   "source": {
@@ -38,7 +41,8 @@
         "de": "Wie ist die Uhr montiert?",
         "ca": "De quina forma està muntat aquest rellotge?",
         "fr": "De quelle manière est fixée cette horloge ?",
-        "pl": "W jaki sposób zamontowany jest ten zegar?"
+        "pl": "W jaki sposób zamontowany jest ten zegar?",
+        "cs": "Jakým způsobem jsou hodiny namontovány?"
       },
       "mappings": [
         {
@@ -49,7 +53,8 @@
             "de": "Diese Uhr ist auf einem Mast montiert",
             "ca": "Aquest rellotge està muntat en un pal",
             "fr": "Cette horloge est montée sur un poteau",
-            "pl": "Ten zegar jest zamontowany na słupie"
+            "pl": "Ten zegar jest zamontowany na słupie",
+            "cs": "Tyto hodiny jsou namontovány na sloupu"
           }
         },
         {
@@ -61,7 +66,7 @@
             "ca": "Aquest rellotge està muntat en una paret",
             "fr": "Cette horloge est fixée sur un mur",
             "pl": "Ten zegar jest zamontowany na ścianie",
-            "cs": "Hodiny jsou připevněny na zdi"
+            "cs": "Tyto hodiny jsou namontovány na stěně"
           }
         },
         {
@@ -72,7 +77,8 @@
             "de": "Diese Uhr ist Teil einer Werbetafel",
             "ca": "Aquest rellotge està muntat en una tanca publicitària",
             "fr": "Cette horloge fait partie d'un panneau publicitaire",
-            "pl": "Ten zegar jest częścią bilbordu"
+            "pl": "Ten zegar jest częścią bilbordu",
+            "cs": "Tyto hodiny jsou součástí billboardu"
           }
         },
         {
@@ -83,7 +89,8 @@
             "de": "Diese Uhr befindet sich auf dem Boden",
             "ca": "Aquest rellotge està al sòl",
             "fr": "Cette horloge est posée au sol",
-            "pl": "Ten zegar jest na ziemi"
+            "pl": "Ten zegar jest na ziemi",
+            "cs": "Tyto hodiny jsou na zemi"
           }
         }
       ]
@@ -96,7 +103,8 @@
         "de": "Wie zeigt diese Uhr die Zeit an?",
         "ca": "Com mostra aquest rellotge l'hora?",
         "fr": "Comment cette horloge indique-t-elle l'heure ?",
-        "pl": "Jak ten zegar wyświetla czas?"
+        "pl": "Jak ten zegar wyświetla czas?",
+        "cs": "Jak tyto hodiny zobrazují čas?"
       },
       "mappings": [
         {
@@ -107,7 +115,8 @@
             "de": "Diese Uhr zeigt die Zeit mit Zeigern an",
             "ca": "Aquest rellotge mostra l'hora amb mans",
             "fr": "Cette horloge indique l'heure avec des aiguilles",
-            "pl": "Ten zegar pokazuje czas za pomocą wskazówek"
+            "pl": "Ten zegar pokazuje czas za pomocą wskazówek",
+            "cs": "Tyto hodiny zobrazují čas pomocí ručiček"
           }
         },
         {
@@ -118,7 +127,8 @@
             "de": "Diese Uhr zeigt die Zeit mit Ziffern an",
             "ca": "Aquest rellotge mostra l'hora amb dígits",
             "fr": "Cette horloges indique l'heure avec des chiffres numériques",
-            "pl": "Ten zegar wyświetla czas za pomocą cyfr"
+            "pl": "Ten zegar wyświetla czas za pomocą cyfr",
+            "cs": "Tyto hodiny zobrazují čas s číslicemi"
           }
         },
         {
@@ -128,7 +138,8 @@
             "nl": "Deze klok toont de tijd met een zonnewijzer",
             "de": "Diese Uhr zeigt die Zeit mit einer Sonnenuhr an",
             "ca": "Aquest rellotge mostra l'hora amb un rellotge de sol",
-            "fr": "Cette horloge indique l'heure grâce au soleil"
+            "fr": "Cette horloge indique l'heure grâce au soleil",
+            "cs": "Tyto hodiny zobrazují čas pomocí slunečních hodin"
           }
         },
         {
@@ -139,7 +150,8 @@
             "de": "Diese Uhr zeigt die Zeit auf eine nicht standardisierte Weise an, z. B. mit Binärzeichen, Wasser oder etwas anderem",
             "ca": "Aquest rellotge mostra l'hora d'una manera no estàndard, p.e. utilitzant binari, aigua o quelcom més",
             "fr": "Cette horloge indique l'heure d'une manière inhabituelle, par ex. en binaire, avec de l'eau, ou autre",
-            "pl": "Ten zegar wyświetla czas w niestandardowy sposób, np. używając systemu binarnego, wody lub czegoś innego"
+            "pl": "Ten zegar wyświetla czas w niestandardowy sposób, np. używając systemu binarnego, wody lub czegoś innego",
+            "cs": "Tyto hodiny zobrazují čas nestandardním způsobem, např. pomocí binárního systému, vody nebo něčeho jiného"
           }
         }
       ]
@@ -152,7 +164,8 @@
         "de": "Wie sichtbar ist diese Uhr?",
         "ca": "Com de visible és aquest rellotge?",
         "fr": "Quelle est la visibilité de cette horloge ?",
-        "pl": "Jaka jest widoczność tego zegara?"
+        "pl": "Jaka jest widoczność tego zegara?",
+        "cs": "Jak viditelné jsou tyto hodiny?"
       },
       "mappings": [
         {
@@ -163,7 +176,8 @@
             "de": "Diese Uhr ist aus etwa 5 Metern Entfernung sichtbar (kleine Wanduhr)",
             "ca": "Aquest rellotge és visible al voltant dels 5 metres de distància (un petit rellotge muntat a la paret)",
             "fr": "Cette horloge est visible d'environ 5 mètres (petite horloge fixée au mur)",
-            "pl": "Ten zegar jest widoczny z około 5 metrów (mały zegar ścienny)"
+            "pl": "Ten zegar jest widoczny z około 5 metrów (mały zegar ścienny)",
+            "cs": "Tyto hodiny jsou viditelné ze vzdálenosti asi 5 metrů (malé nástěnné hodiny)"
           }
         },
         {
@@ -174,7 +188,8 @@
             "de": "Diese Uhr ist aus etwa 20 Metern Entfernung sichtbar (mittelgroße Plakatuhr)",
             "ca": "Aquest rellotge és visible al voltant dels 20 metres de distància (rellotge de tamany mig a una tanca publicitària)",
             "fr": "Cette horloge est visible d'environ 20 mètres (horloge sur un panneau publicitaire)",
-            "pl": "Ten zegar jest widoczny z około 20 metrów (średniej wielkości zegar na bilbordzie)"
+            "pl": "Ten zegar jest widoczny z około 20 metrów (średniej wielkości zegar na bilbordzie)",
+            "cs": "Tyto hodiny jsou viditelné ze vzdálenosti asi 20 metrů (středně velké billboardové hodiny)"
           }
         },
         {
@@ -185,7 +200,8 @@
             "de": "Diese Uhr ist aus mehr als 20 Metern Entfernung sichtbar (Kirchuhr, Bahnhofsuhr)",
             "ca": "Aquest rellotge és visible des de més de 20 metres de distància (p. ex. el d'una església o estació de tren)",
             "fr": "Cette horloge est visible de plus de 20 mètres (par ex. horloge d'église ou de gare)",
-            "pl": "Ten zegar jest widoczny z ponad 20 metrów (np. zegar kościelny lub stacyjny)"
+            "pl": "Ten zegar jest widoczny z ponad 20 metrów (np. zegar kościelny lub stacyjny)",
+            "cs": "Tyto hodiny jsou viditelné ze vzdálenosti větší než 20 metrů (např. kostelní nebo nádražní hodiny)"
           }
         }
       ]
@@ -198,7 +214,8 @@
         "de": "Zeigt diese Uhr auch das Datum an?",
         "ca": "Aquest rellotge també mostra la data?",
         "fr": "Cette horloge indique-t-elle également la date ?",
-        "pl": "Czy ten zegar wyświetla datę?"
+        "pl": "Czy ten zegar wyświetla datę?",
+        "cs": "Zobrazují tyto hodiny také datum?"
       },
       "mappings": [
         {
@@ -209,7 +226,8 @@
             "de": "Diese Uhr zeigt auch das Datum an",
             "ca": "Aquest rellotge també mostra la data",
             "fr": "Cette horloge indique également la date",
-            "pl": "Ten zegar wyświetla również datę"
+            "pl": "Ten zegar wyświetla również datę",
+            "cs": "Tyto hodiny také zobrazují datum"
           }
         },
         {
@@ -220,7 +238,8 @@
             "de": "Diese Uhr zeigt kein Datum an",
             "ca": "Aquest rellotge no mostra la data",
             "fr": "Cette horloge n'indique pas la date",
-            "pl": "Ten zegar nie wyświetla daty"
+            "pl": "Ten zegar nie wyświetla daty",
+            "cs": "Tyto hodiny nezobrazují datum"
           }
         },
         {
@@ -231,7 +250,8 @@
             "de": "Diese Uhr zeigt wahrscheinlich nicht das Datum an",
             "ca": "Aquest rellotge probablement no mostra la data",
             "fr": "Cette horloge n'affiche probablement pas la date",
-            "pl": "Ten zegar prawdopodobnie nie wyświetla daty"
+            "pl": "Ten zegar prawdopodobnie nie wyświetla daty",
+            "cs": "Tyto hodiny pravděpodobně nezobrazují datum"
           },
           "hideInAnswer": true
         }
@@ -245,7 +265,8 @@
         "de": "Zeigt diese Uhr auch die Temperatur an?",
         "ca": "Aquest rellotge també mostra la temperatura?",
         "fr": "Est-ce que cette horloge affiche également la température ?",
-        "pl": "Czy ten zegar wyświetla również temperaturę?"
+        "pl": "Czy ten zegar wyświetla również temperaturę?",
+        "cs": "Zobrazují tyto hodiny také teplotu?"
       },
       "mappings": [
         {
@@ -256,7 +277,8 @@
             "de": "Diese Uhr zeigt auch die Temperatur an",
             "ca": "Aquest rellotge també mostra la temperatura",
             "fr": "Cette horloge affiche également la température",
-            "pl": "Ten zegar wyświetla również temperaturę"
+            "pl": "Ten zegar wyświetla również temperaturę",
+            "cs": "Tyto hodiny také zobrazují teplotu"
           }
         },
         {
@@ -267,7 +289,8 @@
             "de": "Diese Uhr zeigt nicht die Temperatur an",
             "ca": "Aquest rellotge no mostra la temperatura",
             "fr": "Cette horloge n'affiche pas la température",
-            "pl": "Ten zegar nie wyświetla temperatury"
+            "pl": "Ten zegar nie wyświetla temperatury",
+            "cs": "Tyto hodiny nezobrazují teplotu"
           }
         },
         {
@@ -278,7 +301,8 @@
             "de": "Diese Uhr zeigt wahrscheinlich nicht die Temperatur an",
             "ca": "Aquest rellotge probablement no mostra la temperatura",
             "fr": "Cette horloge n'indique probablement pas la date",
-            "pl": "Ten zegar prawdopodobnie nie wyświetla temperatury"
+            "pl": "Ten zegar prawdopodobnie nie wyświetla temperatury",
+            "cs": "Tyto hodiny pravděpodobně nezobrazují teplotu"
           },
           "hideInAnswer": true
         }
@@ -292,7 +316,8 @@
         "de": "Zeigt diese Uhr auch den Luftdruck an?",
         "ca": "Aquest rellotge també mostra la pressió de l'aire?",
         "fr": "Est-ce que cette horloge affiche également la pression atmosphérique ?",
-        "pl": "Czy ten zegar wyświetla ciśnienie?"
+        "pl": "Czy ten zegar wyświetla ciśnienie?",
+        "cs": "Zobrazují tyto hodiny také tlak vzduchu?"
       },
       "mappings": [
         {
@@ -303,7 +328,8 @@
             "de": "Diese Uhr zeigt auch den Luftdruck an",
             "ca": "Aquest rellotge també mostra la pressió de l'aire",
             "fr": "Cette horloge affiche également la pression atmosphérique",
-            "pl": "Ten zegar wyświetla również ciśnienie"
+            "pl": "Ten zegar wyświetla również ciśnienie",
+            "cs": "Tyto hodiny také zobrazují tlak vzduchu"
           }
         },
         {
@@ -314,7 +340,8 @@
             "de": "Diese Uhr zeigt den Luftdruck nicht an",
             "ca": "Aquest rellotge no mostra la pressió de l'aire",
             "fr": "Cette horloge n'affiche pas la pression atmosphérique",
-            "pl": "Ten zegar nie wyświetla ciśnienia"
+            "pl": "Ten zegar nie wyświetla ciśnienia",
+            "cs": "Tyto hodiny nezobrazují tlak vzduchu"
           }
         },
         {
@@ -325,7 +352,8 @@
             "de": "Diese Uhr zeigt wahrscheinlich nicht den Luftdruck an",
             "ca": "Aquest rellotge probablement no mostra la pressió de l'aire",
             "fr": "Cette horloge affiche probablement la pression atmosphérique",
-            "pl": "Ten zegar prawdopodobnie nie wyświetla ciśnienia"
+            "pl": "Ten zegar prawdopodobnie nie wyświetla ciśnienia",
+            "cs": "Tyto hodiny pravděpodobně nezobrazují tlak vzduchu"
           },
           "hideInAnswer": true
         }
@@ -339,7 +367,8 @@
         "de": "Zeigt diese Uhr auch die Luftfeuchtigkeit an?",
         "ca": "Aquest rellotge també mostra la humitat?",
         "fr": "Cette horloge indique-t-elle également l'humidité ?",
-        "pl": "Czy ten zegar wyświetla również wilgotność?"
+        "pl": "Czy ten zegar wyświetla również wilgotność?",
+        "cs": "Zobrazují tyto hodiny také vlhkost?"
       },
       "mappings": [
         {
@@ -350,7 +379,8 @@
             "de": "Diese Uhr zeigt auch die Luftfeuchtigkeit an",
             "ca": "Aquest rellotge també mostra la humitat",
             "fr": "Cette horloge indique également l'humidité",
-            "pl": "Ten zegar wyświetla również wilgotność"
+            "pl": "Ten zegar wyświetla również wilgotność",
+            "cs": "Tyto hodiny také zobrazují vlhkost"
           }
         },
         {
@@ -361,7 +391,8 @@
             "de": "Diese Uhr zeigt nicht die Luftfeuchtigkeit an",
             "ca": "Aquest rellotge no mostra la humitat",
             "fr": "Cette horloge n'indique pas l'humidité",
-            "pl": "Ten zegar nie wyświetla wilgotności"
+            "pl": "Ten zegar nie wyświetla wilgotności",
+            "cs": "Tyto hodiny nezobrazují vlhkost"
           }
         },
         {
@@ -372,7 +403,8 @@
             "de": "Diese Uhr zeigt wahrscheinlich nicht die Luftfeuchtigkeit an",
             "ca": "Aquest rellotge probablement no mostra la humitat",
             "fr": "Cette horloge n'indique probablement pas l'humidité",
-            "pl": "Ten zegar prawdopodobnie nie wyświetla wilgotności"
+            "pl": "Ten zegar prawdopodobnie nie wyświetla wilgotności",
+            "cs": "Tyto hodiny pravděpodobně nezobrazují vlhkost"
           },
           "hideInAnswer": true
         }
@@ -385,7 +417,8 @@
         "nl": "Hoeveel klokken heeft deze klok?",
         "de": "Wie viele Zifferblätter hat diese Uhr?",
         "ca": "Quantes cares té aquest rellotge?",
-        "fr": "Combien de faces a cette horloge ?"
+        "fr": "Combien de faces a cette horloge ?",
+        "cs": "Kolik ciferníků mají tyto hodiny?"
       },
       "freeform": {
         "key": "faces",
@@ -396,7 +429,8 @@
           "nl": "Aantal klokken",
           "de": "Anzahl der Zifferblätter",
           "ca": "Nombre de cares",
-          "fr": "Nombre de faces"
+          "fr": "Nombre de faces",
+          "cs": "Počet ciferníků"
         }
       },
       "render": {
@@ -404,7 +438,8 @@
         "nl": "Deze klok heeft {faces} klokken",
         "de": "Diese Uhr hat {faces} Zifferblätter",
         "ca": "Aquest rellotge té {faces} cares",
-        "fr": "Cette horloge a {faces} faces"
+        "fr": "Cette horloge a {faces} faces",
+        "cs": "Tyto hodiny mají {faces} ciferníků"
       },
       "mappings": [
         {
@@ -414,7 +449,8 @@
             "nl": "Deze klok heeft één klok",
             "de": "Diese Uhr hat ein Zifferblatt",
             "ca": "Aquest rellotge té una cara",
-            "fr": "Cette horloge a une face"
+            "fr": "Cette horloge a une face",
+            "cs": "Tyto hodiny mají jeden ciferník"
           }
         },
         {
@@ -424,7 +460,8 @@
             "nl": "Deze klok heeft twee klokken",
             "de": "Diese Uhr hat zwei Zifferblätter",
             "ca": "Aquest rellotge té dues cares",
-            "fr": "Cette horloge a deux faces"
+            "fr": "Cette horloge a deux faces",
+            "cs": "Tyto hodiny mají dva ciferníky"
           }
         },
         {
@@ -434,7 +471,8 @@
             "nl": "Deze klok heeft vier klokken",
             "de": "Diese Uhr hat vier Zifferblätter",
             "ca": "Aquest rellotge té quatre cares",
-            "fr": "Cette horloge a quatre faces"
+            "fr": "Cette horloge a quatre faces",
+            "cs": "Tyto hodiny mají čtyři ciferníky"
           }
         }
       ]
@@ -451,14 +489,16 @@
         "de": "eine Uhr",
         "ca": "un rellotge",
         "fr": "une horloge",
-        "pl": "zegar"
+        "pl": "zegar",
+        "cs": "hodiny"
       },
       "description": {
         "en": "A publicly visible clock",
         "nl": "Een publiekelijk zichtbare klok",
         "de": "Eine öffentlich sichtbare Uhr",
         "ca": "Un rellotge visible públicament",
-        "fr": "Une horloge visible de l'espace public"
+        "fr": "Une horloge visible de l'espace public",
+        "cs": "Veřejně viditelné hodiny"
       }
     },
     {
@@ -472,7 +512,8 @@
         "de": "eine an der Wand montierte Uhr",
         "ca": "un rellotge muntat en un paret",
         "fr": "une horloge fixée au mur",
-        "pl": "zegar na ścianie"
+        "pl": "zegar na ścianie",
+        "cs": "hodiny na stěně"
       },
       "description": {
         "en": "A publicly visible clock mounted on a wall",
@@ -480,7 +521,8 @@
         "de": "Eine öffentlich sichtbare Uhr an einer Wand",
         "ca": "Un rellotge visible públicament muntat en una paret",
         "fr": "Une horloge publique fixée sur un mur",
-        "pl": "Publicznie widoczny zegar zamontowany na ścianie"
+        "pl": "Publicznie widoczny zegar zamontowany na ścianie",
+        "cs": "Veřejně viditelné hodiny umístěné na stěně"
       },
       "snapToLayer": [
         "walls_and_buildings"

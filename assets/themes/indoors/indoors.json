@@ -23,7 +23,8 @@
     "cs": "Na této mapě jsou zobrazeny veřejně přístupné vnitřní prostory",
     "nb_NO": "Viser offentlig tilgjenglige innendørssteder",
     "es": "En este mapa se muestran los lugares cubiertos de acceso público",
-    "ca": "En aquest mapa es mostren els llocs interiors accessibles al públic"
+    "ca": "En aquest mapa es mostren els llocs interiors accessibles al públic",
+    "pl": "Na tej mapie pokazane są publicznie dostępne miejsca w pomieszczeniach zamkniętych"
   },
   "icon": "./assets/layers/entrance/entrance.svg",
   "startLat": 51.17181,

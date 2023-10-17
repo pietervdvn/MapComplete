@@ -40,7 +40,7 @@
     <Tr t={Translations.t.reviews.no_reviews_yet} />
   {/if}
   <div class="flex justify-end">
-    <ToSvelte construct={Svg.mangrove_logo_svg().SetClass("w-12 h-12")} />
-    <Tr t={Translations.t.reviews.attribution} />
+    <ToSvelte construct={Svg.mangrove_logo_svg().SetClass("w-12 h-12 shrink-0 p-1 ")} />
+    <Tr cls="text-sm subtle" t={Translations.t.reviews.attribution} />
   </div>
 </div>

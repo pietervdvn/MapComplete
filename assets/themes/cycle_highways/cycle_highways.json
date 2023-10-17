@@ -11,7 +11,8 @@
     "nb_NO": "Sykkelmotorveier",
     "da": "Cykelmotorveje",
     "pa_PK": "سائیکل‌وے",
-    "cs": "Cyklodálnice"
+    "cs": "Cyklodálnice",
+    "pl": "Ścieżki rowerowe"
   },
   "hideFromOverview": true,
   "icon": "./assets/themes/cycle_highways/fietssnelwegen-logo.svg",
@@ -27,7 +28,8 @@
     "nb_NO": "Kart som viser sykkelmotorveier",
     "ca": "Aquest mapa mostra carrils bici",
     "da": "Dette kort viser cykelmotorveje",
-    "cs": "Tato mapa zobrazuje cyklostezky"
+    "cs": "Tato mapa zobrazuje cyklostezky",
+    "pl": "Ta mapa pokazuje ścieżki rowerowe"
   },
   "startLat": 51.1599,
   "startLon": 3.3475,
@@ -120,7 +122,8 @@
         "nb_NO": "sykkelmotorveier",
         "da": "cykelmotorveje",
         "pa_PK": "سائیکل‌وے",
-        "cs": "cyklodálnice"
+        "cs": "cyklodálnice",
+        "pl": "ścieżki rowerowe"
       },
       "source": {
         "osmTags": "cycle_network=BE-VLG:cycle_highway"
@@ -137,7 +140,8 @@
           "nb_NO": "sykkelmotorvei",
           "da": "cykelmotorvej",
           "pa_PK": "سائیکل‌وے",
-          "cs": "cyklodálnice"
+          "cs": "cyklodálnice",
+          "pl": "ścieżka rowerowa"
         }
       },
       "filter": [

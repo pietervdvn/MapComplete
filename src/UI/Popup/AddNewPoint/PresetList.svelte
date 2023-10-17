@@ -30,6 +30,7 @@
     if (flayer.isDisplayed.data === false) {
       // The layer is not displayed...
       if (!state.featureSwitches.featureSwitchFilter.data) {
+          console.log("Not showing presets for layer", flayer.layerDef.id, "as not displayed and featureSwitchFilter.data is set",state.featureSwitches.featureSwitchFilter.data)
         // ...and we cannot enable the layer control -> we skip, as these presets can never be shown anyway
         continue
       }

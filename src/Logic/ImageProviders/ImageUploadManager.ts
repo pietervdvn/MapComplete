@@ -97,7 +97,7 @@ export class ImageUploadManager {
         console.log("Upload done, creating ")
         const action = await this.uploadImageWithLicense(featureId, title, description, file)
         if (!isNaN(Number(featureId))) {
-            // THis is a map note
+            // This is a map note
             const url = action._url
             await this._osmConnection.addCommentToNote(featureId, url)
             NoteCommentElement.addCommentTo(url, <UIEventSource<any>>tagsStore, {
@@ -151,9 +151,13 @@ export class ImageUploadManager {
     }
 
     private increaseCountFor(collection: Map<string, UIEventSource<number>>, key: string | "*") {
-        const counter = this.getCounterFor(collection, key)
-        counter.setData(counter.data + 1)
-        const global = this.getCounterFor(collection, "*")
-        global.setData(counter.data + 1)
+        {
+            const counter = this.getCounterFor(collection, key)
+            counter.setData(counter.data + 1)
+        }
+        {
+            const global = this.getCounterFor(collection, "*")
+            global.setData(global.data + 1)
+        }
     }
 }

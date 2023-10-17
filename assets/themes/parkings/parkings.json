@@ -32,7 +32,8 @@
     "fr": "Cette montre les emplacements de parking",
     "da": "Dette kort viser forskellige parkeringspladser",
     "ca": "Aquest mapa mostra diferents punts d'aparcament",
-    "cs": "Na této mapě jsou vyznačena různá parkovací místa"
+    "cs": "Na této mapě jsou vyznačena různá parkovací místa",
+    "pl": "Ta mapa pokazuje różne miejsca parkingowe"
   },
   "description": {
     "nl": "Deze kaart toont verschillende parkeerplekken",
@@ -47,7 +48,8 @@
     "nb_NO": "Forskjellige parkeringsplasser",
     "da": "Dette kort viser forskellige parkeringspladser",
     "ca": "Aquest mapa mostra diferents punts d'aparcament",
-    "cs": "Na této mapě jsou vyznačena různá parkovací místa"
+    "cs": "Na této mapě jsou vyznačena různá parkovací místa",
+    "pl": "Ta mapa pokazuje różne miejsca parkingowe"
   },
   "icon": "./assets/themes/parkings/parkings.svg",
   "startLat": 51.20875,

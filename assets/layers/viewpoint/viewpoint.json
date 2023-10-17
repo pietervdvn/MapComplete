@@ -20,7 +20,8 @@
     "it": "Un punto panoramico che offre una bella vista. L'ideale è aggiungere un'immagine, se nessun'altra categoria è appropriata",
     "es": "Un buen mirador o una buena vista. Ideal para añadir una imagen si no encaja en ninguna otra categoría",
     "da": "Et dejligt synspunkt eller flot udsigt. Ideel til at tilføje et billede, hvis ingen anden kategori passer",
-    "ca": "Un bon mirador o una bonica vista. Ideal per afegir una imatge si no hi caben cap altra categoria"
+    "ca": "Un bon mirador o una bonica vista. Ideal per afegir una imatge si no hi caben cap altra categoria",
+    "cs": "Pěkný výhled nebo pěkný pohled. Ideální pro přidání obrázku, pokud se nehodí žádná jiná kategorie"
   },
   "source": {
     "osmTags": "tourism=viewpoint"

@@ -11,7 +11,8 @@
     "nl": "Kaart van brandblussers",
     "es": "Mapa de extintores",
     "ca": "Mapa d'extintors",
-    "pl": "Mapa gaśnic"
+    "pl": "Mapa gaśnic",
+    "cs": "Mapa hasicích přístrojů"
   },
   "minzoom": 14,
   "source": {
@@ -33,7 +34,8 @@
       "nl": "Brandblussers",
       "ca": "Extintors",
       "es": "Extintores",
-      "pl": "Gaśnice"
+      "pl": "Gaśnice",
+      "cs": "Hasicí přístroje"
     }
   },
   "description": {
@@ -49,7 +51,8 @@
     "da": "Kortlag til visning af ildslukkere.",
     "es": "Capa del mapa que muestra extintores.",
     "ca": "Capa que mostra extintors.",
-    "pl": "Warstwa mapy pokazująca gaśnice."
+    "pl": "Warstwa mapy pokazująca gaśnice.",
+    "cs": "Mapová vrstva pro zobrazení hasicích přístrojů."
   },
   "tagRenderings": [
     {
@@ -65,7 +68,8 @@
         "nl": "Locatie: {location}",
         "es": "Localización: {location}",
         "ca": "Ubicació: {location}",
-        "pl": "Lokalizacja: {location}"
+        "pl": "Lokalizacja: {location}",
+        "cs": "Místo: {location}"
       },
       "question": {
         "en": "Where is it positioned?",
@@ -78,7 +82,8 @@
         "da": "Hvor er den placeret?",
         "es": "¿Dónde se encuentra?",
         "ca": "On està situat?",
-        "pl": "Gdzie się znajduje?"
+        "pl": "Gdzie się znajduje?",
+        "cs": "Kde je umístěn?"
       },
       "mappings": [
         {
@@ -98,7 +103,8 @@
             "da": "Findes indendørs.",
             "es": "Se encuentra en el interior.",
             "ca": "Es troba a l'interior.",
-            "pl": "Znajduje się wewnątrz budynku."
+            "pl": "Znajduje się wewnątrz budynku.",
+            "cs": "Nalezen uvnitř."
           }
         },
         {
@@ -118,7 +124,8 @@
             "da": "Findes udendørs.",
             "es": "Se encuentra en el exterior.",
             "ca": "Es troba a l'aire lliure.",
-            "pl": "Znajduje się na dworze."
+            "pl": "Znajduje się na dworze.",
+            "cs": "Nalezeno venku."
           }
         }
       ],
@@ -145,7 +152,8 @@
         "da": "en ildslukker",
         "es": "un extintor",
         "ca": "un extintor",
-        "pl": "gaśnica"
+        "pl": "gaśnica",
+        "cs": "hasicí přístroj"
       },
       "description": {
         "en": "A fire extinguisher is a small, portable device used to stop a fire",
@@ -158,7 +166,8 @@
         "da": "En ildslukker er en lille, bærbar beholder, der bruges til at stoppe en brand",
         "es": "Un extintor es un dispositivo pequeño y portátil utilizado para parar un fuego",
         "ca": "Un extintor és un dispositiu petit i portàtil utilitzat per a para un foc",
-        "pl": "Gaśnica to małe, przenośne urządzenie do gaszenia ognia"
+        "pl": "Gaśnica to małe, przenośne urządzenie do gaszenia ognia",
+        "cs": "Hasicí přístroj je malé přenosné zařízení používané k zastavení požáru"
       }
     }
   ],

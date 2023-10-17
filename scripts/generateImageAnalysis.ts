@@ -4,6 +4,7 @@ import { RegexTag } from "../src/Logic/Tags/RegexTag"
 import { ImmutableStore } from "../src/Logic/UIEventSource"
 import { BBox } from "../src/Logic/BBox"
 import * as fs from "fs"
+import { writeFileSync } from "fs"
 import { Feature } from "geojson"
 import ScriptUtils from "./ScriptUtils"
 import { Imgur } from "../src/Logic/ImageProviders/Imgur"
@@ -30,7 +31,6 @@ export default class GenerateImageAnalysis extends Script {
             [],
             Constants.defaultOverpassUrls[0], //"https://overpass.kumi.systems/api/interpreter",
             new ImmutableStore(500),
-            undefined,
             false
         )
         console.log("Starting query...")
@@ -291,6 +291,9 @@ export default class GenerateImageAnalysis extends Script {
         console.log(countsPerAuthor)
         countsPerAuthor.sort()
         const median = countsPerAuthor[Math.floor(countsPerAuthor.length / 2)]
+        const json: {leaderboard: {rank: number, account: string, name: string, nrOfImages: number}[]} = {
+            leaderboard: []
+        }
         for (let i = 0; i < 100; i++) {
             let maxAuthor: string = undefined
             let maxCount = 0
@@ -301,6 +304,12 @@ export default class GenerateImageAnalysis extends Script {
                     maxCount = count
                 }
             }
+            json.leaderboard.push({
+                rank: i+1,
+                name: maxAuthor,
+                account: "https://openstreetmap.org/user/"+maxAuthor.replace(/ /g, "%20"),
+                nrOfImages: maxCount
+            })
             console.log(
                 "|",
                 i + 1,
@@ -315,9 +324,11 @@ export default class GenerateImageAnalysis extends Script {
 
         const totalAuthors = byAuthor.size
         let totalLicensedImages = 0
+        json["totalAuthors"] = totalAuthors
         for (const license in byLicenseCount) {
             totalLicensedImages += byLicenseCount[license]
         }
+        json["byLicense"] = {}
         for (const license in byLicenseCount) {
             const total = byLicenseCount[license]
             const authors = licenseByAuthorCount[license]
@@ -328,6 +339,9 @@ export default class GenerateImageAnalysis extends Script {
                     Math.floor((1000 * authors) / totalAuthors) / 10
                 }%), ${Math.floor(total / authors)} images/author`
             )
+            json["byLicense"] = {
+                license, total, authors
+            }
         }
 
         const nonDefaultAuthors = [
@@ -348,6 +362,9 @@ export default class GenerateImageAnalysis extends Script {
             nonDefaultAuthors.length
         )
         console.log("Median contributions per author:", median)
+        json["median"] = median
+        json["date"] = new Date().toISOString()
+        writeFileSync("../../git/MapComplete-data/picture-leaderboard.json", JSON.stringify(json), "utf8")
     }
 
     async main(args: string[]): Promise<void> {

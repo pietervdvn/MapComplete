@@ -13,8 +13,9 @@
     "ca": "Generadors d'energia eòlica",
     "nb_NO": "ÅpentVindkraftKart",
     "pa_PK": "اوپن‌ونڈ‌پاور‌میپ",
-    "es": "Mapa Abierto de la Energía Eólica",
-    "cs": "OpenWindPowerMap"
+    "es": "Generadores de energía eólica",
+    "cs": "Větrné elektrárny",
+    "pl": "Generatory wiatrowe"
   },
   "icon": "./assets/themes/openwindpowermap/logo.svg",
   "description": {

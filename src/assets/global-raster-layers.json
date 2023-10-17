@@ -1,6 +1,18 @@
 {
   "layers": [
     {
+      "name": "OpenStreetMap Carto",
+      "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+      "category": "osmbasedmap",
+      "id": "osm.carto",
+      "type": "raster",
+      "max_zoom": 19,
+      "attribution": {
+        "text": "OpenStreetMap",
+        "url": "https://osm.org/copyright"
+      }
+    },
+    {
       "name": "Americana",
       "url": "https://zelonewolf.github.io/openstreetmap-americana/style.json",
       "category": "osmbasedmap",

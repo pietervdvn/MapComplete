@@ -25,6 +25,9 @@
                                 }
                             }
                         },
+                        "1": {
+                            "render": "OpenStreetMap wie o <a href='#{_closest_osm_poi}'>bankomacie oddalonym o {_closest_osm_poi_distance} metry.</a> "
+                        },
                         "2": {
                             "render": {
                                 "special": {
@@ -48,7 +51,8 @@
                             "0": {
                                 "then": "Budynek ten nie ma odniesienia w BAG"
                             }
-                        }
+                        },
+                        "render": "Numer referencyjny w BAG to <b>{ref:bag}</b>"
                     }
                 }
             },
@@ -56,9 +60,19 @@
                 "description": "Budynki z rejestru BAG",
                 "tagRenderings": {
                     "Build year": {
+                        "mappings": {
+                            "0": {
+                                "then": "Budynek został zbudowany w <b>{_bag_obj:start_date}</b>"
+                            }
+                        },
                         "render": "Ten budynek zbudowano w <b>{_bag_obj:start_date}</b>"
                     },
                     "Building type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Budynek będzie o typie <b>{_bag_obj:construction}</b>"
+                            }
+                        },
                         "render": "Rodzaj budynku to <b>{_bag_obj:building}</b>"
                     },
                     "Import button": {
@@ -67,6 +81,9 @@
                                 "then": "Jeszcze nie obliczono poprawnych wartości. Odśwież tę stronę"
                             }
                         }
+                    },
+                    "Reference": {
+                        "render": "Odniesienie w BAG to <b>{_bag_obj:ref:bag}</b>"
                     }
                 }
             }
@@ -339,10 +356,27 @@
     },
     "climbing": {
         "description": "Na tej mapie znajdziesz różne możliwości wspinaczki, takie jak sale wspinaczkowe, hale do boulderingu i skały w przyrodzie.",
+        "descriptionTail": "Mapa wspinaczkowa została pierwotnie stworzona przez <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christiana Neumanna</a>. Jeśli masz uwagi lub pytania, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>skontaktuj się z nim</a>.</p>< p>Projekt wykorzystuje dane projektu <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
         "layers": {
             "0": {
                 "override": {
                     "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "<span class='subtle'><a href='#{_embedding_feature:id}'>Obiekt zawarty</a> stwierdza, że jest on</span> publicznie dostępny<br/>{_embedding_feature:access:description}"
+                                },
+                                "1": {
+                                    "then": "<span class='subtle'><a href='#{_embedding_feature:id}'>Obiekt zawarty</a> stwierdza, że</span> potrzebne jest pozwolenie, aby do niego wejść<br/>{_embedding_feature:access:description}"
+                                },
+                                "2": {
+                                    "then": "<span class='subtle'><a href='#{_embedding_feature:id}'>Obiekt zawarty</a> stwierdza, że jest on</span> dostępny tylko dla jego klientów<br/>{_embedding_feature:access:description}"
+                                },
+                                "3": {
+                                    "then": "<span class='subtle'><a href='#{_embedding_feature:id}'>Obiekt zawarty</a> stwierdza, że jest on</span> dostępny tylko dla członków klubu<br/>{_embedding_feature:access:description}"
+                                }
+                            }
+                        },
                         "1": {
                             "mappings": {
                                 "0": {
@@ -442,18 +476,36 @@
         "description": "Mapa ta przedstawia sieci węzłów rowerowych i umożliwia łatwe dodawanie nowych węzłów",
         "layers": {
             "0": {
+                "name": "łącza węzeł do węzła",
                 "tagRenderings": {
                     "node2node-survey:date": {
-                        "question": "Kiedy ostatnio badano to połączenie węzła z węzłem?"
+                        "question": "Kiedy ostatnio badano to połączenie węzła z węzłem?",
+                        "render": "To połączenie węzła z węzłem było ostatnio sprawdzane w dniu {survey:date}"
                     }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "połączenie węzła z węzłem <strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "połączenie węzła z węzłem"
                 }
             },
             "1": {
                 "name": "węzły",
                 "tagRenderings": {
+                    "node-expected_rcn_route_relations": {
+                        "question": "Z iloma innymi węzłami rowerowymi łączy się ten węzeł?",
+                        "render": "Ten węzeł łączy się z innymi węzłami rowerowymi {expected_rcn_route_relations}."
+                    },
                     "node-survey:date": {
-                        "question": "Kiedy ostatni raz badano ten węzeł rowerowy?"
+                        "question": "Kiedy ostatni raz badano ten węzeł rowerowy?",
+                        "render": "Ten węzeł rowerowy był ostatnio badany w dniu {survey:date}"
                     }
+                },
+                "title": {
+                    "render": "węzeł rowerowy <strong>{rcn_ref}</strong>"
                 }
             }
         },
@@ -544,6 +596,7 @@
         "title": "Ulice rowerowe"
     },
     "cyclofix": {
+        "description": "Celem tej mapy jest zaprezentowanie rowerzystom łatwego w użyciu rozwiązania umożliwiającego znalezienie infrastruktury odpowiedniej dla ich potrzeb.<br><br>Możesz śledzić swoją dokładną lokalizację (tylko na urządzeniach mobilnych) i wybierać w lewym dolnym rogu warstwy, które są dla Ciebie odpowiednie. Możesz także użyć tego narzędzia, aby dodać lub edytować pinezki (interesujące miejsca) na mapie i dostarczyć więcej danych, odpowiadając na pytania.<br><br>Wszystkie wprowadzone zmiany zostaną automatycznie zapisane w globalnej bazie danych OpenStreetMap i mogą być swobodnie ponownie wykorzystywane przez innych.<br><br>Więcej informacji o projekcie cyclofix można znaleźć na stronie <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> .",
         "title": "Cyclofix - mapa dla rowerzystów"
     },
     "drinking_water": {
@@ -559,6 +612,7 @@
         "title": "Prasy do groszy"
     },
     "etymology": {
+        "description": "Na tej mapie możesz zobaczyć, od czego pochodzi nazwa obiektu. Ulice, budynki,... pochodzą z OpenStreetMap, który został powiązany z Wikidanymi. W wyskakującym okienku zobaczysz artykuł w Wikipedii (jeśli istnieje) lub pole wikidanych zawierające nazwę obiektu. Jeśli sam obiekt ma stronę w Wikipedii, ona również zostanie wyświetlona.<br/><br/><b>Ty też możesz pomóc!</b>Powiększ wystarczająco mapę i <i>wszystkie</i> ulice się pojawią. Możesz kliknąć jedną, a pojawi się okno wyszukiwania Wikidanych. Za pomocą kilku kliknięć możesz dodać odnośnik etymologiczny. Pamiętaj, że potrzebujesz do tego darmowego konta OpenStreetMap.",
         "layers": {
             "1": {
                 "override": {
@@ -600,6 +654,7 @@
         "title": "Etymologia - od czego pochodzi nazwa ulicy?"
     },
     "facadegardens": {
+        "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Ogrody fasadowe</a>, zielone fasady i drzewa w mieście nie tylko zapewniają ciszę i spokój, ale także piękniejsze miasto, większą różnorodność biologiczną, efekt chłodzący i lepszą jakość powietrza. <br/> Klimaan VZW i Mechelen Klimaatneutraal chcą zmapować istniejące i nowe ogrody fasadowe jako przykład dla osób chcących zbudować własny ogród lub dla spacerowiczów kochających przyrodę.<br/>Więcej informacji o projekcie na <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>.",
         "layers": {
             "0": {
                 "description": "Ogrody fasadowe",
@@ -701,7 +756,8 @@
         "title": "Sklepy z frytkami"
     },
     "ghostbikes": {
-        "title": "Duch roweru"
+        "description": "<b>Duch roweru</b> to pomnik upamiętniający rowerzystę, który zginął w wypadku drogowym, w postaci białego roweru umieszczonego na stałe w pobliżu miejsca wypadku.<br/><br/>Na tej mapie każdy może zobaczyć wszystkie takie duchy roweru znane w OpenStreetMap. Czy brakuje ducha roweru? Każdy może tu dodać lub zaktualizować informacje - wystarczy posiadać (bezpłatne) konto OpenStreetMap. <p>Istnieje <a href='https://masto.bike/@ghostbikebot' target='_blank'>automatyczne konto na Mastodonie, na którym publikowany jest miesięczny przegląd duchów roweru na całym świecie</a></p>",
+        "title": "Duchy roweru"
     },
     "grb": {
         "description": "Ten temat jest próbą pomocy w automatyzacji importu GRB.",
@@ -722,6 +778,9 @@
                         "mappings": {
                             "0": {
                                 "then": "Jeszcze nie obliczono metaznaczników... Otwórz to okienko ponownie"
+                            },
+                            "1": {
+                                "then": "Budynek ten ma dziury i jest modelowany jako relacja. W związku z tym nie można go łączyć. Połącz to ręcznie za pomocą <a href='https://buildings.osm.be/#/'>strony eksportu budynków</a> {open_in_josm()}"
                             }
                         }
                     }
@@ -756,6 +815,12 @@
             "5": {
                 "override": {
                     "=presets": {
+                        "0": {
+                            "title": "sklep z artykułami medycznymi"
+                        },
+                        "1": {
+                            "title": "sklep z aparatami słuchowymi"
+                        },
                         "2": {
                             "title": "optyk"
                         }
@@ -837,6 +902,13 @@
                             }
                         }
                     },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Wykonane z hostem {search}"
+                            }
+                        }
+                    },
                     "7": {
                         "options": {
                             "0": {
@@ -848,7 +920,12 @@
                 "name": "Centra zmian",
                 "tagRenderings": {
                     "contributor": {
-                        "question": "Który współautor dokonał tej zmiany?"
+                        "question": "Który współautor dokonał tej zmiany?",
+                        "render": "Zmiana dokonana przez <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "host": {
+                        "question": "Na jakim hoście (stronie internetowej) dokonano tej zmiany?",
+                        "render": "Zmiana dokonana w <a href='{host}'>{host}</a>"
                     },
                     "locale": {
                         "question": "W jakim języku wprowadzono tę zmianę?",
@@ -879,7 +956,9 @@
                     }
                 }
             }
-        }
+        },
+        "shortDescription": "Pokaż zmiany wprowadzone za pomocą MapComplete",
+        "title": "Zmiany wprowadzone za pomocą MapComplete"
     },
     "maproulette": {
         "description": "Temat pokazujący zadania MapRoulette, umożliwiający ich wyszukiwanie, filtrowanie i naprawianie.",
@@ -891,6 +970,8 @@
         "title": "Mapa map"
     },
     "maxspeed": {
+        "description": "Ta mapa pokazuje prawnie dozwoloną maksymalną prędkość na każdej drodze. Jeśli brakuje maksymalnej prędkości lub jest ona nieprawidłowa, możesz ją tutaj poprawić.",
+        "shortDescription": "Ta mapa pokazuje prawnie dozwoloną maksymalną prędkość na każdej drodze.",
         "title": "Prędkość maksymalna"
     },
     "nature": {
@@ -899,6 +980,7 @@
         "title": "W naturze"
     },
     "notes": {
+        "description": "Uwaga to pinezka na mapie z tekstem wskazującym, że coś jest nie tak.<br/><br/>Pamiętaj o skorzystaniu z <a href='#filters'>widoku filtra</a>, aby wyszukać użytkowników i tekst .",
         "title": "Notatki na OpenStreetMap"
     },
     "observation_towers": {
@@ -909,33 +991,6 @@
     "onwheels": {
         "description": "Na tej mapie pokazane są miejsca publicznie dostępne dla wózków inwalidzkich, które można łatwo dodać",
         "layers": {
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statystyki"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Import"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Dodaj wszystkie sugerowane znaczniki"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "4": {
                 "override": {
                     "filter": {
@@ -978,6 +1033,33 @@
                 "override": {
                     "name": "Miejsca parkingowe dla niepełnosprawnych"
                 }
+            },
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statystyki"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Dodaj wszystkie sugerowane znaczniki"
+                                }
+                            }
+                        }
+                    }
+                }
             }
         },
         "title": "Na kółkach"
@@ -987,7 +1069,9 @@
         "title": "Generatory wiatrowe"
     },
     "osm_community_index": {
-        "shortDescription": "Indeks zasobów społeczności dotyczących OpenStreetMap."
+        "description": "Lista zasobów dla użytkowników OpenStreetMap. „Zasobami” mogą być odnośniki do forów, spotkań, grup na Slacku, kanałów IRC, list mailingowych i tak dalej. Wszystko, co mapujący, a zwłaszcza początkujący, mogą uznać za interesujące lub pomocne.",
+        "shortDescription": "Indeks zasobów społeczności dotyczących OpenStreetMap.",
+        "title": "Indeks społeczności OSM"
     },
     "parkings": {
         "description": "Ta mapa pokazuje różne miejsca parkingowe",
@@ -1000,6 +1084,31 @@
     },
     "pets": {
         "description": "Na tej mapie znajdziesz różne ciekawe miejsca dla swoich zwierząt: weterynarze, wybiegi dla psów, sklepy zoologiczne, restauracje przyjazne psom, ...",
+        "layers": {
+            "1": {
+                "override": {
+                    "name": "Restauracje przyjazne psom"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Sklepy przyjazne psom",
+                    "title": {
+                        "render": "Sklepy przyjazne psom"
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "description": "Sklep, w którym niemal wszędzie można zabrać psa",
+                            "title": "sklep przyjazny psom"
+                        }
+                    }
+                }
+            }
+        },
         "title": "Kliniki weterynaryjne, parki dla psów i inne obiekty dla zwierząt"
     },
     "playgrounds": {
@@ -1083,6 +1192,7 @@
                 }
             }
         },
+        "shortDescription": "Mapowanie chodnika",
         "title": "Chodniki"
     },
     "sport_pitches": {
@@ -1097,6 +1207,7 @@
                 "override": {
                     "presets": {
                         "0": {
+                            "description": "Dodaj nowy sklep sprzedający artykuły sportowe.",
                             "title": "sklep sportowy"
                         }
                     }
@@ -1109,29 +1220,41 @@
     "stations": {
         "description": "Przeglądaj, edytuj i dodawaj szczegóły do stacji kolejowej",
         "layers": {
+            "3": {
+                "description": "Warstwa pokazująca stacje kolejowe",
+                "name": "Stacje Kolejowe"
+            },
             "16": {
+                "description": "Ekrany wyświetlające pokazujące pociągi, które odjadą z tej stacji",
                 "name": "Tablice odjazdów",
                 "presets": {
                     "0": {
+                        "description": "Dodaj tablicę pokazującą odjazdy, w wersji elektronicznej lub papierowej",
                         "title": "tablica odjazdów"
                     }
                 },
                 "tagRenderings": {
                     "type": {
                         "mappings": {
+                            "0": {
+                                "then": "Jest to tablica odjazdów nieznanego typu"
+                            },
+                            "1": {
+                                "then": "To elektroniczna tablica, pokazująca w czasie rzeczywistym kolejne odjazdy"
+                            },
                             "2": {
                                 "then": "To jest papierowy rozkład jazdy"
                             },
                             "3": {
                                 "then": "Jest tu znak informujący częstotliwość jazdy pociągów"
                             }
-                        }
+                        },
+                        "question": "Co to za tablica odjazdów?"
                     }
+                },
+                "title": {
+                    "render": "Tablica odjazdów"
                 }
-            },
-            "3": {
-                "description": "Warstwa pokazująca stacje kolejowe",
-                "name": "Stacje Kolejowe"
             }
         },
         "title": "Stacje Kolejowe"
@@ -1202,6 +1325,7 @@
         "title": "Publiczne toalety"
     },
     "transit": {
+        "description": "Zaplanuj swoją podróż korzystając z systemu transportu publicznego.",
         "title": "Trasy autobusowe"
     },
     "trees": {
@@ -1210,7 +1334,7 @@
         "title": "Drzewa"
     },
     "vending_machine": {
-        "description": "Znajdź automaty sprzedające do wszystkiego",
+        "description": "Znajdź wszelakie automaty sprzedające",
         "title": "Automaty sprzedające"
     },
     "walls_and_buildings": {

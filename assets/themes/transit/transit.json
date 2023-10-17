@@ -24,7 +24,8 @@
     "ca": "Planifica el teu viatge amb l'ajuda del sistema públic de transport.",
     "es": "Planifique su viaje con ayuda del sistema de transporte público.",
     "cs": "Naplánujte si cestu pomocí systému veřejné dopravy.",
-    "zh_Hant": "藉由大眾運輸系統來計畫你的旅程。"
+    "zh_Hant": "藉由大眾運輸系統來計畫你的旅程。",
+    "pl": "Zaplanuj swoją podróż korzystając z systemu transportu publicznego."
   },
   "icon": "./assets/layers/transit_stops/bus_stop.svg",
   "startZoom": 20,

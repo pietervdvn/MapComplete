@@ -28,7 +28,8 @@
       "nl": "Verkoopautomaat",
       "de": "Verkaufsautomat",
       "fr": "Distributeur",
-      "ca": "Màquina expenedora"
+      "ca": "Màquina expenedora",
+      "cs": "Prodejní automat"
     },
     "mappings": [
       {
@@ -38,7 +39,8 @@
           "nl": "Verkoopautomaat {name}",
           "de": "Verkaufsautomat {name}",
           "fr": "Distributeur {name}",
-          "ca": "Maquina expenedora {name}"
+          "ca": "Maquina expenedora {name}",
+          "cs": "Prodejní automat {name}"
         }
       },
       {
@@ -48,7 +50,8 @@
           "nl": "Verkoopautomaat {brand}",
           "de": "Verkaufsautomat {brand}",
           "fr": "Distributeur {brand}",
-          "ca": "Màquina expenedora {brand}"
+          "ca": "Màquina expenedora {brand}",
+          "cs": "Prodejní automat {brand}"
         }
       }
     ]
@@ -75,7 +78,8 @@
         "nl": "Deze verkoopautomaat verkoopt {vending}",
         "de": "Dieser Automat verkauft {vending}",
         "fr": "Ce distributeur vent {vending}",
-        "ca": "Aquesta màquina expenedora ven {vending}"
+        "ca": "Aquesta màquina expenedora ven {vending}",
+        "cs": "Tento automat prodává {vending}"
       },
       "mappings": [
         {

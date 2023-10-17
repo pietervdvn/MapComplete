@@ -13,8 +13,8 @@
     "nl": "Winkels",
     "ca": "Botigues",
     "da": "Åbn butikskort",
-    "es": "Mapa Abierto de Tiendas",
-    "cs": "Open Shop Map",
+    "es": "Tiendas",
+    "cs": "Obchody",
     "eu": "Denda",
     "pl": "Sklepy"
   },
@@ -30,7 +30,8 @@
     "da": "Et redigerbart kort med grundlæggende butiksoplysninger",
     "ca": "Un mapa editable amb informació bàsica sobre botigues",
     "cs": "Upravitelná mapa se základními informacemi o obchodech",
-    "zh_Hant": "有基本商家資訊的可編輯性的地圖"
+    "zh_Hant": "有基本商家資訊的可編輯性的地圖",
+    "pl": "Edytowalna mapa z podstawowymi informacjami o sklepach"
   },
   "description": {
     "en": "On this map, one can mark basic information about shops, add opening hours and phone numbers",
@@ -44,7 +45,8 @@
     "nl": "Op deze kaart kan men algemene informatie over winkels toevoegen, evenals openingsuren en telefoonnummers",
     "da": "På dette kort kan man markere grundlæggende informationer om butikker, tilføje åbningstider og telefonnumre",
     "ca": "A aquest mapa, es pot marcar informació bàsica sobre botigues, afegir horaris i números de telèfon",
-    "cs": "Na této mapě můžete označit základní informace o obchodech, přidat otevírací dobu a telefonní čísla"
+    "cs": "Na této mapě můžete označit základní informace o obchodech, přidat otevírací dobu a telefonní čísla",
+    "pl": "Na mapie tej można zaznaczyć podstawowe informacje o sklepach, dodać godziny otwarcia oraz numery telefonów"
   },
   "icon": "./assets/themes/shops/shop.svg",
   "startLat": 0,

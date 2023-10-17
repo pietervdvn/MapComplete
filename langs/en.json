@@ -316,6 +316,7 @@
         },
         "skip": "Skip this question",
         "testing": "Testing - changes won't be saved",
+        "uploadError": "Error while uploading changes: {error}",
         "uploadGpx": {
             "choosePermission": "Choose below if your track should be shared:",
             "confirm": "Confirm upload",
@@ -343,6 +344,9 @@
             "uploadFinished": "Your track has been uploaded!",
             "uploading": "Uploading your trace…"
         },
+        "uploadPending": "{count} changes pending",
+        "uploadPendingSingle": "One change pending",
+        "uploadingChanges": "Uploading changes…",
         "useSearch": "Use the search above to see presets",
         "useSearchForMore": "Use the search function to search within {total} more values…",
         "waitingForGeopermission": "Waiting for your permission to use the geolocation…",

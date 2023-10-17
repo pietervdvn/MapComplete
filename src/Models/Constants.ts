@@ -6,7 +6,7 @@ import { AuthConfig } from "../Logic/Osm/AuthConfig"
 export type PriviligedLayerType = (typeof Constants.priviliged_layers)[number]
 
 export default class Constants {
-    public static vNumber = packagefile.version
+    public static vNumber : string = packagefile.version
     /**
      * API key for Maproulette
      *
@@ -63,7 +63,7 @@ export default class Constants {
      * Used by 'PendingChangesUploader', which waits this amount of seconds to upload changes.
      * (Note that pendingChanges might upload sooner if the popup is closed or similar)
      */
-    static updateTimeoutSec: number = 30
+    static updateTimeoutSec: number = 15
     /**
      * If the contributor has their GPS location enabled and makes a change,
      * the points visited less then `nearbyVisitTime`-seconds ago will be inspected.

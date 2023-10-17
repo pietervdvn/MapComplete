@@ -184,13 +184,13 @@
         "en": "How much does a bicycle tube cost?",
         "ca": "Quant costa una cambra d'aire de bicicleta?",
         "de": "Wie viel kostet ein Fahrradschlauch?",
-        "cs": "Kolik stojí plášť na kolo?"
+        "cs": "Kolik stojí duše na kolo?"
       },
       "render": {
         "en": "A bicycle tube costs {charge}",
         "ca": "Una cambra d'aire de bicicleta costa {charge}",
         "de": "Ein Fahrradschlauch kostet {charge}",
-        "cs": "Cena jednoho pláště {charge}"
+        "cs": "Cena jedné duše {charge}"
       },
       "freeform": {
         "key": "charge"
@@ -203,7 +203,7 @@
         "en": "Which brand of tubes are sold here?",
         "ca": "Quines marques de cambres d'aire es venen aquí?",
         "de": "Welche Fahrradschläuche werden hier verkauft?",
-        "cs": "Jaká značka plášťů je zde prodávána?"
+        "cs": "Jaká značka duší je zde prodávána?"
       },
       "freeform": {
         "key": "brand"
@@ -212,7 +212,7 @@
         "en": "{brand} tubes are sold here",
         "ca": "Aquí es venen cambres d'aire {brand}",
         "de": "Hier werden Fahrradschläuche von {brand} verkauft",
-        "cs": "{brand} pláště jsou zde prodávány"
+        "cs": "{brand} duše jsou zde prodávány"
       },
       "mappings": [
         {
@@ -221,7 +221,7 @@
             "en": "Continental tubes are sold here",
             "ca": "Aquí es venen cambres d'aire Continental",
             "de": "Hier werden Fahrradschläuche von Continental verkauft",
-            "cs": "Continental pláště jsou zde prodávány"
+            "cs": "Continental duše jsou zde prodávány"
           }
         },
         {
@@ -230,7 +230,7 @@
             "en": "Schwalbe tubes are sold here",
             "ca": "Aquí es venen cambres d'aire Schwalbe",
             "de": "Hier werden Fahrradschläuche von Schwalbe verkauft",
-            "cs": "Schwalbe pláště jsou zde prodávány"
+            "cs": "Schwalbe duše jsou zde prodávány"
           }
         }
       ],
@@ -251,7 +251,8 @@
           "then": {
             "en": "Maintained by Schwalbe",
             "ca": "Mantés per Schwalbe",
-            "de": "Betrieben von Schwalbe"
+            "de": "Betrieben von Schwalbe",
+            "cs": "Udržuje Schwalbe"
           }
         },
         {
@@ -259,7 +260,8 @@
           "then": {
             "en": "Maintained by Continental",
             "ca": "Mantés per Continental",
-            "de": "Betrieben von Continental"
+            "de": "Betrieben von Continental",
+            "cs": "Udržuje Continental"
           }
         }
       ],

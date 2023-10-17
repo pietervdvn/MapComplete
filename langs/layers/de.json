@@ -4724,6 +4724,27 @@
                         "question": "Stromanschluss vorhanden"
                     }
                 }
+            },
+            "13": {
+                "options": {
+                    "0": {
+                        "question": "Hat zuckerfreie Angebote"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Hat glutenfreie Angebote"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Hat laktosefreie Angebote"
+                    }
+                }
             }
         }
     },
@@ -7499,6 +7520,23 @@
             "email": {
                 "question": "Wie lautet die Mail-Adresse von {title()}?"
             },
+            "gluten_free": {
+                "mappings": {
+                    "0": {
+                        "then": "Das Geschäft verkauft <b>ausschließlich glutenfreie</b> Produkte"
+                    },
+                    "1": {
+                        "then": "Das Geschäft verkauft viele glutenfreie Produkte"
+                    },
+                    "2": {
+                        "then": "Das Geschäft verkauft <b>wenige glutenfreie</b> Produkte"
+                    },
+                    "3": {
+                        "then": "Das Geschäft verkauft keine glutenfreie Produkte"
+                    }
+                },
+                "question": "Verkauft das Geschäft glutenfreie Produkte?"
+            },
             "induction-loop": {
                 "mappings": {
                     "0": {
@@ -7557,6 +7595,23 @@
                         "then": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen."
                     }
                 }
+            },
+            "lactose_free": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Ausschließlich</b> laktosefreie Produkte"
+                    },
+                    "1": {
+                        "then": "Viele laktosefreie Produkte"
+                    },
+                    "2": {
+                        "then": "<b>Wenige</b> laktosefreie Produkte"
+                    },
+                    "3": {
+                        "then": "Keine laktosefreie Produkte"
+                    }
+                },
+                "question": "Verkauft {title()} laktosefreie Produkte?"
             },
             "last_edit": {
                 "render": {
@@ -7717,6 +7772,24 @@
                     }
                 },
                 "question": "Ist das Rauchen in {title()} erlaubt?"
+            },
+            "sugar_free": {
+                "mappings": {
+                    "0": {
+                        "then": "Das Geschäft verkauft <b>ausschließlich</b> zuckerfreie Produkte"
+                    },
+                    "1": {
+                        "then": "Das Geschäft verkauft <b>viele<b> zuckerfreie Produkte"
+                    },
+                    "2": {
+                        "then": "Das Geschäft verkauft <b>wenige</b> zuckerfreie Produkte"
+                    },
+                    "3": {
+                        "then": "Das Geschäft verkauft <b>keine<b> zuckerfreie Produkte"
+                    }
+                },
+                "question": "Verkauft das Geschäft zuckerfreie Produkte?",
+                "questionHint": "Dies ist wichtig für Menschen, die eine zuckerfreie Diät einhalten, z. B. für Menschen mit Diabetes"
             },
             "survey_date": {
                 "mappings": {
@@ -8262,6 +8335,13 @@
                         "question": "Nur Geschäfte mit dem Namen {search} anzeigen"
                     }
                 }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Nur Second-Hand-Geschäfte anzeigen"
+                    }
+                }
             }
         },
         "name": "Geschäfte",
@@ -8311,6 +8391,9 @@
                     }
                 },
                 "question": "Bietet dieses Geschäft Bioprodukte an?"
+            },
+            "second_hand": {
+                "question": "Verlauft das Geschäft auch Second-Hand-Produkte?"
             },
             "shops-name": {
                 "question": "Wie ist der Name dieses Geschäfts?",

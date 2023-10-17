@@ -162,16 +162,16 @@
   <LoginButton osmConnection={state.osmConnection} slot="not-logged-in">
     <Tr slot="message" t={Translations.t.general.add.pleaseLogin} />
   </LoginButton>
-  {#if $isLoading}
-    <div class="alert">
-      <Loading>
-        <Tr t={Translations.t.general.add.stillLoading} />
-      </Loading>
-    </div>
-  {:else if $zoom < Constants.minZoomLevelToAddNewPoint}
+   {#if $zoom < Constants.minZoomLevelToAddNewPoint}
     <div class="alert">
       <Tr t={Translations.t.general.add.zoomInFurther} />
     </div>
+   {:else if $isLoading}
+       <div class="alert">
+         <Loading>
+           <Tr t={Translations.t.general.add.stillLoading} />
+         </Loading>
+       </div>
   {:else if selectedPreset === undefined}
     <!-- First, select the correct preset -->
     <PresetList

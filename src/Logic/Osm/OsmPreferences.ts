@@ -72,7 +72,7 @@ export class OsmPreferences {
             let i = 0
             while (str !== "") {
                 if (str === undefined || str === "undefined") {
-                    throw "Long pref became undefined?"
+                    throw "Got 'undefined' or a literal string containing 'undefined' for a long preference with name "+key
                 }
                 if (i > 100) {
                     throw "This long preference is getting very long... "

@@ -4,13 +4,17 @@
     "en": "Penny Presses",
     "de": "Münzprägeautomaten",
     "es": "Prensa de céntimos",
-    "ca": "Premsa de cèntims"
+    "ca": "Premsa de cèntims",
+    "cs": "Stroje na ražbu mincí",
+    "pl": "Prasy do groszy"
   },
   "description": {
     "en": "Find penny presses to create your own elongated coins.",
     "de": "Finde Automaten um Souvenirmünzen zu prägen.",
     "es": "Encuentra prensas de centimos para crear tus propias monedas alargadas.",
-    "ca": "Trobeu premses de cèntims per crear les vostres pròpies monedes allargades."
+    "ca": "Trobeu premses de cèntims per crear les vostres pròpies monedes allargades.",
+    "cs": "Najděte automaty na ražbu suvenýrových mincí.",
+    "pl": "Znajdź prasy do groszy, aby stworzyć własne wydłużone monety."
   },
   "icon": "./assets/themes/elongated_coin/penny.svg",
   "layers": [

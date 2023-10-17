@@ -7,7 +7,8 @@
     "ja": "登坂教室",
     "fr": "Opportunité d’escalade",
     "it": "Opportunità di arrampicata",
-    "ca": "Oportunitats d'escalada"
+    "ca": "Oportunitats d'escalada",
+    "cs": "Lezecké příležitosti"
   },
   "description": {
     "en": "An area where climbing is possible, e.g. a crag, site, boulder, … Contains aggregation of routes",
@@ -36,7 +37,8 @@
       "nb_NO": "Klatremulighet",
       "fr": "Opportunité d’escalade",
       "it": "Opportunità di arrampicata",
-      "ca": "Oportunitat d'escalada"
+      "ca": "Oportunitat d'escalada",
+      "cs": "Příležitost k lezení"
     },
     "mappings": [
       {
@@ -46,7 +48,8 @@
           "fr": "Mur d’escalade <b>{name}</b>",
           "it": "Muro da arrampicata <b>{name}</b>",
           "de": "Klettergarten <b>{name}</b>",
-          "nl": "Klimrots of klimzone <b>{name}</b>"
+          "nl": "Klimrots of klimzone <b>{name}</b>",
+          "cs": "Lezecká cesta <b>{name}</b>"
         }
       },
       {
@@ -66,7 +69,8 @@
           "nl": "Klimsite <b>{name}</b>",
           "fr": "Zone d’escalade <b>{name}</b>",
           "de": "Klettergebiet <b>{name}</b>",
-          "it": "Area di arrampicata <b>{name}</b>"
+          "it": "Area di arrampicata <b>{name}</b>",
+          "cs": "Lezecká oblast <b>{name}</b>"
         }
       },
       {
@@ -82,7 +86,8 @@
           "fr": "Site d’escalade",
           "de": "Klettergebiet",
           "it": "Sito di arrampicata",
-          "ca": "Llocs d'escalada"
+          "ca": "Llocs d'escalada",
+          "cs": "Lezecká lokalita"
         }
       },
       {
@@ -93,7 +98,8 @@
           "fr": "Opportunité d’escalade <b>{name}</b>",
           "de": "Klettereinrichtung <b>{name}</b>",
           "it": "Opportunità di arrampicata <b>{name}</b>",
-          "ca": "Oportunitat d'escalada <b>{name}</b>"
+          "ca": "Oportunitat d'escalada <b>{name}</b>",
+          "cs": "Lezecká příležitost <b>{name}</b>"
         }
       }
     ]
@@ -164,7 +170,8 @@
         "ru": "<strong>{name}</strong>",
         "ja": "<strong>{name}</strong>",
         "it": "<strong>{name}</strong>",
-        "eu": "<strong>{name}</strong>"
+        "eu": "<strong>{name}</strong>",
+        "cs": "<strong>{name}</strong>"
       },
       "question": {
         "en": "What is the name of this climbing opportunity?",
@@ -172,7 +179,8 @@
         "de": "Wie heißt die Klettereinrichtung?",
         "ja": "この登坂教室の名前は何ですか?",
         "fr": "Quel est le nom de ce site ?",
-        "it": "Qual è il nome di questa opportunità di arrampicata?"
+        "it": "Qual è il nome di questa opportunità di arrampicata?",
+        "cs": "Jak se jmenuje tato lezecká příležitost?"
       },
       "freeform": {
         "key": "name"
@@ -191,7 +199,8 @@
             "de": "Die Klettereinrichtung hat keinen Namen",
             "ja": "この登坂教室には名前がついていない",
             "fr": "Ce site n’a pas de nom",
-            "it": "Questa opportunità di arrampicata non ha un nome"
+            "it": "Questa opportunità di arrampicata non ha un nome",
+            "cs": "Tato lezecká příležitost nemá jméno"
           }
         }
       ],
@@ -208,7 +217,8 @@
             "de": "Ein Kletterfelsen - ein einzelner Felsen oder eine Klippe mit einer oder wenigen Kletterrouten, die ohne Seil sicher bestiegen werden können",
             "it": "Un masso per arrampicata (una singola roccia o falesia con una o poche vie di arrampicata che possono essere scalate in sicurezza senza una corda)",
             "nl": "Een klimboulder - een enkele rots of klif met één of enkele klimroutes die veilig zonder touw kunnen worden beklommen",
-            "ca": "Una roca d'escalada: una única roca o penya-segat amb una o unes quantes vies d'escalada que es poden escalar amb seguretat sense corda"
+            "ca": "Una roca d'escalada: una única roca o penya-segat amb una o unes quantes vies d'escalada que es poden escalar amb seguretat sense corda",
+            "cs": "Lezecký balvan - jediná skála nebo útes s jednou nebo několika lezeckými cestami, na které lze bezpečně vylézt bez lana"
           }
         },
         {
@@ -218,7 +228,8 @@
             "fr": "Mur d’escalade, rocher avec plusieurs voies d’escalades",
             "it": "Un muro da arrampicata (un singolo masso o falesia con almeno qualche via per arrampicata)",
             "de": "Ein Kletterfelsen - ein einzelner Fels oder eine Klippe mit mindestens einigen Kletterrouten",
-            "nl": "Een klimzone - een enkele rots of klif met klimroutes"
+            "nl": "Een klimzone - een enkele rots of klif met klimroutes",
+            "cs": "Lezecká skála - jediná skála nebo útes s alespoň několika lezeckými cestami"
           }
         },
         {
@@ -235,7 +246,8 @@
         "de": "Welchen Gesteinstyp gibt es hier?",
         "it": "Qual è il tipo di roccia qua?",
         "nl": "Wat is de rotssoort?",
-        "ca": "Quin és el tipus de roca aquí?"
+        "ca": "Quin és el tipus de roca aquí?",
+        "cs": "Jaký je zde typ skály?"
       },
       "render": {
         "en": "The rock type is {rock}",
@@ -243,7 +255,8 @@
         "de": "Der Gesteinstyp ist {rock}",
         "it": "Il tipo di roccia è {rock}",
         "nl": "De rotssoort is {rock}",
-        "ca": "El tipus de roca és {rock}"
+        "ca": "El tipus de roca és {rock}",
+        "cs": "Typ skály je {rock}"
       },
       "freeform": {
         "key": "rock"
@@ -259,7 +272,8 @@
             "it": "Calcare",
             "pa_PK": "چونہ پتھر",
             "eu": "Kareharria",
-            "ca": "Calcària"
+            "ca": "Calcària",
+            "cs": "Vápenec"
           }
         }
       ],
@@ -294,7 +308,8 @@
         "nb_NO": "en klatremulighet",
         "fr": "une opportunité d’escalade",
         "it": "una opportunità di arrampicata",
-        "ca": "una oportuinitat d'escalada"
+        "ca": "una oportuinitat d'escalada",
+        "cs": "lezecká příležitost"
       },
       "description": {
         "nl": "Een klimgelegenheid",
@@ -304,7 +319,8 @@
         "nb_NO": "En klatremulighet",
         "fr": "Opportunité d’escalade",
         "it": "Un’opportunità di arrampicata",
-        "ca": "Una oportunitat d'escalada"
+        "ca": "Una oportunitat d'escalada",
+        "cs": "Lezecká příležitost"
       }
     }
   ],

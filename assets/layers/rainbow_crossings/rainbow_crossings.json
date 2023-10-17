@@ -10,7 +10,8 @@
     "en": "A layer showing pedestrian crossings with rainbow paintings",
     "de": "Eine Ebene mit Fußgängerüberwegen in Regenbogenfarben",
     "fr": "Une couche affichant les passages piétons avec des peintures arc-en-ciel",
-    "ca": "Una capa que mostra els passos de vianants pintats amb de l'arc de Sant Martí"
+    "ca": "Una capa que mostra els passos de vianants pintats amb de l'arc de Sant Martí",
+    "cs": "Vrstva zobrazující přechody pro chodce s duhovými malbami"
   },
   "source": {
     "osmTags": {

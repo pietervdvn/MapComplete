@@ -27,7 +27,8 @@
     "da": "En note er en nål på kortet med noget tekst, der indikerer, at noget er forkert.<br/><br/>Sørg for at tjekke <a href='#filters'>filtervisningen</a> for at søge efter brugere og tekst .",
     "cs": "Poznámka je špendlík na mapě s textem, jež označuje, že něco není v pořádku.<br/><br/>Nezapomeňte si prohlédnout zobrazení filtru <a href='#filters'></a> pro vyhledávání uživatelů a textu.",
     "ca": "Una nota és un marcador al mapa amb un text per indicar alguna cosa incorrecta.<br/><br/>Assegureu-vos de revisar la <a href='#filters'>visualització de filtres</a> per cercar usuaris i text.",
-    "zh_Hant": "註解會散佈在地圖上並且有一些文字說明，來顯示那邊有錯誤。<br/><br/>請確認用<a href='#filter'>過濾檢視</a>來搜尋使用者或是文字。"
+    "zh_Hant": "註解會散佈在地圖上並且有一些文字說明，來顯示那邊有錯誤。<br/><br/>請確認用<a href='#filter'>過濾檢視</a>來搜尋使用者或是文字。",
+    "pl": "Uwaga to pinezka na mapie z tekstem wskazującym, że coś jest nie tak.<br/><br/>Pamiętaj o skorzystaniu z <a href='#filters'>widoku filtra</a>, aby wyszukać użytkowników i tekst ."
   },
   "icon": "./assets/themes/notes/logo.svg",
   "clustering": false,

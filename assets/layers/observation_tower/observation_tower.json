@@ -7,7 +7,8 @@
     "de": "Aussichtstürme",
     "ca": "Torres d'observació",
     "es": "Torres de observación",
-    "pl": "Wieże obserwacyjne"
+    "pl": "Wieże obserwacyjne",
+    "cs": "Rozhledny"
   },
   "minzoom": 8,
   "title": {
@@ -18,7 +19,8 @@
       "de": "Beobachtungsturm",
       "ca": "Torre d'observació",
       "es": "Torre de observación",
-      "pl": "Wieża obserwacyjna"
+      "pl": "Wieża obserwacyjna",
+      "cs": "Rozhledna"
     },
     "mappings": [
       {
@@ -41,7 +43,8 @@
     "de": "Türme zur Aussicht auf die umgebende Landschaft",
     "es": "Torres con vista panorámica",
     "pl": "Wieże z panoramicznym widokiem",
-    "ca": "Torres amb vista panoràmica"
+    "ca": "Torres amb vista panoràmica",
+    "cs": "Věže s panoramatickým výhledem"
   },
   "tagRenderings": [
     "images",
@@ -52,7 +55,8 @@
         "de": "Wie ist der Name des Turms?",
         "es": "¿Cual es el nombre de esta torre?",
         "ca": "Com s'anomena aquesta torre?",
-        "pl": "Jaka jest nazwa tej wieży?"
+        "pl": "Jaka jest nazwa tej wieży?",
+        "cs": "Jak se jmenuje tato věž?"
       },
       "render": {
         "en": "This tower is called <b>{name}</b>",
@@ -60,7 +64,8 @@
         "de": "Der Name des Turms ist <b>{name}</b>",
         "es": "Esta torre se llama <b>{name}</b>",
         "ca": "Aquesta torre s'anomena <b>{name}</b>",
-        "pl": "Ta wieża nazywa się <b>{name}</b>"
+        "pl": "Ta wieża nazywa się <b>{name}</b>",
+        "cs": "Tato věž se jmenuje <b>{name}</b>"
       },
       "freeform": {
         "key": "name"
@@ -74,7 +79,8 @@
             "de": "Der Turm hat keinen eigenen Namen",
             "es": "Esta torre no tiene un nombre específico",
             "ca": "Aquesta torre no té un nom concret",
-            "pl": "Ta wieża nie ma określonej nazwy"
+            "pl": "Ta wieża nie ma określonej nazwy",
+            "cs": "Tato věž nemá konkrétní jméno"
           }
         }
       ],
@@ -87,7 +93,8 @@
         "de": "Wie hoch ist dieser Turm?",
         "es": "¿Cual es la altura de esta torre?",
         "ca": "Quina és l'alçada d'aquesta torre?",
-        "pl": "Jaka jest wysokość tej wieży?"
+        "pl": "Jaka jest wysokość tej wieży?",
+        "cs": "Jaká je výška této věže?"
       },
       "render": {
         "en": "This tower is {height} high",
@@ -95,7 +102,8 @@
         "de": "Dieser Turm ist {height} hoch",
         "es": "Esta torre mide {height}",
         "pl": "Ta wieża ma wysokość {height}",
-        "ca": "Aquesta torre fa {height}"
+        "ca": "Aquesta torre fa {height}",
+        "cs": "Tato věž je {height} vysoká"
       },
       "freeform": {
         "key": "height",
@@ -110,7 +118,8 @@
         "nl": "Is deze toren publiek toegankelijk?",
         "es": "¿Se puede visitar esta torre?",
         "de": "Darf der Turm betreten werden?",
-        "ca": "Es pot visitar aquesta torre?"
+        "ca": "Es pot visitar aquesta torre?",
+        "cs": "Lze tuto věž navštívit?"
       },
       "mappings": [
         {
@@ -121,7 +130,8 @@
             "de": "Der Turm ist öffentlich zugänglich",
             "es": "Esta torre es accesible públicamente",
             "ca": "Aquesta torre és d'accés públic",
-            "pl": "Ta wieża jest publicznie dostępna"
+            "pl": "Ta wieża jest publicznie dostępna",
+            "cs": "Tato věž je veřejně dostupná"
           }
         },
         {
@@ -132,7 +142,8 @@
             "de": "Der Turm darf nur in Begleitung eines Führers betreten werden",
             "es": "A esta torre solo se puede acceder con un guía",
             "ca": "Aquesta torre només es pot visitar amb un guia",
-            "pl": "Ta wieża można być zwiedzana tylko z przewodnikiem"
+            "pl": "Ta wieża można być zwiedzana tylko z przewodnikiem",
+            "cs": "Tuto věž lze navštívit pouze s průvodcem"
           }
         }
       ]
@@ -144,7 +155,8 @@
         "de": "Was kostet der Zugang zu diesem Turm?",
         "es": "¿Cuánto hay que pagar para entrar en esta torre?",
         "pl": "Ile kosztuje wstęp na tę wieżę?",
-        "ca": "Quant hi ha que pagar per entrar a aquesta torre?"
+        "ca": "Quant hi ha que pagar per entrar a aquesta torre?",
+        "cs": "Kolik se platí za vstup do této věže?"
       },
       "render": {
         "en": "Visiting this tower costs <b>{charge}</b>",
@@ -152,7 +164,8 @@
         "de": "Der Besuch des Turms kostet <b>{charge}</b>",
         "es": "Visitar esta torre cuesta <b>{charge}</b>",
         "pl": "Wizyta na tej wieży kosztuje <b>{charge}</b>",
-        "ca": "Visitar aquesta torre costa <b>{charge}</b>"
+        "ca": "Visitar aquesta torre costa <b>{charge}</b>",
+        "cs": "Návštěva této věže stojí <b>{charge}</b>"
       },
       "freeform": {
         "key": "charge",
@@ -172,7 +185,8 @@
             "en": "Free to visit",
             "nl": "Gratis te bezoeken",
             "de": "Eintritt kostenlos",
-            "pl": "Darmowe wejście"
+            "pl": "Darmowe wejście",
+            "cs": "Zdarma k návštěvě"
           }
         }
       ],
@@ -205,7 +219,8 @@
         "de": "Wie viele einzelne Stufen muss man erklimmen, um die Spitze des Turms zu erreichen?",
         "es": "¿Cuántos escalones hay que subir para llegar a la cima de esta torre?",
         "ca": "Quants esglaons individuals cal pujar per arribar al cim d'aquesta torre?",
-        "pl": "Ile pojedynczych stopni trzeba pokonać, aby dostać się na górę tej wieży?"
+        "pl": "Ile pojedynczych stopni trzeba pokonać, aby dostać się na górę tej wieży?",
+        "cs": "Kolik jednotlivých schodů musí člověk zdolat, aby se dostal na vrchol této věže?"
       },
       "freeform": {
         "key": "step_count",
@@ -217,7 +232,8 @@
         "de": "Dieser Turm hat {step_count} Stufen, um die Spitze zu erreichen",
         "es": "Esta torre tiene {step_count} escalones para lllegar a l a cima",
         "ca": "Aquesta torre té {step_count} esglaons per arribar al cim",
-        "pl": "Ta wieża ma {step_count} stopni na górę"
+        "pl": "Ta wieża ma {step_count} stopni na górę",
+        "cs": "Na vrchol této věže vede {step_count} schodů"
       },
       "condition": {
         "or": [
@@ -234,7 +250,8 @@
         "de": "Hat dieser Turm einen Aufzug?",
         "es": "¿Esta torre tiene ascensor?",
         "pl": "Czy ta wieża ma windę?",
-        "ca": "Aquesta torre té ascensor?"
+        "ca": "Aquesta torre té ascensor?",
+        "cs": "Má tato věž výtah?"
       },
       "mappings": [
         {
@@ -245,7 +262,8 @@
             "de": "Dieser Turm verfügt über einen Aufzug, der die Besucher nach oben bringt",
             "es": "Esta torre tiene un ascensor que lleva a los visitantes a la cima",
             "pl": "Ta wieża ma windę, która zabiera zwiedzających na górę",
-            "ca": "Aquesta torre té un ascensor que porta els visitants al cim"
+            "ca": "Aquesta torre té un ascensor que porta els visitants al cim",
+            "cs": "Tato věž má výtah, který návštěvníky vyveze na vrchol"
           }
         },
         {
@@ -256,7 +274,8 @@
             "de": "Dieser Turm hat keinen Aufzug",
             "es": "Esta torre no tiene ascensor",
             "pl": "Ta wieża nie ma windy",
-            "ca": "Aquesta torre no té ascensor"
+            "ca": "Aquesta torre no té ascensor",
+            "cs": "Tato věž nemá výtah"
           }
         }
       ],
@@ -274,7 +293,8 @@
         "de": "Wer betreibt den Turm?",
         "es": "¿Quién mantiene esta torre?",
         "ca": "Qui manté aquesta torre?",
-        "pl": "Kto obsługuje tę wieżę?"
+        "pl": "Kto obsługuje tę wieżę?",
+        "cs": "Kdo udržuje tuto věž?"
       },
       "render": {
         "nl": "Wordt onderhouden door <b>{operator}</b>",
@@ -282,7 +302,8 @@
         "de": "Betrieben von <b>{operator}</b>",
         "es": "Mantenida por <b>{operator}</b>",
         "pl": "Obsługiwana przez <b>{operator}</b>",
-        "ca": "Mantés per <b>{operator}</b>"
+        "ca": "Mantés per <b>{operator}</b>",
+        "cs": "Udržováno <b>{operator}</b>"
       },
       "freeform": {
         "key": "operator"
@@ -333,7 +354,8 @@
             "de": " Meter",
             "ca": " metre",
             "es": " metros",
-            "pl": " metr"
+            "pl": " metr",
+            "cs": " metr"
           }
         }
       ],

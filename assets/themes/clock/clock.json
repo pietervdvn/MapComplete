@@ -18,7 +18,8 @@
     "de": "Eine Karte mit öffentlichen Uhren",
     "es": "Mapa con todos los relojes públicos",
     "cs": "Mapa zobrazující všechny veřejné hodiny",
-    "fr": "Carte affichant toutes les horloges publiques"
+    "fr": "Carte affichant toutes les horloges publiques",
+    "pl": "Mapa pokazująca wszystkie zegary publiczne"
   },
   "icon": "./assets/layers/clock/clock.svg",
   "startLat": 0,

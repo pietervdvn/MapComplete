@@ -4,6 +4,7 @@
   import { Translation } from "../i18n/Translation"
   import Tr from "../Base/Tr.svelte"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
+  import Translations from "../i18n/Translations"
 
   /**
    * A 'TagHint' will show the given tags in a human readable form.
@@ -25,7 +26,7 @@
 {#if !userDetails || $userDetails.loggedIn}
   <div>
     {#if tags === undefined}
-      <slot name="no-tags">No tags</slot>
+      <slot name="no-tags"><Tr cls="subtle" t={Translations.t.general.noTagsSelected}></Tr></slot>
     {:else if embedIn === undefined}
       <FromHtml src={tagsExplanation} />
     {:else}

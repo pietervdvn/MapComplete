@@ -119,6 +119,12 @@ export class GeoLocationState {
             return
         }
 
+        if(navigator.permissions === undefined && navigator.geolocation !== undefined){
+            // This is probably safari - we just start watching right away
+            this.startWatching()
+            return
+        }
+
         this.permission.setData("requested")
         try {
             const status = await navigator?.permissions?.query({ name: "geolocation" })

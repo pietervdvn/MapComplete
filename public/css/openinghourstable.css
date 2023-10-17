@@ -19,7 +19,7 @@
 }
 
 .oh-timecell {
-    background-color: white;
+    background: white;
     position: relative;
     box-sizing: border-box;
 }
@@ -27,31 +27,37 @@
 .oh-table th {
     font-weight: bold;
     font-size: medium;
-    background-color: #ddd;
+    background: #ddd;
 }
 
 .oh-table td {
     vertical-align: top;
 }
 
-.oh-timecell:hover {
-    background-color: var(--catch-detail-color) !important;
+.oh-timecell:hover, .oh-timecell-half:hover {
+    background: var(--catch-detail-color) !important;
 }
 
 
 .oh-timecell-selected {
-    background-color: var(--catch-detail-color);
+    background: var(--catch-detail-color);
 }
 
+.oh-timecell.oh-timecell-5:not(.oh-timecell-half), .oh-timecell.oh-timecell-6:not(.oh-timecell-half) {
+    background: repeating-linear-gradient(-65deg, var(--background-color) 0 4.8px, var(--subtle-detail-color) 7px)
+}
 
 .oh-timecell-half {
     border-bottom: 1px solid #ddd;
-    background-color: var(--subtle-detail-color);
+    background: var(--subtle-detail-color);
 }
 
+
+
 .oh-timecell-half.oh-timecell-selected {
-    background-color: var(--catch-detail-color);
+    background: var(--catch-detail-color);
 }
+
 
 .oh-table tr {
     background: #ddd;
@@ -81,7 +87,7 @@
 }
 
 .oh-timecol-selected > span {
-    background-color: var(--catch-detail-color);
+    background: var(--catch-detail-color);
     color: var(--background-color);
     width: 100%;
     display: block;

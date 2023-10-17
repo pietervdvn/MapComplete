@@ -10,7 +10,8 @@
     "en": "Find a fitness station near you, and add missing ones.",
     "de": "Finden Sie eine Fitness-Station in der Nähe und fügen Sie fehlende hinzu.",
     "nl": "Vind een fitness-centrum in je buurt en voeg ontbrekende fitness-centra toe",
-    "ca": "Troba una estació de fitness a prop teu i afegeix-ne les que falten."
+    "ca": "Troba una estació de fitness a prop teu i afegeix-ne les que falten.",
+    "cs": "Najděte fitness stanici ve svém okolí a přidejte chybějící."
   },
   "source": {
     "osmTags": "leisure=fitness_station"

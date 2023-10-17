@@ -9,14 +9,16 @@
     "zh_Hant": "風機",
     "hu": "Szélerőmű",
     "da": "vindmølle",
-    "ca": "Turbina Eòlica"
+    "ca": "Turbina Eòlica",
+    "cs": "větrná turbína"
   },
   "description": {
     "en": "Modern windmills generating electricity",
     "de": "Moderne Windmühlen zur Stromerzeugung",
     "nl": "Windturbines (moderne windmolens die elektriciteit genereren)",
     "da": "Moderne vindmøller til produktion af elektricitet",
-    "ca": "Molins de vent moderns que generen electricitat"
+    "ca": "Molins de vent moderns que generen electricitat",
+    "cs": "Moderní větrné mlýny vyrábějící elektřinu"
   },
   "source": {
     "osmTags": "generator:source=wind"
@@ -34,7 +36,8 @@
       "hu": "szélerőmű",
       "da": "vindmølle",
       "pl": "turbina wiatrowa",
-      "ca": "Turbina eòlica"
+      "ca": "Turbina eòlica",
+      "cs": "větrná turbína"
     },
     "mappings": [
       {
@@ -69,7 +72,8 @@
         "de": "Das Windrad erzeugt {generator:output:electricity} Strom.",
         "nl": "Deze windturbine genereert {generator:output:electricity}",
         "da": "Denne vindmølle har en effekt på {generator:output:electricity}.",
-        "ca": "La potència de sortida d'aquest aerogenerador és {generator:output:electricity}."
+        "ca": "La potència de sortida d'aquest aerogenerador és {generator:output:electricity}.",
+        "cs": "Výkon této větrné turbíny je {generator:output:electricity}."
       },
       "question": {
         "en": "What is the power output of this wind turbine? (e.g. 2.3 MW)",
@@ -81,7 +85,8 @@
         "de": "Wieviel Strom erzeugt das Windrad? (z.B. 2.3 MW)",
         "nl": "Wat is de output",
         "da": "Hvad er effekten af denne vindmølle? (f.eks. 2,3 MW)",
-        "ca": "Quina és la potència de sortida d'aquest aerogenerador? (p. ex. 2,3 MW)"
+        "ca": "Quina és la potència de sortida d'aquest aerogenerador? (p. ex. 2,3 MW)",
+        "cs": "Jaký je výkon této větrné turbíny? (např. 2,3 MW)"
       },
       "freeform": {
         "key": "generator:output:electricity",
@@ -100,7 +105,8 @@
         "de": "Die Windturbine wird betrieben von {operator}.",
         "da": "Denne vindmølle drives af {operator}.",
         "nl": "Deze windturbine wordt beheerd door {operator}.",
-        "ca": "{operator} gestiona aquest aerogenerador."
+        "ca": "{operator} gestiona aquest aerogenerador.",
+        "cs": "Tuto větrnou turbínu provozuje {operator}."
       },
       "question": {
         "en": "Who operates this wind turbine?",
@@ -112,7 +118,8 @@
         "id": "Siapa yang mengoperasikan turbin angin ini?",
         "da": "Hvem driver denne vindmølle?",
         "nl": "Wie beheert deze windturbine?",
-        "ca": "Qui opera aquest aerogenerador?"
+        "ca": "Qui opera aquest aerogenerador?",
+        "cs": "Kdo provozuje tuto větrnou turbínu?"
       },
       "freeform": {
         "key": "operator"
@@ -129,7 +136,8 @@
         "de": "Die Gesamthöhe dieses Windrads beträgt (einschließlich Rotorradius) {height} Meter.",
         "da": "Den samlede højde (inklusive rotorradius) for denne vindmølle er {height} meter.",
         "nl": "De totale hoogte (inclusief rotor-radius) van deze windturbine is {height} meter",
-        "ca": "L'alçada total (inclòs el radi del rotor) d'aquest aerogenerador és de {height} metres."
+        "ca": "L'alçada total (inclòs el radi del rotor) d'aquest aerogenerador és de {height} metres.",
+        "cs": "Celková výška (včetně poloměru rotoru) této větrné turbíny je {height} metrů."
       },
       "question": {
         "en": "What is the total height of this wind turbine (including rotor radius), in metres?",
@@ -140,7 +148,8 @@
         "de": "Wie hoch ist das Windrad (inklusive Rotorradius) in Metern?",
         "da": "Hvad er den samlede højde af denne vindmølle (inklusive rotorradius), i meter?",
         "nl": "Wat is de totale hoogte in meter van deze windturbine (inclusief rotor-radius)?",
-        "ca": "Quina és l'alçada total d'aquest aerogenerador (inclòs el radi del rotor), en metres?"
+        "ca": "Quina és l'alçada total d'aquest aerogenerador (inclòs el radi del rotor), en metres?",
+        "cs": "Jaká je celková výška této větrné elektrárny (včetně poloměru rotoru) v metrech?"
       },
       "freeform": {
         "key": "height",
@@ -158,7 +167,8 @@
         "de": "Der Rotordurchmesser der Windturbine ist {rotor:diameter} Meter.",
         "nl": "De rotordiameter van deze windturbine is {rotor:diameter} meter.",
         "da": "Rotordiameteren på denne vindmølle er {rotor:diameter} meter.",
-        "ca": "El diàmetre del rotor d'aquest aerogenerador és de {rotor:diameter} metres."
+        "ca": "El diàmetre del rotor d'aquest aerogenerador és de {rotor:diameter} metres.",
+        "cs": "Průměr rotoru této větrné turbíny je {rotor:diameter} metrů."
       },
       "question": {
         "en": "What is the rotor diameter of this wind turbine, in metres?",
@@ -169,7 +179,8 @@
         "de": "Wie groß ist der Rotordurchmesser der Windturbine in Meter?",
         "nl": "Wat is de rotordiameter van deze windturbine?",
         "da": "Hvad er rotordiameteren på denne vindmølle i meter?",
-        "ca": "Quin és el diàmetre del rotor d'aquest aerogenerador en metres?"
+        "ca": "Quin és el diàmetre del rotor d'aquest aerogenerador en metres?",
+        "cs": "Jaký je průměr rotoru této větrné turbíny v metrech?"
       },
       "freeform": {
         "key": "rotor:diameter",
@@ -188,7 +199,8 @@
         "de": "Das Windrad wurde am {start_date} in Betrieb genommen.",
         "nl": "Deze windturbine werd op {start_date} in gebruik genomen",
         "da": "Denne vindmølle blev sat i drift den/den {start_date}.",
-        "ca": "Aquest aerogenerador va entrar en funcionament el dia {start_date}."
+        "ca": "Aquest aerogenerador va entrar en funcionament el dia {start_date}.",
+        "cs": "Tato větrná turbína byla uvedena do provozu dne/v {start_date}."
       },
       "question": {
         "en": "When did this wind turbine go into operation?",
@@ -200,7 +212,8 @@
         "de": "Wann wurde das Windrad in Betrieb genommen?",
         "nl": "Wanneer werd deze windturbine in gebruik genomen?",
         "da": "Hvornår blev denne vindmølle taget i brug?",
-        "ca": "Quan va entrar en funcionament aquest aerogenerador?"
+        "ca": "Quan va entrar en funcionament aquest aerogenerador?",
+        "cs": "Kdy byla tato větrná turbína uvedena do provozu?"
       },
       "freeform": {
         "key": "start_date",
@@ -217,13 +230,15 @@
         "ru": "Дополнительная информация для экспертов OpenStreetMap: {fixme}",
         "sl": "Dodatne informacije za OpenStreetMap strokovnjake: {fixme}",
         "es": "Información extra para expertos en OpenStreetMap: {fixme}",
-        "ca": "Informació addicional per als experts en OpenStreetMap: {fixme}"
+        "ca": "Informació addicional per als experts en OpenStreetMap: {fixme}",
+        "cs": "Další informace pro odborníky na OpenStreetMap: {fixme}"
       },
       "question": {
         "en": "Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)",
         "nl": "Is er iets mis met de informatie over deze windturbine dat je hier niet opgelost kreeg? (laat hier een berichtje achter voor OpenStreetMap experts)",
         "de": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlassen Sie eine Nachricht an OpenStreetMap-Experten)",
-        "ca": "Hi ha alguna cosa malament en la manera que està mapejat això que no heu pogut solucionar aquí? (deixeu una nota als experts d'OpenStreetMap)"
+        "ca": "Hi ha alguna cosa malament en la manera que està mapejat això que no heu pogut solucionar aquí? (deixeu una nota als experts d'OpenStreetMap)",
+        "cs": "Je něco špatně s tím, jak je to mapováno, a vy jste to zde nedokázali opravit? (zanechte poznámku odborníkům na OpenStreetMap)"
       },
       "freeform": {
         "key": "fixme",
@@ -248,7 +263,8 @@
         "zh_Hant": "風機",
         "hu": "Szélerőmű",
         "da": "en vindmølle",
-        "ca": "una turbina eòlica"
+        "ca": "una turbina eòlica",
+        "cs": "větrná turbína"
       }
     }
   ],
@@ -276,7 +292,8 @@
             "id": " megawat",
             "hu": " megawatt",
             "ca": " megavats",
-            "da": " Megawatt"
+            "da": " Megawatt",
+            "cs": " megawatty"
           }
         },
         {
@@ -298,7 +315,8 @@
             "id": " kilowat",
             "hu": " kilowatt",
             "ca": " quilovats",
-            "da": " Kilowatt"
+            "da": " Kilowatt",
+            "cs": " kilowatty"
           }
         },
         {
@@ -319,7 +337,8 @@
             "id": " watt",
             "hu": " watt",
             "ca": " vats",
-            "da": " Watt"
+            "da": " Watt",
+            "cs": " watty"
           }
         },
         {
@@ -340,7 +359,8 @@
             "id": " gigawatt",
             "hu": " gigawatt",
             "ca": " gigavats",
-            "da": " Gigawatt"
+            "da": " Gigawatt",
+            "cs": " gigawatty"
           }
         }
       ],
@@ -369,7 +389,8 @@
             "id": " meter",
             "hu": " méter",
             "ca": " metre",
-            "da": " meter"
+            "da": " meter",
+            "cs": " metr"
           }
         }
       ]

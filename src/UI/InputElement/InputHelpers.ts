@@ -3,13 +3,17 @@ import { UIEventSource } from "../../Logic/UIEventSource"
 
 import { MapProperties } from "../../Models/MapProperties"
 import BaseUIElement from "../BaseUIElement"
-import OpeningHoursInput from "../OpeningHours/OpeningHoursInput"
 import WikidataSearchBox from "../Wikipedia/WikidataSearchBox"
 import Wikidata from "../../Logic/Web/Wikidata"
 import { Utils } from "../../Utils"
 import Locale from "../i18n/Locale"
 import { Feature } from "geojson"
 import { GeoOperations } from "../../Logic/GeoOperations"
+import OpeningHoursInput from "./Helpers/OpeningHoursInput.svelte"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import DirectionInput from "./Helpers/DirectionInput.svelte"
+import DateInput from "./Helpers/DateInput.svelte"
+import ColorInput from "./Helpers/ColorInput.svelte"
 
 export interface InputHelperProperties {
     /**
@@ -46,8 +50,14 @@ export default class InputHelpers {
             >
         >
     > = {
-        // TODO: remake in svelte,move selection logic to 'inputHelper.svelte'
-        opening_hours: (value) => new OpeningHoursInput(value),
+        direction: (value, properties) =>
+            new SvelteUIElement(DirectionInput, {
+                value,
+                mapProperties: InputHelpers.constructMapProperties(properties),
+            }),
+        date: (value) => new SvelteUIElement(DateInput, { value }),
+        color: (value) => new SvelteUIElement(ColorInput, { value }),
+        opening_hours: (value) => new SvelteUIElement(OpeningHoursInput, { value }),
         wikidata: InputHelpers.constructWikidataHelper,
     } as const
 

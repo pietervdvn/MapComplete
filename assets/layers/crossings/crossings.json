@@ -8,7 +8,8 @@
     "ca": "Encreuaments",
     "da": "Overgange",
     "es": "Cruces",
-    "pa_PK": "کراسنگاں"
+    "pa_PK": "کراسنگاں",
+    "cs": "Přechody"
   },
   "description": {
     "en": "Crossings for pedestrians and cyclists",
@@ -17,7 +18,8 @@
     "fr": "Traversée pour piétons et cyclistes",
     "da": "Overgange for fodgængere og cyklister",
     "es": "Cruces para peatones y ciclistas",
-    "ca": "Creuaments per a vianants i ciclistes"
+    "ca": "Creuaments per a vianants i ciclistes",
+    "cs": "Přechody pro chodce a cyklisty"
   },
   "source": {
     "osmTags": {
@@ -36,7 +38,8 @@
       "fr": "Traversée",
       "ca": "Encreuament",
       "es": "Cruce",
-      "pa_PK": "کراسنگ"
+      "pa_PK": "کراسنگ",
+      "cs": "Přechod"
     },
     "mappings": [
       {
@@ -59,7 +62,8 @@
           "de": "Kreuzung mit Ampeln",
           "fr": "Traversée avec feu de signalisation",
           "es": "Cruce con semáforos",
-          "ca": "Creuament amb semàfors"
+          "ca": "Creuament amb semàfors",
+          "cs": "Přechod se světelnou signalizací"
         }
       }
     ]
@@ -73,7 +77,8 @@
         "fr": "une traversée",
         "ca": "un creuament",
         "da": "en overgang",
-        "es": "un cruce"
+        "es": "un cruce",
+        "cs": "přechod"
       },
       "tags": [
         "highway=crossing"
@@ -85,7 +90,8 @@
         "fr": "Traversée pour piétons et/ou cyclistes",
         "da": "Overgang for fodgængere og/eller cyklister",
         "es": "Cruce para peatones y/o ciclistas",
-        "ca": "Creuament per a vianants i/o ciclistes"
+        "ca": "Creuament per a vianants i/o ciclistes",
+        "cs": "Přechod pro chodce a/nebo cyklisty"
       },
       "snapToLayer": [
         "cycleways_and_roads"
@@ -101,7 +107,8 @@
         "fr": "une feu de signalisation",
         "da": "et trafiksignal",
         "es": "un semáforo",
-        "ca": "un semàfor"
+        "ca": "un semàfor",
+        "cs": "semafor"
       },
       "tags": [
         "highway=traffic_signals"
@@ -113,7 +120,8 @@
         "fr": "Feu de signalisation sur la voie",
         "da": "Trafiksignal på en vej",
         "es": "Semáforo en una carretera",
-        "ca": "Semàfor en una carretera"
+        "ca": "Semàfor en una carretera",
+        "cs": "Semafor na silnici"
       },
       "snapToLayer": [
         "cycleways_and_roads"
@@ -131,7 +139,8 @@
         "de": "Was ist das für eine Kreuzung?",
         "es": "¿Qué tipo de cruce es este?",
         "fr": "Quel type de passage piéton est-ce ?",
-        "ca": "Quin tipus de creuament és aquest?"
+        "ca": "Quin tipus de creuament és aquest?",
+        "cs": "Co je to za přechod?"
       },
       "condition": "highway=crossing",
       "mappings": [
@@ -143,7 +152,8 @@
             "de": "Kreuzungen ohne Ampeln",
             "es": "Cruce, sin semáforos",
             "fr": "Passage piéton, sans feux de signalisation",
-            "ca": "Creuament, sense semàfors"
+            "ca": "Creuament, sense semàfors",
+            "cs": "Přechod bez světelné signalizace"
           }
         },
         {
@@ -154,7 +164,8 @@
             "de": "Kreuzungen mit Ampeln",
             "es": "Cruce con semáforo",
             "fr": "Passage piéton avec des feux de signalisation",
-            "ca": "Creuament amb semàfors"
+            "ca": "Creuament amb semàfors",
+            "cs": "Přechod se světelnou signalizací"
           }
         },
         {
@@ -165,7 +176,8 @@
             "de": "Zebrastreifen",
             "ca": "Pas de zebra",
             "es": "Paso de cebra",
-            "fr": "Passage piéton"
+            "fr": "Passage piéton",
+            "cs": "Přechod pro chodce"
           },
           "hideInAnswer": true
         },
@@ -177,7 +189,8 @@
             "de": "Kreuzung ohne Kreuzungsmarkierungen",
             "es": "Cruce sin señalizar",
             "fr": "Passage piéton sans marquages",
-            "ca": "Creuament sense senyalitzar"
+            "ca": "Creuament sense senyalitzar",
+            "cs": "Přechod bez označení přechodu"
           }
         }
       ]
@@ -191,7 +204,8 @@
         "es": "¿Esto es un paso de cebra?",
         "fr": "Est-ce un passage piéton ?",
         "ca": "Açò és un pas de vianants?",
-        "pl": "Czy to jest przejście dla pieszych typu \"zebra\"?"
+        "pl": "Czy to jest przejście dla pieszych typu \"zebra\"?",
+        "cs": "Jedná se o přechod pro chodce?"
       },
       "condition": "crossing=uncontrolled",
       "mappings": [
@@ -203,7 +217,8 @@
             "de": "Dies ist ein Zebrastreifen",
             "es": "Esto es un paso de cebra",
             "fr": "C'est un passage piéton",
-            "ca": "Açò és un pas de vianants"
+            "ca": "Açò és un pas de vianants",
+            "cs": "Toto je přechod pro chodce"
           }
         },
         {
@@ -214,7 +229,8 @@
             "de": "Dies ist kein Zebrastreifen",
             "es": "Esto no es un paso de cebra",
             "fr": "Ce n'est pas un passage piéton",
-            "ca": "Açò no és un pas de vianants"
+            "ca": "Açò no és un pas de vianants",
+            "cs": "Tohle není přechod pro chodce"
           }
         }
       ]
@@ -266,7 +282,8 @@
         "de": "Gibt es an diesem Übergang eine Verkehrsinsel?",
         "es": "¿Tiene una isla en el medio este cruce?",
         "fr": "Est-ce que ce passage a un refuge au milieu ?",
-        "ca": "Aquest creuament té una illa al mig?"
+        "ca": "Aquest creuament té una illa al mig?",
+        "cs": "Má tento přechod uprostřed ostrůvek?"
       },
       "condition": "highway=crossing",
       "mappings": [
@@ -278,7 +295,8 @@
             "de": "Der Übergang hat eine Verkehrsinsel",
             "es": "Este cruce tiene una isla en el medio",
             "fr": "Ce passage a un îlot au milieu",
-            "ca": "Aquest creuament té una illa al mig"
+            "ca": "Aquest creuament té una illa al mig",
+            "cs": "Tento přechod má uprostřed ostrůvek"
           }
         },
         {
@@ -289,7 +307,8 @@
             "de": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern",
             "es": "Este cruce no tiene una isla en el medio",
             "fr": "Ce passage n'a pas d'îlot au milieu",
-            "ca": "Aquest creuament no té una illa al mig"
+            "ca": "Aquest creuament no té una illa al mig",
+            "cs": "Tento přechod nemá uprostřed ostrůvek"
           }
         }
       ]
@@ -302,7 +321,8 @@
         "de": "Gibt es an dieser Kreuzung ein Blindenleitsystem?",
         "es": "¿Este cruce tiene pavimento podotáctil?",
         "fr": "Est-ce que ce passage piéton a une surface podotactile ?",
-        "ca": "Aquest creuament té superfície podotàctil?"
+        "ca": "Aquest creuament té superfície podotàctil?",
+        "cs": "Má tento přechod hmatovou dlažbu?"
       },
       "condition": "highway=crossing",
       "mappings": [
@@ -314,7 +334,8 @@
             "de": "An dieser Kreuzung gibt es ein Blindenleitsystem",
             "es": "Este cruce tiene superficie podotáctil",
             "fr": "Ce passage piéton a une surface podotactile",
-            "ca": "Este creuament té superfície podotàctil"
+            "ca": "Este creuament té superfície podotàctil",
+            "cs": "Tento přechod má hmatovou dlažbu"
           }
         },
         {
@@ -325,7 +346,8 @@
             "de": "Diese Kreuzung hat kein Blindenleitsystem",
             "es": "Este cruce no tiene superficie podotáctil",
             "fr": "Ce passage piéton n'a pas de surface podotactile",
-            "ca": "Este creuament no té superfície podotàctil"
+            "ca": "Este creuament no té superfície podotàctil",
+            "cs": "Tento přechod nemá hmatovou dlažbu"
           }
         },
         {
@@ -336,7 +358,8 @@
             "de": "Diese Kreuzung hat taktile Pflasterung, ist aber nicht korrekt",
             "es": "Este cruce tiene superficie podotáctil, pero no correctamente",
             "fr": "Ce passage piéton a une surface podotactile, mais elle n'est pas adéquate",
-            "ca": "Este creuament té superfície podotàctil, però no correctament"
+            "ca": "Este creuament té superfície podotàctil, però no correctament",
+            "cs": "Tento přechod má hmatovou dlažbu, ale ne správně"
           },
           "hideInAnswer": true
         }
@@ -350,7 +373,8 @@
         "de": "Hat diese Ampel eine Taste, um ein grünes Signal anzufordern?",
         "es": "¿Este semáforo tiene un botón para pedir luz verde?",
         "ca": "Aquest semàfor té un botó per a demanar la llum verda?",
-        "fr": "Est-ce que ce feu a un bouton pour demander le passage au vert ?"
+        "fr": "Est-ce que ce feu a un bouton pour demander le passage au vert ?",
+        "cs": "Má tento semafor tlačítko pro vyžádání zeleného světla?"
       },
       "condition": {
         "or": [
@@ -367,7 +391,8 @@
             "de": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern",
             "es": "Este semáforo tiene un botón para pedir luz verde",
             "ca": "Aquest semàfor té un botó per a demanar la llum verda",
-            "fr": "Ce feu a un bouton pour demander le vert"
+            "fr": "Ce feu a un bouton pour demander le vert",
+            "cs": "Tento semafor má tlačítko pro vyžádání zeleného světla"
           }
         },
         {
@@ -378,7 +403,8 @@
             "de": "Diese Ampel hat keine Taste, um ein grünes Signal anzufordern",
             "es": "Este semáforo no tiene un botón para pedir luz verde",
             "ca": "Aquest semàfor no té un botó per a demanar la llum verda",
-            "fr": "Ce feu n'a pas de bouton pour demander le vert"
+            "fr": "Ce feu n'a pas de bouton pour demander le vert",
+            "cs": "Tento semafor nemá tlačítko pro vyžádání zeleného světla"
           }
         }
       ]
@@ -390,7 +416,8 @@
         "de": "Gibt die Ampel akustische Signale, um das Überqueren zu erleichtern?",
         "fr": "Est-ce que le feu de signalisation a une signalisation sonore pour aider à traverser ?",
         "nl": "Heeft dit verkeerslicht geluidssignalen om te helpen bij het oversteken?",
-        "ca": "Aquest semàfor té senyals sonors per facilitar el pas?"
+        "ca": "Aquest semàfor té senyals sonors per facilitar el pas?",
+        "cs": "Má tento semafor zvukové signály pro usnadnění přecházení?"
       },
       "condition": "crossing=traffic_signals",
       "mappings": [
@@ -401,7 +428,8 @@
             "de": "Die Ampel gibt akustische Signale, um das Auffinden und Überqueren der Kreuzung zu erleichtern.",
             "fr": "Ce feu de signalisation a une alarme sonore pour aider à traverser, à la fois pour trouver le passage piéton, et pour traverser.",
             "nl": "Dit verkeerslicht heeft geluidssignalen om te helpen bij het oversteken, zowel voor het vinden van de oversteekplaats als voor het oversteken.",
-            "ca": "Aquest semàfor disposa de senyals sonors per ajudar a creuar, tant per trobar l'encreuament com per creuar."
+            "ca": "Aquest semàfor disposa de senyals sonors per ajudar a creuar, tant per trobar l'encreuament com per creuar.",
+            "cs": "Tento semafor je vybaven zvukovými signály pro usnadnění přecházení, a to jak pro vyhledání přechodu, tak pro přecházení."
           }
         },
         {
@@ -411,7 +439,8 @@
             "de": "Die Ampel gibt keine akustischen Signale, um das Überqueren zu erleichtern.",
             "fr": "Ce feu de signalisation n'a pas de signal sonore pour aider à traverser.",
             "nl": "Dit verkeerslicht heeft geen geluidssignalen om te helpen bij het oversteken.",
-            "ca": "Aquest semàfor no té senyals sonores per ajudar a creuar."
+            "ca": "Aquest semàfor no té senyals sonores per ajudar a creuar.",
+            "cs": "Tento semafor není vybaven zvukovými signály pro usnadnění přecházení."
           }
         },
         {
@@ -421,7 +450,8 @@
             "de": "Die Ampel gibt ein akustisches Signal, zum Auffinden des Mastes, aber kein Signal für die Grünphase.",
             "nl": "Dit verkeerslicht heeft een geluidssignaal om de paal te vinden, maar niet om aan te geven dat oversteken veilig kan.",
             "ca": "Aquest semàfor té un senyal sonor per ajudar a localitzar el pal, però cap senyal que indique que és segur creuar.",
-            "fr": "Ce feu a un signal sonore pour aider à situer les poteaux, mais pas de signal pour indiquer qu'on peut traverser en sécurité."
+            "fr": "Ce feu a un signal sonore pour aider à situer les poteaux, mais pas de signal pour indiquer qu'on peut traverser en sécurité.",
+            "cs": "Tento semafor má zvukový signál, který pomáhá lokalizovat sloup, ale žádný signál, který by signalizoval, že je bezpečné přejít."
           }
         },
         {
@@ -431,7 +461,8 @@
             "de": "Die Ampel gibt ein akustisches Signal für die Grünphase, aber kein Signal zum Auffinden des Mastes.",
             "nl": "Dit verkeerslicht heeft een geluidssignaal om aan te geven dat oversteken veilig kan, maar geen signaal om de paal te vinden.",
             "ca": "Aquest semàfor té un senyal sonor per indicar que és segur creuar, però cap senyal que ajude a localitzar el pal.",
-            "fr": "Cet feu a un signal sonore pour indiquer qu'on peut traverser en sécurité, mais pas de signal pour localiser les poteaux."
+            "fr": "Cet feu a un signal sonore pour indiquer qu'on peut traverser en sécurité, mais pas de signal pour localiser les poteaux.",
+            "cs": "Tento semafor má zvukový signál, který signalizuje, že je bezpečné přejít, ale nemá žádný signál, který by pomohl lokalizovat sloup."
           }
         }
       ]
@@ -443,7 +474,8 @@
         "de": "Gibt die Ampel ein Vibrationssignal, um das Überqueren zu erleichtern? (in der Regel am unteren Ende der Ampeltaste)",
         "nl": "Heeft dit verkeerslicht een element dat trilt om te helpen bij het oversteken? (meestal onderaan de oversteekknop geplaatst)",
         "fr": "Est-ce que ce feu a un signal vibrant pour aider à traverser ? (habituellement situé sous le bouton)",
-        "ca": "Aquest semàfor té senyals de vibració per facilitar el pas? (normalment es troba a la part inferior del botó d'encreuament)"
+        "ca": "Aquest semàfor té senyals de vibració per facilitar el pas? (normalment es troba a la part inferior del botó d'encreuament)",
+        "cs": "Má tento semafor vibrační signály pro usnadnění přecházení? (obvykle se nachází ve spodní části tlačítka pro přecházení)"
       },
       "condition": {
         "and": [
@@ -459,7 +491,8 @@
             "de": "Die Ampeltaste vibriert während der Grünphase.",
             "nl": "De knop bij dit verkeerslicht trilt om aan te geven dat men veilig kan oversteken.",
             "fr": "Le bouton de ce feu vibre pour indiquer qu'on peut traverser en sécurité.",
-            "ca": "El botó d'aquest semàfor té un senyal de vibració per indicar que és segur creuar."
+            "ca": "El botó d'aquest semàfor té un senyal de vibració per indicar que és segur creuar.",
+            "cs": "Tlačítko tohoto semaforu má vibrační signál, který signalizuje, že je bezpečné přejít."
           },
           "icon": {
             "path": "./assets/layers/crossings/Vibrating_button_illustration.jpg",
@@ -473,7 +506,8 @@
             "de": "Die Ampeltaste vibriert nicht während der Grünphase.",
             "nl": "De knop bij dit verkeerslicht kan <b>niet</b> trillen om aan te geven dat men veilig kan oversteken.",
             "fr": "Le bouton de ce feu ne vibre pas pour indiquer qu'on peut traverser en sécurité.",
-            "ca": "El botó d'aquest semàfor no té cap senyal de vibració que indiqui que és segur creuar."
+            "ca": "El botó d'aquest semàfor no té cap senyal de vibració que indiqui que és segur creuar.",
+            "cs": "Tlačítko tohoto semaforu nemá vibrační signál, který by signalizoval, že je bezpečné přejít."
           }
         }
       ]
@@ -546,7 +580,8 @@
         "de": "Dürfen Radfahrer bei roter Ampel rechts abbiegen?",
         "es": "¿Puede girar a la derecha un ciclista cuando la luz está roja?",
         "fr": "Un cycliste peut-il tourner à droite quand le feu est rouge ?",
-        "ca": "Un ciclista pot girar a la dreta si el semàfor està en roig?"
+        "ca": "Un ciclista pot girar a la dreta si el semàfor està en roig?",
+        "cs": "Může cyklista odbočit doprava, když svítí červená?"
       },
       "condition": "highway=traffic_signals",
       "mappings": [
@@ -558,7 +593,8 @@
             "de": "Ein Radfahrer kann bei roter Ampel rechts abbiegen",
             "es": "Un ciclista puede girar a la derecha si la luz está roja",
             "fr": "Un cycliste peut tourner à droite si le feu est rouge",
-            "ca": "Un ciclista pot girar a la dreta si el semàfor està en roig"
+            "ca": "Un ciclista pot girar a la dreta si el semàfor està en roig",
+            "cs": "Cyklista může odbočit doprava, pokud svítí červená"
           },
           "hideInAnswer": "_country!=be",
           "icon": {
@@ -574,7 +610,8 @@
             "de": "Radfahrer dürfen bei roter Ampel rechts abbiegen",
             "es": "Un ciclista puede girar a la derecha si la luz está roja",
             "fr": "Un cycliste peut tourner à droite si le feu est rouge",
-            "ca": "Un ciclista pot girar a la dreta si el semàfor està en roig"
+            "ca": "Un ciclista pot girar a la dreta si el semàfor està en roig",
+            "cs": "Cyklista může odbočit doprava, pokud svítí červená"
           },
           "hideInAnswer": "_country=be"
         },
@@ -586,7 +623,8 @@
             "de": "Radfahrer dürfen bei roter Ampel nicht rechts abbiegen",
             "es": "Un ciclista no puede girar a la derecha si la luz está roja",
             "fr": "Un cycliste ne peut pas tourner à droite si le feu est rouge",
-            "ca": "Un ciclista no pot girar a la dreta si el semàfor està en roig"
+            "ca": "Un ciclista no pot girar a la dreta si el semàfor està en roig",
+            "cs": "Cyklista nemůže odbočit vpravo, pokud svítí červená"
           }
         }
       ]
@@ -599,7 +637,8 @@
         "de": "Dürfen Radfahrer bei roter Ampel geradeaus fahren?",
         "es": "¿Puede ir de frente un ciclista cuando la luz está roja?",
         "fr": "Est-ce qu'un cycliste peut aller tout droit quand le feu est rouge ?",
-        "ca": "Un ciclista pot seguir recte si el semàfor està en roig?"
+        "ca": "Un ciclista pot seguir recte si el semàfor està en roig?",
+        "cs": "Může cyklista jet rovně, když svítí červená?"
       },
       "condition": "highway=traffic_signals",
       "mappings": [
@@ -610,7 +649,8 @@
             "nl": "Een fietser mag wel rechtdoor gaan als het licht rood is",
             "de": "Ein Radfahrer kann bei roter Ampel geradeaus fahren",
             "es": "Un ciclista puede ir de frente si la luz está roja",
-            "ca": "Un ciclista pot seguir recte si el semàfor està en roig"
+            "ca": "Un ciclista pot seguir recte si el semàfor està en roig",
+            "cs": "Cyklista může jet rovně, pokud svítí červená"
           },
           "hideInAnswer": "_country!=be",
           "icon": {
@@ -625,7 +665,8 @@
             "nl": "Een fietser mag wel rechtdoor gaan als het licht rood is",
             "de": "Radfahrer dürfen bei roter Ampel geradeaus fahren",
             "es": "Un ciclista puede ir de frente si la luz está roja",
-            "ca": "Un ciclista pot seguir recte si el semàfor està en roig"
+            "ca": "Un ciclista pot seguir recte si el semàfor està en roig",
+            "cs": "Cyklista může jet rovně, pokud svítí červená"
           },
           "hideInAnswer": "_country=be"
         },
@@ -636,7 +677,8 @@
             "nl": "Een fietser mag niet rechtdoor gaan als het licht rood is",
             "de": "Radfahrer dürfen bei roter Ampel nicht geradeaus fahren",
             "es": "Un ciclista no puede ir de frente si la luz está roja",
-            "ca": "Un ciclista no pot seguir recte si el semàfor està en roig"
+            "ca": "Un ciclista no pot seguir recte si el semàfor està en roig",
+            "cs": "Cyklista nemůže jet rovně, pokud svítí červená"
           }
         }
       ]

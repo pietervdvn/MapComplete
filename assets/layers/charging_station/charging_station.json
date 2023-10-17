@@ -32,7 +32,8 @@
       "ca": "Estació de càrrega",
       "de": "Ladestation",
       "es": "Estación de carga",
-      "pl": "Stacja ładowania"
+      "pl": "Stacja ładowania",
+      "cs": "Nabíjecí stanice"
     },
     "mappings": [
       {
@@ -52,7 +53,8 @@
           "nl": "Oplaadpunt voor elektrische fietsen",
           "ca": "Estació de càrrega per a bicicletes elèctriques",
           "de": "Ladestation für Elektrofahrräder",
-          "es": "Estación de carga para bicicletas eléctricas"
+          "es": "Estación de carga para bicicletas eléctricas",
+          "cs": "Nabíjecí stanice pro elektrická jízdní kola"
         }
       },
       {
@@ -72,7 +74,8 @@
           "nl": "Oplaadpunt voor elektrische auto's",
           "ca": "Estació de càrrega per a cotxes",
           "de": "Ladestation für Autos",
-          "es": "Estación de carga para coches"
+          "es": "Estación de carga para coches",
+          "cs": "Nabíjecí stanice pro automobily"
         }
       }
     ]
@@ -100,7 +103,8 @@
         "ca": "Quins vehicles tenen permesa la carrega aquí?",
         "da": "Hvilke køretøjer må oplades her?",
         "de": "Welche Fahrzeuge können hier laden?",
-        "es": "¿A qué vehículos se permite la carga aquí?"
+        "es": "¿A qué vehículos se permite la carga aquí?",
+        "cs": "Jaká vozidla je zde povoleno nabíjet?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -113,7 +117,8 @@
             "ca": "Aquí es poden carregar <b>bicicletes</b>",
             "da": "<b> Cykler</b> kan oplades her",
             "de": "Hier können <b>Fahrräder</b> laden",
-            "es": "Aquí se pueden cargar <b>bicicletas</b>"
+            "es": "Aquí se pueden cargar <b>bicicletas</b>",
+            "cs": "<b>Jízdní kola</b> lze nabíjet zde"
           }
         },
         {
@@ -125,7 +130,8 @@
             "ca": "Aquí es poden carregar <b>cotxes</b>",
             "da": "<b>Biler</b> kan oplades her",
             "de": "Hier können <b>Autos</b> laden",
-            "es": "Aquí se pueden cargar <b>coches</b>"
+            "es": "Aquí se pueden cargar <b>coches</b>",
+            "cs": "<b>Vozidla</b> lze nabíjet zde"
           }
         },
         {
@@ -137,7 +143,8 @@
             "ca": "Aquí es poden carregar <b>Scooters</b>",
             "da": "<b>Scootere</b> kan oplades her",
             "de": "Hier können <b>Roller</b> laden",
-            "es": "Aquí se pueden cargar <b>scooters</b>"
+            "es": "Aquí se pueden cargar <b>scooters</b>",
+            "cs": "<b>Koloběžky</b> lze nabíjet zde"
           }
         },
         {
@@ -148,7 +155,8 @@
             "nl": "<b>Vrachtwagens</b> kunnen hier opgeladen worden",
             "ca": "Aquí es poden carregar <b>camions o trailers</b>",
             "da": "<b> Tunge varebiler</b> (f.eks. lastbiler) kan oplades her",
-            "de": "Hier können <b>LKW</b> laden"
+            "de": "Hier können <b>LKW</b> laden",
+            "cs": "<b>Těžká nákladní vozidla</b> (např. nákladní automobily) lze nabíjet zde"
           }
         },
         {
@@ -160,7 +168,8 @@
             "ca": "Aquí es poden carregar <b>busos</b>",
             "da": "<b> Busser</b> kan oplades her",
             "de": "Hier können <b>Busse</b> laden",
-            "es": "Aquí se pueden cargar <b>buses</b>"
+            "es": "Aquí se pueden cargar <b>buses</b>",
+            "cs": "<b>Autobusy</b> lze nabít zde"
           }
         }
       ]
@@ -173,7 +182,8 @@
         "ca": "Qui pot utilitzar aquesta estació de càrrega?",
         "da": "Hvem må bruge denne ladestation?",
         "de": "Wer darf diese Ladestation benutzen?",
-        "es": "¿A quién se le permite utilizar esta estación de carga?"
+        "es": "¿A quién se le permite utilizar esta estación de carga?",
+        "cs": "Kdo může tuto nabíjecí stanici používat?"
       },
       "render": {
         "en": "Access is {access}",
@@ -181,7 +191,8 @@
         "ca": "L'accés està {access}",
         "da": "Adgang er {access}",
         "de": "Zugang ist {access}",
-        "es": "El acceso está {access}"
+        "es": "El acceso está {access}",
+        "cs": "Přístup je {access}"
       },
       "freeform": {
         "key": "access",
@@ -198,7 +209,8 @@
             "ca": "Qualsevol pot utilitzar aquest punt de càrrega (pot requerir un pagament)",
             "da": "Alle kan bruge denne ladestation (betaling kan være nødvendig)",
             "de": "Jeder kann die Station nutzen (eventuell gegen Bezahlung)",
-            "es": "Cualquiera puede utilizar esta estación de carga (puede requerirse un pago)"
+            "es": "Cualquiera puede utilizar esta estación de carga (puede requerirse un pago)",
+            "cs": "Tuto nabíjecí stanici může používat kdokoli (může být vyžadována platba)"
           }
         },
         {
@@ -209,7 +221,8 @@
             "ca": "Qualsevol persona pot utilitzar aquesta estació de recàrrega (pot ser calgui un pagament)",
             "da": "Alle kan bruge denne ladestation (betaling kan være nødvendig)",
             "de": "Jeder kann diese Ladestation nutzen (eventuell gegen Bezahlung)",
-            "es": "Cualquiera puede utilizar esta estación de carga (puede requerirse un pago)"
+            "es": "Cualquiera puede utilizar esta estación de carga (puede requerirse un pago)",
+            "cs": "Tuto nabíjecí stanici může používat kdokoli (může být vyžadována platba)"
           },
           "hideInAnswer": true
         },
@@ -221,7 +234,8 @@
             "ca": "Sols clientes del lloc al que pertany aquest punt de càrrega poden utilitzar-lo <br/><span class='subtle'>p.e. un punt de càrrega per un hotel que sols poden utilizar-los els hostes</span>",
             "da": "Kun kunder på det sted, denne station tilhører, kan bruge denne ladestation<br/><span class='subtle'>F.eks. en ladestation, der drives af hotellet, og som kun kan bruges af deres gæster</span>",
             "de": "Nur Kunden des Ortes, zu dem diese Station gehört, können diese Ladestation nutzen<br/><span class='subtle'>Z.B. eine von einem Hotel betriebene Ladestation, die nur von dessen Gästen genutzt werden kann</span>",
-            "es": "Solo clientes del lugar al que pertenece esta estación la pueden utilizar <br/><span class='subtle'>Ej. una estación de carga operada por un hotel que solo es utilizable por sus huéspedes</span>"
+            "es": "Solo clientes del lugar al que pertenece esta estación la pueden utilizar <br/><span class='subtle'>Ej. una estación de carga operada por un hotel que solo es utilizable por sus huéspedes</span>",
+            "cs": "Tuto nabíjecí stanici mohou používat pouze zákazníci místa, ke kterému tato stanice patří<br/><span class='subtle'>Např. nabíjecí stanice provozovaná hotelem, kterou mohou používat pouze jeho hosté</span>"
           }
         },
         {
@@ -232,7 +246,8 @@
             "ca": "S'ha de sol·licitar una <b>clau</b> per a utilitzar aquest punt de càrrega<br/><span class='subtle'>p.e un punt de càrrega operat per un hotel nomes utilitzable pel seus hostes, els quals reben una clau des de recepció per a desbloquejar el punt de càrrega</span>",
             "da": "Der skal anmodes om en <b>-nøgle</b> for at få adgang til denne ladestation<br/><span class='subtle'>F.eks. en ladestation, der drives af hotellet, og som kun kan bruges af deres gæster, og som modtager en nøgle fra receptionen for at låse ladestationen op</span>",
             "de": "Für den Zugang zur Station muss ein <b>Schlüssel</b> angefordert werden<br/><span class='subtle'>z.B. eine von einem Hotel betriebene Ladestation, die nur von dessen Gästen genutzt werden kann, die an der Rezeption einen Schlüssel erhalten, um die Ladestation aufzuschließen</span>",
-            "es": "Se debe de solicitar una <b>llave</b> para utilizar esta estación de carga<br/><span class='subtle'>Ej. una estación de carga operada por un hotel que solo es utilizable por sus huéspedes, que reciben una llave de la recepción para desbloquear la estación de carga</span>"
+            "es": "Se debe de solicitar una <b>llave</b> para utilizar esta estación de carga<br/><span class='subtle'>Ej. una estación de carga operada por un hotel que solo es utilizable por sus huéspedes, que reciben una llave de la recepción para desbloquear la estación de carga</span>",
+            "cs": "Pro přístup k této nabíjecí stanici je nutné vyžádat <b>klíč</b><br/><span class='subtle'>Např. nabíjecí stanice provozovaná hotelem, kterou mohou používat pouze jejich hosté, kteří od recepce obdrží klíč k odemknutí nabíjecí stanice</span>"
           }
         },
         {
@@ -243,7 +258,8 @@
             "ca": "No accessible per al públic general (p.e. només accessible pels propietaris, empleats, …)",
             "da": "Ikke tilgængelig for offentligheden (f.eks. kun tilgængelig for ejere, ansatte, ...)",
             "de": "Die Station ist nicht für die Allgemeinheit zugänglich (z. B. nur für die Eigentümer, Mitarbeiter, …)",
-            "es": "No accesible al público general (ej. solo accesible a los propietarios, empleados, ...)"
+            "es": "No accesible al público general (ej. solo accesible a los propietarios, empleados, ...)",
+            "cs": "Nepřístupné široké veřejnosti (např. přístupné pouze majitelům, zaměstnancům, ...)"
           }
         },
         {
@@ -252,7 +268,8 @@
             "en": "This charging station is accessible to the public during certain hours or conditions. Restrictions might apply, but general use is allowed.",
             "nl": "Dit oplaadstation is publiek toegankelijk onder voorwaarden (bv. enkel tijdens bepaalde uren). ",
             "ca": "Aquesta estació de càrrega és accessible al públic durant certes hores o condicions. Es poden aplicar restriccions, però es permet l'ús general.",
-            "de": "Diese Ladestation ist zu gewissen Öffnungszeiten oder Bedingungen öffentlich zugänglich. Einschränkungen sind möglich, aber generelle Nutzung ist erlaubt."
+            "de": "Diese Ladestation ist zu gewissen Öffnungszeiten oder Bedingungen öffentlich zugänglich. Einschränkungen sind möglich, aber generelle Nutzung ist erlaubt.",
+            "cs": "Tato nabíjecí stanice je v určitých hodinách nebo za určitých podmínek přístupná veřejnosti. Mohou zde platit omezení, ale obecné použití je povoleno."
           }
         }
       ]
@@ -265,7 +282,8 @@
         "ca": "Aquí es poden carregar {capacity} vehicles a l'hora",
         "da": "{capacity} køretøjer kan oplades her på samme tid",
         "de": "Hier können {capacity} Fahrzeuge gleichzeitig laden",
-        "es": "Aquí se pueden cargar {capacity} vehículos al mismo tiempo"
+        "es": "Aquí se pueden cargar {capacity} vehículos al mismo tiempo",
+        "cs": "{capacity} vozidel zde mohou být současně nabíjena"
       },
       "question": {
         "en": "How much vehicles can be charged here at the same time?",
@@ -273,7 +291,8 @@
         "ca": "Quants vehicles es poden carregar a la vegada?",
         "da": "Hvor mange køretøjer kan oplades her på samme tid?",
         "de": "Wie viele Fahrzeuge können hier gleichzeitig laden?",
-        "es": "¿Cuántos vehículos se pueden cargar a la vez aquí?"
+        "es": "¿Cuántos vehículos se pueden cargar a la vez aquí?",
+        "cs": "Kolik vozidel zde lze nabíjet najednou?"
       },
       "freeform": {
         "key": "capacity",
@@ -288,7 +307,8 @@
         "ca": "Quins tipus de connexions de càrrega estan disponibles aquí?",
         "da": "Hvilke ladestik er tilgængelige her?",
         "de": "Welche Ladeanschlüsse gibt es hier?",
-        "es": "¿Qué tipo de conexiones de carga están disponibles aquí?"
+        "es": "¿Qué tipo de conexiones de carga están disponibles aquí?",
+        "cs": "Jaké nabíjecí přípojky jsou zde k dispozici?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -301,7 +321,8 @@
             "ca": "<b>Endoll de paret Schuko</b> sense pin a terra (CEE7/4 tipus F)",
             "da": "<b>Schuko vægstik</b> uden jordstift (CEE7/4 type F)",
             "de": "<b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)",
-            "es": "<b>Enchufe de pared Schuko</b> sin pin de tierra (CEE7/4 tipo F)"
+            "es": "<b>Enchufe de pared Schuko</b> sin pin de tierra (CEE7/4 tipo F)",
+            "cs": "<b>Schuko nástěnná zástrčka</b> bez zemního kolíku (CEE7/4 typu F)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/CEE7_4F.svg",
@@ -333,7 +354,8 @@
             "ca": "<b>Endoll de paret Schuko</b> sense pin a terra (CEE7/4 tipus F)",
             "da": "<b>Schuko vægstik</b> uden jordstift (CEE7/4 type F)",
             "de": "<b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)",
-            "es": "<b>Enchufe de pared Schuko</b> sin pin de tierra (CEE7/4 tipo F)"
+            "es": "<b>Enchufe de pared Schuko</b> sin pin de tierra (CEE7/4 tipo F)",
+            "cs": "<b>Schuko nástěnná zástrčka</b> bez zemního kolíku (CEE7/4 typu F)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -350,7 +372,8 @@
             "ca": "<b>Endoll de paret Europeu</b> amb pin de terra (CEE7/4 tipus E)",
             "da": "<b>Europæisk vægstik</b> med jordstik (CEE7/4 type E)",
             "de": "<b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)",
-            "es": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)"
+            "es": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)",
+            "cs": "<b>Evropská zástrčka</b> se zemnícím kolíkem (CEE7/4 typ E)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/TypeE.svg",
@@ -370,7 +393,8 @@
             "ca": "<b>Endoll de paret Europeu</b> amb pin a terra (CEE7/4 tipus E)",
             "da": "<b>Europæisk vægstik</b> med jordstik (CEE7/4 type E)",
             "de": "<b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)",
-            "es": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)"
+            "es": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)",
+            "cs": "<b>Evropská zástrčka</b> se zemnícím kolíkem (CEE7/4 typ E)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -388,7 +412,8 @@
             "da": "<b>Chademo</b>",
             "de": "<b>Chademo-Anschluss</b>",
             "es": "<b>Chademo</b>",
-            "eu": "<b>Chademo</b>"
+            "eu": "<b>Chademo</b>",
+            "cs": "<b>Chademo</b>"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Chademo_type4.svg",
@@ -435,7 +460,8 @@
             "da": "<b>Chademo</b>",
             "de": "<b>Chademo-Anschluss</b>",
             "es": "<b>Chademo</b>",
-            "eu": "<b>Chademo</b>"
+            "eu": "<b>Chademo</b>",
+            "cs": "<b>Chademo</b>"
           },
           "hideInAnswer": true,
           "icon": {
@@ -452,7 +478,8 @@
             "ca": "<b>Tipus 1 amb cable</b> (J1772)",
             "da": "<b>Type 1 med kabel</b> (J1772)",
             "de": "<b>Typ 1 mit Kabel</b> (J1772)",
-            "es": "<b>Tipo 1 con cable</b> (J1772)"
+            "es": "<b>Tipo 1 con cable</b> (J1772)",
+            "cs": "<b>Type 1 s kabelem</b> (J1772)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type1_J1772.svg",
@@ -498,7 +525,8 @@
             "ca": "<b>Tipus 1 amb cable</b> (J1772)",
             "da": "<b>Type 1 med kabel</b> (J1772)",
             "de": "<b>Typ 1 mit Kabel</b> (J1772)",
-            "es": "<b>Tipo 1 con cable</b> (J1772)"
+            "es": "<b>Tipo 1 con cable</b> (J1772)",
+            "cs": "<b>Type 1 s kabelem</b> (J1772)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -515,7 +543,8 @@
             "ca": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)",
             "da": "<b>Type 1 <i>uden</i> kabel</b> (J1772)",
             "de": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772)",
-            "es": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
+            "es": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)",
+            "cs": "<b>Type 1 <i> bez</i> kabelu</b> (J1772)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type1_J1772.svg",
@@ -561,7 +590,8 @@
             "ca": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)",
             "da": "<b>Type 1 <i>uden</i> kabel</b> (J1772)",
             "de": "<b> Typ 1 <i>ohne </i> Kabel</b> (J1772)",
-            "es": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
+            "es": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)",
+            "cs": "<b>Type 1 <i> bez</i> kabelu</b> (J1772)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -578,7 +608,8 @@
             "ca": "<b>CSS 1Tipus 1</b> (també conegut com Tipus 1 combo)",
             "da": "<b>Type 1 CCS</b> (også kendt som Type 1 Combo)",
             "de": "<b>Typ 1 CCS</b> (Typ 1 Combo)",
-            "es": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)"
+            "es": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)",
+            "cs": "<b>Typ 1 CCS</b> (aka Typ 1 Combo)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type1-ccs.svg",
@@ -624,7 +655,8 @@
             "ca": "<b>CSS Tipus 1</b> (també conegut com a Tipus 1 Combo)",
             "da": "<b>Type 1 CCS</b> (også kendt som Type 1 Combo)",
             "de": "<b> Typ 1 CCS </b> (auch bekannt als Typ 1 Combo)",
-            "es": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)"
+            "es": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)",
+            "cs": "<b>Typ 1 CCS</b> (aka Typ 1 Combo)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -641,7 +673,8 @@
             "ca": "<b>Supercarregador de Tesla</b>",
             "da": "<b>Tesla Supercharger</b>",
             "de": "<b>Tesla Supercharger</b>",
-            "es": "<b>Supercargador de Tesla</b>"
+            "es": "<b>Supercargador de Tesla</b>",
+            "cs": "<b>Tesla Supercharger</b>"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Tesla-hpwc-model-s.svg",
@@ -688,7 +721,8 @@
             "da": "<b>Tesla Supercharger</b>",
             "de": "<b>Tesla Supercharger</b>",
             "es": "<b>Supercargador de Tesla</b>",
-            "pl": "<b>Tesla Supercharger</b>"
+            "pl": "<b>Tesla Supercharger</b>",
+            "cs": "<b>Tesla Supercharger</b>"
           },
           "hideInAnswer": true,
           "icon": {
@@ -705,7 +739,8 @@
             "ca": "<b>Tipus 2</b> (mennekes)",
             "da": "<b>Type 2</b> (mennekes)",
             "de": "<b>Typ 2</b> (Mennekes)",
-            "es": "<b>Tipo 2</b> (mennekes)"
+            "es": "<b>Tipo 2</b> (mennekes)",
+            "cs": "<b>Typ 2</b> (mennekes)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_socket.svg",
@@ -751,7 +786,8 @@
             "ca": "<b>Tipus 2</b> (mennekes)",
             "da": "<b> Type 2</b> (mennekes)",
             "de": "<b>Typ 2</b> (Mennekes)",
-            "es": "<b>Tipo 2</b> (mennekes)"
+            "es": "<b>Tipo 2</b> (mennekes)",
+            "cs": "<b>Typ 2</b> (mennekes)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -768,7 +804,8 @@
             "ca": "<b>CSS Tipus 2</b> (mennekes)",
             "da": "<b>Type 2 CCS</b> (mennekes)",
             "de": "<b>Typ 2 CCS</b> (Mennekes)",
-            "es": "<b>CSS Tipo 2</b> (mennekes)"
+            "es": "<b>CSS Tipo 2</b> (mennekes)",
+            "cs": "<b>Typ 2 CCS</b> (mennekes)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_CCS.svg",
@@ -814,7 +851,8 @@
             "ca": "<b>CSS Tipus 2</b> (mennekes)",
             "da": "<b>Type 2 CCS</b> (mennekes)",
             "de": "<b>Typ 2 CCS</b> (mennekes)",
-            "es": "<b>CSS Tipo 2</b> (mennekes)"
+            "es": "<b>CSS Tipo 2</b> (mennekes)",
+            "cs": "<b>Typ 2 CCS</b> (mennekes)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -831,7 +869,8 @@
             "ca": "<b>Tipus 2 amb cable</b> (mennekes)",
             "da": "<b>Type 2 med kabel</b> (mennekes)",
             "de": "<b>Typ 2 mit Kabel</b> (Mennekes)",
-            "es": "<b>Tipo 2 con cable</b> (mennekes)"
+            "es": "<b>Tipo 2 con cable</b> (mennekes)",
+            "cs": "<b>Typ 2 s kabelem</b> (mennekes)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_tethered.svg",
@@ -877,7 +916,8 @@
             "ca": "<b>Tipus 2 amb cable</b> (mennekes)",
             "da": "<b>Type 2 med kabel</b> (mennekes)",
             "de": "<b>Typ 2 mit Kabel</b> (mennekes)",
-            "es": "<b>Tipo 2 con cable</b> (mennekes)"
+            "es": "<b>Tipo 2 con cable</b> (mennekes)",
+            "cs": "<b>Typ 2 s kabelem</b> (mennekes)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -894,7 +934,8 @@
             "ca": "<b>CCS Supercarregador Tesla</b> (un cable de la marca Tesla Tipus2_css)",
             "da": "<b>Tesla Supercharger CCS</b> (en mærkevare type2_css)",
             "de": "<b>Tesla Supercharger CCS</b> (Typ 2 CSS von Tesla)",
-            "es": "<b>CCS Supercargador Tesla</b> (un tipo2_css con marca)"
+            "es": "<b>CCS Supercargador Tesla</b> (un tipo2_css con marca)",
+            "cs": "<b>Tesla Supercharger CCS</b> (značkový typ2_css)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_CCS.svg",
@@ -940,7 +981,8 @@
             "ca": "<b>CCS Supercarregador Tesla</b> (un cable de la marca Tesla Tipus2_css)",
             "da": "<b>Tesla Supercharger CCS</b> (en mærkevare type2_css)",
             "de": "<b>Tesla Supercharger CCS</b> (ein Markenzeichen von type2_css)",
-            "es": "<b>CCS Supercargador Tesla</b> (un tipo2_css con marca)"
+            "es": "<b>CCS Supercargador Tesla</b> (un tipo2_css con marca)",
+            "cs": "<b>Tesla Supercharger CCS</b> (značkový typ2_css)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -957,7 +999,8 @@
             "ca": "<b>Supercarregador Tesla (destí)</b>",
             "da": "<b> Tesla Supercharger (destination)</b>",
             "de": "<b>Tesla Supercharger (Destination)</b>",
-            "es": "<b>Supercargador Tesla (destino</b>"
+            "es": "<b>Supercargador Tesla (destino</b>",
+            "cs": "<b>Tesla Supercharger (cíl)</b>"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Tesla-hpwc-model-s.svg",
@@ -1009,7 +1052,8 @@
             "ca": "<b>Supercarregador Tesla (destí)</b>",
             "da": "<b> Tesla Supercharger (destination)</b>",
             "de": "<b>Tesla Supercharger (Destination)</b>",
-            "es": "<b>Supercargador Tesla (destino)</b>"
+            "es": "<b>Supercargador Tesla (destino)</b>",
+            "cs": "<b>Tesla Supercharger (cíl)</b>"
           },
           "hideInAnswer": true,
           "icon": {
@@ -1025,7 +1069,8 @@
             "nl": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)",
             "ca": "<b>Supercarregador Tesla (destí)</b> (Un tipus 2 amb un cable marca tesla)",
             "de": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)",
-            "es": "<b>Supercargador Tesla (destino)</b> (Un Tipo 2 con un cable de marca tesla)"
+            "es": "<b>Supercargador Tesla (destino)</b> (Un Tipo 2 con un cable de marca tesla)",
+            "cs": "<b>Tesla supercharger (cíl)</b> (Typ 2 s kabelem označeným jako Tesla)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_tethered.svg",
@@ -1093,7 +1138,8 @@
             "ca": "<b>USB</b> per a carregar mòbils i dispositius petits",
             "da": "<b>USB</b> til opladning af telefoner og mindre elektronik",
             "de": "<b>USB</b> zum Aufladen von Handys und kleinen Elektrogeräten",
-            "es": "<b>USB</b> para cargar teléfonos y dispositivos pequeños"
+            "es": "<b>USB</b> para cargar teléfonos y dispositivos pequeños",
+            "cs": "<b>USB</b> pro nabíjení telefonů a malé elektroniky"
           },
           "icon": {
             "path": "./assets/layers/charging_station/usb_port.svg",
@@ -1113,7 +1159,8 @@
             "ca": "<b>USB</b> per a carregar mòbils i dispositius petits",
             "da": "<b>USB</b> til opladning af telefoner og mindre elektronik",
             "de": "<b>USB</b> zum Aufladen von Handys und kleinen Elektrogeräten",
-            "es": "<b>USB</b> para cargar teléfonos y dispositivos pequeños"
+            "es": "<b>USB</b> para cargar teléfonos y dispositivos pequeños",
+            "cs": "<b>USB</b> pro nabíjení telefonů a maléh elektroniky"
           },
           "hideInAnswer": true,
           "icon": {
@@ -4004,7 +4051,8 @@
           "nl": "Wanneer is dit oplaadpunt beschikbaar??",
           "ca": "Quan està oberta aquesta estació de càrrega?",
           "de": "Wann ist die Ladestation geöffnet?",
-          "pl": "Kiedy otwiera się ta stacja ładowania?"
+          "pl": "Kiedy otwiera się ta stacja ładowania?",
+          "cs": "Kdy je tato nabíjecí stanice otevřena?"
         }
       },
       "id": "OH"
@@ -4017,7 +4065,8 @@
         "ca": "Hi ha que pagar per utilitzar aquest punt de càrrega?",
         "da": "Skal man betale for at bruge denne ladestation?",
         "de": "Muss man für die Nutzung dieser Ladestation bezahlen?",
-        "es": "¿Hay que pagar para utilizar esta estación de carga?"
+        "es": "¿Hay que pagar para utilizar esta estación de carga?",
+        "cs": "Musí se za použití této nabíjecí stanice platit?"
       },
       "mappings": [
         {
@@ -4034,7 +4083,8 @@
             "en": "Free to use (without authenticating)",
             "ca": "ús gratuït (sense autentificació)",
             "da": "Gratis at bruge (uden godkendelse)",
-            "de": "Die Nutzung ist kostenlos, keine Authentifizierung erforderlich"
+            "de": "Die Nutzung ist kostenlos, keine Authentifizierung erforderlich",
+            "cs": "Zdarma k použití (bez ověření)"
           }
         },
         {
@@ -4051,7 +4101,8 @@
             "en": "Free to use, but one has to authenticate",
             "ca": "Ús gratuït, però un s'ha d'autentificar",
             "da": "Gratis at bruge, men man skal godkende",
-            "de": "Die Nutzung ist kostenlos, Authentifizierung erforderlich"
+            "de": "Die Nutzung ist kostenlos, Authentifizierung erforderlich",
+            "cs": "Používání je zdarma, ale je třeba se ověřit"
           }
         },
         {
@@ -4065,7 +4116,8 @@
             "en": "Free to use",
             "ca": "Ús gratuït",
             "da": "Gratis at bruge",
-            "de": "Kostenlose Nutzung"
+            "de": "Kostenlose Nutzung",
+            "cs": "Použití zdarma"
           },
           "hideInAnswer": true
         },
@@ -4082,7 +4134,8 @@
             "ca": "De pagament, però gratuït per als clients de l'hotel/bar/hospital/… que gestiona l'estació de càrrega",
             "da": "Betalt brug, men gratis for kunder på det hotel/pub/hospital/... der driver ladestationen",
             "de": "Die Nutzung ist kostenpflichtig, aber für Kunden des Betreibers der Einrichtung, wie Hotel, Krankenhaus, … kostenlos",
-            "es": "De pago, pero gratis para clientes del hotel/pub/hostpital... quien opera la estación de carga"
+            "es": "De pago, pero gratis para clientes del hotel/pub/hostpital... quien opera la estación de carga",
+            "cs": "Placené použití, ale zdarma pro zákazníky hotelu/podniku/nemocnice/..., který dobíjecí stanici provozuje"
           }
         },
         {
@@ -4098,7 +4151,8 @@
             "ca": "Ús de pagament",
             "da": "Betalt brug",
             "de": "Die Nutzung ist kostenpflichtig",
-            "es": "Uso de pago"
+            "es": "Uso de pago",
+            "cs": "Placené použití"
           }
         }
       ]
@@ -4111,7 +4165,8 @@
         "ca": "Quant cal pagar per utilitzar aquesta estació de càrrega?",
         "da": "Hvor meget skal man betale for at bruge denne ladestation?",
         "de": "Wie viel muss man für die Nutzung dieser Ladestation bezahlen?",
-        "es": "¿Cuánto hay que pagar para utilizar esta estación de carga?"
+        "es": "¿Cuánto hay que pagar para utilizar esta estación de carga?",
+        "cs": "Kolik se za použití této nabíjecí stanice platí?"
       },
       "render": {
         "en": "Using this charging station costs <b>{charge}</b>",
@@ -4119,7 +4174,8 @@
         "ca": "Utilitzar aquesta estació de càrrega costa <b>{charge}</b>",
         "da": "Brug af denne ladestation koster <b>{charge}</b>",
         "de": "Die Nutzung dieser Ladestation kostet <b>{charge}</b>",
-        "es": "Utilizar esta estación de carga cuesta <b>{charge}</b>"
+        "es": "Utilizar esta estación de carga cuesta <b>{charge}</b>",
+        "cs": "Použití této nabíjecí stanice stojí <b>{charge}</b>"
       },
       "freeform": {
         "key": "charge"
@@ -4148,7 +4204,8 @@
         "da": "Hvilken form for godkendelse er tilgængelig ved ladestationen?",
         "de": "Welche Art der Authentifizierung ist an der Ladestation möglich?",
         "es": "¿Qué tipo de autenticación está disponible en esta estación de carga?",
-        "fr": "Quelle sorte d'authentification est disponible à cette station de charge ?"
+        "fr": "Quelle sorte d'authentification est disponible à cette station de charge ?",
+        "cs": "Jaký druh ověření je na nabíjecí stanici k dispozici?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -4162,7 +4219,8 @@
             "da": "Godkendelse med et medlemskort",
             "de": "Authentifizierung per Mitgliedskarte",
             "es": "Autenticación mediante tarjeta de membresía",
-            "fr": "Authentification par carte de membre"
+            "fr": "Authentification par carte de membre",
+            "cs": "Ověření pomocí členské karty"
           }
         },
         {
@@ -4175,7 +4233,8 @@
             "da": "Godkendelse med en app",
             "de": "Authentifizierung per App",
             "es": "Autenticación mediante aplicación",
-            "fr": "Authentification par une app"
+            "fr": "Authentification par une app",
+            "cs": "Ověření pomocí aplikace"
           }
         },
         {
@@ -4188,7 +4247,8 @@
             "da": "Godkendelse via telefonopkald er tilgængelig",
             "de": "Authentifizierung per Anruf ist möglich",
             "es": "Autenticación mediante llamada telefónica disponible",
-            "fr": "Authentification par appel téléphonique est disponible"
+            "fr": "Authentification par appel téléphonique est disponible",
+            "cs": "Ověření prostřednictvím telefonního hovoru je k dispozici"
           }
         },
         {
@@ -4201,7 +4261,8 @@
             "da": "Godkendelse via SMS er tilgængelig",
             "de": "Authentifizierung per SMS ist möglich",
             "es": "Autenticación mediante SMS disponible",
-            "fr": "Authentification par SMS est disponible"
+            "fr": "Authentification par SMS est disponible",
+            "cs": "Ověření prostřednictvím SMS je k dispozici"
           }
         },
         {
@@ -4214,7 +4275,8 @@
             "da": "Godkendelse via NFC er tilgængelig",
             "de": "Authentifizierung per NFC ist möglich",
             "es": "Autenticación mediante NFC disponible",
-            "fr": "Authentification par NFC est disponible"
+            "fr": "Authentification par NFC est disponible",
+            "cs": "Ověření prostřednictvím NFC je k dispozici"
           }
         },
         {
@@ -4226,7 +4288,8 @@
             "ca": "L'autenticació mitjançant targeta de pagament està disponible",
             "da": "Godkendelse via Money Card er tilgængelig",
             "de": "Authentifizierung per Geldkarte ist möglich",
-            "es": "Autenticación mediante Money Card disponible"
+            "es": "Autenticación mediante Money Card disponible",
+            "cs": "Ověřování prostřednictvím karty Money Card je k dispozici"
           }
         },
         {
@@ -4239,7 +4302,8 @@
             "da": "Godkendelse via betalingskort er tilgængelig",
             "de": "Authentifizierung per Kreditkarte ist möglich",
             "es": "Autenticación mediante tarjeta de débito disponible",
-            "fr": "Authentification par carte de débit est disponible"
+            "fr": "Authentification par carte de débit est disponible",
+            "cs": "Ověření prostřednictvím debetní karty je k dispozici"
           }
         },
         {
@@ -4252,7 +4316,8 @@
             "da": "Opladning her er (også) muligt uden godkendelse",
             "de": "Das Laden ist hier (auch) ohne Authentifizierung möglich",
             "es": "La carga aquí (también) es posible sin autenticación",
-            "fr": "Charger ici est (aussi) possible sans authentification"
+            "fr": "Charger ici est (aussi) possible sans authentification",
+            "cs": "Nabíjení je zde možné (i) bez ověření"
           }
         }
       ],
@@ -4270,7 +4335,8 @@
         "nl": "Aanmelden door te bellen of te SMS'en naar <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
         "ca": "Autentiqueu-vos trucant o enviant SMS a <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
         "da": "Godkend dig ved at ringe eller sende en sms til <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
-        "de": "Authentifizierung durch Anruf oder SMS an <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
+        "de": "Authentifizierung durch Anruf oder SMS an <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
+        "cs": "Ověření voláním nebo SMS na <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
       },
       "question": {
         "en": "What's the phone number for authentication call or SMS?",
@@ -4278,7 +4344,8 @@
         "ca": "Quin és el número de telèfon per a la trucada d'autenticació o SMS?",
         "da": "Hvad er telefonnummeret til godkendelsesopkald eller SMS?",
         "de": "Wie lautet die Telefonnummer für den Authentifizierungsanruf oder die SMS?",
-        "es": "¿Cual es el número de teléfono para la llamada de autenticación o SMS?"
+        "es": "¿Cual es el número de teléfono para la llamada de autenticación o SMS?",
+        "cs": "Jaké je telefonní číslo pro ověřovací hovor nebo SMS?"
       },
       "freeform": {
         "key": "authentication:phone_call:number",
@@ -4299,7 +4366,8 @@
         "ca": "Quina és la quantitat màxima de temps que es permet permaneixer aquí?",
         "da": "Hvad er den maksimale tid, man må opholde sig her?",
         "de": "Wie lange darf man hier maximal parken?",
-        "es": "¿Cuál es la máxima cantidad de tiempo que se permite permanecer aquí?"
+        "es": "¿Cuál es la máxima cantidad de tiempo que se permite permanecer aquí?",
+        "cs": "Jaká je maximální doba, po kterou zde můžete zůstat?"
       },
       "freeform": {
         "key": "maxstay"
@@ -4321,7 +4389,8 @@
             "ca": "No hi ha límit de temps per a deixar el teu vehicle aquí",
             "da": "Ingen tidsbegrænsning på at forlade dit køretøj her",
             "de": "Keine Höchstparkdauer",
-            "es": "No hay límite de tiempo para dejar tu vehículo aquí"
+            "es": "No hay límite de tiempo para dejar tu vehículo aquí",
+            "cs": "Žádný časový limit na opuštění vozidla zde"
           }
         }
       ],
@@ -4342,7 +4411,8 @@
         "ca": "Part de la xarxa <b>{network}</b>",
         "da": "En del af netværket <b>{network}</b>",
         "de": "Teil des Netzwerks <b>{network}</b>",
-        "es": "Parte de la red <b>{network}</b>"
+        "es": "Parte de la red <b>{network}</b>",
+        "cs": "Část sítě <b>{network}</b>"
       },
       "question": {
         "en": "Is this charging station part of a network?",
@@ -4351,7 +4421,8 @@
         "da": "Er denne ladestation en del af et netværk?",
         "de": "Ist diese Ladestation Teil eines Netzwerks?",
         "es": "¿Esta estación de carga forma parte de una red?",
-        "pl": "Czy ta stacja ładowania jest częścią sieci?"
+        "pl": "Czy ta stacja ładowania jest częścią sieci?",
+        "cs": "Je tato nabíjecí stanice součástí sítě?"
       },
       "freeform": {
         "key": "network"
@@ -4365,7 +4436,8 @@
             "ca": "No forma part d'una xarxa més gran, p.e. perqué l'estació de càrrega la manté un negoci local",
             "da": "Ikke en del af et større netværk, f.eks. fordi ladestationen vedligeholdes af en lokal virksomhed",
             "de": "Nicht Teil eines größeren Netzwerks, z. B. weil die Ladestation von einem lokalen Unternehmen betrieben wird",
-            "es": "No forma parte de una red más grande, ej. porque la estación de carga la mantiene un negocio local"
+            "es": "No forma parte de una red más grande, ej. porque la estación de carga la mantiene un negocio local",
+            "cs": "Není součástí větší sítě, např. proto, že dobíjecí stanici spravuje místní podnik"
           }
         },
         {
@@ -4377,7 +4449,8 @@
             "da": "Ikke en del af et større netværk",
             "de": "Nicht Teil eines größeren Netzwerks",
             "es": "No forma parte de una red mayor",
-            "pl": "Nie jest częścią większej sieci"
+            "pl": "Nie jest częścią większej sieci",
+            "cs": "Není součástí větší sítě"
           },
           "hideInAnswer": true
         },
@@ -4427,7 +4500,8 @@
         "ca": "Qui és l'operadora d'aquesta estació de càrrega?",
         "da": "Hvem er operatøren af denne ladestation?",
         "de": "Wer ist der Betreiber dieser Ladestation?",
-        "es": "¿Quien es la operadora de esta estación de carga?"
+        "es": "¿Quien es la operadora de esta estación de carga?",
+        "cs": "Kdo je provozovatelem této nabíjecí stanice?"
       },
       "render": {
         "en": "This charging station is operated by {operator}",
@@ -4436,7 +4510,8 @@
         "da": "Denne ladestation drives af {operator}",
         "de": "Die Station wird betrieben von {operator}",
         "es": "Esta estación de carga la opera {operator}",
-        "pl": "Ta stacja ładowania jest obsługiwana przez {operator}"
+        "pl": "Ta stacja ładowania jest obsługiwana przez {operator}",
+        "cs": "Tuto nabíjecí stanici provozuje {operator}"
       },
       "freeform": {
         "key": "operator"
@@ -4497,7 +4572,8 @@
         "ca": "Quin és el correu electrònic de l'operadora?",
         "da": "Hvad er operatørens e-mail-adresse?",
         "de": "Wie lautet die E-Mail-Adresse des Betreibers?",
-        "es": "¿Cual es la dirección de correo electrónico de esta operadora?"
+        "es": "¿Cual es la dirección de correo electrónico de esta operadora?",
+        "cs": "Jaká je e-mailová adresa provozovatele?"
       },
       "render": {
         "en": "In case of problems, send an email to <a href='mailto:{email}'>{email}</a>",
@@ -4505,7 +4581,8 @@
         "ca": "En cas de problemes, envia un email a <a href='mailto:{email}'>{email}</a>",
         "da": "I tilfælde af problemer kan du sende en e-mail til <a href='mailto:{email}'>{email}</a>",
         "de": "Bei Problemen senden Sie bitte eine E-Mail an <a href='mailto:{email}'>{email}</a>",
-        "es": "En caso de problemas, envía un correo electrónico a <a href='mailto:{email}'>{email}</a>"
+        "es": "En caso de problemas, envía un correo electrónico a <a href='mailto:{email}'>{email}</a>",
+        "cs": "V případě problémů pošlete e-mail na <a href='mailto:{email}'>{email}</a>"
       },
       "freeform": {
         "key": "email",
@@ -4518,13 +4595,15 @@
         "en": "What is the website where one can find more information about this charging station?",
         "nl": "Wat is de website waar men meer info kan vinden over dit oplaadpunt?",
         "ca": "Quina és la pàgina web on es pot trobar més informació sobre aquest punt de recàrrega?",
-        "de": "Auf welcher Webseite kann man weitere Informationen über diese Ladestation finden?"
+        "de": "Auf welcher Webseite kann man weitere Informationen über diese Ladestation finden?",
+        "cs": "Jaká je webová stránka, kde lze najít další informace o této nabíjecí stanici?"
       },
       "render": {
         "en": "More info on <a href='{website}'>{website}</a>",
         "nl": "Meer informatie op <a href='{website}'>{website}</a>",
         "ca": "Més info a <a href='{website}'>{website}</a>",
-        "de": "Weitere Informationen unter <a href='{website}'>{website}</a>"
+        "de": "Weitere Informationen unter <a href='{website}'>{website}</a>",
+        "cs": "Více informací na <a href='{website}'>{website}</a>"
       },
       "freeform": {
         "key": "website",
@@ -4561,7 +4640,8 @@
         "ca": "Està en ús aquest punt de recàrrega?",
         "da": "Er denne ladestander i brug?",
         "de": "Ist die Station in Betrieb?",
-        "es": "¿Está en uso este punto de carga?"
+        "es": "¿Está en uso este punto de carga?",
+        "cs": "Je toto nabíjecí místo v provozu?"
       },
       "mappings": [
         {
@@ -4581,7 +4661,8 @@
             "da": "Denne ladestation fungerer",
             "de": "Die Station ist in Betrieb",
             "es": "Esta estación de carga funciona",
-            "pl": "Ta stacja ładowania działa"
+            "pl": "Ta stacja ładowania działa",
+            "cs": "Tato nabíjecí stanice funguje"
           }
         },
         {
@@ -4601,7 +4682,8 @@
             "da": "Denne ladestation er i stykker",
             "de": "Die Station ist defekt",
             "es": "Esta estación de carga está rota",
-            "pl": "Ta stacja ładowania jest zepsuta"
+            "pl": "Ta stacja ładowania jest zepsuta",
+            "cs": "Tato nabíjecí stanice je rozbitá"
           }
         },
         {
@@ -4621,7 +4703,8 @@
             "da": "Her er der planlagt en ladestation",
             "de": "Die Station ist erst in Planung",
             "es": "Aquí está planeada una estación de carga",
-            "pl": "Planowana jest tutaj stacja ładowania"
+            "pl": "Planowana jest tutaj stacja ładowania",
+            "cs": "Plánuje se zde nabíjecí stanice"
           }
         },
         {
@@ -4660,7 +4743,8 @@
             "ca": "Aquesta estació de recàrrega s'ha desactivat permanentment i ja no s'utilitza, però encara és visible",
             "da": "Denne ladestation er blevet permanent deaktiveret og er ikke længere i brug, men er stadig synlig",
             "de": "Die Station ist dauerhaft geschlossen und nicht mehr in Nutzung, aber noch sichtbar",
-            "es": "Esta estación de carga se ha deshabilitado de forma permanente y ya no está en uso pero todavía es visible"
+            "es": "Esta estación de carga se ha deshabilitado de forma permanente y ya no está en uso pero todavía es visible",
+            "cs": "Tato nabíjecí stanice byla trvale vypnuta a již se nepoužívá, ale je stále viditelná"
           }
         }
       ]
@@ -4674,7 +4758,8 @@
         "da": "Skal man betale parkeringsafgift, mens man oplader?",
         "de": "Muss man während des Ladens eine Parkgebühr bezahlen?",
         "es": "¿Hay que pagar una tasa de aparcamiento mientras se carga?",
-        "fr": "Doit-on payer des frais de stationnement pendant la recharge ?"
+        "fr": "Doit-on payer des frais de stationnement pendant la recharge ?",
+        "cs": "Musí se při nabíjení platit parkovné?"
       },
       "mappings": [
         {
@@ -4686,7 +4771,8 @@
             "da": "Ingen ekstra parkeringsomkostninger under opladning",
             "de": "Keine zusätzlichen Parkkosten während des Ladens",
             "es": "No hay costes de aparcamiento adicionales mientras se carga",
-            "fr": "Pas de frais de stationnement supplémentaires pendant la recharge"
+            "fr": "Pas de frais de stationnement supplémentaires pendant la recharge",
+            "cs": "Žádné další náklady na parkování při nabíjení"
           }
         },
         {
@@ -4698,7 +4784,8 @@
             "da": "Der skal betales et ekstra parkeringsgebyr under opladning",
             "de": "Während des Ladens ist eine zusätzliche Parkgebühr zu entrichten",
             "es": "Se deberá de pagar una tasa adicional de aparcamiento mientras se carga",
-            "fr": "Des frais de stationnement supplémentaires doivent être payés lors de la recharge"
+            "fr": "Des frais de stationnement supplémentaires doivent être payés lors de la recharge",
+            "cs": "Při nabíjení by se měl platit dodatečný poplatek za parkování"
           }
         }
       ],
@@ -5142,7 +5229,8 @@
             "eu": " ·minutu",
             "pa_PK": " منٹ",
             "pl": " minut",
-            "ru": " минут"
+            "ru": " минут",
+            "cs": " minuty"
           },
           "humanSingular": {
             "en": " minute",
@@ -5152,7 +5240,8 @@
             "es": " minuto",
             "eu": " ·minutu",
             "pl": " minuta",
-            "ru": " минута"
+            "ru": " минута",
+            "cs": " minut"
           }
         },
         {
@@ -5174,7 +5263,8 @@
             "es": " horas",
             "eu": " ·ordu",
             "pl": " godzin",
-            "ru": " часов"
+            "ru": " часов",
+            "cs": " hodiny"
           },
           "humanSingular": {
             "en": " hour",
@@ -5184,7 +5274,8 @@
             "es": " hora",
             "eu": " ·ordu",
             "pl": " godzina",
-            "ru": " час"
+            "ru": " час",
+            "cs": " hodin"
           }
         },
         {
@@ -5203,7 +5294,8 @@
             "es": " días",
             "eu": " ·egun",
             "pl": " dni",
-            "ru": " дней"
+            "ru": " дней",
+            "cs": " dny"
           },
           "humanSingular": {
             "en": " day",
@@ -5213,7 +5305,8 @@
             "es": " día",
             "eu": " ·egun",
             "pl": " dzień",
-            "ru": " день"
+            "ru": " день",
+            "cs": " den"
           }
         }
       ]
@@ -5254,7 +5347,8 @@
             "de": "Volt",
             "es": "Voltios",
             "eu": "Voltio",
-            "ru": "Вольт"
+            "ru": "Вольт",
+            "cs": "Volty"
           }
         }
       ],
@@ -5294,7 +5388,8 @@
             "ca": "A",
             "de": "Ein",
             "es": "A",
-            "eu": "A"
+            "eu": "A",
+            "cs": "A"
           }
         }
       ],
@@ -5333,7 +5428,8 @@
             "es": "kilvatio",
             "eu": "kilovatio",
             "pa_PK": "کیلوواٹ",
-            "ru": "киловатт"
+            "ru": "киловатт",
+            "cs": "kilowatt"
           }
         },
         {
@@ -5349,7 +5445,8 @@
             "es": "megavatio",
             "eu": "megawatt",
             "pa_PK": "میگاواٹ",
-            "ru": "мегаватт"
+            "ru": "мегаватт",
+            "cs": "megawatt"
           }
         }
       ],
