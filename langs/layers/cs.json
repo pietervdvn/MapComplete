@@ -1672,7 +1672,7 @@
             },
             "binocular-direction": {
                 "question": "Při pohledu přes tento dalekohled, kterým směrem se člověk dívá?",
-                "render": "Dívá se směrem k {direction}°"
+                "render": "Dívá se směrem v úhlu {direction}°"
             }
         },
         "title": {
@@ -1718,8 +1718,12 @@
                     },
                     "2": {
                         "then": "Ptačí budka věž"
+                    },
+                    "3": {
+                        "then": "Úkryt pro pozorování ptáků"
                     }
-                }
+                },
+                "question": "Jedná se o ptačí zástěnu nebo o úkryt pro pozorování ptáků?"
             },
             "bird-hide-wheelchair": {
                 "mappings": {
@@ -2117,6 +2121,11 @@
                 "question": "Je toto nabíjecí místo v provozu?"
             },
             "Operator": {
+                "mappings": {
+                    "0": {
+                        "then": "{operator} je ve skutečnosti síť"
+                    }
+                },
                 "question": "Kdo je provozovatelem této nabíjecí stanice?",
                 "render": "Tuto nabíjecí stanici provozuje {operator}"
             },
