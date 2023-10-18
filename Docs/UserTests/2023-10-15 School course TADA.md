@@ -1,5 +1,6 @@
 # School course TADA
 
+## Context
 
 TADA (Toekomst Atelier/Atelier De L'avenir; literally: 'Workshops for the Future') is a program where young teens of underpriviliged areas are shown a series of professions in order to broaden their horizon.
 
@@ -9,6 +10,13 @@ Two groups (one of 12 kids, one of 10 kids) were first introduced to the concept
 
 After this introduction, the pupils were divided into smaller groups of three or four each and were invited to go out and map a some objects in the neighbourhood.
 Even though the attention of some waned, a few pupils were interested and answered a question or added a picture.
+
+## Test setup
+
+Some young teens with no particular tech background; but which can read maps
+Testing medium: iPad (iOs) with Safari Browser
+
+## Discovered usability issues
 
 During this, the following usability issues surfaced:
 
