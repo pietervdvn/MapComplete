@@ -180,6 +180,13 @@ changeset is probably closed and we open a new changeset.
 Note that changesets are closed automatically after one hour of inactivity, so we don't have to worry about closing
 them.
 
+# Our Contributors ⭐
+
+<a href="https://github.com/pietervdvn/MapComplete
+/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=pietervdvn/MapComplete" />
+</a>
+
 # Privacy
 
 Privacy is important, we try to leak as little information as possible. All major personal information is handled by
