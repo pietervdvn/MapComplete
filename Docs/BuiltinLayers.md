@@ -1451,6 +1451,7 @@ The following layers are included in MapComplete:
   - [gps_location](./Layers/gps_location.md)
   - [gps_location_history](./Layers/gps_location_history.md)
   - [gps_track](./Layers/gps_track.md)
+  - [guidepost](./Layers/guidepost.md)
   - [hackerspace](./Layers/hackerspace.md)
   - [home_location](./Layers/home_location.md)
   - [hospital](./Layers/hospital.md)

@@ -38,7 +38,7 @@
   if (value.data === undefined) {
     value.setData(coordinate)
   }
-  if(coordinate === undefined){
+  if (coordinate === undefined) {
     coordinate = value.data
   }
   export let snapToLayers: string[] | undefined
@@ -46,8 +46,6 @@
   export let maxSnapDistance: number = undefined
 
   export let snappedTo: UIEventSource<string | undefined>
-
-
 
   let preciseLocation: UIEventSource<{ lon: number; lat: number }> = new UIEventSource<{
     lon: number
@@ -75,7 +73,7 @@
     rasterLayer: UIEventSource.feedFrom(state.mapProperties.rasterLayer),
   }
 
-  if(targetLayer){
+  if (targetLayer) {
     const featuresForLayer = state.perLayer.get(targetLayer.id)
     if (featuresForLayer) {
       new ShowDataLayer(map, {

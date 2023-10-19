@@ -112,7 +112,10 @@
         <button
           slot="save-button"
           on:click={onDelete}
-          class={twJoin(selectedTags === undefined && "disabled", "primary flex bg-red-600 items-center")}
+          class={twJoin(
+            selectedTags === undefined && "disabled",
+            "primary flex items-center bg-red-600"
+          )}
         >
           <TrashIcon
             class={twJoin(

@@ -155,8 +155,8 @@
     <ToSvelte
       construct={() => new ExtraLinkButton(state, layout.extraLink).SetClass("pointer-events-auto")}
     />
-    <UploadingImageCounter {state} featureId="*" showThankYou={false}/>
-    <PendingChangesIndicator {state}/>
+    <UploadingImageCounter featureId="*" showThankYou={false} {state} />
+    <PendingChangesIndicator {state} />
     <If condition={state.featureSwitchIsTesting}>
       <div class="alert w-fit">Testmode</div>
     </If>
@@ -174,7 +174,12 @@
     <div class="flex flex-col">
       <If condition={featureSwitches.featureSwitchEnableLogin}>
         {#if state.lastClickObject.hasPresets || state.lastClickObject.hasNoteLayer}
-          <button class="w-fit pointer-events-auto" on:click={() => {state.openNewDialog()}}>
+          <button
+            class="pointer-events-auto w-fit"
+            on:click={() => {
+              state.openNewDialog()
+            }}
+          >
             {#if state.lastClickObject.hasPresets}
               <Tr t={Translations.t.general.add.title} />
             {:else}
@@ -197,9 +202,9 @@
         <a
           class="bg-black-transparent pointer-events-auto h-fit max-h-12 cursor-pointer self-end overflow-hidden rounded-2xl pl-1 pr-2 text-white opacity-50 hover:opacity-100"
           on:click={() => {
-          state.guistate.themeViewTab.setData("copyright")
-          state.guistate.themeIsOpened.setData(true)
-        }}
+            state.guistate.themeViewTab.setData("copyright")
+            state.guistate.themeIsOpened.setData(true)
+          }}
         >
           © OpenStreetMap, <span class="w-24">{rasterLayerName}</span>
         </a>
@@ -293,7 +298,10 @@
   <!-- Theme menu -->
   <FloatOver on:close={() => state.guistate.themeIsOpened.setData(false)}>
     <span slot="close-button"><!-- Disable the close button --></span>
-    <TabbedGroup condition1={state.featureSwitches.featureSwitchFilter} tab={state.guistate.themeViewTabIndex}>
+    <TabbedGroup
+      condition1={state.featureSwitches.featureSwitchFilter}
+      tab={state.guistate.themeViewTabIndex}
+    >
       <div slot="post-tablist">
         <XCircleIcon
           class="mr-2 h-8 w-8"
@@ -362,7 +370,11 @@
 
 <IfHidden condition={state.guistate.backgroundLayerSelectionIsOpened}>
   <!-- background layer selector -->
-  <FloatOver on:close={() => {state.guistate.backgroundLayerSelectionIsOpened.setData(false)}}>
+  <FloatOver
+    on:close={() => {
+      state.guistate.backgroundLayerSelectionIsOpened.setData(false)
+    }}
+  >
     <div class="h-full p-2">
       <RasterLayerOverview
         {availableLayers}
@@ -377,11 +389,13 @@
 
 <If condition={state.guistate.menuIsOpened}>
   <!-- Menu page -->
-  <FloatOver on:close={() =>      state.guistate.menuIsOpened.setData(false)    }>
+  <FloatOver on:close={() => state.guistate.menuIsOpened.setData(false)}>
     <span slot="close-button"><!-- Hide the default close button --></span>
-    <TabbedGroup condition1={featureSwitches.featureSwitchEnableLogin}
-                 condition2={state.featureSwitches. featureSwitchCommunityIndex}
-                 tab={state.guistate.menuViewTabIndex}>
+    <TabbedGroup
+      condition1={featureSwitches.featureSwitchEnableLogin}
+      condition2={state.featureSwitches.featureSwitchCommunityIndex}
+      tab={state.guistate.menuViewTabIndex}
+    >
       <div slot="post-tablist">
         <XCircleIcon
           class="mr-2 h-8 w-8"
@@ -470,7 +484,7 @@
           <OpenIdEditor mapProperties={state.mapProperties} />
           <ToSvelte
             construct={() =>
-            new OpenJosm(state.osmConnection, state.mapProperties.bounds).SetClass("w-full")}
+              new OpenJosm(state.osmConnection, state.mapProperties.bounds).SetClass("w-full")}
           />
           <MapillaryLink mapProperties={state.mapProperties} />
         </If>

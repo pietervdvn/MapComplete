@@ -314,7 +314,7 @@ export class GeoOperations {
         return <any>way
     }
 
-    public static toCSV(features: any[]): string {
+    public static toCSV(features: Feature[] | FeatureCollection): string {
         const headerValuesSeen = new Set<string>()
         const headerValuesOrdered: string[] = []
 
@@ -330,7 +330,14 @@ export class GeoOperations {
 
         const lines: string[] = []
 
-        for (const feature of features) {
+        let _features
+        if(Array.isArray(features)){
+            _features = features
+        }else{
+            _features = features.features
+        }
+
+        for (const feature of _features) {
             const properties = feature.properties
             for (const key in properties) {
                 if (!properties.hasOwnProperty(key)) {
@@ -340,7 +347,7 @@ export class GeoOperations {
             }
         }
         headerValuesOrdered.sort()
-        for (const feature of features) {
+        for (const feature of _features) {
             const properties = feature.properties
             let line = ""
             for (const key of headerValuesOrdered) {

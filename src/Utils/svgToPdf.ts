@@ -672,16 +672,21 @@ class SvgToPdfPage {
     }
 
     public async PrepareLanguage(language: string) {
+        let host = window.location.host
+        if(host.startsWith("127.0.0.1")){
+            host = "mapcomplete.org"
+        }
         // Always fetch the remote data - it's cached anyway
         this.layerTranslations[language] = await Utils.downloadJsonCached(
             window.location.protocol +
                 "//" +
-                window.location.host +
+                host +
                 "/assets/langs/layers/" +
                 language +
                 ".json",
             24 * 60 * 60 * 1000
         )
+
     }
 
     public async Prepare() {

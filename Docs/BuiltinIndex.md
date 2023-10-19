@@ -130,6 +130,7 @@
   - food
   - ghost_bike
   - governments
+  - guidepost
   - hackerspace
   - hotel
   - hydrant
