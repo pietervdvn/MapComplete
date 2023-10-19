@@ -17,5 +17,9 @@ export interface MapProperties {
 }
 
 export interface ExportableMap {
-    exportAsPng(dpiFactor: number): Promise<Blob>
+    /**
+     * Export the current map as PNG.
+     * @param markerScale: if given, the markers will be 'markerScale' bigger. This is to use in combination with a supersized canvas to have more pixels and achieve print quality
+     */
+    exportAsPng(markerScale?: number): Promise<Blob>
 }

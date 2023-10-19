@@ -224,7 +224,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         return url
     }
 
-    public async exportAsPng(dpiFactor: number): Promise<Blob> {
+    public async exportAsPng(markerScale: number = 1): Promise<Blob> {
         const map = this._maplibreMap.data
         if (!map) {
             return undefined
@@ -235,14 +235,14 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
         const ctx = drawOn.getContext("2d")
         // Set up CSS size.
-        MapLibreAdaptor.setDpi(drawOn, ctx, dpiFactor / map.getPixelRatio())
+        MapLibreAdaptor.setDpi(drawOn, ctx, markerScale / map.getPixelRatio())
 
         await this.exportBackgroundOnCanvas(ctx)
 
         // MapLibreAdaptor.setDpi(drawOn, ctx, 1)
-        const markers = await this.drawMarkers(dpiFactor)
+        const markers = await this.drawMarkers(markerScale)
         ctx.drawImage(markers, 0, 0, drawOn.width, drawOn.height)
-        ctx.scale(dpiFactor, dpiFactor)
+        ctx.scale(markerScale, markerScale)
         this._maplibreMap.data?.resize()
         return await new Promise<Blob>((resolve) => drawOn.toBlob((blob) => resolve(blob)))
     }
