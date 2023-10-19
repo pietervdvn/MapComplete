@@ -2,7 +2,7 @@ import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import { Utils } from "../Utils"
 import known_layers from "../assets/generated/known_layers.json"
 import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
-import { AllKnownLayouts } from "./AllKnownLayouts"
+
 export class AllSharedLayers {
     public static sharedLayers: Map<string, LayerConfig> = AllSharedLayers.getSharedLayers()
     public static getSharedLayersConfigs(): Map<string, LayerConfigJson> {
@@ -34,35 +34,5 @@ export class AllSharedLayers {
         }
 
         return sharedLayers
-    }
-
-    public static AllPublicLayers(options?: {
-        includeInlineLayers: true | boolean
-    }): LayerConfig[] {
-        const allLayers: LayerConfig[] = []
-        const seendIds = new Set<string>()
-        AllSharedLayers.sharedLayers.forEach((layer, key) => {
-            seendIds.add(key)
-            allLayers.push(layer)
-        })
-        if (options?.includeInlineLayers ?? true) {
-            const publicLayouts = Array.from(AllKnownLayouts.allKnownLayouts.values()).filter(
-                (l) => !l.hideFromOverview
-            )
-            for (const layout of publicLayouts) {
-                if (layout.hideFromOverview) {
-                    continue
-                }
-                for (const layer of layout.layers) {
-                    if (seendIds.has(layer.id)) {
-                        continue
-                    }
-                    seendIds.add(layer.id)
-                    allLayers.push(layer)
-                }
-            }
-        }
-
-        return allLayers
     }
 }

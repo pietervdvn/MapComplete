@@ -161,6 +161,7 @@ export class OsmConnection {
         this.userDetails.ping()
         console.log("Logged out")
         this.loadingStatus.setData("not-attempted")
+        this.preferencesHandler.preferences.setData(undefined)
     }
 
     /**

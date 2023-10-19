@@ -1,7 +1,6 @@
 import jsPDF, { Matrix } from "jspdf"
 import { Translation, TypedTranslation } from "../UI/i18n/Translation"
 import { PngMapCreator } from "./pngMapCreator"
-import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
 import "../../public/assets/fonts/Ubuntu-M-normal.js"
 import "../../public/assets/fonts/Ubuntu-L-normal.js"
 import "../../public/assets/fonts/UbuntuMono-B-bold.js"
@@ -874,7 +873,7 @@ class SvgToPdfPage {
                 width,
                 height,
             }).CreatePng(this.options.freeComponentId, this._state)
-        } else {
+        }/* else {
             const match = spec.match(/\$map\(([^)]*)\)$/)
             if (match === null) {
                 throw "Invalid mapspec:" + spec
@@ -974,7 +973,7 @@ class SvgToPdfPage {
                 throw "PngCreator did not output anything..."
             }
         }
-
+//*/
         svgImage.setAttribute("xlink:href", await SvgToPdfPage.blobToBase64(png))
         smallestRect.parentElement.insertBefore(svgImage, smallestRect)
         await this.prepareElement(svgImage, [], false)
@@ -1052,11 +1051,6 @@ export class SvgToPdf {
     constructor(title: string, pages: string[], options: SvgToPdfOptions) {
         this._title = title
         options.textSubstitutions = options.textSubstitutions ?? {}
-        options.textSubstitutions["mapCount"] =
-            "" +
-            Array.from(AllKnownLayouts.allKnownLayouts.values()).filter(
-                (th) => !th.hideFromOverview
-            ).length
 
         const state = new UIEventSource<string>("Initializing...")
         this.status = state
