@@ -1,0 +1,93 @@
+{
+  "id": "route_marker",
+  "name": {
+    "en": "Route markers"
+  },
+  "description": {
+    "en": "Route markers are small markers often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route."
+  },
+  "source": {
+    "osmTags": "information=route_marker"
+  },
+  "minzoom": 14,
+  "presets": [
+    {
+      "title": {
+        "en": "a route marker"
+      },
+      "tags": [
+        "tourism=information",
+        "information=route_marker"
+      ],
+      "description": {
+        "en": "A route marker is a small marker often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route."
+      }
+    }
+  ],
+  "deletion": true,
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
+  "title": {
+    "render": {
+      "en": "Route marker"
+    }
+  },
+  "mapRendering": [
+    {
+      "location": [
+        "centroid",
+        "point"
+      ],
+      "icon": "./assets/layers/route_marker/route_marker.svg"
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "id": "type",
+      "question": {
+        "en": "For what kind of route is this marker?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "bicycle=yes",
+          "ifnot": "biycle=no",
+          "then": {
+            "en": "This is a route marker for a bicycle route."
+          }
+        },
+        {
+          "if": "hiking=yes",
+          "ifnot": "hiking=no",
+          "then": {
+            "en": "This is a route marker for a hiking route."
+          }
+        },
+        {
+          "if": "mtb=yes",
+          "ifnot": "mtb=no",
+          "then": {
+            "en": "This is a route marker for a mountain bike route."
+          }
+        },
+        {
+          "if": "horse=yes",
+          "ifnot": "horse=no",
+          "then": {
+            "en": "This is a route marker for a horse riding route."
+          }
+        },
+        {
+          "if": "ski=yes",
+          "ifnot": "ski=no",
+          "then": {
+            "en": "This is a route marker for a ski route."
+          }
+        }
+      ]
+    }
+  ]
+}
