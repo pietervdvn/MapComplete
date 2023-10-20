@@ -52,7 +52,8 @@
         "information_board",
         "bench",
         "picnic_table",
-        "toilet"
+        "toilet",
+        "guidepost"
       ],
       "override": {
         "minzoom": 16
