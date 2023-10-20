@@ -479,8 +479,10 @@
                 "name": "propojení mezi uzly",
                 "tagRenderings": {
                     "node2node-survey:date": {
-                        "question": "Kdy bylo toto propojení mezi uzly naposledy zkontrolováno?",
-                        "render": "Toto propojení mezi uzly bylo naposledy zkontrolováno dne {survey:date}"
+                        "override": {
+                            "question": "Kdy bylo toto propojení mezi uzly naposledy zkontrolováno?",
+                            "render": "Toto propojení mezi uzly bylo naposledy zkontrolováno dne {survey:date}"
+                        }
                     }
                 },
                 "title": {
@@ -500,8 +502,10 @@
                         "render": "Tento uzel je propojen s {expected_rcn_route_relations} dalšími uzly cyklu."
                     },
                     "node-survey:date": {
-                        "question": "Kdy byl tento uzel cyklu naposledy zkontrolován?",
-                        "render": "Tento uzel cyklu byl naposledy zkontrolován dne {survey:date}"
+                        "override": {
+                            "question": "Kdy byl tento uzel cyklu naposledy zkontrolován?",
+                            "render": "Tento uzel cyklu byl naposledy zkontrolován dne {survey:date}"
+                        }
                     }
                 },
                 "title": {

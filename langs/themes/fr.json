@@ -476,8 +476,10 @@
                 "name": "liens noeud à noeud",
                 "tagRenderings": {
                     "node2node-survey:date": {
-                        "question": "Quand cette liaison de nœud à nœud a-t-elle été contrôlée sur le terrain pour la dernière fois ?",
-                        "render": "Cette lien de nœud à nœud a été vérifié sur le terrain le {survey:date}"
+                        "override": {
+                            "question": "Quand cette liaison de nœud à nœud a-t-elle été contrôlée sur le terrain pour la dernière fois ?",
+                            "render": "Cette lien de nœud à nœud a été vérifié sur le terrain le {survey:date}"
+                        }
                     }
                 },
                 "title": {
@@ -497,8 +499,10 @@
                         "render": "Ce noeud est lié à {expected_rcn_route_relations} d'autres noeuds cyclistes."
                     },
                     "node-survey:date": {
-                        "question": "Quand ce nœud cyclable a-t-il été vérifié sur le terrain pour la dernière fois ?",
-                        "render": "Ce nœud cycliste a été verifié pour la dernière fois le {survey:date}"
+                        "override": {
+                            "question": "Quand ce nœud cyclable a-t-il été vérifié sur le terrain pour la dernière fois ?",
+                            "render": "Ce nœud cycliste a été verifié pour la dernière fois le {survey:date}"
+                        }
                     }
                 },
                 "title": {

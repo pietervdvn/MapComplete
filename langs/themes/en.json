@@ -476,36 +476,64 @@
         "description": "This map shows cycle node networks and allows you to add new nodes easily",
         "layers": {
             "0": {
-                "name": "node to node links",
+                "name": "Node to node links",
                 "tagRenderings": {
                     "node2node-survey:date": {
-                        "question": "When was this node to node link last surveyed?",
-                        "render": "This node to node link was last surveyed on {survey:date}"
+                        "override": {
+                            "question": "When was this node to node link last surveyed?",
+                            "render": "This node to node link was last surveyed on {survey:date}"
+                        }
                     }
                 },
                 "title": {
                     "mappings": {
                         "0": {
-                            "then": "node to node link <strong>{ref}</strong>"
+                            "then": "Node to node link <strong>{ref}</strong>"
                         }
                     },
-                    "render": "node to node link"
+                    "render": "Node to node link"
                 }
             },
             "1": {
-                "name": "nodes",
+                "name": "Nodes",
+                "presets": {
+                    "0": {
+                        "title": "a cycling node"
+                    }
+                },
                 "tagRenderings": {
                     "node-expected_rcn_route_relations": {
+                        "freeform": {
+                            "placeholder": "e.g. 3"
+                        },
                         "question": "How many other cycle nodes does this node link to?",
                         "render": "This node links to {expected_rcn_route_relations} other cycle nodes."
                     },
+                    "node-rxn_ref": {
+                        "freeform": {
+                            "placeholder": "e.g. 1"
+                        },
+                        "question": "What is the reference number of this cycling node?",
+                        "render": "This cycling node has reference number {rcn_ref}"
+                    },
                     "node-survey:date": {
-                        "question": "When was this cycle node last surveyed?",
-                        "render": "This cycle node was last surveyed on {survey:date}"
+                        "override": {
+                            "question": "When was this cycle node last surveyed?",
+                            "render": "This cycle node was last surveyed on {survey:date}"
+                        }
                     }
                 },
                 "title": {
-                    "render": "cycle node <strong>{rcn_ref}</strong>"
+                    "render": "Cycle node <strong>{rcn_ref}</strong>"
+                }
+            },
+            "3": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "a route marker for a node to node link"
+                        }
+                    }
                 }
             }
         },
