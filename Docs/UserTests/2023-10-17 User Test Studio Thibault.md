@@ -13,20 +13,20 @@ As such, many terms and the general structure of Studio were intuitively clear.
 
 ## Surfaced issues with studio
 
-- If the 'name' or 'description' of the layer are not given, it cannot be loaded as 'fake' theme. This needs a clear warning message
-- The explanation of the field `render` uses `&LBRACEkey&RBRACE` instead of `{key}`
-- The freeform textfield only takes a small part of the screen, should be made full-width
-- The 'render'-field should be moved in the 'freeform' section
-- snapToLayer-section under presets section is not immediately clear. The participant realized after a few seconds what it meant drawing on their extensive MC-experience, but a beginner would not be able to figure this out
-- The 'textfield' of the 'Translated Value' should be hidden - especially as it contains JSON
-- A pending `Translated value:` is still shown in the UI (for debugging purposes) - should be removed
-- If an external dataset is loaded, a 'read only' mode should be triggered causing the 'question' - part to be disabled
+- [x] If the 'name' or 'description' of the layer are not given, it cannot be loaded as 'fake' theme. This needs a clear warning message
+- [x] The explanation of the field `render` uses `&LBRACEkey&RBRACE` instead of `{key}`
+- [x] The freeform textfield only takes a small part of the screen, should be made full-width
+- [x] The 'render'-field should be moved in the 'freeform' section
+- [x] A pending `Translated value:` is still shown in the UI (for debugging purposes) - should be removed
+- [x] The 'textfield' of the 'Translated Value' should be hidden - especially as it contains JSON
+- [x] If an external dataset is loaded, a 'read only' mode should be triggered causing the 'question' - part to be disabled
+- [ ] snapToLayer-section under presets section is not immediately clear. The participant realized after a few seconds what it meant drawing on their extensive MC-experience, but a beginner would not be able to figure this out
 
 ## Suggestions and feature requests by the participant
 
-- Add image previews
+- Add image previews (e.g. show a preview)
 - The ability to paste `key=value` tags and have them filled into the relevant fields
-- minzoom is set on 0 by default, which might choke mapcomplete; a sensible default (~15) should be taken for this
+- [x] minzoom is set on 0 by default, which might choke mapcomplete; a sensible default (~15) should be taken for this
 
 ## Other misc issues
 

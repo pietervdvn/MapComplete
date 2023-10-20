@@ -9,8 +9,6 @@
   import InputHelpers from "./InputHelpers";
   import ToSvelte from "../Base/ToSvelte.svelte";
   import type { Feature } from "geojson";
-  import BaseUIElement from "../BaseUIElement";
-  import { VariableUiElement } from "../Base/VariableUIElement";
   import { createEventDispatcher } from "svelte";
   import ImageHelper from "./Helpers/ImageHelper.svelte";
   import TranslationInput from "./Helpers/TranslationInput.svelte";
@@ -19,6 +17,7 @@
   import DirectionInput from "./Helpers/DirectionInput.svelte";
   import DateInput from "./Helpers/DateInput.svelte";
   import ColorInput from "./Helpers/ColorInput.svelte";
+  import OpeningHoursInput from "./Helpers/OpeningHoursInput.svelte";
 
   export let type: ValidatorType;
   export let value: UIEventSource<string>;
@@ -27,17 +26,15 @@
   export let args: (string | number | boolean)[] = undefined;
 
   let properties = { feature, args: args ?? [] };
-  let construct = new UIEventSource<(value, extraProperties) => BaseUIElement>(undefined);
-  $: {
-    const helper = InputHelpers.AvailableInputHelpers[type];
-    construct.setData(helper);
-  }
-  let dispatch = createEventDispatcher<{ selected, submit }>();
+  let dispatch = createEventDispatcher<{
+    selected,
+    submit
+  }>();
 
 </script>
 
 {#if type === "translation" }
-  <TranslationInput {value} on:submit={() => dispatch("submit")} />
+  <TranslationInput {value} on:submit={() => dispatch("submit")} {args} />
 {:else if type === "direction"}
   <DirectionInput {value} mapProperties={InputHelpers.constructMapProperties(properties)} />
 {:else if type === "date"}
@@ -50,10 +47,8 @@
   <TagInput { value } />
 {:else if type === "simple_tag"}
   <SimpleTagInput { value } />
-
-{:else if $construct !== undefined}
-  <ToSvelte
-    construct={() =>
-      new VariableUiElement(construct.mapD((construct) => construct(value, properties)))}
-  />
+{:else if type === "opening_hours"}
+  <OpeningHoursInput { value } />
+{:else if type === "wikidata"}
+  <ToSvelte construct={() => InputHelpers.constructWikidataHelper(value, properties)} />
 {/if}

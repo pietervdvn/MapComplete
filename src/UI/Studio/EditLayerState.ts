@@ -71,6 +71,11 @@ export default class EditLayerState {
                 sharedLayers: layers,
             }
         }
+
+        const prepare = new Pipe(
+            new PrepareLayer(state),
+            new ValidateLayer("dynamic", false, undefined, true)
+        )
         this.messages = this.configuration.mapD((config) => {
             const trs = Utils.NoNull(config.tagRenderings ?? [])
             for (let i = 0; i < trs.length; i++) {
@@ -92,11 +97,6 @@ export default class EditLayerState {
                     qtr["id"] = id
                 }
             }
-
-            const prepare = new Pipe(
-                new PrepareLayer(state),
-                new ValidateLayer("dynamic", false, undefined)
-            )
 
             const context = ConversionContext.construct([], ["prepare"])
             prepare.convert(<LayerConfigJson>config, context)

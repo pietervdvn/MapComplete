@@ -26,7 +26,8 @@
   }
   const apiState = state.osmConnection.apiIsOnline
 </script>
-
+<slot />
+<!--
 {#if $badge}
   {#if !ignoreLoading && $loadingStatus === "loading"}
     <slot name="loading">
@@ -42,4 +43,4 @@
   {:else if $loadingStatus === "not-attempted"}
     <slot name="not-logged-in" />
   {/if} 
-{/if}
+{/if} -->

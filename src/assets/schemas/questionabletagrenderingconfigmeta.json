@@ -450,7 +450,7 @@
     "required": false,
     "hints": {
       "question": "Should a contributor be allowed to select multiple mappings?",
-      "iftrue": "allow to select multiple mappigns",
+      "iftrue": "allow to select multiple mappings",
       "iffalse": "only allow to select a single mapping",
       "ifunset": "only allow to select a single mapping"
     },
@@ -810,7 +810,7 @@
         "type": "string"
       }
     ],
-    "description": "This piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`"
+    "description": "This piece of text will be shown in the infobox.\nIn this text, values within braces (such as {braced(key)}) are replaced by the corresponding `value` in the object.\nFor example, if the object contains tags `amenity=school; name=Windy Hill School`, the render string `This school is named {name}` will be shown to the user as `This school is named Windy Hill School`\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`"
   },
   {
     "path": [

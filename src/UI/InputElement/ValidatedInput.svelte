@@ -9,9 +9,11 @@
     import {Unit} from "../../Models/Unit"
     import UnitInput from "../Popup/UnitInput.svelte"
     import {Utils} from "../../Utils";
+    import { twMerge } from "tailwind-merge";
 
   export let type: ValidatorType
   export let feedback: UIEventSource<Translation> | undefined = undefined
+    export let cls : string = undefined
   export let getCountry: () => string | undefined
   export let placeholder: string | Translation | undefined
   export let unit: Unit = undefined
@@ -98,10 +100,20 @@
             htmlElem.onfocus = () => dispatch("selected")
         }
     }
+
+    /**
+     * Dispatches the submit, but only if the value is valid
+     */
+    function sendSubmit(){
+        if(feedback.data){
+            console.log("Not sending a submit as there is feedback")
+        }
+        dispatch("submit") 
+    }
 </script>
 
 {#if validator?.textArea}
-    <form on:submit|preventDefault={() => dispatch("submit")}>
+    <form on:submit|preventDefault={() => sendSubmit()}>
     
   <textarea
           class="w-full"
@@ -110,7 +122,7 @@
           placeholder={_placeholder}></textarea>
     </form>
 {:else}
-    <form class="inline-flex" on:submit|preventDefault={() => dispatch("submit")}>
+    <form class={twMerge("inline-flex",cls )} on:submit|preventDefault={() => sendSubmit()}>
         <input
                 bind:this={htmlElem}
                 bind:value={$_value}

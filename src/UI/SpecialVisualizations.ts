@@ -247,6 +247,11 @@ export default class SpecialVisualizations {
      * // Return empty list on empty input
      * SpecialVisualizations.constructSpecification("") // => []
      *
+     * // Simple case
+     * const oh = SpecialVisualizations.constructSpecification("The opening hours with value {opening_hours} can be seen in the following table: <br/> {opening_hours_table()}")
+     * oh[0] // => "The opening hours with value {opening_hours} can be seen in the following table: <br/> "
+     * oh[1].func.funcName // => "opening_hours_table"
+     *
      * // Advanced cases with commas, braces and newlines should be handled without problem
      * const templates = SpecialVisualizations.constructSpecification("{send_email(&LBRACEemail&RBRACE,Broken bicycle pump,Hello&COMMA\n\nWith this email&COMMA I'd like to inform you that the bicycle pump located at https://mapcomplete.org/cyclofix?lat=&LBRACE_lat&RBRACE&lon=&LBRACE_lon&RBRACE&z=18#&LBRACEid&RBRACE is broken.\n\n Kind regards,Report this bicycle pump as broken)}")
      * const templ = <Exclude<RenderingSpecification, string>> templates[0]
@@ -305,20 +310,6 @@ export default class SpecialVisualizations {
                     func: knownSpecial,
                 }
                 return [...partBefore, element, ...partAfter]
-            }
-        }
-
-        // Let's to a small sanity check to help the theme designers:
-        if (template.search(/{[^}]+\([^}]*\)}/) >= 0) {
-            // Hmm, we might have found an invalid rendering name
-
-            let suggestion = ""
-            if (SpecialVisualizations.specialVisualizations?.length > 0) {
-                suggestion =
-                    "did you mean one of: " +
-                    SpecialVisualizations.specialVisualizations
-                        .map((sp) => sp.funcName + "()")
-                        .join(", ")
             }
         }
 
@@ -1386,6 +1377,27 @@ export default class SpecialVisualizations {
                                 )
                             })
                     )
+                },
+            },
+            {
+                funcName: "braced",
+                docs: "Show a literal text within braces",
+                needsUrls: [],
+                args: [
+                    {
+                        name: "text",
+                        required: true,
+                        doc: "The value to show",
+                    },
+                ],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    args: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new FixedUiElement("{" + args[0] + "}")
                 },
             },
         ]

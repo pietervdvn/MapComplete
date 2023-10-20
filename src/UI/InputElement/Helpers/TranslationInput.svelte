@@ -6,6 +6,11 @@
   import ValidatedInput from "../ValidatedInput.svelte";
 
   export let value: UIEventSource<string> = new UIEventSource<string>("");
+  
+  export let args: string[] = []
+  
+  let prefix = args[0]
+  let postfix = args[1]
 
   let translations: UIEventSource<Record<string, string>> = value.sync((s) => {
     try {
@@ -42,7 +47,10 @@
   }));
 
 </script>
-<div class="flex">
+<div class="flex font-bold space-x-1 m-1 mt-2 interactive">
+  <span>
+  {prefix}
+  </span>
   <select bind:value={$currentLang}>
     {#each allLanguages as language}
       <option value={language}>
@@ -50,5 +58,8 @@
       </option>
     {/each}
   </select>
-  <ValidatedInput type="string" value={currentVal} on:submit={() => dispatch("submit")} />
+  <ValidatedInput type="string" cls="w-full" value={currentVal} on:submit={() => dispatch("submit")} />
+  <span>
+  {postfix}
+  </span>
 </div>

@@ -36,31 +36,6 @@ export interface InputHelperProperties {
 }
 
 export default class InputHelpers {
-    /**
-     * @deprecated
-     */
-    public static readonly AvailableInputHelpers: Readonly<
-        Partial<
-            Record<
-                ValidatorType,
-                (
-                    value: UIEventSource<string>,
-                    extraProperties?: InputHelperProperties
-                ) => BaseUIElement
-            >
-        >
-    > = {
-        direction: (value, properties) =>
-            new SvelteUIElement(DirectionInput, {
-                value,
-                mapProperties: InputHelpers.constructMapProperties(properties),
-            }),
-        date: (value) => new SvelteUIElement(DateInput, { value }),
-        color: (value) => new SvelteUIElement(ColorInput, { value }),
-        opening_hours: (value) => new SvelteUIElement(OpeningHoursInput, { value }),
-        wikidata: InputHelpers.constructWikidataHelper,
-    } as const
-
     public static hideInputField: string[] = ["translation", "simple_tag", "tag"]
 
     // noinspection JSUnusedLocalSymbols
@@ -95,7 +70,7 @@ export default class InputHelpers {
         return mapProperties
     }
 
-    private static constructWikidataHelper(
+    public static constructWikidataHelper(
         value: UIEventSource<string>,
         props: InputHelperProperties
     ) {

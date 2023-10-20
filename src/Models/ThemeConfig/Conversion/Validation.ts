@@ -783,12 +783,19 @@ export class ValidateLayer extends Conversion<
     private readonly _path?: string
     private readonly _isBuiltin: boolean
     private readonly _doesImageExist: DoesImageExist
+    private _studioValidations: boolean
 
-    constructor(path: string, isBuiltin: boolean, doesImageExist: DoesImageExist) {
+    constructor(
+        path: string,
+        isBuiltin: boolean,
+        doesImageExist: DoesImageExist,
+        studioValidations: boolean = false
+    ) {
         super("Doesn't change anything, but emits warnings and errors", [], "ValidateLayer")
         this._path = path
         this._isBuiltin = isBuiltin
         this._doesImageExist = doesImageExist
+        this._studioValidations = studioValidations
     }
 
     convert(
@@ -1114,6 +1121,15 @@ export class ValidateLayer extends Conversion<
             }
         } catch (e) {
             context.err("Could not validate layer due to: " + e + e.stack)
+        }
+
+        if (this._studioValidations) {
+            if (!json.description) {
+                context.enter("description").err("A description is required")
+            }
+            if (!json.name) {
+                context.enter("name").err("A name is required")
+            }
         }
 
         return { raw: json, parsed: layerConfig }

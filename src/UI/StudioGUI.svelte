@@ -25,6 +25,9 @@
 
   let initialLayerConfig: { id: string };
   let newLayerId = new UIEventSource<string>("");
+  /**
+   * Also used in the input field as 'feedback', hence not a mappedStore as it must be writable
+   */
   let layerIdFeedback = new UIEventSource<string>(undefined);
   newLayerId.addCallbackD(layerId => {
     if (layerId === "") {
@@ -45,15 +48,21 @@
   }
 
   async function createNewLayer() {
+    if(layerIdFeedback.data !== undefined){
+      console.warn("There is still some feedback - not starting to create a new layer")
+      return
+    }
     state = "loading";
     const id = newLayerId.data;
     const createdBy = osmConnection.userDetails.data.name;
+
 
     try {
 
       const loaded = await studio.fetchLayer(id);
       initialLayerConfig = loaded ?? {
         id, credits: createdBy,
+        minzoom: 15,
         pointRendering: [
           {
             location: ["point", "centroid"],

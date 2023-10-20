@@ -47,7 +47,8 @@ export interface TagRenderingConfigJson {
      * question: What text should be rendered?
      *
      * This piece of text will be shown in the infobox.
-     * Note that "&LBRACEkey&RBRACE"-parts are substituted by the corresponding values of the element.
+     * In this text, values within braces (such as {braced(key)}) are replaced by the corresponding `value` in the object.
+     * For example, if the object contains tags `amenity=school; name=Windy Hill School`, the render string `This school is named {name}` will be shown to the user as `This school is named Windy Hill School`
      *
      * This text will be shown if:
      * - there is no mapping which matches (or there are no matches)

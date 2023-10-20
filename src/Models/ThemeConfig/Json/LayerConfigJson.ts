@@ -310,7 +310,7 @@ export interface LayerConfigJson {
          * Do _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!
          *
          * question: What is the word to describe this object?
-         * inline: Add <b>{translated(value)}</b> here
+         * inline: Add {translated(value)::font-bold} here
          */
         title: Translatable
         /**
