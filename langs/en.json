@@ -193,6 +193,8 @@
             "title": "Download",
             "uploadGpx": "Upload your track to OpenStreetMap"
         },
+        "enableGeolocationForSafari": "Did you not get the popup to ask for geopermission?",
+        "enableGeolocationForSafariLink": "Learn how to enable the geolocation permission in settings",
         "error": "Something went wrong",
         "example": "Example",
         "examples": "Examples",
@@ -249,7 +251,7 @@
         "openTheMap": "Open the map",
         "openTheMapAtGeolocation": "Zoom to your location",
         "opening_hours": {
-            "closed_permanently": "Closed for an unkown duration",
+            "closed_permanently": "Closed for an unknown duration",
             "closed_until": "Closed until {date}",
             "error_loading": "Error: could not visualize these opening hours.",
             "loadingCountry": "Determining country…",
