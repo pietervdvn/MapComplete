@@ -315,19 +315,19 @@ async function generateCsp(
 
     const csp: Record<string, string> = {
         "default-src": "'self'",
-        "script-src": ["'self'", "https://gc.zgo.at/count.js", ...(options?.scriptSrcs ?? [])].join(
-            " "
-        ),
-        "child-src": "self",
+        "child-src": "'self' blob: ",
         "img-src": "* data:", // maplibre depends on 'data:' to load
         "connect-src": connectSrc.join(" "),
         "report-to": "https://report.mapcomplete.org/csp",
         "worker-src": "'self' blob:", // Vite somehow loads the worker via a 'blob'
         "style-src": "'self' 'unsafe-inline'", // unsafe-inline is needed to change the default background pin colours
+        "script-src": ["'self'", "https://gc.zgo.at/count.js", ...(options?.scriptSrcs ?? [])].join(
+            " "
+        ),
     }
     const content = Object.keys(csp)
         .map((k) => k + " " + csp[k])
-        .join("; ")
+        .join(" ; ")
 
     return [
         `<meta http-equiv ="Report-To" content='{"group":"csp-endpoint", "max_age": 86400,"endpoints": [\{"url": "https://report.mapcomplete.org/csp"}], "include_subdomains": true}'>`,
