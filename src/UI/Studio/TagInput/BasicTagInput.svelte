@@ -11,8 +11,15 @@
     export let tag: UIEventSource<string> = new UIEventSource<string>(undefined)
     export let uploadableOnly: boolean
     export let overpassSupportNeeded: boolean
+    
+    export  let dropdownFocussed = new UIEventSource(false)
 
+    /**
+     * If set, do not show tagInfo if there are many features matching
+     */
     export let silent : boolean = false
+    
+    export let selected: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     
     let feedbackGlobal = tag.map(tag => {
         if (!tag) {
@@ -38,7 +45,7 @@
     let valueValue = new UIEventSource<string>(undefined)
 
 
-    let mode: string = "="
+    export let mode: string = "="
     let modes: string[] = []
 
     for (const k in TagUtils.modeDocumentation) {
@@ -105,7 +112,7 @@
 
         <ValidatedInput feedback={feedbackKey} placeholder="The key of the tag" type="key"
                         value={keyValue}></ValidatedInput>
-        <select bind:value={mode}>
+        <select bind:value={mode} on:focusin={() => dropdownFocussed.setData(true)} on:focusout={() => dropdownFocussed.setData(false)}>
             {#each modes as option}
                 <option value={option}>
                     {option}

@@ -20,17 +20,17 @@
 
   const isTranslation = schema.hints.typehint === "translation" || schema.hints.typehint === "rendered" || ConfigMetaUtils.isTranslation(schema);
   let type = schema.hints.typehint ?? "string";
-  
-  let rendervalue = schema.type === "boolean" ? undefined : ((schema.hints.inline ?? schema.path.join(".")) + " <b>{translated(value)}</b>")
-  let helperArgs = undefined
-  let inline = schema.hints.inline !== undefined
+
+  let rendervalue = schema.type === "boolean" ? undefined : ((schema.hints.inline ?? schema.path.join(".")) + " <b>{translated(value)}</b>");
+  let helperArgs = schema.hints.typehelper?.split(",");
+  let inline = schema.hints.inline !== undefined;
   if (isTranslation) {
     type = "translation";
-    if(schema.hints.inline){
-      const inlineValue = schema.hints.inline
-      rendervalue = inlineValue
-      inline = false
-      helperArgs = [inlineValue.substring(0, inlineValue.indexOf("{")), inlineValue.substring(inlineValue.indexOf("}") + 1)]
+    if (schema.hints.inline) {
+      const inlineValue = schema.hints.inline;
+      rendervalue = inlineValue;
+      inline = false;
+      helperArgs = [inlineValue.substring(0, inlineValue.indexOf("{")), inlineValue.substring(inlineValue.indexOf("}") + 1)];
     }
   }
   if (type.endsWith("[]")) {
@@ -164,6 +164,8 @@
         <div class="alert">{msg.message}</div>
       {/each}
     {/if}
-    <span class="subtle">{schema.path.join(".")}</span>
+    {#if window.location.hostname === "127.0.0.1"}
+      <span class="subtle">{schema.path.join(".")}</span>
+    {/if}
   </div>
 {/if}

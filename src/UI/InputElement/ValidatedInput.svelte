@@ -17,7 +17,6 @@
   export let getCountry: () => string | undefined
   export let placeholder: string | Translation | undefined
   export let unit: Unit = undefined
-
     export let value: UIEventSource<string>
     /**
      * Internal state bound to the input element.

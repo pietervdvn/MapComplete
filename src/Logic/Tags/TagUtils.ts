@@ -97,8 +97,9 @@ export class TagUtils {
             docs: "Both the `key` and `value` part of this specification are interpreted as regexes, both the key and value musth completely match their respective regexes",
         },
         ":=": {
-            name: "Substitute `{some_key}` should match `key`",
+            name: "Substitute `... {some_key} ...` and match `key`",
             overpassSupport: false,
+            uploadable: true,
             docs:
                 "**This is an advanced feature - use with caution**\n" +
                 "\n" +

@@ -593,7 +593,7 @@
                   ]
                 },
                 "tags": {
-                  "description": "A single tag (encoded as <code>key=value</code>) out of all the tags to add onto the newly created point.\nNote that the icon in the UI will be chosen automatically based on the tags provided here.\n\nquestion: What tag should be added to the new object?\ntype: simple_tag",
+                  "description": "A single tag (encoded as <code>key=value</code>) out of all the tags to add onto the newly created point.\nNote that the icon in the UI will be chosen automatically based on the tags provided here.\n\nquestion: What tag should be added to the new object?\ntype: simple_tag\ntypeHelper: uploadableOnly",
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -11193,6 +11193,7 @@
     "required": true,
     "hints": {
       "typehint": "simple_tag",
+      "typehelper": "uploadableOnly",
       "question": "What tag should be added to the new object?"
     },
     "type": "array",
@@ -28077,6 +28078,7 @@
     "required": true,
     "hints": {
       "typehint": "simple_tag",
+      "typehelper": "uploadableOnly",
       "question": "What tag should be added to the new object?"
     },
     "type": "array",

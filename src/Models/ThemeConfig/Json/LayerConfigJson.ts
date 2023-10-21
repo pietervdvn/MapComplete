@@ -319,6 +319,7 @@ export interface LayerConfigJson {
          *
          * question: What tag should be added to the new object?
          * type: simple_tag
+         * typeHelper: uploadableOnly
          */
         tags: string[]
         /**

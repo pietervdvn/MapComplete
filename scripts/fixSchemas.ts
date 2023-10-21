@@ -9,6 +9,7 @@ import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
 
 const metainfo = {
     type: "One of the inputValidator types",
+    typeHelper: "Helper arguments for the type input, comma-separated. Same as 'args'",
     types: "Is multiple types are allowed for this field, then first show a mapping to pick the appropriate subtype. `Types` should be `;`-separated and contain precisely the same amount of subtypes",
     typesdefault: "Works in conjuction with `types`: this type will be selected by default",
     group: "A kind of label. Items with the same group name will be placed in the same region",

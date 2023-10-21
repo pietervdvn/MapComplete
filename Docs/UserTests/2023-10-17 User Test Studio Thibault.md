@@ -4,6 +4,8 @@
 
 Create a simple layer specification using MapComplete studio with 'images' and a question. The actual _topic_ of the layer can be chosen by the participant
 
+This participant wanted to create a layer about solar panels.
+
 ## Background info
 
 Browser: Librewolf on a linux machine (actually: pietervdvn's dev machine)
@@ -30,4 +32,4 @@ As such, many terms and the general structure of Studio were intuitively clear.
 
 ## Other misc issues
 
-- The crosshair might be invisible if the aerial imagery is quite dark (fixed in 9dc222be433512d4d1ca530c1d09e28442d976ec)
+- [x] The crosshair might be invisible if the aerial imagery is quite dark (fixed in 9dc222be433512d4d1ca530c1d09e28442d976ec)

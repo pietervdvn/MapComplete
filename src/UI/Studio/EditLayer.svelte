@@ -10,6 +10,7 @@
   import type { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson";
   import type { ConversionMessage } from "../../Models/ThemeConfig/Conversion/Conversion";
   import ErrorIndicatorForRegion from "./ErrorIndicatorForRegion.svelte";
+  import { ChevronRightIcon } from "@rgossiaux/svelte-heroicons/solid";
 
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw;
 
@@ -57,12 +58,15 @@
 </script>
 
 <div class="w-full flex justify-between">
+  <slot />
   <h3>Editing layer {$title}</h3>
   {#if $hasErrors > 0}
     <div class="alert">{$hasErrors} errors detected</div>
   {:else}
-    <a class="primary button" href={baseUrl+state.server.layerUrl(title.data)} target="_blank" rel="noopener">Try it
-      out</a>
+    <a class="primary button" href={baseUrl+state.server.layerUrl(title.data)} target="_blank" rel="noopener">
+      Try it out
+      <ChevronRightIcon class= "h-6 w-6 shrink-0"/>
+    </a>
   {/if}
 </div>
 <div class="m4">

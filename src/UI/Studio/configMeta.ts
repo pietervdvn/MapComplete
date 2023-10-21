@@ -3,9 +3,13 @@ import { JsonSchema, JsonSchemaType } from "./jsonSchema"
 export interface ConfigMeta {
     path: string[]
     type: JsonSchemaType | JsonSchema[]
+    /**
+     * All fields are lowercase, as they should be case-insensitive
+     */
     hints: {
         group?: string
         typehint?: string
+        typehelper?: string
         /**
          * If multiple subcategories can be chosen
          */

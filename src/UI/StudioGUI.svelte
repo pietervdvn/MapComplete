@@ -16,8 +16,9 @@
 
   import layerSchemaRaw from "../../src/assets/schemas/layerconfigmeta.json";
   import If from "./Base/If.svelte";
+  import BackButton from "./Base/BackButton.svelte";
 
-  export let studioUrl = window.location.hostname === "127.0.0.1" ? "http://127.0.0.1:1235" : "https://studio.mapcomplete.org"; 
+  export let studioUrl = window.location.hostname === "127.0.0.1" ? "http://127.0.0.1:1235" : "https://studio.mapcomplete.org";
   const studio = new StudioServer(studioUrl);
   let layersWithErr = UIEventSource.FromPromiseWithErr(studio.fetchLayerOverview());
   let layers = layersWithErr.mapD(l => l.success);
@@ -42,15 +43,16 @@
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw;
 
   let editLayerState = new EditLayerState(layerSchema, studio);
+  let layerId = editLayerState.configuration.map(layerConfig => layerConfig.id);
 
   function fetchIconDescription(layerId): any {
     return AllSharedLayers.getSharedLayersConfigs().get(layerId)?._layerIcon;
   }
 
   async function createNewLayer() {
-    if(layerIdFeedback.data !== undefined){
-      console.warn("There is still some feedback - not starting to create a new layer")
-      return
+    if (layerIdFeedback.data !== undefined) {
+      console.warn("There is still some feedback - not starting to create a new layer");
+      return;
     }
     state = "loading";
     const id = newLayerId.data;
@@ -142,6 +144,9 @@
         -->
       </div>
     {:else if state === "edit_layer"}
+      
+      <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => {state =undefined}}>MapComplete Studio</BackButton>
+      <h3>Choose a layer to edit</h3>
       <div class="flex flex-wrap">
         {#each Array.from($layers) as layerId}
           <NextButton clss="small" on:click={async () => {
@@ -157,6 +162,7 @@
         {/each}
       </div>
     {:else if state === "new_layer"}
+      
       <div class="interactive flex m-2 rounded-2xl flex-col p-2">
         <h3>Enter the ID for the new layer</h3>
         A good ID is:
@@ -185,7 +191,9 @@
         <Loading />
       </div>
     {:else if state === "editing_layer"}
-      <EditLayer {initialLayerConfig} state={editLayerState} />
+      <EditLayer {initialLayerConfig} state={editLayerState} >
+        <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => {state =undefined}}>MapComplete Studio</BackButton>
+      </EditLayer>
     {/if}
   </LoginToggle>
 </If>

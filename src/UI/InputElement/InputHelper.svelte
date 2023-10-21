@@ -46,7 +46,7 @@
 {:else if type === "tag"}
   <TagInput { value } />
 {:else if type === "simple_tag"}
-  <SimpleTagInput { value } />
+  <SimpleTagInput { value } {args} />
 {:else if type === "opening_hours"}
   <OpeningHoursInput { value } />
 {:else if type === "wikidata"}

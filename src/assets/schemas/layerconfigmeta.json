@@ -9769,6 +9769,7 @@
     "required": true,
     "hints": {
       "typehint": "simple_tag",
+      "typehelper": "uploadableOnly",
       "question": "What tag should be added to the new object?"
     },
     "type": "array",
