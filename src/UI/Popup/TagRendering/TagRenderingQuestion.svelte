@@ -238,7 +238,7 @@
               bind:group={selectedMapping}
               name={"mappings-radio-" + config.id}
               value={i}
-              on:keypress={e => {console.log(e) ; if(e.key === "Enter") onSave()}}
+              on:keypress={e => {if(e.key === "Enter") onSave()}}
             />
           </TagRenderingMappingInput>
         {/each}

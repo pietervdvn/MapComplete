@@ -20,7 +20,7 @@
   import OpeningHoursInput from "./Helpers/OpeningHoursInput.svelte";
 
   export let type: ValidatorType;
-  export let value: UIEventSource<string>;
+  export let value: UIEventSource<string | object>;
 
   export let feature: Feature;
   export let args: (string | number | boolean)[] = undefined;

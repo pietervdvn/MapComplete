@@ -18,5 +18,6 @@ The participant has extensive OpenStreetMap-knowledge but only used MapComplete 
 - [x] The 'try it out'-button should be a 'next'-button
 - [x] Entering an incorrect ID and pressing enter still takes you to the layer editor with an incorrect ID 
 - [x] A name and description are obligatory to use the layer as single-layer-theme; but those error messages are unclear. 
-- [ ] 
-- [ ] 
+- [x] This user had an expression with two tags in an AND. There was some confusion if the taginfo-count gave the totals for the tags individually or for the entire expression.
+        Fix: play with padding and wording
+- [x] BUG: having a complex expression for tags (e.g. with `and: [key=value, key0=value0]`) fails as the JSON would be stringified

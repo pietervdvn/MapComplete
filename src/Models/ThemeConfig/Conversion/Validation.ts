@@ -1109,7 +1109,7 @@ export class ValidateLayer extends Conversion<
                     const doMatch = baseTags.matchesProperties(properties)
                     if (!doMatch) {
                         context
-                            .enters("presets", i)
+                            .enters("presets", i, "tags")
                             .err(
                                 "This preset does not match the required tags of this layer. This implies that a newly added point will not show up.\n    A newly created point will have properties: " +
                                     JSON.stringify(properties) +

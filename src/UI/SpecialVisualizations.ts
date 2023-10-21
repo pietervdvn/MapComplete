@@ -75,6 +75,7 @@ import AllReviews from "./Reviews/AllReviews.svelte"
 import StarsBarIcon from "./Reviews/StarsBarIcon.svelte"
 import ReviewForm from "./Reviews/ReviewForm.svelte"
 import Questionbox from "./Popup/TagRendering/Questionbox.svelte"
+import { TagUtils } from "../Logic/Tags/TagUtils"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -1398,6 +1399,49 @@ export default class SpecialVisualizations {
                     layer: LayerConfig
                 ): BaseUIElement {
                     return new FixedUiElement("{" + args[0] + "}")
+                },
+            },
+            {
+                funcName: "tags",
+                docs: "Shows a (json of) tags in a human-readable way + links to the wiki",
+                needsUrls: [],
+                args: [
+                    {
+                        name: "key",
+                        defaultValue: "value",
+                        doc: "The key to look for the tags",
+                    },
+                ],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    const key = argument[0] ?? "value"
+                    return new VariableUiElement(
+                        tagSource.map((tags) => {
+                            let value = tags[key]
+                            if (!value) {
+                                return new FixedUiElement("No tags found").SetClass("font-bold")
+                            }
+                            if (typeof value === "string" && value.startsWith("{")) {
+                                value = JSON.parse(value)
+                            }
+                            try {
+                                const parsed = TagUtils.Tag(value)
+                                return parsed.asHumanString(true, false, {})
+                            } catch (e) {
+                                return new FixedUiElement(
+                                    "Could not parse this tag: " +
+                                        JSON.stringify(value) +
+                                        " due to " +
+                                        e
+                                ).SetClass("alert")
+                            }
+                        })
+                    )
                 },
             },
         ]

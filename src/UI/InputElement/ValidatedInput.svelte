@@ -74,7 +74,12 @@
         }
 
         feedback?.setData(undefined)
-        value.setData(v + (selectedUnit.data ?? ""))
+        if(selectedUnit.data){
+            value.setData(v + selectedUnit.data)
+            
+        }else{
+            value.setData(v)
+        }
     }
         
 

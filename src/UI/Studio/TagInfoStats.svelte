@@ -58,6 +58,6 @@ const total = tagInfoStats.mapD(data => data.data.find(i => i.type === "all").co
     {/if}
 {:else if $tagInfoStats && (!silent || $total < 250) }
     <a href={$tagInfoUrl} target="_blank" class={twMerge(($total < 250) ? "alert" : "thanks", "w-fit link-underline")}>
-        {$total} features on OSM have this tag
+        {$total} features have <span class="literal-code">{$tag}</span>
     </a>
 {/if}

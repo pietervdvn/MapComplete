@@ -130,5 +130,5 @@
     {:else if $feedbackGlobal}
         <Tr cls="alert" t={$feedbackGlobal}/>
     {/if}
-    <TagInfoStats  {silent} {tag}/>
+    <TagInfoStats {silent} {tag}/>
 </div>

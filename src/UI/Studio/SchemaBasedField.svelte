@@ -21,7 +21,15 @@
   const isTranslation = schema.hints.typehint === "translation" || schema.hints.typehint === "rendered" || ConfigMetaUtils.isTranslation(schema);
   let type = schema.hints.typehint ?? "string";
 
-  let rendervalue = schema.type === "boolean" ? undefined : ((schema.hints.inline ?? schema.path.join(".")) + " <b>{translated(value)}</b>");
+  let rendervalue = ((schema.hints.inline ?? schema.path.join(".")) + " <b>{translated(value)}</b>");
+  
+  if(schema.type === "boolean"){
+    rendervalue = undefined
+  }
+  if(schema.hints.typehint === "tag") {
+    rendervalue = "{tags()}"
+  }
+  
   let helperArgs = schema.hints.typehelper?.split(",");
   let inline = schema.hints.inline !== undefined;
   if (isTranslation) {
@@ -165,7 +173,7 @@
       {/each}
     {/if}
     {#if window.location.hostname === "127.0.0.1"}
-      <span class="subtle">{schema.path.join(".")}</span>
+      <span class="subtle">{schema.path.join(".")} {schema.hints.typehint}</span>
     {/if}
   </div>
 {/if}

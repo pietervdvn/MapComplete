@@ -5,7 +5,7 @@ import { UIEventSource } from "../../../Logic/UIEventSource";
 import type { TagConfigJson } from "../../../Models/ThemeConfig/Json/TagConfigJson";
 import FullTagInput from "../../Studio/TagInput/FullTagInput.svelte";
 
-export let value: UIEventSource<undefined | string>;
+export let value: UIEventSource<TagConfigJson>;
 export let uploadableOnly: boolean;
 export let overpassSupportNeeded: boolean;
 
@@ -14,18 +14,7 @@ export let overpassSupportNeeded: boolean;
  */
 export let silent: boolean = false;
 
-let tag: UIEventSource<string | TagConfigJson> = value.sync(s => {
-  try {
-    return JSON.parse(s);
-  } catch (e) {
-    return s;
-  }
-}, [], t => {
-  if(typeof t === "string"){
-    return t
-  }
-  return JSON.stringify(t);
-});
+let tag: UIEventSource<string | TagConfigJson> = value
 
 </script>
 
