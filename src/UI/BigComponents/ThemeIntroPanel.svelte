@@ -14,7 +14,7 @@
     import { GeoLocationState } from "../../Logic/State/GeoLocationState"
     import If from "../Base/If.svelte"
     import { ExclamationTriangleIcon } from "@babeard/svelte-heroicons/mini"
-    import { Readable } from "svelte/store"
+    import type { Readable } from "svelte/store"
 
     /**
      * The theme introduction panel

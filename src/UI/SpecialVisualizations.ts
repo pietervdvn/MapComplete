@@ -691,8 +691,9 @@ export default class SpecialVisualizations {
                     return new SvelteUIElement(UploadImage, {
                         state,
                         tags,
+                        targetKey: args[0],
                         labelText: args[1],
-                        image: args[0],
+                        image: args[2],
                     })
                 },
             },
