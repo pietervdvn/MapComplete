@@ -193,6 +193,8 @@
             "title": "Download",
             "uploadGpx": "Einen Track auf OpenStreetMap hochladen"
         },
+        "enableGeolocationForSafari": "Hast du das Popup zur Abfrage der Geo-Berechtigung nicht erhalten?",
+        "enableGeolocationForSafariLink": "Erfahre, wie du die Geo-Berechtigung in den Einstellungen aktivieren kannst",
         "error": "Etwas ist schief gelaufen",
         "example": "Beispiel",
         "examples": "Beispiele",
