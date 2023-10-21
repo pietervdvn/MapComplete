@@ -48,6 +48,50 @@
     }
   ],
   "tagRenderings": [
-    "images"
+    "images",
+    {
+      "id": "type",
+      "question": {
+        "en": "What kind of routes are shown on this guidepost?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "bicycle=yes",
+          "ifnot": "bicycle=",
+          "then": {
+            "en": "This guidepost shows bicycle routes"
+          }
+        },
+        {
+          "if": "hiking=yes",
+          "ifnot": "hiking=",
+          "then": {
+            "en": "This guidepost shows hiking routes"
+          }
+        },
+        {
+          "if": "mtb=yes",
+          "ifnot": "mtb=",
+          "then": {
+            "en": "This guidepost shows mountain bike routes"
+          }
+        },
+        {
+          "if": "horse=yes",
+          "ifnot": "horse=",
+          "then": {
+            "en": "This guidepost shows horse riding routes"
+          }
+        },
+        {
+          "if": "ski=yes",
+          "ifnot": "ski=",
+          "then": {
+            "en": "This guidepost shows ski routes"
+          }
+        }
+      ]
+    }
   ]
 }

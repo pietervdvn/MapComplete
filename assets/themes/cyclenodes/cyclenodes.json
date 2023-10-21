@@ -269,8 +269,36 @@
         "guidepost"
       ],
       "override": {
-        "minzoom": 16
-      }
+        "minzoom": 16,
+        "source": {
+          "osmTags": {
+            "and": [
+              "information=guidepost",
+              "bicycle=yes"
+            ]
+          }
+        },
+        "presets": [
+          {
+            "tags": [
+              "tourism=information",
+              "information=guidepost",
+              "bicycle=yes"
+            ]
+          }
+        ],
+        "name": {
+          "en": "Cycling guideposts"
+        },
+        "title": {
+          "render": {
+            "en": "Cycling guidepost"
+          }
+        }
+      },
+      "hideTagRenderingsWithLabels": [
+        "type"
+      ]
     },
     {
       "builtin": "route_marker",
@@ -291,7 +319,10 @@
             ],
             "title": {
               "en": "a route marker for a node to node link"
-            }
+            },
+            "=exampleImages": [
+              "./assets/layers/route_marker/bicycle_route_marker.jpg"
+            ]
           }
         ]
       }

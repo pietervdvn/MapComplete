@@ -21,7 +21,11 @@
       ],
       "description": {
         "en": "A route marker is a small marker often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route."
-      }
+      },
+      "exampleImages": [
+        "./assets/layers/route_marker/bicycle_route_marker.jpg",
+        "./assets/layers/route_marker/walking_route_marker.jpg"
+      ]
     }
   ],
   "deletion": true,
@@ -54,35 +58,35 @@
       "mappings": [
         {
           "if": "bicycle=yes",
-          "ifnot": "biycle=no",
+          "ifnot": "biycle=",
           "then": {
             "en": "This is a route marker for a bicycle route."
           }
         },
         {
           "if": "hiking=yes",
-          "ifnot": "hiking=no",
+          "ifnot": "hiking=",
           "then": {
             "en": "This is a route marker for a hiking route."
           }
         },
         {
           "if": "mtb=yes",
-          "ifnot": "mtb=no",
+          "ifnot": "mtb=",
           "then": {
             "en": "This is a route marker for a mountain bike route."
           }
         },
         {
           "if": "horse=yes",
-          "ifnot": "horse=no",
+          "ifnot": "horse=",
           "then": {
             "en": "This is a route marker for a horse riding route."
           }
         },
         {
           "if": "ski=yes",
-          "ifnot": "ski=no",
+          "ifnot": "ski=",
           "then": {
             "en": "This is a route marker for a ski route."
           }
