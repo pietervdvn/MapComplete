@@ -10022,6 +10022,10 @@
                     }
                 }
             },
+            "show_crosshair": {
+                "question": "Soll ein Fadenkreuz in der Mitte des Bildschirms angezeigt werden?",
+                "questionHint": "Dies kann dazu beitragen, ein neues Element genau zu positionieren"
+            },
             "show_debug": {
                 "mappings": {
                     "0": {
