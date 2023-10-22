@@ -367,7 +367,7 @@ export class ChangesetHandler {
         ].map(([key, value]) => ({
             key,
             value,
-            aggretage: false,
+            aggregate: false,
         }))
     }
 
