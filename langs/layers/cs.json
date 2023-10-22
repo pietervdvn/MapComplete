@@ -10049,10 +10049,19 @@
     },
     "viewpoint": {
         "description": "Pěkný výhled nebo pěkný pohled. Ideální pro přidání obrázku, pokud se nehodí žádná jiná kategorie",
+        "name": "Vyhlídka",
+        "presets": {
+            "0": {
+                "title": "vyhlídka"
+            }
+        },
         "tagRenderings": {
             "viewpoint-description": {
                 "question": "Chcete přidat popis?"
             }
+        },
+        "title": {
+            "render": "Vyhlídka"
         }
     },
     "village_green": {
