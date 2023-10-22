@@ -525,15 +525,15 @@
           },
           {
             "if": "vending=meat",
-            "then": "./assets/layers/id_presets/temaki-meat.svg"
+            "then": "circle:white;./assets/layers/id_presets/temaki-meat.svg"
           },
           {
             "if": "vending=fruit",
-            "then": "./assets/layers/vending_machine/fruits.svg"
+            "then": "circle:white;./assets/layers/vending_machine/fruits.svg"
           },
           {
             "if": "vending=strawberries",
-            "then": "./assets/layers/vending_machine/strawberry.svg"
+            "then": "circle:white;./assets/layers/vending_machine/strawberry.svg"
           },
           {
             "if": "vending=flowers",
@@ -678,7 +678,7 @@
               "vending~.*meat.*"
             ]
           },
-          "then": "./assets/layers/id_presets/temaki-meat.svg"
+          "then": "circle:white;./assets/layers/id_presets/temaki-meat.svg"
         },
         {
           "if": {
@@ -687,7 +687,7 @@
               "vending~.*fruit.*"
             ]
           },
-          "then": "./assets/layers/vending_machine/fruits.svg"
+          "then": "circle:white;./assets/layers/vending_machine/fruits.svg"
         },
         {
           "if": {
@@ -696,7 +696,7 @@
               "vending~.*strawberries.*"
             ]
           },
-          "then": "./assets/layers/vending_machine/strawberry.svg"
+          "then": "circle:white;./assets/layers/vending_machine/strawberry.svg"
         },
         {
           "if": {

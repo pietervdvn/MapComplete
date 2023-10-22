@@ -1,28 +1,14 @@
 {
-  "id": "cyclenodes",
+  "id": "walkingnodes",
   "title": {
-    "en": "Cycle Node Networks",
-    "de": "Fahrrad-Knotenpunktnetzwerke",
-    "es": "Redes de Nodos Ciclistas",
-    "nb_NO": "Sykkelnodenettverk",
-    "nl": "Fietsknooppuntennetwerken",
-    "fr": "Réseau de Nœuds Cyclistes",
-    "ca": "Xarxa de nodes ciclistes",
-    "cs": "Sítě uzlů cyklu",
-    "pl": "Sieci węzłów rowerowych"
+    "en": "Walking Node Networks",
+    "nl": "Wandelknooppuntnetwerken"
   },
   "description": {
-    "en": "This map shows cycle node networks and allows you to add new nodes easily",
-    "de": "Diese Karte zeigt Knotenpunktnetzwerke für Radfahrer und erlaubt auch neue Knoten zu mappen",
-    "es": "Este mapa muestra redes de nodos ciclistas y te permita añadir nodos nuevos de manera sencilla",
-    "nl": "Deze kaart toont fietsknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen",
-    "fr": "Cette carte montre les réseaux de nœuds cyclistes et vous permet d'ajouter facilement de nouveaux nœuds",
-    "ca": "Aquest mapa mostra xarxes de nodes ciclistes i et permet afegir-ne de nous de manera senzilla",
-    "da": "Dette kort viser cykel netværk og giver dig mulighed for nemt at tilføje nye punkter",
-    "cs": "Tato mapa zobrazuje sítě uzlů cyklu a umožňuje snadno přidávat nové uzly",
-    "pl": "Mapa ta przedstawia sieci węzłów rowerowych i umożliwia łatwe dodawanie nowych węzłów"
+    "en": "This map shows walking node networks and allows you to add new nodes easily",
+    "nl": "Deze kaart toont wandelknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen"
   },
-  "icon": "./assets/themes/cyclenodes/logo.svg",
+  "icon": "./assets/themes/walkingnodes/logo.svg",
   "hideFromOverview": true,
   "startLat": 51.755515,
   "startLon": 14.327545,
@@ -43,9 +29,9 @@
       "source": {
         "osmTags": {
           "and": [
-            "network=rcn",
+            "network=rwn",
             "network:type=node_network",
-            "route=bicycle"
+            "route=foot"
           ]
         }
       },
@@ -80,7 +66,7 @@
       "mapRendering": [
         {
           "width": "4",
-          "color": "#00a703"
+          "color": "#452b29"
         }
       ],
       "tagRenderings": [
@@ -131,7 +117,7 @@
       "source": {
         "osmTags": {
           "and": [
-            "rcn_ref~*"
+            "rwn_ref~*"
           ]
         }
       },
@@ -144,12 +130,12 @@
           "label": {
             "mappings": [
               {
-                "if": "rcn_ref~*",
-                "then": "<div style='position: absolute; top: -10px; right: -10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%'>{rcn_ref}</div>"
+                "if": "rwn_ref~*",
+                "then": "<div style='position: absolute; top: -10px; right: -10px; color: white; background-color: #452b29; width: 20px; height: 20px; border-radius: 100%'>{rwn_ref}</div>"
               },
               {
-                "if": "rcn_ref=",
-                "then": "<div style='position: absolute; top: -10px; right: -10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%'>?</div>"
+                "if": "rwn_ref=",
+                "then": "<div style='position: absolute; top: -10px; right: -10px; color: white; background-color: #452b29; width: 20px; height: 20px; border-radius: 100%'>?</div>"
               }
             ]
           }
@@ -158,26 +144,19 @@
       "minzoom": 12,
       "title": {
         "render": {
-          "en": "Cycle node <strong>{rcn_ref}</strong>",
-          "de": "Knotenpunkt <strong>{rcn_ref}</strong>",
-          "es": "nodo ciclista <strong>{rcn_ref}</strong>",
-          "nb_NO": "sykkelnode <strong>{rcn_ref}</strong>",
-          "nl": "Fietsknooppunt <strong>{rcn_ref}</strong>",
-          "fr": "nœud cycliste <strong>{rcn_ref}</strong>",
-          "ca": "node ciclista <strong>{rcn_ref}</strong>",
-          "cs": "uzel cyklu <strong>{rcn_ref}</strong>",
-          "pl": "węzeł rowerowy <strong>{rcn_ref}</strong>"
+          "en": "Walking node <strong>{rwn_ref}</strong>",
+          "nl": "Wandelknooppunt <strong>{rwn_ref}</strong>"
         }
       },
       "tagRenderings": [
         {
-          "id": "node-rxn_ref",
+          "id": "node-rwn_ref",
           "question": {
-            "en": "What is the reference number of this cycling node?",
-            "nl": "Wat is het referentienummer van dit fietsknooppunt?"
+            "en": "What is the reference number of this walking node?",
+            "nl": "Wat is het referentienummer van dit wandelknooppunt?"
           },
           "freeform": {
-            "key": "rcn_ref",
+            "key": "rwn_ref",
             "type": "int",
             "placeholder": {
               "en": "e.g. 1",
@@ -185,78 +164,53 @@
             }
           },
           "render": {
-            "en": "This cycling node has reference number {rcn_ref}",
-            "nl": "Dit fietsknooppunt heeft referentienummer {rcn_ref}"
+            "en": "This walking node has reference number {rwn_ref}",
+            "nl": "Dit wandelknooppunt heeft referentienummer {rwn_ref}"
           }
         },
         {
           "builtin": "survey_date",
           "override": {
             "question": {
-              "en": "When was this cycle node last surveyed?",
-              "de": "Wann wurde dieser Fahrradknotenpunkt zuletzt überprüft?",
-              "es": "¿Cuándo fue sondeado este nodo ciclista por última vez?",
-              "nl": "Wanneer is dit fietsknooppunt voor het laatst gecontroleerd?",
-              "fr": "Quand ce nœud cyclable a-t-il été vérifié sur le terrain pour la dernière fois ?",
-              "ca": "Quan va ser sondejat aquest node ciclista per última vegada?",
-              "cs": "Kdy byl tento uzel cyklu naposledy zkontrolován?",
-              "pl": "Kiedy ostatni raz badano ten węzeł rowerowy?"
+              "en": "When was this walking node last surveyed?",
+              "nl": "Wanneer is dit wandelknooppunt het laatst gesurveyed?"
             },
             "render": {
-              "en": "This cycle node was last surveyed on {survey:date}",
-              "de": "Dieser Fahrradknoten wurde zuletzt überprüft am {survey:date}",
-              "es": "Este nodo ciclista se sondeó por última vez el {survey:date}",
-              "nl": "Dit fietsknooppunt is voor het laatst gecontroleerd op {survey:date}",
-              "fr": "Ce nœud cycliste a été verifié pour la dernière fois le {survey:date}",
-              "ca": "Aquest node ciclista es va sondejar per última vegada el {survey:date}",
-              "cs": "Tento uzel cyklu byl naposledy zkontrolován dne {survey:date}",
-              "pl": "Ten węzeł rowerowy był ostatnio badany w dniu {survey:date}"
+              "en": "This walking node was last surveyed on {survey:date}",
+              "nl": "Dit wandelknooppunt werd het laatst gesurveyed op {survey:date}"
             }
-          },
-          "id": "node-survey:date"
+          }
         },
         {
           "question": {
-            "en": "How many other cycle nodes does this node link to?",
-            "de": "Mit wie vielen anderen Knoten des Fahrradknotenpunktnetzwerkes ist dieser Knoten verbunden?",
-            "es": "¿A cuántos otros nodos ciclistas enlaza este nodo?",
-            "nl": "Met hoeveel andere fietsknooppunten heeft dit knooppunt een verbinding?",
-            "fr": "A combien dautres nœuds vélo ce nœud est-il lié ?",
-            "ca": "A quants altes nodes ciclistes enllaça aquest node?",
-            "cs": "S kolika dalšími uzly cyklu je tento uzel propojen?",
-            "pl": "Z iloma innymi węzłami rowerowymi łączy się ten węzeł?"
+            "en": "How many other walking nodes does this node link to?",
+            "nl": "Met hoeveel andere wandelknooppunten heeft dit knooppunt een verbinding?"
           },
           "render": {
-            "en": "This node links to {expected_rcn_route_relations} other cycle nodes.",
-            "de": "Dieser Knoten ist mit {expected_rcn_route_relations} anderen Knoten des Fahrradknotenpunktnetzwerkes verbunden.",
-            "nl": "Dit knooppunt verbindt met {expected_rcn_route_relations} andere fietsknooppunten.",
-            "es": "Este nodo enlaza a {expected_rcn_route_relations} otros nodos ciclistas.",
-            "fr": "Ce noeud est lié à {expected_rcn_route_relations} d'autres noeuds cyclistes.",
-            "ca": "Aquest node enllaça a {expected_rcn_route_relations} altres nodes ciclistes.",
-            "cs": "Tento uzel je propojen s {expected_rcn_route_relations} dalšími uzly cyklu.",
-            "pl": "Ten węzeł łączy się z innymi węzłami rowerowymi {expected_rcn_route_relations}."
+            "en": "This node links to {expected_rwn_route_relations} other walking nodes.",
+            "nl": "Dit knooppunt verbindt met {expected_rwn_route_relations} andere wandelknooppunten."
           },
           "freeform": {
-            "key": "expected_rcn_route_relations",
+            "key": "expected_rwn_route_relations",
             "type": "int",
             "placeholder": {
               "en": "e.g. 3",
               "nl": "bijv. 3"
             }
           },
-          "id": "node-expected_rcn_route_relations"
+          "id": "node-expected_rwn_route_relations"
         },
         "images"
       ],
       "presets": [
         {
           "tags": [
-            "rcn_ref=?",
+            "rwn_ref=?",
             "network:type=node_network"
           ],
           "title": {
-            "en": "a cycling node",
-            "nl": "een fietsknooppunt"
+            "en": "a walking node",
+            "nl": "een wandelknooppunt"
           },
           "snapToLayer": [
             "cycleways_and_roads"
@@ -274,7 +228,7 @@
           "osmTags": {
             "and": [
               "information=guidepost",
-              "bicycle=yes"
+              "hiking=yes"
             ]
           }
         },
@@ -283,16 +237,16 @@
             "tags": [
               "tourism=information",
               "information=guidepost",
-              "bicycle=yes"
+              "hiking=yes"
             ]
           }
         ],
         "name": {
-          "en": "Cycling guideposts"
+          "en": "Hiking guideposts"
         },
         "title": {
           "render": {
-            "en": "Cycling guidepost"
+            "en": "Hiking guidepost"
           }
         }
       },
@@ -306,7 +260,7 @@
         "minzoom": 16,
         "mapRendering": [
           {
-            "icon": "./assets/themes/cyclenodes/route_marker.svg"
+            "icon": "./assets/themes/walkingnodes/route_marker.svg"
           }
         ],
         "presets": [
@@ -315,13 +269,13 @@
               "tourism=information",
               "information=route_marker",
               "network:type=node_network",
-              "bicycle=yes"
+              "hiking=yes"
             ],
             "title": {
               "en": "a route marker for a node to node link"
             },
             "=exampleImages": [
-              "./assets/layers/route_marker/bicycle_route_marker.jpg"
+              "./assets/layers/route_marker/walking_route_marker.jpg"
             ]
           }
         ]

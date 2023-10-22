@@ -479,8 +479,10 @@
                 "name": "Knotenpunktverbindungen",
                 "tagRenderings": {
                     "node2node-survey:date": {
-                        "question": "Wann wurde diese Knotenpunktverbindung zuletzt überprüft?",
-                        "render": "Diese Knotenpunktverbindung wurde zuletzt am {survey:date} überprüft"
+                        "override": {
+                            "question": "Wann wurde diese Knotenpunktverbindung zuletzt überprüft?",
+                            "render": "Diese Knotenpunktverbindung wurde zuletzt am {survey:date} überprüft"
+                        }
                     }
                 },
                 "title": {
@@ -500,8 +502,10 @@
                         "render": "Dieser Knoten ist mit {expected_rcn_route_relations} anderen Knoten des Fahrradknotenpunktnetzwerkes verbunden."
                     },
                     "node-survey:date": {
-                        "question": "Wann wurde dieser Fahrradknotenpunkt zuletzt überprüft?",
-                        "render": "Dieser Fahrradknoten wurde zuletzt überprüft am {survey:date}"
+                        "override": {
+                            "question": "Wann wurde dieser Fahrradknotenpunkt zuletzt überprüft?",
+                            "render": "Dieser Fahrradknoten wurde zuletzt überprüft am {survey:date}"
+                        }
                     }
                 },
                 "title": {

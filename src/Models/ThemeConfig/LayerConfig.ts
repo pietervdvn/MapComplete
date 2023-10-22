@@ -229,7 +229,11 @@ export default class LayerConfig extends WithContextLoader {
                 maxSnapDistance: undefined,
             }
             if (pr["preciseInput"] !== undefined) {
-                throw "Layer " + this.id + " still uses the old 'preciseInput'-field"
+                throw (
+                    "Layer " +
+                    this.id +
+                    " still uses the old 'preciseInput'-field. For snapping to layers, use 'snapToLayer' instead"
+                )
             }
             if (pr.snapToLayer !== undefined) {
                 let snapToLayers: string[]
@@ -520,7 +524,7 @@ export default class LayerConfig extends WithContextLoader {
             neededTags = this.source.osmTags["and"]
         }
 
-        let tableRows = Utils.NoNull(
+        const tableRows = Utils.NoNull(
             this.tagRenderings
                 .map((tr) => tr.FreeformValues())
                 .map((values) => {

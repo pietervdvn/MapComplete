@@ -1,0 +1,28 @@
+[
+  {
+    "path": "bicycle_route_marker.jpg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Segubi"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Route_marker_Germany_Zwischenwegweiser_Radverkehrsnetz_NRW.jpg"
+    ]
+  },
+  {
+    "path": "route_marker.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Robin van der Linde"
+    ],
+    "sources": []
+  },
+  {
+    "path": "walking_route_marker.jpg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Robin van der Linde"
+    ],
+    "sources": []
+  }
+]
