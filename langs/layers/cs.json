@@ -9720,6 +9720,10 @@
                     }
                 }
             },
+            "show_crosshair": {
+                "question": "Měl by se uprostřed displeje zobrazovat kříž?",
+                "questionHint": "To může pomoci přesněji umístit nový prvek"
+            },
             "show_debug": {
                 "mappings": {
                     "0": {
