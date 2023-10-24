@@ -669,7 +669,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         )
     }
 
-    static asBoolean(stringUIEventSource: UIEventSource<string>) {
+    static asBoolean(stringUIEventSource: UIEventSource<string>): UIEventSource<boolean> {
         return stringUIEventSource.sync(
             (str) => str === "true",
             [],
