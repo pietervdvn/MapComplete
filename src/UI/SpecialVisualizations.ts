@@ -742,7 +742,7 @@ export default class SpecialVisualizations {
                     const reviews = FeatureReviews.construct(
                         feature,
                         tags,
-                        state.userRelatedState.mangroveIdentity,
+                        state.userRelatedState?.mangroveIdentity,
                         {
                             nameKey: nameKey,
                             fallbackName,
@@ -774,7 +774,7 @@ export default class SpecialVisualizations {
                     const reviews = FeatureReviews.construct(
                         feature,
                         tags,
-                        state.userRelatedState.mangroveIdentity,
+                        state.userRelatedState?.mangroveIdentity,
                         {
                             nameKey: nameKey,
                             fallbackName,
@@ -984,7 +984,7 @@ export default class SpecialVisualizations {
                             if (state.layout === undefined) {
                                 return "<feature title>"
                             }
-                            const layer = state.layout.getMatchingLayer(tags)
+                            const layer = state.layout?.getMatchingLayer(tags)
                             const title = layer?.title?.GetRenderValue(tags)
                             if (title === undefined) {
                                 return undefined

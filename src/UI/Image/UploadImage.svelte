@@ -4,7 +4,7 @@
    */
 
   import type { SpecialVisualizationState } from "../SpecialVisualization"
-  import { Store } from "../../Logic/UIEventSource"
+  import { ImmutableStore, Store } from "../../Logic/UIEventSource";
   import type { OsmTags } from "../../Models/OsmFeature"
   import LoginToggle from "../Base/LoginToggle.svelte"
   import Translations from "../i18n/Translations"
@@ -28,14 +28,14 @@
   export let labelText: string = undefined
   const t = Translations.t.image
 
-  let licenseStore = state.userRelatedState.imageLicense
+  let licenseStore = state?.userRelatedState?.imageLicense ?? new ImmutableStore("CC0")
 
   function handleFiles(files: FileList) {
     for (let i = 0; i < files.length; i++) {
       const file = files.item(i)
       console.log("Got file", file.name)
       try {
-        state.imageUploadManager.uploadImageAndApply(file, tags)
+        state.imageUploadManager?.uploadImageAndApply(file, tags)
       } catch (e) {
         alert(e)
       }

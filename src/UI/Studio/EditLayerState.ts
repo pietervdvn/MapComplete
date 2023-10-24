@@ -15,6 +15,9 @@ import { TagUtils } from "../../Logic/Tags/TagUtils"
 import StudioServer from "./StudioServer"
 import { Utils } from "../../Utils"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
+import { OsmTags } from "../../Models/OsmFeature"
+import { Feature, Point } from "geojson"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 
 /**
  * Sends changes back to the server
@@ -36,11 +39,30 @@ export class LayerStateSender {
     }
 }
 
+export interface HighlightedTagRendering {
+    path: ReadonlyArray<string | number>
+    schema: ConfigMeta
+}
+
 export default class EditLayerState {
     public readonly schema: ConfigMeta[]
 
-    public readonly featureSwitches: { featureSwitchIsDebugging: UIEventSource<boolean> }
+    public readonly featureSwitches: {
+        featureSwitchIsDebugging: UIEventSource<boolean>
+    }
 
+    /**
+     * Used to preview and interact with the questions
+     */
+    public readonly testTags = new UIEventSource<OsmTags>({ id: "node/-12345" })
+    public readonly exampleFeature: Feature<Point> = {
+        type: "Feature",
+        properties: this.testTags.data,
+        geometry: {
+            type: "Point",
+            coordinates: [3.21, 51.2],
+        },
+    }
     public readonly configuration: UIEventSource<Partial<LayerConfigJson>> = new UIEventSource<
         Partial<LayerConfigJson>
     >({})
@@ -48,6 +70,19 @@ export default class EditLayerState {
     public readonly server: StudioServer
     // Needed for the special visualisations
     public readonly osmConnection: OsmConnection
+    public readonly imageUploadManager = {
+        getCountsFor() {
+            return 0
+        },
+    }
+    public readonly layout: { getMatchingLayer: (key: any) => LayerConfig }
+
+    /**
+     * The EditLayerUI shows a 'schemaBasedInput' for this path to pop advanced questions out
+     */
+    public readonly highlightedItem: UIEventSource<HighlightedTagRendering> = new UIEventSource(
+        undefined
+    )
     private readonly _stores = new Map<string, UIEventSource<any>>()
 
     constructor(schema: ConfigMeta[], server: StudioServer, osmConnection: OsmConnection) {
@@ -70,6 +105,8 @@ export default class EditLayerState {
                 sharedLayers: layers,
             }
         }
+
+        this.highlightedItem.addCallback((h) => console.log("Highlighted is now", h))
 
         const prepare = new Pipe(
             new PrepareLayer(state),
@@ -101,6 +138,16 @@ export default class EditLayerState {
             prepare.convert(<LayerConfigJson>config, context)
             return context.messages
         })
+
+        this.layout = {
+            getMatchingLayer: (_) => {
+                try {
+                    return new LayerConfig(<LayerConfigJson>this.configuration.data, "dynamic")
+                } catch (e) {
+                    return undefined
+                }
+            },
+        }
     }
 
     public getCurrentValueFor(path: ReadonlyArray<string | number>): any | undefined {
@@ -180,7 +227,6 @@ export default class EditLayerState {
 
     public setValueAt(path: ReadonlyArray<string | number>, v: any) {
         let entry = this.configuration.data
-        console.log("Setting value at", path, v)
         const isUndefined =
             v === undefined ||
             v === null ||
@@ -202,12 +248,10 @@ export default class EditLayerState {
         const lastBreadcrumb = path.at(-1)
         if (isUndefined) {
             if (entry && entry[lastBreadcrumb]) {
-                console.log("Deleting", lastBreadcrumb, "of", path.join("."))
                 delete entry[lastBreadcrumb]
                 this.configuration.ping()
             }
         } else if (entry[lastBreadcrumb] !== v) {
-            console.log("Assigning and pinging at", path)
             entry[lastBreadcrumb] = v
             this.configuration.ping()
         }

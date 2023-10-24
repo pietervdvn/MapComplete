@@ -35,9 +35,9 @@
   let unit: Unit = layer?.units?.find((unit) => unit.appliesToKeys.has(config.freeform?.key));
 
   // Will be bound if a freeform is available
-  let freeformInput = new UIEventSource<string>(tags?.[config.freeform?.key])
-  let selectedMapping: number = undefined
-  let checkedMappings: boolean[]
+  let freeformInput = new UIEventSource<string>(tags?.[config.freeform?.key]);
+  let selectedMapping: number = undefined;
+  let checkedMappings: boolean[];
 
   /**
    * Prepares and fills the checkedMappings
@@ -58,40 +58,40 @@
       (checkedMappings === undefined ||
         checkedMappings?.length < confg.mappings.length + (confg.freeform ? 1 : 0))
     ) {
-      const seenFreeforms = []
-      TagUtils.FlattenMultiAnswer()
+      const seenFreeforms = [];
+      TagUtils.FlattenMultiAnswer();
       checkedMappings = [
         ...confg.mappings.map((mapping) => {
-          const matches = TagUtils.MatchesMultiAnswer(mapping.if, tgs)
+          const matches = TagUtils.MatchesMultiAnswer(mapping.if, tgs);
           if (matches && confg.freeform) {
-            const newProps = TagUtils.changeAsProperties(mapping.if.asChange())
-            seenFreeforms.push(newProps[confg.freeform.key])
+            const newProps = TagUtils.changeAsProperties(mapping.if.asChange());
+            seenFreeforms.push(newProps[confg.freeform.key]);
           }
-          return matches
-        }),
-      ]
+          return matches;
+        })
+      ];
 
       if (tgs !== undefined && confg.freeform) {
-        const unseenFreeformValues = tgs[confg.freeform.key]?.split(";") ?? []
+        const unseenFreeformValues = tgs[confg.freeform.key]?.split(";") ?? [];
         for (const seenFreeform of seenFreeforms) {
           if (!seenFreeform) {
-            continue
+            continue;
           }
-          const index = unseenFreeformValues.indexOf(seenFreeform)
+          const index = unseenFreeformValues.indexOf(seenFreeform);
           if (index < 0) {
-            continue
+            continue;
           }
-          unseenFreeformValues.splice(index, 1)
+          unseenFreeformValues.splice(index, 1);
         }
         // TODO this has _to much_ values
-        freeformInput.setData(unseenFreeformValues.join(";"))
-        checkedMappings.push(unseenFreeformValues.length > 0)
+        freeformInput.setData(unseenFreeformValues.join(";"));
+        checkedMappings.push(unseenFreeformValues.length > 0);
       }
     }
     if (confg.freeform?.key) {
       if (!confg.multiAnswer) {
         // Somehow, setting multi-answer freeform values is broken if this is not set
-        freeformInput.setData(tgs[confg.freeform.key])
+        freeformInput.setData(tgs[confg.freeform.key]);
       }
     } else {
       freeformInput.setData(undefined);
@@ -102,9 +102,9 @@
   $: {
     // Even though 'config' is not declared as a store, Svelte uses it as one to update the component
     // We want to (re)-initialize whenever the 'tags' or 'config' change - but not when 'checkedConfig' changes
-    initialize($tags, config)
+    initialize($tags, config);
   }
-  export let selectedTags: TagsFilter = undefined
+  export let selectedTags: TagsFilter = undefined;
 
   let mappings: Mapping[] = config?.mappings;
   let searchTerm: UIEventSource<string> = new UIEventSource("");
@@ -166,39 +166,41 @@
       .catch(console.error);
   }
 
-  let featureSwitchIsTesting = state.featureSwitchIsTesting ?? new ImmutableStore(false);
-  let featureSwitchIsDebugging = state.featureSwitches?.featureSwitchIsDebugging ?? new ImmutableStore(false);
-  let showTags = state.userRelatedState?.showTags ?? new ImmutableStore(undefined);
-  let numberOfCs = state.osmConnection.userDetails.data.csCount;
-  onDestroy(
-    state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
-      numberOfCs = ud.csCount;
-    })
-  );
+  let featureSwitchIsTesting = state?.featureSwitchIsTesting ?? new ImmutableStore(false);
+  let featureSwitchIsDebugging = state?.featureSwitches?.featureSwitchIsDebugging ?? new ImmutableStore(false);
+  let showTags = state?.userRelatedState?.showTags ?? new ImmutableStore(undefined);
+  let numberOfCs = state?.osmConnection?.userDetails?.data?.csCount ?? 0;
+  if (state) {
+    onDestroy(
+      state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
+        numberOfCs = ud.csCount;
+      })
+    );
+  }
 </script>
 
 {#if config.question !== undefined}
   <div class="interactive border-interactive flex flex-col p-1 px-2 relative overflow-y-auto" style="max-height: 85vh">
     <div class="sticky top-0" style="z-index: 11">
-      
-    <div class="flex justify-between sticky top-0 interactive">
+
+      <div class="flex justify-between sticky top-0 interactive">
       <span class="font-bold">
         <SpecialTranslation t={config.question} {tags} {state} {layer} feature={selectedElement} />
       </span>
-      <slot name="upper-right" />
-    </div>
-
-    {#if config.questionhint}
-      <div>
-        <SpecialTranslation
-          t={config.questionhint}
-          {tags}
-          {state}
-          {layer}
-          feature={selectedElement}
-        />
+        <slot name="upper-right" />
       </div>
-    {/if}
+
+      {#if config.questionhint}
+        <div>
+          <SpecialTranslation
+            t={config.questionhint}
+            {tags}
+            {state}
+            {layer}
+            feature={selectedElement}
+          />
+        </div>
+      {/if}
     </div>
 
     {#if config.mappings?.length >= 8}
@@ -307,7 +309,7 @@
 
     <LoginToggle {state}>
       <Loading slot="loading" />
-      <SubtleButton slot="not-logged-in" on:click={() => state.osmConnection.AttemptLogin()}>
+      <SubtleButton slot="not-logged-in" on:click={() => state?.osmConnection?.AttemptLogin()}>
         <img slot="image" src="./assets/svg/login.svg" class="h-8 w-8" />
         <Tr t={Translations.t.general.loginToStart} slot="message" />
       </SubtleButton>
@@ -316,7 +318,8 @@
           <Tr t={$feedback} />
         </div>
       {/if}
-      <div class="flex flex-wrap-reverse items-stretch justify-end sm:flex-nowrap sticky bottom-0 interactive" style="z-index: 11">
+      <div class="flex flex-wrap-reverse items-stretch justify-end sm:flex-nowrap sticky bottom-0 interactive"
+           style="z-index: 11">
         <!-- TagRenderingQuestion-buttons -->
         <slot name="cancel" />
         <slot name="save-button" {selectedTags}>

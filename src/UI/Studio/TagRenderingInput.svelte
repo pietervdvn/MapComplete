@@ -32,9 +32,30 @@ let allowQuestions: Store<boolean> = (state.configuration.mapD(config => config.
 
 
 let mappingsBuiltin: MappingConfigJson[] = [];
+let perLabel: Record<string, MappingConfigJson> = {}
 for (const tr of questions.tagRenderings) {
   let description = tr["description"] ?? tr["question"] ?? "No description available";
   description = description["en"] ?? description;
+  if(tr["labels"]){
+    const labels: string[] = tr["labels"]
+    for (const label of labels) {
+      let labelMapping: MappingConfigJson = perLabel[label] 
+      
+      if(!labelMapping){
+        labelMapping = {
+          if: "value="+label,
+          then: {
+            en: "Builtin collection <b>"+label+"</b>:"
+          }
+        }
+        perLabel[label] = labelMapping
+        mappingsBuiltin.push(labelMapping)
+      }
+      labelMapping.then.en = labelMapping.then.en + "<div>"+description+"</div>"
+    }
+  }
+  
+  
   mappingsBuiltin.push({
     if: "value=" + tr["id"],
     then: {

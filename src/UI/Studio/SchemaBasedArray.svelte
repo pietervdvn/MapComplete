@@ -5,12 +5,13 @@
   import SchemaBasedInput from "./SchemaBasedInput.svelte";
   import SchemaBasedField from "./SchemaBasedField.svelte";
   import { TrashIcon } from "@babeard/svelte-heroicons/mini";
-  import TagRenderingInput from "./TagRenderingInput.svelte";
+  import QuestionPreview from "./QuestionPreview.svelte";
+  import { Utils } from "../../Utils";
 
   export let state: EditLayerState;
   export let schema: ConfigMeta;
 
- 
+
   let title = schema.path.at(-1);
   let singular = title;
   if (title?.endsWith("s")) {
@@ -23,7 +24,11 @@
   export let path: (string | number)[] = [];
   const isTagRenderingBlock = path.length === 1 && path[0] === "tagRenderings";
 
-  
+  if (isTagRenderingBlock) {
+    schema = { ...schema };
+    schema.description = undefined;
+  }
+
   const subparts: ConfigMeta = state.getSchemaStartingWith(schema.path)
     .filter(part => part.path.length - 1 === schema.path.length);
   /**
@@ -64,14 +69,42 @@
   }
 
   function del(value) {
-    const index = values.data.indexOf(value)
-    console.log("Deleting",value, index)
+    const index = values.data.indexOf(value);
+    console.log("Deleting", value, index);
     values.data.splice(index, 1);
-    const store = <UIEventSource<[]>>state.getStoreFor(path);
-    store.data.splice(index, 1)
     values.ping();
-    store.ping()
+
+    const store = <UIEventSource<[]>>state.getStoreFor(path);
+    store.data.splice(index, 1);
+    store.setData(Utils.NoNull(store.data));
+    state.configuration.ping();
   }
+
+  function swap(indexA, indexB) {
+    const valueA = values.data[indexA];
+    const valueB = values.data[indexB];
+
+    values.data[indexA] = valueB;
+    values.data[indexB] = valueA;
+    values.ping();
+
+    const store = <UIEventSource<[]>>state.getStoreFor(path);
+    const svalueA = store.data[indexA];
+    const svalueB = store.data[indexB];
+    store.data[indexA] = svalueB;
+    store.data[indexB] = svalueA;
+    store.ping();
+    state.configuration.ping();
+  }
+
+  function moveTo(currentIndex, targetIndex) {
+    const direction = currentIndex > targetIndex ? -1 : +1;
+    do {
+      swap(currentIndex, currentIndex + direction);
+      currentIndex = currentIndex + direction;
+    } while (currentIndex !== targetIndex);
+  }
+
 
 </script>
 <div class="pl-2">
@@ -97,7 +130,7 @@
       </div>
     {/each}
   {:else}
-    {#each $values as value (value)}
+    {#each $values as value, i (value)}
 
       {#if !isTagRenderingBlock}
         <div class="flex justify-between items-center">
@@ -110,12 +143,31 @@
       {/if}
       <div class="border border-black">
         {#if isTagRenderingBlock}
-          <TagRenderingInput path={[...path, (value)]} {state} {schema} >
-            <button slot="upper-right" class="border-black border rounded-full p-1 w-fit h-fit"
-                    on:click={() => {del(value)}}>
+          <QuestionPreview {state} path={[...path, value]} {schema}>
+            <button on:click={() => {del(i)}}>
               <TrashIcon class="w-4 h-4" />
+              Delete this question
             </button>
-          </TagRenderingInput>
+
+            {#if i > 0}
+              <button on:click={() => {moveTo(i, 0)}}>
+                Move to front
+              </button>
+
+              <button on:click={() => {swap(i, i-1)}}>
+                Move up
+              </button>
+            {/if}
+            {#if i + 1 < $values.length}
+              <button on:click={() => {swap(i, i+1)}}>
+                Move down
+              </button>
+              <button on:click={() => {moveTo(i, $values.length-1)}}>
+                Move to back
+              </button>
+            {/if}
+
+          </QuestionPreview>
         {:else}
           {#each subparts as subpart}
             <SchemaBasedInput {state} path={fusePath(value, subpart.path)} schema={subpart} />
