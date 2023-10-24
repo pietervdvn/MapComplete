@@ -1,6 +1,6 @@
 import Combine from "../src/UI/Base/Combine"
 import BaseUIElement from "../src/UI/BaseUIElement"
-import { existsSync, mkdirSync, writeFile, writeFileSync } from "fs"
+import { existsSync, mkdirSync, readFileSync, writeFile, writeFileSync } from "fs"
 import { AllKnownLayouts } from "../src/Customizations/AllKnownLayouts"
 import TableOfContents from "../src/UI/Base/TableOfContents"
 import SimpleMetaTaggers from "../src/Logic/SimpleMetaTagger"
@@ -310,10 +310,32 @@ function generateWikipage() {
     })
 }
 
+function studioDocs() {
+    const lines = readFileSync("./Docs/Studio/Introduction.md", "utf8").split("\n")
+
+    const sections: string[][] = []
+    let currentSection: string[] = []
+    for (let line of lines) {
+        if (line.trim().startsWith("# ")) {
+            sections.push(currentSection)
+            currentSection = []
+        }
+        line = line.replace('src="../../public/', 'src="./')
+        line = line.replace('src="../../', 'src="./')
+        currentSection.push(line)
+    }
+    writeFileSync(
+        "./src/assets/studio_introduction.json",
+        JSON.stringify({
+            sections: sections.map((s) => s.join("\n")).filter((s) => s.length > 0),
+        })
+    )
+}
+
 console.log("Starting documentation generation...")
 ScriptUtils.fixUtils()
+studioDocs()
 generateWikipage()
-
 GenOverviewsForSingleLayer((layer, element, inlineSource) => {
     ScriptUtils.erasableLog("Exporting layer documentation for", layer.id)
     if (!existsSync("./Docs/Layers")) {
@@ -426,4 +448,5 @@ QueryParameters.GetQueryParameter(
     new ThemeViewState(new LayoutConfig(<any>bookcases))
     WriteFile("./Docs/Hotkeys.md", Hotkeys.generateDocumentation(), [])
 }
+
 console.log("Generated docs")
