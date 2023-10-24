@@ -19,4 +19,4 @@ let tag: UIEventSource<string | TagConfigJson> = value
 </script>
 
 
-<FullTagInput {overpassSupportNeeded} {silent} {tag} {uploadableOnly} />
+<FullTagInput {overpassSupportNeeded} {silent} {tag} {uploadableOnly} on:submit/>

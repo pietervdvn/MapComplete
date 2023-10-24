@@ -21,12 +21,12 @@
   const isTranslation = schema.hints.typehint === "translation" || schema.hints.typehint === "rendered" || ConfigMetaUtils.isTranslation(schema);
   let type = schema.hints.typehint ?? "string";
 
-  let rendervalue = ((schema.hints.inline ?? schema.path.join(".")) + " <b>{translated(value)}</b>");
-  
+  let rendervalue = (schema.hints.inline ?? schema.path.join(".")) + (isTranslation ? " <b>{translated(value)}</b>": " <b>{value}</b>");
+ 
   if(schema.type === "boolean"){
     rendervalue = undefined
   }
-  if(schema.hints.typehint === "tag") {
+  if(schema.hints.typehint === "tag" || schema.hints.typehint === "simple_tag") {
     rendervalue = "{tags()}"
   }
   
@@ -61,12 +61,12 @@
   if (schema.hints.default) {
     configJson.mappings = [{
       if: "value=", // We leave this blank
-      then: schema.path.at(-1) + " is not set. The default value <b>" + schema.hints.default + "</b> will be used. " + (schema.hints.ifunset ?? "")
+      then: path.at(-1) + " is not set. The default value <b>" + schema.hints.default + "</b> will be used. " + (schema.hints.ifunset ?? "")
     }];
   } else if (!schema.required) {
     configJson.mappings = [{
       if: "value=",
-      then: schema.path.at(-1) + " is not set. " + (schema.hints.ifunset ?? "")
+      then: path.at(-1) + " is not set. " + (schema.hints.ifunset ?? "")
     }];
   }
 
@@ -109,15 +109,7 @@
   }
   let config: TagRenderingConfig;
   let err: string = undefined;
-  let messages = state.messages.mapD(msgs => msgs.filter(msg => {
-    const pth = msg.context.path;
-    for (let i = 0; i < Math.min(pth.length, path.length); i++) {
-      if (pth[i] !== path[i]) {
-        return false;
-      }
-    }
-    return true;
-  }));
+  let messages = state.messagesFor(path)
   try {
     config = new TagRenderingConfig(configJson, "config based on " + schema.path.join("."));
   } catch (e) {
@@ -130,7 +122,7 @@
     onDestroy(state.register(path, tags.map(tgs => {
       const v = tgs["value"];
       if (typeof v !== "string") {
-        return v;
+        return { ... v };
       }
       if (schema.type === "boolan") {
         return v === "true" || v === "yes" || v === "1";
@@ -140,7 +132,6 @@
           return true;
         }
         if (v === "false" || v === "no" || v === "0") {
-          console.log("Setting false...");
           return false;
         }
       }
@@ -173,7 +164,7 @@
       {/each}
     {/if}
     {#if window.location.hostname === "127.0.0.1"}
-      <span class="subtle">{schema.path.join(".")} {schema.hints.typehint}</span>
+      <span class="subtle">{path.join(".")} {schema.hints.typehint}</span>
     {/if}
   </div>
 {/if}

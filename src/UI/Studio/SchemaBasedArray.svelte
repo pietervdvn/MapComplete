@@ -110,7 +110,7 @@
       {/if}
       <div class="border border-black">
         {#if isTagRenderingBlock}
-          <TagRenderingInput path={path.concat(value)} {state} {schema} >
+          <TagRenderingInput path={[...path, (value)]} {state} {schema} >
             <button slot="upper-right" class="border-black border rounded-full p-1 w-fit h-fit"
                     on:click={() => {del(value)}}>
               <TrashIcon class="w-4 h-4" />

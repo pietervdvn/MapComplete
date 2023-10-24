@@ -139,7 +139,7 @@ if (!initialTag) {
   <div class="border-l-4 border-black flex flex-col ml-1 pl-1">
     {#each $basicTags as basicTag (basicTag)}
       <div class="flex">
-        <BasicTagInput {silent} {overpassSupportNeeded} {uploadableOnly} tag={basicTag} />
+        <BasicTagInput {silent} {overpassSupportNeeded} {uploadableOnly} tag={basicTag} on:submit />
         {#if $basicTags.length + $expressions.length > 1}
           <button class="border border-black rounded-full w-fit h-fit p-0"
                   on:click={() => removeTag(basicTag)}>

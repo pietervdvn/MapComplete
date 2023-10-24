@@ -1336,6 +1336,7 @@ export default class SpecialVisualizations {
                                 const tr = typeof v === "string" ? JSON.parse(v) : v
                                 return new Translation(tr).SetClass("font-bold")
                             } catch (e) {
+                                console.error("Cannot create a translation for", v, "due to", e)
                                 return JSON.stringify(v)
                             }
                         })

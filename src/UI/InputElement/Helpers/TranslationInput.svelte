@@ -5,20 +5,14 @@
   import { createEventDispatcher, onDestroy } from "svelte";
   import ValidatedInput from "../ValidatedInput.svelte";
 
-  export let value: UIEventSource<string> = new UIEventSource<string>("");
+  export let value: UIEventSource<Record<string, string>> = new UIEventSource<Record<string, string>>({});
   
   export let args: string[] = []
   
-  let prefix = args[0]
-  let postfix = args[1]
+  let prefix = args[0] ?? ""
+  let postfix = args[1] ?? ""
 
-  let translations: UIEventSource<Record<string, string>> = value.sync((s) => {
-    try {
-      return JSON.parse(s);
-    } catch (e) {
-      return {};
-    }
-  }, [], v => JSON.stringify(v));
+  let translations: UIEventSource<Record<string, string>> = value
 
   const allLanguages: string[] = LanguageUtils.usedLanguagesSorted;
   let currentLang = new UIEventSource("en");
@@ -28,6 +22,9 @@
   function update() {
     const v = currentVal.data;
     const l = currentLang.data;
+    if(translations.data === "" || translations.data === undefined){
+      translations.data = {}
+    }
     if (translations.data[l] === v) {
       return;
     }
@@ -37,6 +34,9 @@
 
   onDestroy(currentLang.addCallbackAndRunD(currentLang => {
     console.log("Applying current lang:", currentLang);
+    if(!translations.data){
+      translations.data = {}
+    }
     translations.data[currentLang] = translations.data[currentLang] ?? "";
     currentVal.setData(translations.data[currentLang]);
   }));

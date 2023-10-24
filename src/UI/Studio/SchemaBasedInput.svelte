@@ -14,7 +14,7 @@
 {#if schema.hints.typehint === "tagrendering[]"}
   <!-- We cheat a bit here by matching this 'magical' type... -->
   <SchemaBasedArray {path} {state} {schema} />
-  {:else if schema.type === "array" && schema.hints.multianswer === "true"}
+{:else if schema.type === "array" && schema.hints.multianswer === "true"}
   <ArrayMultiAnswer {path} {state} {schema}/>
 {:else if schema.type === "array"}
   <SchemaBasedArray {path} {state} {schema} />

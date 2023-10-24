@@ -259,7 +259,6 @@
               value={freeformInput}
               on:selected={() => (selectedMapping = config.mappings?.length)}
               on:submit={onSave}
-              submit={onSave}
             />
           </label>
         {/if}

@@ -109,7 +109,7 @@
      * Dispatches the submit, but only if the value is valid
      */
     function sendSubmit(){
-        if(feedback.data){
+        if(feedback?.data){
             console.log("Not sending a submit as there is feedback")
         }
         dispatch("submit") 

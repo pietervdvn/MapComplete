@@ -27,14 +27,13 @@
 
   let properties = { feature, args: args ?? [] };
   let dispatch = createEventDispatcher<{
-    selected,
-    submit
+    selected
   }>();
 
 </script>
 
 {#if type === "translation" }
-  <TranslationInput {value} on:submit={() => dispatch("submit")} {args} />
+  <TranslationInput {value} on:submit {args} />
 {:else if type === "direction"}
   <DirectionInput {value} mapProperties={InputHelpers.constructMapProperties(properties)} />
 {:else if type === "date"}
@@ -44,9 +43,9 @@
 {:else if type === "image"}
   <ImageHelper { value } />
 {:else if type === "tag"}
-  <TagInput { value } />
+  <TagInput { value } on:submit />
 {:else if type === "simple_tag"}
-  <SimpleTagInput { value } {args} />
+  <SimpleTagInput { value } {args} on:submit />
 {:else if type === "opening_hours"}
   <OpeningHoursInput { value } />
 {:else if type === "wikidata"}

@@ -2,13 +2,10 @@
 
 
   import NextButton from "./Base/NextButton.svelte";
-  import { UIEventSource } from "../Logic/UIEventSource";
-  import ValidatedInput from "./InputElement/ValidatedInput.svelte";
+  import { Store, UIEventSource } from "../Logic/UIEventSource";
   import EditLayerState from "./Studio/EditLayerState";
   import EditLayer from "./Studio/EditLayer.svelte";
   import Loading from "../assets/svg/Loading.svelte";
-  import Marker from "./Map/Marker.svelte";
-  import { AllSharedLayers } from "../Customizations/AllSharedLayers";
   import StudioServer from "./Studio/StudioServer";
   import LoginToggle from "./Base/LoginToggle.svelte";
   import { OsmConnection } from "../Logic/Osm/OsmConnection";
@@ -17,73 +14,15 @@
   import layerSchemaRaw from "../../src/assets/schemas/layerconfigmeta.json";
   import If from "./Base/If.svelte";
   import BackButton from "./Base/BackButton.svelte";
+  import ChooseLayerToEdit from "./Studio/ChooseLayerToEdit.svelte";
+  import { LocalStorageSource } from "../Logic/Web/LocalStorageSource";
+  import FloatOver from "./Base/FloatOver.svelte";
+  import Walkthrough from "./Walkthrough/Walkthrough.svelte";
+  import * as intro from "../assets/studio_introduction.json";
+  import { QuestionMarkCircleIcon } from "@babeard/svelte-heroicons/mini";
+  import type { ConfigMeta } from "./Studio/configMeta";
 
   export let studioUrl = window.location.hostname === "127.0.0.1" ? "http://127.0.0.1:1235" : "https://studio.mapcomplete.org";
-  const studio = new StudioServer(studioUrl);
-  let layersWithErr = UIEventSource.FromPromiseWithErr(studio.fetchLayerOverview());
-  let layers = layersWithErr.mapD(l => l.success);
-  let state: undefined | "edit_layer" | "new_layer" | "edit_theme" | "new_theme" | "editing_layer" | "loading" = undefined;
-
-  let initialLayerConfig: { id: string };
-  let newLayerId = new UIEventSource<string>("");
-  /**
-   * Also used in the input field as 'feedback', hence not a mappedStore as it must be writable
-   */
-  let layerIdFeedback = new UIEventSource<string>(undefined);
-  newLayerId.addCallbackD(layerId => {
-    if (layerId === "") {
-      return;
-    }
-    if (layers.data?.has(layerId)) {
-      layerIdFeedback.setData("This id is already used");
-    }
-  }, [layers]);
-
-
-  const layerSchema: ConfigMeta[] = <any>layerSchemaRaw;
-
-  let editLayerState = new EditLayerState(layerSchema, studio);
-  let layerId = editLayerState.configuration.map(layerConfig => layerConfig.id);
-
-  function fetchIconDescription(layerId): any {
-    return AllSharedLayers.getSharedLayersConfigs().get(layerId)?._layerIcon;
-  }
-
-  async function createNewLayer() {
-    if (layerIdFeedback.data !== undefined) {
-      console.warn("There is still some feedback - not starting to create a new layer");
-      return;
-    }
-    state = "loading";
-    const id = newLayerId.data;
-    const createdBy = osmConnection.userDetails.data.name;
-
-
-    try {
-
-      const loaded = await studio.fetchLayer(id);
-      initialLayerConfig = loaded ?? {
-        id, credits: createdBy,
-        minzoom: 15,
-        pointRendering: [
-          {
-            location: ["point", "centroid"],
-            marker: [{
-              icon: "circle",
-              color: "white"
-            }]
-          }
-        ],
-        lineRendering: [{
-          width: 1,
-          color: "blue"
-        }]
-      };
-    } catch (e) {
-      initialLayerConfig = { id, credits: createdBy };
-    }
-    state = "editing_layer";
-  }
 
   let osmConnection = new OsmConnection(new OsmConnection({
     oauth_token: QueryParameters.GetQueryParameter(
@@ -92,6 +31,55 @@
       "Used to complete the login"
     )
   }));
+  const createdBy = osmConnection.userDetails.data.name;
+  const uid = osmConnection.userDetails.map(ud => ud?.uid);
+  const studio = new StudioServer(studioUrl, uid);
+
+  let layersWithErr = uid.bind(uid => UIEventSource.FromPromiseWithErr(studio.fetchLayerOverview()));
+  let layers: Store<{ owner: number }[]> = layersWithErr.mapD(l => l.success);
+  let selfLayers = layers.mapD(ls => ls.filter(l => l.owner === uid.data), [uid]);
+  let otherLayers = layers.mapD(ls => ls.filter(l => l.owner !== uid.data), [uid]);
+
+  let state: undefined | "edit_layer" | "edit_theme" | "new_theme" | "editing_layer" | "loading" = undefined;
+
+  let initialLayerConfig: { id: string };
+
+  const layerSchema: ConfigMeta[] = <any>layerSchemaRaw;
+
+  let editLayerState = new EditLayerState(layerSchema, studio, osmConnection);
+  let layerId = editLayerState.configuration.map(layerConfig => layerConfig.id);
+
+  let showIntro = UIEventSource.asBoolean(LocalStorageSource.Get("studio-show-intro", "true"));
+
+  async function editLayer(event: Event) {
+    const layerId = event.detail;
+    state = "loading";
+    initialLayerConfig = await studio.fetchLayer(layerId);
+    state = "editing_layer";
+  }
+
+  async function createNewLayer() {
+    state = "loading";
+    initialLayerConfig = {
+      credits: createdBy,
+      minzoom: 15,
+      pointRendering: [
+        {
+          location: ["point", "centroid"],
+          marker: [{
+            icon: "circle",
+            color: "white"
+          }]
+        }
+      ],
+      lineRendering: [{
+        width: 1,
+        color: "blue"
+      }]
+    };
+    state = "editing_layer";
+  }
+
 
 </script>
 
@@ -125,75 +113,61 @@
       </NextButton>
     </div>
     {#if state === undefined}
-      <h1>MapComplete Studio</h1>
-      <div class="w-full flex flex-col">
+      <div class="m-4">
+        <h1>MapComplete Studio</h1>
+        <div class="w-full flex flex-col">
 
-        <NextButton on:click={() => state = "edit_layer"}>
-          Edit an existing layer
-        </NextButton>
-        <NextButton on:click={() => state = "new_layer"}>
-          Create a new layer
-        </NextButton>
-        <!--
-        <NextButton on:click={() => state = "edit_theme"}>
-          Edit a theme
-        </NextButton>
-        <NextButton on:click={() => state = "new_theme"}>
-          Create a new theme
-        </NextButton>
-        -->
+          <NextButton on:click={() => state = "edit_layer"}>
+            Edit an existing layer
+          </NextButton>
+          <NextButton on:click={() => createNewLayer()}>
+            Create a new layer
+          </NextButton>
+          <!--
+          <NextButton on:click={() => state = "edit_theme"}>
+            Edit a theme
+          </NextButton>
+          <NextButton on:click={() => state = "new_theme"}>
+            Create a new theme
+          </NextButton>
+          -->
+          <NextButton clss="small" on:click={() => {showIntro.setData(true)} }>
+            <QuestionMarkCircleIcon class="w-6 h-6" />
+            Show the introduction again
+          </NextButton>
+        </div>
       </div>
     {:else if state === "edit_layer"}
-      
-      <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => {state =undefined}}>MapComplete Studio</BackButton>
-      <h3>Choose a layer to edit</h3>
-      <div class="flex flex-wrap">
-        {#each Array.from($layers) as layerId}
-          <NextButton clss="small" on:click={async () => {
-        state = "loading"
-        initialLayerConfig = await studio.fetchLayer(layerId)
-        state = "editing_layer"
-       }}>
-            <div class="w-4 h-4 mr-1">
-              <Marker icons={fetchIconDescription(layerId)} />
-            </div>
-            {layerId}
-          </NextButton>
-        {/each}
-      </div>
-    {:else if state === "new_layer"}
-      
-      <div class="interactive flex m-2 rounded-2xl flex-col p-2">
-        <h3>Enter the ID for the new layer</h3>
-        A good ID is:
-        <ul>
-          <li>a noun</li>
-          <li>singular</li>
-          <li>describes the object</li>
-          <li>in English</li>
-        </ul>
-        <div class="m-2 p-2 w-full">
 
-          <ValidatedInput type="id" value={newLayerId} feedback={layerIdFeedback} on:submit={() => createNewLayer()} />
-        </div>
-        {#if $layerIdFeedback !== undefined}
-          <div class="alert">
-            {$layerIdFeedback}
-          </div>
-        {:else }
-          <NextButton clss="primary" on:click={() => createNewLayer()}>
-            Create layer {$newLayerId}
-          </NextButton>
-        {/if}
+      <div class="flex flex-col m-4">
+        <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => {state =undefined}}>MapComplete Studio
+        </BackButton>
+        <h2>Choose a layer to edit</h2>
+        <ChooseLayerToEdit layerIds={$selfLayers} on:layerSelected={editLayer}>
+          <h3 slot="title">Your layers</h3>
+        </ChooseLayerToEdit>
+        <h3>Official layers</h3>
+        <ChooseLayerToEdit layerIds={$otherLayers} on:layerSelected={editLayer} />
       </div>
     {:else if state === "loading"}
       <div class="w-8 h-8">
         <Loading />
       </div>
     {:else if state === "editing_layer"}
-      <EditLayer {initialLayerConfig} state={editLayerState} >
-        <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => {state =undefined}}>MapComplete Studio</BackButton>
+      <EditLayer {initialLayerConfig} state={editLayerState}>
+        <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => {state =undefined}}>MapComplete Studio
+        </BackButton>
       </EditLayer>
     {/if}
   </LoginToggle>
 </If>
+
+
+{#if $showIntro}
+  <FloatOver>
+    <div class="flex p-4 h-full">
+      <Walkthrough pages={intro.sections} on:done={() => {showIntro.setData(false)}} />
+    </div>
+  </FloatOver>
+
+{/if}

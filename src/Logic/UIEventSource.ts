@@ -435,7 +435,6 @@ class MappedStore<TIn, T> extends Store<T> {
      * const mapped = src.map(i => i * 2)
      * src.setData(3)
      * mapped.data // => 6
-     *
      */
     get data(): T {
         if (!this._callbacksAreRegistered) {

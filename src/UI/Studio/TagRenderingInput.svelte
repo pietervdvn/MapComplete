@@ -58,7 +58,6 @@ tags.addCallbackAndRunD(tgs => {
 
 let mappings: UIEventSource<MappingConfigJson[]> = state.getStoreFor([...path, "mappings"]);
 
-$: console.log("Allow questions:", $allowQuestions)
 const topLevelItems: Record<string, ConfigMeta> = {};
 for (const item of questionableTagRenderingSchemaRaw) {
   if (item.path.length === 1) {
@@ -81,7 +80,6 @@ const missing: string[] = questionableTagRenderingSchemaRaw.filter(schema => sch
 </script>
 
 {#if typeof value === "string"}
-
   <div class="flex low-interaction">
     <TagRenderingEditable config={configBuiltin} selectedElement={undefined} showQuestionIfUnknown={true} {state}
                           {tags} />
@@ -92,12 +90,9 @@ const missing: string[] = questionableTagRenderingSchemaRaw.filter(schema => sch
     <div class="flex justify-end">
       <slot name="upper-right" />
     </div>
-
     {#if $allowQuestions}
       <SchemaBasedField {state} path={[...path,"question"]} schema={topLevelItems["question"]} />
       <SchemaBasedField {state} path={[...path,"questionHint"]} schema={topLevelItems["questionHint"]} />
-      {:else}
-      
     {/if}
     {#each ($mappings ?? []) as mapping, i (mapping)}
       <div class="flex interactive w-full">

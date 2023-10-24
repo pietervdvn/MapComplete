@@ -28,6 +28,18 @@ async function prepareFile(url: string): Promise<string> {
     if (fs.existsSync(filePath)) {
         return fs.readFileSync(filePath, "utf8")
     }
+    while (url.startsWith("/")) {
+        url = url.slice(1)
+    }
+    const sliced = url.split("/").slice(1)
+    if (!sliced) {
+        return
+    }
+    const backupFile = path.join(STATIC_PATH, ...sliced)
+    console.log("Using bakcup path", backupFile)
+    if (fs.existsSync(backupFile)) {
+        return fs.readFileSync(backupFile, "utf8")
+    }
     return null
 }
 
@@ -51,7 +63,9 @@ http.createServer(async (req, res) => {
             for (let i = 1; i < paths.length; i++) {
                 const p = paths.slice(0, i)
                 const dir = STATIC_PATH + p.join("/")
+                console.log("Checking if", dir, "exists...")
                 if (!fs.existsSync(dir)) {
+                    console.log("Creating new directory", dir)
                     fs.mkdirSync(dir)
                 }
             }
@@ -61,22 +75,28 @@ http.createServer(async (req, res) => {
             res.end()
             return
         }
-        if (req.url.endsWith("/overview")) {
+
+        const url = new URL(`http://127.0.0.1/` + req.url)
+        if (url.pathname.endsWith("overview")) {
             console.log("Giving overview")
+            let userId = url.searchParams.get("userId")
             const allFiles = ScriptUtils.readDirRecSync(STATIC_PATH)
-                .filter((p) => p.endsWith(".json") && !p.endsWith("license_info.json"))
+                .filter(
+                    (p) =>
+                        p.endsWith(".json") &&
+                        !p.endsWith("license_info.json") &&
+                        (p.startsWith("layers") ||
+                            p.startsWith("themes") ||
+                            userId !== undefined ||
+                            p.startsWith(userId))
+                )
                 .map((p) => p.substring(STATIC_PATH.length + 1))
             res.writeHead(200, { "Content-Type": MIME_TYPES.json })
             res.write(JSON.stringify({ allFiles }))
             res.end()
             return
         }
-        if (!fs.existsSync(STATIC_PATH + req.url)) {
-            res.writeHead(404, { "Content-Type": MIME_TYPES.html })
-            res.write("<html><body><p>Not found...</p></body></html>")
-            res.end()
-            return
-        }
+
         const file = await prepareFile(req.url)
         if (file === null) {
             res.writeHead(404, { "Content-Type": MIME_TYPES.html })

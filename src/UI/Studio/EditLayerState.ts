@@ -1,8 +1,6 @@
-import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import { ConfigMeta } from "./configMeta"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
-import { QueryParameters } from "../../Logic/Web/QueryParameters"
 import {
     ConversionContext,
     ConversionMessage,
@@ -16,25 +14,29 @@ import { QuestionableTagRenderingConfigJson } from "../../Models/ThemeConfig/Jso
 import { TagUtils } from "../../Logic/Tags/TagUtils"
 import StudioServer from "./StudioServer"
 import { Utils } from "../../Utils"
+import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 
 /**
  * Sends changes back to the server
  */
 export class LayerStateSender {
     constructor(layerState: EditLayerState) {
-        layerState.configuration.addCallback(async (config) => {
-            const id = config.id
-            if (id === undefined) {
-                console.warn("No id found in layer, not updating")
-                return
-            }
-            await layerState.server.updateLayer(<LayerConfigJson>config)
-        })
+        const layerId = layerState.configuration.map((config) => config.id)
+        layerState.configuration
+            .mapD((config) => JSON.stringify(config, null, "  "))
+            .stabilized(100)
+            .addCallbackD(async (config) => {
+                const id = layerId.data
+                if (id === undefined) {
+                    console.warn("No id found in layer, not updating")
+                    return
+                }
+                await layerState.server.updateLayer(id, config)
+            })
     }
 }
 
 export default class EditLayerState {
-    public readonly osmConnection: OsmConnection
     public readonly schema: ConfigMeta[]
 
     public readonly featureSwitches: { featureSwitchIsDebugging: UIEventSource<boolean> }
@@ -44,17 +46,14 @@ export default class EditLayerState {
     >({})
     public readonly messages: Store<ConversionMessage[]>
     public readonly server: StudioServer
+    // Needed for the special visualisations
+    public readonly osmConnection: OsmConnection
+    private readonly _stores = new Map<string, UIEventSource<any>>()
 
-    constructor(schema: ConfigMeta[], server: StudioServer) {
+    constructor(schema: ConfigMeta[], server: StudioServer, osmConnection: OsmConnection) {
         this.schema = schema
         this.server = server
-        this.osmConnection = new OsmConnection({
-            oauth_token: QueryParameters.GetQueryParameter(
-                "oauth_token",
-                undefined,
-                "Used to complete the login"
-            ),
-        })
+        this.osmConnection = osmConnection
         this.featureSwitches = {
             featureSwitchIsDebugging: new UIEventSource<boolean>(true),
         }
@@ -118,7 +117,6 @@ export default class EditLayerState {
         return entry
     }
 
-    private readonly _stores = new Map<string, UIEventSource<any>>()
     public getStoreFor<T>(path: ReadonlyArray<string | number>): UIEventSource<T | undefined> {
         const key = path.join(".")
 
@@ -139,7 +137,9 @@ export default class EditLayerState {
         value: Store<any>,
         noInitialSync: boolean = false
     ): () => void {
-        const unsync = value.addCallback((v) => this.setValueAt(path, v))
+        const unsync = value.addCallback((v) => {
+            this.setValueAt(path, v)
+        })
         if (!noInitialSync) {
             this.setValueAt(path, value.data)
         }
@@ -180,6 +180,7 @@ export default class EditLayerState {
 
     public setValueAt(path: ReadonlyArray<string | number>, v: any) {
         let entry = this.configuration.data
+        console.log("Setting value at", path, v)
         const isUndefined =
             v === undefined ||
             v === null ||
@@ -197,15 +198,35 @@ export default class EditLayerState {
             }
             entry = entry[breadcrumb]
         }
+
         const lastBreadcrumb = path.at(-1)
         if (isUndefined) {
             if (entry && entry[lastBreadcrumb]) {
                 console.log("Deleting", lastBreadcrumb, "of", path.join("."))
                 delete entry[lastBreadcrumb]
+                this.configuration.ping()
             }
-        } else {
+        } else if (entry[lastBreadcrumb] !== v) {
+            console.log("Assigning and pinging at", path)
             entry[lastBreadcrumb] = v
+            this.configuration.ping()
         }
-        this.configuration.ping()
+    }
+
+    public messagesFor(path: ReadonlyArray<string | number>): Store<ConversionMessage[]> {
+        return this.messages.map((msgs) => {
+            if (!msgs) {
+                return []
+            }
+            return msgs.filter((msg) => {
+                const pth = msg.context.path
+                for (let i = 0; i < Math.min(pth.length, path.length); i++) {
+                    if (pth[i] !== path[i]) {
+                        return false
+                    }
+                }
+                return true
+            })
+        })
     }
 }

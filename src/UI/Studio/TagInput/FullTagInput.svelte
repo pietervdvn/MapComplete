@@ -13,7 +13,7 @@ export let silent: boolean
 </script>
 
 <div class="m-2">
-    <TagExpression {silent} {overpassSupportNeeded} {tag} {uploadableOnly}>
+    <TagExpression {silent} {overpassSupportNeeded} {tag} {uploadableOnly} on:submit>
         <slot name="delete" slot="delete"/>
     </TagExpression>
 </div>

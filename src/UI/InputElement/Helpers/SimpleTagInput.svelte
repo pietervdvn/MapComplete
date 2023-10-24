@@ -22,7 +22,7 @@ $: documentation = TagUtils.modeDocumentation[mode];
 </script>
 
 
-<BasicTagInput bind:mode={mode} {dropdownFocussed} {overpassSupportNeeded} {silent} tag={value} {uploadableOnly} />
+<BasicTagInput bind:mode={mode} {dropdownFocussed} {overpassSupportNeeded} {silent} tag={value} {uploadableOnly} on:submit />
 {#if $dropdownFocussed}
   <div class="border border-dashed border-black p-2 m-2">
   <b>{documentation.name}</b>

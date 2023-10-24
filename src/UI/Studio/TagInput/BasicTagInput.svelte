@@ -111,7 +111,7 @@
     <div class="flex h-fit ">
 
         <ValidatedInput feedback={feedbackKey} placeholder="The key of the tag" type="key"
-                        value={keyValue}></ValidatedInput>
+                        value={keyValue} on:submit></ValidatedInput>
         <select bind:value={mode} on:focusin={() => dropdownFocussed.setData(true)} on:focusout={() => dropdownFocussed.setData(false)}>
             {#each modes as option}
                 <option value={option}>
@@ -120,7 +120,7 @@
             {/each}
         </select>
         <ValidatedInput feedback={feedbackValue} placeholder="The value of the tag" type="string"
-                        value={valueValue}></ValidatedInput>
+                        value={valueValue} on:submit></ValidatedInput>
     </div>
 
     {#if $feedbackKey}

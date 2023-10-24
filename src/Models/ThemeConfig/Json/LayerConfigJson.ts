@@ -15,11 +15,18 @@ import { Translatable } from "./Translatable"
  */
 export interface LayerConfigJson {
     /**
-     * The id of this layer.
-     * This should be a simple, lowercase, human readable string that is used to identify the layer.
-     *
-     * group: Basic
      * question: What is the identifier of this layer?
+     *
+     * This should be a simple, lowercase, human readable string that is used to identify the layer.
+     *  A good ID is:
+     *  - a noun
+     *  - written in singular
+     *  - describes the object
+     *  - in english
+     *  - only has lowercase letters, numbers or underscores. Do not use a space or a dash
+     *
+     * type: id
+     * group: Basic
      */
     id: string
 

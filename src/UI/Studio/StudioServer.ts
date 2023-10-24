@@ -1,23 +1,51 @@
 import { Utils } from "../../Utils"
 import Constants from "../../Models/Constants"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
+import { Store } from "../../Logic/UIEventSource"
 
 export default class StudioServer {
     private readonly url: string
+    private readonly _userId: Store<number>
 
-    constructor(url: string) {
+    constructor(url: string, userId: Store<number>) {
         this.url = url
+        this._userId = userId
     }
 
-    public async fetchLayerOverview(): Promise<Set<string>> {
+    public async fetchLayerOverview(): Promise<
+        {
+            id: string
+            owner: number
+        }[]
+    > {
+        const uid = this._userId.data
+        let uidQueryParam = ""
+        if (this._userId.data !== undefined) {
+            uidQueryParam = "?userId=" + uid
+        }
         const { allFiles } = <{ allFiles: string[] }>(
-            await Utils.downloadJson(this.url + "/overview")
+            await Utils.downloadJson(this.url + "/overview" + uidQueryParam)
         )
-        const layers = allFiles
-            .filter((f) => f.startsWith("layers/"))
-            .map((l) => l.substring(l.lastIndexOf("/") + 1, l.length - ".json".length))
-            .filter((layerId) => Constants.priviliged_layers.indexOf(<any>layerId) < 0)
-        return new Set<string>(layers)
+        const layerOverview: {
+            id: string
+            owner: number | undefined
+        }[] = []
+        for (let file of allFiles) {
+            let owner = undefined
+            if (file.startsWith("" + uid)) {
+                owner = uid
+                file = file.substring(file.indexOf("/") + 1)
+            }
+            if (!file.startsWith("layers/")) {
+                continue
+            }
+            const id = file.substring(file.lastIndexOf("/") + 1, file.length - ".json".length)
+            if (Constants.priviliged_layers.indexOf(<any>id) > 0) {
+                continue
+            }
+            layerOverview.push({ id, owner })
+        }
+        return layerOverview
     }
 
     async fetchLayer(layerId: string): Promise<LayerConfigJson> {
@@ -28,8 +56,7 @@ export default class StudioServer {
         }
     }
 
-    async updateLayer(config: LayerConfigJson) {
-        const id = config.id
+    async updateLayer(id: string, config: string) {
         if (id === undefined || id === "") {
             return
         }
@@ -38,11 +65,13 @@ export default class StudioServer {
             headers: {
                 "Content-Type": "application/json;charset=utf-8",
             },
-            body: JSON.stringify(config, null, "  "),
+            body: config,
         })
     }
 
     public layerUrl(id: string) {
-        return `${this.url}/layers/${id}/${id}.json`
+        const uid = this._userId.data
+        const uidStr = uid !== undefined ? "/" + uid : ""
+        return `${this.url}${uidStr}/layers/${id}/${id}.json`
     }
 }

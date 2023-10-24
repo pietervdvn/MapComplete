@@ -666,25 +666,29 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
         }
 
         if (json.freeform) {
-            const c = context.enters("freeform", "render")
             if (json.render === undefined) {
-                c.err(
-                    "This tagRendering allows to set a freeform, but does not define a way to `render` this value"
-                )
+                context
+                    .enter("render")
+                    .err(
+                        "This tagRendering allows to set a value to key " +
+                            json.freeform.key +
+                            ", but does not define a `render`. Please, add a value here which contains `{" +
+                            json.freeform.key +
+                            "}`"
+                    )
             } else {
                 const render = new Translation(<any>json.render)
-
                 for (const ln in render.translations) {
                     if (ln.startsWith("_")) {
                         continue
                     }
                     const txt: string = render.translations[ln]
                     if (txt === "") {
-                        c.err(" Rendering for language " + ln + " is empty")
+                        context.enter("render").err(" Rendering for language " + ln + " is empty")
                     }
                     if (
                         txt.indexOf("{" + json.freeform.key + "}") >= 0 ||
-                        txt.indexOf("&LBRACE" + json.freeform.key + "&RBRACE")
+                        txt.indexOf("&LBRACE" + json.freeform.key + "&RBRACE") >= 0
                     ) {
                         continue
                     }
@@ -721,9 +725,11 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                     ) {
                         continue
                     }
-                    c.err(
-                        `The rendering for language ${ln} does not contain the freeform key {${json.freeform.key}}. This is a bug, as this rendering should show exactly this freeform key!\nThe rendering is ${txt} `
-                    )
+                    context
+                        .enter("render")
+                        .err(
+                            `The rendering for language ${ln} does not contain \`{${json.freeform.key}}\`. This is a bug, as this rendering should show exactly this freeform key!`
+                        )
                 }
             }
         }
@@ -783,7 +789,7 @@ export class ValidateLayer extends Conversion<
     private readonly _path?: string
     private readonly _isBuiltin: boolean
     private readonly _doesImageExist: DoesImageExist
-    private _studioValidations: boolean
+    private readonly _studioValidations: boolean
 
     constructor(
         path: string,
@@ -816,7 +822,7 @@ export class ValidateLayer extends Conversion<
         }
 
         if (json.id === undefined) {
-            context.err(`Not a valid layer: id is undefined: ${JSON.stringify(json)}`)
+            context.enter("id").err(`Not a valid layer: id is undefined`)
         }
 
         if (json.source === undefined) {
@@ -921,6 +927,21 @@ export class ValidateLayer extends Conversion<
                 context.info(
                     "Title is `null`. This results in an element that cannot be clicked - even though tagRenderings is set."
                 )
+            }
+
+            {
+                // Check for multiple, identical builtin questions - usability for studio users
+                const duplicates = Utils.Duplicates(
+                    <string[]>json.tagRenderings.filter((tr) => typeof tr === "string")
+                )
+                for (let i = 0; i < json.tagRenderings.length; i++) {
+                    const tagRendering = json.tagRenderings[i]
+                    if (typeof tagRendering === "string" && duplicates.indexOf(tagRendering) > 0) {
+                        context
+                            .enters("tagRenderings", i)
+                            .err(`This builtin question is used multiple times (${tagRendering})`)
+                    }
+                }
             }
         }
 

@@ -13,7 +13,6 @@
   import type { JsonSchemaType } from "./jsonSchema";
   // @ts-ignore
   import nmd from "nano-markdown";
-  import { writable } from "svelte/store";
 
   /**
    * If 'types' is defined: allow the user to pick one of the types to input.
@@ -30,7 +29,7 @@
     types.splice(hasBooleanOption);
   }
 
-  
+
   let lastIsString = false;
   {
     const types: string | string[] = Array.isArray(schema.type) ? schema.type[schema.type.length - 1].type : [];
@@ -42,7 +41,7 @@
   }
   const configJson: QuestionableTagRenderingConfigJson = {
     id: "TYPE_OF:" + path.join("_"),
-    question: "Which subcategory is needed for "+schema.path.at(-1)+"?",
+    question: "Which subcategory is needed for " + schema.path.at(-1) + "?",
     questionHint: nmd(schema.description),
     mappings: types.map(opt => opt.trim()).filter(opt => opt.length > 0).map((opt, i) => ({
       if: "chosen_type_index=" + i,
@@ -127,14 +126,14 @@
     possibleTypes.sort((a, b) => b.optionalMatches - a.optionalMatches);
     possibleTypes.sort((a, b) => b.matchingPropertiesCount - a.matchingPropertiesCount);
     if (possibleTypes.length > 0) {
-      chosenOption = possibleTypes[0].index
-      tags.setData({ chosen_type_index: "" + chosenOption});
-      
+      chosenOption = possibleTypes[0].index;
+      tags.setData({ chosen_type_index: "" + chosenOption });
+
     }
   } else if (defaultOption !== undefined) {
     tags.setData({ chosen_type_index: "" + defaultOption });
-  }else{
-    chosenOption = defaultOption
+  } else {
+    chosenOption = defaultOption;
   }
 
   if (hasBooleanOption >= 0 || lastIsString) {
@@ -154,7 +153,7 @@
   let subSchemas: ConfigMeta[] = [];
 
   let subpath = path;
-  const store = state.getStoreFor(path)
+  const store = state.getStoreFor(path);
   onDestroy(tags.addCallbackAndRun(tags => {
     if (tags["value"] !== undefined && tags["value"] !== "") {
       chosenOption = undefined;
@@ -170,7 +169,7 @@
       for (const key of type?.required ?? []) {
         o[key] ??= {};
       }
-      store.setData(o)
+      store.setData(o);
     }
     if (!type) {
       return;
@@ -191,6 +190,7 @@
       subSchemas.push(...(state.getSchema([...cleanPath, crumble])));
     }
   }));
+  let messages = state.messagesFor(path);
 
 
 </script>
@@ -208,6 +208,10 @@
     {#each subSchemas as subschema}
       <SchemaBasedInput {state} schema={subschema}
                         path={[...subpath, (subschema?.path?.at(-1) ?? "???")]}></SchemaBasedInput>
+    {/each}
+  {:else if $messages.length > 0}
+    {#each $messages as msg}
+      <div class="alert">{msg.message}</div>
     {/each}
   {/if}
 </div>
