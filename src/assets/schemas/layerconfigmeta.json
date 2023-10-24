@@ -12,11 +12,12 @@
     ],
     "required": true,
     "hints": {
+      "typehint": "id",
       "group": "Basic",
       "question": "What is the identifier of this layer?"
     },
     "type": "string",
-    "description": "The id of this layer.\nThis should be a simple, lowercase, human readable string that is used to identify the layer."
+    "description": "This should be a simple, lowercase, human readable string that is used to identify the layer.\n A good ID is:\n - a noun\n - written in singular\n - describes the object\n - in english\n - only has lowercase letters, numbers or underscores. Do not use a space or a dash"
   },
   {
     "path": [

@@ -3,7 +3,7 @@ export default {
   "type": "object",
   "properties": {
     "id": {
-      "description": "The id of this layer.\nThis should be a simple, lowercase, human readable string that is used to identify the layer.\n\ngroup: Basic\nquestion: What is the identifier of this layer?",
+      "description": "question: What is the identifier of this layer?\n\nThis should be a simple, lowercase, human readable string that is used to identify the layer.\n A good ID is:\n - a noun\n - written in singular\n - describes the object\n - in english\n - only has lowercase letters, numbers or underscores. Do not use a space or a dash\n\ntype: id\ngroup: Basic",
       "type": "string"
     },
     "name": {
