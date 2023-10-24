@@ -211,7 +211,8 @@
         "and": [
           "highway!=cycleway",
           "highway!=path",
-          "highway!=footway"
+          "highway!=footway",
+          "highway!=pedestrian"
         ]
       },
       "mappings": [
@@ -449,7 +450,8 @@
         "and": [
           "highway!=cycleway",
           "highway!=path",
-          "highway!=footway"
+          "highway!=footway",
+          "highway!=pedestrian"
         ]
       },
       "mappings": [
