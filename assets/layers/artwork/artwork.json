@@ -808,15 +808,5 @@
   ],
   "filter": [
     "has_image"
-  ],
-  "pl": {
-    "title": {
-      "mappings": {
-        "0": {
-          "then": "{name}"
-        }
-      },
-      "render": "turbina wiatrowa"
-    }
-  }
+  ]
 }
