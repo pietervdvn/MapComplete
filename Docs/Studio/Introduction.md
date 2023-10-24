@@ -19,8 +19,13 @@ All type of objects are welcome to be added into OpenStreetMap, as long as:
 
 <img src="../../assets/svg/osm-logo.svg" class="h-48"/>
 
-The following items are thus *not* welcome: events such as a festival, measurements of e.g. air quality or historic data are *not* welcome.
-Have a look at [Sensor.Community](https://sensor.community/) or to [OpenHistoricalMap](https://www.openhistoricalmap.org/) instead.
+The following items are thus *not* welcome:
+
+- Do not add events such as a festival
+- Do not add measurements of e.g. air quality, traffic counts, ... [Sensor.Community](https://sensor.community/) is the right place for this
+- Do not add points that are only interesting to you (e.g. the route of your next trip). [UMap](https://umap.openstreetmap.fr) is the right tool for this 
+- Do not add privacy-sensitive information, e.g. the names of persons living in a house
+- Do not add data about now demolished items, such as 'there was a battle here 100 years ago' or 'there was a school here, before it was completely demolished and rebuild'. This can be added to [OpenHistoricalMap](https://www.openhistoricalmap.org/) instead.
 
 # How can OpenStreetMap data be reused?
 
