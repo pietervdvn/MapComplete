@@ -25,8 +25,8 @@
     inline = config.freeform?.inline
   }
 
+  const dispatch = createEventDispatcher<{selected}>()
   export let feedback: UIEventSource<Translation> 
-  let dispatch = createEventDispatcher<{ selected, submit }>()
   onDestroy(
     value.addCallbackD(() => {
       dispatch("selected")
@@ -45,9 +45,8 @@
         {feedback}
         {getCountry}
         {unit}
-        on:selected={() => dispatch("selected")}
-        on:submit={() => dispatch("submit")}
-        
+        on:selected
+        on:submit
         type={config.freeform.type}
         {placeholder}
         {value}
@@ -58,13 +57,13 @@
       {feedback}
       {getCountry}
       {unit}
-      on:selected={() => dispatch("selected")}
-      on:submit={() => dispatch("submit")}
+      on:selected
+      on:submit
       type={config.freeform.type}
       {placeholder}
       {value}
     />
   {/if}
 
-  <InputHelper args={config.freeform.helperArgs} {feature} type={config.freeform.type} {value} on:submit={() => dispatch("submit")} />
+  <InputHelper args={config.freeform.helperArgs} {feature} type={config.freeform.type} {value} on:submit />
 </div>
