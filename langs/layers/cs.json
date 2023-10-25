@@ -4384,7 +4384,7 @@
             "10": {
                 "options": {
                     "0": {
-                        "question": "Žádné upřednostňování psů"
+                        "question": "Bez preference psů"
                     },
                     "1": {
                         "question": "Psi povoleny"
@@ -5372,7 +5372,7 @@
             "hydrant-type": {
                 "mappings": {
                     "0": {
-                        "then": "Typ pilíře."
+                        "then": "Typ sloupek."
                     },
                     "1": {
                         "then": "Typ potrubí."
@@ -8748,7 +8748,7 @@
                         "then": "Kopulovitá (dome) kamera (která se může otáčet)"
                     },
                     "2": {
-                        "then": "Panoramatická kamera"
+                        "then": "Otáčecí kamera"
                     }
                 },
                 "question": "Jaká je to kamera?"
@@ -8773,7 +8773,7 @@
                         "then": "Soukromý vnitřní prostor je sledován, např. obchod, soukromé podzemní parkoviště, …"
                     }
                 },
-                "question": "Jaký druh sledování je tato kamera?"
+                "question": "Co sleduje tato kamera?"
             },
             "Surveillance:zone": {
                 "mappings": {
@@ -8826,7 +8826,7 @@
                         "then": "Snímaná oblast podle směru kompasu {direction}"
                     }
                 },
-                "question": "Ve kterém geografickém směru tato kamera natáčí?",
+                "question": "Ve kterém geografickém směru tato kamera snímá?",
                 "render": "Snímané oblasti podle směru kompasu {camera:direction}"
             },
             "has_alpr": {
@@ -8940,7 +8940,7 @@
         "name": "Ověřovače jízdenek",
         "presets": {
             "0": {
-                "description": "Validátor jízdenek k ověření platnosti jízdenky na veřejnou dopravu. Může to být buď digitální čtečka, která čte kartu nebo jízdenku, nebo stroj, který jízdenku orazítkuje nebo vyrazí.",
+                "description": "Ověřovač jízdenek k ověření platnosti jízdenky na veřejnou dopravu. Může to být buď digitální čtečka, která čte kartu nebo jízdenku, nebo stroj, který jízdenku orazítkuje nebo vyrazí.",
                 "title": "validátor jízdenek"
             }
         },
@@ -8957,10 +8957,10 @@
                 "override": {
                     "mappings+": {
                         "0": {
-                            "then": "Tento validátor vstupenek přijímá OV-Chipkaart"
+                            "then": "Tento ověřovač jízdenek přijímá OV-Chipkaart"
                         },
                         "1": {
-                            "then": "Tento validátor vstupenek přijímá OV-Chipkaart"
+                            "then": "Tento ověřovač jízdenek přijímá OV-Chipkaart"
                         }
                     }
                 }
