@@ -5414,7 +5414,7 @@
                     "placeholder": "Název místnosti"
                 },
                 "question": "Jak se jmenuje tato místnost?",
-                "render": "Tato místnost se jmenuje {jméno}"
+                "render": "Tato místnost se jmenuje {name}"
             },
             "ref": {
                 "freeform": {
@@ -8592,7 +8592,7 @@
                     }
                 },
                 "question": "Jakou barvu světla tato lampa vydává?",
-                "render": "Tato lampa vydává {light:color} světlo"
+                "render": "Tato lampa vydává {light:colour} světlo"
             },
             "count": {
                 "mappings": {
@@ -9299,7 +9299,7 @@
         "tagRenderings": {
             "colour": {
                 "question": "Jakou barvu má tato autobusová linka?",
-                "render": "Tato autobusová linka má barvu {color}"
+                "render": "Tato autobusová linka má barvu {colour}"
             },
             "from": {
                 "question": "Jaký je výchozí bod této autobusové linky?",
