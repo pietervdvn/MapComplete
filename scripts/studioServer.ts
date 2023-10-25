@@ -77,6 +77,7 @@ http.createServer(async (req, res) => {
         }
 
         const url = new URL(`http://127.0.0.1/` + req.url)
+        console.log("URL pathname is")
         if (url.pathname.endsWith("overview")) {
             console.log("Giving overview")
             let userId = url.searchParams.get("userId")
