@@ -799,6 +799,10 @@
             }
         }
     },
+    "guideposts": {
+        "description": "Wegweiser (auch als Wegzeiger oder Fingerschilder bekannt) sind entlang offizieller Wander-, Rad-, Ski- oder Reitstrecken häufig zu finden, um die Richtungen zu verschiedenen Zielen anzuzeigen. Darüber hinaus sind sie oft nach einer Region oder einem Ort benannt und zeigen die Höhe an.\n\nDie Position eines Wegweisers kann von Wanderern, Radfahrern, Reitern oder Skifahrern als Bestätigung der aktuellen Position genutzt werden, insbesondere wenn sie eine gedruckte Karte ohne GPS-Empfänger verwenden. ",
+        "title": "Wegweiser"
+    },
     "hackerspaces": {
         "description": "Auf dieser Karte können Sie Hackerspaces sehen, einen neuen Hackerspace hinzufügen oder Daten direkt aktualisieren",
         "shortDescription": "Eine Karte von Hackerspaces",
@@ -991,6 +995,33 @@
     "onwheels": {
         "description": "Auf dieser Karte können Sie öffentlich zugängliche Orte für Rollstuhlfahrer ansehen, bearbeiten oder hinzufügen",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistik"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Alle vorgeschlagenen Tags hinzufügen"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -1032,33 +1063,6 @@
             "8": {
                 "override": {
                     "name": "Barrierefreie Parkplätze"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistik"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Import"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Alle vorgeschlagenen Tags hinzufügen"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1220,10 +1224,6 @@
     "stations": {
         "description": "Bahnhofsdetails ansehen, bearbeiten und hinzufügen",
         "layers": {
-            "3": {
-                "description": "Ebene mit Bahnhöfen",
-                "name": "Bahnhöfe"
-            },
             "16": {
                 "description": "Anzeigen der Züge, die von diesem Bahnhof abfahren",
                 "name": "Abfahrtstafeln",
@@ -1255,6 +1255,10 @@
                 "title": {
                     "render": "Abfahrtstafel"
                 }
+            },
+            "3": {
+                "description": "Ebene mit Bahnhöfen",
+                "name": "Bahnhöfe"
             }
         },
         "title": "Bahnhöfe"
