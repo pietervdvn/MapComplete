@@ -26,10 +26,14 @@ function genImages(dryrun = false) {
             .replace(/\r/g, "")
             .replace(/\\/g, "\\")
             .replace(/"/g, '\\"')
+            .replaceAll(" ", " ")
 
-        let hasNonAsciiChars = Array.from(svg).some((char) => char.charCodeAt(0) > 127)
-        if (hasNonAsciiChars) {
-            throw "The svg '" + path + "' has non-ascii characters"
+        let hasNonAsciiChars = Array.from(svg)
+            .filter((char) => char.charCodeAt(0) > 127)
+            .map((char) => char.charCodeAt(0))
+            .join(", ")
+        if (hasNonAsciiChars.length > 0) {
+            throw "The svg '" + path + "' has non-ascii characters: " + hasNonAsciiChars
         }
         const name = path.substring(0, path.length - 4).replace(/[ -]/g, "_")
 
