@@ -11,7 +11,7 @@ NL-Net is currently sponsoring Pietervdvn as well [for specific improvements](ht
 
 ## Historical sponsors
 
-The following organisations ordered a theme to Pieter Vander Vennet and thus sponsered the project.
+The following organisations ordered a theme to Pieter Vander Vennet and thus sponsored the project.
 As these projects are finished, they have no relation with the project anymore.
 
 Most recent projects are first:

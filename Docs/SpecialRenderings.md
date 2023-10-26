@@ -5,7 +5,7 @@
 
 
 
-In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.
+In a tag rendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.
 
 General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args
 
@@ -539,7 +539,7 @@ There are also some technicalities in your theme to keep in mind:
 1. The new feature will be added and will flow through the program as any other new point as if it came from OSM.
     This means that there should be a layer which will match the new tags and which will display it.
 2. The original feature from your geojson layer will gain the tag '_imported=yes'.
-    This should be used to change the appearance or even to hide it (eg by changing the icon size to zero)
+    This should be used to change the appearance or even to hide it (e.g. by changing the icon size to zero)
 3. There should be a way for the theme to detect previously imported points, even after reloading.
     A reference number to the original dataset is an excellent way to do this
 4. When importing ways, the theme creator is also responsible of avoiding overlapping ways.
@@ -607,7 +607,7 @@ There are also some technicalities in your theme to keep in mind:
 1. The new feature will be added and will flow through the program as any other new point as if it came from OSM.
     This means that there should be a layer which will match the new tags and which will display it.
 2. The original feature from your geojson layer will gain the tag '_imported=yes'.
-    This should be used to change the appearance or even to hide it (eg by changing the icon size to zero)
+    This should be used to change the appearance or even to hide it (e.g. by changing the icon size to zero)
 3. There should be a way for the theme to detect previously imported points, even after reloading.
     A reference number to the original dataset is an excellent way to do this
 4. When importing ways, the theme creator is also responsible of avoiding overlapping ways.
