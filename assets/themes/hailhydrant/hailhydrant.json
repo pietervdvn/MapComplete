@@ -61,5 +61,7 @@
     "ambulancestation"
   ],
   "defaultBackgroundId": "HDM_HOT",
-  "credits": "Erwin Olario"
+  "credits": [
+    "Erwin Olario"
+  ]
 }

@@ -239,5 +239,7 @@
     }
   ],
   "defaultBackgroundId": "maptiler.backdrop",
-  "credits": "L'imaginaire"
+  "credits": [
+    "L'imaginaire"
+  ]
 }

@@ -70,5 +70,7 @@
     "waste_disposal"
   ],
   "hideFromOverview": true,
-  "credits": "Robin van der Linde"
+  "credits": [
+    "Robin van der Linde"
+  ]
 }

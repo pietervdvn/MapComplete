@@ -606,5 +606,7 @@
   ],
   "enableShareScreen": false,
   "enableMoreQuests": false,
-  "credits": "Pieter Vander Vennet, Rob Nickerson, Russ Garrett"
+  "credits": [
+    "Pieter Vander Vennet, Rob Nickerson, Russ Garrett"
+  ]
 }

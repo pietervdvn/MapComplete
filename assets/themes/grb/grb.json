@@ -682,5 +682,7 @@
   "defaultBackgroundId": "AGIVFlandersGRB",
   "overpassMaxZoom": 15,
   "osmApiTileSize": 17,
-  "credits": "Pieter Vander Vennet"
+  "credits": [
+    "Pieter Vander Vennet"
+  ]
 }

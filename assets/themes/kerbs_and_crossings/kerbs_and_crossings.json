@@ -84,5 +84,7 @@
     },
     "kerbs"
   ],
-  "credits": "Robin van der Linde"
+  "credits": [
+    "Robin van der Linde"
+  ]
 }

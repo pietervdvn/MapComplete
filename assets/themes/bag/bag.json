@@ -35,7 +35,9 @@
     "eu": "Gai honek BAGeko datuak inportatzen laguntzen du",
     "pl": "Motyw ten pomaga w importowaniu danych z BAG"
   },
-  "credits": "Wouter van der Wal",
+  "credits": [
+    "Wouter van der Wal"
+  ],
   "icon": "./assets/themes/bag/logo.svg",
   "startLat": 53.1726,
   "startLon": 7.04545,

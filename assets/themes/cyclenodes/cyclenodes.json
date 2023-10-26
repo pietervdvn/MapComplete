@@ -228,5 +228,7 @@
       ]
     }
   ],
-  "credits": "Sebastian Kürten"
+  "credits": [
+    "Sebastian Kürten"
+  ]
 }

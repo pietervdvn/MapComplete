@@ -501,5 +501,7 @@
       }
     }
   ],
-  "credits": "Christian Neumann <christian@utopicode.de>"
+  "credits": [
+    "Christian Neumann <christian@utopicode.de>"
+  ]
 }

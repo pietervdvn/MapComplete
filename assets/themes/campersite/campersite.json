@@ -1620,5 +1620,7 @@
       }
     ]
   },
-  "credits": "joost schouppe"
+  "credits": [
+    "joost schouppe"
+  ]
 }

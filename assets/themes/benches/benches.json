@@ -71,5 +71,7 @@
     "bench",
     "bench_at_pt"
   ],
-  "credits": "Florian Edelmann"
+  "credits": [
+    "Florian Edelmann"
+  ]
 }

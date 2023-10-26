@@ -225,5 +225,7 @@
       }
     }
   ],
-  "credits": "Niels Elgaard Larsen"
+  "credits": [
+    "Niels Elgaard Larsen"
+  ]
 }

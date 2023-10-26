@@ -71,5 +71,7 @@
     "tree_node"
   ],
   "defaultBackgroundId": "AGIV",
-  "credits": "Midgard"
+  "credits": [
+    "Midgard"
+  ]
 }

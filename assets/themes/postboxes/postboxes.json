@@ -53,7 +53,9 @@
     "maxZoom": 14,
     "minNeededElements": 100
   },
-  "credits": "nicolelaine",
+  "credits": [
+    "nicolelaine"
+  ],
   "layers": [
     "postboxes",
     "postoffices",

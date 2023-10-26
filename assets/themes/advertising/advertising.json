@@ -1,6 +1,8 @@
 {
   "id": "advertising",
-  "credits": "Offsel",
+  "credits": [
+    "Offsel"
+  ],
   "title": {
     "en": "Advertising",
     "ca": "Publicitat",
