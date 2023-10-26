@@ -21,6 +21,8 @@
     <BackButton clss="w-full" on:click={() => dispatch("back")}>
       Back
     </BackButton>
+      {:else}
+      <div class="w-full"/>
       {/if}
     <NextButton clss="primary w-full" on:click={() => dispatch("next")}>
       {#if islast}

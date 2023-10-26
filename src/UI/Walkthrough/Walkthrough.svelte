@@ -1,6 +1,6 @@
 <script lang="ts">
 
-  import * as nmd from "nano-markdown";
+  import nmd from "nano-markdown";
   import { createEventDispatcher } from "svelte";
   import WalkthroughStep from "./WalkthroughStep.svelte";
   import FromHtml from "../Base/FromHtml.svelte";
@@ -9,6 +9,7 @@
    * Markdown
    */
   export let pages: string[];
+  console.log("Walkthrough pages are", pages)
 
   let currentPage: number = 0;
 
@@ -26,7 +27,7 @@
 </script>
 
 
-<WalkthroughStep on:back={() => step(-1)} on:next={() => step(1)}>
+<WalkthroughStep on:back={() => step(-1)} on:next={() => step(1)} isFirst={currentPage === 0} islast={currentPage + 1 === pages.length}>
   <FromHtml src={nmd(pages[currentPage])} />
 </WalkthroughStep>
 
