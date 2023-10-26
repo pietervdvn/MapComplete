@@ -48,7 +48,6 @@
     "_closest_other_drinking_water_id=get(feat)('_closest_other_drinking_water')?.id",
     "_closest_other_drinking_water_distance=Math.floor(Number(get(feat)('_closest_other_drinking_water')?.distance))"
   ],
-  "minzoom": 13,
   "presets": [
     {
       "title": {
@@ -206,7 +205,6 @@
         "amenity="
       ]
     },
-    "neededChangesets": 1,
     "nonDeleteMappings": [
       {
         "if": {
