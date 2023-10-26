@@ -29,7 +29,6 @@ import questions from "../src/assets/generated/layers/questions.json"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 import { Utils } from "../src/Utils"
 import { TagUtils } from "../src/Logic/Tags/TagUtils"
-
 function WriteFile(
     filename,
     html: string | BaseUIElement,
@@ -324,6 +323,7 @@ function studioDocs() {
         line = line.replace('src="../../', 'src="./')
         currentSection.push(line)
     }
+    sections.push(currentSection)
     writeFileSync(
         "./src/assets/studio_introduction.json",
         JSON.stringify({
