@@ -43,8 +43,7 @@ This document gives an overview of which URL-parameters can be used to influence
 --------------------------
 
 
-
-"URL-parameters are extra parts of the URL used to set the state.
+URL-parameters are extra parts of the URL used to set the state.
 
 For example, if the url is `https://mapcomplete.org/cyclofix?lat=51.0&lon=4.3&z=5&test=true#node/1234`, the URL-parameters are stated in the part between the `?` and the `#`. There are multiple, all separated by `&`, namely: 
 

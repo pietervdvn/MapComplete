@@ -1,7 +1,7 @@
 Architecture
 ============
 
-This document aims to give an architectural overview of how MapCompelte is built. It should give some feeling on how
+This document aims to give an architectural overview of how MapComplete is built. It should give some feeling on how
 everything fits together.
 
 Servers?
@@ -59,7 +59,7 @@ There are some basic elements, such as:
 - `List`
 
 There is one special component: the `VariableUIElement`
-The `VariableUIElement` takes a `UIEventSource<string|BaseUIElement>` and will dynamicaly show whatever the `UIEventSource` contains at the moment.
+The `VariableUIElement` takes a `UIEventSource<string|BaseUIElement>` and will dynamically show whatever the `UIEventSource` contains at the moment.
 
 For example:
 
@@ -107,7 +107,7 @@ If Tailwind is not enough, use `baseUiElement.SetStyle("background: red; someOth
 
 ### An example
 
-For example: the user should input wether or not a shop is closed during public holidays. There are three options:
+For example: the user should input whether or not a shop is closed during public holidays. There are three options:
 
 1. closed
 2. opened as usual
