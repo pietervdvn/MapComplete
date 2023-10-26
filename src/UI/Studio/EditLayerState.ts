@@ -2,13 +2,14 @@ import { ConfigMeta } from "./configMeta"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
 import {
+    Conversion,
     ConversionContext,
     ConversionMessage,
     DesugaringContext,
     Pipe,
 } from "../../Models/ThemeConfig/Conversion/Conversion"
 import { PrepareLayer } from "../../Models/ThemeConfig/Conversion/PrepareLayer"
-import { ValidateLayer } from "../../Models/ThemeConfig/Conversion/Validation"
+import { ValidateLayer, ValidateTheme } from "../../Models/ThemeConfig/Conversion/Validation"
 import { AllSharedLayers } from "../../Customizations/AllSharedLayers"
 import { QuestionableTagRenderingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
@@ -18,64 +19,21 @@ import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import { OsmTags } from "../../Models/OsmFeature"
 import { Feature, Point } from "geojson"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-
-/**
- * Sends changes back to the server
- */
-export class LayerStateSender {
-    constructor(layerState: EditLayerState) {
-        const layerId = layerState.configuration.map((config) => config.id)
-        layerState.configuration
-            .mapD((config) => JSON.stringify(config, null, "  "))
-            .stabilized(100)
-            .addCallbackD(async (config) => {
-                const id = layerId.data
-                if (id === undefined) {
-                    console.warn("No id found in layer, not updating")
-                    return
-                }
-                await layerState.server.updateLayer(id, config)
-            })
-    }
-}
+import { LayoutConfigJson } from "../../Models/ThemeConfig/Json/LayoutConfigJson"
+import { PrepareTheme } from "../../Models/ThemeConfig/Conversion/PrepareTheme"
 
 export interface HighlightedTagRendering {
     path: ReadonlyArray<string | number>
     schema: ConfigMeta
 }
 
-export default class EditLayerState {
+export abstract class EditJsonState<T> {
     public readonly schema: ConfigMeta[]
-
-    public readonly featureSwitches: {
-        featureSwitchIsDebugging: UIEventSource<boolean>
-    }
-
-    /**
-     * Used to preview and interact with the questions
-     */
-    public readonly testTags = new UIEventSource<OsmTags>({ id: "node/-12345" })
-    public readonly exampleFeature: Feature<Point> = {
-        type: "Feature",
-        properties: this.testTags.data,
-        geometry: {
-            type: "Point",
-            coordinates: [3.21, 51.2],
-        },
-    }
-    public readonly configuration: UIEventSource<Partial<LayerConfigJson>> = new UIEventSource<
-        Partial<LayerConfigJson>
-    >({})
-    public readonly messages: Store<ConversionMessage[]>
+    public readonly category: "layers" | "themes"
     public readonly server: StudioServer
-    // Needed for the special visualisations
-    public readonly osmConnection: OsmConnection
-    public readonly imageUploadManager = {
-        getCountsFor() {
-            return 0
-        },
-    }
-    public readonly layout: { getMatchingLayer: (key: any) => LayerConfig }
+
+    public readonly configuration: UIEventSource<Partial<T>> = new UIEventSource<Partial<T>>({})
+    public readonly messages: Store<ConversionMessage[]>
 
     /**
      * The EditLayerUI shows a 'schemaBasedInput' for this path to pop advanced questions out
@@ -85,69 +43,25 @@ export default class EditLayerState {
     )
     private readonly _stores = new Map<string, UIEventSource<any>>()
 
-    constructor(schema: ConfigMeta[], server: StudioServer, osmConnection: OsmConnection) {
+    constructor(schema: ConfigMeta[], server: StudioServer, category: "layers" | "themes") {
         this.schema = schema
         this.server = server
-        this.osmConnection = osmConnection
-        this.featureSwitches = {
-            featureSwitchIsDebugging: new UIEventSource<boolean>(true),
-        }
-        let state: DesugaringContext
-        {
-            const layers = AllSharedLayers.getSharedLayersConfigs()
-            const questions = layers.get("questions")
-            const sharedQuestions = new Map<string, QuestionableTagRenderingConfigJson>()
-            for (const question of questions.tagRenderings) {
-                sharedQuestions.set(question["id"], <QuestionableTagRenderingConfigJson>question)
-            }
-            state = {
-                tagRenderings: sharedQuestions,
-                sharedLayers: layers,
-            }
-        }
+        this.category = category
 
-        this.highlightedItem.addCallback((h) => console.log("Highlighted is now", h))
+        this.messages = this.setupErrorsForLayers()
 
-        const prepare = new Pipe(
-            new PrepareLayer(state),
-            new ValidateLayer("dynamic", false, undefined, true)
-        )
-        this.messages = this.configuration.mapD((config) => {
-            const trs = Utils.NoNull(config.tagRenderings ?? [])
-            for (let i = 0; i < trs.length; i++) {
-                const tr = trs[i]
-                if (typeof tr === "string") {
-                    continue
+        const layerId = this.getId()
+        this.configuration
+            .mapD((config) => JSON.stringify(config, null, "  "))
+            .stabilized(100)
+            .addCallbackD(async (config) => {
+                const id = layerId.data
+                if (id === undefined) {
+                    console.warn("No id found in layer, not updating")
+                    return
                 }
-                if (!tr["id"] && !tr["override"]) {
-                    const qtr = <QuestionableTagRenderingConfigJson>tr
-                    let id = "" + i
-                    if (qtr?.freeform?.key) {
-                        id = qtr?.freeform?.key
-                    } else if (qtr.mappings?.[0]?.if) {
-                        id =
-                            qtr.freeform?.key ??
-                            TagUtils.Tag(qtr.mappings[0].if).usedKeys()?.[0] ??
-                            "" + i
-                    }
-                    qtr["id"] = id
-                }
-            }
-
-            const context = ConversionContext.construct([], ["prepare"])
-            prepare.convert(<LayerConfigJson>config, context)
-            return context.messages
-        })
-
-        this.layout = {
-            getMatchingLayer: (_) => {
-                try {
-                    return new LayerConfig(<LayerConfigJson>this.configuration.data, "dynamic")
-                } catch (e) {
-                    return undefined
-                }
-            },
-        }
+                await server.update(id, config, category)
+            })
     }
 
     public getCurrentValueFor(path: ReadonlyArray<string | number>): any | undefined {
@@ -272,5 +186,131 @@ export default class EditLayerState {
                 return true
             })
         })
+    }
+
+    protected abstract buildValidation(state: DesugaringContext): Conversion<T, any>
+
+    protected abstract getId(): Store<string>
+
+    private setupErrorsForLayers(): Store<ConversionMessage[]> {
+        const layers = AllSharedLayers.getSharedLayersConfigs()
+        const questions = layers.get("questions")
+        const sharedQuestions = new Map<string, QuestionableTagRenderingConfigJson>()
+        for (const question of questions.tagRenderings) {
+            sharedQuestions.set(question["id"], <QuestionableTagRenderingConfigJson>question)
+        }
+        let state: DesugaringContext = {
+            tagRenderings: sharedQuestions,
+            sharedLayers: layers,
+        }
+        const prepare = this.buildValidation(state)
+        return this.configuration.mapD((config) => {
+            const context = ConversionContext.construct([], ["prepare"])
+            try {
+                prepare.convert(<T>config, context)
+            } catch (e) {
+                context.err(e)
+            }
+            return context.messages
+        })
+    }
+}
+
+export default class EditLayerState extends EditJsonState<LayerConfigJson> {
+    // Needed for the special visualisations
+    public readonly osmConnection: OsmConnection
+    public readonly imageUploadManager = {
+        getCountsFor() {
+            return 0
+        },
+    }
+    public readonly layout: { getMatchingLayer: (key: any) => LayerConfig }
+    public readonly featureSwitches: {
+        featureSwitchIsDebugging: UIEventSource<boolean>
+    }
+
+    /**
+     * Used to preview and interact with the questions
+     */
+    public readonly testTags = new UIEventSource<OsmTags>({ id: "node/-12345" })
+    public readonly exampleFeature: Feature<Point> = {
+        type: "Feature",
+        properties: this.testTags.data,
+        geometry: {
+            type: "Point",
+            coordinates: [3.21, 51.2],
+        },
+    }
+
+    constructor(schema: ConfigMeta[], server: StudioServer, osmConnection: OsmConnection) {
+        super(schema, server, "layers")
+        this.osmConnection = osmConnection
+        this.layout = {
+            getMatchingLayer: (_) => {
+                try {
+                    return new LayerConfig(<LayerConfigJson>this.configuration.data, "dynamic")
+                } catch (e) {
+                    return undefined
+                }
+            },
+        }
+        this.featureSwitches = {
+            featureSwitchIsDebugging: new UIEventSource<boolean>(true),
+        }
+
+        this.addMissingTagRenderingIds()
+    }
+
+    protected buildValidation(state: DesugaringContext) {
+        return new Pipe(
+            new PrepareLayer(state),
+            new ValidateLayer("dynamic", false, undefined, true)
+        )
+    }
+
+    protected getId(): Store<string> {
+        return this.configuration.mapD((config) => config.id)
+    }
+
+    private addMissingTagRenderingIds() {
+        this.configuration.addCallbackD((config) => {
+            const trs = Utils.NoNull(config.tagRenderings ?? [])
+            for (let i = 0; i < trs.length; i++) {
+                const tr = trs[i]
+                if (typeof tr === "string") {
+                    continue
+                }
+                if (!tr["id"] && !tr["override"]) {
+                    const qtr = <QuestionableTagRenderingConfigJson>tr
+                    let id = "" + i
+                    if (qtr?.freeform?.key) {
+                        id = qtr?.freeform?.key
+                    } else if (qtr.mappings?.[0]?.if) {
+                        id =
+                            qtr.freeform?.key ??
+                            TagUtils.Tag(qtr.mappings[0].if).usedKeys()?.[0] ??
+                            "" + i
+                    }
+                    qtr["id"] = id
+                }
+            }
+        })
+    }
+}
+
+export class EditThemeState extends EditJsonState<LayoutConfigJson> {
+    protected buildValidation(state: DesugaringContext): Conversion<LayoutConfigJson, any> {
+        return new Pipe(
+            new PrepareTheme(state),
+            new ValidateTheme(undefined, "", false, new Set(state.tagRenderings.keys()))
+        )
+    }
+
+    constructor(schema: ConfigMeta[], server: StudioServer) {
+        super(schema, server, "themes")
+    }
+
+    protected getId(): Store<string> {
+        return this.configuration.mapD((config) => config.id)
     }
 }

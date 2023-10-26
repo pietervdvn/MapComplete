@@ -1,13 +1,12 @@
 <script lang="ts">
   import type { HighlightedTagRendering } from "./EditLayerState";
-  import EditLayerState, { LayerStateSender } from "./EditLayerState";
+  import EditLayerState from "./EditLayerState";
   import layerSchemaRaw from "../../assets/schemas/layerconfigmeta.json";
   import Region from "./Region.svelte";
   import TabbedGroup from "../Base/TabbedGroup.svelte";
   import { Store, UIEventSource } from "../../Logic/UIEventSource";
   import type { ConfigMeta } from "./configMeta";
   import { Utils } from "../../Utils";
-  import type { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson";
   import type { ConversionMessage } from "../../Models/ThemeConfig/Conversion/Conversion";
   import ErrorIndicatorForRegion from "./ErrorIndicatorForRegion.svelte";
   import { ChevronRightIcon } from "@rgossiaux/svelte-heroicons/solid";
@@ -17,20 +16,15 @@
   import FromHtml from "../Base/FromHtml.svelte";
   import AllTagsPanel from "../Popup/AllTagsPanel.svelte";
   import QuestionPreview from "./QuestionPreview.svelte";
+  import ShowConversionMessages from "./ShowConversionMessages.svelte";
 
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw;
 
   export let state: EditLayerState;
   const messages = state.messages;
   const hasErrors = messages.map((m: ConversionMessage[]) => m.filter(m => m.level === "error").length);
-  export let initialLayerConfig: Partial<LayerConfigJson> = {};
-  state.configuration.setData(initialLayerConfig);
   const configuration = state.configuration;
-  new LayerStateSender(state);
-  /**
-   * Blacklist of regions for the general area tab
-   * These are regions which are handled by a different tab
-   */
+  
   const allNames = Utils.Dedup(layerSchema.map(meta => meta.hints.group));
 
   const perRegion: Record<string, ConfigMeta[]> = {};
@@ -153,18 +147,11 @@
           <div class="literal-code">
             <FromHtml src={JSON.stringify($configuration, null, "  ").replaceAll("\n","</br>")} />
           </div>
-          {#each $messages as message}
-            <li>
-              {message.level}
-              <span class="literal-code">{message.context.path.join(".")}</span>
-              {message.message}
-              <span class="literal-code">
-                {message.context.operation.join(".")}
-              </span>
-            </li>
-          {/each}
 
+          <ShowConversionMessages messages={$messages}/>
+          <div>
           The testobject (which is used to render the questions in the 'information panel' item has the following tags:
+          </div>
           
           <AllTagsPanel tags={state.testTags}></AllTagsPanel>
         </div>

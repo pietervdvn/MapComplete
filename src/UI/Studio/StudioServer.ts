@@ -12,10 +12,11 @@ export default class StudioServer {
         this._userId = userId
     }
 
-    public async fetchLayerOverview(): Promise<
+    public async fetchOverview(): Promise<
         {
             id: string
             owner: number
+            category: "layers" | "themes"
         }[]
     > {
         const uid = this._userId.data
@@ -29,6 +30,7 @@ export default class StudioServer {
         const layerOverview: {
             id: string
             owner: number | undefined
+            category: "layers" | "themes"
         }[] = []
         for (let file of allFiles) {
             let owner = undefined
@@ -36,31 +38,29 @@ export default class StudioServer {
                 owner = uid
                 file = file.substring(file.indexOf("/") + 1)
             }
-            if (!file.startsWith("layers/")) {
-                continue
-            }
+            const category = <"layers" | "themes">file.substring(0, file.indexOf("/"))
             const id = file.substring(file.lastIndexOf("/") + 1, file.length - ".json".length)
             if (Constants.priviliged_layers.indexOf(<any>id) > 0) {
                 continue
             }
-            layerOverview.push({ id, owner })
+            layerOverview.push({ id, owner, category })
         }
         return layerOverview
     }
 
-    async fetchLayer(layerId: string): Promise<LayerConfigJson> {
+    async fetch(layerId: string, category: "layers" | "themes"): Promise<LayerConfigJson> {
         try {
-            return await Utils.downloadJson(this.layerUrl(layerId))
+            return await Utils.downloadJson(this.urlFor(layerId, category))
         } catch (e) {
             return undefined
         }
     }
 
-    async updateLayer(id: string, config: string) {
+    async update(id: string, config: string, category: "layers" | "themes") {
         if (id === undefined || id === "") {
             return
         }
-        await fetch(this.layerUrl(id), {
+        await fetch(this.urlFor(id, category), {
             method: "POST",
             headers: {
                 "Content-Type": "application/json;charset=utf-8",
@@ -70,8 +70,12 @@ export default class StudioServer {
     }
 
     public layerUrl(id: string) {
+        return this.urlFor(id, "layers")
+    }
+
+    public urlFor(id: string, category: "layers" | "themes") {
         const uid = this._userId.data
         const uidStr = uid !== undefined ? "/" + uid : ""
-        return `${this.url}${uidStr}/layers/${id}/${id}.json`
+        return `${this.url}${uidStr}/${category}/${id}/${id}.json`
     }
 }
