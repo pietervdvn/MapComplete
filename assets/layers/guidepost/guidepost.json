@@ -1,10 +1,14 @@
 {
   "id": "guidepost",
   "name": {
-    "en": "Guideposts"
+    "en": "Guideposts",
+    "cs": "Rozcestníky",
+    "de": "Wegweiser"
   },
   "description": {
-    "en": "Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations"
+    "en": "Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations",
+    "cs": "Podél oficiálních turistických/cyklistických/jezdeckých/lyžařských tras se často nacházejí rozcestníky (také známé jako ukazatel směru nebo značky), které ukazují směry k různým cílům",
+    "de": "Wegweiser (auch als Wegzeiger oder Fingerschilder bekannt) sind entlang offizieller Wander-, Radfahr-, Reit- oder Skirouten oft zu finden, um die Richtungen zu verschiedenen Zielen anzuzeigen"
   },
   "source": {
     "osmTags": "information=guidepost"
@@ -13,14 +17,18 @@
   "presets": [
     {
       "title": {
-        "en": "a guidepost"
+        "en": "a guidepost",
+        "cs": "rozcestník",
+        "de": "ein Wegweiser"
       },
       "tags": [
         "information=guidepost",
         "tourism=information"
       ],
       "description": {
-        "en": "A guidepost (also known as fingerpost) is often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations"
+        "en": "A guidepost (also known as fingerpost) is often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations",
+        "cs": "Rozcestník (také známý jako ukazatel směru) se často nachází podél oficiálních turistických / cyklistických / jezdeckých / lyžařských tras, které ukazují směry k různým destinacím",
+        "de": "Ein Wegweiser (auch bekannt als Fingerschild) wird oft entlang offizieller Wander-, Radfahr-, Reit- oder Skirouten gefunden, um die Richtungen zu verschiedenen Zielen anzuzeigen"
       },
       "exampleImages": [
         "./assets/layers/guidepost/guidepost_example.jpg"
@@ -34,7 +42,9 @@
   },
   "title": {
     "render": {
-      "en": "Guidepost"
+      "en": "Guidepost",
+      "cs": "Rozcestník",
+      "de": "Wegweiser"
     }
   },
   "mapRendering": [

@@ -5,13 +5,15 @@
     "de": "Öffentliche Verwaltung",
     "nl": "Overheidsdiensten",
     "pa_PK": "سرکارسں",
-    "ca": "Governs"
+    "ca": "Governs",
+    "cs": "vlády"
   },
   "description": {
     "en": "This layer show governmental buildings. It was setup as commissioned layer for the client of OSOC '22",
     "de": "Diese Ebene zeigt Gebäude der öffentlichen Verwaltung. Sie wurde im Auftrag für den Kunden von OSOC '22 erstellt",
     "nl": "Deze laag toont overheidsgebouwen. Opgezet voor OSOC '22",
-    "ca": "Aquesta capa mostra edificis governamentals. Es va configurar com a capa encarregada per al client d'OSOC '22"
+    "ca": "Aquesta capa mostra edificis governamentals. Es va configurar com a capa encarregada per al client d'OSOC '22",
+    "cs": "Tato vrstva zobrazuje vládní budovy. Byla nastavena jako zprovozněná vrstva pro klienta OSOC '22"
   },
   "source": {
     "osmTags": {
@@ -25,7 +27,8 @@
       "en": "Governmental Office {name}",
       "de": "Behörde {name}",
       "nl": "Overheidsdienst {name}",
-      "ca": "Oficina governamental {name}"
+      "ca": "Oficina governamental {name}",
+      "cs": "Vládní úřad {name}"
     }
   },
   "minzoom": 13,
@@ -39,13 +42,15 @@
         "en": "What is the name of this Governmental Office?",
         "de": "Wie lautet der Name dieser Behörde?",
         "nl": "Wat is de naam van deze overheidsdienst?",
-        "ca": "Quin és el nom d'aquesta oficina gornavental?"
+        "ca": "Quin és el nom d'aquesta oficina gornavental?",
+        "cs": "Jak se jmenuje tento úřad vlády?"
       },
       "render": {
         "en": "This Governmental Office is called {name}",
         "de": "Der Name der Behörde lautet {name}",
         "nl": "Deze overheidsdienst heet {name}",
-        "ca": "Aquesta Oficina Governamental s'anomena {name}"
+        "ca": "Aquesta Oficina Governamental s'anomena {name}",
+        "cs": "Tento vládní úřad se jmenuje {name}"
       },
       "freeform": {
         "key": "name"
@@ -59,7 +64,8 @@
         "en": "a Governmental Office",
         "de": "ein Büro der öffentlichen Verwaltung",
         "nl": "een overheidsdienst",
-        "ca": "una oficina Governamental"
+        "ca": "una oficina Governamental",
+        "cs": "vládní úřad"
       },
       "tags": [
         "office=government"

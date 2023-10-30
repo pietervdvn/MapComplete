@@ -22,7 +22,8 @@
         "nl": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?",
         "ru": "Есть ли (неофициальный) веб-сайт с более подробной информацией (напр., topos)?",
         "fr": "Existe-t’il un site avec plus d’informations (ex : topographie) ?",
-        "it": "C’è un sito web (anche non ufficiale) con qualche informazione in più (ad es. topografie)?"
+        "it": "C’è un sito web (anche non ufficiale) con qualche informazione in più (ad es. topografie)?",
+        "cs": "Existuje (neoficiální) webová stránka s více informacemi (např. topos)?"
       },
       "condition": {
         "and": [
@@ -75,7 +76,8 @@
         "nl": "Wat is het niveau van de makkelijkste route, volgens het Franse classificatiesysteem?",
         "ja": "ここで一番簡単なルートのレベルは、フランスのランク評価システムで何ですか?",
         "fr": "Quel est le niveau de la voie la plus simple selon la classification franco-belge ?",
-        "it": "Qual è il livello della via più facile qua, secondo il sistema di classificazione francese?"
+        "it": "Qual è il livello della via più facile qua, secondo il sistema di classificazione francese?",
+        "cs": "Jaký je stupeň nejjednodušší trasy podle francouzského klasifikačního systému?"
       },
       "render": {
         "de": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)",
@@ -83,7 +85,8 @@
         "nl": "De minimale klimmoeilijkheid is {climbing:grade:french:min} volgens het Franse/Belgische systeem",
         "ja": "フランス/ベルギーのランク評価システムでは、最小の難易度は{climbing:grade:french:min}です",
         "fr": "La difficulté minimale est {climbing:grade:french:min} selon la classification franco-belge",
-        "it": "Il minimo livello di difficoltà è {climbing:grade:french:min} secondo il sistema francese/belga"
+        "it": "Il minimo livello di difficoltà è {climbing:grade:french:min} secondo il sistema francese/belga",
+        "cs": "Nejnižší stupeň je {climbing:grade:french:min} podle francouzského/belgického systému"
       },
       "freeform": {
         "key": "climbing:grade:french:min"
@@ -106,7 +109,8 @@
         "nl": "De maximale klimmoeilijkheid is {climbing:grade:french:max} volgens het Franse/Belgische systeem",
         "ja": "フランス/ベルギーのランク評価システムでは、最大の難易度は{climbing:grade:french:max}です",
         "fr": "La difficulté maximale est {climbing:grade:french:max} selon la classification franco-belge",
-        "it": "Il massimo livello di difficoltà è {climbing:grade:french:max} secondo il sistema francese/belga"
+        "it": "Il massimo livello di difficoltà è {climbing:grade:french:max} secondo il sistema francese/belga",
+        "cs": "Nejvyšší stupeň je {climbing:grade:french:max} podle francouzského/belgického systému"
       },
       "freeform": {
         "key": "climbing:grade:french:max"
@@ -204,7 +208,8 @@
         "nl": "Is het mogelijk om hier te toprope-klimmen?",
         "ja": "ここでtoprope登坂はできますか?",
         "fr": "Est-il possible d’escalader à la moulinette ?",
-        "it": "È possibile arrampicarsi con la corda dall’alto qua?"
+        "it": "È possibile arrampicarsi con la corda dall’alto qua?",
+        "cs": "Je zde možné lezení po laně?"
       },
       "mappings": [
         {
@@ -239,7 +244,8 @@
             "nl": "Er zijn hier {climbing:toprope} toprope routes",
             "ja": "{climbing:toprope} 登坂ルートがある",
             "fr": "{climbing:toprope} voies sont équipées de moulinettes",
-            "it": "Sono presenti {climbing:toprope} vie con moulinette"
+            "it": "Sono presenti {climbing:toprope} vie con moulinette",
+            "cs": "Je zde {climbing:toprope} tras pro lezení na laně"
           },
           "hideInAnswer": true
         }
@@ -291,7 +297,8 @@
             "en": "There are {climbing:sport} sport climbing routes",
             "nl": "Er zijn hier {climbing:sport} sportklimroutes/voorklimroutes",
             "ja": "スポーツクライミングの {climbing:sport} ルートがある",
-            "it": "Sono presenti {climbing:sport} vie di arrampicata sportiva"
+            "it": "Sono presenti {climbing:sport} vie di arrampicata sportiva",
+            "cs": "Existují {climbing:sport} sportovních lezeckých cest"
           },
           "hideInAnswer": true
         }
@@ -304,14 +311,16 @@
         "en": "Is traditional climbing possible here?",
         "nl": "Is het mogelijk om hier traditioneel te klimmen? ",
         "ja": "伝統的な登山はここで可能ですか？",
-        "it": "È possibile arrampicarsi in maniera tradizionale qua?"
+        "it": "È possibile arrampicarsi in maniera tradizionale qua?",
+        "cs": "Je zde možné tradiční lezení?"
       },
       "questionHint": {
         "en": "Using your own gear, e.g. chocks",
         "de": "eigene Sicherung z.B. mit Klemmkleilen",
         "nl": "Dit is klimmen met klemblokjes en friends",
         "ja": "例えば、チョックのような独自のギアを使用して",
-        "it": "usando attrezzi propri, ad es. dadi"
+        "it": "usando attrezzi propri, ad es. dadi",
+        "cs": "Pomocí vlastního zařízení, např. klíny"
       },
       "mappings": [
         {
@@ -321,7 +330,8 @@
             "en": "Traditional climbing is possible here",
             "nl": "Traditioneel klimmen kan hier",
             "ja": "ここでは伝統的な登山が可能です",
-            "it": "L’arrampicata tradizionale è possibile qua"
+            "it": "L’arrampicata tradizionale è possibile qua",
+            "cs": "Zde je možné provozovat tradiční lezení"
           }
         },
         {
@@ -331,7 +341,8 @@
             "en": "Traditional climbing is not possible here",
             "nl": "Traditioneel klimmen kan hier niet",
             "ja": "伝統的な登山はここではできない",
-            "it": "L’arrampicata tradizionale non è possibile qua"
+            "it": "L’arrampicata tradizionale non è possibile qua",
+            "cs": "Tradiční lezení zde není možné"
           }
         },
         {
@@ -341,7 +352,8 @@
             "en": "There are {climbing:traditional} traditional climbing routes",
             "nl": "Er zijn hier {climbing:traditional} traditionele klimroutes",
             "ja": "{climbing:traditional} の伝統的な登山ルートがある",
-            "it": "Sono presenti {climbing:traditional} vie di arrampicata tradizionale"
+            "it": "Sono presenti {climbing:traditional} vie di arrampicata tradizionale",
+            "cs": "Existují {climbing:traditional} tradiční lezecké cesty"
           },
           "hideInAnswer": true
         }

@@ -102,8 +102,8 @@ export class GeoLocationState {
         this.requestPermissionAsync()
     }
 
-    public static isSafari(): boolean{
-       return navigator.permissions === undefined && navigator.geolocation !== undefined
+    public static isSafari(): boolean {
+        return navigator.permissions === undefined && navigator.geolocation !== undefined
     }
 
     /**

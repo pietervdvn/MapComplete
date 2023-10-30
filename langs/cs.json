@@ -124,7 +124,7 @@
             "pleaseLogin": "Chcete-li přidat novou funkci, přihlaste se",
             "presetInfo": "Nový bod zájmu bude mít {tags}",
             "stillLoading": "Data se stále načítají. Před přidáním nové funkce prosím chvíli počkejte.",
-            "title": "Přidat novou funkci?",
+            "title": "Přidat novou funkci",
             "warnVisibleForEveryone": "Váš příspěvek bude viditelný pro všechny",
             "wrongType": "Tato funkce není uzel ani cesta a nelze ji importovat",
             "zoomInFurther": "Další přiblížení pro přidání funkce.",
@@ -316,6 +316,7 @@
         },
         "skip": "Přeskočit tuto otázku",
         "testing": "Testování - změny se neuloží",
+        "uploadError": "Chyba při nahrávání změn: {error}",
         "uploadGpx": {
             "choosePermission": "Níže vyberte, zda má být vaše stopa sdílena:",
             "confirm": "Potvrdit nahrávání",
@@ -343,6 +344,9 @@
             "uploadFinished": "Vaše stopa byla nahrána!",
             "uploading": "Nahrávání stopy…"
         },
+        "uploadPending": "Počet nevyřízených změn: {count}",
+        "uploadPendingSingle": "Čeká se na jednu změnu",
+        "uploadingChanges": "Nahrávání změn…",
         "useSearch": "Pro zobrazení předvoleb použijte vyhledávání výše",
         "useSearchForMore": "Pomocí funkce hledání můžete v rámci {total} vyhledat více hodnot…",
         "waitingForGeopermission": "Čekáme na vaše povolení používat geolokaci…",

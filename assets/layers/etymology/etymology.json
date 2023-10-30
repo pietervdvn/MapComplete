@@ -53,7 +53,8 @@
         "en": "What is the Wikidata-item that this object is named after?",
         "nl": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?",
         "de": "Was ist das Wikidata-Element, nach dem dieses Objekt benannt ist?",
-        "fr": "Quel est l'Item Wikidata auquel l'objet fait référence ?"
+        "fr": "Quel est l'Item Wikidata auquel l'objet fait référence ?",
+        "cs": "Po jaké položce Wikidat je tento objekt pojmenován?"
       },
       "freeform": {
         "key": "name:etymology:wikidata",
@@ -177,7 +178,7 @@
         "en": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Search on inventaris onroerend erfgoed</a>",
         "de": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Suche auf inventaris onroerend erfgoed</a>",
         "fr": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Chercher sur inventaris onroerend erfgoed</a>",
-        "cs": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Search on inventaris onroerend erfgoed</a>"
+        "cs": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Hledání na inventaris onroerend erfgoed</a>"
       },
       "condition": "_country=be"
     },

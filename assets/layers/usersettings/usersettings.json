@@ -15,7 +15,8 @@
       "de": "Einstellungen",
       "fr": "Paramètres",
       "da": "Indstillinger",
-      "ca": "Configuració"
+      "ca": "Configuració",
+      "cs": "Nastavení"
     }
   },
   "source": "special",
@@ -268,12 +269,14 @@
         "en": "Show the raw OpenStreetMap-tags?",
         "de": "Rohe OpenStreetMap-Tags anzeigen?",
         "fr": "Afficher les attributs OpenStreetMap bruts ?",
-        "ca": "Mostra les etiquetes d'OpenStreetMap en brut?"
+        "ca": "Mostra les etiquetes d'OpenStreetMap en brut?",
+        "cs": "Zobrazit nezpracované/raw tagy OpenStreetMap?"
       },
       "questionHint": {
         "en": "<b>Tags</b> are attributes that every element has. This is the technical data that is stored in the database. You don't need this information to edit with MapComplete, but advanced users might want to use this as reference.",
         "de": "<b>Tags</b> sind die Eigenschaften, die jedes Objekt hat. Das sind die technischen Daten, die in der Datenbank gespeichert werden. Du brauchst diese Informationen nicht, um mit MapComplete Änderungen zu machen, aber fortgeschrittenen Nutzer*innen kann es als Referenz dienen.",
-        "ca": "Les <b>etiquetes</b> són atributs que té cada element. Aquestes són les dades tècniques que s'emmagatzemen a la base de dades. No necessiteu aquesta informació per editar amb MapComplete, però és possible que els usuaris avançats la vulguin fer servir com a referència."
+        "ca": "Les <b>etiquetes</b> són atributs que té cada element. Aquestes són les dades tècniques que s'emmagatzemen a la base de dades. No necessiteu aquesta informació per editar amb MapComplete, però és possible que els usuaris avançats la vulguin fer servir com a referència.",
+        "cs": "<b>Tagy</b> jsou atributy, které má každý element. Jedná se o technické údaje, které jsou uloženy v databázi. K úpravám pomocí MapComplete tyto informace nepotřebujete, ale pokročilí uživatelé by je mohli chtít použít jako referenci."
       },
       "mappings": [
         {
@@ -281,7 +284,8 @@
           "then": {
             "en": "Never show the tags.",
             "de": "Tags nie anzeigen.",
-            "ca": "No mostris mai les etiquetes."
+            "ca": "No mostris mai les etiquetes.",
+            "cs": "Nikdy nezobrazovat tagy."
           }
         },
         {
@@ -289,7 +293,8 @@
           "then": {
             "en": "Show the tags that will be applied once I have made {__userjourney_tagsVisibleAt} changesets",
             "de": "Tags anzeigen sobald ich {__userjourney_tagsVisibleAt} Changesets erstellt habe",
-            "ca": "Mostra les etiquetes que s'aplicaran un cop hagi fet {__userjourney_tagsVisibleAt} conjunts de canvis"
+            "ca": "Mostra les etiquetes que s'aplicaran un cop hagi fet {__userjourney_tagsVisibleAt} conjunts de canvis",
+            "cs": "Zobrazit tagy, které budou použity, jakmile provedu {__userjourney_tagsVisibleAt} sady změn"
           }
         },
         {
@@ -297,7 +302,8 @@
           "then": {
             "en": "Show the tags that will be applied when making a change",
             "de": "Tags anzeigen, die bei der Änderung hinzugefügt werden",
-            "ca": "Mostra les etiquetes que s'aplicaran en fer un canvi"
+            "ca": "Mostra les etiquetes que s'aplicaran en fer un canvi",
+            "cs": "Zobrazení tagů, které budou použity při provádění změny"
           }
         },
         {
@@ -305,7 +311,8 @@
           "then": {
             "en": "Show the tags that will be applied when making a change and show the tags table on every feature",
             "de": "Tags anzeigen, die bei der Änderung hinzugefügt werden, und Tag-Tabelle bei jedem Objekt anzeigen",
-            "ca": "Mostra les etiquetes que s'aplicaran a l'hora de fer un canvi i mostra la taula d'etiquetes a cada element"
+            "ca": "Mostra les etiquetes que s'aplicaran a l'hora de fer un canvi i mostra la taula d'etiquetes a cada element",
+            "cs": "Zobrazení tagů, které se použijí při provádění změny, a zobrazení tabulky tagů u každé funkce"
           }
         }
       ]
@@ -351,10 +358,14 @@
     {
       "id": "show_crosshair",
       "question": {
-        "en": "Should a crosshair be shown in the center of the display?"
+        "en": "Should a crosshair be shown in the center of the display?",
+        "cs": "Měl by se uprostřed displeje zobrazovat kříž?",
+        "de": "Soll ein Fadenkreuz in der Mitte des Bildschirms angezeigt werden?"
       },
       "questionHint": {
-        "en": "This can help to accurately position a new element"
+        "en": "This can help to accurately position a new element",
+        "cs": "To může pomoci přesněji umístit nový prvek",
+        "de": "Dies kann dazu beitragen, ein neues Element genau zu positionieren"
       },
       "mappings": [
         {
@@ -457,7 +468,8 @@
             "de": "Keine Schaltfläche zum schnellen Wechseln von Übersetzungen anzeigen",
             "ca": "No mostris cap botó per a canviar ràpidament les traduccions",
             "fr": "Ne pas afficher de bouton pour modifier les traductions rapidement",
-            "pt": "Não mostrar um botão para alterar as traduções rapidamente"
+            "pt": "Não mostrar um botão para alterar as traduções rapidamente",
+            "cs": "Nezobrazovat tlačítko pro rychlou změnu překladů"
           }
         },
         {
@@ -469,7 +481,8 @@
             "fr": "Afficher un bouton pour ouvrir rapidement les traductions lorsque vous utilisez MapComplete sur un grand écran",
             "ca": "Mostra un botó per a obrir ràpidament les traduccions quan utilitzes MapComplet en una pantalla gran",
             "pt": "Mostrar um botão para abrir traduções rapidamente ao usar o MapComplete em uma tela grande",
-            "da": "Vis en knap for hurtigt at åbne oversættelser, når du bruger MapComplete på en stor skærm"
+            "da": "Vis en knap for hurtigt at åbne oversættelser, når du bruger MapComplete på en stor skærm",
+            "cs": "Zobrazit tlačítko pro rychlé otevření překladů při použití MapComplete na velké obrazovce"
           }
         },
         {
@@ -480,7 +493,8 @@
             "de": "Übersetzungsschaltflächen immer anzeigen, auch auf dem Handy",
             "ca": "Mostra sempre els botons de traducció, fins i tot al mòbil",
             "fr": "Toujours afficher les boutons de traduction, même sur mobile",
-            "pt": "Mostrar sempre os botões de tradução, inclusive no celular"
+            "pt": "Mostrar sempre os botões de tradução, inclusive no celular",
+            "cs": "Vždy zobrazovat tlačítka překladu, a to i na mobilu"
           }
         }
       ]
@@ -507,7 +521,8 @@
             "es": "Haz clic en el icono 'traducir' al lado de una cadena para introducir o actualizar un texto. Necesitas una cuenta de Weblate para esto. Crea una con tu usuario de OSM para desbloquear el modo de traducción automáticamente.",
             "fr": "Cliquez sur l'icône \"traduire\" à côté d'une chaîne de caractères pour saisir ou mettre à jour la chaine de texte. Vous aurez besoin d'un compte Weblate pour cela. Créez-en un avec votre nom d'utilisateur OSM pour déverrouiller automatiquement le mode traduction.",
             "nl": "Klik op het 'vertaal'-icoontje die naast een stukje tekst staat om deze tekst te vertalen of aan te passen. Hiervoor heb je een (gratis) Weblate-account nodig. Indien je jouw account maakt met dezelfde naam als je OSM-gebruikersnaam, dan zullen de vertaalknoppen automatisch verschijnen.",
-            "zh_Hant": "點字串旁邊的 'translate'-icon 來輸入或是更新一段文字。你需要 Weblate 帳號。用你 OSM 帳號名稱來創建帳號，並且自動解鎖翻譯模式。"
+            "zh_Hant": "點字串旁邊的 'translate'-icon 來輸入或是更新一段文字。你需要 Weblate 帳號。用你 OSM 帳號名稱來創建帳號，並且自動解鎖翻譯模式。",
+            "cs": "Chcete-li zadat nebo aktualizovat část textu, klikněte na ikonu „přeložit“ vedle řetězce. K tomu potřebujete účet Weblate. Vytvořte si jej s vaším uživatelským jménem OSM, abyste automaticky odemkli režim překladu."
           },
           "icon": "translate"
         }
@@ -587,7 +602,8 @@
             "de": "Es wurde ein Link zu deinem Mastodon-Profil gefunden: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
             "nl": "Een link naar je Mastodon-profiel werd gevonden: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
             "fr": "Un lien vers votre profil Mastodon a été trouvé : <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
-            "ca": "S'ha trobat un enllaç al vostre perfil de Mastodon: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
+            "ca": "S'ha trobat un enllaç al vostre perfil de Mastodon: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
+            "cs": "Byl nalezen odkaz na váš profil Mastodon: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
           },
           "icon": "mastodon"
         },
@@ -597,7 +613,8 @@
             "en": "We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Edit your profile description</a> and place the following there: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
             "de": "Wir haben einen Link gefunden, der aussieht wie ein Mastodon-Konto, aber nicht verifiziert ist. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Bearbeiten Sie Ihre Profilbeschreibung</a> und fügen Sie dort Folgendes ein: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
             "nl": "Je profielbeschrijving bevat een link die vermoedelijk naar je Mastodon gaat, maar deze link is niet verifieerdbaar voor Mastodon.<a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Pas je profielbeschrijving aan</a> en plaats er de volgende code: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
-            "ca": "Hem trobat un enllaç al que sembla ser un compte de mastodon, però no està verificat. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Editeu la descripció del vostre perfil</a> i col·loqueu-hi el següent: <span class='code '>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+            "ca": "Hem trobat un enllaç al que sembla ser un compte de mastodon, però no està verificat. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Editeu la descripció del vostre perfil</a> i col·loqueu-hi el següent: <span class='code '>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
+            "cs": "Našli jsme odkaz na to, co vypadá jako účet mastodon, ale je neověřený. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Upravte popis svého profilu</a> a umístěte tam následující: <span class='code '>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
           },
           "icon": "invalid"
         }

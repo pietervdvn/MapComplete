@@ -20,7 +20,8 @@
     "cs": "Umělecká díla",
     "pa_PK": "کلاکاری",
     "he": "יצירות אמנות",
-    "eu": "Artelanak"
+    "eu": "Artelanak",
+    "pt_BR": "Obras de arte"
   },
   "source": {
     "osmTags": "tourism=artwork"
@@ -101,7 +102,9 @@
     "zh_Hans": "一个雕塑、半身像、涂鸦和其他全球艺术品的地图",
     "nb_NO": "Statuer, byster, graffiti, og andre kunstverk verden over",
     "zgh": "ⵢⴰⵜ ⵜⴽⴰⵕⴹⴰ ⵉⵕⵥⵎⵏ ⵅⴼ ⵉⵙⴼⵔⵉⵙⵏ, ⵉⵖⵔⴰⵙⵏ ⴷ ⵜⵡⵓⵔⵉⵡⵉⵏ ⵜⵉⵏⴰⵥⵓⵕⵉⵏ ⵢⴰⴹⵏⵉⵏ ⴳ ⵓⵎⴰⴹⴰⵍ",
-    "eu": "Estatuen, bustoen, graffitien eta mundu osoko beste artelan batzuen mapa irekia"
+    "eu": "Estatuen, bustoen, graffitien eta mundu osoko beste artelan batzuen mapa irekia",
+    "pl": "Otwarta mapa posągów, popiersi, graffiti i innych dzieł sztuki z całego świata",
+    "pt_BR": "Um mapa aberto de estátuas, bustos, grafites e outras obras de arte em todo o mundo"
   },
   "minzoom": 12,
   "presets": [
@@ -124,7 +127,7 @@
         "gl": "Obra de arte",
         "hu": "Műalkotás",
         "id": "Karya Seni",
-        "pl": "Dzieło sztuki",
+        "pl": "dzieło sztuki",
         "pt": "uma obra de arte",
         "pt_BR": "uma obra de arte",
         "sv": "Konstverk",
@@ -145,7 +148,8 @@
         "cs": "umělecké dílo na zdi",
         "es": "Una obra de arte en la pared",
         "fr": "une œuvre sur un mur",
-        "pl": "Dzieło sztuki na ścianie"
+        "pl": "Dzieło sztuki na ścianie",
+        "pt_BR": "uma obra de arte em uma parede"
       },
       "snapToLayer": "walls_and_buildings"
     }
@@ -177,7 +181,8 @@
         "da": "Dette er en {artwork_type}",
         "cs": "Toto je {artwork_type}",
         "ca": "Aquesta és un {artwork_type}",
-        "he": "זהו {artwork_type}"
+        "he": "זהו {artwork_type}",
+        "pt_BR": "Isso é um(a) {artwork_type}"
       },
       "question": {
         "en": "What is the type of this artwork?",
@@ -197,7 +202,8 @@
         "da": "Hvilken slags kunstværk er det?",
         "cs": "Jaký je typ tohoto uměleckého díla?",
         "ca": "Quin tipus d'obra és aquesta peça?",
-        "he": "מהו סוג היצירה הזו?"
+        "he": "מהו סוג היצירה הזו?",
+        "pt_BR": "Qual é o tipo dessa obra de arte?"
       },
       "freeform": {
         "key": "artwork_type",
@@ -278,7 +284,8 @@
             "da": "Maleri",
             "cs": "Malba",
             "he": "ציור",
-            "eu": "Margolana"
+            "eu": "Margolana",
+            "pt_BR": "Pintura"
           }
         },
         {
@@ -424,7 +431,8 @@
             "ca": "Grafiti",
             "da": "Graffiti",
             "cs": "Grafiti",
-            "eu": "Graffitia"
+            "eu": "Graffitia",
+            "pt_BR": "Grafite"
           }
         },
         {
@@ -447,7 +455,8 @@
             "es": "Relieve",
             "da": "Relief",
             "cs": "Reliéf",
-            "eu": "Erliebea"
+            "eu": "Erliebea",
+            "pt_BR": "Relevo"
           }
         },
         {
@@ -469,7 +478,8 @@
             "es": "Azulejo (Baldosas decorativas Españolas y Portuguesas)",
             "da": "Azulejo (spansk dekorativt flisebeklædning)",
             "cs": "Azulejo (španělské dekorativní dlaždice)",
-            "ca": "Azulejo (Rajoles decoratives espanyoles i portugueses)"
+            "ca": "Azulejo (Rajoles decoratives espanyoles i portugueses)",
+            "pt_BR": "Azulejo (Revestimento de azulejos decorativos espanhóis)"
           }
         },
         {
@@ -492,7 +502,8 @@
             "da": "flisebeklædning",
             "cs": "Obklady a dlažba",
             "he": "יצירת פסיפס",
-            "eu": "Keramika"
+            "eu": "Keramika",
+            "pt_BR": "Azulejaria"
           }
         },
         {
@@ -508,7 +519,9 @@
             "ca": "Tallat a la fusta",
             "es": "Tallado en madera",
             "he": "גילוף בעץ",
-            "eu": "Egur taila"
+            "eu": "Egur taila",
+            "pl": "Rzeźbienie w drewnie",
+            "pt_BR": "Entalhe"
           }
         }
       ],
@@ -528,7 +541,8 @@
         "es": "Esta obra de arte la creó {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
         "ca": "Aquesta obra d'art la va crear {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
         "fr": "Cette oeuvre a été crée par {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
-        "pl": "To dzieło sztuki zostało zrobione przez {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+        "pl": "To dzieło sztuki zostało zrobione przez {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+        "pt_BR": "Essa obra de arte foi feita por {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
       },
       "question": {
         "en": "Who made this artwork?",
@@ -541,7 +555,8 @@
         "ca": "Qui va crear aquesta obra d'art?",
         "nb_NO": "Hvem laget dette kunstverket?",
         "he": "מי יצר את היצירה הזו?",
-        "pl": "Kto stworzył to dzieło sztuki?"
+        "pl": "Kto stworzył to dzieło sztuki?",
+        "pt_BR": "Quem fez essa obra de arte?"
       },
       "freeform": {
         "key": "artist:wikidata",
@@ -596,7 +611,8 @@
         "da": "Lavet af {artist_name}",
         "cs": "Vytvořil {artist_name}",
         "ca": "Creat per {artist_name}",
-        "he": "נוצר על ידי {artist_name}"
+        "he": "נוצר על ידי {artist_name}",
+        "pt_BR": "Criado por {artist_name}"
       },
       "freeform": {
         "key": "artist_name"
@@ -626,7 +642,8 @@
         "da": "Er der et websted med mere information om dette kunstværk?",
         "cs": "Existuje webová stránka s dalšími informacemi o tomto uměleckém díle?",
         "ca": "Hi ha un lloc web amb més informació sobre aquesta obra d'art?",
-        "he": "האם יש אתר אינטרנט עם מידע נוסף על היצירה הזו?"
+        "he": "האם יש אתר אינטרנט עם מידע נוסף על היצירה הזו?",
+        "pt_BR": "Há um website com mais informações sobre essa arte?"
       },
       "render": {
         "special": {
@@ -649,7 +666,8 @@
             "es": "Más información en este sitio web",
             "da": "Yderligere oplysninger på  dette websted",
             "cs": "Více informací na této webové stránce",
-            "ca": "Més informació a aquesta pàgina web"
+            "ca": "Més informació a aquesta pàgina web",
+            "pt_BR": "Mais informações nesse website"
           }
         }
       },
@@ -693,7 +711,8 @@
         "fr": "Que représente cette oeuvre d'art ?",
         "ca": "Què representa aquesta obra d'art?",
         "he": "מה מתארת היצירה הזו?",
-        "pl": "Co przedstawia to dzieło sztuki?"
+        "pl": "Co przedstawia to dzieło sztuki?",
+        "pt_BR": "O que esta obra de arte representa?"
       },
       "freeform": {
         "key": "subject:wikidata",
@@ -709,7 +728,8 @@
         "nb_NO": "Dette kunstverket viser {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
         "ca": "Aquesta obra d'art representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
         "fr": "Cette œuvre dépeint {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
-        "pl": "To dzieło sztuki przedstawia {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+        "pl": "To dzieło sztuki przedstawia {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+        "pt_BR": "Essa arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
       },
       "labels": [
         "artwork-question"
@@ -726,7 +746,8 @@
         "ca": "Aquesta obra d'art serveix com a un banc?",
         "cs": "Slouží toto umělecké dílo jako lavička?",
         "he": "האם היצירה הזו משמשת כספסל?",
-        "pl": "Czy to dzieło sztuki pełni funkcję ławki?"
+        "pl": "Czy to dzieło sztuki pełni funkcję ławki?",
+        "pt_BR": "Essa obra de arte serve como banco?"
       },
       "mappings": [
         {
@@ -739,7 +760,8 @@
             "ca": "Aquesta obra d'art també serveix com a banc",
             "cs": "Toto umělecké dílo slouží také jako lavička",
             "he": "יצירה זו משמשת גם כספסל",
-            "pl": "To dzieło sztuki pełni również funkcję ławki"
+            "pl": "To dzieło sztuki pełni również funkcję ławki",
+            "pt_BR": "Essa obra de arte também serve como banco"
           }
         },
         {
@@ -753,7 +775,8 @@
             "ca": "Aquesta obra d'art no serveix com a banc",
             "cs": "Toto umělecké dílo neslouží jako lavička",
             "he": "יצירה זו אינה משמשת כספסל",
-            "pl": "To dzieło sztuki nie pełni funkcji ławki"
+            "pl": "To dzieło sztuki nie pełni funkcji ławki",
+            "pt_BR": "Essa obra de arte não serve como banco"
           }
         },
         {
@@ -767,7 +790,8 @@
             "ca": "Aquesta obra d'art no serveix com a un banc",
             "cs": "Toto umělecké dílo neslouží jako lavička",
             "he": "יצירה זו אינה משמשת כספסל",
-            "pl": "To dzieło sztuki nie pełni funkcji ławki"
+            "pl": "To dzieło sztuki nie pełni funkcji ławki",
+            "pt_BR": "Essa obra de arte não serve como banco"
           },
           "hideInAnswer": true
         }

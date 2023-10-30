@@ -51,7 +51,8 @@
           "de": "Ampel",
           "fr": "Feu de signalisation",
           "ca": "Semàfor",
-          "es": "Semáforo"
+          "es": "Semáforo",
+          "cs": "Semafor"
         }
       },
       {
@@ -173,7 +174,7 @@
             "ca": "Pas de zebra",
             "es": "Paso de cebra",
             "fr": "Passage piéton",
-            "cs": "Přechod pro chodce"
+            "cs": "Zebra přechod"
           },
           "hideInAnswer": true
         },
@@ -201,7 +202,7 @@
         "fr": "Est-ce un passage piéton ?",
         "ca": "Açò és un pas de vianants?",
         "pl": "Czy to jest przejście dla pieszych typu \"zebra\"?",
-        "cs": "Jedná se o přechod pro chodce?"
+        "cs": "Jedná se o zebra přechod?"
       },
       "condition": "crossing=uncontrolled",
       "mappings": [
@@ -214,7 +215,7 @@
             "es": "Esto es un paso de cebra",
             "fr": "C'est un passage piéton",
             "ca": "Açò és un pas de vianants",
-            "cs": "Toto je přechod pro chodce"
+            "cs": "Toto je zebra přechod"
           }
         },
         {
@@ -226,7 +227,7 @@
             "es": "Esto no es un paso de cebra",
             "fr": "Ce n'est pas un passage piéton",
             "ca": "Açò no és un pas de vianants",
-            "cs": "Tohle není přechod pro chodce"
+            "cs": "Tohle není zebra přechod"
           }
         }
       ]
@@ -240,7 +241,8 @@
         "da": "Er denne overgang også for cykler?",
         "es": "¿Este cruce también es para ciclistas?",
         "ca": "Aquest creuament també és per a ciclistes?",
-        "fr": "Est-ce que ce passage est également pour les vélos ?"
+        "fr": "Est-ce que ce passage est également pour les vélos ?",
+        "cs": "Je tento přechod i pro kola?"
       },
       "condition": "highway=crossing",
       "mappings": [
@@ -253,7 +255,8 @@
             "da": "En cyklist kan benytte denne overgang",
             "es": "Un ciclista puede utilizar este cruce",
             "ca": "Un ciclista pot utilitzar aquest creuament",
-            "fr": "Un cycliste peut utiliser ce passage"
+            "fr": "Un cycliste peut utiliser ce passage",
+            "cs": "Cyklista může tento přechod využít"
           }
         },
         {
@@ -265,7 +268,8 @@
             "da": "En cyklist kan ikke benytte denne overgang",
             "es": "Un ciclista no puede utilizar este cruce",
             "ca": "Un ciclista no pot utilitzar aquest creuament",
-            "fr": "Un cycliste ne peut pas utiliser ce passage"
+            "fr": "Un cycliste ne peut pas utiliser ce passage",
+            "cs": "Cyklista nemůže tento přechod použít"
           }
         }
       ]
@@ -513,7 +517,8 @@
       "question": {
         "en": "Does this traffic light have an arrow pointing in the direction of crossing?",
         "de": "Hat diese Ampel einen Pfeil, der in Richtung der Kreuzung zeigt?",
-        "ca": "Aquest semàfor té una fletxa apuntant en la direcció del creuament?"
+        "ca": "Aquest semàfor té una fletxa apuntant en la direcció del creuament?",
+        "cs": "Má tento semafor šipku ve směru přecházení?"
       },
       "condition": "crossing=traffic_signals",
       "mappings": [
@@ -522,7 +527,8 @@
           "then": {
             "en": "This traffic light has an arrow pointing in the direction of crossing.",
             "de": "Diese Ampel hat einen Pfeil, der in Richtung der Kreuzung zeigt.",
-            "ca": "Aquest semàfor té una fletxa apuntant en la direcció del creuament."
+            "ca": "Aquest semàfor té una fletxa apuntant en la direcció del creuament.",
+            "cs": "Tento semafor má šipku ukazující směr přecházení."
           }
         },
         {
@@ -530,7 +536,8 @@
           "then": {
             "en": "This traffic light does <b>not</b> have an arrow pointing in the direction of crossing.",
             "de": "Diese Ampel hat <b>keinen</b> Pfeil, der in Richtung der Kreuzung zeigt.",
-            "ca": "Aquest semàfor <b>no</b> té una fletxa apuntant en la direcció del creuament."
+            "ca": "Aquest semàfor <b>no</b> té una fletxa apuntant en la direcció del creuament.",
+            "cs": "Na tomto semaforu <b>není</b> šipka ukazující směr přecházení."
           }
         }
       ]
@@ -540,7 +547,8 @@
       "question": {
         "en": "Does this traffic light have a tactile map showing the layout of the crossing?",
         "de": "Hat die Ampel hat eine taktile Karte, die den Verlauf der Kreuzung zeigt?",
-        "ca": "Aquest semàfor disposa d'un mapa tàctil que mostra el traçat de l'encreuament?"
+        "ca": "Aquest semàfor disposa d'un mapa tàctil que mostra el traçat de l'encreuament?",
+        "cs": "Má tento semafor hmatovou mapu s uspořádáním přechodu?"
       },
       "condition": "crossing=traffic_signals",
       "mappings": [
@@ -550,7 +558,8 @@
             "en": "This traffic light has a tactile map showing the layout of the crossing.",
             "de": "Die Ampel hat eine taktile Karte, die den Verlauf der Kreuzung zeigt.",
             "nl": "Dit verkeerlicht heeft een voelkaart die de indeling van de oversteekplaats laat zien.",
-            "ca": "Aquest semàfor disposa d'un mapa tàctil que mostra el traçat de l'encreuament."
+            "ca": "Aquest semàfor disposa d'un mapa tàctil que mostra el traçat de l'encreuament.",
+            "cs": "Tento semafor má hmatovou mapu zobrazující uspořádání přechodu."
           },
           "icon": {
             "path": "./assets/layers/crossings/180px-Trairvoja_mapeto.jpg",
@@ -563,7 +572,8 @@
             "en": "This traffic light does <b>not</b> have a tactile map showing the layout of the crossing.",
             "de": "Die Ampel hat <b>keine</b> taktile Karte, die den Verlauf der Kreuzung zeigt.",
             "nl": "Dit verkeerlicht heeft <b>geen</b> voelkaart die de indeling van de oversteekplaats laat zien.",
-            "ca": "Aquest semàfor <b>no</b> disposa d'un mapa tàctil que mostra el traçat del pas."
+            "ca": "Aquest semàfor <b>no</b> disposa d'un mapa tàctil que mostra el traçat del pas.",
+            "cs": "Tento semafor <b>nemá</b> hmatovou mapu zobrazující rozložení přechodu."
           }
         }
       ]

@@ -19,7 +19,8 @@
     "sv": "Spökcykel",
     "zh_Hant": "幽靈單車",
     "pt": "Bicicleta fantasma",
-    "ca": "Bicicleta fantasma"
+    "ca": "Bicicleta fantasma",
+    "cs": "Kola duchů"
   },
   "source": {
     "osmTags": "memorial=ghost_bike"
@@ -45,7 +46,8 @@
       "sv": "Spökcykel",
       "zh_Hant": "幽靈單車",
       "pt": "Bicicleta fantasma",
-      "ca": "Bicicleta blanca"
+      "ca": "Bicicleta blanca",
+      "cs": "Kolo duchů"
     },
     "mappings": [
       {
@@ -56,7 +58,8 @@
           "de": "Geisterrad im Gedenken an {subject}",
           "it": "Bici fantasma in ricordo di {subject}",
           "fr": "Vélo fantôme en souvenir de {subject}",
-          "ca": "Bicicleta fantasma en el record de {subject}"
+          "ca": "Bicicleta fantasma en el record de {subject}",
+          "cs": "Kolo duchů na památku {subject}"
         }
       },
       {
@@ -67,7 +70,8 @@
           "de": "Geisterrad im Gedenken an {name}",
           "it": "Bici fantasma in ricordo di {name}",
           "fr": "Vélo fantôme en souvenir de {name}",
-          "ca": "Bicicleta fantasma en el record de {name}"
+          "ca": "Bicicleta fantasma en el record de {name}",
+          "cs": "Kolo duchů na památku {name}"
         }
       }
     ]
@@ -93,7 +97,8 @@
         "ru": "Велосипед ghost",
         "sv": "Spökcykel",
         "zh_Hant": "幽靈單車",
-        "ca": "una bicicleta fantasma"
+        "ca": "una bicicleta fantasma",
+        "cs": "kola duchů"
       },
       "tags": [
         "historic=memorial",
@@ -110,7 +115,8 @@
         "de": "Ein <b>Geisterrad</b> ist ein Denkmal für einen Radfahrer, der bei einem Verkehrsunfall ums Leben kam, in Form eines weißen Fahrrades, das dauerhaft in der Nähe des Unfallortes aufgestellt wird.",
         "it": "Una <b>bici fantasma</b> è il memoriale di un ciclista che è morto in un incidente stradale e che ha la forma di una bicicletta bianca piazzata in maniera stabile vicino al luogo dell’incidente.",
         "fr": "Un <b>vélo fantôme</b> est un monument commémoratif pour un cycliste décédé dans un accident de la route, sous la forme d'un vélo blanc placé en permanence près du lieu de l'accident.",
-        "ca": "Una <b>bicicleta fantasma</b> és un memorial per a un ciclista que va morir en un accident de trànsit, en forma de bicicleta blanca col·locada permanentment a prop del lloc de l'accident."
+        "ca": "Una <b>bicicleta fantasma</b> és un memorial per a un ciclista que va morir en un accident de trànsit, en forma de bicicleta blanca col·locada permanentment a prop del lloc de l'accident.",
+        "cs": "<b>kolo duchů</b> je památník cyklisty, který zemřel při dopravní nehodě, v podobě bílého kola umístěného trvale v blízkosti místa nehody."
       }
     },
     "images",
@@ -121,7 +127,8 @@
         "de": "An wen erinnert dieses Geisterrad?",
         "it": "A chi è dedicata questa bici fantasma?",
         "fr": "À qui est dédié ce vélo fantôme ?",
-        "ca": "A qui recorda aquesta bicicleta fantasma?"
+        "ca": "A qui recorda aquesta bicicleta fantasma?",
+        "cs": "Na koho vzpomíná toto kolo duchů?"
       },
       "render": {
         "en": "In remembrance of {subject}",
@@ -130,7 +137,8 @@
         "it": "In ricordo di {subject}",
         "fr": "En souvenir de {subject}",
         "ru": "В знак памяти о {subject}",
-        "ca": "En record de {subject}"
+        "ca": "En record de {subject}",
+        "cs": "Na památku {subject}"
       },
       "freeform": {
         "key": "subject",
@@ -150,7 +158,8 @@
             "fr": "En souvenir de {name}",
             "ru": "В знак памяти о {name}",
             "ca": "En record de {name}",
-            "pl": "Ku pamięci {name}"
+            "pl": "Ku pamięci {name}",
+            "cs": "Na památku {name}"
           },
           "hideInAnswer": true
         },
@@ -162,7 +171,8 @@
             "de": "Am Fahrrad ist kein Name angegeben",
             "it": "Nessun nome scritto sulla bici",
             "fr": "Aucun nom n'est marqué sur le vélo",
-            "ca": "No hi ha cap nom marcat a la bicicleta"
+            "ca": "No hi ha cap nom marcat a la bicicleta",
+            "cs": "Na kole není vyznačeno žádné jméno"
           },
           "addExtraTags": [
             "name=",
@@ -177,7 +187,8 @@
         "de": "Bitte respektieren Sie die Privatsphäre - geben Sie den Namen nur an, wenn er weit verbreitet oder auf dem Fahrrad markiert ist. Den Familiennamen können Sie weglassen.",
         "it": "Rispetta la privacy (compila solo il nome se questo è stato ampiamente pubblicato o se è scritto sulla bici). Decidi se è il caso di non inserire il cognome.",
         "fr": "Veuillez respecter la vie privée – ajoutez le nom seulement s'il est largement publié ou marqué sur le vélo. Choisissez de ne pas indiquer le nom de famille ",
-        "ca": "Si us plau, respecteu la privadesa: només ompliu el nom si està àmpliament publicat o marcat a la bicicleta. Opta per deixar de banda el cognom."
+        "ca": "Si us plau, respecteu la privadesa: només ompliu el nom si està àmpliament publicat o marcat a la bicicleta. Opta per deixar de banda el cognom.",
+        "cs": "Respektujte prosím soukromí – jméno vyplňte pouze v případě, že je široce publikováno nebo označeno na cyklu. Rozhodněte se vynechat příjmení."
       }
     },
     {
@@ -187,7 +198,8 @@
         "de": "Auf welcher Webseite kann man mehr Informationen über das Geisterrad oder den Unfall finden?",
         "it": "In quale pagina web si possono trovare informazioni sulla bici fantasma o l’incidente?",
         "fr": "Sur quelle page web peut-on trouver plus d'informations sur le Vélo fantôme ou l'accident ?",
-        "ca": "En quina pàgina web es pot trobar més informació sobre la bicicleta blanca o l'accident?"
+        "ca": "En quina pàgina web es pot trobar més informació sobre la bicicleta blanca o l'accident?",
+        "cs": "Na jakém webu lze najít více informací o kole ducha nebo nehodě?"
       },
       "render": {
         "special": {
@@ -201,7 +213,8 @@
             "ru": "Доступна более подробная информация",
             "fr": "Plus d'informations sont disponibles",
             "id": "Informasi lanjut tersedia",
-            "ca": "Més informació disponible"
+            "ca": "Més informació disponible",
+            "cs": "Více informací k dispozici"
           }
         }
       },
@@ -218,7 +231,8 @@
         "de": "Wie lautet die Inschrift auf diesem Geisterrad?",
         "it": "Che cosa è scritto sulla bici fantasma?",
         "fr": "Quelle est l'inscription sur ce vélo fantôme ?",
-        "ca": "Quina és la inscripció d'aquesta bicicleta fantasma?"
+        "ca": "Quina és la inscripció d'aquesta bicicleta fantasma?",
+        "cs": "Jaký je nápis na tomto kole duchů?"
       },
       "render": {
         "en": "<i>{inscription}</i>",
@@ -228,7 +242,8 @@
         "fr": "<i>{inscription}</i>",
         "it": "<i>{inscription}</i>",
         "ru": "<i>{inscription}</i>",
-        "id": "<i>{inscription}</i>"
+        "id": "<i>{inscription}</i>",
+        "cs": "<i>{inscription}</i>"
       },
       "freeform": {
         "key": "inscription"
@@ -242,7 +257,8 @@
         "it": "Quando è stata installata questa bici fantasma?",
         "fr": "Quand ce vélo fantôme a-t-il été installée ?",
         "de": "Wann wurde dieses Geisterrad aufgestellt?",
-        "ca": "Quan es va instal·lar aquesta bicicleta Ghost?"
+        "ca": "Quan es va instal·lar aquesta bicicleta Ghost?",
+        "cs": "Kdy bylo toto kolo duchů nainstalováno?"
       },
       "render": {
         "nl": "Geplaatst op {start_date}",
@@ -251,7 +267,8 @@
         "fr": "Placé le {start_date}",
         "ru": "Установлен {start_date}",
         "de": "Aufgestellt am {start_date}",
-        "ca": "Col·locat el {start_date}"
+        "ca": "Col·locat el {start_date}",
+        "cs": "Umístěno {start_date}"
       },
       "freeform": {
         "key": "start_date",
@@ -290,6 +307,7 @@
     "de": "Eine Ebene mit Gedenkstätten für Radfahrer, die bei Verkehrsunfällen ums Leben gekommen sind",
     "fr": "Une couche affichant les mémoriaux en l'hommage de cyclistes tuées lors d'accidents de la route",
     "pl": "Warstwa pokazujące miejsca upamiętnienia rowerzystów, którzy zginęli w wypadkach drogowych",
-    "ca": "Una capa que mostra monuments commemoratius als ciclistes morts en accidents de trànsit"
+    "ca": "Una capa que mostra monuments commemoratius als ciclistes morts en accidents de trànsit",
+    "cs": "Vrstva zobrazující pomníky pro cyklisty zabité při dopravních nehodách"
   }
 }

@@ -5382,6 +5382,19 @@
             "render": "Deine zurückgelegte Strecke"
         }
     },
+    "guidepost": {
+        "description": "Wegweiser (auch als Wegzeiger oder Fingerschilder bekannt) sind entlang offizieller Wander-, Radfahr-, Reit- oder Skirouten oft zu finden, um die Richtungen zu verschiedenen Zielen anzuzeigen",
+        "name": "Wegweiser",
+        "presets": {
+            "0": {
+                "description": "Ein Wegweiser (auch bekannt als Fingerschild) wird oft entlang offizieller Wander-, Radfahr-, Reit- oder Skirouten gefunden, um die Richtungen zu verschiedenen Zielen anzuzeigen",
+                "title": "ein Wegweiser"
+            }
+        },
+        "title": {
+            "render": "Wegweiser"
+        }
+    },
     "hackerspace": {
         "description": "Hackerspace",
         "name": "Hackerspaces",
@@ -8622,6 +8635,9 @@
                     },
                     "4": {
                         "question": "Tennisplätze"
+                    },
+                    "5": {
+                        "question": "Badmintonfelder"
                     }
                 }
             }
@@ -10005,6 +10021,10 @@
                         "text": "Öffne Deine Einstellungen auf OpenStreetMap.org"
                     }
                 }
+            },
+            "show_crosshair": {
+                "question": "Soll ein Fadenkreuz in der Mitte des Bildschirms angezeigt werden?",
+                "questionHint": "Dies kann dazu beitragen, ein neues Element genau zu positionieren"
             },
             "show_debug": {
                 "mappings": {

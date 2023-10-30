@@ -18,7 +18,7 @@
     "zh_Hans": "Open Artwork Map",
     "fil": "Open Artwork Map",
     "da": "Åbn illustrationskort",
-    "cs": "Umělecké dílo",
+    "cs": "Umělecká díla",
     "pa_PK": "آزاد کلاکاری نقشہ",
     "zgh": "ⵕⵥⵎ ⵜⴰⴽⴰⵕⴹⴰ ⵏ ⵜⵡⵓⵔⵉ ⵜⴰⵏⴰⵥⵓⵕⵜ",
     "es": "Obras de arte",
@@ -44,7 +44,8 @@
     "da": "Et åbent kort over statuer, buster, graffitis og andre kunstværker over hele verden",
     "cs": "Otevřená mapa soch, bust, graffiti a dalších uměleckých děl po celém světě",
     "zgh": "ⵢⴰⵜ ⵜⴽⴰⵕⴹⴰ ⵉⵕⵥⵎⵏ ⵅⴼ ⵉⵙⴼⵔⵉⵙⵏ, ⵉⵖⵔⴰⵙⵏ ⴷ ⵜⵡⵓⵔⵉⵡⵉⵏ ⵜⵉⵏⴰⵥⵓⵕⵉⵏ ⵢⴰⴹⵏⵉⵏ ⴳ ⵓⵎⴰⴹⴰⵍ",
-    "eu": "Estatuen, bustoen, graffitien eta mundu osoko beste artelan batzuen mapa irekia"
+    "eu": "Estatuen, bustoen, graffitien eta mundu osoko beste artelan batzuen mapa irekia",
+    "pt_BR": "Um mapa aberto de estátuas, bustos, grafites e outras obras de arte em todo o mundo"
   },
   "icon": "./assets/themes/artwork/artwork.svg",
   "startZoom": 12,

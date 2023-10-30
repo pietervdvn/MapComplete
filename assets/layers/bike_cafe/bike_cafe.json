@@ -134,7 +134,8 @@
         "zh_Hant": "這個單車咖啡廳有提供給任何人都能使用的單車打氣甬嗎？",
         "da": "Tilbyder denne cykelcafé en cykelpumpe til brug for alle?",
         "cs": "Nabízí tato cyklistická kavárna vzduchový kompresor na kolo k použití pro kohokoli?",
-        "ca": "Aquest cafè ciclista ofereix una bomba de bicicletes per a qualsevol persona?"
+        "ca": "Aquest cafè ciclista ofereix una bomba de bicicletes per a qualsevol persona?",
+        "pt_BR": "Esse café para ciclistas oferece uma bomba de ar para qualquer um usar?"
       },
       "mappings": [
         {
@@ -151,7 +152,8 @@
             "ru": "В этом велосипедном кафе есть велосипедный насос для всеобщего использования",
             "da": "Denne cykelcafé tilbyder en cykelpumpe til enhver",
             "cs": "Tato cyklistická kavárna nabízí vzduchový kompresor na kolo pro každého",
-            "ca": "Aquest cafè ciclista ofereix una bomba per a bicicletes per a qualsevol persona"
+            "ca": "Aquest cafè ciclista ofereix una bomba per a bicicletes per a qualsevol persona",
+            "pt_BR": "Esse café para ciclistas oferece uma bomba de ar para todos"
           }
         },
         {
@@ -168,7 +170,8 @@
             "ru": "В этом велосипедном кафе нет велосипедного насоса для всеобщего использования",
             "da": "Denne cykelcafé tilbyder ikke en cykelpumpe til nogen",
             "cs": "Tato cyklistická kavárna nenabízí vzduchový kompresor na kolo",
-            "ca": "Aquest cafè ciclista no ofereix una bomba per a bicicletes per a qualsevol persona"
+            "ca": "Aquest cafè ciclista no ofereix una bomba per a bicicletes per a qualsevol persona",
+            "pt_BR": "Esse café para ciclistas não oferece uma bomba de ar para ninguém"
           }
         }
       ]
@@ -362,7 +365,8 @@
     "da": "En cykelcafé er en café rettet mod cyklister, for eksempel med tjenester som en pumpe, med masser af cykelrelateret dekoration, o.s.v",
     "fr": "Un vélo café est un café à destination des cyclistes avec, par exemple, des services tels qu’une pompe, et de nombreuses décorations liées aux vélos, etc.",
     "cs": "Cyklokavárna je kavárna zaměřená na cyklisty, například se službami, jako je pumpa, se spoustou výzdoby související s jízdními koly, …",
-    "ca": "Un cafè ciclista és un cafè enfocat a ciclistes, per exemple, amb serveis com una manxa, amb molta decoració relacionada amb el ciclisme, …"
+    "ca": "Un cafè ciclista és un cafè enfocat a ciclistes, per exemple, amb serveis com una manxa, amb molta decoració relacionada amb el ciclisme, …",
+    "pt_BR": "Um café para ciclistas é um café direcionado aos ciclistas, por exemplo, com serviços como uma bomba de ar, muita decoração relacionada a bicicletas, …"
   },
   "deletion": true
 }

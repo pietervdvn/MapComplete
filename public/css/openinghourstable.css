@@ -47,6 +47,10 @@
     background: repeating-linear-gradient(-65deg, var(--background-color) 0 4.8px, var(--subtle-detail-color) 7px)
 }
 
+.oh-timecell-selected.oh-timecell-5:not(.oh-timecell-half), .oh-timecell-selected.oh-timecell-6:not(.oh-timecell-half) {
+    background: repeating-linear-gradient(-65deg, var(--catch-detail-color) 0 4.8px, var(--subtle-detail-color) 7px)
+}
+
 .oh-timecell-half {
     border-bottom: 1px solid #ddd;
     background: var(--subtle-detail-color);

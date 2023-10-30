@@ -10,7 +10,8 @@
     "id": "Sudut pandang",
     "eo": "Vidpunkto",
     "ca": "Mirador",
-    "da": "Udsigtspunkt"
+    "da": "Udsigtspunkt",
+    "cs": "Vyhlídka"
   },
   "description": {
     "en": "A nice viewpoint or nice view. Ideal to add an image if no other category fits",
@@ -38,7 +39,8 @@
         "ru": "Смотровая площадка",
         "it": "una punto panoramico",
         "id": "Sudut pandang",
-        "ca": "un mirador"
+        "ca": "un mirador",
+        "cs": "vyhlídka"
       },
       "tags": [
         "tourism=viewpoint"
@@ -56,7 +58,8 @@
       "id": "Sudut pandang",
       "eo": "Vidpunkto",
       "ca": "Mirador",
-      "da": "Udsigtspunkt"
+      "da": "Udsigtspunkt",
+      "cs": "Vyhlídka"
     }
   },
   "tagRenderings": [
@@ -72,7 +75,8 @@
         "id": "Apakah Anda ingin menambahkan deskripsi?",
         "es": "¿Quieres añadir una descripción?",
         "da": "Ønsker du at tilføje en beskrivelse?",
-        "ca": "Vols afegir una descripció?"
+        "ca": "Vols afegir una descripció?",
+        "cs": "Chcete přidat popis?"
       },
       "render": "{description}",
       "freeform": {

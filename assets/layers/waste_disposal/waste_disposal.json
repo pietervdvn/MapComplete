@@ -58,7 +58,8 @@
         "id": "tempat pembuangan sampahh",
         "da": "en affaldsbeholder",
         "ca": "un contenidor de basura",
-        "cs": "koš na odpadky"
+        "cs": "koš na odpadky",
+        "pl": "kosz na śmieci"
       },
       "tags": [
         "amenity=waste_disposal"
@@ -84,7 +85,8 @@
         "en": "What kind of waste disposal bin is this?",
         "de": "Was für ein Abfalleimer ist das?",
         "ca": "Quin tipus de contenidor de brossa és aquest?",
-        "cs": "Co je to za odpadkový koš?"
+        "cs": "Co je to za odpadkový koš?",
+        "pl": "Co to za pojemnik na śmieci?"
       },
       "mappings": [
         {
@@ -102,7 +104,8 @@
             "en": "This is actually a recycling container",
             "de": "Dies ist eigentlich ein Recyclingcontainer",
             "ca": "En realitat es tracta d'un contenidor de reciclatge",
-            "cs": "To je vlastně recyklační kontejner"
+            "cs": "To je vlastně recyklační kontejner",
+            "pl": "W rzeczywistości jest to pojemnik do recyklingu"
           },
           "addExtraTags": [
             "recycling_type=container"
@@ -130,7 +133,8 @@
         "id": "Siapa yang bisa menggunakan tempat sampah ini?",
         "da": "Hvem kan bruge denne affaldsbeholder?",
         "ca": "Qui pot utilitzar aquest contenidor de brossa?",
-        "cs": "Kdo může používat tento koš na odpadky?"
+        "cs": "Kdo může používat tento koš na odpadky?",
+        "pl": "Kto może korzystać z tego pojemnika na odpady?"
       },
       "freeform": {
         "key": "access",
@@ -147,7 +151,8 @@
             "id": "Tempat sampah ini bisa digunakan oleh siapa saja",
             "da": "Denne skraldespand kan bruges af alle",
             "ca": "Aquest contenidor es pot utilitzat per qualsevol",
-            "cs": "Tento koš může používat kdokoli"
+            "cs": "Tento koš může používat kdokoli",
+            "pl": "Z tego pojemnika może korzystać każdy"
           }
         },
         {
@@ -160,7 +165,8 @@
             "id": "Tempat sampah ini bersifat pribadi",
             "da": "Denne skraldespand er privat",
             "ca": "Aquest contenidor és privat",
-            "cs": "Tento koš je soukromý"
+            "cs": "Tento koš je soukromý",
+            "pl": "Ten kosz jest prywatny"
           }
         },
         {
@@ -173,7 +179,8 @@
             "id": "Tempat sampah ini hanya untuk penghuni",
             "da": "Denne skraldespand er kun for beboere",
             "ca": "Aquest contenidor és només per als residents",
-            "cs": "Tento koš je určen pouze pro obyvatele"
+            "cs": "Tento koš je určen pouze pro obyvatele",
+            "pl": "Ten kosz jest przeznaczony wyłącznie dla mieszkańców"
           }
         }
       ]
@@ -188,7 +195,8 @@
         "id": "Di manakah lokasi kontainer ini?",
         "da": "Hvor er denne container placeret?",
         "ca": "On es troba aquest contenidor?",
-        "cs": "Kde se nachází tento kontejner?"
+        "cs": "Kde se nachází tento kontejner?",
+        "pl": "Gdzie znajduje się ten kontener?"
       },
       "mappings": [
         {
@@ -201,7 +209,8 @@
             "id": "Ini adalah kontainer bawah tanah",
             "da": "Dette er en underjordisk container",
             "ca": "Aquest contenidor està soterrat",
-            "cs": "Jedná se o podzemní kontejner"
+            "cs": "Jedná se o podzemní kontejner",
+            "pl": "To jest podziemny kontener"
           }
         },
         {
@@ -214,7 +223,8 @@
             "id": "Kontainer ini terletak di dalam ruangan",
             "da": "Denne container er placeret indendørs",
             "ca": "Aquest contenidor està situat a l'interior",
-            "cs": "Tento kontejner se nachází uvnitř"
+            "cs": "Tento kontejner se nachází uvnitř",
+            "pl": "Kontener ten znajduje się w pomieszczeniu zamkniętym"
           }
         },
         {
@@ -227,7 +237,8 @@
             "id": "Kontainer ini terletak di luar ruangan",
             "da": "Denne container er placeret udendørs",
             "ca": "Aquest contenidor està situat a l'aire lliure",
-            "cs": "Tento kontejner se nachází venku"
+            "cs": "Tento kontejner se nachází venku",
+            "pl": "Kontener ten znajduje się na zewnątrz"
           }
         }
       ]

@@ -26,7 +26,8 @@
       "de": "Ort zur Vogelbeobachtung",
       "fr": "Lieu d’observation d’oiseaux",
       "da": "Plads til fugleobservation",
-      "ca": "Lloc d'observació d'ocells"
+      "ca": "Lloc d'observació d'ocells",
+      "cs": "Místo pozorování ptáků"
     },
     "mappings": [
       {
@@ -58,7 +59,8 @@
           "da": "Fugleskjul {name}",
           "de": "Vogelbeobachtungsplatz {name}",
           "fr": "Observatoire ornithologique {name}",
-          "ca": "Observatori d'Ocells {name}"
+          "ca": "Observatori d'Ocells {name}",
+          "cs": "Ptačí pozorovatelna {name}"
         }
       },
       {
@@ -73,7 +75,8 @@
           "de": "Vogelversteck {name}",
           "fr": "Camouflage d’observation ornithologique {name}",
           "da": "Fugletårn {name}",
-          "ca": "Observatori d'ocells {name}"
+          "ca": "Observatori d'ocells {name}",
+          "cs": "Ptačí pozorovatelna {name}"
         }
       }
     ]
@@ -96,7 +99,8 @@
         "nl": "Is dit een kijkwand of kijkhut?",
         "de": "Ist dies nur ein Sichtschutz oder ein überdachter Unterstand zur Vogelbeobachtung?",
         "fr": "S’agit-il d’un camouflage ou d’un abris d’observation ?",
-        "da": "Er dette en fugletårn eller et fuglekiggerskjul?"
+        "da": "Er dette en fugletårn eller et fuglekiggerskjul?",
+        "cs": "Jedná se o ptačí zástěnu nebo o úkryt pro pozorování ptáků?"
       },
       "mappings": [
         {
@@ -113,7 +117,8 @@
             "de": "Sichtschutz zur Vogelbeobachtung",
             "fr": "Camouflage d’observation ornithologique",
             "da": "Fugletårn",
-            "ca": "Observatori d'ocells"
+            "ca": "Observatori d'ocells",
+            "cs": "Ptačí pozorovatelna"
           }
         },
         {
@@ -164,7 +169,8 @@
             "nl": "Vogelkijkhut",
             "de": "Unterstand zur Vogelbeobachtung",
             "fr": "Abris d’observation ornithologique",
-            "da": "Fuglekigger skjul"
+            "da": "Fuglekigger skjul",
+            "cs": "Úkryt pro pozorování ptáků"
           },
           "hideInAnswer": true
         }
@@ -178,7 +184,8 @@
         "da": "Er dette fugleskjul tilgængeligt for kørestolsbrugere?",
         "de": "Ist der Ort rollstuhlgerecht gestaltet?",
         "fr": "Cet observatoire ornithologique est-il accessible en chaise roulante ?",
-        "ca": "Aquest observatori d'ocells és accessible per als usuaris de cadira de rodes?"
+        "ca": "Aquest observatori d'ocells és accessible per als usuaris de cadira de rodes?",
+        "cs": "Je tato ptačí pozorovatelna přístupná pro vozíčkáře?"
       },
       "mappings": [
         {
@@ -210,7 +217,8 @@
             "da": "En kørestolsbruger kan sagtens bruge dette fugleskjul",
             "de": "Der Ort ist rollstuhlgerecht gestaltet",
             "fr": "Cet observatoire ornithologique est facilement accessible en chaise roulante",
-            "ca": "Una cadira de rodes pot utilitzar fàcilment aquest observador d'ocells"
+            "ca": "Una cadira de rodes pot utilitzar fàcilment aquest observador d'ocells",
+            "cs": "Invalidní vozík může snadno používat tuto ptačí pozorovatelnu"
           }
         },
         {
@@ -225,7 +233,8 @@
             "da": "Dette fugleskjul kan nås med kørestol, men det er ikke nemt",
             "de": "Der Ort ist nur eingeschränkt rollstuhlgerecht gestaltet",
             "fr": "Cet observatoire ornithologique est accessible en chaise roulante mais difficilement",
-            "ca": "Aquest observatori d'ocells és accessible amb cadira de rodes, però no és fàcil"
+            "ca": "Aquest observatori d'ocells és accessible amb cadira de rodes, però no és fàcil",
+            "cs": "Tato ptačí pozorovatelna je dosažitelná na invalidním vozíku, ale není to snadné"
           }
         },
         {
@@ -269,7 +278,8 @@
         "da": "Hvem driver dette fugleskjul?",
         "de": "Wer betreibt diesen Ort zur Vogelbeobachtung?",
         "fr": "Qui opère cet observatoire ornithologique ?",
-        "ca": "Qui gestiona aquest observatori d'ocells?"
+        "ca": "Qui gestiona aquest observatori d'ocells?",
+        "cs": "Kdo provozuje tuto ptačí pozorovatelnu?"
       },
       "mappings": [
         {

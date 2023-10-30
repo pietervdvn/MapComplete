@@ -15,7 +15,8 @@
     "en": "A single climbing route and its properties. Some properties are derived from the containing features",
     "de": "Eine einzelne Kletterroute und ihre Eigenschaften. Einige Eigenschaften werden von übergeordneten Objekten abgeleitet",
     "nl": "Een klimroute en de eigenschappen van deze klimroute. Sommige eigenschappen worden afgeleid van omliggende kaart-objecten",
-    "fr": "Une seule voie d'escalade et ses propriétés. Certaines propriétés sont dérivées des objets qui les contiennent"
+    "fr": "Une seule voie d'escalade et ses propriétés. Certaines propriétés sont dérivées des objets qui les contiennent",
+    "cs": "Jedna lezecká cesta a její vlastnosti. Některé vlastnosti jsou odvozeny z obsahujících prvků"
   },
   "minzoom": 18,
   "source": {
@@ -145,7 +146,8 @@
         "it": "Qual è la difficoltà di questa via di arrampicata nel sistema francese/belga?",
         "fr": "Quelle est la difficulté de cette voie selon le système franco-belge ?",
         "de": "Wie hoch ist der Schwierigkeitsgrad dieser Kletterroute nach dem französisch/belgischen System?",
-        "ca": "Quin és el grau d'aquesta via d'escalada segons el sistema francès/belga?"
+        "ca": "Quin és el grau d'aquesta via d'escalada segons el sistema francès/belga?",
+        "cs": "Jaký je stupeň této lezecké cesty podle francouzského/belgického systému?"
       },
       "render": {
         "de": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems",
@@ -153,7 +155,8 @@
         "nl": "De klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem",
         "ja": "フランス/ベルギーのランク評価システムによると、{climbing:grade:french}の困難度です",
         "it": "Il grado di difficoltà è {climbing:grade:french} nel sistema francese/belga",
-        "fr": "Selon le système franco-belge, la difficulté de cette voie est de {climbing:grade:french}"
+        "fr": "Selon le système franco-belge, la difficulté de cette voie est de {climbing:grade:french}",
+        "cs": "Stupeň je {climbing:grade:french} podle francouzského/belgického systému"
       },
       "freeform": {
         "key": "climbing:grade:french"
@@ -167,7 +170,8 @@
         "fr": "Combien de prises cette voie possède avant d’atteindre la moulinette ?",
         "de": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?",
         "it": "Quanti bulloni sono presenti in questo percorso prima di arrivare alla moulinette?",
-        "nl": "Hoeveel bouten heeft deze route voordat je het relay bereikt?"
+        "nl": "Hoeveel bouten heeft deze route voordat je het relay bereikt?",
+        "cs": "Kolik šroubů má tato cesta před dosažením kotvy?"
       },
       "render": {
         "en": "This route has {climbing:bolts} bolts <div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>",
@@ -192,7 +196,8 @@
             "fr": "Cette voie n’a pas de prises",
             "de": "Auf dieser Kletterroute sind keine Haken vorhanden",
             "it": "In questo percorso non sono presenti bulloni",
-            "nl": "Deze route heeft geen bouten"
+            "nl": "Deze route heeft geen bouten",
+            "cs": "Tato trasa není vyšroubovaná"
           },
           "addExtraTags": [
             "climbing:bolts="
@@ -208,7 +213,8 @@
         "fr": "Le type de roche est {_embedding_features_with_rock:rock} selon <a href='#{_embedding_features_with_rock:id}'>le mur</a>",
         "it": "Il tipo di roccia è {_embedding_features_with_rock:rock} come dichiarato sul <a href='#{_embedding_features_with_rock:id}'>muro circostante</a>",
         "de": "Der Gesteinstyp ist {_embedding_features_with_rock:rock}, wie <a href='#{_embedding_features_with_rock:id}'>auf dem umgebenden Felsen angegeben</a>",
-        "nl": "De steensoort is {_embedding_features_with_rock:rock} zoals vermeld op <a href='#{_embedding_features_with_rock:id}'>de omliggende klimzone</a>"
+        "nl": "De steensoort is {_embedding_features_with_rock:rock} zoals vermeld op <a href='#{_embedding_features_with_rock:id}'>de omliggende klimzone</a>",
+        "cs": "Typ skály je {_embedding_features_with_rock:rock}, jak je uvedeno <a href='#{_embedding_features_with_rock:id}'>na okolní skalní stěně</a>"
       },
       "freeform": {
         "key": "_embedding_features_with_rock:rock"

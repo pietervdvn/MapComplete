@@ -68,7 +68,11 @@ export class ImageUploadManager {
      * @param tagsStore The tags of the feature
      * @param targetKey Use this key to save the attribute under. Default: 'image'
      */
-    public async uploadImageAndApply(file: File, tagsStore: UIEventSource<OsmTags>, targetKey?: string): Promise<void> {
+    public async uploadImageAndApply(
+        file: File,
+        tagsStore: UIEventSource<OsmTags>,
+        targetKey?: string
+    ): Promise<void> {
         const sizeInBytes = file.size
         const tags = tagsStore.data
         const featureId = <OsmId>tags.id
@@ -98,7 +102,13 @@ export class ImageUploadManager {
         ].join("\n")
 
         console.log("Upload done, creating ")
-        const action = await this.uploadImageWithLicense(featureId, title, description, file, targetKey)
+        const action = await this.uploadImageWithLicense(
+            featureId,
+            title,
+            description,
+            file,
+            targetKey
+        )
         if (!isNaN(Number(featureId))) {
             // This is a map note
             const url = action._url

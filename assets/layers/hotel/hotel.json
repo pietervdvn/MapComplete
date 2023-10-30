@@ -7,14 +7,16 @@
     "pa_PK": "ہوٹل",
     "ru": "Гостиницы",
     "fr": "Hôtels",
-    "ca": "Hotels"
+    "ca": "Hotels",
+    "cs": "Hotely"
   },
   "description": {
     "en": "Layer showing all hotels",
     "nl": "Laag die alle hotels toont",
     "de": "Eine Ebene mit Hotels",
     "fr": "Couche affichant les hôtels",
-    "ca": "Capa que mostra tots els hotels"
+    "ca": "Capa que mostra tots els hotels",
+    "cs": "Vrstva zobrazující všechny hotely"
   },
   "source": {
     "osmTags": "tourism=hotel"
@@ -27,7 +29,8 @@
       "de": "Hotel",
       "pa_PK": "ہوٹل",
       "fr": "Hôtel",
-      "ca": "Hotel"
+      "ca": "Hotel",
+      "cs": "Hotel"
     },
     "mappings": [
       {
@@ -37,7 +40,8 @@
           "nl": "Hotel {name}",
           "de": "Hotel {name}",
           "fr": "Hôtel {name}",
-          "ca": "Hotel {name}"
+          "ca": "Hotel {name}",
+          "cs": "Hotel {name}"
         }
       }
     ]
@@ -50,7 +54,8 @@
         "de": "ein Hotel",
         "ca": "un hotel",
         "ru": "гостиница",
-        "fr": "un hôtel"
+        "fr": "un hôtel",
+        "cs": "hotel"
       },
       "tags": [
         "tourism=hotel"
@@ -81,7 +86,8 @@
           "de": "Name des Hotels",
           "ru": "Название гостиницы",
           "fr": "Nom de l'hôtel",
-          "ca": "Nom de l'hotel"
+          "ca": "Nom de l'hotel",
+          "cs": "Název hotelu"
         }
       },
       "question": {
@@ -90,14 +96,16 @@
         "de": "Wie lautet der Name des Hotels?",
         "ru": "Как называется эта гостиница?",
         "fr": "Quel est le nom de cet hôtel ?",
-        "ca": "Quin és el nom d'aquest hotel?"
+        "ca": "Quin és el nom d'aquest hotel?",
+        "cs": "Jak se tento hotel jmenuje?"
       },
       "render": {
         "en": "This hotel is called {name}",
         "nl": "Dit hotel heet {name}",
         "de": "Der Name des Hotels lautet {name}",
         "ca": "Aquest hotel es diu {name}",
-        "fr": "Cet hôtel s'appelle {name}"
+        "fr": "Cet hôtel s'appelle {name}",
+        "cs": "Tento hotel se jmenuje {name}"
       }
     },
     "phone",

@@ -8,7 +8,8 @@
     "ru": "Книжные шкафы",
     "it": "Microbiblioteche",
     "hu": "Könyvespolcok",
-    "ca": "Bústies per llibres"
+    "ca": "Bústies per llibres",
+    "cs": "Knihobudky"
   },
   "description": {
     "en": "A streetside cabinet with books, accessible to anyone",
@@ -34,7 +35,8 @@
       "it": "Microbiblioteca",
       "hu": "Könyvespolc",
       "ca": "Bústia per llibres",
-      "pa_PK": "کتاباں دی الماری"
+      "pa_PK": "کتاباں دی الماری",
+      "cs": "Knihobudka"
     },
     "mappings": [
       {
@@ -47,7 +49,8 @@
           "ru": "Общественный книжный шкаф <i>{name}</i>",
           "it": "Microbiblioteca pubblica <i>{name}</i>",
           "hu": "A nyilvános könyvespolc neve: <i>{name}</i>",
-          "ca": "Prestatgeria pública <i>{name}</i>"
+          "ca": "Prestatgeria pública <i>{name}</i>",
+          "cs": "Veřejná knihobudka <i>{name}</i>"
         }
       }
     ]
@@ -62,7 +65,8 @@
         "ru": "Книжный шкаф",
         "it": "una microbiblioteca",
         "hu": "Könyvespolc",
-        "ca": "una bústia per a llibres"
+        "ca": "una bústia per a llibres",
+        "cs": "knihobudka"
       },
       "tags": [
         "amenity=public_bookcase"
@@ -80,7 +84,8 @@
         "ru": "Название книжного шкафа — {name}",
         "it": "Questa microbiblioteca si chiama {name}",
         "hu": "Ennek a könyvespolcnak a neve: {name}",
-        "ca": "El nom d'aquesta prestatgeria és {name}"
+        "ca": "El nom d'aquesta prestatgeria és {name}",
+        "cs": "Název této knihobudky je {name}"
       },
       "question": {
         "en": "What is the name of this public bookcase?",
@@ -91,7 +96,7 @@
         "it": "Come si chiama questa microbiblioteca pubblica?",
         "hu": "Mi a neve ennek a nyilvános könyvespolcnak?",
         "ca": "Com es diu aquesta prestatgeria pública?",
-        "cs": "Jak se jmenuje tato veřejná knihovna?"
+        "cs": "Jak se jmenuje tato knihobudka?"
       },
       "freeform": {
         "key": "name",
@@ -114,7 +119,7 @@
             "it": "Questa microbiblioteca non ha un nome proprio",
             "hu": "Ennek a könyvespolcnak nincs neve",
             "ca": "Aquesta prestatgeria no té un nom",
-            "cs": "Tato knihovna nemá jméno"
+            "cs": "Tato knihobudka nemá jméno"
           }
         }
       ],
@@ -129,7 +134,8 @@
         "it": "Questa microbiblioteca può contenere fino a {capacity} libri",
         "ru": "{capacity} книг помещается в этот книжный шкаф",
         "hu": "Ezen a könyvespolcon {capacity} könyv fér el",
-        "ca": "Caben {capacity} llibres en aquesta prestatgeria"
+        "ca": "Caben {capacity} llibres en aquesta prestatgeria",
+        "cs": "{capacity} knih se vejde do této knihobudky"
       },
       "question": {
         "en": "How many books fit into this public bookcase?",
@@ -140,7 +146,7 @@
         "it": "Quanti libri può contenere questa microbiblioteca?",
         "hu": "Hány könyv fér el ezen a nyilvános könyvespolcon?",
         "ca": "Quants llibres caben en aquesta prestatgeria pública?",
-        "cs": "Kolik knih se vejde do této veřejné knihovny?"
+        "cs": "Kolik knih se vejde do této veřejné knihobudky?"
       },
       "freeform": {
         "key": "capacity",
@@ -160,7 +166,7 @@
         "ru": "Какие книги можно найти в этом общественном книжном шкафу?",
         "hu": "Milyen fajta könyvek találhatók ezen a közösségi könyvespolcon?",
         "ca": "Quins tipus de llibres pots trobar a aquesta prestatgeria pública?",
-        "cs": "Jaké knihy najdete v této veřejné knihovně?"
+        "cs": "Jaké knihy najdete v této veřejné knihobudce?"
       },
       "render": {
         "nl": "Deze plaats serveert vooral {books}",
@@ -218,7 +224,7 @@
         "it": "Questa microbiblioteca si trova all'aperto?",
         "hu": "A szabadban van-e ez a könyvespolc?",
         "ca": "Aquesta prestatgeria es troba a l'exterior?",
-        "cs": "Je tato knihovna umístěna venku?"
+        "cs": "Je tato knihobudka umístěna venku?"
       },
       "mappings": [
         {
@@ -230,7 +236,7 @@
             "it": "Questa microbiblioteca si trova al chiuso",
             "hu": "Ez a könyvespolc beltérben található",
             "ca": "Aquesta prestatgeria es troba a l'interior",
-            "cs": "Tato knihovna je umístěna v interiéru"
+            "cs": "Tato knihobudka je umístěna v interiéru"
           },
           "if": "indoor=yes"
         },
@@ -243,7 +249,7 @@
             "it": "Questa microbiblioteca si trova all'aperto",
             "hu": "Ez a könyvespolc a szabadban van",
             "ca": "Aquesta prestatgeria es troba a l'exterior",
-            "cs": "Tato knihovna se nachází venku"
+            "cs": "Tato knihobudka se nachází venku"
           },
           "if": "indoor=no"
         },
@@ -256,7 +262,7 @@
             "it": "Questa microbiblioteca si trova all'aperto",
             "hu": "Ez a könyvszekrény a szabadban van",
             "ca": "La prestatgeria està ubicada a l'exterior",
-            "cs": "Tato knihovna se nachází venku"
+            "cs": "Tato knihobudka se nachází venku"
           },
           "if": "indoor=",
           "hideInAnswer": true
@@ -274,7 +280,7 @@
         "ru": "Имеется ли свободный доступ к этому общественному книжному шкафу?",
         "hu": "Szabadon hozzáférhető-e ez a közösségi könyvespolc?",
         "ca": "Aquesta prestatgeria pública és de lliure accés?",
-        "cs": "Je tato veřejná knihovna volně přístupná?"
+        "cs": "Je tato veřejná knihobudka volně přístupná?"
       },
       "condition": "indoor=yes",
       "mappings": [
@@ -317,7 +323,8 @@
         "fr": "Qui entretien cette microbibliothèque ?",
         "it": "Chi mantiene questa microbiblioteca?",
         "hu": "Ki tartja fenn ezt a nyilvános könyvespolcot?",
-        "ca": "Qui gestiona aquesta prestatgeria pública?"
+        "ca": "Qui gestiona aquesta prestatgeria pública?",
+        "cs": "Kdo tuto veřejnou knihobudku spravuje?"
       },
       "render": {
         "en": "Operated by {operator}",
@@ -326,7 +333,8 @@
         "fr": "Entretenue par {operator}",
         "it": "È gestita da {operator}",
         "hu": "Üzemeltető: {operator}",
-        "ca": "Gestionant per {operator}"
+        "ca": "Gestionant per {operator}",
+        "cs": "Provozuje {operator}"
       },
       "freeform": {
         "type": "string",
@@ -343,7 +351,7 @@
         "it": "Questa microbiblioteca fa parte di una rete?",
         "hu": "Része-e egy nagyobb hálózatnak ez a nyilvános könyvespolc?",
         "ca": "Aquesta prestatgeria pública forma part d'una xarxa més gran?",
-        "cs": "Je tato veřejná knihovna součástí větší sítě?"
+        "cs": "Je tato veřejná knihobudka součástí větší sítě?"
       },
       "render": {
         "en": "This public bookcase is part of {brand}",
@@ -352,7 +360,8 @@
         "fr": "Cette microbibliothèque fait partie du groupe {brand}",
         "it": "Questa microbiblioteca fa parte di {brand}",
         "hu": "Ez a nyilvános könyvespolc a(z) {brand} része",
-        "ca": "Aquesta prestatgeria pública forma part de {brand}"
+        "ca": "Aquesta prestatgeria pública forma part de {brand}",
+        "cs": "Tato veřejná knihobudka je součástí {brand}"
       },
       "condition": "ref=",
       "freeform": {
@@ -397,7 +406,7 @@
             "it": "Questa microbiblioteca non fa parte di una rete",
             "hu": "Ez a nyilvános könyvespolc nem része egy nagyobb hálózatnak",
             "ca": "Aquesta prestatgeria pública no és part d'una xarxa més gran",
-            "cs": "Tato veřejná knihovna není součástí větší sítě"
+            "cs": "Tato veřejná knihobudka není součástí větší sítě"
           }
         }
       ],
@@ -410,7 +419,8 @@
         "de": "Die Referenznummer dieses öffentlichen Bücherschranks innerhalb {brand} lautet {ref}",
         "fr": "Cette microbibliothèque du réseau {brand} possède le numéro {ref}",
         "it": "Il numero identificativo di questa microbiblioteca nella rete {brand} è {ref}",
-        "hu": "A(z) {brand} márkanéven belül ennek a nyilvános könyvespolcnak az azonosító száma: {ref}"
+        "hu": "A(z) {brand} márkanéven belül ennek a nyilvános könyvespolcnak az azonosító száma: {ref}",
+        "cs": "Referenční číslo této veřejné knihobudky v rámci {brand} je {ref}"
       },
       "question": {
         "en": "What is the reference number of this public bookcase?",
@@ -419,7 +429,8 @@
         "fr": "Quelle est le numéro de référence de cette microbibliothèque ?",
         "it": "Qual è il numero identificativo di questa microbiblioteca?",
         "hu": "Mi az azonosító száma ennek a nyilvános könyvespolcnak?",
-        "ca": "Quin és el número de referència d'aquesta prestatgeria pública?"
+        "ca": "Quin és el número de referència d'aquesta prestatgeria pública?",
+        "cs": "Jaké je referenční číslo této veřejné knihobudky?"
       },
       "condition": "brand~*",
       "freeform": {
@@ -434,7 +445,8 @@
             "fr": "Cette microbibliothèque ne fait pas partie d'un réseau/groupe",
             "it": "Questa microbiblioteca non fa parte di una rete",
             "hu": "Ez a könyvespolc nem része egy nagyobb hálózatnak",
-            "ca": "Aquesta prestatgeria no forma part d'una xarxa més gran"
+            "ca": "Aquesta prestatgeria no forma part d'una xarxa més gran",
+            "cs": "Tato knihobudka není součástí větší sítě"
           },
           "if": {
             "and": [
@@ -456,7 +468,8 @@
         "it": "Quando è stata inaugurata questa microbiblioteca?",
         "ru": "Когда был установлен этот общественный книжный шкаф?",
         "hu": "Mikor állították fel ezt a nyilvános könyvespolcot?",
-        "ca": "Quan es va instal·lar aquesta prestatgeria pública?"
+        "ca": "Quan es va instal·lar aquesta prestatgeria pública?",
+        "cs": "Kdy byla tato veřejná knihobudka instalována?"
       },
       "render": {
         "en": "Installed on {start_date}",
@@ -466,7 +479,8 @@
         "it": "È stata inaugurata il {start_date}",
         "ru": "Установлен {start_date}",
         "hu": "Telepítés dátuma: {start_date}",
-        "ca": "Instal·lat el dia {start_date}"
+        "ca": "Instal·lat el dia {start_date}",
+        "cs": "Instalováno dne {start_date}"
       },
       "freeform": {
         "key": "start_date",
@@ -487,7 +501,8 @@
             "ru": "Более подробная информация на сайте",
             "it": "Maggiori informazioni sul sito web",
             "hu": "További információ ezen a weboldalon",
-            "ca": "Més informació al web"
+            "ca": "Més informació al web",
+            "cs": "Více informací na webových stránkách"
           }
         }
       },
@@ -499,7 +514,8 @@
         "it": "C'è un sito web con maggiori informazioni su questa microbiblioteca?",
         "ru": "Есть ли веб-сайт с более подробной информацией об этом общественном книжном шкафе?",
         "hu": "Van-e olyan weboldal, ahol további információ található erről a nyilvános könyvespolcról?",
-        "ca": "Hi ha algun lloc web amb més informació sobre aquesta prestatgeria pública?"
+        "ca": "Hi ha algun lloc web amb més informació sobre aquesta prestatgeria pública?",
+        "cs": "Existuje webová stránka s dalšími informacemi o této veřejné knihobudce?"
       },
       "freeform": {
         "key": "website",

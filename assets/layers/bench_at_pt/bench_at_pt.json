@@ -155,7 +155,8 @@
         "da": "Hvilken slags bænk er dette?",
         "cs": "Co je to za lavičku?",
         "pt": "Que tipo de banco é este?",
-        "ca": "Quin tipus de banc és aquest?"
+        "ca": "Quin tipus de banc és aquest?",
+        "pt_BR": "Qual tipo de banco é esse?"
       },
       "mappings": [
         {
@@ -168,7 +169,8 @@
             "da": "Der er en normal siddebænk her",
             "es": "Hay un banco normal aquí",
             "cs": "Zde je normální lavička k sezení",
-            "ca": "Aquí hi ha un banc normal"
+            "ca": "Aquí hi ha un banc normal",
+            "pt_BR": "Há um banco comum, para sentar, aqui"
           }
         },
         {
@@ -184,9 +186,10 @@
             "zh_Hant": "站立長椅",
             "da": "Stå-op bænk",
             "es": "Banco de pié",
-            "cs": "Stojící lavička",
+            "cs": "Je zde lavička, o kterou se lze opřít",
             "ca": "Banc dempeus",
-            "pt": "banco de pé"
+            "pt": "banco de pé",
+            "pt_BR": "Banco para ficar em pé"
           }
         },
         {
@@ -200,7 +203,8 @@
             "da": "Der er ingen bænk her",
             "cs": "Zde není žádná lavička",
             "pt": "Não há nenhum banco aqui",
-            "ca": "Aquí no hi ha cap banc"
+            "ca": "Aquí no hi ha cap banc",
+            "pt_BR": "Não há banco aqui"
           }
         }
       ]
@@ -233,7 +237,8 @@
           "ca": "Aquesta para de bus no té un banc (mai n'ha tingut un o ha estat eliminat)",
           "cs": "Na této autobusové zastávce není lavička (nikdy zde nebyla nebo byla odstraněna)",
           "pt": "Este ponto de ônibus não tem banco (nunca houve ou foi removido)",
-          "pl": "Ten przystanek autobusowy nie ma ławki (nigdy jej nie było lub została usunięta)"
+          "pl": "Ten przystanek autobusowy nie ma ławki (nigdy jej nie było lub została usunięta)",
+          "pt_BR": "Essa parada de ônibus não tem um banco (nunca teve ou ele foi removido)"
         }
       }
     ],
@@ -248,7 +253,8 @@
           "ca": "Aquesta parada de bus no s'utilitza més",
           "cs": "Tato autobusová zastávka se již nepoužívá",
           "pt": "Este ponto de ônibus não é mais usado",
-          "pl": "Ten przystanek autobusowy nie jest już używany"
+          "pl": "Ten przystanek autobusowy nie jest już używany",
+          "pt_BR": "Essa parada de ônibus não é mais usada"
         }
       }
     ],
@@ -269,6 +275,7 @@
     "cs": "Vrstva zobrazující všechny zastávky veřejné dopravy, které mají lavičku",
     "ca": "Una capa que mostra totes les parades de transport públic que tenen bancs",
     "pt": "Uma camada mostrando todas as paradas de transporte público que possuem um banco",
-    "pl": "Warstwa pokazująca wszystkie przystanki transportu publicznego, które mają ławki"
+    "pl": "Warstwa pokazująca wszystkie przystanki transportu publicznego, które mają ławki",
+    "pt_BR": "Uma camada mostrando todas as paradas de transporte público que têm um banco"
   }
 }

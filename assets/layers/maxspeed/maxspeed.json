@@ -61,7 +61,8 @@
     "nl": "Toont de toegestane snelheid voor elke weg",
     "cs": "Zobrazuje povolenou rychlost pro každou silnici",
     "ca": "Mostra la velocitat permesa per a cada carretera",
-    "fr": "Affiche les vitesses autorisées sur toutes les routes"
+    "fr": "Affiche les vitesses autorisées sur toutes les routes",
+    "pl": "Pokazuje dozwoloną prędkość na każdej drodze"
   },
   "tagRenderings": [
     {
@@ -175,7 +176,8 @@
             "de": "km/h",
             "pa_PK": "ہر گھنٹے وچ کیلومیٹر",
             "ru": "км/ч",
-            "fr": "km/h"
+            "fr": "km/h",
+            "cs": "km/h"
           }
         },
         {
@@ -206,7 +208,8 @@
             "nl": "mph",
             "de": "mph",
             "pa_PK": "ہر گھنٹہ وچ میل",
-            "fr": "mph"
+            "fr": "mph",
+            "cs": "mph"
           }
         }
       ],

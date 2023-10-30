@@ -95,7 +95,8 @@
         "fr": "Combien coûte le service de nettoyage ?",
         "da": "Hvor meget koster det at bruge rengøringsservicen?",
         "cs": "Kolik stojí využívání služby mytí?",
-        "ca": "Molt costa utilitzar el servei de rentat?"
+        "ca": "Molt costa utilitzar el servei de rentat?",
+        "pt_BR": "Quanto custa para usar o serviço de limpeza?"
       },
       "render": {
         "en": "Using the cleaning service costs {service:bicycle:cleaning:charge}",
@@ -105,7 +106,8 @@
         "fr": "Le service de nettoyage coûte {service:bicycle:cleaning:charge}",
         "da": "Brug af rengøringsservice koster {service:bicycle:cleaning:charge}",
         "cs": "Využití služby mytí stojí {service:bicycle:cleaning:charge}",
-        "ca": "Utilitzar el servei de rentat costa {service:bicycle:cleaning:charge}"
+        "ca": "Utilitzar el servei de rentat costa {service:bicycle:cleaning:charge}",
+        "pt_BR": "Usar o serviço de limpeza custa {service:bicycle:cleaning:charge}"
       },
       "condition": {
         "and": [
@@ -131,7 +133,8 @@
             "fr": "Le service de nettoyage est gratuit",
             "da": "Rengøringsservicen er gratis at bruge",
             "cs": "Služba mytí je k dispozici zdarma",
-            "ca": "El servei de rentat és gratuït"
+            "ca": "El servei de rentat és gratuït",
+            "pt_BR": "O serviço de limpeza é grátis para usar"
           },
           "addExtraTags": [
             "service:bicycle:cleaning:charge="
@@ -152,7 +155,8 @@
             "fr": "Utilisation gratuite",
             "da": "Gratis at bruge",
             "cs": "Bezplatné používání",
-            "ca": "Debades"
+            "ca": "Debades",
+            "pt_BR": "Grátis para usar"
           },
           "hideInAnswer": true
         }
@@ -168,7 +172,8 @@
         "fr": "Combien cela coûte-t-il d'utiliser le service de nettoyage ?",
         "da": "Hvor meget koster det at bruge rengøringsservicen?",
         "cs": "Kolik stojí využívání služby mytí?",
-        "ca": "Molt costa utilitzar aquest servei de neteja?"
+        "ca": "Molt costa utilitzar aquest servei de neteja?",
+        "pt_BR": "Quanto custa para usar esse serviço de limpeza?"
       },
       "render": {
         "en": "Using the cleaning service costs {charge}",
@@ -178,7 +183,8 @@
         "fr": "L’utilisation du service de nettoyage coûte {charge}",
         "da": "Brug af rengøringsservice koster {charge}",
         "cs": "Využití služby mytí stojí {charge}",
-        "ca": "L'ús del servei de neteja costa {charge}"
+        "ca": "L'ús del servei de neteja costa {charge}",
+        "pt_BR": "Usar o serviço de limpeza custa {charge}"
       },
       "condition": {
         "or": [
@@ -203,7 +209,8 @@
             "fr": "Service de nettoyage gratuit",
             "da": "Gratis at bruge rengøringsservice",
             "cs": "Tato mycí služba je bezplatná",
-            "ca": "Aquest servei de neteja és gratuït"
+            "ca": "Aquest servei de neteja és gratuït",
+            "pt_BR": "Esse serviço de limpeza é grátis para usar"
           },
           "addExtraTags": [
             "charge="
@@ -217,7 +224,8 @@
             "es": "Este servicio de limpieza es de pago",
             "ca": "Hi ha un cost per utilitzar aquest servei de neteja",
             "de": "Dieser Reinigungsservice ist kostenpflichtig",
-            "cs": "Využití úklidové služby je zpoplatněno"
+            "cs": "Využití úklidové služby je zpoplatněno",
+            "pt_BR": "Há uma taxa para utilizar esse serviço de limpeza"
           }
         }
       ],
@@ -271,6 +279,7 @@
     "da": "Et lag med faciliteter, hvor man kan rengøre sin cykel",
     "fr": "Une couche affichant les lieux où l'on peut nettoyer son vélo",
     "cs": "Vrstva zobrazující zařízení, kde si můžete umýt kolo",
-    "ca": "Una capa que mostra les instal·lacions on pots netejar la teva bicicleta"
+    "ca": "Una capa que mostra les instal·lacions on pots netejar la teva bicicleta",
+    "pt_BR": "Uma camada que mostra instalações onde é possível limpar a sua bicicleta"
   }
 }

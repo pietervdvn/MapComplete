@@ -321,7 +321,8 @@
         "da": "Et cykelbibliotek har en samling cykler, som kan lånes",
         "cs": "Cyklistická půjčovna má k dispozici sbírku kol, která lze zapůjčit",
         "ca": "Una biblioteca de bicicletes té una col·lecció de bicicletes que es poden cedir",
-        "pt": "Uma \"biblioteca de bicicletas\" tem uma coleção de bicicletas que podem ser emprestadas"
+        "pt": "Uma \"biblioteca de bicicletas\" tem uma coleção de bicicletas que podem ser emprestadas",
+        "pt_BR": "Uma biblioteca de bicicletas tem uma coleção de bicicletas que podem ser emprestadas"
       }
     }
   ],

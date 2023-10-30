@@ -8,7 +8,8 @@
     "pa_PK": "کرب",
     "ru": "Бордюры",
     "pl": "Krawężniki",
-    "ca": "Vroades"
+    "ca": "Vroades",
+    "cs": "Obrubníky"
   },
   "description": {
     "en": "A layer showing kerbs.",
@@ -17,7 +18,8 @@
     "fr": "Un calque montrant les bordures.",
     "ru": "Слой, изображающий бордюры.",
     "pl": "Warstwa pokazująca krawężniki.",
-    "ca": "Una capa que mostra les vorades."
+    "ca": "Una capa que mostra les vorades.",
+    "cs": "Vrstva zobrazující obrubníky."
   },
   "source": {
     "osmTags": "barrier=kerb"
@@ -32,7 +34,8 @@
       "pa_PK": "کرب",
       "ru": "Бордюр",
       "pl": "Krawężnik",
-      "ca": "Vorada"
+      "ca": "Vorada",
+      "cs": "Obrubník"
     }
   },
   "mapRendering": [
@@ -79,7 +82,8 @@
         "fr": "Quelle est la hauteur de ce trottoir ?",
         "ca": "Quina és l'altura d'aquest gual?",
         "ru": "Какая высота у этого бордюра?",
-        "pl": "Jaka jest wysokość tego krawężnika?"
+        "pl": "Jaka jest wysokość tego krawężnika?",
+        "cs": "Jaká je výška tohoto obrubníku?"
       },
       "mappings": [
         {
@@ -90,7 +94,8 @@
             "de": "Der Bordstein ist erhöht (>3 cm)",
             "fr": "Cette bordure est surélevée (>3 cm)",
             "ca": "Aquest gual està elevat (>3cm)",
-            "pl": "Ten krawężnik jest wyniesiony (>3 cm)"
+            "pl": "Ten krawężnik jest wyniesiony (>3 cm)",
+            "cs": "Tento obrubník je zvýšený (>3 cm)"
           },
           "icon": {
             "path": "./assets/layers/kerbs/raised.svg",
@@ -106,7 +111,8 @@
             "fr": "Cette bordure est abaissée (~3 cm)",
             "ca": "Aquest gual està rebaixat (~3 cm)",
             "ru": "Это пониженный бордюр (~3 см)",
-            "pl": "Ten krawężnik jest obniżony (~3 cm)"
+            "pl": "Ten krawężnik jest obniżony (~3 cm)",
+            "cs": "Tento obrubník je snížený (~3 cm)"
           },
           "icon": {
             "path": "./assets/layers/kerbs/lowered.svg",
@@ -121,7 +127,8 @@
             "de": "Der Bordstein ist bündig (~0cm)",
             "fr": "Cette bordure est affleurante (~0cm)",
             "ca": "Aquest gual està a ras (~0cm)",
-            "ru": "Этот бордюр вровень с дорогой (~0 см)"
+            "ru": "Этот бордюр вровень с дорогой (~0 см)",
+            "cs": "Tento obrubník je v jedné rovině (~0 cm)"
           },
           "icon": {
             "path": "./assets/layers/kerbs/flush.svg",
@@ -137,7 +144,8 @@
             "fr": "Il n'y a pas de bordure ici",
             "ru": "Здесь нет бордюра",
             "pl": "Nie ma tutaj krawężnika",
-            "ca": "Aquí no hi ha vorada"
+            "ca": "Aquí no hi ha vorada",
+            "cs": "Není zde obrubník"
           },
           "hideInAnswer": true,
           "icon": {
@@ -153,7 +161,8 @@
             "de": "Es gibt einen Bordstein mit unbekannter Höhe",
             "fr": "Il y a un trottoir de hauteur inconnue",
             "pl": "Jest krawężnik o nieznanej wysokości",
-            "ca": "Hi ha una vorada d'altura desconeguda"
+            "ca": "Hi ha una vorada d'altura desconeguda",
+            "cs": "Obrubník neznámé výšky"
           },
           "hideInAnswer": true
         }
@@ -169,7 +178,8 @@
         "nl": "Is er voelbare bestrating bij deze stoeprand?",
         "ca": "Hi ha una superfície podotàctil a aquest gual?",
         "ru": "Есть ли тактильная плитка у этого бордюра?",
-        "pl": "Czy na tym krawężniku są wypustki dla niewidomych?"
+        "pl": "Czy na tym krawężniku są wypustki dla niewidomych?",
+        "cs": "Je na tomto obrubníku hmatová dlažba?"
       },
       "mappings": [
         {
@@ -181,7 +191,8 @@
             "nl": "Deze stoeprand heeft voelbare bestrating.",
             "ca": "Aquest gual té superfície podotàctil.",
             "ru": "У этого бордюра есть тактильная плитка.",
-            "pl": "Ten krawężnik ma wypustki dla niewidomych."
+            "pl": "Ten krawężnik ma wypustki dla niewidomych.",
+            "cs": "Tento obrubník má hmatovou dlažbu."
           }
         },
         {
@@ -193,7 +204,8 @@
             "nl": "Deze stoeprand heeft geen voelbare bestrating.",
             "ca": "Aquest gual no té superfície podotàctil.",
             "ru": "У этого бордюра нет тактильной плитки.",
-            "pl": "Ten krawężnik nie ma wypustek dla niewidomych."
+            "pl": "Ten krawężnik nie ma wypustek dla niewidomych.",
+            "cs": "Tento obrubník nemá hmatovou dlažbu."
           }
         },
         {
@@ -205,7 +217,8 @@
             "nl": "Deze stoeprand heeft voelbare bestrating, maar deze is incorrect.",
             "ca": "La vorera té superfície podotàctil, però és incorrecte.",
             "ru": "У этого бордюра неверно выложенная тактильная плитка.",
-            "pl": "Ten krawężnik ma wypustki dla niewidomych, ale nieprawidłowe."
+            "pl": "Ten krawężnik ma wypustki dla niewidomych, ale nieprawidłowe.",
+            "cs": "Tento obrubník má hmatovou dlažbu, ale je nesprávný."
           },
           "hideInAnswer": true
         }
@@ -221,7 +234,8 @@
         "fr": "Quelle est la hauteur de ce trottoir ?",
         "ca": "Quina és l'altura d'aquest gual?",
         "ru": "Какая высота у этого бордюра?",
-        "pl": "Jaka jest wysokość tego krawężnika?"
+        "pl": "Jaka jest wysokość tego krawężnika?",
+        "cs": "Jaká je výška tohoto obrubníku?"
       },
       "render": {
         "en": "Kerb height: {kerb:height}",
@@ -230,7 +244,8 @@
         "fr": "Hauteur du trottoir : {kerb:height}",
         "ru": "Высота бордюра: {kerb:height}",
         "pl": "Wysokość krawężnika: {kerb:height}",
-        "ca": "Altura de la vorada {kerb:height}"
+        "ca": "Altura de la vorada {kerb:height}",
+        "cs": "Výška obrubníku: {kerb:height}"
       },
       "freeform": {
         "key": "kerb:height",
@@ -241,7 +256,8 @@
           "fr": "Hauteur de la bordure",
           "ru": "Высота бордюра",
           "pl": "Wysokość krawężnika",
-          "ca": "Altura de la vorada"
+          "ca": "Altura de la vorada",
+          "cs": "Výška obrubníku"
         },
         "type": "pnat"
       },
@@ -252,7 +268,8 @@
             "en": "This kerb is flush and is lower than 1cm.",
             "de": "Der Bordstein ist bündig und niedriger als 1 cm.",
             "ca": "Aquest gual està rebaixat i és més baix que 1cm.",
-            "nl": "Deze stoeprand is vlak en lager als 1 cm."
+            "nl": "Deze stoeprand is vlak en lager als 1 cm.",
+            "cs": "Tento obrubník je v jedné rovině a je nižší než 1 cm."
           }
         }
       ]
@@ -267,7 +284,8 @@
         "fr": "une bordure",
         "ru": "бордюр",
         "pl": "krawężnik",
-        "ca": "una vorada"
+        "ca": "una vorada",
+        "cs": "obrubník"
       },
       "tags": [
         "barrier=kerb"
@@ -276,7 +294,8 @@
         "en": "Kerb in a footway",
         "nl": "Stoeprand in een voetpad",
         "de": "Bordstein in einem Fußweg",
-        "fr": "Bordure dans un trottoir"
+        "fr": "Bordure dans un trottoir",
+        "cs": "Obrubník na chodníku"
       },
       "snapToLayer": [
         "cycleways_and_roads",
@@ -297,7 +316,8 @@
             "fr": "Tous types de bordures",
             "ru": "Все виды бордюров",
             "pl": "Wszystkie rodzaje krawężników",
-            "ca": "Tots els tipus de vorades"
+            "ca": "Tots els tipus de vorades",
+            "cs": "Všechny typy obrubníků"
           }
         },
         {
@@ -308,7 +328,8 @@
             "de": "Erhöhte Bordsteine (>3 cm)",
             "fr": "Bordure surélevée (>3 cm)",
             "pl": "Podniesiony krawężnik (>3 cm)",
-            "ca": "Vorada elevada (>3 cm)"
+            "ca": "Vorada elevada (>3 cm)",
+            "cs": "Zvýšený obrubník (>3 cm)"
           }
         },
         {
@@ -320,7 +341,8 @@
             "fr": "Bordure abaissée (~3 cm)",
             "ru": "Пониженный бордюр (~3 см)",
             "pl": "Obniżony krawężnik (~3 cm)",
-            "ca": "Vorada rebaixada (~3 cm)"
+            "ca": "Vorada rebaixada (~3 cm)",
+            "cs": "Snížený obrubník (~3 cm)"
           }
         },
         {
@@ -331,7 +353,8 @@
             "de": "Bündige Bordsteine (~0 cm)",
             "fr": "Bordure affleurante (~0cm)",
             "ru": "Вровень с дорогой (~0 см)",
-            "ca": "Vorada a ras (~0 cm)"
+            "ca": "Vorada a ras (~0 cm)",
+            "cs": "Zapuštěný obrubník (~0 cm)"
           }
         },
         {
@@ -343,7 +366,8 @@
             "fr": "Pas de trottoir",
             "ru": "Нет бордюра",
             "pl": "Brak krawężnika",
-            "ca": "Sense vorada"
+            "ca": "Sense vorada",
+            "cs": "Bez obrubníku"
           }
         },
         {
@@ -354,7 +378,8 @@
             "de": "Bordsteine unbekannter Höhe",
             "fr": "Bordure de hauteur inconnue",
             "pl": "Krawężnik z nieznaną wysokością",
-            "ca": "Vorada sense altura coneguda"
+            "ca": "Vorada sense altura coneguda",
+            "cs": "Obrubník s neznámou výškou"
           }
         }
       ]
@@ -378,7 +403,8 @@
             "pa_PK": "سینٹیمیٹر",
             "ru": "сантиметры",
             "ca": "centímetres",
-            "pl": "centymetry"
+            "pl": "centymetry",
+            "cs": "centimetry"
           },
           "humanSingular": {
             "en": "centimeter",
@@ -388,7 +414,8 @@
             "pa_PK": "سینٹیمیٹر",
             "ru": "сантиметр",
             "ca": "centímetre",
-            "pl": "centymetr"
+            "pl": "centymetr",
+            "cs": "centimetr"
           }
         },
         {
@@ -405,7 +432,8 @@
             "pa_PK": "میٹر",
             "ru": "метры",
             "ca": "metres",
-            "pl": "metry"
+            "pl": "metry",
+            "cs": "metry"
           },
           "humanSingular": {
             "en": "meter",
@@ -415,7 +443,8 @@
             "pa_PK": "میٹر",
             "ru": "метр",
             "ca": "metre",
-            "pl": "metr"
+            "pl": "metr",
+            "cs": "metr"
           }
         }
       ],

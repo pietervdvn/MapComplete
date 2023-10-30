@@ -94,7 +94,8 @@
         "nl": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>{_first_user} melden voor spam of ongepaste opmerkingen</a>",
         "de": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle' {_first_user} für Spam oder unangemessene Nachrichten melden</a>",
         "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reportar {_first_user}",
-        "ca": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reporta {_first_user} per spam o missatges inapropiats</a>"
+        "ca": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reporta {_first_user} per spam o missatges inapropiats</a>",
+        "cs": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Nahlásit uživateli {_first_user} spam nebo nevhodné zprávy</ a>"
       },
       "condition": "_opened_by_anonymous_user=false"
     },
@@ -105,7 +106,8 @@
         "nl": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Deze note melden als spam of ongepast</a>",
         "de": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Notiz als Spam oder unangemessen melden</a>",
         "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta esta nota como spam o inapropiada</a>",
-        "ca": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta aquesta nota com spam o inapropiada</a>"
+        "ca": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta aquesta nota com spam o inapropiada</a>",
+        "cs": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Nahlásit tuto poznámku jako spam nebo nevhodnou</a>"
       }
     }
   ],
@@ -175,7 +177,8 @@
             "nl": "Mag in de eerste opmerking <b>niet</b> \"{search}\" bevatten",
             "de": "Sollte <b>nicht</b> {search} im ersten Kommentar erwähnen",
             "es": "<b>No</b> debe mencionar {search} en el primer comentario",
-            "ca": "<b>No</b> s'ha de mencionar {search} al primer comentari"
+            "ca": "<b>No</b> s'ha de mencionar {search} al primer comentari",
+            "cs": "V prvním komentáři by jste <b>neměli</b> zmiňovat {search}"
           }
         }
       ]
@@ -196,7 +199,8 @@
             "de": "Erstellt von {search}",
             "es": "Abierto por el contributor {search}",
             "fr": "Ouverte par {search}",
-            "ca": "Obert pel contribuïdor {search}"
+            "ca": "Obert pel contribuïdor {search}",
+            "cs": "Otevřeno přispěvatelem {search}"
           }
         }
       ]
@@ -216,7 +220,8 @@
             "nl": "<b>Niet</b> geopend door bijdrager {search}",
             "de": "<b>Nicht</b> erstellt von {search}",
             "es": "<b>No</b> abierto por el contributor {search}",
-            "ca": "<b>No</b> obert pel contribuïdor {search}"
+            "ca": "<b>No</b> obert pel contribuïdor {search}",
+            "cs": "<b>Není</b> otevřeno přispěvatelem {search}"
           }
         }
       ]
@@ -236,7 +241,8 @@
             "nl": "Laatst bewerkt door bijdrager {search}",
             "de": "Zuletzt bearbeitet von {search}",
             "es": "Editada por última vez por el contributor {search}",
-            "ca": "Editat per última vega pel contribuïdor {search}"
+            "ca": "Editat per última vega pel contribuïdor {search}",
+            "cs": "Naposledy upravil přispěvatel {search}"
           }
         }
       ]
@@ -278,7 +284,8 @@
             "nl": "Aangemaakt voor {search}",
             "de": "Erstellt vor dem {search}",
             "es": "Creada antes de {search}",
-            "ca": "Creada abans de {search}"
+            "ca": "Creada abans de {search}",
+            "cs": "Vytvořeno před {search}"
           }
         }
       ]
@@ -299,7 +306,8 @@
             "nl": "Aangemaakt na {search}",
             "de": "Erstellt nach dem {search}",
             "es": "Creada después de {search}",
-            "ca": "Creada després de {search}"
+            "ca": "Creada després de {search}",
+            "cs": "Vytvořeno po {search}"
           }
         }
       ]
@@ -356,7 +364,8 @@
             "nl": "Verberg import Notes",
             "de": "Importnotizen ausblenden",
             "es": "Ocultar las notas de importación",
-            "ca": "Oculta les notes d'importació"
+            "ca": "Oculta les notes d'importació",
+            "cs": "Skrýt poznámky k importu"
           }
         },
         {
@@ -366,7 +375,8 @@
             "nl": "Toon enkel import Notes",
             "de": "Nur Importnotizen anzeigen",
             "es": "Solo mostrar las notas de importación",
-            "ca": "Mostrar només les notes d'importació"
+            "ca": "Mostrar només les notes d'importació",
+            "cs": "Zobrazit pouze poznámky k importu"
           }
         }
       ]

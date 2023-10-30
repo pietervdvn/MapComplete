@@ -331,9 +331,9 @@ export class GeoOperations {
         const lines: string[] = []
 
         let _features
-        if(Array.isArray(features)){
+        if (Array.isArray(features)) {
             _features = features
-        }else{
+        } else {
             _features = features.features
         }
 

@@ -76,9 +76,12 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
             "Disables/Enables logging in and thus disables editing all together. This effectively puts MapComplete into read-only mode."
         )
         {
-            if(QueryParameters.wasInitialized("fs-userbadge")){
+            if (QueryParameters.wasInitialized("fs-userbadge")) {
                 // userbadge is the legacy name for 'enable-login'
-                this.featureSwitchEnableLogin.setData(QueryParameters.GetBooleanQueryParameter("fs-userbadge", undefined, "Legacy").data)
+                this.featureSwitchEnableLogin.setData(
+                    QueryParameters.GetBooleanQueryParameter("fs-userbadge", undefined, "Legacy")
+                        .data
+                )
             }
         }
 

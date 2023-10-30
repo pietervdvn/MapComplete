@@ -25,16 +25,25 @@
         }
     },
     "advertising": {
+        "description": "Uzupełnimy dane z obiektów reklamowych o referencję, operatora i oświetlenie",
+        "name": "Reklama",
         "presets": {
             "0": {
                 "description": "Duża struktura reklamowa na dworze, zwykle znajdująca się w obszarach z dużym ruchem, np. w pobliżu ruchliwych dróg",
                 "title": "bilbord"
+            },
+            "1": {
+                "title": "wolnostojąca skrzynka plakatowa"
+            },
+            "2": {
+                "title": "skrzynka plakatowa montowana na ścianie"
             },
             "3": {
                 "description": "Mały bilbord dla reklam lokalnych, przeznaczony głównie dla pieszych",
                 "title": "tablica"
             },
             "4": {
+                "description": "Cylindryczna konstrukcja zewnętrzna, na której pokazywane są reklamy",
                 "title": "kolumna"
             },
             "5": {
@@ -46,7 +55,15 @@
             "7": {
                 "title": "ekran zamontowany na ścianie"
             },
+            "8": {
+                "description": "Kawałek wodoodpornej tkaniny z nadrukowanym przesłaniem, trwale przymocowany do ściany",
+                "title": "plandeka"
+            },
+            "9": {
+                "title": "totem"
+            },
             "10": {
+                "description": "Używany do znaków reklamowych, neonów, logo i znaków wejściowych do instytucji",
                 "title": "znak"
             },
             "11": {
@@ -79,6 +96,15 @@
                 },
                 "question": "Czy ta reklama przechodzi przez wiele różnych wiadomości?"
             },
+            "luminous_or_lit_advertising": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "To jest lampa neonowa"
+                        }
+                    }
+                }
+            },
             "message_type": {
                 "mappings": {
                     "0": {
@@ -104,6 +130,9 @@
                     },
                     "7": {
                         "then": "Przekaz religijny"
+                    },
+                    "8": {
+                        "then": "Znak finansowania"
                     },
                     "9": {
                         "then": "Mapa"
@@ -133,6 +162,9 @@
                     "3": {
                         "then": "To jest flaga"
                     },
+                    "4": {
+                        "then": "To jest pudełko plakatowe"
+                    },
                     "5": {
                         "then": "To jest ekran"
                     },
@@ -141,6 +173,12 @@
                     },
                     "7": {
                         "then": "To jest znak"
+                    },
+                    "8": {
+                        "then": "To jest plandeka (odporny na warunki atmosferyczne kawałek materiału tekstylnego z przekazem reklamowym)"
+                    },
+                    "9": {
+                        "then": "To jest totem"
                     },
                     "10": {
                         "then": "To jest mural ścienny"
@@ -158,6 +196,9 @@
                 "1": {
                     "then": "Tablica"
                 },
+                "2": {
+                    "then": "Pudełko plakatowe"
+                },
                 "3": {
                     "then": "Kolumna"
                 },
@@ -173,17 +214,67 @@
                 "7": {
                     "then": "Znak"
                 },
+                "8": {
+                    "then": "Brezent"
+                },
+                "9": {
+                    "then": "Totem"
+                },
                 "10": {
                     "then": "Mural ścienny"
                 }
             }
         }
     },
+    "ambulancestation": {
+        "description": "Stacja pogotowia ratunkowego to miejsce przechowywania pojazdów ambulansów, sprzętu medycznego, środków ochrony osobistej i innych artykułów medycznych.",
+        "name": "Mapa stacji pogotowia ratunkowego",
+        "presets": {
+            "0": {
+                "description": "Dodaj stację pogotowia ratunkowego do mapy",
+                "title": "stacja pogotowia ratunkowego"
+            }
+        },
+        "tagRenderings": {
+            "ambulance-agency": {
+                "question": "Jaka agencja obsługuje tę stację?",
+                "render": "Ta stacja jest obsługiwana przez {operator}."
+            },
+            "ambulance-name": {
+                "question": "Jak nazywa się ta stacja pogotowia ratunkowego?",
+                "render": "Ta stacja nazywa się {name}."
+            },
+            "ambulance-operator-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Stacja jest zarządzana przez rząd."
+                    },
+                    "1": {
+                        "then": "Stacja jest obsługiwana przez organizację społeczną lub nieformalną."
+                    },
+                    "2": {
+                        "then": "Stacja obsługiwana jest przez formalną grupę wolontariuszy."
+                    },
+                    "3": {
+                        "then": "Stacja jest własnością prywatną."
+                    }
+                },
+                "question": "Jak klasyfikowany jest operator stacji?"
+            },
+            "ambulance-street": {
+                "question": "Jak nazywa się ulica, przy której znajduje się stacja?"
+            }
+        },
+        "title": {
+            "render": "Stacja pogotowia ratunkowego"
+        }
+    },
     "artwork": {
+        "description": "Otwarta mapa posągów, popiersi, graffiti i innych dzieł sztuki z całego świata",
         "name": "Dzieła sztuki",
         "presets": {
             "0": {
-                "title": "Dzieło sztuki"
+                "title": "dzieło sztuki"
             },
             "1": {
                 "title": "Dzieło sztuki na ścianie"
@@ -235,6 +326,9 @@
                     },
                     "11": {
                         "then": "Płyta ceramiczna (fliza)"
+                    },
+                    "12": {
+                        "then": "Rzeźbienie w drewnie"
                     }
                 },
                 "question": "Jakiego rodzaju jest to dzieło sztuki?",
@@ -285,6 +379,12 @@
             }
         },
         "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Nazwa handlowa"
+                },
+                "question": "Jakiej marki jest ten bankomat?"
+            },
             "cash_in": {
                 "mappings": {
                     "0": {
@@ -399,7 +499,7 @@
                         "then": "Oparcie: Tak"
                     },
                     "2": {
-                        "then": "Oparcie: Nie"
+                        "then": "<b>Nie</b> posiada oparcia"
                     }
                 },
                 "question": "Czy ta ławka ma oparcie?"
@@ -441,22 +541,22 @@
             "bench-material": {
                 "mappings": {
                     "0": {
-                        "then": "Materiał: drewno"
+                        "then": "Siedzisko wykonane jest z drewna"
                     },
                     "1": {
-                        "then": "Materiał: metal"
+                        "then": "Siedzisko wykonane jest z metalu"
                     },
                     "2": {
-                        "then": "Materiał: kamień"
+                        "then": "Siedzisko wykonane jest z kamienia"
                     },
                     "3": {
-                        "then": "Materiał: beton"
+                        "then": "Siedzisko wykonane jest z betonu"
                     },
                     "4": {
-                        "then": "Materiał: plastik"
+                        "then": "Siedzisko wykonane jest z tworzywa sztucznego"
                     },
                     "5": {
-                        "then": "Materiał: stal"
+                        "then": "Siedzisko wykonane jest ze stali"
                     }
                 },
                 "question": "Z czego wykonana jest ławka (siedzisko)?",
@@ -519,6 +619,7 @@
         "description": "Obiekt, w którym rowery można wypożyczyć na dłuższy okres"
     },
     "bicycle_rental": {
+        "description": "Stacje wypożyczania rowerów",
         "tagRenderings": {
             "rental_types": {
                 "rewrite": {
@@ -882,6 +983,7 @@
         }
     },
     "clock": {
+        "description": "Warstwa z zegarami publicznymi",
         "presets": {
             "0": {
                 "title": "zegar"
@@ -985,7 +1087,7 @@
                         "then": "Ten zegar jest widoczny z około 5 metrów (mały zegar ścienny)"
                     },
                     "1": {
-                        "then": "Ten zegar jest widoczny z około 20 metrów (średniej wielkości zegar na bilbordzie)"
+                        "then": "Ten zegar jest widoczny z około 20 metrów (średniej wielkości zegar bilbordowy)"
                     },
                     "2": {
                         "then": "Ten zegar jest widoczny z ponad 20 metrów (np. zegar kościelny lub stacyjny)"
@@ -1463,6 +1565,7 @@
                 }
             }
         },
+        "description": "Warstwa przedstawiająca restauracje i obiekty typu fast-food (ze specjalnym renderowaniem dla frytek)",
         "filter": {
             "1": {
                 "options": {
@@ -1473,11 +1576,21 @@
             },
             "2": {
                 "options": {
+                    "0": {
+                        "question": "Restauracje i firmy typu fast food"
+                    },
                     "1": {
                         "question": "Tylko fast-foody"
                     },
                     "2": {
                         "question": "Tylko restauracje"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Ma menu wegetariańskie"
                     }
                 }
             },
@@ -1598,6 +1711,7 @@
         }
     },
     "indoors": {
+        "description": "Podstawowe mapowanie wnętrz: pokazuje kontury pomieszczeń",
         "tagRenderings": {
             "ref": {
                 "question": "Jaki jest numer referencyjny tego pomieszczenia?",
@@ -1852,8 +1966,20 @@
                     "1": {
                         "question": "Pokaż zadania, które zostały stworzone"
                     },
+                    "2": {
+                        "question": "Pokaż zadania, które zostały naprawione"
+                    },
+                    "3": {
+                        "question": "Pokaż zadania, które dały fałszywie pozytywne wyniki"
+                    },
+                    "4": {
+                        "question": "Pokaż pominięte zadania"
+                    },
+                    "5": {
+                        "question": "Pokaż zadania, które zostały usunięte"
+                    },
                     "6": {
-                        "question": "Pokaż zadania, które są już wykonane"
+                        "question": "Pokaż zadania, które zostały już naprawione"
                     },
                     "7": {
                         "question": "Pokaż zadania oznaczone jako zbyt trudne"
@@ -1950,6 +2076,9 @@
                 }
             }
         }
+    },
+    "maxspeed": {
+        "description": "Pokazuje dozwoloną prędkość na każdej drodze"
     },
     "note": {
         "title": {
@@ -2236,6 +2365,9 @@
                 }
             }
         }
+    },
+    "postboxes": {
+        "description": "Warstwa pokazująca skrzynki pocztowe."
     },
     "postoffices": {
         "tagRenderings": {
@@ -2582,6 +2714,9 @@
             }
         }
     },
+    "rainbow_crossings": {
+        "description": "Warstwa przedstawiająca przejścia dla pieszych z tęczowym malowaniem"
+    },
     "reception_desk": {
         "tagRenderings": {
             "desk-height": {
@@ -2649,7 +2784,70 @@
             "render": "Szkoła <i>{name}</i>"
         }
     },
+    "walls_and_buildings": {
+        "description": "Specjalna warstwa zabudowana zapewniająca wszystkie mury i budynki. Warstwa ta jest przydatna w ustawieniach wstępnych obiektów, które można umieścić przy ścianach (np. AED, skrzynki pocztowe, wejścia, adresy, kamery monitorujące itp.). Warstwa ta jest domyślnie niewidoczna i użytkownik nie może jej przełączać."
+    },
+    "waste_disposal": {
+        "presets": {
+            "0": {
+                "title": "kosz na śmieci"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Z tego pojemnika może korzystać każdy"
+                    },
+                    "1": {
+                        "then": "Ten kosz jest prywatny"
+                    },
+                    "2": {
+                        "then": "Ten kosz jest przeznaczony wyłącznie dla mieszkańców"
+                    }
+                },
+                "question": "Kto może korzystać z tego pojemnika na odpady?"
+            },
+            "disposal-location": {
+                "mappings": {
+                    "0": {
+                        "then": "To jest podziemny kontener"
+                    },
+                    "1": {
+                        "then": "Kontener ten znajduje się w pomieszczeniu zamkniętym"
+                    },
+                    "2": {
+                        "then": "Kontener ten znajduje się na zewnątrz"
+                    }
+                },
+                "question": "Gdzie znajduje się ten kontener?"
+            },
+            "type": {
+                "mappings": {
+                    "1": {
+                        "then": "W rzeczywistości jest to pojemnik do recyklingu"
+                    }
+                },
+                "question": "Co to za pojemnik na śmieci?"
+            }
+        }
+    },
     "windturbine": {
+        "description": "Nowoczesne wiatraki wytwarzające energię elektryczną",
+        "tagRenderings": {
+            "turbine-operator": {
+                "question": "Kto obsługuje tę turbinę wiatrową?"
+            },
+            "turbine-output": {
+                "question": "Jaka jest moc wyjściowa tej turbiny wiatrowej? (np. 2,3 MW)"
+            },
+            "turbine-start-date": {
+                "question": "Kiedy ta turbina wiatrowa została uruchomiona?"
+            },
+            "windturbine-fixme": {
+                "question": "Czy jest coś nie tak z mapowaniem tego, czego nie mogłeś tutaj naprawić? (zostaw wiadomość ekspertom OpenStreetMap)"
+            }
+        },
         "title": {
             "mappings": {
                 "0": {

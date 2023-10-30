@@ -4,7 +4,8 @@
     "en": "Shower",
     "de": "Dusche",
     "fr": "Douche",
-    "ca": "Dutxa"
+    "ca": "Dutxa",
+    "cs": "Sprcha"
   },
   "minzoom": 12,
   "source": {
@@ -15,7 +16,8 @@
       "en": "Shower",
       "de": "Dusche",
       "ca": "Dutxa",
-      "fr": "Douche"
+      "fr": "Douche",
+      "cs": "Sprcha"
     }
   },
   "presets": [
@@ -24,13 +26,15 @@
         "en": "a shower",
         "de": "eine Dusche",
         "fr": "une douche",
-        "ca": "una dutxa"
+        "ca": "una dutxa",
+        "cs": "sprcha"
       },
       "description": {
         "en": "A (public) shower",
         "de": "Eine (öffentliche) Dusche",
         "fr": "Une douche (publique)",
-        "ca": "Una dutxa (pública)"
+        "ca": "Una dutxa (pública)",
+        "cs": "(veřejná) sprcha"
       },
       "tags": [
         "amenity=shower"
@@ -46,7 +50,8 @@
         "en": "Who can use this shower?",
         "de": "Wer darf diese Dusche nutzen?",
         "fr": "Qui peut utiliser cette douche ?",
-        "ca": "Qui pot utilitzar aquesta dutxa?"
+        "ca": "Qui pot utilitzar aquesta dutxa?",
+        "cs": "Kdo může tuto sprchu používat?"
       },
       "mappings": [
         {
@@ -55,7 +60,8 @@
             "en": "Anyone can use this shower",
             "de": "Jeder darf diese Dusche nutzen",
             "fr": "Tout le monde peut utiliser cette douche",
-            "ca": "Qualsevol pot utilitzar aquesta dutxa"
+            "ca": "Qualsevol pot utilitzar aquesta dutxa",
+            "cs": "Tuto sprchu může použít každý"
           }
         },
         {
@@ -64,7 +70,8 @@
             "en": "Only customers can use this shower",
             "de": "Nur Kunden dürfen diese Dusche nutzen",
             "fr": "Seuls les clients peuvent utiliser cette douche",
-            "ca": "Només els clients poden utilitzar aquesta dutxa"
+            "ca": "Només els clients poden utilitzar aquesta dutxa",
+            "cs": "Tuto sprchu mohou používat pouze zákazníci"
           }
         },
         {
@@ -73,7 +80,8 @@
             "en": "Accesible, but one has to ask for a key",
             "de": "Zugänglich, aber man muss nach einem Schlüssel fragen",
             "fr": "Accessible, mais il faut demander une clé",
-            "ca": "Accessible, però s'ha de demanar una clau"
+            "ca": "Accessible, però s'ha de demanar una clau",
+            "cs": "Přístupné, ale člověk si musí vyžádat klíč"
           }
         }
       ]
@@ -84,7 +92,8 @@
         "en": "Is there a fee for using this shower?",
         "de": "Ist die Nutzung der Dusche kostenpflichtig?",
         "ca": "És allà un cost per utilitzar aquesta dutxa?",
-        "fr": "Faut-il payer pour utiliser cette douche ?"
+        "fr": "Faut-il payer pour utiliser cette douche ?",
+        "cs": "Platí se za použití této sprchy?"
       },
       "mappings": [
         {
@@ -93,7 +102,8 @@
             "en": "There is a fee for using this shower",
             "de": "Die Nutzung der Dusche ist kostenpflichtig",
             "ca": "Hi ha un preu per utilitzar aquesta dutxa",
-            "fr": "Il faut payer pour utiliser cette douche"
+            "fr": "Il faut payer pour utiliser cette douche",
+            "cs": "Za použití této sprchy se platí"
           }
         },
         {
@@ -102,7 +112,8 @@
             "en": "This shower is free to use",
             "de": "Die Nutzung der Dusche ist kostenlos",
             "ca": "Aquesta dutxa és gratuïta",
-            "fr": "Cette douche est gratuite"
+            "fr": "Cette douche est gratuite",
+            "cs": "Tato sprcha je k použití zdarma"
           },
           "addExtraTags": [
             "charge="
@@ -117,7 +128,8 @@
         "en": "How much does it cost to use this shower?",
         "de": "Wie viel kostet es, diese Dusche zu nutzen?",
         "fr": "Quel est le prix pour utiliser cette douche ?",
-        "ca": "Quant costa utilitzar aquesta dutxa?"
+        "ca": "Quant costa utilitzar aquesta dutxa?",
+        "cs": "Kolik stojí použití této sprchy?"
       },
       "freeform": {
         "key": "charge",
@@ -126,14 +138,16 @@
           "en": "e.g. 1.50 EUR",
           "de": "z.B. 1,50 EUR",
           "fr": "par ex. 1,50 EUR",
-          "ca": "p. e. 1.50 eur"
+          "ca": "p. e. 1.50 eur",
+          "cs": "např. 1,50 EUR"
         }
       },
       "render": {
         "en": "It costs {charge} to use this shower",
         "de": "Es kostet {charge} um diese Dusche zu nutzen",
         "ca": "Costa {charge} utilitzar aquesta dutxa",
-        "fr": "Le prix de cette douche est {charge}"
+        "fr": "Le prix de cette douche est {charge}",
+        "cs": "Použití této sprchy stojí {charge}"
       }
     },
     "opening_hours",
@@ -143,7 +157,8 @@
         "en": "Does this shower have hot water available?",
         "de": "Verfügt diese Dusche über Warmwasser?",
         "ca": "Aquesta dutxa té aigua calenta disponible?",
-        "fr": "Est-ce que cette douche propose de l'eau chaude ?"
+        "fr": "Est-ce que cette douche propose de l'eau chaude ?",
+        "cs": "Má tato sprcha k dispozici teplou vodu?"
       },
       "mappings": [
         {
@@ -152,7 +167,8 @@
             "en": "Hot water is available here",
             "de": "Warmwasser ist hier verfügbar",
             "ca": "Aquí hi ha aigua calenta disponible",
-            "fr": "De l'eau chaud est disponible"
+            "fr": "De l'eau chaud est disponible",
+            "cs": "Je zde k dispozici teplá voda"
           }
         },
         {
@@ -161,7 +177,8 @@
             "en": "Hot water is available here, but there is a fee",
             "de": "Warmes Wasser ist hier verfügbar, aber kostenpflichtig",
             "ca": "Aquí hi ha aigua calenta disponible, però té un cost",
-            "fr": "De l'eau chaud est disponible, mais il faut payer"
+            "fr": "De l'eau chaud est disponible, mais il faut payer",
+            "cs": "Teplá voda je zde k dispozici, ale je za poplatek"
           }
         },
         {
@@ -170,7 +187,8 @@
             "en": "There is no hot water available here",
             "de": "Hier gibt es kein warmes Wasser",
             "ca": "Aquí no hi ha aigua calenta disponible",
-            "fr": "Il n'y a pas d'eau chaude disponible"
+            "fr": "Il n'y a pas d'eau chaude disponible",
+            "cs": "Není zde k dispozici teplá voda"
           }
         }
       ]
@@ -197,7 +215,8 @@
             "en": "Hot water available",
             "de": "Warmwasser verfügbar",
             "fr": "Eau chaude disponible",
-            "ca": "Aigua calenta disponible"
+            "ca": "Aigua calenta disponible",
+            "cs": "Teplá voda k dispozici"
           },
           "osmTags": {
             "or": [
@@ -242,6 +261,7 @@
     "en": "A layer showing (public) showers",
     "de": "Eine Ebene mit (öffentlichen) Duschen",
     "fr": "Une couche affichant les douches (publiques)",
-    "ca": "Una capa que mostra dutxes (públiques)"
+    "ca": "Una capa que mostra dutxes (públiques)",
+    "cs": "Vrstva zobrazující (veřejné) sprchy"
   }
 }

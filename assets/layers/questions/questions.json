@@ -195,7 +195,8 @@
       "description": "Shows and asks for the mastodon handle",
       "question": {
         "en": "What is the Mastodon-handle of {title()}?",
-        "de": "Wie lautet der Mastodon-Handle von {title()}?"
+        "de": "Wie lautet der Mastodon-Handle von {title()}?",
+        "cs": "Co je Mastodon-handle {title()}?"
       },
       "freeform": {
         "key": "contact:mastodon",
@@ -811,7 +812,7 @@
             "es": "Hay numerosos enchufes domésticos disponibles para los clientes sentados en el interior, donde pueden cargar sus dispositivos electrónicos",
             "da": "Der er masser af stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr",
             "nb_NO": "Det er massevis av stikkontakter tilgjengelig for kunder som sitter innendørs, der de kan lade elektronikken sin",
-            "cs": "V interiéru je k dispozici dostatek domácích zásuvek, kde si zákazníci mohou nabíjet elektroniku"
+            "cs": "V interiéru je k dispozici dostatek el. zásuvek, kde si zákazníci mohou nabíjet elektroniku"
           },
           "if": "service:electricity=yes"
         },
@@ -832,7 +833,7 @@
             "es": "Hay algunos enchufes domésticos disponibles para los clientes sentados en el interior, donde pueden cargar sus dispositivos electrónicos",
             "da": "Der er nogle få stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr",
             "nb_NO": "Det er noen stikkontakter tilgjengelig for kunder som sitter innendørs, der de kan lagre elektronikken sin",
-            "cs": "V interiéru je zákazníkům k dispozici několik domácích zásuvek, kde si mohou nabít elektroniku"
+            "cs": "V interiéru je zákazníkům k dispozici několik el. zásuvek, kde si mohou nabít elektroniku"
           },
           "if": "service:electricity=limited"
         },
@@ -853,7 +854,7 @@
             "es": "No hay enchufes disponibles en el interior para los clientes, pero cargar puede ser posible si se pregunta al personal",
             "da": "Der er ingen stikkontakter til rådighed indendørs for kunderne, men opladning kan være mulig, hvis man beder personalet om det",
             "nb_NO": "Det er ingen tilgjengelige stikkontakter for kunder som sitter innendørs, men lading kan være mulig hvis man spør betjeningen",
-            "cs": "V interiéru nejsou zákazníkům k dispozici žádné zásuvky, ale na požádání personálu je možné je nabíjet"
+            "cs": "V interiéru nejsou zákazníkům k dispozici žádné el. zásuvky, ale na požádání personálu je možné nabíjet"
           },
           "if": "service:electricity=ask"
         },
@@ -874,7 +875,7 @@
             "es": "No hay enchufes domésticos disponibles para los clientes sentados en el interior",
             "da": "Der er ingen stikkontakter til rådighed for kunder, der sidder indendørs",
             "nb_NO": "Det er ingen stikkontakter tilgjengelig for kunder som sitter innendørs",
-            "cs": "Zákazníci v interiéru nemají k dispozici žádné domácí zásuvky"
+            "cs": "Zákazníci v interiéru nemají k dispozici žádné el. zásuvky"
           },
           "if": "service:electricity=no"
         }
@@ -975,7 +976,8 @@
             "nl": "Betalen via een QR-code is hier mogelijk",
             "de": "Die Bezahlung per QR-Code ist hier möglich",
             "es": "Aquí se puede pagar con código QR",
-            "ca": "Aquí es pot pagar amb codi QR"
+            "ca": "Aquí es pot pagar amb codi QR",
+            "cs": "Platba QR kódem je zde možná"
           }
         }
       ]
@@ -1591,7 +1593,8 @@
             "en": "Last edited on {_last_edit:timestamp} by {_last_edit:contributor}",
             "nl": "Laatst gewijzigd op {_last_edit:timestamp} door {_last_edit:contributor} ",
             "de": "Zuletzt bearbeitet am {_last_edit:timestamp} von {_last_edit:contributor}",
-            "ca": "Darrera edició el {_last_edit:timestamp} per {_last_edit:contributor}"
+            "ca": "Darrera edició el {_last_edit:timestamp} per {_last_edit:contributor}",
+            "cs": "Naposledy upravil {_last_edit:timestamp} {_last_edit:contributor}"
           },
           "class": "subtle font-small"
         }
@@ -1617,7 +1620,8 @@
             "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
             "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
             "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
-            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen."
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
           }
         }
       ],
@@ -1694,7 +1698,8 @@
       "render": {
         "en": "Multiple, identical objects can be found on floors {repeat_on}.",
         "nl": "Er zijn verschillende, identieke objecten op verdiepingen {repeat_on}.",
-        "de": "Mehrere identische Objekte können in Geschossen {repeat_on} gefunden werden."
+        "de": "Mehrere identische Objekte können in Geschossen {repeat_on} gefunden werden.",
+        "cs": "V patrech {repeat_on} lze nalézt více identických objektů."
       }
     },
     {
@@ -2344,7 +2349,8 @@
       "id": "survey_date",
       "question": {
         "en": "When was this object last surveyed?",
-        "de": "Wann wurde dieses Objekt zuletzt geprüft?"
+        "de": "Wann wurde dieses Objekt zuletzt geprüft?",
+        "cs": "Kdy byl tento objekt naposledy zkoumán?"
       },
       "freeform": {
         "key": "survey:date",
@@ -2352,14 +2358,16 @@
       },
       "render": {
         "en": "This object was last surveyed on <b>{survey:date}</b>",
-        "de": "Dieses Objekt wurde zuletzt geprüft am <b>{survey:date}</b>"
+        "de": "Dieses Objekt wurde zuletzt geprüft am <b>{survey:date}</b>",
+        "cs": "Tento objekt byl naposledy zkoumán dne <b>{survey:date}</b>"
       },
       "mappings": [
         {
           "if": "survey:date:={_now:date}",
           "then": {
             "en": "This object was last surveyed today",
-            "de": "Dieses Objekt wurde heute zuletzt geprüft"
+            "de": "Dieses Objekt wurde heute zuletzt geprüft",
+            "cs": "Tento objekt byl naposledy zkoumán dnes"
           }
         }
       ]
@@ -2371,7 +2379,8 @@
         "de": "Wann wurde dieses Objekt zuletzt kontrolliert?",
         "nl": "Wanneer is dit object voor het laatst gecontroleerd?",
         "pl": "Kiedy ten obiekt został ostatnio sprawdzony?",
-        "ca": "Quan es va comprovar per última vegada aquest objecte?"
+        "ca": "Quan es va comprovar per última vegada aquest objecte?",
+        "cs": "Kdy byl tento objekt naposledy zkontrolován?"
       },
       "freeform": {
         "key": "check_date",
@@ -2382,7 +2391,8 @@
         "de": "Dieses Objekt wurde zuletzt kontrolliert am <b>{check_date}</b>",
         "nl": "Dit object is voor het laatst gecontroleerd op <b>{check_date}</b>",
         "pl": "Ten obiekt był ostatnio sprawdzony <b>{check_date}</b>",
-        "ca": "Aquest objecte es va comprovar per darrera vegada el <b>{check_date}</b>"
+        "ca": "Aquest objecte es va comprovar per darrera vegada el <b>{check_date}</b>",
+        "cs": "Tento objekt byl naposledy zkontrolován dne <b>{check_date}</b>"
       },
       "mappings": [
         {
@@ -2392,7 +2402,8 @@
             "de": "Dieses Objekt wurde heute zuletzt kontrolliert",
             "nl": "Dit object is vandaag voor het laatst gecontroleerd",
             "pl": "Ten obiekt został ostatnio sprawdzony dzisiaj",
-            "ca": "Aquest objecte es va comprovar per última vegada avui"
+            "ca": "Aquest objecte es va comprovar per última vegada avui",
+            "cs": "Tento objekt byl naposledy zkontrolován dnes"
           }
         }
       ]
@@ -2401,39 +2412,45 @@
       "id": "sugar_free",
       "question": {
         "en": "Does this shop have a sugar free offering?",
-        "de": "Verkauft das Geschäft zuckerfreie Produkte?"
+        "de": "Verkauft das Geschäft zuckerfreie Produkte?",
+        "cs": "Nabízí tento obchod nabídku bez cukru?"
       },
       "questionHint": {
         "en": "This is important for people following a sugar-free diet, such as people with Diabetes",
-        "de": "Dies ist wichtig für Menschen, die eine zuckerfreie Diät einhalten, z. B. für Menschen mit Diabetes"
+        "de": "Dies ist wichtig für Menschen, die eine zuckerfreie Diät einhalten, z. B. für Menschen mit Diabetes",
+        "cs": "To je důležité pro lidi, kteří dodržují dietu bez cukru, jako jsou lidé s diabetem"
       },
       "mappings": [
         {
           "if": "diet:sugar_free=only",
           "then": {
             "en": "This shop <b>only sells sugar free</b> products",
-            "de": "Das Geschäft verkauft <b>ausschließlich</b> zuckerfreie Produkte"
+            "de": "Das Geschäft verkauft <b>ausschließlich</b> zuckerfreie Produkte",
+            "cs": "Tento obchod <b>prodává pouze produkty bez cukru</b>"
           }
         },
         {
           "if": "diet:sugar_free=yes",
           "then": {
             "en": "This shop has a big sugar free offering",
-            "de": "Das Geschäft verkauft <b>viele<b> zuckerfreie Produkte"
+            "de": "Das Geschäft verkauft <b>viele<b> zuckerfreie Produkte",
+            "cs": "Tento obchod má velkou nabídku bez cukru"
           }
         },
         {
           "if": "diet:sugar_free=limited",
           "then": {
             "en": "This shop has a <b>limited sugar free</b> offering",
-            "de": "Das Geschäft verkauft <b>wenige</b> zuckerfreie Produkte"
+            "de": "Das Geschäft verkauft <b>wenige</b> zuckerfreie Produkte",
+            "cs": "Tento obchod má <b>omezenou nabídku bez cukru</b>"
           }
         },
         {
           "if": "diet:sugar_free=no",
           "then": {
             "en": "This shop has no sugar free offering",
-            "de": "Das Geschäft verkauft <b>keine<b> zuckerfreie Produkte"
+            "de": "Das Geschäft verkauft <b>keine<b> zuckerfreie Produkte",
+            "cs": "Tento obchod nemá žádnou nabídku bez cukru"
           }
         }
       ]
@@ -2442,35 +2459,40 @@
       "id": "lactose_free",
       "question": {
         "en": "Does {title()} have a lactose-free offering?",
-        "de": "Verkauft {title()} laktosefreie Produkte?"
+        "de": "Verkauft {title()} laktosefreie Produkte?",
+        "cs": "Má {title()} nabídku bez laktózy?"
       },
       "mappings": [
         {
           "if": "diet:lactose_free=only",
           "then": {
             "en": "<b>Only sells lactose free</b> products",
-            "de": "<b>Ausschließlich</b> laktosefreie Produkte"
+            "de": "<b>Ausschließlich</b> laktosefreie Produkte",
+            "cs": "<b>Prodává pouze výrobky bez laktózy</b>"
           }
         },
         {
           "if": "diet:lactose_free=yes",
           "then": {
             "en": "Big lactose free offering",
-            "de": "Viele laktosefreie Produkte"
+            "de": "Viele laktosefreie Produkte",
+            "cs": "Velká nabídka bez laktózy"
           }
         },
         {
           "if": "diet:lactose_free=limited",
           "then": {
             "en": "<b>Limited lactose free</b> offering",
-            "de": "<b>Wenige</b> laktosefreie Produkte"
+            "de": "<b>Wenige</b> laktosefreie Produkte",
+            "cs": "<b>Omezená nabídka bez laktózy</b>"
           }
         },
         {
           "if": "diet:lactose_free=no",
           "then": {
             "en": "No lactose free offering",
-            "de": "Keine laktosefreie Produkte"
+            "de": "Keine laktosefreie Produkte",
+            "cs": "Žádná nabídka bez laktózy"
           }
         }
       ]
@@ -2479,35 +2501,40 @@
       "id": "gluten_free",
       "question": {
         "en": "Does this shop have a gluten free offering?",
-        "de": "Verkauft das Geschäft glutenfreie Produkte?"
+        "de": "Verkauft das Geschäft glutenfreie Produkte?",
+        "cs": "Má tento obchod bezlepkovou nabídku?"
       },
       "mappings": [
         {
           "if": "diet:gluten_free=only",
           "then": {
             "en": "This shop <b>only sells gluten free</b> products",
-            "de": "Das Geschäft verkauft <b>ausschließlich glutenfreie</b> Produkte"
+            "de": "Das Geschäft verkauft <b>ausschließlich glutenfreie</b> Produkte",
+            "cs": "Tento obchod <b>prodává pouze bezlepkové</b> produkty"
           }
         },
         {
           "if": "diet:gluten_free=yes",
           "then": {
             "en": "This shop has a big gluten free offering",
-            "de": "Das Geschäft verkauft viele glutenfreie Produkte"
+            "de": "Das Geschäft verkauft viele glutenfreie Produkte",
+            "cs": "Tento obchod má velkou bezlepkovou nabídku"
           }
         },
         {
           "if": "diet:gluten_free=limited",
           "then": {
             "en": "This shop has a <b>limited gluten free</b> offering",
-            "de": "Das Geschäft verkauft <b>wenige glutenfreie</b> Produkte"
+            "de": "Das Geschäft verkauft <b>wenige glutenfreie</b> Produkte",
+            "cs": "Tento obchod má <b>omezenou nabídku bezlepkových produktů</b>"
           }
         },
         {
           "if": "diet:gluten_free=no",
           "then": {
             "en": "This shop has no gluten free offering",
-            "de": "Das Geschäft verkauft keine glutenfreie Produkte"
+            "de": "Das Geschäft verkauft keine glutenfreie Produkte",
+            "cs": "Tento obchod nemá bezlepkovou nabídku"
           }
         }
       ]
