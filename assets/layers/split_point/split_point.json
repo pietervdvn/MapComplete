@@ -5,15 +5,24 @@
   "source": "special",
   "name": "Split point",
   "title": "Split point",
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "point",
         "centroid"
       ],
-      "icon": "circle:white;./assets/svg/scissors.svg",
       "iconSize": "30,30",
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/svg/scissors.svg"
+        }
+      ]
     }
-  ]
+  ],
+  "lineRendering": []
 }

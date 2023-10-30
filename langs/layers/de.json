@@ -5391,9 +5391,7 @@
                 "title": "ein Wegweiser"
             }
         },
-        "title": {
-            "render": "Wegweiser"
-        }
+        "title": "Wegweiser"
     },
     "hackerspace": {
         "description": "Hackerspace",
@@ -5932,7 +5930,7 @@
         }
     },
     "last_click": {
-        "mapRendering": {
+        "pointRendering": {
             "0": {
                 "label": {
                     "mappings": {
@@ -9590,13 +9588,6 @@
     },
     "transit_routes": {
         "description": "Ebene mit Buslinien",
-        "mapRendering": {
-            "0": {
-                "color": {
-                    "render": "#ff0000"
-                }
-            }
-        },
         "name": "Buslinien",
         "tagRenderings": {
             "colour": {
@@ -10454,17 +10445,6 @@
                 "options": {
                     "0": {
                         "question": "Abfalleimer mit Spender für (Hunde-)Kotbeutel"
-                    }
-                }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Abfalleimer"
-                        }
                     }
                 }
             }

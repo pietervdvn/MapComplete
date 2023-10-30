@@ -112,41 +112,6 @@
     }
   ],
   "allowSplit": true,
-  "mapRendering": [
-    {
-      "icon": {
-        "render": null,
-        "mappings": [
-          {
-            "if": "maxspeed~[1-9]0|1[0-4]0",
-            "then": "./assets/themes/maxspeed/maxspeed_{maxspeed} mph.svg"
-          },
-          {
-            "if": "maxspeed~[1-9]0|1[0-4]0 mph",
-            "then": "./assets/themes/maxspeed/maxspeed_{maxspeed}.svg"
-          }
-        ]
-      },
-      "iconSize": "32,32",
-      "location": [
-        "point",
-        "projected_centerpoint"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": {
-        "render": "#000000",
-        "mappings": [
-          {
-            "if": "maxspeed=",
-            "then": "#ff0000"
-          }
-        ]
-      },
-      "width": "3"
-    }
-  ],
   "units": [
     {
       "applicableUnits": [
@@ -216,6 +181,47 @@
       "appliesToKey": [
         "maxspeed"
       ]
+    }
+  ],
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": {
+            "render": null,
+            "mappings": [
+              {
+                "if": "maxspeed~[1-9]0|1[0-4]0",
+                "then": "./assets/themes/maxspeed/maxspeed_{maxspeed} mph.svg"
+              },
+              {
+                "if": "maxspeed~[1-9]0|1[0-4]0 mph",
+                "then": "./assets/themes/maxspeed/maxspeed_{maxspeed}.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": "32,32",
+      "location": [
+        "point",
+        "projected_centerpoint"
+      ],
+      "anchor": "center"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": {
+        "render": "#000000",
+        "mappings": [
+          {
+            "if": "maxspeed=",
+            "then": "#ff0000"
+          }
+        ]
+      },
+      "width": "3"
     }
   ]
 }

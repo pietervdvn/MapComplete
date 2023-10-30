@@ -63,7 +63,7 @@
           }
         ]
       },
-      "mapRendering": [
+      "lineRendering": [
         {
           "width": "4",
           "color": "#452b29"
@@ -121,7 +121,7 @@
           ]
         }
       },
-      "mapRendering": [
+      "pointRendering": [
         {
           "location": [
             "point",
@@ -258,9 +258,13 @@
       "builtin": "route_marker",
       "override": {
         "minzoom": 16,
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "./assets/themes/walkingnodes/route_marker.svg"
+            "marker": [
+              {
+                "icon": "./assets/themes/walkingnodes/route_marker.svg"
+              }
+            ]
           }
         ],
         "presets": [

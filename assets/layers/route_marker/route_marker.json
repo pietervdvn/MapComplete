@@ -38,13 +38,17 @@
       "en": "Route marker"
     }
   },
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "centroid",
         "point"
       ],
-      "icon": "./assets/layers/route_marker/route_marker.svg"
+      "marker": [
+        {
+          "icon": "./assets/layers/route_marker/route_marker.svg"
+        }
+      ]
     }
   ],
   "tagRenderings": [

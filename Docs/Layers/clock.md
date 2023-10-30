@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/clock/clock.svg' height="100px"> 
+
 
 Layer with public clocks
 

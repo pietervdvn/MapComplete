@@ -263,38 +263,44 @@
       ]
     }
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
       "label": {
         "render": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
         "condition": "addr:housenumber~*"
       },
       "iconSize": "50,50",
-      "icon": {
-        "render": "./assets/layers/address/housenumber_blank.svg",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                {
-                  "and": [
-                    "addr:housenumber=",
-                    "nohousenumber!=yes"
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/address/housenumber_blank.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    {
+                      "and": [
+                        "addr:housenumber=",
+                        "nohousenumber!=yes"
+                      ]
+                    },
+                    "addr:street="
                   ]
                 },
-                "addr:street="
-              ]
-            },
-            "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+                "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "location": [
         "point",
         "centroid"
       ],
       "anchor": "center"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": {
         "render": "#00f",

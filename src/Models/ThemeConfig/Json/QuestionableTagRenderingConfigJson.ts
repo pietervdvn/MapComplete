@@ -1,18 +1,27 @@
 import { TagConfigJson } from "./TagConfigJson"
 import { TagRenderingConfigJson } from "./TagRenderingConfigJson"
+import type { Translatable } from "./Translatable"
 
 export interface MappingConfigJson {
     /**
-     * @inheritDoc
+     * question: What tags should be matched to show this option?
+     *
+     * If in 'question'-mode and the contributor selects this option, these tags will be applied to the object
      */
     if: TagConfigJson
+
     /**
-     * Shown if the 'if is fulfilled
+     * Question: What corresponding text should be shown?
+     * Shown if the `if` is fulfilled
      * Type: rendered
      */
     then: string | Record<string, string>
     /**
-     * An extra icon supporting the choice
+     * question: What icon should be shown next to this mapping?
+     *
+     * This icon will only be shown if the value is known, it is not displayed in the options (but might be in the future)
+     *
+     * ifunset: Show no icon
      * Type: icon
      */
     icon?:
@@ -30,6 +39,11 @@ export interface MappingConfigJson {
           }
 
     /**
+     * question: Under what circumstances should this mapping be <b>hidden</b> from the possibilities a contributor can pick?
+     * iftrue: Never show this mapping as option to pick
+     * ifunset: Always show this mapping as option to pick
+     * type: tag
+     *
      * In some cases, multiple taggings exist (e.g. a default assumption, or a commonly mapped abbreviation and a fully written variation).
      *
      * In the latter case, a correct text should be shown, but only a single, canonical tagging should be selectable by the user.
@@ -90,7 +104,10 @@ export interface MappingConfigJson {
      * }
      */
     hideInAnswer?: boolean | TagConfigJson
+
     /**
+     * question: What tags should be applied if this mapping is _not_ chosen?
+     *
      * Only applicable if 'multiAnswer' is set.
      * This is for situations such as:
      * `accepts:coins=no` where one can select all the possible payment methods. However, we want to make explicit that some options _were not_ selected.
@@ -101,7 +118,10 @@ export interface MappingConfigJson {
     ifnot?: TagConfigJson
 
     /**
-     * If chosen as answer, these tags will be applied as well onto the object.
+     * question: What extra tags should be added to the object if this object is chosen?
+     * type: simple_tag[]
+     *
+     * If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`
      * Not compatible with multiAnswer.
      *
      * This can be used e.g. to erase other keys which indicate the 'not' value:
@@ -109,7 +129,7 @@ export interface MappingConfigJson {
      * {
      *     "if": "crossing:marking=rainbow",
      *     "then": "This is a rainbow crossing",
-     *     "addExtraTags": "not:crossing:marking="
+     *     "addExtraTags": ["not:crossing:marking="]
      * }
      * ```
      *
@@ -117,21 +137,25 @@ export interface MappingConfigJson {
     addExtraTags?: string[]
 
     /**
+     * question: If there are many options, what search terms match too?
      * If there are many options, the mappings-radiobuttons will be replaced by an element with a searchfunction
      *
      * Searchterms (per language) allow to easily find an option if there are many options
+     * group: hidden
      */
     searchTerms?: Record<string, string[]>
 
     /**
      * If the searchable selector is picked, mappings with this item will have priority and show up even if the others are hidden
      * Use this sparingly
+     * group: hidden
      */
     priorityIf?: TagConfigJson
 
     /**
      * Used for comments or to disable a validation
      *
+     * group: hidden
      * ignore-image-in-then: normally, a `then`-clause is not allowed to have an `img`-html-element as icons are preferred. In some cases (most notably title-icons), this is allowed
      */
     "#"?: string | "ignore-image-in-then"
@@ -142,34 +166,54 @@ export interface MappingConfigJson {
  * If the desired tags are missing and a question is defined, a question will be shown instead.
  */
 export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJson {
-    /**
-     * If it turns out that this tagRendering doesn't match _any_ value, then we show this question.
-     * If undefined, the question is never asked and this tagrendering is read-only
+    /*
+     * The id of the tagrendering, should be an unique string.
+     * Used to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.
+     *
+     * question: What is the id of this tagRendering?
      */
-    question?: string | Record<string, string>
+    id: string
 
     /**
-     * A hint which is shown in subtle text under the question.
-     * This can give some extra information on what the answer should ook like
+     * Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes
+     *
+     * question: What are common options?
      */
-    questionHint?: string | Record<string, string>
+    mappings?: MappingConfigJson[]
+
+    /**
+     * If true, use checkboxes instead of radio buttons when asking the question
+     *
+     * question: Should a contributor be allowed to select multiple mappings?
+     *
+     * iftrue: allow to select multiple mappings
+     * iffalse: only allow to select a single mapping
+     * ifunset: only allow to select a single mapping
+     */
+    multiAnswer?: boolean
 
     /**
      * Allow freeform text input from the user
      */
     freeform?: {
         /**
-         * @inheritDoc
+         * question: What is the name of the attribute that should be written to?
+         * ifunset: do not offer a freeform textfield as answer option
          */
         key: string
 
         /**
+         * question: What is the input type?
          * The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...
          * See Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values
+         * ifunset: use an unconstrained <b>string</b> as input (default)
+         * suggestions: return validators.AllValidators.filter(type => !type.isMeta).map((type) => ({if: "value="+type.name, then: "<b>"+type.name+"</b> "+type.explanation.split("\n")[0]}))
          */
         type?: string
         /**
+         * question: What placeholder text should be shown in the input-element if there is no input?
          * A (translated) text that is shown (as gray text) within the textfield
+         * type: translation
          */
         placeholder?: string | any
 
@@ -185,28 +229,48 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
         addExtraTags?: string[]
 
         /**
-         * When set, influences the way a question is asked.
+         * question: Show the freeform as box within the question?
          * Instead of showing a full-width text field, the text field will be shown within the rendering of the question.
          *
          * This combines badly with special input elements, as it'll distort the layout.
-         * Note that this will be set automatically if no special elements are present.
+         * ifunset: show the freeform input field full-width
+         * iftrue: show the freeform input field as a small field within the question
          */
         inline?: boolean
 
         /**
-         * default value to enter if no previous tagging is present.
-         * Normally undefined (aka do not enter anything)
+         * question: What value should be entered in the text field if no value is set?
+         * This can help people to quickly enter the most common option
+         * ifunset: do not prefill the textfield
          */
         default?: string
+        /**
+         * question: What values of the freeform key should be interpreted as 'unknown'?
+         * For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked
+         * ifunset: The question will be considered answered if any value is set for the key
+         */
+        invalidValues?: TagConfigJson
     }
 
     /**
-     * If true, use checkboxes instead of radio buttons when asking the question
+     * question: What question should be shown to the contributor?
+     *
+     * A question is presented ot the user if no mapping matches and the 'freeform' key is not set as well.
+     *
+     * ifunset: This tagrendering will be shown if it is known, but cannot be edited by the contributor, effectively resutling in a read-only rendering
      */
-    multiAnswer?: boolean
+    question?: string | Translatable
 
     /**
-     * Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes
+     * question: Should some extra information be shown to the contributor, alongside the question?
+     * This hint is shown in subtle text under the question.
+     * This can give some extra information on what the answer should ook like
+     * ifunset: No extra hint is given
      */
-    mappings?: MappingConfigJson[]
+    questionHint?: string | Translatable
+
+    /**
+     * A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer
+     */
+    labels?: string[]
 }

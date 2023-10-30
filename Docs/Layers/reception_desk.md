@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/reception_desk/reception_desk.svg' height="100px"> 
+
 
 A layer showing where the reception desks are and which asks some accessibility information
 

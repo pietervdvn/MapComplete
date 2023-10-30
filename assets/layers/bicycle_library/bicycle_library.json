@@ -326,9 +326,9 @@
       }
     }
   ],
-  "mapRendering": [
+  "deletion": true,
+  "pointRendering": [
     {
-      "icon": "pin:#22ff55;./assets/layers/bicycle_library/bicycle_library.svg",
       "iconBadges": [
         {
           "if": "opening_hours~*",
@@ -344,12 +344,22 @@
         "point",
         "centroid"
       ],
-      "anchor": "bottom"
-    },
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#22ff55"
+        },
+        {
+          "icon": "./assets/layers/bicycle_library/bicycle_library.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#c00",
       "width": "1"
     }
-  ],
-  "deletion": true
+  ]
 }

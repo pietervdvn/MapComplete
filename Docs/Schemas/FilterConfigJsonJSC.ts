@@ -13,15 +13,13 @@ export default {
         "properties": {
           "question": {},
           "osmTags": {
-            "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation",
+            "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag",
             "anyOf": [
               {
-                "$ref": "#/definitions/AndTagConfigJson",
-                "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+                "$ref": "#/definitions/{and:TagConfigJson[];}"
               },
               {
-                "$ref": "#/definitions/OrTagConfigJson",
-                "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+                "$ref": "#/definitions/{or:TagConfigJson[];}"
               },
               {
                 "type": "string"
@@ -66,13 +64,12 @@ export default {
   ],
   "definitions": {
     "TagConfigJson": {
-      "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation",
+      "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag",
       "anyOf": [
         {
-          "$ref": "#/definitions/AndTagConfigJson"
+          "$ref": "#/definitions/{and:TagConfigJson[];}"
         },
         {
-          "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
           "type": "object",
           "properties": {
             "or": {
@@ -91,8 +88,7 @@ export default {
         }
       ]
     },
-    "AndTagConfigJson": {
-      "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
+    "{and:TagConfigJson[];}": {
       "type": "object",
       "properties": {
         "and": {
@@ -106,8 +102,7 @@ export default {
         "and"
       ]
     },
-    "OrTagConfigJson": {
-      "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
+    "{or:TagConfigJson[];}": {
       "type": "object",
       "properties": {
         "or": {
@@ -120,6 +115,9 @@ export default {
       "required": [
         "or"
       ]
+    },
+    "Record<string,string>": {
+      "type": "object"
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#"

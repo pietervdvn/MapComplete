@@ -50,6 +50,16 @@
     ]
   },
   {
+    "path": "fas-bowl-rice.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
     "path": "fas-camera-retro.svg",
     "license": "CC-BY-4.0",
     "authors": [
@@ -210,6 +220,16 @@
     ]
   },
   {
+    "path": "fas-jar.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
     "path": "fas-key.svg",
     "license": "CC-BY-4.0",
     "authors": [
@@ -292,6 +312,16 @@
   {
     "path": "fas-pills.svg",
     "license": "CC-BY-4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-plate-wheat.svg",
+    "license": "CC-BY 4.0",
     "authors": [
       "Font-Awesome icon set"
     ],

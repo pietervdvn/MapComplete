@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/rainbow_crossings/crossing.svg' height="100px"> 
+
 
 A layer showing pedestrian crossings with rainbow paintings
 

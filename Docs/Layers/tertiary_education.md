@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/school/college.svg' height="100px"> 
+
 
 Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)
 

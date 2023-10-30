@@ -1073,23 +1073,6 @@
     "enableRelocation": false,
     "enableImproveAccuraccy": true
   },
-  "mapRendering": [
-    {
-      "icon": "circle:#99bd54;./assets/layers/bench/bench.svg",
-      "iconSize": "35,35",
-      "iconBadges": [
-        {
-          "if": "tourism=artwork",
-          "then": "circle:white;./assets/layers/artwork/artwork.svg"
-        }
-      ],
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    }
-  ],
   "filter": [
     {
       "id": "bench_is_memorial",
@@ -1161,5 +1144,31 @@
       ]
     },
     "has_image"
-  ]
+  ],
+  "pointRendering": [
+    {
+      "iconSize": "35,35",
+      "iconBadges": [
+        {
+          "if": "tourism=artwork",
+          "then": "circle:white;./assets/layers/artwork/artwork.svg"
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "#99bd54"
+        },
+        {
+          "icon": "./assets/layers/bench/bench.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": []
 }

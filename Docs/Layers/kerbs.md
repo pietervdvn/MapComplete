@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/kerbs/KerbIcon.svg' height="100px"> 
+
 
 A layer showing kerbs.
 

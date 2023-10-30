@@ -2981,7 +2981,7 @@
         }
     },
     "last_click": {
-        "mapRendering": {
+        "pointRendering": {
             "0": {
                 "label": {
                     "render": "Haga clic aquí para añadir un nuevo ítem"
@@ -4876,17 +4876,6 @@
                 "options": {
                     "0": {
                         "question": "Papelera con dispensador de bolsas de excrementos (para perros)"
-                    }
-                }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Papelera"
-                        }
                     }
                 }
             }

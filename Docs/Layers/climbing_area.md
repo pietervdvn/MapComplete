@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/climbing/climbing_no_rope.svg' height="100px"> 
+
 
 An area where climbing is possible, e.g. a crag, site, boulder, … Contains aggregation of routes
 

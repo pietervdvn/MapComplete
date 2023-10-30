@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:#FFFFFF00;./assets/themes/elongated_coin/penny.svg' height="100px"> 
+
 
 Layer showing penny presses.
 

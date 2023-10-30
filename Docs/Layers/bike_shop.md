@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/pin:#f04c4c;./assets/layers/bike_shop/repair_shop.svg' height="100px"> 
+
 
 A shop specifically selling bicycles or related items
 

@@ -35,18 +35,6 @@
   },
   "passAllFeatures": true,
   "shownByDefault": false,
-  "mapRendering": [
-    {
-      "color": "#fff",
-      "fill": "no",
-      "width": "3"
-    },
-    {
-      "color": "#333",
-      "fill": "no",
-      "width": "2"
-    }
-  ],
   "calculatedTags": [
     "_entrance_properties=overlapWith(feat)('entrance')?.map(e => e.feat.properties)?.filter(p => p !== undefined && p.indoor !== 'door')",
     "_entrance_properties_with_width=get(feat)('_entrance_properties')?.filter(p => p['width'] !== undefined)",
@@ -161,6 +149,19 @@
       "id": "biggest_width",
       "render": "The <a href='#{_biggest_width_id}'>entrance with the biggest width</a> is {canonical(_biggest_width)} wide",
       "condition": "_biggest_width_id~*"
+    }
+  ],
+  "pointRendering": [],
+  "lineRendering": [
+    {
+      "color": "#fff",
+      "fill": "no",
+      "width": "3"
+    },
+    {
+      "color": "#333",
+      "fill": "no",
+      "width": "2"
     }
   ]
 }

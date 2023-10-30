@@ -80,15 +80,20 @@
   },
   "tagRenderings": [],
   "presets": [],
-  "mapRendering": [
+  "pointRendering": [
     {
-      "icon": "./assets/layers/visitor_information_centre/information.svg",
       "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
       ],
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/layers/visitor_information_centre/information.svg"
+        }
+      ]
     }
-  ]
+  ],
+  "lineRendering": []
 }

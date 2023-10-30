@@ -505,23 +505,6 @@
       ]
     }
   ],
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": {
-        "render": "circle:white;./assets/layers/entrance/entrance.svg",
-        "mappings": [
-          {
-            "if": "entrance=emergency",
-            "then": "circle:white;./assets/layers/entrance/emergency_door.svg"
-          }
-        ]
-      }
-    }
-  ],
   "presets": [
     {
       "title": {
@@ -600,5 +583,31 @@
         }
       ]
     }
-  ]
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/entrance/entrance.svg",
+            "mappings": [
+              {
+                "if": "entrance=emergency",
+                "then": "./assets/layers/entrance/emergency_door.svg"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": []
 }

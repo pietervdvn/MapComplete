@@ -26,7 +26,7 @@ export class LastClickFeatureSource implements WritableFeatureSource {
             for (let i = 0; i < (layer.presets ?? []).length; i++) {
                 const preset = layer.presets[i]
                 const tags = new ImmutableStore(TagUtils.KVtoProperties(preset.tags))
-                const { html } = layer.mapRendering[0].RenderIcon(tags, false, {
+                const { html } = layer.mapRendering[0].RenderIcon(tags, {
                     noSize: true,
                     includeBadges: false,
                 })

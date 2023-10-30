@@ -988,55 +988,120 @@
     "enableRelocation": false,
     "enableImproveAccuraccy": true
   },
-  "mapRendering": [
+  "description": {
+    "en": "A layer showing bicycle pumps and bicycle repair tool stands",
+    "nl": "Deze laag toont fietspompen en herstelpunten voor fietsen",
+    "de": "Eine Ebene mit Fahrradpumpen und Werkzeugständern für die Fahrradreparatur",
+    "es": "Una capa que muestra bombas de bicicletas y puestos de herramientas de reparación de bicicletas",
+    "da": "Et lag med cykelpumper og cykelreværktøjsstativer",
+    "fr": "Une couche montrant les pompes à vélo et les centres de réparation",
+    "cs": "Vrstva zobrazující vzduchové kompresory na jízdní kola a stojany na nářadí pro opravu jízdních kol",
+    "ca": "Una capa que mostra bombes de bicicletes i suports d'eines de reparació de bicicletes",
+    "pt_BR": "Uma camada que mostra bombas de ar para bicicletas e suportes com ferramentas de reparo para bicicletas"
+  },
+  "pointRendering": [
     {
-      "icon": {
-        "render": "pin:#88d32c;./assets/layers/bike_repair_station/repair_station.svg",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "service:bicycle:pump=yes",
-                "service:bicycle:tools=yes",
-                "service:bicycle:pump:operational_status=broken"
-              ]
-            },
-            "then": "pin:#88d32c;./assets/layers/bike_repair_station/repair_station_broken_pump.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "service:bicycle:pump=yes",
-                "service:bicycle:tools=yes"
-              ]
-            },
-            "then": "pin:#30abf0;./assets/layers/bike_repair_station/repair_station_pump.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "service:bicycle:pump:operational_status=broken",
-                "service:bicycle:tools=no"
-              ]
-            },
-            "then": "pin:black;./assets/layers/bike_repair_station/broken_pump.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "service:bicycle:pump=yes",
-                {
-                  "or": [
-                    "service:bicycle:tools=no",
-                    "service:bicycle:tools="
+      "marker": [
+        {
+          "icon": "pin",
+          "color": {
+            "render": "#88d32c",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump=yes",
+                    "service:bicycle:tools=yes",
+                    "service:bicycle:pump:operational_status=broken"
                   ]
-                }
-              ]
-            },
-            "then": "pin:#e1783a;./assets/layers/bike_repair_station/pump.svg"
+                },
+                "then": "#88d32c"
+              },
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump=yes",
+                    "service:bicycle:tools=yes"
+                  ]
+                },
+                "then": "#30abf0"
+              },
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump:operational_status=broken",
+                    "service:bicycle:tools=no"
+                  ]
+                },
+                "then": "black"
+              },
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump=yes",
+                    {
+                      "or": [
+                        "service:bicycle:tools=no",
+                        "service:bicycle:tools="
+                      ]
+                    }
+                  ]
+                },
+                "then": "#e1783a"
+              }
+            ]
           }
-        ]
-      },
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/bike_repair_station/repair_station.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump=yes",
+                    "service:bicycle:tools=yes",
+                    "service:bicycle:pump:operational_status=broken"
+                  ]
+                },
+                "then": "./assets/layers/bike_repair_station/repair_station_broken_pump.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump=yes",
+                    "service:bicycle:tools=yes"
+                  ]
+                },
+                "then": "./assets/layers/bike_repair_station/repair_station_pump.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump:operational_status=broken",
+                    "service:bicycle:tools=no"
+                  ]
+                },
+                "then": "./assets/layers/bike_repair_station/broken_pump.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump=yes",
+                    {
+                      "or": [
+                        "service:bicycle:tools=no",
+                        "service:bicycle:tools="
+                      ]
+                    }
+                  ]
+                },
+                "then": "./assets/layers/bike_repair_station/pump.svg"
+              }
+            ]
+          }
+        }
+      ],
       "iconBadges": [
         {
           "if": "operator=De Fietsambassade Gent",
@@ -1060,15 +1125,5 @@
       "anchor": "bottom"
     }
   ],
-  "description": {
-    "en": "A layer showing bicycle pumps and bicycle repair tool stands",
-    "nl": "Deze laag toont fietspompen en herstelpunten voor fietsen",
-    "de": "Eine Ebene mit Fahrradpumpen und Werkzeugständern für die Fahrradreparatur",
-    "es": "Una capa que muestra bombas de bicicletas y puestos de herramientas de reparación de bicicletas",
-    "da": "Et lag med cykelpumper og cykelreværktøjsstativer",
-    "fr": "Une couche montrant les pompes à vélo et les centres de réparation",
-    "cs": "Vrstva zobrazující vzduchové kompresory na jízdní kola a stojany na nářadí pro opravu jízdních kol",
-    "ca": "Una capa que mostra bombes de bicicletes i suports d'eines de reparació de bicicletes",
-    "pt_BR": "Uma camada que mostra bombas de ar para bicicletas e suportes com ferramentas de reparo para bicicletas"
-  }
+  "lineRendering": []
 }

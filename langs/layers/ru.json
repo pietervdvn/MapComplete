@@ -1980,17 +1980,6 @@
         }
     },
     "waste_basket": {
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Контейнер для мусора"
-                        }
-                    }
-                }
-            }
-        },
         "name": "Контейнер для мусора",
         "presets": {
             "0": {

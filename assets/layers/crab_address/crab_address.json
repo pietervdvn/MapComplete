@@ -9,18 +9,6 @@
   },
   "name": "CRAB-addressen",
   "title": "CRAB-adres",
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "iconSize": "50,50",
-      "icon": "./assets/layers/crab_address/housenumber_blank.svg",
-      "label": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{_HNRLABEL}</div>",
-      "anchor": "center"
-    }
-  ],
   "calculatedTags": [
     "_HNRLABEL=(() => {const lbl = feat.properties.HNRLABEL?.split('-')?.map(l => Number(l))?.filter(i => !isNaN (i)) ;if(lbl?.length != 2) {return feat.properties.HNRLABEL}; const addresses = []; for(let i = lbl[0]; i <= lbl[1]; i += 1){addresses.push(''+i);}; return addresses.join(';')        })()"
   ],
@@ -31,5 +19,22 @@
         "nl": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
       }
     }
-  ]
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": "50,50",
+      "label": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{_HNRLABEL}</div>",
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/layers/crab_address/housenumber_blank.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": []
 }

@@ -8,10 +8,8 @@
     "cs": "Falešná vrstva, která obsahuje tagrenderingy sdílené mezi lezeckými vrstvami",
     "ca": "Una capa fictícia que conté renderització d'etiquetes compartides entre les capes d'escalada"
   },
-  "minzoom": 19,
-  "source": {
-    "osmTags": "sport=climbing"
-  },
+  "minzoom": 18,
+  "source": "special:library",
   "tagRenderings": [
     {
       "id": "website",
@@ -445,5 +443,6 @@
       ]
     }
   ],
-  "mapRendering": null
+  "lineRendering": null,
+  "pointRendering": null
 }

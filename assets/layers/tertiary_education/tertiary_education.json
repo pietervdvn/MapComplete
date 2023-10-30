@@ -180,29 +180,6 @@
     "email",
     "phone"
   ],
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "iconSize": "40,40",
-      "label": {
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
-          }
-        ]
-      },
-      "icon": "circle:white;./assets/layers/school/college.svg",
-      "anchor": "center"
-    },
-    {
-      "color": "#22f1f4",
-      "width": 1
-    }
-  ],
   "presets": [
     {
       "title": {
@@ -226,6 +203,39 @@
         "amenity=university",
         "fixme=Added with MapComplete, geometry to be drawn"
       ]
+    }
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": "40,40",
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
+          }
+        ]
+      },
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/school/college.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#22f1f4",
+      "width": 1
     }
   ]
 }

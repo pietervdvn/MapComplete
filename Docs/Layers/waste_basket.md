@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/waste_basket/waste_basket.svg' height="100px"> 
+
 
 This is a public waste basket, thrash can, where you can throw away your thrash.
 

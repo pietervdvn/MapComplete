@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/visitor_information_centre/information.svg' height="100px"> 
+
 
 A visitor center offers information about a specific attraction or place of interest where it is located.
 

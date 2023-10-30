@@ -5,15 +5,21 @@
   "name": null,
   "source": "special",
   "shownByDefault": false,
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "point",
         "centroid"
       ],
-      "icon": "square:red",
       "iconSize": "5,5",
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "square",
+          "color": "red"
+        }
+      ]
     }
-  ]
+  ],
+  "lineRendering": []
 }

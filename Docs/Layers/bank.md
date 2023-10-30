@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/bank/bank.svg' height="100px"> 
+
 
 A financial institution to deposit money
 

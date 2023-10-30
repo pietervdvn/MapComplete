@@ -111,35 +111,6 @@
       }
     }
   ],
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": {
-        "render": "note",
-        "mappings": [
-          {
-            "if": "closed_at~*",
-            "then": "resolved"
-          }
-        ]
-      },
-      "iconSize": "40,40",
-      "iconBadges": [
-        {
-          "if": "_total_comments>1",
-          "then": "circle:white;speech_bubble"
-        },
-        {
-          "if": "_is_import_note~*",
-          "then": "addSmall"
-        }
-      ],
-      "anchor": "bottom"
-    }
-  ],
   "filter": [
     {
       "id": "search",
@@ -381,5 +352,39 @@
         }
       ]
     }
-  ]
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "note",
+            "mappings": [
+              {
+                "if": "closed_at~*",
+                "then": "resolved"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": "40,40",
+      "iconBadges": [
+        {
+          "if": "_total_comments>1",
+          "then": "circle:white;speech_bubble"
+        },
+        {
+          "if": "_is_import_note~*",
+          "then": "addSmall"
+        }
+      ],
+      "anchor": "bottom"
+    }
+  ],
+  "lineRendering": []
 }

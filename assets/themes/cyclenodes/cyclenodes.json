@@ -77,12 +77,6 @@
           }
         ]
       },
-      "mapRendering": [
-        {
-          "width": "4",
-          "color": "#00a703"
-        }
-      ],
       "tagRenderings": [
         {
           "builtin": "survey_date",
@@ -111,6 +105,12 @@
           "id": "node2node-survey:date"
         },
         "export_as_gpx"
+      ],
+      "lineRendering": [
+        {
+          "width": "4",
+          "color": "#00a703"
+        }
       ]
     },
     {
@@ -135,7 +135,7 @@
           ]
         }
       },
-      "mapRendering": [
+      "pointRendering": [
         {
           "location": [
             "point",
@@ -304,7 +304,7 @@
       "builtin": "route_marker",
       "override": {
         "minzoom": 16,
-        "mapRendering": [
+        "pointRendering": [
           {
             "icon": "./assets/themes/cyclenodes/route_marker.svg"
           }
@@ -335,5 +335,7 @@
       }
     }
   ],
-  "credits": "Sebastian Kürten"
+  "credits": [
+    "Sebastian Kürten"
+  ]
 }

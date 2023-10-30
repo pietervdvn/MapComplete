@@ -43,7 +43,7 @@ export class ChangesetHandler {
         this.userDetails = osmConnection.userDetails
         this.backend = osmConnection._oauth_config.url
 
-        if (dryRun) {
+        if (dryRun.data) {
             console.log("DRYRUN ENABLED")
         }
     }

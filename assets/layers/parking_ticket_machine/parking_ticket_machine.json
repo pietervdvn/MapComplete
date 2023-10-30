@@ -94,15 +94,24 @@
       ]
     }
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "point",
         "centroid"
       ],
-      "icon": "square:white;./assets/layers/parking_ticket_machine/parking_tickets.svg",
       "iconSize": "20,20",
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "square",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/parking_ticket_machine/parking_tickets.svg"
+        }
+      ]
     }
-  ]
+  ],
+  "lineRendering": []
 }

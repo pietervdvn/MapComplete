@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:#99bd54;./assets/layers/bench/bench.svg' height="100px"> 
+
 
 A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them.
 

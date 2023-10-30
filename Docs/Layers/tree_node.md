@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:#ffffff;./assets/layers/tree_node/unknown.svg' height="100px"> 
+
 
 A layer showing trees
 

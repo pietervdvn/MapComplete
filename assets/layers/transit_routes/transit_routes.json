@@ -48,27 +48,6 @@
       }
     ]
   },
-  "mapRendering": [
-    {
-      "color": {
-        "render": {
-          "en": "#ff0000",
-          "de": "#ff0000",
-          "da": "#ff0000",
-          "nl": "#ff0000",
-          "ca": "#ff0000",
-          "cs": "#ff0000"
-        },
-        "mappings": [
-          {
-            "if": "colour~*",
-            "then": "{colour}"
-          }
-        ]
-      },
-      "width": 5
-    }
-  ],
   "tagRenderings": [
     {
       "id": "name",
@@ -229,6 +208,20 @@
       }
     }
   ],
+  "pointRendering": [],
+  "lineRendering": [
+    {
+      "color": {
+        "render": "#ff0000",
+        "mappings": [
+          {
+            "if": "colour~*",
+            "then": "{colour}"
+          }
+        ]
+      }
+    }
+  ],
   "titleIcons": [
     {
       "condition": {
@@ -243,5 +236,12 @@
   ],
   "calculatedTags": [
     "_numeric_id=feat.properties.id.split('/')[1]"
-  ]
+  ],
+  "cs": {
+    "0": {
+      "color": {
+        "render": "#ff0000"
+      }
+    }
+  }
 }

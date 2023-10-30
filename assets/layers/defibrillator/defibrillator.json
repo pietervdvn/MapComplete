@@ -81,7 +81,9 @@
       "tags": [
         "emergency=defibrillator"
       ],
-      "snapToLayer": "walls_and_buildings",
+      "snapToLayer": [
+        "walls_and_buildings"
+      ],
       "maxSnapDistance": 5
     }
   ],
@@ -725,29 +727,39 @@
   },
   "allowMove": {
     "enableRelocation": false,
-    "enableImproveAccuraccy": true
+    "enableImproveAccuracy": true
   },
-  "mapRendering": [
-    {
-      "icon": {
-        "render": "square:#008754;./assets/layers/defibrillator/defibrillator.svg",
-        "mappings": [
-          {
-            "if": "_recently_surveyed=true",
-            "then": "square:#28ba3d;./assets/layers/defibrillator/defibrillator.svg"
-          }
-        ]
-      },
-      "location": [
-        "point"
-      ]
-    },
-    {
-      "color": "#0000ff"
-    }
-  ],
   "filter": [
     "has_image",
     "open_now"
+  ],
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "square",
+          "color": {
+            "render": "#008754",
+            "mappings": [
+              {
+                "if": "_recently_surveyed=true",
+                "then": "#28ba3d"
+              }
+            ]
+          }
+        },
+        {
+          "icon": "./assets/layers/defibrillator/defibrillator.svg"
+        }
+      ],
+      "location": [
+        "point"
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#0000ff"
+    }
   ]
 }

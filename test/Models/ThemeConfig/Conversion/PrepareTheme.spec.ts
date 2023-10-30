@@ -1,16 +1,20 @@
 import { LayoutConfigJson } from "../../../../src/Models/ThemeConfig/Json/LayoutConfigJson"
 import { LayerConfigJson } from "../../../../src/Models/ThemeConfig/Json/LayerConfigJson"
 import { PrepareTheme } from "../../../../src/Models/ThemeConfig/Conversion/PrepareTheme"
-import { TagRenderingConfigJson } from "../../../../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
 import LayoutConfig from "../../../../src/Models/ThemeConfig/LayoutConfig"
 import bookcaseLayer from "../../../../src/assets/generated/layers/public_bookcase.json"
 import LayerConfig from "../../../../src/Models/ThemeConfig/LayerConfig"
 import { ExtractImages } from "../../../../src/Models/ThemeConfig/Conversion/FixImages"
 import cyclofix from "../../../../src/assets/generated/themes/cyclofix.json"
 import { Tag } from "../../../../src/Logic/Tags/Tag"
-import { DesugaringContext } from "../../../../src/Models/ThemeConfig/Conversion/Conversion"
+import {
+    ConversionContext,
+    DesugaringContext,
+} from "../../../../src/Models/ThemeConfig/Conversion/Conversion"
 import { And } from "../../../../src/Logic/Tags/And"
 import { describe, expect, it } from "vitest"
+import { QuestionableTagRenderingConfigJson } from "../../../../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+import Constants from "../../../../src/Models/Constants"
 
 const themeConfigJson: LayoutConfigJson = {
     description: "Descr",
@@ -34,17 +38,40 @@ const themeConfigJson: LayoutConfigJson = {
     id: "test",
 }
 
+function constructSharedLayers(): Map<string, LayerConfigJson> {
+    const sharedLayers = new Map<string, LayerConfigJson>()
+    sharedLayers.set("selected_element", <LayerConfigJson>{
+        id: "selected_element",
+        pointRendering: null,
+        tagRenderings: null,
+        lineRendering: null,
+        title: null,
+        source: "special",
+    })
+    for (const defaultLayer of Constants.added_by_default) {
+        sharedLayers.set(defaultLayer, <LayerConfigJson>{
+            id: defaultLayer,
+            pointRendering: null,
+            tagRenderings: null,
+            lineRendering: null,
+            title: null,
+            source: "special",
+        })
+    }
+    return sharedLayers
+}
+
 describe("PrepareTheme", () => {
     it("should substitute layers", () => {
-        const sharedLayers = new Map<string, LayerConfigJson>()
-        sharedLayers.set("public_bookcase", bookcaseLayer)
+        const sharedLayers = constructSharedLayers()
+        sharedLayers.set("public_bookcase", <any>bookcaseLayer)
         const theme = { ...themeConfigJson, layers: ["public_bookcase"] }
         const prepareStep = new PrepareTheme({
-            tagRenderings: new Map<string, TagRenderingConfigJson>(),
-            sharedLayers: sharedLayers,
+            tagRenderings: new Map<string, QuestionableTagRenderingConfigJson>(),
+            sharedLayers,
             publicLayers: new Set<string>(),
         })
-        let themeConfigJsonPrepared = prepareStep.convert(theme, "test").result
+        let themeConfigJsonPrepared = prepareStep.convertStrict(theme, ConversionContext.test())
         const themeConfig = new LayoutConfig(themeConfigJsonPrepared)
         const layerUnderTest = <LayerConfig>(
             themeConfig.layers.find((l) => l.id === "public_bookcase")
@@ -55,13 +82,13 @@ describe("PrepareTheme", () => {
     })
 
     it("should apply override", () => {
-        const sharedLayers = new Map<string, LayerConfigJson>()
-        sharedLayers.set("public_bookcase", bookcaseLayer)
+        const sharedLayers = constructSharedLayers()
+        sharedLayers.set("public_bookcase", <any>bookcaseLayer)
         let themeConfigJsonPrepared = new PrepareTheme({
-            tagRenderings: new Map<string, TagRenderingConfigJson>(),
-            sharedLayers: sharedLayers,
+            tagRenderings: new Map<string, QuestionableTagRenderingConfigJson>(),
+            sharedLayers,
             publicLayers: new Set<string>(),
-        }).convert(themeConfigJson, "test").result
+        }).convertStrict(themeConfigJson, ConversionContext.test())
         const themeConfig = new LayoutConfig(themeConfigJsonPrepared)
         const layerUnderTest = <LayerConfig>(
             themeConfig.layers.find((l) => l.id === "public_bookcase")
@@ -70,19 +97,19 @@ describe("PrepareTheme", () => {
     })
 
     it("should apply override", () => {
-        const sharedLayers = new Map<string, LayerConfigJson>()
-        sharedLayers.set("public_bookcase", bookcaseLayer)
+        const sharedLayers = constructSharedLayers()
+        sharedLayers.set("public_bookcase", <any>bookcaseLayer)
         let themeConfigJsonPrepared = new PrepareTheme({
-            tagRenderings: new Map<string, TagRenderingConfigJson>(),
-            sharedLayers: sharedLayers,
+            tagRenderings: new Map<string, QuestionableTagRenderingConfigJson>(),
+            sharedLayers,
             publicLayers: new Set<string>(),
-        }).convert(
+        }).convertStrict(
             {
                 ...themeConfigJson,
                 overrideAll: { source: { geoJson: "https://example.com/data.geojson" } },
             },
-            "test"
-        ).result
+            ConversionContext.test()
+        )
         const themeConfig = new LayoutConfig(themeConfigJsonPrepared)
         const layerUnderTest = <LayerConfig>(
             themeConfig.layers.find((l) => l.id === "public_bookcase")
@@ -100,11 +127,14 @@ describe("PrepareTheme", () => {
                 en: "Test layer - please ignore",
             },
             titleIcons: [],
-            mapRendering: null,
+            pointRendering: [{ location: ["point"], label: "xyz" }],
+            lineRendering: [{ width: 1 }],
         }
+        const sharedLayers = constructSharedLayers()
+        sharedLayers.set("layer-example", testLayer)
         const ctx: DesugaringContext = {
-            sharedLayers: new Map<string, LayerConfigJson>([["layer-example", testLayer]]),
-            tagRenderings: new Map<string, TagRenderingConfigJson>(),
+            sharedLayers,
+            tagRenderings: new Map<string, QuestionableTagRenderingConfigJson>(),
             publicLayers: new Set<string>(),
         }
         const layout: LayoutConfigJson = {
@@ -122,13 +152,15 @@ describe("PrepareTheme", () => {
                 },
             ],
             startLat: 0,
+            pointRendering: null,
+            lineRendering: null,
             startLon: 0,
             startZoom: 0,
             title: "Test theme",
         }
         const rewritten = new PrepareTheme(ctx, {
             skipDefaultLayers: true,
-        }).convertStrict(layout, "test")
+        }).convertStrict(layout, ConversionContext.test())
         expect(rewritten.layers[0]).toEqual(testLayer)
         expect(rewritten.layers[1]).toEqual({
             source: {
@@ -137,7 +169,8 @@ describe("PrepareTheme", () => {
             id: "layer-example",
             name: null,
             minzoom: 18,
-            mapRendering: null,
+            pointRendering: [{ location: ["point"], label: "xyz" }],
+            lineRendering: [{ width: 1 }],
             titleIcons: [],
         })
     })
@@ -147,7 +180,7 @@ describe("ExtractImages", () => {
     it("should find all images in a themefile", () => {
         const images = new Set<string>(
             new ExtractImages(true, new Set<string>())
-                .convertStrict(<any>cyclofix, "test")
+                .convertStrict(<any>cyclofix, ConversionContext.test())
                 .map((x) => x.path)
         )
         const expectedValues = [

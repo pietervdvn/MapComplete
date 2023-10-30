@@ -49,14 +49,4 @@ export class AllKnownLayoutsLazy {
 
 export class AllKnownLayouts {
     public static allKnownLayouts: AllKnownLayoutsLazy = new AllKnownLayoutsLazy()
-
-    static AllPublicLayers() {
-        const layers = [].concat(
-            ...this.allKnownLayouts
-                .values()
-                .filter((layout) => !layout.hideFromOverview)
-                .map((layout) => layout.layers)
-        )
-        return layers
-    }
 }

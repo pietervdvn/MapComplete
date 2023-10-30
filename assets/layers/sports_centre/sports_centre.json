@@ -51,9 +51,14 @@
       ]
     }
   ],
-  "mapRendering": [
+  "allowMove": {
+    "enableImproveAccuracy": true
+  },
+  "filter": [
+    "open_now"
+  ],
+  "pointRendering": [
     {
-      "icon": "circle:white;./assets/layers/sports_centre/sports_centre.svg",
       "iconBadges": [
         {
           "if": "opening_hours~*",
@@ -63,17 +68,22 @@
       "location": [
         "point",
         "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/sports_centre/sports_centre.svg"
+        }
       ]
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "darkgreen",
       "fill": "no"
     }
-  ],
-  "allowMove": {
-    "enableImproveAccuracy": true
-  },
-  "filter": [
-    "open_now"
   ]
 }

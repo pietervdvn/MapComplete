@@ -108,68 +108,9 @@
       "tagRenderings": [
         "images"
       ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "./assets/themes/cyclestreets/F111.svg",
-            "mappings": [
-              {
-                "if": "traffic_sign=DE:244.1,1020-30",
-                "then": "./assets/themes/cyclestreets/Zeichen_244_1020-30.svg"
-              },
-              {
-                "if": "traffic_sign=DE:244.1,1022-12,1024-10",
-                "then": "./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg"
-              },
-              {
-                "if": "traffic_sign=DE:244.1,1022-12",
-                "then": "./assets/themes/cyclestreets/Zeichen_244_1022-12.svg"
-              },
-              {
-                "if": "traffic_sign=DE:244.1,1024-10",
-                "then": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg"
-              },
-              {
-                "if": "_country=de",
-                "then": "./assets/themes/cyclestreets/Zeichen_244.svg"
-              },
-              {
-                "if": "_country=fi",
-                "then": "./assets/themes/cyclestreets/Finland_road_sign_E28.svg"
-              }
-            ]
-          },
-          "iconSize": {
-            "render": "40,40,center",
-            "mappings": [
-              {
-                "if": {
-                  "or": [
-                    "traffic_sign=DE:244.1,1020-30",
-                    "traffic_sign=DE:244.1,1022-12,1024-10"
-                  ]
-                },
-                "then": "40,62,center"
-              },
-              {
-                "if": {
-                  "or": [
-                    "traffic_sign=DE:244.1,1022-12",
-                    "traffic_sign=DE:244.1,1024-10"
-                  ]
-                },
-                "then": "40,70,center"
-              }
-            ]
-          },
-          "location": [
-            "projected_centerpoint"
-          ]
-        },
-        {
-          "color": "#0000ff",
-          "width": "10"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -257,29 +198,9 @@
       "tagRenderings": [
         "images"
       ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "./assets/themes/cyclestreets/F113.svg",
-            "mappings": [
-              {
-                "if": "_country=de",
-                "then": "./assets/themes/cyclestreets/Zeichen_244a.svg"
-              },
-              {
-                "if": "_country=fi",
-                "then": "./assets/themes/cyclestreets/Finland_road_sign_E29.svg"
-              }
-            ]
-          },
-          "location": [
-            "projected_centerpoint"
-          ]
-        },
-        {
-          "color": "#09f9dd",
-          "width": "5"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -357,39 +278,9 @@
       "tagRenderings": [
         "images"
       ],
-      "mapRendering": [
-        {
-          "icon": "./assets/svg/pencil.svg",
-          "location": [
-            "projected_centerpoint"
-          ]
-        },
-        {
-          "color": {
-            "render": "#aaaaaa",
-            "mappings": [
-              {
-                "then": "#0000ff",
-                "if": {
-                  "or": [
-                    "cyclestreet=yes",
-                    "bicycle_road=yes"
-                  ]
-                }
-              },
-              {
-                "then": "#09f9dd",
-                "if": {
-                  "or": [
-                    "proposed:cyclestreet=yes",
-                    "proposed:bicycle_road=yes"
-                  ]
-                }
-              }
-            ]
-          },
-          "width": "5"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     }
   ],

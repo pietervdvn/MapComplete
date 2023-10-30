@@ -97,25 +97,9 @@
         "zh_Hant": "顯示火車站的圖層",
         "pl": "Warstwa pokazująca stacje kolejowe"
       },
-      "mapRendering": [
-        {
-          "icon": "./assets/themes/stations/rail-light.svg",
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "label": {
-            "mappings": [
-              {
-                "if": "name~*",
-                "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
-              }
-            ]
-          }
-        },
-        {
-          "color": "green"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -407,14 +391,9 @@
           }
         }
       ],
-      "mapRendering": [
-        {
-          "icon": "./assets/themes/stations/departures_board.svg",
-          "location": [
-            "point",
-            "centroid"
-          ]
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     }
   ]

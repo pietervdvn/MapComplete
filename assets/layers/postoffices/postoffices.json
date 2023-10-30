@@ -519,9 +519,8 @@
   "filter": [
     "open_now"
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
-      "icon": "square:white;./assets/layers/postoffices/post_office.svg",
       "iconBadges": [
         {
           "if": "opening_hours~*",
@@ -537,8 +536,19 @@
         "point",
         "centroid"
       ],
-      "anchor": "center"
-    },
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "square",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/postoffices/post_office.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#DADADA",
       "width": "1"

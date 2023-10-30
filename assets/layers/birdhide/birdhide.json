@@ -430,27 +430,32 @@
     "enableRelocation": false,
     "enableImproveAccuracy": true
   },
-  "mapRendering": [
+  "pointRendering": [
     {
-      "icon": {
-        "render": "./assets/layers/birdhide/birdhide.svg",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                "building=yes",
-                "shelter=yes",
-                "amenity=shelter"
-              ]
-            },
-            "then": "./assets/layers/birdhide/birdshelter.svg"
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/birdhide/birdhide.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "building=yes",
+                    "shelter=yes",
+                    "amenity=shelter"
+                  ]
+                },
+                "then": "./assets/layers/birdhide/birdshelter.svg"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "location": [
         "point",
         "centroid"
       ]
     }
-  ]
+  ],
+  "lineRendering": []
 }

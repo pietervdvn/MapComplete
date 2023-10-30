@@ -450,13 +450,19 @@
       "icon": "./assets/layers/fitness_station/fitness.svg"
     }
   ],
-  "mapRendering": [
+  "filter": [
+    "open_now"
+  ],
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
+  "pointRendering": [
     {
       "location": [
         "point",
         "centroid"
       ],
-      "icon": "circle:white;./assets/layers/fitness_station/fitness.svg",
       "iconSize": "40,40",
       "iconBadges": [
         {
@@ -469,14 +475,17 @@
           "then": "icons.isOpen"
         }
       ],
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/fitness_station/fitness.svg"
+        }
+      ]
     }
   ],
-  "filter": [
-    "open_now"
-  ],
-  "allowMove": {
-    "enableRelocation": false,
-    "enableImproveAccuracy": true
-  }
+  "lineRendering": []
 }

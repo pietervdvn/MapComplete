@@ -139,17 +139,26 @@
       }
     }
   ],
-  "mapRendering": [
+  "allowMove": true,
+  "deletion": true,
+  "pointRendering": [
     {
-      "icon": "square:green;./assets/themes/stations/public_transport_tickets.svg",
       "iconSize": "20,20",
       "location": [
         "point",
         "centroid"
       ],
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "square",
+          "color": "green"
+        },
+        {
+          "icon": "./assets/themes/stations/public_transport_tickets.svg"
+        }
+      ]
     }
   ],
-  "allowMove": true,
-  "deletion": true
+  "lineRendering": []
 }

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/parking_spaces/parking_space.svg' height="100px"> 
+
 
 Layer showing individual parking spaces.
 
@@ -14,7 +14,7 @@ Layer showing individual parking spaces.
 
 
 
-  - This layer is shown at zoomlevel **19** and higher
+  - This layer is shown at zoomlevel **18** and higher
 
 
 

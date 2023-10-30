@@ -133,7 +133,7 @@ MapComplete has a few data layers available in the theme which have special prop
 
 
 
-<img src='https://mapcomplete.org/circle:red' height="100px"> 
+
 
 Highlights the currently selected element. Override this layer to have different colors
 
@@ -176,7 +176,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-<img src='https://mapcomplete.org/crosshair:var(--catch-detail-color)' height="100px"> 
+
 
 Meta layer showing the current location of the user. Add this to your theme and override the icon to change the appearance of the current location. The object will always have `id=gps` and will have _all_ the properties included in the [`Coordinates`-object](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates) (except latitude and longitude) returned by the browser, such as `speed`, `altitude`, `heading`, ....
 
@@ -219,7 +219,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-<img src='https://mapcomplete.org/square:red' height="100px"> 
+
 
 Meta layer which contains the previous locations of the user as single points. This is mainly for technical reasons, e.g. to keep match the distance to the modified object
 
@@ -264,7 +264,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/svg/home.svg' height="100px"> 
+
 
 Meta layer showing the home location of the user. The home location can be set in the [profile settings](https://www.openstreetmap.org/profile/edit) of OpenStreetMap.
 
@@ -512,7 +512,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-<img src='https://mapcomplete.org/<div class='relative'> <img src='./assets/svg/add_pin.svg' class='absolute' style='height: 50px'> <div class='absolute top-0 left-0 rounded-full overflow-hidden noselect' style='width: 40px; height: 40px'><div class='flex slide min-w-min' style='animation: slide linear {number_of_presets}s infinite; width: calc( (1 + {number_of_presets}) * 40px ); height: 40px'>{renderings}{first_preset}</div></div></div>' height="100px"> 
+
 
 This layer defines how to render the 'last click'-location. By default, it will show a marker with the possibility to add a new point (if there are some presets) and/or to add a new note (if the 'note' layer attribute is set). If none are possible, this layer won't show up
 
@@ -641,7 +641,7 @@ action.0 | only_if_action_is_possible | has_note_layer=yes\|has_presets=yes
 
 
 
-<img src='https://mapcomplete.org/addSmall:#000' height="100px"> 
+
 
 If the import-button moves OSM points, the imported way points or conflates, a preview is shown. This layer defines how this preview is rendered. This layer cannot be included in a theme.
 
@@ -682,7 +682,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/svg/scissors.svg' height="100px"> 
+
 
 Layer rendering the little scissors for the minimap in the 'splitRoadWizard'
 
@@ -723,7 +723,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-<img src='https://mapcomplete.org/bug' height="100px"> 
+
 
 Layer rendering the way to split in the 'splitRoadWizard'. This one is used instead of the variable rendering by the themes themselves, as they might not always be very visible
 
@@ -871,7 +871,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-<img src='https://mapcomplete.org/square:red;' height="100px"> 
+
 
 Layer used as template in the importHelper
 
@@ -1417,6 +1417,7 @@ The following layers are included in MapComplete:
   - [address](./Layers/address.md)
   - [advertising](./Layers/advertising.md)
   - [ambulancestation](./Layers/ambulancestation.md)
+  - [animal_shelter](./Layers/animal_shelter.md)
   - [artwork](./Layers/artwork.md)
   - [atm](./Layers/atm.md)
   - [bank](./Layers/bank.md)
@@ -1477,6 +1478,7 @@ The following layers are included in MapComplete:
   - [hospital](./Layers/hospital.md)
   - [hotel](./Layers/hotel.md)
   - [hydrant](./Layers/hydrant.md)
+  - [ice_cream](./Layers/ice_cream.md)
   - [icons](./Layers/icons.md)
   - [id_presets](./Layers/id_presets.md)
   - [import_candidate](./Layers/import_candidate.md)
@@ -1514,6 +1516,7 @@ The following layers are included in MapComplete:
   - [range](./Layers/range.md)
   - [reception_desk](./Layers/reception_desk.md)
   - [recycling](./Layers/recycling.md)
+  - [route_marker](./Layers/route_marker.md)
   - [school](./Layers/school.md)
   - [selected_element](./Layers/selected_element.md)
   - [shelter](./Layers/shelter.md)

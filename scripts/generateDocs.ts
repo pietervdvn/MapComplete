@@ -1,6 +1,6 @@
 import Combine from "../src/UI/Base/Combine"
 import BaseUIElement from "../src/UI/BaseUIElement"
-import { existsSync, mkdirSync, writeFile, writeFileSync } from "fs"
+import { existsSync, mkdirSync, readFileSync, writeFile, writeFileSync } from "fs"
 import { AllKnownLayouts } from "../src/Customizations/AllKnownLayouts"
 import TableOfContents from "../src/UI/Base/TableOfContents"
 import SimpleMetaTaggers from "../src/Logic/SimpleMetaTagger"
@@ -15,6 +15,7 @@ import themeOverview from "../src/assets/generated/theme_overview.json"
 import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
 import bookcases from "../src/assets/generated/themes/bookcases.json"
 import fakedom from "fake-dom"
+
 import Hotkeys from "../src/UI/Base/Hotkeys"
 import { QueryParameters } from "../src/Logic/Web/QueryParameters"
 import Link from "../src/UI/Base/Link"
@@ -26,10 +27,11 @@ import ThemeViewState from "../src/Models/ThemeViewState"
 import Validators from "../src/UI/InputElement/Validators"
 import questions from "../src/assets/generated/layers/questions.json"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
-
+import { Utils } from "../src/Utils"
+import { TagUtils } from "../src/Logic/Tags/TagUtils"
 function WriteFile(
     filename,
-    html: BaseUIElement,
+    html: string | BaseUIElement,
     autogenSource: string[],
     options?: {
         noTableOfContents: boolean
@@ -116,7 +118,7 @@ function GenLayerOverviewText(): BaseUIElement {
     }
 
     const allLayers: LayerConfig[] = Array.from(AllSharedLayers.sharedLayers.values()).filter(
-        (layer) => layer.source === null
+        (layer) => layer["source"] === null
     )
 
     const builtinLayerIds: Set<string> = new Set<string>()
@@ -154,17 +156,17 @@ function GenLayerOverviewText(): BaseUIElement {
         "MapComplete has a few data layers available in the theme which have special properties through builtin-hooks. Furthermore, there are some normal layers (which are built from normal Theme-config files) but are so general that they get a mention here.",
         new Title("Priviliged layers", 1),
         new List(Constants.priviliged_layers.map((id) => "[" + id + "](#" + id + ")")),
-        ...Constants.priviliged_layers
-            .map((id) => AllSharedLayers.sharedLayers.get(id))
-            .map((l) =>
-                l.GenerateDocumentation(
-                    themesPerLayer.get(l.id),
-                    layerIsNeededBy,
-                    DependencyCalculator.getLayerDependencies(l),
-                    Constants.added_by_default.indexOf(<any>l.id) >= 0,
-                    Constants.no_include.indexOf(<any>l.id) < 0
-                )
-            ),
+        ...Utils.NoNull(
+            Constants.priviliged_layers.map((id) => AllSharedLayers.sharedLayers.get(id))
+        ).map((l) =>
+            l.GenerateDocumentation(
+                themesPerLayer.get(l.id),
+                layerIsNeededBy,
+                DependencyCalculator.getLayerDependencies(l),
+                Constants.added_by_default.indexOf(<any>l.id) >= 0,
+                Constants.no_include.indexOf(<any>l.id) < 0
+            )
+        ),
         new Title("Normal layers", 1),
         "The following layers are included in MapComplete:",
         new List(
@@ -185,7 +187,7 @@ function GenOverviewsForSingleLayer(
     callback: (layer: LayerConfig, element: BaseUIElement, inlineSource: string) => void
 ): void {
     const allLayers: LayerConfig[] = Array.from(AllSharedLayers.sharedLayers.values()).filter(
-        (layer) => layer.source !== null
+        (layer) => layer["source"] !== null
     )
     const builtinLayerIds: Set<string> = new Set<string>()
     allLayers.forEach((l) => builtinLayerIds.add(l.id))
@@ -307,10 +309,33 @@ function generateWikipage() {
     })
 }
 
+function studioDocs() {
+    const lines = readFileSync("./Docs/Studio/Introduction.md", "utf8").split("\n")
+
+    const sections: string[][] = []
+    let currentSection: string[] = []
+    for (let line of lines) {
+        if (line.trim().startsWith("# ")) {
+            sections.push(currentSection)
+            currentSection = []
+        }
+        line = line.replace('src="../../public/', 'src="./')
+        line = line.replace('src="../../', 'src="./')
+        currentSection.push(line)
+    }
+    sections.push(currentSection)
+    writeFileSync(
+        "./src/assets/studio_introduction.json",
+        JSON.stringify({
+            sections: sections.map((s) => s.join("\n")).filter((s) => s.length > 0),
+        })
+    )
+}
+
 console.log("Starting documentation generation...")
 ScriptUtils.fixUtils()
+studioDocs()
 generateWikipage()
-
 GenOverviewsForSingleLayer((layer, element, inlineSource) => {
     ScriptUtils.erasableLog("Exporting layer documentation for", layer.id)
     if (!existsSync("./Docs/Layers")) {
@@ -358,6 +383,7 @@ const qLayer = new LayerConfig(<LayerConfigJson>questions, "questions.json", tru
 WriteFile("./Docs/BuiltinQuestions.md", qLayer.GenerateDocumentation([], new Map(), []), [
     "assets/layers/questions/questions.json",
 ])
+WriteFile("./Docs/Tags_format.md", TagUtils.generateDocs(), ["src/Logic/Tags/TagUtils.ts"])
 
 {
     // Generate the builtinIndex which shows interlayer dependencies
@@ -422,4 +448,5 @@ QueryParameters.GetQueryParameter(
     new ThemeViewState(new LayoutConfig(<any>bookcases))
     WriteFile("./Docs/Hotkeys.md", Hotkeys.generateDocumentation(), [])
 }
+
 console.log("Generated docs")

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/doctors/doctors.svg' height="100px"> 
+
 
 This layer shows doctor offices
 

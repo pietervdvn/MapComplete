@@ -1,51 +1,48 @@
 <script lang="ts">
-  import { Translation } from "../../i18n/Translation"
-  import SpecialVisualizations from "../../SpecialVisualizations"
-  import { onDestroy } from "svelte"
-  import Locale from "../../i18n/Locale"
-  import type {
-    RenderingSpecification,
-    SpecialVisualizationState,
-  } from "../../SpecialVisualization"
-  import { Utils } from "../../../Utils.js"
-  import type { Feature } from "geojson"
-  import { UIEventSource } from "../../../Logic/UIEventSource.js"
-  import ToSvelte from "../../Base/ToSvelte.svelte"
-  import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
-  import WeblateLink from "../../Base/WeblateLink.svelte"
-  import FromHtml from "../../Base/FromHtml.svelte"
-  import BaseUIElement from "../../BaseUIElement"
+  import { Translation } from "../../i18n/Translation";
+  import SpecialVisualizations from "../../SpecialVisualizations";
+  import Locale from "../../i18n/Locale";
+  import type { RenderingSpecification, SpecialVisualizationState } from "../../SpecialVisualization";
+  import { Utils } from "../../../Utils.js";
+  import type { Feature } from "geojson";
+  import { UIEventSource } from "../../../Logic/UIEventSource.js";
+  import ToSvelte from "../../Base/ToSvelte.svelte";
+  import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
+  import WeblateLink from "../../Base/WeblateLink.svelte";
+  import FromHtml from "../../Base/FromHtml.svelte";
+  import BaseUIElement from "../../BaseUIElement";
 
   /**
    * The 'specialTranslation' renders a `Translation`-object, but interprets the special values as well
    */
-  export let t: Translation
-  export let state: SpecialVisualizationState
-  export let tags: UIEventSource<Record<string, string>>
-  export let feature: Feature
-  export let layer: LayerConfig
+  export let t: Translation;
+  export let state: SpecialVisualizationState;
+  export let tags: UIEventSource<Record<string, string>>;
+  export let feature: Feature;
+  export let layer: LayerConfig | undefined;
 
-  let txt: string
-  $: onDestroy(
-    Locale.language.addCallbackAndRunD((l) => {
-      txt = t.textFor(l)
-    })
-  )
-  let specs: RenderingSpecification[] = []
+  let language = Locale.language;
+  let txt: string = t.textFor($language);
+  let specs: RenderingSpecification[] = [];
   $: {
     try {
       if (txt !== undefined) {
-        specs = SpecialVisualizations.constructSpecification(txt)
+        const key = "cached_special_spec_" + $language;
+        specs = t[key];
+        if (specs === undefined) {
+          specs = SpecialVisualizations.constructSpecification(txt);
+          t[key] = specs;
+        }
       }
     } catch (e) {
-      console.error("Could not construct a specification and with arguments", txt, "due to", e)
+      console.error("Could not construct a specification and with arguments", txt, "due to", e);
     }
   }
 
   function createVisualisation(specpart: Exclude<RenderingSpecification, string>): BaseUIElement {
     {
       try {
-        return specpart.func.constr(state, tags, specpart.args, feature, layer)
+        return specpart.func.constr(state, tags, specpart.args, feature, layer);
       } catch (e) {
         console.error(
           "Could not construct a special visualisation with specification",
@@ -54,7 +51,7 @@
           tags,
           "due to",
           e
-        )
+        );
       }
     }
   }

@@ -986,138 +986,6 @@
       }
     }
   ],
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": {
-        "render": "./assets/themes/advertising/sign.svg",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                "advertising=billboard"
-              ]
-            },
-            "then": "./assets/themes/advertising/billboard.svg"
-          },
-          {
-            "if": "advertising=board",
-            "then": "./assets/themes/advertising/board.svg"
-          },
-          {
-            "if": "advertising=column",
-            "then": "./assets/themes/advertising/column.svg"
-          },
-          {
-            "if": "advertising=flag",
-            "then": "./assets/themes/advertising/flag.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "advertising=poster_box",
-                "_referencing_ways=[\"way/-1\"]"
-              ]
-            },
-            "then": "brick_wall_square;./assets/themes/advertising/poster_box_no_support.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "advertising=poster_box",
-                "_referencing_ways~*"
-              ]
-            },
-            "then": "./assets/themes/advertising/poster_box_no_support.svg"
-          },
-          {
-            "if": "advertising=poster_box",
-            "then": "./assets/themes/advertising/poster_box.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "advertising=screen",
-                "_referencing_ways=[\"way/-1\"]"
-              ]
-            },
-            "then": "brick_wall_square;./assets/themes/advertising/screen_no_support.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "advertising=screen",
-                "_referencing_ways~*"
-              ]
-            },
-            "then": "./assets/themes/advertising/screen_no_support.svg"
-          },
-          {
-            "if": "advertising=screen",
-            "then": "./assets/themes/advertising/screen.svg"
-          },
-          {
-            "if": "advertising=sculpture",
-            "then": "./assets/themes/advertising/sculpture.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "advertising=sign",
-                "_referencing_ways=[\"way/-1\"]"
-              ]
-            },
-            "then": "brick_wall_square;./assets/themes/advertising/sign.svg"
-          },
-          {
-            "if": "advertising=sign",
-            "then": "./assets/themes/advertising/sign.svg"
-          },
-          {
-            "if": "advertising=tarp",
-            "then": "./assets/themes/advertising/tarp.svg"
-          },
-          {
-            "if": "advertising=totem",
-            "then": "./assets/themes/advertising/totem.svg"
-          },
-          {
-            "if": "advertising=wall_painting",
-            "then": "./assets/themes/advertising/wall_painting.svg"
-          }
-        ]
-      },
-      "iconSize": {
-        "render": "40,40",
-        "mappings": [
-          {
-            "if": "advertising=flag",
-            "then": "60,60"
-          },
-          {
-            "if": "advertising=sculpture",
-            "then": "50,50"
-          }
-        ]
-      },
-      "anchor": {
-        "render": "bottom",
-        "mappings": [
-          {
-            "if": "_referencing_ways~*",
-            "then": "center"
-          }
-        ]
-      }
-    },
-    {
-      "width": "8",
-      "color": "#00f"
-    }
-  ],
   "allowMove": {
     "enableImproveAccuracy": true,
     "enableRelocation": false
@@ -1195,7 +1063,9 @@
         "pl": "skrzynka plakatowa montowana na ścianie",
         "pt_BR": "uma caixa de pôster montada em uma parede"
       },
-      "snapToLayer": "walls_and_buildings"
+      "snapToLayer": [
+        "walls_and_buildings"
+      ]
     },
     {
       "tags": [
@@ -1328,7 +1198,9 @@
         "./assets/themes/advertising/TV_media.jpg",
         "./assets/themes/advertising/Times square.jpg"
       ],
-      "snapToLayer": "walls_and_buildings",
+      "snapToLayer": [
+        "walls_and_buildings"
+      ],
       "maxSnapDistance": 5
     },
     {
@@ -1363,7 +1235,9 @@
         "./assets/themes/advertising/tarp_feder.jpg",
         "./assets/themes/advertising/tarp_madrid.jpg"
       ],
-      "snapToLayer": "walls_and_buildings",
+      "snapToLayer": [
+        "walls_and_buildings"
+      ],
       "maxSnapDistance": 5
     },
     {
@@ -1420,7 +1294,9 @@
         "./assets/themes/advertising/sign_EOI.jpg",
         "./assets/themes/advertising/farma_sign.jpg"
       ],
-      "snapToLayer": "walls_and_buildings",
+      "snapToLayer": [
+        "walls_and_buildings"
+      ],
       "maxSnapDistance": 5
     },
     {
@@ -1466,8 +1342,131 @@
         "./assets/themes/advertising/Capitol_wall.jpg",
         "./assets/themes/advertising/clarke_wall.jpg"
       ],
-      "snapToLayer": "walls_and_buildings",
+      "snapToLayer": [
+        "walls_and_buildings"
+      ],
       "maxSnapDistance": 5
+    }
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "mappings": [
+              {
+                "if": "_referencing_ways=[\"way/-1\"]",
+                "then": "brick_wall_square"
+              }
+            ]
+          }
+        },
+        {
+          "icon": {
+            "render": "./assets/themes/advertising/sign.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "advertising=billboard"
+                  ]
+                },
+                "then": "./assets/themes/advertising/billboard.svg"
+              },
+              {
+                "if": "advertising=board",
+                "then": "./assets/themes/advertising/board.svg"
+              },
+              {
+                "if": "advertising=column",
+                "then": "./assets/themes/advertising/column.svg"
+              },
+              {
+                "if": "advertising=flag",
+                "then": "./assets/themes/advertising/flag.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "advertising=poster_box",
+                    "_referencing_ways~*"
+                  ]
+                },
+                "then": "./assets/themes/advertising/poster_box_no_support.svg"
+              },
+              {
+                "if": "advertising=poster_box",
+                "then": "./assets/themes/advertising/poster_box.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "advertising=screen",
+                    "_referencing_ways~*"
+                  ]
+                },
+                "then": "./assets/themes/advertising/screen_no_support.svg"
+              },
+              {
+                "if": "advertising=screen",
+                "then": "./assets/themes/advertising/screen.svg"
+              },
+              {
+                "if": "advertising=sculpture",
+                "then": "./assets/themes/advertising/sculpture.svg"
+              },
+              {
+                "if": "advertising=sign",
+                "then": "./assets/themes/advertising/sign.svg"
+              },
+              {
+                "if": "advertising=tarp",
+                "then": "./assets/themes/advertising/tarp.svg"
+              },
+              {
+                "if": "advertising=totem",
+                "then": "./assets/themes/advertising/totem.svg"
+              },
+              {
+                "if": "advertising=wall_painting",
+                "then": "./assets/themes/advertising/wall_painting.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": {
+        "render": "40,40",
+        "mappings": [
+          {
+            "if": "advertising=flag",
+            "then": "60,60"
+          },
+          {
+            "if": "advertising=sculpture",
+            "then": "50,50"
+          }
+        ]
+      },
+      "anchor": {
+        "render": "bottom",
+        "mappings": [
+          {
+            "if": "_referencing_ways~*",
+            "then": "center"
+          }
+        ]
+      }
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": "8",
+      "color": "#00f"
     }
   ]
 }

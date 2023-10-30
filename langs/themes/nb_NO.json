@@ -736,6 +736,13 @@
         "shortDescription": "Kartlegg alle trærne",
         "title": "Trær"
     },
+    "walkingnodes": {
+        "layers": {
+            "1": {
+                "name": "noder"
+            }
+        }
+    },
     "walls_and_buildings": {
         "title": "Murer og bygninger"
     },

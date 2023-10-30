@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/surveillance/logo.svg' height="100px"> 
+
 
 This layer shows surveillance cameras and allows a contributor to update information and add new cameras
 

@@ -81,12 +81,8 @@
     },
     "level"
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
-      "color": "gray"
-    },
-    {
-      "icon": "./assets/themes/stations/rail-light.svg",
       "location": [
         "point",
         "centroid"
@@ -98,7 +94,17 @@
             "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{ref}</div>"
           }
         ]
-      }
+      },
+      "marker": [
+        {
+          "icon": "./assets/themes/stations/rail-light.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "gray"
     }
   ]
 }

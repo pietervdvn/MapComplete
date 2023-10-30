@@ -370,33 +370,39 @@
       ]
     }
   },
-  "mapRendering": [
+  "allowMove": true,
+  "deletion": true,
+  "pointRendering": [
     {
-      "icon": {
-        "render": "./assets/themes/hackerspaces/glider.svg",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "hackerspace=makerspace"
-              ]
-            },
-            "then": "./assets/themes/hackerspaces/led.png"
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/themes/hackerspaces/glider.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "hackerspace=makerspace"
+                  ]
+                },
+                "then": "./assets/themes/hackerspaces/led.png"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
       ],
       "anchor": "center"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#00f",
       "width": "8"
     }
-  ],
-  "allowMove": true,
-  "deletion": true
+  ]
 }

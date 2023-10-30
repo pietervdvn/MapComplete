@@ -724,5 +724,6 @@
       "render": "{all_tags()}"
     }
   ],
-  "mapRendering": null
+  "lineRendering": null,
+  "pointRendering": null
 }

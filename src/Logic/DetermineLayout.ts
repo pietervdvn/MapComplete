@@ -3,9 +3,6 @@ import { QueryParameters } from "./Web/QueryParameters"
 import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
 import { FixedUiElement } from "../UI/Base/FixedUiElement"
 import { Utils } from "../Utils"
-import Combine from "../UI/Base/Combine"
-import { SubtleButton } from "../UI/Base/SubtleButton"
-import BaseUIElement from "../UI/BaseUIElement"
 import { UIEventSource } from "./UIEventSource"
 import { LocalStorageSource } from "./Web/LocalStorageSource"
 import LZString from "lz-string"
@@ -16,7 +13,6 @@ import { PrepareTheme } from "../Models/ThemeConfig/Conversion/PrepareTheme"
 import licenses from "../assets/generated/license_info.json"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
 import { FixImages } from "../Models/ThemeConfig/Conversion/FixImages"
-import Svg from "../Svg"
 import questions from "../assets/generated/layers/questions.json"
 import {
     DoesImageExist,
@@ -26,6 +22,7 @@ import {
 import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
 import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
 import Hash from "./Web/Hash"
+import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 
 export default class DetermineLayout {
     private static readonly _knownImages = new Set(Array.from(licenses).map((l) => l.path))
@@ -126,33 +123,8 @@ export default class DetermineLayout {
         return layoutToUse
     }
 
-    public static ShowErrorOnCustomTheme(
-        intro: string = "Error: could not parse the custom layout:",
-        error: BaseUIElement,
-        json?: any
-    ) {
-        new Combine([
-            intro,
-            error.SetClass("alert"),
-            new SubtleButton(Svg.back_svg(), "Go back to the theme overview", {
-                url: window.location.protocol + "//" + window.location.host + "/index.html",
-                newTab: false,
-            }),
-            json !== undefined
-                ? new SubtleButton(Svg.download_svg(), "Download the JSON file").onClick(() => {
-                      Utils.offerContentsAsDownloadableFile(
-                          JSON.stringify(json, null, "  "),
-                          "theme_definition.json"
-                      )
-                  })
-                : undefined,
-        ])
-            .SetClass("flex flex-col clickable")
-            .AttachTo("maindiv")
-    }
-
-    private static getSharedTagRenderings(): Map<string, TagRenderingConfigJson> {
-        const dict = new Map<string, TagRenderingConfigJson>()
+    private static getSharedTagRenderings(): Map<string, QuestionableTagRenderingConfigJson> {
+        const dict = new Map<string, QuestionableTagRenderingConfigJson>()
 
         for (const tagRendering of questions.tagRenderings) {
             dict.set(tagRendering.id, tagRendering)
@@ -163,7 +135,13 @@ export default class DetermineLayout {
 
     private static prepCustomTheme(json: any, sourceUrl?: string, forceId?: string): LayoutConfig {
         if (json.layers === undefined && json.tagRenderings !== undefined) {
-            const iconTr = json.mapRendering.map((mr) => mr.icon).find((icon) => icon !== undefined)
+            // We got fed a layer instead of a theme
+            const layerConfig = <LayerConfigJson>json
+            const iconTr: string | TagRenderingConfigJson = <any>(
+                layerConfig.pointRendering
+                    .map((mr) => mr.marker.find((icon) => icon.icon !== undefined).icon)
+                    .find((i) => i !== undefined)
+            )
             const icon = new TagRenderingConfig(iconTr).render.txt
             json = {
                 id: json.id,
@@ -187,34 +165,25 @@ export default class DetermineLayout {
             sharedLayers: knownLayersDict,
             publicLayers: new Set<string>(),
         }
-        json = new FixLegacyTheme().convertStrict(json, "While loading a dynamic theme")
+        json = new FixLegacyTheme().convertStrict(json)
         const raw = json
 
-        json = new FixImages(DetermineLayout._knownImages).convertStrict(
-            json,
-            "While fixing the images"
-        )
+        json = new FixImages(DetermineLayout._knownImages).convertStrict(json)
         json.enableNoteImports = json.enableNoteImports ?? false
-        json = new PrepareTheme(convertState).convertStrict(json, "While preparing a dynamic theme")
+        json = new PrepareTheme(convertState).convertStrict(json)
         console.log("The layoutconfig is ", json)
 
         json.id = forceId ?? json.id
 
         {
-            let { errors } = new PrevalidateTheme().convert(json, "validation")
-            if (errors.length > 0) {
-                throw "Detected errors: " + errors.join("\n")
-            }
+            new PrevalidateTheme().convertStrict(json)
         }
         {
-            let { errors } = new ValidateThemeAndLayers(
+            new ValidateThemeAndLayers(
                 new DoesImageExist(new Set<string>(), (_) => true),
                 "",
                 false
-            ).convert(json, "validation")
-            if (errors.length > 0) {
-                throw "Detected errors: " + errors.join("\n")
-            }
+            ).convertStrict(json)
         }
         return new LayoutConfig(json, false, {
             definitionRaw: JSON.stringify(raw, null, "  "),

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/ghost_bike/ghost_bike.svg' height="100px"> 
+
 
 A layer showing memorials for cyclists, killed in road accidents
 

@@ -12,8 +12,6 @@ import MoveConfig from "./MoveConfig"
 import PointRenderingConfig from "./PointRenderingConfig"
 import WithContextLoader from "./WithContextLoader"
 import LineRenderingConfig from "./LineRenderingConfig"
-import PointRenderingConfigJson from "./Json/PointRenderingConfigJson"
-import LineRenderingConfigJson from "./Json/LineRenderingConfigJson"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 import BaseUIElement from "../../UI/BaseUIElement"
 import Combine from "../../UI/Base/Combine"
@@ -31,6 +29,7 @@ import Svg from "../../Svg"
 import { ImmutableStore } from "../../Logic/UIEventSource"
 import { OsmTags } from "../OsmFeature"
 import Constants from "../Constants"
+import { QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRenderingConfigJson"
 
 export default class LayerConfig extends WithContextLoader {
     public static readonly syncSelectionAllowed = ["no", "local", "theme-only", "global"] as const
@@ -77,65 +76,16 @@ export default class LayerConfig extends WithContextLoader {
         super(json, context)
         this.id = json.id
 
-        if (typeof json === "string") {
-            throw `Not a valid layer: the layerConfig is a string. 'npm run generate:layeroverview' might be needed (at ${context})`
-        }
-
-        if (json.id === undefined) {
-            throw `Not a valid layer: id is undefined: ${JSON.stringify(json)} (At ${context})`
-        }
-
-        if (json.source === undefined) {
-            throw "Layer " + this.id + " does not define a source section (" + context + ")"
-        }
-
         if (json.source === "special" || json.source === "special:library") {
             this.source = null
-        } else if (json.source["osmTags"] === undefined) {
-            throw (
-                "Layer " +
-                this.id +
-                " does not define a osmTags in the source section - these should always be present, even for geojson layers (" +
-                context +
-                ")"
-            )
         }
 
-        if (json.id.toLowerCase() !== json.id) {
-            throw `${context}: The id of a layer should be lowercase: ${json.id}`
-        }
-        if (json.id.match(/[a-z0-9-_]/) == null) {
-            throw `${context}: The id of a layer should match [a-z0-9-_]*: ${json.id}`
-        }
-
-        if (
-            json.syncSelection !== undefined &&
-            LayerConfig.syncSelectionAllowed.indexOf(json.syncSelection) < 0
-        ) {
-            throw (
-                context +
-                " Invalid sync-selection: must be one of " +
-                LayerConfig.syncSelectionAllowed.map((v) => `'${v}'`).join(", ") +
-                " but got '" +
-                json.syncSelection +
-                "'"
-            )
-        }
         this.syncSelection = json.syncSelection ?? "no"
         if (typeof json.source !== "string") {
             this.maxAgeOfCache = json.source["maxCacheAge"] ?? 24 * 60 * 60 * 30
-            const osmTags = TagUtils.Tag(json.source["osmTags"], context + "source.osmTags")
-            if (osmTags.isNegative()) {
-                throw (
-                    context +
-                    "The source states tags which give a very wide selection: it only uses negative expressions, which will result in too much and unexpected data. Add at least one required tag. The tags are:\n\t" +
-                    osmTags.asHumanString(false, false, {})
-                )
-            }
-
             this.source = new SourceConfig(
                 {
-                    osmTags: osmTags,
+                    osmTags: TagUtils.Tag(json.source["osmTags"], context + "source.osmTags"),
                     geojsonSource: json.source["geoJson"],
                     geojsonSourceLevel: json.source["geoJsonZoomLevel"],
                     overpassScript: json.source["overpassScript"],
@@ -145,14 +95,6 @@ export default class LayerConfig extends WithContextLoader {
                 },
                 json.id
             )
-        }
-
-        if (json.source["geoJsonSource"] !== undefined) {
-            throw context + "Use 'geoJson' instead of 'geoJsonSource'"
-        }
-
-        if (json.source["geojson"] !== undefined) {
-            throw context + "Use 'geoJson' instead of 'geojson' (the J is a capital letter)"
         }
 
         this.allowSplit = json.allowSplit ?? false
@@ -236,13 +178,7 @@ export default class LayerConfig extends WithContextLoader {
                 )
             }
             if (pr.snapToLayer !== undefined) {
-                let snapToLayers: string[]
-                if (typeof pr.snapToLayer === "string") {
-                    snapToLayers = [pr.snapToLayer]
-                } else {
-                    snapToLayers = pr.snapToLayer
-                }
-
+                let snapToLayers = pr.snapToLayer
                 preciseInput = {
                     snapToLayers,
                     maxSnapDistance: pr.maxSnapDistance ?? 10,
@@ -251,7 +187,9 @@ export default class LayerConfig extends WithContextLoader {
                 throw (
                     "Layer " +
                     this.id +
-                    " defines a maxSnapDistance, but does not include a `snapToLayer`"
+                    " defines a maxSnapDistance, but does not include a `snapToLayer` (at " +
+                    context +
+                    ")"
                 )
             }
 
@@ -268,34 +206,27 @@ export default class LayerConfig extends WithContextLoader {
             return config
         })
 
-        if (json.mapRendering === undefined) {
-            throw "MapRendering is undefined in " + context
+        if (json.pointRendering === undefined && json.lineRendering === undefined) {
+            throw "Both pointRendering and lineRendering are undefined in " + context
         }
 
-        if (json.mapRendering === null) {
-            this.mapRendering = []
-            this.lineRendering = []
+        if (json.lineRendering) {
+            this.lineRendering = Utils.NoNull(json.lineRendering).map(
+                (r, i) => new LineRenderingConfig(r, `${context}[${i}]`)
+            )
         } else {
-            this.mapRendering = Utils.NoNull(json.mapRendering)
-                .filter((r) => r["location"] !== undefined)
-                .map(
-                    (r, i) =>
-                        new PointRenderingConfig(
-                            <PointRenderingConfigJson>r,
-                            context + ".mapRendering[" + i + "]"
-                        )
-                )
+            this.lineRendering = []
+        }
 
-            this.lineRendering = Utils.NoNull(json.mapRendering)
-                .filter((r) => r["location"] === undefined)
-                .map(
-                    (r, i) =>
-                        new LineRenderingConfig(
-                            <LineRenderingConfigJson>r,
-                            context + ".mapRendering[" + i + "]"
-                        )
-                )
+        if (json.pointRendering) {
+            this.mapRendering = Utils.NoNull(json.pointRendering).map(
+                (r, i) => new PointRenderingConfig(r, `${context}[${i}]`)
+            )
+        } else {
+            this.mapRendering = []
+        }
 
+        {
             const hasCenterRendering = this.mapRendering.some(
                 (r) =>
                     r.location.has("centroid") ||
@@ -304,16 +235,24 @@ export default class LayerConfig extends WithContextLoader {
                     r.location.has("end")
             )
 
-            if (this.lineRendering.length === 0 && this.mapRendering.length === 0) {
+            if (
+                json.pointRendering !== null &&
+                json.lineRendering !== null &&
+                this.lineRendering.length === 0 &&
+                this.mapRendering.length === 0
+            ) {
                 throw (
                     "The layer " +
                     this.id +
-                    " does not have any maprenderings defined and will thus not show up on the map at all. If this is intentional, set maprenderings to 'null' instead of '[]'"
+                    ` does not have any maprenderings defined and will thus not show up on the map at all:
+\t ${this.lineRendering?.length} linerenderings and ${this.mapRendering?.length} pointRenderings.
+\t If this is intentional, set \`pointRendering\` and \`lineRendering\` to 'null' instead of '[]'`
                 )
             } else if (
                 !hasCenterRendering &&
                 this.lineRendering.length === 0 &&
                 Constants.priviliged_layers.indexOf(<any>this.id) < 0 &&
+                this.source !== null /*library layer*/ &&
                 !this.source?.geojsonSource?.startsWith(
                     "https://api.openstreetmap.org/api/0.6/notes.json"
                 )
@@ -344,7 +283,7 @@ export default class LayerConfig extends WithContextLoader {
         this.tagRenderings = (Utils.NoNull(json.tagRenderings) ?? []).map(
             (tr, i) =>
                 new TagRenderingConfig(
-                    <TagRenderingConfigJson>tr,
+                    <QuestionableTagRenderingConfigJson>tr,
                     this.id + ".tagRenderings[" + i + "]"
                 )
         )
@@ -415,7 +354,7 @@ export default class LayerConfig extends WithContextLoader {
         if (mapRendering === undefined) {
             return undefined
         }
-        return mapRendering.GetBaseIcon(this.GetBaseTags(), { noFullWidth: true })
+        return mapRendering.GetBaseIcon(this.GetBaseTags())
     }
 
     public GetBaseTags(): Record<string, string> {
@@ -567,23 +506,12 @@ export default class LayerConfig extends WithContextLoader {
 
         let iconImg: BaseUIElement = new FixedUiElement("")
 
-        if (Utils.runningFromConsole) {
-            const icon = this.mapRendering
-                .filter((mr) => mr.location.has("point"))
-                .map((mr) => mr.icon?.render?.txt)
-                .find((i) => i !== undefined)
-            // This is for the documentation in a markdown-file, so we have to use raw HTML
-            if (icon !== undefined) {
-                iconImg = new FixedUiElement(
-                    `<img src='https://mapcomplete.org/${icon}' height="100px"> `
-                )
-            }
-        } else {
+        if (!Utils.runningFromConsole) {
             iconImg = this.mapRendering
                 .filter((mr) => mr.location.has("point"))
                 .map(
                     (mr) =>
-                        mr.RenderIcon(new ImmutableStore<OsmTags>({ id: "node/-1" }), false, {
+                        mr.RenderIcon(new ImmutableStore<OsmTags>({ id: "node/-1" }), {
                             includeBadges: false,
                         }).html
                 )

@@ -62,17 +62,6 @@
       ]
     }
   ],
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": "circle:white;./assets/layers/hotel/hotel.svg",
-      "iconSize": "40,40",
-      "anchor": "center"
-    }
-  ],
   "tagRenderings": [
     "images",
     "reviews",
@@ -119,5 +108,25 @@
   "allowMove": {
     "enableImproveAccuracy": true,
     "enableRelocation": true
-  }
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": "40,40",
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/hotel/hotel.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": []
 }

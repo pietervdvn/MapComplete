@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:#e6cf39;./assets/layers/picnic_table/picnic_table.svg' height="100px"> 
+
 
 The layer showing picnic tables
 

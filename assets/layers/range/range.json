@@ -5,7 +5,8 @@
   "source": "special",
   "name": null,
   "shownByDefault": false,
-  "mapRendering": [
+  "pointRendering": [],
+  "lineRendering": [
     {
       "width": 3,
       "fill": "no",

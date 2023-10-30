@@ -1,102 +1,19 @@
 [
   {
     "path": [],
+    "required": false,
+    "hints": {},
     "type": "object",
     "description": "A QuestionableTagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nIf the desired tags are missing and a question is defined, a question will be shown instead."
   },
   {
     "path": [
-      "question"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only"
-  },
-  {
-    "path": [
-      "questionHint"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like"
-  },
-  {
-    "path": [
-      "freeform"
-    ],
-    "type": "object",
-    "description": "Allow freeform text input from the user"
-  },
-  {
-    "path": [
-      "freeform",
-      "type"
-    ],
-    "type": "string",
-    "description": "The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values"
-  },
-  {
-    "path": [
-      "freeform",
-      "placeholder"
-    ],
-    "description": "A (translated) text that is shown (as gray text) within the textfield"
-  },
-  {
-    "path": [
-      "freeform",
-      "helperArgs"
-    ],
-    "type": "array",
-    "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
-  },
-  {
-    "path": [
-      "freeform",
-      "addExtraTags"
-    ],
-    "type": "array",
-    "description": "If a value is added with the textfield, these extra tag is addded.\nUseful to add a 'fixme=freeform textfield used - to be checked'"
-  },
-  {
-    "path": [
-      "freeform",
-      "inline"
-    ],
-    "type": "boolean",
-    "description": "When set, influences the way a question is asked.\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nNote that this will be set automatically if no special elements are present."
-  },
-  {
-    "path": [
-      "freeform",
-      "default"
-    ],
-    "type": "string",
-    "description": "default value to enter if no previous tagging is present.\nNormally undefined (aka do not enter anything)"
-  },
-  {
-    "path": [
-      "multiAnswer"
-    ],
-    "type": "boolean",
-    "description": "If true, use checkboxes instead of radio buttons when asking the question"
-  },
-  {
-    "path": [
       "mappings"
     ],
+    "required": false,
+    "hints": {
+      "question": "What are common options?"
+    },
     "type": "array",
     "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes"
   },
@@ -105,12 +22,16 @@
       "mappings",
       "if"
     ],
+    "required": true,
+    "hints": {
+      "typehint": "tag",
+      "question": "What tags should be matched to show this option?"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
         "type": "object",
         "properties": {
           "or": {
@@ -128,38 +49,39 @@
         "type": "string"
       }
     ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "if"
-    ],
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "if"
-    ],
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "description": "If in 'question'-mode and the contributor selects this option, these tags will be applied to the object"
   },
   {
     "path": [
       "mappings",
       "then"
     ],
-    "typeHint": "rendered",
-    "description": "Shown if the 'if is fulfilled\nType: rendered"
+    "required": true,
+    "hints": {
+      "typehint": "rendered",
+      "question": "What corresponding text should be shown?"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "Shown if the `if` is fulfilled"
   },
   {
     "path": [
       "mappings",
       "icon"
     ],
-    "typeHint": "icon",
+    "required": false,
+    "hints": {
+      "typehint": "icon",
+      "question": "What icon should be shown next to this mapping?",
+      "ifunset": "Show no icon"
+    },
     "type": [
       {
         "type": "object",
@@ -181,7 +103,7 @@
         "type": "string"
       }
     ],
-    "description": "An extra icon supporting the choice\nType: icon"
+    "description": "This icon will only be shown if the value is known, it is not displayed in the options (but might be in the future)"
   },
   {
     "path": [
@@ -189,9 +111,12 @@
       "icon",
       "path"
     ],
-    "typeHint": "icon",
+    "required": true,
+    "hints": {
+      "typehint": "icon"
+    },
     "type": "string",
-    "description": "The path to the  icon\nType: icon"
+    "description": "The path to the  icon"
   },
   {
     "path": [
@@ -199,6 +124,8 @@
       "icon",
       "class"
     ],
+    "required": false,
+    "hints": {},
     "type": "string",
     "description": "Size of the image"
   },
@@ -207,14 +134,19 @@
       "mappings",
       "hideInAnswer"
     ],
+    "required": false,
+    "hints": {
+      "typehint": "tag",
+      "question": "Under what circumstances should this mapping be <b>hidden</b> from the possibilities a contributor can pick?",
+      "iftrue": "Never show this mapping as option to pick",
+      "ifunset": "Always show this mapping as option to pick"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson",
-        "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "$ref": "#/definitions/OrTagConfigJson",
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
       },
       {
         "type": [
@@ -223,15 +155,7 @@
         ]
       }
     ],
-    "description": "In some cases, multiple taggings exist (e.g. a default assumption, or a commonly mapped abbreviation and a fully written variation).\n\nIn the latter case, a correct text should be shown, but only a single, canonical tagging should be selectable by the user.\nIn this case, one of the mappings can be hiden by setting this flag.\n\nTo demonstrate an example making a default assumption:\n\nmappings: [\n {\n     if: \"access=\", -- no access tag present, we assume accessible\n     then: \"Accessible to the general public\",\n     hideInAnswer: true\n },\n {\n     if: \"access=yes\",\n     then: \"Accessible to the general public\", -- the user selected this, we add that to OSM\n },\n {\n     if: \"access=no\",\n     then: \"Not accessible to the public\"\n }\n]\n\n\nFor example, for an operator, we have `operator=Agentschap Natuur en Bos`, which is often abbreviated to `operator=ANB`.\nThen, we would add two mappings:\n{\n    if: \"operator=Agentschap Natuur en Bos\" -- the non-abbreviated version which should be uploaded\n    then: \"Maintained by Agentschap Natuur en Bos\"\n},\n{\n    if: \"operator=ANB\", -- we don't want to upload abbreviations\n    then: \"Maintained by Agentschap Natuur en Bos\"\n    hideInAnswer: true\n}\n\nHide in answer can also be a tagsfilter, e.g. to make sure an option is only shown when appropriate.\nKeep in mind that this is reverse logic: it will be hidden in the answer if the condition is true, it will thus only show in the case of a mismatch\n\ne.g., for toilets: if \"wheelchair=no\", we know there is no wheelchair dedicated room.\nFor the location of the changing table, the option \"in the wheelchair accessible toilet is weird\", so we write:\n\n{\n    \"question\": \"Where is the changing table located?\"\n    \"mappings\": [\n        {\"if\":\"changing_table:location=female\",\"then\":\"In the female restroom\"},\n       {\"if\":\"changing_table:location=male\",\"then\":\"In the male restroom\"},\n       {\"if\":\"changing_table:location=wheelchair\",\"then\":\"In the wheelchair accessible restroom\", \"hideInAnswer\": \"wheelchair=no\"},\n\n    ]\n}\n\nAlso have a look for the meta-tags\n{\n    if: \"operator=Agentschap Natuur en Bos\",\n    then: \"Maintained by Agentschap Natuur en Bos\",\n    hideInAnswer: \"_country!=be\"\n}"
-  },
-  {
-    "path": [
-      "mappings",
-      "hideInAnswer"
-    ],
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "description": "In some cases, multiple taggings exist (e.g. a default assumption, or a commonly mapped abbreviation and a fully written variation).\nIn the latter case, a correct text should be shown, but only a single, canonical tagging should be selectable by the user.\nIn this case, one of the mappings can be hiden by setting this flag.\nTo demonstrate an example making a default assumption:\nmappings: [\n {\n     if: \"access=\", -- no access tag present, we assume accessible\n     then: \"Accessible to the general public\",\n     hideInAnswer: true\n },\n {\n     if: \"access=yes\",\n     then: \"Accessible to the general public\", -- the user selected this, we add that to OSM\n },\n {\n     if: \"access=no\",\n     then: \"Not accessible to the public\"\n }\n]\nFor example, for an operator, we have `operator=Agentschap Natuur en Bos`, which is often abbreviated to `operator=ANB`.\nThen, we would add two mappings:\n{\n    if: \"operator=Agentschap Natuur en Bos\" -- the non-abbreviated version which should be uploaded\n    then: \"Maintained by Agentschap Natuur en Bos\"\n},\n{\n    if: \"operator=ANB\", -- we don't want to upload abbreviations\n    then: \"Maintained by Agentschap Natuur en Bos\"\n    hideInAnswer: true\n}\nHide in answer can also be a tagsfilter, e.g. to make sure an option is only shown when appropriate.\nKeep in mind that this is reverse logic: it will be hidden in the answer if the condition is true, it will thus only show in the case of a mismatch\ne.g., for toilets: if \"wheelchair=no\", we know there is no wheelchair dedicated room.\nFor the location of the changing table, the option \"in the wheelchair accessible toilet is weird\", so we write:\n{\n    \"question\": \"Where is the changing table located?\"\n    \"mappings\": [\n        {\"if\":\"changing_table:location=female\",\"then\":\"In the female restroom\"},\n       {\"if\":\"changing_table:location=male\",\"then\":\"In the male restroom\"},\n       {\"if\":\"changing_table:location=wheelchair\",\"then\":\"In the wheelchair accessible restroom\", \"hideInAnswer\": \"wheelchair=no\"},\n    ]\n}\nAlso have a look for the meta-tags\n{\n    if: \"operator=Agentschap Natuur en Bos\",\n    then: \"Maintained by Agentschap Natuur en Bos\",\n    hideInAnswer: \"_country!=be\"\n}"
   },
   {
     "path": [
@@ -239,60 +163,15 @@
       "hideInAnswer",
       "and"
     ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "hideInAnswer",
-      "and"
-    ],
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "hideInAnswer"
-    ],
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "hideInAnswer",
-      "or"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndTagConfigJson"
-      },
-      {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
         "type": "object",
         "properties": {
           "or": {
@@ -318,31 +197,49 @@
       "hideInAnswer",
       "or"
     ],
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "hideInAnswer",
-      "or"
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
     ],
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
   },
   {
     "path": [
       "mappings",
       "ifnot"
     ],
+    "required": false,
+    "hints": {
+      "question": "What tags should be applied if this mapping is _not_ chosen?"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson",
-        "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "$ref": "#/definitions/OrTagConfigJson",
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
       },
       {
         "type": "string"
@@ -353,71 +250,18 @@
   {
     "path": [
       "mappings",
-      "ifnot"
-    ],
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
       "ifnot",
       "and"
     ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "ifnot",
-      "and"
-    ],
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "ifnot"
-    ],
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "ifnot",
-      "or"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndTagConfigJson"
-      },
-      {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
         "type": "object",
         "properties": {
           "or": {
@@ -443,39 +287,75 @@
       "ifnot",
       "or"
     ],
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "ifnot",
-      "or"
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
     ],
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
   },
   {
     "path": [
       "mappings",
       "addExtraTags"
     ],
+    "required": false,
+    "hints": {
+      "typehint": "simple_tag[]",
+      "question": "What extra tags should be added to the object if this object is chosen?"
+    },
     "type": "array",
-    "description": "If chosen as answer, these tags will be applied as well onto the object.\nNot compatible with multiAnswer.\n\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": \"not:crossing:marking=\"\n}\n```"
+    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
+  },
+  {
+    "path": [
+      "mappings",
+      "searchTerms"
+    ],
+    "required": false,
+    "hints": {
+      "group": "hidden",
+      "question": "If there are many options, what search terms match too?"
+    },
+    "type": "object",
+    "description": "If there are many options, the mappings-radiobuttons will be replaced by an element with a searchfunction\nSearchterms (per language) allow to easily find an option if there are many options"
   },
   {
     "path": [
       "mappings",
       "priorityIf"
     ],
+    "required": false,
+    "hints": {
+      "group": "hidden"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson",
-        "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "$ref": "#/definitions/OrTagConfigJson",
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
       },
       {
         "type": "string"
@@ -486,71 +366,18 @@
   {
     "path": [
       "mappings",
-      "priorityIf"
-    ],
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
       "priorityIf",
       "and"
     ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "priorityIf",
-      "and"
-    ],
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "priorityIf"
-    ],
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "priorityIf",
-      "or"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndTagConfigJson"
-      },
-      {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
         "type": "object",
         "properties": {
           "or": {
@@ -576,61 +403,332 @@
       "priorityIf",
       "or"
     ],
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "mappings",
-      "priorityIf",
-      "or"
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
     ],
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
   },
   {
     "path": [
       "mappings",
       "#"
     ],
+    "required": false,
+    "hints": {
+      "group": "hidden"
+    },
     "type": "string",
-    "description": "Used for comments or to disable a validation\n\nignore-image-in-then: normally, a `then`-clause is not allowed to have an `img`-html-element as icons are preferred. In some cases (most notably title-icons), this is allowed"
+    "description": "Used for comments or to disable a validation\nignore-image-in-then: normally, a `then`-clause is not allowed to have an `img`-html-element as icons are preferred. In some cases (most notably title-icons), this is allowed"
   },
   {
     "path": [
-      "id"
+      "multiAnswer"
     ],
-    "type": "string",
-    "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nUse 'questions' to trigger the question box of this group (if a group is defined)"
+    "required": false,
+    "hints": {
+      "question": "Should a contributor be allowed to select multiple mappings?",
+      "iftrue": "allow to select multiple mappings",
+      "iffalse": "only allow to select a single mapping",
+      "ifunset": "only allow to select a single mapping"
+    },
+    "type": "boolean",
+    "description": "If true, use checkboxes instead of radio buttons when asking the question"
   },
   {
     "path": [
-      "labels"
+      "freeform"
     ],
+    "required": false,
+    "hints": {},
+    "type": "object",
+    "description": "Allow freeform text input from the user"
+  },
+  {
+    "path": [
+      "freeform",
+      "key"
+    ],
+    "required": true,
+    "hints": {
+      "question": "What is the name of the attribute that should be written to?",
+      "ifunset": "do not offer a freeform textfield as answer option"
+    },
+    "type": "string",
+    "description": ""
+  },
+  {
+    "path": [
+      "freeform",
+      "type"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What is the input type?",
+      "ifunset": "use an unconstrained <b>string</b> as input (default)",
+      "suggestions": [
+        {
+          "if": "value=string",
+          "then": "<b>string</b> A simple piece of text"
+        },
+        {
+          "if": "value=text",
+          "then": "<b>text</b> A longer piece of text. Uses an textArea instead of a textField"
+        },
+        {
+          "if": "value=date",
+          "then": "<b>date</b> A date with date picker"
+        },
+        {
+          "if": "value=nat",
+          "then": "<b>nat</b> A  whole, positive number or zero"
+        },
+        {
+          "if": "value=int",
+          "then": "<b>int</b> A whole number, either positive, negative or zero"
+        },
+        {
+          "if": "value=distance",
+          "then": "<b>distance</b> A geographical distance in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `[\"21\", \"map,photo\"]"
+        },
+        {
+          "if": "value=direction",
+          "then": "<b>direction</b> A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl)."
+        },
+        {
+          "if": "value=wikidata",
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+        },
+        {
+          "if": "value=pnat",
+          "then": "<b>pnat</b> A strict positive number"
+        },
+        {
+          "if": "value=float",
+          "then": "<b>float</b> A decimal number"
+        },
+        {
+          "if": "value=pfloat",
+          "then": "<b>pfloat</b> A positive decimal number or zero"
+        },
+        {
+          "if": "value=email",
+          "then": "<b>email</b> An email adress"
+        },
+        {
+          "if": "value=url",
+          "then": "<b>url</b> The validatedTextField will format URLs to always be valid and have a https://-header (even though the 'https'-part will be hidden from the user. Furthermore, some tracking parameters will be removed"
+        },
+        {
+          "if": "value=phone",
+          "then": "<b>phone</b> A phone number"
+        },
+        {
+          "if": "value=opening_hours",
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+        },
+        {
+          "if": "value=color",
+          "then": "<b>color</b> Shows a color picker"
+        },
+        {
+          "if": "value=icon",
+          "then": "<b>icon</b> Makes sure that a valid .svg-path is added"
+        },
+        {
+          "if": "value=fediverse",
+          "then": "<b>fediverse</b> Validates fediverse addresses and normalizes them into `@username@server`-format"
+        },
+        {
+          "if": "value=id",
+          "then": "<b>id</b> Checks for valid identifiers for layers, will automatically replace spaces and uppercase"
+        }
+      ]
+    },
+    "type": "string",
+    "description": "The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values"
+  },
+  {
+    "path": [
+      "freeform",
+      "placeholder"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "translation",
+      "question": "What placeholder text should be shown in the input-element if there is no input?"
+    },
+    "description": "A (translated) text that is shown (as gray text) within the textfield"
+  },
+  {
+    "path": [
+      "freeform",
+      "helperArgs"
+    ],
+    "required": false,
+    "hints": {},
     "type": "array",
-    "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away"
+    "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
   },
   {
     "path": [
-      "classes"
+      "freeform",
+      "addExtraTags"
     ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "If a value is added with the textfield, these extra tag is addded.\nUseful to add a 'fixme=freeform textfield used - to be checked'"
+  },
+  {
+    "path": [
+      "freeform",
+      "inline"
+    ],
+    "required": false,
+    "hints": {
+      "question": "Show the freeform as box within the question?",
+      "iftrue": "show the freeform input field as a small field within the question",
+      "ifunset": "show the freeform input field full-width"
+    },
+    "type": "boolean",
+    "description": "Instead of showing a full-width text field, the text field will be shown within the rendering of the question.\nThis combines badly with special input elements, as it'll distort the layout."
+  },
+  {
+    "path": [
+      "freeform",
+      "default"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What value should be entered in the text field if no value is set?",
+      "ifunset": "do not prefill the textfield"
+    },
+    "type": "string",
+    "description": "This can help people to quickly enter the most common option"
+  },
+  {
+    "path": [
+      "freeform",
+      "invalidValues"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What values of the freeform key should be interpreted as 'unknown'?",
+      "ifunset": "The question will be considered answered if any value is set for the key"
+    },
     "type": [
       {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
       },
       {
         "type": "string"
       }
     ],
-    "description": "A list of css-classes to apply to the entire tagRendering if the answer is known (not applied on the question).\nThis is only for advanced users"
+    "description": "For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked"
   },
   {
     "path": [
-      "description"
+      "freeform",
+      "invalidValues",
+      "and"
     ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "freeform",
+      "invalidValues",
+      "or"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "question"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What question should be shown to the contributor?",
+      "ifunset": "This tagrendering will be shown if it is known, but cannot be edited by the contributor, effectively resutling in a read-only rendering"
+    },
     "type": [
       {
         "$ref": "#/definitions/Record<string,string>"
@@ -639,13 +737,45 @@
         "type": "string"
       }
     ],
-    "description": "A human-readable text explaining what this tagRendering does"
+    "description": "A question is presented ot the user if no mapping matches and the 'freeform' key is not set as well."
+  },
+  {
+    "path": [
+      "questionHint"
+    ],
+    "required": false,
+    "hints": {
+      "question": "Should some extra information be shown to the contributor, alongside the question?",
+      "ifunset": "No extra hint is given"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "This hint is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like"
+  },
+  {
+    "path": [
+      "labels"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer"
   },
   {
     "path": [
       "render"
     ],
-    "typeHint": "rendered",
+    "required": false,
+    "hints": {
+      "typehint": "rendered",
+      "question": "What text should be rendered?"
+    },
     "type": [
       {
         "$ref": "#/definitions/Record<string,string>"
@@ -680,45 +810,97 @@
         "type": "string"
       }
     ],
-    "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered"
+    "description": "This piece of text will be shown in the infobox.\nIn this text, values within braces (such as {braced(key)}) are replaced by the corresponding `value` in the object.\nFor example, if the object contains tags `amenity=school; name=Windy Hill School`, the render string `This school is named {name}` will be shown to the user as `This school is named Windy Hill School`\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`"
   },
   {
     "path": [
-      "condition"
+      "icon"
     ],
+    "required": false,
+    "hints": {
+      "typehint": "icon",
+      "question": "what icon should be shown next to the 'render' value?"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson",
-        "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-      },
-      {
-        "$ref": "#/definitions/OrTagConfigJson",
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ]
       },
       {
         "type": "string"
       }
     ],
-    "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```"
+    "description": "An icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value"
+  },
+  {
+    "path": [
+      "icon",
+      "path"
+    ],
+    "required": true,
+    "hints": {
+      "typehint": "icon"
+    },
+    "type": "string",
+    "description": "The path to the icon"
+  },
+  {
+    "path": [
+      "icon",
+      "class"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "string",
+    "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)"
   },
   {
     "path": [
       "condition"
     ],
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "required": false,
+    "hints": {
+      "question": "When should this item be shown?"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```"
   },
   {
     "path": [
       "condition",
       "and"
     ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
         "type": "object",
         "properties": {
           "or": {
@@ -741,29 +923,17 @@
   {
     "path": [
       "condition",
-      "and"
-    ],
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "condition"
-    ],
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "condition",
       "or"
     ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
         "type": "object",
         "properties": {
           "or": {
@@ -782,35 +952,21 @@
       }
     ],
     "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "condition",
-      "or"
-    ],
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "condition",
-      "or"
-    ],
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
   },
   {
     "path": [
       "metacondition"
     ],
+    "required": false,
+    "hints": {
+      "question": "When should this item be shown (including special conditions)?"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson",
-        "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "$ref": "#/definitions/OrTagConfigJson",
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
       },
       {
         "type": "string"
@@ -820,67 +976,18 @@
   },
   {
     "path": [
-      "metacondition"
-    ],
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
       "metacondition",
       "and"
     ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
     "type": [
       {
-        "$ref": "#/definitions/AndTagConfigJson"
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
       },
       {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
-        "type": "object",
-        "properties": {
-          "or": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/TagConfigJson"
-            }
-          }
-        },
-        "required": [
-          "or"
-        ]
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
-  },
-  {
-    "path": [
-      "metacondition",
-      "and"
-    ],
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "metacondition"
-    ],
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
-  },
-  {
-    "path": [
-      "metacondition",
-      "or"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndTagConfigJson"
-      },
-      {
-        "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
         "type": "object",
         "properties": {
           "or": {
@@ -905,15 +1012,59 @@
       "metacondition",
       "or"
     ],
-    "type": "object",
-    "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
   },
   {
     "path": [
-      "metacondition",
-      "or"
+      "description"
     ],
-    "type": "object",
-    "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+    "required": false,
+    "hints": {},
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "A human-readable text explaining what this tagRendering does.\nMostly used for the shared tagrenderings"
+  },
+  {
+    "path": [
+      "classes"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What css-classes should be applied to showing this attribute?"
+    },
+    "type": "string",
+    "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
   }
 ]

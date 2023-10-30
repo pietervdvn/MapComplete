@@ -570,21 +570,6 @@
       ]
     }
   ],
-  "mapRendering": [
-    {
-      "icon": "./assets/themes/bicycle_rental/logo.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#3333aa88",
-      "width": "2"
-    }
-  ],
   "allowMove": {
     "enableImproveAccuracy": true,
     "enableRelocation": true
@@ -634,5 +619,26 @@
         }
       }
     ]
-  }
+  },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/themes/bicycle_rental/logo.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#3333aa88",
+      "width": "2"
+    }
+  ]
 }

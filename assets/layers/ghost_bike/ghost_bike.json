@@ -290,17 +290,6 @@
     "enableRelocation": false,
     "enableImproveAccuraccy": true
   },
-  "mapRendering": [
-    {
-      "icon": "./assets/layers/ghost_bike/ghost_bike.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "bottom"
-    }
-  ],
   "description": {
     "en": "A layer showing memorials for cyclists, killed in road accidents",
     "nl": "Een laag die herdenkingsplaatsen voor verongelukte fietsers toont",
@@ -309,5 +298,21 @@
     "pl": "Warstwa pokazujące miejsca upamiętnienia rowerzystów, którzy zginęli w wypadkach drogowych",
     "ca": "Una capa que mostra monuments commemoratius als ciclistes morts en accidents de trànsit",
     "cs": "Vrstva zobrazující pomníky pro cyklisty zabité při dopravních nehodách"
-  }
+  },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "./assets/layers/ghost_bike/ghost_bike.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": []
 }

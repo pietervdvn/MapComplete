@@ -387,19 +387,27 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return newArr
     }
 
+    /**
+     * Finds all duplicates in a list of strings
+     *
+     * Utils.Duplicates(["a", "b", "c"]) // => []
+     * Utils.Duplicates(["a", "b","c","b"] // => ["b"]
+     * Utils.Duplicates(["a", "b","c","b","b"] // => ["b"]
+     *
+     */
     public static Duplicates(arr: string[]): string[] {
         if (arr === undefined) {
             return undefined
         }
-        const newArr = []
         const seen = new Set<string>()
+        const duplicates = new Set<string>()
         for (const string of arr) {
             if (seen.has(string)) {
-                newArr.push(string)
+                duplicates.add(string)
             }
             seen.add(string)
         }
-        return newArr
+        return Array.from(duplicates)
     }
 
     /**

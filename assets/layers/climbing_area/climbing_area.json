@@ -328,16 +328,22 @@
       }
     }
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
-      "icon": "./assets/themes/climbing/climbing_no_rope.svg",
       "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
       ],
-      "anchor": "center"
-    },
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/themes/climbing/climbing_no_rope.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
     {
       "dashArray": "8 16",
       "lineCap": "square",

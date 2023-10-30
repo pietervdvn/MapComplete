@@ -41,20 +41,6 @@
       "description": "Community Links (Discord, meetups, Slack groups, IRC channels, mailing lists etc...)"
     }
   ],
-  "mapRendering": [
-    {
-      "icon": "pin:#6BC4F7;./assets/layers/osm_community_index/osm.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point"
-      ],
-      "anchor": "bottom"
-    },
-    {
-      "color": "#444444",
-      "width": "1"
-    }
-  ],
   "filter": [
     {
       "id": "country",
@@ -175,5 +161,29 @@
     "fr": "Une couche affichant les communautés OpenStreetMap",
     "pl": "Warstwa pokazująca społeczności OpenStreetMap",
     "cs": "Vrstva zobrazující komunity OpenStreetMap"
-  }
+  },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point"
+      ],
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#6BC4F7"
+        },
+        {
+          "icon": "./assets/layers/osm_community_index/osm.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#444444",
+      "width": "1"
+    }
+  ]
 }

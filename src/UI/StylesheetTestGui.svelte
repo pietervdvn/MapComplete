@@ -42,6 +42,11 @@
         <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
         Main action (disabled)
       </button>
+      
+      <button class="small">
+        <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
+        Small button
+      </button>
 
       <button class="small primary">Small button</button>
       <button class="small primary disabled">Small, disabled button</button>
@@ -98,6 +103,10 @@
         <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
         Main action (disabled)
       </button>
+      <button class="small">
+        <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
+        Small button
+      </button>
     </div>
     <div class="flex">
       <button>
@@ -126,6 +135,10 @@
         <input id="javascript0" name="fav_language" type="radio" value="JavaScript" />
         JavaScript
       </label>
+    </div>
+    
+    <div class="border-interactive">
+      Area with extreme high interactivity due to `border-interactive`
     </div>
 
     <select>

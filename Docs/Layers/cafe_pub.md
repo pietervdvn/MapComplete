@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/cafe_pub/pub.svg' height="100px"> 
+
 
 A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions
 

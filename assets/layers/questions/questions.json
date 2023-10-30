@@ -2,7 +2,8 @@
   "id": "questions",
   "description": "Special library layer which does not need a '.questions'-prefix before being imported",
   "source": "special:library",
-  "mapRendering": null,
+  "lineRendering": null,
+  "pointRendering": null,
   "tagRenderings": [
     {
       "id": "questions",
@@ -2410,6 +2411,9 @@
     },
     {
       "id": "sugar_free",
+      "labels": [
+        "diets"
+      ],
       "question": {
         "en": "Does this shop have a sugar free offering?",
         "de": "Verkauft das Geschäft zuckerfreie Produkte?",
@@ -2457,6 +2461,9 @@
     },
     {
       "id": "lactose_free",
+      "labels": [
+        "diets"
+      ],
       "question": {
         "en": "Does {title()} have a lactose-free offering?",
         "de": "Verkauft {title()} laktosefreie Produkte?",
@@ -2499,6 +2506,9 @@
     },
     {
       "id": "gluten_free",
+      "labels": [
+        "diets"
+      ],
       "question": {
         "en": "Does this shop have a gluten free offering?",
         "de": "Verkauft das Geschäft glutenfreie Produkte?",

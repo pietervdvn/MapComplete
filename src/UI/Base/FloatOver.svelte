@@ -10,7 +10,7 @@
 
 <div
   class="absolute top-0 right-0 h-screen w-screen p-4 md:p-6"
-  style="background-color: #00000088"
+  style="background-color: #00000088; z-index: 20"
   on:click={() => {
     dispatch("close")
   }}

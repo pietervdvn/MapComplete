@@ -151,7 +151,9 @@
         "pl": "Dzieło sztuki na ścianie",
         "pt_BR": "uma obra de arte em uma parede"
       },
-      "snapToLayer": "walls_and_buildings"
+      "snapToLayer": [
+        "walls_and_buildings"
+      ]
     }
   ],
   "calculatedTags": [
@@ -817,20 +819,30 @@
     "enableRelocation": false,
     "enableImproveAccuraccy": true
   },
-  "mapRendering": [
+  "filter": [
+    "has_image"
+  ],
+  "pointRendering": [
     {
-      "icon": "circle:white;./assets/themes/artwork/artwork.svg",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/themes/artwork/artwork.svg"
+        }
+      ],
       "location": [
         "point",
         "centroid"
       ]
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#0000ff",
       "width": "10"
     }
-  ],
-  "filter": [
-    "has_image"
   ]
 }

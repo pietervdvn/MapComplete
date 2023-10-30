@@ -5195,6 +5195,14 @@
             }
         }
     },
+    "ice_cream": {
+        "tagRenderings": {
+            "1": {
+                "question": "Wat is de naam van dit ijssalon?",
+                "render": "Dit ijssalon heet <b>{name}</b>"
+            }
+        }
+    },
     "indoors": {
         "description": "Een basis voor indoor-navigatie: toont binnenruimtes",
         "name": "Binnenruimtes",
@@ -5397,7 +5405,7 @@
         }
     },
     "last_click": {
-        "mapRendering": {
+        "pointRendering": {
             "0": {
                 "label": {
                     "mappings": {
@@ -8707,13 +8715,6 @@
     },
     "transit_routes": {
         "description": "Laag met buslijnen",
-        "mapRendering": {
-            "0": {
-                "color": {
-                    "render": "#ff0000"
-                }
-            }
-        },
         "name": "Buslijnen",
         "tagRenderings": {
             "colour": {
@@ -9402,17 +9403,6 @@
                 "options": {
                     "0": {
                         "question": "Vuilnisbak met verdeler voor hondenpoepzakjes"
-                    }
-                }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Vuilnisbak"
-                        }
                     }
                 }
             }

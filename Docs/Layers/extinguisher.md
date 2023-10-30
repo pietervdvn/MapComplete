@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/hailhydrant/Twemoji12_1f9ef.svg' height="100px"> 
+
 
 Map layer to show fire extinguishers.
 

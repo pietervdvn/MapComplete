@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/pin:#6BC4F7;./assets/layers/drinking_water/drips.svg' height="100px"> 
+
 
 A layer showing drinking water fountains
 
@@ -14,7 +14,7 @@ A layer showing drinking water fountains
 
 
 
-  - This layer is shown at zoomlevel **13** and higher
+  - This layer is shown at zoomlevel **0** and higher
   - This layer will automatically load  [drinking_water](./drinking_water.md)  into the layout as it depends on it:  a calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _closest_other_drinking_water)
   - This layer is needed as dependency for layer [drinking_water](#drinking_water)
 

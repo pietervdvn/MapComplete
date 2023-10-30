@@ -11,13 +11,14 @@
   - [Existing builtin tagrenderings](#existing-builtin-tagrenderings)
     + [images](#images)
     + [luminous_or_lit](#luminous_or_lit)
+    + [reviews](#reviews)
+    + [website](#website)
+    + [phone](#phone)
+    + [email](#email)
     + [wikipedia](#wikipedia)
     + [bench.*bench-questions](#bench*bench-questions)
     + [opening_hours](#opening_hours)
     + [artwork.*artwork-question](#artwork*artwork-question)
-    + [website](#website)
-    + [phone](#phone)
-    + [email](#email)
     + [description](#description)
     + [payment-options](#payment-options)
     + [payment-options-advanced](#payment-options-advanced)
@@ -33,7 +34,6 @@
     + [internet](#internet)
     + [internet-fee](#internet-fee)
     + [internet-ssid](#internet-ssid)
-    + [reviews](#reviews)
     + [questions](#questions)
     + [climbing.website](#climbingwebsite)
     + [climbing.fee](#climbingfee)
@@ -58,6 +58,7 @@
     + [minimap](#minimap)
     + [mastodon](#mastodon)
     + [contact](#contact)
+    + [diets](#diets)
     + [etymology.wikipedia-etymology](#etymologywikipedia-etymology)
     + [toilet.relevant-questions](#toiletrelevant-questions)
     + [denominations-notes](#denominations-notes)
@@ -91,6 +92,7 @@
 
   - advertising
   - ambulancestation
+  - animal_shelter
   - artwork
   - atm
   - barrier
@@ -134,6 +136,7 @@
   - hackerspace
   - hotel
   - hydrant
+  - ice_cream
   - indoors
   - information_board
   - kerbs
@@ -155,6 +158,7 @@
   - rainbow_crossings
   - reception_desk
   - recycling
+  - route_marker
   - shops
   - shower
   - slow_roads
@@ -187,6 +191,139 @@
 
 
   - advertising
+
+
+
+
+### reviews 
+
+
+
+
+
+  - animal_shelter
+  - cafe_pub
+  - dogpark
+  - fitness_centre
+  - food
+  - hackerspace
+  - hotel
+  - pharmacy
+  - shops
+  - veterinary
+
+
+
+
+### website 
+
+
+
+
+
+  - animal_shelter
+  - bicycle_library
+  - bicycle_rental
+  - bike_cafe
+  - bike_shop
+  - bike_themed_object
+  - cafe_pub
+  - car_rental
+  - climbing_club
+  - climbing_gym
+  - dentist
+  - doctors
+  - elongated_coin
+  - fitness_centre
+  - food
+  - governments
+  - hackerspace
+  - hotel
+  - kindergarten_childcare
+  - nature_reserve
+  - observation_tower
+  - pharmacy
+  - physiotherapist
+  - playground
+  - recycling
+  - school
+  - shops
+  - sports_centre
+  - tertiary_education
+  - vending_machine
+  - veterinary
+
+
+
+
+### phone 
+
+
+
+
+
+  - animal_shelter
+  - bicycle_library
+  - bicycle_rental
+  - bike_cafe
+  - bike_shop
+  - bike_themed_object
+  - cafe_pub
+  - car_rental
+  - climbing_club
+  - climbing_gym
+  - dentist
+  - doctors
+  - fitness_centre
+  - food
+  - governments
+  - hackerspace
+  - hotel
+  - kindergarten_childcare
+  - pharmacy
+  - physiotherapist
+  - recycling
+  - school
+  - shops
+  - sports_centre
+  - tertiary_education
+  - vending_machine
+  - veterinary
+
+
+
+
+### email 
+
+
+
+
+
+  - animal_shelter
+  - bicycle_library
+  - bicycle_rental
+  - bike_cafe
+  - bike_shop
+  - bike_themed_object
+  - cafe_pub
+  - car_rental
+  - climbing_club
+  - climbing_gym
+  - dentist
+  - doctors
+  - fitness_centre
+  - food
+  - governments
+  - hackerspace
+  - hotel
+  - kindergarten_childcare
+  - pharmacy
+  - physiotherapist
+  - recycling
+  - school
+  - shops
+  - sports_centre
+  - tertiary_education
 
 
 
@@ -234,6 +371,7 @@
   - dentist
   - fitness_centre
   - food
+  - ice_cream
   - kindergarten_childcare
   - pharmacy
   - postoffices
@@ -255,116 +393,6 @@
 
 
   - bench
-
-
-
-
-### website 
-
-
-
-
-
-  - bicycle_library
-  - bicycle_rental
-  - bike_cafe
-  - bike_shop
-  - bike_themed_object
-  - cafe_pub
-  - car_rental
-  - climbing_club
-  - climbing_gym
-  - dentist
-  - doctors
-  - elongated_coin
-  - fitness_centre
-  - food
-  - governments
-  - hackerspace
-  - hotel
-  - kindergarten_childcare
-  - nature_reserve
-  - observation_tower
-  - pharmacy
-  - physiotherapist
-  - playground
-  - recycling
-  - school
-  - shops
-  - sports_centre
-  - tertiary_education
-  - vending_machine
-  - veterinary
-
-
-
-
-### phone 
-
-
-
-
-
-  - bicycle_library
-  - bicycle_rental
-  - bike_cafe
-  - bike_shop
-  - bike_themed_object
-  - cafe_pub
-  - car_rental
-  - climbing_club
-  - climbing_gym
-  - dentist
-  - doctors
-  - fitness_centre
-  - food
-  - governments
-  - hackerspace
-  - hotel
-  - kindergarten_childcare
-  - pharmacy
-  - physiotherapist
-  - recycling
-  - school
-  - shops
-  - sports_centre
-  - tertiary_education
-  - vending_machine
-  - veterinary
-
-
-
-
-### email 
-
-
-
-
-
-  - bicycle_library
-  - bicycle_rental
-  - bike_cafe
-  - bike_shop
-  - bike_themed_object
-  - cafe_pub
-  - car_rental
-  - climbing_club
-  - climbing_gym
-  - dentist
-  - doctors
-  - fitness_centre
-  - food
-  - governments
-  - hackerspace
-  - hotel
-  - kindergarten_childcare
-  - pharmacy
-  - physiotherapist
-  - recycling
-  - school
-  - shops
-  - sports_centre
-  - tertiary_education
 
 
 
@@ -395,6 +423,7 @@
   - cafe_pub
   - climbing_gym
   - food
+  - ice_cream
   - observation_tower
   - questions
   - questions
@@ -517,6 +546,7 @@
   - food
   - hackerspace
   - hotel
+  - ice_cream
   - observation_tower
   - sports_centre
   - transit_stops
@@ -600,25 +630,6 @@
   - food
   - hotel
   - shops
-
-
-
-
-### reviews 
-
-
-
-
-
-  - cafe_pub
-  - dogpark
-  - fitness_centre
-  - food
-  - hackerspace
-  - hotel
-  - pharmacy
-  - shops
-  - veterinary
 
 
 
@@ -900,6 +911,18 @@
 
 
   - hospital
+  - ice_cream
+
+
+
+
+### diets 
+
+
+
+
+
+  - ice_cream
 
 
 

@@ -15,8 +15,8 @@
    * If set, 'loading' will act as if we are already logged in.
    */
   export let ignoreLoading: boolean = false
-  let loadingStatus = state.osmConnection.loadingStatus
-  let badge = state.featureSwitches?.featureSwitchUserbadge ?? new ImmutableStore(true)
+  let loadingStatus = state?.osmConnection?.loadingStatus ?? new ImmutableStore("logged-in")
+  let badge = state?.featureSwitches?.featureSwitchUserbadge ?? new ImmutableStore(true)
   const t = Translations.t.general
   const offlineModes: Partial<Record<OsmServiceState, Translation>> = {
     offline: t.loginFailedOfflineMode,
@@ -24,7 +24,7 @@
     unknown: t.loginFailedUnreachableMode,
     readonly: t.loginFailedReadonlyMode,
   }
-  const apiState = state.osmConnection.apiIsOnline
+  const apiState = state?.osmConnection?.apiIsOnline ?? new ImmutableStore<OsmServiceState>("online")
 </script>
 
 {#if $badge}

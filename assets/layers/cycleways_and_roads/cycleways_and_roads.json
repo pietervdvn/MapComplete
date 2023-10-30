@@ -1808,14 +1808,29 @@
     }
   ],
   "allowSplit": true,
-  "mapRendering": [
+  "description": {
+    "en": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure",
+    "nl": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur",
+    "de": "Infrastruktur, die man mit dem Fahrrad befahren kann, begleitet von diesbezüglichen Fragen",
+    "es": "Toda la infraestructura sobre la que alguien puede ir en bici, acompañado de preguntas sobre esta infraestructura\"",
+    "fr": "Toutes les infrastructures sur lesquelles quelqu'un peut rouler, accompagnées de questions sur cette infrastructure",
+    "ca": "Totes les infraestructures per les quals algú pot ciclar, acompanyades de preguntes sobre aquesta infraestructura",
+    "cs": "Veškerá infrastruktura, kterou může někdo projet na kole, doplněná o otázky týkající se této infrastruktury"
+  },
+  "pointRendering": [
     {
-      "icon": "./assets/themes/cycle_infra/bicycleway.svg",
       "iconSize": "40,40",
       "location": [
         "point"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/themes/cycle_infra/bicycleway.svg"
+        }
       ]
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": {
         "render": "rgba(170, 170, 170, 0.7)",
@@ -1887,14 +1902,5 @@
         ]
       }
     }
-  ],
-  "description": {
-    "en": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure",
-    "nl": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur",
-    "de": "Infrastruktur, die man mit dem Fahrrad befahren kann, begleitet von diesbezüglichen Fragen",
-    "es": "Toda la infraestructura sobre la que alguien puede ir en bici, acompañado de preguntas sobre esta infraestructura\"",
-    "fr": "Toutes les infrastructures sur lesquelles quelqu'un peut rouler, accompagnées de questions sur cette infrastructure",
-    "ca": "Totes les infraestructures per les quals algú pot ciclar, acompanyades de preguntes sobre aquesta infraestructura",
-    "cs": "Veškerá infrastruktura, kterou může někdo projet na kole, doplněná o otázky týkající se této infrastruktury"
-  }
+  ]
 }

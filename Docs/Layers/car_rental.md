@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/car_rental/car_rental.svg' height="100px"> 
+
 
 Places where you can rent a car
 

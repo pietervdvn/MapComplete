@@ -621,84 +621,6 @@
       ]
     }
   ],
-  "mapRendering": [
-    {
-      "icon": {
-        "render": "circle:white;./assets/layers/sport_pitch/sport_pitch.svg",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                "sport=baseball",
-                "sport=basketball",
-                "sport=beachvolleyball",
-                "sport=boules",
-                "sport=skateboard",
-                "sport=soccer",
-                "sport=table_tennis",
-                "sport=tennis",
-                "sport=volleyball",
-                "sport=equestrian"
-              ]
-            },
-            "then": "circle:white;./assets/layers/sport_pitch/{sport}.svg"
-          }
-        ]
-      },
-      "iconBadges": [
-        {
-          "if": {
-            "and": [
-              "opening_hours!=24/7",
-              "opening_hours~*"
-            ]
-          },
-          "then": "icons.isOpen"
-        },
-        {
-          "if": {
-            "or": [
-              "access=customers",
-              "access=private",
-              "access=no"
-            ]
-          },
-          "then": "circle:white;./assets/layers/sport_pitch/lock.svg"
-        }
-      ],
-      "iconSize": {
-        "render": "25,25,center",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                "_size_classification=medium",
-                "id~node/.*"
-              ]
-            },
-            "then": "32,32,center"
-          },
-          {
-            "if": "_size_classification=small",
-            "then": "25,25,center"
-          },
-          {
-            "if": "_size_classification=large",
-            "then": "40,40,center"
-          }
-        ]
-      },
-      "location": [
-        "point",
-        "centroid"
-      ]
-    },
-    {
-      "color": "#00cc00",
-      "width": "1",
-      "fill": "false"
-    }
-  ],
   "filter": [
     {
       "id": "accessibility",
@@ -785,5 +707,93 @@
       ]
     },
     "open_now"
+  ],
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/sport_pitch/sport_pitch.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "sport=baseball",
+                    "sport=basketball",
+                    "sport=beachvolleyball",
+                    "sport=boules",
+                    "sport=skateboard",
+                    "sport=soccer",
+                    "sport=table_tennis",
+                    "sport=tennis",
+                    "sport=volleyball",
+                    "sport=equestrian"
+                  ]
+                },
+                "then": "./assets/layers/sport_pitch/{sport}.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": {
+            "and": [
+              "opening_hours!=24/7",
+              "opening_hours~*"
+            ]
+          },
+          "then": "icons.isOpen"
+        },
+        {
+          "if": {
+            "or": [
+              "access=customers",
+              "access=private",
+              "access=no"
+            ]
+          },
+          "then": "circle:white;./assets/layers/sport_pitch/lock.svg"
+        }
+      ],
+      "iconSize": {
+        "render": "25,25,center",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                "_size_classification=medium",
+                "id~node/.*"
+              ]
+            },
+            "then": "32,32,center"
+          },
+          {
+            "if": "_size_classification=small",
+            "then": "25,25,center"
+          },
+          {
+            "if": "_size_classification=large",
+            "then": "40,40,center"
+          }
+        ]
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00cc00",
+      "width": "1",
+      "fill": "false"
+    }
   ]
 }

@@ -18,6 +18,7 @@ import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import { Paragraph } from "../../UI/Base/Paragraph"
 import Svg from "../../Svg"
 import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
+import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 
 export interface Icon {}
 
@@ -52,6 +53,7 @@ export default class TagRenderingConfig {
     public readonly question?: TypedTranslation<object>
     public readonly questionhint?: TypedTranslation<object>
     public readonly condition?: TagsFilter
+    public readonly invalidValues?: TagsFilter
     /**
      * Evaluated against the current 'usersettings'-state
      */
@@ -76,7 +78,11 @@ export default class TagRenderingConfig {
     public readonly labels: string[]
     public readonly classes: string[]
 
-    constructor(json: string | QuestionableTagRenderingConfigJson, context?: string) {
+    constructor(
+        config: string | TagRenderingConfigJson | QuestionableTagRenderingConfigJson,
+        context?: string
+    ) {
+        let json = <string | QuestionableTagRenderingConfigJson>config
         if (json === undefined) {
             throw "Initing a TagRenderingConfig with undefined in " + context
         }
@@ -117,15 +123,20 @@ export default class TagRenderingConfig {
 
         this.labels = json.labels ?? []
         if (typeof json.classes === "string") {
-            this.classes = json.classes.split(" ")
+            this.classes = (<string>json.classes).split(" ")
         } else {
             this.classes = json.classes ?? []
         }
+        this.classes = [].concat(...this.classes.map((cl) => cl.split(" ")))
+
         this.render = Translations.T(<any>json.render, translationKey + ".render")
         this.question = Translations.T(json.question, translationKey + ".question")
         this.questionhint = Translations.T(json.questionHint, translationKey + ".questionHint")
         this.description = Translations.T(json.description, translationKey + ".description")
         this.condition = TagUtils.Tag(json.condition ?? { and: [] }, `${context}.condition`)
+        this.invalidValues = json["invalidValues"]
+            ? TagUtils.Tag(json["invalidValues"], `${context}.invalidValues`)
+            : undefined
         if (typeof json.icon === "string") {
             this.renderIcon = json.icon
             this.renderIconClass = "small"
@@ -148,7 +159,9 @@ export default class TagRenderingConfig {
                 json.freeform.type &&
                 Validators.availableTypes.indexOf(<any>json.freeform.type) < 0
             ) {
-                throw `At ${context}: invalid type, perhaps you meant ${Utils.sortedByLevenshteinDistance(
+                throw `At ${context}: invalid type ${
+                    json.freeform.type
+                }, perhaps you meant ${Utils.sortedByLevenshteinDistance(
                     json.freeform.key,
                     <any>Validators.availableTypes,
                     (s) => <any>s
@@ -229,65 +242,6 @@ export default class TagRenderingConfig {
 
         if (this.question && this.freeform?.key === undefined && this.mappings === undefined) {
             throw `${context}: A question is defined, but no mappings nor freeform (key) are. The question is ${this.question.txt} at ${context}`
-        }
-
-        if (this.freeform) {
-            if (this.render === undefined) {
-                throw `${context}: Detected a freeform key without rendering... Key: ${this.freeform.key} in ${context}`
-            }
-            for (const ln in this.render.translations) {
-                if (ln.startsWith("_")) {
-                    continue
-                }
-                const txt: string = this.render.translations[ln]
-                if (txt === "") {
-                    throw context + " Rendering for language " + ln + " is empty"
-                }
-                if (
-                    txt.indexOf("{" + this.freeform.key + "}") >= 0 ||
-                    txt.indexOf("&LBRACE" + this.freeform.key + "&RBRACE")
-                ) {
-                    continue
-                }
-                if (txt.indexOf("{" + this.freeform.key + ":") >= 0) {
-                    continue
-                }
-
-                if (
-                    this.freeform.type === "opening_hours" &&
-                    txt.indexOf("{opening_hours_table(") >= 0
-                ) {
-                    continue
-                }
-                const keyFirstArg = ["canonical", "fediverse_link"]
-                if (
-                    keyFirstArg.some(
-                        (funcName) => txt.indexOf(`{${funcName}(${this.freeform.key}`) >= 0
-                    )
-                ) {
-                    continue
-                }
-                if (
-                    this.freeform.type === "wikidata" &&
-                    txt.indexOf("{wikipedia(" + this.freeform.key) >= 0
-                ) {
-                    continue
-                }
-                if (this.freeform.key === "wikidata" && txt.indexOf("{wikipedia()") >= 0) {
-                    continue
-                }
-                if (
-                    this.freeform.type === "wikidata" &&
-                    txt.indexOf(`{wikidata_label(${this.freeform.key})`) >= 0
-                ) {
-                    continue
-                }
-                throw `${context}: The rendering for language ${ln} does not contain the freeform key {${this.freeform.key}}. This is a bug, as this rendering should show exactly this freeform key!\nThe rendering is ${txt} `
-            }
-        }
-
-        if (this.render && this.question && this.freeform === undefined) {
-            throw `${context}: Detected a tagrendering which takes input without freeform key in ${context}; the question is ${this.question.txt}`
         }
 
         if (!json.multiAnswer && this.mappings !== undefined && this.question !== undefined) {
@@ -460,8 +414,11 @@ export default class TagRenderingConfig {
      */
     public IsKnown(tags: Record<string, string>): boolean {
         if (this.condition && !this.condition.matchesProperties(tags)) {
-            // Filtered away by the condition, so it is kindof known
+            // Filtered away by the condition, so it is kind of known
             return true
+        }
+        if (this.invalidValues && this.invalidValues.matchesProperties(tags)) {
+            return false
         }
         if (this.multiAnswer) {
             for (const m of this.mappings ?? []) {
@@ -473,6 +430,9 @@ export default class TagRenderingConfig {
             const free = this.freeform?.key
             if (free !== undefined) {
                 const value = tags[free]
+                if (typeof value === "object") {
+                    return Object.keys(value).length > 0
+                }
                 return value !== undefined && value !== ""
             }
             return false
@@ -670,7 +630,9 @@ export default class TagRenderingConfig {
         multiSelectedMapping: boolean[] | undefined,
         currentProperties: Record<string, string>
     ): UploadableTag {
-        freeformValue = freeformValue?.trim()
+        if (typeof freeformValue === "string") {
+            freeformValue = freeformValue?.trim()
+        }
         const validator = Validators.get(<ValidatorType>this.freeform?.type)
         if (validator && freeformValue) {
             freeformValue = validator.reformat(freeformValue, () => currentProperties["_country"])

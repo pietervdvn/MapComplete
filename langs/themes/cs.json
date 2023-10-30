@@ -1345,6 +1345,32 @@
         "description": "Najít prodejní automaty na vše",
         "title": "Prodejní automaty"
     },
+    "walkingnodes": {
+        "layers": {
+            "0": {
+                "name": "propojení mezi uzly",
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "override": {
+                            "question": "Kdy bylo toto propojení mezi uzly naposledy zkontrolováno?",
+                            "render": "Toto propojení mezi uzly bylo naposledy zkontrolováno dne {survey:date}"
+                        }
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "propojení mezi uzly <strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "propojení mezi uzly"
+                }
+            },
+            "1": {
+                "name": "uzly"
+            }
+        }
+    },
     "walls_and_buildings": {
         "description": "Speciální zabudovaná vrstva poskytující všechny stěny a budovy. Tato vrstva je užitečná v předvolbách pro objekty, které lze umístit ke stěnám (např. AED, poštovní schránky, vchody, adresy, bezpečnostní kamery, …). Tato vrstva je ve výchozím nastavení neviditelná a uživatel ji nemůže přepínat.",
         "title": "Stěny a budovy"

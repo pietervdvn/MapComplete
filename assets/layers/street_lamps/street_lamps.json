@@ -35,23 +35,6 @@
       }
     ]
   },
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": "./assets/layers/street_lamps/street_lamp.svg",
-      "iconBadges": [
-        {
-          "if": "light:colour~*",
-          "then": "circle:{light:colour}"
-        }
-      ],
-      "iconSize": "40,40",
-      "anchor": "bottom"
-    }
-  ],
   "presets": [
     {
       "title": {
@@ -559,5 +542,27 @@
     "es": "Una capa que muestra luces callejeras",
     "ca": "Una capa que mostra els llums del carrer",
     "cs": "Vrstva zobrazující pouliční osvětlení"
-  }
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": "light:colour~*",
+          "then": "circle:{light:colour}"
+        }
+      ],
+      "iconSize": "40,40",
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "./assets/layers/street_lamps/street_lamp.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": []
 }

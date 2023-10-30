@@ -1,4 +1,4 @@
-import { DesugaringStep } from "./Conversion"
+import { ConversionContext, DesugaringStep } from "./Conversion"
 import { Utils } from "../../../Utils"
 import Translations from "../../../UI/i18n/Translations"
 
@@ -27,14 +27,14 @@ export class AddContextToTranslations<T> extends DesugaringStep<T> {
      *       }
      *   ]
      * }
-     * const rewritten = new AddContextToTranslations<any>("prefix:").convert(theme, "context").result
+     * const rewritten = new AddContextToTranslations<any>("prefix:").convertStrict(theme, ConversionContext.test())
      * const expected = {
      *   layers: [
      *       {
      *           builtin: ["abc"],
      *           override: {
      *               title:{
-     *                  _context: "prefix:context.layers.0.override.title"
+     *                  _context: "prefix:layers.0.override.title"
      *                   en: "Some title"
      *               }
      *           }
@@ -57,14 +57,14 @@ export class AddContextToTranslations<T> extends DesugaringStep<T> {
      *       }
      *   ]
      * }
-     * const rewritten = new AddContextToTranslations<any>("prefix:").convert(theme, "context").result
+     * const rewritten = new AddContextToTranslations<any>("prefix:").convertStrict(theme, ConversionContext.test())
      * const expected = {
      *   layers: [
      *       {
      *           tagRenderings:[
      *               {id: "some-tr",
      *               question:{
-     *                  _context: "prefix:context.layers.0.tagRenderings.some-tr.question"
+     *                  _context: "prefix:layers.0.tagRenderings.some-tr.question"
      *                   en:"Question?"
      *               }
      *               }
@@ -85,7 +85,7 @@ export class AddContextToTranslations<T> extends DesugaringStep<T> {
      *       }
      *   ]
      * }
-     * const rewritten = new AddContextToTranslations<any>("prefix:").convert(theme, "context").result
+     * const rewritten = new AddContextToTranslations<any>("prefix:").convertStrict(theme, ConversionContext.test())
      * const expected = {
      *   layers: [
      *       {
@@ -113,19 +113,16 @@ export class AddContextToTranslations<T> extends DesugaringStep<T> {
      *       }
      *   ]
      * }
-     * const rewritten = new AddContextToTranslations<any>("prefix:").convert(theme, "context").result
+     * const rewritten = new AddContextToTranslations<any>("prefix:").convertStrict(theme, ConversionContext.test())
      * rewritten // => theme
      *
      */
-    convert(
-        json: T,
-        context: string
-    ): { result: T; errors?: string[]; warnings?: string[]; information?: string[] } {
+    convert(json: T, context: ConversionContext): T {
         if (json["#dont-translate"] === "*") {
-            return { result: json }
+            return json
         }
 
-        const result = Utils.WalkJson(
+        return Utils.WalkJson(
             json,
             (leaf, path) => {
                 if (leaf === undefined || leaf === null) {
@@ -142,16 +139,15 @@ export class AddContextToTranslations<T> extends DesugaringStep<T> {
                         }
                     }
 
-                    return { ...leaf, _context: this._prefix + context + "." + path.join(".") }
+                    return {
+                        ...leaf,
+                        _context: this._prefix + context.path.concat(path).join("."),
+                    }
                 } else {
                     return leaf
                 }
             },
             (obj) => obj === undefined || obj === null || Translations.isProbablyATranslation(obj)
         )
-
-        return {
-            result,
-        }
     }
 }

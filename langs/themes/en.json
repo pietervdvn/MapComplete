@@ -527,6 +527,14 @@
                     "render": "Cycle node <strong>{rcn_ref}</strong>"
                 }
             },
+            "2": {
+                "override": {
+                    "name": "Cycling guideposts",
+                    "title": {
+                        "render": "Cycling guidepost"
+                    }
+                }
+            },
             "3": {
                 "override": {
                     "presets": {
@@ -865,6 +873,10 @@
     "hotels": {
         "description": "On this map, you'll find hotels in your area",
         "title": "Hotels"
+    },
+    "icecream": {
+        "description": "A map showing ice cream parlors and ice cream vending machines",
+        "title": "Icecream"
     },
     "indoors": {
         "description": "On this map, publicly accessible indoor places are shown",
@@ -1368,6 +1380,81 @@
     "vending_machine": {
         "description": "Find vending machines for everything",
         "title": "Vending Machines"
+    },
+    "walkingnodes": {
+        "description": "This map shows walking node networks and allows you to add new nodes easily",
+        "layers": {
+            "0": {
+                "name": "Node to node links",
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "override": {
+                            "question": "When was this node to node link last surveyed?",
+                            "render": "This node to node link was last surveyed on {survey:date}"
+                        }
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Node to node link <strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "Node to node link"
+                }
+            },
+            "1": {
+                "name": "Nodes",
+                "presets": {
+                    "0": {
+                        "title": "a walking node"
+                    }
+                },
+                "tagRenderings": {
+                    "node-expected_rwn_route_relations": {
+                        "freeform": {
+                            "placeholder": "e.g. 3"
+                        },
+                        "question": "How many other walking nodes does this node link to?",
+                        "render": "This node links to {expected_rwn_route_relations} other walking nodes."
+                    },
+                    "node-rwn_ref": {
+                        "freeform": {
+                            "placeholder": "e.g. 1"
+                        },
+                        "question": "What is the reference number of this walking node?",
+                        "render": "This walking node has reference number {rwn_ref}"
+                    },
+                    "survey_date": {
+                        "override": {
+                            "question": "When was this walking node last surveyed?",
+                            "render": "This walking node was last surveyed on {survey:date}"
+                        }
+                    }
+                },
+                "title": {
+                    "render": "Walking node <strong>{rwn_ref}</strong>"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Hiking guideposts",
+                    "title": {
+                        "render": "Hiking guidepost"
+                    }
+                }
+            },
+            "3": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "a route marker for a node to node link"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Walking Node Networks"
     },
     "walls_and_buildings": {
         "description": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user.",

@@ -180,7 +180,12 @@
       ]
     }
   ],
-  "mapRendering": [
+  "allowMove": {
+    "enableRelocation": true,
+    "enableImproveAccuracy": true
+  },
+  "deletion": true,
+  "pointRendering": [
     {
       "location": [
         "point",
@@ -194,27 +199,32 @@
           }
         ]
       },
-      "icon": {
-        "mappings": [
-          {
-            "if": "amenity=kindergarten",
-            "then": "circle:white;./assets/layers/kindergarten_childcare/kindergarten.svg"
-          },
-          {
-            "if": "amenity=childcare",
-            "then": "circle:white;./assets/layers/kindergarten_childcare/childcare.svg"
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "mappings": [
+              {
+                "if": "amenity=kindergarten",
+                "then": "./assets/layers/kindergarten_childcare/kindergarten.svg"
+              },
+              {
+                "if": "amenity=childcare",
+                "then": "./assets/layers/kindergarten_childcare/childcare.svg"
+              }
+            ]
           }
-        ]
-      }
-    },
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#62fc6c",
       "width": 1
     }
-  ],
-  "allowMove": {
-    "enableRelocation": true,
-    "enableImproveAccuracy": true
-  },
-  "deletion": true
+  ]
 }

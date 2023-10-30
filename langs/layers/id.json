@@ -365,7 +365,7 @@
         }
     },
     "last_click": {
-        "mapRendering": {
+        "pointRendering": {
             "0": {
                 "label": {
                     "render": "Klik di sini untuk menambahkan item baru"
@@ -721,17 +721,6 @@
         }
     },
     "waste_basket": {
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Keranjang Sampah"
-                        }
-                    }
-                }
-            }
-        },
         "name": "Keranjang Sampah",
         "presets": {
             "0": {

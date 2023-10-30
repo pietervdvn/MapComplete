@@ -262,13 +262,25 @@
     }
   ],
   "presets": [],
-  "mapRendering": [
+  "description": {
+    "en": "All carfree roads",
+    "nl": "Alle verkeersvrije wegen",
+    "de": "Alle autofreien Straßen",
+    "ca": "Totes les carreteres sense cotxe"
+  },
+  "pointRendering": [
     {
-      "icon": "./assets/layers/slow_roads/slow_road.svg",
       "location": [
         "point"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/layers/slow_roads/slow_road.svg"
+        }
       ]
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#eaba2a",
       "width": "7",
@@ -299,11 +311,5 @@
         ]
       }
     }
-  ],
-  "description": {
-    "en": "All carfree roads",
-    "nl": "Alle verkeersvrije wegen",
-    "de": "Alle autofreien Straßen",
-    "ca": "Totes les carreteres sense cotxe"
-  }
+  ]
 }

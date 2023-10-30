@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/square:lightblue;./assets/themes/stations/public_transport_tickets.svg' height="100px"> 
+
 
 Find ticket machines for public transport tickets
 

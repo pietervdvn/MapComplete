@@ -82,16 +82,22 @@
       ]
     }
   },
-  "mapRendering": [
+  "pointRendering": [
     {
-      "icon": "./assets/layers/postboxes/postbox.svg",
       "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
       ],
-      "anchor": "bottom"
-    },
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "./assets/layers/postboxes/postbox.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#DADADA",
       "width": "1"

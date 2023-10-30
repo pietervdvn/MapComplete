@@ -2,9 +2,8 @@ import { LayoutConfigJson } from "../Json/LayoutConfigJson"
 import { Utils } from "../../../Utils"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
-import { DesugaringStep, Each, Fuse, On } from "./Conversion"
+import { ConversionContext, DesugaringStep, Each, Fuse, On } from "./Conversion"
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
-import { del } from "idb-keyval"
 
 export class UpdateLegacyLayer extends DesugaringStep<
     LayerConfigJson | string | { builtin; override }
@@ -17,15 +16,12 @@ export class UpdateLegacyLayer extends DesugaringStep<
         )
     }
 
-    convert(
-        json: LayerConfigJson,
-        context: string
-    ): { result: LayerConfigJson; errors: string[]; warnings: string[] } {
-        const warnings = []
+    convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
         if (typeof json === "string" || json["builtin"] !== undefined) {
             // Reuse of an already existing layer; return as-is
-            return { result: json, errors: [], warnings: [] }
+            return json
         }
+        context = context.enter(json.id)
         let config = { ...json }
 
         if (config["overpassTags"]) {
@@ -51,6 +47,10 @@ export class UpdateLegacyLayer extends DesugaringStep<
                 if (Object.keys(preciseInput).length == 0) {
                     delete preset["preciseInput"]
                 }
+            }
+
+            if (typeof preset.snapToLayer === "string") {
+                preset.snapToLayer = [preset.snapToLayer]
             }
         }
 
@@ -78,8 +78,12 @@ export class UpdateLegacyLayer extends DesugaringStep<
             }
         }
 
-        if (config.mapRendering === undefined) {
-            config.mapRendering = []
+        if (
+            config["mapRendering"] === undefined &&
+            config.pointRendering === undefined &&
+            config.lineRendering === undefined
+        ) {
+            config["mapRendering"] = []
             // This is a legacy format, lets create a pointRendering
             let location: ("point" | "centroid")[] = ["point"]
             let wayHandling: number = config["wayHandling"] ?? 0
@@ -95,7 +99,7 @@ export class UpdateLegacyLayer extends DesugaringStep<
                     location,
                     rotation: config["rotation"],
                 }
-                config.mapRendering.push(pointConfig)
+                config["mapRendering"].push(pointConfig)
             }
 
             if (wayHandling !== 1) {
@@ -105,10 +109,10 @@ export class UpdateLegacyLayer extends DesugaringStep<
                     dashArray: config["dashArray"],
                 }
                 if (Object.keys(lineRenderConfig).length > 0) {
-                    config.mapRendering.push(lineRenderConfig)
+                    config["mapRendering"].push(lineRenderConfig)
                 }
             }
-            if (config.mapRendering.length === 0) {
+            if (config["mapRendering"].length === 0) {
                 throw (
                     "Could not convert the legacy theme into a new theme: no renderings defined for layer " +
                     config.id
@@ -128,24 +132,56 @@ export class UpdateLegacyLayer extends DesugaringStep<
         delete config["wayHandling"]
         delete config["hideUnderlayingFeaturesMinPercentage"]
 
-        for (const mapRenderingElement of config.mapRendering ?? []) {
+        for (const mapRenderingElement of config["mapRendering"] ?? []) {
             if (mapRenderingElement["iconOverlays"] !== undefined) {
                 mapRenderingElement["iconBadges"] = mapRenderingElement["iconOverlays"]
             }
             for (const overlay of mapRenderingElement["iconBadges"] ?? []) {
                 if (overlay["badge"] !== true) {
-                    warnings.push("Warning: non-overlay element for ", config.id)
+                    context.enters("iconBadges", "badge").warn("Non-overlay element")
                 }
                 delete overlay["badge"]
             }
         }
 
-        for (const rendering of config.mapRendering ?? []) {
-            if (!rendering["iconSize"]) {
+        if (config["mapRendering"]) {
+            console.log("MapRendering is", config["mapRendering"], json.id)
+            const pointRenderings: PointRenderingConfigJson[] = []
+            const lineRenderings: LineRenderingConfigJson[] = []
+            for (const mapRenderingElement of config["mapRendering"]) {
+                if (mapRenderingElement["location"]) {
+                    // This is a pointRendering
+                    pointRenderings.push(<any>mapRenderingElement)
+                } else {
+                    lineRenderings.push(<any>mapRenderingElement)
+                }
+            }
+            config["pointRendering"] = pointRenderings
+            config["lineRendering"] = lineRenderings
+            delete config["mapRendering"]
+        }
+
+        for (const rendering of config.pointRendering ?? []) {
+            const pr = rendering
+            if (pr["icon"]) {
+                try {
+                    const icon = Utils.NoEmpty(pr["icon"].split(";"))
+                    pr.marker = icon.map((i) => {
+                        const [iconPath, color] = i.split(":")
+                        return { icon: iconPath, color }
+                    })
+                    delete pr["icon"]
+                } catch (e) {
+                    console.error("Could not handle icon in", json.id)
+                    pr.marker = [{ icon: pr["icon"] }]
+                    delete pr["icon"]
+                }
+            }
+
+            let iconSize = pr.iconSize
+            if (!iconSize) {
                 continue
             }
-            const pr = <PointRenderingConfigJson>rendering
-            let iconSize = pr.iconSize
 
             if (Object.keys(pr.iconSize).length === 1 && pr.iconSize["render"] !== undefined) {
                 iconSize = pr.iconSize["render"]
@@ -159,26 +195,38 @@ export class UpdateLegacyLayer extends DesugaringStep<
                 }
         }
 
-        for (const rendering of config.mapRendering) {
-            for (const key in rendering) {
-                if (!rendering[key]) {
-                    continue
-                }
-                if (
-                    typeof rendering[key]["render"] === "string" &&
-                    Object.keys(rendering[key]).length === 1
-                ) {
-                    console.log("Rewrite: ", rendering[key])
-                    rendering[key] = rendering[key]["render"]
+        if (config.pointRendering)
+            for (const rendering of config.pointRendering) {
+                for (const key in rendering) {
+                    if (!rendering[key]) {
+                        continue
+                    }
+                    if (
+                        typeof rendering[key]["render"] === "string" &&
+                        Object.keys(rendering[key]).length === 1
+                    ) {
+                        console.log("Rewrite: ", rendering[key])
+                        rendering[key] = rendering[key]["render"]
+                    }
                 }
             }
-        }
+        if (config.lineRendering)
+            for (const rendering of config.lineRendering) {
+                for (const key in rendering) {
+                    if (!rendering[key]) {
+                        continue
+                    }
+                    if (
+                        typeof rendering[key]["render"] === "string" &&
+                        Object.keys(rendering[key]).length === 1
+                    ) {
+                        console.log("Rewrite: ", rendering[key])
+                        rendering[key] = rendering[key]["render"]
+                    }
+                }
+            }
 
-        return {
-            result: config,
-            errors: [],
-            warnings,
-        }
+        return config
     }
 }
 
@@ -187,10 +235,7 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
         super("Small fixes in the theme config", ["roamingRenderings"], "UpdateLegacyTheme")
     }
 
-    convert(
-        json: LayoutConfigJson,
-        context: string
-    ): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
+    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
         const oldThemeConfig = { ...json }
 
         if (oldThemeConfig.socialImage === "") {
@@ -201,18 +246,16 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
             console.log("Removing old background in", json.id)
         }
 
+        if (typeof oldThemeConfig.credits === "string") {
+            oldThemeConfig.credits = [oldThemeConfig.credits]
+        }
+
         if (oldThemeConfig["roamingRenderings"] !== undefined) {
             if (oldThemeConfig["roamingRenderings"].length == 0) {
                 delete oldThemeConfig["roamingRenderings"]
             } else {
-                return {
-                    result: null,
-                    errors: [
-                        context +
-                            ": The theme contains roamingRenderings. These are not supported anymore",
-                    ],
-                    warnings: [],
-                }
+                context.err("The theme contains roamingRenderings. These are not supported anymore")
+                return null
             }
         }
 
@@ -237,11 +280,7 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
             }
         }
 
-        return {
-            errors: [],
-            warnings: [],
-            result: oldThemeConfig,
-        }
+        return oldThemeConfig
     }
 }
 

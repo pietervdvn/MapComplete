@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/postboxes/postbox.svg' height="100px"> 
+
 
 The layer showing postboxes.
 

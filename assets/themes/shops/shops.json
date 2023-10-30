@@ -55,6 +55,7 @@
   "widenFactor": 3,
   "layers": [
     "shops",
-    "pharmacy"
+    "pharmacy",
+    "ice_cream"
   ]
 }

@@ -1,10 +1,10 @@
 import { Validator } from "../Validator"
 
 export default class UrlValidator extends Validator {
-    constructor() {
+    constructor(name?: string, explanation?: string) {
         super(
-            "url",
-            "The validatedTextField will format URLs to always be valid and have a https://-header (even though the 'https'-part will be hidden from the user. Furthermore, some tracking parameters will be removed",
+            name ??"url",
+             explanation?? "The validatedTextField will format URLs to always be valid and have a https://-header (even though the 'https'-part will be hidden from the user. Furthermore, some tracking parameters will be removed",
             "url"
         )
     }

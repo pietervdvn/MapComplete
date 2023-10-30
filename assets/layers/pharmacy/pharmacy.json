@@ -134,31 +134,6 @@
       ]
     }
   ],
-  "mapRendering": [
-    {
-      "icon": "./assets/layers/pharmacy/pharmacy.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        }
-      ],
-      "label": {
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
-          }
-        ]
-      },
-      "anchor": "bottom"
-    }
-  ],
   "filter": [
     {
       "id": "drive-through",
@@ -210,5 +185,35 @@
     }
   ],
   "deletion": true,
-  "allowMove": true
+  "allowMove": true,
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        }
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      },
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "./assets/layers/pharmacy/pharmacy.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": []
 }

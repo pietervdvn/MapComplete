@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/sports_centre/sports_centre.svg' height="100px"> 
+
 
 Indoor and outdoor sports centres can be found on this layer
 

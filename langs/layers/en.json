@@ -284,6 +284,47 @@
             "render": "Ambulance Station"
         }
     },
+    "animal_shelter": {
+        "description": "An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. ",
+        "name": "Animal shelters",
+        "presets": {
+            "0": {
+                "title": "an animal shelter"
+            }
+        },
+        "tagRenderings": {
+            "2": {
+                "question": "What is the name of this animal shelter?",
+                "render": "This animal shelter is named <b>{name}</b>"
+            },
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": "Animals are kept here until adopted by a new owner"
+                    },
+                    "1": {
+                        "then": "Animals are taken care of for the rest of their lives"
+                    },
+                    "2": {
+                        "then": "Injured animals are rehabilitated here until they can be released in nature again "
+                    }
+                },
+                "question": "What is the purpose of the animal shelter?"
+            },
+            "7": {
+                "question": "When is this animal shelter opened?",
+                "render": "{opening_hours_table()}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Animal shelter"
+        }
+    },
     "artwork": {
         "description": "An open map of statues, busts, graffitis and other artwork all over the world",
         "name": "Artworks",
@@ -4175,6 +4216,7 @@
         "name": "Drinking water",
         "presets": {
             "0": {
+                "description": "Typically a drinking fountain, water tap, water well or natural spring",
                 "title": "a drinking water"
             }
         },
@@ -5391,9 +5433,29 @@
                 "title": "a guidepost"
             }
         },
-        "title": {
-            "render": "Guidepost"
-        }
+        "tagRenderings": {
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "This guidepost shows bicycle routes"
+                    },
+                    "1": {
+                        "then": "This guidepost shows hiking routes"
+                    },
+                    "2": {
+                        "then": "This guidepost shows mountain bike routes"
+                    },
+                    "3": {
+                        "then": "This guidepost shows horse riding routes"
+                    },
+                    "4": {
+                        "then": "This guidepost shows ski routes"
+                    }
+                },
+                "question": "What kind of routes are shown on this guidepost?"
+            }
+        },
+        "title": "Guideposts"
     },
     "hackerspace": {
         "description": "Hackerspace",
@@ -5647,6 +5709,30 @@
                     }
                 }
             }
+        }
+    },
+    "ice_cream": {
+        "description": "A place where ice cream is sold over the counter",
+        "name": "Ice cream parlors",
+        "presets": {
+            "0": {
+                "description": "A shop where one can buy only icecream and related items. Ice cream is normally hand-scooped.",
+                "title": "an ice cream parlor"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "What is the name of this ice cream parlor?",
+                "render": "This ice cream parlor is named <b>{name}</b>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Ice cream parlor"
         }
     },
     "icons": {
@@ -5932,7 +6018,7 @@
         }
     },
     "last_click": {
-        "mapRendering": {
+        "pointRendering": {
             "0": {
                 "label": {
                     "mappings": {
@@ -8181,6 +8267,41 @@
             "render": "Recycling facility"
         }
     },
+    "route_marker": {
+        "description": "Route markers are small markers often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route.",
+        "name": "Route markers",
+        "presets": {
+            "0": {
+                "description": "A route marker is a small marker often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route.",
+                "title": "a route marker"
+            }
+        },
+        "tagRenderings": {
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a route marker for a bicycle route."
+                    },
+                    "1": {
+                        "then": "This is a route marker for a hiking route."
+                    },
+                    "2": {
+                        "then": "This is a route marker for a mountain bike route."
+                    },
+                    "3": {
+                        "then": "This is a route marker for a horse riding route."
+                    },
+                    "4": {
+                        "then": "This is a route marker for a ski route."
+                    }
+                },
+                "question": "For what kind of route is this marker?"
+            }
+        },
+        "title": {
+            "render": "Route marker"
+        }
+    },
     "school": {
         "name": "Primary and secondary schools",
         "presets": {
@@ -8389,6 +8510,19 @@
                 "override": {
                     "question": "What kind of shop is this?",
                     "render": "This is a {shop}"
+                }
+            },
+            "key_cutter": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop is also specialized in key cutting"
+                    },
+                    "1": {
+                        "then": "This shop offers key cutting as a service"
+                    },
+                    "2": {
+                        "then": "This shops does not offer key cutting as a service"
+                    }
                 }
             },
             "organic": {
@@ -9590,13 +9724,6 @@
     },
     "transit_routes": {
         "description": "Layer showing bus lines",
-        "mapRendering": {
-            "0": {
-                "color": {
-                    "render": "#ff0000"
-                }
-            }
-        },
         "name": "Bus lines",
         "tagRenderings": {
             "colour": {
@@ -10454,17 +10581,6 @@
                 "options": {
                     "0": {
                         "question": "Waste basket with dispenser for (dog) excrement bags"
-                    }
-                }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Waste Basket"
-                        }
                     }
                 }
             }

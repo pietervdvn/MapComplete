@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/trail/trail.svg' height="100px"> 
+
 
 Aangeduide wandeltochten
 

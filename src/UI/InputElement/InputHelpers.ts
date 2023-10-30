@@ -1,10 +1,7 @@
 import { ValidatorType } from "./Validators"
 import { UIEventSource } from "../../Logic/UIEventSource"
-import SvelteUIElement from "../Base/SvelteUIElement"
-import DirectionInput from "./Helpers/DirectionInput.svelte"
+
 import { MapProperties } from "../../Models/MapProperties"
-import DateInput from "./Helpers/DateInput.svelte"
-import ColorInput from "./Helpers/ColorInput.svelte"
 import BaseUIElement from "../BaseUIElement"
 import WikidataSearchBox from "../Wikipedia/WikidataSearchBox"
 import Wikidata from "../../Logic/Web/Wikidata"
@@ -13,6 +10,10 @@ import Locale from "../i18n/Locale"
 import { Feature } from "geojson"
 import { GeoOperations } from "../../Logic/GeoOperations"
 import OpeningHoursInput from "./Helpers/OpeningHoursInput.svelte"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import DirectionInput from "./Helpers/DirectionInput.svelte"
+import DateInput from "./Helpers/DateInput.svelte"
+import ColorInput from "./Helpers/ColorInput.svelte"
 
 export interface InputHelperProperties {
     /**
@@ -35,35 +36,16 @@ export interface InputHelperProperties {
 }
 
 export default class InputHelpers {
-    public static readonly AvailableInputHelpers: Readonly<
-        Partial<
-            Record<
-                ValidatorType,
-                (
-                    value: UIEventSource<string>,
-                    extraProperties?: InputHelperProperties
-                ) => BaseUIElement
-            >
-        >
-    > = {
-        direction: (value, properties) =>
-            new SvelteUIElement(DirectionInput, {
-                value,
-                mapProperties: InputHelpers.constructMapProperties(properties),
-            }),
-        date: (value) => new SvelteUIElement(DateInput, { value }),
-        color: (value) => new SvelteUIElement(ColorInput, { value }),
-        opening_hours: (value) => new SvelteUIElement(OpeningHoursInput, { value }),
-        wikidata: InputHelpers.constructWikidataHelper,
-    } as const
+    public static hideInputField: string[] = ["translation", "simple_tag", "tag"]
 
+    // noinspection JSUnusedLocalSymbols
     /**
      * Constructs a mapProperties-object for the given properties.
      * Assumes that the first helper-args contains the desired zoom-level
      * @param properties
      * @private
      */
-    private static constructMapProperties(
+    public static constructMapProperties(
         properties: InputHelperProperties
     ): Partial<MapProperties> {
         let location = properties?.mapProperties?.location
@@ -87,7 +69,8 @@ export default class InputHelpers {
         }
         return mapProperties
     }
-    private static constructWikidataHelper(
+
+    public static constructWikidataHelper(
         value: UIEventSource<string>,
         props: InputHelperProperties
     ) {

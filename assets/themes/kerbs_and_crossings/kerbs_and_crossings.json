@@ -71,7 +71,9 @@
               "pl": "Przejście dla pieszych i/lub przejazd dla rowerów",
               "cs": "Přechod pro chodce a/nebo cyklisty"
             },
-            "snapToLayer": "cycleways_and_roads",
+            "snapToLayer": [
+              "cycleways_and_roads"
+            ],
             "maxSnapDistance": 25
           }
         ],
@@ -82,5 +84,7 @@
     },
     "kerbs"
   ],
-  "credits": "Robin van der Linde"
+  "credits": [
+    "Robin van der Linde"
+  ]
 }

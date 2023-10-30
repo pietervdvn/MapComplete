@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/waste_disposal/waste_disposal.svg' height="100px"> 
+
 
 Waste Disposal Bin, medium to large bin for disposal of (household) waste
 

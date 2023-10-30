@@ -117,7 +117,7 @@
           }
         }
       ],
-      "mapRendering": [
+      "pointRendering": [
         {
           "location": [
             "point",
@@ -283,12 +283,16 @@
           "_embedded_cs:themes=feat.get('_embedded_cs').map(cs => cs.theme)",
           "_embedded_cs:users=feat.get('_embedded_cs').map(cs => cs['_last_edit:contributor'])"
         ],
-        "+mapRendering": [
+        "+pointRendering": [
           {
             "location": [
               "point"
             ],
-            "icon": "statistics:black",
+            "marker": [
+              {
+                "icon": "statistics:black"
+              }
+            ],
             "iconSize": "30,30",
             "anchor": "center"
           }

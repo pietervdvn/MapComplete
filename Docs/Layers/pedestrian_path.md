@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/svg/bug.svg' height="100px"> 
+
 
 Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer
 

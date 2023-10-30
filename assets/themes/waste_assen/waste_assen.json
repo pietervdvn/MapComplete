@@ -32,27 +32,12 @@
         "_has_closeby_feature=Number(feat.properties._closest_osm_waste_basket_distance) < 10 ? 'yes' : 'no'"
       ],
       "title": "Afvalbak in dataset",
-      "mapRendering": [
-        {
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "icon": {
-            "render": "circle:red",
-            "mappings": [
-              {
-                "if": "_has_closeby_feature=yes",
-                "then": "circle:#008000aa"
-              }
-            ]
-          },
-          "iconSize": "20,20",
-          "anchor": "center"
-        }
-      ],
       "tagRenderings": [
         "all_tags"
+      ],
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     "recycling",
@@ -74,35 +59,18 @@
         "_has_closeby_waste_disposal=Number(feat.properties._closest_osm_waste_disposal_distance) < 10 ? 'yes' : 'no'"
       ],
       "title": "Recyclingcontainer in dataset",
-      "mapRendering": [
-        {
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "icon": {
-            "render": "circle:red",
-            "mappings": [
-              {
-                "if": "_has_closeby_recycling=yes",
-                "then": "circle:#008000aa"
-              },
-              {
-                "if": "_has_closeby_waste_disposal=yes",
-                "then": "circle:#008000aa"
-              }
-            ]
-          },
-          "iconSize": "20,20",
-          "anchor": "center"
-        }
-      ],
       "tagRenderings": [
         "all_tags"
+      ],
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     "waste_disposal"
   ],
   "hideFromOverview": true,
-  "credits": "Robin van der Linde"
+  "credits": [
+    "Robin van der Linde"
+  ]
 }

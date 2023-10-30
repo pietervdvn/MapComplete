@@ -300,28 +300,6 @@
       }
     }
   ],
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/layers/elevator/elevator_wheelchair.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "iconBadges": [
-        {
-          "if": {
-            "or": [
-              "operational_status=broken",
-              "operational_status=closed"
-            ]
-          },
-          "then": "close:#c33"
-        }
-      ],
-      "anchor": "center"
-    }
-  ],
   "presets": [
     {
       "title": {
@@ -383,5 +361,36 @@
         }
       ]
     }
-  ]
+  ],
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": {
+            "or": [
+              "operational_status=broken",
+              "operational_status=closed"
+            ]
+          },
+          "then": "close:#c33"
+        }
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/elevator/elevator_wheelchair.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": []
 }

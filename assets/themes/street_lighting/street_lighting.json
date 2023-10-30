@@ -90,11 +90,6 @@
           }
         ]
       },
-      "mapRendering": [
-        {
-          "color": "#ff0"
-        }
-      ],
       "tagRenderings": [
         "images",
         {
@@ -191,7 +186,11 @@
           ]
         }
       ],
-      "allowSplit": true
+      "allowSplit": true,
+      "pointRendering": [],
+      "lineRendering": [
+        {}
+      ]
     },
     {
       "id": "all_streets",
@@ -248,19 +247,6 @@
           }
         ]
       },
-      "mapRendering": [
-        {
-          "color": {
-            "render": "#a9a9a9",
-            "mappings": [
-              {
-                "if": "lit=no",
-                "then": "#303030"
-              }
-            ]
-          }
-        }
-      ],
       "tagRenderings": [
         "images",
         {
@@ -357,8 +343,14 @@
           ]
         }
       ],
-      "allowSplit": true
+      "allowSplit": true,
+      "pointRendering": [],
+      "lineRendering": [
+        {}
+      ]
     }
   ],
-  "credits": "Robin van der Linde"
+  "credits": [
+    "Robin van der Linde"
+  ]
 }

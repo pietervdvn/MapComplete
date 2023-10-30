@@ -673,7 +673,9 @@
         "ca": "una càmera de vigilància muntada en una paret",
         "cs": "sledovací kamera namontovaná na zdi"
       },
-      "snapToLayer": "walls_and_buildings"
+      "snapToLayer": [
+        "walls_and_buildings"
+      ]
     },
     {
       "tags": [
@@ -719,32 +721,39 @@
         "./assets/layers/surveillance_camera/ALPR_Example.jpg",
         "./assets/layers/surveillance_camera/ALPR_Example2.jpg"
       ],
-      "snapToLayer": "walls_and_buildings"
+      "snapToLayer": [
+        "walls_and_buildings"
+      ]
     }
   ],
-  "mapRendering": [
+  "deletion": true,
+  "pointRendering": [
     {
-      "icon": {
-        "render": "./assets/themes/surveillance/logo.svg",
-        "mappings": [
-          {
-            "if": "surveillance:type=ALPR",
-            "then": "./assets/layers/surveillance_camera/ALPR.svg"
-          },
-          {
-            "if": "camera:type=dome",
-            "then": "./assets/themes/surveillance/dome.svg"
-          },
-          {
-            "if": "_direction:leftright=right",
-            "then": "./assets/themes/surveillance/cam_right.svg"
-          },
-          {
-            "if": "_direction:leftright=left",
-            "then": "./assets/themes/surveillance/cam_left.svg"
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/themes/surveillance/logo.svg",
+            "mappings": [
+              {
+                "if": "surveillance:type=ALPR",
+                "then": "./assets/layers/surveillance_camera/ALPR.svg"
+              },
+              {
+                "if": "camera:type=dome",
+                "then": "./assets/themes/surveillance/dome.svg"
+              },
+              {
+                "if": "_direction:leftright=right",
+                "then": "./assets/themes/surveillance/cam_right.svg"
+              },
+              {
+                "if": "_direction:leftright=left",
+                "then": "./assets/themes/surveillance/cam_left.svg"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "iconSize": {
         "mappings": [
           {
@@ -783,13 +792,14 @@
           }
         ]
       }
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#f00",
       "width": "8"
     }
   ],
-  "deletion": true,
   "description": {
     "en": "This layer shows surveillance cameras and allows a contributor to update information and add new cameras",
     "nl": "Deze laag toont bewakingscamera's en laat toe om de informatie te verrijken en om nieuwe camera\"s toe te voegen",

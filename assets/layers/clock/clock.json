@@ -525,26 +525,32 @@
         "pl": "Publicznie widoczny zegar zamontowany na ścianie",
         "cs": "Veřejně viditelné hodiny umístěné na stěně"
       },
-      "snapToLayer": "walls_and_buildings"
+      "snapToLayer": [
+        "walls_and_buildings"
+      ]
     }
   ],
   "allowMove": true,
   "deletion": true,
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "point",
         "centroid"
       ],
-      "icon": {
-        "render": "./assets/layers/clock/clock.svg",
-        "mappings": [
-          {
-            "if": "display=digital",
-            "then": "./assets/layers/clock/clock_digital.svg"
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/clock/clock.svg",
+            "mappings": [
+              {
+                "if": "display=digital",
+                "then": "./assets/layers/clock/clock_digital.svg"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "iconSize": {
         "render": "40,40,center",
         "mappings": [
@@ -555,5 +561,6 @@
         ]
       }
     }
-  ]
+  ],
+  "lineRendering": []
 }

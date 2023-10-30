@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/square:green;./assets/themes/stations/public_transport_tickets.svg' height="100px"> 
+
 
 Find ticket validators to validate public transport tickets
 

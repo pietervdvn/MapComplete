@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/pin:#22ff55;./assets/layers/bicycle_library/bicycle_library.svg' height="100px"> 
+
 
 A facility where bicycles can be lent for longer period of times
 

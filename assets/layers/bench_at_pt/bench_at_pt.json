@@ -210,20 +210,6 @@
       ]
     }
   ],
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/themes/benches/bench_public_transport.svg",
-      "iconSize": "35,35",
-      "location": [
-        "point"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#00f",
-      "width": "8"
-    }
-  ],
   "deletion": {
     "omitDefaultDeleteReasons": true,
     "nonDeleteMappings": [
@@ -277,5 +263,29 @@
     "pt": "Uma camada mostrando todas as paradas de transporte público que possuem um banco",
     "pl": "Warstwa pokazująca wszystkie przystanki transportu publicznego, które mają ławki",
     "pt_BR": "Uma camada mostrando todas as paradas de transporte público que têm um banco"
-  }
+  },
+  "pointRendering": [
+    {
+      "iconSize": "35,35",
+      "location": [
+        "point"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/themes/benches/bench_public_transport.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f",
+      "width": "8"
+    }
+  ]
 }

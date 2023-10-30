@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/binocular/telescope.svg' height="100px"> 
+
 
 Binoculars
 

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/square:white;./assets/layers/postoffices/post_office.svg' height="100px"> 
+
 
 A layer showing post offices.
 

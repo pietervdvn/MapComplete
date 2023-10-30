@@ -660,14 +660,6 @@
     "sources": []
   },
   {
-    "path": "location-empty.svg",
-    "license": "CC0-1.0",
-    "authors": [
-      "Pol Labaut"
-    ],
-    "sources": []
-  },
-  {
     "path": "location-refused.svg",
     "license": "CC0-1.0",
     "authors": [
@@ -680,6 +672,14 @@
     "license": "CC0-1.0",
     "authors": [
       "Hannah Declerck"
+    ],
+    "sources": []
+  },
+  {
+    "path": "location_empty.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Pol Labaut"
     ],
     "sources": []
   },
@@ -1205,18 +1205,6 @@
   },
   {
     "path": "star_outline.svg",
-    "license": "TRIVIAL",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "star_outline_half.svg",
-    "license": "TRIVIAL",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "star_outline_half.svg",
     "license": "TRIVIAL",
     "authors": [],
     "sources": []

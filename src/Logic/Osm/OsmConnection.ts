@@ -84,6 +84,7 @@ export class OsmConnection {
         if (options.fakeUser) {
             const ud = this.userDetails.data
             ud.csCount = 5678
+            ud.uid = 42
             ud.loggedIn = true
             ud.unreadMessages = 0
             ud.name = "Fake user"
@@ -161,6 +162,7 @@ export class OsmConnection {
         this.userDetails.ping()
         console.log("Logged out")
         this.loadingStatus.setData("not-attempted")
+        this.preferencesHandler.preferences.setData(undefined)
     }
 
     /**
@@ -174,7 +176,10 @@ export class OsmConnection {
 
     public AttemptLogin() {
         this.UpdateCapabilities()
-        this.loadingStatus.setData("loading")
+        if (this.loadingStatus.data !== "logged-in") {
+            // Stay 'logged-in' if we are already logged in; this simply means we are checking for messages
+            this.loadingStatus.setData("loading")
+        }
         if (this.fakeUser) {
             this.loadingStatus.setData("logged-in")
             console.log("AttemptLogin called, but ignored as fakeUser is set")
@@ -525,7 +530,6 @@ export class OsmConnection {
         this.isChecking = true
         Stores.Chronic(5 * 60 * 1000).addCallback((_) => {
             if (self.isLoggedIn.data) {
-                console.log("Checking for messages")
                 self.AttemptLogin()
             }
         })

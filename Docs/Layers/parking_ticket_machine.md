@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/square:white;./assets/layers/parking_ticket_machine/parking_tickets.svg' height="100px"> 
+
 
 Layer with parking ticket machines to pay for parking.
 

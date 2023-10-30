@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/themes/campersite/sanitary_dump_station.svg' height="100px"> 
+
 
 Sanitary dump stations
 
@@ -15,6 +15,7 @@ Sanitary dump stations
 
 
   - This layer is shown at zoomlevel **10** and higher
+  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
 
 
 

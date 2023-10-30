@@ -5110,7 +5110,7 @@
         }
     },
     "last_click": {
-        "mapRendering": {
+        "pointRendering": {
             "0": {
                 "label": {
                     "mappings": {
@@ -8567,13 +8567,6 @@
     },
     "transit_routes": {
         "description": "Capa que mostra les línies d'autobús",
-        "mapRendering": {
-            "0": {
-                "color": {
-                    "render": "#ff0000"
-                }
-            }
-        },
         "name": "Línies de bus",
         "tagRenderings": {
             "colour": {
@@ -9387,17 +9380,6 @@
                 "options": {
                     "0": {
                         "question": "Papereres amb dispensador de bosses d'excrements (per a gossos)"
-                    }
-                }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Paperera"
-                        }
                     }
                 }
             }

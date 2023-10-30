@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/guidepost/guidepost.svg' height="100px"> 
+
 
 Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations
 
@@ -80,6 +80,30 @@ This block shows the known images which are linked with the `image`-keys, but al
 
 This tagrendering has no question and is thus read-only
 
+
+
+
+
+### type 
+
+
+
+The question is  *What kind of routes are shown on this guidepost?*
+
+
+
+
+
+  - *This guidepost shows bicycle routes*  corresponds with  `bicycle=yes`
+  - Unselecting this answer will add 
+  - *This guidepost shows hiking routes*  corresponds with  `hiking=yes`
+  - Unselecting this answer will add 
+  - *This guidepost shows mountain bike routes*  corresponds with  `mtb=yes`
+  - Unselecting this answer will add 
+  - *This guidepost shows horse riding routes*  corresponds with  `horse=yes`
+  - Unselecting this answer will add 
+  - *This guidepost shows ski routes*  corresponds with  `ski=yes`
+  - Unselecting this answer will add 
 
 
 

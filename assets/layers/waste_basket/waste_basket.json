@@ -413,41 +413,35 @@
     "enableRelocation": false,
     "enableImproveAccuracy": true
   },
-  "mapRendering": [
+  "pointRendering": [
     {
-      "icon": "./assets/themes/waste_basket/waste_basket.svg",
-      "iconSize": {
-        "render": "40,40,center",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "amenity=waste_basket"
-              ]
-            },
-            "then": {
-              "en": "Waste Basket",
-              "nl": "Vuilnisbak",
-              "ru": "Контейнер для мусора",
-              "de": "Abfalleimer",
-              "id": "Keranjang Sampah",
-              "es": "Papelera",
-              "it": "Cestino dei rifiuti",
-              "da": "Affaldskurv",
-              "ca": "Paperera",
-              "fr": "Poubelle",
-              "cs": "Odpadkový koš"
-            }
-          }
-        ]
-      },
+      "iconSize": "40,40",
+      "anchor": "center",
       "location": [
         "point"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/themes/waste_basket/waste_basket.svg"
+        }
       ]
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#00f",
       "width": "8"
     }
-  ]
+  ],
+  "cs": {
+    "0": {
+      "iconSize": {
+        "mappings": {
+          "0": {
+            "then": "Odpadkový koš"
+          }
+        }
+      }
+    }
+  }
 }

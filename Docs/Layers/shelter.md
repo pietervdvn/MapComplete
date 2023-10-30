@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/shelter/shelter.svg' height="100px"> 
+
 
 Layer showing shelter structures
 

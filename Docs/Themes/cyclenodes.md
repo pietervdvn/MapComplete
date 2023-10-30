@@ -13,6 +13,9 @@ This theme contains the following layers:
 
   - [node2node](../Layers/node2node.md)
   - [node](../Layers/node.md)
+  - [guidepost](../Layers/guidepost.md)
+  - [route_marker](../Layers/route_marker.md)
+  - [cycleways_and_roads](../Layers/cycleways_and_roads.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)

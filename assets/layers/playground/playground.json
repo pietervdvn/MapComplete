@@ -644,9 +644,8 @@
       ]
     }
   },
-  "mapRendering": [
+  "pointRendering": [
     {
-      "icon": "./assets/themes/playgrounds/playground.svg",
       "iconBadges": [
         {
           "if": {
@@ -682,8 +681,15 @@
       "location": [
         "point",
         "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/themes/playgrounds/playground.svg"
+        }
       ]
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#5dbaa9",
       "width": "1"

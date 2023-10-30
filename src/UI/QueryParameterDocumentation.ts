@@ -44,7 +44,13 @@ export default class QueryParameterDocumentation {
                     source: {
                         osmTags: "id~*",
                     },
-                    mapRendering: null,
+                    lineRendering: [
+                        {
+                            color: "#000000",
+                            width: 5,
+                        },
+                    ],
+                    pointRendering: null,
                 },
             ],
         })

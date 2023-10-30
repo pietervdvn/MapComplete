@@ -43,7 +43,8 @@
         "es": "Un lugar de comidas formal, con mesas y sillas y que vende comidas completas servidas por camareros",
         "fr": "Un lieu de restauration formel avec des installations pour s'asseoir vendant des repas complets servis par des serveurs",
         "ca": "Un lloc per menjar formal amb instal·lacions per seure que venen àpats complets servits per cambrers",
-        "cs": "Formální jídelna s posezením, kde se prodávají kompletní jídla podávaná číšníky"
+        "cs": "Formální jídelna s posezením, kde se prodávají kompletní jídla podávaná číšníky",
+        "pl": "Warstwa przedstawiająca restauracje i obiekty typu fast-food (ze specjalnym renderowaniem dla frytek)"
       }
     },
     {
@@ -1257,26 +1258,18 @@
     ]
   },
   "allowMove": true,
-  "mapRendering": [
+  "description": {
+    "en": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
+    "nl": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)",
+    "de": "Eine Ebene mit Restaurants und Fast-Food-Einrichtungen (mit speziellem Rendering für Pommesbuden)",
+    "es": "Una capa mostrando restaurantes y locales de comida rápida (con un renderizado especial para friterías)",
+    "fr": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
+    "ca": "Una capa que mostra restaurants i locals de menjar ràpid (amb un renderitzat especial per a fregiduries)",
+    "cs": "Vrstva zobrazující restaurace a zařízení rychlého občerstvení (se speciálním vykreslením pro fritézy)",
+    "pl": "Warstwa przedstawiająca restauracje i obiekty typu fast-food (ze specjalnym renderowaniem dla frytek)"
+  },
+  "pointRendering": [
     {
-      "icon": {
-        "render": "circle:white;./assets/layers/food/restaurant.svg",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "amenity=fast_food",
-                "cuisine=friture"
-              ]
-            },
-            "then": "circle:white;./assets/layers/food/fries.svg"
-          },
-          {
-            "if": "amenity=fast_food",
-            "then": "circle:white;./assets/layers/food/fastfood.svg"
-          }
-        ]
-      },
       "iconBadges": [
         {
           "if": "opening_hours~*",
@@ -1316,17 +1309,34 @@
       "location": [
         "point",
         "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/food/restaurant.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "amenity=fast_food",
+                    "cuisine=friture"
+                  ]
+                },
+                "then": "./assets/layers/food/fries.svg"
+              },
+              {
+                "if": "amenity=fast_food",
+                "then": "./assets/layers/food/fastfood.svg"
+              }
+            ]
+          }
+        }
       ]
     }
   ],
-  "description": {
-    "en": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
-    "nl": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)",
-    "de": "Eine Ebene mit Restaurants und Fast-Food-Einrichtungen (mit speziellem Rendering für Pommesbuden)",
-    "es": "Una capa mostrando restaurantes y locales de comida rápida (con un renderizado especial para friterías)",
-    "fr": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
-    "ca": "Una capa que mostra restaurants i locals de menjar ràpid (amb un renderitzat especial per a fregiduries)",
-    "cs": "Vrstva zobrazující restaurace a zařízení rychlého občerstvení (se speciálním vykreslením pro fritézy)",
-    "pl": "Warstwa przedstawiająca restauracje i obiekty typu fast-food (ze specjalnym renderowaniem dla frytek)"
-  }
+  "lineRendering": []
 }

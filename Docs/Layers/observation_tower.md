@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/observation_tower/Tower_observation.svg' height="100px"> 
+
 
 Towers with a panoramic view
 

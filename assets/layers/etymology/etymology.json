@@ -277,28 +277,35 @@
       "condition": "wikidata~*"
     }
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
-      "icon": {
-        "render": "pin:#05d7fcaa",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "name:etymology=",
-                "name:etymology:wikidata="
-              ]
-            },
-            "then": "pin:#fcca05aa"
-          }
-        ]
-      },
       "iconSize": "40,40",
       "location": [
         "point"
       ],
-      "anchor": "center"
-    },
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "pin",
+          "color": {
+            "render": "#05d7fcaa",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "name:etymology=",
+                    "name:etymology:wikidata="
+                  ]
+                },
+                "then": "#fcca05aa"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
     {
       "color": {
         "render": "#05d7fcaa",

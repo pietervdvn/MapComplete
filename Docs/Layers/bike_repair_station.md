@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/pin:#88d32c;./assets/layers/bike_repair_station/repair_station.svg' height="100px"> 
+
 
 A layer showing bicycle pumps and bicycle repair tool stands
 

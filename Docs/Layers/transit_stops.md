@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/transit_stops/bus_stop.svg' height="100px"> 
+
 
 Layer showing different types of transit stops.
 

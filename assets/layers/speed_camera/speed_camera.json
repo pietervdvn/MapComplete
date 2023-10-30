@@ -96,15 +96,6 @@
       "maxSnapDistance": 10
     }
   ],
-  "mapRendering": [
-    {
-      "icon": "square:white;./assets/layers/speed_camera/speed_camera.svg",
-      "location": [
-        "point",
-        "centroid"
-      ]
-    }
-  ],
   "units": [
     {
       "appliesToKey": [
@@ -166,5 +157,23 @@
         }
       ]
     }
-  ]
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "square",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/speed_camera/speed_camera.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": []
 }

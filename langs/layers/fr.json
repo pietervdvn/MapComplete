@@ -3962,7 +3962,7 @@
         }
     },
     "last_click": {
-        "mapRendering": {
+        "pointRendering": {
             "0": {
                 "label": {
                     "mappings": {
@@ -6769,17 +6769,6 @@
                 "options": {
                     "0": {
                         "question": "Poubelle avec distributeur de sacs pour ramasser les déjections canines"
-                    }
-                }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Poubelle"
-                        }
                     }
                 }
             }

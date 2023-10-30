@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/school/school.svg' height="100px"> 
+
 
 Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles
 

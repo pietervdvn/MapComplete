@@ -94,7 +94,9 @@
         "ca": "Creuament per a vianants i/o ciclistes",
         "cs": "Přechod pro chodce a/nebo cyklisty"
       },
-      "snapToLayer": "cycleways_and_roads",
+      "snapToLayer": [
+        "cycleways_and_roads"
+      ],
       "maxSnapDistance": 25
     },
     {
@@ -122,7 +124,9 @@
         "ca": "Semàfor en una carretera",
         "cs": "Semafor na silnici"
       },
-      "snapToLayer": "cycleways_and_roads",
+      "snapToLayer": [
+        "cycleways_and_roads"
+      ],
       "maxSnapDistance": 25
     }
   ],
@@ -690,31 +694,37 @@
       ]
     }
   ],
-  "mapRendering": [
+  "filter": [
+    "tactile_paving_advanced"
+  ],
+  "pointRendering": [
     {
-      "icon": {
-        "render": "./assets/layers/crossings/pedestrian_crossing.svg",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                "highway=traffic_signals",
-                "crossing=traffic_signals"
-              ]
-            },
-            "then": "./assets/layers/crossings/traffic_lights.svg"
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/crossings/pedestrian_crossing.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "highway=traffic_signals",
+                    "crossing=traffic_signals"
+                  ]
+                },
+                "then": "./assets/layers/crossings/traffic_lights.svg"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "location": [
         "point"
       ]
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "width": "5"
     }
-  ],
-  "filter": [
-    "tactile_paving_advanced"
   ]
 }

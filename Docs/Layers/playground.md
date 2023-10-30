@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/playgrounds/playground.svg' height="100px"> 
+
 
 Playgrounds
 

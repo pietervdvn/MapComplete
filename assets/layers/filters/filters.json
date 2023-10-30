@@ -1,7 +1,8 @@
 {
   "id": "filters",
   "description": "This layer acts as library for common filters",
-  "mapRendering": null,
+  "lineRendering": null,
+  "pointRendering": null,
   "source": "special:library",
   "filter": [
     {

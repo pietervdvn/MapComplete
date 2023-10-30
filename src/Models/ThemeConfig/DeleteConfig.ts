@@ -115,6 +115,7 @@ export default class DeleteConfig {
         const config: QuestionableTagRenderingConfigJson = {
             question: t.whyDelete.translations,
             mappings,
+            id: "why-delete",
         }
         return new TagRenderingConfig(config)
     }

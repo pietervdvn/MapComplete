@@ -242,9 +242,15 @@
     "enableImproveAccuracy": true,
     "enableRelocation": false
   },
-  "mapRendering": [
+  "description": {
+    "en": "A layer showing (public) showers",
+    "de": "Eine Ebene mit (öffentlichen) Duschen",
+    "fr": "Une couche affichant les douches (publiques)",
+    "ca": "Una capa que mostra dutxes (públiques)",
+    "cs": "Vrstva zobrazující (veřejné) sprchy"
+  },
+  "pointRendering": [
     {
-      "icon": "circle:white;./assets/layers/shower/shower.svg",
       "location": [
         "point",
         "centroid"
@@ -254,14 +260,17 @@
           "if": "opening_hours~*",
           "then": "icons.isOpen"
         }
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/shower/shower.svg"
+        }
       ]
     }
   ],
-  "description": {
-    "en": "A layer showing (public) showers",
-    "de": "Eine Ebene mit (öffentlichen) Duschen",
-    "fr": "Une couche affichant les douches (publiques)",
-    "ca": "Una capa que mostra dutxes (públiques)",
-    "cs": "Vrstva zobrazující (veřejné) sprchy"
-  }
+  "lineRendering": []
 }

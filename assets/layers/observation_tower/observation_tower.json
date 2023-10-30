@@ -367,15 +367,24 @@
     "enableRelocation": false,
     "enableImproveAccuraccy": true
   },
-  "mapRendering": [
+  "pointRendering": [
     {
-      "icon": "circle:white;./assets/layers/observation_tower/Tower_observation.svg",
       "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
       ],
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/observation_tower/Tower_observation.svg"
+        }
+      ]
     }
-  ]
+  ],
+  "lineRendering": []
 }

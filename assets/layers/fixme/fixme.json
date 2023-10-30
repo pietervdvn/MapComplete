@@ -79,15 +79,21 @@
     },
     "all_tags"
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "centroid",
         "point"
       ],
-      "icon": "./assets/svg/bug.svg",
-      "label": "<div class='bg-white rounded p-2'>{fixme}</div>"
-    },
+      "label": "<div class='bg-white rounded p-2'>{fixme}</div>",
+      "marker": [
+        {
+          "icon": "./assets/svg/bug.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#ff0000",
       "dashArray": "5,5",

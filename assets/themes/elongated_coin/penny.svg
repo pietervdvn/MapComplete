@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="250"
-   height="250"
-   viewBox="0 0 250 250"
+   width="500"
+   height="500"
+   viewBox="0 0 500 500"
    fill="none"
    version="1.1"
    id="svg16"
    sodipodi:docname="penny.svg"
-   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,17 +25,18 @@
      inkscape:deskcolor="#505050"
      showgrid="false"
      inkscape:zoom="1.5733333"
-     inkscape:cx="125.52966"
-     inkscape:cy="75"
+     inkscape:cx="275.84746"
+     inkscape:cy="284.42797"
      inkscape:window-width="1920"
-     inkscape:window-height="1011"
+     inkscape:window-height="995"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg16" />
+     inkscape:current-layer="svg16"
+     inkscape:pageshadow="0" />
   <g
      id="g310"
-     transform="translate(0,50)">
+     transform="matrix(1.9997517,0,0,1.9997517,0,99.370201)">
     <path
        d="m 246,75 c 0,18.7536 -12.69,36.415 -34.67,49.603 C 189.43,137.743 158.917,146 125,146 91.0825,146 60.5697,137.743 38.6696,124.603 16.69,111.415 4,93.7536 4,75 4,56.2464 16.69,38.5848 38.6696,25.397 60.5697,12.2569 91.0825,4 125,4 158.917,4 189.43,12.2569 211.33,25.397 233.31,38.5848 246,56.2464 246,75 Z"
        fill="#ff8c4e"

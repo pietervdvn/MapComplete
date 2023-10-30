@@ -42,5 +42,7 @@
   "layers": [
     "windturbine"
   ],
-  "credits": "Seppe Santens"
+  "credits": [
+    "Seppe Santens"
+  ]
 }

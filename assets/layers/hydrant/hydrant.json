@@ -526,21 +526,6 @@
       }
     }
   ],
-  "mapRendering": [
-    {
-      "icon": "./assets/themes/hailhydrant/hydrant.svg",
-      "iconSize": "20,20",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#00f",
-      "width": "8"
-    }
-  ],
   "units": [
     {
       "applicableUnits": [
@@ -574,6 +559,27 @@
       "appliesToKey": [
         "fire_hydrant:diameter"
       ]
+    }
+  ],
+  "pointRendering": [
+    {
+      "iconSize": "20,20",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/themes/hailhydrant/hydrant.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f",
+      "width": "8"
     }
   ]
 }

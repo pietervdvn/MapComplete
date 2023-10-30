@@ -173,9 +173,8 @@
       }
     }
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
-      "icon": "./assets/themes/climbing/club.svg",
       "iconBadges": [
         {
           "if": "opening_hours~*",
@@ -195,7 +194,13 @@
           }
         ]
       },
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/themes/climbing/club.svg"
+        }
+      ]
     }
-  ]
+  ],
+  "lineRendering": []
 }

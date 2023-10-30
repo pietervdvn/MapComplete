@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/map/map.svg' height="100px"> 
+
 
 A map, meant for tourists which is permanently installed in the public space
 

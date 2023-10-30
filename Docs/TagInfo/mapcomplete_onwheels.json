@@ -1344,6 +1344,11 @@
     },
     {
       "key": "shop",
+      "description": "Layer 'Shop' shows shop=vacant with a fixed text, namely 'Vacant Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "vacant"
+    },
+    {
+      "key": "shop",
       "description": "Layer 'Shop' shows shop=agrarian with a fixed text, namely 'Farm Supply Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "agrarian"
     },
@@ -1359,7 +1364,7 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=antiques with a fixed text, namely 'Antiques Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=antiques with a fixed text, namely 'Antique Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "antiques"
     },
     {
@@ -1424,7 +1429,7 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=books with a fixed text, namely 'Book Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=books with a fixed text, namely 'Bookstore' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "books"
     },
     {
@@ -1544,7 +1549,7 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=country_store with a fixed text, namely 'Country Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=country_store with a fixed text, namely 'Rural Supplies Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "country_store"
     },
     {
@@ -1564,7 +1569,7 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=deli with a fixed text, namely 'Deli' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=deli with a fixed text, namely 'Delicatessen' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "deli"
     },
     {
@@ -1714,7 +1719,7 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=health_food with a fixed text, namely 'Health Food Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=health_food with a fixed text, namely 'Health Food Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "health_food"
     },
     {
@@ -1734,8 +1739,8 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=hobby with a fixed text, namely 'Hobby Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
-      "value": "hobby"
+      "description": "Layer 'Shop' shows shop=honey with a fixed text, namely 'Honey Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "honey"
     },
     {
       "key": "shop",
@@ -1854,13 +1859,18 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=newsagent with a fixed text, namely 'Newspaper/Magazine Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=newsagent with a fixed text, namely 'Newsstand' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "newsagent"
     },
     {
       "key": "shop",
       "description": "Layer 'Shop' shows shop=nutrition_supplements with a fixed text, namely 'Nutrition Supplements Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "nutrition_supplements"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=nuts with a fixed text, namely 'Nuts Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "nuts"
     },
     {
       "key": "shop",
@@ -1889,12 +1899,17 @@
     },
     {
       "key": "shop",
+      "description": "Layer 'Shop' shows shop=pasta with a fixed text, namely 'Pasta Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "pasta"
+    },
+    {
+      "key": "shop",
       "description": "Layer 'Shop' shows shop=pastry with a fixed text, namely 'Pastry Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "pastry"
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=pawnbroker with a fixed text, namely 'Pawn Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=pawnbroker with a fixed text, namely 'Pawnshop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "pawnbroker"
     },
     {
@@ -1909,7 +1924,7 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=pet_grooming with a fixed text, namely 'Pet Grooming Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=pet_grooming with a fixed text, namely 'Pet Groomer' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "pet_grooming"
     },
     {
@@ -1959,6 +1974,11 @@
     },
     {
       "key": "shop",
+      "description": "Layer 'Shop' shows shop=rice with a fixed text, namely 'Rice Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "rice"
+    },
+    {
+      "key": "shop",
       "description": "Layer 'Shop' shows shop=scuba_diving with a fixed text, namely 'Scuba Diving Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "scuba_diving"
     },
@@ -1969,7 +1989,7 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=second_hand with a fixed text, namely 'Consignment/Thrift Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=second_hand with a fixed text, namely 'Thrift Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "second_hand"
     },
     {
@@ -2089,7 +2109,7 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=variety_store with a fixed text, namely 'Variety Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=variety_store with a fixed text, namely 'Discount Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "variety_store"
     },
     {
@@ -2253,6 +2273,26 @@
       "key": "service:print:A0",
       "description": "Layer 'Shop' shows service:print:A0=yes with a fixed text, namely 'This shop can print on papers of size A0' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes)",
       "value": "yes"
+    },
+    {
+      "key": "craft",
+      "description": "Layer 'Shop' shows craft=key_cutter with a fixed text, namely 'This shop is also specialized in key cutting' (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=shoe_repair|service:key_cutting~.+|craft=key_cutting|shop=diy|shop=doityourself|shop=home_improvement|shop=hardware|shop=locksmith|shop=repair)",
+      "value": "key_cutter"
+    },
+    {
+      "key": "service:key_cutting",
+      "description": "Layer 'Shop' shows service:key_cutting=yes with a fixed text, namely 'This shop offers key cutting as a service' (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=shoe_repair|service:key_cutting~.+|craft=key_cutting|shop=diy|shop=doityourself|shop=home_improvement|shop=hardware|shop=locksmith|shop=repair)",
+      "value": "yes"
+    },
+    {
+      "key": "craft",
+      "description": "Layer 'Shop' shows service:key_cutting=no with a fixed text, namely 'This shops does not offer key cutting as a service' (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=shoe_repair|service:key_cutting~.+|craft=key_cutting|shop=diy|shop=doityourself|shop=home_improvement|shop=hardware|shop=locksmith|shop=repair)",
+      "value": ""
+    },
+    {
+      "key": "service:key_cutting",
+      "description": "Layer 'Shop' shows service:key_cutting=no with a fixed text, namely 'This shops does not offer key cutting as a service' (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=shoe_repair|service:key_cutting~.+|craft=key_cutting|shop=diy|shop=doityourself|shop=home_improvement|shop=hardware|shop=locksmith|shop=repair)",
+      "value": "no"
     },
     {
       "key": "internet_access",

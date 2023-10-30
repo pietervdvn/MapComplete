@@ -1,11 +1,10 @@
 import * as fs from "fs"
-
 function genImages(dryrun = false) {
     console.log("Generating images")
     const dir = fs.readdirSync("./assets/svg")
 
     let module =
-        'import Img from "./UI/Base/Img";\nimport {FixedUiElement} from "./UI/Base/FixedUiElement";\n\nexport default class Svg {\n\n\n'
+        'import Img from "./UI/Base/Img";\nimport {FixedUiElement} from "./UI/Base/FixedUiElement";\n\n/* @deprecated */\nexport default class Svg {\n\n\n'
     const allNames: string[] = []
     for (const path of dir) {
         if (path.endsWith("license_info.json")) {
@@ -27,10 +26,14 @@ function genImages(dryrun = false) {
             .replace(/\r/g, "")
             .replace(/\\/g, "\\")
             .replace(/"/g, '\\"')
+            .replaceAll(" ", " ")
 
-        let hasNonAsciiChars = Array.from(svg).some((char) => char.charCodeAt(0) > 127)
-        if (hasNonAsciiChars) {
-            throw "The svg '" + path + "' has non-ascii characters"
+        let hasNonAsciiChars = Array.from(svg)
+            .filter((char) => char.charCodeAt(0) > 127)
+            .map((char) => char.charCodeAt(0))
+            .join(", ")
+        if (hasNonAsciiChars.length > 0) {
+            throw "The svg '" + path + "' has non-ascii characters: " + hasNonAsciiChars
         }
         const name = path.substring(0, path.length - 4).replace(/[ -]/g, "_")
 
@@ -45,6 +48,12 @@ function genImages(dryrun = false) {
         if (!dryrun) {
             allNames.push(`"${path}": Svg.${name}`)
         }
+
+        const nameUC = name.toUpperCase().at(0) + name.substring(1)
+        const svelteCode =
+            '<script>\nexport let color = "#000000"\n</script>\n' +
+            svg.replace(/\\"/g, '"').replace(/(rgb\(0%,0%,0%\)|#000000|#000)/g, "{color}")
+        fs.writeFileSync("./src/assets/svg/" + nameUC + ".svelte", svelteCode, "utf8")
     }
     module += `public static All = {${allNames.join(",")}};`
     module += "}\n"

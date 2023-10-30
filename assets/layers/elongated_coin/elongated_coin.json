@@ -394,21 +394,6 @@
     "level",
     "check_date"
   ],
-  "mapRendering": [
-    {
-      "icon": "circle:#FFFFFF00;./assets/themes/elongated_coin/penny.svg",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        }
-      ]
-    }
-  ],
   "presets": [
     {
       "title": {
@@ -434,5 +419,29 @@
     "open_now",
     "accepts_debit_cards",
     "accepts_credit_cards"
-  ]
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        }
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "#FFFFFF00"
+        },
+        {
+          "icon": "./assets/themes/elongated_coin/penny.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": []
 }

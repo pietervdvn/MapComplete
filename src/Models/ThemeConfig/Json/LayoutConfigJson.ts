@@ -2,6 +2,7 @@ import { LayerConfigJson } from "./LayerConfigJson"
 import ExtraLinkConfigJson from "./ExtraLinkConfigJson"
 
 import { RasterLayerProperties } from "../../RasterLayerProperties"
+import { Translatable } from "./Translatable"
 
 /**
  * Defines the entire theme.
@@ -17,20 +18,30 @@ import { RasterLayerProperties } from "../../RasterLayerProperties"
  */
 export interface LayoutConfigJson {
     /**
-     * The id of this layout.
+     * question: What is the id of this layout?
+     *
+     * The id is a unique string to identify the theme
+     *
+     * It should be
+     * - in english
+     * - describe the theme in a single word (or a few words)
+     * - all lowercase and with only [a-z] or underscores (_)
      *
      * This is used as hashtag in the changeset message, which will read something like "Adding data with #mapcomplete for theme #<the theme id>"
-     * Make sure it is something decent and descriptive, it should be a simple, lowercase string.
      *
      * On official themes, it'll become the name of the page, e.g.
      * 'cyclestreets' which become 'cyclestreets.html'
+     *
+     * type: id
+     * group: basic
      */
     id: string
 
     /**
+     *
      * Who helped to create this theme and should be attributed?
      */
-    credits?: string
+    credits?: string | string[]
 
     /**
      * Only used in 'generateLayerOverview': if present, every translation will be checked to make sure it is fully translated.
@@ -40,50 +51,84 @@ export interface LayoutConfigJson {
     mustHaveLanguage?: string[]
 
     /**
-     * The title, as shown in the welcome message and the more-screen.
+     * question: What is the title of this theme?
+     *
+     * The human-readable title, as shown in the welcome message and the index page
+     * group: basic
      */
-    title: string | Record<string, string>
+    title: Translatable
 
     /**
      * A short description, showed as social description and in the 'more theme'-buttons.
      * Note that if this one is not defined, the first sentence of 'description' is used
+     * group: hidden
      */
-    shortDescription?: string | Record<string, string>
+    shortDescription?: Translatable
 
     /**
+     * question: How would you describe this theme?
      * The description, as shown in the welcome message and the more-screen
+     * group: basic
+     *
      */
-    description: string | Record<string, string>
+    description: Translatable
 
     /**
      * A part of the description, shown under the login-button.
+     * group: hidden
      */
-    descriptionTail?: string | Record<string, string>
+    descriptionTail?: Translatable
 
     /**
-     * The icon representing this theme.
+     * question: What icon should be used to represent this theme?
+     *
      * Used as logo in the more-screen and (for official themes) as favicon, webmanifest logo, ...
+     *
      * Either a URL or a base64 encoded value (which should include 'data:image/svg+xml;base64)
      *
      * Type: icon
+     * group: basic
+     *
      */
     icon: string
 
     /**
-     * Link to a 'social image' which is included as og:image-tag on official themes.
-     * Useful to share the theme on social media.
-     * See https://www.h3xed.com/web-and-internet/how-to-use-og-image-meta-tag-facebook-reddit for more information$
+     * question: What image should be used as social image preview?
+     * This is included as og:image-tag on official themes.
      *
+     * See https://www.h3xed.com/web-and-internet/how-to-use-og-image-meta-tag-facebook-reddit for more information
+     * ifunset: use the default social image of mapcomplete (or generate one based on the icon)
      * Type: image
+     * group: basic
      */
     socialImage?: string
 
     /**
+     * question: At what zoomlevel should this theme open?
      * Default location and zoom to start.
      * Note that this is barely used. Once the user has visited mapcomplete at least once, the previous location of the user will be used
+     * ifunset: Use the default startzoom (0)
+     * type: float
+     * group: start_location
      */
     startZoom: number
+    /**
+     * question: At what start latitude should this theme open?
+     * Default location and zoom to start.
+     * Note that this is barely used. Once the user has visited mapcomplete at least once, the previous location of the user will be used
+     * ifunset: Use 0 as start latitude
+     * type: float
+     * group: start_location
+     */
     startLat: number
+    /**
+     * question: At what start longitude should this theme open?
+     * Default location and zoom to start.
+     * Note that this is barely used. Once the user has visited mapcomplete at least once, the previous location of the user will be used
+     * ifunset: Use 0 as start longitude
+     * type: float
+     * group: start_location
+     */
     startLon: number
 
     /**
@@ -152,8 +197,11 @@ export interface LayoutConfigJson {
     tileLayerSources?: (RasterLayerProperties & { defaultState?: true | boolean })[]
 
     /**
-     * The layers to display.
-     *
+     * question: What layers should this map show?
+     * type: layer[]
+     * types: hidden | layer | hidden
+     * group: layers
+     * suggestions: return Array.from(layers.keys()).map(key => ({if: "value="+key, then: key+" - "+layers.get(key).description}))
      * Every layer contains a description of which feature to display - the overpassTags which are queried.
      * Instead of running one query for every layer, the query is fused.
      *
@@ -208,6 +256,7 @@ export interface LayoutConfigJson {
 
     /**
      * The URL of a custom CSS stylesheet to modify the layout
+     * group: advanced
      */
     customCss?: string
     /**
@@ -223,79 +272,161 @@ export interface LayoutConfigJson {
     lockLocation?: [[number, number], [number, number]] | number[][]
 
     /**
+     * question: should an extra help button be shown in certain circumstances?
      * Adds an additional button on the top-left of the application.
      * This can link to an arbitrary location.
      *
-     * Note that {lat},{lon},{zoom}, {language} and {theme} will be replaced
+     * For example {icon: "./assets/svg/pop-out.svg", href: 'https://mapcomplete.org/{theme}.html?lat={lat}&lon={lon}&z={zoom}, requirements: ["iframe","no-welcome-message]},
      *
-     * Default: {icon: "./assets/svg/pop-out.svg", href: 'https://mapcomplete.org/{theme}.html?lat={lat}&lon={lon}&z={zoom}, requirements: ["iframe","no-welcome-message]},
-     *
+     * group: advanced
+     * ifunset: show a link to open MapComplete full screen if used in an iframe
      */
     extraLink?: ExtraLinkConfigJson
 
     /**
-     * If set to false, disables logging in.
-     * The userbadge will be hidden, all login-buttons will be hidden and editing will be disabled
+     * question: Should a user be able to login with OpenStreetMap?
+     *
+     * If not logged in, will not show the login buttons and hide all the editable elements.
+     * As such, MapComplete will become read-only and a purely visualisation tool.
+     *
+     * ifunset: Enable the possiblity to login with OpenStreetMap (default)
+     * iffalse: Do not enable to login with OpenStreetMap, have a read-only view of MapComplete.
+     * iftrue: Enable the possiblity to login with OpenStreetMap
+     * group: feature_switches
      */
     enableUserBadge?: true | boolean
     /**
-     * If false, hides the tab 'share'-tab in the welcomeMessage
+     * question: Should the tab with options to share the current screen be enabled?
+     *
+     * On can get the iFrame embed code here
+     *
+     * ifunset: Enable the sharescreen (default)
+     * iffalse: Do not enable the share screen
+     * iftrue: Enable the share screen
+     * group: feature_switches
      */
     enableShareScreen?: true | boolean
+
     /**
-     * Hides the tab with more themes in the welcomeMessage
+     * question: Should the user be able to switch to different themes?
+     *
+     * Typically enabled in iframes and/or on commisioned themes
+     *
+     * iftrue: enable to go back to the index page showing all themes
+     * iffalse: do not enable to go back to the index page showing all themes; hide the 'more themes' buttons
+     * ifunset: mapcomplete default: enable to go back to the index page showing all themes
+     * group: feature_switches
      */
     enableMoreQuests?: true | boolean
+
     /**
-     * If false, the layer selection/filter view will be hidden
+     * question: Should the user be able to enable/disable layers and to filter the layers?
+     *
      * The corresponding URL-parameter is 'fs-filters' instead of 'fs-layers'
+     * iftrue: enable the filters/layers pane
+     * iffalse: do not enable to filter or to disable layers; hide the 'filter' tab from the overview and the button at the bottom-left
+     * ifunset: mapcomplete default: enable to filter or to enable/disable layers
+     * group: feature_switches
      */
     enableLayers?: true | boolean
+
     /**
-     * If set to false, hides the search bar
+     * question: Should the user be able to search for locations?
+     *
+     * ifunset: MapComplete default: allow to search
+     * iftrue: Allow to search
+     * iffalse: Do not allow to search; hide the search-bar
+     * group: feature_switches
      */
     enableSearch?: true | boolean
+
     /**
-     * If set to false, the ability to add new points or nodes will be disabled.
-     * Editing already existing features will still be possible
+     * question: Should the user be able to add new points?
+     *
+     * Adding new points is only possible if the loaded layers have presets set.
+     * Some layers do not have presets. If the theme only has layers without presets, then adding new points will not be possible.
+     *
+     * ifunset: MapComplete default: allow to create new points
+     * iftrue: Allow to create new points
+     * iffalse: Do not allow to create new points, even if the layers in this theme support creating new points
+     * group: feature_switches
      */
     enableAddNewPoints?: true | boolean
+
     /**
-     * If set to false, the 'geolocation'-button will be hidden.
+     * question: Should the user be able to use their GPS to geolocate themselfes on the map?
+     * ifunset: MapComplete default: allow to use the GPS
+     * iftrue: Allow to use the GPS
+     * iffalse: Do not allow to use the GPS, hide the geolocation-buttons
+     * group: feature_switches
      */
     enableGeolocation?: true | boolean
+
     /**
      * Enable switching the backgroundlayer.
      * If false, the quickswitch-buttons are removed (bottom left) and the dropdown in the layer selection is removed as well
+     *
+     * question: Should the user be able to switch the background layer?
+     *
+     * iftrue: Allow to switch the background layer
+     * iffalse: Do not allow to switch the background layer
+     * ifunset: MapComplete default: Allow to switch the background layer
+     * group: feature_switches
      */
     enableBackgroundLayerSelection?: true | boolean
+
     /**
-     * If set to true, will show _all_ unanswered questions in a popup instead of just the next one
+     * question: Should the questions about a feature be presented one by one or all at once?
+     * iftrue: Show all unanswered questions at the same time
+     * iffalse: Show unanswered questions one by one
+     * ifunset: MapComplete default: Use the preference of the user to show questions at the same time or one by one
+     * group: feature_switches
      */
     enableShowAllQuestions?: false | boolean
+
     /**
-     * If set to true, download button for the data will be shown (offers downloading as geojson and csv)
+     * question: Should the 'download as CSV'- and 'download as Geojson'-buttons be enabled?
+     * iftrue: Enable the option to download the map as CSV and GeoJson
+     * iffalse: Enable the option to download the map as CSV and GeoJson
+     * ifunset: MapComplete default: Enable the option to download the map as CSV and GeoJson
+     * group: feature_switches
      */
     enableDownload?: true | boolean
     /**
-     * If set to true, exporting a pdf is enabled
+     * question: Should the 'download as PDF'-button be enabled?
+     * iftrue: Enable the option to download the map as PDF
+     * iffalse: Enable the option to download the map as PDF
+     * ifunset: MapComplete default: Enable the option to download the map as PDF
+     * group: feature_switches
      */
     enablePdfDownload?: true | boolean
 
     /**
+     * question: Should the 'notes' from OpenStreetMap be loaded and parsed for import helper notes?
      * If true, notes will be loaded and parsed. If a note is an import (as created by the import_helper.html-tool from mapcomplete),
      * these notes will be shown if a relevant layer is present.
      *
-     * Default is true for official layers and false for unofficial (sideloaded) layers
+     * ifunset: MapComplete default: do not load import notes for sideloaded themes but do load them for official themes
+     * iftrue: Load notes and show import notes
+     * iffalse: Do not load import notes
+     * group: advanced
      */
     enableNoteImports?: true | boolean
 
     /**
-     * Set one or more overpass URLs to use for this theme..
+     * question: What overpass-api instance should be used for this layout?
+     *
+     * ifunset: Use the default, builtin collection of overpass instances
+     * group: advanced
      */
-    overpassUrl?: string | string[]
+    overpassUrl?: string[]
     /**
-     * Set a different timeout for overpass queries - in seconds. Default: 30s
+     * question: After how much seconds should the overpass-query stop?
+     * If a query takes too long, the overpass-server will abort.
+     * Once can set the amount of time before overpass gives up here.
+     * ifunset: use the default amount of 30 seconds as timeout
+     * type: pnat
+     * group: advanced
      */
     overpassTimeout?: number
 
@@ -303,7 +434,8 @@ export interface LayoutConfigJson {
      * Enables tracking of all nodes when data is loaded.
      * This is useful for the 'ImportWay' and 'ConflateWay'-buttons who need this database.
      *
-     * Note: this flag will be automatically set.
+     * Note: this flag will be automatically set and can thus be ignored.
+     * group: hidden
      */
     enableNodeDatabase?: boolean
 }

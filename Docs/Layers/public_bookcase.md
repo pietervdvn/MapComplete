@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:#ffffff;./assets/themes/bookcases/bookcase.svg' height="100px"> 
+
 
 A streetside cabinet with books, accessible to anyone
 

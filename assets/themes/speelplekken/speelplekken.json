@@ -37,11 +37,9 @@
         "osmTags": "shadow=yes",
         "isOsmCache": false
       },
-      "mapRendering": [
-        {
-          "color": "#444444",
-          "width": "1"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -221,23 +219,9 @@
         "questions",
         "reviews"
       ],
-      "mapRendering": [
-        {
-          "color": {
-            "render": "#6d6",
-            "mappings": [
-              {
-                "if": "color~*",
-                "then": "{color}"
-              },
-              {
-                "if": "colour~*",
-                "then": "{colour}"
-              }
-            ]
-          },
-          "width": "9"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     }
   ],

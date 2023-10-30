@@ -319,7 +319,7 @@ For example to get all objects which overlap or embed from a layer, use `_contai
 
 Also see [enclosingFeatures](#enclosingFeatures) which can be used to get all objects which fully contain this feature 
 
-  0. ...layerIds - one or more layer ids of the layer from which every feature is checked for overlap
+  0. ...layerIds - one or more layer ids of the layer from which every feature is checked for overlap)
  
 
 ### enclosingFeatures 
@@ -329,7 +329,7 @@ Also see [enclosingFeatures](#enclosingFeatures) which can be used to get all ob
 The result is a list of features: `{feat: Polygon}[]`
 This function will never return the feature itself. 
 
-  0. ...layerIds - one or more layer ids of the layer from which every feature is checked for overlap
+  0. ...layerIds - one or more layer ids of the layer from which every feature is checked for overlap)
  
 
 ### intersectionsWith 
@@ -341,7 +341,7 @@ Returns a `{feat: GeoJson, intersections: [number,number][]}` where `feat` is th
 If the current feature is a point, this function will return an empty list.
 Points from other layers are ignored - even if the points are parts of the current linestring. 
 
-  0. ...layerIds - one or more layer ids of the layer from which every feature is checked for intersection
+  0. ...layerIds - one or more layer ids of the layer from which every feature is checked for intersection)
  
 
 ### closest 

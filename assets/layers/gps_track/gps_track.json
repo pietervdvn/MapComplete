@@ -47,11 +47,12 @@
     "ca": "La teva traça recorreguda",
     "cs": "Vaše procestovaná trasa"
   },
-  "mapRendering": [
+  "syncSelection": "global",
+  "pointRendering": [],
+  "lineRendering": [
     {
       "width": 3,
       "color": "#bb000077"
     }
-  ],
-  "syncSelection": "global"
+  ]
 }

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/birdhide/birdhide.svg' height="100px"> 
+
 
 A birdhide
 

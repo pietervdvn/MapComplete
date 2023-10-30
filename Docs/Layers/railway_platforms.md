@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/stations/rail-light.svg' height="100px"> 
+
 
 Find every platform in the station, and the train routes that use them.
 

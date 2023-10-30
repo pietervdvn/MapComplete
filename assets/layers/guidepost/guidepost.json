@@ -1,5 +1,10 @@
 {
   "id": "guidepost",
+  "title": {
+    "en": "Guideposts",
+    "cs": "Rozcestník",
+    "de": "Wegweiser"
+  },
   "name": {
     "en": "Guideposts",
     "cs": "Rozcestníky",
@@ -37,23 +42,20 @@
   ],
   "deletion": true,
   "allowMove": {
-    "enableImproveAccuracy": "true",
-    "enableRelocation": "false"
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
   },
-  "title": {
-    "render": {
-      "en": "Guidepost",
-      "cs": "Rozcestník",
-      "de": "Wegweiser"
-    }
-  },
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "centroid",
         "point"
       ],
-      "icon": "./assets/layers/guidepost/guidepost.svg",
+      "marker": [
+        {
+          "icon": "./assets/layers/guidepost/guidepost.svg"
+        }
+      ],
       "anchor": "bottom"
     }
   ],

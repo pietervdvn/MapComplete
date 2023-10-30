@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/slow_roads/slow_road.svg' height="100px"> 
+
 
 All carfree roads
 

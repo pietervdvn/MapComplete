@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/pin:#6BC4F7;./assets/layers/osm_community_index/osm.svg' height="100px"> 
+
 
 A layer showing the OpenStreetMap Communities
 

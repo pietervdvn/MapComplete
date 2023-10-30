@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/playgrounds/playground.svg' height="100px"> 
+
 
 A layer showing village-green (which are communal green areas, but not quite parks)
 

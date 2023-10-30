@@ -261,7 +261,8 @@
       ]
     }
   ],
-  "mapRendering": [
+  "pointRendering": [],
+  "lineRendering": [
     {
       "color": "gray",
       "width": 10,

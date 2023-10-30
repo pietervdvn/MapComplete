@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/crab_address/housenumber_blank.svg' height="100px"> 
+
 
 Address data for Flanders by the governement, suited for import into OpenStreetMap. Datadump from 2021-10-26. This layer contains only visualisation logic. Import buttons should be added via an override. Note that HNRLABEL contains the original value, whereas _HNRLABEL contains a slightly cleaned version
 

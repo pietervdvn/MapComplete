@@ -121,7 +121,9 @@
         "ca": "Un bol·lard a la carretera",
         "pt_BR": "Um pilar na rua"
       },
-      "snapToLayer": "cycleways_and_roads",
+      "snapToLayer": [
+        "cycleways_and_roads"
+      ],
       "maxSnapDistance": 25
     },
     {
@@ -154,7 +156,9 @@
         "ca": "Una barrera ciclista que relanteix als ciclistes",
         "pt_BR": "Barreira para ciclistas, que reduz a velocidade dos ciclistas"
       },
-      "snapToLayer": "cycleways_and_roads",
+      "snapToLayer": [
+        "cycleways_and_roads"
+      ],
       "maxSnapDistance": 25
     }
   ],
@@ -607,17 +611,6 @@
       "id": "Overlap (cyclebarrier)"
     }
   ],
-  "mapRendering": [
-    {
-      "icon": "./assets/layers/barrier/barrier.svg",
-      "location": [
-        "point"
-      ]
-    },
-    {
-      "width": "5"
-    }
-  ],
   "deletion": {
     "softDeletionTags": {
       "and": [
@@ -641,5 +634,22 @@
         "fixme="
       ]
     }
-  }
+  },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "./assets/layers/barrier/barrier.svg"
+        }
+      ],
+      "location": [
+        "point"
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": "5"
+    }
+  ]
 }

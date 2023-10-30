@@ -326,9 +326,8 @@
     "enableImproveAccuracy": true
   },
   "deletion": true,
-  "mapRendering": [
+  "pointRendering": [
     {
-      "icon": "square:white;./assets/layers/parcel_lockers/parcel_lockers.svg",
       "iconBadges": [
         {
           "if": "opening_hours~*",
@@ -340,7 +339,17 @@
         "point",
         "centroid"
       ],
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "square",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/parcel_lockers/parcel_lockers.svg"
+        }
+      ]
     }
-  ]
+  ],
+  "lineRendering": []
 }

@@ -900,37 +900,6 @@
   "deletion": {
     "minNeededChangesets": 5
   },
-  "mapRendering": [
-    {
-      "icon": {
-        "render": "circle:#ffffff;./assets/layers/tree_node/unknown.svg",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "leaf_type=broadleaved"
-              ]
-            },
-            "then": "circle:#ffffff;./assets/layers/tree_node/broadleaved.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "leaf_type=needleleaved"
-              ]
-            },
-            "then": "circle:#ffffff;./assets/layers/tree_node/needleleaved.svg"
-          }
-        ]
-      },
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "bottom"
-    }
-  ],
   "description": {
     "en": "A layer showing trees",
     "nl": "Een laag die bomen toont",
@@ -940,5 +909,45 @@
     "da": "Et lag, der viser træer",
     "ca": "Una capa que mostra arbres",
     "cs": "Vrstva zobrazující stromy"
-  }
+  },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "#ffffff"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/tree_node/unknown.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "leaf_type=broadleaved"
+                  ]
+                },
+                "then": "./assets/layers/tree_node/broadleaved.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "leaf_type=needleleaved"
+                  ]
+                },
+                "then": "./assets/layers/tree_node/needleleaved.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom"
+    }
+  ],
+  "lineRendering": []
 }

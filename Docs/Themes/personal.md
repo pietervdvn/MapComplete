@@ -63,6 +63,7 @@ This theme contains the following layers:
   - [hospital](../Layers/hospital.md)
   - [hotel](../Layers/hotel.md)
   - [hydrant](../Layers/hydrant.md)
+  - [ice_cream](../Layers/ice_cream.md)
   - [indoors](../Layers/indoors.md)
   - [information_board](../Layers/information_board.md)
   - [kerbs](../Layers/kerbs.md)

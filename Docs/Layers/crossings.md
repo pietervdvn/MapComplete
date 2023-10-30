@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/crossings/pedestrian_crossing.svg' height="100px"> 
+
 
 Crossings for pedestrians and cyclists
 

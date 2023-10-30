@@ -302,9 +302,8 @@
     "enableRelocation": false,
     "enableImproveAccuracy": true
   },
-  "mapRendering": [
+  "pointRendering": [
     {
-      "icon": "./assets/layers/parking/parking.svg",
       "iconSize": "36,36",
       "location": [
         "point",
@@ -321,8 +320,15 @@
           "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
         }
       ],
-      "anchor": "center"
-    },
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/layers/parking/parking.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
     {
       "width": 2,
       "color": "#ddcc00"

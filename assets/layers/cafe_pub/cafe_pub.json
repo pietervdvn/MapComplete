@@ -345,21 +345,19 @@
     ]
   },
   "allowMove": true,
-  "mapRendering": [
+  "description": {
+    "en": "A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions",
+    "hu": "Egy olyan réteg, amely kávézókat és kocsmákat jelenít meg, ahol össze lehet gyűlni egy ital köré. A réteg néhány lényeges kérdést tesz fel",
+    "nl": "Een laag die kroegen en koffiehuizen toont waar je iets kunt drinken. De laag zal je enkele vragen stellen",
+    "de": "Eine Ebene mit Cafés und Kneipen, in denen man sich auf ein Getränk treffen kann. Die Ebene fragt nach einigen relevanten Eigenschaften",
+    "es": "Una capa que muestra cafeterías y bares donde uno se puede reunir con una bebida. La capa hace algunas preguntas relevantes",
+    "da": "Et lag med caféer og pubber, hvor man kan samles omkring en drink. Laget stiller nogle relevante spørgsmål",
+    "fr": "Une couche montrants les cafés et pubs où l’on peut prendre un verre. Cette couche pose des questions y afférentes.",
+    "ca": "Una capa que mostra cafeteries i bars on un es pot reunir amb una beguda. La capa demana algunes preguntes rellevants",
+    "cs": "Vrstva s kavárnami a hospodami, kde se můžete sejít u skleničky. Vrstva se ptá na několik důležitých otázek"
+  },
+  "pointRendering": [
     {
-      "icon": {
-        "render": "circle:white;./assets/layers/cafe_pub/pub.svg",
-        "mappings": [
-          {
-            "if": "amenity=cafe",
-            "then": "circle:white;./assets/layers/cafe_pub/cafe.svg"
-          },
-          {
-            "if": "amenity=nightclub",
-            "then": "circle:white;./assets/layers/cafe_pub/nightclub.svg"
-          }
-        ]
-      },
       "iconBadges": [
         {
           "if": "opening_hours~*",
@@ -377,18 +375,29 @@
       "location": [
         "point",
         "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/cafe_pub/pub.svg",
+            "mappings": [
+              {
+                "if": "amenity=cafe",
+                "then": "./assets/layers/cafe_pub/cafe.svg"
+              },
+              {
+                "if": "amenity=nightclub",
+                "then": "./assets/layers/cafe_pub/nightclub.svg"
+              }
+            ]
+          }
+        }
       ]
     }
   ],
-  "description": {
-    "en": "A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions",
-    "hu": "Egy olyan réteg, amely kávézókat és kocsmákat jelenít meg, ahol össze lehet gyűlni egy ital köré. A réteg néhány lényeges kérdést tesz fel",
-    "nl": "Een laag die kroegen en koffiehuizen toont waar je iets kunt drinken. De laag zal je enkele vragen stellen",
-    "de": "Eine Ebene mit Cafés und Kneipen, in denen man sich auf ein Getränk treffen kann. Die Ebene fragt nach einigen relevanten Eigenschaften",
-    "es": "Una capa que muestra cafeterías y bares donde uno se puede reunir con una bebida. La capa hace algunas preguntas relevantes",
-    "da": "Et lag med caféer og pubber, hvor man kan samles omkring en drink. Laget stiller nogle relevante spørgsmål",
-    "fr": "Une couche montrants les cafés et pubs où l’on peut prendre un verre. Cette couche pose des questions y afférentes.",
-    "ca": "Una capa que mostra cafeteries i bars on un es pot reunir amb una beguda. La capa demana algunes preguntes rellevants",
-    "cs": "Vrstva s kavárnami a hospodami, kde se můžete sejít u skleničky. Vrstva se ptá na několik důležitých otázek"
-  }
+  "lineRendering": []
 }

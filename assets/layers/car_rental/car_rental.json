@@ -119,24 +119,34 @@
       }
     }
   ],
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/layers/car_rental/car_rental.svg",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "label": "<div class='bg-white block p-1 rounded'>{name}</div>"
-    },
-    {
-      "color": "darkblue",
-      "width": 2
-    }
-  ],
   "allowMove": {
     "enableImproveAccuracy": true
   },
   "filter": [
     "open_now"
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "label": "<div class='bg-white block p-1 rounded'>{name}</div>",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/car_rental/car_rental.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "darkblue",
+      "width": 2
+    }
   ]
 }

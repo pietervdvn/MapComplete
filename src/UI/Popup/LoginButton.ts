@@ -88,7 +88,7 @@ export class LoginToggle extends VariableUiElement {
                     )
                 },
                 [state.featureSwitchUserbadge, state.osmConnection?.apiIsOnline]
-            ) ?? new ImmutableStore(el) //
+            ) ?? new ImmutableStore(el)
         )
     }
 }

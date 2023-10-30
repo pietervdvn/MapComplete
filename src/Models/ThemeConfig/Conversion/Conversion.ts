@@ -1,11 +1,125 @@
-import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import { Utils } from "../../../Utils"
+import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
+import ScriptUtils from "../../../../scripts/ScriptUtils"
 
 export interface DesugaringContext {
-    tagRenderings: Map<string, TagRenderingConfigJson>
+    tagRenderings: Map<string, QuestionableTagRenderingConfigJson>
     sharedLayers: Map<string, LayerConfigJson>
     publicLayers?: Set<string>
+}
+
+export class ConversionContext {
+    /**
+     *  The path within the data structure where we are currently operating
+     */
+    readonly path: ReadonlyArray<string | number>
+    /**
+     * Some information about the current operation
+     */
+    readonly operation: ReadonlyArray<string>
+    readonly messages: ConversionMessage[]
+
+    private constructor(
+        messages: ConversionMessage[],
+        path: ReadonlyArray<string | number>,
+        operation?: ReadonlyArray<string>
+    ) {
+        this.path = path
+        this.operation = operation ?? []
+        // Messages is shared by reference amonst all 'context'-objects for performance
+        this.messages = messages
+        if (this.path.some((p) => typeof p === "object" || p === "[object Object]")) {
+            throw "ConversionMessage: got an object as path entry:" + JSON.stringify(path)
+        }
+    }
+
+    public static construct(path: (string | number)[], operation: string[]) {
+        return new ConversionContext([], [...path], [...operation])
+    }
+
+    public static test(msg?: string) {
+        return new ConversionContext([], msg ? [msg] : [], ["test"])
+    }
+
+    static print(msg: ConversionMessage) {
+        const noString = msg.context.path.filter(
+            (p) => typeof p !== "string" && typeof p !== "number"
+        )
+        if (noString.length > 0) {
+            console.warn("Non-string value in path:", ...noString)
+        }
+        if (msg.level === "error") {
+            console.error(
+                ConversionContext.red("ERR "),
+                msg.context.path.join("."),
+                ConversionContext.red(msg.message),
+                msg.context.operation.join(".")
+            )
+        } else if (msg.level === "warning") {
+            console.warn(
+                ConversionContext.red("<!> "),
+                msg.context.path.join("."),
+                ConversionContext.yellow(msg.message),
+                msg.context.operation.join(".")
+            )
+        } else {
+            console.log("    ", msg.context.path.join("."), msg.message)
+        }
+    }
+
+    private static yellow(s) {
+        return "\x1b[33m" + s + "\x1b[0m"
+    }
+
+    private static red(s) {
+        return "\x1b[31m" + s + "\x1b[0m"
+    }
+
+    public enter(key: string | number | (string | number)[]) {
+        if (!Array.isArray(key)) {
+            return new ConversionContext(this.messages, [...this.path, key], this.operation)
+        }
+        return new ConversionContext(this.messages, [...this.path, ...key], this.operation)
+    }
+
+    public enters(...key: (string | number)[]) {
+        return this.enter(key)
+    }
+
+    public inOperation(key: string) {
+        return new ConversionContext(this.messages, this.path, [...this.operation, key])
+    }
+
+    warn(message: string) {
+        this.messages.push({ context: this, level: "warning", message })
+    }
+
+    err(message: string) {
+        this.messages.push({ context: this, level: "error", message })
+    }
+
+    info(message: string) {
+        this.messages.push({ context: this, level: "information", message })
+    }
+
+    getAll(mode: ConversionMsgLevel): ConversionMessage[] {
+        return this.messages.filter((m) => m.level === mode)
+    }
+    public hasErrors() {
+        return this.messages?.find((m) => m.level === "error") !== undefined
+    }
+
+    debug(message: string) {
+        this.messages.push({ context: this, level: "debug", message })
+    }
+}
+
+export type ConversionMsgLevel = "debug" | "information" | "warning" | "error"
+export interface ConversionMessage {
+    context: ConversionContext
+    message: string
+    level: ConversionMsgLevel
 }
 
 export abstract class Conversion<TIn, TOut> {
@@ -19,57 +133,32 @@ export abstract class Conversion<TIn, TOut> {
         this.name = name
     }
 
-    public static strict<T>(fixed: {
-        errors?: string[]
-        warnings?: string[]
-        information?: string[]
-        result?: T
-    }): T {
-        fixed.information?.forEach((i) => console.log("    ", i))
-        const yellow = (s) => "\x1b[33m" + s + "\x1b[0m"
-        const red = (s) => "\x1b[31m" + s + "\x1b[0m"
-        fixed.warnings?.forEach((w) => console.warn(red(`<!> `), yellow(w)))
-
-        if (fixed?.errors !== undefined && fixed?.errors?.length > 0) {
-            fixed.errors?.forEach((e) => console.error(red(`ERR ` + e)))
+    public convertStrict(json: TIn, context?: ConversionContext): TOut {
+        context ??= ConversionContext.construct([], [])
+        context = context.inOperation(this.name)
+        const fixed = this.convert(json, context)
+        for (const msg of context.messages) {
+            if (msg.level === "debug") {
+                continue
+            }
+            ConversionContext.print(msg)
+        }
+        if (context.hasErrors()) {
             throw "Detected one or more errors, stopping now"
         }
-
-        return fixed.result
-    }
-
-    public convertStrict(json: TIn, context: string): TOut {
-        const fixed = this.convert(json, context)
-        return DesugaringStep.strict(fixed)
-    }
-
-    public convertJoin(
-        json: TIn,
-        context: string,
-        errors: string[],
-        warnings?: string[],
-        information?: string[]
-    ): TOut {
-        const fixed = this.convert(json, context)
-        errors?.push(...(fixed.errors ?? []))
-        warnings?.push(...(fixed.warnings ?? []))
-        information?.push(...(fixed.information ?? []))
-        return fixed.result
+        return fixed
     }
 
     public andThenF<X>(f: (tout: TOut) => X): Conversion<TIn, X> {
         return new Pipe(this, new Pure(f))
     }
 
-    abstract convert(
-        json: TIn,
-        context: string
-    ): { result: TOut; errors?: string[]; warnings?: string[]; information?: string[] }
+    public abstract convert(json: TIn, context: ConversionContext): TOut
 }
 
 export abstract class DesugaringStep<T> extends Conversion<T, T> {}
 
-class Pipe<TIn, TInter, TOut> extends Conversion<TIn, TOut> {
+export class Pipe<TIn, TInter, TOut> extends Conversion<TIn, TOut> {
     private readonly _step0: Conversion<TIn, TInter>
     private readonly _step1: Conversion<TInter, TOut>
 
@@ -79,33 +168,13 @@ class Pipe<TIn, TInter, TOut> extends Conversion<TIn, TOut> {
         this._step1 = step1
     }
 
-    convert(
-        json: TIn,
-        context: string
-    ): { result: TOut; errors?: string[]; warnings?: string[]; information?: string[] } {
-        const r0 = this._step0.convert(json, context)
-        const { result, errors, information, warnings } = r0
-        if (result === undefined && errors.length > 0) {
-            return {
-                ...r0,
-                result: undefined,
-            }
-        }
-
-        const r = this._step1.convert(result, context)
-        Utils.PushList(errors, r.errors)
-        Utils.PushList(warnings, r.warnings)
-        Utils.PushList(information, r.information)
-        return {
-            result: r.result,
-            errors,
-            warnings,
-            information,
-        }
+    convert(json: TIn, context: ConversionContext): TOut {
+        const r0 = this._step0.convert(json, context.inOperation(this._step0.name))
+        return this._step1.convert(r0, context.inOperation(this._step1.name))
     }
 }
 
-class Pure<TIn, TOut> extends Conversion<TIn, TOut> {
+export class Pure<TIn, TOut> extends Conversion<TIn, TOut> {
     private readonly _f: (t: TIn) => TOut
 
     constructor(f: (t: TIn) => TOut) {
@@ -113,51 +182,46 @@ class Pure<TIn, TOut> extends Conversion<TIn, TOut> {
         this._f = f
     }
 
-    convert(
-        json: TIn,
-        context: string
-    ): { result: TOut; errors?: string[]; warnings?: string[]; information?: string[] } {
-        return { result: this._f(json) }
+    convert(json: TIn, context: ConversionContext): TOut {
+        return this._f(json)
     }
 }
 
 export class Each<X, Y> extends Conversion<X[], Y[]> {
     private readonly _step: Conversion<X, Y>
+    private readonly _msg: string
 
-    constructor(step: Conversion<X, Y>) {
+    constructor(step: Conversion<X, Y>, msg?: string) {
         super(
             "Applies the given step on every element of the list",
             [],
             "OnEach(" + step.name + ")"
         )
         this._step = step
+        this._msg = msg
     }
 
-    convert(
-        values: X[],
-        context: string
-    ): { result: Y[]; errors?: string[]; warnings?: string[]; information?: string[] } {
+    convert(values: X[], context: ConversionContext): Y[] {
         if (values === undefined || values === null) {
-            return { result: undefined }
+            return <undefined | null>values
         }
-        const information: string[] = []
-        const warnings: string[] = []
-        const errors: string[] = []
         const step = this._step
         const result: Y[] = []
+        const c = context.inOperation("each")
         for (let i = 0; i < values.length; i++) {
-            const r = step.convert(values[i], context + "[" + i + "]")
-            Utils.PushList(information, r.information)
-            Utils.PushList(warnings, r.warnings)
-            Utils.PushList(errors, r.errors)
-            result.push(r.result)
+            if (this._msg) {
+                ScriptUtils.erasableLog(
+                    this._msg,
+                    `: ${i + 1}/${values.length}`,
+                    values[i]?.["id"] !== undefined ? values[i]?.["id"] : ""
+                )
+            }
+            const context_ = c.enter(i - 1)
+            const r = step.convert(values[i], context_)
+            result.push(r)
         }
-        return {
-            information,
-            errors,
-            warnings,
-            result,
-        }
+        ScriptUtils.erasableLog(this._msg)
+        return result
     }
 }
 
@@ -179,23 +243,17 @@ export class On<P, T> extends DesugaringStep<T> {
         this.key = key
     }
 
-    convert(
-        json: T,
-        context: string
-    ): { result: T; errors?: string[]; warnings?: string[]; information?: string[] } {
-        json = { ...json }
-        const step = this.step(json)
+    convert(json: T, context: ConversionContext): T {
         const key = this.key
         const value: P = json[key]
         if (value === undefined || value === null) {
-            return { result: json }
+            return json
         }
-        const r = step.convert(value, context + "." + key)
-        json[key] = r.result
-        return {
-            ...r,
-            result: json,
-        }
+
+        json = { ...json }
+        const step = this.step(json)
+        json[key] = step.convert(value, context.enter(key).inOperation("on[" + key + "]"))
+        return json
     }
 }
 
@@ -204,13 +262,8 @@ export class Pass<T> extends Conversion<T, T> {
         super(message ?? "Does nothing, often to swap out steps in testing", [], "Pass")
     }
 
-    convert(
-        json: T,
-        context: string
-    ): { result: T; errors?: string[]; warnings?: string[]; information?: string[] } {
-        return {
-            result: json,
-        }
+    convert(json: T, context: ConversionContext): T {
+        return json
     }
 }
 
@@ -226,25 +279,13 @@ export class Concat<X, T> extends Conversion<X[], T[]> {
         this._step = step
     }
 
-    convert(
-        values: X[],
-        context: string
-    ): { result: T[]; errors?: string[]; warnings?: string[]; information?: string[] } {
+    convert(values: X[], context: ConversionContext): T[] {
         if (values === undefined || values === null) {
             // Move on - nothing to see here!
-            return {
-                result: undefined,
-            }
+            return <undefined | null>values
         }
-        const r = new Each(this._step).convert(values, context)
-        const vals: T[][] = r.result
-
-        const flattened: T[] = [].concat(...vals)
-
-        return {
-            ...r,
-            result: flattened,
-        }
+        const vals: T[][] = new Each(this._step).convert(values, context.inOperation("concat"))
+        return [].concat(...vals)
     }
 }
 
@@ -260,15 +301,12 @@ export class FirstOf<T, X> extends Conversion<T, X> {
         this._conversion = conversion
     }
 
-    convert(
-        json: T,
-        context: string
-    ): { result: X; errors?: string[]; warnings?: string[]; information?: string[] } {
-        const reslt = this._conversion.convert(json, context)
-        return {
-            ...reslt,
-            result: reslt.result[0],
+    convert(json: T, context: ConversionContext): X {
+        const values = this._conversion.convert(json, context.inOperation("firstOf"))
+        if (values.length === 0) {
+            return undefined
         }
+        return values[0]
     }
 }
 
@@ -281,43 +319,26 @@ export class Fuse<T> extends DesugaringStep<T> {
                 "This fused pipeline of the following steps: " +
                 steps.map((s) => s.name).join(", "),
             Utils.Dedup([].concat(...steps.map((step) => step.modifiedAttributes))),
-            "Fuse of " + steps.map((s) => s.name).join(", ")
+            "Fuse(" + steps.map((s) => s.name).join(", ") + ")"
         )
         this.steps = Utils.NoNull(steps)
     }
 
-    convert(
-        json: T,
-        context: string
-    ): { result: T; errors: string[]; warnings: string[]; information: string[] } {
-        const errors = []
-        const warnings = []
-        const information = []
+    convert(json: T, context: ConversionContext): T {
         for (let i = 0; i < this.steps.length; i++) {
             const step = this.steps[i]
             try {
-                let r = step.convert(json, "While running step " + step.name + ": " + context)
-                if (r.result["tagRenderings"]?.some((tr) => tr === undefined)) {
-                    throw step.name + " introduced an undefined tagRendering"
-                }
-                errors.push(...(r.errors ?? []))
-                warnings.push(...(r.warnings ?? []))
-                information.push(...(r.information ?? []))
-                json = r.result
-                if (errors.length > 0) {
+                const r = step.convert(json, context.inOperation(step.name))
+                if (r === undefined || r === null) {
                     break
                 }
+                json = r
             } catch (e) {
                 console.error("Step " + step.name + " failed due to ", e, e.stack)
                 throw e
             }
         }
-        return {
-            result: json,
-            errors,
-            warnings,
-            information,
-        }
+        return json
     }
 }
 
@@ -333,14 +354,15 @@ export class SetDefault<T> extends DesugaringStep<T> {
         this._overrideEmptyString = overrideEmptyString
     }
 
-    convert(json: T, context: string): { result: T } {
+    convert(json: T, context: ConversionContext): T {
+        if (json === undefined) {
+            return undefined
+        }
         if (json[this.key] === undefined || (json[this.key] === "" && this._overrideEmptyString)) {
             json = { ...json }
             json[this.key] = this.value
         }
 
-        return {
-            result: json,
-        }
+        return json
     }
 }

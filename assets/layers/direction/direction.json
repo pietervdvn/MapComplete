@@ -35,17 +35,24 @@
   "tagRenderings": [],
   "stroke": "0",
   "presets": [],
-  "mapRendering": [
+  "pointRendering": [
     {
-      "icon": "direction_gradient:var(--catch-detail-color)",
       "iconSize": "200,200",
       "location": [
         "point",
         "centroid"
       ],
       "rotation": "{_direction:numerical}deg",
-      "anchor": "center"
-    },
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "direction_gradient",
+          "color": "var(--catch-detail-color)"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
     {
       "color": "--catch-detail-color"
     }

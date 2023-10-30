@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/climbing/climbing_gym.svg' height="100px"> 
+
 
 A climbing gym
 

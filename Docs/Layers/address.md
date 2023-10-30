@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/address/housenumber_blank.svg' height="100px"> 
+
 
 Addresses
 

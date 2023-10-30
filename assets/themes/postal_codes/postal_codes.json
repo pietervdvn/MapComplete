@@ -129,22 +129,11 @@
           ]
         }
       },
-      "mapRendering": [
-        {
-          "label": "<div class='text-xl bg-white rounded-full pl-2 pr-2 break-normal'>{postal_code}</div>",
-          "location": [
-            "point",
-            "centroid"
-          ]
-        },
-        {
-          "color": "#00f",
-          "width": "4",
-          "fill": "no",
-          "dashArray": "8 8"
-        }
-      ],
-      "isShown": "_country=be"
+      "isShown": "_country=be",
+      "pointRendering": [],
+      "lineRendering": [
+        {}
+      ]
     },
     {
       "id": "wrong_postal_code",
@@ -157,11 +146,9 @@
         }
       },
       "title": "Boundary relation with addr:postcode={addr:postcode}",
-      "mapRendering": [
-        {
-          "color": "#f00",
-          "width": 1
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -215,18 +202,11 @@
           ]
         }
       },
-      "mapRendering": [
-        {
-          "icon": "./assets/themes/postal_codes/townhall.svg",
-          "iconSize": "40,40",
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "anchor": "center"
-        }
-      ],
-      "isShown": "_country=be"
+      "isShown": "_country=be",
+      "pointRendering": [],
+      "lineRendering": [
+        {}
+      ]
     }
   ]
 }

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/square:white;./assets/layers/parcel_lockers/parcel_lockers.svg' height="100px"> 
+
 
 Layer showing parcel lockers for collecting and sending parcels.
 

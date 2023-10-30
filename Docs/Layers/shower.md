@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/shower/shower.svg' height="100px"> 
+
 
 A layer showing (public) showers
 

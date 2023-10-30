@@ -127,16 +127,26 @@
       }
     }
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
-      "icon": "circle:white;./assets/layers/hospital/hospital.svg",
       "iconSize": "40,40",
       "location": [
         "point",
         "centroid"
       ],
-      "anchor": "center"
-    },
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/hospital/hospital.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#fcd862",
       "width": 1

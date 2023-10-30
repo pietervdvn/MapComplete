@@ -373,46 +373,52 @@
     "enableRelocation": false,
     "enableImproveAccuraccy": true
   },
-  "mapRendering": [
+  "pointRendering": [
     {
-      "icon": {
-        "render": "./assets/layers/map/map.svg",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "map_source=OpenStreetMap",
-                "map_source:attribution=sticker"
-              ]
-            },
-            "then": "./assets/layers/map/map-stickered.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "map_source=OpenStreetMap",
-                "map_source:attribution=yes"
-              ]
-            },
-            "then": "./assets/layers/map/osm-logo-white-bg.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "map_source=OpenStreetMap"
-              ]
-            },
-            "then": "./assets/layers/map/osm-logo-buggy-attr.svg"
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/map/map.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "map_source=OpenStreetMap",
+                    "map_source:attribution=sticker"
+                  ]
+                },
+                "then": "./assets/layers/map/map-stickered.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "map_source=OpenStreetMap",
+                    "map_source:attribution=yes"
+                  ]
+                },
+                "then": "./assets/layers/map/osm-logo-white-bg.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "map_source=OpenStreetMap"
+                  ]
+                },
+                "then": "./assets/layers/map/osm-logo-buggy-attr.svg"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "iconSize": "50,50",
       "location": [
         "point",
         "centroid"
       ],
       "anchor": "center"
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#00f",
       "width": "8"

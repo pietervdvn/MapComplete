@@ -148,7 +148,8 @@
             "fixme=freeform shop key used, to be reviewed"
           ]
         },
-        "condition": "craft="
+        "condition": "craft=",
+        "invalidValues": "shop=yes"
       }
     },
     {
@@ -475,74 +476,6 @@
     ]
   },
   "allowMove": true,
-  "mapRendering": [
-    {
-      "icon": {
-        "builtin": "id_presets.shop_rendering",
-        "override": {
-          "render": "./assets/layers/id_presets/maki-shop.svg",
-          "+mappings": [
-            {
-              "#": "Layer icon rendering",
-              "if": "id=",
-              "then": "circle:white;./assets/layers/id_presets/maki-shop.svg"
-            },
-            {
-              "if": {
-                "or": [
-                  "shop=vacant",
-                  "shop=disused",
-                  "disused:shop=yes"
-                ]
-              },
-              "then": "circle:white;./assets/layers/shops/shop-disused.svg"
-            },
-            {
-              "if": "craft=shoemaker",
-              "then": "circle:white;./assets/layers/id_presets/temaki-hammer_shoe.svg"
-            },
-            {
-              "if": "craft=key_cutter",
-              "then": "circle:white;./assets/layers/id_presets/fas-key.svg"
-            }
-          ]
-        }
-      },
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        },
-        {
-          "if": {
-            "or": [
-              "organic=yes",
-              "organic=only"
-            ]
-          },
-          "then": "./assets/layers/food/organic.svg"
-        }
-      ],
-      "label": {
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
-          }
-        ]
-      },
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#00f",
-      "width": "8"
-    }
-  ],
   "filter": [
     "open_now",
     {
@@ -611,15 +544,88 @@
             ]
           }
         }
-      ],
-      "condition": {
-        "and": [
-          "shop!=second_hand"
-        ]
-      }
+      ]
     },
     "sugar_free",
     "gluten_free",
     "lactose_free"
+  ],
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "builtin": "id_presets.shop_rendering",
+            "override": {
+              "render": "./assets/layers/id_presets/maki-shop.svg",
+              "+mappings": [
+                {
+                  "#": "Layer icon rendering",
+                  "if": "id=",
+                  "then": "./assets/layers/id_presets/maki-shop.svg"
+                },
+                {
+                  "if": {
+                    "or": [
+                      "shop=vacant",
+                      "shop=disused",
+                      "disused:shop=yes"
+                    ]
+                  },
+                  "then": "./assets/layers/shops/shop-disused.svg"
+                },
+                {
+                  "if": "craft=shoemaker",
+                  "then": "./assets/layers/id_presets/temaki-hammer_shoe.svg"
+                },
+                {
+                  "if": "craft=key_cutter",
+                  "then": "./assets/layers/id_presets/fas-key.svg"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        },
+        {
+          "if": {
+            "or": [
+              "organic=yes",
+              "organic=only"
+            ]
+          },
+          "then": "./assets/layers/food/organic.svg"
+        }
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      },
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f",
+      "width": "8"
+    }
   ]
 }

@@ -308,9 +308,6 @@ export class RegexTag extends TagsFilter {
             if (typeof this.value === "string") {
                 return [{ k: this.key, v: this.value }]
             }
-            if (this.value.toString() != "/^..*$/" || this.value.toString() != ".+") {
-                console.warn("Regex value in tag; using wildcard:", this.key, this.value)
-            }
             return [{ k: this.key, v: undefined }]
         }
         console.error("Cannot export regex tag to asChange; ", this.key, this.value)

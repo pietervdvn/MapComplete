@@ -1341,6 +1341,32 @@
         "description": "Troba màquines expenedores per a tot",
         "title": "Màquines expenedores"
     },
+    "walkingnodes": {
+        "layers": {
+            "0": {
+                "name": "enllaços node a node",
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "override": {
+                            "question": "Quan es va comprovar per última vegada aquest enllaç node a node presencialment?",
+                            "render": "Aquest enllaç node a node es va sondejar per última vegada el {survey:date}"
+                        }
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Enllaç node a node <strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "Enllaç node a node"
+                }
+            },
+            "1": {
+                "name": "nodes"
+            }
+        }
+    },
     "walls_and_buildings": {
         "description": "Capa construïda especial que proporciona totes les parets i edificis. Aquesta capa és útil als predefinits per a objectes que es poden col·locar a les parets (p. ex. DEA, bústies de correus, entrades, adreces, càmeres de vigilància, ...). Aquesta capa és invisible per defecte i no es pot activar per l'usuari.",
         "title": "Murs i edificis"

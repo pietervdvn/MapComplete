@@ -381,31 +381,86 @@
     },
     "neededChangesets": 1
   },
-  "mapRendering": [
+  "description": {
+    "en": "A layer showing (public) toilets located at different places.",
+    "de": "Eine Ebene mit (öffentlichen) Toiletten an verschiedenen Orten.",
+    "nl": "Een laag die (publiek toegankelijke) toiletten toont in verschillende andere voorzieningen.",
+    "ca": "Una capa que mostra banys (públics) ubicats en diferents llocs.",
+    "cs": "Vrstva zobrazující (veřejné) toalety umístěné na různých místech."
+  },
+  "units": [
     {
-      "icon": {
-        "render": "circle:white;./assets/layers/toilet/toilets.svg",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                "toilets:wheelchair=yes",
-                "toilets:wheelchair=designated"
-              ]
-            },
-            "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
-          },
-          {
-            "if": {
-              "or": [
-                "toilets:position=urinals",
-                "toilets:position=urinal"
-              ]
-            },
-            "then": "./assets/layers/toilet/urinal.svg"
+      "appliesToKey": [
+        "toilets:door:width"
+      ],
+      "applicableUnits": [
+        {
+          "canonicalDenomination": "m",
+          "alternativeDenomination": [
+            "meter"
+          ],
+          "human": {
+            "en": "meter",
+            "nl": "meter",
+            "fr": "mètre",
+            "de": "Meter",
+            "da": "meter",
+            "ca": "metre",
+            "cs": "metr"
           }
-        ]
-      },
+        },
+        {
+          "canonicalDenomination": "cm",
+          "alternativeDenomination": [
+            "centimeter",
+            "cms"
+          ],
+          "human": {
+            "en": "centimeter",
+            "nl": "centimeter",
+            "fr": "centimètre",
+            "de": "Zentimeter",
+            "da": "centimeter",
+            "ca": "centimetre",
+            "cs": "centimetr"
+          }
+        }
+      ]
+    }
+  ],
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/toilet/toilets.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "toilets:wheelchair=yes",
+                    "toilets:wheelchair=designated"
+                  ]
+                },
+                "then": "./assets/layers/toilet/wheelchair.svg"
+              },
+              {
+                "if": {
+                  "or": [
+                    "toilets:position=urinals",
+                    "toilets:position=urinal"
+                  ]
+                },
+                "then": "./assets/layers/toilet/urinal.svg"
+              }
+            ]
+          }
+        }
+      ],
       "iconBadges": [
         {
           "if": "opening_hours~*",
@@ -462,51 +517,5 @@
       ]
     }
   ],
-  "description": {
-    "en": "A layer showing (public) toilets located at different places.",
-    "de": "Eine Ebene mit (öffentlichen) Toiletten an verschiedenen Orten.",
-    "nl": "Een laag die (publiek toegankelijke) toiletten toont in verschillende andere voorzieningen.",
-    "ca": "Una capa que mostra banys (públics) ubicats en diferents llocs.",
-    "cs": "Vrstva zobrazující (veřejné) toalety umístěné na různých místech."
-  },
-  "units": [
-    {
-      "appliesToKey": [
-        "toilets:door:width"
-      ],
-      "applicableUnits": [
-        {
-          "canonicalDenomination": "m",
-          "alternativeDenomination": [
-            "meter"
-          ],
-          "human": {
-            "en": "meter",
-            "nl": "meter",
-            "fr": "mètre",
-            "de": "Meter",
-            "da": "meter",
-            "ca": "metre",
-            "cs": "metr"
-          }
-        },
-        {
-          "canonicalDenomination": "cm",
-          "alternativeDenomination": [
-            "centimeter",
-            "cms"
-          ],
-          "human": {
-            "en": "centimeter",
-            "nl": "centimeter",
-            "fr": "centimètre",
-            "de": "Zentimeter",
-            "da": "centimeter",
-            "ca": "centimetre",
-            "cs": "centimetr"
-          }
-        }
-      ]
-    }
-  ]
+  "lineRendering": []
 }

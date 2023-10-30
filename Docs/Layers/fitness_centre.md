@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/fitness_centre/gym.svg' height="100px"> 
+
 
 Layer showing fitness centres
 

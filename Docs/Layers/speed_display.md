@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/speed_display/speed_display.svg' height="100px"> 
+
 
 Layer showing speed displays that alert drivers of their speed.
 
