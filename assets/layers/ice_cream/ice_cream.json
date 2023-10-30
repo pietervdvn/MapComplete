@@ -1,5 +1,7 @@
 {
-  "credits": ["Pieter Vander Vennet"],
+  "credits": [
+    "Pieter Vander Vennet"
+  ],
   "pointRendering": [
     {
       "location": [

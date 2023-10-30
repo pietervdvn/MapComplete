@@ -236,5 +236,12 @@
   ],
   "calculatedTags": [
     "_numeric_id=feat.properties.id.split('/')[1]"
-  ]
+  ],
+  "cs": {
+    "0": {
+      "color": {
+        "render": "#ff0000"
+      }
+    }
+  }
 }

@@ -5382,9 +5382,7 @@
                 "title": "rozcestník"
             }
         },
-        "title": {
-            "render": "Rozcestník"
-        }
+        "title": "Rozcestník"
     },
     "hackerspace": {
         "description": "Hackerspace",
@@ -9528,13 +9526,6 @@
     },
     "transit_routes": {
         "description": "Vrstva zobrazující autobusové linky",
-        "mapRendering": {
-            "0": {
-                "color": {
-                    "render": "#ff0000"
-                }
-            }
-        },
         "name": "Autobusové linky",
         "tagRenderings": {
             "colour": {

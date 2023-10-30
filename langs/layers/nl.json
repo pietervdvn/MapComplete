@@ -5195,6 +5195,14 @@
             }
         }
     },
+    "ice_cream": {
+        "tagRenderings": {
+            "1": {
+                "question": "Wat is de naam van dit ijssalon?",
+                "render": "Dit ijssalon heet <b>{name}</b>"
+            }
+        }
+    },
     "indoors": {
         "description": "Een basis voor indoor-navigatie: toont binnenruimtes",
         "name": "Binnenruimtes",

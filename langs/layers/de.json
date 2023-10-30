@@ -5391,9 +5391,7 @@
                 "title": "ein Wegweiser"
             }
         },
-        "title": {
-            "render": "Wegweiser"
-        }
+        "title": "Wegweiser"
     },
     "hackerspace": {
         "description": "Hackerspace",

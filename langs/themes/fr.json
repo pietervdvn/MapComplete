@@ -1284,6 +1284,32 @@
         "description": "Trouver tous les distributeurs",
         "title": "Distributeurs"
     },
+    "walkingnodes": {
+        "layers": {
+            "0": {
+                "name": "liens noeud à noeud",
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "override": {
+                            "question": "Quand cette liaison de nœud à nœud a-t-elle été contrôlée sur le terrain pour la dernière fois ?",
+                            "render": "Cette lien de nœud à nœud a été vérifié sur le terrain le {survey:date}"
+                        }
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "lien noeud à noeud <strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "lien noeud à noeud"
+                }
+            },
+            "1": {
+                "name": "noeuds"
+            }
+        }
+    },
     "walls_and_buildings": {
         "description": "Couche intégrée spéciale fournissant tous les murs et bâtiments. Cette couche est utile dans les préréglages pour les objets qui peuvent être placés contre les murs (par exemple, les DEA, les boîtes aux lettres, les entrées, les adresses, les caméras de surveillance, …). Ce calque est invisible par défaut et non inchangeable par l'utilisateur.",
         "title": "Murs et bâtiments"

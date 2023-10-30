@@ -5426,10 +5426,33 @@
     },
     "guidepost": {
         "description": "Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations",
+        "name": "Guideposts",
         "presets": {
             "0": {
                 "description": "A guidepost (also known as fingerpost) is often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations",
                 "title": "a guidepost"
+            }
+        },
+        "tagRenderings": {
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "This guidepost shows bicycle routes"
+                    },
+                    "1": {
+                        "then": "This guidepost shows hiking routes"
+                    },
+                    "2": {
+                        "then": "This guidepost shows mountain bike routes"
+                    },
+                    "3": {
+                        "then": "This guidepost shows horse riding routes"
+                    },
+                    "4": {
+                        "then": "This guidepost shows ski routes"
+                    }
+                },
+                "question": "What kind of routes are shown on this guidepost?"
             }
         },
         "title": "Guideposts"
@@ -5686,6 +5709,30 @@
                     }
                 }
             }
+        }
+    },
+    "ice_cream": {
+        "description": "A place where ice cream is sold over the counter",
+        "name": "Ice cream parlors",
+        "presets": {
+            "0": {
+                "description": "A shop where one can buy only icecream and related items. Ice cream is normally hand-scooped.",
+                "title": "an ice cream parlor"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "What is the name of this ice cream parlor?",
+                "render": "This ice cream parlor is named <b>{name}</b>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Ice cream parlor"
         }
     },
     "icons": {
@@ -8220,6 +8267,41 @@
             "render": "Recycling facility"
         }
     },
+    "route_marker": {
+        "description": "Route markers are small markers often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route.",
+        "name": "Route markers",
+        "presets": {
+            "0": {
+                "description": "A route marker is a small marker often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route.",
+                "title": "a route marker"
+            }
+        },
+        "tagRenderings": {
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a route marker for a bicycle route."
+                    },
+                    "1": {
+                        "then": "This is a route marker for a hiking route."
+                    },
+                    "2": {
+                        "then": "This is a route marker for a mountain bike route."
+                    },
+                    "3": {
+                        "then": "This is a route marker for a horse riding route."
+                    },
+                    "4": {
+                        "then": "This is a route marker for a ski route."
+                    }
+                },
+                "question": "For what kind of route is this marker?"
+            }
+        },
+        "title": {
+            "render": "Route marker"
+        }
+    },
     "school": {
         "name": "Primary and secondary schools",
         "presets": {
@@ -8428,6 +8510,19 @@
                 "override": {
                     "question": "What kind of shop is this?",
                     "render": "This is a {shop}"
+                }
+            },
+            "key_cutter": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop is also specialized in key cutting"
+                    },
+                    "1": {
+                        "then": "This shop offers key cutting as a service"
+                    },
+                    "2": {
+                        "then": "This shops does not offer key cutting as a service"
+                    }
                 }
             },
             "organic": {

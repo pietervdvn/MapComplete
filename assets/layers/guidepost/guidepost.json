@@ -1,10 +1,11 @@
 {
   "id": "guidepost",
-    "title": {
-        "en": "Guidepost",
-        "cs": "Rozcestník",
-        "de": "Wegweiser"
-    },
+  "title": {
+    "en": "Guideposts",
+    "cs": "Rozcestník",
+    "de": "Wegweiser",
+    "render": "Rozcestník"
+  },
   "name": {
     "en": "Guideposts",
     "cs": "Rozcestníky",

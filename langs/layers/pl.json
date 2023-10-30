@@ -1605,6 +1605,7 @@
         "name": "Restauracje i fast-foody",
         "presets": {
             "0": {
+                "description": "Warstwa przedstawiająca restauracje i obiekty typu fast-food (ze specjalnym renderowaniem dla frytek)",
                 "title": "restauracja"
             }
         },

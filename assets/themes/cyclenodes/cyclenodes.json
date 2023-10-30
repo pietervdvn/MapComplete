@@ -106,10 +106,12 @@
         },
         "export_as_gpx"
       ],
-      "lineRendering":[{
-        "width": "4",
-        "color": "#00a703"
-      }]
+      "lineRendering": [
+        {
+          "width": "4",
+          "color": "#00a703"
+        }
+      ]
     },
     {
       "id": "node",
