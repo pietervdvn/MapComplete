@@ -5,14 +5,16 @@
     "nl": "Verkoopautomaten",
     "de": "Verkaufsautomaten",
     "fr": "Distributeurs",
-    "ca": "Màquines expenedores"
+    "ca": "Màquines expenedores",
+    "cs": "Prodejní automaty"
   },
   "description": {
     "en": "Layer showing vending machines",
     "nl": "Laag met verkoopautomaten",
     "de": "Ebene mit Verkaufsautomaten",
     "fr": "Couche affichant les distributeurs",
-    "ca": "Capa que mostra màquines expenedores"
+    "ca": "Capa que mostra màquines expenedores",
+    "cs": "Vrstva zobrazující prodejní automaty"
   },
   "source": {
     "osmTags": {
@@ -65,7 +67,8 @@
         "nl": "Wat verkoopt deze verkoopautomaat?",
         "de": "Was wird in diesem Automaten verkauft?",
         "fr": "Que vent ce distributeur ?",
-        "ca": "Que ven aquesta màquina expenedora?"
+        "ca": "Que ven aquesta màquina expenedora?",
+        "cs": "Co tento automat prodává?"
       },
       "freeform": {
         "key": "vending",
@@ -89,7 +92,8 @@
             "nl": "Dranken worden verkocht",
             "de": "Getränke werden verkauft",
             "fr": "Vent des boissons",
-            "ca": "Es venen begudes"
+            "ca": "Es venen begudes",
+            "cs": "Prodává nápoje"
           },
           "icon": "./assets/layers/id_presets/temaki-bottles.svg"
         },
@@ -100,7 +104,8 @@
             "nl": "Snoep wordt verkocht",
             "de": "Süßigkeiten werden verkauft",
             "fr": "Vent des confiseries",
-            "ca": "Es venen llaminadures"
+            "ca": "Es venen llaminadures",
+            "cs": "Prodává sladkosti"
           },
           "icon": "./assets/layers/id_presets/maki-confectionery.svg"
         },
@@ -111,7 +116,8 @@
             "nl": "Eten wordt verkocht",
             "de": "Lebensmittel werden verkauft",
             "fr": "Vent de la nourriture",
-            "ca": "Es ven menjar"
+            "ca": "Es ven menjar",
+            "cs": "Prodává jídlo"
           },
           "icon": "./assets/layers/vending_machine/utensils.svg"
         },
@@ -122,7 +128,8 @@
             "nl": "Sigaretten worden verkocht",
             "de": "Zigaretten werden verkauft",
             "fr": "Vent des cigarettes",
-            "ca": "Es ven tabaco"
+            "ca": "Es ven tabaco",
+            "cs": "Prodává cigarety"
           },
           "icon": "./assets/layers/vending_machine/smoking.svg"
         },
@@ -133,7 +140,8 @@
             "nl": "Condooms worden verkocht",
             "de": "Kondome werden verkauft",
             "fr": "Vent des préservatifs",
-            "ca": "Es venen preservatius"
+            "ca": "Es venen preservatius",
+            "cs": "Prodává kondomy"
           },
           "icon": "./assets/layers/vending_machine/condom.svg"
         },
@@ -144,7 +152,8 @@
             "nl": "Koffie wordt verkocht",
             "de": "Kaffee wird verkauft",
             "fr": "Vent du café",
-            "ca": "Es ven cafè"
+            "ca": "Es ven cafè",
+            "cs": "Prodává kafe"
           },
           "icon": "./assets/layers/vending_machine/mug-saucer.svg"
         },
@@ -155,7 +164,8 @@
             "nl": "Drinkwater wordt verkocht",
             "de": "Trinkwasser wird verkauft",
             "fr": "Vent de l'eau",
-            "ca": "Es ven aigua"
+            "ca": "Es ven aigua",
+            "cs": "Prodává pitnou vodu"
           },
           "icon": "./assets/layers/id_presets/temaki-water_bottle.svg"
         },
@@ -166,7 +176,8 @@
             "nl": "Kranten worden verkocht",
             "de": "Zeitungen werden verkauft",
             "fr": "Vent des journaux",
-            "ca": "Es venen diaris"
+            "ca": "Es venen diaris",
+            "cs": "Prodává noviny"
           },
           "icon": "./assets/layers/id_presets/fas-newspaper.svg"
         },
@@ -177,7 +188,8 @@
             "nl": "Binnenbanden voor fietsen worden verkocht",
             "de": "Fahrradschläuche werden verkauft",
             "fr": "Vent des chambres à air pour vélo",
-            "ca": "Es venen càmeres interiors de bicicletes"
+            "ca": "Es venen càmeres interiors de bicicletes",
+            "cs": "Prodává duše na kola"
           }
         },
         {
@@ -187,7 +199,8 @@
             "nl": "Melk wordt verkocht",
             "de": "Milch wird verkauft",
             "fr": "Vent du lait",
-            "ca": "Es ven llet"
+            "ca": "Es ven llet",
+            "cs": "Prodává mléko"
           },
           "icon": "./assets/layers/vending_machine/cow.svg"
         },
@@ -198,7 +211,8 @@
             "nl": "Brood wordt verkocht",
             "de": "Brot wird verkauft",
             "fr": "Vent du pain",
-            "ca": "Es ven pa"
+            "ca": "Es ven pa",
+            "cs": "Prodává chléb"
           },
           "icon": "./assets/layers/id_presets/maki-bakery.svg"
         },
@@ -209,7 +223,8 @@
             "nl": "Eieren worden verkocht",
             "de": "Eier werden verkauft",
             "fr": "Vent des œufs",
-            "ca": "Es venen ous"
+            "ca": "Es venen ous",
+            "cs": "Prodává vejce"
           },
           "icon": "./assets/layers/vending_machine/egg.svg"
         },
@@ -220,7 +235,8 @@
             "nl": "Kaas wordt verkocht",
             "de": "Käse wird verkauft",
             "fr": "Vent du fromage",
-            "ca": "Es ven formatge"
+            "ca": "Es ven formatge",
+            "cs": "Prodává sýr"
           },
           "icon": "./assets/layers/id_presets/fas-cheese.svg"
         },
@@ -231,7 +247,8 @@
             "nl": "Honing wordt verkocht",
             "de": "Honig wird verkauft",
             "fr": "Vent du miel",
-            "ca": "Es ven mel"
+            "ca": "Es ven mel",
+            "cs": "Prodává med"
           },
           "icon": "./assets/layers/vending_machine/honey.svg"
         },
@@ -242,7 +259,8 @@
             "nl": "Aardappelen worden verkocht",
             "de": "Kartoffeln werden verkauft",
             "fr": "Vent des pommes de terre",
-            "ca": "Es venen papes"
+            "ca": "Es venen papes",
+            "cs": "Prodává brambory"
           },
           "icon": "./assets/layers/vending_machine/potato.svg"
         },
@@ -252,7 +270,8 @@
             "en": "Meat is sold",
             "nl": "Vlees wordt verkocht",
             "ca": "Es venen productes carnis",
-            "de": "Fleisch wird verkauft"
+            "de": "Fleisch wird verkauft",
+            "cs": "Prodává maso"
           },
           "icon": "./assets/layers/id_presets/temaki-meat.svg"
         },
@@ -261,7 +280,8 @@
           "then": {
             "en": "Fruit is sold",
             "nl": "Fruit wordt verkocht",
-            "de": "Obst wird verkauft"
+            "de": "Obst wird verkauft",
+            "cs": "Prodává ovoce"
           },
           "icon": "./assets/layers/vending_machine/fruits.svg"
         },
@@ -270,7 +290,8 @@
           "then": {
             "en": "Strawberries are sold",
             "nl": "Aardbeien worden verkocht",
-            "de": "Erdbeeren werden verkauft"
+            "de": "Erdbeeren werden verkauft",
+            "cs": "Prodává jahody"
           },
           "icon": "./assets/layers/vending_machine/strawberry.svg"
         },
@@ -281,7 +302,8 @@
             "nl": "Bloemen worden verkocht",
             "de": "Blumen werden verkauft",
             "fr": "Vent des fleurs",
-            "ca": "Es venen flors"
+            "ca": "Es venen flors",
+            "cs": "Prodává květiny"
           },
           "icon": "./assets/layers/id_presets/maki-florist.svg"
         },
@@ -291,7 +313,8 @@
             "en": "Parking tickets are sold",
             "nl": "Parkeerkaarten worden verkocht",
             "de": "Parkscheine werden verkauft",
-            "ca": "Es venen tiquets d'aparcament"
+            "ca": "Es venen tiquets d'aparcament",
+            "cs": "Prodává parkovací lístky"
           },
           "icon": "./assets/layers/parking_ticket_machine/parking_tickets.svg"
         },
@@ -300,7 +323,8 @@
           "then": {
             "en": "Pressed pennies are sold",
             "ca": "Es venen cèntims premsats",
-            "de": "Souvenirmünzen werden verkauft"
+            "de": "Souvenirmünzen werden verkauft",
+            "cs": "Prodává pamětní mince/lisované"
           },
           "icon": "./assets/themes/elongated_coin/penny.svg"
         },
@@ -310,7 +334,8 @@
             "en": "Public transport tickets are sold",
             "nl": "Openbaar vervoerkaartjes worden verkocht",
             "de": "Fahrscheine werden verkauft",
-            "ca": "Es venen bitllets de transport públic"
+            "ca": "Es venen bitllets de transport públic",
+            "cs": "Prodává lístky na MHD"
           },
           "icon": "./assets/themes/stations/public_transport_tickets.svg"
         },
@@ -319,7 +344,8 @@
           "then": {
             "en": "Bicycle lights are sold",
             "nl": "Fietslampjes worden verkocht",
-            "de": "Fahrradlampen werden verkauft"
+            "de": "Fahrradlampen werden verkauft",
+            "cs": "Prodává světla na kolo"
           }
         },
         {
@@ -327,7 +353,8 @@
           "then": {
             "en": "Gloves are sold",
             "nl": "Handschoenen worden verkocht",
-            "de": "Fahrradhandschuhe werden verkauft"
+            "de": "Fahrradhandschuhe werden verkauft",
+            "cs": "Prodává rukavice"
           }
         },
         {
@@ -335,7 +362,8 @@
           "then": {
             "en": "Bicycle repair kits are sold",
             "nl": "Fietsreparatiesets worden verkocht",
-            "de": "Fahrrad-Reparaturset werden verkauft"
+            "de": "Fahrrad-Reparaturset werden verkauft",
+            "cs": "Prodává sady na opravu jízdních kol"
           }
         },
         {
@@ -343,7 +371,8 @@
           "then": {
             "en": "Bicycle pumps are sold",
             "nl": "Fietspompen worden verkocht",
-            "de": "Fahrradpumpen werden verkauft"
+            "de": "Fahrradpumpen werden verkauft",
+            "cs": "Prodává pumpy na kolo"
           }
         },
         {
@@ -351,7 +380,8 @@
           "then": {
             "en": "Bicycle locks are sold",
             "nl": "Fietssloten worden verkocht",
-            "de": "Fahrradschlösser werden verkauft"
+            "de": "Fahrradschlösser werden verkauft",
+            "cs": "Prodává zámky na kolo"
           }
         }
       ],
@@ -368,7 +398,8 @@
         "nl": "Wie beheert deze verkoopautomaat?",
         "de": "Wer betreibt diesen Verkaufsautomaten?",
         "fr": "Qui exploite ce distributeur ?",
-        "ca": "Qui opera aquesta màquina expenedora?"
+        "ca": "Qui opera aquesta màquina expenedora?",
+        "cs": "Kdo provozuje tento automat?"
       },
       "freeform": {
         "key": "operator",
@@ -377,7 +408,8 @@
           "nl": "Naam van beheerder",
           "de": "Name des Betreibers",
           "fr": "Nom de l'exploitant",
-          "ca": "Nom de l'operadora"
+          "ca": "Nom de l'operadora",
+          "cs": "Jméno provozovatele"
         }
       },
       "render": {
@@ -385,7 +417,8 @@
         "nl": "Deze verkoopautomaat wordt beheerd door {operator}",
         "de": "Dieser Verkaufsautomat wird betrieben von {operator}",
         "fr": "Ce distributeur est exploité par {operator}",
-        "ca": "{operator} gestiona aquesta màquina expenedora"
+        "ca": "{operator} gestiona aquesta màquina expenedora",
+        "cs": "Tento prodejní automat provozuje {operator}"
       }
     },
     {
@@ -395,7 +428,8 @@
         "nl": "Is deze verkoopautomaat binnen?",
         "de": "Ist der Automat in einem Gebäude untergebracht?",
         "fr": "Est-ce que ce distributeur est en intérieur ?",
-        "ca": "Aquesta màquina expenedora està a l'exterior?"
+        "ca": "Aquesta màquina expenedora està a l'exterior?",
+        "cs": "Je tento automat uvnitř?"
       },
       "mappings": [
         {
@@ -405,7 +439,8 @@
             "nl": "Deze verkoopautomaat is buiten",
             "de": "Der Automat befindet sich im Freien",
             "fr": "Ce distributeur est à l'extérieur",
-            "ca": "Aquesta màquina expenedora està a l'exterior"
+            "ca": "Aquesta màquina expenedora està a l'exterior",
+            "cs": "Tento prodejní automat je venku"
           },
           "hideInAnswer": true
         },
@@ -416,7 +451,8 @@
             "nl": "Deze verkoopautomaat is binnen",
             "de": "Der Automat befindet sich im Innenbereich",
             "fr": "Ce distributeur est à l'intérieur",
-            "ca": "Aquesta màquina expenedora està a l'interior"
+            "ca": "Aquesta màquina expenedora està a l'interior",
+            "cs": "Tento prodejní automat je uvnitř"
           }
         },
         {
@@ -426,7 +462,8 @@
             "nl": "Deze verkoopautomaat is buiten",
             "de": "Dieser Automat befindet sich im Freien",
             "fr": "Ce distributeur est à l'extérieur",
-            "ca": "Aquesta màquina expenedora està a l'exterior"
+            "ca": "Aquesta màquina expenedora està a l'exterior",
+            "cs": "Tento prodejní automat je venku"
           }
         }
       ]
@@ -438,12 +475,14 @@
         "question": {
           "en": "What is the phone number of the operator of this vending machine?",
           "ca": "Quin és el número de telèfon de l'operador d'aquesta màquina expenedora?",
-          "de": "Wie lautet die Telefonnummer des Automatenbetreibers?"
+          "de": "Wie lautet die Telefonnummer des Automatenbetreibers?",
+          "cs": "Jaké je telefonní číslo na provozovatele tohoto automatu?"
         },
         "questionHint": {
           "en": "This is the number you can call in case of problems with the vending machine",
           "ca": "Aquest és el número al qual podeu trucar en cas de problemes amb la màquina expenedora",
-          "de": "Die ist die Telefonnummer, die bei Problemen mit dem Automaten kontaktiert werden kann"
+          "de": "Die ist die Telefonnummer, die bei Problemen mit dem Automaten kontaktiert werden kann",
+          "cs": "Toto je číslo, na které můžete zavolat v případě problémů s automatem"
         }
       }
     },
@@ -459,7 +498,8 @@
         "nl": "een verkoopautomaat",
         "de": "ein Verkaufsautomat",
         "fr": "un distributeur",
-        "ca": "una màquina expenedora"
+        "ca": "una màquina expenedora",
+        "cs": "prodejní automat"
       },
       "tags": [
         "amenity=vending_machine"
@@ -748,7 +788,8 @@
             "nl": "Alle verkoopautomaten",
             "de": "Alle Verkaufsautomaten",
             "fr": "Tous les distributeurs",
-            "ca": "Totes les màquines expenedores"
+            "ca": "Totes les màquines expenedores",
+            "cs": "Všechny prodejní automaty"
           }
         },
         {
@@ -757,7 +798,8 @@
             "nl": "Verkoop van dranken",
             "de": "Verkauf von Getränken",
             "fr": "Vente de boissons",
-            "ca": "Venda de begudes"
+            "ca": "Venda de begudes",
+            "cs": "Prodej nápojů"
           },
           "osmTags": "vending~i~.*drinks.*"
         },
@@ -767,7 +809,8 @@
             "nl": "Verkoop van snoep",
             "de": "Verkauf von Süßigkeiten",
             "fr": "Ventre de confiseries",
-            "ca": "Venda de llaminadures"
+            "ca": "Venda de llaminadures",
+            "cs": "Prodej sladkostí"
           },
           "osmTags": "vending~i~.*sweets.*"
         },
@@ -777,7 +820,8 @@
             "nl": "Verkoop van eten",
             "de": "Verkauf von Lebensmitteln",
             "fr": "Ventre de nourriture",
-            "ca": "Venda de menjar"
+            "ca": "Venda de menjar",
+            "cs": "Prodej potravin"
           },
           "osmTags": "vending~i~.*food.*"
         },
@@ -787,7 +831,8 @@
             "nl": "Verkoop van sigaretten",
             "de": "Verkauf von Zigaretten",
             "fr": "Vente de cigarettes",
-            "ca": "Venda de tabaco"
+            "ca": "Venda de tabaco",
+            "cs": "Prodej cigaret"
           },
           "osmTags": "vending~i~.*cigarettes.*"
         },
@@ -797,7 +842,8 @@
             "nl": "Verkoop van condooms",
             "de": "Verkauf von Kondomen",
             "fr": "Vente de préservatifs",
-            "ca": "Venda de preservatius"
+            "ca": "Venda de preservatius",
+            "cs": "Prodej kondomů"
           },
           "osmTags": "vending~i~.*condoms.*"
         },
@@ -807,7 +853,8 @@
             "nl": "Verkoop van koffie",
             "de": "Verkauf von Kaffee",
             "fr": "Vente de café",
-            "ca": "Venda de cafè"
+            "ca": "Venda de cafè",
+            "cs": "Prodej kávy"
           },
           "osmTags": "vending~i~.*coffee.*"
         },
@@ -817,7 +864,8 @@
             "nl": "Verkoop van water",
             "de": "Verkauf von Trinkwasser",
             "fr": "Vente d'eau",
-            "ca": "Venda d'aigua"
+            "ca": "Venda d'aigua",
+            "cs": "Prodej vody"
           },
           "osmTags": "vending~i~.*water.*"
         },
@@ -827,7 +875,8 @@
             "nl": "Verkoop van kranten",
             "de": "Verkauf von Zeitungen",
             "fr": "Vente de journaux",
-            "ca": "Venda de diaris"
+            "ca": "Venda de diaris",
+            "cs": "Prodej novin"
           },
           "osmTags": "vending~i~.*newspapers.*"
         },
@@ -837,7 +886,8 @@
             "nl": "Verkoop van fietsbinnenbanden",
             "de": "Verkauf von Fahrradschläuchen",
             "fr": "Vente de chambres à air pour vélo",
-            "ca": "Venda de càmeres interiors de bicicletes"
+            "ca": "Venda de càmeres interiors de bicicletes",
+            "cs": "Prodej duší na jízdní kola"
           },
           "osmTags": "vending~i~.*bicycle_tube.*"
         },
@@ -847,7 +897,8 @@
             "nl": "Verkoop van melk",
             "de": "Verkauf von Milch",
             "fr": "Vente de lait",
-            "ca": "Venda de llet"
+            "ca": "Venda de llet",
+            "cs": "Prodej mléka"
           },
           "osmTags": "vending~i~.*milk.*"
         },
@@ -857,7 +908,8 @@
             "nl": "Verkoop van brood",
             "de": "Verkauf von Brot",
             "fr": "Vente de pain",
-            "ca": "Venda de pa"
+            "ca": "Venda de pa",
+            "cs": "Prodej chleba"
           },
           "osmTags": "vending~i~.*bread.*"
         },
@@ -867,7 +919,8 @@
             "nl": "Verkoop van eieren",
             "de": "Verkauf von Eiern",
             "fr": "Vente d'œufs",
-            "ca": "Venda d'ous"
+            "ca": "Venda d'ous",
+            "cs": "Prodej vajec"
           },
           "osmTags": "vending~i~.*eggs.*"
         },
@@ -877,7 +930,8 @@
             "nl": "Verkoop van kaas",
             "de": "Verkauf von Käse",
             "fr": "Vente de fromage",
-            "ca": "Venda de formatge"
+            "ca": "Venda de formatge",
+            "cs": "Prodej sýrů"
           },
           "osmTags": "vending~i~.*cheese.*"
         },
@@ -887,7 +941,8 @@
             "nl": "Verkoop van honing",
             "de": "Verkauf von Honig",
             "fr": "Vente de miel",
-            "ca": "Venda de mel"
+            "ca": "Venda de mel",
+            "cs": "Prodej medu"
           },
           "osmTags": "vending~i~.*honey.*"
         },
@@ -897,7 +952,8 @@
             "nl": "Verkoop van aardappelen",
             "de": "Verkauf von Kartoffeln",
             "fr": "Vente de pommes de terre",
-            "ca": "Venda de patates"
+            "ca": "Venda de patates",
+            "cs": "Prodej brambor"
           },
           "osmTags": "vending~i~.*potatoes.*"
         },
@@ -906,7 +962,8 @@
             "en": "Sale of meat",
             "nl": "Verkoop van vlees",
             "de": "Verkauf von Fleisch",
-            "ca": "Venda de productes carnis"
+            "ca": "Venda de productes carnis",
+            "cs": "Prodej masa"
           },
           "osmTags": "vending~i~.*meat.*"
         },
@@ -915,7 +972,8 @@
             "en": "Sale of fruit",
             "nl": "Verkoop van fruit",
             "ca": "Venda de flors",
-            "de": "Verkauf von Obst"
+            "de": "Verkauf von Obst",
+            "cs": "Prodej ovoce"
           },
           "osmTags": "vending~i~.*fruit.*"
         },
@@ -924,7 +982,8 @@
             "en": "Sale of strawberries",
             "nl": "Verkoop van aardbeien",
             "ca": "Venda de tiquets d'aparcament",
-            "de": "Verkauf von Erdbeeren"
+            "de": "Verkauf von Erdbeeren",
+            "cs": "Prodej jahod"
           },
           "osmTags": "vending~i~.*strawberries.*"
         },
@@ -934,7 +993,8 @@
             "nl": "Verkoop van bloemen",
             "de": "Verkauf von Blumen",
             "fr": "Vente de fleurs",
-            "ca": "Venda de flors"
+            "ca": "Venda de flors",
+            "cs": "Prodej květin"
           },
           "osmTags": "vending~i~.*flowers.*"
         },
@@ -943,7 +1003,8 @@
           "question": {
             "en": "Sale of parking tickets",
             "ca": "Venda de bitllets de transport públic",
-            "de": "Verkauf von Parkscheinen"
+            "de": "Verkauf von Parkscheinen",
+            "cs": "Prodej parkovacích lístků"
           }
         },
         {
@@ -951,7 +1012,8 @@
           "question": {
             "en": "Sale of pressed pennies",
             "ca": "Venda de monedes premsades",
-            "de": "Verkauf von Souvenirmünzen"
+            "de": "Verkauf von Souvenirmünzen",
+            "cs": "Prodej pamětních mincí/lisované mince"
           }
         },
         {
@@ -959,7 +1021,8 @@
           "question": {
             "en": "Sale of public transport tickets",
             "ca": "Venda de bitllets de transport públic",
-            "de": "Verkauf von Fahrscheinen"
+            "de": "Verkauf von Fahrscheinen",
+            "cs": "Prodej jízdenek MHD"
           }
         },
         {
@@ -967,7 +1030,8 @@
           "question": {
             "en": "Sale of bicycle lights",
             "nl": "Verkoop van fietslampjes",
-            "de": "Verkauf von Fahrradlampen"
+            "de": "Verkauf von Fahrradlampen",
+            "cs": "Prodej světel na kolo"
           }
         },
         {
@@ -975,7 +1039,8 @@
           "question": {
             "en": "Sale of gloves",
             "nl": "Verkoop van handschoenen",
-            "de": "Verkauf von Fahrradhandschuhen"
+            "de": "Verkauf von Fahrradhandschuhen",
+            "cs": "Prodej rukavic"
           }
         },
         {
@@ -983,7 +1048,8 @@
           "question": {
             "en": "Sale of bicycle repair kits",
             "nl": "Verkoop van fietsreparatiesets",
-            "de": "Verkauf von Fahrrad-Reparatursets"
+            "de": "Verkauf von Fahrrad-Reparatursets",
+            "cs": "Prodej sad na opravu jízdních kol"
           }
         },
         {
@@ -991,7 +1057,8 @@
           "question": {
             "en": "Sale of bicycle pumps",
             "nl": "Verkoop van fietspompen",
-            "de": "Verkauf von Fahrradpumpen"
+            "de": "Verkauf von Fahrradpumpen",
+            "cs": "Prodej pump na kolo"
           }
         },
         {
@@ -999,7 +1066,8 @@
           "question": {
             "en": "Sale of bicycle locks",
             "nl": "Verkoop van fietssloten",
-            "de": "Verkauf von Fahrradschlössern"
+            "de": "Verkauf von Fahrradschlössern",
+            "cs": "Prodej zámků na kola"
           }
         }
       ]

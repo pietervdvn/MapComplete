@@ -45,7 +45,8 @@
         "de": "Zentrum der Änderungssätze",
         "nl": "Centerpunt van changeset",
         "es": "Centro del conjunto de cambios",
-        "pl": "Centra zmian"
+        "pl": "Centra zmian",
+        "cs": "Centrum změn"
       },
       "minzoom": 0,
       "source": {
@@ -61,7 +62,8 @@
           "de": "Änderungssatz für {theme}",
           "fr": "Groupe de modifications pour {theme}",
           "es": "Conjunto de cambios para {theme}",
-          "pl": "Zestaw zmian dla {theme}"
+          "pl": "Zestaw zmian dla {theme}",
+          "cs": "Změna pro {theme}"
         }
       },
       "description": {
@@ -82,7 +84,8 @@
             "de": "Änderungssatz <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
             "fr": "Groupe de modifications <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
             "es": "Conjunto de cambios <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
-            "pl": "Zestaw zmian <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+            "pl": "Zestaw zmian <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
+            "cs": "Změny <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
           }
         },
         {

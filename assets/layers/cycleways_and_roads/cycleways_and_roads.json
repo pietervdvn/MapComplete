@@ -45,7 +45,8 @@
       "nl": "Weg",
       "de": "Weg",
       "pa_PK": "راہ",
-      "ca": "Via"
+      "ca": "Via",
+      "cs": "Cesta"
     },
     "mappings": [
       {
@@ -60,7 +61,8 @@
           "en": "Cycleway {name}",
           "de": "Radweg {name}",
           "fr": "Piste cyclable {name}",
-          "ca": "Via ciclista {name}"
+          "ca": "Via ciclista {name}",
+          "cs": "Cyklostezka {name}"
         }
       },
       {
@@ -79,7 +81,8 @@
           "ca": "Via ciclista",
           "da": "Cykelsti",
           "es": "Carril compartido",
-          "pa_PK": "سائیکل‌وے"
+          "pa_PK": "سائیکل‌وے",
+          "cs": "Cyklostezka"
         }
       },
       {
@@ -94,7 +97,8 @@
           "en": "Road with shared lane {name}",
           "de": "Straße mit gemeinsam genutzter Fahrspur {name}",
           "fr": "Route avec voie partagée {name}",
-          "ca": "Carretera amb un carril compartit {name}"
+          "ca": "Carretera amb un carril compartit {name}",
+          "cs": "Silnice se sdíleným pruhem {name}"
         }
       },
       {
@@ -105,7 +109,8 @@
           "de": "Gemeinsame Fahrspur",
           "fr": "Voie partagée",
           "ca": "Carril compartit",
-          "es": "Vía ciclista al lado de la carretera"
+          "es": "Vía ciclista al lado de la carretera",
+          "cs": "Sdílený jízdní pruh"
         }
       },
       {
@@ -120,7 +125,8 @@
           "en": "Road with bike lane {name}",
           "de": "Straße mit Fahrradstreifen {name}",
           "fr": "Route avec voie cyclable {name}",
-          "ca": "Ciclocarrer {name}"
+          "ca": "Ciclocarrer {name}",
+          "cs": "Silnice s cyklopruhem {name}"
         }
       },
       {
@@ -132,7 +138,8 @@
           "fr": "Bande cyclable",
           "ca": "Carril bici",
           "es": "Carril bici",
-          "pl": "Pas rowerowy"
+          "pl": "Pas rowerowy",
+          "cs": "Pruh pro jízdní kola"
         }
       },
       {
@@ -147,7 +154,8 @@
           "en": "Road with cycleway next to the road {name}",
           "de": "Straße mit Radweg neben der Straße {name}",
           "fr": "Route avec piste cyclable à côté de la route {name}",
-          "ca": "Carretera amb via ciclista al costat de la carretera {name}"
+          "ca": "Carretera amb via ciclista al costat de la carretera {name}",
+          "cs": "Silnice s cyklostezkou vedle silnice {name}"
         }
       },
       {
@@ -159,7 +167,8 @@
           "fr": "Piste cyclable séparée de la route",
           "da": "Cykelsti ved siden af vejen",
           "es": "Vía ciclista al lado de la carretera",
-          "ca": "Via ciclista al costat de la carretera"
+          "ca": "Via ciclista al costat de la carretera",
+          "cs": "Cyklostezka vedle silnice"
         }
       },
       {
@@ -174,7 +183,8 @@
           "en": "Cyclestreet {name}",
           "de": "Fahrradstraße {name}",
           "fr": "Rue cyclable {name}",
-          "ca": "Ciclocarrer {name}"
+          "ca": "Ciclocarrer {name}",
+          "cs": "Cykloulice {name}"
         }
       },
       {
@@ -187,7 +197,8 @@
           "ca": "Carrer ciclista",
           "da": "Cykelgade",
           "es": "Ciclocalle",
-          "pa_PK": "سائیکل سڑک"
+          "pa_PK": "سائیکل سڑک",
+          "cs": "Cykloulice"
         }
       },
       {
@@ -306,7 +317,8 @@
         "es": "¿Esta calle está iluminada?",
         "fr": "Cette rue est-elle éclairée ?",
         "ca": "Aquesta carretera està il·luminada?",
-        "pl": "Czy ta ulica jest oświetlona?"
+        "pl": "Czy ta ulica jest oświetlona?",
+        "cs": "Je tato ulice osvětlená?"
       },
       "mappings": [
         {
@@ -318,7 +330,8 @@
             "es": "La calle está iluminada",
             "fr": "Cette rue est éclairée",
             "pl": "Ta ulica jest oświetlona",
-            "ca": "Aquest carrer està il·luminat"
+            "ca": "Aquest carrer està il·luminat",
+            "cs": "Tato ulice je osvětlená"
           }
         },
         {
@@ -331,7 +344,8 @@
             "es": "Esta carretera no está iluminada",
             "fr": "Cette rue n'est pas éclairée",
             "ca": "Aquesta carretera no està il·luminada",
-            "pl": "Ta droga nie jest oświetlona"
+            "pl": "Ta droga nie jest oświetlona",
+            "cs": "Tato silnice není osvětlena"
           }
         },
         {
@@ -344,7 +358,8 @@
             "es": "Esta carretera está iluminada por la noche",
             "fr": "Cette route est éclairée la nuit",
             "ca": "Aquesta carretera està il·luminada per la nit",
-            "pl": "Ta droga jest oświetlona w nocy"
+            "pl": "Ta droga jest oświetlona w nocy",
+            "cs": "Tato silnice je v noci osvětlená"
           },
           "hideInAnswer": true
         },
@@ -358,7 +373,8 @@
             "es": "Esta carretera está iluminada 24/7",
             "fr": "Cette route est éclairée 24h/24 et 7j/7",
             "ca": "Aquesta carretera està il·luminada 24/7",
-            "pl": "Ta droga jest oświetlona 24/7"
+            "pl": "Ta droga jest oświetlona 24/7",
+            "cs": "Tato silnice je osvětlena 24/7"
           }
         }
       ],
@@ -1021,7 +1037,8 @@
         "nl": "Wat is de kwaliteit van deze straat?",
         "de": "Wie eben ist diese Straße?",
         "es": "¿Cual es la suavidad de esta calle?",
-        "fr": "Quelle est la douceur de cette rue ?"
+        "fr": "Quelle est la douceur de cette rue ?",
+        "cs": "Jak hladký je povrch této ulice?"
       },
       "condition": {
         "or": [
@@ -1050,7 +1067,8 @@
             "id": "Dapat digunakan untuk roda tipis: sepeda balap",
             "nl": "Bruikbaar voor smalle wielen: racefiets",
             "fr": "Utilisable pour les roues fines : vélo de course",
-            "ca": "Utilitzable per rodes fines: bicicletes de carrera"
+            "ca": "Utilitzable per rodes fines: bicicletes de carrera",
+            "cs": "Použitelné pro tenká kola: závodní kolo"
           }
         },
         {
@@ -1061,7 +1079,8 @@
             "id": "Dapat digunakan untuk roda normal: sepeda kota, kursi roda, skuter",
             "nl": "Bruikbaar voor normale wielen: stadsfiets, rolwagen, step",
             "fr": "Utilisable pour les roues traditionelles : vélo, chaise roulante, trotinettes",
-            "ca": "Utilitzable per rodes normals: Bicicletes de ciutat, cadires de rodes, scooter"
+            "ca": "Utilitzable per rodes normals: Bicicletes de ciutat, cadires de rodes, scooter",
+            "cs": "Použitelné pro normální kola: městské kolo, invalidní vozík, skútr"
           }
         },
         {
@@ -1072,7 +1091,8 @@
             "id": "Dapat digunakan untuk roda yang kuat: sepeda trekking, mobil, becak",
             "nl": "Bruikbaar voor robuuste wielen: trekking fiets, auto, rickshaw",
             "fr": "Utilisable pour les roues robustes : VTT, voitures, pousse-pousse",
-            "ca": "Utilitzable per rodes robustes; Bicicleta de treking, cotxes, bicitaxi"
+            "ca": "Utilitzable per rodes robustes; Bicicleta de treking, cotxes, bicitaxi",
+            "cs": "Použitelné pro robustní kola: trekingové kolo, auto, rikša"
           }
         },
         {
@@ -1081,7 +1101,8 @@
             "en": "Usable for vehicles with high clearance: light duty off-road vehicle",
             "de": "Geeignet für Fahrzeuge mit großer Bodenfreiheit: leichte Geländewagen",
             "nl": "Bruikbaar voor terreinvoertuigen: 4x4 personenwagens",
-            "fr": "Utilisable pour les véhicules à dégagement élevé : véhicule tout-terrain léger"
+            "fr": "Utilisable pour les véhicules à dégagement élevé : véhicule tout-terrain léger",
+            "cs": "Použitelné pro vozidla s vysokou světlou výškou: lehké terénní vozidlo"
           }
         },
         {
@@ -1091,7 +1112,8 @@
             "de": "Geeignet für Geländefahrzeuge: schwerer Geländewagen",
             "id": "Dapat digunakan untuk kendaraan off-road: kendaraan off-road berat",
             "nl": "Bruikbaar voor terreinvoertuigen: zware 4x4 voertuigen",
-            "fr": "Utilisable pour les véhicules tout-terrain : véhicule tout-terrain lourd"
+            "fr": "Utilisable pour les véhicules tout-terrain : véhicule tout-terrain lourd",
+            "cs": "Použitelné pro terénní vozidla: těžké terénní vozidlo"
           }
         },
         {
@@ -1101,7 +1123,8 @@
             "de": "Geeignet für spezielle Geländewagen: Traktor, ATV",
             "id": "Dapat digunakan untuk kendaraan off-road khusus: traktor, ATV",
             "nl": "Bruikbaar voor uitzonderlijke terreinvoertuigen: tractor, ATV",
-            "fr": "Utilisable pour les véhicules hors route spécialisés : tracteur, véhicule 4x4"
+            "fr": "Utilisable pour les véhicules hors route spécialisés : tracteur, véhicule 4x4",
+            "cs": "Použitelný pro specializované terénní vozy: traktor, čtyřkolka"
           }
         },
         {
@@ -1110,7 +1133,8 @@
             "en": "Impassable / No wheeled vehicle",
             "de": "Unpassierbar / Keine bereiften Fahrzeuge",
             "nl": "Onmogelijk om met een voertuig met wielen te passeren",
-            "fr": "Impasse / Aucun véhicule roulant"
+            "fr": "Impasse / Aucun véhicule roulant",
+            "cs": "Neprůjezdné / Pro vozidla"
           }
         }
       ],
@@ -1129,7 +1153,8 @@
         "nl": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>",
         "de": "Die Fahrbahnbreite dieser Straße beträgt <strong>{width:carriageway}m</strong>",
         "fr": "La largeur de cette chaussée est de <strong>{width:carriageway}m</strong>",
-        "ca": "L'amplada dels carrils d'aquesta carretera és <strong>{width:carriageway}m</strong>"
+        "ca": "L'amplada dels carrils d'aquesta carretera és <strong>{width:carriageway}m</strong>",
+        "cs": "Šířka vozovky této silnice je <strong>{width:carriageway}m</strong>"
       },
       "freeform": {
         "key": "width:carriageway",
@@ -1144,7 +1169,8 @@
         "nl": "Hoe breed is de rijbaan in deze straat (in meters)?",
         "de": "Wie groß ist die Fahrbahnbreite dieser Straße (in Metern)?",
         "fr": "Quelle est la largeur de cette chaussée (en mètres) ?",
-        "ca": "Quina és l'amplada dels carrils d'aquesta carretera (en metres)?"
+        "ca": "Quina és l'amplada dels carrils d'aquesta carretera (en metres)?",
+        "cs": "Jaká je šířka vozovky této silnice (v metrech)?"
       },
       "id": "width:carriageway",
       "questionHint": {
@@ -1152,7 +1178,8 @@
         "nl": "Dit is gemeten van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook",
         "de": "Diese wird von Bordstein zu Bordstein gemessen und schließt daher die Breite von parallelen Parkspuren ein",
         "fr": "Elle est mesurée d'une bordure à l'autre et inclut donc la largeur des voies de stationnement parallèles",
-        "ca": "Això es mesura de vorera a vorera i, per tant, inclou l'amplada dels aparcaments en línia"
+        "ca": "Això es mesura de vorera a vorera i, per tant, inclou l'amplada dels aparcaments en línia",
+        "cs": "Jedná se o měření od krajnice ke krajnici a to včetně šířky paralelních parkovacích pruhů"
       }
     },
     {
@@ -1164,7 +1191,8 @@
         "id": "Rambu lalu lintas apa yang dimiliki jalur sepeda ini?",
         "es": "¿Qué señal de tráfico tiene este carril bici?",
         "fr": "Quel panneau de signalisation cette a cette piste cyclable ?",
-        "ca": "Quina senyal de trànsit té aquesta via ciclista?"
+        "ca": "Quina senyal de trànsit té aquesta via ciclista?",
+        "cs": "Jakou dopravní značku má tato cyklostezka?"
       },
       "condition": {
         "and": [
@@ -1190,7 +1218,8 @@
             "de": "Vorgeschriebener Radweg",
             "id": "Jalur sepeda wajib",
             "ca": "Via ciclista obligatòria",
-            "fr": "Piste cyclabe obligatoire"
+            "fr": "Piste cyclabe obligatoire",
+            "cs": "Povinná cyklostezka"
           },
           "hideInAnswer": "_country!=be",
           "icon": {
@@ -1206,7 +1235,8 @@
             "de": "Vorgeschriebener Radweg (mit Zusatzschild)<br>",
             "id": "Jalur sepeda wajib (dengan tanda tambahan)<br>",
             "fr": "Piste cyclable obligatoire (avec panneau supplémentaire)",
-            "ca": "Ciclovia obligatòria (amb senyal suplementari)<br>"
+            "ca": "Ciclovia obligatòria (amb senyal suplementari)<br>",
+            "cs": "Povinná cyklostezka (s doplňkovým značením)<br>"
           },
           "hideInAnswer": true,
           "icon": {
@@ -1222,7 +1252,8 @@
             "de": "Getrennter Fuß-/Radweg",
             "id": "Jalur pejalan kaki/sepeda terpisah",
             "ca": "Via segregada a peu/ciclista",
-            "fr": "Piste piétonne/cyclable séparée"
+            "fr": "Piste piétonne/cyclable séparée",
+            "cs": "Oddělená stezka pro pěší/cyklisty"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1242,7 +1273,8 @@
             "de": "Gemeinsamer Fuß-/Radweg",
             "id": "Jalur pejalan kaki/sepeda tidak terpisah",
             "ca": "Via no segregada a peu/ciclista",
-            "fr": "Piste piétonne/cyclable non séparée"
+            "fr": "Piste piétonne/cyclable non séparée",
+            "cs": "Sdílená stezka pro pěší/cyklisty"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1263,7 +1295,8 @@
             "id": "Tidak ada rambu lalu lintas",
             "es": "Sin señal de tráfico",
             "fr": "Aucun panneau de signalisation présent",
-            "ca": "Sense senyal de trànsit"
+            "ca": "Sense senyal de trànsit",
+            "cs": "Žádná dopravní značka"
           }
         }
       ]
@@ -1276,7 +1309,8 @@
         "de": "Welches Verkehrszeichen hat dieser Radweg?",
         "es": "¿Qué seña de tráfico tiene este carril bici?",
         "fr": "Quel panneau de signalisation cette a cette piste cyclable ?",
-        "ca": "Quina senyal de trànsit té aquesta via ciclista?"
+        "ca": "Quina senyal de trànsit té aquesta via ciclista?",
+        "cs": "Jakou dopravní značku má tato cyklostezka?"
       },
       "condition": {
         "and": [
@@ -1303,7 +1337,8 @@
             "de": "Vorgeschriebener Radweg",
             "id": "Jalur sepeda wajib",
             "ca": "Via ciclista obligatòria",
-            "fr": "Piste cyclabe obligatoire"
+            "fr": "Piste cyclabe obligatoire",
+            "cs": "Povinná cyklostezka"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1324,7 +1359,8 @@
             "nl": "Verplicht fietspad (met onderbord)<br>",
             "de": "Vorgeschriebener Radweg (mit Zusatzschild)<br>",
             "fr": "Piste cyclable obligatoire (avec panneau supplémentaire)",
-            "ca": "Ciclovia obligatòria (amb senyal suplementari)<br>"
+            "ca": "Ciclovia obligatòria (amb senyal suplementari)<br>",
+            "cs": "Povinná cyklostezka (s doplňkovým značením)<br>"
           },
           "hideInAnswer": true,
           "icon": {
@@ -1339,7 +1375,8 @@
             "nl": "Afgescheiden voet-/fietspad",
             "de": "Getrennter Fuß-/Radweg",
             "ca": "Via segregada a peu/ciclista",
-            "fr": "Piste piétonne/cyclable séparée"
+            "fr": "Piste piétonne/cyclable séparée",
+            "cs": "Oddělená stezka pro pěší/cyklisty"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1362,7 +1399,8 @@
             "nl": "Gedeeld voet-/fietspad",
             "de": "Gemeinsamer Fuß-/Radweg",
             "ca": "Via no segregada a peu/ciclista",
-            "fr": "Piste piétonne/cyclable non séparée"
+            "fr": "Piste piétonne/cyclable non séparée",
+            "cs": "Sdílená stezka pro pěší/cyklisty"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1385,7 +1423,8 @@
             "nl": "Verplicht fietspad",
             "ca": "Via ciclista obligatòria",
             "de": "Verpflichtender Radweg",
-            "fr": "Piste cyclabe obligatoire"
+            "fr": "Piste cyclabe obligatoire",
+            "cs": "Povinná cyklostezka"
           },
           "hideInAnswer": "_country!=nl",
           "addExtraTags": [
@@ -1404,7 +1443,8 @@
             "nl": "Verplicht bromfietspad",
             "de": "Verpflichtender (Moped-)Radweg",
             "fr": "Piste cyclable (cyclomoteur) obligatoire",
-            "ca": "Ciclovia (ciclomotor) obligatòria"
+            "ca": "Ciclovia (ciclomotor) obligatòria",
+            "cs": "Povinná (mopedová) cyklostezka"
           },
           "hideInAnswer": "_country!=nl",
           "addExtraTags": [
@@ -1423,7 +1463,8 @@
             "nl": "Onverplicht fietspad",
             "de": "Radweg ohne Nutzungspflicht",
             "fr": "Piste cyclable non obligatoire",
-            "ca": "via ciclista no obligatòria"
+            "ca": "via ciclista no obligatòria",
+            "cs": "Nepovinná cyklostezka"
           },
           "hideInAnswer": "_country!=nl",
           "addExtraTags": [
@@ -1442,7 +1483,8 @@
             "nl": "Geen verkeersbord aanwezig",
             "de": "Kein Verkehrsschild vorhanden",
             "fr": "Aucun panneau de signalisation présent",
-            "ca": "No hi ha cap senyal de trànsit"
+            "ca": "No hi ha cap senyal de trànsit",
+            "cs": "Žádná dopravní značka"
           }
         }
       ]
@@ -1453,7 +1495,8 @@
         "en": "Does the traffic sign D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?",
         "nl": "Heeft het verkeersbord D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?",
         "de": "Hat das Verkehrszeichen D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) ein Zusatzzeichen?",
-        "fr": "Le panneau de signalisation D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) a-t-il un panneau supplémentaire ?"
+        "fr": "Le panneau de signalisation D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) a-t-il un panneau supplémentaire ?",
+        "cs": "Má dopravní značka D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) doplňkovou značku?"
       },
       "condition": {
         "or": [
@@ -1469,7 +1512,8 @@
             "nl": "Bromfiets Klass B verplicht op het fietspad",
             "de": "Mopeds müssen den Radweg benutzen",
             "fr": "Les cyclomoteurs doivent utiliser la piste cyclable",
-            "ca": "Els ciclomotors han d'utilitzar la via ciclista"
+            "ca": "Els ciclomotors han d'utilitzar la via ciclista",
+            "cs": "Mopedy musí používat cyklostezku"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1486,7 +1530,8 @@
             "en": "Speedpedelecs must use the cycleway",
             "nl": "Speedpedelec (Bromfiets klasse P) verplicht op het fietspad",
             "de": "Speed-Pedelecs müssen den Radweg benutzen",
-            "fr": "Les VAE (Vélo à Assistance Electrique) rapides doivent utiliser la piste cyclable"
+            "fr": "Les VAE (Vélo à Assistance Electrique) rapides doivent utiliser la piste cyclable",
+            "cs": "Rychlá Elektrokola musí používat cyklostezku"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1503,7 +1548,8 @@
             "en": "Mopeds and speedpedelecs must use the cycleway",
             "nl": "Bromfiets klasse B en speedpedelec (Klasse P) verplicht op het fietspad",
             "de": "Mopeds und Speed-Pedelecs müssen den Radweg benutzen",
-            "fr": "Les cyclomoteurs et les VAE doivent utiliser la piste cyclable"
+            "fr": "Les cyclomoteurs et les VAE doivent utiliser la piste cyclable",
+            "cs": "Mopedy a rychlá elektrokola musí používat cyklostezku"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1522,7 +1568,8 @@
             "nl": "Bromfiets klasse B <b>verboden</b>",
             "de": "Mopeds sind nicht zulässig",
             "fr": "Les cyclomoteurs ne sont pas autorisés",
-            "ca": "Els ciclomotors no estan permesos"
+            "ca": "Els ciclomotors no estan permesos",
+            "cs": "Mopedy nejsou povoleny"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1539,7 +1586,8 @@
             "en": "Speedpedelecs are not allowed",
             "nl": "Speedpedelec (bromfiets klasse P) <b>verboden</b>",
             "de": "Speed-Pedelecs sind nicht zulässig",
-            "fr": "Les VAE ne sont pas autorisés"
+            "fr": "Les VAE ne sont pas autorisés",
+            "cs": "Rychlá elektrokola nejsou povoleny"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1556,7 +1604,8 @@
             "en": "Mopeds and speedpedelecs are not allowed",
             "nl": "Bromfiets klasse B en speedpedelec (klasse P) <b>verboden</b>",
             "de": "Mopeds und Speed-Pedelecs sind nicht zulässig",
-            "fr": "Les cyclomoteurs et les VAE ne sont pas autorisés"
+            "fr": "Les cyclomoteurs et les VAE ne sont pas autorisés",
+            "cs": "Mopedy a rychlá elektrokola nejsou povoleny"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1575,7 +1624,8 @@
             "nl": "Geen onderbord aanwezig",
             "de": "Kein zusätzliches Verkehrszeichen vorhanden",
             "fr": "Aucun panneau de signalisation supplémentaire présent",
-            "ca": "No hi ha cap senyal de trànsit addicional"
+            "ca": "No hi ha cap senyal de trànsit addicional",
+            "cs": "Není přítomna doplňková dopravní značka"
           }
         }
       ]
@@ -1584,7 +1634,8 @@
       "render": {
         "en": "The buffer besides this cycleway is {cycleway:buffer} m",
         "nl": "De schrikafstand van dit fietspad is {cycleway:buffer} m",
-        "de": "Der Sicherheitsabstand zu diesem Radweg beträgt {cycleway:buffer} m"
+        "de": "Der Sicherheitsabstand zu diesem Radweg beträgt {cycleway:buffer} m",
+        "cs": "Nárazník vedle této cyklostezky je {cycleway:buffer} m"
       },
       "question": {
         "en": "How wide is the gap between the cycleway and the road?",
@@ -1592,7 +1643,8 @@
         "de": "Wie breit ist der Abstand zwischen Radweg und Straße?",
         "es": "¿Cómo de ancho es el hueco entre el carril bici y la carretera?",
         "fr": "Quelle est la distance entre la piste cyclable et la route ?",
-        "ca": "Quina és la distància entre el carril bici i la carretera?"
+        "ca": "Quina és la distància entre el carril bici i la carretera?",
+        "cs": "Jak široká je mezera mezi cyklostezkou a silnicí?"
       },
       "condition": {
         "or": [
@@ -1619,7 +1671,8 @@
         "id": "Bagaimana jalur sepeda ini terpisah dari jalan?",
         "es": "¿Cómo está separado este carril bici de la carretera?",
         "fr": "Comment cette piste cyclable est-elle séparée de la route ?",
-        "ca": "Com està separada aquesta via ciclista de la carretera?"
+        "ca": "Com està separada aquesta via ciclista de la carretera?",
+        "cs": "Jak je tato cyklostezka oddělena od silnice?"
       },
       "condition": {
         "or": [
@@ -1637,7 +1690,8 @@
             "id": "Jalur sepeda ini dipisahkan oleh garis putus-putus",
             "es": "Este carril bici está separado por una línea discontinua",
             "fr": "Cette piste cyclable est séparée par une ligne pointillée",
-            "ca": "Aquesta via ciclista està separada per una línia discontínua"
+            "ca": "Aquesta via ciclista està separada per una línia discontínua",
+            "cs": "Tato cyklostezka je oddělena přerušovanou čarou"
           }
         },
         {
@@ -1649,7 +1703,8 @@
             "id": "Jalur sepeda ini dipisahkan oleh garis solid",
             "es": "Este carril bici está separado por una línea continua",
             "fr": "Cette piste cyclable est séparée par une ligne continue",
-            "ca": "Aquesta via ciclista està separat per una línia contínua"
+            "ca": "Aquesta via ciclista està separat per una línia contínua",
+            "cs": "Tato cyklostezka je oddělena plnou čarou"
           }
         },
         {
@@ -1661,7 +1716,8 @@
             "id": "Jalur sepeda ini dipisahkan oleh jalur parkir",
             "es": "Este carril bici está separado por una línea de aparcamiento",
             "fr": "Cette piste cyclable est séparée par une voie de stationnement",
-            "ca": "Aquesta via ciclista està separat per una línia d'aparcament"
+            "ca": "Aquesta via ciclista està separat per una línia d'aparcament",
+            "cs": "Tato cyklostezka je oddělena odstavným pruhem"
           }
         },
         {
@@ -1672,7 +1728,8 @@
             "de": "Dieser Radweg ist getrennt durch einen Bordstein",
             "id": "Jalur sepeda ini dipisahkan oleh kerb",
             "fr": "Cette piste cyclable est séparée par une bordure",
-            "ca": "Aquesta via ciclista està separada per una vorada"
+            "ca": "Aquesta via ciclista està separada per una vorada",
+            "cs": "Tato cyklostezka je oddělena obrubníkem"
           }
         }
       ]
@@ -1686,7 +1743,8 @@
         "id": "Bagaimana jalur sepeda ini dipisahkan dari jalan?",
         "es": "¿Cómo esta separado este carril bici de la carretera?",
         "fr": "Comment cette piste cyclable est-elle séparée de la route ?",
-        "ca": "Com està separat aquesta via ciclista?"
+        "ca": "Com està separat aquesta via ciclista?",
+        "cs": "Jak je tato cyklostezka oddělena od silnice?"
       },
       "condition": {
         "or": [
@@ -1704,7 +1762,8 @@
             "id": "Jalur sepeda ini dipisahkan oleh garis putus-putus",
             "es": "Este carril bici está separado por una línea discontinua",
             "fr": "Cette piste cyclable est séparée par une ligne pointillée",
-            "ca": "Aquesta via ciclista està separada per una línia discontinua"
+            "ca": "Aquesta via ciclista està separada per una línia discontinua",
+            "cs": "Tato cyklostezka je oddělena přerušovanou čarou"
           }
         },
         {
@@ -1716,7 +1775,8 @@
             "id": "Jalur sepeda ini dipisahkan oleh garis solid",
             "es": "Este carril bici está separado por una línea continua",
             "fr": "Cette piste cyclable est séparée par une ligne continue",
-            "ca": "Aquesta via ciclista està separada per una línia continua"
+            "ca": "Aquesta via ciclista està separada per una línia continua",
+            "cs": "Tato cyklostezka je oddělena plnou čarou"
           }
         },
         {
@@ -1728,7 +1788,8 @@
             "id": "Jalur sepeda ini dipisahkan oleh jalur parkir",
             "es": "Este carril bici está separado por una línea de aparcamiento",
             "fr": "Cette piste cyclable est séparée par une voie de stationnement",
-            "ca": "Aquesta via ciclista està separada per una línia d'aparcament"
+            "ca": "Aquesta via ciclista està separada per una línia d'aparcament",
+            "cs": "Tato cyklostezka je oddělena odstavným pruhem"
           }
         },
         {
@@ -1739,7 +1800,8 @@
             "de": "Dieser Radweg ist getrennt durch einen Bordstein",
             "id": "Jalur sepeda ini dipisahkan oleh kerb",
             "fr": "Cette piste cyclable est séparée par une bordure",
-            "ca": "Aquesta via ciclista està separada per una vorada"
+            "ca": "Aquesta via ciclista està separada per una vorada",
+            "cs": "Tato cyklostezka je oddělena obrubníkem"
           }
         }
       ]

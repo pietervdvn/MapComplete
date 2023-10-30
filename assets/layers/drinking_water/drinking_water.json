@@ -11,7 +11,8 @@
     "id": "Air minum",
     "hu": "Ivóvíz",
     "ca": "Aigua potable",
-    "es": "Agua potable"
+    "es": "Agua potable",
+    "cs": "Pitná voda"
   },
   "title": {
     "render": {
@@ -25,7 +26,8 @@
       "id": "Air minum",
       "hu": "Ivóvíz",
       "ca": "Aigua potable",
-      "es": "Agua potable"
+      "es": "Agua potable",
+      "cs": "Pitná voda"
     }
   },
   "source": {
@@ -61,7 +63,8 @@
         "ru": "питьевая вода",
         "id": "air minum",
         "hu": "ivóvíz",
-        "ca": "una font d'aigua potable"
+        "ca": "una font d'aigua potable",
+        "cs": "pitná voda"
       },
       "tags": [
         "amenity=drinking_water"
@@ -79,7 +82,8 @@
         "de": "Ist diese Trinkwasserstelle noch in Betrieb?",
         "hu": "Működik-e még ez az ivóvíznyerő hely?",
         "es": "¿Todavía esta operativo este punto de agua potable?",
-        "ca": "Aquest punt d'aigua potable continua operatiu?"
+        "ca": "Aquest punt d'aigua potable continua operatiu?",
+        "cs": "Je toto místo na pitnou vodu stále funkční?"
       },
       "render": {
         "en": "The operational status is <i>{operational_status}</i>",
@@ -89,7 +93,8 @@
         "de": "Der Betriebsstatus ist <i>{operational_status}</i>",
         "hu": "Működési állapota: <i>{operational_status}</i>",
         "es": "El estado operacional es <i>{operational_status}</i>",
-        "ca": "L'estat operatiu és <i>{operational_status}</i>"
+        "ca": "L'estat operatiu és <i>{operational_status}</i>",
+        "cs": "Provozní stav je <i>{operational_status}</i>"
       },
       "freeform": {
         "key": "operational_status"
@@ -105,7 +110,8 @@
             "de": "Diese Trinkwasserstelle ist in Betrieb",
             "hu": "Ez az ivóvízkút működik",
             "es": "Esta agua potable funciona",
-            "ca": "La font d'aigua funciona"
+            "ca": "La font d'aigua funciona",
+            "cs": "Tato pitná voda funguje"
           }
         },
         {
@@ -118,7 +124,8 @@
             "de": "Diese Trinkwasserstelle ist kaputt",
             "hu": "Ez az ivóvízkút elromlott",
             "es": "Esta agua potable está rota",
-            "ca": "Aquesta font d'aigua potable està trencada"
+            "ca": "Aquesta font d'aigua potable està trencada",
+            "cs": "Tato pitná voda je rozbitá"
           }
         },
         {
@@ -131,7 +138,8 @@
             "de": "Diese Trinkwasserstelle wurde geschlossen",
             "hu": "Ez az ivóvízkút el van zárva",
             "es": "Esta agua potable está cerrada",
-            "ca": "Aquesta font d'aigua potable està tancada"
+            "ca": "Aquesta font d'aigua potable està tancada",
+            "cs": "Tato pitná voda je uzavřena"
           }
         }
       ],
@@ -147,7 +155,8 @@
         "hu": "Mennyire könnyű itt vizespalackot tölteni?",
         "es": "¿Cómo de fácil es rellenar botellas de agua?",
         "ca": "Com de fàcil és reomplir botelles d'aigua?",
-        "ru": "Поместится ли здесь бутылка для воды?"
+        "ru": "Поместится ли здесь бутылка для воды?",
+        "cs": "Jak snadné je plnit láhve s vodou?"
       },
       "mappings": [
         {
@@ -161,7 +170,8 @@
             "hu": "Könnyen lehet vizespalackot tölteni",
             "es": "Es fácil rellenar botellas de agua",
             "ca": "És fàcil reomplir botelles d'aigua",
-            "ru": "Здесь легко поместится бутылка для воды"
+            "ru": "Здесь легко поместится бутылка для воды",
+            "cs": "Je snadné doplnit láhve s vodou"
           }
         },
         {
@@ -175,7 +185,8 @@
             "hu": "Lehet, hogy nem fér alá egy vizespalack",
             "es": "Las botellas de agua pueden no caber",
             "ca": "Les botelles d'aigua podrien no cabre",
-            "ru": "Бутылка для воды может не поместиться"
+            "ru": "Бутылка для воды может не поместиться",
+            "cs": "Láhve s vodou nemusí pasovat"
           }
         }
       ],
@@ -191,7 +202,8 @@
         "fr": "<a href='#{_closest_other_drinking_water_id}'>Une autre source d’eau potable est à {_closest_other_drinking_water_distance} mètres</a>",
         "hu": "<a href='#{_closest_other_drinking_water_id}'>Van egy másik ivóvízkút {_closest_other_drinking_water_distance} méter távolságra</a>",
         "es": "<a href='#{_closest_other_drinking_water_id}'>Hay otra fuente de agua potable a {_closest_other_drinking_water_distance} metros</a>",
-        "ca": "<a href='#{_closest_other_drinking_water_id}'>Hi ha una altra font d'aigua potable a {_closest_other_drinking_water_distance} metres</a>"
+        "ca": "<a href='#{_closest_other_drinking_water_id}'>Hi ha una altra font d'aigua potable a {_closest_other_drinking_water_distance} metres</a>",
+        "cs": "<a href='#{_closest_other_drinking_water_id}'>Do {_closest_other_drinking_water_distance} metrů je další fontána s pitnou vodou</a>"
       },
       "condition": "_closest_other_drinking_water_id~*"
     }
@@ -217,7 +229,8 @@
           "nl": "Dit is een decoratieve fontein waarvan het water niet geschikt is om te drinken door mensen",
           "de": "Dies ist ein Zierbrunnen, dessen Wasser für den Menschen nicht trinkbar ist",
           "es": "Esta es una fuente decorativa con agua no potable",
-          "ca": "Es tracta d'una font decorativa amb aigua no potable"
+          "ca": "Es tracta d'una font decorativa amb aigua no potable",
+          "cs": "Jedná se o dekorativní fontánu, jejíž voda není pro lidi pitná"
         }
       },
       {
@@ -233,7 +246,8 @@
           "nl": "Dit is een waterkraan of waterpomp met ondrinkbaar water.<div class='subtle'>Bijvoorbeeld een waterkraan met regenwater om planten water mee te geven</div",
           "de": "Dies ist ein Wasserhahn oder eine Wasserpumpe mit nicht trinkbarem Wasser.<div class='subtle'>Beispiele sind Wasserhähne mit Regenwasser zum Zapfen von Wasser für nahe gelegene Pflanzen</div>",
           "es": "Este es un grifo de agua o una bomba de agua con agua no potable.<div class='subtle'>Ejemplos son grifos con agua de lluvia o agua del grifo para plantas cercanas</div>",
-          "ca": "Es tracta d'una aixeta d'aigua o bomba d'aigua amb aigua no potable. <div class='subtle'> Per exemple les aixetes d'aigua amb aigua de pluja per aprofitar i regar les plantes properes</div>"
+          "ca": "Es tracta d'una aixeta d'aigua o bomba d'aigua amb aigua no potable. <div class='subtle'> Per exemple les aixetes d'aigua amb aigua de pluja per aprofitar i regar les plantes properes</div>",
+          "cs": "Jedná se o vodovodní kohoutek nebo vodní čerpadlo s nepitnou vodou.<div class='subtle'>Příkladem jsou vodovodní kohoutky s dešťovou vodou pro zalévání rostlin v okolí</div>"
         }
       }
     ]
@@ -271,6 +285,7 @@
     "de": "Eine Ebene mit Trinkwasserbrunnen",
     "es": "Una capa que muestra fuentes de agua potable",
     "fr": "Une couche montrant les fontaines d'eau potable",
-    "ca": "Una capa que mostra fonts d'aigua potable"
+    "ca": "Una capa que mostra fonts d'aigua potable",
+    "cs": "Vrstva zobrazující fontány s pitnou vodou"
   }
 }

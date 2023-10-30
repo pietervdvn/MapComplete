@@ -26,7 +26,7 @@
 {#if $userDetails.loggedIn}
   <div>
     {#if tags === undefined}
-      <slot name="no-tags"><Tr cls="subtle" t={Translations.t.general.noTagsSelected}></Tr></slot>
+      <slot name="no-tags"><Tr cls="subtle" t={Translations.t.general.noTagsSelected} /></slot>
     {:else if embedIn === undefined}
       <FromHtml src={tagsExplanation} />
     {:else}

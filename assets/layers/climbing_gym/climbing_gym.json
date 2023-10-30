@@ -40,7 +40,8 @@
           "en": "Climbing gym <strong>{name}</strong>",
           "ja": "クライミングジム<strong>{name}</strong>",
           "fr": "Salle d’escalade <strong>{name}</strong>",
-          "it": "Palestra di arrampicata <strong>{name}</strong>"
+          "it": "Palestra di arrampicata <strong>{name}</strong>",
+          "cs": "Lezecká tělocvična <strong>{name}</strong>"
         }
       }
     ]
@@ -91,7 +92,8 @@
         "nl": "Kunnen hier klimschoenen gehuurd worden?",
         "fr": "Peut-on louer des chaussures d'escalade ici ?",
         "de": "Kann man hier Kletterschuhe ausleihen?",
-        "pl": "Czy można tutaj wypożyczyć buty do wspinaczki?"
+        "pl": "Czy można tutaj wypożyczyć buty do wspinaczki?",
+        "cs": "Lze si zde půjčit lezeckou obuv?"
       },
       "mappings": [
         {
@@ -105,7 +107,8 @@
             "en": "Climbing shoes can be borrowed for free here",
             "nl": "Klimschoenen kunnen hier gratis geleend worden",
             "fr": "Les chaussures d'escalade peuvent être empruntées gratuitement ici",
-            "de": "Kletterschuhe können hier kostenlos ausgeliehen werden"
+            "de": "Kletterschuhe können hier kostenlos ausgeliehen werden",
+            "cs": "Lezeckou obuv si můžete zdarma vypůjčit zde"
           },
           "addExtraTags": [
             "service:climbing_shoes:rental:charge="
@@ -122,7 +125,8 @@
             "en": "Climbing shoes can be rented here for {service:climbing_shoes:rental:charge}",
             "nl": "Klimschoenen kunnen hier gehuurd worden aan {service:climbing_shoes:rental:charge}",
             "fr": "Les chaussures d'escalade peuvent être louées ici pour {service:climbing_shoes:rental:charge}",
-            "de": "Kletterschuhe können hier ausgeliehen werden für {service:climbing_shoes:rental:charge}"
+            "de": "Kletterschuhe können hier ausgeliehen werden für {service:climbing_shoes:rental:charge}",
+            "cs": "Lezeckou obuv si můžete zapůjčit zde za {service:climbing_shoes:rental:charge}"
           },
           "hideInAnswer": true
         },
@@ -138,7 +142,8 @@
             "nl": "Klimschoenen kunnen hier gehuurd worden",
             "fr": "Les chaussures d'escalade peuvent être louées ici",
             "de": "Kletterschuhe können hier ausgeliehen werden",
-            "pl": "Można tutaj wypożyczyć buty do wspinaczki"
+            "pl": "Można tutaj wypożyczyć buty do wspinaczki",
+            "cs": "Lezeckou obuv si můžete půjčit zde"
           },
           "addExtraTags": [
             "service:climbing_shoes:rental:charge="
@@ -151,7 +156,8 @@
             "nl": "Hier kunnen <b>geen</b> klimschoenen gehuurd worden",
             "fr": "Les chaussures d'escalade ne peuvent <b>pas</b> être louées ici",
             "de": "Kletterschuhe können hier <b>nicht</b> ausgeliehen werden",
-            "pl": "<b>Nie</b> można wypożyczyć tutaj butów do wspinaczki"
+            "pl": "<b>Nie</b> można wypożyczyć tutaj butów do wspinaczki",
+            "cs": "Lezeckou obuv si zde <b>nemůžete</b> zapůjčit"
           },
           "addExtraTags": [
             "service:climbing_shoes:rental:fee=",
@@ -166,7 +172,8 @@
         "en": "Can one rent a climbing harness here?",
         "nl": "Kan een klimgordel hier gehuurd worden?",
         "fr": "Peut-on louer un baudrier d'escalade ici ?",
-        "de": "Kann man hier einen Klettergurt ausleihen?"
+        "de": "Kann man hier einen Klettergurt ausleihen?",
+        "cs": "Lze si zde zapůjčit horolezecký postroj?"
       },
       "condition": {
         "or": [
@@ -186,7 +193,8 @@
             "en": "A climbing harness can be borrowed for free here",
             "nl": "Een klimgordel kan hier gratis geleend worden",
             "fr": "Un baudrier d'escalade peut être emprunté gratuitement ici",
-            "de": "Ein Klettergurt kann hier kostenlos ausgeliehen werden"
+            "de": "Ein Klettergurt kann hier kostenlos ausgeliehen werden",
+            "cs": "Lezecký úvazek si můžete zdarma vypůjčit zde"
           },
           "addExtraTags": [
             "service:climbing_harness:rental:charge="
@@ -203,7 +211,8 @@
             "en": "A climbing harness can be rented here for {service:climbing_harness:rental:charge}",
             "nl": "Een klimgordel kan hier gehuurd worden aan {service:climbing_harness:rental:charge}",
             "fr": "Un baudrier d'escalade peut être loué ici pour {service:climbing_harness:rental:charge}",
-            "de": "Ein Klettergurt kann hier ausgeliehen werden für {service:climbing_harness:rental:charge}"
+            "de": "Ein Klettergurt kann hier ausgeliehen werden für {service:climbing_harness:rental:charge}",
+            "cs": "Lezecký postroj si zde můžete zapůjčit za {service:climbing_harness:rental:charge}"
           },
           "hideInAnswer": true
         },
@@ -213,7 +222,8 @@
             "en": "A climbing harness can be rented here",
             "nl": "Een klimgordel kan hier gehuurd worden",
             "fr": "Un baudrier d'escalade peut être loué ici",
-            "de": "Ein Klettergurt kann hier ausgeliehen werden"
+            "de": "Ein Klettergurt kann hier ausgeliehen werden",
+            "cs": "Lezecký postroj si můžete půjčit zde"
           },
           "addExtraTags": [
             "service:climbing_harness:rental:fee=",
@@ -226,7 +236,8 @@
             "en": "A climbing harness can <b>not</b> be rented here",
             "nl": "Hier kunnen <b>geen</b> klimgordels gehuurd worden",
             "fr": "Un baudrier d'escalade ne peut <b>pas</b> être loué ici",
-            "de": "Ein Klettergurt kann hier <b>nicht</b> ausgeliehen werden"
+            "de": "Ein Klettergurt kann hier <b>nicht</b> ausgeliehen werden",
+            "cs": "Lezecký úvazek si zde <b>nemůžete</b> zapůjčit"
           },
           "addExtraTags": [
             "service:climbing_harness:rental:fee=",
@@ -339,7 +350,8 @@
         "en": "Can one rent a climbing rope here?",
         "nl": "Kan een klimtouw hier gehuurd worden?",
         "fr": "Peut-on louer une corde d'escalade ici ?",
-        "de": "Kann man hier ein Kletterseil ausleihen?"
+        "de": "Kann man hier ein Kletterseil ausleihen?",
+        "cs": "Lze si zde půjčit lezecké lano?"
       },
       "condition": "climbing:sport!=no",
       "mappings": [
@@ -372,7 +384,8 @@
             "en": "A climbing rope can be rented here for {service:climbing_rope:rental:charge}",
             "nl": "Een klimtouw kan hier gehuurd worden aan {service:climbing_rope:rental:charge}",
             "fr": "Une corde d'escalade peut être louée ici pour {service:climbing_rope:rental:charge}",
-            "de": "Ein Kletterseil kann hier ausgeliehen werden für {service:climbing_rope:rental:charge}"
+            "de": "Ein Kletterseil kann hier ausgeliehen werden für {service:climbing_rope:rental:charge}",
+            "cs": "Za {service:climbing_rope:rental:charge} si zde můžete zapůjčit horolezecké lano"
           },
           "hideInAnswer": true
         },
@@ -382,7 +395,8 @@
             "en": "A climbing rope can be rented here",
             "nl": "Een klimtouw kan hier gehuurd worden",
             "fr": "Une corde d'escalade peut être louée ici",
-            "de": "Ein Kletterseil kann hier ausgeliehen werden"
+            "de": "Ein Kletterseil kann hier ausgeliehen werden",
+            "cs": "Lezecké lano si můžete půjčit zde"
           },
           "addExtraTags": [
             "service:climbing_rope:rental:fee=",
@@ -395,7 +409,8 @@
             "en": "A climbing rope can <b>not</b> be rented here",
             "nl": "Hier kan <b>geen</b> klimtouw gehuurd worden",
             "fr": "Une corde d'escalade ne peut <b>pas</b> être louée ici",
-            "de": "Ein Kletterseil kann hier <b>nicht</b> ausgeliehen werden"
+            "de": "Ein Kletterseil kann hier <b>nicht</b> ausgeliehen werden",
+            "cs": "Lezecké lano si zde <b>nemůžete</b> zapůjčit"
           },
           "addExtraTags": [
             "service:climbing_rope:rental:fee=",

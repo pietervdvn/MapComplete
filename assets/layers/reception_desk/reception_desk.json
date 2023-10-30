@@ -4,20 +4,23 @@
     "en": "Reception desks",
     "fr": "Bureaux d'accueil",
     "de": "Empfangstresen",
-    "ca": "Recepció"
+    "ca": "Recepció",
+    "cs": "Recepční pulty"
   },
   "description": {
     "en": "A layer showing where the reception desks are and which asks some accessibility information",
     "fr": "Une couche montrant où se trouvent les bureaux d'accueil et qui demande des informations d'accessibilité",
     "de": "Eine Ebene, die Empfangstresen zeigt und Informationen zur Barrierefreiheit abfragt",
-    "ca": "Una capa que mostra on es troben els mostradors de recepció i que demana informació d'accessibilitat"
+    "ca": "Una capa que mostra on es troben els mostradors de recepció i que demana informació d'accessibilitat",
+    "cs": "Vrstva, která ukazuje, kde se nacházejí recepce, a která se ptá na některé informace o přístupnosti"
   },
   "title": {
     "render": {
       "en": "Reception desk",
       "fr": "Bureau d'accueil",
       "de": "Empfangstresen",
-      "ca": "Mostrador de recepció"
+      "ca": "Mostrador de recepció",
+      "cs": "Recepční pult"
     }
   },
   "source": {
@@ -44,14 +47,16 @@
         "fr": "Quelle est la hauteur de la réception ? ",
         "de": "Wie hoch ist der Empfangstresen? ",
         "ca": "Quina és l'alçada de la recepció? ",
-        "pl": "Jaka jest wysokość tego biurka recepcji? "
+        "pl": "Jaka jest wysokość tego biurka recepcji? ",
+        "cs": "Jaká je výška recepčního pultu? "
       },
       "render": {
         "en": "The height of the desk is <b>{canonical(desk:height)}</b>",
         "fr": "La hauteur du bureau est <b>{canonical(desk:height)}</b>",
         "de": "Die Höhe des Tresens beträgt <b>{canonical(desk:height)}</b>",
         "ca": "L'alçada del mostrador és <b>{canonical(desk:height)}</b>",
-        "pl": "Wysokość tego biurka to <b>{canonical(desk:height)}</b>"
+        "pl": "Wysokość tego biurka to <b>{canonical(desk:height)}</b>",
+        "cs": "Výška stolu je <b>{canonical(desk:height)}</b>"
       },
       "freeform": {
         "key": "desk:height",
@@ -62,7 +67,8 @@
         "fr": "Ceci est mesuré du sol à la partie utilisable la plus basse du bureau",
         "de": "Gemessen vom Boden bis zur untersten nutzbaren Stelle des Tisches",
         "ca": "Es mesura des del terra fins a la part més baixa utilitzable de l'escriptori",
-        "pl": "Jest to mierzone od podłogi do najniższej użytecznej części biurka"
+        "pl": "Jest to mierzone od podłogi do najniższej użytecznej części biurka",
+        "cs": "Měří se od podlahy po nejnižší použitelnou část stolu"
       }
     },
     "induction-loop"
@@ -76,7 +82,8 @@
         "en": "a reception desk",
         "fr": "un bureau d'accueil",
         "de": "einen Empfangstresen",
-        "ca": "una recepció"
+        "ca": "una recepció",
+        "cs": "recepční pult"
       }
     }
   ],
@@ -98,7 +105,8 @@
             "nl": "meter",
             "pa_PK": "میٹر",
             "ca": "metre",
-            "pl": "metr"
+            "pl": "metr",
+            "cs": "metr"
           }
         },
         {
@@ -114,7 +122,8 @@
             "nl": "centimeter",
             "pa_PK": "سینٹیمیٹر",
             "ca": "centímetre",
-            "pl": "centymetr"
+            "pl": "centymetr",
+            "cs": "centimetr"
           }
         }
       ]

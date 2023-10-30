@@ -10,7 +10,8 @@
     "eo": "Butiko",
     "ca": "Botiga",
     "es": "Tienda",
-    "pa_PK": "دکان"
+    "pa_PK": "دکان",
+    "cs": "Obchod"
   },
   "minzoom": 12,
   "source": {
@@ -38,7 +39,8 @@
       "eo": "Butiko",
       "ca": "Botiga",
       "es": "Tienda",
-      "pa_PK": "دکان"
+      "pa_PK": "دکان",
+      "cs": "Obchod"
     },
     "mappings": [
       {
@@ -56,7 +58,8 @@
           "eo": "{name}",
           "nl": "{name}",
           "ca": "{name}",
-          "es": "{name}"
+          "es": "{name}",
+          "cs": "{name}"
         }
       },
       {
@@ -74,7 +77,8 @@
           "eo": "{shop}",
           "nl": "{shop}",
           "ca": "{shop}",
-          "es": "{shop}"
+          "es": "{shop}",
+          "cs": "{shop}"
         }
       }
     ]
@@ -103,14 +107,16 @@
         "nl": "Wat is de naam van deze winkel?",
         "de": "Wie ist der Name dieses Geschäfts?",
         "es": "¿Cual es el nombre de esta tienda?",
-        "ca": "Quin és el nom d'aquesta botiga?"
+        "ca": "Quin és el nom d'aquesta botiga?",
+        "cs": "Jak se jmenuje tento obchod?"
       },
       "render": {
         "en": "This shop is called <i>{name}</i>",
         "de": "Der Name des Geschäfts lautet <i>{name}</i>",
         "nl": "Deze zaak heet <i>{name}</i>",
         "ca": "La botiga s'anomena <i>{name}</i>",
-        "fr": "Ce commerce s'appelle <i>{name}</i>"
+        "fr": "Ce commerce s'appelle <i>{name}</i>",
+        "cs": "Tento obchod se jmenuje <i>{name}</i>"
       },
       "freeform": {
         "key": "name"
@@ -125,14 +131,16 @@
           "nl": "Wat voor soort winkel is dit?",
           "de": "Um was für ein Geschäft handelt es sich?",
           "fr": "Quel genre de magasin est-ce?",
-          "ca": "Quin tipus de botiga és aquesta?"
+          "ca": "Quin tipus de botiga és aquesta?",
+          "cs": "Co je to za obchod?"
         },
         "render": {
           "en": "This is a {shop}",
           "de": "Das ist ein {shop}",
           "fr": "C'est une {shop}",
           "nl": "Dit is een {shop}",
-          "ca": "Açò és una {shop}"
+          "ca": "Açò és una {shop}",
+          "cs": "Toto je {shop}"
         },
         "freeform": {
           "key": "shop",
@@ -147,7 +155,8 @@
       "id": "second_hand",
       "question": {
         "en": "Does this shop sell second-hand items?",
-        "de": "Verlauft das Geschäft auch Second-Hand-Produkte?"
+        "de": "Verlauft das Geschäft auch Second-Hand-Produkte?",
+        "cs": "Prodává tento obchod použité zboží?"
       },
       "mappings": [
         {
@@ -199,7 +208,8 @@
         "de": "Welche Papierformate bietet das Geschäft an?",
         "fr": "Quels formats de papier cette boutique propose-t-elle ?",
         "nl": "Op welke papiergroottes kan deze zaak printen?",
-        "ca": "Quins formats de paper ofereix aquesta botiga?"
+        "ca": "Quins formats de paper ofereix aquesta botiga?",
+        "cs": "Jaké formáty papíru tento obchod nabízí?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -210,7 +220,8 @@
             "de": "Das Geschäft kann Unterlagen auf A4 Papier drucken",
             "fr": "Cette boutique peut imprimer sur des papiers de format A4",
             "nl": "Deze zaak kan printen op A4-formaat",
-            "ca": "Aquesta botiga pot imprimir en papers de mida A4"
+            "ca": "Aquesta botiga pot imprimir en papers de mida A4",
+            "cs": "Tento obchod umí tisknout na papíry velikosti A4"
           },
           "ifnot": "service:print:A4=no"
         },
@@ -221,7 +232,8 @@
             "de": "Das Geschäft kann Unterlagen auf A3 Papier drucken",
             "fr": "Cette boutique peut imprimer sur des papiers de format A3",
             "nl": "Deze zaak kan printen op A3-formaat",
-            "ca": "Aquesta botiga pot imprimir en papers de mida A3"
+            "ca": "Aquesta botiga pot imprimir en papers de mida A3",
+            "cs": "Tento obchod umí tisknout na papíry velikosti A3"
           },
           "ifnot": "service:print:A3=no"
         },
@@ -232,7 +244,8 @@
             "de": "Das Geschäft kann Unterlagen auf A2 Papier drucken",
             "fr": "Cette boutique peut imprimer sur des papiers de format A2",
             "nl": "Deze zaak kan printen op A2-formaat",
-            "ca": "Aquesta botiga pot imprimir en papers de mida A2"
+            "ca": "Aquesta botiga pot imprimir en papers de mida A2",
+            "cs": "Tento obchod umí tisknout na papíry velikosti A2"
           },
           "ifnot": "service:print:A2=no"
         },
@@ -243,7 +256,8 @@
             "de": "Das Geschäft kann Unterlagen auf A1 Papier drucken",
             "fr": "Cette boutique peut imprimer sur des papiers de format A1",
             "nl": "Deze zaak kan printen op A1-formaat",
-            "ca": "Aquesta botiga pot imprimir en papers de mida A1"
+            "ca": "Aquesta botiga pot imprimir en papers de mida A1",
+            "cs": "Tento obchod umí tisknout na papíry velikosti A1"
           },
           "ifnot": "service:print:A1=no"
         },
@@ -254,7 +268,8 @@
             "de": "Das Geschäft kann Unterlagen auf A0 Papier drucken",
             "fr": "Cette boutique peut imprimer sur des papiers de format A0",
             "nl": "Deze zaak kan printen op A0-formaat",
-            "ca": "Aquesta botiga pot imprimir en papers de mida A0"
+            "ca": "Aquesta botiga pot imprimir en papers de mida A0",
+            "cs": "Tento obchod umí tisknout na papíry velikosti A0"
           },
           "ifnot": "service:print:A0=no"
         }
@@ -270,7 +285,8 @@
         "de": "Bietet dieses Geschäft Bioprodukte an?",
         "nl": "Biedt deze winkel biologische producten aan?",
         "ca": "Aquesta botiga ofereix productes orgànics?",
-        "fr": "Ce commerce propose-t-il des produits bio ?"
+        "fr": "Ce commerce propose-t-il des produits bio ?",
+        "cs": "Nabízí tento obchod bio produkty?"
       },
       "mappings": [
         {
@@ -280,7 +296,8 @@
             "de": "Dieses Geschäft bietet Bio-Produkte an",
             "nl": "Deze winkel biedt biologische producten aan",
             "ca": "Aquesta botiga ofereix productes orgànics",
-            "fr": "Ce commerce propose des produits bio"
+            "fr": "Ce commerce propose des produits bio",
+            "cs": "Tento obchod nabízí bio produkty"
           }
         },
         {
@@ -290,7 +307,8 @@
             "de": "Dieses Geschäft bietet ausschließlich Bio-Produkte an",
             "nl": "Deze winkel biedt uitluitend biologische producten aan",
             "ca": "Aquesta botiga sols ofereix productes orgànics",
-            "fr": "Ce commerce ne propose que des produits bio"
+            "fr": "Ce commerce ne propose que des produits bio",
+            "cs": "Tento obchod nabízí pouze bio produkty"
           }
         },
         {
@@ -300,7 +318,8 @@
             "de": "Dieses Geschäft bietet keine Bioprodukte an",
             "nl": "Deze winkel heeft geen biologische producten",
             "ca": "Aquesta botiga no ofereix productes orgànics",
-            "fr": "Ce commerce ne propose pas de produit bio"
+            "fr": "Ce commerce ne propose pas de produit bio",
+            "cs": "Tento obchod nenabízí bio produkty"
           }
         }
       ],
@@ -368,7 +387,8 @@
         "de": "ein Geschäft",
         "eo": "Butiko",
         "es": "una tienda",
-        "ca": "una botiga"
+        "ca": "una botiga",
+        "cs": "obchod"
       },
       "description": {
         "en": "Add a new shop",
@@ -379,7 +399,8 @@
         "de": "Ein neues Geschäft hinzufügen",
         "eo": "Enmeti novan butikon",
         "es": "Añadir una nueva tienda",
-        "ca": "Afegir una botiga nova"
+        "ca": "Afegir una botiga nova",
+        "cs": "Přidat nový obchod"
       }
     }
   ],
@@ -398,7 +419,8 @@
           "de": "{title()} wurde dauerhaft geschlossen",
           "es": "{title()} ha cerrado permanentemente",
           "fr": "{title()} a fermé définitivement",
-          "ca": "{title()} ha tancat permanentment"
+          "ca": "{title()} ha tancat permanentment",
+          "cs": "{title()} je trvale uzavřen"
         },
         "changesetMessage": "shop_closed"
       }
@@ -492,7 +514,8 @@
             "nl": "Toon enkel winkels die {search} verkopen",
             "es": "Solo mostrar tiendas que vendan {search}",
             "fr": "N'afficher que les magasins vendant {search}",
-            "ca": "Sols mostrar botigues que venen {search}"
+            "ca": "Sols mostrar botigues que venen {search}",
+            "cs": "Zobrazit pouze obchody prodávající {search}"
           }
         }
       ]
@@ -513,7 +536,8 @@
             "de": "Nur Geschäfte mit dem Namen {search} anzeigen",
             "nl": "Toon enkel winkels met naam {search}",
             "es": "Solo mostrar tiendas con nombre {search}",
-            "fr": "N'afficher que les magasins portant le nom {search}"
+            "fr": "N'afficher que les magasins portant le nom {search}",
+            "cs": "Zobrazit pouze obchody s názvem {search}"
           }
         }
       ]
@@ -527,7 +551,8 @@
         {
           "question": {
             "en": "Only show shops selling second-hand items",
-            "de": "Nur Second-Hand-Geschäfte anzeigen"
+            "de": "Nur Second-Hand-Geschäfte anzeigen",
+            "cs": "Zobrazit pouze obchody prodávající použité zboží"
           },
           "osmTags": {
             "or": [

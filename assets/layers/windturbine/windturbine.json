@@ -18,7 +18,8 @@
     "nl": "Windturbines (moderne windmolens die elektriciteit genereren)",
     "da": "Moderne vindmøller til produktion af elektricitet",
     "ca": "Molins de vent moderns que generen electricitat",
-    "cs": "Moderní větrné mlýny vyrábějící elektřinu"
+    "cs": "Moderní větrné mlýny vyrábějící elektřinu",
+    "pl": "Nowoczesne wiatraki wytwarzające energię elektryczną"
   },
   "source": {
     "osmTags": "generator:source=wind"
@@ -54,7 +55,8 @@
           "ca": "{name}",
           "nl": "{name}",
           "da": "{name}",
-          "pl": "{name}"
+          "pl": "{name}",
+          "cs": "{name}"
         }
       }
     ]
@@ -86,7 +88,8 @@
         "nl": "Wat is de output",
         "da": "Hvad er effekten af denne vindmølle? (f.eks. 2,3 MW)",
         "ca": "Quina és la potència de sortida d'aquest aerogenerador? (p. ex. 2,3 MW)",
-        "cs": "Jaký je výkon této větrné turbíny? (např. 2,3 MW)"
+        "cs": "Jaký je výkon této větrné turbíny? (např. 2,3 MW)",
+        "pl": "Jaka jest moc wyjściowa tej turbiny wiatrowej? (np. 2,3 MW)"
       },
       "freeform": {
         "key": "generator:output:electricity",
@@ -119,7 +122,8 @@
         "da": "Hvem driver denne vindmølle?",
         "nl": "Wie beheert deze windturbine?",
         "ca": "Qui opera aquest aerogenerador?",
-        "cs": "Kdo provozuje tuto větrnou turbínu?"
+        "cs": "Kdo provozuje tuto větrnou turbínu?",
+        "pl": "Kto obsługuje tę turbinę wiatrową?"
       },
       "freeform": {
         "key": "operator"
@@ -213,7 +217,8 @@
         "nl": "Wanneer werd deze windturbine in gebruik genomen?",
         "da": "Hvornår blev denne vindmølle taget i brug?",
         "ca": "Quan va entrar en funcionament aquest aerogenerador?",
-        "cs": "Kdy byla tato větrná turbína uvedena do provozu?"
+        "cs": "Kdy byla tato větrná turbína uvedena do provozu?",
+        "pl": "Kiedy ta turbina wiatrowa została uruchomiona?"
       },
       "freeform": {
         "key": "start_date",
@@ -238,7 +243,8 @@
         "nl": "Is er iets mis met de informatie over deze windturbine dat je hier niet opgelost kreeg? (laat hier een berichtje achter voor OpenStreetMap experts)",
         "de": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlassen Sie eine Nachricht an OpenStreetMap-Experten)",
         "ca": "Hi ha alguna cosa malament en la manera que està mapejat això que no heu pogut solucionar aquí? (deixeu una nota als experts d'OpenStreetMap)",
-        "cs": "Je něco špatně s tím, jak je to mapováno, a vy jste to zde nedokázali opravit? (zanechte poznámku odborníkům na OpenStreetMap)"
+        "cs": "Je něco špatně s tím, jak je to mapováno, a vy jste to zde nedokázali opravit? (zanechte poznámku odborníkům na OpenStreetMap)",
+        "pl": "Czy jest coś nie tak z mapowaniem tego, czego nie mogłeś tutaj naprawić? (zostaw wiadomość ekspertom OpenStreetMap)"
       },
       "freeform": {
         "key": "fixme",

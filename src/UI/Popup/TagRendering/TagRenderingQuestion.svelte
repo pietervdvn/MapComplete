@@ -178,31 +178,39 @@
 </script>
 
 {#if config.question !== undefined}
-  <div class="interactive border-interactive flex flex-col p-1 px-2 relative overflow-y-auto" style="max-height: 85vh">
+  <div
+    class="interactive border-interactive relative flex flex-col overflow-y-auto p-1 px-2"
+    style="max-height: 85vh"
+  >
     <div class="sticky top-0" style="z-index: 11">
-      
-    <div class="flex justify-between sticky top-0 interactive">
-      <span class="font-bold">
-        <SpecialTranslation t={config.question} {tags} {state} {layer} feature={selectedElement} />
-      </span>
-      <slot name="upper-right" />
-    </div>
-
-    {#if config.questionhint}
-      <div>
-        <SpecialTranslation
-          t={config.questionhint}
-          {tags}
-          {state}
-          {layer}
-          feature={selectedElement}
-        />
+      <div class="interactive sticky top-0 flex justify-between">
+        <span class="font-bold">
+          <SpecialTranslation
+            t={config.question}
+            {tags}
+            {state}
+            {layer}
+            feature={selectedElement}
+          />
+        </span>
+        <slot name="upper-right" />
       </div>
-    {/if}
+
+      {#if config.questionhint}
+        <div>
+          <SpecialTranslation
+            t={config.questionhint}
+            {tags}
+            {state}
+            {layer}
+            feature={selectedElement}
+          />
+        </div>
+      {/if}
     </div>
 
     {#if config.mappings?.length >= 8}
-      <div class="flex w-full sticky">
+      <div class="sticky flex w-full">
         <img src="./assets/svg/search.svg" class="h-6 w-6" />
         <input type="text" bind:value={$searchTerm} class="w-full" />
       </div>
@@ -312,7 +320,10 @@
           <Tr t={$feedback} />
         </div>
       {/if}
-      <div class="flex flex-wrap-reverse items-stretch justify-end sm:flex-nowrap sticky bottom-0 interactive" style="z-index: 11">
+      <div
+        class="interactive sticky bottom-0 flex flex-wrap-reverse items-stretch justify-end sm:flex-nowrap"
+        style="z-index: 11"
+      >
         <!-- TagRenderingQuestion-buttons -->
         <slot name="cancel" />
         <slot name="save-button" {selectedTags}>

@@ -10,7 +10,8 @@
     "ca": "Mapes",
     "es": "Mapas",
     "pa_PK": "نقشے",
-    "pl": "Mapy"
+    "pl": "Mapy",
+    "cs": "Mapy"
   },
   "minzoom": 12,
   "source": {
@@ -32,7 +33,8 @@
       "ca": "Mapa",
       "es": "Mapa",
       "pa_PK": "نقشہ",
-      "pl": "Mapa"
+      "pl": "Mapa",
+      "cs": "Mapa"
     }
   },
   "description": {
@@ -43,7 +45,8 @@
     "de": "Eine Karte, die für Touristen gedacht ist und dauerhaft im öffentlichen Raum aufgestellt ist",
     "es": "Un mapa, pensado para turistas y que está instalado de manera permanente en un espacio público",
     "pl": "Mapa, przeznaczona dla turystów, która jest zainstalowana w przestrzeni publicznej na stałe",
-    "ca": "Un mapa"
+    "ca": "Un mapa",
+    "cs": "Mapa určená pro turisty, která je trvale instalována na veřejném prostranství"
   },
   "tagRenderings": [
     "images",
@@ -53,7 +56,8 @@
         "en": "What type of map is shown?",
         "de": "Was für eine Karte ist das?",
         "pl": "Jaki rodzaj mapy jest pokazany?",
-        "ca": "Quin tipus de mapa es mostra?"
+        "ca": "Quin tipus de mapa es mostra?",
+        "cs": "Jaký typ mapy je zobrazen?"
       },
       "mappings": [
         {
@@ -61,7 +65,8 @@
           "then": {
             "en": "Topographical map <p class='subtle'>The map contains contour lines. </p>",
             "de": "Topographische Katte <p class='subtle'> Die Karte enthält Höhenlinien. </p>",
-            "ca": "Mapa topogràfic <p class='subtle'>El mapa conté línies de contorn. </p>"
+            "ca": "Mapa topogràfic <p class='subtle'>El mapa conté línies de contorn. </p>",
+            "cs": "Topografická mapa <p class='subtle'>Mapa obsahuje vrstevnice. </p>"
           }
         },
         {
@@ -70,7 +75,8 @@
             "en": "A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>",
             "de": "Eine Karte mit allen Straßen und Wegen eines Gebietes. <p class='subtle'>Die Straßen sind meist benannt; die Winkel, die Entfernungen, etc. stimmen</p>",
             "pl": "Mapa z wszystkimi ulicami i ścieżkami w danym obszarze. <p class='subtle'>Ulica w większości mają nazwy; kąty, odległości itp. są poprawne</p>",
-            "ca": "Un mapa amb tots els carrers o camins d'una àrea. <p class='subtle'>Els carrers estan majoritàriament nomenats; els angles, distàncies etc. són acurades</p>"
+            "ca": "Un mapa amb tots els carrers o camins d'una àrea. <p class='subtle'>Els carrers estan majoritàriament nomenats; els angles, distàncies etc. són acurades</p>",
+            "cs": "Mapa se všemi ulicemi nebo cestami v oblasti. <p class='subtle'>Ulice jsou většinou pojmenované, úhly, vzdálenosti atd. jsou přesné</p>"
           }
         },
         {
@@ -79,7 +85,8 @@
             "en": "This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> ",
             "de": "Dies ist eine schematische Karte. <p class='subtle'>Eine skizzierte Karte mit nur wichtigen Wegen und POIs. Die Winkel, Entfernungen usw. sind lediglich illustrativ, nicht genau.</p> ",
             "pl": "To jest mapa schematyczna. <p class='subtle'>Mapa-szkic z tylko ważnymi drogami i POI. Kąty, odległości itp. są tylko ilustratywne, niedokładne.</p> ",
-            "ca": "Això és un mapa esquemàtic. <p class='subtle'>Un mapa esbossat amb només camins importants i PDI. Els angles, els trajectes etc. són merament il·lustratius, no acurat.</p> "
+            "ca": "Això és un mapa esquemàtic. <p class='subtle'>Un mapa esbossat amb només camins importants i PDI. Els angles, els trajectes etc. són merament il·lustratius, no acurat.</p> ",
+            "cs": "Jedná se o schematickou mapu. <p class='subtle'>Schematická mapa s vyznačením pouze důležitých cest a bodů zájmu. Úhly, vzdálenosti atd. jsou pouze ilustrativní, nikoliv přesné.</p> "
           }
         },
         {
@@ -87,7 +94,8 @@
           "then": {
             "en": "This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>",
             "de": "Dies ist ein Toposkop. <p class='subtle'>Eine Markierung, die an hohen Stellen angebracht ist und die Richtung zu wichtigen Landschaftsobjekten anzeigt, die von diesem Punkt aus gesehen werden können<p>",
-            "ca": "Això és un toposcope. <p class='subtle'>Un marcador erigit en llocs alts que indica la direcció cap als elements paisatgístics notables que es poden veure des d'aquest punt<p>"
+            "ca": "Això és un toposcope. <p class='subtle'>Un marcador erigit en llocs alts que indica la direcció cap als elements paisatgístics notables que es poden veure des d'aquest punt<p>",
+            "cs": "Jedná se o toposkop. <p class='subtle'>Značka vztyčená na vyvýšených místech, která udává směr k pozoruhodným krajinným prvkům, které jsou z tohoto místa vidět<p>"
           }
         }
       ]
@@ -98,7 +106,8 @@
         "en": "What is the size of the shown area on the map?",
         "de": "Was wird von der Fläche abgedeckt?",
         "pl": "Jaki jest rozmiar obszaru pokazanego na tej mapie?",
-        "ca": "Quina és la mida de l'àrea mostrada en el mapa?"
+        "ca": "Quina és la mida de l'àrea mostrada en el mapa?",
+        "cs": "Jak velká je zobrazená oblast na mapě?"
       },
       "mappings": [
         {
@@ -107,7 +116,8 @@
             "en": "A map of the rooms within a building",
             "de": "Eine Karte der Räume innerhalb eines Gebäudes",
             "pl": "Plan pomieszczeń w budynku",
-            "ca": "Un mapa de les habitacions dins d'un edifici"
+            "ca": "Un mapa de les habitacions dins d'un edifici",
+            "cs": "Mapa místností uvnitř budovy"
           }
         },
         {
@@ -115,7 +125,8 @@
           "then": {
             "en": "A map of special site, like of a historical castle, a park, a campus, a forest, ....",
             "de": "Örtlichkeit (z.B. Burg)",
-            "ca": "Un mapa d'un lloc especial, com un castell històric, un parc, un campus, un bosc, …"
+            "ca": "Un mapa d'un lloc especial, com un castell històric, un parc, un campus, un bosc, …",
+            "cs": "Mapa speciálního místa, například historického zámku, parku, areálu, lesa, ...."
           }
         },
         {
@@ -124,7 +135,8 @@
             "en": "A map showing the village or town",
             "de": "Eine Karte, die das Dorf oder die Stadt anzeigt",
             "pl": "Mapa pokazująca wieś lub niewielkie miasto",
-            "ca": "Un mapa que mostra el poble o la ciutat"
+            "ca": "Un mapa que mostra el poble o la ciutat",
+            "cs": "Mapa zobrazující vesnici nebo město"
           }
         },
         {
@@ -133,7 +145,8 @@
             "en": " A map of a city",
             "de": "Stadt",
             "pl": " Mapa miasta",
-            "ca": " Un mapa d'una ciutat"
+            "ca": " Un mapa d'una ciutat",
+            "cs": " Mapa města"
           }
         },
         {
@@ -142,7 +155,8 @@
             "en": "The map of an entire region, showing multiple cities and villages",
             "de": "Region",
             "pl": "Mapa całego regionu, pokazująca wiele miast i wsi",
-            "ca": "El mapa d'una regió sencera, mostrant múltiples ciutats i pobles"
+            "ca": "El mapa d'una regió sencera, mostrant múltiples ciutats i pobles",
+            "cs": "Mapa celého regionu s několika městy a vesnicemi"
           }
         }
       ]
@@ -159,7 +173,8 @@
         "de": "Auf welchen Daten basiert diese Karte?",
         "es": "¿En qué datos se basa este mapa?",
         "ca": "En quines dades es basa aquest mapa?",
-        "pl": "Na jakich danych bazuje ta mapa?"
+        "pl": "Na jakich danych bazuje ta mapa?",
+        "cs": "Na jakých datech je mapa založena?"
       },
       "mappings": [
         {
@@ -178,7 +193,8 @@
             "de": "Diese Karte basiert auf OpenStreetMap",
             "es": "Este mapa se basa en OpenStreetMap",
             "ca": "Aquest mapa està basat en OpenStreetMap",
-            "pl": "Ta mapa bazuje na OpenStreetMap"
+            "pl": "Ta mapa bazuje na OpenStreetMap",
+            "cs": "Tato mapa je založena na OpenStreetMap"
           }
         }
       ],
@@ -194,7 +210,8 @@
         "de": "Diese Karte basiert auf {map_source}",
         "es": "Este mapa se basa en {map_source}",
         "pl": "Ta mapa bazuje na {map_source}",
-        "ca": "Aquest mapa està basat en {map_source}"
+        "ca": "Aquest mapa està basat en {map_source}",
+        "cs": "Tato mapa vychází z {map_source}"
       },
       "id": "map-map_source"
     },
@@ -210,7 +227,8 @@
         "de": "Ist die OpenStreetMap-Attribution vorhanden?",
         "fr": "L’attribution à OpenStreetMap est elle-présente ?",
         "es": "¿Hay una atribución a OpenStreetMap?",
-        "ca": "Hi ha atribució a OpenStreetMap?"
+        "ca": "Hi ha atribució a OpenStreetMap?",
+        "cs": "Je uveden atribut OpenStreetMap?"
       },
       "mappings": [
         {
@@ -227,7 +245,8 @@
             "fr": "L’attribution est clairement inscrite ainsi que la licence ODBL",
             "es": "Se atribuye claramente a OpenStreetMap, incluyendo la licencia ODBL",
             "pl": "Źródło, czyli OpenStreetMap, jest w widoczny sposób podane, zawiera informację o licencji ODBL",
-            "ca": "OpenStreetMap està clarament atribuït, incloent la llicència ODBL"
+            "ca": "OpenStreetMap està clarament atribuït, incloent la llicència ODBL",
+            "cs": "OpenStreetMap je jasně popsán, včetně licence ODBL"
           }
         },
         {
@@ -243,7 +262,8 @@
             "de": "OpenStreetMap ist eindeutig attributiert, aber die Lizenz wird nicht erwähnt",
             "fr": "L’attribution est clairement inscrite mais la licence est absente",
             "es": "Se atribuya claramente a OpenStreetMap, pero no se menciona la licencia",
-            "ca": "OpenStreetMap està clarament atribuït, però no es menciona la llicència"
+            "ca": "OpenStreetMap està clarament atribuït, però no es menciona la llicència",
+            "cs": "OpenStreetMap je jasně připsána, ale licence není uvedena"
           }
         },
         {
@@ -259,7 +279,8 @@
             "de": "OpenStreetMap wurde nicht erwähnt, aber jemand hat einen OpenStreetMap-Aufkleber darauf geklebt",
             "fr": "OpenStreetMap n’est pas mentionné, un sticker OpenStreetMap a été collé",
             "es": "No se mencionaba OpenStreetMap, pero alguien le pegó una pegatina de OpenStreetMap",
-            "ca": "OpenStreetMap no es mencionava, però algú hi ha posat una enganxina d'OpenStreetMap"
+            "ca": "OpenStreetMap no es mencionava, però algú hi ha posat una enganxina d'OpenStreetMap",
+            "cs": "OpenStreetMap nebyl zmíněn, ale někdo dal OpenStreetMap-nálepku na to"
           }
         },
         {
@@ -275,7 +296,8 @@
             "fr": "Il n'y a aucune attribution",
             "de": "Es gibt überhaupt keine Namensnennung",
             "es": "No hay atribución",
-            "ca": "No hi ha atribució"
+            "ca": "No hi ha atribució",
+            "cs": "Neexistuje vůbec žádný atribut"
           }
         },
         {
@@ -291,7 +313,8 @@
             "fr": "Il n'y a aucune attribution",
             "de": "Es gibt überhaupt keine Namensnennung",
             "es": "No hay atribución",
-            "ca": "No hi ha atribució"
+            "ca": "No hi ha atribució",
+            "cs": "Neexistuje vůbec žádný atribut"
           },
           "hideInAnswer": true
         }
@@ -320,7 +343,8 @@
         "de": "eine Karte",
         "ca": "un mapa",
         "es": "un mapa",
-        "pl": "mapa"
+        "pl": "mapa",
+        "cs": "mapa"
       },
       "description": {
         "en": "Add a missing map",
@@ -331,7 +355,8 @@
         "ru": "Добавить отсутствующую карту",
         "es": "Añadir un mapa que falta",
         "ca": "Afegeix un mapa que falta",
-        "pl": "Dodaj brakującą mapę"
+        "pl": "Dodaj brakującą mapę",
+        "cs": "Přidat chybějící mapu"
       }
     }
   ],

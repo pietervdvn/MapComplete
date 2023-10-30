@@ -53,7 +53,7 @@ export default class InputHelpers {
             }),
         date: (value) => new SvelteUIElement(DateInput, { value }),
         color: (value) => new SvelteUIElement(ColorInput, { value }),
-        opening_hours: (value) => new SvelteUIElement(OpeningHoursInput, {value}),
+        opening_hours: (value) => new SvelteUIElement(OpeningHoursInput, { value }),
         wikidata: InputHelpers.constructWikidataHelper,
     } as const
 

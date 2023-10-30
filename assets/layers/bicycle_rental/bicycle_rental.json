@@ -8,7 +8,8 @@
     "da": "Cykeludlejning",
     "es": "Alquiler de bicicletas",
     "cs": "Půjčovna kol",
-    "ca": "Lloguer de bicicletes"
+    "ca": "Lloguer de bicicletes",
+    "pt_BR": "Aluguel de bicicletas"
   },
   "source": {
     "osmTags": {
@@ -35,7 +36,8 @@
       "fr": "Location de vélo",
       "cs": "Půjčovna kol",
       "ca": "Lloguer de bicicletes",
-      "pl": "Wypożyczalnia rowerów"
+      "pl": "Wypożyczalnia rowerów",
+      "pt_BR": "Aluguel de bicicleta"
     },
     "mappings": [
       {
@@ -54,7 +56,8 @@
           "fr": "{name}",
           "cs": "{name}",
           "eu": "{name}",
-          "pl": "{name}"
+          "pl": "{name}",
+          "pt_BR": "{name}"
         }
       }
     ]
@@ -67,7 +70,9 @@
     "es": "Estaciones de alquiler de bicicletas",
     "da": "Stationer til udlejning af cykler",
     "cs": "Půjčovny jízdních kol",
-    "ca": "Estacions de lloguer de bicicletes"
+    "ca": "Estacions de lloguer de bicicletes",
+    "pl": "Stacje wypożyczania rowerów",
+    "pt_BR": "Estações de aluguel de bicicletas"
   },
   "tagRenderings": [
     "images",
@@ -81,7 +86,8 @@
         "da": "Hvilken slags cykeludlejning er dette?",
         "fr": "De quel type de location de vélo s'agit-il ?",
         "cs": "O jakou půjčovnu jízdních kol se jedná?",
-        "ca": "Quin tipus de lloguer de bicicletes és aquest?"
+        "ca": "Quin tipus de lloguer de bicicletes és aquest?",
+        "pt_BR": "Qual tipo de aluguel de bicicletas é esse?"
       },
       "mappings": [
         {
@@ -99,7 +105,8 @@
             "da": "Dette er en butik, hvis hovedfokus er cykeludlejning",
             "fr": "C'est un magasin dont l'activité principale est la location de vélo",
             "cs": "Jedná se o obchod, jehož hlavním zaměřením je půjčování jízdních kol",
-            "ca": "Es tracta d'una botiga que té com a objectiu principal el lloguer de bicicletes"
+            "ca": "Es tracta d'una botiga que té com a objectiu principal el lloguer de bicicletes",
+            "pt_BR": "Essa é uma loja cujo foco principal é o aluguel de bicicletas"
           }
         },
         {
@@ -112,7 +119,8 @@
             "da": "Dette er en udlejningsvirksomhed, som udlejer forskellige genstande og/eller køretøjer. Den udlejer også cykler, men det er ikke det primære fokus",
             "fr": "C'est une agence louant diverses choses et/ou voitures. Elle loue également des vélos, mais ce n'est pas sa principale activité",
             "cs": "Jedná se o půjčovnu, která pronajímá různé předměty a/nebo vozidla. Pronajímá také jízdní kola, ale to není hlavní náplní",
-            "ca": "Es tracta d'una empresa de lloguer que lloga diversos objectes i/o vehicles. També lloga bicicletes, però aquest no és l'objectiu principal"
+            "ca": "Es tracta d'una empresa de lloguer que lloga diversos objectes i/o vehicles. També lloga bicicletes, però aquest no és l'objectiu principal",
+            "pt_BR": "Esse é um negócio de aluguel que aluga variados objetos e/ou veículos. Eles também alugam bicicletas, mas esse não é o foco principal"
           }
         },
         {
@@ -130,7 +138,8 @@
             "da": "Dette er en butik, der sælger eller reparerer cykler, men som også udlejer cykler",
             "fr": "C'est un magasin qui vend ou répare des vélos mais peut également en louer",
             "cs": "Jedná se o prodejnu, která prodává nebo opravuje jízdní kola, ale také je pronajímá",
-            "ca": "Es tracta d'una botiga que ven o repara bicicletes, però també lloga bicicletes"
+            "ca": "Es tracta d'una botiga que ven o repara bicicletes, però també lloga bicicletes",
+            "pt_BR": "Essa é uma loja que vende ou conserta bicicletas, mas também aluga elas"
           }
         },
         {
@@ -143,7 +152,8 @@
             "fr": "C'est un point d’attache automatisé où le vélo est attaché mécaniquement à une structure",
             "da": "Dette er en automatiseret dockingstation, hvor en cykel låses mekanisk fast i en struktur",
             "cs": "Jedná se o automatickou dokovací stanici, kde je jízdní kolo mechanicky uzamčeno ke konstrukci",
-            "ca": "Es tracta d'una estació d'acoblament automatitzada, on una bicicleta es bloqueja mecànicament a una estructura"
+            "ca": "Es tracta d'una estació d'acoblament automatitzada, on una bicicleta es bloqueja mecànicament a una estructura",
+            "pt_BR": "Esta é uma estação de ancoragem automatizada, onde uma bicicleta é travada mecanicamente a uma estrutura"
           }
         },
         {
@@ -157,7 +167,8 @@
             "fr": "Il y a un distributeur qui distribue et accepte les clés, éventuellement après identification et/ou payement. Les vélos sont stationnés à proximité",
             "da": "Der er en maskine til stede, som udleverer og modtager nøgler, eventuelt efter autentificering og/eller betaling. Cyklerne er parkeret i nærheden",
             "cs": "Přítomný je automat, který vydává a přijímá klíče, případně po ověření pravosti a/nebo zaplacení. Jízdní kola jsou zaparkována v blízkosti",
-            "ca": "Hi ha una màquina present que dispensa i accepta claus, eventualment després de l'autenticació i/o el pagament. Les bicicletes estan aparcades a prop"
+            "ca": "Hi ha una màquina present que dispensa i accepta claus, eventualment després de l'autenticació i/o el pagament. Les bicicletes estan aparcades a prop",
+            "pt_BR": "Uma máquina está presente que dispensa e aceita chaves, geralmente após autenticação e/ou pagamento. As bicicletas estão estacionadas nas proximidades"
           }
         },
         {
@@ -170,7 +181,8 @@
             "fr": "C'est un point de dépôt, p.ex. un emplacement de parking réservé aux vélos de location",
             "da": "Dette er et afleveringssted, f.eks. en reserveret parkeringsplads til cykler, som er tydeligt markeret som værende forbeholdt udlejningstjenesten",
             "cs": "Jedná se o místo předání, např. vyhrazené parkoviště pro umístění jízdních kol, zřetelně označené jako místo určené pouze pro půjčovnu",
-            "ca": "Aquest és un punt de baixada, p. ex. un aparcament reservat per col·locar les bicicletes marcades clarament com a només per al servei de lloguer"
+            "ca": "Aquest és un punt de baixada, p. ex. un aparcament reservat per col·locar les bicicletes marcades clarament com a només per al servei de lloguer",
+            "pt_BR": "Este é um ponto de devolução, p. ex. um estacionamento reservado para colocar as bicicletas claramente marcadas como sendo apenas para o serviço de aluguel"
           }
         }
       ],
@@ -215,7 +227,8 @@
         "da": "Hvilken slags cykler og tilbehør udlejes her?",
         "fr": "Quels types de vélos et d’accessoires peuvent être loués ici ?",
         "cs": "Jaká jízdní kola a příslušenství se zde půjčují?",
-        "ca": "Quin tipus de bicicletes i accessoris es lloguen aquí?"
+        "ca": "Quin tipus de bicicletes i accessoris es lloguen aquí?",
+        "pt_BR": "Quais tipos de bicicleta e acessórios podem ser alugados aqui?"
       },
       "render": {
         "en": "{rental} is rented here",
@@ -225,7 +238,8 @@
         "da": "{rental} udlejes her",
         "fr": "{rental} est louable ici",
         "cs": "Zde si můžete půjčit {rental}",
-        "ca": "{rental} es lloga aquí"
+        "ca": "{rental} es lloga aquí",
+        "pt_BR": "{rental} é alugado aqui"
       },
       "freeform": {
         "key": "rental",
@@ -243,7 +257,8 @@
             "da": "Her kan man leje almindelige bycykler",
             "fr": "Des vélos de ville peuvent être loués ici",
             "cs": "Zde si můžete půjčit běžná městská kola",
-            "ca": "Aquí es poden llogar bicicletes de ciutat normals"
+            "ca": "Aquí es poden llogar bicicletes de ciutat normals",
+            "pt_BR": "Bicicletas urbanas comuns podem ser alugadas aqui"
           }
         },
         {
@@ -256,7 +271,8 @@
             "da": "El-cykler kan lejes her",
             "fr": "Des vélos électriques peuvent être loués ici",
             "cs": "Zde si můžete půjčit elektrokola",
-            "ca": "Aquí es poden llogar bicicletes elèctriques"
+            "ca": "Aquí es poden llogar bicicletes elèctriques",
+            "pt_BR": "Bicicletas elétricas podem ser alugadas aqui"
           }
         },
         {
@@ -269,7 +285,8 @@
             "da": "BMX cykler kan lejes her",
             "fr": "Des BMX peuvent être loués ici",
             "cs": "Zde si můžete půjčit BMX kola",
-            "ca": "Aquí es poden llogar BMX"
+            "ca": "Aquí es poden llogar BMX",
+            "pt_BR": "Bicicletas BMX podem ser alugadas aqui"
           }
         },
         {
@@ -282,7 +299,8 @@
             "da": "Mountainbikes kan lejes her",
             "fr": "Des vélos de montagne peuvent être loués ici",
             "cs": "Zde si můžete půjčit horská kola",
-            "ca": "Aquí es poden llogar bicicletes de muntanya"
+            "ca": "Aquí es poden llogar bicicletes de muntanya",
+            "pt_BR": "Bicicletas de montanha podem ser alugadas aqui"
           }
         },
         {
@@ -295,7 +313,8 @@
             "da": "Børnecykler kan lejes her",
             "fr": "Des vélos d'enfants peuvent être loués ici",
             "cs": "Zde si můžete půjčit dětská kola",
-            "ca": "Aquí es poden llogar bicicletes infantils"
+            "ca": "Aquí es poden llogar bicicletes infantils",
+            "pt_BR": "Bicicletas para crianças podem ser alugadas aqui"
           }
         },
         {
@@ -308,7 +327,8 @@
             "fr": "Des tandems peuvent être loués ici",
             "es": "Aquí se pueden alquilar tándems",
             "cs": "Zde si můžete půjčit tandemová kola",
-            "ca": "Aquí es poden llogar tàndems"
+            "ca": "Aquí es poden llogar tàndems",
+            "pt_BR": "Bicicletas tandem podem ser alugadas aqui"
           }
         },
         {
@@ -321,7 +341,8 @@
             "da": "Racercykler kan lejes her",
             "fr": "Des vélos de course peuvent être loués ici",
             "cs": "Zde si můžete půjčit závodní kola",
-            "ca": "Aquí es poden llogar bicicletes de carreres"
+            "ca": "Aquí es poden llogar bicicletes de carreres",
+            "pt_BR": "Bicicletas de estrada podem ser alugadas aqui"
           }
         },
         {
@@ -334,7 +355,8 @@
             "fr": "Des casques de vélos peuvent être loués ici",
             "da": "Cykelhjelme kan lejes her",
             "cs": "Zde si můžete půjčit cyklistické přilby",
-            "ca": "Aquí es poden llogar cascos de bicicleta"
+            "ca": "Aquí es poden llogar cascos de bicicleta",
+            "pt_BR": "Capacetes de ciclismo podem ser alugados aqui"
           }
         }
       ],
@@ -362,7 +384,8 @@
               "fr": "vélos de ville",
               "cs": "městská kola",
               "ca": "Bicicletes de ciutat",
-              "pl": "rowery miejskie"
+              "pl": "rowery miejskie",
+              "pt_BR": "bicicletas urbanas"
             }
           ],
           [
@@ -377,7 +400,8 @@
               "fr": "vélos électriques",
               "cs": "elektrokola",
               "ca": "bicicletes elèctriques",
-              "pl": "rowery elektryczne"
+              "pl": "rowery elektryczne",
+              "pt_BR": "bicicletas elétricas"
             }
           ],
           [
@@ -392,7 +416,8 @@
               "fr": "vélos d'enfants",
               "cs": "kola pro děti",
               "ca": "bicicletes per a xiquets",
-              "pl": "rowery dla dzieci"
+              "pl": "rowery dla dzieci",
+              "pt_BR": "bicicletas para crianças"
             }
           ],
           [
@@ -407,7 +432,8 @@
               "fr": "BMX",
               "cs": "BMX kola",
               "ca": "Bicicletes BMX",
-              "pl": "rowery BMX"
+              "pl": "rowery BMX",
+              "pt_BR": "bicicletas BMX"
             }
           ],
           [
@@ -423,7 +449,8 @@
               "fr": "vélos de montagne",
               "cs": "horská kola",
               "eu": "mendiko bizikletak",
-              "pl": "rowery górskie"
+              "pl": "rowery górskie",
+              "pt_BR": "bicicletas de montanha"
             }
           ],
           [
@@ -436,7 +463,8 @@
               "es": "alforjas de bicicleta",
               "fr": "sacoches pour vélo",
               "cs": "brašny na kolo",
-              "ca": "maletes de bicicletes"
+              "ca": "maletes de bicicletes",
+              "pt_BR": "alforjes de bicicleta"
             }
           ],
           [
@@ -451,7 +479,8 @@
               "fr": "tandem",
               "cs": "tandem",
               "eu": "tandem",
-              "pl": "tandem"
+              "pl": "tandem",
+              "pt_BR": "tandem"
             }
           ]
         ]
@@ -469,7 +498,8 @@
             "fr": "Combien de type_plural peuvent être loués ici ?",
             "cs": "Kolik typů kol si zde můžete pronajmout?",
             "es": "¿Cuántas type_plural pueden alquilarse aquí?",
-            "ca": "Quants type_plural es poden llogar aquí?"
+            "ca": "Quants type_plural es poden llogar aquí?",
+            "pt_BR": "Quantos type_plural podem ser alugados aqui?"
           },
           "render": {
             "en": "{capacity:bicycle_type} type_plural can be rented here",
@@ -478,7 +508,8 @@
             "fr": "{capacity:bicycle_type} type_plural peuvent être loués ici",
             "cs": "{capacity:bicycle_type} typů si můžete pronajmout zde",
             "es": "{capacity:bicycle_type} type_plural pueden alquilarse aquí",
-            "ca": "{capacity:bicycle_type} type_plural es poden llogar aquí"
+            "ca": "{capacity:bicycle_type} type_plural es poden llogar aquí",
+            "pt_BR": "{capacity:bicycle_type} type_plural podem ser alugados aqui"
           },
           "freeform": {
             "key": "capacity:bicycle_type",
@@ -503,7 +534,8 @@
         "es": "una tienda de alquiler de bicicletas",
         "da": "en cykeludlejningsforretning",
         "cs": "půjčovna jízdních kol",
-        "ca": "una botiga de lloguer de bicicletes"
+        "ca": "una botiga de lloguer de bicicletes",
+        "pt_BR": "uma loja de aluguel de bicicletas"
       },
       "tags": [
         "amenity=bicycle_rental",
@@ -517,7 +549,8 @@
         "da": "En bemandet butik, der fokuserer på cykeludlejning",
         "es": "Una tienda atendida que se centra en el alquiler de bicicletas",
         "cs": "Obsluhovaný obchod zaměřený na půjčování jízdních kol",
-        "ca": "Una botiga atesa que es centra en el lloguer de bicicletes"
+        "ca": "Una botiga atesa que es centra en el lloguer de bicicletes",
+        "pt_BR": "Uma loja com atendimento pessoal que foca no aluguel de bicicletas"
       }
     },
     {
@@ -529,7 +562,8 @@
         "es": "un alquiler de bicicletas",
         "fr": "une location de vélos",
         "cs": "půjčovna kol",
-        "ca": "un lloguer de bicicletes"
+        "ca": "un lloguer de bicicletes",
+        "pt_BR": "um aluguel de bicicletas"
       },
       "tags": [
         "amenity=bicycle_rental"
@@ -574,7 +608,8 @@
           "es": "{title()} ha cerrado permanentemente",
           "da": "{title()} er lukket permanent",
           "cs": "{title()} je trvale uzavřen",
-          "ca": "{title()} ha tancat permanentment"
+          "ca": "{title()} ha tancat permanentment",
+          "pt_BR": "{title()} fechou permanentemente"
         },
         "changesetMessage": "shop_closed"
       }
@@ -594,7 +629,8 @@
           "es": "Esta tienda de bicicletas alquilaba bicis, pero ya no lo hace",
           "da": "Denne cykelbutik plejede at udleje cykler, men udlejer ikke længere cykler",
           "cs": "Tento obchod s koly dříve půjčoval kola, ale už je nepůjčuje",
-          "ca": "Aquesta botiga de bicicletes solia llogar bicicletes, però ja no"
+          "ca": "Aquesta botiga de bicicletes solia llogar bicicletes, però ja no",
+          "pt_BR": "Essa loja de bicicletas costumava alugar bicicletas, mas não aluga mais"
         }
       }
     ]

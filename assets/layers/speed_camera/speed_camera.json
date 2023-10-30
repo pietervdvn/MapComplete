@@ -5,14 +5,16 @@
     "de": "Blitzer",
     "nl": "Flitspaal",
     "es": "Cámara de velocidad",
-    "ca": "Càmera de velocitat"
+    "ca": "Càmera de velocitat",
+    "cs": "Rychlostní radar"
   },
   "description": {
     "en": "Layer showing speed cameras",
     "de": "Ebene mit Blitzern",
     "nl": "Laag met flitspalen",
     "es": "Capa con cámaras de velocidad",
-    "ca": "Capa que mostra càmeres de velocitat"
+    "ca": "Capa que mostra càmeres de velocitat",
+    "cs": "Vrstva zobrazující rychlostní radary"
   },
   "title": {
     "render": {
@@ -20,7 +22,8 @@
       "de": "Blitzer",
       "nl": "Flitspaal",
       "es": "Cámara de velocidad",
-      "ca": "Càmera de velocitat"
+      "ca": "Càmera de velocitat",
+      "cs": "Rychlostní radar"
     }
   },
   "minzoom": 12,
@@ -36,7 +39,8 @@
         "nl": "Wat is de maximum toegestane snelheid bij deze flitspaal?",
         "es": "¿Cuál es la velocidad máxima permitida en este radar?",
         "fr": "Quelle est la vitesse maximale autorisée au niveau de ce radar ?",
-        "ca": "Quina és la velocitat màxima permesa en aquest radar?"
+        "ca": "Quina és la velocitat màxima permesa en aquest radar?",
+        "cs": "Jaká je maximální povolená rychlost na tomto rychlostním radaru?"
       },
       "freeform": {
         "key": "maxspeed",
@@ -47,7 +51,8 @@
           "nl": "Maximum toegestane snelheid",
           "es": "Velocidad máxima permitida",
           "fr": "Vitesse maximale autorisée",
-          "ca": "Velocitat màxima permesa"
+          "ca": "Velocitat màxima permesa",
+          "cs": "Maximální povolená rychlost"
         }
       },
       "render": {
@@ -56,7 +61,8 @@
         "nl": "De maximum toegestane snelheid is {canonical(maxspeed)}",
         "es": "La velocidad máxima permitida es {canonical(maxspeed)}",
         "fr": "La vitesse maximale autorisée est {canonical(maxspeed)}",
-        "ca": "La velocitat màxima permesa és {canonical(maxspeed)}"
+        "ca": "La velocitat màxima permesa és {canonical(maxspeed)}",
+        "cs": "Maximální povolená rychlost je {canonical(maxspeed)}"
       }
     },
     {
@@ -65,7 +71,8 @@
         "en": "The reference number of this speed camera is {ref}",
         "de": "Die Referenznummer dieses Blitzers ist {ref}",
         "nl": "De referentie van deze flitspaal is {ref}",
-        "es": "El número de referencia de este radar de velocidad es {ref}"
+        "es": "El número de referencia de este radar de velocidad es {ref}",
+        "cs": "Referenční číslo tohoto rychlostního radaru je {ref}"
       },
       "condition": "ref~*"
     }
@@ -80,7 +87,8 @@
         "de": "einen Blitzer",
         "nl": "een flitspaal",
         "es": "una cámara de velocidad",
-        "ca": "una càmera de velocitat"
+        "ca": "una càmera de velocitat",
+        "cs": "rychlostní radar"
       },
       "snapToLayer": [
         "maxspeed"
@@ -116,14 +124,16 @@
             "ca": "quilòmetres/hora",
             "es": "kilómetros/hora",
             "nl": "kilometers/uur",
-            "de": "Kilometer/Stunde"
+            "de": "Kilometer/Stunde",
+            "cs": "kilometry/hodinu"
           },
           "humanShort": {
             "en": "km/h",
             "ca": "km/h",
             "es": "km/h",
             "nl": "km/u",
-            "de": "km/h"
+            "de": "km/h",
+            "cs": "km/h"
           }
         },
         {
@@ -142,14 +152,16 @@
             "ca": "milles/hora",
             "es": "millas/hora",
             "nl": "miles/uur",
-            "de": "Meilen/Stunde"
+            "de": "Meilen/Stunde",
+            "cs": "míle/hodinu"
           },
           "humanShort": {
             "en": "mph",
             "ca": "mph",
             "es": "mph",
             "nl": "mph",
-            "de": "mph"
+            "de": "mph",
+            "cs": "mph"
           }
         }
       ]

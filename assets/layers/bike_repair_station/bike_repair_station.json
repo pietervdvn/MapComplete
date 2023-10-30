@@ -936,7 +936,8 @@
         "es": "Una bomba de bicicletas y herramientas para reparar tu bicicleta en el espacio público. Las herramientas habitualmente están aseguradas con cadenas contra el robo.",
         "da": "En cykelpumpe og værktøj til at reparere din cykel i det offentlige rum. Værktøjet er ofte sikret med kæder mod tyveri.",
         "cs": "Vzduchový kompresor na kolo a nářadí na opravu kola na veřejném místě. Nářadí je často zajištěno řetězy proti krádeži.",
-        "ca": "Una bomba per a bicicletes i eines per a reparar la teva bicicleta a l'espai públic. Les eines sovint estan assegurades amb cadenes contra robatoris."
+        "ca": "Una bomba per a bicicletes i eines per a reparar la teva bicicleta a l'espai públic. Les eines sovint estan assegurades amb cadenes contra robatoris.",
+        "pt_BR": "Uma bomba de ar para bicicletas e ferramentas para reparar sua bicicleta em espaço público. As ferramentas geralmente são protegidas com correntes contra furtos."
       },
       "exampleImages": [
         "./assets/layers/bike_repair_station/repair_station_example_2.jpg",
@@ -1067,6 +1068,7 @@
     "da": "Et lag med cykelpumper og cykelreværktøjsstativer",
     "fr": "Une couche montrant les pompes à vélo et les centres de réparation",
     "cs": "Vrstva zobrazující vzduchové kompresory na jízdní kola a stojany na nářadí pro opravu jízdních kol",
-    "ca": "Una capa que mostra bombes de bicicletes i suports d'eines de reparació de bicicletes"
+    "ca": "Una capa que mostra bombes de bicicletes i suports d'eines de reparació de bicicletes",
+    "pt_BR": "Uma camada que mostra bombas de ar para bicicletas e suportes com ferramentas de reparo para bicicletas"
   }
 }

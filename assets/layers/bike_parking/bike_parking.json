@@ -130,7 +130,8 @@
             "zh_Hant": "單車架",
             "ca": "Bastidors de grapes",
             "da": "Hæftestativer",
-            "cs": "Stojany"
+            "cs": "Stojany",
+            "pt_BR": "Racks para prender a bicicleta"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/staple.svg",
@@ -150,7 +151,8 @@
             "zh_Hant": "車輪架/圓圈",
             "ca": "Portarodes/bucles",
             "da": "Hjulstativ/løkker",
-            "cs": "Stojan na kola / smyčky"
+            "cs": "Stojan na kola / smyčky",
+            "pt_BR": "Suporte de rodas/loops"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/wall_loops.svg",
@@ -169,7 +171,8 @@
             "zh_Hant": "車把架",
             "ca": "Suport de manillar",
             "da": "Styrholder",
-            "cs": "Držák na řídítka"
+            "cs": "Držák na řídítka",
+            "pt_BR": "Suporte para guidão"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/handlebar_holder.svg",
@@ -190,7 +193,8 @@
             "ca": "Enganxament",
             "da": "Stativ",
             "cs": "Stojan",
-            "eu": "Rack-a"
+            "eu": "Rack-a",
+            "pt_BR": "Suporte"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/rack.svg",
@@ -211,7 +215,8 @@
             "ru": "Двухуровневая",
             "ca": "De dos nivells",
             "da": "To-lags",
-            "cs": "Dvouúrovňové"
+            "cs": "Dvouúrovňové",
+            "pt_BR": "De dois níveis"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/two_tier.svg",
@@ -235,7 +240,8 @@
             "cs": "Přístřešek",
             "pa_PK": "شیڈ",
             "ca": "cobert",
-            "eu": "Etxola"
+            "eu": "Etxola",
+            "pt_BR": "Cabana"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/shed.svg",
@@ -256,7 +262,8 @@
             "da": "Pullert",
             "cs": "Sloupek",
             "pa_PK": "بولارڈ",
-            "eu": "Bolardo"
+            "eu": "Bolardo",
+            "pt_BR": "Pilar"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/bollard.svg",
@@ -275,7 +282,8 @@
             "es": "Una área en el suelo que está marcada para el aparcamiento de bicicletas",
             "da": "Et område på gulvet, der er markeret til cykelparkering",
             "cs": "Plocha na zemi označená pro parkování jízdních kol",
-            "ca": "Una zona al terra que està senyalitzada per a l'aparcament de bicicletes"
+            "ca": "Una zona al terra que està senyalitzada per a l'aparcament de bicicletes",
+            "pt_BR": "Uma área no chão que é marcada para o estacionamento de bicicletas"
           }
         }
       ],
@@ -456,7 +464,8 @@
         "es": "¿Cuántas bicicletas caben en este aparcamiento de bicicletas (incluyendo posibles bicicletas de carga)?",
         "da": "Hvor mange cykler er der plads til på denne cykelparkering (inklusive mulige ladcykler)?",
         "cs": "Kolik jízdních kol se vejde na toto parkoviště (včetně případných nákladních kol)?",
-        "ca": "Quantes bicicletes caben en aquest aparcament de bicicletes (incloent possibles bicicletes de càrrega)?"
+        "ca": "Quantes bicicletes caben en aquest aparcament de bicicletes (incloent possibles bicicletes de càrrega)?",
+        "pt_BR": "Quantas bicicletas cabem nesse estacionamento de bicicletas (incluindo possíveis bicicletas de carga)?"
       },
       "render": {
         "en": "Place for {capacity} bikes",
@@ -727,6 +736,7 @@
     "fr": "Une couche montrant où stationner son vélo",
     "cs": "Vrstva ukazující, kde můžete zaparkovat kolo",
     "ca": "Una capa que mostra on pots aparcar la teva bicicleta",
-    "it": "Un livello che mostra dove puoi parcheggiare la tua bicicletta"
+    "it": "Un livello che mostra dove puoi parcheggiare la tua bicicletta",
+    "pt_BR": "Uma camada mostrado onde você pode estacionar sua bicicleta"
   }
 }

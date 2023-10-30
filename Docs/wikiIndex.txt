@@ -121,7 +121,7 @@
 {{service_item
 |name= [https://mapcomplete.org/artwork artwork]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:id|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:es|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:pl|en}}, {{#language:ca|en}}, {{#language:zh_Hans|en}}, {{#language:fil|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:zgh|en}}, {{#language:eu|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:id|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:es|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:pl|en}}, {{#language:ca|en}}, {{#language:zh_Hans|en}}, {{#language:fil|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:zgh|en}}, {{#language:eu|en}}, {{#language:pt_BR|en}}
 |descr= A MapComplete theme: An open map of statues, busts, graffitis and other artwork all over the world
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -292,7 +292,7 @@
 {{service_item
 |name= [https://mapcomplete.org/guideposts guideposts]
 |region= Worldwide
-|lang= {{#language:en|en}}
+|lang= {{#language:en|en}}, {{#language:cs|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:pl|en}}
 |descr= A MapComplete theme: Guideposts (also known as fingerposts or finger posts) are often found along official hiking, cycling, skiing or horseback riding routes to indicate the directions to different destinations
 
 The position of a signpost can be used by a hiker/biker/rider...

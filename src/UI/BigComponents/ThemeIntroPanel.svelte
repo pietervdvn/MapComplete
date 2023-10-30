@@ -1,51 +1,51 @@
 <script lang="ts">
-    import Translations from "../i18n/Translations"
-    import Svg from "../../Svg"
-    import Tr from "../Base/Tr.svelte"
-    import NextButton from "../Base/NextButton.svelte"
-    import Geosearch from "./Geosearch.svelte"
-    import ToSvelte from "../Base/ToSvelte.svelte"
-    import ThemeViewState from "../../Models/ThemeViewState"
-    import { UIEventSource } from "../../Logic/UIEventSource"
-    import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
-    import { twJoin } from "tailwind-merge"
-    import { Utils } from "../../Utils"
-    import type { GeolocationPermissionState } from "../../Logic/State/GeoLocationState"
-    import { GeoLocationState } from "../../Logic/State/GeoLocationState"
-    import If from "../Base/If.svelte"
-    import { ExclamationTriangleIcon } from "@babeard/svelte-heroicons/mini"
-    import type { Readable } from "svelte/store"
+  import Translations from "../i18n/Translations"
+  import Svg from "../../Svg"
+  import Tr from "../Base/Tr.svelte"
+  import NextButton from "../Base/NextButton.svelte"
+  import Geosearch from "./Geosearch.svelte"
+  import ToSvelte from "../Base/ToSvelte.svelte"
+  import ThemeViewState from "../../Models/ThemeViewState"
+  import { UIEventSource } from "../../Logic/UIEventSource"
+  import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { twJoin } from "tailwind-merge"
+  import { Utils } from "../../Utils"
+  import type { GeolocationPermissionState } from "../../Logic/State/GeoLocationState"
+  import { GeoLocationState } from "../../Logic/State/GeoLocationState"
+  import If from "../Base/If.svelte"
+  import { ExclamationTriangleIcon } from "@babeard/svelte-heroicons/mini"
+  import type { Readable } from "svelte/store"
 
-    /**
-     * The theme introduction panel
-     */
-    export let state: ThemeViewState
-    let layout = state.layout
-    let selectedElement = state.selectedElement
-    let selectedLayer = state.selectedLayer
+  /**
+   * The theme introduction panel
+   */
+  export let state: ThemeViewState
+  let layout = state.layout
+  let selectedElement = state.selectedElement
+  let selectedLayer = state.selectedLayer
 
-    let triggerSearch: UIEventSource<any> = new UIEventSource<any>(undefined)
-    let searchEnabled = false
+  let triggerSearch: UIEventSource<any> = new UIEventSource<any>(undefined)
+  let searchEnabled = false
 
-    let geopermission: Readable<GeolocationPermissionState> =
-        state.geolocation.geolocationState.permission
-    let currentGPSLocation = state.geolocation.geolocationState.currentGPSLocation
+  let geopermission: Readable<GeolocationPermissionState> =
+    state.geolocation.geolocationState.permission
+  let currentGPSLocation = state.geolocation.geolocationState.currentGPSLocation
 
-    geopermission.addCallback((perm) => console.log(">>>> Permission", perm))
+  geopermission.addCallback((perm) => console.log(">>>> Permission", perm))
 
-    function jumpToCurrentLocation() {
-        const glstate = state.geolocation.geolocationState
-        if (glstate.currentGPSLocation.data !== undefined) {
-            const c: GeolocationCoordinates = glstate.currentGPSLocation.data
-            state.guistate.themeIsOpened.setData(false)
-            const coor = { lon: c.longitude, lat: c.latitude }
-            state.mapProperties.location.setData(coor)
-        }
-        if (glstate.permission.data !== "granted") {
-            glstate.requestPermission()
-            return
-        }
+  function jumpToCurrentLocation() {
+    const glstate = state.geolocation.geolocationState
+    if (glstate.currentGPSLocation.data !== undefined) {
+      const c: GeolocationCoordinates = glstate.currentGPSLocation.data
+      state.guistate.themeIsOpened.setData(false)
+      const coor = { lon: c.longitude, lat: c.latitude }
+      state.mapProperties.location.setData(coor)
     }
+    if (glstate.permission.data !== "granted") {
+      glstate.requestPermission()
+      return
+    }
+  }
 </script>
 
 <div class="flex h-full flex-col justify-between">
@@ -87,7 +87,6 @@
             />
             <Tr t={Translations.t.general.waitingForGeopermission} />
           </button>
-
         {:else if $geopermission === "denied"}
           <button class="disabled flex w-full items-center gap-x-2">
             <ToSvelte construct={Svg.location_refused_svg().SetClass("w-8 h-8")} />
@@ -107,7 +106,7 @@
 
       <If condition={state.featureSwitches.featureSwitchSearch}>
         <div
-          class=".button low-interaction m-1 flex w-full items-center gap-x-2 rounded border p-2 h-fit"
+          class=".button low-interaction m-1 flex h-fit w-full items-center gap-x-2 rounded border p-2"
         >
           <div class="w-full">
             <Geosearch
@@ -137,8 +136,13 @@
     </div>
 
     {#if $currentGPSLocation === undefined && $geopermission === "requested" && GeoLocationState.isSafari()}
-      <a href="https://support.apple.com/en-us/HT207092" class="button w-full" target="_blank" rel="noopener">
-        <div class="flex w-full link-underline m-1">
+      <a
+        href="https://support.apple.com/en-us/HT207092"
+        class="button w-full"
+        target="_blank"
+        rel="noopener"
+      >
+        <div class="link-underline m-1 flex w-full">
           <ExclamationTriangleIcon class="w-12 pr-2" />
           <div class="flex w-full flex-col">
             <Tr cls="font-normal" t={Translations.t.general.enableGeolocationForSafari} />
@@ -147,7 +151,6 @@
         </div>
       </a>
     {/if}
-
   </div>
 
   <div class="links-as-button links-w-full m-2 flex flex-col gap-y-1">

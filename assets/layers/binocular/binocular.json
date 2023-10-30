@@ -112,7 +112,7 @@
         "da": "Kigger mod {direction}°",
         "fr": "Orienté à {direction}°",
         "ca": "Mira cap a {direction}°",
-        "cs": "Dívá se směrem k {direction}°"
+        "cs": "Dívá se směrem v úhlu {direction}°"
       },
       "freeform": {
         "key": "direction",

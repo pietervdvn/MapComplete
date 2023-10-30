@@ -5,7 +5,7 @@
       "contributor": "kjon"
     },
     {
-      "commits": 292,
+      "commits": 293,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -17,7 +17,7 @@
       "contributor": "Allan Nordhøy"
     },
     {
-      "commits": 70,
+      "commits": 72,
       "contributor": "Robin van der Linde"
     },
     {
@@ -33,7 +33,7 @@
       "contributor": "Iago"
     },
     {
-      "commits": 32,
+      "commits": 33,
       "contributor": "Jiří Podhorecký"
     },
     {
@@ -62,6 +62,10 @@
     },
     {
       "commits": 21,
+      "contributor": "mcliquid"
+    },
+    {
+      "commits": 21,
       "contributor": "SC"
     },
     {
@@ -69,12 +73,12 @@
       "contributor": "el_libre como el chaval"
     },
     {
-      "commits": 16,
-      "contributor": "mcliquid"
-    },
-    {
       "commits": 15,
       "contributor": "WaldiS"
+    },
+    {
+      "commits": 14,
+      "contributor": "macpac"
     },
     {
       "commits": 14,
@@ -95,6 +99,10 @@
     {
       "commits": 13,
       "contributor": "Joost"
+    },
+    {
+      "commits": 12,
+      "contributor": "Piotr Strebski"
     },
     {
       "commits": 11,
@@ -130,10 +138,6 @@
     },
     {
       "commits": 9,
-      "contributor": "Piotr Strebski"
-    },
-    {
-      "commits": 9,
       "contributor": "Ettore Atalan"
     },
     {
@@ -154,11 +158,11 @@
     },
     {
       "commits": 8,
-      "contributor": "Vinicius"
+      "contributor": "gallegonovato"
     },
     {
-      "commits": 7,
-      "contributor": "gallegonovato"
+      "commits": 8,
+      "contributor": "Vinicius"
     },
     {
       "commits": 7,
@@ -179,10 +183,6 @@
     {
       "commits": 7,
       "contributor": "Niels Elgaard Larsen"
-    },
-    {
-      "commits": 6,
-      "contributor": "macpac"
     },
     {
       "commits": 6,
@@ -354,6 +354,14 @@
     },
     {
       "commits": 2,
+      "contributor": "Michel"
+    },
+    {
+      "commits": 2,
+      "contributor": "Kelson Vibber"
+    },
+    {
+      "commits": 2,
       "contributor": "Peter Brodersen"
     },
     {
@@ -455,10 +463,6 @@
     {
       "commits": 1,
       "contributor": "Michal Čermák"
-    },
-    {
-      "commits": 1,
-      "contributor": "Kelson Vibber"
     },
     {
       "commits": 1,

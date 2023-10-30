@@ -5,7 +5,8 @@
     "de": "OSM-Community-Index",
     "ca": "Índex de comunitats d'OSM",
     "fr": "Index des communautés OSM",
-    "pl": "Indeks społeczności OSM"
+    "pl": "Indeks społeczności OSM",
+    "cs": "OSM Community Index"
   },
   "title": {
     "render": {
@@ -13,7 +14,8 @@
       "de": "OSM-Community-Index",
       "ca": "Índex de comunitats d'OSM",
       "fr": "Index des communautés OSM",
-      "pl": "Indeks społeczności OSM"
+      "pl": "Indeks społeczności OSM",
+      "cs": "OSM Community Index"
     }
   },
   "source": {
@@ -95,7 +97,8 @@
             "nl": "Regio",
             "ca": "Regió",
             "fr": "Région",
-            "pl": "Region"
+            "pl": "Region",
+            "cs": "Region"
           },
           "osmTags": "level=region"
         }

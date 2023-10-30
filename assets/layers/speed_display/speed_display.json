@@ -4,19 +4,22 @@
     "en": "Speed Display",
     "de": "Geschwindigkeitsanzeigen",
     "nl": "Snelheidsdisplay",
-    "ca": "Radar pedagògic"
+    "ca": "Radar pedagògic",
+    "cs": "Ukazatel rychlosti"
   },
   "description": {
     "en": "Layer showing speed displays that alert drivers of their speed.",
     "de": "Ebene mit Geschwindigkeitsanzeigen, die Fahrer auf ihre Geschwindigkeit hinweisen.",
     "nl": "Laag met snelheidsdisplays om bestuurders op hun snelheid te wijzen.",
-    "ca": "Capa que mostra radars pedagògics que alerten als conductors de la seva velocitat."
+    "ca": "Capa que mostra radars pedagògics que alerten als conductors de la seva velocitat.",
+    "cs": "Vrstva zobrazující ukazatele rychlosti, které řidiče upozorňují na jejich rychlost."
   },
   "title": {
     "render": {
       "en": "Speed Display",
       "de": "Geschwindigkeitsanzeige",
-      "nl": "Snelheidsdisplay"
+      "nl": "Snelheidsdisplay",
+      "cs": "Ukazatel rychlosti"
     }
   },
   "minzoom": 12,
@@ -30,7 +33,8 @@
         "en": "What is the maximum speed allowed at this speed display?",
         "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit bei dieser Geschwindigkeitsanzeige?",
         "nl": "Wat is de maximum toegestane snelheid bij dit snelheidsdisplay?",
-        "fr": "Quelle est la vitesse maximale autorisée au niveau de ce radar pédagogique ?"
+        "fr": "Quelle est la vitesse maximale autorisée au niveau de ce radar pédagogique ?",
+        "cs": "Jaká je maximální povolená rychlost na tomto ukazateli rychlosti?"
       },
       "freeform": {
         "key": "maxspeed",
@@ -39,7 +43,8 @@
           "en": "Speed allowed at speed display",
           "de": "Zulässige Geschwindigkeit bei Geschwindigkeitsanzeige",
           "nl": "Maximum toegestane snelheid bij snelheidsdisplay",
-          "fr": "Vitesse autorisée au niveau de ce radar pédagogique"
+          "fr": "Vitesse autorisée au niveau de ce radar pédagogique",
+          "cs": "Povolená rychlost na ukazateli rychlosti"
         }
       },
       "render": {
@@ -47,7 +52,8 @@
         "de": "Die zulässige Höchstgeschwindigkeit bei dieser Geschwindigkeitsanzeige ist {canonical(maxspeed)}",
         "ca": "La velocitat màxima permesa a aquest radar pedagògic és {canonical(maxspeed)}",
         "nl": "De maximum toegestane snelheid bij dit snelheidsdisplay is {canonical(maxspeed)}",
-        "fr": "La vitesse maximale autorisée au niveau de ce radar pédagogique est {canonical(maxspeed)}"
+        "fr": "La vitesse maximale autorisée au niveau de ce radar pédagogique est {canonical(maxspeed)}",
+        "cs": "Maximální povolená rychlost na tomto ukazateli rychlosti je {canonical(maxspeed)}"
       }
     },
     {
@@ -56,7 +62,8 @@
         "en": "What is the text on this speed display?",
         "de": "Wie lautet der Text auf dieser Geschwindigkeitsanzeige?",
         "ca": "Quin text es mostra al radar pedagògic?",
-        "nl": "Wat is de tekst op dit snelheidsdisplay?"
+        "nl": "Wat is de tekst op dit snelheidsdisplay?",
+        "cs": "Jaký je text na tomto ukazateli rychlosti?"
       },
       "freeform": {
         "key": "inscription",
@@ -65,14 +72,16 @@
           "en": "Text on speed display (e.g. 'Your speed')",
           "de": "Text auf der Geschwindigkeitsanzeige (z. B. \"Ihre Geschwindigkeit\")",
           "nl": "Tekst op snelheidsdisplay (b.v. 'Uw snelheid')",
-          "ca": "Text al radar pedagògic (p. e. 'La seva velocitat')"
+          "ca": "Text al radar pedagògic (p. e. 'La seva velocitat')",
+          "cs": "Text na displeji rychlosti (např. \"Vaše rychlost\")"
         }
       },
       "render": {
         "en": "The text on this speed display is {inscription}",
         "de": "Der Text auf dieser Geschwindigkeitsanzeige ist {inscription}",
         "nl": "De tekst op dit snelheidsdisplay is {inscription}",
-        "ca": "El text a aquest radar pedagogic és {inscription}"
+        "ca": "El text a aquest radar pedagogic és {inscription}",
+        "cs": "Text na tomto ukazateli rychlosti je {inscription}"
       }
     }
   ],
@@ -82,7 +91,8 @@
         "en": "a speed display",
         "de": "eine Geschwindigkeitsanzeige",
         "nl": "een snelheidsdisplay",
-        "ca": "un radar pedagògic"
+        "ca": "un radar pedagògic",
+        "cs": "ukazatel rychlosti"
       },
       "tags": [
         "highway=speed_display"
@@ -117,14 +127,16 @@
             "ca": "quilòmetres/hora",
             "es": "kilómetros/hora",
             "nl": "kilometers/uur",
-            "de": "Kilometer/Stunde"
+            "de": "Kilometer/Stunde",
+            "cs": "kilometry/hodinu"
           },
           "humanShort": {
             "en": "km/h",
             "ca": "km/h",
             "es": "km/h",
             "nl": "km/u",
-            "de": "km/h"
+            "de": "km/h",
+            "cs": "km/h"
           }
         },
         {
@@ -143,14 +155,16 @@
             "ca": "milles/hora",
             "es": "millas/hora",
             "nl": "miles/uur",
-            "de": "Meilen/Stunde"
+            "de": "Meilen/Stunde",
+            "cs": "míle/hodinu"
           },
           "humanShort": {
             "en": "mph",
             "ca": "mph",
             "es": "mph",
             "nl": "mph",
-            "de": "mph"
+            "de": "mph",
+            "cs": "mph"
           }
         }
       ]
