@@ -145,7 +145,6 @@ export class UpdateLegacyLayer extends DesugaringStep<
         }
 
         if (config["mapRendering"]) {
-            console.log("MapRendering is", config["mapRendering"], json.id)
             const pointRenderings: PointRenderingConfigJson[] = []
             const lineRenderings: LineRenderingConfigJson[] = []
             for (const mapRenderingElement of config["mapRendering"]) {
@@ -205,7 +204,6 @@ export class UpdateLegacyLayer extends DesugaringStep<
                         typeof rendering[key]["render"] === "string" &&
                         Object.keys(rendering[key]).length === 1
                     ) {
-                        console.log("Rewrite: ", rendering[key])
                         rendering[key] = rendering[key]["render"]
                     }
                 }
@@ -220,7 +218,6 @@ export class UpdateLegacyLayer extends DesugaringStep<
                         typeof rendering[key]["render"] === "string" &&
                         Object.keys(rendering[key]).length === 1
                     ) {
-                        console.log("Rewrite: ", rendering[key])
                         rendering[key] = rendering[key]["render"]
                     }
                 }
@@ -263,13 +260,16 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
         delete oldThemeConfig["language"]
         delete oldThemeConfig["version"]
 
+        if (oldThemeConfig.startLat === 0) {
+            delete oldThemeConfig.startLat
+        }
+        if (oldThemeConfig.startLon === 0) {
+            delete oldThemeConfig.startLon
+        }
+        if (oldThemeConfig.startZoom <= 2) {
+            delete oldThemeConfig.startZoom
+        }
         if (oldThemeConfig["maintainer"] !== undefined) {
-            console.log(
-                "Maintainer: ",
-                oldThemeConfig["maintainer"],
-                "credits: ",
-                oldThemeConfig["credits"]
-            )
             if (oldThemeConfig.credits === undefined) {
                 oldThemeConfig["credits"] = oldThemeConfig["maintainer"]
                 delete oldThemeConfig["maintainer"]

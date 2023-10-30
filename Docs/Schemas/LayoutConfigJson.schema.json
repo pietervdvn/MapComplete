@@ -6,14 +6,11 @@
       "description": "question: What is the id of this layout?\n\nThe id is a unique string to identify the theme\n\nIt should be\n- in english\n- describe the theme in a single word (or a few words)\n- all lowercase and with only [a-z] or underscores (_)\n\nThis is used as hashtag in the changeset message, which will read something like \"Adding data with #mapcomplete for theme #<the theme id>\"\n\nOn official themes, it'll become the name of the page, e.g.\n'cyclestreets' which become 'cyclestreets.html'\n\ntype: id\ngroup: basic",
       "type": "string"
     },
-    "credits": {
-      "description": "Who helped to create this theme and should be attributed?",
+    "title": {
+      "description": "question: What is the title of this theme?\n\nThe human-readable title, as shown in the welcome message and the index page\ngroup: basic",
       "anyOf": [
         {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/Record<string,string>"
         },
         {
           "type": "string"
@@ -27,8 +24,8 @@
         "type": "string"
       }
     },
-    "title": {
-      "description": "question: What is the title of this theme?\n\nThe human-readable title, as shown in the welcome message and the index page\ngroup: basic",
+    "description": {
+      "description": "question: How would you describe this theme?\nThe description, as shown in the welcome message and the more-screen\ngroup: basic",
       "anyOf": [
         {
           "$ref": "#/definitions/Record<string,string>"
@@ -40,17 +37,6 @@
     },
     "shortDescription": {
       "description": "A short description, showed as social description and in the 'more theme'-buttons.\nNote that if this one is not defined, the first sentence of 'description' is used\ngroup: hidden",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/Record<string,string>"
-        },
-        {
-          "type": "string"
-        }
-      ]
-    },
-    "description": {
-      "description": "question: How would you describe this theme?\nThe description, as shown in the welcome message and the more-screen\ngroup: basic",
       "anyOf": [
         {
           "$ref": "#/definitions/Record<string,string>"
@@ -79,6 +65,10 @@
       "description": "question: What image should be used as social image preview?\nThis is included as og:image-tag on official themes.\n\nSee https://www.h3xed.com/web-and-internet/how-to-use-og-image-meta-tag-facebook-reddit for more information\nifunset: use the default social image of mapcomplete (or generate one based on the icon)\nType: image\ngroup: basic",
       "type": "string"
     },
+    "extraLink": {
+      "description": "question: should an extra help button be shown in certain circumstances?\nAdds an additional button on the top-left of the application.\nThis can link to an arbitrary location.\n\nFor example {icon: \"./assets/svg/pop-out.svg\", href: 'https://mapcomplete.org/{theme}.html?lat={lat}&lon={lon}&z={zoom}, requirements: [\"iframe\",\"no-welcome-message]},\n\ngroup: advanced\nifunset: show a link to open MapComplete full screen if used in an iframe",
+      "$ref": "#/definitions/default"
+    },
     "startZoom": {
       "description": "question: At what zoomlevel should this theme open?\nDefault location and zoom to start.\nNote that this is barely used. Once the user has visited mapcomplete at least once, the previous location of the user will be used\nifunset: Use the default startzoom (0)\ntype: float\ngroup: start_location",
       "type": "number"
@@ -91,44 +81,27 @@
       "description": "question: At what start longitude should this theme open?\nDefault location and zoom to start.\nNote that this is barely used. Once the user has visited mapcomplete at least once, the previous location of the user will be used\nifunset: Use 0 as start longitude\ntype: float\ngroup: start_location",
       "type": "number"
     },
-    "widenFactor": {
-      "description": "When a query is run, the data within bounds of the visible map is loaded.\nHowever, users tend to pan and zoom a lot. It is pretty annoying if every single pan means a reloading of the data.\nFor this, the bounds are widened in order to make a small pan still within bounds of the loaded data.\n\nIF widenfactor is 1, this feature is disabled. A recommended value is between 1 and 3",
-      "type": "number"
-    },
-    "overpassMaxZoom": {
-      "description": "At low zoom levels, overpass is used to query features.\nAt high zoom level, the OSM api is used to fetch one or more BBOX aligning with a slippy tile.\nThe overpassMaxZoom controls the flipoverpoint: if the zoom is this or lower, overpass is used.",
-      "type": "number"
-    },
-    "osmApiTileSize": {
-      "description": "When the OSM-api is used to fetch features, it does so in a tiled fashion.\nThese tiles are using a ceratin zoom level, that can be controlled here\nDefault: overpassMaxZoom + 1",
-      "type": "number"
-    },
-    "overrideAll": {
-      "description": "An override applied on all layers of the theme.\n\nE.g.: if there are two layers defined:\n```\n\"layers\":[\n {\"title\": ..., \"tagRenderings\": [...], \"osmSource\":{\"tags\": ...}},\n {\"title\", ..., \"tagRenderings\", [...], \"osmSource\":{\"tags\" ...}}\n]\n```\n\nand overrideAll is specified:\n```\n\"overrideAll\": {\n    \"osmSource\":{\"geoJsonSource\":\"xyz\"}\n}\nthen the result will be that all the layers will have these properties applied and result in:\n\"layers\":[\n {\"title\": ..., \"tagRenderings\": [...], \"osmSource\":{\"tags\": ..., \"geoJsonSource\":\"xyz\"}},\n {\"title\", ..., \"tagRenderings\", [...], \"osmSource\":{\"tags\" ..., \"geoJsonSource\":\"xyz\"}}\n]\n```\n\nIf the overrideAll contains a list where the keys starts with a plus, the values will be appended (instead of discarding the old list), for example\n\n\"overrideAll\": {\n  \"+tagRenderings\": [ { ... some tagrendering ... }]\n}\n\nIn the above scenario, `sometagrendering` will be added at the beginning of the tagrenderings of every layer",
-      "$ref": "#/definitions/Partial<any>"
-    },
     "defaultBackgroundId": {
       "description": "The id of the default background. BY default: vanilla OSM",
       "type": "string"
     },
-    "tileLayerSources": {
-      "description": "Define some (overlay) slippy map tilesources",
-      "type": "array",
-      "items": {
-        "allOf": [
-          {
-            "$ref": "#/definitions/RasterLayerProperties"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "defaultState": {
-                "type": "boolean"
-              }
-            }
+    "credits": {
+      "description": "Who helped to create this theme and should be attributed?",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
           }
-        ]
-      }
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "hideFromOverview": {
+      "description": "If set to true, this layout will not be shown in the overview with more themes",
+      "type": "boolean"
     },
     "layers": {
       "description": "question: What layers should this map show?\ntype: layer[]\ntypes: hidden | layer | hidden\ngroup: layers\nsuggestions: return Array.from(layers.keys()).map(key => ({if: \"value=\"+key, then: key+\" - \"+layers.get(key).description}))\nEvery layer contains a description of which feature to display - the overpassTags which are queried.\nInstead of running one query for every layer, the query is fused.\n\nAfterwards, every layer is given the list of features.\nEvery layer takes away the features that match with them*, and give the leftovers to the next layers.\n\nThis implies that the _order_ of the layers is important in the case of features with the same tags;\nas the later layers might never receive their feature.\n\n*layers can also remove 'leftover'-features if the leftovers overlap with a feature in the layer itself\n\nNote that builtin layers can be reused. Either put in the name of the layer to reuse, or use {builtin: \"layername\", override: ...}\n\nThe 'override'-object will be copied over the original values of the layer, which allows to change certain aspects of the layer\n\nFor example: If you would like to use layer nature reserves, but only from a specific operator (eg. Natuurpunt) you would use the following in your theme:\n\n```\n\"layer\": {\n \"builtin\": \"nature_reserve\",\n \"override\": {\"source\":\n {\"osmTags\": {\n \"+and\":[\"operator=Natuurpunt\"]\n   }\n  }\n }\n}\n```\n\nIt's also possible to load multiple layers at once, for example, if you would like for both drinking water and benches to start at the zoomlevel at 12, you would use the following:\n\n```\n\"layer\": {\n \"builtin\": [\"benches\", \"drinking_water\"],\n \"override\": {\"minzoom\": 12}\n}\n```",
@@ -176,13 +149,32 @@
         ]
       }
     },
+    "overrideAll": {
+      "description": "An override applied on all layers of the theme.\n\nE.g.: if there are two layers defined:\n```\n\"layers\":[\n {\"title\": ..., \"tagRenderings\": [...], \"osmSource\":{\"tags\": ...}},\n {\"title\", ..., \"tagRenderings\", [...], \"osmSource\":{\"tags\" ...}}\n]\n```\n\nand overrideAll is specified:\n```\n\"overrideAll\": {\n    \"osmSource\":{\"geoJsonSource\":\"xyz\"}\n}\nthen the result will be that all the layers will have these properties applied and result in:\n\"layers\":[\n {\"title\": ..., \"tagRenderings\": [...], \"osmSource\":{\"tags\": ..., \"geoJsonSource\":\"xyz\"}},\n {\"title\", ..., \"tagRenderings\", [...], \"osmSource\":{\"tags\" ..., \"geoJsonSource\":\"xyz\"}}\n]\n```\n\nIf the overrideAll contains a list where the keys starts with a plus, the values will be appended (instead of discarding the old list), for example\n\n\"overrideAll\": {\n  \"+tagRenderings\": [ { ... some tagrendering ... }]\n}\n\nIn the above scenario, `sometagrendering` will be added at the beginning of the tagrenderings of every layer",
+      "$ref": "#/definitions/Partial<any>"
+    },
+    "tileLayerSources": {
+      "description": "Define some (overlay) slippy map tilesources",
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/RasterLayerProperties"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "defaultState": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      }
+    },
     "customCss": {
       "description": "The URL of a custom CSS stylesheet to modify the layout\ngroup: advanced",
       "type": "string"
-    },
-    "hideFromOverview": {
-      "description": "If set to true, this layout will not be shown in the overview with more themes",
-      "type": "boolean"
     },
     "lockLocation": {
       "description": "If set to true, the basemap will not scroll outside of the area visible on initial zoom.\nIf set to [[lon, lat], [lon, lat]], the map will not scroll outside of those bounds.\nOff by default, which will enable panning to the entire world",
@@ -230,10 +222,6 @@
           }
         }
       ]
-    },
-    "extraLink": {
-      "description": "question: should an extra help button be shown in certain circumstances?\nAdds an additional button on the top-left of the application.\nThis can link to an arbitrary location.\n\nFor example {icon: \"./assets/svg/pop-out.svg\", href: 'https://mapcomplete.org/{theme}.html?lat={lat}&lon={lon}&z={zoom}, requirements: [\"iframe\",\"no-welcome-message]},\n\ngroup: advanced\nifunset: show a link to open MapComplete full screen if used in an iframe",
-      "$ref": "#/definitions/default"
     },
     "enableUserBadge": {
       "description": "question: Should a user be able to login with OpenStreetMap?\n\nIf not logged in, will not show the login buttons and hide all the editable elements.\nAs such, MapComplete will become read-only and a purely visualisation tool.\n\nifunset: Enable the possiblity to login with OpenStreetMap (default)\niffalse: Do not enable to login with OpenStreetMap, have a read-only view of MapComplete.\niftrue: Enable the possiblity to login with OpenStreetMap\ngroup: feature_switches",
@@ -292,6 +280,18 @@
     },
     "overpassTimeout": {
       "description": "question: After how much seconds should the overpass-query stop?\nIf a query takes too long, the overpass-server will abort.\nOnce can set the amount of time before overpass gives up here.\nifunset: use the default amount of 30 seconds as timeout\ntype: pnat\ngroup: advanced",
+      "type": "number"
+    },
+    "widenFactor": {
+      "description": "When a query is run, the data within bounds of the visible map is loaded.\nHowever, users tend to pan and zoom a lot. It is pretty annoying if every single pan means a reloading of the data.\nFor this, the bounds are widened in order to make a small pan still within bounds of the loaded data.\n\nIF widenfactor is 1, this feature is disabled. A recommended value is between 1 and 3",
+      "type": "number"
+    },
+    "overpassMaxZoom": {
+      "description": "At low zoom levels, overpass is used to query features.\nAt high zoom level, the OSM api is used to fetch one or more BBOX aligning with a slippy tile.\nThe overpassMaxZoom controls the flipoverpoint: if the zoom is this or lower, overpass is used.",
+      "type": "number"
+    },
+    "osmApiTileSize": {
+      "description": "When the OSM-api is used to fetch features, it does so in a tiled fashion.\nThese tiles are using a ceratin zoom level, that can be controlled here\nDefault: overpassMaxZoom + 1",
       "type": "number"
     },
     "enableNodeDatabase": {
@@ -1718,15 +1718,15 @@
       ],
       "additionalProperties": false
     },
-    "Partial<any>": {
-      "type": "object",
-      "additionalProperties": false
-    },
-    "RasterLayerProperties": {
+    "default": {
       "type": "object",
       "properties": {
-        "name": {
-          "description": "The name of the imagery source",
+        "icon": {
+          "description": "question: What icon should be shown in the link button?\nifunset: do not show an icon\ntype: icon",
+          "type": "string"
+        },
+        "text": {
+          "description": "question: What text should be shown in the link icon?\n\nNote that {lat},{lon},{zoom}, {language} and {theme} will be replaced\n\nifunset: do not show a text",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -1736,52 +1736,30 @@
             }
           ]
         },
-        "isOverlay": {
+        "href": {
+          "description": "question: if clicked, what webpage should open?\nNote that {lat},{lon},{zoom}, {language} and {theme} will be replaced\n\ntype: url",
+          "type": "string"
+        },
+        "newTab": {
+          "description": "question: Should the link open in a new tab?\niftrue: Open in a new tab\niffalse: do not open in a new tab\nifunset: do not open in a new tab",
           "type": "boolean"
         },
-        "id": {
-          "type": "string"
-        },
-        "url": {
-          "type": "string"
-        },
-        "category": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string"
-        },
-        "attribution": {
-          "type": "object",
-          "properties": {
-            "url": {
-              "type": "string"
-            },
-            "text": {
-              "type": "string"
-            },
-            "html": {
-              "type": "string"
-            },
-            "required": {
-              "type": "boolean"
-            }
+        "requirements": {
+          "description": "question: When should the extra button be shown?\nsuggestions: return [{if: \"value=iframe\", then: \"When shown in an iframe\"}, {if: \"value=no-iframe\", then: \"When shown as stand-alone webpage\"}, {if: \"value=welcome-message\", then: \"When the welcome messages are enabled\"}, {if: \"value=iframe\", then: \"When the welcome messages are disabled\"}]",
+          "type": "array",
+          "items": {
+            "enum": [
+              "iframe",
+              "no-iframe",
+              "no-welcome-message",
+              "welcome-message"
+            ],
+            "type": "string"
           }
-        },
-        "min_zoom": {
-          "type": "number"
-        },
-        "max_zoom": {
-          "type": "number"
-        },
-        "best": {
-          "type": "boolean"
         }
       },
       "required": [
-        "id",
-        "name",
-        "url"
+        "href"
       ],
       "additionalProperties": false
     },
@@ -2581,15 +2559,15 @@
       },
       "additionalProperties": false
     },
-    "default": {
+    "Partial<any>": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "RasterLayerProperties": {
       "type": "object",
       "properties": {
-        "icon": {
-          "description": "question: What icon should be shown in the link button?\nifunset: do not show an icon\ntype: icon",
-          "type": "string"
-        },
-        "text": {
-          "description": "question: What text should be shown in the link icon?\n\nNote that {lat},{lon},{zoom}, {language} and {theme} will be replaced\n\nifunset: do not show a text",
+        "name": {
+          "description": "The name of the imagery source",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -2599,30 +2577,52 @@
             }
           ]
         },
-        "href": {
-          "description": "question: if clicked, what webpage should open?\nNote that {lat},{lon},{zoom}, {language} and {theme} will be replaced\n\ntype: url",
-          "type": "string"
-        },
-        "newTab": {
-          "description": "question: Should the link open in a new tab?\niftrue: Open in a new tab\niffalse: do not open in a new tab\nifunset: do not open in a new tab",
+        "isOverlay": {
           "type": "boolean"
         },
-        "requirements": {
-          "description": "question: When should the extra button be shown?\nsuggestions: return [{if: \"value=iframe\", then: \"When shown in an iframe\"}, {if: \"value=no-iframe\", then: \"When shown as stand-alone webpage\"}, {if: \"value=welcome-message\", then: \"When the welcome messages are enabled\"}, {if: \"value=iframe\", then: \"When the welcome messages are disabled\"}]",
-          "type": "array",
-          "items": {
-            "enum": [
-              "iframe",
-              "no-iframe",
-              "no-welcome-message",
-              "welcome-message"
-            ],
-            "type": "string"
+        "id": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "attribution": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            },
+            "html": {
+              "type": "string"
+            },
+            "required": {
+              "type": "boolean"
+            }
           }
+        },
+        "min_zoom": {
+          "type": "number"
+        },
+        "max_zoom": {
+          "type": "number"
+        },
+        "best": {
+          "type": "boolean"
         }
       },
       "required": [
-        "href"
+        "id",
+        "name",
+        "url"
       ],
       "additionalProperties": false
     }

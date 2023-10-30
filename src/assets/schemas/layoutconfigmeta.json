@@ -21,34 +21,6 @@
   },
   {
     "path": [
-      "credits"
-    ],
-    "required": false,
-    "hints": {},
-    "type": [
-      {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "Who helped to create this theme and should be attributed?"
-  },
-  {
-    "path": [
-      "mustHaveLanguage"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "array",
-    "description": "Only used in 'generateLayerOverview': if present, every translation will be checked to make sure it is fully translated.\nThis must be a list of two-letter, lowercase codes which identifies the language, e.g. \"en\", \"nl\", ..."
-  },
-  {
-    "path": [
       "title"
     ],
     "required": true,
@@ -68,21 +40,12 @@
   },
   {
     "path": [
-      "shortDescription"
+      "mustHaveLanguage"
     ],
     "required": false,
-    "hints": {
-      "group": "hidden"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "A short description, showed as social description and in the 'more theme'-buttons.\nNote that if this one is not defined, the first sentence of 'description' is used"
+    "hints": {},
+    "type": "array",
+    "description": "Only used in 'generateLayerOverview': if present, every translation will be checked to make sure it is fully translated.\nThis must be a list of two-letter, lowercase codes which identifies the language, e.g. \"en\", \"nl\", ..."
   },
   {
     "path": [
@@ -102,6 +65,24 @@
       }
     ],
     "description": "The description, as shown in the welcome message and the more-screen"
+  },
+  {
+    "path": [
+      "shortDescription"
+    ],
+    "required": false,
+    "hints": {
+      "group": "hidden"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "A short description, showed as social description and in the 'more theme'-buttons.\nNote that if this one is not defined, the first sentence of 'description' is used"
   },
   {
     "path": [
@@ -150,6 +131,111 @@
   },
   {
     "path": [
+      "extraLink"
+    ],
+    "required": false,
+    "hints": {
+      "group": "advanced",
+      "question": "should an extra help button be shown in certain circumstances?",
+      "ifunset": "show a link to open MapComplete full screen if used in an iframe"
+    },
+    "type": "object",
+    "description": "Adds an additional button on the top-left of the application.\nThis can link to an arbitrary location.\nFor example {icon: \"./assets/svg/pop-out.svg\", href: 'https://mapcomplete.org/{theme}.html?lat={lat}&lon={lon}&z={zoom}, requirements: [\"iframe\",\"no-welcome-message]},"
+  },
+  {
+    "path": [
+      "extraLink",
+      "icon"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "icon",
+      "question": "What icon should be shown in the link button?",
+      "ifunset": "do not show an icon"
+    },
+    "type": "string",
+    "description": ""
+  },
+  {
+    "path": [
+      "extraLink",
+      "text"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What text should be shown in the link icon?",
+      "ifunset": "do not show a text"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "Note that {lat},{lon},{zoom}, {language} and {theme} will be replaced"
+  },
+  {
+    "path": [
+      "extraLink",
+      "href"
+    ],
+    "required": true,
+    "hints": {
+      "typehint": "url",
+      "question": "if clicked, what webpage should open?"
+    },
+    "type": "string",
+    "description": "Note that {lat},{lon},{zoom}, {language} and {theme} will be replaced"
+  },
+  {
+    "path": [
+      "extraLink",
+      "newTab"
+    ],
+    "required": false,
+    "hints": {
+      "question": "Should the link open in a new tab?",
+      "iftrue": "Open in a new tab",
+      "iffalse": "do not open in a new tab",
+      "ifunset": "do not open in a new tab"
+    },
+    "type": "boolean",
+    "description": ""
+  },
+  {
+    "path": [
+      "extraLink",
+      "requirements"
+    ],
+    "required": false,
+    "hints": {
+      "question": "When should the extra button be shown?",
+      "suggestions": [
+        {
+          "if": "value=iframe",
+          "then": "When shown in an iframe"
+        },
+        {
+          "if": "value=no-iframe",
+          "then": "When shown as stand-alone webpage"
+        },
+        {
+          "if": "value=welcome-message",
+          "then": "When the welcome messages are enabled"
+        },
+        {
+          "if": "value=iframe",
+          "then": "When the welcome messages are disabled"
+        }
+      ]
+    },
+    "type": "array",
+    "description": ""
+  },
+  {
+    "path": [
       "startZoom"
     ],
     "required": true,
@@ -192,44 +278,6 @@
   },
   {
     "path": [
-      "widenFactor"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "number",
-    "description": "When a query is run, the data within bounds of the visible map is loaded.\nHowever, users tend to pan and zoom a lot. It is pretty annoying if every single pan means a reloading of the data.\nFor this, the bounds are widened in order to make a small pan still within bounds of the loaded data.\nIF widenfactor is 1, this feature is disabled. A recommended value is between 1 and 3"
-  },
-  {
-    "path": [
-      "overpassMaxZoom"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "number",
-    "description": "At low zoom levels, overpass is used to query features.\nAt high zoom level, the OSM api is used to fetch one or more BBOX aligning with a slippy tile.\nThe overpassMaxZoom controls the flipoverpoint: if the zoom is this or lower, overpass is used."
-  },
-  {
-    "path": [
-      "osmApiTileSize"
-    ],
-    "required": false,
-    "hints": {
-      "default": "overpassMaxZoom + 1"
-    },
-    "type": "number",
-    "description": "When the OSM-api is used to fetch features, it does so in a tiled fashion.\nThese tiles are using a ceratin zoom level, that can be controlled here"
-  },
-  {
-    "path": [
-      "overrideAll"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "object",
-    "description": "An override applied on all layers of the theme.\nE.g.: if there are two layers defined:\n```\n\"layers\":[\n {\"title\": ..., \"tagRenderings\": [...], \"osmSource\":{\"tags\": ...}},\n {\"title\", ..., \"tagRenderings\", [...], \"osmSource\":{\"tags\" ...}}\n]\n```\nand overrideAll is specified:\n```\n\"overrideAll\": {\n    \"osmSource\":{\"geoJsonSource\":\"xyz\"}\n}\nthen the result will be that all the layers will have these properties applied and result in:\n\"layers\":[\n {\"title\": ..., \"tagRenderings\": [...], \"osmSource\":{\"tags\": ..., \"geoJsonSource\":\"xyz\"}},\n {\"title\", ..., \"tagRenderings\", [...], \"osmSource\":{\"tags\" ..., \"geoJsonSource\":\"xyz\"}}\n]\n```\nIf the overrideAll contains a list where the keys starts with a plus, the values will be appended (instead of discarding the old list), for example\n\"overrideAll\": {\n  \"+tagRenderings\": [ { ... some tagrendering ... }]\n}\nIn the above scenario, `sometagrendering` will be added at the beginning of the tagrenderings of every layer"
-  },
-  {
-    "path": [
       "defaultBackgroundId"
     ],
     "required": false,
@@ -239,29 +287,31 @@
   },
   {
     "path": [
-      "tileLayerSources"
+      "credits"
     ],
     "required": false,
     "hints": {},
-    "type": "array",
-    "description": "Define some (overlay) slippy map tilesources"
-  },
-  {
-    "path": [
-      "tileLayerSources",
-      "name"
-    ],
-    "required": true,
-    "hints": {},
     "type": [
       {
-        "$ref": "#/definitions/Record<string,string>"
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       },
       {
         "type": "string"
       }
     ],
-    "description": "The name of the imagery source"
+    "description": "Who helped to create this theme and should be attributed?"
+  },
+  {
+    "path": [
+      "hideFromOverview"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "boolean",
+    "description": "If set to true, this layout will not be shown in the overview with more themes"
   },
   {
     "path": [
@@ -531,6 +581,10 @@
           "then": "hydrant - Map layer to show fire hydrants."
         },
         {
+          "if": "value=ice_cream",
+          "then": "ice_cream - A place where ice cream is sold over the counter"
+        },
+        {
           "if": "value=icons",
           "then": "icons - A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI"
         },
@@ -677,6 +731,10 @@
         {
           "if": "value=recycling",
           "then": "recycling - A layer with recycling containers and centres"
+        },
+        {
+          "if": "value=route_marker",
+          "then": "route_marker - Route markers are small markers often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route."
         },
         {
           "if": "value=school",
@@ -12110,6 +12168,10 @@
           "then": "hydrant - Map layer to show fire hydrants."
         },
         {
+          "if": "value=ice_cream",
+          "then": "ice_cream - A place where ice cream is sold over the counter"
+        },
+        {
           "if": "value=icons",
           "then": "icons - A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI"
         },
@@ -12256,6 +12318,10 @@
         {
           "if": "value=recycling",
           "then": "recycling - A layer with recycling containers and centres"
+        },
+        {
+          "if": "value=route_marker",
+          "then": "route_marker - Route markers are small markers often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route."
         },
         {
           "if": "value=school",
@@ -28999,6 +29065,10 @@
           "then": "hydrant - Map layer to show fire hydrants."
         },
         {
+          "if": "value=ice_cream",
+          "then": "ice_cream - A place where ice cream is sold over the counter"
+        },
+        {
           "if": "value=icons",
           "then": "icons - A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI"
         },
@@ -29145,6 +29215,10 @@
         {
           "if": "value=recycling",
           "then": "recycling - A layer with recycling containers and centres"
+        },
+        {
+          "if": "value=route_marker",
+          "then": "route_marker - Route markers are small markers often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route."
         },
         {
           "if": "value=school",
@@ -35396,6 +35470,41 @@
   },
   {
     "path": [
+      "overrideAll"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "object",
+    "description": "An override applied on all layers of the theme.\nE.g.: if there are two layers defined:\n```\n\"layers\":[\n {\"title\": ..., \"tagRenderings\": [...], \"osmSource\":{\"tags\": ...}},\n {\"title\", ..., \"tagRenderings\", [...], \"osmSource\":{\"tags\" ...}}\n]\n```\nand overrideAll is specified:\n```\n\"overrideAll\": {\n    \"osmSource\":{\"geoJsonSource\":\"xyz\"}\n}\nthen the result will be that all the layers will have these properties applied and result in:\n\"layers\":[\n {\"title\": ..., \"tagRenderings\": [...], \"osmSource\":{\"tags\": ..., \"geoJsonSource\":\"xyz\"}},\n {\"title\", ..., \"tagRenderings\", [...], \"osmSource\":{\"tags\" ..., \"geoJsonSource\":\"xyz\"}}\n]\n```\nIf the overrideAll contains a list where the keys starts with a plus, the values will be appended (instead of discarding the old list), for example\n\"overrideAll\": {\n  \"+tagRenderings\": [ { ... some tagrendering ... }]\n}\nIn the above scenario, `sometagrendering` will be added at the beginning of the tagrenderings of every layer"
+  },
+  {
+    "path": [
+      "tileLayerSources"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "Define some (overlay) slippy map tilesources"
+  },
+  {
+    "path": [
+      "tileLayerSources",
+      "name"
+    ],
+    "required": true,
+    "hints": {},
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The name of the imagery source"
+  },
+  {
+    "path": [
       "customCss"
     ],
     "required": false,
@@ -35404,15 +35513,6 @@
     },
     "type": "string",
     "description": "The URL of a custom CSS stylesheet to modify the layout"
-  },
-  {
-    "path": [
-      "hideFromOverview"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "boolean",
-    "description": "If set to true, this layout will not be shown in the overview with more themes"
   },
   {
     "path": [
@@ -35465,111 +35565,6 @@
       }
     ],
     "description": "If set to true, the basemap will not scroll outside of the area visible on initial zoom.\nIf set to [[lon, lat], [lon, lat]], the map will not scroll outside of those bounds.\nOff by default, which will enable panning to the entire world"
-  },
-  {
-    "path": [
-      "extraLink"
-    ],
-    "required": false,
-    "hints": {
-      "group": "advanced",
-      "question": "should an extra help button be shown in certain circumstances?",
-      "ifunset": "show a link to open MapComplete full screen if used in an iframe"
-    },
-    "type": "object",
-    "description": "Adds an additional button on the top-left of the application.\nThis can link to an arbitrary location.\nFor example {icon: \"./assets/svg/pop-out.svg\", href: 'https://mapcomplete.org/{theme}.html?lat={lat}&lon={lon}&z={zoom}, requirements: [\"iframe\",\"no-welcome-message]},"
-  },
-  {
-    "path": [
-      "extraLink",
-      "icon"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "icon",
-      "question": "What icon should be shown in the link button?",
-      "ifunset": "do not show an icon"
-    },
-    "type": "string",
-    "description": ""
-  },
-  {
-    "path": [
-      "extraLink",
-      "text"
-    ],
-    "required": false,
-    "hints": {
-      "question": "What text should be shown in the link icon?",
-      "ifunset": "do not show a text"
-    },
-    "type": [
-      {
-        "$ref": "#/definitions/Record<string,string>"
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "Note that {lat},{lon},{zoom}, {language} and {theme} will be replaced"
-  },
-  {
-    "path": [
-      "extraLink",
-      "href"
-    ],
-    "required": true,
-    "hints": {
-      "typehint": "url",
-      "question": "if clicked, what webpage should open?"
-    },
-    "type": "string",
-    "description": "Note that {lat},{lon},{zoom}, {language} and {theme} will be replaced"
-  },
-  {
-    "path": [
-      "extraLink",
-      "newTab"
-    ],
-    "required": false,
-    "hints": {
-      "question": "Should the link open in a new tab?",
-      "iftrue": "Open in a new tab",
-      "iffalse": "do not open in a new tab",
-      "ifunset": "do not open in a new tab"
-    },
-    "type": "boolean",
-    "description": ""
-  },
-  {
-    "path": [
-      "extraLink",
-      "requirements"
-    ],
-    "required": false,
-    "hints": {
-      "question": "When should the extra button be shown?",
-      "suggestions": [
-        {
-          "if": "value=iframe",
-          "then": "When shown in an iframe"
-        },
-        {
-          "if": "value=no-iframe",
-          "then": "When shown as stand-alone webpage"
-        },
-        {
-          "if": "value=welcome-message",
-          "then": "When the welcome messages are enabled"
-        },
-        {
-          "if": "value=iframe",
-          "then": "When the welcome messages are disabled"
-        }
-      ]
-    },
-    "type": "array",
-    "description": ""
   },
   {
     "path": [
@@ -35777,6 +35772,35 @@
     },
     "type": "number",
     "description": "If a query takes too long, the overpass-server will abort.\nOnce can set the amount of time before overpass gives up here."
+  },
+  {
+    "path": [
+      "widenFactor"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "number",
+    "description": "When a query is run, the data within bounds of the visible map is loaded.\nHowever, users tend to pan and zoom a lot. It is pretty annoying if every single pan means a reloading of the data.\nFor this, the bounds are widened in order to make a small pan still within bounds of the loaded data.\nIF widenfactor is 1, this feature is disabled. A recommended value is between 1 and 3"
+  },
+  {
+    "path": [
+      "overpassMaxZoom"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "number",
+    "description": "At low zoom levels, overpass is used to query features.\nAt high zoom level, the OSM api is used to fetch one or more BBOX aligning with a slippy tile.\nThe overpassMaxZoom controls the flipoverpoint: if the zoom is this or lower, overpass is used."
+  },
+  {
+    "path": [
+      "osmApiTileSize"
+    ],
+    "required": false,
+    "hints": {
+      "default": "overpassMaxZoom + 1"
+    },
+    "type": "number",
+    "description": "When the OSM-api is used to fetch features, it does so in a tiled fashion.\nThese tiles are using a ceratin zoom level, that can be controlled here"
   },
   {
     "path": [

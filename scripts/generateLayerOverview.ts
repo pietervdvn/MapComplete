@@ -28,6 +28,9 @@ import { ExtraFunctions } from "../src/Logic/ExtraFunctions"
 import { QuestionableTagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import LayerConfig from "../src/Models/ThemeConfig/LayerConfig"
 import PointRenderingConfig from "../src/Models/ThemeConfig/PointRenderingConfig"
+
+import { ConfigMeta } from "../src/UI/Studio/configMeta"
+
 // This scripts scans 'src/assets/layers/*.json' for layer definition files and 'src/assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
 
@@ -256,6 +259,7 @@ class LayerOverviewUtils extends Script {
         if (!existsSync(LayerOverviewUtils.themePath)) {
             mkdirSync(LayerOverviewUtils.themePath)
         }
+
         writeFileSync(
             `${LayerOverviewUtils.themePath}${theme.id}.json`,
             JSON.stringify(theme, null, "  "),

@@ -10074,6 +10074,10 @@
           "then": "hydrant - Map layer to show fire hydrants."
         },
         {
+          "if": "value=ice_cream",
+          "then": "ice_cream - A place where ice cream is sold over the counter"
+        },
+        {
           "if": "value=icons",
           "then": "icons - A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI"
         },
@@ -10220,6 +10224,10 @@
         {
           "if": "value=recycling",
           "then": "recycling - A layer with recycling containers and centres"
+        },
+        {
+          "if": "value=route_marker",
+          "then": "route_marker - Route markers are small markers often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route."
         },
         {
           "if": "value=school",

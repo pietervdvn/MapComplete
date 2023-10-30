@@ -38,11 +38,12 @@ export interface LayoutConfigJson {
     id: string
 
     /**
+     * question: What is the title of this theme?
      *
-     * Who helped to create this theme and should be attributed?
+     * The human-readable title, as shown in the welcome message and the index page
+     * group: basic
      */
-    credits?: string | string[]
-
+    title: Translatable
     /**
      * Only used in 'generateLayerOverview': if present, every translation will be checked to make sure it is fully translated.
      *
@@ -51,12 +52,12 @@ export interface LayoutConfigJson {
     mustHaveLanguage?: string[]
 
     /**
-     * question: What is the title of this theme?
-     *
-     * The human-readable title, as shown in the welcome message and the index page
+     * question: How would you describe this theme?
+     * The description, as shown in the welcome message and the more-screen
      * group: basic
+     *
      */
-    title: Translatable
+    description: Translatable
 
     /**
      * A short description, showed as social description and in the 'more theme'-buttons.
@@ -64,14 +65,6 @@ export interface LayoutConfigJson {
      * group: hidden
      */
     shortDescription?: Translatable
-
-    /**
-     * question: How would you describe this theme?
-     * The description, as shown in the welcome message and the more-screen
-     * group: basic
-     *
-     */
-    description: Translatable
 
     /**
      * A part of the description, shown under the login-button.
@@ -104,6 +97,18 @@ export interface LayoutConfigJson {
     socialImage?: string
 
     /**
+     * question: should an extra help button be shown in certain circumstances?
+     * Adds an additional button on the top-left of the application.
+     * This can link to an arbitrary location.
+     *
+     * For example {icon: "./assets/svg/pop-out.svg", href: 'https://mapcomplete.org/{theme}.html?lat={lat}&lon={lon}&z={zoom}, requirements: ["iframe","no-welcome-message]},
+     *
+     * group: advanced
+     * ifunset: show a link to open MapComplete full screen if used in an iframe
+     */
+    extraLink?: ExtraLinkConfigJson
+
+    /**
      * question: At what zoomlevel should this theme open?
      * Default location and zoom to start.
      * Note that this is barely used. Once the user has visited mapcomplete at least once, the previous location of the user will be used
@@ -130,71 +135,21 @@ export interface LayoutConfigJson {
      * group: start_location
      */
     startLon: number
-
-    /**
-     * When a query is run, the data within bounds of the visible map is loaded.
-     * However, users tend to pan and zoom a lot. It is pretty annoying if every single pan means a reloading of the data.
-     * For this, the bounds are widened in order to make a small pan still within bounds of the loaded data.
-     *
-     * IF widenfactor is 1, this feature is disabled. A recommended value is between 1 and 3
-     */
-    widenFactor?: number
-    /**
-     * At low zoom levels, overpass is used to query features.
-     * At high zoom level, the OSM api is used to fetch one or more BBOX aligning with a slippy tile.
-     * The overpassMaxZoom controls the flipoverpoint: if the zoom is this or lower, overpass is used.
-     */
-    overpassMaxZoom?: 17 | number
-
-    /**
-     * When the OSM-api is used to fetch features, it does so in a tiled fashion.
-     * These tiles are using a ceratin zoom level, that can be controlled here
-     * Default: overpassMaxZoom + 1
-     */
-    osmApiTileSize?: number
-
-    /**
-     * An override applied on all layers of the theme.
-     *
-     * E.g.: if there are two layers defined:
-     * ```
-     * "layers":[
-     *  {"title": ..., "tagRenderings": [...], "osmSource":{"tags": ...}},
-     *  {"title", ..., "tagRenderings", [...], "osmSource":{"tags" ...}}
-     * ]
-     * ```
-     *
-     * and overrideAll is specified:
-     * ```
-     * "overrideAll": {
-     *     "osmSource":{"geoJsonSource":"xyz"}
-     * }
-     * then the result will be that all the layers will have these properties applied and result in:
-     * "layers":[
-     *  {"title": ..., "tagRenderings": [...], "osmSource":{"tags": ..., "geoJsonSource":"xyz"}},
-     *  {"title", ..., "tagRenderings", [...], "osmSource":{"tags" ..., "geoJsonSource":"xyz"}}
-     * ]
-     * ```
-     *
-     * If the overrideAll contains a list where the keys starts with a plus, the values will be appended (instead of discarding the old list), for example
-     *
-     * "overrideAll": {
-     *   "+tagRenderings": [ { ... some tagrendering ... }]
-     * }
-     *
-     * In the above scenario, `sometagrendering` will be added at the beginning of the tagrenderings of every layer
-     */
-    overrideAll?: Partial<any | LayerConfigJson>
-
     /**
      * The id of the default background. BY default: vanilla OSM
      */
     defaultBackgroundId?: string
 
     /**
-     * Define some (overlay) slippy map tilesources
+     *
+     * Who helped to create this theme and should be attributed?
      */
-    tileLayerSources?: (RasterLayerProperties & { defaultState?: true | boolean })[]
+    credits?: string | string[]
+
+    /**
+     * If set to true, this layout will not be shown in the overview with more themes
+     */
+    hideFromOverview?: boolean
 
     /**
      * question: What layers should this map show?
@@ -253,16 +208,48 @@ export interface LayoutConfigJson {
               hideTagRenderingsWithLabels?: string[]
           }
     )[]
+    /**
+     * An override applied on all layers of the theme.
+     *
+     * E.g.: if there are two layers defined:
+     * ```
+     * "layers":[
+     *  {"title": ..., "tagRenderings": [...], "osmSource":{"tags": ...}},
+     *  {"title", ..., "tagRenderings", [...], "osmSource":{"tags" ...}}
+     * ]
+     * ```
+     *
+     * and overrideAll is specified:
+     * ```
+     * "overrideAll": {
+     *     "osmSource":{"geoJsonSource":"xyz"}
+     * }
+     * then the result will be that all the layers will have these properties applied and result in:
+     * "layers":[
+     *  {"title": ..., "tagRenderings": [...], "osmSource":{"tags": ..., "geoJsonSource":"xyz"}},
+     *  {"title", ..., "tagRenderings", [...], "osmSource":{"tags" ..., "geoJsonSource":"xyz"}}
+     * ]
+     * ```
+     *
+     * If the overrideAll contains a list where the keys starts with a plus, the values will be appended (instead of discarding the old list), for example
+     *
+     * "overrideAll": {
+     *   "+tagRenderings": [ { ... some tagrendering ... }]
+     * }
+     *
+     * In the above scenario, `sometagrendering` will be added at the beginning of the tagrenderings of every layer
+     */
+    overrideAll?: Partial<any | LayerConfigJson>
 
+    /**
+     * Define some (overlay) slippy map tilesources
+     */
+    tileLayerSources?: (RasterLayerProperties & { defaultState?: true | boolean })[]
     /**
      * The URL of a custom CSS stylesheet to modify the layout
      * group: advanced
      */
     customCss?: string
-    /**
-     * If set to true, this layout will not be shown in the overview with more themes
-     */
-    hideFromOverview?: boolean
 
     /**
      * If set to true, the basemap will not scroll outside of the area visible on initial zoom.
@@ -270,18 +257,6 @@ export interface LayoutConfigJson {
      * Off by default, which will enable panning to the entire world
      */
     lockLocation?: [[number, number], [number, number]] | number[][]
-
-    /**
-     * question: should an extra help button be shown in certain circumstances?
-     * Adds an additional button on the top-left of the application.
-     * This can link to an arbitrary location.
-     *
-     * For example {icon: "./assets/svg/pop-out.svg", href: 'https://mapcomplete.org/{theme}.html?lat={lat}&lon={lon}&z={zoom}, requirements: ["iframe","no-welcome-message]},
-     *
-     * group: advanced
-     * ifunset: show a link to open MapComplete full screen if used in an iframe
-     */
-    extraLink?: ExtraLinkConfigJson
 
     /**
      * question: Should a user be able to login with OpenStreetMap?
@@ -429,6 +404,28 @@ export interface LayoutConfigJson {
      * group: advanced
      */
     overpassTimeout?: number
+
+    /**
+     * When a query is run, the data within bounds of the visible map is loaded.
+     * However, users tend to pan and zoom a lot. It is pretty annoying if every single pan means a reloading of the data.
+     * For this, the bounds are widened in order to make a small pan still within bounds of the loaded data.
+     *
+     * IF widenfactor is 1, this feature is disabled. A recommended value is between 1 and 3
+     */
+    widenFactor?: number
+    /**
+     * At low zoom levels, overpass is used to query features.
+     * At high zoom level, the OSM api is used to fetch one or more BBOX aligning with a slippy tile.
+     * The overpassMaxZoom controls the flipoverpoint: if the zoom is this or lower, overpass is used.
+     */
+    overpassMaxZoom?: 17 | number
+
+    /**
+     * When the OSM-api is used to fetch features, it does so in a tiled fashion.
+     * These tiles are using a ceratin zoom level, that can be controlled here
+     * Default: overpassMaxZoom + 1
+     */
+    osmApiTileSize?: number
 
     /**
      * Enables tracking of all nodes when data is loaded.
