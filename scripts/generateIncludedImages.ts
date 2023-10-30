@@ -4,7 +4,7 @@ function genImages(dryrun = false) {
     const dir = fs.readdirSync("./assets/svg")
 
     let module =
-        'import Img from "./UI/Base/Img";\nimport {FixedUiElement} from "./UI/Base/FixedUiElement";\n\nexport default class Svg {\n\n\n'
+        'import Img from "./UI/Base/Img";\nimport {FixedUiElement} from "./UI/Base/FixedUiElement";\n\n/* @deprecated */\nexport default class Svg {\n\n\n'
     const allNames: string[] = []
     for (const path of dir) {
         if (path.endsWith("license_info.json")) {
