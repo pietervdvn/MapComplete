@@ -41,5 +41,5 @@
     <slot />
   {:else if $loadingStatus === "not-attempted"}
     <slot name="not-logged-in" />
-  {/if} 
+  {/if}
 {/if}

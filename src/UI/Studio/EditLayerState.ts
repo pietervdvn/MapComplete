@@ -209,6 +209,7 @@ export abstract class EditJsonState<T> {
             try {
                 prepare.convert(<T>config, context)
             } catch (e) {
+                console.error(e)
                 context.err(e)
             }
             return context.messages

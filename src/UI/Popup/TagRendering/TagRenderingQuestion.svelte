@@ -170,7 +170,7 @@
   let featureSwitchIsDebugging = state?.featureSwitches?.featureSwitchIsDebugging ?? new ImmutableStore(false);
   let showTags = state?.userRelatedState?.showTags ?? new ImmutableStore(undefined);
   let numberOfCs = state?.osmConnection?.userDetails?.data?.csCount ?? 0;
-  if (state) {
+  if (state?.osmConnection) {
     onDestroy(
       state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
         numberOfCs = ud.csCount;

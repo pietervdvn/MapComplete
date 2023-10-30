@@ -83,6 +83,10 @@
         "or"
       ],
       "additionalProperties": false
+    },
+    "Record<string,string>": {
+      "type": "object",
+      "additionalProperties": false
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",

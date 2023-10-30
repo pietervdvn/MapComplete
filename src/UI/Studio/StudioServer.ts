@@ -20,12 +20,8 @@ export default class StudioServer {
         }[]
     > {
         const uid = this._userId.data
-        let uidQueryParam = ""
-        if (this._userId.data !== undefined) {
-            uidQueryParam = "?userId=" + uid
-        }
         const { allFiles } = <{ allFiles: string[] }>(
-            await Utils.downloadJson(this.url + "/overview" + uidQueryParam)
+            await Utils.downloadJson(this.url + "/overview")
         )
         const layerOverview: {
             id: string
@@ -33,12 +29,15 @@ export default class StudioServer {
             category: "layers" | "themes"
         }[] = []
         for (let file of allFiles) {
-            let owner = undefined
-            if (file.startsWith("" + uid)) {
-                owner = uid
+            let parts = file.split("/")
+            let owner = Number(parts[0])
+            if (!isNaN(owner)) {
+                parts.splice(0, 1)
                 file = file.substring(file.indexOf("/") + 1)
+            } else {
+                owner = undefined
             }
-            const category = <"layers" | "themes">file.substring(0, file.indexOf("/"))
+            const category = <"layers" | "themes">parts[0]
             const id = file.substring(file.lastIndexOf("/") + 1, file.length - ".json".length)
             if (Constants.priviliged_layers.indexOf(<any>id) > 0) {
                 continue
@@ -48,9 +47,13 @@ export default class StudioServer {
         return layerOverview
     }
 
-    async fetch(layerId: string, category: "layers" | "themes"): Promise<LayerConfigJson> {
+    async fetch(
+        layerId: string,
+        category: "layers" | "themes",
+        uid?: number
+    ): Promise<LayerConfigJson> {
         try {
-            return await Utils.downloadJson(this.urlFor(layerId, category))
+            return await Utils.downloadJson(this.urlFor(layerId, category, uid))
         } catch (e) {
             return undefined
         }
@@ -73,8 +76,8 @@ export default class StudioServer {
         return this.urlFor(id, "layers")
     }
 
-    public urlFor(id: string, category: "layers" | "themes") {
-        const uid = this._userId.data
+    public urlFor(id: string, category: "layers" | "themes", uid?: number) {
+        uid ??= this._userId.data
         const uidStr = uid !== undefined ? "/" + uid : ""
         return `${this.url}${uidStr}/${category}/${id}/${id}.json`
     }

@@ -13,8 +13,8 @@ mkdir dist/assets 2> /dev/null
 export NODE_OPTIONS="--max-old-space-size=8192"
 
 # This script ends every line with '&&' to chain everything. A failure will thus stop the build
-npm run generate:editor-layer-index &&
-npm run generate &&
+# npm run generate:editor-layer-index &&
+# npm run generate &&
 npm run generate:layouts
 
 if [ $? -ne 0 ]; then
@@ -24,7 +24,7 @@ fi
 
 
 
-SRC_MAPS=""
+SRC_MAPS="--sourcemap"
 BRANCH=`git rev-parse --abbrev-ref HEAD`
 echo "The branch name is $BRANCH"
 if [ $BRANCH = "develop" ]
@@ -46,6 +46,7 @@ else
 fi
 
 export NODE_OPTIONS=--max-old-space-size=7000
+which vite
 vite build $SRC_MAPS 
 # Copy the layer files, as these might contain assets (e.g. svgs)
 cp -r assets/layers/ dist/assets/layers/

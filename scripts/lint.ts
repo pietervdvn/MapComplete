@@ -7,6 +7,7 @@ import {
 import Translations from "../src/UI/i18n/Translations"
 import { Translation } from "../src/UI/i18n/Translation"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
+import { ConversionContext } from "../src/Models/ThemeConfig/Conversion/Conversion"
 
 /*
  * This script reads all theme and layer files and reformats them inplace
@@ -68,7 +69,7 @@ for (const layerFile of layerFiles) {
         const fixed = <LayerConfigJson>(
             new UpdateLegacyLayer().convertStrict(
                 layerFile.parsed,
-                "While linting " + layerFile.path
+                ConversionContext.construct([layerFile.path.split("/").at(-1)], ["update legacy"])
             )
         )
         addArticleToPresets(fixed)
@@ -83,7 +84,7 @@ for (const themeFile of themeFiles) {
     try {
         const fixed = new FixLegacyTheme().convertStrict(
             themeFile.parsed,
-            "While linting " + themeFile.path
+            ConversionContext.construct([themeFile.path.split("/").at(-1)], ["update legacy layer"])
         )
         for (const layer of fixed.layers) {
             if (layer["presets"] !== undefined) {
@@ -91,7 +92,11 @@ for (const themeFile of themeFiles) {
             }
         }
         // extractInlineLayer(fixed)
-        writeFileSync(themeFile.path, JSON.stringify(fixed, null, "  "))
+        const endsWithNewline = themeFile.raw.at(-1) === "\n"
+        writeFileSync(
+            themeFile.path,
+            JSON.stringify(fixed, null, "  ") + (endsWithNewline ? "\n" : "")
+        )
     } catch (e) {
         console.error("COULD NOT LINT THEME" + themeFile.path + ":\n\t" + e)
     }

@@ -3,7 +3,7 @@
 
   import NextButton from "./Base/NextButton.svelte";
   import { Store, UIEventSource } from "../Logic/UIEventSource";
-  import EditLayerState from "./Studio/EditLayerState";
+  import EditLayerState, { EditThemeState } from "./Studio/EditLayerState";
   import EditLayer from "./Studio/EditLayer.svelte";
   import Loading from "../assets/svg/Loading.svelte";
   import StudioServer from "./Studio/StudioServer";
@@ -12,6 +12,8 @@
   import { QueryParameters } from "../Logic/Web/QueryParameters";
 
   import layerSchemaRaw from "../../src/assets/schemas/layerconfigmeta.json";
+  import layoutSchemaRaw from "../../src/assets/schemas/layoutconfigmeta.json";
+
   import If from "./Base/If.svelte";
   import BackButton from "./Base/BackButton.svelte";
   import ChooseLayerToEdit from "./Studio/ChooseLayerToEdit.svelte";
@@ -21,6 +23,7 @@
   import * as intro from "../assets/studio_introduction.json";
   import { QuestionMarkCircleIcon } from "@babeard/svelte-heroicons/mini";
   import type { ConfigMeta } from "./Studio/configMeta";
+  import EditTheme from "./Studio/EditTheme.svelte";
 
   export let studioUrl = window.location.hostname === "127.0.0.1" ? "http://127.0.0.1:1235" : "https://studio.mapcomplete.org";
 
@@ -35,32 +38,47 @@
   const uid = osmConnection.userDetails.map(ud => ud?.uid);
   const studio = new StudioServer(studioUrl, uid);
 
-  let layersWithErr = uid.bind(uid => UIEventSource.FromPromiseWithErr(studio.fetchLayerOverview()));
-  let layers: Store<{ owner: number }[]> = layersWithErr.mapD(l => l.success);
+  let layersWithErr = UIEventSource.FromPromiseWithErr(studio.fetchOverview());
+  let layers: Store<{ owner: number }[]> = layersWithErr.mapD(l => l.success?.filter(l => l.category === "layers"));
   let selfLayers = layers.mapD(ls => ls.filter(l => l.owner === uid.data), [uid]);
-  let otherLayers = layers.mapD(ls => ls.filter(l => l.owner !== uid.data), [uid]);
+  let otherLayers = layers.mapD(ls => ls.filter(l => l.owner !== undefined && l.owner !== uid.data), [uid]);
+  let officialLayers = layers.mapD(ls => ls.filter(l => l.owner === undefined), [uid]);
+  
+  
+  let themes: Store<{ owner: number }[]> = layersWithErr.mapD(l => l.success?.filter(l => l.category === "themes"));
+  let selfThemes = themes.mapD(ls => ls.filter(l => l.owner === uid.data), [uid]);
+  let otherThemes = themes.mapD(ls => ls.filter(l => l.owner !== undefined && l.owner !== uid.data), [uid]);
+  let officialThemes = themes.mapD(ls => ls.filter(l => l.owner === undefined), [uid]);
 
-  let state: undefined | "edit_layer" | "edit_theme" | "new_theme" | "editing_layer" | "loading" = undefined;
-
-  let initialLayerConfig: { id: string };
+  let state: undefined | "edit_layer" | "edit_theme" | "editing_layer" | "editing_theme" | "loading" = undefined;
 
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw;
-
   let editLayerState = new EditLayerState(layerSchema, studio, osmConnection);
+
+  const layoutSchema: ConfigMeta[] = <any>layoutSchemaRaw;
+  let editThemeState = new EditThemeState(layoutSchema, studio);
+
   let layerId = editLayerState.configuration.map(layerConfig => layerConfig.id);
 
   let showIntro = UIEventSource.asBoolean(LocalStorageSource.Get("studio-show-intro", "true"));
 
   async function editLayer(event: Event) {
-    const layerId = event.detail;
+    const layerId: {owner: number, id: string} = event.detail;
     state = "loading";
-    initialLayerConfig = await studio.fetchLayer(layerId);
+    editLayerState.configuration.setData(await studio.fetch(layerId.id, "layers", layerId.owner));
     state = "editing_layer";
+  }
+
+  async function editTheme(event: Event) {
+    const id : {id: string, owner: number} = event.detail;
+    state = "loading";
+    editThemeState.configuration.setData(await studio.fetch(id.id, "themes", id.owner));
+    state = "editing_theme";
   }
 
   async function createNewLayer() {
     state = "loading";
-    initialLayerConfig = {
+    const initialLayerConfig = {
       credits: createdBy,
       minzoom: 15,
       pointRendering: [
@@ -77,6 +95,7 @@
         color: "blue"
       }]
     };
+    editLayerState.configuration.setData(initialLayerConfig);
     state = "editing_layer";
   }
 
@@ -123,14 +142,12 @@
           <NextButton on:click={() => createNewLayer()}>
             Create a new layer
           </NextButton>
-          <!--
           <NextButton on:click={() => state = "edit_theme"}>
             Edit a theme
           </NextButton>
-          <NextButton on:click={() => state = "new_theme"}>
+          <NextButton on:click={() => {editThemeState.configuration.setData({}); state = "editing_theme"}}>
             Create a new theme
           </NextButton>
-          -->
           <NextButton clss="small" on:click={() => {showIntro.setData(true)} }>
             <QuestionMarkCircleIcon class="w-6 h-6" />
             Show the introduction again
@@ -146,25 +163,48 @@
         <ChooseLayerToEdit layerIds={$selfLayers} on:layerSelected={editLayer}>
           <h3 slot="title">Your layers</h3>
         </ChooseLayerToEdit>
-        <h3>Official layers</h3>
+        <h3>Layers by other contributors</h3>
         <ChooseLayerToEdit layerIds={$otherLayers} on:layerSelected={editLayer} />
+
+        <h3>Official layers by MapComplete</h3>
+        <ChooseLayerToEdit layerIds={$officialLayers} on:layerSelected={editLayer} />
+      </div>
+    {:else if state === "edit_theme"}
+
+      <div class="flex flex-col m-4">
+        <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => {state =undefined}}>MapComplete Studio
+        </BackButton>
+        <h2>Choose a theme to edit</h2>
+        <ChooseLayerToEdit layerIds={$selfThemes} on:layerSelected={editTheme}>
+          <h3 slot="title">Your themes</h3>
+        </ChooseLayerToEdit>
+        <h3>Themes by other contributors</h3>
+        <ChooseLayerToEdit layerIds={$otherThemes} on:layerSelected={editTheme} />
+        <h3>Official themes by MapComplete</h3>
+        <ChooseLayerToEdit layerIds={$officialThemes} on:layerSelected={editTheme} />
+
       </div>
     {:else if state === "loading"}
       <div class="w-8 h-8">
         <Loading />
       </div>
     {:else if state === "editing_layer"}
-      <EditLayer {initialLayerConfig} state={editLayerState}>
+      <EditLayer state={editLayerState}>
         <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => {state =undefined}}>MapComplete Studio
         </BackButton>
       </EditLayer>
+    {:else if state === "editing_theme"}
+      <EditTheme state={editThemeState} >
+        <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => {state =undefined}}>MapComplete Studio
+        </BackButton>
+      </EditTheme>
     {/if}
   </LoginToggle>
 </If>
 
 
 {#if $showIntro}
-  <FloatOver>
+  <FloatOver on:close={() => {showIntro.setData(false)}}>
     <div class="flex p-4 h-full">
       <Walkthrough pages={intro.sections} on:done={() => {showIntro.setData(false)}} />
     </div>

@@ -89,6 +89,8 @@
 
 
   const existingValue = state.getCurrentValueFor(path);
+  let hasOverride = existingValue?.override !== undefined;
+  console.log({existingValue, hasOverride})
   if (hasBooleanOption >= 0 && (existingValue === true || existingValue === false)) {
     tags.setData({ value: "" + existingValue });
   } else if (lastIsString && typeof existingValue === "string") {
@@ -200,18 +202,23 @@
     <h3>{schema.hints.title}</h3>
     <div> {schema.description} </div>
   {/if}
-  <div>
-    <TagRenderingEditable {config} selectedElement={undefined} showQuestionIfUnknown={true} {state} {tags} />
-  </div>
+  {#if hasOverride}
+    This object refers to {existingValue.builtin} and overrides some properties. This cannot be edited with MapComplete
+    Studio
+  {:else}
+    <div>
+      <TagRenderingEditable {config} selectedElement={undefined} showQuestionIfUnknown={true} {state} {tags} />
+    </div>
 
-  {#if chosenOption !== undefined}
-    {#each subSchemas as subschema}
-      <SchemaBasedInput {state} schema={subschema}
-                        path={[...subpath, (subschema?.path?.at(-1) ?? "???")]}></SchemaBasedInput>
-    {/each}
-  {:else if $messages.length > 0}
-    {#each $messages as msg}
-      <div class="alert">{msg.message}</div>
-    {/each}
+    {#if chosenOption !== undefined}
+      {#each subSchemas as subschema}
+        <SchemaBasedInput {state} schema={subschema}
+                          path={[...subpath, (subschema?.path?.at(-1) ?? "???")]}></SchemaBasedInput>
+      {/each}
+    {:else if $messages.length > 0}
+      {#each $messages as msg}
+        <div class="alert">{msg.message}</div>
+      {/each}
+    {/if}
   {/if}
 </div>

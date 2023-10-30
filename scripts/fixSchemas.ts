@@ -141,7 +141,8 @@ function extractHintsFrom(
     description: string,
     fieldnames: string[],
     path: (string | number)[],
-    type: any
+    type: any,
+    schemepart: any
 ): Record<string, string> {
     if (!description) {
         return {}
@@ -167,19 +168,28 @@ function extractHintsFrom(
     }
 
     if (hints["types"]) {
+        const notRequired = hints["ifunset"] !== undefined
         const numberOfExpectedSubtypes = hints["types"].replaceAll("|", ";").split(";").length
-        if (!Array.isArray(type)) {
+        if (!Array.isArray(type) && !notRequired) {
             throw (
                 "At " +
                 path.join(".") +
                 "Invalid hint in the documentation: `types` indicates that there are " +
                 numberOfExpectedSubtypes +
                 " subtypes, but object does not support subtypes. Did you mean `type` instead?\n\tTypes are: " +
-                hints["types"]
+                hints["types"] +
+                "\n: hints: " +
+                JSON.stringify(hints) +
+                " req:" +
+                JSON.stringify(schemepart)
             )
         }
         const numberOfActualTypes = type.length
-        if (numberOfActualTypes !== numberOfExpectedSubtypes) {
+        if (
+            numberOfActualTypes !== numberOfExpectedSubtypes &&
+            notRequired &&
+            numberOfActualTypes + 1 !== numberOfExpectedSubtypes
+        ) {
             throw `At ${path.join(
                 "."
             )}\nInvalid hint in the documentation: \`types\` indicates that there are ${numberOfExpectedSubtypes} subtypes, but there are ${numberOfActualTypes} subtypes
@@ -213,10 +223,16 @@ function addMetafields(fieldnames: string[], fullSchema: JsonSchema): ConfigMeta
         const type = schemePart.items?.anyOf ?? schemePart.type ?? schemePart.anyOf
         let description = schemePart.description
 
-        let hints = extractHintsFrom(description, fieldnames, path, type)
+        let hints = extractHintsFrom(description, fieldnames, path, type, schemePart)
         const childDescription = schemePart["child-description"]
         if (childDescription) {
-            const childHints = extractHintsFrom(childDescription, fieldnames, path, type)
+            const childHints = extractHintsFrom(
+                childDescription,
+                fieldnames,
+                path,
+                type,
+                schemePart
+            )
             hints = { ...childHints, ...hints }
             description = description ?? childDescription
         }
@@ -299,9 +315,9 @@ function validateMeta(path: ConfigMeta): string | undefined {
     }
     if (path.hints.question === undefined && !Array.isArray(path.type)) {
         /* return (
-        ctx +
-        " does not have a question set. As such, MapComplete-studio users will not be able to set this property"
-    ) //*/
+    ctx +
+    " does not have a question set. As such, MapComplete-studio users will not be able to set this property"
+) //*/
     }
 
     return undefined

@@ -166,7 +166,7 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
 
     convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
         const state = this._state
-        json.layers = [...json.layers]
+        json.layers = [...(json.layers ?? [])]
         const alreadyLoaded = new Set(json.layers.map((l) => l["id"]))
 
         for (const layerName of Constants.added_by_default) {
@@ -480,6 +480,20 @@ class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson>
         if (json.hideFromOverview === true) {
             return json
         }
+        if ((json.layers ?? []).length === 0) {
+            context
+                .enter("layers")
+                .err(
+                    "No layers are defined. You must define at least one layer to have a valid theme"
+                )
+            return json
+        }
+        if (!Array.isArray(json.layers)) {
+            context
+                .enter("layers")
+                .err("Can not iterate over layers in theme, it is a " + JSON.stringify(json.layers))
+            return json
+        }
         for (const layer of json.layers) {
             if (typeof layer === "string") {
                 continue
@@ -537,7 +551,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
 
     convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
         const result = super.convert(json, context)
-        if (this.state.publicLayers.size === 0) {
+        if ((this.state.publicLayers?.size ?? 0) === 0) {
             // THis is a bootstrapping run, no need to already set this flag
             return result
         }

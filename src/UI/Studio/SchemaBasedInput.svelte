@@ -11,7 +11,7 @@
   export let path: (string | number)[] = [];
   
 </script>
-{#if schema.hints.typehint === "tagrendering[]"}
+{#if schema.hints?.typehint?.endsWith("[]")}
   <!-- We cheat a bit here by matching this 'magical' type... -->
   <SchemaBasedArray {path} {state} {schema} />
 {:else if schema.type === "array" && schema.hints.multianswer === "true"}

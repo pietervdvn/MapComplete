@@ -83,6 +83,7 @@ export class OsmConnection {
         if (options.fakeUser) {
             const ud = this.userDetails.data
             ud.csCount = 5678
+            ud.uid = 42
             ud.loggedIn = true
             ud.unreadMessages = 0
             ud.name = "Fake user"

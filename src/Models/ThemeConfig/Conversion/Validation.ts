@@ -129,7 +129,7 @@ export class DoesImageExist extends DesugaringStep<string> {
     }
 }
 
-class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
+export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
     /**
      * The paths where this layer is originally saved. Triggers some extra checks
      * @private
@@ -175,6 +175,9 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                     )
                 }
             }
+        }
+        if (!json.title) {
+            context.enter("title").err(`The theme ${json.id} does not have a title defined.`)
         }
         if (this._isBuiltin && this._extractImages !== undefined) {
             // Check images: are they local, are the licenses there, is the theme icon square, ...
@@ -247,6 +250,20 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
 
         if (theme.id !== "personal") {
             new DetectDuplicatePresets().convert(theme, context)
+        }
+
+        if (!theme.title) {
+            context.enter("title").err("A theme must have a title")
+        }
+
+        if (!theme.description) {
+            context.enter("description").err("A theme must have a description")
+        }
+
+        if (theme.overpassUrl && typeof theme.overpassUrl === "string") {
+            context
+                .enter("overpassUrl")
+                .err("The overpassURL is a string, use a list of strings instead. Wrap it with [ ]")
         }
 
         return json

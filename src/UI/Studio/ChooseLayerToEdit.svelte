@@ -22,7 +22,7 @@
   <slot name="title" />
   <div class="flex flex-wrap">
     {#each Array.from(layerIds) as layer}
-      <NextButton clss="small" on:click={() => dispatch("layerSelected", layer.id)}>
+      <NextButton clss="small" on:click={() => dispatch("layerSelected", layer)}>
         <div class="w-4 h-4 mr-1">
           <Marker icons={fetchIconDescription(layer.id)} />
         </div>

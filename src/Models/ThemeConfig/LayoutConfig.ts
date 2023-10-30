@@ -29,6 +29,10 @@ export default class LayoutConfig implements LayoutInformation {
     public static readonly defaultSocialImage = "assets/SocialImage.png"
     public readonly id: string
     public readonly credits?: string
+    /**
+     * The languages this theme supports.
+     * Defaults to all languages the title has
+     */
     public readonly language: string[]
     public readonly title: Translation
     public readonly shortDescription: Translation
@@ -81,6 +85,10 @@ export default class LayoutConfig implements LayoutInformation {
             definitionRaw?: string
         }
     ) {
+        console.log("Initing theme", { json, official, options })
+        if (json === undefined) {
+            throw "Cannot construct a layout config, the parameter 'json' is undefined"
+        }
         this.official = official
         this.id = json.id
         this.definedAtUrl = options?.definedAtUrl
@@ -94,11 +102,11 @@ export default class LayoutConfig implements LayoutInformation {
             }
         }
         const context = this.id
-        this.credits = json.credits
-        if(!json.title){
-            throw `The theme ${json.id} does not have a title defined.`
-        }
-        this.language = json.mustHaveLanguage ?? Object.keys(json.title)
+        this.credits = typeof json.credits === "string" ? json.credits : json.credits?.join(", ")
+
+        this.language = Array.from(
+            new Set((json.mustHaveLanguage ?? []).concat(Object.keys(json.title ?? {})))
+        )
         this.usedImages = Array.from(
             new ExtractImages(official, undefined)
                 .convertStrict(json, ConversionContext.construct([json.id], ["ExtractImages"]))
@@ -113,7 +121,7 @@ export default class LayoutConfig implements LayoutInformation {
                 )} which is a ${typeof json.title})`
             }
             if (this.language.length == 0) {
-                throw `No languages defined. Define at least one language. (${context}.languages)`
+                throw `No languages defined. Define at least one language. You can do this by adding a title`
             }
             if (json.title === undefined) {
                 throw "Title not defined in " + this.id
@@ -201,14 +209,7 @@ export default class LayoutConfig implements LayoutInformation {
         this.enableExportButton = json.enableDownload ?? true
         this.enablePdfDownload = json.enablePdfDownload ?? true
         this.customCss = json.customCss
-        this.overpassUrl = Constants.defaultOverpassUrls
-        if (json.overpassUrl !== undefined) {
-            if (typeof json.overpassUrl === "string") {
-                this.overpassUrl = [json.overpassUrl]
-            } else {
-                this.overpassUrl = json.overpassUrl
-            }
-        }
+        this.overpassUrl = json.overpassUrl ?? Constants.defaultOverpassUrls
         this.overpassTimeout = json.overpassTimeout ?? 30
         this.overpassMaxZoom = json.overpassMaxZoom ?? 16
         this.osmApiTileSize = json.osmApiTileSize ?? this.overpassMaxZoom + 1

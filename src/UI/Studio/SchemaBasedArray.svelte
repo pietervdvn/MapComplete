@@ -7,6 +7,7 @@
   import { TrashIcon } from "@babeard/svelte-heroicons/mini";
   import QuestionPreview from "./QuestionPreview.svelte";
   import { Utils } from "../../Utils";
+  import SchemaBasedMultiType from "./SchemaBasedMultiType.svelte";
 
   export let state: EditLayerState;
   export let schema: ConfigMeta;
@@ -105,6 +106,12 @@
     } while (currentIndex !== targetIndex);
   }
 
+  function schemaForMultitype() {
+    const sch = {...schema}
+    sch.hints.typehint = undefined
+    return sch
+  }
+
 
 </script>
 <div class="pl-2">
@@ -168,6 +175,8 @@
             {/if}
 
           </QuestionPreview>
+          {:else if schema.hints.types}
+         <SchemaBasedMultiType {state} path={fusePath(value, [])} schema={schemaForMultitype()}/>
         {:else}
           {#each subparts as subpart}
             <SchemaBasedInput {state} path={fusePath(value, subpart.path)} schema={subpart} />

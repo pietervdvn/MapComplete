@@ -100,7 +100,7 @@ export default class ScriptUtils {
             .filter((path) => path.indexOf("license_info.json") < 0)
     }
 
-    public static getThemeFiles(): { parsed: LayoutConfigJson; path: string }[] {
+    public static getThemeFiles(): { parsed: LayoutConfigJson; path: string; raw: string }[] {
         return this.getThemePaths().map((path) => {
             try {
                 const contents = readFileSync(path, { encoding: "utf8" })
@@ -108,7 +108,7 @@ export default class ScriptUtils {
                     throw "The file " + path + " is empty, did you properly save?"
                 }
                 const parsed = JSON.parse(contents)
-                return { parsed: parsed, path: path }
+                return { parsed: parsed, path: path, raw: contents }
             } catch (e) {
                 console.error("Could not read file ", path, "due to ", e)
                 throw e

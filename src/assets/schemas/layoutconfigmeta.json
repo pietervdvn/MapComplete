@@ -11,9 +11,13 @@
       "id"
     ],
     "required": true,
-    "hints": {},
+    "hints": {
+      "typehint": "id",
+      "group": "basic",
+      "question": "What is the id of this layout?"
+    },
     "type": "string",
-    "description": "The id of this layout.\nThis is used as hashtag in the changeset message, which will read something like \"Adding data with #mapcomplete for theme #<the theme id>\"\nMake sure it is something decent and descriptive, it should be a simple, lowercase string.\nOn official themes, it'll become the name of the page, e.g.\n'cyclestreets' which become 'cyclestreets.html'"
+    "description": "The id is a unique string to identify the theme\nIt should be\n- in english\n- describe the theme in a single word (or a few words)\n- all lowercase and with only [a-z] or underscores (_)\nThis is used as hashtag in the changeset message, which will read something like \"Adding data with #mapcomplete for theme #<the theme id>\"\nOn official themes, it'll become the name of the page, e.g.\n'cyclestreets' which become 'cyclestreets.html'"
   },
   {
     "path": [
@@ -21,7 +25,17 @@
     ],
     "required": false,
     "hints": {},
-    "type": "string",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "Who helped to create this theme and should be attributed?"
   },
   {
@@ -38,7 +52,10 @@
       "title"
     ],
     "required": true,
-    "hints": {},
+    "hints": {
+      "group": "basic",
+      "question": "What is the title of this theme?"
+    },
     "type": [
       {
         "$ref": "#/definitions/Record<string,string>"
@@ -47,14 +64,16 @@
         "type": "string"
       }
     ],
-    "description": "The title, as shown in the welcome message and the more-screen."
+    "description": "The human-readable title, as shown in the welcome message and the index page"
   },
   {
     "path": [
       "shortDescription"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "group": "hidden"
+    },
     "type": [
       {
         "$ref": "#/definitions/Record<string,string>"
@@ -70,7 +89,10 @@
       "description"
     ],
     "required": true,
-    "hints": {},
+    "hints": {
+      "group": "basic",
+      "question": "How would you describe this theme?"
+    },
     "type": [
       {
         "$ref": "#/definitions/Record<string,string>"
@@ -86,7 +108,9 @@
       "descriptionTail"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "group": "hidden"
+    },
     "type": [
       {
         "$ref": "#/definitions/Record<string,string>"
@@ -103,10 +127,12 @@
     ],
     "required": true,
     "hints": {
-      "typehint": "icon"
+      "typehint": "icon",
+      "group": "basic",
+      "question": "What icon should be used to represent this theme?"
     },
     "type": "string",
-    "description": "The icon representing this theme.\nUsed as logo in the more-screen and (for official themes) as favicon, webmanifest logo, ...\nEither a URL or a base64 encoded value (which should include 'data:image/svg+xml;base64)"
+    "description": "Used as logo in the more-screen and (for official themes) as favicon, webmanifest logo, ...\nEither a URL or a base64 encoded value (which should include 'data:image/svg+xml;base64)"
   },
   {
     "path": [
@@ -114,17 +140,53 @@
     ],
     "required": false,
     "hints": {
-      "typehint": "image"
+      "typehint": "image",
+      "group": "basic",
+      "question": "What image should be used as social image preview?",
+      "ifunset": "use the default social image of mapcomplete (or generate one based on the icon)"
     },
     "type": "string",
-    "description": "Link to a 'social image' which is included as og:image-tag on official themes.\nUseful to share the theme on social media.\nSee https://www.h3xed.com/web-and-internet/how-to-use-og-image-meta-tag-facebook-reddit for more information$"
+    "description": "This is included as og:image-tag on official themes.\nSee https://www.h3xed.com/web-and-internet/how-to-use-og-image-meta-tag-facebook-reddit for more information"
   },
   {
     "path": [
       "startZoom"
     ],
     "required": true,
-    "hints": {},
+    "hints": {
+      "typehint": "float",
+      "group": "start_location",
+      "question": "At what zoomlevel should this theme open?",
+      "ifunset": "Use the default startzoom (0)"
+    },
+    "type": "number",
+    "description": "Default location and zoom to start.\nNote that this is barely used. Once the user has visited mapcomplete at least once, the previous location of the user will be used"
+  },
+  {
+    "path": [
+      "startLat"
+    ],
+    "required": true,
+    "hints": {
+      "typehint": "float",
+      "group": "start_location",
+      "question": "At what start latitude should this theme open?",
+      "ifunset": "Use 0 as start latitude"
+    },
+    "type": "number",
+    "description": "Default location and zoom to start.\nNote that this is barely used. Once the user has visited mapcomplete at least once, the previous location of the user will be used"
+  },
+  {
+    "path": [
+      "startLon"
+    ],
+    "required": true,
+    "hints": {
+      "typehint": "float",
+      "group": "start_location",
+      "question": "At what start longitude should this theme open?",
+      "ifunset": "Use 0 as start longitude"
+    },
     "type": "number",
     "description": "Default location and zoom to start.\nNote that this is barely used. Once the user has visited mapcomplete at least once, the previous location of the user will be used"
   },
@@ -206,7 +268,12 @@
       "layers"
     ],
     "required": true,
-    "hints": {},
+    "hints": {
+      "typehint": "layer[]",
+      "types": "hidden | layer | hidden",
+      "group": "layers",
+      "question": "What layers should this map show?"
+    },
     "type": [
       {
         "description": "Configuration for a single layer",
@@ -1102,7 +1169,7 @@
         "type": "string"
       }
     ],
-    "description": "The layers to display.\nEvery layer contains a description of which feature to display - the overpassTags which are queried.\nInstead of running one query for every layer, the query is fused.\nAfterwards, every layer is given the list of features.\nEvery layer takes away the features that match with them*, and give the leftovers to the next layers.\nThis implies that the _order_ of the layers is important in the case of features with the same tags;\nas the later layers might never receive their feature.\n*layers can also remove 'leftover'-features if the leftovers overlap with a feature in the layer itself\nNote that builtin layers can be reused. Either put in the name of the layer to reuse, or use {builtin: \"layername\", override: ...}\nThe 'override'-object will be copied over the original values of the layer, which allows to change certain aspects of the layer\nFor example: If you would like to use layer nature reserves, but only from a specific operator (eg. Natuurpunt) you would use the following in your theme:\n```\n\"layer\": {\n \"builtin\": \"nature_reserve\",\n \"override\": {\"source\":\n {\"osmTags\": {\n \"+and\":[\"operator=Natuurpunt\"]\n   }\n  }\n }\n}\n```\nIt's also possible to load multiple layers at once, for example, if you would like for both drinking water and benches to start at the zoomlevel at 12, you would use the following:\n```\n\"layer\": {\n \"builtin\": [\"benches\", \"drinking_water\"],\n \"override\": {\"minzoom\": 12}\n}\n```"
+    "description": "Every layer contains a description of which feature to display - the overpassTags which are queried.\nInstead of running one query for every layer, the query is fused.\nAfterwards, every layer is given the list of features.\nEvery layer takes away the features that match with them*, and give the leftovers to the next layers.\nThis implies that the _order_ of the layers is important in the case of features with the same tags;\nas the later layers might never receive their feature.\n*layers can also remove 'leftover'-features if the leftovers overlap with a feature in the layer itself\nNote that builtin layers can be reused. Either put in the name of the layer to reuse, or use {builtin: \"layername\", override: ...}\nThe 'override'-object will be copied over the original values of the layer, which allows to change certain aspects of the layer\nFor example: If you would like to use layer nature reserves, but only from a specific operator (eg. Natuurpunt) you would use the following in your theme:\n```\n\"layer\": {\n \"builtin\": \"nature_reserve\",\n \"override\": {\"source\":\n {\"osmTags\": {\n \"+and\":[\"operator=Natuurpunt\"]\n   }\n  }\n }\n}\n```\nIt's also possible to load multiple layers at once, for example, if you would like for both drinking water and benches to start at the zoomlevel at 12, you would use the following:\n```\n\"layer\": {\n \"builtin\": [\"benches\", \"drinking_water\"],\n \"override\": {\"minzoom\": 12}\n}\n```"
   },
   {
     "path": [
@@ -34790,7 +34857,9 @@
       "customCss"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "group": "advanced"
+    },
     "type": "string",
     "description": "The URL of a custom CSS stylesheet to modify the layout"
   },
@@ -34861,80 +34930,222 @@
     ],
     "required": false,
     "hints": {
-      "default": "{icon: \"./assets/svg/pop-out.svg\", href: 'https://mapcomplete.org/{theme}.html?lat={lat}&lon={lon}&z={zoom}, requirements: [\"iframe\",\"no-welcome-message]},"
+      "group": "advanced",
+      "question": "should an extra help button be shown in certain circumstances?",
+      "ifunset": "show a link to open MapComplete full screen if used in an iframe"
     },
     "type": "object",
-    "description": "Adds an additional button on the top-left of the application.\nThis can link to an arbitrary location.\nNote that {lat},{lon},{zoom}, {language} and {theme} will be replaced"
+    "description": "Adds an additional button on the top-left of the application.\nThis can link to an arbitrary location.\nFor example {icon: \"./assets/svg/pop-out.svg\", href: 'https://mapcomplete.org/{theme}.html?lat={lat}&lon={lon}&z={zoom}, requirements: [\"iframe\",\"no-welcome-message]},"
+  },
+  {
+    "path": [
+      "extraLink",
+      "icon"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "icon",
+      "question": "What icon should be shown in the link button?",
+      "ifunset": "do not show an icon"
+    },
+    "type": "string",
+    "description": ""
+  },
+  {
+    "path": [
+      "extraLink",
+      "text"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What text should be shown in the link icon?",
+      "ifunset": "do not show a text"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "Note that {lat},{lon},{zoom}, {language} and {theme} will be replaced"
+  },
+  {
+    "path": [
+      "extraLink",
+      "href"
+    ],
+    "required": true,
+    "hints": {
+      "typehint": "url",
+      "question": "if clicked, what webpage should open?"
+    },
+    "type": "string",
+    "description": "Note that {lat},{lon},{zoom}, {language} and {theme} will be replaced"
+  },
+  {
+    "path": [
+      "extraLink",
+      "newTab"
+    ],
+    "required": false,
+    "hints": {
+      "question": "Should the link open in a new tab?",
+      "iftrue": "Open in a new tab",
+      "iffalse": "do not open in a new tab",
+      "ifunset": "do not open in a new tab"
+    },
+    "type": "boolean",
+    "description": ""
+  },
+  {
+    "path": [
+      "extraLink",
+      "requirements"
+    ],
+    "required": false,
+    "hints": {
+      "question": "When should the extra button be shown?",
+      "suggestions": [
+        {
+          "if": "value=iframe",
+          "then": "When shown in an iframe"
+        },
+        {
+          "if": "value=no-iframe",
+          "then": "When shown as stand-alone webpage"
+        },
+        {
+          "if": "value=welcome-message",
+          "then": "When the welcome messages are enabled"
+        },
+        {
+          "if": "value=iframe",
+          "then": "When the welcome messages are disabled"
+        }
+      ]
+    },
+    "type": "array",
+    "description": ""
   },
   {
     "path": [
       "enableUserBadge"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "group": "feature_switches",
+      "question": "Should a user be able to login with OpenStreetMap?",
+      "iftrue": "Enable the possiblity to login with OpenStreetMap",
+      "iffalse": "Do not enable to login with OpenStreetMap, have a read-only view of MapComplete.",
+      "ifunset": "Enable the possiblity to login with OpenStreetMap (default)"
+    },
     "type": "boolean",
-    "description": "If set to false, disables logging in.\nThe userbadge will be hidden, all login-buttons will be hidden and editing will be disabled"
+    "description": "If not logged in, will not show the login buttons and hide all the editable elements.\nAs such, MapComplete will become read-only and a purely visualisation tool."
   },
   {
     "path": [
       "enableShareScreen"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "group": "feature_switches",
+      "question": "Should the tab with options to share the current screen be enabled?",
+      "iftrue": "Enable the share screen",
+      "iffalse": "Do not enable the share screen",
+      "ifunset": "Enable the sharescreen (default)"
+    },
     "type": "boolean",
-    "description": "If false, hides the tab 'share'-tab in the welcomeMessage"
+    "description": "On can get the iFrame embed code here"
   },
   {
     "path": [
       "enableMoreQuests"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "group": "feature_switches",
+      "question": "Should the user be able to switch to different themes?",
+      "iftrue": "enable to go back to the index page showing all themes",
+      "iffalse": "do not enable to go back to the index page showing all themes; hide the 'more themes' buttons",
+      "ifunset": "mapcomplete default: enable to go back to the index page showing all themes"
+    },
     "type": "boolean",
-    "description": "Hides the tab with more themes in the welcomeMessage"
+    "description": "Typically enabled in iframes and/or on commisioned themes"
   },
   {
     "path": [
       "enableLayers"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "group": "feature_switches",
+      "question": "Should the user be able to enable/disable layers and to filter the layers?",
+      "iftrue": "enable the filters/layers pane",
+      "iffalse": "do not enable to filter or to disable layers; hide the 'filter' tab from the overview and the button at the bottom-left",
+      "ifunset": "mapcomplete default: enable to filter or to enable/disable layers"
+    },
     "type": "boolean",
-    "description": "If false, the layer selection/filter view will be hidden\nThe corresponding URL-parameter is 'fs-filters' instead of 'fs-layers'"
+    "description": "The corresponding URL-parameter is 'fs-filters' instead of 'fs-layers'"
   },
   {
     "path": [
       "enableSearch"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "group": "feature_switches",
+      "question": "Should the user be able to search for locations?",
+      "iftrue": "Allow to search",
+      "iffalse": "Do not allow to search; hide the search-bar",
+      "ifunset": "MapComplete default: allow to search"
+    },
     "type": "boolean",
-    "description": "If set to false, hides the search bar"
+    "description": ""
   },
   {
     "path": [
       "enableAddNewPoints"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "group": "feature_switches",
+      "question": "Should the user be able to add new points?",
+      "iftrue": "Allow to create new points",
+      "iffalse": "Do not allow to create new points, even if the layers in this theme support creating new points",
+      "ifunset": "MapComplete default: allow to create new points"
+    },
     "type": "boolean",
-    "description": "If set to false, the ability to add new points or nodes will be disabled.\nEditing already existing features will still be possible"
+    "description": "Adding new points is only possible if the loaded layers have presets set.\nSome layers do not have presets. If the theme only has layers without presets, then adding new points will not be possible."
   },
   {
     "path": [
       "enableGeolocation"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "group": "feature_switches",
+      "question": "Should the user be able to use their GPS to geolocate themselfes on the map?",
+      "iftrue": "Allow to use the GPS",
+      "iffalse": "Do not allow to use the GPS, hide the geolocation-buttons",
+      "ifunset": "MapComplete default: allow to use the GPS"
+    },
     "type": "boolean",
-    "description": "If set to false, the 'geolocation'-button will be hidden."
+    "description": ""
   },
   {
     "path": [
       "enableBackgroundLayerSelection"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "group": "feature_switches",
+      "question": "Should the user be able to switch the background layer?",
+      "iftrue": "Allow to switch the background layer",
+      "iffalse": "Do not allow to switch the background layer",
+      "ifunset": "MapComplete default: Allow to switch the background layer"
+    },
     "type": "boolean",
     "description": "Enable switching the backgroundlayer.\nIf false, the quickswitch-buttons are removed (bottom left) and the dropdown in the layer selection is removed as well"
   },
@@ -34943,72 +35154,97 @@
       "enableShowAllQuestions"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "group": "feature_switches",
+      "question": "Should the questions about a feature be presented one by one or all at once?",
+      "iftrue": "Show all unanswered questions at the same time",
+      "iffalse": "Show unanswered questions one by one",
+      "ifunset": "MapComplete default: Use the preference of the user to show questions at the same time or one by one"
+    },
     "type": "boolean",
-    "description": "If set to true, will show _all_ unanswered questions in a popup instead of just the next one"
+    "description": ""
   },
   {
     "path": [
       "enableDownload"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "group": "feature_switches",
+      "question": "Should the 'download as CSV'- and 'download as Geojson'-buttons be enabled?",
+      "iftrue": "Enable the option to download the map as CSV and GeoJson",
+      "iffalse": "Enable the option to download the map as CSV and GeoJson",
+      "ifunset": "MapComplete default: Enable the option to download the map as CSV and GeoJson"
+    },
     "type": "boolean",
-    "description": "If set to true, download button for the data will be shown (offers downloading as geojson and csv)"
+    "description": ""
   },
   {
     "path": [
       "enablePdfDownload"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "group": "feature_switches",
+      "question": "Should the 'download as PDF'-button be enabled?",
+      "iftrue": "Enable the option to download the map as PDF",
+      "iffalse": "Enable the option to download the map as PDF",
+      "ifunset": "MapComplete default: Enable the option to download the map as PDF"
+    },
     "type": "boolean",
-    "description": "If set to true, exporting a pdf is enabled"
+    "description": ""
   },
   {
     "path": [
       "enableNoteImports"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "group": "advanced",
+      "question": "Should the 'notes' from OpenStreetMap be loaded and parsed for import helper notes?",
+      "iftrue": "Load notes and show import notes",
+      "iffalse": "Do not load import notes",
+      "ifunset": "MapComplete default: do not load import notes for sideloaded themes but do load them for official themes"
+    },
     "type": "boolean",
-    "description": "If true, notes will be loaded and parsed. If a note is an import (as created by the import_helper.html-tool from mapcomplete),\nthese notes will be shown if a relevant layer is present.\nDefault is true for official layers and false for unofficial (sideloaded) layers"
+    "description": "If true, notes will be loaded and parsed. If a note is an import (as created by the import_helper.html-tool from mapcomplete),\nthese notes will be shown if a relevant layer is present."
   },
   {
     "path": [
       "overpassUrl"
     ],
     "required": false,
-    "hints": {},
-    "type": [
-      {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      {
-        "type": "string"
-      }
-    ],
-    "description": "Set one or more overpass URLs to use for this theme.."
+    "hints": {
+      "group": "advanced",
+      "question": "What overpass-api instance should be used for this layout?",
+      "ifunset": "Use the default, builtin collection of overpass instances"
+    },
+    "type": "array",
+    "description": ""
   },
   {
     "path": [
       "overpassTimeout"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "typehint": "pnat",
+      "group": "advanced",
+      "question": "After how much seconds should the overpass-query stop?",
+      "ifunset": "use the default amount of 30 seconds as timeout"
+    },
     "type": "number",
-    "description": "Set a different timeout for overpass queries - in seconds. Default: 30s"
+    "description": "If a query takes too long, the overpass-server will abort.\nOnce can set the amount of time before overpass gives up here."
   },
   {
     "path": [
       "enableNodeDatabase"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "group": "hidden"
+    },
     "type": "boolean",
-    "description": "Enables tracking of all nodes when data is loaded.\nThis is useful for the 'ImportWay' and 'ConflateWay'-buttons who need this database.\nNote: this flag will be automatically set."
+    "description": "Enables tracking of all nodes when data is loaded.\nThis is useful for the 'ImportWay' and 'ConflateWay'-buttons who need this database.\nNote: this flag will be automatically set and can thus be ignored."
   }
 ]

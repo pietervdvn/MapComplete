@@ -246,6 +246,10 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
             console.log("Removing old background in", json.id)
         }
 
+        if (typeof oldThemeConfig.credits === "string") {
+            oldThemeConfig.credits = [oldThemeConfig.credits]
+        }
+
         if (oldThemeConfig["roamingRenderings"] !== undefined) {
             if (oldThemeConfig["roamingRenderings"].length == 0) {
                 delete oldThemeConfig["roamingRenderings"]

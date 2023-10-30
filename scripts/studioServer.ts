@@ -2,6 +2,7 @@ import * as fs from "node:fs"
 import * as http from "node:http"
 import * as path from "node:path"
 import ScriptUtils from "./ScriptUtils"
+import * as meta from "../package.json"
 
 const PORT = 1235
 const CORS = "http://localhost:1234,https://mapcomplete.org,https://dev.mapcomplete.org"
@@ -115,4 +116,8 @@ http.createServer(async (req, res) => {
     }
 }).listen(PORT)
 
-console.log(`Server running at http://127.0.0.1:${PORT}/`)
+console.log(
+    `Server started at http://127.0.0.1:${PORT}/, the time is ${new Date().toISOString()}, version from package.json is ${
+        meta.version
+    }`
+)
