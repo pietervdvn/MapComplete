@@ -10,7 +10,9 @@
     "da": "Stier",
     "cs": "Stezky"
   },
-  "minzoom": 12,
+  "description": {
+    "nl": "Aangeduide wandeltochten"
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -25,6 +27,7 @@
       ]
     }
   },
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Trail",
@@ -43,6 +46,47 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/trail/trail.svg",
+            "mappings": [
+              {
+                "if": "wheelchair=yes",
+                "then": "./assets/layers/trail/wheelchair.svg"
+              },
+              {
+                "if": "pushchair=yes",
+                "then": "./assets/layers/trail/pushchair.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": "35,35",
+      "location": [
+        "point"
+      ],
+      "anchor": "center"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": {
+        "render": "#335D9F",
+        "mappings": [
+          {
+            "if": "colour~*",
+            "then": "{colour}"
+          }
+        ]
+      },
+      "width": "3",
+      "dashArray": "5 5"
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -214,50 +258,6 @@
         }
       ],
       "id": "pushchair access"
-    }
-  ],
-  "description": {
-    "nl": "Aangeduide wandeltochten"
-  },
-  "pointRendering": [
-    {
-      "marker": [
-        {
-          "icon": {
-            "render": "./assets/layers/trail/trail.svg",
-            "mappings": [
-              {
-                "if": "wheelchair=yes",
-                "then": "./assets/layers/trail/wheelchair.svg"
-              },
-              {
-                "if": "pushchair=yes",
-                "then": "./assets/layers/trail/pushchair.svg"
-              }
-            ]
-          }
-        }
-      ],
-      "iconSize": "35,35",
-      "location": [
-        "point"
-      ],
-      "anchor": "center"
-    }
-  ],
-  "lineRendering": [
-    {
-      "color": {
-        "render": "#335D9F",
-        "mappings": [
-          {
-            "if": "colour~*",
-            "then": "{colour}"
-          }
-        ]
-      },
-      "width": "3",
-      "dashArray": "5 5"
     }
   ]
 }

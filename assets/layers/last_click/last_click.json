@@ -1,5 +1,6 @@
 {
   "id": "last_click",
+  "name": null,
   "description": "This layer defines how to render the 'last click'-location. By default, it will show a marker with the possibility to add a new point (if there are some presets) and/or to add a new note (if the 'note' layer attribute is set). If none are possible, this layer won't show up",
   "source": "special",
   "isShown": {
@@ -8,9 +9,6 @@
       "has_note_layer=yes"
     ]
   },
-  "name": null,
-  "titleIcons": [],
-  "popupInFloatover": true,
   "title": {
     "mappings": [
       {
@@ -56,39 +54,8 @@
       }
     ]
   },
-  "tagRenderings": [
-    {
-      "id": "add_new",
-      "condition": "has_presets=yes",
-      "render": {
-        "*": "{add_new_point()}"
-      }
-    },
-    {
-      "id": "add_note",
-      "condition": "has_note_layer=yes",
-      "render": {
-        "*": "{open_note()}"
-      }
-    }
-  ],
-  "filter": [
-    {
-      "id": "action",
-      "options": [
-        {
-          "default": true,
-          "question": "only_if_action_is_possible",
-          "osmTags": {
-            "or": [
-              "has_note_layer=yes",
-              "has_presets=yes"
-            ]
-          }
-        }
-      ]
-    }
-  ],
+  "popupInFloatover": true,
+  "titleIcons": [],
   "pointRendering": [
     {
       "marker": [
@@ -185,5 +152,38 @@
       }
     }
   ],
-  "lineRendering": []
+  "lineRendering": [],
+  "tagRenderings": [
+    {
+      "id": "add_new",
+      "condition": "has_presets=yes",
+      "render": {
+        "*": "{add_new_point()}"
+      }
+    },
+    {
+      "id": "add_note",
+      "condition": "has_note_layer=yes",
+      "render": {
+        "*": "{open_note()}"
+      }
+    }
+  ],
+  "filter": [
+    {
+      "id": "action",
+      "options": [
+        {
+          "default": true,
+          "question": "only_if_action_is_possible",
+          "osmTags": {
+            "or": [
+              "has_note_layer=yes",
+              "has_presets=yes"
+            ]
+          }
+        }
+      ]
+    }
+  ]
 }

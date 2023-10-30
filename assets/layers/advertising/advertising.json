@@ -13,10 +13,21 @@
     "pl": "Reklama",
     "pt_BR": "Anunciar"
   },
-  "minzoom": 15,
+  "description": {
+    "ca": "Completarem les dades dels elements publicitaris amb referència, operador i il·luminació",
+    "es": "Completaremos los datos de los elementos publicitarios con referencia, operador y iluminación",
+    "en": "We will complete data from advertising features with reference, operator and lit",
+    "de": "Wir vervollständigen Daten von Werbeanlagen mit Referenz-, Betreiber- und Beleuchtungsdaten",
+    "cs": "Doplníme údaje z reklamních prvků s referencemi, provozovatelem a osvětlením",
+    "pt": "Iremos completar os dados das funcionalidades publicitárias com referência, operador e iluminado",
+    "eu": "Publizitate-ezaugarrien datuak osatuko ditugu erreferentziarekin, operadorearekin eta argiztatuarekin.",
+    "pl": "Uzupełnimy dane z obiektów reklamowych o referencję, operatora i oświetlenie",
+    "pt_BR": "Completaremos os dados das características de publicidade com referência, operador e iluminação"
+  },
   "source": {
     "osmTags": "advertising~*"
   },
+  "minzoom": 15,
   "title": {
     "render": {
       "*": "{advertising}"
@@ -224,17 +235,484 @@
       }
     ]
   },
-  "description": {
-    "ca": "Completarem les dades dels elements publicitaris amb referència, operador i il·luminació",
-    "es": "Completaremos los datos de los elementos publicitarios con referencia, operador y iluminación",
-    "en": "We will complete data from advertising features with reference, operator and lit",
-    "de": "Wir vervollständigen Daten von Werbeanlagen mit Referenz-, Betreiber- und Beleuchtungsdaten",
-    "cs": "Doplníme údaje z reklamních prvků s referencemi, provozovatelem a osvětlením",
-    "pt": "Iremos completar os dados das funcionalidades publicitárias com referência, operador e iluminado",
-    "eu": "Publizitate-ezaugarrien datuak osatuko ditugu erreferentziarekin, operadorearekin eta argiztatuarekin.",
-    "pl": "Uzupełnimy dane z obiektów reklamowych o referencję, operatora i oświetlenie",
-    "pt_BR": "Completaremos os dados das características de publicidade com referência, operador e iluminação"
-  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "mappings": [
+              {
+                "if": "_referencing_ways=[\"way/-1\"]",
+                "then": "brick_wall_square"
+              }
+            ]
+          }
+        },
+        {
+          "icon": {
+            "render": "./assets/themes/advertising/sign.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "advertising=billboard"
+                  ]
+                },
+                "then": "./assets/themes/advertising/billboard.svg"
+              },
+              {
+                "if": "advertising=board",
+                "then": "./assets/themes/advertising/board.svg"
+              },
+              {
+                "if": "advertising=column",
+                "then": "./assets/themes/advertising/column.svg"
+              },
+              {
+                "if": "advertising=flag",
+                "then": "./assets/themes/advertising/flag.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "advertising=poster_box",
+                    "_referencing_ways~*"
+                  ]
+                },
+                "then": "./assets/themes/advertising/poster_box_no_support.svg"
+              },
+              {
+                "if": "advertising=poster_box",
+                "then": "./assets/themes/advertising/poster_box.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "advertising=screen",
+                    "_referencing_ways~*"
+                  ]
+                },
+                "then": "./assets/themes/advertising/screen_no_support.svg"
+              },
+              {
+                "if": "advertising=screen",
+                "then": "./assets/themes/advertising/screen.svg"
+              },
+              {
+                "if": "advertising=sculpture",
+                "then": "./assets/themes/advertising/sculpture.svg"
+              },
+              {
+                "if": "advertising=sign",
+                "then": "./assets/themes/advertising/sign.svg"
+              },
+              {
+                "if": "advertising=tarp",
+                "then": "./assets/themes/advertising/tarp.svg"
+              },
+              {
+                "if": "advertising=totem",
+                "then": "./assets/themes/advertising/totem.svg"
+              },
+              {
+                "if": "advertising=wall_painting",
+                "then": "./assets/themes/advertising/wall_painting.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": {
+        "render": "40,40",
+        "mappings": [
+          {
+            "if": "advertising=flag",
+            "then": "60,60"
+          },
+          {
+            "if": "advertising=sculpture",
+            "then": "50,50"
+          }
+        ]
+      },
+      "anchor": {
+        "render": "bottom",
+        "mappings": [
+          {
+            "if": "_referencing_ways~*",
+            "then": "center"
+          }
+        ]
+      }
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": "8",
+      "color": "#00f"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "advertising=billboard"
+      ],
+      "title": {
+        "en": "a billboard",
+        "ca": "una tanca publicitària",
+        "es": "una valla publicitària",
+        "de": "eine Werbetafel",
+        "cs": "billboard",
+        "pt": "um outdoor",
+        "fr": "un grand panneau",
+        "he": "שלט חוצות",
+        "eu": "iragarki panela",
+        "pl": "bilbord",
+        "pt_BR": "um outdoor"
+      },
+      "description": {
+        "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads",
+        "ca": "Una estructura publicitària gran a l'exterior, que normalment es troba a zones transitades com ara al costat de carreteres amb molta intensitat",
+        "es": "Una estructura publicitaria grande al aire libre, que normalmente se encuentra en áreas transitadas como carreteras con mucha intensidad",
+        "de": "Eine große Außenwerbung, die typischerweise in stark befahrenen Gebieten, z. B. entlang stark befahrener Straßen, zu finden ist",
+        "cs": "Velká venkovní reklamní konstrukce, která se obvykle nachází na místech s velkým provozem, například podél frekventovaných silnic",
+        "fr": "Un grand équipement extérieur, principalement disposé dans les zones à fort trafic comme une route",
+        "pt": "Uma grande estrutura de publicidade ao ar livre, normalmente encontrada em áreas de alto tráfego, como ao longo de estradas movimentadas",
+        "he": "מבנה פרסום חוצות גדול, שנמצא בדרך כלל באזורים עתירי תנועה כמו לצד כבישים סואנים",
+        "eu": "Atari zabaleko publizitate-egitura handia, trafiko handiko eremuetan egon ohi dena, adibidez errepideen ondoan",
+        "pl": "Duża struktura reklamowa na dworze, zwykle znajdująca się w obszarach z dużym ruchem, np. w pobliżu ruchliwych dróg",
+        "pt_BR": "Uma grande estrutura de publicidade outdoor, geralmente encontrada em áreas com alto tráfego, como ao longo de estradas movimentadas"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/KFC_Billboard.jpg",
+        "./assets/themes/advertising/LIDL_Billboard.jpg",
+        "./assets/themes/advertising/Repsol_Billboard.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=poster_box"
+      ],
+      "title": {
+        "en": "a freestanding poster box",
+        "ca": "un mupi",
+        "es": "un mupi",
+        "de": "eine freistehende Posterbox",
+        "cs": "volně stojící plakátovací skříň",
+        "pt": "uma caixa de pôster independente",
+        "fr": "un panneau à affiches scellé au sol",
+        "pl": "wolnostojąca skrzynka plakatowa",
+        "pt_BR": "uma caixa expositora independente"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/Mupi_spain.jpg",
+        "./assets/themes/advertising/Mupi_Alcoi.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=poster_box"
+      ],
+      "title": {
+        "en": "a poster box mounted on a wall",
+        "ca": "un mupi sobre la paret",
+        "es": "un mupi sobre la pared",
+        "de": "eine wandmontierte Posterbox",
+        "cs": "plakátovací skříň připevněná na stěnu",
+        "pt": "uma caixa de pôster montada em uma parede",
+        "fr": "un panneau à affiches monté sur un mur",
+        "pl": "skrzynka plakatowa montowana na ścianie",
+        "pt_BR": "uma caixa de pôster montada em uma parede"
+      },
+      "snapToLayer": [
+        "walls_and_buildings"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=board"
+      ],
+      "title": {
+        "ca": "un tauló d'anunis",
+        "es": "un tablón de anuncios",
+        "en": "a board",
+        "de": "ein Anschlagbrett",
+        "cs": "billboard",
+        "nl": "een uithangbord",
+        "fr": "un petit panneau",
+        "pt": "a bordo",
+        "pl": "tablica",
+        "pt_BR": "um painel publicitário"
+      },
+      "description": {
+        "en": "Small billboard for neighbourhood advertising, generally intended for pedestrians",
+        "es": "Un pequeño tablón de anuncios para anuncios del vecindario, normalmente destinado a peatones",
+        "ca": "Un xicotet tauló d'anuncics per a anuncis del veïnat, normalment destitat a peatons",
+        "de": "Kleines Anschlagbrett für Nachbarschaftswerbung, normalerweise an Fußgänger gerichtet",
+        "cs": "Malý billboard pro sousedskou reklamu, zpravidla určený pro chodce",
+        "fr": "Petit panneau pour l’affichage de proximité, généralement à destination des piétons",
+        "nl": "Een klein uithangbord voor buurtadvertenties, meestal gericht op voetgangers",
+        "pt": "Pequeno outdoor para publicidade de bairro, geralmente destinado a pedestres",
+        "pl": "Mały bilbord dla reklam lokalnych, przeznaczony głównie dla pieszych",
+        "pt_BR": "Pequeno outdoor para publicidade local, geralmente destinado a pedestres"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/local_Board.jpg",
+        "./assets/themes/advertising/FGV_Founding.jpg",
+        "./assets/themes/advertising/Small_Board.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=column"
+      ],
+      "title": {
+        "ca": "una columna",
+        "es": "una columna",
+        "en": "a column",
+        "de": "eine Litfaßsäule",
+        "cs": "sloup",
+        "nl": "een aanplakzuil",
+        "fr": "une colonne",
+        "pt": "uma coluna",
+        "pl": "kolumna",
+        "pt_BR": "uma coluna"
+      },
+      "description": {
+        "en": "A cylindrical outdoor structure which shows advertisements",
+        "es": "Una estructura cilíndrica exterior que muestra publicidad",
+        "ca": "Una extructura cilíndica exterior que mostra publicitat",
+        "de": "Eine zylindrische Struktur im Freien, die Werbung zeigt",
+        "cs": "Válcová venkovní konstrukce, která zobrazuje reklamy",
+        "fr": "Une structure extérieure cylindrique qui affiche de la publicité",
+        "nl": "Een cylindervormige structuur die buiten staat waarop advertenties staan",
+        "pt": "Uma estrutura exterior cilíndrica que mostra anúncios",
+        "pl": "Cylindryczna konstrukcja zewnętrzna, na której pokazywane są reklamy",
+        "pt_BR": "Uma estrutura cilíndrica ao ar livre que exibe anúncios"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/AdvertisingColumn_001.jpg",
+        "./assets/themes/advertising/AdvertisingColumn_003.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=flag",
+        "man_made=pole"
+      ],
+      "title": {
+        "ca": "una bandera",
+        "es": "una bandera",
+        "en": "a flag",
+        "de": "eine Flagge",
+        "cs": "vlajka",
+        "nl": "een vlag",
+        "fr": "un drapeau",
+        "pt": "uma bandeira",
+        "pl": "flaga",
+        "pt_BR": "uma bandeira"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/Advertising_flag.jpg",
+        "./assets/themes/advertising/JR_Central.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=screen"
+      ],
+      "title": {
+        "ca": "una pantalla",
+        "es": "una pantalla",
+        "en": "a screen",
+        "de": "einen Bildschirm",
+        "cs": "obrazovka",
+        "nl": "een scherm",
+        "fr": "un écran",
+        "pt": "uma tela",
+        "pl": "ekran",
+        "pt_BR": "uma tela"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/Screen_poster_box.jpg",
+        "./assets/themes/advertising/City-Light-Poster.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=screen"
+      ],
+      "title": {
+        "ca": "una patalla sobre una paret",
+        "es": "una pantalla sobre una pared",
+        "en": "a screen mounted on a wall",
+        "de": "ein wandmontierter Bildschirm",
+        "cs": "obrazovka připevněná na stěnu",
+        "nl": "een scherm op een muur",
+        "fr": "un écran fixé au mur",
+        "pt": "uma tela montada em uma parede",
+        "pl": "ekran zamontowany na ścianie",
+        "pt_BR": "uma tela montada em uma parede"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/Subway_screen.jpg",
+        "./assets/themes/advertising/TV_media.jpg",
+        "./assets/themes/advertising/Times square.jpg"
+      ],
+      "snapToLayer": [
+        "walls_and_buildings"
+      ],
+      "maxSnapDistance": 5
+    },
+    {
+      "tags": [
+        "advertising=tarp"
+      ],
+      "title": {
+        "ca": "una lona",
+        "es": "una lona",
+        "en": "a tarp",
+        "de": "eine Plane",
+        "cs": "plachta",
+        "nl": "een spandoek",
+        "fr": "une bâche",
+        "pt": "uma lona",
+        "pl": "plandeka",
+        "pt_BR": "uma lona"
+      },
+      "description": {
+        "en": "A piece of waterproof textile with a printed message, permanently anchored on a wall",
+        "ca": "Una peça de tèxtil impermeable amb un missatge imprès, fixada permanentment a una paret",
+        "es": "Una pieza de tela impermeable con un mensaje impreso, anclada permanentemente en una pared",
+        "de": "Ein wasserfestes Textil mit einer aufgedruckten Botschaft, das dauerhaft an einer Wand verankert ist",
+        "cs": "Kus nepromokavého textilu s natištěným vzkazem, trvale připevněný na stěnu",
+        "nl": "Een stuk groot, weerbestendig textiel met opgedrukte reclameboodschap die permanent aan de muur hangt",
+        "pt": "Uma peça de tecido impermeável com uma mensagem impressa, permanentemente ancorada na parede",
+        "fr": "Une pièce de textile imperméable avec un message imprimé, ancrée de façon permanente sur un mur.",
+        "pl": "Kawałek wodoodpornej tkaniny z nadrukowanym przesłaniem, trwale przymocowany do ściany",
+        "pt_BR": "Um pedaço de tecido impermeável com uma mensagem impressa, permanentemente fixado a uma parede"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/tarp_feder.jpg",
+        "./assets/themes/advertising/tarp_madrid.jpg"
+      ],
+      "snapToLayer": [
+        "walls_and_buildings"
+      ],
+      "maxSnapDistance": 5
+    },
+    {
+      "tags": [
+        "advertising=totem"
+      ],
+      "title": {
+        "ca": "un tòtem",
+        "es": "un tótem",
+        "en": "a totem",
+        "de": "ein Totem",
+        "cs": "totem",
+        "fr": "un totem",
+        "pt": "um totem",
+        "pl": "totem",
+        "pt_BR": "um totem"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/AdvertisingTotem_004.jpg",
+        "./assets/themes/advertising/AdvertisingTotem_003.jpg",
+        "./assets/themes/advertising/Lidl_totem.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=sign"
+      ],
+      "title": {
+        "ca": "un lletrer",
+        "es": "un señal",
+        "en": "a sign",
+        "de": "ein Schild",
+        "cs": "cedule",
+        "fr": "une enseigne",
+        "pt": "um sinal",
+        "pt_BR": "uma placa",
+        "eu": "letrero bat",
+        "pl": "znak"
+      },
+      "description": {
+        "en": "Used for advertising signs, neon signs, logos & institutional entrance signs",
+        "es": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y carteles en entradas institucionales",
+        "ca": "S'utilitza per a cartells publicitaris, rètols de neó, logotips i cartells en entrades institucionals",
+        "de": "Verwendet für Werbeschilder, Leuchtreklamen, Logos und institutionelle Eingangsschilder",
+        "cs": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
+        "fr": "Désigne une enseigne publicitaire, une enseigne néon, les logos ou des indications d'entrées",
+        "pt": "Usado para sinais publicitários, sinais de néon, logotipos e sinais de entrada institucionais",
+        "eu": "Iragarki publizitarioetarako, neon-karteletarako, logotipoetarako eta erakundeen sarrera-seinaleetarako erabiltzen da",
+        "pl": "Używany do znaków reklamowych, neonów, logo i znaków wejściowych do instytucji",
+        "pt_BR": "Usado para placas de publicidade, letreiros de neon, logotipos e placas de entrada institucionais"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/Waitrose_sign.jpg",
+        "./assets/themes/advertising/sign_EOI.jpg",
+        "./assets/themes/advertising/farma_sign.jpg"
+      ],
+      "snapToLayer": [
+        "walls_and_buildings"
+      ],
+      "maxSnapDistance": 5
+    },
+    {
+      "tags": [
+        "advertising=sculpture"
+      ],
+      "title": {
+        "ca": "una escupltura",
+        "es": "una escultura",
+        "en": "a sculpture",
+        "de": "eine Skulptur",
+        "cs": "socha",
+        "fr": "une sculpture",
+        "pt": "uma escultura",
+        "eu": "eskultura bat",
+        "pl": "rzeźba",
+        "pt_BR": "uma escultura"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/Aircraft_Sculpture.jpg",
+        "./assets/themes/advertising/Mug.jpg",
+        "./assets/themes/advertising/BS.JPG"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=wall_painting"
+      ],
+      "title": {
+        "ca": "una paret pintada",
+        "es": "una pared pintada",
+        "en": "a wall painting",
+        "de": "eine Wandmalerei",
+        "cs": "nástěnná malba",
+        "fr": "une peinture murale",
+        "pt": "uma pintura de parede",
+        "nl": "een muurschildering",
+        "eu": "pareta margotu bat",
+        "pl": "mural ścienny",
+        "pt_BR": "uma pintura mural"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/Capitol_wall.jpg",
+        "./assets/themes/advertising/clarke_wall.jpg"
+      ],
+      "snapToLayer": [
+        "walls_and_buildings"
+      ],
+      "maxSnapDistance": 5
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -986,487 +1464,9 @@
       }
     }
   ],
+  "deletion": true,
   "allowMove": {
     "enableImproveAccuracy": true,
     "enableRelocation": false
-  },
-  "deletion": true,
-  "presets": [
-    {
-      "tags": [
-        "advertising=billboard"
-      ],
-      "title": {
-        "en": "a billboard",
-        "ca": "una tanca publicitària",
-        "es": "una valla publicitària",
-        "de": "eine Werbetafel",
-        "cs": "billboard",
-        "pt": "um outdoor",
-        "fr": "un grand panneau",
-        "he": "שלט חוצות",
-        "eu": "iragarki panela",
-        "pl": "bilbord",
-        "pt_BR": "um outdoor"
-      },
-      "description": {
-        "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads",
-        "ca": "Una estructura publicitària gran a l'exterior, que normalment es troba a zones transitades com ara al costat de carreteres amb molta intensitat",
-        "es": "Una estructura publicitaria grande al aire libre, que normalmente se encuentra en áreas transitadas como carreteras con mucha intensidad",
-        "de": "Eine große Außenwerbung, die typischerweise in stark befahrenen Gebieten, z. B. entlang stark befahrener Straßen, zu finden ist",
-        "cs": "Velká venkovní reklamní konstrukce, která se obvykle nachází na místech s velkým provozem, například podél frekventovaných silnic",
-        "fr": "Un grand équipement extérieur, principalement disposé dans les zones à fort trafic comme une route",
-        "pt": "Uma grande estrutura de publicidade ao ar livre, normalmente encontrada em áreas de alto tráfego, como ao longo de estradas movimentadas",
-        "he": "מבנה פרסום חוצות גדול, שנמצא בדרך כלל באזורים עתירי תנועה כמו לצד כבישים סואנים",
-        "eu": "Atari zabaleko publizitate-egitura handia, trafiko handiko eremuetan egon ohi dena, adibidez errepideen ondoan",
-        "pl": "Duża struktura reklamowa na dworze, zwykle znajdująca się w obszarach z dużym ruchem, np. w pobliżu ruchliwych dróg",
-        "pt_BR": "Uma grande estrutura de publicidade outdoor, geralmente encontrada em áreas com alto tráfego, como ao longo de estradas movimentadas"
-      },
-      "exampleImages": [
-        "./assets/themes/advertising/KFC_Billboard.jpg",
-        "./assets/themes/advertising/LIDL_Billboard.jpg",
-        "./assets/themes/advertising/Repsol_Billboard.jpg"
-      ]
-    },
-    {
-      "tags": [
-        "advertising=poster_box"
-      ],
-      "title": {
-        "en": "a freestanding poster box",
-        "ca": "un mupi",
-        "es": "un mupi",
-        "de": "eine freistehende Posterbox",
-        "cs": "volně stojící plakátovací skříň",
-        "pt": "uma caixa de pôster independente",
-        "fr": "un panneau à affiches scellé au sol",
-        "pl": "wolnostojąca skrzynka plakatowa",
-        "pt_BR": "uma caixa expositora independente"
-      },
-      "exampleImages": [
-        "./assets/themes/advertising/Mupi_spain.jpg",
-        "./assets/themes/advertising/Mupi_Alcoi.jpg"
-      ]
-    },
-    {
-      "tags": [
-        "advertising=poster_box"
-      ],
-      "title": {
-        "en": "a poster box mounted on a wall",
-        "ca": "un mupi sobre la paret",
-        "es": "un mupi sobre la pared",
-        "de": "eine wandmontierte Posterbox",
-        "cs": "plakátovací skříň připevněná na stěnu",
-        "pt": "uma caixa de pôster montada em uma parede",
-        "fr": "un panneau à affiches monté sur un mur",
-        "pl": "skrzynka plakatowa montowana na ścianie",
-        "pt_BR": "uma caixa de pôster montada em uma parede"
-      },
-      "snapToLayer": [
-        "walls_and_buildings"
-      ]
-    },
-    {
-      "tags": [
-        "advertising=board"
-      ],
-      "title": {
-        "ca": "un tauló d'anunis",
-        "es": "un tablón de anuncios",
-        "en": "a board",
-        "de": "ein Anschlagbrett",
-        "cs": "billboard",
-        "nl": "een uithangbord",
-        "fr": "un petit panneau",
-        "pt": "a bordo",
-        "pl": "tablica",
-        "pt_BR": "um painel publicitário"
-      },
-      "description": {
-        "en": "Small billboard for neighbourhood advertising, generally intended for pedestrians",
-        "es": "Un pequeño tablón de anuncios para anuncios del vecindario, normalmente destinado a peatones",
-        "ca": "Un xicotet tauló d'anuncics per a anuncis del veïnat, normalment destitat a peatons",
-        "de": "Kleines Anschlagbrett für Nachbarschaftswerbung, normalerweise an Fußgänger gerichtet",
-        "cs": "Malý billboard pro sousedskou reklamu, zpravidla určený pro chodce",
-        "fr": "Petit panneau pour l’affichage de proximité, généralement à destination des piétons",
-        "nl": "Een klein uithangbord voor buurtadvertenties, meestal gericht op voetgangers",
-        "pt": "Pequeno outdoor para publicidade de bairro, geralmente destinado a pedestres",
-        "pl": "Mały bilbord dla reklam lokalnych, przeznaczony głównie dla pieszych",
-        "pt_BR": "Pequeno outdoor para publicidade local, geralmente destinado a pedestres"
-      },
-      "exampleImages": [
-        "./assets/themes/advertising/local_Board.jpg",
-        "./assets/themes/advertising/FGV_Founding.jpg",
-        "./assets/themes/advertising/Small_Board.jpg"
-      ]
-    },
-    {
-      "tags": [
-        "advertising=column"
-      ],
-      "title": {
-        "ca": "una columna",
-        "es": "una columna",
-        "en": "a column",
-        "de": "eine Litfaßsäule",
-        "cs": "sloup",
-        "nl": "een aanplakzuil",
-        "fr": "une colonne",
-        "pt": "uma coluna",
-        "pl": "kolumna",
-        "pt_BR": "uma coluna"
-      },
-      "description": {
-        "en": "A cylindrical outdoor structure which shows advertisements",
-        "es": "Una estructura cilíndrica exterior que muestra publicidad",
-        "ca": "Una extructura cilíndica exterior que mostra publicitat",
-        "de": "Eine zylindrische Struktur im Freien, die Werbung zeigt",
-        "cs": "Válcová venkovní konstrukce, která zobrazuje reklamy",
-        "fr": "Une structure extérieure cylindrique qui affiche de la publicité",
-        "nl": "Een cylindervormige structuur die buiten staat waarop advertenties staan",
-        "pt": "Uma estrutura exterior cilíndrica que mostra anúncios",
-        "pl": "Cylindryczna konstrukcja zewnętrzna, na której pokazywane są reklamy",
-        "pt_BR": "Uma estrutura cilíndrica ao ar livre que exibe anúncios"
-      },
-      "exampleImages": [
-        "./assets/themes/advertising/AdvertisingColumn_001.jpg",
-        "./assets/themes/advertising/AdvertisingColumn_003.jpg"
-      ]
-    },
-    {
-      "tags": [
-        "advertising=flag",
-        "man_made=pole"
-      ],
-      "title": {
-        "ca": "una bandera",
-        "es": "una bandera",
-        "en": "a flag",
-        "de": "eine Flagge",
-        "cs": "vlajka",
-        "nl": "een vlag",
-        "fr": "un drapeau",
-        "pt": "uma bandeira",
-        "pl": "flaga",
-        "pt_BR": "uma bandeira"
-      },
-      "exampleImages": [
-        "./assets/themes/advertising/Advertising_flag.jpg",
-        "./assets/themes/advertising/JR_Central.jpg"
-      ]
-    },
-    {
-      "tags": [
-        "advertising=screen"
-      ],
-      "title": {
-        "ca": "una pantalla",
-        "es": "una pantalla",
-        "en": "a screen",
-        "de": "einen Bildschirm",
-        "cs": "obrazovka",
-        "nl": "een scherm",
-        "fr": "un écran",
-        "pt": "uma tela",
-        "pl": "ekran",
-        "pt_BR": "uma tela"
-      },
-      "exampleImages": [
-        "./assets/themes/advertising/Screen_poster_box.jpg",
-        "./assets/themes/advertising/City-Light-Poster.jpg"
-      ]
-    },
-    {
-      "tags": [
-        "advertising=screen"
-      ],
-      "title": {
-        "ca": "una patalla sobre una paret",
-        "es": "una pantalla sobre una pared",
-        "en": "a screen mounted on a wall",
-        "de": "ein wandmontierter Bildschirm",
-        "cs": "obrazovka připevněná na stěnu",
-        "nl": "een scherm op een muur",
-        "fr": "un écran fixé au mur",
-        "pt": "uma tela montada em uma parede",
-        "pl": "ekran zamontowany na ścianie",
-        "pt_BR": "uma tela montada em uma parede"
-      },
-      "exampleImages": [
-        "./assets/themes/advertising/Subway_screen.jpg",
-        "./assets/themes/advertising/TV_media.jpg",
-        "./assets/themes/advertising/Times square.jpg"
-      ],
-      "snapToLayer": [
-        "walls_and_buildings"
-      ],
-      "maxSnapDistance": 5
-    },
-    {
-      "tags": [
-        "advertising=tarp"
-      ],
-      "title": {
-        "ca": "una lona",
-        "es": "una lona",
-        "en": "a tarp",
-        "de": "eine Plane",
-        "cs": "plachta",
-        "nl": "een spandoek",
-        "fr": "une bâche",
-        "pt": "uma lona",
-        "pl": "plandeka",
-        "pt_BR": "uma lona"
-      },
-      "description": {
-        "en": "A piece of waterproof textile with a printed message, permanently anchored on a wall",
-        "ca": "Una peça de tèxtil impermeable amb un missatge imprès, fixada permanentment a una paret",
-        "es": "Una pieza de tela impermeable con un mensaje impreso, anclada permanentemente en una pared",
-        "de": "Ein wasserfestes Textil mit einer aufgedruckten Botschaft, das dauerhaft an einer Wand verankert ist",
-        "cs": "Kus nepromokavého textilu s natištěným vzkazem, trvale připevněný na stěnu",
-        "nl": "Een stuk groot, weerbestendig textiel met opgedrukte reclameboodschap die permanent aan de muur hangt",
-        "pt": "Uma peça de tecido impermeável com uma mensagem impressa, permanentemente ancorada na parede",
-        "fr": "Une pièce de textile imperméable avec un message imprimé, ancrée de façon permanente sur un mur.",
-        "pl": "Kawałek wodoodpornej tkaniny z nadrukowanym przesłaniem, trwale przymocowany do ściany",
-        "pt_BR": "Um pedaço de tecido impermeável com uma mensagem impressa, permanentemente fixado a uma parede"
-      },
-      "exampleImages": [
-        "./assets/themes/advertising/tarp_feder.jpg",
-        "./assets/themes/advertising/tarp_madrid.jpg"
-      ],
-      "snapToLayer": [
-        "walls_and_buildings"
-      ],
-      "maxSnapDistance": 5
-    },
-    {
-      "tags": [
-        "advertising=totem"
-      ],
-      "title": {
-        "ca": "un tòtem",
-        "es": "un tótem",
-        "en": "a totem",
-        "de": "ein Totem",
-        "cs": "totem",
-        "fr": "un totem",
-        "pt": "um totem",
-        "pl": "totem",
-        "pt_BR": "um totem"
-      },
-      "exampleImages": [
-        "./assets/themes/advertising/AdvertisingTotem_004.jpg",
-        "./assets/themes/advertising/AdvertisingTotem_003.jpg",
-        "./assets/themes/advertising/Lidl_totem.jpg"
-      ]
-    },
-    {
-      "tags": [
-        "advertising=sign"
-      ],
-      "title": {
-        "ca": "un lletrer",
-        "es": "un señal",
-        "en": "a sign",
-        "de": "ein Schild",
-        "cs": "cedule",
-        "fr": "une enseigne",
-        "pt": "um sinal",
-        "pt_BR": "uma placa",
-        "eu": "letrero bat",
-        "pl": "znak"
-      },
-      "description": {
-        "en": "Used for advertising signs, neon signs, logos & institutional entrance signs",
-        "es": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y carteles en entradas institucionales",
-        "ca": "S'utilitza per a cartells publicitaris, rètols de neó, logotips i cartells en entrades institucionals",
-        "de": "Verwendet für Werbeschilder, Leuchtreklamen, Logos und institutionelle Eingangsschilder",
-        "cs": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
-        "fr": "Désigne une enseigne publicitaire, une enseigne néon, les logos ou des indications d'entrées",
-        "pt": "Usado para sinais publicitários, sinais de néon, logotipos e sinais de entrada institucionais",
-        "eu": "Iragarki publizitarioetarako, neon-karteletarako, logotipoetarako eta erakundeen sarrera-seinaleetarako erabiltzen da",
-        "pl": "Używany do znaków reklamowych, neonów, logo i znaków wejściowych do instytucji",
-        "pt_BR": "Usado para placas de publicidade, letreiros de neon, logotipos e placas de entrada institucionais"
-      },
-      "exampleImages": [
-        "./assets/themes/advertising/Waitrose_sign.jpg",
-        "./assets/themes/advertising/sign_EOI.jpg",
-        "./assets/themes/advertising/farma_sign.jpg"
-      ],
-      "snapToLayer": [
-        "walls_and_buildings"
-      ],
-      "maxSnapDistance": 5
-    },
-    {
-      "tags": [
-        "advertising=sculpture"
-      ],
-      "title": {
-        "ca": "una escupltura",
-        "es": "una escultura",
-        "en": "a sculpture",
-        "de": "eine Skulptur",
-        "cs": "socha",
-        "fr": "une sculpture",
-        "pt": "uma escultura",
-        "eu": "eskultura bat",
-        "pl": "rzeźba",
-        "pt_BR": "uma escultura"
-      },
-      "exampleImages": [
-        "./assets/themes/advertising/Aircraft_Sculpture.jpg",
-        "./assets/themes/advertising/Mug.jpg",
-        "./assets/themes/advertising/BS.JPG"
-      ]
-    },
-    {
-      "tags": [
-        "advertising=wall_painting"
-      ],
-      "title": {
-        "ca": "una paret pintada",
-        "es": "una pared pintada",
-        "en": "a wall painting",
-        "de": "eine Wandmalerei",
-        "cs": "nástěnná malba",
-        "fr": "une peinture murale",
-        "pt": "uma pintura de parede",
-        "nl": "een muurschildering",
-        "eu": "pareta margotu bat",
-        "pl": "mural ścienny",
-        "pt_BR": "uma pintura mural"
-      },
-      "exampleImages": [
-        "./assets/themes/advertising/Capitol_wall.jpg",
-        "./assets/themes/advertising/clarke_wall.jpg"
-      ],
-      "snapToLayer": [
-        "walls_and_buildings"
-      ],
-      "maxSnapDistance": 5
-    }
-  ],
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "marker": [
-        {
-          "icon": {
-            "mappings": [
-              {
-                "if": "_referencing_ways=[\"way/-1\"]",
-                "then": "brick_wall_square"
-              }
-            ]
-          }
-        },
-        {
-          "icon": {
-            "render": "./assets/themes/advertising/sign.svg",
-            "mappings": [
-              {
-                "if": {
-                  "or": [
-                    "advertising=billboard"
-                  ]
-                },
-                "then": "./assets/themes/advertising/billboard.svg"
-              },
-              {
-                "if": "advertising=board",
-                "then": "./assets/themes/advertising/board.svg"
-              },
-              {
-                "if": "advertising=column",
-                "then": "./assets/themes/advertising/column.svg"
-              },
-              {
-                "if": "advertising=flag",
-                "then": "./assets/themes/advertising/flag.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "advertising=poster_box",
-                    "_referencing_ways~*"
-                  ]
-                },
-                "then": "./assets/themes/advertising/poster_box_no_support.svg"
-              },
-              {
-                "if": "advertising=poster_box",
-                "then": "./assets/themes/advertising/poster_box.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "advertising=screen",
-                    "_referencing_ways~*"
-                  ]
-                },
-                "then": "./assets/themes/advertising/screen_no_support.svg"
-              },
-              {
-                "if": "advertising=screen",
-                "then": "./assets/themes/advertising/screen.svg"
-              },
-              {
-                "if": "advertising=sculpture",
-                "then": "./assets/themes/advertising/sculpture.svg"
-              },
-              {
-                "if": "advertising=sign",
-                "then": "./assets/themes/advertising/sign.svg"
-              },
-              {
-                "if": "advertising=tarp",
-                "then": "./assets/themes/advertising/tarp.svg"
-              },
-              {
-                "if": "advertising=totem",
-                "then": "./assets/themes/advertising/totem.svg"
-              },
-              {
-                "if": "advertising=wall_painting",
-                "then": "./assets/themes/advertising/wall_painting.svg"
-              }
-            ]
-          }
-        }
-      ],
-      "iconSize": {
-        "render": "40,40",
-        "mappings": [
-          {
-            "if": "advertising=flag",
-            "then": "60,60"
-          },
-          {
-            "if": "advertising=sculpture",
-            "then": "50,50"
-          }
-        ]
-      },
-      "anchor": {
-        "render": "bottom",
-        "mappings": [
-          {
-            "if": "_referencing_ways~*",
-            "then": "center"
-          }
-        ]
-      }
-    }
-  ],
-  "lineRendering": [
-    {
-      "width": "8",
-      "color": "#00f"
-    }
-  ]
+  }
 }

@@ -1,9 +1,9 @@
 {
   "id": "split_road",
-  "description": "Layer rendering the way to split in the 'splitRoadWizard'. This one is used instead of the variable rendering by the themes themselves, as they might not always be very visible",
-  "minzoom": 1,
-  "source": "special",
   "name": null,
+  "description": "Layer rendering the way to split in the 'splitRoadWizard'. This one is used instead of the variable rendering by the themes themselves, as they might not always be very visible",
+  "source": "special",
+  "minzoom": 1,
   "title": null,
   "pointRendering": [
     {

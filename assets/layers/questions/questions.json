@@ -2,8 +2,8 @@
   "id": "questions",
   "description": "Special library layer which does not need a '.questions'-prefix before being imported",
   "source": "special:library",
-  "lineRendering": null,
   "pointRendering": null,
+  "lineRendering": null,
   "tagRenderings": [
     {
       "id": "questions",

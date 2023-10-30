@@ -12,6 +12,24 @@
       "cs": "Pamětní deska"
     }
   },
+  "pointRendering": [
+    {
+      "location": [
+        "centroid",
+        "point"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/memorial/plaque.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
   "tagRenderings": [
     {
       "id": "inscription",
@@ -37,23 +55,5 @@
   "allowMove": {
     "enableImproveAccuracy": true,
     "enableRelocation": false
-  },
-  "pointRendering": [
-    {
-      "location": [
-        "centroid",
-        "point"
-      ],
-      "marker": [
-        {
-          "icon": "circle",
-          "color": "white"
-        },
-        {
-          "icon": "./assets/layers/memorial/plaque.svg"
-        }
-      ]
-    }
-  ],
-  "lineRendering": []
+  }
 }

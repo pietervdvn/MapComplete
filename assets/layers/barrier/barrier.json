@@ -90,6 +90,23 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "./assets/layers/barrier/barrier.svg"
+        }
+      ],
+      "location": [
+        "point"
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": "5"
+    }
+  ],
   "presets": [
     {
       "title": {
@@ -634,22 +651,5 @@
         "fixme="
       ]
     }
-  },
-  "pointRendering": [
-    {
-      "marker": [
-        {
-          "icon": "./assets/layers/barrier/barrier.svg"
-        }
-      ],
-      "location": [
-        "point"
-      ]
-    }
-  ],
-  "lineRendering": [
-    {
-      "width": "5"
-    }
-  ]
+  }
 }

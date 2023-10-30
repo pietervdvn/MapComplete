@@ -24,6 +24,9 @@
       ]
     }
   },
+  "calculatedTags": [
+    "_numeric_id=feat.properties.id.split('/')[1]"
+  ],
   "minzoom": 15,
   "title": {
     "render": {
@@ -48,6 +51,32 @@
       }
     ]
   },
+  "titleIcons": [
+    {
+      "condition": {
+        "and": [
+          "id~relation/[0-9]+",
+          "_numeric_id~*"
+        ]
+      },
+      "render": "<a href=' https://relatify.monicz.dev/?relation={_numeric_id}&load=1' target='_blank' rel='noopener'><img alt='on relatify' textmode='🗺️' src='./assets/layers/transit_routes/relatify.png'/></a>"
+    },
+    "icons.defaults"
+  ],
+  "pointRendering": [],
+  "lineRendering": [
+    {
+      "color": {
+        "render": "#ff0000",
+        "mappings": [
+          {
+            "if": "colour~*",
+            "then": "{colour}"
+          }
+        ]
+      }
+    }
+  ],
   "tagRenderings": [
     {
       "id": "name",
@@ -207,35 +236,6 @@
         "cs": "Jaká společnost provozuje tuto autobusovou linku?"
       }
     }
-  ],
-  "pointRendering": [],
-  "lineRendering": [
-    {
-      "color": {
-        "render": "#ff0000",
-        "mappings": [
-          {
-            "if": "colour~*",
-            "then": "{colour}"
-          }
-        ]
-      }
-    }
-  ],
-  "titleIcons": [
-    {
-      "condition": {
-        "and": [
-          "id~relation/[0-9]+",
-          "_numeric_id~*"
-        ]
-      },
-      "render": "<a href=' https://relatify.monicz.dev/?relation={_numeric_id}&load=1' target='_blank' rel='noopener'><img alt='on relatify' textmode='🗺️' src='./assets/layers/transit_routes/relatify.png'/></a>"
-    },
-    "icons.defaults"
-  ],
-  "calculatedTags": [
-    "_numeric_id=feat.properties.id.split('/')[1]"
   ],
   "cs": {
     "0": {

@@ -1,8 +1,8 @@
 {
   "id": "home_location",
   "description": "Meta layer showing the home location of the user. The home location can be set in the [profile settings](https://www.openstreetmap.org/profile/edit) of OpenStreetMap.",
-  "minzoom": 0,
   "source": "special",
+  "minzoom": 0,
   "pointRendering": [
     {
       "iconSize": "20,20",

@@ -8,6 +8,14 @@
     "ca": "Fanals",
     "cs": "Pouliční Lampy"
   },
+  "description": {
+    "en": "A layer showing street lights",
+    "nl": "Een laag die alle straatlantaarns toont",
+    "de": "Eine Ebene mit Straßenbeleuchtung",
+    "es": "Una capa que muestra luces callejeras",
+    "ca": "Una capa que mostra els llums del carrer",
+    "cs": "Vrstva zobrazující pouliční osvětlení"
+  },
   "source": {
     "osmTags": "highway=street_lamp"
   },
@@ -35,6 +43,28 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": "light:colour~*",
+          "then": "circle:{light:colour}"
+        }
+      ],
+      "iconSize": "40,40",
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "./assets/layers/street_lamps/street_lamp.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
   "presets": [
     {
       "title": {
@@ -534,35 +564,5 @@
   "allowMove": {
     "enableImproveAccuracy": true,
     "enableRelocation": false
-  },
-  "description": {
-    "en": "A layer showing street lights",
-    "nl": "Een laag die alle straatlantaarns toont",
-    "de": "Eine Ebene mit Straßenbeleuchtung",
-    "es": "Una capa que muestra luces callejeras",
-    "ca": "Una capa que mostra els llums del carrer",
-    "cs": "Vrstva zobrazující pouliční osvětlení"
-  },
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "iconBadges": [
-        {
-          "if": "light:colour~*",
-          "then": "circle:{light:colour}"
-        }
-      ],
-      "iconSize": "40,40",
-      "anchor": "bottom",
-      "marker": [
-        {
-          "icon": "./assets/layers/street_lamps/street_lamp.svg"
-        }
-      ]
-    }
-  ],
-  "lineRendering": []
+  }
 }

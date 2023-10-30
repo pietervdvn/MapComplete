@@ -46,6 +46,35 @@
       "cs": "Defibrilátor"
     }
   },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "square",
+          "color": {
+            "render": "#008754",
+            "mappings": [
+              {
+                "if": "_recently_surveyed=true",
+                "then": "#28ba3d"
+              }
+            ]
+          }
+        },
+        {
+          "icon": "./assets/layers/defibrillator/defibrillator.svg"
+        }
+      ],
+      "location": [
+        "point"
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#0000ff"
+    }
+  ],
   "presets": [
     {
       "title": {
@@ -716,6 +745,10 @@
       "id": "defibrillator-fixme"
     }
   ],
+  "filter": [
+    "has_image",
+    "open_now"
+  ],
   "deletion": {
     "softDeletionTags": {
       "and": [
@@ -728,38 +761,5 @@
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuracy": true
-  },
-  "filter": [
-    "has_image",
-    "open_now"
-  ],
-  "pointRendering": [
-    {
-      "marker": [
-        {
-          "icon": "square",
-          "color": {
-            "render": "#008754",
-            "mappings": [
-              {
-                "if": "_recently_surveyed=true",
-                "then": "#28ba3d"
-              }
-            ]
-          }
-        },
-        {
-          "icon": "./assets/layers/defibrillator/defibrillator.svg"
-        }
-      ],
-      "location": [
-        "point"
-      ]
-    }
-  ],
-  "lineRendering": [
-    {
-      "color": "#0000ff"
-    }
-  ]
+  }
 }

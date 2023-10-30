@@ -11,6 +11,18 @@
     "ca": "Lloguer de bicicletes",
     "pt_BR": "Aluguel de bicicletas"
   },
+  "description": {
+    "en": "Bicycle rental stations",
+    "nl": "Fietsverhuurstations",
+    "fr": "Stations de location de vélo",
+    "de": "Fahrradverleihstationen",
+    "es": "Estaciones de alquiler de bicicletas",
+    "da": "Stationer til udlejning af cykler",
+    "cs": "Půjčovny jízdních kol",
+    "ca": "Estacions de lloguer de bicicletes",
+    "pl": "Stacje wypożyczania rowerów",
+    "pt_BR": "Estações de aluguel de bicicletas"
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -62,18 +74,73 @@
       }
     ]
   },
-  "description": {
-    "en": "Bicycle rental stations",
-    "nl": "Fietsverhuurstations",
-    "fr": "Stations de location de vélo",
-    "de": "Fahrradverleihstationen",
-    "es": "Estaciones de alquiler de bicicletas",
-    "da": "Stationer til udlejning af cykler",
-    "cs": "Půjčovny jízdních kol",
-    "ca": "Estacions de lloguer de bicicletes",
-    "pl": "Stacje wypożyczania rowerów",
-    "pt_BR": "Estações de aluguel de bicicletas"
-  },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/themes/bicycle_rental/logo.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#3333aa88",
+      "width": "2"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a bicycle rental shop",
+        "nl": "een fietsverhuurzaak",
+        "fr": "un magasin de location de vélos",
+        "de": "ein Geschäft mit Fahrradverleih",
+        "es": "una tienda de alquiler de bicicletas",
+        "da": "en cykeludlejningsforretning",
+        "cs": "půjčovna jízdních kol",
+        "ca": "una botiga de lloguer de bicicletes",
+        "pt_BR": "uma loja de aluguel de bicicletas"
+      },
+      "tags": [
+        "amenity=bicycle_rental",
+        "bicycle_rental=shop"
+      ],
+      "description": {
+        "en": "A manned shop which focuses on bicycle rental",
+        "nl": "Een bemande winkel die focust op fietsverhuur",
+        "fr": "Un magasin qui priorise la location de vélos",
+        "de": "Ein Geschäft, das sich auf den Fahrradverleih konzentriert",
+        "da": "En bemandet butik, der fokuserer på cykeludlejning",
+        "es": "Una tienda atendida que se centra en el alquiler de bicicletas",
+        "cs": "Obsluhovaný obchod zaměřený na půjčování jízdních kol",
+        "ca": "Una botiga atesa que es centra en el lloguer de bicicletes",
+        "pt_BR": "Uma loja com atendimento pessoal que foca no aluguel de bicicletas"
+      }
+    },
+    {
+      "title": {
+        "en": "a bicycle rental",
+        "nl": "een fietsverhuur",
+        "de": "eine Fahrradleihstation",
+        "da": "cykeludlejning",
+        "es": "un alquiler de bicicletas",
+        "fr": "une location de vélos",
+        "cs": "půjčovna kol",
+        "ca": "un lloguer de bicicletes",
+        "pt_BR": "um aluguel de bicicletas"
+      },
+      "tags": [
+        "amenity=bicycle_rental"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -524,56 +591,6 @@
       ]
     }
   ],
-  "presets": [
-    {
-      "title": {
-        "en": "a bicycle rental shop",
-        "nl": "een fietsverhuurzaak",
-        "fr": "un magasin de location de vélos",
-        "de": "ein Geschäft mit Fahrradverleih",
-        "es": "una tienda de alquiler de bicicletas",
-        "da": "en cykeludlejningsforretning",
-        "cs": "půjčovna jízdních kol",
-        "ca": "una botiga de lloguer de bicicletes",
-        "pt_BR": "uma loja de aluguel de bicicletas"
-      },
-      "tags": [
-        "amenity=bicycle_rental",
-        "bicycle_rental=shop"
-      ],
-      "description": {
-        "en": "A manned shop which focuses on bicycle rental",
-        "nl": "Een bemande winkel die focust op fietsverhuur",
-        "fr": "Un magasin qui priorise la location de vélos",
-        "de": "Ein Geschäft, das sich auf den Fahrradverleih konzentriert",
-        "da": "En bemandet butik, der fokuserer på cykeludlejning",
-        "es": "Una tienda atendida que se centra en el alquiler de bicicletas",
-        "cs": "Obsluhovaný obchod zaměřený na půjčování jízdních kol",
-        "ca": "Una botiga atesa que es centra en el lloguer de bicicletes",
-        "pt_BR": "Uma loja com atendimento pessoal que foca no aluguel de bicicletas"
-      }
-    },
-    {
-      "title": {
-        "en": "a bicycle rental",
-        "nl": "een fietsverhuur",
-        "de": "eine Fahrradleihstation",
-        "da": "cykeludlejning",
-        "es": "un alquiler de bicicletas",
-        "fr": "une location de vélos",
-        "cs": "půjčovna kol",
-        "ca": "un lloguer de bicicletes",
-        "pt_BR": "um aluguel de bicicletas"
-      },
-      "tags": [
-        "amenity=bicycle_rental"
-      ]
-    }
-  ],
-  "allowMove": {
-    "enableImproveAccuracy": true,
-    "enableRelocation": true
-  },
   "deletion": {
     "softDeletionTags": {
       "and": [
@@ -620,25 +637,8 @@
       }
     ]
   },
-  "pointRendering": [
-    {
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center",
-      "marker": [
-        {
-          "icon": "./assets/themes/bicycle_rental/logo.svg"
-        }
-      ]
-    }
-  ],
-  "lineRendering": [
-    {
-      "color": "#3333aa88",
-      "width": "2"
-    }
-  ]
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": true
+  }
 }

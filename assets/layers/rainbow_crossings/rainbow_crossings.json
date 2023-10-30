@@ -41,6 +41,37 @@
       "cs": "Přechod"
     }
   },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/themes/rainbow_crossings/crossing.svg",
+            "mappings": [
+              {
+                "if": "surface:colour=rainbow",
+                "then": "./assets/themes/rainbow_crossings/logo.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "red",
+      "width": "5",
+      "dashArray": "10 2",
+      "lineCap": "square"
+    }
+  ],
   "presets": [
     {
       "title": {
@@ -119,37 +150,6 @@
           "hideInAnswer": true
         }
       ]
-    }
-  ],
-  "pointRendering": [
-    {
-      "marker": [
-        {
-          "icon": {
-            "render": "./assets/themes/rainbow_crossings/crossing.svg",
-            "mappings": [
-              {
-                "if": "surface:colour=rainbow",
-                "then": "./assets/themes/rainbow_crossings/logo.svg"
-              }
-            ]
-          }
-        }
-      ],
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    }
-  ],
-  "lineRendering": [
-    {
-      "color": "red",
-      "width": "5",
-      "dashArray": "10 2",
-      "lineCap": "square"
     }
   ]
 }

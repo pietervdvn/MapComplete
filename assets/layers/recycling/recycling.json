@@ -82,6 +82,455 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:batteries=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/batteries.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:beverage_cartons=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/beverage_cartons.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:cans=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/cans.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:clothes=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/clothes.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:cooking_oil=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/cooking_oil.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:engine_oil=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/engine_oil.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:fluorescent_tubes=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/fluorescent_tubes.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:glass=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/glass.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:glass_bottles=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/glass_bottles.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              {
+                "or": [
+                  "recycling:green_waste=yes",
+                  "recycling:organic=yes"
+                ]
+              }
+            ]
+          },
+          "then": "./assets/layers/recycling/garden_waste.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:light_bulbs=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/light_bulbs.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:newspaper=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/newspaper.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:paper=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/paper.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:plastic_bottles=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/plastic_bottles.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:plastic_packaging=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/plastic_packaging.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:plastic=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/plastic.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:printer_cartridges=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/printer_cartridges.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:scrap_metal=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/scrap_metal.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:shoes=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/shoes.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              {
+                "or": [
+                  "recycling:small_appliances=yes",
+                  "recycling:small_electrical_appliances=yes"
+                ]
+              }
+            ]
+          },
+          "then": "./assets/layers/recycling/small_electrical_appliances.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:waste=yes"
+            ]
+          },
+          "then": "./assets/layers/waste_disposal/waste_disposal.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:needles=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/needles.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:bicycles=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/bicycles.svg"
+        }
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/recycling/recycling-14.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:batteries=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/batteries.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:beverage_cartons=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/beverage_cartons.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:cans=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/cans.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:clothes=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/clothes.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:cooking_oil=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/cooking_oil.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:engine_oil=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/engine_oil.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:fluorescent_tubes=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/fluorescent_tubes.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:glass=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/glass.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:glass_bottles=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/glass_bottles.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    {
+                      "or": [
+                        "recycling:green_waste=yes",
+                        "recycling:organic=yes"
+                      ]
+                    }
+                  ]
+                },
+                "then": "./assets/layers/recycling/garden_waste.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:light_bulbs=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/light_bulbs.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:newspaper=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/newspaper.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:paper=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/paper.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:plastic_bottles=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/plastic_bottles.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:plastic_packaging=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/plastic_packaging.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:plastic=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/plastic.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:printer_cartridges=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/printer_cartridges.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:scrap_metal=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/scrap_metal.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:shoes=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/shoes.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    {
+                      "or": [
+                        "recycling:small_appliances=yes",
+                        "recycling:small_electric_appliances=yes"
+                      ]
+                    }
+                  ]
+                },
+                "then": "./assets/layers/recycling/small_electrical_appliances.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:waste=yes"
+                  ]
+                },
+                "then": "./assets/layers/waste_disposal/waste_disposal.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:needles=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/needles.svg"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
   "presets": [
     {
       "title": {
@@ -1206,454 +1655,5 @@
   "allowMove": {
     "enableRelocation": true,
     "enableImproveAccuracy": true
-  },
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "iconBadges": [
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:batteries=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/batteries.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:beverage_cartons=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/beverage_cartons.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:cans=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/cans.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:clothes=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/clothes.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:cooking_oil=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/cooking_oil.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:engine_oil=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/engine_oil.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:fluorescent_tubes=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/fluorescent_tubes.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:glass=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/glass.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:glass_bottles=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/glass_bottles.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              {
-                "or": [
-                  "recycling:green_waste=yes",
-                  "recycling:organic=yes"
-                ]
-              }
-            ]
-          },
-          "then": "./assets/layers/recycling/garden_waste.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:light_bulbs=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/light_bulbs.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:newspaper=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/newspaper.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:paper=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/paper.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:plastic_bottles=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/plastic_bottles.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:plastic_packaging=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/plastic_packaging.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:plastic=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/plastic.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:printer_cartridges=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/printer_cartridges.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:scrap_metal=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/scrap_metal.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:shoes=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/shoes.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              {
-                "or": [
-                  "recycling:small_appliances=yes",
-                  "recycling:small_electrical_appliances=yes"
-                ]
-              }
-            ]
-          },
-          "then": "./assets/layers/recycling/small_electrical_appliances.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:waste=yes"
-            ]
-          },
-          "then": "./assets/layers/waste_disposal/waste_disposal.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:needles=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/needles.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "_waste_amount>1",
-              "recycling:bicycles=yes"
-            ]
-          },
-          "then": "./assets/layers/recycling/bicycles.svg"
-        }
-      ],
-      "marker": [
-        {
-          "icon": "circle",
-          "color": "white"
-        },
-        {
-          "icon": {
-            "render": "./assets/layers/recycling/recycling-14.svg",
-            "mappings": [
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:batteries=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/batteries.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:beverage_cartons=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/beverage_cartons.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:cans=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/cans.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:clothes=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/clothes.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:cooking_oil=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/cooking_oil.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:engine_oil=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/engine_oil.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:fluorescent_tubes=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/fluorescent_tubes.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:glass=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/glass.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:glass_bottles=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/glass_bottles.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    {
-                      "or": [
-                        "recycling:green_waste=yes",
-                        "recycling:organic=yes"
-                      ]
-                    }
-                  ]
-                },
-                "then": "./assets/layers/recycling/garden_waste.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:light_bulbs=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/light_bulbs.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:newspaper=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/newspaper.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:paper=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/paper.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:plastic_bottles=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/plastic_bottles.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:plastic_packaging=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/plastic_packaging.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:plastic=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/plastic.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:printer_cartridges=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/printer_cartridges.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:scrap_metal=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/scrap_metal.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:shoes=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/shoes.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    {
-                      "or": [
-                        "recycling:small_appliances=yes",
-                        "recycling:small_electric_appliances=yes"
-                      ]
-                    }
-                  ]
-                },
-                "then": "./assets/layers/recycling/small_electrical_appliances.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:waste=yes"
-                  ]
-                },
-                "then": "./assets/layers/waste_disposal/waste_disposal.svg"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_waste_amount=1",
-                    "recycling:needles=yes"
-                  ]
-                },
-                "then": "./assets/layers/recycling/needles.svg"
-              }
-            ]
-          }
-        }
-      ]
-    }
-  ],
-  "lineRendering": []
+  }
 }

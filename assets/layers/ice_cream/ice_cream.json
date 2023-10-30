@@ -1,7 +1,27 @@
 {
-  "credits": [
-    "Pieter Vander Vennet"
-  ],
+  "id": "ice_cream",
+  "name": {
+    "en": "Ice cream parlors"
+  },
+  "description": {
+    "en": "A place where ice cream is sold over the counter"
+  },
+  "source": {
+    "osmTags": "amenity=ice_cream"
+  },
+  "title": {
+    "render": {
+      "en": "Ice cream parlor"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "{name}"
+        }
+      }
+    ]
+  },
   "pointRendering": [
     {
       "location": [
@@ -25,16 +45,6 @@
       "color": "blue"
     }
   ],
-  "id": "ice_cream",
-  "name": {
-    "en": "Ice cream parlors"
-  },
-  "description": {
-    "en": "A place where ice cream is sold over the counter"
-  },
-  "source": {
-    "osmTags": "amenity=ice_cream"
-  },
   "presets": [
     {
       "title": {
@@ -48,19 +58,6 @@
       }
     }
   ],
-  "title": {
-    "render": {
-      "en": "Ice cream parlor"
-    },
-    "mappings": [
-      {
-        "if": "name~*",
-        "then": {
-          "en": "{name}"
-        }
-      }
-    ]
-  },
   "tagRenderings": [
     "images",
     {
@@ -82,5 +79,8 @@
     "diets",
     "payment-options",
     "wheelchair-access"
+  ],
+  "credits": [
+    "Pieter Vander Vennet"
   ]
 }

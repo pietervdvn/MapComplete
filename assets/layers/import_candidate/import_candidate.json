@@ -3,12 +3,6 @@
   "description": "Layer used as template in the importHelper",
   "source": "special",
   "title": "Import candidate",
-  "tagRenderings": [
-    {
-      "id": "all_tags",
-      "render": "{all_tags()}"
-    }
-  ],
   "pointRendering": [
     {
       "location": [
@@ -25,5 +19,11 @@
       ]
     }
   ],
-  "lineRendering": []
+  "lineRendering": [],
+  "tagRenderings": [
+    {
+      "id": "all_tags",
+      "render": "{all_tags()}"
+    }
+  ]
 }

@@ -14,10 +14,23 @@
     "fr": "Boîtes à lettres",
     "cs": "Poštovní schránky"
   },
-  "minzoom": 12,
+  "description": {
+    "en": "The layer showing postboxes.",
+    "de": "Die Ebene zeigt Briefkästen.",
+    "zh_Hant": "這圖層顯示郵筒。",
+    "id": "Layer yang memperlihatkan kotak pos.",
+    "hu": "Postaládákat megjelenítő réteg.",
+    "nl": "Deze laag toont brievenbussen.",
+    "es": "La capa que mostrando buzones de correo.",
+    "fr": "Le calque montrant les boîtes à lettres.",
+    "ca": "La capa que mostra bústies de correus.",
+    "cs": "Vrstva zobrazující poštovní schránky.",
+    "pl": "Warstwa pokazująca skrzynki pocztowe."
+  },
   "source": {
     "osmTags": "amenity=post_box"
   },
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Postbox",
@@ -32,54 +45,6 @@
       "fr": "Boîte à lettres",
       "nl": "Brievenbus",
       "cs": "Poštovní schránka"
-    }
-  },
-  "description": {
-    "en": "The layer showing postboxes.",
-    "de": "Die Ebene zeigt Briefkästen.",
-    "zh_Hant": "這圖層顯示郵筒。",
-    "id": "Layer yang memperlihatkan kotak pos.",
-    "hu": "Postaládákat megjelenítő réteg.",
-    "nl": "Deze laag toont brievenbussen.",
-    "es": "La capa que mostrando buzones de correo.",
-    "fr": "Le calque montrant les boîtes à lettres.",
-    "ca": "La capa que mostra bústies de correus.",
-    "cs": "Vrstva zobrazující poštovní schránky.",
-    "pl": "Warstwa pokazująca skrzynki pocztowe."
-  },
-  "tagRenderings": [
-    "images",
-    {
-      "id": "minimap",
-      "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
-    }
-  ],
-  "presets": [
-    {
-      "tags": [
-        "amenity=post_box"
-      ],
-      "title": {
-        "en": "a postbox",
-        "de": "ein Briefkasten",
-        "ru": "почтовый ящик",
-        "zh_Hant": "郵筒",
-        "id": "kotak pos",
-        "hu": "postaláda",
-        "nl": "een brievenbus",
-        "ca": "una bústia",
-        "es": "un buzón de correo",
-        "fr": "une boîte à lettres",
-        "cs": "poštovní schránka"
-      }
-    }
-  ],
-  "deletion": {
-    "softDeletionTags": {
-      "and": [
-        "amenity=",
-        "razed:amenity=post_box"
-      ]
     }
   },
   "pointRendering": [
@@ -102,5 +67,40 @@
       "color": "#DADADA",
       "width": "1"
     }
-  ]
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=post_box"
+      ],
+      "title": {
+        "en": "a postbox",
+        "de": "ein Briefkasten",
+        "ru": "почтовый ящик",
+        "zh_Hant": "郵筒",
+        "id": "kotak pos",
+        "hu": "postaláda",
+        "nl": "een brievenbus",
+        "ca": "una bústia",
+        "es": "un buzón de correo",
+        "fr": "une boîte à lettres",
+        "cs": "poštovní schránka"
+      }
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "id": "minimap",
+      "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "amenity=",
+        "razed:amenity=post_box"
+      ]
+    }
+  }
 }

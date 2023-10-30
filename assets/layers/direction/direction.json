@@ -10,18 +10,6 @@
     "ca": "Direcció de la visualització",
     "cs": "Vizualizace směru"
   },
-  "minzoom": 16,
-  "source": {
-    "osmTags": {
-      "or": [
-        "camera:direction~*",
-        "direction~*"
-      ]
-    }
-  },
-  "doNotDownload": true,
-  "passAllFeatures": true,
-  "title": null,
   "description": {
     "en": "This layer visualizes directions",
     "nl": "Deze laag toont de oriëntatie van een object",
@@ -32,9 +20,16 @@
     "ca": "Aquesta capa visualitza direccions",
     "cs": "Tato vrstva zobrazuje směry"
   },
-  "tagRenderings": [],
-  "stroke": "0",
-  "presets": [],
+  "source": {
+    "osmTags": {
+      "or": [
+        "camera:direction~*",
+        "direction~*"
+      ]
+    }
+  },
+  "minzoom": 16,
+  "title": null,
   "pointRendering": [
     {
       "iconSize": "200,200",
@@ -56,5 +51,10 @@
     {
       "color": "--catch-detail-color"
     }
-  ]
+  ],
+  "passAllFeatures": true,
+  "doNotDownload": true,
+  "presets": [],
+  "tagRenderings": [],
+  "stroke": "0"
 }

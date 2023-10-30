@@ -1,9 +1,9 @@
 {
   "id": "conflation",
-  "description": "If the import-button moves OSM points, the imported way points or conflates, a preview is shown. This layer defines how this preview is rendered. This layer cannot be included in a theme.",
-  "minzoom": 1,
-  "source": "special",
   "name": "Conflation",
+  "description": "If the import-button moves OSM points, the imported way points or conflates, a preview is shown. This layer defines how this preview is rendered. This layer cannot be included in a theme.",
+  "source": "special",
+  "minzoom": 1,
   "title": "Conflation",
   "pointRendering": [
     {

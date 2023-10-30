@@ -46,6 +46,24 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "label": "<div style=\"background: white; display: block\">{name}</div>",
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/transit_stops/bus_stop.svg",
+            "mappings": []
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
   "tagRenderings": [
     {
       "id": "stop_name",
@@ -464,23 +482,5 @@
     },
     "tactile_paving"
   ],
-  "allowMove": false,
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "label": "<div style=\"background: white; display: block\">{name}</div>",
-      "marker": [
-        {
-          "icon": {
-            "render": "./assets/layers/transit_stops/bus_stop.svg",
-            "mappings": []
-          }
-        }
-      ]
-    }
-  ],
-  "lineRendering": []
+  "allowMove": false
 }

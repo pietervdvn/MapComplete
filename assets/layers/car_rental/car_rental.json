@@ -9,6 +9,15 @@
     "pl": "Wypożyczalnia samochodów",
     "cs": "Půjčovna aut"
   },
+  "description": {
+    "en": "Places where you can rent a car",
+    "nl": "Plaatsen waar je een auto kunt huren",
+    "de": "Orte, an denen Sie ein Auto mieten können",
+    "fr": "Lieu où vous pouvez louer une voiture",
+    "ca": "Llocs on pots llogar un cotxe",
+    "pl": "Miejsca, w których można wypożyczyć samochód",
+    "cs": "Místa, kde si můžete pronajmout auto"
+  },
   "source": {
     "osmTags": "amenity=car_rental"
   },
@@ -30,15 +39,55 @@
       }
     ]
   },
-  "description": {
-    "en": "Places where you can rent a car",
-    "nl": "Plaatsen waar je een auto kunt huren",
-    "de": "Orte, an denen Sie ein Auto mieten können",
-    "fr": "Lieu où vous pouvez louer une voiture",
-    "ca": "Llocs on pots llogar un cotxe",
-    "pl": "Miejsca, w których można wypożyczyć samochód",
-    "cs": "Místa, kde si můžete pronajmout auto"
-  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "label": "<div class='bg-white block p-1 rounded'>{name}</div>",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/car_rental/car_rental.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "darkblue",
+      "width": 2
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=car_rental"
+      ],
+      "title": {
+        "en": "a car rental",
+        "nl": "een autoverhuur",
+        "de": "eine Autovermietung",
+        "fr": "Une société de location de véhicules",
+        "ca": "un lloguer de cotxes",
+        "pl": "wypożyczalnia samochodów",
+        "cs": "půjčovna aut"
+      },
+      "description": {
+        "en": "A place where you can rent a car",
+        "nl": "Een plaats waar je een auto kunt huren",
+        "de": "Ein Ort, an dem Sie ein Auto mieten können",
+        "fr": "Un lieu où vous pouvez louer une voiture",
+        "ca": "Un lloc on pots llogar un cotxe",
+        "pl": "Miejsce, w którym można wypożyczyć samochód",
+        "cs": "Místo, kde si můžete pronajmout auto"
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -94,59 +143,10 @@
     "phone",
     "opening_hours"
   ],
-  "presets": [
-    {
-      "tags": [
-        "amenity=car_rental"
-      ],
-      "title": {
-        "en": "a car rental",
-        "nl": "een autoverhuur",
-        "de": "eine Autovermietung",
-        "fr": "Une société de location de véhicules",
-        "ca": "un lloguer de cotxes",
-        "pl": "wypożyczalnia samochodów",
-        "cs": "půjčovna aut"
-      },
-      "description": {
-        "en": "A place where you can rent a car",
-        "nl": "Een plaats waar je een auto kunt huren",
-        "de": "Ein Ort, an dem Sie ein Auto mieten können",
-        "fr": "Un lieu où vous pouvez louer une voiture",
-        "ca": "Un lloc on pots llogar un cotxe",
-        "pl": "Miejsce, w którym można wypożyczyć samochód",
-        "cs": "Místo, kde si můžete pronajmout auto"
-      }
-    }
-  ],
-  "allowMove": {
-    "enableImproveAccuracy": true
-  },
   "filter": [
     "open_now"
   ],
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "label": "<div class='bg-white block p-1 rounded'>{name}</div>",
-      "marker": [
-        {
-          "icon": "circle",
-          "color": "white"
-        },
-        {
-          "icon": "./assets/layers/car_rental/car_rental.svg"
-        }
-      ]
-    }
-  ],
-  "lineRendering": [
-    {
-      "color": "darkblue",
-      "width": 2
-    }
-  ]
+  "allowMove": {
+    "enableImproveAccuracy": true
+  }
 }

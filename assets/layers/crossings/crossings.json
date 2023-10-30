@@ -69,6 +69,36 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/crossings/pedestrian_crossing.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "highway=traffic_signals",
+                    "crossing=traffic_signals"
+                  ]
+                },
+                "then": "./assets/layers/crossings/traffic_lights.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "location": [
+        "point"
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": "5"
+    }
+  ],
   "presets": [
     {
       "title": {
@@ -696,35 +726,5 @@
   ],
   "filter": [
     "tactile_paving_advanced"
-  ],
-  "pointRendering": [
-    {
-      "marker": [
-        {
-          "icon": {
-            "render": "./assets/layers/crossings/pedestrian_crossing.svg",
-            "mappings": [
-              {
-                "if": {
-                  "or": [
-                    "highway=traffic_signals",
-                    "crossing=traffic_signals"
-                  ]
-                },
-                "then": "./assets/layers/crossings/traffic_lights.svg"
-              }
-            ]
-          }
-        }
-      ],
-      "location": [
-        "point"
-      ]
-    }
-  ],
-  "lineRendering": [
-    {
-      "width": "5"
-    }
   ]
 }

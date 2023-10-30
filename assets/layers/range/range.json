@@ -1,10 +1,10 @@
 {
   "id": "range",
-  "description": "Meta-layer, simply showing a bbox in red",
-  "title": null,
-  "source": "special",
   "name": null,
+  "description": "Meta-layer, simply showing a bbox in red",
+  "source": "special",
   "shownByDefault": false,
+  "title": null,
   "pointRendering": [],
   "lineRendering": [
     {

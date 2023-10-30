@@ -1,15 +1,5 @@
 {
   "id": "bank",
-  "description": {
-    "en": "A financial institution to deposit money",
-    "de": "Ein Finanzinstitut, um Geld einzuzahlen",
-    "nl": "Een financiële instelling waar je geld kunt",
-    "ca": "Una institució financera per a dipositar diners",
-    "cs": "Finanční instituce pro ukládání peněz",
-    "he": "מוסד פיננסי להפקדת כסף",
-    "pl": "Instytucja finansowa pozwalająca wpłacić pieniądze",
-    "pt_BR": "Um instituição financeira para depositar dinheiro"
-  },
   "name": {
     "en": "Banks",
     "de": "Banken",
@@ -22,6 +12,19 @@
     "pl": "Banki",
     "pt_BR": "Bancos"
   },
+  "description": {
+    "en": "A financial institution to deposit money",
+    "de": "Ein Finanzinstitut, um Geld einzuzahlen",
+    "nl": "Een financiële instelling waar je geld kunt",
+    "ca": "Una institució financera per a dipositar diners",
+    "cs": "Finanční instituce pro ukládání peněz",
+    "he": "מוסד פיננסי להפקדת כסף",
+    "pl": "Instytucja finansowa pozwalająca wpłacić pieniądze",
+    "pt_BR": "Um instituição financeira para depositar dinheiro"
+  },
+  "source": {
+    "osmTags": "amenity=bank"
+  },
   "title": {
     "render": "Bank",
     "mappings": [
@@ -31,9 +34,24 @@
       }
     ]
   },
-  "source": {
-    "osmTags": "amenity=bank"
-  },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/bank/bank.svg"
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "lineRendering": [],
   "tagRenderings": [
     {
       "id": "has_atm",
@@ -111,23 +129,5 @@
         }
       ]
     }
-  ],
-  "pointRendering": [
-    {
-      "marker": [
-        {
-          "icon": "circle",
-          "color": "white"
-        },
-        {
-          "icon": "./assets/layers/bank/bank.svg"
-        }
-      ],
-      "location": [
-        "point",
-        "centroid"
-      ]
-    }
-  ],
-  "lineRendering": []
+  ]
 }

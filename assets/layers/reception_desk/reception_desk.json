@@ -14,6 +14,9 @@
     "ca": "Una capa que mostra on es troben els mostradors de recepció i que demana informació d'accessibilitat",
     "cs": "Vrstva, která ukazuje, kde se nacházejí recepce, a která se ptá na některé informace o přístupnosti"
   },
+  "source": {
+    "osmTags": "amenity=reception_desk"
+  },
   "title": {
     "render": {
       "en": "Reception desk",
@@ -23,9 +26,40 @@
       "cs": "Recepční pult"
     }
   },
-  "source": {
-    "osmTags": "amenity=reception_desk"
-  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": "40,40",
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/reception_desk/reception_desk.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "tags": [
+        "amenity=reception_desk"
+      ],
+      "title": {
+        "en": "a reception desk",
+        "fr": "un bureau d'accueil",
+        "de": "einen Empfangstresen",
+        "ca": "una recepció",
+        "cs": "recepční pult"
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     "level",
@@ -61,20 +95,6 @@
       }
     },
     "induction-loop"
-  ],
-  "presets": [
-    {
-      "tags": [
-        "amenity=reception_desk"
-      ],
-      "title": {
-        "en": "a reception desk",
-        "fr": "un bureau d'accueil",
-        "de": "einen Empfangstresen",
-        "ca": "una recepció",
-        "cs": "recepční pult"
-      }
-    }
   ],
   "units": [
     {
@@ -117,25 +137,5 @@
         }
       ]
     }
-  ],
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "iconSize": "40,40",
-      "anchor": "center",
-      "marker": [
-        {
-          "icon": "circle",
-          "color": "white"
-        },
-        {
-          "icon": "./assets/layers/reception_desk/reception_desk.svg"
-        }
-      ]
-    }
-  ],
-  "lineRendering": []
+  ]
 }

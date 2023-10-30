@@ -23,43 +23,6 @@
     "eu": "OSMko helbide ezagunak",
     "pl": "Znane adresy w OSM"
   },
-  "minzoom": 18,
-  "source": {
-    "osmTags": {
-      "or": [
-        "addr:housenumber~*",
-        "addr:street~*"
-      ]
-    }
-  },
-  "calculatedTags": [
-    "_closest_3_street_names=closestn(feat)('named_streets',3, 'name').map(f => f.feat.properties.name)",
-    "_closest_street:0:name=JSON.parse(feat.properties._closest_3_street_names)[0]",
-    "_closest_street:1:name=JSON.parse(feat.properties._closest_3_street_names)[1]",
-    "_closest_street:2:name=JSON.parse(feat.properties._closest_3_street_names)[2]"
-  ],
-  "title": {
-    "render": {
-      "en": "Known address",
-      "de": "Bekannte Adresse",
-      "hu": "Ismert cím",
-      "nl": "Bekend adres",
-      "fr": "Adresse connue",
-      "pl": "Znany adres",
-      "ru": "Известный адрес",
-      "es": "Domicilio conocido",
-      "zh_Hans": "已知的地址",
-      "id": "Alamat yang diketahui",
-      "nb_NO": "Kjent adresse",
-      "da": "Kendt adresse",
-      "cs": "Známá adresa",
-      "ca": "Adreça coneguda",
-      "pt": "Endereço conhecido",
-      "pt_BR": "Endereço conhecido",
-      "he": "כתובת ידועה",
-      "eu": "Helbide ezaguna"
-    }
-  },
   "description": {
     "en": "Addresses",
     "nl": "Adressen",
@@ -84,6 +47,104 @@
     "he": "כתובות",
     "eu": "Helbideak"
   },
+  "source": {
+    "osmTags": {
+      "or": [
+        "addr:housenumber~*",
+        "addr:street~*"
+      ]
+    }
+  },
+  "calculatedTags": [
+    "_closest_3_street_names=closestn(feat)('named_streets',3, 'name').map(f => f.feat.properties.name)",
+    "_closest_street:0:name=JSON.parse(feat.properties._closest_3_street_names)[0]",
+    "_closest_street:1:name=JSON.parse(feat.properties._closest_3_street_names)[1]",
+    "_closest_street:2:name=JSON.parse(feat.properties._closest_3_street_names)[2]"
+  ],
+  "minzoom": 18,
+  "title": {
+    "render": {
+      "en": "Known address",
+      "de": "Bekannte Adresse",
+      "hu": "Ismert cím",
+      "nl": "Bekend adres",
+      "fr": "Adresse connue",
+      "pl": "Znany adres",
+      "ru": "Известный адрес",
+      "es": "Domicilio conocido",
+      "zh_Hans": "已知的地址",
+      "id": "Alamat yang diketahui",
+      "nb_NO": "Kjent adresse",
+      "da": "Kendt adresse",
+      "cs": "Známá adresa",
+      "ca": "Adreça coneguda",
+      "pt": "Endereço conhecido",
+      "pt_BR": "Endereço conhecido",
+      "he": "כתובת ידועה",
+      "eu": "Helbide ezaguna"
+    }
+  },
+  "pointRendering": [
+    {
+      "label": {
+        "render": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
+        "condition": "addr:housenumber~*"
+      },
+      "iconSize": "50,50",
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/address/housenumber_blank.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    {
+                      "and": [
+                        "addr:housenumber=",
+                        "nohousenumber!=yes"
+                      ]
+                    },
+                    "addr:street="
+                  ]
+                },
+                "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": {
+        "render": "#00f",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                {
+                  "and": [
+                    "addr:housenumber=",
+                    "nohousenumber!=yes"
+                  ]
+                },
+                "addr:street="
+              ]
+            },
+            "then": "#ff0"
+          }
+        ]
+      },
+      "width": "8"
+    }
+  ],
   "tagRenderings": [
     {
       "id": "housenumber",
@@ -261,67 +322,6 @@
           "then": "No fixme - write something here to explain complicated cases"
         }
       ]
-    }
-  ],
-  "pointRendering": [
-    {
-      "label": {
-        "render": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
-        "condition": "addr:housenumber~*"
-      },
-      "iconSize": "50,50",
-      "marker": [
-        {
-          "icon": {
-            "render": "./assets/layers/address/housenumber_blank.svg",
-            "mappings": [
-              {
-                "if": {
-                  "or": [
-                    {
-                      "and": [
-                        "addr:housenumber=",
-                        "nohousenumber!=yes"
-                      ]
-                    },
-                    "addr:street="
-                  ]
-                },
-                "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
-              }
-            ]
-          }
-        }
-      ],
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    }
-  ],
-  "lineRendering": [
-    {
-      "color": {
-        "render": "#00f",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                {
-                  "and": [
-                    "addr:housenumber=",
-                    "nohousenumber!=yes"
-                  ]
-                },
-                "addr:street="
-              ]
-            },
-            "then": "#ff0"
-          }
-        ]
-      },
-      "width": "8"
     }
   ]
 }

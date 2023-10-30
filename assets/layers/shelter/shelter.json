@@ -30,6 +30,20 @@
       "cs": "Přístřešek"
     }
   },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/layers/shelter/shelter.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
   "tagRenderings": [
     {
       "id": "shelter-type",
@@ -106,19 +120,5 @@
         "type": "string"
       }
     }
-  ],
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "marker": [
-        {
-          "icon": "./assets/layers/shelter/shelter.svg"
-        }
-      ]
-    }
-  ],
-  "lineRendering": []
+  ]
 }

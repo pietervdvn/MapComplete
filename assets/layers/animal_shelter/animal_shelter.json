@@ -1,26 +1,27 @@
 {
   "id": "animal_shelter",
-  "credits": "Pieter Vander Vennet",
+  "name": {
+    "en": "Animal shelters"
+  },
+  "description": {
+    "en": "An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. "
+  },
   "source": {
     "osmTags": "amenity=animal_shelter"
   },
-  "presets": [
-    {
-      "title": {
-        "en": "an animal shelter"
-      },
-      "tags": [
-        "amenity=animal_shelter"
-      ]
-    }
-  ],
-  "lineRendering": [
-    {
-      "width": "1",
-      "lineCap": "square",
-      "color": "#b5835a"
-    }
-  ],
+  "title": {
+    "render": {
+      "en": "Animal shelter"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "{name}"
+        }
+      }
+    ]
+  },
   "pointRendering": [
     {
       "location": [
@@ -38,19 +39,23 @@
       ]
     }
   ],
-  "title": {
-    "render": {
-      "en": "Animal shelter"
-    },
-    "mappings": [
-      {
-        "if": "name~*",
-        "then": {
-          "en": "{name}"
-        }
-      }
-    ]
-  },
+  "lineRendering": [
+    {
+      "width": "1",
+      "lineCap": "square",
+      "color": "#b5835a"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "an animal shelter"
+      },
+      "tags": [
+        "amenity=animal_shelter"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     "reviews",
@@ -112,10 +117,5 @@
   ],
   "deletion": true,
   "allowMove": true,
-  "name": {
-    "en": "Animal shelters"
-  },
-  "description": {
-    "en": "An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. "
-  }
+  "credits": "Pieter Vander Vennet"
 }

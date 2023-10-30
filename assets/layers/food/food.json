@@ -11,6 +11,16 @@
     "pl": "Restauracje i fast-foody",
     "cs": "Restaurace a rychlé občerstvení"
   },
+  "description": {
+    "en": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
+    "nl": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)",
+    "de": "Eine Ebene mit Restaurants und Fast-Food-Einrichtungen (mit speziellem Rendering für Pommesbuden)",
+    "es": "Una capa mostrando restaurantes y locales de comida rápida (con un renderizado especial para friterías)",
+    "fr": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
+    "ca": "Una capa que mostra restaurants i locals de menjar ràpid (amb un renderitzat especial per a fregiduries)",
+    "cs": "Vrstva zobrazující restaurace a zařízení rychlého občerstvení (se speciálním vykreslením pro fritézy)",
+    "pl": "Warstwa przedstawiająca restauracje i obiekty typu fast-food (ze specjalnym renderowaniem dla frytek)"
+  },
   "source": {
     "osmTags": {
       "or": [
@@ -20,6 +30,143 @@
     }
   },
   "minzoom": 12,
+  "title": {
+    "render": {
+      "en": "Restaurant",
+      "nl": "Eetgelegenheid",
+      "ca": "Restaurant",
+      "de": "Restaurant",
+      "es": "Restaurante",
+      "fr": "Restaurant",
+      "pa_PK": "بھون آلہ",
+      "pl": "Restauracja",
+      "cs": "Restaurace"
+    },
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "name~*",
+            "amenity=restaurant"
+          ]
+        },
+        "then": {
+          "nl": "Restaurant <i>{name}</i>",
+          "en": "Restaurant <i>{name}</i>",
+          "de": "Restaurant <i>{name}</i>",
+          "ca": "Restaurant <i>{name}</i>",
+          "es": "Restaurante <i>{name}</i>",
+          "fr": "Restaurant <i>{name}</i>",
+          "pl": "Restauracja <i>{name}</i>",
+          "cs": "Restaurace <i>{name}</i>"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "name~*",
+            "amenity=fast_food"
+          ]
+        },
+        "then": {
+          "nl": "Fastfood-zaak <i>{name}</i>",
+          "en": "Fastfood <i>{name}</i>",
+          "de": "Schnellimbiss <i>{name}</i>",
+          "ca": "Lloc de menjar ràpid <i>{name}</i>",
+          "es": "Comida rápida <i>{name}</i>",
+          "fr": "Fast-food <i>{name}</i>",
+          "cs": "Rychlé občerstvení <i>{name}</i>"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "amenity=fast_food"
+          ]
+        },
+        "then": {
+          "nl": "Fastfood-zaak",
+          "en": "Fastfood",
+          "de": "Schnellimbiss",
+          "ca": "Menjar ràpid",
+          "es": "Comida rápida",
+          "fr": "Fast-food",
+          "cs": "Rychlé občerstvení"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        },
+        {
+          "if": {
+            "or": [
+              "diet:vegetarian=yes",
+              "diet:vegan=yes"
+            ]
+          },
+          "then": {
+            "render": "circle:white;./assets/layers/food/Vegetarian-mark.svg"
+          }
+        },
+        {
+          "if": {
+            "or": [
+              "organic=yes",
+              "organic=only"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/food/organic.svg"
+          }
+        }
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      },
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/food/restaurant.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "amenity=fast_food",
+                    "cuisine=friture"
+                  ]
+                },
+                "then": "./assets/layers/food/fries.svg"
+              },
+              {
+                "if": "amenity=fast_food",
+                "then": "./assets/layers/food/fastfood.svg"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
   "presets": [
     {
       "title": {
@@ -93,72 +240,6 @@
       }
     }
   ],
-  "title": {
-    "render": {
-      "en": "Restaurant",
-      "nl": "Eetgelegenheid",
-      "ca": "Restaurant",
-      "de": "Restaurant",
-      "es": "Restaurante",
-      "fr": "Restaurant",
-      "pa_PK": "بھون آلہ",
-      "pl": "Restauracja",
-      "cs": "Restaurace"
-    },
-    "mappings": [
-      {
-        "if": {
-          "and": [
-            "name~*",
-            "amenity=restaurant"
-          ]
-        },
-        "then": {
-          "nl": "Restaurant <i>{name}</i>",
-          "en": "Restaurant <i>{name}</i>",
-          "de": "Restaurant <i>{name}</i>",
-          "ca": "Restaurant <i>{name}</i>",
-          "es": "Restaurante <i>{name}</i>",
-          "fr": "Restaurant <i>{name}</i>",
-          "pl": "Restauracja <i>{name}</i>",
-          "cs": "Restaurace <i>{name}</i>"
-        }
-      },
-      {
-        "if": {
-          "and": [
-            "name~*",
-            "amenity=fast_food"
-          ]
-        },
-        "then": {
-          "nl": "Fastfood-zaak <i>{name}</i>",
-          "en": "Fastfood <i>{name}</i>",
-          "de": "Schnellimbiss <i>{name}</i>",
-          "ca": "Lloc de menjar ràpid <i>{name}</i>",
-          "es": "Comida rápida <i>{name}</i>",
-          "fr": "Fast-food <i>{name}</i>",
-          "cs": "Rychlé občerstvení <i>{name}</i>"
-        }
-      },
-      {
-        "if": {
-          "and": [
-            "amenity=fast_food"
-          ]
-        },
-        "then": {
-          "nl": "Fastfood-zaak",
-          "en": "Fastfood",
-          "de": "Schnellimbiss",
-          "ca": "Menjar ràpid",
-          "es": "Comida rápida",
-          "fr": "Fast-food",
-          "cs": "Rychlé občerstvení"
-        }
-      }
-    ]
-  },
   "tagRenderings": [
     "images",
     {
@@ -1257,86 +1338,5 @@
       }
     ]
   },
-  "allowMove": true,
-  "description": {
-    "en": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
-    "nl": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)",
-    "de": "Eine Ebene mit Restaurants und Fast-Food-Einrichtungen (mit speziellem Rendering für Pommesbuden)",
-    "es": "Una capa mostrando restaurantes y locales de comida rápida (con un renderizado especial para friterías)",
-    "fr": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
-    "ca": "Una capa que mostra restaurants i locals de menjar ràpid (amb un renderitzat especial per a fregiduries)",
-    "cs": "Vrstva zobrazující restaurace a zařízení rychlého občerstvení (se speciálním vykreslením pro fritézy)",
-    "pl": "Warstwa przedstawiająca restauracje i obiekty typu fast-food (ze specjalnym renderowaniem dla frytek)"
-  },
-  "pointRendering": [
-    {
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        },
-        {
-          "if": {
-            "or": [
-              "diet:vegetarian=yes",
-              "diet:vegan=yes"
-            ]
-          },
-          "then": {
-            "render": "circle:white;./assets/layers/food/Vegetarian-mark.svg"
-          }
-        },
-        {
-          "if": {
-            "or": [
-              "organic=yes",
-              "organic=only"
-            ]
-          },
-          "then": {
-            "render": "./assets/layers/food/organic.svg"
-          }
-        }
-      ],
-      "label": {
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
-          }
-        ]
-      },
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "marker": [
-        {
-          "icon": "circle",
-          "color": "white"
-        },
-        {
-          "icon": {
-            "render": "./assets/layers/food/restaurant.svg",
-            "mappings": [
-              {
-                "if": {
-                  "and": [
-                    "amenity=fast_food",
-                    "cuisine=friture"
-                  ]
-                },
-                "then": "./assets/layers/food/fries.svg"
-              },
-              {
-                "if": "amenity=fast_food",
-                "then": "./assets/layers/food/fastfood.svg"
-              }
-            ]
-          }
-        }
-      ]
-    }
-  ],
-  "lineRendering": []
+  "allowMove": true
 }

@@ -24,10 +24,22 @@
     "he": "ספסלים",
     "eu": "Bankuak"
   },
-  "minzoom": 14,
+  "description": {
+    "nl": "Een zitbank is een houten, metalen, stenen, … oppervlak waar een mens kan zitten. Deze laag toont ze en stelt er enkele vragen over.",
+    "en": "A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them.",
+    "fr": "Un banc est une surface en bois, métal, pierre… sur laquelle un humain peut s'asseoir. Cette couche permet de les visualiser et pose des questions à leur sujet.",
+    "de": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, … dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen.",
+    "es": "Un banco es una superficie de madera, metal, piedra, ... donde un humano se puede sentar. Estas capas los visualizan y hacen algunas preguntas sobre ellos.",
+    "da": "En bænk er en træ-, metal-, sten-, ... overflade, hvor et menneske kan sidde. Dette lag visualiserer dem og stiller et par spørgsmål om dem.",
+    "cs": "Lavička je dřevěná, kovová, kamenná, ... plocha, na které může člověk sedět. Tato vrstva je vizualizuje a klade si o nich několik otázek.",
+    "ca": "Un banc és una superfície de madera, metall, pedra, … on un humà s’hi pot sentar. Aquesta capa els mostra i fa algunes preguntes sobre ells.",
+    "he": "ספסל הוא משטח עץ, מתכת, אבן, ... בו אדם יכול לשבת. השכבות הללו מדמות אותן ושואלות עליהן מספר שאלות.",
+    "pt_BR": "Um banco é uma superfície de madeira, metal, pedra, etc., onde uma pessoa pode se sentar. Essa camada os visualiza e faz algumas perguntas sobre eles."
+  },
   "source": {
     "osmTags": "amenity=bench"
   },
+  "minzoom": 14,
   "title": {
     "render": {
       "en": "Bench",
@@ -54,18 +66,62 @@
       "eu": "Bankua"
     }
   },
-  "description": {
-    "nl": "Een zitbank is een houten, metalen, stenen, … oppervlak waar een mens kan zitten. Deze laag toont ze en stelt er enkele vragen over.",
-    "en": "A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them.",
-    "fr": "Un banc est une surface en bois, métal, pierre… sur laquelle un humain peut s'asseoir. Cette couche permet de les visualiser et pose des questions à leur sujet.",
-    "de": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, … dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen.",
-    "es": "Un banco es una superficie de madera, metal, piedra, ... donde un humano se puede sentar. Estas capas los visualizan y hacen algunas preguntas sobre ellos.",
-    "da": "En bænk er en træ-, metal-, sten-, ... overflade, hvor et menneske kan sidde. Dette lag visualiserer dem og stiller et par spørgsmål om dem.",
-    "cs": "Lavička je dřevěná, kovová, kamenná, ... plocha, na které může člověk sedět. Tato vrstva je vizualizuje a klade si o nich několik otázek.",
-    "ca": "Un banc és una superfície de madera, metall, pedra, … on un humà s’hi pot sentar. Aquesta capa els mostra i fa algunes preguntes sobre ells.",
-    "he": "ספסל הוא משטח עץ, מתכת, אבן, ... בו אדם יכול לשבת. השכבות הללו מדמות אותן ושואלות עליהן מספר שאלות.",
-    "pt_BR": "Um banco é uma superfície de madeira, metal, pedra, etc., onde uma pessoa pode se sentar. Essa camada os visualiza e faz algumas perguntas sobre eles."
-  },
+  "pointRendering": [
+    {
+      "iconSize": "35,35",
+      "iconBadges": [
+        {
+          "if": "tourism=artwork",
+          "then": "circle:white;./assets/layers/artwork/artwork.svg"
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "#99bd54"
+        },
+        {
+          "icon": "./assets/layers/bench/bench.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "tags": [
+        "amenity=bench"
+      ],
+      "title": {
+        "en": "a bench",
+        "de": "eine Sitzbank",
+        "fr": "une banc",
+        "nl": "een zitbank",
+        "es": "una banco",
+        "it": "una panchina",
+        "ru": "cкамейка",
+        "id": "bangku",
+        "zh_Hans": "长椅",
+        "nb_NO": "en benk",
+        "zh_Hant": "長椅",
+        "pt_BR": "um banco",
+        "fi": "penkki",
+        "pl": "Ławka",
+        "pt": "uma banco",
+        "ca": "un banc",
+        "da": "en bænk",
+        "cs": "lavička"
+      },
+      "presiceInput": {
+        "preferredBackground": "photo"
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -1030,49 +1086,6 @@
       }
     }
   ],
-  "presets": [
-    {
-      "tags": [
-        "amenity=bench"
-      ],
-      "title": {
-        "en": "a bench",
-        "de": "eine Sitzbank",
-        "fr": "une banc",
-        "nl": "een zitbank",
-        "es": "una banco",
-        "it": "una panchina",
-        "ru": "cкамейка",
-        "id": "bangku",
-        "zh_Hans": "长椅",
-        "nb_NO": "en benk",
-        "zh_Hant": "長椅",
-        "pt_BR": "um banco",
-        "fi": "penkki",
-        "pl": "Ławka",
-        "pt": "uma banco",
-        "ca": "un banc",
-        "da": "en bænk",
-        "cs": "lavička"
-      },
-      "presiceInput": {
-        "preferredBackground": "photo"
-      }
-    }
-  ],
-  "deletion": {
-    "softDeletionTags": {
-      "and": [
-        "disused:amenity=bench",
-        "amenity="
-      ]
-    },
-    "neededChangesets": 1
-  },
-  "allowMove": {
-    "enableRelocation": false,
-    "enableImproveAccuraccy": true
-  },
   "filter": [
     {
       "id": "bench_is_memorial",
@@ -1145,30 +1158,17 @@
     },
     "has_image"
   ],
-  "pointRendering": [
-    {
-      "iconSize": "35,35",
-      "iconBadges": [
-        {
-          "if": "tourism=artwork",
-          "then": "circle:white;./assets/layers/artwork/artwork.svg"
-        }
-      ],
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center",
-      "marker": [
-        {
-          "icon": "circle",
-          "color": "#99bd54"
-        },
-        {
-          "icon": "./assets/layers/bench/bench.svg"
-        }
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:amenity=bench",
+        "amenity="
       ]
-    }
-  ],
-  "lineRendering": []
+    },
+    "neededChangesets": 1
+  },
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuraccy": true
+  }
 }

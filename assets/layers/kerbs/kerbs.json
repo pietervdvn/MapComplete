@@ -38,6 +38,74 @@
       "cs": "Obrubník"
     }
   },
+  "pointRendering": [
+    {
+      "location": [
+        "point"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/kerbs/KerbIcon.svg",
+            "mappings": [
+              {
+                "if": "kerb=raised",
+                "then": "./assets/layers/kerbs/raised.svg"
+              },
+              {
+                "if": "kerb=lowered",
+                "then": "./assets/layers/kerbs/lowered.svg"
+              },
+              {
+                "if": "kerb=flush",
+                "then": "./assets/layers/kerbs/flush.svg"
+              },
+              {
+                "if": "kerb=no",
+                "then": "./assets/layers/kerbs/no.svg"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#f44e42",
+      "fill": "no",
+      "width": "8"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a kerb",
+        "nl": "een stoeprand",
+        "de": "einen Bordstein",
+        "fr": "une bordure",
+        "ru": "бордюр",
+        "pl": "krawężnik",
+        "ca": "una vorada",
+        "cs": "obrubník"
+      },
+      "tags": [
+        "barrier=kerb"
+      ],
+      "description": {
+        "en": "Kerb in a footway",
+        "nl": "Stoeprand in een voetpad",
+        "de": "Bordstein in einem Fußweg",
+        "fr": "Bordure dans un trottoir",
+        "cs": "Obrubník na chodníku"
+      },
+      "snapToLayer": [
+        "cycleways_and_roads",
+        "kerbs"
+      ],
+      "maxSnapDistance": 10
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -242,35 +310,6 @@
       ]
     }
   ],
-  "presets": [
-    {
-      "title": {
-        "en": "a kerb",
-        "nl": "een stoeprand",
-        "de": "einen Bordstein",
-        "fr": "une bordure",
-        "ru": "бордюр",
-        "pl": "krawężnik",
-        "ca": "una vorada",
-        "cs": "obrubník"
-      },
-      "tags": [
-        "barrier=kerb"
-      ],
-      "description": {
-        "en": "Kerb in a footway",
-        "nl": "Stoeprand in een voetpad",
-        "de": "Bordstein in einem Fußweg",
-        "fr": "Bordure dans un trottoir",
-        "cs": "Obrubník na chodníku"
-      },
-      "snapToLayer": [
-        "cycleways_and_roads",
-        "kerbs"
-      ],
-      "maxSnapDistance": 10
-    }
-  ],
   "filter": [
     {
       "id": "kerb-type",
@@ -418,45 +457,6 @@
       "appliesToKey": [
         "kerb:height"
       ]
-    }
-  ],
-  "pointRendering": [
-    {
-      "location": [
-        "point"
-      ],
-      "marker": [
-        {
-          "icon": {
-            "render": "./assets/layers/kerbs/KerbIcon.svg",
-            "mappings": [
-              {
-                "if": "kerb=raised",
-                "then": "./assets/layers/kerbs/raised.svg"
-              },
-              {
-                "if": "kerb=lowered",
-                "then": "./assets/layers/kerbs/lowered.svg"
-              },
-              {
-                "if": "kerb=flush",
-                "then": "./assets/layers/kerbs/flush.svg"
-              },
-              {
-                "if": "kerb=no",
-                "then": "./assets/layers/kerbs/no.svg"
-              }
-            ]
-          }
-        }
-      ]
-    }
-  ],
-  "lineRendering": [
-    {
-      "color": "#f44e42",
-      "fill": "no",
-      "width": "8"
     }
   ]
 }
