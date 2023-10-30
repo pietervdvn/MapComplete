@@ -17,6 +17,20 @@
     "cs": "Cyklistická infrastruktura",
     "pl": "Infrastruktura rowerowa"
   },
+  "description": {
+    "en": "A map where you can view and edit things related to the bicycle infrastructure. Made during #osoc21.",
+    "nl": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken. Gemaakt tijdens #osoc21.",
+    "de": "Eine Karte zum Ansehen und Bearbeiten verschiedener Elementen der Fahrradinfrastruktur. Erstellt während #osoc21.",
+    "it": "Una cartina dove vedere e modificare gli elementi riguardanti l’infrastruttura dei velocipedi. Realizzata durante #osoc21.",
+    "zh_Hant": "可以檢視與編輯單車相關設施的地圖，在 #os0c21時製作。",
+    "hu": "Kerékpáros infrastruktúrával kapcsolatos dolgokat megjelenítő és szerkesztésre felkínáló térkép. Az #osoc21 (Open Summer of Code) alatt készült.",
+    "fr": "Une carte montrant les aménagements cyclables et où l’on peut rajouter des informations. Réalisée durant #osoc21.",
+    "es": "Un mapa en el que puedes ver y editar cosas relacionadas con la infraestructura ciclista. Hecho durante #osoc21.",
+    "ca": "Un mapa on es poden veure i editar coses relacionades amb la infraestructura ciclista. Fet durant #osoc21.",
+    "da": "Et kort, hvor du kan se og redigere ting relateret til cykelinfrastrukturen. Lavet under #osoc21.",
+    "cs": "Mapa, kde můžete prohlížet a upravovat věci související s cyklistickou infrastrukturou. Vytvořeno během #osoc21.",
+    "pl": "Mapa, na której możesz przeglądać i edytować rzeczy związane z infrastrukturą rowerową. Wykonane podczas #osoc21."
+  },
   "shortDescription": {
     "en": "A map where you can view and edit things related to the bicycle infrastructure.",
     "nl": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken.",
@@ -32,31 +46,17 @@
     "cs": "Mapa, kde můžete prohlížet a upravovat věci související s cyklistickou infrastrukturou.",
     "pl": "Mapa, na której możesz przeglądać i edytować rzeczy związane z infrastrukturą rowerową."
   },
-  "description": {
-    "en": "A map where you can view and edit things related to the bicycle infrastructure. Made during #osoc21.",
-    "nl": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken. Gemaakt tijdens #osoc21.",
-    "de": "Eine Karte zum Ansehen und Bearbeiten verschiedener Elementen der Fahrradinfrastruktur. Erstellt während #osoc21.",
-    "it": "Una cartina dove vedere e modificare gli elementi riguardanti l’infrastruttura dei velocipedi. Realizzata durante #osoc21.",
-    "zh_Hant": "可以檢視與編輯單車相關設施的地圖，在 #os0c21時製作。",
-    "hu": "Kerékpáros infrastruktúrával kapcsolatos dolgokat megjelenítő és szerkesztésre felkínáló térkép. Az #osoc21 (Open Summer of Code) alatt készült.",
-    "fr": "Une carte montrant les aménagements cyclables et où l’on peut rajouter des informations. Réalisée durant #osoc21.",
-    "es": "Un mapa en el que puedes ver y editar cosas relacionadas con la infraestructura ciclista. Hecho durante #osoc21.",
-    "ca": "Un mapa on es poden veure i editar coses relacionades amb la infraestructura ciclista. Fet durant #osoc21.",
-    "da": "Et kort, hvor du kan se og redigere ting relateret til cykelinfrastrukturen. Lavet under #osoc21.",
-    "cs": "Mapa, kde můžete prohlížet a upravovat věci související s cyklistickou infrastrukturou. Vytvořeno během #osoc21.",
-    "pl": "Mapa, na której możesz przeglądać i edytować rzeczy związane z infrastrukturą rowerową. Wykonane podczas #osoc21."
-  },
-  "hideFromOverview": false,
   "icon": "./assets/themes/cycle_infra/cycle-infra.svg",
+  "socialImage": "./assets/themes/cycle_infra/cycle-infra.svg",
+  "startZoom": 11,
   "startLat": 51,
   "startLon": 3.75,
-  "startZoom": 11,
-  "widenFactor": 1.5,
-  "socialImage": "./assets/themes/cycle_infra/cycle-infra.svg",
-  "enableDownload": true,
+  "hideFromOverview": false,
   "layers": [
     "cycleways_and_roads",
     "barrier",
     "crossings"
-  ]
+  ],
+  "enableDownload": true,
+  "widenFactor": 1.5
 }

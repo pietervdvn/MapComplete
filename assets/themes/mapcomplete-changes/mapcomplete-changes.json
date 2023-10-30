@@ -10,15 +10,6 @@
     "es": "Cambios realizados con MapComplete",
     "pl": "Zmiany wprowadzone za pomocą MapComplete"
   },
-  "shortDescription": {
-    "en": "Show changes made with MapComplete",
-    "ca": "Mostra els canvis fets amb MapComplete",
-    "de": "Mit MapComplete erstellte Änderungen anzeigen",
-    "nl": "Toon wijzigingen gemaakt met MapComplete",
-    "cs": "Zobrazení změn provedených pomocí nástroje MapComplete",
-    "es": "Mostrar cambios realizados con MapComplete",
-    "pl": "Pokaż zmiany wprowadzone za pomocą MapComplete"
-  },
   "description": {
     "en": "This maps shows all the changes made with MapComplete",
     "ca": "Aquest mapa mostra tots els canvis fets amb MapComplete",
@@ -29,13 +20,17 @@
     "cs": "Tato mapa zobrazuje všechny změny provedené pomocí MapComplete",
     "es": "Este mapa muestra todos los cambios realizados con MapComplete"
   },
+  "shortDescription": {
+    "en": "Show changes made with MapComplete",
+    "ca": "Mostra els canvis fets amb MapComplete",
+    "de": "Mit MapComplete erstellte Änderungen anzeigen",
+    "nl": "Toon wijzigingen gemaakt met MapComplete",
+    "cs": "Zobrazení změn provedených pomocí nástroje MapComplete",
+    "es": "Mostrar cambios realizados con MapComplete",
+    "pl": "Pokaż zmiany wprowadzone za pomocą MapComplete"
+  },
   "icon": "./assets/svg/logo.svg",
   "hideFromOverview": true,
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 0.05,
-  "clustering": false,
   "layers": [
     {
       "id": "mapcomplete-changes",
@@ -769,5 +764,7 @@
         ]
       }
     }
-  ]
+  ],
+  "widenFactor": 0.05,
+  "clustering": false
 }

@@ -34,14 +34,14 @@
     "es": "Mapa de aseos públicos",
     "cs": "Mapa veřejných toalet"
   },
+  "icon": "./assets/themes/toilets/toilets.svg",
   "startZoom": 12,
   "startLat": 51.2095,
   "startLon": 3.2222,
-  "widenFactor": 3,
-  "icon": "./assets/themes/toilets/toilets.svg",
   "layers": [
     "toilet",
     "toilet_at_amenity",
     "shower"
-  ]
+  ],
+  "widenFactor": 3
 }

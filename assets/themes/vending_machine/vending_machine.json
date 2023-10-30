@@ -21,9 +21,9 @@
     "pl": "Znajdź wszelakie automaty sprzedające"
   },
   "icon": "./assets/layers/vending_machine/vending_machine.svg",
+  "startZoom": 19,
   "startLat": 53.21102,
   "startLon": 6.56511,
-  "startZoom": 19,
   "layers": [
     "vending_machine",
     {

@@ -13,18 +13,6 @@
     "zh_Hant": "投入自然懷抱",
     "pl": "W naturze"
   },
-  "shortDescription": {
-    "en": "A map for nature lovers, with interesting POI's",
-    "nl": "Deze kaart bevat informatie voor natuurliefhebbers",
-    "de": "Eine Karte mit interessanten Orten für Naturliebhaber",
-    "es": "Un mapa para amantes de la naturaleza, con PDIs interesantes",
-    "fr": "Une carte pour les amoureux de la nature",
-    "da": "Et kort for naturelskere med interessante POI'er",
-    "cs": "Mapa pro milovníky přírody se zajímavými body zájmu",
-    "ca": "Un mapa per als amants de la natura, amb PDI interessants",
-    "zh_Hant": "為了自然愛好者，以及有趣的興趣點的地圖",
-    "pl": "Mapa dla miłośników przyrody z ciekawymi punktami POI"
-  },
   "description": {
     "en": "On this map, one can find interesting information for tourists and nature lovers.",
     "nl": "Op deze kaart vind je informatie voor natuurliefhebbers, zoals info over het natuurgebied waar je inzit, vogelkijkhutten, informatieborden, ...",
@@ -37,11 +25,22 @@
     "zh_Hant": "在這份地圖，你可以找到觀光客與自然愛好者感興趣的資訊...",
     "pl": "Na tej mapie można znaleźć ciekawe informacje dla turystów i miłośników przyrody."
   },
+  "shortDescription": {
+    "en": "A map for nature lovers, with interesting POI's",
+    "nl": "Deze kaart bevat informatie voor natuurliefhebbers",
+    "de": "Eine Karte mit interessanten Orten für Naturliebhaber",
+    "es": "Un mapa para amantes de la naturaleza, con PDIs interesantes",
+    "fr": "Une carte pour les amoureux de la nature",
+    "da": "Et kort for naturelskere med interessante POI'er",
+    "cs": "Mapa pro milovníky přírody se zajímavými body zájmu",
+    "ca": "Un mapa per als amants de la natura, amb PDI interessants",
+    "zh_Hant": "為了自然愛好者，以及有趣的興趣點的地圖",
+    "pl": "Mapa dla miłośników przyrody z ciekawymi punktami POI"
+  },
   "icon": "./assets/themes/nature/logo.svg",
+  "startZoom": 12,
   "startLat": 51.20875,
   "startLon": 3.22435,
-  "startZoom": 12,
-  "widenFactor": 2,
   "layers": [
     "drinking_water",
     "birdhide",
@@ -59,5 +58,6 @@
         "minzoom": 16
       }
     }
-  ]
+  ],
+  "widenFactor": 2
 }

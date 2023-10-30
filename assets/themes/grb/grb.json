@@ -3,9 +3,6 @@
   "title": {
     "nl": "GRB import helper"
   },
-  "shortDescription": {
-    "nl": "Grb import helper tool"
-  },
   "description": {
     "nl": "Dit thema helpt het GRB importeren.",
     "en": "This theme is an attempt to help automating the GRB import.",
@@ -18,17 +15,18 @@
     "cs": "Toto téma je pokusem o automatizaci importu GRB.",
     "pl": "Ten temat jest próbą pomocy w automatyzacji importu GRB."
   },
+  "shortDescription": {
+    "nl": "Grb import helper tool"
+  },
   "icon": "./assets/themes/grb/logo.svg",
+  "startZoom": 9,
   "startLat": 51.0249,
   "startLon": 4.026489,
-  "startZoom": 9,
-  "widenFactor": 2,
-  "clustering": {
-    "maxZoom": 15
-  },
-  "overrideAll": {
-    "minzoom": 15
-  },
+  "defaultBackgroundId": "AGIVFlandersGRB",
+  "credits": [
+    "Pieter Vander Vennet"
+  ],
+  "hideFromOverview": true,
   "layers": [
     {
       "id": "osm-buildings",
@@ -678,11 +676,13 @@
       }
     }
   ],
-  "hideFromOverview": true,
-  "defaultBackgroundId": "AGIVFlandersGRB",
+  "overrideAll": {
+    "minzoom": 15
+  },
+  "widenFactor": 2,
   "overpassMaxZoom": 15,
   "osmApiTileSize": 17,
-  "credits": [
-    "Pieter Vander Vennet"
-  ]
+  "clustering": {
+    "maxZoom": 15
+  }
 }

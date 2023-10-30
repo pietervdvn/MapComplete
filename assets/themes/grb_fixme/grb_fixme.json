@@ -3,25 +3,18 @@
   "title": {
     "nl": "GRB Fixup"
   },
-  "shortDescription": {
-    "nl": "Grb Fixup"
-  },
   "description": {
     "nl": "Gebouwen met een FIXME - wss GRB-import die gefixed moeten worden"
   },
+  "shortDescription": {
+    "nl": "Grb Fixup"
+  },
   "icon": "./assets/svg/bug.svg",
+  "startZoom": 14,
   "startLat": 51.2132,
   "startLon": 3.231,
-  "startZoom": 14,
-  "widenFactor": 2,
-  "clustering": {
-    "maxZoom": 15
-  },
-  "overrideAll": {
-    "source": {
-      "maxCacheAge": 0
-    }
-  },
+  "defaultBackgroundId": "AGIVFlandersGRB",
+  "hideFromOverview": true,
   "layers": [
     {
       "id": "osm-buildings-fixme",
@@ -246,8 +239,15 @@
       }
     }
   ],
-  "hideFromOverview": true,
-  "defaultBackgroundId": "AGIVFlandersGRB",
+  "overrideAll": {
+    "source": {
+      "maxCacheAge": 0
+    }
+  },
+  "widenFactor": 2,
   "overpassMaxZoom": 15,
-  "osmApiTileSize": 17
+  "osmApiTileSize": 17,
+  "clustering": {
+    "maxZoom": 15
+  }
 }

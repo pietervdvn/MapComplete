@@ -17,6 +17,22 @@
     "it": "Codici postali",
     "pl": "Kody pocztowe"
   },
+  "description": {
+    "en": "Postal codes",
+    "id": "Kode pos",
+    "hu": "Irányítószámok",
+    "de": "Postleitzahlen",
+    "ca": "Codis postals",
+    "es": "Códigos postales",
+    "nl": "Postcodes",
+    "fr": "Codes postaux",
+    "da": "Postnumre",
+    "nb_NO": "Postnummer",
+    "pa_PK": "ڈاک کوڈ",
+    "cs": "Poštovní směrovací čísla",
+    "zh_Hant": "郵遞區號",
+    "pl": "Kody pocztowe"
+  },
   "shortDescription": {
     "en": "Postal codes",
     "id": "Kode pos",
@@ -34,30 +50,8 @@
     "it": "Codici postali",
     "pl": "Kody pocztowe"
   },
-  "description": {
-    "en": "Postal codes",
-    "id": "Kode pos",
-    "hu": "Irányítószámok",
-    "de": "Postleitzahlen",
-    "ca": "Codis postals",
-    "es": "Códigos postales",
-    "nl": "Postcodes",
-    "fr": "Codes postaux",
-    "da": "Postnumre",
-    "nb_NO": "Postnummer",
-    "pa_PK": "ڈاک کوڈ",
-    "cs": "Poštovní směrovací čísla",
-    "zh_Hant": "郵遞區號",
-    "pl": "Kody pocztowe"
-  },
   "icon": "./assets/themes/postal_codes/townhall.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 0.05,
   "hideFromOverview": true,
-  "clustering": false,
-  "overpassTimeout": 180,
   "layers": [
     {
       "id": "postal_code_boundary",
@@ -208,5 +202,8 @@
         {}
       ]
     }
-  ]
+  ],
+  "overpassTimeout": 180,
+  "widenFactor": 0.05,
+  "clustering": false
 }

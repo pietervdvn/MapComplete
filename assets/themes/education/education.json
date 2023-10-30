@@ -1,16 +1,5 @@
 {
   "id": "education",
-  "description": {
-    "en": "On this map, you'll find information about all types of schools and education and can easily add more information",
-    "nl": "Deze kaart toont info over verschillende onderwijsinstellingen zoals kleuterscholen, middelbare scholen en tertiair onderwijs.",
-    "de": "Auf dieser Karte können Sie Informationen über Bildungseinrichtungen finden und hinzufügen",
-    "fr": "Sur cette carte, vous trouverez des informations concernant tous les types d'écoles et d'enseignement. Vous pouvez facilement ajouter plus d'informations",
-    "ca": "En aquest mapa trobareu informació sobre tots els tipus d'escoles i educació i podreu afegir fàcilment més informació",
-    "da": "På dette kort finder du information om alle typer skoler og uddannelse og kan nemt tilføje flere oplysninger",
-    "cs": "Na této mapě najdete informace o všech typech škol a vzdělávání a můžete snadno přidat další informace",
-    "es": "En este mapa, encontrará información sobre todos los tipos de escuelas y centros de educación y puede añadir fácilmente más información",
-    "pl": "Na tej mapie znajdziesz informacje o wszystkich typach szkół i edukacji, a także możesz łatwo dodać więcej informacji"
-  },
   "title": {
     "en": "Education",
     "nl": "Onderwijs",
@@ -25,14 +14,22 @@
     "eu": "Hezkuntza",
     "pl": "Edukacja"
   },
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 0,
+  "description": {
+    "en": "On this map, you'll find information about all types of schools and education and can easily add more information",
+    "nl": "Deze kaart toont info over verschillende onderwijsinstellingen zoals kleuterscholen, middelbare scholen en tertiair onderwijs.",
+    "de": "Auf dieser Karte können Sie Informationen über Bildungseinrichtungen finden und hinzufügen",
+    "fr": "Sur cette carte, vous trouverez des informations concernant tous les types d'écoles et d'enseignement. Vous pouvez facilement ajouter plus d'informations",
+    "ca": "En aquest mapa trobareu informació sobre tots els tipus d'escoles i educació i podreu afegir fàcilment més informació",
+    "da": "På dette kort finder du information om alle typer skoler og uddannelse og kan nemt tilføje flere oplysninger",
+    "cs": "Na této mapě najdete informace o všech typech škol a vzdělávání a můžete snadno přidat další informace",
+    "es": "En este mapa, encontrará información sobre todos los tipos de escuelas y centros de educación y puede añadir fácilmente más información",
+    "pl": "Na tej mapie znajdziesz informacje o wszystkich typach szkół i edukacji, a także możesz łatwo dodać więcej informacji"
+  },
   "icon": "./assets/layers/school/college.svg",
-  "#layers:note": "kindergarten_childcare must be _below_ school, as it can 'catch' primary schools which do have an integrated preschool",
   "layers": [
     "tertiary_education",
     "school",
     "kindergarten_childcare"
-  ]
+  ],
+  "#layers:note": "kindergarten_childcare must be _below_ school, as it can 'catch' primary schools which do have an integrated preschool"
 }

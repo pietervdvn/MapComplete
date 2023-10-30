@@ -25,10 +25,9 @@
     "pl": "Na tej mapie pokazane są tęczowo pomalowane przejścia dla pieszych, które można łatwo dodać"
   },
   "icon": "./assets/themes/rainbow_crossings/logo.svg",
+  "startZoom": 16,
   "startLat": 50.8465573,
   "startLon": 4.351697,
-  "startZoom": 16,
-  "widenFactor": 2,
   "layers": [
     {
       "builtin": "rainbow_crossings",
@@ -54,5 +53,6 @@
         "name": null
       }
     }
-  ]
+  ],
+  "widenFactor": 2
 }

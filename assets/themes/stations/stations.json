@@ -23,11 +23,8 @@
     "pl": "Przeglądaj, edytuj i dodawaj szczegóły do stacji kolejowej"
   },
   "icon": "./assets/themes/stations/rail-light.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 0,
-  "hideFromOverview": true,
   "defaultBackgroundId": "maptiler.backdrop",
+  "hideFromOverview": true,
   "layers": [
     {
       "builtin": "indoors",

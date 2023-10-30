@@ -9,10 +9,13 @@
     "nl": "Deze kaart toont wandelknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen"
   },
   "icon": "./assets/themes/walkingnodes/logo.svg",
-  "hideFromOverview": true,
+  "startZoom": 11,
   "startLat": 51.755515,
   "startLon": 14.327545,
-  "startZoom": 11,
+  "credits": [
+    "Sebastian Kürten"
+  ],
+  "hideFromOverview": true,
   "layers": [
     {
       "id": "node2node",
@@ -292,6 +295,5 @@
         "shownByDefault": false
       }
     }
-  ],
-  "credits": "Sebastian Kürten"
+  ]
 }

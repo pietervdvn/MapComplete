@@ -12,17 +12,6 @@
     "zh_Hant": "BAG 匯入助手",
     "pl": "Pomocnik importowy BAG"
   },
-  "shortDescription": {
-    "nl": "BAG import helper tool",
-    "en": "BAG import helper tool",
-    "de": "BAG-Import-Hilfswerkzeug",
-    "fr": "Outil de facilitation d'import BAG",
-    "ca": "Ferramenta d'ajuda per a importar el BAG",
-    "es": "Herramienta de ayuda a la importación BAG",
-    "cs": "Pomocný nástroj pro import BAG",
-    "eu": "BAGak inportatzen laguntzeko tresna",
-    "pl": "Narzędzie wspomagające import BAG"
-  },
   "description": {
     "nl": "Dit thema helpt het importeren van BAG data",
     "en": "This theme helps with importing data from BAG",
@@ -35,13 +24,25 @@
     "eu": "Gai honek BAGeko datuak inportatzen laguntzen du",
     "pl": "Motyw ten pomaga w importowaniu danych z BAG"
   },
+  "shortDescription": {
+    "nl": "BAG import helper tool",
+    "en": "BAG import helper tool",
+    "de": "BAG-Import-Hilfswerkzeug",
+    "fr": "Outil de facilitation d'import BAG",
+    "ca": "Ferramenta d'ajuda per a importar el BAG",
+    "es": "Herramienta de ayuda a la importación BAG",
+    "cs": "Pomocný nástroj pro import BAG",
+    "eu": "BAGak inportatzen laguntzeko tresna",
+    "pl": "Narzędzie wspomagające import BAG"
+  },
+  "icon": "./assets/themes/bag/logo.svg",
+  "startZoom": 9,
+  "startLat": 53.1726,
+  "startLon": 7.04545,
   "credits": [
     "Wouter van der Wal"
   ],
-  "icon": "./assets/themes/bag/logo.svg",
-  "startLat": 53.1726,
-  "startLon": 7.04545,
-  "startZoom": 9,
+  "hideFromOverview": true,
   "layers": [
     {
       "id": "osm:buildings",
@@ -402,6 +403,5 @@
         }
       ]
     }
-  ],
-  "hideFromOverview": true
+  ]
 }

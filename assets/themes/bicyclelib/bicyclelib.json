@@ -40,10 +40,6 @@
     "pl": "Biblioteka rowerowa to miejsce, w którym można wypożyczyć rowery, często za niewielką opłatą roczną. Godnym uwagi przypadkiem zastosowania są biblioteki rowerowe dla dzieci, które pozwalają im zmienić rower na większy, gdy wyrosną z obecnego roweru"
   },
   "icon": "./assets/themes/bicyclelib/logo.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 1.5,
   "layers": [
     {
       "builtin": "bicycle_library",
@@ -51,5 +47,6 @@
         "minzoom": 0
       }
     }
-  ]
+  ],
+  "widenFactor": 1.5
 }

@@ -35,6 +35,9 @@
   "startZoom": 19,
   "startLat": 52.99319,
   "startLon": 6.56113,
+  "credits": [
+    "Robin van der Linde"
+  ],
   "layers": [
     "street_lamps",
     {
@@ -349,8 +352,5 @@
         {}
       ]
     }
-  ],
-  "credits": [
-    "Robin van der Linde"
   ]
 }

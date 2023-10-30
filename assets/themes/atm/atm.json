@@ -32,9 +32,6 @@
     "pl": "Ta mapa pokazuje bankomaty, w których można wypłacać lub wpłacać pieniądze"
   },
   "icon": "./assets/themes/atm/logo.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 0,
   "layers": [
     "atm",
     {

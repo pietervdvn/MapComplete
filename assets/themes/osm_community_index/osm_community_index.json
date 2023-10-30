@@ -31,11 +31,11 @@
     "pl": "Indeks zasobów społeczności dotyczących OpenStreetMap."
   },
   "icon": "./assets/themes/osm_community_index/osm.svg",
+  "startZoom": 16,
   "startLat": 50.8465573,
   "startLon": 4.351697,
-  "startZoom": 16,
-  "clustering": false,
   "layers": [
     "osm_community_index"
-  ]
+  ],
+  "clustering": false
 }

@@ -16,20 +16,6 @@
     "es": "Etimología - a qué se debe el nombre de una calle?",
     "pl": "Etymologia - od czego pochodzi nazwa ulicy?"
   },
-  "shortDescription": {
-    "en": "What is the origin of a toponym?",
-    "nl": "Wat is de oorsprong van een plaatsnaam?",
-    "de": "Woher stammt der Name einer Straße oder eines Ortes?",
-    "it": "Qual è l’origine di un toponimo?",
-    "zh_Hant": "地名的由來是？",
-    "hu": "Mi az eredete egy helynévnek?",
-    "fr": "Quelle est l'origine de ce toponyme ?",
-    "es": "¿Cual es el origen de un topónimo?",
-    "ca": "Quin és l'origen d'un topònim?",
-    "da": "Hvad er oprindelsen af et stednavn?",
-    "cs": "Jaký je původ toponyma?",
-    "pl": "Jakie jest pochodzenie toponimów?"
-  },
   "description": {
     "en": "On this map, you can see what an object is named after. The streets, buildings, ... come from OpenStreetMap which got linked with Wikidata. In the popup, you'll see the Wikipedia article (if it exists) or a wikidata box of what the object is named after. If the object itself has a wikipedia page, that'll be shown too.<br/><br/><b>You can help contribute too!</b>Zoom in enough and <i>all</i> streets will show up. You can click one and a Wikidata-search box will popup. With a few clicks, you can add an etymology link. Note that you need a free OpenStreetMap account to do this.",
     "nl": "Op deze kaart zie je waar een plaats naar is vernoemd. De straten, gebouwen, ... komen uit OpenStreetMap, waar een link naar Wikidata werd gelegd. In de popup zie je het Wikipedia-artikel van hetgeen naarwaar het vernoemd is of de Wikidata-box.<br/><br/><b>Je kan zelf ook meehelpen!</b>Als je ver inzoomt, krijg je alle straten te zien. Klik je een straat aan, dan krijg je een zoekfunctie waarmee je snel een nieuwe link kan leggen. Je hebt hiervoor een gratis OpenStreetMap account nodig.",
@@ -44,15 +30,22 @@
     "ca": "En aquest mapa, podeu veure el nom d'un objecte. Els carrers, edificis, ... provenen d'OpenStreetMap que tenen un enllaça a Wikidata. A la finestra emergent, veuràs l'article de la Viquipèdia (si existeix) o un quadre de wikidata amb el nom de l'objecte. Si l'objecte en si té una pàgina de viquipèdia, també es mostrarà.<br/><br/><b>També pots ajudar a contribuir!</b>Amplia prou i <i>tots</i> els carrers apareixerà. Podeu fer clic en un i apareixerà un quadre de cerca de Wikidata. Amb uns quants clics, podeu afegir un enllaç d'etimologia. Tingueu en compte que necessiteu un compte d'OpenStreetMap gratuït per fer-ho.",
     "pl": "Na tej mapie możesz zobaczyć, od czego pochodzi nazwa obiektu. Ulice, budynki,... pochodzą z OpenStreetMap, który został powiązany z Wikidanymi. W wyskakującym okienku zobaczysz artykuł w Wikipedii (jeśli istnieje) lub pole wikidanych zawierające nazwę obiektu. Jeśli sam obiekt ma stronę w Wikipedii, ona również zostanie wyświetlona.<br/><br/><b>Ty też możesz pomóc!</b>Powiększ wystarczająco mapę i <i>wszystkie</i> ulice się pojawią. Możesz kliknąć jedną, a pojawi się okno wyszukiwania Wikidanych. Za pomocą kilku kliknięć możesz dodać odnośnik etymologiczny. Pamiętaj, że potrzebujesz do tego darmowego konta OpenStreetMap."
   },
-  "icon": "./assets/layers/etymology/logo.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 2,
-  "clustering": {
-    "maxZoom": 14,
-    "minNeededElements": 250
+  "shortDescription": {
+    "en": "What is the origin of a toponym?",
+    "nl": "Wat is de oorsprong van een plaatsnaam?",
+    "de": "Woher stammt der Name einer Straße oder eines Ortes?",
+    "it": "Qual è l’origine di un toponimo?",
+    "zh_Hant": "地名的由來是？",
+    "hu": "Mi az eredete egy helynévnek?",
+    "fr": "Quelle est l'origine de ce toponyme ?",
+    "es": "¿Cual es el origen de un topónimo?",
+    "ca": "Quin és l'origen d'un topònim?",
+    "da": "Hvad er oprindelsen af et stednavn?",
+    "cs": "Jaký je původ toponyma?",
+    "pl": "Jakie jest pochodzenie toponimów?"
   },
+  "icon": "./assets/layers/etymology/logo.svg",
+  "hideFromOverview": false,
   "layers": [
     "etymology",
     {
@@ -292,5 +285,9 @@
       }
     }
   ],
-  "hideFromOverview": false
+  "widenFactor": 2,
+  "clustering": {
+    "maxZoom": 14,
+    "minNeededElements": 250
+  }
 }

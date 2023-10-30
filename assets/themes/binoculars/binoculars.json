@@ -17,22 +17,6 @@
     "eu": "Binokularrak",
     "pl": "Lornetki"
   },
-  "shortDescription": {
-    "en": "A map with fixed binoculars",
-    "nl": "Een kaart met publieke verrekijker",
-    "de": "Eine Karte mit festinstallierten Ferngläsern",
-    "it": "Una cartina dei binocoli pubblici fissi",
-    "nb_NO": "Et kart over fastmonterte kikkerter",
-    "zh_Hant": "固定望遠鏡的地圖",
-    "hu": "Rögzített távcsövek (binokulárok) térképe",
-    "fr": "Une carte de jumelles panoramiques",
-    "es": "Un mapa con prismáticos fijos",
-    "ca": "Un mapa amb prismàtics fixos",
-    "da": "Et kort over fastgjorte kikkerter",
-    "cs": "Mapa s pevnými dalekohledy",
-    "eu": "Prismatiko finkoak dituen mapa",
-    "pl": "Mapa ze stałymi lornetkami"
-  },
   "description": {
     "en": "A map with binoculars fixed in place with a pole. It can typically be found on touristic locations, viewpoints, on top of panoramic towers or occasionally on a nature reserve.",
     "nl": "Een kaart met verrekijkers die op een vaste plaats zijn gemonteerd",
@@ -49,12 +33,25 @@
     "eu": "Zutoin batean prismatiko finkoak dituen mapa. Leku turistikoetan, begiratokietan, dorre panoramikoen gainean edo, batzuetan, erreserba natural batean egoten da.",
     "pl": "Mapa z lornetkami zamocowanymi na słupku. Zwykle można je odnaleźć w lokalizacjach turystycznych, punktach widokowych, na szczytach wież panoramicznych lub czasami w rezerwacie przyrody."
   },
+  "shortDescription": {
+    "en": "A map with fixed binoculars",
+    "nl": "Een kaart met publieke verrekijker",
+    "de": "Eine Karte mit festinstallierten Ferngläsern",
+    "it": "Una cartina dei binocoli pubblici fissi",
+    "nb_NO": "Et kart over fastmonterte kikkerter",
+    "zh_Hant": "固定望遠鏡的地圖",
+    "hu": "Rögzített távcsövek (binokulárok) térképe",
+    "fr": "Une carte de jumelles panoramiques",
+    "es": "Un mapa con prismáticos fijos",
+    "ca": "Un mapa amb prismàtics fixos",
+    "da": "Et kort over fastgjorte kikkerter",
+    "cs": "Mapa s pevnými dalekohledy",
+    "eu": "Prismatiko finkoak dituen mapa",
+    "pl": "Mapa ze stałymi lornetkami"
+  },
   "icon": "./assets/layers/binocular/telescope.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 1.5,
   "layers": [
     "binocular"
-  ]
+  ],
+  "widenFactor": 1.5
 }

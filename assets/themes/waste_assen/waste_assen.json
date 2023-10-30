@@ -10,6 +10,10 @@
   "startZoom": 19,
   "startLat": 53.24865,
   "startLon": 6.60075,
+  "credits": [
+    "Robin van der Linde"
+  ],
+  "hideFromOverview": true,
   "layers": [
     {
       "builtin": "waste_basket",
@@ -68,9 +72,5 @@
       ]
     },
     "waste_disposal"
-  ],
-  "hideFromOverview": true,
-  "credits": [
-    "Robin van der Linde"
   ]
 }

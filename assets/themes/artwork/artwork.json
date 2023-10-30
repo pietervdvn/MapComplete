@@ -49,8 +49,6 @@
   },
   "icon": "./assets/themes/artwork/artwork.svg",
   "startZoom": 12,
-  "startLat": 0,
-  "startLon": 0,
   "layers": [
     "artwork"
   ]

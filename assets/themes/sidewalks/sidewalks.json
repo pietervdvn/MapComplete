@@ -17,19 +17,6 @@
     "eu": "Espaloiak",
     "pl": "Chodniki"
   },
-  "shortDescription": {
-    "en": "Sidewalk mapping",
-    "ca": "Mapejat de voreres",
-    "de": "Kartierung von Bürgersteigen",
-    "es": "Mapeo de aceras",
-    "nl": "Voetpaden in kaart brengen",
-    "fr": "Cartographier des trottoirs",
-    "it": "Mappatura del marciapiede",
-    "da": "Kortlægning af fortov",
-    "pa_PK": "فُت‌پیتھ دا نقشہ بݨاؤݨ",
-    "cs": "Mapování chodníků",
-    "pl": "Mapowanie chodnika"
-  },
   "description": {
     "en": "Experimental theme",
     "ru": "Экспериментальная тема",
@@ -45,11 +32,20 @@
     "zh_Hant": "實驗性的主題",
     "pl": "Temat eksperymentalny"
   },
+  "shortDescription": {
+    "en": "Sidewalk mapping",
+    "ca": "Mapejat de voreres",
+    "de": "Kartierung von Bürgersteigen",
+    "es": "Mapeo de aceras",
+    "nl": "Voetpaden in kaart brengen",
+    "fr": "Cartographier des trottoirs",
+    "it": "Mappatura del marciapiede",
+    "da": "Kortlægning af fortov",
+    "pa_PK": "فُت‌پیتھ دا نقشہ بݨاؤݨ",
+    "cs": "Mapování chodníků",
+    "pl": "Mapowanie chodnika"
+  },
   "icon": "./assets/svg/bug.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 0.05,
   "hideFromOverview": true,
   "layers": [
     {
@@ -256,5 +252,6 @@
         {}
       ]
     }
-  ]
+  ],
+  "widenFactor": 0.05
 }

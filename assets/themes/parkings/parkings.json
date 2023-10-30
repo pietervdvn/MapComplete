@@ -19,22 +19,6 @@
     "eu": "Aparkalekua",
     "pl": "Parking"
   },
-  "shortDescription": {
-    "nl": "Deze kaart toont verschillende parkeerplekken",
-    "en": "This map shows different parking spots",
-    "de": "Diese Karte zeigt Parkplätze",
-    "it": "Questa cartina mostra diversi posti dove parcheggiare",
-    "nb_NO": "Dette kartet viser forskjellige parkeringsplasser",
-    "zh_Hant": "這地圖顯示不同的停車空間",
-    "id": "Peta ini menunjukkan tempat parkir yang berbeda",
-    "hu": "Ez a térkép különböző parkolókat jelenít meg",
-    "es": "Este mapa muestra diferentes puntos de aparcamiento",
-    "fr": "Cette montre les emplacements de parking",
-    "da": "Dette kort viser forskellige parkeringspladser",
-    "ca": "Aquest mapa mostra diferents punts d'aparcament",
-    "cs": "Na této mapě jsou vyznačena různá parkovací místa",
-    "pl": "Ta mapa pokazuje różne miejsca parkingowe"
-  },
   "description": {
     "nl": "Deze kaart toont verschillende parkeerplekken",
     "en": "This map shows different parking spots",
@@ -51,14 +35,30 @@
     "cs": "Na této mapě jsou vyznačena různá parkovací místa",
     "pl": "Ta mapa pokazuje różne miejsca parkingowe"
   },
+  "shortDescription": {
+    "nl": "Deze kaart toont verschillende parkeerplekken",
+    "en": "This map shows different parking spots",
+    "de": "Diese Karte zeigt Parkplätze",
+    "it": "Questa cartina mostra diversi posti dove parcheggiare",
+    "nb_NO": "Dette kartet viser forskjellige parkeringsplasser",
+    "zh_Hant": "這地圖顯示不同的停車空間",
+    "id": "Peta ini menunjukkan tempat parkir yang berbeda",
+    "hu": "Ez a térkép különböző parkolókat jelenít meg",
+    "es": "Este mapa muestra diferentes puntos de aparcamiento",
+    "fr": "Cette montre les emplacements de parking",
+    "da": "Dette kort viser forskellige parkeringspladser",
+    "ca": "Aquest mapa mostra diferents punts d'aparcament",
+    "cs": "Na této mapě jsou vyznačena různá parkovací místa",
+    "pl": "Ta mapa pokazuje różne miejsca parkingowe"
+  },
   "icon": "./assets/themes/parkings/parkings.svg",
+  "startZoom": 12,
   "startLat": 51.20875,
   "startLon": 3.22435,
-  "startZoom": 12,
-  "widenFactor": 1.2,
   "layers": [
     "parking",
     "parking_spaces",
     "parking_ticket_machine"
-  ]
+  ],
+  "widenFactor": 1.2
 }

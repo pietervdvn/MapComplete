@@ -16,22 +16,6 @@
     "cs": "Sportovní hřiště",
     "pl": "Boiska sportowe"
   },
-  "shortDescription": {
-    "nl": "Deze kaart toont sportvelden",
-    "fr": "Une carte montrant les terrains de sport",
-    "en": "A map showing sport pitches",
-    "ja": "スポーツ競技場を示す地図",
-    "zh_Hant": "顯示運動場地的地圖",
-    "ru": "Карта, отображающая спортивные площадки",
-    "de": "Eine Karte mit Sportplätzen",
-    "it": "Una cartina che mostra i campi sportivi",
-    "hu": "Sportpályatérkép",
-    "es": "Un mapa que muestra pistas de deportes",
-    "da": "Et kort, der viser sportspladser",
-    "ca": "Un mapa que mostra pistes d'esports",
-    "cs": "Mapa sportovních hřišť",
-    "pl": "Mapa przedstawiająca boiska sportowe"
-  },
   "description": {
     "nl": "Een sportveld is een ingerichte plaats met infrastructuur om een sport te beoefenen",
     "fr": "Un terrain de sport est une zone faite pour pratiquer un sport",
@@ -48,12 +32,25 @@
     "cs": "Sportovní hřiště je plocha, na které se provozují sporty",
     "pl": "Boisko sportowe to teren, na którym uprawia się sport"
   },
+  "shortDescription": {
+    "nl": "Deze kaart toont sportvelden",
+    "fr": "Une carte montrant les terrains de sport",
+    "en": "A map showing sport pitches",
+    "ja": "スポーツ競技場を示す地図",
+    "zh_Hant": "顯示運動場地的地圖",
+    "ru": "Карта, отображающая спортивные площадки",
+    "de": "Eine Karte mit Sportplätzen",
+    "it": "Una cartina che mostra i campi sportivi",
+    "hu": "Sportpályatérkép",
+    "es": "Un mapa que muestra pistas de deportes",
+    "da": "Et kort, der viser sportspladser",
+    "ca": "Un mapa que mostra pistes d'esports",
+    "cs": "Mapa sportovních hřišť",
+    "pl": "Mapa przedstawiająca boiska sportowe"
+  },
   "icon": "./assets/layers/sport_pitch/table_tennis.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 2,
   "layers": [
     "sport_pitch"
-  ]
+  ],
+  "widenFactor": 2
 }

@@ -36,11 +36,8 @@
     "pl": "Kawiarnie, puby i bary"
   },
   "icon": "./assets/layers/cafe_pub/pub.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 1.5,
   "layers": [
     "cafe_pub"
-  ]
+  ],
+  "widenFactor": 1.5
 }
