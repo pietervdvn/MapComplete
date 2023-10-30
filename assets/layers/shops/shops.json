@@ -260,6 +260,54 @@
         }
       ]
     },
+    {
+      "id": "key_cutter",
+      "mappings": [
+        {
+          "if": "craft=key_cutter",
+          "#": "Many shoe repair shops are also specialized in key_cutting and deserve the 'craft'-tag. Some other shops (often DIY- and home-improvement stores) offer it as a service, but rather limited/on the side",
+          "hideInAnswer": "shop!=shoe_repair",
+          "icon": "./assets/layers/id_presets/fas-key.svg",
+          "then": {
+            "en": "This shop is also specialized in key cutting"
+          },
+          "addExtraTags": [
+            "service:key_cutting=yes"
+          ]
+        },
+        {
+          "if": "service:key_cutting=yes",
+          "icon": "./assets/layers/id_presets/fas-key.svg",
+          "then": {
+            "en": "This shop offers key cutting as a service"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "craft=",
+              "service:key_cutting=no"
+            ]
+          },
+          "then": {
+            "en": "This shops does not offer key cutting as a service"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "shop=shoe_repair",
+          "service:key_cutting~*",
+          "craft=key_cutting",
+          "shop=diy",
+          "shop=doityourself",
+          "shop=home_improvement",
+          "shop=hardware",
+          "shop=locksmith",
+          "shop=repair"
+        ]
+      }
+    },
     "internet",
     "internet-fee",
     "internet-ssid",

@@ -16,7 +16,7 @@
     "ca": "Capa que mostra aparcaments de cotxes individuals.",
     "cs": "Vrstva zobrazující jednotlivá parkovací místa."
   },
-  "minzoom": 19,
+  "minzoom": 18,
   "source": {
     "osmTags": "amenity=parking_space"
   },
