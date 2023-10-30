@@ -138,6 +138,9 @@ export abstract class Conversion<TIn, TOut> {
         context = context.inOperation(this.name)
         const fixed = this.convert(json, context)
         for (const msg of context.messages) {
+            if (msg.level === "debug") {
+                continue
+            }
             ConversionContext.print(msg)
         }
         if (context.hasErrors()) {
@@ -207,12 +210,17 @@ export class Each<X, Y> extends Conversion<X[], Y[]> {
         const c = context.inOperation("each")
         for (let i = 0; i < values.length; i++) {
             if (this._msg) {
-                ScriptUtils.erasableLog(this._msg, `: ${i + 1}/${values.length}`)
+                ScriptUtils.erasableLog(
+                    this._msg,
+                    `: ${i + 1}/${values.length}`,
+                    values[i]?.["id"] !== undefined ? values[i]?.["id"] : ""
+                )
             }
             const context_ = c.enter(i - 1)
             const r = step.convert(values[i], context_)
             result.push(r)
         }
+        ScriptUtils.erasableLog(this._msg)
         return result
     }
 }
