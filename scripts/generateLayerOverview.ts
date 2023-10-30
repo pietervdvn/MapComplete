@@ -144,6 +144,14 @@ class LayerOverviewUtils extends Script {
         includeInlineLayers = true
     ): string[] {
         const publicLayerIds = []
+        if (!Array.isArray(themeFile.layers)) {
+            throw (
+                "Cannot iterate over 'layers' of " +
+                themeFile.id +
+                "; it is a " +
+                typeof themeFile.layers
+            )
+        }
         for (const publicLayer of themeFile.layers) {
             if (typeof publicLayer === "string") {
                 publicLayerIds.push(publicLayer)

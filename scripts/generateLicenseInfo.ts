@@ -64,6 +64,12 @@ export class GenerateLicenseInfo extends Script {
             license: "CC0",
             sources: [],
         })
+        knownLicenses.set("carto", {
+            authors: ["OSM-Carto"],
+            path: undefined,
+            license: "CC0",
+            sources: [""],
+        })
         knownLicenses.set("tv", {
             authors: ["Toerisme Vlaanderen"],
             path: undefined,
@@ -171,10 +177,6 @@ export class GenerateLicenseInfo extends Script {
         }
         if (author == "Q" || author == "q" || author == "") {
             throw "Quitting now!"
-        }
-        let authors = author.split(";")
-        if (author.toLowerCase() == "none") {
-            authors = []
         }
         return {
             authors: author.split(";"),

@@ -186,7 +186,7 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
             for (const remoteImage of remoteImages) {
                 context.err(
                     "Found a remote image: " +
-                        remoteImage +
+                        remoteImage.path +
                         " in theme " +
                         json.id +
                         ", please download it."
@@ -899,9 +899,6 @@ export class ValidateLayer extends Conversion<
                 )
         }
 
-        if (context.hasErrors()) {
-            return undefined
-        }
         let layerConfig: LayerConfig
         try {
             layerConfig = new LayerConfig(json, "validation", true)
@@ -1105,11 +1102,21 @@ export class ValidateLayer extends Conversion<
                 ).convert(json, context)
             }
 
-            {
-                json.pointRendering?.forEach((pointRendering, index) => {
-                    pointRendering?.marker?.forEach((icon, indexM) => {
+            if (json.pointRendering !== null) {
+                if (!Array.isArray(json.pointRendering)) {
+                    throw (
+                        "pointRendering in " +
+                        json.id +
+                        " is not iterable, it is: " +
+                        typeof json.pointRendering
+                    )
+                }
+                for (const pointRendering of json.pointRendering) {
+                    const index = json.pointRendering.indexOf(pointRendering)
+                    for (const icon of pointRendering?.marker) {
+                        const indexM = pointRendering?.marker.indexOf(icon)
                         if (!icon.icon) {
-                            return
+                            continue
                         }
                         if (icon.icon["condition"]) {
                             context
@@ -1125,8 +1132,8 @@ export class ValidateLayer extends Conversion<
                                     "Don't set a condition in a marker as this will result in an invisible but clickable element. Use extra filters in the source instead."
                                 )
                         }
-                    })
-                })
+                    }
+                }
             }
 
             if (json.presets !== undefined) {

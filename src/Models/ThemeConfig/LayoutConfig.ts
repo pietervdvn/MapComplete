@@ -85,7 +85,6 @@ export default class LayoutConfig implements LayoutInformation {
             definitionRaw?: string
         }
     ) {
-        console.log("Initing theme", { json, official, options })
         if (json === undefined) {
             throw "Cannot construct a layout config, the parameter 'json' is undefined"
         }
