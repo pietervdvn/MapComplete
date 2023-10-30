@@ -980,7 +980,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      */
     public static downloadAdvanced(
         url: string,
-        headers?: any
+        headers?: any,
+        method: "POST" | "GET" | "PUT" | "UPDATE" | "DELETE" | "OPTIONS" = "GET",
+        content?: string
     ): Promise<
         | { content: string }
         | { redirect: string }
@@ -1007,14 +1009,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     })
                 }
             }
-            xhr.open("GET", url)
+            xhr.open(method, url)
             if (headers !== undefined) {
                 for (const key in headers) {
                     xhr.setRequestHeader(key, headers[key])
                 }
             }
-
-            xhr.send()
+            xhr.send(content)
             xhr.onerror = reject
         })
     }

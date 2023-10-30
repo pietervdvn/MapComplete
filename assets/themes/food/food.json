@@ -12,7 +12,7 @@
     "es": "Restaurantes y comida rápida",
     "fr": "Restaurants et restaurants rapides",
     "da": "Restauranter og fastfood",
-    "cs": "Restaurace a podniky rychlého občerstvení",
+    "cs": "Restaurace a rychlé občerstvení",
     "ru": "Общественное питание",
     "pl": "Restauracje i fast foody"
   },
@@ -25,7 +25,7 @@
     "fr": "Restaurants et restaurants à service rapide",
     "da": "Restauranter og fastfood",
     "ca": "Restaurants i menjar ràpid",
-    "cs": "Restaurace a podniky rychlého občerstvení",
+    "cs": "Restaurace a rychlého občerstvení",
     "pl": "Restauracje i fast foody"
   },
   "icon": "./assets/layers/food/restaurant.svg",

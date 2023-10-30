@@ -127,6 +127,7 @@ export default class Wikidata {
         "https://www.wikidata.org/",
         "https://wikidata.org/",
         "https://query.wikidata.org",
+        "https://m.wikidata.org", // Important: a mobile browser will request m.wikidata.org instead of www.wikidata.org ; this URL needs to be listed for the CSP
     ]
     private static readonly _identifierPrefixes = ["Q", "L"].map((str) => str.toLowerCase())
     private static readonly _prefixesToRemove = [

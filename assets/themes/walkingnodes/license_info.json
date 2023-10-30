@@ -1,0 +1,20 @@
+[
+  {
+    "path": "logo.svg",
+    "license": "GPL-3.0-only",
+    "authors": [
+      "sebkur"
+    ],
+    "sources": [
+      "https://github.com/mobanisto/MapComplete/commit/1aeb1fdb5b09908d67907f3c816152bfebfdcc79"
+    ]
+  },
+  {
+    "path": "route_marker.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Robin van der Linde"
+    ],
+    "sources": []
+  }
+]

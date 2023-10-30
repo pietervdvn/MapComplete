@@ -233,7 +233,8 @@
             "en": "Has organic options",
             "de": "Bio-Produkte im Angebot",
             "nl": "Heeft biologische opties",
-            "ca": "Té opcions orgàniques"
+            "ca": "Té opcions orgàniques",
+            "cs": "Má bio možnosti"
           }
         }
       ]
@@ -267,7 +268,8 @@
         {
           "question": {
             "en": "No preference towards dogs",
-            "de": "Keine Bevorzugung von Hunden"
+            "de": "Keine Bevorzugung von Hunden",
+            "cs": "Bez preference psů"
           }
         },
         {
@@ -318,7 +320,8 @@
         {
           "question": {
             "en": "Offers electricity",
-            "de": "Stromanschluss vorhanden"
+            "de": "Stromanschluss vorhanden",
+            "cs": "Nabízí elektřinu"
           },
           "osmTags": "service:electricity=yes"
         }

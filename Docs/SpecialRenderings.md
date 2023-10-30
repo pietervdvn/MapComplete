@@ -150,6 +150,10 @@ In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "ar
       * [Example usage of translated](#example-usage-of-translated)
     + [fediverse_link](#fediverse_link)
       * [Example usage of fediverse_link](#example-usage-of-fediverse_link)
+    + [braced](#braced)
+      * [Example usage of braced](#example-usage-of-braced)
+    + [tags](#tags)
+      * [Example usage of tags](#example-usage-of-tags)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
@@ -1067,6 +1071,36 @@ key | _undefined_ | The attribute-name containing the link
 #### Example usage of fediverse_link 
 
  `{fediverse_link()}`
+
+
+
+### braced 
+
+ Show a literal text within braces 
+
+name | default | description
+------ | --------- | -------------
+text | _undefined_ | The value to show
+ 
+
+#### Example usage of braced 
+
+ `{braced()}`
+
+
+
+### tags 
+
+ Shows a (json of) tags in a human-readable way + links to the wiki 
+
+name | default | description
+------ | --------- | -------------
+key | value | The key to look for the tags
+ 
+
+#### Example usage of tags 
+
+ `{tags(value)}`
 
 
 

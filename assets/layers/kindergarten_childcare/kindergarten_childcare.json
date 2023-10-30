@@ -5,7 +5,8 @@
     "nl": "Kleuterscholen en kinderopvang",
     "de": "Kindergärten und Kinderkrippen",
     "ca": "Llars d'infants i guarderies",
-    "pl": "Przedszkola i żłobki"
+    "pl": "Przedszkola i żłobki",
+    "cs": "Mateřské školky a péče o děti"
   },
   "description": "Shows kindergartens and preschools. Both are grouped in one layer, as they are regularly confused with each other",
   "minzoom": 12,
@@ -26,7 +27,8 @@
           "en": "Kindergarten {name}",
           "nl": "Kleuterschool {name}",
           "de": "Kindergarten {name}",
-          "pl": "Przedszkole {name}"
+          "pl": "Przedszkole {name}",
+          "cs": "Mateřská škola {name}"
         }
       },
       {
@@ -35,7 +37,8 @@
           "en": "Childcare {name}",
           "nl": "Kinderopvang {name}",
           "de": "Kinderkrippe {name}",
-          "pl": "Żłobek {name}"
+          "pl": "Żłobek {name}",
+          "cs": "Péče o děti {name}"
         }
       }
     ]
@@ -48,7 +51,8 @@
         "nl": "Wat voor faciliteit is dit?",
         "de": "Um welche Art von Einrichtung handelt es sich?",
         "pl": "Jaki to rodzaj placówki?",
-        "ca": "Quin tipus d'instal·lació és aquesta?"
+        "ca": "Quin tipus d'instal·lació és aquesta?",
+        "cs": "O jaký typ zařízení se jedná?"
       },
       "mappings": [
         {
@@ -58,7 +62,8 @@
             "nl": "Dit is een kleuterschool waar kindjes (voorbereidend) onderwijs krijgen.",
             "de": "Dies ist ein Kindergarten (auch bekannt als <i>Vorschule</i>), in dem kleine Kinder eine Früherziehung erhalten.",
             "ca": "Aquesta és una llar d'infants (també coneguda com a <i>preescolar</i>) on els nens petits reben educació primerenca.",
-            "pl": "To jest przedszkole, gdzie małe dzieci otrzymują wczesną edukację."
+            "pl": "To jest przedszkole, gdzie małe dzieci otrzymują wczesną edukację.",
+            "cs": "Jedná se o mateřskou školu (známou také jako <i>předškolní zařízení</i>), kde se malým dětem dostává raného vzdělání."
           },
           "addExtraTags": [
             "isced:level=0",
@@ -70,7 +75,8 @@
           "then": {
             "en": "This is a childcare facility, such as a nursery or daycare where small kids are looked after. They do not offer an education and are ofter run as private businesses",
             "nl": "Dit is een kinderopvang (ook een creche of onthaalmoeder genoemd) waar er voor kleine kinderen gezorgd wordt. Onderwijs is niet de hoofdfocus.",
-            "de": "Dies ist eine Kinderbetreuungseinrichtung, z. B. ein Kinderkrippe oder eine Tagesmutter, in der Kleinkinder betreut werden. Sie bieten keine Ausbildung an und werden oft als Privatunternehmen geführt"
+            "de": "Dies ist eine Kinderbetreuungseinrichtung, z. B. ein Kinderkrippe oder eine Tagesmutter, in der Kleinkinder betreut werden. Sie bieten keine Ausbildung an und werden oft als Privatunternehmen geführt",
+            "cs": "Jedná se o zařízení péče o děti, jako jsou jesle nebo školka, kde se starají o malé děti. Neposkytují vzdělání a jsou často provozovány jako soukromé podniky"
           },
           "addExtraTags": [
             "isced:level=",
@@ -86,14 +92,16 @@
         "de": "Wie lautet der Name dieser Einrichtung?",
         "nl": "Wat is de naam van deze faciliteit?",
         "ca": "Com s'anomena aquesta instal·lació?",
-        "pl": "Jaka jest nazwa tej placówki?"
+        "pl": "Jaka jest nazwa tej placówki?",
+        "cs": "Jak se toto zařízení jmenuje?"
       },
       "render": {
         "en": "This facility is named <b>{name}</b>",
         "de": "Diese Einrichtung hat den Namen <b>{name}</b>",
         "ca": "Aquesta instal·lació s'anomena <b>{name}</b>",
         "nl": "Deze faciliteit heet <b>{name}</b>",
-        "pl": "Ta placówka nazywa się <b>{name}</b>"
+        "pl": "Ta placówka nazywa się <b>{name}</b>",
+        "cs": "Toto zařízení se jmenuje <b>{name}</b>"
       },
       "freeform": {
         "key": "name"
@@ -109,7 +117,8 @@
           "en": "When is this childcare opened?",
           "nl": "Wanneer is deze kinderopvang geopend?",
           "de": "Wann ist diese Kinderbetreuung geöffnet?",
-          "pl": "W jakich godzinach ten żłobek jest otwarty?"
+          "pl": "W jakich godzinach ten żłobek jest otwarty?",
+          "cs": "Kdy je tato péče o děti otevřena?"
         },
         "condition": "amenity=childcare"
       }
@@ -121,14 +130,16 @@
         "nl": "Hoeveel kinderen kunnen hier terecht?",
         "de": "Wie viele Kinder können hier maximal angemeldet werden?",
         "ca": "Quants nens (com a màxim) es poden inscriure aquí?",
-        "pl": "Jak wiele dzieci (maksymalnie) może być tutaj zapisanych?"
+        "pl": "Jak wiele dzieci (maksymalnie) może być tutaj zapisanych?",
+        "cs": "Kolik dětí (maximálně) zde může být zapsáno?"
       },
       "render": {
         "en": "This facility has room for {capacity} kids",
         "nl": "Hier kunnen {capacity} kinderen terecht",
         "de": "Diese Einrichtung bietet Platz für {capacity} Kinder",
         "ca": "Aquesta instal·lació té espai per a {capacity} nens",
-        "pl": "Ta placówka ma miejsce na {capacity} dzieci"
+        "pl": "Ta placówka ma miejsce na {capacity} dzieci",
+        "cs": "Toto zařízení má prostor pro {capacity} dětí"
       },
       "freeform": {
         "key": "capacity",
@@ -144,7 +155,8 @@
         "de": "einen Kindergarten",
         "ru": "детский сад",
         "ca": "una llar d'infants",
-        "pl": "przedszkole"
+        "pl": "przedszkole",
+        "cs": "mateřská školka"
       },
       "description": "A kindergarten (also known as <i>preschool</i>) is a school where small kids receive early education.",
       "tags": [
@@ -159,7 +171,8 @@
         "nl": "een kinderopvang",
         "de": "eine Kinderkrippe",
         "ca": "una guarderia",
-        "pl": "żłobek"
+        "pl": "żłobek",
+        "cs": "péče o děti"
       },
       "description": "A childcare (also known as <i>a nursery</i> or <i>daycare</i>) is a facility which looks after small kids, but does not offer them an education program.",
       "tags": [

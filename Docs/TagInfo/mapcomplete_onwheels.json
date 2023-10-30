@@ -2275,6 +2275,26 @@
       "value": "yes"
     },
     {
+      "key": "craft",
+      "description": "Layer 'Shop' shows craft=key_cutter with a fixed text, namely 'This shop is also specialized in key cutting' (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=shoe_repair|service:key_cutting~.+|craft=key_cutting|shop=diy|shop=doityourself|shop=home_improvement|shop=hardware|shop=locksmith|shop=repair)",
+      "value": "key_cutter"
+    },
+    {
+      "key": "service:key_cutting",
+      "description": "Layer 'Shop' shows service:key_cutting=yes with a fixed text, namely 'This shop offers key cutting as a service' (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=shoe_repair|service:key_cutting~.+|craft=key_cutting|shop=diy|shop=doityourself|shop=home_improvement|shop=hardware|shop=locksmith|shop=repair)",
+      "value": "yes"
+    },
+    {
+      "key": "craft",
+      "description": "Layer 'Shop' shows service:key_cutting=no with a fixed text, namely 'This shops does not offer key cutting as a service' (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=shoe_repair|service:key_cutting~.+|craft=key_cutting|shop=diy|shop=doityourself|shop=home_improvement|shop=hardware|shop=locksmith|shop=repair)",
+      "value": ""
+    },
+    {
+      "key": "service:key_cutting",
+      "description": "Layer 'Shop' shows service:key_cutting=no with a fixed text, namely 'This shops does not offer key cutting as a service' (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=shoe_repair|service:key_cutting~.+|craft=key_cutting|shop=diy|shop=doityourself|shop=home_improvement|shop=hardware|shop=locksmith|shop=repair)",
+      "value": "no"
+    },
+    {
       "key": "internet_access",
       "description": "Layer 'Shop' shows internet_access=wlan with a fixed text, namely 'This place offers wireless internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "wlan"

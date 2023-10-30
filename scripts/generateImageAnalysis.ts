@@ -291,8 +291,10 @@ export default class GenerateImageAnalysis extends Script {
         console.log(countsPerAuthor)
         countsPerAuthor.sort()
         const median = countsPerAuthor[Math.floor(countsPerAuthor.length / 2)]
-        const json: {leaderboard: {rank: number, account: string, name: string, nrOfImages: number}[]} = {
-            leaderboard: []
+        const json: {
+            leaderboard: { rank: number; account: string; name: string; nrOfImages: number }[]
+        } = {
+            leaderboard: [],
         }
         for (let i = 0; i < 100; i++) {
             let maxAuthor: string = undefined
@@ -305,10 +307,10 @@ export default class GenerateImageAnalysis extends Script {
                 }
             }
             json.leaderboard.push({
-                rank: i+1,
+                rank: i + 1,
                 name: maxAuthor,
-                account: "https://openstreetmap.org/user/"+maxAuthor.replace(/ /g, "%20"),
-                nrOfImages: maxCount
+                account: "https://openstreetmap.org/user/" + maxAuthor.replace(/ /g, "%20"),
+                nrOfImages: maxCount,
             })
             console.log(
                 "|",
@@ -340,7 +342,9 @@ export default class GenerateImageAnalysis extends Script {
                 }%), ${Math.floor(total / authors)} images/author`
             )
             json["byLicense"] = {
-                license, total, authors
+                license,
+                total,
+                authors,
             }
         }
 
@@ -364,7 +368,11 @@ export default class GenerateImageAnalysis extends Script {
         console.log("Median contributions per author:", median)
         json["median"] = median
         json["date"] = new Date().toISOString()
-        writeFileSync("../../git/MapComplete-data/picture-leaderboard.json", JSON.stringify(json), "utf8")
+        writeFileSync(
+            "../../git/MapComplete-data/picture-leaderboard.json",
+            JSON.stringify(json),
+            "utf8"
+        )
     }
 
     async main(args: string[]): Promise<void> {

@@ -7,12 +7,14 @@
     "ja": "登坂教室？",
     "nb_NO": "Klatremuligheter?",
     "fr": "Opportunités d’escalade ?",
-    "it": "Opportunità di arrampicata?"
+    "it": "Opportunità di arrampicata?",
+    "cs": "Lezecké příležitosti?"
   },
   "description": {
     "en": "Fallback layer with items on which climbing _might_ be possible. It is loaded when zoomed in a lot, to prevent duplicate items to be added",
     "de": "Rückfallebene mit Orten, auf denen Klettern eventuell möglich ist. Sie wird erst angezeigt, wenn man stark hineinzoomt, um zu verhindern, dass Elemente doppelt hinzugefügt werden",
-    "nl": "Laag met plaatsen waar klimmen _misschien_ mogelijk is. Deze wordt geladen als je ver inzoomt, om te voorkomen dat je per ongeluk dubbels maakt"
+    "nl": "Laag met plaatsen waar klimmen _misschien_ mogelijk is. Deze wordt geladen als je ver inzoomt, om te voorkomen dat je per ongeluk dubbels maakt",
+    "cs": "Záložní vrstva s předměty, na které je _možné_ lézt. Načítá se při velkém přiblížení, aby se zabránilo přidávání duplicitních položek"
   },
   "minzoom": 19,
   "source": {

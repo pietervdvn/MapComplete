@@ -32,7 +32,8 @@
           "de": "<b>{name}</b>",
           "ca": "<b>{name}</b>",
           "es": "<b>{name}</b>",
-          "pl": "<b>{name}</b>"
+          "pl": "<b>{name}</b>",
+          "cs": "<b>{name}</b>"
         }
       }
     ]

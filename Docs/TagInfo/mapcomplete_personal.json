@@ -3047,7 +3047,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Charging stations' shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accessible to the owners, employees, …)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accessible to the owners, employees, ...)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "private"
     },
     {
@@ -3291,7 +3291,7 @@
     },
     {
       "key": "socket:schuko:output",
-      "description": "Layer 'Charging stations' shows socket:schuko:output=3.6 kW with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 3.6 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:schuko~.+&socket:schuko!=0)",
+      "description": "Layer 'Charging stations' shows socket:schuko:output=3.6 kW with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 3.6 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:schuko~.+&socket:schuko!=0)",
       "value": "3.6 kW"
     },
     {
@@ -3318,12 +3318,12 @@
     },
     {
       "key": "socket:typee:output",
-      "description": "Layer 'Charging stations' shows socket:typee:output=3 kW with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 3 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:typee~.+&socket:typee!=0)",
+      "description": "Layer 'Charging stations' shows socket:typee:output=3 kW with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 3 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:typee~.+&socket:typee!=0)",
       "value": "3 kW"
     },
     {
       "key": "socket:typee:output",
-      "description": "Layer 'Charging stations' shows socket:typee:output=22 kW with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 22 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:typee~.+&socket:typee!=0)",
+      "description": "Layer 'Charging stations' shows socket:typee:output=22 kW with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 22 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:typee~.+&socket:typee!=0)",
       "value": "22 kW"
     },
     {
@@ -3350,7 +3350,7 @@
     },
     {
       "key": "socket:chademo:output",
-      "description": "Layer 'Charging stations' shows socket:chademo:output=50 kW with a fixed text, namely '<b>Chademo</b> outputs at most 50 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:chademo~.+&socket:chademo!=0)",
+      "description": "Layer 'Charging stations' shows socket:chademo:output=50 kW with a fixed text, namely '<b>Chademo</b> outputs at most 50 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:chademo~.+&socket:chademo!=0)",
       "value": "50 kW"
     },
     {
@@ -3382,12 +3382,12 @@
     },
     {
       "key": "socket:type1_cable:output",
-      "description": "Layer 'Charging stations' shows socket:type1_cable:output=3.7 kW with a fixed text, namely '<b>Type 1 with cable</b> (J1772) outputs at most 3.7 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1_cable~.+&socket:type1_cable!=0)",
+      "description": "Layer 'Charging stations' shows socket:type1_cable:output=3.7 kW with a fixed text, namely '<b>Type 1 with cable</b> (J1772) outputs at most 3.7 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1_cable~.+&socket:type1_cable!=0)",
       "value": "3.7 kW"
     },
     {
       "key": "socket:type1_cable:output",
-      "description": "Layer 'Charging stations' shows socket:type1_cable:output=7 kW with a fixed text, namely '<b>Type 1 with cable</b> (J1772) outputs at most 7 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1_cable~.+&socket:type1_cable!=0)",
+      "description": "Layer 'Charging stations' shows socket:type1_cable:output=7 kW with a fixed text, namely '<b>Type 1 with cable</b> (J1772) outputs at most 7 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1_cable~.+&socket:type1_cable!=0)",
       "value": "7 kW"
     },
     {
@@ -3419,22 +3419,22 @@
     },
     {
       "key": "socket:type1:output",
-      "description": "Layer 'Charging stations' shows socket:type1:output=3.7 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 3.7 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1~.+&socket:type1!=0)",
+      "description": "Layer 'Charging stations' shows socket:type1:output=3.7 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 3.7 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1~.+&socket:type1!=0)",
       "value": "3.7 kW"
     },
     {
       "key": "socket:type1:output",
-      "description": "Layer 'Charging stations' shows socket:type1:output=6.6 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 6.6 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1~.+&socket:type1!=0)",
+      "description": "Layer 'Charging stations' shows socket:type1:output=6.6 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 6.6 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1~.+&socket:type1!=0)",
       "value": "6.6 kW"
     },
     {
       "key": "socket:type1:output",
-      "description": "Layer 'Charging stations' shows socket:type1:output=7 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1~.+&socket:type1!=0)",
+      "description": "Layer 'Charging stations' shows socket:type1:output=7 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1~.+&socket:type1!=0)",
       "value": "7 kW"
     },
     {
       "key": "socket:type1:output",
-      "description": "Layer 'Charging stations' shows socket:type1:output=7.2 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7.2 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1~.+&socket:type1!=0)",
+      "description": "Layer 'Charging stations' shows socket:type1:output=7.2 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7.2 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1~.+&socket:type1!=0)",
       "value": "7.2 kW"
     },
     {
@@ -3471,22 +3471,22 @@
     },
     {
       "key": "socket:type1_combo:output",
-      "description": "Layer 'Charging stations' shows socket:type1_combo:output=50 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:output=50 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)",
       "value": "50 kW"
     },
     {
       "key": "socket:type1_combo:output",
-      "description": "Layer 'Charging stations' shows socket:type1_combo:output=62.5 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 62.5 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:output=62.5 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 62.5 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)",
       "value": "62.5 kW"
     },
     {
       "key": "socket:type1_combo:output",
-      "description": "Layer 'Charging stations' shows socket:type1_combo:output=150 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 150 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:output=150 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 150 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)",
       "value": "150 kW"
     },
     {
       "key": "socket:type1_combo:output",
-      "description": "Layer 'Charging stations' shows socket:type1_combo:output=350 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 350 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:output=350 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 350 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type1_combo~.+&socket:type1_combo!=0)",
       "value": "350 kW"
     },
     {
@@ -3518,17 +3518,17 @@
     },
     {
       "key": "socket:tesla_supercharger:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:output=120 kW with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 120 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_supercharger~.+&socket:tesla_supercharger!=0)",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:output=120 kW with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 120 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_supercharger~.+&socket:tesla_supercharger!=0)",
       "value": "120 kW"
     },
     {
       "key": "socket:tesla_supercharger:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:output=150 kW with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 150 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_supercharger~.+&socket:tesla_supercharger!=0)",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:output=150 kW with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 150 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_supercharger~.+&socket:tesla_supercharger!=0)",
       "value": "150 kW"
     },
     {
       "key": "socket:tesla_supercharger:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:output=250 kW with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 250 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_supercharger~.+&socket:tesla_supercharger!=0)",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:output=250 kW with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 250 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_supercharger~.+&socket:tesla_supercharger!=0)",
       "value": "250 kW"
     },
     {
@@ -3565,12 +3565,12 @@
     },
     {
       "key": "socket:type2:output",
-      "description": "Layer 'Charging stations' shows socket:type2:output=11 kW with a fixed text, namely '<b>Type 2</b> (mennekes) outputs at most 11 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type2~.+&socket:type2!=0)",
+      "description": "Layer 'Charging stations' shows socket:type2:output=11 kW with a fixed text, namely '<b>Type 2</b> (mennekes) outputs at most 11 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type2~.+&socket:type2!=0)",
       "value": "11 kW"
     },
     {
       "key": "socket:type2:output",
-      "description": "Layer 'Charging stations' shows socket:type2:output=22 kW with a fixed text, namely '<b>Type 2</b> (mennekes) outputs at most 22 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type2~.+&socket:type2!=0)",
+      "description": "Layer 'Charging stations' shows socket:type2:output=22 kW with a fixed text, namely '<b>Type 2</b> (mennekes) outputs at most 22 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type2~.+&socket:type2!=0)",
       "value": "22 kW"
     },
     {
@@ -3607,7 +3607,7 @@
     },
     {
       "key": "socket:type2_combo:output",
-      "description": "Layer 'Charging stations' shows socket:type2_combo:output=50 kW with a fixed text, namely '<b>Type 2 CCS</b> (mennekes) outputs at most 50 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type2_combo~.+&socket:type2_combo!=0)",
+      "description": "Layer 'Charging stations' shows socket:type2_combo:output=50 kW with a fixed text, namely '<b>Type 2 CCS</b> (mennekes) outputs at most 50 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type2_combo~.+&socket:type2_combo!=0)",
       "value": "50 kW"
     },
     {
@@ -3644,12 +3644,12 @@
     },
     {
       "key": "socket:type2_cable:output",
-      "description": "Layer 'Charging stations' shows socket:type2_cable:output=11 kW with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs at most 11 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type2_cable~.+&socket:type2_cable!=0)",
+      "description": "Layer 'Charging stations' shows socket:type2_cable:output=11 kW with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs at most 11 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type2_cable~.+&socket:type2_cable!=0)",
       "value": "11 kW"
     },
     {
       "key": "socket:type2_cable:output",
-      "description": "Layer 'Charging stations' shows socket:type2_cable:output=22 kW with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs at most 22 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type2_cable~.+&socket:type2_cable!=0)",
+      "description": "Layer 'Charging stations' shows socket:type2_cable:output=22 kW with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs at most 22 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:type2_cable~.+&socket:type2_cable!=0)",
       "value": "22 kW"
     },
     {
@@ -3658,12 +3658,12 @@
     },
     {
       "key": "socket:tesla_supercharger_ccs:voltage",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:voltage=500 V with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs 500 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0)",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:voltage=500 V with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 500 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0)",
       "value": "500 V"
     },
     {
       "key": "socket:tesla_supercharger_ccs:voltage",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:voltage=920 V with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs 920 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0)",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:voltage=920 V with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 920 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0)",
       "value": "920 V"
     },
     {
@@ -3686,7 +3686,7 @@
     },
     {
       "key": "socket:tesla_supercharger_ccs:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:output=50 kW with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs at most 50 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0)",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:output=50 kW with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 50 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0)",
       "value": "50 kW"
     },
     {
@@ -3695,7 +3695,7 @@
     },
     {
       "key": "socket:tesla_destination:voltage",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=480 V with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> outputs 480 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=480 V with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs 480 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
       "value": "480 V"
     },
     {
@@ -3704,12 +3704,12 @@
     },
     {
       "key": "socket:tesla_destination:current",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=125 A with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> outputs at most 125 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=125 A with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 125 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
       "value": "125 A"
     },
     {
       "key": "socket:tesla_destination:current",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=350 A with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> outputs at most 350 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=350 A with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 350 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
       "value": "350 A"
     },
     {
@@ -3718,17 +3718,17 @@
     },
     {
       "key": "socket:tesla_destination:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=120 kW with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> outputs at most 120 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=120 kW with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 120 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
       "value": "120 kW"
     },
     {
       "key": "socket:tesla_destination:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=150 kW with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> outputs at most 150 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=150 kW with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 150 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
       "value": "150 kW"
     },
     {
       "key": "socket:tesla_destination:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=250 kW with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> outputs at most 250 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=250 kW with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 250 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
       "value": "250 kW"
     },
     {
@@ -3737,12 +3737,12 @@
     },
     {
       "key": "socket:tesla_destination:voltage",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=230 V with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs 230 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=230 V with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 230 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
       "value": "230 V"
     },
     {
       "key": "socket:tesla_destination:voltage",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=400 V with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs 400 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=400 V with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 400 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
       "value": "400 V"
     },
     {
@@ -3751,12 +3751,12 @@
     },
     {
       "key": "socket:tesla_destination:current",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=16 A with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as tesla) outputs at most 16 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=16 A with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 16 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
       "value": "16 A"
     },
     {
       "key": "socket:tesla_destination:current",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=32 A with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 32 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=32 A with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 32 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
       "value": "32 A"
     },
     {
@@ -3765,12 +3765,12 @@
     },
     {
       "key": "socket:tesla_destination:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=11 kW with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 11 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=11 kW with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 11 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
       "value": "11 kW"
     },
     {
       "key": "socket:tesla_destination:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=22 kW with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 22 kw A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=22 kW with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 22 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:tesla_destination~.+&socket:tesla_destination!=0)",
       "value": "22 kW"
     },
     {
@@ -3802,12 +3802,12 @@
     },
     {
       "key": "socket:USB-A:output",
-      "description": "Layer 'Charging stations' shows socket:USB-A:output=5W with a fixed text, namely '<b>USB</b> to charge phones and small electronics outputs at most 5w A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:USB-A~.+&socket:USB-A!=0)",
+      "description": "Layer 'Charging stations' shows socket:USB-A:output=5W with a fixed text, namely '<b>USB</b> to charge phones and small electronics outputs at most 5W A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:USB-A~.+&socket:USB-A!=0)",
       "value": "5W"
     },
     {
       "key": "socket:USB-A:output",
-      "description": "Layer 'Charging stations' shows socket:USB-A:output=10W with a fixed text, namely '<b>USB</b> to charge phones and small electronics outputs at most 10w A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:USB-A~.+&socket:USB-A!=0)",
+      "description": "Layer 'Charging stations' shows socket:USB-A:output=10W with a fixed text, namely '<b>USB</b> to charge phones and small electronics outputs at most 10W A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:USB-A~.+&socket:USB-A!=0)",
       "value": "10W"
     },
     {
@@ -3890,12 +3890,12 @@
     },
     {
       "key": "fee",
-      "description": "Layer 'Charging stations' shows fee=yes&fee:conditional=no @ customers with a fixed text, namely 'Paid use, but free for customers of the hotel/pub/hospital/… who operates the charging station' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows fee=yes&fee:conditional=no @ customers with a fixed text, namely 'Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "yes"
     },
     {
       "key": "fee:conditional",
-      "description": "Layer 'Charging stations' shows fee=yes&fee:conditional=no @ customers with a fixed text, namely 'Paid use, but free for customers of the hotel/pub/hospital/… who operates the charging station' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows fee=yes&fee:conditional=no @ customers with a fixed text, namely 'Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "no @ customers"
     },
     {
@@ -5284,32 +5284,32 @@
     },
     {
       "key": "cycleway",
-      "description": "Layer 'Cycleways and roads' shows cycleway=shared_lane with a fixed text, namely 'There is a shared lane' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway)",
+      "description": "Layer 'Cycleways and roads' shows cycleway=shared_lane with a fixed text, namely 'There is a shared lane' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
       "value": "shared_lane"
     },
     {
       "key": "cycleway",
-      "description": "Layer 'Cycleways and roads' shows cycleway=lane with a fixed text, namely 'There is a lane next to the road (separated with paint)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway)",
+      "description": "Layer 'Cycleways and roads' shows cycleway=lane with a fixed text, namely 'There is a lane next to the road (separated with paint)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
       "value": "lane"
     },
     {
       "key": "cycleway",
-      "description": "Layer 'Cycleways and roads' shows cycleway=track with a fixed text, namely 'There is a track, but no cycleway drawn separately from this road on the map.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway)",
+      "description": "Layer 'Cycleways and roads' shows cycleway=track with a fixed text, namely 'There is a track, but no cycleway drawn separately from this road on the map.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
       "value": "track"
     },
     {
       "key": "cycleway",
-      "description": "Layer 'Cycleways and roads' shows cycleway=separate with a fixed text, namely 'There is a separately drawn cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway)",
+      "description": "Layer 'Cycleways and roads' shows cycleway=separate with a fixed text, namely 'There is a separately drawn cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
       "value": "separate"
     },
     {
       "key": "cycleway",
-      "description": "Layer 'Cycleways and roads' shows cycleway=no with a fixed text, namely 'There is no cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway)",
+      "description": "Layer 'Cycleways and roads' shows cycleway=no with a fixed text, namely 'There is no cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
       "value": "no"
     },
     {
       "key": "cycleway",
-      "description": "Layer 'Cycleways and roads' shows cycleway=no with a fixed text, namely 'There is no cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway)",
+      "description": "Layer 'Cycleways and roads' shows cycleway=no with a fixed text, namely 'There is no cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
       "value": "no"
     },
     {
@@ -5349,31 +5349,31 @@
     },
     {
       "key": "maxspeed",
-      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'maxspeed' (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway)"
+      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'maxspeed' (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)"
     },
     {
       "key": "maxspeed",
-      "description": "Layer 'Cycleways and roads' shows maxspeed=20 with a fixed text, namely 'The maximum speed is 20 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway)",
+      "description": "Layer 'Cycleways and roads' shows maxspeed=20 with a fixed text, namely 'The maximum speed is 20 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
       "value": "20"
     },
     {
       "key": "maxspeed",
-      "description": "Layer 'Cycleways and roads' shows maxspeed=30 with a fixed text, namely 'The maximum speed is 30 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway)",
+      "description": "Layer 'Cycleways and roads' shows maxspeed=30 with a fixed text, namely 'The maximum speed is 30 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
       "value": "30"
     },
     {
       "key": "maxspeed",
-      "description": "Layer 'Cycleways and roads' shows maxspeed=50 with a fixed text, namely 'The maximum speed is 50 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway)",
+      "description": "Layer 'Cycleways and roads' shows maxspeed=50 with a fixed text, namely 'The maximum speed is 50 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
       "value": "50"
     },
     {
       "key": "maxspeed",
-      "description": "Layer 'Cycleways and roads' shows maxspeed=70 with a fixed text, namely 'The maximum speed is 70 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway)",
+      "description": "Layer 'Cycleways and roads' shows maxspeed=70 with a fixed text, namely 'The maximum speed is 70 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
       "value": "70"
     },
     {
       "key": "maxspeed",
-      "description": "Layer 'Cycleways and roads' shows maxspeed=90 with a fixed text, namely 'The maximum speed is 90 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway)",
+      "description": "Layer 'Cycleways and roads' shows maxspeed=90 with a fixed text, namely 'The maximum speed is 90 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
       "value": "90"
     },
     {
@@ -7988,6 +7988,31 @@
       "description": "The layer 'Guideposts allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
+      "key": "bicycle",
+      "description": "Layer 'Guideposts' shows bicycle=yes with a fixed text, namely 'This guidepost shows bicycle routes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "hiking",
+      "description": "Layer 'Guideposts' shows hiking=yes with a fixed text, namely 'This guidepost shows hiking routes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "mtb",
+      "description": "Layer 'Guideposts' shows mtb=yes with a fixed text, namely 'This guidepost shows mountain bike routes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "horse",
+      "description": "Layer 'Guideposts' shows horse=yes with a fixed text, namely 'This guidepost shows horse riding routes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "ski",
+      "description": "Layer 'Guideposts' shows ski=yes with a fixed text, namely 'This guidepost shows ski routes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
       "key": "leisure",
       "description": "The MapComplete theme Personal theme has a layer Hackerspace showing features with this tag",
       "value": "hackerspace"
@@ -8452,6 +8477,158 @@
     {
       "key": "wikipedia",
       "description": "The layer 'Map of hydrants allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer Ice cream parlors showing features with this tag",
+      "value": "ice_cream"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Ice cream parlors' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Ice cream parlors' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Ice cream parlors' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Ice cream parlors' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Ice cream parlors' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Ice cream parlors' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Ice cream parlors' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Ice cream parlors' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Ice cream parlors' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Ice cream parlors' shows diet:sugar_free=only with a fixed text, namely 'This shop <b>only sells sugar free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "only"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Ice cream parlors' shows diet:sugar_free=yes with a fixed text, namely 'This shop has a big sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Ice cream parlors' shows diet:sugar_free=limited with a fixed text, namely 'This shop has a <b>limited sugar free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Ice cream parlors' shows diet:sugar_free=no with a fixed text, namely 'This shop has no sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Ice cream parlors' shows diet:lactose_free=only with a fixed text, namely '<b>Only sells lactose free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "only"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Ice cream parlors' shows diet:lactose_free=yes with a fixed text, namely 'Big lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Ice cream parlors' shows diet:lactose_free=limited with a fixed text, namely '<b>Limited lactose free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Ice cream parlors' shows diet:lactose_free=no with a fixed text, namely 'No lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Ice cream parlors' shows diet:gluten_free=only with a fixed text, namely 'This shop <b>only sells gluten free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "only"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Ice cream parlors' shows diet:gluten_free=yes with a fixed text, namely 'This shop has a big gluten free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Ice cream parlors' shows diet:gluten_free=limited with a fixed text, namely 'This shop has a <b>limited gluten free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Ice cream parlors' shows diet:gluten_free=no with a fixed text, namely 'This shop has no gluten free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Ice cream parlors' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Ice cream parlors' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Ice cream parlors' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Ice cream parlors' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "designated"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Ice cream parlors' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Ice cream parlors' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "limited"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Ice cream parlors' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
     },
     {
       "key": "indoor",
@@ -12339,6 +12516,26 @@
       "key": "service:print:A0",
       "description": "Layer 'Shop' shows service:print:A0=yes with a fixed text, namely 'This shop can print on papers of size A0' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes)",
       "value": "yes"
+    },
+    {
+      "key": "craft",
+      "description": "Layer 'Shop' shows craft=key_cutter with a fixed text, namely 'This shop is also specialized in key cutting' (in the mapcomplete.org theme 'Personal theme') (This is only shown if shop=shoe_repair|service:key_cutting~.+|craft=key_cutting|shop=diy|shop=doityourself|shop=home_improvement|shop=hardware|shop=locksmith|shop=repair)",
+      "value": "key_cutter"
+    },
+    {
+      "key": "service:key_cutting",
+      "description": "Layer 'Shop' shows service:key_cutting=yes with a fixed text, namely 'This shop offers key cutting as a service' (in the mapcomplete.org theme 'Personal theme') (This is only shown if shop=shoe_repair|service:key_cutting~.+|craft=key_cutting|shop=diy|shop=doityourself|shop=home_improvement|shop=hardware|shop=locksmith|shop=repair)",
+      "value": "yes"
+    },
+    {
+      "key": "craft",
+      "description": "Layer 'Shop' shows service:key_cutting=no with a fixed text, namely 'This shops does not offer key cutting as a service' (in the mapcomplete.org theme 'Personal theme') (This is only shown if shop=shoe_repair|service:key_cutting~.+|craft=key_cutting|shop=diy|shop=doityourself|shop=home_improvement|shop=hardware|shop=locksmith|shop=repair)",
+      "value": ""
+    },
+    {
+      "key": "service:key_cutting",
+      "description": "Layer 'Shop' shows service:key_cutting=no with a fixed text, namely 'This shops does not offer key cutting as a service' (in the mapcomplete.org theme 'Personal theme') (This is only shown if shop=shoe_repair|service:key_cutting~.+|craft=key_cutting|shop=diy|shop=doityourself|shop=home_improvement|shop=hardware|shop=locksmith|shop=repair)",
+      "value": "no"
     },
     {
       "key": "internet_access",

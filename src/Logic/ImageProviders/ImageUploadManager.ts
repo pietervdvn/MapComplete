@@ -64,8 +64,15 @@ export class ImageUploadManager {
     /**
      * Uploads the given image, applies the correct title and license for the known user.
      * Will then add this image to the OSM-feature or the OSM-note
+     * @param file a jpg file to upload
+     * @param tagsStore The tags of the feature
+     * @param targetKey Use this key to save the attribute under. Default: 'image'
      */
-    public async uploadImageAndApply(file: File, tagsStore: UIEventSource<OsmTags>): Promise<void> {
+    public async uploadImageAndApply(
+        file: File,
+        tagsStore: UIEventSource<OsmTags>,
+        targetKey?: string
+    ): Promise<void> {
         const sizeInBytes = file.size
         const tags = tagsStore.data
         const featureId = <OsmId>tags.id
@@ -95,7 +102,13 @@ export class ImageUploadManager {
         ].join("\n")
 
         console.log("Upload done, creating ")
-        const action = await this.uploadImageWithLicense(featureId, title, description, file)
+        const action = await this.uploadImageWithLicense(
+            featureId,
+            title,
+            description,
+            file,
+            targetKey
+        )
         if (!isNaN(Number(featureId))) {
             // This is a map note
             const url = action._url
@@ -112,7 +125,8 @@ export class ImageUploadManager {
         featureId: OsmId,
         title: string,
         description: string,
-        blob: File
+        blob: File,
+        targetKey: string | undefined
     ): Promise<LinkImageAction> {
         this.increaseCountFor(this._uploadStarted, featureId)
         const properties = this._featureProperties.getStore(featureId)
@@ -132,6 +146,7 @@ export class ImageUploadManager {
             }
         }
         console.log("Uploading done, creating action for", featureId)
+        key = targetKey ?? key
         const action = new LinkImageAction(featureId, key, value, properties, {
             theme: this._layout.id,
             changeType: "add-image",

@@ -12,21 +12,20 @@
    * E.g.
    * condition3 = new ImmutableStore(false) will always hide tab3 (the fourth tab)
    */
-  let tr = new ImmutableStore(true);
-  export let condition0: Store<boolean> = tr;
-  export let condition1: Store<boolean> = tr;
-  export let condition2: Store<boolean> = tr;
-  export let condition3: Store<boolean> = tr;
-  export let condition4: Store<boolean> = tr;
-  export let condition5: Store<boolean> = tr;
-
-  export let condition6: Store<boolean> = tr;
-  export let tab: UIEventSource<number> = new UIEventSource<number>(0);
-  let tabElements: HTMLElement[] = [];
-  $: tabElements[$tab]?.click();
+  const tr = new ImmutableStore(true)
+  export let condition0: Store<boolean> = tr
+  export let condition1: Store<boolean> = tr
+  export let condition2: Store<boolean> = tr
+  export let condition3: Store<boolean> = tr
+  export let condition4: Store<boolean> = tr
+  export let condition5: Store<boolean> = tr
+  export let condition6: Store<boolean> = tr
+  export let tab: UIEventSource<number> = new UIEventSource<number>(0)
+  let tabElements: HTMLElement[] = []
+  $: tabElements[$tab]?.click()
   $: {
     if (tabElements[tab.data]) {
-      window.setTimeout(() => tabElements[tab.data].click(), 50);
+      window.setTimeout(() => tabElements[tab.data].click(), 50)
     }
   }
 </script>
@@ -138,44 +137,44 @@
 </div>
 
 <style>
-    .tabbedgroup {
-        max-height: 100vh;
-        height: 100%;
-    }
+  .tabbedgroup {
+    max-height: 100vh;
+    height: 100%;
+  }
 
-    :global(.tabpanel) {
-        height: 100%;
-    }
+  :global(.tabpanel) {
+    height: 100%;
+  }
 
-    :global(.tabpanels) {
-        height: calc(100% - 2rem);
-    }
+  :global(.tabpanels) {
+    height: calc(100% - 2rem);
+  }
 
-    :global(.tab) {
-        margin: 0.25rem;
-        padding: 0.25rem;
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
-        border-radius: 1rem;
-    }
+  :global(.tab) {
+    margin: 0.25rem;
+    padding: 0.25rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: 1rem;
+  }
 
-    :global(.tab .flex) {
-        align-items: center;
-        gap: 0.25rem;
-    }
+  :global(.tab .flex) {
+    align-items: center;
+    gap: 0.25rem;
+  }
 
-    :global(.tab span|div) {
-        align-items: center;
-        gap: 0.25rem;
-        display: flex;
-    }
+  :global(.tab span|div) {
+    align-items: center;
+    gap: 0.25rem;
+    display: flex;
+  }
 
-    :global(.tab-selected svg) {
-        fill: var(--catch-detail-color-contrast);
-    }
+  :global(.tab-selected svg) {
+    fill: var(--catch-detail-color-contrast);
+  }
 
-    :global(.tab-unselected) {
-        background-color: var(--background-color) !important;
-        color: var(--foreground-color) !important;
-    }
+  :global(.tab-unselected) {
+    background-color: var(--background-color) !important;
+    color: var(--foreground-color) !important;
+  }
 </style>

@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 6092,
+      "commits": 6178,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -30,14 +30,14 @@
     },
     {
       "commits": 30,
-      "contributor": "paunofu"
-    },
-    {
-      "commits": 29,
       "contributor": "Hosted Weblate"
     },
     {
-      "commits": 27,
+      "commits": 30,
+      "contributor": "paunofu"
+    },
+    {
+      "commits": 28,
       "contributor": "riQQ"
     },
     {
@@ -53,7 +53,7 @@
       "contributor": "Ward"
     },
     {
-      "commits": 21,
+      "commits": 23,
       "contributor": "dependabot[bot]"
     },
     {

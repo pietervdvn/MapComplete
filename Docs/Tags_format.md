@@ -110,7 +110,7 @@ Both the `key` and `value` part of this specification are interpreted as regexes
 
 
 
-## `:=` Substitute `{some_key}` should match `key`
+## `:=` Substitute `... {some_key} ...` and match `key`
 
 **This is an advanced feature - use with caution**
 

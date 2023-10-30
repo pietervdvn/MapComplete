@@ -16,7 +16,8 @@
     "de": "Eine Ebene, die Eingänge anzeigt und die Möglichkeit bietet, weitere Daten zu erheben, die z. B. für Rollstuhlfahrer wichtig sind (aber auch für Radfahrer, Lieferpersonal, …)",
     "es": "Una capa que muestra capas y ofrece la posibilidad de sondear algunos datos avanzados que son importantes para, por ejemplo, usuarios de sillas de ruedas (pero también incluye ciclistas, gente que quiere repartir, ...)",
     "fr": "Une couche montrant les entrées et offrant des capacités pour étudier certaines données avancées qui sont importantes, par exemple. les utilisateurs de fauteuils roulants (mais aussi les utilisateurs de vélos, les personnes qui veulent faire des livraisons, …)",
-    "ca": "Una capa que mostra entrades i ofereix la possibilitat de sondejar algunes dades avançades que són importants per a, per exemple, usuaris de cadires de rodes (però també ciclistes, repartidors, …)"
+    "ca": "Una capa que mostra entrades i ofereix la possibilitat de sondejar algunes dades avançades que són importants per a, per exemple, usuaris de cadires de rodes (però també ciclistes, repartidors, …)",
+    "cs": "Vrstva zobrazující vstupy a nabízející možnosti zjišťování některých pokročilých údajů, které jsou důležité např. pro vozíčkáře (ale také pro uživatele jízdních kol, osoby, které chtějí doručovat, ...)"
   },
   "source": {
     "osmTags": {

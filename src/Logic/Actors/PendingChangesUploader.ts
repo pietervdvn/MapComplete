@@ -5,9 +5,10 @@ import { Utils } from "../../Utils"
 import { Feature } from "geojson"
 
 export default class PendingChangesUploader {
-
     constructor(changes: Changes, selectedFeature: UIEventSource<Feature>) {
-        changes.pendingChanges.stabilized(Constants.updateTimeoutSec * 1000).addCallback(() => changes.flushChanges("Flushing changes due to timeout"))
+        changes.pendingChanges
+            .stabilized(Constants.updateTimeoutSec * 1000)
+            .addCallback(() => changes.flushChanges("Flushing changes due to timeout"))
 
         selectedFeature.stabilized(1000).addCallback((feature) => {
             if (feature === undefined) {

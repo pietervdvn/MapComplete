@@ -23,7 +23,8 @@
       "de": "{name}",
       "nl": "{name}",
       "fr": "{name}",
-      "ca": "{name}"
+      "ca": "{name}",
+      "cs": "{name}"
     },
     "mappings": [
       {

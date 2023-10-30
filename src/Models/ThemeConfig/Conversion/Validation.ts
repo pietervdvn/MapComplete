@@ -91,7 +91,7 @@ export class DoesImageExist extends DesugaringStep<string> {
         }
 
         if (image.indexOf("{") >= 0) {
-            context.info("Ignoring image with { in the path: " + image)
+            context.debug("Ignoring image with { in the path: " + image)
             return image
         }
 
@@ -275,7 +275,8 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
         doesImageExist: DoesImageExist,
         path: string,
         isBuiltin: boolean,
-        sharedTagRenderings?: Set<string>
+        sharedTagRenderings?: Set<string>,
+        msg?: string
     ) {
         super(
             "Validates a theme and the contained layers",
@@ -284,9 +285,10 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
                 "layers",
                 new Each(
                     new Pipe(
-                        new ValidateLayer(undefined, isBuiltin, doesImageExist),
+                        new ValidateLayer(undefined, isBuiltin, doesImageExist, false, true),
                         new Pure((x) => x.raw)
-                    )
+                    ),
+                    msg
                 )
             )
         )
@@ -807,18 +809,21 @@ export class ValidateLayer extends Conversion<
     private readonly _isBuiltin: boolean
     private readonly _doesImageExist: DoesImageExist
     private readonly _studioValidations: boolean
+    private _skipDefaultLayers: boolean
 
     constructor(
         path: string,
         isBuiltin: boolean,
         doesImageExist: DoesImageExist,
-        studioValidations: boolean = false
+        studioValidations: boolean = false,
+        skipDefaultLayers: boolean = false
     ) {
         super("Doesn't change anything, but emits warnings and errors", [], "ValidateLayer")
         this._path = path
         this._isBuiltin = isBuiltin
         this._doesImageExist = doesImageExist
         this._studioValidations = studioValidations
+        this._skipDefaultLayers = skipDefaultLayers
     }
 
     convert(
@@ -829,6 +834,10 @@ export class ValidateLayer extends Conversion<
         if (typeof json === "string") {
             context.err("This layer hasn't been expanded: " + json)
             return null
+        }
+
+        if (this._skipDefaultLayers && Constants.added_by_default.indexOf(<any>json.id) >= 0) {
+            return { parsed: undefined, raw: json }
         }
 
         if (typeof json === "string") {
@@ -1102,7 +1111,7 @@ export class ValidateLayer extends Conversion<
                 ).convert(json, context)
             }
 
-            if (json.pointRendering !== null) {
+            if (json.pointRendering !== null && json.pointRendering !== undefined) {
                 if (!Array.isArray(json.pointRendering)) {
                     throw (
                         "pointRendering in " +
@@ -1111,8 +1120,11 @@ export class ValidateLayer extends Conversion<
                         typeof json.pointRendering
                     )
                 }
-                for (const pointRendering of json.pointRendering) {
-                    const index = json.pointRendering.indexOf(pointRendering)
+                for (let i = 0; i < json.pointRendering.length; i++) {
+                    const pointRendering = json.pointRendering[i]
+                    if (pointRendering.marker === undefined) {
+                        continue
+                    }
                     for (const icon of pointRendering?.marker) {
                         const indexM = pointRendering?.marker.indexOf(icon)
                         if (!icon.icon) {
@@ -1120,14 +1132,7 @@ export class ValidateLayer extends Conversion<
                         }
                         if (icon.icon["condition"]) {
                             context
-                                .enters(
-                                    "pointRendering",
-                                    index,
-                                    "marker",
-                                    indexM,
-                                    "icon",
-                                    "condition"
-                                )
+                                .enters("pointRendering", i, "marker", indexM, "icon", "condition")
                                 .err(
                                     "Don't set a condition in a marker as this will result in an invisible but clickable element. Use extra filters in the source instead."
                                 )

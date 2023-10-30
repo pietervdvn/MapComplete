@@ -459,7 +459,8 @@
         "it": "<a href='mailto:{email}'>{email}</a>",
         "ru": "<a href='mailto:{email}'>{email}</a>",
         "id": "<a href='mailto:{email}'>{email}</a>",
-        "es": "<a href='mailto:{email}'>{email}</a>"
+        "es": "<a href='mailto:{email}'>{email}</a>",
+        "cs": "<a href='mailto:{email}'>{email}</a>"
       },
       "freeform": {
         "key": "email",
@@ -486,7 +487,8 @@
         "ru": "<a href='tel:{phone}'>{phone}</a>",
         "id": "<a href='tel:{phone}'>{phone}</a>",
         "it": "<a href='tel:{phone}'>{phone}</a>",
-        "es": "<a href='tel:{phone}'>{phone}</a>"
+        "es": "<a href='tel:{phone}'>{phone}</a>",
+        "cs": "<a href='tel:{phone}'>{phone}</a>"
       },
       "freeform": {
         "key": "phone",

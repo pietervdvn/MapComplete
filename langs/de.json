@@ -193,6 +193,8 @@
             "title": "Download",
             "uploadGpx": "Einen Track auf OpenStreetMap hochladen"
         },
+        "enableGeolocationForSafari": "Hast du das Popup zur Abfrage der Geo-Berechtigung nicht erhalten?",
+        "enableGeolocationForSafariLink": "Erfahre, wie du die Geo-Berechtigung in den Einstellungen aktivieren kannst",
         "error": "Etwas ist schief gelaufen",
         "example": "Beispiel",
         "examples": "Beispiele",
@@ -316,6 +318,7 @@
         },
         "skip": "Frage überspringen",
         "testing": "Testen - Änderungen werden nicht gespeichert",
+        "uploadError": "Fehler beim Hochladen von Änderungen: {error}",
         "uploadGpx": {
             "choosePermission": "Wählen Sie unten, ob Ihre Strecke geteilt werden soll:",
             "confirm": "Hochladen bestätigen",
@@ -343,6 +346,9 @@
             "uploadFinished": "Ihre Strecke wurde hochgeladen!",
             "uploading": "Hochladen Ihrer Strecke…"
         },
+        "uploadPending": "{count} Änderungen ausstehend",
+        "uploadPendingSingle": "Eine Änderung ausstehend",
+        "uploadingChanges": "Änderungen werden hochgeladen…",
         "useSearch": "Verwenden Sie die Suche oben, um Voreinstellungen anzuzeigen",
         "useSearchForMore": "Verwenden Sie die Suchfunktion, um innerhalb von {total} weitere Werte zu suchen…",
         "waitingForGeopermission": "Warten auf Ihre Erlaubnis, Standortdaten zu verwenden…",

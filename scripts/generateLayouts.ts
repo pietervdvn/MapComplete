@@ -61,9 +61,9 @@ async function createSocialImage(layout: LayoutConfig, template: "" | "Wide"): P
     if (!layout.icon.endsWith(".svg")) {
         console.warn(
             "Not creating a social image for " +
-            layout.id +
-            " as it is _not_ a .svg: " +
-            layout.icon,
+                layout.id +
+                " as it is _not_ a .svg: " +
+                layout.icon
         )
         return undefined
     }
@@ -85,7 +85,7 @@ async function createSocialImage(layout: LayoutConfig, template: "" | "Wide"): P
     delete svg["defs"]
     delete svg["$"]
     let templateSvg = await ScriptUtils.ReadSvg(
-        "./public/assets/SocialImageTemplate" + template + ".svg",
+        "./public/assets/SocialImageTemplate" + template + ".svg"
     )
     templateSvg = Utils.WalkJson(
         templateSvg,
@@ -104,7 +104,7 @@ async function createSocialImage(layout: LayoutConfig, template: "" | "Wide"): P
                 return false
             }
             return mightBeTokenToReplace.circle[0]?.$?.style?.indexOf("fill:#ff00ff") >= 0
-        },
+        }
     )
 
     const builder = new xml2js.Builder()
@@ -116,7 +116,7 @@ async function createSocialImage(layout: LayoutConfig, template: "" | "Wide"): P
 
 async function createManifest(
     layout: LayoutConfig,
-    alreadyWritten: string[],
+    alreadyWritten: string[]
 ): Promise<{
     manifest: any
     whiteIcons: string[]
@@ -217,7 +217,11 @@ async function eliUrls(): Promise<string[]> {
     }
     const urls: string[] = []
     const regex = /{switch:([^}]+)}/
-    const rasterLayers = [AvailableRasterLayers.maptilerDefaultLayer, ...eli.features, ...eli_global.layers.map(properties => ({ properties }))]
+    const rasterLayers = [
+        AvailableRasterLayers.maptilerDefaultLayer,
+        ...eli.features,
+        ...eli_global.layers.map((properties) => ({ properties })),
+    ]
     for (const feature of rasterLayers) {
         const f = <RasterLayerPolygon>feature
         const url = f.properties.url
@@ -235,26 +239,24 @@ async function eliUrls(): Promise<string[]> {
             const styleSpec = await Utils.downloadJsonCached(f.properties.url, 1000 * 120)
             for (const key of Object.keys(styleSpec.sources)) {
                 const url = styleSpec.sources[key].url
-                if(!url){
+                if (!url) {
                     continue
                 }
                 let urlClipped = url
-                if(url.indexOf("?") > 0){
+                if (url.indexOf("?") > 0) {
                     urlClipped = url?.substring(0, url.indexOf("?"))
                 }
-                console.log("Source url ",key,url)
+                console.log("Source url ", key, url)
                 urls.push(url)
-                if(urlClipped.endsWith(".json")){
-                    const tileInfo = await Utils.downloadJsonCached(url, 1000*120)
+                if (urlClipped.endsWith(".json")) {
+                    const tileInfo = await Utils.downloadJsonCached(url, 1000 * 120)
                     urls.push(tileInfo["tiles"] ?? [])
                 }
-
             }
             urls.push(...(styleSpec["tiles"] ?? []))
             urls.push(styleSpec["sprite"])
             urls.push(styleSpec["glyphs"])
         }
-
     }
     eliUrlsCached = urls
     return Utils.NoNull(urls).sort()
@@ -264,7 +266,7 @@ async function generateCsp(
     layout: LayoutConfig,
     options: {
         scriptSrcs: string[]
-    },
+    }
 ): Promise<string> {
     const apiUrls: string[] = [
         "'self'",
@@ -275,12 +277,12 @@ async function generateCsp(
         "https://pietervdvn.goatcounter.com",
     ]
         .concat(...SpecialVisualizations.specialVisualizations.map((sv) => sv.needsUrls))
-        .concat(...await eliUrls())
+        .concat(...(await eliUrls()))
 
     const geojsonSources: string[] = layout.layers.map((l) => l.source?.geojsonSource)
     const hosts = new Set<string>()
     const eliLayers: RasterLayerPolygon[] = AvailableRasterLayers.layersAvailableAt(
-        new ImmutableStore({ lon: 0, lat: 0 }),
+        new ImmutableStore({ lon: 0, lat: 0 })
     ).data
     const vectorLayers = eliLayers.filter((l) => l.properties.type === "vector")
     const vectorSources = vectorLayers.map((l) => l.properties.url)
@@ -307,25 +309,25 @@ async function generateCsp(
         "connect-src items for theme",
         layout.id,
         "(extra sources: ",
-        newSrcs.join(" ") + ")",
+        newSrcs.join(" ") + ")"
     )
     previousSrc = hosts
 
     const csp: Record<string, string> = {
         "default-src": "'self'",
-        "script-src": ["'self'", "https://gc.zgo.at/count.js", ...(options?.scriptSrcs ?? [])].join(
-            " ",
-        ),
-        "child-src": "self",
+        "child-src": "'self' blob: ",
         "img-src": "* data:", // maplibre depends on 'data:' to load
         "connect-src": connectSrc.join(" "),
         "report-to": "https://report.mapcomplete.org/csp",
         "worker-src": "'self' blob:", // Vite somehow loads the worker via a 'blob'
         "style-src": "'self' 'unsafe-inline'", // unsafe-inline is needed to change the default background pin colours
+        "script-src": ["'self'", "https://gc.zgo.at/count.js", ...(options?.scriptSrcs ?? [])].join(
+            " "
+        ),
     }
     const content = Object.keys(csp)
         .map((k) => k + " " + csp[k])
-        .join("; ")
+        .join(" ; ")
 
     return [
         `<meta http-equiv ="Report-To" content='{"group":"csp-endpoint", "max_age": 86400,"endpoints": [\{"url": "https://report.mapcomplete.org/csp"}], "include_subdomains": true}'>`,
@@ -345,12 +347,12 @@ const removeOtherLanguagesHash = crypto
 async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alreadyWritten) {
     Locale.language.setData(layout.language[0])
     const targetLanguage = layout.language[0]
-    const ogTitle = Translations.T(layout.title).textFor(targetLanguage).replace(/"/g, "\\\"")
+    const ogTitle = Translations.T(layout.title).textFor(targetLanguage).replace(/"/g, '\\"')
     const ogDescr = Translations.T(
-        layout.shortDescription ?? "Easily add and edit geodata with OpenStreetMap",
+        layout.shortDescription ?? "Easily add and edit geodata with OpenStreetMap"
     )
         .textFor(targetLanguage)
-        .replace(/"/g, "\\\"")
+        .replace(/"/g, '\\"')
     let ogImage = layout.socialImage
     let twitterImage = ogImage
     if (ogImage === LayoutConfig.defaultSocialImage && layout.official) {
@@ -415,34 +417,34 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
     const loadingText = Translations.t.general.loadingTheme.Subs({ theme: layout.title })
     const templateLines = template.split("\n")
     const removeOtherLanguagesReference = templateLines.find(
-        (line) => line.indexOf("./src/UI/RemoveOtherLanguages.js") >= 0,
+        (line) => line.indexOf("./src/UI/RemoveOtherLanguages.js") >= 0
     )
     let output = template
         .replace("Loading MapComplete, hang on...", asLangSpan(loadingText, "h1"))
         .replace(
             "Made with OpenStreetMap",
-            Translations.t.general.poweredByOsm.textFor(targetLanguage),
+            Translations.t.general.poweredByOsm.textFor(targetLanguage)
         )
         .replace(/<!-- THEME-SPECIFIC -->.*<!-- THEME-SPECIFIC-END-->/s, themeSpecific)
         .replace(
             /<!-- CSP -->/,
             await generateCsp(layout, {
                 scriptSrcs: [`'sha256-${removeOtherLanguagesHash}'`],
-            }),
+            })
         )
         .replace(removeOtherLanguagesReference, "<script>" + removeOtherLanguages + "</script>")
         .replace(
             /<!-- DESCRIPTION START -->.*<!-- DESCRIPTION END -->/s,
-            asLangSpan(layout.shortDescription),
+            asLangSpan(layout.shortDescription)
         )
         .replace(
             /<!-- IMAGE-START -->.*<!-- IMAGE-END -->/s,
-            "<img class='p-8 h-32 w-32 self-start' src='" + icon + "' />",
+            "<img class='p-8 h-32 w-32 self-start' src='" + icon + "' />"
         )
 
         .replace(
             /.*\/src\/index\.ts.*/,
-            `<script type="module" src="./index_${layout.id}.ts"></script>`,
+            `<script type="module" src="./index_${layout.id}.ts"></script>`
         )
         .replace("Version", Constants.vNumber)
 
@@ -534,7 +536,7 @@ async function main(): Promise<void> {
             title: { en: "MapComplete" },
             description: { en: "A thematic map viewer and editor based on OpenStreetMap" },
         }),
-        alreadyWritten,
+        alreadyWritten
     )
 
     const manif = JSON.stringify(manifest, undefined, 2)

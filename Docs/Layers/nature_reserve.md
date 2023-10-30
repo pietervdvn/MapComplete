@@ -217,7 +217,7 @@ This is rendered with  `{curator} is the curator of this nature reserve`
 
 
 
-The question is  *What email adress can one send to with questions and problems with this nature reserve?*
+The question is  *What email address can one send to with questions and problems with this nature reserve?*
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 

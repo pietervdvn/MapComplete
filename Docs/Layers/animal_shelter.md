@@ -40,6 +40,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/purpose#values) [purpose](https://wiki.openstreetmap.org/wiki/Key:purpose) | Multiple choice | [adoption](https://wiki.openstreetmap.org/wiki/Tag:purpose%3Dadoption) [sanctuary](https://wiki.openstreetmap.org/wiki/Tag:purpose%3Dsanctuary) [release](https://wiki.openstreetmap.org/wiki/Tag:purpose%3Drelease)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
 
 
 
@@ -180,6 +181,20 @@ The question is  *What is the purpose of the animal shelter?*
   - *Animals are kept here until adopted by a new owner*  corresponds with  `purpose=adoption`
   - *Animals are taken care of for the rest of their lives*  corresponds with  `purpose=sanctuary`
   - *Injured animals are rehabilitated here until they can be released in nature again *  corresponds with  `purpose=release`
+
+
+
+
+### 7 
+
+
+
+The question is  *When is this animal shelter opened?*
+
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
+
+This is rendered with  `{opening_hours_table()}`
+
 
 
 

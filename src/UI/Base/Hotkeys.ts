@@ -23,11 +23,11 @@ export default class Hotkeys {
     >([])
 
     private static textElementSelected(event: KeyboardEvent): boolean {
-        if(event.ctrlKey || event.altKey){
+        if (event.ctrlKey || event.altKey) {
             // This is an event with a modifier-key, lets not ignore it
             return false
         }
-        if(event.key === "Escape"){
+        if (event.key === "Escape") {
             return false // Another not-printable character that should not be ignored
         }
         return ["input", "textarea"].includes(document?.activeElement?.tagName?.toLowerCase())

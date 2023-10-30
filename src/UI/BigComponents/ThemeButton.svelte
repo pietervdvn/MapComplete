@@ -15,19 +15,19 @@
   export let userDetails: UIEventSource<UserDetails>
   export let state: { layoutToUse?: { id: string }; osmConnection: OsmConnection }
   export let selected: boolean = false
-  
+
   let unlockedPersonal = LocalStorageSource.GetParsed("unlocked_personal_theme", false)
 
-  userDetails.addCallbackAndRunD(userDetails => {
-      if(!userDetails.loggedIn){
-          return
-      }
-      if(userDetails.csCount > Constants.userJourney.personalLayoutUnlock){
-          unlockedPersonal.setData(true)
-      }
-      return true
+  userDetails.addCallbackAndRunD((userDetails) => {
+    if (!userDetails.loggedIn) {
+      return
+    }
+    if (userDetails.csCount > Constants.userJourney.personalLayoutUnlock) {
+      unlockedPersonal.setData(true)
+    }
+    return true
   })
-  
+
   $: title = new Translation(
     theme.title,
     !isCustom && !theme.mustHaveLanguage ? "themes:" + theme.id + ".title" : undefined

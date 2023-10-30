@@ -479,8 +479,10 @@
                 "name": "łącza węzeł do węzła",
                 "tagRenderings": {
                     "node2node-survey:date": {
-                        "question": "Kiedy ostatnio badano to połączenie węzła z węzłem?",
-                        "render": "To połączenie węzła z węzłem było ostatnio sprawdzane w dniu {survey:date}"
+                        "override": {
+                            "question": "Kiedy ostatnio badano to połączenie węzła z węzłem?",
+                            "render": "To połączenie węzła z węzłem było ostatnio sprawdzane w dniu {survey:date}"
+                        }
                     }
                 },
                 "title": {
@@ -500,8 +502,10 @@
                         "render": "Ten węzeł łączy się z innymi węzłami rowerowymi {expected_rcn_route_relations}."
                     },
                     "node-survey:date": {
-                        "question": "Kiedy ostatni raz badano ten węzeł rowerowy?",
-                        "render": "Ten węzeł rowerowy był ostatnio badany w dniu {survey:date}"
+                        "override": {
+                            "question": "Kiedy ostatni raz badano ten węzeł rowerowy?",
+                            "render": "Ten węzeł rowerowy był ostatnio badany w dniu {survey:date}"
+                        }
                     }
                 },
                 "title": {
@@ -798,6 +802,10 @@
                 }
             }
         }
+    },
+    "guideposts": {
+        "description": "Drogowskazy (znane również jako \"palce na słupkach\") często znajdują się wzdłuż oficjalnych szlaków pieszych, rowerowych, narciarskich lub konnych i wskazują drogę do różnych miejsc. Ponadto często noszą nazwy regionu lub miejsca i wskazują wysokość.\n\nPozycja drogowskazu może być wykorzystana przez turystę/rowerzystę/jeźdźca/narciarza jako potwierdzenie aktualnej pozycji, zwłaszcza jeśli korzysta z drukowanej mapy bez odbiornika GPS. ",
+        "title": "Drogowskazy"
     },
     "hackerspaces": {
         "description": "Na tej mapie możesz zobaczyć hackerspace, dodać nową hackerspace lub bezpośrednio zaktualizować dane",

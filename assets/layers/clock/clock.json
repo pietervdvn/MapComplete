@@ -14,7 +14,8 @@
     "de": "Ebene mit öffentlichen Uhren",
     "ca": "Capa amb rellotges públics",
     "fr": "Couche avec les horloges publiques",
-    "cs": "Vrstva s veřejnými hodinami"
+    "cs": "Vrstva s veřejnými hodinami",
+    "pl": "Warstwa z zegarami publicznymi"
   },
   "title": {
     "render": {
@@ -188,7 +189,7 @@
             "de": "Diese Uhr ist aus etwa 20 Metern Entfernung sichtbar (mittelgroße Plakatuhr)",
             "ca": "Aquest rellotge és visible al voltant dels 20 metres de distància (rellotge de tamany mig a una tanca publicitària)",
             "fr": "Cette horloge est visible d'environ 20 mètres (horloge sur un panneau publicitaire)",
-            "pl": "Ten zegar jest widoczny z około 20 metrów (średniej wielkości zegar na bilbordzie)",
+            "pl": "Ten zegar jest widoczny z około 20 metrów (średniej wielkości zegar bilbordowy)",
             "cs": "Tyto hodiny jsou viditelné ze vzdálenosti asi 20 metrů (středně velké billboardové hodiny)"
           }
         },

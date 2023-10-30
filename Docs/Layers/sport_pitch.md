@@ -328,6 +328,7 @@ available_sports.1 | Basketball fields | sport=basketball
 available_sports.2 | Soccer fields | sport=soccer
 available_sports.3 | Ping-pong tables | sport=table_tennis
 available_sports.4 | Tennis fields | sport=tennis
+available_sports.5 | Badminton fields | sport=badminton
 
 
 

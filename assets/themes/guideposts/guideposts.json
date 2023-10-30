@@ -1,10 +1,18 @@
 {
   "id": "guideposts",
   "title": {
-    "en": "Guideposts"
+    "en": "Guideposts",
+    "cs": "Rozcestníky",
+    "de": "Wegweiser",
+    "es": "Poste guía",
+    "pl": "Drogowskazy"
   },
   "description": {
-    "en": "Guideposts (also known as fingerposts or finger posts) are often found along official hiking, cycling, skiing or horseback riding routes to indicate the directions to different destinations. Additionally, they are often named after a region or place and show the altitude.\n\nThe position of a signpost can be used by a hiker/biker/rider/skier as a confirmation of the current position, especially if they use a printed map without a GPS receiver. "
+    "en": "Guideposts (also known as fingerposts or finger posts) are often found along official hiking, cycling, skiing or horseback riding routes to indicate the directions to different destinations. Additionally, they are often named after a region or place and show the altitude.\n\nThe position of a signpost can be used by a hiker/biker/rider/skier as a confirmation of the current position, especially if they use a printed map without a GPS receiver. ",
+    "cs": "Podél oficiálních turistických, cyklistických, lyžařských nebo jezdeckých tras se často nacházejí rozcestníky (také známé jako ukazatel směru), které ukazují směry k různým cílům. Navíc jsou často pojmenovány po regionu nebo místě a ukazují nadmořskou výšku.\n\nPolohu rozcestníku může turista/cyklista/jezdec/lyžař využít jako potvrzení aktuální polohy, zejména pokud používá tištěnou mapu bez GPS přijímače. ",
+    "de": "Wegweiser (auch als Wegzeiger oder Fingerschilder bekannt) sind entlang offizieller Wander-, Rad-, Ski- oder Reitstrecken häufig zu finden, um die Richtungen zu verschiedenen Zielen anzuzeigen. Darüber hinaus sind sie oft nach einer Region oder einem Ort benannt und zeigen die Höhe an.\n\nDie Position eines Wegweisers kann von Wanderern, Radfahrern, Reitern oder Skifahrern als Bestätigung der aktuellen Position genutzt werden, insbesondere wenn sie eine gedruckte Karte ohne GPS-Empfänger verwenden. ",
+    "es": "Los postes guía o indicadores (también conocidos como \"fingerposts\") suelen encontrarse a lo largo de las rutas oficiales de senderismo, ciclismo, esquí o equitación para indicar las direcciones a los distintos destinos. Además, suelen llevar el nombre de una región o lugar e indican la altitud.\n\nLa posición de un poste indicador puede servir al excursionista, ciclista, jinete o esquiador para confirmar su posición actual, sobre todo si utiliza un mapa impreso sin receptor GPS. ",
+    "pl": "Drogowskazy (znane również jako \"palce na słupkach\") często znajdują się wzdłuż oficjalnych szlaków pieszych, rowerowych, narciarskich lub konnych i wskazują drogę do różnych miejsc. Ponadto często noszą nazwy regionu lub miejsca i wskazują wysokość.\n\nPozycja drogowskazu może być wykorzystana przez turystę/rowerzystę/jeźdźca/narciarza jako potwierdzenie aktualnej pozycji, zwłaszcza jeśli korzysta z drukowanej mapy bez odbiornika GPS. "
   },
   "icon": "./assets/layers/guidepost/guidepost.svg",
   "startZoom": 2,

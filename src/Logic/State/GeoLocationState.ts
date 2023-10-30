@@ -102,6 +102,10 @@ export class GeoLocationState {
         this.requestPermissionAsync()
     }
 
+    public static isSafari(): boolean {
+        return navigator.permissions === undefined && navigator.geolocation !== undefined
+    }
+
     /**
      * Requests the user to allow access to their position.
      * When granted, will be written to the 'geolocationState'.
@@ -119,8 +123,12 @@ export class GeoLocationState {
             return
         }
 
-        if (navigator.permissions === undefined && navigator.geolocation !== undefined) {
-            // This is probably safari - we just start watching right away
+        if (GeoLocationState.isSafari()) {
+            // This is probably safari
+            // Safari does not support the 'permissions'-API for geolocation,
+            // so we just start watching right away
+
+            this.permission.setData("requested")
             this.startWatching()
             return
         }

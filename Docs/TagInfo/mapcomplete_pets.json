@@ -1618,6 +1618,26 @@
       "value": "yes"
     },
     {
+      "key": "craft",
+      "description": "Layer 'Dog-friendly shops' shows craft=key_cutter with a fixed text, namely 'This shop is also specialized in key cutting' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if shop=shoe_repair|service:key_cutting~.+|craft=key_cutting|shop=diy|shop=doityourself|shop=home_improvement|shop=hardware|shop=locksmith|shop=repair)",
+      "value": "key_cutter"
+    },
+    {
+      "key": "service:key_cutting",
+      "description": "Layer 'Dog-friendly shops' shows service:key_cutting=yes with a fixed text, namely 'This shop offers key cutting as a service' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if shop=shoe_repair|service:key_cutting~.+|craft=key_cutting|shop=diy|shop=doityourself|shop=home_improvement|shop=hardware|shop=locksmith|shop=repair)",
+      "value": "yes"
+    },
+    {
+      "key": "craft",
+      "description": "Layer 'Dog-friendly shops' shows service:key_cutting=no with a fixed text, namely 'This shops does not offer key cutting as a service' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if shop=shoe_repair|service:key_cutting~.+|craft=key_cutting|shop=diy|shop=doityourself|shop=home_improvement|shop=hardware|shop=locksmith|shop=repair)",
+      "value": ""
+    },
+    {
+      "key": "service:key_cutting",
+      "description": "Layer 'Dog-friendly shops' shows service:key_cutting=no with a fixed text, namely 'This shops does not offer key cutting as a service' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if shop=shoe_repair|service:key_cutting~.+|craft=key_cutting|shop=diy|shop=doityourself|shop=home_improvement|shop=hardware|shop=locksmith|shop=repair)",
+      "value": "no"
+    },
+    {
       "key": "internet_access",
       "description": "Layer 'Dog-friendly shops' shows internet_access=wlan with a fixed text, namely 'This place offers wireless internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "wlan"

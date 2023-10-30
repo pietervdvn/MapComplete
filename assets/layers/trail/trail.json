@@ -7,7 +7,8 @@
     "de": "Wanderwege",
     "fr": "Sentiers",
     "ca": "Camins",
-    "da": "Stier"
+    "da": "Stier",
+    "cs": "Stezky"
   },
   "minzoom": 12,
   "source": {
@@ -32,7 +33,8 @@
       "de": "Wanderweg",
       "fr": "Sentier",
       "ca": "Camí",
-      "da": "Sti"
+      "da": "Sti",
+      "cs": "Stezka"
     },
     "mappings": [
       {
@@ -51,7 +53,8 @@
         "de": "Der Wanderweg ist {_length:km} Kilometer lang",
         "fr": "Le sentier fait {_length:km} kilomètres de long",
         "da": "Stien er {_length:km} kilometer lang",
-        "ca": "El sender té {_length:km} quilòmetres"
+        "ca": "El sender té {_length:km} quilòmetres",
+        "cs": "Stezka je dlouhá {_length:km} kilometrů"
       }
     },
     {
@@ -129,7 +132,8 @@
             "de": "Blauer Weg",
             "fr": "Sentier bleu",
             "da": "Blå sti",
-            "ca": "Ruta blava"
+            "ca": "Ruta blava",
+            "cs": "Modrá stezka"
           }
         },
         {
@@ -140,7 +144,8 @@
             "de": "Roter Weg",
             "fr": "Sentier rouge",
             "da": "Rød sti",
-            "ca": "Ruta vermella"
+            "ca": "Ruta vermella",
+            "cs": "Červená stezka"
           }
         },
         {
@@ -151,7 +156,8 @@
             "de": "Grüner Weg",
             "fr": "Sentier vert",
             "da": "Grøn sti",
-            "ca": "Ruta verda"
+            "ca": "Ruta verda",
+            "cs": "Zelená stezka"
           }
         },
         {
@@ -162,7 +168,8 @@
             "de": "Gelber Weg",
             "fr": "Sentier jaune",
             "da": "Gul sti",
-            "ca": "Ruta groga"
+            "ca": "Ruta groga",
+            "cs": "Žlutá stezka"
           }
         }
       ],

@@ -5,14 +5,16 @@
     "de": "Bahnsteige",
     "nl": "Treinperrons",
     "fr": "Quais de gare",
-    "ca": "Andanes ferroviàries"
+    "ca": "Andanes ferroviàries",
+    "cs": "Železniční nástupiště"
   },
   "description": {
     "en": "Find every platform in the station, and the train routes that use them.",
     "de": "Finden Sie alle Bahnsteige im Bahnhof und die Zugstrecken, die sie benutzen.",
     "nl": "Vind elk perron in het station, en de routes die ze gebruiken.",
     "fr": "Trouvez tous les quais dans la gare, et les lignes ferroviaires qui les utilisent.",
-    "ca": "Trobeu totes les andanes de l'estació i les rutes de tren que les fan servir."
+    "ca": "Trobeu totes les andanes de l'estació i les rutes de tren que les fan servir.",
+    "cs": "Najděte všechna nástupiště ve stanici a vlakové trasy, které je používají."
   },
   "title": {
     "render": {
@@ -20,7 +22,8 @@
       "de": "Bahnsteig",
       "nl": "Perron",
       "fr": "Quai",
-      "ca": "Andana"
+      "ca": "Andana",
+      "cs": "Nástupiště"
     },
     "mappings": [
       {
@@ -30,7 +33,8 @@
           "de": "Bahnsteig {ref}",
           "nl": "Perron {ref}",
           "fr": "Quai {ref}",
-          "ca": "Andana {ref}"
+          "ca": "Andana {ref}",
+          "cs": "Nástupiště {ref}"
         }
       }
     ]
@@ -51,7 +55,8 @@
         "de": "Wie lautet die Nummer dieses Bahnsteigs?",
         "nl": "Wat is het nummer van dit perron?",
         "fr": "Quel est le numéro de ce quai ?",
-        "ca": "Quin és el número d'aquesta andana?"
+        "ca": "Quin és el número d'aquesta andana?",
+        "cs": "Jaké je číslo tohoto nástupiště?"
       },
       "freeform": {
         "key": "ref",
@@ -61,7 +66,8 @@
           "de": "Bahnsteignummer",
           "nl": "Perronnummer",
           "fr": "Numéro de quai",
-          "ca": "Nombre d'andana"
+          "ca": "Nombre d'andana",
+          "cs": "Číslo nástupiště"
         }
       },
       "render": {
@@ -69,7 +75,8 @@
         "de": "Bahnsteig {ref}",
         "nl": "Perron {ref}",
         "fr": "Quai {ref}",
-        "ca": "Andana {ref}"
+        "ca": "Andana {ref}",
+        "cs": "Nástupiště {ref}"
       }
     },
     "level"

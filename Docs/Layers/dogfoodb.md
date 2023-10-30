@@ -455,6 +455,8 @@ The question is  *Does this shop have a sugar free offering?*
   - *This shop has no sugar free offering*  corresponds with  `diet:sugar_free=no`
 
 
+This tagrendering has labels  `diets`
+
 
 
 ### gluten_free 
@@ -473,6 +475,8 @@ The question is  *Does this shop have a gluten free offering?*
   - *This shop has no gluten free offering*  corresponds with  `diet:gluten_free=no`
 
 
+This tagrendering has labels  `diets`
+
 
 
 ### lactose_free 
@@ -490,6 +494,8 @@ The question is  *Does {title()} have a lactose-free offering?*
   - *<b>Limited lactose free</b> offering*  corresponds with  `diet:lactose_free=limited`
   - *No lactose free offering*  corresponds with  `diet:lactose_free=no`
 
+
+This tagrendering has labels  `diets`
 
 
 

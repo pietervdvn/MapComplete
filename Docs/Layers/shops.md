@@ -483,6 +483,25 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
+### key_cutter 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+  - *This shop is also specialized in key cutting*  corresponds with  `craft=key_cutter`
+  - *This shop offers key cutting as a service*  corresponds with  `service:key_cutting=yes`
+  - *This shops does not offer key cutting as a service*  corresponds with  `service:key_cutting=no`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `shop=shoe_repair|service:key_cutting~.+|craft=key_cutting|shop=diy|shop=doityourself|shop=home_improvement|shop=hardware|shop=locksmith|shop=repair`
+
+
+
 ### internet 
 
 
@@ -580,6 +599,8 @@ The question is  *Does this shop have a sugar free offering?*
 
 This tagrendering is only visible in the popup if the following condition is met: `shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream`
 
+This tagrendering has labels  `diets`
+
 
 
 ### gluten_free 
@@ -600,6 +621,8 @@ The question is  *Does this shop have a gluten free offering?*
 
 This tagrendering is only visible in the popup if the following condition is met: `shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream`
 
+This tagrendering has labels  `diets`
+
 
 
 ### lactose_free 
@@ -619,6 +642,8 @@ The question is  *Does {title()} have a lactose-free offering?*
 
 
 This tagrendering is only visible in the popup if the following condition is met: `shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream`
+
+This tagrendering has labels  `diets`
 
 
 

@@ -5,7 +5,8 @@
     "nl": "Lagere en middelbare scholen",
     "de": "Grund- und weiterführende Schulen",
     "fr": "Écoles primaires et secondaires",
-    "ca": "Escoles de primària i secundària"
+    "ca": "Escoles de primària i secundària",
+    "cs": "Základní a střední školy"
   },
   "description": "Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles",
   "minzoom": 12,
@@ -16,7 +17,8 @@
       "de": "Schule <i>{name}</i>",
       "fr": "School <i>{name}</i>",
       "pl": "Szkoła <i>{name}</i>",
-      "ca": "Escola <i>{name}</i>"
+      "ca": "Escola <i>{name}</i>",
+      "cs": "Škola <i>{name}</i>"
     }
   },
   "calculatedTags": [
@@ -37,7 +39,8 @@
         "de": "Diese Schule heißt {name}",
         "fr": "Cet établissement scolaire s'appelle {name}",
         "ca": "L'escola s'anomena {name}",
-        "pl": "Ta szkoła nazywa się {name}"
+        "pl": "Ta szkoła nazywa się {name}",
+        "cs": "Tato škola se jmenuje {name}"
       },
       "question": {
         "en": "What is the name of this school?",
@@ -45,7 +48,8 @@
         "de": "Wie lautet der Name dieser Schule?",
         "fr": "Quel est le nom de cet établissement scolaire?",
         "ca": "Quin és el nom d'aquesta escola?",
-        "pl": "Jaką nazwę ma ta szkoła?"
+        "pl": "Jaką nazwę ma ta szkoła?",
+        "cs": "Jak se jmenuje tato škola?"
       },
       "freeform": {
         "key": "name"
@@ -59,14 +63,16 @@
         "de": "Wie viele Schüler können sich maximal an dieser Schule anmelden?",
         "nl": "Ten hoogste hoeveel studenten kunnen er les volgen in deze school?",
         "fr": "Combien d'élèves peuvent s'inscrire au maximum dans cette école ?",
-        "ca": "Quants alumnes poden matricular-se com a màxim a aquesta escola?"
+        "ca": "Quants alumnes poden matricular-se com a màxim a aquesta escola?",
+        "cs": "Kolik studentů se může na tuto školu maximálně zapsat?"
       },
       "render": {
         "en": "This school can enroll at most {capacity} students",
         "nl": "Deze school kan maximaal {capacity} studenten lesgeven",
         "de": "Diese Schule kann höchstens {capacity} Schüler aufnehmen",
         "fr": "Cette école peut accueillir au maximum {capacity} étudiants",
-        "ca": "A aquesta escola poden inscriure's com a màxim {capacity} estudiants"
+        "ca": "A aquesta escola poden inscriure's com a màxim {capacity} estudiants",
+        "cs": "Tato škola může přijmout maximálně {capacity} studentů"
       },
       "freeform": {
         "key": "capacity",
@@ -81,7 +87,8 @@
         "nl": "Wat is het onderwijsniveau van deze school?",
         "de": "Welches Bildungsniveau wird an dieser Schule vermittelt?",
         "fr": "Quel est le niveau d'enseignement dispensé dans cette école ?",
-        "ca": "Quin nivell d'educació s'imparteix en aquesta escola?"
+        "ca": "Quin nivell d'educació s'imparteix en aquesta escola?",
+        "cs": "Jaký stupeň vzdělání se na této škole poskytuje?"
       },
       "mappings": [
         {
@@ -91,7 +98,8 @@
             "nl": "Dit is een school die ook een kleuterschool bevat",
             "de": "Es handelt sich um eine Schule mit einer Kindergartenabteilung, in der kleine Kinder eine Ausbildung erhalten, die auf das Lesen und Schreiben vorbereitet.",
             "fr": "C'est une école avec une section maternelle où les jeunes enfants reçoivent un enseignement qui prépare à la lecture et à l'écriture.",
-            "ca": "Aquesta és una escola amb una secció d’educació infantil on els més petits reben una educació que prepara la lectura i l’escriptura."
+            "ca": "Aquesta és una escola amb una secció d’educació infantil on els més petits reben una educació que prepara la lectura i l’escriptura.",
+            "cs": "Jedná se o školu s mateřskou školou, kde se malé děti vzdělávají v oblasti čtení a psaní."
           }
         },
         {
@@ -101,7 +109,8 @@
             "nl": "Dit is een lagere school",
             "de": "In dieser Schule lernt man grundlegende Fähigkeiten wie Lesen, Schreiben und Rechnen. <div class='subtle'>Schüler besuchen die Schule in der Regel im Alter von 6 bis 12 Jahren</div>",
             "fr": "C'est une école où l'on apprend les compétences primaires telles que l'alphabétisation de base et les compétences numériques.. <div class='subtle'>Les élèves s'inscrivent généralement de 6 à 12 ans.</div>",
-            "ca": "Aquesta és una escola on s'aprèn competències primàries com ara l'alfabetització bàsica i les habilitats numèriques. <div class='subtle'>Els alumnes solen matricular-se des dels 6 anys fins als 12 anys</div>"
+            "ca": "Aquesta és una escola on s'aprèn competències primàries com ara l'alfabetització bàsica i les habilitats numèriques. <div class='subtle'>Els alumnes solen matricular-se des dels 6 anys fins als 12 anys</div>",
+            "cs": "Jedná se o školu, kde se člověk učí základním dovednostem, jako je základní gramotnost a numerické dovednosti. <div class='subtle'>Žáci se obvykle zapisují ve věku od 6 let do 12 let</div>"
           }
         },
         {
@@ -111,7 +120,8 @@
             "nl": "Dit is een middelbare school die alle schooljaren aanbiedt (dus van het eerste tot en met het zesde middelbaar)",
             "de": "Dies ist eine weiterführende Schule, die alle Jahrgangsstufen anbietet",
             "fr": "C'est une école secondaire qui offre toutes les classes",
-            "ca": "Aquesta és una escola secundària que ofereix tots els graus"
+            "ca": "Aquesta és una escola secundària que ofereix tots els graus",
+            "cs": "Jedná se o střední školu, která nabízí všechny ročníky"
           }
         },
         {
@@ -121,7 +131,8 @@
             "nl": "Dit is een middelbare school die <i>niet</i> alle schooljaren aanbiedt, maar wel <b>het eerste en tweede middelbaar</b>",
             "de": "Dies ist eine weiterführende Schule, die <i>nicht</i> alle Klassenstufen hat, aber <b>erste und zweite</b> Klasse anbietet",
             "fr": "C'est une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la première et la deuxième</b> années",
-            "ca": "Aquesta és una escola secundària que <i>no</i> ofereix tots els graus, però ofereix <b>primer i segon</b> grau"
+            "ca": "Aquesta és una escola secundària que <i>no</i> ofereix tots els graus, però ofereix <b>primer i segon</b> grau",
+            "cs": "Toto je střední škola, která <i>nemá</i> všechny ročníky, ale nabízí <b>první a druhý</b> ročník"
           }
         },
         {
@@ -131,7 +142,8 @@
             "nl": "Dit is een middelbare school die <i>niet</i> alle schooljaren aanbiedt, maar wel <b>het derde en vierde middelbaar</b>",
             "de": "Dies ist eine weiterführende Schule, die <i>nicht</i> alle Klassenstufen hat, aber <b>dritte und vierte</b> Klasse anbietet",
             "fr": "C'est une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la troisième et la quatrième</b> années",
-            "ca": "Aquesta és una escola secundària que <i>no</i> ofereix tots els graus, però ofereix <b>tercer i quart</b> grau"
+            "ca": "Aquesta és una escola secundària que <i>no</i> ofereix tots els graus, però ofereix <b>tercer i quart</b> grau",
+            "cs": "Toto je střední škola, která <i>nemá</i> všechny ročníky, ale nabízí <b>třetí a čtvrtý</b> ročník"
           }
         },
         {
@@ -141,7 +153,8 @@
             "nl": "Dit is een middelbare school die <i>niet</i> alle schooljaren aanbiedt, maar wel <b>het vijfde en zesde middelbaar</b>",
             "de": "Dies ist eine weiterführende Schule, die <i>nicht</i> alle Klassenstufen hat, aber <b>fünfte und sechste</b> Klasse anbietet",
             "fr": "C'est une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la cinquième et la sixième</b> années",
-            "ca": "Aquesta és una escola secundària que <i>no</i> ofereix tots els graus, però ofereix <b>cinqué i sisé</b> grau"
+            "ca": "Aquesta és una escola secundària que <i>no</i> ofereix tots els graus, però ofereix <b>cinqué i sisé</b> grau",
+            "cs": "Toto je střední škola, která <i>nemá</i> všechny ročníky, ale nabízí <b>pátý a šestý</b> ročník"
           }
         },
         {
@@ -151,7 +164,8 @@
             "nl": "Deze school biedt post-secundair onderwijs (bijvoorbeeld <b>specialisatiejaren</b>)",
             "de": "Diese Schule bietet eine postsekundäre Ausbildung (z. B. ein siebtes oder achtes Spezialisierungsjahr)",
             "fr": "Cette école propose un enseignement post-secondaire (par exemple une septième ou huitième année de spécialisation)",
-            "ca": "Aquesta escola ofereix educació post secundària (p.e. un sèptim o vuité any d'especialitzció)"
+            "ca": "Aquesta escola ofereix educació post secundària (p.e. un sèptim o vuité any d'especialitzció)",
+            "cs": "Tato škola nabízí pomaturitní studium (např. sedmý nebo osmý ročník oboru)"
           }
         }
       ],
@@ -164,7 +178,8 @@
         "nl": "Mogen jongens en meisjes les volgen op deze school?",
         "de": "Welche Geschlechter können sich an dieser Schule anmelden?",
         "fr": "Quels genres de personnes peuvent s'inscrire dans cette école ?",
-        "ca": "Quins gèneres poden inscriure's a aquesta escola?"
+        "ca": "Quins gèneres poden inscriure's a aquesta escola?",
+        "cs": "Které pohlaví se může na tuto školu přihlásit?"
       },
       "mappings": [
         {
@@ -174,7 +189,8 @@
             "nl": "Zowel jongens als meisjes kunnen hier les volgen. In de lessen zitten jongens en meisjes samen.",
             "de": "Sowohl Jungen als auch Mädchen können sich hier anmelden und gemeinsam unterrichtet werden",
             "fr": "Les garçons et les filles peuvent s'inscrire ici et suivre des cours ensemble",
-            "ca": "Els dos, nois i noies poden inscriure's aquí i prendre classes junts"
+            "ca": "Els dos, nois i noies poden inscriure's aquí i prendre classes junts",
+            "cs": "Mohou se sem zapsat chlapci i dívky a mají společné hodiny"
           }
         },
         {
@@ -184,7 +200,8 @@
             "nl": "Jongens en meisjes kunnen hier lesvolgen, maar de lessen zijn gescheiden (bv. de lessen zijn in andere lokalen of op andere momenten)",
             "de": "Hier können sich sowohl Jungen als auch Mädchen anmelden, aber sie werden getrennt unterrichtet (z. B. in verschiedenen Klassenräumen oder zu verschiedenen Zeiten)",
             "fr": "Les garçons et les filles peuvent s'inscrire ici, mais ils sont séparés (par exemple, ils ont des cours dans des classes différentes ou à des heures différentes)",
-            "ca": "Els dos, nois i noies poden inscriure's aquí, però estan separats (p. e. prenen les classes a diferents aules o diferentes hores)"
+            "ca": "Els dos, nois i noies poden inscriure's aquí, però estan separats (p. e. prenen les classes a diferents aules o diferentes hores)",
+            "cs": "Mohou se sem zapsat chlapci i dívky, ale jsou odděleni (např. mají hodiny v různých třídách nebo v různých časech)"
           }
         },
         {
@@ -194,7 +211,8 @@
             "nl": "Deze school is enkel voor jongens",
             "de": "Dies ist eine reine Jungenschule",
             "fr": "C'est une école réservée aux garçons",
-            "ca": "Aquesta és una escola exclusivament per a nois"
+            "ca": "Aquesta és una escola exclusivament per a nois",
+            "cs": "Toto je škola určená pouze pro chlapce"
           }
         },
         {
@@ -204,7 +222,8 @@
             "nl": "Deze school is enkel voor meisjes",
             "de": "Dies ist eine reine Mädchenschule",
             "fr": "C'est une école réservée aux filles",
-            "ca": "Aquesta és una escola exclusivament per a noies"
+            "ca": "Aquesta és una escola exclusivament per a noies",
+            "cs": "Toto je škola pouze pro dívky"
           }
         }
       ]
@@ -217,7 +236,8 @@
         "nl": "Richt deze school zich op leerlingen met een speciale zorgbehoefte? Welke structurele faciliteiten heeft deze school voor leerlingen met een extra zorgbehoefte?",
         "de": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf? Über welche strukturellen Einrichtungen verfügt diese Schule?",
         "fr": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers? Quels types d'installation est-ce que cet établissement possède?",
-        "ca": "Aquesta escola es dirigeix a estudiants amb necessitats especials? Quines instal·lacions estructurals té aquesta escola?"
+        "ca": "Aquesta escola es dirigeix a estudiants amb necessitats especials? Quines instal·lacions estructurals té aquesta escola?",
+        "cs": "Zaměřuje se tato škola na studenty se speciálními potřebami? Jaké stavební vybavení má tato škola?"
       },
       "multiAnswer": true,
       "render": {
@@ -225,7 +245,8 @@
         "nl": "Deze school richt zich op studenten met {school:for}",
         "de": "Diese Schule verfügt über Einrichtungen für Schüler mit {school:for}",
         "fr": "Cet établissement scolaire a des installations pour étudiants ayant {school:for}",
-        "ca": "Aquesta escola té instal·lacions per a estudiants amb {school:for}"
+        "ca": "Aquesta escola té instal·lacions per a estudiants amb {school:for}",
+        "cs": "Tato škola má zařízení pro studenty se {school:for}"
       },
       "freeform": {
         "key": "school:for",
@@ -239,7 +260,8 @@
             "nl": "Deze school richt zich op studenten zonder extra zorgbehoefte. <div class='subtle>Dit omvat leerlingen waarbij kleine, ad-hoc maatregelen volstaan om de lessen te volgen.</div>",
             "de": "Es handelt sich um eine Schule, in der die Schüler Fähigkeiten auf ihrem altersgemäßen Niveau erlernen. <div>Es gibt wenig oder keine speziellen Einrichtungen für Schüler mit besonderen Bedürfnissen oder die Einrichtungen sind ad-hoc</div>",
             "fr": "C'est un établissement scolaire où les étudiants acquièrent des compétences à un niveau adapté à leur âge. <div>Il y a peu ou pas d'adaptations spéciales pour aider les étudiants ayant des besoins particuliers, ou les installations sont ad-hoc</div> Remark: isn't it contradictory to say there's no special facility + the facilities are ad-hoc?",
-            "ca": "Aquesta és una escola on els estudiants estudien habilitats al nivell adequat per a la seva edat. <div>Hi ha poques o cap instal·lació especial per atendre els estudiants amb necessitats especials o les instal·lacions són ad-hoc</div>"
+            "ca": "Aquesta és una escola on els estudiants estudien habilitats al nivell adequat per a la seva edat. <div>Hi ha poques o cap instal·lació especial per atendre els estudiants amb necessitats especials o les instal·lacions són ad-hoc</div>",
+            "cs": "Jedná se o školu, kde studenti studují dovednosti na úrovni odpovídající jejich věku. <div>Existuje málo nebo žádná speciální zařízení pro studenty se speciálními potřebami nebo zařízení jsou ad hoc</div>"
           },
           "hideInAnswer": true
         },
@@ -250,7 +272,8 @@
             "nl": "Deze school richt zich op studenten zonder extra zorgbehoefte<div class='subtle>Dit omvat leerlingen waarbij kleine, ad-hoc maatregelen volstaan om de lessen te volgen.</div>",
             "de": "Dies ist eine Schule für Schüler ohne besondere Bedürfnisse<div class='subtle'>Dazu gehören auch Schüler, die den Kursen mit kleinen Ad-hoc-Maßnahmen folgen können</div>",
             "fr": "C'est un établissement scolaire pour étudiants sans besoins particuliers. <div class='subtle'>Sont inclus les étudiants qui peuvent suivre les cours avec de petites adaptations.</div>",
-            "ca": "Aquesta és una escola per a estudiants sense necessitats especials <div class='subtle'> Açò inclou alumnes que poden seguir les classes amb petites mesures</div>"
+            "ca": "Aquesta és una escola per a estudiants sense necessitats especials <div class='subtle'> Açò inclou alumnes que poden seguir les classes amb petites mesures</div>",
+            "cs": "Toto je škola pro studenty bez speciálních potřeb<div class='subtle'>To zahrnuje studenty, kteří mohou absolvovat kurzy s malými, ad hoc měřeními</div>"
           }
         },
         {
@@ -260,7 +283,8 @@
             "nl": "Deze school richt zich op volwassenen",
             "de": "Dies ist eine Schule, in der Erwachsene auf dem angegebenen Niveau unterrichtet werden.",
             "fr": "C'est un établissement où des adultes sont formés au niveau mentionné.",
-            "ca": "Aquesta és una escola on els adults reben competències al nivell especificat."
+            "ca": "Aquesta és una escola on els adults reben competències al nivell especificat.",
+            "cs": "Jedná se o školu, kde se dospělí učí dovednostem na stanovené úrovni."
           }
         },
         {
@@ -271,7 +295,8 @@
             "de": "Dies ist eine Schule für Schüler mit Autismus",
             "fr": "C'est un établissement scolaire pour les étudiants ayant un trouble du spectre de l’autisme (TSA)",
             "ca": "Aquesta és una escola per a estudiants amb autisme",
-            "pl": "To jest szkoła dla uczniów z autyzmem"
+            "pl": "To jest szkoła dla uczniów z autyzmem",
+            "cs": "Jedná se o školu pro studenty s autismem"
           }
         },
         {
@@ -281,7 +306,8 @@
             "nl": "Deze school richt zich op leerlingen met een leerprobleem",
             "de": "Dies ist eine Schule für Schüler mit Lernschwierigkeiten",
             "fr": "C'est un établissement scolaire pour les étudiants ayant des troubles d’apprentissage",
-            "ca": "Aquesta és una escola per a estudiants amb dificultats de l'aprenentatge"
+            "ca": "Aquesta és una escola per a estudiants amb dificultats de l'aprenentatge",
+            "cs": "Jedná se o školu pro žáky s poruchami učení"
           }
         },
         {
@@ -291,7 +317,8 @@
             "nl": "Deze school richt zich op blinde en slechtziende studenten",
             "de": "Dies ist eine Schule für blinde oder sehbehinderte Schüler",
             "fr": "C'est un établissement scolaire pour les étudiants aveugles ou malvoyants",
-            "ca": "Aquesta és una escola per a estudiants cecs o estudiants amb deficiències visuals"
+            "ca": "Aquesta és una escola per a estudiants cecs o estudiants amb deficiències visuals",
+            "cs": "Jedná se o školu pro nevidomé studenty nebo studenty se zrakovým postižením"
           }
         },
         {
@@ -302,7 +329,8 @@
             "de": "Dies ist eine Schule für gehörlose oder hörgeschädigte Schüler",
             "fr": "C'est un établissement scolaire pour les étudiants sourds ou malentendants",
             "ca": "Aquesta és una escola per a estudiants sords o amb dificultats auditives",
-            "pl": "To jest szkoła dla uczniów głuchych i słabosłyszących"
+            "pl": "To jest szkoła dla uczniów głuchych i słabosłyszących",
+            "cs": "Jedná se o školu pro neslyšící studenty nebo studenty se sluchovým postižením"
           }
         },
         {
@@ -313,7 +341,8 @@
             "de": "Dies ist eine Schule für Schüler mit Behinderungen",
             "fr": "C'est un établissement scolaire pour les étudiants en situation de handicap",
             "ca": "Aquesta és una escola per a estudiants amb discapacitats",
-            "pl": "To jest szkoła dla uczniów z niepełnosprawnościami"
+            "pl": "To jest szkoła dla uczniów z niepełnosprawnościami",
+            "cs": "Jedná se o školu pro studenty se zdravotním postižením"
           }
         },
         {
@@ -324,14 +353,16 @@
             "de": "Dies ist eine Schule für Schüler mit besonderen Bedürfnissen",
             "fr": "C'est un établissement scolaire pour les étudiants ayant des besoins particuliers",
             "ca": "Aquesta és una escola per a estudiants amb necessitats especials",
-            "pl": "To jest szkoła dla uczniów z specjalnymi potrzebami"
+            "pl": "To jest szkoła dla uczniów z specjalnymi potrzebami",
+            "cs": "Jedná se o školu pro žáky se speciálními potřebami"
           }
         }
       ],
       "questionHint": {
         "en": "Ad-hoc measures are not enough to count as a special-needs school",
         "nl": "Ad-hoc maatregelen zijn niet voldoende ",
-        "de": "Ad-hoc-Maßnahmen reichen nicht aus, um als Förderschule zu gelten"
+        "de": "Ad-hoc-Maßnahmen reichen nicht aus, um als Förderschule zu gelten",
+        "cs": "Ad hoc opatření nestačí k tomu, aby se škola považovala za školu pro žáky se speciálními vzdělávacími potřebami"
       }
     },
     "website",
@@ -348,28 +379,32 @@
             "de": "Folgende Sprachen werden in der Schule verwendet:{list()}",
             "ca": "En aquesta escola s'utilitzen els idiomes següents:{list()}",
             "fr": "Ces langues sont utilisées dans cette école :{list()}",
-            "pl": "Następujące języki są używane w tej szkole:{list()}"
+            "pl": "Następujące języki są używane w tej szkole:{list()}",
+            "cs": "V této škole se používají následující jazyky:{list()}"
           },
           "render_single_language": {
             "en": "{language():font-bold} is the main language of this school",
             "de": "{language():font-bold} ist die Hauptsprache der Schule",
             "ca": "{language():font-bold} és la llengua principal d'aquesta escola",
             "fr": "{language():font-bold} est la langue principale dans cette école",
-            "pl": "Język {language():font-bold} jest głównym językiem używanym w tej szkole"
+            "pl": "Język {language():font-bold} jest głównym językiem używanym w tej szkole",
+            "cs": "{language():font-bold} je hlavním jazykem této školy"
           },
           "question": {
             "en": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>",
             "nl": "Wat is de voertaal van deze school?<div class='subtle'>Welke taal wordt met de studenten gesproken in niet-taal-gerelateerde vakken en met de administratie?</div>",
             "de": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>",
             "fr": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>",
-            "ca": "Quina és la llengua principal d'aquesta escola?<div class='subtle'>Quina llengua es parla amb els estudiants en classes no relacionades amb la llengua i l'administració?</div>"
+            "ca": "Quina és la llengua principal d'aquesta escola?<div class='subtle'>Quina llengua es parla amb els estudiants en classes no relacionades amb la llengua i l'administració?</div>",
+            "cs": "Jaký je hlavní jazyk této školy?<div class='subtle'>Jakým jazykem se mluví se studenty v nejazykových kurzech a administrativou?</div>"
           },
           "no_known_languages": {
             "en": "The main language of this school is unknown",
             "nl": "De voertaal van deze school is niet gekend",
             "de": "Die Unterrichtssprache der Schule ist unbekannt",
             "fr": "La langue principale de cette école est inconnue",
-            "ca": "La llengua principal d'aquesta escola és desconeguda"
+            "ca": "La llengua principal d'aquesta escola és desconeguda",
+            "cs": "Hlavní jazyk této školy není znám"
           }
         }
       }
@@ -386,7 +421,8 @@
         "nl": "een lagere of middelbare school",
         "de": "eine Grundschule oder weiterführende Schule",
         "fr": "une école primaire ou secondaire",
-        "ca": "una escola de primària o secundària"
+        "ca": "una escola de primària o secundària",
+        "cs": "základní nebo střední škola"
       }
     }
   ],

@@ -58,6 +58,7 @@
     + [minimap](#minimap)
     + [mastodon](#mastodon)
     + [contact](#contact)
+    + [diets](#diets)
     + [etymology.wikipedia-etymology](#etymologywikipedia-etymology)
     + [toilet.relevant-questions](#toiletrelevant-questions)
     + [denominations-notes](#denominations-notes)
@@ -135,6 +136,7 @@
   - hackerspace
   - hotel
   - hydrant
+  - ice_cream
   - indoors
   - information_board
   - kerbs
@@ -156,6 +158,7 @@
   - rainbow_crossings
   - reception_desk
   - recycling
+  - route_marker
   - shops
   - shower
   - slow_roads
@@ -368,6 +371,7 @@
   - dentist
   - fitness_centre
   - food
+  - ice_cream
   - kindergarten_childcare
   - pharmacy
   - postoffices
@@ -419,6 +423,7 @@
   - cafe_pub
   - climbing_gym
   - food
+  - ice_cream
   - observation_tower
   - questions
   - questions
@@ -541,6 +546,7 @@
   - food
   - hackerspace
   - hotel
+  - ice_cream
   - observation_tower
   - sports_centre
   - transit_stops
@@ -905,6 +911,18 @@
 
 
   - hospital
+  - ice_cream
+
+
+
+
+### diets 
+
+
+
+
+
+  - ice_cream
 
 
 

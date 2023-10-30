@@ -1,24 +1,24 @@
 <script lang="ts">
-    /**
-     * Shows information about how much images are uploaded for the given feature
-     *
-     * Either pass in a store with tags or a featureId.
-     */
+  /**
+   * Shows information about how much images are uploaded for the given feature
+   *
+   * Either pass in a store with tags or a featureId.
+   */
 
-    import type { SpecialVisualizationState } from "../SpecialVisualization"
-    import { Store } from "../../Logic/UIEventSource"
-    import type { OsmTags } from "../../Models/OsmFeature"
-    import Translations from "../i18n/Translations"
-    import Tr from "../Base/Tr.svelte"
-    import Loading from "../Base/Loading.svelte"
+  import type { SpecialVisualizationState } from "../SpecialVisualization"
+  import { Store } from "../../Logic/UIEventSource"
+  import type { OsmTags } from "../../Models/OsmFeature"
+  import Translations from "../i18n/Translations"
+  import Tr from "../Base/Tr.svelte"
+  import Loading from "../Base/Loading.svelte"
 
-    export let state: SpecialVisualizationState
-    export let tags: Store<OsmTags>
-    export let featureId = tags.data.id
-    export let showThankYou: boolean = true
-    const { uploadStarted, uploadFinished, retried, failed } =
-        state.imageUploadManager.getCountsFor(featureId)
-    const t = Translations.t.image
+  export let state: SpecialVisualizationState
+  export let tags: Store<OsmTags>
+  export let featureId = tags.data.id
+  export let showThankYou: boolean = true
+  const { uploadStarted, uploadFinished, retried, failed } =
+    state.imageUploadManager.getCountsFor(featureId)
+  const t = Translations.t.image
 </script>
 
 {#if $uploadStarted === 1}

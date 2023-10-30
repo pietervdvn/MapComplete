@@ -4,13 +4,15 @@
     "en": "Ticket Machines",
     "de": "Fahrkartenautomaten",
     "nl": "Kaartautomaten",
-    "ca": "Màquines de bitllets"
+    "ca": "Màquines de bitllets",
+    "cs": "Automaty na jízdenky"
   },
   "description": {
     "en": "Find ticket machines for public transport tickets",
     "de": "Fahrkartenautomaten für ÖPNV-Tickets finden",
     "nl": "Zoek kaartautomaten voor het openbaar vervoer",
-    "ca": "Troba màquines de bitllets per a bitllets de transport públic"
+    "ca": "Troba màquines de bitllets per a bitllets de transport públic",
+    "cs": "Vyhledejte automaty na jízdenky na veřejnou dopravu"
   },
   "source": {
     "osmTags": {
@@ -26,7 +28,8 @@
       "en": "Ticket Machine",
       "de": "Fahrkartenautomat",
       "nl": "Kaartautomaat",
-      "ca": "Màquina de bitllets"
+      "ca": "Màquina de bitllets",
+      "cs": "Automat na jízdenky"
     }
   },
   "tagRenderings": [
@@ -38,13 +41,15 @@
         "en": "Who is the operator of this ticket machine?",
         "de": "Wer ist der Betreiber dieses Fahrkartenautomaten?",
         "nl": "Wie is de beheerder van deze kaartautomaat?",
-        "ca": "Qui és l'operador d'aquesta màquina de venda de bitllets?"
+        "ca": "Qui és l'operador d'aquesta màquina de venda de bitllets?",
+        "cs": "Kdo je provozovatelem tohoto automatu na jízdenky?"
       },
       "render": {
         "en": "This ticket machine is operated by {operator}",
         "de": "Dieser Fahrkartenautomat wird betrieben von {operator}",
         "nl": "Deze kaartautomaat wordt beheerd door {operator}",
-        "ca": "{operator} opera aquesta màquina de bitllets"
+        "ca": "{operator} opera aquesta màquina de bitllets",
+        "cs": "Tento automat na jízdenky provozuje {operator}"
       },
       "freeform": {
         "key": "operator",
@@ -53,7 +58,8 @@
           "en": "Name of the operator",
           "de": "Name des Betreibers",
           "nl": "Naam van de beheerder",
-          "ca": "Nom de l'operador"
+          "ca": "Nom de l'operador",
+          "cs": "Jméno operátora"
         }
       },
       "mappings": [
@@ -63,7 +69,8 @@
             "en": "Dutch Railways (NS)",
             "nl": "Nederlandse Spoorwegen (NS)",
             "de": "Niederländische Eisenbahn (NS)",
-            "ca": "Ferrocarrils holandesos (NS)"
+            "ca": "Ferrocarrils holandesos (NS)",
+            "cs": "Nizozemské dráhy (NS)"
           },
           "addExtraTags": [
             "operator:wikidata=Q23076"
@@ -86,7 +93,8 @@
         "en": "a ticket machine",
         "de": "einen Fahrkartenautomat",
         "nl": "een kaartautomaat",
-        "ca": "una màquina de bitllets"
+        "ca": "una màquina de bitllets",
+        "cs": "automat na jízdenky"
       }
     }
   ],

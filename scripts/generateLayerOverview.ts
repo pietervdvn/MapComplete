@@ -685,9 +685,6 @@ class LayerOverviewUtils extends Script {
                 skippedThemes.push(themeFile.id)
                 continue
             }
-            ScriptUtils.erasableLog(
-                `Validating ${i}/${themeFiles.length} '${themeInfo.parsed.id}'            `
-            )
 
             recompiledThemes.push(themeFile.id)
 
@@ -705,7 +702,8 @@ class LayerOverviewUtils extends Script {
                     new DoesImageExist(licensePaths, existsSync, knownTagRenderings),
                     themePath,
                     true,
-                    knownTagRenderings
+                    knownTagRenderings,
+                    `Validating ${i}/${themeFiles.length} '${themeInfo.parsed.id}'`
                 ).convertStrict(
                     themeFile,
                     ConversionContext.construct([themePath], ["PrepareLayer"])

@@ -7,7 +7,8 @@
     "it": "Visualizzazione della direzione",
     "ru": "Визуализация направления",
     "de": "Aufnahmewinkel der Kamera anzeigen",
-    "ca": "Direcció de la visualització"
+    "ca": "Direcció de la visualització",
+    "cs": "Vizualizace směru"
   },
   "minzoom": 16,
   "source": {
@@ -28,7 +29,8 @@
     "it": "Questo livello visualizza le direzioni",
     "de": "Diese Ebene visualisiert Richtungen",
     "ru": "Этот слой визуализирует направление",
-    "ca": "Aquesta capa visualitza direccions"
+    "ca": "Aquesta capa visualitza direccions",
+    "cs": "Tato vrstva zobrazuje směry"
   },
   "tagRenderings": [],
   "stroke": "0",

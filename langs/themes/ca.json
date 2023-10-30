@@ -479,8 +479,10 @@
                 "name": "enllaços node a node",
                 "tagRenderings": {
                     "node2node-survey:date": {
-                        "question": "Quan es va comprovar per última vegada aquest enllaç node a node presencialment?",
-                        "render": "Aquest enllaç node a node es va sondejar per última vegada el {survey:date}"
+                        "override": {
+                            "question": "Quan es va comprovar per última vegada aquest enllaç node a node presencialment?",
+                            "render": "Aquest enllaç node a node es va sondejar per última vegada el {survey:date}"
+                        }
                     }
                 },
                 "title": {
@@ -500,8 +502,10 @@
                         "render": "Aquest node enllaça a {expected_rcn_route_relations} altres nodes ciclistes."
                     },
                     "node-survey:date": {
-                        "question": "Quan va ser sondejat aquest node ciclista per última vegada?",
-                        "render": "Aquest node ciclista es va sondejar per última vegada el {survey:date}"
+                        "override": {
+                            "question": "Quan va ser sondejat aquest node ciclista per última vegada?",
+                            "render": "Aquest node ciclista es va sondejar per última vegada el {survey:date}"
+                        }
                     }
                 },
                 "title": {

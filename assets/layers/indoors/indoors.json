@@ -5,14 +5,16 @@
     "de": "Innenräume",
     "nl": "Binnenruimtes",
     "pa_PK": "اندروں",
-    "ca": "Interiors"
+    "ca": "Interiors",
+    "cs": "Vnitřní prostory"
   },
   "description": {
     "en": "Basic indoor mapping: shows room outlines",
     "de": "Grundlegende Innenraumkartierung: zeigt Umrisse von Räumen",
     "nl": "Een basis voor indoor-navigatie: toont binnenruimtes",
     "cs": "Základní mapování interiérů: zobrazuje obrysy místností",
-    "ca": "Mapeig interior bàsic: mostra els contorns de les habitacions"
+    "ca": "Mapeig interior bàsic: mostra els contorns de les habitacions",
+    "pl": "Podstawowe mapowanie wnętrz: pokazuje kontury pomieszczeń"
   },
   "source": {
     "osmTags": {
@@ -30,7 +32,8 @@
       "en": "Indoor area {name}",
       "de": "Innenbereich {name}",
       "nl": "Binnenruimte {name}",
-      "ca": "Àrea interior {name}"
+      "ca": "Àrea interior {name}",
+      "cs": "Vnitřní prostor {name}"
     },
     "mappings": [
       {
@@ -40,7 +43,8 @@
           "de": "Innenraum {name}",
           "nl": "Binnenruimte {name}",
           "pl": "Wewnętrzne pomieszczenie {name}",
-          "ca": "Habitació interior {name}"
+          "ca": "Habitació interior {name}",
+          "cs": "Vnitřní místnost {name}"
         }
       },
       {
@@ -49,7 +53,8 @@
           "en": "Indoor Area {name}",
           "de": "Innenbereich {name}",
           "nl": "Gebied in gebouw {name}",
-          "ca": "Àrea interior {name}"
+          "ca": "Àrea interior {name}",
+          "cs": "Vnitřní prostor {name}"
         }
       },
       {
@@ -58,7 +63,8 @@
           "en": "Indoor Wall {name}",
           "de": "Innenwand {name}",
           "nl": "Muur in gebouw {name}",
-          "ca": "Paret interior {name}"
+          "ca": "Paret interior {name}",
+          "cs": "Vnitřní stěna {name}"
         }
       },
       {
@@ -67,7 +73,8 @@
           "en": "Indoor Corridor {name}",
           "de": "Innengang {name}",
           "nl": "Gang in gebouw {name}",
-          "ca": "Passadis interior {name}"
+          "ca": "Passadis interior {name}",
+          "cs": "Vnitřní chodba {name}"
         }
       },
       {
@@ -76,7 +83,8 @@
           "en": "Indoor Door {name}",
           "de": "Innentür {name}",
           "nl": "Binnendeur {name}",
-          "ca": "Porta interior {name}"
+          "ca": "Porta interior {name}",
+          "cs": "Vnitřní dveře {name}"
         }
       },
       {
@@ -84,7 +92,8 @@
         "then": {
           "en": "Indoor Level {name}",
           "de": "Geschoss {name}",
-          "nl": "Verdieping in gebouw {name}"
+          "nl": "Verdieping in gebouw {name}",
+          "cs": "Vnitřní Level {name}"
         }
       }
     ]
@@ -119,14 +128,16 @@
         "nl": "Wat is het referentienummer van deze ruimte?",
         "fr": "Quel est le numéro de référence de cette pièce ?",
         "pl": "Jaki jest numer referencyjny tego pomieszczenia?",
-        "ca": "Quin és el número de referència d'aquesta habitació?"
+        "ca": "Quin és el número de referència d'aquesta habitació?",
+        "cs": "Jaké je referenční číslo této místnosti?"
       },
       "render": {
         "en": "This room has the reference number {ref}",
         "de": "Dieser Raum hat die Raumnummer {ref}",
         "nl": "Deze ruimte heeft het referentienummer {ref}",
         "pl": "To pomieszczenie ma numer referencyjny {ref}",
-        "ca": "Aquesta habitació té el número de referència {ref}"
+        "ca": "Aquesta habitació té el número de referència {ref}",
+        "cs": "Tato místnost má referenční číslo {ref}"
       },
       "freeform": {
         "key": "ref",
@@ -135,7 +146,8 @@
           "en": "Reference number of the room (e.g. '1.1' or 'A1')",
           "de": "Raumnummer (z.B. '1.1' oder 'A1')",
           "nl": "Referentienummer van de ruimte (bv. '1.1' of A1' )",
-          "ca": "Número de referència de l'habitació (p. e. '1.1' o 'A1')"
+          "ca": "Número de referència de l'habitació (p. e. '1.1' o 'A1')",
+          "cs": "Referenční číslo místnosti (např. \"1.1\" nebo \"A1\")"
         }
       },
       "condition": {
@@ -153,7 +165,8 @@
         "de": "Wie lautet der Name dieses Raums?",
         "nl": "Wat is de naam van deze ruimte?",
         "ru": "Как называется эта комната?",
-        "ca": "Quin és el nom d'aquesta habitació?"
+        "ca": "Quin és el nom d'aquesta habitació?",
+        "cs": "Jak se jmenuje tato místnost?"
       },
       "render": {
         "en": "This room is named {name}",
@@ -161,7 +174,8 @@
         "nl": "Deze ruimte heet {name}",
         "ru": "Эта комната называется {name}",
         "fr": "Cette pièce s'appelle {name}",
-        "ca": "Aquesta habitació es diu {name}"
+        "ca": "Aquesta habitació es diu {name}",
+        "cs": "Tato místnost se jmenuje {name}"
       },
       "freeform": {
         "key": "name",
@@ -171,7 +185,8 @@
           "de": "Name des Raums",
           "nl": "Naam van de ruimte",
           "ru": "Название комнаты",
-          "ca": "Nom de l'habitació"
+          "ca": "Nom de l'habitació",
+          "cs": "Název místnosti"
         }
       },
       "condition": {
@@ -187,14 +202,16 @@
       "question": {
         "en": "What type of room is this?",
         "ca": "Quin tipus d'habitació és aquesta?",
-        "de": "Wie wird dieser Raum genutzt?"
+        "de": "Wie wird dieser Raum genutzt?",
+        "cs": "O jaký typ pokoje se jedná?"
       },
       "mappings": [
         {
           "if": "room=administration",
           "then": {
             "en": "This is a administrative room",
-            "de": "Dies ist ein Verwaltungsraum"
+            "de": "Dies ist ein Verwaltungsraum",
+            "cs": "Jedná se o administrativní místnost"
           },
           "icon": "./assets/layers/indoors/room_administration.svg"
         },
@@ -203,7 +220,8 @@
           "then": {
             "en": "This is a auditorium",
             "de": "Dies ist ein Auditorium",
-            "ca": "Açò és un auditori"
+            "ca": "Açò és un auditori",
+            "cs": "Jedná se o posluchárnu"
           },
           "icon": "./assets/layers/indoors/room_auditorium.svg"
         },
@@ -212,7 +230,8 @@
           "then": {
             "en": "This is a bedroom",
             "de": "Dies ist ein Schlafzimmer",
-            "ca": "Açò és un dormitori"
+            "ca": "Açò és un dormitori",
+            "cs": "Jedná se o ložnici"
           },
           "icon": "./assets/layers/indoors/room_bedroom.svg"
         },
@@ -221,7 +240,8 @@
           "then": {
             "en": "This is a chapel",
             "de": "Dies ist eine Kapelle",
-            "ca": "Açò és una capella"
+            "ca": "Açò és una capella",
+            "cs": "Jedná se o kapli"
           },
           "icon": "./assets/layers/indoors/room_chapel.svg"
         },
@@ -230,7 +250,8 @@
           "then": {
             "en": "This is a classroom",
             "de": "Dies ist ein Klassenzimmer",
-            "ca": "Açò és una aula"
+            "ca": "Açò és una aula",
+            "cs": "Jedná se o učebnu"
           },
           "icon": "./assets/layers/indoors/room_class.svg"
         },
@@ -239,7 +260,8 @@
           "then": {
             "en": "This is a classroom",
             "de": "Dies ist ein Klassenzimmer",
-            "ca": "Açò és una aula"
+            "ca": "Açò és una aula",
+            "cs": "Jedná se o učebnu"
           },
           "icon": "./assets/layers/indoors/room_class.svg",
           "hideInAnswer": true
@@ -248,7 +270,8 @@
           "if": "room=computer",
           "then": {
             "en": "This is a computer room",
-            "de": "Dies ist ein Computerraum"
+            "de": "Dies ist ein Computerraum",
+            "cs": "Jedná se o počítačovou místnost"
           },
           "icon": "./assets/layers/indoors/room_computer.svg"
         },
@@ -257,7 +280,8 @@
           "then": {
             "en": "This is a conference room",
             "de": "Dies ist ein Konferenzraum",
-            "ca": "Açò és una sala de conferències"
+            "ca": "Açò és una sala de conferències",
+            "cs": "Jedná se o konferenční místnost"
           },
           "icon": "./assets/layers/indoors/room_conference.svg"
         },
@@ -266,7 +290,8 @@
           "then": {
             "en": "This is a crypt",
             "de": "Dies ist eine Krypta",
-            "ca": "Açò és una cripta"
+            "ca": "Açò és una cripta",
+            "cs": "Jedná se o kryptu"
           },
           "icon": "./assets/layers/indoors/room_crypt.svg"
         },
@@ -275,7 +300,8 @@
           "then": {
             "en": "This is a kitchen",
             "de": "Dies ist eine Küche",
-            "ca": "Açò és una cuina"
+            "ca": "Açò és una cuina",
+            "cs": "Jedná se o kuchyň"
           },
           "icon": "./assets/layers/indoors/room_kitchen.svg"
         },
@@ -284,7 +310,8 @@
           "then": {
             "en": "This is a laboratory",
             "de": "Dies ist ein Labor",
-            "ca": "Açò és un laboratori"
+            "ca": "Açò és un laboratori",
+            "cs": "Jedná se o laboratoř"
           },
           "icon": "./assets/layers/indoors/room_laboratory.svg"
         },
@@ -292,7 +319,8 @@
           "if": "room=library",
           "then": {
             "en": "This is a library",
-            "de": "Dies ist eine Bibliothek"
+            "de": "Dies ist eine Bibliothek",
+            "cs": "Jedná se o knihovnu"
           },
           "icon": "./assets/layers/indoors/room_library.svg"
         },
@@ -300,7 +328,8 @@
           "if": "room=locker",
           "then": {
             "en": "This is a locker room",
-            "de": "Dies ist ein Umkleideraum"
+            "de": "Dies ist ein Umkleideraum",
+            "cs": "Jedná se o šatnu"
           },
           "icon": "./assets/layers/indoors/room_locker.svg"
         },
@@ -308,7 +337,8 @@
           "if": "room=nursery",
           "then": {
             "en": "This is a nursery",
-            "de": "Dies ist ein Kinderzimmer"
+            "de": "Dies ist ein Kinderzimmer",
+            "cs": "Jedná se o školku"
           },
           "icon": "./assets/layers/indoors/room_nursery.svg"
         },
@@ -317,7 +347,8 @@
           "then": {
             "en": "This is an office",
             "de": "Dies ist ein Büro",
-            "ca": "Açò és una oficina"
+            "ca": "Açò és una oficina",
+            "cs": "Jedná se o kancelář"
           },
           "icon": "./assets/layers/indoors/room_office.svg"
         },
@@ -325,7 +356,8 @@
           "if": "room=prison_cell",
           "then": {
             "en": "This is a prison_cell",
-            "de": "Dies ist eine Gefängniszelle"
+            "de": "Dies ist eine Gefängniszelle",
+            "cs": "Jedná se o vězeňskou celu"
           },
           "icon": "./assets/layers/indoors/room_prison_cell.svg"
         },
@@ -334,7 +366,8 @@
           "then": {
             "en": "This is a restaurant",
             "de": "Dies ist ein Restaurant",
-            "ca": "Açò és un restaurant"
+            "ca": "Açò és un restaurant",
+            "cs": "Jedná se o restauraci"
           },
           "icon": "./assets/layers/indoors/room_restaurant.svg"
         },
@@ -342,7 +375,8 @@
           "if": "room=security_check",
           "then": {
             "en": "This is a room to perform security checks",
-            "de": "Dies ist ein Raum für Sicherheitskontrollen"
+            "de": "Dies ist ein Raum für Sicherheitskontrollen",
+            "cs": "Jedná se o místnost pro provádění bezpečnostních kontrol"
           },
           "icon": "./assets/layers/indoors/room_security_check.svg"
         },
@@ -350,7 +384,8 @@
           "if": "room=sport",
           "then": {
             "en": "This is a sport room",
-            "de": "Dies ist ein Raum um Sport zu treiben"
+            "de": "Dies ist ein Raum um Sport zu treiben",
+            "cs": "Jedná se o sportovní místnost"
           },
           "icon": "./assets/layers/indoors/room_sport.svg"
         },
@@ -359,7 +394,8 @@
           "then": {
             "en": "This is a storage room",
             "ca": "Açò és un magatzem",
-            "de": "Dies ist ein Lagerraum"
+            "de": "Dies ist ein Lagerraum",
+            "cs": "Jedná se o skladovací místnost"
           },
           "icon": "./assets/layers/indoors/room_storage.svg"
         },
@@ -367,7 +403,8 @@
           "if": "room=technical",
           "then": {
             "en": "This is a technical room",
-            "de": "Dies ist ein Technikraum"
+            "de": "Dies ist ein Technikraum",
+            "cs": "Jedná se o technickou místnost"
           },
           "icon": "./assets/layers/indoors/room_technical.svg"
         },
@@ -375,7 +412,8 @@
           "if": "room=toilets",
           "then": {
             "en": "These are toilets",
-            "de": "Dies ist ein WC-Raum"
+            "de": "Dies ist ein WC-Raum",
+            "cs": "Jedná se o toalety"
           },
           "icon": "./assets/layers/indoors/room_toilets.svg",
           "addExtraTags": [
@@ -387,7 +425,8 @@
           "then": {
             "en": "This is a waiting room",
             "ca": "Açò és una sala d'espera",
-            "de": "Dies ist ein Wartezimmer"
+            "de": "Dies ist ein Wartezimmer",
+            "cs": "Jedná se o čekárnu"
           },
           "icon": "./assets/layers/indoors/room_waiting.svg"
         }
@@ -397,7 +436,8 @@
       "id": "room-capacity",
       "question": {
         "en": "How much people can at most fit in this room?",
-        "de": "Wie viele Personen passen höchstens in diesen Raum?"
+        "de": "Wie viele Personen passen höchstens in diesen Raum?",
+        "cs": "Kolik lidí se maximálně vejde do této místnosti?"
       },
       "condition": {
         "or": [
@@ -414,7 +454,8 @@
       },
       "render": {
         "en": "At most {capacity} people fit this room",
-        "de": "Kapazität für höchstens {capacity} Personen"
+        "de": "Kapazität für höchstens {capacity} Personen",
+        "cs": "Do této místnosti se vejde maximálně {capacity} osob"
       },
       "freeform": {
         "key": "capacity",

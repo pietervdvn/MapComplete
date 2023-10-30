@@ -6,14 +6,16 @@
     "de": "Zahnärzte",
     "es": "Dentista",
     "ca": "Dentista",
-    "pl": "Dentysta"
+    "pl": "Dentysta",
+    "cs": "Zubař"
   },
   "description": {
     "en": "This layer shows dentist offices",
     "de": "Diese Ebene zeigt Zahnarztpraxen",
     "nl": "Deze laag toont tandartsen",
     "pl": "Ta warstwa pokazuje gabinety dentystyczne",
-    "ca": "Aquesta capa mostra clíniques dentals"
+    "ca": "Aquesta capa mostra clíniques dentals",
+    "cs": "Tato vrstva zobrazuje ordinace zubních lékařů"
   },
   "source": {
     "osmTags": "amenity=dentist"
@@ -24,7 +26,8 @@
       "de": "Zahnarztpraxis {name}",
       "nl": "Tandartspraktijk {name}",
       "fr": "Cabinet medical {name}",
-      "ca": "Clínica Dental {name}"
+      "ca": "Clínica Dental {name}",
+      "cs": "Zubní ordinace {name}"
     }
   },
   "minzoom": 13,
@@ -40,14 +43,16 @@
         "de": "Wie lautet der Name dieses Zahnarztes?",
         "nl": "Hoe heet deze tandarts?",
         "ca": "Com s'anomena aquest dentista?",
-        "pl": "Jaka jest nazwa tego gabinetu dentystycznego?"
+        "pl": "Jaka jest nazwa tego gabinetu dentystycznego?",
+        "cs": "Jak se jmenuje tento zubař?"
       },
       "render": {
         "en": "This dentist is called {name}",
         "de": "Dieser Zahnarzt heißt {name}",
         "nl": "Deze tandarts heet {name}",
         "ca": "El dentista s'anomena {name}",
-        "pl": "Nazwa tego gabinetu dentystycznego to {name}"
+        "pl": "Nazwa tego gabinetu dentystycznego to {name}",
+        "cs": "Tento zubař se jmenuje {name}"
       },
       "freeform": {
         "key": "name"
@@ -62,7 +67,8 @@
         "de": "eine Zahnarztpraxis",
         "nl": "een tandartspraktijk",
         "fr": "un cabinet de dentistes",
-        "ca": "una clínica dental"
+        "ca": "una clínica dental",
+        "cs": "zubní ordinace"
       },
       "tags": [
         "amenity=dentist"

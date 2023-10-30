@@ -124,7 +124,7 @@
             "pleaseLogin": "Zaloguj się, aby dodać nową funkcję",
             "presetInfo": "Nowe POI będzie miało {tags}",
             "stillLoading": "Dane nadal są wczytywane. Poczekaj chwilę, zanim dodasz nową funkcję.",
-            "title": "Czy dodać nową funkcję?",
+            "title": "Dodaj nową funkcję",
             "warnVisibleForEveryone": "Twój dodatek będzie widoczny dla wszystkich",
             "wrongType": "Ten obiekt nie jest węzłem ani linią i nie można go zaimportować",
             "zoomInFurther": "Powiększ jeszcze bardziej, aby dodać funkcję.",
@@ -316,6 +316,7 @@
         },
         "skip": "Pomiń to pytanie",
         "testing": "Testowanie - zmiany nie będą zapisane",
+        "uploadError": "Błąd podczas przesyłania zmian: {error}",
         "uploadGpx": {
             "choosePermission": "Wybierz poniżej, czy Twoja ścieżka ma być udostępniana:",
             "confirm": "Potwierdź przesłanie",
@@ -343,6 +344,9 @@
             "uploadFinished": "Twój ślad został przesłany!",
             "uploading": "Przesyłanie śladu…"
         },
+        "uploadPending": "Oczekujące zmiany: {count}",
+        "uploadPendingSingle": "Jedna oczekująca zmiana",
+        "uploadingChanges": "Przesyłanie zmian…",
         "useSearch": "Skorzystaj z wyszukiwania powyżej, aby zobaczyć gotowe ustawienia",
         "useSearchForMore": "Użyj funkcji wyszukiwania, aby wyszukać w obrębie ponad {total} więcej wartości…",
         "waitingForGeopermission": "Oczekiwanie na Twoją zgodę na użycie geolokalizacji…",

@@ -81,6 +81,7 @@
     + [picture-license](#picture-license)
     + [show_tags](#show_tags)
     + [all-questions-at-once](#all-questions-at-once)
+    + [show_crosshair](#show_crosshair)
     + [fixate-north](#fixate-north)
     + [mangrove-keys](#mangrove-keys)
     + [translations-title](#translations-title)
@@ -1009,6 +1010,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-pictures-license#values) [mapcomplete-pictures-license](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-pictures-license) | Multiple choice | [CC0](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC0) [CC-BY 4.0](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC-BY 4.0) [CC-BY-SA 4.0](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC-BY-SA 4.0)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-show_tags#values) [mapcomplete-show_tags](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show_tags) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_tags%3Dno) [](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_tags%3D) [yes](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_tags%3Dyes) [full](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_tags%3Dfull)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-show-all-questions#values) [mapcomplete-show-all-questions](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show-all-questions) | Multiple choice | [true](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show-all-questions%3Dtrue) [false](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show-all-questions%3Dfalse)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-show_crosshair#values) [mapcomplete-show_crosshair](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show_crosshair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_crosshair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_crosshair%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-fixate-north#values) [mapcomplete-fixate-north](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-fixate-north) | Multiple choice | [](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-fixate-north%3D) [yes](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-fixate-north%3Dyes)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-translation-mode#values) [mapcomplete-translation-mode](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode) | Multiple choice | [false](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dfalse) [true](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dtrue) [mobile](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dmobile)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-translation-mode#values) [mapcomplete-translation-mode](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dyes)
@@ -1182,6 +1184,24 @@ The question is  *Should questions for unknown data fields appear one-by-one or 
 
   - *Show all questions in the infobox together*  corresponds with  `mapcomplete-show-all-questions=true`
   - *Show questions one-by-one*  corresponds with  `mapcomplete-show-all-questions=false`
+
+
+
+
+### show_crosshair 
+
+
+
+The question is  *Should a crosshair be shown in the center of the display?*
+
+
+
+
+
+  - *Show a crosshair in the center of the map (when zoomed in above level 17)*  corresponds with  `mapcomplete-show_crosshair=yes`
+  - *Do not show a crosshair in the center of the map*  corresponds with  `mapcomplete-show_crosshair=no`
+  - *Do not show a crosshair in the center of the map*  corresponds with  ``
+  - This option cannot be chosen as answer
 
 
 
@@ -1458,6 +1478,7 @@ The following layers are included in MapComplete:
   - [hospital](./Layers/hospital.md)
   - [hotel](./Layers/hotel.md)
   - [hydrant](./Layers/hydrant.md)
+  - [ice_cream](./Layers/ice_cream.md)
   - [icons](./Layers/icons.md)
   - [id_presets](./Layers/id_presets.md)
   - [import_candidate](./Layers/import_candidate.md)
@@ -1495,6 +1516,7 @@ The following layers are included in MapComplete:
   - [range](./Layers/range.md)
   - [reception_desk](./Layers/reception_desk.md)
   - [recycling](./Layers/recycling.md)
+  - [route_marker](./Layers/route_marker.md)
   - [school](./Layers/school.md)
   - [selected_element](./Layers/selected_element.md)
   - [shelter](./Layers/shelter.md)

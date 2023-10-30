@@ -479,8 +479,10 @@
                 "name": "Knotenpunktverbindungen",
                 "tagRenderings": {
                     "node2node-survey:date": {
-                        "question": "Wann wurde diese Knotenpunktverbindung zuletzt überprüft?",
-                        "render": "Diese Knotenpunktverbindung wurde zuletzt am {survey:date} überprüft"
+                        "override": {
+                            "question": "Wann wurde diese Knotenpunktverbindung zuletzt überprüft?",
+                            "render": "Diese Knotenpunktverbindung wurde zuletzt am {survey:date} überprüft"
+                        }
                     }
                 },
                 "title": {
@@ -500,8 +502,10 @@
                         "render": "Dieser Knoten ist mit {expected_rcn_route_relations} anderen Knoten des Fahrradknotenpunktnetzwerkes verbunden."
                     },
                     "node-survey:date": {
-                        "question": "Wann wurde dieser Fahrradknotenpunkt zuletzt überprüft?",
-                        "render": "Dieser Fahrradknoten wurde zuletzt überprüft am {survey:date}"
+                        "override": {
+                            "question": "Wann wurde dieser Fahrradknotenpunkt zuletzt überprüft?",
+                            "render": "Dieser Fahrradknoten wurde zuletzt überprüft am {survey:date}"
+                        }
                     }
                 },
                 "title": {
@@ -798,6 +802,10 @@
                 }
             }
         }
+    },
+    "guideposts": {
+        "description": "Wegweiser (auch als Wegzeiger oder Fingerschilder bekannt) sind entlang offizieller Wander-, Rad-, Ski- oder Reitstrecken häufig zu finden, um die Richtungen zu verschiedenen Zielen anzuzeigen. Darüber hinaus sind sie oft nach einer Region oder einem Ort benannt und zeigen die Höhe an.\n\nDie Position eines Wegweisers kann von Wanderern, Radfahrern, Reitern oder Skifahrern als Bestätigung der aktuellen Position genutzt werden, insbesondere wenn sie eine gedruckte Karte ohne GPS-Empfänger verwenden. ",
+        "title": "Wegweiser"
     },
     "hackerspaces": {
         "description": "Auf dieser Karte können Sie Hackerspaces sehen, einen neuen Hackerspace hinzufügen oder Daten direkt aktualisieren",

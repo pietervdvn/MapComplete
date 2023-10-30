@@ -479,8 +479,10 @@
                 "name": "enlaces nodo a nodo",
                 "tagRenderings": {
                     "node2node-survey:date": {
-                        "question": "¿Cuándo se sondeó este enlace nodo a nodo por última vez?",
-                        "render": "Este enlace nodo a nodo se sondeó por última vez el {survey:date}"
+                        "override": {
+                            "question": "¿Cuándo se sondeó este enlace nodo a nodo por última vez?",
+                            "render": "Este enlace nodo a nodo se sondeó por última vez el {survey:date}"
+                        }
                     }
                 },
                 "title": {
@@ -500,8 +502,10 @@
                         "render": "Este nodo enlaza a {expected_rcn_route_relations} otros nodos ciclistas."
                     },
                     "node-survey:date": {
-                        "question": "¿Cuándo fue sondeado este nodo ciclista por última vez?",
-                        "render": "Este nodo ciclista se sondeó por última vez el {survey:date}"
+                        "override": {
+                            "question": "¿Cuándo fue sondeado este nodo ciclista por última vez?",
+                            "render": "Este nodo ciclista se sondeó por última vez el {survey:date}"
+                        }
                     }
                 },
                 "title": {
@@ -798,6 +802,10 @@
                 }
             }
         }
+    },
+    "guideposts": {
+        "description": "Los postes guía o indicadores (también conocidos como \"fingerposts\") suelen encontrarse a lo largo de las rutas oficiales de senderismo, ciclismo, esquí o equitación para indicar las direcciones a los distintos destinos. Además, suelen llevar el nombre de una región o lugar e indican la altitud.\n\nLa posición de un poste indicador puede servir al excursionista, ciclista, jinete o esquiador para confirmar su posición actual, sobre todo si utiliza un mapa impreso sin receptor GPS. ",
+        "title": "Poste guía"
     },
     "hackerspaces": {
         "description": "En este mapa puedes ver hackerspaces, añadir un nuevo hackerspace o actualizar datos directamente",
@@ -1141,7 +1149,7 @@
         "title": "Códigos postales"
     },
     "postboxes": {
-        "description": "En este mapa puede encontrar y añadir datos de oficinas de correo y buzones de correo. ¡Puede utilizar este mapa para encontrar donde puede enviar su próxima postal! :)<br/>¿Ha encontrado un error o un buzón que falta? Puede editar este mapa con una cuenta de OpenStreetMap gratuita.",
+        "description": "En este mapa podrás buscar y añadir los datos de las oficinas de correos y buzones de correo. ¡Puedes utilizar este mapa para encontrar dónde enviar tu próxima postal! :)<br/>¿Has detectado un error o falta algún buzón de correo? Puedes editar este mapa con una cuenta gratuita de OpenStreetMap.",
         "shortDescription": "Un mapa que muestra buzones y oficinas de correo",
         "title": "Mapa de Buzones y Oficinas de Correos"
     },

@@ -14,7 +14,8 @@
     "en": "An area where climbing is possible, e.g. a crag, site, boulder, … Contains aggregation of routes",
     "de": "Ein Gebiet, in dem Klettern möglich ist, z. B. ein Felsen, ein Klettergarten, eine Boulderhalle, … Enthält eine Sammlung von Routen",
     "nl": "Een gebied waar klimmen mogelijk is, bv. een klimsite, een bolder of klimrots,…",
-    "ca": "Una àrea on l'escalada és possible, p.e. una penya, lloc, bloc, … Conté l'agregació de rutes"
+    "ca": "Una àrea on l'escalada és possible, p.e. una penya, lloc, bloc, … Conté l'agregació de rutes",
+    "cs": "Oblast, kde je možné lezení, např. skalisko, místo, balvan, … Obsahuje agregaci cest"
   },
   "minzoom": 10,
   "source": {
@@ -131,7 +132,8 @@
         "fr": "<h3>Résumé de longueur</h3>{histogram(_length_hist)}",
         "de": "<h3>Längenübersicht</h3>{histogram(_length_hist)}",
         "it": "<h3>Riassunto della lunghezza</h3>{histogram(_length_hist)}",
-        "nl": "<h3>Overzicht van lengtes</h3>{histogram(_length_hist)}"
+        "nl": "<h3>Overzicht van lengtes</h3>{histogram(_length_hist)}",
+        "cs": "<h3>Přehled délky</h3>{histogram(_length_hist)}"
       },
       "condition": "_length_hist!~\\[\\]",
       "id": "Contained routes length hist"
@@ -142,7 +144,8 @@
         "fr": "<h3>Résumé des difficultés</h3>{histogram(_difficulty_hist)}",
         "de": "<h3>Schwierigkeitsübersicht</h3>{histogram(_difficulty_hist)}",
         "it": "<h3>Riassunto delle difficoltà</h3>{histogram(_difficulty_hist)}",
-        "nl": "<h3>Overzicht van moeilijkheidsgraden</h>{histogram(_difficulty_hist)}"
+        "nl": "<h3>Overzicht van moeilijkheidsgraden</h>{histogram(_difficulty_hist)}",
+        "cs": "<h3>Přehled hodnocení</h3>{histogram(_difficulty_hist)}"
       },
       "condition": "_difficulty_hist!~\\[\\]",
       "id": "Contained routes hist"
@@ -154,7 +157,8 @@
         "it": "<h3>Contiene {_contained_climbing_routes_count} vie</h3> <ul>{_contained_climbing_routes}</ul>",
         "de": "<h3> Enthält {_contained_climbing_routes_count} Routen</h3> <ul>{_contained_climbing_routes}</ul>",
         "nl": "<h3>Bevat {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>",
-        "ca": "<h3>Conté {_contained_climbing_routes_count} rutes</h3> <ul>{_contained_climbing_routes}</ul>"
+        "ca": "<h3>Conté {_contained_climbing_routes_count} rutes</h3> <ul>{_contained_climbing_routes}</ul>",
+        "cs": "<h3>Obsahuje {_contained_climbing_routes_count} tras</h3> <ul>{_contained_climbing_routes}</ul>"
       },
       "condition": "_contained_climbing_routes~*",
       "id": "Contained_climbing_routes"

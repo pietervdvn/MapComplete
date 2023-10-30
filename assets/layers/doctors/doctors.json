@@ -7,14 +7,16 @@
     "fr": "Médecins",
     "pa_PK": "ڈاکٹر",
     "ca": "Metges",
-    "he": "רופאים"
+    "he": "רופאים",
+    "cs": "Lékaři"
   },
   "description": {
     "en": "This layer shows doctor offices",
     "de": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen",
     "nl": "Deze laag toont dokterspraktijken",
     "he": "שכבה זו מציגה מרפאות רופאים",
-    "ca": "Aquesta capa mostra els consultoris mèdics"
+    "ca": "Aquesta capa mostra els consultoris mèdics",
+    "cs": "Tato vrstva zobrazuje ordinace lékařů"
   },
   "source": {
     "osmTags": "amenity=doctors"
@@ -25,7 +27,8 @@
       "de": "Arztpraxis {name}",
       "nl": "Dokterspraktijk {name}",
       "fr": "Cabinet medical {name}",
-      "ca": "Consultori metge {name}"
+      "ca": "Consultori metge {name}",
+      "cs": "Lékařská ordinace {name}"
     }
   },
   "minzoom": 13,
@@ -38,14 +41,16 @@
         "nl": "Wat is de naam van deze dokterspraktijk?",
         "fr": "Comment s'appelle ce cabinet médical ?",
         "ca": "Com es diu aquesta consulta mèdica?",
-        "he": "מה השם של מקום הרופאים הזה?"
+        "he": "מה השם של מקום הרופאים הזה?",
+        "cs": "Jak se jmenuje toto místo lékařů?"
       },
       "render": {
         "en": "This doctors place is called {name}",
         "de": "Diese Arztpraxis heißt {name}",
         "nl": "Deze dokterspraktijk heet {name}",
         "fr": "Ce cabinet médical s'appelle {name}",
-        "ca": "Aquest consultori mèdic és diu {name}"
+        "ca": "Aquest consultori mèdic és diu {name}",
+        "cs": "Toto místo lékařů se jmenuje {name}"
       },
       "freeform": {
         "key": "name"
@@ -65,7 +70,8 @@
         "fr": "Ce médecin est spécialisé dans {healthcare:speciality}",
         "he": "רופא זה מתמחה ב {healthcare:speciality}",
         "pl": "Ten lekarz specjalizuje się w {healthcare:speciality}",
-        "ca": "Aquest metge està especialitzat en {healthcare:speciality}"
+        "ca": "Aquest metge està especialitzat en {healthcare:speciality}",
+        "cs": "Tento lékař se specializuje na {healthcare:speciality}"
       },
       "question": {
         "en": "What is this doctor specialized in?",
@@ -73,7 +79,8 @@
         "nl": "Waar is deze dokter in gespecialiseerd?",
         "fr": "En quoi ce médecin est-il spécialisé ?",
         "pl": "W czym specjalizuje się ten lekarz?",
-        "ca": "En què està especialitzat aquest metge?"
+        "ca": "En què està especialitzat aquest metge?",
+        "cs": "Na co se tento lékař specializuje?"
       },
       "freeform": {
         "key": "healthcare:speciality"
@@ -87,7 +94,8 @@
             "de": "Dies ist ein Allgemeinmediziner",
             "nl": "Dit is een huisarts",
             "fr": "C'est un médecin généraliste",
-            "ca": "Açò és un metge generalista"
+            "ca": "Açò és un metge generalista",
+            "cs": "Jedná se o praktického lékaře"
           }
         },
         {
@@ -98,7 +106,8 @@
             "nl": "Dit is een gynaecoloog",
             "fr": "C'est un gynécologue",
             "pl": "To jest ginekolog",
-            "ca": "Açò és un ginecòleg"
+            "ca": "Açò és un ginecòleg",
+            "cs": "Tohle je gynekolog"
           }
         },
         {
@@ -109,7 +118,8 @@
             "nl": "Dit is een psychiater",
             "fr": "C'est un psychiatre",
             "pl": "To jest psychiatra",
-            "ca": "Açò és un psiquiatra"
+            "ca": "Açò és un psiquiatra",
+            "cs": "Tohle je psychiatr"
           }
         },
         {
@@ -120,7 +130,8 @@
             "nl": "Dit is een kinderarts",
             "fr": "C'est un pédiatre",
             "pl": "To jest pediatra",
-            "ca": "Açò és un pediatre"
+            "ca": "Açò és un pediatre",
+            "cs": "Tohle je pediatr"
           }
         }
       ]
@@ -133,7 +144,8 @@
         "de": "eine Arztpraxis",
         "nl": "een dokterspraktijk",
         "fr": "un cabinet médical",
-        "ca": "un consultori mèdic"
+        "ca": "un consultori mèdic",
+        "cs": "lékařská ordinace"
       },
       "tags": [
         "amenity=doctors"

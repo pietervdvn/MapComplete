@@ -14,7 +14,7 @@
         "available": "Op dit communicatiekanaal spreekt men {native}",
         "intro": "Contacteer anderen die bezig zijn met OpenStreetMap om kennis te maken, tips uit te wisselen of van elkaar bij te leren.",
         "notAvailable": "Op dit communicatiekanaal spreekt men geen {native}",
-        "title": "Community index"
+        "title": "Kom in contact met anderen"
     },
     "delete": {
         "cancel": "Annuleren",
@@ -379,6 +379,7 @@
                 "born": "Geboren: {value}",
                 "died": "Gestorven: {value}"
             },
+            "readMore": "Lees de rest van het artikel",
             "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in",
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
@@ -579,6 +580,9 @@
             "description": "email-adres",
             "feedback": "Dit is geen geldig email-adres",
             "noAt": "Een email-adres moet een @ hebben"
+        },
+        "fediverse": {
+            "invalidHost": "{host} is geen geldige hostnaam"
         },
         "float": {
             "description": "een getal",

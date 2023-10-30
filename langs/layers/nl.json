@@ -634,7 +634,7 @@
                     }
                 },
                 "question": "Heeft deze bank een inscriptie?",
-                "questionHint": "Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, ...",
+                "questionHint": "Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, …",
                 "render": "Deze bank heeft een inscriptie: <br/><p><i>{inscription}</i></p>"
             },
             "bench-material": {
@@ -931,6 +931,33 @@
                 "question": "Is deze verkoopsautomaat nog steeds werkende?",
                 "render": "Deze verkoopsautomaat is <i>{operational_status}</i>"
             },
+            "bicycle_tube_vending_machine-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Continental banden worden hier verkocht"
+                    },
+                    "1": {
+                        "then": "Schwalbe banden worden hier verkocht"
+                    }
+                },
+                "question": "Welk merk banden wordt hier verkocht?",
+                "render": "{brand} banden worden hier verkocht"
+            },
+            "bicycle_tube_vending_machine-charge": {
+                "question": "Hoeveel kost een fietsband?",
+                "render": "Een fietsband kost {charge}"
+            },
+            "bicycle_tube_vending_machine-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Onderhouden door Schwalbe"
+                    },
+                    "1": {
+                        "then": "Onderhouden door Continental"
+                    }
+                },
+                "question": "Wie onderhoudt deze verkoopautomaat?"
+            },
             "other-items-vending": {
                 "mappings": {
                     "0": {
@@ -951,11 +978,17 @@
                     "5": {
                         "then": "Fietssloten worden hier verkocht"
                     }
-                }
+                },
+                "question": "Worden hier andere fietsaccessoires verkocht?"
             }
         },
         "title": {
-            "render": "Fietsbanden-verkoopsautomaat"
+            "mappings": {
+                "0": {
+                    "then": "Fietsbanden-verkoopautomaat {name}"
+                }
+            },
+            "render": "Fietsbanden-verkoopautomaat"
         }
     },
     "bike_cafe": {

@@ -17,6 +17,7 @@
   export let state: SpecialVisualizationState
 
   export let tags: Store<OsmTags>
+  export let targetKey: string = undefined
   /**
    * Image to show in the button
    * NOT the image to upload!
@@ -35,7 +36,7 @@
       const file = files.item(i)
       console.log("Got file", file.name)
       try {
-        state.imageUploadManager?.uploadImageAndApply(file, tags)
+        state?.imageUploadManager.uploadImageAndApply(file, tags, targetKey)
       } catch (e) {
         alert(e)
       }

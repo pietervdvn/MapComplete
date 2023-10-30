@@ -9,7 +9,7 @@
     "ru": "Радужные пешеходные переходы",
     "ca": "Pasos de vianants amb l'arc de Sant Martí",
     "es": "Pasos de peatones arco iris",
-    "cs": "Přechody s duhovými barvami",
+    "cs": "Duhové přechody pro chodce",
     "zh_Hant": "彩虹人行穿越道",
     "pl": "Tęczowe przejścia dla pieszych"
   },
@@ -21,7 +21,7 @@
     "nl": "Deze kaart toont zebrapaden die in regenboogkleuren of pridekleuren geschilderd zijn.",
     "ca": "A aquest mapa es mostren els pasos de vianants pintats amb l'arc de Sant Martí i poden afegir-se fàcilment",
     "es": "En este mapa se muestran los pasos de peatones pintados con el arco iris, que pueden añadirse fácilmente",
-    "cs": "Na této mapě si můžete zobrazit a snadno přidat přechody pro chodce s duhovými barvami",
+    "cs": "Na této mapě si můžete zobrazit a snadno přidat přechody pro chodce s duhovými malbami",
     "pl": "Na tej mapie pokazane są tęczowo pomalowane przejścia dla pieszych, które można łatwo dodać"
   },
   "icon": "./assets/themes/rainbow_crossings/logo.svg",

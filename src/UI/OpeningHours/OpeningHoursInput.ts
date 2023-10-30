@@ -82,6 +82,7 @@ export default class OpeningHoursInput extends InputElement<string> {
         const rules = valueWithoutPrefix.data?.split(";") ?? []
         for (const rule of rules) {
             if (OH.ParsePHRule(rule) !== null) {
+                // We found the rule containing the public holiday information
                 ph = rule
                 break
             }

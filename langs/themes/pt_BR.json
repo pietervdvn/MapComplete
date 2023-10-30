@@ -6,6 +6,9 @@
         "description": "Neste mapa, pode-se encontrar e marcar desfibriladores próximos",
         "title": "Abrir mapa AED"
     },
+    "artwork": {
+        "description": "Um mapa aberto de estátuas, bustos, grafites e outras obras de arte em todo o mundo"
+    },
     "bag": {
         "layers": {
             "2": {

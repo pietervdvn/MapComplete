@@ -1,6 +1,7 @@
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import { Utils } from "../../../Utils"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
+import ScriptUtils from "../../../../scripts/ScriptUtils"
 
 export interface DesugaringContext {
     tagRenderings: Map<string, QuestionableTagRenderingConfigJson>
@@ -28,6 +29,9 @@ export class ConversionContext {
         this.operation = operation ?? []
         // Messages is shared by reference amonst all 'context'-objects for performance
         this.messages = messages
+        if (this.path.some((p) => typeof p === "object" || p === "[object Object]")) {
+            throw "ConversionMessage: got an object as path entry:" + JSON.stringify(path)
+        }
     }
 
     public static construct(path: (string | number)[], operation: string[]) {
@@ -105,6 +109,10 @@ export class ConversionContext {
     public hasErrors() {
         return this.messages?.find((m) => m.level === "error") !== undefined
     }
+
+    debug(message: string) {
+        this.messages.push({ context: this, level: "debug", message })
+    }
 }
 
 export type ConversionMsgLevel = "debug" | "information" | "warning" | "error"
@@ -178,14 +186,16 @@ export class Pure<TIn, TOut> extends Conversion<TIn, TOut> {
 
 export class Each<X, Y> extends Conversion<X[], Y[]> {
     private readonly _step: Conversion<X, Y>
+    private readonly _msg: string
 
-    constructor(step: Conversion<X, Y>) {
+    constructor(step: Conversion<X, Y>, msg?: string) {
         super(
             "Applies the given step on every element of the list",
             [],
             "OnEach(" + step.name + ")"
         )
         this._step = step
+        this._msg = msg
     }
 
     convert(values: X[], context: ConversionContext): Y[] {
@@ -196,6 +206,9 @@ export class Each<X, Y> extends Conversion<X[], Y[]> {
         const result: Y[] = []
         const c = context.inOperation("each")
         for (let i = 0; i < values.length; i++) {
+            if (this._msg) {
+                ScriptUtils.erasableLog(this._msg, `: ${i + 1}/${values.length}`)
+            }
             const context_ = c.enter(i - 1)
             const r = step.convert(values[i], context_)
             result.push(r)

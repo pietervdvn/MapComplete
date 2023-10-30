@@ -411,7 +411,8 @@ export class Changes {
         let osmObjects = await Promise.all<{ id: string; osmObj: OsmObject | "deleted" }>(
             neededIds.map(async (id) => {
                 try {
-                    const osmObj = await downloader.DownloadObjectAsync(id)
+                    // Important: we do **not** cache this request, we _always_ need a fresh version!
+                    const osmObj = await downloader.DownloadObjectAsync(id, 0)
                     return { id, osmObj }
                 } catch (e) {
                     console.error(
@@ -579,7 +580,7 @@ export class Changes {
                         )
 
                         const result = await self.flushSelectChanges(pendingChanges, openChangeset)
-                        if(result){
+                        if (result) {
                             this.errors.setData([])
                         }
                         return result
