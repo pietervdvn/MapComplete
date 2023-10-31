@@ -127,7 +127,9 @@
                 {
                   "if": "craft=shoemaker",
                   "then": "./assets/layers/id_presets/temaki-hammer_shoe.svg"
-                },
+                }
+              ],
+              "mappings+":[
                 {
                   "if": "craft=key_cutter",
                   "then": "./assets/layers/id_presets/fas-key.svg"
@@ -150,6 +152,15 @@
             ]
           },
           "then": "./assets/layers/food/organic.svg"
+        },
+        {
+          "if": {
+            "or": [
+            "service:key_cutting=yes",
+              "craft=key_cutter"
+            ]
+          },
+          "then": "./assets/layers/id_presets/fas-key.svg"
         }
       ],
       "label": {
@@ -387,10 +398,13 @@
     },
     {
       "id": "key_cutter",
+      "question": {
+        "en":"Does this shop offer key cutting?"
+      },
       "mappings": [
         {
           "if": "craft=key_cutter",
-          "#": "Many shoe repair shops are also specialized in key_cutting and deserve the 'craft'-tag. Some other shops (often DIY- and home-improvement stores) offer it as a service, but rather limited/on the side",
+          "#": "Many shoe repair shops are also specialized in key cutting and deserve the 'craft'-tag. Some other shops (often DIY- and home-improvement stores) offer it as a service, but rather limited/on the side",
           "hideInAnswer": "shop!=shoe_repair",
           "icon": "./assets/layers/id_presets/fas-key.svg",
           "then": {
