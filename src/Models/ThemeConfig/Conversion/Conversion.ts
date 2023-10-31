@@ -308,9 +308,30 @@ export class FirstOf<T, X> extends Conversion<T, X> {
     }
 }
 
+export class Cached<TIn, TOut> extends Conversion<TIn, TOut> {
+    private _step: Conversion<TIn, TOut>
+    private readonly key: string
+    constructor(step: Conversion<TIn, TOut>) {
+        super("Secretly caches the output for the given input", [], "cached")
+        this._step = step
+        this.key = "__super_secret_caching_key_" + step.name
+    }
+
+    convert(json: TIn, context: ConversionContext): TOut {
+        if (json[this.key]) {
+            return json[this.key]
+        }
+        const converted = this._step.convert(json, context)
+        Object.defineProperty(json, this.key, {
+            value: converted,
+            enumerable: false,
+        })
+        return converted
+    }
+}
 export class Fuse<T> extends DesugaringStep<T> {
     private readonly steps: DesugaringStep<T>[]
-
+    protected debug = false
     constructor(doc: string, ...steps: DesugaringStep<T>[]) {
         super(
             (doc ?? "") +
@@ -322,8 +343,15 @@ export class Fuse<T> extends DesugaringStep<T> {
         this.steps = Utils.NoNull(steps)
     }
 
+    public enableDebugging(): Fuse<T> {
+        this.debug = true
+        return this
+    }
+
     convert(json: T, context: ConversionContext): T {
+        const timings = []
         for (let i = 0; i < this.steps.length; i++) {
+            const start = new Date()
             const step = this.steps[i]
             try {
                 const r = step.convert(json, context.inOperation(step.name))
@@ -335,6 +363,14 @@ export class Fuse<T> extends DesugaringStep<T> {
                 console.error("Step " + step.name + " failed due to ", e, e.stack)
                 throw e
             }
+            if (this.debug) {
+                const stop = new Date()
+                const timeNeededMs = stop.getTime() - start.getTime()
+                timings.push(timeNeededMs)
+            }
+        }
+        if (this.debug) {
+            console.log("Time needed,", timings.join(", "))
         }
         return json
     }

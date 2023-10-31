@@ -152,8 +152,6 @@ describe("PrepareTheme", () => {
                 },
             ],
             startLat: 0,
-            pointRendering: null,
-            lineRendering: null,
             startLon: 0,
             startZoom: 0,
             title: "Test theme",

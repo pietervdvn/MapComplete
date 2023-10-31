@@ -2,25 +2,17 @@ import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
 import { Utils } from "../../../Utils"
 import SpecialVisualizations from "../../../UI/SpecialVisualizations"
 import { RenderingSpecification, SpecialVisualization } from "../../../UI/SpecialVisualization"
-import { LayerConfigJson } from "../Json/LayerConfigJson"
+import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 
 export default class ValidationUtils {
-    public static hasSpecialVisualisation(
-        layer: LayerConfigJson,
-        specialVisualisation: string
-    ): boolean {
-        return (
-            layer.tagRenderings?.some((tagRendering) => {
-                if (tagRendering === undefined) {
-                    return false
-                }
-
-                const spec = ValidationUtils.getSpecialVisualisations(
-                    <TagRenderingConfigJson>tagRendering
-                )
-                return spec.some((vis) => vis.funcName === specialVisualisation)
-            }) ?? false
-        )
+    public static getAllSpecialVisualisations(
+        renderingConfigs: (TagRenderingConfigJson | QuestionableTagRenderingConfigJson)[]
+    ): RenderingSpecification[] {
+        const visualisations: RenderingSpecification[] = []
+        for (const renderConfig of renderingConfigs) {
+            visualisations.push(...ValidationUtils.getSpecialVisualisationsWithArgs(renderConfig))
+        }
+        return visualisations
     }
 
     /**
@@ -30,14 +22,21 @@ export default class ValidationUtils {
     public static getSpecialVisualisations(
         renderingConfig: TagRenderingConfigJson
     ): SpecialVisualization[] {
-        return ValidationUtils.getSpecialVisualsationsWithArgs(renderingConfig).map(
+        return ValidationUtils.getSpecialVisualisationsWithArgs(renderingConfig).map(
             (spec) => spec["func"]
         )
     }
 
-    public static getSpecialVisualsationsWithArgs(
+    public static getSpecialVisualisationsWithArgs(
         renderingConfig: TagRenderingConfigJson
     ): RenderingSpecification[] {
+        if (!renderingConfig) {
+            return []
+        }
+        const cacheName = "__specialVisualisationsWithArgs_cache"
+        if (renderingConfig[cacheName]) {
+            return renderingConfig[cacheName]
+        }
         const translations: any[] = Utils.NoNull([
             renderingConfig.render,
             ...(renderingConfig.mappings ?? []).map((m) => m.then),
@@ -59,6 +58,15 @@ export default class ValidationUtils {
                 all.push(...specials)
             }
         }
+
+        // _Very_ dirty hack
+        Object.defineProperty(renderingConfig, cacheName, {
+            value: all,
+            enumerable: false,
+            configurable: true,
+            writable: true,
+        })
+
         return all
     }
 }

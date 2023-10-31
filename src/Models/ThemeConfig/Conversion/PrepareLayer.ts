@@ -1,4 +1,5 @@
 import {
+    Cached,
     Concat,
     Conversion,
     ConversionContext,
@@ -31,6 +32,7 @@ import { RenderingSpecification } from "../../../UI/SpecialVisualization"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 import { ConfigMeta } from "../../../UI/Studio/configMeta"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
+import { j } from "vite-node/types-63205a44"
 
 class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     private static readonly predefinedFilters = ExpandFilter.load_filters()
@@ -483,14 +485,13 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
         ) {
             return json
         }
-        json = JSON.parse(JSON.stringify(json))
-        const allSpecials: Exclude<RenderingSpecification, string>[] = []
-            .concat(
-                ...json.tagRenderings.map((tr) =>
-                    ValidationUtils.getSpecialVisualsationsWithArgs(<TagRenderingConfigJson>tr)
-                )
+        json = { ...json }
+        json.tagRenderings = [...json.tagRenderings]
+        const allSpecials: Exclude<RenderingSpecification, string>[] = <any>(
+            ValidationUtils.getAllSpecialVisualisations(<any>json.tagRenderings).filter(
+                (spec) => typeof spec !== "string"
             )
-            .filter((spec) => typeof spec !== "string")
+        )
 
         const questionSpecials = allSpecials.filter((sp) => sp.func.funcName === "questions")
         const noLabels = questionSpecials.filter(
@@ -579,18 +580,34 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
         if (this._desugaring.tagRenderings === null) {
             return json
         }
-        json = JSON.parse(JSON.stringify(json))
+        if (json.source === "special") {
+            return json
+        }
+        if (!json.title && !json.tagRenderings) {
+            return json
+        }
+        json = { ...json }
+        json.tagRenderings = [...(json.tagRenderings ?? [])]
+        const specialVisualisations = ValidationUtils.getAllSpecialVisualisations(
+            <any>json.tagRenderings
+        )
+        const usedSpecialFunctions = new Set(
+            specialVisualisations.map((sv) =>
+                typeof sv === "string" ? undefined : sv.func.funcName
+            )
+        )
+        if (!usedSpecialFunctions.has("minimap")) {
+            json.tagRenderings.push(this._desugaring.tagRenderings.get("minimap"))
+        }
 
         if (
-            json.tagRenderings &&
             this._desugaring.tagRenderings.has("just_created") &&
             !json.tagRenderings.some((tr) => tr === "just_created" || tr["id"] === "just_created")
         ) {
             json.tagRenderings.unshift(this._desugaring.tagRenderings.get("just_created"))
         }
 
-        if (json.allowSplit && !ValidationUtils.hasSpecialVisualisation(json, "split_button")) {
-            json.tagRenderings ??= []
+        if (json.allowSplit && !usedSpecialFunctions.has("split_button")) {
             json.tagRenderings.push({
                 id: "split-button",
                 render: { "*": "{split_button()}" },
@@ -598,14 +615,13 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
             delete json.allowSplit
         }
 
-        if (json.allowMove && !ValidationUtils.hasSpecialVisualisation(json, "move_button")) {
-            json.tagRenderings ??= []
+        if (json.allowMove && !usedSpecialFunctions.has("move_button")) {
             json.tagRenderings.push({
                 id: "move-button",
                 render: { "*": "{move_button()}" },
             })
         }
-        if (json.deletion && !ValidationUtils.hasSpecialVisualisation(json, "delete_button")) {
+        if (json.deletion && !usedSpecialFunctions.has("delete_button")) {
             json.tagRenderings.push({
                 id: "delete-button",
                 render: { "*": "{delete_button()}" },
@@ -622,7 +638,7 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
             json.tagRenderings.push(this._desugaring.tagRenderings.get("last_edit"))
         }
 
-        if (!ValidationUtils.hasSpecialVisualisation(json, "all_tags")) {
+        if (!usedSpecialFunctions.has("all_tags")) {
             const trc: QuestionableTagRenderingConfigJson = {
                 id: "all-tags",
                 render: { "*": "{all_tags()}" },
@@ -1141,41 +1157,6 @@ class SetFullNodeDatabase extends DesugaringStep<LayerConfigJson> {
     }
 }
 
-export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
-    private readonly _state: DesugaringContext
-
-    constructor(state: DesugaringContext) {
-        super(
-            "Adds a default 'minimap'-element to the tagrenderings if none of the elements define such a minimap",
-            ["tagRenderings"],
-            "AddMiniMap"
-        )
-        this._state = state
-    }
-
-    convert(layerConfig: LayerConfigJson, context: ConversionContext): LayerConfigJson {
-        if (!layerConfig.tagRenderings || layerConfig.source === "special") {
-            return layerConfig
-        }
-        const state = this._state
-        const hasMinimap = ValidationUtils.hasSpecialVisualisation(layerConfig, "minimap")
-        if (!hasMinimap) {
-            layerConfig = { ...layerConfig }
-            layerConfig.tagRenderings = [...layerConfig.tagRenderings]
-            const minimap = state.tagRenderings.get("minimap")
-            if (minimap === undefined) {
-                if (state.tagRenderings.size > 0) {
-                    throw "The 'minimap'-builtin tagrendering is not defined. As such, it cannot be added automatically"
-                }
-            } else {
-                layerConfig.tagRenderings.push(minimap)
-            }
-        }
-
-        return layerConfig
-    }
-}
-
 class ExpandMarkerRenderings extends DesugaringStep<IconConfigJson> {
     private readonly _layer: LayerConfigJson
     private readonly _state: DesugaringContext
@@ -1211,16 +1192,15 @@ class ExpandMarkerRenderings extends DesugaringStep<IconConfigJson> {
     }
 }
 
-export class PrepareLayer extends Fuse<LayerConfigJson> {
+export class PrepareLayer extends Cached<LayerConfigJson, LayerConfigJson> {
     constructor(state: DesugaringContext) {
-        super(
+        const steps = new Fuse<LayerConfigJson>(
             "Fully prepares and expands a layer for the LayerConfig.",
             new On("tagRenderings", new Each(new RewriteSpecial())),
             new On("tagRenderings", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
             new On("tagRenderings", (layer) => new Concat(new ExpandTagRendering(state, layer))),
             new On("tagRenderings", new Each(new DetectInline())),
             new AddQuestionBox(),
-            new AddMiniMap(state),
             new AddEditingElements(state),
             new SetFullNodeDatabase(),
             new On<
@@ -1244,5 +1224,6 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
             ),
             new ExpandFilter(state)
         )
+        super(steps)
     }
 }

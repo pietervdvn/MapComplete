@@ -275,8 +275,7 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
         doesImageExist: DoesImageExist,
         path: string,
         isBuiltin: boolean,
-        sharedTagRenderings?: Set<string>,
-        msg?: string
+        sharedTagRenderings?: Set<string>
     ) {
         super(
             "Validates a theme and the contained layers",
@@ -287,8 +286,7 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
                     new Pipe(
                         new ValidateLayer(undefined, isBuiltin, doesImageExist, false, true),
                         new Pure((x) => x.raw)
-                    ),
-                    msg
+                    )
                 )
             )
         )
