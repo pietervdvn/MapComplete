@@ -24,7 +24,6 @@ fi
 
 
 
-SRC_MAPS="--sourcemap"
 BRANCH=`git rev-parse --abbrev-ref HEAD`
 echo "The branch name is $BRANCH"
 if [ $BRANCH = "develop" ]

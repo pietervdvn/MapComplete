@@ -1,7 +1,6 @@
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import { Utils } from "../../../Utils"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
-import ScriptUtils from "../../../../scripts/ScriptUtils"
 
 export interface DesugaringContext {
     tagRenderings: Map<string, QuestionableTagRenderingConfigJson>
@@ -210,7 +209,7 @@ export class Each<X, Y> extends Conversion<X[], Y[]> {
         const c = context.inOperation("each")
         for (let i = 0; i < values.length; i++) {
             if (this._msg) {
-                ScriptUtils.erasableLog(
+                console.log(
                     this._msg,
                     `: ${i + 1}/${values.length}`,
                     values[i]?.["id"] !== undefined ? values[i]?.["id"] : ""
@@ -220,7 +219,6 @@ export class Each<X, Y> extends Conversion<X[], Y[]> {
             const r = step.convert(values[i], context_)
             result.push(r)
         }
-        ScriptUtils.erasableLog(this._msg)
         return result
     }
 }
