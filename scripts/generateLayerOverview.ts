@@ -353,6 +353,8 @@ class LayerOverviewUtils extends Script {
     }
 
     async main(args: string[]) {
+        console.log("Generating layer overview...")
+        const start = new Date()
         const forceReload = args.some((a) => a == "--force")
 
         const licensePaths = new Set<string>()
@@ -429,11 +431,17 @@ class LayerOverviewUtils extends Script {
             ConversionContext.construct([], [])
         )
 
+        const end = new Date()
+        const millisNeeded = end.getTime() - start.getTime()
         if (AllSharedLayers.getSharedLayersConfigs().size == 0) {
-            console.error("This was a bootstrapping-run. Run generate layeroverview again!")
+            console.error(
+                "This was a bootstrapping-run. Run generate layeroverview again!(" +
+                    millisNeeded +
+                    " ms)"
+            )
         } else {
             const green = (s) => "\x1b[92m" + s + "\x1b[0m"
-            console.log(green("All done!"))
+            console.log(green("All done! (" + millisNeeded + " ms)"))
         }
     }
 
@@ -701,13 +709,11 @@ class LayerOverviewUtils extends Script {
                     themeFile,
                     ConversionContext.construct([themePath], ["PrepareLayer"])
                 )
-
                 new ValidateThemeAndLayers(
                     new DoesImageExist(licensePaths, existsSync, knownTagRenderings),
                     themePath,
                     true,
-                    knownTagRenderings,
-                    `Validating ${i}/${themeFiles.length} '${themeInfo.parsed.id}'`
+                    knownTagRenderings
                 ).convertStrict(
                     themeFile,
                     ConversionContext.construct([themePath], ["PrepareLayer"])
