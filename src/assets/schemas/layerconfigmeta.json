@@ -9816,556 +9816,7 @@
     "required": false,
     "hints": {
       "question": "Should the created point be snapped to a line layer?",
-      "suggestions": [
-        {
-          "if": "value=address",
-          "then": "address - Addresses"
-        },
-        {
-          "if": "value=advertising",
-          "then": "advertising - We will complete data from advertising features with reference, operator and lit"
-        },
-        {
-          "if": "value=ambulancestation",
-          "then": "ambulancestation - An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies."
-        },
-        {
-          "if": "value=animal_shelter",
-          "then": "animal_shelter - An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. "
-        },
-        {
-          "if": "value=artwork",
-          "then": "artwork - An open map of statues, busts, graffitis and other artwork all over the world"
-        },
-        {
-          "if": "value=atm",
-          "then": "atm - ATMs to withdraw money"
-        },
-        {
-          "if": "value=bank",
-          "then": "bank - A financial institution to deposit money"
-        },
-        {
-          "if": "value=barrier",
-          "then": "barrier - Obstacles while cycling, such as bollards and cycle barriers"
-        },
-        {
-          "if": "value=bench",
-          "then": "bench - A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them."
-        },
-        {
-          "if": "value=bench_at_pt",
-          "then": "bench_at_pt - A layer showing all public-transport-stops which do have a bench"
-        },
-        {
-          "if": "value=bicycle_library",
-          "then": "bicycle_library - A facility where bicycles can be lent for longer period of times"
-        },
-        {
-          "if": "value=bicycle_rental",
-          "then": "bicycle_rental - Bicycle rental stations"
-        },
-        {
-          "if": "value=bicycle_tube_vending_machine",
-          "then": "bicycle_tube_vending_machine - A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, …)"
-        },
-        {
-          "if": "value=bike_cafe",
-          "then": "bike_cafe - A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …"
-        },
-        {
-          "if": "value=bike_cleaning",
-          "then": "bike_cleaning - A layer showing facilities where one can clean their bike"
-        },
-        {
-          "if": "value=bike_parking",
-          "then": "bike_parking - A layer showing where you can park your bike"
-        },
-        {
-          "if": "value=bike_repair_station",
-          "then": "bike_repair_station - A layer showing bicycle pumps and bicycle repair tool stands"
-        },
-        {
-          "if": "value=bike_shop",
-          "then": "bike_shop - A shop specifically selling bicycles or related items"
-        },
-        {
-          "if": "value=bike_themed_object",
-          "then": "bike_themed_object - A layer with bike-themed objects but who don't match any other layer"
-        },
-        {
-          "if": "value=binocular",
-          "then": "binocular - Binoculars"
-        },
-        {
-          "if": "value=birdhide",
-          "then": "birdhide - A birdhide"
-        },
-        {
-          "if": "value=cafe_pub",
-          "then": "cafe_pub - A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions"
-        },
-        {
-          "if": "value=car_rental",
-          "then": "car_rental - Places where you can rent a car"
-        },
-        {
-          "if": "value=charging_station",
-          "then": "charging_station - A charging station"
-        },
-        {
-          "if": "value=climbing",
-          "then": "climbing - A dummy layer which contains tagrenderings, shared among the climbing layers"
-        },
-        {
-          "if": "value=climbing_area",
-          "then": "climbing_area - An area where climbing is possible, e.g. a crag, site, boulder, … Contains aggregation of routes"
-        },
-        {
-          "if": "value=climbing_club",
-          "then": "climbing_club - A climbing club or organisation"
-        },
-        {
-          "if": "value=climbing_gym",
-          "then": "climbing_gym - A climbing gym"
-        },
-        {
-          "if": "value=climbing_opportunity",
-          "then": "climbing_opportunity - Fallback layer with items on which climbing _might_ be possible. It is loaded when zoomed in a lot, to prevent duplicate items to be added"
-        },
-        {
-          "if": "value=climbing_route",
-          "then": "climbing_route - A single climbing route and its properties. Some properties are derived from the containing features"
-        },
-        {
-          "if": "value=clock",
-          "then": "clock - Layer with public clocks"
-        },
-        {
-          "if": "value=conflation",
-          "then": "conflation - If the import-button moves OSM points, the imported way points or conflates, a preview is shown. This layer defines how this preview is rendered. This layer cannot be included in a theme."
-        },
-        {
-          "if": "value=crab_address",
-          "then": "crab_address - Address data for Flanders by the governement, suited for import into OpenStreetMap. Datadump from 2021-10-26. This layer contains only visualisation logic. Import buttons should be added via an override. Note that HNRLABEL contains the original value, whereas _HNRLABEL contains a slightly cleaned version"
-        },
-        {
-          "if": "value=crossings",
-          "then": "crossings - Crossings for pedestrians and cyclists"
-        },
-        {
-          "if": "value=current_view",
-          "then": "current_view - A meta-layer which contains one single feature, namely the bounding box of the current map view. This can be used to trigger special actions. If a popup is defined for this layer, this popup will be accessible via an extra button on screen.\n\nThe icon on the button is the default icon of the layer, but can be customized by detecting 'button=yes'."
-        },
-        {
-          "if": "value=cycleways_and_roads",
-          "then": "cycleways_and_roads - All infrastructure that someone can cycle over, accompanied with questions about this infrastructure"
-        },
-        {
-          "if": "value=defibrillator",
-          "then": "defibrillator - A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device"
-        },
-        {
-          "if": "value=dentist",
-          "then": "dentist - This layer shows dentist offices"
-        },
-        {
-          "if": "value=direction",
-          "then": "direction - This layer visualizes directions"
-        },
-        {
-          "if": "value=doctors",
-          "then": "doctors - This layer shows doctor offices"
-        },
-        {
-          "if": "value=dogpark",
-          "then": "dogpark - A layer showing dogparks, which are areas where dog are allowed to run without a leash"
-        },
-        {
-          "if": "value=drinking_water",
-          "then": "drinking_water - A layer showing drinking water fountains"
-        },
-        {
-          "if": "value=elevator",
-          "then": "elevator - This layer show elevators and asks for operational status and elevator dimensions. Useful for wheelchair accessibility information"
-        },
-        {
-          "if": "value=elongated_coin",
-          "then": "elongated_coin - Layer showing penny presses."
-        },
-        {
-          "if": "value=entrance",
-          "then": "entrance - A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, …)"
-        },
-        {
-          "if": "value=etymology",
-          "then": "etymology - All objects which have an etymology known"
-        },
-        {
-          "if": "value=extinguisher",
-          "then": "extinguisher - Map layer to show fire extinguishers."
-        },
-        {
-          "if": "value=filters",
-          "then": "filters - This layer acts as library for common filters"
-        },
-        {
-          "if": "value=fire_station",
-          "then": "fire_station - Map layer to show fire stations."
-        },
-        {
-          "if": "value=fitness_centre",
-          "then": "fitness_centre - Layer showing fitness centres"
-        },
-        {
-          "if": "value=fitness_station",
-          "then": "fitness_station - Find a fitness station near you, and add missing ones."
-        },
-        {
-          "if": "value=fixme",
-          "then": "fixme - OSM objects that likely need to be fixed, based on a FIXME tag."
-        },
-        {
-          "if": "value=food",
-          "then": "food - A layer showing restaurants and fast-food amenities (with a special rendering for friteries)"
-        },
-        {
-          "if": "value=ghost_bike",
-          "then": "ghost_bike - A layer showing memorials for cyclists, killed in road accidents"
-        },
-        {
-          "if": "value=governments",
-          "then": "governments - This layer show governmental buildings. It was setup as commissioned layer for the client of OSOC '22"
-        },
-        {
-          "if": "value=gps_location",
-          "then": "gps_location - Meta layer showing the current location of the user. Add this to your theme and override the icon to change the appearance of the current location. The object will always have `id=gps` and will have _all_ the properties included in the [`Coordinates`-object](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates) (except latitude and longitude) returned by the browser, such as `speed`, `altitude`, `heading`, ...."
-        },
-        {
-          "if": "value=gps_location_history",
-          "then": "gps_location_history - Meta layer which contains the previous locations of the user as single points. This is mainly for technical reasons, e.g. to keep match the distance to the modified object"
-        },
-        {
-          "if": "value=gps_track",
-          "then": "gps_track - Meta layer showing the previous locations of the user as single line with controls, e.g. to erase, upload or download this track. Add this to your theme and override the maprendering to change the appearance of the travelled track."
-        },
-        {
-          "if": "value=guidepost",
-          "then": "guidepost - Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations"
-        },
-        {
-          "if": "value=hackerspace",
-          "then": "hackerspace - Hackerspace"
-        },
-        {
-          "if": "value=home_location",
-          "then": "home_location - Meta layer showing the home location of the user. The home location can be set in the [profile settings](https://www.openstreetmap.org/profile/edit) of OpenStreetMap."
-        },
-        {
-          "if": "value=hospital",
-          "then": "hospital - A layer showing hospital grounds"
-        },
-        {
-          "if": "value=hotel",
-          "then": "hotel - Layer showing all hotels"
-        },
-        {
-          "if": "value=hydrant",
-          "then": "hydrant - Map layer to show fire hydrants."
-        },
-        {
-          "if": "value=ice_cream",
-          "then": "ice_cream - A place where ice cream is sold over the counter"
-        },
-        {
-          "if": "value=icons",
-          "then": "icons - A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI"
-        },
-        {
-          "if": "value=id_presets",
-          "then": "id_presets - Layer containing various presets and questions generated by ID. These are meant to be reused in other layers by importing the tagRenderings with `id_preset.<tagrendering>"
-        },
-        {
-          "if": "value=import_candidate",
-          "then": "import_candidate - Layer used as template in the importHelper"
-        },
-        {
-          "if": "value=indoors",
-          "then": "indoors - Basic indoor mapping: shows room outlines"
-        },
-        {
-          "if": "value=information_board",
-          "then": "information_board - A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, …)"
-        },
-        {
-          "if": "value=kerbs",
-          "then": "kerbs - A layer showing kerbs."
-        },
-        {
-          "if": "value=kindergarten_childcare",
-          "then": "kindergarten_childcare - Shows kindergartens and preschools. Both are grouped in one layer, as they are regularly confused with each other"
-        },
-        {
-          "if": "value=last_click",
-          "then": "last_click - This layer defines how to render the 'last click'-location. By default, it will show a marker with the possibility to add a new point (if there are some presets) and/or to add a new note (if the 'note' layer attribute is set). If none are possible, this layer won't show up"
-        },
-        {
-          "if": "value=map",
-          "then": "map - A map, meant for tourists which is permanently installed in the public space"
-        },
-        {
-          "if": "value=maproulette",
-          "then": "maproulette - Layer showing all tasks in MapRoulette"
-        },
-        {
-          "if": "value=maproulette_challenge",
-          "then": "maproulette_challenge - Layer showing tasks of a single MapRoulette challenge. This layer is intended to be reused and extended in themes; refer to [the documentation](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md) on how to do this."
-        },
-        {
-          "if": "value=maxspeed",
-          "then": "maxspeed - Shows the allowed speed for every road"
-        },
-        {
-          "if": "value=memorial",
-          "then": "memorial - Layer showing memorial plaques, based upon a unofficial theme. Can be expanded to have multiple types of memorials later on"
-        },
-        {
-          "if": "value=named_streets",
-          "then": "named_streets - Hidden layer with all streets which have a name. Useful to detect addresses"
-        },
-        {
-          "if": "value=nature_reserve",
-          "then": "nature_reserve - A nature reserve is an area where nature can take its course"
-        },
-        {
-          "if": "value=note",
-          "then": "note - This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)"
-        },
-        {
-          "if": "value=observation_tower",
-          "then": "observation_tower - Towers with a panoramic view"
-        },
-        {
-          "if": "value=osm_community_index",
-          "then": "osm_community_index - A layer showing the OpenStreetMap Communities"
-        },
-        {
-          "if": "value=parcel_lockers",
-          "then": "parcel_lockers - Layer showing parcel lockers for collecting and sending parcels."
-        },
-        {
-          "if": "value=parking",
-          "then": "parking - A layer showing car parkings"
-        },
-        {
-          "if": "value=parking_spaces",
-          "then": "parking_spaces - Layer showing individual parking spaces."
-        },
-        {
-          "if": "value=parking_ticket_machine",
-          "then": "parking_ticket_machine - Layer with parking ticket machines to pay for parking."
-        },
-        {
-          "if": "value=pedestrian_path",
-          "then": "pedestrian_path - Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer"
-        },
-        {
-          "if": "value=pharmacy",
-          "then": "pharmacy - A layer showing pharmacies, which (probably) dispense prescription drugs"
-        },
-        {
-          "if": "value=physiotherapist",
-          "then": "physiotherapist - This layer shows physiotherapists"
-        },
-        {
-          "if": "value=picnic_table",
-          "then": "picnic_table - The layer showing picnic tables"
-        },
-        {
-          "if": "value=play_forest",
-          "then": "play_forest - Een speelbos is een vrij toegankelijke zone in een bos"
-        },
-        {
-          "if": "value=playground",
-          "then": "playground - Playgrounds"
-        },
-        {
-          "if": "value=postboxes",
-          "then": "postboxes - The layer showing postboxes."
-        },
-        {
-          "if": "value=postoffices",
-          "then": "postoffices - A layer showing post offices."
-        },
-        {
-          "if": "value=public_bookcase",
-          "then": "public_bookcase - A streetside cabinet with books, accessible to anyone"
-        },
-        {
-          "if": "value=questions",
-          "then": "questions - Special library layer which does not need a '.questions'-prefix before being imported"
-        },
-        {
-          "if": "value=railway_platforms",
-          "then": "railway_platforms - Find every platform in the station, and the train routes that use them."
-        },
-        {
-          "if": "value=rainbow_crossings",
-          "then": "rainbow_crossings - A layer showing pedestrian crossings with rainbow paintings"
-        },
-        {
-          "if": "value=range",
-          "then": "range - Meta-layer, simply showing a bbox in red"
-        },
-        {
-          "if": "value=reception_desk",
-          "then": "reception_desk - A layer showing where the reception desks are and which asks some accessibility information"
-        },
-        {
-          "if": "value=recycling",
-          "then": "recycling - A layer with recycling containers and centres"
-        },
-        {
-          "if": "value=route_marker",
-          "then": "route_marker - Route markers are small markers often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route."
-        },
-        {
-          "if": "value=school",
-          "then": "school - Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles"
-        },
-        {
-          "if": "value=selected_element",
-          "then": "selected_element - Highlights the currently selected element. Override this layer to have different colors"
-        },
-        {
-          "if": "value=shelter",
-          "then": "shelter - Layer showing shelter structures"
-        },
-        {
-          "if": "value=shops",
-          "then": "shops - A shop"
-        },
-        {
-          "if": "value=shower",
-          "then": "shower - A layer showing (public) showers"
-        },
-        {
-          "if": "value=slow_roads",
-          "then": "slow_roads - All carfree roads"
-        },
-        {
-          "if": "value=speed_camera",
-          "then": "speed_camera - Layer showing speed cameras"
-        },
-        {
-          "if": "value=speed_display",
-          "then": "speed_display - Layer showing speed displays that alert drivers of their speed."
-        },
-        {
-          "if": "value=split_point",
-          "then": "split_point - Layer rendering the little scissors for the minimap in the 'splitRoadWizard'"
-        },
-        {
-          "if": "value=split_road",
-          "then": "split_road - Layer rendering the way to split in the 'splitRoadWizard'. This one is used instead of the variable rendering by the themes themselves, as they might not always be very visible"
-        },
-        {
-          "if": "value=sport_pitch",
-          "then": "sport_pitch - A sport pitch"
-        },
-        {
-          "if": "value=sports_centre",
-          "then": "sports_centre - Indoor and outdoor sports centres can be found on this layer"
-        },
-        {
-          "if": "value=stairs",
-          "then": "stairs - Layer showing stairs and escalators"
-        },
-        {
-          "if": "value=street_lamps",
-          "then": "street_lamps - A layer showing street lights"
-        },
-        {
-          "if": "value=surveillance_camera",
-          "then": "surveillance_camera - This layer shows surveillance cameras and allows a contributor to update information and add new cameras"
-        },
-        {
-          "if": "value=tertiary_education",
-          "then": "tertiary_education - Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)"
-        },
-        {
-          "if": "value=ticket_machine",
-          "then": "ticket_machine - Find ticket machines for public transport tickets"
-        },
-        {
-          "if": "value=ticket_validator",
-          "then": "ticket_validator - Find ticket validators to validate public transport tickets"
-        },
-        {
-          "if": "value=toilet",
-          "then": "toilet - A layer showing (public) toilets"
-        },
-        {
-          "if": "value=toilet_at_amenity",
-          "then": "toilet_at_amenity - A layer showing (public) toilets located at different places."
-        },
-        {
-          "if": "value=trail",
-          "then": "trail - Aangeduide wandeltochten"
-        },
-        {
-          "if": "value=transit_routes",
-          "then": "transit_routes - Layer showing bus lines"
-        },
-        {
-          "if": "value=transit_stops",
-          "then": "transit_stops - Layer showing different types of transit stops."
-        },
-        {
-          "if": "value=tree_node",
-          "then": "tree_node - A layer showing trees"
-        },
-        {
-          "if": "value=usersettings",
-          "then": "usersettings - A special layer which is not meant to be shown on a map, but which is used to set user settings"
-        },
-        {
-          "if": "value=vending_machine",
-          "then": "vending_machine - Layer showing vending machines"
-        },
-        {
-          "if": "value=veterinary",
-          "then": "veterinary - A layer showing veterinarians"
-        },
-        {
-          "if": "value=viewpoint",
-          "then": "viewpoint - A nice viewpoint or nice view. Ideal to add an image if no other category fits"
-        },
-        {
-          "if": "value=village_green",
-          "then": "village_green - A layer showing village-green (which are communal green areas, but not quite parks)"
-        },
-        {
-          "if": "value=visitor_information_centre",
-          "then": "visitor_information_centre - A visitor center offers information about a specific attraction or place of interest where it is located."
-        },
-        {
-          "if": "value=walls_and_buildings",
-          "then": "walls_and_buildings - Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user."
-        },
-        {
-          "if": "value=waste_basket",
-          "then": "waste_basket - This is a public waste basket, thrash can, where you can throw away your thrash."
-        },
-        {
-          "if": "value=waste_disposal",
-          "then": "waste_disposal - Waste Disposal Bin, medium to large bin for disposal of (household) waste"
-        },
-        {
-          "if": "value=windturbine",
-          "then": "windturbine - Modern windmills generating electricity"
-        }
-      ]
+      "suggestions": []
     },
     "type": "array",
     "description": "If specified, these layers will be shown in the precise location picker  and the new point will be snapped towards it.\nFor example, this can be used to snap against `walls_and_buildings` (e.g. to attach a defibrillator, an entrance, an artwork, ... to the wall)\nor to snap an obstacle (such as a bollard) to the `cycleways_and_roads`."
@@ -10418,7 +9869,7 @@
             "type": "object",
             "properties": {
               "key": {
-                "description": "question: What is the name of the attribute that should be written to?\nifunset: do not offer a freeform textfield as answer option",
+                "description": "question: What is the name of the attribute that should be written to?\nThis is the OpenStreetMap-key that that value will be written to\n\nifunset: do not offer a freeform textfield as answer option",
                 "type": "string"
               },
               "type": {
@@ -10426,7 +9877,15 @@
                 "type": "string"
               },
               "placeholder": {
-                "description": "question: What placeholder text should be shown in the input-element if there is no input?\nA (translated) text that is shown (as gray text) within the textfield\ntype: translation"
+                "description": "question: What placeholder text should be shown in the input-element if there is no input?\nA (translated) text that is shown (as gray text) within the textfield\ntype: translation",
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/Record<string,string>"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
               },
               "helperArgs": {
                 "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'",
@@ -11150,7 +10609,7 @@
       "ifunset": "do not offer a freeform textfield as answer option"
     },
     "type": "string",
-    "description": ""
+    "description": "This is the OpenStreetMap-key that that value will be written to"
   },
   {
     "path": [
@@ -11255,6 +10714,14 @@
       "typehint": "translation",
       "question": "What placeholder text should be shown in the input-element if there is no input?"
     },
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "A (translated) text that is shown (as gray text) within the textfield"
   },
   {
@@ -12277,7 +11744,7 @@
       "ifunset": "do not offer a freeform textfield as answer option"
     },
     "type": "string",
-    "description": ""
+    "description": "This is the OpenStreetMap-key that that value will be written to"
   },
   {
     "path": [
@@ -12384,6 +11851,14 @@
       "typehint": "translation",
       "question": "What placeholder text should be shown in the input-element if there is no input?"
     },
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "A (translated) text that is shown (as gray text) within the textfield"
   },
   {
@@ -13437,7 +12912,7 @@
       "ifunset": "do not offer a freeform textfield as answer option"
     },
     "type": "string",
-    "description": ""
+    "description": "This is the OpenStreetMap-key that that value will be written to"
   },
   {
     "path": [
@@ -13544,6 +13019,14 @@
       "typehint": "translation",
       "question": "What placeholder text should be shown in the input-element if there is no input?"
     },
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "A (translated) text that is shown (as gray text) within the textfield"
   },
   {
@@ -14609,7 +14092,7 @@
       "ifunset": "do not offer a freeform textfield as answer option"
     },
     "type": "string",
-    "description": ""
+    "description": "This is the OpenStreetMap-key that that value will be written to"
   },
   {
     "path": [
@@ -14718,6 +14201,14 @@
       "typehint": "translation",
       "question": "What placeholder text should be shown in the input-element if there is no input?"
     },
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "A (translated) text that is shown (as gray text) within the textfield"
   },
   {

@@ -1156,7 +1156,7 @@ export default {
           "type": "object",
           "properties": {
             "key": {
-              "description": "question: What is the name of the attribute that should be written to?\nifunset: do not offer a freeform textfield as answer option",
+              "description": "question: What is the name of the attribute that should be written to?\nThis is the OpenStreetMap-key that that value will be written to\n\nifunset: do not offer a freeform textfield as answer option",
               "type": "string"
             },
             "type": {
@@ -1164,7 +1164,15 @@ export default {
               "type": "string"
             },
             "placeholder": {
-              "description": "question: What placeholder text should be shown in the input-element if there is no input?\nA (translated) text that is shown (as gray text) within the textfield\ntype: translation"
+              "description": "question: What placeholder text should be shown in the input-element if there is no input?\nA (translated) text that is shown (as gray text) within the textfield\ntype: translation",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/Record<string,string>"
+                },
+                {
+                  "type": "string"
+                }
+              ]
             },
             "helperArgs": {
               "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'",
@@ -1365,7 +1373,7 @@ export default {
           "type": "object",
           "properties": {
             "key": {
-              "description": "question: What is the name of the attribute that should be written to?\nifunset: do not offer a freeform textfield as answer option",
+              "description": "question: What is the name of the attribute that should be written to?\nThis is the OpenStreetMap-key that that value will be written to\n\nifunset: do not offer a freeform textfield as answer option",
               "type": "string"
             },
             "type": {
@@ -1373,7 +1381,15 @@ export default {
               "type": "string"
             },
             "placeholder": {
-              "description": "question: What placeholder text should be shown in the input-element if there is no input?\nA (translated) text that is shown (as gray text) within the textfield\ntype: translation"
+              "description": "question: What placeholder text should be shown in the input-element if there is no input?\nA (translated) text that is shown (as gray text) within the textfield\ntype: translation",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/Record<string,string>"
+                },
+                {
+                  "type": "string"
+                }
+              ]
             },
             "helperArgs": {
               "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'",

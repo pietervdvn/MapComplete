@@ -9,6 +9,8 @@ import { Or } from "./Or"
 import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 import key_counts from "../../assets/key_totals.json"
 
+import { ConversionContext } from "../../Models/ThemeConfig/Conversion/ConversionContext"
+
 type Tags = Record<string, string>
 export type UploadableTag = Tag | SubstitutingTag | And
 
@@ -475,12 +477,18 @@ export class TagUtils {
      * regex.matchesProperties({maxspeed: "50 mph"}) // => true
      */
 
-    public static Tag(json: TagConfigJson, context: string = ""): TagsFilter {
+    public static Tag(json: TagConfigJson, context: string | ConversionContext = ""): TagsFilter {
         try {
-            return this.ParseTagUnsafe(json, context)
+            let ctx = typeof context === "string" ? context : context.path.join(".")
+            return this.ParseTagUnsafe(json, ctx)
         } catch (e) {
-            console.error("Could not parse tag", json, "in context", context, "due to ", e)
-            throw e
+            if (typeof context === "string") {
+                console.error("Could not parse tag", json, "in context", context, "due to ", e)
+                throw e
+            } else {
+                context.err(e)
+                return undefined
+            }
         }
     }
 

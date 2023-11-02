@@ -12,8 +12,8 @@
 cp config.json config.json.bu &&
 cp ./scripts/hetzner/config.json . && # Copy the config _before_ building, as the config might contain some needed URLs
 # npm run reset:layeroverview
+# npm run test &&
 npm run prepare-deploy &&
-npm run test &&
 zip dist.zip -r dist/* &&
 mv config.json.bu config.json &&
 scp ./scripts/hetzner/config/* hetzner:/root/ &&

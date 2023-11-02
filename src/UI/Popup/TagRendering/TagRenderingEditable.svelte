@@ -22,11 +22,14 @@
 
   export let highlightedRendering: UIEventSource<string> = undefined;
   export let showQuestionIfUnknown: boolean = false;
-  let editMode = false;
+  /**
+   * Indicates if this tagRendering currently shows the attribute or asks the question to _change_ the property
+   */
+  export let editMode = !config.IsKnown(tags) || showQuestionIfUnknown;
   if (tags) {
     onDestroy(
-      tags.addCallbackAndRunD((tags) => {
-        editMode = showQuestionIfUnknown && !config.IsKnown(tags);
+      tags.addCallbackD((tags) => {
+        editMode = !config.IsKnown(tags)
       })
     );
   }

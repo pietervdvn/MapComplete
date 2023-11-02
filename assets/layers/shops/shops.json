@@ -129,7 +129,7 @@
                   "then": "./assets/layers/id_presets/temaki-hammer_shoe.svg"
                 }
               ],
-              "mappings+":[
+              "mappings+": [
                 {
                   "if": "craft=key_cutter",
                   "then": "./assets/layers/id_presets/fas-key.svg"
@@ -156,7 +156,7 @@
         {
           "if": {
             "or": [
-            "service:key_cutting=yes",
+              "service:key_cutting=yes",
               "craft=key_cutter"
             ]
           },
@@ -399,7 +399,7 @@
     {
       "id": "key_cutter",
       "question": {
-        "en":"Does this shop offer key cutting?"
+        "en": "Does this shop offer key cutting?"
       },
       "mappings": [
         {

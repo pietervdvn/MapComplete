@@ -1,8 +1,9 @@
-import { Conversion, ConversionContext } from "./Conversion"
+import { Conversion } from "./Conversion"
 import LayerConfig from "../LayerConfig"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import Translations from "../../../UI/i18n/Translations"
 import { Translation, TypedTranslation } from "../../../UI/i18n/Translation"
+import { ConversionContext } from "./ConversionContext"
 
 export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, LayerConfigJson> {
     /**

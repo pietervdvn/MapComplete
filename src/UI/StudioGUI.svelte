@@ -24,8 +24,9 @@
   import { QuestionMarkCircleIcon } from "@babeard/svelte-heroicons/mini";
   import type { ConfigMeta } from "./Studio/configMeta";
   import EditTheme from "./Studio/EditTheme.svelte";
-
-  export let studioUrl = window.location.hostname === "127.0.0.1" ? "http://127.0.0.1:1235" : "https://studio.mapcomplete.org";
+  import * as meta from "../../package.json"
+  
+  export let studioUrl = window.location.hostname === "127.0.0.2" ? "http://127.0.0.1:1235" : "https://studio.mapcomplete.org";
 
   let osmConnection = new OsmConnection(new OsmConnection({
     oauth_token: QueryParameters.GetQueryParameter(
@@ -61,18 +62,22 @@
   let layerId = editLayerState.configuration.map(layerConfig => layerConfig.id);
 
   let showIntro = UIEventSource.asBoolean(LocalStorageSource.Get("studio-show-intro", "true"));
-
+const version = meta.version
   async function editLayer(event: Event) {
     const layerId: {owner: number, id: string} = event.detail;
     state = "loading";
+    editLayerState.startSavingUpdates(false)
     editLayerState.configuration.setData(await studio.fetch(layerId.id, "layers", layerId.owner));
+    editLayerState.startSavingUpdates()
     state = "editing_layer";
   }
 
   async function editTheme(event: Event) {
     const id : {id: string, owner: number} = event.detail;
     state = "loading";
+    editThemeState.startSavingUpdates(false)
     editThemeState.configuration.setData(await studio.fetch(id.id, "themes", id.owner));
+    editThemeState.startSavingUpdates()
     state = "editing_theme";
   }
 
@@ -153,6 +158,7 @@
             Show the introduction again
           </NextButton>
         </div>
+        <span class="subtle">MapComplete version {version}</span>
       </div>
     {:else if state === "edit_layer"}
 
@@ -160,14 +166,14 @@
         <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => {state =undefined}}>MapComplete Studio
         </BackButton>
         <h2>Choose a layer to edit</h2>
-        <ChooseLayerToEdit layerIds={$selfLayers} on:layerSelected={editLayer}>
+        <ChooseLayerToEdit {osmConnection} layerIds={$selfLayers} on:layerSelected={editLayer}>
           <h3 slot="title">Your layers</h3>
         </ChooseLayerToEdit>
         <h3>Layers by other contributors</h3>
-        <ChooseLayerToEdit layerIds={$otherLayers} on:layerSelected={editLayer} />
+        <ChooseLayerToEdit {osmConnection} layerIds={$otherLayers} on:layerSelected={editLayer} />
 
         <h3>Official layers by MapComplete</h3>
-        <ChooseLayerToEdit layerIds={$officialLayers} on:layerSelected={editLayer} />
+        <ChooseLayerToEdit  {osmConnection} layerIds={$officialLayers} on:layerSelected={editLayer} />
       </div>
     {:else if state === "edit_theme"}
 
@@ -175,13 +181,13 @@
         <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => {state =undefined}}>MapComplete Studio
         </BackButton>
         <h2>Choose a theme to edit</h2>
-        <ChooseLayerToEdit layerIds={$selfThemes} on:layerSelected={editTheme}>
+        <ChooseLayerToEdit {osmConnection} layerIds={$selfThemes} on:layerSelected={editTheme}>
           <h3 slot="title">Your themes</h3>
         </ChooseLayerToEdit>
         <h3>Themes by other contributors</h3>
-        <ChooseLayerToEdit layerIds={$otherThemes} on:layerSelected={editTheme} />
+        <ChooseLayerToEdit {osmConnection} layerIds={$otherThemes} on:layerSelected={editTheme} />
         <h3>Official themes by MapComplete</h3>
-        <ChooseLayerToEdit layerIds={$officialThemes} on:layerSelected={editTheme} />
+        <ChooseLayerToEdit {osmConnection} layerIds={$officialThemes} on:layerSelected={editTheme} />
 
       </div>
     {:else if state === "loading"}

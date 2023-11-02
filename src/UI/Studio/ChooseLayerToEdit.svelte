@@ -1,20 +1,10 @@
 <script lang="ts">
-  import Marker from "../Map/Marker.svelte";
-  import NextButton from "../Base/NextButton.svelte";
-  import { createEventDispatcher } from "svelte";
-  import { AllSharedLayers } from "../../Customizations/AllSharedLayers";
-  import { AllKnownLayouts, AllKnownLayoutsLazy } from "../../Customizations/AllKnownLayouts";
+  import { OsmConnection } from "../../Logic/Osm/OsmConnection";
+  import EditItemButton from "./EditItemButton.svelte";
 
-  export let layerIds: { id: string }[];
+  export let layerIds: { id: string, owner: number }[];
   export let category: "layers" | "themes" = "layers";
-  const dispatch = createEventDispatcher<{ layerSelected: string }>();
-
-  function fetchIconDescription(layerId): any {
-    if(category === "themes"){
-      return AllKnownLayouts.allKnownLayouts.get(layerId).icon
-    }
-    return AllSharedLayers.getSharedLayersConfigs().get(layerId)?._layerIcon;
-  }
+  export let osmConnection: OsmConnection;
 
 </script>
 
@@ -22,12 +12,7 @@
   <slot name="title" />
   <div class="flex flex-wrap">
     {#each Array.from(layerIds) as layer}
-      <NextButton clss="small" on:click={() => dispatch("layerSelected", layer)}>
-        <div class="w-4 h-4 mr-1">
-          <Marker icons={fetchIconDescription(layer.id)} />
-        </div>
-        {layer.id}
-      </NextButton>
+      <EditItemButton info={layer} {category} {osmConnection} on:layerSelected/>
     {/each}
   </div>
 {/if}

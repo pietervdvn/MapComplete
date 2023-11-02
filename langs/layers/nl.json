@@ -3272,13 +3272,6 @@
             "render": "Klok"
         }
     },
-    "crab_address": {
-        "tagRenderings": {
-            "render_crab": {
-                "render": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
-            }
-        }
-    },
     "crossings": {
         "description": "Oversteekplaatsen voor voetgangers en fietsers",
         "name": "Oversteekplaatsen",
@@ -7631,6 +7624,9 @@
         "tagRenderings": {
             "explanation": {
                 "mappings": {
+                    "0": {
+                        "then": "<div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div>"
+                    },
                     "1": {
                         "then": "Dit is een brede, autovrije straat"
                     },
@@ -7647,6 +7643,14 @@
                         "then": "Dit is een tractorspoor of weg om landbouwgrond te bereikken"
                     }
                 }
+            },
+            "slow_road_is_lit": {
+                "mappings": {
+                    "1": {
+                        "then": "Niet verlicht"
+                    }
+                },
+                "question": "Is deze weg 's nachts verlicht?"
             },
             "slow_roads-surface": {
                 "mappings": {
@@ -7695,6 +7699,9 @@
                 },
                 "4": {
                     "then": "Woonerf"
+                },
+                "5": {
+                    "then": "Klein pad"
                 }
             },
             "render": "Trage weg"

@@ -59,7 +59,6 @@ export class Translation extends BaseUIElement {
                 "Constructing a translation, but the object containing translations is empty " +
                     (context ?? "No context given")
             )
-            throw `Constructing a translation, but the object containing translations is empty (${context})`
         }
     }
 

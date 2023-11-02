@@ -28,8 +28,8 @@ BRANCH=`git rev-parse --abbrev-ref HEAD`
 echo "The branch name is $BRANCH"
 if [ $BRANCH = "develop" ]
 then
-    # SRC_MAPS="--sourcemap"
-    echo "Source maps are NOT enabled as they consume to much RAM"
+    SRC_MAPS="--sourcemap"
+    echo "Source maps are enabled "
 fi
 
 if [ $BRANCH = "master" ] || [ $BRANCH = "develop" ]

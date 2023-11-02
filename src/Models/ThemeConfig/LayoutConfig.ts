@@ -9,7 +9,8 @@ import { Utils } from "../../Utils"
 import LanguageUtils from "../../Utils/LanguageUtils"
 
 import { RasterLayerProperties } from "../RasterLayerProperties"
-import { ConversionContext } from "./Conversion/Conversion"
+
+import { ConversionContext } from "./Conversion/ConversionContext"
 
 /**
  * Minimal information about a theme

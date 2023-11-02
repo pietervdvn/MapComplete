@@ -1,7 +1,8 @@
 import LayoutConfig from "../../../../src/Models/ThemeConfig/LayoutConfig"
 import { FixLegacyTheme } from "../../../../src/Models/ThemeConfig/Conversion/LegacyJsonConvert"
 import { describe, expect, it } from "vitest"
-import { ConversionContext } from "../../../../src/Models/ThemeConfig/Conversion/Conversion"
+
+import { ConversionContext } from "../../../../src/Models/ThemeConfig/Conversion/ConversionContext"
 
 describe("FixLegacyTheme", () => {
     it("should create a working theme config", () => {

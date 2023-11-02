@@ -7,14 +7,12 @@ import LayerConfig from "../../../../src/Models/ThemeConfig/LayerConfig"
 import { ExtractImages } from "../../../../src/Models/ThemeConfig/Conversion/FixImages"
 import cyclofix from "../../../../src/assets/generated/themes/cyclofix.json"
 import { Tag } from "../../../../src/Logic/Tags/Tag"
-import {
-    ConversionContext,
-    DesugaringContext,
-} from "../../../../src/Models/ThemeConfig/Conversion/Conversion"
+import { DesugaringContext } from "../../../../src/Models/ThemeConfig/Conversion/Conversion"
 import { And } from "../../../../src/Logic/Tags/And"
 import { describe, expect, it } from "vitest"
 import { QuestionableTagRenderingConfigJson } from "../../../../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import Constants from "../../../../src/Models/Constants"
+import { ConversionContext } from "../../../../src/Models/ThemeConfig/Conversion/ConversionContext"
 
 const themeConfigJson: LayoutConfigJson = {
     description: "Descr",

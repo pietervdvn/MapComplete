@@ -198,6 +198,8 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
     freeform?: {
         /**
          * question: What is the name of the attribute that should be written to?
+         * This is the OpenStreetMap-key that that value will be written to
+         *
          * ifunset: do not offer a freeform textfield as answer option
          */
         key: string
@@ -215,7 +217,7 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
          * A (translated) text that is shown (as gray text) within the textfield
          * type: translation
          */
-        placeholder?: string | any
+        placeholder?: Translatable
 
         /**
          * Extra parameters to initialize the input helper arguments.
@@ -259,7 +261,7 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
      *
      * ifunset: This tagrendering will be shown if it is known, but cannot be edited by the contributor, effectively resutling in a read-only rendering
      */
-    question?: string | Translatable
+    question?: Translatable
 
     /**
      * question: Should some extra information be shown to the contributor, alongside the question?
@@ -267,7 +269,7 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
      * This can give some extra information on what the answer should ook like
      * ifunset: No extra hint is given
      */
-    questionHint?: string | Translatable
+    questionHint?: Translatable
 
     /**
      * A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer

@@ -72,6 +72,7 @@ const configBuiltin = new TagRenderingConfig(<QuestionableTagRenderingConfigJson
 
 
 const tags = new UIEventSource({ value });
+
 const store = state.getStoreFor(path);
 tags.addCallbackAndRunD(tgs => {
   store.setData(tgs["value"]);
@@ -112,7 +113,7 @@ const missing: string[] = questionableTagRenderingSchemaRaw.filter(schema => sch
       <slot name="upper-right" />
     </div>
     {#if $allowQuestions}
-      <SchemaBasedField {state} path={[...path,"question"]} schema={topLevelItems["question"]} />
+      <SchemaBasedField startInEditModeIfUnset={true} {state} path={[...path,"question"]} schema={topLevelItems["question"]} />
       <SchemaBasedField {state} path={[...path,"questionHint"]} schema={topLevelItems["questionHint"]} />
     {/if}
     {#each ($mappings ?? []) as mapping, i (mapping)}

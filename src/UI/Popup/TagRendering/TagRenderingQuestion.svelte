@@ -132,6 +132,7 @@
 
   function onSave() {
     if (selectedTags === undefined) {
+      console.log("SelectedTags is undefined, ignoring 'onSave'-event")
       return;
     }
     if (layer === undefined || layer?.source === null) {
@@ -197,19 +198,19 @@
         </span>
         <slot name="upper-right" />
       </div>
-
-      {#if config.questionhint}
-        <div>
-          <SpecialTranslation
-            t={config.questionhint}
-            {tags}
-            {state}
-            {layer}
-            feature={selectedElement}
-          />
-        </div>
-      {/if}
     </div>
+
+    {#if config.questionhint}
+      <div class="max-h-60 overflow-y-auto">
+        <SpecialTranslation
+          t={config.questionhint}
+          {tags}
+          {state}
+          {layer}
+          feature={selectedElement}
+        />
+      </div>
+    {/if}
 
     {#if config.mappings?.length >= 8}
       <div class="sticky flex w-full">

@@ -1,8 +1,5 @@
 import { Utils } from "../../../../src/Utils"
-import {
-    ConversionContext,
-    DesugaringContext,
-} from "../../../../src/Models/ThemeConfig/Conversion/Conversion"
+import { DesugaringContext } from "../../../../src/Models/ThemeConfig/Conversion/Conversion"
 import { LayerConfigJson } from "../../../../src/Models/ThemeConfig/Json/LayerConfigJson"
 import { TagRenderingConfigJson } from "../../../../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
 import { PrepareLayer } from "../../../../src/Models/ThemeConfig/Conversion/PrepareLayer"
@@ -10,6 +7,7 @@ import * as bookcases from "../../../../assets/layers/public_bookcase/public_boo
 import CreateNoteImportLayer from "../../../../src/Models/ThemeConfig/Conversion/CreateNoteImportLayer"
 import { describe, expect, it } from "vitest"
 import { QuestionableTagRenderingConfigJson } from "../../../../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+import { ConversionContext } from "../../../../src/Models/ThemeConfig/Conversion/ConversionContext"
 
 describe("CreateNoteImportLayer", () => {
     it("should generate a layerconfig", () => {

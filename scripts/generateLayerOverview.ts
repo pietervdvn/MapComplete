@@ -16,7 +16,6 @@ import { PrepareLayer } from "../src/Models/ThemeConfig/Conversion/PrepareLayer"
 import { PrepareTheme } from "../src/Models/ThemeConfig/Conversion/PrepareTheme"
 import {
     Conversion,
-    ConversionContext,
     DesugaringContext,
     DesugaringStep,
 } from "../src/Models/ThemeConfig/Conversion/Conversion"
@@ -30,6 +29,7 @@ import LayerConfig from "../src/Models/ThemeConfig/LayerConfig"
 import PointRenderingConfig from "../src/Models/ThemeConfig/PointRenderingConfig"
 
 import { ConfigMeta } from "../src/UI/Studio/configMeta"
+import { ConversionContext } from "../src/Models/ThemeConfig/Conversion/ConversionContext"
 
 // This scripts scans 'src/assets/layers/*.json' for layer definition files and 'src/assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
@@ -767,7 +767,7 @@ class LayerOverviewUtils extends Script {
                         t.shortDescription ??
                         new Translation(t.description)
                             .FirstSentence()
-                            .OnEveryLanguage((s) => parse_html(s).innerText).translations,
+                            .OnEveryLanguage((s) => parse_html(s).textContent).translations,
                     mustHaveLanguage: t.mustHaveLanguage?.length > 0,
                 }
             })

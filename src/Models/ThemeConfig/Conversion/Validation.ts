@@ -1,13 +1,4 @@
-import {
-    Conversion,
-    ConversionContext,
-    DesugaringStep,
-    Each,
-    Fuse,
-    On,
-    Pipe,
-    Pure,
-} from "./Conversion"
+import { Conversion, DesugaringStep, Each, Fuse, On, Pipe, Pure } from "./Conversion"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import LayerConfig from "../LayerConfig"
 import { Utils } from "../../../Utils"
@@ -29,6 +20,8 @@ import TagRenderingConfig from "../TagRenderingConfig"
 import { parse as parse_html } from "node-html-parser"
 import PresetConfig from "../PresetConfig"
 import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
+import { Translatable } from "../Json/Translatable"
+import { ConversionContext } from "./ConversionContext"
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
     private readonly _languages: string[]
@@ -285,7 +278,7 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
                 new Each(
                     new Pipe(
                         new ValidateLayer(undefined, isBuiltin, doesImageExist, false, true),
-                        new Pure((x) => x.raw)
+                        new Pure((x) => x?.raw)
                     )
                 )
             )
@@ -375,32 +368,34 @@ export class DetectConflictingAddExtraTags extends DesugaringStep<TagRenderingCo
             return json
         }
 
-        const tagRendering = new TagRenderingConfig(json)
+        try {
+            const tagRendering = new TagRenderingConfig(json)
 
-        const errors = []
-        for (let i = 0; i < tagRendering.mappings.length; i++) {
-            const mapping = tagRendering.mappings[i]
-            if (!mapping.addExtraTags) {
-                continue
+            for (let i = 0; i < tagRendering.mappings.length; i++) {
+                const mapping = tagRendering.mappings[i]
+                if (!mapping.addExtraTags) {
+                    continue
+                }
+                const keysInMapping = new Set(mapping.if.usedKeys())
+
+                const keysInAddExtraTags = mapping.addExtraTags.map((t) => t.key)
+
+                const duplicateKeys = keysInAddExtraTags.filter((k) => keysInMapping.has(k))
+                if (duplicateKeys.length > 0) {
+                    context
+                        .enters("mappings", i)
+                        .err(
+                            "AddExtraTags overrides a key that is set in the `if`-clause of this mapping. Selecting this answer might thus first set one value (needed to match as answer) and then override it with a different value, resulting in an unsaveable question. The offending `addExtraTags` is " +
+                                duplicateKeys.join(", ")
+                        )
+                }
             }
-            const keysInMapping = new Set(mapping.if.usedKeys())
 
-            const keysInAddExtraTags = mapping.addExtraTags.map((t) => t.key)
-
-            const duplicateKeys = keysInAddExtraTags.filter((k) => keysInMapping.has(k))
-            if (duplicateKeys.length > 0) {
-                errors.push(
-                    "At " +
-                        context +
-                        ".mappings[" +
-                        i +
-                        "]: AddExtraTags overrides a key that is set in the `if`-clause of this mapping. Selecting this answer might thus first set one value (needed to match as answer) and then override it with a different value, resulting in an unsaveable question. The offending `addExtraTags` is " +
-                        duplicateKeys.join(", ")
-                )
-            }
+            return json
+        } catch (e) {
+            context.err(e)
+            return undefined
         }
-
-        return json
     }
 }
 
@@ -475,8 +470,8 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
                 "some_calculated_tag_value_for_" + calculatedTagName
         }
         const parsedConditions = json.mappings.map((m, i) => {
-            const ctx = `${context}.mappings[${i}]`
-            const ifTags = TagUtils.Tag(m.if, ctx)
+            const c = context.enters("mappings", i)
+            const ifTags = TagUtils.Tag(m.if, c.enter("if"))
             const hideInAnswer = m["hideInAnswer"]
             if (hideInAnswer !== undefined && hideInAnswer !== false && hideInAnswer !== true) {
                 let conditionTags = TagUtils.Tag(hideInAnswer)
@@ -486,7 +481,7 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
             return ifTags
         })
         for (let i = 0; i < json.mappings.length; i++) {
-            if (!parsedConditions[i].isUsableAsAnswer()) {
+            if (!parsedConditions[i]?.isUsableAsAnswer()) {
                 // There is no straightforward way to convert this mapping.if into a properties-object, so we simply skip this one
                 // Yes, it might be shadowed, but running this check is to difficult right now
                 continue
@@ -661,12 +656,57 @@ class ValidatePossibleLinks extends DesugaringStep<string | Record<string, strin
     }
 }
 
-class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
-    private _options: { noQuestionHintCheck: boolean }
+class CheckTranslation extends DesugaringStep<Translatable> {
+    public static readonly allowUndefined: CheckTranslation = new CheckTranslation(true)
+    public static readonly noUndefined: CheckTranslation = new CheckTranslation()
+    private readonly _allowUndefined: boolean
 
-    constructor(options: { noQuestionHintCheck: boolean }) {
+    constructor(allowUndefined: boolean = false) {
+        super(
+            "Checks that a translation is valid and internally consistent",
+            ["*"],
+            "CheckTranslation"
+        )
+        this._allowUndefined = allowUndefined
+    }
+
+    convert(json: Translatable, context: ConversionContext): Translatable {
+        if (json === undefined || json === null) {
+            if (!this._allowUndefined) {
+                context.err("Expected a translation, but got " + json)
+            }
+            return json
+        }
+        if (typeof json === "string") {
+            return json
+        }
+        const keys = Object.keys(json)
+        if (keys.length === 0) {
+            context.err("No actual values are given in this translation, it is completely empty")
+            return json
+        }
+        const en = json["en"]
+        if (!en && json["*"] === undefined) {
+            const msg = "Received a translation without english version"
+            context.warn(msg)
+        }
+
+        for (const key of keys) {
+            const lng = json[key]
+            if (lng === "") {
+                context.enter(lng).err("Got an empty string in translation for language " + lng)
+            }
+
+            // TODO validate that all subparts are here
+        }
+
+        return json
+    }
+}
+
+class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
+    constructor() {
         super("Miscellaneous checks on the tagrendering", ["special"], "MiscTagRenderingChecks")
-        this._options = options
     }
 
     convert(
@@ -678,8 +718,40 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                 'Detected `special` on the top level. Did you mean `{"render":{ "special": ... }}`'
             )
         }
+
+        {
+            for (const key of ["question", "questionHint", "render"]) {
+                CheckTranslation.allowUndefined.convert(json[key], context.enter(key))
+            }
+            for (let i = 0; i < json.mappings?.length ?? 0; i++) {
+                const mapping = json.mappings[i]
+                CheckTranslation.noUndefined.convert(
+                    mapping.then,
+                    context.enters("mappings", i, "then")
+                )
+                if (!mapping.if) {
+                    context.enters("mappings", i).err("No `if` is defined")
+                }
+            }
+        }
         if (json["group"]) {
             context.err('Groups are deprecated, use `"label": ["' + json["group"] + '"]` instead')
+        }
+
+        if (json["question"] && json.freeform?.key === undefined && json.mappings === undefined) {
+            context.err(
+                "A question is defined, but no mappings nor freeform (key) are. Add at least one of them"
+            )
+        }
+        if (json["question"] && !json.freeform && (json.mappings?.length ?? 0) == 1) {
+            context.err("A question is defined, but there is only one option to choose from.")
+        }
+        if (json["questionHint"] && !json["question"]) {
+            context
+                .enter("questionHint")
+                .err(
+                    "A questionHint is defined, but no question is given. As such, the questionHint will never be shown"
+                )
         }
 
         if (json.freeform) {
@@ -771,16 +843,13 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                     )
             }
         }
+
         return json
     }
 }
 
 export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
-    constructor(
-        layerConfig?: LayerConfigJson,
-        doesImageExist?: DoesImageExist,
-        options?: { noQuestionHintCheck: boolean }
-    ) {
+    constructor(layerConfig?: LayerConfigJson, doesImageExist?: DoesImageExist) {
         super(
             "Various validation on tagRenderingConfigs",
             new DetectShadowedMappings(layerConfig),
@@ -790,67 +859,46 @@ export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
             new On("question", new ValidatePossibleLinks()),
             new On("questionHint", new ValidatePossibleLinks()),
             new On("mappings", new Each(new On("then", new ValidatePossibleLinks()))),
-            new MiscTagRenderingChecks(options)
+            new MiscTagRenderingChecks()
         )
     }
 }
 
-export class ValidateLayer extends Conversion<
-    LayerConfigJson,
-    { parsed: LayerConfig; raw: LayerConfigJson }
-> {
-    /**
-     * The paths where this layer is originally saved. Triggers some extra checks
-     * @private
-     */
-    private readonly _path?: string
+export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
     private readonly _isBuiltin: boolean
     private readonly _doesImageExist: DoesImageExist
+    /**
+     * The paths where this layer is originally saved. Triggers some extra checks
+     */
+    private readonly _path: string
     private readonly _studioValidations: boolean
-    private _skipDefaultLayers: boolean
 
-    constructor(
-        path: string,
-        isBuiltin: boolean,
-        doesImageExist: DoesImageExist,
-        studioValidations: boolean = false,
-        skipDefaultLayers: boolean = false
-    ) {
-        super("Doesn't change anything, but emits warnings and errors", [], "ValidateLayer")
+    constructor(path: string, isBuiltin, doesImageExist, studioValidations) {
+        super("Runs various checks against common mistakes for a layer", [], "PrevalidateLayer")
         this._path = path
         this._isBuiltin = isBuiltin
         this._doesImageExist = doesImageExist
         this._studioValidations = studioValidations
-        this._skipDefaultLayers = skipDefaultLayers
     }
 
-    convert(
-        json: LayerConfigJson,
-        context: ConversionContext
-    ): { parsed: LayerConfig; raw: LayerConfigJson } {
-        context = context.inOperation(this.name)
-        if (typeof json === "string") {
-            context.err("This layer hasn't been expanded: " + json)
-            return null
-        }
-
-        if (this._skipDefaultLayers && Constants.added_by_default.indexOf(<any>json.id) >= 0) {
-            return { parsed: undefined, raw: json }
-        }
-
-        if (typeof json === "string") {
-            context.err(
-                `Not a valid layer: the layerConfig is a string. 'npm run generate:layeroverview' might be needed`
-            )
-            return undefined
-        }
-
+    convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
         if (json.id === undefined) {
             context.enter("id").err(`Not a valid layer: id is undefined`)
+        } else {
+            if (json.id?.toLowerCase() !== json.id) {
+                context.enter("id").err(`The id of a layer should be lowercase: ${json.id}`)
+            }
+            if (json.id?.match(/[a-z0-9-_]/) == null) {
+                context.enter("id").err(`The id of a layer should match [a-z0-9-_]*: ${json.id}`)
+            }
         }
 
         if (json.source === undefined) {
-            context.enter("source").err("No source section is defined")
+            context
+                .enter("source")
+                .err(
+                    "No source section is defined; please define one as data is not loaded otherwise"
+                )
         } else {
             if (json.source === "special" || json.source === "special:library") {
             } else if (json.source && json.source["osmTags"] === undefined) {
@@ -884,13 +932,6 @@ export class ValidateLayer extends Conversion<
             }
         }
 
-        if (json.id?.toLowerCase() !== json.id) {
-            context.enter("id").err(`The id of a layer should be lowercase: ${json.id}`)
-        }
-        if (json.id?.match(/[a-z0-9-_]/) == null) {
-            context.enter("id").err(`The id of a layer should match [a-z0-9-_]*: ${json.id}`)
-        }
-
         if (
             json.syncSelection !== undefined &&
             LayerConfig.syncSelectionAllowed.indexOf(json.syncSelection) < 0
@@ -906,27 +947,6 @@ export class ValidateLayer extends Conversion<
                 )
         }
 
-        let layerConfig: LayerConfig
-        try {
-            layerConfig = new LayerConfig(json, "validation", true)
-        } catch (e) {
-            console.error(e)
-            context.err("Could not parse layer due to:" + e)
-            return undefined
-        }
-        for (let i = 0; i < (layerConfig.calculatedTags ?? []).length; i++) {
-            const [_, code, __] = layerConfig.calculatedTags[i]
-            try {
-                new Function("feat", "return " + code + ";")
-            } catch (e) {
-                context
-                    .enters("calculatedTags", i)
-                    .err(
-                        `Invalid function definition: the custom javascript is invalid:${e}. The offending javascript code is:\n    ${code}`
-                    )
-            }
-        }
-
         if (json.source === "special") {
             if (!Constants.priviliged_layers.find((x) => x == json.id)) {
                 context.err(
@@ -935,6 +955,10 @@ export class ValidateLayer extends Conversion<
                         " uses 'special' as source.osmTags. However, this layer is not a priviliged layer"
                 )
             }
+        }
+
+        if (context.hasErrors()) {
+            return undefined
         }
 
         if (json.tagRenderings !== undefined && json.tagRenderings.length > 0) {
@@ -1001,172 +1025,6 @@ export class ValidateLayer extends Conversion<
         }
 
         try {
-            if (this._isBuiltin) {
-                // Some checks for legacy elements
-
-                if (json["overpassTags"] !== undefined) {
-                    context.err(
-                        "Layer " +
-                            json.id +
-                            'still uses the old \'overpassTags\'-format. Please use "source": {"osmTags": <tags>}\' instead of "overpassTags": <tags> (note: this isn\'t your fault, the custom theme generator still spits out the old format)'
-                    )
-                }
-                const forbiddenTopLevel = [
-                    "icon",
-                    "wayHandling",
-                    "roamingRenderings",
-                    "roamingRendering",
-                    "label",
-                    "width",
-                    "color",
-                    "colour",
-                    "iconOverlays",
-                ]
-                for (const forbiddenKey of forbiddenTopLevel) {
-                    if (json[forbiddenKey] !== undefined)
-                        context.err(
-                            "Layer " + json.id + " still has a forbidden key " + forbiddenKey
-                        )
-                }
-                if (json["hideUnderlayingFeaturesMinPercentage"] !== undefined) {
-                    context.err(
-                        "Layer " +
-                            json.id +
-                            " contains an old 'hideUnderlayingFeaturesMinPercentage'"
-                    )
-                }
-
-                if (
-                    json.isShown !== undefined &&
-                    (json.isShown["render"] !== undefined || json.isShown["mappings"] !== undefined)
-                ) {
-                    context.warn("Has a tagRendering as `isShown`")
-                }
-            }
-            if (this._isBuiltin) {
-                // Check location of layer file
-                const expected: string = `assets/layers/${json.id}/${json.id}.json`
-                if (this._path != undefined && this._path.indexOf(expected) < 0) {
-                    context.err(
-                        "Layer is in an incorrect place. The path is " +
-                            this._path +
-                            ", but expected " +
-                            expected
-                    )
-                }
-            }
-            if (this._isBuiltin) {
-                // Check for correct IDs
-                if (json.tagRenderings?.some((tr) => tr["id"] === "")) {
-                    const emptyIndexes: number[] = []
-                    for (let i = 0; i < json.tagRenderings.length; i++) {
-                        const tagRendering = json.tagRenderings[i]
-                        if (tagRendering["id"] === "") {
-                            emptyIndexes.push(i)
-                        }
-                    }
-                    context
-                        .enter(["tagRenderings", ...emptyIndexes])
-                        .err(
-                            `Some tagrendering-ids are empty or have an emtpy string; this is not allowed (at ${emptyIndexes.join(
-                                ","
-                            )}])`
-                        )
-                }
-
-                const duplicateIds = Utils.Duplicates(
-                    (json.tagRenderings ?? [])
-                        ?.map((f) => f["id"])
-                        .filter((id) => id !== "questions")
-                )
-                if (duplicateIds.length > 0 && !Utils.runningFromConsole) {
-                    context
-                        .enter("tagRenderings")
-                        .err(`Some tagRenderings have a duplicate id: ${duplicateIds}`)
-                }
-
-                if (json.description === undefined) {
-                    if (typeof json.source === null) {
-                        context.err("A priviliged layer must have a description")
-                    } else {
-                        context.warn("A builtin layer should have a description")
-                    }
-                }
-            }
-
-            if (json.filter) {
-                new On("filter", new Each(new ValidateFilter())).convert(json, context)
-            }
-
-            if (json.tagRenderings !== undefined) {
-                new On(
-                    "tagRenderings",
-                    new Each(
-                        new ValidateTagRenderings(json, this._doesImageExist, {
-                            noQuestionHintCheck: json["#"]?.indexOf("no-question-hint-check") >= 0,
-                        })
-                    )
-                ).convert(json, context)
-            }
-
-            if (json.pointRendering !== null && json.pointRendering !== undefined) {
-                if (!Array.isArray(json.pointRendering)) {
-                    throw (
-                        "pointRendering in " +
-                        json.id +
-                        " is not iterable, it is: " +
-                        typeof json.pointRendering
-                    )
-                }
-                for (let i = 0; i < json.pointRendering.length; i++) {
-                    const pointRendering = json.pointRendering[i]
-                    if (pointRendering.marker === undefined) {
-                        continue
-                    }
-                    for (const icon of pointRendering?.marker) {
-                        const indexM = pointRendering?.marker.indexOf(icon)
-                        if (!icon.icon) {
-                            continue
-                        }
-                        if (icon.icon["condition"]) {
-                            context
-                                .enters("pointRendering", i, "marker", indexM, "icon", "condition")
-                                .err(
-                                    "Don't set a condition in a marker as this will result in an invisible but clickable element. Use extra filters in the source instead."
-                                )
-                        }
-                    }
-                }
-            }
-
-            if (json.presets !== undefined) {
-                if (typeof json.source === "string") {
-                    context.err("A special layer cannot have presets")
-                }
-                // Check that a preset will be picked up by the layer itself
-                const baseTags = TagUtils.Tag(json.source["osmTags"])
-                for (let i = 0; i < json.presets.length; i++) {
-                    const preset = json.presets[i]
-                    const tags: { k: string; v: string }[] = new And(
-                        preset.tags.map((t) => TagUtils.Tag(t))
-                    ).asChange({ id: "node/-1" })
-                    const properties = {}
-                    for (const tag of tags) {
-                        properties[tag.k] = tag.v
-                    }
-                    const doMatch = baseTags.matchesProperties(properties)
-                    if (!doMatch) {
-                        context
-                            .enters("presets", i, "tags")
-                            .err(
-                                "This preset does not match the required tags of this layer. This implies that a newly added point will not show up.\n    A newly created point will have properties: " +
-                                    JSON.stringify(properties) +
-                                    "\n    The required tags are: " +
-                                    baseTags.asHumanString(false, false, {})
-                            )
-                    }
-                }
-            }
         } catch (e) {
             context.err("Could not validate layer due to: " + e + e.stack)
         }
@@ -1177,6 +1035,232 @@ export class ValidateLayer extends Conversion<
             }
             if (!json.name) {
                 context.enter("name").err("A name is required")
+            }
+        }
+
+        if (this._isBuiltin) {
+            // Some checks for legacy elements
+
+            if (json["overpassTags"] !== undefined) {
+                context.err(
+                    "Layer " +
+                        json.id +
+                        'still uses the old \'overpassTags\'-format. Please use "source": {"osmTags": <tags>}\' instead of "overpassTags": <tags> (note: this isn\'t your fault, the custom theme generator still spits out the old format)'
+                )
+            }
+            const forbiddenTopLevel = [
+                "icon",
+                "wayHandling",
+                "roamingRenderings",
+                "roamingRendering",
+                "label",
+                "width",
+                "color",
+                "colour",
+                "iconOverlays",
+            ]
+            for (const forbiddenKey of forbiddenTopLevel) {
+                if (json[forbiddenKey] !== undefined)
+                    context.err("Layer " + json.id + " still has a forbidden key " + forbiddenKey)
+            }
+            if (json["hideUnderlayingFeaturesMinPercentage"] !== undefined) {
+                context.err(
+                    "Layer " + json.id + " contains an old 'hideUnderlayingFeaturesMinPercentage'"
+                )
+            }
+
+            if (
+                json.isShown !== undefined &&
+                (json.isShown["render"] !== undefined || json.isShown["mappings"] !== undefined)
+            ) {
+                context.warn("Has a tagRendering as `isShown`")
+            }
+        }
+        if (this._isBuiltin) {
+            // Check location of layer file
+            const expected: string = `assets/layers/${json.id}/${json.id}.json`
+            if (this._path != undefined && this._path.indexOf(expected) < 0) {
+                context.err(
+                    "Layer is in an incorrect place. The path is " +
+                        this._path +
+                        ", but expected " +
+                        expected
+                )
+            }
+        }
+        if (this._isBuiltin) {
+            // Check for correct IDs
+            if (json.tagRenderings?.some((tr) => tr["id"] === "")) {
+                const emptyIndexes: number[] = []
+                for (let i = 0; i < json.tagRenderings.length; i++) {
+                    const tagRendering = json.tagRenderings[i]
+                    if (tagRendering["id"] === "") {
+                        emptyIndexes.push(i)
+                    }
+                }
+                context
+                    .enter(["tagRenderings", ...emptyIndexes])
+                    .err(
+                        `Some tagrendering-ids are empty or have an emtpy string; this is not allowed (at ${emptyIndexes.join(
+                            ","
+                        )}])`
+                    )
+            }
+
+            const duplicateIds = Utils.Duplicates(
+                (json.tagRenderings ?? [])?.map((f) => f["id"]).filter((id) => id !== "questions")
+            )
+            if (duplicateIds.length > 0 && !Utils.runningFromConsole) {
+                context
+                    .enter("tagRenderings")
+                    .err(`Some tagRenderings have a duplicate id: ${duplicateIds}`)
+            }
+
+            if (json.description === undefined) {
+                if (typeof json.source === null) {
+                    context.err("A priviliged layer must have a description")
+                } else {
+                    context.warn("A builtin layer should have a description")
+                }
+            }
+        }
+
+        if (json.filter) {
+            new On("filter", new Each(new ValidateFilter())).convert(json, context)
+        }
+
+        if (json.tagRenderings !== undefined) {
+            new On(
+                "tagRenderings",
+                new Each(new ValidateTagRenderings(json, this._doesImageExist))
+            ).convert(json, context)
+        }
+
+        if (json.pointRendering !== null && json.pointRendering !== undefined) {
+            if (!Array.isArray(json.pointRendering)) {
+                throw (
+                    "pointRendering in " +
+                    json.id +
+                    " is not iterable, it is: " +
+                    typeof json.pointRendering
+                )
+            }
+            for (let i = 0; i < json.pointRendering.length; i++) {
+                const pointRendering = json.pointRendering[i]
+                if (pointRendering.marker === undefined) {
+                    continue
+                }
+                for (const icon of pointRendering?.marker) {
+                    const indexM = pointRendering?.marker.indexOf(icon)
+                    if (!icon.icon) {
+                        continue
+                    }
+                    if (icon.icon["condition"]) {
+                        context
+                            .enters("pointRendering", i, "marker", indexM, "icon", "condition")
+                            .err(
+                                "Don't set a condition in a marker as this will result in an invisible but clickable element. Use extra filters in the source instead."
+                            )
+                    }
+                }
+            }
+        }
+
+        if (json.presets !== undefined) {
+            if (typeof json.source === "string") {
+                context.err("A special layer cannot have presets")
+            }
+            // Check that a preset will be picked up by the layer itself
+            const baseTags = TagUtils.Tag(json.source["osmTags"])
+            for (let i = 0; i < json.presets.length; i++) {
+                const preset = json.presets[i]
+                const tags: { k: string; v: string }[] = new And(
+                    preset.tags.map((t) => TagUtils.Tag(t))
+                ).asChange({ id: "node/-1" })
+                const properties = {}
+                for (const tag of tags) {
+                    properties[tag.k] = tag.v
+                }
+                const doMatch = baseTags.matchesProperties(properties)
+                if (!doMatch) {
+                    context
+                        .enters("presets", i, "tags")
+                        .err(
+                            "This preset does not match the required tags of this layer. This implies that a newly added point will not show up.\n    A newly created point will have properties: " +
+                                JSON.stringify(properties) +
+                                "\n    The required tags are: " +
+                                baseTags.asHumanString(false, false, {})
+                        )
+                }
+            }
+        }
+        return json
+    }
+}
+
+export class ValidateLayer extends Conversion<
+    LayerConfigJson,
+    { parsed: LayerConfig; raw: LayerConfigJson }
+> {
+    private readonly _skipDefaultLayers: boolean
+    private readonly _prevalidation: PrevalidateLayer
+
+    constructor(
+        path: string,
+        isBuiltin: boolean,
+        doesImageExist: DoesImageExist,
+        studioValidations: boolean = false,
+        skipDefaultLayers: boolean = false
+    ) {
+        super("Doesn't change anything, but emits warnings and errors", [], "ValidateLayer")
+        this._prevalidation = new PrevalidateLayer(
+            path,
+            isBuiltin,
+            doesImageExist,
+            studioValidations
+        )
+        this._skipDefaultLayers = skipDefaultLayers
+    }
+
+    convert(
+        json: LayerConfigJson,
+        context: ConversionContext
+    ): { parsed: LayerConfig; raw: LayerConfigJson } {
+        context = context.inOperation(this.name)
+        if (typeof json === "string") {
+            context.err(
+                `Not a valid layer: the layerConfig is a string. 'npm run generate:layeroverview' might be needed`
+            )
+            return undefined
+        }
+
+        if (this._skipDefaultLayers && Constants.added_by_default.indexOf(<any>json.id) >= 0) {
+            return { parsed: undefined, raw: json }
+        }
+
+        this._prevalidation.convert(json, context.inOperation(this._prevalidation.name))
+
+        if (context.hasErrors()) {
+            return undefined
+        }
+
+        let layerConfig: LayerConfig
+        try {
+            layerConfig = new LayerConfig(json, "validation", true)
+        } catch (e) {
+            context.err("Could not parse layer due to:" + e)
+            return undefined
+        }
+        for (let i = 0; i < (layerConfig.calculatedTags ?? []).length; i++) {
+            const [_, code, __] = layerConfig.calculatedTags[i]
+            try {
+                new Function("feat", "return " + code + ";")
+            } catch (e) {
+                context
+                    .enters("calculatedTags", i)
+                    .err(
+                        `Invalid function definition: the custom javascript is invalid:${e}. The offending javascript code is:\n    ${code}`
+                    )
             }
         }
 

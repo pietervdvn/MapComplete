@@ -5,12 +5,13 @@
   import { ImmutableStore, Store } from "../../Logic/UIEventSource";
   import TagRenderingEditable from "../Popup/TagRendering/TagRenderingEditable.svelte";
   import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
-  import * as nmd from "nano-markdown";
+  import nmd from "nano-markdown";
   import type {
     QuestionableTagRenderingConfigJson
   } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson.js";
   import type { TagRenderingConfigJson } from "../../Models/ThemeConfig/Json/TagRenderingConfigJson";
   import FromHtml from "../Base/FromHtml.svelte";
+  import { Utils } from "../../Utils";
 
   export let state: EditLayerState;
   export let path: ReadonlyArray<string | number>;
@@ -34,9 +35,15 @@
       return [x];
     }
   });
-  let configs: Store<TagRenderingConfig[]> = configJson.mapD(configs => configs.map(config => new TagRenderingConfig(config)));
+  let configs: Store<TagRenderingConfig[]> =configJson.mapD(configs =>  Utils.NoNull( configs.map(config => {
+    try{
+      return new TagRenderingConfig(config);
+    }catch (e) {
+      return undefined
+    }
+  })));
   let id: Store<string> = value.mapD(c => {
-    if (c.id) {
+    if (c?.id) {
       return c.id;
     }
     if (typeof c === "string") {
@@ -49,6 +56,14 @@
 
   let messages = state.messagesFor(path);
 
+  let description = schema.description
+  if(description){
+    try{
+      description = nmd(description)
+    }catch (e) {
+      console.error("Could not convert description to markdown", {description})
+    }
+  }
 </script>
 
 <div class="flex">
@@ -63,8 +78,8 @@
         {schema.hints.question}
       {/if}
     </button>
-    {#if schema.description}
-      <FromHtml src={nmd(schema.description)} />
+    {#if description}
+      <FromHtml src={description} />
     {/if}
     {#each $messages as message}
       <div class="alert">

@@ -240,10 +240,6 @@ export default class TagRenderingConfig {
             )
         }
 
-        if (this.question && this.freeform?.key === undefined && this.mappings === undefined) {
-            throw `${context}: A question is defined, but no mappings nor freeform (key) are. The question is ${this.question.txt} at ${context}`
-        }
-
         if (!json.multiAnswer && this.mappings !== undefined && this.question !== undefined) {
             let keys = []
             for (let i = 0; i < this.mappings.length; i++) {
@@ -315,7 +311,7 @@ export default class TagRenderingConfig {
     ) {
         const ctx = `${translationKey}.mappings.${i}`
         if (mapping.if === undefined) {
-            throw `${ctx}: Invalid mapping: "if" is not defined in ${JSON.stringify(mapping)}`
+            throw `Invalid mapping: "if" is not defined`
         }
         if (mapping.then === undefined) {
             if (mapping["render"] !== undefined) {

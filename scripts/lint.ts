@@ -7,12 +7,12 @@ import {
 import Translations from "../src/UI/i18n/Translations"
 import { Translation } from "../src/UI/i18n/Translation"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
-import { ConversionContext } from "../src/Models/ThemeConfig/Conversion/Conversion"
 import themeconfig from "../src/assets/schemas/layoutconfigmeta.json"
 import layerconfig from "../src/assets/schemas/layerconfigmeta.json"
 
 import { Utils } from "../src/Utils"
 import { ConfigMeta } from "../src/UI/Studio/configMeta"
+import { ConversionContext } from "../src/Models/ThemeConfig/Conversion/ConversionContext"
 
 /*
  * This script reads all theme and layer files and reformats them inplace

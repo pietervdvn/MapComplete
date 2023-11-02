@@ -118,13 +118,10 @@ export class OsmConnection {
         if (options.oauth_token?.data !== undefined) {
             console.log(options.oauth_token.data)
             const self = this
-            this.auth.bootstrapToken(
-                options.oauth_token.data,
-                (err, result) => {
-                    console.log("Bootstrap token called back", err, result)
-                    self.AttemptLogin()
-                }
-            )
+            this.auth.bootstrapToken(options.oauth_token.data, (err, result) => {
+                console.log("Bootstrap token called back", err, result)
+                self.AttemptLogin()
+            })
 
             options.oauth_token.setData(undefined)
         }
@@ -281,20 +278,24 @@ export class OsmConnection {
         content?: string,
         allowAnonymous: boolean = false
     ): Promise<string> {
-
         let connection: OSMAuthInstance = this.auth
-        if(allowAnonymous && !this.auth.authenticated()) {
-            const possibleResult = await Utils.downloadAdvanced(`${this.Backend()}/api/0.6/${path}`,header, method, content)
-            if(possibleResult["content"]) {
+        if (allowAnonymous && !this.auth.authenticated()) {
+            const possibleResult = await Utils.downloadAdvanced(
+                `${this.Backend()}/api/0.6/${path}`,
+                header,
+                method,
+                content
+            )
+            if (possibleResult["content"]) {
                 return possibleResult["content"]
             }
             console.error(possibleResult)
-            throw "Could not interact with OSM:"+possibleResult["error"]
+            throw "Could not interact with OSM:" + possibleResult["error"]
         }
 
         return new Promise((ok, error) => {
             connection.xhr(
-                <any> {
+                <any>{
                     method,
                     options: {
                         header,
@@ -330,8 +331,12 @@ export class OsmConnection {
         return await this.interact(path, "PUT", header, content)
     }
 
-    public async get(path: string, header?: Record<string, string | number>): Promise<any> {
-        return await this.interact(path, "GET", header)
+    public async get(
+        path: string,
+        header?: Record<string, string | number>,
+        allowAnonymous: boolean = false
+    ): Promise<string> {
+        return await this.interact(path, "GET", header, undefined, allowAnonymous)
     }
 
     public closeNote(id: number | string, text?: string): Promise<void> {
@@ -374,9 +379,14 @@ export class OsmConnection {
         }
         // Lat and lon must be strings for the API to accept it
         const content = `lat=${lat}&lon=${lon}&text=${encodeURIComponent(text)}`
-        const response = await this.post("notes.json", content, {
-            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
-        }, true)
+        const response = await this.post(
+            "notes.json",
+            content,
+            {
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+            },
+            true
+        )
         const parsed = JSON.parse(response)
         console.log("Got result:", parsed)
         const id = parsed.properties
@@ -519,7 +529,6 @@ export class OsmConnection {
             singlepage: !standalone,
             auto: true,
         })
-
     }
 
     private CheckForMessagesContinuously() {
@@ -543,6 +552,29 @@ export class OsmConnection {
         })
     }
 
+    private readonly _userInfoCache: Record<number, any> = {}
+    public async getInformationAboutUser(id: number): Promise<{
+        id: number
+        display_name: string
+        account_created: string
+        description: string
+        contributor_terms: { agreed: boolean }
+        roles: []
+        changesets: { count: number }
+        traces: { count: number }
+        blocks: { received: { count: number; active: number } }
+    }> {
+        if (id === undefined) {
+            return undefined
+        }
+        if (this._userInfoCache[id]) {
+            return this._userInfoCache[id]
+        }
+        const info = await this.get("user/" + id + ".json", { accepts: "application/json" }, true)
+        const parsed = JSON.parse(info)["user"]
+        this._userInfoCache[id] = parsed
+        return parsed
+    }
     private async FetchCapabilities(): Promise<{ api: OsmServiceState; gpx: OsmServiceState }> {
         if (Utils.runningFromConsole) {
             return { api: "online", gpx: "online" }

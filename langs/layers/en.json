@@ -8523,7 +8523,8 @@
                     "2": {
                         "then": "This shops does not offer key cutting as a service"
                     }
-                }
+                },
+                "question": "Does this shop offer key cutting?"
             },
             "organic": {
                 "mappings": {
@@ -8631,7 +8632,38 @@
     },
     "slow_roads": {
         "description": "All carfree roads",
+        "name": "Paths, carfree and slow roads",
         "tagRenderings": {
+            "explanation": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a living street"
+                    },
+                    "1": {
+                        "then": "This is a wide, carfree street"
+                    },
+                    "2": {
+                        "then": "This is a footway"
+                    },
+                    "3": {
+                        "then": "This is a small path"
+                    },
+                    "4": {
+                        "then": "This is a bridleway"
+                    },
+                    "5": {
+                        "then": "This is a land access road"
+                    }
+                }
+            },
+            "slow_road_is_lit": {
+                "mappings": {
+                    "1": {
+                        "then": "Not lit"
+                    }
+                },
+                "question": "Is this road lit at night?"
+            },
             "slow_roads-surface": {
                 "mappings": {
                     "0": {
@@ -8659,8 +8691,29 @@
                         "then": "The surface is <b>paved</b>"
                     }
                 },
+                "question": "What surface does this road have?",
                 "render": "The surface is <b>{surface}</b>"
             }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Footway"
+                },
+                "2": {
+                    "then": "Cycleway"
+                },
+                "3": {
+                    "then": "Pedestrian street"
+                },
+                "4": {
+                    "then": "Living street"
+                },
+                "5": {
+                    "then": "Small path"
+                }
+            },
+            "render": "Slow road"
         }
     },
     "speed_camera": {
@@ -9696,6 +9749,7 @@
         }
     },
     "trail": {
+        "description": "Waymarked trails",
         "name": "Trails",
         "tagRenderings": {
             "Color": {
@@ -9712,7 +9766,47 @@
                     "3": {
                         "then": "Yellow trail"
                     }
-                }
+                },
+                "question": "What is the reference colour of this trail?",
+                "render": "The reference colour is {colour}"
+            },
+            "Name": {
+                "question": "What is the name of this trail?",
+                "render": "This trail is called <b>{name}</b>"
+            },
+            "Operator tag": {
+                "mappings": {
+                    "0": {
+                        "then": "This trail is maintained by Natuurpunt"
+                    },
+                    "1": {
+                        "then": "This trail is maintained by {operator}"
+                    }
+                },
+                "question": "Who maintains this trail?",
+                "render": "This trail is maintained by {operator}"
+            },
+            "Wheelchair access": {
+                "mappings": {
+                    "0": {
+                        "then": "This trail is wheelchair-accessible"
+                    },
+                    "1": {
+                        "then": "This trail is not wheelchair accessible"
+                    }
+                },
+                "question": "Is this trail wheelchair accessible?"
+            },
+            "pushchair access": {
+                "mappings": {
+                    "0": {
+                        "then": "This trail is accessible with a pushchair"
+                    },
+                    "1": {
+                        "then": "This trail is not accessible with a pushchair"
+                    }
+                },
+                "question": "Is this trail accessible with a pushchair?"
             },
             "trail-length": {
                 "render": "The trail is {_length:km} kilometers long"

@@ -3,7 +3,6 @@ import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
 import {
     Conversion,
-    ConversionContext,
     ConversionMessage,
     DesugaringContext,
     Pipe,
@@ -21,6 +20,7 @@ import { Feature, Point } from "geojson"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { LayoutConfigJson } from "../../Models/ThemeConfig/Json/LayoutConfigJson"
 import { PrepareTheme } from "../../Models/ThemeConfig/Conversion/PrepareTheme"
+import { ConversionContext } from "../../Models/ThemeConfig/Conversion/ConversionContext";
 
 export interface HighlightedTagRendering {
     path: ReadonlyArray<string | number>
@@ -41,7 +41,9 @@ export abstract class EditJsonState<T> {
     public readonly highlightedItem: UIEventSource<HighlightedTagRendering> = new UIEventSource(
         undefined
     )
+    sendingUpdates = false
     private readonly _stores = new Map<string, UIEventSource<any>>()
+    private boolean
 
     constructor(schema: ConfigMeta[], server: StudioServer, category: "layers" | "themes") {
         this.schema = schema
@@ -52,7 +54,13 @@ export abstract class EditJsonState<T> {
 
         const layerId = this.getId()
         this.configuration
-            .mapD((config) => JSON.stringify(config, null, "  "))
+            .mapD((config) => {
+                if (!this.sendingUpdates) {
+                    console.log("Not sending updates yet! Trigger 'startSendingUpdates' first")
+                    return undefined
+                }
+                return JSON.stringify(config, null, "  ")
+            })
             .stabilized(100)
             .addCallbackD(async (config) => {
                 const id = layerId.data
@@ -60,8 +68,15 @@ export abstract class EditJsonState<T> {
                     console.warn("No id found in layer, not updating")
                     return
                 }
-                await server.update(id, config, category)
+                await this.server.update(id, config, this.category)
             })
+    }
+
+    public startSavingUpdates(enabled = true) {
+        this.sendingUpdates = enabled
+        if (enabled) {
+            this.configuration.ping()
+        }
     }
 
     public getCurrentValueFor(path: ReadonlyArray<string | number>): any | undefined {
@@ -96,7 +111,7 @@ export abstract class EditJsonState<T> {
     public register(
         path: ReadonlyArray<string | number>,
         value: Store<any>,
-        noInitialSync: boolean = false
+        noInitialSync: boolean = true
     ): () => void {
         const unsync = value.addCallback((v) => {
             this.setValueAt(path, v)
@@ -260,6 +275,18 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
         }
 
         this.addMissingTagRenderingIds()
+
+        this.configuration.addCallbackAndRunD((layer) => {
+            if (layer.tagRenderings) {
+                // A bit of cleanup
+                const lBefore = layer.tagRenderings.length
+                const cleaned = Utils.NoNull(layer.tagRenderings)
+                if (cleaned.length != lBefore) {
+                    layer.tagRenderings = cleaned
+                    this.configuration.ping()
+                }
+            }
+        })
     }
 
     protected buildValidation(state: DesugaringContext) {
@@ -300,15 +327,15 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
 }
 
 export class EditThemeState extends EditJsonState<LayoutConfigJson> {
+    constructor(schema: ConfigMeta[], server: StudioServer) {
+        super(schema, server, "themes")
+    }
+
     protected buildValidation(state: DesugaringContext): Conversion<LayoutConfigJson, any> {
         return new Pipe(
             new PrepareTheme(state),
             new ValidateTheme(undefined, "", false, new Set(state.tagRenderings.keys()))
         )
-    }
-
-    constructor(schema: ConfigMeta[], server: StudioServer) {
-        super(schema, server, "themes")
     }
 
     protected getId(): Store<string> {

@@ -10,8 +10,8 @@
   export let state: EditThemeState;
   let schema: ConfigMeta[] = state.schema.filter(schema => schema.path.length > 0);
   let config = state.configuration;
-  const messages = state.messages;
-  const hasErrors = messages.map((m: ConversionMessage[]) => m.filter(m => m.level === "error").length);
+  let messages = state.messages;
+  let hasErrors = messages.map((m: ConversionMessage[]) => m.filter(m => m.level === "error").length);
   let title = state.getStoreFor(["id"]);
   const wl = window.location;
   const baseUrl = wl.protocol + "//" + wl.host + "/theme.html?userlayout=";

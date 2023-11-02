@@ -1,7 +1,6 @@
 import {
     Concat,
     Conversion,
-    ConversionContext,
     DesugaringContext,
     DesugaringStep,
     Each,
@@ -21,6 +20,7 @@ import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
 import DependencyCalculator from "../DependencyCalculator"
 import { AddContextToTranslations } from "./AddContextToTranslations"
 import ValidationUtils from "./ValidationUtils"
+import { ConversionContext } from "./ConversionContext"
 
 class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJson[]> {
     private readonly _state: DesugaringContext

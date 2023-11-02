@@ -946,6 +946,10 @@ video {
   margin-right: 0.75rem;
 }
 
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .mr-12 {
   margin-right: 3rem;
 }
@@ -1147,6 +1151,10 @@ video {
 
 .max-h-screen {
   max-height: 100vh;
+}
+
+.max-h-60 {
+  max-height: 15rem;
 }
 
 .w-full {

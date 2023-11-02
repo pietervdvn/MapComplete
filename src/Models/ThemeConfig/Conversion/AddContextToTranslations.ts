@@ -1,6 +1,7 @@
-import { ConversionContext, DesugaringStep } from "./Conversion"
+import { DesugaringStep } from "./Conversion"
 import { Utils } from "../../../Utils"
 import Translations from "../../../UI/i18n/Translations"
+import { ConversionContext } from "./ConversionContext"
 
 export class AddContextToTranslations<T> extends DesugaringStep<T> {
     private readonly _prefix: string

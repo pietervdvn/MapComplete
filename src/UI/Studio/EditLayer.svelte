@@ -21,8 +21,8 @@
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw;
 
   export let state: EditLayerState;
-  const messages = state.messages;
-  const hasErrors = messages.map((m: ConversionMessage[]) => m.filter(m => m.level === "error").length);
+  let messages = state.messages;
+  let hasErrors = messages.mapD((m: ConversionMessage[]) => m.filter(m => m.level === "error").length);
   const configuration = state.configuration;
   
   const allNames = Utils.Dedup(layerSchema.map(meta => meta.hints.group));
@@ -33,7 +33,7 @@
   }
 
 
-  const title: Store<string> = state.getStoreFor(["id"]);
+  let title: Store<string> = state.getStoreFor(["id"]);
   const wl = window.location;
   const baseUrl = wl.protocol + "//" + wl.host + "/theme.html?userlayout=";
 
@@ -53,13 +53,15 @@
     let config = layerSchema.find(config => config.path.length === 1 && config.path[0] === id);
     config = Utils.Clone(config);
     config.required = true;
-    console.log(">>>", config);
     config.hints.ifunset = undefined;
     return config;
   }
 
   let requiredFields = ["id", "name", "description"];
   let currentlyMissing = state.configuration.map(config => {
+    if(!config){
+      return []
+    }
     const missing = [];
     for (const requiredField of requiredFields) {
       if (!config[requiredField]) {
@@ -160,7 +162,9 @@
   </div>
   {#if $highlightedItem !== undefined}
     <FloatOver on:close={() => highlightedItem.setData(undefined)}>
-      <TagRenderingInput path={$highlightedItem.path} {state} schema={$highlightedItem.schema} />
+      <div class="mt-16">
+        <TagRenderingInput path={$highlightedItem.path} {state} schema={$highlightedItem.schema} />
+      </div>
     </FloatOver>
   {/if}
 

@@ -79,6 +79,9 @@ export class Tag extends TagsFilter {
         currentProperties?: Record<string, string>
     ) {
         let v = this.value
+        if (typeof v !== "string") {
+            v = JSON.stringify(v)
+        }
         if (shorten) {
             v = Utils.EllipsesAfter(v, 25)
         }

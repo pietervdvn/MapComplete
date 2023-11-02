@@ -4246,11 +4246,6 @@
                 "question": "¿De qué color es la luz que emite esta lámpara?",
                 "render": "Esta lámpara emite luz {light:colour}"
             },
-            "count": {
-                "mappings": {
-                    "0": {}
-                }
-            },
             "direction": {
                 "question": "¿Hacia donde apunta esta lámpara?",
                 "render": "Esta lámpara apunta hacia {light:direction}"

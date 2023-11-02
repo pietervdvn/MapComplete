@@ -8,7 +8,8 @@ import {
 import { QuestionableTagRenderingConfigJson } from "../../../../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import RewritableConfigJson from "../../../../src/Models/ThemeConfig/Json/RewritableConfigJson"
 import { describe, expect, it } from "vitest"
-import { ConversionContext } from "../../../../src/Models/ThemeConfig/Conversion/Conversion"
+
+import { ConversionContext } from "../../../../src/Models/ThemeConfig/Conversion/ConversionContext"
 
 describe("ExpandRewrite", () => {
     it("should not allow overlapping keys", () => {

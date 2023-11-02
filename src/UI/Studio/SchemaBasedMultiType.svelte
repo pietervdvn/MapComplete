@@ -149,7 +149,7 @@
       }
       return tags["value"] === "true";
     });
-    onDestroy(state.register(path, directValue, true));
+    onDestroy(state.register(path, directValue));
   }
 
   let subSchemas: ConfigMeta[] = [];

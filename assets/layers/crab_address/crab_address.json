@@ -32,9 +32,7 @@
   "tagRenderings": [
     {
       "id": "render_crab",
-      "render": {
-        "nl": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
-      }
+      "render": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
     }
   ]
 }

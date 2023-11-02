@@ -1,4 +1,4 @@
-import { Conversion, ConversionContext, DesugaringStep } from "./Conversion"
+import { Conversion, DesugaringStep } from "./Conversion"
 import { LayoutConfigJson } from "../Json/LayoutConfigJson"
 import { Utils } from "../../../Utils"
 import metapaths from "../../../assets/schemas/layoutconfigmeta.json"
@@ -6,6 +6,7 @@ import tagrenderingmetapaths from "../../../assets/schemas/questionabletagrender
 import Translations from "../../../UI/i18n/Translations"
 
 import { parse as parse_html } from "node-html-parser"
+import { ConversionContext } from "./ConversionContext"
 
 export class ExtractImages extends Conversion<
     LayoutConfigJson,

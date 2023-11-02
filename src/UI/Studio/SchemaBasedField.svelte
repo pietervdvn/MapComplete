@@ -16,6 +16,7 @@
   export let state: EditLayerState;
   export let path: (string | number)[] = [];
   export let schema: ConfigMeta;
+  export let startInEditModeIfUnset: boolean = false
   let value = new UIEventSource<string | any>(undefined);
 
   const isTranslation = schema.hints.typehint === "translation" || schema.hints.typehint === "rendered" || ConfigMetaUtils.isTranslation(schema);
@@ -118,6 +119,7 @@
   }
   let startValue = state.getCurrentValueFor(path);
   const tags = new UIEventSource<Record<string, string>>({ value: startValue });
+  let startInEditMode = !startValue && startInEditModeIfUnset
   try {
     onDestroy(state.register(path, tags.map(tgs => {
       const v = tgs["value"];
@@ -157,7 +159,7 @@
   <span class="alert">{err}</span>
 {:else}
   <div class="w-full flex flex-col">
-    <TagRenderingEditable {config} selectedElement={undefined} showQuestionIfUnknown={true} {state} {tags} />
+    <TagRenderingEditable editMode={startInEditMode} {config} selectedElement={undefined} showQuestionIfUnknown={true} {state} {tags} />
     {#if $messages.length > 0}
       {#each $messages as msg}
         <div class="alert">{msg.message}</div>

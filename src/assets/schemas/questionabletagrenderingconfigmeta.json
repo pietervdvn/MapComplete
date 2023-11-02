@@ -477,7 +477,7 @@
       "ifunset": "do not offer a freeform textfield as answer option"
     },
     "type": "string",
-    "description": ""
+    "description": "This is the OpenStreetMap-key that that value will be written to"
   },
   {
     "path": [
@@ -580,6 +580,14 @@
       "typehint": "translation",
       "question": "What placeholder text should be shown in the input-element if there is no input?"
     },
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "A (translated) text that is shown (as gray text) within the textfield"
   },
   {

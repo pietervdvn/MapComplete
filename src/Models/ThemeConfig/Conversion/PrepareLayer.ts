@@ -1,8 +1,6 @@
 import {
-    Cached,
     Concat,
     Conversion,
-    ConversionContext,
     DesugaringContext,
     DesugaringStep,
     Each,
@@ -32,7 +30,7 @@ import { RenderingSpecification } from "../../../UI/SpecialVisualization"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 import { ConfigMeta } from "../../../UI/Studio/configMeta"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
-import { j } from "vite-node/types-63205a44"
+import { ConversionContext } from "./ConversionContext"
 
 class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     private static readonly predefinedFilters = ExpandFilter.load_filters()
@@ -1192,9 +1190,9 @@ class ExpandMarkerRenderings extends DesugaringStep<IconConfigJson> {
     }
 }
 
-export class PrepareLayer extends Cached<LayerConfigJson, LayerConfigJson> {
+export class PrepareLayer extends Fuse<LayerConfigJson> {
     constructor(state: DesugaringContext) {
-        const steps = new Fuse<LayerConfigJson>(
+        super(
             "Fully prepares and expands a layer for the LayerConfig.",
             new On("tagRenderings", new Each(new RewriteSpecial())),
             new On("tagRenderings", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
@@ -1224,6 +1222,5 @@ export class PrepareLayer extends Cached<LayerConfigJson, LayerConfigJson> {
             ),
             new ExpandFilter(state)
         )
-        super(steps)
     }
 }

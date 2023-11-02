@@ -2,8 +2,9 @@ import { LayoutConfigJson } from "../Json/LayoutConfigJson"
 import { Utils } from "../../../Utils"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
-import { ConversionContext, DesugaringStep, Each, Fuse, On } from "./Conversion"
+import { DesugaringStep, Each, Fuse, On } from "./Conversion"
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
+import { ConversionContext } from "./ConversionContext"
 
 export class UpdateLegacyLayer extends DesugaringStep<
     LayerConfigJson | string | { builtin; override }
@@ -57,6 +58,9 @@ export class UpdateLegacyLayer extends DesugaringStep<
         if (config.tagRenderings !== undefined) {
             let i = 0
             for (const tagRendering of config.tagRenderings) {
+                if (!tagRendering) {
+                    continue
+                }
                 i++
                 if (
                     typeof tagRendering === "string" ||
