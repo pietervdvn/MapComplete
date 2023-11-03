@@ -338,6 +338,7 @@ export interface LayerConfigJson {
          * (The first sentence is until the first '.'-character in the description)
          *
          * question: How would you describe this feature?
+         * ifunset: No extra description is given. This can be used to further explain the preset
          */
         description?: Translatable
 
@@ -375,7 +376,7 @@ export interface LayerConfigJson {
     }[]
 
     /**
-     * question: Which tagRenderings should be shown in the infobox?
+     * question: Edit this tagRendering
      *
      * A tag rendering is a block that either shows the known value or asks a question.
      *

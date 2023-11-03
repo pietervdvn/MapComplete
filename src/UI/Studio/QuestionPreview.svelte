@@ -12,6 +12,8 @@
   import type { TagRenderingConfigJson } from "../../Models/ThemeConfig/Json/TagRenderingConfigJson";
   import FromHtml from "../Base/FromHtml.svelte";
   import { Utils } from "../../Utils";
+  import ShowConversionMessage from "./ShowConversionMessage.svelte";
+  import NextButton from "../Base/NextButton.svelte";
 
   export let state: EditLayerState;
   export let path: ReadonlyArray<string | number>;
@@ -73,18 +75,16 @@
     {#if $id}
       TagRendering {$id}
     {/if}
-    <button on:click={() => state.highlightedItem.setData({path, schema})}>
+    <NextButton clss="primary" on:click={() => state.highlightedItem.setData({path, schema})}>
       {#if schema.hints.question}
         {schema.hints.question}
       {/if}
-    </button>
+    </NextButton>
     {#if description}
       <FromHtml src={description} />
     {/if}
     {#each $messages as message}
-      <div class="alert">
-        {message.message}
-      </div>
+      <ShowConversionMessage {message}/>
     {/each}
 
     <slot class="self-end my-4"></slot>
@@ -93,6 +93,7 @@
   </div>
 
   <div class="flex flex-col w-full m-4">
+    <h3>Preview of this question</h3>
     {#each $configs as config}
       <TagRenderingEditable
         selectedElement={state.exampleFeature}

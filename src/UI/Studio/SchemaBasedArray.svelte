@@ -8,6 +8,7 @@
   import QuestionPreview from "./QuestionPreview.svelte";
   import { Utils } from "../../Utils";
   import SchemaBasedMultiType from "./SchemaBasedMultiType.svelte";
+  import ShowConversionMessage from "./ShowConversionMessage.svelte";
 
   export let state: EditLayerState;
   export let schema: ConfigMeta;
@@ -46,6 +47,7 @@
     }
   }
   let createdItems = values.data.length;
+  let messages = state.messagesFor(path)
 
 
   function createItem(valueToSet?: any) {
@@ -125,6 +127,11 @@
 
   {#if $values.length === 0}
     No values are defined
+    {#if $messages.length > 0}
+      {#each $messages as message}
+        <ShowConversionMessage {message}/>
+      {/each}
+    {/if}
   {:else if subparts.length === 0}
     <!-- We need an array of values, so we use the typehint of the _parent_ element as field -->
     {#each $values as value (value)}

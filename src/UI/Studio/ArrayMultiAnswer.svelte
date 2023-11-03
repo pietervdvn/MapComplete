@@ -1,10 +1,11 @@
 <script lang="ts">
   import type { ConfigMeta } from "./configMeta";
   import EditLayerState from "./EditLayerState";
-  import type { QuestionableTagRenderingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
+  import type {
+    QuestionableTagRenderingConfigJson
+  } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
   import { UIEventSource } from "../../Logic/UIEventSource";
   import TagRenderingEditable from "../Popup/TagRendering/TagRenderingEditable.svelte";
-  import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
   import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
 
   export let schema: ConfigMeta;

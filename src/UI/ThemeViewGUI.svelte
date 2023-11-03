@@ -290,7 +290,7 @@
       selectedElement.setData(undefined)
     }}
   >
-    <ToSvelte construct={new VariableUiElement(selectedElementView)} />
+    <ToSvelte construct={new VariableUiElement(selectedElementView).SetClass("h-full flex")} />
   </FloatOver>
 </If>
 

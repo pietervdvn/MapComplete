@@ -28,7 +28,7 @@ let value = state.getCurrentValueFor(path);
  * Allows the theme builder to create 'writable' themes.
  * Should only be enabled for 'tagrenderings' in the theme, if the source is OSM
  */
-let allowQuestions: Store<boolean> = (state.configuration.mapD(config => config.source?.geoJson === undefined))
+let allowQuestions: Store<boolean> = (state.configuration.mapD(config => path.at(0) === "tagRenderings" && config.source?.geoJson === undefined))
 
 
 let mappingsBuiltin: MappingConfigJson[] = [];
@@ -118,7 +118,7 @@ const missing: string[] = questionableTagRenderingSchemaRaw.filter(schema => sch
     {/if}
     {#each ($mappings ?? []) as mapping, i (mapping)}
       <div class="flex interactive w-full">
-        <MappingInput {mapping} {state} path={path.concat(["mappings", i])}>
+        <MappingInput {state} path={path.concat(["mappings", i])}>
           <button slot="delete" class="rounded-full no-image-background" on:click={() => { 
             initMappings();
                       mappings.data.splice(i, 1)
@@ -132,7 +132,7 @@ const missing: string[] = questionableTagRenderingSchemaRaw.filter(schema => sch
 
     <button class="primary"
             on:click={() =>{ initMappings(); mappings.data.push({if: undefined, then: {}}); mappings.ping()} }>
-      Add a mapping
+      Add a predefined option
     </button>
 
     <SchemaBasedField {state} path={[...path,"multiAnswer"]} schema={topLevelItems["multiAnswer"]} />

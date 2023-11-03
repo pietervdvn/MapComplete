@@ -13,6 +13,7 @@
   import type { JsonSchemaType } from "./jsonSchema";
   // @ts-ignore
   import nmd from "nano-markdown";
+  import ShowConversionMessage from "./ShowConversionMessage.svelte";
 
   /**
    * If 'types' is defined: allow the user to pick one of the types to input.
@@ -216,9 +217,12 @@
                           path={[...subpath, (subschema?.path?.at(-1) ?? "???")]}></SchemaBasedInput>
       {/each}
     {:else if $messages.length > 0}
-      {#each $messages as msg}
-        <div class="alert">{msg.message}</div>
+      {#each $messages as message}
+        <ShowConversionMessage {message}/>
       {/each}
     {/if}
+  {/if}
+  {#if window.location.hostname === "127.0.0.1"}
+    <span class="subtle">SchemaBasedMultiType <b>{path.join(".")}</b> <span class="cursor-pointer" on:click={() => console.log(schema)}>{schema.hints.typehint}</span></span>
   {/if}
 </div>

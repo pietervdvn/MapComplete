@@ -114,6 +114,8 @@ export interface MappingConfigJson {
      * This can be done with `ifnot`
      * Note that we can not explicitly render this negative case to the user, we cannot show `does _not_ accept coins`.
      * If this is important to your usecase, consider using multiple radiobutton-fields without `multiAnswer`
+     *
+     * ifunset: Do not apply a tag if a different mapping is chosen.
      */
     ifnot?: TagConfigJson
 
@@ -199,8 +201,8 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
         /**
          * question: What is the name of the attribute that should be written to?
          * This is the OpenStreetMap-key that that value will be written to
-         *
          * ifunset: do not offer a freeform textfield as answer option
+         *
          */
         key: string
 

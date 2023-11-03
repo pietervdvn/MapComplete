@@ -1133,10 +1133,6 @@ video {
   height: 16rem;
 }
 
-.h-96 {
-  height: 24rem;
-}
-
 .max-h-12 {
   max-height: 3rem;
 }
@@ -1147,10 +1143,6 @@ video {
 
 .max-h-7 {
   max-height: 1.75rem;
-}
-
-.max-h-screen {
-  max-height: 100vh;
 }
 
 .max-h-60 {
@@ -1806,6 +1798,10 @@ video {
 
 .text-justify {
   text-align: justify;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .text-xl {
@@ -2481,6 +2477,37 @@ select:hover {
   border: 2px dotted #ff9143;
 }
 
+.warning {
+  /* The class to convey important information, but not as grave as 'alert' */
+  background-color: var(--low-interaction-background);
+  color: var(--alert-foreground-color);
+  font-weight: bold;
+  border-radius: 1em;
+  margin: 0.25em;
+  text-align: center;
+  padding: 0.15em 0.3em;
+  border: 3px dotted #ff9143;
+}
+
+.low-interaction .warning {
+  background-color: var(--interactive-background);
+}
+
+.information {
+  /* The class to convey important information which does _not_ denote an error... */
+  background-color: var(--low-interaction-background);
+  color: var(--alert-foreground-color);
+  border-radius: 1em;
+  margin: 0.25em;
+  text-align: center;
+  padding: 0.15em 0.3em;
+  border: 3px dotted var(--catch-detail-color-contrast);
+}
+
+.low-interaction .interactive {
+  background-color: var(--interactive-background);
+}
+
 .subtle {
   /* For all information that is not important for 99% of the users */
   color: #999;
@@ -2682,6 +2709,10 @@ a.link-underline {
   /* Legacy: should be replaced by headlessui disclosure in time */
   transition: max-height 0.5s ease-in-out;
   overflow-y: hidden;
+}
+
+.min-h-32 {
+  min-height: 8rem;
 }
 
 .hover\:bg-indigo-200:hover {
@@ -2923,5 +2954,3 @@ a.link-underline {
     width: 33.333333%;
   }
 }
-
-

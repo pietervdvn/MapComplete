@@ -117,8 +117,8 @@
         </div>
 
         <div slot="title2">
-          <ErrorIndicatorForRegion firstPaths={firstPathsFor("presets")} {state} />
           Creating a new point
+          <ErrorIndicatorForRegion firstPaths={firstPathsFor("presets")} {state} />
         </div>
 
         <div slot="content2">

@@ -12,11 +12,12 @@
   import { onDestroy } from "svelte";
   import type { JsonSchemaType } from "./jsonSchema";
   import { ConfigMetaUtils } from "./configMeta.ts";
+  import ShowConversionMessage from "./ShowConversionMessage.svelte";
 
   export let state: EditLayerState;
   export let path: (string | number)[] = [];
   export let schema: ConfigMeta;
-  export let startInEditModeIfUnset: boolean = false
+  export let startInEditModeIfUnset: boolean = !schema.hints.ifunset
   let value = new UIEventSource<string | any>(undefined);
 
   const isTranslation = schema.hints.typehint === "translation" || schema.hints.typehint === "rendered" || ConfigMetaUtils.isTranslation(schema);
@@ -118,8 +119,8 @@
     err = path.join(".") + " " + e;
   }
   let startValue = state.getCurrentValueFor(path);
-  const tags = new UIEventSource<Record<string, string>>({ value: startValue });
   let startInEditMode = !startValue && startInEditModeIfUnset
+  const tags = new UIEventSource<Record<string, string>>({ value: startValue });
   try {
     onDestroy(state.register(path, tags.map(tgs => {
       const v = tgs["value"];
@@ -161,12 +162,12 @@
   <div class="w-full flex flex-col">
     <TagRenderingEditable editMode={startInEditMode} {config} selectedElement={undefined} showQuestionIfUnknown={true} {state} {tags} />
     {#if $messages.length > 0}
-      {#each $messages as msg}
-        <div class="alert">{msg.message}</div>
+      {#each $messages as message}
+        <ShowConversionMessage {message}/>
       {/each}
     {/if}
     {#if window.location.hostname === "127.0.0.1"}
-      <span class="subtle">{path.join(".")} {schema.hints.typehint}</span>
+      <span class="subtle">SchemaBasedField <b>{path.join(".")}</b> <span class="cursor-pointer" on:click={() => console.log(schema)}>{schema.hints.typehint}</span></span>
     {/if}
   </div>
 {/if}

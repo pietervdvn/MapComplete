@@ -13,7 +13,6 @@
   import configs from "../../assets/schemas/questionabletagrenderingconfigmeta.json";
   import { Utils } from "../../Utils";
 
-  export let mapping: MappingConfigJson;
   export let state: EditLayerState;
   export let path: (string | number)[];
   let tag: UIEventSource<TagConfigJson> = state.getStoreFor([...path, "if"]);

@@ -27,7 +27,7 @@
   /**
    * Indicates if this tagRendering currently shows the attribute or asks the question to _change_ the property
    */
-  export let editMode = !config.IsKnown(tags) || showQuestionIfUnknown;
+  export let editMode = !config.IsKnown(tags.data) || showQuestionIfUnknown;
   if (tags) {
     onDestroy(
       tags.addCallbackD((tags) => {

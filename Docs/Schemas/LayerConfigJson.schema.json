@@ -217,7 +217,7 @@
             }
           },
           "description": {
-            "description": "An extra explanation of what the feature is, if it is not immediately clear from the title alone.\n\nThe _first sentence_ of the description is shown on the button of the `add` menu.\nThe full description is shown in the confirmation dialog.\n\n(The first sentence is until the first '.'-character in the description)\n\nquestion: How would you describe this feature?",
+            "description": "An extra explanation of what the feature is, if it is not immediately clear from the title alone.\n\nThe _first sentence_ of the description is shown on the button of the `add` menu.\nThe full description is shown in the confirmation dialog.\n\n(The first sentence is until the first '.'-character in the description)\n\nquestion: How would you describe this feature?\nifunset: No extra description is given. This can be used to further explain the preset",
             "anyOf": [
               {
                 "$ref": "#/definitions/Record<string,string>"
@@ -253,7 +253,7 @@
       }
     },
     "tagRenderings": {
-      "description": "question: Which tagRenderings should be shown in the infobox?\n\nA tag rendering is a block that either shows the known value or asks a question.\n\nRefer to the class `TagRenderingConfigJson` to see the possibilities.\n\nNote that we can also use a string here - where the string refers to a tag rendering defined in `assets/questions/questions.json`,\nwhere a few very general questions are defined e.g. website, phone number, ...\nFurthermore, _all_ the questions of another layer can be reused with `otherlayer.*`\nIf you need only a single of the tagRenderings, use `otherlayer.tagrenderingId`\nIf one or more questions have a 'group' or 'label' set, select all the entries with the corresponding group or label with `otherlayer.*group`\nRemark: if a tagRendering is 'lent' from another layer, the 'source'-tags are copied and added as condition.\nIf they are not wanted, remove them with an override\n\nA special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.\n\nAt last, one can define a group of renderings where parts of all strings will be replaced by multiple other strings.\nThis is mainly create questions for a 'left' and a 'right' side of the road.\nThese will be grouped and questions will be asked together\n\ntype: tagrendering[]\ngroup: tagrenderings",
+      "description": "question: Edit this tagRendering\n\nA tag rendering is a block that either shows the known value or asks a question.\n\nRefer to the class `TagRenderingConfigJson` to see the possibilities.\n\nNote that we can also use a string here - where the string refers to a tag rendering defined in `assets/questions/questions.json`,\nwhere a few very general questions are defined e.g. website, phone number, ...\nFurthermore, _all_ the questions of another layer can be reused with `otherlayer.*`\nIf you need only a single of the tagRenderings, use `otherlayer.tagrenderingId`\nIf one or more questions have a 'group' or 'label' set, select all the entries with the corresponding group or label with `otherlayer.*group`\nRemark: if a tagRendering is 'lent' from another layer, the 'source'-tags are copied and added as condition.\nIf they are not wanted, remove them with an override\n\nA special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.\n\nAt last, one can define a group of renderings where parts of all strings will be replaced by multiple other strings.\nThis is mainly create questions for a 'left' and a 'right' side of the road.\nThese will be grouped and questions will be asked together\n\ntype: tagrendering[]\ngroup: tagrenderings",
       "type": "array",
       "items": {
         "anyOf": [
@@ -854,7 +854,7 @@
           ]
         },
         "ifnot": {
-          "description": "question: What tags should be applied if this mapping is _not_ chosen?\n\nOnly applicable if 'multiAnswer' is set.\nThis is for situations such as:\n`accepts:coins=no` where one can select all the possible payment methods. However, we want to make explicit that some options _were not_ selected.\nThis can be done with `ifnot`\nNote that we can not explicitly render this negative case to the user, we cannot show `does _not_ accept coins`.\nIf this is important to your usecase, consider using multiple radiobutton-fields without `multiAnswer`",
+          "description": "question: What tags should be applied if this mapping is _not_ chosen?\n\nOnly applicable if 'multiAnswer' is set.\nThis is for situations such as:\n`accepts:coins=no` where one can select all the possible payment methods. However, we want to make explicit that some options _were not_ selected.\nThis can be done with `ifnot`\nNote that we can not explicitly render this negative case to the user, we cannot show `does _not_ accept coins`.\nIf this is important to your usecase, consider using multiple radiobutton-fields without `multiAnswer`\n\nifunset: Do not apply a tag if a different mapping is chosen.",
           "anyOf": [
             {
               "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -1169,7 +1169,7 @@
           "type": "object",
           "properties": {
             "key": {
-              "description": "question: What is the name of the attribute that should be written to?\nThis is the OpenStreetMap-key that that value will be written to\n\nifunset: do not offer a freeform textfield as answer option",
+              "description": "question: What is the name of the attribute that should be written to?\nThis is the OpenStreetMap-key that that value will be written to\nifunset: do not offer a freeform textfield as answer option",
               "type": "string"
             },
             "type": {
@@ -1387,7 +1387,7 @@
           "type": "object",
           "properties": {
             "key": {
-              "description": "question: What is the name of the attribute that should be written to?\nThis is the OpenStreetMap-key that that value will be written to\n\nifunset: do not offer a freeform textfield as answer option",
+              "description": "question: What is the name of the attribute that should be written to?\nThis is the OpenStreetMap-key that that value will be written to\nifunset: do not offer a freeform textfield as answer option",
               "type": "string"
             },
             "type": {

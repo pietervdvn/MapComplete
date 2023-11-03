@@ -21,7 +21,7 @@ export default {
       "type": "object",
       "properties": {
         "key": {
-          "description": "question: What is the name of the attribute that should be written to?\nThis is the OpenStreetMap-key that that value will be written to\n\nifunset: do not offer a freeform textfield as answer option",
+          "description": "question: What is the name of the attribute that should be written to?\nThis is the OpenStreetMap-key that that value will be written to\nifunset: do not offer a freeform textfield as answer option",
           "type": "string"
         },
         "type": {
@@ -663,7 +663,7 @@ export default {
           ]
         },
         "ifnot": {
-          "description": "question: What tags should be applied if this mapping is _not_ chosen?\n\nOnly applicable if 'multiAnswer' is set.\nThis is for situations such as:\n`accepts:coins=no` where one can select all the possible payment methods. However, we want to make explicit that some options _were not_ selected.\nThis can be done with `ifnot`\nNote that we can not explicitly render this negative case to the user, we cannot show `does _not_ accept coins`.\nIf this is important to your usecase, consider using multiple radiobutton-fields without `multiAnswer`",
+          "description": "question: What tags should be applied if this mapping is _not_ chosen?\n\nOnly applicable if 'multiAnswer' is set.\nThis is for situations such as:\n`accepts:coins=no` where one can select all the possible payment methods. However, we want to make explicit that some options _were not_ selected.\nThis can be done with `ifnot`\nNote that we can not explicitly render this negative case to the user, we cannot show `does _not_ accept coins`.\nIf this is important to your usecase, consider using multiple radiobutton-fields without `multiAnswer`\n\nifunset: Do not apply a tag if a different mapping is chosen.",
           "anyOf": [
             {
               "$ref": "#/definitions/{and:TagConfigJson[];}"

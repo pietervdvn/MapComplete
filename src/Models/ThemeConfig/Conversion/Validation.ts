@@ -732,6 +732,14 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                 if (!mapping.if) {
                     context.enters("mappings", i).err("No `if` is defined")
                 }
+                const en = mapping?.then?.["en"]
+                if (en && en.toLowerCase().match(/(yes|no)([ ,:;.?]|$)/)) {
+                    context
+                        .enters("mappings", i, "then")
+                        .warn(
+                            "A mapping should not start with 'yes' or 'no'. If the attribute is known, it will only show 'yes' or 'no' <i>without</i> the question, resulting in a weird popup"
+                        )
+                }
             }
         }
         if (json["group"]) {
@@ -1168,17 +1176,23 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
 
         if (json.presets !== undefined) {
             if (typeof json.source === "string") {
-                context.err("A special layer cannot have presets")
+                context.enter("presets").err("A special layer cannot have presets")
             }
             // Check that a preset will be picked up by the layer itself
             const baseTags = TagUtils.Tag(json.source["osmTags"])
             for (let i = 0; i < json.presets.length; i++) {
                 const preset = json.presets[i]
-                const tags: { k: string; v: string }[] = new And(
-                    preset.tags.map((t) => TagUtils.Tag(t))
-                ).asChange({ id: "node/-1" })
+                if (!preset.tags) {
+                    context.enters("presets", i, "tags").err("No tags defined for this preset")
+                    continue
+                }
+                if (!preset.tags) {
+                    context.enters("presets", i, "title").err("No title defined for this preset")
+                }
+
+                const tags = new And(preset.tags.map((t) => TagUtils.Tag(t)))
                 const properties = {}
-                for (const tag of tags) {
+                for (const tag of tags.asChange({ id: "node/-1" })) {
                     properties[tag.k] = tag.v
                 }
                 const doMatch = baseTags.matchesProperties(properties)
@@ -1187,7 +1201,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
                         .enters("presets", i, "tags")
                         .err(
                             "This preset does not match the required tags of this layer. This implies that a newly added point will not show up.\n    A newly created point will have properties: " +
-                                JSON.stringify(properties) +
+                                tags.asHumanString(false, false, {}) +
                                 "\n    The required tags are: " +
                                 baseTags.asHumanString(false, false, {})
                         )

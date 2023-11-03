@@ -232,7 +232,8 @@
     ],
     "required": false,
     "hints": {
-      "question": "What tags should be applied if this mapping is _not_ chosen?"
+      "question": "What tags should be applied if this mapping is _not_ chosen?",
+      "ifunset": "Do not apply a tag if a different mapping is chosen."
     },
     "type": [
       {
