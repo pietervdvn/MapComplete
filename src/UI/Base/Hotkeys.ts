@@ -93,7 +93,7 @@ export default class Hotkeys {
             })
         } else if (key["nomod"] !== undefined) {
             document.addEventListener(type, function (event) {
-                if (Hotkeys.textElementSelected(event)) {
+                if (Hotkeys.textElementSelected(event) && keycode !== "Escape") {
                     // A text element is selected, we don't do anything special
                     return
                 }

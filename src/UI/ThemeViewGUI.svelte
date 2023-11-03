@@ -370,7 +370,7 @@
 
 <IfHidden condition={state.guistate.backgroundLayerSelectionIsOpened}>
   <!-- background layer selector -->
-  <FloatOver
+  <FloatOver  
     on:close={() => {
       state.guistate.backgroundLayerSelectionIsOpened.setData(false)
     }}
