@@ -95,7 +95,7 @@
   }
 </script>
 
-<div bind:this={questionboxElem}>
+<div bind:this={questionboxElem} class="marker-questionbox-root" class:hidden={_questionsToAsk.length === 0 && skipped === 0 && answered === 0}>
   {#if _questionsToAsk.length === 0}
     {#if skipped + answered > 0}
       <div class="thanks">

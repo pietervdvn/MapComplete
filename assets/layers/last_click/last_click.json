@@ -156,6 +156,7 @@
   "tagRenderings": [
     {
       "id": "add_new",
+      "classes": "h-full flex",
       "condition": "has_presets=yes",
       "render": {
         "*": "{add_new_point()}"

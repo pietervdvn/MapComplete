@@ -21,3 +21,5 @@ The participant has extensive OpenStreetMap-knowledge but only used MapComplete 
 - [x] This user had an expression with two tags in an AND. There was some confusion if the taginfo-count gave the totals for the tags individually or for the entire expression.
         Fix: play with padding and wording
 - [x] BUG: having a complex expression for tags (e.g. with `and: [key=value, key0=value0]`) fails as the JSON would be stringified
+- [x] In MapComplete (not in studio): creating a new point: the buttons might dissapear under scroll if zoomed in a lot
+- [x] If a layer does not have a title and a tagRenderings, it is not interpreted as 'standalone' theme

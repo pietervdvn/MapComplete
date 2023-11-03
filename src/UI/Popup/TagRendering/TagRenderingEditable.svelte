@@ -19,7 +19,9 @@
   export let layer: LayerConfig = undefined;
 
   export let editingEnabled: Store<boolean> | undefined = state?.featureSwitchUserbadge;
-
+  
+  export let clss = config.classes.join(" ")
+  
   export let highlightedRendering: UIEventSource<string> = undefined;
   export let showQuestionIfUnknown: boolean = false;
   /**
@@ -71,7 +73,7 @@
   }
 </script>
 
-<div bind:this={htmlElem} class="">
+<div bind:this={htmlElem} class={clss}>
   {#if config.question && (!editingEnabled || $editingEnabled)}
     {#if editMode}
       <TagRenderingQuestion {config} {tags} {selectedElement} {state} {layer}>
@@ -106,7 +108,7 @@
       </div>
     {/if}
   {:else}
-    <div class="overflow-hidden p-2">
+    <div class="overflow-hidden p-2 w-full">
       <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer} />
     </div>
   {/if}

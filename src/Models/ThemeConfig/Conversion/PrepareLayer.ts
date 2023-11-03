@@ -483,6 +483,9 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
         ) {
             return json
         }
+        if (json.source === "special") {
+            return json
+        }
         json = { ...json }
         json.tagRenderings = [...json.tagRenderings]
         const allSpecials: Exclude<RenderingSpecification, string>[] = <any>(
