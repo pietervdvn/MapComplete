@@ -4218,6 +4218,9 @@
                 },
                 "1": {
                     "then": "This is a water tap or water pump with non-drinkable water.<div class='subtle'>Examples are water taps with rain water to tap water for nearby plants</div>"
+                },
+                "2": {
+                    "then": "This is a historic, manual water pump where no drinking water can be found"
                 }
             }
         },
@@ -4256,8 +4259,33 @@
                 "question": "Is this drinking water spot still operational?",
                 "render": "The operational status is <i>{operational_status}</i>"
             },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Free to use"
+                    },
+                    "1": {
+                        "then": "One needs to pay to use this drinking water point"
+                    }
+                },
+                "question": "Is this drinking water point free to use?"
+            },
             "render-closest-drinking-water": {
                 "render": "<a href='#{_closest_other_drinking_water_id}'>There is another drinking water fountain at {_closest_other_drinking_water_distance} meters</a>"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a bubbler fountain. A water jet to drink from is sent upwards, typically controlled by a push button."
+                    },
+                    "1": {
+                        "then": "This is a bottle refill point where the water is sent downwards, typically controlled by a push button or a motion sensor. Drinking directly from the stream might be very hard or impossible."
+                    },
+                    "2": {
+                        "then": "This is a water tap. The water flows downward and the stream is controlled by a valve or push-button."
+                    }
+                },
+                "question": "What type of drinking water point is this?"
             }
         },
         "title": {
@@ -8979,6 +9007,9 @@
                     },
                     "4": {
                         "then": "The surface is <b>concrete</b>"
+                    },
+                    "5": {
+                        "then": "The surface is <b>fine gravel</b>"
                     }
                 },
                 "question": "Which is the surface of this sport pitch?",

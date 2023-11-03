@@ -599,10 +599,10 @@
                             "1": {
                                 "mappings": {
                                     "0": {
-                                        "then": "Sì, c'è un marciapiede su questo lato della strada"
+                                        "then": "C'è un marciapiede su questo lato della strada"
                                     },
                                     "1": {
-                                        "then": "No, non c'è un marciapiede su cui camminare"
+                                        "then": "Non c'è un marciapiede su cui camminare"
                                     }
                                 }
                             }
