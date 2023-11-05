@@ -85,7 +85,7 @@ export interface TagRenderingConfigJson {
     /**
      *
      * question: When should this item be shown?
-     *
+     * type: tag
      * Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.
      *
      * This is useful to ask a follow-up question.
@@ -126,9 +126,8 @@ export interface TagRenderingConfigJson {
      * */
     condition?: TagConfigJson
 
-    /**
-     *
-     * question: When should this item be shown (including special conditions)?
+    /** question: When should this item be shown (including special conditions)?
+     * type: tag
      *
      * If set, this tag will be evaluated agains the _usersettings/application state_ table.
      * Enable 'show debug info' in user settings to see available options.

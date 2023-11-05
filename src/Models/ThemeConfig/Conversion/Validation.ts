@@ -733,11 +733,12 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                     context.enters("mappings", i).err("No `if` is defined")
                 }
                 const en = mapping?.then?.["en"]
-                if (en && en.toLowerCase().match(/(yes|no)([ ,:;.?]|$)/)) {
+                if (en && this.detectYesOrNo(en)) {
+                    console.log("Found a match with yes or no: ", { en })
                     context
                         .enters("mappings", i, "then")
                         .warn(
-                            "A mapping should not start with 'yes' or 'no'. If the attribute is known, it will only show 'yes' or 'no' <i>without</i> the question, resulting in a weird popup"
+                            "A mapping should not start with 'yes' or 'no'. If the attribute is known, it will only show 'yes' or 'no' <i>without</i> the question, resulting in a weird phrasing in the information box"
                         )
                 }
             }
@@ -853,6 +854,17 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
         }
 
         return json
+    }
+
+    /**
+     * const obj = new MiscTagRenderingChecks()
+     * obj.detectYesOrNo("Yes, this place has") // => true
+     * obj.detectYesOrNo("Yes") // => true
+     * obj.detectYesOrNo("No, this place does not have...") // => true
+     * obj.detectYesOrNo("This place does not have...") // => false
+     */
+    private detectYesOrNo(en: string): boolean {
+        return en.toLowerCase().match(/^(yes|no)([,:;.?]|$)/) !== null
     }
 }
 
@@ -1014,10 +1026,11 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
         }
         {
             // duplicate ids in tagrenderings check
-            const duplicates = Utils.Dedup(
+            const duplicates = Utils.NoNull(
                 Utils.Duplicates(Utils.NoNull((json.tagRenderings ?? []).map((tr) => tr["id"])))
             )
             if (duplicates.length > 0) {
+                // It is tempting to add an index to this warning; however, due to labels the indices here might be different from the index in the tagRendering list
                 context
                     .enter("tagRenderings")
                     .err("Some tagrenderings have a duplicate id: " + duplicates.join(", "))

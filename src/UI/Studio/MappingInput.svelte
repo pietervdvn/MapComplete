@@ -1,8 +1,6 @@
 <script lang="ts">
 
-  import type { MappingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
   import EditLayerState from "./EditLayerState";
-  import { Translation } from "../i18n/Translation";
   import { UIEventSource } from "../../Logic/UIEventSource";
   import type { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson";
   import { TagUtils } from "../../Logic/Tags/TagUtils";
@@ -12,6 +10,8 @@
   import type { ConfigMeta } from "./configMeta";
   import configs from "../../assets/schemas/questionabletagrenderingconfigmeta.json";
   import { Utils } from "../../Utils";
+  import ToSvelte from "../Base/ToSvelte.svelte";
+  import { VariableUiElement } from "../Base/VariableUIElement";
 
   export let state: EditLayerState;
   export let path: (string | number)[];
@@ -30,11 +30,11 @@
   });
   let uploadableOnly: boolean = true;
 
-  let thenStringified = state.getStoreFor([...path, "then"]).sync(t => t ? JSON.stringify(t) : undefined, [], s => s ? JSON.parse(s) : undefined);
-  let thenParsed = thenStringified.map(s => s ? JSON.parse(s) : s);
-  let editMode = Object.keys(thenParsed.data).length === 0;
+  let thenText: UIEventSource<Record<string, string>> = state.getStoreFor([...path, "then"])
+  let thenTextEn = thenText   .mapD(translation => typeof translation === "string" ? translation : translation["en"] )
+  let editMode = Object.keys($thenText).length === 0;
 
-  const mappingConfigs: ConfigMeta[] = configs.filter(c => c.path[0] === "mappings")
+  let mappingConfigs: ConfigMeta[] = configs.filter(c => c.path[0] === "mappings")
     .map(c => <ConfigMeta>Utils.Clone(c))
     .map(c => {
       c.path.splice(0, 1);
@@ -57,9 +57,9 @@
   </div>
 {:else}
   <div>
-    {#if Object.keys($thenParsed).length > 0}
+    {#if Object.keys($thenText).length > 0}
       <b>
-        {new Translation($thenParsed).txt}
+        {$thenTextEn}
       </b>
     {:else}
       <i>No then is set</i>

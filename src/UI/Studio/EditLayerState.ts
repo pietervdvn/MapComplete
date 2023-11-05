@@ -20,7 +20,7 @@ import { Feature, Point } from "geojson"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { LayoutConfigJson } from "../../Models/ThemeConfig/Json/LayoutConfigJson"
 import { PrepareTheme } from "../../Models/ThemeConfig/Conversion/PrepareTheme"
-import { ConversionContext } from "../../Models/ThemeConfig/Conversion/ConversionContext";
+import { ConversionContext } from "../../Models/ThemeConfig/Conversion/ConversionContext"
 
 export interface HighlightedTagRendering {
     path: ReadonlyArray<string | number>
@@ -41,9 +41,8 @@ export abstract class EditJsonState<T> {
     public readonly highlightedItem: UIEventSource<HighlightedTagRendering> = new UIEventSource(
         undefined
     )
-    sendingUpdates = false
+    private sendingUpdates = false
     private readonly _stores = new Map<string, UIEventSource<any>>()
-    private boolean
 
     constructor(schema: ConfigMeta[], server: StudioServer, category: "layers" | "themes") {
         this.schema = schema
@@ -53,6 +52,7 @@ export abstract class EditJsonState<T> {
         this.messages = this.setupErrorsForLayers()
 
         const layerId = this.getId()
+        this.highlightedItem.addCallbackD((hl) => console.log("Highlighted item is", hl))
         this.configuration
             .mapD((config) => {
                 if (!this.sendingUpdates) {
@@ -105,6 +105,9 @@ export abstract class EditJsonState<T> {
             this.setValueAt(path, v)
         })
         this._stores.set(key, store)
+        this.configuration.addCallbackD((config) => {
+            store.setData(this.getCurrentValueFor(path))
+        })
         return store
     }
 
@@ -310,7 +313,7 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
                 }
                 if (!tr["id"] && !tr["override"]) {
                     const qtr = <QuestionableTagRenderingConfigJson>tr
-                    let id = "" + i
+                    let id = "" + i + "_" + Utils.randomString(5)
                     if (qtr?.freeform?.key) {
                         id = qtr?.freeform?.key
                     } else if (qtr.mappings?.[0]?.if) {

@@ -881,6 +881,7 @@
     ],
     "required": false,
     "hints": {
+      "typehint": "tag",
       "question": "When should this item be shown?"
     },
     "type": [
@@ -968,6 +969,7 @@
     ],
     "required": false,
     "hints": {
+      "typehint": "tag",
       "question": "When should this item be shown (including special conditions)?"
     },
     "type": [

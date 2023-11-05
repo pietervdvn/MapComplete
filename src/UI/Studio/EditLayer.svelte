@@ -24,7 +24,7 @@
   let messages = state.messages;
   let hasErrors = messages.mapD((m: ConversionMessage[]) => m.filter(m => m.level === "error").length);
   const configuration = state.configuration;
-  
+
   const allNames = Utils.Dedup(layerSchema.map(meta => meta.hints.group));
 
   const perRegion: Record<string, ConfigMeta[]> = {};
@@ -57,10 +57,10 @@
     return config;
   }
 
-  let requiredFields = ["id", "name", "description"];
+  let requiredFields = ["id", "name", "description", "source"];
   let currentlyMissing = state.configuration.map(config => {
-    if(!config){
-      return []
+    if (!config) {
+      return [];
     }
     const missing = [];
     for (const requiredField of requiredFields) {
@@ -73,29 +73,35 @@
 
   let highlightedItem: UIEventSource<HighlightedTagRendering> = state.highlightedItem;
 </script>
+<div class="h-screen flex flex-col">
 
-{#if $currentlyMissing.length > 0}
-
-  {#each requiredFields as required}
-    <SchemaBasedInput {state}
-                      schema={configForRequiredField(required)}
-                      path={[required]} />
-  {/each}
-{:else}
-  <div class="h-screen flex flex-col">
-
-    <div class="w-full flex justify-between my-2">
-      <slot />
+  <div class="w-full flex justify-between my-2">
+    <slot />
+    {#if $title === undefined}
+      <h3>Creating a new layer</h3>
+    {:else}
       <h3>Editing layer {$title}</h3>
-      {#if $hasErrors > 0}
-        <div class="alert">{$hasErrors} errors detected</div>
-      {:else}
-        <a class="primary button" href={baseUrl+state.server.layerUrl(title.data)} target="_blank" rel="noopener">
-          Try it out
-          <ChevronRightIcon class="h-6 w-6 shrink-0" />
-        </a>
-      {/if}
-    </div>
+    {/if}
+    {#if $currentlyMissing.length > 0}
+      <div class="w-16"/> <!-- Empty div, simply hide this -->
+    {:else if $hasErrors > 0}
+      <div class="alert">{$hasErrors} errors detected</div>
+    {:else}
+      <a class="primary button" href={baseUrl+state.server.layerUrl(title.data)} target="_blank" rel="noopener">
+        Try it out
+        <ChevronRightIcon class="h-6 w-6 shrink-0" />
+      </a>
+    {/if}
+  </div>
+
+  {#if $currentlyMissing.length > 0}
+
+    {#each requiredFields as required}
+      <SchemaBasedInput {state}
+                        schema={configForRequiredField(required)}
+                        path={[required]} />
+    {/each}
+  {:else}
     <div class="m4 h-full overflow-y-auto">
       <TabbedGroup>
         <div slot="title0" class="flex">General properties
@@ -150,22 +156,23 @@
             <FromHtml src={JSON.stringify($configuration, null, "  ").replaceAll("\n","</br>")} />
           </div>
 
-          <ShowConversionMessages messages={$messages}/>
+          <ShowConversionMessages messages={$messages} />
           <div>
-          The testobject (which is used to render the questions in the 'information panel' item has the following tags:
+            The testobject (which is used to render the questions in the 'information panel' item has the following
+            tags:
           </div>
-          
+
           <AllTagsPanel tags={state.testTags}></AllTagsPanel>
         </div>
       </TabbedGroup>
     </div>
-  </div>
-  {#if $highlightedItem !== undefined}
-    <FloatOver on:close={() => highlightedItem.setData(undefined)}>
-      <div class="mt-16">
-        <TagRenderingInput path={$highlightedItem.path} {state} schema={$highlightedItem.schema} />
-      </div>
-    </FloatOver>
-  {/if}
+    {#if $highlightedItem !== undefined}
+      <FloatOver on:close={() => highlightedItem.setData(undefined)}>
+        <div class="mt-16">
+          <TagRenderingInput path={$highlightedItem.path} {state} schema={$highlightedItem.schema} />
+        </div>
+      </FloatOver>
+    {/if}
 
-{/if}
+  {/if}
+</div>

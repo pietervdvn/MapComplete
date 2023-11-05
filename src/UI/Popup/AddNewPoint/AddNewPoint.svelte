@@ -283,7 +283,7 @@
 
         <NextButton on:click={() => (confirmedCategory = true)} clss="primary w-full">
           <div slot="image" class="relative">
-            <FromHtml src={selectedPreset.icon} />
+            <ToSvelte construct={selectedPreset.icon} />
             <img class="absolute bottom-0 right-0 h-4 w-4" src="./assets/svg/confirm.svg" />
           </div>
           <div class="w-full">

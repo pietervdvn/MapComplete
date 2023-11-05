@@ -89,7 +89,7 @@ export default interface PointRenderingConfigJson {
      * For example: `&LT;div style="background: white">{name}&LT;/div>`
      *
      * If the icon is undefined, then the label is shown in the center of the feature.
-     * types: Dynamic value | string
+     * types: Dynamic value based on the attributes ; string
      * inline: Always show label <b>{value}</b> beneath the marker
      * ifunset: Do not show a label beneath the marker
      */

@@ -1633,6 +1633,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
     }
 
+    public static randomString(length: number): string {
+        let result = ""
+        for (let i = 0; i < length; i++) {
+            const chr = Math.random().toString(36).substr(2, 3)
+            result += chr
+        }
+        return result
+    }
     private static colorDiff(
         c0: { r: number; g: number; b: number },
         c1: { r: number; g: number; b: number }

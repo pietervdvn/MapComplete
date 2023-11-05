@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { ConversionMessage } from "../../Models/ThemeConfig/Conversion/Conversion";
-  import { ExclamationTriangleIcon } from "@babeard/svelte-heroicons/solid";
-  import { ExclamationCircleIcon, ExclamationIcon, InformationCircleIcon } from "@rgossiaux/svelte-heroicons/solid";
+  import { ExclamationIcon, InformationCircleIcon } from "@rgossiaux/svelte-heroicons/solid";
 
   /**
    * Single conversion message, styled depending on the type

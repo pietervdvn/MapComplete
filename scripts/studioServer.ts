@@ -3,6 +3,7 @@ import * as http from "node:http"
 import * as path from "node:path"
 import ScriptUtils from "./ScriptUtils"
 import * as meta from "../package.json"
+import { ServerResponse } from "http"
 
 const PORT = 1235
 const CORS = "http://localhost:1234,https://mapcomplete.org,https://dev.mapcomplete.org"
@@ -37,14 +38,51 @@ async function prepareFile(url: string): Promise<string> {
         return
     }
     const backupFile = path.join(STATIC_PATH, ...sliced)
-    console.log("Using bakcup path", backupFile)
+    console.log("Using backup path", backupFile)
     if (fs.existsSync(backupFile)) {
         return fs.readFileSync(backupFile, "utf8")
     }
     return null
 }
 
-http.createServer(async (req, res) => {
+async function handlePost(req: http.IncomingMessage, res: ServerResponse) {
+    let body = ""
+    req.on("data", (chunk) => {
+        body = body + chunk
+    })
+
+    await new Promise((resolve) => req.on("end", resolve))
+
+    let parsed: any
+    try {
+        parsed = JSON.parse(body)
+    } catch (e) {
+        console.error("ERROR: probably did not receive the full JSON", e)
+        res.writeHead(400, { "Content-Type": MIME_TYPES.html })
+        res.write("<html><body>Invalid JSON:" + e + "</body></html>", "utf8")
+        res.end()
+        return
+    }
+
+    const paths = req.url.split("/")
+    console.log("Got a valid update to:", paths.join("/"))
+    for (let i = 1; i < paths.length; i++) {
+        const p = paths.slice(0, i)
+        const dir = STATIC_PATH + p.join("/")
+        if (!fs.existsSync(dir)) {
+            console.log("Creating new directory", dir)
+            fs.mkdirSync(dir)
+        }
+    }
+    const path = STATIC_PATH + paths.join("/")
+    fs.writeFileSync(path, JSON.stringify(parsed, null, "  "))
+    res.writeHead(200, { "Content-Type": MIME_TYPES.html })
+    res.write("<html><body>OK</body></html>", "utf8")
+    res.end()
+    return
+}
+
+http.createServer(async (req: http.IncomingMessage, res) => {
     try {
         console.log(req.method + " " + req.url, "from:", req.headers.origin)
         res.setHeader(
@@ -59,21 +97,7 @@ http.createServer(async (req, res) => {
             return
         }
         if (req.method === "POST" || req.method === "UPDATE") {
-            const paths = req.url.split("/")
-            console.log("Got an update to:", paths.join("/"))
-            for (let i = 1; i < paths.length; i++) {
-                const p = paths.slice(0, i)
-                const dir = STATIC_PATH + p.join("/")
-                console.log("Checking if", dir, "exists...")
-                if (!fs.existsSync(dir)) {
-                    console.log("Creating new directory", dir)
-                    fs.mkdirSync(dir)
-                }
-            }
-            req.pipe(fs.createWriteStream(STATIC_PATH + paths.join("/")))
-            res.writeHead(200, { "Content-Type": MIME_TYPES.html })
-            res.write("<html><body>OK</body></html>", "utf8")
-            res.end()
+            await handlePost(req, res)
             return
         }
 

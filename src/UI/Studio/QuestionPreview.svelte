@@ -11,7 +11,6 @@
   } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson.js";
   import type { TagRenderingConfigJson } from "../../Models/ThemeConfig/Json/TagRenderingConfigJson";
   import FromHtml from "../Base/FromHtml.svelte";
-  import { Utils } from "../../Utils";
   import ShowConversionMessage from "./ShowConversionMessage.svelte";
   import NextButton from "../Base/NextButton.svelte";
 
@@ -21,9 +20,9 @@
   let value = state.getStoreFor(path);
 
   let perId: Record<string, TagRenderingConfigJson[]> = {};
-  for (const tagRendering of questions.tagRenderings) {
+  for (let tagRendering of questions.tagRenderings) {
     if (tagRendering.labels) {
-      for (const label of tagRendering.labels) {
+      for (let label of tagRendering.labels) {
         perId[label] = (perId[label] ?? []).concat(tagRendering);
       }
     }
@@ -37,13 +36,19 @@
       return [x];
     }
   });
-  let configs: Store<TagRenderingConfig[]> =configJson.mapD(configs =>  Utils.NoNull( configs.map(config => {
-    try{
-      return new TagRenderingConfig(config);
-    }catch (e) {
-      return undefined
+  let configs: Store<TagRenderingConfig[]> = configJson.map(configs => {
+    if (!configs) {
+      return [{ error: "No configuartions found" }];
     }
-  })));
+    console.log("Regenerating configs");
+    return configs.map(config => {
+      try {
+        return new TagRenderingConfig(config);
+      } catch (e) {
+        return { error: e };
+      }
+    });
+  });
   let id: Store<string> = value.mapD(c => {
     if (c?.id) {
       return c.id;
@@ -58,12 +63,12 @@
 
   let messages = state.messagesFor(path);
 
-  let description = schema.description
-  if(description){
-    try{
-      description = nmd(description)
-    }catch (e) {
-      console.error("Could not convert description to markdown", {description})
+  let description = schema.description;
+  if (description) {
+    try {
+      description = nmd(description);
+    } catch (e) {
+      console.error("Could not convert description to markdown", { description });
     }
   }
 </script>
@@ -84,7 +89,7 @@
       <FromHtml src={description} />
     {/if}
     {#each $messages as message}
-      <ShowConversionMessage {message}/>
+      <ShowConversionMessage {message} />
     {/each}
 
     <slot class="self-end my-4"></slot>
@@ -95,11 +100,30 @@
   <div class="flex flex-col w-full m-4">
     <h3>Preview of this question</h3>
     {#each $configs as config}
-      <TagRenderingEditable
-        selectedElement={state.exampleFeature}
-        config={config} editingEnabled={new ImmutableStore(true)} showQuestionIfUnknown={true}
-        {state}
-        {tags}></TagRenderingEditable>
+      {#if config.error !== undefined}
+        <div class="alert">Could not create a preview of this tagRendering: {config.error}</div>
+      {:else}
+        {#if config.condition && !config.condition.matchesProperties($tags)}
+          This tagRendering is currently not shown. It will appear if the feature matches the condition
+          <b>
+            <FromHtml src={config.condition.asHumanString(true, false, {})} />
+          </b>
+          
+          Try to answer the relevant question above
+          {:else if config.metacondition && !config.metacondition.matchesProperties($tags)}
+            This tagRendering is currently not shown. It will appear if the feature matches the metacondition
+            <b>
+              <FromHtml src={config.metacondition.asHumanString(true, false, {})} />
+            </b>
+          For a breakdown of usable meta conditions, go to a mapcomplete theme > settings and enable debug-data. The meta-tags will appear at the bottom 
+        {:else}
+          <TagRenderingEditable
+            selectedElement={state.exampleFeature}
+            config={config} editingEnabled={new ImmutableStore(true)} showQuestionIfUnknown={true}
+            {state}
+            {tags}></TagRenderingEditable>
+        {/if}
+      {/if}
     {/each}
   </div>
 

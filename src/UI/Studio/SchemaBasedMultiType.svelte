@@ -91,7 +91,6 @@
 
   const existingValue = state.getCurrentValueFor(path);
   let hasOverride = existingValue?.override !== undefined;
-  console.log({existingValue, hasOverride})
   if (hasBooleanOption >= 0 && (existingValue === true || existingValue === false)) {
     tags.setData({ value: "" + existingValue });
   } else if (lastIsString && typeof existingValue === "string") {

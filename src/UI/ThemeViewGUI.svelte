@@ -76,7 +76,7 @@
       }
 
       const tags = state.featureProperties.getStore(selectedElement.properties.id)
-      return new SvelteUIElement(SelectedElementView, { state, layer, selectedElement, tags })
+      return new SvelteUIElement(SelectedElementView, { state, layer, selectedElement, tags }).SetClass("h-full w-full")
     },
     [selectedLayer]
   )
@@ -290,7 +290,7 @@
       selectedElement.setData(undefined)
     }}
   >
-    <ToSvelte construct={new VariableUiElement(selectedElementView).SetClass("h-full flex")} />
+    <ToSvelte construct={new VariableUiElement(selectedElementView).SetClass("h-full w-full flex")} />
   </FloatOver>
 </If>
 

@@ -53,10 +53,18 @@
   function createItem(valueToSet?: any) {
     values.data.push(createdItems);
     if (valueToSet) {
-      state.setValueAt([...path, createdItems], valueToSet);
+      state.getStoreFor([...path, createdItems]).setData(valueToSet);
     }
     createdItems++;
     values.ping();
+    
+    if(isTagRenderingBlock){
+      if(typeof valueToSet === "string"){
+        // THis is very broken state.highlightedItem.setData({path: [...path, createdItems], schema})
+      }else{
+        state.highlightedItem.setData({path: [...path, createdItems], schema})
+      }
+    }
   }
 
   function fusePath(i: number, subpartPath: string[]): (string | number)[] {
@@ -71,9 +79,9 @@
     return newPath;
   }
 
-  function del(value) {
-    const index = values.data.indexOf(value);
-    console.log("Deleting", value, index);
+  function del(i) {
+    const index = i;
+    console.log("Deleting", index);
     values.data.splice(index, 1);
     values.ping();
 
@@ -134,11 +142,11 @@
     {/if}
   {:else if subparts.length === 0}
     <!-- We need an array of values, so we use the typehint of the _parent_ element as field -->
-    {#each $values as value (value)}
+    {#each $values as value, i (value)}
       <div class="flex w-full">
         <SchemaBasedField {state} {schema} path={[...path, value]} />
         <button class="border-black border rounded-full p-1 w-fit h-fit"
-                on:click={() => {del(value)}}>
+                on:click={() => {del(i)}}>
           <TrashIcon class="w-4 h-4" />
         </button>
       </div>
@@ -150,7 +158,7 @@
         <div class="flex justify-between items-center">
           <h3 class="m-0">{singular} {value}</h3>
           <button class="border-black border rounded-full p-1 w-fit h-fit"
-                  on:click={() => {del(value)}}>
+                  on:click={() => {del(i)}}>
             <TrashIcon class="w-4 h-4" />
           </button>
         </div>

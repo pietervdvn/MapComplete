@@ -95,12 +95,14 @@ const version = meta.version
           }]
         }
       ],
+      tagRenderings: ["images"],
       lineRendering: [{
         width: 1,
         color: "blue"
       }]
     };
     editLayerState.configuration.setData(initialLayerConfig);
+    editLayerState.startSavingUpdates()
     state = "editing_layer";
   }
 

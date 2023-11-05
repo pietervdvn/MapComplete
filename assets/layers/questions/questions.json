@@ -2031,6 +2031,7 @@
     },
     {
       "id": "internet",
+      "labels": ["internet-all"],
       "question": {
         "en": "Does this place offer internet access?",
         "nl": "Biedt deze plaats internettoegang aan?",
@@ -2136,6 +2137,7 @@
     },
     {
       "id": "internet-fee",
+      "labels": ["internet-all"],
       "condition": {
         "and": [
           "internet_access!=no",
@@ -2212,6 +2214,7 @@
     },
     {
       "id": "internet-ssid",
+      "labels": ["internet-all"],
       "condition": "internet_access=wlan",
       "question": {
         "en": "What is the network name for the wireless internet access?",
@@ -2497,7 +2500,7 @@
         {
           "if": "diet:lactose_free=no",
           "then": {
-            "en": "No lactose free offering",
+            "en": "This shop has no lactose free offering",
             "de": "Keine laktosefreie Produkte",
             "cs": "Žádná nabídka bez laktózy"
           }
@@ -2545,6 +2548,41 @@
             "en": "This shop has no gluten free offering",
             "de": "Das Geschäft verkauft keine glutenfreie Produkte",
             "cs": "Tento obchod nemá bezlepkovou nabídku"
+          }
+        }
+      ]
+    },
+    {
+      "id": "vegan",
+      "labels": [
+        "diets"
+      ],
+      "question": {
+        "en": "Does this place offer a vegan option?"
+      },
+      "mappings": [
+        {
+          "if": "diet:vegan=only",
+          "then": {
+            "en": "This place <b>only sells vegan</b> products"
+          }
+        },
+        {
+          "if": "diet:vegan=yes",
+          "then": {
+            "en": "This shop has a big vegan offering"
+          }
+        },
+        {
+          "if": "diet:vegan=limited",
+          "then": {
+            "en": "This shop has a <b>limited vegan</b> offering"
+          }
+        },
+        {
+          "if": "diet:vegan=no",
+          "then": {
+            "en": "This shop has no vegan offering"
           }
         }
       ]

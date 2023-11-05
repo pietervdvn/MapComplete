@@ -20,14 +20,12 @@
 
   export let editingEnabled: Store<boolean> | undefined = state?.featureSwitchUserbadge;
   
-  export let clss = config.classes.join(" ")
-  
   export let highlightedRendering: UIEventSource<string> = undefined;
   export let showQuestionIfUnknown: boolean = false;
   /**
    * Indicates if this tagRendering currently shows the attribute or asks the question to _change_ the property
    */
-  export let editMode = !config.IsKnown(tags.data) || showQuestionIfUnknown;
+  export let editMode = !config.IsKnown(tags.data) // || showQuestionIfUnknown;
   if (tags) {
     onDestroy(
       tags.addCallbackD((tags) => {
@@ -73,7 +71,7 @@
   }
 </script>
 
-<div bind:this={htmlElem} class={clss}>
+<div bind:this={htmlElem}>
   {#if config.question && (!editingEnabled || $editingEnabled)}
     {#if editMode}
       <TagRenderingQuestion {config} {tags} {selectedElement} {state} {layer}>

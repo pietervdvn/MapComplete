@@ -21,8 +21,9 @@ import Region from "./Region.svelte";
 export let state: EditLayerState;
 export let schema: ConfigMeta;
 export let path: (string | number)[];
-
-let value = state.getCurrentValueFor(path);
+const store = state.getStoreFor(path);
+let value = store.data
+console.log(">> initial value", value, store)
 
 /**
  * Allows the theme builder to create 'writable' themes.
@@ -73,7 +74,6 @@ const configBuiltin = new TagRenderingConfig(<QuestionableTagRenderingConfigJson
 
 const tags = new UIEventSource({ value });
 
-const store = state.getStoreFor(path);
 tags.addCallbackAndRunD(tgs => {
   store.setData(tgs["value"]);
 });
@@ -99,9 +99,11 @@ const ignored = new Set(["labels", "description", "classes"]);
 const freeformSchema = <ConfigMeta[]>questionableTagRenderingSchemaRaw
   .filter(schema => schema.path.length == 2 && schema.path[0] === "freeform" && ($allowQuestions || schema.path[1] === "key"));
 const missing: string[] = questionableTagRenderingSchemaRaw.filter(schema => schema.path.length >= 1 && !items.has(schema.path[0]) && !ignored.has(schema.path[0])).map(schema => schema.path.join("."));
+console.log({state})
+
 </script>
 
-{#if typeof value === "string"}
+{#if typeof $store === "string"}
   <div class="flex low-interaction">
     <TagRenderingEditable config={configBuiltin} selectedElement={undefined} showQuestionIfUnknown={true} {state}
                           {tags} />

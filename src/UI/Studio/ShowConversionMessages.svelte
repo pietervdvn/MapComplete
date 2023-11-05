@@ -2,7 +2,6 @@
   import type { ConversionMessage } from "../../Models/ThemeConfig/Conversion/Conversion";
 
   export let messages: ConversionMessage[];
-  console.log(messages)
 </script>
 
 {#if messages.length === 0}
