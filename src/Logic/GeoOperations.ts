@@ -261,16 +261,16 @@ export class GeoOperations {
     }
 
     /**
-     * Generates the closest point on a way from a given point.
-     * If the passed-in geojson object is a polygon, the outer ring will be used as linestring
-     *
-     *  The properties object will contain three values:
-     // - `index`: closest point was found on nth line part,
-     // - `dist`: distance between pt and the closest point (in kilometer),
-     // `location`: distance along the line between start (of the line) and the closest point.
-     * @param way The road on which you want to find a point
-     * @param point Point defined as [lon, lat]
-     */
+   * Generates the closest point on a way from a given point.
+   * If the passed-in geojson object is a polygon, the outer ring will be used as linestring
+   *
+   *  The properties object will contain three values:
+   // - `index`: closest point was found on nth line part,
+   // - `dist`: distance between pt and the closest point (in kilometer),
+   // `location`: distance along the line between start (of the line) and the closest point.
+   * @param way The road on which you want to find a point
+   * @param point Point defined as [lon, lat]
+   */
     public static nearestPoint(
         way: Feature<LineString>,
         point: [number, number]
@@ -449,6 +449,7 @@ export class GeoOperations {
 
         return perBbox
     }
+
     public static toGpx(
         locations:
             | Feature<LineString>
@@ -1051,5 +1052,41 @@ export class GeoOperations {
             }
         }
         throw "CalculateIntersection fallthrough: can not calculate an intersection between features"
+    }
+
+    public static SplitSelfIntersectingWays(features: Feature[]): Feature[] {
+        const result: Feature[] = []
+
+        for (const feature of features) {
+            if (feature.geometry.type === "LineString") {
+                let coors = feature.geometry.coordinates
+                for (let i = coors.length - 1; i >= 0; i--) {
+                    // Go back, to nick of the back when needed
+                    const ci = coors[i]
+                    for (let j = i + 1; j < coors.length; j++) {
+                        const cj = coors[j]
+                        if (
+                            Math.abs(ci[0] - cj[0]) <= 0.000001 &&
+                            Math.abs(ci[1] - cj[1]) <= 0.0000001
+                        ) {
+                            // Found a self-intersecting way!
+                            console.debug("SPlitting way", feature.properties.id)
+                            result.push({
+                                ...feature,
+                                geometry: { ...feature.geometry, coordinates: coors.slice(i + 1) },
+                            })
+                            coors = coors.slice(0, i + 1)
+                            break
+                        }
+                    }
+                }
+                result.push({
+                    ...feature,
+                    geometry: { ...feature.geometry, coordinates: coors },
+                })
+            }
+        }
+
+        return result
     }
 }

@@ -19,7 +19,7 @@
   let metaIsIncluded = false
   const name = state.layout.id
 
-  function offerSvg(): string {
+  function offerSvg(noSelfIntersectingLines: boolean): string {
     const maindiv = document.getElementById("maindiv")
     const layers = state.layout.layers.filter((l) => l.source !== null)
     return downloadHelper.asSvg({
@@ -27,6 +27,7 @@
       mapExtent: state.mapProperties.bounds.data,
       width: maindiv.offsetWidth,
       height: maindiv.offsetHeight,
+      noSelfIntersectingLines: true
     })
   }
 </script>
@@ -71,9 +72,19 @@
     mimetype="image/svg+xml"
     mainText={t.downloadAsSvg}
     helperText={t.downloadAsSvgHelper}
-    construct={offerSvg}
+    construct={() => offerSvg(false)}
   />
 
+  <DownloadButton
+    {state}
+    {metaIsIncluded}
+    extension="svg"
+    mimetype="image/svg+xml"
+    mainText={t.downloadAsSvgLinesOnly}
+    helperText={t.downloadAsSvgLinesOnlyHelper}
+    construct={() => offerSvg(true)}
+  />
+  
   <DownloadButton
     {state}
     {metaIsIncluded}
