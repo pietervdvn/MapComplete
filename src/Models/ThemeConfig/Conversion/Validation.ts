@@ -458,7 +458,7 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
      * const context = ConversionContext.test()
      * const r = new DetectShadowedMappings().convert(tr, context);
      * context.getAll("error").length // => 1
-     * context.getAll("error")[0].message.indexOf("The mapping key=value&x=y is fully matched by a previous mapping (namely 0)") >= 0 // => true
+     * context.getAll("error")[0].message.indexOf("The mapping key=value &x=y is fully matched by a previous mapping (namely 0)") >= 0 // => true
      */
     convert(json: TagRenderingConfigJson, context: ConversionContext): TagRenderingConfigJson {
         if (json.mappings === undefined || json.mappings.length === 0) {
