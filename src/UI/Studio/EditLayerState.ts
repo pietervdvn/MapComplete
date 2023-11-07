@@ -21,6 +21,7 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { LayoutConfigJson } from "../../Models/ThemeConfig/Json/LayoutConfigJson"
 import { PrepareTheme } from "../../Models/ThemeConfig/Conversion/PrepareTheme"
 import { ConversionContext } from "../../Models/ThemeConfig/Conversion/ConversionContext"
+import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource"
 
 export interface HighlightedTagRendering {
     path: ReadonlyArray<string | number>
@@ -31,6 +32,9 @@ export abstract class EditJsonState<T> {
     public readonly schema: ConfigMeta[]
     public readonly category: "layers" | "themes"
     public readonly server: StudioServer
+    public readonly showIntro: UIEventSource<"no" | "intro" | "tagrenderings"> = <any>(
+        LocalStorageSource.Get("studio-show-intro", "intro")
+    )
 
     public readonly expertMode: UIEventSource<boolean>
 

@@ -309,8 +309,8 @@ function generateWikipage() {
     })
 }
 
-function studioDocs() {
-    const lines = readFileSync("./Docs/Studio/Introduction.md", "utf8").split("\n")
+function studioDocsFor(source: string, target: string) {
+    const lines = readFileSync(source, "utf8").split("\n")
 
     const sections: string[][] = []
     let currentSection: string[] = []
@@ -325,10 +325,18 @@ function studioDocs() {
     }
     sections.push(currentSection)
     writeFileSync(
-        "./src/assets/studio_introduction.json",
+        target,
         JSON.stringify({
             sections: sections.map((s) => s.join("\n")).filter((s) => s.length > 0),
         })
+    )
+}
+
+function studioDocs() {
+    studioDocsFor("./Docs/Studio/Introduction.md", "./src/assets/studio_introduction.json")
+    studioDocsFor(
+        "./Docs/Studio/TagRenderingIntro.md",
+        "./src/assets/studio_tagrenderings_intro.json"
     )
 }
 

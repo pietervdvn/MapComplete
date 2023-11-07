@@ -17,7 +17,10 @@ import { TrashIcon } from "@rgossiaux/svelte-heroicons/outline";
 import questionableTagRenderingSchemaRaw from "../../assets/schemas/questionabletagrenderingconfigmeta.json";
 import SchemaBasedField from "./SchemaBasedField.svelte";
 import Region from "./Region.svelte";
-import exp from "constants";
+import NextButton from "../Base/NextButton.svelte";
+import { QuestionMarkCircleIcon } from "@rgossiaux/svelte-heroicons/solid";
+import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource";
+import { onMount } from "svelte";
 
 export let state: EditLayerState;
 export let schema: ConfigMeta;
@@ -25,7 +28,13 @@ export let path: (string | number)[];
 let expertMode = state.expertMode;
 const store = state.getStoreFor(path);
 let value = store.data;
-
+let hasSeenIntro = UIEventSource.asBoolean(LocalStorageSource.Get("studio-seen-tagrendering-tutorial", "false"))
+onMount(() => {
+if(!hasSeenIntro.data){
+  state.showIntro.setData("tagrenderings")
+  hasSeenIntro.setData(true)
+}
+})
 /**
  * Allows the theme builder to create 'writable' themes.
  * Should only be enabled for 'tagrenderings' in the theme, if the source is OSM
@@ -99,7 +108,7 @@ const ignored = new Set(["labels", "description", "classes"]);
 
 const freeformSchemaAll = <ConfigMeta[]>questionableTagRenderingSchemaRaw
   .filter(schema => schema.path.length == 2 && schema.path[0] === "freeform" && ($allowQuestions || schema.path[1] === "key"));
-let freeformSchema = $expertMode ? freeformSchemaAll : freeformSchemaAll.filter(schema => schema.hints?.group !== "expert")
+let freeformSchema = $expertMode ? freeformSchemaAll : freeformSchemaAll.filter(schema => schema.hints?.group !== "expert");
 const missing: string[] = questionableTagRenderingSchemaRaw.filter(schema => schema.path.length >= 1 && !items.has(schema.path[0]) && !ignored.has(schema.path[0])).map(schema => schema.path.join("."));
 console.log({ state });
 
@@ -112,7 +121,7 @@ console.log({ state });
     <slot name="upper-right" />
   </div>
 {:else}
-  <div class="flex flex-col w-full p-1 gap-y-1">
+  <div class="flex flex-col w-full p-1 gap-y-1 pr-12">
     <div class="flex justify-end">
       <slot name="upper-right" />
     </div>
@@ -157,5 +166,8 @@ console.log({ state });
     {#each missing as field}
       <SchemaBasedField {state} path={[...path,field]} schema={topLevelItems[field]} />
     {/each}
+
+    <NextButton clss="small mt-8" on:click={() => state.showIntro.setData("tagrenderings")}><QuestionMarkCircleIcon class="h-6 w-6"/> Show the introduction again</NextButton>
+    
   </div>
 {/if}

@@ -168,7 +168,7 @@
     </div>
     {#if $highlightedItem !== undefined}
       <FloatOver on:close={() => highlightedItem.setData(undefined)}>
-        <div class="mt-16">
+        <div>
           <TagRenderingInput path={$highlightedItem.path} {state} schema={$highlightedItem.schema} />
         </div>
       </FloatOver>

@@ -21,12 +21,13 @@
   import FloatOver from "./Base/FloatOver.svelte";
   import Walkthrough from "./Walkthrough/Walkthrough.svelte";
   import * as intro from "../assets/studio_introduction.json";
+  import * as intro_tagrenderings from "../assets/studio_tagrenderings_intro.json";
+  
   import { QuestionMarkCircleIcon } from "@babeard/svelte-heroicons/mini";
   import type { ConfigMeta } from "./Studio/configMeta";
   import EditTheme from "./Studio/EditTheme.svelte";
   import * as meta from "../../package.json";
   import Checkbox from "./Base/Checkbox.svelte";
-  import exp from "constants";
 
   export let studioUrl = window.location.hostname === "127.0.0.2" ? "http://127.0.0.1:1235" : "https://studio.mapcomplete.org";
 
@@ -61,13 +62,13 @@
 
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw;
   let editLayerState = new EditLayerState(layerSchema, studio, osmConnection, { expertMode });
+  let showIntro = editLayerState.showIntro
 
   const layoutSchema: ConfigMeta[] = <any>layoutSchemaRaw;
   let editThemeState = new EditThemeState(layoutSchema, studio, { expertMode });
 
   let layerId = editLayerState.configuration.map(layerConfig => layerConfig.id);
 
-  let showIntro = UIEventSource.asBoolean(LocalStorageSource.Get("studio-show-intro", "true"));
   const version = meta.version;
 
   async function editLayer(event: Event) {
@@ -162,7 +163,7 @@
           <NextButton on:click={() => {editThemeState.configuration.setData({}); state = "editing_theme"}}>
             Create a new theme
           </NextButton>
-          <NextButton clss="small" on:click={() => {showIntro.setData(true)} }>
+          <NextButton clss="small" on:click={() => {showIntro.setData("intro")} }>
             <QuestionMarkCircleIcon class="w-6 h-6" />
             Show the introduction again
           </NextButton>
@@ -222,10 +223,10 @@
 </If>
 
 
-{#if $showIntro}
-  <FloatOver on:close={() => {showIntro.setData(false)}}>
+{#if {intro, tagrenderings: intro_tagrenderings}[$showIntro]?.sections}
+  <FloatOver on:close={() => {showIntro.setData("no")}}>
     <div class="flex p-4 h-full pr-12">
-      <Walkthrough pages={intro.sections} on:done={() => {showIntro.setData(false)}} />
+      <Walkthrough pages={{intro, tagrenderings: intro_tagrenderings}[$showIntro]?.sections} on:done={() => {showIntro.setData("no")}} />
     </div>
   </FloatOver>
 
