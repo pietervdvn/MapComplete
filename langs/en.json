@@ -173,7 +173,7 @@
             "downloadAsPng": "Download as image",
             "downloadAsPngHelper": "Ideal to include in reports",
             "downloadAsSvg": "Download an SVG of the current map",
-            "downloadAsSvgHelper": "Compatible Inkscape or Adobe Illustrator; will need further processing",
+            "downloadAsSvgHelper": "Compatible with Inkscape or Adobe Illustrator; will need further processing",
             "downloadCSV": "Download visible data as CSV",
             "downloadCSVHelper": "Compatible with LibreOffice Calc, Excel, …",
             "downloadFeatureAsGeojson": "Download as GeoJSON-file",
