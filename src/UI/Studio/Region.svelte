@@ -12,6 +12,9 @@ export let title: string | undefined = undefined;
 
 export let path: (string | number)[] = [];
 
+let expertMode = state.expertMode
+let configsFiltered = $expertMode ? configs : configs.filter(schema => schema.hints?.group !== "expert")
+
 </script>
 {#if configs === undefined}
   Bug: 'Region' received 'undefined'
@@ -22,14 +25,14 @@ export let path: (string | number)[] = [];
     <h3>{title}</h3>
     <div class="pl-2 border border-black flex flex-col gap-y-1 w-full">
       <slot name="description" />
-      {#each configs as config}
+      {#each configsFiltered as config}
         <SchemaBasedInput {state} path={config.path} schema={config} />
       {/each}
     </div>
   </div>
 {:else}
   <div class="pl-2 flex flex-col gap-y-1 w-full">
-    {#each configs as config}
+    {#each configsFiltered as config}
       <SchemaBasedInput {state} path={path.concat(config.path)} schema={config} />
     {/each}
   </div>

@@ -26,9 +26,9 @@ User has used mapcomplete a few times before but has very little OSM-knowledge.
 - [x] When creating a new layer, perhaps force 'source' too?
 - [x] Forced questions in the beginning: do not show errors
 - [x] Validation: forbid that a mapping starts with "yes" or "no"
-- [ ] TagRenderings: freeform key cannot be set to 'undefined' again
+- [x] TagRenderings: freeform key cannot be set to 'undefined' again
 - [ ] How to create a mapping for `key=yes` or `key=no` is unclear. Person searched for a 'binary'-type instead
-- [ ] When a new tagRendering is added, the floatover should open immediately
+- [x] When a new tagRendering is added, the floatover should open immediately
 - [ ] Mappings with different keys do not erase each other/freeform (e.g. noname=yes should erase `name`)
 - [x] Rename `mapping` to `predifined icon`, perhaps add a clarifying icon
 - [x] In tagRenderings: the `question`-field should be in question-mode right from the start

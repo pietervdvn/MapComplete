@@ -72,7 +72,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -237,7 +237,7 @@ The question is  *Which methods of payment are accepted here?*
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dno' target='_blank'>no</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `fee=yes|hot_water=fee`
+This tagrendering is only visible in the popup if the following condition is met: `fee=yes |hot_water=fee`
 
 
 
@@ -293,7 +293,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 
@@ -315,14 +315,14 @@ This tagrendering has no question and is thus read-only
 
 id | question | osmTags
 ---- | ---------- | ---------
-free.0 | Free to use | fee=no\|fee=0\|charge=0
+free.0 | Free to use | fee=no \|fee=0 \|charge=0
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-hot-water.0 | Hot water available | hot_water=yes\|hot_water=fee
+hot-water.0 | Hot water available | hot_water=yes \|hot_water=fee
 
 
 

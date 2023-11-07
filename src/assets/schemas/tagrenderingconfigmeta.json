@@ -112,7 +112,8 @@
     "required": false,
     "hints": {
       "typehint": "tag",
-      "question": "When should this item be shown?"
+      "question": "When should this item be shown?",
+      "ifunset": "No specific condition set; always show this tagRendering or ask the question if unkown"
     },
     "type": [
       {
@@ -298,7 +299,7 @@
       "freeform",
       "key"
     ],
-    "required": true,
+    "required": false,
     "hints": {},
     "type": "string",
     "description": "What attribute should be filled out\nIf this key is present in the feature, then 'render' is used to display the value.\nIf this is undefined, the rendering is _always_ shown"
@@ -375,6 +376,7 @@
     "hints": {
       "typehint": "icon",
       "question": "What icon should be added to this mapping?",
+      "ifunset": "Do not show an extra icon next to the render value",
       "inline": "<img src='{icon}' class=\"w-8 h-8\" /> {icon}"
     },
     "type": [
@@ -398,7 +400,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
   },
   {
     "path": [

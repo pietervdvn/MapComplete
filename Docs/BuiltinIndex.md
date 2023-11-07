@@ -95,6 +95,7 @@
   - animal_shelter
   - artwork
   - atm
+  - bank
   - barrier
   - bench
   - bench_at_pt

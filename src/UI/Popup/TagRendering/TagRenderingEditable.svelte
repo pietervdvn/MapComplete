@@ -36,8 +36,8 @@
 
   let htmlElem: HTMLDivElement;
   $: {
-    if (editMode && htmlElem !== undefined) {
-      // EditMode switched to true, so the person wants to make a change
+    if (editMode && htmlElem !== undefined && config.IsKnown(tags)) {
+      // EditMode switched to true yet the answer is already known, so the person wants to make a change
       // Make sure that the question is in the scrollview!
 
       // Some delay is applied to give Svelte the time to render the _question_

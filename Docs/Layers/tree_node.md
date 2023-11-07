@@ -76,7 +76,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -124,7 +124,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `wikipedia~.+|wikidata~.+`
+This tagrendering is only visible in the popup if the following condition is met: `wikipedia~.+ |wikidata~.+`
 
 
 
@@ -229,7 +229,7 @@ This is rendered with  `Name: {name}`
   - *The tree does not have a name.*  corresponds with  `noname=yes`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `denotation=landmark|denotation=natural_monument|name~.+`
+This tagrendering is only visible in the popup if the following condition is met: `denotation=landmark |denotation=natural_monument |name~.+`
 
 
 
@@ -243,15 +243,15 @@ The question is  *Is this tree registered heritage?*
 
 
 
-  - *Registered as heritage by <i>Onroerend Erfgoed</i> Flanders*  corresponds with  `heritage=4&heritage:operator=OnroerendErfgoed`
-  - *Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels*  corresponds with  `heritage=4&heritage:operator=aatl`
+  - *Registered as heritage by <i>Onroerend Erfgoed</i> Flanders*  corresponds with  `heritage=4 &heritage:operator=OnroerendErfgoed`
+  - *Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels*  corresponds with  `heritage=4 &heritage:operator=aatl`
   - *Registered as heritage by a different organisation*  corresponds with  `heritage=yes`
   - *Not registered as heritage*  corresponds with  `heritage=no`
   - *Registered as heritage by a different organisation*  corresponds with  `heritage~.+`
   - This option cannot be chosen as answer
 
 
-This tagrendering is only visible in the popup if the following condition is met: `denotation=landmark|denotation=natural_monument`
+This tagrendering is only visible in the popup if the following condition is met: `denotation=landmark |denotation=natural_monument`
 
 
 
@@ -267,7 +267,7 @@ This is rendered with  `<img src="./assets/layers/tree_node/Onroerend_Erfgoed_lo
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `heritage=4&heritage:operator=OnroerendErfgoed`
+This tagrendering is only visible in the popup if the following condition is met: `heritage=4 &heritage:operator=OnroerendErfgoed`
 
 
 
@@ -283,7 +283,7 @@ This is rendered with  `<img src="./assets/svg/wikidata.svg" style="width:1em;he
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `denotation=landmark|denotation=natural_monument|wikidata~.+`
+This tagrendering is only visible in the popup if the following condition is met: `denotation=landmark |denotation=natural_monument |wikidata~.+`
 
 
 
@@ -339,7 +339,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 

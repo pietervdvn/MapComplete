@@ -76,7 +76,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -151,10 +151,10 @@ The question is  *Is this object lit or does it emit light?*
 
 
   - *This is a neon-tube light*  corresponds with  `luminous=neon`
-  - *This object both emits light and is lighted by an external light source*  corresponds with  `lit=yes&luminous=yes`
+  - *This object both emits light and is lighted by an external light source*  corresponds with  `lit=yes &luminous=yes`
   - *This object emits light*  corresponds with  `luminous=yes`
   - *This object is lit externally, e.g. by a spotlight or other lights*  corresponds with  `lit=yes`
-  - *This object does not emit light and is not lighted by externally*  corresponds with  `lit=no&luminous=no`
+  - *This object does not emit light and is not lighted by externally*  corresponds with  `lit=no &luminous=no`
 
 
 
@@ -221,7 +221,7 @@ The question is  *From how many sides you can watch advertisments?*
   - *This object has advertisements on both sides*  corresponds with  `sides=2`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `advertising=poster_box|advertising=screen|advertising=billboard`
+This tagrendering is only visible in the popup if the following condition is met: `advertising=poster_box |advertising=screen |advertising=billboard`
 
 
 
@@ -291,7 +291,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 

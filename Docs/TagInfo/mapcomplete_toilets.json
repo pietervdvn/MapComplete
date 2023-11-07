@@ -17,7 +17,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Toilets' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Public toilets') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Toilets' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Public toilets') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -168,7 +168,7 @@
     },
     {
       "key": "door:width",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'door:width' (in the mapcomplete.org theme 'Public toilets') (This is only shown if wheelchair=yes|wheelchair=designated)"
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'door:width' (in the mapcomplete.org theme 'Public toilets') (This is only shown if wheelchair=yes |wheelchair=designated)"
     },
     {
       "key": "toilets:position",
@@ -255,7 +255,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Toilets at other amenities' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Public toilets') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Toilets at other amenities' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Public toilets') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -366,7 +366,7 @@
     },
     {
       "key": "toilets:door:width",
-      "description": "Layer 'Toilets at other amenities' shows and asks freeform values for key 'toilets:door:width' (in the mapcomplete.org theme 'Public toilets') (This is only shown if toilets:wheelchair=yes|toilets:wheelchair=designated)"
+      "description": "Layer 'Toilets at other amenities' shows and asks freeform values for key 'toilets:door:width' (in the mapcomplete.org theme 'Public toilets') (This is only shown if toilets:wheelchair=yes |toilets:wheelchair=designated)"
     },
     {
       "key": "toilets:position",
@@ -453,7 +453,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Shower' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Public toilets') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Shower' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Public toilets') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -550,37 +550,37 @@
     },
     {
       "key": "payment:cash",
-      "description": "Layer 'Shower' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Public toilets') (This is only shown if fee=yes|hot_water=fee)",
+      "description": "Layer 'Shower' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Public toilets') (This is only shown if fee=yes |hot_water=fee)",
       "value": "yes"
     },
     {
       "key": "payment:cards",
-      "description": "Layer 'Shower' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Public toilets') (This is only shown if fee=yes|hot_water=fee)",
+      "description": "Layer 'Shower' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Public toilets') (This is only shown if fee=yes |hot_water=fee)",
       "value": "yes"
     },
     {
       "key": "payment:qr_code",
-      "description": "Layer 'Shower' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets') (This is only shown if fee=yes|hot_water=fee)",
+      "description": "Layer 'Shower' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets') (This is only shown if fee=yes |hot_water=fee)",
       "value": "yes"
     },
     {
       "key": "payment:coins",
-      "description": "Layer 'Shower' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets') (This is only shown if fee=yes|hot_water=fee)",
+      "description": "Layer 'Shower' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets') (This is only shown if fee=yes |hot_water=fee)",
       "value": "yes"
     },
     {
       "key": "payment:notes",
-      "description": "Layer 'Shower' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets') (This is only shown if fee=yes|hot_water=fee)",
+      "description": "Layer 'Shower' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets') (This is only shown if fee=yes |hot_water=fee)",
       "value": "yes"
     },
     {
       "key": "payment:debit_cards",
-      "description": "Layer 'Shower' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets') (This is only shown if fee=yes|hot_water=fee)",
+      "description": "Layer 'Shower' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets') (This is only shown if fee=yes |hot_water=fee)",
       "value": "yes"
     },
     {
       "key": "payment:credit_cards",
-      "description": "Layer 'Shower' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets') (This is only shown if fee=yes|hot_water=fee)",
+      "description": "Layer 'Shower' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets') (This is only shown if fee=yes |hot_water=fee)",
       "value": "yes"
     }
   ]

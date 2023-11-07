@@ -24,26 +24,20 @@
 1. [gps_track](#gps_track)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
-    + [just_created](#just_created)
     + [Privacy notice](#privacy-notice)
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
     + [upload_to_osm](#upload_to_osm)
     + [minimap](#minimap)
     + [delete](#delete)
-    + [leftover-questions](#leftover-questions)
-    + [all-tags](#all-tags)
 1. [range](#range)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
 1. [last_click](#last_click)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
-    + [just_created](#just_created)
     + [add_new](#add_new)
     + [add_note](#add_note)
-    + [leftover-questions](#leftover-questions)
-    + [all-tags](#all-tags)
       * [Filters](#filters)
 1. [conflation](#conflation)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
@@ -58,19 +52,13 @@
       * [Themes using this layer](#themes-using-this-layer)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
-    + [just_created](#just_created)
-    + [leftover-questions](#leftover-questions)
-    + [all-tags](#all-tags)
 1. [import_candidate](#import_candidate)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
-    + [just_created](#just_created)
     + [all_tags](#all_tags)
-    + [leftover-questions](#leftover-questions)
 1. [usersettings](#usersettings)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
-    + [just_created](#just_created)
     + [profile](#profile)
     + [language_picker](#language_picker)
     + [inbox](#inbox)
@@ -95,7 +83,6 @@
     + [contributor-thanks](#contributor-thanks)
     + [show_debug](#show_debug)
     + [debug](#debug)
-    + [leftover-questions](#leftover-questions)
 1. [Normal layers](#normal-layers)
 
 
@@ -343,36 +330,6 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-Warning: 
-
-this quick overview is incomplete
-
-
-
-attribute | type | values which are supported by this layer
------------ | ------ | ------------------------------------------
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-
-
-
-
-### just_created 
-
-
-
-This element shows a 'thank you' that the contributor has recently created this element
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
-
 
 
 ### Privacy notice 
@@ -432,26 +389,6 @@ This tagrendering has no question and is thus read-only
 
 
 ### delete 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### all-tags 
 
 
 
@@ -547,36 +484,6 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-Warning: 
-
-this quick overview is incomplete
-
-
-
-attribute | type | values which are supported by this layer
------------ | ------ | ------------------------------------------
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-
-
-
-
-### just_created 
-
-
-
-This element shows a 'thank you' that the contributor has recently created this element
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
-
 
 
 ### add_new 
@@ -603,26 +510,6 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
 #### Filters 
 
 
@@ -631,7 +518,7 @@ This tagrendering has no question and is thus read-only
 
 id | question | osmTags
 ---- | ---------- | ---------
-action.0 | only_if_action_is_possible | has_note_layer=yes\|has_presets=yes
+action.0 | only_if_action_is_possible | has_note_layer=yes \|has_presets=yes
 
 
 
@@ -814,56 +701,6 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-Warning: 
-
-this quick overview is incomplete
-
-
-
-attribute | type | values which are supported by this layer
------------ | ------ | ------------------------------------------
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-
-
-
-
-### just_created 
-
-
-
-This element shows a 'thank you' that the contributor has recently created this element
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
 
 
  import_candidate 
@@ -905,49 +742,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-Warning: 
-
-this quick overview is incomplete
-
-
-
-attribute | type | values which are supported by this layer
------------ | ------ | ------------------------------------------
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-
-
-
-
-### just_created 
-
-
-
-This element shows a 'thank you' that the contributor has recently created this element
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
-
 
 
 ### all_tags 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### leftover-questions 
 
 
 
@@ -1004,7 +801,6 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/__url_parameter_initialized:language#values) [__url_parameter_initialized:language](https://wiki.openstreetmap.org/wiki/Key:__url_parameter_initialized:language) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:__url_parameter_initialized:language%3Dyes)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-preferred-background-layer#values) [mapcomplete-preferred-background-layer](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-preferred-background-layer) | Multiple choice | [](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-preferred-background-layer%3D) [osm](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-preferred-background-layer%3Dosm) [photo](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-preferred-background-layer%3Dphoto) [map](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-preferred-background-layer%3Dmap) [](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-preferred-background-layer%3D)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-pictures-license#values) [mapcomplete-pictures-license](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-pictures-license) | Multiple choice | [CC0](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC0) [CC-BY 4.0](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC-BY 4.0) [CC-BY-SA 4.0](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC-BY-SA 4.0)
@@ -1017,25 +813,6 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/_translation_percentage#values) [_translation_percentage](https://wiki.openstreetmap.org/wiki/Key:_translation_percentage) | Multiple choice | [100](https://wiki.openstreetmap.org/wiki/Tag:_translation_percentage%3D100)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-show_debug#values) [mapcomplete-show_debug](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show_debug) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_debug%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_debug%3Dno)
 
-
-
-
-### just_created 
-
-
-
-This element shows a 'thank you' that the contributor has recently created this element
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
 
 
 
@@ -1108,7 +885,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_theme:backgroundLayer~.+&mapcomplete-preferred-background-layer~.+&_theme:backgroundLayer!=`
+This tagrendering is only visible in the popup if the following condition is met: `_theme:backgroundLayer~.+ &mapcomplete-preferred-background-layer~.+ &_theme:backgroundLayer!=`
 
 
 
@@ -1269,7 +1046,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *Click the 'translate'-icon next to a string to enter or update a piece of text. You need a Weblate-account for this. Create one with your OSM-username to automatically unlock translation mode.*  corresponds with  `mapcomplete-translation-mode=yes|mapcomplete-translation-mode=true|mapcomplete-translation-mode=mobile`
+  - *Click the 'translate'-icon next to a string to enter or update a piece of text. You need a Weblate-account for this. Create one with your OSM-username to automatically unlock translation mode.*  corresponds with  `mapcomplete-translation-mode=yes |mapcomplete-translation-mode=true |mapcomplete-translation-mode=mobile`
 
 
 
@@ -1287,7 +1064,7 @@ This tagrendering has no question and is thus read-only
   - *Completely translated*  corresponds with  `_translation_percentage=100`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `mapcomplete-translation-mode=yes|mapcomplete-translation-mode=true|mapcomplete-translation-mode=mobile`
+This tagrendering is only visible in the popup if the following condition is met: `mapcomplete-translation-mode=yes |mapcomplete-translation-mode=true |mapcomplete-translation-mode=mobile`
 
 
 
@@ -1299,7 +1076,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_translation_links~.+&mapcomplete-translation-mode=true|mapcomplete-translation-mode=mobile`
+This tagrendering is only visible in the popup if the following condition is met: `_translation_links~.+ &mapcomplete-translation-mode=true |mapcomplete-translation-mode=mobile`
 
 
 
@@ -1392,16 +1169,6 @@ This tagrendering has no question and is thus read-only
 
 
 This tagrendering is only visible in the popup if the following condition is met: `mapcomplete-show_debug=yes`
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
 
 
 

@@ -323,7 +323,7 @@
     ],
     "required": false,
     "hints": {
-      "typehint": "simple_tag[]",
+      "typehint": "simple_tag",
       "question": "What extra tags should be added to the object if this object is chosen?"
     },
     "type": "array",
@@ -472,7 +472,7 @@
       "freeform",
       "key"
     ],
-    "required": true,
+    "required": false,
     "hints": {
       "question": "What is the name of the attribute that should be written to?",
       "ifunset": "do not offer a freeform textfield as answer option"
@@ -579,6 +579,7 @@
     "required": false,
     "hints": {
       "typehint": "translation",
+      "group": "expert",
       "question": "What placeholder text should be shown in the input-element if there is no input?"
     },
     "type": [
@@ -597,7 +598,9 @@
       "helperArgs"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "group": "expert"
+    },
     "type": "array",
     "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
   },
@@ -607,7 +610,9 @@
       "addExtraTags"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "group": "expert"
+    },
     "type": "array",
     "description": "If a value is added with the textfield, these extra tag is addded.\nUseful to add a 'fixme=freeform textfield used - to be checked'"
   },
@@ -618,6 +623,7 @@
     ],
     "required": false,
     "hints": {
+      "group": "expert",
       "question": "Show the freeform as box within the question?",
       "iftrue": "show the freeform input field as a small field within the question",
       "ifunset": "show the freeform input field full-width"
@@ -632,6 +638,7 @@
     ],
     "required": false,
     "hints": {
+      "group": "expert",
       "question": "What value should be entered in the text field if no value is set?",
       "ifunset": "do not prefill the textfield"
     },
@@ -645,6 +652,7 @@
     ],
     "required": false,
     "hints": {
+      "group": "expert",
       "question": "What values of the freeform key should be interpreted as 'unknown'?",
       "ifunset": "The question will be considered answered if any value is set for the key"
     },
@@ -882,7 +890,8 @@
     "required": false,
     "hints": {
       "typehint": "tag",
-      "question": "When should this item be shown?"
+      "question": "When should this item be shown?",
+      "ifunset": "No specific condition set; always show this tagRendering or ask the question if unkown"
     },
     "type": [
       {

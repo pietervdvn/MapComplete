@@ -79,7 +79,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -105,9 +105,9 @@ The question is  *Which services are available at this location?*
 
 
 
-  - *There is only a pump present*  corresponds with  `service:bicycle:tools=no&service:bicycle:pump=yes`
-  - *There are only tools (screwdrivers, pliers, …) present*  corresponds with  `service:bicycle:tools=yes&service:bicycle:pump=no`
-  - *There are both tools and a pump present*  corresponds with  `service:bicycle:tools=yes&service:bicycle:pump=yes`
+  - *There is only a pump present*  corresponds with  `service:bicycle:tools=no &service:bicycle:pump=yes`
+  - *There are only tools (screwdrivers, pliers, …) present*  corresponds with  `service:bicycle:tools=yes &service:bicycle:pump=no`
+  - *There are both tools and a pump present*  corresponds with  `service:bicycle:tools=yes &service:bicycle:pump=yes`
 
 
 
@@ -262,7 +262,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `email~.+&service:bicycle:pump:operational_status=broken`
+This tagrendering is only visible in the popup if the following condition is met: `email~.+ &service:bicycle:pump:operational_status=broken`
 
 
 
@@ -417,7 +417,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 

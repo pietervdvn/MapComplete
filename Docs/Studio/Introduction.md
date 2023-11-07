@@ -57,9 +57,12 @@ You can find the meaning of all those keys and values on the [OpenStreetMap-wiki
 
 Many traditional GIS-applications organise the data into layers.
 
-OpenStreetMap does not do this. Consider this shop:
+OpenStreetMap does not do this. Consider this place:
 
-!['t spel op de wagen](TODO)
+<div class="flex">
+<img class="w-1/2 pr-4" src="../../public/assets/docs/SpelOpDeWagen.jpg">
+
+<div>
 
 This place has three functions:
 
@@ -69,6 +72,8 @@ This place has three functions:
 
 In a traditional system with layers, one would either have to choose the most fitting layer (e.g. the layer `pub`, `shops` or `social facility`? ) losing the multi-facetted aspect of the place. 
 Another approach could be to add it to all three layers, duplicating the data. However, this makes maintaining the data harder.
+</div>
+</div>
 
 # What is MapComplete?
 

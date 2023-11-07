@@ -88,7 +88,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -203,7 +203,7 @@ This is rendered with  `This cyleway is made of {cycleway:surface}`
   - *This cycleway is made from raw ground*  corresponds with  `cycleway:surface=ground`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cycleway=shared_lane|cycleway=lane|cycleway=track`
+This tagrendering is only visible in the popup if the following condition is met: `cycleway=shared_lane |cycleway=lane |cycleway=track`
 
 
 
@@ -227,7 +227,7 @@ The question is  *What is the smoothness of this cycleway?*
   - *Impassable / No wheeled vehicle*  corresponds with  `cycleway:smoothness=impassable`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cycleway=shared_lane|cycleway=lane|cycleway=track`
+This tagrendering is only visible in the popup if the following condition is met: `cycleway=shared_lane |cycleway=lane |cycleway=track`
 
 
 
@@ -285,7 +285,7 @@ The question is  *What is the smoothness of this street?*
   - *Impassable / No wheeled vehicle*  corresponds with  `smoothness=impassable`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cycleway=no|highway=cycleway`
+This tagrendering is only visible in the popup if the following condition is met: `cycleway=no |highway=cycleway`
 
 
 
@@ -321,7 +321,7 @@ The question is  *What traffic sign does this cycleway have?*
   - *No traffic sign present*  corresponds with  `cycleway:traffic_sign=none`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cycleway=lane|cycleway=track&_country=be`
+This tagrendering is only visible in the popup if the following condition is met: `cycleway=lane |cycleway=track &_country=be`
 
 
 
@@ -346,7 +346,7 @@ The question is  *What traffic sign does this cycleway have?*
   - *No traffic sign present*  corresponds with  `traffic_sign=none`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `highway=cycleway|highway=path&_country=be|_country=nl`
+This tagrendering is only visible in the popup if the following condition is met: `highway=cycleway |highway=path &_country=be |_country=nl`
 
 
 
@@ -369,7 +369,7 @@ The question is  *Does the traffic sign D7 (<img src='./assets/layers/cycleways_
   - *No supplementary traffic sign present*  corresponds with  `cycleway:traffic_sign:supplementary=none`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cycleway:traffic_sign=BE:D7|cycleway:traffic_sign~^(BE:D7;.*)$`
+This tagrendering is only visible in the popup if the following condition is met: `cycleway:traffic_sign=BE:D7 |cycleway:traffic_sign~^(BE:D7;.*)$`
 
 
 
@@ -385,7 +385,7 @@ This is rendered with  `The buffer besides this cycleway is {cycleway:buffer} m`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cycleway=track|cycleway=lane`
+This tagrendering is only visible in the popup if the following condition is met: `cycleway=track |cycleway=lane`
 
 
 
@@ -405,7 +405,7 @@ The question is  *How is this cycleway separated from the road?*
   - *This cycleway is separated by a kerb*  corresponds with  `cycleway:separation=kerb`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cycleway=track|cycleway=lane`
+This tagrendering is only visible in the popup if the following condition is met: `cycleway=track |cycleway=lane`
 
 
 
@@ -425,7 +425,7 @@ The question is  *How is this cycleway separated from the road?*
   - *This cycleway is separated by a kerb*  corresponds with  `separation=kerb`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `highway=cycleway|highway=path`
+This tagrendering is only visible in the popup if the following condition is met: `highway=cycleway |highway=path`
 
 
 
@@ -471,7 +471,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 

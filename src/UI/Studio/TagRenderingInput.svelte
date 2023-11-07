@@ -17,46 +17,47 @@ import { TrashIcon } from "@rgossiaux/svelte-heroicons/outline";
 import questionableTagRenderingSchemaRaw from "../../assets/schemas/questionabletagrenderingconfigmeta.json";
 import SchemaBasedField from "./SchemaBasedField.svelte";
 import Region from "./Region.svelte";
+import exp from "constants";
 
 export let state: EditLayerState;
 export let schema: ConfigMeta;
 export let path: (string | number)[];
+let expertMode = state.expertMode;
 const store = state.getStoreFor(path);
-let value = store.data
-console.log(">> initial value", value, store)
+let value = store.data;
 
 /**
  * Allows the theme builder to create 'writable' themes.
  * Should only be enabled for 'tagrenderings' in the theme, if the source is OSM
  */
-let allowQuestions: Store<boolean> = (state.configuration.mapD(config => path.at(0) === "tagRenderings" && config.source?.geoJson === undefined))
+let allowQuestions: Store<boolean> = (state.configuration.mapD(config => path.at(0) === "tagRenderings" && config.source?.geoJson === undefined));
 
 
 let mappingsBuiltin: MappingConfigJson[] = [];
-let perLabel: Record<string, MappingConfigJson> = {}
+let perLabel: Record<string, MappingConfigJson> = {};
 for (const tr of questions.tagRenderings) {
   let description = tr["description"] ?? tr["question"] ?? "No description available";
   description = description["en"] ?? description;
-  if(tr["labels"]){
-    const labels: string[] = tr["labels"]
+  if (tr["labels"]) {
+    const labels: string[] = tr["labels"];
     for (const label of labels) {
-      let labelMapping: MappingConfigJson = perLabel[label] 
-      
-      if(!labelMapping){
+      let labelMapping: MappingConfigJson = perLabel[label];
+
+      if (!labelMapping) {
         labelMapping = {
-          if: "value="+label,
+          if: "value=" + label,
           then: {
-            en: "Builtin collection <b>"+label+"</b>:"
+            en: "Builtin collection <b>" + label + "</b>:"
           }
-        }
-        perLabel[label] = labelMapping
-        mappingsBuiltin.push(labelMapping)
+        };
+        perLabel[label] = labelMapping;
+        mappingsBuiltin.push(labelMapping);
       }
-      labelMapping.then.en = labelMapping.then.en + "<div>"+description+"</div>"
+      labelMapping.then.en = labelMapping.then.en + "<div>" + description + "</div>";
     }
   }
-  
-  
+
+
   mappingsBuiltin.push({
     if: "value=" + tr["id"],
     then: {
@@ -96,10 +97,11 @@ function initMappings() {
 const items = new Set(["question", "questionHint", "multiAnswer", "freeform", "render", "condition", "metacondition", "mappings", "icon"]);
 const ignored = new Set(["labels", "description", "classes"]);
 
-const freeformSchema = <ConfigMeta[]>questionableTagRenderingSchemaRaw
+const freeformSchemaAll = <ConfigMeta[]>questionableTagRenderingSchemaRaw
   .filter(schema => schema.path.length == 2 && schema.path[0] === "freeform" && ($allowQuestions || schema.path[1] === "key"));
+let freeformSchema = $expertMode ? freeformSchemaAll : freeformSchemaAll.filter(schema => schema.hints?.group !== "expert")
 const missing: string[] = questionableTagRenderingSchemaRaw.filter(schema => schema.path.length >= 1 && !items.has(schema.path[0]) && !ignored.has(schema.path[0])).map(schema => schema.path.join("."));
-console.log({state})
+console.log({ state });
 
 </script>
 
@@ -115,7 +117,8 @@ console.log({state})
       <slot name="upper-right" />
     </div>
     {#if $allowQuestions}
-      <SchemaBasedField startInEditModeIfUnset={true} {state} path={[...path,"question"]} schema={topLevelItems["question"]} />
+      <SchemaBasedField startInEditModeIfUnset={true} {state} path={[...path,"question"]}
+                        schema={topLevelItems["question"]} />
       <SchemaBasedField {state} path={[...path,"questionHint"]} schema={topLevelItems["questionHint"]} />
     {/if}
     {#each ($mappings ?? []) as mapping, i (mapping)}
@@ -148,8 +151,9 @@ console.log({state})
     </div>
 
     <SchemaBasedField {state} path={[...path,"condition"]} schema={topLevelItems["condition"]} />
-    <SchemaBasedField {state} path={[...path,"metacondition"]} schema={topLevelItems["metacondition"]} />
-
+    {#if $expertMode}
+      <SchemaBasedField {state} path={[...path,"metacondition"]} schema={topLevelItems["metacondition"]} />
+    {/if}
     {#each missing as field}
       <SchemaBasedField {state} path={[...path,field]} schema={topLevelItems[field]} />
     {/each}

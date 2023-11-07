@@ -80,6 +80,7 @@ export interface LayerConfigJson {
                *
                * type: nat
                * default: 30 days
+               * group: expert
                */
               maxCacheAge?: number
           }
@@ -116,6 +117,7 @@ export interface LayerConfigJson {
                * question: Is this geojson a cache of OpenStreetMap data?
                * ifunset: This is not an OpenStreetMap cache
                * iftrue: this is based on OpenStreetMap and can thus be edited
+               * group: expert
                */
               isOsmCache?: boolean
               /**

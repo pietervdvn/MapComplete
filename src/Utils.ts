@@ -1491,7 +1491,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         element.scrollIntoView({ behavior: "smooth", block: "nearest" })
     }
 
-    public static findParentWithScrolling(element: HTMLBaseElement): HTMLBaseElement {
+    private static findParentWithScrolling(element: HTMLBaseElement): HTMLBaseElement {
         // Check if the element itself has scrolling
         if (element.scrollHeight > element.clientHeight) {
             return element

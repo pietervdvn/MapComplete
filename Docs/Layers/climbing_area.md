@@ -73,7 +73,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -184,7 +184,7 @@ This is rendered with  `The rock type is {rock}`
   - *Limestone*  corresponds with  `rock=limestone`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `climbing=crag|natural=cliff|natural=bare_rock`
+This tagrendering is only visible in the popup if the following condition is met: `climbing=crag |natural=cliff |natural=bare_rock`
 
 
 
@@ -200,7 +200,7 @@ This is rendered with  `<a href='{url}' target='_blank' rel='noopener'>{url}</a>
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `leisure!~^(sports_centre)$&sport=climbing`
+This tagrendering is only visible in the popup if the following condition is met: `leisure!~^(sports_centre)$ &sport=climbing`
 
 
 
@@ -263,7 +263,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 

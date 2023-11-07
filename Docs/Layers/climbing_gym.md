@@ -86,7 +86,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -246,10 +246,10 @@ The question is  *Can one rent climbing shoes here?*
 
 
 
-  - *Climbing shoes can be borrowed for free here*  corresponds with  `service:climbing_shoes:rental=yes&service:climbing_shoes:rental:fee=no`
-  - *Climbing shoes can be rented here for {service:climbing_shoes:rental:charge}*  corresponds with  `service:climbing_shoes:rental=yes&service:climbing_shoes:rental:charge~.+`
+  - *Climbing shoes can be borrowed for free here*  corresponds with  `service:climbing_shoes:rental=yes &service:climbing_shoes:rental:fee=no`
+  - *Climbing shoes can be rented here for {service:climbing_shoes:rental:charge}*  corresponds with  `service:climbing_shoes:rental=yes &service:climbing_shoes:rental:charge~.+`
   - This option cannot be chosen as answer
-  - *Climbing shoes can be rented here*  corresponds with  `service:climbing_shoes:rental=yes&service:climbing_shoes:rental:fee=yes`
+  - *Climbing shoes can be rented here*  corresponds with  `service:climbing_shoes:rental=yes &service:climbing_shoes:rental:fee=yes`
   - *Climbing shoes can <b>not</b> be rented here*  corresponds with  `service:climbing_shoes:rental=no`
 
 
@@ -265,8 +265,8 @@ The question is  *Can one rent a climbing harness here?*
 
 
 
-  - *A climbing harness can be borrowed for free here*  corresponds with  `service:climbing_harness:rental=yes&service:climbing_harness:rental:fee=no`
-  - *A climbing harness can be rented here for {service:climbing_harness:rental:charge}*  corresponds with  `service:climbing_harness:rental=yes&service:climbing_harness:rental:charge~.+`
+  - *A climbing harness can be borrowed for free here*  corresponds with  `service:climbing_harness:rental=yes &service:climbing_harness:rental:fee=no`
+  - *A climbing harness can be rented here for {service:climbing_harness:rental:charge}*  corresponds with  `service:climbing_harness:rental=yes &service:climbing_harness:rental:charge~.+`
   - This option cannot be chosen as answer
   - *A climbing harness can be rented here*  corresponds with  `service:climbing_harness:rental=yes`
   - *A climbing harness can <b>not</b> be rented here*  corresponds with  `service:climbing_harness:rental=no`
@@ -285,8 +285,8 @@ The question is  *Can one rent a belay device here?*
 
 
   - *Belay devices are provided at each rope*  corresponds with  `service:climbing_belay_device:provided_at_each_rope=yes`
-  - *A belay device can be borrowed for free here*  corresponds with  `service:climbing_belay_device:rental=yes&service:climbing_belay_device:rental:fee=no`
-  - *A belay device can be rented here for {service:climbing_belay_device:rental:charge}*  corresponds with  `service:climbing_belay_device:rental=yes&service:climbing_belay_device:rental:charge~.+`
+  - *A belay device can be borrowed for free here*  corresponds with  `service:climbing_belay_device:rental=yes &service:climbing_belay_device:rental:fee=no`
+  - *A belay device can be rented here for {service:climbing_belay_device:rental:charge}*  corresponds with  `service:climbing_belay_device:rental=yes &service:climbing_belay_device:rental:charge~.+`
   - This option cannot be chosen as answer
   - *A belay device can be rented here*  corresponds with  `service:climbing_belay_device:rental=yes`
   - *A belay device can <b>not</b> be rented here*  corresponds with  `service:climbing_belay_device:rental=no`
@@ -304,8 +304,8 @@ The question is  *Can one rent a climbing rope here?*
 
 
 
-  - *A climbing rope can be borrowed for free here*  corresponds with  `service:climbing_rope:rental=yes&service:climbing_rope:rental:fee=no`
-  - *A climbing rope can be rented here for {service:climbing_rope:rental:charge}*  corresponds with  `service:climbing_rope:rental=yes&service:climbing_rope:rental:charge~.+`
+  - *A climbing rope can be borrowed for free here*  corresponds with  `service:climbing_rope:rental=yes &service:climbing_rope:rental:fee=no`
+  - *A climbing rope can be rented here for {service:climbing_rope:rental:charge}*  corresponds with  `service:climbing_rope:rental=yes &service:climbing_rope:rental:charge~.+`
   - This option cannot be chosen as answer
   - *A climbing rope can be rented here*  corresponds with  `service:climbing_rope:rental=yes`
   - *A climbing rope can <b>not</b> be rented here*  corresponds with  `service:climbing_rope:rental=no`
@@ -408,7 +408,7 @@ This is rendered with  `The highest grade is {climbing:grade:french:max} accordi
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `climbing!~^(route)$&climbing:sport=yes|sport=climbing`
+This tagrendering is only visible in the popup if the following condition is met: `climbing!~^(route)$ &climbing:sport=yes |sport=climbing`
 
 
 
@@ -479,7 +479,7 @@ The question is  *Is there a fee for internet access?*
   - *Internet access is free at this place, for customers only*  corresponds with  `internet_access:fee=customers`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no&internet_access~.+`
+This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no &internet_access~.+`
 
 
 
@@ -536,7 +536,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 

@@ -24,8 +24,10 @@
   import { QuestionMarkCircleIcon } from "@babeard/svelte-heroicons/mini";
   import type { ConfigMeta } from "./Studio/configMeta";
   import EditTheme from "./Studio/EditTheme.svelte";
-  import * as meta from "../../package.json"
-  
+  import * as meta from "../../package.json";
+  import Checkbox from "./Base/Checkbox.svelte";
+  import exp from "constants";
+
   export let studioUrl = window.location.hostname === "127.0.0.2" ? "http://127.0.0.1:1235" : "https://studio.mapcomplete.org";
 
   let osmConnection = new OsmConnection(new OsmConnection({
@@ -35,6 +37,10 @@
       "Used to complete the login"
     )
   }));
+  const expertMode = UIEventSource.asBoolean(osmConnection.GetPreference("studio-expert-mode", "false", {
+    documentation: "Indicates if more options are shown in mapcomplete studio"
+  }));
+  expertMode.addCallbackAndRunD(expert => console.log("Expert mode is", expert))
   const createdBy = osmConnection.userDetails.data.name;
   const uid = osmConnection.userDetails.map(ud => ud?.uid);
   const studio = new StudioServer(studioUrl, uid);
@@ -44,8 +50,8 @@
   let selfLayers = layers.mapD(ls => ls.filter(l => l.owner === uid.data), [uid]);
   let otherLayers = layers.mapD(ls => ls.filter(l => l.owner !== undefined && l.owner !== uid.data), [uid]);
   let officialLayers = layers.mapD(ls => ls.filter(l => l.owner === undefined), [uid]);
-  
-  
+
+
   let themes: Store<{ owner: number }[]> = layersWithErr.mapD(l => l.success?.filter(l => l.category === "themes"));
   let selfThemes = themes.mapD(ls => ls.filter(l => l.owner === uid.data), [uid]);
   let otherThemes = themes.mapD(ls => ls.filter(l => l.owner !== undefined && l.owner !== uid.data), [uid]);
@@ -54,30 +60,31 @@
   let state: undefined | "edit_layer" | "edit_theme" | "editing_layer" | "editing_theme" | "loading" = undefined;
 
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw;
-  let editLayerState = new EditLayerState(layerSchema, studio, osmConnection);
+  let editLayerState = new EditLayerState(layerSchema, studio, osmConnection, { expertMode });
 
   const layoutSchema: ConfigMeta[] = <any>layoutSchemaRaw;
-  let editThemeState = new EditThemeState(layoutSchema, studio);
+  let editThemeState = new EditThemeState(layoutSchema, studio, { expertMode });
 
   let layerId = editLayerState.configuration.map(layerConfig => layerConfig.id);
 
   let showIntro = UIEventSource.asBoolean(LocalStorageSource.Get("studio-show-intro", "true"));
-const version = meta.version
+  const version = meta.version;
+
   async function editLayer(event: Event) {
-    const layerId: {owner: number, id: string} = event.detail;
+    const layerId: { owner: number, id: string } = event.detail;
     state = "loading";
-    editLayerState.startSavingUpdates(false)
+    editLayerState.startSavingUpdates(false);
     editLayerState.configuration.setData(await studio.fetch(layerId.id, "layers", layerId.owner));
-    editLayerState.startSavingUpdates()
+    editLayerState.startSavingUpdates();
     state = "editing_layer";
   }
 
   async function editTheme(event: Event) {
-    const id : {id: string, owner: number} = event.detail;
+    const id: { id: string, owner: number } = event.detail;
     state = "loading";
-    editThemeState.startSavingUpdates(false)
+    editThemeState.startSavingUpdates(false);
     editThemeState.configuration.setData(await studio.fetch(id.id, "themes", id.owner));
-    editThemeState.startSavingUpdates()
+    editThemeState.startSavingUpdates();
     state = "editing_theme";
   }
 
@@ -102,7 +109,7 @@ const version = meta.version
       }]
     };
     editLayerState.configuration.setData(initialLayerConfig);
-    editLayerState.startSavingUpdates()
+    editLayerState.startSavingUpdates();
     state = "editing_layer";
   }
 
@@ -139,9 +146,9 @@ const version = meta.version
       </NextButton>
     </div>
     {#if state === undefined}
-      <div class="m-4">
-        <h1>MapComplete Studio</h1>
+      <div class="p-4   flex flex-col justify-between h-full">
         <div class="w-full flex flex-col">
+          <h1>MapComplete Studio</h1>
 
           <NextButton on:click={() => state = "edit_layer"}>
             Edit an existing layer
@@ -160,7 +167,11 @@ const version = meta.version
             Show the introduction again
           </NextButton>
         </div>
+        <div>
+          
+          <Checkbox selected={expertMode} >Enable more options (expert mode)</Checkbox>
         <span class="subtle">MapComplete version {version}</span>
+        </div>
       </div>
     {:else if state === "edit_layer"}
 
@@ -175,7 +186,7 @@ const version = meta.version
         <ChooseLayerToEdit {osmConnection} layerIds={$otherLayers} on:layerSelected={editLayer} />
 
         <h3>Official layers by MapComplete</h3>
-        <ChooseLayerToEdit  {osmConnection} layerIds={$officialLayers} on:layerSelected={editLayer} />
+        <ChooseLayerToEdit {osmConnection} layerIds={$officialLayers} on:layerSelected={editLayer} />
       </div>
     {:else if state === "edit_theme"}
 
@@ -202,7 +213,7 @@ const version = meta.version
         </BackButton>
       </EditLayer>
     {:else if state === "editing_theme"}
-      <EditTheme state={editThemeState} >
+      <EditTheme state={editThemeState}>
         <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => {state =undefined}}>MapComplete Studio
         </BackButton>
       </EditTheme>
@@ -213,7 +224,7 @@ const version = meta.version
 
 {#if $showIntro}
   <FloatOver on:close={() => {showIntro.setData(false)}}>
-    <div class="flex p-4 h-full">
+    <div class="flex p-4 h-full pr-12">
       <Walkthrough pages={intro.sections} on:done={() => {showIntro.setData(false)}} />
     </div>
   </FloatOver>

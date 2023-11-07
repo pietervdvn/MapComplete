@@ -57,7 +57,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -83,12 +83,12 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *<div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div>*  corresponds with  `highway=living_street`
-  - *Dit is een brede, autovrije straat*  corresponds with  `highway=pedestrian`
-  - *Dit is een voetpaadje*  corresponds with  `highway=footway`
-  - *Dit is een wegeltje of bospad*  corresponds with  `highway=path`
-  - *Dit is een ruiterswegel*  corresponds with  `highway=bridleway`
-  - *Dit is een tractorspoor of weg om landbouwgrond te bereikken*  corresponds with  `highway=track`
+  - *This is a living street*  corresponds with  `highway=living_street`
+  - *This is a wide, carfree street*  corresponds with  `highway=pedestrian`
+  - *This is a footway*  corresponds with  `highway=footway`
+  - *This is a small path*  corresponds with  `highway=path`
+  - *This is a bridleway*  corresponds with  `highway=bridleway`
+  - *This is a land access road*  corresponds with  `highway=track`
 
 
 
@@ -97,7 +97,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  *Wat is de wegverharding van dit pad?*
+The question is  *What surface does this road have?*
 
 This rendering asks information about the property  [surface](https://wiki.openstreetmap.org/wiki/Key:surface) 
 
@@ -125,14 +125,14 @@ This is rendered with  `The surface is <b>{surface}</b>`
 
 
 
-The question is  *Is deze weg 's nachts verlicht?*
+The question is  *Is this road lit at night?*
 
 
 
 
 
   - *'s nachts verlicht*  corresponds with  `lit=yes`
-  - *Niet verlicht*  corresponds with  `lit=no`
+  - *Not lit*  corresponds with  `lit=no`
 
 
 
@@ -169,7 +169,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 

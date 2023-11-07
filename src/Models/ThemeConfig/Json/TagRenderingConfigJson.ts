@@ -86,6 +86,8 @@ export interface TagRenderingConfigJson {
      *
      * question: When should this item be shown?
      * type: tag
+     * ifunset: No specific condition set; always show this tagRendering or ask the question if unkown
+     *
      * Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.
      *
      * This is useful to ask a follow-up question.
@@ -146,7 +148,7 @@ export interface TagRenderingConfigJson {
          * If this key is present in the feature, then 'render' is used to display the value.
          * If this is undefined, the rendering is _always_ shown
          */
-        key: string
+        key?: string
     }
 
     /**
@@ -174,7 +176,10 @@ export interface TagRenderingConfigJson {
         then: Translatable
         /**
          * question: What icon should be added to this mapping?
-         * An icon supporting this mapping; typically shown pretty small
+         * ifunset: Do not show an extra icon next to the render value
+         *
+         * An icon supporting this mapping; typically shown pretty small.
+         * This can be used to show a 'phone'-icon next to the phone number
          * inline: <img src='{icon}' class="w-8 h-8" /> {icon}
          * Type: icon
          */

@@ -17,10 +17,10 @@
   export let state: EditLayerState;
   export let path: (string | number)[] = [];
   export let schema: ConfigMeta;
-  export let startInEditModeIfUnset: boolean = !schema.hints.ifunset
+  export let startInEditModeIfUnset: boolean = schema.hints && !schema.hints.ifunset
   let value = new UIEventSource<string | any>(undefined);
 
-  const isTranslation = schema.hints.typehint === "translation" || schema.hints.typehint === "rendered" || ConfigMetaUtils.isTranslation(schema);
+  const isTranslation = schema.hints?.typehint === "translation" || schema.hints?.typehint === "rendered" || ConfigMetaUtils.isTranslation(schema);
   let type = schema.hints.typehint ?? "string";
 
   let rendervalue = (schema.hints.inline ?? schema.path.join(".")) + (isTranslation ? " <b>{translated(value)}</b>": " <b>{value}</b>");

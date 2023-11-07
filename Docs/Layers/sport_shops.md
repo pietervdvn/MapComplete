@@ -80,7 +80,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -307,7 +307,7 @@ The question is  *Does this shop sell second-hand items?*
   - *This shop only sells brand-new items*  corresponds with  `second_hand=no`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `shop=clothes|shop=car|shop=books|shop=charity|shop=car_repair|shop=furniture|shop=bicycle|shop=bicycle|shop=mobile_phone|shop=computer|shop=toys`
+This tagrendering is only visible in the popup if the following condition is met: `shop=clothes |shop=car |shop=books |shop=charity |shop=car_repair |shop=furniture |shop=bicycle |shop=bicycle |shop=mobile_phone |shop=computer |shop=toys`
 
 
 
@@ -474,7 +474,7 @@ The question is  *What paper formats does this shop offer?*
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A0' target='_blank'>service:print:A0</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A0%3Dno' target='_blank'>no</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes`
+This tagrendering is only visible in the popup if the following condition is met: `shop~^(.*copyshop.*)$ |shop~^(.*stationery.*)$ |service:print=yes`
 
 
 
@@ -482,7 +482,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-This tagrendering has no question and is thus read-only
+The question is  *Does this shop offer key cutting?*
 
 
 
@@ -493,7 +493,7 @@ This tagrendering has no question and is thus read-only
   - *This shops does not offer key cutting as a service*  corresponds with  `service:key_cutting=no`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `shop=shoe_repair|service:key_cutting~.+|craft=key_cutting|shop=diy|shop=doityourself|shop=home_improvement|shop=hardware|shop=locksmith|shop=repair`
+This tagrendering is only visible in the popup if the following condition is met: `shop=shoe_repair |service:key_cutting~.+ |craft=key_cutting |shop=diy |shop=doityourself |shop=home_improvement |shop=hardware |shop=locksmith |shop=repair`
 
 
 
@@ -532,7 +532,7 @@ The question is  *Is there a fee for internet access?*
   - *Internet access is free at this place, for customers only*  corresponds with  `internet_access:fee=customers`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no&internet_access~.+`
+This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no &internet_access~.+`
 
 
 
@@ -572,7 +572,7 @@ The question is  *Does this shop offer organic products?*
   - *This shop does not offer organic products*  corresponds with  `organic=no`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=clothes|shop=shoes|shop=butcher|shop=cosmetics|shop=deli|shop=bakery|shop=alcohol|shop=seafood|shop=beverages|shop=florist`
+This tagrendering is only visible in the popup if the following condition is met: `shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=clothes |shop=shoes |shop=butcher |shop=cosmetics |shop=deli |shop=bakery |shop=alcohol |shop=seafood |shop=beverages |shop=florist`
 
 
 
@@ -592,7 +592,7 @@ The question is  *Does this shop have a sugar free offering?*
   - *This shop has no sugar free offering*  corresponds with  `diet:sugar_free=no`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream`
+This tagrendering is only visible in the popup if the following condition is met: `shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=deli |shop=bakery |shop=beverages |shop=beverages |shop=pastry |shop=chocolate |shop=frozen_food |shop=ice_cream`
 
 This tagrendering has labels  `diets`
 
@@ -614,7 +614,7 @@ The question is  *Does this shop have a gluten free offering?*
   - *This shop has no gluten free offering*  corresponds with  `diet:gluten_free=no`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream`
+This tagrendering is only visible in the popup if the following condition is met: `shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=deli |shop=bakery |shop=beverages |shop=beverages |shop=pastry |shop=chocolate |shop=frozen_food |shop=ice_cream`
 
 This tagrendering has labels  `diets`
 
@@ -636,7 +636,7 @@ The question is  *Does {title()} have a lactose-free offering?*
   - *No lactose free offering*  corresponds with  `diet:lactose_free=no`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream`
+This tagrendering is only visible in the popup if the following condition is met: `shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=deli |shop=bakery |shop=beverages |shop=beverages |shop=pastry |shop=chocolate |shop=frozen_food |shop=ice_cream`
 
 This tagrendering has labels  `diets`
 
@@ -708,7 +708,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 
@@ -765,35 +765,35 @@ accepts_cards.0 | Accepts payment cards | payment:cards=yes
 
 id | question | osmTags
 ---- | ---------- | ---------
-has_organic.0 | Has organic options | organic=yes\|organic=only
+has_organic.0 | Has organic options | organic=yes \|organic=only
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-second_hand.0 | Only show shops selling second-hand items | shop=second_hand\|shop=charity\|second_hand=yes\|second_hand=only
+second_hand.0 | Only show shops selling second-hand items | shop=second_hand \|shop=charity \|second_hand=yes \|second_hand=only
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-sugar_free.0 | Has a sugar-free offering | diet:sugar_free=yes\|diet:sugar_free=only\|diet:sugar_free=limited
+sugar_free.0 | Has a sugar-free offering | diet:sugar_free=yes \|diet:sugar_free=only \|diet:sugar_free=limited
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-gluten_free.0 | Has a gluten free offering | diet:gluten_free=yes\|diet:gluten_free=only\|diet:gluten_free=limited
+gluten_free.0 | Has a gluten free offering | diet:gluten_free=yes \|diet:gluten_free=only \|diet:gluten_free=limited
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-lactose_free.0 | Has a lactose free offering | diet:lactose_free=yes\|diet:lactose_free=only\|diet:lactose_free=limited
+lactose_free.0 | Has a lactose free offering | diet:lactose_free=yes \|diet:lactose_free=only \|diet:lactose_free=limited
  
 
 This document is autogenerated from [assets/themes/sports/sports.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/themes/sports/sports.json)

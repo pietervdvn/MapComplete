@@ -18,7 +18,7 @@
   <ArrayMultiAnswer {path} {state} {schema}/>
 {:else if schema.type === "array"}
   <SchemaBasedArray {path} {state} {schema} />
-{:else if schema.hints.types}
+{:else if schema.hints?.types}
   <SchemaBasedMultiType {path} {state} {schema} />
 {:else}
   <SchemaBasedField {path} {state} {schema} />

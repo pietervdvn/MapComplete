@@ -17,7 +17,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Map of hydrants' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Map of hydrants' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "colour",
@@ -136,7 +136,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Map of fire extinguishers' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Map of fire extinguishers' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "location",
@@ -175,7 +175,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Map of fire stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Map of fire stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "name",
@@ -195,12 +195,12 @@
     },
     {
       "key": "operator",
-      "description": "Layer 'Map of fire stations' shows operator=Bureau of Fire Protection&operator:type=government with a fixed text, namely 'Bureau of Fire Protection' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')",
+      "description": "Layer 'Map of fire stations' shows operator=Bureau of Fire Protection &operator:type=government with a fixed text, namely 'Bureau of Fire Protection' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')",
       "value": "Bureau of Fire Protection"
     },
     {
       "key": "operator:type",
-      "description": "Layer 'Map of fire stations' shows operator=Bureau of Fire Protection&operator:type=government with a fixed text, namely 'Bureau of Fire Protection' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')",
+      "description": "Layer 'Map of fire stations' shows operator=Bureau of Fire Protection &operator:type=government with a fixed text, namely 'Bureau of Fire Protection' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')",
       "value": "government"
     },
     {
@@ -250,7 +250,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Map of ambulance stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Map of ambulance stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "name",

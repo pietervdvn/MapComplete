@@ -32,6 +32,8 @@ export abstract class EditJsonState<T> {
     public readonly category: "layers" | "themes"
     public readonly server: StudioServer
 
+    public readonly expertMode: UIEventSource<boolean>
+
     public readonly configuration: UIEventSource<Partial<T>> = new UIEventSource<Partial<T>>({})
     public readonly messages: Store<ConversionMessage[]>
 
@@ -44,10 +46,18 @@ export abstract class EditJsonState<T> {
     private sendingUpdates = false
     private readonly _stores = new Map<string, UIEventSource<any>>()
 
-    constructor(schema: ConfigMeta[], server: StudioServer, category: "layers" | "themes") {
+    constructor(
+        schema: ConfigMeta[],
+        server: StudioServer,
+        category: "layers" | "themes",
+        options?: {
+            expertMode?: UIEventSource<boolean>
+        }
+    ) {
         this.schema = schema
         this.server = server
         this.category = category
+        this.expertMode = options?.expertMode ?? new UIEventSource<boolean>(false)
 
         this.messages = this.setupErrorsForLayers()
 
@@ -261,8 +271,13 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
         },
     }
 
-    constructor(schema: ConfigMeta[], server: StudioServer, osmConnection: OsmConnection) {
-        super(schema, server, "layers")
+    constructor(
+        schema: ConfigMeta[],
+        server: StudioServer,
+        osmConnection: OsmConnection,
+        options: { expertMode: UIEventSource<boolean> }
+    ) {
+        super(schema, server, "layers", options)
         this.osmConnection = osmConnection
         this.layout = {
             getMatchingLayer: (_) => {
@@ -330,8 +345,12 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
 }
 
 export class EditThemeState extends EditJsonState<LayoutConfigJson> {
-    constructor(schema: ConfigMeta[], server: StudioServer) {
-        super(schema, server, "themes")
+    constructor(
+        schema: ConfigMeta[],
+        server: StudioServer,
+        options: { expertMode: UIEventSource<boolean> }
+    ) {
+        super(schema, server, "themes", options)
     }
 
     protected buildValidation(state: DesugaringContext): Conversion<LayoutConfigJson, any> {

@@ -121,7 +121,7 @@ export interface MappingConfigJson {
 
     /**
      * question: What extra tags should be added to the object if this object is chosen?
-     * type: simple_tag[]
+     * type: simple_tag
      *
      * If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`
      * Not compatible with multiAnswer.
@@ -204,7 +204,7 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
          * ifunset: do not offer a freeform textfield as answer option
          *
          */
-        key: string
+        key?: string
 
         /**
          * question: What is the input type?
@@ -212,23 +212,26 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
          * See Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values
          * ifunset: use an unconstrained <b>string</b> as input (default)
          * suggestions: return validators.AllValidators.filter(type => !type.isMeta).map((type) => ({if: "value="+type.name, then: "<b>"+type.name+"</b> "+type.explanation.split("\n")[0]}))
-         */
+         **/
         type?: string
         /**
          * question: What placeholder text should be shown in the input-element if there is no input?
          * A (translated) text that is shown (as gray text) within the textfield
          * type: translation
+         * group: expert
          */
         placeholder?: Translatable
 
         /**
          * Extra parameters to initialize the input helper arguments.
          * For semantics, see the 'SpecialInputElements.md'
+         * group: expert
          */
         helperArgs?: (string | number | boolean | any)[]
         /**
          * If a value is added with the textfield, these extra tag is addded.
          * Useful to add a 'fixme=freeform textfield used - to be checked'
+         * group: expert
          **/
         addExtraTags?: string[]
 
@@ -239,6 +242,7 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
          * This combines badly with special input elements, as it'll distort the layout.
          * ifunset: show the freeform input field full-width
          * iftrue: show the freeform input field as a small field within the question
+         * group: expert
          */
         inline?: boolean
 
@@ -246,12 +250,14 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
          * question: What value should be entered in the text field if no value is set?
          * This can help people to quickly enter the most common option
          * ifunset: do not prefill the textfield
+         * group: expert
          */
         default?: string
         /**
          * question: What values of the freeform key should be interpreted as 'unknown'?
          * For example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked
          * ifunset: The question will be considered answered if any value is set for the key
+         * group: expert
          */
         invalidValues?: TagConfigJson
     }

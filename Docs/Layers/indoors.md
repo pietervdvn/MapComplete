@@ -85,7 +85,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -154,7 +154,7 @@ This is rendered with  `This room has the reference number {ref}`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `indoor=room|indoor=area|indoor=corridor`
+This tagrendering is only visible in the popup if the following condition is met: `indoor=room |indoor=area |indoor=corridor`
 
 
 
@@ -170,7 +170,7 @@ This is rendered with  `This room is named {name}`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `indoor=room|indoor=area|indoor=corridor`
+This tagrendering is only visible in the popup if the following condition is met: `indoor=room |indoor=area |indoor=corridor`
 
 
 
@@ -224,7 +224,7 @@ This is rendered with  `At most {capacity} people fit this room`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `room=waiting|room=restaurant|room=office|room=nursery|room=conference|room=auditorium|room=chapel|room=bedroom|room=classroom`
+This tagrendering is only visible in the popup if the following condition is met: `room=waiting |room=restaurant |room=office |room=nursery |room=conference |room=auditorium |room=chapel |room=bedroom |room=classroom`
 
 
 
@@ -284,7 +284,7 @@ The question is  *Are these toilets free to use?*
   - *Free to use*  corresponds with  `fee=no`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `amenity=toilets&access!=no`
+This tagrendering is only visible in the popup if the following condition is met: `amenity=toilets &access!=no`
 
 This tagrendering has labels  `relevant-questions`
 
@@ -302,7 +302,7 @@ This is rendered with  `The fee is {charge}`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `amenity=toilets&fee=yes`
+This tagrendering is only visible in the popup if the following condition is met: `amenity=toilets &fee=yes`
 
 This tagrendering has labels  `relevant-questions`
 
@@ -336,7 +336,7 @@ The question is  *Which methods of payment are accepted here?*
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dno' target='_blank'>no</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `amenity=toilets&fee=yes`
+This tagrendering is only visible in the popup if the following condition is met: `amenity=toilets &fee=yes`
 
 This tagrendering has labels  `relevant-questions`
 
@@ -359,7 +359,7 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
   - *24/7 opened (including holidays)*  corresponds with  `opening_hours=24/7`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `amenity=toilets&access!=no`
+This tagrendering is only visible in the popup if the following condition is met: `amenity=toilets &access!=no`
 
 This tagrendering has labels  `relevant-questions`
 
@@ -398,7 +398,7 @@ This is rendered with  `The door to the wheelchair-accessible toilet is {canonic
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `amenity=toilets&wheelchair=yes|wheelchair=designated`
+This tagrendering is only visible in the popup if the following condition is met: `amenity=toilets &wheelchair=yes |wheelchair=designated`
 
 This tagrendering has labels  `relevant-questions`
 
@@ -466,7 +466,7 @@ This is rendered with  `The changing table is located at {changing_table:locatio
   - *The changing table is in a dedicated room. *  corresponds with  `changing_table:location=dedicated_room`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `amenity=toilets&changing_table=yes`
+This tagrendering is only visible in the popup if the following condition is met: `amenity=toilets &changing_table=yes`
 
 This tagrendering has labels  `relevant-questions`
 
@@ -506,7 +506,7 @@ The question is  *Does one have to bring their own toilet paper to this toilet?*
   - *You have to bring your own toilet paper to this toilet*  corresponds with  `toilets:paper_supplied=no`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `amenity=toilets&toilets:position!=urinal`
+This tagrendering is only visible in the popup if the following condition is met: `amenity=toilets &toilets:position!=urinal`
 
 This tagrendering has labels  `relevant-questions`
 
@@ -544,7 +544,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 

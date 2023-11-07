@@ -71,7 +71,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -163,7 +163,7 @@ The question is  *Is the OpenStreetMap-attribution given?*
   - This option cannot be chosen as answer
 
 
-This tagrendering is only visible in the popup if the following condition is met: `map_source~^((O|)pen(S|s)treet(M|m)ap)$|map_source=osm|map_source=OSM`
+This tagrendering is only visible in the popup if the following condition is met: `map_source~^((O|)pen(S|s)treet(M|m)ap)$ |map_source=osm |map_source=OSM`
 
 This tagrendering has labels  `map`
 
@@ -221,7 +221,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 

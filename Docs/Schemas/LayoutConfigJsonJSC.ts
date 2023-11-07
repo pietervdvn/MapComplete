@@ -585,7 +585,7 @@ export default {
           ]
         },
         "condition": {
-          "description": "question: When should this item be shown?\ntype: tag\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
+          "description": "question: When should this item be shown?\ntype: tag\nifunset: No specific condition set; always show this tagRendering or ask the question if unkown\n\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
           "anyOf": [
             {
               "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -620,10 +620,7 @@ export default {
               "description": "What attribute should be filled out\nIf this key is present in the feature, then 'render' is used to display the value.\nIf this is undefined, the rendering is _always_ shown",
               "type": "string"
             }
-          },
-          "required": [
-            "key"
-          ]
+          }
         },
         "mappings": {
           "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes",
@@ -647,7 +644,7 @@ export default {
                 ]
               },
               "icon": {
-                "description": "question: What icon should be added to this mapping?\nAn icon supporting this mapping; typically shown pretty small\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                 "anyOf": [
                   {
                     "type": "object",
@@ -771,7 +768,7 @@ export default {
           ]
         },
         "addExtraTags": {
-          "description": "question: What extra tags should be added to the object if this object is chosen?\ntype: simple_tag[]\n\nIf chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\n\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```",
+          "description": "question: What extra tags should be added to the object if this object is chosen?\ntype: simple_tag\n\nIf chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\n\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```",
           "type": "array",
           "items": {
             "type": "string"
@@ -1076,7 +1073,7 @@ export default {
               "type": "string"
             },
             "placeholder": {
-              "description": "question: What placeholder text should be shown in the input-element if there is no input?\nA (translated) text that is shown (as gray text) within the textfield\ntype: translation",
+              "description": "question: What placeholder text should be shown in the input-element if there is no input?\nA (translated) text that is shown (as gray text) within the textfield\ntype: translation\ngroup: expert",
               "anyOf": [
                 {
                   "$ref": "#/definitions/Record<string,string>"
@@ -1087,27 +1084,27 @@ export default {
               ]
             },
             "helperArgs": {
-              "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'",
+              "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'\ngroup: expert",
               "type": "array",
               "items": {}
             },
             "addExtraTags": {
-              "description": "If a value is added with the textfield, these extra tag is addded.\nUseful to add a 'fixme=freeform textfield used - to be checked'",
+              "description": "If a value is added with the textfield, these extra tag is addded.\nUseful to add a 'fixme=freeform textfield used - to be checked'\ngroup: expert",
               "type": "array",
               "items": {
                 "type": "string"
               }
             },
             "inline": {
-              "description": "question: Show the freeform as box within the question?\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nifunset: show the freeform input field full-width\niftrue: show the freeform input field as a small field within the question",
+              "description": "question: Show the freeform as box within the question?\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nifunset: show the freeform input field full-width\niftrue: show the freeform input field as a small field within the question\ngroup: expert",
               "type": "boolean"
             },
             "default": {
-              "description": "question: What value should be entered in the text field if no value is set?\nThis can help people to quickly enter the most common option\nifunset: do not prefill the textfield",
+              "description": "question: What value should be entered in the text field if no value is set?\nThis can help people to quickly enter the most common option\nifunset: do not prefill the textfield\ngroup: expert",
               "type": "string"
             },
             "invalidValues": {
-              "description": "question: What values of the freeform key should be interpreted as 'unknown'?\nFor example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked\nifunset: The question will be considered answered if any value is set for the key",
+              "description": "question: What values of the freeform key should be interpreted as 'unknown'?\nFor example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked\nifunset: The question will be considered answered if any value is set for the key\ngroup: expert",
               "anyOf": [
                 {
                   "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -1120,10 +1117,7 @@ export default {
                 }
               ]
             }
-          },
-          "required": [
-            "key"
-          ]
+          }
         },
         "question": {
           "description": "question: What question should be shown to the contributor?\n\nA question is presented ot the user if no mapping matches and the 'freeform' key is not set as well.\n\nifunset: This tagrendering will be shown if it is known, but cannot be edited by the contributor, effectively resutling in a read-only rendering",
@@ -1216,7 +1210,7 @@ export default {
           ]
         },
         "condition": {
-          "description": "question: When should this item be shown?\ntype: tag\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
+          "description": "question: When should this item be shown?\ntype: tag\nifunset: No specific condition set; always show this tagRendering or ask the question if unkown\n\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
           "anyOf": [
             {
               "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -1293,7 +1287,7 @@ export default {
               "type": "string"
             },
             "placeholder": {
-              "description": "question: What placeholder text should be shown in the input-element if there is no input?\nA (translated) text that is shown (as gray text) within the textfield\ntype: translation",
+              "description": "question: What placeholder text should be shown in the input-element if there is no input?\nA (translated) text that is shown (as gray text) within the textfield\ntype: translation\ngroup: expert",
               "anyOf": [
                 {
                   "$ref": "#/definitions/Record<string,string>"
@@ -1304,27 +1298,27 @@ export default {
               ]
             },
             "helperArgs": {
-              "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'",
+              "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'\ngroup: expert",
               "type": "array",
               "items": {}
             },
             "addExtraTags": {
-              "description": "If a value is added with the textfield, these extra tag is addded.\nUseful to add a 'fixme=freeform textfield used - to be checked'",
+              "description": "If a value is added with the textfield, these extra tag is addded.\nUseful to add a 'fixme=freeform textfield used - to be checked'\ngroup: expert",
               "type": "array",
               "items": {
                 "type": "string"
               }
             },
             "inline": {
-              "description": "question: Show the freeform as box within the question?\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nifunset: show the freeform input field full-width\niftrue: show the freeform input field as a small field within the question",
+              "description": "question: Show the freeform as box within the question?\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nifunset: show the freeform input field full-width\niftrue: show the freeform input field as a small field within the question\ngroup: expert",
               "type": "boolean"
             },
             "default": {
-              "description": "question: What value should be entered in the text field if no value is set?\nThis can help people to quickly enter the most common option\nifunset: do not prefill the textfield",
+              "description": "question: What value should be entered in the text field if no value is set?\nThis can help people to quickly enter the most common option\nifunset: do not prefill the textfield\ngroup: expert",
               "type": "string"
             },
             "invalidValues": {
-              "description": "question: What values of the freeform key should be interpreted as 'unknown'?\nFor example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked\nifunset: The question will be considered answered if any value is set for the key",
+              "description": "question: What values of the freeform key should be interpreted as 'unknown'?\nFor example, if a feature has `shop=yes`, the question 'what type of shop is this?' should still asked\nifunset: The question will be considered answered if any value is set for the key\ngroup: expert",
               "anyOf": [
                 {
                   "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -1337,10 +1331,7 @@ export default {
                 }
               ]
             }
-          },
-          "required": [
-            "key"
-          ]
+          }
         },
         "question": {
           "description": "question: What question should be shown to the contributor?\n\nA question is presented ot the user if no mapping matches and the 'freeform' key is not set as well.\n\nifunset: This tagrendering will be shown if it is known, but cannot be edited by the contributor, effectively resutling in a read-only rendering",
@@ -1433,7 +1424,7 @@ export default {
           ]
         },
         "condition": {
-          "description": "question: When should this item be shown?\ntype: tag\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
+          "description": "question: When should this item be shown?\ntype: tag\nifunset: No specific condition set; always show this tagRendering or ask the question if unkown\n\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
           "anyOf": [
             {
               "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -1799,7 +1790,7 @@ export default {
                   "description": "question: Which tags must be present on the feature to show it in this layer?\nEvery source must set which tags have to be present in order to load the given layer."
                 },
                 "maxCacheAge": {
-                  "description": "question: How long (in seconds) is the data allowed to remain cached until it must be refreshed?\nThe maximum amount of seconds that a tile is allowed to linger in the cache\n\ntype: nat\ndefault: 30 days",
+                  "description": "question: How long (in seconds) is the data allowed to remain cached until it must be refreshed?\nThe maximum amount of seconds that a tile is allowed to linger in the cache\n\ntype: nat\ndefault: 30 days\ngroup: expert",
                   "type": "number"
                 }
               },
@@ -1819,7 +1810,7 @@ export default {
                   "type": "number"
                 },
                 "isOsmCache": {
-                  "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache.\nThis also indicates that making changes on this data is possible\n\nquestion: Is this geojson a cache of OpenStreetMap data?\nifunset: This is not an OpenStreetMap cache\niftrue: this is based on OpenStreetMap and can thus be edited",
+                  "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache.\nThis also indicates that making changes on this data is possible\n\nquestion: Is this geojson a cache of OpenStreetMap data?\nifunset: This is not an OpenStreetMap cache\niftrue: this is based on OpenStreetMap and can thus be edited\ngroup: expert",
                   "type": "boolean"
                 },
                 "mercatorCrs": {
@@ -2198,7 +2189,7 @@ export default {
                   "description": "question: Which tags must be present on the feature to show it in this layer?\nEvery source must set which tags have to be present in order to load the given layer."
                 },
                 "maxCacheAge": {
-                  "description": "question: How long (in seconds) is the data allowed to remain cached until it must be refreshed?\nThe maximum amount of seconds that a tile is allowed to linger in the cache\n\ntype: nat\ndefault: 30 days",
+                  "description": "question: How long (in seconds) is the data allowed to remain cached until it must be refreshed?\nThe maximum amount of seconds that a tile is allowed to linger in the cache\n\ntype: nat\ndefault: 30 days\ngroup: expert",
                   "type": "number"
                 }
               },
@@ -2218,7 +2209,7 @@ export default {
                   "type": "number"
                 },
                 "isOsmCache": {
-                  "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache.\nThis also indicates that making changes on this data is possible\n\nquestion: Is this geojson a cache of OpenStreetMap data?\nifunset: This is not an OpenStreetMap cache\niftrue: this is based on OpenStreetMap and can thus be edited",
+                  "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache.\nThis also indicates that making changes on this data is possible\n\nquestion: Is this geojson a cache of OpenStreetMap data?\nifunset: This is not an OpenStreetMap cache\niftrue: this is based on OpenStreetMap and can thus be edited\ngroup: expert",
                   "type": "boolean"
                 },
                 "mercatorCrs": {

@@ -17,7 +17,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Picnic tables' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Benches') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Picnic tables' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Benches') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -90,7 +90,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Benches' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Benches') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Benches' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Benches') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -110,12 +110,12 @@
     },
     {
       "key": "backrest",
-      "description": "Layer 'Benches' shows backrest=yes&two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Benches')",
+      "description": "Layer 'Benches' shows backrest=yes &two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Benches')",
       "value": "yes"
     },
     {
       "key": "two_sided",
-      "description": "Layer 'Benches' shows backrest=yes&two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Benches')",
+      "description": "Layer 'Benches' shows backrest=yes &two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Benches')",
       "value": "yes"
     },
     {
@@ -259,17 +259,17 @@
     },
     {
       "key": "historic",
-      "description": "Layer 'Benches' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Benches') (This is only shown if historic=memorial|inscription~.+|memorial=bench|tourism=artwork)",
+      "description": "Layer 'Benches' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Benches') (This is only shown if historic=memorial |inscription~.+ |memorial=bench |tourism=artwork)",
       "value": "memorial"
     },
     {
       "key": "historic",
-      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Benches') Picking this answer will delete the key historic. (This is only shown if historic=memorial|inscription~.+|memorial=bench|tourism=artwork)",
+      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Benches') Picking this answer will delete the key historic. (This is only shown if historic=memorial |inscription~.+ |memorial=bench |tourism=artwork)",
       "value": ""
     },
     {
       "key": "not:historic",
-      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Benches') (This is only shown if historic=memorial|inscription~.+|memorial=bench|tourism=artwork)",
+      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Benches') (This is only shown if historic=memorial |inscription~.+ |memorial=bench |tourism=artwork)",
       "value": "memorial"
     },
     {
@@ -374,7 +374,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Benches at public transport stops' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Benches') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Benches at public transport stops' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Benches') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",

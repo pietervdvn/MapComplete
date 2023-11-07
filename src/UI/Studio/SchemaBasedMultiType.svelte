@@ -14,6 +14,7 @@
   // @ts-ignore
   import nmd from "nano-markdown";
   import ShowConversionMessage from "./ShowConversionMessage.svelte";
+  import exp from "constants";
 
   /**
    * If 'types' is defined: allow the user to pick one of the types to input.
@@ -22,6 +23,7 @@
   export let state: EditLayerState;
   export let path: (string | number)[] = [];
   export let schema: ConfigMeta;
+  let expertMode = state.expertMode;
   const defaultOption = schema.hints.typesdefault ? Number(schema.hints.typesdefault) : undefined;
 
   const hasBooleanOption = (<JsonSchemaType[]>schema.type)?.findIndex(t => t["type"] === "boolean");
@@ -212,16 +214,22 @@
 
     {#if chosenOption !== undefined}
       {#each subSchemas as subschema}
-        <SchemaBasedInput {state} schema={subschema}
-                          path={[...subpath, (subschema?.path?.at(-1) ?? "???")]}></SchemaBasedInput>
+        {#if $expertMode || subschema.hints?.group !== "expert"}
+          <SchemaBasedInput {state} schema={subschema}
+                            path={[...subpath, (subschema?.path?.at(-1) ?? "???")]}></SchemaBasedInput>
+          {:else if window.location.hostname === "127.0.0.1"}
+            <span class="subtle">Omitted expert question {subschema.path.join(".")}</span>
+          
+        {/if}
       {/each}
     {:else if $messages.length > 0}
       {#each $messages as message}
-        <ShowConversionMessage {message}/>
+        <ShowConversionMessage {message} />
       {/each}
     {/if}
   {/if}
   {#if window.location.hostname === "127.0.0.1"}
-    <span class="subtle">SchemaBasedMultiType <b>{path.join(".")}</b> <span class="cursor-pointer" on:click={() => console.log(schema)}>{schema.hints.typehint}</span></span>
+    <span class="subtle">SchemaBasedMultiType <b>{path.join(".")}</b> <span class="cursor-pointer"
+                                                                            on:click={() => console.log(schema)}>{schema.hints.typehint}</span></span>
   {/if}
 </div>
