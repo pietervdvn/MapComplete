@@ -43,6 +43,66 @@
       "cs": "Vchod"
     }
   },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/entrance/entrance.svg",
+            "mappings": [
+              {
+                "if": "entrance=emergency",
+                "then": "./assets/layers/entrance/emergency_door.svg"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "an entrance",
+        "fr": "une entrée",
+        "de": "einen Eingang",
+        "nl": "een toegang",
+        "ca": "una entrada",
+        "cs": "vchod"
+      },
+      "tags": [
+        "entrance=yes"
+      ],
+      "snapToLayer": [
+        "walls_and_buildings",
+        "pedestrian_path"
+      ]
+    },
+    {
+      "title": {
+        "en": "an indoor door",
+        "de": "eine Innentür",
+        "nl": "een binnendeur",
+        "ca": "una porta interior",
+        "cs": "vnitřní dveře"
+      },
+      "tags": [
+        "indoor=door"
+      ],
+      "snapToLayer": [
+        "indoors"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     "level",
@@ -502,57 +562,6 @@
             "cs": "Tyto dveře nemají obrubník/práh"
           }
         }
-      ]
-    }
-  ],
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": {
-        "render": "circle:white;./assets/layers/entrance/entrance.svg",
-        "mappings": [
-          {
-            "if": "entrance=emergency",
-            "then": "circle:white;./assets/layers/entrance/emergency_door.svg"
-          }
-        ]
-      }
-    }
-  ],
-  "presets": [
-    {
-      "title": {
-        "en": "an entrance",
-        "fr": "une entrée",
-        "de": "einen Eingang",
-        "nl": "een toegang",
-        "ca": "una entrada",
-        "cs": "vchod"
-      },
-      "tags": [
-        "entrance=yes"
-      ],
-      "snapToLayer": [
-        "walls_and_buildings",
-        "pedestrian_path"
-      ]
-    },
-    {
-      "title": {
-        "en": "an indoor door",
-        "de": "eine Innentür",
-        "nl": "een binnendeur",
-        "ca": "una porta interior",
-        "cs": "vnitřní dveře"
-      },
-      "tags": [
-        "indoor=door"
-      ],
-      "snapToLayer": [
-        "indoors"
       ]
     }
   ],

@@ -22,7 +22,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Penny Presses' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Penny Presses') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Penny Presses' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Penny Presses') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -90,37 +90,37 @@
     },
     {
       "key": "payment:cash",
-      "description": "Layer 'Penny Presses' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes|)",
+      "description": "Layer 'Penny Presses' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes |)",
       "value": "yes"
     },
     {
       "key": "payment:cards",
-      "description": "Layer 'Penny Presses' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes|)",
+      "description": "Layer 'Penny Presses' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes |)",
       "value": "yes"
     },
     {
       "key": "payment:qr_code",
-      "description": "Layer 'Penny Presses' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes|)",
+      "description": "Layer 'Penny Presses' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes |)",
       "value": "yes"
     },
     {
       "key": "payment:coins",
-      "description": "Layer 'Penny Presses' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes|)",
+      "description": "Layer 'Penny Presses' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes |)",
       "value": "yes"
     },
     {
       "key": "payment:notes",
-      "description": "Layer 'Penny Presses' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes|)",
+      "description": "Layer 'Penny Presses' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes |)",
       "value": "yes"
     },
     {
       "key": "payment:debit_cards",
-      "description": "Layer 'Penny Presses' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes|)",
+      "description": "Layer 'Penny Presses' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes |)",
       "value": "yes"
     },
     {
       "key": "payment:credit_cards",
-      "description": "Layer 'Penny Presses' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes|)",
+      "description": "Layer 'Penny Presses' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes |)",
       "value": "yes"
     },
     {
@@ -172,101 +172,101 @@
     },
     {
       "key": "charge",
-      "description": "Layer 'Penny Presses' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes|)"
+      "description": "Layer 'Penny Presses' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes |)"
     },
     {
       "key": "charge",
-      "description": "Layer 'Penny Presses' shows charge=1 EUR with a fixed text, namely 'It costs 1 euro to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes|)",
+      "description": "Layer 'Penny Presses' shows charge=1 EUR with a fixed text, namely 'It costs 1 euro to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes |)",
       "value": "1 EUR"
     },
     {
       "key": "charge",
-      "description": "Layer 'Penny Presses' shows charge=2 EUR with a fixed text, namely 'It costs 2 euros to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes|)",
+      "description": "Layer 'Penny Presses' shows charge=2 EUR with a fixed text, namely 'It costs 2 euros to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes |)",
       "value": "2 EUR"
     },
     {
       "key": "charge",
-      "description": "Layer 'Penny Presses' shows charge=2 CHF with a fixed text, namely 'It costs 2 Swiss francs to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes|)",
+      "description": "Layer 'Penny Presses' shows charge=2 CHF with a fixed text, namely 'It costs 2 Swiss francs to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes |)",
       "value": "2 CHF"
     },
     {
       "key": "charge",
-      "description": "Layer 'Penny Presses' shows charge=1 CHF with a fixed text, namely 'It costs 1 Swiss franc to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes|)",
+      "description": "Layer 'Penny Presses' shows charge=1 CHF with a fixed text, namely 'It costs 1 Swiss franc to press a penny.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if fee=yes |)",
       "value": "1 CHF"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.01 EUR with a fixed text, namely '1 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.01 EUR with a fixed text, namely '1 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$)",
       "value": "0.01 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.02 EUR with a fixed text, namely '2 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.02 EUR with a fixed text, namely '2 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$)",
       "value": "0.02 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.05 EUR with a fixed text, namely '5 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.05 EUR with a fixed text, namely '5 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$)",
       "value": "0.05 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.10 EUR with a fixed text, namely '10 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.10 EUR with a fixed text, namely '10 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$)",
       "value": "0.10 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.20 EUR with a fixed text, namely '20 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.20 EUR with a fixed text, namely '20 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$)",
       "value": "0.20 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$)",
       "value": "0.50 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$)",
       "value": "1 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$)",
       "value": "2 EUR"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.05 CHF with a fixed text, namely '5 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.05 CHF with a fixed text, namely '5 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$)",
       "value": "0.05 CHF"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.10 CHF with a fixed text, namely '10 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.10 CHF with a fixed text, namely '10 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$)",
       "value": "0.10 CHF"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.20 CHF with a fixed text, namely '20 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.20 CHF with a fixed text, namely '20 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$)",
       "value": "0.20 CHF"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.50 CHF with a fixed text, namely '½ franc coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=0.50 CHF with a fixed text, namely '½ franc coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$)",
       "value": "0.50 CHF"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=1 CHF with a fixed text, namely '1 franc coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=1 CHF with a fixed text, namely '1 franc coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$)",
       "value": "1 CHF"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=2 CHF with a fixed text, namely '2 francs coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=2 CHF with a fixed text, namely '2 francs coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$)",
       "value": "2 CHF"
     },
     {
       "key": "payment:coins:denominations",
-      "description": "Layer 'Penny Presses' shows payment:coins:denominations=5 CHF with a fixed text, namely '5 francs coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$)",
+      "description": "Layer 'Penny Presses' shows payment:coins:denominations=5 CHF with a fixed text, namely '5 francs coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$)",
       "value": "5 CHF"
     },
     {

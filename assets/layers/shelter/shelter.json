@@ -30,15 +30,20 @@
       "cs": "Přístřešek"
     }
   },
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "point",
         "centroid"
       ],
-      "icon": "./assets/layers/shelter/shelter.svg"
+      "marker": [
+        {
+          "icon": "./assets/layers/shelter/shelter.svg"
+        }
+      ]
     }
   ],
+  "lineRendering": [],
   "tagRenderings": [
     {
       "id": "shelter-type",

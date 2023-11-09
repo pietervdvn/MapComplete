@@ -3,6 +3,13 @@
   "name": {
     "nl": "Speelweide"
   },
+  "description": {
+    "en": "A layer showing village-green (which are communal green areas, but not quite parks)",
+    "nl": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)",
+    "de": "Eine Ebene mit Dorfangern (kommunale Grünflächen, aber nicht wirklich Parks)",
+    "ca": "Una capa que mostra “village-green” (que són zones verdes comunals, però no parcs del tot)",
+    "cs": "Vrstva zobrazující městskou zeleň (což jsou společné zelené plochy, ale ne tak docela parky)"
+  },
   "source": {
     "osmTags": "landuse=village_green"
   },
@@ -20,6 +27,27 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/themes/playgrounds/playground.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#937f20",
+      "width": "1"
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -30,27 +58,5 @@
       "id": "village_green-reviews",
       "render": "{reviews(name, landuse=village_green )}"
     }
-  ],
-  "mapRendering": [
-    {
-      "icon": "./assets/themes/playgrounds/playground.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#937f20",
-      "width": "1"
-    }
-  ],
-  "description": {
-    "en": "A layer showing village-green (which are communal green areas, but not quite parks)",
-    "nl": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)",
-    "de": "Eine Ebene mit Dorfangern (kommunale Grünflächen, aber nicht wirklich Parks)",
-    "ca": "Una capa que mostra “village-green” (que són zones verdes comunals, però no parcs del tot)",
-    "cs": "Vrstva zobrazující městskou zeleň (což jsou společné zelené plochy, ale ne tak docela parky)"
-  }
+  ]
 }

@@ -16,22 +16,6 @@
     "cs": "Dohled pod dohledem",
     "pl": "Monitoring monitoringu"
   },
-  "shortDescription": {
-    "en": "Surveillance cameras and other means of surveillance",
-    "nl": "Bewakingscameras en dergelijke",
-    "ja": "監視カメラおよびその他の監視手段",
-    "zh_Hant": "監視鏡頭與其他型式的監視",
-    "fr": "Caméras et autres dispositifs de surveillance",
-    "pl": "Kamery monitorujące i inne środki nadzoru",
-    "de": "Überwachungskameras und andere Mittel zur Überwachung",
-    "it": "Telecamere di sorveglianza e altri mezzi di sorveglianza",
-    "hu": "Térfigyelő kamerák és más figyelőeszközök",
-    "da": "Overvågningskameraer og andre overvågningsmidler",
-    "nb_NO": "Overvåkningskameraer og andre typer overvåkning",
-    "ca": "Càmeres de vigilància i altres tipus de vigilància",
-    "es": "Cámaras de vigilancia y otros medios de vigilancia",
-    "cs": "Bezpečnostní kamery a další prostředky sledování"
-  },
   "description": {
     "en": "On this open map, you can find surveillance cameras.",
     "nl": "Op deze open kaart kan je bewakingscamera's vinden.",
@@ -49,13 +33,26 @@
     "es": "En este mapa abierto, puede encontrar cámaras de vigilancia.",
     "cs": "Na této otevřené mapě najdete bezpečnostní kamery."
   },
+  "shortDescription": {
+    "en": "Surveillance cameras and other means of surveillance",
+    "nl": "Bewakingscameras en dergelijke",
+    "ja": "監視カメラおよびその他の監視手段",
+    "zh_Hant": "監視鏡頭與其他型式的監視",
+    "fr": "Caméras et autres dispositifs de surveillance",
+    "pl": "Kamery monitorujące i inne środki nadzoru",
+    "de": "Überwachungskameras und andere Mittel zur Überwachung",
+    "it": "Telecamere di sorveglianza e altri mezzi di sorveglianza",
+    "hu": "Térfigyelő kamerák és más figyelőeszközök",
+    "da": "Overvågningskameraer og andre overvågningsmidler",
+    "nb_NO": "Overvåkningskameraer og andre typer overvåkning",
+    "ca": "Càmeres de vigilància i altres tipus de vigilància",
+    "es": "Cámaras de vigilancia y otros medios de vigilancia",
+    "cs": "Bezpečnostní kamery a další prostředky sledování"
+  },
   "icon": "./assets/themes/surveillance/logo.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 2,
   "defaultBackgroundId": "maptiler.carto",
   "layers": [
     "surveillance_camera"
-  ]
+  ],
+  "widenFactor": 2
 }

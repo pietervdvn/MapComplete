@@ -50,7 +50,7 @@ export class Or extends TagsFilter {
     }
 
     asHumanString(linkToWiki: boolean, shorten: boolean, properties) {
-        return this.or.map((t) => t.asHumanString(linkToWiki, shorten, properties)).join("|")
+        return this.or.map((t) => t.asHumanString(linkToWiki, shorten, properties)).join(" |")
     }
 
     isUsableAsAnswer(): boolean {

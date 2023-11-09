@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="220.00101mm"
+   height="45.566071mm"
+   viewBox="0 0 220.001 45.566072"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="NodesAndLines.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.1208049"
+     inkscape:cx="570.12597"
+     inkscape:cy="16.505994"
+     inkscape:window-width="1920"
+     inkscape:window-height="995"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="312.03925"
+       y="291.13016"
+       width="463.35043"
+       height="200.43016"
+       id="rect3644" />
+    <rect
+       x="312.03925"
+       y="291.13016"
+       width="463.35043"
+       height="200.43016"
+       id="rect3644-6" />
+    <rect
+       x="312.03925"
+       y="291.13016"
+       width="463.35043"
+       height="200.43016"
+       id="rect3644-4" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(3.275224,-190.14239)">
+    <circle
+       style="fill:#000000;fill-opacity:0.747356;stroke-width:0.264583;stroke-opacity:0.503144"
+       id="path846"
+       cx="155.23045"
+       cy="200.73116"
+       r="3.4037676" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,78.602949,114.21329)"
+       id="text3642"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect3644);fill:#000000;fill-opacity:0.747356;stroke-opacity:0.503144"><tspan
+         x="312.03906"
+         y="309.96523"
+         id="tspan27475">amenity=bench
+</tspan><tspan
+         x="312.03906"
+         y="335.16525"
+         id="tspan27477">backrest=yes
+</tspan><tspan
+         x="312.03906"
+         y="360.36526"
+         id="tspan27479">material=wood
+</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,2.4768353,112.99054)"
+       id="text3642-6"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:18.6667px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect3644-6);fill:#000000;fill-opacity:0.747356;stroke-opacity:0.503144"><tspan
+         x="312.03906"
+         y="305.77984"
+         id="tspan27481">highway=path
+</tspan><tspan
+         x="312.03906"
+         y="325.37988"
+         id="tspan27483">surface=ground
+</tspan><tspan
+         x="312.03906"
+         y="344.97992"
+         id="tspan27485">
+</tspan></text>
+    <g
+       id="g19865"
+       transform="rotate(84.297077,64.79351,209.1754)">
+      <path
+         style="fill:none;fill-opacity:0.747356;stroke:#000000;stroke-width:1.32292;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 86.700218,145.8218 -36.849626,62.33481 28.836665,43.62417 -35.409216,20.64427"
+         id="path10150"
+         sodipodi:nodetypes="cccc" />
+      <g
+         id="g19857">
+        <circle
+           style="fill:#000000;fill-opacity:0.747356;stroke-width:0.264583;stroke-opacity:0.503144"
+           id="path846-9"
+           cx="43.050552"
+           cy="271.99066"
+           r="3.4037676" />
+        <circle
+           style="fill:#000000;fill-opacity:0.747356;stroke-width:0.264583;stroke-opacity:0.503144"
+           id="path846-3"
+           cx="86.536469"
+           cy="146.36014"
+           r="3.4037676" />
+        <circle
+           style="fill:#000000;fill-opacity:0.747356;stroke-width:0.264583;stroke-opacity:0.503144"
+           id="path846-38"
+           cx="49.70155"
+           cy="207.84285"
+           r="3.4037676" />
+        <circle
+           style="fill:#ff0000;fill-opacity:0.747356;stroke-width:0.264583;stroke-opacity:0.503144"
+           id="path846-0"
+           cx="78.066574"
+           cy="250.76691"
+           r="3.4037676" />
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-55.957701,153.7383)"
+       id="text3642-0"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:18.6667px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect3644-4);fill:#ff0900;fill-opacity:0.747356;stroke-opacity:0.503144"><tspan
+         x="312.03906"
+         y="305.77984"
+         id="tspan27487">barrier=gate
+</tspan><tspan
+         x="312.03906"
+         y="325.37988"
+         id="tspan27489">
+</tspan></text>
+  </g>
+</svg>

@@ -5,9 +5,9 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/trail/trail.svg' height="100px"> 
 
-Aangeduide wandeltochten
+
+Waymarked trails
 
 
 
@@ -59,7 +59,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -89,11 +89,11 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  *Wat is de naam van deze wandeling?*
+The question is  *What is the name of this trail?*
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
-This is rendered with  `Deze wandeling heet <b>{name}</b>`
+This is rendered with  `This trail is called <b>{name}</b>`
 
 
 
@@ -103,18 +103,18 @@ This is rendered with  `Deze wandeling heet <b>{name}</b>`
 
 
 
-The question is  *Wie beheert deze wandeltocht?*
+The question is  *Who maintains this trail?*
 
 This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
 
-This is rendered with  `Beheer door {operator}`
+This is rendered with  `This trail is maintained by {operator}`
 
 
 
 
 
-  - *Dit gebied wordt beheerd door Natuurpunt*  corresponds with  `operator=Natuurpunt`
-  - *Dit gebied wordt beheerd door {operator}*  corresponds with  `operator~^((n|N)atuurpunt.*)$`
+  - *This trail is maintained by Natuurpunt*  corresponds with  `operator=Natuurpunt`
+  - *This trail is maintained by {operator}*  corresponds with  `operator~^((n|N)atuurpunt.*)$`
   - This option cannot be chosen as answer
 
 
@@ -124,11 +124,11 @@ This is rendered with  `Beheer door {operator}`
 
 
 
-The question is  *Welke kleur heeft deze wandeling?*
+The question is  *What is the reference colour of this trail?*
 
 This rendering asks information about the property  [colour](https://wiki.openstreetmap.org/wiki/Key:colour) 
 
-This is rendered with  `Deze wandeling heeft kleur {colour}`
+This is rendered with  `The reference colour is {colour}`
 
 
 
@@ -146,14 +146,14 @@ This is rendered with  `Deze wandeling heeft kleur {colour}`
 
 
 
-The question is  *Is deze wandeling toegankelijk met de rolstoel?*
+The question is  *Is this trail wheelchair accessible?*
 
 
 
 
 
-  - *deze wandeltocht is toegankelijk met de rolstoel*  corresponds with  `wheelchair=yes`
-  - *deze wandeltocht is niet toegankelijk met de rolstoel*  corresponds with  `wheelchair=no`
+  - *This trail is wheelchair-accessible*  corresponds with  `wheelchair=yes`
+  - *This trail is not wheelchair accessible*  corresponds with  `wheelchair=no`
 
 
 
@@ -162,14 +162,14 @@ The question is  *Is deze wandeling toegankelijk met de rolstoel?*
 
 
 
-The question is  *Is deze wandeltocht toegankelijk met de buggy?*
+The question is  *Is this trail accessible with a pushchair?*
 
 
 
 
 
-  - *deze wandeltocht is toegankelijk met de buggy*  corresponds with  `pushchair=yes`
-  - *deze wandeltocht is niet toegankelijk met de buggy*  corresponds with  `pushchair=no`
+  - *This trail is accessible with a pushchair*  corresponds with  `pushchair=yes`
+  - *This trail is not accessible with a pushchair*  corresponds with  `pushchair=no`
 
 
 
@@ -206,7 +206,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 

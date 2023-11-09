@@ -27,6 +27,8 @@ export abstract class Validator {
         | "search"
     public readonly textArea: boolean
 
+    public readonly isMeta?: boolean
+
     constructor(
         name: string,
         explanation: string | BaseUIElement,
@@ -69,7 +71,7 @@ export abstract class Validator {
         return Translations.t.validation[this.name].description
     }
 
-    public isValid(_: string, __?: () => string): boolean {
+    public isValid(key: string, getCountry?: () => string): boolean {
         return true
     }
 

@@ -15,10 +15,27 @@
     "da": "Cykel bibliotek",
     "cs": "Půjčovna kol"
   },
-  "minzoom": 8,
+  "description": {
+    "en": "A facility where bicycles can be lent for longer period of times",
+    "nl": "Een plaats waar men voor langere tijd een fiets kan lenen",
+    "fr": "Un lieu où des vélos peuvent être empruntés pour un temps plus long",
+    "hu": "Létesítmény, ahonnan kerékpár kölcsönözhető hosszabb időre",
+    "it": "Una struttura dove le biciclette possono essere prestate per periodi di tempo più lunghi",
+    "de": "Eine Einrichtung, in der Fahrräder für längere Zeit geliehen werden können",
+    "ru": "Учреждение, где велосипед может быть арендован на более длительный срок",
+    "zh_Hant": "能夠長期租用單車的設施",
+    "pt_BR": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
+    "pl": "Obiekt, w którym rowery można wypożyczyć na dłuższy okres",
+    "pt": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
+    "es": "Una instalación donde se pueden alquilar bicicletas durante largos periodos de tiempo",
+    "da": "En facilitet, hvor cykler kan lånes i længere perioder",
+    "cs": "Zařízení, kde si lze půjčit jízdní kola na delší dobu",
+    "ca": "Una instal·lació on es poden cedir bicicletes per llargs períodes de temps"
+  },
   "source": {
     "osmTags": "amenity=bicycle_library"
   },
+  "minzoom": 8,
   "title": {
     "render": {
       "en": "Bicycle library",
@@ -54,23 +71,79 @@
     },
     "icons.defaults"
   ],
-  "description": {
-    "en": "A facility where bicycles can be lent for longer period of times",
-    "nl": "Een plaats waar men voor langere tijd een fiets kan lenen",
-    "fr": "Un lieu où des vélos peuvent être empruntés pour un temps plus long",
-    "hu": "Létesítmény, ahonnan kerékpár kölcsönözhető hosszabb időre",
-    "it": "Una struttura dove le biciclette possono essere prestate per periodi di tempo più lunghi",
-    "de": "Eine Einrichtung, in der Fahrräder für längere Zeit geliehen werden können",
-    "ru": "Учреждение, где велосипед может быть арендован на более длительный срок",
-    "zh_Hant": "能夠長期租用單車的設施",
-    "pt_BR": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
-    "pl": "Obiekt, w którym rowery można wypożyczyć na dłuższy okres",
-    "pt": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
-    "es": "Una instalación donde se pueden alquilar bicicletas durante largos periodos de tiempo",
-    "da": "En facilitet, hvor cykler kan lånes i længere perioder",
-    "cs": "Zařízení, kde si lze půjčit jízdní kola na delší dobu",
-    "ca": "Una instal·lació on es poden cedir bicicletes per llargs períodes de temps"
-  },
+  "pointRendering": [
+    {
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        },
+        {
+          "if": "service:bicycle:pump=yes",
+          "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg"
+        }
+      ],
+      "iconSize": "50,50",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#22ff55"
+        },
+        {
+          "icon": "./assets/layers/bicycle_library/bicycle_library.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#c00",
+      "width": "1"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "nl": "een fietsbibliotheek",
+        "en": "a bicycle library",
+        "ru": "Велосипедная библиотека",
+        "zh_Hant": "自行車圖書館 ( Fietsbibliotheek)",
+        "it": "una bici in prestito",
+        "fr": "une vélothèque",
+        "pt_BR": "uma biblioteca de bicicletas",
+        "de": "eine Fahrradbibliothek",
+        "pt": "uma biblioteca de bicicletas",
+        "eo": "Fietsbibliotheek",
+        "da": "et cykelbibliotek",
+        "es": "una biblioteca de bicicletas",
+        "cs": "půjčovna kol",
+        "ca": "una biblioteca de bicicletes"
+      },
+      "tags": [
+        "amenity=bicycle_library"
+      ],
+      "description": {
+        "nl": "Een fietsbieb heeft een collectie fietsen die leden mogen lenen",
+        "en": "A bicycle library has a collection of bikes which can be lent",
+        "fr": "Une vélothèque a une flotte de vélos qui peuvent être empruntés",
+        "it": "Una ciclo-teca o «bici in prestito» ha una collezione di bici che possno essere prestate",
+        "ru": "В велосипедной библиотеке есть велосипеды для аренды",
+        "zh_Hant": "單車圖書館有一大批單車供人租借",
+        "de": "Eine Fahrradbibliothek verfügt über eine Sammlung von Fahrrädern, die ausgeliehen werden können",
+        "es": "Una biblioteca de bicicletas tiene una colección de bicicletas que se pueden prestar",
+        "da": "Et cykelbibliotek har en samling cykler, som kan lånes",
+        "cs": "Cyklistická půjčovna má k dispozici sbírku kol, která lze zapůjčit",
+        "ca": "Una biblioteca de bicicletes té una col·lecció de bicicletes que es poden cedir",
+        "pt": "Uma \"biblioteca de bicicletas\" tem uma coleção de bicicletas que podem ser emprestadas",
+        "pt_BR": "Uma biblioteca de bicicletas tem uma coleção de bicicletas que podem ser emprestadas"
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -235,7 +308,6 @@
             "nl": "Aanbod voor kinderen",
             "en": "Bikes for children available",
             "fr": "Vélos pour enfants disponibles",
-            "hu": "",
             "it": "Sono disponibili biciclette per bambini",
             "de": "Fahrräder für Kinder verfügbar",
             "ru": "Доступны детские велосипеды",
@@ -287,69 +359,6 @@
       ]
     },
     "description"
-  ],
-  "presets": [
-    {
-      "title": {
-        "nl": "een fietsbibliotheek",
-        "en": "a bicycle library",
-        "ru": "Велосипедная библиотека",
-        "zh_Hant": "自行車圖書館 ( Fietsbibliotheek)",
-        "it": "una bici in prestito",
-        "fr": "une vélothèque",
-        "pt_BR": "uma biblioteca de bicicletas",
-        "de": "eine Fahrradbibliothek",
-        "pt": "uma biblioteca de bicicletas",
-        "eo": "Fietsbibliotheek",
-        "da": "et cykelbibliotek",
-        "es": "una biblioteca de bicicletas",
-        "cs": "půjčovna kol",
-        "ca": "una biblioteca de bicicletes"
-      },
-      "tags": [
-        "amenity=bicycle_library"
-      ],
-      "description": {
-        "nl": "Een fietsbieb heeft een collectie fietsen die leden mogen lenen",
-        "en": "A bicycle library has a collection of bikes which can be lent",
-        "fr": "Une vélothèque a une flotte de vélos qui peuvent être empruntés",
-        "it": "Una ciclo-teca o «bici in prestito» ha una collezione di bici che possno essere prestate",
-        "ru": "В велосипедной библиотеке есть велосипеды для аренды",
-        "zh_Hant": "單車圖書館有一大批單車供人租借",
-        "de": "Eine Fahrradbibliothek verfügt über eine Sammlung von Fahrrädern, die ausgeliehen werden können",
-        "es": "Una biblioteca de bicicletas tiene una colección de bicicletas que se pueden prestar",
-        "da": "Et cykelbibliotek har en samling cykler, som kan lånes",
-        "cs": "Cyklistická půjčovna má k dispozici sbírku kol, která lze zapůjčit",
-        "ca": "Una biblioteca de bicicletes té una col·lecció de bicicletes que es poden cedir",
-        "pt": "Uma \"biblioteca de bicicletas\" tem uma coleção de bicicletas que podem ser emprestadas",
-        "pt_BR": "Uma biblioteca de bicicletas tem uma coleção de bicicletas que podem ser emprestadas"
-      }
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": "pin:#22ff55;./assets/layers/bicycle_library/bicycle_library.svg",
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        },
-        {
-          "if": "service:bicycle:pump=yes",
-          "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg"
-        }
-      ],
-      "iconSize": "50,50",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "bottom"
-    },
-    {
-      "color": "#c00",
-      "width": "1"
-    }
   ],
   "deletion": true
 }

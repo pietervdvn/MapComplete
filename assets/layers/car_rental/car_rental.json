@@ -9,6 +9,15 @@
     "pl": "Wypożyczalnia samochodów",
     "cs": "Půjčovna aut"
   },
+  "description": {
+    "en": "Places where you can rent a car",
+    "nl": "Plaatsen waar je een auto kunt huren",
+    "de": "Orte, an denen Sie ein Auto mieten können",
+    "fr": "Lieu où vous pouvez louer une voiture",
+    "ca": "Llocs on pots llogar un cotxe",
+    "pl": "Miejsca, w których można wypożyczyć samochód",
+    "cs": "Místa, kde si můžete pronajmout auto"
+  },
   "source": {
     "osmTags": "amenity=car_rental"
   },
@@ -30,69 +39,29 @@
       }
     ]
   },
-  "description": {
-    "en": "Places where you can rent a car",
-    "nl": "Plaatsen waar je een auto kunt huren",
-    "de": "Orte, an denen Sie ein Auto mieten können",
-    "fr": "Lieu où vous pouvez louer une voiture",
-    "ca": "Llocs on pots llogar un cotxe",
-    "pl": "Miejsca, w których można wypożyczyć samochód",
-    "cs": "Místa, kde si můžete pronajmout auto"
-  },
-  "tagRenderings": [
-    "images",
+  "pointRendering": [
     {
-      "id": "name",
-      "freeform": {
-        "key": "name",
-        "type": "string",
-        "placeholder": {
-          "en": "Name of the car rental",
-          "nl": "Naam van de autoverhuur",
-          "de": "Name der Autovermietung",
-          "fr": "Nom de la société de location de véhicules",
-          "ca": "Nom del lloguer de cotxes",
-          "pl": "Nazwa wypożyczalni samochodów",
-          "cs": "Název autopůjčovny"
-        }
-      },
-      "question": {
-        "en": "What is the name of this car rental?",
-        "nl": "Wat is de naam van deze autoverhuur?",
-        "de": "Wie lautet der Name dieser Autovermietung?",
-        "fr": "Quel est le nom de cette société de location de véhicules ?",
-        "ca": "Com es diu aquest lloguer de cotxes?",
-        "pl": "Jaka jest nazwa tej wypożyczalni samochodów?",
-        "cs": "Jak se jmenuje tato půjčovna aut?"
-      },
-      "mappings": [
-        {
-          "if": "noname=yes",
-          "then": {
-            "en": "This car rental has no name",
-            "nl": "Deze autoverhuur heeft geen naam",
-            "de": "Diese Autovermietung hat keinen Namen",
-            "fr": "Cette société de location de véhicules n'a pas de nom",
-            "ca": "Aquest lloguer de cotxes no té nom",
-            "pl": "Ta wypożyczalnia samochodów nie ma nazwy",
-            "cs": "Tato autopůjčovna nemá jméno"
-          }
-        }
+      "location": [
+        "point",
+        "centroid"
       ],
-      "render": {
-        "en": "This car rental is called {name}",
-        "nl": "Deze autoverhuur heet {name}",
-        "de": "Der Name der Autovermietung lautet {name}",
-        "fr": "Cette société de location de véhicules est appelée {name}",
-        "ca": "Aquest lloguer de cotxes es diu {name}",
-        "pl": "Ta wypożyczalnia samochodów nazywa się {name}",
-        "cs": "Tato autopůjčovna se jmenuje {name}"
-      }
-    },
-    "website",
-    "email",
-    "phone",
-    "opening_hours"
+      "label": "<div class='bg-white block p-1 rounded'>{name}</div>",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/car_rental/car_rental.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "darkblue",
+      "width": 2
+    }
   ],
   "presets": [
     {
@@ -119,24 +88,67 @@
       }
     }
   ],
-  "mapRendering": [
+  "tagRenderings": [
+    "images",
     {
-      "icon": "circle:white;./assets/layers/car_rental/car_rental.svg",
-      "location": [
-        "point",
-        "centroid"
+      "id": "name",
+      "freeform": {
+        "key": "name",
+        "type": "string",
+        "addExtraTags": ["noname="],
+        "placeholder": {
+          "en": "Name of the car rental",
+          "nl": "Naam van de autoverhuur",
+          "de": "Name der Autovermietung",
+          "fr": "Nom de la société de location de véhicules",
+          "ca": "Nom del lloguer de cotxes",
+          "pl": "Nazwa wypożyczalni samochodów",
+          "cs": "Název autopůjčovny"
+        }
+      },
+      "question": {
+        "en": "What is the name of this car rental?",
+        "nl": "Wat is de naam van deze autoverhuur?",
+        "de": "Wie lautet der Name dieser Autovermietung?",
+        "fr": "Quel est le nom de cette société de location de véhicules ?",
+        "ca": "Com es diu aquest lloguer de cotxes?",
+        "pl": "Jaka jest nazwa tej wypożyczalni samochodów?",
+        "cs": "Jak se jmenuje tato půjčovna aut?"
+      },
+      "mappings": [
+        {
+          "if": "noname=yes",
+          "addExtraTags": ["name="],
+          "then": {
+            "en": "This car rental has no name",
+            "nl": "Deze autoverhuur heeft geen naam",
+            "de": "Diese Autovermietung hat keinen Namen",
+            "fr": "Cette société de location de véhicules n'a pas de nom",
+            "ca": "Aquest lloguer de cotxes no té nom",
+            "pl": "Ta wypożyczalnia samochodów nie ma nazwy",
+            "cs": "Tato autopůjčovna nemá jméno"
+          }
+        }
       ],
-      "label": "<div class='bg-white block p-1 rounded'>{name}</div>"
+      "render": {
+        "en": "This car rental is called {name}",
+        "nl": "Deze autoverhuur heet {name}",
+        "de": "Der Name der Autovermietung lautet {name}",
+        "fr": "Cette société de location de véhicules est appelée {name}",
+        "ca": "Aquest lloguer de cotxes es diu {name}",
+        "pl": "Ta wypożyczalnia samochodów nazywa się {name}",
+        "cs": "Tato autopůjčovna se jmenuje {name}"
+      }
     },
-    {
-      "color": "darkblue",
-      "width": 2
-    }
+    "website",
+    "email",
+    "phone",
+    "opening_hours"
+  ],
+  "filter": [
+    "open_now"
   ],
   "allowMove": {
     "enableImproveAccuracy": true
-  },
-  "filter": [
-    "open_now"
-  ]
+  }
 }

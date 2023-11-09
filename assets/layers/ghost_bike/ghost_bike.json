@@ -22,6 +22,15 @@
     "ca": "Bicicleta fantasma",
     "cs": "Kola duchů"
   },
+  "description": {
+    "en": "A layer showing memorials for cyclists, killed in road accidents",
+    "nl": "Een laag die herdenkingsplaatsen voor verongelukte fietsers toont",
+    "de": "Eine Ebene mit Gedenkstätten für Radfahrer, die bei Verkehrsunfällen ums Leben gekommen sind",
+    "fr": "Une couche affichant les mémoriaux en l'hommage de cyclistes tuées lors d'accidents de la route",
+    "pl": "Warstwa pokazujące miejsca upamiętnienia rowerzystów, którzy zginęli w wypadkach drogowych",
+    "ca": "Una capa que mostra monuments commemoratius als ciclistes morts en accidents de trànsit",
+    "cs": "Vrstva zobrazující pomníky pro cyklisty zabité při dopravních nehodách"
+  },
   "source": {
     "osmTags": "memorial=ghost_bike"
   },
@@ -76,6 +85,22 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "./assets/layers/ghost_bike/ghost_bike.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
   "presets": [
     {
       "title": {
@@ -289,25 +314,5 @@
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuraccy": true
-  },
-  "mapRendering": [
-    {
-      "icon": "./assets/layers/ghost_bike/ghost_bike.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "bottom"
-    }
-  ],
-  "description": {
-    "en": "A layer showing memorials for cyclists, killed in road accidents",
-    "nl": "Een laag die herdenkingsplaatsen voor verongelukte fietsers toont",
-    "de": "Eine Ebene mit Gedenkstätten für Radfahrer, die bei Verkehrsunfällen ums Leben gekommen sind",
-    "fr": "Une couche affichant les mémoriaux en l'hommage de cyclistes tuées lors d'accidents de la route",
-    "pl": "Warstwa pokazujące miejsca upamiętnienia rowerzystów, którzy zginęli w wypadkach drogowych",
-    "ca": "Una capa que mostra monuments commemoratius als ciclistes morts en accidents de trànsit",
-    "cs": "Vrstva zobrazující pomníky pro cyklisty zabité při dopravních nehodách"
   }
 }

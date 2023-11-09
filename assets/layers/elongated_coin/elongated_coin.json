@@ -31,6 +31,46 @@
       "cs": "Ražba mincí"
     }
   },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        }
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "#FFFFFF00"
+        },
+        {
+          "icon": "./assets/themes/elongated_coin/penny.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "a penny press",
+        "de": "Einen Münzprägeautomaten",
+        "es": "una prensa de centavo",
+        "ca": "una premsa de cèntim",
+        "cs": "ražba mincí"
+      },
+      "tags": [
+        "amenity=vending_machine",
+        "vending=elongated_coin",
+        "payment:coins=yes"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     "opening_hours_24_7",
@@ -394,45 +434,14 @@
     "level",
     "check_date"
   ],
-  "mapRendering": [
-    {
-      "icon": "circle:#FFFFFF00;./assets/themes/elongated_coin/penny.svg",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "title": {
-        "en": "a penny press",
-        "de": "Einen Münzprägeautomaten",
-        "es": "una prensa de centavo",
-        "ca": "una premsa de cèntim",
-        "cs": "ražba mincí"
-      },
-      "tags": [
-        "amenity=vending_machine",
-        "vending=elongated_coin",
-        "payment:coins=yes"
-      ]
-    }
-  ],
-  "allowMove": {
-    "enableImproveAccuracy": true,
-    "enableRelocation": true
-  },
-  "deletion": true,
   "filter": [
     "open_now",
     "accepts_debit_cards",
     "accepts_credit_cards"
-  ]
+  ],
+  "deletion": true,
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": true
+  }
 }

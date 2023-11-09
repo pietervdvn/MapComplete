@@ -11,7 +11,16 @@
     "es": "Pistas de deportes",
     "cs": "Sportovní hřiště"
   },
-  "minzoom": 12,
+  "description": {
+    "nl": "Een sportterrein",
+    "fr": "Un terrain de sport",
+    "en": "A sport pitch",
+    "it": "Un campo sportivo",
+    "ru": "Спортивная площадка",
+    "de": "Ein Sportplatz",
+    "es": "Una pista de deportes",
+    "cs": "Sportovní hřiště"
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -22,6 +31,7 @@
   "calculatedTags": [
     "_size_classification=Number(feat.properties._surface) < 200 ? 'small' :  (Number(feat.properties._surface) < 750 ? 'medium' : 'large') "
   ],
+  "minzoom": 12,
   "title": {
     "render": {
       "nl": "Sportterrein",
@@ -35,16 +45,128 @@
       "cs": "Sportovní hřiště"
     }
   },
-  "description": {
-    "nl": "Een sportterrein",
-    "fr": "Un terrain de sport",
-    "en": "A sport pitch",
-    "it": "Un campo sportivo",
-    "ru": "Спортивная площадка",
-    "de": "Ein Sportplatz",
-    "es": "Una pista de deportes",
-    "cs": "Sportovní hřiště"
-  },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/sport_pitch/sport_pitch.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "sport=baseball",
+                    "sport=basketball",
+                    "sport=beachvolleyball",
+                    "sport=boules",
+                    "sport=skateboard",
+                    "sport=soccer",
+                    "sport=table_tennis",
+                    "sport=tennis",
+                    "sport=volleyball",
+                    "sport=equestrian"
+                  ]
+                },
+                "then": "./assets/layers/sport_pitch/{sport}.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": {
+            "and": [
+              "opening_hours!=24/7",
+              "opening_hours~*"
+            ]
+          },
+          "then": "icons.isOpen"
+        },
+        {
+          "if": {
+            "or": [
+              "access=customers",
+              "access=private",
+              "access=no"
+            ]
+          },
+          "then": "circle:white;./assets/layers/sport_pitch/lock.svg"
+        }
+      ],
+      "iconSize": {
+        "render": "25,25,center",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                "_size_classification=medium",
+                "id~node/.*"
+              ]
+            },
+            "then": "32,32,center"
+          },
+          {
+            "if": "_size_classification=small",
+            "then": "25,25,center"
+          },
+          {
+            "if": "_size_classification=large",
+            "then": "40,40,center"
+          }
+        ]
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00cc00",
+      "width": "1",
+      "fill": "false"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "nl": "een ping-pong tafel",
+        "fr": "une table de ping-pong",
+        "en": "a tabletennis table",
+        "it": "una tavolo da tennistavolo",
+        "ru": "Стол для настольного тенниса",
+        "de": "eine Tischtennisplatte",
+        "cs": "stůl na stolní tenis"
+      },
+      "tags": [
+        "leisure=pitch",
+        "sport=table_tennis"
+      ]
+    },
+    {
+      "title": {
+        "nl": "een sportterrein",
+        "fr": "une terrain de sport",
+        "en": "a sport pitch",
+        "ru": "Спортивная площадка",
+        "it": "una campo sportivo",
+        "de": "einen Sportplatz",
+        "es": "una pista de deportes",
+        "ca": "una pista d'esports",
+        "cs": "sportovní hřiště"
+      },
+      "tags": [
+        "leisure=pitch",
+        "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -585,118 +707,6 @@
     {
       "id": "sport-pitch-reviews",
       "render": "{reviews(name, sportpitch)}"
-    }
-  ],
-  "presets": [
-    {
-      "title": {
-        "nl": "een ping-pong tafel",
-        "fr": "une table de ping-pong",
-        "en": "a tabletennis table",
-        "it": "una tavolo da tennistavolo",
-        "ru": "Стол для настольного тенниса",
-        "de": "eine Tischtennisplatte",
-        "cs": "stůl na stolní tenis"
-      },
-      "tags": [
-        "leisure=pitch",
-        "sport=table_tennis"
-      ]
-    },
-    {
-      "title": {
-        "nl": "een sportterrein",
-        "fr": "une terrain de sport",
-        "en": "a sport pitch",
-        "ru": "Спортивная площадка",
-        "it": "una campo sportivo",
-        "de": "einen Sportplatz",
-        "es": "una pista de deportes",
-        "ca": "una pista d'esports",
-        "cs": "sportovní hřiště"
-      },
-      "tags": [
-        "leisure=pitch",
-        "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
-      ]
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": {
-        "render": "circle:white;./assets/layers/sport_pitch/sport_pitch.svg",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                "sport=baseball",
-                "sport=basketball",
-                "sport=beachvolleyball",
-                "sport=boules",
-                "sport=skateboard",
-                "sport=soccer",
-                "sport=table_tennis",
-                "sport=tennis",
-                "sport=volleyball",
-                "sport=equestrian"
-              ]
-            },
-            "then": "circle:white;./assets/layers/sport_pitch/{sport}.svg"
-          }
-        ]
-      },
-      "iconBadges": [
-        {
-          "if": {
-            "and": [
-              "opening_hours!=24/7",
-              "opening_hours~*"
-            ]
-          },
-          "then": "icons.isOpen"
-        },
-        {
-          "if": {
-            "or": [
-              "access=customers",
-              "access=private",
-              "access=no"
-            ]
-          },
-          "then": "circle:white;./assets/layers/sport_pitch/lock.svg"
-        }
-      ],
-      "iconSize": {
-        "render": "25,25,center",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                "_size_classification=medium",
-                "id~node/.*"
-              ]
-            },
-            "then": "32,32,center"
-          },
-          {
-            "if": "_size_classification=small",
-            "then": "25,25,center"
-          },
-          {
-            "if": "_size_classification=large",
-            "then": "40,40,center"
-          }
-        ]
-      },
-      "location": [
-        "point",
-        "centroid"
-      ]
-    },
-    {
-      "color": "#00cc00",
-      "width": "1",
-      "fill": "false"
     }
   ],
   "filter": [

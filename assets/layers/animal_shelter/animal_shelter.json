@@ -1,0 +1,121 @@
+{
+  "id": "animal_shelter",
+  "name": {
+    "en": "Animal shelters"
+  },
+  "description": {
+    "en": "An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. "
+  },
+  "source": {
+    "osmTags": "amenity=animal_shelter"
+  },
+  "title": {
+    "render": {
+      "en": "Animal shelter"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "{name}"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "centroid",
+        "point"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "#ffffff"
+        },
+        {
+          "icon": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Animal_Shelter_%288670%29_-_The_Noun_Project.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": "1",
+      "lineCap": "square",
+      "color": "#b5835a"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "an animal shelter"
+      },
+      "tags": [
+        "amenity=animal_shelter"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    "reviews",
+    {
+      "id": "2",
+      "freeform": {
+        "key": "name"
+      },
+      "question": {
+        "en": "What is the name of this animal shelter?"
+      },
+      "render": {
+        "en": "This animal shelter is named <b>{name}</b>"
+      }
+    },
+    "website",
+    "phone",
+    "email",
+    {
+      "id": "6",
+      "question": {
+        "en": "What is the purpose of the animal shelter?"
+      },
+      "mappings": [
+        {
+          "then": {
+            "en": "Animals are kept here until adopted by a new owner"
+          },
+          "if": "purpose=adoption"
+        },
+        {
+          "then": {
+            "en": "Animals are taken care of for the rest of their lives"
+          },
+          "if": "purpose=sanctuary"
+        },
+        {
+          "then": {
+            "en": "Injured animals are rehabilitated here until they can be released in nature again "
+          },
+          "if": "purpose=release"
+        }
+      ],
+      "multiAnswer": true
+    },
+    {
+      "question": {
+        "en": "When is this animal shelter opened?"
+      },
+      "id": "7",
+      "render": {
+        "en": "{opening_hours_table()}"
+      },
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours"
+      }
+    }
+  ],
+  "deletion": true,
+  "allowMove": true,
+  "credits": "Pieter Vander Vennet"
+}

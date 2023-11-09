@@ -28,7 +28,7 @@
     <Tr t={Translations.t.general.returnToTheMap} />
   </button>
 {:else}
-  <div class="flex flex-col gap-y-2 overflow-y-auto p-1 px-2">
+  <div class="flex flex-col gap-y-2 overflow-y-auto p-1 px-2 h-full">
     {#each layer.tagRenderings as config (config.id)}
       {#if (config.condition?.matchesProperties($tags) ?? true) && config.metacondition?.matchesProperties({ ...$tags, ..._metatags } ?? true)}
         {#if config.IsKnown($tags)}

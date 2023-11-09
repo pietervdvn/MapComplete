@@ -146,8 +146,14 @@ In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "ar
       * [Example usage of link](#example-usage-of-link)
     + [multi](#multi)
       * [Example usage of multi](#example-usage-of-multi)
+    + [translated](#translated)
+      * [Example usage of translated](#example-usage-of-translated)
     + [fediverse_link](#fediverse_link)
       * [Example usage of fediverse_link](#example-usage-of-fediverse_link)
+    + [braced](#braced)
+      * [Example usage of braced](#example-usage-of-braced)
+    + [tags](#tags)
+      * [Example usage of tags](#example-usage-of-tags)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
@@ -1038,6 +1044,21 @@ tagrendering | _undefined_ | An entire tagRenderingConfig
 
 
 
+### translated 
+
+ If the given key can be interpreted as a JSON, only show the key containing the current language (or 'en'). This specialRendering is meant to be used by MapComplete studio and is not useful in map themes 
+
+name | default | description
+------ | --------- | -------------
+key | value | The attribute to interpret as json
+ 
+
+#### Example usage of translated 
+
+ `{translated(value)}`
+
+
+
 ### fediverse_link 
 
  Converts a fediverse username or link into a clickable link 
@@ -1050,6 +1071,36 @@ key | _undefined_ | The attribute-name containing the link
 #### Example usage of fediverse_link 
 
  `{fediverse_link()}`
+
+
+
+### braced 
+
+ Show a literal text within braces 
+
+name | default | description
+------ | --------- | -------------
+text | _undefined_ | The value to show
+ 
+
+#### Example usage of braced 
+
+ `{braced()}`
+
+
+
+### tags 
+
+ Shows a (json of) tags in a human-readable way + links to the wiki 
+
+name | default | description
+------ | --------- | -------------
+key | value | The key to look for the tags
+ 
+
+#### Example usage of tags 
+
+ `{tags(value)}`
 
 
 

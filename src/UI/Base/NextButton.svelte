@@ -20,6 +20,6 @@
   <slot name="image" slot="image" />
   <div class="flex w-full items-center justify-between" slot="message">
     <slot />
-    <ChevronRightIcon class="h-12 w-12 shrink-0" />
+    <ChevronRightIcon class={clss?.indexOf("small") >= 0?  "h-4 w-4 shrink-0": "h-12 w-12 shrink-0" }/>
   </div>
 </SubtleButton>

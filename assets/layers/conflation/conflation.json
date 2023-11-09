@@ -1,54 +1,114 @@
 {
   "id": "conflation",
-  "description": "If the import-button moves OSM points, the imported way points or conflates, a preview is shown. This layer defines how this preview is rendered. This layer cannot be included in a theme.",
-  "minzoom": 1,
-  "source": "special",
   "name": "Conflation",
+  "description": "If the import-button moves OSM points, the imported way points or conflates, a preview is shown. This layer defines how this preview is rendered. This layer cannot be included in a theme.",
+  "source": "special",
+  "minzoom": 1,
   "title": "Conflation",
-  "mapRendering": [
+  "pointRendering": [
     {
-      "location": "point",
-      "icon": {
-        "render": "addSmall:#000",
-        "mappings": [
-          {
-            "if": "detach=yes",
-            "then": "circle:white;close:#c33"
-          }
-        ]
-      },
-      "iconSize": "10,10",
-      "anchor": "center"
-    },
-    {
-      "location": "end",
-      "icon": {
-        "render": "circle:#0f0",
-        "mappings": [
-          {
-            "if": "reprojection=yes",
-            "then": "none:#f00"
+      "location": [
+        "point"
+      ],
+      "marker": [
+        {
+          "color": {
+            "render": "#000",
+            "mappings": [
+              {
+                "if": "detach=yes",
+                "then": "white"
+              }
+            ]
           },
-          {
-            "if": "move=no",
-            "then": "ring:#0f0"
+          "icon": {
+            "render": "addSmall:#000",
+            "mappings": [
+              {
+                "if": "detach=yes",
+                "then": "white"
+              }
+            ]
           }
-        ]
-      },
+        },
+        {
+          "icon": {
+            "mappings": [
+              {
+                "if": "detach=yes",
+                "then": "close"
+              }
+            ]
+          },
+          "color": "#C33"
+        }
+      ],
       "iconSize": "10,10",
       "anchor": "center"
     },
     {
-      "location": "start",
-      "icon": {
-        "render": "square:#f00",
-        "mappings": [
-          {
-            "if": "reprojection=yes",
-            "then": "reload:#f00"
+      "location": [
+        "end"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "circle",
+            "mappings": [
+              {
+                "if": "reprojection=yes",
+                "then": "none"
+              },
+              {
+                "if": "move=no",
+                "then": "ring"
+              }
+            ]
+          },
+          "color": {
+            "render": "#0f0",
+            "mappings": [
+              {
+                "if": "reprojection=yes",
+                "then": "#f00"
+              },
+              {
+                "if": "move=no",
+                "then": "#0f0"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
+      "iconSize": "10,10",
+      "anchor": "center"
+    },
+    {
+      "location": [
+        "start"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "square",
+            "mappings": [
+              {
+                "if": "reprojection=yes",
+                "then": "reload"
+              }
+            ]
+          },
+          "color": {
+            "render": "#f00",
+            "mappings": [
+              {
+                "if": "reprojection=yes",
+                "then": "#f00"
+              }
+            ]
+          }
+        }
+      ],
       "iconSize": {
         "render": "10,10,center",
         "mappings": [
@@ -58,7 +118,9 @@
           }
         ]
       }
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "width": {
         "render": "3",
@@ -69,16 +131,7 @@
           }
         ]
       },
-      "color": "#00f",
-      "dasharray": {
-        "render": "",
-        "mappings": [
-          {
-            "if": "resulting-geometry=yes",
-            "then": "6 6"
-          }
-        ]
-      }
+      "color": "#00f"
     }
   ]
 }

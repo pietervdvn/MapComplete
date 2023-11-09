@@ -8,7 +8,14 @@
     "ca": "Camins per a vianants",
     "cs": "Cesty pro chodce"
   },
-  "minzoom": 18,
+  "description": {
+    "en": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer",
+    "nl": "Pad voor voetgangers, in het bijzonder gebruikt voor navigatie binnen gebouwen en om aan toegangen vast te klikken in deze laag",
+    "de": "Fußgängerwege, insbesondere für die Navigation in Gebäuden und die Aufnahme von Eingängen in diese Ebene",
+    "fr": "Sentiers piétonniers, particulièrement utilisés pour la navigation intérieure et les entrées d'accrochage à cette couche",
+    "ca": "Senderes per a vianants, especialment utilitzades per a la navegació interior i les entrades ràpides a aquesta capa",
+    "cs": "Chodníky pro pěší, používané zejména pro navigaci v interiéru a zachycení vstupů do této vrstvy"
+  },
   "source": {
     "osmTags": {
       "or": [
@@ -19,21 +26,20 @@
       ]
     }
   },
-  "description": {
-    "en": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer",
-    "nl": "Pad voor voetgangers, in het bijzonder gebruikt voor navigatie binnen gebouwen en om aan toegangen vast te klikken in deze laag",
-    "de": "Fußgängerwege, insbesondere für die Navigation in Gebäuden und die Aufnahme von Eingängen in diese Ebene",
-    "fr": "Sentiers piétonniers, particulièrement utilisés pour la navigation intérieure et les entrées d'accrochage à cette couche",
-    "ca": "Senderes per a vianants, especialment utilitzades per a la navegació interior i les entrades ràpides a aquesta capa",
-    "cs": "Chodníky pro pěší, používané zejména pro navigaci v interiéru a zachycení vstupů do této vrstvy"
-  },
-  "mapRendering": [
+  "minzoom": 18,
+  "pointRendering": [
     {
-      "icon": "./assets/svg/bug.svg",
       "location": [
         "point"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/svg/bug.svg"
+        }
       ]
-    },
+    }
+  ],
+  "lineRendering": [
     {
       "color": "#b33",
       "width": 4,

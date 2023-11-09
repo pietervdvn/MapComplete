@@ -13,10 +13,20 @@
     "pa_PK": "ٹوئیلٹاں",
     "cs": "Toalety"
   },
-  "minzoom": 12,
+  "description": {
+    "en": "A layer showing (public) toilets",
+    "nl": "Een laag die publieke toiletten toont",
+    "de": "Eine Ebene mit (öffentlichen) Toiletten",
+    "es": "Una capa que muestra baños (públicos)",
+    "fr": "Un calque montrant les toilettes (publiques)",
+    "da": "Et lag, der viser (offentlige) toiletter",
+    "ca": "Una capa que mostra banys (publics)",
+    "cs": "Vrstva zobrazující (veřejné) toalety"
+  },
   "source": {
     "osmTags": "amenity=toilets"
   },
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Toilet",
@@ -32,6 +42,52 @@
       "cs": "Toaleta"
     }
   },
+  "pointRendering": [
+    {
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/toilet/toilets.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "wheelchair=yes",
+                    "wheelchair=designated"
+                  ]
+                },
+                "then": "./assets/layers/toilet/wheelchair.svg"
+              },
+              {
+                "if": {
+                  "or": [
+                    "toilets:position=urinals",
+                    "toilets:position=urinal"
+                  ]
+                },
+                "then": "./assets/layers/toilet/urinal.svg"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
   "presets": [
     {
       "title": {
@@ -782,53 +838,6 @@
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuracy": true
-  },
-  "mapRendering": [
-    {
-      "icon": {
-        "render": "circle:#ffffff;./assets/layers/toilet/toilets.svg",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                "wheelchair=yes",
-                "wheelchair=designated"
-              ]
-            },
-            "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
-          },
-          {
-            "if": {
-              "or": [
-                "toilets:position=urinals",
-                "toilets:position=urinal"
-              ]
-            },
-            "then": "./assets/layers/toilet/urinal.svg"
-          }
-        ]
-      },
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        }
-      ],
-      "location": [
-        "point",
-        "centroid"
-      ]
-    }
-  ],
-  "description": {
-    "en": "A layer showing (public) toilets",
-    "nl": "Een laag die publieke toiletten toont",
-    "de": "Eine Ebene mit (öffentlichen) Toiletten",
-    "es": "Una capa que muestra baños (públicos)",
-    "fr": "Un calque montrant les toilettes (publiques)",
-    "da": "Et lag, der viser (offentlige) toiletter",
-    "ca": "Una capa que mostra banys (publics)",
-    "cs": "Vrstva zobrazující (veřejné) toalety"
   },
   "units": [
     {

@@ -76,6 +76,64 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": "40,40",
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
+          }
+        ]
+      },
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/school/college.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#22f1f4",
+      "width": 1
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a university",
+        "nl": "een universiteit",
+        "de": "eine Universität",
+        "fr": "une université",
+        "da": "et universitet",
+        "ca": "una universitat",
+        "cs": "univerzita"
+      },
+      "description": {
+        "en": "An institute where tertiary education is given (at the level equivalent of a bachelors degree or higher). A single point per campus is enough - buildings and faculties should not be mapped with different university points.",
+        "nl": "Een onderwijsinstelling waar tertiair onderwijs wordt gegeven - dit is onderwijs waarvan het niveau overeenkomt met een bachelor of hoger is. Eén enkel punt per campus is genoeg - gebouwen en faculteiten worden hier niet op aangeduid.",
+        "de": "Eine Einrichtung, an der tertiäre Bildung vermittelt wird (auf dem Niveau eines Bachelor-Abschlusses oder höher). Ein einziger Punkt pro Campus ist ausreichend - Gebäude und Fakultäten sollten nicht mit Universitätspunkten gekennzeichnet werden.",
+        "fr": "Un institut où l'on dispense un enseignement supérieur (au niveau équivalent à un bachelor ou plus). Un simple point par campus est suffisant - les bâtiments et les facultés ne doivent pas être cartographiés avec différents points d'université.",
+        "ca": "Un institut on s'imparteix ensenyament terciari (al nivell equivalent de batxillerat o superior). N'hi ha prou amb un únic punt per campus: els edificis i les facultats no s'han de cartografiar amb diferents punts universitaris.",
+        "cs": "Institut, kde se poskytuje terciární vzdělání (na úrovni odpovídající bakalářskému titulu nebo vyšší). Stačí jeden bod na kampus - budovy a fakulty by neměly být mapovány s různými univerzitními body."
+      },
+      "tags": [
+        "amenity=university",
+        "fixme=Added with MapComplete, geometry to be drawn"
+      ]
+    }
+  ],
   "tagRenderings": [
     {
       "id": "institution-kind",
@@ -179,53 +237,5 @@
     "website",
     "email",
     "phone"
-  ],
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "iconSize": "40,40",
-      "label": {
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
-          }
-        ]
-      },
-      "icon": "circle:white;./assets/layers/school/college.svg",
-      "anchor": "center"
-    },
-    {
-      "color": "#22f1f4",
-      "width": 1
-    }
-  ],
-  "presets": [
-    {
-      "title": {
-        "en": "a university",
-        "nl": "een universiteit",
-        "de": "eine Universität",
-        "fr": "une université",
-        "da": "et universitet",
-        "ca": "una universitat",
-        "cs": "univerzita"
-      },
-      "description": {
-        "en": "An institute where tertiary education is given (at the level equivalent of a bachelors degree or higher). A single point per campus is enough - buildings and faculties should not be mapped with different university points.",
-        "nl": "Een onderwijsinstelling waar tertiair onderwijs wordt gegeven - dit is onderwijs waarvan het niveau overeenkomt met een bachelor of hoger is. Eén enkel punt per campus is genoeg - gebouwen en faculteiten worden hier niet op aangeduid.",
-        "de": "Eine Einrichtung, an der tertiäre Bildung vermittelt wird (auf dem Niveau eines Bachelor-Abschlusses oder höher). Ein einziger Punkt pro Campus ist ausreichend - Gebäude und Fakultäten sollten nicht mit Universitätspunkten gekennzeichnet werden.",
-        "fr": "Un institut où l'on dispense un enseignement supérieur (au niveau équivalent à un bachelor ou plus). Un simple point par campus est suffisant - les bâtiments et les facultés ne doivent pas être cartographiés avec différents points d'université.",
-        "ca": "Un institut on s'imparteix ensenyament terciari (al nivell equivalent de batxillerat o superior). N'hi ha prou amb un únic punt per campus: els edificis i les facultats no s'han de cartografiar amb diferents punts universitaris.",
-        "cs": "Institut, kde se poskytuje terciární vzdělání (na úrovni odpovídající bakalářskému titulu nebo vyšší). Stačí jeden bod na kampus - budovy a fakulty by neměly být mapovány s různými univerzitními body."
-      },
-      "tags": [
-        "amenity=university",
-        "fixme=Added with MapComplete, geometry to be drawn"
-      ]
-    }
   ]
 }

@@ -17,22 +17,6 @@
     "cs": "Hydranty, hasicí přístroje, požární stanice a stanice záchranné služby",
     "pl": "Hydranty, gaśnice, remizy strażackie i pogotowia ratunkowe"
   },
-  "shortDescription": {
-    "en": "Map to show hydrants, extinguishers, fire stations, and ambulance stations.",
-    "ja": "消火栓、消火器、消防署消火栓、消火器、消防署、および救急ステーションを表示します。",
-    "zh_Hant": "顯示消防栓、滅火器、消防隊與急救站的地圖。",
-    "ru": "Карта пожарных гидрантов, огнетушителей, пожарных станций и станций скорой помощи.",
-    "fr": "Carte indiquant les bornes incendies, extincteurs, casernes de pompiers et ambulanciers.",
-    "de": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen.",
-    "it": "Carta che mostra gli idranti, gli estintori, le caserme dei vigili del fuoco e le stazioni delle ambulanze.",
-    "hu": "Térkép tűzcsapok, tűzoltó készülékek, tűzoltóságok és mentőállomások megjelenítéséhez.",
-    "es": "Mapa para mostrar bocas de incendios, extintores, parques de bomberos y parques de ambulancias.",
-    "ca": "Mapa per a mostrar hidrants, extintors, parcs de bombers i estacions d'ambulàncies.",
-    "nl": "Kaart om hydranten, brandblussers, brandweerkazernes en ambulanceposten weer te geven.",
-    "da": "Kort for at vise brandhaner, brandslukkere, brandstationer og ambulancestationer.",
-    "cs": "Mapa zobrazující hydranty, hasicí přístroje, požární stanice a stanice záchranné služby.",
-    "pl": "Mapa przedstawiająca hydranty, gaśnice, remizy strażackie i karetki pogotowia."
-  },
   "description": {
     "en": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.",
     "ja": "このマップでは、お気に入りの近隣にある消火栓、消防署、救急ステーション、消火器を検索して更新できます。\n\n正確な位置を追跡し(モバイルのみ)、左下コーナーで関連するレイヤを選択できます。このツールを使用して、マップにピン(注視点)を追加または編集したり、利用可能な質問に答えることによって追加の詳細を提供することもできます。\n\nすべての変更は自動的にOpenStreetMapのグローバルデータベースに保存され、他のユーザが自由に再利用できます。",
@@ -49,17 +33,35 @@
     "cs": "Na této mapě můžete najít a aktualizovat informace o hydrantech, stanicích záchranné služby, hasičských stanicích a hasicích přístrojích ve vašich oblíbených čtvrtích.",
     "pl": "Na tej mapie możesz znaleźć i zaktualizować hydranty, remizy strażackie, karetki pogotowia i gaśnice w swoich ulubionych dzielnicach."
   },
+  "shortDescription": {
+    "en": "Map to show hydrants, extinguishers, fire stations, and ambulance stations.",
+    "ja": "消火栓、消火器、消防署消火栓、消火器、消防署、および救急ステーションを表示します。",
+    "zh_Hant": "顯示消防栓、滅火器、消防隊與急救站的地圖。",
+    "ru": "Карта пожарных гидрантов, огнетушителей, пожарных станций и станций скорой помощи.",
+    "fr": "Carte indiquant les bornes incendies, extincteurs, casernes de pompiers et ambulanciers.",
+    "de": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen.",
+    "it": "Carta che mostra gli idranti, gli estintori, le caserme dei vigili del fuoco e le stazioni delle ambulanze.",
+    "hu": "Térkép tűzcsapok, tűzoltó készülékek, tűzoltóságok és mentőállomások megjelenítéséhez.",
+    "es": "Mapa para mostrar bocas de incendios, extintores, parques de bomberos y parques de ambulancias.",
+    "ca": "Mapa per a mostrar hidrants, extintors, parcs de bombers i estacions d'ambulàncies.",
+    "nl": "Kaart om hydranten, brandblussers, brandweerkazernes en ambulanceposten weer te geven.",
+    "da": "Kort for at vise brandhaner, brandslukkere, brandstationer og ambulancestationer.",
+    "cs": "Mapa zobrazující hydranty, hasicí přístroje, požární stanice a stanice záchranné služby.",
+    "pl": "Mapa przedstawiająca hydranty, gaśnice, remizy strażackie i karetki pogotowia."
+  },
   "icon": "./assets/themes/hailhydrant/logo.svg",
+  "startZoom": 6,
   "startLat": 13.67801,
   "startLon": 121.6625,
-  "startZoom": 6,
-  "widenFactor": 3,
+  "defaultBackgroundId": "HDM_HOT",
+  "credits": [
+    "Erwin Olario"
+  ],
   "layers": [
     "hydrant",
     "extinguisher",
     "fire_station",
     "ambulancestation"
   ],
-  "defaultBackgroundId": "HDM_HOT",
-  "credits": "Erwin Olario"
+  "widenFactor": 3
 }

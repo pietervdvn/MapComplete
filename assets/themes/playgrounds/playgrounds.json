@@ -19,6 +19,23 @@
     "eu": "Jolas parkeak",
     "pl": "Place zabaw"
   },
+  "description": {
+    "nl": "Op deze kaart vind je speeltuinen en kan je zelf meer informatie en foto's toevoegen",
+    "en": "On this map, you find playgrounds and can add more information",
+    "fr": "Cette carte affiche les aires de jeux et permet d'ajouter plus d'informations",
+    "ja": "この地図では遊び場を見つけ情報を追加することができます",
+    "zh_Hant": "在這份地圖上，你可以尋找遊樂場以及其相關資訊",
+    "ru": "На этой карте можно найти игровые площадки и добавить дополнительную информацию",
+    "de": "Auf dieser Karte finden Sie Spielplätze und können weitere Informationen hinzufügen",
+    "it": "In questa cartina vengono mostrati i parchi giochi a cui è possibile aggiungere dettagli",
+    "id": "Di peta ini, Anda menemukan taman bermain dan dapat menambahkan lebih banyak informasi",
+    "hu": "Ezen a térképen játszótereket találsz, és további információkat adhatsz hozzájuk",
+    "es": "En este mapa, puedes encontrar parques y añadir más información",
+    "da": "På dette kort finder du legepladser og kan tilføje flere oplysninger",
+    "ca": "A aquest mapa, pots trobar parcs i afegir més informació",
+    "cs": "Na této mapě najdete dětská hřiště a můžete k nim přidat další informace",
+    "pl": "Na tej mapie znajdziesz place zabaw, możesz też dodać o nich więcej informacji"
+  },
   "shortDescription": {
     "nl": "Een kaart met speeltuinen",
     "en": "A map with playgrounds",
@@ -37,28 +54,10 @@
     "cs": "Mapa dětských hřišť",
     "pl": "Mapa z placami zabaw"
   },
-  "description": {
-    "nl": "Op deze kaart vind je speeltuinen en kan je zelf meer informatie en foto's toevoegen",
-    "en": "On this map, you find playgrounds and can add more information",
-    "fr": "Cette carte affiche les aires de jeux et permet d'ajouter plus d'informations",
-    "ja": "この地図では遊び場を見つけ情報を追加することができます",
-    "zh_Hant": "在這份地圖上，你可以尋找遊樂場以及其相關資訊",
-    "ru": "На этой карте можно найти игровые площадки и добавить дополнительную информацию",
-    "de": "Auf dieser Karte finden Sie Spielplätze und können weitere Informationen hinzufügen",
-    "it": "In questa cartina vengono mostrati i parchi giochi a cui è possibile aggiungere dettagli",
-    "id": "Di peta ini, Anda menemukan taman bermain dan dapat menambahkan lebih banyak informasi",
-    "hu": "Ezen a térképen játszótereket találsz, és további információkat adhatsz hozzájuk",
-    "es": "En este mapa, puedes encontrar parques y añadir más información",
-    "da": "På dette kort finder du legepladser og kan tilføje flere oplysninger",
-    "ca": "A aquest mapa, pots trobar parcs i afegir més informació",
-    "cs": "Na této mapě najdete dětská hřiště a můžete k nim přidat další informace",
-    "pl": "Na tej mapie znajdziesz place zabaw, możesz też dodać o nich więcej informacji"
-  },
   "icon": "./assets/themes/playgrounds/playground.svg",
+  "startZoom": 13,
   "startLat": 50.535,
   "startLon": 4.399,
-  "startZoom": 13,
-  "widenFactor": 5,
   "layers": [
     "playground",
     {
@@ -70,5 +69,6 @@
         "minzoom": 16
       }
     }
-  ]
+  ],
+  "widenFactor": 5
 }

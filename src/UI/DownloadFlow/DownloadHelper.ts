@@ -5,6 +5,7 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { Utils } from "../../Utils"
 import SimpleMetaTagger from "../../Logic/SimpleMetaTagger"
 import geojson2svg from "geojson2svg"
+import { GeoOperations } from "../../Logic/GeoOperations"
 
 /**
  * Exposes the download-functionality
@@ -82,6 +83,7 @@ export default class DownloadHelper {
         height?: 1000 | number
         mapExtent?: BBox
         unit?: "px" | "mm" | string
+        noSelfIntersectingLines?: boolean
     }) {
         const perLayer = this._state.perLayer
         options = options ?? {}
@@ -103,7 +105,7 @@ export default class DownloadHelper {
         const elements: string[] = []
 
         for (const layer of Array.from(perLayer.keys())) {
-            const features = perLayer.get(layer).features.data
+            let features = perLayer.get(layer).features.data
             if (features.length === 0) {
                 continue
             }
@@ -128,7 +130,9 @@ export default class DownloadHelper {
                     },
                 ],
             })
-
+            if (options.noSelfIntersectingLines) {
+                features = GeoOperations.SplitSelfIntersectingWays(features)
+            }
             for (const feature of features) {
                 const stroke =
                     rendering?.color?.GetRenderValue(feature.properties)?.txt ?? "#ff0000"

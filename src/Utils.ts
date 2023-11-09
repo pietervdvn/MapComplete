@@ -387,19 +387,27 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return newArr
     }
 
+    /**
+     * Finds all duplicates in a list of strings
+     *
+     * Utils.Duplicates(["a", "b", "c"]) // => []
+     * Utils.Duplicates(["a", "b","c","b"] // => ["b"]
+     * Utils.Duplicates(["a", "b","c","b","b"] // => ["b"]
+     *
+     */
     public static Duplicates(arr: string[]): string[] {
         if (arr === undefined) {
             return undefined
         }
-        const newArr = []
         const seen = new Set<string>()
+        const duplicates = new Set<string>()
         for (const string of arr) {
             if (seen.has(string)) {
-                newArr.push(string)
+                duplicates.add(string)
             }
             seen.add(string)
         }
-        return newArr
+        return Array.from(duplicates)
     }
 
     /**
@@ -972,7 +980,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      */
     public static downloadAdvanced(
         url: string,
-        headers?: any
+        headers?: any,
+        method: "POST" | "GET" | "PUT" | "UPDATE" | "DELETE" | "OPTIONS" = "GET",
+        content?: string
     ): Promise<
         | { content: string }
         | { redirect: string }
@@ -999,14 +1009,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     })
                 }
             }
-            xhr.open("GET", url)
+            xhr.open(method, url)
             if (headers !== undefined) {
                 for (const key in headers) {
                     xhr.setRequestHeader(key, headers[key])
                 }
             }
-
-            xhr.send()
+            xhr.send(content)
             xhr.onerror = reject
         })
     }
@@ -1482,7 +1491,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         element.scrollIntoView({ behavior: "smooth", block: "nearest" })
     }
 
-    public static findParentWithScrolling(element: HTMLBaseElement): HTMLBaseElement {
+    private static findParentWithScrolling(element: HTMLBaseElement): HTMLBaseElement {
         // Check if the element itself has scrolling
         if (element.scrollHeight > element.clientHeight) {
             return element
@@ -1624,6 +1633,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
     }
 
+    public static randomString(length: number): string {
+        let result = ""
+        for (let i = 0; i < length; i++) {
+            const chr = Math.random().toString(36).substr(2, 3)
+            result += chr
+        }
+        return result
+    }
     private static colorDiff(
         c0: { r: number; g: number; b: number },
         c1: { r: number; g: number; b: number }

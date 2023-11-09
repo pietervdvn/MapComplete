@@ -16,7 +16,16 @@
     "da": "Cykelcafé",
     "cs": "Cyklokavárna"
   },
-  "minzoom": 13,
+  "description": {
+    "en": "A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …",
+    "nl": "Een fietscafé is een café dat gericht is op fietsers, bijvoorbeeld omdat het een fietspomp heeft, fietsgerelateerde decoratie heeft enzovoorts.",
+    "de": "Ein Fahrradcafé ist ein Café, das auf Radfahrer ausgerichtet ist, zum Beispiel mit Dienstleistungen wie einer Pumpe, mit viel fahrradbezogener Dekoration, …",
+    "da": "En cykelcafé er en café rettet mod cyklister, for eksempel med tjenester som en pumpe, med masser af cykelrelateret dekoration, o.s.v",
+    "fr": "Un vélo café est un café à destination des cyclistes avec, par exemple, des services tels qu’une pompe, et de nombreuses décorations liées aux vélos, etc.",
+    "cs": "Cyklokavárna je kavárna zaměřená na cyklisty, například se službami, jako je pumpa, se spoustou výzdoby související s jízdními koly, …",
+    "ca": "Un cafè ciclista és un cafè enfocat a ciclistes, per exemple, amb serveis com una manxa, amb molta decoració relacionada amb el ciclisme, …",
+    "pt_BR": "Um café para ciclistas é um café direcionado aos ciclistas, por exemplo, com serviços como uma bomba de ar, muita decoração relacionada a bicicletas, …"
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -41,6 +50,7 @@
       ]
     }
   },
+  "minzoom": 13,
   "title": {
     "render": {
       "en": "Bike cafe",
@@ -80,6 +90,55 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "iconSize": "50,50",
+      "anchor": "bottom",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#684c2b"
+        },
+        {
+          "icon": "./assets/layers/bike_cafe/bike_cafe.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#694E2D",
+      "width": "2"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a bike cafe",
+        "nl": "een fietscafé",
+        "fr": "une café vélo",
+        "gl": "Café de ciclistas",
+        "de": "ein Fahrrad-Café",
+        "it": "un cafè per ciclisti",
+        "zh_Hans": "自行车咖啡",
+        "zh_Hant": "單車咖啡廳",
+        "ru": "Велосипедное кафе",
+        "pt_BR": "uma café de bicicleta",
+        "pt": "uma café de bicicleta",
+        "da": "en cykelcafé",
+        "cs": "kavárna pro cyklisty",
+        "ca": "un cafè ciclista"
+      },
+      "tags": [
+        "amenity=pub",
+        "pub=cycling"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -319,54 +378,5 @@
       }
     }
   ],
-  "presets": [
-    {
-      "title": {
-        "en": "a bike cafe",
-        "nl": "een fietscafé",
-        "fr": "une café vélo",
-        "gl": "Café de ciclistas",
-        "de": "ein Fahrrad-Café",
-        "it": "un cafè per ciclisti",
-        "zh_Hans": "自行车咖啡",
-        "zh_Hant": "單車咖啡廳",
-        "ru": "Велосипедное кафе",
-        "pt_BR": "uma café de bicicleta",
-        "pt": "uma café de bicicleta",
-        "da": "en cykelcafé",
-        "cs": "kavárna pro cyklisty",
-        "ca": "un cafè ciclista"
-      },
-      "tags": [
-        "amenity=pub",
-        "pub=cycling"
-      ]
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": "pin:#684c2b;./assets/layers/bike_cafe/bike_cafe.svg",
-      "iconSize": "50,50",
-      "anchor": "bottom",
-      "location": [
-        "point",
-        "centroid"
-      ]
-    },
-    {
-      "color": "#694E2D",
-      "width": "2"
-    }
-  ],
-  "description": {
-    "en": "A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …",
-    "nl": "Een fietscafé is een café dat gericht is op fietsers, bijvoorbeeld omdat het een fietspomp heeft, fietsgerelateerde decoratie heeft enzovoorts.",
-    "de": "Ein Fahrradcafé ist ein Café, das auf Radfahrer ausgerichtet ist, zum Beispiel mit Dienstleistungen wie einer Pumpe, mit viel fahrradbezogener Dekoration, …",
-    "da": "En cykelcafé er en café rettet mod cyklister, for eksempel med tjenester som en pumpe, med masser af cykelrelateret dekoration, o.s.v",
-    "fr": "Un vélo café est un café à destination des cyclistes avec, par exemple, des services tels qu’une pompe, et de nombreuses décorations liées aux vélos, etc.",
-    "cs": "Cyklokavárna je kavárna zaměřená na cyklisty, například se službami, jako je pumpa, se spoustou výzdoby související s jízdními koly, …",
-    "ca": "Un cafè ciclista és un cafè enfocat a ciclistes, per exemple, amb serveis com una manxa, amb molta decoració relacionada amb el ciclisme, …",
-    "pt_BR": "Um café para ciclistas é um café direcionado aos ciclistas, por exemplo, com serviços como uma bomba de ar, muita decoração relacionada a bicicletas, …"
-  },
   "deletion": true
 }

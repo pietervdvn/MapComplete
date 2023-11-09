@@ -15,8 +15,20 @@
     "da": "Cykelreparation/butik",
     "cs": "Opravna/obchod s jízdními koly"
   },
-  "minzoom": 13,
-  "allowMove": true,
+  "description": {
+    "en": "A shop specifically selling bicycles or related items",
+    "nl": "Een winkel die hoofdzakelijk fietsen en fietstoebehoren verkoopt",
+    "fr": "Un magasin vendant spécifiquement des vélos ou des objets en lien",
+    "it": "Un negozio che vende specificatamente biciclette o articoli similari",
+    "ru": "Магазин, специализирующийся на продаже велосипедов или сопутствующих товаров",
+    "pt_BR": "Uma loja que vende especificamente bicicletas ou itens relacionados",
+    "de": "Ein Geschäft, das speziell Fahrräder oder verwandte Artikel verkauft",
+    "pt": "Uma loja que vende especificamente bicicletas ou itens relacionados",
+    "es": "Una tiene que vende específicamente bicis u objetos relacionados",
+    "da": "En butik, der specifikt sælger cykler eller relaterede varer",
+    "ca": "Una botiga que ven específicament bicicletes o articles relacionats",
+    "cs": "Obchod zaměřený na prodej jízdních kol nebo souvisejících předmětů"
+  },
   "source": {
     "osmTags": {
       "#": "We select all bicycle shops, sports shops (but we try to weed out non-bicycle related shops), and any shop with a bicycle related tag",
@@ -41,6 +53,7 @@
       ]
     }
   },
+  "minzoom": 13,
   "title": {
     "render": {
       "en": "Bike repair/shop",
@@ -214,20 +227,97 @@
     },
     "icons.defaults"
   ],
-  "description": {
-    "en": "A shop specifically selling bicycles or related items",
-    "nl": "Een winkel die hoofdzakelijk fietsen en fietstoebehoren verkoopt",
-    "fr": "Un magasin vendant spécifiquement des vélos ou des objets en lien",
-    "it": "Un negozio che vende specificatamente biciclette o articoli similari",
-    "ru": "Магазин, специализирующийся на продаже велосипедов или сопутствующих товаров",
-    "pt_BR": "Uma loja que vende especificamente bicicletas ou itens relacionados",
-    "de": "Ein Geschäft, das speziell Fahrräder oder verwandte Artikel verkauft",
-    "pt": "Uma loja que vende especificamente bicicletas ou itens relacionados",
-    "es": "Una tiene que vende específicamente bicis u objetos relacionados",
-    "da": "En butik, der specifikt sælger cykler eller relaterede varer",
-    "ca": "Una botiga que ven específicament bicicletes o articles relacionats",
-    "cs": "Obchod zaměřený na prodej jízdních kol nebo souvisejících předmětů"
-  },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": {
+            "render": "pin",
+            "mappings": [
+              {
+                "if": "operator=De Fietsambassade Gent",
+                "then": null
+              }
+            ]
+          },
+          "color": {
+            "render": "#f04c4c",
+            "mappings": [
+              {
+                "if": "operator=De Fietsambassade Gent",
+                "then": null
+              },
+              {
+                "if": "service:bicycle:retail=yes",
+                "then": "#353d57"
+              }
+            ]
+          }
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/bike_shop/repair_shop.svg",
+            "mappings": [
+              {
+                "if": "operator=De Fietsambassade Gent",
+                "then": "./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg"
+              },
+              {
+                "if": "service:bicycle:retail=yes",
+                "then": "./assets/layers/bike_shop/shop.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        },
+        {
+          "if": "service:bicycle:pump=yes",
+          "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg"
+        },
+        {
+          "if": "service:bicycle:cleaning~*",
+          "then": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg"
+        }
+      ],
+      "iconSize": "50,50",
+      "anchor": "bottom",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#c00",
+      "width": "1"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a bike repair/shop",
+        "nl": "een fietszaak",
+        "fr": "une magasin et réparateur de vélo",
+        "gl": "Tenda/arranxo de bicicletas",
+        "de": "eine Fahrradwerkstatt bzw. ein Fahrradgeschäft",
+        "it": "una negozio/riparatore di bici",
+        "ru": "Обслуживание велосипедов/магазин",
+        "es": "un taller/tienda de bicis",
+        "da": "en cykelværksted/butik",
+        "ca": "una botiga/reparació de bicicletes",
+        "cs": "opravna/obchod s jízdními koly"
+      },
+      "tags": [
+        "shop=bicycle"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -797,67 +887,6 @@
     "bike_cleaning.bike_cleaning-service:bicycle:cleaning:charge",
     "description"
   ],
-  "presets": [
-    {
-      "title": {
-        "en": "a bike repair/shop",
-        "nl": "een fietszaak",
-        "fr": "une magasin et réparateur de vélo",
-        "gl": "Tenda/arranxo de bicicletas",
-        "de": "eine Fahrradwerkstatt bzw. ein Fahrradgeschäft",
-        "it": "una negozio/riparatore di bici",
-        "ru": "Обслуживание велосипедов/магазин",
-        "es": "un taller/tienda de bicis",
-        "da": "en cykelværksted/butik",
-        "ca": "una botiga/reparació de bicicletes",
-        "cs": "opravna/obchod s jízdními koly"
-      },
-      "tags": [
-        "shop=bicycle"
-      ]
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": {
-        "render": "pin:#f04c4c;./assets/layers/bike_shop/repair_shop.svg",
-        "mappings": [
-          {
-            "if": "operator=De Fietsambassade Gent",
-            "then": "./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg"
-          },
-          {
-            "if": "service:bicycle:retail=yes",
-            "then": "pin:#353d57;./assets/layers/bike_shop/shop.svg"
-          }
-        ]
-      },
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        },
-        {
-          "if": "service:bicycle:pump=yes",
-          "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg"
-        },
-        {
-          "if": "service:bicycle:cleaning~*",
-          "then": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg"
-        }
-      ],
-      "iconSize": "50,50",
-      "anchor": "bottom",
-      "location": [
-        "point",
-        "centroid"
-      ]
-    },
-    {
-      "color": "#c00",
-      "width": "1"
-    }
-  ],
   "filter": [
     "open_now",
     {
@@ -905,5 +934,6 @@
       ]
     }
   ],
-  "deletion": true
+  "deletion": true,
+  "allowMove": true
 }

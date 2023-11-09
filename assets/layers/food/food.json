@@ -11,6 +11,16 @@
     "pl": "Restauracje i fast-foody",
     "cs": "Restaurace a rychlé občerstvení"
   },
+  "description": {
+    "en": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
+    "nl": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)",
+    "de": "Eine Ebene mit Restaurants und Fast-Food-Einrichtungen (mit speziellem Rendering für Pommesbuden)",
+    "es": "Una capa mostrando restaurantes y locales de comida rápida (con un renderizado especial para friterías)",
+    "fr": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
+    "ca": "Una capa que mostra restaurants i locals de menjar ràpid (amb un renderitzat especial per a fregiduries)",
+    "cs": "Vrstva zobrazující restaurace a zařízení rychlého občerstvení (se speciálním vykreslením pro fritézy)",
+    "pl": "Warstwa przedstawiająca restauracje i obiekty typu fast-food (ze specjalnym renderowaniem dla frytek)"
+  },
   "source": {
     "osmTags": {
       "or": [
@@ -20,78 +30,6 @@
     }
   },
   "minzoom": 12,
-  "presets": [
-    {
-      "title": {
-        "en": "a restaurant",
-        "nl": "een restaurant",
-        "ru": "ресторан",
-        "de": "ein Restaurant",
-        "ca": "un restaurant",
-        "es": "un restaurante",
-        "fr": "un restaurant",
-        "pl": "restauracja",
-        "cs": "restaurace"
-      },
-      "tags": [
-        "amenity=restaurant"
-      ],
-      "description": {
-        "nl": "Een eetgegelegenheid waar je aan tafel wordt bediend",
-        "en": "A formal eating place with sit-down facilities selling full meals served by waiters",
-        "de": "Ein klassisches Speiselokal mit Sitzgelegenheiten, in dem vollständige Mahlzeiten von Kellnern serviert werden",
-        "es": "Un lugar de comidas formal, con mesas y sillas y que vende comidas completas servidas por camareros",
-        "fr": "Un lieu de restauration formel avec des installations pour s'asseoir vendant des repas complets servis par des serveurs",
-        "ca": "Un lloc per menjar formal amb instal·lacions per seure que venen àpats complets servits per cambrers",
-        "cs": "Formální jídelna s posezením, kde se prodávají kompletní jídla podávaná číšníky"
-      }
-    },
-    {
-      "title": {
-        "en": "a fastfood",
-        "nl": "een fastfood-zaak",
-        "ru": "быстрое питание",
-        "de": "ein Schnellimbiss",
-        "ca": "un negoci de menjar ràpid",
-        "fr": "un fast-food",
-        "cs": "rychlé občerstvení"
-      },
-      "tags": [
-        "amenity=fast_food"
-      ],
-      "description": {
-        "nl": "Een zaak waar je snel bediend wordt, vaak met de focus op afhalen. Zitgelegenheid is eerder beperkt (of zelfs afwezig)",
-        "en": "A food business concentrating on fast counter-only service and take-away food",
-        "de": "Ein Lebensmittelunternehmen, das sich auf schnellen Thekendienst und Essen zum Mitnehmen konzentriert",
-        "es": "Un negocio de comida centrado en servicio rápido solo en mostrador y comida para llevar",
-        "fr": "Une entreprise alimentaire se concentrant sur le service rapide au comptoir et les plats à emporter",
-        "ca": "Un negoci de menjar centrat en el servei ràpid sols en mostrador i menjar per a endur",
-        "cs": "Potravinářský podnik se zaměřením na rychlou obsluhu u pultu a jídlo s sebou"
-      }
-    },
-    {
-      "title": {
-        "en": "a fries shop",
-        "nl": "een frituur",
-        "de": "eine Pommesbude",
-        "fr": "Une friterie",
-        "ca": "una botiga de patates fregides",
-        "cs": "obchod s hranolky"
-      },
-      "tags": [
-        "amenity=fast_food",
-        "cuisine=friture"
-      ],
-      "description": {
-        "en": "A fast-food business focused on french fries",
-        "nl": "Een fastfood-zaak waar je frieten koopt",
-        "de": "Eine Pommesbude",
-        "fr": "Une restauration rapide centré sur la vente de frites",
-        "ca": "Un local de menjar ràpid centrat en les patates fregides",
-        "cs": "Podnik s rychlým občerstvením zaměřený na hranolky"
-      }
-    }
-  ],
   "title": {
     "render": {
       "en": "Restaurant",
@@ -158,6 +96,150 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        },
+        {
+          "if": {
+            "or": [
+              "diet:vegetarian=yes",
+              "diet:vegan=yes"
+            ]
+          },
+          "then": {
+            "render": "circle:white;./assets/layers/food/Vegetarian-mark.svg"
+          }
+        },
+        {
+          "if": {
+            "or": [
+              "organic=yes",
+              "organic=only"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/food/organic.svg"
+          }
+        }
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      },
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/food/restaurant.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "amenity=fast_food",
+                    "cuisine=friture"
+                  ]
+                },
+                "then": "./assets/layers/food/fries.svg"
+              },
+              {
+                "if": "amenity=fast_food",
+                "then": "./assets/layers/food/fastfood.svg"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "a restaurant",
+        "nl": "een restaurant",
+        "ru": "ресторан",
+        "de": "ein Restaurant",
+        "ca": "un restaurant",
+        "es": "un restaurante",
+        "fr": "un restaurant",
+        "pl": "restauracja",
+        "cs": "restaurace"
+      },
+      "tags": [
+        "amenity=restaurant"
+      ],
+      "description": {
+        "nl": "Een eetgegelegenheid waar je aan tafel wordt bediend",
+        "en": "A formal eating place with sit-down facilities selling full meals served by waiters",
+        "de": "Ein klassisches Speiselokal mit Sitzgelegenheiten, in dem vollständige Mahlzeiten von Kellnern serviert werden",
+        "es": "Un lugar de comidas formal, con mesas y sillas y que vende comidas completas servidas por camareros",
+        "fr": "Un lieu de restauration formel avec des installations pour s'asseoir vendant des repas complets servis par des serveurs",
+        "ca": "Un lloc per menjar formal amb instal·lacions per seure que venen àpats complets servits per cambrers",
+        "cs": "Formální jídelna s posezením, kde se prodávají kompletní jídla podávaná číšníky",
+        "pl": "Warstwa przedstawiająca restauracje i obiekty typu fast-food (ze specjalnym renderowaniem dla frytek)"
+      }
+    },
+    {
+      "title": {
+        "en": "a fastfood",
+        "nl": "een fastfood-zaak",
+        "ru": "быстрое питание",
+        "de": "ein Schnellimbiss",
+        "ca": "un negoci de menjar ràpid",
+        "fr": "un fast-food",
+        "cs": "rychlé občerstvení"
+      },
+      "tags": [
+        "amenity=fast_food"
+      ],
+      "description": {
+        "nl": "Een zaak waar je snel bediend wordt, vaak met de focus op afhalen. Zitgelegenheid is eerder beperkt (of zelfs afwezig)",
+        "en": "A food business concentrating on fast counter-only service and take-away food",
+        "de": "Ein Lebensmittelunternehmen, das sich auf schnellen Thekendienst und Essen zum Mitnehmen konzentriert",
+        "es": "Un negocio de comida centrado en servicio rápido solo en mostrador y comida para llevar",
+        "fr": "Une entreprise alimentaire se concentrant sur le service rapide au comptoir et les plats à emporter",
+        "ca": "Un negoci de menjar centrat en el servei ràpid sols en mostrador i menjar per a endur",
+        "cs": "Potravinářský podnik se zaměřením na rychlou obsluhu u pultu a jídlo s sebou"
+      }
+    },
+    {
+      "title": {
+        "en": "a fries shop",
+        "nl": "een frituur",
+        "de": "eine Pommesbude",
+        "fr": "Une friterie",
+        "ca": "una botiga de patates fregides",
+        "cs": "obchod s hranolky"
+      },
+      "tags": [
+        "amenity=fast_food",
+        "cuisine=friture"
+      ],
+      "description": {
+        "en": "A fast-food business focused on french fries",
+        "nl": "Een fastfood-zaak waar je frieten koopt",
+        "de": "Eine Pommesbude",
+        "fr": "Une restauration rapide centré sur la vente de frites",
+        "ca": "Un local de menjar ràpid centrat en les patates fregides",
+        "cs": "Podnik s rychlým občerstvením zaměřený na hranolky"
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -1256,77 +1338,5 @@
       }
     ]
   },
-  "allowMove": true,
-  "mapRendering": [
-    {
-      "icon": {
-        "render": "circle:white;./assets/layers/food/restaurant.svg",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "amenity=fast_food",
-                "cuisine=friture"
-              ]
-            },
-            "then": "circle:white;./assets/layers/food/fries.svg"
-          },
-          {
-            "if": "amenity=fast_food",
-            "then": "circle:white;./assets/layers/food/fastfood.svg"
-          }
-        ]
-      },
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        },
-        {
-          "if": {
-            "or": [
-              "diet:vegetarian=yes",
-              "diet:vegan=yes"
-            ]
-          },
-          "then": {
-            "render": "circle:white;./assets/layers/food/Vegetarian-mark.svg"
-          }
-        },
-        {
-          "if": {
-            "or": [
-              "organic=yes",
-              "organic=only"
-            ]
-          },
-          "then": {
-            "render": "./assets/layers/food/organic.svg"
-          }
-        }
-      ],
-      "label": {
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
-          }
-        ]
-      },
-      "location": [
-        "point",
-        "centroid"
-      ]
-    }
-  ],
-  "description": {
-    "en": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
-    "nl": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)",
-    "de": "Eine Ebene mit Restaurants und Fast-Food-Einrichtungen (mit speziellem Rendering für Pommesbuden)",
-    "es": "Una capa mostrando restaurantes y locales de comida rápida (con un renderizado especial para friterías)",
-    "fr": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
-    "ca": "Una capa que mostra restaurants i locals de menjar ràpid (amb un renderitzat especial per a fregiduries)",
-    "cs": "Vrstva zobrazující restaurace a zařízení rychlého občerstvení (se speciálním vykreslením pro fritézy)",
-    "pl": "Warstwa przedstawiająca restauracje i obiekty typu fast-food (ze specjalnym renderowaniem dla frytek)"
-  }
+  "allowMove": true
 }

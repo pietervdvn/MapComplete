@@ -1,6 +1,5 @@
 {
   "id": "advertising",
-  "credits": "Offsel",
   "title": {
     "en": "Advertising",
     "ca": "Publicitat",
@@ -12,18 +11,6 @@
     "zh_Hant": "廣告物件",
     "eu": "Publizitatea",
     "pl": "Reklamy"
-  },
-  "shortDescription": {
-    "ca": "On puc trobar elements publicitaris?",
-    "es": "Dónde puedo encontrar elementos publicitarios?",
-    "en": "Where I can find advertising features?",
-    "de": "Wo finde ich Werbeträger?",
-    "cs": "Kde najdu reklamní objekty?",
-    "fr": "Où puis-je trouver des dispositifs publicitaires ?",
-    "nl": "Waar zijn er reclameborden?",
-    "zh_Hant": "我能夠在那裡找到廣告物件？",
-    "eu": "Non aurki ditzaket publizitate ezaugarriak?",
-    "pl": "Gdzie mogę znaleźć obiekty reklamowe?"
   },
   "description": {
     "ca": "Alguna vegada t'has preguntat quanta publictat hi ha als nostres carrers i carreteres? Amb aquest mapa podràs trobar i afegir informació de tots els elements publictaris que t'hi trobes pel carrer",
@@ -38,13 +25,25 @@
     "eu": "Inoiz pentsatu duzu zenbat iragarki dauden gure kale eta errepideetan? Mapa honekin, kalean aurki ditzakezun publizitate-ezaugarri guztiei buruzko informazioa aurkitu eta erants dezakezu",
     "pl": "Czy zastanawiałeś się kiedyś, ile reklam jest na naszych ulicach i drogach? Dzięki tej mapie możesz znaleźć i dodać informacje o wszystkich funkcjach reklamowych, które możesz znaleźć na ulicy"
   },
-  "maintainer": "Offsel",
+  "shortDescription": {
+    "ca": "On puc trobar elements publicitaris?",
+    "es": "Dónde puedo encontrar elementos publicitarios?",
+    "en": "Where I can find advertising features?",
+    "de": "Wo finde ich Werbeträger?",
+    "cs": "Kde najdu reklamní objekty?",
+    "fr": "Où puis-je trouver des dispositifs publicitaires ?",
+    "nl": "Waar zijn er reclameborden?",
+    "zh_Hant": "我能夠在那裡找到廣告物件？",
+    "eu": "Non aurki ditzaket publizitate ezaugarriak?",
+    "pl": "Gdzie mogę znaleźć obiekty reklamowe?"
+  },
   "icon": "./assets/themes/advertising/icon.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 0.01,
+  "credits": [
+    "Offsel"
+  ],
   "layers": [
     "advertising"
-  ]
+  ],
+  "widenFactor": 0.01,
+  "maintainer": "Offsel"
 }

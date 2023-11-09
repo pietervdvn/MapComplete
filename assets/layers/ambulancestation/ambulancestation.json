@@ -20,7 +20,23 @@
     "pl": "Mapa stacji pogotowia ratunkowego",
     "pt_BR": "Mapa de estações de ambulância"
   },
-  "minzoom": 12,
+  "description": {
+    "en": "An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.",
+    "ja": "救急ステーションは、救急車、医療機器、個人用保護具、およびその他の医療用品を保管する場所です。",
+    "fr": "Une station d’ambulance est un lieu où sont stockés les véhicules d’urgence ainsi que de l’équipement médical.",
+    "de": "Eine Rettungswache ist ein Ort, an dem Rettungsfahrzeuge, medizinische Ausrüstung, persönliche Schutzausrüstung und anderes medizinisches Material untergebracht sind.",
+    "it": "La stazione delle ambulanze è un’area per lo stoccaggio delle ambulanze, dell’equipaggiamento medico, dei dispositivi di protezione individuale e di altre forniture medicali.",
+    "hu": "A mentőállomás olyan terület, ahol mentőautókat, orvosi felszereléseket, egyéni védőfelszereléseket és egyéb orvosi felszereléseket tárolnak.",
+    "ru": "Станция скорой помощи это полигон для хранения транспорта, медицинского оборудования, средств индивидуальной защиты и других медицинских принадлежностей.",
+    "nl": "Een ambulancestation is een plaats waar ambulances, medisch materiaal, persoonlijk beschermingsmateriaal en aanverwanten worden bewaard.",
+    "es": "Una estación de ambulancias es una zona para almacenar vehículos de ambulancia, equipamiento médico, equipos de protección personal y otros suministros médicos.",
+    "da": "En ambulancestation er et område til opbevaring af ambulancekøretøjer, medicinsk udstyr, personlige værnemidler og andre medicinske forsyninger.",
+    "cs": "Stanice záchranné služby je prostor pro umístění sanitních vozidel, zdravotnického vybavení, osobních ochranných prostředků a dalšího zdravotnického materiálu.",
+    "ca": "Una estició d'abulàncies és una àrea per a emmagatzemar ambulàncies, equipament mèdic, equips de protecció personal i altres subministraments mèdics.",
+    "he": "תחנת אמבולנס היא אזור לאחסון רכבי אמבולנס, ציוד רפואי, ציוד מגן אישי וציוד רפואי אחר.",
+    "pl": "Stacja pogotowia ratunkowego to miejsce przechowywania pojazdów ambulansów, sprzętu medycznego, środków ochrony osobistej i innych artykułów medycznych.",
+    "pt_BR": "Uma estação de ambulância é uma área de armazenamento de veículos de ambulância, equipamentos médicos, equipamentos de proteção pessoal e outros suprimentos médicos."
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -28,6 +44,7 @@
       ]
     }
   },
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Ambulance Station",
@@ -48,23 +65,73 @@
       "pt_BR": "Estação de Ambulância"
     }
   },
-  "description": {
-    "en": "An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.",
-    "ja": "救急ステーションは、救急車、医療機器、個人用保護具、およびその他の医療用品を保管する場所です。",
-    "fr": "Une station d’ambulance est un lieu où sont stockés les véhicules d’urgence ainsi que de l’équipement médical.",
-    "de": "Eine Rettungswache ist ein Ort, an dem Rettungsfahrzeuge, medizinische Ausrüstung, persönliche Schutzausrüstung und anderes medizinisches Material untergebracht sind.",
-    "it": "La stazione delle ambulanze è un’area per lo stoccaggio delle ambulanze, dell’equipaggiamento medico, dei dispositivi di protezione individuale e di altre forniture medicali.",
-    "hu": "A mentőállomás olyan terület, ahol mentőautókat, orvosi felszereléseket, egyéni védőfelszereléseket és egyéb orvosi felszereléseket tárolnak.",
-    "ru": "Станция скорой помощи это полигон для хранения транспорта, медицинского оборудования, средств индивидуальной защиты и других медицинских принадлежностей.",
-    "nl": "Een ambulancestation is een plaats waar ambulances, medisch materiaal, persoonlijk beschermingsmateriaal en aanverwanten worden bewaard.",
-    "es": "Una estación de ambulancias es una zona para almacenar vehículos de ambulancia, equipamiento médico, equipos de protección personal y otros suministros médicos.",
-    "da": "En ambulancestation er et område til opbevaring af ambulancekøretøjer, medicinsk udstyr, personlige værnemidler og andre medicinske forsyninger.",
-    "cs": "Stanice záchranné služby je prostor pro umístění sanitních vozidel, zdravotnického vybavení, osobních ochranných prostředků a dalšího zdravotnického materiálu.",
-    "ca": "Una estició d'abulàncies és una àrea per a emmagatzemar ambulàncies, equipament mèdic, equips de protecció personal i altres subministraments mèdics.",
-    "he": "תחנת אמבולנס היא אזור לאחסון רכבי אמבולנס, ציוד רפואי, ציוד מגן אישי וציוד רפואי אחר.",
-    "pl": "Stacja pogotowia ratunkowego to miejsce przechowywania pojazdów ambulansów, sprzętu medycznego, środków ochrony osobistej i innych artykułów medycznych.",
-    "pt_BR": "Uma estação de ambulância é uma área de armazenamento de veículos de ambulância, equipamentos médicos, equipamentos de proteção pessoal e outros suprimentos médicos."
-  },
+  "pointRendering": [
+    {
+      "iconSize": "35,35",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/themes/hailhydrant/Twemoji_1f691.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f",
+      "width": "1"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "emergency=ambulance_station"
+      ],
+      "title": {
+        "en": "an ambulance station",
+        "ru": "Станция скорой помощи",
+        "ja": "救急ステーション(消防署)",
+        "fr": "une station d’ambulances",
+        "de": "eine Rettungswache",
+        "it": "una stazione delle ambulanze",
+        "hu": "Mentőállomás",
+        "nl": "een ambulancestation",
+        "zh_Hans": "救护车站",
+        "id": "Stasiun ambulans",
+        "es": "una estación de ambulancias",
+        "nb_NO": "en ambulansestasjon",
+        "da": "en ambulancestation",
+        "cs": "stanice rychlé záchranné služby",
+        "ca": "una estació d'ambulàncies",
+        "pl": "stacja pogotowia ratunkowego",
+        "pt_BR": "uma estação de ambulância"
+      },
+      "description": {
+        "en": "Add an ambulance station to the map",
+        "ja": "救急ステーション(消防署)をマップに追加する",
+        "ru": "Добавить станцию скорой помощи на карту",
+        "fr": "Ajouter une station d’ambulances à la carte",
+        "de": "Eine Rettungsstation der Karte hinzufügen",
+        "it": "Aggiungi una stazione delle ambulanza alla mappa",
+        "hu": "Mentőállomás hozzáadása a térképhez",
+        "nl": "Voeg een ambulancestation toe aan de kaart",
+        "zh_Hans": "向地图中添加一个救护车站",
+        "id": "Tambahkan stasiun ambulans ke peta",
+        "es": "Añadir una estación de ambulancias al mapa",
+        "nb_NO": "Legg til en ambulansestasjon på kartet",
+        "da": "Tilføj en ambulancestation til kortet",
+        "cs": "Přidat na mapu stanici záchranné služby",
+        "ca": "Afegeix una estació d'ambulàncies al mapa",
+        "he": "הוספת תחנת אמבולנס למפה",
+        "pl": "Dodaj stację pogotowia ratunkowego do mapy",
+        "pt_BR": "Adicionar uma estação de ambulância ao mapa"
+      }
+    }
+  ],
   "tagRenderings": [
     {
       "id": "ambulance-name",
@@ -363,66 +430,5 @@
       ]
     },
     "images"
-  ],
-  "presets": [
-    {
-      "tags": [
-        "emergency=ambulance_station"
-      ],
-      "title": {
-        "en": "an ambulance station",
-        "ru": "Станция скорой помощи",
-        "ja": "救急ステーション(消防署)",
-        "fr": "une station d’ambulances",
-        "de": "eine Rettungswache",
-        "it": "una stazione delle ambulanze",
-        "hu": "Mentőállomás",
-        "nl": "een ambulancestation",
-        "zh_Hans": "救护车站",
-        "id": "Stasiun ambulans",
-        "es": "una estación de ambulancias",
-        "nb_NO": "en ambulansestasjon",
-        "da": "en ambulancestation",
-        "cs": "stanice rychlé záchranné služby",
-        "ca": "una estació d'ambulàncies",
-        "pl": "stacja pogotowia ratunkowego",
-        "pt_BR": "uma estação de ambulância"
-      },
-      "description": {
-        "en": "Add an ambulance station to the map",
-        "ja": "救急ステーション(消防署)をマップに追加する",
-        "ru": "Добавить станцию скорой помощи на карту",
-        "fr": "Ajouter une station d’ambulances à la carte",
-        "de": "Eine Rettungsstation der Karte hinzufügen",
-        "it": "Aggiungi una stazione delle ambulanza alla mappa",
-        "hu": "Mentőállomás hozzáadása a térképhez",
-        "nl": "Voeg een ambulancestation toe aan de kaart",
-        "zh_Hans": "向地图中添加一个救护车站",
-        "id": "Tambahkan stasiun ambulans ke peta",
-        "es": "Añadir una estación de ambulancias al mapa",
-        "nb_NO": "Legg til en ambulansestasjon på kartet",
-        "da": "Tilføj en ambulancestation til kortet",
-        "cs": "Přidat na mapu stanici záchranné služby",
-        "ca": "Afegeix una estació d'ambulàncies al mapa",
-        "he": "הוספת תחנת אמבולנס למפה",
-        "pl": "Dodaj stację pogotowia ratunkowego do mapy",
-        "pt_BR": "Adicionar uma estação de ambulância ao mapa"
-      }
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": "./assets/themes/hailhydrant/Twemoji_1f691.svg",
-      "iconSize": "35,35",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#00f",
-      "width": "1"
-    }
   ]
 }

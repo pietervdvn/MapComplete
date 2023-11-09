@@ -24,13 +24,12 @@ fi
 
 
 
-SRC_MAPS=""
 BRANCH=`git rev-parse --abbrev-ref HEAD`
 echo "The branch name is $BRANCH"
 if [ $BRANCH = "develop" ]
 then
-    # SRC_MAPS="--sourcemap"
-    echo "Source maps are NOT enabled as they consume to much RAM"
+    SRC_MAPS="--sourcemap"
+    echo "Source maps are enabled "
 fi
 
 if [ $BRANCH = "master" ] || [ $BRANCH = "develop" ]
@@ -46,6 +45,7 @@ else
 fi
 
 export NODE_OPTIONS=--max-old-space-size=7000
+which vite
 vite build $SRC_MAPS 
 # Copy the layer files, as these might contain assets (e.g. svgs)
 cp -r assets/layers/ dist/assets/layers/

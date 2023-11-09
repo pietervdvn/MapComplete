@@ -11,7 +11,15 @@
     "es": "Cámaras de vigilancia",
     "cs": "Bezpečnostní kamery"
   },
-  "minzoom": 12,
+  "description": {
+    "en": "This layer shows surveillance cameras and allows a contributor to update information and add new cameras",
+    "nl": "Deze laag toont bewakingscamera's en laat toe om de informatie te verrijken en om nieuwe camera\"s toe te voegen",
+    "de": "Diese Ebene zeigt die Überwachungskameras an und ermöglicht es, Informationen zu aktualisieren und neue Kameras hinzuzufügen",
+    "es": "Esta capa muestra las cámaras de vigilancia y permite a quien colabora, actualizar la información y agregar nuevas cámaras",
+    "fr": "Cette couche affiche les caméras de surveillance et permet au contributeur de mettre à jour les informations et ajouter de nouvelles caméras",
+    "ca": "Aquesta capa mostra les càmeres de vigilància i permet a qui col·labora, actualitzar la informació i afegir noves càmeres",
+    "cs": "Tato vrstva zobrazuje sledovací kamery a umožňuje přispěvateli aktualizovat informace a přidávat nové kamery"
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -26,6 +34,7 @@
       ]
     }
   },
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Surveillance Camera",
@@ -40,6 +49,163 @@
       "cs": "Bezpečnostní kamera"
     }
   },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/themes/surveillance/logo.svg",
+            "mappings": [
+              {
+                "if": "surveillance:type=ALPR",
+                "then": "./assets/layers/surveillance_camera/ALPR.svg"
+              },
+              {
+                "if": "camera:type=dome",
+                "then": "./assets/themes/surveillance/dome.svg"
+              },
+              {
+                "if": "_direction:leftright=right",
+                "then": "./assets/themes/surveillance/cam_right.svg"
+              },
+              {
+                "if": "_direction:leftright=left",
+                "then": "./assets/themes/surveillance/cam_left.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": {
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "camera:type=fixed",
+                "surveillance:type=camera",
+                "_direction:leftright~*"
+              ]
+            },
+            "then": "100,35,center"
+          }
+        ],
+        "render": "35,35,center"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "rotation": {
+        "#": "Note: {camera:direction} is substituted by a number, giving the string 'calc(123deg + 90deg)'  ; it is this string that is used as css property, which interprets the calc",
+        "render": "calc({_direction:numerical}deg + 90deg)",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                "camera:type=dome",
+                "surveillance:type=ALPR"
+              ]
+            },
+            "then": "0"
+          },
+          {
+            "if": "_direction:leftright=right",
+            "then": "calc({_direction:numerical}deg - 90deg)"
+          }
+        ]
+      }
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#f00",
+      "width": "8"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "man_made=surveillance",
+        "surveillance:type=camera"
+      ],
+      "title": {
+        "en": "a surveillance camera",
+        "nl": "een bewakingscamera",
+        "de": "eine Überwachungskamera",
+        "es": "una cámara de vigilancia",
+        "fr": "une caméra de surveillance",
+        "ca": "una càmera de vigilància",
+        "cs": "bezpečnostní kamera"
+      }
+    },
+    {
+      "tags": [
+        "man_made=surveillance",
+        "surveillance:type=camera",
+        "camera:mount=wall"
+      ],
+      "title": {
+        "en": "a surveillance camera mounted on a wall",
+        "nl": "een bewakingscamera gemonteerd op een muur",
+        "de": "eine an einer Wand montierte Überwachungskamera",
+        "es": "una cámara de vigilancia montada en una pared",
+        "fr": "une caméra de surveillance fixée au mur",
+        "ca": "una càmera de vigilància muntada en una paret",
+        "cs": "sledovací kamera namontovaná na zdi"
+      },
+      "snapToLayer": [
+        "walls_and_buildings"
+      ]
+    },
+    {
+      "tags": [
+        "man_made=surveillance",
+        "surveillance:type=ALPR"
+      ],
+      "title": {
+        "en": "an ALPR camera (Automatic Number Plate Reader)",
+        "ca": "una càmera ALPR (lector automàtic de matrícules, per les seves sigles en anglès)",
+        "de": "Eine Kamera zur automatischen Nummernschilderkennung",
+        "cs": "kamera ALPR (automatická čtečka registračních značek)"
+      },
+      "description": {
+        "en": "An ALPR typically has two lenses and an array of infrared lights.",
+        "ca": "Un ALPR normalment té dues lents i una sèrie de llums infrarojes.",
+        "de": "Eine automatische Nummernschilderkennung hat üblicherweise zwei Linsen und ein Reihe aus Infrarotlichtern.",
+        "cs": "ALPR má obvykle dvě čočky a pole infračervených světel."
+      },
+      "exampleImages": [
+        "./assets/layers/surveillance_camera/ALPR_Example.jpg",
+        "./assets/layers/surveillance_camera/ALPR_Example2.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "man_made=surveillance",
+        "surveillance:type=ALPR",
+        "camera:mount=wall"
+      ],
+      "title": {
+        "en": "an ALPR camera (Automatic Number Plate Reader) mounted on a wall",
+        "ca": "una càmera ALPR (lector automàtic de matrícules) muntada a la paret",
+        "de": "eine Kamera zur Nummernschilderkennung, die an einer Wand befestigt ist",
+        "cs": "kamera ALPR (Automatická čtečka registračních značek) namontovaná na zdi"
+      },
+      "description": {
+        "en": "An ALPR typically has two lenses and an array of infrared lights.",
+        "ca": "Un ALPR normalment té dues lents i una sèrie de llums infrarojes.",
+        "de": "Eine automatische Nummernschilderkennung hat üblicherweise zwei Linsen und ein Reihe aus Infrarotlichtern.",
+        "cs": "ALPR má obvykle dvě čočky a pole infračervených světel."
+      },
+      "exampleImages": [
+        "./assets/layers/surveillance_camera/ALPR_Example.jpg",
+        "./assets/layers/surveillance_camera/ALPR_Example2.jpg"
+      ],
+      "snapToLayer": [
+        "walls_and_buildings"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -642,161 +808,5 @@
       "id": "camera:mount"
     }
   ],
-  "presets": [
-    {
-      "tags": [
-        "man_made=surveillance",
-        "surveillance:type=camera"
-      ],
-      "title": {
-        "en": "a surveillance camera",
-        "nl": "een bewakingscamera",
-        "de": "eine Überwachungskamera",
-        "es": "una cámara de vigilancia",
-        "fr": "une caméra de surveillance",
-        "ca": "una càmera de vigilància",
-        "cs": "bezpečnostní kamera"
-      }
-    },
-    {
-      "tags": [
-        "man_made=surveillance",
-        "surveillance:type=camera",
-        "camera:mount=wall"
-      ],
-      "title": {
-        "en": "a surveillance camera mounted on a wall",
-        "nl": "een bewakingscamera gemonteerd op een muur",
-        "de": "eine an einer Wand montierte Überwachungskamera",
-        "es": "una cámara de vigilancia montada en una pared",
-        "fr": "une caméra de surveillance fixée au mur",
-        "ca": "una càmera de vigilància muntada en una paret",
-        "cs": "sledovací kamera namontovaná na zdi"
-      },
-      "snapToLayer": "walls_and_buildings"
-    },
-    {
-      "tags": [
-        "man_made=surveillance",
-        "surveillance:type=ALPR"
-      ],
-      "title": {
-        "en": "an ALPR camera (Automatic Number Plate Reader)",
-        "ca": "una càmera ALPR (lector automàtic de matrícules, per les seves sigles en anglès)",
-        "de": "Eine Kamera zur automatischen Nummernschilderkennung",
-        "cs": "kamera ALPR (automatická čtečka registračních značek)"
-      },
-      "description": {
-        "en": "An ALPR typically has two lenses and an array of infrared lights.",
-        "ca": "Un ALPR normalment té dues lents i una sèrie de llums infrarojes.",
-        "de": "Eine automatische Nummernschilderkennung hat üblicherweise zwei Linsen und ein Reihe aus Infrarotlichtern.",
-        "cs": "ALPR má obvykle dvě čočky a pole infračervených světel."
-      },
-      "exampleImages": [
-        "./assets/layers/surveillance_camera/ALPR_Example.jpg",
-        "./assets/layers/surveillance_camera/ALPR_Example2.jpg"
-      ]
-    },
-    {
-      "tags": [
-        "man_made=surveillance",
-        "surveillance:type=ALPR",
-        "camera:mount=wall"
-      ],
-      "title": {
-        "en": "an ALPR camera (Automatic Number Plate Reader) mounted on a wall",
-        "ca": "una càmera ALPR (lector automàtic de matrícules) muntada a la paret",
-        "de": "eine Kamera zur Nummernschilderkennung, die an einer Wand befestigt ist",
-        "cs": "kamera ALPR (Automatická čtečka registračních značek) namontovaná na zdi"
-      },
-      "description": {
-        "en": "An ALPR typically has two lenses and an array of infrared lights.",
-        "ca": "Un ALPR normalment té dues lents i una sèrie de llums infrarojes.",
-        "de": "Eine automatische Nummernschilderkennung hat üblicherweise zwei Linsen und ein Reihe aus Infrarotlichtern.",
-        "cs": "ALPR má obvykle dvě čočky a pole infračervených světel."
-      },
-      "exampleImages": [
-        "./assets/layers/surveillance_camera/ALPR_Example.jpg",
-        "./assets/layers/surveillance_camera/ALPR_Example2.jpg"
-      ],
-      "snapToLayer": "walls_and_buildings"
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": {
-        "render": "./assets/themes/surveillance/logo.svg",
-        "mappings": [
-          {
-            "if": "surveillance:type=ALPR",
-            "then": "./assets/layers/surveillance_camera/ALPR.svg"
-          },
-          {
-            "if": "camera:type=dome",
-            "then": "./assets/themes/surveillance/dome.svg"
-          },
-          {
-            "if": "_direction:leftright=right",
-            "then": "./assets/themes/surveillance/cam_right.svg"
-          },
-          {
-            "if": "_direction:leftright=left",
-            "then": "./assets/themes/surveillance/cam_left.svg"
-          }
-        ]
-      },
-      "iconSize": {
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "camera:type=fixed",
-                "surveillance:type=camera",
-                "_direction:leftright~*"
-              ]
-            },
-            "then": "100,35,center"
-          }
-        ],
-        "render": "35,35,center"
-      },
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "rotation": {
-        "#": "Note: {camera:direction} is substituted by a number, giving the string 'calc(123deg + 90deg)'  ; it is this string that is used as css property, which interprets the calc",
-        "render": "calc({_direction:numerical}deg + 90deg)",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                "camera:type=dome",
-                "surveillance:type=ALPR"
-              ]
-            },
-            "then": "0"
-          },
-          {
-            "if": "_direction:leftright=right",
-            "then": "calc({_direction:numerical}deg - 90deg)"
-          }
-        ]
-      }
-    },
-    {
-      "color": "#f00",
-      "width": "8"
-    }
-  ],
-  "deletion": true,
-  "description": {
-    "en": "This layer shows surveillance cameras and allows a contributor to update information and add new cameras",
-    "nl": "Deze laag toont bewakingscamera's en laat toe om de informatie te verrijken en om nieuwe camera\"s toe te voegen",
-    "de": "Diese Ebene zeigt die Überwachungskameras an und ermöglicht es, Informationen zu aktualisieren und neue Kameras hinzuzufügen",
-    "es": "Esta capa muestra las cámaras de vigilancia y permite a quien colabora, actualizar la información y agregar nuevas cámaras",
-    "fr": "Cette couche affiche les caméras de surveillance et permet au contributeur de mettre à jour les informations et ajouter de nouvelles caméras",
-    "ca": "Aquesta capa mostra les càmeres de vigilància i permet a qui col·labora, actualitzar la informació i afegir noves càmeres",
-    "cs": "Tato vrstva zobrazuje sledovací kamery a umožňuje přispěvateli aktualizovat informace a přidávat nové kamery"
-  }
+  "deletion": true
 }

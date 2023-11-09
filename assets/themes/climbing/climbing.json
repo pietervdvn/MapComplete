@@ -50,11 +50,9 @@
     "pl": "Mapa wspinaczkowa została pierwotnie stworzona przez <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christiana Neumanna</a>. Jeśli masz uwagi lub pytania, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>skontaktuj się z nim</a>.</p>< p>Projekt wykorzystuje dane projektu <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>"
   },
   "icon": "./assets/themes/climbing/climbing_icon.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 1.5,
-  "customCss": "./assets/themes/climbing/climbing.css",
+  "credits": [
+    "Christian Neumann <christian@utopicode.de>"
+  ],
   "layers": [
     {
       "builtin": [
@@ -501,5 +499,6 @@
       }
     }
   ],
-  "credits": "Christian Neumann <christian@utopicode.de>"
+  "customCss": "./assets/themes/climbing/climbing.css",
+  "widenFactor": 1.5
 }

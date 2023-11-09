@@ -38,16 +38,25 @@
       "cs": "Nakládání s odpady"
     }
   },
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "point",
         "centroid"
       ],
-      "icon": "circle:white;./assets/layers/waste_disposal/waste_disposal.svg",
-      "iconSize": "20,20"
+      "iconSize": "20,20",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/waste_disposal/waste_disposal.svg"
+        }
+      ]
     }
   ],
+  "lineRendering": [],
   "presets": [
     {
       "title": {
@@ -244,11 +253,6 @@
       ]
     }
   ],
-  "allowMove": {
-    "enableImproveAccuracy": true,
-    "enableRelocation": true
-  },
-  "deletion": true,
   "filter": [
     {
       "#": "ignore-possible-duplicate",
@@ -269,5 +273,10 @@
         }
       ]
     }
-  ]
+  ],
+  "deletion": true,
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": true
+  }
 }

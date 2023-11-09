@@ -12,7 +12,16 @@
     "cs": "Objekt související s jízdním kolem",
     "pl": "Obiekt związany z rowerami"
   },
-  "minzoom": 13,
+  "description": {
+    "en": "A layer with bike-themed objects but who don't match any other layer",
+    "nl": "Een laag met fietsgerelateerde diensten, die in geen enkele andere laag konden ondergebracht worden",
+    "de": "Eine Ebene mit Objekten zum Thema Fahrrad, die zu keiner anderen Ebene passen",
+    "es": "Una capa con los objetos relacionados con bicis pero que no coinciden con ninguna otra capa",
+    "fr": "Une couche sur le thème des vélos mais qui ne correspondent à aucune autre couche",
+    "da": "Et lag med objekter med cykeltema, men som ikke matcher noget andet lag",
+    "ca": "Una capa amb els objectes relacionats amb bicis però que no coinxideixen amb cap altra capa",
+    "cs": "Vrstva s objekty s tématikou jízdních kol, které však neodpovídají žádné jiné vrstvě"
+  },
   "source": {
     "osmTags": {
       "or": [
@@ -28,6 +37,7 @@
       ]
     }
   },
+  "minzoom": 13,
   "title": {
     "render": {
       "en": "Bike-related object",
@@ -63,6 +73,28 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "iconSize": "50,50",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "./assets/layers/bike_themed_object/other_services.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#AB76D5",
+      "width": "2"
+    }
+  ],
+  "presets": [],
   "tagRenderings": [
     "images",
     "description",
@@ -70,31 +102,5 @@
     "email",
     "phone",
     "opening_hours"
-  ],
-  "presets": [],
-  "mapRendering": [
-    {
-      "icon": "./assets/layers/bike_themed_object/other_services.svg",
-      "iconSize": "50,50",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "bottom"
-    },
-    {
-      "color": "#AB76D5",
-      "width": "2"
-    }
-  ],
-  "description": {
-    "en": "A layer with bike-themed objects but who don't match any other layer",
-    "nl": "Een laag met fietsgerelateerde diensten, die in geen enkele andere laag konden ondergebracht worden",
-    "de": "Eine Ebene mit Objekten zum Thema Fahrrad, die zu keiner anderen Ebene passen",
-    "es": "Una capa con los objetos relacionados con bicis pero que no coinciden con ninguna otra capa",
-    "fr": "Une couche sur le thème des vélos mais qui ne correspondent à aucune autre couche",
-    "da": "Et lag med objekter med cykeltema, men som ikke matcher noget andet lag",
-    "ca": "Una capa amb els objectes relacionats amb bicis però que no coinxideixen amb cap altra capa",
-    "cs": "Vrstva s objekty s tématikou jízdních kol, které však neodpovídají žádné jiné vrstvě"
-  }
+  ]
 }

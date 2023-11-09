@@ -7,12 +7,23 @@ import {
 import Translations from "../src/UI/i18n/Translations"
 import { Translation } from "../src/UI/i18n/Translation"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
+import themeconfig from "../src/assets/schemas/layoutconfigmeta.json"
+import layerconfig from "../src/assets/schemas/layerconfigmeta.json"
+
+import { Utils } from "../src/Utils"
+import { ConfigMeta } from "../src/UI/Studio/configMeta"
+import { ConversionContext } from "../src/Models/ThemeConfig/Conversion/ConversionContext"
 
 /*
  * This script reads all theme and layer files and reformats them inplace
  * Use with caution, make a commit beforehand!
  */
-
+const themeAttributesOrder = Utils.Dedup(
+    (<ConfigMeta[]>themeconfig).filter((c) => c.path.length === 1).map((c) => c.path[0])
+)
+const layerAttributesOrder = Utils.Dedup(
+    (<ConfigMeta[]>layerconfig).filter((c) => c.path.length === 1).map((c) => c.path[0])
+)
 const t: Translation = Translations.t.general.add.addNew
 t.OnEveryLanguage((txt, ln) => {
     console.log(ln, txt)
@@ -28,6 +39,19 @@ const articles = {
     nl: 'een',
     pt: 'uma',
     pt_BR : 'uma',//*/
+}
+
+function reorder(object: object, order: string[]) {
+    const allKeys = new Set<string>(Object.keys(object))
+    const copy = {}
+    for (const key of order) {
+        copy[key] = object[key]
+        allKeys.delete(key)
+    }
+    for (const key of allKeys) {
+        copy[key] = object[key]
+    }
+    return copy
 }
 
 function addArticleToPresets(layerConfig: { presets?: { title: any }[] }) {
@@ -68,11 +92,12 @@ for (const layerFile of layerFiles) {
         const fixed = <LayerConfigJson>(
             new UpdateLegacyLayer().convertStrict(
                 layerFile.parsed,
-                "While linting " + layerFile.path
+                ConversionContext.construct([layerFile.path.split("/").at(-1)], ["update legacy"])
             )
         )
         addArticleToPresets(fixed)
-        writeFileSync(layerFile.path, JSON.stringify(fixed, null, "  ") + "\n")
+        const reordered = reorder(fixed, layerAttributesOrder)
+        writeFileSync(layerFile.path, JSON.stringify(reordered, null, "  ") + "\n")
     } catch (e) {
         console.error("COULD NOT LINT LAYER" + layerFile.path + ":\n\t" + e)
     }
@@ -83,7 +108,7 @@ for (const themeFile of themeFiles) {
     try {
         const fixed = new FixLegacyTheme().convertStrict(
             themeFile.parsed,
-            "While linting " + themeFile.path
+            ConversionContext.construct([themeFile.path.split("/").at(-1)], ["update legacy layer"])
         )
         for (const layer of fixed.layers) {
             if (layer["presets"] !== undefined) {
@@ -91,7 +116,12 @@ for (const themeFile of themeFiles) {
             }
         }
         // extractInlineLayer(fixed)
-        writeFileSync(themeFile.path, JSON.stringify(fixed, null, "  "))
+        const endsWithNewline = themeFile.raw.at(-1) === "\n"
+        const ordered = reorder(fixed, themeAttributesOrder)
+        writeFileSync(
+            themeFile.path,
+            JSON.stringify(ordered, null, "  ") + (endsWithNewline ? "\n" : "")
+        )
     } catch (e) {
         console.error("COULD NOT LINT THEME" + themeFile.path + ":\n\t" + e)
     }

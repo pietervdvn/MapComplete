@@ -2,6 +2,15 @@ import { TagConfigJson } from "./TagConfigJson"
 
 export interface DeleteConfigJson {
     /***
+     * By default, the contributor needs 20 previous changesets to delete points edited by others.
+     * For some small features (e.g. bicycle racks) this is too much and this requirement can be lowered or dropped, which can be done here.
+     *
+     * type: nat
+     * question: How many changesets must a contributor have before being allowed to delete a point?
+     */
+    neededChangesets?: number
+
+    /***
      * By default, three reasons to delete a point are shown:
      *
      * - The point does not exist anymore
@@ -18,12 +27,17 @@ export interface DeleteConfigJson {
      */
     extraDeleteReasons?: {
         /**
-         * The text that will be shown to the user - translatable
+         * The text that will be shown to the user as option for why this point does not exist anymore.
+         * Note that the most common reasons (test point, does not exist anymore, cannot be found) are already offered by default
+         *
+         * question: For what extra reason might this feature be removed in real-life?
          */
         explanation: string | any
         /**
          * The text that will be uploaded into the changeset or will be used in the fixme in case of a soft deletion
          * Should be a few words, in english
+         *
+         * question: What should be added to the changeset as delete reason?
          */
         changesetMessage: string
     }[]
@@ -39,10 +53,14 @@ export interface DeleteConfigJson {
         /**
          * The tags that will be given to the object.
          * This must remove tags so that the 'source/osmTags' won't match anymore
+         *
+         * question: What tags should be applied to the object?
          */
         if: TagConfigJson
         /**
          * The human explanation for the options
+         *
+         * question: What text should be shown to the contributor for this reason?
          */
         then: string | any
     }[]
@@ -53,6 +71,7 @@ export interface DeleteConfigJson {
      * It is important that the feature will be retagged in such a way that it won't be picked up by the layer anymore!
      *
      * Example (note that "amenity=" erases the 'amenity'-key alltogether):
+     *
      * ```
      * {
      *     "and": ["disussed:amenity=public_bookcase", "amenity="]
@@ -60,22 +79,26 @@ export interface DeleteConfigJson {
      * ```
      *
      * or (notice the use of the ':='-tag to copy the old value of 'shop=*' into 'disused:shop='):
+     *
      * ```
      * {
      *     "and": ["disused:shop:={shop}", "shop="]
      * }
      * ```
+     *
+     * question: If a hard delete is not possible, what tags should be applied to mark this feature as deleted?
+     * type: tag
      */
     softDeletionTags?: TagConfigJson
-    /***
-     * By default, the contributor needs 20 previous changesets to delete points edited by others.
-     * For some small features (e.g. bicycle racks) this is too much and this requirement can be lowered or dropped, which can be done here.
-     */
-    neededChangesets?: number
 
     /**
      * Set this flag if the default delete reasons should be omitted from the dialog.
      * This requires at least one extraDeleteReason or nonDeleteMapping
+     *
+     * question: Should the default delete reasons be hidden?
+     * iftrue: Hide the default delete reasons
+     * iffalse: Show the default delete reasons
+     * ifunset: Show the default delete reasons (default behaviour)
      */
     omitDefaultDeleteReasons?: false | boolean
 }

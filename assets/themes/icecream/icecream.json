@@ -1,0 +1,13 @@
+{
+  "id": "icecream",
+  "title": {
+    "en": "Icecream"
+  },
+  "description": {
+    "en": "A map showing ice cream parlors and ice cream vending machines"
+  },
+  "icon": "./assets/layers/ice_cream/ice_cream.svg",
+  "layers": [
+    "ice_cream"
+  ]
+}

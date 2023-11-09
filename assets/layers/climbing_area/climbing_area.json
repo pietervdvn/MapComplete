@@ -17,7 +17,6 @@
     "ca": "Una àrea on l'escalada és possible, p.e. una penya, lloc, bloc, … Conté l'agregació de rutes",
     "cs": "Oblast, kde je možné lezení, např. skalisko, místo, balvan, … Obsahuje agregaci cest"
   },
-  "minzoom": 10,
   "source": {
     "osmTags": {
       "and": [
@@ -29,6 +28,22 @@
       ]
     }
   },
+  "calculatedTags": [
+    "_contained_climbing_routes_properties=overlapWith(feat)('climbing_route').map(f => f.feat.properties).map(p => {return {id: p.id, name: p.name, 'climbing:grade:french': p['climbing:grade:french'], 'climbing:length': p['climbing:length']} })",
+    "_contained_climbing_routes=get(feat)('_contained_climbing_routes_properties')?.map(p => `<li><a href='#${p.id}'>${p.name ?? 'climbing route'}</a> (<b class='climbing-${p['__difficulty:char']} rounded-full p-l-1 p-r-1'>${p['climbing:grade:french'] ?? 'unknown difficulty'}</b>, ${p['climbing:length'] ?? 'unkown length'} meter)</li>`).join('')",
+    "_contained_climbing_route_ids=get(feat)('_contained_climbing_routes_properties')?.map(p => p.id)",
+    "_difficulty_hist=get(feat)('_contained_climbing_routes_properties')?.map(p => p['climbing:grade:french'])?.filter(p => (p ?? null) !== null)?.sort()",
+    "_difficulty_max=get(feat)('_difficulty_hist')?.at(-1)",
+    "_difficulty_min=get(feat)('_difficulty_hist')?.at(0)",
+    "_length_hist=get(feat)('_contained_climbing_routes_properties')?.map(p => p['climbing:length'])?.filter(p => (p ?? null)  !== null)?.sort()",
+    "_length_max=get(feat)('_length_hist')?.at(-1)",
+    "_length_min=get(feat)('_length_hist')?.at(0)",
+    "_bolts_hist=get(feat)('_contained_climbing_routes_properties')?.map(p => p['climbing:bolts'])?.filter(p => (p ?? null)  !== null)?.sort()",
+    "_bolts_max=get(feat)('_bolts_hist')?.at(-1)",
+    "_bolts_min=get(feat)('_bolts_hist')?.at(0)",
+    "_contained_climbing_routes_count=get(feat)('_contained_climbing_routes_properties')?.length"
+  ],
+  "minzoom": 10,
   "title": {
     "render": {
       "en": "Climbing opportunity",
@@ -105,20 +120,58 @@
       }
     ]
   },
-  "calculatedTags": [
-    "_contained_climbing_routes_properties=overlapWith(feat)('climbing_route').map(f => f.feat.properties).map(p => {return {id: p.id, name: p.name, 'climbing:grade:french': p['climbing:grade:french'], 'climbing:length': p['climbing:length']} })",
-    "_contained_climbing_routes=get(feat)('_contained_climbing_routes_properties')?.map(p => `<li><a href='#${p.id}'>${p.name ?? 'climbing route'}</a> (<b class='climbing-${p['__difficulty:char']} rounded-full p-l-1 p-r-1'>${p['climbing:grade:french'] ?? 'unknown difficulty'}</b>, ${p['climbing:length'] ?? 'unkown length'} meter)</li>`).join('')",
-    "_contained_climbing_route_ids=get(feat)('_contained_climbing_routes_properties')?.map(p => p.id)",
-    "_difficulty_hist=get(feat)('_contained_climbing_routes_properties')?.map(p => p['climbing:grade:french'])?.filter(p => (p ?? null) !== null)?.sort()",
-    "_difficulty_max=get(feat)('_difficulty_hist')?.at(-1)",
-    "_difficulty_min=get(feat)('_difficulty_hist')?.at(0)",
-    "_length_hist=get(feat)('_contained_climbing_routes_properties')?.map(p => p['climbing:length'])?.filter(p => (p ?? null)  !== null)?.sort()",
-    "_length_max=get(feat)('_length_hist')?.at(-1)",
-    "_length_min=get(feat)('_length_hist')?.at(0)",
-    "_bolts_hist=get(feat)('_contained_climbing_routes_properties')?.map(p => p['climbing:bolts'])?.filter(p => (p ?? null)  !== null)?.sort()",
-    "_bolts_max=get(feat)('_bolts_hist')?.at(-1)",
-    "_bolts_min=get(feat)('_bolts_hist')?.at(0)",
-    "_contained_climbing_routes_count=get(feat)('_contained_climbing_routes_properties')?.length"
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/themes/climbing/climbing_no_rope.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "dashArray": "8 16",
+      "lineCap": "square",
+      "color": "#d38d5fAA",
+      "fill": "no",
+      "width": "8"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "sport=climbing"
+      ],
+      "title": {
+        "en": "a climbing opportunity",
+        "nl": "een klimgelegenheid",
+        "de": "eine Klettereinrichtung",
+        "ja": "登坂教室",
+        "nb_NO": "en klatremulighet",
+        "fr": "une opportunité d’escalade",
+        "it": "una opportunità di arrampicata",
+        "ca": "una oportuinitat d'escalada",
+        "cs": "lezecká příležitost"
+      },
+      "description": {
+        "nl": "Een klimgelegenheid",
+        "de": "Eine Klettereinrichtung",
+        "en": "A climbing opportunity",
+        "ja": "登坂教室",
+        "nb_NO": "En klatremulighet",
+        "fr": "Opportunité d’escalade",
+        "it": "Un’opportunità di arrampicata",
+        "ca": "Una oportunitat d'escalada",
+        "cs": "Lezecká příležitost"
+      }
+    }
   ],
   "tagRenderings": [
     "images",
@@ -297,53 +350,6 @@
         "climbing.fee",
         "climbing.bouldering"
       ]
-    }
-  ],
-  "presets": [
-    {
-      "tags": [
-        "sport=climbing"
-      ],
-      "title": {
-        "en": "a climbing opportunity",
-        "nl": "een klimgelegenheid",
-        "de": "eine Klettereinrichtung",
-        "ja": "登坂教室",
-        "nb_NO": "en klatremulighet",
-        "fr": "une opportunité d’escalade",
-        "it": "una opportunità di arrampicata",
-        "ca": "una oportuinitat d'escalada",
-        "cs": "lezecká příležitost"
-      },
-      "description": {
-        "nl": "Een klimgelegenheid",
-        "de": "Eine Klettereinrichtung",
-        "en": "A climbing opportunity",
-        "ja": "登坂教室",
-        "nb_NO": "En klatremulighet",
-        "fr": "Opportunité d’escalade",
-        "it": "Un’opportunità di arrampicata",
-        "ca": "Una oportunitat d'escalada",
-        "cs": "Lezecká příležitost"
-      }
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": "./assets/themes/climbing/climbing_no_rope.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    },
-    {
-      "dashArray": "8 16",
-      "lineCap": "square",
-      "color": "#d38d5fAA",
-      "fill": "no",
-      "width": "8"
     }
   ]
 }

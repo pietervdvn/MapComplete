@@ -1,0 +1,86 @@
+{
+  "id": "ice_cream",
+  "name": {
+    "en": "Ice cream parlors"
+  },
+  "description": {
+    "en": "A place where ice cream is sold over the counter"
+  },
+  "source": {
+    "osmTags": "amenity=ice_cream"
+  },
+  "title": {
+    "render": {
+      "en": "Ice cream parlor"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "{name}"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/ice_cream/ice_cream.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "an ice cream parlor"
+      },
+      "tags": [
+        "amenity=ice_cream"
+      ],
+      "description": {
+        "en": "A shop where one can buy only icecream and related items. Ice cream is normally hand-scooped."
+      }
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "en": "What is the name of this ice cream parlor?",
+        "nl": "Wat is de naam van dit ijssalon?"
+      },
+      "id": "1",
+      "freeform": {
+        "key": "name"
+      },
+      "render": {
+        "en": "This ice cream parlor is named <b>{name}</b>",
+        "nl": "Dit ijssalon heet <b>{name}</b>"
+      }
+    },
+    "opening_hours",
+    "contact",
+    "diets",
+    "payment-options",
+    "wheelchair-access"
+  ],
+  "credits": [
+    "Pieter Vander Vennet"
+  ]
+}

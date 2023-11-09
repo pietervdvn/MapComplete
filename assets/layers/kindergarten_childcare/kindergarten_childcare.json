@@ -9,7 +9,6 @@
     "cs": "Mateřské školky a péče o děti"
   },
   "description": "Shows kindergartens and preschools. Both are grouped in one layer, as they are regularly confused with each other",
-  "minzoom": 12,
   "source": {
     "osmTags": {
       "or": [
@@ -19,6 +18,7 @@
       ]
     }
   },
+  "minzoom": 12,
   "title": {
     "mappings": [
       {
@@ -43,6 +43,81 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
+          }
+        ]
+      },
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "mappings": [
+              {
+                "if": "amenity=kindergarten",
+                "then": "./assets/layers/kindergarten_childcare/kindergarten.svg"
+              },
+              {
+                "if": "amenity=childcare",
+                "then": "./assets/layers/kindergarten_childcare/childcare.svg"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#62fc6c",
+      "width": 1
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a kindergarten",
+        "nl": "een kleuterschool",
+        "de": "einen Kindergarten",
+        "ru": "детский сад",
+        "ca": "una llar d'infants",
+        "pl": "przedszkole",
+        "cs": "mateřská školka"
+      },
+      "description": "A kindergarten (also known as <i>preschool</i>) is a school where small kids receive early education.",
+      "tags": [
+        "amenity=kindergarten",
+        "isced:level=0",
+        "isced:2011:level=early_childhood"
+      ]
+    },
+    {
+      "title": {
+        "en": "a childcare",
+        "nl": "een kinderopvang",
+        "de": "eine Kinderkrippe",
+        "ca": "una guarderia",
+        "pl": "żłobek",
+        "cs": "péče o děti"
+      },
+      "description": "A childcare (also known as <i>a nursery</i> or <i>daycare</i>) is a facility which looks after small kids, but does not offer them an education program.",
+      "tags": [
+        "amenity=kindergarten"
+      ]
+    }
+  ],
   "tagRenderings": [
     {
       "id": "childcare-type",
@@ -147,74 +222,9 @@
       }
     }
   ],
-  "presets": [
-    {
-      "title": {
-        "en": "a kindergarten",
-        "nl": "een kleuterschool",
-        "de": "einen Kindergarten",
-        "ru": "детский сад",
-        "ca": "una llar d'infants",
-        "pl": "przedszkole",
-        "cs": "mateřská školka"
-      },
-      "description": "A kindergarten (also known as <i>preschool</i>) is a school where small kids receive early education.",
-      "tags": [
-        "amenity=kindergarten",
-        "isced:level=0",
-        "isced:2011:level=early_childhood"
-      ]
-    },
-    {
-      "title": {
-        "en": "a childcare",
-        "nl": "een kinderopvang",
-        "de": "eine Kinderkrippe",
-        "ca": "una guarderia",
-        "pl": "żłobek",
-        "cs": "péče o děti"
-      },
-      "description": "A childcare (also known as <i>a nursery</i> or <i>daycare</i>) is a facility which looks after small kids, but does not offer them an education program.",
-      "tags": [
-        "amenity=kindergarten"
-      ]
-    }
-  ],
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "label": {
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
-          }
-        ]
-      },
-      "icon": {
-        "mappings": [
-          {
-            "if": "amenity=kindergarten",
-            "then": "circle:white;./assets/layers/kindergarten_childcare/kindergarten.svg"
-          },
-          {
-            "if": "amenity=childcare",
-            "then": "circle:white;./assets/layers/kindergarten_childcare/childcare.svg"
-          }
-        ]
-      }
-    },
-    {
-      "color": "#62fc6c",
-      "width": 1
-    }
-  ],
+  "deletion": true,
   "allowMove": {
     "enableRelocation": true,
     "enableImproveAccuracy": true
-  },
-  "deletion": true
+  }
 }

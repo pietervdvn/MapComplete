@@ -16,10 +16,59 @@
     "ca": "Capa que mostra aparcaments de cotxes individuals.",
     "cs": "Vrstva zobrazující jednotlivá parkovací místa."
   },
-  "minzoom": 19,
   "source": {
     "osmTags": "amenity=parking_space"
   },
+  "minzoom": 18,
+  "title": {
+    "render": {
+      "en": "Parking Space",
+      "de": "Stellplatz",
+      "nl": "Parkeerplek",
+      "ca": "Espai d'aparcament",
+      "cs": "Parkovací místo"
+    },
+    "mappings": [
+      {
+        "if": "parking_space=disabled",
+        "then": {
+          "en": "Disabled Parking Space",
+          "nl": "Parkeerplek voor gehandicapten",
+          "de": "Behindertenparkplatz",
+          "cs": "Parkovací místo pro osoby se zdravotním postižením"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/parking_spaces/parking_space.svg",
+            "mappings": [
+              {
+                "if": "parking_space=disabled",
+                "then": "./assets/layers/toilet/wheelchair.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": "20,20",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#696969",
+      "width": "1"
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -213,49 +262,6 @@
           }
         }
       ]
-    }
-  ],
-  "title": {
-    "render": {
-      "en": "Parking Space",
-      "de": "Stellplatz",
-      "nl": "Parkeerplek",
-      "ca": "Espai d'aparcament",
-      "cs": "Parkovací místo"
-    },
-    "mappings": [
-      {
-        "if": "parking_space=disabled",
-        "then": {
-          "en": "Disabled Parking Space",
-          "nl": "Parkeerplek voor gehandicapten",
-          "de": "Behindertenparkplatz",
-          "cs": "Parkovací místo pro osoby se zdravotním postižením"
-        }
-      }
-    ]
-  },
-  "mapRendering": [
-    {
-      "icon": {
-        "render": "./assets/layers/parking_spaces/parking_space.svg",
-        "mappings": [
-          {
-            "if": "parking_space=disabled",
-            "then": "./assets/layers/toilet/wheelchair.svg"
-          }
-        ]
-      },
-      "iconSize": "20,20",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#696969",
-      "width": "1"
     }
   ]
 }

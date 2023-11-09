@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/food/restaurant.svg' height="100px"> 
+
 
 A layer showing restaurants and fast-food amenities (with a special rendering for friteries)
 
@@ -98,7 +98,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -459,6 +459,8 @@ The question is  *Does this shop have a sugar free offering?*
   - *This shop has no sugar free offering*  corresponds with  `diet:sugar_free=no`
 
 
+This tagrendering has labels  `diets`
+
 
 
 ### gluten_free 
@@ -477,6 +479,8 @@ The question is  *Does this shop have a gluten free offering?*
   - *This shop has no gluten free offering*  corresponds with  `diet:gluten_free=no`
 
 
+This tagrendering has labels  `diets`
+
 
 
 ### lactose_free 
@@ -494,6 +498,8 @@ The question is  *Does {title()} have a lactose-free offering?*
   - *<b>Limited lactose free</b> offering*  corresponds with  `diet:lactose_free=limited`
   - *No lactose free offering*  corresponds with  `diet:lactose_free=no`
 
+
+This tagrendering has labels  `diets`
 
 
 
@@ -679,7 +685,7 @@ The question is  *Is there a fee for internet access?*
   - *Internet access is free at this place, for customers only*  corresponds with  `internet_access:fee=customers`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no&internet_access~.+`
+This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no &internet_access~.+`
 
 
 
@@ -768,7 +774,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 
@@ -797,7 +803,7 @@ open_now.0 | Open now | _isOpen=yes
 
 id | question | osmTags
 ---- | ---------- | ---------
-reservation.0 | Reservation not required | reservation=no\|reservation=optional\|
+reservation.0 | Reservation not required | reservation=no \|reservation=optional \|
 
 
 
@@ -813,49 +819,49 @@ food-category.2 | Only restaurants | amenity=restaurant
 
 id | question | osmTags
 ---- | ---------- | ---------
-vegetarian.0 | Has a vegetarian menu | diet:vegetarian=yes\|diet:vegetarian=only\|diet:vegan=yes\|diet:vegan=only
+vegetarian.0 | Has a vegetarian menu | diet:vegetarian=yes \|diet:vegetarian=only \|diet:vegan=yes \|diet:vegan=only
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-vegan.0 | Has a vegan menu | diet:vegan=yes\|diet:vegan=only
+vegan.0 | Has a vegan menu | diet:vegan=yes \|diet:vegan=only
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-halal.0 | Has a halal menu | diet:halal=yes\|diet:halal=only
+halal.0 | Has a halal menu | diet:halal=yes \|diet:halal=only
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-has_organic.0 | Has organic options | organic=yes\|organic=only
+has_organic.0 | Has organic options | organic=yes \|organic=only
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-sugar_free.0 | Has a sugar-free offering | diet:sugar_free=yes\|diet:sugar_free=only\|diet:sugar_free=limited
+sugar_free.0 | Has a sugar-free offering | diet:sugar_free=yes \|diet:sugar_free=only \|diet:sugar_free=limited
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-gluten_free.0 | Has a gluten free offering | diet:gluten_free=yes\|diet:gluten_free=only\|diet:gluten_free=limited
+gluten_free.0 | Has a gluten free offering | diet:gluten_free=yes \|diet:gluten_free=only \|diet:gluten_free=limited
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-lactose_free.0 | Has a lactose free offering | diet:lactose_free=yes\|diet:lactose_free=only\|diet:lactose_free=limited
+lactose_free.0 | Has a lactose free offering | diet:lactose_free=yes \|diet:lactose_free=only \|diet:lactose_free=limited
 
 
 
@@ -877,7 +883,7 @@ accepts_cards.0 | Accepts payment cards | payment:cards=yes
 id | question | osmTags
 ---- | ---------- | ---------
 dogs.0 | No preference towards dogs (default) | 
-dogs.1 | Dogs allowed | dog=unleashed\|dog=yes
+dogs.1 | Dogs allowed | dog=unleashed \|dog=yes
 dogs.2 | No dogs allowed | dog=no
  
 

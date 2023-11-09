@@ -75,6 +75,7 @@ import AllReviews from "./Reviews/AllReviews.svelte"
 import StarsBarIcon from "./Reviews/StarsBarIcon.svelte"
 import ReviewForm from "./Reviews/ReviewForm.svelte"
 import Questionbox from "./Popup/TagRendering/Questionbox.svelte"
+import { TagUtils } from "../Logic/Tags/TagUtils"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -247,6 +248,11 @@ export default class SpecialVisualizations {
      * // Return empty list on empty input
      * SpecialVisualizations.constructSpecification("") // => []
      *
+     * // Simple case
+     * const oh = SpecialVisualizations.constructSpecification("The opening hours with value {opening_hours} can be seen in the following table: <br/> {opening_hours_table()}")
+     * oh[0] // => "The opening hours with value {opening_hours} can be seen in the following table: <br/> "
+     * oh[1].func.funcName // => "opening_hours_table"
+     *
      * // Advanced cases with commas, braces and newlines should be handled without problem
      * const templates = SpecialVisualizations.constructSpecification("{send_email(&LBRACEemail&RBRACE,Broken bicycle pump,Hello&COMMA\n\nWith this email&COMMA I'd like to inform you that the bicycle pump located at https://mapcomplete.org/cyclofix?lat=&LBRACE_lat&RBRACE&lon=&LBRACE_lon&RBRACE&z=18#&LBRACEid&RBRACE is broken.\n\n Kind regards,Report this bicycle pump as broken)}")
      * const templ = <Exclude<RenderingSpecification, string>> templates[0]
@@ -305,20 +311,6 @@ export default class SpecialVisualizations {
                     func: knownSpecial,
                 }
                 return [...partBefore, element, ...partAfter]
-            }
-        }
-
-        // Let's to a small sanity check to help the theme designers:
-        if (template.search(/{[^}]+\([^}]*\)}/) >= 0) {
-            // Hmm, we might have found an invalid rendering name
-
-            let suggestion = ""
-            if (SpecialVisualizations.specialVisualizations?.length > 0) {
-                suggestion =
-                    "did you mean one of: " +
-                    SpecialVisualizations.specialVisualizations
-                        .map((sp) => sp.funcName + "()")
-                        .join(", ")
             }
         }
 
@@ -438,7 +430,7 @@ export default class SpecialVisualizations {
                     return new SvelteUIElement(AddNewPoint, {
                         state,
                         coordinate: { lon, lat },
-                    })
+                    }).SetClass("w-full h-full")
                 },
             },
             {
@@ -752,7 +744,7 @@ export default class SpecialVisualizations {
                     const reviews = FeatureReviews.construct(
                         feature,
                         tags,
-                        state.userRelatedState.mangroveIdentity,
+                        state.userRelatedState?.mangroveIdentity,
                         {
                             nameKey: nameKey,
                             fallbackName,
@@ -784,7 +776,7 @@ export default class SpecialVisualizations {
                     const reviews = FeatureReviews.construct(
                         feature,
                         tags,
-                        state.userRelatedState.mangroveIdentity,
+                        state.userRelatedState?.mangroveIdentity,
                         {
                             nameKey: nameKey,
                             fallbackName,
@@ -991,7 +983,10 @@ export default class SpecialVisualizations {
                 constr: (state, tagsSource) =>
                     new VariableUiElement(
                         tagsSource.map((tags) => {
-                            const layer = state.layout.getMatchingLayer(tags)
+                            if (state.layout === undefined) {
+                                return "<feature title>"
+                            }
+                            const layer = state.layout?.getMatchingLayer(tags)
                             const title = layer?.title?.GetRenderValue(tags)
                             if (title === undefined) {
                                 return undefined
@@ -1319,6 +1314,38 @@ export default class SpecialVisualizations {
                 },
             },
             {
+                funcName: "translated",
+                docs: "If the given key can be interpreted as a JSON, only show the key containing the current language (or 'en'). This specialRendering is meant to be used by MapComplete studio and is not useful in map themes",
+                needsUrls: [],
+                args: [
+                    {
+                        name: "key",
+                        doc: "The attribute to interpret as json",
+                        defaultValue: "value",
+                    },
+                ],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new VariableUiElement(
+                        tagSource.map((tags) => {
+                            const v = tags[argument[0] ?? "value"]
+                            try {
+                                const tr = typeof v === "string" ? JSON.parse(v) : v
+                                return new Translation(tr).SetClass("font-bold")
+                            } catch (e) {
+                                console.error("Cannot create a translation for", v, "due to", e)
+                                return JSON.stringify(v)
+                            }
+                        })
+                    )
+                },
+            },
+            {
                 funcName: "fediverse_link",
                 docs: "Converts a fediverse username or link into a clickable link",
                 args: [
@@ -1353,6 +1380,70 @@ export default class SpecialVisualizations {
                                     true
                                 )
                             })
+                    )
+                },
+            },
+            {
+                funcName: "braced",
+                docs: "Show a literal text within braces",
+                needsUrls: [],
+                args: [
+                    {
+                        name: "text",
+                        required: true,
+                        doc: "The value to show",
+                    },
+                ],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    args: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new FixedUiElement("{" + args[0] + "}")
+                },
+            },
+            {
+                funcName: "tags",
+                docs: "Shows a (json of) tags in a human-readable way + links to the wiki",
+                needsUrls: [],
+                args: [
+                    {
+                        name: "key",
+                        defaultValue: "value",
+                        doc: "The key to look for the tags",
+                    },
+                ],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    const key = argument[0] ?? "value"
+                    return new VariableUiElement(
+                        tagSource.map((tags) => {
+                            let value = tags[key]
+                            if (!value) {
+                                return new FixedUiElement("No tags found").SetClass("font-bold")
+                            }
+                            if (typeof value === "string" && value.startsWith("{")) {
+                                value = JSON.parse(value)
+                            }
+                            try {
+                                const parsed = TagUtils.Tag(value)
+                                return parsed.asHumanString(true, false, {})
+                            } catch (e) {
+                                return new FixedUiElement(
+                                    "Could not parse this tag: " +
+                                        JSON.stringify(value) +
+                                        " due to " +
+                                        e
+                                ).SetClass("alert")
+                            }
+                        })
                     )
                 },
             },

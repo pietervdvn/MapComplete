@@ -18,7 +18,6 @@
     "pl": "Warstwa pokazująca paczkomaty umożliwiające odbieranie i wysyłanie przesyłek.",
     "cs": "Vrstva se schránkami na balíky pro vyzvedávání a odesílání balíků."
   },
-  "minzoom": 12,
   "source": {
     "osmTags": {
       "or": [
@@ -32,22 +31,7 @@
       ]
     }
   },
-  "presets": [
-    {
-      "title": {
-        "en": "a parcel locker",
-        "nl": "een pakketautomaat",
-        "de": "ein Paketschließfach",
-        "ca": "una bústia intel·ligent",
-        "fr": "un casier à colis",
-        "pl": "paczkomat",
-        "cs": "schránky na balíky"
-      },
-      "tags": [
-        "amenity=parcel_locker"
-      ]
-    }
-  ],
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Parcel Locker",
@@ -73,6 +57,48 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        }
+      ],
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "square",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/parcel_lockers/parcel_lockers.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "a parcel locker",
+        "nl": "een pakketautomaat",
+        "de": "ein Paketschließfach",
+        "ca": "una bústia intel·ligent",
+        "fr": "un casier à colis",
+        "pl": "paczkomat",
+        "cs": "schránky na balíky"
+      },
+      "tags": [
+        "amenity=parcel_locker"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -322,25 +348,8 @@
   "filter": [
     "open_now"
   ],
+  "deletion": true,
   "allowMove": {
     "enableImproveAccuracy": true
-  },
-  "deletion": true,
-  "mapRendering": [
-    {
-      "icon": "square:white;./assets/layers/parcel_lockers/parcel_lockers.svg",
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        }
-      ],
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    }
-  ]
+  }
 }

@@ -23,9 +23,36 @@
     "eu": "Artelanak",
     "pt_BR": "Obras de arte"
   },
+  "description": {
+    "en": "An open map of statues, busts, graffitis and other artwork all over the world",
+    "nl": "Een vrije kaart met standbeelden, bustes, graffiti en andere kunstwerken van over de hele wereld",
+    "fr": "Une carte ouverte de statues, bustes, graffitis et autres œuvres d'art de par le monde",
+    "de": "Eine freie Karte mit Statuen, Büsten, Graffitis und anderen Kunstwerken auf der ganzen Welt",
+    "it": "Diverse opere d’arte",
+    "ru": "Разнообразные произведения искусства",
+    "es": "Un mapa abierto de Estatuas, bustos, Graffitis y otras Obras de Arte en todo el mundo",
+    "ja": "多様な作品",
+    "zh_Hant": "顯示全世界的雕像、半身像、塗鴉以及其他類型的藝術品的地圖",
+    "id": "Peta terbuka patung, grafiti, dan karya seni lainnya di seluruh dunia",
+    "pt": "Diversas obras de arte",
+    "hu": "Szobrok, mellszobrok, graffitik és egyéb műalkotások nyílt világtérképe",
+    "da": "Et åbent kort over statuer, buster, graffitis og andre kunstværker over hele verden",
+    "ca": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món",
+    "cs": "Otevřená mapa soch, bust, graffiti a dalších uměleckých děl po celém světě",
+    "zh_Hans": "一个雕塑、半身像、涂鸦和其他全球艺术品的地图",
+    "nb_NO": "Statuer, byster, graffiti, og andre kunstverk verden over",
+    "zgh": "ⵢⴰⵜ ⵜⴽⴰⵕⴹⴰ ⵉⵕⵥⵎⵏ ⵅⴼ ⵉⵙⴼⵔⵉⵙⵏ, ⵉⵖⵔⴰⵙⵏ ⴷ ⵜⵡⵓⵔⵉⵡⵉⵏ ⵜⵉⵏⴰⵥⵓⵕⵉⵏ ⵢⴰⴹⵏⵉⵏ ⴳ ⵓⵎⴰⴹⴰⵍ",
+    "eu": "Estatuen, bustoen, graffitien eta mundu osoko beste artelan batzuen mapa irekia",
+    "pl": "Otwarta mapa posągów, popiersi, graffiti i innych dzieł sztuki z całego świata",
+    "pt_BR": "Um mapa aberto de estátuas, bustos, grafites e outras obras de arte em todo o mundo"
+  },
   "source": {
     "osmTags": "tourism=artwork"
   },
+  "calculatedTags": [
+    "website:=feat.properties.website ?? feat.properties.url"
+  ],
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Artwork",
@@ -83,30 +110,29 @@
       }
     ]
   },
-  "description": {
-    "en": "An open map of statues, busts, graffitis and other artwork all over the world",
-    "nl": "Een vrije kaart met standbeelden, bustes, graffiti en andere kunstwerken van over de hele wereld",
-    "fr": "Une carte ouverte de statues, bustes, graffitis et autres œuvres d'art de par le monde",
-    "de": "Eine freie Karte mit Statuen, Büsten, Graffitis und anderen Kunstwerken auf der ganzen Welt",
-    "it": "Diverse opere d’arte",
-    "ru": "Разнообразные произведения искусства",
-    "es": "Un mapa abierto de Estatuas, bustos, Graffitis y otras Obras de Arte en todo el mundo",
-    "ja": "多様な作品",
-    "zh_Hant": "顯示全世界的雕像、半身像、塗鴉以及其他類型的藝術品的地圖",
-    "id": "Peta terbuka patung, grafiti, dan karya seni lainnya di seluruh dunia",
-    "pt": "Diversas obras de arte",
-    "hu": "Szobrok, mellszobrok, graffitik és egyéb műalkotások nyílt világtérképe",
-    "da": "Et åbent kort over statuer, buster, graffitis og andre kunstværker over hele verden",
-    "ca": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món",
-    "cs": "Otevřená mapa soch, bust, graffiti a dalších uměleckých děl po celém světě",
-    "zh_Hans": "一个雕塑、半身像、涂鸦和其他全球艺术品的地图",
-    "nb_NO": "Statuer, byster, graffiti, og andre kunstverk verden over",
-    "zgh": "ⵢⴰⵜ ⵜⴽⴰⵕⴹⴰ ⵉⵕⵥⵎⵏ ⵅⴼ ⵉⵙⴼⵔⵉⵙⵏ, ⵉⵖⵔⴰⵙⵏ ⴷ ⵜⵡⵓⵔⵉⵡⵉⵏ ⵜⵉⵏⴰⵥⵓⵕⵉⵏ ⵢⴰⴹⵏⵉⵏ ⴳ ⵓⵎⴰⴹⴰⵍ",
-    "eu": "Estatuen, bustoen, graffitien eta mundu osoko beste artelan batzuen mapa irekia",
-    "pl": "Otwarta mapa posągów, popiersi, graffiti i innych dzieł sztuki z całego świata",
-    "pt_BR": "Um mapa aberto de estátuas, bustos, grafites e outras obras de arte em todo o mundo"
-  },
-  "minzoom": 12,
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/themes/artwork/artwork.svg"
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#0000ff",
+      "width": "10"
+    }
+  ],
   "presets": [
     {
       "tags": [
@@ -151,11 +177,10 @@
         "pl": "Dzieło sztuki na ścianie",
         "pt_BR": "uma obra de arte em uma parede"
       },
-      "snapToLayer": "walls_and_buildings"
+      "snapToLayer": [
+        "walls_and_buildings"
+      ]
     }
-  ],
-  "calculatedTags": [
-    "website:=feat.properties.website ?? feat.properties.url"
   ],
   "tagRenderings": [
     "images",
@@ -804,6 +829,9 @@
       }
     }
   ],
+  "filter": [
+    "has_image"
+  ],
   "deletion": {
     "softDeletionTags": {
       "and": [
@@ -816,31 +844,5 @@
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuraccy": true
-  },
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/themes/artwork/artwork.svg",
-      "location": [
-        "point",
-        "centroid"
-      ]
-    },
-    {
-      "color": "#0000ff",
-      "width": "10"
-    }
-  ],
-  "filter": [
-    "has_image"
-  ],
-  "pl": {
-    "title": {
-      "mappings": {
-        "0": {
-          "then": "{name}"
-        }
-      },
-      "render": "turbina wiatrowa"
-    }
   }
 }

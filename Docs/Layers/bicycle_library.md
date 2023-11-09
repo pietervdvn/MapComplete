@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/pin:#22ff55;./assets/layers/bicycle_library/bicycle_library.svg' height="100px"> 
+
 
 A facility where bicycles can be lent for longer period of times
 
@@ -75,7 +75,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -200,7 +200,7 @@ This is rendered with  `Lending a bicycle costs {charge}`
 
 
   - *Lending a bicycle is free*  corresponds with  `fee=no`
-  - *Lending a bicycle costs €20/year and €20 warranty*  corresponds with  `fee=yes&charge=€20warranty + €20/year`
+  - *Lending a bicycle costs €20/year and €20 warranty*  corresponds with  `fee=yes &charge=€20warranty + €20/year`
 
 
 
@@ -278,7 +278,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 

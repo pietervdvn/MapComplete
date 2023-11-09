@@ -8,6 +8,15 @@
     "ca": "Una capa especial que no està pensada per mostrar-se en un mapa, però que s'utilitza per configurar la configuració de l'usuari",
     "cs": "Speciální vrstva, která není určena k zobrazení na mapě, ale slouží k nastavení uživatelských nastavení"
   },
+  "source": "special",
+  "calculatedTags": [
+    "_mastodon_candidate_md=feat.properties._description.match(/\\[[^\\]]*\\]\\((.*(mastodon|en.osm.town).*)\\).*/)?.at(1)",
+    "_d=feat.properties._description?.replace(/&lt;/g,'<')?.replace(/&gt;/g,'>') ?? ''",
+    "_mastodon_candidate_a=(feat => {const e = document.createElement('div');e.innerHTML = feat.properties._d;return Array.from(e.getElementsByTagName(\"a\")).filter(a => a.href.match(/mastodon|en.osm.town/) !== null)[0]?.href   }) (feat) ",
+    "_mastodon_link=(feat => {const e = document.createElement('div');e.innerHTML = feat.properties._d;return Array.from(e.getElementsByTagName(\"a\")).filter(a => a.getAttribute(\"rel\")?.indexOf('me') >= 0)[0]?.href})(feat) ",
+    "_mastodon_candidate=feat.properties._mastodon_candidate_md ?? feat.properties._mastodon_candidate_a",
+    "__current_background:='initial_value'"
+  ],
   "title": {
     "render": {
       "en": "Settings",
@@ -19,15 +28,8 @@
       "cs": "Nastavení"
     }
   },
-  "source": "special",
-  "calculatedTags": [
-    "_mastodon_candidate_md=feat.properties._description.match(/\\[[^\\]]*\\]\\((.*(mastodon|en.osm.town).*)\\).*/)?.at(1)",
-    "_d=feat.properties._description?.replace(/&lt;/g,'<')?.replace(/&gt;/g,'>') ?? ''",
-    "_mastodon_candidate_a=(feat => {const e = document.createElement('div');e.innerHTML = feat.properties._d;return Array.from(e.getElementsByTagName(\"a\")).filter(a => a.href.match(/mastodon|en.osm.town/) !== null)[0]?.href   }) (feat) ",
-    "_mastodon_link=(feat => {const e = document.createElement('div');e.innerHTML = feat.properties._d;return Array.from(e.getElementsByTagName(\"a\")).filter(a => a.getAttribute(\"rel\")?.indexOf('me') >= 0)[0]?.href})(feat) ",
-    "_mastodon_candidate=feat.properties._mastodon_candidate_md ?? feat.properties._mastodon_candidate_a",
-    "__current_background:='initial_value'"
-  ],
+  "pointRendering": null,
+  "lineRendering": null,
   "tagRenderings": [
     {
       "id": "profile",
@@ -723,6 +725,5 @@
       "condition": "mapcomplete-show_debug=yes",
       "render": "{all_tags()}"
     }
-  ],
-  "mapRendering": null
+  ]
 }

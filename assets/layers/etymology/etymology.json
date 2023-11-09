@@ -1,6 +1,5 @@
 {
   "id": "etymology",
-  "#": "A layer showing all objects having etymology info (either via `name:etymology:wikidata` or `name:etymology`. The intention is that this layer is reused for a certain category to also _ask_ for information",
   "name": {
     "en": "Has etymology",
     "nl": "Heeft etymology info",
@@ -9,7 +8,15 @@
     "ca": "Té etimologia",
     "cs": "Má etymologii"
   },
-  "minzoom": 12,
+  "description": {
+    "en": "All objects which have an etymology known",
+    "nl": "Alle lagen met een gelinkt etymology",
+    "de": "Alle Objekte, die eine bekannte Namensherkunft haben",
+    "hu": "Minden olyan objektum, amelynél ismert a nevének az eredete",
+    "fr": "Tous les objets dont l’étymologie est connue",
+    "ca": "Tots els objectes que tenen una etimologia coneguda",
+    "cs": "Všechny objekty, které mají známou etymologii"
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -22,22 +29,70 @@
       ]
     }
   },
+  "calculatedTags": [
+    "_same_name_ids=closestn(feat)('*', 250, undefined, 5000)?.filter(f => f.feat.properties.name === feat.properties.name)?.map(f => f.feat.properties.id)??[]"
+  ],
+  "minzoom": 12,
   "title": {
     "render": {
       "*": "{name}"
     }
   },
-  "description": {
-    "en": "All objects which have an etymology known",
-    "nl": "Alle lagen met een gelinkt etymology",
-    "de": "Alle Objekte, die eine bekannte Namensherkunft haben",
-    "hu": "Minden olyan objektum, amelynél ismert a nevének az eredete",
-    "fr": "Tous les objets dont l’étymologie est connue",
-    "ca": "Tots els objectes que tenen una etimologia coneguda",
-    "cs": "Všechny objekty, které mají známou etymologii"
-  },
-  "calculatedTags": [
-    "_same_name_ids=closestn(feat)('*', 250, undefined, 5000)?.filter(f => f.feat.properties.name === feat.properties.name)?.map(f => f.feat.properties.id)??[]"
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "pin",
+          "color": {
+            "render": "#05d7fcaa",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "name:etymology=",
+                    "name:etymology:wikidata="
+                  ]
+                },
+                "then": "#fcca05aa"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": {
+        "render": "#05d7fcaa",
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "name:etymology=",
+                "name:etymology:wikidata="
+              ]
+            },
+            "then": "#fcca05aa"
+          }
+        ]
+      },
+      "fill": "no",
+      "width": {
+        "render": "8",
+        "mappings": [
+          {
+            "if": "_geometry:type=Polygon",
+            "then": "16"
+          }
+        ]
+      }
+    }
   ],
   "tagRenderings": [
     {
@@ -277,53 +332,5 @@
       "condition": "wikidata~*"
     }
   ],
-  "mapRendering": [
-    {
-      "icon": {
-        "render": "pin:#05d7fcaa",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "name:etymology=",
-                "name:etymology:wikidata="
-              ]
-            },
-            "then": "pin:#fcca05aa"
-          }
-        ]
-      },
-      "iconSize": "40,40",
-      "location": [
-        "point"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": {
-        "render": "#05d7fcaa",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "name:etymology=",
-                "name:etymology:wikidata="
-              ]
-            },
-            "then": "#fcca05aa"
-          }
-        ]
-      },
-      "fill": "no",
-      "width": {
-        "render": "8",
-        "mappings": [
-          {
-            "if": "_geometry:type=Polygon",
-            "then": "16"
-          }
-        ]
-      }
-    }
-  ]
+  "#": "A layer showing all objects having etymology info (either via `name:etymology:wikidata` or `name:etymology`. The intention is that this layer is reused for a certain category to also _ask_ for information"
 }

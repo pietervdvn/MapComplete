@@ -27,6 +27,7 @@
       ]
     }
   },
+  "minzoom": 13,
   "title": {
     "render": {
       "en": "Indoor area {name}",
@@ -116,7 +117,106 @@
       ]
     }
   ],
-  "minzoom": 13,
+  "pointRendering": [
+    {
+      "label": {
+        "render": "<div style='margin-top: -20px; color:#013220; background:white' class='rounded-full p-1 font-bold'>{name}</div>",
+        "condition": "name~*",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                "room=administration",
+                "room=auditorium",
+                "room=bedroom",
+                "room=chapel",
+                "room=class",
+                "room=computer",
+                "room=conference",
+                "room=crypt",
+                "room=kitchen",
+                "room=laboratory",
+                "room=library",
+                "room=locker",
+                "room=nursery",
+                "room=office",
+                "room=prison_cell",
+                "room=restaurant",
+                "room=security_check",
+                "room=sport",
+                "room=storage",
+                "room=technical",
+                "room=toilet",
+                "room=toilets",
+                "room=waiting"
+              ]
+            },
+            "then": "<div style='margin-top: 0px; color:#013220; background:white' class='rounded-full p-1 font-bold'>{name}</div>"
+          }
+        ]
+      },
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "room=administration",
+                    "room=auditorium",
+                    "room=bedroom",
+                    "room=chapel",
+                    "room=class",
+                    "room=computer",
+                    "room=conference",
+                    "room=crypt",
+                    "room=kitchen",
+                    "room=laboratory",
+                    "room=library",
+                    "room=locker",
+                    "room=nursery",
+                    "room=office",
+                    "room=prison_cell",
+                    "room=restaurant",
+                    "room=security_check",
+                    "room=sport",
+                    "room=storage",
+                    "room=technical",
+                    "room=toilets",
+                    "room=waiting"
+                  ]
+                },
+                "then": "./assets/layers/indoors/room_{room}.svg"
+              },
+              {
+                "if": "room=toilet",
+                "then": "./assets/layers/indoors/room_toilets.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": "15,15",
+      "anchor": "bottom"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#d3d7d588",
+      "width": "8",
+      "offset": "-4",
+      "fill": "no"
+    },
+    {
+      "color": "#4f5551",
+      "fill": "no",
+      "width": "2"
+    }
+  ],
   "tagRenderings": [
     "images",
     "level",
@@ -472,100 +572,6 @@
           ]
         }
       }
-    }
-  ],
-  "mapRendering": [
-    {
-      "color": "#d3d7d588",
-      "width": "8",
-      "offset": "-4",
-      "fill": "no"
-    },
-    {
-      "color": "#4f5551",
-      "fill": "no",
-      "width": "2"
-    },
-    {
-      "label": {
-        "render": "<div style='margin-top: -20px; color:#013220; background:white' class='rounded-full p-1 font-bold'>{name}</div>",
-        "condition": "name~*",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                "room=administration",
-                "room=auditorium",
-                "room=bedroom",
-                "room=chapel",
-                "room=class",
-                "room=computer",
-                "room=conference",
-                "room=crypt",
-                "room=kitchen",
-                "room=laboratory",
-                "room=library",
-                "room=locker",
-                "room=nursery",
-                "room=office",
-                "room=prison_cell",
-                "room=restaurant",
-                "room=security_check",
-                "room=sport",
-                "room=storage",
-                "room=technical",
-                "room=toilet",
-                "room=toilets",
-                "room=waiting"
-              ]
-            },
-            "then": "<div style='margin-top: 0px; color:#013220; background:white' class='rounded-full p-1 font-bold'>{name}</div>"
-          }
-        ]
-      },
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": {
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                "room=administration",
-                "room=auditorium",
-                "room=bedroom",
-                "room=chapel",
-                "room=class",
-                "room=computer",
-                "room=conference",
-                "room=crypt",
-                "room=kitchen",
-                "room=laboratory",
-                "room=library",
-                "room=locker",
-                "room=nursery",
-                "room=office",
-                "room=prison_cell",
-                "room=restaurant",
-                "room=security_check",
-                "room=sport",
-                "room=storage",
-                "room=technical",
-                "room=toilets",
-                "room=waiting"
-              ]
-            },
-            "then": "./assets/layers/indoors/room_{room}.svg"
-          },
-          {
-            "if": "room=toilet",
-            "then": "./assets/layers/indoors/room_toilets.svg"
-          }
-        ]
-      },
-      "iconSize": "15,15",
-      "anchor": "bottom"
     }
   ]
 }

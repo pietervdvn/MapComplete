@@ -11,7 +11,17 @@
     "ca": "Gimnasos d'escalada",
     "cs": "Lezecké tělocvičny"
   },
-  "minzoom": 10,
+  "description": {
+    "de": "Eine Kletterhalle",
+    "en": "A climbing gym",
+    "ja": "クライミングジム",
+    "nl": "Een klimzaal",
+    "fr": "Une salle d’escalade",
+    "it": "Una palestra di arrampicata",
+    "ru": "Комплекс скалолазания",
+    "ca": "Un gimnàs d'escalada",
+    "cs": "Lezecká tělocvična"
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -20,6 +30,7 @@
       ]
     }
   },
+  "minzoom": 10,
   "title": {
     "render": {
       "nl": "Klimzaal",
@@ -46,17 +57,50 @@
       }
     ]
   },
-  "description": {
-    "de": "Eine Kletterhalle",
-    "en": "A climbing gym",
-    "ja": "クライミングジム",
-    "nl": "Een klimzaal",
-    "fr": "Une salle d’escalade",
-    "it": "Una palestra di arrampicata",
-    "ru": "Комплекс скалолазания",
-    "ca": "Un gimnàs d'escalada",
-    "cs": "Lezecká tělocvična"
-  },
+  "pointRendering": [
+    {
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        }
+      ],
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      },
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/themes/climbing/climbing_gym.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "Climbing gym",
+        "nl": "Klimzaal",
+        "de": "Kletterhalle",
+        "cs": "Lezecká tělocvična"
+      },
+      "tags": [
+        "leisure=sports_centre",
+        "sport=climbing"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -495,44 +539,5 @@
     "internet",
     "internet-fee",
     "internet-ssid"
-  ],
-  "mapRendering": [
-    {
-      "icon": "./assets/themes/climbing/climbing_gym.svg",
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        }
-      ],
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "label": {
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
-          }
-        ]
-      },
-      "anchor": "center"
-    }
-  ],
-  "presets": [
-    {
-      "title": {
-        "en": "Climbing gym",
-        "nl": "Klimzaal",
-        "de": "Kletterhalle",
-        "cs": "Lezecká tělocvična"
-      },
-      "tags": [
-        "leisure=sports_centre",
-        "sport=climbing"
-      ]
-    }
   ]
 }

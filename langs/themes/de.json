@@ -479,8 +479,10 @@
                 "name": "Knotenpunktverbindungen",
                 "tagRenderings": {
                     "node2node-survey:date": {
-                        "question": "Wann wurde diese Knotenpunktverbindung zuletzt überprüft?",
-                        "render": "Diese Knotenpunktverbindung wurde zuletzt am {survey:date} überprüft"
+                        "override": {
+                            "question": "Wann wurde diese Knotenpunktverbindung zuletzt überprüft?",
+                            "render": "Diese Knotenpunktverbindung wurde zuletzt am {survey:date} überprüft"
+                        }
                     }
                 },
                 "title": {
@@ -500,8 +502,10 @@
                         "render": "Dieser Knoten ist mit {expected_rcn_route_relations} anderen Knoten des Fahrradknotenpunktnetzwerkes verbunden."
                     },
                     "node-survey:date": {
-                        "question": "Wann wurde dieser Fahrradknotenpunkt zuletzt überprüft?",
-                        "render": "Dieser Fahrradknoten wurde zuletzt überprüft am {survey:date}"
+                        "override": {
+                            "question": "Wann wurde dieser Fahrradknotenpunkt zuletzt überprüft?",
+                            "render": "Dieser Fahrradknoten wurde zuletzt überprüft am {survey:date}"
+                        }
                     }
                 },
                 "title": {
@@ -1340,6 +1344,32 @@
     "vending_machine": {
         "description": "Finde Verkaufautomaten für Alles",
         "title": "Verkaufsautomaten"
+    },
+    "walkingnodes": {
+        "layers": {
+            "0": {
+                "name": "Knotenpunktverbindungen",
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "override": {
+                            "question": "Wann wurde diese Knotenpunktverbindung zuletzt überprüft?",
+                            "render": "Diese Knotenpunktverbindung wurde zuletzt am {survey:date} überprüft"
+                        }
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Knotenpunktverbindung <strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "Knotenpunktverbindung"
+                }
+            },
+            "1": {
+                "name": "Knotenpunkte"
+            }
+        }
     },
     "walls_and_buildings": {
         "description": "Spezielle Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist nützlich in Voreinstellungen für Objekte, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, ...). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht umgeschaltet werden.",

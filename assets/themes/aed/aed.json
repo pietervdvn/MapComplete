@@ -25,7 +25,6 @@
     "zgh": "ⴽⵛⵎ ⵖⵔ ⵜⴽⴰⵕⴹⴰ ⵏ AED",
     "eu": "Desfibriladoreak"
   },
-  "icon": "./assets/themes/aed/aed.svg",
   "description": {
     "en": "On this map, one can find and mark nearby defibrillators",
     "ca": "En aquest mapa , qualsevol pot trobar i marcar els desfibril·ladors externs automàtics més propers",
@@ -51,8 +50,7 @@
     "zgh": "ⴳ ⵜⴽⴰⵕⴹⴰ ⴰⴷ, ⵉⵣⵎⵔⵏ ⵓⴼⴳⴰⵏ ⴰⴷ ⵢⴰⴼ ⵓⵎⵍⴰⵏ ⵅⴼ ⵡⴰⵍⵍⴰⵍⵏ ⵏ ⵜⵓⴽⴽⵙⴰ ⵏ ⵜⵔⴳⴰⴳⴰⵢⵜ",
     "eu": "Mapa honetan, hurbileko desfibriladoreak aurkitu eta marka daitezke"
   },
-  "startLat": 0,
-  "startLon": 0,
+  "icon": "./assets/themes/aed/aed.svg",
   "startZoom": 12,
   "layers": [
     "defibrillator"

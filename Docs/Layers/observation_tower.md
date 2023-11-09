@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/observation_tower/Tower_observation.svg' height="100px"> 
+
 
 Towers with a panoramic view
 
@@ -76,7 +76,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -158,7 +158,7 @@ This is rendered with  `Visiting this tower costs <b>{charge}</b>`
   - *Free to visit*  corresponds with  `fee=no`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `access=yes|access=guided`
+This tagrendering is only visible in the popup if the following condition is met: `access=yes |access=guided`
 
 
 
@@ -180,7 +180,7 @@ The question is  *Which methods of payment are accepted here?*
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `fee=yes|charge~.+`
+This tagrendering is only visible in the popup if the following condition is met: `fee=yes |charge~.+`
 
 
 
@@ -218,7 +218,7 @@ This is rendered with  `This tower has {step_count} steps to reach the top`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `access=yes|access=guided`
+This tagrendering is only visible in the popup if the following condition is met: `access=yes |access=guided`
 
 
 
@@ -236,7 +236,7 @@ The question is  *Does this tower have an elevator?*
   - *This tower does not have an elevator*  corresponds with  `elevator=no`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `access=yes|access=guided`
+This tagrendering is only visible in the popup if the following condition is met: `access=yes |access=guided`
 
 
 
@@ -270,7 +270,7 @@ The question is  *Is this place accessible with a wheelchair?*
   - *This place is not reachable with a wheelchair*  corresponds with  `wheelchair=no`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `elevator=yes&access=yes|access=guided`
+This tagrendering is only visible in the popup if the following condition is met: `elevator=yes &access=yes |access=guided`
 
 
 
@@ -340,7 +340,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 

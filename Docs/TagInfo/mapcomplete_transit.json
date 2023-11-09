@@ -17,7 +17,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Transit Stops' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bus routes') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Transit Stops' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bus routes') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "name",
@@ -176,7 +176,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Bus lines' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bus routes') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Bus lines' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bus routes') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "name",
@@ -213,7 +213,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Bike parking' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bus routes') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Bike parking' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bus routes') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -297,12 +297,12 @@
     },
     {
       "key": "covered",
-      "description": "Layer 'Bike parking' shows covered=yes with a fixed text, namely 'This parking is covered (it has a roof)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes') (This is only shown if bicycle_parking!=shed&location!=underground)",
+      "description": "Layer 'Bike parking' shows covered=yes with a fixed text, namely 'This parking is covered (it has a roof)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes') (This is only shown if bicycle_parking!=shed &location!=underground)",
       "value": "yes"
     },
     {
       "key": "covered",
-      "description": "Layer 'Bike parking' shows covered=no with a fixed text, namely 'This parking is not covered' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes') (This is only shown if bicycle_parking!=shed&location!=underground)",
+      "description": "Layer 'Bike parking' shows covered=no with a fixed text, namely 'This parking is not covered' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes') (This is only shown if bicycle_parking!=shed &location!=underground)",
       "value": "no"
     },
     {
@@ -354,7 +354,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Parking' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bus routes') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Parking' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bus routes') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -486,7 +486,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Shelter' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bus routes') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Shelter' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bus routes') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     }
   ]
 }

@@ -12,10 +12,10 @@
     "ca": "En aquesta capa es poden trobar centres esportius interiors i exteriors",
     "cs": "Na této vrstvě najdete krytá a venkovní sportovní centra"
   },
-  "minzoom": 12,
   "source": {
     "osmTags": "leisure=sports_centre"
   },
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Sports centre",
@@ -30,13 +30,34 @@
       }
     ]
   },
-  "tagRenderings": [
-    "images",
-    "opening_hours",
-    "phone",
-    "website",
-    "email",
-    "wheelchair-access"
+  "pointRendering": [
+    {
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/sports_centre/sports_centre.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "darkgreen",
+      "fill": "no"
+    }
   ],
   "presets": [
     {
@@ -51,29 +72,18 @@
       ]
     }
   ],
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/layers/sports_centre/sports_centre.svg",
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        }
-      ],
-      "location": [
-        "point",
-        "centroid"
-      ]
-    },
-    {
-      "color": "darkgreen",
-      "fill": "no"
-    }
+  "tagRenderings": [
+    "images",
+    "opening_hours",
+    "phone",
+    "website",
+    "email",
+    "wheelchair-access"
+  ],
+  "filter": [
+    "open_now"
   ],
   "allowMove": {
     "enableImproveAccuracy": true
-  },
-  "filter": [
-    "open_now"
-  ]
+  }
 }

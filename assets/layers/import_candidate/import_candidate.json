@@ -2,18 +2,24 @@
   "id": "import_candidate",
   "description": "Layer used as template in the importHelper",
   "source": "special",
-  "mapRendering": [
+  "title": "Import candidate",
+  "pointRendering": [
     {
       "location": [
         "point",
         "centroid"
       ],
-      "icon": "square:red;",
       "iconSize": "15,15",
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "square",
+          "color": "red"
+        }
+      ]
     }
   ],
-  "title": "Import candidate",
+  "lineRendering": [],
   "tagRenderings": [
     {
       "id": "all_tags",

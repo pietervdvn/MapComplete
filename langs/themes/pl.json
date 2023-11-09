@@ -479,8 +479,10 @@
                 "name": "łącza węzeł do węzła",
                 "tagRenderings": {
                     "node2node-survey:date": {
-                        "question": "Kiedy ostatnio badano to połączenie węzła z węzłem?",
-                        "render": "To połączenie węzła z węzłem było ostatnio sprawdzane w dniu {survey:date}"
+                        "override": {
+                            "question": "Kiedy ostatnio badano to połączenie węzła z węzłem?",
+                            "render": "To połączenie węzła z węzłem było ostatnio sprawdzane w dniu {survey:date}"
+                        }
                     }
                 },
                 "title": {
@@ -500,8 +502,10 @@
                         "render": "Ten węzeł łączy się z innymi węzłami rowerowymi {expected_rcn_route_relations}."
                     },
                     "node-survey:date": {
-                        "question": "Kiedy ostatni raz badano ten węzeł rowerowy?",
-                        "render": "Ten węzeł rowerowy był ostatnio badany w dniu {survey:date}"
+                        "override": {
+                            "question": "Kiedy ostatni raz badano ten węzeł rowerowy?",
+                            "render": "Ten węzeł rowerowy był ostatnio badany w dniu {survey:date}"
+                        }
                     }
                 },
                 "title": {
@@ -1340,6 +1344,32 @@
     "vending_machine": {
         "description": "Znajdź wszelakie automaty sprzedające",
         "title": "Automaty sprzedające"
+    },
+    "walkingnodes": {
+        "layers": {
+            "0": {
+                "name": "łącza węzeł do węzła",
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "override": {
+                            "question": "Kiedy ostatnio badano to połączenie węzła z węzłem?",
+                            "render": "To połączenie węzła z węzłem było ostatnio sprawdzane w dniu {survey:date}"
+                        }
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "połączenie węzła z węzłem <strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "połączenie węzła z węzłem"
+                }
+            },
+            "1": {
+                "name": "węzły"
+            }
+        }
     },
     "walls_and_buildings": {
         "description": "Specjalna warstwa zabudowana zapewniająca wszystkie mury i budynki. Warstwa ta jest przydatna w ustawieniach wstępnych obiektów, które można umieścić przy ścianach (np. AED, skrzynki pocztowe, wejścia, adresy, kamery monitorujące itp.). Warstwa ta jest domyślnie niewidoczna i użytkownik nie może jej przełączać.",

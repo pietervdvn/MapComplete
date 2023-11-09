@@ -26,6 +26,10 @@
     "pl": "Bankomaty do wypłacania pieniędzy",
     "pt_BR": "Caixas eletrônicos para sacar dinheiro"
   },
+  "source": {
+    "osmTags": "amenity=atm"
+  },
+  "minzoom": 13,
   "title": {
     "render": {
       "en": "ATM",
@@ -58,10 +62,24 @@
       }
     ]
   },
-  "source": {
-    "osmTags": "amenity=atm"
-  },
-  "minzoom": 13,
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/atm/atm.svg"
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "lineRendering": [],
   "presets": [
     {
       "tags": [
@@ -500,27 +518,6 @@
       }
     }
   ],
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/layers/atm/atm.svg",
-      "location": [
-        "point",
-        "centroid"
-      ]
-    }
-  ],
-  "allowMove": {
-    "enableImproveAccuracy": true,
-    "enableRelocation": false
-  },
-  "deletion": {
-    "softDeletionTags": {
-      "and": [
-        "disused:amenity=atm",
-        "amenity="
-      ]
-    }
-  },
   "filter": [
     "open_now",
     {
@@ -540,5 +537,17 @@
         }
       ]
     }
-  ]
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:amenity=atm",
+        "amenity="
+      ]
+    }
+  },
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
 }

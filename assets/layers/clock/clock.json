@@ -17,6 +17,10 @@
     "cs": "Vrstva s veřejnými hodinami",
     "pl": "Warstwa z zegarami publicznymi"
   },
+  "source": {
+    "osmTags": "amenity=clock"
+  },
+  "minzoom": 13,
   "title": {
     "render": {
       "en": "Clock",
@@ -28,10 +32,88 @@
       "cs": "Hodiny"
     }
   },
-  "source": {
-    "osmTags": "amenity=clock"
-  },
-  "minzoom": 13,
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/clock/clock.svg",
+            "mappings": [
+              {
+                "if": "display=digital",
+                "then": "./assets/layers/clock/clock_digital.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": {
+        "render": "40,40,center",
+        "mappings": [
+          {
+            "if": "display=digital",
+            "then": "50,20,center"
+          }
+        ]
+      }
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "tags": [
+        "amenity=clock"
+      ],
+      "title": {
+        "en": "a clock",
+        "nl": "een klok",
+        "de": "eine Uhr",
+        "ca": "un rellotge",
+        "fr": "une horloge",
+        "pl": "zegar",
+        "cs": "hodiny"
+      },
+      "description": {
+        "en": "A publicly visible clock",
+        "nl": "Een publiekelijk zichtbare klok",
+        "de": "Eine öffentlich sichtbare Uhr",
+        "ca": "Un rellotge visible públicament",
+        "fr": "Une horloge visible de l'espace public",
+        "cs": "Veřejně viditelné hodiny"
+      }
+    },
+    {
+      "tags": [
+        "amenity=clock",
+        "support=wall_mounted"
+      ],
+      "title": {
+        "en": "a wall-mounted clock",
+        "nl": "een klok aan een muur",
+        "de": "eine an der Wand montierte Uhr",
+        "ca": "un rellotge muntat en un paret",
+        "fr": "une horloge fixée au mur",
+        "pl": "zegar na ścianie",
+        "cs": "hodiny na stěně"
+      },
+      "description": {
+        "en": "A publicly visible clock mounted on a wall",
+        "nl": "Een publiekelijk zichtbare klok aan een muur",
+        "de": "Eine öffentlich sichtbare Uhr an einer Wand",
+        "ca": "Un rellotge visible públicament muntat en una paret",
+        "fr": "Une horloge publique fixée sur un mur",
+        "pl": "Publicznie widoczny zegar zamontowany na ścianie",
+        "cs": "Veřejně viditelné hodiny umístěné na stěně"
+      },
+      "snapToLayer": [
+        "walls_and_buildings"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -479,81 +561,6 @@
       ]
     }
   ],
-  "presets": [
-    {
-      "tags": [
-        "amenity=clock"
-      ],
-      "title": {
-        "en": "a clock",
-        "nl": "een klok",
-        "de": "eine Uhr",
-        "ca": "un rellotge",
-        "fr": "une horloge",
-        "pl": "zegar",
-        "cs": "hodiny"
-      },
-      "description": {
-        "en": "A publicly visible clock",
-        "nl": "Een publiekelijk zichtbare klok",
-        "de": "Eine öffentlich sichtbare Uhr",
-        "ca": "Un rellotge visible públicament",
-        "fr": "Une horloge visible de l'espace public",
-        "cs": "Veřejně viditelné hodiny"
-      }
-    },
-    {
-      "tags": [
-        "amenity=clock",
-        "support=wall_mounted"
-      ],
-      "title": {
-        "en": "a wall-mounted clock",
-        "nl": "een klok aan een muur",
-        "de": "eine an der Wand montierte Uhr",
-        "ca": "un rellotge muntat en un paret",
-        "fr": "une horloge fixée au mur",
-        "pl": "zegar na ścianie",
-        "cs": "hodiny na stěně"
-      },
-      "description": {
-        "en": "A publicly visible clock mounted on a wall",
-        "nl": "Een publiekelijk zichtbare klok aan een muur",
-        "de": "Eine öffentlich sichtbare Uhr an einer Wand",
-        "ca": "Un rellotge visible públicament muntat en una paret",
-        "fr": "Une horloge publique fixée sur un mur",
-        "pl": "Publicznie widoczny zegar zamontowany na ścianie",
-        "cs": "Veřejně viditelné hodiny umístěné na stěně"
-      },
-      "snapToLayer": "walls_and_buildings"
-    }
-  ],
-  "allowMove": true,
   "deletion": true,
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": {
-        "render": "./assets/layers/clock/clock.svg",
-        "mappings": [
-          {
-            "if": "display=digital",
-            "then": "./assets/layers/clock/clock_digital.svg"
-          }
-        ]
-      },
-      "iconSize": {
-        "render": "40,40,center",
-        "mappings": [
-          {
-            "if": "display=digital",
-            "then": "50,20,center"
-          }
-        ]
-      }
-    }
-  ]
+  "allowMove": true
 }

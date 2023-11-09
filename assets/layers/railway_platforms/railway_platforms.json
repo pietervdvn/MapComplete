@@ -16,6 +16,14 @@
     "ca": "Trobeu totes les andanes de l'estació i les rutes de tren que les fan servir.",
     "cs": "Najděte všechna nástupiště ve stanici a vlakové trasy, které je používají."
   },
+  "source": {
+    "osmTags": {
+      "or": [
+        "railway=platform"
+      ]
+    }
+  },
+  "minzoom": 18,
   "title": {
     "render": {
       "en": "Platform",
@@ -39,14 +47,32 @@
       }
     ]
   },
-  "source": {
-    "osmTags": {
-      "or": [
-        "railway=platform"
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "ref~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{ref}</div>"
+          }
+        ]
+      },
+      "marker": [
+        {
+          "icon": "./assets/themes/stations/rail-light.svg"
+        }
       ]
     }
-  },
-  "minzoom": 18,
+  ],
+  "lineRendering": [
+    {
+      "color": "gray"
+    }
+  ],
   "tagRenderings": [
     {
       "id": "ref",
@@ -80,25 +106,5 @@
       }
     },
     "level"
-  ],
-  "mapRendering": [
-    {
-      "color": "gray"
-    },
-    {
-      "icon": "./assets/themes/stations/rail-light.svg",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "label": {
-        "mappings": [
-          {
-            "if": "ref~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{ref}</div>"
-          }
-        ]
-      }
-    }
   ]
 }

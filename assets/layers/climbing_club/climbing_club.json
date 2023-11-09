@@ -14,7 +14,19 @@
     "ca": "Club d'escalada",
     "cs": "Lezecký klub"
   },
-  "minzoom": 10,
+  "description": {
+    "de": "Ein Kletterverein oder -organisation",
+    "nl": "Een klimclub of organisatie",
+    "en": "A climbing club or organisation",
+    "ja": "クライミングクラブや団体",
+    "zh_Hant": "攀岩社團或組織",
+    "nb_NO": "En klatreklubb eller organisasjoner",
+    "fr": "Club ou association d’escalade",
+    "it": "Un club o associazione di arrampacata",
+    "hu": "Mászóegyesület vagy -szervezet",
+    "ca": "Un club d'escalada o organització",
+    "cs": "Lezecký klub nebo organizace"
+  },
   "source": {
     "osmTags": {
       "or": [
@@ -33,6 +45,7 @@
       ]
     }
   },
+  "minzoom": 10,
   "title": {
     "render": {
       "en": "Climbing club",
@@ -64,55 +77,36 @@
       }
     ]
   },
-  "description": {
-    "de": "Ein Kletterverein oder -organisation",
-    "nl": "Een klimclub of organisatie",
-    "en": "A climbing club or organisation",
-    "ja": "クライミングクラブや団体",
-    "zh_Hant": "攀岩社團或組織",
-    "nb_NO": "En klatreklubb eller organisasjoner",
-    "fr": "Club ou association d’escalade",
-    "it": "Un club o associazione di arrampacata",
-    "hu": "Mászóegyesület vagy -szervezet",
-    "ca": "Un club d'escalada o organització",
-    "cs": "Lezecký klub nebo organizace"
-  },
-  "tagRenderings": [
+  "pointRendering": [
     {
-      "render": {
-        "en": "<strong>{name}</strong>",
-        "nl": "<strong>{name}</strong>",
-        "de": "<strong>{name}</strong>",
-        "ca": "<strong>{name}</strong>",
-        "fr": "<strong>{name}</strong>",
-        "id": "<strong>{name}</strong>",
-        "ru": "<strong>{name}</strong>",
-        "ja": "<strong>{name}</strong>",
-        "zh_Hant": "<strong>{name}</strong>",
-        "it": "<strong>{name}</strong>",
-        "hu": "<strong>{name}</strong>",
-        "cs": "<strong>{name}</strong>"
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        }
+      ],
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
       },
-      "question": {
-        "en": "What is the name of this climbing club or NGO?",
-        "de": "Wie lautet der Name dieses Vereins oder Organisation?",
-        "nl": "Wat is de naam van deze klimclub?",
-        "ja": "この登山クラブやNGOの名前は何ですか?",
-        "fr": "Quel est le nom du club ou de l’association ?",
-        "it": "Qual è il nome di questo club o associazione di arrampicata?",
-        "hu": "Mi a neve ennek a mászóegyesületnek vagy szervezetnek?",
-        "cs": "Jak se jmenuje tento lezecký klub nebo nevládní organizace?"
-      },
-      "freeform": {
-        "key": "name"
-      },
-      "id": "climbing_club-name"
-    },
-    "website",
-    "email",
-    "phone",
-    "opening_hours"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/themes/climbing/club.svg"
+        }
+      ]
+    }
   ],
+  "lineRendering": [],
   "presets": [
     {
       "tags": [
@@ -173,29 +167,40 @@
       }
     }
   ],
-  "mapRendering": [
+  "tagRenderings": [
     {
-      "icon": "./assets/themes/climbing/club.svg",
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        }
-      ],
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "label": {
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
-          }
-        ]
+      "render": {
+        "en": "<strong>{name}</strong>",
+        "nl": "<strong>{name}</strong>",
+        "de": "<strong>{name}</strong>",
+        "ca": "<strong>{name}</strong>",
+        "fr": "<strong>{name}</strong>",
+        "id": "<strong>{name}</strong>",
+        "ru": "<strong>{name}</strong>",
+        "ja": "<strong>{name}</strong>",
+        "zh_Hant": "<strong>{name}</strong>",
+        "it": "<strong>{name}</strong>",
+        "hu": "<strong>{name}</strong>",
+        "cs": "<strong>{name}</strong>"
       },
-      "anchor": "center"
-    }
+      "question": {
+        "en": "What is the name of this climbing club or NGO?",
+        "de": "Wie lautet der Name dieses Vereins oder Organisation?",
+        "nl": "Wat is de naam van deze klimclub?",
+        "ja": "この登山クラブやNGOの名前は何ですか?",
+        "fr": "Quel est le nom du club ou de l’association ?",
+        "it": "Qual è il nome di questo club o associazione di arrampicata?",
+        "hu": "Mi a neve ennek a mászóegyesületnek vagy szervezetnek?",
+        "cs": "Jak se jmenuje tento lezecký klub nebo nevládní organizace?"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "climbing_club-name"
+    },
+    "website",
+    "email",
+    "phone",
+    "opening_hours"
   ]
 }

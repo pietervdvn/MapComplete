@@ -13,7 +13,18 @@
     "ca": "Mapa de parcs de bombers",
     "cs": "Mapa požárních stanic"
   },
-  "minzoom": 12,
+  "description": {
+    "en": "Map layer to show fire stations.",
+    "ja": "消防署を表示するためのマップレイヤ。",
+    "it": "Livello che mostra le caserme dei vigili del fuoco.",
+    "ru": "Слой карты, отображающий пожарные части.",
+    "fr": "Couche des stations de pompiers.",
+    "de": "Kartenebene zur Darstellung von Feuerwachen.",
+    "nl": "Kaartlaag die de brandweerstations toont.",
+    "es": "Capa del mapa que muestra parques de bomberos.",
+    "ca": "Capa del mapa que mostra els parcs de bombers.",
+    "cs": "Vrstva mapy zobrazující požární stanice."
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -21,6 +32,7 @@
       ]
     }
   },
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Fire Station",
@@ -36,18 +48,58 @@
       "cs": "Hasičská stanice"
     }
   },
-  "description": {
-    "en": "Map layer to show fire stations.",
-    "ja": "消防署を表示するためのマップレイヤ。",
-    "it": "Livello che mostra le caserme dei vigili del fuoco.",
-    "ru": "Слой карты, отображающий пожарные части.",
-    "fr": "Couche des stations de pompiers.",
-    "de": "Kartenebene zur Darstellung von Feuerwachen.",
-    "nl": "Kaartlaag die de brandweerstations toont.",
-    "es": "Capa del mapa que muestra parques de bomberos.",
-    "ca": "Capa del mapa que mostra els parcs de bombers.",
-    "cs": "Vrstva mapy zobrazující požární stanice."
-  },
+  "pointRendering": [
+    {
+      "iconSize": "35,35",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/themes/hailhydrant/Twemoji12_1f692.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#c22",
+      "width": "1"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=fire_station"
+      ],
+      "title": {
+        "en": "a fire station",
+        "ja": "消防署",
+        "ru": "пожарная часть",
+        "fr": "une caserne de pompiers",
+        "de": "eine Feuerwache",
+        "it": "una caserma dei vigili del fuoco",
+        "nb_NO": "en brannstasjon",
+        "nl": "een brandweerstation",
+        "es": "un parque de bomberos",
+        "ca": "un parc de bombers",
+        "cs": "požární stanice"
+      },
+      "description": {
+        "en": "A fire station is a place where the fire trucks and firefighters are located when not in operation.",
+        "ja": "消防署は、運転していないときに消防車や消防士がいる場所です。",
+        "fr": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions.",
+        "de": "Eine Feuerwache ist ein Ort, an dem Feuerwehrfahrzeuge und Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
+        "it": "Una caserma dei pompieri è un luogo dove si trovano i mezzi antincendio e i pompieri tra una missione e l’altra.",
+        "nl": "Een brandweerstation is een plaats waar brandweerwagens en brandweerlieden gebaseerd zijn.",
+        "es": "Un parque de bomberos es donde los bomberos y los camiones de incendios se encuentran cuando no están en uso.",
+        "ca": "Un parc de bombers és on els bombers i els camions es troben quan no estan en ús.",
+        "cs": "Hasičská zbrojnice je místo, kde se nacházejí hasičská vozidla a hasiči."
+      }
+    }
+  ],
   "tagRenderings": [
     {
       "id": "station-name",
@@ -283,51 +335,5 @@
       ]
     },
     "images"
-  ],
-  "presets": [
-    {
-      "tags": [
-        "amenity=fire_station"
-      ],
-      "title": {
-        "en": "a fire station",
-        "ja": "消防署",
-        "ru": "пожарная часть",
-        "fr": "une caserne de pompiers",
-        "de": "eine Feuerwache",
-        "it": "una caserma dei vigili del fuoco",
-        "nb_NO": "en brannstasjon",
-        "nl": "een brandweerstation",
-        "es": "un parque de bomberos",
-        "ca": "un parc de bombers",
-        "cs": "požární stanice"
-      },
-      "description": {
-        "en": "A fire station is a place where the fire trucks and firefighters are located when not in operation.",
-        "ja": "消防署は、運転していないときに消防車や消防士がいる場所です。",
-        "fr": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions.",
-        "de": "Eine Feuerwache ist ein Ort, an dem Feuerwehrfahrzeuge und Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
-        "it": "Una caserma dei pompieri è un luogo dove si trovano i mezzi antincendio e i pompieri tra una missione e l’altra.",
-        "nl": "Een brandweerstation is een plaats waar brandweerwagens en brandweerlieden gebaseerd zijn.",
-        "es": "Un parque de bomberos es donde los bomberos y los camiones de incendios se encuentran cuando no están en uso.",
-        "ca": "Un parc de bombers és on els bombers i els camions es troben quan no estan en ús.",
-        "cs": "Hasičská zbrojnice je místo, kde se nacházejí hasičská vozidla a hasiči."
-      }
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": "./assets/themes/hailhydrant/Twemoji12_1f692.svg",
-      "iconSize": "35,35",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#c22",
-      "width": "1"
-    }
   ]
 }

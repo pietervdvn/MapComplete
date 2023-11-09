@@ -28,53 +28,78 @@
       "render": "<a href='https://maproulette.org/challenge/{mr_challengeId}/task/{mr_taskId}' target='_blank'><img src='./assets/layers/maproulette/logomark.svg'/></a>"
     }
   ],
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "point",
         "centroid"
       ],
-      "icon": {
-        "render": "./assets/layers/maproulette/logomark.svg",
-        "mappings": [
-          {
-            "if": "mr_taskStatus=Created",
-            "then": "pin:#959DFF"
+      "marker": [
+        {
+          "color": {
+            "mappings": [
+              {
+                "if": "mr_taskStatus=Created",
+                "then": "#959DFF"
+              },
+              {
+                "if": "mr_taskStatus=Fixed",
+                "then": "#65D2DA"
+              },
+              {
+                "if": "mr_taskStatus=False positive",
+                "then": "#F7BB59"
+              },
+              {
+                "if": "mr_taskStatus=Skipped",
+                "then": "#F7BB59"
+              },
+              {
+                "if": "mr_taskStatus=Deleted",
+                "then": "#737373"
+              },
+              {
+                "if": "mr_taskStatus=Already fixed",
+                "then": "#CCB186"
+              },
+              {
+                "if": "mr_taskStatus=Too hard",
+                "then": "#FF5E63"
+              },
+              {
+                "if": "mr_taskStatus=Disabled",
+                "then": "#FF349C"
+              }
+            ]
           },
-          {
-            "if": "mr_taskStatus=Fixed",
-            "then": "pin:#65D2DA"
-          },
-          {
-            "if": "mr_taskStatus=False positive",
-            "then": "pin:#F7BB59"
-          },
-          {
-            "if": "mr_taskStatus=Skipped",
-            "then": "pin:#F7BB59"
-          },
-          {
-            "if": "mr_taskStatus=Deleted",
-            "then": "pin:#737373"
-          },
-          {
-            "if": "mr_taskStatus=Already fixed",
-            "then": "pin:#CCB186"
-          },
-          {
-            "if": "mr_taskStatus=Too hard",
-            "then": "pin:#FF5E63"
-          },
-          {
-            "if": "mr_taskStatus=Disabled",
-            "then": "pin:#FF349C"
+          "icon": {
+            "render": "./assets/layers/maproulette/logomark.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "mr_taskStatus=Created",
+                    "mr_taskStatus=Fixed",
+                    "mr_taskStatus=False positive",
+                    "mr_taskStatus=Skipped",
+                    "mr_taskStatus=Deleted",
+                    "mr_taskStatus=Already fixed",
+                    "mr_taskStatus=Already fixed",
+                    "mr_taskStatus=Disabled",
+                    "mr_taskStatus=Too hard"
+                  ]
+                },
+                "then": "pin"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "iconSize": "40,40",
       "anchor": "bottom"
     }
   ],
+  "lineRendering": [],
   "tagRenderings": [
     {
       "id": "details",

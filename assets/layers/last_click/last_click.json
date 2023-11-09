@@ -1,5 +1,6 @@
 {
   "id": "last_click",
+  "name": null,
   "description": "This layer defines how to render the 'last click'-location. By default, it will show a marker with the possibility to add a new point (if there are some presets) and/or to add a new note (if the 'note' layer attribute is set). If none are possible, this layer won't show up",
   "source": "special",
   "isShown": {
@@ -8,9 +9,6 @@
       "has_note_layer=yes"
     ]
   },
-  "name": null,
-  "titleIcons": [],
-  "popupInFloatover": true,
   "title": {
     "mappings": [
       {
@@ -56,42 +54,32 @@
       }
     ]
   },
-  "tagRenderings": [
+  "popupInFloatover": true,
+  "titleIcons": [],
+  "pointRendering": [
     {
-      "id": "add_new",
-      "condition": "has_presets=yes",
-      "render": {
-        "*": "{add_new_point()}"
-      }
-    },
-    {
-      "id": "add_note",
-      "condition": "has_note_layer=yes",
-      "render": {
-        "*": "{open_note()}"
-      }
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": {
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "has_note_layer=yes",
-                "has_presets=no"
-              ]
-            },
-            "then": "./assets/svg/note.svg"
-          },
-          {
-            "if": "number_of_presets=1",
-            "then": "{first_preset}"
+      "marker": [
+        {
+          "icon": {
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "has_note_layer=yes",
+                    "has_presets=no"
+                  ]
+                },
+                "then": "./assets/svg/note.svg"
+              },
+              {
+                "if": "number_of_presets=1",
+                "then": "{first_preset}"
+              }
+            ],
+            "render": "<div class='relative'> <img src='./assets/svg/add_pin.svg' class='absolute' style='height: 50px'> <div class='absolute top-0 left-0 rounded-full overflow-hidden noselect' style='width: 40px; height: 40px'><div class='flex slide min-w-min' style='animation: slide linear {number_of_presets}s infinite; width: calc( (1 + {number_of_presets}) * 40px ); height: 40px'>{renderings}{first_preset}</div></div></div>"
           }
-        ],
-        "render": "<div class='relative'> <img src='./assets/svg/add_pin.svg' class='absolute' style='height: 50px'> <div class='absolute top-0 left-0 rounded-full overflow-hidden noselect' style='width: 40px; height: 40px'><div class='flex slide min-w-min' style='animation: slide linear {number_of_presets}s infinite; width: calc( (1 + {number_of_presets}) * 40px ); height: 40px'>{renderings}{first_preset}</div></div></div>"
-      },
+        }
+      ],
       "labelCssClasses": "text-sm min-w-min px-2 rounded-full text-white opacity-65 whitespace-nowrap block-ruby",
       "labelCss": "background: #00000088",
       "label": {
@@ -161,6 +149,24 @@
           }
         ],
         "render": "40,50"
+      }
+    }
+  ],
+  "lineRendering": [],
+  "tagRenderings": [
+    {
+      "id": "add_new",
+      "classes": "h-full flex",
+      "condition": "has_presets=yes",
+      "render": {
+        "*": "{add_new_point()}"
+      }
+    },
+    {
+      "id": "add_note",
+      "condition": "has_note_layer=yes",
+      "render": {
+        "*": "{open_note()}"
       }
     }
   ],

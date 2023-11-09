@@ -22,7 +22,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Maps' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'A map of maps') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Maps' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'A map of maps') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -101,27 +101,27 @@
     },
     {
       "key": "map_source:attribution",
-      "description": "Layer 'Maps' shows map_source:attribution=yes with a fixed text, namely 'OpenStreetMap is clearly attributed, including the ODBL-license' and allows to pick this as a default answer (in the mapcomplete.org theme 'A map of maps') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$|map_source=osm|map_source=OSM)",
+      "description": "Layer 'Maps' shows map_source:attribution=yes with a fixed text, namely 'OpenStreetMap is clearly attributed, including the ODBL-license' and allows to pick this as a default answer (in the mapcomplete.org theme 'A map of maps') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ |map_source=osm |map_source=OSM)",
       "value": "yes"
     },
     {
       "key": "map_source:attribution",
-      "description": "Layer 'Maps' shows map_source:attribution=incomplete with a fixed text, namely 'OpenStreetMap is clearly attributed, but the license is not mentioned' and allows to pick this as a default answer (in the mapcomplete.org theme 'A map of maps') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$|map_source=osm|map_source=OSM)",
+      "description": "Layer 'Maps' shows map_source:attribution=incomplete with a fixed text, namely 'OpenStreetMap is clearly attributed, but the license is not mentioned' and allows to pick this as a default answer (in the mapcomplete.org theme 'A map of maps') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ |map_source=osm |map_source=OSM)",
       "value": "incomplete"
     },
     {
       "key": "map_source:attribution",
-      "description": "Layer 'Maps' shows map_source:attribution=sticker with a fixed text, namely 'OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it' and allows to pick this as a default answer (in the mapcomplete.org theme 'A map of maps') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$|map_source=osm|map_source=OSM)",
+      "description": "Layer 'Maps' shows map_source:attribution=sticker with a fixed text, namely 'OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it' and allows to pick this as a default answer (in the mapcomplete.org theme 'A map of maps') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ |map_source=osm |map_source=OSM)",
       "value": "sticker"
     },
     {
       "key": "map_source:attribution",
-      "description": "Layer 'Maps' shows map_source:attribution=none with a fixed text, namely 'There is no attribution at all' and allows to pick this as a default answer (in the mapcomplete.org theme 'A map of maps') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$|map_source=osm|map_source=OSM)",
+      "description": "Layer 'Maps' shows map_source:attribution=none with a fixed text, namely 'There is no attribution at all' and allows to pick this as a default answer (in the mapcomplete.org theme 'A map of maps') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ |map_source=osm |map_source=OSM)",
       "value": "none"
     },
     {
       "key": "map_source:attribution",
-      "description": "Layer 'Maps' shows map_source:attribution=no with a fixed text, namely 'There is no attribution at all' (in the mapcomplete.org theme 'A map of maps') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$|map_source=osm|map_source=OSM)",
+      "description": "Layer 'Maps' shows map_source:attribution=no with a fixed text, namely 'There is no attribution at all' (in the mapcomplete.org theme 'A map of maps') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ |map_source=osm |map_source=OSM)",
       "value": "no"
     }
   ]

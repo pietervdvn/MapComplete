@@ -26,13 +26,13 @@
     "pl": "Specjalna warstwa zabudowana zapewniająca wszystkie mury i budynki. Warstwa ta jest przydatna w ustawieniach wstępnych obiektów, które można umieścić przy ścianach (np. AED, skrzynki pocztowe, wejścia, adresy, kamery monitorujące itp.). Warstwa ta jest domyślnie niewidoczna i użytkownik nie może jej przełączać."
   },
   "icon": "./assets/layers/walls_and_buildings/walls_and_buildings.png",
+  "startZoom": 16,
   "startLat": 50.8465573,
   "startLon": 4.351697,
-  "startZoom": 16,
-  "widenFactor": 2,
+  "hideFromOverview": true,
   "layers": [
     "walls_and_buildings",
     "entrance"
   ],
-  "hideFromOverview": true
+  "widenFactor": 2
 }

@@ -22,9 +22,6 @@
     "pl": "Mapa pokazująca wszystkie zegary publiczne"
   },
   "icon": "./assets/layers/clock/clock.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 0,
   "layers": [
     "clock"
   ]

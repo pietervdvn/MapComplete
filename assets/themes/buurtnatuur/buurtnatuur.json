@@ -1,27 +1,26 @@
 {
-  "#dont-translate": "*",
   "id": "buurtnatuur",
   "title": {
     "nl": "Breng jouw buurtnatuur in kaart"
   },
-  "shortDescription": {
-    "nl": "Met deze tool kan je natuur in je buurt in kaart brengen en meer informatie geven over je favoriete plekje"
-  },
-  "hideFromOverview": true,
-  "enableShareScreen": false,
-  "enableMoreQuests": false,
   "description": {
     "nl": "<img style='float:right;margin: 1em;width: 10em;height: auto;' src='./assets/themes/buurtnatuur/groen_logo.svg' alt='logo-groen' class='logo/> <br /><b>Natuur maakt gelukkig.</b> Aan de hand van deze website willen we de natuur dicht bij ons beter inventariseren. Met als doel meer mensen te laten genieten van toegankelijke natuur én te strijden voor meer natuur in onze buurten.<ul><li>In welke natuurgebieden kan jij terecht? Hoe toegankelijk zijn ze?</li><li>In welke bossen kan een gezin in jouw gemeente opnieuw op adem komen?</li><li>Op welke onbekende plekjes is het zalig spelen?</li></ul><p>Samen kleuren we heel Vlaanderen en Brussel groen.Blijf op de hoogte van de resultaten van buurtnatuur.be: <a href='https://www.groen.be/buurtnatuur' target='_blank'>meld je aan voor e-mailupdates</a>."
+  },
+  "shortDescription": {
+    "nl": "Met deze tool kan je natuur in je buurt in kaart brengen en meer informatie geven over je favoriete plekje"
   },
   "descriptionTail": {
     "nl": "<h4>Tips</h4><ul><li>Over groen ingekleurde gebieden weten we alles wat we willen weten.</li><li>Bij rood ingekleurde gebieden ontbreekt nog heel wat info: klik een gebied aan en beantwoord de vragen.</li><li>Je kan altijd een vraag overslaan als je het antwoord niet weet of niet zeker bent</li><li>Je kan altijd een foto toevoegen</li><li>Je kan ook zelf een gebied toevoegen door op de kaart te klikken</li><li>Open buurtnatuur.be <b>op je smartphone</b> om al wandelend foto's te maken en vragen te beantwoorden</li></ul><small><p>De oorspronkelijke data komt van <b>OpenStreetMap</b> en je antwoorden worden daar bewaard.<br/> Omdat iedereen vrij kan meewerken aan dit project, kunnen we niet garanderen dat er geen fouten opduiken.Kan je hier niet aanpassen wat je wilt, dan kan je dat zelf via OpenStreetMap.org doen. Groen kan <b>geen enkele verantwoordelijkheid</b> nemen over de kaart.</p>Je privacy is belangrijk. We tellen wel hoeveel gebruikers deze website bezoeken. We plaatsen een cookie waar geen persoonlijke informatie in bewaard wordt. Als je inlogt, komt er een tweede cookie bij met je inloggegevens.</small>"
   },
   "icon": "./assets/themes/buurtnatuur/logo.svg",
+  "socialImage": "./assets/themes/buurtnatuur/social_image.jpg",
+  "startZoom": 16,
   "startLat": 50.8435,
   "startLon": 4.3688,
-  "startZoom": 16,
-  "widenFactor": 1.2,
-  "socialImage": "./assets/themes/buurtnatuur/social_image.jpg",
+  "credits": [
+    "Pieter Vander Vennet"
+  ],
+  "hideFromOverview": true,
   "layers": [
     {
       "id": "nature_reserve_buurtnatuur",
@@ -89,45 +88,9 @@
           }
         }
       ],
-      "mapRendering": [
-        {
-          "icon": "circle:#ffffff;./assets/themes/buurtnatuur/nature_reserve.svg",
-          "iconSize": "50,50",
-          "location": [
-            "point"
-          ],
-          "anchor": "center"
-        },
-        {
-          "color": {
-            "render": "#3c3",
-            "mappings": [
-              {
-                "if": {
-                  "and": [
-                    "name=",
-                    "noname=",
-                    "operator=",
-                    "access=",
-                    "access:description=",
-                    "leisure=park"
-                  ]
-                },
-                "then": "#cc1100"
-              },
-              {
-                "if": {
-                  "and": [
-                    "name=",
-                    "noname="
-                  ]
-                },
-                "then": "#fccb37"
-              }
-            ]
-          },
-          "width": "5"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -196,32 +159,9 @@
           }
         }
       ],
-      "mapRendering": [
-        {
-          "icon": "circle:#ffffff;./assets/themes/buurtnatuur/park.svg",
-          "iconSize": "40,40",
-          "location": [
-            "point"
-          ],
-          "anchor": "center"
-        },
-        {
-          "color": {
-            "render": "#3c3",
-            "mappings": [
-              {
-                "if": {
-                  "and": [
-                    "name=",
-                    "noname="
-                  ]
-                },
-                "then": "#fccb37"
-              }
-            ]
-          },
-          "width": "5"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -291,50 +231,9 @@
           }
         }
       ],
-      "mapRendering": [
-        {
-          "icon": "circle:#ffffff;./assets/themes/buurtnatuur/forest.svg",
-          "iconSize": "40,40",
-          "location": [
-            "point"
-          ],
-          "anchor": "center"
-        },
-        {
-          "color": {
-            "render": "#3a3",
-            "mappings": [
-              {
-                "if": {
-                  "and": [
-                    "operator=",
-                    "access=",
-                    "access:description="
-                  ]
-                },
-                "then": "#cc1100"
-              },
-              {
-                "if": {
-                  "and": [
-                    "operator="
-                  ]
-                },
-                "then": "#cccc00"
-              },
-              {
-                "if": {
-                  "and": [
-                    "name=",
-                    "noname="
-                  ]
-                },
-                "then": "#fccb37"
-              }
-            ]
-          },
-          "width": "5"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     "viewpoint"
@@ -597,5 +496,8 @@
       }
     ]
   },
-  "credits": "Pieter Vander Vennet"
+  "enableShareScreen": false,
+  "enableMoreQuests": false,
+  "widenFactor": 1.2,
+  "#dont-translate": "*"
 }

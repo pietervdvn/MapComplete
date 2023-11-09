@@ -27,10 +27,9 @@
     "pl": "Na tej mapie pokazane są publicznie dostępne miejsca w pomieszczeniach zamkniętych"
   },
   "icon": "./assets/layers/entrance/entrance.svg",
+  "startZoom": 14,
   "startLat": 51.17181,
   "startLon": 4.144383,
-  "startZoom": 14,
-  "widenFactor": 2,
   "layers": [
     {
       "builtin": "indoors",
@@ -49,5 +48,6 @@
     "pedestrian_path",
     "elevator",
     "entrance"
-  ]
+  ],
+  "widenFactor": 2
 }

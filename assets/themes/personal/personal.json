@@ -35,20 +35,17 @@
     "pl": "Utwórz osobisty temat w oparciu o wszystkie dostępne warstwy wszystkich tematów. Aby wyświetlić dane, otwórz <a href='#filter'>wybór warstwy</a>"
   },
   "icon": "./assets/svg/addSmall.svg",
-  "clustering": {
-    "maxZoom": 19
-  },
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 0,
-  "widenFactor": 1.2,
-  "#note": "The 'overpassMaxZoom' should be exactly the same as or less then the minzzom in overrideAll",
-  "overpassMaxZoom": 15,
+  "layers": [],
   "overrideAll": {
     "minzoom": 17,
     "syncSelection": "theme-only",
     "shownByDefault": false
   },
   "enableNoteImports": false,
-  "layers": []
+  "widenFactor": 1.2,
+  "overpassMaxZoom": 15,
+  "clustering": {
+    "maxZoom": 19
+  },
+  "#note": "The 'overpassMaxZoom' should be exactly the same as or less then the minzzom in overrideAll"
 }

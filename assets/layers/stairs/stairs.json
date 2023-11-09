@@ -14,6 +14,10 @@
     "ca": "Capa que mostra escales i escales mecàniques",
     "cs": "Vrstva zobrazující schody a eskalátory"
   },
+  "source": {
+    "osmTags": "highway=steps"
+  },
+  "minzoom": 17,
   "title": {
     "render": {
       "en": "Stairs",
@@ -35,10 +39,14 @@
       }
     ]
   },
-  "minzoom": 17,
-  "source": {
-    "osmTags": "highway=steps"
-  },
+  "pointRendering": [],
+  "lineRendering": [
+    {
+      "color": "gray",
+      "width": 10,
+      "dashArray": "6 12"
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -259,13 +267,6 @@
           }
         }
       ]
-    }
-  ],
-  "mapRendering": [
-    {
-      "color": "gray",
-      "width": 10,
-      "dashArray": "6 12"
     }
   ]
 }

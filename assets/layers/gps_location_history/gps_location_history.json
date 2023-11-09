@@ -1,19 +1,25 @@
 {
   "id": "gps_location_history",
-  "description": "Meta layer which contains the previous locations of the user as single points. This is mainly for technical reasons, e.g. to keep match the distance to the modified object",
-  "minzoom": 1,
   "name": null,
+  "description": "Meta layer which contains the previous locations of the user as single points. This is mainly for technical reasons, e.g. to keep match the distance to the modified object",
   "source": "special",
+  "minzoom": 1,
   "shownByDefault": false,
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "point",
         "centroid"
       ],
-      "icon": "square:red",
       "iconSize": "5,5",
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "square",
+          "color": "red"
+        }
+      ]
     }
-  ]
+  ],
+  "lineRendering": []
 }

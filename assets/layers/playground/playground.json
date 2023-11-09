@@ -11,18 +11,6 @@
     "pa_PK": "کھید دے میدان",
     "cs": "Dětská hřiště"
   },
-  "minzoom": 13,
-  "source": {
-    "osmTags": {
-      "and": [
-        "leisure=playground",
-        "playground!=forest"
-      ]
-    }
-  },
-  "calculatedTags": [
-    "_size_classification=Number(feat.properties._surface) < 10 ? 'small' :  (Number(feat.properties._surface) < 100 ? 'medium' : 'large') "
-  ],
   "description": {
     "nl": "Speeltuinen",
     "en": "Playgrounds",
@@ -34,6 +22,18 @@
     "pa_PK": "کھید دے میدان",
     "cs": "Dětská hřiště"
   },
+  "source": {
+    "osmTags": {
+      "and": [
+        "leisure=playground",
+        "playground!=forest"
+      ]
+    }
+  },
+  "calculatedTags": [
+    "_size_classification=Number(feat.properties._surface) < 10 ? 'small' :  (Number(feat.properties._surface) < 100 ? 'medium' : 'large') "
+  ],
+  "minzoom": 13,
   "title": {
     "render": {
       "nl": "Speeltuin",
@@ -62,6 +62,74 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "iconBadges": [
+        {
+          "if": {
+            "and": [
+              "opening_hours!=24/7",
+              "opening_hours~*"
+            ]
+          },
+          "then": "icons.isOpen"
+        }
+      ],
+      "iconSize": {
+        "render": "40,40,center",
+        "mappings": [
+          {
+            "if": "id~node/.*",
+            "then": "40,40,center"
+          },
+          {
+            "if": "_size_classification=small",
+            "then": "25,25,center"
+          },
+          {
+            "if": "_size_classification=medium",
+            "then": "40,40,center"
+          },
+          {
+            "if": "_size_classification=large",
+            "then": "60,60,center"
+          }
+        ]
+      },
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/themes/playgrounds/playground.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#5dbaa9",
+      "width": "1"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "leisure=playground"
+      ],
+      "title": {
+        "nl": "een speeltuin",
+        "en": "a playground",
+        "ru": "Детская площадка",
+        "fr": "une terrain de jeux",
+        "it": "una campetto",
+        "de": "einen Spielplatz",
+        "ca": "un parc infantil",
+        "cs": "hřiště"
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -607,23 +675,6 @@
       "render": "{reviews(name, playground)}"
     }
   ],
-  "presets": [
-    {
-      "tags": [
-        "leisure=playground"
-      ],
-      "title": {
-        "nl": "een speeltuin",
-        "en": "a playground",
-        "ru": "Детская площадка",
-        "fr": "une terrain de jeux",
-        "it": "una campetto",
-        "de": "einen Spielplatz",
-        "ca": "un parc infantil",
-        "cs": "hřiště"
-      }
-    }
-  ],
   "deletion": {
     "nonDeleteMappings": [
       {
@@ -643,50 +694,5 @@
         "leisure="
       ]
     }
-  },
-  "mapRendering": [
-    {
-      "icon": "./assets/themes/playgrounds/playground.svg",
-      "iconBadges": [
-        {
-          "if": {
-            "and": [
-              "opening_hours!=24/7",
-              "opening_hours~*"
-            ]
-          },
-          "then": "icons.isOpen"
-        }
-      ],
-      "iconSize": {
-        "render": "40,40,center",
-        "mappings": [
-          {
-            "if": "id~node/.*",
-            "then": "40,40,center"
-          },
-          {
-            "if": "_size_classification=small",
-            "then": "25,25,center"
-          },
-          {
-            "if": "_size_classification=medium",
-            "then": "40,40,center"
-          },
-          {
-            "if": "_size_classification=large",
-            "then": "60,60,center"
-          }
-        ]
-      },
-      "location": [
-        "point",
-        "centroid"
-      ]
-    },
-    {
-      "color": "#5dbaa9",
-      "width": "1"
-    }
-  ]
+  }
 }

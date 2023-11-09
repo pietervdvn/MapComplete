@@ -166,8 +166,27 @@ input[type=text] {
  * This very important section defines what the various input elements look like within the 'low-interaction' and 'interactive'-blocks
  */
 
+button.small, .button.small {
+    line-height: 1rem;
+    margin: 0;
+    margin-left: 0.5rem;
+    padding: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    height: fit-content;
+    font-size: unset;
+    border: 2px solid var(--button-background);
+    border-radius: 0.5rem;
+    font-weight: normal;
+    transition: all 250ms;
+    --tw-text-opacity: 1;
+    --tw-bg-opacity: 1;
+    background: var(--low-interaction-background);
+    color: var(--low-interaction-foreground);
+}
 
 button, .button {
+    align-items: center;
     display: inline-flex;
     line-height: 1.25rem;
     margin: 0.2rem;
@@ -176,7 +195,6 @@ button, .button {
     padding-right: 0.6rem;
     font-size: large;
     font-weight: bold;
-    /*-- invisible border: rendered on hover*/
     border: 2px solid var(--button-background);
     border-radius: 0.5rem;
     transition: all 250ms;
@@ -190,20 +208,7 @@ button, .button {
     box-shadow: 0 5px 10px #88888888;
 }
 
-button.small, .button.small {
-    line-height: 1rem;
-    margin: 0;
-    padding: 0.1rem;
-    font-size: unset;
-    /*-- invisible border: rendered on hover*/
-    border: 2px solid var(--low-interaction-background);
-    border-radius: 0.1rem;
-    transition: all 250ms;
-    --tw-text-opacity: 1;
-    --tw-bg-opacity: 1;
-    background: var(--low-interaction-background);
-    color: var(--low-interaction-foreground);
-}
+
 
 button.selected, .button.selected {
     background-color: var(--catch-detail-color);
@@ -399,6 +404,38 @@ select:hover {
     border: 2px dotted #ff9143;
 }
 
+
+.warning {
+    /* The class to convey important information, but not as grave as 'alert' */
+    background-color: var(--low-interaction-background);
+    color: var(--alert-foreground-color);
+    font-weight: bold;
+    border-radius: 1em;
+    margin: 0.25em;
+    text-align: center;
+    padding: 0.15em 0.3em;
+    border: 3px dotted #ff9143;
+}
+
+.low-interaction .warning {
+    background-color: var(--interactive-background);
+}
+
+.information {
+    /* The class to convey important information which does _not_ denote an error... */
+    background-color: var(--low-interaction-background);
+    color: var(--alert-foreground-color);
+    border-radius: 1em;
+    margin: 0.25em;
+    text-align: center;
+    padding: 0.15em 0.3em;
+    border: 3px dotted var(--catch-detail-color-contrast);
+}
+
+.low-interaction .interactive {
+    background-color: var(--interactive-background);
+}
+
 .subtle {
     /* For all information that is not important for 99% of the users */
     color: #999;
@@ -589,3 +626,6 @@ a.link-underline {
 }
 
 
+.min-h-32 {
+    min-height: 8rem;
+}

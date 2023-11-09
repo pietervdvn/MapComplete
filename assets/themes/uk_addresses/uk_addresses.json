@@ -9,38 +9,22 @@
   "mustHaveLanguage": [
     "en"
   ],
+  "description": {
+    "en": "Help us collect addresses and make them freely available. Each address contributed will be added to OpenStreetMap so you will need to create an account and log in before you start. Please do not copy addresses from the internet or other sources subject to copyright. This website works well on mobile so a good option is to contibute the addresses closest to you."
+  },
   "shortDescription": {
     "en": "Help to build an open dataset of addresses in Great Britain",
     "de": "Helfen Sie beim Aufbau eines offenen Datensatzes britischer Adressen",
     "it": "Aiuta a costruire un dataset libero per gli indirizzi nel Regno Unito"
   },
-  "description": {
-    "en": "Help us collect addresses and make them freely available. Each address contributed will be added to OpenStreetMap so you will need to create an account and log in before you start. Please do not copy addresses from the internet or other sources subject to copyright. This website works well on mobile so a good option is to contibute the addresses closest to you."
-  },
   "icon": "./assets/themes/uk_addresses/housenumber_unknown.svg",
+  "startZoom": 7,
   "startLat": 53.21261,
   "startLon": -1.47216,
-  "startZoom": 7,
-  "widenFactor": 1.01,
-  "hideFromOverview": true,
-  "clustering": {
-    "minNeededFeatures": 25,
-    "maxZoom": 16
-  },
-  "tileLayerSources": [
-    {
-      "id": "property-boundaries",
-      "url": "https://tiles.osmuk.org/PropertyBoundaries/{z}/{x}/{y}.png",
-      "isOverlay": true,
-      "min_zoom": 18,
-      "max_zoom": 20,
-      "defaultState": false,
-      "name": {
-        "en": "Property boundaries by osmuk.org",
-        "de": "Grenzverläufe gemäß osmuk.org"
-      }
-    }
+  "credits": [
+    "Pieter Vander Vennet, Rob Nickerson, Russ Garrett"
   ],
+  "hideFromOverview": true,
   "layers": [
     {
       "id": "raw_inspire_polygons",
@@ -55,24 +39,14 @@
       "calculatedTags": [
         "_has_address=overlapWith(feat)('address').length > 0"
       ],
-      "mapRendering": [
-        {
-          "width": 2,
-          "color": {
-            "render": "#00f",
-            "mappings": [
-              {
-                "if": "_has_address=true",
-                "then": "#0f0"
-              }
-            ]
-          }
-        }
-      ],
       "shownByDefault": false,
       "name": {
         "en": "Inspire polygons"
-      }
+      },
+      "pointRendering": [],
+      "lineRendering": [
+        {}
+      ]
     },
     {
       "id": "to_import",
@@ -162,35 +136,11 @@
           ]
         }
       ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "./assets/themes/uk_addresses/housenumber_unknown.svg",
-            "mappings": [
-              {
-                "if": {
-                  "and": [
-                    "_embedding_object:id~*",
-                    "_embedding_object:id!=false"
-                  ]
-                },
-                "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
-              },
-              {
-                "if": "_imported=yes",
-                "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
-              }
-            ]
-          },
-          "iconSize": "40,40",
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "anchor": "center"
-        }
-      ],
-      "description": "Alamat"
+      "description": "Alamat",
+      "pointRendering": [],
+      "lineRendering": [
+        {}
+      ]
     },
     {
       "id": "address",
@@ -631,65 +581,32 @@
           }
         }
       ],
-      "mapRendering": [
-        {
-          "label": {
-            "render": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
-            "condition": "addr:housenumber~*"
-          },
-          "iconSize": "50,50",
-          "icon": {
-            "render": "./assets/layers/address/housenumber_blank.svg",
-            "mappings": [
-              {
-                "if": {
-                  "or": [
-                    {
-                      "and": [
-                        "addr:housenumber=",
-                        "nohousenumber!=yes"
-                      ]
-                    },
-                    "addr:street="
-                  ]
-                },
-                "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
-              }
-            ]
-          },
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "anchor": "center"
-        },
-        {
-          "color": {
-            "render": "#00f",
-            "mappings": [
-              {
-                "if": {
-                  "or": [
-                    {
-                      "and": [
-                        "addr:housenumber=",
-                        "nohousenumber!=yes"
-                      ]
-                    },
-                    "addr:street="
-                  ]
-                },
-                "then": "#ff0"
-              }
-            ]
-          },
-          "width": "3"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     "named_streets"
   ],
+  "tileLayerSources": [
+    {
+      "id": "property-boundaries",
+      "url": "https://tiles.osmuk.org/PropertyBoundaries/{z}/{x}/{y}.png",
+      "isOverlay": true,
+      "min_zoom": 18,
+      "max_zoom": 20,
+      "defaultState": false,
+      "name": {
+        "en": "Property boundaries by osmuk.org",
+        "de": "Grenzverläufe gemäß osmuk.org"
+      }
+    }
+  ],
   "enableShareScreen": false,
   "enableMoreQuests": false,
-  "credits": "Pieter Vander Vennet, Rob Nickerson, Russ Garrett"
+  "widenFactor": 1.01,
+  "clustering": {
+    "minNeededFeatures": 25,
+    "maxZoom": 16
+  }
 }

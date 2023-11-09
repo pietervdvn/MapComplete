@@ -14,30 +14,6 @@
     "pl": "Mapa gaśnic",
     "cs": "Mapa hasicích přístrojů"
   },
-  "minzoom": 14,
-  "source": {
-    "osmTags": {
-      "and": [
-        "emergency=fire_extinguisher"
-      ]
-    }
-  },
-  "title": {
-    "render": {
-      "en": "Extinguishers",
-      "ru": "Огнетушители",
-      "ja": "消火器",
-      "nb_NO": "Brannslokkere",
-      "fr": "Exctincteurs",
-      "de": "Feuerlöscher",
-      "it": "Estintori",
-      "nl": "Brandblussers",
-      "ca": "Extintors",
-      "es": "Extintores",
-      "pl": "Gaśnice",
-      "cs": "Hasicí přístroje"
-    }
-  },
   "description": {
     "en": "Map layer to show fire extinguishers.",
     "ja": "消火栓を表示するマップレイヤ。",
@@ -54,6 +30,82 @@
     "pl": "Warstwa mapy pokazująca gaśnice.",
     "cs": "Mapová vrstva pro zobrazení hasicích přístrojů."
   },
+  "source": {
+    "osmTags": {
+      "and": [
+        "emergency=fire_extinguisher"
+      ]
+    }
+  },
+  "minzoom": 14,
+  "title": {
+    "render": {
+      "en": "Extinguishers",
+      "ru": "Огнетушители",
+      "ja": "消火器",
+      "nb_NO": "Brannslokkere",
+      "fr": "Exctincteurs",
+      "de": "Feuerlöscher",
+      "it": "Estintori",
+      "nl": "Brandblussers",
+      "ca": "Extintors",
+      "es": "Extintores",
+      "pl": "Gaśnice",
+      "cs": "Hasicí přístroje"
+    }
+  },
+  "pointRendering": [
+    {
+      "iconSize": "20,20",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/themes/hailhydrant/Twemoji12_1f9ef.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "tags": [
+        "emergency=fire_extinguisher"
+      ],
+      "title": {
+        "en": "a fire extinguisher",
+        "ja": "消火器",
+        "nb_NO": "en brannslukker",
+        "ru": "огнетушитель",
+        "fr": "une extincteur",
+        "de": "einen Feuerlöscher",
+        "it": "una estintore",
+        "nl": "een brandblusser",
+        "da": "en ildslukker",
+        "es": "un extintor",
+        "ca": "un extintor",
+        "pl": "gaśnica",
+        "cs": "hasicí přístroj"
+      },
+      "description": {
+        "en": "A fire extinguisher is a small, portable device used to stop a fire",
+        "ja": "消火器は、火災を止めるために使用される小型で携帯可能な装置である",
+        "ru": "Огнетушитель - небольшое переносное устройство для тушения огня",
+        "fr": "Un extincteur est un appareil portatif servant à éteindre un feu",
+        "de": "Ein Feuerlöscher ist ein kleines, tragbares Gerät, das dazu dient, ein Feuer zu löschen",
+        "it": "Un estintore è un dispositivo portatile di piccole dimensioni usato per spegnere un incendio",
+        "nl": "Een brandblusser is een klein, draagbaar apparaat om een brand te blussen",
+        "da": "En ildslukker er en lille, bærbar beholder, der bruges til at stoppe en brand",
+        "es": "Un extintor es un dispositivo pequeño y portátil utilizado para parar un fuego",
+        "ca": "Un extintor és un dispositiu petit i portàtil utilitzat per a para un foc",
+        "pl": "Gaśnica to małe, przenośne urządzenie do gaszenia ognia",
+        "cs": "Hasicí přístroj je malé přenosné zařízení používané k zastavení požáru"
+      }
+    }
+  ],
   "tagRenderings": [
     {
       "id": "extinguisher-location",
@@ -134,52 +186,5 @@
       }
     },
     "images"
-  ],
-  "presets": [
-    {
-      "tags": [
-        "emergency=fire_extinguisher"
-      ],
-      "title": {
-        "en": "a fire extinguisher",
-        "ja": "消火器",
-        "nb_NO": "en brannslukker",
-        "ru": "огнетушитель",
-        "fr": "une extincteur",
-        "de": "einen Feuerlöscher",
-        "it": "una estintore",
-        "nl": "een brandblusser",
-        "da": "en ildslukker",
-        "es": "un extintor",
-        "ca": "un extintor",
-        "pl": "gaśnica",
-        "cs": "hasicí přístroj"
-      },
-      "description": {
-        "en": "A fire extinguisher is a small, portable device used to stop a fire",
-        "ja": "消火器は、火災を止めるために使用される小型で携帯可能な装置である",
-        "ru": "Огнетушитель - небольшое переносное устройство для тушения огня",
-        "fr": "Un extincteur est un appareil portatif servant à éteindre un feu",
-        "de": "Ein Feuerlöscher ist ein kleines, tragbares Gerät, das dazu dient, ein Feuer zu löschen",
-        "it": "Un estintore è un dispositivo portatile di piccole dimensioni usato per spegnere un incendio",
-        "nl": "Een brandblusser is een klein, draagbaar apparaat om een brand te blussen",
-        "da": "En ildslukker er en lille, bærbar beholder, der bruges til at stoppe en brand",
-        "es": "Un extintor es un dispositivo pequeño y portátil utilizado para parar un fuego",
-        "ca": "Un extintor és un dispositiu petit i portàtil utilitzat per a para un foc",
-        "pl": "Gaśnica to małe, przenośne urządzenie do gaszenia ognia",
-        "cs": "Hasicí přístroj je malé přenosné zařízení používané k zastavení požáru"
-      }
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": "./assets/themes/hailhydrant/Twemoji12_1f9ef.svg",
-      "iconSize": "20,20",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    }
   ]
 }

@@ -8,6 +8,8 @@
   },
   "source": "special:library",
   "title": null,
+  "pointRendering": null,
+  "lineRendering": null,
   "tagRenderings": [
     {
       "id": "wikipedialink",
@@ -194,6 +196,5 @@
       },
       "render": "{rating()}"
     }
-  ],
-  "mapRendering": null
+  ]
 }

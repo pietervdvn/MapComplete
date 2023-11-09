@@ -17,7 +17,6 @@
     "cs": "Větrné elektrárny",
     "pl": "Generatory wiatrowe"
   },
-  "icon": "./assets/themes/openwindpowermap/logo.svg",
   "description": {
     "en": "A map for showing and editing wind turbines.",
     "fr": "Une carte indiquant les éoliennes et permettant leur édition.",
@@ -33,14 +32,17 @@
     "ca": "Un mapa per a mostrar i editar turbines eòliques.",
     "pl": "Mapa do pokazywania i edytowania turbin wiatrowych."
   },
+  "icon": "./assets/themes/openwindpowermap/logo.svg",
+  "startZoom": 8,
   "startLat": 50.52,
   "startLon": 4.643,
-  "startZoom": 8,
-  "clustering": {
-    "maxZoom": 8
-  },
+  "credits": [
+    "Seppe Santens"
+  ],
   "layers": [
     "windturbine"
   ],
-  "credits": "Seppe Santens"
+  "clustering": {
+    "maxZoom": 8
+  }
 }

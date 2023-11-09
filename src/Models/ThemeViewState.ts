@@ -345,11 +345,25 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.drawSpecialLayers()
         this.initHotkeys()
         this.miscSetup()
+        this.focusOnMap()
         if (!Utils.runningFromConsole) {
             console.log("State setup completed", this)
         }
     }
 
+    /* By focussing on the map, the keyboard panning and zoom with '+' and '+' works */
+    public focusOnMap() {
+        if (this.map.data) {
+            this.map.data.getCanvas().focus()
+            return
+        }
+        this.map.addCallbackAndRunD((map) => {
+            map.on("load", () => {
+                map.getCanvas().focus()
+            })
+            return true
+        })
+    }
     public showNormalDataOn(map: Store<MlMap>): ReadonlyMap<string, FilteringFeatureSource> {
         const filteringFeatureSource = new Map<string, FilteringFeatureSource>()
         this.perLayer.forEach((fs, layerName) => {
@@ -417,6 +431,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             () => {
                 this.selectedElement.setData(undefined)
                 this.guistate.closeAll()
+                this.focusOnMap()
             }
         )
 
@@ -626,7 +641,15 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 // We did _unselect_ an item - we always remove the lastclick-object
                 this.lastClickObject.features.setData([])
                 this.selectedLayer.setData(undefined)
+                this.focusOnMap()
             }
+        })
+        this.guistate.allToggles.forEach((toggle) => {
+            toggle.toggle.addCallbackD((isOpened) => {
+                if (!isOpened) {
+                    this.focusOnMap()
+                }
+            })
         })
         new ThemeViewStateHashActor(this)
         new MetaTagging(this)

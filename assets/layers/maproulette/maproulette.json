@@ -1,9 +1,12 @@
 {
   "id": "maproulette",
-  "source": {
-    "geoJson": "https://maproulette.org/api/v2/tasks/box/{x_min}/{y_min}/{x_max}/{y_max}",
-    "geoJsonZoomLevel": 16,
-    "osmTags": "title~*"
+  "name": {
+    "en": "MapRoulette Tasks",
+    "de": "MapRoulette-Aufgaben",
+    "nl": "MapRoulette Taken",
+    "pl": "Zadania MapRoulette",
+    "ca": "Tasques de MapRoulette",
+    "cs": "Úkoly MapRoulette"
   },
   "description": {
     "en": "Layer showing all tasks in MapRoulette",
@@ -13,53 +16,80 @@
     "pl": "Warstwa pokazująca wszystkie zadania w MapRoulette",
     "cs": "Vrstva zobrazující všechny úlohy v MapRoulette"
   },
-  "mapRendering": [
+  "source": {
+    "geoJson": "https://maproulette.org/api/v2/tasks/box/{x_min}/{y_min}/{x_max}/{y_max}",
+    "geoJsonZoomLevel": 16,
+    "osmTags": "title~*"
+  },
+  "minzoom": 15,
+  "title": {
+    "render": {
+      "en": "MapRoulette Item: {parentName}",
+      "de": "MapRoulette-Element: {parentName}",
+      "nl": "MapRoulette Item: {parentName}",
+      "pl": "Obiekt MapRoulette: {parentName}",
+      "cs": "Položka MapRoulette: {parentName}"
+    }
+  },
+  "titleIcons": [
+    {
+      "id": "maproulette",
+      "render": "<a href='https://maproulette.org/challenge/{parentId}/task/{id}' target='_blank'><img src='./assets/layers/maproulette/logomark.svg'/></a>"
+    }
+  ],
+  "pointRendering": [
     {
       "location": [
         "point",
         "centroid"
       ],
-      "icon": {
-        "render": "./assets/layers/maproulette/logomark.svg",
-        "mappings": [
-          {
-            "if": "status=0",
-            "then": "pin:#959DFF"
-          },
-          {
-            "if": "status=1",
-            "then": "pin:#65D2DA"
-          },
-          {
-            "if": "status=2",
-            "then": "pin:#F7BB59"
-          },
-          {
-            "if": "status=3",
-            "then": "pin:#F7BB59"
-          },
-          {
-            "if": "status=4",
-            "then": "pin:#737373"
-          },
-          {
-            "if": "status=5",
-            "then": "pin:#CCB186"
-          },
-          {
-            "if": "status=6",
-            "then": "pin:#FF5E63"
-          },
-          {
-            "if": "status=9",
-            "then": "pin:#FF349C"
+      "marker": [
+        {
+          "icon": "pin",
+          "color": {
+            "render": "#00",
+            "mappings": [
+              {
+                "if": "status=0",
+                "then": "#959DFF"
+              },
+              {
+                "if": "status=1",
+                "then": "#65D2DA"
+              },
+              {
+                "if": "status=2",
+                "then": "#F7BB59"
+              },
+              {
+                "if": "status=3",
+                "then": "#F7BB59"
+              },
+              {
+                "if": "status=4",
+                "then": "#737373"
+              },
+              {
+                "if": "status=5",
+                "then": "#CCB186"
+              },
+              {
+                "if": "status=6",
+                "then": "#FF5E63"
+              },
+              {
+                "if": "status=9",
+                "then": "#FF349C"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "iconSize": "40,40",
       "anchor": "bottom"
     }
   ],
+  "lineRendering": [],
   "tagRenderings": [
     {
       "id": "status",
@@ -211,30 +241,6 @@
           "image": "not_found"
         }
       }
-    }
-  ],
-  "minzoom": 15,
-  "name": {
-    "en": "MapRoulette Tasks",
-    "de": "MapRoulette-Aufgaben",
-    "nl": "MapRoulette Taken",
-    "pl": "Zadania MapRoulette",
-    "ca": "Tasques de MapRoulette",
-    "cs": "Úkoly MapRoulette"
-  },
-  "title": {
-    "render": {
-      "en": "MapRoulette Item: {parentName}",
-      "de": "MapRoulette-Element: {parentName}",
-      "nl": "MapRoulette Item: {parentName}",
-      "pl": "Obiekt MapRoulette: {parentName}",
-      "cs": "Položka MapRoulette: {parentName}"
-    }
-  },
-  "titleIcons": [
-    {
-      "id": "maproulette",
-      "render": "<a href='https://maproulette.org/challenge/{parentId}/task/{id}' target='_blank'><img src='./assets/layers/maproulette/logomark.svg'/></a>"
     }
   ],
   "filter": [

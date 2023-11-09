@@ -9,7 +9,15 @@
     "ca": "Vies ciclistes i carreteres",
     "cs": "Cyklostezky a silnice"
   },
-  "minzoom": 16,
+  "description": {
+    "en": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure",
+    "nl": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur",
+    "de": "Infrastruktur, die man mit dem Fahrrad befahren kann, begleitet von diesbezüglichen Fragen",
+    "es": "Toda la infraestructura sobre la que alguien puede ir en bici, acompañado de preguntas sobre esta infraestructura\"",
+    "fr": "Toutes les infrastructures sur lesquelles quelqu'un peut rouler, accompagnées de questions sur cette infrastructure",
+    "ca": "Totes les infraestructures per les quals algú pot ciclar, acompanyades de preguntes sobre aquesta infraestructura",
+    "cs": "Veškerá infrastruktura, kterou může někdo projet na kole, doplněná o otázky týkající se této infrastruktury"
+  },
   "source": {
     "osmTags": {
       "or": [
@@ -39,6 +47,7 @@
       ]
     }
   },
+  "minzoom": 16,
   "title": {
     "render": {
       "en": "Way",
@@ -207,6 +216,92 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/themes/cycle_infra/bicycleway.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": {
+        "render": "rgba(170, 170, 170, 0.7)",
+        "mappings": [
+          {
+            "if": "highway=cycleway",
+            "then": "rgba(0, 189, 141, 0.7)"
+          },
+          {
+            "if": "highway=path",
+            "then": "rgba(204, 74, 207, 0.7)"
+          },
+          {
+            "if": "cycleway=track",
+            "then": "rgba(113, 3, 200, 0.7)"
+          },
+          {
+            "if": "cycleway=shared_lane",
+            "then": "rgba(74, 59, 247, 0.7)"
+          },
+          {
+            "if": "cycleway=lane",
+            "then": "rgba(254, 155, 6, 0.9)"
+          },
+          {
+            "if": "cyclestreet=yes",
+            "then": "rgba(57, 159, 191, 0.7)"
+          },
+          {
+            "if": "cycleway=no",
+            "then": "rgba(0, 0, 0, 0.7)"
+          }
+        ]
+      },
+      "width": "8",
+      "dashArray": {
+        "render": "",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                "oneway=yes",
+                {
+                  "or": [
+                    "highway=cycleway",
+                    "highway=path"
+                  ]
+                }
+              ]
+            },
+            "then": ""
+          },
+          {
+            "if": "cycleway=track",
+            "then": ""
+          },
+          {
+            "if": "cycleway=shared_lane",
+            "then": "15 30"
+          },
+          {
+            "if": "cycleway=lane",
+            "then": "25 15 15 15 25"
+          },
+          {
+            "if": "cyclestreet=yes",
+            "then": ""
+          }
+        ]
+      }
+    }
+  ],
   "tagRenderings": [
     {
       "question": {
@@ -1807,94 +1902,5 @@
       ]
     }
   ],
-  "allowSplit": true,
-  "mapRendering": [
-    {
-      "icon": "./assets/themes/cycle_infra/bicycleway.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point"
-      ]
-    },
-    {
-      "color": {
-        "render": "rgba(170, 170, 170, 0.7)",
-        "mappings": [
-          {
-            "if": "highway=cycleway",
-            "then": "rgba(0, 189, 141, 0.7)"
-          },
-          {
-            "if": "highway=path",
-            "then": "rgba(204, 74, 207, 0.7)"
-          },
-          {
-            "if": "cycleway=track",
-            "then": "rgba(113, 3, 200, 0.7)"
-          },
-          {
-            "if": "cycleway=shared_lane",
-            "then": "rgba(74, 59, 247, 0.7)"
-          },
-          {
-            "if": "cycleway=lane",
-            "then": "rgba(254, 155, 6, 0.9)"
-          },
-          {
-            "if": "cyclestreet=yes",
-            "then": "rgba(57, 159, 191, 0.7)"
-          },
-          {
-            "if": "cycleway=no",
-            "then": "rgba(0, 0, 0, 0.7)"
-          }
-        ]
-      },
-      "width": "8",
-      "dashArray": {
-        "render": "",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                "oneway=yes",
-                {
-                  "or": [
-                    "highway=cycleway",
-                    "highway=path"
-                  ]
-                }
-              ]
-            },
-            "then": ""
-          },
-          {
-            "if": "cycleway=track",
-            "then": ""
-          },
-          {
-            "if": "cycleway=shared_lane",
-            "then": "15 30"
-          },
-          {
-            "if": "cycleway=lane",
-            "then": "25 15 15 15 25"
-          },
-          {
-            "if": "cyclestreet=yes",
-            "then": ""
-          }
-        ]
-      }
-    }
-  ],
-  "description": {
-    "en": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure",
-    "nl": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur",
-    "de": "Infrastruktur, die man mit dem Fahrrad befahren kann, begleitet von diesbezüglichen Fragen",
-    "es": "Toda la infraestructura sobre la que alguien puede ir en bici, acompañado de preguntas sobre esta infraestructura\"",
-    "fr": "Toutes les infrastructures sur lesquelles quelqu'un peut rouler, accompagnées de questions sur cette infrastructure",
-    "ca": "Totes les infraestructures per les quals algú pot ciclar, acompanyades de preguntes sobre aquesta infraestructura",
-    "cs": "Veškerá infrastruktura, kterou může někdo projet na kole, doplněná o otázky týkající se této infrastruktury"
-  }
+  "allowSplit": true
 }

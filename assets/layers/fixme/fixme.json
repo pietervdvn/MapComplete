@@ -7,14 +7,12 @@
     "ca": "Objectes d'OSM amb etiquetes FIXME",
     "cs": "Objekty OSM se značkami FIXME"
   },
-  "minzoom": 16,
   "description": {
     "en": "OSM objects that likely need to be fixed, based on a FIXME tag.",
     "de": "OSM-Objekte, die wahrscheinlich korrigiert werden müssen, basierend auf einem FIXME-Tag.",
     "ca": "Objectes OSM que probablement s'han de solucionar, basats en una etiqueta FIXME.",
     "cs": "Objekty OSM, které je pravděpodobně nutné opravit na základě značky FIXME."
   },
-  "syncSelection": "theme-only",
   "source": {
     "osmTags": {
       "or": [
@@ -23,6 +21,7 @@
       ]
     }
   },
+  "minzoom": 16,
   "title": {
     "render": {
       "en": "OSM object with FIXME tag",
@@ -32,6 +31,27 @@
       "cs": "Objekt OSM s tagem FIXME"
     }
   },
+  "pointRendering": [
+    {
+      "location": [
+        "centroid",
+        "point"
+      ],
+      "label": "<div class='bg-white rounded p-2'>{fixme}</div>",
+      "marker": [
+        {
+          "icon": "./assets/svg/bug.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#ff0000",
+      "dashArray": "5,5",
+      "width": 2
+    }
+  ],
   "tagRenderings": [
     {
       "id": "fixme",
@@ -79,19 +99,5 @@
     },
     "all_tags"
   ],
-  "mapRendering": [
-    {
-      "location": [
-        "centroid",
-        "point"
-      ],
-      "icon": "./assets/svg/bug.svg",
-      "label": "<div class='bg-white rounded p-2'>{fixme}</div>"
-    },
-    {
-      "color": "#ff0000",
-      "dashArray": "5,5",
-      "width": 2
-    }
-  ]
+  "syncSelection": "theme-only"
 }

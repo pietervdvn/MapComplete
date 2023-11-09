@@ -17,7 +17,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Postboxes' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Postbox and Post Office Map') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Postboxes' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Postbox and Post Office Map') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -47,7 +47,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Post offices' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Postbox and Post Office Map') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Post offices' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Postbox and Post Office Map') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -225,7 +225,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Parcel Lockers' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Postbox and Post Office Map') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Parcel Lockers' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Postbox and Post Office Map') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",

@@ -12,6 +12,9 @@ import SpecialVisualizations from "./SpecialVisualizations"
 import { Feature } from "geojson"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 
+/**
+ * @deprecated - use 'SpecialTranslation' instead
+ */
 export class SubstitutedTranslation extends VariableUiElement {
     public constructor(
         translation: Translation,

@@ -11,6 +11,9 @@
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import FromHtml from "../../Base/FromHtml.svelte"
   import NextButton from "../../Base/NextButton.svelte"
+  import { UIElement } from "../../UIElement";
+  import ToSvelte from "../../Base/ToSvelte.svelte";
+  import BaseUIElement from "../../BaseUIElement";
 
   /**
    * This component lists all the presets and allows the user to select one
@@ -21,7 +24,7 @@
     preset: PresetConfig
     layer: LayerConfig
     text: Translation
-    icon: string
+    icon: BaseUIElement
     tags: Record<string, string>
   }[] = []
 
@@ -49,10 +52,9 @@
     for (const preset of layer.presets) {
       const tags = TagUtils.KVtoProperties(preset.tags ?? [])
 
-      const icon: string = layer.mapRendering[0]
-        .RenderIcon(new ImmutableStore<any>(tags), false)
-        .html.SetClass("w-12 h-12 block relative")
-        .ConstructElement().innerHTML
+      const icon: BaseUIElement = layer.mapRendering[0]
+        .RenderIcon(new ImmutableStore<any>(tags))
+        .html.SetClass("w-12 h-12 block relative mr-4")
 
       const description = preset.description?.FirstSentence()
 
@@ -84,7 +86,7 @@
 
   {#each presets as preset}
     <NextButton on:click={() => dispatch("select", preset)}>
-      <FromHtml slot="image" src={preset.icon} />
+        <ToSvelte slot="image" construct={() => preset.icon} />
       <div class="flex flex-col">
         <b class="w-fit">
           <Tr t={preset.text} />

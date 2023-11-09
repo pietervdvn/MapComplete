@@ -22,7 +22,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Restaurants and fast food' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Restaurants and fast food' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -542,17 +542,17 @@
     },
     {
       "key": "internet_access:fee",
-      "description": "Layer 'Restaurants and fast food' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if internet_access!=no&internet_access~.+)",
+      "description": "Layer 'Restaurants and fast food' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if internet_access!=no &internet_access~.+)",
       "value": "yes"
     },
     {
       "key": "internet_access:fee",
-      "description": "Layer 'Restaurants and fast food' shows internet_access:fee=no with a fixed text, namely 'Internet access is free at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if internet_access!=no&internet_access~.+)",
+      "description": "Layer 'Restaurants and fast food' shows internet_access:fee=no with a fixed text, namely 'Internet access is free at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if internet_access!=no &internet_access~.+)",
       "value": "no"
     },
     {
       "key": "internet_access:fee",
-      "description": "Layer 'Restaurants and fast food' shows internet_access:fee=customers with a fixed text, namely 'Internet access is free at this place, for customers only' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if internet_access!=no&internet_access~.+)",
+      "description": "Layer 'Restaurants and fast food' shows internet_access:fee=customers with a fixed text, namely 'Internet access is free at this place, for customers only' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if internet_access!=no &internet_access~.+)",
       "value": "customers"
     },
     {

@@ -17,6 +17,7 @@
   "source": {
     "osmTags": "healthcare=physiotherapist"
   },
+  "minzoom": 13,
   "title": {
     "render": {
       "en": "Physiotherapist {name}",
@@ -26,7 +27,41 @@
       "cs": "Fyzioterapeut {name}"
     }
   },
-  "minzoom": 13,
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/physiotherapist/doctors.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "a physiotherapists office",
+        "de": "Praxis eines Physiotherapeuten",
+        "nl": "een fysiotherapeutenpraktijk",
+        "fr": "un cabinet de kinésithérapeutes",
+        "ca": "una consulta fisioterapèutica",
+        "cs": "ordinace fyzioterapeuta"
+      },
+      "tags": [
+        "healthcare=physiotherapist"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -54,34 +89,8 @@
     "email",
     "website"
   ],
-  "presets": [
-    {
-      "title": {
-        "en": "a physiotherapists office",
-        "de": "Praxis eines Physiotherapeuten",
-        "nl": "een fysiotherapeutenpraktijk",
-        "fr": "un cabinet de kinésithérapeutes",
-        "ca": "una consulta fisioterapèutica",
-        "cs": "ordinace fyzioterapeuta"
-      },
-      "tags": [
-        "healthcare=physiotherapist"
-      ]
-    }
-  ],
   "filter": [
     "open_now"
-  ],
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/layers/physiotherapist/doctors.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    }
   ],
   "deletion": true,
   "allowMove": true

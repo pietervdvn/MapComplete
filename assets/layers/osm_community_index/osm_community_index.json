@@ -8,6 +8,23 @@
     "pl": "Indeks społeczności OSM",
     "cs": "OSM Community Index"
   },
+  "description": {
+    "en": "A layer showing the OpenStreetMap Communities",
+    "de": "Eine Ebene aller OpenStreetMap-Communities",
+    "ca": "Una capa que mostra les comunitats d'OpenStreetMap",
+    "fr": "Une couche affichant les communautés OpenStreetMap",
+    "pl": "Warstwa pokazująca społeczności OpenStreetMap",
+    "cs": "Vrstva zobrazující komunity OpenStreetMap"
+  },
+  "source": {
+    "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/community_index/tile_{z}_{x}_{y}.geojson",
+    "geoJsonZoomLevel": 6,
+    "osmTags": "resources~*",
+    "isOsmCache": false
+  },
+  "calculatedTags": [
+    "_community_links=Object.values(JSON.parse(feat.properties.resources || '{}')).map(value =>{return value.resolved.nameHTML + '<br>&emsp;' + value.resolved.descriptionHTML}).join('<br>')"
+  ],
   "title": {
     "render": {
       "en": "OSM Community Index",
@@ -18,14 +35,29 @@
       "cs": "OSM Community Index"
     }
   },
-  "source": {
-    "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/community_index/tile_{z}_{x}_{y}.geojson",
-    "geoJsonZoomLevel": 6,
-    "osmTags": "resources~*",
-    "isOsmCache": false
-  },
-  "calculatedTags": [
-    "_community_links=Object.values(JSON.parse(feat.properties.resources || '{}')).map(value =>{return value.resolved.nameHTML + '<br>&emsp;' + value.resolved.descriptionHTML}).join('<br>')"
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point"
+      ],
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#6BC4F7"
+        },
+        {
+          "icon": "./assets/layers/osm_community_index/osm.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#444444",
+      "width": "1"
+    }
   ],
   "tagRenderings": [
     {
@@ -39,20 +71,6 @@
       "render": "{_community_links}",
       "condition": "_community_links~*",
       "description": "Community Links (Discord, meetups, Slack groups, IRC channels, mailing lists etc...)"
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": "pin:#6BC4F7;./assets/layers/osm_community_index/osm.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point"
-      ],
-      "anchor": "bottom"
-    },
-    {
-      "color": "#444444",
-      "width": "1"
     }
   ],
   "filter": [
@@ -167,13 +185,5 @@
         }
       ]
     }
-  ],
-  "description": {
-    "en": "A layer showing the OpenStreetMap Communities",
-    "de": "Eine Ebene aller OpenStreetMap-Communities",
-    "ca": "Una capa que mostra les comunitats d'OpenStreetMap",
-    "fr": "Une couche affichant les communautés OpenStreetMap",
-    "pl": "Warstwa pokazująca społeczności OpenStreetMap",
-    "cs": "Vrstva zobrazující komunity OpenStreetMap"
-  }
+  ]
 }

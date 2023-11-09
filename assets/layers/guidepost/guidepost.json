@@ -14,6 +14,25 @@
     "osmTags": "information=guidepost"
   },
   "minzoom": 14,
+  "title": {
+    "en": "Guideposts",
+    "cs": "Rozcestník",
+    "de": "Wegweiser"
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "centroid",
+        "point"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/layers/guidepost/guidepost.svg"
+        }
+      ],
+      "anchor": "bottom"
+    }
+  ],
   "presets": [
     {
       "title": {
@@ -35,29 +54,56 @@
       ]
     }
   ],
-  "deletion": true,
-  "allowMove": {
-    "enableImproveAccuracy": "true",
-    "enableRelocation": "false"
-  },
-  "title": {
-    "render": {
-      "en": "Guidepost",
-      "cs": "Rozcestník",
-      "de": "Wegweiser"
-    }
-  },
-  "mapRendering": [
+  "tagRenderings": [
+    "images",
     {
-      "location": [
-        "centroid",
-        "point"
-      ],
-      "icon": "./assets/layers/guidepost/guidepost.svg",
-      "anchor": "bottom"
+      "id": "type",
+      "question": {
+        "en": "What kind of routes are shown on this guidepost?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "bicycle=yes",
+          "ifnot": "bicycle=",
+          "then": {
+            "en": "This guidepost shows bicycle routes"
+          }
+        },
+        {
+          "if": "hiking=yes",
+          "ifnot": "hiking=",
+          "then": {
+            "en": "This guidepost shows hiking routes"
+          }
+        },
+        {
+          "if": "mtb=yes",
+          "ifnot": "mtb=",
+          "then": {
+            "en": "This guidepost shows mountain bike routes"
+          }
+        },
+        {
+          "if": "horse=yes",
+          "ifnot": "horse=",
+          "then": {
+            "en": "This guidepost shows horse riding routes"
+          }
+        },
+        {
+          "if": "ski=yes",
+          "ifnot": "ski=",
+          "then": {
+            "en": "This guidepost shows ski routes"
+          }
+        }
+      ]
     }
   ],
-  "tagRenderings": [
-    "images"
-  ]
+  "deletion": true,
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
 }

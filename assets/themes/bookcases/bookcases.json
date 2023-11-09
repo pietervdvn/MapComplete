@@ -37,11 +37,8 @@
     "pl": "Publiczny regał na książki to mała przyuliczna szafka, pudełko, stara budka telefoniczna lub inne przedmioty, w których przechowywane są książki. Każdy może w nich zostawić lub zabrać książkę. Celem tej mapy jest zebranie wszystkich tych regałów."
   },
   "icon": "./assets/themes/bookcases/bookcase.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 1,
   "layers": [
     "public_bookcase"
-  ]
+  ],
+  "widenFactor": 1
 }

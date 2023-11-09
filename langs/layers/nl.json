@@ -3272,13 +3272,6 @@
             "render": "Klok"
         }
     },
-    "crab_address": {
-        "tagRenderings": {
-            "render_crab": {
-                "render": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
-            }
-        }
-    },
     "crossings": {
         "description": "Oversteekplaatsen voor voetgangers en fietsers",
         "name": "Oversteekplaatsen",
@@ -5195,6 +5188,14 @@
             }
         }
     },
+    "ice_cream": {
+        "tagRenderings": {
+            "1": {
+                "question": "Wat is de naam van dit ijssalon?",
+                "render": "Dit ijssalon heet <b>{name}</b>"
+            }
+        }
+    },
     "indoors": {
         "description": "Een basis voor indoor-navigatie: toont binnenruimtes",
         "name": "Binnenruimtes",
@@ -5397,7 +5398,7 @@
         }
     },
     "last_click": {
-        "mapRendering": {
+        "pointRendering": {
             "0": {
                 "label": {
                     "mappings": {
@@ -7623,6 +7624,9 @@
         "tagRenderings": {
             "explanation": {
                 "mappings": {
+                    "0": {
+                        "then": "<div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div>"
+                    },
                     "1": {
                         "then": "Dit is een brede, autovrije straat"
                     },
@@ -7639,6 +7643,14 @@
                         "then": "Dit is een tractorspoor of weg om landbouwgrond te bereikken"
                     }
                 }
+            },
+            "slow_road_is_lit": {
+                "mappings": {
+                    "1": {
+                        "then": "Niet verlicht"
+                    }
+                },
+                "question": "Is deze weg 's nachts verlicht?"
             },
             "slow_roads-surface": {
                 "mappings": {
@@ -7687,6 +7699,9 @@
                 },
                 "4": {
                     "then": "Woonerf"
+                },
+                "5": {
+                    "then": "Klein pad"
                 }
             },
             "render": "Trage weg"
@@ -8707,13 +8722,6 @@
     },
     "transit_routes": {
         "description": "Laag met buslijnen",
-        "mapRendering": {
-            "0": {
-                "color": {
-                    "render": "#ff0000"
-                }
-            }
-        },
         "name": "Buslijnen",
         "tagRenderings": {
             "colour": {
@@ -9402,17 +9410,6 @@
                 "options": {
                     "0": {
                         "question": "Vuilnisbak met verdeler voor hondenpoepzakjes"
-                    }
-                }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Vuilnisbak"
-                        }
                     }
                 }
             }

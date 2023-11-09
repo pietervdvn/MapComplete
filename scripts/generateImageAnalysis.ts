@@ -15,7 +15,13 @@ import Constants from "../src/Models/Constants"
 export default class GenerateImageAnalysis extends Script {
     constructor() {
         super(
-            "Downloads (from overpass) all tags which have an imgur-image; then analyses the licenses"
+            [
+                "Downloads (from overpass) all tags which have an imgur-image; then analyses the licenses and downloads all the images",
+                "",
+                "Arguments:",
+                "Path to download the images to",
+                "Path to save the overview to",
+            ].join("\n")
         )
     }
 
@@ -380,11 +386,12 @@ export default class GenerateImageAnalysis extends Script {
         console.log("Args are", args)
         const cached = args.indexOf("--cached") < 0
         args = args.filter((a) => a !== "--cached")
-        const datapath = args[0] ?? "../../git/MapComplete-data/ImageLicenseInfo"
+        const datapath = args[1] ?? "../../git/MapComplete-data/ImageLicenseInfo"
+        const imageBackupPath = args[0]
         await this.downloadData(datapath, cached)
 
         await this.downloadMetadata(datapath)
-        await this.downloadAllImages(datapath, "/home/pietervdvn/data/imgur-image-backup")
+        await this.downloadAllImages(datapath, imageBackupPath)
         this.analyze(datapath)
     }
 }

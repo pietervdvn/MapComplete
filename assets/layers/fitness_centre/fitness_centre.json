@@ -33,6 +33,48 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": "40,40",
+      "label": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>",
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        }
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/fitness_centre/gym.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "tags": [
+        "leisure=fitness_centre"
+      ],
+      "title": {
+        "en": "a fitness centre",
+        "de": "ein Fitnessstudio",
+        "nl": "een fitness-centrum",
+        "ca": "un centre de fitness",
+        "cs": "fitness centra"
+      },
+      "icon": "./assets/layers/fitness_centre/gym.svg"
+    }
+  ],
   "tagRenderings": [
     {
       "id": "name",
@@ -82,39 +124,6 @@
     "wheelchair-access",
     "level",
     "reviews"
-  ],
-  "presets": [
-    {
-      "tags": [
-        "leisure=fitness_centre"
-      ],
-      "title": {
-        "en": "a fitness centre",
-        "de": "ein Fitnessstudio",
-        "nl": "een fitness-centrum",
-        "ca": "un centre de fitness",
-        "cs": "fitness centra"
-      },
-      "icon": "./assets/layers/fitness_centre/gym.svg"
-    }
-  ],
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": "circle:white;./assets/layers/fitness_centre/gym.svg",
-      "iconSize": "40,40",
-      "label": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>",
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        }
-      ],
-      "anchor": "center"
-    }
   ],
   "filter": [
     "open_now"

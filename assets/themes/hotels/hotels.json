@@ -27,9 +27,9 @@
     "pl": "Na tej mapie znajdziesz hotele w Twojej okolicy"
   },
   "icon": "./assets/layers/hotel/hotel.svg",
+  "startZoom": 13,
   "startLat": 50.8552,
   "startLon": 4.3755,
-  "startZoom": 13,
   "layers": [
     "hotel"
   ]

@@ -18,7 +18,6 @@
     "fr": "Une seule voie d'escalade et ses propriétés. Certaines propriétés sont dérivées des objets qui les contiennent",
     "cs": "Jedna lezecká cesta a její vlastnosti. Některé vlastnosti jsou odvozeny z obsahujících prvků"
   },
-  "minzoom": 18,
   "source": {
     "osmTags": {
       "and": [
@@ -26,6 +25,7 @@
       ]
     }
   },
+  "minzoom": 18,
   "title": {
     "render": {
       "de": "Kleterroute",
@@ -56,6 +56,68 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "iconSize": "28,28",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "climbing:grade:french~*",
+                "name~*"
+              ]
+            },
+            "then": "<div class='w-max p-1 rounded-xl' style='background: white;'>{name} <span class='climbing-{__difficulty:char}'>{climbing:grade:french}</span></div>"
+          },
+          {
+            "if": "name~*",
+            "then": "<div  class='w-max p-1 rounded-xl' style='background: white;'>{name}</div>"
+          }
+        ]
+      },
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/themes/climbing/climbing_route.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#0f0",
+      "width": "4"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a climbing route",
+        "nl": "een klimroute",
+        "fr": "une voie d’escalade",
+        "de": "eine Kletterroute",
+        "it": "una via di arrampicata",
+        "ca": "una ruta d'escalada",
+        "cs": "lezecká trasa"
+      },
+      "snapToLayer": [
+        "climbing_opportunity"
+      ],
+      "tags": [
+        "sport=climbing",
+        "climbing=route"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -219,58 +281,6 @@
       "freeform": {
         "key": "_embedding_features_with_rock:rock"
       }
-    }
-  ],
-  "presets": [
-    {
-      "title": {
-        "en": "a climbing route",
-        "nl": "een klimroute",
-        "fr": "une voie d’escalade",
-        "de": "eine Kletterroute",
-        "it": "una via di arrampicata",
-        "ca": "una ruta d'escalada",
-        "cs": "lezecká trasa"
-      },
-      "snapToLayer": [
-        "climbing_opportunity"
-      ],
-      "tags": [
-        "sport=climbing",
-        "climbing=route"
-      ]
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/themes/climbing/climbing_route.svg",
-      "iconSize": "28,28",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "label": {
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "climbing:grade:french~*",
-                "name~*"
-              ]
-            },
-            "then": "<div class='w-max p-1 rounded-xl' style='background: white;'>{name} <span class='climbing-{__difficulty:char}'>{climbing:grade:french}</span></div>"
-          },
-          {
-            "if": "name~*",
-            "then": "<div  class='w-max p-1 rounded-xl' style='background: white;'>{name}</div>"
-          }
-        ]
-      },
-      "anchor": "center"
-    },
-    {
-      "color": "#0f0",
-      "width": "4"
     }
   ]
 }

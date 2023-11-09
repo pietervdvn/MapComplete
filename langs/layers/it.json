@@ -1443,7 +1443,7 @@
         }
     },
     "last_click": {
-        "mapRendering": {
+        "pointRendering": {
             "0": {
                 "label": {
                     "render": "Aggiungi nuovo elemento"
@@ -2673,17 +2673,6 @@
                 "options": {
                     "0": {
                         "question": "Cestino per rifiuti con dispenser per sacchetti per escrementi dei cani"
-                    }
-                }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Cestino dei rifiuti"
-                        }
                     }
                 }
             }

@@ -11,10 +11,21 @@
     "es": "Mesas de pícnic",
     "cs": "Piknikové stoly"
   },
-  "minzoom": 12,
+  "description": {
+    "en": "The layer showing picnic tables",
+    "nl": "Deze laag toont picknicktafels",
+    "it": "Il livello che mostra i tavoli da picnic",
+    "fr": "La couche montrant les tables de pique-nique",
+    "ru": "Слой, отображающий столы для пикника",
+    "de": "Die Ebene zeigt Picknicktische an",
+    "es": "Una capa que muestra mesas de pícnic",
+    "ca": "La capa mostra taules de pícnic",
+    "cs": "Vrstva zobrazující piknikové stoly"
+  },
   "source": {
     "osmTags": "leisure=picnic_table"
   },
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Picnic table",
@@ -28,17 +39,44 @@
       "cs": "Piknikový stůl"
     }
   },
-  "description": {
-    "en": "The layer showing picnic tables",
-    "nl": "Deze laag toont picknicktafels",
-    "it": "Il livello che mostra i tavoli da picnic",
-    "fr": "La couche montrant les tables de pique-nique",
-    "ru": "Слой, отображающий столы для пикника",
-    "de": "Die Ebene zeigt Picknicktische an",
-    "es": "Una capa que muestra mesas de pícnic",
-    "ca": "La capa mostra taules de pícnic",
-    "cs": "Vrstva zobrazující piknikové stoly"
-  },
+  "pointRendering": [
+    {
+      "iconSize": "35,35",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "#e6cf39"
+        },
+        {
+          "icon": "./assets/layers/picnic_table/picnic_table.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "tags": [
+        "leisure=picnic_table"
+      ],
+      "title": {
+        "en": "a picnic table",
+        "nl": "een picknicktafel",
+        "it": "una tavolo da picnic",
+        "ru": "стол для пикника",
+        "de": "einen Picknick-Tisch",
+        "fr": "une table de pique-nique",
+        "es": "una mesa de pícnic",
+        "ca": "una taula de pícnic",
+        "cs": "piknikový stůl"
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     "level",
@@ -113,24 +151,6 @@
       "id": "picnic_table-material"
     }
   ],
-  "presets": [
-    {
-      "tags": [
-        "leisure=picnic_table"
-      ],
-      "title": {
-        "en": "a picnic table",
-        "nl": "een picknicktafel",
-        "it": "una tavolo da picnic",
-        "ru": "стол для пикника",
-        "de": "einen Picknick-Tisch",
-        "fr": "une table de pique-nique",
-        "es": "una mesa de pícnic",
-        "ca": "una taula de pícnic",
-        "cs": "piknikový stůl"
-      }
-    }
-  ],
   "deletion": {
     "softDeletionTags": {
       "and": [
@@ -143,16 +163,5 @@
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuraccy": true
-  },
-  "mapRendering": [
-    {
-      "icon": "circle:#e6cf39;./assets/layers/picnic_table/picnic_table.svg",
-      "iconSize": "35,35",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    }
-  ]
+  }
 }

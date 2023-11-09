@@ -13,7 +13,16 @@
     "pt_BR": "Árvore",
     "cs": "Strom"
   },
-  "minzoom": 16,
+  "description": {
+    "en": "A layer showing trees",
+    "nl": "Een laag die bomen toont",
+    "es": "Una capa que muestra árboles",
+    "de": "Eine Ebene, die Bäume zeigt",
+    "fr": "Une couche montrant les arbres",
+    "da": "Et lag, der viser træer",
+    "ca": "Una capa que mostra arbres",
+    "cs": "Vrstva zobrazující stromy"
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -21,6 +30,7 @@
       ]
     }
   },
+  "minzoom": 16,
   "title": {
     "render": {
       "nl": "Boom",
@@ -72,6 +82,141 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "#ffffff"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/tree_node/unknown.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "leaf_type=broadleaved"
+                  ]
+                },
+                "then": "./assets/layers/tree_node/broadleaved.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "leaf_type=needleleaved"
+                  ]
+                },
+                "then": "./assets/layers/tree_node/needleleaved.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom"
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "tags": [
+        "natural=tree",
+        "leaf_type=broadleaved"
+      ],
+      "title": {
+        "nl": "een loofboom",
+        "en": "a broadleaved tree",
+        "it": "una albero latifoglia",
+        "fr": "une arbre feuillu",
+        "ru": "Лиственное дерево",
+        "de": "ein Laubbaum",
+        "es": "árbol de hoja ancha",
+        "da": "et løvtræ",
+        "pt": "uma árvore de folhas largas",
+        "ca": "un arbre de fulla ampla",
+        "cs": "listnatý strom"
+      },
+      "description": {
+        "nl": "Een boom van een soort die blaadjes heeft, bijvoorbeeld eik of populier.",
+        "en": "A tree of a species with leaves, such as oak or populus.",
+        "it": "Un albero di una specie con foglie larghe come la quercia o il pioppo.",
+        "fr": "Un arbre d'une espèce avec de larges feuilles, comme le chêne ou le peuplier.",
+        "de": "Ein Baum mit Blättern, z. B. Eiche oder Buche.",
+        "es": "Un árbol de hojas como el Roble o el Álamo.",
+        "pt": "Uma árvore de uma espécie com folhas, como carvalho ou populus.",
+        "ca": "Arbre d'una espècie amb fulles, com el roure o el pollancre.",
+        "cs": "Strom s listy, například dub nebo topol."
+      }
+    },
+    {
+      "tags": [
+        "natural=tree",
+        "leaf_type=needleleaved"
+      ],
+      "title": {
+        "nl": "een naaldboom",
+        "en": "a needleleaved tree",
+        "it": "una albero aghifoglia",
+        "ru": "Хвойное дерево",
+        "fr": "une arbre résineux",
+        "de": "ein Nadelbaum",
+        "es": "Árbol tipo Conífera",
+        "da": "et nåletræ",
+        "pt": "uma árvore com folhas de agulha",
+        "ca": "un arbre amb fulles d'agulla",
+        "cs": "jehličnatý strom"
+      },
+      "description": {
+        "nl": "Een boom van een soort met naalden, bijvoorbeeld den of spar.",
+        "en": "A tree of a species with needles, such as pine or spruce.",
+        "it": "Un albero di una specie con aghi come il pino o l’abete.",
+        "ru": "Дерево с хвоей (иглами), например, сосна или ель.",
+        "fr": "Une espèce d’arbre avec des épines comme le pin ou l’épicéa.",
+        "de": "Ein Baum mit Nadeln, z. B. Kiefer oder Fichte.",
+        "es": "Un árbol de hojas agujas, como el Pino o el Abeto.",
+        "da": "Et træ af en art med nåle, såsom fyr eller gran.",
+        "ca": "Arbre d'una espècie amb agulles, com el pi o l'avet.",
+        "cs": "Strom s jehlicemi, například borovice nebo smrk."
+      }
+    },
+    {
+      "tags": [
+        "natural=tree"
+      ],
+      "title": {
+        "nl": "een boom",
+        "en": "a tree",
+        "it": "una albero",
+        "ru": "Дерево",
+        "fr": "une arbre",
+        "id": "Pohon",
+        "de": "ein Baum",
+        "ca": "un arbre",
+        "es": "un árbol",
+        "da": "et træ",
+        "pt": "uma árvore",
+        "pt_BR": "uma árvore",
+        "cs": "strom"
+      },
+      "description": {
+        "nl": "Wanneer je niet zeker bent of het nu een loof- of naaldboom is.",
+        "en": "If you're not sure whether it's a broadleaved or needleleaved tree.",
+        "it": "Qualora non si sia sicuri se si tratta di un albero latifoglia o aghifoglia.",
+        "fr": "Si vous n'êtes pas sûr(e) de savoir s'il s'agit d'un arbre à feuilles larges ou à aiguilles.",
+        "ru": "Если вы не уверены в том, лиственное это дерево или хвойное.",
+        "de": "Wenn Sie nicht sicher sind, ob es sich um einen Laubbaum oder einen Nadelbaum handelt.",
+        "es": "Si no estás seguro de si es un árbol de hoja ancha o de hoja de aguja.",
+        "da": "Hvis du ikke er sikker på, om det er et løv- eller nåletræ.",
+        "ca": "Si no esteu segur de si es tracta d'un arbre amb fulles amples o amb fulles d'agulles.",
+        "cs": "Pokud si nejste jisti, zda se jedná o listnatý nebo jehličnatý strom."
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -798,147 +943,11 @@
       "id": "tree_node-wikidata"
     }
   ],
-  "presets": [
-    {
-      "tags": [
-        "natural=tree",
-        "leaf_type=broadleaved"
-      ],
-      "title": {
-        "nl": "een loofboom",
-        "en": "a broadleaved tree",
-        "it": "una albero latifoglia",
-        "fr": "une arbre feuillu",
-        "ru": "Лиственное дерево",
-        "de": "ein Laubbaum",
-        "es": "árbol de hoja ancha",
-        "da": "et løvtræ",
-        "pt": "uma árvore de folhas largas",
-        "ca": "un arbre de fulla ampla",
-        "cs": "listnatý strom"
-      },
-      "description": {
-        "nl": "Een boom van een soort die blaadjes heeft, bijvoorbeeld eik of populier.",
-        "en": "A tree of a species with leaves, such as oak or populus.",
-        "it": "Un albero di una specie con foglie larghe come la quercia o il pioppo.",
-        "fr": "Un arbre d'une espèce avec de larges feuilles, comme le chêne ou le peuplier.",
-        "de": "Ein Baum mit Blättern, z. B. Eiche oder Buche.",
-        "es": "Un árbol de hojas como el Roble o el Álamo.",
-        "pt": "Uma árvore de uma espécie com folhas, como carvalho ou populus.",
-        "ca": "Arbre d'una espècie amb fulles, com el roure o el pollancre.",
-        "cs": "Strom s listy, například dub nebo topol."
-      }
-    },
-    {
-      "tags": [
-        "natural=tree",
-        "leaf_type=needleleaved"
-      ],
-      "title": {
-        "nl": "een naaldboom",
-        "en": "a needleleaved tree",
-        "it": "una albero aghifoglia",
-        "ru": "Хвойное дерево",
-        "fr": "une arbre résineux",
-        "de": "ein Nadelbaum",
-        "es": "Árbol tipo Conífera",
-        "da": "et nåletræ",
-        "pt": "uma árvore com folhas de agulha",
-        "ca": "un arbre amb fulles d'agulla",
-        "cs": "jehličnatý strom"
-      },
-      "description": {
-        "nl": "Een boom van een soort met naalden, bijvoorbeeld den of spar.",
-        "en": "A tree of a species with needles, such as pine or spruce.",
-        "it": "Un albero di una specie con aghi come il pino o l’abete.",
-        "ru": "Дерево с хвоей (иглами), например, сосна или ель.",
-        "fr": "Une espèce d’arbre avec des épines comme le pin ou l’épicéa.",
-        "de": "Ein Baum mit Nadeln, z. B. Kiefer oder Fichte.",
-        "es": "Un árbol de hojas agujas, como el Pino o el Abeto.",
-        "da": "Et træ af en art med nåle, såsom fyr eller gran.",
-        "ca": "Arbre d'una espècie amb agulles, com el pi o l'avet.",
-        "cs": "Strom s jehlicemi, například borovice nebo smrk."
-      }
-    },
-    {
-      "tags": [
-        "natural=tree"
-      ],
-      "title": {
-        "nl": "een boom",
-        "en": "a tree",
-        "it": "una albero",
-        "ru": "Дерево",
-        "fr": "une arbre",
-        "id": "Pohon",
-        "de": "ein Baum",
-        "ca": "un arbre",
-        "es": "un árbol",
-        "da": "et træ",
-        "pt": "uma árvore",
-        "pt_BR": "uma árvore",
-        "cs": "strom"
-      },
-      "description": {
-        "nl": "Wanneer je niet zeker bent of het nu een loof- of naaldboom is.",
-        "en": "If you're not sure whether it's a broadleaved or needleleaved tree.",
-        "it": "Qualora non si sia sicuri se si tratta di un albero latifoglia o aghifoglia.",
-        "fr": "Si vous n'êtes pas sûr(e) de savoir s'il s'agit d'un arbre à feuilles larges ou à aiguilles.",
-        "ru": "Если вы не уверены в том, лиственное это дерево или хвойное.",
-        "de": "Wenn Sie nicht sicher sind, ob es sich um einen Laubbaum oder einen Nadelbaum handelt.",
-        "es": "Si no estás seguro de si es un árbol de hoja ancha o de hoja de aguja.",
-        "da": "Hvis du ikke er sikker på, om det er et løv- eller nåletræ.",
-        "ca": "Si no esteu segur de si es tracta d'un arbre amb fulles amples o amb fulles d'agulles.",
-        "cs": "Pokud si nejste jisti, zda se jedná o listnatý nebo jehličnatý strom."
-      }
-    }
-  ],
-  "allowMove": {
-    "enableRelocation": false,
-    "enableImproveAccuraccy": true
-  },
   "deletion": {
     "minNeededChangesets": 5
   },
-  "mapRendering": [
-    {
-      "icon": {
-        "render": "circle:#ffffff;./assets/layers/tree_node/unknown.svg",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "leaf_type=broadleaved"
-              ]
-            },
-            "then": "circle:#ffffff;./assets/layers/tree_node/broadleaved.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "leaf_type=needleleaved"
-              ]
-            },
-            "then": "circle:#ffffff;./assets/layers/tree_node/needleleaved.svg"
-          }
-        ]
-      },
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "bottom"
-    }
-  ],
-  "description": {
-    "en": "A layer showing trees",
-    "nl": "Een laag die bomen toont",
-    "es": "Una capa que muestra árboles",
-    "de": "Eine Ebene, die Bäume zeigt",
-    "fr": "Une couche montrant les arbres",
-    "da": "Et lag, der viser træer",
-    "ca": "Una capa que mostra arbres",
-    "cs": "Vrstva zobrazující stromy"
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuraccy": true
   }
 }

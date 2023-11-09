@@ -46,6 +46,26 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": "40,40",
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/hotel/hotel.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
   "presets": [
     {
       "title": {
@@ -60,17 +80,6 @@
       "tags": [
         "tourism=hotel"
       ]
-    }
-  ],
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": "circle:white;./assets/layers/hotel/hotel.svg",
-      "iconSize": "40,40",
-      "anchor": "center"
     }
   ],
   "tagRenderings": [

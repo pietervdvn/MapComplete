@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:#ffffff;./assets/themes/bookcases/bookcase.svg' height="100px"> 
+
 
 A streetside cabinet with books, accessible to anyone
 
@@ -76,7 +76,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -316,7 +316,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 
@@ -354,7 +354,7 @@ id | question | osmTags
 ---- | ---------- | ---------
 inside.0 | Indoor or outdoor (default) | 
 inside.1 | Located indoors | indoor=yes
-inside.2 | Located outdoors | indoor=no\|
+inside.2 | Located outdoors | indoor=no \|
 
 
 
@@ -362,7 +362,7 @@ inside.2 | Located outdoors | indoor=no\|
 id | question | osmTags
 ---- | ---------- | ---------
 has_image.0 | With and without images (default) | 
-has_image.1 | Has at least one image | image~.+\|image:0~.+\|image:1~.+\|image:2~.+\|image:3~.+\|mapillary~.+
+has_image.1 | Has at least one image | image~.+ \|image:0~.+ \|image:1~.+ \|image:2~.+ \|image:3~.+ \|mapillary~.+
 has_image.2 | Probably does not have an image | 
  
 

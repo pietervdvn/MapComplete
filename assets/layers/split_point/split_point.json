@@ -1,19 +1,28 @@
 {
   "id": "split_point",
-  "description": "Layer rendering the little scissors for the minimap in the 'splitRoadWizard'",
-  "minzoom": 1,
-  "source": "special",
   "name": "Split point",
+  "description": "Layer rendering the little scissors for the minimap in the 'splitRoadWizard'",
+  "source": "special",
+  "minzoom": 1,
   "title": "Split point",
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "point",
         "centroid"
       ],
-      "icon": "circle:white;./assets/svg/scissors.svg",
       "iconSize": "30,30",
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/svg/scissors.svg"
+        }
+      ]
     }
-  ]
+  ],
+  "lineRendering": []
 }

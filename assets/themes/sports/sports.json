@@ -13,6 +13,16 @@
     "eu": "Kirolak",
     "pl": "Sporty"
   },
+  "description": {
+    "en": "All about sports, find sport pitches, fitness centres and more.",
+    "nl": "Alles over sport: vind sportvelden, fitnesscentra en meer.",
+    "de": "Alles über Sport. Finden Sie Sportplätze, Fitnesscenter und vieles mehr.",
+    "ca": "Tot sobre esports, troba camps d'esport, gimnasos i molt més.",
+    "es": "Todo sobre deportes, encuentra campos de deporte, gimnasios y mucho más.",
+    "cs": "Vše o sportu, sportovní hřiště, fitness centra a další.",
+    "fr": "Tout sur les sports, trouver les terrains de sport, les salles de sport et plus encore.",
+    "pl": "Wszystko o sporcie, znajdź boiska sportowe, centra fitness i nie tylko."
+  },
   "shortDescription": {
     "en": "Map showing sport facilities.",
     "nl": "Kaart met sportfaciliteiten.",
@@ -24,20 +34,7 @@
     "zh_Hant": "顯示運動設施的地圖。",
     "pl": "Mapa pokazująca obiekty sportowe."
   },
-  "description": {
-    "en": "All about sports, find sport pitches, fitness centres and more.",
-    "nl": "Alles over sport: vind sportvelden, fitnesscentra en meer.",
-    "de": "Alles über Sport. Finden Sie Sportplätze, Fitnesscenter und vieles mehr.",
-    "ca": "Tot sobre esports, troba camps d'esport, gimnasos i molt més.",
-    "es": "Todo sobre deportes, encuentra campos de deporte, gimnasios y mucho más.",
-    "cs": "Vše o sportu, sportovní hřiště, fitness centra a další.",
-    "fr": "Tout sur les sports, trouver les terrains de sport, les salles de sport et plus encore.",
-    "pl": "Wszystko o sporcie, znajdź boiska sportowe, centra fitness i nie tylko."
-  },
   "icon": "./assets/themes/sports/sport.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
   "layers": [
     "sport_pitch",
     "fitness_centre",

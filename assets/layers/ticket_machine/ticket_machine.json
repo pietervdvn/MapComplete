@@ -32,6 +32,41 @@
       "cs": "Automat na jízdenky"
     }
   },
+  "pointRendering": [
+    {
+      "iconSize": "20,20",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "square",
+          "color": "lightblue"
+        },
+        {
+          "icon": "./assets/themes/stations/public_transport_tickets.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "tags": [
+        "amenity=vending_machine",
+        "vending=public_transport_tickets"
+      ],
+      "title": {
+        "en": "a ticket machine",
+        "de": "einen Fahrkartenautomat",
+        "nl": "een kaartautomaat",
+        "ca": "una màquina de bitllets",
+        "cs": "automat na jízdenky"
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     "level",
@@ -83,32 +118,6 @@
     "denominations-coins",
     "denominations-notes"
   ],
-  "presets": [
-    {
-      "tags": [
-        "amenity=vending_machine",
-        "vending=public_transport_tickets"
-      ],
-      "title": {
-        "en": "a ticket machine",
-        "de": "einen Fahrkartenautomat",
-        "nl": "een kaartautomaat",
-        "ca": "una màquina de bitllets",
-        "cs": "automat na jízdenky"
-      }
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": "square:lightblue;./assets/themes/stations/public_transport_tickets.svg",
-      "iconSize": "20,20",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    }
-  ],
-  "allowMove": true,
-  "deletion": true
+  "deletion": true,
+  "allowMove": true
 }

@@ -10,6 +10,10 @@
   "startZoom": 19,
   "startLat": 52.99319,
   "startLon": 6.56113,
+  "credits": [
+    "Robin van der Linde"
+  ],
+  "hideFromOverview": true,
   "layers": [
     "street_lamps",
     {
@@ -28,27 +32,12 @@
         "_has_closeby_feature=Number(feat.properties._closest_osm_street_lamp_distance) < 5 ? 'yes' : 'no'"
       ],
       "title": "Straatlantaarn in dataset",
-      "mapRendering": [
-        {
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "icon": {
-            "render": "circle:red",
-            "mappings": [
-              {
-                "if": "_has_closeby_feature=yes",
-                "then": "circle:#008000aa"
-              }
-            ]
-          },
-          "iconSize": "20,20",
-          "anchor": "center"
-        }
-      ],
       "tagRenderings": [
         "all_tags"
+      ],
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -67,7 +56,5 @@
         ]
       }
     }
-  ],
-  "hideFromOverview": true,
-  "credits": "Robin van der Linde"
+  ]
 }

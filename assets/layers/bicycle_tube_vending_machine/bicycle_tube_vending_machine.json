@@ -14,6 +14,25 @@
     "cs": "Automat na cyklistické duše",
     "ca": "Màquina expenedora de tubs de bicicleta"
   },
+  "description": {
+    "en": "A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, …)",
+    "nl": "Een laag met verkoopsautomaten met binnenbanden voor fietsen (dit kan een automaat zijn met énkel fietsbanden, of een gewone automaat met fietsbanden en andere fietsaccessoires zoals lichten, handschoenen, sloten,...)",
+    "de": "Eine Ebene mit Automaten für Fahrradschläuche (entweder spezielle Fahrradschlauch-Automaten oder klassische Automaten mit Fahrradschläuchen und optional zusätzlichen fahrradbezogenen Gegenständen wie Lampen, Handschuhe, Schlösser, …)",
+    "da": "Et lag med automater til cykelslanger (enten specialbyggede cykelslangeautomater eller klassiske automater med cykelslanger og eventuelt andre cykelrelaterede genstande som f.eks. lys, handsker, låse, o.s.v)",
+    "fr": "Une couche affichant des distributeurs automatiques de chambre à air (que ce soit des distributeurs conçus spécifiquement pour les chambres à air ou des distributeurs classiques incluant des chambres à air ainsi des objets apparentés tels que de l'éclairage pour vélo, des gants, des cadenas, ...)",
+    "cs": "Vrstva zobrazující automaty na cyklistické duše (buď speciální automaty na cyklistické duše, nebo klasické automaty s cyklistickými dušemi a případně dalšími předměty souvisejícími s jízdními koly, jako jsou světla, rukavice, zámky, ...)",
+    "ca": "Una capa que mostra màquines expenedores per a tubs de bicicleta (ja siguin màquines expenedores de tubs de bicicleta o màquines expenedores clàssiques amb tubs de bicicleta i opcionalment objectes addicionals relacionats amb la bicicleta com ara llums, guants, panys, ...)",
+    "pt_BR": "Uma camada que mostra máquinas de venda de câmaras de ar de bicicleta (sejam máquinas de venda de câmaras de ar de bicicleta específicas ou máquinas de venda clássicas com câmaras de ar de bicicleta e opcionalmente objetos relacionados a bicicletas, como luzes, luvas, travas, ...)"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=vending_machine",
+        "vending~.*bicycle_tube.*"
+      ]
+    }
+  },
+  "minzoom": 13,
   "title": {
     "render": {
       "en": "Bicycle tube vending machine",
@@ -50,15 +69,41 @@
     },
     "icons.defaults"
   ],
-  "source": {
-    "osmTags": {
-      "and": [
-        "amenity=vending_machine",
-        "vending~.*bicycle_tube.*"
+  "pointRendering": [
+    {
+      "iconBadges": [
+        {
+          "if": {
+            "or": [
+              "operational_status=broken",
+              "operational_status=closed"
+            ]
+          },
+          "then": "close:#c33"
+        }
+      ],
+      "iconSize": "50,50",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#ffffff"
+        },
+        {
+          "icon": "./assets/layers/bicycle_tube_vending_machine/pinIcon.svg"
+        }
       ]
     }
-  },
-  "minzoom": 13,
+  ],
+  "lineRendering": [
+    {
+      "color": "#6bc4f7"
+    }
+  ],
   "presets": [
     {
       "title": {
@@ -383,40 +428,5 @@
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuraccy": true
-  },
-  "mapRendering": [
-    {
-      "icon": "pin:#ffffff;./assets/layers/bicycle_tube_vending_machine/pinIcon.svg",
-      "iconBadges": [
-        {
-          "if": {
-            "or": [
-              "operational_status=broken",
-              "operational_status=closed"
-            ]
-          },
-          "then": "close:#c33"
-        }
-      ],
-      "iconSize": "50,50",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "bottom"
-    },
-    {
-      "color": "#6bc4f7"
-    }
-  ],
-  "description": {
-    "en": "A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, …)",
-    "nl": "Een laag met verkoopsautomaten met binnenbanden voor fietsen (dit kan een automaat zijn met énkel fietsbanden, of een gewone automaat met fietsbanden en andere fietsaccessoires zoals lichten, handschoenen, sloten,...)",
-    "de": "Eine Ebene mit Automaten für Fahrradschläuche (entweder spezielle Fahrradschlauch-Automaten oder klassische Automaten mit Fahrradschläuchen und optional zusätzlichen fahrradbezogenen Gegenständen wie Lampen, Handschuhe, Schlösser, …)",
-    "da": "Et lag med automater til cykelslanger (enten specialbyggede cykelslangeautomater eller klassiske automater med cykelslanger og eventuelt andre cykelrelaterede genstande som f.eks. lys, handsker, låse, o.s.v)",
-    "fr": "Une couche affichant des distributeurs automatiques de chambre à air (que ce soit des distributeurs conçus spécifiquement pour les chambres à air ou des distributeurs classiques incluant des chambres à air ainsi des objets apparentés tels que de l'éclairage pour vélo, des gants, des cadenas, ...)",
-    "cs": "Vrstva zobrazující automaty na cyklistické duše (buď speciální automaty na cyklistické duše, nebo klasické automaty s cyklistickými dušemi a případně dalšími předměty souvisejícími s jízdními koly, jako jsou světla, rukavice, zámky, ...)",
-    "ca": "Una capa que mostra màquines expenedores per a tubs de bicicleta (ja siguin màquines expenedores de tubs de bicicleta o màquines expenedores clàssiques amb tubs de bicicleta i opcionalment objectes addicionals relacionats amb la bicicleta com ara llums, guants, panys, ...)",
-    "pt_BR": "Uma camada que mostra máquinas de venda de câmaras de ar de bicicleta (sejam máquinas de venda de câmaras de ar de bicicleta específicas ou máquinas de venda clássicas com câmaras de ar de bicicleta e opcionalmente objetos relacionados a bicicletas, como luzes, luvas, travas, ...)"
   }
 }

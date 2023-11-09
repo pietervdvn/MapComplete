@@ -2,6 +2,7 @@ import * as fs from "fs"
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs"
 import { Utils } from "../src/Utils"
 import ScriptUtils from "./ScriptUtils"
+import Script from "./Script"
 
 const knownLanguages = ["en", "nl", "de", "fr", "es", "gl", "ca"]
 
@@ -658,32 +659,64 @@ function loadTranslationFilesFrom(target: string): Map<string, any> {
 /**
  * Load the translations from the weblate files back into the layers
  */
-function mergeLayerTranslations() {
+function mergeLayerTranslations(englishOnly: boolean = false) {
     const layerFiles = ScriptUtils.getLayerFiles()
     for (const layerFile of layerFiles) {
         mergeLayerTranslation(layerFile.parsed, layerFile.path, loadTranslationFilesFrom("layers"))
         const endsWithNewline =
             readFileSync(layerFile.path, { encoding: "utf8" })?.endsWith("\n") ?? true
+        let config = layerFile.parsed
+        if (englishOnly) {
+            config = Utils.Clone(config)
+            removeNonEnglishTranslations(config)
+        }
         writeFileSync(
             layerFile.path,
-            JSON.stringify(layerFile.parsed, null, "  ") + (endsWithNewline ? "\n" : "")
+            JSON.stringify(config, null, "  ") + (endsWithNewline ? "\n" : "")
         ) // layers use 2 spaces
     }
+}
+
+function removeNonEnglishTranslations(object: any) {
+    Utils.WalkObject(
+        object,
+        (leaf: any) => {
+            const en = leaf["en"]
+            if (!en) {
+                return
+            }
+            for (const key in leaf) {
+                if (key.startsWith("#")) {
+                    continue
+                }
+                delete leaf[key]
+            }
+            leaf["en"] = en
+        },
+        (possibleLeaf) =>
+            possibleLeaf !== null && typeof possibleLeaf === "object" && isTranslation(possibleLeaf)
+    )
 }
 
 /**
  * Load the translations into the theme files
  */
-function mergeThemeTranslations() {
+function mergeThemeTranslations(englishOnly: boolean = false) {
     const themeFiles = ScriptUtils.getThemeFiles()
     for (const themeFile of themeFiles) {
-        const config = themeFile.parsed
+        let config = themeFile.parsed
         mergeLayerTranslation(config, themeFile.path, loadTranslationFilesFrom("themes"))
 
         const allTranslations = new TranslationPart()
         allTranslations.recursiveAdd(config, themeFile.path)
         const endsWithNewline =
             readFileSync(themeFile.path, { encoding: "utf8" })?.endsWith("\n") ?? true
+
+        if (englishOnly) {
+            config = Utils.Clone(config)
+            removeNonEnglishTranslations(config)
+        }
+
         writeFileSync(
             themeFile.path,
             JSON.stringify(config, null, "  ") + (endsWithNewline ? "\n" : "")
@@ -691,41 +724,70 @@ function mergeThemeTranslations() {
     }
 }
 
-if (!existsSync("./langs/themes")) {
-    mkdirSync("./langs/themes")
-}
-const themeOverwritesWeblate = process.argv[2] === "--ignore-weblate"
-if (!themeOverwritesWeblate) {
-    mergeLayerTranslations()
-    mergeThemeTranslations()
-} else {
-    console.log("Ignore weblate")
+class GenerateTranslations extends Script {
+    constructor() {
+        super("Syncs translations from/to the theme and layer files")
+    }
+
+    /**
+     * OUtputs the 'used_languages.json'-file
+     */
+    detectUsedLanguages() {
+        {
+            const l1 = generateTranslationsObjectFrom(ScriptUtils.getLayerFiles(), "layers")
+            const l2 = generateTranslationsObjectFrom(
+                ScriptUtils.getThemeFiles().filter(
+                    (th) => th.parsed.mustHaveLanguage === undefined
+                ),
+                "themes"
+            )
+
+            const usedLanguages: string[] = Utils.Dedup(l1.concat(l2)).filter((v) => v !== "*")
+            usedLanguages.sort()
+            fs.writeFileSync(
+                "./src/assets/used_languages.json",
+                JSON.stringify({ languages: usedLanguages })
+            )
+        }
+    }
+
+    async main(args: string[]): Promise<void> {
+        if (!existsSync("./langs/themes")) {
+            mkdirSync("./langs/themes")
+        }
+        const themeOverwritesWeblate = args[0] === "--ignore-weblate"
+        const englishOnly = args[0] === "--english-only"
+        if (!themeOverwritesWeblate) {
+            mergeLayerTranslations()
+            mergeThemeTranslations()
+            compileTranslationsFromWeblate()
+        } else {
+            console.log("Ignore weblate")
+        }
+
+        this.detectUsedLanguages()
+        genTranslations()
+        {
+            const allTranslationFiles = ScriptUtils.readDirRecSync("langs").filter((path) =>
+                path.endsWith(".json")
+            )
+            for (const path of allTranslationFiles) {
+                formatFile(path)
+            }
+        }
+
+        // Some validation
+        TranslationPart.fromDirectory("./langs").validateStrict("./langs")
+        TranslationPart.fromDirectory("./langs/layers").validateStrict("layers")
+        TranslationPart.fromDirectory("./langs/themes").validateStrict("themes")
+
+        if (englishOnly) {
+            mergeLayerTranslations(true)
+            mergeThemeTranslations(true)
+        }
+
+        console.log("All done!")
+    }
 }
 
-const l1 = generateTranslationsObjectFrom(ScriptUtils.getLayerFiles(), "layers")
-const l2 = generateTranslationsObjectFrom(
-    ScriptUtils.getThemeFiles().filter((th) => th.parsed.mustHaveLanguage === undefined),
-    "themes"
-)
-
-const usedLanguages: string[] = Utils.Dedup(l1.concat(l2)).filter((v) => v !== "*")
-usedLanguages.sort()
-fs.writeFileSync("./src/assets/used_languages.json", JSON.stringify({ languages: usedLanguages }))
-
-if (!themeOverwritesWeblate) {
-    // Generates the core translations
-    compileTranslationsFromWeblate()
-}
-genTranslations()
-const allTranslationFiles = ScriptUtils.readDirRecSync("langs").filter((path) =>
-    path.endsWith(".json")
-)
-for (const path of allTranslationFiles) {
-    formatFile(path)
-}
-
-// Some validation
-TranslationPart.fromDirectory("./langs").validateStrict("./langs")
-TranslationPart.fromDirectory("./langs/layers").validateStrict("layers")
-TranslationPart.fromDirectory("./langs/themes").validateStrict("themes")
-console.log("All done!")
+new GenerateTranslations().run()

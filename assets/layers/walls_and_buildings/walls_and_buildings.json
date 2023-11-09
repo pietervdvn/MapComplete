@@ -1,18 +1,5 @@
 {
   "id": "walls_and_buildings",
-  "minzoom": 18,
-  "title": {
-    "render": {
-      "en": "Wall or building",
-      "nl": "Muur of gebouw",
-      "de": "Wand oder Gebäude",
-      "es": "Pared o edificio",
-      "fr": "Mur ou bâtiment",
-      "da": "Mur eller bygning",
-      "ca": "Paret o edifici",
-      "cs": "Zeď nebo budova"
-    }
-  },
   "description": {
     "en": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user.",
     "nl": "Speciale ingebouwde laag voor alle muren en gebouwen. Deze laag is nuttig in voorkeuzen voor objecten die tegen muren geplaatst kunnen worden (bv. AEDs, brievenbussen, ingangen, adressen, beveiligingscamera's,…). Deze laag is standaard onzichtbaar en niet in te schakelen door de gebruiker.",
@@ -33,9 +20,31 @@
       ]
     }
   },
-  "passAllFeatures": true,
+  "calculatedTags": [
+    "_entrance_properties=overlapWith(feat)('entrance')?.map(e => e.feat.properties)?.filter(p => p !== undefined && p.indoor !== 'door')",
+    "_entrance_properties_with_width=get(feat)('_entrance_properties')?.filter(p => p['width'] !== undefined)",
+    "_entrances_count=get(feat)('_entrance_properties').length",
+    "_entrances_count_without_width_count= get(feat)('_entrances_count') - get(feat)('_entrance_properties_with_width').length",
+    "_biggest_width= Math.max( get(feat)('_entrance_properties').map(p => p.width))",
+    "_biggest_width_properties= /* Can be a list! */ get(feat)('_entrance_properties').filter(p => p.width === get(feat)('_biggest_width'))",
+    "_biggest_width_id=get(feat)('_biggest_width_properties').id"
+  ],
+  "minzoom": 18,
   "shownByDefault": false,
-  "mapRendering": [
+  "title": {
+    "render": {
+      "en": "Wall or building",
+      "nl": "Muur of gebouw",
+      "de": "Wand oder Gebäude",
+      "es": "Pared o edificio",
+      "fr": "Mur ou bâtiment",
+      "da": "Mur eller bygning",
+      "ca": "Paret o edifici",
+      "cs": "Zeď nebo budova"
+    }
+  },
+  "pointRendering": [],
+  "lineRendering": [
     {
       "color": "#fff",
       "fill": "no",
@@ -47,58 +56,7 @@
       "width": "2"
     }
   ],
-  "calculatedTags": [
-    "_entrance_properties=overlapWith(feat)('entrance')?.map(e => e.feat.properties)?.filter(p => p !== undefined && p.indoor !== 'door')",
-    "_entrance_properties_with_width=get(feat)('_entrance_properties')?.filter(p => p['width'] !== undefined)",
-    "_entrances_count=get(feat)('_entrance_properties').length",
-    "_entrances_count_without_width_count= get(feat)('_entrances_count') - get(feat)('_entrance_properties_with_width').length",
-    "_biggest_width= Math.max( get(feat)('_entrance_properties').map(p => p.width))",
-    "_biggest_width_properties= /* Can be a list! */ get(feat)('_entrance_properties').filter(p => p.width === get(feat)('_biggest_width'))",
-    "_biggest_width_id=get(feat)('_biggest_width_properties').id"
-  ],
-  "units": [
-    {
-      "appliesToKey": [
-        "width",
-        "_biggest_width"
-      ],
-      "defaultUnit": "cm",
-      "applicableUnits": [
-        {
-          "useIfNoUnitGiven": true,
-          "canonicalDenomination": "m",
-          "alternativeDenomination": [
-            "meter"
-          ],
-          "human": {
-            "en": "meter",
-            "fr": "mètre",
-            "de": "Meter",
-            "da": "meter",
-            "nl": "meter",
-            "ca": "metre",
-            "cs": "metr"
-          }
-        },
-        {
-          "canonicalDenomination": "cm",
-          "alternativeDenomination": [
-            "centimeter",
-            "cms"
-          ],
-          "human": {
-            "en": "centimeter",
-            "fr": "centimètre",
-            "de": "Zentimeter",
-            "da": "centimeter",
-            "nl": "centimeter",
-            "ca": "centimetre",
-            "cs": "centimetr"
-          }
-        }
-      ]
-    }
-  ],
+  "passAllFeatures": true,
   "tagRenderings": [
     {
       "id": "entrance_info",
@@ -161,6 +119,49 @@
       "id": "biggest_width",
       "render": "The <a href='#{_biggest_width_id}'>entrance with the biggest width</a> is {canonical(_biggest_width)} wide",
       "condition": "_biggest_width_id~*"
+    }
+  ],
+  "units": [
+    {
+      "appliesToKey": [
+        "width",
+        "_biggest_width"
+      ],
+      "defaultUnit": "cm",
+      "applicableUnits": [
+        {
+          "useIfNoUnitGiven": true,
+          "canonicalDenomination": "m",
+          "alternativeDenomination": [
+            "meter"
+          ],
+          "human": {
+            "en": "meter",
+            "fr": "mètre",
+            "de": "Meter",
+            "da": "meter",
+            "nl": "meter",
+            "ca": "metre",
+            "cs": "metr"
+          }
+        },
+        {
+          "canonicalDenomination": "cm",
+          "alternativeDenomination": [
+            "centimeter",
+            "cms"
+          ],
+          "human": {
+            "en": "centimeter",
+            "fr": "centimètre",
+            "de": "Zentimeter",
+            "da": "centimeter",
+            "nl": "centimeter",
+            "ca": "centimetre",
+            "cs": "centimetr"
+          }
+        }
+      ]
     }
   ]
 }

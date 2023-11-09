@@ -15,7 +15,6 @@
     "pl": "Drogowskazy (znane również jako \"palce na słupkach\") często znajdują się wzdłuż oficjalnych szlaków pieszych, rowerowych, narciarskich lub konnych i wskazują drogę do różnych miejsc. Ponadto często noszą nazwy regionu lub miejsca i wskazują wysokość.\n\nPozycja drogowskazu może być wykorzystana przez turystę/rowerzystę/jeźdźca/narciarza jako potwierdzenie aktualnej pozycji, zwłaszcza jeśli korzysta z drukowanej mapy bez odbiornika GPS. "
   },
   "icon": "./assets/layers/guidepost/guidepost.svg",
-  "startZoom": 2,
   "layers": [
     "guidepost"
   ]

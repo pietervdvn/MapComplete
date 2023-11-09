@@ -10,6 +10,15 @@
     "fr": "Vitesse maximale",
     "cs": "Maximální rychlost"
   },
+  "description": {
+    "en": "Shows the allowed speed for every road",
+    "de": "Zeigt die zulässige Geschwindigkeit für jede Straße an",
+    "nl": "Toont de toegestane snelheid voor elke weg",
+    "cs": "Zobrazuje povolenou rychlost pro každou silnici",
+    "ca": "Mostra la velocitat permesa per a cada carretera",
+    "fr": "Affiche les vitesses autorisées sur toutes les routes",
+    "pl": "Pokazuje dozwoloną prędkość na każdej drodze"
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -55,15 +64,47 @@
       }
     ]
   },
-  "description": {
-    "en": "Shows the allowed speed for every road",
-    "de": "Zeigt die zulässige Geschwindigkeit für jede Straße an",
-    "nl": "Toont de toegestane snelheid voor elke weg",
-    "cs": "Zobrazuje povolenou rychlost pro každou silnici",
-    "ca": "Mostra la velocitat permesa per a cada carretera",
-    "fr": "Affiche les vitesses autorisées sur toutes les routes",
-    "pl": "Pokazuje dozwoloną prędkość na każdej drodze"
-  },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": {
+            "render": null,
+            "mappings": [
+              {
+                "if": "maxspeed~[1-9]0|1[0-4]0",
+                "then": "./assets/themes/maxspeed/maxspeed_{maxspeed} mph.svg"
+              },
+              {
+                "if": "maxspeed~[1-9]0|1[0-4]0 mph",
+                "then": "./assets/themes/maxspeed/maxspeed_{maxspeed}.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": "32,32",
+      "location": [
+        "point",
+        "projected_centerpoint"
+      ],
+      "anchor": "center"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": {
+        "render": "#000000",
+        "mappings": [
+          {
+            "if": "maxspeed=",
+            "then": "#ff0000"
+          }
+        ]
+      },
+      "width": "3"
+    }
+  ],
   "tagRenderings": [
     {
       "render": {
@@ -112,41 +153,6 @@
     }
   ],
   "allowSplit": true,
-  "mapRendering": [
-    {
-      "icon": {
-        "render": null,
-        "mappings": [
-          {
-            "if": "maxspeed~[1-9]0|1[0-4]0",
-            "then": "./assets/themes/maxspeed/maxspeed_{maxspeed} mph.svg"
-          },
-          {
-            "if": "maxspeed~[1-9]0|1[0-4]0 mph",
-            "then": "./assets/themes/maxspeed/maxspeed_{maxspeed}.svg"
-          }
-        ]
-      },
-      "iconSize": "32,32",
-      "location": [
-        "point",
-        "projected_centerpoint"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": {
-        "render": "#000000",
-        "mappings": [
-          {
-            "if": "maxspeed=",
-            "then": "#ff0000"
-          }
-        ]
-      },
-      "width": "3"
-    }
-  ],
   "units": [
     {
       "applicableUnits": [

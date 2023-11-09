@@ -16,6 +16,15 @@
     "maxCacheAge": 0,
     "isOsmCache": false
   },
+  "calculatedTags": [
+    "_total_comments:=get(feat)('comments').length",
+    "_first_comment:=get(feat)('comments')[0].text",
+    "_opened_by_anonymous_user:=get(feat)('comments')[0].user === undefined",
+    "_first_user:=get(feat)('comments')[0].user",
+    "_last_user:=(() => {const comms = get(feat)('comments'); return comms[comms.length - 1].user})()",
+    "_first_user_id:=get(feat)('comments')[0].uid",
+    "_is_import_note:=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(osm.be|org\\)/\\([a-zA-Z_-]+\\)\\(.html\\).*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()"
+  ],
   "minzoom": 10,
   "title": {
     "render": {
@@ -43,20 +52,45 @@
       }
     ]
   },
-  "calculatedTags": [
-    "_total_comments:=get(feat)('comments').length",
-    "_first_comment:=get(feat)('comments')[0].text",
-    "_opened_by_anonymous_user:=get(feat)('comments')[0].user === undefined",
-    "_first_user:=get(feat)('comments')[0].user",
-    "_last_user:=(() => {const comms = get(feat)('comments'); return comms[comms.length - 1].user})()",
-    "_first_user_id:=get(feat)('comments')[0].uid",
-    "_is_import_note:=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(osm.be|org\\)/\\([a-zA-Z_-]+\\)\\(.html\\).*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()"
-  ],
   "titleIcons": [
     {
       "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
     }
   ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "note",
+            "mappings": [
+              {
+                "if": "closed_at~*",
+                "then": "resolved"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": "40,40",
+      "iconBadges": [
+        {
+          "if": "_total_comments>1",
+          "then": "circle:white;speech_bubble"
+        },
+        {
+          "if": "_is_import_note~*",
+          "then": "addSmall"
+        }
+      ],
+      "anchor": "bottom"
+    }
+  ],
+  "lineRendering": [],
   "tagRenderings": [
     {
       "id": "conversation",
@@ -109,35 +143,6 @@
         "ca": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta aquesta nota com spam o inapropiada</a>",
         "cs": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Nahlásit tuto poznámku jako spam nebo nevhodnou</a>"
       }
-    }
-  ],
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": {
-        "render": "note",
-        "mappings": [
-          {
-            "if": "closed_at~*",
-            "then": "resolved"
-          }
-        ]
-      },
-      "iconSize": "40,40",
-      "iconBadges": [
-        {
-          "if": "_total_comments>1",
-          "then": "circle:white;speech_bubble"
-        },
-        {
-          "if": "_is_import_note~*",
-          "then": "addSmall"
-        }
-      ],
-      "anchor": "bottom"
     }
   ],
   "filter": [

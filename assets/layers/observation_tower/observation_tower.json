@@ -10,6 +10,22 @@
     "pl": "Wieże obserwacyjne",
     "cs": "Rozhledny"
   },
+  "description": {
+    "en": "Towers with a panoramic view",
+    "nl": "Torens om van het uitzicht te genieten",
+    "de": "Türme zur Aussicht auf die umgebende Landschaft",
+    "es": "Torres con vista panorámica",
+    "pl": "Wieże z panoramicznym widokiem",
+    "ca": "Torres amb vista panoràmica",
+    "cs": "Věže s panoramatickým výhledem"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "tower:type=observation"
+      ]
+    }
+  },
   "minzoom": 8,
   "title": {
     "render": {
@@ -38,15 +54,26 @@
       }
     ]
   },
-  "description": {
-    "en": "Towers with a panoramic view",
-    "nl": "Torens om van het uitzicht te genieten",
-    "de": "Türme zur Aussicht auf die umgebende Landschaft",
-    "es": "Torres con vista panorámica",
-    "pl": "Wieże z panoramicznym widokiem",
-    "ca": "Torres amb vista panoràmica",
-    "cs": "Věže s panoramatickým výhledem"
-  },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/observation_tower/Tower_observation.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
   "tagRenderings": [
     "images",
     {
@@ -329,12 +356,9 @@
     },
     "wikipedia"
   ],
-  "source": {
-    "osmTags": {
-      "and": [
-        "tower:type=observation"
-      ]
-    }
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuraccy": true
   },
   "units": [
     {
@@ -361,21 +385,6 @@
         }
       ],
       "eraseInvalidValues": true
-    }
-  ],
-  "allowMove": {
-    "enableRelocation": false,
-    "enableImproveAccuraccy": true
-  },
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/layers/observation_tower/Tower_observation.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
     }
   ]
 }

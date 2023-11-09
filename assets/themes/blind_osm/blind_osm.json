@@ -28,9 +28,9 @@
     "pl": "Pomóż umieszczać na mapie obiekty ważne dla niewidomych"
   },
   "icon": "./assets/themes/blind_osm/Blindicon.svg",
+  "startZoom": 20,
   "startLat": 52.99238,
   "startLon": 6.570614,
-  "startZoom": 20,
   "defaultBackgroundId": "maptiler.backdrop",
   "layers": [
     {

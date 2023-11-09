@@ -13,7 +13,18 @@
     "fr": "Poubelle",
     "cs": "Odpadkový koš"
   },
-  "minzoom": 17,
+  "description": {
+    "en": "This is a public waste basket, thrash can, where you can throw away your thrash.",
+    "nl": "Dit is een publieke vuilnisbak waar je je afval kan weggooien.",
+    "de": "Dies ist ein öffentlicher Abfalleimer, in den Sie Ihren Müll entsorgen können.",
+    "hu": "Ez egy nyilvános szemétkosár vagy kuka, ahová kidobhatod a szemetedet.",
+    "it": "Questo è un cestino dei rifiuti pubblico, un bidone della spazzatura, dove puoi buttare via la tua spazzatura",
+    "es": "Esta es una papelera pública, donde puedes tirar tu basura.",
+    "da": "Dette er en offentlig affaldskurv, en skraldespand, hvor du kan smide dit affald.",
+    "fr": "C'est une poubelle dans laquelle vous pouvez jeter vos mégots.",
+    "ca": "Es tracta d'una paperera pública, una paperera, on pots llençar la teva paperera.",
+    "cs": "Jedná se o veřejný odpadkový koš, odpadkový koš, kam můžete vyhodit odpadky."
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -21,6 +32,7 @@
       ]
     }
   },
+  "minzoom": 17,
   "title": {
     "render": {
       "en": "Waste Basket",
@@ -35,18 +47,49 @@
       "cs": "Odpadkový koš"
     }
   },
-  "description": {
-    "en": "This is a public waste basket, thrash can, where you can throw away your thrash.",
-    "nl": "Dit is een publieke vuilnisbak waar je je afval kan weggooien.",
-    "de": "Dies ist ein öffentlicher Abfalleimer, in den Sie Ihren Müll entsorgen können.",
-    "hu": "Ez egy nyilvános szemétkosár vagy kuka, ahová kidobhatod a szemetedet.",
-    "it": "Questo è un cestino dei rifiuti pubblico, un bidone della spazzatura, dove puoi buttare via la tua spazzatura",
-    "es": "Esta es una papelera pública, donde puedes tirar tu basura.",
-    "da": "Dette er en offentlig affaldskurv, en skraldespand, hvor du kan smide dit affald.",
-    "fr": "C'est une poubelle dans laquelle vous pouvez jeter vos mégots.",
-    "ca": "Es tracta d'una paperera pública, una paperera, on pots llençar la teva paperera.",
-    "cs": "Jedná se o veřejný odpadkový koš, odpadkový koš, kam můžete vyhodit odpadky."
-  },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "anchor": "center",
+      "location": [
+        "point"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/themes/waste_basket/waste_basket.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f",
+      "width": "8"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=waste_basket"
+      ],
+      "title": {
+        "en": "a waste basket",
+        "nl": "een vuilnisbak",
+        "ru": "Контейнер для мусора",
+        "de": "einen Abfalleimer",
+        "eo": "Rubujo",
+        "it": "un cestino dei rifiuti",
+        "id": "sebuah keranjang sampah",
+        "da": "en affaldskurv",
+        "ca": "una paperera",
+        "fr": "une poubelle",
+        "cs": "odpadkový koš"
+      },
+      "presiceInput": {
+        "preferredBackground": "photo"
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -256,29 +299,6 @@
       ]
     }
   ],
-  "presets": [
-    {
-      "tags": [
-        "amenity=waste_basket"
-      ],
-      "title": {
-        "en": "a waste basket",
-        "nl": "een vuilnisbak",
-        "ru": "Контейнер для мусора",
-        "de": "einen Abfalleimer",
-        "eo": "Rubujo",
-        "it": "un cestino dei rifiuti",
-        "id": "sebuah keranjang sampah",
-        "da": "en affaldskurv",
-        "ca": "una paperera",
-        "fr": "une poubelle",
-        "cs": "odpadkový koš"
-      },
-      "presiceInput": {
-        "preferredBackground": "photo"
-      }
-    }
-  ],
   "filter": [
     {
       "id": "waste-type",
@@ -413,41 +433,15 @@
     "enableRelocation": false,
     "enableImproveAccuracy": true
   },
-  "mapRendering": [
-    {
-      "icon": "./assets/themes/waste_basket/waste_basket.svg",
+  "cs": {
+    "0": {
       "iconSize": {
-        "render": "40,40,center",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "amenity=waste_basket"
-              ]
-            },
-            "then": {
-              "en": "Waste Basket",
-              "nl": "Vuilnisbak",
-              "ru": "Контейнер для мусора",
-              "de": "Abfalleimer",
-              "id": "Keranjang Sampah",
-              "es": "Papelera",
-              "it": "Cestino dei rifiuti",
-              "da": "Affaldskurv",
-              "ca": "Paperera",
-              "fr": "Poubelle",
-              "cs": "Odpadkový koš"
-            }
+        "mappings": {
+          "0": {
+            "then": "Odpadkový koš"
           }
-        ]
-      },
-      "location": [
-        "point"
-      ]
-    },
-    {
-      "color": "#00f",
-      "width": "8"
+        }
+      }
     }
-  ]
+  }
 }

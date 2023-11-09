@@ -24,10 +24,6 @@
     "pl": "Na tej mapie znajdziesz swój ulubiony sklep z frytkami!"
   },
   "icon": "./assets/themes/fritures/logo.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 3,
   "layers": [
     {
       "builtin": "food",
@@ -71,5 +67,6 @@
         "name": null
       }
     }
-  ]
+  ],
+  "widenFactor": 3
 }

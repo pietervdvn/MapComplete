@@ -34,13 +34,11 @@
     "ca": "L'objectiu d'aquest mapa és presentar als ciclistes una solució fàcil d'utilitzar per trobar la infraestructura adequada per a les seves necessitats.<br><br>Pots fer un seguiment de la teva ubicació precisa (només mòbil) i seleccionar capes que siguin rellevants per a tu a la cantonada inferior esquerra. També podeu utilitzar aquesta eina per afegir o editar pins (punts d'interès) al mapa i proporcionar més dades responent a les preguntes.<br><br>Tots els canvis que feu es desaran automàticament a la base de dades global d'OpenStreetMap i es poden ser reutilitzat lliurement per altres persones.<br><br>Per obtenir més informació sobre el projecte cyclofix, aneu a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> .",
     "pl": "Celem tej mapy jest zaprezentowanie rowerzystom łatwego w użyciu rozwiązania umożliwiającego znalezienie infrastruktury odpowiedniej dla ich potrzeb.<br><br>Możesz śledzić swoją dokładną lokalizację (tylko na urządzeniach mobilnych) i wybierać w lewym dolnym rogu warstwy, które są dla Ciebie odpowiednie. Możesz także użyć tego narzędzia, aby dodać lub edytować pinezki (interesujące miejsca) na mapie i dostarczyć więcej danych, odpowiadając na pytania.<br><br>Wszystkie wprowadzone zmiany zostaną automatycznie zapisane w globalnej bazie danych OpenStreetMap i mogą być swobodnie ponownie wykorzystywane przez innych.<br><br>Więcej informacji o projekcie cyclofix można znaleźć na stronie <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> ."
   },
-  "credits": "Originally created during Open Summer of Code by Pieter Fiers, Thibault Declercq, Pierre Barban, Joost Schouppe and Pieter Vander Vennet",
   "icon": "./assets/themes/cyclofix/logo.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 2,
   "socialImage": "./assets/themes/cyclofix/logo.svg",
+  "credits": [
+    "Originally created during Open Summer of Code by Pieter Fiers, Thibault Declercq, Pierre Barban, Joost Schouppe and Pieter Vander Vennet"
+  ],
   "layers": [
     "bike_cafe",
     "bike_shop",
@@ -135,5 +133,6 @@
         "minzoom": 18
       }
     }
-  ]
+  ],
+  "widenFactor": 2
 }

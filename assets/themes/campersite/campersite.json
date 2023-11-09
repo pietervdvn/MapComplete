@@ -19,23 +19,6 @@
     "eu": "Kanpinak",
     "pl": "Miejsca dla kamperów"
   },
-  "shortDescription": {
-    "en": "Find sites to spend the night with your camper",
-    "it": "Trova aree dove passare la notte con il tuo camper",
-    "ru": "Найти места остановки, чтобы провести ночь в автофургоне",
-    "ja": "キャンパーと夜を共にするキャンプサイトを見つける",
-    "fr": "Trouver des sites pour passer la nuit avec votre camping-car",
-    "zh_Hant": "露營者尋找渡過夜晚的場地",
-    "nl": "Vind locaties waar je de nacht kan doorbrengen met je mobilehome",
-    "pt_BR": "Encontre locais para passar a noite com o seu campista",
-    "de": "Finden Sie Plätze zum Übernachten mit Ihrem Wohnmobil",
-    "hu": "Helyek, ahol lakóautóval eltöltheti az éjszakát",
-    "es": "Encuentra sitios para pasar la noche con tu caravana",
-    "da": "Find steder, hvor du kan overnatte med din autocamper",
-    "ca": "Troba llocs on passar la nit amb la teua caravana",
-    "cs": "Najděte místa, kde můžete strávit noc se svým karavanem",
-    "pl": "Znajdź miejsca, w których możesz spędzić noc w kamperze"
-  },
   "description": {
     "en": "This site collects all official camper stopover places and places where you can dump grey and black water. You can add details about the services provided and the cost. Add pictures and reviews.",
     "it": "Questo sito raccoglie tutti i luoghi ufficiali dove sostare con il camper e aree dove è possibile scaricare acque grigie e nere. Puoi aggiungere dettagli riguardanti i servizi forniti e il loro costo. Aggiungi foto e recensioni. Questo è al contempo un sito web e una web app. I dati sono memorizzati su OpenStreetMap in modo tale che siano per sempre liberi e riutilizzabili da qualsiasi app.",
@@ -53,12 +36,31 @@
     "eu": "Karabanak gelditzeko leku ofizial guztiak eta ur gris eta beltzak botatzeko lekuak biltzen ditu. Emandako zerbitzuei eta kostuari buruzko xehetasunak gehitu ditzakezu. Erantsi argazkiak eta aipamenak.",
     "pl": "Na tej stronie zebrano wszystkie oficjalne miejsca postoju kamperów oraz miejsca, w których można wylać zanieczyszczoną wodę. Możesz dodać szczegóły dotyczące świadczonych usług i kosztów. Dodaj zdjęcia i recenzje."
   },
+  "shortDescription": {
+    "en": "Find sites to spend the night with your camper",
+    "it": "Trova aree dove passare la notte con il tuo camper",
+    "ru": "Найти места остановки, чтобы провести ночь в автофургоне",
+    "ja": "キャンパーと夜を共にするキャンプサイトを見つける",
+    "fr": "Trouver des sites pour passer la nuit avec votre camping-car",
+    "zh_Hant": "露營者尋找渡過夜晚的場地",
+    "nl": "Vind locaties waar je de nacht kan doorbrengen met je mobilehome",
+    "pt_BR": "Encontre locais para passar a noite com o seu campista",
+    "de": "Finden Sie Plätze zum Übernachten mit Ihrem Wohnmobil",
+    "hu": "Helyek, ahol lakóautóval eltöltheti az éjszakát",
+    "es": "Encuentra sitios para pasar la noche con tu caravana",
+    "da": "Find steder, hvor du kan overnatte med din autocamper",
+    "ca": "Troba llocs on passar la nit amb la teua caravana",
+    "cs": "Najděte místa, kde můžete strávit noc se svým karavanem",
+    "pl": "Znajdź miejsca, w których możesz spędzić noc w kamperze"
+  },
   "icon": "./assets/themes/campersite/caravan.svg",
+  "socialImage": "./assets/themes/campersite/social_image.jpg",
+  "startZoom": 14,
   "startLat": 43.14,
   "startLon": 3.14,
-  "startZoom": 14,
-  "widenFactor": 1.5,
-  "socialImage": "./assets/themes/campersite/social_image.jpg",
+  "credits": [
+    "joost schouppe"
+  ],
   "layers": [
     {
       "id": "caravansites",
@@ -908,32 +910,9 @@
           }
         }
       ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "circle:white;./assets/themes/campersite/caravan.svg",
-            "mappings": [
-              {
-                "if": {
-                  "and": [
-                    "fee=no"
-                  ]
-                },
-                "then": "circle:white;./assets/themes/campersite/caravan_green.svg"
-              }
-            ]
-          },
-          "iconSize": "40,40",
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "anchor": "center"
-        },
-        {
-          "color": "#00f",
-          "width": "8"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -1531,19 +1510,9 @@
           }
         }
       ],
-      "mapRendering": [
-        {
-          "icon": "circle:white;./assets/themes/campersite/sanitary_dump_station.svg",
-          "iconSize": "32,32",
-          "location": [
-            "point"
-          ],
-          "anchor": "center"
-        },
-        {
-          "color": "#00f",
-          "width": "8"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     }
   ],
@@ -1653,5 +1622,5 @@
       }
     ]
   },
-  "credits": "joost schouppe"
+  "widenFactor": 1.5
 }

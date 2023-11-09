@@ -22,6 +22,7 @@
       ]
     }
   },
+  "minzoom": 13,
   "title": {
     "render": {
       "en": "Governmental Office {name}",
@@ -31,7 +32,40 @@
       "cs": "Vládní úřad {name}"
     }
   },
-  "minzoom": 13,
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/governments/government.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "a Governmental Office",
+        "de": "ein Büro der öffentlichen Verwaltung",
+        "nl": "een overheidsdienst",
+        "ca": "una oficina Governamental",
+        "cs": "vládní úřad"
+      },
+      "tags": [
+        "office=government"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     "phone",
@@ -56,31 +90,6 @@
         "key": "name"
       },
       "id": "name"
-    }
-  ],
-  "presets": [
-    {
-      "title": {
-        "en": "a Governmental Office",
-        "de": "ein Büro der öffentlichen Verwaltung",
-        "nl": "een overheidsdienst",
-        "ca": "una oficina Governamental",
-        "cs": "vládní úřad"
-      },
-      "tags": [
-        "office=government"
-      ]
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/layers/governments/government.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
     }
   ]
 }

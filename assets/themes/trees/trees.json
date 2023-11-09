@@ -21,23 +21,6 @@
     "pt_BR": "Árvores",
     "eu": "Zuhaitzak"
   },
-  "shortDescription": {
-    "en": "Map all the trees",
-    "nl": "Breng bomen in kaart",
-    "fr": "Cartographions tous les arbres",
-    "it": "Mappa tutti gli alberi",
-    "ja": "すべての樹木をマッピングする",
-    "zh_Hant": "所有樹木的地圖",
-    "ru": "Карта деревьев",
-    "pl": "Mapa wszystkich drzew",
-    "de": "Kartieren Sie alle Bäume",
-    "nb_NO": "Kartlegg alle trærne",
-    "hu": "Az összes fa feltérképezése",
-    "ca": "Mapeja tots els arbres",
-    "es": "Mapa de los Árboles",
-    "da": "Kortlæg alle træer",
-    "cs": "Zmapujte všechny stromy"
-  },
   "description": {
     "nl": "Breng bomen in kaart!",
     "en": "Map all the trees!",
@@ -56,20 +39,39 @@
     "pt_BR": "Mapeie todas as árvores!",
     "pl": "Zmapuj wszystkie drzewa!"
   },
+  "shortDescription": {
+    "en": "Map all the trees",
+    "nl": "Breng bomen in kaart",
+    "fr": "Cartographions tous les arbres",
+    "it": "Mappa tutti gli alberi",
+    "ja": "すべての樹木をマッピングする",
+    "zh_Hant": "所有樹木的地圖",
+    "ru": "Карта деревьев",
+    "pl": "Mapa wszystkich drzew",
+    "de": "Kartieren Sie alle Bäume",
+    "nb_NO": "Kartlegg alle trærne",
+    "hu": "Az összes fa feltérképezése",
+    "ca": "Mapeja tots els arbres",
+    "es": "Mapa de los Árboles",
+    "da": "Kortlæg alle træer",
+    "cs": "Zmapujte všechny stromy"
+  },
   "icon": "./assets/themes/trees/logo.svg",
+  "socialImage": "./assets/themes/trees/logo.svg",
+  "startZoom": 8,
   "startLat": 50.642,
   "startLon": 4.482,
-  "startZoom": 8,
-  "widenFactor": 0.2,
-  "socialImage": "./assets/themes/trees/logo.svg",
-  "clustering": {
-    "maxZoom": 19,
-    "minNeededElements": 25
-  },
-  "osmApiTileSize": 18,
+  "defaultBackgroundId": "AGIV",
+  "credits": [
+    "Midgard"
+  ],
   "layers": [
     "tree_node"
   ],
-  "defaultBackgroundId": "AGIV",
-  "credits": "Midgard"
+  "widenFactor": 0.2,
+  "osmApiTileSize": 18,
+  "clustering": {
+    "maxZoom": 19,
+    "minNeededElements": 25
+  }
 }

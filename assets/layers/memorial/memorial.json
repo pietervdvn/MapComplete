@@ -12,6 +12,24 @@
       "cs": "Pamětní deska"
     }
   },
+  "pointRendering": [
+    {
+      "location": [
+        "centroid",
+        "point"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/memorial/plaque.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
   "tagRenderings": [
     {
       "id": "inscription",
@@ -31,15 +49,6 @@
         "key": "inscription",
         "type": "text"
       }
-    }
-  ],
-  "mapRendering": [
-    {
-      "location": [
-        "centroid",
-        "point"
-      ],
-      "icon": "circle:white;./assets/layers/memorial/plaque.svg"
     }
   ],
   "deletion": true,

@@ -17,20 +17,6 @@
     "eu": "Hackerspace",
     "pl": "Hackerspace'y"
   },
-  "shortDescription": {
-    "en": "A map of hackerspaces",
-    "de": "Eine Karte von Hackerspaces",
-    "it": "Una cartina degli hackerspace",
-    "zh_Hant": "駭客空間的地圖",
-    "hu": "Hackerspace-ek térképe",
-    "nl": "Een kaart van hackerspaces",
-    "fr": "Une carte des ateliers numériques ouverts",
-    "da": "Et kort over hackerspaces",
-    "cs": "Mapa označující Hackerspaces",
-    "es": "Un mapa de hackerspaces",
-    "ca": "Un mapa dels hackerspaces",
-    "pl": "Mapa hackerspaceów"
-  },
   "description": {
     "en": "On this map you can see hackerspaces, add a new hackerspace or update data directly",
     "de": "Auf dieser Karte können Sie Hackerspaces sehen, einen neuen Hackerspace hinzufügen oder Daten direkt aktualisieren",
@@ -45,12 +31,23 @@
     "ca": "En aquest mapa podeu veure els hackerspaces, afegir un nou hackerspace o actualitzar les dades directament",
     "pl": "Na tej mapie możesz zobaczyć hackerspace, dodać nową hackerspace lub bezpośrednio zaktualizować dane"
   },
+  "shortDescription": {
+    "en": "A map of hackerspaces",
+    "de": "Eine Karte von Hackerspaces",
+    "it": "Una cartina degli hackerspace",
+    "zh_Hant": "駭客空間的地圖",
+    "hu": "Hackerspace-ek térképe",
+    "nl": "Een kaart van hackerspaces",
+    "fr": "Une carte des ateliers numériques ouverts",
+    "da": "Et kort over hackerspaces",
+    "cs": "Mapa označující Hackerspaces",
+    "es": "Un mapa de hackerspaces",
+    "ca": "Un mapa dels hackerspaces",
+    "pl": "Mapa hackerspaceów"
+  },
   "icon": "./assets/themes/hackerspaces/glider.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 5,
   "layers": [
     "hackerspace"
-  ]
+  ],
+  "widenFactor": 5
 }

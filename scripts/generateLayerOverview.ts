@@ -12,18 +12,121 @@ import {
     ValidateThemeAndLayers,
 } from "../src/Models/ThemeConfig/Conversion/Validation"
 import { Translation } from "../src/UI/i18n/Translation"
-import { TagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
-import PointRenderingConfigJson from "../src/Models/ThemeConfig/Json/PointRenderingConfigJson"
 import { PrepareLayer } from "../src/Models/ThemeConfig/Conversion/PrepareLayer"
 import { PrepareTheme } from "../src/Models/ThemeConfig/Conversion/PrepareTheme"
-import { DesugaringContext } from "../src/Models/ThemeConfig/Conversion/Conversion"
+import {
+    Conversion,
+    DesugaringContext,
+    DesugaringStep,
+} from "../src/Models/ThemeConfig/Conversion/Conversion"
 import { Utils } from "../src/Utils"
 import Script from "./Script"
 import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
 import { parse as parse_html } from "node-html-parser"
 import { ExtraFunctions } from "../src/Logic/ExtraFunctions"
+import { QuestionableTagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+import LayerConfig from "../src/Models/ThemeConfig/LayerConfig"
+import PointRenderingConfig from "../src/Models/ThemeConfig/PointRenderingConfig"
+
+import { ConfigMeta } from "../src/UI/Studio/configMeta"
+import { ConversionContext } from "../src/Models/ThemeConfig/Conversion/ConversionContext"
+
 // This scripts scans 'src/assets/layers/*.json' for layer definition files and 'src/assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
+
+class ParseLayer extends Conversion<
+    string,
+    {
+        parsed: LayerConfig
+        raw: LayerConfigJson
+    }
+> {
+    private readonly _prepareLayer: PrepareLayer
+    private readonly _doesImageExist: DoesImageExist
+
+    constructor(prepareLayer: PrepareLayer, doesImageExist: DoesImageExist) {
+        super("Parsed a layer from file, validates it", [], "ParseLayer")
+        this._prepareLayer = prepareLayer
+        this._doesImageExist = doesImageExist
+    }
+
+    convert(
+        path: string,
+        context: ConversionContext
+    ): {
+        parsed: LayerConfig
+        raw: LayerConfigJson
+    } {
+        let parsed
+        let fileContents
+        try {
+            fileContents = readFileSync(path, "utf8")
+        } catch (e) {
+            context.err("Could not read file " + path + " due to " + e)
+            return undefined
+        }
+        try {
+            parsed = JSON.parse(fileContents)
+        } catch (e) {
+            context.err("Could not parse file as JSON")
+            return undefined
+        }
+        if (parsed === undefined) {
+            context.err("yielded undefined")
+            return undefined
+        }
+        const fixed = this._prepareLayer.convert(parsed, context.inOperation("PrepareLayer"))
+
+        if (!fixed.source) {
+            context.enter("source").err("No source is configured")
+            return undefined
+        }
+
+        if (
+            typeof fixed.source !== "string" &&
+            fixed.source["osmTags"] &&
+            fixed.source["osmTags"]["and"] === undefined
+        ) {
+            fixed.source["osmTags"] = { and: [fixed.source["osmTags"]] }
+        }
+
+        const validator = new ValidateLayer(path, true, this._doesImageExist)
+        return validator.convert(fixed, context.inOperation("ValidateLayer"))
+    }
+}
+
+class AddIconSummary extends DesugaringStep<{ raw: LayerConfigJson; parsed: LayerConfig }> {
+    static singleton = new AddIconSummary()
+
+    constructor() {
+        super("Adds an icon summary for quick reference", ["_layerIcon"], "AddIconSummary")
+    }
+
+    convert(json: { raw: LayerConfigJson; parsed: LayerConfig }, context: ConversionContext) {
+        // Add a summary of the icon
+        const fixed = json.raw
+        const layerConfig = json.parsed
+        const pointRendering: PointRenderingConfig = layerConfig.mapRendering.find((pr) =>
+            pr.location.has("point")
+        )
+        const defaultTags = layerConfig.GetBaseTags()
+        fixed["_layerIcon"] = Utils.NoNull(
+            (pointRendering?.marker ?? []).map((i) => {
+                const icon = i.icon?.GetRenderValue(defaultTags)?.txt
+                if (!icon) {
+                    return undefined
+                }
+                const result = { icon }
+                const c = i.color?.GetRenderValue(defaultTags)?.txt
+                if (c) {
+                    result["color"] = c
+                }
+                return result
+            })
+        )
+        return { raw: fixed, parsed: layerConfig }
+    }
+}
 
 class LayerOverviewUtils extends Script {
     public static readonly layerPath = "./src/assets/generated/layers/"
@@ -44,6 +147,14 @@ class LayerOverviewUtils extends Script {
         includeInlineLayers = true
     ): string[] {
         const publicLayerIds = []
+        if (!Array.isArray(themeFile.layers)) {
+            throw (
+                "Cannot iterate over 'layers' of " +
+                themeFile.id +
+                "; it is a " +
+                typeof themeFile.layers
+            )
+        }
         for (const publicLayer of themeFile.layers) {
             if (typeof publicLayer === "string") {
                 publicLayerIds.push(publicLayer)
@@ -74,7 +185,14 @@ class LayerOverviewUtils extends Script {
             sourcefile = [sourcefile]
         }
 
-        return sourcefile.some((sourcefile) => statSync(sourcefile).mtime > targetModified)
+        for (const path of sourcefile) {
+            const hasChange = statSync(path).mtime > targetModified
+            if (hasChange) {
+                console.log("File ", targetfile, " should be updated as ", path, "has been changed")
+                return true
+            }
+        }
+        return false
     }
 
     writeSmallOverview(
@@ -85,7 +203,13 @@ class LayerOverviewUtils extends Script {
             icon: string
             hideFromOverview: boolean
             mustHaveLanguage: boolean
-            layers: (LayerConfigJson | string | { builtin })[]
+            layers: (
+                | LayerConfigJson
+                | string
+                | {
+                      builtin
+                  }
+            )[]
         }[]
     ) {
         const perId = new Map<string, any>()
@@ -135,6 +259,7 @@ class LayerOverviewUtils extends Script {
         if (!existsSync(LayerOverviewUtils.themePath)) {
             mkdirSync(LayerOverviewUtils.themePath)
         }
+
         writeFileSync(
             `${LayerOverviewUtils.themePath}${theme.id}.json`,
             JSON.stringify(theme, null, "  "),
@@ -155,8 +280,8 @@ class LayerOverviewUtils extends Script {
 
     getSharedTagRenderings(
         doesImageExist: DoesImageExist,
-        bootstrapTagRenderings: Map<string, TagRenderingConfigJson> = null
-    ): Map<string, TagRenderingConfigJson> {
+        bootstrapTagRenderings: Map<string, QuestionableTagRenderingConfigJson> = null
+    ): Map<string, QuestionableTagRenderingConfigJson> {
         const prepareLayer = new PrepareLayer({
             tagRenderings: bootstrapTagRenderings,
             sharedLayers: null,
@@ -164,13 +289,13 @@ class LayerOverviewUtils extends Script {
         })
 
         let path = "assets/layers/questions/questions.json"
-        const sharedQuestions = this.parseLayer(doesImageExist, prepareLayer, path)
+        const sharedQuestions = this.parseLayer(doesImageExist, prepareLayer, path).raw
 
-        const dict = new Map<string, TagRenderingConfigJson>()
+        const dict = new Map<string, QuestionableTagRenderingConfigJson>()
 
         for (const tr of sharedQuestions.tagRenderings) {
-            const tagRendering = <TagRenderingConfigJson>tr
-            dict.set(tagRendering.id, tagRendering)
+            const tagRendering = <QuestionableTagRenderingConfigJson>tr
+            dict.set(tagRendering["id"], tagRendering)
         }
 
         if (dict.size === bootstrapTagRenderings?.size) {
@@ -228,6 +353,8 @@ class LayerOverviewUtils extends Script {
     }
 
     async main(args: string[]) {
+        console.log("Generating layer overview...")
+        const start = new Date()
         const forceReload = args.some((a) => a == "--force")
 
         const licensePaths = new Set<string>()
@@ -286,8 +413,8 @@ class LayerOverviewUtils extends Script {
             const protolayer = <LayerConfigJson>(
                 proto.layers.filter((l) => l["id"] === "mapcomplete-changes")[0]
             )
-            const rendering = <PointRenderingConfigJson>protolayer.mapRendering[0]
-            rendering.icon["mappings"] = iconsPerTheme
+            const rendering = protolayer.pointRendering[0]
+            rendering.marker[0].icon["mappings"] = iconsPerTheme
             writeFileSync(
                 "./assets/themes/mapcomplete-changes/mapcomplete-changes.json",
                 JSON.stringify(proto, null, "  ")
@@ -301,14 +428,20 @@ class LayerOverviewUtils extends Script {
                 layers: ScriptUtils.getLayerFiles().map((f) => f.parsed),
                 themes: ScriptUtils.getThemeFiles().map((f) => f.parsed),
             },
-            "GenerateLayerOverview:"
+            ConversionContext.construct([], [])
         )
 
+        const end = new Date()
+        const millisNeeded = end.getTime() - start.getTime()
         if (AllSharedLayers.getSharedLayersConfigs().size == 0) {
-            console.error("This was a bootstrapping-run. Run generate layeroverview again!")
+            console.error(
+                "This was a bootstrapping-run. Run generate layeroverview again!(" +
+                    millisNeeded +
+                    " ms)"
+            )
         } else {
             const green = (s) => "\x1b[92m" + s + "\x1b[0m"
-            console.log(green("All done!"))
+            console.log(green("All done! (" + millisNeeded + " ms)"))
         }
     }
 
@@ -316,33 +449,19 @@ class LayerOverviewUtils extends Script {
         doesImageExist: DoesImageExist,
         prepLayer: PrepareLayer,
         sharedLayerPath: string
-    ): LayerConfigJson {
-        let parsed
-        try {
-            parsed = JSON.parse(readFileSync(sharedLayerPath, "utf8"))
-        } catch (e) {
-            throw "Could not parse or read file " + sharedLayerPath
-        }
-        const context = "While building builtin layer " + sharedLayerPath
-        const fixed = prepLayer.convertStrict(parsed, context)
-
-        if (!fixed.source) {
-            console.error(sharedLayerPath, "has no source configured:", fixed)
-            throw sharedLayerPath + " layer has no source configured"
-        }
-
-        if (
-            typeof fixed.source !== "string" &&
-            fixed.source["osmTags"] &&
-            fixed.source["osmTags"]["and"] === undefined
-        ) {
-            fixed.source["osmTags"] = { and: [fixed.source["osmTags"]] }
-        }
-
-        const validator = new ValidateLayer(sharedLayerPath, true, doesImageExist)
-        validator.convertStrict(fixed, context)
-
-        return fixed
+    ): {
+        raw: LayerConfigJson
+        parsed: LayerConfig
+        context: ConversionContext
+    } {
+        const parser = new ParseLayer(prepLayer, doesImageExist)
+        const context = ConversionContext.construct([sharedLayerPath], ["ParseLayer"])
+        const parsed = parser.convertStrict(sharedLayerPath, context)
+        const result = AddIconSummary.singleton.convertStrict(
+            parsed,
+            context.inOperation("AddIconSummary")
+        )
+        return { ...result, context }
     }
 
     private buildLayerIndex(
@@ -363,6 +482,7 @@ class LayerOverviewUtils extends Script {
         const prepLayer = new PrepareLayer(state)
         const skippedLayers: string[] = []
         const recompiledLayers: string[] = []
+        let warningCount = 0
         for (const sharedLayerPath of ScriptUtils.getLayerPaths()) {
             {
                 const targetPath =
@@ -372,15 +492,16 @@ class LayerOverviewUtils extends Script {
                     const sharedLayer = JSON.parse(readFileSync(targetPath, "utf8"))
                     sharedLayers.set(sharedLayer.id, sharedLayer)
                     skippedLayers.push(sharedLayer.id)
-                    console.log("Loaded " + sharedLayer.id)
+                    ScriptUtils.erasableLog("Loaded " + sharedLayer.id)
                     continue
                 }
             }
 
-            const fixed = this.parseLayer(doesImageExist, prepLayer, sharedLayerPath)
-
+            const parsed = this.parseLayer(doesImageExist, prepLayer, sharedLayerPath)
+            warningCount += parsed.context.getAll("warning").length
+            const fixed = parsed.raw
             if (sharedLayers.has(fixed.id)) {
-                throw "There are multiple layers with the id " + fixed.id
+                throw "There are multiple layers with the id " + fixed.id + ", " + sharedLayerPath
             }
 
             sharedLayers.set(fixed.id, fixed)
@@ -394,7 +515,9 @@ class LayerOverviewUtils extends Script {
                 recompiledLayers.join(", ") +
                 " and skipped " +
                 skippedLayers.length +
-                " layers"
+                " layers. Detected " +
+                warningCount +
+                " warnings"
         )
         // We always need the calculated tags of 'usersettings', so we export them separately
         this.extractJavascriptCodeForLayer(
@@ -475,7 +598,6 @@ class LayerOverviewUtils extends Script {
             } else {
                 importPath = ""
                 for (let i = 0; i < l.length - 3; i++) {
-                    const _ = l[i]
                     importPath += "../"
                 }
             }
@@ -580,24 +702,31 @@ class LayerOverviewUtils extends Script {
                         readFileSync(LayerOverviewUtils.themePath + themeFile.id + ".json", "utf8")
                     )
                 )
-                console.log("Skipping", themeFile.id)
+                ScriptUtils.erasableLog("Skipping", themeFile.id)
                 skippedThemes.push(themeFile.id)
                 continue
             }
-            console.log(`Validating ${i}/${themeFiles.length} '${themeInfo.parsed.id}'`)
 
             recompiledThemes.push(themeFile.id)
 
-            new PrevalidateTheme().convertStrict(themeFile, themePath)
+            new PrevalidateTheme().convertStrict(
+                themeFile,
+                ConversionContext.construct([themePath], ["PrepareLayer"])
+            )
             try {
-                themeFile = new PrepareTheme(convertState).convertStrict(themeFile, themePath)
-
+                themeFile = new PrepareTheme(convertState).convertStrict(
+                    themeFile,
+                    ConversionContext.construct([themePath], ["PrepareLayer"])
+                )
                 new ValidateThemeAndLayers(
                     new DoesImageExist(licensePaths, existsSync, knownTagRenderings),
                     themePath,
                     true,
                     knownTagRenderings
-                ).convertStrict(themeFile, themePath)
+                ).convertStrict(
+                    themeFile,
+                    ConversionContext.construct([themePath], ["PrepareLayer"])
+                )
 
                 if (themeFile.icon.endsWith(".svg")) {
                     try {
@@ -647,7 +776,7 @@ class LayerOverviewUtils extends Script {
                         t.shortDescription ??
                         new Translation(t.description)
                             .FirstSentence()
-                            .OnEveryLanguage((s) => parse_html(s).innerText).translations,
+                            .OnEveryLanguage((s) => parse_html(s).textContent).translations,
                     mustHaveLanguage: t.mustHaveLanguage?.length > 0,
                 }
             })

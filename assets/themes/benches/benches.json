@@ -22,6 +22,24 @@
     "eu": "Eserlekuak",
     "pl": "Ławki"
   },
+  "description": {
+    "en": "This map shows all benches that are recorded in OpenStreetMap: Individual benches, and benches belonging to public transport stops or shelters.",
+    "de": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Alleinstehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören.",
+    "fr": "Cette carte affiche les bancs cartographiés dans OpenStreetMap, entre autres : bancs des transports en commun, bancs publics, etc.",
+    "nl": "Deze kaart toont alle zitbanken die zijn opgenomen in OpenStreetMap: individuele banken en banken bij bushaltes.",
+    "it": "Questa mappa mostra tutte le panchine che sono state aggiunte su OpenStreetMap: panchine individuali e quelle alle fermate del trasporto pubblico o nei ripari. Se disponi di un account OpenStreetMap puoi mappare delle nuove panchine o modificare i dettagli di quelle esistenti.",
+    "ru": "На этой карте показаны все скамейки, записанные в OpenStreetMap: отдельные скамейки, а также скамейки, относящиеся к остановкам общественного транспорта или навесам. Имея учётную запись OpenStreetMap, вы можете наносить на карту новые скамейки или редактировать информацию о существующих скамейках.",
+    "ja": "このマップには、OpenStreetMapに記録されているすべてのベンチが表示されます。個々のベンチ、および公共交通機関の停留所または避難場所に属するベンチです。OpenStreetMapアカウントを使用すると、新しいベンチをマップしたり、既存のベンチの詳細を編集したりできます。",
+    "zh_Hant": "這份地圖顯示開放街圖上所有記錄的長椅：單獨的長椅，屬於大眾運輸站點或涼亭的長椅。",
+    "hu": "Ez a térkép megjeleníti az OpenStreetMap-en rögzített összes padot: egyes padokat, valamint tömegközlekedési megállókban vagy menedékhelyeken található padokat. OpenStreetMap-fiókkal Ön is felrajzolhat új padokat, vagy szerkesztheti a meglévő padok részleteit.",
+    "ca": "Aquest mapa mostra tots els bancs que hi ha a OpenStreetMap: bancs individuals i els bancs que hi ha a parades o refugis de transport públic.",
+    "es": "Este mapa muestra todos los bancos que están registrados en OpenStreetMap: Bancos individuales, bancos que pertenecen a paradas o marquesinas del transporte público.",
+    "nb_NO": "Viser alle benker som er registrert i OpenStreetMap: Individuelle benker, og benker som tilhører offentlig transport eller -skur. Med en OpenStreetMap-konto kan du kartlegge nye benker eller redigere eksisterende.",
+    "da": "Dette kort viser alle bænke, der er registreret i OpenStreetMap: Individuelle bænke og bænke, der hører til offentlige transportpladser eller shelters. Med en OpenStreetMap-konto kan du kortlægge nye bænke eller redigere detaljer om eksisterende bænke.",
+    "cs": "Tato mapa zobrazuje všechny lavičky, které jsou zaznamenány v OpenStreetMap: samostatné lavičky a lavičky patřící k zastávkám veřejné dopravy nebo přístřeškům.",
+    "eu": "OpenStreetMap-en erregistratzen diren banku guztiak erakusten ditu mapa honek: garraio publikoko geralekuetako edo babeslekuetako banakako bankuak eta bankuak.",
+    "pl": "Mapa ta pokazuje wszystkie ławki zarejestrowane w OpenStreetMap: ławki indywidualne oraz ławki należące do przystanków komunikacji miejskiej lub wiat."
+  },
   "shortDescription": {
     "en": "A map of benches",
     "de": "Eine Karte aller Sitzbänke",
@@ -43,33 +61,14 @@
     "eu": "Eserleku mapa bat",
     "pl": "Mapa ławek"
   },
-  "description": {
-    "en": "This map shows all benches that are recorded in OpenStreetMap: Individual benches, and benches belonging to public transport stops or shelters.",
-    "de": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Alleinstehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören.",
-    "fr": "Cette carte affiche les bancs cartographiés dans OpenStreetMap, entre autres : bancs des transports en commun, bancs publics, etc.",
-    "nl": "Deze kaart toont alle zitbanken die zijn opgenomen in OpenStreetMap: individuele banken en banken bij bushaltes.",
-    "it": "Questa mappa mostra tutte le panchine che sono state aggiunte su OpenStreetMap: panchine individuali e quelle alle fermate del trasporto pubblico o nei ripari. Se disponi di un account OpenStreetMap puoi mappare delle nuove panchine o modificare i dettagli di quelle esistenti.",
-    "ru": "На этой карте показаны все скамейки, записанные в OpenStreetMap: отдельные скамейки, а также скамейки, относящиеся к остановкам общественного транспорта или навесам. Имея учётную запись OpenStreetMap, вы можете наносить на карту новые скамейки или редактировать информацию о существующих скамейках.",
-    "ja": "このマップには、OpenStreetMapに記録されているすべてのベンチが表示されます。個々のベンチ、および公共交通機関の停留所または避難場所に属するベンチです。OpenStreetMapアカウントを使用すると、新しいベンチをマップしたり、既存のベンチの詳細を編集したりできます。",
-    "zh_Hant": "這份地圖顯示開放街圖上所有記錄的長椅：單獨的長椅，屬於大眾運輸站點或涼亭的長椅。",
-    "hu": "Ez a térkép megjeleníti az OpenStreetMap-en rögzített összes padot: egyes padokat, valamint tömegközlekedési megállókban vagy menedékhelyeken található padokat. OpenStreetMap-fiókkal Ön is felrajzolhat új padokat, vagy szerkesztheti a meglévő padok részleteit.",
-    "ca": "Aquest mapa mostra tots els bancs que hi ha a OpenStreetMap: bancs individuals i els bancs que hi ha a parades o refugis de transport públic.",
-    "es": "Este mapa muestra todos los bancos que están registrados en OpenStreetMap: Bancos individuales, bancos que pertenecen a paradas o marquesinas del transporte público.",
-    "nb_NO": "Viser alle benker som er registrert i OpenStreetMap: Individuelle benker, og benker som tilhører offentlig transport eller -skur. Med en OpenStreetMap-konto kan du kartlegge nye benker eller redigere eksisterende.",
-    "da": "Dette kort viser alle bænke, der er registreret i OpenStreetMap: Individuelle bænke og bænke, der hører til offentlige transportpladser eller shelters. Med en OpenStreetMap-konto kan du kortlægge nye bænke eller redigere detaljer om eksisterende bænke.",
-    "cs": "Tato mapa zobrazuje všechny lavičky, které jsou zaznamenány v OpenStreetMap: samostatné lavičky a lavičky patřící k zastávkám veřejné dopravy nebo přístřeškům.",
-    "eu": "OpenStreetMap-en erregistratzen diren banku guztiak erakusten ditu mapa honek: garraio publikoko geralekuetako edo babeslekuetako banakako bankuak eta bankuak.",
-    "pl": "Mapa ta pokazuje wszystkie ławki zarejestrowane w OpenStreetMap: ławki indywidualne oraz ławki należące do przystanków komunikacji miejskiej lub wiat."
-  },
   "icon": "./assets/themes/benches/bench_poi.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 1.5,
+  "credits": [
+    "Florian Edelmann"
+  ],
   "layers": [
     "picnic_table",
     "bench",
     "bench_at_pt"
   ],
-  "credits": "Florian Edelmann"
+  "widenFactor": 1.5
 }

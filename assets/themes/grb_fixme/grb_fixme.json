@@ -3,25 +3,18 @@
   "title": {
     "nl": "GRB Fixup"
   },
-  "shortDescription": {
-    "nl": "Grb Fixup"
-  },
   "description": {
     "nl": "Gebouwen met een FIXME - wss GRB-import die gefixed moeten worden"
   },
+  "shortDescription": {
+    "nl": "Grb Fixup"
+  },
   "icon": "./assets/svg/bug.svg",
+  "startZoom": 14,
   "startLat": 51.2132,
   "startLon": 3.231,
-  "startZoom": 14,
-  "widenFactor": 2,
-  "clustering": {
-    "maxZoom": 15
-  },
-  "overrideAll": {
-    "source": {
-      "maxCacheAge": 0
-    }
-  },
+  "defaultBackgroundId": "AGIVFlandersGRB",
+  "hideFromOverview": true,
   "layers": [
     {
       "id": "osm-buildings-fixme",
@@ -37,65 +30,6 @@
       },
       "calculatedTags": [
         "_grbNumber=(feat.properties.fixme?.match(/GRB thinks that this has number ([0-9a-zA-Z;]+)/) ?? ['','none']) [1]"
-      ],
-      "mapRendering": [
-        {
-          "width": {
-            "render": "2",
-            "mappings": [
-              {
-                "if": "fixme~*",
-                "then": "5"
-              }
-            ]
-          },
-          "color": {
-            "render": "#00c",
-            "mappings": [
-              {
-                "if": "fixme~*",
-                "then": "#ff00ff"
-              },
-              {
-                "if": "building=house",
-                "then": "#a00"
-              },
-              {
-                "if": "building=shed",
-                "then": "#563e02"
-              },
-              {
-                "if": {
-                  "or": [
-                    "building=garage",
-                    "building=garages"
-                  ]
-                },
-                "then": "#f9bfbb"
-              },
-              {
-                "if": "building=yes",
-                "then": "#0774f2"
-              }
-            ]
-          }
-        },
-        {
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "label": {
-            "mappings": [
-              {
-                "if": "addr:housenumber~*",
-                "then": "<div style='background-color: white; font: large; width: 1.5em; height: 1.5em; border-radius: 100%'>{addr:housenumber}</div>"
-              }
-            ]
-          },
-          "iconSize": "40,40",
-          "anchor": "center"
-        }
       ],
       "title": "OSM-gebouw",
       "tagRenderings": [
@@ -280,7 +214,11 @@
         },
         "all_tags"
       ],
-      "minzoom": 14
+      "minzoom": 14,
+      "pointRendering": [],
+      "lineRendering": [
+        {}
+      ]
     },
     {
       "builtin": "address",
@@ -301,8 +239,15 @@
       }
     }
   ],
-  "hideFromOverview": true,
-  "defaultBackgroundId": "AGIVFlandersGRB",
+  "overrideAll": {
+    "source": {
+      "maxCacheAge": 0
+    }
+  },
+  "widenFactor": 2,
   "overpassMaxZoom": 15,
-  "osmApiTileSize": 17
+  "osmApiTileSize": 17,
+  "clustering": {
+    "maxZoom": 15
+  }
 }

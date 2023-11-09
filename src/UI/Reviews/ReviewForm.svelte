@@ -46,7 +46,7 @@
       opinion: opinion.data,
       metadata: { nickname, is_affiliated: isAffiliated.data },
     }
-    if (state.featureSwitchIsTesting.data) {
+    if (state.featureSwitchIsTesting?.data ?? true) {
       console.log("Testing - not actually saving review", review)
       await Utils.waitFor(1000)
     } else {

@@ -28,7 +28,41 @@
     "osmTags": "tourism=viewpoint"
   },
   "minzoom": 14,
-  "wayhandling": 2,
+  "title": {
+    "render": {
+      "en": "Viewpoint",
+      "nl": "Uitzicht",
+      "de": "Aussichtspunkt",
+      "fr": "Point de vue",
+      "ru": "Смотровая площадка",
+      "it": "Punto panoramico",
+      "id": "Sudut pandang",
+      "eo": "Vidpunkto",
+      "ca": "Mirador",
+      "da": "Udsigtspunkt",
+      "cs": "Vyhlídka"
+    }
+  },
+  "pointRendering": [
+    {
+      "iconSize": "20,20",
+      "location": [
+        "point"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/layers/viewpoint/viewpoint.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#ffffff",
+      "width": "5"
+    }
+  ],
   "presets": [
     {
       "title": {
@@ -47,21 +81,6 @@
       ]
     }
   ],
-  "title": {
-    "render": {
-      "en": "Viewpoint",
-      "nl": "Uitzicht",
-      "de": "Aussichtspunkt",
-      "fr": "Point de vue",
-      "ru": "Смотровая площадка",
-      "it": "Punto panoramico",
-      "id": "Sudut pandang",
-      "eo": "Vidpunkto",
-      "ca": "Mirador",
-      "da": "Udsigtspunkt",
-      "cs": "Vyhlídka"
-    }
-  },
   "tagRenderings": [
     "images",
     {
@@ -85,18 +104,5 @@
       "id": "viewpoint-description"
     }
   ],
-  "mapRendering": [
-    {
-      "icon": "./assets/layers/viewpoint/viewpoint.svg",
-      "iconSize": "20,20",
-      "location": [
-        "point"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#ffffff",
-      "width": "5"
-    }
-  ]
+  "wayhandling": 2
 }

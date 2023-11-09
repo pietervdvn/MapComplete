@@ -340,9 +340,6 @@
         "description": "Létesítmény, ahonnan kerékpár kölcsönözhető hosszabb időre",
         "tagRenderings": {
             "bicycle-library-target-group": {
-                "mappings": {
-                    "0": {}
-                },
                 "question": "Ki kölcsönözhet itt kerékpárt?"
             },
             "bicycle_library-charge": {
@@ -619,7 +616,7 @@
         }
     },
     "last_click": {
-        "mapRendering": {
+        "pointRendering": {
             "0": {
                 "label": {
                     "render": "Új elem hozzáadásához kattints ide"

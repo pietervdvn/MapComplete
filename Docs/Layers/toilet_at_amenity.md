@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/toilet/toilets.svg' height="100px"> 
+
 
 A layer showing (public) toilets located at different places.
 
@@ -79,7 +79,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -235,7 +235,7 @@ This is rendered with  `The door to the wheelchair-accessible toilet is {canonic
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `toilets:wheelchair=yes|toilets:wheelchair=designated`
+This tagrendering is only visible in the popup if the following condition is met: `toilets:wheelchair=yes |toilets:wheelchair=designated`
 
 
 
@@ -395,7 +395,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 
@@ -417,7 +417,7 @@ This tagrendering has no question and is thus read-only
 
 id | question | osmTags
 ---- | ---------- | ---------
-wheelchair.0 | Wheelchair accessible | toilets:wheelchair=yes\|toilets:wheelchair=designated
+wheelchair.0 | Wheelchair accessible | toilets:wheelchair=yes \|toilets:wheelchair=designated
 
 
 
@@ -431,7 +431,7 @@ changing_table.0 | Has a changing table | changing_table=yes
 
 id | question | osmTags
 ---- | ---------- | ---------
-free.0 | Free to use | toilets:fee=no\|toilets:fee=0\|toilets:charge=0
+free.0 | Free to use | toilets:fee=no \|toilets:fee=0 \|toilets:charge=0
 
 
 

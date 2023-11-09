@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/pin:#684c2b;./assets/layers/bike_cafe/bike_cafe.svg' height="100px"> 
+
 
 A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …
 
@@ -74,7 +74,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -274,7 +274,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 

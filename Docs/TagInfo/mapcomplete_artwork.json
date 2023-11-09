@@ -17,7 +17,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Artworks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Artwork') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Artworks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Artwork') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -145,12 +145,12 @@
     },
     {
       "key": "backrest",
-      "description": "Layer 'Artworks' shows backrest=yes&two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "description": "Layer 'Artworks' shows backrest=yes &two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
       "value": "yes"
     },
     {
       "key": "two_sided",
-      "description": "Layer 'Artworks' shows backrest=yes&two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "description": "Layer 'Artworks' shows backrest=yes &two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
       "value": "yes"
     },
     {

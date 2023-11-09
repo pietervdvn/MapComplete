@@ -16,21 +16,6 @@
     "cs": "Rozhledny",
     "pl": "Wieże obserwacyjne"
   },
-  "shortDescription": {
-    "en": "Publicly accessible towers to enjoy the view",
-    "nl": "Publieke uitkijktorens om van het panorama te genieten",
-    "de": "Öffentlich zugängliche Türme zum Genießen der Aussicht",
-    "it": "Torri pubblicamente accessibili per godere della vista",
-    "zh_Hant": "開發可及能觀景的高塔",
-    "hu": "Nyilvános tornyok, hogy gyönyörködhessünk a kilátásban",
-    "es": "Torres accesibles públicamente para disfrutar de la vista",
-    "fr": "Tours libres d’accès pour admirer la vue",
-    "nb_NO": "Offentlig tilgjengelige tårn for å nyte utsikten",
-    "da": "Offentligt tilgængelige tårne for at nyde udsigten",
-    "cs": "Veřejně přístupné věže s výhledem",
-    "ca": "Torres accesibles públicament per a disfrutar de la vista",
-    "pl": "Publicznie dostępne wieże do podziwiania widoku"
-  },
   "description": {
     "nl": "Publieke uitkijktorens om van het panorama te genieten",
     "en": "Publicly accessible towers to enjoy the view",
@@ -46,12 +31,24 @@
     "ca": "Torres accesibles públicament per a disfrutar de la vista",
     "pl": "Publicznie dostępne wieże do podziwiania widoku"
   },
+  "shortDescription": {
+    "en": "Publicly accessible towers to enjoy the view",
+    "nl": "Publieke uitkijktorens om van het panorama te genieten",
+    "de": "Öffentlich zugängliche Türme zum Genießen der Aussicht",
+    "it": "Torri pubblicamente accessibili per godere della vista",
+    "zh_Hant": "開發可及能觀景的高塔",
+    "hu": "Nyilvános tornyok, hogy gyönyörködhessünk a kilátásban",
+    "es": "Torres accesibles públicamente para disfrutar de la vista",
+    "fr": "Tours libres d’accès pour admirer la vue",
+    "nb_NO": "Offentlig tilgjengelige tårn for å nyte utsikten",
+    "da": "Offentligt tilgængelige tårne for at nyde udsigten",
+    "cs": "Veřejně přístupné věže s výhledem",
+    "ca": "Torres accesibles públicament per a disfrutar de la vista",
+    "pl": "Publicznie dostępne wieże do podziwiania widoku"
+  },
   "icon": "./assets/layers/observation_tower/Tower_observation.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 5,
   "layers": [
     "observation_tower"
-  ]
+  ],
+  "widenFactor": 5
 }

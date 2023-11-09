@@ -7,8 +7,7 @@
     "ca": "Una institució financera per a dipositar diners",
     "cs": "Finanční instituce pro ukládání peněz",
     "he": "מוסד פיננסי להפקדת כסף",
-    "pl": "Instytucja finansowa pozwalająca wpłacić pieniądze",
-    "pt_BR": "Um instituição financeira para depositar dinheiro"
+    "pl": "Instytucja finansowa pozwalająca wpłacić pieniądze"
   },
   "name": {
     "en": "Banks",
@@ -19,8 +18,7 @@
     "cs": "Banky",
     "he": "בנקים",
     "eu": "Bankuak",
-    "pl": "Banki",
-    "pt_BR": "Bancos"
+    "pl": "Banki"
   },
   "title": {
     "render": "Bank",
@@ -34,16 +32,8 @@
   "source": {
     "osmTags": "amenity=bank"
   },
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/layers/bank/bank.svg",
-      "location": [
-        "point",
-        "centroid"
-      ]
-    }
-  ],
   "tagRenderings": [
+    "images",
     {
       "id": "has_atm",
       "question": {
@@ -54,8 +44,7 @@
         "ca": "Aquest banc té un caixer automàtic?",
         "cs": "Má tato banka bankomat?",
         "he": "האם לבנק הזה יש כספומט?",
-        "pl": "Czy ten bank ma bankomat?",
-        "pt_BR": "Esse banco tem caixa eletrônico?"
+        "pl": "Czy ten bank ma bankomat?"
       },
       "mappings": [
         {
@@ -68,8 +57,7 @@
             "ca": "Aquest banc té un caixer automàtic",
             "cs": "Tato banka má bankomat",
             "he": "לבנק הזה יש כספומט",
-            "pl": "Ten bank ma bankomat",
-            "pt_BR": "Este banco tem um caixa eletrônico"
+            "pl": "Ten bank ma bankomat"
           }
         },
         {
@@ -81,8 +69,7 @@
             "nl": "Deze bank heeft <b>geen</b> bankautomaaat",
             "ca": "Aquest banc <b>no</b> té un caixer automàtic",
             "cs": "Tato banka <b>nemá bankomat</b>",
-            "pl": "Ten bank <b>nie ma</b> bankomatu",
-            "pt_BR": "Este banco <b>não</b> tem um caixa eletrônico"
+            "pl": "Ten bank <b>nie ma</b> bankomatu"
           }
         },
         {
@@ -92,8 +79,7 @@
             "de": "Diese Bank hat zwar einen Geldautomaten, aber dieser ist mit einem anderen Symbol dargestellt",
             "nl": "Deze bank heeft een bankautomaat, maar deze staat apart op de kaart aangeduid",
             "ca": "Aquest banc té un caixer, però està mapejat com a un element diferent",
-            "cs": "Tato banka má bankomat, ale je namapován jako jiná ikona",
-            "pt_BR": "Este banco tem um caixa eletrônico, mas está mapeado como um ícone diferente"
+            "cs": "Tato banka má bankomat, ale je namapován jako jiná ikona"
           }
         }
       ]
@@ -113,12 +99,29 @@
             "ca": "Amb un caixer automàtic",
             "cs": "S bankomatem",
             "he": "עם כספומט",
-            "pl": "Za pomocą bankomatu",
-            "pt_BR": "Com um caixa eletrônico"
+            "pl": "Za pomocą bankomatu"
           },
           "osmTags": "atm=yes"
         }
       ]
     }
-  ]
+  ],
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/bank/bank.svg"
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "lineRendering": []
 }

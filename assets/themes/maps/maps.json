@@ -16,20 +16,6 @@
     "cs": "Mapa map",
     "pl": "Mapa map"
   },
-  "shortDescription": {
-    "en": "This theme shows all (touristic) maps that OpenStreetMap knows of",
-    "nl": "Dit thema toont alle (toeristische) kaarten die OpenStreetMap kent",
-    "fr": "Cette carte affiche toutes les cartes (plans) mappés dans OpenStreetMap",
-    "ja": "このテーマには、OpenStreetMapが知っているすべての(観光)マップが表示されます",
-    "zh_Hant": "這份主題顯示所有已知的開放街圖上的 (旅遊) 地圖",
-    "de": "Dieses Thema zeigt alle (touristischen) Karten, die OpenStreetMap kennt",
-    "it": "Questo tema mostra tutte le mappe (turistiche) di cui OpenStreetMap dispone",
-    "es": "Este tema muestra todos los mapas (turísticos) que OpenStreetMap conoce",
-    "da": "Dette tema viser alle (turisme) kort, som OpenStreetMap kender til",
-    "cs": "Toto téma zobrazuje všechny (turistické) mapy, které zná OpenStreetMap",
-    "ca": "Aquest tema mostra tots els mapes (turístics) que OpenStreetMap coneix",
-    "pl": "Ten motyw pokazuje wszystkie mapy (turystyczne), które zna OpenStreetMap"
-  },
   "description": {
     "en": "On this map you can find all maps OpenStreetMap knows - typically a big map on an information board showing the area, city or region, e.g. a tourist map on the back of a billboard, a map of a nature reserve, a map of cycling networks in the region, ...) <br/><br/>If a map is missing, you can easily map this map on OpenStreetMap.",
     "nl": "Op deze kaart kan je alle kaarten zien die OpenStreetMap kent.<br/><br/>Ontbreekt er een kaart, dan kan je die kaart hier ook gemakelijk aan deze kaart toevoegen.",
@@ -44,13 +30,24 @@
     "ca": "En aquest mapa podeu trobar tots els mapes que OpenStreetMap coneix, normalment un mapa gran en un tauler informatiu que mostra la zona, la ciutat o la regió, p. un mapa turístic al dors d'una tanca publicitària, un mapa d'una reserva natural, un mapa de les xarxes ciclistes de la regió, ...) <br/><br/>Si falta un mapa, podeu mapejar aquest mapa fàcilment a OpenStreetMap.",
     "pl": "Na tej mapie możesz znaleźć wszystkie mapy, jakie zna OpenStreetMap - zazwyczaj duże mapy na tablicy informacyjnej pokazująca obszar, miasto lub region, np. mapy turystyczne na odwrocie billboardu, mapy rezerwatu przyrody, mapy sieci rowerowych w regionie, ...) <br/><br/>Jeśli brakuje mapy, możesz łatwo zmapować ją na OpenStreetMap."
   },
+  "shortDescription": {
+    "en": "This theme shows all (touristic) maps that OpenStreetMap knows of",
+    "nl": "Dit thema toont alle (toeristische) kaarten die OpenStreetMap kent",
+    "fr": "Cette carte affiche toutes les cartes (plans) mappés dans OpenStreetMap",
+    "ja": "このテーマには、OpenStreetMapが知っているすべての(観光)マップが表示されます",
+    "zh_Hant": "這份主題顯示所有已知的開放街圖上的 (旅遊) 地圖",
+    "de": "Dieses Thema zeigt alle (touristischen) Karten, die OpenStreetMap kennt",
+    "it": "Questo tema mostra tutte le mappe (turistiche) di cui OpenStreetMap dispone",
+    "es": "Este tema muestra todos los mapas (turísticos) que OpenStreetMap conoce",
+    "da": "Dette tema viser alle (turisme) kort, som OpenStreetMap kender til",
+    "cs": "Toto téma zobrazuje všechny (turistické) mapy, které zná OpenStreetMap",
+    "ca": "Aquest tema mostra tots els mapes (turístics) que OpenStreetMap coneix",
+    "pl": "Ten motyw pokazuje wszystkie mapy (turystyczne), które zna OpenStreetMap"
+  },
   "icon": "./assets/themes/maps/logo.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 5,
   "defaultBackgroundId": "maptiler.backdrop",
   "layers": [
     "map"
-  ]
+  ],
+  "widenFactor": 5
 }

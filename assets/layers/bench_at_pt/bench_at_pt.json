@@ -19,7 +19,19 @@
     "cs": "Lavičky na zastávkách veřejné dopravy",
     "ca": "Bancs en una parada de transport públic"
   },
-  "minzoom": 14,
+  "description": {
+    "en": "A layer showing all public-transport-stops which do have a bench",
+    "es": "Una capa que muestra todas las paradas de transporte público que tienen bancos",
+    "nl": "Een laag die stopplaatsen van openbaar vervoer toont waar er een zitbank is",
+    "fr": "Une couche montrant tous les arrêts de transports publics qui ont un banc",
+    "de": "Eine Ebene mit allen Haltestellen des öffentlichen Nahverkehrs, die über eine Sitzbank verfügen",
+    "da": "Et lag, der viser alle offentlige stoppesteder, som har en bænk",
+    "cs": "Vrstva zobrazující všechny zastávky veřejné dopravy, které mají lavičku",
+    "ca": "Una capa que mostra totes les parades de transport públic que tenen bancs",
+    "pt": "Uma camada mostrando todas as paradas de transporte público que possuem um banco",
+    "pl": "Warstwa pokazująca wszystkie przystanki transportu publicznego, które mają ławki",
+    "pt_BR": "Uma camada mostrando todas as paradas de transporte público que têm um banco"
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -33,6 +45,7 @@
       ]
     }
   },
+  "minzoom": 14,
   "title": {
     "render": {
       "en": "Bench",
@@ -114,6 +127,30 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "iconSize": "35,35",
+      "location": [
+        "point"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/themes/benches/bench_public_transport.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f",
+      "width": "8"
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -210,20 +247,6 @@
       ]
     }
   ],
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/themes/benches/bench_public_transport.svg",
-      "iconSize": "35,35",
-      "location": [
-        "point"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#00f",
-      "width": "8"
-    }
-  ],
   "deletion": {
     "omitDefaultDeleteReasons": true,
     "nonDeleteMappings": [
@@ -264,18 +287,5 @@
         "bench=no"
       ]
     }
-  },
-  "description": {
-    "en": "A layer showing all public-transport-stops which do have a bench",
-    "es": "Una capa que muestra todas las paradas de transporte público que tienen bancos",
-    "nl": "Een laag die stopplaatsen van openbaar vervoer toont waar er een zitbank is",
-    "fr": "Une couche montrant tous les arrêts de transports publics qui ont un banc",
-    "de": "Eine Ebene mit allen Haltestellen des öffentlichen Nahverkehrs, die über eine Sitzbank verfügen",
-    "da": "Et lag, der viser alle offentlige stoppesteder, som har en bænk",
-    "cs": "Vrstva zobrazující všechny zastávky veřejné dopravy, které mají lavičku",
-    "ca": "Una capa que mostra totes les parades de transport públic que tenen bancs",
-    "pt": "Uma camada mostrando todas as paradas de transporte público que possuem um banco",
-    "pl": "Warstwa pokazująca wszystkie przystanki transportu publicznego, które mają ławki",
-    "pt_BR": "Uma camada mostrando todas as paradas de transporte público que têm um banco"
   }
 }

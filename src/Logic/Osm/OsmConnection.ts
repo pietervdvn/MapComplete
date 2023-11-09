@@ -6,6 +6,7 @@ import { Utils } from "../../Utils"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { AuthConfig } from "./AuthConfig"
 import Constants from "../../Models/Constants"
+import OSMAuthInstance = OSMAuth.OSMAuthInstance
 
 export default class UserDetails {
     public loggedIn = false
@@ -29,7 +30,7 @@ export default class UserDetails {
 export type OsmServiceState = "online" | "readonly" | "offline" | "unknown" | "unreachable"
 
 export class OsmConnection {
-    public auth
+    public auth: OSMAuthInstance
     public userDetails: UIEventSource<UserDetails>
     public isLoggedIn: Store<boolean>
     public gpxServiceIsOnline: UIEventSource<OsmServiceState> = new UIEventSource<OsmServiceState>(
@@ -83,6 +84,7 @@ export class OsmConnection {
         if (options.fakeUser) {
             const ud = this.userDetails.data
             ud.csCount = 5678
+            ud.uid = 42
             ud.loggedIn = true
             ud.unreadMessages = 0
             ud.name = "Fake user"
@@ -116,19 +118,15 @@ export class OsmConnection {
         if (options.oauth_token?.data !== undefined) {
             console.log(options.oauth_token.data)
             const self = this
-            this.auth.bootstrapToken(
-                options.oauth_token.data,
-                (x) => {
-                    console.log("Called back: ", x)
-                    self.AttemptLogin()
-                },
-                this.auth
-            )
+            this.auth.bootstrapToken(options.oauth_token.data, (err, result) => {
+                console.log("Bootstrap token called back", err, result)
+                self.AttemptLogin()
+            })
 
             options.oauth_token.setData(undefined)
         }
         if (this.auth.authenticated() && options.attemptLogin !== false) {
-            this.AttemptLogin() // Also updates the user badge
+            this.AttemptLogin()
         } else {
             console.log("Not authenticated")
         }
@@ -161,6 +159,7 @@ export class OsmConnection {
         this.userDetails.ping()
         console.log("Logged out")
         this.loadingStatus.setData("not-attempted")
+        this.preferencesHandler.preferences.setData(undefined)
     }
 
     /**
@@ -174,7 +173,10 @@ export class OsmConnection {
 
     public AttemptLogin() {
         this.UpdateCapabilities()
-        this.loadingStatus.setData("loading")
+        if (this.loadingStatus.data !== "logged-in") {
+            // Stay 'logged-in' if we are already logged in; this simply means we are checking for messages
+            this.loadingStatus.setData("loading")
+        }
         if (this.fakeUser) {
             this.loadingStatus.setData("logged-in")
             console.log("AttemptLogin called, but ignored as fakeUser is set")
@@ -263,17 +265,37 @@ export class OsmConnection {
     /**
      * Interact with the API.
      *
-     * @param path: the path to query, without host and without '/api/0.6'. Example 'notes/1234/close'
+     * @param path the path to query, without host and without '/api/0.6'. Example 'notes/1234/close'
+     * @param method
+     * @param header
+     * @param content
+     * @param allowAnonymous if set, will use the anonymous-connection if the main connection is not authenticated
      */
     public async interact(
         path: string,
         method: "GET" | "POST" | "PUT" | "DELETE",
         header?: Record<string, string | number>,
-        content?: string
-    ): Promise<any> {
+        content?: string,
+        allowAnonymous: boolean = false
+    ): Promise<string> {
+        let connection: OSMAuthInstance = this.auth
+        if (allowAnonymous && !this.auth.authenticated()) {
+            const possibleResult = await Utils.downloadAdvanced(
+                `${this.Backend()}/api/0.6/${path}`,
+                header,
+                method,
+                content
+            )
+            if (possibleResult["content"]) {
+                return possibleResult["content"]
+            }
+            console.error(possibleResult)
+            throw "Could not interact with OSM:" + possibleResult["error"]
+        }
+
         return new Promise((ok, error) => {
-            this.auth.xhr(
-                {
+            connection.xhr(
+                <any>{
                     method,
                     options: {
                         header,
@@ -295,9 +317,10 @@ export class OsmConnection {
     public async post(
         path: string,
         content?: string,
-        header?: Record<string, string | number>
+        header?: Record<string, string | number>,
+        allowAnonymous: boolean = false
     ): Promise<any> {
-        return await this.interact(path, "POST", header, content)
+        return await this.interact(path, "POST", header, content, allowAnonymous)
     }
 
     public async put(
@@ -308,8 +331,12 @@ export class OsmConnection {
         return await this.interact(path, "PUT", header, content)
     }
 
-    public async get(path: string, header?: Record<string, string | number>): Promise<any> {
-        return await this.interact(path, "GET", header)
+    public async get(
+        path: string,
+        header?: Record<string, string | number>,
+        allowAnonymous: boolean = false
+    ): Promise<string> {
+        return await this.interact(path, "GET", header, undefined, allowAnonymous)
     }
 
     public closeNote(id: number | string, text?: string): Promise<void> {
@@ -352,10 +379,16 @@ export class OsmConnection {
         }
         // Lat and lon must be strings for the API to accept it
         const content = `lat=${lat}&lon=${lon}&text=${encodeURIComponent(text)}`
-        const response = await this.post("notes.json", content, {
-            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-        })
+        const response = await this.post(
+            "notes.json",
+            content,
+            {
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+            },
+            true
+        )
         const parsed = JSON.parse(response)
+        console.log("Got result:", parsed)
         const id = parsed.properties
         console.log("OPENED NOTE", id)
         return id
@@ -489,7 +522,7 @@ export class OsmConnection {
         this.auth = new osmAuth({
             client_id: this._oauth_config.oauth_client_id,
             url: this._oauth_config.url,
-            scope: "read_prefs write_prefs write_api write_gpx write_notes",
+            scope: "read_prefs write_prefs write_api write_gpx write_notes openid",
             redirect_uri: Utils.runningFromConsole
                 ? "https://mapcomplete.org/land.html"
                 : window.location.protocol + "//" + window.location.host + "/land.html",
@@ -506,7 +539,6 @@ export class OsmConnection {
         this.isChecking = true
         Stores.Chronic(5 * 60 * 1000).addCallback((_) => {
             if (self.isLoggedIn.data) {
-                console.log("Checking for messages")
                 self.AttemptLogin()
             }
         })
@@ -520,6 +552,29 @@ export class OsmConnection {
         })
     }
 
+    private readonly _userInfoCache: Record<number, any> = {}
+    public async getInformationAboutUser(id: number): Promise<{
+        id: number
+        display_name: string
+        account_created: string
+        description: string
+        contributor_terms: { agreed: boolean }
+        roles: []
+        changesets: { count: number }
+        traces: { count: number }
+        blocks: { received: { count: number; active: number } }
+    }> {
+        if (id === undefined) {
+            return undefined
+        }
+        if (this._userInfoCache[id]) {
+            return this._userInfoCache[id]
+        }
+        const info = await this.get("user/" + id + ".json", { accepts: "application/json" }, true)
+        const parsed = JSON.parse(info)["user"]
+        this._userInfoCache[id] = parsed
+        return parsed
+    }
     private async FetchCapabilities(): Promise<{ api: OsmServiceState; gpx: OsmServiceState }> {
         if (Utils.runningFromConsole) {
             return { api: "online", gpx: "online" }

@@ -1,8 +1,5 @@
 {
   "id": "notes",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 0,
   "title": {
     "en": "Notes on OpenStreetMap",
     "hu": "Jegyzetek az OpenStreetMapen",
@@ -31,10 +28,10 @@
     "pl": "Uwaga to pinezka na mapie z tekstem wskazującym, że coś jest nie tak.<br/><br/>Pamiętaj o skorzystaniu z <a href='#filters'>widoku filtra</a>, aby wyszukać użytkowników i tekst ."
   },
   "icon": "./assets/themes/notes/logo.svg",
-  "clustering": false,
-  "enableDownload": true,
   "layers": [
     "note",
     "fixme"
-  ]
+  ],
+  "enableDownload": true,
+  "clustering": false
 }

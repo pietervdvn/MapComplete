@@ -435,7 +435,6 @@ class MappedStore<TIn, T> extends Store<T> {
      * const mapped = src.map(i => i * 2)
      * src.setData(3)
      * mapped.data // => 6
-     *
      */
     get data(): T {
         if (!this._callbacksAreRegistered) {
@@ -515,7 +514,6 @@ class MappedStore<TIn, T> extends Store<T> {
     }
 
     private unregisterFromUpstream() {
-        console.debug("Unregistering callbacks for", this.tag)
         this._callbacksAreRegistered = false
         this._unregisterFromUpstream()
         this._unregisterFromExtraStores?.forEach((unr) => unr())
@@ -534,7 +532,7 @@ class MappedStore<TIn, T> extends Store<T> {
     private update(): void {
         const newData = this._f(this._upstream.data)
         this._upstreamPingCount = this._upstreamCallbackHandler?.pingCount
-        if (this._data == newData) {
+        if (this._data === newData) {
             return
         }
         this._data = newData
@@ -670,7 +668,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         )
     }
 
-    static asBoolean(stringUIEventSource: UIEventSource<string>) {
+    static asBoolean(stringUIEventSource: UIEventSource<string>): UIEventSource<boolean> {
         return stringUIEventSource.sync(
             (str) => str === "true",
             [],

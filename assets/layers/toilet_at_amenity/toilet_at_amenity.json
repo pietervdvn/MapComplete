@@ -7,10 +7,17 @@
     "ca": "Lavabos a altres instal·lacions",
     "cs": "Toalety u ostatního vybavení"
   },
-  "minzoom": 12,
+  "description": {
+    "en": "A layer showing (public) toilets located at different places.",
+    "de": "Eine Ebene mit (öffentlichen) Toiletten an verschiedenen Orten.",
+    "nl": "Een laag die (publiek toegankelijke) toiletten toont in verschillende andere voorzieningen.",
+    "ca": "Una capa que mostra banys (públics) ubicats en diferents llocs.",
+    "cs": "Vrstva zobrazující (veřejné) toalety umístěné na různých místech."
+  },
   "source": {
     "osmTags": "toilets=yes"
   },
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Toilet at amenity",
@@ -32,6 +39,96 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/toilet/toilets.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "toilets:wheelchair=yes",
+                    "toilets:wheelchair=designated"
+                  ]
+                },
+                "then": "./assets/layers/toilet/wheelchair.svg"
+              },
+              {
+                "if": {
+                  "or": [
+                    "toilets:position=urinals",
+                    "toilets:position=urinal"
+                  ]
+                },
+                "then": "./assets/layers/toilet/urinal.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        },
+        {
+          "if": "shop~*",
+          "then": "./assets/themes/shops/shop.svg"
+        },
+        {
+          "if": "amenity=restaurant",
+          "then": "circle:white;./assets/layers/food/restaurant.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "amenity=fast_food",
+              "cuisine=friture"
+            ]
+          },
+          "then": "circle:white;./assets/layers/food/fries.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "amenity=fast_food",
+              "cuisine!=friture"
+            ]
+          },
+          "then": "circle:white;./assets/layers/food/fastfood.svg"
+        },
+        {
+          "if": {
+            "or": [
+              "amenity=bar",
+              "amenity=pub",
+              "amenity=biergarten"
+            ]
+          },
+          "then": "circle:white;./assets/layers/cafe_pub/pub.svg"
+        },
+        {
+          "if": "amenity=cafe",
+          "then": "circle:white;./assets/layers/cafe_pub/cafe.svg"
+        },
+        {
+          "if": "amenity=nightclub",
+          "then": "circle:white;./assets/layers/cafe_pub/nightclub.svg"
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "lineRendering": [],
   "tagRenderings": [
     "images",
     "level",
@@ -380,94 +477,6 @@
       ]
     },
     "neededChangesets": 1
-  },
-  "mapRendering": [
-    {
-      "icon": {
-        "render": "circle:white;./assets/layers/toilet/toilets.svg",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                "toilets:wheelchair=yes",
-                "toilets:wheelchair=designated"
-              ]
-            },
-            "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
-          },
-          {
-            "if": {
-              "or": [
-                "toilets:position=urinals",
-                "toilets:position=urinal"
-              ]
-            },
-            "then": "./assets/layers/toilet/urinal.svg"
-          }
-        ]
-      },
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        },
-        {
-          "if": "shop~*",
-          "then": "./assets/themes/shops/shop.svg"
-        },
-        {
-          "if": "amenity=restaurant",
-          "then": "circle:white;./assets/layers/food/restaurant.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "amenity=fast_food",
-              "cuisine=friture"
-            ]
-          },
-          "then": "circle:white;./assets/layers/food/fries.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "amenity=fast_food",
-              "cuisine!=friture"
-            ]
-          },
-          "then": "circle:white;./assets/layers/food/fastfood.svg"
-        },
-        {
-          "if": {
-            "or": [
-              "amenity=bar",
-              "amenity=pub",
-              "amenity=biergarten"
-            ]
-          },
-          "then": "circle:white;./assets/layers/cafe_pub/pub.svg"
-        },
-        {
-          "if": "amenity=cafe",
-          "then": "circle:white;./assets/layers/cafe_pub/cafe.svg"
-        },
-        {
-          "if": "amenity=nightclub",
-          "then": "circle:white;./assets/layers/cafe_pub/nightclub.svg"
-        }
-      ],
-      "location": [
-        "point",
-        "centroid"
-      ]
-    }
-  ],
-  "description": {
-    "en": "A layer showing (public) toilets located at different places.",
-    "de": "Eine Ebene mit (öffentlichen) Toiletten an verschiedenen Orten.",
-    "nl": "Een laag die (publiek toegankelijke) toiletten toont in verschillende andere voorzieningen.",
-    "ca": "Una capa que mostra banys (públics) ubicats en diferents llocs.",
-    "cs": "Vrstva zobrazující (veřejné) toalety umístěné na různých místech."
   },
   "units": [
     {

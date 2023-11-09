@@ -1,5 +1,8 @@
 import BaseUIElement from "./BaseUIElement"
 
+/**
+ * @deprecated
+ */
 export abstract class UIElement extends BaseUIElement {
     /**
      * Should be overridden for specific HTML functionality

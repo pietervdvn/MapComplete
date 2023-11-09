@@ -12,6 +12,25 @@
     "ca": "Espai hacker",
     "cs": "Hackerspace"
   },
+  "description": {
+    "en": "Hackerspace",
+    "de": "Hackerspace",
+    "ru": "Хакерспейс",
+    "zh_Hant": "駭客空間",
+    "hu": "Hackerspace",
+    "es": "Espacio hacker",
+    "nl": "Hackerspace",
+    "pa_PK": "ہیکر دا تھاں",
+    "ca": "Espai hacker",
+    "cs": "Hackerspace"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "leisure=hackerspace"
+      ]
+    }
+  },
   "minzoom": 8,
   "title": {
     "render": {
@@ -46,18 +65,92 @@
       }
     ]
   },
-  "description": {
-    "en": "Hackerspace",
-    "de": "Hackerspace",
-    "ru": "Хакерспейс",
-    "zh_Hant": "駭客空間",
-    "hu": "Hackerspace",
-    "es": "Espacio hacker",
-    "nl": "Hackerspace",
-    "pa_PK": "ہیکر دا تھاں",
-    "ca": "Espai hacker",
-    "cs": "Hackerspace"
-  },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/themes/hackerspaces/glider.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "hackerspace=makerspace"
+                  ]
+                },
+                "then": "./assets/themes/hackerspaces/led.png"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f",
+      "width": "8"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "leisure=hackerspace"
+      ],
+      "title": {
+        "en": "a hackerspace",
+        "de": "einen Hackerspace",
+        "ru": "Хакерспейс",
+        "zh_Hant": "駭客空間",
+        "hu": "Hackerspace",
+        "es": "un espacio hacker",
+        "nl": "een hackerspace",
+        "ca": "un espai hacker",
+        "cs": "hackerspace"
+      },
+      "description": {
+        "en": "A hackerspace is an area where people interested in software gather",
+        "de": "Ein Hackerspace ist ein Ort, an dem sich Menschen treffen, die sich für Software interessieren",
+        "zh_Hant": "駭客空間是對軟體有興趣的人聚集的地方",
+        "hu": "A hackerspace egy olyan hely, ahol szoftverek iránt érdeklő emberek találkoznak",
+        "es": "Un espacio hacker es un lugar en el que gente interesada en software se reúne",
+        "nl": "Een hackerspace is een ruimte waar mensen met een interesse in software samenkomen",
+        "ca": "Un espai hacker és un lloc on la gent interesada en el software es reuneix",
+        "cs": "Hackerspace je oblast, kde se shromažďují lidé se zájmem o software"
+      }
+    },
+    {
+      "tags": [
+        "leisure=hackerspace",
+        "hackerspace=makerspace"
+      ],
+      "title": {
+        "en": "a makerspace",
+        "de": "einen Makerspace",
+        "zh_Hant": "創客空間",
+        "hu": "Makerspace",
+        "es": "un espacio maker",
+        "nl": "een makerspace",
+        "ca": "un espai maker"
+      },
+      "description": {
+        "en": "A makerspace is a place where DIY-enthusiasts gather to experiment with electronics such as arduino, LEDstrips, …",
+        "de": "Ein Makerspace ist ein Ort, an dem Heimwerker-Enthusiasten zusammenkommen, um mit Elektronik zu experimentieren, wie Arduino, LED-Strips, …",
+        "zh_Hant": "創客空間是 DIY 愛好者聚集在一起弄電子零件實驗，例如用 arduino、LEDstrips 等...",
+        "hu": "A makerspace olyan hely, ahol a barkácsolás szerelmesei találkoznak, hogy olyan elektronikai eszközökkel kísérletezzenek, mint például az Arduino vagy a LEDstrips…",
+        "es": "Un espacio maker es un lugar donde entusiastas del DIY se reúnen para experimentar con electrónica, como arduino, …",
+        "nl": "Een makerspace is een ruimte waar makers en creatievelingen samenkomen om met electronica te experimenteren en te bouwen, bv. met Arduino, LED-strips, 3D-printers, lasercutters, …",
+        "ca": "Un espai maker és un lloc on entusiastes del DIY es reuneixen per a experimentar amb electrònica com arudino, tires LED, …",
+        "cs": "Makerspace je místo, kde se scházejí kutilové, aby experimentovali s elektronikou, jako je arduino, LED pásky,…"
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -310,93 +403,6 @@
     "questions",
     "reviews"
   ],
-  "presets": [
-    {
-      "tags": [
-        "leisure=hackerspace"
-      ],
-      "title": {
-        "en": "a hackerspace",
-        "de": "einen Hackerspace",
-        "ru": "Хакерспейс",
-        "zh_Hant": "駭客空間",
-        "hu": "Hackerspace",
-        "es": "un espacio hacker",
-        "nl": "een hackerspace",
-        "ca": "un espai hacker",
-        "cs": "hackerspace"
-      },
-      "description": {
-        "en": "A hackerspace is an area where people interested in software gather",
-        "de": "Ein Hackerspace ist ein Ort, an dem sich Menschen treffen, die sich für Software interessieren",
-        "zh_Hant": "駭客空間是對軟體有興趣的人聚集的地方",
-        "hu": "A hackerspace egy olyan hely, ahol szoftverek iránt érdeklő emberek találkoznak",
-        "es": "Un espacio hacker es un lugar en el que gente interesada en software se reúne",
-        "nl": "Een hackerspace is een ruimte waar mensen met een interesse in software samenkomen",
-        "ca": "Un espai hacker és un lloc on la gent interesada en el software es reuneix",
-        "cs": "Hackerspace je oblast, kde se shromažďují lidé se zájmem o software"
-      }
-    },
-    {
-      "tags": [
-        "leisure=hackerspace",
-        "hackerspace=makerspace"
-      ],
-      "title": {
-        "en": "a makerspace",
-        "de": "einen Makerspace",
-        "zh_Hant": "創客空間",
-        "hu": "Makerspace",
-        "es": "un espacio maker",
-        "nl": "een makerspace",
-        "ca": "un espai maker"
-      },
-      "description": {
-        "en": "A makerspace is a place where DIY-enthusiasts gather to experiment with electronics such as arduino, LEDstrips, …",
-        "de": "Ein Makerspace ist ein Ort, an dem Heimwerker-Enthusiasten zusammenkommen, um mit Elektronik zu experimentieren, wie Arduino, LED-Strips, …",
-        "zh_Hant": "創客空間是 DIY 愛好者聚集在一起弄電子零件實驗，例如用 arduino、LEDstrips 等...",
-        "hu": "A makerspace olyan hely, ahol a barkácsolás szerelmesei találkoznak, hogy olyan elektronikai eszközökkel kísérletezzenek, mint például az Arduino vagy a LEDstrips…",
-        "es": "Un espacio maker es un lugar donde entusiastas del DIY se reúnen para experimentar con electrónica, como arduino, …",
-        "nl": "Een makerspace is een ruimte waar makers en creatievelingen samenkomen om met electronica te experimenteren en te bouwen, bv. met Arduino, LED-strips, 3D-printers, lasercutters, …",
-        "ca": "Un espai maker és un lloc on entusiastes del DIY es reuneixen per a experimentar amb electrònica com arudino, tires LED, …",
-        "cs": "Makerspace je místo, kde se scházejí kutilové, aby experimentovali s elektronikou, jako je arduino, LED pásky,…"
-      }
-    }
-  ],
-  "source": {
-    "osmTags": {
-      "and": [
-        "leisure=hackerspace"
-      ]
-    }
-  },
-  "mapRendering": [
-    {
-      "icon": {
-        "render": "./assets/themes/hackerspaces/glider.svg",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "hackerspace=makerspace"
-              ]
-            },
-            "then": "./assets/themes/hackerspaces/led.png"
-          }
-        ]
-      },
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#00f",
-      "width": "8"
-    }
-  ],
-  "allowMove": true,
-  "deletion": true
+  "deletion": true,
+  "allowMove": true
 }

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/layers/cafe_pub/pub.svg' height="100px"> 
+
 
 A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions
 
@@ -81,7 +81,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -378,7 +378,7 @@ The question is  *Is there a fee for internet access?*
   - *Internet access is free at this place, for customers only*  corresponds with  `internet_access:fee=customers`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no&internet_access~.+`
+This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no &internet_access~.+`
 
 
 
@@ -467,7 +467,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 
@@ -510,7 +510,7 @@ accepts_cards.0 | Accepts payment cards | payment:cards=yes
 
 id | question | osmTags
 ---- | ---------- | ---------
-has_internet.0 | Offers internet | internet_access=wlan\|internet_access=yes\|internet_access=wired
+has_internet.0 | Offers internet | internet_access=wlan \|internet_access=yes \|internet_access=wired
 
 
 

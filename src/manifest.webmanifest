@@ -3,6 +3,7 @@
   "short_name": "MapComplete",
   "start_url": "index.html",
   "lang": "en",
+  "theme_color": "#fff",
   "display": "standalone",
   "background_color": "#fff",
   "description": "A thematic map viewer and editor based on OpenStreetMap",

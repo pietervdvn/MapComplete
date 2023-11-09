@@ -14,7 +14,20 @@
     "ca": "Mapa d'hidrants",
     "cs": "Mapa hydrantů"
   },
-  "minzoom": 14,
+  "description": {
+    "en": "Map layer to show fire hydrants.",
+    "ja": "消火栓を表示するマップレイヤ。",
+    "zh_Hant": "顯示消防栓的地圖圖層。",
+    "nb_NO": "Kartlag for å vise brannhydranter.",
+    "ru": "Слой карты, отображающий пожарные гидранты.",
+    "fr": "Couche des bornes incendie.",
+    "de": "Kartenebene zur Anzeige von Hydranten.",
+    "it": "Livello della mappa che mostra gli idranti antincendio.",
+    "nl": "Kaartlaag met brandkranen.",
+    "es": "Un mapa que muestra bocas de incendios.",
+    "ca": "Una capa que mostra hidrants.",
+    "cs": "Mapová vrstva zobrazující požární hydranty."
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -22,6 +35,7 @@
       ]
     }
   },
+  "minzoom": 14,
   "title": {
     "render": {
       "en": "Hydrant",
@@ -38,20 +52,59 @@
       "cs": "Hydrant"
     }
   },
-  "description": {
-    "en": "Map layer to show fire hydrants.",
-    "ja": "消火栓を表示するマップレイヤ。",
-    "zh_Hant": "顯示消防栓的地圖圖層。",
-    "nb_NO": "Kartlag for å vise brannhydranter.",
-    "ru": "Слой карты, отображающий пожарные гидранты.",
-    "fr": "Couche des bornes incendie.",
-    "de": "Kartenebene zur Anzeige von Hydranten.",
-    "it": "Livello della mappa che mostra gli idranti antincendio.",
-    "nl": "Kaartlaag met brandkranen.",
-    "es": "Un mapa que muestra bocas de incendios.",
-    "ca": "Una capa que mostra hidrants.",
-    "cs": "Mapová vrstva zobrazující požární hydranty."
-  },
+  "pointRendering": [
+    {
+      "iconSize": "20,20",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/themes/hailhydrant/hydrant.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f",
+      "width": "8"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "emergency=fire_hydrant"
+      ],
+      "title": {
+        "en": "a fire hydrant",
+        "ru": "Пожарный гидрант",
+        "ja": "消火栓",
+        "nb_NO": "en brannhydrant",
+        "fr": "une borne incendie",
+        "de": "einen Hydranten",
+        "it": "una idrante antincendio",
+        "nl": "een brandkraan",
+        "es": "una boca de incendios",
+        "ca": "un hidrant",
+        "cs": "požární hydrant"
+      },
+      "description": {
+        "en": "A hydrant is a connection point where firefighters can tap water. It might be located underground.",
+        "ja": "消火栓は消防士が水を汲み上げることができる接続点です。地下にあるかもしれません。",
+        "fr": "Une borne incendie est un point où les pompiers peuvent s’alimenter en eau. Elle peut être enterrée.",
+        "de": "Ein Hydrant ist ein Anschlusspunkt, an dem die Feuerwehr Wasser zapfen kann. Er kann sich unterirdisch befinden.",
+        "it": "Un idrante è un punto di collegamento dove i pompieri possono estrarre acqua. Potrebbe trovarsi sottoterra.",
+        "nl": "Een brandkraan is een kraan waar brandweerlieden een brandslang kunnen aansluiten. Soms zit deze ondergronds.",
+        "es": "Una boca de incendios es un punto de conexión en el que los bomberos pueden conseguir agua. Puede situarse bajo tierra.",
+        "ca": "Un hidrant és un punt de connexió on els bombers poden aconseguir aigua. Pot estar baix terra.",
+        "ru": "Гидрант – приспособление, с помощью которого пожарные могут подключаться к водопроводу. Гидранты могут быть под землёй.",
+        "cs": "Hydrant je přípojné místo, odkud mohou hasiči čerpat vodu. Může být umístěn pod zemí."
+      }
+    }
+  ],
   "tagRenderings": [
     {
       "id": "hydrant-color",
@@ -493,53 +546,6 @@
       }
     },
     "images"
-  ],
-  "presets": [
-    {
-      "tags": [
-        "emergency=fire_hydrant"
-      ],
-      "title": {
-        "en": "a fire hydrant",
-        "ru": "Пожарный гидрант",
-        "ja": "消火栓",
-        "nb_NO": "en brannhydrant",
-        "fr": "une borne incendie",
-        "de": "einen Hydranten",
-        "it": "una idrante antincendio",
-        "nl": "een brandkraan",
-        "es": "una boca de incendios",
-        "ca": "un hidrant",
-        "cs": "požární hydrant"
-      },
-      "description": {
-        "en": "A hydrant is a connection point where firefighters can tap water. It might be located underground.",
-        "ja": "消火栓は消防士が水を汲み上げることができる接続点です。地下にあるかもしれません。",
-        "fr": "Une borne incendie est un point où les pompiers peuvent s’alimenter en eau. Elle peut être enterrée.",
-        "de": "Ein Hydrant ist ein Anschlusspunkt, an dem die Feuerwehr Wasser zapfen kann. Er kann sich unterirdisch befinden.",
-        "it": "Un idrante è un punto di collegamento dove i pompieri possono estrarre acqua. Potrebbe trovarsi sottoterra.",
-        "nl": "Een brandkraan is een kraan waar brandweerlieden een brandslang kunnen aansluiten. Soms zit deze ondergronds.",
-        "es": "Una boca de incendios es un punto de conexión en el que los bomberos pueden conseguir agua. Puede situarse bajo tierra.",
-        "ca": "Un hidrant és un punt de connexió on els bombers poden aconseguir aigua. Pot estar baix terra.",
-        "ru": "Гидрант – приспособление, с помощью которого пожарные могут подключаться к водопроводу. Гидранты могут быть под землёй.",
-        "cs": "Hydrant je přípojné místo, odkud mohou hasiči čerpat vodu. Může být umístěn pod zemí."
-      }
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": "./assets/themes/hailhydrant/hydrant.svg",
-      "iconSize": "20,20",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#00f",
-      "width": "8"
-    }
   ],
   "units": [
     {

@@ -13,7 +13,17 @@
     "pl": "Mapy",
     "cs": "Mapy"
   },
-  "minzoom": 12,
+  "description": {
+    "en": "A map, meant for tourists which is permanently installed in the public space",
+    "nl": "Een permantent geinstalleerde kaart",
+    "it": "Una mappa, destinata ai turisti e che è sistemata in maniera permanente in uno spazio pubblico",
+    "fr": "Une carte, destinée aux touristes, installée en permanence dans l'espace public",
+    "de": "Eine Karte, die für Touristen gedacht ist und dauerhaft im öffentlichen Raum aufgestellt ist",
+    "es": "Un mapa, pensado para turistas y que está instalado de manera permanente en un espacio público",
+    "pl": "Mapa, przeznaczona dla turystów, która jest zainstalowana w przestrzeni publicznej na stałe",
+    "ca": "Un mapa",
+    "cs": "Mapa určená pro turisty, která je trvale instalována na veřejném prostranství"
+  },
   "source": {
     "osmTags": {
       "or": [
@@ -22,6 +32,7 @@
       ]
     }
   },
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Map",
@@ -37,17 +48,89 @@
       "cs": "Mapa"
     }
   },
-  "description": {
-    "en": "A map, meant for tourists which is permanently installed in the public space",
-    "nl": "Een permantent geinstalleerde kaart",
-    "it": "Una mappa, destinata ai turisti e che è sistemata in maniera permanente in uno spazio pubblico",
-    "fr": "Une carte, destinée aux touristes, installée en permanence dans l'espace public",
-    "de": "Eine Karte, die für Touristen gedacht ist und dauerhaft im öffentlichen Raum aufgestellt ist",
-    "es": "Un mapa, pensado para turistas y que está instalado de manera permanente en un espacio público",
-    "pl": "Mapa, przeznaczona dla turystów, która jest zainstalowana w przestrzeni publicznej na stałe",
-    "ca": "Un mapa",
-    "cs": "Mapa určená pro turisty, která je trvale instalována na veřejném prostranství"
-  },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/map/map.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "map_source=OpenStreetMap",
+                    "map_source:attribution=sticker"
+                  ]
+                },
+                "then": "./assets/layers/map/map-stickered.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "map_source=OpenStreetMap",
+                    "map_source:attribution=yes"
+                  ]
+                },
+                "then": "./assets/layers/map/osm-logo-white-bg.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "map_source=OpenStreetMap"
+                  ]
+                },
+                "then": "./assets/layers/map/osm-logo-buggy-attr.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": "50,50",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f",
+      "width": "8"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "tourism=information",
+        "information=map"
+      ],
+      "title": {
+        "en": "a map",
+        "nl": "een kaart",
+        "it": "una mappa",
+        "ru": "Карта",
+        "fr": "une carte",
+        "de": "eine Karte",
+        "ca": "un mapa",
+        "es": "un mapa",
+        "pl": "mapa",
+        "cs": "mapa"
+      },
+      "description": {
+        "en": "Add a missing map",
+        "nl": "Voeg een ontbrekende kaart toe",
+        "it": "Aggiungi una mappa mancante",
+        "fr": "Ajouter une carte manquante",
+        "de": "Fehlende Karte hinzufügen",
+        "ru": "Добавить отсутствующую карту",
+        "es": "Añadir un mapa que falta",
+        "ca": "Afegeix un mapa que falta",
+        "pl": "Dodaj brakującą mapę",
+        "cs": "Přidat chybějící mapu"
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -328,38 +411,6 @@
       }
     }
   ],
-  "presets": [
-    {
-      "tags": [
-        "tourism=information",
-        "information=map"
-      ],
-      "title": {
-        "en": "a map",
-        "nl": "een kaart",
-        "it": "una mappa",
-        "ru": "Карта",
-        "fr": "une carte",
-        "de": "eine Karte",
-        "ca": "un mapa",
-        "es": "un mapa",
-        "pl": "mapa",
-        "cs": "mapa"
-      },
-      "description": {
-        "en": "Add a missing map",
-        "nl": "Voeg een ontbrekende kaart toe",
-        "it": "Aggiungi una mappa mancante",
-        "fr": "Ajouter une carte manquante",
-        "de": "Fehlende Karte hinzufügen",
-        "ru": "Добавить отсутствующую карту",
-        "es": "Añadir un mapa que falta",
-        "ca": "Afegeix un mapa que falta",
-        "pl": "Dodaj brakującą mapę",
-        "cs": "Přidat chybějící mapu"
-      }
-    }
-  ],
   "deletion": {
     "softDeletionTags": {
       "and": [
@@ -372,50 +423,5 @@
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuraccy": true
-  },
-  "mapRendering": [
-    {
-      "icon": {
-        "render": "./assets/layers/map/map.svg",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "map_source=OpenStreetMap",
-                "map_source:attribution=sticker"
-              ]
-            },
-            "then": "./assets/layers/map/map-stickered.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "map_source=OpenStreetMap",
-                "map_source:attribution=yes"
-              ]
-            },
-            "then": "./assets/layers/map/osm-logo-white-bg.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "map_source=OpenStreetMap"
-              ]
-            },
-            "then": "./assets/layers/map/osm-logo-buggy-attr.svg"
-          }
-        ]
-      },
-      "iconSize": "50,50",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#00f",
-      "width": "8"
-    }
-  ]
+  }
 }

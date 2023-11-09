@@ -31,6 +31,9 @@
   "startZoom": 20,
   "startLat": 53.21333,
   "startLon": 6.56963,
+  "credits": [
+    "Robin van der Linde"
+  ],
   "layers": [
     "transit_stops",
     "transit_routes",
@@ -63,6 +66,5 @@
         "shelter-type"
       ]
     }
-  ],
-  "credits": "Robin van der Linde"
+  ]
 }

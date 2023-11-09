@@ -10,10 +10,6 @@
     "pl": "Winda",
     "cs": "Výtah"
   },
-  "source": {
-    "osmTags": "highway=elevator"
-  },
-  "minzoom": 13,
   "description": {
     "en": "This layer show elevators and asks for operational status and elevator dimensions. Useful for wheelchair accessibility information",
     "fr": "Ce calque montre les ascenseurs et demande l'état opérationnel et les dimensions de l'ascenseur. Utile pour les informations sur l'accessibilité en fauteuil roulant",
@@ -22,6 +18,10 @@
     "ca": "Aquesta capa mostra ascensors i demana l'estat operatiu i les dimensions de l'ascensor. Útil per obtenir informació sobre l'accessibilitat en cadira de rodes",
     "cs": "Tato vrstva zobrazuje výtahy a ptá se na provozní stav a rozměry výtahu. Užitečné pro informace o bezbariérovém přístupu"
   },
+  "source": {
+    "osmTags": "highway=elevator"
+  },
+  "minzoom": 13,
   "title": {
     "render": {
       "en": "Elevator",
@@ -34,6 +34,53 @@
       "cs": "Výtah"
     }
   },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": {
+            "or": [
+              "operational_status=broken",
+              "operational_status=closed"
+            ]
+          },
+          "then": "close:#c33"
+        }
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/elevator/elevator_wheelchair.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "an elevator",
+        "nl": "een lift",
+        "fr": "un ascenseur",
+        "de": "einen Aufzug",
+        "ca": "un ascensor",
+        "pl": "winda",
+        "cs": "výtah"
+      },
+      "tags": [
+        "highway=elevator"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     "multilevels",
@@ -298,44 +345,6 @@
           }
         }
       }
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/layers/elevator/elevator_wheelchair.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "iconBadges": [
-        {
-          "if": {
-            "or": [
-              "operational_status=broken",
-              "operational_status=closed"
-            ]
-          },
-          "then": "close:#c33"
-        }
-      ],
-      "anchor": "center"
-    }
-  ],
-  "presets": [
-    {
-      "title": {
-        "en": "an elevator",
-        "nl": "een lift",
-        "fr": "un ascenseur",
-        "de": "einen Aufzug",
-        "ca": "un ascensor",
-        "pl": "winda",
-        "cs": "výtah"
-      },
-      "tags": [
-        "highway=elevator"
-      ]
     }
   ],
   "units": [

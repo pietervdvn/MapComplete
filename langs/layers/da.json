@@ -2077,7 +2077,7 @@
         "name": "Dit tilbagelagte spor"
     },
     "last_click": {
-        "mapRendering": {
+        "pointRendering": {
             "0": {
                 "label": {
                     "render": "Klik her for at tilføje et nyt punkt"
@@ -2701,13 +2701,6 @@
     },
     "transit_routes": {
         "description": "Lag, der viser buslinjer",
-        "mapRendering": {
-            "0": {
-                "color": {
-                    "render": "#ff0000"
-                }
-            }
-        },
         "name": "Buslinjer",
         "tagRenderings": {
             "colour": {
@@ -3112,17 +3105,6 @@
                 "options": {
                     "0": {
                         "question": "Affaldskurv med dispenser til poser til (hunde)ekskrementer"
-                    }
-                }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Affaldskurv"
-                        }
                     }
                 }
             }

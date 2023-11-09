@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/pin:#f04c4c;./assets/layers/bike_shop/repair_shop.svg' height="100px"> 
+
 
 A shop specifically selling bicycles or related items
 
@@ -90,7 +90,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -119,7 +119,7 @@ This tagrendering has no question and is thus read-only
   - *This business focuses on rental*  corresponds with  `shop=rental`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `shop~.+&shop!~^(bicycle)$&shop!~^(sports)$`
+This tagrendering is only visible in the popup if the following condition is met: `shop~.+ &shop!~^(bicycle)$ &shop!~^(sports)$`
 
 
 
@@ -323,7 +323,7 @@ This is rendered with  `{capacity:city_bike} city bikes can be rented here`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*city_bike.*)$&service:bicycle:rental=yes`
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*city_bike.*)$ &service:bicycle:rental=yes`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -341,7 +341,7 @@ This is rendered with  `{capacity:ebike} electrical bikes can be rented here`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*ebike.*)$&service:bicycle:rental=yes`
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*ebike.*)$ &service:bicycle:rental=yes`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -359,7 +359,7 @@ This is rendered with  `{capacity:kid_bike} bikes for children can be rented her
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*kid_bike.*)$&service:bicycle:rental=yes`
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*kid_bike.*)$ &service:bicycle:rental=yes`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -377,7 +377,7 @@ This is rendered with  `{capacity:bmx} BMX bikes can be rented here`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*bmx.*)$&service:bicycle:rental=yes`
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*bmx.*)$ &service:bicycle:rental=yes`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -395,7 +395,7 @@ This is rendered with  `{capacity:mtb} mountainbikes can be rented here`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*mtb.*)$&service:bicycle:rental=yes`
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*mtb.*)$ &service:bicycle:rental=yes`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -413,7 +413,7 @@ This is rendered with  `{capacity:bicycle_pannier} bicycle panniers can be rente
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*bicycle_pannier.*)$&service:bicycle:rental=yes`
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*bicycle_pannier.*)$ &service:bicycle:rental=yes`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -431,7 +431,7 @@ This is rendered with  `{capacity:tandem_bicycle} tandem can be rented here`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*tandem_bicycle.*)$&service:bicycle:rental=yes`
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*tandem_bicycle.*)$ &service:bicycle:rental=yes`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -592,7 +592,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 
@@ -621,14 +621,14 @@ open_now.0 | Open now | _isOpen=yes
 
 id | question | osmTags
 ---- | ---------- | ---------
-sells_second-hand.0 | Sells second-hand bicycles | service:bicycle:second_hand=yes\|service:bicycle:second_hand=only
+sells_second-hand.0 | Sells second-hand bicycles | service:bicycle:second_hand=yes \|service:bicycle:second_hand=only
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-offers_diy_repair.0 | Offers DIY bike repair | service:bicycle:diy=yes\|service:bicycle:diy=only
+offers_diy_repair.0 | Offers DIY bike repair | service:bicycle:diy=yes \|service:bicycle:diy=only
  
 
 This document is autogenerated from [assets/layers/bike_shop/bike_shop.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_shop/bike_shop.json)

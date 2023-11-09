@@ -1,8 +1,18 @@
 {
   "id": "gps_track",
+  "name": {
+    "en": "Your travelled track",
+    "nl": "Jouw afgelegde route",
+    "de": "Zurückgelegte Strecke",
+    "fr": "Votre chemin parcouru",
+    "da": "Dit tilbagelagte spor",
+    "ca": "La teva traça recorreguda",
+    "cs": "Vaše procestovaná trasa"
+  },
   "description": "Meta layer showing the previous locations of the user as single line with controls, e.g. to erase, upload or download this track. Add this to your theme and override the maprendering to change the appearance of the travelled track.",
-  "minzoom": 0,
   "source": "special",
+  "minzoom": 0,
+  "shownByDefault": false,
   "title": {
     "render": {
       "en": "Your travelled path",
@@ -13,7 +23,13 @@
       "cs": "Ujetá cesta"
     }
   },
-  "shownByDefault": false,
+  "pointRendering": [],
+  "lineRendering": [
+    {
+      "width": 3,
+      "color": "#bb000077"
+    }
+  ],
   "tagRenderings": [
     {
       "id": "Privacy notice",
@@ -36,21 +52,6 @@
     {
       "id": "delete",
       "render": "{clear_location_history()}"
-    }
-  ],
-  "name": {
-    "en": "Your travelled track",
-    "nl": "Jouw afgelegde route",
-    "de": "Zurückgelegte Strecke",
-    "fr": "Votre chemin parcouru",
-    "da": "Dit tilbagelagte spor",
-    "ca": "La teva traça recorreguda",
-    "cs": "Vaše procestovaná trasa"
-  },
-  "mapRendering": [
-    {
-      "width": 3,
-      "color": "#bb000077"
     }
   ],
   "syncSelection": "global"

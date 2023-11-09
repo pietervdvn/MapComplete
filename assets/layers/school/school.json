@@ -9,6 +9,19 @@
     "cs": "Základní a střední školy"
   },
   "description": "Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles",
+  "source": {
+    "osmTags": "amenity=school"
+  },
+  "calculatedTags": [
+    "_enclosing=enclosingFeatures(feat)('school').map(f => f.feat.properties.id)",
+    "_is_enclosed=feat.properties._enclosing != '[]'"
+  ],
+  "isShown": {
+    "or": [
+      "building=",
+      "_is_enclosed!=true"
+    ]
+  },
   "minzoom": 12,
   "title": {
     "render": {
@@ -21,16 +34,55 @@
       "cs": "Škola <i>{name}</i>"
     }
   },
-  "calculatedTags": [
-    "_enclosing=enclosingFeatures(feat)('school').map(f => f.feat.properties.id)",
-    "_is_enclosed=feat.properties._enclosing != '[]'"
+  "pointRendering": [
+    {
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
+          }
+        ]
+      },
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/school/school.svg"
+        }
+      ]
+    }
   ],
-  "isShown": {
-    "or": [
-      "building=",
-      "_is_enclosed!=true"
-    ]
-  },
+  "lineRendering": [
+    {
+      "color": "#fcd862",
+      "width": 1
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=school",
+        "fixme=Added with MapComplete, the precise geometry should still be drawn"
+      ],
+      "title": {
+        "en": "a primary or secondary school",
+        "nl": "een lagere of middelbare school",
+        "de": "eine Grundschule oder weiterführende Schule",
+        "fr": "une école primaire ou secondaire",
+        "ca": "una escola de primària o secundària",
+        "cs": "základní nebo střední škola"
+      }
+    }
+  ],
   "tagRenderings": [
     {
       "render": {
@@ -408,48 +460,6 @@
           }
         }
       }
-    }
-  ],
-  "presets": [
-    {
-      "tags": [
-        "amenity=school",
-        "fixme=Added with MapComplete, the precise geometry should still be drawn"
-      ],
-      "title": {
-        "en": "a primary or secondary school",
-        "nl": "een lagere of middelbare school",
-        "de": "eine Grundschule oder weiterführende Schule",
-        "fr": "une école primaire ou secondaire",
-        "ca": "una escola de primària o secundària",
-        "cs": "základní nebo střední škola"
-      }
-    }
-  ],
-  "source": {
-    "osmTags": "amenity=school"
-  },
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/layers/school/school.svg",
-      "label": {
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
-          }
-        ]
-      },
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#fcd862",
-      "width": 1
     }
   ]
 }

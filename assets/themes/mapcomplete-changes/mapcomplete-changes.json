@@ -10,6 +10,16 @@
     "es": "Cambios realizados con MapComplete",
     "pl": "Zmiany wprowadzone za pomocą MapComplete"
   },
+  "description": {
+    "en": "This maps shows all the changes made with MapComplete",
+    "ca": "Aquest mapa mostra tots els canvis fets amb MapComplete",
+    "de": "Diese Karte zeigt alle mit MapComplete vorgenommenen Änderungen",
+    "fr": "Cette carte montre tous les changements faits avec MapComplete",
+    "nl": "Deze kaart toont alle wijzigingen die met MapComplete gemaakt werden",
+    "pl": "Ta mapa pokazuje wszystkie zmiany wprowadzone za pomocą MapComplete",
+    "cs": "Tato mapa zobrazuje všechny změny provedené pomocí MapComplete",
+    "es": "Este mapa muestra todos los cambios realizados con MapComplete"
+  },
   "shortDescription": {
     "en": "Show changes made with MapComplete",
     "ca": "Mostra els canvis fets amb MapComplete",
@@ -19,23 +29,8 @@
     "es": "Mostrar cambios realizados con MapComplete",
     "pl": "Pokaż zmiany wprowadzone za pomocą MapComplete"
   },
-  "description": {
-    "en": "This maps shows all the changes made with MapComplete",
-    "ca": "Aquest mapa mostra tots els canvis fets amb MapComplete",
-    "de": "Diese Karte zeigt alle mit MapComplete vorgenommenen Änderungen",
-    "pl": "Ta mapa pokazuje wszystkie zmiany wprowadzone za pomocą MapComplete",
-    "fr": "Cette carte montre tous les changements faits avec MapComplete",
-    "nl": "Deze kaart toont alle wijzigingen die met MapComplete gemaakt werden",
-    "cs": "Tato mapa zobrazuje všechny změny provedené pomocí MapComplete",
-    "es": "Este mapa muestra todos los cambios realizados con MapComplete"
-  },
   "icon": "./assets/svg/logo.svg",
   "hideFromOverview": true,
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 0.05,
-  "clustering": false,
   "layers": [
     {
       "id": "mapcomplete-changes",
@@ -225,327 +220,327 @@
           }
         }
       ],
-      "mapRendering": [
+      "pointRendering": [
         {
           "location": [
             "point",
             "centroid"
           ],
-          "icon": {
-            "render": "teardrop:#00cc00",
-            "mappings": [
-              {
-                "if": "theme=advertising",
-                "then": "./assets/themes/advertising/icon.svg"
-              },
-              {
-                "if": "theme=aed",
-                "then": "./assets/themes/aed/aed.svg"
-              },
-              {
-                "if": "theme=artwork",
-                "then": "./assets/themes/artwork/artwork.svg"
-              },
-              {
-                "if": "theme=atm",
-                "then": "./assets/themes/atm/logo.svg"
-              },
-              {
-                "if": "theme=bag",
-                "then": "./assets/themes/bag/logo.svg"
-              },
-              {
-                "if": "theme=benches",
-                "then": "./assets/themes/benches/bench_poi.svg"
-              },
-              {
-                "if": "theme=bicycle_rental",
-                "then": "./assets/themes/bicycle_rental/logo.svg"
-              },
-              {
-                "if": "theme=bicyclelib",
-                "then": "./assets/themes/bicyclelib/logo.svg"
-              },
-              {
-                "if": "theme=binoculars",
-                "then": "./assets/layers/binocular/telescope.svg"
-              },
-              {
-                "if": "theme=blind_osm",
-                "then": "./assets/themes/blind_osm/Blindicon.svg"
-              },
-              {
-                "if": "theme=bookcases",
-                "then": "./assets/themes/bookcases/bookcase.svg"
-              },
-              {
-                "if": "theme=buurtnatuur",
-                "then": "./assets/themes/buurtnatuur/logo.svg"
-              },
-              {
-                "if": "theme=cafes_and_pubs",
-                "then": "./assets/layers/cafe_pub/pub.svg"
-              },
-              {
-                "if": "theme=campersite",
-                "then": "./assets/themes/campersite/caravan.svg"
-              },
-              {
-                "if": "theme=charging_stations",
-                "then": "./assets/themes/charging_stations/logo.svg"
-              },
-              {
-                "if": "theme=climbing",
-                "then": "./assets/themes/climbing/climbing_icon.svg"
-              },
-              {
-                "if": "theme=clock",
-                "then": "./assets/layers/clock/clock.svg"
-              },
-              {
-                "if": "theme=cycle_highways",
-                "then": "./assets/themes/cycle_highways/fietssnelwegen-logo.svg"
-              },
-              {
-                "if": "theme=cycle_infra",
-                "then": "./assets/themes/cycle_infra/cycle-infra.svg"
-              },
-              {
-                "if": "theme=cyclenodes",
-                "then": "./assets/themes/cyclenodes/logo.svg"
-              },
-              {
-                "if": "theme=cyclestreets",
-                "then": "./assets/themes/cyclestreets/logo.svg"
-              },
-              {
-                "if": "theme=cyclofix",
-                "then": "./assets/themes/cyclofix/logo.svg"
-              },
-              {
-                "if": "theme=drinking_water",
-                "then": "./assets/themes/drinking_water/logo.svg"
-              },
-              {
-                "if": "theme=education",
-                "then": "./assets/layers/school/college.svg"
-              },
-              {
-                "if": "theme=elongated_coin",
-                "then": "./assets/themes/elongated_coin/penny.svg"
-              },
-              {
-                "if": "theme=etymology",
-                "then": "./assets/layers/etymology/logo.svg"
-              },
-              {
-                "if": "theme=facadegardens",
-                "then": "./assets/themes/facadegardens/geveltuin.svg"
-              },
-              {
-                "if": "theme=food",
-                "then": "./assets/layers/food/restaurant.svg"
-              },
-              {
-                "if": "theme=fritures",
-                "then": "./assets/themes/fritures/logo.svg"
-              },
-              {
-                "if": "theme=fruit_trees",
-                "then": "./assets/themes/fruit_trees/fruit_tree.svg"
-              },
-              {
-                "if": "theme=ghostbikes",
-                "then": "./assets/themes/ghostbikes/logo.svg"
-              },
-              {
-                "if": "theme=grb",
-                "then": "./assets/themes/grb/logo.svg"
-              },
-              {
-                "if": "theme=grb_fixme",
-                "then": "./assets/svg/bug.svg"
-              },
-              {
-                "if": "theme=hackerspaces",
-                "then": "./assets/themes/hackerspaces/glider.svg"
-              },
-              {
-                "if": "theme=hailhydrant",
-                "then": "./assets/themes/hailhydrant/logo.svg"
-              },
-              {
-                "if": "theme=healthcare",
-                "then": "./assets/layers/doctors/doctors.svg"
-              },
-              {
-                "if": "theme=hotels",
-                "then": "./assets/layers/hotel/hotel.svg"
-              },
-              {
-                "if": "theme=indoors",
-                "then": "./assets/layers/entrance/entrance.svg"
-              },
-              {
-                "if": "theme=kerbs_and_crossings",
-                "then": "./assets/layers/kerbs/KerbIcon.svg"
-              },
-              {
-                "if": "theme=mapcomplete-changes",
-                "then": "./assets/svg/logo.svg"
-              },
-              {
-                "if": "theme=maproulette",
-                "then": "./assets/layers/maproulette/logomark.svg"
-              },
-              {
-                "if": "theme=maps",
-                "then": "./assets/themes/maps/logo.svg"
-              },
-              {
-                "if": "theme=maxspeed",
-                "then": "./assets/themes/maxspeed/maxspeed_logo.svg"
-              },
-              {
-                "if": "theme=nature",
-                "then": "./assets/themes/nature/logo.svg"
-              },
-              {
-                "if": "theme=notes",
-                "then": "./assets/themes/notes/logo.svg"
-              },
-              {
-                "if": "theme=observation_towers",
-                "then": "./assets/layers/observation_tower/Tower_observation.svg"
-              },
-              {
-                "if": "theme=onwheels",
-                "then": "./assets/themes/onwheels/crest.svg"
-              },
-              {
-                "if": "theme=openwindpowermap",
-                "then": "./assets/themes/openwindpowermap/logo.svg"
-              },
-              {
-                "if": "theme=osm_community_index",
-                "then": "./assets/themes/osm_community_index/osm.svg"
-              },
-              {
-                "if": "theme=parkings",
-                "then": "./assets/themes/parkings/parkings.svg"
-              },
-              {
-                "if": "theme=personal",
-                "then": "./assets/svg/addSmall.svg"
-              },
-              {
-                "if": "theme=pets",
-                "then": "./assets/layers/dogpark/dog-park.svg"
-              },
-              {
-                "if": "theme=play_forests",
-                "then": "./assets/layers/play_forest/icon.svg"
-              },
-              {
-                "if": "theme=playgrounds",
-                "then": "./assets/themes/playgrounds/playground.svg"
-              },
-              {
-                "if": "theme=postal_codes",
-                "then": "./assets/themes/postal_codes/townhall.svg"
-              },
-              {
-                "if": "theme=postboxes",
-                "then": "./assets/layers/postboxes/postbox.svg"
-              },
-              {
-                "if": "theme=rainbow_crossings",
-                "then": "./assets/themes/rainbow_crossings/logo.svg"
-              },
-              {
-                "if": "theme=shops",
-                "then": "./assets/themes/shops/shop.svg"
-              },
-              {
-                "if": "theme=sidewalks",
-                "then": "./assets/svg/bug.svg"
-              },
-              {
-                "if": "theme=speelplekken",
-                "then": "./assets/themes/speelplekken/logo.svg"
-              },
-              {
-                "if": "theme=sport_pitches",
-                "then": "./assets/layers/sport_pitch/table_tennis.svg"
-              },
-              {
-                "if": "theme=sports",
-                "then": "./assets/themes/sports/sport.svg"
-              },
-              {
-                "if": "theme=stations",
-                "then": "./assets/themes/stations/rail-light.svg"
-              },
-              {
-                "if": "theme=street_lighting",
-                "then": "./assets/layers/street_lamps/street_lamp.svg"
-              },
-              {
-                "if": "theme=street_lighting_assen",
-                "then": "./assets/layers/street_lamps/street_lamp.svg"
-              },
-              {
-                "if": "theme=surveillance",
-                "then": "./assets/themes/surveillance/logo.svg"
-              },
-              {
-                "if": "theme=toerisme_vlaanderen",
-                "then": "./assets/themes/toerisme_vlaanderen/logo.svg"
-              },
-              {
-                "if": "theme=toilets",
-                "then": "./assets/themes/toilets/toilets.svg"
-              },
-              {
-                "if": "theme=transit",
-                "then": "./assets/layers/transit_stops/bus_stop.svg"
-              },
-              {
-                "if": "theme=trees",
-                "then": "./assets/themes/trees/logo.svg"
-              },
-              {
-                "if": "theme=uk_addresses",
-                "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
-              },
-              {
-                "if": "theme=vending_machine",
-                "then": "./assets/layers/vending_machine/vending_machine.svg"
-              },
-              {
-                "if": "theme=walls_and_buildings",
-                "then": "./assets/layers/walls_and_buildings/walls_and_buildings.png"
-              },
-              {
-                "if": "theme=waste",
-                "then": "./assets/layers/recycling/recycling-14.svg"
-              },
-              {
-                "if": "theme=waste_assen",
-                "then": "./assets/layers/recycling/recycling-14.svg"
-              },
-              {
-                "if": "theme=waste_basket",
-                "then": "./assets/themes/waste_basket/waste_basket.svg"
-              },
-              {
-                "if": "theme=width",
-                "then": "./assets/themes/width/icon.svg"
-              }
-            ]
-          },
           "iconSize": "30,30",
-          "anchor": "center"
+          "anchor": "center",
+          "marker": [
+            {
+              "icon": {
+                "render": "teardrop:#00cc00",
+                "mappings": [
+                  {
+                    "if": "theme=advertising",
+                    "then": "./assets/themes/advertising/icon.svg"
+                  },
+                  {
+                    "if": "theme=aed",
+                    "then": "./assets/themes/aed/aed.svg"
+                  },
+                  {
+                    "if": "theme=artwork",
+                    "then": "./assets/themes/artwork/artwork.svg"
+                  },
+                  {
+                    "if": "theme=atm",
+                    "then": "./assets/themes/atm/logo.svg"
+                  },
+                  {
+                    "if": "theme=bag",
+                    "then": "./assets/themes/bag/logo.svg"
+                  },
+                  {
+                    "if": "theme=benches",
+                    "then": "./assets/themes/benches/bench_poi.svg"
+                  },
+                  {
+                    "if": "theme=bicycle_rental",
+                    "then": "./assets/themes/bicycle_rental/logo.svg"
+                  },
+                  {
+                    "if": "theme=bicyclelib",
+                    "then": "./assets/themes/bicyclelib/logo.svg"
+                  },
+                  {
+                    "if": "theme=binoculars",
+                    "then": "./assets/layers/binocular/telescope.svg"
+                  },
+                  {
+                    "if": "theme=blind_osm",
+                    "then": "./assets/themes/blind_osm/Blindicon.svg"
+                  },
+                  {
+                    "if": "theme=bookcases",
+                    "then": "./assets/themes/bookcases/bookcase.svg"
+                  },
+                  {
+                    "if": "theme=buurtnatuur",
+                    "then": "./assets/themes/buurtnatuur/logo.svg"
+                  },
+                  {
+                    "if": "theme=cafes_and_pubs",
+                    "then": "./assets/layers/cafe_pub/pub.svg"
+                  },
+                  {
+                    "if": "theme=campersite",
+                    "then": "./assets/themes/campersite/caravan.svg"
+                  },
+                  {
+                    "if": "theme=charging_stations",
+                    "then": "./assets/themes/charging_stations/logo.svg"
+                  },
+                  {
+                    "if": "theme=climbing",
+                    "then": "./assets/themes/climbing/climbing_icon.svg"
+                  },
+                  {
+                    "if": "theme=clock",
+                    "then": "./assets/layers/clock/clock.svg"
+                  },
+                  {
+                    "if": "theme=cycle_highways",
+                    "then": "./assets/themes/cycle_highways/fietssnelwegen-logo.svg"
+                  },
+                  {
+                    "if": "theme=cycle_infra",
+                    "then": "./assets/themes/cycle_infra/cycle-infra.svg"
+                  },
+                  {
+                    "if": "theme=cyclenodes",
+                    "then": "./assets/themes/cyclenodes/logo.svg"
+                  },
+                  {
+                    "if": "theme=cyclestreets",
+                    "then": "./assets/themes/cyclestreets/logo.svg"
+                  },
+                  {
+                    "if": "theme=cyclofix",
+                    "then": "./assets/themes/cyclofix/logo.svg"
+                  },
+                  {
+                    "if": "theme=drinking_water",
+                    "then": "./assets/themes/drinking_water/logo.svg"
+                  },
+                  {
+                    "if": "theme=education",
+                    "then": "./assets/layers/school/college.svg"
+                  },
+                  {
+                    "if": "theme=elongated_coin",
+                    "then": "./assets/themes/elongated_coin/penny.svg"
+                  },
+                  {
+                    "if": "theme=etymology",
+                    "then": "./assets/layers/etymology/logo.svg"
+                  },
+                  {
+                    "if": "theme=facadegardens",
+                    "then": "./assets/themes/facadegardens/geveltuin.svg"
+                  },
+                  {
+                    "if": "theme=food",
+                    "then": "./assets/layers/food/restaurant.svg"
+                  },
+                  {
+                    "if": "theme=fritures",
+                    "then": "./assets/themes/fritures/logo.svg"
+                  },
+                  {
+                    "if": "theme=fruit_trees",
+                    "then": "./assets/themes/fruit_trees/fruit_tree.svg"
+                  },
+                  {
+                    "if": "theme=ghostbikes",
+                    "then": "./assets/themes/ghostbikes/logo.svg"
+                  },
+                  {
+                    "if": "theme=grb",
+                    "then": "./assets/themes/grb/logo.svg"
+                  },
+                  {
+                    "if": "theme=grb_fixme",
+                    "then": "./assets/svg/bug.svg"
+                  },
+                  {
+                    "if": "theme=hackerspaces",
+                    "then": "./assets/themes/hackerspaces/glider.svg"
+                  },
+                  {
+                    "if": "theme=hailhydrant",
+                    "then": "./assets/themes/hailhydrant/logo.svg"
+                  },
+                  {
+                    "if": "theme=healthcare",
+                    "then": "./assets/layers/doctors/doctors.svg"
+                  },
+                  {
+                    "if": "theme=hotels",
+                    "then": "./assets/layers/hotel/hotel.svg"
+                  },
+                  {
+                    "if": "theme=indoors",
+                    "then": "./assets/layers/entrance/entrance.svg"
+                  },
+                  {
+                    "if": "theme=kerbs_and_crossings",
+                    "then": "./assets/layers/kerbs/KerbIcon.svg"
+                  },
+                  {
+                    "if": "theme=maproulette",
+                    "then": "./assets/layers/maproulette/logomark.svg"
+                  },
+                  {
+                    "if": "theme=maps",
+                    "then": "./assets/themes/maps/logo.svg"
+                  },
+                  {
+                    "if": "theme=maxspeed",
+                    "then": "./assets/themes/maxspeed/maxspeed_logo.svg"
+                  },
+                  {
+                    "if": "theme=nature",
+                    "then": "./assets/themes/nature/logo.svg"
+                  },
+                  {
+                    "if": "theme=notes",
+                    "then": "./assets/themes/notes/logo.svg"
+                  },
+                  {
+                    "if": "theme=observation_towers",
+                    "then": "./assets/layers/observation_tower/Tower_observation.svg"
+                  },
+                  {
+                    "if": "theme=onwheels",
+                    "then": "./assets/themes/onwheels/crest.svg"
+                  },
+                  {
+                    "if": "theme=openwindpowermap",
+                    "then": "./assets/themes/openwindpowermap/logo.svg"
+                  },
+                  {
+                    "if": "theme=osm_community_index",
+                    "then": "./assets/themes/osm_community_index/osm.svg"
+                  },
+                  {
+                    "if": "theme=parkings",
+                    "then": "./assets/themes/parkings/parkings.svg"
+                  },
+                  {
+                    "if": "theme=personal",
+                    "then": "./assets/svg/addSmall.svg"
+                  },
+                  {
+                    "if": "theme=pets",
+                    "then": "./assets/layers/dogpark/dog-park.svg"
+                  },
+                  {
+                    "if": "theme=play_forests",
+                    "then": "./assets/layers/play_forest/icon.svg"
+                  },
+                  {
+                    "if": "theme=playgrounds",
+                    "then": "./assets/themes/playgrounds/playground.svg"
+                  },
+                  {
+                    "if": "theme=postal_codes",
+                    "then": "./assets/themes/postal_codes/townhall.svg"
+                  },
+                  {
+                    "if": "theme=postboxes",
+                    "then": "./assets/layers/postboxes/postbox.svg"
+                  },
+                  {
+                    "if": "theme=rainbow_crossings",
+                    "then": "./assets/themes/rainbow_crossings/logo.svg"
+                  },
+                  {
+                    "if": "theme=shops",
+                    "then": "./assets/themes/shops/shop.svg"
+                  },
+                  {
+                    "if": "theme=sidewalks",
+                    "then": "./assets/svg/bug.svg"
+                  },
+                  {
+                    "if": "theme=speelplekken",
+                    "then": "./assets/themes/speelplekken/logo.svg"
+                  },
+                  {
+                    "if": "theme=sport_pitches",
+                    "then": "./assets/layers/sport_pitch/table_tennis.svg"
+                  },
+                  {
+                    "if": "theme=sports",
+                    "then": "./assets/themes/sports/sport.svg"
+                  },
+                  {
+                    "if": "theme=stations",
+                    "then": "./assets/themes/stations/rail-light.svg"
+                  },
+                  {
+                    "if": "theme=street_lighting",
+                    "then": "./assets/layers/street_lamps/street_lamp.svg"
+                  },
+                  {
+                    "if": "theme=street_lighting_assen",
+                    "then": "./assets/layers/street_lamps/street_lamp.svg"
+                  },
+                  {
+                    "if": "theme=surveillance",
+                    "then": "./assets/themes/surveillance/logo.svg"
+                  },
+                  {
+                    "if": "theme=toerisme_vlaanderen",
+                    "then": "./assets/themes/toerisme_vlaanderen/logo.svg"
+                  },
+                  {
+                    "if": "theme=toilets",
+                    "then": "./assets/themes/toilets/toilets.svg"
+                  },
+                  {
+                    "if": "theme=transit",
+                    "then": "./assets/layers/transit_stops/bus_stop.svg"
+                  },
+                  {
+                    "if": "theme=trees",
+                    "then": "./assets/themes/trees/logo.svg"
+                  },
+                  {
+                    "if": "theme=uk_addresses",
+                    "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+                  },
+                  {
+                    "if": "theme=vending_machine",
+                    "then": "./assets/layers/vending_machine/vending_machine.svg"
+                  },
+                  {
+                    "if": "theme=walls_and_buildings",
+                    "then": "./assets/layers/walls_and_buildings/walls_and_buildings.png"
+                  },
+                  {
+                    "if": "theme=waste",
+                    "then": "./assets/layers/recycling/recycling-14.svg"
+                  },
+                  {
+                    "if": "theme=waste_assen",
+                    "then": "./assets/layers/recycling/recycling-14.svg"
+                  },
+                  {
+                    "if": "theme=waste_basket",
+                    "then": "./assets/themes/waste_basket/waste_basket.svg"
+                  },
+                  {
+                    "if": "theme=width",
+                    "then": "./assets/themes/width/icon.svg"
+                  }
+                ]
+              }
+            }
+          ]
         }
       ],
       "filter": [
@@ -675,9 +670,9 @@
                 "en": "User language (iso-code) {search}",
                 "ca": "Idioma de l'usuari (codi iso) {search}",
                 "de": "Benutzersprache (ISO-Code) {search}",
-                "pl": "Język użytkownika (kod iso) {search}",
                 "fr": "Langage utilisateur (code-ISO) {search}",
                 "nl": "De taal van de bijdrager is {search}",
+                "pl": "Język użytkownika (kod iso) {search}",
                 "cs": "Jazyk uživatele (iso-kód) {search}",
                 "es": "Use idioma (ISO-code) {search}"
               }
@@ -715,9 +710,9 @@
                 "en": "Changeset added at least one image",
                 "ca": "El conjunt de canvis ha afegit almenys una imatge",
                 "de": "Im Änderungssatz wurde mindestens ein Bild hinzugefügt",
-                "pl": "Zestaw zmian dodał co najmniej jedno zdjęcie",
                 "fr": "Le groupe de modifications a ajouté au moins une image",
                 "nl": "Changeset bevat minstens één afbeelding",
+                "pl": "Zestaw zmian dodał co najmniej jedno zdjęcie",
                 "cs": "Sada změn přidala alespoň jeden obrázek",
                 "es": "El conjunto de cambios ha añadido al menos una imagen"
               }
@@ -769,5 +764,7 @@
         ]
       }
     }
-  ]
+  ],
+  "widenFactor": 0.05,
+  "clustering": false
 }

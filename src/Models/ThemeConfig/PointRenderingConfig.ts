@@ -5,12 +5,33 @@ import { TagUtils } from "../../Logic/Tags/TagUtils"
 import { Utils } from "../../Utils"
 import Svg from "../../Svg"
 import WithContextLoader from "./WithContextLoader"
-import { Store } from "../../Logic/UIEventSource"
+import { ImmutableStore, Store } from "../../Logic/UIEventSource"
 import BaseUIElement from "../../UI/BaseUIElement"
 import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import Img from "../../UI/Base/Img"
 import Combine from "../../UI/Base/Combine"
 import { VariableUiElement } from "../../UI/Base/VariableUIElement"
+import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
+import SvelteUIElement from "../../UI/Base/SvelteUIElement"
+import DynamicMarker from "../../UI/Map/DynamicMarker.svelte"
+
+export class IconConfig extends WithContextLoader {
+    public readonly icon: TagRenderingConfig
+    public readonly color: TagRenderingConfig
+
+    public static readonly defaultIcon = new IconConfig({ icon: "pin", color: "#ff9939" })
+    constructor(
+        config: {
+            icon: string | TagRenderingConfigJson
+            color?: string | TagRenderingConfigJson
+        },
+        context?: string
+    ) {
+        super(config, context)
+        this.icon = this.tr("icon")
+        this.color = this.tr("color")
+    }
+}
 
 export default class PointRenderingConfig extends WithContextLoader {
     static readonly allowed_location_codes: ReadonlySet<string> = new Set<string>([
@@ -24,7 +45,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         "point" | "centroid" | "start" | "end" | "projected_centerpoint" | string
     >
 
-    public readonly icon?: TagRenderingConfig
+    public readonly marker: IconConfig[]
     public readonly iconBadges: { if: TagsFilter; then: TagRenderingConfig }[]
     public readonly iconSize: TagRenderingConfig
     public readonly anchor: TagRenderingConfig
@@ -42,7 +63,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         super(json, context)
 
         if (json === undefined || json === null) {
-            throw "Invalid PointRenderingConfig: undefined or null"
+            throw `At ${context}: Invalid PointRenderingConfig: undefined or null`
         }
 
         if (typeof json.location === "string") {
@@ -60,8 +81,8 @@ export default class PointRenderingConfig extends WithContextLoader {
             }
         })
 
-        if (json.icon === undefined && json.label === undefined) {
-            throw `At ${context}: A point rendering should define at least an icon or a label`
+        if (json.marker === undefined && json.label === undefined) {
+            throw `At ${context}: A point rendering should define at least an marker or a label`
         }
 
         if (this.location.size == 0) {
@@ -71,7 +92,7 @@ export default class PointRenderingConfig extends WithContextLoader {
                 ".location)"
             )
         }
-        this.icon = this.tr("icon", undefined)
+        this.marker = (json.marker ?? []).map((m) => new IconConfig(<any>m))
         if (json.css !== undefined) {
             this.cssDef = this.tr("css", undefined)
         }
@@ -85,13 +106,6 @@ export default class PointRenderingConfig extends WithContextLoader {
             }
         })
 
-        const iconPath = this.icon?.GetRenderValue({ id: "node/-1" })?.txt
-        if (iconPath !== undefined && iconPath.startsWith(Utils.assets_path)) {
-            const iconKey = iconPath.substr(Utils.assets_path.length)
-            if (Svg.All[iconKey] === undefined) {
-                throw context + ": builtin SVG asset not found: " + iconPath
-            }
-        }
         if (typeof json.iconSize === "string") {
             const s = json.iconSize
             if (["bottom", "top", "center"].some((e) => s.endsWith(e))) {
@@ -102,14 +116,15 @@ export default class PointRenderingConfig extends WithContextLoader {
                 )
             }
         }
-        this.iconSize = this.tr("iconSize", "40,40")
-        this.anchor = this.tr("anchor", "center")
-        this.label = this.tr("label", undefined)
-        this.rotation = this.tr("rotation", "0")
-        this.pitchAlignment = this.tr("pitchAlignment", "canvas")
+        this.iconSize = this.tr("iconSize", "40,40", context + ".iconsize")
+        this.anchor = this.tr("anchor", "center", context + ".anchor")
+        this.label = this.tr("label", undefined, context + ".label")
+        this.rotation = this.tr("rotation", "0", context + ".rotation")
+        this.pitchAlignment = this.tr("pitchAlignment", "canvas", context + ".pitchAlignment")
         this.rotationAlignment = this.tr(
             "rotationAlignment",
-            json.pitchAlignment === "map" ? "map" : "canvas"
+            json.pitchAlignment === "map" ? "map" : "canvas",
+            context + ".rotationAlignment"
         )
     }
 
@@ -175,49 +190,11 @@ export default class PointRenderingConfig extends WithContextLoader {
         }
     }
 
-    public GetBaseIcon(
-        tags?: Record<string, string>,
-        options?: {
-            noFullWidth?: boolean
-        }
-    ): BaseUIElement {
-        tags = tags ?? { id: "node/-1" }
-        let defaultPin: BaseUIElement = undefined
-        if (this.label === undefined) {
-            defaultPin = Svg.teardrop_with_hole_green_svg()
-        }
-        if (this.icon === undefined) {
-            return defaultPin
-        }
-        const rotation = Utils.SubstituteKeys(
-            this.rotation?.GetRenderValue(tags)?.txt ?? "0deg",
-            tags
-        )
-        const htmlDefs = Utils.SubstituteKeys(this.icon?.GetRenderValue(tags)?.txt, tags)
-        if (htmlDefs === undefined) {
-            // This layer doesn't want to show an icon right now
-            return undefined
-        }
-        if (htmlDefs.startsWith("<") && htmlDefs.endsWith(">")) {
-            // This is probably already prepared HTML
-            return new FixedUiElement(Utils.SubstituteKeys(htmlDefs, tags))
-        }
-        return PointRenderingConfig.FromHtmlMulti(htmlDefs, rotation, false, defaultPin, options)
+    public GetBaseIcon(tags?: Record<string, string>): BaseUIElement {
+        return new SvelteUIElement(DynamicMarker, { config: this, tags: new ImmutableStore(tags) })
     }
-
-    public GetSimpleIcon(tags: Store<Record<string, string>>): BaseUIElement {
-        const self = this
-        if (this.icon === undefined) {
-            return undefined
-        }
-        return new VariableUiElement(tags.map((tags) => self.GetBaseIcon(tags))).SetClass(
-            "w-full h-full block"
-        )
-    }
-
     public RenderIcon(
         tags: Store<Record<string, string>>,
-        clickable: boolean,
         options?: {
             noSize?: false | boolean
             includeBadges?: true | boolean
@@ -234,7 +211,7 @@ export default class PointRenderingConfig extends WithContextLoader {
             return n
         }
 
-        function render(tr: TagRenderingConfig, deflt?: string) {
+        function render(tr: TagRenderingConfig, deflt?: string): string {
             if (tags === undefined) {
                 return deflt
             }
@@ -266,7 +243,9 @@ export default class PointRenderingConfig extends WithContextLoader {
             anchorH = -iconH / 2
         }
 
-        const icon = this.GetSimpleIcon(tags)
+        const icon = new SvelteUIElement(DynamicMarker, { config: this, tags }).SetClass(
+            "w-full h-full"
+        )
         let badges = undefined
         if (options?.includeBadges ?? true) {
             badges = this.GetBadges(tags)

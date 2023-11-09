@@ -8,6 +8,14 @@
     "ca": "Fanals",
     "cs": "Pouliční Lampy"
   },
+  "description": {
+    "en": "A layer showing street lights",
+    "nl": "Een laag die alle straatlantaarns toont",
+    "de": "Eine Ebene mit Straßenbeleuchtung",
+    "es": "Una capa que muestra luces callejeras",
+    "ca": "Una capa que mostra els llums del carrer",
+    "cs": "Vrstva zobrazující pouliční osvětlení"
+  },
   "source": {
     "osmTags": "highway=street_lamp"
   },
@@ -35,13 +43,12 @@
       }
     ]
   },
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "point",
         "centroid"
       ],
-      "icon": "./assets/layers/street_lamps/street_lamp.svg",
       "iconBadges": [
         {
           "if": "light:colour~*",
@@ -49,9 +56,15 @@
         }
       ],
       "iconSize": "40,40",
-      "anchor": "bottom"
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "./assets/layers/street_lamps/street_lamp.svg"
+        }
+      ]
     }
   ],
+  "lineRendering": [],
   "presets": [
     {
       "title": {
@@ -448,7 +461,6 @@
             "en": "This lamp has 1 fixture",
             "nl": "Deze lantaarn heeft 1 lamp",
             "de": "Diese Straßenlaterne hat 1 Leuchte",
-            "es": "",
             "ca": "Aquest fanal té 1 aparell",
             "cs": "Tato lampa má 1 světlo"
           }
@@ -551,13 +563,5 @@
   "allowMove": {
     "enableImproveAccuracy": true,
     "enableRelocation": false
-  },
-  "description": {
-    "en": "A layer showing street lights",
-    "nl": "Een laag die alle straatlantaarns toont",
-    "de": "Eine Ebene mit Straßenbeleuchtung",
-    "es": "Una capa que muestra luces callejeras",
-    "ca": "Una capa que mostra els llums del carrer",
-    "cs": "Vrstva zobrazující pouliční osvětlení"
   }
 }

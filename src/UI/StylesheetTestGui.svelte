@@ -16,8 +16,12 @@
     -style which is used if there is nothing special going on. Some general information, with at most
     <a href="https://example.com" target="_blank">a link to someplace</a>
     .
-    <span class="alert">Alert: something went wrong</span>
-    <span class="thanks">Thank you! Operation successful</span>
+    <div class="alert">Alert: something went wrong</div>
+    <div class="warning">Warning</div>
+    <div class="information">Some important information</div>
+    <div class="thanks">Thank you! Operation successful</div>
+
+
     <ToSvelte construct={Svg.login_svg().SetClass("w-12 h-12")} />
     <Loading>Loading...</Loading>
   </div>
@@ -42,6 +46,11 @@
         <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
         Main action (disabled)
       </button>
+      
+      <button class="small">
+        <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
+        Small button
+      </button>
 
       <button class="small primary">Small button</button>
       <button class="small primary disabled">Small, disabled button</button>
@@ -58,7 +67,7 @@
     </div>
     <input type="text" />
 
-    <div>
+    <div class="flex flex-col">
       <label class="checked" for="html">
         <input id="html" name="fav_language" type="radio" value="HTML" />
         HTML (mimicks a
@@ -76,8 +85,11 @@
       </label>
     </div>
 
-    <span class="alert">Alert: something went wrong</span>
-    <span class="thanks">Thank you! Operation successful</span>
+    <div class="alert">Alert: something went wrong</div>
+    <div class="warning">Warning</div>
+    <div class="information">Some important information</div>
+    <div class="thanks">Thank you! Operation successful</div>
+    
     <ToSvelte construct={Svg.login_svg().SetClass("w-12 h-12")} />
     <Loading>Loading...</Loading>
   </div>
@@ -98,6 +110,10 @@
         <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
         Main action (disabled)
       </button>
+      <button class="small">
+        <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
+        Small button
+      </button>
     </div>
     <div class="flex">
       <button>
@@ -109,8 +125,12 @@
         Secondary action (disabled)
       </button>
     </div>
-    <span class="alert">Alert: something went wrong</span>
-    <span class="thanks">Thank you! Operation successful</span>
+    <div class="alert">Alert: something went wrong</div>
+    <div class="warning">Warning</div>
+    <div class="information">Some important information</div>
+    <div class="thanks">Thank you! Operation successful</div>
+
+
     <ToSvelte construct={Svg.login_svg().SetClass("w-12 h-12")} />
     <Loading>Loading...</Loading>
     <div>
@@ -126,6 +146,10 @@
         <input id="javascript0" name="fav_language" type="radio" value="JavaScript" />
         JavaScript
       </label>
+    </div>
+    
+    <div class="border-interactive">
+      Area with extreme high interactivity due to `border-interactive`
     </div>
 
     <select>

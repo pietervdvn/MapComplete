@@ -9,6 +9,22 @@
     "ru": "Больницы",
     "cs": "Nemocnice"
   },
+  "description": {
+    "en": "A layer showing hospital grounds",
+    "de": "Eine Ebene mit Krankenhäusern",
+    "nl": "Een laag die ziekehuizen toont",
+    "ca": "Una capa que mostra els terrenys de l'hospital",
+    "cs": "Vrstva zobrazující areál nemocnice"
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "amenity=hospital",
+        "amenity=clinic"
+      ]
+    }
+  },
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Hospital",
@@ -26,22 +42,31 @@
       }
     ]
   },
-  "description": {
-    "en": "A layer showing hospital grounds",
-    "de": "Eine Ebene mit Krankenhäusern",
-    "nl": "Een laag die ziekehuizen toont",
-    "ca": "Una capa que mostra els terrenys de l'hospital",
-    "cs": "Vrstva zobrazující areál nemocnice"
-  },
-  "minzoom": 12,
-  "source": {
-    "osmTags": {
-      "or": [
-        "amenity=hospital",
-        "amenity=clinic"
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/hospital/hospital.svg"
+        }
       ]
     }
-  },
+  ],
+  "lineRendering": [
+    {
+      "color": "#fcd862",
+      "width": 1
+    }
+  ],
   "tagRenderings": [
     {
       "id": "name",
@@ -125,21 +150,6 @@
         "ca": "<h3>Horari d'obertura per a visitants</h3>S'admeten visitants habituals en els moments següents: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Algunes palntes poden tenir un horari d'obertura diferent. Molts hospitals també permeten visites en cas d'emergència.</p>",
         "cs": "<h3>Otevírací doba pro návštěvníky</h3>Běžným návštěvníkům je vstup povolen v následujících časech: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Některá oddělení mohou mít jinou otevírací dobu. Mnohé nemocnice povolují návštěvy i v době pohotovosti.</p>"
       }
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/layers/hospital/hospital.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#fcd862",
-      "width": 1
     }
   ]
 }

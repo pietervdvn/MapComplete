@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/pin:#6BC4F7;./assets/layers/drinking_water/drips.svg' height="100px"> 
+
 
 A layer showing drinking water fountains
 
@@ -14,7 +14,7 @@ A layer showing drinking water fountains
 
 
 
-  - This layer is shown at zoomlevel **13** and higher
+  - This layer is shown at zoomlevel **0** and higher
   - This layer will automatically load  [drinking_water](./drinking_water.md)  into the layout as it depends on it:  a calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _closest_other_drinking_water)
   - This layer is needed as dependency for layer [drinking_water](#drinking_water)
 
@@ -73,7 +73,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -190,7 +190,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 

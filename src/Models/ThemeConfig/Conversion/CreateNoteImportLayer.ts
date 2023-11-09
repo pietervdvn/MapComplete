@@ -2,8 +2,8 @@ import { Conversion } from "./Conversion"
 import LayerConfig from "../LayerConfig"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import Translations from "../../../UI/i18n/Translations"
-import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
 import { Translation, TypedTranslation } from "../../../UI/i18n/Translation"
+import { ConversionContext } from "./ConversionContext"
 
 export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, LayerConfigJson> {
     /**
@@ -24,7 +24,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
         this._includeClosedNotesDays = includeClosedNotesDays
     }
 
-    convert(layerJson: LayerConfigJson, context: string): { result: LayerConfigJson } {
+    convert(layerJson: LayerConfigJson, context: ConversionContext): LayerConfigJson {
         const t = Translations.t.importLayer
 
         /**
@@ -45,13 +45,6 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
             isShownIfAny.push({ and: mustMatchAll })
         }
 
-        const pointRenderings = (layerJson.mapRendering ?? []).filter(
-            (r) => r !== null && r["location"] !== undefined
-        )
-        const firstRender = <PointRenderingConfigJson>pointRenderings[0]
-        if (firstRender === undefined) {
-            throw `Layer ${layerJson.id} does not have a pointRendering: ` + context
-        }
         const title = layer.presets[0].title
 
         const importButton = {}
@@ -86,7 +79,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
             return { ...translation.Subs(subs).translations, _context: translation.context }
         }
 
-        const result: LayerConfigJson = {
+        return {
             id: "note_import_" + layer.id,
             // By disabling the name, the import-layers won't pollute the filter view "name": t.layerName.Subs({title: layer.title.render}).translations,
             description: trs(t.description, { title: layer.title.render }),
@@ -102,8 +95,8 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                 maxCacheAge: 0,
             },
             /* We need to set 'pass_all_features'
-             There are probably many note_import-layers, and we don't want the first one to gobble up all notes and then discard them...
-             */
+       There are probably many note_import-layers, and we don't want the first one to gobble up all notes and then discard them...
+       */
             passAllFeatures: true,
             minzoom: Math.min(12, layerJson.minzoom - 2),
             title: {
@@ -186,26 +179,31 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                     },
                 },
             ],
-            mapRendering: [
+            pointRendering: [
                 {
                     location: ["point"],
-                    icon: {
-                        render: "circle:white;help:black",
-                        mappings: [
-                            {
-                                if: { or: ["closed_at~*", "_imported=yes"] },
-                                then: "circle:white;checkmark:black",
+                    marker: [
+                        {
+                            icon: "circle",
+                            color: "#fff",
+                        },
+                        {
+                            icon: {
+                                render: "help",
+                                mappings: [
+                                    {
+                                        if: { or: ["closed_at~*", "_imported=yes"] },
+                                        then: "checkmark",
+                                    },
+                                ],
                             },
-                        ],
-                    },
+                            color: "#00",
+                        },
+                    ],
                     iconSize: "40,40",
                     anchor: "center",
                 },
             ],
-        }
-
-        return {
-            result,
         }
     }
 }

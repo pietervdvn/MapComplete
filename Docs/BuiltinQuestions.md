@@ -59,6 +59,7 @@ Special library layer which does not need a '.questions'-prefix before being imp
     + [sugar_free](#sugar_free)
     + [lactose_free](#lactose_free)
     + [gluten_free](#gluten_free)
+    + [vegan](#vegan)
 
 
 
@@ -127,6 +128,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:sugar_free#values) [diet:sugar_free](https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:lactose_free#values) [diet:lactose_free](https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:gluten_free#values) [diet:gluten_free](https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:vegan#values) [diet:vegan](https://wiki.openstreetmap.org/wiki/Key:diet:vegan) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno)
 
 
 
@@ -559,7 +561,7 @@ The question is  *What coins can you use to pay here?*
   - *5 francs coins are accepted*  corresponds with  `payment:coins:denominations=5 CHF`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `payment:coins=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$`
+This tagrendering is only visible in the popup if the following condition is met: `payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$`
 
 
 
@@ -588,7 +590,7 @@ The question is  *what notes can you use to pay here?*
   - *1000 francs notes are accepted*  corresponds with  `payment:notes:denominations=1000 CHF`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `payment:notes=yes|payment:cash=yes&_currency~^(.*EUR.*)$|_currency~^(.*CHF.*)$`
+This tagrendering is only visible in the popup if the following condition is met: `payment:notes=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$`
 
 
 
@@ -602,7 +604,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 
@@ -633,7 +635,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -756,6 +758,8 @@ The question is  *Does this place offer internet access?*
   - *This place offers wired internet access*  corresponds with  `internet_access=wired`
 
 
+This tagrendering has labels  `internet-all`
+
 
 
 ### internet-fee 
@@ -773,7 +777,9 @@ The question is  *Is there a fee for internet access?*
   - *Internet access is free at this place, for customers only*  corresponds with  `internet_access:fee=customers`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no&internet_access~.+`
+This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no &internet_access~.+`
+
+This tagrendering has labels  `internet-all`
 
 
 
@@ -796,6 +802,8 @@ This is rendered with  `The network name is <b>{internet_access:ssid}</b>`
 
 This tagrendering is only visible in the popup if the following condition is met: `internet_access=wlan`
 
+This tagrendering has labels  `internet-all`
+
 
 
 ### luminous_or_lit 
@@ -808,10 +816,10 @@ The question is  *Is this object lit or does it emit light?*
 
 
 
-  - *This object both emits light and is lighted by an external light source*  corresponds with  `lit=yes&luminous=yes`
+  - *This object both emits light and is lighted by an external light source*  corresponds with  `lit=yes &luminous=yes`
   - *This object emits light*  corresponds with  `luminous=yes`
   - *This object is lit externally, e.g. by a spotlight or other lights*  corresponds with  `lit=yes`
-  - *This object does not emit light and is not lighted by externally*  corresponds with  `lit=no&luminous=no`
+  - *This object does not emit light and is not lighted by externally*  corresponds with  `lit=no &luminous=no`
 
 
 
@@ -870,6 +878,8 @@ The question is  *Does this shop have a sugar free offering?*
   - *This shop has no sugar free offering*  corresponds with  `diet:sugar_free=no`
 
 
+This tagrendering has labels  `diets`
+
 
 
 ### lactose_free 
@@ -885,8 +895,10 @@ The question is  *Does {title()} have a lactose-free offering?*
   - *<b>Only sells lactose free</b> products*  corresponds with  `diet:lactose_free=only`
   - *Big lactose free offering*  corresponds with  `diet:lactose_free=yes`
   - *<b>Limited lactose free</b> offering*  corresponds with  `diet:lactose_free=limited`
-  - *No lactose free offering*  corresponds with  `diet:lactose_free=no`
+  - *This shop has no lactose free offering*  corresponds with  `diet:lactose_free=no`
 
+
+This tagrendering has labels  `diets`
 
 
 
@@ -904,6 +916,28 @@ The question is  *Does this shop have a gluten free offering?*
   - *This shop has a big gluten free offering*  corresponds with  `diet:gluten_free=yes`
   - *This shop has a <b>limited gluten free</b> offering*  corresponds with  `diet:gluten_free=limited`
   - *This shop has no gluten free offering*  corresponds with  `diet:gluten_free=no`
- 
+
+
+This tagrendering has labels  `diets`
+
+
+
+### vegan 
+
+
+
+The question is  *Does this place offer a vegan option?*
+
+
+
+
+
+  - *This place <b>only sells vegan</b> products*  corresponds with  `diet:vegan=only`
+  - *This shop has a big vegan offering*  corresponds with  `diet:vegan=yes`
+  - *This shop has a <b>limited vegan</b> offering*  corresponds with  `diet:vegan=limited`
+  - *This shop has no vegan offering*  corresponds with  `diet:vegan=no`
+
+
+This tagrendering has labels  `diets` 
 
 This document is autogenerated from [assets/layers/questions/questions.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/questions/questions.json)

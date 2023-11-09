@@ -3,6 +3,7 @@ import { ExtraFuncParams, ExtraFunctions } from "../../Logic/ExtraFunctions"
 import LayerConfig from "./LayerConfig"
 import { SpecialVisualization } from "../../UI/SpecialVisualization"
 import SpecialVisualizations from "../../UI/SpecialVisualizations"
+import { Exception } from "sass"
 
 export default class DependencyCalculator {
     public static GetTagRenderingDependencies(tr: TagRenderingConfig): string[] {
@@ -39,6 +40,12 @@ export default class DependencyCalculator {
 
         for (let i = 0; layer.presets !== undefined && i < layer.presets.length; i++) {
             const preset = layer.presets[i]
+            const snapTo = preset.preciseInput?.snapToLayers
+            if (snapTo && !Array.isArray(snapTo)) {
+                throw new Error(
+                    `snapToLayers is not an array; it is ${snapTo}(used in preset ${i} for: ${layer.id})`
+                )
+            }
             preset.preciseInput?.snapToLayers?.forEach((id) => {
                 deps.push({
                     neededLayer: id,

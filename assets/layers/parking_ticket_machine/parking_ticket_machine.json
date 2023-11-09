@@ -14,15 +14,6 @@
     "ca": "Capa amb màquines de bitllets d'aparcament per pagar l'aparcament.",
     "cs": "Vrstva s parkovacími automaty pro placení parkovného."
   },
-  "title": {
-    "render": {
-      "en": "Parking Ticket Machine",
-      "nl": "Parkeerkaartautomaat",
-      "de": "Parkscheinautomat",
-      "ca": "Màquina de bitllets d'aparcament",
-      "cs": "Parkovací automat"
-    }
-  },
   "source": {
     "osmTags": {
       "and": [
@@ -32,6 +23,35 @@
     }
   },
   "minzoom": 16,
+  "title": {
+    "render": {
+      "en": "Parking Ticket Machine",
+      "nl": "Parkeerkaartautomaat",
+      "de": "Parkscheinautomat",
+      "ca": "Màquina de bitllets d'aparcament",
+      "cs": "Parkovací automat"
+    }
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": "20,20",
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "square",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/parking_ticket_machine/parking_tickets.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
   "presets": [
     {
       "tags": [
@@ -92,17 +112,6 @@
           }
         }
       ]
-    }
-  ],
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": "square:white;./assets/layers/parking_ticket_machine/parking_tickets.svg",
-      "iconSize": "20,20",
-      "anchor": "center"
     }
   ]
 }

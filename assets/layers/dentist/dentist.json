@@ -20,6 +20,7 @@
   "source": {
     "osmTags": "amenity=dentist"
   },
+  "minzoom": 13,
   "title": {
     "render": {
       "en": "Dentist Office {name}",
@@ -30,7 +31,41 @@
       "cs": "Zubní ordinace {name}"
     }
   },
-  "minzoom": 13,
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/dentist/dentist.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "a dentists office",
+        "de": "eine Zahnarztpraxis",
+        "nl": "een tandartspraktijk",
+        "fr": "un cabinet de dentistes",
+        "ca": "una clínica dental",
+        "cs": "zubní ordinace"
+      },
+      "tags": [
+        "amenity=dentist"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     "opening_hours",
@@ -60,34 +95,8 @@
       "id": "name"
     }
   ],
-  "presets": [
-    {
-      "title": {
-        "en": "a dentists office",
-        "de": "eine Zahnarztpraxis",
-        "nl": "een tandartspraktijk",
-        "fr": "un cabinet de dentistes",
-        "ca": "una clínica dental",
-        "cs": "zubní ordinace"
-      },
-      "tags": [
-        "amenity=dentist"
-      ]
-    }
-  ],
   "filter": [
     "open_now"
-  ],
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/layers/dentist/dentist.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    }
   ],
   "deletion": true,
   "allowMove": true

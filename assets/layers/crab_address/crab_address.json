@@ -1,5 +1,6 @@
 {
   "id": "crab_address",
+  "name": "CRAB-addressen",
   "description": "Address data for Flanders by the governement, suited for import into OpenStreetMap. Datadump from 2021-10-26. This layer contains only visualisation logic. Import buttons should be added via an override. Note that HNRLABEL contains the original value, whereas _HNRLABEL contains a slightly cleaned version",
   "source": {
     "osmTags": "HUISNR~*",
@@ -7,29 +8,31 @@
     "geoJsonZoomLevel": 18,
     "maxCacheAge": 0
   },
-  "name": "CRAB-addressen",
+  "calculatedTags": [
+    "_HNRLABEL=(() => {const lbl = feat.properties.HNRLABEL?.split('-')?.map(l => Number(l))?.filter(i => !isNaN (i)) ;if(lbl?.length != 2) {return feat.properties.HNRLABEL}; const addresses = []; for(let i = lbl[0]; i <= lbl[1]; i += 1){addresses.push(''+i);}; return addresses.join(';')        })()"
+  ],
   "title": "CRAB-adres",
-  "mapRendering": [
+  "pointRendering": [
     {
       "location": [
         "point",
         "centroid"
       ],
       "iconSize": "50,50",
-      "icon": "./assets/layers/crab_address/housenumber_blank.svg",
       "label": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{_HNRLABEL}</div>",
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/layers/crab_address/housenumber_blank.svg"
+        }
+      ]
     }
   ],
-  "calculatedTags": [
-    "_HNRLABEL=(() => {const lbl = feat.properties.HNRLABEL?.split('-')?.map(l => Number(l))?.filter(i => !isNaN (i)) ;if(lbl?.length != 2) {return feat.properties.HNRLABEL}; const addresses = []; for(let i = lbl[0]; i <= lbl[1]; i += 1){addresses.push(''+i);}; return addresses.join(';')        })()"
-  ],
+  "lineRendering": [],
   "tagRenderings": [
     {
       "id": "render_crab",
-      "render": {
-        "nl": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
-      }
+      "render": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
     }
   ]
 }

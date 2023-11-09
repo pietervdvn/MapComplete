@@ -3,17 +3,13 @@
   "title": {
     "nl": "Open Boomgaardenkaart"
   },
-  "shortDescription": {
-    "nl": "Boomgaarden en fruitbomen"
-  },
   "description": {
     "nl": "Op deze kaart vindt je boomgaarden en fruitbomen"
   },
+  "shortDescription": {
+    "nl": "Boomgaarden en fruitbomen"
+  },
   "icon": "./assets/themes/fruit_trees/fruit_tree.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 2,
   "hideFromOverview": true,
   "layers": [
     {
@@ -51,19 +47,9 @@
           }
         }
       ],
-      "mapRendering": [
-        {
-          "icon": "./assets/themes/buurtnatuur/forest.svg",
-          "iconSize": "40,40",
-          "location": [
-            "point"
-          ],
-          "anchor": "center"
-        },
-        {
-          "color": "#00f",
-          "width": "8"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -155,20 +141,11 @@
           }
         }
       ],
-      "mapRendering": [
-        {
-          "icon": "./assets/themes/fruit_trees/fruit_tree.svg",
-          "iconSize": "40,40",
-          "location": [
-            "point"
-          ],
-          "anchor": "center"
-        },
-        {
-          "color": "#00f",
-          "width": "8"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     }
-  ]
+  ],
+  "widenFactor": 2
 }

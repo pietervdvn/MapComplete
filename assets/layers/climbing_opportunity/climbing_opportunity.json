@@ -16,7 +16,6 @@
     "nl": "Laag met plaatsen waar klimmen _misschien_ mogelijk is. Deze wordt geladen als je ver inzoomt, om te voorkomen dat je per ongeluk dubbels maakt",
     "cs": "Záložní vrstva s předměty, na které je _možné_ lézt. Načítá se při velkém přiblížení, aby se zabránilo přidávání duplicitních položek"
   },
-  "minzoom": 19,
   "source": {
     "osmTags": {
       "and": [
@@ -34,6 +33,7 @@
       ]
     }
   },
+  "minzoom": 19,
   "title": {
     "render": {
       "en": "Climbing opportunity?",
@@ -46,6 +46,25 @@
       "cs": "Lezecká příležitost?"
     }
   },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "./assets/themes/climbing/climbing_unknown.svg"
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#ddff55AA",
+      "width": "2"
+    }
+  ],
   "tagRenderings": [
     {
       "id": "climbing-opportunity-name",
@@ -126,19 +145,6 @@
           "hideInAnswer": true
         }
       ]
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": "./assets/themes/climbing/climbing_unknown.svg",
-      "location": [
-        "point",
-        "centroid"
-      ]
-    },
-    {
-      "color": "#ddff55AA",
-      "width": "2"
     }
   ]
 }

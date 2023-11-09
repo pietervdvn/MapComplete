@@ -17,6 +17,22 @@
     "it": "Codici postali",
     "pl": "Kody pocztowe"
   },
+  "description": {
+    "en": "Postal codes",
+    "id": "Kode pos",
+    "hu": "Irányítószámok",
+    "de": "Postleitzahlen",
+    "ca": "Codis postals",
+    "es": "Códigos postales",
+    "nl": "Postcodes",
+    "fr": "Codes postaux",
+    "da": "Postnumre",
+    "nb_NO": "Postnummer",
+    "pa_PK": "ڈاک کوڈ",
+    "cs": "Poštovní směrovací čísla",
+    "zh_Hant": "郵遞區號",
+    "pl": "Kody pocztowe"
+  },
   "shortDescription": {
     "en": "Postal codes",
     "id": "Kode pos",
@@ -34,30 +50,8 @@
     "it": "Codici postali",
     "pl": "Kody pocztowe"
   },
-  "description": {
-    "en": "Postal codes",
-    "id": "Kode pos",
-    "hu": "Irányítószámok",
-    "de": "Postleitzahlen",
-    "ca": "Codis postals",
-    "es": "Códigos postales",
-    "nl": "Postcodes",
-    "fr": "Codes postaux",
-    "da": "Postnumre",
-    "nb_NO": "Postnummer",
-    "pa_PK": "ڈاک کوڈ",
-    "cs": "Poštovní směrovací čísla",
-    "zh_Hant": "郵遞區號",
-    "pl": "Kody pocztowe"
-  },
   "icon": "./assets/themes/postal_codes/townhall.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 0.05,
   "hideFromOverview": true,
-  "clustering": false,
-  "overpassTimeout": 180,
   "layers": [
     {
       "id": "postal_code_boundary",
@@ -129,22 +123,11 @@
           ]
         }
       },
-      "mapRendering": [
-        {
-          "label": "<div class='text-xl bg-white rounded-full pl-2 pr-2 break-normal'>{postal_code}</div>",
-          "location": [
-            "point",
-            "centroid"
-          ]
-        },
-        {
-          "color": "#00f",
-          "width": "4",
-          "fill": "no",
-          "dashArray": "8 8"
-        }
-      ],
-      "isShown": "_country=be"
+      "isShown": "_country=be",
+      "pointRendering": [],
+      "lineRendering": [
+        {}
+      ]
     },
     {
       "id": "wrong_postal_code",
@@ -157,11 +140,9 @@
         }
       },
       "title": "Boundary relation with addr:postcode={addr:postcode}",
-      "mapRendering": [
-        {
-          "color": "#f00",
-          "width": 1
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -215,18 +196,14 @@
           ]
         }
       },
-      "mapRendering": [
-        {
-          "icon": "./assets/themes/postal_codes/townhall.svg",
-          "iconSize": "40,40",
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "anchor": "center"
-        }
-      ],
-      "isShown": "_country=be"
+      "isShown": "_country=be",
+      "pointRendering": [],
+      "lineRendering": [
+        {}
+      ]
     }
-  ]
+  ],
+  "overpassTimeout": 180,
+  "widenFactor": 0.05,
+  "clustering": false
 }

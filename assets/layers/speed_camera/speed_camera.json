@@ -16,6 +16,10 @@
     "ca": "Capa que mostra càmeres de velocitat",
     "cs": "Vrstva zobrazující rychlostní radary"
   },
+  "source": {
+    "osmTags": "highway=speed_camera"
+  },
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Speed Camera",
@@ -26,10 +30,43 @@
       "cs": "Rychlostní radar"
     }
   },
-  "minzoom": 12,
-  "source": {
-    "osmTags": "highway=speed_camera"
-  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "square",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/speed_camera/speed_camera.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "tags": [
+        "highway=speed_camera"
+      ],
+      "title": {
+        "en": "a speed camera",
+        "de": "einen Blitzer",
+        "nl": "een flitspaal",
+        "es": "una cámara de velocidad",
+        "ca": "una càmera de velocitat",
+        "cs": "rychlostní radar"
+      },
+      "snapToLayer": [
+        "maxspeed"
+      ],
+      "maxSnapDistance": 10
+    }
+  ],
   "tagRenderings": [
     {
       "id": "maxspeed",
@@ -75,34 +112,6 @@
         "cs": "Referenční číslo tohoto rychlostního radaru je {ref}"
       },
       "condition": "ref~*"
-    }
-  ],
-  "presets": [
-    {
-      "tags": [
-        "highway=speed_camera"
-      ],
-      "title": {
-        "en": "a speed camera",
-        "de": "einen Blitzer",
-        "nl": "een flitspaal",
-        "es": "una cámara de velocidad",
-        "ca": "una càmera de velocitat",
-        "cs": "rychlostní radar"
-      },
-      "snapToLayer": [
-        "maxspeed"
-      ],
-      "maxSnapDistance": 10
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": "square:white;./assets/layers/speed_camera/speed_camera.svg",
-      "location": [
-        "point",
-        "centroid"
-      ]
     }
   ],
   "units": [

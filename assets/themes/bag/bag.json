@@ -12,17 +12,6 @@
     "zh_Hant": "BAG 匯入助手",
     "pl": "Pomocnik importowy BAG"
   },
-  "shortDescription": {
-    "nl": "BAG import helper tool",
-    "en": "BAG import helper tool",
-    "de": "BAG-Import-Hilfswerkzeug",
-    "fr": "Outil de facilitation d'import BAG",
-    "ca": "Ferramenta d'ajuda per a importar el BAG",
-    "es": "Herramienta de ayuda a la importación BAG",
-    "cs": "Pomocný nástroj pro import BAG",
-    "eu": "BAGak inportatzen laguntzeko tresna",
-    "pl": "Narzędzie wspomagające import BAG"
-  },
   "description": {
     "nl": "Dit thema helpt het importeren van BAG data",
     "en": "This theme helps with importing data from BAG",
@@ -35,11 +24,25 @@
     "eu": "Gai honek BAGeko datuak inportatzen laguntzen du",
     "pl": "Motyw ten pomaga w importowaniu danych z BAG"
   },
-  "credits": "Wouter van der Wal",
+  "shortDescription": {
+    "nl": "BAG import helper tool",
+    "en": "BAG import helper tool",
+    "de": "BAG-Import-Hilfswerkzeug",
+    "fr": "Outil de facilitation d'import BAG",
+    "ca": "Ferramenta d'ajuda per a importar el BAG",
+    "es": "Herramienta de ayuda a la importación BAG",
+    "cs": "Pomocný nástroj pro import BAG",
+    "eu": "BAGak inportatzen laguntzeko tresna",
+    "pl": "Narzędzie wspomagające import BAG"
+  },
   "icon": "./assets/themes/bag/logo.svg",
+  "startZoom": 9,
   "startLat": 53.1726,
   "startLon": 7.04545,
-  "startZoom": 9,
+  "credits": [
+    "Wouter van der Wal"
+  ],
+  "hideFromOverview": true,
   "layers": [
     {
       "id": "osm:buildings",
@@ -53,49 +56,6 @@
       "minzoom": 18,
       "calculatedTags": [
         "_surface:strict:=feat(get)('_surface')"
-      ],
-      "mapRendering": [
-        {
-          "width": {
-            "render": "2",
-            "mappings": [
-              {
-                "if": "fixme~*",
-                "then": "5"
-              }
-            ]
-          },
-          "color": {
-            "render": "#00c",
-            "mappings": [
-              {
-                "if": "fixme~*",
-                "then": "#ff00ff"
-              },
-              {
-                "if": "building=house",
-                "then": "#a00"
-              },
-              {
-                "if": "building=shed",
-                "then": "#563e02"
-              },
-              {
-                "if": {
-                  "or": [
-                    "building=garage",
-                    "building=garages"
-                  ]
-                },
-                "then": "#f9bfbb"
-              },
-              {
-                "if": "building=yes",
-                "then": "#0774f2"
-              }
-            ]
-          }
-        }
       ],
       "tagRenderings": [
         {
@@ -140,6 +100,10 @@
           "render": "This building is a <b>{building}</b>",
           "question": "What kind of building is this?"
         }
+      ],
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -160,7 +124,7 @@
         "maxCacheAge": 0
       },
       "minzoom": 18,
-      "mapRendering": [
+      "pointRendering": [
         {
           "label": {
             "render": "<div style='color: black' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
@@ -170,7 +134,9 @@
             "point",
             "centroid"
           ]
-        },
+        }
+      ],
+      "lineRendering": [
         {
           "width": {
             "render": 1
@@ -215,28 +181,6 @@
         "_osm_obj:id=feat(get)('_overlaps_with_properties')?.id",
         "_osm_obj:building=feat(get)('_overlaps_with_properties')?.building",
         "_imported_osm_object_found:=Number(feat.properties.identificatie)==Number(feat(get)('_overlaps_with_properties')['ref:bag'])"
-      ],
-      "mapRendering": [
-        {
-          "width": {
-            "render": 5,
-            "mappings": [
-              {
-                "if": "_imported_osm_object_found=true",
-                "then": "1"
-              }
-            ]
-          },
-          "color": {
-            "render": "#00a",
-            "mappings": [
-              {
-                "if": "_imported_osm_object_found=true",
-                "then": "#0f0"
-              }
-            ]
-          }
-        }
       ],
       "tagRenderings": [
         {
@@ -374,6 +318,30 @@
           "id": "Buidling function",
           "render": "The current function of the building is <b>{gebruiksdoel}</b>"
         }
+      ],
+      "pointRendering": [
+        {
+          "label": {
+            "render": "<div style='color: black' class='rounded-full p-1 font-bold relative'>{_bag_obj:addr:housenumber}</div>",
+            "mappings": [
+              {
+                "if": "_imported_osm_object_found=true",
+                "then": "<div style='color: #107c10' class='rounded-full p-1 font-bold relative'>{_bag_obj:addr:housenumber}</div>"
+              }
+            ]
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        }
+      ],
+      "lineRendering": [
+        {
+          "width": {
+            "render": 1
+          }
+        }
       ]
     },
     {
@@ -399,7 +367,18 @@
         "_osm_obj:addr:street:=feat(get)('_closed_osm_addr')['addr:street']",
         "_imported_osm_object_found:=(feat.properties.woonplaats==feat(get)('_closed_osm_addr')['addr:city'])&&(feat(get)('_bag_obj:addr:housenumber')==feat(get)('_closed_osm_addr')['addr:housenumber'])&&(feat.properties.postcode==feat(get)('_closed_osm_addr')['addr:postcode'])&&(feat.properties.openbare_ruimte==feat(get)('_closed_osm_addr')['addr:street'])"
       ],
-      "mapRendering": [
+      "tagRenderings": [
+        {
+          "id": "Import button",
+          "render": "{import_button(osm:adresses, addr:city=$woonplaats; addr:housenumber=$_bag_obj:addr:housenumber; addr:postcode=$postcode; addr:street=$openbare_ruimte; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date, Upload this adress to OpenStreetMap)}",
+          "condition": "_imported_osm_object_found=false"
+        },
+        {
+          "id": "Address",
+          "render": "{openbare_ruimte} {_bag_obj:addr:housenumber}, {woonplaats} {postcode}"
+        }
+      ],
+      "pointRendering": [
         {
           "label": {
             "render": "<div style='color: black' class='rounded-full p-1 font-bold relative'>{_bag_obj:addr:housenumber}</div>",
@@ -414,25 +393,15 @@
             "point",
             "centroid"
           ]
-        },
+        }
+      ],
+      "lineRendering": [
         {
           "width": {
             "render": 1
           }
         }
-      ],
-      "tagRenderings": [
-        {
-          "id": "Import button",
-          "render": "{import_button(osm:adresses, addr:city=$woonplaats; addr:housenumber=$_bag_obj:addr:housenumber; addr:postcode=$postcode; addr:street=$openbare_ruimte; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date, Upload this adress to OpenStreetMap)}",
-          "condition": "_imported_osm_object_found=false"
-        },
-        {
-          "id": "Address",
-          "render": "{openbare_ruimte} {_bag_obj:addr:housenumber}, {woonplaats} {postcode}"
-        }
       ]
     }
-  ],
-  "hideFromOverview": true
+  ]
 }

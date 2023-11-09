@@ -24,6 +24,45 @@
       "cs": "Validátor jízdenek"
     }
   },
+  "pointRendering": [
+    {
+      "iconSize": "20,20",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "square",
+          "color": "green"
+        },
+        {
+          "icon": "./assets/themes/stations/public_transport_tickets.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "tags": [
+        "amenity=ticket_validator"
+      ],
+      "title": {
+        "en": "a ticket validator",
+        "de": "einen Fahrkartenentwerter",
+        "ca": "un validador de bitllets",
+        "cs": "validátor jízdenek"
+      },
+      "description": {
+        "en": "A ticket validator to validate a public transport ticket. This can be either a digital reader, reading a card or ticket, or a machine stamping or punching a ticket.",
+        "de": "Ein Fahrkartenentwerter zur Entwertung einer Fahrkarte für öffentliche Verkehrsmittel. Dabei kann es sich entweder um ein digitales Lesegerät handeln, das eine Karte oder einen Fahrschein liest, oder um eine Maschine, die einen Fahrschein stempelt oder locht.",
+        "ca": "Un validador de bitllets per validar un bitllet de transport públic. Pot ser un lector digital, llegir una targeta o un bitllet, o una màquina que estampa o perfora un bitllet.",
+        "cs": "Ověřovač jízdenek k ověření platnosti jízdenky na veřejnou dopravu. Může to být buď digitální čtečka, která čte kartu nebo jízdenku, nebo stroj, který jízdenku orazítkuje nebo vyrazí."
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     "level",
@@ -120,36 +159,6 @@
       }
     }
   ],
-  "presets": [
-    {
-      "tags": [
-        "amenity=ticket_validator"
-      ],
-      "title": {
-        "en": "a ticket validator",
-        "de": "einen Fahrkartenentwerter",
-        "ca": "un validador de bitllets",
-        "cs": "validátor jízdenek"
-      },
-      "description": {
-        "en": "A ticket validator to validate a public transport ticket. This can be either a digital reader, reading a card or ticket, or a machine stamping or punching a ticket.",
-        "de": "Ein Fahrkartenentwerter zur Entwertung einer Fahrkarte für öffentliche Verkehrsmittel. Dabei kann es sich entweder um ein digitales Lesegerät handeln, das eine Karte oder einen Fahrschein liest, oder um eine Maschine, die einen Fahrschein stempelt oder locht.",
-        "ca": "Un validador de bitllets per validar un bitllet de transport públic. Pot ser un lector digital, llegir una targeta o un bitllet, o una màquina que estampa o perfora un bitllet.",
-        "cs": "Ověřovač jízdenek k ověření platnosti jízdenky na veřejnou dopravu. Může to být buď digitální čtečka, která čte kartu nebo jízdenku, nebo stroj, který jízdenku orazítkuje nebo vyrazí."
-      }
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": "square:green;./assets/themes/stations/public_transport_tickets.svg",
-      "iconSize": "20,20",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    }
-  ],
-  "allowMove": true,
-  "deletion": true
+  "deletion": true,
+  "allowMove": true
 }

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/crossings/pedestrian_crossing.svg' height="100px"> 
+
 
 Crossings for pedestrians and cyclists
 
@@ -82,7 +82,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -207,7 +207,7 @@ The question is  *Does this traffic light have a button to request green light?*
   - *This traffic light does not have a button to request green light*  corresponds with  `button_operated=no`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `highway=traffic_signals|crossing=traffic_signals`
+This tagrendering is only visible in the popup if the following condition is met: `highway=traffic_signals |crossing=traffic_signals`
 
 
 
@@ -245,7 +245,7 @@ The question is  *Does this traffic light have vibration signals to aid crossing
   - *The button for this traffic light does not have a vibration signal to indicate that it is safe to cross.*  corresponds with  `traffic_signals:vibration=no`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `crossing=traffic_signals&button_operated=yes`
+This tagrendering is only visible in the popup if the following condition is met: `crossing=traffic_signals &button_operated=yes`
 
 
 
@@ -355,7 +355,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 

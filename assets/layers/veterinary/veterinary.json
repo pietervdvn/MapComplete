@@ -1,5 +1,15 @@
 {
   "id": "veterinary",
+  "name": {
+    "en": "veterinary",
+    "da": "dyrlæge",
+    "de": "Tierärzte",
+    "es": "veterinario",
+    "nl": "Dierenarts",
+    "fr": "vétérinaire",
+    "ca": "Veterinari",
+    "cs": "veterinář"
+  },
   "description": "A layer showing veterinarians",
   "source": {
     "osmTags": {
@@ -9,6 +19,61 @@
     }
   },
   "minzoom": 10,
+  "title": {
+    "render": {
+      "en": "Veterinary",
+      "da": "Dyrlæge",
+      "de": "Tierarzt",
+      "id": "Dokter hewan",
+      "es": "Veterinario",
+      "nl": "Dierenarts",
+      "ca": "Veterinari",
+      "cs": "Veterinární ordinace"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "*": "{name}"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": "30,40",
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      },
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        }
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/layers/veterinary/vet.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#ff0",
+      "width": 5
+    }
+  ],
   "presets": [
     {
       "title": {
@@ -35,65 +100,6 @@
         "ca": "un veterinari, que tracta gossos",
         "cs": "veterinář, který léčí psy"
       }
-    }
-  ],
-  "name": {
-    "en": "veterinary",
-    "da": "dyrlæge",
-    "de": "Tierärzte",
-    "es": "veterinario",
-    "nl": "Dierenarts",
-    "fr": "vétérinaire",
-    "ca": "Veterinari",
-    "cs": "veterinář"
-  },
-  "title": {
-    "render": {
-      "en": "Veterinary",
-      "da": "Dyrlæge",
-      "de": "Tierarzt",
-      "id": "Dokter hewan",
-      "es": "Veterinario",
-      "nl": "Dierenarts",
-      "ca": "Veterinari",
-      "cs": "Veterinární ordinace"
-    },
-    "mappings": [
-      {
-        "if": "name~*",
-        "then": {
-          "*": "{name}"
-        }
-      }
-    ]
-  },
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": "./assets/layers/veterinary/vet.svg",
-      "iconSize": "30,40",
-      "label": {
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
-          }
-        ]
-      },
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        }
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#ff0",
-      "width": 5
     }
   ],
   "tagRenderings": [

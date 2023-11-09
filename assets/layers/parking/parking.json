@@ -11,10 +11,20 @@
     "pl": "Parking",
     "cs": "Parkoviště"
   },
-  "minzoom": 12,
+  "description": {
+    "en": "A layer showing car parkings",
+    "nl": "Deze laag toont autoparkings",
+    "de": "Eine Ebene mit Parkplätzen",
+    "es": "Una capa que muestra aparcamientos para coches",
+    "fr": "Un calque montrant les parkings",
+    "ca": "Una capa que mostra aparcaments per a cotxes",
+    "pl": "Warstwa pokazująca parkingi samochodowe",
+    "cs": "Vrstva zobrazující parkoviště"
+  },
   "source": {
     "osmTags": "amenity=parking"
   },
+  "minzoom": 12,
   "title": {
     "render": {
       "nl": "Parking voor auto's",
@@ -27,16 +37,55 @@
       "cs": "Parkování"
     }
   },
-  "description": {
-    "en": "A layer showing car parkings",
-    "nl": "Deze laag toont autoparkings",
-    "de": "Eine Ebene mit Parkplätzen",
-    "es": "Una capa que muestra aparcamientos para coches",
-    "fr": "Un calque montrant les parkings",
-    "ca": "Una capa que mostra aparcaments per a cotxes",
-    "pl": "Warstwa pokazująca parkingi samochodowe",
-    "cs": "Vrstva zobrazující parkoviště"
-  },
+  "pointRendering": [
+    {
+      "iconSize": "36,36",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": {
+            "or": [
+              "capacity:disabled>0",
+              "capacity:disabled=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
+        }
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/layers/parking/parking.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 2,
+      "color": "#ddcc00"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=parking"
+      ],
+      "title": {
+        "nl": "een parking voor auto's",
+        "en": "a car parking",
+        "de": "einen Parkplatz",
+        "es": "un aparcamiento de coches",
+        "fr": "un lieu de stationnement pour voitures",
+        "ca": "un aparcament per a cotxes",
+        "pl": "parking samochodowy",
+        "cs": "parkoviště"
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     "level",
@@ -272,23 +321,6 @@
       }
     }
   ],
-  "presets": [
-    {
-      "tags": [
-        "amenity=parking"
-      ],
-      "title": {
-        "nl": "een parking voor auto's",
-        "en": "a car parking",
-        "de": "einen Parkplatz",
-        "es": "un aparcamiento de coches",
-        "fr": "un lieu de stationnement pour voitures",
-        "ca": "un aparcament per a cotxes",
-        "pl": "parking samochodowy",
-        "cs": "parkoviště"
-      }
-    }
-  ],
   "deletion": {
     "softDeletionTags": {
       "and": [
@@ -301,31 +333,5 @@
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuracy": true
-  },
-  "mapRendering": [
-    {
-      "icon": "./assets/layers/parking/parking.svg",
-      "iconSize": "36,36",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "iconBadges": [
-        {
-          "if": {
-            "or": [
-              "capacity:disabled>0",
-              "capacity:disabled=yes"
-            ]
-          },
-          "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
-        }
-      ],
-      "anchor": "center"
-    },
-    {
-      "width": 2,
-      "color": "#ddcc00"
-    }
-  ]
+  }
 }

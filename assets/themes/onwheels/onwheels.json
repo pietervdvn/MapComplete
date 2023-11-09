@@ -25,10 +25,9 @@
     "pl": "Na tej mapie pokazane są miejsca publicznie dostępne dla wózków inwalidzkich, które można łatwo dodać"
   },
   "icon": "./assets/themes/onwheels/crest.svg",
+  "startZoom": 17,
   "startLat": 50.86622,
   "startLon": 4.350103,
-  "startZoom": 17,
-  "widenFactor": 2,
   "hideFromOverview": false,
   "layers": [
     {
@@ -527,5 +526,6 @@
       }
     ]
   },
-  "enableDownload": true
+  "enableDownload": true,
+  "widenFactor": 2
 }

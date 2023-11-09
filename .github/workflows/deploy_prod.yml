@@ -73,9 +73,8 @@ jobs:
           git add *
           if git status | grep -q "Changes to be committed"
           then
-            git commit -am "Deploying a new version"
+            git commit -am "Deploying a new version of mapcomplete"
             git push
           else
             echo "No changes to commit"
           fi
-

@@ -3,31 +3,20 @@
   "title": {
     "nl": "Welkom bij de groendoener!"
   },
+  "description": {
+    "nl": "<h3>Welkom bij de Groendoener!</h3>De Zuidrand dat is spelen, ravotten, chillen, wandelen,… in het groen. Meer dan <b>200 grote en kleine speelplekken</b> liggen er in parken, in bossen en op pleintjes te wachten om ontdekt te worden. De verschillende speelplekken werden getest én goedgekeurd door kinder- en jongerenreporters uit de Zuidrand. Met leuke challenges dagen de reporters jou uit om ook op ontdekking te gaan. Klik op een speelplek op de kaart, bekijk het filmpje en ga op verkenning!<br/><br/>Het project groendoener kadert binnen het strategisch project <a href='https://www.provincieantwerpen.be/aanbod/dlm/samenwerkingsverbanden/zuidrand/projecten/strategisch-project-beleefbare-open-ruimte.html' target='_blank'>Beleefbare Open Ruimte in de Antwerpse Zuidrand</a> en is een samenwerking tussen het departement Leefmilieu van provincie Antwerpen, Sportpret vzw, een OpenStreetMap-België Consultent en Createlli vzw. Het project kwam tot stand met steun van Departement Omgeving van de Vlaamse Overheid.<br/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/provincie_antwerpen.jpg'/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/Departement_Omgeving_Vlaanderen.png'/>"
+  },
   "shortDescription": {
     "*": "En jij? Wat ga jij doen in het groen?",
     "nl": "Speelplekken in de Antwerpse Zuidrand"
   },
-  "description": {
-    "nl": "<h3>Welkom bij de Groendoener!</h3>De Zuidrand dat is spelen, ravotten, chillen, wandelen,… in het groen. Meer dan <b>200 grote en kleine speelplekken</b> liggen er in parken, in bossen en op pleintjes te wachten om ontdekt te worden. De verschillende speelplekken werden getest én goedgekeurd door kinder- en jongerenreporters uit de Zuidrand. Met leuke challenges dagen de reporters jou uit om ook op ontdekking te gaan. Klik op een speelplek op de kaart, bekijk het filmpje en ga op verkenning!<br/><br/>Het project groendoener kadert binnen het strategisch project <a href='https://www.provincieantwerpen.be/aanbod/dlm/samenwerkingsverbanden/zuidrand/projecten/strategisch-project-beleefbare-open-ruimte.html' target='_blank'>Beleefbare Open Ruimte in de Antwerpse Zuidrand</a> en is een samenwerking tussen het departement Leefmilieu van provincie Antwerpen, Sportpret vzw, een OpenStreetMap-België Consultent en Createlli vzw. Het project kwam tot stand met steun van Departement Omgeving van de Vlaamse Overheid.<br/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/provincie_antwerpen.jpg'/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/Departement_Omgeving_Vlaanderen.png'/>"
-  },
   "icon": "./assets/themes/speelplekken/logo.svg",
-  "hideFromOverview": true,
-  "lockLocation": [
-    [
-      4.291534423828125,
-      51.061249423389796
-    ],
-    [
-      4.604301452636719,
-      51.23978120350654
-    ]
-  ],
+  "socialImage": "./assets/themes/speelplekken/social_image.jpg",
+  "startZoom": 12,
   "startLat": 51.17174,
   "startLon": 4.449462,
-  "startZoom": 12,
-  "widenFactor": 1.2,
-  "socialImage": "./assets/themes/speelplekken/social_image.jpg",
   "defaultBackgroundId": "maptiler.backdrop",
+  "hideFromOverview": true,
   "layers": [
     {
       "id": "shadow",
@@ -37,11 +26,9 @@
         "osmTags": "shadow=yes",
         "isOsmCache": false
       },
-      "mapRendering": [
-        {
-          "color": "#444444",
-          "width": "1"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -221,30 +208,12 @@
         "questions",
         "reviews"
       ],
-      "mapRendering": [
-        {
-          "color": {
-            "render": "#6d6",
-            "mappings": [
-              {
-                "if": "color~*",
-                "then": "{color}"
-              },
-              {
-                "if": "colour~*",
-                "then": "{colour}"
-              }
-            ]
-          },
-          "width": "9"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     }
   ],
-  "clustering": {
-    "maxZoom": 6,
-    "minNeededElements": 100
-  },
   "overrideAll": {
     "+tagRenderings": [
       {
@@ -262,5 +231,20 @@
       }
     ],
     "isShown": "_is_shadowed!=yes"
+  },
+  "lockLocation": [
+    [
+      4.291534423828125,
+      51.061249423389796
+    ],
+    [
+      4.604301452636719,
+      51.23978120350654
+    ]
+  ],
+  "widenFactor": 1.2,
+  "clustering": {
+    "maxZoom": 6,
+    "minNeededElements": 100
   }
 }

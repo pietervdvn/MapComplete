@@ -5026,30 +5026,39 @@
       }
     }
   ],
-  "mapRendering": [
+  "lineRendering": [],
+  "pointRendering": [
     {
       "location": [
         "point",
         "centroid"
       ],
-      "icon": {
-        "render": "pin:#fff;./assets/themes/charging_stations/plug.svg",
-        "mappings": [
-          {
-            "if": "bicycle=yes",
-            "then": "pin:#fff;./assets/themes/charging_stations/bicycle.svg"
-          },
-          {
-            "if": {
-              "or": [
-                "car=yes",
-                "motorcar=yes"
-              ]
-            },
-            "then": "pin:#fff;./assets/themes/charging_stations/car.svg"
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#fff"
+        },
+        {
+          "icon": {
+            "render": "./assets/themes/charging_stations/plug.svg",
+            "mappings": [
+              {
+                "if": "bicycle=yes",
+                "then": "./assets/themes/charging_stations/bicycle.svg"
+              },
+              {
+                "if": {
+                  "or": [
+                    "car=yes",
+                    "motorcar=yes"
+                  ]
+                },
+                "then": "./assets/themes/charging_stations/car.svg"
+              }
+            ]
           }
-        ]
-      },
+        }
+      ],
       "iconBadges": [
         {
           "if": {

@@ -143,7 +143,7 @@ class PointRenderingLayer {
         } else {
             store = new ImmutableStore(<OsmTags>feature.properties)
         }
-        const { html, iconAnchor } = this._config.RenderIcon(store, true)
+        const { html, iconAnchor } = this._config.RenderIcon(store)
         html.SetClass("marker")
         if (this._onClick !== undefined) {
             html.SetClass("cursor-pointer")
@@ -424,7 +424,7 @@ class LineRenderingLayer {
 
 export default class ShowDataLayer {
     private static rangeLayer = new LayerConfig(
-        <LayerConfigJson>range_layer,
+        <any>range_layer,
         "ShowDataLayer.ts:range.json"
     )
     private readonly _options: ShowDataLayerOptions & {

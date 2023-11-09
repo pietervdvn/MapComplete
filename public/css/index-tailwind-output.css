@@ -785,6 +785,10 @@ video {
   margin: 0.5rem;
 }
 
+.m-4 {
+  margin: 1rem;
+}
+
 .m-1 {
   margin: 0.25rem;
 }
@@ -797,10 +801,6 @@ video {
   margin: 0px;
 }
 
-.m-4 {
-  margin: 1rem;
-}
-
 .m-3 {
   margin: 0.75rem;
 }
@@ -811,6 +811,16 @@ video {
 
 .m-px {
   margin: 1px;
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .mx-1 {
@@ -836,16 +846,6 @@ video {
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
-}
-
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.my-1 {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
 }
 
 .mx-4 {
@@ -1129,10 +1129,6 @@ video {
   height: 16rem;
 }
 
-.h-96 {
-  height: 24rem;
-}
-
 .max-h-12 {
   max-height: 3rem;
 }
@@ -1145,8 +1141,8 @@ video {
   max-height: 1.75rem;
 }
 
-.max-h-screen {
-  max-height: 100vh;
+.max-h-60 {
+  max-height: 15rem;
 }
 
 .w-full {
@@ -1219,13 +1215,13 @@ video {
   width: 2.5rem;
 }
 
-.w-48 {
-  width: 12rem;
-}
-
 .w-min {
   width: -webkit-min-content;
   width: min-content;
+}
+
+.w-48 {
+  width: 12rem;
 }
 
 .w-auto {
@@ -1348,6 +1344,10 @@ video {
 
 .items-stretch {
   align-items: stretch;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-end {
@@ -1492,12 +1492,12 @@ video {
   word-break: break-all;
 }
 
-.rounded {
-  border-radius: 0.25rem;
-}
-
 .rounded-full {
   border-radius: 9999px;
+}
+
+.rounded {
+  border-radius: 0.25rem;
 }
 
 .rounded-xl {
@@ -1586,16 +1586,20 @@ video {
   border-bottom-width: 2px;
 }
 
+.border-l-4 {
+  border-left-width: 4px;
+}
+
+.border-l {
+  border-left-width: 1px;
+}
+
 .border-t {
   border-top-width: 1px;
 }
 
 .border-r {
   border-right-width: 1px;
-}
-
-.border-l {
-  border-left-width: 1px;
 }
 
 .border-dashed {
@@ -1632,8 +1636,23 @@ video {
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 
+.border-gray-800 {
+  --tw-border-opacity: 1;
+  border-color: rgb(31 41 55 / var(--tw-border-opacity));
+}
+
 .border-opacity-50 {
   --tw-border-opacity: 0.5;
+}
+
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .bg-red-400 {
@@ -1644,11 +1663,6 @@ video {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .bg-gray-200 {
@@ -1698,6 +1712,11 @@ video {
   padding: 3rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -1713,9 +1732,8 @@ video {
   padding-right: 0.75rem;
 }
 
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+.pr-12 {
+  padding-right: 3rem;
 }
 
 .pl-1 {
@@ -2077,6 +2095,10 @@ video {
   _: string;
 }
 
+.\[a-zA-Z0-9\:_\] {
+  a-z-a--z0-9: ;
+}
+
 :root {
   /* 
     * The main colour scheme of mapcomplete is configured here.
@@ -2220,7 +2242,29 @@ input[type=text] {
  * This very important section defines what the various input elements look like within the 'low-interaction' and 'interactive'-blocks
  */
 
+button.small, .button.small {
+  line-height: 1rem;
+  margin: 0;
+  margin-left: 0.5rem;
+  padding: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: unset;
+  border: 2px solid var(--button-background);
+  border-radius: 0.5rem;
+  font-weight: normal;
+  transition: all 250ms;
+  --tw-text-opacity: 1;
+  --tw-bg-opacity: 1;
+  background: var(--low-interaction-background);
+  color: var(--low-interaction-foreground);
+}
+
 button, .button {
+  align-items: center;
   display: inline-flex;
   line-height: 1.25rem;
   margin: 0.2rem;
@@ -2229,7 +2273,6 @@ button, .button {
   padding-right: 0.6rem;
   font-size: large;
   font-weight: bold;
-  /*-- invisible border: rendered on hover*/
   border: 2px solid var(--button-background);
   border-radius: 0.5rem;
   transition: all 250ms;
@@ -2241,21 +2284,6 @@ button, .button {
 
 .button-shadow {
   box-shadow: 0 5px 10px #88888888;
-}
-
-button.small, .button.small {
-  line-height: 1rem;
-  margin: 0;
-  padding: 0.1rem;
-  font-size: unset;
-  /*-- invisible border: rendered on hover*/
-  border: 2px solid var(--low-interaction-background);
-  border-radius: 0.1rem;
-  transition: all 250ms;
-  --tw-text-opacity: 1;
-  --tw-bg-opacity: 1;
-  background: var(--low-interaction-background);
-  color: var(--low-interaction-foreground);
 }
 
 button.selected, .button.selected {
@@ -2443,6 +2471,37 @@ select:hover {
   text-align: center;
   padding: 0.15em 0.3em;
   border: 2px dotted #ff9143;
+}
+
+.warning {
+  /* The class to convey important information, but not as grave as 'alert' */
+  background-color: var(--low-interaction-background);
+  color: var(--alert-foreground-color);
+  font-weight: bold;
+  border-radius: 1em;
+  margin: 0.25em;
+  text-align: center;
+  padding: 0.15em 0.3em;
+  border: 3px dotted #ff9143;
+}
+
+.low-interaction .warning {
+  background-color: var(--interactive-background);
+}
+
+.information {
+  /* The class to convey important information which does _not_ denote an error... */
+  background-color: var(--low-interaction-background);
+  color: var(--alert-foreground-color);
+  border-radius: 1em;
+  margin: 0.25em;
+  text-align: center;
+  padding: 0.15em 0.3em;
+  border: 3px dotted var(--catch-detail-color-contrast);
+}
+
+.low-interaction .interactive {
+  background-color: var(--interactive-background);
 }
 
 .subtle {
@@ -2646,6 +2705,10 @@ a.link-underline {
   /* Legacy: should be replaced by headlessui disclosure in time */
   transition: max-height 0.5s ease-in-out;
   overflow-y: hidden;
+}
+
+.min-h-32 {
+  min-height: 8rem;
 }
 
 .hover\:bg-indigo-200:hover {
@@ -2887,5 +2950,3 @@ a.link-underline {
     width: 33.333333%;
   }
 }
-
-

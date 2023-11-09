@@ -14,10 +14,6 @@
     "cs": "Cyklodálnice",
     "pl": "Ścieżki rowerowe"
   },
-  "hideFromOverview": true,
-  "icon": "./assets/themes/cycle_highways/fietssnelwegen-logo.svg",
-  "#overpassUrl": "https://overpass.kumi.systems/api/interpreter",
-  "overpassTimeout": 60,
   "description": {
     "en": "This map shows cycle highways",
     "de": "Diese Karte zeigt Radschnellwege",
@@ -31,15 +27,15 @@
     "cs": "Tato mapa zobrazuje cyklostezky",
     "pl": "Ta mapa pokazuje ścieżki rowerowe"
   },
+  "icon": "./assets/themes/cycle_highways/fietssnelwegen-logo.svg",
+  "startZoom": 10,
   "startLat": 51.1599,
   "startLon": 3.3475,
-  "startZoom": 10,
-  "clustering": {
-    "maxZoom": 1
-  },
-  "widenFactor": 1.1,
-  "enableDownload": true,
-  "enablePdfDownload": true,
+  "defaultBackgroundId": "maptiler.backdrop",
+  "credits": [
+    "L'imaginaire"
+  ],
+  "hideFromOverview": true,
   "layers": [
     {
       "id": "cycle_highways",
@@ -232,43 +228,18 @@
           ]
         }
       ],
-      "mapRendering": [
-        {
-          "color": {
-            "render": "#ff7392",
-            "mappings": [
-              {
-                "if": "state=",
-                "then": "#00acfc"
-              },
-              {
-                "if": "state=temporary",
-                "then": "#00acfc"
-              }
-            ]
-          },
-          "width": "4",
-          "dashArray": {
-            "render": "",
-            "mappings": [
-              {
-                "if": "state=temporary",
-                "then": "12 10"
-              },
-              {
-                "if": "note:state=has_highway_no",
-                "then": "0 8"
-              },
-              {
-                "if": "note:state=has_highway_under_construction",
-                "then": "12 10"
-              }
-            ]
-          }
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     }
   ],
-  "defaultBackgroundId": "maptiler.backdrop",
-  "credits": "L'imaginaire"
+  "enableDownload": true,
+  "enablePdfDownload": true,
+  "overpassTimeout": 60,
+  "widenFactor": 1.1,
+  "#overpassUrl": "https://overpass.kumi.systems/api/interpreter",
+  "clustering": {
+    "maxZoom": 1
+  }
 }

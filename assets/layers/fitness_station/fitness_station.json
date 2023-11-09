@@ -37,6 +37,53 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": "40,40",
+      "iconBadges": [
+        {
+          "if": {
+            "and": [
+              "opening_hours!=24/7",
+              "opening_hours~*"
+            ]
+          },
+          "then": "icons.isOpen"
+        }
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/fitness_station/fitness.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "tags": [
+        "leisure=fitness_station",
+        "sport=fitness"
+      ],
+      "title": {
+        "en": "a fitness station",
+        "de": "eine Fitness-Station",
+        "nl": "een fitness-toestel",
+        "ca": "una estació de fitness",
+        "cs": "fitness stanice"
+      },
+      "icon": "./assets/layers/fitness_station/fitness.svg"
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -433,44 +480,6 @@
       }
     },
     "opening_hours_24_7"
-  ],
-  "presets": [
-    {
-      "tags": [
-        "leisure=fitness_station",
-        "sport=fitness"
-      ],
-      "title": {
-        "en": "a fitness station",
-        "de": "eine Fitness-Station",
-        "nl": "een fitness-toestel",
-        "ca": "una estació de fitness",
-        "cs": "fitness stanice"
-      },
-      "icon": "./assets/layers/fitness_station/fitness.svg"
-    }
-  ],
-  "mapRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "icon": "circle:white;./assets/layers/fitness_station/fitness.svg",
-      "iconSize": "40,40",
-      "iconBadges": [
-        {
-          "if": {
-            "and": [
-              "opening_hours!=24/7",
-              "opening_hours~*"
-            ]
-          },
-          "then": "icons.isOpen"
-        }
-      ],
-      "anchor": "center"
-    }
   ],
   "filter": [
     "open_now"

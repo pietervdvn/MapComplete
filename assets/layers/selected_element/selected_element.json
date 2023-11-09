@@ -9,9 +9,8 @@
     "cs": "Zvýrazní aktuálně vybraný prvek. Přepište tuto vrstvu, aby měla různé barvy"
   },
   "source": "special",
-  "mapRendering": [
+  "pointRendering": [
     {
-      "icon": "circle:red",
       "iconSize": "1,1",
       "location": [
         "point",
@@ -19,7 +18,14 @@
       ],
       "css": "box-shadow: red 0 0 20px 20px; z-index: -1; height: 1px; width: 1px;",
       "cssClasses": "block relative rounded-full",
-      "anchor": "center"
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "red"
+        }
+      ]
     }
-  ]
+  ],
+  "lineRendering": []
 }

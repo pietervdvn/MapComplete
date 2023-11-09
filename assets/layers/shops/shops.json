@@ -13,7 +13,19 @@
     "pa_PK": "دکان",
     "cs": "Obchod"
   },
-  "minzoom": 12,
+  "description": {
+    "en": "A shop",
+    "fr": "Un magasin",
+    "ja": "ショップ",
+    "nl": "Een winkel",
+    "ru": "Магазин",
+    "de": "Ein Geschäft",
+    "eo": "Butiko",
+    "hu": "Egy bolt",
+    "es": "Una tienda",
+    "ca": "Una botiga",
+    "cs": "Obchod"
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -28,6 +40,7 @@
       ]
     }
   },
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Shop",
@@ -83,19 +96,126 @@
       }
     ]
   },
-  "description": {
-    "en": "A shop",
-    "fr": "Un magasin",
-    "ja": "ショップ",
-    "nl": "Een winkel",
-    "ru": "Магазин",
-    "de": "Ein Geschäft",
-    "eo": "Butiko",
-    "hu": "Egy bolt",
-    "es": "Una tienda",
-    "ca": "Una botiga",
-    "cs": "Obchod"
-  },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "builtin": "id_presets.shop_rendering",
+            "override": {
+              "render": "./assets/layers/id_presets/maki-shop.svg",
+              "+mappings": [
+                {
+                  "#": "Layer icon rendering",
+                  "if": "id=",
+                  "then": "./assets/layers/id_presets/maki-shop.svg"
+                },
+                {
+                  "if": {
+                    "or": [
+                      "shop=vacant",
+                      "shop=disused",
+                      "disused:shop=yes"
+                    ]
+                  },
+                  "then": "./assets/layers/shops/shop-disused.svg"
+                },
+                {
+                  "if": "craft=shoemaker",
+                  "then": "./assets/layers/id_presets/temaki-hammer_shoe.svg"
+                }
+              ],
+              "mappings+": [
+                {
+                  "if": "craft=key_cutter",
+                  "then": "./assets/layers/id_presets/fas-key.svg"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        },
+        {
+          "if": {
+            "or": [
+              "organic=yes",
+              "organic=only"
+            ]
+          },
+          "then": "./assets/layers/food/organic.svg"
+        },
+        {
+          "if": {
+            "or": [
+              "service:key_cutting=yes",
+              "craft=key_cutter"
+            ]
+          },
+          "then": "./assets/layers/id_presets/fas-key.svg"
+        }
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      },
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f",
+      "width": "8"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "shop=yes"
+      ],
+      "title": {
+        "en": "a shop",
+        "fr": "une magasin",
+        "ru": "Магазин",
+        "ja": "店",
+        "nl": "een winkel",
+        "de": "ein Geschäft",
+        "eo": "Butiko",
+        "es": "una tienda",
+        "ca": "una botiga",
+        "cs": "obchod"
+      },
+      "description": {
+        "en": "Add a new shop",
+        "fr": "Ajouter un nouveau magasin",
+        "ru": "Добавить новый магазин",
+        "ja": "新しい店を追加する",
+        "nl": "Voeg een nieuwe winkel toe",
+        "de": "Ein neues Geschäft hinzufügen",
+        "eo": "Enmeti novan butikon",
+        "es": "Añadir una nueva tienda",
+        "ca": "Afegir una botiga nova",
+        "cs": "Přidat nový obchod"
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -148,7 +268,8 @@
             "fixme=freeform shop key used, to be reviewed"
           ]
         },
-        "condition": "craft="
+        "condition": "craft=",
+        "invalidValues": "shop=yes"
       }
     },
     {
@@ -275,6 +396,57 @@
         }
       ]
     },
+    {
+      "id": "key_cutter",
+      "question": {
+        "en": "Does this shop offer key cutting?"
+      },
+      "mappings": [
+        {
+          "if": "craft=key_cutter",
+          "#": "Many shoe repair shops are also specialized in key cutting and deserve the 'craft'-tag. Some other shops (often DIY- and home-improvement stores) offer it as a service, but rather limited/on the side",
+          "hideInAnswer": "shop!=shoe_repair",
+          "icon": "./assets/layers/id_presets/fas-key.svg",
+          "then": {
+            "en": "This shop is also specialized in key cutting"
+          },
+          "addExtraTags": [
+            "service:key_cutting=yes"
+          ]
+        },
+        {
+          "if": "service:key_cutting=yes",
+          "icon": "./assets/layers/id_presets/fas-key.svg",
+          "then": {
+            "en": "This shop offers key cutting as a service"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "craft=",
+              "service:key_cutting=no"
+            ]
+          },
+          "then": {
+            "en": "This shops does not offer key cutting as a service"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "shop=shoe_repair",
+          "service:key_cutting~*",
+          "craft=key_cutting",
+          "shop=diy",
+          "shop=doityourself",
+          "shop=home_improvement",
+          "shop=hardware",
+          "shop=locksmith",
+          "shop=repair"
+        ]
+      }
+    },
     "internet",
     "internet-fee",
     "internet-ssid",
@@ -373,128 +545,6 @@
     "questions",
     "reviews"
   ],
-  "presets": [
-    {
-      "tags": [
-        "shop=yes"
-      ],
-      "title": {
-        "en": "a shop",
-        "fr": "une magasin",
-        "ru": "Магазин",
-        "ja": "店",
-        "nl": "een winkel",
-        "de": "ein Geschäft",
-        "eo": "Butiko",
-        "es": "una tienda",
-        "ca": "una botiga",
-        "cs": "obchod"
-      },
-      "description": {
-        "en": "Add a new shop",
-        "fr": "Ajouter un nouveau magasin",
-        "ru": "Добавить новый магазин",
-        "ja": "新しい店を追加する",
-        "nl": "Voeg een nieuwe winkel toe",
-        "de": "Ein neues Geschäft hinzufügen",
-        "eo": "Enmeti novan butikon",
-        "es": "Añadir una nueva tienda",
-        "ca": "Afegir una botiga nova",
-        "cs": "Přidat nový obchod"
-      }
-    }
-  ],
-  "deletion": {
-    "softDeletionTags": {
-      "and": [
-        "shop=",
-        "disused:shop:={shop}"
-      ]
-    },
-    "extraDeleteReasons": [
-      {
-        "explanation": {
-          "nl": "{title()} is permanent gestopt",
-          "en": "{title()} has closed down permanently",
-          "de": "{title()} wurde dauerhaft geschlossen",
-          "es": "{title()} ha cerrado permanentemente",
-          "fr": "{title()} a fermé définitivement",
-          "ca": "{title()} ha tancat permanentment",
-          "cs": "{title()} je trvale uzavřen"
-        },
-        "changesetMessage": "shop_closed"
-      }
-    ]
-  },
-  "allowMove": true,
-  "mapRendering": [
-    {
-      "icon": {
-        "builtin": "id_presets.shop_rendering",
-        "override": {
-          "render": "./assets/layers/id_presets/maki-shop.svg",
-          "+mappings": [
-            {
-              "#": "Layer icon rendering",
-              "if": "id=",
-              "then": "circle:white;./assets/layers/id_presets/maki-shop.svg"
-            },
-            {
-              "if": {
-                "or": [
-                  "shop=vacant",
-                  "shop=disused",
-                  "disused:shop=yes"
-                ]
-              },
-              "then": "circle:white;./assets/layers/shops/shop-disused.svg"
-            },
-            {
-              "if": "craft=shoemaker",
-              "then": "circle:white;./assets/layers/id_presets/temaki-hammer_shoe.svg"
-            },
-            {
-              "if": "craft=key_cutter",
-              "then": "circle:white;./assets/layers/id_presets/fas-key.svg"
-            }
-          ]
-        }
-      },
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        },
-        {
-          "if": {
-            "or": [
-              "organic=yes",
-              "organic=only"
-            ]
-          },
-          "then": "./assets/layers/food/organic.svg"
-        }
-      ],
-      "label": {
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
-          }
-        ]
-      },
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#00f",
-      "width": "8"
-    }
-  ],
   "filter": [
     "open_now",
     {
@@ -563,15 +613,33 @@
             ]
           }
         }
-      ],
-      "condition": {
-        "and": [
-          "shop!=second_hand"
-        ]
-      }
+      ]
     },
     "sugar_free",
     "gluten_free",
     "lactose_free"
-  ]
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "shop=",
+        "disused:shop:={shop}"
+      ]
+    },
+    "extraDeleteReasons": [
+      {
+        "explanation": {
+          "nl": "{title()} is permanent gestopt",
+          "en": "{title()} has closed down permanently",
+          "de": "{title()} wurde dauerhaft geschlossen",
+          "es": "{title()} ha cerrado permanentemente",
+          "fr": "{title()} a fermé définitivement",
+          "ca": "{title()} ha tancat permanentment",
+          "cs": "{title()} je trvale uzavřen"
+        },
+        "changesetMessage": "shop_closed"
+      }
+    ]
+  },
+  "allowMove": true
 }

@@ -25,7 +25,7 @@ async function main(args: string[]) {
 
     // Path within the JSON which will be removed - not the path in the filesystem!
     const path = args[0].split(".")
-    console.log("Removing translation string ", path, "from the general translations")
+    console.log("Removing translation string ", path, "from the translations for " + directory)
     const files = ScriptUtils.readDirRecSync(directory, 1).filter((f) => f.endsWith(".json"))
     for (const file of files) {
         const json = JSON.parse(fs.readFileSync(file, { encoding: "utf-8" }))

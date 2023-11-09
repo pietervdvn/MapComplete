@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/layers/barrier/barrier.svg' height="100px"> 
+
 
 Obstacles while cycling, such as bollards and cycle barriers
 
@@ -76,7 +76,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -179,7 +179,7 @@ This is rendered with  `Maximum width: {maxwidth:physical} m`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cycle_barrier!=double&cycle_barrier!=triple&_referencing_ways~.+`
+This tagrendering is only visible in the popup if the following condition is met: `cycle_barrier!=double &cycle_barrier!=triple &_referencing_ways~.+`
 
 
 
@@ -195,7 +195,7 @@ This is rendered with  `Space between barriers (along the length of the road): {
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cycle_barrier=double|cycle_barrier=triple`
+This tagrendering is only visible in the popup if the following condition is met: `cycle_barrier=double |cycle_barrier=triple`
 
 
 
@@ -211,7 +211,7 @@ This is rendered with  `Width of opening: {width:opening} m`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cycle_barrier=double|cycle_barrier=triple`
+This tagrendering is only visible in the popup if the following condition is met: `cycle_barrier=double |cycle_barrier=triple`
 
 
 
@@ -227,7 +227,7 @@ This is rendered with  `Overlap: {overlap} m`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cycle_barrier=double|cycle_barrier=triple`
+This tagrendering is only visible in the popup if the following condition is met: `cycle_barrier=double |cycle_barrier=triple`
 
 
 
@@ -273,7 +273,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 

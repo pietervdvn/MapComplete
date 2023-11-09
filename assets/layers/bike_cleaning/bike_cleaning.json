@@ -15,6 +15,28 @@
     "cs": "Služba mytí jízdních kol",
     "ca": "Servei de neteja de bicicletes"
   },
+  "description": {
+    "en": "A layer showing facilities where one can clean their bike",
+    "nl": "Een laag die plaatsen toont waar je je fiets kunt wassen",
+    "de": "Eine Ebene mit Einrichtungen, in denen man sein Fahrrad reinigen kann",
+    "es": "Una capa que muestra instalaciones en las que uno puede limpiar su bici",
+    "da": "Et lag med faciliteter, hvor man kan rengøre sin cykel",
+    "fr": "Une couche affichant les lieux où l'on peut nettoyer son vélo",
+    "cs": "Vrstva zobrazující zařízení, kde si můžete umýt kolo",
+    "ca": "Una capa que mostra les instal·lacions on pots netejar la teva bicicleta",
+    "pt_BR": "Uma camada que mostra instalações onde é possível limpar a sua bicicleta"
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "service:bicycle:cleaning=yes",
+        "service:bicycle:cleaning=diy",
+        "amenity=bicycle_wash",
+        "amenity=bike_wash"
+      ]
+    }
+  },
+  "minzoom": 13,
   "title": {
     "render": {
       "en": "Bike cleaning service",
@@ -51,17 +73,37 @@
       }
     ]
   },
-  "source": {
-    "osmTags": {
-      "or": [
-        "service:bicycle:cleaning=yes",
-        "service:bicycle:cleaning=diy",
-        "amenity=bicycle_wash",
-        "amenity=bike_wash"
+  "pointRendering": [
+    {
+      "iconBadges": [
+        {
+          "if": {
+            "and": [
+              "service:bicycle:cleaning~*",
+              "amenity!=bike_wash",
+              "amenity!=bicycle_wash"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg",
+            "roaming": true
+          }
+        }
+      ],
+      "iconSize": "50,50",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "./assets/layers/bike_cleaning/bike_cleaning.svg"
+        }
       ]
     }
-  },
-  "minzoom": 13,
+  ],
+  "lineRendering": [],
   "presets": [
     {
       "title": {
@@ -244,42 +286,5 @@
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuraccy": true
-  },
-  "mapRendering": [
-    {
-      "icon": "./assets/layers/bike_cleaning/bike_cleaning.svg",
-      "iconBadges": [
-        {
-          "if": {
-            "and": [
-              "service:bicycle:cleaning~*",
-              "amenity!=bike_wash",
-              "amenity!=bicycle_wash"
-            ]
-          },
-          "then": {
-            "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg",
-            "roaming": true
-          }
-        }
-      ],
-      "iconSize": "50,50",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "bottom"
-    }
-  ],
-  "description": {
-    "en": "A layer showing facilities where one can clean their bike",
-    "nl": "Een laag die plaatsen toont waar je je fiets kunt wassen",
-    "de": "Eine Ebene mit Einrichtungen, in denen man sein Fahrrad reinigen kann",
-    "es": "Una capa que muestra instalaciones en las que uno puede limpiar su bici",
-    "da": "Et lag med faciliteter, hvor man kan rengøre sin cykel",
-    "fr": "Une couche affichant les lieux où l'on peut nettoyer son vélo",
-    "cs": "Vrstva zobrazující zařízení, kde si můžete umýt kolo",
-    "ca": "Una capa que mostra les instal·lacions on pots netejar la teva bicicleta",
-    "pt_BR": "Uma camada que mostra instalações onde é possível limpar a sua bicicleta"
   }
 }

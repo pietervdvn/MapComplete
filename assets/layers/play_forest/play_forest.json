@@ -3,7 +3,9 @@
   "name": {
     "nl": "Speelbossen"
   },
-  "minzoom": 13,
+  "description": {
+    "nl": "Een speelbos is een vrij toegankelijke zone in een bos"
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -11,6 +13,7 @@
       ]
     }
   },
+  "minzoom": 13,
   "title": {
     "render": {
       "nl": "Speelbos"
@@ -30,9 +33,40 @@
       }
     ]
   },
-  "description": {
-    "nl": "Een speelbos is een vrij toegankelijke zone in een bos"
-  },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "./assets/layers/play_forest/icon.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#007055",
+      "width": "2"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "*": "Speelbos"
+      },
+      "tags": [
+        "leisure=playground",
+        "playground=forest",
+        "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
+      ],
+      "description": "Een zone in het bos, duidelijk gemarkeerd als speelzone met de overeenkomstige borden.<br/><img src='./assets/layers/play_forest/icon.svg'/>"
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -92,33 +126,5 @@
       "render": "{reviews(name, play_forest)}"
     }
   ],
-  "hideFromOverview": false,
-  "presets": [
-    {
-      "title": {
-        "*": "Speelbos"
-      },
-      "tags": [
-        "leisure=playground",
-        "playground=forest",
-        "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
-      ],
-      "description": "Een zone in het bos, duidelijk gemarkeerd als speelzone met de overeenkomstige borden.<br/><img src='./assets/layers/play_forest/icon.svg'/>"
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": "./assets/layers/play_forest/icon.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#007055",
-      "width": "2"
-    }
-  ]
+  "hideFromOverview": false
 }

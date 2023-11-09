@@ -18,7 +18,18 @@
     "da": "Cykelparkering",
     "cs": "Parkování kol"
   },
-  "minzoom": 17,
+  "description": {
+    "en": "A layer showing where you can park your bike",
+    "nl": "Een laag die toont waar je je fiets kunt parkeren",
+    "de": "Eine Ebene, die anzeigt, wo Sie Ihr Fahrrad abstellen können",
+    "es": "Una capa que muestra donde puedes aparcar tu bici",
+    "da": "Et lag, der viser, hvor man kan parkere sin cykel",
+    "fr": "Une couche montrant où stationner son vélo",
+    "cs": "Vrstva ukazující, kde můžete zaparkovat kolo",
+    "ca": "Una capa que mostra on pots aparcar la teva bicicleta",
+    "it": "Un livello che mostra dove puoi parcheggiare la tua bicicletta",
+    "pt_BR": "Uma camada mostrado onde você pode estacionar sua bicicleta"
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -26,6 +37,52 @@
       ]
     }
   },
+  "minzoom": 17,
+  "title": {
+    "render": {
+      "en": "Bike parking",
+      "nl": "Fietsparking",
+      "fr": "Parking à vélo",
+      "gl": "Aparcadoiro de bicicletas",
+      "de": "Fahrrad-Parkplätze",
+      "hu": "Kerékpártároló",
+      "it": "Parcheggio bici",
+      "zh_Hant": "單車停車場",
+      "ru": "Велосипедная парковка",
+      "pl": "Parking dla rowerów",
+      "pt_BR": "Estacionamento de bicicletas",
+      "pt": "Estacionamento de bicicletas",
+      "ca": "Aparcament per a bicicletes",
+      "es": "Aparcamiento de bicis",
+      "da": "Cykelparkering",
+      "cs": "Parkování kol"
+    }
+  },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#5473de"
+        },
+        {
+          "icon": "./assets/layers/bike_parking/parking.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f",
+      "width": "1"
+    }
+  ],
   "presets": [
     {
       "title": {
@@ -51,26 +108,6 @@
       ]
     }
   ],
-  "title": {
-    "render": {
-      "en": "Bike parking",
-      "nl": "Fietsparking",
-      "fr": "Parking à vélo",
-      "gl": "Aparcadoiro de bicicletas",
-      "de": "Fahrrad-Parkplätze",
-      "hu": "Kerékpártároló",
-      "it": "Parcheggio bici",
-      "zh_Hant": "單車停車場",
-      "ru": "Велосипедная парковка",
-      "pl": "Parking dla rowerów",
-      "pt_BR": "Estacionamento de bicicletas",
-      "pt": "Estacionamento de bicicletas",
-      "ca": "Aparcament per a bicicletes",
-      "es": "Aparcamiento de bicis",
-      "da": "Cykelparkering",
-      "cs": "Parkování kol"
-    }
-  },
   "tagRenderings": [
     "images",
     {
@@ -711,32 +748,5 @@
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuracy": true
-  },
-  "mapRendering": [
-    {
-      "icon": "pin:#5473de;./assets/layers/bike_parking/parking.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "bottom"
-    },
-    {
-      "color": "#00f",
-      "width": "1"
-    }
-  ],
-  "description": {
-    "en": "A layer showing where you can park your bike",
-    "nl": "Een laag die toont waar je je fiets kunt parkeren",
-    "de": "Eine Ebene, die anzeigt, wo Sie Ihr Fahrrad abstellen können",
-    "es": "Una capa que muestra donde puedes aparcar tu bici",
-    "da": "Et lag, der viser, hvor man kan parkere sin cykel",
-    "fr": "Une couche montrant où stationner son vélo",
-    "cs": "Vrstva ukazující, kde můžete zaparkovat kolo",
-    "ca": "Una capa que mostra on pots aparcar la teva bicicleta",
-    "it": "Un livello che mostra dove puoi parcheggiare la tua bicicletta",
-    "pt_BR": "Uma camada mostrado onde você pode estacionar sua bicicleta"
   }
 }

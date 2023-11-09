@@ -2,23 +2,22 @@ export default {
   "type": "object",
   "properties": {
     "enableImproveAccuracy": {
-      "description": "One default reason to move a point is to improve accuracy.\nSet to false to disable this reason",
+      "description": "question: Should moving this type of point to improve the accuracy be allowed?\niftrue: This point can be moved to improve the accuracy\nifunset: (default) This point can be moved to improve the accuracy\niffalse: This point cannot be moved to improve the accuracy",
       "type": "boolean"
     },
     "enableRelocation": {
-      "description": "One default reason to move a point is because it has relocated\nSet to false to disable this reason",
+      "description": "question: Should moving this type of point due to a relocation be allowed?\n\nThis will erase the attributes `addr:street`, `addr:housenumber`, `addr:city` and `addr:postcode`\n\niftrue: This type of point can be moved due to a relocation (and will remove address information when this is done)\nifunset: (default) This type of point can be moved due to a relocation (and will remove address information when this is done)\niffalse: This type of point cannot be moved due to a relocation",
       "type": "boolean"
     }
   },
   "definitions": {
     "TagConfigJson": {
-      "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation",
+      "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag",
       "anyOf": [
         {
-          "$ref": "#/definitions/AndTagConfigJson"
+          "$ref": "#/definitions/{and:TagConfigJson[];}"
         },
         {
-          "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
           "type": "object",
           "properties": {
             "or": {
@@ -37,8 +36,7 @@ export default {
         }
       ]
     },
-    "AndTagConfigJson": {
-      "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
+    "{and:TagConfigJson[];}": {
       "type": "object",
       "properties": {
         "and": {
@@ -52,8 +50,7 @@ export default {
         "and"
       ]
     },
-    "OrTagConfigJson": {
-      "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
+    "{or:TagConfigJson[];}": {
       "type": "object",
       "properties": {
         "or": {

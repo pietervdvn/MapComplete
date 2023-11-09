@@ -107,36 +107,36 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Cycleways and roads' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Cycleways and roads' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "cycleway",
-      "description": "Layer 'Cycleways and roads' shows cycleway=shared_lane with a fixed text, namely 'There is a shared lane' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
+      "description": "Layer 'Cycleways and roads' shows cycleway=shared_lane with a fixed text, namely 'There is a shared lane' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway &highway!=path &highway!=footway &highway!=pedestrian)",
       "value": "shared_lane"
     },
     {
       "key": "cycleway",
-      "description": "Layer 'Cycleways and roads' shows cycleway=lane with a fixed text, namely 'There is a lane next to the road (separated with paint)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
+      "description": "Layer 'Cycleways and roads' shows cycleway=lane with a fixed text, namely 'There is a lane next to the road (separated with paint)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway &highway!=path &highway!=footway &highway!=pedestrian)",
       "value": "lane"
     },
     {
       "key": "cycleway",
-      "description": "Layer 'Cycleways and roads' shows cycleway=track with a fixed text, namely 'There is a track, but no cycleway drawn separately from this road on the map.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
+      "description": "Layer 'Cycleways and roads' shows cycleway=track with a fixed text, namely 'There is a track, but no cycleway drawn separately from this road on the map.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway &highway!=path &highway!=footway &highway!=pedestrian)",
       "value": "track"
     },
     {
       "key": "cycleway",
-      "description": "Layer 'Cycleways and roads' shows cycleway=separate with a fixed text, namely 'There is a separately drawn cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
+      "description": "Layer 'Cycleways and roads' shows cycleway=separate with a fixed text, namely 'There is a separately drawn cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway &highway!=path &highway!=footway &highway!=pedestrian)",
       "value": "separate"
     },
     {
       "key": "cycleway",
-      "description": "Layer 'Cycleways and roads' shows cycleway=no with a fixed text, namely 'There is no cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
+      "description": "Layer 'Cycleways and roads' shows cycleway=no with a fixed text, namely 'There is no cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway &highway!=path &highway!=footway &highway!=pedestrian)",
       "value": "no"
     },
     {
       "key": "cycleway",
-      "description": "Layer 'Cycleways and roads' shows cycleway=no with a fixed text, namely 'There is no cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
+      "description": "Layer 'Cycleways and roads' shows cycleway=no with a fixed text, namely 'There is no cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway &highway!=path &highway!=footway &highway!=pedestrian)",
       "value": "no"
     },
     {
@@ -161,155 +161,155 @@
     },
     {
       "key": "cyclestreet",
-      "description": "Layer 'Cycleways and roads' shows cyclestreet=yes with a fixed text, namely 'This is a cyclestreet, and a 30km/h zone.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway&highway!=path&highway!=footway)",
+      "description": "Layer 'Cycleways and roads' shows cyclestreet=yes with a fixed text, namely 'This is a cyclestreet, and a 30km/h zone.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway &highway!=path &highway!=footway)",
       "value": "yes"
     },
     {
       "key": "cyclestreet",
-      "description": "Layer 'Cycleways and roads' shows cyclestreet=yes with a fixed text, namely 'This is a cyclestreet' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway&highway!=path&highway!=footway)",
+      "description": "Layer 'Cycleways and roads' shows cyclestreet=yes with a fixed text, namely 'This is a cyclestreet' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway &highway!=path &highway!=footway)",
       "value": "yes"
     },
     {
       "key": "cyclestreet",
-      "description": "Layer 'Cycleways and roads' shows  with a fixed text, namely 'This is not a cyclestreet.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') Picking this answer will delete the key cyclestreet. (This is only shown if highway!=cycleway&highway!=path&highway!=footway)",
+      "description": "Layer 'Cycleways and roads' shows  with a fixed text, namely 'This is not a cyclestreet.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') Picking this answer will delete the key cyclestreet. (This is only shown if highway!=cycleway &highway!=path &highway!=footway)",
       "value": ""
     },
     {
       "key": "maxspeed",
-      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'maxspeed' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)"
+      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'maxspeed' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway &highway!=path &highway!=footway &highway!=pedestrian)"
     },
     {
       "key": "maxspeed",
-      "description": "Layer 'Cycleways and roads' shows maxspeed=20 with a fixed text, namely 'The maximum speed is 20 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
+      "description": "Layer 'Cycleways and roads' shows maxspeed=20 with a fixed text, namely 'The maximum speed is 20 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway &highway!=path &highway!=footway &highway!=pedestrian)",
       "value": "20"
     },
     {
       "key": "maxspeed",
-      "description": "Layer 'Cycleways and roads' shows maxspeed=30 with a fixed text, namely 'The maximum speed is 30 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
+      "description": "Layer 'Cycleways and roads' shows maxspeed=30 with a fixed text, namely 'The maximum speed is 30 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway &highway!=path &highway!=footway &highway!=pedestrian)",
       "value": "30"
     },
     {
       "key": "maxspeed",
-      "description": "Layer 'Cycleways and roads' shows maxspeed=50 with a fixed text, namely 'The maximum speed is 50 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
+      "description": "Layer 'Cycleways and roads' shows maxspeed=50 with a fixed text, namely 'The maximum speed is 50 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway &highway!=path &highway!=footway &highway!=pedestrian)",
       "value": "50"
     },
     {
       "key": "maxspeed",
-      "description": "Layer 'Cycleways and roads' shows maxspeed=70 with a fixed text, namely 'The maximum speed is 70 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
+      "description": "Layer 'Cycleways and roads' shows maxspeed=70 with a fixed text, namely 'The maximum speed is 70 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway &highway!=path &highway!=footway &highway!=pedestrian)",
       "value": "70"
     },
     {
       "key": "maxspeed",
-      "description": "Layer 'Cycleways and roads' shows maxspeed=90 with a fixed text, namely 'The maximum speed is 90 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway&highway!=path&highway!=footway&highway!=pedestrian)",
+      "description": "Layer 'Cycleways and roads' shows maxspeed=90 with a fixed text, namely 'The maximum speed is 90 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway &highway!=path &highway!=footway &highway!=pedestrian)",
       "value": "90"
     },
     {
       "key": "cycleway:surface",
-      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'cycleway:surface' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)"
+      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'cycleway:surface' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)"
     },
     {
       "key": "cycleway:surface",
-      "description": "Layer 'Cycleways and roads' shows cycleway:surface=unpaved with a fixed text, namely 'This cycleway is unpaved' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=unpaved with a fixed text, namely 'This cycleway is unpaved' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "unpaved"
     },
     {
       "key": "cycleway:surface",
-      "description": "Layer 'Cycleways and roads' shows cycleway:surface=paved with a fixed text, namely 'This cycleway is paved' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=paved with a fixed text, namely 'This cycleway is paved' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "paved"
     },
     {
       "key": "cycleway:surface",
-      "description": "Layer 'Cycleways and roads' shows cycleway:surface=asphalt with a fixed text, namely 'This cycleway is made of asphalt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=asphalt with a fixed text, namely 'This cycleway is made of asphalt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "asphalt"
     },
     {
       "key": "cycleway:surface",
-      "description": "Layer 'Cycleways and roads' shows cycleway:surface=paving_stones with a fixed text, namely 'This cycleway is made of smooth paving stones' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=paving_stones with a fixed text, namely 'This cycleway is made of smooth paving stones' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "paving_stones"
     },
     {
       "key": "cycleway:surface",
-      "description": "Layer 'Cycleways and roads' shows cycleway:surface=concrete with a fixed text, namely 'This cycleway is made of concrete' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=concrete with a fixed text, namely 'This cycleway is made of concrete' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "concrete"
     },
     {
       "key": "cycleway:surface",
-      "description": "Layer 'Cycleways and roads' shows cycleway:surface=cobblestone with a fixed text, namely 'This cycleway is made of cobblestone (unhewn or sett)' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=cobblestone with a fixed text, namely 'This cycleway is made of cobblestone (unhewn or sett)' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "cobblestone"
     },
     {
       "key": "cycleway:surface",
-      "description": "Layer 'Cycleways and roads' shows cycleway:surface=unhewn_cobblestone with a fixed text, namely 'This cycleway is made of raw, natural cobblestone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=unhewn_cobblestone with a fixed text, namely 'This cycleway is made of raw, natural cobblestone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "unhewn_cobblestone"
     },
     {
       "key": "cycleway:surface",
-      "description": "Layer 'Cycleways and roads' shows cycleway:surface=sett with a fixed text, namely 'This cycleway is made of flat, square cobblestone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=sett with a fixed text, namely 'This cycleway is made of flat, square cobblestone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "sett"
     },
     {
       "key": "cycleway:surface",
-      "description": "Layer 'Cycleways and roads' shows cycleway:surface=wood with a fixed text, namely 'This cycleway is made of wood' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=wood with a fixed text, namely 'This cycleway is made of wood' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "wood"
     },
     {
       "key": "cycleway:surface",
-      "description": "Layer 'Cycleways and roads' shows cycleway:surface=gravel with a fixed text, namely 'This cycleway is made of gravel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=gravel with a fixed text, namely 'This cycleway is made of gravel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "gravel"
     },
     {
       "key": "cycleway:surface",
-      "description": "Layer 'Cycleways and roads' shows cycleway:surface=fine_gravel with a fixed text, namely 'This cycleway is made of fine gravel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=fine_gravel with a fixed text, namely 'This cycleway is made of fine gravel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "fine_gravel"
     },
     {
       "key": "cycleway:surface",
-      "description": "Layer 'Cycleways and roads' shows cycleway:surface=pebblestone with a fixed text, namely 'This cycleway is made of pebblestone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=pebblestone with a fixed text, namely 'This cycleway is made of pebblestone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "pebblestone"
     },
     {
       "key": "cycleway:surface",
-      "description": "Layer 'Cycleways and roads' shows cycleway:surface=ground with a fixed text, namely 'This cycleway is made from raw ground' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=ground with a fixed text, namely 'This cycleway is made from raw ground' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "ground"
     },
     {
       "key": "cycleway:smoothness",
-      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=excellent with a fixed text, namely 'Usable for thin rollers: rollerblade, skateboard' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=excellent with a fixed text, namely 'Usable for thin rollers: rollerblade, skateboard' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "excellent"
     },
     {
       "key": "cycleway:smoothness",
-      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=good with a fixed text, namely 'Usable for thin wheels: racing bike' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=good with a fixed text, namely 'Usable for thin wheels: racing bike' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "good"
     },
     {
       "key": "cycleway:smoothness",
-      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=intermediate with a fixed text, namely 'Usable for normal wheels: city bike, wheelchair, scooter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=intermediate with a fixed text, namely 'Usable for normal wheels: city bike, wheelchair, scooter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "intermediate"
     },
     {
       "key": "cycleway:smoothness",
-      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=bad with a fixed text, namely 'Usable for robust wheels: trekking bike, car, rickshaw' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=bad with a fixed text, namely 'Usable for robust wheels: trekking bike, car, rickshaw' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "bad"
     },
     {
       "key": "cycleway:smoothness",
-      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=very_bad with a fixed text, namely 'Usable for vehicles with high clearance: light duty off-road vehicle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=very_bad with a fixed text, namely 'Usable for vehicles with high clearance: light duty off-road vehicle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "very_bad"
     },
     {
       "key": "cycleway:smoothness",
-      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=horrible with a fixed text, namely 'Usable for off-road vehicles: heavy duty off-road vehicle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=horrible with a fixed text, namely 'Usable for off-road vehicles: heavy duty off-road vehicle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "horrible"
     },
     {
       "key": "cycleway:smoothness",
-      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=very_horrible with a fixed text, namely 'Usable for specialized off-road vehicles: tractor, ATV' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=very_horrible with a fixed text, namely 'Usable for specialized off-road vehicles: tractor, ATV' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "very_horrible"
     },
     {
       "key": "cycleway:smoothness",
-      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=impassable with a fixed text, namely 'Impassable / No wheeled vehicle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane|cycleway=lane|cycleway=track)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=impassable with a fixed text, namely 'Impassable / No wheeled vehicle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=shared_lane |cycleway=lane |cycleway=track)",
       "value": "impassable"
     },
     {
@@ -383,188 +383,188 @@
     },
     {
       "key": "smoothness",
-      "description": "Layer 'Cycleways and roads' shows smoothness=excellent with a fixed text, namely 'Usable for thin rollers: rollerblade, skateboard' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=no|highway=cycleway)",
+      "description": "Layer 'Cycleways and roads' shows smoothness=excellent with a fixed text, namely 'Usable for thin rollers: rollerblade, skateboard' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=no |highway=cycleway)",
       "value": "excellent"
     },
     {
       "key": "smoothness",
-      "description": "Layer 'Cycleways and roads' shows smoothness=good with a fixed text, namely 'Usable for thin wheels: racing bike' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=no|highway=cycleway)",
+      "description": "Layer 'Cycleways and roads' shows smoothness=good with a fixed text, namely 'Usable for thin wheels: racing bike' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=no |highway=cycleway)",
       "value": "good"
     },
     {
       "key": "smoothness",
-      "description": "Layer 'Cycleways and roads' shows smoothness=intermediate with a fixed text, namely 'Usable for normal wheels: city bike, wheelchair, scooter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=no|highway=cycleway)",
+      "description": "Layer 'Cycleways and roads' shows smoothness=intermediate with a fixed text, namely 'Usable for normal wheels: city bike, wheelchair, scooter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=no |highway=cycleway)",
       "value": "intermediate"
     },
     {
       "key": "smoothness",
-      "description": "Layer 'Cycleways and roads' shows smoothness=bad with a fixed text, namely 'Usable for robust wheels: trekking bike, car, rickshaw' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=no|highway=cycleway)",
+      "description": "Layer 'Cycleways and roads' shows smoothness=bad with a fixed text, namely 'Usable for robust wheels: trekking bike, car, rickshaw' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=no |highway=cycleway)",
       "value": "bad"
     },
     {
       "key": "smoothness",
-      "description": "Layer 'Cycleways and roads' shows smoothness=very_bad with a fixed text, namely 'Usable for vehicles with high clearance: light duty off-road vehicle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=no|highway=cycleway)",
+      "description": "Layer 'Cycleways and roads' shows smoothness=very_bad with a fixed text, namely 'Usable for vehicles with high clearance: light duty off-road vehicle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=no |highway=cycleway)",
       "value": "very_bad"
     },
     {
       "key": "smoothness",
-      "description": "Layer 'Cycleways and roads' shows smoothness=horrible with a fixed text, namely 'Usable for off-road vehicles: heavy duty off-road vehicle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=no|highway=cycleway)",
+      "description": "Layer 'Cycleways and roads' shows smoothness=horrible with a fixed text, namely 'Usable for off-road vehicles: heavy duty off-road vehicle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=no |highway=cycleway)",
       "value": "horrible"
     },
     {
       "key": "smoothness",
-      "description": "Layer 'Cycleways and roads' shows smoothness=very_horrible with a fixed text, namely 'Usable for specialized off-road vehicles: tractor, ATV' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=no|highway=cycleway)",
+      "description": "Layer 'Cycleways and roads' shows smoothness=very_horrible with a fixed text, namely 'Usable for specialized off-road vehicles: tractor, ATV' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=no |highway=cycleway)",
       "value": "very_horrible"
     },
     {
       "key": "smoothness",
-      "description": "Layer 'Cycleways and roads' shows smoothness=impassable with a fixed text, namely 'Impassable / No wheeled vehicle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=no|highway=cycleway)",
+      "description": "Layer 'Cycleways and roads' shows smoothness=impassable with a fixed text, namely 'Impassable / No wheeled vehicle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=no |highway=cycleway)",
       "value": "impassable"
     },
     {
       "key": "width:carriageway",
-      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'width:carriageway' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway&highway!=path&highway!=footway)"
+      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'width:carriageway' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway!=cycleway &highway!=path &highway!=footway)"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7 with a fixed text, namely 'Compulsory cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=lane|cycleway=track&_country=be)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7 with a fixed text, namely 'Compulsory cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=lane |cycleway=track &_country=be)",
       "value": "BE:D7"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign~^(BE:D7;.*)$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br>' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=lane|cycleway=track&_country=be)"
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign~^(BE:D7;.*)$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br>' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=lane |cycleway=track &_country=be)"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D9 with a fixed text, namely 'Segregated foot/cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=lane|cycleway=track&_country=be)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D9 with a fixed text, namely 'Segregated foot/cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=lane |cycleway=track &_country=be)",
       "value": "BE:D9"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D10 with a fixed text, namely 'Unsegregated foot/cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=lane|cycleway=track&_country=be)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D10 with a fixed text, namely 'Unsegregated foot/cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=lane |cycleway=track &_country=be)",
       "value": "BE:D10"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=none with a fixed text, namely 'No traffic sign present' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=lane|cycleway=track&_country=be)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=none with a fixed text, namely 'No traffic sign present' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=lane |cycleway=track &_country=be)",
       "value": "none"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D7 with a fixed text, namely 'Compulsory cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway|highway=path&_country=be|_country=nl)",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D7 with a fixed text, namely 'Compulsory cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway |highway=path &_country=be |_country=nl)",
       "value": "BE:D7"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign~^(BE:D7;.*)$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br>' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway|highway=path&_country=be|_country=nl)"
+      "description": "Layer 'Cycleways and roads' shows traffic_sign~^(BE:D7;.*)$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br>' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway |highway=path &_country=be |_country=nl)"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D9 with a fixed text, namely 'Segregated foot/cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway|highway=path&_country=be|_country=nl)",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D9 with a fixed text, namely 'Segregated foot/cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway |highway=path &_country=be |_country=nl)",
       "value": "BE:D9"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D10 with a fixed text, namely 'Unsegregated foot/cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway|highway=path&_country=be|_country=nl)",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D10 with a fixed text, namely 'Unsegregated foot/cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway |highway=path &_country=be |_country=nl)",
       "value": "BE:D10"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign=NL:G11 with a fixed text, namely 'Compulsory cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway|highway=path&_country=be|_country=nl)",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=NL:G11 with a fixed text, namely 'Compulsory cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway |highway=path &_country=be |_country=nl)",
       "value": "NL:G11"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign=NL:G12a with a fixed text, namely 'Compulsory (moped)cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway|highway=path&_country=be|_country=nl)",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=NL:G12a with a fixed text, namely 'Compulsory (moped)cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway |highway=path &_country=be |_country=nl)",
       "value": "NL:G12a"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign=NL:G13 with a fixed text, namely 'Non-compulsory cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway|highway=path&_country=be|_country=nl)",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=NL:G13 with a fixed text, namely 'Non-compulsory cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway |highway=path &_country=be |_country=nl)",
       "value": "NL:G13"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign=none with a fixed text, namely 'No traffic sign present' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway|highway=path&_country=be|_country=nl)",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=none with a fixed text, namely 'No traffic sign present' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway |highway=path &_country=be |_country=nl)",
       "value": "none"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M6 with a fixed text, namely 'Mopeds must use the cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway:traffic_sign=BE:D7|cycleway:traffic_sign~^(BE:D7;.*)$)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M6 with a fixed text, namely 'Mopeds must use the cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway:traffic_sign=BE:D7 |cycleway:traffic_sign~^(BE:D7;.*)$)",
       "value": "BE:D7;BE:M6"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M13 with a fixed text, namely 'Speedpedelecs must use the cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway:traffic_sign=BE:D7|cycleway:traffic_sign~^(BE:D7;.*)$)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M13 with a fixed text, namely 'Speedpedelecs must use the cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway:traffic_sign=BE:D7 |cycleway:traffic_sign~^(BE:D7;.*)$)",
       "value": "BE:D7;BE:M13"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M14 with a fixed text, namely 'Mopeds and speedpedelecs must use the cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway:traffic_sign=BE:D7|cycleway:traffic_sign~^(BE:D7;.*)$)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M14 with a fixed text, namely 'Mopeds and speedpedelecs must use the cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway:traffic_sign=BE:D7 |cycleway:traffic_sign~^(BE:D7;.*)$)",
       "value": "BE:D7;BE:M14"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M7 with a fixed text, namely 'Mopeds are not allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway:traffic_sign=BE:D7|cycleway:traffic_sign~^(BE:D7;.*)$)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M7 with a fixed text, namely 'Mopeds are not allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway:traffic_sign=BE:D7 |cycleway:traffic_sign~^(BE:D7;.*)$)",
       "value": "BE:D7;BE:M7"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M15 with a fixed text, namely 'Speedpedelecs are not allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway:traffic_sign=BE:D7|cycleway:traffic_sign~^(BE:D7;.*)$)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M15 with a fixed text, namely 'Speedpedelecs are not allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway:traffic_sign=BE:D7 |cycleway:traffic_sign~^(BE:D7;.*)$)",
       "value": "BE:D7;BE:M15"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M16 with a fixed text, namely 'Mopeds and speedpedelecs are not allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway:traffic_sign=BE:D7|cycleway:traffic_sign~^(BE:D7;.*)$)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M16 with a fixed text, namely 'Mopeds and speedpedelecs are not allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway:traffic_sign=BE:D7 |cycleway:traffic_sign~^(BE:D7;.*)$)",
       "value": "BE:D7;BE:M16"
     },
     {
       "key": "cycleway:traffic_sign:supplementary",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign:supplementary=none with a fixed text, namely 'No supplementary traffic sign present' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway:traffic_sign=BE:D7|cycleway:traffic_sign~^(BE:D7;.*)$)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign:supplementary=none with a fixed text, namely 'No supplementary traffic sign present' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway:traffic_sign=BE:D7 |cycleway:traffic_sign~^(BE:D7;.*)$)",
       "value": "none"
     },
     {
       "key": "cycleway:buffer",
-      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'cycleway:buffer' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=track|cycleway=lane)"
+      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'cycleway:buffer' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=track |cycleway=lane)"
     },
     {
       "key": "cycleway:separation",
-      "description": "Layer 'Cycleways and roads' shows cycleway:separation=dashed_line with a fixed text, namely 'This cycleway is separated by a dashed line' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=track|cycleway=lane)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:separation=dashed_line with a fixed text, namely 'This cycleway is separated by a dashed line' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=track |cycleway=lane)",
       "value": "dashed_line"
     },
     {
       "key": "cycleway:separation",
-      "description": "Layer 'Cycleways and roads' shows cycleway:separation=solid_line with a fixed text, namely 'This cycleway is separated by a solid line' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=track|cycleway=lane)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:separation=solid_line with a fixed text, namely 'This cycleway is separated by a solid line' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=track |cycleway=lane)",
       "value": "solid_line"
     },
     {
       "key": "cycleway:separation",
-      "description": "Layer 'Cycleways and roads' shows cycleway:separation=parking_lane with a fixed text, namely 'This cycleway is separated by a parking lane' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=track|cycleway=lane)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:separation=parking_lane with a fixed text, namely 'This cycleway is separated by a parking lane' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=track |cycleway=lane)",
       "value": "parking_lane"
     },
     {
       "key": "cycleway:separation",
-      "description": "Layer 'Cycleways and roads' shows cycleway:separation=kerb with a fixed text, namely 'This cycleway is separated by a kerb' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=track|cycleway=lane)",
+      "description": "Layer 'Cycleways and roads' shows cycleway:separation=kerb with a fixed text, namely 'This cycleway is separated by a kerb' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycleway=track |cycleway=lane)",
       "value": "kerb"
     },
     {
       "key": "separation",
-      "description": "Layer 'Cycleways and roads' shows separation=dashed_line with a fixed text, namely 'This cycleway is separated by a dashed line' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway|highway=path)",
+      "description": "Layer 'Cycleways and roads' shows separation=dashed_line with a fixed text, namely 'This cycleway is separated by a dashed line' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway |highway=path)",
       "value": "dashed_line"
     },
     {
       "key": "separation",
-      "description": "Layer 'Cycleways and roads' shows separation=solid_line with a fixed text, namely 'This cycleway is separated by a solid line' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway|highway=path)",
+      "description": "Layer 'Cycleways and roads' shows separation=solid_line with a fixed text, namely 'This cycleway is separated by a solid line' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway |highway=path)",
       "value": "solid_line"
     },
     {
       "key": "separation",
-      "description": "Layer 'Cycleways and roads' shows separation=parking_lane with a fixed text, namely 'This cycleway is separated by a parking lane' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway|highway=path)",
+      "description": "Layer 'Cycleways and roads' shows separation=parking_lane with a fixed text, namely 'This cycleway is separated by a parking lane' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway |highway=path)",
       "value": "parking_lane"
     },
     {
       "key": "separation",
-      "description": "Layer 'Cycleways and roads' shows separation=kerb with a fixed text, namely 'This cycleway is separated by a kerb' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway|highway=path)",
+      "description": "Layer 'Cycleways and roads' shows separation=kerb with a fixed text, namely 'This cycleway is separated by a kerb' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=cycleway |highway=path)",
       "value": "kerb"
     },
     {
@@ -579,7 +579,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Barriers' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Barriers' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -664,19 +664,19 @@
     },
     {
       "key": "maxwidth:physical",
-      "description": "Layer 'Barriers' shows and asks freeform values for key 'maxwidth:physical' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycle_barrier!=double&cycle_barrier!=triple&_referencing_ways~.+)"
+      "description": "Layer 'Barriers' shows and asks freeform values for key 'maxwidth:physical' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycle_barrier!=double &cycle_barrier!=triple &_referencing_ways~.+)"
     },
     {
       "key": "width:separation",
-      "description": "Layer 'Barriers' shows and asks freeform values for key 'width:separation' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycle_barrier=double|cycle_barrier=triple)"
+      "description": "Layer 'Barriers' shows and asks freeform values for key 'width:separation' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycle_barrier=double |cycle_barrier=triple)"
     },
     {
       "key": "width:opening",
-      "description": "Layer 'Barriers' shows and asks freeform values for key 'width:opening' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycle_barrier=double|cycle_barrier=triple)"
+      "description": "Layer 'Barriers' shows and asks freeform values for key 'width:opening' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycle_barrier=double |cycle_barrier=triple)"
     },
     {
       "key": "overlap",
-      "description": "Layer 'Barriers' shows and asks freeform values for key 'overlap' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycle_barrier=double|cycle_barrier=triple)"
+      "description": "Layer 'Barriers' shows and asks freeform values for key 'overlap' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if cycle_barrier=double |cycle_barrier=triple)"
     },
     {
       "key": "highway",
@@ -690,7 +690,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Crossings' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Crossings' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -775,12 +775,12 @@
     },
     {
       "key": "button_operated",
-      "description": "Layer 'Crossings' shows button_operated=yes with a fixed text, namely 'This traffic light has a button to request green light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=traffic_signals|crossing=traffic_signals)",
+      "description": "Layer 'Crossings' shows button_operated=yes with a fixed text, namely 'This traffic light has a button to request green light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=traffic_signals |crossing=traffic_signals)",
       "value": "yes"
     },
     {
       "key": "button_operated",
-      "description": "Layer 'Crossings' shows button_operated=no with a fixed text, namely 'This traffic light does not have a button to request green light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=traffic_signals|crossing=traffic_signals)",
+      "description": "Layer 'Crossings' shows button_operated=no with a fixed text, namely 'This traffic light does not have a button to request green light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=traffic_signals |crossing=traffic_signals)",
       "value": "no"
     },
     {
@@ -805,12 +805,12 @@
     },
     {
       "key": "traffic_signals:vibration",
-      "description": "Layer 'Crossings' shows traffic_signals:vibration=yes with a fixed text, namely 'The button for this traffic light has a vibration signal to indicate that it is safe to cross.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if crossing=traffic_signals&button_operated=yes)",
+      "description": "Layer 'Crossings' shows traffic_signals:vibration=yes with a fixed text, namely 'The button for this traffic light has a vibration signal to indicate that it is safe to cross.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if crossing=traffic_signals &button_operated=yes)",
       "value": "yes"
     },
     {
       "key": "traffic_signals:vibration",
-      "description": "Layer 'Crossings' shows traffic_signals:vibration=no with a fixed text, namely 'The button for this traffic light does not have a vibration signal to indicate that it is safe to cross.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if crossing=traffic_signals&button_operated=yes)",
+      "description": "Layer 'Crossings' shows traffic_signals:vibration=no with a fixed text, namely 'The button for this traffic light does not have a vibration signal to indicate that it is safe to cross.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if crossing=traffic_signals &button_operated=yes)",
       "value": "no"
     },
     {

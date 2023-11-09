@@ -27,6 +27,9 @@
   "startZoom": 10,
   "startLat": 55,
   "startLon": 12,
+  "credits": [
+    "Niels Elgaard Larsen"
+  ],
   "layers": [
     "dogpark",
     {
@@ -224,6 +227,5 @@
         "name": null
       }
     }
-  ],
-  "credits": "Niels Elgaard Larsen"
+  ]
 }

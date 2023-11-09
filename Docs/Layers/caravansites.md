@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/circle:white;./assets/themes/campersite/caravan.svg' height="100px"> 
+
 
 camper sites
 
@@ -15,6 +15,7 @@ camper sites
 
 
   - This layer is shown at zoomlevel **10** and higher
+  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
 
 
 
@@ -78,7 +79,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -181,7 +182,7 @@ The question is  *Does this place provide internet access?*
 
 
   - *There is internet access*  corresponds with  `internet_access=yes`
-  - *There is internet access*  corresponds with  `internet_access=wifi|internet_access=wlan`
+  - *There is internet access*  corresponds with  `internet_access=wifi |internet_access=wlan`
   - This option cannot be chosen as answer
   - *There is no internet access*  corresponds with  `internet_access=no`
 
@@ -313,7 +314,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 

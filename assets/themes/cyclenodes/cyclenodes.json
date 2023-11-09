@@ -23,23 +23,21 @@
     "pl": "Mapa ta przedstawia sieci węzłów rowerowych i umożliwia łatwe dodawanie nowych węzłów"
   },
   "icon": "./assets/themes/cyclenodes/logo.svg",
-  "hideFromOverview": true,
+  "startZoom": 11,
   "startLat": 51.755515,
   "startLon": 14.327545,
-  "startZoom": 11,
-  "widenFactor": 0.05,
-  "clustering": {
-    "maxZoom": 11,
-    "minNeededElements": 1000000
-  },
+  "credits": [
+    "Sebastian Kürten"
+  ],
+  "hideFromOverview": true,
   "layers": [
     {
       "id": "node2node",
       "name": {
-        "en": "node to node links",
+        "en": "Node to node links",
         "de": "Knotenpunktverbindungen",
         "es": "enlaces nodo a nodo",
-        "nl": "verbindingen van node naar node",
+        "nl": "Verbindingen van node naar node",
         "fr": "liens noeud à noeud",
         "ca": "enllaços node a node",
         "cs": "propojení mezi uzly",
@@ -57,10 +55,10 @@
       "minzoom": 12,
       "title": {
         "render": {
-          "en": "node to node link",
+          "en": "Node to node link",
           "de": "Knotenpunktverbindung",
           "es": "enlace nodo a nodo",
-          "nl": "node-naar-node verbinding",
+          "nl": "Node-naar-node verbinding",
           "fr": "lien noeud à noeud",
           "ca": "Enllaç node a node",
           "cs": "propojení mezi uzly",
@@ -70,10 +68,10 @@
           {
             "if": "ref~*",
             "then": {
-              "en": "node to node link <strong>{ref}</strong>",
+              "en": "Node to node link <strong>{ref}</strong>",
               "de": "Knotenpunktverbindung <strong>{ref}</strong>",
               "es": "enlace nodo a nodo <strong>{ref}</strong>",
-              "nl": "node-naar-node verbinding <strong>{ref}</strong>",
+              "nl": "Node-naar-node verbinding <strong>{ref}</strong>",
               "fr": "lien noeud à noeud <strong>{ref}</strong>",
               "ca": "Enllaç node a node <strong>{ref}</strong>",
               "cs": "propojení mezi uzly <strong>{ref}</strong>",
@@ -82,58 +80,51 @@
           }
         ]
       },
-      "mapRendering": [
+      "tagRenderings": [
+        {
+          "builtin": "survey_date",
+          "override": {
+            "question": {
+              "en": "When was this node to node link last surveyed?",
+              "de": "Wann wurde diese Knotenpunktverbindung zuletzt überprüft?",
+              "es": "¿Cuándo se sondeó este enlace nodo a nodo por última vez?",
+              "nl": "Wanneer werd deze node-naar-node verbinding het laast gesurveyed?",
+              "fr": "Quand cette liaison de nœud à nœud a-t-elle été contrôlée sur le terrain pour la dernière fois ?",
+              "ca": "Quan es va comprovar per última vegada aquest enllaç node a node presencialment?",
+              "cs": "Kdy bylo toto propojení mezi uzly naposledy zkontrolováno?",
+              "pl": "Kiedy ostatnio badano to połączenie węzła z węzłem?"
+            },
+            "render": {
+              "en": "This node to node link was last surveyed on {survey:date}",
+              "de": "Diese Knotenpunktverbindung wurde zuletzt am {survey:date} überprüft",
+              "es": "Este enlace nodo a nodo se sondeó por última vez el {survey:date}",
+              "nl": "Deze node-naar-node verbinding werd het laast gesurveyed op {survey:date}",
+              "fr": "Cette lien de nœud à nœud a été vérifié sur le terrain le {survey:date}",
+              "ca": "Aquest enllaç node a node es va sondejar per última vegada el {survey:date}",
+              "cs": "Toto propojení mezi uzly bylo naposledy zkontrolováno dne {survey:date}",
+              "pl": "To połączenie węzła z węzłem było ostatnio sprawdzane w dniu {survey:date}"
+            }
+          },
+          "id": "node2node-survey:date"
+        },
+        "export_as_gpx"
+      ],
+      "lineRendering": [
         {
           "width": "4",
           "color": "#00a703"
         }
-      ],
-      "tagRenderings": [
-        {
-          "question": {
-            "en": "When was this node to node link last surveyed?",
-            "de": "Wann wurde diese Knotenpunktverbindung zuletzt überprüft?",
-            "es": "¿Cuándo se sondeó este enlace nodo a nodo por última vez?",
-            "nl": "Wanneer werd deze node-naar-node verbinding het laast gesurveyed?",
-            "fr": "Quand cette liaison de nœud à nœud a-t-elle été contrôlée sur le terrain pour la dernière fois ?",
-            "ca": "Quan es va comprovar per última vegada aquest enllaç node a node presencialment?",
-            "cs": "Kdy bylo toto propojení mezi uzly naposledy zkontrolováno?",
-            "pl": "Kiedy ostatnio badano to połączenie węzła z węzłem?"
-          },
-          "render": {
-            "en": "This node to node link was last surveyed on {survey:date}",
-            "de": "Diese Knotenpunktverbindung wurde zuletzt am {survey:date} überprüft",
-            "es": "Este enlace nodo a nodo se sondeó por última vez el {survey:date}",
-            "nl": "Deze node-naar-node verbinding werd het laast gesurveyed op {survey:date}",
-            "fr": "Cette lien de nœud à nœud a été vérifié sur le terrain le {survey:date}",
-            "ca": "Aquest enllaç node a node es va sondejar per última vegada el {survey:date}",
-            "cs": "Toto propojení mezi uzly bylo naposledy zkontrolováno dne {survey:date}",
-            "pl": "To połączenie węzła z węzłem było ostatnio sprawdzane w dniu {survey:date}"
-          },
-          "freeform": {
-            "key": "survey:date",
-            "type": "date"
-          },
-          "mappings": [
-            {
-              "if": "survey:date:={_now:date}",
-              "then": "Surveyed today!"
-            }
-          ],
-          "id": "node2node-survey:date"
-        },
-        "export_as_gpx"
       ]
     },
     {
       "id": "node",
       "name": {
-        "en": "nodes",
+        "en": "Nodes",
         "de": "Knotenpunkte",
         "ca": "nodes",
         "es": "nodos",
         "nb_NO": "noder",
-        "nl": "knooppunten",
+        "nl": "Knooppunten",
         "fr": "noeuds",
         "pa_PK": "نوڈ",
         "cs": "uzly",
@@ -147,7 +138,7 @@
           ]
         }
       },
-      "mapRendering": [
+      "pointRendering": [
         {
           "location": [
             "point",
@@ -157,11 +148,11 @@
             "mappings": [
               {
                 "if": "rcn_ref~*",
-                "then": "<div style='position: absolute; top: 10px; right: 10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%'>{rcn_ref}</div>"
+                "then": "<div style='position: absolute; top: -10px; right: -10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%'>{rcn_ref}</div>"
               },
               {
                 "if": "rcn_ref=",
-                "then": "<div style='position: absolute; top: 10px; right: 10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%'>?</div>"
+                "then": "<div style='position: absolute; top: -10px; right: -10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%'>?</div>"
               }
             ]
           }
@@ -170,11 +161,11 @@
       "minzoom": 12,
       "title": {
         "render": {
-          "en": "cycle node <strong>{rcn_ref}</strong>",
+          "en": "Cycle node <strong>{rcn_ref}</strong>",
           "de": "Knotenpunkt <strong>{rcn_ref}</strong>",
           "es": "nodo ciclista <strong>{rcn_ref}</strong>",
           "nb_NO": "sykkelnode <strong>{rcn_ref}</strong>",
-          "nl": "fietsknooppunt <strong>{rcn_ref}</strong>",
+          "nl": "Fietsknooppunt <strong>{rcn_ref}</strong>",
           "fr": "nœud cycliste <strong>{rcn_ref}</strong>",
           "ca": "node ciclista <strong>{rcn_ref}</strong>",
           "cs": "uzel cyklu <strong>{rcn_ref}</strong>",
@@ -183,36 +174,48 @@
       },
       "tagRenderings": [
         {
+          "id": "node-rxn_ref",
           "question": {
-            "en": "When was this cycle node last surveyed?",
-            "de": "Wann wurde dieser Fahrradknotenpunkt zuletzt überprüft?",
-            "es": "¿Cuándo fue sondeado este nodo ciclista por última vez?",
-            "nl": "Wanneer is dit fietsknooppunt voor het laatst gecontroleerd?",
-            "fr": "Quand ce nœud cyclable a-t-il été vérifié sur le terrain pour la dernière fois ?",
-            "ca": "Quan va ser sondejat aquest node ciclista per última vegada?",
-            "cs": "Kdy byl tento uzel cyklu naposledy zkontrolován?",
-            "pl": "Kiedy ostatni raz badano ten węzeł rowerowy?"
-          },
-          "render": {
-            "en": "This cycle node was last surveyed on {survey:date}",
-            "de": "Dieser Fahrradknoten wurde zuletzt überprüft am {survey:date}",
-            "es": "Este nodo ciclista se sondeó por última vez el {survey:date}",
-            "nl": "Dit fietsknooppunt is voor het laatst gecontroleerd op {survey:date}",
-            "fr": "Ce nœud cycliste a été verifié pour la dernière fois le {survey:date}",
-            "ca": "Aquest node ciclista es va sondejar per última vegada el {survey:date}",
-            "cs": "Tento uzel cyklu byl naposledy zkontrolován dne {survey:date}",
-            "pl": "Ten węzeł rowerowy był ostatnio badany w dniu {survey:date}"
+            "en": "What is the reference number of this cycling node?",
+            "nl": "Wat is het referentienummer van dit fietsknooppunt?"
           },
           "freeform": {
-            "key": "survey:date",
-            "type": "date"
-          },
-          "mappings": [
-            {
-              "if": "survey:date:={_now:date}",
-              "then": "Surveyed today!"
+            "key": "rcn_ref",
+            "type": "int",
+            "placeholder": {
+              "en": "e.g. 1",
+              "nl": "bijv. 1"
             }
-          ],
+          },
+          "render": {
+            "en": "This cycling node has reference number {rcn_ref}",
+            "nl": "Dit fietsknooppunt heeft referentienummer {rcn_ref}"
+          }
+        },
+        {
+          "builtin": "survey_date",
+          "override": {
+            "question": {
+              "en": "When was this cycle node last surveyed?",
+              "de": "Wann wurde dieser Fahrradknotenpunkt zuletzt überprüft?",
+              "es": "¿Cuándo fue sondeado este nodo ciclista por última vez?",
+              "nl": "Wanneer is dit fietsknooppunt voor het laatst gecontroleerd?",
+              "fr": "Quand ce nœud cyclable a-t-il été vérifié sur le terrain pour la dernière fois ?",
+              "ca": "Quan va ser sondejat aquest node ciclista per última vegada?",
+              "cs": "Kdy byl tento uzel cyklu naposledy zkontrolován?",
+              "pl": "Kiedy ostatni raz badano ten węzeł rowerowy?"
+            },
+            "render": {
+              "en": "This cycle node was last surveyed on {survey:date}",
+              "de": "Dieser Fahrradknoten wurde zuletzt überprüft am {survey:date}",
+              "es": "Este nodo ciclista se sondeó por última vez el {survey:date}",
+              "nl": "Dit fietsknooppunt is voor het laatst gecontroleerd op {survey:date}",
+              "fr": "Ce nœud cycliste a été verifié pour la dernière fois le {survey:date}",
+              "ca": "Aquest node ciclista es va sondejar per última vegada el {survey:date}",
+              "cs": "Tento uzel cyklu byl naposledy zkontrolován dne {survey:date}",
+              "pl": "Ten węzeł rowerowy był ostatnio badany w dniu {survey:date}"
+            }
+          },
           "id": "node-survey:date"
         },
         {
@@ -238,13 +241,101 @@
           },
           "freeform": {
             "key": "expected_rcn_route_relations",
-            "type": "int"
+            "type": "int",
+            "placeholder": {
+              "en": "e.g. 3",
+              "nl": "bijv. 3"
+            }
           },
           "id": "node-expected_rcn_route_relations"
         },
         "images"
+      ],
+      "presets": [
+        {
+          "tags": [
+            "rcn_ref=?",
+            "network:type=node_network"
+          ],
+          "title": {
+            "en": "a cycling node",
+            "nl": "een fietsknooppunt"
+          },
+          "snapToLayer": [
+            "cycleways_and_roads"
+          ]
+        }
       ]
+    },
+    {
+      "builtin": [
+        "guidepost"
+      ],
+      "override": {
+        "minzoom": 16,
+        "source": {
+          "osmTags": {
+            "and": [
+              "information=guidepost",
+              "bicycle=yes"
+            ]
+          }
+        },
+        "presets": [
+          {
+            "tags": [
+              "tourism=information",
+              "information=guidepost",
+              "bicycle=yes"
+            ]
+          }
+        ],
+        "name": {
+          "en": "Cycling guideposts"
+        },
+        "title": {
+          "render": {
+            "en": "Cycling guidepost"
+          }
+        }
+      },
+      "hideTagRenderingsWithLabels": [
+        "type"
+      ]
+    },
+    {
+      "builtin": "route_marker",
+      "override": {
+        "minzoom": 16,
+        "pointRendering": [
+          {
+            "icon": "./assets/themes/cyclenodes/route_marker.svg"
+          }
+        ],
+        "presets": [
+          {
+            "tags": [
+              "tourism=information",
+              "information=route_marker",
+              "network:type=node_network",
+              "bicycle=yes"
+            ],
+            "title": {
+              "en": "a route marker for a node to node link"
+            },
+            "=exampleImages": [
+              "./assets/layers/route_marker/bicycle_route_marker.jpg"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "cycleways_and_roads",
+      "override": {
+        "name": null,
+        "shownByDefault": false
+      }
     }
-  ],
-  "credits": "Sebastian Kürten"
+  ]
 }

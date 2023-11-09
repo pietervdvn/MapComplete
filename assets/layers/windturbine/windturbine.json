@@ -61,6 +61,50 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "label": {
+        "mappings": [
+          {
+            "if": "generator:output:electricity~^[0-9]+.*[W]$",
+            "then": "<div style='background-color: rgba(0,0,0,0.3); color: white; font-size: 8px; padding: 0.25em; border-radius:0.5em'>{generator:output:electricity}</div>"
+          }
+        ]
+      },
+      "iconSize": "40, 40",
+      "anchor": "bottom",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/themes/openwindpowermap/wind_turbine.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "tags": [
+        "power=generator",
+        "generator:source=wind"
+      ],
+      "title": {
+        "en": "a wind turbine",
+        "nl": "een windturbine",
+        "fr": "une éolienne",
+        "de": "ein Windrad",
+        "it": "una pala eolica",
+        "zh_Hant": "風機",
+        "hu": "Szélerőmű",
+        "da": "en vindmølle",
+        "ca": "una turbina eòlica",
+        "cs": "větrná turbína"
+      }
+    }
+  ],
   "tagRenderings": [
     {
       "id": "turbine-output",
@@ -254,26 +298,6 @@
     },
     "images"
   ],
-  "presets": [
-    {
-      "tags": [
-        "power=generator",
-        "generator:source=wind"
-      ],
-      "title": {
-        "en": "a wind turbine",
-        "nl": "een windturbine",
-        "fr": "une éolienne",
-        "de": "ein Windrad",
-        "it": "una pala eolica",
-        "zh_Hant": "風機",
-        "hu": "Szélerőmű",
-        "da": "en vindmølle",
-        "ca": "una turbina eòlica",
-        "cs": "větrná turbína"
-      }
-    }
-  ],
   "units": [
     {
       "appliesToKey": [
@@ -399,25 +423,6 @@
             "cs": " metr"
           }
         }
-      ]
-    }
-  ],
-  "mapRendering": [
-    {
-      "icon": "./assets/themes/openwindpowermap/wind_turbine.svg",
-      "label": {
-        "mappings": [
-          {
-            "if": "generator:output:electricity~^[0-9]+.*[W]$",
-            "then": "<div style='background-color: rgba(0,0,0,0.3); color: white; font-size: 8px; padding: 0.25em; border-radius:0.5em'>{generator:output:electricity}</div>"
-          }
-        ]
-      },
-      "iconSize": "40, 40",
-      "anchor": "bottom",
-      "location": [
-        "point",
-        "centroid"
       ]
     }
   ]

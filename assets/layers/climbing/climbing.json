@@ -1,6 +1,5 @@
 {
   "id": "climbing",
-  "title": null,
   "description": {
     "en": "A dummy layer which contains tagrenderings, shared among the climbing layers",
     "nl": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsport lagen",
@@ -8,10 +7,11 @@
     "cs": "Falešná vrstva, která obsahuje tagrenderingy sdílené mezi lezeckými vrstvami",
     "ca": "Una capa fictícia que conté renderització d'etiquetes compartides entre les capes d'escalada"
   },
-  "minzoom": 19,
-  "source": {
-    "osmTags": "sport=climbing"
-  },
+  "source": "special:library",
+  "minzoom": 18,
+  "title": null,
+  "pointRendering": null,
+  "lineRendering": null,
   "tagRenderings": [
     {
       "id": "website",
@@ -444,6 +444,5 @@
         }
       ]
     }
-  ],
-  "mapRendering": null
+  ]
 }

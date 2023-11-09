@@ -14,7 +14,19 @@
     "nb_NO": "Postkontor",
     "cs": "Pošty"
   },
-  "minzoom": 12,
+  "description": {
+    "en": "A layer showing post offices.",
+    "de": "Eine Ebene mit Postämtern.",
+    "zh_Hant": "圖層顯示郵局。",
+    "id": "Layer yang menunjukkan kantor pos.",
+    "hu": "Postákat megjelenítő réteg.",
+    "nl": "Een laag die postkantoren toont.",
+    "es": "Una capa que muestra oficinas postales.",
+    "fr": "Un claque montrant les bureaux de poste.",
+    "nb_NO": "Et lag som viser postkontor.",
+    "ca": "Una capa que mostra oficines postals.",
+    "cs": "Vrstva zobrazující pošty."
+  },
   "source": {
     "osmTags": {
       "or": [
@@ -23,6 +35,7 @@
       ]
     }
   },
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Post Office",
@@ -69,19 +82,62 @@
       }
     ]
   },
-  "description": {
-    "en": "A layer showing post offices.",
-    "de": "Eine Ebene mit Postämtern.",
-    "zh_Hant": "圖層顯示郵局。",
-    "id": "Layer yang menunjukkan kantor pos.",
-    "hu": "Postákat megjelenítő réteg.",
-    "nl": "Een laag die postkantoren toont.",
-    "es": "Una capa que muestra oficinas postales.",
-    "fr": "Un claque montrant les bureaux de poste.",
-    "nb_NO": "Et lag som viser postkontor.",
-    "ca": "Una capa que mostra oficines postals.",
-    "cs": "Vrstva zobrazující pošty."
-  },
+  "pointRendering": [
+    {
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        },
+        {
+          "if": "shop~*",
+          "then": "./assets/themes/shops/shop.svg"
+        }
+      ],
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "square",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/postoffices/post_office.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#DADADA",
+      "width": "1"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=post_office"
+      ],
+      "title": {
+        "en": "a post office",
+        "de": "eine Poststelle",
+        "ru": "Почтовое отделение",
+        "zh_Hant": "郵局",
+        "id": "Kantor Pos",
+        "hu": "Posta",
+        "nl": "een postkantoor",
+        "ca": "una oficina de correus",
+        "es": "una oficina de correo",
+        "nb_NO": "et postkontor",
+        "fr": "un bureau de poste",
+        "cs": "pošta"
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -495,53 +551,7 @@
       ]
     }
   ],
-  "presets": [
-    {
-      "tags": [
-        "amenity=post_office"
-      ],
-      "title": {
-        "en": "a post office",
-        "de": "eine Poststelle",
-        "ru": "Почтовое отделение",
-        "zh_Hant": "郵局",
-        "id": "Kantor Pos",
-        "hu": "Posta",
-        "nl": "een postkantoor",
-        "ca": "una oficina de correus",
-        "es": "una oficina de correo",
-        "nb_NO": "et postkontor",
-        "fr": "un bureau de poste",
-        "cs": "pošta"
-      }
-    }
-  ],
   "filter": [
     "open_now"
-  ],
-  "mapRendering": [
-    {
-      "icon": "square:white;./assets/layers/postoffices/post_office.svg",
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        },
-        {
-          "if": "shop~*",
-          "then": "./assets/themes/shops/shop.svg"
-        }
-      ],
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    },
-    {
-      "color": "#DADADA",
-      "width": "1"
-    }
   ]
 }

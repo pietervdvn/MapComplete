@@ -14,21 +14,15 @@
     "es": "Agua potable",
     "cs": "Pitná voda"
   },
-  "title": {
-    "render": {
-      "en": "Drinking water",
-      "nl": "Drinkbaar water",
-      "fr": "Eau potable",
-      "gl": "Auga potábel",
-      "de": "Trinkwasserstelle",
-      "it": "Acqua potabile",
-      "ru": "Питьевая вода",
-      "id": "Air minum",
-      "hu": "Ivóvíz",
-      "ca": "Aigua potable",
-      "es": "Agua potable",
-      "cs": "Pitná voda"
-    }
+  "description": {
+    "en": "A layer showing drinking water fountains",
+    "nl": "Deze laag toont drinkwaterpunten",
+    "hu": "Ivóvizet adó kutakat megjelenítő réteg",
+    "de": "Eine Ebene mit Trinkwasserbrunnen",
+    "es": "Una capa que muestra fuentes de agua potable",
+    "fr": "Une couche montrant les fontaines d'eau potable",
+    "ca": "Una capa que mostra fonts d'aigua potable",
+    "cs": "Vrstva zobrazující fontány s pitnou vodou"
   },
   "source": {
     "osmTags": {
@@ -50,7 +44,53 @@
     "_closest_other_drinking_water_id=get(feat)('_closest_other_drinking_water')?.id",
     "_closest_other_drinking_water_distance=Math.floor(Number(get(feat)('_closest_other_drinking_water')?.distance))"
   ],
-  "minzoom": 13,
+  "title": {
+    "render": {
+      "en": "Drinking water",
+      "nl": "Drinkbaar water",
+      "fr": "Eau potable",
+      "gl": "Auga potábel",
+      "de": "Trinkwasserstelle",
+      "it": "Acqua potabile",
+      "ru": "Питьевая вода",
+      "id": "Air minum",
+      "hu": "Ivóvíz",
+      "ca": "Aigua potable",
+      "es": "Agua potable",
+      "cs": "Pitná voda"
+    }
+  },
+  "pointRendering": [
+    {
+      "iconBadges": [
+        {
+          "if": {
+            "or": [
+              "operational_status=broken",
+              "operational_status=closed"
+            ]
+          },
+          "then": "close:#c33"
+        }
+      ],
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#6BC4F7"
+        },
+        {
+          "icon": "./assets/layers/drinking_water/drips.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
   "presets": [
     {
       "title": {
@@ -65,6 +105,9 @@
         "hu": "ivóvíz",
         "ca": "una font d'aigua potable",
         "cs": "pitná voda"
+      },
+      "description": {
+        "en": "Typically a drinking fountain, water tap, water well or natural spring"
       },
       "tags": [
         "amenity=drinking_water"
@@ -215,7 +258,6 @@
         "amenity="
       ]
     },
-    "neededChangesets": 1,
     "nonDeleteMappings": [
       {
         "if": {
@@ -255,37 +297,5 @@
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuraccy": true
-  },
-  "mapRendering": [
-    {
-      "icon": "pin:#6BC4F7;./assets/layers/drinking_water/drips.svg",
-      "iconBadges": [
-        {
-          "if": {
-            "or": [
-              "operational_status=broken",
-              "operational_status=closed"
-            ]
-          },
-          "then": "close:#c33"
-        }
-      ],
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "bottom"
-    }
-  ],
-  "description": {
-    "en": "A layer showing drinking water fountains",
-    "nl": "Deze laag toont drinkwaterpunten",
-    "hu": "Ivóvizet adó kutakat megjelenítő réteg",
-    "de": "Eine Ebene mit Trinkwasserbrunnen",
-    "es": "Una capa que muestra fuentes de agua potable",
-    "fr": "Une couche montrant les fontaines d'eau potable",
-    "ca": "Una capa que mostra fonts d'aigua potable",
-    "cs": "Vrstva zobrazující fontány s pitnou vodou"
   }
 }

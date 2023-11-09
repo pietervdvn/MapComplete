@@ -14,7 +14,17 @@
     "cs": "Vzduchový kompresor a opravy jízdních kol",
     "ca": "Manxa i reparació de bicicletes"
   },
-  "minzoom": 13,
+  "description": {
+    "en": "A layer showing bicycle pumps and bicycle repair tool stands",
+    "nl": "Deze laag toont fietspompen en herstelpunten voor fietsen",
+    "de": "Eine Ebene mit Fahrradpumpen und Werkzeugständern für die Fahrradreparatur",
+    "es": "Una capa que muestra bombas de bicicletas y puestos de herramientas de reparación de bicicletas",
+    "da": "Et lag med cykelpumper og cykelreværktøjsstativer",
+    "fr": "Une couche montrant les pompes à vélo et les centres de réparation",
+    "cs": "Vrstva zobrazující vzduchové kompresory na jízdní kola a stojany na nářadí pro opravu jízdních kol",
+    "ca": "Una capa que mostra bombes de bicicletes i suports d'eines de reparació de bicicletes",
+    "pt_BR": "Uma camada que mostra bombas de ar para bicicletas e suportes com ferramentas de reparo para bicicletas"
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -22,6 +32,7 @@
       ]
     }
   },
+  "minzoom": 13,
   "title": {
     "render": {
       "en": "Bike station (pump & repair)",
@@ -169,6 +180,243 @@
       "condition": "operator=De Fietsambassade Gent"
     },
     "icons.defaults"
+  ],
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "pin",
+          "color": {
+            "render": "#88d32c",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump=yes",
+                    "service:bicycle:tools=yes",
+                    "service:bicycle:pump:operational_status=broken"
+                  ]
+                },
+                "then": "#88d32c"
+              },
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump=yes",
+                    "service:bicycle:tools=yes"
+                  ]
+                },
+                "then": "#30abf0"
+              },
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump:operational_status=broken",
+                    "service:bicycle:tools=no"
+                  ]
+                },
+                "then": "black"
+              },
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump=yes",
+                    {
+                      "or": [
+                        "service:bicycle:tools=no",
+                        "service:bicycle:tools="
+                      ]
+                    }
+                  ]
+                },
+                "then": "#e1783a"
+              }
+            ]
+          }
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/bike_repair_station/repair_station.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump=yes",
+                    "service:bicycle:tools=yes",
+                    "service:bicycle:pump:operational_status=broken"
+                  ]
+                },
+                "then": "./assets/layers/bike_repair_station/repair_station_broken_pump.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump=yes",
+                    "service:bicycle:tools=yes"
+                  ]
+                },
+                "then": "./assets/layers/bike_repair_station/repair_station_pump.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump:operational_status=broken",
+                    "service:bicycle:tools=no"
+                  ]
+                },
+                "then": "./assets/layers/bike_repair_station/broken_pump.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump=yes",
+                    {
+                      "or": [
+                        "service:bicycle:tools=no",
+                        "service:bicycle:tools="
+                      ]
+                    }
+                  ]
+                },
+                "then": "./assets/layers/bike_repair_station/pump.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "operator=De Fietsambassade Gent",
+          "then": "./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg"
+        },
+        {
+          "if": {
+            "or": [
+              "access=no",
+              "access=private"
+            ]
+          },
+          "then": "invalid"
+        }
+      ],
+      "iconSize": "50,50",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom"
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "a bike pump",
+        "nl": "een fietspomp",
+        "fr": "une pompe à vélo",
+        "gl": "bomba de ar",
+        "de": "eine Fahrradpumpe",
+        "it": "una pompa per bici",
+        "ru": "bелосипедный насос",
+        "fi": "pyöräpumppu",
+        "pl": "pompka do roweru",
+        "pt_BR": "uma bomba de bicicleta",
+        "es": "una bomba de bicicletas",
+        "da": "en cykelpumpe",
+        "cs": "pumpa na kolo",
+        "ca": "una manxa per a bicicletes"
+      },
+      "tags": [
+        "amenity=bicycle_repair_station",
+        "service:bicycle:tools=no",
+        "service:bicycle:pump=yes"
+      ],
+      "description": {
+        "en": "A device to inflate your tires on a fixed location in the public space.",
+        "nl": "Een fietspomp in de publieke ruimte zonder extra gereedschap. De fietspomp in je kelder telt dus niet.",
+        "it": "Un dispositivo per gonfiare le proprie gomme in un luogo fisso pubblicamente accessibile.",
+        "fr": "Un dispositif pour gonfler vos pneus sur un emplacement fixe dans l'espace public.",
+        "de": "Ein Gerät zum Aufpumpen von Reifen an einem festen Standort im öffentlichen Raum.",
+        "pl": "Urządzenie do pompowania opon w stałym miejscu w przestrzeni publicznej.",
+        "pt_BR": "Um dispositivo para encher seus pneus em um local fixa no espaço público.",
+        "pt": "Um aparelho para encher os seus pneus num local fixa no espaço público.",
+        "es": "Un dispositivo para inflar tus ruedas en una posición fija en el espacio público.",
+        "da": "En anordning til at fylde dine dæk op på et fast sted i det offentlige rum.",
+        "cs": "Zařízení pro huštění pneumatik na pevném místě na veřejném místě.",
+        "ca": "Un dispositiu per a unflar les teues rodes en una posició fixa a l'espai públic."
+      },
+      "exampleImages": [
+        "./assets/layers/bike_repair_station/pump_example_round.jpg",
+        "./assets/layers/bike_repair_station/pump_example.png",
+        "./assets/layers/bike_repair_station/pump_example_manual.jpg"
+      ]
+    },
+    {
+      "title": {
+        "en": "a bike repair station and pump",
+        "nl": "een herstelpunt en pomp",
+        "fr": "une point de réparation vélo avec pompe",
+        "gl": "estación de arranxo de bicicletas con bomba de ar",
+        "de": "eine Fahrrad-Reparaturstation mit Pumpe",
+        "it": "una stazione di riparazione bici e pompa",
+        "pl": "stacja naprawy rowerów i pompka",
+        "es": "En estación de reparación de bicicletas y bomba",
+        "da": "en cykelreparationsstation og pumpe",
+        "cs": "opravna kol a vzduchový kompresor",
+        "ca": "una estació de reparació de bicicletes i una bomba"
+      },
+      "tags": [
+        "amenity=bicycle_repair_station",
+        "service:bicycle:tools=yes",
+        "service:bicycle:pump=yes"
+      ],
+      "description": {
+        "en": "A bicycle pump and tools to repair your bike in the public space. The tools are often secured with chains against theft.",
+        "nl": "Een fietspomp en gereedschap om je fiets te herstellen in de publieke ruimte. Deze zijn op een vastgemaakt, bijvoorbeeld aan een paal.",
+        "fr": "Un dispositif avec des outils pour réparer votre vélo combiné à une pompe a un emplacement fixe. Les outils sont souvent attachés par une chaîne pour empêcher le vol.",
+        "it": "Un dispositivo con attrezzi per riparare la tua bici e una pompa in un luogo fisso. Gli attrezzi sono spesso attaccati ad una catena per prevenire il furto.",
+        "de": "Ein Gerät mit Werkzeugen zur Reparatur von Fahrrädern kombiniert mit einer Pumpe an einem festen Standort. Die Werkzeuge sind oft mit Ketten gegen Diebstahl gesichert.",
+        "es": "Una bomba de bicicletas y herramientas para reparar tu bicicleta en el espacio público. Las herramientas habitualmente están aseguradas con cadenas contra el robo.",
+        "da": "En cykelpumpe og værktøj til at reparere din cykel i det offentlige rum. Værktøjet er ofte sikret med kæder mod tyveri.",
+        "cs": "Vzduchový kompresor na kolo a nářadí na opravu kola na veřejném místě. Nářadí je často zajištěno řetězy proti krádeži.",
+        "ca": "Una bomba per a bicicletes i eines per a reparar la teva bicicleta a l'espai públic. Les eines sovint estan assegurades amb cadenes contra robatoris.",
+        "pt_BR": "Uma bomba de ar para bicicletas e ferramentas para reparar sua bicicleta em espaço público. As ferramentas geralmente são protegidas com correntes contra furtos."
+      },
+      "exampleImages": [
+        "./assets/layers/bike_repair_station/repair_station_example_2.jpg",
+        "./assets/layers/bike_repair_station/repair_station_example_3.jpg"
+      ]
+    },
+    {
+      "title": {
+        "en": "a bike repair station without pump",
+        "nl": "een herstelpunt zonder pomp",
+        "fr": "une point de réparation vélo sans pompe",
+        "gl": "estación de arranxo de bicicletas sin bomba de ar",
+        "de": "eine Fahrrad-Reparaturstation ohne Pumpe",
+        "it": "una stazione di riparazione bici senza pompa",
+        "ru": "Станция обслуживания велосипедов без накачки (насоса)",
+        "es": "una estación de reparación de bicicletas sin bomba",
+        "da": "en cykelreparationsstation uden pumpe",
+        "cs": "opravna kol bez vzduchového kompresoru",
+        "ca": "una estació de reparació de bicicletes sense bomba"
+      },
+      "tags": [
+        "amenity=bicycle_repair_station",
+        "service:bicycle:tools=yes",
+        "service:bicycle:pump=no"
+      ],
+      "description": {
+        "en": "Tools to repair your bike in the public space (without pump). The tools are secured against theft.",
+        "nl": "Gereedschap om je fiets te herstellen in de publieke ruimte (zonder pomp). Deze zijn op een vastgemaakt, bijvoorbeeld aan een paal.",
+        "de": "Werkzeug, um Ihr Fahrrad im öffentlichen Raum zu reparieren (ohne Pumpe). Die Werkzeuge sind gegen Diebstahl gesichert.",
+        "es": "Herramientas para reparar tu bici en el espacio público (sin bomba).Las herramientas están aseguradas contra el robo.",
+        "da": "Værktøj til at reparere din cykel i det offentlige rum (uden pumpe). Værktøjet er sikret mod tyveri.",
+        "fr": "Des outils pour réparer les vélos dans l’espace public (sans pompe). Les outils sont sécurisés contre le vol.",
+        "cs": "nářadí pro opravu kola na veřejném místě (bez vzduchového kompresoru) Nářadí je zabezpečeno proti krádeži.",
+        "ca": "Eines per reparar la teva bicicleta a l'espai públic (sense bomba). Les eines estan assegurades contra robatoris."
+      }
+    }
   ],
   "tagRenderings": [
     "images",
@@ -865,116 +1113,6 @@
     },
     "level"
   ],
-  "presets": [
-    {
-      "title": {
-        "en": "a bike pump",
-        "nl": "een fietspomp",
-        "fr": "une pompe à vélo",
-        "gl": "bomba de ar",
-        "de": "eine Fahrradpumpe",
-        "it": "una pompa per bici",
-        "ru": "bелосипедный насос",
-        "fi": "pyöräpumppu",
-        "pl": "pompka do roweru",
-        "pt_BR": "uma bomba de bicicleta",
-        "es": "una bomba de bicicletas",
-        "da": "en cykelpumpe",
-        "cs": "pumpa na kolo",
-        "ca": "una manxa per a bicicletes"
-      },
-      "tags": [
-        "amenity=bicycle_repair_station",
-        "service:bicycle:tools=no",
-        "service:bicycle:pump=yes"
-      ],
-      "description": {
-        "en": "A device to inflate your tires on a fixed location in the public space.",
-        "nl": "Een fietspomp in de publieke ruimte zonder extra gereedschap. De fietspomp in je kelder telt dus niet.",
-        "it": "Un dispositivo per gonfiare le proprie gomme in un luogo fisso pubblicamente accessibile.",
-        "fr": "Un dispositif pour gonfler vos pneus sur un emplacement fixe dans l'espace public.",
-        "de": "Ein Gerät zum Aufpumpen von Reifen an einem festen Standort im öffentlichen Raum.",
-        "pl": "Urządzenie do pompowania opon w stałym miejscu w przestrzeni publicznej.",
-        "pt_BR": "Um dispositivo para encher seus pneus em um local fixa no espaço público.",
-        "pt": "Um aparelho para encher os seus pneus num local fixa no espaço público.",
-        "es": "Un dispositivo para inflar tus ruedas en una posición fija en el espacio público.",
-        "da": "En anordning til at fylde dine dæk op på et fast sted i det offentlige rum.",
-        "cs": "Zařízení pro huštění pneumatik na pevném místě na veřejném místě.",
-        "ca": "Un dispositiu per a unflar les teues rodes en una posició fixa a l'espai públic."
-      },
-      "exampleImages": [
-        "./assets/layers/bike_repair_station/pump_example_round.jpg",
-        "./assets/layers/bike_repair_station/pump_example.png",
-        "./assets/layers/bike_repair_station/pump_example_manual.jpg"
-      ]
-    },
-    {
-      "title": {
-        "en": "a bike repair station and pump",
-        "nl": "een herstelpunt en pomp",
-        "fr": "une point de réparation vélo avec pompe",
-        "gl": "estación de arranxo de bicicletas con bomba de ar",
-        "de": "eine Fahrrad-Reparaturstation mit Pumpe",
-        "it": "una stazione di riparazione bici e pompa",
-        "pl": "stacja naprawy rowerów i pompka",
-        "es": "En estación de reparación de bicicletas y bomba",
-        "da": "en cykelreparationsstation og pumpe",
-        "cs": "opravna kol a vzduchový kompresor",
-        "ca": "una estació de reparació de bicicletes i una bomba"
-      },
-      "tags": [
-        "amenity=bicycle_repair_station",
-        "service:bicycle:tools=yes",
-        "service:bicycle:pump=yes"
-      ],
-      "description": {
-        "en": "A bicycle pump and tools to repair your bike in the public space. The tools are often secured with chains against theft.",
-        "nl": "Een fietspomp en gereedschap om je fiets te herstellen in de publieke ruimte. Deze zijn op een vastgemaakt, bijvoorbeeld aan een paal.",
-        "fr": "Un dispositif avec des outils pour réparer votre vélo combiné à une pompe a un emplacement fixe. Les outils sont souvent attachés par une chaîne pour empêcher le vol.",
-        "it": "Un dispositivo con attrezzi per riparare la tua bici e una pompa in un luogo fisso. Gli attrezzi sono spesso attaccati ad una catena per prevenire il furto.",
-        "de": "Ein Gerät mit Werkzeugen zur Reparatur von Fahrrädern kombiniert mit einer Pumpe an einem festen Standort. Die Werkzeuge sind oft mit Ketten gegen Diebstahl gesichert.",
-        "es": "Una bomba de bicicletas y herramientas para reparar tu bicicleta en el espacio público. Las herramientas habitualmente están aseguradas con cadenas contra el robo.",
-        "da": "En cykelpumpe og værktøj til at reparere din cykel i det offentlige rum. Værktøjet er ofte sikret med kæder mod tyveri.",
-        "cs": "Vzduchový kompresor na kolo a nářadí na opravu kola na veřejném místě. Nářadí je často zajištěno řetězy proti krádeži.",
-        "ca": "Una bomba per a bicicletes i eines per a reparar la teva bicicleta a l'espai públic. Les eines sovint estan assegurades amb cadenes contra robatoris.",
-        "pt_BR": "Uma bomba de ar para bicicletas e ferramentas para reparar sua bicicleta em espaço público. As ferramentas geralmente são protegidas com correntes contra furtos."
-      },
-      "exampleImages": [
-        "./assets/layers/bike_repair_station/repair_station_example_2.jpg",
-        "./assets/layers/bike_repair_station/repair_station_example_3.jpg"
-      ]
-    },
-    {
-      "title": {
-        "en": "a bike repair station without pump",
-        "nl": "een herstelpunt zonder pomp",
-        "fr": "une point de réparation vélo sans pompe",
-        "gl": "estación de arranxo de bicicletas sin bomba de ar",
-        "de": "eine Fahrrad-Reparaturstation ohne Pumpe",
-        "it": "una stazione di riparazione bici senza pompa",
-        "ru": "Станция обслуживания велосипедов без накачки (насоса)",
-        "es": "una estación de reparación de bicicletas sin bomba",
-        "da": "en cykelreparationsstation uden pumpe",
-        "cs": "opravna kol bez vzduchového kompresoru",
-        "ca": "una estació de reparació de bicicletes sense bomba"
-      },
-      "tags": [
-        "amenity=bicycle_repair_station",
-        "service:bicycle:tools=yes",
-        "service:bicycle:pump=no"
-      ],
-      "description": {
-        "en": "Tools to repair your bike in the public space (without pump). The tools are secured against theft.",
-        "nl": "Gereedschap om je fiets te herstellen in de publieke ruimte (zonder pomp). Deze zijn op een vastgemaakt, bijvoorbeeld aan een paal.",
-        "de": "Werkzeug, um Ihr Fahrrad im öffentlichen Raum zu reparieren (ohne Pumpe). Die Werkzeuge sind gegen Diebstahl gesichert.",
-        "es": "Herramientas para reparar tu bici en el espacio público (sin bomba).Las herramientas están aseguradas contra el robo.",
-        "da": "Værktøj til at reparere din cykel i det offentlige rum (uden pumpe). Værktøjet er sikret mod tyveri.",
-        "fr": "Des outils pour réparer les vélos dans l’espace public (sans pompe). Les outils sont sécurisés contre le vol.",
-        "cs": "nářadí pro opravu kola na veřejném místě (bez vzduchového kompresoru) Nářadí je zabezpečeno proti krádeži.",
-        "ca": "Eines per reparar la teva bicicleta a l'espai públic (sense bomba). Les eines estan assegurades contra robatoris."
-      }
-    }
-  ],
   "deletion": {
     "softDeletionTags": {
       "and": [
@@ -987,88 +1125,5 @@
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuraccy": true
-  },
-  "mapRendering": [
-    {
-      "icon": {
-        "render": "pin:#88d32c;./assets/layers/bike_repair_station/repair_station.svg",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "service:bicycle:pump=yes",
-                "service:bicycle:tools=yes",
-                "service:bicycle:pump:operational_status=broken"
-              ]
-            },
-            "then": "pin:#88d32c;./assets/layers/bike_repair_station/repair_station_broken_pump.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "service:bicycle:pump=yes",
-                "service:bicycle:tools=yes"
-              ]
-            },
-            "then": "pin:#30abf0;./assets/layers/bike_repair_station/repair_station_pump.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "service:bicycle:pump:operational_status=broken",
-                "service:bicycle:tools=no"
-              ]
-            },
-            "then": "pin:black;./assets/layers/bike_repair_station/broken_pump.svg"
-          },
-          {
-            "if": {
-              "and": [
-                "service:bicycle:pump=yes",
-                {
-                  "or": [
-                    "service:bicycle:tools=no",
-                    "service:bicycle:tools="
-                  ]
-                }
-              ]
-            },
-            "then": "pin:#e1783a;./assets/layers/bike_repair_station/pump.svg"
-          }
-        ]
-      },
-      "iconBadges": [
-        {
-          "if": "operator=De Fietsambassade Gent",
-          "then": "./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg"
-        },
-        {
-          "if": {
-            "or": [
-              "access=no",
-              "access=private"
-            ]
-          },
-          "then": "invalid"
-        }
-      ],
-      "iconSize": "50,50",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "bottom"
-    }
-  ],
-  "description": {
-    "en": "A layer showing bicycle pumps and bicycle repair tool stands",
-    "nl": "Deze laag toont fietspompen en herstelpunten voor fietsen",
-    "de": "Eine Ebene mit Fahrradpumpen und Werkzeugständern für die Fahrradreparatur",
-    "es": "Una capa que muestra bombas de bicicletas y puestos de herramientas de reparación de bicicletas",
-    "da": "Et lag med cykelpumper og cykelreværktøjsstativer",
-    "fr": "Une couche montrant les pompes à vélo et les centres de réparation",
-    "cs": "Vrstva zobrazující vzduchové kompresory na jízdní kola a stojany na nářadí pro opravu jízdních kol",
-    "ca": "Una capa que mostra bombes de bicicletes i suports d'eines de reparació de bicicletes",
-    "pt_BR": "Uma camada que mostra bombas de ar para bicicletas e suportes com ferramentas de reparo para bicicletas"
   }
 }

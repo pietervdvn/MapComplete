@@ -1,5 +1,4 @@
 import { LayerConfigJson } from "../../../../src/Models/ThemeConfig/Json/LayerConfigJson"
-import { TagRenderingConfigJson } from "../../../../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
 import LineRenderingConfigJson from "../../../../src/Models/ThemeConfig/Json/LineRenderingConfigJson"
 import {
     ExpandRewrite,
@@ -9,6 +8,8 @@ import {
 import { QuestionableTagRenderingConfigJson } from "../../../../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import RewritableConfigJson from "../../../../src/Models/ThemeConfig/Json/RewritableConfigJson"
 import { describe, expect, it } from "vitest"
+
+import { ConversionContext } from "../../../../src/Models/ThemeConfig/Conversion/ConversionContext"
 
 describe("ExpandRewrite", () => {
     it("should not allow overlapping keys", () => {
@@ -20,19 +21,19 @@ describe("ExpandRewrite", () => {
             renderings: "The value of xyz is longer_xyz",
         }
         const rewrite = new ExpandRewrite()
-        expect(() => rewrite.convert(spec, "test")).to.throw
+        expect(() => rewrite.convertStrict(spec, ConversionContext.test())).to.throw
     })
 })
 
 describe("PrepareLayer", () => {
     it("should expand rewrites in map renderings", () => {
-        const exampleLayer: LayerConfigJson = {
+        const exampleLayer: LayerConfigJson = <any>{
             id: "testlayer",
             source: {
                 osmTags: "key=value",
             },
-            mapRendering: [
-                {
+            lineRendering: [
+                <any>{
                     rewrite: {
                         sourceString: ["left|right", "lr_offset"],
                         into: [
@@ -60,15 +61,15 @@ describe("PrepareLayer", () => {
             ],
         }
         const prep = new PrepareLayer({
-            tagRenderings: new Map<string, TagRenderingConfigJson>(),
+            tagRenderings: new Map<string, QuestionableTagRenderingConfigJson>(),
             sharedLayers: new Map<string, LayerConfigJson>(),
         })
-        const result = prep.convertStrict(exampleLayer, "test")
+        const result = prep.convertStrict(exampleLayer, ConversionContext.test())
 
         const expected = {
             id: "testlayer",
             source: { osmTags: "key=value" },
-            mapRendering: [
+            lineRendering: [
                 {
                     color: {
                         render: "#888",
@@ -123,7 +124,7 @@ describe("RewriteSpecial", function () {
                 },
             },
         }
-        const r = new RewriteSpecial().convert(tr, "test").result
+        const r = new RewriteSpecial().convertStrict(tr, ConversionContext.test())
         expect(r).toEqual({
             id: "uk_addresses_import_button",
             render: {

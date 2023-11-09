@@ -5,6 +5,7 @@
   "lang": "en",
   "display": "standalone",
   "background_color": "#fff",
+  "theme_color": "#fff",
   "description": "A thematic map viewer and editor based on OpenStreetMap",
   "orientation": "portrait-primary, landscape-primary",
   "icons": [

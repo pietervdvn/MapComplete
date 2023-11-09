@@ -17,10 +17,10 @@
     "pl": "Znajdź prasy do groszy, aby stworzyć własne wydłużone monety."
   },
   "icon": "./assets/themes/elongated_coin/penny.svg",
-  "layers": [
-    "elongated_coin"
-  ],
+  "startZoom": 11,
   "startLat": 53.0565,
   "startLon": 8.7492,
-  "startZoom": 11
+  "layers": [
+    "elongated_coin"
+  ]
 }

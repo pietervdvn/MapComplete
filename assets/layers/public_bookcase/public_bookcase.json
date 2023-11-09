@@ -55,6 +55,37 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      },
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "#ffffff"
+        },
+        {
+          "icon": "./assets/themes/bookcases/bookcase.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#0000ff",
+      "width": "8"
+    }
+  ],
   "presets": [
     {
       "title": {
@@ -524,16 +555,6 @@
       "id": "public_bookcase-website"
     }
   ],
-  "allowMove": true,
-  "deletion": {
-    "softDeletionTags": {
-      "and": [
-        "disused:amenity=public_bookcase",
-        "amenity="
-      ]
-    },
-    "neededChangesets": 5
-  },
   "filter": [
     {
       "id": "kid-books",
@@ -608,25 +629,14 @@
     },
     "has_image"
   ],
-  "mapRendering": [
-    {
-      "icon": "circle:#ffffff;./assets/themes/bookcases/bookcase.svg",
-      "label": {
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
-          }
-        ]
-      },
-      "location": [
-        "point",
-        "centroid"
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:amenity=public_bookcase",
+        "amenity="
       ]
     },
-    {
-      "color": "#0000ff",
-      "width": "8"
-    }
-  ]
+    "neededChangesets": 5
+  },
+  "allowMove": true
 }

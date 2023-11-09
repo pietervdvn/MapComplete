@@ -18,6 +18,21 @@
     "eu": "Bidegorriak",
     "pl": "Ulice rowerowe"
   },
+  "description": {
+    "nl": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voertuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. <b>Fietszones</b> worden aangeduid door elke straat apart als fietsstraat te markeren. <br/>Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau. ",
+    "en": "A cyclestreet is is a street where <b>motorized traffic is not allowed to overtake cyclists</b>. They are signposted by a special traffic sign. Cyclestreets can be found in the Netherlands and Belgium, but also in Germany and France. ",
+    "ja": "cyclestreetとは、<b>自動車がサイクリストを追い越すことができない</b>道です。専用の道路標識で表示されます。Cyclestreetsはオランダやベルギーにもありますが、ドイツやフランスにもあります。 ",
+    "zh_Hant": "單車街道是<b>機動車輛受限制，只允許單車通行</b>的道路。通常會有路標顯示特別的交通指標。單車街道通常在荷蘭、比利時看到，但德國與法國也有。 ",
+    "de": "Eine Fahrradstraße ist eine Straße, auf der <b>motorisierter Verkehr Radfahrer nicht überholen darf</b>. Sie sind durch ein spezielles Verkehrsschild gekennzeichnet. Fahrradstraßen gibt es in den Niederlanden und Belgien, aber auch in Deutschland und Frankreich. ",
+    "it": "Una strada ciclabile è una strada dove <b>il traffico motorizzato non può superare i velocipedi</b>. La sua presenza è segnalata da un cartello stradale specifico. Le strade ciclabili sono diffuse in Olanda e Belgio, ma si possono trovare anche in Germania e in Francia. ",
+    "hu": "A kerékpárosutca (cyclestreet, Fahrradstraße) olyan utca, ahol <b>gépjármű nem előzhet meg kerékpárost</b>. Az ilyen utcákat külön közlekedési tábla jelzi. Kerékpárosutcák találhatók Hollandiában és Belgiumban, valamint Németországban és Franciaországban is. ",
+    "es": "Una ciclocalle es una calle en la que <b>el tráfico motorizado no puede sobrepasar a los ciclistas</b>. Están marcados por una señal de tráfico especial. Las ciclocalles se pueden encontrar en los Países Bajos y Bélgica, pero también en Alemania y Francia. ",
+    "fr": "Une rue cyclable est une rue où <b>les véhicules motorisés ne sont pas autorisés à dépasser les cyclistes</b>. Elles sont signalées par un signal routier particulier. On trouve des rues cyclables en Belgique et aux Pays-Bas, mais aussi en Allemagne et en France. ",
+    "da": "En cykelgade er en gade, hvor <b>motoriseret trafik ikke må overhale cyklister</b>. De er skiltet med et særligt trafikskilt. Cykelgader findes i Holland og Belgien, men også i Tyskland og Frankrig. ",
+    "ca": "Un ciclocarrer és un carrer en el que <b>el trànsit motoritzat no pot sobrepassar als ciclistes</b>. Està senyalitzat per una senyal de trànsit especial. Els ciclocarrers es poden trobar a Holanda i Bèlgica, però també a Alemnya i França. ",
+    "cs": "Cyklostezka je ulice, kde <b>motorizovaná doprava nesmí předjíždět cyklisty</b>. Jsou označeny speciální dopravní značkou. Cyklostezky najdete v Nizozemsku a Belgii, ale také v Německu a Francii. ",
+    "pl": "Ulica rowerowa to ulica, na której <b>ruch samochodowy nie może wyprzedzać rowerzystów</b>. Są one oznaczone specjalnym znakiem drogowym. Ulice rowerowe można znaleźć w Holandii i Belgii, ale także w Niemczech i Francji. "
+  },
   "shortDescription": {
     "nl": "Een kaart met alle gekende fietsstraten",
     "en": "A map of cyclestreets",
@@ -34,30 +49,10 @@
     "cs": "Mapa cyklostezek",
     "pl": "Mapa ulic rowerowych"
   },
-  "description": {
-    "nl": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voertuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. <b>Fietszones</b> worden aangeduid door elke straat apart als fietsstraat te markeren. <br/>Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau. ",
-    "en": "A cyclestreet is is a street where <b>motorized traffic is not allowed to overtake cyclists</b>. They are signposted by a special traffic sign. Cyclestreets can be found in the Netherlands and Belgium, but also in Germany and France. ",
-    "ja": "cyclestreetとは、<b>自動車がサイクリストを追い越すことができない</b>道です。専用の道路標識で表示されます。Cyclestreetsはオランダやベルギーにもありますが、ドイツやフランスにもあります。 ",
-    "zh_Hant": "單車街道是<b>機動車輛受限制，只允許單車通行</b>的道路。通常會有路標顯示特別的交通指標。單車街道通常在荷蘭、比利時看到，但德國與法國也有。 ",
-    "de": "Eine Fahrradstraße ist eine Straße, auf der <b>motorisierter Verkehr Radfahrer nicht überholen darf</b>. Sie sind durch ein spezielles Verkehrsschild gekennzeichnet. Fahrradstraßen gibt es in den Niederlanden und Belgien, aber auch in Deutschland und Frankreich. ",
-    "it": "Una strada ciclabile è una strada dove <b>il traffico motorizzato non può superare i velocipedi</b>. La sua presenza è segnalata da un cartello stradale specifico. Le strade ciclabili sono diffuse in Olanda e Belgio, ma si possono trovare anche in Germania e in Francia. ",
-    "hu": "A kerékpárosutca (cyclestreet, Fahrradstraße) olyan utca, ahol <b>gépjármű nem előzhet meg kerékpárost</b>. Az ilyen utcákat külön közlekedési tábla jelzi. Kerékpárosutcák találhatók Hollandiában és Belgiumban, valamint Németországban és Franciaországban is. ",
-    "es": "Una ciclocalle es una calle en la que <b>el tráfico motorizado no puede sobrepasar a los ciclistas</b>. Están marcados por una señal de tráfico especial. Las ciclocalles se pueden encontrar en los Países Bajos y Bélgica, pero también en Alemania y Francia. ",
-    "fr": "Une rue cyclable est une rue où <b>les véhicules motorisés ne sont pas autorisés à dépasser les cyclistes</b>. Elles sont signalées par un signal routier particulier. On trouve des rues cyclables en Belgique et aux Pays-Bas, mais aussi en Allemagne et en France. ",
-    "da": "En cykelgade er en gade, hvor <b>motoriseret trafik ikke må overhale cyklister</b>. De er skiltet med et særligt trafikskilt. Cykelgader findes i Holland og Belgien, men også i Tyskland og Frankrig. ",
-    "ca": "Un ciclocarrer és un carrer en el que <b>el trànsit motoritzat no pot sobrepassar als ciclistes</b>. Està senyalitzat per una senyal de trànsit especial. Els ciclocarrers es poden trobar a Holanda i Bèlgica, però també a Alemnya i França. ",
-    "cs": "Cyklostezka je ulice, kde <b>motorizovaná doprava nesmí předjíždět cyklisty</b>. Jsou označeny speciální dopravní značkou. Cyklostezky najdete v Nizozemsku a Belgii, ale také v Německu a Francii. ",
-    "pl": "Ulica rowerowa to ulica, na której <b>ruch samochodowy nie może wyprzedzać rowerzystów</b>. Są one oznaczone specjalnym znakiem drogowym. Ulice rowerowe można znaleźć w Holandii i Belgii, ale także w Niemczech i Francji. "
-  },
   "icon": "./assets/themes/cyclestreets/logo.svg",
-  "startLat": 51.2095,
   "startZoom": 14,
+  "startLat": 51.2095,
   "startLon": 3.2228,
-  "widenFactor": 2,
-  "clustering": {
-    "maxZoom": 12,
-    "minNeededElements": 200
-  },
   "layers": [
     {
       "id": "fietsstraat",
@@ -108,68 +103,9 @@
       "tagRenderings": [
         "images"
       ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "./assets/themes/cyclestreets/F111.svg",
-            "mappings": [
-              {
-                "if": "traffic_sign=DE:244.1,1020-30",
-                "then": "./assets/themes/cyclestreets/Zeichen_244_1020-30.svg"
-              },
-              {
-                "if": "traffic_sign=DE:244.1,1022-12,1024-10",
-                "then": "./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg"
-              },
-              {
-                "if": "traffic_sign=DE:244.1,1022-12",
-                "then": "./assets/themes/cyclestreets/Zeichen_244_1022-12.svg"
-              },
-              {
-                "if": "traffic_sign=DE:244.1,1024-10",
-                "then": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg"
-              },
-              {
-                "if": "_country=de",
-                "then": "./assets/themes/cyclestreets/Zeichen_244.svg"
-              },
-              {
-                "if": "_country=fi",
-                "then": "./assets/themes/cyclestreets/Finland_road_sign_E28.svg"
-              }
-            ]
-          },
-          "iconSize": {
-            "render": "40,40,center",
-            "mappings": [
-              {
-                "if": {
-                  "or": [
-                    "traffic_sign=DE:244.1,1020-30",
-                    "traffic_sign=DE:244.1,1022-12,1024-10"
-                  ]
-                },
-                "then": "40,62,center"
-              },
-              {
-                "if": {
-                  "or": [
-                    "traffic_sign=DE:244.1,1022-12",
-                    "traffic_sign=DE:244.1,1024-10"
-                  ]
-                },
-                "then": "40,70,center"
-              }
-            ]
-          },
-          "location": [
-            "projected_centerpoint"
-          ]
-        },
-        {
-          "color": "#0000ff",
-          "width": "10"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -257,29 +193,9 @@
       "tagRenderings": [
         "images"
       ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "./assets/themes/cyclestreets/F113.svg",
-            "mappings": [
-              {
-                "if": "_country=de",
-                "then": "./assets/themes/cyclestreets/Zeichen_244a.svg"
-              },
-              {
-                "if": "_country=fi",
-                "then": "./assets/themes/cyclestreets/Finland_road_sign_E29.svg"
-              }
-            ]
-          },
-          "location": [
-            "projected_centerpoint"
-          ]
-        },
-        {
-          "color": "#09f9dd",
-          "width": "5"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     },
     {
@@ -357,39 +273,9 @@
       "tagRenderings": [
         "images"
       ],
-      "mapRendering": [
-        {
-          "icon": "./assets/svg/pencil.svg",
-          "location": [
-            "projected_centerpoint"
-          ]
-        },
-        {
-          "color": {
-            "render": "#aaaaaa",
-            "mappings": [
-              {
-                "then": "#0000ff",
-                "if": {
-                  "or": [
-                    "cyclestreet=yes",
-                    "bicycle_road=yes"
-                  ]
-                }
-              },
-              {
-                "then": "#09f9dd",
-                "if": {
-                  "or": [
-                    "proposed:cyclestreet=yes",
-                    "proposed:bicycle_road=yes"
-                  ]
-                }
-              }
-            ]
-          },
-          "width": "5"
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     }
   ],
@@ -754,5 +640,10 @@
         }
       }
     ]
+  },
+  "widenFactor": 2,
+  "clustering": {
+    "maxZoom": 12,
+    "minNeededElements": 200
   }
 }

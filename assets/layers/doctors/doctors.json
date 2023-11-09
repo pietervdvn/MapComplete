@@ -21,6 +21,7 @@
   "source": {
     "osmTags": "amenity=doctors"
   },
+  "minzoom": 13,
   "title": {
     "render": {
       "en": "Doctors Office {name}",
@@ -31,7 +32,41 @@
       "cs": "Lékařská ordinace {name}"
     }
   },
-  "minzoom": 13,
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/doctors/doctors.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "a doctors office",
+        "de": "eine Arztpraxis",
+        "nl": "een dokterspraktijk",
+        "fr": "un cabinet médical",
+        "ca": "un consultori mèdic",
+        "cs": "lékařská ordinace"
+      },
+      "tags": [
+        "amenity=doctors"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -137,34 +172,8 @@
       ]
     }
   ],
-  "presets": [
-    {
-      "title": {
-        "en": "a doctors office",
-        "de": "eine Arztpraxis",
-        "nl": "een dokterspraktijk",
-        "fr": "un cabinet médical",
-        "ca": "un consultori mèdic",
-        "cs": "lékařská ordinace"
-      },
-      "tags": [
-        "amenity=doctors"
-      ]
-    }
-  ],
   "filter": [
     "open_now"
-  ],
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/layers/doctors/doctors.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "center"
-    }
   ],
   "deletion": true,
   "allowMove": true

@@ -17,6 +17,14 @@
     "ca": "Una capa que mostra les farmàcies, que (probablement) distribueixen medicaments amb recepta",
     "cs": "Vrstva zobrazující lékárny, které (pravděpodobně) vydávají léky na předpis"
   },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=pharmacy"
+      ]
+    }
+  },
+  "minzoom": 13,
   "title": {
     "render": {
       "en": "{name}",
@@ -41,14 +49,51 @@
       }
     ]
   },
-  "source": {
-    "osmTags": {
-      "and": [
-        "amenity=pharmacy"
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        }
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      },
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "./assets/layers/pharmacy/pharmacy.svg"
+        }
       ]
     }
-  },
-  "minzoom": 13,
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "tags": [
+        "amenity=pharmacy"
+      ],
+      "title": {
+        "en": "a pharmacy",
+        "nl": "een apotheek",
+        "de": "eine Apotheke",
+        "fr": "une pharmacie",
+        "ca": "una farmàcia",
+        "cs": "lékárna"
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     "reviews",
@@ -134,31 +179,6 @@
       ]
     }
   ],
-  "mapRendering": [
-    {
-      "icon": "./assets/layers/pharmacy/pharmacy.svg",
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        }
-      ],
-      "label": {
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
-          }
-        ]
-      },
-      "anchor": "bottom"
-    }
-  ],
   "filter": [
     {
       "id": "drive-through",
@@ -193,21 +213,6 @@
       ]
     },
     "open_now"
-  ],
-  "presets": [
-    {
-      "tags": [
-        "amenity=pharmacy"
-      ],
-      "title": {
-        "en": "a pharmacy",
-        "nl": "een apotheek",
-        "de": "eine Apotheke",
-        "fr": "une pharmacie",
-        "ca": "una farmàcia",
-        "cs": "lékárna"
-      }
-    }
   ],
   "deletion": true,
   "allowMove": true

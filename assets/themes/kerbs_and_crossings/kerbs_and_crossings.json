@@ -29,6 +29,9 @@
   "startZoom": 19,
   "startLat": 53.23776,
   "startLon": 6.53812,
+  "credits": [
+    "Robin van der Linde"
+  ],
   "layers": [
     {
       "builtin": "cycleways_and_roads",
@@ -71,7 +74,9 @@
               "pl": "Przejście dla pieszych i/lub przejazd dla rowerów",
               "cs": "Přechod pro chodce a/nebo cyklisty"
             },
-            "snapToLayer": "cycleways_and_roads",
+            "snapToLayer": [
+              "cycleways_and_roads"
+            ],
             "maxSnapDistance": 25
           }
         ],
@@ -81,6 +86,5 @@
       }
     },
     "kerbs"
-  ],
-  "credits": "Robin van der Linde"
+  ]
 }

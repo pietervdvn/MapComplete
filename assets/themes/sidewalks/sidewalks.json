@@ -17,19 +17,6 @@
     "eu": "Espaloiak",
     "pl": "Chodniki"
   },
-  "shortDescription": {
-    "en": "Sidewalk mapping",
-    "ca": "Mapejat de voreres",
-    "de": "Kartierung von Bürgersteigen",
-    "es": "Mapeo de aceras",
-    "nl": "Voetpaden in kaart brengen",
-    "fr": "Cartographier des trottoirs",
-    "it": "Mappatura del marciapiede",
-    "da": "Kortlægning af fortov",
-    "pa_PK": "فُت‌پیتھ دا نقشہ بݨاؤݨ",
-    "cs": "Mapování chodníků",
-    "pl": "Mapowanie chodnika"
-  },
   "description": {
     "en": "Experimental theme",
     "ru": "Экспериментальная тема",
@@ -45,11 +32,20 @@
     "zh_Hant": "實驗性的主題",
     "pl": "Temat eksperymentalny"
   },
+  "shortDescription": {
+    "en": "Sidewalk mapping",
+    "ca": "Mapejat de voreres",
+    "de": "Kartierung von Bürgersteigen",
+    "es": "Mapeo de aceras",
+    "nl": "Voetpaden in kaart brengen",
+    "fr": "Cartographier des trottoirs",
+    "it": "Mappatura del marciapiede",
+    "da": "Kortlægning af fortov",
+    "pa_PK": "فُت‌پیتھ دا نقشہ بݨاؤݨ",
+    "cs": "Mapování chodníků",
+    "pl": "Mapowanie chodnika"
+  },
   "icon": "./assets/svg/bug.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
-  "widenFactor": 0.05,
   "hideFromOverview": true,
   "layers": [
     {
@@ -250,81 +246,12 @@
           ]
         }
       ],
-      "mapRendering": [
-        {
-          "location": [
-            "start",
-            "end"
-          ],
-          "icon": "circle:#ccc",
-          "iconSize": "3,3",
-          "anchor": "center"
-        },
-        {
-          "#": "The center line",
-          "color": "#ffffff55",
-          "width": 8,
-          "lineCap": "butt"
-        },
-        {
-          "#": "left",
-          "color": "#888",
-          "dashArray": {
-            "render": "",
-            "mappings": [
-              {
-                "if": "sidewalk:left=",
-                "then": "1,12"
-              }
-            ]
-          },
-          "width": {
-            "render": 6,
-            "mappings": [
-              {
-                "if": {
-                  "or": [
-                    "sidewalk:left=no",
-                    "sidewalk:left=separate"
-                  ]
-                },
-                "then": 0
-              }
-            ]
-          },
-          "offset": -6,
-          "lineCap": "butt"
-        },
-        {
-          "color": "#888",
-          "dashArray": {
-            "render": "",
-            "mappings": [
-              {
-                "if": "sidewalk:right=",
-                "then": "1,12"
-              }
-            ]
-          },
-          "width": {
-            "render": 6,
-            "mappings": [
-              {
-                "if": {
-                  "or": [
-                    "sidewalk:right=no",
-                    "sidewalk:right=separate"
-                  ]
-                },
-                "then": 0
-              }
-            ]
-          },
-          "lineCap": "butt",
-          "offset": 6
-        }
-      ],
-      "allowSplit": true
+      "allowSplit": true,
+      "pointRendering": [],
+      "lineRendering": [
+        {}
+      ]
     }
-  ]
+  ],
+  "widenFactor": 0.05
 }

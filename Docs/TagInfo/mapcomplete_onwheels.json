@@ -37,7 +37,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Cafés and pubs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Cafés and pubs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -263,17 +263,17 @@
     },
     {
       "key": "internet_access:fee",
-      "description": "Layer 'Cafés and pubs' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no&internet_access~.+)",
+      "description": "Layer 'Cafés and pubs' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no &internet_access~.+)",
       "value": "yes"
     },
     {
       "key": "internet_access:fee",
-      "description": "Layer 'Cafés and pubs' shows internet_access:fee=no with a fixed text, namely 'Internet access is free at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no&internet_access~.+)",
+      "description": "Layer 'Cafés and pubs' shows internet_access:fee=no with a fixed text, namely 'Internet access is free at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no &internet_access~.+)",
       "value": "no"
     },
     {
       "key": "internet_access:fee",
-      "description": "Layer 'Cafés and pubs' shows internet_access:fee=customers with a fixed text, namely 'Internet access is free at this place, for customers only' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no&internet_access~.+)",
+      "description": "Layer 'Cafés and pubs' shows internet_access:fee=customers with a fixed text, namely 'Internet access is free at this place, for customers only' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no &internet_access~.+)",
       "value": "customers"
     },
     {
@@ -300,7 +300,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Entrance' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Entrance' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -532,7 +532,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Restaurants and fast food' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Restaurants and fast food' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -1052,17 +1052,17 @@
     },
     {
       "key": "internet_access:fee",
-      "description": "Layer 'Restaurants and fast food' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no&internet_access~.+)",
+      "description": "Layer 'Restaurants and fast food' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no &internet_access~.+)",
       "value": "yes"
     },
     {
       "key": "internet_access:fee",
-      "description": "Layer 'Restaurants and fast food' shows internet_access:fee=no with a fixed text, namely 'Internet access is free at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no&internet_access~.+)",
+      "description": "Layer 'Restaurants and fast food' shows internet_access:fee=no with a fixed text, namely 'Internet access is free at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no &internet_access~.+)",
       "value": "no"
     },
     {
       "key": "internet_access:fee",
-      "description": "Layer 'Restaurants and fast food' shows internet_access:fee=customers with a fixed text, namely 'Internet access is free at this place, for customers only' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no&internet_access~.+)",
+      "description": "Layer 'Restaurants and fast food' shows internet_access:fee=customers with a fixed text, namely 'Internet access is free at this place, for customers only' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no &internet_access~.+)",
       "value": "customers"
     },
     {
@@ -1081,7 +1081,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Kerbs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Kerbs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -1155,7 +1155,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Parking' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Parking' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -1282,7 +1282,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Disabled parking spaces' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Disabled parking spaces' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -1316,7 +1316,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Shop' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Shop' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -1344,6 +1344,11 @@
     },
     {
       "key": "shop",
+      "description": "Layer 'Shop' shows shop=vacant with a fixed text, namely 'Vacant Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "vacant"
+    },
+    {
+      "key": "shop",
       "description": "Layer 'Shop' shows shop=agrarian with a fixed text, namely 'Farm Supply Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "agrarian"
     },
@@ -1359,7 +1364,7 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=antiques with a fixed text, namely 'Antiques Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=antiques with a fixed text, namely 'Antique Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "antiques"
     },
     {
@@ -1424,7 +1429,7 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=books with a fixed text, namely 'Book Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=books with a fixed text, namely 'Bookstore' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "books"
     },
     {
@@ -1544,7 +1549,7 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=country_store with a fixed text, namely 'Country Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=country_store with a fixed text, namely 'Rural Supplies Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "country_store"
     },
     {
@@ -1564,7 +1569,7 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=deli with a fixed text, namely 'Deli' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=deli with a fixed text, namely 'Delicatessen' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "deli"
     },
     {
@@ -1714,7 +1719,7 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=health_food with a fixed text, namely 'Health Food Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=health_food with a fixed text, namely 'Health Food Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "health_food"
     },
     {
@@ -1734,8 +1739,8 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=hobby with a fixed text, namely 'Hobby Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
-      "value": "hobby"
+      "description": "Layer 'Shop' shows shop=honey with a fixed text, namely 'Honey Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "honey"
     },
     {
       "key": "shop",
@@ -1854,13 +1859,18 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=newsagent with a fixed text, namely 'Newspaper/Magazine Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=newsagent with a fixed text, namely 'Newsstand' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "newsagent"
     },
     {
       "key": "shop",
       "description": "Layer 'Shop' shows shop=nutrition_supplements with a fixed text, namely 'Nutrition Supplements Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "nutrition_supplements"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=nuts with a fixed text, namely 'Nuts Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "nuts"
     },
     {
       "key": "shop",
@@ -1889,12 +1899,17 @@
     },
     {
       "key": "shop",
+      "description": "Layer 'Shop' shows shop=pasta with a fixed text, namely 'Pasta Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "pasta"
+    },
+    {
+      "key": "shop",
       "description": "Layer 'Shop' shows shop=pastry with a fixed text, namely 'Pastry Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "pastry"
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=pawnbroker with a fixed text, namely 'Pawn Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=pawnbroker with a fixed text, namely 'Pawnshop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "pawnbroker"
     },
     {
@@ -1909,7 +1924,7 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=pet_grooming with a fixed text, namely 'Pet Grooming Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=pet_grooming with a fixed text, namely 'Pet Groomer' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "pet_grooming"
     },
     {
@@ -1959,6 +1974,11 @@
     },
     {
       "key": "shop",
+      "description": "Layer 'Shop' shows shop=rice with a fixed text, namely 'Rice Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "rice"
+    },
+    {
+      "key": "shop",
       "description": "Layer 'Shop' shows shop=scuba_diving with a fixed text, namely 'Scuba Diving Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "scuba_diving"
     },
@@ -1969,7 +1989,7 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=second_hand with a fixed text, namely 'Consignment/Thrift Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=second_hand with a fixed text, namely 'Thrift Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "second_hand"
     },
     {
@@ -2089,7 +2109,7 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=variety_store with a fixed text, namely 'Variety Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Shop' shows shop=variety_store with a fixed text, namely 'Discount Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "variety_store"
     },
     {
@@ -2144,17 +2164,17 @@
     },
     {
       "key": "second_hand",
-      "description": "Layer 'Shop' shows second_hand=only with a fixed text, namely 'This shop sells second-hand items <b>only</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=clothes|shop=car|shop=books|shop=charity|shop=car_repair|shop=furniture|shop=bicycle|shop=bicycle|shop=mobile_phone|shop=computer|shop=toys)",
+      "description": "Layer 'Shop' shows second_hand=only with a fixed text, namely 'This shop sells second-hand items <b>only</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=clothes |shop=car |shop=books |shop=charity |shop=car_repair |shop=furniture |shop=bicycle |shop=bicycle |shop=mobile_phone |shop=computer |shop=toys)",
       "value": "only"
     },
     {
       "key": "second_hand",
-      "description": "Layer 'Shop' shows second_hand=yes with a fixed text, namely 'This shop sells second-hand items along with new items' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=clothes|shop=car|shop=books|shop=charity|shop=car_repair|shop=furniture|shop=bicycle|shop=bicycle|shop=mobile_phone|shop=computer|shop=toys)",
+      "description": "Layer 'Shop' shows second_hand=yes with a fixed text, namely 'This shop sells second-hand items along with new items' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=clothes |shop=car |shop=books |shop=charity |shop=car_repair |shop=furniture |shop=bicycle |shop=bicycle |shop=mobile_phone |shop=computer |shop=toys)",
       "value": "yes"
     },
     {
       "key": "second_hand",
-      "description": "Layer 'Shop' shows second_hand=no with a fixed text, namely 'This shop only sells brand-new items' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=clothes|shop=car|shop=books|shop=charity|shop=car_repair|shop=furniture|shop=bicycle|shop=bicycle|shop=mobile_phone|shop=computer|shop=toys)",
+      "description": "Layer 'Shop' shows second_hand=no with a fixed text, namely 'This shop only sells brand-new items' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=clothes |shop=car |shop=books |shop=charity |shop=car_repair |shop=furniture |shop=bicycle |shop=bicycle |shop=mobile_phone |shop=computer |shop=toys)",
       "value": "no"
     },
     {
@@ -2231,28 +2251,48 @@
     },
     {
       "key": "service:print:A4",
-      "description": "Layer 'Shop' shows service:print:A4=yes with a fixed text, namely 'This shop can print on papers of size A4' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes)",
+      "description": "Layer 'Shop' shows service:print:A4=yes with a fixed text, namely 'This shop can print on papers of size A4' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop~^(.*copyshop.*)$ |shop~^(.*stationery.*)$ |service:print=yes)",
       "value": "yes"
     },
     {
       "key": "service:print:A3",
-      "description": "Layer 'Shop' shows service:print:A3=yes with a fixed text, namely 'This shop can print on papers of size A3' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes)",
+      "description": "Layer 'Shop' shows service:print:A3=yes with a fixed text, namely 'This shop can print on papers of size A3' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop~^(.*copyshop.*)$ |shop~^(.*stationery.*)$ |service:print=yes)",
       "value": "yes"
     },
     {
       "key": "service:print:A2",
-      "description": "Layer 'Shop' shows service:print:A2=yes with a fixed text, namely 'This shop can print on papers of size A2' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes)",
+      "description": "Layer 'Shop' shows service:print:A2=yes with a fixed text, namely 'This shop can print on papers of size A2' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop~^(.*copyshop.*)$ |shop~^(.*stationery.*)$ |service:print=yes)",
       "value": "yes"
     },
     {
       "key": "service:print:A1",
-      "description": "Layer 'Shop' shows service:print:A1=yes with a fixed text, namely 'This shop can print on papers of size A1' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes)",
+      "description": "Layer 'Shop' shows service:print:A1=yes with a fixed text, namely 'This shop can print on papers of size A1' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop~^(.*copyshop.*)$ |shop~^(.*stationery.*)$ |service:print=yes)",
       "value": "yes"
     },
     {
       "key": "service:print:A0",
-      "description": "Layer 'Shop' shows service:print:A0=yes with a fixed text, namely 'This shop can print on papers of size A0' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes)",
+      "description": "Layer 'Shop' shows service:print:A0=yes with a fixed text, namely 'This shop can print on papers of size A0' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop~^(.*copyshop.*)$ |shop~^(.*stationery.*)$ |service:print=yes)",
       "value": "yes"
+    },
+    {
+      "key": "craft",
+      "description": "Layer 'Shop' shows craft=key_cutter with a fixed text, namely 'This shop is also specialized in key cutting' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=shoe_repair |service:key_cutting~.+ |craft=key_cutting |shop=diy |shop=doityourself |shop=home_improvement |shop=hardware |shop=locksmith |shop=repair)",
+      "value": "key_cutter"
+    },
+    {
+      "key": "service:key_cutting",
+      "description": "Layer 'Shop' shows service:key_cutting=yes with a fixed text, namely 'This shop offers key cutting as a service' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=shoe_repair |service:key_cutting~.+ |craft=key_cutting |shop=diy |shop=doityourself |shop=home_improvement |shop=hardware |shop=locksmith |shop=repair)",
+      "value": "yes"
+    },
+    {
+      "key": "craft",
+      "description": "Layer 'Shop' shows service:key_cutting=no with a fixed text, namely 'This shops does not offer key cutting as a service' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') Picking this answer will delete the key craft. (This is only shown if shop=shoe_repair |service:key_cutting~.+ |craft=key_cutting |shop=diy |shop=doityourself |shop=home_improvement |shop=hardware |shop=locksmith |shop=repair)",
+      "value": ""
+    },
+    {
+      "key": "service:key_cutting",
+      "description": "Layer 'Shop' shows service:key_cutting=no with a fixed text, namely 'This shops does not offer key cutting as a service' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=shoe_repair |service:key_cutting~.+ |craft=key_cutting |shop=diy |shop=doityourself |shop=home_improvement |shop=hardware |shop=locksmith |shop=repair)",
+      "value": "no"
     },
     {
       "key": "internet_access",
@@ -2281,17 +2321,17 @@
     },
     {
       "key": "internet_access:fee",
-      "description": "Layer 'Shop' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no&internet_access~.+)",
+      "description": "Layer 'Shop' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no &internet_access~.+)",
       "value": "yes"
     },
     {
       "key": "internet_access:fee",
-      "description": "Layer 'Shop' shows internet_access:fee=no with a fixed text, namely 'Internet access is free at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no&internet_access~.+)",
+      "description": "Layer 'Shop' shows internet_access:fee=no with a fixed text, namely 'Internet access is free at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no &internet_access~.+)",
       "value": "no"
     },
     {
       "key": "internet_access:fee",
-      "description": "Layer 'Shop' shows internet_access:fee=customers with a fixed text, namely 'Internet access is free at this place, for customers only' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no&internet_access~.+)",
+      "description": "Layer 'Shop' shows internet_access:fee=customers with a fixed text, namely 'Internet access is free at this place, for customers only' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no &internet_access~.+)",
       "value": "customers"
     },
     {
@@ -2305,77 +2345,77 @@
     },
     {
       "key": "organic",
-      "description": "Layer 'Shop' shows organic=yes with a fixed text, namely 'This shop offers organic products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=clothes|shop=shoes|shop=butcher|shop=cosmetics|shop=deli|shop=bakery|shop=alcohol|shop=seafood|shop=beverages|shop=florist)",
+      "description": "Layer 'Shop' shows organic=yes with a fixed text, namely 'This shop offers organic products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=clothes |shop=shoes |shop=butcher |shop=cosmetics |shop=deli |shop=bakery |shop=alcohol |shop=seafood |shop=beverages |shop=florist)",
       "value": "yes"
     },
     {
       "key": "organic",
-      "description": "Layer 'Shop' shows organic=only with a fixed text, namely 'This shop only offers organic products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=clothes|shop=shoes|shop=butcher|shop=cosmetics|shop=deli|shop=bakery|shop=alcohol|shop=seafood|shop=beverages|shop=florist)",
+      "description": "Layer 'Shop' shows organic=only with a fixed text, namely 'This shop only offers organic products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=clothes |shop=shoes |shop=butcher |shop=cosmetics |shop=deli |shop=bakery |shop=alcohol |shop=seafood |shop=beverages |shop=florist)",
       "value": "only"
     },
     {
       "key": "organic",
-      "description": "Layer 'Shop' shows organic=no with a fixed text, namely 'This shop does not offer organic products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=clothes|shop=shoes|shop=butcher|shop=cosmetics|shop=deli|shop=bakery|shop=alcohol|shop=seafood|shop=beverages|shop=florist)",
+      "description": "Layer 'Shop' shows organic=no with a fixed text, namely 'This shop does not offer organic products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=clothes |shop=shoes |shop=butcher |shop=cosmetics |shop=deli |shop=bakery |shop=alcohol |shop=seafood |shop=beverages |shop=florist)",
       "value": "no"
     },
     {
       "key": "diet:sugar_free",
-      "description": "Layer 'Shop' shows diet:sugar_free=only with a fixed text, namely 'This shop <b>only sells sugar free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "description": "Layer 'Shop' shows diet:sugar_free=only with a fixed text, namely 'This shop <b>only sells sugar free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=deli |shop=bakery |shop=beverages |shop=beverages |shop=pastry |shop=chocolate |shop=frozen_food |shop=ice_cream)",
       "value": "only"
     },
     {
       "key": "diet:sugar_free",
-      "description": "Layer 'Shop' shows diet:sugar_free=yes with a fixed text, namely 'This shop has a big sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "description": "Layer 'Shop' shows diet:sugar_free=yes with a fixed text, namely 'This shop has a big sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=deli |shop=bakery |shop=beverages |shop=beverages |shop=pastry |shop=chocolate |shop=frozen_food |shop=ice_cream)",
       "value": "yes"
     },
     {
       "key": "diet:sugar_free",
-      "description": "Layer 'Shop' shows diet:sugar_free=limited with a fixed text, namely 'This shop has a <b>limited sugar free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "description": "Layer 'Shop' shows diet:sugar_free=limited with a fixed text, namely 'This shop has a <b>limited sugar free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=deli |shop=bakery |shop=beverages |shop=beverages |shop=pastry |shop=chocolate |shop=frozen_food |shop=ice_cream)",
       "value": "limited"
     },
     {
       "key": "diet:sugar_free",
-      "description": "Layer 'Shop' shows diet:sugar_free=no with a fixed text, namely 'This shop has no sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "description": "Layer 'Shop' shows diet:sugar_free=no with a fixed text, namely 'This shop has no sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=deli |shop=bakery |shop=beverages |shop=beverages |shop=pastry |shop=chocolate |shop=frozen_food |shop=ice_cream)",
       "value": "no"
     },
     {
       "key": "diet:gluten_free",
-      "description": "Layer 'Shop' shows diet:gluten_free=only with a fixed text, namely 'This shop <b>only sells gluten free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "description": "Layer 'Shop' shows diet:gluten_free=only with a fixed text, namely 'This shop <b>only sells gluten free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=deli |shop=bakery |shop=beverages |shop=beverages |shop=pastry |shop=chocolate |shop=frozen_food |shop=ice_cream)",
       "value": "only"
     },
     {
       "key": "diet:gluten_free",
-      "description": "Layer 'Shop' shows diet:gluten_free=yes with a fixed text, namely 'This shop has a big gluten free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "description": "Layer 'Shop' shows diet:gluten_free=yes with a fixed text, namely 'This shop has a big gluten free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=deli |shop=bakery |shop=beverages |shop=beverages |shop=pastry |shop=chocolate |shop=frozen_food |shop=ice_cream)",
       "value": "yes"
     },
     {
       "key": "diet:gluten_free",
-      "description": "Layer 'Shop' shows diet:gluten_free=limited with a fixed text, namely 'This shop has a <b>limited gluten free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "description": "Layer 'Shop' shows diet:gluten_free=limited with a fixed text, namely 'This shop has a <b>limited gluten free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=deli |shop=bakery |shop=beverages |shop=beverages |shop=pastry |shop=chocolate |shop=frozen_food |shop=ice_cream)",
       "value": "limited"
     },
     {
       "key": "diet:gluten_free",
-      "description": "Layer 'Shop' shows diet:gluten_free=no with a fixed text, namely 'This shop has no gluten free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "description": "Layer 'Shop' shows diet:gluten_free=no with a fixed text, namely 'This shop has no gluten free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=deli |shop=bakery |shop=beverages |shop=beverages |shop=pastry |shop=chocolate |shop=frozen_food |shop=ice_cream)",
       "value": "no"
     },
     {
       "key": "diet:lactose_free",
-      "description": "Layer 'Shop' shows diet:lactose_free=only with a fixed text, namely '<b>Only sells lactose free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "description": "Layer 'Shop' shows diet:lactose_free=only with a fixed text, namely '<b>Only sells lactose free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=deli |shop=bakery |shop=beverages |shop=beverages |shop=pastry |shop=chocolate |shop=frozen_food |shop=ice_cream)",
       "value": "only"
     },
     {
       "key": "diet:lactose_free",
-      "description": "Layer 'Shop' shows diet:lactose_free=yes with a fixed text, namely 'Big lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "description": "Layer 'Shop' shows diet:lactose_free=yes with a fixed text, namely 'Big lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=deli |shop=bakery |shop=beverages |shop=beverages |shop=pastry |shop=chocolate |shop=frozen_food |shop=ice_cream)",
       "value": "yes"
     },
     {
       "key": "diet:lactose_free",
-      "description": "Layer 'Shop' shows diet:lactose_free=limited with a fixed text, namely '<b>Limited lactose free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "description": "Layer 'Shop' shows diet:lactose_free=limited with a fixed text, namely '<b>Limited lactose free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=deli |shop=bakery |shop=beverages |shop=beverages |shop=pastry |shop=chocolate |shop=frozen_food |shop=ice_cream)",
       "value": "limited"
     },
     {
       "key": "diet:lactose_free",
-      "description": "Layer 'Shop' shows diet:lactose_free=no with a fixed text, namely 'No lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=deli|shop=bakery|shop=beverages|shop=beverages|shop=pastry|shop=chocolate|shop=frozen_food|shop=ice_cream)",
+      "description": "Layer 'Shop' shows diet:lactose_free=no with a fixed text, namely 'No lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if shop=supermarket |shop=convenience |shop=farm |shop=greengrocer |shop=health_food |shop=deli |shop=bakery |shop=beverages |shop=beverages |shop=pastry |shop=chocolate |shop=frozen_food |shop=ice_cream)",
       "value": "no"
     },
     {
@@ -2385,7 +2425,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Toilets' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Toilets' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -2536,7 +2576,7 @@
     },
     {
       "key": "door:width",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'door:width' (in the mapcomplete.org theme 'OnWheels') (This is only shown if wheelchair=yes|wheelchair=designated)"
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'door:width' (in the mapcomplete.org theme 'OnWheels') (This is only shown if wheelchair=yes |wheelchair=designated)"
     },
     {
       "key": "toilets:position",
@@ -2623,7 +2663,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Pharmacies' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Pharmacies' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -2695,7 +2735,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Doctors' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Doctors' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -2790,7 +2830,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Hospitals' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Hospitals' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "name",
@@ -2841,7 +2881,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Reception desks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Reception desks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -2909,7 +2949,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Elevator' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Elevator' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -3025,7 +3065,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Hotels' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'Hotels' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",
@@ -3118,17 +3158,17 @@
     },
     {
       "key": "internet_access:fee",
-      "description": "Layer 'Hotels' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no&internet_access~.+)",
+      "description": "Layer 'Hotels' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no &internet_access~.+)",
       "value": "yes"
     },
     {
       "key": "internet_access:fee",
-      "description": "Layer 'Hotels' shows internet_access:fee=no with a fixed text, namely 'Internet access is free at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no&internet_access~.+)",
+      "description": "Layer 'Hotels' shows internet_access:fee=no with a fixed text, namely 'Internet access is free at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no &internet_access~.+)",
       "value": "no"
     },
     {
       "key": "internet_access:fee",
-      "description": "Layer 'Hotels' shows internet_access:fee=customers with a fixed text, namely 'Internet access is free at this place, for customers only' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no&internet_access~.+)",
+      "description": "Layer 'Hotels' shows internet_access:fee=customers with a fixed text, namely 'Internet access is free at this place, for customers only' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if internet_access!=no &internet_access~.+)",
       "value": "customers"
     },
     {
@@ -3147,7 +3187,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'governments' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+      "description": "Layer 'governments' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
     },
     {
       "key": "image",

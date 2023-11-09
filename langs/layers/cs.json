@@ -5382,9 +5382,7 @@
                 "title": "rozcestník"
             }
         },
-        "title": {
-            "render": "Rozcestník"
-        }
+        "title": "Rozcestník"
     },
     "hackerspace": {
         "description": "Hackerspace",
@@ -5922,7 +5920,7 @@
         }
     },
     "last_click": {
-        "mapRendering": {
+        "pointRendering": {
             "0": {
                 "label": {
                     "mappings": {
@@ -9528,13 +9526,6 @@
     },
     "transit_routes": {
         "description": "Vrstva zobrazující autobusové linky",
-        "mapRendering": {
-            "0": {
-                "color": {
-                    "render": "#ff0000"
-                }
-            }
-        },
         "name": "Autobusové linky",
         "tagRenderings": {
             "colour": {
@@ -10392,17 +10383,6 @@
                 "options": {
                     "0": {
                         "question": "Odpadkový koš se zásobníkem na sáčky na (psí) exkrementy"
-                    }
-                }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Odpadkový koš"
-                        }
                     }
                 }
             }

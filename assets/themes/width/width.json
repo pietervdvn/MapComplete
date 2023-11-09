@@ -1,38 +1,20 @@
 {
   "id": "width",
-  "description": {
-    "nl": "<h3>De straat is opgebruikt</h3> <p>Er is steeds meer druk op de openbare ruimte. Voetgangers, fietsers, steps, auto's, bussen, bestelwagens, buggies, cargobikes, ... willen allemaal hun deel van de openbare ruimte en de straat.</p> <p>In deze studie nemen we Brugge onder de loep en kijken we hoe breed elke straat is én hoe breed elke straat zou moeten zijn voor een veilig én vlot verkeer.</p> <h3>Legende</h3> <span style='background: red'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat te smal voor veilig verkeer<br/> <span style='background: #0f0'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat is breed genoeg veilig verkeer<br/> <span style='background: orange'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat zonder voetpad, te smal als ook voetgangers plaats krijgen<br/> <span style='background: lightgrey'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Autoluw, autoloos of enkel plaatselijk verkeer<br/> <br/> <br/> Een gestippelde lijn is een straat waar ook voor fietsers éénrichtingsverkeer geldt.<br/> Klik op een straat om meer informatie te zien."
-  },
   "title": {
     "nl": "Straatbreedtes"
   },
   "mustHaveLanguage": [
     "nl"
   ],
-  "hideFromOverview": true,
-  "enableUserBadge": false,
-  "enableShareScreen": false,
-  "enableLayers": false,
-  "enableMoreQuests": false,
-  "enableSearch": false,
-  "enableBackgroundLayerSelection": false,
+  "description": {
+    "nl": "<h3>De straat is opgebruikt</h3> <p>Er is steeds meer druk op de openbare ruimte. Voetgangers, fietsers, steps, auto's, bussen, bestelwagens, buggies, cargobikes, ... willen allemaal hun deel van de openbare ruimte en de straat.</p> <p>In deze studie nemen we Brugge onder de loep en kijken we hoe breed elke straat is én hoe breed elke straat zou moeten zijn voor een veilig én vlot verkeer.</p> <h3>Legende</h3> <span style='background: red'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat te smal voor veilig verkeer<br/> <span style='background: #0f0'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat is breed genoeg veilig verkeer<br/> <span style='background: orange'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat zonder voetpad, te smal als ook voetgangers plaats krijgen<br/> <span style='background: lightgrey'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Autoluw, autoloos of enkel plaatselijk verkeer<br/> <br/> <br/> Een gestippelde lijn is een straat waar ook voor fietsers éénrichtingsverkeer geldt.<br/> Klik op een straat om meer informatie te zien."
+  },
   "icon": "./assets/themes/width/icon.svg",
+  "startZoom": 14,
   "startLat": 51.20875,
   "startLon": 3.22435,
-  "startZoom": 14,
-  "widenFactor": 0.05,
-  "clustering": false,
-  "lockLocation": [
-    [
-      3.2006263732910156,
-      51.22699040520305
-    ],
-    [
-      3.2529830932617188,
-      51.190748429411705
-    ]
-  ],
   "defaultBackgroundId": "alidade.smooth_dark",
+  "hideFromOverview": true,
   "layers": [
     {
       "id": "street_with_width",
@@ -204,71 +186,28 @@
           ]
         }
       ],
-      "mapRendering": [
-        {
-          "location": [
-            "point"
-          ],
-          "icon": "./assets/themes/width/icon.svg",
-          "iconSize": "40,40",
-          "anchor": "center"
-        },
-        {
-          "width": "4",
-          "color": {
-            "render": "#00f",
-            "mappings": [
-              {
-                "if": {
-                  "or": [
-                    "access=destination",
-                    "highway=pedestrian",
-                    "motor_vehicle=no",
-                    "motor_vehicle=destination"
-                  ]
-                },
-                "then": "lightgrey"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_width:difference!~-.*",
-                    "_width:difference:no_pedestrians~-.*"
-                  ]
-                },
-                "then": "orange"
-              },
-              {
-                "if": "_width:difference~-.*",
-                "then": "#0f0"
-              },
-              {
-                "if": "_width:difference!~-.*",
-                "then": "#f00"
-              }
-            ]
-          },
-          "dashArray": {
-            "render": "",
-            "mappings": [
-              {
-                "if": {
-                  "and": [
-                    "oneway=yes",
-                    {
-                      "or": [
-                        "oneway:bicycle=yes",
-                        "oneway:bicycle="
-                      ]
-                    }
-                  ]
-                },
-                "then": "5 6"
-              }
-            ]
-          }
-        }
+      "pointRendering": [],
+      "lineRendering": [
+        {}
       ]
     }
-  ]
+  ],
+  "lockLocation": [
+    [
+      3.2006263732910156,
+      51.22699040520305
+    ],
+    [
+      3.2529830932617188,
+      51.190748429411705
+    ]
+  ],
+  "enableUserBadge": false,
+  "enableShareScreen": false,
+  "enableMoreQuests": false,
+  "enableLayers": false,
+  "enableSearch": false,
+  "enableBackgroundLayerSelection": false,
+  "widenFactor": 0.05,
+  "clustering": false
 }

@@ -7,10 +7,17 @@
     "ca": "Dutxa",
     "cs": "Sprcha"
   },
-  "minzoom": 12,
+  "description": {
+    "en": "A layer showing (public) showers",
+    "de": "Eine Ebene mit (öffentlichen) Duschen",
+    "fr": "Une couche affichant les douches (publiques)",
+    "ca": "Una capa que mostra dutxes (públiques)",
+    "cs": "Vrstva zobrazující (veřejné) sprchy"
+  },
   "source": {
     "osmTags": "amenity=shower"
   },
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Shower",
@@ -20,6 +27,30 @@
       "cs": "Sprcha"
     }
   },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        }
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/shower/shower.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
   "presets": [
     {
       "title": {
@@ -241,27 +272,5 @@
   "allowMove": {
     "enableImproveAccuracy": true,
     "enableRelocation": false
-  },
-  "mapRendering": [
-    {
-      "icon": "circle:white;./assets/layers/shower/shower.svg",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "iconBadges": [
-        {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        }
-      ]
-    }
-  ],
-  "description": {
-    "en": "A layer showing (public) showers",
-    "de": "Eine Ebene mit (öffentlichen) Duschen",
-    "fr": "Une couche affichant les douches (publiques)",
-    "ca": "Una capa que mostra dutxes (públiques)",
-    "cs": "Vrstva zobrazující (veřejné) sprchy"
   }
 }

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.org/./assets/themes/bicycle_rental/logo.svg' height="100px"> 
+
 
 Bicycle rental stations
 
@@ -79,7 +79,7 @@ This tagrendering has no question and is thus read-only
   - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
 
 
 
@@ -105,9 +105,9 @@ The question is  *What kind of bicycle rental is this?*
 
 
 
-  - *This is a shop whose main focus is bicycle rental*  corresponds with  `shop=rental&bicycle_rental=shop`
+  - *This is a shop whose main focus is bicycle rental*  corresponds with  `shop=rental &bicycle_rental=shop`
   - *This is a rental business which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus*  corresponds with  `shop=rental`
-  - *This is a shop which sells or repairs bicycles, but also rents out bicycles*  corresponds with  `service:bicycle:rental=yes&shop=bicycle`
+  - *This is a shop which sells or repairs bicycles, but also rents out bicycles*  corresponds with  `service:bicycle:rental=yes &shop=bicycle`
   - *This is an automated docking station, where a bicycle is mechanically locked to a structure*  corresponds with  `bicycle_rental=docking_station`
   - *A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby*  corresponds with  `bicycle_rental=key_dispensing_machine`
   - *This is a dropoff point, e.g. a reserved parking to place the bicycles clearly marked as being for the rental service only*  corresponds with  `bicycle_rental=dropoff_point`
@@ -195,7 +195,7 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `shop~.+|opening_hours~.+`
+This tagrendering is only visible in the popup if the following condition is met: `shop~.+ |opening_hours~.+`
 
 
 
@@ -451,7 +451,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
 
 
 

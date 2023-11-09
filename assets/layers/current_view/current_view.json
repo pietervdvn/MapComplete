@@ -4,11 +4,12 @@
   "source": "special",
   "shownByDefault": false,
   "title": "Current View",
-  "tagRenderings": [],
   "popupInFloatover": true,
-  "mapRendering": [
+  "pointRendering": [],
+  "lineRendering": [
     {
       "color": "#cccc0088"
     }
-  ]
+  ],
+  "tagRenderings": []
 }
