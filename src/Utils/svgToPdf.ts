@@ -872,7 +872,7 @@ class SvgToPdfPage {
                 width,
                 height,
             }).CreatePng(this.options.freeComponentId, this._state)
-        }/* else {
+        } /* else {
             const match = spec.match(/\$map\(([^)]*)\)$/)
             if (match === null) {
                 throw "Invalid mapspec:" + spec
