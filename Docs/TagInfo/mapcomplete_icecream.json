@@ -128,6 +128,26 @@
       "value": "no"
     },
     {
+      "key": "diet:vegan",
+      "description": "Layer 'Ice cream parlors' shows diet:vegan=only with a fixed text, namely 'This place <b>only sells vegan</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Icecream')",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Ice cream parlors' shows diet:vegan=yes with a fixed text, namely 'This shop has a big vegan offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Icecream')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Ice cream parlors' shows diet:vegan=limited with a fixed text, namely 'This shop has a <b>limited vegan</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Icecream')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Ice cream parlors' shows diet:vegan=no with a fixed text, namely 'This shop has no vegan offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Icecream')",
+      "value": "no"
+    },
+    {
       "key": "payment:cash",
       "description": "Layer 'Ice cream parlors' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Icecream')",
       "value": "yes"

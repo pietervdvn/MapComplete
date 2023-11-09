@@ -664,6 +664,8 @@ The question is  *Does this place offer internet access?*
   - *This place offers wired internet access*  corresponds with  `internet_access=wired`
 
 
+This tagrendering has labels  `internet-all`
+
 
 
 ### internet-fee 
@@ -682,6 +684,8 @@ The question is  *Is there a fee for internet access?*
 
 
 This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no &internet_access~.+`
+
+This tagrendering has labels  `internet-all`
 
 
 
@@ -703,6 +707,8 @@ This is rendered with  `The network name is <b>{internet_access:ssid}</b>`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `internet_access=wlan`
+
+This tagrendering has labels  `internet-all`
 
 
 

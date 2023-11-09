@@ -895,7 +895,7 @@ The question is  *Does {title()} have a lactose-free offering?*
   - *<b>Only sells lactose free</b> products*  corresponds with  `diet:lactose_free=only`
   - *Big lactose free offering*  corresponds with  `diet:lactose_free=yes`
   - *<b>Limited lactose free</b> offering*  corresponds with  `diet:lactose_free=limited`
-  - *This shop has no lactose free offering*  corresponds with  `diet:lactose_free=no`
+  - *No lactose free offering*  corresponds with  `diet:lactose_free=no`
 
 
 This tagrendering has labels  `diets`
