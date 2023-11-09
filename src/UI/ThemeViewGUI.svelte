@@ -125,6 +125,7 @@
         perLayer={state.perLayer}
         {selectedElement}
         {selectedLayer}
+        showPopup={true}
       />
     </div>
   </If>
