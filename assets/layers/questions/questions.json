@@ -2031,7 +2031,9 @@
     },
     {
       "id": "internet",
-      "labels": ["internet-all"],
+      "labels": [
+        "internet-all"
+      ],
       "question": {
         "en": "Does this place offer internet access?",
         "nl": "Biedt deze plaats internettoegang aan?",
@@ -2137,7 +2139,9 @@
     },
     {
       "id": "internet-fee",
-      "labels": ["internet-all"],
+      "labels": [
+        "internet-all"
+      ],
       "condition": {
         "and": [
           "internet_access!=no",
@@ -2214,7 +2218,9 @@
     },
     {
       "id": "internet-ssid",
-      "labels": ["internet-all"],
+      "labels": [
+        "internet-all"
+      ],
       "condition": "internet_access=wlan",
       "question": {
         "en": "What is the network name for the wireless internet access?",
@@ -2500,7 +2506,7 @@
         {
           "if": "diet:lactose_free=no",
           "then": {
-            "en": "This shop has no lactose free offering",
+            "en": "No lactose free offering",
             "de": "Keine laktosefreie Produkte",
             "cs": "Žádná nabídka bez laktózy"
           }

@@ -201,7 +201,9 @@
               "nohousenumber=yes"
             ]
           },
-          "addExtraTags": ["addr:housenumber="],
+          "addExtraTags": [
+            "addr:housenumber="
+          ],
           "then": {
             "en": "This building has no house number",
             "nl": "Dit gebouw heeft geen huisnummer",

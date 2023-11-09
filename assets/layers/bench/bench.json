@@ -180,7 +180,9 @@
         },
         {
           "if": "backrest=no",
-          "addExtraTags": ["two_sided="],
+          "addExtraTags": [
+            "two_sided="
+          ],
           "then": {
             "en": "Does <b>not</b> have a backrest",
             "de": "Die Sitzbank hat <b>keine</b> Rückenlehne",
@@ -255,7 +257,9 @@
       "freeform": {
         "key": "seats",
         "type": "nat",
-        "addExtraTags": ["seats:separated="]
+        "addExtraTags": [
+          "seats:separated="
+        ]
       },
       "question": {
         "en": "How many seats does this bench have?",
@@ -284,7 +288,9 @@
       "mappings": [
         {
           "if": "seats:separated=no",
-          "addExtraTags": ["seats="],
+          "addExtraTags": [
+            "seats="
+          ],
           "then": {
             "en": "This bench does not have separated seats",
             "nl": "Deze bank is niet ingedeeld in aparte zitplaatsen",

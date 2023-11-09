@@ -7899,6 +7899,23 @@
                 "question": "When was this object last surveyed?",
                 "render": "This object was last surveyed on <b>{survey:date}</b>"
             },
+            "vegan": {
+                "mappings": {
+                    "0": {
+                        "then": "This place <b>only sells vegan</b> products"
+                    },
+                    "1": {
+                        "then": "This shop has a big vegan offering"
+                    },
+                    "2": {
+                        "then": "This shop has a <b>limited vegan</b> offering"
+                    },
+                    "3": {
+                        "then": "This shop has no vegan offering"
+                    }
+                },
+                "question": "Does this place offer a vegan option?"
+            },
             "website": {
                 "question": "What is the website of {title()}?"
             },

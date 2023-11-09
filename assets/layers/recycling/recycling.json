@@ -581,7 +581,9 @@
       "mappings": [
         {
           "if": "recycling_type=container",
-          "addExtraTags": ["amenity=recycling"],
+          "addExtraTags": [
+            "amenity=recycling"
+          ],
           "then": {
             "en": "This is a recycling container",
             "nl": "Dit is een recyclingcontainer",
@@ -595,7 +597,9 @@
         },
         {
           "if": "recycling_type=centre",
-          "addExtraTags": ["amenity=recycling"],
+          "addExtraTags": [
+            "amenity=recycling"
+          ],
           "then": {
             "en": "This is a recycling centre",
             "nl": "Dit is een recyclingcentrum",
@@ -646,7 +650,9 @@
         },
         {
           "if": "recycling_type=pickup_point",
-          "addExtraTags": ["amenity=recycling"],
+          "addExtraTags": [
+            "amenity=recycling"
+          ],
           "then": {
             "en": "This is a pickup point. The waste material is placed here without placing it in a dedicated container.",
             "nl": "Dit is een verzamelplaats zonder container waar het afval later opgepikt wordt.",
@@ -658,7 +664,9 @@
         },
         {
           "if": "recycling_type=dump",
-          "addExtraTags": ["amenity=recycling"],
+          "addExtraTags": [
+            "amenity=recycling"
+          ],
           "then": {
             "en": "This is a dump where the waste material is stacked.",
             "nl": "Dit is een afvalhoop waar het afvalmateriaal bovenop elkaar gestapeld wordt.",

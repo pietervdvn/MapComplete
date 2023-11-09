@@ -1123,7 +1123,9 @@
               "pt_BR": "Isso é uma luz de neon"
             },
             "hideInAnswer": "advertising!=sign",
-            "addExtraTags": ["lit=no"]
+            "addExtraTags": [
+              "lit=no"
+            ]
           }
         ],
         "condition": {
