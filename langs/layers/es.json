@@ -35,6 +35,16 @@
             "1": {
                 "title": "un mupi"
             },
+            "10": {
+                "description": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y carteles en entradas institucionales",
+                "title": "un señal"
+            },
+            "11": {
+                "title": "una escultura"
+            },
+            "12": {
+                "title": "una pared pintada"
+            },
             "2": {
                 "title": "un mupi sobre la pared"
             },
@@ -61,16 +71,6 @@
             },
             "9": {
                 "title": "un tótem"
-            },
-            "10": {
-                "description": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y carteles en entradas institucionales",
-                "title": "un señal"
-            },
-            "11": {
-                "title": "una escultura"
-            },
-            "12": {
-                "title": "una pared pintada"
             }
         },
         "tagRenderings": {
@@ -135,7 +135,7 @@
                         "then": "Mensaje de organizaciones sin ánimo de lucro"
                     },
                     "6": {
-                        "then": "Para expresar tu opinión"
+                        "then": "Exprese su opinión"
                     },
                     "7": {
                         "then": "Mensaje religioso"
@@ -165,6 +165,9 @@
                     "1": {
                         "then": "Esto es un tablón de anuncios"
                     },
+                    "10": {
+                        "then": "Esto es una pared pintada"
+                    },
                     "2": {
                         "then": "Esto es una columna"
                     },
@@ -188,9 +191,6 @@
                     },
                     "9": {
                         "then": "Esto es un tótem"
-                    },
-                    "10": {
-                        "then": "Esto es una pared pintada"
                     }
                 },
                 "question": "¿Qué tipo de elemento publicitario es?",
@@ -204,6 +204,9 @@
                 },
                 "1": {
                     "then": "Tablon de anuncios"
+                },
+                "10": {
+                    "then": "Pared Pintada"
                 },
                 "2": {
                     "then": "Mupi"
@@ -228,9 +231,6 @@
                 },
                 "9": {
                     "then": "Tótem"
-                },
-                "10": {
-                    "then": "Pared Pintada"
                 }
             }
         }
@@ -284,6 +284,47 @@
             "render": "Estación de Ambulancias"
         }
     },
+    "animal_shelter": {
+        "description": "Un refugio de animales es una instalación donde se llevan animales con problemas y el personal de la instalación (voluntario o no) los alimenta y cuida, rehabilitándolos y curándolos si es necesario. Esta definición incluye las perreras para perros abandonados, los criaderos para gatos abandonados, los refugios para otros animales de compañía abandonados y los centros de recuperación de la fauna salvaje. ",
+        "name": "Centros de acogida de animales",
+        "presets": {
+            "0": {
+                "title": "una protectora de animales"
+            }
+        },
+        "tagRenderings": {
+            "2": {
+                "question": "¿Cómo se llama este refugio de animales?",
+                "render": "Este refugio de animales se llama <b>{name}</b>"
+            },
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": "Los animales permanecen aquí hasta que son adoptados por un nuevo propietario"
+                    },
+                    "1": {
+                        "then": "Los animales reciben cuidados para el resto de su vida"
+                    },
+                    "2": {
+                        "then": "Los animales heridos se rehabilitan aquí hasta que pueden ser liberados de nuevo en la naturaleza "
+                    }
+                },
+                "question": "¿Cuál es la finalidad del refugio de animales?"
+            },
+            "7": {
+                "question": "¿Cuándo se abre este refugio de animales?",
+                "render": "{opening_hours_table()}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Centro de acogida de animales"
+        }
+    },
     "artwork": {
         "description": "Un mapa abierto de Estatuas, bustos, Graffitis y otras Obras de Arte en todo el mundo",
         "name": "Obras de arte",
@@ -312,6 +353,15 @@
                     "1": {
                         "then": "Mural"
                     },
+                    "10": {
+                        "then": "Azulejo (Baldosas decorativas Españolas y Portuguesas)"
+                    },
+                    "11": {
+                        "then": "Cerámica"
+                    },
+                    "12": {
+                        "then": "Tallado en madera"
+                    },
                     "2": {
                         "then": "Pintura"
                     },
@@ -335,15 +385,6 @@
                     },
                     "9": {
                         "then": "Relieve"
-                    },
-                    "10": {
-                        "then": "Azulejo (Baldosas decorativas Españolas y Portuguesas)"
-                    },
-                    "11": {
-                        "then": "Cerámica"
-                    },
-                    "12": {
-                        "then": "Tallado en madera"
                     }
                 },
                 "question": "¿Qué tipo de obra es esta pieza?",
@@ -360,6 +401,20 @@
             "artwork_subject": {
                 "question": "¿Qué representa esta obra de arte?",
                 "render": "Esta obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+            },
+            "doubles_as_bench": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta obra de arte también sirve de banco"
+                    },
+                    "1": {
+                        "then": "Esta obra no sirve de banco"
+                    },
+                    "2": {
+                        "then": "Esta obra no sirve de banco"
+                    }
+                },
+                "question": "¿Sirve esta obra de arte como banco?"
             }
         },
         "title": {
@@ -372,7 +427,150 @@
         }
     },
     "atm": {
-        "description": "Cajeros automáticos para retirar dinero"
+        "description": "Cajeros automáticos para retirar dinero",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Con salida de audio"
+                    }
+                }
+            }
+        },
+        "name": "Cajeros automáticos",
+        "presets": {
+            "0": {
+                "title": "Un cajero automático"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Marca"
+                },
+                "question": "¿De qué banco es este cajero?",
+                "render": "El banco de este cajero automático es {brand}"
+            },
+            "cash_in": {
+                "mappings": {
+                    "0": {
+                        "then": "Es probable que no pueda ingresar dinero en efectivo en este cajero automático"
+                    },
+                    "1": {
+                        "then": "Puede ingresar dinero en efectivo en este cajero automático"
+                    },
+                    "2": {
+                        "then": "No se puede ingresar dinero en efectivo en este cajero automático"
+                    }
+                },
+                "question": "¿Se puede ingresar dinero en efectivo en este cajero?"
+            },
+            "cash_out": {
+                "mappings": {
+                    "0": {
+                        "then": "Puede retirar dinero de este cajero automático"
+                    },
+                    "1": {
+                        "then": "Puede retirar dinero de este cajero automático"
+                    },
+                    "2": {
+                        "then": "No puede retirar dinero de este cajero automático"
+                    }
+                },
+                "question": "¿Se puede sacar dinero de este cajero?"
+            },
+            "cash_out-denominations-notes": {
+                "mappings": {
+                    "0": {
+                        "then": "Se pueden retirar billetes de 5 euros"
+                    },
+                    "1": {
+                        "then": "Se pueden retirar billetes de 10 euros"
+                    },
+                    "2": {
+                        "then": "Se pueden retirar billetes de 20 euros"
+                    },
+                    "3": {
+                        "then": "Se pueden retirar billetes de 50 euros"
+                    },
+                    "4": {
+                        "then": "Se pueden retirar billetes de 100 euros"
+                    },
+                    "5": {
+                        "then": "Se pueden retirar billetes de 200 euros"
+                    },
+                    "6": {
+                        "then": "Se pueden retirar billetes de 500 euros"
+                    }
+                },
+                "question": "¿Qué billetes puede retirar aquí?"
+            },
+            "name": {
+                "render": "El nombre del banco de este cajero automático es {name}"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Operador"
+                },
+                "question": "¿De qué banco es este cajero automático?",
+                "render": "El cajero es de {operador}"
+            },
+            "speech_output": {
+                "mappings": {
+                    "0": {
+                        "then": "Este cajero automático tiene salida de voz, normalmente disponible a través de una toma de auriculares"
+                    },
+                    "1": {
+                        "then": "Este cajero no tiene salida de voz"
+                    }
+                },
+                "question": "¿Dispone este cajero automático de salida de voz para usuarios con discapacidad visual?"
+            },
+            "speech_output_language": {
+                "render": {
+                    "special": {
+                        "question": "¿En qué idiomas tiene salida de voz este cajero automático?",
+                        "render_list_item": "Este cajero automático tiene salida de voz en {language():font-bold}"
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Cajero automático de {brand}"
+                }
+            },
+            "render": "Cajero automático"
+        }
+    },
+    "bank": {
+        "description": "Una institución financiera para depositar dinero",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Con un cajero automático"
+                    }
+                }
+            }
+        },
+        "name": "Bancos",
+        "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "Este banco tiene un cajero automático"
+                    },
+                    "1": {
+                        "then": "Este banco <b>no tiene</b> cajero automático"
+                    },
+                    "2": {
+                        "then": "Este banco tiene un cajero automático, pero aparece con un icono diferente"
+                    }
+                }
+            }
+        }
     },
     "barrier": {
         "description": "Obstáculos durante el uso de la bicicleta, como bolardos y barreras para bicicletas",
@@ -1440,6 +1638,27 @@
                     "0": {
                         "question": "Todos los conectores"
                     },
+                    "10": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 con cable</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                    },
+                    "11": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (un tipo2_css de marca)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
+                    },
+                    "12": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
+                    },
+                    "13": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipo2 A con un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                    },
+                    "14": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
+                    },
+                    "15": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Bosch Active Connect con 3 pines</b> y cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
+                    },
+                    "16": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Bosch Active Connect con 5 pines</b> y cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
+                    },
                     "2": {
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>enchufe de pared Europeo</b> con un pin de tierra (CEE7/4 tipo E)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
                     },
@@ -1463,27 +1682,6 @@
                     },
                     "9": {
                         "question": "Tiene un conector <div style='display: inline-block'><b>Tipo 2 CCS</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-                    },
-                    "10": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 con cable</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-                    },
-                    "11": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (un tipo2_css de marca)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-                    },
-                    "12": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
-                    },
-                    "13": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipo2 A con un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-                    },
-                    "14": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
-                    },
-                    "15": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Bosch Active Connect con 3 pines</b> y cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
-                    },
-                    "16": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Bosch Active Connect con 5 pines</b> y cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
                     }
                 }
             }
@@ -1538,30 +1736,6 @@
                     "1": {
                         "then": "<b>Enchufe de pared Schuko</b> sin pin de tierra (CEE7/4 tipo F)"
                     },
-                    "2": {
-                        "then": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)"
-                    },
-                    "3": {
-                        "then": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)"
-                    },
-                    "4": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "6": {
-                        "then": "<b>Tipo 1 con cable</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Tipo 1 con cable</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
-                    },
                     "10": {
                         "then": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)"
                     },
@@ -1591,6 +1765,9 @@
                     },
                     "19": {
                         "then": "<b>Tipo 2 con cable</b> (mennekes)"
+                    },
+                    "2": {
+                        "then": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)"
                     },
                     "20": {
                         "then": "<b>CCS Supercargador Tesla</b> (un tipo2_css con marca)"
@@ -1622,11 +1799,32 @@
                     "29": {
                         "then": "<b>Bosch Active Connect con 3 pines</b> y cable"
                     },
+                    "3": {
+                        "then": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)"
+                    },
                     "30": {
                         "then": "<b>Bosch Active Connect con 5 pines</b> y cable"
                     },
                     "31": {
                         "then": "<b>Bosch Active Connect con 5 pines</b> y cable"
+                    },
+                    "4": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "6": {
+                        "then": "<b>Tipo 1 con cable</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<b>Tipo 1 con cable</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
                     }
                 },
                 "question": "¿Qué tipo de conexiones de carga están disponibles aquí?"
@@ -2021,6 +2219,12 @@
                     "1": {
                         "then": "Este carril bici está pavimentado"
                     },
+                    "10": {
+                        "then": "Este carril bici está hecho de gravilla"
+                    },
+                    "12": {
+                        "then": "Este carril bici está hecho de tierra natural"
+                    },
                     "2": {
                         "then": "Este carril bici está hecho de asfalto"
                     },
@@ -2035,12 +2239,6 @@
                     },
                     "9": {
                         "then": "Este carril bici está hecho de grava"
-                    },
-                    "10": {
-                        "then": "Este carril bici está hecho de gravilla"
-                    },
-                    "12": {
-                        "then": "Este carril bici está hecho de tierra natural"
                     }
                 },
                 "question": "¿De qué superficie está hecho este carril bici?",
@@ -2086,6 +2284,9 @@
                     "1": {
                         "then": "Este carril bici está pavimentado"
                     },
+                    "10": {
+                        "then": "Este carril bici está hecho de gravilla"
+                    },
                     "2": {
                         "then": "Este carril bici está hecho de asfalto"
                     },
@@ -2097,9 +2298,6 @@
                     },
                     "9": {
                         "then": "Este carril bici está hecho de grava"
-                    },
-                    "10": {
-                        "then": "Este carril bici está hecho de gravilla"
                     }
                 },
                 "question": "¿De qué esta hecha la superficie de esta calle?",
@@ -2170,11 +2368,20 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "Carril bici {nombre}"
+                },
                 "1": {
                     "then": "Carril compartido"
                 },
+                "2": {
+                    "then": "Carretera con carril compartido {name}"
+                },
                 "3": {
                     "then": "Vía ciclista al lado de la carretera"
+                },
+                "4": {
+                    "then": "Carretera con carril bici {name}"
                 },
                 "5": {
                     "then": "Carril bici"
@@ -2185,7 +2392,8 @@
                 "9": {
                     "then": "Ciclocalle"
                 }
-            }
+            },
+            "render": "Vía"
         }
     },
     "defibrillator": {
@@ -2679,6 +2887,27 @@
         },
         "description": "Una capa mostrando restaurantes y locales de comida rápida (con un renderizado especial para friterías)",
         "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "No se necesita reserva"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Restaurantes y negocios de comida rápida"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Tiene menú vegetariano"
+                    }
+                }
+            },
             "4": {
                 "options": {
                     "0": {
@@ -2710,6 +2939,18 @@
                     "0": {
                         "then": "Esto es una pizzería"
                     },
+                    "10": {
+                        "then": "Aquí se sirven platos Chinos"
+                    },
+                    "11": {
+                        "then": "Aquí se sirven platos Griegos"
+                    },
+                    "12": {
+                        "then": "Aquí se sirven platos Indios"
+                    },
+                    "13": {
+                        "then": "Aquí se sirven platos Turcos"
+                    },
                     "2": {
                         "then": "Principalmente sirve pasta"
                     },
@@ -2730,18 +2971,6 @@
                     },
                     "9": {
                         "then": "Aquí se sirven platos Franceses"
-                    },
-                    "10": {
-                        "then": "Aquí se sirven platos Chinos"
-                    },
-                    "11": {
-                        "then": "Aquí se sirven platos Griegos"
-                    },
-                    "12": {
-                        "then": "Aquí se sirven platos Indios"
-                    },
-                    "13": {
-                        "then": "Aquí se sirven platos Turcos"
                     }
                 },
                 "question": "¿Qué comida se sirve aquí?",
@@ -3056,6 +3285,7 @@
         }
     },
     "nature_reserve": {
+        "description": "Una reserva natural es una zona donde la naturaleza puede seguir su curso",
         "name": "Reserva Natural",
         "tagRenderings": {
             "Access tag": {
@@ -3139,6 +3369,19 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Todas las notas"
+                    },
+                    "1": {
+                        "question": "Ocultar las notas de importación"
+                    },
+                    "2": {
+                        "question": "Solo mostrar las notas de importación"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -3192,19 +3435,6 @@
                 "options": {
                     "0": {
                         "question": "Solo mostrar las notas abiertas"
-                    }
-                }
-            },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Todas las notas"
-                    },
-                    "1": {
-                        "question": "Ocultar las notas de importación"
-                    },
-                    "2": {
-                        "question": "Solo mostrar las notas de importación"
                     }
                 }
             }
@@ -3822,23 +4052,11 @@
                     "1": {
                         "question": "Reciclaje de baterías"
                     },
-                    "3": {
-                        "question": "Reciclaje de latas"
-                    },
-                    "4": {
-                        "question": "Reciclaje de ropa"
-                    },
-                    "5": {
-                        "question": "Reciclaje de aceite de cocina"
-                    },
-                    "6": {
-                        "question": "Reciclaje de aceite de motor"
-                    },
-                    "9": {
-                        "question": "Reciclaje de botellas de cristal"
-                    },
                     "10": {
                         "question": "Reciclaje de cristal"
+                    },
+                    "11": {
+                        "question": "Reciclaje de bombillas"
                     },
                     "12": {
                         "question": "Reciclaje de periódicos"
@@ -3860,6 +4078,24 @@
                     },
                     "18": {
                         "question": "Reciclaje de pequeños electrodomésticos"
+                    },
+                    "3": {
+                        "question": "Reciclaje de latas"
+                    },
+                    "4": {
+                        "question": "Reciclaje de ropa"
+                    },
+                    "5": {
+                        "question": "Reciclaje de aceite de cocina"
+                    },
+                    "6": {
+                        "question": "Reciclaje de aceite de motor"
+                    },
+                    "8": {
+                        "question": "Reciclaje de residuos orgánicos"
+                    },
+                    "9": {
+                        "question": "Reciclaje de botellas de cristal"
                     }
                 }
             }
@@ -3902,26 +4138,11 @@
                     "0": {
                         "then": "Aquí se pueden reciclar baterías"
                     },
-                    "2": {
-                        "then": "Aquí se pueden reciclar latas"
-                    },
-                    "3": {
-                        "then": "Aquí se puede reciclar ropa"
-                    },
-                    "4": {
-                        "then": "Aquí se puede reciclar aceite de cocina"
-                    },
-                    "5": {
-                        "then": "Aquí se puede reciclar aceite de motor"
-                    },
-                    "8": {
-                        "then": "Aquí se pueden reciclar residuos orgánicos"
-                    },
-                    "9": {
-                        "then": "Aquí se pueden reciclar botellas de cristal"
-                    },
                     "10": {
                         "then": "Aquí se puede reciclar cristal"
+                    },
+                    "11": {
+                        "then": "Las bombillas pueden reciclarse aquí"
                     },
                     "12": {
                         "then": "Aquí se pueden reciclar periódicos"
@@ -3943,6 +4164,27 @@
                     },
                     "19": {
                         "then": "Aquí se pueden reciclar zapatos"
+                    },
+                    "2": {
+                        "then": "Aquí se pueden reciclar latas"
+                    },
+                    "3": {
+                        "then": "Aquí se puede reciclar ropa"
+                    },
+                    "4": {
+                        "then": "Aquí se puede reciclar aceite de cocina"
+                    },
+                    "5": {
+                        "then": "Aquí se puede reciclar aceite de motor"
+                    },
+                    "7": {
+                        "then": "Los residuos orgánicos pueden reciclarse aquí"
+                    },
+                    "8": {
+                        "then": "Aquí se pueden reciclar residuos orgánicos"
+                    },
+                    "9": {
+                        "then": "Aquí se pueden reciclar botellas de cristal"
                     }
                 },
                 "question": "¿Qué se puede reciclar aquí?"
@@ -4246,6 +4488,13 @@
                 "question": "¿De qué color es la luz que emite esta lámpara?",
                 "render": "Esta lámpara emite luz {light:colour}"
             },
+            "count": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta lámpara tiene 1 accesorio"
+                    }
+                }
+            },
             "direction": {
                 "question": "¿Hacia donde apunta esta lámpara?",
                 "render": "Esta lámpara apunta hacia {light:direction}"
@@ -4286,6 +4535,12 @@
                     "1": {
                         "then": "Esta lámpara utiliza LEDs"
                     },
+                    "10": {
+                        "then": "Esta lámpara utiliza lámparas de sodio de alta presión (naranja con blanco)"
+                    },
+                    "11": {
+                        "then": "Esta lampara se ilumina con gas"
+                    },
                     "2": {
                         "then": "Esta lámpara utiliza iluminación incandescente"
                     },
@@ -4306,12 +4561,6 @@
                     },
                     "9": {
                         "then": "Esta lámpara utiliza lámparas de sodio de baja presión (naranja monocromo)"
-                    },
-                    "10": {
-                        "then": "Esta lámpara utiliza lámparas de sodio de alta presión (naranja con blanco)"
-                    },
-                    "11": {
-                        "then": "Esta lampara se ilumina con gas"
                     }
                 },
                 "question": "¿Qué tipo de iluminación utiliza esta lámpara?"
