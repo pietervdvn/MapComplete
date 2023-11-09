@@ -612,7 +612,7 @@ export default {
       "type": "object",
       "properties": {
         "render": {
-          "description": "question: What text should be rendered?\n\nThis piece of text will be shown in the infobox.\nIn this text, values within braces (such as {braced(key)}) are replaced by the corresponding `value` in the object.\nFor example, if the object contains tags `amenity=school; name=Windy Hill School`, the render string `This school is named {name}` will be shown to the user as `This school is named Windy Hill School`\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`\ntype: rendered",
+          "description": "question: What text should be rendered?\n\nThis piece of text will be shown in the infobox.\nIn this text, values within braces (such as {braced(key)}) are replaced by the corresponding `value` in the object.\nFor example, if the object contains tags `amenity=school; name=Windy Hill School`, the render string `This school is named {name}` will be shown to the user as `This school is named Windy Hill School`\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`\ntype: rendered\nifunset: no text is rendered if no predefined options match",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -649,7 +649,7 @@ export default {
           ]
         },
         "icon": {
-          "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon",
+          "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon\nifunset: do not show an icon next to the \"render\"-value",
           "anyOf": [
             {
               "type": "object",
@@ -912,7 +912,7 @@ export default {
           }
         },
         "iconBadges": {
-          "description": "A list of extra badges to show next to the icon as small badge\nThey will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.\n\nNote: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle",
+          "description": "A list of extra badges to show next to the icon as small badge\nThey will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.\n\nNote: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle\ngroup: hidden",
           "type": "array",
           "items": {
             "type": "object",
@@ -983,30 +983,8 @@ export default {
             }
           ]
         },
-        "css": {
-          "description": "question: What CSS should be applied to the entire marker?\nYou can set the css-properties here, e.g. `background: red; font-size: 12px; `\nThis will be applied to the _container_ containing both the marker and the label\ninline: Apply CSS-style <b>{value}</b> to the _entire marker_\ntypes: Dynamic value ; string\nifunset: Do not apply extra CSS element to the entire marker",
-          "anyOf": [
-            {
-              "$ref": "#/definitions/TagRenderingConfigJson"
-            },
-            {
-              "type": "string"
-            }
-          ]
-        },
-        "cssClasses": {
-          "description": "question: Which CSS-classes should be applied to the entire marker?\nThis will be applied to the _container_ containing both the marker and the label\n\nThe classes should be separated by a space (` `)\nYou can use most Tailwind-css classes, see https://tailwindcss.com/ for more information\nFor example: `center bg-gray-500 mx-2 my-1 rounded-full`\ninline: Apply CSS-classes <b>{value}</b> to the entire container\nifunset: Do not apply extra CSS-classes to the label\ntypes: Dynamic value ; string\nifunset: Do not apply extra CSS-classes to the entire marker",
-          "anyOf": [
-            {
-              "$ref": "#/definitions/TagRenderingConfigJson"
-            },
-            {
-              "type": "string"
-            }
-          ]
-        },
         "labelCss": {
-          "description": "question: What CSS should be applied to the label?\nYou can set the css-properties here, e.g. `background: red; font-size: 12px; `\ninline: Apply CSS-style <b>{value}</b> to the label\ntypes: Dynamic value ; string\nifunset: Do not apply extra CSS-labels to the label",
+          "description": "question: What CSS should be applied to the label?\nYou can set the css-properties here, e.g. `background: red; font-size: 12px; `\ninline: Apply CSS-style <b>{value}</b> to the label\ntypes: Dynamic value ; string\nifunset: Do not apply extra CSS-labels to the label\ngroup: expert",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -1017,7 +995,29 @@ export default {
           ]
         },
         "labelCssClasses": {
-          "description": "question: Which CSS-classes should be applied to the label?\n\nThe classes should be separated by a space (` `)\nYou can use most Tailwind-css classes, see https://tailwindcss.com/ for more information\nFor example: `center bg-gray-500 mx-2 my-1 rounded-full`\ninline: Apply CSS-classes <b>{value}</b> to the label\ntypes: Dynamic value ; string\nifunset: Do not apply extra CSS-classes to the label",
+          "description": "question: Which CSS-classes should be applied to the label?\n\nThe classes should be separated by a space (` `)\nYou can use most Tailwind-css classes, see https://tailwindcss.com/ for more information\nFor example: `center bg-gray-500 mx-2 my-1 rounded-full`\ninline: Apply CSS-classes <b>{value}</b> to the label\ntypes: Dynamic value ; string\nifunset: Do not apply extra CSS-classes to the label\nsuggestions: return [{if: \"value=bg-white rounded px-2\", then: \"Draw on a white background\"}]",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/TagRenderingConfigJson"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "css": {
+          "description": "question: What CSS should be applied to the entire marker?\nYou can set the css-properties here, e.g. `background: red; font-size: 12px; `\nThis will be applied to the _container_ containing both the marker and the label\ninline: Apply CSS-style <b>{value}</b> to the _entire marker_\ntypes: Dynamic value ; string\nifunset: Do not apply extra CSS element to the entire marker\ngroup: expert",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/TagRenderingConfigJson"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "cssClasses": {
+          "description": "question: Which CSS-classes should be applied to the entire marker?\nThis will be applied to the _container_ containing both the marker and the label\n\nThe classes should be separated by a space (` `)\nYou can use most Tailwind-css classes, see https://tailwindcss.com/ for more information\nFor example: `center bg-gray-500 mx-2 my-1 rounded-full`\ninline: Apply CSS-classes <b>{value}</b> to the entire container\nifunset: Do not apply extra CSS-classes to the label\ntypes: Dynamic value ; string\nifunset: Do not apply extra CSS-classes to the entire marker\ngroup: expert",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -1028,7 +1028,7 @@ export default {
           ]
         },
         "pitchAlignment": {
-          "description": "question: If the map is pitched, should the icon stay parallel to the screen or to the groundplane?\nsuggestions: return [{if: \"value=canvas\", then: \"The icon will stay upward and not be transformed as if it sticks to the screen\"}, {if: \"value=map\", then: \"The icon will be transformed as if it were painted onto the ground. (Automatically sets rotationAlignment)\"}]",
+          "description": "question: If the map is pitched, should the icon stay parallel to the screen or to the groundplane?\nsuggestions: return [{if: \"value=canvas\", then: \"The icon will stay upward and not be transformed as if it sticks to the screen\"}, {if: \"value=map\", then: \"The icon will be transformed as if it were painted onto the ground. (Automatically sets rotationAlignment)\"}]\ngroup: expert",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -1043,7 +1043,7 @@ export default {
           ]
         },
         "rotationAlignment": {
-          "description": "question: Should the icon be rotated if the map is rotated?\nifunset: Do not rotate or tilt icons. Always keep the icons straight\nsuggestions: return [{if: \"value=canvas\", then: \"Never rotate the icon\"}, {if: \"value=map\", then: \"If the map is rotated, rotate the icon as well. This gives the impression of an icon that floats perpendicular above the ground.\"}]",
+          "description": "question: Should the icon be rotated if the map is rotated?\nifunset: Do not rotate or tilt icons. Always keep the icons straight\nsuggestions: return [{if: \"value=canvas\", then: \"Never rotate the icon\"}, {if: \"value=map\", then: \"If the map is rotated, rotate the icon as well. This gives the impression of an icon that floats perpendicular above the ground.\"}]\ngroup: expert",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -1237,7 +1237,7 @@ export default {
           }
         },
         "render": {
-          "description": "question: What text should be rendered?\n\nThis piece of text will be shown in the infobox.\nIn this text, values within braces (such as {braced(key)}) are replaced by the corresponding `value` in the object.\nFor example, if the object contains tags `amenity=school; name=Windy Hill School`, the render string `This school is named {name}` will be shown to the user as `This school is named Windy Hill School`\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`\ntype: rendered",
+          "description": "question: What text should be rendered?\n\nThis piece of text will be shown in the infobox.\nIn this text, values within braces (such as {braced(key)}) are replaced by the corresponding `value` in the object.\nFor example, if the object contains tags `amenity=school; name=Windy Hill School`, the render string `This school is named {name}` will be shown to the user as `This school is named Windy Hill School`\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`\ntype: rendered\nifunset: no text is rendered if no predefined options match",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -1274,7 +1274,7 @@ export default {
           ]
         },
         "icon": {
-          "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon",
+          "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon\nifunset: do not show an icon next to the \"render\"-value",
           "anyOf": [
             {
               "type": "object",
@@ -1451,7 +1451,7 @@ export default {
           }
         },
         "render": {
-          "description": "question: What text should be rendered?\n\nThis piece of text will be shown in the infobox.\nIn this text, values within braces (such as {braced(key)}) are replaced by the corresponding `value` in the object.\nFor example, if the object contains tags `amenity=school; name=Windy Hill School`, the render string `This school is named {name}` will be shown to the user as `This school is named Windy Hill School`\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`\ntype: rendered",
+          "description": "question: What text should be rendered?\n\nThis piece of text will be shown in the infobox.\nIn this text, values within braces (such as {braced(key)}) are replaced by the corresponding `value` in the object.\nFor example, if the object contains tags `amenity=school; name=Windy Hill School`, the render string `This school is named {name}` will be shown to the user as `This school is named Windy Hill School`\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`\ntype: rendered\nifunset: no text is rendered if no predefined options match",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -1488,7 +1488,7 @@ export default {
           ]
         },
         "icon": {
-          "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon",
+          "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon\nifunset: do not show an icon next to the \"render\"-value",
           "anyOf": [
             {
               "type": "object",

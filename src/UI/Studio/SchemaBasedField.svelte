@@ -17,21 +17,21 @@
   export let state: EditLayerState;
   export let path: (string | number)[] = [];
   export let schema: ConfigMeta;
-  export let startInEditModeIfUnset: boolean = schema.hints && !schema.hints.ifunset
+  export let startInEditModeIfUnset: boolean = schema.hints && !schema.hints.ifunset;
   let value = new UIEventSource<string | any>(undefined);
 
   const isTranslation = schema.hints?.typehint === "translation" || schema.hints?.typehint === "rendered" || ConfigMetaUtils.isTranslation(schema);
   let type = schema.hints.typehint ?? "string";
 
-  let rendervalue = (schema.hints.inline ?? schema.path.join(".")) + (isTranslation ? " <b>{translated(value)}</b>": " <b>{value}</b>");
- 
-  if(schema.type === "boolean"){
-    rendervalue = undefined
+  let rendervalue = (schema.hints.inline ?? schema.path.join(".")) + (isTranslation ? " <b>{translated(value)}</b>" : " <b>{value}</b>");
+
+  if (schema.type === "boolean") {
+    rendervalue = undefined;
   }
-  if(schema.hints.typehint === "tag" || schema.hints.typehint === "simple_tag") {
-    rendervalue = "{tags()}"
+  if (schema.hints.typehint === "tag" || schema.hints.typehint === "simple_tag") {
+    rendervalue = "{tags()}";
   }
-  
+
   let helperArgs = schema.hints.typehelper?.split(",");
   let inline = schema.hints.inline !== undefined;
   if (isTranslation) {
@@ -111,7 +111,7 @@
   }
   let config: TagRenderingConfig;
   let err: string = undefined;
-  let messages = state.messagesFor(path)
+  let messages = state.messagesFor(path);
   try {
     config = new TagRenderingConfig(configJson, "config based on " + schema.path.join("."));
   } catch (e) {
@@ -119,13 +119,13 @@
     err = path.join(".") + " " + e;
   }
   let startValue = state.getCurrentValueFor(path);
-  let startInEditMode = !startValue && startInEditModeIfUnset
+  let startInEditMode = !startValue && startInEditModeIfUnset;
   const tags = new UIEventSource<Record<string, string>>({ value: startValue });
   try {
     onDestroy(state.register(path, tags.map(tgs => {
       const v = tgs["value"];
       if (typeof v !== "string") {
-        return { ... v };
+        return { ...v };
       }
       if (schema.type === "boolan") {
         return v === "true" || v === "yes" || v === "1";
@@ -156,18 +156,21 @@
     console.error("Could not register", path, "due to", e);
   }
 </script>
+
 {#if err !== undefined}
   <span class="alert">{err}</span>
 {:else}
   <div class="w-full flex flex-col">
-    <TagRenderingEditable editMode={startInEditMode} {config} selectedElement={undefined} showQuestionIfUnknown={true} {state} {tags} />
+    <TagRenderingEditable editMode={startInEditMode} {config} selectedElement={undefined} showQuestionIfUnknown={true}
+                          {state} {tags} />
     {#if $messages.length > 0}
       {#each $messages as message}
-        <ShowConversionMessage {message}/>
+        <ShowConversionMessage {message} />
       {/each}
     {/if}
     {#if window.location.hostname === "127.0.0.1"}
-      <span class="subtle">SchemaBasedField <b>{path.join(".")}</b> <span class="cursor-pointer" on:click={() => console.log(schema)}>{schema.hints.typehint}</span></span>
+      <span class="subtle" on:click={() => console.log(schema)}>SchemaBasedField <b>{path.join(".")}</b> <span class="cursor-pointer"
+                                                                          on:click={() => console.log(schema)}>{schema.hints.typehint}</span> Group: {schema.hints.group}</span>
     {/if}
   </div>
 {/if}

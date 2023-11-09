@@ -50,6 +50,7 @@ export default interface PointRenderingConfigJson {
      * They will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.
      *
      * Note: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle
+     * group: hidden
      */
     iconBadges?: {
         if: TagConfigJson
@@ -96,13 +97,36 @@ export default interface PointRenderingConfigJson {
     label?: string | TagRenderingConfigJson
 
     /**
+     * question: What CSS should be applied to the label?
+     * You can set the css-properties here, e.g. `background: red; font-size: 12px; `
+     * inline: Apply CSS-style <b>{value}</b> to the label
+     * types: Dynamic value ; string
+     * ifunset: Do not apply extra CSS-labels to the label
+     * group: expert
+     */
+    labelCss?: TagRenderingConfigJson | string
+
+    /**
+     * question: Which CSS-classes should be applied to the label?
+     *
+     * The classes should be separated by a space (` `)
+     * You can use most Tailwind-css classes, see https://tailwindcss.com/ for more information
+     * For example: `center bg-gray-500 mx-2 my-1 rounded-full`
+     * inline: Apply CSS-classes <b>{value}</b> to the label
+     * types: Dynamic value ; string
+     * ifunset: Do not apply extra CSS-classes to the label
+     * suggestions: return [{if: "value=bg-white rounded px-2", then: "Draw on a white background"}]
+     */
+    labelCssClasses?: string | TagRenderingConfigJson
+
+    /**
      * question: What CSS should be applied to the entire marker?
      * You can set the css-properties here, e.g. `background: red; font-size: 12px; `
      * This will be applied to the _container_ containing both the marker and the label
      * inline: Apply CSS-style <b>{value}</b> to the _entire marker_
      * types: Dynamic value ; string
      * ifunset: Do not apply extra CSS element to the entire marker
-     *
+     * group: expert
      */
     css?: string | TagRenderingConfigJson
 
@@ -117,34 +141,14 @@ export default interface PointRenderingConfigJson {
      * ifunset: Do not apply extra CSS-classes to the label
      * types: Dynamic value ; string
      * ifunset: Do not apply extra CSS-classes to the entire marker
+     * group: expert
      */
     cssClasses?: string | TagRenderingConfigJson
 
     /**
-     * question: What CSS should be applied to the label?
-     * You can set the css-properties here, e.g. `background: red; font-size: 12px; `
-     * inline: Apply CSS-style <b>{value}</b> to the label
-     * types: Dynamic value ; string
-     * ifunset: Do not apply extra CSS-labels to the label
-     *
-     */
-    labelCss?: TagRenderingConfigJson | string
-
-    /**
-     * question: Which CSS-classes should be applied to the label?
-     *
-     * The classes should be separated by a space (` `)
-     * You can use most Tailwind-css classes, see https://tailwindcss.com/ for more information
-     * For example: `center bg-gray-500 mx-2 my-1 rounded-full`
-     * inline: Apply CSS-classes <b>{value}</b> to the label
-     * types: Dynamic value ; string
-     * ifunset: Do not apply extra CSS-classes to the label
-     */
-    labelCssClasses?: string | TagRenderingConfigJson
-
-    /**
      * question: If the map is pitched, should the icon stay parallel to the screen or to the groundplane?
      * suggestions: return [{if: "value=canvas", then: "The icon will stay upward and not be transformed as if it sticks to the screen"}, {if: "value=map", then: "The icon will be transformed as if it were painted onto the ground. (Automatically sets rotationAlignment)"}]
+     * group: expert
      */
     pitchAlignment?: "canvas" | "map" | TagRenderingConfigJson
 
@@ -152,6 +156,7 @@ export default interface PointRenderingConfigJson {
      * question: Should the icon be rotated if the map is rotated?
      * ifunset: Do not rotate or tilt icons. Always keep the icons straight
      * suggestions: return [{if: "value=canvas", then: "Never rotate the icon"}, {if: "value=map", then: "If the map is rotated, rotate the icon as well. This gives the impression of an icon that floats perpendicular above the ground."}]
+     * group: expert
      */
     rotationAlignment?: "map" | "canvas" | TagRenderingConfigJson
 }

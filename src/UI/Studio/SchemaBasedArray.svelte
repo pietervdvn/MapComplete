@@ -6,7 +6,6 @@
   import SchemaBasedField from "./SchemaBasedField.svelte";
   import { TrashIcon } from "@babeard/svelte-heroicons/mini";
   import QuestionPreview from "./QuestionPreview.svelte";
-  import { Utils } from "../../Utils";
   import SchemaBasedMultiType from "./SchemaBasedMultiType.svelte";
   import ShowConversionMessage from "./ShowConversionMessage.svelte";
 
@@ -24,6 +23,7 @@
     article = "an";
   }
   export let path: (string | number)[] = [];
+  
   const isTagRenderingBlock = path.length === 1 && path[0] === "tagRenderings";
 
   if (isTagRenderingBlock) {
@@ -33,37 +33,24 @@
 
   const subparts: ConfigMeta = state.getSchemaStartingWith(schema.path)
     .filter(part => part.path.length - 1 === schema.path.length);
-  /**
-   * Store the _indices_
-   */
-  export let values: UIEventSource<number[]> = new UIEventSource<number[]>([]);
-
-  const currentValue = <[]>state.getCurrentValueFor(path);
-  if (currentValue) {
-    if (!Array.isArray(currentValue)) {
-      console.error("SchemaBaseArray for path", path, "expected an array as initial value, but got a", typeof currentValue, currentValue);
-    } else {
-      values.setData(currentValue.map((_, i) => i));
-    }
-  }
-  let createdItems = values.data.length;
+  
   let messages = state.messagesFor(path)
-
+  
+  
+  const currentValue : UIEventSource<any[]> = state.getStoreFor(path);
+  if(currentValue.data === undefined){
+    currentValue.setData([])
+  }
 
   function createItem(valueToSet?: any) {
-    values.data.push(createdItems);
-    if (valueToSet) {
-      state.getStoreFor([...path, createdItems]).setData(valueToSet);
+    if(currentValue.data === undefined){
+      currentValue.setData([])
     }
-    createdItems++;
-    values.ping();
+    currentValue.data.push(valueToSet)
+    currentValue.ping()
     
     if(isTagRenderingBlock){
-      if(typeof valueToSet === "string"){
-        // THis is very broken state.highlightedItem.setData({path: [...path, createdItems], schema})
-      }else{
-        state.highlightedItem.setData({path: [...path, createdItems], schema})
-      }
+        state.highlightedItem.setData({path: [...path, currentValue.data.length - 1], schema})
     }
   }
 
@@ -73,53 +60,39 @@
     for (const part of path) {
       if (toAdd[0] === part) {
         toAdd.splice(0, 1);
+      }else{
+        break
       }
     }
     newPath.push(...toAdd);
+    console.log({newPath})
     return newPath;
-  }
-
-  function del(i) {
-    const index = i;
-    console.log("Deleting", index);
-    values.data.splice(index, 1);
-    values.ping();
-
-    const store = <UIEventSource<[]>>state.getStoreFor(path);
-    store.data.splice(index, 1);
-    store.setData(Utils.NoNull(store.data));
-    state.configuration.ping();
-  }
-
-  function swap(indexA, indexB) {
-    const valueA = values.data[indexA];
-    const valueB = values.data[indexB];
-
-    values.data[indexA] = valueB;
-    values.data[indexB] = valueA;
-    values.ping();
-
-    const store = <UIEventSource<[]>>state.getStoreFor(path);
-    const svalueA = store.data[indexA];
-    const svalueB = store.data[indexB];
-    store.data[indexA] = svalueB;
-    store.data[indexB] = svalueA;
-    store.ping();
-    state.configuration.ping();
-  }
-
-  function moveTo(currentIndex, targetIndex) {
-    const direction = currentIndex > targetIndex ? -1 : +1;
-    do {
-      swap(currentIndex, currentIndex + direction);
-      currentIndex = currentIndex + direction;
-    } while (currentIndex !== targetIndex);
   }
 
   function schemaForMultitype() {
     const sch = {...schema}
     sch.hints.typehint = undefined
     return sch
+  }
+  
+  
+  function del(i: number){
+    currentValue.data.splice(i, 1)
+    currentValue.ping()
+  }
+  
+  function swap(i: number, j: number) {
+    const x = currentValue.data[i]
+    currentValue.data[i] = currentValue.data[j] 
+    currentValue.data[j] = x
+    currentValue.ping()
+  }
+  
+  function moveTo(source: number, target: number){
+    const x = currentValue.data[source]
+    currentValue.data.splice(source, 1)
+    currentValue.data.splice(target, 0, x)
+    currentValue.ping()
   }
 
 
@@ -132,8 +105,9 @@
             {schema.description}
         </span>
   {/if}
-
-  {#if $values.length === 0}
+  {#if $currentValue === undefined}
+      No array defined
+  {:else if $currentValue.length === 0}
     No values are defined
     {#if $messages.length > 0}
       {#each $messages as message}
@@ -142,9 +116,9 @@
     {/if}
   {:else if subparts.length === 0}
     <!-- We need an array of values, so we use the typehint of the _parent_ element as field -->
-    {#each $values as value, i (value)}
+    {#each $currentValue as value, i}
       <div class="flex w-full">
-        <SchemaBasedField {state} {schema} path={[...path, value]} />
+        <SchemaBasedField {state} {schema} path={[...path, i]} />
         <button class="border-black border rounded-full p-1 w-fit h-fit"
                 on:click={() => {del(i)}}>
           <TrashIcon class="w-4 h-4" />
@@ -152,11 +126,10 @@
       </div>
     {/each}
   {:else}
-    {#each $values as value, i (value)}
-
+    {#each $currentValue as value, i}
       {#if !isTagRenderingBlock}
         <div class="flex justify-between items-center">
-          <h3 class="m-0">{singular} {value}</h3>
+          <h3 class="m-0">{singular} {i}</h3>
           <button class="border-black border rounded-full p-1 w-fit h-fit"
                   on:click={() => {del(i)}}>
             <TrashIcon class="w-4 h-4" />
@@ -165,7 +138,7 @@
       {/if}
       <div class="border border-black">
         {#if isTagRenderingBlock}
-          <QuestionPreview {state} path={[...path, value]} {schema}>
+          <QuestionPreview {state} path={[...path, i]} {schema}>
             <button on:click={() => {del(i)}}>
               <TrashIcon class="w-4 h-4" />
               Delete this question
@@ -180,21 +153,21 @@
                 Move up
               </button>
             {/if}
-            {#if i + 1 < $values.length}
+            {#if i + 1 < $currentValue.length}
               <button on:click={() => {swap(i, i+1)}}>
                 Move down
               </button>
-              <button on:click={() => {moveTo(i, $values.length-1)}}>
+              <button on:click={() => {moveTo(i, $currentValue.length-1)}}>
                 Move to back
               </button>
             {/if}
 
           </QuestionPreview>
           {:else if schema.hints.types}
-         <SchemaBasedMultiType {state} path={fusePath(value, [])} schema={schemaForMultitype()}/>
+         <SchemaBasedMultiType {state} path={fusePath(i, [])} schema={schemaForMultitype()}/>
         {:else}
           {#each subparts as subpart}
-            <SchemaBasedInput {state} path={fusePath(value, subpart.path)} schema={subpart} />
+            <SchemaBasedInput {state} path={fusePath(i, subpart.path)} schema={subpart} />
           {/each}
         {/if}
       </div>

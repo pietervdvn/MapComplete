@@ -9,7 +9,6 @@
    * Markdown
    */
   export let pages: string[];
-  console.log("Walkthrough pages are", pages)
 
   let currentPage: number = 0;
 

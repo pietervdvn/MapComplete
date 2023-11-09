@@ -95,6 +95,7 @@
       "freeform": {
         "key": "name",
         "type": "string",
+        "addExtraTags": ["noname="],
         "placeholder": {
           "en": "Name of the car rental",
           "nl": "Naam van de autoverhuur",
@@ -117,6 +118,7 @@
       "mappings": [
         {
           "if": "noname=yes",
+          "addExtraTags": ["name="],
           "then": {
             "en": "This car rental has no name",
             "nl": "Deze autoverhuur heeft geen naam",

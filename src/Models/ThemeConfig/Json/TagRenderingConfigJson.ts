@@ -56,6 +56,7 @@ export interface TagRenderingConfigJson {
      *
      * Note that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`
      * type: rendered
+     * ifunset: no text is rendered if no predefined options match
      */
     render?:
         | Translatable
@@ -66,6 +67,7 @@ export interface TagRenderingConfigJson {
      * An icon shown next to the rendering; typically shown pretty small
      * This is only shown next to the "render" value
      * Type: icon
+     * ifunset: do not show an icon next to the "render"-value
      */
     icon?:
         | string

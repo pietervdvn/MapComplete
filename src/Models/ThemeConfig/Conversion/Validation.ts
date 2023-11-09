@@ -357,7 +357,7 @@ export class PrevalidateTheme extends Fuse<LayoutConfigJson> {
 export class DetectConflictingAddExtraTags extends DesugaringStep<TagRenderingConfigJson> {
     constructor() {
         super(
-            "The `if`-part in a mapping might set some keys. Those key are not allowed to be set in the `addExtraTags`, as this might result in conflicting values",
+            "The `if`-part in a mapping might set some keys. Those keys are not allowed to be set in the `addExtraTags`, as this might result in conflicting values",
             [],
             "DetectConflictingAddExtraTags"
         )
@@ -396,6 +396,100 @@ export class DetectConflictingAddExtraTags extends DesugaringStep<TagRenderingCo
             context.err(e)
             return undefined
         }
+    }
+}
+
+export class DetectNonErasedKeysInMappings extends DesugaringStep<QuestionableTagRenderingConfigJson> {
+    constructor() {
+        super(
+            "A tagRendering might set a freeform key (e.g. `name` and have an option that _should_ erase this name, e.g. `noname=yes`). Under normal circumstances, every mapping/freeform should affect all touched keys",
+            [],
+            "DetectNonErasedKeysInMappings"
+        )
+    }
+
+    convert(
+        json: QuestionableTagRenderingConfigJson,
+        context: ConversionContext
+    ): QuestionableTagRenderingConfigJson {
+        if (json.multiAnswer) {
+            // No need to check this here, this has its own validation
+            return json
+        }
+        if (!json.question) {
+            // No need to check the writable tags, as this cannot write
+            return json
+        }
+        function addAll(keys: { forEach: (f: (s: string) => void) => void }, addTo: Set<string>) {
+            keys?.forEach((k) => addTo.add(k))
+        }
+
+        const freeformKeys: Set<string> = new Set()
+        if (json.freeform) {
+            freeformKeys.add(json.freeform.key)
+            for (const tag of json.freeform.addExtraTags ?? []) {
+                const tagParsed = TagUtils.Tag(tag)
+                addAll(tagParsed.usedKeys(), freeformKeys)
+            }
+        }
+
+        const mappingKeys: Set<string>[] = []
+        for (const mapping of json.mappings ?? []) {
+            if (mapping.hideInAnswer === true) {
+                mappingKeys.push(undefined)
+                continue
+            }
+            const thisMappingKeys: Set<string> = new Set<string>()
+            addAll(TagUtils.Tag(mapping.if).usedKeys(), thisMappingKeys)
+            for (const tag of mapping.addExtraTags ?? []) {
+                addAll(TagUtils.Tag(tag).usedKeys(), thisMappingKeys)
+            }
+            mappingKeys.push(thisMappingKeys)
+        }
+
+        const neededKeys = new Set<string>()
+
+        addAll(freeformKeys, neededKeys)
+        for (const mappingKey of mappingKeys) {
+            addAll(mappingKey, neededKeys)
+        }
+
+        neededKeys.delete("fixme") // fixme gets a free pass
+
+        if (json.freeform) {
+            for (const neededKey of neededKeys) {
+                if (!freeformKeys.has(neededKey)) {
+                    context
+                        .enters("freeform")
+                        .warn(
+                            "The freeform block does not modify the key `" +
+                                neededKey +
+                                "` which is set in a mapping. Use `addExtraTags` to overwrite it"
+                        )
+                }
+            }
+        }
+
+        for (let i = 0; i < json.mappings?.length; i++) {
+            const mapping = json.mappings[i]
+            if (mapping.hideInAnswer === true) {
+                continue
+            }
+            const keys = mappingKeys[i]
+            for (const neededKey of neededKeys) {
+                if (!keys.has(neededKey)) {
+                    context
+                        .enters("mappings", i)
+                        .warn(
+                            "This mapping does not modify the key `" +
+                                neededKey +
+                                "` which is set in a mapping or by the freeform block. Use `addExtraTags` to overwrite it"
+                        )
+                }
+            }
+        }
+
+        return json
     }
 }
 
@@ -874,6 +968,7 @@ export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
             "Various validation on tagRenderingConfigs",
             new DetectShadowedMappings(layerConfig),
             new DetectConflictingAddExtraTags(),
+            new DetectNonErasedKeysInMappings(),
             new DetectMappingsWithImages(doesImageExist),
             new On("render", new ValidatePossibleLinks()),
             new On("question", new ValidatePossibleLinks()),
@@ -1195,6 +1290,10 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
             const baseTags = TagUtils.Tag(json.source["osmTags"])
             for (let i = 0; i < json.presets.length; i++) {
                 const preset = json.presets[i]
+                if (!preset) {
+                    context.enters("presets", i).err("This preset is undefined")
+                    continue
+                }
                 if (!preset.tags) {
                     context.enters("presets", i, "tags").err("No tags defined for this preset")
                     continue

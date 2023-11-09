@@ -116,7 +116,7 @@ export interface LayoutConfigJson {
      * type: float
      * group: start_location
      */
-    startZoom: number
+    startZoom?: number
     /**
      * question: At what start latitude should this theme open?
      * Default location and zoom to start.
@@ -125,7 +125,7 @@ export interface LayoutConfigJson {
      * type: float
      * group: start_location
      */
-    startLat: number
+    startLat?: number
     /**
      * question: At what start longitude should this theme open?
      * Default location and zoom to start.
@@ -134,7 +134,7 @@ export interface LayoutConfigJson {
      * type: float
      * group: start_location
      */
-    startLon: number
+    startLon?: number
     /**
      * The id of the default background. BY default: vanilla OSM
      */

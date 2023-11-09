@@ -32,7 +32,6 @@
     {#each layer.tagRenderings as config (config.id)}
       {#if (config.condition?.matchesProperties($tags) ?? true) && config.metacondition?.matchesProperties({ ...$tags, ..._metatags } ?? true)}
         {#if config.IsKnown($tags)}
-          {config.id}
           <TagRenderingEditable
             {tags}
             {config}

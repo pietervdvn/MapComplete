@@ -110,10 +110,6 @@ export abstract class EditJsonState<T> {
     public getStoreFor<T>(path: ReadonlyArray<string | number>): UIEventSource<T | undefined> {
         const key = path.join(".")
 
-        // TODO check if this gives problems when changing the order of e.g. mappings and questions
-        if (this._stores.has(key)) {
-            return this._stores.get(key)
-        }
         const store = new UIEventSource<any>(this.getCurrentValueFor(path))
         store.addCallback((v) => {
             this.setValueAt(path, v)

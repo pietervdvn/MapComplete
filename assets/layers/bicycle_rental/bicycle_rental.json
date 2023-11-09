@@ -178,6 +178,7 @@
         },
         {
           "if": "shop=rental",
+          
           "then": {
             "en": "This is a rental business which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus",
             "nl": "Dit is een zaak die verschillende voorwerpen en/of voertuigen verhuurt, waaronder ook fietsen; al zijn fietsen niet de hoofdfocus",
@@ -211,6 +212,7 @@
         },
         {
           "if": "bicycle_rental=docking_station",
+          "addExtraTags": ["service:bicycle:rental="],
           "then": {
             "en": "This is an automated docking station, where a bicycle is mechanically locked to a structure",
             "nl": "Dit is een docking station waar de fietsen mechanisch in een grotere structuur worden vastgemaakt",
@@ -225,6 +227,7 @@
         },
         {
           "if": "bicycle_rental=key_dispensing_machine",
+          "addExtraTags": ["service:bicycle:rental="],
           "then": {
             "en": "A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby",
             "nl": "Hier is een machine die fietssleutels verdeelt en terugneemt, eventueel na aanmelden of betaling. De fietsen staan in de buurt geparkeerd",
@@ -240,6 +243,7 @@
         },
         {
           "if": "bicycle_rental=dropoff_point",
+          "addExtraTags": ["service:bicycle:rental="],
           "then": {
             "en": "This is a dropoff point, e.g. a reserved parking to place the bicycles clearly marked as being for the rental service only",
             "nl": "Dit is een dropzone, bv. een fietsparkeerplaats die is voorbehouden voor fietsverhuur",

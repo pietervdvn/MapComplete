@@ -32,7 +32,7 @@
 
   let thenText: UIEventSource<Record<string, string>> = state.getStoreFor([...path, "then"])
   let thenTextEn = thenText   .mapD(translation => typeof translation === "string" ? translation : translation["en"] )
-  let editMode = Object.keys($thenText).length === 0;
+  let editMode = Object.keys($thenText ?? {})?.length === 0;
 
   let mappingConfigs: ConfigMeta[] = configs.filter(c => c.path[0] === "mappings")
     .map(c => <ConfigMeta>Utils.Clone(c))

@@ -1122,7 +1122,8 @@
               "pl": "To jest lampa neonowa",
               "pt_BR": "Isso é uma luz de neon"
             },
-            "hideInAnswer": "advertising!=sign"
+            "hideInAnswer": "advertising!=sign",
+            "addExtraTags": ["lit=no"]
           }
         ],
         "condition": {

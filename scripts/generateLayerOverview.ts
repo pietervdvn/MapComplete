@@ -452,11 +452,16 @@ class LayerOverviewUtils extends Script {
     ): {
         raw: LayerConfigJson
         parsed: LayerConfig
+        context: ConversionContext
     } {
         const parser = new ParseLayer(prepLayer, doesImageExist)
         const context = ConversionContext.construct([sharedLayerPath], ["ParseLayer"])
         const parsed = parser.convertStrict(sharedLayerPath, context)
-        return AddIconSummary.singleton.convertStrict(parsed, context.inOperation("AddIconSummary"))
+        const result = AddIconSummary.singleton.convertStrict(
+            parsed,
+            context.inOperation("AddIconSummary")
+        )
+        return { ...result, context }
     }
 
     private buildLayerIndex(
@@ -477,6 +482,7 @@ class LayerOverviewUtils extends Script {
         const prepLayer = new PrepareLayer(state)
         const skippedLayers: string[] = []
         const recompiledLayers: string[] = []
+        let warningCount = 0
         for (const sharedLayerPath of ScriptUtils.getLayerPaths()) {
             {
                 const targetPath =
@@ -492,6 +498,7 @@ class LayerOverviewUtils extends Script {
             }
 
             const parsed = this.parseLayer(doesImageExist, prepLayer, sharedLayerPath)
+            warningCount += parsed.context.getAll("warning").length
             const fixed = parsed.raw
             if (sharedLayers.has(fixed.id)) {
                 throw "There are multiple layers with the id " + fixed.id + ", " + sharedLayerPath
@@ -508,7 +515,9 @@ class LayerOverviewUtils extends Script {
                 recompiledLayers.join(", ") +
                 " and skipped " +
                 skippedLayers.length +
-                " layers"
+                " layers. Detected " +
+                warningCount +
+                " warnings"
         )
         // We always need the calculated tags of 'usersettings', so we export them separately
         this.extractJavascriptCodeForLayer(

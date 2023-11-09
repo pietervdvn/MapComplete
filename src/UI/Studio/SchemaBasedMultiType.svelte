@@ -14,7 +14,6 @@
   // @ts-ignore
   import nmd from "nano-markdown";
   import ShowConversionMessage from "./ShowConversionMessage.svelte";
-  import exp from "constants";
 
   /**
    * If 'types' is defined: allow the user to pick one of the types to input.
@@ -196,7 +195,6 @@
   }));
   let messages = state.messagesFor(path);
 
-
 </script>
 
 <div class="p-2 border-2 border-dashed border-gray-300 flex flex-col gap-y-2 m-1">
@@ -209,7 +207,7 @@
     Studio
   {:else}
     <div>
-      <TagRenderingEditable {config} selectedElement={undefined} showQuestionIfUnknown={true} {state} {tags} />
+      <TagRenderingEditable {config} selectedElement={undefined} showQuestionIfUnknown={!schema.hints?.ifunset} {state} {tags} />
     </div>
 
     {#if chosenOption !== undefined}
@@ -217,9 +215,9 @@
         {#if $expertMode || subschema.hints?.group !== "expert"}
           <SchemaBasedInput {state} schema={subschema}
                             path={[...subpath, (subschema?.path?.at(-1) ?? "???")]}></SchemaBasedInput>
-          {:else if window.location.hostname === "127.0.0.1"}
-            <span class="subtle">Omitted expert question {subschema.path.join(".")}</span>
-          
+        {:else if window.location.hostname === "127.0.0.1"}
+          <span class="subtle">Omitted expert question {subschema.path.join(".")}</span>
+
         {/if}
       {/each}
     {:else if $messages.length > 0}

@@ -13,7 +13,8 @@ export let title: string | undefined = undefined;
 export let path: (string | number)[] = [];
 
 let expertMode = state.expertMode
-let configsFiltered = $expertMode ? configs : configs.filter(schema => schema.hints?.group !== "expert")
+let configsNoHidden = configs.filter(schema => schema.hints?.group !== "hidden")
+let configsFiltered = $expertMode ? configsNoHidden : configsNoHidden.filter(schema => schema.hints?.group !== "expert")
 
 </script>
 {#if configs === undefined}
