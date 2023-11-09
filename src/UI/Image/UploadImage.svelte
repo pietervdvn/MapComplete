@@ -4,7 +4,7 @@
    */
 
   import type { SpecialVisualizationState } from "../SpecialVisualization"
-  import { ImmutableStore, Store } from "../../Logic/UIEventSource";
+  import { ImmutableStore, Store } from "../../Logic/UIEventSource"
   import type { OsmTags } from "../../Models/OsmFeature"
   import LoginToggle from "../Base/LoginToggle.svelte"
   import Translations from "../i18n/Translations"

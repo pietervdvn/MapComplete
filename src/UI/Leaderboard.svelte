@@ -54,7 +54,7 @@
         </td>
         <td>
           <b>{contributor.nrOfImages}</b>
-           total images
+          total images
         </td>
       </tr>
     {/each}

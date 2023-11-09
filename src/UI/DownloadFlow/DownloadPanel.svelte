@@ -27,7 +27,7 @@
       mapExtent: state.mapProperties.bounds.data,
       width: maindiv.offsetWidth,
       height: maindiv.offsetHeight,
-      noSelfIntersectingLines: true
+      noSelfIntersectingLines: true,
     })
   }
 </script>
@@ -84,7 +84,7 @@
     helperText={t.downloadAsSvgLinesOnlyHelper}
     construct={() => offerSvg(true)}
   />
-  
+
   <DownloadButton
     {state}
     {metaIsIncluded}

@@ -4,50 +4,49 @@
    * Note that all values are stringified
    */
 
-  import { UIEventSource } from "../../Logic/UIEventSource";
-  import type { ValidatorType } from "./Validators";
-  import InputHelpers from "./InputHelpers";
-  import ToSvelte from "../Base/ToSvelte.svelte";
-  import type { Feature } from "geojson";
-  import { createEventDispatcher } from "svelte";
-  import ImageHelper from "./Helpers/ImageHelper.svelte";
-  import TranslationInput from "./Helpers/TranslationInput.svelte";
-  import TagInput from "./Helpers/TagInput.svelte";
-  import SimpleTagInput from "./Helpers/SimpleTagInput.svelte";
-  import DirectionInput from "./Helpers/DirectionInput.svelte";
-  import DateInput from "./Helpers/DateInput.svelte";
-  import ColorInput from "./Helpers/ColorInput.svelte";
-  import OpeningHoursInput from "./Helpers/OpeningHoursInput.svelte";
+  import { UIEventSource } from "../../Logic/UIEventSource"
+  import type { ValidatorType } from "./Validators"
+  import InputHelpers from "./InputHelpers"
+  import ToSvelte from "../Base/ToSvelte.svelte"
+  import type { Feature } from "geojson"
+  import { createEventDispatcher } from "svelte"
+  import ImageHelper from "./Helpers/ImageHelper.svelte"
+  import TranslationInput from "./Helpers/TranslationInput.svelte"
+  import TagInput from "./Helpers/TagInput.svelte"
+  import SimpleTagInput from "./Helpers/SimpleTagInput.svelte"
+  import DirectionInput from "./Helpers/DirectionInput.svelte"
+  import DateInput from "./Helpers/DateInput.svelte"
+  import ColorInput from "./Helpers/ColorInput.svelte"
+  import OpeningHoursInput from "./Helpers/OpeningHoursInput.svelte"
 
-  export let type: ValidatorType;
-  export let value: UIEventSource<string | object>;
+  export let type: ValidatorType
+  export let value: UIEventSource<string | object>
 
-  export let feature: Feature;
-  export let args: (string | number | boolean)[] = undefined;
+  export let feature: Feature
+  export let args: (string | number | boolean)[] = undefined
 
-  let properties = { feature, args: args ?? [] };
+  let properties = { feature, args: args ?? [] }
   let dispatch = createEventDispatcher<{
     selected
-  }>();
-
+  }>()
 </script>
 
-{#if type === "translation" }
+{#if type === "translation"}
   <TranslationInput {value} on:submit {args} />
 {:else if type === "direction"}
   <DirectionInput {value} mapProperties={InputHelpers.constructMapProperties(properties)} />
 {:else if type === "date"}
-  <DateInput { value } />
+  <DateInput {value} />
 {:else if type === "color"}
-  <ColorInput { value } />
+  <ColorInput {value} />
 {:else if type === "image"}
-  <ImageHelper { value } />
+  <ImageHelper {value} />
 {:else if type === "tag"}
-  <TagInput { value } on:submit />
+  <TagInput {value} on:submit />
 {:else if type === "simple_tag"}
-  <SimpleTagInput { value } {args} on:submit />
+  <SimpleTagInput {value} {args} on:submit />
 {:else if type === "opening_hours"}
-  <OpeningHoursInput { value } />
+  <OpeningHoursInput {value} />
 {:else if type === "wikidata"}
   <ToSvelte construct={() => InputHelpers.constructWikidataHelper(value, properties)} />
 {/if}

@@ -1,24 +1,24 @@
 <script lang="ts">
-  import Pin from "../../assets/svg/Pin.svelte";
-  import Square from "../../assets/svg/Square.svelte";
-  import Circle from "../../assets/svg/Circle.svelte";
-  import Checkmark from "../../assets/svg/Checkmark.svelte";
-  import Clock from "../../assets/svg/Clock.svelte";
-  import Close from "../../assets/svg/Close.svelte";
-  import Crosshair from "../../assets/svg/Crosshair.svelte";
-  import Help from "../../assets/svg/Help.svelte";
-  import Home from "../../assets/svg/Home.svelte";
-  import Invalid from "../../assets/svg/Invalid.svelte";
-  import Location from "../../assets/svg/Location.svelte";
-  import Location_empty from "../../assets/svg/Location_empty.svelte";
-  import Location_locked from "../../assets/svg/Location_locked.svelte";
-  import Note from "../../assets/svg/Note.svelte";
-  import Resolved from "../../assets/svg/Resolved.svelte";
-  import Ring from "../../assets/svg/Ring.svelte";
-  import Scissors from "../../assets/svg/Scissors.svelte";
-  import Teardrop from "../../assets/svg/Teardrop.svelte";
-  import Teardrop_with_hole_green from "../../assets/svg/Teardrop_with_hole_green.svelte";
-  import Triangle from "../../assets/svg/Triangle.svelte";
+  import Pin from "../../assets/svg/Pin.svelte"
+  import Square from "../../assets/svg/Square.svelte"
+  import Circle from "../../assets/svg/Circle.svelte"
+  import Checkmark from "../../assets/svg/Checkmark.svelte"
+  import Clock from "../../assets/svg/Clock.svelte"
+  import Close from "../../assets/svg/Close.svelte"
+  import Crosshair from "../../assets/svg/Crosshair.svelte"
+  import Help from "../../assets/svg/Help.svelte"
+  import Home from "../../assets/svg/Home.svelte"
+  import Invalid from "../../assets/svg/Invalid.svelte"
+  import Location from "../../assets/svg/Location.svelte"
+  import Location_empty from "../../assets/svg/Location_empty.svelte"
+  import Location_locked from "../../assets/svg/Location_locked.svelte"
+  import Note from "../../assets/svg/Note.svelte"
+  import Resolved from "../../assets/svg/Resolved.svelte"
+  import Ring from "../../assets/svg/Ring.svelte"
+  import Scissors from "../../assets/svg/Scissors.svelte"
+  import Teardrop from "../../assets/svg/Teardrop.svelte"
+  import Teardrop_with_hole_green from "../../assets/svg/Teardrop_with_hole_green.svelte"
+  import Triangle from "../../assets/svg/Triangle.svelte"
 
   /**
    * Renders a single icon.
@@ -26,13 +26,12 @@
    * Icons -placed on top of each other- form a 'Marker' together
    */
 
-  export let icon: string | undefined;
-  export let color: string | undefined;
-
+  export let icon: string | undefined
+  export let color: string | undefined
 </script>
 
 {#if icon}
-  <div class="absolute top-0 left-0 w-full h-full">
+  <div class="absolute top-0 left-0 h-full w-full">
     {#if icon === "pin"}
       <Pin {color} />
     {:else if icon === "square"}
@@ -74,7 +73,7 @@
     {:else if icon === "triangle"}
       <Triangle {color} />
     {:else}
-      <img class="w-full h-full" src={icon} />
+      <img class="h-full w-full" src={icon} />
     {/if}
   </div>
 {/if}

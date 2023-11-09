@@ -8,7 +8,7 @@
   import InputHelper from "../../InputElement/InputHelper.svelte"
   import type { Feature } from "geojson"
   import { Unit } from "../../../Models/Unit"
-  import InputHelpers from "../../InputElement/InputHelpers";
+  import InputHelpers from "../../InputElement/InputHelpers"
 
   export let value: UIEventSource<string>
   export let config: TagRenderingConfig
@@ -25,8 +25,8 @@
     inline = config.freeform?.inline
   }
 
-  const dispatch = createEventDispatcher<{selected}>()
-  export let feedback: UIEventSource<Translation> 
+  const dispatch = createEventDispatcher<{ selected }>()
+  export let feedback: UIEventSource<Translation>
   onDestroy(
     value.addCallbackD(() => {
       dispatch("selected")
@@ -65,5 +65,11 @@
     />
   {/if}
 
-  <InputHelper args={config.freeform.helperArgs} {feature} type={config.freeform.type} {value} on:submit />
+  <InputHelper
+    args={config.freeform.helperArgs}
+    {feature}
+    type={config.freeform.type}
+    {value}
+    on:submit
+  />
 </div>

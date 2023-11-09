@@ -24,7 +24,8 @@
     unknown: t.loginFailedUnreachableMode,
     readonly: t.loginFailedReadonlyMode,
   }
-  const apiState = state?.osmConnection?.apiIsOnline ?? new ImmutableStore<OsmServiceState>("online")
+  const apiState =
+    state?.osmConnection?.apiIsOnline ?? new ImmutableStore<OsmServiceState>("online")
 </script>
 
 {#if $badge}

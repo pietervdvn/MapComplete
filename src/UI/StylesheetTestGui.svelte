@@ -21,7 +21,6 @@
     <div class="information">Some important information</div>
     <div class="thanks">Thank you! Operation successful</div>
 
-
     <ToSvelte construct={Svg.login_svg().SetClass("w-12 h-12")} />
     <Loading>Loading...</Loading>
   </div>
@@ -46,7 +45,7 @@
         <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
         Main action (disabled)
       </button>
-      
+
       <button class="small">
         <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
         Small button
@@ -89,7 +88,7 @@
     <div class="warning">Warning</div>
     <div class="information">Some important information</div>
     <div class="thanks">Thank you! Operation successful</div>
-    
+
     <ToSvelte construct={Svg.login_svg().SetClass("w-12 h-12")} />
     <Loading>Loading...</Loading>
   </div>
@@ -130,7 +129,6 @@
     <div class="information">Some important information</div>
     <div class="thanks">Thank you! Operation successful</div>
 
-
     <ToSvelte construct={Svg.login_svg().SetClass("w-12 h-12")} />
     <Loading>Loading...</Loading>
     <div>
@@ -147,7 +145,7 @@
         JavaScript
       </label>
     </div>
-    
+
     <div class="border-interactive">
       Area with extreme high interactivity due to `border-interactive`
     </div>

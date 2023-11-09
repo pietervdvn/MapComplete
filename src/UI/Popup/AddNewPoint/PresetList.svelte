@@ -11,9 +11,9 @@
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import FromHtml from "../../Base/FromHtml.svelte"
   import NextButton from "../../Base/NextButton.svelte"
-  import { UIElement } from "../../UIElement";
-  import ToSvelte from "../../Base/ToSvelte.svelte";
-  import BaseUIElement from "../../BaseUIElement";
+  import { UIElement } from "../../UIElement"
+  import ToSvelte from "../../Base/ToSvelte.svelte"
+  import BaseUIElement from "../../BaseUIElement"
 
   /**
    * This component lists all the presets and allows the user to select one
@@ -86,7 +86,7 @@
 
   {#each presets as preset}
     <NextButton on:click={() => dispatch("select", preset)}>
-        <ToSvelte slot="image" construct={() => preset.icon} />
+      <ToSvelte slot="image" construct={() => preset.icon} />
       <div class="flex flex-col">
         <b class="w-fit">
           <Tr t={preset.text} />

@@ -8,11 +8,11 @@
   import Toggle from "../Input/Toggle"
   import Lazy from "../Base/Lazy"
   import BaseUIElement from "../BaseUIElement"
-  import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+  import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 
   //Svelte props
   export let tags: UIEventSource<any>
-  export let state: {layoutToUse: LayoutConfig} = undefined
+  export let state: { layoutToUse: LayoutConfig } = undefined
 
   const calculatedTags = [].concat(
     ...(state?.layoutToUse?.layers?.map((l) => l.calculatedTags?.map((c) => c[0]) ?? []) ?? [])

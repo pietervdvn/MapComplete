@@ -423,10 +423,7 @@ class LineRenderingLayer {
 }
 
 export default class ShowDataLayer {
-    private static rangeLayer = new LayerConfig(
-        <any>range_layer,
-        "ShowDataLayer.ts:range.json"
-    )
+    private static rangeLayer = new LayerConfig(<any>range_layer, "ShowDataLayer.ts:range.json")
     private readonly _options: ShowDataLayerOptions & {
         layer: LayerConfig
         drawMarkers?: true | boolean

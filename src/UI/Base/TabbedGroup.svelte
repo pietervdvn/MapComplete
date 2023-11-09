@@ -3,9 +3,9 @@
    * Thin wrapper around 'TabGroup' which binds the state
    */
 
-  import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@rgossiaux/svelte-headlessui";
-  import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource";
-  import { twJoin } from "tailwind-merge";
+  import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@rgossiaux/svelte-headlessui"
+  import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
+  import { twJoin } from "tailwind-merge"
 
   /**
    * If a condition is given for a certain tab, it will only be shown if this condition is true.
@@ -43,49 +43,63 @@
     <div class="interactive sticky top-0 flex items-center justify-between">
       <TabList class="flex flex-wrap">
         {#if $$slots.title0}
-          <Tab class={({ selected }) => twJoin("tab", selected && "primary", !$condition0 && "hidden")}>
+          <Tab
+            class={({ selected }) => twJoin("tab", selected && "primary", !$condition0 && "hidden")}
+          >
             <div bind:this={tabElements[0]} class="flex">
               <slot name="title0">Tab 0</slot>
             </div>
           </Tab>
         {/if}
         {#if $$slots.title1}
-          <Tab class={({ selected }) => twJoin("tab", selected && "primary", !$condition1 && "hidden")}>
+          <Tab
+            class={({ selected }) => twJoin("tab", selected && "primary", !$condition1 && "hidden")}
+          >
             <div bind:this={tabElements[1]} class="flex">
               <slot name="title1" />
             </div>
           </Tab>
         {/if}
         {#if $$slots.title2}
-          <Tab class={({ selected }) => twJoin("tab", selected && "primary", !$condition2 && "hidden")}>
+          <Tab
+            class={({ selected }) => twJoin("tab", selected && "primary", !$condition2 && "hidden")}
+          >
             <div bind:this={tabElements[2]} class="flex">
               <slot name="title2" />
             </div>
           </Tab>
         {/if}
         {#if $$slots.title3}
-          <Tab class={({ selected }) => twJoin("tab", selected && "primary", !$condition3 && "hidden")}>
+          <Tab
+            class={({ selected }) => twJoin("tab", selected && "primary", !$condition3 && "hidden")}
+          >
             <div bind:this={tabElements[3]} class="flex">
               <slot name="title3" />
             </div>
           </Tab>
         {/if}
         {#if $$slots.title4}
-          <Tab class={({ selected }) => twJoin("tab", selected && "primary", !$condition4 && "hidden")}>
+          <Tab
+            class={({ selected }) => twJoin("tab", selected && "primary", !$condition4 && "hidden")}
+          >
             <div bind:this={tabElements[4]} class="flex">
               <slot name="title4" />
             </div>
           </Tab>
         {/if}
         {#if $$slots.title5}
-          <Tab class={({ selected }) => twJoin("tab", selected && "primary", !$condition5 && "hidden")}>
+          <Tab
+            class={({ selected }) => twJoin("tab", selected && "primary", !$condition5 && "hidden")}
+          >
             <div bind:this={tabElements[5]} class="flex">
               <slot name="title5" />
             </div>
           </Tab>
         {/if}
         {#if $$slots.title6}
-          <Tab class={({ selected }) => twJoin("tab", selected && "primary", !$condition6 && "hidden")}>
+          <Tab
+            class={({ selected }) => twJoin("tab", selected && "primary", !$condition6 && "hidden")}
+          >
             <div bind:this={tabElements[6]} class="flex">
               <slot name="title6" />
             </div>
