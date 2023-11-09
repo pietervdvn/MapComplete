@@ -27,7 +27,6 @@ User has used mapcomplete a few times before but has very little OSM-knowledge.
 - [x] Forced questions in the beginning: do not show errors
 - [x] Validation: forbid that a mapping starts with "yes" or "no"
 - [x] TagRenderings: freeform key cannot be set to 'undefined' again
-- [ ] How to create a mapping for `key=yes` or `key=no` is unclear. Person searched for a 'binary'-type instead
 - [x] When a new tagRendering is added, the floatover should open immediately
 - [x] Mappings with different keys do not erase each other/freeform (e.g. noname=yes should erase `name`)
 - [x] Rename `mapping` to `predifined icon`, perhaps add a clarifying icon
@@ -37,4 +36,10 @@ User has used mapcomplete a few times before but has very little OSM-knowledge.
 - [x] There should be some space for the 'close'-button in the tagRendering
 - [x] Changing the icon: the term 'icon badge' is misunderstood and interpreted as "the logo"
 - [x] Trying to change the 'iconBadges' does not work
-- [ ] Creating a preset: initially very unclear
+
+### Wont fix
+
+Should be clear to seasoned OSM-people
+
+- [-] How to create a mapping for `key=yes` or `key=no` is unclear. Person searched for a 'binary'-type instead
+- [-] Creating a preset: initially very unclear

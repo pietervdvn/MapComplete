@@ -4,7 +4,7 @@
 import { UIEventSource } from "../../../Logic/UIEventSource";
 import BasicTagInput from "../../Studio/TagInput/BasicTagInput.svelte";
 import { TagUtils } from "../../../Logic/Tags/TagUtils";
-import * as nmd from "nano-markdown"
+import nmd from "nano-markdown"
 import FromHtml from "../../Base/FromHtml.svelte";
 export let value: UIEventSource<undefined | string>;
 export let args: string[] = [];
