@@ -178,6 +178,7 @@
           <NextButton
             on:click={() => {
               editThemeState.configuration.setData({})
+              editThemeState.startSavingUpdates()
               state = "editing_theme"
             }}
           >
