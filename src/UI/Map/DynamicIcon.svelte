@@ -31,8 +31,8 @@
   export let icon: IconConfig
   export let tags: Store<Record<string, string>>
 
-  let iconItem = icon.icon?.GetRenderValue(tags)?.txt
-  $: iconItem = icon.icon?.GetRenderValue($tags)?.txt
+  let iconItem = icon.icon?.GetRenderValue($tags)?.Subs($tags)?.txt
+  $: iconItem = icon.icon?.GetRenderValue($tags)?.Subs($tags)?.txt
   let color = icon.color?.GetRenderValue(tags)?.txt ?? "#000000"
   $: color = icon.color?.GetRenderValue($tags)?.txt ?? "#000000"
 </script>
