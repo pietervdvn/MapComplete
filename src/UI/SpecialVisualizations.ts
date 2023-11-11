@@ -76,6 +76,7 @@ import StarsBarIcon from "./Reviews/StarsBarIcon.svelte"
 import ReviewForm from "./Reviews/ReviewForm.svelte"
 import Questionbox from "./Popup/TagRendering/Questionbox.svelte"
 import { TagUtils } from "../Logic/Tags/TagUtils"
+import Giggity from "./BigComponents/Giggity.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -90,6 +91,7 @@ class NearbyImageVis implements SpecialVisualization {
         "A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature"
     funcName = "nearby_images"
     needsUrls = NearbyImagesSearch.apiUrls
+
     constr(
         state: SpecialVisualizationState,
         tags: UIEventSource<Record<string, string>>,
@@ -1445,6 +1447,28 @@ export default class SpecialVisualizations {
                             }
                         })
                     )
+                },
+            },
+            {
+                funcName: "giggity",
+                args: [
+                    {
+                        name: "giggityUrl",
+                        required: true,
+                        doc: "The URL of the giggity-XML",
+                    },
+                ],
+                docs: "Shows events that are happening based on a Giggity URL",
+                needsUrls: ["*"],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    const giggityUrl = argument[0]
+                    return new SvelteUIElement(Giggity, { tags: tagSource, state, giggityUrl })
                 },
             },
         ]
