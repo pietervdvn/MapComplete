@@ -66,6 +66,8 @@
 
 {#if $events === undefined}
   <Loading class="h-4">Loading giggity events from {giggityUrl}</Loading>
+  {:else if $events.length === 0}
+  <i>No upcoming events in this room</i>
 {:else}
   <div>
     <h2>Upcoming events</h2>
