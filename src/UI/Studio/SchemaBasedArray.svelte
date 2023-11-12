@@ -64,7 +64,7 @@
       }
     }
     newPath.push(...toAdd)
-    console.log({ newPath })
+    console.log("Fused path ", path.join("."), "+", i,"+", subpartPath.join("."),"into",newPath.join("."))
     return newPath
   }
 
@@ -115,7 +115,7 @@
     <!-- We need an array of values, so we use the typehint of the _parent_ element as field -->
     {#each $currentValue as value, i}
       <div class="flex w-full">
-        <SchemaBasedField {state} {schema} path={[...path, i]} />
+        <SchemaBasedField {state} {schema} path={fusePath(i, [])} />
         <button
           class="h-fit w-fit rounded-full border border-black p-1"
           on:click={() => {
@@ -143,7 +143,7 @@
       {/if}
       <div class="border border-black">
         {#if isTagRenderingBlock}
-          <QuestionPreview {state} path={[...path, i]} {schema}>
+          <QuestionPreview {state} path={fusePath(i, [])} {schema}>
             <button
               on:click={() => {
                 del(i)
@@ -191,7 +191,7 @@
           <SchemaBasedMultiType {state} path={fusePath(i, [])} schema={schemaForMultitype()} />
         {:else}
           {#each subparts as subpart}
-            <SchemaBasedInput {state} path={fusePath(i, subpart.path)} schema={subpart} />
+            <SchemaBasedInput {state} path={fusePath(i, [subpart.path.at(-1)])} schema={subpart} />
           {/each}
         {/if}
       </div>
