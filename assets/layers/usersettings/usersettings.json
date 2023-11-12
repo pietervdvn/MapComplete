@@ -722,7 +722,7 @@
       ]
     },
     {
-      "id":"debug-gps",
+      "id": "debug-gps",
       "condition": "mapcomplete-show_debug=yes",
       "render": "{gps_all_tags()}"
     },
