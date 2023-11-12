@@ -513,7 +513,7 @@
                     "placeholder": "Operador"
                 },
                 "question": "¿De qué banco es este cajero automático?",
-                "render": "El cajero es de {operador}"
+                "render": "El cajero es de {operator}"
             },
             "speech_output": {
                 "mappings": {
@@ -2369,7 +2369,7 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Carril bici {nombre}"
+                    "then": "Carril bici {name}"
                 },
                 "1": {
                     "then": "Carril compartido"
