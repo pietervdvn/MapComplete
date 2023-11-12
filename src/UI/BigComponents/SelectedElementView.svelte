@@ -20,6 +20,11 @@
       _metatags = tags
     })
   )
+  
+  
+  let knownTagRenderings = layer.tagRenderings
+    .filter(config => (config.condition?.matchesProperties($tags) ?? true) && (config.metacondition?.matchesProperties({ ...$tags, ..._metatags } ?? true)
+    && config.IsKnown($tags)))
 </script>
 
 {#if $tags._deleted === "yes"}
@@ -29,9 +34,7 @@
   </button>
 {:else}
   <div class="flex h-full flex-col gap-y-2 overflow-y-auto p-1 px-2">
-    {#each layer.tagRenderings as config (config.id)}
-      {#if (config.condition?.matchesProperties($tags) ?? true) && config.metacondition?.matchesProperties({ ...$tags, ..._metatags } ?? true)}
-        {#if config.IsKnown($tags)}
+    {#each knownTagRenderings as config (config.id)}
           <TagRenderingEditable
             {tags}
             {config}
@@ -39,9 +42,8 @@
             {selectedElement}
             {layer}
             {highlightedRendering}
+            clss={knownTagRenderings.length === 1 ? "h-full" : "tr-length-"+knownTagRenderings.length}
           />
-        {/if}
-      {/if}
     {/each}
   </div>
 {/if}

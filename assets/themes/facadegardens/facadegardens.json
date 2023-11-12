@@ -579,10 +579,80 @@
         "enableImproveAccuracy": true,
         "enableRelocation": false
       },
-      "pointRendering": [],
-      "lineRendering": [
-        {}
-      ]
+      "pointRendering": [
+        {
+          "marker": [
+            {
+              "icon": "circle",
+              "color": "white"
+            },
+            {
+              "icon": {
+                "render": "./assets/themes/facadegardens/geveltuin.svg",
+                "mappings": [
+                  {
+                    "if": {
+                      "and": [
+                        "direct_sunlight=yes"
+                      ]
+                    },
+                    "then": "./assets/themes/facadegardens/zon.svg"
+                  },
+                  {
+                    "if": {
+                      "and": [
+                        "direct_sunlight=partial"
+                      ]
+                    },
+                    "then": "./assets/themes/facadegardens/halfzon.svg"
+                  },
+                  {
+                    "if": {
+                      "and": [
+                        "direct_sunlight=no"
+                      ]
+                    },
+                    "then": "./assets/themes/facadegardens/schaduw.svg"
+                  }
+                ]
+              }
+            }
+          ],
+          "iconBadges": [
+            {
+              "if": "plant~.*vine.*",
+              "then": "circle:white;./assets/themes/facadegardens/klimplant.svg"
+            },
+            {
+              "if": "plant~.*groundcover.*",
+              "then": "circle:white;./assets/themes/facadegardens/bodembedekker.svg"
+            },
+            {
+              "if": "edible=true",
+              "then": "circle:white;./assets/themes/facadegardens/eetbaar.svg"
+            },
+            {
+              "if": "rain_barel=yes",
+              "then": "circle:white;./assets/themes/facadegardens/gevelton.svg"
+            },
+            {
+              "if": "plant~.*shrub.*",
+              "then": "circle:white;./assets/themes/facadegardens/struik.svg"
+            },
+            {
+              "if": "plant~.*flower.*",
+              "then": "circle:white;./assets/themes/facadegardens/bloei.svg"
+            }
+          ],
+          "iconSize": "50,50",
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "anchor": "center"
+        }
+      ],
+      "lineRendering": []
     }
   ],
   "widenFactor": 1.5

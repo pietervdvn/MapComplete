@@ -1062,6 +1062,15 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
                 )
         }
 
+        if (!(json.pointRendering?.length > 0)) {
+            context.enter("pointRendering").err("There are no pointRenderings at all")
+        }
+        if (json.presets?.length > 0) {
+            if (!(json.pointRendering?.length > 0)) {
+                context.enter("presets").warn("A preset is defined, but there is no pointRendering")
+            }
+        }
+
         if (json.source === "special") {
             if (!Constants.priviliged_layers.find((x) => x == json.id)) {
                 context.err(
@@ -1377,6 +1386,7 @@ export class ValidateLayer extends Conversion<
             context.err("Could not parse layer due to:" + e)
             return undefined
         }
+
         for (let i = 0; i < (layerConfig.calculatedTags ?? []).length; i++) {
             const [_, code, __] = layerConfig.calculatedTags[i]
             try {

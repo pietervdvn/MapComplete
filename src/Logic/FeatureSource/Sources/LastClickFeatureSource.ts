@@ -26,7 +26,12 @@ export class LastClickFeatureSource implements WritableFeatureSource {
             for (let i = 0; i < (layer.presets ?? []).length; i++) {
                 const preset = layer.presets[i]
                 const tags = new ImmutableStore(TagUtils.KVtoProperties(preset.tags))
-                const { html } = layer.mapRendering[0].RenderIcon(tags, {
+                const rendering = layer.mapRendering[0]
+                if (!rendering) {
+                    console.error("NO rendering for preset", layer.id)
+                    continue
+                }
+                const { html } = rendering.RenderIcon(tags, {
                     noSize: true,
                     includeBadges: false,
                 })
