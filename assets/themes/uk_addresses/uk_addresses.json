@@ -45,7 +45,18 @@
       },
       "pointRendering": [],
       "lineRendering": [
-        {}
+        {
+          "width": 2,
+          "color": {
+            "render": "#00f",
+            "mappings": [
+              {
+                "if": "_has_address=true",
+                "then": "#0f0"
+              }
+            ]
+          }
+        }
       ]
     },
     {
@@ -112,7 +123,7 @@
         "_embedding_object:addr:housenumber=JSON.parse(feat.properties._embedding_object)?.['addr:housenumber']",
         "_embedding_object:addr:street=JSON.parse(feat.properties._embedding_object)?.['addr:street']",
         "_embedding_inspire_polygon_has_address=overlapWith(feat)('raw_inspire_polygons')[0]?.feat?.properties?._has_address",
-        "_embedding_object:id=feat.get('_embedding_object')?.id ?? feat.properties._embedding_inspire_polygon_has_address"
+        "_embedding_object:id=get(feat, '_embedding_object')?.id ?? feat.properties._embedding_inspire_polygon_has_address"
       ],
       "filter": [
         {
@@ -137,7 +148,37 @@
         }
       ],
       "description": "Alamat",
-      "pointRendering": [],
+      "pointRendering": [
+        {
+          "marker":[{
+            "icon": {
+              "render": "./assets/themes/uk_addresses/housenumber_unknown.svg",
+              "mappings": [
+                {
+                  "if": {
+                    "and": [
+                      "_embedding_object:id~*",
+                      "_embedding_object:id!=false"
+                    ]
+                  },
+                  "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
+                },
+                {
+                  "if": "_imported=yes",
+                  "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
+                }
+              ]
+            }
+          }],
+          "iconSize": "40,40",
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "anchor": "center"
+        }
+        
+      ],
       "lineRendering": [
         {}
       ]
@@ -581,9 +622,62 @@
           }
         }
       ],
-      "pointRendering": [],
-      "lineRendering": [
-        {}
+      "pointRendering": [     {
+        "label": {
+          "render": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
+          "condition": "addr:housenumber~*"
+        },
+        "iconSize": "50,50",
+        "marker":[{
+          "icon": {
+            "render": "./assets/layers/address/housenumber_blank.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    {
+                      "and": [
+                        "addr:housenumber=",
+                        "nohousenumber!=yes"
+                      ]
+                    },
+                    "addr:street="
+                  ]
+                },
+                "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+              }
+            ]
+          }
+        }]
+       ,
+        "location": [
+          "point",
+          "centroid"
+        ],
+        "anchor": "center"
+      }],
+      "lineRendering": [  {
+        "color": {
+          "render": "#00f",
+          "mappings": [
+            {
+              "if": {
+                "or": [
+                  {
+                    "and": [
+                      "addr:housenumber=",
+                      "nohousenumber!=yes"
+                    ]
+                  },
+                  "addr:street="
+                ]
+              },
+              "then": "#ff0"
+            }
+          ]
+        },
+        "width": "3"
+      }
       ]
     },
     "named_streets"
