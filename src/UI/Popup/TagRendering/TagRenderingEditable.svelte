@@ -21,7 +21,7 @@
   export let editingEnabled: Store<boolean> | undefined = state?.featureSwitchUserbadge
 
   export let highlightedRendering: UIEventSource<string> = undefined
-  export let showQuestionIfUnknown: boolean = false
+  export let clss
   /**
    * Indicates if this tagRendering currently shows the attribute or asks the question to _change_ the property
    */
@@ -71,7 +71,7 @@
   }
 </script>
 
-<div bind:this={htmlElem}>
+<div bind:this={htmlElem} class={clss}>
   {#if config.question && (!editingEnabled || $editingEnabled)}
     {#if editMode}
       <TagRenderingQuestion {config} {tags} {selectedElement} {state} {layer}>
@@ -106,7 +106,7 @@
       </div>
     {/if}
   {:else}
-    <div class="w-full overflow-hidden p-2">
+    <div class="w-full h-full overflow-hidden p-2">
       <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer} />
     </div>
   {/if}

@@ -724,6 +724,11 @@
       "id": "debug",
       "condition": "mapcomplete-show_debug=yes",
       "render": "{all_tags()}"
+    },
+    {
+      "id":"debug-gps",
+      "condition": "mapcomplete-show_debug=yes",
+      "render": "{gps_all_tags()}"
     }
   ]
 }

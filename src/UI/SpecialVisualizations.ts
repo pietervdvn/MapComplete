@@ -77,6 +77,7 @@ import ReviewForm from "./Reviews/ReviewForm.svelte"
 import Questionbox from "./Popup/TagRendering/Questionbox.svelte"
 import { TagUtils } from "../Logic/Tags/TagUtils"
 import Giggity from "./BigComponents/Giggity.svelte"
+import ThemeViewState from "../Models/ThemeViewState"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -1469,6 +1470,29 @@ export default class SpecialVisualizations {
                 ): BaseUIElement {
                     const giggityUrl = argument[0]
                     return new SvelteUIElement(Giggity, { tags: tagSource, state, giggityUrl })
+                },
+            },
+            {
+                funcName: "gps_all_tags",
+                needsUrls: [],
+                docs: "Shows the current tags of the GPS-representing object, used for debugging",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    _: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    const tags = (<ThemeViewState>(
+                        state
+                    )).geolocation.currentUserLocation.features.map(
+                        (features) => features[0].properties
+                    )
+                    return new SvelteUIElement(AllTagsPanel, {
+                        state,
+                        tags,
+                    })
                 },
             },
         ]
