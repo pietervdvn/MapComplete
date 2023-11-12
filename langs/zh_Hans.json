@@ -7,9 +7,9 @@
     },
     "communityIndex": {
         "available": "这个社区说 {native}",
-        "intro": "与其他人取得联系，了解他们，向他们学习……",
+        "intro": "与其他人取得联系，了解他们，向他们学习…",
         "notAvailable": "这个社区不会说 {native}",
-        "title": "社区主页"
+        "title": "与他人取得联系"
     },
     "delete": {
         "cancel": "取消",
@@ -19,10 +19,21 @@
             "hardDelete": "此功能在 OpenStreetMap 中将被删除。它可以由有经验的贡献者进行恢复",
             "retagNoOtherThemes": "此功能将被重新分类并从此应用中隐藏"
         },
-        "notEnoughExperience": "这个点由其他人创建。",
-        "onlyEditedByLoggedInUser": "这个点仅被您所编辑，您可以安全的删除它。",
+        "isntAPoint": "只能删除节点，选择的特征是路径、区域或关系。",
+        "loading": "检查属性以检查是否可以删除此功能。",
+        "notEnoughExperience": "这个要素由其他人创建。",
+        "onlyEditedByLoggedInUser": "这个要素仅被您所编辑，您可以安全的删除它。",
+        "partOfOthers": "该节点是某种方式或关系的一部分，不能直接删除。",
+        "readMessages": "您有未读消息。在删除功能之前阅读这些内容 - 有人可能会提出反馈",
+        "reasons": {
+            "disused": "该要素已被废弃或删除",
+            "duplicate": "此要素与另一个要素重复",
+            "notFound": "找不到这个要素",
+            "test": "这是一个测试要素-这个要素从未实际存在"
+        },
+        "safeDelete": "这个要素可以被安全的删除",
         "useSomethingElse": "使用其他OpenStreetMap编辑器来删除它",
-        "whyDelete": "为什么这个点需要被删除？"
+        "whyDelete": "为什么这个要素需要被删除？"
     },
     "favourite": {
         "reload": "重新加载数据"
@@ -30,7 +41,7 @@
     "general": {
         "add": {
             "disableFilters": "禁用所有过滤器",
-            "hasBeenImported": "这个点已经被导入过了"
+            "hasBeenImported": "这个要素已经被导入过了"
         }
     }
 }
