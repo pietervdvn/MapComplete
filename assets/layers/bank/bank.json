@@ -8,7 +8,8 @@
     "cs": "Finanční instituce pro ukládání peněz",
     "he": "מוסד פיננסי להפקדת כסף",
     "pl": "Instytucja finansowa pozwalająca wpłacić pieniądze",
-    "pt_BR": "Um instituição financeira para depositar dinheiro"
+    "pt_BR": "Um instituição financeira para depositar dinheiro",
+    "es": "Una institución financiera para depositar dinero"
   },
   "name": {
     "en": "Banks",
@@ -20,7 +21,8 @@
     "he": "בנקים",
     "eu": "Bankuak",
     "pl": "Banki",
-    "pt_BR": "Bancos"
+    "pt_BR": "Bancos",
+    "es": "Bancos"
   },
   "title": {
     "render": "Bank",
@@ -61,7 +63,8 @@
             "cs": "Tato banka má bankomat",
             "he": "לבנק הזה יש כספומט",
             "pl": "Ten bank ma bankomat",
-            "pt_BR": "Este banco tem um caixa eletrônico"
+            "pt_BR": "Este banco tem um caixa eletrônico",
+            "es": "Este banco tiene un cajero automático"
           }
         },
         {
@@ -74,7 +77,8 @@
             "ca": "Aquest banc <b>no</b> té un caixer automàtic",
             "cs": "Tato banka <b>nemá bankomat</b>",
             "pl": "Ten bank <b>nie ma</b> bankomatu",
-            "pt_BR": "Este banco <b>não</b> tem um caixa eletrônico"
+            "pt_BR": "Este banco <b>não</b> tem um caixa eletrônico",
+            "es": "Este banco <b>no tiene</b> cajero automático"
           }
         },
         {
@@ -85,7 +89,8 @@
             "nl": "Deze bank heeft een bankautomaat, maar deze staat apart op de kaart aangeduid",
             "ca": "Aquest banc té un caixer, però està mapejat com a un element diferent",
             "cs": "Tato banka má bankomat, ale je namapován jako jiná ikona",
-            "pt_BR": "Este banco tem um caixa eletrônico, mas está mapeado como um ícone diferente"
+            "pt_BR": "Este banco tem um caixa eletrônico, mas está mapeado como um ícone diferente",
+            "es": "Este banco tiene un cajero automático, pero aparece con un icono diferente"
           }
         }
       ]
@@ -106,7 +111,8 @@
             "cs": "S bankomatem",
             "he": "עם כספומט",
             "pl": "Za pomocą bankomatu",
-            "pt_BR": "Com um caixa eletrônico"
+            "pt_BR": "Com um caixa eletrônico",
+            "es": "Con un cajero automático"
           },
           "osmTags": "atm=yes"
         }

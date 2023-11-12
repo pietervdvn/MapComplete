@@ -21,7 +21,8 @@
     "pa_PK": "کلاکاری",
     "he": "יצירות אמנות",
     "eu": "Artelanak",
-    "pt_BR": "Obras de arte"
+    "pt_BR": "Obras de arte",
+    "zh_Hans": "艺术品"
   },
   "description": {
     "en": "An open map of statues, busts, graffitis and other artwork all over the world",
@@ -159,7 +160,8 @@
         "sv": "Konstverk",
         "da": "et kunstværk",
         "cs": "umělecké dílo",
-        "ca": "una obra d'art"
+        "ca": "una obra d'art",
+        "zh_Hans": "一个艺术品"
       }
     },
     {
@@ -175,7 +177,8 @@
         "es": "Una obra de arte en la pared",
         "fr": "une œuvre sur un mur",
         "pl": "Dzieło sztuki na ścianie",
-        "pt_BR": "uma obra de arte em uma parede"
+        "pt_BR": "uma obra de arte em uma parede",
+        "zh_Hans": "一个墙上的艺术品"
       },
       "snapToLayer": [
         "walls_and_buildings"
@@ -259,7 +262,8 @@
             "cs": "Architektura",
             "pt_BR": "Arquitetura",
             "he": "אדריכלות",
-            "eu": "Arkitektura"
+            "eu": "Arkitektura",
+            "zh_Hans": "建筑"
           }
         },
         {
@@ -285,7 +289,8 @@
             "pa_PK": "کندھ چتر",
             "pt_BR": "Mural",
             "he": "ציור קיר",
-            "eu": "Murala"
+            "eu": "Murala",
+            "zh_Hans": "壁画"
           }
         },
         {
@@ -310,7 +315,8 @@
             "cs": "Malba",
             "he": "ציור",
             "eu": "Margolana",
-            "pt_BR": "Pintura"
+            "pt_BR": "Pintura",
+            "zh_Hans": "喷绘"
           }
         },
         {
@@ -336,7 +342,8 @@
             "pa_PK": "مورتی",
             "pt_BR": "Escultura",
             "he": "פיסול",
-            "eu": "Eskultura"
+            "eu": "Eskultura",
+            "zh_Hans": "雕塑"
           }
         },
         {
@@ -360,7 +367,8 @@
             "cs": "Socha",
             "pt_BR": "Estátua",
             "he": "פסל",
-            "eu": "Estatua"
+            "eu": "Estatua",
+            "zh_Hans": "雕像"
           }
         },
         {
@@ -383,7 +391,8 @@
             "da": "Buste",
             "cs": "Busta",
             "pt_BR": "Busto",
-            "eu": "Bustoa"
+            "eu": "Bustoa",
+            "zh_Hans": "半身像"
           }
         },
         {
@@ -409,7 +418,8 @@
             "cs": "Kámen",
             "pt_BR": "Pedra",
             "he": "אבן",
-            "eu": "Harria"
+            "eu": "Harria",
+            "zh_Hans": "石头"
           }
         },
         {
@@ -433,7 +443,8 @@
             "da": "Installation",
             "cs": "Instalace",
             "pt_BR": "Instalação",
-            "eu": "Instalazioa"
+            "eu": "Instalazioa",
+            "zh_Hans": "设施"
           }
         },
         {
@@ -457,7 +468,8 @@
             "da": "Graffiti",
             "cs": "Grafiti",
             "eu": "Graffitia",
-            "pt_BR": "Grafite"
+            "pt_BR": "Grafite",
+            "zh_Hans": "涂鸦/粗糙雕刻"
           }
         },
         {
@@ -504,7 +516,8 @@
             "da": "Azulejo (spansk dekorativt flisebeklædning)",
             "cs": "Azulejo (španělské dekorativní dlaždice)",
             "ca": "Azulejo (Rajoles decoratives espanyoles i portugueses)",
-            "pt_BR": "Azulejo (Revestimento de azulejos decorativos espanhóis)"
+            "pt_BR": "Azulejo (Revestimento de azulejos decorativos espanhóis)",
+            "zh_Hans": "Azulejo（西班牙装饰瓷砖）"
           }
         },
         {
@@ -567,7 +580,8 @@
         "ca": "Aquesta obra d'art la va crear {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
         "fr": "Cette oeuvre a été crée par {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
         "pl": "To dzieło sztuki zostało zrobione przez {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
-        "pt_BR": "Essa obra de arte foi feita por {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+        "pt_BR": "Essa obra de arte foi feita por {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+        "zh_Hans": "此艺术作品由 {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)} 创建"
       },
       "question": {
         "en": "Who made this artwork?",
@@ -581,7 +595,8 @@
         "nb_NO": "Hvem laget dette kunstverket?",
         "he": "מי יצר את היצירה הזו?",
         "pl": "Kto stworzył to dzieło sztuki?",
-        "pt_BR": "Quem fez essa obra de arte?"
+        "pt_BR": "Quem fez essa obra de arte?",
+        "zh_Hans": "这件艺术品是谁创作的？"
       },
       "freeform": {
         "key": "artist:wikidata",
@@ -616,7 +631,8 @@
         "cs": "Který umělec to vytvořil?",
         "ca": "Quin artista va crear açò?",
         "pt_BR": "Que artista criou isto?",
-        "he": "איזה אמן יצר את זה?"
+        "he": "איזה אמן יצר את זה?",
+        "zh_Hans": "这是哪位艺术家创作的？"
       },
       "render": {
         "en": "Created by {artist_name}",
@@ -637,7 +653,8 @@
         "cs": "Vytvořil {artist_name}",
         "ca": "Creat per {artist_name}",
         "he": "נוצר על ידי {artist_name}",
-        "pt_BR": "Criado por {artist_name}"
+        "pt_BR": "Criado por {artist_name}",
+        "zh_Hans": "由{artist_name}创建"
       },
       "freeform": {
         "key": "artist_name"
@@ -772,7 +789,8 @@
         "cs": "Slouží toto umělecké dílo jako lavička?",
         "he": "האם היצירה הזו משמשת כספסל?",
         "pl": "Czy to dzieło sztuki pełni funkcję ławki?",
-        "pt_BR": "Essa obra de arte serve como banco?"
+        "pt_BR": "Essa obra de arte serve como banco?",
+        "es": "¿Sirve esta obra de arte como banco?"
       },
       "mappings": [
         {
@@ -786,7 +804,8 @@
             "cs": "Toto umělecké dílo slouží také jako lavička",
             "he": "יצירה זו משמשת גם כספסל",
             "pl": "To dzieło sztuki pełni również funkcję ławki",
-            "pt_BR": "Essa obra de arte também serve como banco"
+            "pt_BR": "Essa obra de arte também serve como banco",
+            "es": "Esta obra de arte también sirve de banco"
           }
         },
         {
@@ -801,7 +820,8 @@
             "cs": "Toto umělecké dílo neslouží jako lavička",
             "he": "יצירה זו אינה משמשת כספסל",
             "pl": "To dzieło sztuki nie pełni funkcji ławki",
-            "pt_BR": "Essa obra de arte não serve como banco"
+            "pt_BR": "Essa obra de arte não serve como banco",
+            "es": "Esta obra no sirve de banco"
           }
         },
         {
@@ -816,7 +836,8 @@
             "cs": "Toto umělecké dílo neslouží jako lavička",
             "he": "יצירה זו אינה משמשת כספסל",
             "pl": "To dzieło sztuki nie pełni funkcji ławki",
-            "pt_BR": "Essa obra de arte não serve como banco"
+            "pt_BR": "Essa obra de arte não serve como banco",
+            "es": "Esta obra no sirve de banco"
           },
           "hideInAnswer": true
         }

@@ -1164,7 +1164,8 @@
             "fr": "Pas de réservation nécessaire",
             "pl": "Rezerwacja nie jest wymagana",
             "ca": "No cal reservar",
-            "cs": "Rezervace není nutná"
+            "cs": "Rezervace není nutná",
+            "es": "No se necesita reserva"
           },
           "osmTags": {
             "or": [
@@ -1185,7 +1186,8 @@
             "ca": "Restaurants i negocis de menjar ràpid",
             "de": "Restaurants und Schnellimbissbetriebe",
             "cs": "Restaurace a podniky rychlého občerstvení",
-            "pl": "Restauracje i firmy typu fast food"
+            "pl": "Restauracje i firmy typu fast food",
+            "es": "Restaurantes y negocios de comida rápida"
           }
         },
         {
@@ -1222,7 +1224,8 @@
             "ca": "Té menú vegetarià",
             "de": "Hat ein vegetarisches Menü",
             "cs": "Má vegetariánské menu",
-            "pl": "Ma menu wegetariańskie"
+            "pl": "Ma menu wegetariańskie",
+            "es": "Tiene menú vegetariano"
           },
           "osmTags": {
             "or": [

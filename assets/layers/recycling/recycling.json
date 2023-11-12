@@ -922,7 +922,8 @@
             "it": "Verde",
             "ca": "Aquí es poden reciclar residus verds",
             "fr": "Les déchets verts peuvent être recyclés ici",
-            "cs": "Zelený odpad se zde dá recyklovat"
+            "cs": "Zelený odpad se zde dá recyklovat",
+            "es": "Los residuos orgánicos pueden reciclarse aquí"
           },
           "icon": {
             "path": "./assets/layers/recycling/garden_waste.svg",
@@ -993,7 +994,8 @@
             "de": "Hier können Glühbirnen recycelt werden",
             "ca": "Aquí es poden reciclar bombetes",
             "fr": "Les lampes basse consommation peuvent être recyclées ici",
-            "cs": "Žárovky se zde dají recyklovat"
+            "cs": "Žárovky se zde dají recyklovat",
+            "es": "Las bombillas pueden reciclarse aquí"
           },
           "icon": {
             "path": "./assets/layers/recycling/light_bulbs.svg",
@@ -1456,7 +1458,8 @@
             "it": "Riciclo di umido",
             "ca": "Reciclatge de residus verds",
             "fr": "Recyclage des déchets verts",
-            "cs": "Recyklace zeleného odpadu"
+            "cs": "Recyklace zeleného odpadu",
+            "es": "Reciclaje de residuos orgánicos"
           },
           "osmTags": {
             "or": [
@@ -1498,7 +1501,8 @@
             "de": "Recycling von Glühbirnen",
             "ca": "Reciclatge de bombetes",
             "fr": "Recyclage des lampes basse consommation",
-            "cs": "Recyklace žárovek"
+            "cs": "Recyklace žárovek",
+            "es": "Reciclaje de bombillas"
           },
           "osmTags": "recycling:light_bulbs=yes"
         },

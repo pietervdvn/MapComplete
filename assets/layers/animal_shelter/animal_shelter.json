@@ -1,23 +1,34 @@
 {
   "id": "animal_shelter",
   "name": {
-    "en": "Animal shelters"
+    "en": "Animal shelters",
+    "de": "Tierheime",
+    "es": "Centros de acogida de animales",
+    "zh_Hans": "动物收容所"
   },
   "description": {
-    "en": "An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. "
+    "en": "An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. ",
+    "es": "Un refugio de animales es una instalación donde se llevan animales con problemas y el personal de la instalación (voluntario o no) los alimenta y cuida, rehabilitándolos y curándolos si es necesario. Esta definición incluye las perreras para perros abandonados, los criaderos para gatos abandonados, los refugios para otros animales de compañía abandonados y los centros de recuperación de la fauna salvaje. ",
+    "zh_Hans": "动物收容所是一个设施，将遇到麻烦的动物带到这里，设施的工作人员（志愿者或非志愿者）喂养并照顾它们，并在必要时使它们康复和治愈。该定义包括被遗弃的狗的狗舍、被遗弃的猫的猫舍、其他被遗弃的宠物的庇护所和野生动物恢复中心。 "
   },
   "source": {
     "osmTags": "amenity=animal_shelter"
   },
   "title": {
     "render": {
-      "en": "Animal shelter"
+      "en": "Animal shelter",
+      "de": "Tierheim",
+      "es": "Centro de acogida de animales",
+      "zh_Hans": "动物收容所"
     },
     "mappings": [
       {
         "if": "name~*",
         "then": {
-          "en": "{name}"
+          "en": "{name}",
+          "de": "{name}",
+          "es": "{name}",
+          "zh_Hans": "{name}"
         }
       }
     ]
@@ -49,7 +60,10 @@
   "presets": [
     {
       "title": {
-        "en": "an animal shelter"
+        "en": "an animal shelter",
+        "de": "ein Tierheim",
+        "es": "una protectora de animales",
+        "zh_Hans": "动物收容所"
       },
       "tags": [
         "amenity=animal_shelter"
@@ -65,10 +79,16 @@
         "key": "name"
       },
       "question": {
-        "en": "What is the name of this animal shelter?"
+        "en": "What is the name of this animal shelter?",
+        "de": "Wie lautet der Name des Tierheims?",
+        "es": "¿Cómo se llama este refugio de animales?",
+        "zh_Hans": "这个动物收容所叫什么名字？"
       },
       "render": {
-        "en": "This animal shelter is named <b>{name}</b>"
+        "en": "This animal shelter is named <b>{name}</b>",
+        "de": "Der Name des Tierheims lautet <b>{name}</b>",
+        "es": "Este refugio de animales se llama <b>{name}</b>",
+        "zh_Hans": "这个动物收容所叫 <b>{name}</b>"
       }
     },
     "website",
@@ -77,24 +97,36 @@
     {
       "id": "6",
       "question": {
-        "en": "What is the purpose of the animal shelter?"
+        "en": "What is the purpose of the animal shelter?",
+        "de": "Was ist der Zweck des Tierheims?",
+        "es": "¿Cuál es la finalidad del refugio de animales?",
+        "zh_Hans": "动物收容所的目的是什么？"
       },
       "mappings": [
         {
           "then": {
-            "en": "Animals are kept here until adopted by a new owner"
+            "en": "Animals are kept here until adopted by a new owner",
+            "de": "Tiere werden hier bis zur Abgabe an einen neuen Besitzer untergebracht",
+            "es": "Los animales permanecen aquí hasta que son adoptados por un nuevo propietario",
+            "zh_Hans": "动物被饲养在这里直到被新主人收养"
           },
           "if": "purpose=adoption"
         },
         {
           "then": {
-            "en": "Animals are taken care of for the rest of their lives"
+            "en": "Animals are taken care of for the rest of their lives",
+            "de": "Tiere werden hier bis zum Ende Ihres Lebens untergebracht",
+            "es": "Los animales reciben cuidados para el resto de su vida",
+            "zh_Hans": "动物的余生都得到照顾"
           },
           "if": "purpose=sanctuary"
         },
         {
           "then": {
-            "en": "Injured animals are rehabilitated here until they can be released in nature again "
+            "en": "Injured animals are rehabilitated here until they can be released in nature again ",
+            "de": "Tiere werden hier untergebracht und gepflegt bis sie wieder in freier Natur ausgesetzt werden können ",
+            "es": "Los animales heridos se rehabilitan aquí hasta que pueden ser liberados de nuevo en la naturaleza ",
+            "zh_Hans": "受伤的动物在这里康复，直到它们可以再次被释放到大自然中 "
           },
           "if": "purpose=release"
         }
@@ -103,11 +135,17 @@
     },
     {
       "question": {
-        "en": "When is this animal shelter opened?"
+        "en": "When is this animal shelter opened?",
+        "de": "Wann ist das Tierheim geöffnet?",
+        "es": "¿Cuándo se abre este refugio de animales?",
+        "zh_Hans": "这个动物收容所什么时候开放？"
       },
       "id": "7",
       "render": {
-        "en": "{opening_hours_table()}"
+        "en": "{opening_hours_table()}",
+        "de": "{opening_hours_table()}",
+        "es": "{opening_hours_table()}",
+        "zh_Hans": "{opening_hours_table()}"
       },
       "freeform": {
         "key": "opening_hours",

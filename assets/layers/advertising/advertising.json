@@ -11,7 +11,8 @@
     "he": "פרסומת",
     "eu": "Iragarri",
     "pl": "Reklama",
-    "pt_BR": "Anunciar"
+    "pt_BR": "Anunciar",
+    "zh_Hans": "广告"
   },
   "description": {
     "ca": "Completarem les dades dels elements publicitaris amb referència, operador i il·luminació",
@@ -47,7 +48,8 @@
           "cs": "Billboard",
           "he": "שלט חוצות",
           "pl": "Bilbord",
-          "pt_BR": "Outdoor"
+          "pt_BR": "Outdoor",
+          "zh_Hans": "广告牌"
         }
       },
       {
@@ -64,7 +66,8 @@
           "cs": "Deska",
           "fr": "Petit panneau",
           "pl": "Tablica",
-          "pt_BR": "Quadro"
+          "pt_BR": "Quadro",
+          "zh_Hans": "木板"
         }
       },
       {
@@ -80,7 +83,8 @@
           "de": "Posterbox",
           "cs": "Skříň na plakáty",
           "pl": "Pudełko plakatowe",
-          "pt_BR": "Caixa de pôster"
+          "pt_BR": "Caixa de pôster",
+          "zh_Hans": "海报盒"
         }
       },
       {
@@ -99,7 +103,8 @@
           "fr": "Colonne",
           "eu": "Zutabea",
           "pl": "Kolumna",
-          "pt_BR": "Coluna"
+          "pt_BR": "Coluna",
+          "zh_Hans": "专栏"
         }
       },
       {
@@ -118,7 +123,8 @@
           "fr": "Drapeau",
           "eu": "Ikurrina",
           "pl": "Flaga",
-          "pt_BR": "Bandeira"
+          "pt_BR": "Bandeira",
+          "zh_Hans": "旗帜"
         }
       },
       {
@@ -137,7 +143,8 @@
           "fr": "Écran",
           "eu": "Pantaila",
           "pl": "Ekran",
-          "pt_BR": "Tela"
+          "pt_BR": "Tela",
+          "zh_Hans": "屏幕"
         }
       },
       {
@@ -156,7 +163,8 @@
           "fr": "Sculpture",
           "eu": "Eskultura",
           "pl": "Rzeźba",
-          "pt_BR": "Escultura"
+          "pt_BR": "Escultura",
+          "zh_Hans": "雕像"
         }
       },
       {
@@ -174,7 +182,8 @@
           "fr": "Enseigne",
           "pt_BR": "Placa",
           "eu": "Kartela",
-          "pl": "Znak"
+          "pl": "Znak",
+          "zh_Hans": "标志"
         }
       },
       {
@@ -212,7 +221,8 @@
           "fr": "Totem",
           "eu": "Totem",
           "pl": "Totem",
-          "pt_BR": "Totem"
+          "pt_BR": "Totem",
+          "zh_Hans": "图腾"
         }
       },
       {
@@ -230,7 +240,8 @@
           "nl": "Muurschildering",
           "fr": "Peinture murale",
           "pl": "Mural ścienny",
-          "pt_BR": "Pintura mural"
+          "pt_BR": "Pintura mural",
+          "zh_Hans": "墙上的画"
         }
       }
     ]
@@ -372,7 +383,8 @@
         "he": "שלט חוצות",
         "eu": "iragarki panela",
         "pl": "bilbord",
-        "pt_BR": "um outdoor"
+        "pt_BR": "um outdoor",
+        "zh_Hans": "一块广告牌"
       },
       "description": {
         "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads",
@@ -426,7 +438,8 @@
         "pt": "uma caixa de pôster montada em uma parede",
         "fr": "un panneau à affiches monté sur un mur",
         "pl": "skrzynka plakatowa montowana na ścianie",
-        "pt_BR": "uma caixa de pôster montada em uma parede"
+        "pt_BR": "uma caixa de pôster montada em uma parede",
+        "zh_Hans": "安装在墙上的海报盒子"
       },
       "snapToLayer": [
         "walls_and_buildings"
@@ -514,7 +527,8 @@
         "fr": "un drapeau",
         "pt": "uma bandeira",
         "pl": "flaga",
-        "pt_BR": "uma bandeira"
+        "pt_BR": "uma bandeira",
+        "zh_Hans": "一个旗子"
       },
       "exampleImages": [
         "./assets/themes/advertising/Advertising_flag.jpg",
@@ -535,7 +549,8 @@
         "fr": "un écran",
         "pt": "uma tela",
         "pl": "ekran",
-        "pt_BR": "uma tela"
+        "pt_BR": "uma tela",
+        "zh_Hans": "一块屏幕"
       },
       "exampleImages": [
         "./assets/themes/advertising/Screen_poster_box.jpg",
@@ -556,7 +571,8 @@
         "fr": "un écran fixé au mur",
         "pt": "uma tela montada em uma parede",
         "pl": "ekran zamontowany na ścianie",
-        "pt_BR": "uma tela montada em uma parede"
+        "pt_BR": "uma tela montada em uma parede",
+        "zh_Hans": "一块挂在墙上的屏幕"
       },
       "exampleImages": [
         "./assets/themes/advertising/Subway_screen.jpg",
@@ -582,7 +598,8 @@
         "fr": "une bâche",
         "pt": "uma lona",
         "pl": "plandeka",
-        "pt_BR": "uma lona"
+        "pt_BR": "uma lona",
+        "zh_Hans": "防水布"
       },
       "description": {
         "en": "A piece of waterproof textile with a printed message, permanently anchored on a wall",
@@ -618,7 +635,8 @@
         "fr": "un totem",
         "pt": "um totem",
         "pl": "totem",
-        "pt_BR": "um totem"
+        "pt_BR": "um totem",
+        "zh_Hans": "图腾"
       },
       "exampleImages": [
         "./assets/themes/advertising/AdvertisingTotem_004.jpg",
@@ -640,7 +658,8 @@
         "pt": "um sinal",
         "pt_BR": "uma placa",
         "eu": "letrero bat",
-        "pl": "znak"
+        "pl": "znak",
+        "zh_Hans": "标志"
       },
       "description": {
         "en": "Used for advertising signs, neon signs, logos & institutional entrance signs",
@@ -678,7 +697,8 @@
         "pt": "uma escultura",
         "eu": "eskultura bat",
         "pl": "rzeźba",
-        "pt_BR": "uma escultura"
+        "pt_BR": "uma escultura",
+        "zh_Hans": "雕像"
       },
       "exampleImages": [
         "./assets/themes/advertising/Aircraft_Sculpture.jpg",
@@ -701,7 +721,8 @@
         "nl": "een muurschildering",
         "eu": "pareta margotu bat",
         "pl": "mural ścienny",
-        "pt_BR": "uma pintura mural"
+        "pt_BR": "uma pintura mural",
+        "zh_Hans": "墙上的画"
       },
       "exampleImages": [
         "./assets/themes/advertising/Capitol_wall.jpg",
@@ -726,7 +747,8 @@
         "nl": "Dit is een {advertising}",
         "he": "זהו {advertising}",
         "pl": "To jest {advertising}",
-        "pt_BR": "Isso é uma {advertising}"
+        "pt_BR": "Isso é uma {advertising}",
+        "zh_Hans": "这是一个{advertising}"
       },
       "question": {
         "ca": "Quin tipus d'element publicitari és aquest?",
@@ -736,7 +758,8 @@
         "cs": "O jaký typ reklamního prvku se jedná?",
         "fr": "De quel type de dispositif publicitaire s'agit-il ?",
         "pl": "Jakiego rodzaju jest to obiekt reklamowy?",
-        "pt_BR": "Que tipo de recurso de publicitário é este?"
+        "pt_BR": "Que tipo de recurso de publicitário é este?",
+        "zh_Hans": "这是哪种类型的广告功能？"
       },
       "freeform": {
         "key": "advertising"
@@ -758,7 +781,8 @@
             "pt": "Isso é um outdoor",
             "he": "זה שלט חוצות",
             "pl": "To jest bilbord",
-            "pt_BR": "Isso é um outdoor"
+            "pt_BR": "Isso é um outdoor",
+            "zh_Hans": "这是一个广告牌"
           },
           "icon": {
             "path": "./assets/themes/advertising/billboard.svg",
@@ -780,7 +804,8 @@
             "fr": "C'est un petit panneau",
             "pt": "Isso é uma placa",
             "pl": "To jest tablica",
-            "pt_BR": "Isso é uma placa"
+            "pt_BR": "Isso é uma placa",
+            "zh_Hans": "这是一块板"
           },
           "icon": {
             "path": "./assets/themes/advertising/board.svg",
@@ -802,7 +827,8 @@
             "fr": "C'est une colonne",
             "nl": "Dit is een aanplakzuil",
             "pt_BR": "Isto é uma coluna",
-            "pl": "To jest kolumna"
+            "pl": "To jest kolumna",
+            "zh_Hans": "这是一个专栏"
           },
           "icon": {
             "path": "./assets/themes/advertising/column.svg",
@@ -825,7 +851,8 @@
             "nl": "Dit is een vlag",
             "pt_BR": "Isto é uma bandeira",
             "he": "זה דגל",
-            "pl": "To jest flaga"
+            "pl": "To jest flaga",
+            "zh_Hans": "这是一面旗帜"
           },
           "icon": {
             "path": "./assets/themes/advertising/flag.svg",
@@ -846,7 +873,8 @@
             "cs": "Toto je skříň na plakáty",
             "fr": "C'est une sucette (panneau avec affiches)",
             "pl": "To jest pudełko plakatowe",
-            "pt_BR": "Isso é um quadro de pôster"
+            "pt_BR": "Isso é um quadro de pôster",
+            "zh_Hans": "这是海报盒"
           },
           "icon": {
             "path": "./assets/themes/advertising/poster_box.svg",
@@ -867,7 +895,8 @@
             "cs": "Toto je obrazovka",
             "fr": "C'est un écran",
             "pl": "To jest ekran",
-            "pt_BR": "Isso é uma tela"
+            "pt_BR": "Isso é uma tela",
+            "zh_Hans": "这是一个屏幕"
           },
           "icon": {
             "path": "./assets/themes/advertising/screen.svg",
@@ -888,7 +917,8 @@
             "cs": "Toto je socha",
             "fr": "C'est une sculpture",
             "pl": "To jest rzeźba",
-            "pt_BR": "Isso é uma escultura"
+            "pt_BR": "Isso é uma escultura",
+            "zh_Hans": "这是一个雕塑"
           },
           "icon": {
             "path": "./assets/themes/advertising/sculpture.svg",
@@ -909,7 +939,8 @@
             "cs": "Toto je cedule",
             "fr": "C'est une enseigne (indique le nom du lieu/magasin)",
             "pt_BR": "Isto é uma placa",
-            "pl": "To jest znak"
+            "pl": "To jest znak",
+            "zh_Hans": "这是一个标志"
           },
           "icon": {
             "path": "./assets/themes/advertising/sign.svg",
@@ -930,7 +961,8 @@
             "cs": "Toto je plachta (kus textilu s reklamním sdělením odolný proti povětrnostním vlivům)",
             "fr": "C'est une bâche (un morceau de textile résistant aux intempéries avec un message publicitaire)",
             "pl": "To jest plandeka (odporny na warunki atmosferyczne kawałek materiału tekstylnego z przekazem reklamowym)",
-            "pt_BR": "Isso é uma lona (uma peça de tecido à prova de intempéries com uma mensagem publicitária)"
+            "pt_BR": "Isso é uma lona (uma peça de tecido à prova de intempéries com uma mensagem publicitária)",
+            "zh_Hans": "这是防水布（带有广告信息的防风雨纺织品）"
           },
           "icon": {
             "path": "./assets/themes/advertising/tarp.svg",
@@ -951,7 +983,8 @@
             "cs": "Toto je totem",
             "fr": "C'est un totem",
             "pl": "To jest totem",
-            "pt_BR": "Isso é um totem"
+            "pt_BR": "Isso é um totem",
+            "zh_Hans": "这是一个图腾"
           },
           "icon": {
             "path": "./assets/themes/advertising/totem.svg",
@@ -972,7 +1005,8 @@
             "cs": "Toto je nástěnná malba",
             "fr": "C'est une peinture murale",
             "pl": "To jest mural ścienny",
-            "pt_BR": "Isso é uma pintura mural"
+            "pt_BR": "Isso é uma pintura mural",
+            "zh_Hans": "这是一幅壁画"
           },
           "icon": {
             "path": "./assets/themes/advertising/wall_painting.svg",
@@ -992,7 +1026,8 @@
         "fr": "Est-ce que cette publicité fait défiler différent messages ?",
         "pt": "Este anúncio percorre várias mensagens?",
         "pl": "Czy ta reklama przechodzi przez wiele różnych wiadomości?",
-        "pt_BR": "Este anúncio passa por várias mensagens em sequência?"
+        "pt_BR": "Este anúncio passa por várias mensagens em sequência?",
+        "zh_Hans": "该广告是否会在多条消息中循环播放？"
       },
       "condition": {
         "#": "Screens are _always_ animated; flags, tarps, and wall_paintings cannot be animated; signs can be anything so we don't make guesses",
@@ -1017,7 +1052,8 @@
             "fr": "<b>Statique</b>, affiche toujours le même message",
             "pt": "<b> Static</b>, mostra sempre a mesma mensagem",
             "pl": "<b>Statyczne</b>, zawsze pokazuje tą samą wiadomość",
-            "pt_BR": "<b>Estático</b>, mostra sempre a mesma mensagem"
+            "pt_BR": "<b>Estático</b>, mostra sempre a mesma mensagem",
+            "zh_Hans": "<b>静态</b>，始终显示相同的消息"
           }
         },
         {
@@ -1031,7 +1067,8 @@
             "fr": "Cet objet inclut un <b>affichage digital</b> pour indiquer des prix ou d'autres messages",
             "pt": "Este objeto possui um <b>digital display</b> embutido para mostrar preços ou alguma outra mensagem",
             "pl": "Ten obiekt ma wbudowany <b>cyfrowy wyświetlacz</b> do pokazywania cen lub innych informacji",
-            "pt_BR": "Este objeto possui um <b>display digital</b> incorporado para mostrar preços ou alguma outra mensagem"
+            "pt_BR": "Este objeto possui um <b>display digital</b> incorporado para mostrar preços ou alguma outra mensagem",
+            "zh_Hans": "该对象有一个内置的<b>数字显示器</b>来显示价格或其他一些消息"
           },
           "hideInAnswer": {
             "and": [
@@ -1052,7 +1089,8 @@
             "cs": "<b>Trivision</b> - billboard se skládá z několika trojúhelníkových hranolů, které se pravidelně otáčejí",
             "fr": "<b>Trivision</b> - le panneau est constitué de lames triangulaires qui tournent régulièrement",
             "pt": "<b>Trivision</b> - o outdoor consiste em muitos prismas triangulares que giram regularmente",
-            "pt_BR": "<b>Trivision</b> - o outdoor consiste em muitos prismas triangulares que giram regularmente"
+            "pt_BR": "<b>Trivision</b> - o outdoor consiste em muitos prismas triangulares que giram regularmente",
+            "zh_Hans": "<b>Trivision</b> - 广告牌由许多有规律旋转的三棱柱组成"
           },
           "icon": {
             "class": "large",
@@ -1071,7 +1109,8 @@
             "cs": "<b>Rolující</b> plakáty",
             "fr": "Affiches <b>défilantes</b>",
             "pt": "Pôsteres de <b>rolagem</b>",
-            "pt_BR": "Pôsteres <b>deslizantes</b>"
+            "pt_BR": "Pôsteres <b>deslizantes</b>",
+            "zh_Hans": "<b>滚动</b>海报"
           },
           "hideInAnswer": {
             "and": [
@@ -1090,7 +1129,8 @@
             "cs": "Sám se <b>otáčí</b>",
             "fr": "<b>Tourne</b> sur elle-même",
             "pt": "<b>Gira</b> sobre si mesmo",
-            "pt_BR": "<b>Gira</b> sobre si mesmo"
+            "pt_BR": "<b>Gira</b> sobre si mesmo",
+            "zh_Hans": "<b>自行旋转</b>"
           },
           "hideInAnswer": {
             "and": [
@@ -1120,7 +1160,8 @@
               "fr": "C'est une lampe à tube néon",
               "he": "זהו תאורת ניאון",
               "pl": "To jest lampa neonowa",
-              "pt_BR": "Isso é uma luz de neon"
+              "pt_BR": "Isso é uma luz de neon",
+              "zh_Hans": "这是霓虹灯管"
             },
             "hideInAnswer": "advertising!=sign",
             "addExtraTags": [
@@ -1149,7 +1190,8 @@
         "pt": "Operado por {operator}",
         "pt_BR": "Operado por {operator}",
         "he": "מופעל על ידי {operator}",
-        "pl": "Obsługiwane przez {operator}"
+        "pl": "Obsługiwane przez {operator}",
+        "zh_Hans": "由{operator}运营"
       },
       "question": {
         "ca": "Qui opera aquest element?",
@@ -1162,7 +1204,8 @@
         "pt": "Quem opera esse elemento?",
         "he": "מי מפעיל את התכונה הזו?",
         "pl": "Kto obsługuje ten obiekt?",
-        "pt_BR": "Quem opera este recurso?"
+        "pt_BR": "Quem opera este recurso?",
+        "zh_Hans": "谁操作此物件？"
       },
       "freeform": {
         "addExtraTags": [],
@@ -1182,7 +1225,8 @@
         "pt": "Que tipo de mensagem é mostrada?",
         "he": "איזה סוג הודעה מוצגת?",
         "pl": "Jaki rodzaj wiadomości jest pokazany?",
-        "pt_BR": "Que tipo de mensagem é exibido?"
+        "pt_BR": "Que tipo de mensagem é exibido?",
+        "zh_Hans": "显示什么样的消息？"
       },
       "mappings": [
         {
@@ -1199,7 +1243,8 @@
             "pt_BR": "Mensagem comercial",
             "he": "מסר מסחרי",
             "nl": "Commerciële boodschap",
-            "pl": "Wiadomość komercyjna"
+            "pl": "Wiadomość komercyjna",
+            "zh_Hans": "商业留言"
           }
         },
         {
@@ -1216,7 +1261,8 @@
             "he": "מידע מקומי",
             "nl": "Lokale informatie",
             "pl": "Informacja lokalna",
-            "pt_BR": "Informações locais"
+            "pt_BR": "Informações locais",
+            "zh_Hans": "本地信息"
           }
         },
         {
@@ -1232,7 +1278,8 @@
             "pt": "Informação segura",
             "he": "מידע אבטחה",
             "pl": "Informacje dotyczące bezpieczeństwa",
-            "pt_BR": "Informações de segurança"
+            "pt_BR": "Informações de segurança",
+            "zh_Hans": "安全信息"
           },
           "hideInAnswer": {
             "and": [
@@ -1253,7 +1300,8 @@
             "pt": "Propaganda eleitoral",
             "he": "פרסום בחירות",
             "pl": "Reklamy wyborcze",
-            "pt_BR": "Propaganda eleitoral"
+            "pt_BR": "Propaganda eleitoral",
+            "zh_Hans": "选举广告"
           }
         },
         {
@@ -1271,7 +1319,8 @@
             "he": "מידע הקשור לתיאטרון, קונצרטים,…",
             "eu": "Antzerkiari, kontzertuei eta abarri buruzko informazioa",
             "pl": "Informacje dotyczące teatru, koncertów, …",
-            "pt_BR": "Informações relacionadas a teatro, concertos, …"
+            "pt_BR": "Informações relacionadas a teatro, concertos, …",
+            "zh_Hans": "与戏剧、音乐会等相关的信息……"
           },
           "hideInAnswer": {
             "and": [
@@ -1292,7 +1341,8 @@
             "nl": "Boodschap van NGO-organisaties",
             "pt": "Mensagem de organizações sem fins lucrativos",
             "pl": "Wiadomość od organizacji non-profit",
-            "pt_BR": "Mensagens de organizações sem fins lucrativos"
+            "pt_BR": "Mensagens de organizações sem fins lucrativos",
+            "zh_Hans": "来自非营利组织的消息"
           }
         },
         {
@@ -1300,14 +1350,15 @@
           "ifnot": "message=",
           "then": {
             "ca": "Per a expressar la teua opinió",
-            "es": "Para expresar tu opinión",
+            "es": "Exprese su opinión",
             "en": "To express your opinion",
             "de": "Um Ihre Meinung zu äußern",
             "cs": "Pro vyjádření vašeho názoru",
             "fr": "Expression d'opinion",
             "pt": "Para expressar sua opinião",
             "pl": "Żeby wyrazić swoją opinię",
-            "pt_BR": "Para expressar sua opinião"
+            "pt_BR": "Para expressar sua opinião",
+            "zh_Hans": "表达您的意见"
           },
           "hideInAnswer": {
             "or": [
@@ -1330,7 +1381,8 @@
             "pt": "Mensagem religiosa",
             "pt_BR": "Mensagem religiosa",
             "he": "מסר דתי",
-            "pl": "Przekaz religijny"
+            "pl": "Przekaz religijny",
+            "zh_Hans": "宗教讯息"
           }
         },
         {
@@ -1344,7 +1396,8 @@
             "cs": "Cedule pro financování",
             "pt": "sinal de financiamento",
             "pl": "Znak finansowania",
-            "pt_BR": "Placa de financiamento"
+            "pt_BR": "Placa de financiamento",
+            "zh_Hans": "资助标志"
           },
           "hideInAnswer": {
             "or": [
@@ -1366,7 +1419,8 @@
             "nl": "Een kaart",
             "pt": "Um mapa",
             "pt_BR": "Um mapa",
-            "pl": "Mapa"
+            "pl": "Mapa",
+            "zh_Hans": "地图"
           }
         }
       ],
@@ -1396,7 +1450,8 @@
         "pt": "De quantos lados você pode assistir a anúncios?",
         "eu": "Zenbat aldetatik ikus dezakezu publizitatea?",
         "pl": "Z ilu stron można oglądać reklamy?",
-        "pt_BR": "De quantos lados você consegue visualizar os anúncios?"
+        "pt_BR": "De quantos lados você consegue visualizar os anúncios?",
+        "zh_Hans": "您可以从几个侧面观看广告？"
       },
       "mappings": [
         {
@@ -1411,7 +1466,8 @@
             "pt": "Este objeto tem anúncios em um único lado",
             "eu": "Objektu honek iragarkiak ditu alde bakar batean",
             "pl": "Ten obiekt ma reklamy po jednej stronie",
-            "pt_BR": "Este objeto tem anúncios em um único lado"
+            "pt_BR": "Este objeto tem anúncios em um único lado",
+            "zh_Hans": "该物体单面有广告"
           }
         },
         {
@@ -1426,7 +1482,8 @@
             "pt": "Este objeto tem anúncios em ambos os lados",
             "eu": "Objektu honek iragarkiak ditu bi aldeetan",
             "pl": "Ten obiekt ma reklamy po dwóch stronach",
-            "pt_BR": "Este objeto tem anúncios em ambos os lados"
+            "pt_BR": "Este objeto tem anúncios em ambos os lados",
+            "zh_Hans": "该物体双面有广告"
           }
         }
       ]
@@ -1443,7 +1500,8 @@
         "nl": "Het referentienummer is {ref}",
         "pt": "O número de referência é {ref}",
         "pt_BR": "O número de referência é {ref}",
-        "pl": "Numer referencyjny to {ref}"
+        "pl": "Numer referencyjny to {ref}",
+        "zh_Hans": "编号是{ref}"
       },
       "question": {
         "ca": "Quin és el número de refèrencia?",
@@ -1455,7 +1513,8 @@
         "nl": "Wat is het referentienummer?",
         "pt": "Qual é o número de referência?",
         "pl": "Jaki jest numer referencyjny?",
-        "pt_BR": "Qual é o número de referência?"
+        "pt_BR": "Qual é o número de referência?",
+        "zh_Hans": "编号是多少？"
       },
       "freeform": {
         "key": "ref"
