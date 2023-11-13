@@ -84,6 +84,43 @@
       }
     },
     {
+      "id": "conveying",
+      "mappings": [
+        {
+          "if": "conveying=yes",
+          "then": {
+            "en": "This is an escalator",
+            "nl": "Dit is een roltrap",
+            "de": "Das ist eine Rolltreppe",
+            "ca": "Açò és una escala mecànica",
+            "cs": "Jedná se o eskalátor"
+          }
+        },
+        {
+          "if": "conveying=no",
+          "then": {
+            "en": "This is not an escalator",
+            "nl": "Dit is geen roltrap",
+            "de": "Das ist keine Rolltreppe",
+            "ca": "Açò no és una escala mecànica",
+            "cs": "Nejedná se o eskalátor"
+          }
+        },
+        {
+          "if": "conveying=",
+          "then": {
+            "en": "This is not an escalator",
+            "nl": "Dit is geen roltrap",
+            "de": "Das ist keine Rolltreppe",
+            "ca": "Això no és una escala mecànica",
+            "cs": "Nejedná se o eskalátor"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+
+    {
       "id": "handrail",
       "question": {
         "en": "Does this stair have a handrail?",
@@ -113,11 +150,12 @@
             "cs": "Tyto schody <b>nemají</b> zábradlí"
           }
         }
-      ]
+      ],
+      "condition": "conveying!=yes"
     },
     {
       "id": "tactile_writing",
-      "condition": "handrail=yes",
+      "condition": ["handrail=yes", "conveying!=yes"],
       "question": {
         "en": "Do these stairs have tactile writing on the handrail?",
         "de": "Hat die Treppe eine taktile Schrift am Handlauf?",
@@ -178,42 +216,6 @@
           }
         }
       }
-    },
-    {
-      "id": "conveying",
-      "mappings": [
-        {
-          "if": "conveying=yes",
-          "then": {
-            "en": "This is an escalator",
-            "nl": "Dit is een roltrap",
-            "de": "Das ist eine Rolltreppe",
-            "ca": "Açò és una escala mecànica",
-            "cs": "Jedná se o eskalátor"
-          }
-        },
-        {
-          "if": "conveying=no",
-          "then": {
-            "en": "This is not an escalator",
-            "nl": "Dit is geen roltrap",
-            "de": "Das ist keine Rolltreppe",
-            "ca": "Açò no és una escala mecànica",
-            "cs": "Nejedná se o eskalátor"
-          }
-        },
-        {
-          "if": "conveying=",
-          "then": {
-            "en": "This is not an escalator",
-            "nl": "Dit is geen roltrap",
-            "de": "Das ist keine Rolltreppe",
-            "ca": "Això no és una escala mecànica",
-            "cs": "Nejedná se o eskalátor"
-          },
-          "hideInAnswer": true
-        }
-      ]
     },
     {
       "id": "ramp",
@@ -281,7 +283,8 @@
             "cs": "U těchto schodů není žádná rampa"
           }
         }
-      ]
+      ],
+      "condition": "conveying!=yes"
     }
   ]
 }
