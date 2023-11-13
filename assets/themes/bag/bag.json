@@ -101,9 +101,49 @@
           "question": "What kind of building is this?"
         }
       ],
-      "pointRendering": [],
+      "pointRendering": null,
       "lineRendering": [
-        {}
+        {
+          "width": {
+            "render": "2",
+            "mappings": [
+              {
+                "if": "fixme~*",
+                "then": "5"
+              }
+            ]
+          },
+          "color": {
+            "render": "#00c",
+            "mappings": [
+              {
+                "if": "fixme~*",
+                "then": "#ff00ff"
+              },
+              {
+                "if": "building=house",
+                "then": "#a00"
+              },
+              {
+                "if": "building=shed",
+                "then": "#563e02"
+              },
+              {
+                "if": {
+                  "or": [
+                    "building=garage",
+                    "building=garages"
+                  ]
+                },
+                "then": "#f9bfbb"
+              },
+              {
+                "if": "building=yes",
+                "then": "#0774f2"
+              }
+            ]
+          }
+        }
       ]
     },
     {

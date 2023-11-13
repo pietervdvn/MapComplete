@@ -63,7 +63,7 @@
     },
     "icons.defaults"
   ],
-  "pointRendering": [],
+  "pointRendering": null,
   "lineRendering": [
     {
       "color": {

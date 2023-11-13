@@ -43,7 +43,7 @@
       "cs": "Zeď nebo budova"
     }
   },
-  "pointRendering": [],
+  "pointRendering": null,
   "lineRendering": [
     {
       "color": "#fff",

@@ -39,7 +39,22 @@
       }
     ]
   },
-  "pointRendering": [],
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/stairs/stairs.svg"
+        }
+      ],
+      "location": [
+        "point"
+      ]
+    }
+  ],
   "lineRendering": [
     {
       "color": "gray",

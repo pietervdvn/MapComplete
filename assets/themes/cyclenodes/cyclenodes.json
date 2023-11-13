@@ -114,7 +114,8 @@
           "width": "4",
           "color": "#00a703"
         }
-      ]
+      ],
+      "pointRendering":null
     },
     {
       "id": "node",

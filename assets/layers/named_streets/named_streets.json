@@ -11,7 +11,7 @@
   },
   "minzoom": 18,
   "shownByDefault": false,
-  "pointRendering": [],
+  "pointRendering": null,
   "lineRendering": [
     {
       "color": "#ccc",
