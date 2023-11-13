@@ -782,17 +782,6 @@
             }
         }
     },
-    "grb_fixme": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "building type": {
-                        "question": "De quel type de bâtiment s’agit-il ?"
-                    }
-                }
-            }
-        }
-    },
     "hackerspaces": {
         "description": "Retrouvez, renseignez ou modifiez des ateliers numériques ouverts",
         "shortDescription": "Une carte des ateliers numériques ouverts",

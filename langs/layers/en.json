@@ -1870,6 +1870,15 @@
             "mappings": {
                 "0": {
                     "then": "<i>{name}</i>"
+                },
+                "1": {
+                    "then": "Bar"
+                },
+                "2": {
+                    "then": "Cafe"
+                },
+                "3": {
+                    "then": "Nightclub"
                 }
             },
             "render": "Pub"

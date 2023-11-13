@@ -58,8 +58,7 @@
           "anchor": "center"
         }
       ],
-      "lineRendering": [
-      ]
+      "lineRendering": []
     },
     {
       "builtin": "maproulette_challenge",

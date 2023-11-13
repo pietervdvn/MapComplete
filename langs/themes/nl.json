@@ -721,56 +721,6 @@
         },
         "title": "Friturenkaart"
     },
-    "fruit_trees": {
-        "description": "Op deze kaart vindt je boomgaarden en fruitbomen",
-        "layers": {
-            "0": {
-                "name": "Boomgaarden",
-                "presets": {
-                    "0": {
-                        "description": "Voeg een boomgaard toe (als punt - omtrek nog te tekenen)",
-                        "title": "een boomgaard"
-                    }
-                },
-                "title": {
-                    "render": "Boomgaard"
-                }
-            },
-            "1": {
-                "description": "Een boom",
-                "name": "Boom",
-                "presets": {
-                    "0": {
-                        "description": "Voeg hier een boom toe",
-                        "title": "een boom"
-                    }
-                },
-                "tagRenderings": {
-                    "fruitboom-description": {
-                        "question": "Welke beschrijving past bij deze boom?",
-                        "render": "Beschrijving: <i>{description}</i>"
-                    },
-                    "fruitboom-ref": {
-                        "question": "Is er een refernetienummer?",
-                        "render": "Referentienummer: <b>{ref}</b>"
-                    },
-                    "fruitboom-species:nl": {
-                        "question": "Wat is de soort van deze boom (in het Nederlands)?",
-                        "render": "De soort is {species:nl}"
-                    },
-                    "fruitboom-taxon": {
-                        "question": "Wat is het taxon (ras) van deze boom?",
-                        "render": "Het ras (taxon) van deze boom is <b>{taxon}</b>"
-                    }
-                },
-                "title": {
-                    "render": "Boom"
-                }
-            }
-        },
-        "shortDescription": "Boomgaarden en fruitbomen",
-        "title": "Open Boomgaardenkaart"
-    },
     "ghostbikes": {
         "description": "Een <b>Witte Fiets</b> of <b>Spookfiets</b> is een aandenken aan een fietser die bij een verkeersongeval om het leven kwam. Het gaat om een fiets die volledig wit is geschilderd en in de buurt van het ongeval werd geinstalleerd.<br/><br/>Op deze kaart zie je alle witte fietsen die door OpenStreetMap gekend zijn. Ontbreekt er een Witte Fiets of wens je informatie aan te passen? Meld je dan aan met een (gratis) OpenStreetMap account.",
         "title": "Witte Fietsen"
@@ -856,49 +806,6 @@
         },
         "shortDescription": "Grb import helper tool",
         "title": "GRB import helper"
-    },
-    "grb_fixme": {
-        "description": "Gebouwen met een FIXME - wss GRB-import die gefixed moeten worden",
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "building type": {
-                        "question": "Wat voor soort gebouw is dit?"
-                    },
-                    "grb-fixme": {
-                        "mappings": {
-                            "0": {
-                                "then": "Geen fixme"
-                            }
-                        },
-                        "question": "Wat zegt de fixme?",
-                        "render": "De fixme is <b>{fixme}</b>"
-                    },
-                    "grb-housenumber": {
-                        "mappings": {
-                            "0": {
-                                "then": "Geen huisnummer"
-                            }
-                        },
-                        "question": "Wat is het huisnummer?",
-                        "render": "Het huisnummer is <b>{addr:housenumber}</b>"
-                    },
-                    "grb-min-level": {
-                        "question": "Hoeveel verdiepingen ontbreken?",
-                        "render": "Dit gebouw begint maar op de {building:min_level} verdieping"
-                    },
-                    "grb-street": {
-                        "question": "Wat is de straat?",
-                        "render": "De straat is <b>{addr:street}</b>"
-                    },
-                    "grb-unit": {
-                        "render": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
-                    }
-                }
-            }
-        },
-        "shortDescription": "Grb Fixup",
-        "title": "GRB Fixup"
     },
     "hackerspaces": {
         "description": "Op deze kaart kan je hackerspaces zien, toevoegen en updaten",

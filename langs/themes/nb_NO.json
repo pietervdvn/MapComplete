@@ -467,17 +467,6 @@
     "ghostbikes": {
         "title": "Spøkelsessykler"
     },
-    "grb_fixme": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "building type": {
-                        "question": "Hva slags bygning er dette?"
-                    }
-                }
-            }
-        }
-    },
     "hailhydrant": {
         "title": "Hydranter, brannslukkere, brannstasjoner, og ambulansestasjoner."
     },
