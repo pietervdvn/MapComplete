@@ -2508,7 +2508,7 @@
                     "then": "Carretera con carril compartido {name}"
                 },
                 "3": {
-                    "then": "Vía ciclista al lado de la carretera"
+                    "then": "Carril compartido"
                 },
                 "4": {
                     "then": "Carretera con carril bici {name}"
