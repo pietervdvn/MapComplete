@@ -164,7 +164,7 @@
               "point",
               "centroid"
             ],
-            "=marker": [
+            "marker": [
               {
                 "icon": {
                   "render": "./assets/themes/toerisme_vlaanderen/cycle_pump.svg",

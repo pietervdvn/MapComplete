@@ -27,8 +27,6 @@ import { ExtraFunctions } from "../src/Logic/ExtraFunctions"
 import { QuestionableTagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import LayerConfig from "../src/Models/ThemeConfig/LayerConfig"
 import PointRenderingConfig from "../src/Models/ThemeConfig/PointRenderingConfig"
-
-import { ConfigMeta } from "../src/UI/Studio/configMeta"
 import { ConversionContext } from "../src/Models/ThemeConfig/Conversion/ConversionContext"
 
 // This scripts scans 'src/assets/layers/*.json' for layer definition files and 'src/assets/themes/*.json' for theme definition files.
@@ -397,9 +395,10 @@ class LayerOverviewUtils extends Script {
 
         const mcChangesPath = "./assets/themes/mapcomplete-changes/mapcomplete-changes.json"
         if (
-            recompiledThemes.length > 0 &&
-            !(recompiledThemes.length === 1 && recompiledThemes[0] === "mapcomplete-changes") &&
-            (args.indexOf("--generate-change-map") >= 0 || !existsSync(mcChangesPath))
+            (recompiledThemes.length > 0 &&
+                !(recompiledThemes.length === 1 && recompiledThemes[0] === "mapcomplete-changes") &&
+                args.indexOf("--generate-change-map") >= 0) ||
+            !existsSync(mcChangesPath)
         ) {
             // mapcomplete-changes shows an icon for each corresponding mapcomplete-theme
             const iconsPerTheme = Array.from(sharedThemes.values()).map((th) => ({

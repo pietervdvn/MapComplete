@@ -31,16 +31,7 @@
       "override": {
         "minzoom": 18,
         "passAllFeatures": true,
-        "mapRendering": [
-          {},
-          {},
-          {
-            "label": {
-              "render": null,
-              "mappings": null
-            },
-            "iconSize": "0,0"
-          }
+        "=pointRendering": [
         ]
       }
     },
@@ -55,7 +46,8 @@
       "override": {
         "title": null,
         "name": null,
-        "mapRendering": null
+        "pointRendering": null,
+        "lineRendering": "null"
       }
     },
     {
@@ -125,9 +117,17 @@
         },
         "presets": null,
         "minzoom": 18,
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "circle:white;./assets/themes/stations/bicycle_parking.svg"
+            "marker": [
+              {
+                "icon": "circle",
+                "color": "white"
+              },
+              {
+                "icon": "./assets/themes/stations/bicycle_parking.svg"
+              }
+            ]
           }
         ]
       }
@@ -143,9 +143,17 @@
         },
         "presets": null,
         "minzoom": 18,
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "circle:white;./assets/themes/stations/rental_bicycle.svg"
+            "marker": [
+              {
+                "icon": "circle",
+                "color": "white"
+              },
+              {
+                "icon": "./assets/themes/stations/rental_bicycle.svg"
+              }
+            ]
           }
         ]
       }
@@ -177,7 +185,7 @@
         },
         "presets": null,
         "minzoom": 18,
-        "mapRendering+": [
+        "lineRendering+": [
           {
             "color": "#00f",
             "width": "8"
@@ -196,7 +204,7 @@
         },
         "presets": null,
         "minzoom": 18,
-        "mapRendering+": [
+        "lineRendering+": [
           {
             "color": "yellow",
             "width": "8"
@@ -223,9 +231,13 @@
       "builtin": "bench",
       "override": {
         "minzoom": 18,
-        "mapRendering": [
+        "lineRendering": [
           {
-            "icon": "./assets/themes/stations/bench.svg"
+            "marker": [
+              {
+                "icon": "./assets/themes/stations/bench.svg"
+              }
+            ]
           }
         ]
       }
@@ -234,9 +246,17 @@
       "builtin": "drinking_water",
       "override": {
         "minzoom": 18,
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "circle:white;./assets/themes/stations/drinking_water.svg"
+            "=marker": [
+              {
+                "icon": "circle",
+                "color": "white"
+              },
+              {
+                "icon": "./assets/themes/stations/drinking_water.svg"
+              }
+            ]
           }
         ]
       }

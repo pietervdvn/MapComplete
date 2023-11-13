@@ -1,0 +1,625 @@
+{
+  "id": "mapcomplete-changes",
+  "title": {
+    "en": "Changes made with MapComplete"
+  },
+  "shortDescription": {
+    "en": "Shows changes made by MapComplete"
+  },
+  "description": {
+    "en": "This maps shows all the changes made with MapComplete"
+  },
+  "icon": "./assets/svg/logo.svg",
+  "hideFromOverview": true,
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "clustering": false,
+  "layers": [
+    {
+      "id": "mapcomplete-changes",
+      "name": {
+        "en": "Changeset centers"
+      },
+      "minzoom": 0,
+      "source": {
+        "osmTags": "editor~*",
+        "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/mapcomplete-changes/tile_{z}_{x}_{y}.geojson",
+        "geoJsonZoomLevel": 8,
+        "maxCacheAge": 0
+      },
+      "title": {
+        "render": {
+          "en": "Changeset for {theme}"
+        }
+      },
+      "description": {
+        "en": "Shows all MapComplete changes"
+      },
+      "tagRenderings": [
+        {
+          "id": "show_changeset_id",
+          "render": {
+            "en": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+          }
+        },
+        {
+          "id": "contributor",
+          "question": {
+            "en": "What contributor did make this change?"
+          },
+          "freeform": {
+            "key": "user"
+          },
+          "render": {
+            "en": "Change made by <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+          }
+        },
+        {
+          "id": "theme-id",
+          "question": {
+            "en": "What theme was used to make this change?"
+          },
+          "freeform": {
+            "key": "theme"
+          },
+          "render": {
+            "en": "Change with theme <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
+          }
+        },
+        {
+          "id": "locale",
+          "freeform": {
+            "key": "locale"
+          },
+          "question": {
+            "en": "What locale (language) was this change made in?"
+          },
+          "render": {
+            "en": "User locale is {locale}"
+          }
+        },
+        {
+          "id": "host",
+          "render": {
+            "en": "Change with with <a href='{host}'>{host}</a>"
+          },
+          "question": {
+            "en": "What host (website) was this change made with?"
+          },
+          "freeform": {
+            "key": "host"
+          },
+          "mappings": [
+            {
+              "if": "host=www.waldbrand-app.de",
+              "then": "waldbrand-app.de",
+              "hideInAnswer": true
+            },
+            {
+              "if": "host~https://pietervdvn.github.io/mc/develop/.*",
+              "then": "Develop",
+              "hideInAnswer": true
+            }
+          ]
+        },
+        {
+          "id": "version",
+          "question": {
+            "en": "What version of MapComplete was used to make this change?"
+          },
+          "render": {
+            "en": "Made with {editor}"
+          },
+          "freeform": {
+            "key": "editor"
+          }
+        }
+      ],
+      "pointRendering": [
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "marker": [
+            {
+              "icon": {
+                "render": "teardrop:#00cc00",
+                "mappings": [
+                  {
+                    "if": "theme=advertising",
+                    "then": "./assets/themes/advertising/icon.svg"
+                  },
+                  {
+                    "if": "theme=aed",
+                    "then": "./assets/themes/aed/aed.svg"
+                  },
+                  {
+                    "if": "theme=artwork",
+                    "then": "./assets/themes/artwork/artwork.svg"
+                  },
+                  {
+                    "if": "theme=atm",
+                    "then": "./assets/themes/atm/logo.svg"
+                  },
+                  {
+                    "if": "theme=bag",
+                    "then": "./assets/themes/bag/logo.svg"
+                  },
+                  {
+                    "if": "theme=benches",
+                    "then": "./assets/themes/benches/bench_poi.svg"
+                  },
+                  {
+                    "if": "theme=bicycle_rental",
+                    "then": "./assets/themes/bicycle_rental/logo.svg"
+                  },
+                  {
+                    "if": "theme=bicyclelib",
+                    "then": "./assets/themes/bicyclelib/logo.svg"
+                  },
+                  {
+                    "if": "theme=binoculars",
+                    "then": "./assets/layers/binocular/telescope.svg"
+                  },
+                  {
+                    "if": "theme=blind_osm",
+                    "then": "./assets/themes/blind_osm/Blindicon.svg"
+                  },
+                  {
+                    "if": "theme=bookcases",
+                    "then": "./assets/themes/bookcases/bookcase.svg"
+                  },
+                  {
+                    "if": "theme=buurtnatuur",
+                    "then": "./assets/themes/buurtnatuur/logo.svg"
+                  },
+                  {
+                    "if": "theme=cafes_and_pubs",
+                    "then": "./assets/layers/cafe_pub/pub.svg"
+                  },
+                  {
+                    "if": "theme=campersite",
+                    "then": "./assets/themes/campersite/caravan.svg"
+                  },
+                  {
+                    "if": "theme=charging_stations",
+                    "then": "./assets/themes/charging_stations/logo.svg"
+                  },
+                  {
+                    "if": "theme=climbing",
+                    "then": "./assets/themes/climbing/climbing_icon.svg"
+                  },
+                  {
+                    "if": "theme=clock",
+                    "then": "./assets/layers/clock/clock.svg"
+                  },
+                  {
+                    "if": "theme=cycle_highways",
+                    "then": "./assets/themes/cycle_highways/fietssnelwegen-logo.svg"
+                  },
+                  {
+                    "if": "theme=cycle_infra",
+                    "then": "./assets/themes/cycle_infra/cycle-infra.svg"
+                  },
+                  {
+                    "if": "theme=cyclenodes",
+                    "then": "./assets/themes/cyclenodes/logo.svg"
+                  },
+                  {
+                    "if": "theme=cyclestreets",
+                    "then": "./assets/themes/cyclestreets/logo.svg"
+                  },
+                  {
+                    "if": "theme=cyclofix",
+                    "then": "./assets/themes/cyclofix/logo.svg"
+                  },
+                  {
+                    "if": "theme=drinking_water",
+                    "then": "./assets/themes/drinking_water/logo.svg"
+                  },
+                  {
+                    "if": "theme=education",
+                    "then": "./assets/layers/school/college.svg"
+                  },
+                  {
+                    "if": "theme=elongated_coin",
+                    "then": "./assets/themes/elongated_coin/penny.svg"
+                  },
+                  {
+                    "if": "theme=etymology",
+                    "then": "./assets/layers/etymology/logo.svg"
+                  },
+                  {
+                    "if": "theme=facadegardens",
+                    "then": "./assets/themes/facadegardens/geveltuin.svg"
+                  },
+                  {
+                    "if": "theme=food",
+                    "then": "./assets/layers/food/restaurant.svg"
+                  },
+                  {
+                    "if": "theme=fritures",
+                    "then": "./assets/themes/fritures/logo.svg"
+                  },
+                  {
+                    "if": "theme=fruit_trees",
+                    "then": "./assets/themes/fruit_trees/fruit_tree.svg"
+                  },
+                  {
+                    "if": "theme=ghostbikes",
+                    "then": "./assets/themes/ghostbikes/logo.svg"
+                  },
+                  {
+                    "if": "theme=grb",
+                    "then": "./assets/themes/grb/logo.svg"
+                  },
+                  {
+                    "if": "theme=grb_fixme",
+                    "then": "./assets/svg/bug.svg"
+                  },
+                  {
+                    "if": "theme=guideposts",
+                    "then": "./assets/layers/guidepost/guidepost.svg"
+                  },
+                  {
+                    "if": "theme=hackerspaces",
+                    "then": "./assets/themes/hackerspaces/glider.svg"
+                  },
+                  {
+                    "if": "theme=hailhydrant",
+                    "then": "./assets/themes/hailhydrant/logo.svg"
+                  },
+                  {
+                    "if": "theme=healthcare",
+                    "then": "./assets/layers/doctors/doctors.svg"
+                  },
+                  {
+                    "if": "theme=hotels",
+                    "then": "./assets/layers/hotel/hotel.svg"
+                  },
+                  {
+                    "if": "theme=icecream",
+                    "then": "./assets/layers/ice_cream/ice_cream.svg"
+                  },
+                  {
+                    "if": "theme=indoors",
+                    "then": "./assets/layers/entrance/entrance.svg"
+                  },
+                  {
+                    "if": "theme=kerbs_and_crossings",
+                    "then": "./assets/layers/kerbs/KerbIcon.svg"
+                  },
+                  {
+                    "if": "theme=maproulette",
+                    "then": "./assets/layers/maproulette/logomark.svg"
+                  },
+                  {
+                    "if": "theme=maps",
+                    "then": "./assets/themes/maps/logo.svg"
+                  },
+                  {
+                    "if": "theme=maxspeed",
+                    "then": "./assets/themes/maxspeed/maxspeed_logo.svg"
+                  },
+                  {
+                    "if": "theme=nature",
+                    "then": "./assets/themes/nature/logo.svg"
+                  },
+                  {
+                    "if": "theme=notes",
+                    "then": "./assets/themes/notes/logo.svg"
+                  },
+                  {
+                    "if": "theme=observation_towers",
+                    "then": "./assets/layers/observation_tower/Tower_observation.svg"
+                  },
+                  {
+                    "if": "theme=onwheels",
+                    "then": "./assets/themes/onwheels/crest.svg"
+                  },
+                  {
+                    "if": "theme=openwindpowermap",
+                    "then": "./assets/themes/openwindpowermap/logo.svg"
+                  },
+                  {
+                    "if": "theme=osm_community_index",
+                    "then": "./assets/themes/osm_community_index/osm.svg"
+                  },
+                  {
+                    "if": "theme=parkings",
+                    "then": "./assets/themes/parkings/parkings.svg"
+                  },
+                  {
+                    "if": "theme=personal",
+                    "then": "./assets/svg/addSmall.svg"
+                  },
+                  {
+                    "if": "theme=pets",
+                    "then": "./assets/layers/dogpark/dog-park.svg"
+                  },
+                  {
+                    "if": "theme=play_forests",
+                    "then": "./assets/layers/play_forest/icon.svg"
+                  },
+                  {
+                    "if": "theme=playgrounds",
+                    "then": "./assets/themes/playgrounds/playground.svg"
+                  },
+                  {
+                    "if": "theme=postal_codes",
+                    "then": "./assets/themes/postal_codes/townhall.svg"
+                  },
+                  {
+                    "if": "theme=postboxes",
+                    "then": "./assets/layers/postboxes/postbox.svg"
+                  },
+                  {
+                    "if": "theme=rainbow_crossings",
+                    "then": "./assets/themes/rainbow_crossings/logo.svg"
+                  },
+                  {
+                    "if": "theme=shops",
+                    "then": "./assets/themes/shops/shop.svg"
+                  },
+                  {
+                    "if": "theme=sidewalks",
+                    "then": "./assets/svg/bug.svg"
+                  },
+                  {
+                    "if": "theme=speelplekken",
+                    "then": "./assets/themes/speelplekken/logo.svg"
+                  },
+                  {
+                    "if": "theme=sport_pitches",
+                    "then": "./assets/layers/sport_pitch/table_tennis.svg"
+                  },
+                  {
+                    "if": "theme=sports",
+                    "then": "./assets/themes/sports/sport.svg"
+                  },
+                  {
+                    "if": "theme=stations",
+                    "then": "./assets/themes/stations/rail-light.svg"
+                  },
+                  {
+                    "if": "theme=street_lighting",
+                    "then": "./assets/layers/street_lamps/street_lamp.svg"
+                  },
+                  {
+                    "if": "theme=street_lighting_assen",
+                    "then": "./assets/layers/street_lamps/street_lamp.svg"
+                  },
+                  {
+                    "if": "theme=surveillance",
+                    "then": "./assets/themes/surveillance/logo.svg"
+                  },
+                  {
+                    "if": "theme=toerisme_vlaanderen",
+                    "then": "./assets/themes/toerisme_vlaanderen/logo.svg"
+                  },
+                  {
+                    "if": "theme=toilets",
+                    "then": "./assets/themes/toilets/toilets.svg"
+                  },
+                  {
+                    "if": "theme=transit",
+                    "then": "./assets/layers/transit_stops/bus_stop.svg"
+                  },
+                  {
+                    "if": "theme=trees",
+                    "then": "./assets/themes/trees/logo.svg"
+                  },
+                  {
+                    "if": "theme=uk_addresses",
+                    "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+                  },
+                  {
+                    "if": "theme=vending_machine",
+                    "then": "./assets/layers/vending_machine/vending_machine.svg"
+                  },
+                  {
+                    "if": "theme=walkingnodes",
+                    "then": "./assets/themes/walkingnodes/logo.svg"
+                  },
+                  {
+                    "if": "theme=walls_and_buildings",
+                    "then": "./assets/layers/walls_and_buildings/walls_and_buildings.png"
+                  },
+                  {
+                    "if": "theme=waste",
+                    "then": "./assets/layers/recycling/recycling-14.svg"
+                  },
+                  {
+                    "if": "theme=waste_assen",
+                    "then": "./assets/layers/recycling/recycling-14.svg"
+                  },
+                  {
+                    "if": "theme=waste_basket",
+                    "then": "./assets/themes/waste_basket/waste_basket.svg"
+                  },
+                  {
+                    "if": "theme=width",
+                    "then": "./assets/themes/width/icon.svg"
+                  }
+                ]
+              }
+            }
+          ],
+          "iconSize": "30,30",
+          "anchor": "center"
+        }
+      ],
+      "filter": [
+        {
+          "id": "theme-search",
+          "options": [
+            {
+              "osmTags": "theme~i~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "Themename contains {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "created_by",
+          "options": [
+            {
+              "osmTags": "user~i~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "Made by contributor {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "not_created_by",
+          "options": [
+            {
+              "osmTags": "user!~i~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "<b>Not</b> made by contributor {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "made_before",
+          "options": [
+            {
+              "osmTags": "date<{search}",
+              "fields": [
+                {
+                  "name": "search",
+                  "type": "date"
+                }
+              ],
+              "question": {
+                "en": "Made before {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "made_after",
+          "options": [
+            {
+              "osmTags": "date>{search}",
+              "fields": [
+                {
+                  "name": "search",
+                  "type": "date"
+                }
+              ],
+              "question": {
+                "en": "Made after {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "locale-filter",
+          "options": [
+            {
+              "osmTags": "locale~i~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "User language (iso-code) {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "host_name",
+          "options": [
+            {
+              "osmTags": "host~i~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "Made with host {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "added-image",
+          "options": [
+            {
+              "osmTags": "add-image>0",
+              "question": {
+                "en": "Changeset added at least one image"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "builtin": "current_view",
+      "override": {
+        "title": "Statistics on changesets in the current view",
+        "tagRenderings+": [
+          {
+            "id": "link_to_more",
+            "render": {
+              "en": "More statistics can be found <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>"
+            }
+          },
+          {
+            "id": "hist_themes",
+            "render": "{histogram(_embedded_cs:themes, Themename, Number of changesets)}"
+          },
+          {
+            "id": "hist_users",
+            "render": "{histogram(_embedded_cs:users, Contributor, Number of changesets)}"
+          }
+        ],
+        "calculatedTags": [
+          "_embedded_cs=overlapWith(feat)('mapcomplete-changes').map(f => f.feat.properties)",
+          "_embedded_cs:themes=feat.get('_embedded_cs').map(cs => cs.theme)",
+          "_embedded_cs:users=feat.get('_embedded_cs').map(cs => cs['_last_edit:contributor'])"
+        ],
+        "+pointRendering": [
+          {
+            "location": [
+              "point"
+            ],
+            "marker": [
+              {
+                "icon": "statistics:black"
+              }
+            ],
+            "iconSize": "30,30",
+            "anchor": "center"
+          }
+        ]
+      }
+    }
+  ]
+}
