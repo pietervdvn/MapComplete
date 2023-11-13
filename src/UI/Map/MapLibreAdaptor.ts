@@ -240,10 +240,10 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         await this.exportBackgroundOnCanvas(ctx)
 
         // MapLibreAdaptor.setDpi(drawOn, ctx, 1)
-        const markers = await this.drawMarkers(markerScale)
-        ctx.drawImage(markers, 0, 0, drawOn.width, drawOn.height)
+        await this.drawMarkers(markerScale, ctx)
         ctx.scale(markerScale, markerScale)
         this._maplibreMap.data?.resize()
+
         return await new Promise<Blob>((resolve) => drawOn.toBlob((blob) => resolve(blob)))
     }
 
@@ -273,23 +273,52 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         map.resize()
     }
 
-    private async drawMarkers(dpiFactor: number): Promise<HTMLCanvasElement> {
+    private async drawMarkers(dpiFactor: number, drawOn: CanvasRenderingContext2D): Promise<void> {
         const map = this._maplibreMap.data
         if (!map) {
             return undefined
         }
-        const width = map.getCanvas().clientWidth
-        const height = map.getCanvas().clientHeight
         map.getCanvas().style.display = "none"
-        const img = await htmltoimage.toCanvas(map.getCanvasContainer(), {
-            pixelRatio: dpiFactor,
-            canvasWidth: width,
-            canvasHeight: height,
-            width: width,
-            height: height,
-        })
+
+        const width = map.getCanvas().width
+        const height = map.getCanvas().height
+        const container = map.getContainer()
+        function isDisplayed(el: Element) {
+            const r1 = el.getBoundingClientRect()
+            const r2 = container.getBoundingClientRect()
+            return !(
+                r2.left > r1.right ||
+                r2.right < r1.left ||
+                r2.top > r1.bottom ||
+                r2.bottom < r1.top
+            )
+        }
+        const markers = Array.from(container.getElementsByClassName("marker"))
+        for (let i = 0; i < markers.length; i++) {
+            const marker = markers[i]
+            if (!isDisplayed(marker)) {
+                continue
+            }
+            const markerRect = marker.getBoundingClientRect()
+            const w = markerRect.width
+            const h = markerRect.height
+            console.log("Drawing marker", i, "/", markers.length, marker)
+            const markerImg = await htmltoimage.toCanvas(<HTMLElement>marker, {
+                pixelRatio: dpiFactor,
+                canvasWidth: width * dpiFactor,
+                canvasHeight: height * dpiFactor,
+                width: width,
+                height: height,
+            })
+
+            try {
+                drawOn.drawImage(markerImg, markerRect.x, markerRect.y)
+            } catch (e) {
+                console.log("Could not draw image because of", e)
+            }
+        }
+
         map.getCanvas().style.display = "unset"
-        return img
     }
 
     private updateStores(isSetup: boolean = false): void {
