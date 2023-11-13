@@ -688,7 +688,7 @@
       "mappings": [
         {
           "if": "mapcomplete-show_debug=yes",
-          "icon": "./assets/svg/debug.svg",
+          "icon": "./assets/svg/bug.svg",
           "then": {
             "en": "Show debug info",
             "de": "Debug-Informationen anzeigen",
