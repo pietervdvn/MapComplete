@@ -2550,7 +2550,7 @@
                         "then": "Sólo accesible a clientes"
                     },
                     "3": {
-                        "then": "No accesible al público en general (ex. sólo accesible a trabajadores, propietarios, ...)"
+                        "then": "No accesible al público en general (por ejemplo, sólo accesible para el personal, los propietarios, ...)"
                     },
                     "4": {
                         "then": "No accesible, posiblemente solo para el uso profesional"
@@ -2578,7 +2578,7 @@
             },
             "defibrillator-defibrillator:location": {
                 "question": "Da detalles de dónde se puede encontrar el desfibrilador (en el idioma local)",
-                "render": "<i>Información a mayores sobre la localización (en el idioma local):</i><br/>{defibrillator:location}"
+                "render": "<i>Información adicional sobre la ubicación (en el idioma local):</i><br/>{defibrillator:location}"
             },
             "defibrillator-defibrillator:location:en": {
                 "question": "Da detalles de dónde se puede encontrar el desfibrilador (en ingles)",
@@ -2918,7 +2918,7 @@
             },
             "width": {
                 "question": "¿Cual es el ancho de esta puerta/entrada?",
-                "render": "Esta puerta tiene una ancho de {canonical(width)} metros"
+                "render": "Esta puerta tiene una ancho de {canonical(width)}"
             }
         },
         "title": {
@@ -2957,7 +2957,7 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Abierta ahora"
+                        "question": "Abierto"
                     }
                 }
             },
@@ -3097,29 +3097,29 @@
                         "then": "Aquí se sirve café"
                     },
                     "8": {
-                        "then": "Este es un restaurante italiano (que sirve más que pasta y pizza)"
+                        "then": "Este es un restaurante italiano (que sirve algo más que pasta y pizza)"
                     },
                     "9": {
                         "then": "Aquí se sirven platos Franceses"
                     }
                 },
-                "question": "¿Qué comida se sirve aquí?",
+                "question": "¿Qué tipo de comida sirven aquí?",
                 "render": "Aquí se sirve principalmente {cuisine}"
             },
             "Fastfood vs restaurant": {
                 "mappings": {
                     "0": {
-                        "then": "Este es un negocio de comida rápida, centrado en servicio rápido. Si hay asientos disponibles, son más bien limitados y funcionales."
+                        "then": "Se trata de un negocio de comida rápida, centrado en el servicio rápido. Si hay asientos disponibles, son más bien limitados y funcionales."
                     },
                     "1": {
-                        "then": "Un <b>restaurante</b>, centrado en crear una buena experiencia donde se sirve en la mesa"
+                        "then": "Un <b>restaurante</b>, centrado en crear una experiencia agradable en la que uno se sirve en mesa"
                     }
                 },
                 "question": "¿Qué tipo de negocio es este?"
             },
             "Name": {
-                "question": "¿Cual es el nombre de este restaurante?",
-                "render": "El nombre de este restaurante es {name}"
+                "question": "¿Cuál es el nombre de este negocio?",
+                "render": "El nombre de este negocio es {name}"
             },
             "Takeaway": {
                 "mappings": {
@@ -3133,7 +3133,7 @@
                         "then": "Aquí no es posible pedir para llevar"
                     }
                 },
-                "question": "¿Este lugar ofrece para llevar?"
+                "question": "¿Este local ofrece comida para llevar?"
             },
             "Vegan (no friture)": {
                 "mappings": {
@@ -3577,7 +3577,7 @@
                 }
             },
             "report-contributor": {
-                "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reportar {_first_user}"
+                "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reportar {_first_user} por spam o mensajes inapropiados</a>"
             },
             "report-note": {
                 "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta esta nota como spam o inapropiada</a>"
@@ -3768,7 +3768,7 @@
                         "then": "La superficie es <b>arena</b>"
                     },
                     "3": {
-                        "then": "La superficie es <b>adoquines</b>"
+                        "then": "La superficie es de <b>adoquines</b>"
                     },
                     "4": {
                         "then": "La superficie es <b>asfalto</b>"
@@ -4293,7 +4293,7 @@
                         "then": "Aquí se puede reciclar chatarra"
                     },
                     "19": {
-                        "then": "Aquí se pueden reciclar zapatos"
+                        "then": "El calzado se puede reciclar aquí"
                     },
                     "2": {
                         "then": "Aquí se pueden reciclar latas"
@@ -4917,10 +4917,10 @@
             "toilet-handwashing": {
                 "mappings": {
                     "0": {
-                        "then": "Estos baños tienen una pileta para lavarse las manos"
+                        "then": "Estos aseos tienen un lavabo para lavarse las manos"
                     },
                     "1": {
-                        "then": "Estos baños <b>no</b> tienen una pileta para lavarse las manos"
+                        "then": "Estos aseos <b>no tienen lavabo</b> para lavarse las manos"
                     }
                 },
                 "question": "¿Esto baños tienen una pileta para lavarte las manos?"
@@ -4962,7 +4962,7 @@
                         "then": "Aquí hay tanto váteres de sentarse como orinales"
                     }
                 },
-                "question": "¿Qué tipo de baños son estos?"
+                "question": "¿Qué tipo de aseos son?"
             },
             "toilets-wheelchair": {
                 "mappings": {
@@ -5051,7 +5051,7 @@
                 "render": "El tronco del árbol tiene una circunferencia de {circumference} metros"
             },
             "height": {
-                "question": "¿Cuál es la altura de este árbol?",
+                "question": "¿Qué altura tiene este árbol?",
                 "render": "Este árbol tiene {height} metros de altura"
             },
             "tree-decidouous": {
@@ -5080,13 +5080,13 @@
                         "then": "El árbol está en un parque o similar (cementerio, recinto escolar, ...)."
                     },
                     "4": {
-                        "then": "El árbol está en un jardín privado o residencial."
+                        "then": "El árbol está en un jardín de una vivienda."
                     },
                     "5": {
                         "then": "Este es un árbol a lo largo de una avenida."
                     },
                     "6": {
-                        "then": "El árbol está en un zona urbana."
+                        "then": "El árbol está en una zona urbana."
                     },
                     "7": {
                         "then": "El árbol está fuera de una zona urbana."
