@@ -28,7 +28,22 @@ A layer showing restaurants and fast-food amenities (with a special rendering fo
   - [fritures](https://mapcomplete.org/fritures)
 
 
-This is a special layer - data is not sourced from OpenStreetMap
+
+
+ Basic tags for this layer 
+---------------------------
+
+
+
+Elements must have the all of following tags to be shown on this layer:
+
+
+
+  - cuisine~^((.*;)?friture(;.*)?)$
+  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfast_food' target='_blank'>fast_food</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant' target='_blank'>restaurant</a>
+
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22fast_food%22%5D%5B%22cuisine%22~%22%5E%28%28.*%3B%29%3Ffriture%28%3B.*%29%3F%29%24%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22restaurant%22%5D%5B%22cuisine%22~%22%5E%28%28.*%3B%29%3Ffriture%28%3B.*%29%3F%29%24%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 

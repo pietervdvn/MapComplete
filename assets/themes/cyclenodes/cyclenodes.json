@@ -162,7 +162,7 @@
       "title": {
         "render": {
           "en": "Cycle node <strong>{rcn_ref}</strong>",
-          "de": "Knotenpunkt <strong>{rcn_ref}</strong>",
+          "de": "Fahrradknotenpunkt <strong>{rcn_ref}</strong>",
           "es": "nodo ciclista <strong>{rcn_ref}</strong>",
           "nb_NO": "sykkelnode <strong>{rcn_ref}</strong>",
           "nl": "Fietsknooppunt <strong>{rcn_ref}</strong>",
@@ -177,19 +177,22 @@
           "id": "node-rxn_ref",
           "question": {
             "en": "What is the reference number of this cycling node?",
-            "nl": "Wat is het referentienummer van dit fietsknooppunt?"
+            "nl": "Wat is het referentienummer van dit fietsknooppunt?",
+            "de": "Wie lautet die Nummer des Knotenpunkts im Fahrradknotenpunktnetzwerk?"
           },
           "freeform": {
             "key": "rcn_ref",
             "type": "int",
             "placeholder": {
               "en": "e.g. 1",
-              "nl": "bijv. 1"
+              "nl": "bijv. 1",
+              "de": "z.B. 1"
             }
           },
           "render": {
             "en": "This cycling node has reference number {rcn_ref}",
-            "nl": "Dit fietsknooppunt heeft referentienummer {rcn_ref}"
+            "nl": "Dit fietsknooppunt heeft referentienummer {rcn_ref}",
+            "de": "Knotenpunktnummer {rcn_ref} des Fahrradknotenpunktnetzwerks"
           }
         },
         {
@@ -244,7 +247,8 @@
             "type": "int",
             "placeholder": {
               "en": "e.g. 3",
-              "nl": "bijv. 3"
+              "nl": "bijv. 3",
+              "de": "z.B. 3"
             }
           },
           "id": "node-expected_rcn_route_relations"
@@ -259,7 +263,8 @@
           ],
           "title": {
             "en": "a cycling node",
-            "nl": "een fietsknooppunt"
+            "nl": "een fietsknooppunt",
+            "de": "ein Knoten eines Fahrradknotenpunktnetzwerks"
           },
           "snapToLayer": [
             "cycleways_and_roads"
@@ -291,11 +296,13 @@
           }
         ],
         "name": {
-          "en": "Cycling guideposts"
+          "en": "Cycling guideposts",
+          "de": "Fahrrad-Wegweiser"
         },
         "title": {
           "render": {
-            "en": "Cycling guidepost"
+            "en": "Cycling guidepost",
+            "de": "Fahrrad-Wegweiser"
           }
         }
       },

@@ -63,30 +63,6 @@
       "value": "doctorate"
     },
     {
-      "key": "capacity",
-      "description": "Layer 'Colleges and universities' shows and asks freeform values for key 'capacity' (in the mapcomplete.org theme 'Education')"
-    },
-    {
-      "key": "school:gender",
-      "description": "Layer 'Colleges and universities' shows school:gender=mixed with a fixed text, namely 'Both boys and girls can enroll here and have classes together' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
-      "value": "mixed"
-    },
-    {
-      "key": "school:gender",
-      "description": "Layer 'Colleges and universities' shows school:gender=separated with a fixed text, namely 'Both boys and girls can enroll here but they are separated (e.g. they have lessons in different classrooms or at different times)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
-      "value": "separated"
-    },
-    {
-      "key": "school:gender",
-      "description": "Layer 'Colleges and universities' shows school:gender=male with a fixed text, namely 'This is a boys only-school' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
-      "value": "male"
-    },
-    {
-      "key": "school:gender",
-      "description": "Layer 'Colleges and universities' shows school:gender=female with a fixed text, namely 'This is a girls-only school' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
-      "value": "female"
-    },
-    {
       "key": "website",
       "description": "Layer 'Colleges and universities' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Education')"
     },

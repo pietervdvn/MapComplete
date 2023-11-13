@@ -26,11 +26,6 @@ fi
 
 BRANCH=`git rev-parse --abbrev-ref HEAD`
 echo "The branch name is $BRANCH"
-if [ $BRANCH = "develop" ]
-then
-    SRC_MAPS="--sourcemap"
-    echo "Source maps are enabled "
-fi
 
 if [ $BRANCH = "master" ] || [ $BRANCH = "develop" ]
 then
@@ -46,7 +41,7 @@ fi
 
 export NODE_OPTIONS=--max-old-space-size=7000
 which vite
-vite build $SRC_MAPS 
+vite build --sourcemap 
 # Copy the layer files, as these might contain assets (e.g. svgs)
 cp -r assets/layers/ dist/assets/layers/
 cp -r assets/themes/ dist/assets/themes/

@@ -30,7 +30,21 @@ Bicycle rental stations
   - [personal](https://mapcomplete.org/personal)
 
 
-This is a special layer - data is not sourced from OpenStreetMap
+
+
+ Basic tags for this layer 
+---------------------------
+
+
+
+Elements must have the all of following tags to be shown on this layer:
+
+
+
+  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_rental' target='_blank'>bicycle_rental</a> |bicycle_rental~.+ |<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> |rental~^(.*bicycle.*)$
+
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22bicycle_rental%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22service%3Abicycle%3Arental%22%3D%22yes%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22bicycle_rental%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22rental%22~%22%5E%28.*bicycle.*%29%24%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 

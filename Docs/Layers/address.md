@@ -18,7 +18,21 @@ Addresses
   - This layer will automatically load  [named_streets](./named_streets.md)  into the layout as it depends on it:  a calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _closest_3_street_names)
 
 
-This is a special layer - data is not sourced from OpenStreetMap
+
+
+ Basic tags for this layer 
+---------------------------
+
+
+
+Elements must have the all of following tags to be shown on this layer:
+
+
+
+  - addr:housenumber~.+ |addr:street~.+
+
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22addr%3Ahousenumber%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22addr%3Astreet%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 

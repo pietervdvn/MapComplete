@@ -45,11 +45,15 @@ export default class ShowOverlayRasterLayer {
         let zoom = this._mapProperties?.zoom?.data
         let withinRange = zoom === undefined || zoom > this._layer.min_zoom
         let isDisplayed = (this._isDisplayed?.data ?? true) && withinRange
-        this._map.data?.setLayoutProperty(
-            this._layer.id,
-            "visibility",
-            isDisplayed ? "visible" : "none"
-        )
+        try {
+            this._map.data?.setLayoutProperty(
+                this._layer.id,
+                "visibility",
+                isDisplayed ? "visible" : "none"
+            )
+        } catch (e) {
+            console.error(e)
+        }
     }
 
     private async awaitStyleIsLoaded(): Promise<void> {

@@ -15,7 +15,6 @@ Special library layer which does not need a '.questions'-prefix before being imp
 ## Table of contents
 
 1. [questions](#questions)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [questions](#questions)
     + [images](#images)
@@ -71,19 +70,7 @@ Special library layer which does not need a '.questions'-prefix before being imp
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-
-
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 

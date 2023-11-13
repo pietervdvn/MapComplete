@@ -55,7 +55,8 @@
       "de": "Weg",
       "pa_PK": "راہ",
       "ca": "Via",
-      "cs": "Cesta"
+      "cs": "Cesta",
+      "es": "Vía"
     },
     "mappings": [
       {
@@ -71,7 +72,8 @@
           "de": "Radweg {name}",
           "fr": "Piste cyclable {name}",
           "ca": "Via ciclista {name}",
-          "cs": "Cyklostezka {name}"
+          "cs": "Cyklostezka {name}",
+          "es": "Carril bici {name}"
         }
       },
       {
@@ -107,7 +109,8 @@
           "de": "Straße mit gemeinsam genutzter Fahrspur {name}",
           "fr": "Route avec voie partagée {name}",
           "ca": "Carretera amb un carril compartit {name}",
-          "cs": "Silnice se sdíleným pruhem {name}"
+          "cs": "Silnice se sdíleným pruhem {name}",
+          "es": "Carretera con carril compartido {name}"
         }
       },
       {
@@ -135,7 +138,8 @@
           "de": "Straße mit Fahrradstreifen {name}",
           "fr": "Route avec voie cyclable {name}",
           "ca": "Ciclocarrer {name}",
-          "cs": "Silnice s cyklopruhem {name}"
+          "cs": "Silnice s cyklopruhem {name}",
+          "es": "Carretera con carril bici {name}"
         }
       },
       {

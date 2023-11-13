@@ -284,6 +284,46 @@
             "render": "Rettungswache"
         }
     },
+    "animal_shelter": {
+        "name": "Tierheime",
+        "presets": {
+            "0": {
+                "title": "ein Tierheim"
+            }
+        },
+        "tagRenderings": {
+            "2": {
+                "question": "Wie lautet der Name des Tierheims?",
+                "render": "Der Name des Tierheims lautet <b>{name}</b>"
+            },
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": "Tiere werden hier bis zur Abgabe an einen neuen Besitzer untergebracht"
+                    },
+                    "1": {
+                        "then": "Tiere werden hier bis zum Ende Ihres Lebens untergebracht"
+                    },
+                    "2": {
+                        "then": "Tiere werden hier untergebracht und gepflegt bis sie wieder in freier Natur ausgesetzt werden können "
+                    }
+                },
+                "question": "Was ist der Zweck des Tierheims?"
+            },
+            "7": {
+                "question": "Wann ist das Tierheim geöffnet?",
+                "render": "{opening_hours_table()}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Tierheim"
+        }
+    },
     "artwork": {
         "description": "Eine freie Karte mit Statuen, Büsten, Graffitis und anderen Kunstwerken auf der ganzen Welt",
         "name": "Kunstwerke",

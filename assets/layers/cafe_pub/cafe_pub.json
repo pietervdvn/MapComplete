@@ -69,6 +69,24 @@
           "eu": "<i>{name}</i>",
           "cs": "<i>{name}</i>"
         }
+      },
+      {
+        "if":"amenity=bar",
+        "then": {
+          "en":"Bar"
+        }
+      },
+      {
+        "if":"amenity=cafe",
+        "then": {
+          "en":"Cafe"
+        }
+      },
+      {
+        "if":"amenity=nightclub",
+        "then": {
+          "en":"Nightclub"
+        }
       }
     ]
   },

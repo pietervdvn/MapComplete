@@ -174,6 +174,8 @@
             "downloadAsPngHelper": "Am besten geeignet, um in Berichten zu verwenden",
             "downloadAsSvg": "Aktuelle Karte als SVG herunterladen",
             "downloadAsSvgHelper": "Kompatibel mit Inkscape oder Adobe Illustrator; Weiterbearbeitung erforderlich",
+            "downloadAsSvgLinesOnly": "SVG der aktuellen Karte als Liniendarstellung herunterladen",
+            "downloadAsSvgLinesOnlyHelper": "Selbstüberschneidende Linien werden geteilt und können mit geeigneter 3D-Software verwendet werden",
             "downloadCSV": "Sichtbare Daten als CSV herunterladen",
             "downloadCSVHelper": "Kompatibel mit LibreOffice Calc, Excel, …",
             "downloadFeatureAsGeojson": "GeoJSON Datei herunterladen",

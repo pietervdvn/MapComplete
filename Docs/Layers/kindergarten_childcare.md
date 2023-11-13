@@ -29,7 +29,21 @@ Shows kindergartens and preschools. Both are grouped in one layer, as they are r
   - [personal](https://mapcomplete.org/personal)
 
 
-This is a special layer - data is not sourced from OpenStreetMap
+
+
+ Basic tags for this layer 
+---------------------------
+
+
+
+Elements must have the all of following tags to be shown on this layer:
+
+
+
+  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dchildcare' target='_blank'>childcare</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dkindergarten' target='_blank'>kindergarten</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:isced:level:2011' target='_blank'>isced:level:2011</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:isced:level:2011%3Dearly_childhood' target='_blank'>early_childhood</a>
+
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22childcare%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22kindergarten%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22isced%3Alevel%3A2011%22%3D%22early_childhood%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 

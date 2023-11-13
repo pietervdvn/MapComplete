@@ -28,7 +28,22 @@ All objects which have an etymology known
   - [etymology](https://mapcomplete.org/etymology)
 
 
-This is a special layer - data is not sourced from OpenStreetMap
+
+
+ Basic tags for this layer 
+---------------------------
+
+
+
+Elements must have the all of following tags to be shown on this layer:
+
+
+
+  - name~.+
+  - <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Daquarium' target='_blank'>aquarium</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dmuseum' target='_blank'>museum</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dtheme_park' target='_blank'>theme_park</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dzoo' target='_blank'>zoo</a>
+
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22tourism%22%3D%22aquarium%22%5D%5B%22name%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22tourism%22%3D%22museum%22%5D%5B%22name%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22tourism%22%3D%22theme_park%22%5D%5B%22name%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22tourism%22%3D%22zoo%22%5D%5B%22name%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 

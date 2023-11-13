@@ -135,7 +135,7 @@
                         "then": "Mensaje de organizaciones sin ánimo de lucro"
                     },
                     "6": {
-                        "then": "Para expresar tu opinión"
+                        "then": "Exprese su opinión"
                     },
                     "7": {
                         "then": "Mensaje religioso"
@@ -284,6 +284,47 @@
             "render": "Estación de Ambulancias"
         }
     },
+    "animal_shelter": {
+        "description": "Un refugio de animales es una instalación donde se llevan animales con problemas y el personal de la instalación (voluntario o no) los alimenta y cuida, rehabilitándolos y curándolos si es necesario. Esta definición incluye las perreras para perros abandonados, los criaderos para gatos abandonados, los refugios para otros animales de compañía abandonados y los centros de recuperación de la fauna salvaje. ",
+        "name": "Centros de acogida de animales",
+        "presets": {
+            "0": {
+                "title": "una protectora de animales"
+            }
+        },
+        "tagRenderings": {
+            "2": {
+                "question": "¿Cómo se llama este refugio de animales?",
+                "render": "Este refugio de animales se llama <b>{name}</b>"
+            },
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": "Los animales permanecen aquí hasta que son adoptados por un nuevo propietario"
+                    },
+                    "1": {
+                        "then": "Los animales reciben cuidados para el resto de su vida"
+                    },
+                    "2": {
+                        "then": "Los animales heridos se rehabilitan aquí hasta que pueden ser liberados de nuevo en la naturaleza "
+                    }
+                },
+                "question": "¿Cuál es la finalidad del refugio de animales?"
+            },
+            "7": {
+                "question": "¿Cuándo se abre este refugio de animales?",
+                "render": "{opening_hours_table()}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Centro de acogida de animales"
+        }
+    },
     "artwork": {
         "description": "Un mapa abierto de Estatuas, bustos, Graffitis y otras Obras de Arte en todo el mundo",
         "name": "Obras de arte",
@@ -360,6 +401,20 @@
             "artwork_subject": {
                 "question": "¿Qué representa esta obra de arte?",
                 "render": "Esta obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+            },
+            "doubles_as_bench": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta obra de arte también sirve de banco"
+                    },
+                    "1": {
+                        "then": "Esta obra no sirve de banco"
+                    },
+                    "2": {
+                        "then": "Esta obra no sirve de banco"
+                    }
+                },
+                "question": "¿Sirve esta obra de arte como banco?"
             }
         },
         "title": {
@@ -372,7 +427,150 @@
         }
     },
     "atm": {
-        "description": "Cajeros automáticos para retirar dinero"
+        "description": "Cajeros automáticos para retirar dinero",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Con salida de audio"
+                    }
+                }
+            }
+        },
+        "name": "Cajeros automáticos",
+        "presets": {
+            "0": {
+                "title": "Un cajero automático"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Marca"
+                },
+                "question": "¿De qué banco es este cajero?",
+                "render": "El banco de este cajero automático es {brand}"
+            },
+            "cash_in": {
+                "mappings": {
+                    "0": {
+                        "then": "Es probable que no pueda ingresar dinero en efectivo en este cajero automático"
+                    },
+                    "1": {
+                        "then": "Puede ingresar dinero en efectivo en este cajero automático"
+                    },
+                    "2": {
+                        "then": "No se puede ingresar dinero en efectivo en este cajero automático"
+                    }
+                },
+                "question": "¿Se puede ingresar dinero en efectivo en este cajero?"
+            },
+            "cash_out": {
+                "mappings": {
+                    "0": {
+                        "then": "Puede retirar dinero de este cajero automático"
+                    },
+                    "1": {
+                        "then": "Puede retirar dinero de este cajero automático"
+                    },
+                    "2": {
+                        "then": "No puede retirar dinero de este cajero automático"
+                    }
+                },
+                "question": "¿Se puede sacar dinero de este cajero?"
+            },
+            "cash_out-denominations-notes": {
+                "mappings": {
+                    "0": {
+                        "then": "Se pueden retirar billetes de 5 euros"
+                    },
+                    "1": {
+                        "then": "Se pueden retirar billetes de 10 euros"
+                    },
+                    "2": {
+                        "then": "Se pueden retirar billetes de 20 euros"
+                    },
+                    "3": {
+                        "then": "Se pueden retirar billetes de 50 euros"
+                    },
+                    "4": {
+                        "then": "Se pueden retirar billetes de 100 euros"
+                    },
+                    "5": {
+                        "then": "Se pueden retirar billetes de 200 euros"
+                    },
+                    "6": {
+                        "then": "Se pueden retirar billetes de 500 euros"
+                    }
+                },
+                "question": "¿Qué billetes puede retirar aquí?"
+            },
+            "name": {
+                "render": "El nombre del banco de este cajero automático es {name}"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Operador"
+                },
+                "question": "¿De qué banco es este cajero automático?",
+                "render": "El cajero es de {operator}"
+            },
+            "speech_output": {
+                "mappings": {
+                    "0": {
+                        "then": "Este cajero automático tiene salida de voz, normalmente disponible a través de una toma de auriculares"
+                    },
+                    "1": {
+                        "then": "Este cajero no tiene salida de voz"
+                    }
+                },
+                "question": "¿Dispone este cajero automático de salida de voz para usuarios con discapacidad visual?"
+            },
+            "speech_output_language": {
+                "render": {
+                    "special": {
+                        "question": "¿En qué idiomas tiene salida de voz este cajero automático?",
+                        "render_list_item": "Este cajero automático tiene salida de voz en {language():font-bold}"
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Cajero automático de {brand}"
+                }
+            },
+            "render": "Cajero automático"
+        }
+    },
+    "bank": {
+        "description": "Una institución financiera para depositar dinero",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Con un cajero automático"
+                    }
+                }
+            }
+        },
+        "name": "Bancos",
+        "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "Este banco tiene un cajero automático"
+                    },
+                    "1": {
+                        "then": "Este banco <b>no tiene</b> cajero automático"
+                    },
+                    "2": {
+                        "then": "Este banco tiene un cajero automático, pero aparece con un icono diferente"
+                    }
+                }
+            }
+        }
     },
     "barrier": {
         "description": "Obstáculos durante el uso de la bicicleta, como bolardos y barreras para bicicletas",
@@ -2170,11 +2368,20 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "Carril bici {name}"
+                },
                 "1": {
                     "then": "Carril compartido"
                 },
+                "2": {
+                    "then": "Carretera con carril compartido {name}"
+                },
                 "3": {
                     "then": "Vía ciclista al lado de la carretera"
+                },
+                "4": {
+                    "then": "Carretera con carril bici {name}"
                 },
                 "5": {
                     "then": "Carril bici"
@@ -2185,7 +2392,8 @@
                 "9": {
                     "then": "Ciclocalle"
                 }
-            }
+            },
+            "render": "Vía"
         }
     },
     "defibrillator": {
@@ -2679,6 +2887,27 @@
         },
         "description": "Una capa mostrando restaurantes y locales de comida rápida (con un renderizado especial para friterías)",
         "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "No se necesita reserva"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Restaurantes y negocios de comida rápida"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Tiene menú vegetariano"
+                    }
+                }
+            },
             "4": {
                 "options": {
                     "0": {
@@ -3056,6 +3285,7 @@
         }
     },
     "nature_reserve": {
+        "description": "Una reserva natural es una zona donde la naturaleza puede seguir su curso",
         "name": "Reserva Natural",
         "tagRenderings": {
             "Access tag": {
@@ -3834,11 +4064,17 @@
                     "6": {
                         "question": "Reciclaje de aceite de motor"
                     },
+                    "8": {
+                        "question": "Reciclaje de residuos orgánicos"
+                    },
                     "9": {
                         "question": "Reciclaje de botellas de cristal"
                     },
                     "10": {
                         "question": "Reciclaje de cristal"
+                    },
+                    "11": {
+                        "question": "Reciclaje de bombillas"
                     },
                     "12": {
                         "question": "Reciclaje de periódicos"
@@ -3914,6 +4150,9 @@
                     "5": {
                         "then": "Aquí se puede reciclar aceite de motor"
                     },
+                    "7": {
+                        "then": "Los residuos orgánicos pueden reciclarse aquí"
+                    },
                     "8": {
                         "then": "Aquí se pueden reciclar residuos orgánicos"
                     },
@@ -3922,6 +4161,9 @@
                     },
                     "10": {
                         "then": "Aquí se puede reciclar cristal"
+                    },
+                    "11": {
+                        "then": "Las bombillas pueden reciclarse aquí"
                     },
                     "12": {
                         "then": "Aquí se pueden reciclar periódicos"
@@ -4245,6 +4487,13 @@
                 },
                 "question": "¿De qué color es la luz que emite esta lámpara?",
                 "render": "Esta lámpara emite luz {light:colour}"
+            },
+            "count": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta lámpara tiene 1 accesorio"
+                    }
+                }
             },
             "direction": {
                 "question": "¿Hacia donde apunta esta lámpara?",

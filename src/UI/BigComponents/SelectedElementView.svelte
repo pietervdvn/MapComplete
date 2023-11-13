@@ -25,6 +25,11 @@
   let knownTagRenderings = layer.tagRenderings
     .filter(config => (config.condition?.matchesProperties($tags) ?? true) && (config.metacondition?.matchesProperties({ ...$tags, ..._metatags } ?? true)
     && config.IsKnown($tags)))
+  $: {
+    knownTagRenderings = layer.tagRenderings
+      .filter(config => (config.condition?.matchesProperties($tags) ?? true) && (config.metacondition?.matchesProperties({ ...$tags, ..._metatags } ?? true)
+        && config.IsKnown($tags)))
+  }
 </script>
 
 {#if $tags._deleted === "yes"}

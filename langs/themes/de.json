@@ -496,10 +496,25 @@
             },
             "1": {
                 "name": "Knotenpunkte",
+                "presets": {
+                    "0": {
+                        "title": "ein Knoten eines Fahrradknotenpunktnetzwerks"
+                    }
+                },
                 "tagRenderings": {
                     "node-expected_rcn_route_relations": {
+                        "freeform": {
+                            "placeholder": "z.B. 3"
+                        },
                         "question": "Mit wie vielen anderen Knoten des Fahrradknotenpunktnetzwerkes ist dieser Knoten verbunden?",
                         "render": "Dieser Knoten ist mit {expected_rcn_route_relations} anderen Knoten des Fahrradknotenpunktnetzwerkes verbunden."
+                    },
+                    "node-rxn_ref": {
+                        "freeform": {
+                            "placeholder": "z.B. 1"
+                        },
+                        "question": "Wie lautet die Nummer des Knotenpunkts im Fahrradknotenpunktnetzwerk?",
+                        "render": "Knotenpunktnummer {rcn_ref} des Fahrradknotenpunktnetzwerks"
                     },
                     "node-survey:date": {
                         "override": {
@@ -509,7 +524,15 @@
                     }
                 },
                 "title": {
-                    "render": "Knotenpunkt <strong>{rcn_ref}</strong>"
+                    "render": "Fahrradknotenpunkt <strong>{rcn_ref}</strong>"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Fahrrad-Wegweiser",
+                    "title": {
+                        "render": "Fahrrad-Wegweiser"
+                    }
                 }
             }
         },

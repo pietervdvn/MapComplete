@@ -17,7 +17,21 @@ Waymarked trails
   - This layer is shown at zoomlevel **12** and higher
 
 
-This is a special layer - data is not sourced from OpenStreetMap
+
+
+ Basic tags for this layer 
+---------------------------
+
+
+
+Elements must have the all of following tags to be shown on this layer:
+
+
+
+  - route~^(.*foot.*)$ |route~^(.*hiking.*)$ |route~^(.*bycicle.*)$ |route~^(.*horse.*)$
+
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22route%22~%22%5E%28.*foot.*%29%24%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22route%22~%22%5E%28.*hiking.*%29%24%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22route%22~%22%5E%28.*bycicle.*%29%24%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22route%22~%22%5E%28.*horse.*%29%24%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
