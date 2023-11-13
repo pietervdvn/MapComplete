@@ -22,7 +22,6 @@ import { Utils } from "../../Utils"
 import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 import Table from "../../UI/Base/Table"
 import FilterConfigJson from "./Json/FilterConfigJson"
-import { And } from "../../Logic/Tags/And"
 import { Overpass } from "../../Logic/Osm/Overpass"
 import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import Svg from "../../Svg"
@@ -458,11 +457,6 @@ export default class LayerConfig extends WithContextLoader {
             )
         }
 
-        let neededTags: TagsFilter[] = Utils.NoNull([this.source?.osmTags])
-        if (this.source?.osmTags["and"] !== undefined) {
-            neededTags = this.source.osmTags["and"]
-        }
-
         const tableRows = Utils.NoNull(
             this.tagRenderings
                 .map((tr) => tr.FreeformValues())
@@ -523,7 +517,7 @@ export default class LayerConfig extends WithContextLoader {
             try {
                 overpassLink = new Link(
                     "Execute on overpass",
-                    Overpass.AsOverpassTurboLink(<TagsFilter>new And(neededTags).optimize())
+                    Overpass.AsOverpassTurboLink(<TagsFilter>this.source.osmTags.optimize())
                         .replaceAll("(", "%28")
                         .replaceAll(")", "%29")
                 )
@@ -540,12 +534,30 @@ export default class LayerConfig extends WithContextLoader {
 
         const tagsDescription = []
         if (this.source !== null) {
-            tagsDescription.push(
-                new Title("Basic tags for this layer", 2),
-                "Elements must have the all of following tags to be shown on this layer:",
-                new List(neededTags.map((t) => t.asHumanString(true, false, {}))),
-                overpassLink
-            )
+            tagsDescription.push(new Title("Basic tags for this layer", 2))
+
+            const neededTags = <TagsFilter>this.source.osmTags.optimize()
+            if (neededTags["and"]) {
+                const parts = neededTags["and"]
+                tagsDescription.push(
+                    "Elements must match **all** of the following expressions:",
+                    parts.map((p, i) => i + ". " + p.asHumanString(true, false, {})).join("\n")
+                )
+            } else if (neededTags["or"]) {
+                const parts = neededTags["or"]
+                tagsDescription.push(
+                    "Elements must match **any** of the following expressions:",
+                    parts.map((p) => " - " + p.asHumanString(true, false, {})).join("\n")
+                )
+            } else {
+                tagsDescription.push(
+                    "Elements must match the expression **" +
+                        neededTags.asHumanString(true, false, {}) +
+                        "**"
+                )
+            }
+
+            tagsDescription.push(overpassLink)
         } else {
             tagsDescription.push("This is a special layer - data is not sourced from OpenStreetMap")
         }
