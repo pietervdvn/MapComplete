@@ -190,9 +190,11 @@
         }
       ],
       "allowSplit": true,
-      "pointRendering": [],
+      "pointRendering": null,
       "lineRendering": [
-        {}
+        {
+          "color": "#ff0"
+        }
       ]
     },
     {
@@ -347,9 +349,19 @@
         }
       ],
       "allowSplit": true,
-      "pointRendering": [],
+      "pointRendering": null,
       "lineRendering": [
-        {}
+        {
+          "color": {
+            "render": "#a9a9a9",
+            "mappings": [
+              {
+                "if": "lit=no",
+                "then": "#303030"
+              }
+            ]
+          }
+        }
       ]
     }
   ]

@@ -186,9 +186,76 @@
           ]
         }
       ],
-      "pointRendering": [],
+      "pointRendering": [
+        {
+          "location": [
+            "point"
+          ],
+          "marker": [
+            {
+              "icon": "./assets/themes/width/icon.svg"
+            }
+          ],
+          "iconSize": "40,40",
+          "anchor": "center"
+        }
+      ],
       "lineRendering": [
-        {}
+        {
+          "width": "4",
+          "color": {
+            "render": "#00f",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "access=destination",
+                    "highway=pedestrian",
+                    "motor_vehicle=no",
+                    "motor_vehicle=destination"
+                  ]
+                },
+                "then": "lightgrey"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_width:difference!~-.*",
+                    "_width:difference:no_pedestrians~-.*"
+                  ]
+                },
+                "then": "orange"
+              },
+              {
+                "if": "_width:difference~-.*",
+                "then": "#0f0"
+              },
+              {
+                "if": "_width:difference!~-.*",
+                "then": "#f00"
+              }
+            ]
+          },
+          "dashArray": {
+            "render": "",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "oneway=yes",
+                    {
+                      "or": [
+                        "oneway:bicycle=yes",
+                        "oneway:bicycle="
+                      ]
+                    }
+                  ]
+                },
+                "then": "5 6"
+              }
+            ]
+          }
+        }
       ]
     }
   ],

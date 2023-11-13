@@ -26,9 +26,12 @@
         "osmTags": "shadow=yes",
         "isOsmCache": false
       },
-      "pointRendering": [],
+      "pointRendering": null,
       "lineRendering": [
-        {}
+        {
+          "color": "#444444",
+          "width": "1"
+        }
       ]
     },
     {
@@ -208,9 +211,24 @@
         "questions",
         "reviews"
       ],
-      "pointRendering": [],
+      "pointRendering": null,
       "lineRendering": [
-        {}
+        {
+          "color": {
+            "render": "#6d6",
+            "mappings": [
+              {
+                "if": "color~*",
+                "then": "{color}"
+              },
+              {
+                "if": "colour~*",
+                "then": "{colour}"
+              }
+            ]
+          },
+          "width": "9"
+        }
       ]
     }
   ],

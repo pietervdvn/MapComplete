@@ -39,9 +39,30 @@
       "tagRenderings": [
         "all_tags"
       ],
-      "pointRendering": [],
+      "pointRendering": [
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "marker": [
+            {
+              "icon": {
+                "render": "circle:red",
+                "mappings": [
+                  {
+                    "if": "_has_closeby_feature=yes",
+                    "then": "circle:#008000aa"
+                  }
+                ]
+              }
+            }
+          ],
+          "iconSize": "20,20",
+          "anchor": "center"
+        }
+      ],
       "lineRendering": [
-        {}
       ]
     },
     "recycling",
@@ -66,9 +87,34 @@
       "tagRenderings": [
         "all_tags"
       ],
-      "pointRendering": [],
+      "pointRendering": [
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "marker": [
+            {
+              "icon": {
+                "render": "circle:red",
+                "mappings": [
+                  {
+                    "if": "_has_closeby_recycling=yes",
+                    "then": "circle:#008000aa"
+                  },
+                  {
+                    "if": "_has_closeby_waste_disposal=yes",
+                    "then": "circle:#008000aa"
+                  }
+                ]
+              }
+            }
+          ],
+          "iconSize": "20,20",
+          "anchor": "center"
+        }
+      ],
       "lineRendering": [
-        {}
       ]
     },
     "waste_disposal"

@@ -110,8 +110,7 @@ export class Each<X, Y> extends Conversion<X[], Y[]> {
                     values[i]?.["id"] !== undefined ? values[i]?.["id"] : ""
                 )
             }
-            const context_ = c.enter(i)
-            const r = step.convert(values[i], context_)
+            const r = step.convert(values[i], c.enter(i))
             result.push(r)
         }
         return result

@@ -552,7 +552,7 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
      * const context = ConversionContext.test()
      * const r = new DetectShadowedMappings().convert(tr, context);
      * context.getAll("error").length // => 1
-     * context.getAll("error")[0].message.indexOf("The mapping key=value &x=y is fully matched by a previous mapping (namely 0)") >= 0 // => true
+     * context.getAll("error")[0].message.indexOf("The mapping key=value & x=y is fully matched by a previous mapping (namely 0)") >= 0 // => true
      */
     convert(json: TagRenderingConfigJson, context: ConversionContext): TagRenderingConfigJson {
         if (json.mappings === undefined || json.mappings.length === 0) {
@@ -1067,7 +1067,12 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
                 .err("Detected a 'pointRenderingS', it is written singular")
         }
 
-        if (!(json.pointRendering?.length > 0)) {
+        if (
+            !(json.pointRendering?.length > 0) &&
+            json.pointRendering !== null &&
+            json.source !== "special" &&
+            json.source !== "special:library"
+        ) {
             context.enter("pointRendering").err("There are no pointRenderings at all...")
         }
 

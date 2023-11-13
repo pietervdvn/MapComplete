@@ -248,6 +248,7 @@ export interface LayerConfigJson {
     /**
      * Creates points to render on the map.
      * This can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered
+     *
      * group: pointrendering
      */
     pointRendering: PointRenderingConfigJson[]

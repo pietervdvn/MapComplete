@@ -35,9 +35,30 @@
       "tagRenderings": [
         "all_tags"
       ],
-      "pointRendering": [],
+      "pointRendering": [
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "marker": [
+            {
+              "icon": {
+                "render": "circle:red",
+                "mappings": [
+                  {
+                    "if": "_has_closeby_feature=yes",
+                    "then": "circle:#008000aa"
+                  }
+                ]
+              }
+            }
+          ],
+          "iconSize": "20,20",
+          "anchor": "center"
+        }
+      ],
       "lineRendering": [
-        {}
       ]
     },
     {

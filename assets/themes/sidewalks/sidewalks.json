@@ -247,9 +247,85 @@
         }
       ],
       "allowSplit": true,
-      "pointRendering": [],
+      "pointRendering": [
+        {
+          "location": [
+            "start",
+            "end"
+          ],
+          "marker": [
+            {
+              "icon": "circle:#ccc"
+            }
+          ],
+          "iconSize": "3,3",
+          "anchor": "center"
+        }
+      ],
       "lineRendering": [
-        {}
+        {
+          "#": "The center line",
+          "color": "#ffffff55",
+          "width": 8,
+          "lineCap": "butt"
+        },
+        {
+          "#": "left",
+          "color": "#888",
+          "dashArray": {
+            "render": "",
+            "mappings": [
+              {
+                "if": "sidewalk:left=",
+                "then": "1,12"
+              }
+            ]
+          },
+          "width": {
+            "render": 6,
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "sidewalk:left=no",
+                    "sidewalk:left=separate"
+                  ]
+                },
+                "then": 0
+              }
+            ]
+          },
+          "offset": -6,
+          "lineCap": "butt"
+        },
+        {
+          "color": "#888",
+          "dashArray": {
+            "render": "",
+            "mappings": [
+              {
+                "if": "sidewalk:right=",
+                "then": "1,12"
+              }
+            ]
+          },
+          "width": {
+            "render": 6,
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "sidewalk:right=no",
+                    "sidewalk:right=separate"
+                  ]
+                },
+                "then": 0
+              }
+            ]
+          },
+          "lineCap": "butt",
+          "offset": 6
+        }
       ]
     }
   ],

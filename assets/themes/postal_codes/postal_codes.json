@@ -124,9 +124,22 @@
         }
       },
       "isShown": "_country=be",
-      "pointRendering": [],
+      "pointRendering": [
+        {
+          "label": "<div class='text-xl bg-white rounded-full pl-2 pr-2 break-normal'>{postal_code}</div>",
+          "location": [
+            "point",
+            "centroid"
+          ]
+        }
+      ],
       "lineRendering": [
-        {}
+        {
+          "color": "#00f",
+          "width": "4",
+          "fill": "no",
+          "dashArray": "8 8"
+        }
       ]
     },
     {
@@ -140,9 +153,12 @@
         }
       },
       "title": "Boundary relation with addr:postcode={addr:postcode}",
-      "pointRendering": [],
+      "pointRendering": null,
       "lineRendering": [
-        {}
+        {
+          "color": "#f00",
+          "width": 1
+        }
       ]
     },
     {
@@ -197,9 +213,20 @@
         }
       },
       "isShown": "_country=be",
-      "pointRendering": [],
-      "lineRendering": [
-        {}
+      "pointRendering": [
+        {
+          "marker": [
+            {
+              "icon": "./assets/themes/postal_codes/townhall.svg"
+            }
+          ],
+          "iconSize": "40,40",
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "anchor": "center"
+        }
       ]
     }
   ],

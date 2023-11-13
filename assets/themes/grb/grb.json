@@ -232,7 +232,7 @@
           ]
         }
       ],
-      "pointRendering": [],
+      "pointRendering": null,
       "lineRendering": [
         {
           "width": {
@@ -549,7 +549,7 @@
       },
       "title": "Service road",
       "tagRenderings": [],
-      "pointRendering": [],
+      "pointRendering": null,
       "lineRendering": [ {
         "width": 4,
         "color": "#888888"
@@ -594,7 +594,7 @@
       "tagRenderings": [
         "all_tags"
       ],
-      "pointRendering": [],
+      "pointRendering": null,
       "lineRendering": [
         {
           "color": "#ccc",

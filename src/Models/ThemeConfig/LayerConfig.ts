@@ -219,7 +219,7 @@ export default class LayerConfig extends WithContextLoader {
 
         if (json.pointRendering) {
             this.mapRendering = Utils.NoNull(json.pointRendering).map(
-                (r, i) => new PointRenderingConfig(r, `${context}[${i}]`)
+                (r, i) => new PointRenderingConfig(r, `${context}[${i}](${this.id})`)
             )
         } else {
             this.mapRendering = []

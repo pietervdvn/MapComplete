@@ -43,7 +43,7 @@
       "name": {
         "en": "Inspire polygons"
       },
-      "pointRendering": [],
+      "pointRendering": null,
       "lineRendering": [
         {
           "width": 2,
