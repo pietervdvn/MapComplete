@@ -792,17 +792,6 @@
             }
         }
     },
-    "grb_fixme": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "building type": {
-                        "question": "Jaký druh budovy je toto?"
-                    }
-                }
-            }
-        }
-    },
     "guideposts": {
         "description": "Podél oficiálních turistických, cyklistických, lyžařských nebo jezdeckých tras se často nacházejí rozcestníky (také známé jako ukazatel směru), které ukazují směry k různým cílům. Navíc jsou často pojmenovány po regionu nebo místě a ukazují nadmořskou výšku.\n\nPolohu rozcestníku může turista/cyklista/jezdec/lyžař využít jako potvrzení aktuální polohy, zejména pokud používá tištěnou mapu bez GPS přijímače. ",
         "title": "Rozcestníky"

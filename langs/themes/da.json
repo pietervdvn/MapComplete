@@ -575,17 +575,6 @@
             }
         }
     },
-    "grb_fixme": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "building type": {
-                        "question": "Hvad er det for en bygning?"
-                    }
-                }
-            }
-        }
-    },
     "hackerspaces": {
         "description": "På dette kort kan du se hackerspaces, tilføje et nyt hackerspace eller opdatere data direkte",
         "shortDescription": "Et kort over hackerspaces",

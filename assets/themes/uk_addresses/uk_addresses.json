@@ -150,26 +150,28 @@
       "description": "Alamat",
       "pointRendering": [
         {
-          "marker":[{
-            "icon": {
-              "render": "./assets/themes/uk_addresses/housenumber_unknown.svg",
-              "mappings": [
-                {
-                  "if": {
-                    "and": [
-                      "_embedding_object:id~*",
-                      "_embedding_object:id!=false"
-                    ]
+          "marker": [
+            {
+              "icon": {
+                "render": "./assets/themes/uk_addresses/housenumber_unknown.svg",
+                "mappings": [
+                  {
+                    "if": {
+                      "and": [
+                        "_embedding_object:id~*",
+                        "_embedding_object:id!=false"
+                      ]
+                    },
+                    "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
                   },
-                  "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
-                },
-                {
-                  "if": "_imported=yes",
-                  "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
-                }
-              ]
+                  {
+                    "if": "_imported=yes",
+                    "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
+                  }
+                ]
+              }
             }
-          }],
+          ],
           "iconSize": "40,40",
           "location": [
             "point",
@@ -177,7 +179,6 @@
           ],
           "anchor": "center"
         }
-        
       ],
       "lineRendering": [
         {}
@@ -622,15 +623,47 @@
           }
         }
       ],
-      "pointRendering": [     {
-        "label": {
-          "render": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
-          "condition": "addr:housenumber~*"
-        },
-        "iconSize": "50,50",
-        "marker":[{
-          "icon": {
-            "render": "./assets/layers/address/housenumber_blank.svg",
+      "pointRendering": [
+        {
+          "label": {
+            "render": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
+            "condition": "addr:housenumber~*"
+          },
+          "iconSize": "50,50",
+          "marker": [
+            {
+              "icon": {
+                "render": "./assets/layers/address/housenumber_blank.svg",
+                "mappings": [
+                  {
+                    "if": {
+                      "or": [
+                        {
+                          "and": [
+                            "addr:housenumber=",
+                            "nohousenumber!=yes"
+                          ]
+                        },
+                        "addr:street="
+                      ]
+                    },
+                    "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+                  }
+                ]
+              }
+            }
+          ],
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "anchor": "center"
+        }
+      ],
+      "lineRendering": [
+        {
+          "color": {
+            "render": "#00f",
             "mappings": [
               {
                 "if": {
@@ -644,40 +677,12 @@
                     "addr:street="
                   ]
                 },
-                "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+                "then": "#ff0"
               }
             ]
-          }
-        }]
-       ,
-        "location": [
-          "point",
-          "centroid"
-        ],
-        "anchor": "center"
-      }],
-      "lineRendering": [  {
-        "color": {
-          "render": "#00f",
-          "mappings": [
-            {
-              "if": {
-                "or": [
-                  {
-                    "and": [
-                      "addr:housenumber=",
-                      "nohousenumber!=yes"
-                    ]
-                  },
-                  "addr:street="
-                ]
-              },
-              "then": "#ff0"
-            }
-          ]
-        },
-        "width": "3"
-      }
+          },
+          "width": "3"
+        }
       ]
     },
     "named_streets"

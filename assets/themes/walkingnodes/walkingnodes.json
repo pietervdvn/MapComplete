@@ -72,7 +72,7 @@
           "color": "#452b29"
         }
       ],
-      "pointRendering":null,
+      "pointRendering": null,
       "tagRenderings": [
         {
           "builtin": "survey_date",

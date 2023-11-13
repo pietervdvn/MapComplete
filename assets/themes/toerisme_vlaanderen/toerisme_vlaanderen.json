@@ -95,18 +95,21 @@
         "minzoom": 14,
         "pointRendering": [
           {
-            "=marker":[{
-            "icon": {
-              "render": "./assets/themes/toerisme_vlaanderen/toilets.svg",
-              "=mappings": [
-                {
-                  "if": "wheelchair=yes",
-                  "then": "./assets/themes/toerisme_vlaanderen/toilets_wheelchair.svg"
+            "=marker": [
+              {
+                "icon": {
+                  "render": "./assets/themes/toerisme_vlaanderen/toilets.svg",
+                  "=mappings": [
+                    {
+                      "if": "wheelchair=yes",
+                      "then": "./assets/themes/toerisme_vlaanderen/toilets_wheelchair.svg"
+                    }
+                  ]
                 }
-              ]
-            }
+              }
+            ]
           }
-        ]}]
+        ]
       }
     },
     {
@@ -248,10 +251,11 @@
         "minzoom": 14,
         "pointRendering": [
           {
-            "=marker":[{
-              
-            "icon": "./assets/themes/toerisme_vlaanderen/playground.svg"
-            }]
+            "=marker": [
+              {
+                "icon": "./assets/themes/toerisme_vlaanderen/playground.svg"
+              }
+            ]
           }
         ]
       },

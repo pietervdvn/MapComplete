@@ -481,63 +481,66 @@
           "_imported_osm_still_fresh!=true"
         ]
       },
-      "pointRendering": [ {
-        "label": {
-          "render": "<div style='margin-top: -42px; color: black' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
-          "condition": "addr:housenumber~*"
-        },
-        "iconSize": "50,50",
-        "marker":[{
-          "icon": {
+      "pointRendering": [
+        {
+          "label": {
+            "render": "<div style='margin-top: -42px; color: black' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
+            "condition": "addr:housenumber~*"
+          },
+          "iconSize": "50,50",
+          "marker": [
+            {
+              "icon": {
+                "mappings": [
+                  {
+                    "if": "_intersects_with_other_features~*",
+                    "then": "./assets/themes/grb/warning.svg"
+                  },
+                  {
+                    "if": "addr:housenumber~*",
+                    "then": "./assets/themes/grb/housenumber_blank.svg"
+                  }
+                ]
+              }
+            }
+          ],
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "anchor": "center"
+        }
+      ],
+      "lineRendering": [
+        {
+          "width": {
+            "render": 5,
             "mappings": [
               {
-                "if": "_intersects_with_other_features~*",
-                "then": "./assets/themes/grb/warning.svg"
+                "if": "_imported=yes",
+                "then": "1"
+              }
+            ]
+          },
+          "color": {
+            "render": "#00a",
+            "mappings": [
+              {
+                "if": "_imported=yes",
+                "then": "#00ff00"
               },
               {
-                "if": "addr:housenumber~*",
-                "then": "./assets/themes/grb/housenumber_blank.svg"
+                "if": {
+                  "and": [
+                    "_imported_osm_object_found=true",
+                    "_imported_osm_still_fresh=true"
+                  ]
+                },
+                "then": "#0f0"
               }
             ]
           }
-        }],
-        
-        "location": [
-          "point",
-          "centroid"
-        ],
-        "anchor": "center"
-      }],
-      "lineRendering":[
-      {
-        "width": {
-          "render": 5,
-          "mappings": [
-            {
-              "if": "_imported=yes",
-              "then": "1"
-            }
-          ]
-        },
-        "color": {
-          "render": "#00a",
-          "mappings": [
-            {
-              "if": "_imported=yes",
-              "then": "#00ff00"
-            },
-            {
-              "if": {
-                "and": [
-                  "_imported_osm_object_found=true",
-                  "_imported_osm_still_fresh=true"
-                ]
-              },
-              "then": "#0f0"
-            }
-          ]
         }
-      }
       ]
     },
     {
@@ -550,10 +553,11 @@
       "title": "Service road",
       "tagRenderings": [],
       "pointRendering": null,
-      "lineRendering": [ {
-        "width": 4,
-        "color": "#888888"
-      }
+      "lineRendering": [
+        {
+          "width": 4,
+          "color": "#888888"
+        }
       ]
     },
     {
@@ -769,9 +773,11 @@
             "location": [
               "point"
             ],
-            "marker":[{
-            "icon": "./assets/svg/robot.svg"
-            }],
+            "marker": [
+              {
+                "icon": "./assets/svg/robot.svg"
+              }
+            ],
             "iconSize": "15,15"
           }
         ]

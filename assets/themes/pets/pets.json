@@ -134,7 +134,8 @@
               "point",
               "centroid"
             ],
-            "marker": [{},
+            "marker": [
+              {},
               {
                 "icon": {
                   "render": "./assets/themes/pets/dogshop.svg",
@@ -154,11 +155,13 @@
             "iconSize": "30,30"
           }
         ],
-        "=lineRendering":[          {
-          "#": "Rendering of a line",
-          "color": "#ff0",
-          "width": 5
-        }],
+        "=lineRendering": [
+          {
+            "#": "Rendering of a line",
+            "color": "#ff0",
+            "width": 5
+          }
+        ],
         "=presets": [],
         "source": {
           "=osmTags": {

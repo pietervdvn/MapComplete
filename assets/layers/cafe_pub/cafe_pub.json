@@ -71,21 +71,21 @@
         }
       },
       {
-        "if":"amenity=bar",
+        "if": "amenity=bar",
         "then": {
-          "en":"Bar"
+          "en": "Bar"
         }
       },
       {
-        "if":"amenity=cafe",
+        "if": "amenity=cafe",
         "then": {
-          "en":"Cafe"
+          "en": "Cafe"
         }
       },
       {
-        "if":"amenity=nightclub",
+        "if": "amenity=nightclub",
         "then": {
-          "en":"Nightclub"
+          "en": "Nightclub"
         }
       }
     ]

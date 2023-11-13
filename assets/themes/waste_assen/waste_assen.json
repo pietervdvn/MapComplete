@@ -62,8 +62,7 @@
           "anchor": "center"
         }
       ],
-      "lineRendering": [
-      ]
+      "lineRendering": []
     },
     "recycling",
     {
@@ -114,8 +113,7 @@
           "anchor": "center"
         }
       ],
-      "lineRendering": [
-      ]
+      "lineRendering": []
     },
     "waste_disposal"
   ]

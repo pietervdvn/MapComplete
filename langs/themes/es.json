@@ -792,17 +792,6 @@
             }
         }
     },
-    "grb_fixme": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "building type": {
-                        "question": "¿Qué tipo de este edificio es este?"
-                    }
-                }
-            }
-        }
-    },
     "guideposts": {
         "description": "Los postes guía o indicadores (también conocidos como \"fingerposts\") suelen encontrarse a lo largo de las rutas oficiales de senderismo, ciclismo, esquí o equitación para indicar las direcciones a los distintos destinos. Además, suelen llevar el nombre de una región o lugar e indican la altitud.\n\nLa posición de un poste indicador puede servir al excursionista, ciclista, jinete o esquiador para confirmar su posición actual, sobre todo si utiliza un mapa impreso sin receptor GPS. ",
         "title": "Poste guía"
