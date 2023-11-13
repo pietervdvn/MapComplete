@@ -42,7 +42,7 @@ fi
 # sanity check
 if [[ -f "bookcases.html" ]]
 then
-  
+  echo "Bookcases exists"
 else
   echo "Bookcases.html does not exist - aborting"
   exit 1
