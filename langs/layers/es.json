@@ -1138,7 +1138,7 @@
     "bike_cafe": {
         "tagRenderings": {
             "bike_cafe-repair-tools": {
-                "question": "¿Hay herramientas para reparar su propia bicicleta?"
+                "question": "¿Se ofrecen herramientas para reparar tu propia bicicleta?"
             }
         }
     },
@@ -1154,7 +1154,7 @@
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
-                        "then": "Servicio de limpieza gratis"
+                        "then": "Este servicio de limpieza es gratuito"
                     },
                     "1": {
                         "then": "Este servicio de limpieza es de pago"
@@ -1169,7 +1169,7 @@
                         "then": "El servicio de limpieza es gratuito"
                     },
                     "1": {
-                        "then": "Gratis"
+                        "then": "Uso gratuito"
                     }
                 },
                 "question": "¿Cuánto cuesta utilizar el servicio de limpieza?",
@@ -1402,7 +1402,7 @@
             "bike_repair_station-valves": {
                 "mappings": {
                     "0": {
-                        "then": "Sclaverand/Presata (ruedas de bicicleta estrechas)"
+                        "then": "Sclaverand/Presta (neumáticos de bicicleta estrechos)"
                     },
                     "1": {
                         "then": "Dunlop"
@@ -1573,13 +1573,13 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Tienda de artículos deportivos <i>{name}</i>"
+                    "then": "Tienda de material deportivo <i>{name}</i>"
                 },
                 "1": {
                     "then": "Winkel"
                 },
                 "2": {
-                    "then": "Alquiler de bicicletas <i>{name}</i>"
+                    "then": "Tienda de alquiler de bicicletas <i>{name}</i>"
                 },
                 "3": {
                     "then": "Reparación de bicis <i>{name}</i>"
@@ -1603,7 +1603,7 @@
                     "then": "Carril bici"
                 }
             },
-            "render": "Objeto relacionado con bicis"
+            "render": "Objeto relacionado con las bicicletas"
         }
     },
     "binocular": {
@@ -1683,7 +1683,7 @@
             }
         },
         "description": "Una capa que muestra cafeterías y bares donde uno se puede reunir con una bebida. La capa hace algunas preguntas relevantes",
-        "name": "Cafeterías y bares",
+        "name": "Cafeterías y pubs",
         "presets": {
             "0": {
                 "description": "Un bar, principalmente para beber cervezas en un interior templado y relajado",
@@ -1694,7 +1694,7 @@
                 "title": "un bar de copas"
             },
             "2": {
-                "description": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo",
+                "description": "Un <b>café</b> para tomar té, café o una bebida alcohólica en un ambiente tranquilo",
                 "title": "una cafetería"
             },
             "3": {
@@ -1715,7 +1715,7 @@
                         "then": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo"
                     },
                     "3": {
-                        "then": "Un <b>restaurante</b> donde puedes comer una comida de verdad"
+                        "then": "Un <b>restaurante</b> donde se pueda comer como es debido"
                     },
                     "4": {
                         "then": "Un espacio abierto donde se sirve cerveza, típico de Alemania"
@@ -1727,8 +1727,8 @@
                 "question": "Qué tipo de cafe es este?"
             },
             "Name": {
-                "question": "¿Cual es el nombre de este pub?",
-                "render": "Este pub se llama {name}"
+                "question": "¿Cuál es el nombre de esta empresa?",
+                "render": "Esta empresa se llama {name}"
             }
         },
         "title": {
@@ -2043,7 +2043,7 @@
                         "then": "Se debe de solicitar una <b>llave</b> para utilizar esta estación de carga<br/><span class='subtle'>Ej. una estación de carga operada por un hotel que solo es utilizable por sus huéspedes, que reciben una llave de la recepción para desbloquear la estación de carga</span>"
                     },
                     "4": {
-                        "then": "No accesible al público general (ej. solo accesible a los propietarios, empleados, ...)"
+                        "then": "No accesible al público en general (por ejemplo, sólo accesible a los propietarios, empleados, ...)"
                     }
                 },
                 "question": "¿A quién se le permite utilizar esta estación de carga?",
@@ -2076,7 +2076,7 @@
             "fee": {
                 "mappings": {
                     "3": {
-                        "then": "De pago, pero gratis para clientes del hotel/pub/hostpital... quien opera la estación de carga"
+                        "then": "Pago por uso, pero gratuito para los clientes del hotel/pub/hospital/... que gestiona la estación de carga"
                     },
                     "4": {
                         "then": "Uso de pago"
@@ -2177,8 +2177,8 @@
         }
     },
     "crossings": {
-        "description": "Cruces para peatones y ciclistas",
-        "name": "Cruces",
+        "description": "Pasos para peatones y ciclistas",
+        "name": "Pasos",
         "presets": {
             "0": {
                 "description": "Cruce para peatones y/o ciclistas",
@@ -2307,7 +2307,7 @@
         }
     },
     "cycleways_and_roads": {
-        "description": "Toda la infraestructura sobre la que alguien puede ir en bici, acompañado de preguntas sobre esta infraestructura\"",
+        "description": "Todas las infraestructuras sobre las que se puede circular en bicicleta, acompañadas de preguntas sobre las mismas",
         "name": "Carriles bici y carreteras",
         "tagRenderings": {
             "Cycleway type for a road": {
@@ -2502,7 +2502,7 @@
                     "then": "Carril bici {name}"
                 },
                 "1": {
-                    "then": "Carril compartido"
+                    "then": "Carril bici"
                 },
                 "2": {
                     "then": "Carretera con carril compartido {name}"
