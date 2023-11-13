@@ -154,10 +154,12 @@
     },
     {
       "id": "tactile_writing",
-      "condition": {"and":[
-        "handrail=yes",
-        "conveying!=yes"
-      ]},
+      "condition": {
+        "and": [
+          "handrail=yes",
+          "conveying!=yes"
+        ]
+      },
       "question": {
         "en": "Do these stairs have tactile writing on the handrail?",
         "de": "Hat die Treppe eine taktile Schrift am Handlauf?",
