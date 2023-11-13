@@ -154,6 +154,10 @@ In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "ar
       * [Example usage of braced](#example-usage-of-braced)
     + [tags](#tags)
       * [Example usage of tags](#example-usage-of-tags)
+    + [giggity](#giggity)
+      * [Example usage of giggity](#example-usage-of-giggity)
+    + [gps_all_tags](#gps_all_tags)
+      * [Example usage of gps_all_tags](#example-usage-of-gps_all_tags)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
@@ -1101,6 +1105,31 @@ key | value | The key to look for the tags
 #### Example usage of tags 
 
  `{tags(value)}`
+
+
+
+### giggity 
+
+ Shows events that are happening based on a Giggity URL 
+
+name | default | description
+------ | --------- | -------------
+giggityUrl | _undefined_ | The URL of the giggity-XML
+ 
+
+#### Example usage of giggity 
+
+ `{giggity()}`
+
+
+
+### gps_all_tags 
+
+ Shows the current tags of the GPS-representing object, used for debugging 
+
+#### Example usage of gps_all_tags 
+
+ `{gps_all_tags()}`
 
 
 

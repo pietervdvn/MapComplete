@@ -524,6 +524,8 @@ export default class LayerConfig extends WithContextLoader {
                 overpassLink = new Link(
                     "Execute on overpass",
                     Overpass.AsOverpassTurboLink(<TagsFilter>new And(neededTags).optimize())
+                        .replaceAll("(", "%28")
+                        .replaceAll(")", "%29")
                 )
             } catch (e) {
                 console.error("Could not generate overpasslink for " + this.id)
@@ -537,7 +539,7 @@ export default class LayerConfig extends WithContextLoader {
         }
 
         const tagsDescription = []
-        if (this.source === null) {
+        if (this.source !== null) {
             tagsDescription.push(
                 new Title("Basic tags for this layer", 2),
                 "Elements must have the all of following tags to be shown on this layer:",

@@ -10,19 +10,14 @@
 1. [Special and other useful layers](#special-and-other-useful-layers)
 1. [Priviliged layers](#priviliged-layers)
 1. [selected_element](#selected_element)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
 1. [gps_location](#gps_location)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
 1. [gps_location_history](#gps_location_history)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
 1. [home_location](#home_location)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
 1. [gps_track](#gps_track)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [Privacy notice](#privacy-notice)
     + [export_as_gpx](#export_as_gpx)
@@ -31,33 +26,25 @@
     + [minimap](#minimap)
     + [delete](#delete)
 1. [range](#range)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
 1. [last_click](#last_click)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [add_new](#add_new)
     + [add_note](#add_note)
       * [Filters](#filters)
 1. [conflation](#conflation)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
 1. [split_point](#split_point)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
 1. [split_road](#split_road)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
 1. [current_view](#current_view)
       * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
 1. [import_candidate](#import_candidate)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [all_tags](#all_tags)
 1. [usersettings](#usersettings)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [profile](#profile)
     + [language_picker](#language_picker)
@@ -82,6 +69,7 @@
     + [translation-thanks](#translation-thanks)
     + [contributor-thanks](#contributor-thanks)
     + [show_debug](#show_debug)
+    + [debug-gps](#debug-gps)
     + [debug](#debug)
 1. [Normal layers](#normal-layers)
 
@@ -135,19 +123,7 @@ Highlights the currently selected element. Override this layer to have different
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-
-
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -178,19 +154,7 @@ Meta layer showing the current location of the user. Add this to your theme and 
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-
-
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -223,19 +187,7 @@ Meta layer which contains the previous locations of the user as single points. T
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-
-
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -266,19 +218,7 @@ Meta layer showing the home location of the user. The home location can be set i
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-
-
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -309,19 +249,7 @@ Meta layer showing the previous locations of the user as single line with contro
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-
-
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -421,19 +349,7 @@ Meta-layer, simply showing a bbox in red
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-
-
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -463,19 +379,7 @@ This layer defines how to render the 'last click'-location. By default, it will 
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-
-
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -541,19 +445,7 @@ If the import-button moves OSM points, the imported way points or conflates, a p
   - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-
-
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -582,19 +474,7 @@ Layer rendering the little scissors for the minimap in the 'splitRoadWizard'
   - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-
-
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -623,19 +503,7 @@ Layer rendering the way to split in the 'splitRoadWizard'. This one is used inst
   - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-
-
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -680,19 +548,7 @@ The icon on the button is the default icon of the layer, but can be customized b
   - [personal](https://mapcomplete.org/personal)
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-
-
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -721,19 +577,7 @@ Layer used as template in the importHelper
   - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-
-
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -772,19 +616,7 @@ A special layer which is not meant to be shown on a map, but which is used to se
   - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-
-
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -1157,6 +989,18 @@ The question is  *Show user settings debug info?*
   - *Don't show debug info*  corresponds with  ``
   - This option cannot be chosen as answer
 
+
+
+
+### debug-gps 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `mapcomplete-show_debug=yes`
 
 
 
